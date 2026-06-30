@@ -17,29 +17,45 @@
   def_poss  = integer(0)
 )
 
-#' Fit a ridge-regression RAPM model from possession data.
-#'
-#' Internal implementation. Uses \code{glmnet::cv.glmnet} (alpha = 0, ridge)
-#' with cross-validation to select \code{lambda.min}. Coefficients are scaled
-#' by 100 and the defense sign is flipped so that a good defender produces a
-#' POSITIVE \code{d_rapm} (mirrors the Python \code{nba_rapm} contract).
-#'
-#' @param possessions data.frame with columns \code{off_player_1..5},
-#'   \code{def_player_1..5} (integer player ids) and \code{points} (numeric).
+#' **Fit a Ridge-Regression RAPM Model from Possession Data**
+#' @name nba_rapm
+NULL
+#' @title
+#' **Fit a Ridge-Regression RAPM Model from Possession Data**
+#' @rdname nba_rapm
+#' @author Saiem Gilani
+#' @param possessions A possession-level stint matrix as produced by
+#'   \code{nba_possession_lineups()}, with columns \code{off_player_1} through
+#'   \code{off_player_5}, \code{def_player_1} through \code{def_player_5}
+#'   (integer NBA Stats person IDs), and \code{points} (numeric, points scored
+#'   on that possession).
 #' @param ... Reserved for future keyword arguments (currently ignored).
+#' @return Returns a \code{data.frame} with one row per player:
 #'
-#' @return A \code{data.frame} with columns:
-#'   \itemize{
-#'     \item \code{player_id} (integer) — sorted player ids.
-#'     \item \code{o_rapm} (numeric) — offensive RAPM (×100).
-#'     \item \code{d_rapm} (numeric) — defensive RAPM (×100, positive = good).
-#'     \item \code{rapm} (numeric) — total RAPM = \code{o_rapm + d_rapm}.
-#'     \item \code{off_poss} (integer) — possessions played on offense.
-#'     \item \code{def_poss} (integer) — possessions played on defense.
-#'   }
-#'   Rows are sorted by \code{player_id}. Returns a 0-row frame with the same
-#'   schema when input is empty or all possessions have NA lineup cells.
-#' @noRd
+#'    |col_name   |types   |description                                                                                                                                   |
+#'    |:----------|:-------|:---------------------------------------------------------------------------------------------------------------------------------------------|
+#'    |player_id  |integer |NBA Stats person ID. Rows are sorted ascending by player_id.                                                                                 |
+#'    |o_rapm     |numeric |Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player.                                              |
+#'    |d_rapm     |numeric |Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive).|
+#'    |rapm       |numeric |Total RAPM = o_rapm + d_rapm. Positive = net positive impact.                                                                                |
+#'    |off_poss   |integer |Number of possessions the player appeared on offense.                                                                                        |
+#'    |def_poss   |integer |Number of possessions the player appeared on defense.                                                                                        |
+#'
+#'   Returns a 0-row frame with the same schema when input is empty or all
+#'   possessions have NA lineup cells (never-raise).
+#'
+#'   **Note:** RAPM is expressed in per-100-possession units. A **full season**
+#'   of possessions (~5,000–8,000) is needed for statistically meaningful
+#'   estimates. Results from a single game (~150–250 possessions) are highly
+#'   unstable and are provided here for pipeline illustration only.
+#' @keywords NBA Lineup Functions
+#' @family NBA Lineup Functions
+#' @export
+#' @details
+#' ```r
+#'  poss <- nba_possession_lineups(game_id = "0022200001")
+#'  nba_rapm(poss)
+#' ```
 nba_rapm <- function(possessions, ...) {
   # Build sparse design (handles empty / all-NA → 0-player sentinel)
   des <- .build_rapm_design(possessions)
@@ -99,8 +115,8 @@ nba_rapm <- function(possessions, ...) {
 #' Build a sparse RAPM design matrix from a possession data frame.
 #'
 #' Internal helper.  Column layout:
-#'   * cols 1..P   — offense indicator: 1 when player_ids[i] was on offense.
-#'   * cols P+1..2P — defense indicator: 1 when player_ids[i] was on defense.
+#'   * cols 1..P   — offense indicator: 1 when player_ids\[i\] was on offense.
+#'   * cols P+1..2P — defense indicator: 1 when player_ids\[i\] was on defense.
 #'
 #' Possessions with any NA in the 10 lineup cells are silently dropped
 #' (never-raise; a partial lineup is unreliable for RAPM).

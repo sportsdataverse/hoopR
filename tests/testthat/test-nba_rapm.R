@@ -167,7 +167,7 @@ test_that("nba_rapm returns correct schema on a tiny hand frame", {
     list(off = c(4L, 5L, 6L, 9L, 10L), def = c(1L, 2L, 3L, 7L, 8L), pts = 3)
   )
   df  <- .poss_df(rows)
-  out <- nba_rapm(df)
+  out <- suppressWarnings(nba_rapm(df))
 
   # 6-column schema
   expect_true(is.data.frame(out))
@@ -280,4 +280,45 @@ test_that("nba_rapm recovers planted player effects (synthetic recovery)", {
   out2 <- nba_rapm(df)
   out2 <- out2[order(out2$player_id), ]
   expect_equal(out$rapm, out2$rapm)
+})
+
+# ===========================================================================
+# End-to-end smoke — real fixture (offline)
+# ===========================================================================
+
+test_that("nba_rapm runs end-to-end on a real game (offline smoke)", {
+  pbp  <- readRDS(test_path("fixtures", "nba_engine", "pbp_0022200001.rds"))
+  poss <- .attach_possession_lineups(.build_possessions(pbp), pbp)
+
+  out  <- nba_rapm(poss)
+
+  # Basic shape
+  expect_true(is.data.frame(out))
+  expect_true(nrow(out) > 0)
+  expect_named(out, c("player_id", "o_rapm", "d_rapm", "rapm", "off_poss", "def_poss"))
+
+  # All RAPM values finite (ridge never produces Inf/NaN)
+  expect_true(all(is.finite(out$rapm)))
+
+  # Mean absolute RAPM is loosely bounded — 1 game is noisy but not explosive
+  expect_true(abs(mean(out$rapm)) < 50)
+
+  # Deterministic when seed is fixed: second call with same seed gives identical output
+  set.seed(1L); out_a <- nba_rapm(poss)
+  set.seed(1L); out_b <- nba_rapm(poss)
+  expect_equal(
+    out_a[order(out_a$player_id), ]$rapm,
+    out_b[order(out_b$player_id), ]$rapm
+  )
+})
+
+# ===========================================================================
+# Gated live test
+# ===========================================================================
+
+test_that("nba_rapm works live end-to-end", {
+  skip_nba_stats_test()
+  out <- nba_rapm(nba_possession_lineups(game_id = "0022200001"))
+  expect_true(nrow(out) > 0)
+  expect_true(all(is.finite(out$rapm)))
 })
