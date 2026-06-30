@@ -177,7 +177,8 @@ Other NBA Player Tracking Functions:
 \code{\link{nba_synergyplaytypes}()},
 \code{\link{nba_teamdashptpass}()},
 \code{\link{nba_teamdashptreb}()},
-\code{\link{nba_teamdashptshots}()}
+\code{\link{nba_teamdashptshots}()},
+\code{\link{nba_tracking_aggregate}()}
 }
 \author{
 Saiem Gilani
