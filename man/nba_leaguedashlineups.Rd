@@ -194,6 +194,7 @@ Other NBA League Functions:
 Other NBA Lineup Functions: 
 \code{\link{nba_gamerotation}()},
 \code{\link{nba_leaguelineupviz}()},
+\code{\link{nba_possession_lineups}()},
 \code{\link{nba_shotchartlineupdetail}()},
 \code{\link{nba_teamdashlineups}()}
 }

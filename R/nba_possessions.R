@@ -14,12 +14,11 @@
 # Small utilities
 # ---------------------------------------------------------------------------
 
+# Coerce a possibly-NA / NULL / length-0 scalar to the empty string `""`.
+# Guards the `location` reads so a NA `location` does not stringify to the
+# literal `"NA"` (which has `nchar == 2 > 0` and would be mistaken for a
+# real "h"/"v" location on real-world data).
 #' @noRd
-#'
-#' Coerce a possibly-NA / NULL / length-0 scalar to the empty string `""`.
-#' Guards the `location` reads so a NA `location` does not stringify to the
-#' literal `"NA"` (which has `nchar == 2 > 0` and would be mistaken for a
-#' real "h"/"v" location on real-world data).
 .na_to_empty <- function(x) {
   if (length(x) == 0L || is.null(x) || is.na(x)) "" else as.character(x)
 }
@@ -29,20 +28,19 @@
 # Offense-seeding allowlist
 # ---------------------------------------------------------------------------
 
+# Event type codes (hoopR V2 `event_type` column) that reliably identify the
+# team in possession of the ball for offense-attribution purposes.
+#
+# ALLOWLIST rationale (mirrors Python `_OFFENSE_SEEDING_TYPES`):
+#   "1" = MadeShot, "2" = MissedShot, "3" = FreeThrow, "5" = Turnover
+#
+# Administrative events such as Rebound ("4"), Foul ("6"), Substitution ("8"),
+# StartPeriod ("12"), and EndPeriod ("13") carry a `location` column but do
+# NOT reliably tell us who is on offense — a rebound, for example, belongs to
+# whichever team grabbed the ball, not the ball-holding team.  Including them
+# in the seed set mis-labels subsequent possessions (e.g. marks a defensive
+# rebound as belonging to the wrong offense).
 #' @noRd
-#'
-#' Event type codes (hoopR V2 `event_type` column) that reliably identify the
-#' team in possession of the ball for offense-attribution purposes.
-#'
-#' ALLOWLIST rationale (mirrors Python `_OFFENSE_SEEDING_TYPES`):
-#'   "1" = MadeShot, "2" = MissedShot, "3" = FreeThrow, "5" = Turnover
-#'
-#' Administrative events such as Rebound ("4"), Foul ("6"), Substitution ("8"),
-#' StartPeriod ("12"), and EndPeriod ("13") carry a `location` column but do
-#' NOT reliably tell us who is on offense — a rebound, for example, belongs to
-#' whichever team grabbed the ball, not the ball-holding team.  Including them
-#' in the seed set mis-labels subsequent possessions (e.g. marks a defensive
-#' rebound as belonging to the wrong offense).
 .OFFENSE_SEEDING_EVENT_TYPES <- c("1", "2", "3", "5")
 
 
@@ -50,31 +48,30 @@
 # .is_last_ft
 # ---------------------------------------------------------------------------
 
+# Return `TRUE` if `sub_type` represents the **final free throw of a trip**.
+#
+# Two sub-formats are recognized (mirrors Python `_is_last_ft`):
+#
+# NBA / WNBA "N of N" — the `sub_type` contains a substring of the form
+# `"<num> of <num>"` where both numbers are equal:
+#   - `"Free Throw 2 of 2"` → TRUE  (last of a 2-shot trip)
+#   - `"Free Throw 1 of 1"` → TRUE  (single technical-free-throw trip)
+#   - `"Free Throw Flagrant 3 of 3"` → TRUE
+#   - `"Free Throw 1 of 2"` → FALSE (first of a 2-shot trip)
+#   - `"Free Throw Technical"` → FALSE (no "N of N" substring)
+#
+# G-League single-FT (point-value) format — the regex
+# `"Free Throw \\d+\\s*PT\\b"` (case-SENSITIVE) matches strings like
+# `"Free Throw 1PT"`, `"Free Throw 2PT"`, `"Free Throw 3PT"`, and the
+# optional-space variant `"Free Throw 2 PT"`.  Each G-League single-FT event
+# is a standalone trip, so it is always the last (and only) FT of its trip.
+# Lowercase variants (`"Free Throw 2pt"`) do NOT match.
+#
+# `NA` and `""` return `FALSE` (safe for per-row vectorized use).
+#
+# @param sub_type A length-1 character string (the V3 `sub_type` column value).
+# @return A length-1 logical.
 #' @noRd
-#'
-#' Return `TRUE` if `sub_type` represents the **final free throw of a trip**.
-#'
-#' Two sub-formats are recognized (mirrors Python `_is_last_ft`):
-#'
-#' **NBA / WNBA "N of N"** — the `sub_type` contains a substring of the form
-#' `"<num> of <num>"` where both numbers are equal:
-#'   - `"Free Throw 2 of 2"` → TRUE  (last of a 2-shot trip)
-#'   - `"Free Throw 1 of 1"` → TRUE  (single technical-free-throw trip)
-#'   - `"Free Throw Flagrant 3 of 3"` → TRUE
-#'   - `"Free Throw 1 of 2"` → FALSE (first of a 2-shot trip)
-#'   - `"Free Throw Technical"` → FALSE (no "N of N" substring)
-#'
-#' **G-League single-FT (point-value) format** — the regex
-#' `"Free Throw \\d+\\s*PT\\b"` (case-SENSITIVE) matches strings like
-#' `"Free Throw 1PT"`, `"Free Throw 2PT"`, `"Free Throw 3PT"`, and the
-#' optional-space variant `"Free Throw 2 PT"`.  Each G-League single-FT event
-#' is a standalone trip, so it is always the last (and only) FT of its trip.
-#' Lowercase variants (`"Free Throw 2pt"`) do NOT match.
-#'
-#' `NA` and `""` return `FALSE` (safe for per-row vectorized use).
-#'
-#' @param sub_type A length-1 character string (the V3 `sub_type` column value).
-#' @return A length-1 logical.
 .is_last_ft <- function(sub_type) {
   # Treat NA / empty as FALSE
   if (is.na(sub_type) || nchar(sub_type) == 0L) return(FALSE)
@@ -96,34 +93,33 @@
 # .offense_from_events
 # ---------------------------------------------------------------------------
 
+# Determine the **offense team ID** for a possession from its accumulated
+# event rows.
+#
+# Mirrors the two-pass logic of Python `_offense_from_events`:
+#
+# Pass 1 — scoring/shooting/turnover with location.  Scans `events` for
+# the first row whose `event_type` is in `.OFFENSE_SEEDING_EVENT_TYPES`
+# (`"1"` MadeShot / `"2"` MissedShot / `"3"` FreeThrow / `"5"` Turnover)
+# AND whose `location` is non-empty.  Returns `home_id` if `location == "h"`,
+# `away_id` if `location == "v"`.
+#
+# Pass 2 — any non-admin event with location.  Scans for the first row
+# with a non-empty `location` whose `event_type` is not one of the
+# administrative denylist codes: Foul ("6"), StartPeriod ("12"),
+# EndPeriod ("13"), Sub ("8"), Timeout ("9").
+#
+# Returns `0L` if attribution is impossible (e.g. period-boundary-only
+# groups that carry no location-bearing events).
+#
+# @param events  A list of named lists, each representing one PBP row.
+#   Required fields per element: `event_type` (character), `location`
+#   (character, "h"/"v"/""), `team_id` (integer — not used for attribution
+#   here; location is the reliable signal).
+# @param home_id Integer team ID of the home team.
+# @param away_id Integer team ID of the away team.
+# @return A length-1 integer: `home_id`, `away_id`, or `0L`.
 #' @noRd
-#'
-#' Determine the **offense team ID** for a possession from its accumulated
-#' event rows.
-#'
-#' Mirrors the two-pass logic of Python `_offense_from_events`:
-#'
-#' **Pass 1 — scoring/shooting/turnover with location.**  Scans `events` for
-#' the first row whose `event_type` is in `.OFFENSE_SEEDING_EVENT_TYPES`
-#' (`"1"` MadeShot / `"2"` MissedShot / `"3"` FreeThrow / `"5"` Turnover)
-#' AND whose `location` is non-empty.  Returns `home_id` if `location == "h"`,
-#' `away_id` if `location == "v"`.
-#'
-#' **Pass 2 — any non-admin event with location.**  Scans for the first row
-#' with a non-empty `location` whose `event_type` is not one of the
-#' administrative denylist codes: Foul ("6"), StartPeriod ("12"),
-#' EndPeriod ("13"), Sub ("8"), Timeout ("9").
-#'
-#' Returns `0L` if attribution is impossible (e.g. period-boundary-only
-#' groups that carry no location-bearing events).
-#'
-#' @param events  A list of named lists, each representing one PBP row.
-#'   Required fields per element: `event_type` (character), `location`
-#'   (character, "h"/"v"/""), `team_id` (integer — not used for attribution
-#'   here; location is the reliable signal).
-#' @param home_id Integer team ID of the home team.
-#' @param away_id Integer team ID of the away team.
-#' @return A length-1 integer: `home_id`, `away_id`, or `0L`.
 .offense_from_events <- function(events, home_id, away_id) {
   if (length(events) == 0L) return(0L)
 
@@ -166,42 +162,41 @@
 # .build_possessions
 # ---------------------------------------------------------------------------
 
+# Build one row per possession from a hoopR play-by-play data frame.
+#
+# Mirrors the stateful row-loop of Python `build_possessions` /
+# `_build_possession_groups`, adapted to hoopR's V2 `event_type` codes and
+# column names (`home_score` / `away_score` already forward-filled running
+# totals, `sub_type` for FT trip labels).
+#
+# Possession boundaries (when to flush the current group):
+# - Made field goal (`event_type == "1"`)
+# - Turnover (`event_type == "5"`)
+# - Defensive rebound (`event_type == "4"` by the team NOT on offense)
+# - Made last free throw of a trip (`event_type == "3"` AND `.is_last_ft(sub_type)`
+#   AND NOT a technical FT AND score is present)
+# - Period change (period increments between rows)
+#
+# Non-boundary events (just accumulate, never flush on their own):
+# Foul ("6"), Sub ("8"), Timeout ("9"), JumpBall ("10"),
+# StartPeriod ("12"), EndPeriod ("13"), Other/Replay ("18").
+#
+# Offense seeding: only `.OFFENSE_SEEDING_EVENT_TYPES` ("1","2","3","5")
+# may seed `current_offense` — rebounding/admin events do not seed it.
+#
+# Points: offense team's `home_score`/`away_score` delta across the group.
+# Groups with `offense_team_id == 0` are attributed by score direction so the
+# per-team total always reconciles to the boxscore.
+#
+# @param pbp A data frame with hoopR V2/V3 PBP columns: `event_type`,
+#   `sub_type`, `location`, `team_id`, `home_score`, `away_score`, `period`,
+#   `game_id`, and optionally `start_event_idx` / `end_event_idx`.
+# @return A tibble with columns:
+#   `game_id`, `period`, `possession_number`, `offense_team_id`,
+#   `defense_team_id`, `points`, `start_event_idx`, `end_event_idx`,
+#   `second_chance` (logical — TRUE if the possession was extended by an
+#   offensive rebound; mirrors Python `is_second_chance`).
 #' @noRd
-#'
-#' Build one row per possession from a hoopR play-by-play data frame.
-#'
-#' Mirrors the stateful row-loop of Python `build_possessions` /
-#' `_build_possession_groups`, adapted to hoopR's V2 `event_type` codes and
-#' column names (`home_score` / `away_score` already forward-filled running
-#' totals, `sub_type` for FT trip labels).
-#'
-#' **Possession boundaries (when to flush the current group):**
-#' - Made field goal (`event_type == "1"`)
-#' - Turnover (`event_type == "5"`)
-#' - Defensive rebound (`event_type == "4"` by the team NOT on offense)
-#' - Made last free throw of a trip (`event_type == "3"` AND `.is_last_ft(sub_type)`
-#'   AND NOT a technical FT AND score is present)
-#' - Period change (period increments between rows)
-#'
-#' **Non-boundary events** (just accumulate, never flush on their own):
-#' Foul ("6"), Sub ("8"), Timeout ("9"), JumpBall ("10"),
-#' StartPeriod ("12"), EndPeriod ("13"), Other/Replay ("18").
-#'
-#' **Offense seeding:** only `.OFFENSE_SEEDING_EVENT_TYPES` ("1","2","3","5")
-#' may seed `current_offense` — rebounding/admin events do not seed it.
-#'
-#' **Points:** offense team's `home_score`/`away_score` delta across the group.
-#' Groups with `offense_team_id == 0` are attributed by score direction so the
-#' per-team total always reconciles to the boxscore.
-#'
-#' @param pbp A data frame with hoopR V2/V3 PBP columns: `event_type`,
-#'   `sub_type`, `location`, `team_id`, `home_score`, `away_score`, `period`,
-#'   `game_id`, and optionally `start_event_idx` / `end_event_idx`.
-#' @return A tibble with columns:
-#'   `game_id`, `period`, `possession_number`, `offense_team_id`,
-#'   `defense_team_id`, `points`, `start_event_idx`, `end_event_idx`,
-#'   `second_chance` (logical — TRUE if the possession was extended by an
-#'   offensive rebound; mirrors Python `is_second_chance`).
 .build_possessions <- function(pbp) {
   if (is.null(pbp) || nrow(pbp) == 0L) {
     return(
@@ -441,18 +436,17 @@
 # .home_away_team_ids
 # ---------------------------------------------------------------------------
 
+# Determine the home and away team IDs from a hoopR play-by-play frame.
+#
+# Uses the `location` column ("h" = home side, "v" = visitor/away side)
+# combined with `team_id` to identify each side.  Only rows where
+# `team_id > 0` are considered (0 is the "no team" sentinel).
+#
+# @param pbp A hoopR PBP data frame with `location` and `team_id` columns.
+# @return A named integer vector `c(home = <id>, away = <id>)`.
+#   Returns `c(home = NA_integer_, away = NA_integer_)` if either side
+#   cannot be resolved.
 #' @noRd
-#'
-#' Determine the home and away team IDs from a hoopR play-by-play frame.
-#'
-#' Uses the `location` column ("h" = home side, "v" = visitor/away side)
-#' combined with `team_id` to identify each side.  Only rows where
-#' `team_id > 0` are considered (0 is the "no team" sentinel).
-#'
-#' @param pbp A hoopR PBP data frame with `location` and `team_id` columns.
-#' @return A named integer vector `c(home = <id>, away = <id>)`.
-#'   Returns `c(home = NA_integer_, away = NA_integer_)` if either side
-#'   cannot be resolved.
 .home_away_team_ids <- function(pbp) {
   locs <- pbp[["location"]]
   tids <- pbp[["team_id"]]
@@ -471,32 +465,31 @@
 # .attach_possession_lineups
 # ---------------------------------------------------------------------------
 
+# Attach on-court 5v5 lineups (10 player IDs) to each possession row.
+#
+# For each possession the starting lineup is read from the PBP row at
+# `start_event_idx` (a 1-based row index verified to have non-NA lineup
+# columns).  The 10 columns `away_player1..5` / `home_player1..5` in the
+# PBP frame are forward-filled at every row, so this is a vectorizable
+# row-index gather rather than a stateful loop.
+#
+# Assignment rule:
+# - If `offense_team_id == home_team_id` → `off_player_1..5 = home_player1..5`,
+#   `def_player_1..5 = away_player1..5`.
+# - Otherwise (offense is the away team) → assignment is swapped.
+#
+# Output ID dtype: integer — the player IDs are NBA `person_id` values
+# used as join keys for downstream RAPM / lineup models (Phase 6b).  The PBP
+# stores them as `numeric` (double); they are cast to `integer` here.
+#
+# @param possessions A data frame produced by `.build_possessions()` with
+#   columns `offense_team_id` and `start_event_idx`.
+# @param pbp The hoopR PBP data frame used to build `possessions`.  Must
+#   contain `away_player1`..`away_player5` and `home_player1`..`home_player5`
+#   (numeric `person_id` columns, forward-filled).
+# @return `possessions` with 10 additional integer columns appended:
+#   `off_player_1`..`off_player_5` and `def_player_1`..`def_player_5`.
 #' @noRd
-#'
-#' Attach on-court 5v5 lineups (10 player IDs) to each possession row.
-#'
-#' For each possession the starting lineup is read from the PBP row at
-#' `start_event_idx` (a 1-based row index verified to have non-NA lineup
-#' columns).  The 10 columns `away_player1..5` / `home_player1..5` in the
-#' PBP frame are forward-filled at every row, so this is a vectorizable
-#' row-index gather rather than a stateful loop.
-#'
-#' Assignment rule:
-#' - If `offense_team_id == home_team_id` → `off_player_1..5 = home_player1..5`,
-#'   `def_player_1..5 = away_player1..5`.
-#' - Otherwise (offense is the away team) → assignment is swapped.
-#'
-#' Output ID dtype: **integer** — the player IDs are NBA `person_id` values
-#' used as join keys for downstream RAPM / lineup models (Phase 6b).  The PBP
-#' stores them as `numeric` (double); they are cast to `integer` here.
-#'
-#' @param possessions A data frame produced by `.build_possessions()` with
-#'   columns `offense_team_id` and `start_event_idx`.
-#' @param pbp The hoopR PBP data frame used to build `possessions`.  Must
-#'   contain `away_player1`..`away_player5` and `home_player1`..`home_player5`
-#'   (numeric `person_id` columns, forward-filled).
-#' @return `possessions` with 10 additional integer columns appended:
-#'   `off_player_1`..`off_player_5` and `def_player_1`..`def_player_5`.
 .attach_possession_lineups <- function(possessions, pbp) {
   if (is.null(possessions) || nrow(possessions) == 0L) {
     possessions[, paste0(c("off_player_", "def_player_"), rep(1:5, each = 2L))] <-
@@ -554,15 +547,15 @@
 
 
 # ---------------------------------------------------------------------------
-# nba_possessions (public)
+# nba_possession_lineups (public)
 # ---------------------------------------------------------------------------
 
 #' **Get NBA Possession-Level Stint Matrix**
-#' @name nba_possessions
+#' @name nba_possession_lineups
 NULL
 #' @title
 #' **Get NBA Possession-Level Stint Matrix**
-#' @rdname nba_possessions
+#' @rdname nba_possession_lineups
 #' @author Saiem Gilani
 #' @param game_id NBA Stats game id. 10-character zero-padded string
 #'   (e.g., `"0022200001"`).
@@ -596,9 +589,9 @@ NULL
 #' @export
 #' @details
 #' ```r
-#'  nba_possessions(game_id = "0022200001")
+#'  nba_possession_lineups(game_id = "0022200001")
 #' ```
-nba_possessions <- function(game_id, ...) {
+nba_possession_lineups <- function(game_id, ...) {
   pbp  <- nba_pbp(game_id = game_id, on_court = TRUE, version = "v3")
   poss <- .build_possessions(pbp)
   .attach_possession_lineups(poss, pbp)

@@ -243,12 +243,12 @@ test_that("possession on-court ids are all in the boxscore roster (independent o
 })
 
 # ---------------------------------------------------------------------------
-# nba_possessions() — gated live test (NBA_STATS_TESTS=1)
+# nba_possession_lineups() — gated live test (NBA_STATS_TESTS=1)
 # ---------------------------------------------------------------------------
 
-test_that("nba_possessions() returns a valid stint matrix (live)", {
+test_that("nba_possession_lineups() returns a valid stint matrix (live)", {
   skip_nba_stats_test()
-  poss <- nba_possessions(game_id = "0022200001")
+  poss <- nba_possession_lineups(game_id = "0022200001")
   expect_true(nrow(poss) > 0)
   expect_true(all(c("offense_team_id", "points", "off_player_1", "def_player_5") %in% colnames(poss)))
   expect_true(all(poss$points >= 0))
