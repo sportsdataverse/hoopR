@@ -109,3 +109,42 @@ test_that(".OFFENSE_SEEDING_EVENT_TYPES contains only shot/turnover event_type c
   # Exactly 4 elements
   expect_equal(length(.OFFENSE_SEEDING_EVENT_TYPES), 4L)
 })
+
+# ---------------------------------------------------------------------------
+# .build_possessions — boxscore-points reconciliation (independent oracle)
+# ---------------------------------------------------------------------------
+
+test_that("possession points reconcile to the boxscore (independent oracle)", {
+  for (gid in c("0022200001", "0022300001")) {
+    pbp <- readRDS(test_path("fixtures", "nba_engine", paste0("pbp_", gid, ".rds")))
+    box <- readRDS(test_path("fixtures", "nba_engine", paste0("box_", gid, ".rds")))
+
+    poss <- .build_possessions(pbp)
+
+    # Per-team possession points
+    agg <- dplyr::group_by(poss, offense_team_id)
+    agg <- dplyr::summarise(agg, pts = sum(points), .groups = "drop")
+
+    # Boxscore oracle: sum player points per team from home/away player tables
+    home_df <- box[["home_team_player_traditional"]]
+    away_df <- box[["away_team_player_traditional"]]
+    home_tid <- unique(home_df$team_id)
+    away_tid <- unique(away_df$team_id)
+    home_pts <- sum(as.numeric(home_df$points), na.rm = TRUE)
+    away_pts <- sum(as.numeric(away_df$points), na.rm = TRUE)
+    box_pts <- c(home_pts, away_pts)
+    names(box_pts) <- as.character(c(home_tid, away_tid))
+
+    for (tid_chr in names(box_pts)) {
+      expected <- as.integer(box_pts[[tid_chr]])
+      tid_int  <- as.integer(tid_chr)
+      actual   <- agg$pts[agg$offense_team_id == tid_int]
+      if (length(actual) == 0L) actual <- 0L
+      expect_equal(
+        actual, expected,
+        label = paste0("game=", gid, " team=", tid_chr,
+                       " engine=", actual, " boxscore=", expected)
+      )
+    }
+  }
+})

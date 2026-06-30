@@ -1,4 +1,5 @@
 #' @importFrom stringr str_detect str_match
+#' @importFrom dplyr bind_rows
 
 # ---------------------------------------------------------------------------
 # NBA possession event-classification helpers
@@ -143,4 +144,273 @@
   }
 
   0L
+}
+
+
+# ---------------------------------------------------------------------------
+# .build_possessions
+# ---------------------------------------------------------------------------
+
+#' @noRd
+#'
+#' Build one row per possession from a hoopR play-by-play data frame.
+#'
+#' Mirrors the stateful row-loop of Python `build_possessions` /
+#' `_build_possession_groups`, adapted to hoopR's V2 `event_type` codes and
+#' column names (`home_score` / `away_score` already forward-filled running
+#' totals, `sub_type` for FT trip labels).
+#'
+#' **Possession boundaries (when to flush the current group):**
+#' - Made field goal (`event_type == "1"`)
+#' - Turnover (`event_type == "5"`)
+#' - Defensive rebound (`event_type == "4"` by the team NOT on offense)
+#' - Made last free throw of a trip (`event_type == "3"` AND `.is_last_ft(sub_type)`
+#'   AND NOT a technical FT AND score is present)
+#' - Period change (period increments between rows)
+#'
+#' **Non-boundary events** (just accumulate, never flush on their own):
+#' Foul ("6"), Sub ("8"), Timeout ("9"), JumpBall ("10"),
+#' StartPeriod ("12"), EndPeriod ("13"), Other/Replay ("18").
+#'
+#' **Offense seeding:** only `.OFFENSE_SEEDING_EVENT_TYPES` ("1","2","3","5")
+#' may seed `current_offense` — rebounding/admin events do not seed it.
+#'
+#' **Points:** offense team's `home_score`/`away_score` delta across the group.
+#' Groups with `offense_team_id == 0` are attributed by score direction so the
+#' per-team total always reconciles to the boxscore.
+#'
+#' @param pbp A data frame with hoopR V2/V3 PBP columns: `event_type`,
+#'   `sub_type`, `location`, `team_id`, `home_score`, `away_score`, `period`,
+#'   `game_id`, and optionally `start_event_idx` / `end_event_idx`.
+#' @return A tibble with columns:
+#'   `game_id`, `period`, `possession_number`, `offense_team_id`,
+#'   `defense_team_id`, `points`, `start_event_idx`, `end_event_idx`.
+.build_possessions <- function(pbp) {
+  if (is.null(pbp) || nrow(pbp) == 0L) {
+    return(
+      data.frame(
+        game_id = character(), period = integer(),
+        possession_number = integer(),
+        offense_team_id = integer(), defense_team_id = integer(),
+        points = integer(),
+        start_event_idx = integer(), end_event_idx = integer(),
+        stringsAsFactors = FALSE
+      )
+    )
+  }
+
+  # ── Resolve home / away team IDs from location column ──────────────────────
+  home_rows <- pbp[!is.na(pbp$location) & pbp$location == "h" &
+                     !is.na(pbp$team_id) & pbp$team_id != 0L, ]
+  away_rows <- pbp[!is.na(pbp$location) & pbp$location == "v" &
+                     !is.na(pbp$team_id) & pbp$team_id != 0L, ]
+  if (nrow(home_rows) == 0L || nrow(away_rows) == 0L) {
+    return(
+      data.frame(
+        game_id = character(), period = integer(),
+        possession_number = integer(),
+        offense_team_id = integer(), defense_team_id = integer(),
+        points = integer(),
+        start_event_idx = integer(), end_event_idx = integer(),
+        stringsAsFactors = FALSE
+      )
+    )
+  }
+  home_id <- home_rows$team_id[1L]
+  away_id <- away_rows$team_id[1L]
+
+  game_id <- as.character(pbp$game_id[1L])
+
+  # ── Event-type codes (hoopR V2 strings) ────────────────────────────────────
+  # Non-boundary: foul, sub, timeout, jump_ball, start/end period, other/replay
+  .NON_BOUNDARY <- c("6", "8", "9", "10", "12", "13", "18")
+
+  # ── Stateful row loop ───────────────────────────────────────────────────────
+  n <- nrow(pbp)
+  records    <- vector("list", n)          # pre-allocate; trim at end
+  rec_idx    <- 0L
+
+  current         <- vector("list", n)     # accumulator for current group
+  cur_n           <- 0L
+  current_offense <- 0L
+  is_sc           <- FALSE
+  prev_period     <- NA_integer_
+  poss_num        <- 0L
+
+  # Forward-fill home_score / away_score (they may be NA between scoring events)
+  hs_vec <- as.numeric(pbp$home_score)
+  as_vec <- as.numeric(pbp$away_score)
+  last_home <- 0.0
+  last_away <- 0.0
+  ff_home   <- numeric(n)
+  ff_away   <- numeric(n)
+  for (i in seq_len(n)) {
+    v <- hs_vec[i]
+    if (!is.na(v) && v > 0) last_home <- v
+    ff_home[i] <- last_home
+    v <- as_vec[i]
+    if (!is.na(v) && v > 0) last_away <- v
+    ff_away[i] <- last_away
+  }
+
+  # Score at the start of the current group (updated on flush)
+  prev_home <- 0.0
+  prev_away <- 0.0
+
+  # Helper: flush current group into records
+  flush_group <- function() {
+    if (cur_n == 0L) return()
+
+    off <- .offense_from_events(current[seq_len(cur_n)], home_id, away_id)
+
+    end_home <- current[[cur_n]][["._home"]]
+    end_away <- current[[cur_n]][["._away"]]
+
+    if (off == 0L) {
+      # Unattributable group — attribute by score direction so totals reconcile
+      hd <- end_home - prev_home
+      ad <- end_away - prev_away
+      if (hd <= 0 && ad <= 0) {
+        # No score change: skip (update anchors but don't emit a possession)
+        prev_home <<- end_home
+        prev_away <<- end_away
+        # Reset state
+        cur_n           <<- 0L
+        current_offense <<- 0L
+        is_sc           <<- FALSE
+        return()
+      }
+      off <- if (hd > 0) home_id else away_id
+    }
+
+    def <- if (off == home_id) away_id else home_id
+
+    pts <- if (off == home_id) {
+      as.integer(end_home - prev_home)
+    } else {
+      as.integer(end_away - prev_away)
+    }
+
+    poss_num  <<- poss_num + 1L
+    rec_idx   <<- rec_idx + 1L
+    records[[rec_idx]] <<- list(
+      game_id           = game_id,
+      period            = current[[1L]][["period"]],
+      possession_number = poss_num,
+      offense_team_id   = as.integer(off),
+      defense_team_id   = as.integer(def),
+      points            = pts,
+      start_event_idx   = current[[1L]][["._idx"]],
+      end_event_idx     = current[[cur_n]][["._idx"]]
+    )
+
+    prev_home <<- end_home
+    prev_away <<- end_away
+    cur_n           <<- 0L
+    current_offense <<- 0L
+    is_sc           <<- FALSE
+  }
+
+  for (i in seq_len(n)) {
+    et       <- as.character(pbp$event_type[i] %||% "")
+    loc      <- as.character(pbp$location[i]   %||% "")
+    sub_type <- as.character(pbp$sub_type[i]   %||% "")
+    period   <- as.integer(pbp$period[i]        %||% 0L)
+    tid      <- as.integer(pbp$team_id[i]       %||% 0L)
+    if (is.na(tid)) tid <- 0L
+
+    # Period change → flush before appending current row
+    if (!is.na(prev_period) && period != prev_period) {
+      flush_group()
+    }
+    prev_period <- period
+
+    # Append row to current group
+    cur_n <- cur_n + 1L
+    current[[cur_n]] <- list(
+      event_type = et,
+      location   = loc,
+      sub_type   = sub_type,
+      team_id    = tid,
+      period     = period,
+      "._home"   = ff_home[i],
+      "._away"   = ff_away[i],
+      "._idx"    = i
+    )
+
+    # Seed current_offense from allowlist events only
+    if (current_offense == 0L && et %in% .OFFENSE_SEEDING_EVENT_TYPES) {
+      ev_team <- if (loc == "h") home_id else if (loc == "v") away_id else 0L
+      if (ev_team != 0L) current_offense <- ev_team
+    }
+
+    # Non-boundary events: just accumulate
+    if (et %in% .NON_BOUNDARY) next
+
+    # Boundary detection
+    ends_possession <- FALSE
+
+    if (et == "1") {
+      # Made field goal → always ends possession
+      ends_possession <- TRUE
+
+    } else if (et == "5") {
+      # Turnover → ends possession
+      ends_possession <- TRUE
+
+    } else if (et == "4") {
+      # Rebound: offensive (extends) vs defensive (ends)
+      reb_team <- tid
+      if (reb_team == 0L) {
+        # Team rebound — use location
+        reb_team <- if (loc == "h") home_id else if (loc == "v") away_id else 0L
+      }
+      if (current_offense != 0L && reb_team != 0L) {
+        if (reb_team == current_offense) {
+          # Offensive rebound → extend, mark second chance
+          is_sc <- TRUE
+        } else {
+          # Defensive rebound → ends possession
+          ends_possession <- TRUE
+        }
+      }
+
+    } else if (et == "3") {
+      # Free throw: technical FTs don't end a trip;
+      # last FT of a regular trip that was MADE ends possession.
+      # Missed last FT → defensive rebound ends it naturally.
+      is_tech <- grepl("Technical", sub_type, fixed = TRUE) ||
+                   grepl("technical", sub_type, fixed = TRUE)
+      if (!is_tech && .is_last_ft(sub_type)) {
+        # Check if score is present (non-zero forward-filled score means
+        # a scoring event has happened — the score column is non-NA/non-zero)
+        has_score <- ff_home[i] > 0 || ff_away[i] > 0
+        if (has_score) {
+          ends_possession <- TRUE
+        }
+      }
+    }
+
+    if (ends_possession) flush_group()
+  }
+
+  # Flush remaining events
+  flush_group()
+
+  if (rec_idx == 0L) {
+    return(
+      data.frame(
+        game_id = character(), period = integer(),
+        possession_number = integer(),
+        offense_team_id = integer(), defense_team_id = integer(),
+        points = integer(),
+        start_event_idx = integer(), end_event_idx = integer(),
+        stringsAsFactors = FALSE
+      )
+    )
+  }
+
+  # Assemble result
+  do.call(rbind, lapply(records[seq_len(rec_idx)], as.data.frame,
+                        stringsAsFactors = FALSE))
 }
