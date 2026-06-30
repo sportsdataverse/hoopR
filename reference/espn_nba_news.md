@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:35 UTC
+#> ℹ Data updated: 2026-06-30 19:34:02 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.04e7 Story Which c… Each year,… 2026-06-… FALSE   Keith… https:/… 46       
-#> 2  4.92e7 Head… Celtics… Celtics gu… 2026-06-… FALSE   NA     https:/… 41       
-#> 3  4.90e7 Story Live NB… We have th… 2026-06-… FALSE   ESPN   https:/… 46       
-#> 4  4.92e7 Head… Johnson… Michigan f… 2026-06-… FALSE   Jeff … https:/… 46       
-#> 5  4.92e7 Media What Be… What Benne… 2026-06-… FALSE   NA     https:/… 46       
+#> 1  4.84e7 Story 2026 NB… We're trac… 2026-06-… FALSE   ESPN   https:/… 46       
+#> 2  4.92e7 Media Shams: … Shams: LeB… 2026-06-… FALSE   NA     https:/… 46       
+#> 3  4.92e7 Media Rich Ei… Rich Eisen… 2026-06-… FALSE   NA     https:/… 46       
+#> 4  4.90e7 Story 2026 NB… We're grad… 2026-06-… FALSE   Zach … https:/… 46       
+#> 5  4.92e7 Head… LeBron … James has … 2026-06-… FALSE   NA     https:/… 46       
 # }
 ```

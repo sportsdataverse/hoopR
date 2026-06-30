@@ -40,21 +40,21 @@ Other NBA Crosswalk Functions:
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-13 04:57:47 UTC
-#> # A tibble: 537 × 21
+#> ℹ Data updated: 2026-06-29 12:21:38 UTC
+#> # A tibble: 599 × 21
 #>    season espn_team_id team_abbreviation player_name             espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                   <chr>          
 #>  1   2026            1 ATL               nickeil alexander walk… 4278039        
 #>  2   2026            1 ATL               tony bradley            4065673        
 #>  3   2026            1 ATL               dyson daniels           4869342        
 #>  4   2026            1 ATL               rayj dennis             4431941        
-#>  5   2026            1 ATL               keshon gilbert          4585618        
-#>  6   2026            1 ATL               mouhamed gueye          4712863        
-#>  7   2026            1 ATL               buddy hield             2990984        
-#>  8   2026            1 ATL               caleb houstan           4433623        
-#>  9   2026            1 ATL               jalen johnson           4701230        
-#> 10   2026            1 ATL               corey kispert           4280151        
-#> # ℹ 527 more rows
+#>  5   2026            1 ATL               zuby ejiofor            5106262        
+#>  6   2026            1 ATL               kingston flemings       5149077        
+#>  7   2026            1 ATL               keshon gilbert          4585618        
+#>  8   2026            1 ATL               mouhamed gueye          4712863        
+#>  9   2026            1 ATL               buddy hield             2990984        
+#> 10   2026            1 ATL               caleb houstan           4433623        
+#> # ℹ 589 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

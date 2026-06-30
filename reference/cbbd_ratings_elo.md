@@ -52,7 +52,7 @@ Other CBD Ratings Functions:
 ``` r
 # \donttest{
   try(cbbd_ratings_elo(season = 2024))
-#> ✖ 2026-06-24 02:48:33.307616: Invalid arguments or no Elo ratings available!
+#> ✖ 2026-06-30 19:32:58.280506: Invalid arguments or no Elo ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

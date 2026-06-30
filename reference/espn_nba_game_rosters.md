@@ -229,27 +229,11 @@ Saiem Gilani
 ``` r
 # \donttest{
 try(espn_nba_game_rosters(game_id = 401283399))
+#> ✖ 2026-06-30 19:33:59.151667: Invalid arguments or no game roster data for 401283399 available!
+#> ✖ Args: game_id = 401283399
+#> ✖ Error: ℹ In index: 4. Caused by error in `dplyr::rename()`: ! Can't rename columns that don't exist. ✖ Column `jersey` doesn't exist.
 #> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:32 UTC
-#> # A tibble: 24 × 175
-#>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
-#>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    
-#>  1    2993874 s:40~l:46~a… 0b5e3fdc-79… basketball   2.99e6 Kyle       Anderson 
-#>  2    3155526 s:40~l:46~a… 653c07b5-85… basketball   3.16e6 Dillon     Brooks   
-#>  3       6477 s:40~l:46~a… 585a3d05-44… basketball   2.56e6 Jonas      Valanciu…
-#>  4    3135045 s:40~l:46~a… fedd8adf-a9… basketball   3.14e6 Grayson    Allen    
-#>  5    4279888 s:40~l:46~a… de5f87e0-85… basketball   4.28e6 Ja         Morant   
-#>  6    3906665 s:40~l:46~a… ac9aa77d-db… basketball   3.91e6 Brandon    Clarke   
-#>  7    3908903 s:40~l:46~a… 6445df83-a2… basketball   3.91e6 Sean       McDermott
-#>  8    4277964 s:40~l:46~a… 4b87dfe2-26… basketball   4.28e6 Xavier     Tillman  
-#>  9    3134932 s:40~l:46~a… d4c8df92-1b… basketball   3.13e6 John       Konchar  
-#> 10    3135046 s:40~l:46~a… c4cddbcc-95… basketball   3.14e6 Tyus       Jones    
-#> # ℹ 14 more rows
-#> # ℹ 168 more variables: full_name <chr>, athlete_display_name <chr>,
-#> #   short_name <chr>, weight <int>, display_weight <chr>, height <int>,
-#> #   display_height <chr>, age <int>, date_of_birth <chr>, debut_year <int>,
-#> #   birth_place_city <chr>, birth_place_state <chr>, birth_place_country <chr>,
-#> #   citizenship <chr>, slug <chr>, headshot_href <chr>, headshot_alt <chr>,
-#> #   athlete_jersey_number <chr>, position_id <int>, position_name <chr>, …
+#> ℹ Data updated: 2026-06-30 19:33:58 UTC
+#> # A tibble: 0 × 0
 # }
 ```

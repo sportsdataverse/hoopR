@@ -515,13 +515,16 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playervsplayer.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_playoffpicture.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_possessions.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_rapm.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_schedule.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scheduleleaguev2int.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboard.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboardv2.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_shot_zones.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.html</loc></url>
@@ -553,6 +556,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_tidy_franchise_history.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_tidy_player_profile.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_tracking_aggregate.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_turnover_pct.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_usage_rate.html</loc></url>

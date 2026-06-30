@@ -49,7 +49,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_injuries())
 #> ── NBA injury report from basketball-reference.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:48:15 UTC
+#> ℹ Data updated: 2026-06-30 19:32:41 UTC
 #> # A tibble: 41 × 4
 #>    player             team_name         date_update       note                  
 #>    <chr>              <chr>             <chr>             <chr>                 
@@ -62,7 +62,7 @@ Other Basketball-Reference Functions:
 #>  7 Noa Essengue       Chicago Bulls     Wed, Dec 3, 2025  Out For Season (Shoul…
 #>  8 Jalen Smith        Chicago Bulls     Thu, Mar 26, 2026 Out For Season (Calf)…
 #>  9 Kyrie Irving       Dallas Mavericks  Wed, Feb 18, 2026 Out For Season (Knee)…
-#> 10 Dereck Lively II   Dallas Mavericks  Sun, Dec 21, 2025 Out For Season (Foot)…
+#> 10 Dereck Lively II   Dallas Mavericks  Fri, Jun 26, 2026 Out For Season (Foot)…
 #> # ℹ 31 more rows
 # }
 ```

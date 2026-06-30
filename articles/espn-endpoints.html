@@ -628,12 +628,12 @@ feed and the calendar.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
 <span><span class="co">#&gt;   headline                                                             published</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Which colleges have produced the most No.1 NBA draft picks?          2026-06-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Celtics' Derrick White named Colorado president of basketball strat… 2026-06-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Arkansas' Darius Acuff Jr. dives into relationship with his idol Al… 2026-06-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Alabama's Labaron Philon Jr. explains what it takes to be a villain  2026-06-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Kentucky's Jayden Quaintance explains love for chess, NBA Draft Pro… 2026-06-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Dailyn Swain will not let anything get in the way of his NBA dreams  2026-06-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Vanderbilt lands class of 2027 top-20 guard Gabe Nesmith             2026-06-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Transfers, recruits and roster moves for key men's NCAA basketball … 2026-06-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Ranking the top 100 men's basketball transfers for 2026-27           2026-06-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Elliot Cadeau plans to remain at Michigan after May's exit           2026-06-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Clippers draft pick Narcisse Ngoy plans to play at Auburn            2026-06-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Ex-NCAA players expected to change pleas in point-shaving case       2026-06-…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -928,7 +928,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 870</span></span>
+<span><span class="co">#&gt; [1] 29</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>

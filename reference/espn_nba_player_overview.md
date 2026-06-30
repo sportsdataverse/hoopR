@@ -188,12 +188,12 @@ Saiem Gilani
   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:40 UTC
+#> ℹ Data updated: 2026-06-30 19:34:06 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:40 UTC
+#> ℹ Data updated: 2026-06-30 19:34:06 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -201,36 +201,33 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:40 UTC
+#> ℹ Data updated: 2026-06-30 19:34:06 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:40 UTC
+#> ℹ Data updated: 2026-06-30 19:34:06 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 2026 NBA draft: No. 1 pick fashion since … "From Paol… 2026-06-… J.J. … Story
-#>  2 Where are the 2016 Cavs now? 10 years aft… "From LeBr… 2026-06-… Brian… Story
-#>  3 Where does Stephen A. think LeBron should… "Where doe… 2026-06-… NA     Media
-#>  4 The five biggest questions for the Lakers… "Will LeBr… 2026-06-… Dave … Story
-#>  5 LeBron, Kevin Love and more reunite for C… "Members o… 2026-06-… Antho… Story
-#>  6 J-Will: Lakers need to keep LeBron to hel… "J-Will: L… 2026-06-… NA     Media
-#>  7 Windhorst: Six storylines already shaping… "Why is th… 2026-06-… Brian… Story
-#>  8 NBA offseason 2026: 10 teams that will de… "With LeBr… 2026-06-… Tim B… Story
-#>  9 Which NBA draft class has the most champi… "The 2003 … 2026-06-… Keith… Story
-#> 10 Carmelo: I don't know if LeBron knows wha… "Carmelo: … 2026-06-… NA     Media
-#> 11 How Stephen A. feels about LeBron's GOAT … "How Steph… 2026-06-… NA     Media
-#> 12 LeBron James on GOAT debate: 'I'm not tak… "LeBron Ja… 2026-06-… NA     Head…
-#> 13 Nelly Korda gives LeBron a '10 out of 10'… "Nelly Kor… 2026-06-… NA     Media
+#>  1 Shams: LeBron will enter free agency, end… "Shams: Le… 2026-06-… NA     Media
+#>  2 Rich Eisen wonders what's next for LeBron… "Rich Eise… 2026-06-… NA     Media
+#>  3 LeBron James informs Lakers he plans to p… "James has… 2026-06-… NA     Head…
+#>  4 Perk: LeBron would make Warriors legit ti… "Perk: LeB… 2026-06-… NA     Media
+#>  5 NBA free agency 2026: Bobby Marks' 30-tea… "Bobby Mar… 2026-06-… Bobby… Story
+#>  6 Kristaps Porzingis agrees to 2-year, $40M… "Free agen… 2026-06-… Antho… Head…
+#>  7 Sources: Warriors eye LeBron, AD moves as… "The Warri… 2026-06-… Antho… Head…
+#>  8 How Draymond declining player option coul… "How Draym… 2026-06-… NA     Media
+#>  9 Could LeBron leave the Lakers and join th… "Could LeB… 2026-06-… NA     Media
+#> 10 NBA free agency intel: What we're hearing… "Which pla… 2026-06-… ESPN   Story
+#> 11 NBA free agency 2026: How much all 30 tea… "Which fro… 2026-06-… Bobby… Story
+#> 12 Why Stephen A. isn't concerned that Laker… "Why Steph… 2026-06-… NA     Media
+#> 13 NBA free agency 2026: How all 30 teams ca… "Major mov… 2026-06-… NBA i… Story
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:40 UTC
-#> # A tibble: 1 × 1
-#>   outlook
-#>   <chr>  
-#> 1 NA     
+#> ℹ Data updated: 2026-06-30 19:34:06 UTC
+#> # A tibble: 0 × 0
 #> 
 # }
 ```

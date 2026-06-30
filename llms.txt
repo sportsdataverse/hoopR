@@ -2273,10 +2273,20 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API Playoff Picture**
 
+- [`nba_possession_lineups()`](https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.md)
+  :
+
+  **Get NBA Possession-Level Stint Matrix**
+
 - [`nba_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_possessions.md)
   :
 
   **Estimated Possessions**
+
+- [`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md)
+  :
+
+  **Fit a Ridge-Regression RAPM Model from Possession Data**
 
 - [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
   :
@@ -2307,6 +2317,12 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Scoreboard V3**
+
+- [`nba_shot_zones()`](https://hoopR.sportsdataverse.org/reference/nba_shot_zones.md)
+  :
+
+  **Fetch NBA Play-by-Play and Classify Field-Goal Attempts by Shot
+  Zone**
 
 - [`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md)
   :
@@ -2470,6 +2486,11 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Get NBA Stats API Today's Scoreboard**
+
+- [`nba_tracking_aggregate()`](https://hoopR.sportsdataverse.org/reference/nba_tracking_aggregate.md)
+  :
+
+  **Aggregate NBA Player-Tracking Stats Across Multiple Seasons**
 
 - [`nba_true_shooting_pct()`](https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.md)
   :

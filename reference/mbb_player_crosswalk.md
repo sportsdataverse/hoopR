@@ -63,70 +63,70 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_player_crosswalk(season = 2025))
-#> ✖ 2026-06-24 02:55:08.350917: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:33.208317: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:09.298807: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:34.730716: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:09.80098: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:35.393776: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:10.096191: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:35.564978: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:10.509387: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:35.995898: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:10.877372: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:36.256725: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:11.03527: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:36.441214: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:11.41077: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:36.725834: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:11.562722: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:36.971022: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:11.71919: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:37.249148: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:12.055816: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:37.47703: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:12.206318: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:37.893874: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:12.356322: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:38.081565: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:12.740375: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:38.245966: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:13.029158: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:38.487127: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:13.35949: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:38.715406: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:13.891166: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:38.925197: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:14.246226: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:39.148972: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:14.404493: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:39.393255: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:14.687681: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:39.661703: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:14.844413: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:40.040348: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:15.122931: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:40.338714: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:15.278371: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:40.62379: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:15.426637: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:40.979684: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:15.766939: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:41.20293: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:15.92741: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:41.426837: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:16.098552: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:41.621688: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:16.253104: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:41.821217: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:16.57355: no Fox CBK teams data available!
+#> ✖ 2026-06-30 19:39:42.132894: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-06-24 02:55:48.769491: No roster data available for team_id=2272, season=2025
+#> ✖ 2026-06-30 19:40:38.731824: No roster data available for team_id=2272, season=2025
 #> ✖ Args: league = "mens-college-basketball", team_id = 2272L, season = 2025
 #> ✖ Error: The API returned an error
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:56:56 UTC
-#> # A tibble: 5,632 × 17
+#> ℹ Data updated: 2026-06-30 19:43:39 UTC
+#> # A tibble: 5,584 × 17
 #>    season espn_team_id team_abbreviation player_name      espn_athlete_id
 #>     <int>        <int> <chr>             <chr>            <chr>          
 #>  1   2025         2000 ACU               christian alston 5241312        
@@ -139,7 +139,7 @@ Other MBB Crosswalk Functions:
 #>  8   2025         2000 ACU               cbo newton       5177575        
 #>  9   2025         2000 ACU               yaniel rivera    5177702        
 #> 10   2025         2000 ACU               joseph scott     5314818        
-#> # ℹ 5,622 more rows
+#> # ℹ 5,574 more rows
 #> # ℹ 12 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
 #> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,

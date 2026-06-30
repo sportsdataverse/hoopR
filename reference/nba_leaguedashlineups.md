@@ -252,6 +252,9 @@ Other NBA League Functions:
 Other NBA Lineup Functions:
 [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md),
 [`nba_leaguelineupviz()`](https://hoopR.sportsdataverse.org/reference/nba_leaguelineupviz.md),
+[`nba_possession_lineups()`](https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.md),
+[`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md),
+[`nba_shot_zones()`](https://hoopR.sportsdataverse.org/reference/nba_shot_zones.md),
 [`nba_shotchartlineupdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.md),
 [`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md)
 

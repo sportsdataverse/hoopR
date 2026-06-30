@@ -136,8 +136,8 @@ Saiem Gilani
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:49:54 UTC
-#> # A tibble: 17 × 104
+#> ℹ Data updated: 2026-06-30 19:34:20 UTC
+#> # A tibble: 18 × 104
 #>    team_id team_uid       team_slug    team_location team_name team_abbreviation
 #>      <int> <chr>          <chr>        <chr>         <chr>     <chr>            
 #>  1      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
@@ -157,6 +157,7 @@ try(espn_nba_team_current_roster(team_id = 13))
 #> 15      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
 #> 16      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
 #> 17      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> 18      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
 #> # ℹ 98 more variables: team_display_name <chr>, team_short_name <chr>,
 #> #   team_color <chr>, team_alternate_color <chr>, team_is_active <lgl>,
 #> #   franchise..ref <chr>, franchise.id <chr>, franchise.uid <chr>,
