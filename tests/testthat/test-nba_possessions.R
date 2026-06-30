@@ -148,3 +148,27 @@ test_that("possession points reconcile to the boxscore (independent oracle)", {
     }
   }
 })
+
+# ---------------------------------------------------------------------------
+# .build_possessions — second_chance flag (Python is_second_chance parity)
+# ---------------------------------------------------------------------------
+
+test_that(".build_possessions emits a logical second_chance flag", {
+  for (gid in c("0022200001", "0022300001")) {
+    pbp  <- readRDS(test_path("fixtures", "nba_engine", paste0("pbp_", gid, ".rds")))
+    poss <- .build_possessions(pbp)
+
+    # Column present and logical-typed
+    expect_true("second_chance" %in% colnames(poss),
+                label = paste0("game=", gid, " has second_chance column"))
+    expect_true(is.logical(poss$second_chance),
+                label = paste0("game=", gid, " second_chance is logical"))
+
+    # Both fixture games contain offensive rebounds → at least one second-chance
+    # possession, but the vast majority of possessions are not second-chance.
+    expect_true(any(poss$second_chance),
+                label = paste0("game=", gid, " has >=1 second-chance possession"))
+    expect_false(all(poss$second_chance),
+                 label = paste0("game=", gid, " not all possessions are second-chance"))
+  }
+})

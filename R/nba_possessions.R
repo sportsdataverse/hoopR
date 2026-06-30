@@ -11,6 +11,21 @@
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
+# Small utilities
+# ---------------------------------------------------------------------------
+
+#' @noRd
+#'
+#' Coerce a possibly-NA / NULL / length-0 scalar to the empty string `""`.
+#' Guards the `location` reads so a NA `location` does not stringify to the
+#' literal `"NA"` (which has `nchar == 2 > 0` and would be mistaken for a
+#' real "h"/"v" location on real-world data).
+.na_to_empty <- function(x) {
+  if (length(x) == 0L || is.null(x) || is.na(x)) "" else as.character(x)
+}
+
+
+# ---------------------------------------------------------------------------
 # Offense-seeding allowlist
 # ---------------------------------------------------------------------------
 
@@ -126,7 +141,7 @@
   # Pass 1: first scoring/shooting/turnover event with non-empty location
   for (ev in events) {
     et  <- ev[["event_type"]] %||% ""
-    loc <- ev[["location"]]   %||% ""
+    loc <- .na_to_empty(ev[["location"]])
     if (et %in% .OFFENSE_SEEDING_EVENT_TYPES && nchar(loc) > 0L) {
       team <- loc_to_team(loc)
       if (team != 0L) return(team)
@@ -136,7 +151,7 @@
   # Pass 2: first non-admin event with a non-empty location
   for (ev in events) {
     et  <- ev[["event_type"]] %||% ""
-    loc <- ev[["location"]]   %||% ""
+    loc <- .na_to_empty(ev[["location"]])
     if (nchar(loc) > 0L && !(et %in% .ADMIN_TYPES)) {
       team <- loc_to_team(loc)
       if (team != 0L) return(team)
@@ -184,7 +199,9 @@
 #'   `game_id`, and optionally `start_event_idx` / `end_event_idx`.
 #' @return A tibble with columns:
 #'   `game_id`, `period`, `possession_number`, `offense_team_id`,
-#'   `defense_team_id`, `points`, `start_event_idx`, `end_event_idx`.
+#'   `defense_team_id`, `points`, `start_event_idx`, `end_event_idx`,
+#'   `second_chance` (logical — TRUE if the possession was extended by an
+#'   offensive rebound; mirrors Python `is_second_chance`).
 .build_possessions <- function(pbp) {
   if (is.null(pbp) || nrow(pbp) == 0L) {
     return(
@@ -194,6 +211,7 @@
         offense_team_id = integer(), defense_team_id = integer(),
         points = integer(),
         start_event_idx = integer(), end_event_idx = integer(),
+        second_chance = logical(),
         stringsAsFactors = FALSE
       )
     )
@@ -212,6 +230,7 @@
         offense_team_id = integer(), defense_team_id = integer(),
         points = integer(),
         start_event_idx = integer(), end_event_idx = integer(),
+        second_chance = logical(),
         stringsAsFactors = FALSE
       )
     )
@@ -301,7 +320,8 @@
       defense_team_id   = as.integer(def),
       points            = pts,
       start_event_idx   = current[[1L]][["._idx"]],
-      end_event_idx     = current[[cur_n]][["._idx"]]
+      end_event_idx     = current[[cur_n]][["._idx"]],
+      second_chance     = is_sc
     )
 
     prev_home <<- end_home
@@ -313,7 +333,7 @@
 
   for (i in seq_len(n)) {
     et       <- as.character(pbp$event_type[i] %||% "")
-    loc      <- as.character(pbp$location[i]   %||% "")
+    loc      <- .na_to_empty(pbp$location[i])
     sub_type <- as.character(pbp$sub_type[i]   %||% "")
     period   <- as.integer(pbp$period[i]        %||% 0L)
     tid      <- as.integer(pbp$team_id[i]       %||% 0L)
@@ -405,6 +425,7 @@
         offense_team_id = integer(), defense_team_id = integer(),
         points = integer(),
         start_event_idx = integer(), end_event_idx = integer(),
+        second_chance = logical(),
         stringsAsFactors = FALSE
       )
     )
