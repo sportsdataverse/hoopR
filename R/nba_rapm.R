@@ -8,14 +8,21 @@
 # ---------------------------------------------------------------------------
 
 # Schema for the 0-row empty sentinel (6 columns, correct types).
-.RAPM_EMPTY_FRAME <- data.frame(
-  player_id = integer(0),
-  o_rapm    = numeric(0),
-  d_rapm    = numeric(0),
-  rapm      = numeric(0),
-  off_poss  = integer(0),
-  def_poss  = integer(0)
-)
+# Routed through the standard hoopR pipeline so the empty return also
+# carries the hoopR_data class and attributes.
+.rapm_empty_frame <- function() {
+  data.frame(
+    player_id = integer(0),
+    o_rapm    = numeric(0),
+    d_rapm    = numeric(0),
+    rapm      = numeric(0),
+    off_poss  = integer(0),
+    def_poss  = integer(0)
+  ) |>
+    dplyr::as_tibble() |>
+    janitor::clean_names() |>
+    make_hoopR_data("NBA RAPM", Sys.time())
+}
 
 #' **Fit a Ridge-Regression RAPM Model from Possession Data**
 #' @name nba_rapm
@@ -69,7 +76,7 @@ nba_rapm <- function(possessions, ...) {
 
   # Empty design → 0-row frame with correct schema (never-raise)
   if (P == 0L) {
-    return(.RAPM_EMPTY_FRAME)
+    return(.rapm_empty_frame())
   }
 
   X <- des$X
@@ -85,23 +92,33 @@ nba_rapm <- function(possessions, ...) {
   # to a different fold so consecutive possessions are spread across folds.
   # This makes nba_rapm() reproducible by construction — identical output on
   # every call without the caller needing set.seed().
-  n      <- nrow(X)
-  nf     <- min(10L, n)                       # 10-fold, or fewer if tiny n
-  foldid <- ((seq_len(n) - 1L) %% nf) + 1L
-  fit <- glmnet::cv.glmnet(X, y, alpha = 0, intercept = FALSE, foldid = foldid)
+  n  <- nrow(X)
+  nf <- min(10L, n)                       # 10-fold, or fewer if tiny n
 
-  # Extract coefficient vector at lambda.min (length 1 + 2P from glmnet;
-  # position 1 is the intercept placeholder even with intercept=FALSE).
-  # Use stats::coef S3 dispatch — glmnet registers coef.cv.glmnet internally.
-  cf   <- as.numeric(stats::coef(fit, s = "lambda.min"))
-  coef <- cf[-1L]  # drop intercept slot → length 2P
+  # Guard: cv.glmnet requires at least 3 unique folds.  For degenerate
+  # small inputs (n < 3) fall back to a plain glmnet at a fixed lambda
+  # so the function never errors.
+  if (n < 3L) {
+    fit0 <- glmnet::glmnet(X, y, alpha = 0, intercept = FALSE, lambda = 0.1)
+    cf   <- as.numeric(stats::coef(fit0))
+    coef <- cf[-1L]
+  } else {
+    foldid <- ((seq_len(n) - 1L) %% nf) + 1L
+    fit    <- glmnet::cv.glmnet(X, y, alpha = 0, intercept = FALSE, foldid = foldid)
+
+    # Extract coefficient vector at lambda.min (length 1 + 2P from glmnet;
+    # position 1 is the intercept placeholder even with intercept=FALSE).
+    # Use stats::coef S3 dispatch — glmnet registers coef.cv.glmnet internally.
+    cf   <- as.numeric(stats::coef(fit, s = "lambda.min"))
+    coef <- cf[-1L]  # drop intercept slot → length 2P
+  }
 
   # Sign conventions (matches Python nba_rapm):
   #   o_rapm = coef[1..P]      * 100
   #   d_rapm = -coef[P+1..2P] * 100   (negate: good defender reduces pts)
   #   rapm   = o_rapm + d_rapm
-  o_rapm <- coef[seq_len(P)]          * 100
-  d_rapm <- -coef[seq(P + 1L, 2L * P)] * 100
+  o_rapm <- coef[seq_len(P)]             * 100
+  d_rapm <- -coef[seq(P + 1L, 2L * P)]  * 100
   rapm   <- o_rapm + d_rapm
 
   # Assemble output sorted by player_id
@@ -114,7 +131,10 @@ nba_rapm <- function(possessions, ...) {
     off_poss  = off_poss[ord],
     def_poss  = def_poss[ord],
     stringsAsFactors = FALSE
-  )
+  ) |>
+    dplyr::as_tibble() |>
+    janitor::clean_names() |>
+    make_hoopR_data("NBA RAPM", Sys.time())
 }
 
 # Column name vectors (mirrors Python _OFF / _DEF)
@@ -176,31 +196,21 @@ nba_rapm <- function(possessions, ...) {
   P          <- length(player_ids)
   n          <- nrow(possessions)
 
-  # Build index: player_id -> 1-based column position (1..P)
-  pid_idx <- integer(max(player_ids) + 1L)
-  for (k in seq_along(player_ids)) {
-    pid_idx[player_ids[k] + 1L] <- k
-  }
+  # Vectorized dense mapping: player_id -> 1-based column position (1..P).
+  # match() is O(P) and safe regardless of the numeric magnitude of NBA
+  # person_ids — no max(player_ids)+1 allocation needed.
+  #
+  # off_mat is n×5 (column-major in R); as.vector() reads column-major,
+  # so the row index that repeats 1..n five times is rep(seq_len(n), 5L).
+  # def_mat same shape → defense cols are P + match(id, player_ids).
+  off_col <- match(as.integer(as.vector(off_mat)), player_ids)
+  def_col <- P + match(as.integer(as.vector(def_mat)), player_ids)
 
-  # Accumulate (row_i, col_j) pairs for sparseMatrix
-  # Offense: col = pid_idx[id]        (1..P)
-  # Defense: col = P + pid_idx[id]    (P+1..2P)
-  row_idx <- integer(n * 10L)
-  col_idx <- integer(n * 10L)
-  cursor  <- 0L
+  row_off <- rep(seq_len(n), times = 5L)
+  row_def <- rep(seq_len(n), times = 5L)
 
-  for (r in seq_len(n)) {
-    for (k in 1:5) {
-      cursor <- cursor + 1L
-      row_idx[cursor] <- r
-      col_idx[cursor] <- pid_idx[off_mat[r, k] + 1L]           # offense col
-    }
-    for (k in 1:5) {
-      cursor <- cursor + 1L
-      row_idx[cursor] <- r
-      col_idx[cursor] <- P + pid_idx[def_mat[r, k] + 1L]       # defense col
-    }
-  }
+  row_idx <- c(row_off, row_def)
+  col_idx <- c(off_col, def_col)
 
   X <- Matrix::sparseMatrix(
     i    = row_idx,
