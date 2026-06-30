@@ -1,8 +1,11 @@
-## Tests for NBA possession event-classification helpers.
+## Tests for NBA possession event-classification helpers and public API.
 ##
 ## These test internal (unexported) helpers — access them via
 ## hoopR:::.is_last_ft() / hoopR:::.offense_from_events() after
 ## devtools::load_all().
+##
+## The live test at the bottom is gated by NBA_STATS_TESTS=1 (skip_nba_stats_test()).
+## All other tests run offline against captured fixtures.
 
 # ---------------------------------------------------------------------------
 # .is_last_ft — NBA/WNBA "N of N" + G-League "{N}PT" contract
@@ -237,4 +240,16 @@ test_that("possession on-court ids are all in the boxscore roster (independent o
       }
     }
   }
+})
+
+# ---------------------------------------------------------------------------
+# nba_possessions() — gated live test (NBA_STATS_TESTS=1)
+# ---------------------------------------------------------------------------
+
+test_that("nba_possessions() returns a valid stint matrix (live)", {
+  skip_nba_stats_test()
+  poss <- nba_possessions(game_id = "0022200001")
+  expect_true(nrow(poss) > 0)
+  expect_true(all(c("offense_team_id", "points", "off_player_1", "def_player_5") %in% colnames(poss)))
+  expect_true(all(poss$points >= 0))
 })
