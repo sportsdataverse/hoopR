@@ -34,6 +34,10 @@ possessions have NA lineup cells (never-raise).
 of possessions (~5,000–8,000) is needed for statistically meaningful
 estimates. Results from a single game (~150–250 possessions) are highly
 unstable and are provided here for pipeline illustration only.
+
+Results are \strong{deterministic}: the cross-validation uses fixed,
+construction-based folds (not random), so repeated calls on the same
+possessions return identical output with no need to set a seed.
 }
 \description{
 \strong{Fit a Ridge-Regression RAPM Model from Possession Data}

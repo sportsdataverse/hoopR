@@ -48,6 +48,10 @@ NULL
 #'   of possessions (~5,000–8,000) is needed for statistically meaningful
 #'   estimates. Results from a single game (~150–250 possessions) are highly
 #'   unstable and are provided here for pipeline illustration only.
+#'
+#'   Results are **deterministic**: the cross-validation uses fixed,
+#'   construction-based folds (not random), so repeated calls on the same
+#'   possessions return identical output with no need to set a seed.
 #' @keywords NBA Lineup Functions
 #' @family NBA Lineup Functions
 #' @export
@@ -76,8 +80,15 @@ nba_rapm <- function(possessions, ...) {
   off_poss <- as.integer(cs[seq_len(P)])
   def_poss <- as.integer(cs[seq(P + 1L, 2L * P)])
 
-  # Ridge regression: alpha = 0, no intercept, CV selects lambda.min
-  fit <- glmnet::cv.glmnet(X, y, alpha = 0, intercept = FALSE)
+  # Ridge regression: alpha = 0, no intercept, CV selects lambda.min.
+  # Deterministic CV folds (no RNG dependence): assign every k-th possession
+  # to a different fold so consecutive possessions are spread across folds.
+  # This makes nba_rapm() reproducible by construction — identical output on
+  # every call without the caller needing set.seed().
+  n      <- nrow(X)
+  nf     <- min(10L, n)                       # 10-fold, or fewer if tiny n
+  foldid <- ((seq_len(n) - 1L) %% nf) + 1L
+  fit <- glmnet::cv.glmnet(X, y, alpha = 0, intercept = FALSE, foldid = foldid)
 
   # Extract coefficient vector at lambda.min (length 1 + 2P from glmnet;
   # position 1 is the intercept placeholder even with intercept=FALSE).

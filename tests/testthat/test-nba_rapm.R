@@ -303,12 +303,12 @@ test_that("nba_rapm runs end-to-end on a real game (offline smoke)", {
   # Mean absolute RAPM is loosely bounded — 1 game is noisy but not explosive
   expect_true(abs(mean(out$rapm)) < 50)
 
-  # Deterministic when seed is fixed: second call with same seed gives identical output
-  set.seed(1L); out_a <- nba_rapm(poss)
-  set.seed(1L); out_b <- nba_rapm(poss)
+  # Deterministic by construction (fixed CV folds): a second call on the same
+  # possessions returns identical output with NO set.seed() between calls.
+  out2 <- nba_rapm(poss)
   expect_equal(
-    out_a[order(out_a$player_id), ]$rapm,
-    out_b[order(out_b$player_id), ]$rapm
+    out[order(out$player_id), ]$rapm,
+    out2[order(out2$player_id), ]$rapm
   )
 })
 
