@@ -1,5 +1,4 @@
 #' @importFrom stringr str_detect str_match
-#' @importFrom dplyr bind_rows mutate if_else
 
 # ---------------------------------------------------------------------------
 # NBA possession event-classification helpers
@@ -492,8 +491,12 @@
 #' @noRd
 .attach_possession_lineups <- function(possessions, pbp) {
   if (is.null(possessions) || nrow(possessions) == 0L) {
-    possessions[, paste0(c("off_player_", "def_player_"), rep(1:5, each = 2L))] <-
-      integer(0L)
+    # Never-raise: matrix-style assignment throws "subscript out of bounds" on a
+    # 0-row data.frame, so append each lineup column individually instead.
+    for (p in 1:5) {
+      possessions[[paste0("off_player_", p)]] <- integer(0L)
+      possessions[[paste0("def_player_", p)]] <- integer(0L)
+    }
     return(possessions)
   }
 

@@ -243,6 +243,20 @@ test_that("possession on-court ids are all in the boxscore roster (independent o
 })
 
 # ---------------------------------------------------------------------------
+# never-raise on empty PBP (off-season / invalid game id / API hiccup)
+# ---------------------------------------------------------------------------
+
+test_that("possession engine is never-raise on empty PBP", {
+  pbp <- readRDS(test_path("fixtures", "nba_engine", "pbp_0022200001.rds"))
+  empty <- head(pbp, 0)
+  poss0 <- .build_possessions(empty)
+  expect_equal(nrow(poss0), 0)
+  lin0 <- .attach_possession_lineups(poss0, empty)
+  expect_equal(nrow(lin0), 0)
+  expect_true(all(c(paste0("off_player_", 1:5), paste0("def_player_", 1:5)) %in% colnames(lin0)))
+})
+
+# ---------------------------------------------------------------------------
 # nba_possession_lineups() — gated live test (NBA_STATS_TESTS=1)
 # ---------------------------------------------------------------------------
 
