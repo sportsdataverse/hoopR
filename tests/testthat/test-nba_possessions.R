@@ -172,3 +172,69 @@ test_that(".build_possessions emits a logical second_chance flag", {
                  label = paste0("game=", gid, " not all possessions are second-chance"))
   }
 })
+
+# ---------------------------------------------------------------------------
+# .attach_possession_lineups — roster-membership gate (independent oracle)
+# ---------------------------------------------------------------------------
+
+test_that("possession on-court ids are all in the boxscore roster (independent oracle)", {
+  off_cols <- paste0("off_player_", 1:5)
+  def_cols <- paste0("def_player_", 1:5)
+
+  for (gid in c("0022200001", "0022300001")) {
+    pbp <- readRDS(test_path("fixtures", "nba_engine", paste0("pbp_", gid, ".rds")))
+    box <- readRDS(test_path("fixtures", "nba_engine", paste0("box_", gid, ".rds")))
+
+    poss <- .attach_possession_lineups(.build_possessions(pbp), pbp)
+
+    # Verify 10 new columns were added, all integer-typed
+    for (col in c(off_cols, def_cols)) {
+      expect_true(col %in% colnames(poss),
+                  label = paste0("game=", gid, " column ", col, " present"))
+      expect_true(is.integer(poss[[col]]),
+                  label = paste0("game=", gid, " column ", col, " is integer"))
+    }
+
+    # Build independent roster oracle from boxscore person_id columns
+    home_df  <- box[["home_team_player_traditional"]]
+    away_df  <- box[["away_team_player_traditional"]]
+    home_tid <- as.integer(home_df[["team_id"]][1L])
+    away_tid <- as.integer(away_df[["team_id"]][1L])
+    home_roster <- as.integer(home_df[["person_id"]])
+    away_roster <- as.integer(away_df[["person_id"]])
+
+    roster_by_team <- list()
+    roster_by_team[[as.character(home_tid)]] <- home_roster
+    roster_by_team[[as.character(away_tid)]] <- away_roster
+
+    # For each possession: off_player_1..5 must be in offense team's roster,
+    # def_player_1..5 must be in defense team's roster
+    off_tids <- dplyr::pull(poss, offense_team_id)
+    def_tids <- dplyr::pull(poss, defense_team_id)
+
+    for (i in seq_len(nrow(poss))) {
+      off_tid_chr <- as.character(off_tids[i])
+      def_tid_chr <- as.character(def_tids[i])
+      off_roster  <- roster_by_team[[off_tid_chr]]
+      def_roster  <- roster_by_team[[def_tid_chr]]
+
+      for (p in 1:5) {
+        off_id <- poss[[paste0("off_player_", p)]][i]
+        def_id <- poss[[paste0("def_player_", p)]][i]
+
+        expect_true(
+          off_id %in% off_roster,
+          label = paste0("game=", gid, " poss=", i,
+                         " off_player_", p, "=", off_id,
+                         " in offense roster (team=", off_tid_chr, ")")
+        )
+        expect_true(
+          def_id %in% def_roster,
+          label = paste0("game=", gid, " poss=", i,
+                         " def_player_", p, "=", def_id,
+                         " in defense roster (team=", def_tid_chr, ")")
+        )
+      }
+    }
+  }
+})

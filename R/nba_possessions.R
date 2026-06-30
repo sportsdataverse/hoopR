@@ -1,5 +1,5 @@
 #' @importFrom stringr str_detect str_match
-#' @importFrom dplyr bind_rows
+#' @importFrom dplyr bind_rows mutate if_else
 
 # ---------------------------------------------------------------------------
 # NBA possession event-classification helpers
@@ -434,4 +434,120 @@
   # Assemble result
   do.call(rbind, lapply(records[seq_len(rec_idx)], as.data.frame,
                         stringsAsFactors = FALSE))
+}
+
+
+# ---------------------------------------------------------------------------
+# .home_away_team_ids
+# ---------------------------------------------------------------------------
+
+#' @noRd
+#'
+#' Determine the home and away team IDs from a hoopR play-by-play frame.
+#'
+#' Uses the `location` column ("h" = home side, "v" = visitor/away side)
+#' combined with `team_id` to identify each side.  Only rows where
+#' `team_id > 0` are considered (0 is the "no team" sentinel).
+#'
+#' @param pbp A hoopR PBP data frame with `location` and `team_id` columns.
+#' @return A named integer vector `c(home = <id>, away = <id>)`.
+#'   Returns `c(home = NA_integer_, away = NA_integer_)` if either side
+#'   cannot be resolved.
+.home_away_team_ids <- function(pbp) {
+  locs <- pbp[["location"]]
+  tids <- pbp[["team_id"]]
+
+  home_mask <- !is.na(locs) & locs == "h" & !is.na(tids) & tids > 0L
+  away_mask <- !is.na(locs) & locs == "v" & !is.na(tids) & tids > 0L
+
+  home_id <- if (any(home_mask)) as.integer(tids[home_mask][1L]) else NA_integer_
+  away_id <- if (any(away_mask)) as.integer(tids[away_mask][1L]) else NA_integer_
+
+  c(home = home_id, away = away_id)
+}
+
+
+# ---------------------------------------------------------------------------
+# .attach_possession_lineups
+# ---------------------------------------------------------------------------
+
+#' @noRd
+#'
+#' Attach on-court 5v5 lineups (10 player IDs) to each possession row.
+#'
+#' For each possession the starting lineup is read from the PBP row at
+#' `start_event_idx` (a 1-based row index verified to have non-NA lineup
+#' columns).  The 10 columns `away_player1..5` / `home_player1..5` in the
+#' PBP frame are forward-filled at every row, so this is a vectorizable
+#' row-index gather rather than a stateful loop.
+#'
+#' Assignment rule:
+#' - If `offense_team_id == home_team_id` → `off_player_1..5 = home_player1..5`,
+#'   `def_player_1..5 = away_player1..5`.
+#' - Otherwise (offense is the away team) → assignment is swapped.
+#'
+#' Output ID dtype: **integer** — the player IDs are NBA `person_id` values
+#' used as join keys for downstream RAPM / lineup models (Phase 6b).  The PBP
+#' stores them as `numeric` (double); they are cast to `integer` here.
+#'
+#' @param possessions A data frame produced by `.build_possessions()` with
+#'   columns `offense_team_id` and `start_event_idx`.
+#' @param pbp The hoopR PBP data frame used to build `possessions`.  Must
+#'   contain `away_player1`..`away_player5` and `home_player1`..`home_player5`
+#'   (numeric `person_id` columns, forward-filled).
+#' @return `possessions` with 10 additional integer columns appended:
+#'   `off_player_1`..`off_player_5` and `def_player_1`..`def_player_5`.
+.attach_possession_lineups <- function(possessions, pbp) {
+  if (is.null(possessions) || nrow(possessions) == 0L) {
+    possessions[, paste0(c("off_player_", "def_player_"), rep(1:5, each = 2L))] <-
+      integer(0L)
+    return(possessions)
+  }
+
+  # Resolve home / away team IDs
+  ids     <- .home_away_team_ids(pbp)
+  home_id <- ids[["home"]]
+  away_id <- ids[["away"]]
+
+  # The 10 lineup columns in the PBP frame
+  home_cols <- paste0("home_player", 1:5)
+  away_cols <- paste0("away_player", 1:5)
+
+  # Vectorized row-index gather from pbp
+  idx <- dplyr::pull(possessions, start_event_idx)
+
+  # Extract home and away lineups for each possession's start row
+  # pbp[idx, col] returns a length-nrow(possessions) vector
+  home_mat <- vapply(
+    home_cols,
+    function(col) as.integer(pbp[[col]][idx]),
+    integer(length(idx))
+  )  # nrow x 5 matrix
+  away_mat <- vapply(
+    away_cols,
+    function(col) as.integer(pbp[[col]][idx]),
+    integer(length(idx))
+  )  # nrow x 5 matrix
+
+  # Determine offense/defense assignment per possession
+  off_ids <- dplyr::pull(possessions, offense_team_id)
+  is_home_offense <- off_ids == home_id
+
+  # Build off/def matrices: select row-wise between home_mat and away_mat
+  n <- length(idx)
+  off_mat <- matrix(0L, nrow = n, ncol = 5L)
+  def_mat <- matrix(0L, nrow = n, ncol = 5L)
+
+  for (p in 1:5) {
+    off_mat[, p] <- ifelse(is_home_offense, home_mat[, p], away_mat[, p])
+    def_mat[, p] <- ifelse(is_home_offense, away_mat[, p], home_mat[, p])
+  }
+
+  # Append columns to the possession frame
+  for (p in 1:5) {
+    possessions[[paste0("off_player_", p)]] <- off_mat[, p]
+    possessions[[paste0("def_player_", p)]] <- def_mat[, p]
+  }
+
+  possessions
 }
