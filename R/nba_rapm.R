@@ -3,9 +3,92 @@
 #
 # R port of sportsdataverse-py sportsdataverse/nba/nba_rapm.py::build_rapm_design.
 # Task 1: sparse design matrix builder (.build_rapm_design, internal @noRd).
-# Task 2: glmnet ridge fit (nba_rapm — TODO).
+# Task 2: glmnet ridge fit (nba_rapm — done).
 # Task 3: DESCRIPTION deps + public export (TODO).
 # ---------------------------------------------------------------------------
+
+# Schema for the 0-row empty sentinel (6 columns, correct types).
+.RAPM_EMPTY_FRAME <- data.frame(
+  player_id = integer(0),
+  o_rapm    = numeric(0),
+  d_rapm    = numeric(0),
+  rapm      = numeric(0),
+  off_poss  = integer(0),
+  def_poss  = integer(0)
+)
+
+#' Fit a ridge-regression RAPM model from possession data.
+#'
+#' Internal implementation. Uses \code{glmnet::cv.glmnet} (alpha = 0, ridge)
+#' with cross-validation to select \code{lambda.min}. Coefficients are scaled
+#' by 100 and the defense sign is flipped so that a good defender produces a
+#' POSITIVE \code{d_rapm} (mirrors the Python \code{nba_rapm} contract).
+#'
+#' @param possessions data.frame with columns \code{off_player_1..5},
+#'   \code{def_player_1..5} (integer player ids) and \code{points} (numeric).
+#' @param ... Reserved for future keyword arguments (currently ignored).
+#'
+#' @return A \code{data.frame} with columns:
+#'   \itemize{
+#'     \item \code{player_id} (integer) — sorted player ids.
+#'     \item \code{o_rapm} (numeric) — offensive RAPM (×100).
+#'     \item \code{d_rapm} (numeric) — defensive RAPM (×100, positive = good).
+#'     \item \code{rapm} (numeric) — total RAPM = \code{o_rapm + d_rapm}.
+#'     \item \code{off_poss} (integer) — possessions played on offense.
+#'     \item \code{def_poss} (integer) — possessions played on defense.
+#'   }
+#'   Rows are sorted by \code{player_id}. Returns a 0-row frame with the same
+#'   schema when input is empty or all possessions have NA lineup cells.
+#' @noRd
+nba_rapm <- function(possessions, ...) {
+  # Build sparse design (handles empty / all-NA → 0-player sentinel)
+  des <- .build_rapm_design(possessions)
+
+  P          <- length(des$player_ids)
+  player_ids <- des$player_ids
+
+  # Empty design → 0-row frame with correct schema (never-raise)
+  if (P == 0L) {
+    return(.RAPM_EMPTY_FRAME)
+  }
+
+  X <- des$X
+  y <- des$y
+
+  # Possession counts = column sums of the design matrix
+  cs       <- Matrix::colSums(X)
+  off_poss <- as.integer(cs[seq_len(P)])
+  def_poss <- as.integer(cs[seq(P + 1L, 2L * P)])
+
+  # Ridge regression: alpha = 0, no intercept, CV selects lambda.min
+  fit <- glmnet::cv.glmnet(X, y, alpha = 0, intercept = FALSE)
+
+  # Extract coefficient vector at lambda.min (length 1 + 2P from glmnet;
+  # position 1 is the intercept placeholder even with intercept=FALSE).
+  # Use stats::coef S3 dispatch — glmnet registers coef.cv.glmnet internally.
+  cf   <- as.numeric(stats::coef(fit, s = "lambda.min"))
+  coef <- cf[-1L]  # drop intercept slot → length 2P
+
+  # Sign conventions (matches Python nba_rapm):
+  #   o_rapm = coef[1..P]      * 100
+  #   d_rapm = -coef[P+1..2P] * 100   (negate: good defender reduces pts)
+  #   rapm   = o_rapm + d_rapm
+  o_rapm <- coef[seq_len(P)]          * 100
+  d_rapm <- -coef[seq(P + 1L, 2L * P)] * 100
+  rapm   <- o_rapm + d_rapm
+
+  # Assemble output sorted by player_id
+  ord <- order(player_ids)
+  data.frame(
+    player_id = player_ids[ord],
+    o_rapm    = o_rapm[ord],
+    d_rapm    = d_rapm[ord],
+    rapm      = rapm[ord],
+    off_poss  = off_poss[ord],
+    def_poss  = def_poss[ord],
+    stringsAsFactors = FALSE
+  )
+}
 
 # Column name vectors (mirrors Python _OFF / _DEF)
 .RAPM_OFF_COLS <- paste0("off_player_", 1:5)

@@ -149,3 +149,135 @@ test_that(".build_rapm_design drops possessions with NA lineup cells (never-rais
   expect_equal(length(des2$player_ids), 0L)
   expect_equal(nrow(des2$X), 0L)
 })
+
+# ===========================================================================
+# nba_rapm() — ridge fit + synthetic-recovery gate
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# Schema / sign / possession-counts test — tiny hand frame
+# ---------------------------------------------------------------------------
+
+test_that("nba_rapm returns correct schema on a tiny hand frame", {
+  # 6 players: 1,2,3 = offense; 4,5,6 = defense; 4 possessions
+  rows <- list(
+    list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 2),
+    list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 1),
+    list(off = c(4L, 5L, 6L, 9L, 10L), def = c(1L, 2L, 3L, 7L, 8L), pts = 0),
+    list(off = c(4L, 5L, 6L, 9L, 10L), def = c(1L, 2L, 3L, 7L, 8L), pts = 3)
+  )
+  df  <- .poss_df(rows)
+  out <- nba_rapm(df)
+
+  # 6-column schema
+  expect_true(is.data.frame(out))
+  expect_true(all(c("player_id", "o_rapm", "d_rapm", "rapm",
+                     "off_poss", "def_poss") %in% names(out)))
+
+  # Types
+  expect_true(is.integer(out$player_id))
+  expect_true(is.numeric(out$o_rapm))
+  expect_true(is.numeric(out$d_rapm))
+  expect_true(is.numeric(out$rapm))
+  expect_true(is.integer(out$off_poss))
+  expect_true(is.integer(out$def_poss))
+
+  # rapm == o_rapm + d_rapm (exactly, not just tolerance)
+  expect_equal(out$rapm, out$o_rapm + out$d_rapm)
+
+  # All 10 players present
+  expect_equal(nrow(out), 10L)
+
+  # Sorted by player_id
+  expect_equal(out$player_id, sort(out$player_id))
+
+  # Possession counts: each player appears on offense in 2 possessions
+  # and on defense in 2 possessions (symmetrically split)
+  poss_per_player <- 2L
+  expect_true(all(out$off_poss == poss_per_player | out$def_poss == poss_per_player))
+})
+
+# ---------------------------------------------------------------------------
+# Empty input — never-raise, returns 0-row frame with correct schema
+# ---------------------------------------------------------------------------
+
+test_that("nba_rapm returns 0-row schema frame on empty input (never-raise)", {
+  empty <- data.frame(
+    off_player_1 = integer(0), off_player_2 = integer(0),
+    off_player_3 = integer(0), off_player_4 = integer(0),
+    off_player_5 = integer(0),
+    def_player_1 = integer(0), def_player_2 = integer(0),
+    def_player_3 = integer(0), def_player_4 = integer(0),
+    def_player_5 = integer(0),
+    points       = numeric(0)
+  )
+
+  out <- nba_rapm(empty)
+
+  # Never raises
+  expect_true(is.data.frame(out))
+
+  # 0 rows
+  expect_equal(nrow(out), 0L)
+
+  # 6-column schema present
+  expect_true(all(c("player_id", "o_rapm", "d_rapm", "rapm",
+                     "off_poss", "def_poss") %in% names(out)))
+
+  # Correct types even on empty frame
+  expect_true(is.integer(out$player_id))
+  expect_true(is.numeric(out$o_rapm))
+  expect_true(is.numeric(out$d_rapm))
+  expect_true(is.numeric(out$rapm))
+  expect_true(is.integer(out$off_poss))
+  expect_true(is.integer(out$def_poss))
+})
+
+# ---------------------------------------------------------------------------
+# Synthetic-recovery gate — the binding model-correctness test
+# ---------------------------------------------------------------------------
+
+test_that("nba_rapm recovers planted player effects (synthetic recovery)", {
+  set.seed(42)
+  P         <- 40L
+  true_off  <- rnorm(P, 0, 0.06)
+  true_def  <- rnorm(P, 0, 0.06)
+  players   <- seq_len(P)
+  M         <- 8000L
+
+  rows <- vector("list", M)
+  for (m in seq_len(M)) {
+    pick <- sample(players, 10L)
+    off5 <- pick[1:5]
+    def5 <- pick[6:10]
+    pts  <- 1.05 +
+              sum(true_off[off5]) -
+              sum(true_def[def5]) +
+              rnorm(1L, 0, 0.4)
+    pts  <- max(0, round(pts))
+    rows[[m]] <- list(
+      off = as.integer(off5),
+      def = as.integer(def5),
+      pts = pts
+    )
+  }
+
+  df  <- .poss_df(rows)
+  out <- nba_rapm(df)
+  out <- out[order(out$player_id), ]
+
+  corr_off <- cor(out$o_rapm, true_off[out$player_id])
+  corr_def <- cor(out$d_rapm, true_def[out$player_id])
+
+  message(sprintf("Synthetic recovery: corr_off=%.4f  corr_def=%.4f",
+                  corr_off, corr_def))
+
+  # Ridge shrinks magnitude but must RECOVER the structure
+  expect_gt(corr_off, 0.7)
+  expect_gt(corr_def, 0.7)
+
+  # Determinism: second call on same data gives identical rapm
+  out2 <- nba_rapm(df)
+  out2 <- out2[order(out2$player_id), ]
+  expect_equal(out$rapm, out2$rapm)
+})
