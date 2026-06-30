@@ -80,6 +80,7 @@ Other NBA Lineup Functions:
 \code{\link{nba_leaguelineupviz}()},
 \code{\link{nba_possession_lineups}()},
 \code{\link{nba_rapm}()},
+\code{\link{nba_shot_zones}()},
 \code{\link{nba_shotchartlineupdetail}()},
 \code{\link{nba_teamdashlineups}()}
 }
