@@ -396,10 +396,14 @@
       is_tech <- grepl("Technical", sub_type, fixed = TRUE) ||
                    grepl("technical", sub_type, fixed = TRUE)
       if (!is_tech && .is_last_ft(sub_type)) {
-        # Check if score is present (non-zero forward-filled score means
-        # a scoring event has happened — the score column is non-NA/non-zero)
-        has_score <- ff_home[i] > 0 || ff_away[i] > 0
-        if (has_score) {
+        # End only on a MADE last FT: the forward-filled score must have
+        # increased at this row vs the previous row.  A missed last FT
+        # leaves score unchanged, so this guard stays FALSE and the
+        # defensive rebound (event_type "4") ends the possession instead.
+        prev_home_score <- if (i > 1L) ff_home[i - 1L] else 0L
+        prev_away_score <- if (i > 1L) ff_away[i - 1L] else 0L
+        made_ft <- (ff_home[i] > prev_home_score) || (ff_away[i] > prev_away_score)
+        if (made_ft) {
           ends_possession <- TRUE
         }
       }
@@ -595,7 +599,11 @@ NULL
 #'  nba_possession_lineups(game_id = "0022200001")
 #' ```
 nba_possession_lineups <- function(game_id, ...) {
+  game_id <- pad_id(game_id)
   pbp  <- nba_pbp(game_id = game_id, on_court = TRUE, version = "v3")
   poss <- .build_possessions(pbp)
-  .attach_possession_lineups(poss, pbp)
+  .attach_possession_lineups(poss, pbp) |>
+    dplyr::as_tibble() |>
+    janitor::clean_names() |>
+    make_hoopR_data("NBA Possession Lineup Matrix", Sys.time())
 }
