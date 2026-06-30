@@ -99,6 +99,10 @@ NULL
 #'   })
 #' }
 nba_shot_zones <- function(game_id, ...) {
+  game_id <- pad_id(game_id)
   pbp <- nba_pbp(game_id = game_id, on_court = FALSE, version = "v3")
-  .add_shot_zones(pbp)
+  .add_shot_zones(pbp) |>
+    dplyr::as_tibble() |>
+    janitor::clean_names() |>
+    make_hoopR_data("NBA Shot Zones", Sys.time())
 }

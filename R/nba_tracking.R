@@ -269,7 +269,9 @@ nba_tracking_aggregate <- function(
 
   entity_key <- TRACKING_ENTITY_KEYS[[player_or_team]]
   if (is.null(entity_key)) {
-    stop("`player_or_team` must be \"Player\" or \"Team\"")
+    cli::cli_abort(
+      "{.arg player_or_team} must be {.val Player} or {.val Team}."
+    )
   }
 
   ## Fetch one frame per (season × season_type)
@@ -287,8 +289,10 @@ nba_tracking_aggregate <- function(
           ...
         ),
         error = function(e) {
-          message(sprintf("[nba_tracking_aggregate] Skipping %s / %s: %s",
-                          season, season_type, conditionMessage(e)))
+          cli::cli_alert_warning(
+            "Skipping season {.val {season}} / {.val {season_type}}: \\
+             {conditionMessage(e)}"
+          )
           NULL
         }
       )
@@ -298,5 +302,8 @@ nba_tracking_aggregate <- function(
     }
   }
 
-  .aggregate_tracking_frames(frames, entity_key)
+  .aggregate_tracking_frames(frames, entity_key) |>
+    dplyr::as_tibble() |>
+    janitor::clean_names() |>
+    make_hoopR_data("NBA Tracking Aggregate", Sys.time())
 }
