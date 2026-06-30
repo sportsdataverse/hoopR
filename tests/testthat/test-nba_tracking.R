@@ -197,6 +197,99 @@ test_that("never-raise: list of 0-row frame returns 0-row data.frame", {
 })
 
 ## ===========================================================================
+## 5. NUMERIC-CONTENT GATE (FIX 1) — non-numeric string col → first(), not 0
+## ===========================================================================
+
+test_that("numeric-content gate: string col carried via first(), numeric summed", {
+  ## A non-Drives-shape frame:
+  ##   TEAM_ID    — *_id (identity, never summed)
+  ##   TEAM_CITY  — non-numeric string, no _id/_name/_abbreviation pattern
+  ##                → numeric-content gate routes to identity (first(), NOT 0)
+  ##   SOME_COUNT — numeric-as-character → additive (summed)
+  ##   FOO_PCT    — "% of total" rate → dropped
+  fake_a <- data.frame(
+    TEAM_ID    = c("1610612747", "1610612752"),  # LAL, NYK
+    TEAM_CITY  = c("Los Angeles", "New York"),
+    SOME_COUNT = c("10", "20"),
+    FOO_PCT    = c("0.500", "0.250"),
+    stringsAsFactors = FALSE
+  )
+  fake_b <- data.frame(
+    TEAM_ID    = c("1610612747", "1610612752"),
+    TEAM_CITY  = c("Los Angeles", "New York"),
+    SOME_COUNT = c("5", "7"),
+    FOO_PCT    = c("0.600", "0.100"),
+    stringsAsFactors = FALSE
+  )
+
+  out <- hoopR:::.aggregate_tracking_frames(list(fake_a, fake_b), "TEAM_ID")
+
+  ## TEAM_CITY carried via first() — the actual string, NOT a silent 0
+  expect_true("TEAM_CITY" %in% colnames(out),
+              label = "TEAM_CITY present in output")
+  lal <- out[out$TEAM_ID == "1610612747", ]
+  nyk <- out[out$TEAM_ID == "1610612752", ]
+  expect_identical(lal$TEAM_CITY, "Los Angeles",
+                   label = "TEAM_CITY carried as string for LAL (not 0)")
+  expect_identical(nyk$TEAM_CITY, "New York",
+                   label = "TEAM_CITY carried as string for NYK (not 0)")
+  ## Confirm it was NOT coerced to a number / zeroed
+  expect_false(is.numeric(out$TEAM_CITY),
+               label = "TEAM_CITY is not numeric (was not summed to 0)")
+
+  ## SOME_COUNT summed: 10+5 = 15 ; 20+7 = 27
+  expect_equal(as.numeric(lal$SOME_COUNT), 15)
+  expect_equal(as.numeric(nyk$SOME_COUNT), 27)
+
+  ## FOO_PCT dropped
+  expect_false("FOO_PCT" %in% colnames(out),
+               label = "FOO_PCT (% of total) dropped from output")
+
+  ## id-not-summed: TEAM_IDs are the valid source ids, not doubled
+  expect_true(all(out$TEAM_ID %in% c("1610612747", "1610612752")),
+              label = "TEAM_ID not summed/doubled")
+})
+
+## ===========================================================================
+## 6. FG_PCT/FT_PCT DENOMINATOR GUARD (FIX 2) — missing makes/attempts → drop
+## ===========================================================================
+
+test_that("denominator guard: _fg_pct without makes/attempts is dropped, no crash", {
+  ## FOO_FG_PCT has no FOO_FGM / FOO_FGA pair → must be dropped, not recomputed
+  fake <- data.frame(
+    PLAYER_ID  = c("1001", "1002"),
+    PLAYER_NAME = c("Alice", "Bob"),
+    SOME_COUNT = c("3", "4"),
+    FOO_FG_PCT = c("0.450", "0.500"),
+    stringsAsFactors = FALSE
+  )
+
+  expect_no_error(
+    out <- hoopR:::.aggregate_tracking_frames(list(fake), "PLAYER_ID")
+  )
+  ## The orphaned _fg_pct col is dropped (no FGM/FGA to recompute from)
+  expect_false("FOO_FG_PCT" %in% colnames(out),
+               label = "orphaned FOO_FG_PCT dropped (denominator guard)")
+  ## Additive + identity still work
+  expect_true(all(c("PLAYER_ID", "PLAYER_NAME", "SOME_COUNT") %in% colnames(out)))
+  expect_equal(nrow(out), 2L)
+})
+
+test_that("denominator guard: _ft_pct without makes/attempts is dropped, no crash", {
+  fake <- data.frame(
+    PLAYER_ID  = c("1001", "1002"),
+    SOME_COUNT = c("3", "4"),
+    BAR_FT_PCT = c("0.800", "0.900"),
+    stringsAsFactors = FALSE
+  )
+  expect_no_error(
+    out <- hoopR:::.aggregate_tracking_frames(list(fake), "PLAYER_ID")
+  )
+  expect_false("BAR_FT_PCT" %in% colnames(out),
+               label = "orphaned BAR_FT_PCT dropped (denominator guard)")
+})
+
+## ===========================================================================
 ## Live smoke test — gated by NBA_STATS_TESTS=1
 ## ===========================================================================
 

@@ -52,13 +52,16 @@ and \code{season_types}, then aggregates the results by entity
 (\code{PLAYER_ID} for Player, \code{TEAM_ID} for Team) following the contract
 ported from \code{sportsdataverse-py}'s \code{aggregate_tracking_frames}:
 \itemize{
-\item \strong{Identity columns} (\verb{*_ID}, \verb{*_NAME}, \verb{*_ABBREVIATION}) are carried
-via \code{first()} — never summed.
+\item \strong{Identity columns} (\verb{*_ID}, \verb{*_NAME}, \verb{*_ABBREVIATION}, and any other
+non-numeric string column such as \code{TEAM_CITY}) are carried via \code{first()}
+— never summed.
 \item \strong{\verb{*_FG_PCT} / \verb{*_FT_PCT}} are recomputed from the summed FGM/FGA and
-FTM/FTA denominators (denom 0 → \code{NA}).
+FTM/FTA denominators (denom 0 → \code{NA}); a \verb{*_FG_PCT} / \verb{*_FT_PCT} column
+whose makes/attempts pair is absent is dropped rather than recomputed.
 \item \strong{Other \verb{*_PCT} columns} (e.g., \code{DRIVE_PTS_PCT} — "\% of total" rates)
 are \strong{dropped} from the output because they are not additive.
-\item \strong{All remaining numeric columns} are summed.
+\item \strong{All remaining numeric columns} are summed (numeric-content gate,
+mirroring the \code{sportsdataverse-py} \code{dtype.is_numeric()} rule).
 }
 }
 \details{
@@ -68,6 +71,13 @@ are \strong{dropped} from the output because they are not additive.
                         pt_measure_type = "Drives",
                         player_or_team  = "Player")
 }\if{html}{\out{</div>}}
+}
+\note{
+Designed and validated for COUNT-based tracking measures (e.g.
+\code{"Drives"}). Rate-only columns without a \verb{_pct} suffix in some
+\code{pt_measure_type} values are summed across seasons (a known limitation
+shared with the \code{sportsdataverse} reference engine); verify aggregation
+semantics before using rate-heavy measures.
 }
 \examples{
 \donttest{

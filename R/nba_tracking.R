@@ -43,6 +43,18 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
   .is_id_col(col) || .is_name_col(col)
 }
 
+## Numeric-content gate: mirror Python's `dtype.is_numeric()` rule, adapted to
+## R's all-character frames. A residual column (one that did NOT match the
+## id / name / *_pct patterns) is ADDITIVE only when its non-empty values all
+## parse as numeric; otherwise it is a non-numeric string column (e.g.
+## `TEAM_CITY = "Los Angeles"`) and must be carried via first() — NOT summed
+## into a silent 0. An all-empty column is treated as identity (safe default).
+.is_numeric_content <- function(vals) {
+  v <- vals[!is.na(vals) & vals != ""]
+  if (length(v) == 0L) return(FALSE)
+  suppressWarnings(all(!is.na(as.numeric(v))))
+}
+
 ## ---------------------------------------------------------------------------
 ##  .aggregate_tracking_frames — internal workhorse
 ## ---------------------------------------------------------------------------
@@ -69,15 +81,29 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
 
   all_cols <- colnames(combined)
 
-  ## Classify every column
-  identity_cols <- all_cols[vapply(all_cols, .is_identity_col, logical(1L))]
-  fg_pct_cols   <- all_cols[vapply(all_cols, .is_fg_pct_col,   logical(1L))]
-  ft_pct_cols   <- all_cols[vapply(all_cols, .is_ft_pct_col,   logical(1L))]
-  drop_pct_cols <- all_cols[vapply(all_cols, .is_other_pct_col, logical(1L))]
-  additive_cols <- setdiff(
+  ## Classify every column.  Pattern guards run FIRST (id / name / fg_pct /
+  ## ft_pct / other-pct), so a numeric-looking id (PLAYER_ID = "1001") is
+  ## routed to identity and is never summed (the id-not-summed keystone).
+  pattern_identity <- all_cols[vapply(all_cols, .is_identity_col,  logical(1L))]
+  fg_pct_cols      <- all_cols[vapply(all_cols, .is_fg_pct_col,    logical(1L))]
+  ft_pct_cols      <- all_cols[vapply(all_cols, .is_ft_pct_col,    logical(1L))]
+  drop_pct_cols    <- all_cols[vapply(all_cols, .is_other_pct_col, logical(1L))]
+
+  ## Residual columns (matched none of the above patterns) are split by the
+  ## NUMERIC-CONTENT gate, mirroring Python's `dtype.is_numeric()` rule:
+  ## numeric content -> additive; non-numeric string content (e.g. TEAM_CITY)
+  ## -> identity, carried via first() and never silently summed to 0.
+  residual_cols <- setdiff(
     all_cols,
-    c(identity_cols, fg_pct_cols, ft_pct_cols, drop_pct_cols)
+    c(pattern_identity, fg_pct_cols, ft_pct_cols, drop_pct_cols)
   )
+  residual_numeric <- vapply(
+    residual_cols,
+    function(col) .is_numeric_content(combined[[col]]),
+    logical(1L)
+  )
+  additive_cols <- residual_cols[residual_numeric]
+  identity_cols <- c(pattern_identity, residual_cols[!residual_numeric])
 
   ## Coerce additive columns to numeric (they come as character from the API)
   for (col in additive_cols) {
@@ -100,7 +126,14 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
 
   ## 3. FG_PCT recompute: derive prefix → look up FGM/FGA among additive cols
   ##    DRIVE_FG_PCT ← DRIVE_FGM / DRIVE_FGA, etc.
-  fg_pct_exprs <- lapply(setNames(fg_pct_cols, fg_pct_cols), function(pct_col) {
+  ##    Guard (never-raise): only recompute when BOTH the makes and attempts
+  ##    columns exist; otherwise DROP the _fg_pct col (a measure whose pct
+  ##    lacks a makes/attempts pair would crash summarise with Column not found).
+  fg_pct_recompute <- fg_pct_cols[vapply(fg_pct_cols, function(pct_col) {
+    prefix <- sub("_FG_PCT$", "", pct_col)
+    all(c(paste0(prefix, "_FGM"), paste0(prefix, "_FGA")) %in% all_cols)
+  }, logical(1L))]
+  fg_pct_exprs <- lapply(setNames(fg_pct_recompute, fg_pct_recompute), function(pct_col) {
     prefix <- sub("_FG_PCT$", "", pct_col)          # e.g. "DRIVE"
     fgm    <- paste0(prefix, "_FGM")
     fga    <- paste0(prefix, "_FGA")
@@ -114,8 +147,12 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
     )
   })
 
-  ## 4. FT_PCT recompute
-  ft_pct_exprs <- lapply(setNames(ft_pct_cols, ft_pct_cols), function(pct_col) {
+  ## 4. FT_PCT recompute (same never-raise guard as FG_PCT above)
+  ft_pct_recompute <- ft_pct_cols[vapply(ft_pct_cols, function(pct_col) {
+    prefix <- sub("_FT_PCT$", "", pct_col)
+    all(c(paste0(prefix, "_FTM"), paste0(prefix, "_FTA")) %in% all_cols)
+  }, logical(1L))]
+  ft_pct_exprs <- lapply(setNames(ft_pct_recompute, ft_pct_recompute), function(pct_col) {
     prefix <- sub("_FT_PCT$", "", pct_col)
     ftm    <- paste0(prefix, "_FTM")
     fta    <- paste0(prefix, "_FTA")
@@ -159,13 +196,16 @@ NULL
 #' (`PLAYER_ID` for Player, `TEAM_ID` for Team) following the contract
 #' ported from `sportsdataverse-py`'s `aggregate_tracking_frames`:
 #'
-#' - **Identity columns** (`*_ID`, `*_NAME`, `*_ABBREVIATION`) are carried
-#'   via `first()` — never summed.
+#' - **Identity columns** (`*_ID`, `*_NAME`, `*_ABBREVIATION`, and any other
+#'   non-numeric string column such as `TEAM_CITY`) are carried via `first()`
+#'   — never summed.
 #' - **`*_FG_PCT` / `*_FT_PCT`** are recomputed from the summed FGM/FGA and
-#'   FTM/FTA denominators (denom 0 → `NA`).
+#'   FTM/FTA denominators (denom 0 → `NA`); a `*_FG_PCT` / `*_FT_PCT` column
+#'   whose makes/attempts pair is absent is dropped rather than recomputed.
 #' - **Other `*_PCT` columns** (e.g., `DRIVE_PTS_PCT` — "% of total" rates)
 #'   are **dropped** from the output because they are not additive.
-#' - **All remaining numeric columns** are summed.
+#' - **All remaining numeric columns** are summed (numeric-content gate,
+#'   mirroring the `sportsdataverse-py` `dtype.is_numeric()` rule).
 #'
 #' @param seasons Character vector of NBA season strings, e.g.
 #'   `c("2022-23", "2023-24")`.
@@ -190,6 +230,12 @@ NULL
 #'   recomputed from summed numerators/denominators; `*_PCT` "% of total"
 #'   columns are dropped; identity string columns are carried from the
 #'   first season.  Returns a 0-row frame when no data are available.
+#'
+#' @note Designed and validated for COUNT-based tracking measures (e.g.
+#'   `"Drives"`). Rate-only columns without a `_pct` suffix in some
+#'   `pt_measure_type` values are summed across seasons (a known limitation
+#'   shared with the `sportsdataverse` reference engine); verify aggregation
+#'   semantics before using rate-heavy measures.
 #'
 #' @importFrom dplyr bind_rows group_by summarise first if_else
 #' @importFrom rlang .data expr
