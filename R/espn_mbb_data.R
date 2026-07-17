@@ -3246,7 +3246,12 @@ helper_espn_mbb_team_box <- function(resp) {
     lubridate::with_tz(tzone = "America/New_York")
 
   game_date <- as.Date(substr(game_date_time, 0, 10))
-  box_score_available <- game_json[["header"]][["competitions"]][["boxscoreAvailable"]]
+  # ESPN's header `boxscoreAvailable` flag is unreliable for archival games
+  # (pre-2014 WBB payloads carry full stats while the flag says FALSE -- the
+  # same latent gate silently dropped a decade of wehoop boxscores), so
+  # availability is derived from the payload itself; the statistics-length
+  # check below remains the real gate.
+  box_score_available <- length(game_json[["boxscore"]][["teams"]]) > 0
   if (box_score_available == TRUE) {
     teams_box_score_df <- game_json[["boxscore"]][["teams"]] %>%
       jsonlite::toJSON() %>%
@@ -3489,7 +3494,9 @@ helper_espn_mbb_player_box <- function(resp) {
       purrr::pluck(7) %>%
       as.numeric()
   )
-  if (boxScoreAvailable == TRUE &&
+  # Payload presence replaces ESPN's unreliable header `boxscoreAvailable`
+  # flag; the athlete and stat validity conjuncts below remain the real gate.
+  if (length(game_json[["boxscore"]][["players"]]) > 0 &&
     length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]]) > 1 &&
     length(players_box_score_df[["statistics"]][[1]][["athletes"]][[1]][["stats"]][[1]]) > 1 &&
     valid_athletes &&
