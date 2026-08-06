@@ -5,8 +5,8 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
   # must reproduce it exactly. Fixtures + provenance:
   #   tests/testthat/fixtures/player_core/README.md
   #
-  # The payloads are copied byte-for-byte from hoopR-nba-raw, never
-  # hand-written -- a hand-made payload is the failure mode this guards.
+  # The payloads are copied unmodified from hoopR-nba-raw, never hand-written
+  # -- a hand-made payload is the failure mode this guards.
   fx <- testthat::test_path("fixtures", "player_core")
 
   # Column types are DECLARED, never inferred. Letting readr guess tests the
@@ -43,6 +43,13 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
   expected <- readr::read_csv(
     file.path(fx, "expected_player_core.csv"),
     col_types = do.call(readr::cols, spec),
+    # na = "" ONLY. readr's default is c("", "NA"), which turns the literal
+    # string "NA" into a missing value even under col_character(). ESPN uses
+    # "NA" as a real value -- position abbreviation for its "Not Available"
+    # position is the two characters N,A -- so the default silently corrupts
+    # the oracle and makes a correct port look wrong. Empty cells still read
+    # as NA, which is what the genuine nulls serialise to.
+    na = "",
     progress = FALSE
   )
 
