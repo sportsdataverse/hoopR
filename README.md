@@ -132,7 +132,7 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
     <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
   - Billy Fryer (@\_b4billy\_)
-    <a href="https://x.com/BillyFriyer42" target="blank"><img src="https://img.shields.io/twitter/follow/BillyFriyer42?color=blue&label=%40BillyFriyer42&logo=x&style=for-the-badge" alt="@BillyFriyer42" /></a>
+    <a href="https://x.com/BillyFryer42" target="blank"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge" alt="@BillyFryer42" /></a>
     <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 
   - Ross Drucker (@rossdrucker9)
