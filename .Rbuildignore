@@ -47,3 +47,6 @@ mbb_pbp_db
 ^\.pytest_cache$
 ^\.understand-anything$
 ^\.superpowers$
+^debug\.log$
+^nul$
+^.*\.log$
