@@ -81,10 +81,16 @@ NULL
 #'
 #' @examples
 #' \donttest{
+#'   # Split across lines to keep the Rd under the line-width limit; the
+#'   # core-v2 $ref URLs are long enough to be truncated in the PDF manual.
+#'   team_ref <- paste0(
+#'     "http://sports.core.api.espn.com/v2/sports/basketball/",
+#'     "leagues/nba/seasons/2025/teams/22"
+#'   )
 #'   payload <- list(
 #'     guid = "abc", fullName = "Jane Doe", jersey = "23",
 #'     position = list(id = "5", abbreviation = "G"),
-#'     team = list(`$ref` = "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/22")
+#'     team = list(`$ref` = team_ref)
 #'   )
 #'   espn_basketball_player_core(payload, athlete_id = 1966)
 #' }
