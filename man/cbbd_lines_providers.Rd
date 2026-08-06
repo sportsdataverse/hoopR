@@ -22,8 +22,8 @@ A \code{hoopR_data} tibble with one row per line provider:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Lines Functions: 
-\code{\link{cbbd_lines}()}
+Other CBD Lines Functions:
+\code{\link[=cbbd_lines]{cbbd_lines()}}
 }
 \concept{CBD Lines Functions}
 \keyword{CBD}

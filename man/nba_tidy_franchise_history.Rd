@@ -24,9 +24,9 @@ so this row-binds them (tactic \strong{B}) and tags each row \code{active} / \co
 }
 }
 \seealso{
-Other NBA Combined Datasets: 
-\code{\link{nba_tidy_boxscore}()},
-\code{\link{nba_tidy_player_profile}()}
+Other NBA Combined Datasets:
+\code{\link[=nba_tidy_boxscore]{nba_tidy_boxscore()}},
+\code{\link[=nba_tidy_player_profile]{nba_tidy_player_profile()}}
 }
 \concept{NBA Combined Datasets}
 \keyword{Combined}

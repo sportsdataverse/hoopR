@@ -34,11 +34,11 @@ A \code{hoopR_data} tibble with one row per game. The \code{home_team},
 }
 }
 \seealso{
-Other CBD Games Functions: 
-\code{\link{cbbd_games}()},
-\code{\link{cbbd_games_media}()},
-\code{\link{cbbd_games_players}()},
-\code{\link{cbbd_games_teams}()}
+Other CBD Games Functions:
+\code{\link[=cbbd_games]{cbbd_games()}},
+\code{\link[=cbbd_games_media]{cbbd_games_media()}},
+\code{\link[=cbbd_games_players]{cbbd_games_players()}},
+\code{\link[=cbbd_games_teams]{cbbd_games_teams()}}
 }
 \concept{CBD Games Functions}
 \keyword{CBD}

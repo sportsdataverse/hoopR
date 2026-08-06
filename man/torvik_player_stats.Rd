@@ -68,12 +68,12 @@ from Bart Torvik's standard player advanced-stats layout (consistent from
 }
 }
 \seealso{
-Other Torvik Functions: 
-\code{\link{torvik_game_schedule}()},
-\code{\link{torvik_game_stats}()},
-\code{\link{torvik_ncaa_results}()},
-\code{\link{torvik_ratings}()},
-\code{\link{torvik_team_factors}()}
+Other Torvik Functions:
+\code{\link[=torvik_game_schedule]{torvik_game_schedule()}},
+\code{\link[=torvik_game_stats]{torvik_game_stats()}},
+\code{\link[=torvik_ncaa_results]{torvik_ncaa_results()}},
+\code{\link[=torvik_ratings]{torvik_ratings()}},
+\code{\link[=torvik_team_factors]{torvik_team_factors()}}
 }
 \concept{Torvik Functions}
 \keyword{Torvik}

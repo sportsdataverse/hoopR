@@ -59,10 +59,10 @@ Returns a named list of data frames: CumeStatsPlayerGames
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Cume Functions: 
-\code{\link{nba_cumestatsplayer}()},
-\code{\link{nba_cumestatsteam}()},
-\code{\link{nba_cumestatsteamgames}()}
+Other NBA Cume Functions:
+\code{\link[=nba_cumestatsplayer]{nba_cumestatsplayer()}},
+\code{\link[=nba_cumestatsteam]{nba_cumestatsteam()}},
+\code{\link[=nba_cumestatsteamgames]{nba_cumestatsteamgames()}}
 }
 \author{
 Saiem Gilani

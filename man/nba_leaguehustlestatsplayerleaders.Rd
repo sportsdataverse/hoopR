@@ -177,11 +177,11 @@ PlayerScreenAssistLeaders, Table5
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Hustle Functions: 
-\code{\link{nba_hustlestatsboxscore}()},
-\code{\link{nba_leaguehustlestatsplayer}()},
-\code{\link{nba_leaguehustlestatsteam}()},
-\code{\link{nba_leaguehustlestatsteamleaders}()}
+Other NBA Hustle Functions:
+\code{\link[=nba_hustlestatsboxscore]{nba_hustlestatsboxscore()}},
+\code{\link[=nba_leaguehustlestatsplayer]{nba_leaguehustlestatsplayer()}},
+\code{\link[=nba_leaguehustlestatsteam]{nba_leaguehustlestatsteam()}},
+\code{\link[=nba_leaguehustlestatsteamleaders]{nba_leaguehustlestatsteamleaders()}}
 }
 \author{
 Saiem Gilani

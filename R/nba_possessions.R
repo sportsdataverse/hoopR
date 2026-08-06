@@ -514,7 +514,11 @@
   away_cols <- paste0("away_player", 1:5)
 
   # Vectorized row-index gather from pbp
-  idx <- dplyr::pull(possessions, start_event_idx)
+  # dplyr::pull() takes a tidy-SELECTION, so a quoted name is a first-class
+  # selection -- not a workaround. Keep it quoted: a bare symbol here is an
+  # undefined global to R CMD check and buys nothing, since the column name is
+  # a constant rather than something a caller supplies.
+  idx <- dplyr::pull(possessions, "start_event_idx")
 
   # Extract home and away lineups for each possession's start row
   # pbp[idx, col] returns a length-nrow(possessions) vector
@@ -530,7 +534,7 @@
   )  # nrow x 5 matrix
 
   # Determine offense/defense assignment per possession
-  off_ids <- dplyr::pull(possessions, offense_team_id)
+  off_ids <- dplyr::pull(possessions, "offense_team_id")
   is_home_offense <- off_ids == home_id
 
   # Build off/def matrices: select row-wise between home_mat and away_mat

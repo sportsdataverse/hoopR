@@ -4,6 +4,15 @@ test_that("ESPN - Get NBA game roster", {
 
   x <- espn_nba_game_rosters(game_id = 401283399)
 
+  # This is a LIVE ESPN call (ESPN_TESTS=1 in CI). The function walks the
+  # core-v2 competitor -> athlete $ref graph, so a rate-limited or partial
+  # response yields a zero-column frame rather than an error -- which then
+  # fails the column assertion below with an empty `Expected:`, looking like
+  # a contract regression when it is an API condition. Skip instead, matching
+  # the idiom already used in test-nba_crosswalk.R / test-fox_nba_teams.R.
+  skip_if(nrow(x) == 0 || ncol(x) == 0,
+          "espn_nba_game_rosters() returned no data at test time")
+
   cols <- c(
     "athlete_id",
     "athlete_uid",

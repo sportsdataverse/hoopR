@@ -50,14 +50,14 @@ possessions return identical output with no need to set a seed.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Lineup Functions: 
-\code{\link{nba_gamerotation}()},
-\code{\link{nba_leaguedashlineups}()},
-\code{\link{nba_leaguelineupviz}()},
-\code{\link{nba_possession_lineups}()},
-\code{\link{nba_shot_zones}()},
-\code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashlineups}()}
+Other NBA Lineup Functions:
+\code{\link[=nba_gamerotation]{nba_gamerotation()}},
+\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
+\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_shot_zones]{nba_shot_zones()}},
+\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
+\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
 }
 \author{
 Saiem Gilani

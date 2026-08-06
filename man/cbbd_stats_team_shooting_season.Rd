@@ -51,11 +51,11 @@ Key identifying columns:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Stats Functions: 
-\code{\link{cbbd_stats_player_season}()},
-\code{\link{cbbd_stats_player_shooting_season}()},
-\code{\link{cbbd_stats_team_leaderboard}()},
-\code{\link{cbbd_stats_team_season}()}
+Other CBD Stats Functions:
+\code{\link[=cbbd_stats_player_season]{cbbd_stats_player_season()}},
+\code{\link[=cbbd_stats_player_shooting_season]{cbbd_stats_player_shooting_season()}},
+\code{\link[=cbbd_stats_team_leaderboard]{cbbd_stats_team_leaderboard()}},
+\code{\link[=cbbd_stats_team_season]{cbbd_stats_team_season()}}
 }
 \concept{CBD Stats Functions}
 \keyword{CBD}

@@ -362,12 +362,12 @@ away_team_linescores
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA G-League Functions: 
-\code{\link{nbagl_live_pbp}()},
-\code{\link{nbagl_pbp}()},
-\code{\link{nbagl_players}()},
-\code{\link{nbagl_schedule}()},
-\code{\link{nbagl_standings}()}
+Other NBA G-League Functions:
+\code{\link[=nbagl_live_pbp]{nbagl_live_pbp()}},
+\code{\link[=nbagl_pbp]{nbagl_pbp()}},
+\code{\link[=nbagl_players]{nbagl_players()}},
+\code{\link[=nbagl_schedule]{nbagl_schedule()}},
+\code{\link[=nbagl_standings]{nbagl_standings()}}
 }
 \author{
 Saiem Gilani

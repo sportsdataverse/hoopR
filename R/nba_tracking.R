@@ -115,12 +115,12 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
   ## ── Build summarise expressions ──────────────────────────────────────────
 
   ## 1. Additive: sum per entity (NA as 0 for counting columns)
-  sum_exprs <- lapply(setNames(additive_cols, additive_cols), function(col) {
+  sum_exprs <- lapply(stats::setNames(additive_cols, additive_cols), function(col) {
     rlang::expr(sum(as.numeric(.data[[!!col]]), na.rm = TRUE))
   })
 
   ## 2. Identity: first per entity
-  identity_exprs <- lapply(setNames(identity_cols, identity_cols), function(col) {
+  identity_exprs <- lapply(stats::setNames(identity_cols, identity_cols), function(col) {
     rlang::expr(dplyr::first(.data[[!!col]]))
   })
 
@@ -133,7 +133,7 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
     prefix <- sub("_FG_PCT$", "", pct_col)
     all(c(paste0(prefix, "_FGM"), paste0(prefix, "_FGA")) %in% all_cols)
   }, logical(1L))]
-  fg_pct_exprs <- lapply(setNames(fg_pct_recompute, fg_pct_recompute), function(pct_col) {
+  fg_pct_exprs <- lapply(stats::setNames(fg_pct_recompute, fg_pct_recompute), function(pct_col) {
     prefix <- sub("_FG_PCT$", "", pct_col)          # e.g. "DRIVE"
     fgm    <- paste0(prefix, "_FGM")
     fga    <- paste0(prefix, "_FGA")
@@ -152,7 +152,7 @@ TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
     prefix <- sub("_FT_PCT$", "", pct_col)
     all(c(paste0(prefix, "_FTM"), paste0(prefix, "_FTA")) %in% all_cols)
   }, logical(1L))]
-  ft_pct_exprs <- lapply(setNames(ft_pct_recompute, ft_pct_recompute), function(pct_col) {
+  ft_pct_exprs <- lapply(stats::setNames(ft_pct_recompute, ft_pct_recompute), function(pct_col) {
     prefix <- sub("_FT_PCT$", "", pct_col)
     ftm    <- paste0(prefix, "_FTM")
     fta    <- paste0(prefix, "_FTA")

@@ -23,8 +23,8 @@ A \code{hoopR_data} tibble with one row per lineup (same columns as
 }
 }
 \seealso{
-Other CBD Lineups Functions: 
-\code{\link{cbbd_lineups_team}()}
+Other CBD Lineups Functions:
+\code{\link[=cbbd_lineups_team]{cbbd_lineups_team()}}
 }
 \concept{CBD Lineups Functions}
 \keyword{CBD}

@@ -18,7 +18,7 @@ The parsed JSON body (a data.frame for list endpoints).
 Attaches the \verb{Authorization: Bearer <CBBD_API_KEY>} header, routes through
 hoopR's shared \code{\link[=.retry_request]{.retry_request()}} (which handles retries, timeouts and
 proxy resolution), and parses the JSON body. \code{NULL} query values are dropped
-automatically by \code{\link[httr2:req_url]{httr2::req_url_query()}}, so optional parameters can be
+automatically by \code{\link[httr2:req_url_query]{httr2::req_url_query()}}, so optional parameters can be
 threaded through unconditionally.
 }
 \keyword{internal}

@@ -43,12 +43,12 @@ is flattened to \verb{shot_info_*}, \code{participants}/\code{on_floor} are list
 }
 }
 \seealso{
-Other CBD Plays Functions: 
-\code{\link{cbbd_play_types}()},
-\code{\link{cbbd_plays_date}()},
-\code{\link{cbbd_plays_player}()},
-\code{\link{cbbd_plays_team}()},
-\code{\link{cbbd_plays_tournament}()}
+Other CBD Plays Functions:
+\code{\link[=cbbd_play_types]{cbbd_play_types()}},
+\code{\link[=cbbd_plays_date]{cbbd_plays_date()}},
+\code{\link[=cbbd_plays_player]{cbbd_plays_player()}},
+\code{\link[=cbbd_plays_team]{cbbd_plays_team()}},
+\code{\link[=cbbd_plays_tournament]{cbbd_plays_tournament()}}
 }
 \concept{CBD Plays Functions}
 \keyword{CBD}

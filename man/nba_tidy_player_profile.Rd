@@ -28,9 +28,9 @@ this nests each populated set into a \code{.data} list-column, one row per
 }
 }
 \seealso{
-Other NBA Combined Datasets: 
-\code{\link{nba_tidy_boxscore}()},
-\code{\link{nba_tidy_franchise_history}()}
+Other NBA Combined Datasets:
+\code{\link[=nba_tidy_boxscore]{nba_tidy_boxscore()}},
+\code{\link[=nba_tidy_franchise_history]{nba_tidy_franchise_history()}}
 }
 \concept{NBA Combined Datasets}
 \keyword{Combined}

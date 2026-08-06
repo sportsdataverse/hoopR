@@ -61,14 +61,14 @@ the basket and within 80 legacy units of the paint center
 }
 }
 \seealso{
-Other NBA Lineup Functions: 
-\code{\link{nba_gamerotation}()},
-\code{\link{nba_leaguedashlineups}()},
-\code{\link{nba_leaguelineupviz}()},
-\code{\link{nba_possession_lineups}()},
-\code{\link{nba_rapm}()},
-\code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashlineups}()}
+Other NBA Lineup Functions:
+\code{\link[=nba_gamerotation]{nba_gamerotation()}},
+\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
+\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_rapm]{nba_rapm()}},
+\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
+\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
 }
 \author{
 Saiem Gilani

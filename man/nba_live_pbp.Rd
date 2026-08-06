@@ -84,16 +84,16 @@ Returns a data frame: PlayByPlay\tabular{lll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
-\code{\link{nba_data_pbp}()},
-\code{\link{nba_pbp}()},
-\code{\link{nba_pbps}()},
-\code{\link{nba_playbyplayv3}()},
-\code{\link{nba_winprobabilitypbp}()}
+Other NBA PBP Functions:
+\code{\link[=nba_data_pbp]{nba_data_pbp()}},
+\code{\link[=nba_pbp]{nba_pbp()}},
+\code{\link[=nba_pbps]{nba_pbps()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}},
+\code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}}
 
-Other NBA Live Functions: 
-\code{\link{nba_live_boxscore}()},
-\code{\link{nba_todays_scoreboard}()}
+Other NBA Live Functions:
+\code{\link[=nba_live_boxscore]{nba_live_boxscore()}},
+\code{\link[=nba_todays_scoreboard]{nba_todays_scoreboard()}}
 }
 \author{
 Saiem Gilani

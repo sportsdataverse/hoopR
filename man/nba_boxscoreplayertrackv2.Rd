@@ -89,36 +89,36 @@ Use \code{nba_boxscoreplayertrackv3()} instead.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions: 
-\code{\link{nba_boxscoreadvancedv2}()},
-\code{\link{nba_boxscoredefensive}()},
-\code{\link{nba_boxscorefourfactorsv2}()},
-\code{\link{nba_boxscorematchups}()},
-\code{\link{nba_boxscoremiscv2}()},
-\code{\link{nba_boxscorescoringv2}()},
-\code{\link{nba_boxscoresummaryv2}()},
-\code{\link{nba_boxscoretraditionalv2}()},
-\code{\link{nba_boxscoreusagev2}()},
-\code{\link{nba_gamerotation}()},
-\code{\link{nba_hustlestatsboxscore}()},
-\code{\link{nba_live_boxscore}()}
+Other NBA Boxscore Functions:
+\code{\link[=nba_boxscoreadvancedv2]{nba_boxscoreadvancedv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
+\code{\link[=nba_boxscorefourfactorsv2]{nba_boxscorefourfactorsv2()}},
+\code{\link[=nba_boxscorematchups]{nba_boxscorematchups()}},
+\code{\link[=nba_boxscoremiscv2]{nba_boxscoremiscv2()}},
+\code{\link[=nba_boxscorescoringv2]{nba_boxscorescoringv2()}},
+\code{\link[=nba_boxscoresummaryv2]{nba_boxscoresummaryv2()}},
+\code{\link[=nba_boxscoretraditionalv2]{nba_boxscoretraditionalv2()}},
+\code{\link[=nba_boxscoreusagev2]{nba_boxscoreusagev2()}},
+\code{\link[=nba_gamerotation]{nba_gamerotation()}},
+\code{\link[=nba_hustlestatsboxscore]{nba_hustlestatsboxscore()}},
+\code{\link[=nba_live_boxscore]{nba_live_boxscore()}}
 
-Other NBA Player Tracking Functions: 
-\code{\link{nba_leaguedashoppptshot}()},
-\code{\link{nba_leaguedashplayerptshot}()},
-\code{\link{nba_leaguedashptdefend}()},
-\code{\link{nba_leaguedashptstats}()},
-\code{\link{nba_leaguedashptteamdefend}()},
-\code{\link{nba_leaguedashteamptshot}()},
-\code{\link{nba_playerdashptpass}()},
-\code{\link{nba_playerdashptreb}()},
-\code{\link{nba_playerdashptshotdefend}()},
-\code{\link{nba_playerdashptshots}()},
-\code{\link{nba_synergyplaytypes}()},
-\code{\link{nba_teamdashptpass}()},
-\code{\link{nba_teamdashptreb}()},
-\code{\link{nba_teamdashptshots}()},
-\code{\link{nba_tracking_aggregate}()}
+Other NBA Player Tracking Functions:
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
+\code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
+\code{\link[=nba_leaguedashptstats]{nba_leaguedashptstats()}},
+\code{\link[=nba_leaguedashptteamdefend]{nba_leaguedashptteamdefend()}},
+\code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
+\code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
+\code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
+\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
+\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
+\code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
+\code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
+\code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},
+\code{\link[=nba_teamdashptshots]{nba_teamdashptshots()}},
+\code{\link[=nba_tracking_aggregate]{nba_tracking_aggregate()}}
 }
 \author{
 Saiem Gilani

@@ -104,12 +104,12 @@ nba_pbps(game_ids = y, version = "v2")
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
-\code{\link{nba_data_pbp}()},
-\code{\link{nba_live_pbp}()},
-\code{\link{nba_pbp}()},
-\code{\link{nba_playbyplayv3}()},
-\code{\link{nba_winprobabilitypbp}()}
+Other NBA PBP Functions:
+\code{\link[=nba_data_pbp]{nba_data_pbp()}},
+\code{\link[=nba_live_pbp]{nba_live_pbp()}},
+\code{\link[=nba_pbp]{nba_pbp()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}},
+\code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}}
 }
 \author{
 Jason Lee

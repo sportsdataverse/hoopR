@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble of leaderboard rows (\code{entity_id} + stat columns)
 }
 }
 \seealso{
-Other Fox Basketball Functions: 
+Other Fox Basketball Functions:
 \code{\link{fox_basketball_boxscore}},
 \code{\link{fox_basketball_odds}},
 \code{\link{fox_basketball_pbp}},
@@ -40,7 +40,7 @@ Other Fox Basketball Functions:
 \code{\link{fox_basketball_team_roster}},
 \code{\link{fox_basketball_team_stats}},
 \code{\link{fox_basketball_teams}},
-\code{\link{fox_mbb_teams_all}()}
+\code{\link[=fox_mbb_teams_all]{fox_mbb_teams_all()}}
 }
 \author{
 Saiem Gilani

@@ -29,7 +29,7 @@ A \code{hoopR_data} tibble, one row per team: \code{fox_team_id}, \code{fox_team
 }
 }
 \seealso{
-Other Fox Basketball Functions: 
+Other Fox Basketball Functions:
 \code{\link{fox_basketball_boxscore}},
 \code{\link{fox_basketball_league_leaders}},
 \code{\link{fox_basketball_odds}},
@@ -38,6 +38,6 @@ Other Fox Basketball Functions:
 \code{\link{fox_basketball_team_gamelog}},
 \code{\link{fox_basketball_team_roster}},
 \code{\link{fox_basketball_team_stats}},
-\code{\link{fox_mbb_teams_all}()}
+\code{\link[=fox_mbb_teams_all]{fox_mbb_teams_all()}}
 }
 \concept{Fox Basketball Functions}

@@ -36,9 +36,9 @@ A \code{hoopR_data} tibble with one row per substitution. \code{sub_in} and
 }
 }
 \seealso{
-Other CBD Substitutions Functions: 
-\code{\link{cbbd_substitutions_player}()},
-\code{\link{cbbd_substitutions_team}()}
+Other CBD Substitutions Functions:
+\code{\link[=cbbd_substitutions_player]{cbbd_substitutions_player()}},
+\code{\link[=cbbd_substitutions_team]{cbbd_substitutions_team()}}
 }
 \concept{CBD Substitutions Functions}
 \keyword{CBD}

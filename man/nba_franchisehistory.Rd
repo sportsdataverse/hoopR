@@ -68,10 +68,10 @@ Returns a named list of data frames: DefunctTeams, FranchiseHistory
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Franchise Functions: 
-\code{\link{nba_franchiseleaders}()},
-\code{\link{nba_franchiseleaderswrank}()},
-\code{\link{nba_franchiseplayers}()}
+Other NBA Franchise Functions:
+\code{\link[=nba_franchiseleaders]{nba_franchiseleaders()}},
+\code{\link[=nba_franchiseleaderswrank]{nba_franchiseleaderswrank()}},
+\code{\link[=nba_franchiseplayers]{nba_franchiseplayers()}}
 }
 \author{
 Saiem Gilani

@@ -77,12 +77,12 @@ Event Message Types (event_type):
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
-\code{\link{nba_live_pbp}()},
-\code{\link{nba_pbp}()},
-\code{\link{nba_pbps}()},
-\code{\link{nba_playbyplayv3}()},
-\code{\link{nba_winprobabilitypbp}()}
+Other NBA PBP Functions:
+\code{\link[=nba_live_pbp]{nba_live_pbp()}},
+\code{\link[=nba_pbp]{nba_pbp()}},
+\code{\link[=nba_pbps]{nba_pbps()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}},
+\code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}}
 }
 \author{
 Saiem Gilani

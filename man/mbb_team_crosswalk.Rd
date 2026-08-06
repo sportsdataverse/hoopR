@@ -64,11 +64,11 @@ Torvik is a single CSV; KenPom uses the bundled \code{teams_links} object.
 }
 }
 \seealso{
-Other MBB Crosswalk Functions: 
-\code{\link{load_mbb_player_crosswalk}()},
-\code{\link{load_mbb_schedule_crosswalk}()},
-\code{\link{load_mbb_team_crosswalk}()},
-\code{\link{mbb_player_crosswalk}()},
-\code{\link{mbb_schedule_crosswalk}()}
+Other MBB Crosswalk Functions:
+\code{\link[=load_mbb_player_crosswalk]{load_mbb_player_crosswalk()}},
+\code{\link[=load_mbb_schedule_crosswalk]{load_mbb_schedule_crosswalk()}},
+\code{\link[=load_mbb_team_crosswalk]{load_mbb_team_crosswalk()}},
+\code{\link[=mbb_player_crosswalk]{mbb_player_crosswalk()}},
+\code{\link[=mbb_schedule_crosswalk]{mbb_schedule_crosswalk()}}
 }
 \concept{MBB Crosswalk Functions}

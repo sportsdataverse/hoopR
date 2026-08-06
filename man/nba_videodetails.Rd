@@ -154,11 +154,11 @@ Use \code{nba_videodetailsasset()} instead.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Video Functions: 
-\code{\link{nba_videodetailsasset}()},
-\code{\link{nba_videoevents}()},
-\code{\link{nba_videoeventsasset}()},
-\code{\link{nba_videostatus}()}
+Other NBA Video Functions:
+\code{\link[=nba_videodetailsasset]{nba_videodetailsasset()}},
+\code{\link[=nba_videoevents]{nba_videoevents()}},
+\code{\link[=nba_videoeventsasset]{nba_videoeventsasset()}},
+\code{\link[=nba_videostatus]{nba_videostatus()}}
 }
 \author{
 Saiem Gilani

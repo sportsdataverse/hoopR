@@ -105,8 +105,8 @@ try(kp_box(game_id = 6, year = 2021))
 }
 }
 \seealso{
-Other KenPom Boxscore Functions: 
-\code{\link{kp_winprob}()}
+Other KenPom Boxscore Functions:
+\code{\link[=kp_winprob]{kp_winprob()}}
 }
 \concept{KenPom Boxscore Functions}
 \keyword{Box}

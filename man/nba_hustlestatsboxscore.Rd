@@ -87,25 +87,25 @@ Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStat
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions: 
-\code{\link{nba_boxscoreadvancedv2}()},
-\code{\link{nba_boxscoredefensive}()},
-\code{\link{nba_boxscorefourfactorsv2}()},
-\code{\link{nba_boxscorematchups}()},
-\code{\link{nba_boxscoremiscv2}()},
-\code{\link{nba_boxscoreplayertrackv2}()},
-\code{\link{nba_boxscorescoringv2}()},
-\code{\link{nba_boxscoresummaryv2}()},
-\code{\link{nba_boxscoretraditionalv2}()},
-\code{\link{nba_boxscoreusagev2}()},
-\code{\link{nba_gamerotation}()},
-\code{\link{nba_live_boxscore}()}
+Other NBA Boxscore Functions:
+\code{\link[=nba_boxscoreadvancedv2]{nba_boxscoreadvancedv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
+\code{\link[=nba_boxscorefourfactorsv2]{nba_boxscorefourfactorsv2()}},
+\code{\link[=nba_boxscorematchups]{nba_boxscorematchups()}},
+\code{\link[=nba_boxscoremiscv2]{nba_boxscoremiscv2()}},
+\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscorescoringv2]{nba_boxscorescoringv2()}},
+\code{\link[=nba_boxscoresummaryv2]{nba_boxscoresummaryv2()}},
+\code{\link[=nba_boxscoretraditionalv2]{nba_boxscoretraditionalv2()}},
+\code{\link[=nba_boxscoreusagev2]{nba_boxscoreusagev2()}},
+\code{\link[=nba_gamerotation]{nba_gamerotation()}},
+\code{\link[=nba_live_boxscore]{nba_live_boxscore()}}
 
-Other NBA Hustle Functions: 
-\code{\link{nba_leaguehustlestatsplayer}()},
-\code{\link{nba_leaguehustlestatsplayerleaders}()},
-\code{\link{nba_leaguehustlestatsteam}()},
-\code{\link{nba_leaguehustlestatsteamleaders}()}
+Other NBA Hustle Functions:
+\code{\link[=nba_leaguehustlestatsplayer]{nba_leaguehustlestatsplayer()}},
+\code{\link[=nba_leaguehustlestatsplayerleaders]{nba_leaguehustlestatsplayerleaders()}},
+\code{\link[=nba_leaguehustlestatsteam]{nba_leaguehustlestatsteam()}},
+\code{\link[=nba_leaguehustlestatsteamleaders]{nba_leaguehustlestatsteamleaders()}}
 }
 \author{
 Saiem Gilani

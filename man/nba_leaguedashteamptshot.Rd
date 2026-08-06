@@ -126,57 +126,57 @@ Returns a named list of data frames: LeagueDashPTShots
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA League Functions: 
-\code{\link{nba_iststandings}()},
-\code{\link{nba_leaguedashlineups}()},
-\code{\link{nba_leaguedashoppptshot}()},
-\code{\link{nba_leaguedashplayerbiostats}()},
-\code{\link{nba_leaguedashplayerclutch}()},
-\code{\link{nba_leaguedashplayerptshot}()},
-\code{\link{nba_leaguedashplayershotlocations}()},
-\code{\link{nba_leaguedashplayerstats}()},
-\code{\link{nba_leaguedashptdefend}()},
-\code{\link{nba_leaguedashptstats}()},
-\code{\link{nba_leaguedashptteamdefend}()},
-\code{\link{nba_leaguedashteamclutch}()},
-\code{\link{nba_leaguedashteamshotlocations}()},
-\code{\link{nba_leaguedashteamstats}()},
-\code{\link{nba_leaguegamefinder}()},
-\code{\link{nba_leaguegamelog}()},
-\code{\link{nba_leaguelineupviz}()},
-\code{\link{nba_leagueplayerondetails}()},
-\code{\link{nba_leagueseasonmatchups}()},
-\code{\link{nba_leaguestandings}()},
-\code{\link{nba_leaguestandingsv3}()},
-\code{\link{nba_matchupsrollup}()},
-\code{\link{nba_playoffpicture}()},
-\code{\link{nba_shotchartleaguewide}()}
+Other NBA League Functions:
+\code{\link[=nba_iststandings]{nba_iststandings()}},
+\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_leaguedashplayerbiostats]{nba_leaguedashplayerbiostats()}},
+\code{\link[=nba_leaguedashplayerclutch]{nba_leaguedashplayerclutch()}},
+\code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
+\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
+\code{\link[=nba_leaguedashplayerstats]{nba_leaguedashplayerstats()}},
+\code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
+\code{\link[=nba_leaguedashptstats]{nba_leaguedashptstats()}},
+\code{\link[=nba_leaguedashptteamdefend]{nba_leaguedashptteamdefend()}},
+\code{\link[=nba_leaguedashteamclutch]{nba_leaguedashteamclutch()}},
+\code{\link[=nba_leaguedashteamshotlocations]{nba_leaguedashteamshotlocations()}},
+\code{\link[=nba_leaguedashteamstats]{nba_leaguedashteamstats()}},
+\code{\link[=nba_leaguegamefinder]{nba_leaguegamefinder()}},
+\code{\link[=nba_leaguegamelog]{nba_leaguegamelog()}},
+\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_leagueplayerondetails]{nba_leagueplayerondetails()}},
+\code{\link[=nba_leagueseasonmatchups]{nba_leagueseasonmatchups()}},
+\code{\link[=nba_leaguestandings]{nba_leaguestandings()}},
+\code{\link[=nba_leaguestandingsv3]{nba_leaguestandingsv3()}},
+\code{\link[=nba_matchupsrollup]{nba_matchupsrollup()}},
+\code{\link[=nba_playoffpicture]{nba_playoffpicture()}},
+\code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}}
 
-Other NBA Player Tracking Functions: 
-\code{\link{nba_boxscoreplayertrackv2}()},
-\code{\link{nba_leaguedashoppptshot}()},
-\code{\link{nba_leaguedashplayerptshot}()},
-\code{\link{nba_leaguedashptdefend}()},
-\code{\link{nba_leaguedashptstats}()},
-\code{\link{nba_leaguedashptteamdefend}()},
-\code{\link{nba_playerdashptpass}()},
-\code{\link{nba_playerdashptreb}()},
-\code{\link{nba_playerdashptshotdefend}()},
-\code{\link{nba_playerdashptshots}()},
-\code{\link{nba_synergyplaytypes}()},
-\code{\link{nba_teamdashptpass}()},
-\code{\link{nba_teamdashptreb}()},
-\code{\link{nba_teamdashptshots}()},
-\code{\link{nba_tracking_aggregate}()}
+Other NBA Player Tracking Functions:
+\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
+\code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
+\code{\link[=nba_leaguedashptstats]{nba_leaguedashptstats()}},
+\code{\link[=nba_leaguedashptteamdefend]{nba_leaguedashptteamdefend()}},
+\code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
+\code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
+\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
+\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
+\code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
+\code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
+\code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},
+\code{\link[=nba_teamdashptshots]{nba_teamdashptshots()}},
+\code{\link[=nba_tracking_aggregate]{nba_tracking_aggregate()}}
 
-Other NBA Shooting Functions: 
-\code{\link{nba_leaguedashplayershotlocations}()},
-\code{\link{nba_leaguedashteamshotlocations}()},
-\code{\link{nba_playerdashboardbyclutch}()},
-\code{\link{nba_shotchartdetail}()},
-\code{\link{nba_shotchartleaguewide}()},
-\code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashboardbyclutch}()}
+Other NBA Shooting Functions:
+\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
+\code{\link[=nba_leaguedashteamshotlocations]{nba_leaguedashteamshotlocations()}},
+\code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}},
+\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani

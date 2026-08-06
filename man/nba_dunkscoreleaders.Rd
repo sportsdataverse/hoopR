@@ -101,16 +101,16 @@ Returns a named list of data frames: DunkScoreLeaders
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Leaders Functions: 
-\code{\link{nba_alltimeleadersgrids}()},
-\code{\link{nba_assistleaders}()},
-\code{\link{nba_assisttracker}()},
-\code{\link{nba_defensehub}()},
-\code{\link{nba_gravityleaders}()},
-\code{\link{nba_homepageleaders}()},
-\code{\link{nba_homepagev2}()},
-\code{\link{nba_leaderstiles}()},
-\code{\link{nba_leagueleaders}()}
+Other NBA Leaders Functions:
+\code{\link[=nba_alltimeleadersgrids]{nba_alltimeleadersgrids()}},
+\code{\link[=nba_assistleaders]{nba_assistleaders()}},
+\code{\link[=nba_assisttracker]{nba_assisttracker()}},
+\code{\link[=nba_defensehub]{nba_defensehub()}},
+\code{\link[=nba_gravityleaders]{nba_gravityleaders()}},
+\code{\link[=nba_homepageleaders]{nba_homepageleaders()}},
+\code{\link[=nba_homepagev2]{nba_homepagev2()}},
+\code{\link[=nba_leaderstiles]{nba_leaderstiles()}},
+\code{\link[=nba_leagueleaders]{nba_leagueleaders()}}
 }
 \author{
 Saiem Gilani

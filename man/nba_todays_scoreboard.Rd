@@ -82,16 +82,16 @@ Return a data frame with the following columns:\tabular{lll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions: 
-\code{\link{nba_schedule}()},
-\code{\link{nba_scheduleleaguev2int}()},
-\code{\link{nba_scoreboard}()},
-\code{\link{nba_scoreboardv2}()},
-\code{\link{nba_scoreboardv3}()}
+Other NBA Schedule Functions:
+\code{\link[=nba_schedule]{nba_schedule()}},
+\code{\link[=nba_scheduleleaguev2int]{nba_scheduleleaguev2int()}},
+\code{\link[=nba_scoreboard]{nba_scoreboard()}},
+\code{\link[=nba_scoreboardv2]{nba_scoreboardv2()}},
+\code{\link[=nba_scoreboardv3]{nba_scoreboardv3()}}
 
-Other NBA Live Functions: 
-\code{\link{nba_live_boxscore}()},
-\code{\link{nba_live_pbp}()}
+Other NBA Live Functions:
+\code{\link[=nba_live_boxscore]{nba_live_boxscore()}},
+\code{\link[=nba_live_pbp]{nba_live_pbp()}}
 }
 \author{
 Saiem Gilani

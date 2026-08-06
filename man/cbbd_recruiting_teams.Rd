@@ -33,9 +33,9 @@ A \code{hoopR_data} tibble with one row per team:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Recruiting Functions: 
-\code{\link{cbbd_recruiting_players}()},
-\code{\link{cbbd_recruiting_portal}()}
+Other CBD Recruiting Functions:
+\code{\link[=cbbd_recruiting_players]{cbbd_recruiting_players()}},
+\code{\link[=cbbd_recruiting_portal]{cbbd_recruiting_portal()}}
 }
 \concept{CBD Recruiting Functions}
 \keyword{CBD}

@@ -23,9 +23,9 @@ nba_player_headshot_url(player_id = 201939)            # Stephen Curry
 nba_player_headshot_url(c(2544, 201939), size = "260x190")
 }
 \seealso{
-Other NBA Dictionary Functions: 
-\code{\link{nba_player_dict}()},
-\code{\link{nba_team_dict}()},
-\code{\link{nba_team_logo_url}()}
+Other NBA Dictionary Functions:
+\code{\link[=nba_player_dict]{nba_player_dict()}},
+\code{\link[=nba_team_dict]{nba_team_dict()}},
+\code{\link[=nba_team_logo_url]{nba_team_logo_url()}}
 }
 \concept{NBA Dictionary Functions}

@@ -80,12 +80,12 @@ Returns a tibble with the following columns:\tabular{lll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions: 
-\code{\link{nba_scheduleleaguev2int}()},
-\code{\link{nba_scoreboard}()},
-\code{\link{nba_scoreboardv2}()},
-\code{\link{nba_scoreboardv3}()},
-\code{\link{nba_todays_scoreboard}()}
+Other NBA Schedule Functions:
+\code{\link[=nba_scheduleleaguev2int]{nba_scheduleleaguev2int()}},
+\code{\link[=nba_scoreboard]{nba_scoreboard()}},
+\code{\link[=nba_scoreboardv2]{nba_scoreboardv2()}},
+\code{\link[=nba_scoreboardv3]{nba_scoreboardv3()}},
+\code{\link[=nba_todays_scoreboard]{nba_todays_scoreboard()}}
 }
 \author{
 Saiem Gilani

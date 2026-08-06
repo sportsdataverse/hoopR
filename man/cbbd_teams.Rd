@@ -43,8 +43,8 @@ A \code{hoopR_data} tibble with one row per team:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Teams Functions: 
-\code{\link{cbbd_teams_roster}()}
+Other CBD Teams Functions:
+\code{\link[=cbbd_teams_roster]{cbbd_teams_roster()}}
 }
 \concept{CBD Teams Functions}
 \keyword{CBD}

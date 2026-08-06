@@ -127,14 +127,14 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Shooting Functions: 
-\code{\link{nba_leaguedashplayershotlocations}()},
-\code{\link{nba_leaguedashteamptshot}()},
-\code{\link{nba_leaguedashteamshotlocations}()},
-\code{\link{nba_playerdashboardbyclutch}()},
-\code{\link{nba_shotchartleaguewide}()},
-\code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashboardbyclutch}()}
+Other NBA Shooting Functions:
+\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
+\code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
+\code{\link[=nba_leaguedashteamshotlocations]{nba_leaguedashteamshotlocations()}},
+\code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
+\code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}},
+\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani

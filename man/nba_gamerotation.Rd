@@ -61,28 +61,28 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Functions: 
-\code{\link{nba_boxscoreadvancedv2}()},
-\code{\link{nba_boxscoredefensive}()},
-\code{\link{nba_boxscorefourfactorsv2}()},
-\code{\link{nba_boxscorematchups}()},
-\code{\link{nba_boxscoremiscv2}()},
-\code{\link{nba_boxscoreplayertrackv2}()},
-\code{\link{nba_boxscorescoringv2}()},
-\code{\link{nba_boxscoresummaryv2}()},
-\code{\link{nba_boxscoretraditionalv2}()},
-\code{\link{nba_boxscoreusagev2}()},
-\code{\link{nba_hustlestatsboxscore}()},
-\code{\link{nba_live_boxscore}()}
+Other NBA Boxscore Functions:
+\code{\link[=nba_boxscoreadvancedv2]{nba_boxscoreadvancedv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
+\code{\link[=nba_boxscorefourfactorsv2]{nba_boxscorefourfactorsv2()}},
+\code{\link[=nba_boxscorematchups]{nba_boxscorematchups()}},
+\code{\link[=nba_boxscoremiscv2]{nba_boxscoremiscv2()}},
+\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscorescoringv2]{nba_boxscorescoringv2()}},
+\code{\link[=nba_boxscoresummaryv2]{nba_boxscoresummaryv2()}},
+\code{\link[=nba_boxscoretraditionalv2]{nba_boxscoretraditionalv2()}},
+\code{\link[=nba_boxscoreusagev2]{nba_boxscoreusagev2()}},
+\code{\link[=nba_hustlestatsboxscore]{nba_hustlestatsboxscore()}},
+\code{\link[=nba_live_boxscore]{nba_live_boxscore()}}
 
-Other NBA Lineup Functions: 
-\code{\link{nba_leaguedashlineups}()},
-\code{\link{nba_leaguelineupviz}()},
-\code{\link{nba_possession_lineups}()},
-\code{\link{nba_rapm}()},
-\code{\link{nba_shot_zones}()},
-\code{\link{nba_shotchartlineupdetail}()},
-\code{\link{nba_teamdashlineups}()}
+Other NBA Lineup Functions:
+\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
+\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_rapm]{nba_rapm()}},
+\code{\link[=nba_shot_zones]{nba_shot_zones()}},
+\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
+\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
 }
 \author{
 Saiem Gilani

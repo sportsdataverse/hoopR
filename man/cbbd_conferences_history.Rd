@@ -31,8 +31,8 @@ is a nested list of per-team membership spans:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Conferences Functions: 
-\code{\link{cbbd_conferences}()}
+Other CBD Conferences Functions:
+\code{\link[=cbbd_conferences]{cbbd_conferences()}}
 }
 \concept{CBD Conferences Functions}
 \keyword{CBD}

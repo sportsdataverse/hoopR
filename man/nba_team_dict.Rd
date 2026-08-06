@@ -36,10 +36,10 @@ static conference/division map.
 }
 }
 \seealso{
-Other NBA Dictionary Functions: 
-\code{\link{nba_player_dict}()},
-\code{\link{nba_player_headshot_url}()},
-\code{\link{nba_team_logo_url}()}
+Other NBA Dictionary Functions:
+\code{\link[=nba_player_dict]{nba_player_dict()}},
+\code{\link[=nba_player_headshot_url]{nba_player_headshot_url()}},
+\code{\link[=nba_team_logo_url]{nba_team_logo_url()}}
 }
 \concept{NBA Dictionary Functions}
 \keyword{Dictionary}

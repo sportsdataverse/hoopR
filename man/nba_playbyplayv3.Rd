@@ -62,12 +62,12 @@ Returns a named list of data frames: PlayByPlay, AvailableVideo
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
-\code{\link{nba_data_pbp}()},
-\code{\link{nba_live_pbp}()},
-\code{\link{nba_pbp}()},
-\code{\link{nba_pbps}()},
-\code{\link{nba_winprobabilitypbp}()}
+Other NBA PBP Functions:
+\code{\link[=nba_data_pbp]{nba_data_pbp()}},
+\code{\link[=nba_live_pbp]{nba_live_pbp()}},
+\code{\link[=nba_pbp]{nba_pbp()}},
+\code{\link[=nba_pbps]{nba_pbps()}},
+\code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}}
 }
 \author{
 Saiem Gilani

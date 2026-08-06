@@ -51,9 +51,9 @@ A \code{hoopR_data} tibble with one row per draft pick:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Draft Functions: 
-\code{\link{cbbd_draft_positions}()},
-\code{\link{cbbd_draft_teams}()}
+Other CBD Draft Functions:
+\code{\link[=cbbd_draft_positions]{cbbd_draft_positions()}},
+\code{\link[=cbbd_draft_teams]{cbbd_draft_teams()}}
 }
 \concept{CBD Draft Functions}
 \keyword{CBD}

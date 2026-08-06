@@ -25,9 +25,9 @@ A \code{hoopR_data} tibble with one row per substitution (same columns as
 }
 }
 \seealso{
-Other CBD Substitutions Functions: 
-\code{\link{cbbd_substitutions_game}()},
-\code{\link{cbbd_substitutions_team}()}
+Other CBD Substitutions Functions:
+\code{\link[=cbbd_substitutions_game]{cbbd_substitutions_game()}},
+\code{\link[=cbbd_substitutions_team]{cbbd_substitutions_team()}}
 }
 \concept{CBD Substitutions Functions}
 \keyword{CBD}

@@ -65,15 +65,15 @@ try(kp_teamstats(min_year = 2019, max_year = 2021))
 }
 }
 \seealso{
-Other KenPom Ratings Functions: 
-\code{\link{kp_efficiency}()},
-\code{\link{kp_foul_trouble}()},
-\code{\link{kp_fourfactors}()},
-\code{\link{kp_height}()},
-\code{\link{kp_kpoy}()},
-\code{\link{kp_playerstats}()},
-\code{\link{kp_pointdist}()},
-\code{\link{kp_pomeroy_ratings}()}
+Other KenPom Ratings Functions:
+\code{\link[=kp_efficiency]{kp_efficiency()}},
+\code{\link[=kp_foul_trouble]{kp_foul_trouble()}},
+\code{\link[=kp_fourfactors]{kp_fourfactors()}},
+\code{\link[=kp_height]{kp_height()}},
+\code{\link[=kp_kpoy]{kp_kpoy()}},
+\code{\link[=kp_playerstats]{kp_playerstats()}},
+\code{\link[=kp_pointdist]{kp_pointdist()}},
+\code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}}
 }
 \concept{KenPom Ratings Functions}
 \keyword{Team}

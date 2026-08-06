@@ -96,13 +96,13 @@ load_nba_pbp(seasons = most_recent_nba_season())
 }
 }
 \seealso{
-Other hoopR Loader Functions: 
-\code{\link{load_mbb_pbp}()},
-\code{\link{load_mbb_player_box}()},
-\code{\link{load_mbb_schedule}()},
-\code{\link{load_mbb_team_box}()},
-\code{\link{load_nba_player_box}()},
-\code{\link{load_nba_schedule}()},
-\code{\link{load_nba_team_box}()}
+Other hoopR Loader Functions:
+\code{\link[=load_mbb_pbp]{load_mbb_pbp()}},
+\code{\link[=load_mbb_player_box]{load_mbb_player_box()}},
+\code{\link[=load_mbb_schedule]{load_mbb_schedule()}},
+\code{\link[=load_mbb_team_box]{load_mbb_team_box()}},
+\code{\link[=load_nba_player_box]{load_nba_player_box()}},
+\code{\link[=load_nba_schedule]{load_nba_schedule()}},
+\code{\link[=load_nba_team_box]{load_nba_team_box()}}
 }
 \concept{hoopR Loader Functions}
