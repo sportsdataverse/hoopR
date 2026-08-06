@@ -1,7 +1,7 @@
 #' @title
 #' **HoopsHype Player Salaries**
 #' @description
-#' **Get NBA player salaries from [HoopsHype](https://hoopshype.com).**
+#' **Get NBA player salaries from [HoopsHype](https://www.hoopshype.com/).**
 #'
 #' Returns the full league's player salaries, one row per player per contract
 #' season (current plus future seasons HoopsHype lists). No API key is required;
@@ -73,7 +73,7 @@ hoopshype_salaries <- function() {
       rows <- list()
       for (slug in teams) {
         team_rows <- tryCatch({
-          doc <- .ext_html(paste0("https://hoopshype.com/salaries/", slug, "/"))
+          doc <- .ext_html(paste0("https://www.hoopshype.com/salaries/", slug, "/"))
           contracts <- contracts_of(.next_data(doc))
           do.call(c, lapply(contracts, function(ct) {
             pl <- ct$player

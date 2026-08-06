@@ -85,13 +85,54 @@ against a golden fixture captured from that function; see
 \code{tests/testthat/fixtures/player_core/README.md} for provenance. Neither
 implementation is authoritative — a divergence is a review item.
 }
+\section{Twin}{
+
+\code{wehoop::espn_basketball_player_core()} is the identical function for the
+women's leagues. The core-v2 athlete resource is the same payload shape for
+nba/wnba/mbb/wbb, so the projection is league-agnostic -- sdv-py implements
+it once and re-exports it per league. hoopR and wehoop are independently
+published and neither depends on the other, so here it is duplicated:
+\strong{a change to one must land in the other in the same session, verified.}
+}
+
 \examples{
 \donttest{
+  # Split across lines to keep the Rd under the line-width limit; the
+  # core-v2 $ref URLs are long enough to be truncated in the PDF manual.
+  team_ref <- paste0(
+    "http://sports.core.api.espn.com/v2/sports/basketball/",
+    "leagues/nba/seasons/2025/teams/22"
+  )
   payload <- list(
     guid = "abc", fullName = "Jane Doe", jersey = "23",
     position = list(id = "5", abbreviation = "G"),
-    team = list(`$ref` = "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/22")
+    team = list(`$ref` = team_ref)
   )
   espn_basketball_player_core(payload, athlete_id = 1966)
 }
 }
+\seealso{
+Other Basketball Analytics Utilities:
+\code{\link[=nba_add_advanced_metrics]{nba_add_advanced_metrics()}},
+\code{\link[=nba_assist_pct]{nba_assist_pct()}},
+\code{\link[=nba_assist_to_turnover]{nba_assist_to_turnover()}},
+\code{\link[=nba_defensive_rating]{nba_defensive_rating()}},
+\code{\link[=nba_effective_fg_pct]{nba_effective_fg_pct()}},
+\code{\link[=nba_four_factors]{nba_four_factors()}},
+\code{\link[=nba_ft_rate]{nba_ft_rate()}},
+\code{\link[=nba_game_score]{nba_game_score()}},
+\code{\link[=nba_net_rating]{nba_net_rating()}},
+\code{\link[=nba_offensive_rating]{nba_offensive_rating()}},
+\code{\link[=nba_oreb_pct]{nba_oreb_pct()}},
+\code{\link[=nba_pace]{nba_pace()}},
+\code{\link[=nba_per_minutes]{nba_per_minutes()}},
+\code{\link[=nba_per_possessions]{nba_per_possessions()}},
+\code{\link[=nba_possessions]{nba_possessions()}},
+\code{\link[=nba_true_shooting_pct]{nba_true_shooting_pct()}},
+\code{\link[=nba_turnover_pct]{nba_turnover_pct()}},
+\code{\link[=nba_usage_rate]{nba_usage_rate()}}
+}
+\author{
+Saiem Gilani
+}
+\concept{Basketball Analytics Utilities}

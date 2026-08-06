@@ -1,4 +1,7 @@
+#' **Project an ESPN core-v2 athlete record into a `player_core` row**
 #' @name espn_basketball_player_core
+NULL
+#' @rdname espn_basketball_player_core
 #' @aliases espn_basketball_player_core
 #' @title **Project an ESPN core-v2 athlete record into a `player_core` row**
 #' @description Turns one ESPN core-v2 `/athletes/{id}` payload into the single
@@ -78,13 +81,29 @@
 #'
 #' @examples
 #' \donttest{
+#'   # Split across lines to keep the Rd under the line-width limit; the
+#'   # core-v2 $ref URLs are long enough to be truncated in the PDF manual.
+#'   team_ref <- paste0(
+#'     "http://sports.core.api.espn.com/v2/sports/basketball/",
+#'     "leagues/nba/seasons/2025/teams/22"
+#'   )
 #'   payload <- list(
 #'     guid = "abc", fullName = "Jane Doe", jersey = "23",
 #'     position = list(id = "5", abbreviation = "G"),
-#'     team = list(`$ref` = "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/22")
+#'     team = list(`$ref` = team_ref)
 #'   )
 #'   espn_basketball_player_core(payload, athlete_id = 1966)
 #' }
+#' @section Twin:
+#' `wehoop::espn_basketball_player_core()` is the identical function for the
+#' women's leagues. The core-v2 athlete resource is the same payload shape for
+#' nba/wnba/mbb/wbb, so the projection is league-agnostic -- sdv-py implements
+#' it once and re-exports it per league. hoopR and wehoop are independently
+#' published and neither depends on the other, so here it is duplicated:
+#' **a change to one must land in the other in the same session, verified.**
+#' @author Saiem Gilani
+#' @importFrom janitor clean_names
+#' @family Basketball Analytics Utilities
 #' @export
 espn_basketball_player_core <- function(payload, athlete_id) {
   cols <- .player_core_cols()
@@ -145,7 +164,7 @@ espn_basketball_player_core <- function(payload, athlete_id) {
     active = .pc_lgl(payload[["active"]])
   )
 
-  tibble::as_tibble(row[cols])
+  .player_core_finalize(tibble::as_tibble(row[cols]))
 }
 
 #' The released column order. Order is part of the contract -- both pipelines
@@ -182,7 +201,22 @@ espn_basketball_player_core <- function(payload, athlete_id) {
     if (c %in% int_cols) integer() else if (c %in% dbl_cols) numeric() else if (c == "active") logical() else character()
   })
   names(proto) <- cols
-  tibble::as_tibble(proto)
+  # The empty path is finalized identically to the populated one, so a caller
+  # that chains on the result sees the same class and attributes whether or not
+  # the payload had anything in it.
+  .player_core_finalize(tibble::as_tibble(proto))
+}
+
+#' Apply the package data contract to a player_core frame.
+#'
+#' Both return paths go through here so they cannot drift: the type string in
+#' particular was previously written out twice, which is one edit away from the
+#' two paths disagreeing about what they claim to be.
+#' @noRd
+.player_core_finalize <- function(df) {
+  df %>%
+    janitor::clean_names() %>%
+    make_hoopR_data("ESPN Basketball Player Core from ESPN.com", Sys.time())
 }
 
 #' A nested node, or an empty list when absent. Mirrors Python's

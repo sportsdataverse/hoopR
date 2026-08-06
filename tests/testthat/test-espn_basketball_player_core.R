@@ -92,7 +92,7 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
 
 test_that("espn_basketball_player_core() covers the branches the fixtures encode", {
   fx <- testthat::test_path("fixtures", "player_core")
-  read_one <- function(aid) {
+  .read_one <- function(aid) {
     espn_basketball_player_core(
       jsonlite::fromJSON(file.path(fx, paste0(aid, ".json")), simplifyVector = FALSE),
       athlete_id = aid
@@ -100,13 +100,13 @@ test_that("espn_basketball_player_core() covers the branches the fixtures encode
   }
 
   # 1011 has no college node: college_id must be NA, not 0 and not an error.
-  expect_true(is.na(read_one(1011L)$college_id))
+  expect_true(is.na(.read_one(1011L)$college_id))
   # 10 has a college but no draft: all three draft columns NA together.
-  no_draft <- read_one(10L)
+  no_draft <- .read_one(10L)
   expect_true(all(is.na(c(no_draft$draft_year, no_draft$draft_round, no_draft$draft_selection))))
   expect_false(is.na(no_draft$college_id))
   # 1000 is the fully-populated path.
-  full <- read_one(1000L)
+  full <- .read_one(1000L)
   expect_false(is.na(full$college_id))
   expect_false(is.na(full$draft_year))
 })
@@ -185,4 +185,28 @@ test_that("espn_basketball_player_core() keeps athlete_id an integer join key", 
   out <- espn_basketball_player_core(list(guid = "g"), athlete_id = "1966")
   expect_equal(out$athlete_id, 1966L)
   expect_false(is.character(out$athlete_id))
+})
+
+test_that("espn_basketball_player_core() finalizes both paths as hoopR_data", {
+  # Without these assertions the suite passes even if make_hoopR_data() is deleted: the
+  # golden-master test compares values and column names, and neither changes
+  # when the class and attributes are dropped. The finalized contract was added
+  # in response to review, so it needs a test that fails when it regresses.
+  fx <- testthat::test_path("fixtures", "player_core")
+  populated <- espn_basketball_player_core(
+    jsonlite::fromJSON(file.path(fx, "1000.json"), simplifyVector = FALSE),
+    athlete_id = 1000L
+  )
+  empty <- espn_basketball_player_core(list(), athlete_id = 1L)
+
+  for (out in list(populated, empty)) {
+    expect_s3_class(out, "hoopR_data")
+    expect_equal(attr(out, "hoopR_type"),
+                 "ESPN Basketball Player Core from ESPN.com")
+    expect_s3_class(attr(out, "hoopR_timestamp"), "POSIXct")
+    # The finalizer must not disturb the 35-column contract it wraps.
+    expect_equal(ncol(out), 35L)
+  }
+  expect_equal(nrow(populated), 1L)
+  expect_equal(nrow(empty), 0L)
 })

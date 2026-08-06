@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per player-season:\tabular{lll}{
 }
 }
 \description{
-\strong{Get NBA player salaries from \href{https://hoopshype.com}{HoopsHype}.}
+\strong{Get NBA player salaries from \href{https://www.hoopshype.com/}{HoopsHype}.}
 
 Returns the full league's player salaries, one row per player per contract
 season (current plus future seasons HoopsHype lists). No API key is required;

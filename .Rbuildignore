@@ -41,3 +41,12 @@ mbb_pbp_db
 ^\.DS_Store$
 ^Meta$
 ^doc$
+^\.omc$
+^\.remember$
+^\.ruff_cache$
+^\.pytest_cache$
+^\.understand-anything$
+^\.superpowers$
+^debug\.log$
+^nul$
+^.*\.log$
