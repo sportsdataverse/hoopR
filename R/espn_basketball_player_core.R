@@ -96,7 +96,6 @@ NULL
 #' published and neither depends on the other, so here it is duplicated:
 #' **a change to one must land in the other in the same session, verified.**
 #' @author Saiem Gilani
-#' @importFrom tibble as_tibble
 #' @importFrom janitor clean_names
 #' @family Basketball Analytics Utilities
 #' @export
