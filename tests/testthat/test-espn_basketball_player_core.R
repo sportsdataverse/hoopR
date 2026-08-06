@@ -9,12 +9,21 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
   # -- a hand-made payload is the failure mode this guards.
   fx <- testthat::test_path("fixtures", "player_core")
 
-  # Column types are DECLARED, never inferred. Letting readr guess tests the
-  # reader rather than the port, and guesses wrong here in both directions:
-  # `date_of_birth` ("1979-11-27T08:00Z") is read as a datetime (double-backed)
-  # and `jersey` ("98", "", "35") as a double. The second is the dangerous one
-  # -- a numeric jersey silently turns "007" into 7, so the oracle would drift
-  # from the released string column while the test still passed.
+  # Column types are DECLARED, never inferred, and read with base R so the
+  # test adds no dependency to the package (readr is not in Imports/Suggests;
+  # using it fails R CMD check on a clean machine).
+  #
+  # Inference guesses wrong here in both directions: `date_of_birth`
+  # ("1979-11-27T08:00Z") parses as a datetime and `jersey` ("98", "", "35") as
+  # a number. The second is the dangerous one -- a numeric jersey silently
+  # turns "007" into 7, so the oracle would drift from the released string
+  # column while the test still passed.
+  #
+  # na.strings = "" ONLY. The default includes "NA", which would turn the
+  # literal string "NA" into a missing value -- and ESPN uses "NA" as a real
+  # value: the abbreviation of its "Not Available" position is the two
+  # characters N,A. Empty cells, which is what genuine nulls serialise to,
+  # still read as NA.
   int_cols <- c(
     "athlete_id", "age", "position_id", "college_id", "current_team_id",
     "experience_years", "status_id", "draft_year", "draft_round",
@@ -30,27 +39,18 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
     "status_name", "status_type", "draft_year", "draft_round",
     "draft_selection", "active"
   )
-  spec <- stats::setNames(
-    lapply(all_cols, function(col) {
-      if (col %in% int_cols) readr::col_integer()
-      else if (col %in% c("height", "weight")) readr::col_double()
-      else if (col == "active") readr::col_logical()
-      else readr::col_character()
-    }),
-    all_cols
-  )
+  col_classes <- vapply(all_cols, function(col) {
+    if (col %in% int_cols) "integer"
+    else if (col %in% c("height", "weight")) "numeric"
+    else if (col == "active") "logical"
+    else "character"
+  }, character(1))
 
-  expected <- readr::read_csv(
+  expected <- utils::read.csv(
     file.path(fx, "expected_player_core.csv"),
-    col_types = do.call(readr::cols, spec),
-    # na = "" ONLY. readr's default is c("", "NA"), which turns the literal
-    # string "NA" into a missing value even under col_character(). ESPN uses
-    # "NA" as a real value -- position abbreviation for its "Not Available"
-    # position is the two characters N,A -- so the default silently corrupts
-    # the oracle and makes a correct port look wrong. Empty cells still read
-    # as NA, which is what the genuine nulls serialise to.
-    na = "",
-    progress = FALSE
+    colClasses = col_classes,
+    na.strings = "",
+    check.names = FALSE
   )
 
   ids <- c(1000L, 1011L, 10L)
