@@ -1,0 +1,246 @@
+{
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/10?lang=en&region=us",
+"id": "10",
+"uid": "s:40~l:46~a:10",
+"guid": "1b853ae5-1652-b1ae-52b0-fbebb16da2ef",
+"type": "basketball",
+"alternateIds": {
+"sdr": "2028489"
+},
+"firstName": "Malik",
+"lastName": "Allen",
+"fullName": "Malik Allen",
+"displayName": "Malik Allen",
+"shortName": "M. Allen",
+"weight": 255.0,
+"displayWeight": "255 lbs",
+"height": 82.0,
+"displayHeight": "6' 10\"",
+"age": 48,
+"dateOfBirth": "1978-06-27T07:00Z",
+"debutYear": 2001,
+"links": [
+{
+"language": "en-US",
+"rel": [
+"playercard",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/_/id/10/malik-allen",
+"text": "Player Card",
+"shortText": "Player Card",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"stats",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/stats/_/id/10/malik-allen",
+"text": "Stats",
+"shortText": "Stats",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"stats",
+"sportscenter",
+"app",
+"athlete"
+],
+"href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:10&section=stats",
+"text": "Stats",
+"shortText": "Stats",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"splits",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/splits/_/id/10/malik-allen",
+"text": "Splits",
+"shortText": "Splits",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"gamelog",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/gamelog/_/id/10/malik-allen",
+"text": "Game Log",
+"shortText": "Game Log",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"gamelog",
+"sportscenter",
+"app",
+"athlete"
+],
+"href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:10&section=gamelog",
+"text": "Game Log",
+"shortText": "Game Log",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"news",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/news/_/id/10/malik-allen",
+"text": "News",
+"shortText": "News",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"news",
+"sportscenter",
+"app",
+"athlete"
+],
+"href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:10&section=news",
+"text": "News",
+"shortText": "News",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"bio",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/bio/_/id/10/malik-allen",
+"text": "Bio",
+"shortText": "Bio",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"bio",
+"sportscenter",
+"app",
+"athlete"
+],
+"href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:10&section=bio",
+"text": "Bio",
+"shortText": "Bio",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"overview",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/_/id/10/malik-allen",
+"text": "Overview",
+"shortText": "Overview",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"overview",
+"sportscenter",
+"app",
+"athlete"
+],
+"href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:10",
+"text": "Overview",
+"shortText": "Overview",
+"isExternal": false,
+"isPremium": false
+},
+{
+"language": "en-US",
+"rel": [
+"advancedstats",
+"desktop",
+"athlete"
+],
+"href": "https://www.espn.com/nba/player/advancedstats/_/id/10/malik-allen",
+"text": "Advanced Stats",
+"shortText": "Advanced Stats",
+"isExternal": false,
+"isPremium": false
+}
+],
+"birthPlace": {
+"city": "Medford",
+"state": "NJ",
+"country": "USA"
+},
+"college": {
+"$ref": "http://sports.core.api.espn.com/v2/colleges/222?lang=en&region=us"
+},
+"slug": "malik-allen",
+"headshot": {
+"href": "https://a.espncdn.com/i/headshots/nba/players/full/10.png",
+"alt": "Malik Allen"
+},
+"jersey": "35",
+"position": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/positions/6?lang=en&region=us",
+"id": "6",
+"name": "Power Forward",
+"displayName": "Power Forward",
+"abbreviation": "PF",
+"leaf": true,
+"parent": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/positions/7?lang=en&region=us"
+}
+},
+"linked": true,
+"team": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2011/teams/19?lang=en&region=us"
+},
+"statistics": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/10/statistics?lang=en&region=us"
+},
+"contracts": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/10/contracts?lang=en&region=us"
+},
+"active": false,
+"status": {
+"id": "2",
+"name": "Inactive",
+"type": "inactive",
+"abbreviation": "Inactive"
+},
+"statisticslog": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/10/statisticslog?lang=en&region=us"
+},
+"seasons": {
+"$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/10/seasons?lang=en&region=us"
+}
+}
