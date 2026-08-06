@@ -197,7 +197,7 @@ no key required:
   players and average age from [Spotrac](https://www.spotrac.com).
 - **`hoopshype_salaries()`** — the **full league's** player salaries (one row
   per player-season, current + future contract years) from
-  [HoopsHype](https://hoopshype.com). HoopsHype is now a Next.js app whose
+  [HoopsHype](https://www.hoopshype.com/). HoopsHype is now a Next.js app whose
   single salaries page paginates client-side, but each team page embeds that
   team's complete roster in its `__NEXT_DATA__` payload — so this iterates the 30
   team pages and stitches them together (~600 players) via a team-by-team
