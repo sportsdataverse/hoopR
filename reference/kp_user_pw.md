@@ -33,7 +33,7 @@ has_kp_user_and_pw()
 **Using your KenPom subscription with the package:**  
 
 Run
-[**[`usethis::edit_r_environ()`](https://usethis.r-lib.org/reference/edit.html)**](https://usethis.r-lib.org/reference/edit.html)
+[**`usethis::edit_r_environ()`**](https://usethis.r-lib.org/reference/edit.html)
 and THEN paste the following in the new script that pops up (with**out**
 quotations)  
 

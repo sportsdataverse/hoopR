@@ -157,7 +157,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_group_teams(group_id = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Teams Index ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:32 UTC
+#> ℹ Data updated: 2026-08-06 03:59:24 UTC
 #> # A tibble: 10 × 6
 #>    league                  season season_type group_id team_id ref              
 #>    <chr>                    <int>       <int> <chr>    <chr>   <chr>            

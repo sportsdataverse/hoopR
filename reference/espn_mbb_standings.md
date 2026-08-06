@@ -199,11 +199,11 @@ Other ESPN MBB Functions:
 # \donttest{
 try(espn_mbb_standings(2021))
 #> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:37 UTC
+#> ℹ Data updated: 2026-08-06 03:59:29 UTC
 #> # A tibble: 348 × 86
 #>    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent
 #>  *   <int> <chr>                 <dbl>        <dbl>       <dbl>            <dbl>
-#>  1    2250 Gonzaga B…             69.7         91.0         0              1    
+#>  1    2250 Gonzaga B…             69.7         91.0        -6.5            1    
 #>  2     239 Baylor Be…             65.5         82.9         0              0.929
 #>  3    2737 Winthrop …             67.0         78.9         0              0.944
 #>  4     248 Houston C…             58.2         76.1         1              0.824
@@ -211,7 +211,7 @@ try(espn_mbb_standings(2021))
 #>  6    2057 Belmont B…             69.1         81.3        -0.5            0.9  
 #>  7    2350 Loyola Ch…             56.1         71.0        -5              0.889
 #>  8    2181 Drake Bul…             64.5         75.9         0              0.833
-#>  9     253 Southern …             69.5         84.2        -3              0.857
+#>  9     253 Southern …             69.5         84.2         0              0.857
 #> 10    2426 Navy Mids…             67           71.5         0              0.923
 #> # ℹ 338 more rows
 #> # ℹ 80 more variables: losses <dbl>, playoffseed <dbl>,

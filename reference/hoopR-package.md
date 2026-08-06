@@ -24,6 +24,11 @@ Useful links:
 **Maintainer**: Saiem Gilani <saiem.gilani@gmail.com>
 ([ORCID](https://orcid.org/0000-0002-7194-9067)) \[copyright holder\]
 
+Authors:
+
+- Saiem Gilani <saiem.gilani@gmail.com>
+  ([ORCID](https://orcid.org/0000-0002-7194-9067)) \[copyright holder\]
+
 Other contributors:
 
 - Jason Lee <Jason@aisportsfirm.com> \[contributor\]

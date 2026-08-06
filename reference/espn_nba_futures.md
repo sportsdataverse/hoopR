@@ -158,8 +158,8 @@ Saiem Gilani
 # \donttest{
   espn_nba_futures(season = 2025)
 #> ── ESPN NBA Season Futures ────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:54 UTC
-#> # A tibble: 586 × 11
+#> ℹ Data updated: 2026-08-06 03:59:44 UTC
+#> # A tibble: 570 × 11
 #>    season league market_id market_name  market_type market_display   provider_id
 #>     <int> <chr>      <int> <chr>        <chr>       <chr>            <chr>      
 #>  1   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
@@ -172,7 +172,7 @@ Saiem Gilani
 #>  8   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
 #>  9   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
 #> 10   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
-#> # ℹ 576 more rows
+#> # ℹ 560 more rows
 #> # ℹ 4 more variables: provider_name <chr>, team_id <chr>, odds_value <chr>,
 #> #   team_ref <chr>
 # }

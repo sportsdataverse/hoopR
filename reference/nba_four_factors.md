@@ -27,6 +27,7 @@ A `tibble` with columns `efg_pct`, `tov_pct`, `oreb_pct`, `ft_rate`.
 ## See also
 
 Other Basketball Analytics Utilities:
+[`espn_basketball_player_core()`](https://hoopR.sportsdataverse.org/reference/espn_basketball_player_core.md),
 [`nba_add_advanced_metrics()`](https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.md),
 [`nba_assist_pct()`](https://hoopR.sportsdataverse.org/reference/nba_assist_pct.md),
 [`nba_assist_to_turnover()`](https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.md),

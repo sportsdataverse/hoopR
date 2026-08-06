@@ -190,7 +190,7 @@
 <h4 id="salary--mock-draft-sources-spotrac--hoopshype--nbadraftnet-3-1-0"><strong>Salary &amp; mock-draft sources (Spotrac / HoopsHype / NBADraft.net)</strong><a class="anchor" aria-label="anchor" href="#salary--mock-draft-sources-spotrac--hoopshype--nbadraftnet-3-1-0"></a></h4>
 <p>New wrappers for third-party NBA salary and mock-draft sites, all public HTML, no key required:</p>
 <ul><li><p><strong><code><a href="../reference/spotrac_team_cap.html">spotrac_team_cap()</a></code></strong> — team salary-cap allocations, cap space, active players and average age from <a href="https://www.spotrac.com" class="external-link">Spotrac</a>.</p></li>
-<li><p><strong><code><a href="../reference/hoopshype_salaries.html">hoopshype_salaries()</a></code></strong> — the <strong>full league’s</strong> player salaries (one row per player-season, current + future contract years) from <a href="https://hoopshype.com" class="external-link">HoopsHype</a>. HoopsHype is now a Next.js app whose single salaries page paginates client-side, but each team page embeds that team’s complete roster in its <code>__NEXT_DATA__</code> payload — so this iterates the 30 team pages and stitches them together (~600 players) via a team-by-team approach.</p></li>
+<li><p><strong><code><a href="../reference/hoopshype_salaries.html">hoopshype_salaries()</a></code></strong> — the <strong>full league’s</strong> player salaries (one row per player-season, current + future contract years) from <a href="https://www.hoopshype.com/" class="external-link">HoopsHype</a>. HoopsHype is now a Next.js app whose single salaries page paginates client-side, but each team page embeds that team’s complete roster in its <code>__NEXT_DATA__</code> payload — so this iterates the 30 team pages and stitches them together (~600 players) via a team-by-team approach.</p></li>
 <li><p><strong><code><a href="../reference/nbadraft_mock_draft.html">nbadraft_mock_draft()</a></code></strong> — the current consensus mock draft (both rounds) from <a href="https://www.nbadraft.net" class="external-link">NBADraft.net</a>.</p></li>
 </ul><p><strong>Basketball Insiders</strong> was evaluated but <strong>not</strong> wrapped: its old salary-widget backend (<code>hw-files.com</code>) is offline, and the surviving page only exposes a team-cap summary redundant with <code><a href="../reference/spotrac_team_cap.html">spotrac_team_cap()</a></code>. For league-wide player salaries, <code><a href="../reference/espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code> remains the most complete source.</p>
 </div>
@@ -1744,7 +1744,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

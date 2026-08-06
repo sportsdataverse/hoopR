@@ -135,29 +135,10 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_players</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 54</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    role       number player ht       wt yr        g     s min_pct o_rtg poss_pct</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Go-to Guys      2 <span style="color: #949494;">"</span>Jami… 6-7     210 Jr       33    33    70.2 110.      28.2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Major Con…     23 <span style="color: #949494;">"</span>Prim… 6-3     185 Jr       24    <span style="color: #BB0000;">NA</span>    41.3  92.4     27.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Role Play…     22 <span style="color: #949494;">"</span>Dari… 6-5     195 Sr       32    32    72.4 106.      17.1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Role Play…     11 <span style="color: #949494;">"</span>Baba… 6-11    204 So       33    32    61.7  98.3     17.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Role Play…      1 <span style="color: #949494;">"</span>Jale… 6-7     205 Jr       33    32    60.1 106.      18.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Role Play…      3 <span style="color: #949494;">"</span>Cam … 6-10    225 So       28    12    45.2 122.      18.5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Role Play…      0 <span style="color: #949494;">"</span>Chan… 6-5     220 So       31     1    34.2 113.      16.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Role Play…      5 <span style="color: #949494;">"</span>De'A… 6-9     210 So       31    20    27.8 106       19.8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Role Play…     10 <span style="color: #949494;">"</span>Tayl… 6-10    195 Fr       31    <span style="color: #BB0000;">NA</span>    25.7 101.      16.4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Limited R…     20 <span style="color: #949494;">"</span>Josh… 6-5     200 Sr       32     1    22.5  92.6     14.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Limited R…     33 <span style="color: #949494;">"</span>Jayl… 6-10    230 Sr       28     1    22.3 103       13.3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> Benchwarm…     21 <span style="color: #949494;">"</span>Cam'… 6-7     220 Sr        7    <span style="color: #BB0000;">NA</span>     8.4  86.2     27.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Benchwarm…     12 <span style="color: #949494;">"</span>Tom … 6-7     200 So       23    <span style="color: #BB0000;">NA</span>     6.3 110.      19.6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 43 more variables: shots_pct &lt;dbl&gt;, e_fg_pct &lt;dbl&gt;, ts_pct &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_pct &lt;dbl&gt;, dr_pct &lt;dbl&gt;, a_rate &lt;dbl&gt;, to_rate &lt;dbl&gt;, blk_pct &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   stl_pct &lt;dbl&gt;, f_cper40 &lt;dbl&gt;, f_dper40 &lt;dbl&gt;, ft_rate &lt;dbl&gt;, ftm &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fta &lt;dbl&gt;, ft_pct &lt;dbl&gt;, fgm_2 &lt;dbl&gt;, fga_2 &lt;dbl&gt;, fg_2_pct &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fgm_3 &lt;dbl&gt;, fga_3 &lt;dbl&gt;, fg_3_pct &lt;dbl&gt;, min_pct_rk &lt;dbl&gt;, o_rtg_rk &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   poss_pct_rk &lt;dbl&gt;, shots_pct_rk &lt;dbl&gt;, e_fg_pct_rk &lt;dbl&gt;, ts_pct_rk &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_pct_rk &lt;dbl&gt;, dr_pct_rk &lt;dbl&gt;, a_rate_rk &lt;dbl&gt;, to_rate_rk &lt;dbl&gt;, …</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-06 04:00:55.544241: 2026-08-06 04:00:55.544003 - No Player Data available for Florida St. in 2024</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2024</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span>  <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -171,7 +152,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

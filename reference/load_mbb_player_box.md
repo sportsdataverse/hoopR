@@ -114,8 +114,8 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_mbb_player_box(seasons = most_recent_mbb_season())
-#> ── ESPN MBB Player Boxscores from hoopR data repository ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:56:48 UTC
+#> ── ESPN MBB player_box from hoopR data repository ─────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-03 02:44:11 UTC
 #> # A tibble: 196,876 × 55
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

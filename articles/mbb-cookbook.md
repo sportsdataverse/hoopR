@@ -64,12 +64,7 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> #   logo <chr>, logo_dark <chr>
 #> 
 #> $Record
-#> # A tibble: 3 × 4
-#>   description    type  summary stats        
-#>   <chr>          <chr> <chr>   <list>       
-#> 1 Overall Record total 35-3    <df [20 × 2]>
-#> 2 Home Record    home  15-0    <df [20 × 2]>
-#> 3 Away Record    road  10-1    <df [20 × 2]>
+#> data frame with 0 columns and 0 rows
 #> 
 #> $NextEvent
 #> # A tibble: 1 × 4

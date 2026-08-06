@@ -149,7 +149,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_teams())
 #> ── ESPN MBB Teams Information from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:45 UTC
+#> ℹ Data updated: 2026-08-06 03:59:37 UTC
 #> # A tibble: 362 × 32
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    
@@ -169,6 +169,6 @@ try(espn_mbb_teams())
 #> #   logos_href_8 <chr>, logos_href_9 <chr>, logos_href_10 <chr>,
 #> #   logos_href_11 <chr>, logos_href_12 <chr>, logos_href_13 <chr>,
 #> #   logos_href_14 <chr>, mascot <chr>, nickname <chr>, short_name <chr>,
-#> #   href <chr>, conference_url <chr>, group_id <int>, conference_uid <chr>, …
+#> #   href <chr>, conference_url <chr>, group_id <int>, conference_name <chr>, …
 # }
 ```

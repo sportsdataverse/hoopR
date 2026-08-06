@@ -7,7 +7,7 @@
 
 - **[Jason Lee](https://x.com/theFirmAISports)**. Contributor.
 
-- **[Billy Fryer](https://x.com/_b4billy_)**. Contributor.
+- **[Billy Fryer](https://x.com/BillyFryer42)**. Contributor.
 
 - **[Ross Drucker](https://x.com/rossdrucker9)**. Contributor.
 

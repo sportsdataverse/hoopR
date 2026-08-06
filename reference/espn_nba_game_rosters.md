@@ -229,11 +229,11 @@ Saiem Gilani
 ``` r
 # \donttest{
 try(espn_nba_game_rosters(game_id = 401283399))
-#> ✖ 2026-06-30 19:33:59.151667: Invalid arguments or no game roster data for 401283399 available!
+#> ✖ 2026-08-06 03:59:49.462477: Invalid arguments or no game roster data for 401283399 available!
 #> ✖ Args: game_id = 401283399
-#> ✖ Error: ℹ In index: 4. Caused by error in `dplyr::rename()`: ! Can't rename columns that don't exist. ✖ Column `jersey` doesn't exist.
+#> ✖ Error: ℹ In index: 1. Caused by error in `dplyr::rename()`: ! Can't rename columns that don't exist. ✖ Column `jersey` doesn't exist.
 #> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:58 UTC
+#> ℹ Data updated: 2026-08-06 03:59:48 UTC
 #> # A tibble: 0 × 0
 # }
 ```

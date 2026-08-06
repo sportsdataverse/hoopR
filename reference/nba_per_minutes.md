@@ -36,6 +36,7 @@ nba_per_minutes(df, cols, minutes = "min", per = 36)
 ## See also
 
 Other Basketball Analytics Utilities:
+[`espn_basketball_player_core()`](https://hoopR.sportsdataverse.org/reference/espn_basketball_player_core.md),
 [`nba_add_advanced_metrics()`](https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.md),
 [`nba_assist_pct()`](https://hoopR.sportsdataverse.org/reference/nba_assist_pct.md),
 [`nba_assist_to_turnover()`](https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.md),

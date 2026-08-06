@@ -106,7 +106,7 @@ Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=x&style=for-the-badge)](https://x.com/SportsDataverse)
 
 [![GitHub
-stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR/stargazers/)
+stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR/stargazers)
 
 ## **Our Authors**
 
@@ -122,7 +122,7 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
 
 - Billy Fryer (@\_b4billy\_)
-  [![@\_b4billy\_](https://img.shields.io/twitter/follow/_b4billy_?color=blue&label=%40_b4billy_&logo=x&style=for-the-badge)](https://x.com/_b4billy_)
+  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
   [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
 
 - Ross Drucker (@rossdrucker9)
@@ -224,6 +224,11 @@ Data
 
   **Load hoopR NBA officials**
 
+- [`load_nba_player_core()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_core.md)
+  :
+
+  **Load cleaned NBA player core (identity + bio) from the data repo**
+
 - [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
   :
 
@@ -285,6 +290,11 @@ College Basketball Data
   :
 
   **Load cleaned MBB per-game officials from the data repo**
+
+- [`load_mbb_player_core()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_core.md)
+  :
+
+  **Load cleaned MBB player core (identity + bio) from the data repo**
 
 - [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md)
   :
@@ -1554,6 +1564,11 @@ league-agnostic).
   :
 
   **Append Advanced Metrics to a Box Score**
+
+- [`espn_basketball_player_core()`](https://hoopR.sportsdataverse.org/reference/espn_basketball_player_core.md)
+  :
+
+  **Project an ESPN core-v2 athlete record into a `player_core` row**
 
 ### NBA Dictionaries & Media
 

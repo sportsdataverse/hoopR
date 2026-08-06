@@ -119,9 +119,9 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
-#> ── ESPN NBA Play-by-Play from hoopR data repository ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 12:00:51 UTC
-#> # A tibble: 642,472 × 64
+#> ── ESPN NBA pbp from hoopR data repository ────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-03 02:11:05 UTC
+#> # A tibble: 642,472 × 67
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
 #>  1                1   4.02e 9               4     615 Jumpball  Karl…          0
@@ -135,7 +135,7 @@ load_nba_pbp(seasons = most_recent_nba_season())
 #>  9                9   4.02e10              15     131 Pullup J… Mika…          0
 #> 10               10   4.02e10              16     156 Offensiv… Knic…          0
 #> # ℹ 642,462 more rows
-#> # ℹ 57 more variables: home_score <int>, period_number <int>,
+#> # ℹ 60 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,
 #> #   athlete_id_3 <int>, wallclock <chr>, shooting_play <lgl>,

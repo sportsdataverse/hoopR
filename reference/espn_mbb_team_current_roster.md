@@ -125,8 +125,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:39 UTC
-#> # A tibble: 26 × 66
+#> ℹ Data updated: 2026-08-06 03:59:31 UTC
+#> # A tibble: 11 × 59
 #>    team_id team_uid        team_slug       team_location team_name team_nickname
 #>      <int> <chr>           <chr>           <chr>         <chr>     <chr>        
 #>  1     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
@@ -139,12 +139,13 @@ try(espn_mbb_team_current_roster(team_id = 150))
 #>  8     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
 #>  9     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
 #> 10     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> # ℹ 16 more rows
-#> # ℹ 60 more variables: team_abbreviation <chr>, team_display_name <chr>,
+#> 11     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> # ℹ 53 more variables: team_abbreviation <chr>, team_display_name <chr>,
 #> #   team_short_name <chr>, team_color <chr>, team_alternate_color <chr>,
-#> #   team_is_active <lgl>, standingSummary <chr>, rank <int>, logo <chr>,
-#> #   logo_dark <chr>, group_id <int>, parent_group_id <int>,
-#> #   group_is_conference <lgl>, conference_id <int>, athlete_id <int>,
-#> #   athlete_uid <chr>, athlete_guid <chr>, athlete_type <chr>, …
+#> #   team_is_active <lgl>, standingSummary <chr>, logo <chr>, logo_dark <chr>,
+#> #   group_id <int>, parent_group_id <int>, group_is_conference <lgl>,
+#> #   conference_id <int>, athlete_id <int>, athlete_uid <chr>,
+#> #   athlete_guid <chr>, athlete_type <chr>, athlete_first_name <chr>,
+#> #   athlete_last_name <chr>, athlete_full_name <chr>, …
 # }
 ```

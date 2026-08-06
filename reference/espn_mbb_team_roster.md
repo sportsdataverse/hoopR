@@ -154,7 +154,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:33:42 UTC
+#> ℹ Data updated: 2026-08-06 03:59:33 UTC
 #> # A tibble: 11 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>

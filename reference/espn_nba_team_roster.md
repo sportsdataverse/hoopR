@@ -165,28 +165,28 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:34:23 UTC
+#> ℹ Data updated: 2026-08-06 04:00:10 UTC
 #> # A tibble: 18 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 4278129    Deandre … 5      C               Center        "7' 0… 252 l… 27   
-#>  2 5113969    Cameron … NA     G               Guard         "6' 5… 184 l… 21   
-#>  3 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
-#>  4 4066648    Rui Hach… 28     F               Forward       "6' 8… 230 l… 28   
-#>  5 4397077    Jaxson H… 11     C               Center        "7' 0… 220 l… 26   
-#>  6 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 21   
-#>  7 3913174    Luke Ken… 10     G               Guard         "6' 5… 206 l… 30   
-#>  8 2960236    Maxi Kle… 14     F               Forward       "6' 1… 240 l… 34   
-#>  9 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
-#> 10 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
+#>  1 5113969    Cameron … NA     G               Guard         "6' 5… 184 l… 21   
+#>  2 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
+#>  3 4397014    Quentin … NA     G               Guard         "6' 4… 210 l… 26   
+#>  4 4868423    Jaden Ha… NA     G               Guard         "6' 3… 198 l… 24   
+#>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 21   
+#>  6 4433136    Walker K… NA     C               Center        "7' 2… 245 l… 25   
+#>  7 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
+#>  8 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
+#>  9 3155535    Kevon Lo… NA     F               Forward       "6' 9… 222 l… 30   
+#> 10 4278580    Sandro M… NA     F               Forward       "6' 9… 240 l… 27   
 #> 11 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
-#> 12 5114350    AK Okere… NA     F               Forward       "6' 7… 244 l… NA   
+#> 12 5114350    AK Okere… NA     F               Forward       "6' 7… 244 l… 23   
 #> 13 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
-#> 14 2990992    Marcus S… 36     G               Guard         "6' 3… 220 l… 32   
-#> 15 4683686    Nick Smi… 20     G               Guard         "6' 2… 185 l… 22   
-#> 16 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
-#> 17 4431695    Drew Tim… 17     F               Forward       "6' 1… 235 l… 25   
-#> 18 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
+#> 14 4277811    Collin S… NA     G               Guard         "6' 3… 190 l… 27   
+#> 15 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
+#> 16 3907498    Matisse … NA     G               Guard         "6' 5… 202 l… 29   
+#> 17 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
+#> 18 4433137    Ziaire W… NA     F               Forward       "6' 9… 185 l… 24   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }

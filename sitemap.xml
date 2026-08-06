@@ -98,6 +98,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-torvik_text.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-v3_to_v2_format.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_basketball.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/espn_basketball_player_core.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_award.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.html</loc></url>
@@ -357,6 +358,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_officials.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_core.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_rosters.html</loc></url>
@@ -371,6 +373,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_officials.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_player_box.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_player_core.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_player_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_player_stats.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_rosters.html</loc></url>

@@ -133,9 +133,9 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
-#> ── ESPN MBB Schedule from hoopR data repository ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-24 02:57:00 UTC
-#> # A tibble: 6,318 × 87
+#> ── ESPN MBB schedules from hoopR data repository ──────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-03 03:02:26 UTC
+#> # A tibble: 6,318 × 86
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
 #>  1  4.02e8 s:40… 2026…      70720 TRUE       TRUE         FALSE                 
@@ -149,7 +149,7 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 #>  9  4.02e8 s:40… 2026…       4625 TRUE       TRUE         FALSE                 
 #> 10  4.02e8 s:40… 2026…       2310 TRUE       TRUE         FALSE                 
 #> # ℹ 6,308 more rows
-#> # ℹ 80 more variables: play_by_play_available <lgl>, recent <lgl>,
+#> # ℹ 79 more variables: play_by_play_available <lgl>, recent <lgl>,
 #> #   start_date <chr>, broadcast <chr>, highlights <chr>, notes_type <chr>,
 #> #   notes_headline <chr>, broadcast_market <chr>, broadcast_name <chr>,
 #> #   type_id <int>, type_abbreviation <chr>, venue_id <int>,

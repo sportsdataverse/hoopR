@@ -234,10 +234,10 @@ HTML, no key required:
 - **[`hoopshype_salaries()`](https://hoopR.sportsdataverse.org/reference/hoopshype_salaries.md)**
   — the **full league’s** player salaries (one row per player-season,
   current + future contract years) from
-  [HoopsHype](https://hoopshype.com). HoopsHype is now a Next.js app
-  whose single salaries page paginates client-side, but each team page
-  embeds that team’s complete roster in its `__NEXT_DATA__` payload — so
-  this iterates the 30 team pages and stitches them together (~600
+  [HoopsHype](https://www.hoopshype.com/). HoopsHype is now a Next.js
+  app whose single salaries page paginates client-side, but each team
+  page embeds that team’s complete roster in its `__NEXT_DATA__` payload
+  — so this iterates the 30 team pages and stitches them together (~600
   players) via a team-by-team approach.
 
 - **[`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)**

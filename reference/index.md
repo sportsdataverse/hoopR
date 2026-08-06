@@ -73,6 +73,11 @@ Data
 
   **Load hoopR NBA officials**
 
+- [`load_nba_player_core()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_core.md)
+  :
+
+  **Load cleaned NBA player core (identity + bio) from the data repo**
+
 - [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
   :
 
@@ -134,6 +139,11 @@ College Basketball Data
   :
 
   **Load cleaned MBB per-game officials from the data repo**
+
+- [`load_mbb_player_core()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_core.md)
+  :
+
+  **Load cleaned MBB player core (identity + bio) from the data repo**
 
 - [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md)
   :
@@ -1403,6 +1413,11 @@ league-agnostic).
   :
 
   **Append Advanced Metrics to a Box Score**
+
+- [`espn_basketball_player_core()`](https://hoopR.sportsdataverse.org/reference/espn_basketball_player_core.md)
+  :
+
+  **Project an ESPN core-v2 athlete record into a `player_core` row**
 
 ### NBA Dictionaries & Media
 

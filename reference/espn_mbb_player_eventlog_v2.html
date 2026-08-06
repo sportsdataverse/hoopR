@@ -236,10 +236,21 @@ wraps the web-common-v3 endpoint; this core-v2 variant is era-correct.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_player_eventlog_v2</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">4683735</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Event Log ─────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-30 19:33:25 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 variables: league &lt;chr&gt;, athlete_id &lt;chr&gt;, season &lt;int&gt;, event_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_id &lt;chr&gt;, played &lt;lgl&gt;, event_ref &lt;chr&gt;, competition_ref &lt;chr&gt;</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-06 03:59:18 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 25 × 8</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    league    athlete_id season event_id team_id played event_ref competition_ref</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017156… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017157… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> mens-col… 4683735      <span style="text-decoration: underline;">2</span>025 4017247… 24      TRUE   http://s… http://sports.…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 15 more rows</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
@@ -252,7 +263,7 @@ wraps the web-common-v3 endpoint; this core-v2 variant is era-correct.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer></div>

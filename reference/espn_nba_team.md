@@ -207,7 +207,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:34:19 UTC
+#> ℹ Data updated: 2026-08-06 04:00:07 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -216,26 +216,19 @@ Saiem Gilani
 #> #   logo_dark <chr>
 #> 
 #> $Record
-#> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:34:19 UTC
-#> # A tibble: 3 × 4
-#>   description    type  summary stats        
-#>   <chr>          <chr> <chr>   <list>       
-#> 1 Overall Record total 53-29   <df [21 × 2]>
-#> 2 Home Record    home  28-13   <df [5 × 2]> 
-#> 3 Away Record    road  25-16   <df [5 × 2]> 
+#> data frame with 0 columns and 0 rows
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:34:19 UTC
+#> ℹ Data updated: 2026-08-06 04:00:07 UTC
 #> # A tibble: 1 × 4
-#>   id        date              name                                    short_name
-#>   <chr>     <chr>             <chr>                                   <chr>     
-#> 1 401871329 2026-05-12T02:30Z Oklahoma City Thunder at Los Angeles L… OKC @ LAL 
+#>   id        date              name                                   short_name
+#>   <chr>     <chr>             <chr>                                  <chr>     
+#> 1 401898716 2026-10-06T02:00Z Los Angeles Lakers at Sacramento Kings LAL @ SAC 
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-06-30 19:34:19 UTC
+#> ℹ Data updated: 2026-08-06 04:00:07 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
