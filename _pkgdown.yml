@@ -200,6 +200,7 @@ reference:
       - '`load_nba_team_stats`'
       - '`load_nba_game_rosters`'
       - '`load_nba_officials`'
+      - '`load_nba_player_core`'
       - '`update_nba_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
@@ -214,6 +215,7 @@ reference:
       - '`load_mbb_team_stats`'
       - '`load_mbb_game_rosters`'
       - '`load_mbb_officials`'
+      - '`load_mbb_player_core`'
       - '`update_mbb_db`'
   - title: Cross-Source Crosswalks
   - subtitle: NBA Crosswalk Functions
@@ -279,6 +281,7 @@ reference:
       - '`nba_per_minutes`'
       - '`nba_per_possessions`'
       - '`nba_add_advanced_metrics`'
+      - '`espn_basketball_player_core`'
   - subtitle: NBA Dictionaries & Media
     desc: Player / team dictionaries and CDN headshot / logo URL helpers.
     contents:

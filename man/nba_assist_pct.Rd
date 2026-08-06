@@ -23,6 +23,7 @@ nba_assist_pct(ast = 8, fgm = 10, minutes = 36, team_fgm = 40, team_minutes = 24
 }
 \seealso{
 Other Basketball Analytics Utilities:
+\code{\link[=espn_basketball_player_core]{espn_basketball_player_core()}},
 \code{\link[=nba_add_advanced_metrics]{nba_add_advanced_metrics()}},
 \code{\link[=nba_assist_to_turnover]{nba_assist_to_turnover()}},
 \code{\link[=nba_defensive_rating]{nba_defensive_rating()}},

@@ -701,6 +701,7 @@ importFrom(stringr,
   str_sub,
   str_trim
 )
+importFrom(tibble,as_tibble)
 importFrom(tidyr,
   everything,
   hoist,

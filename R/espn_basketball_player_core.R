@@ -1,4 +1,7 @@
+#' **Project an ESPN core-v2 athlete record into a `player_core` row**
 #' @name espn_basketball_player_core
+NULL
+#' @rdname espn_basketball_player_core
 #' @aliases espn_basketball_player_core
 #' @title **Project an ESPN core-v2 athlete record into a `player_core` row**
 #' @description Turns one ESPN core-v2 `/athletes/{id}` payload into the single
@@ -85,6 +88,17 @@
 #'   )
 #'   espn_basketball_player_core(payload, athlete_id = 1966)
 #' }
+#' @section Twin:
+#' `wehoop::espn_basketball_player_core()` is the identical function for the
+#' women's leagues. The core-v2 athlete resource is the same payload shape for
+#' nba/wnba/mbb/wbb, so the projection is league-agnostic -- sdv-py implements
+#' it once and re-exports it per league. hoopR and wehoop are independently
+#' published and neither depends on the other, so here it is duplicated:
+#' **a change to one must land in the other in the same session, verified.**
+#' @author Saiem Gilani
+#' @importFrom tibble as_tibble
+#' @importFrom janitor clean_names
+#' @family Basketball Analytics Utilities
 #' @export
 espn_basketball_player_core <- function(payload, athlete_id) {
   cols <- .player_core_cols()
@@ -145,7 +159,9 @@ espn_basketball_player_core <- function(payload, athlete_id) {
     active = .pc_lgl(payload[["active"]])
   )
 
-  tibble::as_tibble(row[cols])
+  tibble::as_tibble(row[cols]) %>%
+    janitor::clean_names() %>%
+    make_hoopR_data("ESPN Basketball Player Core from ESPN.com", Sys.time())
 }
 
 #' The released column order. Order is part of the contract -- both pipelines
@@ -182,7 +198,12 @@ espn_basketball_player_core <- function(payload, athlete_id) {
     if (c %in% int_cols) integer() else if (c %in% dbl_cols) numeric() else if (c == "active") logical() else character()
   })
   names(proto) <- cols
-  tibble::as_tibble(proto)
+  # The empty path is finalized identically to the populated one, so a caller
+  # that chains on the result sees the same class and attributes whether or not
+  # the payload had anything in it.
+  tibble::as_tibble(proto) %>%
+    janitor::clean_names() %>%
+    make_hoopR_data("ESPN Basketball Player Core from ESPN.com", Sys.time())
 }
 
 #' A nested node, or an empty list when absent. Mirrors Python's

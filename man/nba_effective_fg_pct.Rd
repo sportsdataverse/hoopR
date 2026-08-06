@@ -21,6 +21,7 @@ nba_effective_fg_pct(fgm = 10, fg3m = 4, fga = 20)
 }
 \seealso{
 Other Basketball Analytics Utilities:
+\code{\link[=espn_basketball_player_core]{espn_basketball_player_core()}},
 \code{\link[=nba_add_advanced_metrics]{nba_add_advanced_metrics()}},
 \code{\link[=nba_assist_pct]{nba_assist_pct()}},
 \code{\link[=nba_assist_to_turnover]{nba_assist_to_turnover()}},

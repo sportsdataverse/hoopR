@@ -22,6 +22,7 @@ nba_possessions(fga = 88, fta = 25, oreb = 10, tov = 13)
 }
 \seealso{
 Other Basketball Analytics Utilities:
+\code{\link[=espn_basketball_player_core]{espn_basketball_player_core()}},
 \code{\link[=nba_add_advanced_metrics]{nba_add_advanced_metrics()}},
 \code{\link[=nba_assist_pct]{nba_assist_pct()}},
 \code{\link[=nba_assist_to_turnover]{nba_assist_to_turnover()}},

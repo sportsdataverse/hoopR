@@ -28,6 +28,7 @@ nba_add_advanced_metrics(box)
 }
 \seealso{
 Other Basketball Analytics Utilities:
+\code{\link[=espn_basketball_player_core]{espn_basketball_player_core()}},
 \code{\link[=nba_assist_pct]{nba_assist_pct()}},
 \code{\link[=nba_assist_to_turnover]{nba_assist_to_turnover()}},
 \code{\link[=nba_defensive_rating]{nba_defensive_rating()}},

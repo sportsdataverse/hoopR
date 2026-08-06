@@ -92,7 +92,7 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
 
 test_that("espn_basketball_player_core() covers the branches the fixtures encode", {
   fx <- testthat::test_path("fixtures", "player_core")
-  read_one <- function(aid) {
+  .read_one <- function(aid) {
     espn_basketball_player_core(
       jsonlite::fromJSON(file.path(fx, paste0(aid, ".json")), simplifyVector = FALSE),
       athlete_id = aid
@@ -100,13 +100,13 @@ test_that("espn_basketball_player_core() covers the branches the fixtures encode
   }
 
   # 1011 has no college node: college_id must be NA, not 0 and not an error.
-  expect_true(is.na(read_one(1011L)$college_id))
+  expect_true(is.na(.read_one(1011L)$college_id))
   # 10 has a college but no draft: all three draft columns NA together.
-  no_draft <- read_one(10L)
+  no_draft <- .read_one(10L)
   expect_true(all(is.na(c(no_draft$draft_year, no_draft$draft_round, no_draft$draft_selection))))
   expect_false(is.na(no_draft$college_id))
   # 1000 is the fully-populated path.
-  full <- read_one(1000L)
+  full <- .read_one(1000L)
   expect_false(is.na(full$college_id))
   expect_false(is.na(full$draft_year))
 })
