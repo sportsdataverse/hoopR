@@ -36,9 +36,9 @@ counts and average age for a season. No API key is required.
 }
 }
 \seealso{
-Other Salary & Draft Functions: 
-\code{\link{hoopshype_salaries}()},
-\code{\link{nbadraft_mock_draft}()}
+Other Salary & Draft Functions:
+\code{\link[=hoopshype_salaries]{hoopshype_salaries()}},
+\code{\link[=nbadraft_mock_draft]{nbadraft_mock_draft()}}
 }
 \concept{Salary & Draft Functions}
 \keyword{Salaries}

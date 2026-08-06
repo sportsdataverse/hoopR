@@ -138,11 +138,11 @@ Returns a named list of data frames: HustleStatsPlayer
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Hustle Functions: 
-\code{\link{nba_hustlestatsboxscore}()},
-\code{\link{nba_leaguehustlestatsplayerleaders}()},
-\code{\link{nba_leaguehustlestatsteam}()},
-\code{\link{nba_leaguehustlestatsteamleaders}()}
+Other NBA Hustle Functions:
+\code{\link[=nba_hustlestatsboxscore]{nba_hustlestatsboxscore()}},
+\code{\link[=nba_leaguehustlestatsplayerleaders]{nba_leaguehustlestatsplayerleaders()}},
+\code{\link[=nba_leaguehustlestatsteam]{nba_leaguehustlestatsteam()}},
+\code{\link[=nba_leaguehustlestatsteamleaders]{nba_leaguehustlestatsteamleaders()}}
 }
 \author{
 Saiem Gilani

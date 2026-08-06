@@ -25,8 +25,8 @@ A \code{hoopR_data} tibble with one row per conference:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Conferences Functions: 
-\code{\link{cbbd_conferences_history}()}
+Other CBD Conferences Functions:
+\code{\link[=cbbd_conferences_history]{cbbd_conferences_history()}}
 }
 \concept{CBD Conferences Functions}
 \keyword{CBD}

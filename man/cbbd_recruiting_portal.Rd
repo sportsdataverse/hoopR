@@ -51,9 +51,9 @@ A \code{hoopR_data} tibble with one row per transfer. The \code{origin} and
 }
 }
 \seealso{
-Other CBD Recruiting Functions: 
-\code{\link{cbbd_recruiting_players}()},
-\code{\link{cbbd_recruiting_teams}()}
+Other CBD Recruiting Functions:
+\code{\link[=cbbd_recruiting_players]{cbbd_recruiting_players()}},
+\code{\link[=cbbd_recruiting_teams]{cbbd_recruiting_teams()}}
 }
 \concept{CBD Recruiting Functions}
 \keyword{CBD}

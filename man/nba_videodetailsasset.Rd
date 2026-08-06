@@ -153,11 +153,11 @@ Return a list of tibbles: videoUrls, playlist
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Video Functions: 
-\code{\link{nba_videodetails}()},
-\code{\link{nba_videoevents}()},
-\code{\link{nba_videoeventsasset}()},
-\code{\link{nba_videostatus}()}
+Other NBA Video Functions:
+\code{\link[=nba_videodetails]{nba_videodetails()}},
+\code{\link[=nba_videoevents]{nba_videoevents()}},
+\code{\link[=nba_videoeventsasset]{nba_videoeventsasset()}},
+\code{\link[=nba_videostatus]{nba_videostatus()}}
 }
 \author{
 Saiem Gilani

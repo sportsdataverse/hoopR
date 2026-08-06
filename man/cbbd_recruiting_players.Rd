@@ -48,9 +48,9 @@ A \code{hoopR_data} tibble with one row per recruit. The \code{hometown} and
 }
 }
 \seealso{
-Other CBD Recruiting Functions: 
-\code{\link{cbbd_recruiting_portal}()},
-\code{\link{cbbd_recruiting_teams}()}
+Other CBD Recruiting Functions:
+\code{\link[=cbbd_recruiting_portal]{cbbd_recruiting_portal()}},
+\code{\link[=cbbd_recruiting_teams]{cbbd_recruiting_teams()}}
 }
 \concept{CBD Recruiting Functions}
 \keyword{CBD}

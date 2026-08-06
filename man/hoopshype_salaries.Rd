@@ -43,9 +43,9 @@ approach.
 }
 }
 \seealso{
-Other Salary & Draft Functions: 
-\code{\link{nbadraft_mock_draft}()},
-\code{\link{spotrac_team_cap}()}
+Other Salary & Draft Functions:
+\code{\link[=nbadraft_mock_draft]{nbadraft_mock_draft()}},
+\code{\link[=spotrac_team_cap]{spotrac_team_cap()}}
 }
 \concept{Salary & Draft Functions}
 \keyword{Salaries}

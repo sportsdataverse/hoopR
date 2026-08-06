@@ -383,26 +383,26 @@ ShotDistanceOverall, vsPlayerOverall
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Team Functions: 
-\code{\link{nba_leaguedashteamstats}()},
-\code{\link{nba_teamandplayersvsplayers}()},
-\code{\link{nba_teamdashboardbyclutch}()},
-\code{\link{nba_teamdashlineups}()},
-\code{\link{nba_teamdashptpass}()},
-\code{\link{nba_teamdashptreb}()},
-\code{\link{nba_teamdashptshots}()},
-\code{\link{nba_teamdetails}()},
-\code{\link{nba_teamestimatedmetrics}()},
-\code{\link{nba_teamgamelog}()},
-\code{\link{nba_teamgamelogs}()},
-\code{\link{nba_teamgamestreakfinder}()},
-\code{\link{nba_teamhistoricalleaders}()},
-\code{\link{nba_teaminfocommon}()},
-\code{\link{nba_teamplayerdashboard}()},
-\code{\link{nba_teamplayeronoffdetails}()},
-\code{\link{nba_teamplayeronoffsummary}()},
-\code{\link{nba_teams}()},
-\code{\link{nba_teamyearbyyearstats}()}
+Other NBA Team Functions:
+\code{\link[=nba_leaguedashteamstats]{nba_leaguedashteamstats()}},
+\code{\link[=nba_teamandplayersvsplayers]{nba_teamandplayersvsplayers()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}},
+\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}},
+\code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
+\code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},
+\code{\link[=nba_teamdashptshots]{nba_teamdashptshots()}},
+\code{\link[=nba_teamdetails]{nba_teamdetails()}},
+\code{\link[=nba_teamestimatedmetrics]{nba_teamestimatedmetrics()}},
+\code{\link[=nba_teamgamelog]{nba_teamgamelog()}},
+\code{\link[=nba_teamgamelogs]{nba_teamgamelogs()}},
+\code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
+\code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
+\code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
+\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
+\code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
+\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
+\code{\link[=nba_teams]{nba_teams()}},
+\code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}
 }
 \author{
 Saiem Gilani

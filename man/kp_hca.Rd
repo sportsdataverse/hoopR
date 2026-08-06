@@ -34,13 +34,13 @@ try(kp_hca())
 }
 }
 \seealso{
-Other KP Misc. Functions: 
-\code{\link{kp_arenas}()},
-\code{\link{kp_fanmatch}()},
-\code{\link{kp_game_attrs}()},
-\code{\link{kp_officials}()},
-\code{\link{kp_referee}()},
-\code{\link{kp_trends}()}
+Other KP Misc. Functions:
+\code{\link[=kp_arenas]{kp_arenas()}},
+\code{\link[=kp_fanmatch]{kp_fanmatch()}},
+\code{\link[=kp_game_attrs]{kp_game_attrs()}},
+\code{\link[=kp_officials]{kp_officials()}},
+\code{\link[=kp_referee]{kp_referee()}},
+\code{\link[=kp_trends]{kp_trends()}}
 }
 \concept{KP Misc. Functions}
 \keyword{HCA}

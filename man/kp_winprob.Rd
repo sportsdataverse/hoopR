@@ -80,8 +80,8 @@ try(kp_winprob(game_id = 1238, year = 2020))
 }
 }
 \seealso{
-Other KenPom Boxscore Functions: 
-\code{\link{kp_box}()}
+Other KenPom Boxscore Functions:
+\code{\link[=kp_box]{kp_box()}}
 }
 \concept{KenPom Boxscore Functions}
 \keyword{Probability}

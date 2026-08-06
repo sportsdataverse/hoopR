@@ -92,22 +92,22 @@ semantics before using rate-heavy measures.
 }
 }
 \seealso{
-Other NBA Player Tracking Functions: 
-\code{\link{nba_boxscoreplayertrackv2}()},
-\code{\link{nba_leaguedashoppptshot}()},
-\code{\link{nba_leaguedashplayerptshot}()},
-\code{\link{nba_leaguedashptdefend}()},
-\code{\link{nba_leaguedashptstats}()},
-\code{\link{nba_leaguedashptteamdefend}()},
-\code{\link{nba_leaguedashteamptshot}()},
-\code{\link{nba_playerdashptpass}()},
-\code{\link{nba_playerdashptreb}()},
-\code{\link{nba_playerdashptshotdefend}()},
-\code{\link{nba_playerdashptshots}()},
-\code{\link{nba_synergyplaytypes}()},
-\code{\link{nba_teamdashptpass}()},
-\code{\link{nba_teamdashptreb}()},
-\code{\link{nba_teamdashptshots}()}
+Other NBA Player Tracking Functions:
+\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
+\code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
+\code{\link[=nba_leaguedashptstats]{nba_leaguedashptstats()}},
+\code{\link[=nba_leaguedashptteamdefend]{nba_leaguedashptteamdefend()}},
+\code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
+\code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
+\code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
+\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
+\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
+\code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
+\code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
+\code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},
+\code{\link[=nba_teamdashptshots]{nba_teamdashptshots()}}
 }
 \author{
 Saiem Gilani

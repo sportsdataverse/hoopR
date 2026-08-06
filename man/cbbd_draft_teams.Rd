@@ -26,9 +26,9 @@ A \code{hoopR_data} tibble with one row per NBA team:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Draft Functions: 
-\code{\link{cbbd_draft_picks}()},
-\code{\link{cbbd_draft_positions}()}
+Other CBD Draft Functions:
+\code{\link[=cbbd_draft_picks]{cbbd_draft_picks()}},
+\code{\link[=cbbd_draft_positions]{cbbd_draft_positions()}}
 }
 \concept{CBD Draft Functions}
 \keyword{CBD}

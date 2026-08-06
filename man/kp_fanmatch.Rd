@@ -43,13 +43,13 @@ try(kp_fanmatch(date = "2022-02-22"))
 }
 }
 \seealso{
-Other KP Misc. Functions: 
-\code{\link{kp_arenas}()},
-\code{\link{kp_game_attrs}()},
-\code{\link{kp_hca}()},
-\code{\link{kp_officials}()},
-\code{\link{kp_referee}()},
-\code{\link{kp_trends}()}
+Other KP Misc. Functions:
+\code{\link[=kp_arenas]{kp_arenas()}},
+\code{\link[=kp_game_attrs]{kp_game_attrs()}},
+\code{\link[=kp_hca]{kp_hca()}},
+\code{\link[=kp_officials]{kp_officials()}},
+\code{\link[=kp_referee]{kp_referee()}},
+\code{\link[=kp_trends]{kp_trends()}}
 }
 \concept{KP Misc. Functions}
 \keyword{FanMatch}

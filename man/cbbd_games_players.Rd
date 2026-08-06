@@ -58,11 +58,11 @@ is a nested list of per-player box scores. Key identifying columns:\tabular{lll}
 }
 }
 \seealso{
-Other CBD Games Functions: 
-\code{\link{cbbd_games}()},
-\code{\link{cbbd_games_media}()},
-\code{\link{cbbd_games_teams}()},
-\code{\link{cbbd_scoreboard}()}
+Other CBD Games Functions:
+\code{\link[=cbbd_games]{cbbd_games()}},
+\code{\link[=cbbd_games_media]{cbbd_games_media()}},
+\code{\link[=cbbd_games_teams]{cbbd_games_teams()}},
+\code{\link[=cbbd_scoreboard]{cbbd_scoreboard()}}
 }
 \concept{CBD Games Functions}
 \keyword{CBD}

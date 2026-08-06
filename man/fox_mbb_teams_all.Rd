@@ -26,7 +26,7 @@ unseen team ids (one seed per conference) and unions the results.
 }
 }
 \seealso{
-Other Fox Basketball Functions: 
+Other Fox Basketball Functions:
 \code{\link{fox_basketball_boxscore}},
 \code{\link{fox_basketball_league_leaders}},
 \code{\link{fox_basketball_odds}},

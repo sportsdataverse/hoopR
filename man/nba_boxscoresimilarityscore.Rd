@@ -61,8 +61,8 @@ nba_boxscoresimilarityscore(person_1_id = klay$PERSON_ID,
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore Similarity Functions: 
-\code{\link{nba_glalumboxscoresimilarityscore}()}
+Other NBA Boxscore Similarity Functions:
+\code{\link[=nba_glalumboxscoresimilarityscore]{nba_glalumboxscoresimilarityscore()}}
 }
 \author{
 Saiem Gilani

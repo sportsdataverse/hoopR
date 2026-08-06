@@ -47,8 +47,8 @@ into prefixed columns. Key identifying columns:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Lineups Functions: 
-\code{\link{cbbd_lineups_game}()}
+Other CBD Lineups Functions:
+\code{\link[=cbbd_lineups_game]{cbbd_lineups_game()}}
 }
 \concept{CBD Lineups Functions}
 \keyword{CBD}

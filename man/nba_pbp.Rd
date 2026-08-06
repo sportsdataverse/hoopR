@@ -98,12 +98,12 @@ Returns a data frame: PlayByPlay\tabular{lll}{
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA PBP Functions: 
-\code{\link{nba_data_pbp}()},
-\code{\link{nba_live_pbp}()},
-\code{\link{nba_pbps}()},
-\code{\link{nba_playbyplayv3}()},
-\code{\link{nba_winprobabilitypbp}()}
+Other NBA PBP Functions:
+\code{\link[=nba_data_pbp]{nba_data_pbp()}},
+\code{\link[=nba_live_pbp]{nba_live_pbp()}},
+\code{\link[=nba_pbps]{nba_pbps()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}},
+\code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}}
 }
 \author{
 Jason Lee

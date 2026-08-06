@@ -33,8 +33,8 @@ nested list of roster players:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Teams Functions: 
-\code{\link{cbbd_teams}()}
+Other CBD Teams Functions:
+\code{\link[=cbbd_teams]{cbbd_teams()}}
 }
 \concept{CBD Teams Functions}
 \keyword{CBD}

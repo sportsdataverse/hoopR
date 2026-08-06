@@ -22,12 +22,12 @@ A \code{hoopR_data} tibble with one row per play type:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Plays Functions: 
-\code{\link{cbbd_plays_date}()},
-\code{\link{cbbd_plays_game}()},
-\code{\link{cbbd_plays_player}()},
-\code{\link{cbbd_plays_team}()},
-\code{\link{cbbd_plays_tournament}()}
+Other CBD Plays Functions:
+\code{\link[=cbbd_plays_date]{cbbd_plays_date()}},
+\code{\link[=cbbd_plays_game]{cbbd_plays_game()}},
+\code{\link[=cbbd_plays_player]{cbbd_plays_player()}},
+\code{\link[=cbbd_plays_team]{cbbd_plays_team()}},
+\code{\link[=cbbd_plays_tournament]{cbbd_plays_tournament()}}
 }
 \concept{CBD Plays Functions}
 \keyword{CBD}

@@ -23,23 +23,23 @@ A \code{hoopR_data} tibble with one row per prospect (\code{player}, \code{team}
 }
 }
 \seealso{
-Other RealGM Functions: 
-\code{\link{realgm_coaches}()},
-\code{\link{realgm_draft}()},
-\code{\link{realgm_early_entry}()},
-\code{\link{realgm_future_free_agents}()},
-\code{\link{realgm_gms}()},
-\code{\link{realgm_individual_games}()},
-\code{\link{realgm_individual_seasons}()},
-\code{\link{realgm_player_stats}()},
-\code{\link{realgm_players}()},
-\code{\link{realgm_players_abroad}()},
-\code{\link{realgm_rookie_scale}()},
-\code{\link{realgm_salary_cap}()},
-\code{\link{realgm_standings}()},
-\code{\link{realgm_team_stats}()},
-\code{\link{realgm_teams}()},
-\code{\link{realgm_transactions}()}
+Other RealGM Functions:
+\code{\link[=realgm_coaches]{realgm_coaches()}},
+\code{\link[=realgm_draft]{realgm_draft()}},
+\code{\link[=realgm_early_entry]{realgm_early_entry()}},
+\code{\link[=realgm_future_free_agents]{realgm_future_free_agents()}},
+\code{\link[=realgm_gms]{realgm_gms()}},
+\code{\link[=realgm_individual_games]{realgm_individual_games()}},
+\code{\link[=realgm_individual_seasons]{realgm_individual_seasons()}},
+\code{\link[=realgm_player_stats]{realgm_player_stats()}},
+\code{\link[=realgm_players]{realgm_players()}},
+\code{\link[=realgm_players_abroad]{realgm_players_abroad()}},
+\code{\link[=realgm_rookie_scale]{realgm_rookie_scale()}},
+\code{\link[=realgm_salary_cap]{realgm_salary_cap()}},
+\code{\link[=realgm_standings]{realgm_standings()}},
+\code{\link[=realgm_team_stats]{realgm_team_stats()}},
+\code{\link[=realgm_teams]{realgm_teams()}},
+\code{\link[=realgm_transactions]{realgm_transactions()}}
 }
 \concept{RealGM Functions}
 \keyword{RealGM}

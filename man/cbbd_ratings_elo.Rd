@@ -37,9 +37,9 @@ A \code{hoopR_data} tibble with one row per team-season:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Ratings Functions: 
-\code{\link{cbbd_ratings_adjusted}()},
-\code{\link{cbbd_ratings_srs}()}
+Other CBD Ratings Functions:
+\code{\link[=cbbd_ratings_adjusted]{cbbd_ratings_adjusted()}},
+\code{\link[=cbbd_ratings_srs]{cbbd_ratings_srs()}}
 }
 \concept{CBD Ratings Functions}
 \keyword{CBD}

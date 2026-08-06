@@ -52,8 +52,8 @@ nested list of per-provider lines:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Lines Functions: 
-\code{\link{cbbd_lines_providers}()}
+Other CBD Lines Functions:
+\code{\link[=cbbd_lines_providers]{cbbd_lines_providers()}}
 }
 \concept{CBD Lines Functions}
 \keyword{CBD}

@@ -173,11 +173,11 @@ Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, Te
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Hustle Functions: 
-\code{\link{nba_hustlestatsboxscore}()},
-\code{\link{nba_leaguehustlestatsplayer}()},
-\code{\link{nba_leaguehustlestatsplayerleaders}()},
-\code{\link{nba_leaguehustlestatsteam}()}
+Other NBA Hustle Functions:
+\code{\link[=nba_hustlestatsboxscore]{nba_hustlestatsboxscore()}},
+\code{\link[=nba_leaguehustlestatsplayer]{nba_leaguehustlestatsplayer()}},
+\code{\link[=nba_leaguehustlestatsplayerleaders]{nba_leaguehustlestatsplayerleaders()}},
+\code{\link[=nba_leaguehustlestatsteam]{nba_leaguehustlestatsteam()}}
 }
 \author{
 Saiem Gilani

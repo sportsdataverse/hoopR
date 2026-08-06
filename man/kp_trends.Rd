@@ -39,13 +39,13 @@ try(kp_trends())
 }
 }
 \seealso{
-Other KP Misc. Functions: 
-\code{\link{kp_arenas}()},
-\code{\link{kp_fanmatch}()},
-\code{\link{kp_game_attrs}()},
-\code{\link{kp_hca}()},
-\code{\link{kp_officials}()},
-\code{\link{kp_referee}()}
+Other KP Misc. Functions:
+\code{\link[=kp_arenas]{kp_arenas()}},
+\code{\link[=kp_fanmatch]{kp_fanmatch()}},
+\code{\link[=kp_game_attrs]{kp_game_attrs()}},
+\code{\link[=kp_hca]{kp_hca()}},
+\code{\link[=kp_officials]{kp_officials()}},
+\code{\link[=kp_referee]{kp_referee()}}
 }
 \concept{KP Misc. Functions}
 \keyword{Trends}

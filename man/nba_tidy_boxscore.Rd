@@ -28,9 +28,9 @@ columns with \verb{_team}.
 }
 }
 \seealso{
-Other NBA Combined Datasets: 
-\code{\link{nba_tidy_franchise_history}()},
-\code{\link{nba_tidy_player_profile}()}
+Other NBA Combined Datasets:
+\code{\link[=nba_tidy_franchise_history]{nba_tidy_franchise_history()}},
+\code{\link[=nba_tidy_player_profile]{nba_tidy_player_profile()}}
 }
 \concept{NBA Combined Datasets}
 \keyword{Combined}

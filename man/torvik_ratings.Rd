@@ -56,12 +56,12 @@ file). No API key is required. Data is available from 2008 to present.
 }
 }
 \seealso{
-Other Torvik Functions: 
-\code{\link{torvik_game_schedule}()},
-\code{\link{torvik_game_stats}()},
-\code{\link{torvik_ncaa_results}()},
-\code{\link{torvik_player_stats}()},
-\code{\link{torvik_team_factors}()}
+Other Torvik Functions:
+\code{\link[=torvik_game_schedule]{torvik_game_schedule()}},
+\code{\link[=torvik_game_stats]{torvik_game_stats()}},
+\code{\link[=torvik_ncaa_results]{torvik_ncaa_results()}},
+\code{\link[=torvik_player_stats]{torvik_player_stats()}},
+\code{\link[=torvik_team_factors]{torvik_team_factors()}}
 }
 \concept{Torvik Functions}
 \keyword{Torvik}

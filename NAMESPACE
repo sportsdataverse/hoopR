@@ -590,102 +590,128 @@ import(stringr)
 import(utils)
 importFrom(Rcpp,getRcppVersion)
 importFrom(RcppParallel,defaultNumThreads)
-importFrom(cli,cli_abort)
-importFrom(cli,cli_inform)
-importFrom(data.table,data.table)
-importFrom(data.table,fread)
-importFrom(data.table,rbindlist)
-importFrom(data.table,setDT)
-importFrom(dplyr,"%>%")
-importFrom(dplyr,across)
-importFrom(dplyr,all_of)
-importFrom(dplyr,any_of)
-importFrom(dplyr,arrange)
-importFrom(dplyr,as_tibble)
-importFrom(dplyr,bind_cols)
-importFrom(dplyr,bind_rows)
-importFrom(dplyr,case_when)
-importFrom(dplyr,distinct)
-importFrom(dplyr,filter)
-importFrom(dplyr,first)
-importFrom(dplyr,full_join)
-importFrom(dplyr,group_by)
-importFrom(dplyr,if_else)
-importFrom(dplyr,left_join)
-importFrom(dplyr,mutate)
-importFrom(dplyr,mutate_at)
-importFrom(dplyr,pull)
-importFrom(dplyr,relocate)
-importFrom(dplyr,rename)
-importFrom(dplyr,row_number)
-importFrom(dplyr,select)
-importFrom(dplyr,summarise)
-importFrom(dplyr,tibble)
-importFrom(dplyr,transmute)
-importFrom(dplyr,ungroup)
-importFrom(dplyr,where)
-importFrom(httr2,req_body_form)
-importFrom(httr2,req_cookie_preserve)
-importFrom(httr2,req_headers)
-importFrom(httr2,req_perform)
-importFrom(httr2,req_retry)
-importFrom(httr2,req_timeout)
-importFrom(httr2,request)
-importFrom(httr2,resp_body_html)
-importFrom(httr2,resp_body_string)
-importFrom(httr2,resp_status)
-importFrom(janitor,clean_names)
-importFrom(janitor,make_clean_names)
-importFrom(jsonlite,fromJSON)
-importFrom(jsonlite,toJSON)
-importFrom(lubridate,as_datetime)
-importFrom(lubridate,date)
-importFrom(lubridate,with_tz)
-importFrom(lubridate,ymd_hm)
+importFrom(cli,
+  cli_abort,
+  cli_inform
+)
+importFrom(data.table,
+  data.table,
+  fread,
+  rbindlist,
+  setDT
+)
+importFrom(dplyr,
+  "%>%",
+  across,
+  all_of,
+  any_of,
+  arrange,
+  as_tibble,
+  bind_cols,
+  bind_rows,
+  case_when,
+  distinct,
+  filter,
+  first,
+  full_join,
+  group_by,
+  if_else,
+  left_join,
+  mutate,
+  mutate_at,
+  pull,
+  relocate,
+  rename,
+  row_number,
+  select,
+  summarise,
+  tibble,
+  transmute,
+  ungroup,
+  where
+)
+importFrom(httr2,
+  req_body_form,
+  req_cookie_preserve,
+  req_headers,
+  req_perform,
+  req_retry,
+  req_timeout,
+  request,
+  resp_body_html,
+  resp_body_string,
+  resp_status
+)
+importFrom(janitor,
+  clean_names,
+  make_clean_names
+)
+importFrom(jsonlite,
+  fromJSON,
+  toJSON
+)
+importFrom(lubridate,
+  as_datetime,
+  date,
+  with_tz,
+  ymd_hm
+)
 importFrom(magrittr,"%>%")
-importFrom(purrr,list_rbind)
-importFrom(purrr,map)
-importFrom(purrr,map2_dfr)
-importFrom(purrr,map_lgl)
-importFrom(purrr,pluck)
-importFrom(purrr,possibly)
-importFrom(purrr,quietly)
-importFrom(purrr,reduce)
-importFrom(rlang,"%||%")
-importFrom(rlang,":=")
-importFrom(rlang,.data)
-importFrom(rlang,expr)
-importFrom(rvest,html_attr)
-importFrom(rvest,html_element)
-importFrom(rvest,html_elements)
-importFrom(rvest,html_table)
-importFrom(rvest,html_text)
-importFrom(rvest,html_text2)
-importFrom(rvest,read_html)
+importFrom(purrr,
+  list_rbind,
+  map,
+  map2_dfr,
+  map_lgl,
+  pluck,
+  possibly,
+  quietly,
+  reduce
+)
+importFrom(rlang,
+  "%||%",
+  ":=",
+  .data,
+  expr
+)
+importFrom(rvest,
+  html_attr,
+  html_element,
+  html_elements,
+  html_table,
+  html_text,
+  html_text2,
+  read_html
+)
 importFrom(stringdist,stringsim)
 importFrom(stringi,stri_trans_general)
-importFrom(stringr,regex)
-importFrom(stringr,str_detect)
-importFrom(stringr,str_extract)
-importFrom(stringr,str_extract_all)
-importFrom(stringr,str_length)
-importFrom(stringr,str_match)
-importFrom(stringr,str_pad)
-importFrom(stringr,str_remove)
-importFrom(stringr,str_remove_all)
-importFrom(stringr,str_replace)
-importFrom(stringr,str_replace_all)
-importFrom(stringr,str_split)
-importFrom(stringr,str_squish)
-importFrom(stringr,str_sub)
-importFrom(stringr,str_trim)
-importFrom(tidyr,everything)
-importFrom(tidyr,hoist)
-importFrom(tidyr,nest)
-importFrom(tidyr,pivot_wider)
-importFrom(tidyr,separate)
-importFrom(tidyr,unchop)
-importFrom(tidyr,unnest)
-importFrom(tidyr,unnest_wider)
-importFrom(utils,URLdecode)
-importFrom(utils,URLencode)
+importFrom(stringr,
+  regex,
+  str_detect,
+  str_extract,
+  str_extract_all,
+  str_length,
+  str_match,
+  str_pad,
+  str_remove,
+  str_remove_all,
+  str_replace,
+  str_replace_all,
+  str_split,
+  str_squish,
+  str_sub,
+  str_trim
+)
+importFrom(tidyr,
+  everything,
+  hoist,
+  nest,
+  pivot_wider,
+  separate,
+  unchop,
+  unnest,
+  unnest_wider
+)
+importFrom(utils,
+  URLdecode,
+  URLencode
+)

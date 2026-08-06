@@ -36,9 +36,9 @@ API key is required.
 }
 }
 \seealso{
-Other Salary & Draft Functions: 
-\code{\link{hoopshype_salaries}()},
-\code{\link{spotrac_team_cap}()}
+Other Salary & Draft Functions:
+\code{\link[=hoopshype_salaries]{hoopshype_salaries()}},
+\code{\link[=spotrac_team_cap]{spotrac_team_cap()}}
 }
 \concept{Salary & Draft Functions}
 \keyword{Salaries}

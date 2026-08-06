@@ -66,13 +66,13 @@ Returns a named list of data frames: DraftHistory
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Draft Functions: 
-\code{\link{nba_draftboard}()},
-\code{\link{nba_draftcombinedrillresults}()},
-\code{\link{nba_draftcombinenonstationaryshooting}()},
-\code{\link{nba_draftcombineplayeranthro}()},
-\code{\link{nba_draftcombinespotshooting}()},
-\code{\link{nba_draftcombinestats}()}
+Other NBA Draft Functions:
+\code{\link[=nba_draftboard]{nba_draftboard()}},
+\code{\link[=nba_draftcombinedrillresults]{nba_draftcombinedrillresults()}},
+\code{\link[=nba_draftcombinenonstationaryshooting]{nba_draftcombinenonstationaryshooting()}},
+\code{\link[=nba_draftcombineplayeranthro]{nba_draftcombineplayeranthro()}},
+\code{\link[=nba_draftcombinespotshooting]{nba_draftcombinespotshooting()}},
+\code{\link[=nba_draftcombinestats]{nba_draftcombinestats()}}
 }
 \author{
 Saiem Gilani

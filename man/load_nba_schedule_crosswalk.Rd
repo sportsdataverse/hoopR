@@ -27,11 +27,11 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 }
 }
 \seealso{
-Other NBA Crosswalk Functions: 
-\code{\link{load_nba_player_crosswalk}()},
-\code{\link{load_nba_team_crosswalk}()},
-\code{\link{nba_player_crosswalk}()},
-\code{\link{nba_schedule_crosswalk}()},
-\code{\link{nba_team_crosswalk}()}
+Other NBA Crosswalk Functions:
+\code{\link[=load_nba_player_crosswalk]{load_nba_player_crosswalk()}},
+\code{\link[=load_nba_team_crosswalk]{load_nba_team_crosswalk()}},
+\code{\link[=nba_player_crosswalk]{nba_player_crosswalk()}},
+\code{\link[=nba_schedule_crosswalk]{nba_schedule_crosswalk()}},
+\code{\link[=nba_team_crosswalk]{nba_team_crosswalk()}}
 }
 \concept{NBA Crosswalk Functions}

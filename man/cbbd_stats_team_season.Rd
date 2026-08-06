@@ -53,11 +53,11 @@ and \code{opponent_stats} objects are flattened into \verb{team_stats_*} /
 }
 }
 \seealso{
-Other CBD Stats Functions: 
-\code{\link{cbbd_stats_player_season}()},
-\code{\link{cbbd_stats_player_shooting_season}()},
-\code{\link{cbbd_stats_team_leaderboard}()},
-\code{\link{cbbd_stats_team_shooting_season}()}
+Other CBD Stats Functions:
+\code{\link[=cbbd_stats_player_season]{cbbd_stats_player_season()}},
+\code{\link[=cbbd_stats_player_shooting_season]{cbbd_stats_player_shooting_season()}},
+\code{\link[=cbbd_stats_team_leaderboard]{cbbd_stats_team_leaderboard()}},
+\code{\link[=cbbd_stats_team_shooting_season]{cbbd_stats_team_shooting_season()}}
 }
 \concept{CBD Stats Functions}
 \keyword{CBD}

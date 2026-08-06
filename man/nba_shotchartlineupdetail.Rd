@@ -233,23 +233,23 @@ Return a named list of data frames: ShotChartLineupDetail, ShotChartLineupLeague
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Shooting Functions: 
-\code{\link{nba_leaguedashplayershotlocations}()},
-\code{\link{nba_leaguedashteamptshot}()},
-\code{\link{nba_leaguedashteamshotlocations}()},
-\code{\link{nba_playerdashboardbyclutch}()},
-\code{\link{nba_shotchartdetail}()},
-\code{\link{nba_shotchartleaguewide}()},
-\code{\link{nba_teamdashboardbyclutch}()}
+Other NBA Shooting Functions:
+\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
+\code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
+\code{\link[=nba_leaguedashteamshotlocations]{nba_leaguedashteamshotlocations()}},
+\code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 
-Other NBA Lineup Functions: 
-\code{\link{nba_gamerotation}()},
-\code{\link{nba_leaguedashlineups}()},
-\code{\link{nba_leaguelineupviz}()},
-\code{\link{nba_possession_lineups}()},
-\code{\link{nba_rapm}()},
-\code{\link{nba_shot_zones}()},
-\code{\link{nba_teamdashlineups}()}
+Other NBA Lineup Functions:
+\code{\link[=nba_gamerotation]{nba_gamerotation()}},
+\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
+\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_rapm]{nba_rapm()}},
+\code{\link[=nba_shot_zones]{nba_shot_zones()}},
+\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
 }
 \author{
 Saiem Gilani

@@ -184,12 +184,12 @@ Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/partial; use \code{n
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions: 
-\code{\link{nba_schedule}()},
-\code{\link{nba_scheduleleaguev2int}()},
-\code{\link{nba_scoreboard}()},
-\code{\link{nba_scoreboardv3}()},
-\code{\link{nba_todays_scoreboard}()}
+Other NBA Schedule Functions:
+\code{\link[=nba_schedule]{nba_schedule()}},
+\code{\link[=nba_scheduleleaguev2int]{nba_scheduleleaguev2int()}},
+\code{\link[=nba_scoreboard]{nba_scoreboard()}},
+\code{\link[=nba_scoreboardv3]{nba_scoreboardv3()}},
+\code{\link[=nba_todays_scoreboard]{nba_todays_scoreboard()}}
 }
 \author{
 Saiem Gilani

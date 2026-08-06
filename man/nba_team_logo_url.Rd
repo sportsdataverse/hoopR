@@ -22,9 +22,9 @@ Vectorized.
 nba_team_logo_url(team_id = 1610612744)                # Golden State Warriors
 }
 \seealso{
-Other NBA Dictionary Functions: 
-\code{\link{nba_player_dict}()},
-\code{\link{nba_player_headshot_url}()},
-\code{\link{nba_team_dict}()}
+Other NBA Dictionary Functions:
+\code{\link[=nba_player_dict]{nba_player_dict()}},
+\code{\link[=nba_player_headshot_url]{nba_player_headshot_url()}},
+\code{\link[=nba_team_dict]{nba_team_dict()}}
 }
 \concept{NBA Dictionary Functions}

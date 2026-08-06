@@ -147,17 +147,17 @@ Returns a named list of data frames: home_team_player_matchups, away_team_player
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions: 
-\code{\link{nba_boxscoreadvancedv3}()},
-\code{\link{nba_boxscoredefensivev2}()},
-\code{\link{nba_boxscorefourfactorsv3}()},
-\code{\link{nba_boxscorehustlev2}()},
-\code{\link{nba_boxscoremiscv3}()},
-\code{\link{nba_boxscoreplayertrackv3}()},
-\code{\link{nba_boxscorescoringv3}()},
-\code{\link{nba_boxscoresummaryv3}()},
-\code{\link{nba_boxscoretraditionalv3}()},
-\code{\link{nba_boxscoreusagev3}()}
+Other NBA Boxscore V3 Functions:
+\code{\link[=nba_boxscoreadvancedv3]{nba_boxscoreadvancedv3()}},
+\code{\link[=nba_boxscoredefensivev2]{nba_boxscoredefensivev2()}},
+\code{\link[=nba_boxscorefourfactorsv3]{nba_boxscorefourfactorsv3()}},
+\code{\link[=nba_boxscorehustlev2]{nba_boxscorehustlev2()}},
+\code{\link[=nba_boxscoremiscv3]{nba_boxscoremiscv3()}},
+\code{\link[=nba_boxscoreplayertrackv3]{nba_boxscoreplayertrackv3()}},
+\code{\link[=nba_boxscorescoringv3]{nba_boxscorescoringv3()}},
+\code{\link[=nba_boxscoresummaryv3]{nba_boxscoresummaryv3()}},
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_boxscoreusagev3]{nba_boxscoreusagev3()}}
 }
 \author{
 Saiem Gilani

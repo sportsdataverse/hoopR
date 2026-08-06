@@ -40,9 +40,9 @@ columns are flattened from the nested \code{rankings} object:\tabular{lll}{
 }
 }
 \seealso{
-Other CBD Ratings Functions: 
-\code{\link{cbbd_ratings_elo}()},
-\code{\link{cbbd_ratings_srs}()}
+Other CBD Ratings Functions:
+\code{\link[=cbbd_ratings_elo]{cbbd_ratings_elo()}},
+\code{\link[=cbbd_ratings_srs]{cbbd_ratings_srs()}}
 }
 \concept{CBD Ratings Functions}
 \keyword{CBD}

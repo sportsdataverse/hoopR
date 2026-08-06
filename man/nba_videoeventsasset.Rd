@@ -26,11 +26,11 @@ Returns a named list containing video event asset data (structure varies by resp
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Video Functions: 
-\code{\link{nba_videodetails}()},
-\code{\link{nba_videodetailsasset}()},
-\code{\link{nba_videoevents}()},
-\code{\link{nba_videostatus}()}
+Other NBA Video Functions:
+\code{\link[=nba_videodetails]{nba_videodetails()}},
+\code{\link[=nba_videodetailsasset]{nba_videodetailsasset()}},
+\code{\link[=nba_videoevents]{nba_videoevents()}},
+\code{\link[=nba_videostatus]{nba_videostatus()}}
 }
 \author{
 Saiem Gilani

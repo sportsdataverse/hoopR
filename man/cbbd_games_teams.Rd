@@ -59,11 +59,11 @@ objects (\code{team_stats}, \code{opponent_stats}) are flattened into \verb{team
 }
 }
 \seealso{
-Other CBD Games Functions: 
-\code{\link{cbbd_games}()},
-\code{\link{cbbd_games_media}()},
-\code{\link{cbbd_games_players}()},
-\code{\link{cbbd_scoreboard}()}
+Other CBD Games Functions:
+\code{\link[=cbbd_games]{cbbd_games()}},
+\code{\link[=cbbd_games_media]{cbbd_games_media()}},
+\code{\link[=cbbd_games_players]{cbbd_games_players()}},
+\code{\link[=cbbd_scoreboard]{cbbd_scoreboard()}}
 }
 \concept{CBD Games Functions}
 \keyword{CBD}
