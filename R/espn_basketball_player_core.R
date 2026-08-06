@@ -158,9 +158,7 @@ espn_basketball_player_core <- function(payload, athlete_id) {
     active = .pc_lgl(payload[["active"]])
   )
 
-  tibble::as_tibble(row[cols]) %>%
-    janitor::clean_names() %>%
-    make_hoopR_data("ESPN Basketball Player Core from ESPN.com", Sys.time())
+  .player_core_finalize(tibble::as_tibble(row[cols]))
 }
 
 #' The released column order. Order is part of the contract -- both pipelines
@@ -200,7 +198,17 @@ espn_basketball_player_core <- function(payload, athlete_id) {
   # The empty path is finalized identically to the populated one, so a caller
   # that chains on the result sees the same class and attributes whether or not
   # the payload had anything in it.
-  tibble::as_tibble(proto) %>%
+  .player_core_finalize(tibble::as_tibble(proto))
+}
+
+#' Apply the package data contract to a player_core frame.
+#'
+#' Both return paths go through here so they cannot drift: the type string in
+#' particular was previously written out twice, which is one edit away from the
+#' two paths disagreeing about what they claim to be.
+#' @noRd
+.player_core_finalize <- function(df) {
+  df %>%
     janitor::clean_names() %>%
     make_hoopR_data("ESPN Basketball Player Core from ESPN.com", Sys.time())
 }
