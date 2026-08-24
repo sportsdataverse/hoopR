@@ -38,7 +38,7 @@
       timestamp = attr(chunks[[meta_idx]], "hoopR_timestamp")
     )
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }

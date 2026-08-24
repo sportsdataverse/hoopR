@@ -110,7 +110,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -224,7 +224,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -338,7 +338,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -462,7 +462,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -692,7 +692,7 @@ load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -741,7 +741,7 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -790,7 +790,7 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -838,7 +838,7 @@ load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -886,7 +886,7 @@ load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -934,7 +934,7 @@ load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -983,7 +983,7 @@ load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
@@ -1046,7 +1046,7 @@ load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   }
   out
 }
