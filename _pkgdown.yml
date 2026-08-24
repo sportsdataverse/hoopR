@@ -201,6 +201,7 @@ reference:
       - '`load_nba_game_rosters`'
       - '`load_nba_officials`'
       - '`load_nba_player_core`'
+      - '`load_nba_shots`'
       - '`update_nba_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
@@ -216,6 +217,7 @@ reference:
       - '`load_mbb_game_rosters`'
       - '`load_mbb_officials`'
       - '`load_mbb_player_core`'
+      - '`load_mbb_shots`'
       - '`update_mbb_db`'
   - subtitle: NCAA Men's College Basketball Play-by-Play Engine Data Loaders
     desc: Functions exported by hoopR to access the sdv-py `ncaa_mbb` engine's published output on sportsdataverse-data

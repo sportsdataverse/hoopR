@@ -1017,3 +1017,82 @@ load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
   class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   out
 }
+
+#' **Load hoopR NBA shot events**
+#' @name load_nba_shots
+NULL
+#' @title
+#' **Load cleaned NBA shot events from the data repo**
+#' @rdname load_nba_shots
+#' @description Loads shot events parsed from ESPN NBA play-by-play feeds.
+#' One row per shot attempt (made or missed), with court coordinates and
+#' shot metadata. Backed by the `hoopR-nba-data` pipeline, publishing
+#' parquet/rds artifacts to the `espn_nba_shots` release tag.
+#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
+#' @param ... Additional arguments passed to an underlying function that writes
+#' the season data into a database (used by `update_nba_db()`).
+#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
+#' @param tablename The name of the shots data table within the database.
+#' @return Returns a tibble with one row per shot attempt.
+#'
+#'    |col_name             |types     |description                                                     |
+#'    |:--------------------|:---------|:----------------------------------------------------------------|
+#'    |game_id               |integer   |Unique game identifier.                                          |
+#'    |season                |integer   |Season identifier (4-digit year).                                |
+#'    |period_number         |integer   |Numeric period (1-4 for quarters; 5+ for OT).                    |
+#'    |clock_display_value   |character |Game clock display string (e.g. '8:32').                         |
+#'    |team_id               |integer   |Unique team identifier.                                          |
+#'    |athlete_id_1          |integer   |Primary athlete identifier (the shooter).                        |
+#'    |athlete_id_2          |integer   |Secondary athlete identifier (e.g. assister / fouler).            |
+#'    |type_id               |integer   |Type identifier (numeric).                                       |
+#'    |type_text             |character |Display text for the shot/play type.                             |
+#'    |scoring_play          |logical   |TRUE if the play resulted in points scored.                      |
+#'    |score_value           |integer   |Point value of the shot (2 / 3 / 1).                             |
+#'    |coordinate_x          |numeric   |X coordinate on the court (half-court layout).                   |
+#'    |coordinate_y          |numeric   |Y coordinate on the court (half-court layout).                   |
+#'    |coordinate_x_raw      |numeric   |X coordinate as returned by the API before any adjustment.       |
+#'    |coordinate_y_raw      |numeric   |Y coordinate as returned by the API before any adjustment.       |
+#'    |athlete_name_1        |character |Display name of the primary athlete (the shooter).                |
+#'    |athlete_name_2        |character |Display name of the secondary athlete, when present.             |
+#'    |team_name             |character |Full team display name.                                          |
+#'    |team_mascot           |character |Team mascot / nickname.                                          |
+#'    |team_abbrev           |character |Short team abbreviation.                                         |
+#'
+#' @export
+#' @family hoopR Loader Functions
+#' @examples
+#' \donttest{
+#' load_nba_shots(seasons = most_recent_nba_season())
+#' }
+load_nba_shots <- function(seasons = most_recent_nba_season(), ...,
+                            dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+
+  stopifnot(
+    is.numeric(seasons),
+    seasons >= 2002,
+    seasons <= most_recent_nba_season()
+  )
+
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_", seasons, ".rds")
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- rbindlist_with_attrs(out)
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
+    out <- NULL
+  } else {
+    class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  }
+  out
+}
