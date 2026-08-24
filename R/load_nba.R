@@ -86,7 +86,6 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
                          dbConnection = NULL, tablename = NULL) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
 
@@ -108,7 +107,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
   if (in_db) {
-    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
     class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
@@ -313,7 +312,6 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  dots <- rlang::dots_list(...)
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
@@ -333,7 +331,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
   if (in_db) {
-    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
     class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
@@ -437,7 +435,6 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
                               dbConnection = NULL, tablename = NULL) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  dots <- rlang::dots_list(...)
 
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
@@ -458,7 +455,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   out <- lapply(urls, progressively(loader, p))
   out <- rbindlist_with_attrs(out)
   if (in_db) {
-    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE)
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
     class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
