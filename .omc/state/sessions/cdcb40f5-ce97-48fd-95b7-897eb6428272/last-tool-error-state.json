@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"R=\\\"/c/Program Files/R/R-4.6.0/bin/Rscript.exe\\\"; \\\"$R\\\" --vanilla -e 'suppressMessages(roxygen2::roxygenise(\\\".\\\", roclets=c(\\\"rd\\\",\\\"namespace\\\")))' 2>&1 | grep -viE \\\"built under|^[0-9]...",
-  "error": "Exit code 2\nError in load_imports(path) : \n  The packages \"data.table\" (>= 1.14.0), \"glmnet\", \"httr2\" (>= 1.0.0),\n\"janitor\", \"lubridate\", \"progressr\" (>= 0.6.0), \"Rcpp\" (>= 1.0.7),\n\"RcppParallel\" (>= 5.1.4), \"rvest\" (>= 1.0.0), \"stringdist\" (>= 0.9.0), and\n\"tidyr\" (>= 1.0.0) are required.\nCalls: suppressMessages ... load_imports -> deps_check_installed -> check_installed\nExecution halted\n─── exported?\n─── man page:",
-  "timestamp": "2026-08-06T00:06:11.410Z",
-  "retry_count": 1
-}

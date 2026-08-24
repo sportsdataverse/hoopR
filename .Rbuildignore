@@ -50,3 +50,5 @@ mbb_pbp_db
 ^debug\.log$
 ^nul$
 ^.*\.log$
+^\.omc$
+^\.understand-anything$

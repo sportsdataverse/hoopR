@@ -17,3 +17,6 @@ md*
 debug.log
 nul
 *.log
+
+.omc/
+.understand-anything/
