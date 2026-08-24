@@ -13,5 +13,8 @@ parquet_from_url(url)
 a dataframe as created by \code{\link[arrow:read_parquet]{arrow::read_parquet()}}
 }
 \description{
-\strong{Load .parquet file from a remote connection}
+Sibling of \code{\link[=rds_from_url]{rds_from_url()}} for release assets published as parquet
+(e.g. the \code{mbb_ratings} / \code{mbb_player_value} model-dataset tags).
+404-safe: an unpublished asset returns an empty \code{data.table} + a warning,
+matching \code{rds_from_url()}'s contract, instead of raising.
 }
