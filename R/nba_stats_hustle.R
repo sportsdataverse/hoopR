@@ -117,6 +117,7 @@ nba_leaguehustlestatsplayer <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -126,7 +127,6 @@ nba_leaguehustlestatsplayer <- function(
     DraftPick = draft_pick,
     DraftYear = draft_year,
     Height = height,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -329,6 +329,7 @@ nba_leaguehustlestatsplayerleaders <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -338,7 +339,6 @@ nba_leaguehustlestatsplayerleaders <- function(
     DraftPick = draft_pick,
     DraftYear = draft_year,
     Height = height,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -488,6 +488,7 @@ nba_leaguehustlestatsteam <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -497,7 +498,6 @@ nba_leaguehustlestatsteam <- function(
     DraftPick = draft_pick,
     DraftYear = draft_year,
     Height = height,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -697,6 +697,7 @@ nba_leaguehustlestatsteamleaders <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -706,7 +707,6 @@ nba_leaguehustlestatsteamleaders <- function(
     DraftPick = draft_pick,
     DraftYear = draft_year,
     Height = height,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,

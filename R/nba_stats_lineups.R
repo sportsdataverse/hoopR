@@ -92,11 +92,11 @@ nba_fantasywidget <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     ActivePlayers = active_players,
     DateFrom = date_from,
     DateTo = date_to,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -283,6 +283,7 @@ nba_leaguedashlineups <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
@@ -290,7 +291,6 @@ nba_leaguedashlineups <- function(
     GameSegment = game_segment,
     GroupQuantity = group_quantity,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -450,6 +450,7 @@ nba_leaguelineupviz <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
@@ -457,7 +458,6 @@ nba_leaguelineupviz <- function(
     GameSegment = game_segment,
     GroupQuantity = group_quantity,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     MinutesMin = minutes_min,
@@ -642,11 +642,11 @@ nba_leagueplayerondetails <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -771,9 +771,9 @@ nba_leagueseasonmatchups <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DefPlayerID = def_player_id,
     DefTeamID = def_team_id,
-    LeagueID = league_id,
     OffPlayerID = off_player_id,
     OffTeamID = off_team_id,
     PerMode = per_mode,
@@ -881,9 +881,9 @@ nba_matchupsrollup <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DefPlayerID = def_player_id,
     DefTeamID = def_team_id,
-    LeagueID = league_id,
     OffPlayerID = off_player_id,
     OffTeamID = off_team_id,
     PerMode = per_mode,

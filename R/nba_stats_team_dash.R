@@ -84,11 +84,11 @@ nba_teamdashboardbyclutch <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -214,11 +214,11 @@ nba_teamdashboardbygamesplits <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -345,11 +345,11 @@ nba_teamdashboardbygeneralsplits <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -476,11 +476,11 @@ nba_teamdashboardbylastngames <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -606,11 +606,11 @@ nba_teamdashboardbyopponent <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -737,11 +737,11 @@ nba_teamdashboardbyshootingsplits <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -866,11 +866,11 @@ nba_teamdashboardbyteamperformance <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID =  league_id,
     DateFrom =  date_from,
     DateTo =  date_to,
     GameSegment =  game_segment,
     LastNGames =  last_n_games,
-    LeagueID =  league_id,
     Location =  location,
     MeasureType =  measure_type,
     Month =  month,
@@ -994,11 +994,11 @@ nba_teamdashboardbyyearoveryear <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1129,13 +1129,13 @@ nba_teamdashlineups <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameID = game_id,
     GameSegment = game_segment,
     GroupQuantity = group_quantity,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1247,10 +1247,10 @@ nba_teamdashptpass  <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -1359,11 +1359,11 @@ nba_teamdashptreb  <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -1473,11 +1473,11 @@ nba_teamdashptshots  <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,

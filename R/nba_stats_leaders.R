@@ -526,8 +526,8 @@ nba_homepageleaders <- function(
   full_url <- endpoint
 
   params <- list(
-    GameScope =  game_scope,
     LeagueID = league_id,
+    GameScope =  game_scope,
     PlayerOrTeam = player_or_team,
     PlayerScope = player_scope,
     Season = season,
@@ -708,8 +708,8 @@ nba_homepagev2 <- function(
   full_url <- endpoint
 
   params <- list(
-    GameScope = game_scope,
     LeagueID = league_id,
+    GameScope = game_scope,
     PlayerOrTeam = player_or_team,
     PlayerScope = player_scope,
     Season = season,
@@ -844,8 +844,8 @@ nba_leaderstiles <- function(
   full_url <- endpoint
 
   params <- list(
-    GameScope = game_scope,
     LeagueID = league_id,
+    GameScope = game_scope,
     PlayerOrTeam = player_or_team,
     PlayerScope = player_scope,
     Season = season,
@@ -922,8 +922,8 @@ nba_defensehub <- function(
   full_url <- endpoint
 
   params <- list(
-    GameScope = game_scope,
     LeagueID = league_id,
+    GameScope = game_scope,
     PlayerOrTeam = player_or_team,
     PlayerScope = player_scope,
     Season = season,
@@ -1037,8 +1037,8 @@ nba_leagueleaders <- function(
   full_url <- endpoint
 
   params <- list(
-    ActiveFlag = active_flag,
     LeagueID = league_id,
+    ActiveFlag = active_flag,
     PerMode = per_mode,
     Scope = scope,
     Season = season,

@@ -697,8 +697,8 @@ nba_drafthistory <- function(
   full_url <- endpoint
 
   params <- list(
-    College = college,
     LeagueID = league_id,
+    College = college,
     OverallPick = overall_pick,
     RoundNum = round_num,
     RoundPick = round_pick,

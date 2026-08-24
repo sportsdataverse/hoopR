@@ -55,8 +55,8 @@ nba_commonallplayers <- function(
   full_url <- endpoint
 
   params <- list(
-    IsOnlyCurrentSeason = is_only_current_season,
     LeagueID = league_id,
+    IsOnlyCurrentSeason = is_only_current_season,
     Season = season
   )
 

@@ -130,6 +130,7 @@ nba_videodetailsasset <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     AheadBehind = ahead_behind,
     ClutchTime = clutch_time,
     ContextFilter = context_filter,
@@ -141,7 +142,6 @@ nba_videodetailsasset <- function(
     GameID = game_id,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -333,6 +333,7 @@ nba_videodetails <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     AheadBehind = ahead_behind,
     ClutchTime = clutch_time,
     ContextFilter = context_filter,
@@ -344,7 +345,6 @@ nba_videodetails <- function(
     GameID = game_id,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -513,8 +513,8 @@ nba_videostatus <- function(
   full_url <- endpoint
 
   params <- list(
-    GameDate = game_date,
-    LeagueID = league_id
+    LeagueID = league_id,
+    GameDate = game_date
   )
 
   df_list <- list()

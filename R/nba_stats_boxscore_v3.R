@@ -3102,8 +3102,8 @@ nba_gamerotation <- function(
   full_url <- endpoint
 
   params <- list(
-    GameID = pad_id(game_id),
     LeagueID = league_id,
+    GameID = pad_id(game_id),
     RotationStat = rotation_stat
   )
 

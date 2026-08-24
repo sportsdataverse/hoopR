@@ -865,6 +865,7 @@ nba_leaguegamefinder <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
@@ -916,7 +917,6 @@ nba_leaguegamefinder <- function(
     GtSTL = gt_stl,
     GtTD = gt_td,
     GtTOV = gt_tov,
-    LeagueID = league_id,
     Location = location,
     LtAST = lt_ast,
     LtBLK = lt_blk,

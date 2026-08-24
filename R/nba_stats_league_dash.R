@@ -116,6 +116,7 @@ nba_leaguedashoppptshot <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     CloseDefDistRange = close_def_dist_range,
     Conference = conference,
     DateFrom = date_from,
@@ -125,7 +126,6 @@ nba_leaguedashoppptshot <- function(
     GameSegment = game_segment,
     GeneralRange = general_range,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -297,6 +297,7 @@ nba_leaguedashplayerbiostats <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -309,7 +310,6 @@ nba_leaguedashplayerbiostats <- function(
     GameSegment = game_segment,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -539,6 +539,7 @@ nba_leaguedashplayerclutch <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     AheadBehind = ahead_behind,
     ClutchTime = clutch_time,
     College = college,
@@ -553,7 +554,6 @@ nba_leaguedashplayerclutch <- function(
     GameSegment = game_segment,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -740,6 +740,7 @@ nba_leaguedashplayerptshot <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     CloseDefDistRange = close_def_dist_range,
     College = college,
     Conference = conference,
@@ -756,7 +757,6 @@ nba_leaguedashplayerptshot <- function(
     GeneralRange = general_range,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -988,6 +988,7 @@ nba_leaguedashplayerstats <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -1000,7 +1001,6 @@ nba_leaguedashplayerstats <- function(
     GameSegment = game_segment,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1193,6 +1193,7 @@ nba_leaguedashplayershotlocations <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -1207,7 +1208,6 @@ nba_leaguedashplayershotlocations <- function(
     GameSegment = game_segment,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1382,6 +1382,7 @@ nba_leaguedashptdefend <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -1394,7 +1395,6 @@ nba_leaguedashptdefend <- function(
     GameSegment = game_segment,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -1564,6 +1564,7 @@ nba_leaguedashptstats <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Conference = conference,
     Country = country,
@@ -1575,7 +1576,6 @@ nba_leaguedashptstats <- function(
     GameScope = game_scope,
     Height = height,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -1712,6 +1712,7 @@ nba_leaguedashptteamdefend <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
@@ -1719,7 +1720,6 @@ nba_leaguedashptteamdefend <- function(
     Division = division,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -1917,6 +1917,7 @@ nba_leaguedashteamclutch <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     AheadBehind = ahead_behind,
     ClutchTime = clutch_time,
     Conference = conference,
@@ -1926,7 +1927,6 @@ nba_leaguedashteamclutch <- function(
     GameScope = game_scope,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -2084,6 +2084,7 @@ nba_leaguedashteamptshot <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     CloseDefDistRange = close_def_dist_range,
     Conference = conference,
     DateFrom = date_from,
@@ -2093,7 +2094,6 @@ nba_leaguedashteamptshot <- function(
     GameSegment = game_segment,
     GeneralRange = general_range,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -2283,6 +2283,7 @@ nba_leaguedashteamstats <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
@@ -2290,7 +2291,6 @@ nba_leaguedashteamstats <- function(
     GameScope = game_scope,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -2462,6 +2462,7 @@ nba_leaguedashteamshotlocations <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
@@ -2470,7 +2471,6 @@ nba_leaguedashteamshotlocations <- function(
     GameScope = game_scope,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
