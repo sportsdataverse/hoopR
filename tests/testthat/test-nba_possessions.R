@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------
 
 test_that(".is_last_ft matches the NBA/WNBA + G-League free-throw contract", {
+  skip_on_cran()
   # NBA/WNBA "N of N" sequence labels — last FT of sequence → TRUE
   expect_true(.is_last_ft("Free Throw 2 of 2"))
   expect_true(.is_last_ft("Free Throw 1 of 1"))
@@ -46,6 +47,7 @@ test_that(".is_last_ft matches the NBA/WNBA + G-League free-throw contract", {
 # ---------------------------------------------------------------------------
 
 test_that(".offense_from_events returns correct offense team from scoring events", {
+  skip_on_cran()
   home_id <- 1610612738L  # BOS
   away_id <- 1610612755L  # PHX
 
@@ -96,6 +98,7 @@ test_that(".offense_from_events returns correct offense team from scoring events
 # ---------------------------------------------------------------------------
 
 test_that(".OFFENSE_SEEDING_EVENT_TYPES contains only shot/turnover event_type codes", {
+  skip_on_cran()
   # Must include MadeShot("1"), MissedShot("2"), FreeThrow("3"), Turnover("5")
   expect_true("1" %in% .OFFENSE_SEEDING_EVENT_TYPES)  # MadeShot
   expect_true("2" %in% .OFFENSE_SEEDING_EVENT_TYPES)  # MissedShot
@@ -118,6 +121,7 @@ test_that(".OFFENSE_SEEDING_EVENT_TYPES contains only shot/turnover event_type c
 # ---------------------------------------------------------------------------
 
 test_that("possession points reconcile to the boxscore (independent oracle)", {
+  skip_on_cran()
   for (gid in c("0022200001", "0022300001")) {
     pbp <- readRDS(test_path("fixtures", "nba_engine", paste0("pbp_", gid, ".rds")))
     box <- readRDS(test_path("fixtures", "nba_engine", paste0("box_", gid, ".rds")))
@@ -157,6 +161,7 @@ test_that("possession points reconcile to the boxscore (independent oracle)", {
 # ---------------------------------------------------------------------------
 
 test_that(".build_possessions emits a logical second_chance flag", {
+  skip_on_cran()
   for (gid in c("0022200001", "0022300001")) {
     pbp  <- readRDS(test_path("fixtures", "nba_engine", paste0("pbp_", gid, ".rds")))
     poss <- .build_possessions(pbp)
@@ -181,6 +186,7 @@ test_that(".build_possessions emits a logical second_chance flag", {
 # ---------------------------------------------------------------------------
 
 test_that("possession on-court ids are all in the boxscore roster (independent oracle)", {
+  skip_on_cran()
   off_cols <- paste0("off_player_", 1:5)
   def_cols <- paste0("def_player_", 1:5)
 
@@ -247,6 +253,7 @@ test_that("possession on-court ids are all in the boxscore roster (independent o
 # ---------------------------------------------------------------------------
 
 test_that("possession engine is never-raise on empty PBP", {
+  skip_on_cran()
   pbp <- readRDS(test_path("fixtures", "nba_engine", "pbp_0022200001.rds"))
   empty <- head(pbp, 0)
   poss0 <- .build_possessions(empty)

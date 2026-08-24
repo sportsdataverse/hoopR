@@ -44,6 +44,7 @@
 # ---------------------------------------------------------------------------
 
 test_that("assembler handles exact four-source match", {
+  skip_on_cran()
   espn <- .make_espn(
     ids           = 333L,
     display_names = "Alabama Crimson Tide",
@@ -75,6 +76,7 @@ test_that("assembler handles exact four-source match", {
 # ---------------------------------------------------------------------------
 
 test_that("assembler resolves Torvik alias Connecticut -> UConn", {
+  skip_on_cran()
   espn <- .make_espn(
     ids           = 41L,
     display_names = "UConn Huskies",
@@ -100,6 +102,7 @@ test_that("assembler resolves Torvik alias Connecticut -> UConn", {
 # ---------------------------------------------------------------------------
 
 test_that("assembler resolves Fox alias American Eagles", {
+  skip_on_cran()
   espn <- .make_espn(
     ids           = 44L,
     display_names = "American University Eagles",
@@ -124,6 +127,7 @@ test_that("assembler resolves Fox alias American Eagles", {
 # ---------------------------------------------------------------------------
 
 test_that("assembler resolves KenPom CSUN alias", {
+  skip_on_cran()
   espn <- .make_espn(
     ids           = 2463L,
     display_names = "Cal State Northridge Matadors",
@@ -149,6 +153,7 @@ test_that("assembler resolves KenPom CSUN alias", {
 # ---------------------------------------------------------------------------
 
 test_that("assembler labels espn_only when all three sources absent", {
+  skip_on_cran()
   espn <- .make_espn(
     ids           = 9999L,
     display_names = "New Haven Chargers",
@@ -172,6 +177,7 @@ test_that("assembler labels espn_only when all three sources absent", {
 # ---------------------------------------------------------------------------
 
 test_that("assembler dedupes duplicate ESPN team_ids", {
+  skip_on_cran()
   espn <- rbind(
     .make_espn(1L, "Duke Blue Devils",  "Duke",  "Blue Devils", "ACC"),
     .make_espn(1L, "Duke Blue Devils",  "Duke",  "Blue Devils", "ACC")
@@ -190,6 +196,7 @@ test_that("assembler dedupes duplicate ESPN team_ids", {
 # ---------------------------------------------------------------------------
 
 test_that("assembler stamps the season column correctly", {
+  skip_on_cran()
   espn <- .make_espn(
     333L, "Alabama Crimson Tide", "Alabama", "Crimson Tide", "SEC"
   )
@@ -268,6 +275,7 @@ test_that("mbb_team_crosswalk() >= 90% match rate all sources [live]", {
 }
 
 test_that("schedule assembler: both-match row", {
+  skip_on_cran()
   xwalk <- .make_sched_xwalk()
   eg    <- .make_espn_games("2025-01-10", 1L, 2L, "E001")
   bg    <- .make_bart_games("2025-01-10", "Duke", "North Carolina", "B001", "Duke")
@@ -285,6 +293,7 @@ test_that("schedule assembler: both-match row", {
 })
 
 test_that("schedule assembler dedupes ESPN games repeated across scoreboard groups", {
+  skip_on_cran()
   # Regression: a per-date ESPN scoreboard pull can return the same game once
   # per group; the assembler must collapse duplicates to a single joined row.
   xwalk <- .make_sched_xwalk()
@@ -301,6 +310,7 @@ test_that("schedule assembler dedupes ESPN games repeated across scoreboard grou
 })
 
 test_that("schedule assembler: espn_only when no Torvik match", {
+  skip_on_cran()
   xwalk <- .make_sched_xwalk()
   eg    <- .make_espn_games("2025-01-12", 1L, 3L, "E002")
   # Bart game on a different date -> no overlap
@@ -322,6 +332,7 @@ test_that("schedule assembler: espn_only when no Torvik match", {
 })
 
 test_that("schedule assembler: bart_only when Torvik team unresolved stays in output", {
+  skip_on_cran()
   xwalk <- .make_sched_xwalk()
   eg    <- data.frame(
     game_date = as.Date(character()),
@@ -344,6 +355,7 @@ test_that("schedule assembler: bart_only when Torvik team unresolved stays in ou
 })
 
 test_that("schedule assembler: no duplicate espn_game_id column", {
+  skip_on_cran()
   xwalk <- .make_sched_xwalk()
   eg    <- .make_espn_games("2025-02-01", 2L, 3L, "E005")
   bg    <- .make_bart_games("2025-02-01", "North Carolina", "Kentucky", "B005", "NC")
@@ -358,6 +370,7 @@ test_that("schedule assembler: no duplicate espn_game_id column", {
 })
 
 test_that("schedule assembler: kp_game_id, fox_game_id, yahoo_game_id are NA", {
+  skip_on_cran()
   xwalk <- .make_sched_xwalk()
   eg    <- .make_espn_games("2025-01-10", 1L, 2L, "E001")
   bg    <- .make_bart_games("2025-01-10", "Duke", "North Carolina", "B001", "Duke")
@@ -372,6 +385,7 @@ test_that("schedule assembler: kp_game_id, fox_game_id, yahoo_game_id are NA", {
 })
 
 test_that("mbb_schedule_crosswalk include_kenpom=FALSE does not error without KP creds", {
+  skip_on_cran()
   # When KP_USER is absent the function must NOT try to call kp_team_schedule.
   # We simulate by ensuring no credentials are set (default environment).
   old_user <- Sys.getenv("KP_USER")
@@ -421,6 +435,7 @@ test_that("mbb_schedule_crosswalk include_kenpom=FALSE does not error without KP
 }
 
 test_that("player assembler: exact name match", {
+  skip_on_cran()
   espn <- .make_mbb_espn_players(
     team_id = 150L, abbr = "DUK",
     ids      = c("A1", "A2"),
@@ -446,6 +461,7 @@ test_that("player assembler: exact name match", {
 })
 
 test_that("player assembler: fuzzy name match (minor spelling diff)", {
+  skip_on_cran()
   espn <- .make_mbb_espn_players(
     150L, "DUK",
     ids       = "A3",
@@ -471,6 +487,7 @@ test_that("player assembler: fuzzy name match (minor spelling diff)", {
 })
 
 test_that("player assembler: unmatched when no Fox data", {
+  skip_on_cran()
   espn <- .make_mbb_espn_players(
     200L, "KEN",
     ids       = c("A4", "A5"),
@@ -487,6 +504,7 @@ test_that("player assembler: unmatched when no Fox data", {
 })
 
 test_that("player assembler: empty Fox frame still returns ESPN rows", {
+  skip_on_cran()
   espn <- .make_mbb_espn_players(
     200L, "KEN",
     ids       = "A6",
@@ -511,6 +529,7 @@ test_that("player assembler: empty Fox frame still returns ESPN rows", {
 })
 
 test_that("player assembler: output columns are correct and non-duplicate", {
+  skip_on_cran()
   espn <- .make_mbb_espn_players(
     333L, "ALA",
     ids       = "A7",

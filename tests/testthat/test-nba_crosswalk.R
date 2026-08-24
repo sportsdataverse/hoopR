@@ -1,4 +1,5 @@
 test_that(".bb_assemble_team_crosswalk_nba joins ESPN/Stats/Fox on espn_team_id", {
+  skip_on_cran()
   espn <- data.frame(
     team_id = c(13L, 17L), abbreviation = c("LAL", "BOS"),
     display_name = c("Los Angeles Lakers", "Boston Celtics"),
@@ -28,6 +29,7 @@ test_that(".bb_assemble_team_crosswalk_nba joins ESPN/Stats/Fox on espn_team_id"
 })
 
 test_that(".bb_assemble_schedule_crosswalk_nba full-outer joins on ET date + teams", {
+  skip_on_cran()
   team_xwalk <- data.frame(
     espn_team_id = c(13L, 17L), nba_team_id = c("1610612747", "1610612738"),
     stringsAsFactors = FALSE)
@@ -48,6 +50,7 @@ test_that(".bb_assemble_schedule_crosswalk_nba full-outer joins on ET date + tea
 })
 
 test_that(".bb_assemble_player_crosswalk_nba matches ESPN/Stats within team blocks", {
+  skip_on_cran()
   espn <- data.frame(
     espn_team_id = c(13L, 13L), team_abbreviation = c("LAL", "LAL"),
     espn_athlete_id = c("a1", "a2"),

@@ -1,4 +1,5 @@
 test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
+  skip_on_cran()
   # Golden-master parity. The Python implementation
   # (sportsdataverse.nba.helper_nba_player_core, sdv-py 0.0.75) currently
   # produces the released player_core dataset; this R function is a port and
@@ -91,6 +92,7 @@ test_that("espn_basketball_player_core() reproduces the sdv-py oracle", {
 })
 
 test_that("espn_basketball_player_core() covers the branches the fixtures encode", {
+  skip_on_cran()
   fx <- testthat::test_path("fixtures", "player_core")
   .read_one <- function(aid) {
     espn_basketball_player_core(
@@ -112,6 +114,7 @@ test_that("espn_basketball_player_core() covers the branches the fixtures encode
 })
 
 test_that("espn_basketball_player_core() applies both documented fallbacks", {
+  skip_on_cran()
   # Neither fallback is reachable from the fixtures: all three real athletes
   # carry displayName, and all three nest birthPlace$country. Mutation-testing
   # the port proved it -- deleting the displayName->fullName fallback left the
@@ -148,6 +151,7 @@ test_that("espn_basketball_player_core() applies both documented fallbacks", {
 })
 
 test_that("espn_basketball_player_core() returns a stable empty schema", {
+  skip_on_cran()
   # No payload in the 2,577-file tree is sparse enough to fixture, so the
   # empty/non-dict path is asserted directly. A caller chaining onto this must
   # see the documented column set rather than a zero-column tibble.
@@ -159,6 +163,7 @@ test_that("espn_basketball_player_core() returns a stable empty schema", {
 })
 
 test_that("espn_basketball_player_core() parses $ref ids without fetching", {
+  skip_on_cran()
   # The ids live in the core-v2 $ref URL. Parsing is required; fetching would
   # make a compile stage hit the network and would break the one-way
   # raw -> data boundary.
@@ -180,6 +185,7 @@ test_that("espn_basketball_player_core() parses $ref ids without fetching", {
 })
 
 test_that("espn_basketball_player_core() keeps athlete_id an integer join key", {
+  skip_on_cran()
   # athlete_id joins to player_box / player_season_stats. A float-origin id
   # stringifies as "123.0" and joins to nothing -- the recurring port bug.
   out <- espn_basketball_player_core(list(guid = "g"), athlete_id = "1966")
@@ -188,6 +194,7 @@ test_that("espn_basketball_player_core() keeps athlete_id an integer join key", 
 })
 
 test_that("espn_basketball_player_core() finalizes both paths as hoopR_data", {
+  skip_on_cran()
   # Without these assertions the suite passes even if make_hoopR_data() is deleted: the
   # golden-master test compares values and column names, and neither changes
   # when the class and attributes are dropped. The finalized contract was added

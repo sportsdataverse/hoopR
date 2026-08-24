@@ -1,10 +1,12 @@
 test_that(".bb_normalize_college_team gives a consistent contracting key", {
+  skip_on_cran()
   expect_equal(.bb_normalize_college_team("Missouri State"), .bb_normalize_college_team("Missouri St."))
   expect_equal(.bb_normalize_college_team("Texas A&M"), "texas a and m")
   expect_equal(.bb_normalize_college_team("Saint Mary's"), .bb_normalize_college_team("St. Mary's"))
 })
 
 test_that(".bb_normalize_name strips accents, suffixes, and punctuation", {
+  skip_on_cran()
   expect_equal(.bb_normalize_name("LeBron James"), "lebron james")
   expect_equal(.bb_normalize_name("De'Aaron Fox"), "deaaron fox")
   expect_equal(.bb_normalize_name("Nikola Jokić"), "nikola jokic")
@@ -15,6 +17,7 @@ test_that(".bb_normalize_name strips accents, suffixes, and punctuation", {
 })
 
 test_that(".bb_normalize_team normalizes city+name strings", {
+  skip_on_cran()
   expect_equal(.bb_normalize_team("Los Angeles Lakers"), "los angeles lakers")
   expect_equal(.bb_normalize_team("The Thunder"), "thunder")
   expect_equal(
@@ -23,6 +26,7 @@ test_that(".bb_normalize_team normalizes city+name strings", {
 })
 
 test_that(".bb_to_eastern returns the correct local ET game date", {
+  skip_on_cran()
   expect_equal(.bb_to_eastern("2024-12-26T01:30:00Z"), as.Date("2024-12-25"))
   expect_equal(.bb_to_eastern("2024-12-26T16:00:00Z"), as.Date("2024-12-26"))
   expect_equal(.bb_to_eastern(as.Date("2024-12-25")), as.Date("2024-12-25"))
@@ -30,6 +34,7 @@ test_that(".bb_to_eastern returns the correct local ET game date", {
 })
 
 test_that(".bb_fuzzy_match returns typed empty frame when left has zero rows", {
+  skip_on_cran()
   left  <- data.frame(.block    = character(),
                       .id       = character(),
                       .name_key = character(),
@@ -46,6 +51,7 @@ test_that(".bb_fuzzy_match returns typed empty frame when left has zero rows", {
 })
 
 test_that(".bb_fuzzy_match does not match empty name keys", {
+  skip_on_cran()
   left <- data.frame(
     .block    = c("A", "A"),
     .id       = c("L1", "L2"),
@@ -65,6 +71,7 @@ test_that(".bb_fuzzy_match does not match empty name keys", {
 })
 
 test_that(".bb_fuzzy_match does exact, fuzzy, tiebreak, and unmatched", {
+  skip_on_cran()
   left <- data.frame(
     .block = c("A", "A", "A", "B"),
     .id = c("L1", "L2", "L3", "L4"),

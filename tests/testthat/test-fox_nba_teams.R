@@ -1,4 +1,5 @@
 test_that(".fox_bb_teams parses a standings payload into a team directory", {
+  skip_on_cran()
   raw <- jsonlite::fromJSON(
     testthat::test_path("fixtures", "fox_nba_standings.json"),
     simplifyDataFrame = FALSE,

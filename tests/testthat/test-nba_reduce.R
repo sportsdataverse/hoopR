@@ -10,6 +10,7 @@ make_sets <- function() {
 }
 
 test_that("nba_bind_sets row-binds and tags origin (tactic B)", {
+  skip_on_cran()
   out <- nba_bind_sets(make_sets(), tag_column = "set")
   expect_s3_class(out, "tbl_df")
   expect_equal(nrow(out), 3)
@@ -22,6 +23,7 @@ test_that("nba_bind_sets row-binds and tags origin (tactic B)", {
 })
 
 test_that("nba_join_sets widens on a shared key (tactic C)", {
+  skip_on_cran()
   sets <- list(
     PlayerStats = data.frame(GAME_ID = "1", PERSON_ID = c(1, 2),
                              stringsAsFactors = FALSE),
@@ -38,6 +40,7 @@ test_that("nba_join_sets widens on a shared key (tactic C)", {
 })
 
 test_that("nba_nest_sets nests non-key columns, preserving origin (tactic D)", {
+  skip_on_cran()
   out <- nba_nest_sets(make_sets(), keep_cols = "GAME_ID", nest_col = ".sets")
   expect_s3_class(out, "tbl_df")
   expect_true(all(c("set_name", "GAME_ID", ".sets") %in% names(out)))

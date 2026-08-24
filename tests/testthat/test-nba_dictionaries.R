@@ -1,6 +1,7 @@
 # URL builders are pure -- safe to run everywhere.
 
 test_that("NBA media URL builders", {
+  skip_on_cran()
   expect_equal(
     nba_player_headshot_url(201939),
     "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png")

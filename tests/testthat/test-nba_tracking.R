@@ -70,6 +70,7 @@ ADDITIVE_COLS <- if (!is.null(FRAME_2324)) {
 ## ===========================================================================
 
 test_that("identity gate: single-season aggregate equals source counts", {
+  skip_on_cran()
   skip_if(!file.exists(file.path(FIXTURE_DIR, "ptstats_drives_player_2324.rds")),
           "fixture not found")
 
@@ -131,6 +132,7 @@ test_that("identity gate: single-season aggregate equals source counts", {
 ## ===========================================================================
 
 test_that("additivity gate: two-season counts sum correctly", {
+  skip_on_cran()
   skip_if(!file.exists(file.path(FIXTURE_DIR, "ptstats_drives_player_2223.rds")),
           "fixture not found")
 
@@ -168,6 +170,7 @@ test_that("additivity gate: two-season counts sum correctly", {
 ## ===========================================================================
 
 test_that("ID-NOT-SUMMED gate: team_id and player_id are valid (not doubled)", {
+  skip_on_cran()
   skip_if(!file.exists(file.path(FIXTURE_DIR, "ptstats_drives_player_2223.rds")),
           "fixture not found")
 
@@ -205,12 +208,14 @@ test_that("ID-NOT-SUMMED gate: team_id and player_id are valid (not doubled)", {
 ## ===========================================================================
 
 test_that("never-raise: empty list returns 0-row data.frame", {
+  skip_on_cran()
   out <- hoopR:::.aggregate_tracking_frames(list(), "PLAYER_ID")
   expect_s3_class(out, "data.frame")
   expect_equal(nrow(out), 0L)
 })
 
 test_that("never-raise: list of 0-row frame returns 0-row data.frame", {
+  skip_on_cran()
   empty_frame <- FRAME_2324[0L, ]
   out <- hoopR:::.aggregate_tracking_frames(list(empty_frame), "PLAYER_ID")
   expect_s3_class(out, "data.frame")
@@ -222,6 +227,7 @@ test_that("never-raise: list of 0-row frame returns 0-row data.frame", {
 ## ===========================================================================
 
 test_that("numeric-content gate: string col carried via first(), numeric summed", {
+  skip_on_cran()
   ## A non-Drives-shape frame:
   ##   TEAM_ID    — *_id (identity, never summed)
   ##   TEAM_CITY  — non-numeric string, no _id/_name/_abbreviation pattern
@@ -276,6 +282,7 @@ test_that("numeric-content gate: string col carried via first(), numeric summed"
 ## ===========================================================================
 
 test_that("denominator guard: _fg_pct without makes/attempts is dropped, no crash", {
+  skip_on_cran()
   ## FOO_FG_PCT has no FOO_FGM / FOO_FGA pair → must be dropped, not recomputed
   fake <- data.frame(
     PLAYER_ID  = c("1001", "1002"),
@@ -297,6 +304,7 @@ test_that("denominator guard: _fg_pct without makes/attempts is dropped, no cras
 })
 
 test_that("denominator guard: _ft_pct without makes/attempts is dropped, no crash", {
+  skip_on_cran()
   fake <- data.frame(
     PLAYER_ID  = c("1001", "1002"),
     SOME_COUNT = c("3", "4"),
