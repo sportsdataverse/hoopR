@@ -84,6 +84,7 @@ nba_playerindex <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     College = college,
     Country = country,
     DraftPick = draft_pick,
@@ -91,7 +92,6 @@ nba_playerindex <- function(
     DraftYear = draft_year,
     Height = height,
     Historical = historical,
-    LeagueID = league_id,
     Season = season,
     SeasonType = season_type,
     TeamID = team_id,
@@ -316,8 +316,8 @@ nba_playercareerbycollege <- function(
   full_url <- endpoint
 
   params <- list(
-    College = college,
     LeagueID = league_id,
+    College = college,
     PerMode = per_mode,
     Season = season,
     SeasonType = season_type
@@ -1517,9 +1517,9 @@ nba_playergamelog <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
-    LeagueID = league_id,
     PlayerID = player_id,
     Season = season,
     SeasonType = season_type
@@ -1690,11 +1690,11 @@ nba_playergamelogs <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1959,6 +1959,7 @@ nba_playergamestreakfinder <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     ActiveStreaksOnly = active_streaks_only,
     Conference = conference,
     DateFrom = date_from,
@@ -2011,7 +2012,6 @@ nba_playergamestreakfinder <- function(
     GtSTL = gt_stl,
     GtTD = gt_td,
     GtTOV = gt_tov,
-    LeagueID = league_id,
     Location = location,
     LtAST = lt_ast,
     LtBLK = lt_blk,
@@ -2878,11 +2878,11 @@ nba_playervsplayer <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -3061,12 +3061,12 @@ nba_playercompare <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     Conference = conference,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,

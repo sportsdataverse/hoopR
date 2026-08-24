@@ -1735,6 +1735,15 @@ espn_mbb_scoreboard <- function(season) {
       parse_espn_mbb_scoreboard
     )
 
+  # A game can be returned under more than one ESPN group ID (e.g. a
+  # Division I conference tournament game also carries a national group
+  # tag), so the four-group union above can duplicate rows for the same
+  # game_id. Keep one row per game (#160).
+  if (nrow(scoreboard_df) && "game_id" %in% names(scoreboard_df)) {
+    scoreboard_df <- scoreboard_df %>%
+      dplyr::distinct(.data$game_id, .keep_all = TRUE)
+  }
+
   if (!nrow(scoreboard_df)) {
     message(sprintf("%s: Invalid arguments or no scoreboard data available!", Sys.time()))
   }

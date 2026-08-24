@@ -79,7 +79,8 @@ Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
 
 NBA Stats no longer returns stable data for this endpoint.
 This function is deprecated and now errors when called.
-Use \code{nba_leagueleaders()} instead.
+Use \code{nba_leagueleaders()} instead. Note: \code{stat_category = "Defense"} was
+never supported upstream by this endpoint even before deprecation (#51).
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_homepageleaders(league_id = '00', player_or_team = "Player")

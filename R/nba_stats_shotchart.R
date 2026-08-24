@@ -113,13 +113,13 @@ nba_shotchartdetail <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     ContextMeasure = context_measure,
     DateFrom = date_from,
     DateTo = date_to,
     GameID = game_id,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -421,6 +421,7 @@ nba_shotchartlineupdetail <- function(
   full_url <- endpoint
   group_id2 <- group_id
   params <- list(
+    LeagueID = league_id,
     AheadBehind = ahead_behind,
     CFID = cfid,
     CFPARAMS = cfparams,
@@ -441,7 +442,6 @@ nba_shotchartlineupdetail <- function(
     GroupMode = group_mode,
     GroupQuantity = group_quantity,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     Month = month,
     OnOff = on_off,

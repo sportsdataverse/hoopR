@@ -177,7 +177,9 @@ TicketLinks, WestConfStandingsByDay, WinProbability
 \strong{WinProbability}
 }
 \description{
-Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/partial; use \code{nba_scoreboardv3()} instead.
+Restored in \code{hoopR} 3.1.0 -- a residential-IP live re-probe (2026-08-24)
+confirmed this endpoint still serves real rows for NBA. For real-time
+scores, prefer \code{\link[=nba_todays_scoreboard]{nba_todays_scoreboard()}} instead (see #129).
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboardv2(league_id = '00', game_date = '2021-07-20')

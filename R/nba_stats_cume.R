@@ -130,8 +130,8 @@ nba_cumestatsplayer <- function(
   full_url <- endpoint
 
   params <- list(
-    GameIDs = game_ids,
     LeagueID = league_id,
+    GameIDs = game_ids,
     PlayerID = player_id,
     Season = season,
     SeasonType = season_type,
@@ -390,8 +390,8 @@ nba_cumestatsteam <- function(
   full_url <- endpoint
 
   params <- list(
-    GameIDs = game_ids,
     LeagueID = league_id,
+    GameIDs = game_ids,
     Season = season,
     SeasonType = season_type,
     TeamID = team_id

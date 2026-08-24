@@ -445,9 +445,9 @@ nba_teamgamelog <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
-    LeagueID = league_id,
     Season = season,
     SeasonType = season_type,
     TeamID = team_id
@@ -607,11 +607,11 @@ nba_teamgamelogs <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -712,7 +712,8 @@ nba_teamhistoricalleaders <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_teamhistoricalleaders()",
-    with = "nba_franchiseleaders()"
+    with = "nba_franchiseleaders()",
+    details = "Live re-probe (2026-08-24, residential IP) across multiple season IDs returned an empty response body; confirmed defunct upstream."
   )
 
   version <- "teamhistoricalleaders"
@@ -1129,11 +1130,11 @@ nba_teamplayeronoffdetails <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1353,11 +1354,11 @@ nba_teamplayeronoffsummary <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -1608,11 +1609,11 @@ nba_teamplayerdashboard <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -2136,11 +2137,11 @@ nba_teamvsplayer <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     DateFrom = date_from,
     DateTo = date_to,
     GameSegment = game_segment,
     LastNGames = last_n_games,
-    LeagueID = league_id,
     Location = location,
     MeasureType = measure_type,
     Month = month,
@@ -2452,6 +2453,7 @@ nba_teamandplayersvsplayers <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     TeamID = team_id,
     VsTeamID = vs_team_id,
     PlayerID1 = player_id1,
@@ -2471,7 +2473,6 @@ nba_teamandplayersvsplayers <- function(
     PlusMinus = plus_minus,
     PaceAdjust = pace_adjust,
     Rank = rank,
-    LeagueID = league_id,
     LastNGames = last_n_games,
     Month = month,
     OpponentTeamID = opponent_team_id,
@@ -2946,6 +2947,7 @@ nba_teamgamestreakfinder <- function(
   full_url <- endpoint
 
   params <- list(
+    LeagueID = league_id,
     ActiveStreaksOnly = active_streaks_only,
     ActiveTeamsOnly = active_teams_only,
     BtrOPPAST = btr_opp_ast,
@@ -3051,7 +3053,6 @@ nba_teamgamestreakfinder <- function(
     GtSTL = gt_stl,
     GtTD = gt_td,
     GtTOV = gt_tov,
-    LeagueID = league_id,
     Location = location,
     LStreak = lstreak,
     LtAST = lt_ast,

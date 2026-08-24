@@ -22,6 +22,8 @@ Returns a named list containing video event asset data (structure varies by resp
 \strong{Get NBA Stats API Video Events Asset}
 }
 \details{
+(Possibly Defunct)
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
 }\if{html}{\out{</div>}}
 }

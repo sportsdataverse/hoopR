@@ -586,6 +586,17 @@ is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
 
 
 
+#' @details
+#' **`stats.nba.com` / `stats.wnba.com` blocking (#142):** the NBA Stats API
+#' family (`nba_*` wrappers targeting `stats.nba.com`) blocks requests from
+#' datacenter/cloud IP ranges outright -- calls that work from a residential
+#' connection will fail (timeout, empty body, or an HTML error page instead
+#' of JSON) from CI runners, most VPS/cloud hosts, and many corporate
+#' networks. If you're hitting this from a blocked network, route requests
+#' through a proxy on a residential/unblocked IP via
+#' `options(hoopR.proxy = "http://host:port")` (or the `http_proxy` /
+#' `https_proxy` environment variables, or a per-call `proxy = ` argument
+#' where the wrapper threads `...` through to the request layer).
 #' @keywords internal
 "_PACKAGE"
 
