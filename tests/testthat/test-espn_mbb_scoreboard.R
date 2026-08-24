@@ -46,3 +46,22 @@ test_that("ESPN - Get MBB scoreboard", {
   expect_s3_class(x, "data.frame")
 
 })
+
+test_that("ESPN - MBB scoreboard for a season year includes Nov/Dec of the prior calendar year (#150)", {
+  skip_on_cran()
+  skip_espn_test()
+
+  x <- espn_mbb_scoreboard(season = 2024)
+
+  expect_gt(nrow(x), 0)
+  expect_true(all(as.integer(x$season) == 2024))
+  expect_true(any(x$game_date >= as.Date("2023-11-01") & x$game_date < as.Date("2024-01-01")))
+  expect_false(any(duplicated(x$game_id)))
+})
+
+test_that("ESPN - MBB scoreboard doesn't error for a 2002-era single-date input (#150)", {
+  skip_on_cran()
+  skip_espn_test()
+
+  expect_no_error(espn_mbb_scoreboard(season = "20011108"))
+})

@@ -1760,7 +1760,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 #' try(espn_mbb_scoreboard(season = "20221117"))
 #' }
 espn_mbb_scoreboard <- function(season) {
-  max_year <- substr(Sys.Date(), 1, 4)
+  max_year <- as.integer(substr(Sys.Date(), 1, 4))
 
   if (!(as.integer(substr(season, 1, 4)) > 2001)) {
     message(paste("Error: Season must be between 2001 and", max_year + 1))
@@ -1769,21 +1769,67 @@ espn_mbb_scoreboard <- function(season) {
   # year > 2000
   season <- as.character(season)
 
-  season_dates <- season
+  # A bare 4-digit season (e.g. "2024") is a season YEAR, not a calendar
+  # year -- the MBB season runs November of {season - 1} through April of
+  # {season}. ESPN's `dates=` param treats a bare year as calendar-year-only
+  # (Jan 1 onward), silently dropping the season's November/December games
+  # (#150). Query both the season year and the prior calendar year and
+  # filter down to the games ESPN itself assigns to this season; ESPN
+  # rejects date-RANGE syntax for MBB, so this has to be two separate
+  # `dates=` requests per group rather than one `dates=Y0101-Y1231` call.
+  # A specific date (e.g. "20231108", the documented single-day usage) is
+  # left untouched -- it already resolves to the right games.
+  is_season_year <- nchar(season) == 4L
+  season_dates <- if (is_season_year) {
+    c(as.character(as.integer(season) - 1L), season)
+  } else {
+    season
+  }
 
   # check for regular and postseason games
 
   scoreboard_df <-
     purrr::map2_dfr(
-      c("56", "55", "50", "100"),
-      rep(season, 4),
+      rep(c("56", "55", "50", "100"), each = length(season_dates)),
+      rep(season_dates, times = 4),
       parse_espn_mbb_scoreboard
     )
 
+  if (is_season_year) {
+    # The regular-season group ("50") runs thousands of games/year, so a
+    # single `dates={season - 1}` whole-year request above hits ESPN's
+    # `limit=1000` cap in mid-January and never reaches November/December
+    # -- the exact months this fix needs. Backfill them with one request
+    # per day (postseason groups 56/55/100 never play in Nov/Dec, so only
+    # "50" needs this).
+    fall_dates <- format(
+      seq(
+        as.Date(paste0(as.integer(season) - 1L, "-11-01")),
+        as.Date(paste0(as.integer(season) - 1L, "-12-31")),
+        by = "day"
+      ),
+      "%Y%m%d"
+    )
+    fall_df <- purrr::map_dfr(
+      fall_dates,
+      function(d) parse_espn_mbb_scoreboard(group = "50", season_dates = d)
+    )
+    scoreboard_df <- dplyr::bind_rows(scoreboard_df, fall_df)
+  }
+
+  if (is_season_year && nrow(scoreboard_df)) {
+    # `.env$season` disambiguates the function argument from the identically
+    # named `season` data column -- dplyr's data mask otherwise resolves the
+    # bare name to the column on both sides, making this filter a silent
+    # no-op.
+    scoreboard_df <- scoreboard_df %>%
+      dplyr::filter(as.integer(.data$season) == as.integer(.env$season))
+  }
+
   # A game can be returned under more than one ESPN group ID (e.g. a
   # Division I conference tournament game also carries a national group
-  # tag), so the four-group union above can duplicate rows for the same
-  # game_id. Keep one row per game (#160).
+  # tag), and the per-day fall backfill re-returns games the whole-year
+  # request already captured, so keep one row per game (#160).
   if (nrow(scoreboard_df) && "game_id" %in% names(scoreboard_df)) {
     scoreboard_df <- scoreboard_df %>%
       dplyr::distinct(.data$game_id, .keep_all = TRUE)

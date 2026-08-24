@@ -1376,7 +1376,7 @@ espn_nba_team_current_roster <- function(team_id) {
 #' }
 espn_nba_scoreboard <- function(season) {
   .args <- mget(setdiff(names(formals()), "..."))
-  max_year <- substr(Sys.Date(), 1, 4)
+  max_year <- as.integer(substr(Sys.Date(), 1, 4))
 
   if (!(as.integer(substr(season, 1, 4)) > 2001)) {
     message(paste("Error: Season must be between 2001 and", max_year + 1))
