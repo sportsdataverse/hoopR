@@ -324,7 +324,8 @@ nba_videodetails <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_videodetails()",
-    with = "nba_videodetailsasset()"
+    with = "nba_videodetailsasset()",
+    details = "Live re-probe (2026-08-24, residential IP) returned an empty response body; confirmed defunct upstream. nba_videodetailsasset() serves the equivalent live data."
   )
 
   # season_type <- gsub(' ', '+', season_type)
@@ -558,6 +559,7 @@ NULL
 #' @export
 #' @family NBA Video Functions
 #' @details
+#' (Possibly Defunct)
 #' ```r
 #'  nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
 #' ```
@@ -566,6 +568,12 @@ nba_videoeventsasset <- function(
     game_event_id = 0,
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
+
+  lifecycle::deprecate_warn(
+    when = "3.1.0",
+    what = "nba_videoeventsasset()",
+    details = "The videoeventsasset endpoint returns HTTP 200 but zero rows across multiple game/event IDs (2026-08-24 residential-IP probe sweep). The endpoint no longer serves NBA data; no direct replacement exists (nba_videodetailsasset() serves the analogous live data). This is a soft warning -- the call still proceeds."
+  )
 
   version <- "videoeventsasset"
   endpoint <- nba_endpoint(version)

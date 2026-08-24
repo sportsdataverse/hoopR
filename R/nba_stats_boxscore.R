@@ -260,6 +260,11 @@ NULL
 #' @export
 #' @family NBA Boxscore Functions
 #' @details
+#' League-scoped: as of a 2026-08-24 residential-IP probe sweep this V2
+#' endpoint returns HTTP 200 with zero rows for NBA (LeagueID '00') game IDs
+#' -- use [nba_boxscoreadvancedv3()] for NBA instead. It still serves real
+#' rows for WNBA (LeagueID '10') and G-League (LeagueID '20') game IDs, so
+#' the wrapper stays exported/active rather than deprecated.
 #' ```r
 #'  nba_boxscoreadvancedv2(game_id = "0022200021")
 #' ```
@@ -1275,7 +1280,8 @@ nba_boxscoreplayertrackv2 <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_boxscoreplayertrackv2()",
-    with = "nba_boxscoreplayertrackv3()"
+    with = "nba_boxscoreplayertrackv3()",
+    details = "Live re-probe (2026-08-24, residential IP) across multiple game IDs returned an empty response body; confirmed defunct upstream."
   )
 
   version <- "boxscoreplayertrackv2"

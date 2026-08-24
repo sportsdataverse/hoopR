@@ -10,6 +10,18 @@
 
 A utility to quickly obtain clean and tidy men's basketball play by play data. Provides functions to access live play by play and box score data from ESPN\url{https://www.espn.com} with shot locations when available. It is also a full NBA Stats API\url{https://www.nba.com/stats/} wrapper. It is also a scraping and aggregating interface for Ken Pomeroy's men's college basketball statistics website\url{https://kenpom.com}. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.
 }
+\details{
+\strong{\code{stats.nba.com} / \code{stats.wnba.com} blocking (#142):} the NBA Stats API
+family (\verb{nba_*} wrappers targeting \code{stats.nba.com}) blocks requests from
+datacenter/cloud IP ranges outright -- calls that work from a residential
+connection will fail (timeout, empty body, or an HTML error page instead
+of JSON) from CI runners, most VPS/cloud hosts, and many corporate
+networks. If you're hitting this from a blocked network, route requests
+through a proxy on a residential/unblocked IP via
+\code{options(hoopR.proxy = "http://host:port")} (or the \code{http_proxy} /
+\code{https_proxy} environment variables, or a per-call \verb{proxy = } argument
+where the wrapper threads \code{...} through to the request layer).
+}
 \seealso{
 Useful links:
 \itemize{

@@ -434,7 +434,8 @@ NULL
 #'
 #' NBA Stats no longer returns stable data for this endpoint.
 #' This function is deprecated and now errors when called.
-#' Use `nba_leagueleaders()` instead.
+#' Use `nba_leagueleaders()` instead. Note: `stat_category = "Defense"` was
+#' never supported upstream by this endpoint even before deprecation (#51).
 #' @rdname nba_homepageleaders
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
@@ -514,7 +515,8 @@ nba_homepageleaders <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_homepageleaders()",
-    with = "nba_leagueleaders()"
+    with = "nba_leagueleaders()",
+    details = "Live re-probe (2026-08-24, residential IP) across multiple league/season/player_or_team combinations returned HTTP 200 with consistently empty result sets; not restored."
   )
 
   player_scope <- gsub(' ','+',player_scope)
@@ -696,7 +698,8 @@ nba_homepagev2 <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_homepagev2()",
-    with = "nba_leagueleaders()"
+    with = "nba_leagueleaders()",
+    details = "Live re-probe (2026-08-24, residential IP) returned HTTP 200 with consistently empty result sets; not restored."
   )
 
   player_scope <- gsub(' ','+',player_scope)
@@ -833,7 +836,8 @@ nba_leaderstiles <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_leaderstiles()",
-    with = "nba_leagueleaders()"
+    with = "nba_leagueleaders()",
+    details = "Live re-probe (2026-08-24, residential IP) returned HTTP 200 with consistently empty result sets; not restored."
   )
 
   player_scope <- gsub(' ','+',player_scope)

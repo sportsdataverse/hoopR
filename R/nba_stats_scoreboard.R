@@ -336,7 +336,8 @@ nba_scoreboard <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_scoreboard()",
-    with = "nba_scoreboardv3()"
+    with = "nba_scoreboardv3()",
+    details = "Live re-probe (2026-08-24, residential IP) across multiple dates returned an HTML error page instead of JSON; confirmed defunct upstream. For real-time scores, prefer nba_todays_scoreboard() (see #129)."
   )
 
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
@@ -378,7 +379,10 @@ nba_scoreboard <- function(
 NULL
 #' @title
 #' **Get NBA Stats API Scoreboard V2**
-#' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/partial; use `nba_scoreboardv3()` instead.
+#' @description
+#' Restored in `hoopR` 3.1.0 -- a residential-IP live re-probe (2026-08-24)
+#' confirmed this endpoint still serves real rows for NBA. For real-time
+#' scores, prefer [nba_todays_scoreboard()] instead (see #129).
 #' @rdname nba_scoreboardv2
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -564,11 +568,6 @@ nba_scoreboardv2 <- function(
     day_offset = 0,
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  lifecycle::deprecate_stop(
-    when = "3.0.0",
-    what = "nba_scoreboardv2()",
-    with = "nba_scoreboardv3()"
-  )
 
   version <- "scoreboardv2"
   full_url <- nba_endpoint(version)
@@ -1001,7 +1000,8 @@ nba_winprobabilitypbp <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_winprobabilitypbp()",
-    with = "nba_playbyplayv3()"
+    with = "nba_playbyplayv3()",
+    details = "Live re-probe (2026-08-24, residential IP) returned an empty response body; confirmed defunct upstream."
   )
 
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))

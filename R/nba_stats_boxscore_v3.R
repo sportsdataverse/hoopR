@@ -2661,7 +2661,8 @@ nba_boxscorehustlev2 <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_boxscorehustlev2()",
-    with = "nba_hustlestatsboxscore()"
+    with = "nba_hustlestatsboxscore()",
+    details = "Live re-probe (2026-08-24, residential IP) confirms the endpoint still responds, but this wrapper's boxScoreHustle parsing errors on the current payload shape (mismatched row counts across statistics/players); not restored. Tracked as a follow-up parser fix."
   )
 
   version <- "boxscorehustlev2"

@@ -712,7 +712,8 @@ nba_teamhistoricalleaders <- function(
   lifecycle::deprecate_stop(
     when = "3.0.0",
     what = "nba_teamhistoricalleaders()",
-    with = "nba_franchiseleaders()"
+    with = "nba_franchiseleaders()",
+    details = "Live re-probe (2026-08-24, residential IP) across multiple season IDs returned an empty response body; confirmed defunct upstream."
   )
 
   version <- "teamhistoricalleaders"

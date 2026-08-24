@@ -108,6 +108,12 @@ TeamStats\tabular{lll}{
 \strong{Get NBA Stats API Boxscore Advanced V2}
 }
 \details{
+League-scoped: as of a 2026-08-24 residential-IP probe sweep this V2
+endpoint returns HTTP 200 with zero rows for NBA (LeagueID '00') game IDs
+-- use \code{\link[=nba_boxscoreadvancedv3]{nba_boxscoreadvancedv3()}} for NBA instead. It still serves real
+rows for WNBA (LeagueID '10') and G-League (LeagueID '20') game IDs, so
+the wrapper stays exported/active rather than deprecated.
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreadvancedv2(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 }
