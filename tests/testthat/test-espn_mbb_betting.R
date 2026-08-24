@@ -8,12 +8,15 @@ test_that("ESPN - Get MBB Betting", {
     skip("No rows returned from endpoint at test time")
   }
 
+  # Base columns documented on ?espn_mbb_betting -- guaranteed present
+  # whether ESPN's summary `pickcenter` is live (which ships several
+  # additional columns, e.g. over_odds / *_alternate_display_value) or
+  # empty and the Core v2 odds cascade (#136, #153, #173) populates it
+  # instead (which ships exactly this documented shape).
   cols_x1 <- c(
     "details",
     "over_under",
     "spread",
-    "over_odds",
-    "under_odds",
     "provider_id",
     "provider_name",
     "provider_priority",
@@ -26,9 +29,6 @@ test_that("ESPN - Get MBB Betting", {
     "away_team_odds_average_score",
     "away_team_odds_money_line_odds",
     "away_team_odds_spread_return",
-    "away_team_odds_current_point_spread_alternate_display_value",
-    "away_team_odds_current_spread_alternate_display_value",
-    "away_team_odds_current_money_line_alternate_display_value",
     "away_team_odds_spread_record_wins",
     "away_team_odds_spread_record_losses",
     "away_team_odds_spread_record_pushes",
@@ -42,16 +42,10 @@ test_that("ESPN - Get MBB Betting", {
     "home_team_odds_average_score",
     "home_team_odds_money_line_odds",
     "home_team_odds_spread_return",
-    "home_team_odds_current_point_spread_alternate_display_value",
-    "home_team_odds_current_spread_alternate_display_value",
-    "home_team_odds_current_money_line_alternate_display_value",
     "home_team_odds_spread_record_wins",
     "home_team_odds_spread_record_losses",
     "home_team_odds_spread_record_pushes",
     "home_team_odds_spread_record_summary",
-    "current_over_alternate_display_value",
-    "current_under_alternate_display_value",
-    "current_total_alternate_display_value",
     "game_id"
   )
 
@@ -87,4 +81,17 @@ test_that("ESPN - Get MBB Betting", {
   check_cols(x[[2]], cols_x2)
   check_cols(x[[3]], cols_x3)
 
+})
+
+test_that("ESPN - Get MBB Betting falls back to Core v2 odds when pickcenter is empty (#136, #153, #173)", {
+  skip_on_cran()
+  skip_espn_test()
+
+  x <- espn_mbb_betting(game_id = 401574046)
+
+  expect_gt(nrow(x$pickcenter), 0)
+  expect_in(
+    c("provider_id", "provider_name", "over_under", "spread", "game_id"),
+    colnames(x$pickcenter)
+  )
 })

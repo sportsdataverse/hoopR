@@ -2320,6 +2320,9 @@ espn_mbb_betting <- function(game_id) {
 
     }
   )
+  if (nrow(pickcenter) == 0) {
+    pickcenter <- .espn_basketball_pickcenter_fallback("mens-college-basketball", game_id)
+  }
   betting <-
     c(
       list(pickcenter),

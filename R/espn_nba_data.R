@@ -2105,6 +2105,9 @@ espn_nba_betting <- function(game_id) {
     warning = function(w) {},
     finally = {}
   )
+  if (nrow(pickcenter) == 0) {
+    pickcenter <- .espn_basketball_pickcenter_fallback("nba", game_id)
+  }
   betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
   names(betting) <- c("pickcenter", "againstTheSpread", "predictor")
   return(betting)
