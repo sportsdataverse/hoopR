@@ -14,21 +14,23 @@
 #' approach.
 #' @return A `hoopR_data` tibble with one row per player-season:
 #'
-#'    |col_name         |types     |description                                   |
-#'    |:----------------|:---------|:---------------------------------------------|
-#'    |player_id        |character |HoopsHype player id.                          |
-#'    |player           |character |Player name.                                  |
-#'    |first_name       |character |Player first name.                            |
-#'    |last_name        |character |Player last name.                            |
-#'    |team_id          |character |HoopsHype team id.                            |
-#'    |team             |character |Team name.                                    |
-#'    |season           |integer   |Contract season (4-digit ending year).        |
-#'    |salary           |numeric   |Salary for the season (USD).                  |
-#'    |cap_allocation   |numeric   |Cap allocation for the season (USD).          |
-#'    |team_option      |logical   |Whether the season is a team option.          |
-#'    |player_option    |logical   |Whether the season is a player option.        |
-#'    |two_way          |logical   |Whether it is a two-way contract.             |
-#'    |qualifying_offer |logical   |Whether it is a qualifying offer.             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player_id \tab character \tab HoopsHype player id. \cr
+#'       player \tab character \tab Player name. \cr
+#'       first_name \tab character \tab Player first name. \cr
+#'       last_name \tab character \tab Player last name. \cr
+#'       team_id \tab character \tab HoopsHype team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       season \tab integer \tab Contract season (4-digit ending year). \cr
+#'       salary \tab numeric \tab Salary for the season (USD). \cr
+#'       cap_allocation \tab numeric \tab Cap allocation for the season (USD). \cr
+#'       team_option \tab logical \tab Whether the season is a team option. \cr
+#'       player_option \tab logical \tab Whether the season is a player option. \cr
+#'       two_way \tab logical \tab Whether it is a two-way contract. \cr
+#'       qualifying_offer \tab logical \tab Whether it is a qualifying offer. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Salaries
 #' @importFrom dplyr as_tibble

@@ -26,97 +26,100 @@ nba_leaguestandingsv3(
 \value{
 Return a named list of data frames: Standings
 
-\strong{Standings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   LeagueID \tab character \tab  \cr
-   SeasonID \tab character \tab  \cr
-   TeamID \tab character \tab Teamid. \cr
-   TeamCity \tab character \tab Teamcity. \cr
-   TeamName \tab character \tab Teamname. \cr
-   TeamSlug \tab character \tab  \cr
-   Conference \tab character \tab Conference. \cr
-   ConferenceRecord \tab character \tab  \cr
-   PlayoffRank \tab character \tab  \cr
-   ClinchIndicator \tab character \tab  \cr
-   Division \tab character \tab Team division. \cr
-   DivisionRecord \tab character \tab  \cr
-   DivisionRank \tab character \tab  \cr
-   WINS \tab character \tab Total wins. \cr
-   LOSSES \tab character \tab Total losses. \cr
-   WinPCT \tab character \tab  \cr
-   LeagueRank \tab character \tab  \cr
-   Record \tab character \tab Record string (e.g. '12-4'). \cr
-   HOME \tab character \tab Home. \cr
-   ROAD \tab character \tab Road. \cr
-   L10 \tab character \tab  \cr
-   Last10Home \tab character \tab  \cr
-   Last10Road \tab character \tab  \cr
-   OT \tab character \tab Ot. \cr
-   ThreePTSOrLess \tab character \tab  \cr
-   TenPTSOrMore \tab character \tab  \cr
-   LongHomeStreak \tab character \tab  \cr
-   strLongHomeStreak \tab character \tab  \cr
-   LongRoadStreak \tab character \tab  \cr
-   strLongRoadStreak \tab character \tab  \cr
-   LongWinStreak \tab character \tab  \cr
-   LongLossStreak \tab character \tab  \cr
-   CurrentHomeStreak \tab character \tab  \cr
-   strCurrentHomeStreak \tab character \tab  \cr
-   CurrentRoadStreak \tab character \tab  \cr
-   strCurrentRoadStreak \tab character \tab  \cr
-   CurrentStreak \tab character \tab  \cr
-   strCurrentStreak \tab character \tab  \cr
-   ConferenceGamesBack \tab character \tab  \cr
-   DivisionGamesBack \tab character \tab  \cr
-   ClinchedConferenceTitle \tab character \tab  \cr
-   ClinchedDivisionTitle \tab character \tab  \cr
-   ClinchedPlayoffBirth \tab character \tab  \cr
-   ClinchedPlayIn \tab character \tab  \cr
-   EliminatedConference \tab character \tab  \cr
-   EliminatedDivision \tab character \tab  \cr
-   AheadAtHalf \tab character \tab  \cr
-   BehindAtHalf \tab character \tab  \cr
-   TiedAtHalf \tab character \tab  \cr
-   AheadAtThird \tab character \tab  \cr
-   BehindAtThird \tab character \tab  \cr
-   TiedAtThird \tab character \tab  \cr
-   Score100PTS \tab character \tab  \cr
-   OppScore100PTS \tab character \tab  \cr
-   OppOver500 \tab character \tab  \cr
-   LeadInFGPCT \tab character \tab  \cr
-   LeadInReb \tab character \tab  \cr
-   FewerTurnovers \tab character \tab  \cr
-   PointsPG \tab character \tab  \cr
-   OppPointsPG \tab character \tab  \cr
-   DiffPointsPG \tab character \tab  \cr
-   vsEast \tab character \tab  \cr
-   vsAtlantic \tab character \tab  \cr
-   vsCentral \tab character \tab  \cr
-   vsSoutheast \tab character \tab  \cr
-   vsWest \tab character \tab  \cr
-   vsNorthwest \tab character \tab  \cr
-   vsPacific \tab character \tab  \cr
-   vsSouthwest \tab character \tab  \cr
-   Jan \tab character \tab  \cr
-   Feb \tab character \tab  \cr
-   Mar \tab character \tab  \cr
-   Apr \tab character \tab  \cr
-   May \tab character \tab  \cr
-   Jun \tab character \tab  \cr
-   Jul \tab character \tab  \cr
-   Aug \tab character \tab  \cr
-   Sep \tab character \tab  \cr
-   Oct \tab character \tab  \cr
-   Nov \tab character \tab  \cr
-   Dec \tab character \tab  \cr
-   Score_80_Plus \tab character \tab  \cr
-   Opp_Score_80_Plus \tab character \tab  \cr
-   Score_Below_80 \tab character \tab  \cr
-   Opp_Score_Below_80 \tab character \tab  \cr
-   TotalPoints \tab character \tab  \cr
-   OppTotalPoints \tab character \tab  \cr
-   DiffTotalPoints \tab character \tab  \cr
-}
+\strong{Standings}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      LeagueID \tab character \tab  \cr
+      SeasonID \tab character \tab  \cr
+      TeamID \tab character \tab Teamid. \cr
+      TeamCity \tab character \tab Teamcity. \cr
+      TeamName \tab character \tab Teamname. \cr
+      TeamSlug \tab character \tab  \cr
+      Conference \tab character \tab Conference. \cr
+      ConferenceRecord \tab character \tab  \cr
+      PlayoffRank \tab character \tab  \cr
+      ClinchIndicator \tab character \tab  \cr
+      Division \tab character \tab Team division. \cr
+      DivisionRecord \tab character \tab  \cr
+      DivisionRank \tab character \tab  \cr
+      WINS \tab character \tab Total wins. \cr
+      LOSSES \tab character \tab Total losses. \cr
+      WinPCT \tab character \tab  \cr
+      LeagueRank \tab character \tab  \cr
+      Record \tab character \tab Record string (e.g. '12-4'). \cr
+      HOME \tab character \tab Home. \cr
+      ROAD \tab character \tab Road. \cr
+      L10 \tab character \tab  \cr
+      Last10Home \tab character \tab  \cr
+      Last10Road \tab character \tab  \cr
+      OT \tab character \tab Ot. \cr
+      ThreePTSOrLess \tab character \tab  \cr
+      TenPTSOrMore \tab character \tab  \cr
+      LongHomeStreak \tab character \tab  \cr
+      strLongHomeStreak \tab character \tab  \cr
+      LongRoadStreak \tab character \tab  \cr
+      strLongRoadStreak \tab character \tab  \cr
+      LongWinStreak \tab character \tab  \cr
+      LongLossStreak \tab character \tab  \cr
+      CurrentHomeStreak \tab character \tab  \cr
+      strCurrentHomeStreak \tab character \tab  \cr
+      CurrentRoadStreak \tab character \tab  \cr
+      strCurrentRoadStreak \tab character \tab  \cr
+      CurrentStreak \tab character \tab  \cr
+      strCurrentStreak \tab character \tab  \cr
+      ConferenceGamesBack \tab character \tab  \cr
+      DivisionGamesBack \tab character \tab  \cr
+      ClinchedConferenceTitle \tab character \tab  \cr
+      ClinchedDivisionTitle \tab character \tab  \cr
+      ClinchedPlayoffBirth \tab character \tab  \cr
+      ClinchedPlayIn \tab character \tab  \cr
+      EliminatedConference \tab character \tab  \cr
+      EliminatedDivision \tab character \tab  \cr
+      AheadAtHalf \tab character \tab  \cr
+      BehindAtHalf \tab character \tab  \cr
+      TiedAtHalf \tab character \tab  \cr
+      AheadAtThird \tab character \tab  \cr
+      BehindAtThird \tab character \tab  \cr
+      TiedAtThird \tab character \tab  \cr
+      Score100PTS \tab character \tab  \cr
+      OppScore100PTS \tab character \tab  \cr
+      OppOver500 \tab character \tab  \cr
+      LeadInFGPCT \tab character \tab  \cr
+      LeadInReb \tab character \tab  \cr
+      FewerTurnovers \tab character \tab  \cr
+      PointsPG \tab character \tab  \cr
+      OppPointsPG \tab character \tab  \cr
+      DiffPointsPG \tab character \tab  \cr
+      vsEast \tab character \tab  \cr
+      vsAtlantic \tab character \tab  \cr
+      vsCentral \tab character \tab  \cr
+      vsSoutheast \tab character \tab  \cr
+      vsWest \tab character \tab  \cr
+      vsNorthwest \tab character \tab  \cr
+      vsPacific \tab character \tab  \cr
+      vsSouthwest \tab character \tab  \cr
+      Jan \tab character \tab  \cr
+      Feb \tab character \tab  \cr
+      Mar \tab character \tab  \cr
+      Apr \tab character \tab  \cr
+      May \tab character \tab  \cr
+      Jun \tab character \tab  \cr
+      Jul \tab character \tab  \cr
+      Aug \tab character \tab  \cr
+      Sep \tab character \tab  \cr
+      Oct \tab character \tab  \cr
+      Nov \tab character \tab  \cr
+      Dec \tab character \tab  \cr
+      Score_80_Plus \tab character \tab  \cr
+      Opp_Score_80_Plus \tab character \tab  \cr
+      Score_Below_80 \tab character \tab  \cr
+      Opp_Score_Below_80 \tab character \tab  \cr
+      TotalPoints \tab character \tab  \cr
+      OppTotalPoints \tab character \tab  \cr
+      DiffTotalPoints \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Standings V3}

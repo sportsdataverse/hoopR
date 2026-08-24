@@ -8,17 +8,7 @@ NULL
 #' @param limit integer. Maximum number of articles to return. Default `50`.
 #' @return Returns a tibble of news articles.
 #'
-#'    |col_name    |types     |description                       |
-#'    |:-----------|:---------|:---------------------------------|
-#'    |id          |character |Id.                               |
-#'    |type        |character |Record type / category.           |
-#'    |headline    |character |News headline.                    |
-#'    |description |character |Long-form description text.       |
-#'    |published   |character |Publication timestamp (ISO 8601). |
-#'    |premium     |logical   |                                  |
-#'    |byline      |character |News article byline / author.     |
-#'    |link_web    |character |Web link / URL.                   |
-#'    |league_id   |character |League identifier ('10' = WNBA).  |
+#'    Columns as documented in the shared [espn_mbb_news_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr select as_tibble
@@ -52,17 +42,7 @@ NULL
 #' @param limit integer. Maximum number of articles to return. Default `25`.
 #' @return Returns a tibble of team news articles.
 #'
-#'    |col_name    |types     |description                       |
-#'    |:-----------|:---------|:---------------------------------|
-#'    |id          |character |Id.                               |
-#'    |type        |character |Record type / category.           |
-#'    |headline    |character |News headline.                    |
-#'    |description |character |Long-form description text.       |
-#'    |published   |character |Publication timestamp (ISO 8601). |
-#'    |premium     |logical   |                                  |
-#'    |byline      |character |News article byline / author.     |
-#'    |link_web    |character |Web link / URL.                   |
-#'    |league_id   |character |League identifier ('10' = WNBA).  |
+#'    Columns as documented in the shared [espn_mbb_news_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr select as_tibble

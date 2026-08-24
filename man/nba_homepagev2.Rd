@@ -36,15 +36,9 @@ nba_homepagev2(
 Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,
 HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
 
-\strong{HomePageStat1}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{HomePageStat1}
 
+Columns as documented in the shared \link{nba_homepagev2_homepagestat1_schema} table.
 
 \strong{HomePageStat2}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -56,15 +50,9 @@ HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
 }
 
 
-\strong{HomePageStat3}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   AST \tab character \tab Assists. \cr
-}
+\strong{HomePageStat3}
 
+Columns as documented in the shared \link{nba_assistleaders_assistleaders_schema} table.
 
 \strong{HomePageStat4}\tabular{lll}{
    col_name \tab types \tab description \cr

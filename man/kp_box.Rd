@@ -15,67 +15,42 @@ kp_box(game_id, year)
 Returns a tibble of game box scores with names: away_team, home_team,
 linescore, officials
 
-\strong{away_team}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   hgt \tab character \tab Hgt. \cr
-   wgt \tab numeric \tab Wgt. \cr
-   yr \tab character \tab Yr. \cr
-   number \tab numeric \tab Number. \cr
-   player \tab character \tab Player. \cr
-   min \tab numeric \tab Minutes played. \cr
-   o_rtg \tab numeric \tab O rtg. \cr
-   percent_ps \tab numeric \tab Percent ps. \cr
-   pts \tab numeric \tab Points scored. \cr
-   fgm_2 \tab numeric \tab Fgm 2. \cr
-   fga_2 \tab numeric \tab Fga 2. \cr
-   fgm_3 \tab numeric \tab Fgm 3. \cr
-   fga_3 \tab numeric \tab Fga 3. \cr
-   ftm \tab numeric \tab Free throws made. \cr
-   fta \tab numeric \tab Free throw attempts. \cr
-   or \tab numeric \tab Or. \cr
-   dr \tab numeric \tab Dr. \cr
-   a \tab numeric \tab A. \cr
-   to \tab numeric \tab To. \cr
-   blk \tab numeric \tab Blocks. \cr
-   stl \tab numeric \tab Steals. \cr
-   pf \tab numeric \tab Personal fouls. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   wp_note \tab character \tab Wp note. \cr
-   game_id \tab numeric \tab Unique game identifier. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{away_team}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab numeric \tab Wgt. \cr
+      yr \tab character \tab Yr. \cr
+      number \tab numeric \tab Number. \cr
+      player \tab character \tab Player. \cr
+      min \tab numeric \tab Minutes played. \cr
+      o_rtg \tab numeric \tab O rtg. \cr
+      percent_ps \tab numeric \tab Percent ps. \cr
+      pts \tab numeric \tab Points scored. \cr
+      fgm_2 \tab numeric \tab Fgm 2. \cr
+      fga_2 \tab numeric \tab Fga 2. \cr
+      fgm_3 \tab numeric \tab Fgm 3. \cr
+      fga_3 \tab numeric \tab Fga 3. \cr
+      ftm \tab numeric \tab Free throws made. \cr
+      fta \tab numeric \tab Free throw attempts. \cr
+      or \tab numeric \tab Or. \cr
+      dr \tab numeric \tab Dr. \cr
+      a \tab numeric \tab A. \cr
+      to \tab numeric \tab To. \cr
+      blk \tab numeric \tab Blocks. \cr
+      stl \tab numeric \tab Steals. \cr
+      pf \tab numeric \tab Personal fouls. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      wp_note \tab character \tab Wp note. \cr
+      game_id \tab numeric \tab Unique game identifier. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{home_team}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   hgt \tab character \tab Hgt. \cr
-   wgt \tab numeric \tab Wgt. \cr
-   yr \tab character \tab Yr. \cr
-   number \tab numeric \tab Number. \cr
-   player \tab character \tab Player. \cr
-   min \tab numeric \tab Minutes played. \cr
-   o_rtg \tab numeric \tab O rtg. \cr
-   percent_ps \tab numeric \tab Percent ps. \cr
-   pts \tab numeric \tab Points scored. \cr
-   fgm_2 \tab numeric \tab Fgm 2. \cr
-   fga_2 \tab numeric \tab Fga 2. \cr
-   fgm_3 \tab numeric \tab Fgm 3. \cr
-   fga_3 \tab numeric \tab Fga 3. \cr
-   ftm \tab numeric \tab Free throws made. \cr
-   fta \tab numeric \tab Free throw attempts. \cr
-   or \tab numeric \tab Or. \cr
-   dr \tab numeric \tab Dr. \cr
-   a \tab numeric \tab A. \cr
-   to \tab numeric \tab To. \cr
-   blk \tab numeric \tab Blocks. \cr
-   stl \tab numeric \tab Steals. \cr
-   pf \tab numeric \tab Personal fouls. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   wp_note \tab character \tab Wp note. \cr
-   game_id \tab numeric \tab Unique game identifier. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{home_team}
 
+Same columns as the \strong{away_team} table above.
 
 \strong{linescore}\tabular{lll}{
    col_name \tab types \tab description \cr

@@ -12,34 +12,39 @@ kp_kpoy(year = most_recent_mbb_season())
 \value{
 Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 
-\strong{KPoYRatings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   rk \tab integer \tab Rk. \cr
-   player \tab character \tab Player. \cr
-   kpoy_rating \tab numeric \tab Kpoy rating. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   hgt \tab character \tab Hgt. \cr
-   wgt \tab numeric \tab Wgt. \cr
-   exp \tab character \tab Exp. \cr
-   home_town \tab character \tab Home team's town. \cr
-   year \tab numeric \tab 4-digit year. \cr
-   group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
-}
+\strong{KPoYRatings}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab integer \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      kpoy_rating \tab numeric \tab Kpoy rating. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab numeric \tab Wgt. \cr
+      exp \tab character \tab Exp. \cr
+      home_town \tab character \tab Home team's town. \cr
+      year \tab numeric \tab 4-digit year. \cr
+      group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{GameMVPs}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   rk \tab numeric \tab Rk. \cr
-   player \tab character \tab Player. \cr
-   game_mv_ps \tab numeric \tab Game mv ps. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   hgt \tab character \tab Hgt. \cr
-   wgt \tab numeric \tab Wgt. \cr
-   exp \tab character \tab Exp. \cr
-   home_town \tab character \tab Home team's town. \cr
-   year \tab numeric \tab 4-digit year. \cr
-   group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
-}
+\strong{GameMVPs}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab numeric \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      game_mv_ps \tab numeric \tab Game mv ps. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab numeric \tab Wgt. \cr
+      exp \tab character \tab Exp. \cr
+      home_town \tab character \tab Home team's town. \cr
+      year \tab numeric \tab 4-digit year. \cr
+      group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get KPoY Leaders Tables}
@@ -52,14 +57,8 @@ try(kp_kpoy(year = 2026))
 }
 \seealso{
 Other KenPom Ratings Functions:
-\code{\link[=kp_efficiency]{kp_efficiency()}},
-\code{\link[=kp_foul_trouble]{kp_foul_trouble()}},
-\code{\link[=kp_fourfactors]{kp_fourfactors()}},
-\code{\link[=kp_height]{kp_height()}},
 \code{\link[=kp_playerstats]{kp_playerstats()}},
-\code{\link[=kp_pointdist]{kp_pointdist()}},
-\code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}},
-\code{\link[=kp_teamstats]{kp_teamstats()}}
+\code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}}
 }
 \concept{KenPom Ratings Functions}
 \keyword{Leaders}

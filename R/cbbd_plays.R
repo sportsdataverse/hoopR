@@ -13,23 +13,25 @@
 #' @return A `hoopR_data` tibble with one row per play (key columns; `shot_info`
 #'   is flattened to `shot_info_*`, `participants`/`on_floor` are list-columns):
 #'
-#'    |col_name          |types     |description                               |
-#'    |:-----------------|:---------|:-----------------------------------------|
-#'    |id                |integer   |Play id.                                  |
-#'    |game_id           |integer   |Game id.                                  |
-#'    |season            |numeric   |Season (4-digit ending-year).             |
-#'    |play_type         |character |Play type description.                    |
-#'    |team_id           |integer   |Team id of the team on the play.          |
-#'    |team              |character |Team on the play.                         |
-#'    |period            |integer   |Period number.                            |
-#'    |clock             |character |Game clock.                               |
-#'    |seconds_remaining |integer   |Seconds remaining in the period.          |
-#'    |home_score        |integer   |Home score after the play.                |
-#'    |away_score        |integer   |Away score after the play.                |
-#'    |scoring_play      |logical   |Whether the play scored.                  |
-#'    |shooting_play     |logical   |Whether the play was a shot.              |
-#'    |score_value       |numeric   |Point value of the play.                  |
-#'    |play_text         |character |Play description text.                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Play id. \cr
+#'       game_id \tab integer \tab Game id. \cr
+#'       season \tab numeric \tab Season (4-digit ending-year). \cr
+#'       play_type \tab character \tab Play type description. \cr
+#'       team_id \tab integer \tab Team id of the team on the play. \cr
+#'       team \tab character \tab Team on the play. \cr
+#'       period \tab integer \tab Period number. \cr
+#'       clock \tab character \tab Game clock. \cr
+#'       seconds_remaining \tab integer \tab Seconds remaining in the period. \cr
+#'       home_score \tab integer \tab Home score after the play. \cr
+#'       away_score \tab integer \tab Away score after the play. \cr
+#'       scoring_play \tab logical \tab Whether the play scored. \cr
+#'       shooting_play \tab logical \tab Whether the play was a shot. \cr
+#'       score_value \tab numeric \tab Point value of the play. \cr
+#'       play_text \tab character \tab Play description text. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Plays
 #' @importFrom jsonlite fromJSON

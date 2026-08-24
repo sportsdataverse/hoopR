@@ -16,20 +16,7 @@ NULL
 #'
 #'    **Injuries**
 #'
-#'    |col_name      |types     |description                                           |
-#'    |:-------------|:---------|:-----------------------------------------------------|
-#'    |team_id       |character |Unique team identifier.                               |
-#'    |athlete_id    |character |Unique athlete identifier (ESPN).                     |
-#'    |athlete_name  |character |Athlete display name (ESPN).                          |
-#'    |position      |character |Listed roster position (G, F, C, etc.).               |
-#'    |status        |character |Status label.                                         |
-#'    |date          |character |Date in YYYY-MM-DD format.                            |
-#'    |type          |character |Record type / category.                               |
-#'    |side          |character |Side label (e.g. 'home', 'away', or 'overUnder').     |
-#'    |returns_at    |character |                                                      |
-#'    |short_comment |character |                                                      |
-#'    |long_comment  |character |Long-form play / event comment.                       |
-#'    |season        |integer   |Season identifier (4-digit year or 'YYYY-YY' string). |
+#'    Columns as documented in the shared [espn_mbb_injuries_injuries_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows mutate
@@ -65,19 +52,7 @@ NULL
 #'
 #'    **Injuries**
 #'
-#'    |col_name      |types     |description                                       |
-#'    |:-------------|:---------|:-------------------------------------------------|
-#'    |team_id       |character |Unique team identifier.                           |
-#'    |athlete_id    |character |Unique athlete identifier (ESPN).                 |
-#'    |athlete_name  |character |Athlete display name (ESPN).                      |
-#'    |position      |character |Listed roster position (G, F, C, etc.).           |
-#'    |status        |character |Status label.                                     |
-#'    |date          |character |Date in YYYY-MM-DD format.                        |
-#'    |type          |character |Record type / category.                           |
-#'    |side          |character |Side label (e.g. 'home', 'away', or 'overUnder'). |
-#'    |returns_at    |character |                                                  |
-#'    |short_comment |character |                                                  |
-#'    |long_comment  |character |Long-form play / event comment.                   |
+#'    Columns as documented in the shared [espn_mbb_team_injuries_injuries_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows

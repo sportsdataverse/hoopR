@@ -8,66 +8,41 @@
 #'    **away_team**
 #'
 #'
-#'    |col_name   |types     |description                         |
-#'    |:----------|:---------|:-----------------------------------|
-#'    |hgt        |character |Hgt.                                |
-#'    |wgt        |numeric   |Wgt.                                |
-#'    |yr         |character |Yr.                                 |
-#'    |number     |numeric   |Number.                             |
-#'    |player     |character |Player.                             |
-#'    |min        |numeric   |Minutes played.                     |
-#'    |o_rtg      |numeric   |O rtg.                              |
-#'    |percent_ps |numeric   |Percent ps.                         |
-#'    |pts        |numeric   |Points scored.                      |
-#'    |fgm_2      |numeric   |Fgm 2.                              |
-#'    |fga_2      |numeric   |Fga 2.                              |
-#'    |fgm_3      |numeric   |Fgm 3.                              |
-#'    |fga_3      |numeric   |Fga 3.                              |
-#'    |ftm        |numeric   |Free throws made.                   |
-#'    |fta        |numeric   |Free throw attempts.                |
-#'    |or         |numeric   |Or.                                 |
-#'    |dr         |numeric   |Dr.                                 |
-#'    |a          |numeric   |A.                                  |
-#'    |to         |numeric   |To.                                 |
-#'    |blk        |numeric   |Blocks.                             |
-#'    |stl        |numeric   |Steals.                             |
-#'    |pf         |numeric   |Personal fouls.                     |
-#'    |team       |character |Team-side label or team identifier. |
-#'    |wp_note    |character |Wp note.                            |
-#'    |game_id    |numeric   |Unique game identifier.             |
-#'    |year       |numeric   |4-digit year.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       hgt \tab character \tab Hgt. \cr
+#'       wgt \tab numeric \tab Wgt. \cr
+#'       yr \tab character \tab Yr. \cr
+#'       number \tab numeric \tab Number. \cr
+#'       player \tab character \tab Player. \cr
+#'       min \tab numeric \tab Minutes played. \cr
+#'       o_rtg \tab numeric \tab O rtg. \cr
+#'       percent_ps \tab numeric \tab Percent ps. \cr
+#'       pts \tab numeric \tab Points scored. \cr
+#'       fgm_2 \tab numeric \tab Fgm 2. \cr
+#'       fga_2 \tab numeric \tab Fga 2. \cr
+#'       fgm_3 \tab numeric \tab Fgm 3. \cr
+#'       fga_3 \tab numeric \tab Fga 3. \cr
+#'       ftm \tab numeric \tab Free throws made. \cr
+#'       fta \tab numeric \tab Free throw attempts. \cr
+#'       or \tab numeric \tab Or. \cr
+#'       dr \tab numeric \tab Dr. \cr
+#'       a \tab numeric \tab A. \cr
+#'       to \tab numeric \tab To. \cr
+#'       blk \tab numeric \tab Blocks. \cr
+#'       stl \tab numeric \tab Steals. \cr
+#'       pf \tab numeric \tab Personal fouls. \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       wp_note \tab character \tab Wp note. \cr
+#'       game_id \tab numeric \tab Unique game identifier. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **home_team**
 #'
 #'
-#'    |col_name   |types     |description                         |
-#'    |:----------|:---------|:-----------------------------------|
-#'    |hgt        |character |Hgt.                                |
-#'    |wgt        |numeric   |Wgt.                                |
-#'    |yr         |character |Yr.                                 |
-#'    |number     |numeric   |Number.                             |
-#'    |player     |character |Player.                             |
-#'    |min        |numeric   |Minutes played.                     |
-#'    |o_rtg      |numeric   |O rtg.                              |
-#'    |percent_ps |numeric   |Percent ps.                         |
-#'    |pts        |numeric   |Points scored.                      |
-#'    |fgm_2      |numeric   |Fgm 2.                              |
-#'    |fga_2      |numeric   |Fga 2.                              |
-#'    |fgm_3      |numeric   |Fgm 3.                              |
-#'    |fga_3      |numeric   |Fga 3.                              |
-#'    |ftm        |numeric   |Free throws made.                   |
-#'    |fta        |numeric   |Free throw attempts.                |
-#'    |or         |numeric   |Or.                                 |
-#'    |dr         |numeric   |Dr.                                 |
-#'    |a          |numeric   |A.                                  |
-#'    |to         |numeric   |To.                                 |
-#'    |blk        |numeric   |Blocks.                             |
-#'    |stl        |numeric   |Steals.                             |
-#'    |pf         |numeric   |Personal fouls.                     |
-#'    |team       |character |Team-side label or team identifier. |
-#'    |wp_note    |character |Wp note.                            |
-#'    |game_id    |numeric   |Unique game identifier.             |
-#'    |year       |numeric   |4-digit year.                       |
+#'    Same columns as the **away_team** table above.
 #'
 #'    **linescore**
 #'
@@ -281,53 +256,57 @@ kp_box <- function(game_id, year) {
 #'    **winprob_dataset**
 #'
 #'
-#'    |col_name          |types     |description                                   |
-#'    |:-----------------|:---------|:---------------------------------------------|
-#'    |period            |integer   |Period of the game (1-4 quarters; 5+ for OT). |
-#'    |wp                |numeric   |Wp.                                           |
-#'    |time_left         |numeric   |Time left.                                    |
-#'    |visitor_score     |integer   |Visitor score.                                |
-#'    |home_score        |integer   |Home team score at the time of the play.      |
-#'    |visitor_scoring   |integer   |Visitor scoring.                              |
-#'    |home_scoring      |integer   |Home team's scoring.                          |
-#'    |possession_team   |character |Possession team.                              |
-#'    |possession_number |character |Possession number.                            |
-#'    |game_id           |numeric   |Unique game identifier.                       |
-#'    |year              |numeric   |4-digit year.                                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+#'       wp \tab numeric \tab Wp. \cr
+#'       time_left \tab numeric \tab Time left. \cr
+#'       visitor_score \tab integer \tab Visitor score. \cr
+#'       home_score \tab integer \tab Home team score at the time of the play. \cr
+#'       visitor_scoring \tab integer \tab Visitor scoring. \cr
+#'       home_scoring \tab integer \tab Home team's scoring. \cr
+#'       possession_team \tab character \tab Possession team. \cr
+#'       possession_number \tab character \tab Possession number. \cr
+#'       game_id \tab numeric \tab Unique game identifier. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **game_data**
 #'
 #'
-#'    |col_name               |types     |description                |
-#'    |:----------------------|:---------|:--------------------------|
-#'    |game_id                |character |Unique game identifier.    |
-#'    |year                   |integer   |4-digit year.              |
-#'    |full_date              |character |Date in YYYY-MM-DD format. |
-#'    |date                   |character |Date in YYYY-MM-DD format. |
-#'    |game_time              |character |Game start time.           |
-#'    |venue                  |character |Venue name.                |
-#'    |city                   |character |City.                      |
-#'    |team1                  |character |Team1.                     |
-#'    |team1score             |integer   |Team1score.                |
-#'    |team1_rk               |character |Team1 rk.                  |
-#'    |team2                  |character |Team2.                     |
-#'    |team2score             |integer   |Team2score.                |
-#'    |team2_rk               |character |Team2 rk.                  |
-#'    |dominance_season_rk    |character |Dominance season rk.       |
-#'    |tension_season_rk      |character |Tension season rk.         |
-#'    |excitement_season_rk   |character |Excitement season rk.      |
-#'    |lead_changes_season_rk |character |Lead changes season rk.    |
-#'    |minimum_wp_season_rk   |character |Minimum wp season rk.      |
-#'    |dominance_rk           |character |Dominance rk.              |
-#'    |tension_rk             |character |Tension rk.                |
-#'    |excitement_rk          |character |Excitement rk.             |
-#'    |lead_changes_rk        |character |Lead changes rk.           |
-#'    |minimum_wp_rk          |character |Minimum wp rk.             |
-#'    |dominance              |character |Dominance.                 |
-#'    |tension                |character |Tension.                   |
-#'    |excitement             |character |Excitement.                |
-#'    |favchg                 |character |Favchg.                    |
-#'    |min_wp                 |character |Min wp.                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       year \tab integer \tab 4-digit year. \cr
+#'       full_date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'       game_time \tab character \tab Game start time. \cr
+#'       venue \tab character \tab Venue name. \cr
+#'       city \tab character \tab City. \cr
+#'       team1 \tab character \tab Team1. \cr
+#'       team1score \tab integer \tab Team1score. \cr
+#'       team1_rk \tab character \tab Team1 rk. \cr
+#'       team2 \tab character \tab Team2. \cr
+#'       team2score \tab integer \tab Team2score. \cr
+#'       team2_rk \tab character \tab Team2 rk. \cr
+#'       dominance_season_rk \tab character \tab Dominance season rk. \cr
+#'       tension_season_rk \tab character \tab Tension season rk. \cr
+#'       excitement_season_rk \tab character \tab Excitement season rk. \cr
+#'       lead_changes_season_rk \tab character \tab Lead changes season rk. \cr
+#'       minimum_wp_season_rk \tab character \tab Minimum wp season rk. \cr
+#'       dominance_rk \tab character \tab Dominance rk. \cr
+#'       tension_rk \tab character \tab Tension rk. \cr
+#'       excitement_rk \tab character \tab Excitement rk. \cr
+#'       lead_changes_rk \tab character \tab Lead changes rk. \cr
+#'       minimum_wp_rk \tab character \tab Minimum wp rk. \cr
+#'       dominance \tab character \tab Dominance. \cr
+#'       tension \tab character \tab Tension. \cr
+#'       excitement \tab character \tab Excitement. \cr
+#'       favchg \tab character \tab Favchg. \cr
+#'       min_wp \tab character \tab Min wp. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **runs**
 #'

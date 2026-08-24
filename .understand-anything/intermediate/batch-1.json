@@ -1,0 +1,43 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/pkgdown.yaml",
+      "type": "pipeline",
+      "name": "pkgdown.yaml",
+      "filePath": ".github/workflows/pkgdown.yaml",
+      "summary": "GitHub Actions workflow that builds the hoopR pkgdown documentation site on pushes to main/master (or manual dispatch) and deploys it via pkgdown::deploy_to_branch, installing SportsDataverse companion packages and KenPom (KP_USER/KP_PW) credentials needed to render vignettes.",
+      "tags": ["ci-cd", "deployment", "documentation", "pkgdown", "r-package"],
+      "complexity": "moderate",
+      "languageNotes": "Single ubuntu-latest R-release job using r-lib/actions; concurrency group cancels in-progress runs; needs contents:write permission to push the built site."
+    },
+    {
+      "id": "pipeline:.github/workflows/R-CMD-check.yaml",
+      "type": "pipeline",
+      "name": "R-CMD-check.yaml",
+      "filePath": ".github/workflows/R-CMD-check.yaml",
+      "summary": "Primary CI workflow running R CMD check across a macOS/Windows/Ubuntu matrix (R release) on push, pull request, and a weekly Friday cron, with optional live-API test toggles (NBA Stats, NBA G-League, ESPN, NCAA MBB) supplied via secrets.",
+      "tags": ["ci-cd", "testing", "r-cmd-check", "cross-platform", "r-package"],
+      "complexity": "moderate",
+      "languageNotes": "Uses r-lib/actions setup-r + check-r-package with upload-snapshots; live tests still short-circuit on skip_on_ci() unless the *_TESTS secrets enable them."
+    },
+    {
+      "id": "pipeline:.github/workflows/rhub.yaml",
+      "type": "pipeline",
+      "name": "rhub.yaml",
+      "filePath": ".github/workflows/rhub.yaml",
+      "summary": "Manually-dispatched R-hub v2 workflow that fans out R CMD check across user-selected R-hub platforms (linux containers + windows/macos) for CRAN-submission validation, with a setup job emitting the platform/container matrix consumed by the downstream check jobs.",
+      "tags": ["ci-cd", "r-hub", "cran", "testing", "r-package"],
+      "complexity": "moderate",
+      "languageNotes": "Canonical r-hub/actions template: workflow_dispatch-only with a setup job whose JSON outputs drive matrix strategies; requires an RHUB_TOKEN plus the same KenPom + live-API secrets as the other workflows."
+    }
+  ],
+  "edges": [
+    {
+      "source": "pipeline:.github/workflows/R-CMD-check.yaml",
+      "target": "pipeline:.github/workflows/rhub.yaml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

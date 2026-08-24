@@ -34,7 +34,9 @@ Nested JSON responses parsed via \code{purrr::pluck()}. See
 \code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}}, \code{\link[=nba_boxscoreusagev3]{nba_boxscoreusagev3()}}.
 }
 
-\subsection{\strong{Play-by-play}}{\tabular{ll}{
+\subsection{\strong{Play-by-play}}{
+
+\if{html}{\tabular{ll}{
    Function \tab Purpose \cr
    \code{\link[=nba_pbp]{nba_pbp()}} \tab V2 + V3 play-by-play (with V3-to-V2 conversion pipeline) \cr
    \code{\link[=nba_pbps]{nba_pbps()}} \tab Multi-game PBP loader \cr
@@ -44,8 +46,8 @@ Nested JSON responses parsed via \code{purrr::pluck()}. See
    \code{\link[=nba_live_pbp]{nba_live_pbp()}} \tab Live PBP (CDN feed) \cr
    \code{\link[=nba_live_boxscore]{nba_live_boxscore()}} \tab Live boxscore (CDN feed) \cr
    \code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}} \tab Win-probability PBP overlay \cr
-}
-
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
 \subsection{\strong{Leaders / standings / league}}{

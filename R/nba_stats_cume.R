@@ -17,90 +17,94 @@ NULL
 #'    **GameByGameStats**
 #'
 #'
-#'    |col_name       |types     |description                              |
-#'    |:--------------|:---------|:----------------------------------------|
-#'    |DATE_EST       |character |                                         |
-#'    |VISITOR_TEAM   |character |                                         |
-#'    |HOME_TEAM      |character |Home team's team.                        |
-#'    |GP             |character |Games played.                            |
-#'    |GS             |character |Games started.                           |
-#'    |ACTUAL_MINUTES |character |                                         |
-#'    |ACTUAL_SECONDS |character |                                         |
-#'    |FG             |character |Field goals made.                        |
-#'    |FGA            |character |Field goal attempts.                     |
-#'    |FG_PCT         |character |Field goal percentage (0-1).             |
-#'    |FG3            |character |                                         |
-#'    |FG3A           |character |Three-point field goal attempts.         |
-#'    |FG3_PCT        |character |Three-point field goal percentage (0-1). |
-#'    |FT             |character |                                         |
-#'    |FTA            |character |Free throw attempts.                     |
-#'    |FT_PCT         |character |Free throw percentage (0-1).             |
-#'    |OFF_REB        |character |                                         |
-#'    |DEF_REB        |character |                                         |
-#'    |TOT_REB        |character |                                         |
-#'    |AVG_TOT_REB    |character |                                         |
-#'    |AST            |character |Assists.                                 |
-#'    |PF             |character |Personal fouls.                          |
-#'    |DQ             |character |                                         |
-#'    |STL            |character |Steals.                                  |
-#'    |TURNOVERS      |character |Total turnovers.                         |
-#'    |BLK            |character |Blocks.                                  |
-#'    |PTS            |character |Points scored.                           |
-#'    |AVG_PTS        |character |                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       DATE_EST \tab character \tab  \cr
+#'       VISITOR_TEAM \tab character \tab  \cr
+#'       HOME_TEAM \tab character \tab Home team's team. \cr
+#'       GP \tab character \tab Games played. \cr
+#'       GS \tab character \tab Games started. \cr
+#'       ACTUAL_MINUTES \tab character \tab  \cr
+#'       ACTUAL_SECONDS \tab character \tab  \cr
+#'       FG \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3 \tab character \tab  \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FT \tab character \tab  \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OFF_REB \tab character \tab  \cr
+#'       DEF_REB \tab character \tab  \cr
+#'       TOT_REB \tab character \tab  \cr
+#'       AVG_TOT_REB \tab character \tab  \cr
+#'       AST \tab character \tab Assists. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       DQ \tab character \tab  \cr
+#'       STL \tab character \tab Steals. \cr
+#'       TURNOVERS \tab character \tab Total turnovers. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       AVG_PTS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TotalPlayerStats**
 #'
 #'
-#'    |col_name           |types     |description                               |
-#'    |:------------------|:---------|:-----------------------------------------|
-#'    |DISPLAY_FI_LAST    |character |                                          |
-#'    |PERSON_ID          |character |Unique player identifier (V3 endpoints).  |
-#'    |JERSEY_NUM         |character |Jersey number worn by the player.         |
-#'    |GP                 |character |Games played.                             |
-#'    |GS                 |character |Games started.                            |
-#'    |ACTUAL_MINUTES     |character |                                          |
-#'    |ACTUAL_SECONDS     |character |                                          |
-#'    |FG                 |character |Field goals made.                         |
-#'    |FGA                |character |Field goal attempts.                      |
-#'    |FG_PCT             |character |Field goal percentage (0-1).              |
-#'    |FG3                |character |                                          |
-#'    |FG3A               |character |Three-point field goal attempts.          |
-#'    |FG3_PCT            |character |Three-point field goal percentage (0-1).  |
-#'    |FT                 |character |                                          |
-#'    |FTA                |character |Free throw attempts.                      |
-#'    |FT_PCT             |character |Free throw percentage (0-1).              |
-#'    |OFF_REB            |character |                                          |
-#'    |DEF_REB            |character |                                          |
-#'    |TOT_REB            |character |                                          |
-#'    |AST                |character |Assists.                                  |
-#'    |PF                 |character |Personal fouls.                           |
-#'    |DQ                 |character |                                          |
-#'    |STL                |character |Steals.                                   |
-#'    |TURNOVERS          |character |Total turnovers.                          |
-#'    |BLK                |character |Blocks.                                   |
-#'    |PTS                |character |Points scored.                            |
-#'    |MAX_ACTUAL_MINUTES |character |                                          |
-#'    |MAX_ACTUAL_SECONDS |character |                                          |
-#'    |MAX_REB            |character |                                          |
-#'    |MAX_AST            |character |                                          |
-#'    |MAX_STL            |character |                                          |
-#'    |MAX_TURNOVERS      |character |                                          |
-#'    |MAX_BLK            |character |                                          |
-#'    |MAX_PTS            |character |                                          |
-#'    |AVG_ACTUAL_MINUTES |character |                                          |
-#'    |AVG_ACTUAL_SECONDS |character |                                          |
-#'    |AVG_TOT_REB        |character |                                          |
-#'    |AVG_AST            |character |                                          |
-#'    |AVG_STL            |character |                                          |
-#'    |AVG_TURNOVERS      |character |The average turnovers committed per game. |
-#'    |AVG_BLK            |character |                                          |
-#'    |AVG_PTS            |character |                                          |
-#'    |PER_MIN_TOT_REB    |character |                                          |
-#'    |PER_MIN_AST        |character |                                          |
-#'    |PER_MIN_STL        |character |                                          |
-#'    |PER_MIN_TURNOVERS  |character |                                          |
-#'    |PER_MIN_BLK        |character |                                          |
-#'    |PER_MIN_PTS        |character |                                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       DISPLAY_FI_LAST \tab character \tab  \cr
+#'       PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+#'       JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+#'       GP \tab character \tab Games played. \cr
+#'       GS \tab character \tab Games started. \cr
+#'       ACTUAL_MINUTES \tab character \tab  \cr
+#'       ACTUAL_SECONDS \tab character \tab  \cr
+#'       FG \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3 \tab character \tab  \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FT \tab character \tab  \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OFF_REB \tab character \tab  \cr
+#'       DEF_REB \tab character \tab  \cr
+#'       TOT_REB \tab character \tab  \cr
+#'       AST \tab character \tab Assists. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       DQ \tab character \tab  \cr
+#'       STL \tab character \tab Steals. \cr
+#'       TURNOVERS \tab character \tab Total turnovers. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       MAX_ACTUAL_MINUTES \tab character \tab  \cr
+#'       MAX_ACTUAL_SECONDS \tab character \tab  \cr
+#'       MAX_REB \tab character \tab  \cr
+#'       MAX_AST \tab character \tab  \cr
+#'       MAX_STL \tab character \tab  \cr
+#'       MAX_TURNOVERS \tab character \tab  \cr
+#'       MAX_BLK \tab character \tab  \cr
+#'       MAX_PTS \tab character \tab  \cr
+#'       AVG_ACTUAL_MINUTES \tab character \tab  \cr
+#'       AVG_ACTUAL_SECONDS \tab character \tab  \cr
+#'       AVG_TOT_REB \tab character \tab  \cr
+#'       AVG_AST \tab character \tab  \cr
+#'       AVG_STL \tab character \tab  \cr
+#'       AVG_TURNOVERS \tab character \tab The average turnovers committed per game. \cr
+#'       AVG_BLK \tab character \tab  \cr
+#'       AVG_PTS \tab character \tab  \cr
+#'       PER_MIN_TOT_REB \tab character \tab  \cr
+#'       PER_MIN_AST \tab character \tab  \cr
+#'       PER_MIN_STL \tab character \tab  \cr
+#'       PER_MIN_TURNOVERS \tab character \tab  \cr
+#'       PER_MIN_BLK \tab character \tab  \cr
+#'       PER_MIN_PTS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -270,99 +274,103 @@ NULL
 #'    **GameByGameStats**
 #'
 #'
-#'    |col_name           |types     |description                               |
-#'    |:------------------|:---------|:-----------------------------------------|
-#'    |JERSEY_NUM         |character |Jersey number worn by the player.         |
-#'    |PLAYER             |character |Player.                                   |
-#'    |PERSON_ID          |character |Unique player identifier (V3 endpoints).  |
-#'    |TEAM_ID            |character |Unique team identifier.                   |
-#'    |GP                 |character |Games played.                             |
-#'    |GS                 |character |Games started.                            |
-#'    |ACTUAL_MINUTES     |character |                                          |
-#'    |ACTUAL_SECONDS     |character |                                          |
-#'    |FG                 |character |Field goals made.                         |
-#'    |FGA                |character |Field goal attempts.                      |
-#'    |FG_PCT             |character |Field goal percentage (0-1).              |
-#'    |FG3                |character |                                          |
-#'    |FG3A               |character |Three-point field goal attempts.          |
-#'    |FG3_PCT            |character |Three-point field goal percentage (0-1).  |
-#'    |FT                 |character |                                          |
-#'    |FTA                |character |Free throw attempts.                      |
-#'    |FT_PCT             |character |Free throw percentage (0-1).              |
-#'    |OFF_REB            |character |                                          |
-#'    |DEF_REB            |character |                                          |
-#'    |TOT_REB            |character |                                          |
-#'    |AST                |character |Assists.                                  |
-#'    |PF                 |character |Personal fouls.                           |
-#'    |DQ                 |character |                                          |
-#'    |STL                |character |Steals.                                   |
-#'    |TURNOVERS          |character |Total turnovers.                          |
-#'    |BLK                |character |Blocks.                                   |
-#'    |PTS                |character |Points scored.                            |
-#'    |MAX_ACTUAL_MINUTES |character |                                          |
-#'    |MAX_ACTUAL_SECONDS |character |                                          |
-#'    |MAX_REB            |character |                                          |
-#'    |MAX_AST            |character |                                          |
-#'    |MAX_STL            |character |                                          |
-#'    |MAX_TURNOVERS      |character |                                          |
-#'    |MAX_BLKP           |character |                                          |
-#'    |MAX_PTS            |character |                                          |
-#'    |AVG_ACTUAL_MINUTES |character |                                          |
-#'    |AVG_ACTUAL_SECONDS |character |                                          |
-#'    |AVG_REB            |character |                                          |
-#'    |AVG_AST            |character |                                          |
-#'    |AVG_STL            |character |                                          |
-#'    |AVG_TURNOVERS      |character |The average turnovers committed per game. |
-#'    |AVG_BLKP           |character |                                          |
-#'    |AVG_PTS            |character |                                          |
-#'    |PER_MIN_REB        |character |                                          |
-#'    |PER_MIN_AST        |character |                                          |
-#'    |PER_MIN_STL        |character |                                          |
-#'    |PER_MIN_TURNOVERS  |character |                                          |
-#'    |PER_MIN_BLK        |character |                                          |
-#'    |PER_MIN_PTS        |character |                                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+#'       PLAYER \tab character \tab Player. \cr
+#'       PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       GP \tab character \tab Games played. \cr
+#'       GS \tab character \tab Games started. \cr
+#'       ACTUAL_MINUTES \tab character \tab  \cr
+#'       ACTUAL_SECONDS \tab character \tab  \cr
+#'       FG \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3 \tab character \tab  \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FT \tab character \tab  \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OFF_REB \tab character \tab  \cr
+#'       DEF_REB \tab character \tab  \cr
+#'       TOT_REB \tab character \tab  \cr
+#'       AST \tab character \tab Assists. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       DQ \tab character \tab  \cr
+#'       STL \tab character \tab Steals. \cr
+#'       TURNOVERS \tab character \tab Total turnovers. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       MAX_ACTUAL_MINUTES \tab character \tab  \cr
+#'       MAX_ACTUAL_SECONDS \tab character \tab  \cr
+#'       MAX_REB \tab character \tab  \cr
+#'       MAX_AST \tab character \tab  \cr
+#'       MAX_STL \tab character \tab  \cr
+#'       MAX_TURNOVERS \tab character \tab  \cr
+#'       MAX_BLKP \tab character \tab  \cr
+#'       MAX_PTS \tab character \tab  \cr
+#'       AVG_ACTUAL_MINUTES \tab character \tab  \cr
+#'       AVG_ACTUAL_SECONDS \tab character \tab  \cr
+#'       AVG_REB \tab character \tab  \cr
+#'       AVG_AST \tab character \tab  \cr
+#'       AVG_STL \tab character \tab  \cr
+#'       AVG_TURNOVERS \tab character \tab The average turnovers committed per game. \cr
+#'       AVG_BLKP \tab character \tab  \cr
+#'       AVG_PTS \tab character \tab  \cr
+#'       PER_MIN_REB \tab character \tab  \cr
+#'       PER_MIN_AST \tab character \tab  \cr
+#'       PER_MIN_STL \tab character \tab  \cr
+#'       PER_MIN_TURNOVERS \tab character \tab  \cr
+#'       PER_MIN_BLK \tab character \tab  \cr
+#'       PER_MIN_PTS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TotalTeamStats**
 #'
 #'
-#'    |col_name        |types     |description                                                           |
-#'    |:---------------|:---------|:---------------------------------------------------------------------|
-#'    |CITY            |character |City.                                                                 |
-#'    |NICKNAME        |character |Team or athlete nickname.                                             |
-#'    |TEAM_ID         |character |Unique team identifier.                                               |
-#'    |W               |character |Wins.                                                                 |
-#'    |L               |character |Losses.                                                               |
-#'    |W_HOME          |character |                                                                      |
-#'    |L_HOME          |character |                                                                      |
-#'    |W_ROAD          |character |                                                                      |
-#'    |L_ROAD          |character |                                                                      |
-#'    |TEAM_TURNOVERS  |character |Team turnovers (turnovers credited to the team rather than a player). |
-#'    |TEAM_REBOUNDS   |character |Team rebounds (rebounds credited to the team rather than a player).   |
-#'    |GP              |character |Games played.                                                         |
-#'    |GS              |character |Games started.                                                        |
-#'    |ACTUAL_MINUTES  |character |                                                                      |
-#'    |ACTUAL_SECONDS  |character |                                                                      |
-#'    |FG              |character |Field goals made.                                                     |
-#'    |FGA             |character |Field goal attempts.                                                  |
-#'    |FG_PCT          |character |Field goal percentage (0-1).                                          |
-#'    |FG3             |character |                                                                      |
-#'    |FG3A            |character |Three-point field goal attempts.                                      |
-#'    |FG3_PCT         |character |Three-point field goal percentage (0-1).                              |
-#'    |FT              |character |                                                                      |
-#'    |FTA             |character |Free throw attempts.                                                  |
-#'    |FT_PCT          |character |Free throw percentage (0-1).                                          |
-#'    |OFF_REB         |character |                                                                      |
-#'    |DEF_REB         |character |                                                                      |
-#'    |TOT_REB         |character |                                                                      |
-#'    |AST             |character |Assists.                                                              |
-#'    |PF              |character |Personal fouls.                                                       |
-#'    |STL             |character |Steals.                                                               |
-#'    |TOTAL_TURNOVERS |character |Total turnovers (player + team).                                      |
-#'    |BLK             |character |Blocks.                                                               |
-#'    |PTS             |character |Points scored.                                                        |
-#'    |AVG_REB         |character |                                                                      |
-#'    |AVG_PTS         |character |                                                                      |
-#'    |DQ              |character |                                                                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       CITY \tab character \tab City. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       W \tab character \tab Wins. \cr
+#'       L \tab character \tab Losses. \cr
+#'       W_HOME \tab character \tab  \cr
+#'       L_HOME \tab character \tab  \cr
+#'       W_ROAD \tab character \tab  \cr
+#'       L_ROAD \tab character \tab  \cr
+#'       TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+#'       TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+#'       GP \tab character \tab Games played. \cr
+#'       GS \tab character \tab Games started. \cr
+#'       ACTUAL_MINUTES \tab character \tab  \cr
+#'       ACTUAL_SECONDS \tab character \tab  \cr
+#'       FG \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3 \tab character \tab  \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FT \tab character \tab  \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OFF_REB \tab character \tab  \cr
+#'       DEF_REB \tab character \tab  \cr
+#'       TOT_REB \tab character \tab  \cr
+#'       AST \tab character \tab Assists. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       AVG_REB \tab character \tab  \cr
+#'       AVG_PTS \tab character \tab  \cr
+#'       DQ \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

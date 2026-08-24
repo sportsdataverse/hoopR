@@ -62,17 +62,19 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per winner.
 #'
-#'    |col_name    |types     |description                                              |
-#'    |:-----------|:---------|:--------------------------------------------------------|
-#'    |league      |character |League slug (`"nba"`).                                   |
-#'    |season      |integer   |Season year.                                             |
-#'    |award_id    |character |ESPN award identifier.                                   |
-#'    |name        |character |Award name (e.g. "MVP").                                 |
-#'    |description |character |Award description.                                       |
-#'    |athlete_id  |character |ESPN athlete id of winner (parsed from `athlete_ref`).   |
-#'    |team_id     |character |ESPN team id (parsed from `team_ref`).                   |
-#'    |athlete_ref |character |`$ref` to winner's per-season athlete resource.          |
-#'    |team_ref    |character |`$ref` to winner's per-season team resource.             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'       season \tab integer \tab Season year. \cr
+#'       award_id \tab character \tab ESPN award identifier. \cr
+#'       name \tab character \tab Award name (e.g. "MVP"). \cr
+#'       description \tab character \tab Award description. \cr
+#'       athlete_id \tab character \tab ESPN athlete id of winner (parsed from \code{athlete_ref}). \cr
+#'       team_id \tab character \tab ESPN team id (parsed from \code{team_ref}). \cr
+#'       athlete_ref \tab character \tab \verb{$ref} to winner's per-season athlete resource. \cr
+#'       team_ref \tab character \tab \verb{$ref} to winner's per-season team resource. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

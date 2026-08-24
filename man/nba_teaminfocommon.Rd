@@ -27,42 +27,46 @@ nba_teaminfocommon(
 Return a named list of data frames: AvailableSeasons, TeamInfoCommon,
 TeamSeasonRanks
 
-\strong{TeamInfoCommon}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_CONFERENCE \tab character \tab  \cr
-   TEAM_DIVISION \tab character \tab  \cr
-   TEAM_CODE \tab character \tab  \cr
-   TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   PCT \tab character \tab Pct. \cr
-   CONF_RANK \tab character \tab  \cr
-   DIV_RANK \tab character \tab  \cr
-   MIN_YEAR \tab character \tab  \cr
-   MAX_YEAR \tab character \tab  \cr
-}
+\strong{TeamInfoCommon}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CONFERENCE \tab character \tab  \cr
+      TEAM_DIVISION \tab character \tab  \cr
+      TEAM_CODE \tab character \tab  \cr
+      TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      W \tab character \tab Wins. \cr
+      L \tab character \tab Losses. \cr
+      PCT \tab character \tab Pct. \cr
+      CONF_RANK \tab character \tab  \cr
+      DIV_RANK \tab character \tab  \cr
+      MIN_YEAR \tab character \tab  \cr
+      MAX_YEAR \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{TeamSeasonRanks}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   PTS_RANK \tab character \tab  \cr
-   PTS_PG \tab character \tab  \cr
-   REB_RANK \tab character \tab  \cr
-   REB_PG \tab character \tab  \cr
-   AST_RANK \tab character \tab  \cr
-   AST_PG \tab character \tab  \cr
-   OPP_PTS_RANK \tab character \tab  \cr
-   OPP_PTS_PG \tab character \tab  \cr
-}
+\strong{TeamSeasonRanks}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+      SEASON_ID \tab character \tab Unique season identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      PTS_RANK \tab character \tab  \cr
+      PTS_PG \tab character \tab  \cr
+      REB_RANK \tab character \tab  \cr
+      REB_PG \tab character \tab  \cr
+      AST_RANK \tab character \tab  \cr
+      AST_PG \tab character \tab  \cr
+      OPP_PTS_RANK \tab character \tab  \cr
+      OPP_PTS_PG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{AvailableSeasons}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -93,9 +97,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamelogs]{nba_teamgamelogs()}},
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}

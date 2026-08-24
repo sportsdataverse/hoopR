@@ -14,18 +14,21 @@ ncaa_mbb_teams(year = most_recent_mbb_season(), division = 1, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-A data frame with the following variables\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab character \tab Franchise team id (legacy \verb{/team/\{id\}/...} urls). \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_url \tab character \tab URL for team. \cr
-   conference_id \tab character \tab Conference identifier. \cr
-   conference \tab character \tab Conference. \cr
-   division \tab numeric \tab Team division. \cr
-   year \tab numeric \tab 4-digit year. \cr
-   season_id \tab character \tab Season id (legacy urls). \cr
-   season_team_id \tab character \tab Season-team id (modern \verb{/teams/\{id\}} urls). \cr
-}
+A data frame with the following variables
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab character \tab Franchise team id (legacy \verb{/team/\{id\}/...} urls). \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_url \tab character \tab URL for team. \cr
+      conference_id \tab character \tab Conference identifier. \cr
+      conference \tab character \tab Conference. \cr
+      division \tab numeric \tab Team division. \cr
+      year \tab numeric \tab 4-digit year. \cr
+      season_id \tab character \tab Season id (legacy urls). \cr
+      season_team_id \tab character \tab Season-team id (modern \verb{/teams/\{id\}} urls). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 This function allows the user to obtain NCAA teams by year and division

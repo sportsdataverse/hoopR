@@ -20,37 +20,39 @@ NULL
 #'    **LeagueGameLog**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |SEASON_ID         |character |Unique season identifier.                       |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |GAME_DATE         |character |Game date (YYYY-MM-DD).                         |
-#'    |MATCHUP           |character |Matchup.                                        |
-#'    |WL                |character |Wl.                                             |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |FGM               |character |Field goals made.                               |
-#'    |FGA               |character |Field goal attempts.                            |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'    |FG3M              |character |Three-point field goals made.                   |
-#'    |FG3A              |character |Three-point field goal attempts.                |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
-#'    |FTM               |character |Free throws made.                               |
-#'    |FTA               |character |Free throw attempts.                            |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
-#'    |OREB              |character |Offensive rebounds.                             |
-#'    |DREB              |character |Defensive rebounds.                             |
-#'    |REB               |character |Total rebounds.                                 |
-#'    |AST               |character |Assists.                                        |
-#'    |STL               |character |Steals.                                         |
-#'    |BLK               |character |Blocks.                                         |
-#'    |TOV               |character |Turnovers.                                      |
-#'    |PF                |character |Personal fouls.                                 |
-#'    |PTS               |character |Points scored.                                  |
-#'    |PLUS_MINUS        |character |Plus/minus point differential while on court.   |
-#'    |VIDEO_AVAILABLE   |character |Video available.                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       SEASON_ID \tab character \tab Unique season identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+#'       MATCHUP \tab character \tab Matchup. \cr
+#'       WL \tab character \tab Wl. \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       TOV \tab character \tab Turnovers. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+#'       VIDEO_AVAILABLE \tab character \tab Video available. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -141,89 +143,91 @@ NULL
 #'    **Standings**
 #'
 #'
-#'    |col_name                |types     |description                  |
-#'    |:-----------------------|:---------|:----------------------------|
-#'    |LeagueID                |character |                             |
-#'    |SeasonID                |character |                             |
-#'    |TeamID                  |character |Teamid.                      |
-#'    |TeamCity                |character |Teamcity.                    |
-#'    |TeamName                |character |Teamname.                    |
-#'    |Conference              |character |Conference.                  |
-#'    |ConferenceRecord        |character |                             |
-#'    |PlayoffRank             |character |                             |
-#'    |ClinchIndicator         |character |                             |
-#'    |Division                |character |Team division.               |
-#'    |DivisionRecord          |character |                             |
-#'    |DivisionRank            |character |                             |
-#'    |WINS                    |character |Total wins.                  |
-#'    |LOSSES                  |character |Total losses.                |
-#'    |WinPCT                  |character |                             |
-#'    |LeagueRank              |character |                             |
-#'    |Record                  |character |Record string (e.g. '12-4'). |
-#'    |HOME                    |character |Home.                        |
-#'    |ROAD                    |character |Road.                        |
-#'    |L10                     |character |                             |
-#'    |Last10Home              |character |                             |
-#'    |Last10Road              |character |                             |
-#'    |OT                      |character |Ot.                          |
-#'    |ThreePTSOrLess          |character |                             |
-#'    |TenPTSOrMore            |character |                             |
-#'    |LongHomeStreak          |character |                             |
-#'    |strLongHomeStreak       |character |                             |
-#'    |LongRoadStreak          |character |                             |
-#'    |strLongRoadStreak       |character |                             |
-#'    |LongWinStreak           |character |                             |
-#'    |LongLossStreak          |character |                             |
-#'    |CurrentHomeStreak       |character |                             |
-#'    |strCurrentHomeStreak    |character |                             |
-#'    |CurrentRoadStreak       |character |                             |
-#'    |strCurrentRoadStreak    |character |                             |
-#'    |CurrentStreak           |character |                             |
-#'    |strCurrentStreak        |character |                             |
-#'    |ConferenceGamesBack     |character |                             |
-#'    |DivisionGamesBack       |character |                             |
-#'    |ClinchedConferenceTitle |character |                             |
-#'    |ClinchedDivisionTitle   |character |                             |
-#'    |ClinchedPlayoffBirth    |character |                             |
-#'    |EliminatedConference    |character |                             |
-#'    |EliminatedDivision      |character |                             |
-#'    |AheadAtHalf             |character |                             |
-#'    |BehindAtHalf            |character |                             |
-#'    |TiedAtHalf              |character |                             |
-#'    |AheadAtThird            |character |                             |
-#'    |BehindAtThird           |character |                             |
-#'    |TiedAtThird             |character |                             |
-#'    |Score100PTS             |character |                             |
-#'    |OppScore100PTS          |character |                             |
-#'    |OppOver500              |character |                             |
-#'    |LeadInFGPCT             |character |                             |
-#'    |LeadInReb               |character |                             |
-#'    |FewerTurnovers          |character |                             |
-#'    |PointsPG                |character |                             |
-#'    |OppPointsPG             |character |                             |
-#'    |DiffPointsPG            |character |                             |
-#'    |vsEast                  |character |                             |
-#'    |vsAtlantic              |character |                             |
-#'    |vsCentral               |character |                             |
-#'    |vsSoutheast             |character |                             |
-#'    |vsWest                  |character |                             |
-#'    |vsNorthwest             |character |                             |
-#'    |vsPacific               |character |                             |
-#'    |vsSouthwest             |character |                             |
-#'    |Jan                     |character |                             |
-#'    |Feb                     |character |                             |
-#'    |Mar                     |character |                             |
-#'    |Apr                     |character |                             |
-#'    |May                     |character |                             |
-#'    |Jun                     |character |                             |
-#'    |Jul                     |character |                             |
-#'    |Aug                     |character |                             |
-#'    |Sep                     |character |                             |
-#'    |Oct                     |character |                             |
-#'    |Nov                     |character |                             |
-#'    |Dec                     |character |                             |
-#'    |PreAS                   |character |                             |
-#'    |PostAS                  |character |                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       LeagueID \tab character \tab  \cr
+#'       SeasonID \tab character \tab  \cr
+#'       TeamID \tab character \tab Teamid. \cr
+#'       TeamCity \tab character \tab Teamcity. \cr
+#'       TeamName \tab character \tab Teamname. \cr
+#'       Conference \tab character \tab Conference. \cr
+#'       ConferenceRecord \tab character \tab  \cr
+#'       PlayoffRank \tab character \tab  \cr
+#'       ClinchIndicator \tab character \tab  \cr
+#'       Division \tab character \tab Team division. \cr
+#'       DivisionRecord \tab character \tab  \cr
+#'       DivisionRank \tab character \tab  \cr
+#'       WINS \tab character \tab Total wins. \cr
+#'       LOSSES \tab character \tab Total losses. \cr
+#'       WinPCT \tab character \tab  \cr
+#'       LeagueRank \tab character \tab  \cr
+#'       Record \tab character \tab Record string (e.g. '12-4'). \cr
+#'       HOME \tab character \tab Home. \cr
+#'       ROAD \tab character \tab Road. \cr
+#'       L10 \tab character \tab  \cr
+#'       Last10Home \tab character \tab  \cr
+#'       Last10Road \tab character \tab  \cr
+#'       OT \tab character \tab Ot. \cr
+#'       ThreePTSOrLess \tab character \tab  \cr
+#'       TenPTSOrMore \tab character \tab  \cr
+#'       LongHomeStreak \tab character \tab  \cr
+#'       strLongHomeStreak \tab character \tab  \cr
+#'       LongRoadStreak \tab character \tab  \cr
+#'       strLongRoadStreak \tab character \tab  \cr
+#'       LongWinStreak \tab character \tab  \cr
+#'       LongLossStreak \tab character \tab  \cr
+#'       CurrentHomeStreak \tab character \tab  \cr
+#'       strCurrentHomeStreak \tab character \tab  \cr
+#'       CurrentRoadStreak \tab character \tab  \cr
+#'       strCurrentRoadStreak \tab character \tab  \cr
+#'       CurrentStreak \tab character \tab  \cr
+#'       strCurrentStreak \tab character \tab  \cr
+#'       ConferenceGamesBack \tab character \tab  \cr
+#'       DivisionGamesBack \tab character \tab  \cr
+#'       ClinchedConferenceTitle \tab character \tab  \cr
+#'       ClinchedDivisionTitle \tab character \tab  \cr
+#'       ClinchedPlayoffBirth \tab character \tab  \cr
+#'       EliminatedConference \tab character \tab  \cr
+#'       EliminatedDivision \tab character \tab  \cr
+#'       AheadAtHalf \tab character \tab  \cr
+#'       BehindAtHalf \tab character \tab  \cr
+#'       TiedAtHalf \tab character \tab  \cr
+#'       AheadAtThird \tab character \tab  \cr
+#'       BehindAtThird \tab character \tab  \cr
+#'       TiedAtThird \tab character \tab  \cr
+#'       Score100PTS \tab character \tab  \cr
+#'       OppScore100PTS \tab character \tab  \cr
+#'       OppOver500 \tab character \tab  \cr
+#'       LeadInFGPCT \tab character \tab  \cr
+#'       LeadInReb \tab character \tab  \cr
+#'       FewerTurnovers \tab character \tab  \cr
+#'       PointsPG \tab character \tab  \cr
+#'       OppPointsPG \tab character \tab  \cr
+#'       DiffPointsPG \tab character \tab  \cr
+#'       vsEast \tab character \tab  \cr
+#'       vsAtlantic \tab character \tab  \cr
+#'       vsCentral \tab character \tab  \cr
+#'       vsSoutheast \tab character \tab  \cr
+#'       vsWest \tab character \tab  \cr
+#'       vsNorthwest \tab character \tab  \cr
+#'       vsPacific \tab character \tab  \cr
+#'       vsSouthwest \tab character \tab  \cr
+#'       Jan \tab character \tab  \cr
+#'       Feb \tab character \tab  \cr
+#'       Mar \tab character \tab  \cr
+#'       Apr \tab character \tab  \cr
+#'       May \tab character \tab  \cr
+#'       Jun \tab character \tab  \cr
+#'       Jul \tab character \tab  \cr
+#'       Aug \tab character \tab  \cr
+#'       Sep \tab character \tab  \cr
+#'       Oct \tab character \tab  \cr
+#'       Nov \tab character \tab  \cr
+#'       Dec \tab character \tab  \cr
+#'       PreAS \tab character \tab  \cr
+#'       PostAS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -297,96 +301,98 @@ NULL
 #'    **Standings**
 #'
 #'
-#'    |col_name                |types     |description                  |
-#'    |:-----------------------|:---------|:----------------------------|
-#'    |LeagueID                |character |                             |
-#'    |SeasonID                |character |                             |
-#'    |TeamID                  |character |Teamid.                      |
-#'    |TeamCity                |character |Teamcity.                    |
-#'    |TeamName                |character |Teamname.                    |
-#'    |TeamSlug                |character |                             |
-#'    |Conference              |character |Conference.                  |
-#'    |ConferenceRecord        |character |                             |
-#'    |PlayoffRank             |character |                             |
-#'    |ClinchIndicator         |character |                             |
-#'    |Division                |character |Team division.               |
-#'    |DivisionRecord          |character |                             |
-#'    |DivisionRank            |character |                             |
-#'    |WINS                    |character |Total wins.                  |
-#'    |LOSSES                  |character |Total losses.                |
-#'    |WinPCT                  |character |                             |
-#'    |LeagueRank              |character |                             |
-#'    |Record                  |character |Record string (e.g. '12-4'). |
-#'    |HOME                    |character |Home.                        |
-#'    |ROAD                    |character |Road.                        |
-#'    |L10                     |character |                             |
-#'    |Last10Home              |character |                             |
-#'    |Last10Road              |character |                             |
-#'    |OT                      |character |Ot.                          |
-#'    |ThreePTSOrLess          |character |                             |
-#'    |TenPTSOrMore            |character |                             |
-#'    |LongHomeStreak          |character |                             |
-#'    |strLongHomeStreak       |character |                             |
-#'    |LongRoadStreak          |character |                             |
-#'    |strLongRoadStreak       |character |                             |
-#'    |LongWinStreak           |character |                             |
-#'    |LongLossStreak          |character |                             |
-#'    |CurrentHomeStreak       |character |                             |
-#'    |strCurrentHomeStreak    |character |                             |
-#'    |CurrentRoadStreak       |character |                             |
-#'    |strCurrentRoadStreak    |character |                             |
-#'    |CurrentStreak           |character |                             |
-#'    |strCurrentStreak        |character |                             |
-#'    |ConferenceGamesBack     |character |                             |
-#'    |DivisionGamesBack       |character |                             |
-#'    |ClinchedConferenceTitle |character |                             |
-#'    |ClinchedDivisionTitle   |character |                             |
-#'    |ClinchedPlayoffBirth    |character |                             |
-#'    |ClinchedPlayIn          |character |                             |
-#'    |EliminatedConference    |character |                             |
-#'    |EliminatedDivision      |character |                             |
-#'    |AheadAtHalf             |character |                             |
-#'    |BehindAtHalf            |character |                             |
-#'    |TiedAtHalf              |character |                             |
-#'    |AheadAtThird            |character |                             |
-#'    |BehindAtThird           |character |                             |
-#'    |TiedAtThird             |character |                             |
-#'    |Score100PTS             |character |                             |
-#'    |OppScore100PTS          |character |                             |
-#'    |OppOver500              |character |                             |
-#'    |LeadInFGPCT             |character |                             |
-#'    |LeadInReb               |character |                             |
-#'    |FewerTurnovers          |character |                             |
-#'    |PointsPG                |character |                             |
-#'    |OppPointsPG             |character |                             |
-#'    |DiffPointsPG            |character |                             |
-#'    |vsEast                  |character |                             |
-#'    |vsAtlantic              |character |                             |
-#'    |vsCentral               |character |                             |
-#'    |vsSoutheast             |character |                             |
-#'    |vsWest                  |character |                             |
-#'    |vsNorthwest             |character |                             |
-#'    |vsPacific               |character |                             |
-#'    |vsSouthwest             |character |                             |
-#'    |Jan                     |character |                             |
-#'    |Feb                     |character |                             |
-#'    |Mar                     |character |                             |
-#'    |Apr                     |character |                             |
-#'    |May                     |character |                             |
-#'    |Jun                     |character |                             |
-#'    |Jul                     |character |                             |
-#'    |Aug                     |character |                             |
-#'    |Sep                     |character |                             |
-#'    |Oct                     |character |                             |
-#'    |Nov                     |character |                             |
-#'    |Dec                     |character |                             |
-#'    |Score_80_Plus           |character |                             |
-#'    |Opp_Score_80_Plus       |character |                             |
-#'    |Score_Below_80          |character |                             |
-#'    |Opp_Score_Below_80      |character |                             |
-#'    |TotalPoints             |character |                             |
-#'    |OppTotalPoints          |character |                             |
-#'    |DiffTotalPoints         |character |                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       LeagueID \tab character \tab  \cr
+#'       SeasonID \tab character \tab  \cr
+#'       TeamID \tab character \tab Teamid. \cr
+#'       TeamCity \tab character \tab Teamcity. \cr
+#'       TeamName \tab character \tab Teamname. \cr
+#'       TeamSlug \tab character \tab  \cr
+#'       Conference \tab character \tab Conference. \cr
+#'       ConferenceRecord \tab character \tab  \cr
+#'       PlayoffRank \tab character \tab  \cr
+#'       ClinchIndicator \tab character \tab  \cr
+#'       Division \tab character \tab Team division. \cr
+#'       DivisionRecord \tab character \tab  \cr
+#'       DivisionRank \tab character \tab  \cr
+#'       WINS \tab character \tab Total wins. \cr
+#'       LOSSES \tab character \tab Total losses. \cr
+#'       WinPCT \tab character \tab  \cr
+#'       LeagueRank \tab character \tab  \cr
+#'       Record \tab character \tab Record string (e.g. '12-4'). \cr
+#'       HOME \tab character \tab Home. \cr
+#'       ROAD \tab character \tab Road. \cr
+#'       L10 \tab character \tab  \cr
+#'       Last10Home \tab character \tab  \cr
+#'       Last10Road \tab character \tab  \cr
+#'       OT \tab character \tab Ot. \cr
+#'       ThreePTSOrLess \tab character \tab  \cr
+#'       TenPTSOrMore \tab character \tab  \cr
+#'       LongHomeStreak \tab character \tab  \cr
+#'       strLongHomeStreak \tab character \tab  \cr
+#'       LongRoadStreak \tab character \tab  \cr
+#'       strLongRoadStreak \tab character \tab  \cr
+#'       LongWinStreak \tab character \tab  \cr
+#'       LongLossStreak \tab character \tab  \cr
+#'       CurrentHomeStreak \tab character \tab  \cr
+#'       strCurrentHomeStreak \tab character \tab  \cr
+#'       CurrentRoadStreak \tab character \tab  \cr
+#'       strCurrentRoadStreak \tab character \tab  \cr
+#'       CurrentStreak \tab character \tab  \cr
+#'       strCurrentStreak \tab character \tab  \cr
+#'       ConferenceGamesBack \tab character \tab  \cr
+#'       DivisionGamesBack \tab character \tab  \cr
+#'       ClinchedConferenceTitle \tab character \tab  \cr
+#'       ClinchedDivisionTitle \tab character \tab  \cr
+#'       ClinchedPlayoffBirth \tab character \tab  \cr
+#'       ClinchedPlayIn \tab character \tab  \cr
+#'       EliminatedConference \tab character \tab  \cr
+#'       EliminatedDivision \tab character \tab  \cr
+#'       AheadAtHalf \tab character \tab  \cr
+#'       BehindAtHalf \tab character \tab  \cr
+#'       TiedAtHalf \tab character \tab  \cr
+#'       AheadAtThird \tab character \tab  \cr
+#'       BehindAtThird \tab character \tab  \cr
+#'       TiedAtThird \tab character \tab  \cr
+#'       Score100PTS \tab character \tab  \cr
+#'       OppScore100PTS \tab character \tab  \cr
+#'       OppOver500 \tab character \tab  \cr
+#'       LeadInFGPCT \tab character \tab  \cr
+#'       LeadInReb \tab character \tab  \cr
+#'       FewerTurnovers \tab character \tab  \cr
+#'       PointsPG \tab character \tab  \cr
+#'       OppPointsPG \tab character \tab  \cr
+#'       DiffPointsPG \tab character \tab  \cr
+#'       vsEast \tab character \tab  \cr
+#'       vsAtlantic \tab character \tab  \cr
+#'       vsCentral \tab character \tab  \cr
+#'       vsSoutheast \tab character \tab  \cr
+#'       vsWest \tab character \tab  \cr
+#'       vsNorthwest \tab character \tab  \cr
+#'       vsPacific \tab character \tab  \cr
+#'       vsSouthwest \tab character \tab  \cr
+#'       Jan \tab character \tab  \cr
+#'       Feb \tab character \tab  \cr
+#'       Mar \tab character \tab  \cr
+#'       Apr \tab character \tab  \cr
+#'       May \tab character \tab  \cr
+#'       Jun \tab character \tab  \cr
+#'       Jul \tab character \tab  \cr
+#'       Aug \tab character \tab  \cr
+#'       Sep \tab character \tab  \cr
+#'       Oct \tab character \tab  \cr
+#'       Nov \tab character \tab  \cr
+#'       Dec \tab character \tab  \cr
+#'       Score_80_Plus \tab character \tab  \cr
+#'       Opp_Score_80_Plus \tab character \tab  \cr
+#'       Score_Below_80 \tab character \tab  \cr
+#'       Opp_Score_Below_80 \tab character \tab  \cr
+#'       TotalPoints \tab character \tab  \cr
+#'       OppTotalPoints \tab character \tab  \cr
+#'       DiffTotalPoints \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -460,100 +466,65 @@ NULL
 #'    **EastConfPlayoffPicture**
 #'
 #'
-#'    |col_name                          |types     |description |
-#'    |:---------------------------------|:---------|:-----------|
-#'    |CONFERENCE                        |character |Conference. |
-#'    |HIGH_SEED_RANK                    |character |            |
-#'    |HIGH_SEED_TEAM                    |character |            |
-#'    |HIGH_SEED_TEAM_ID                 |character |            |
-#'    |LOW_SEED_RANK                     |character |            |
-#'    |LOW_SEED_TEAM                     |character |            |
-#'    |LOW_SEED_TEAM_ID                  |character |            |
-#'    |HIGH_SEED_SERIES_W                |character |            |
-#'    |HIGH_SEED_SERIES_L                |character |            |
-#'    |HIGH_SEED_SERIES_REMAINING_G      |character |            |
-#'    |HIGH_SEED_SERIES_REMAINING_HOME_G |character |            |
-#'    |HIGH_SEED_SERIES_REMAINING_AWAY_G |character |            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       CONFERENCE \tab character \tab Conference. \cr
+#'       HIGH_SEED_RANK \tab character \tab  \cr
+#'       HIGH_SEED_TEAM \tab character \tab  \cr
+#'       HIGH_SEED_TEAM_ID \tab character \tab  \cr
+#'       LOW_SEED_RANK \tab character \tab  \cr
+#'       LOW_SEED_TEAM \tab character \tab  \cr
+#'       LOW_SEED_TEAM_ID \tab character \tab  \cr
+#'       HIGH_SEED_SERIES_W \tab character \tab  \cr
+#'       HIGH_SEED_SERIES_L \tab character \tab  \cr
+#'       HIGH_SEED_SERIES_REMAINING_G \tab character \tab  \cr
+#'       HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \tab  \cr
+#'       HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **WestConfPlayoffPicture**
 #'
 #'
-#'    |col_name                          |types     |description |
-#'    |:---------------------------------|:---------|:-----------|
-#'    |CONFERENCE                        |character |Conference. |
-#'    |HIGH_SEED_RANK                    |character |            |
-#'    |HIGH_SEED_TEAM                    |character |            |
-#'    |HIGH_SEED_TEAM_ID                 |character |            |
-#'    |LOW_SEED_RANK                     |character |            |
-#'    |LOW_SEED_TEAM                     |character |            |
-#'    |LOW_SEED_TEAM_ID                  |character |            |
-#'    |HIGH_SEED_SERIES_W                |character |            |
-#'    |HIGH_SEED_SERIES_L                |character |            |
-#'    |HIGH_SEED_SERIES_REMAINING_G      |character |            |
-#'    |HIGH_SEED_SERIES_REMAINING_HOME_G |character |            |
-#'    |HIGH_SEED_SERIES_REMAINING_AWAY_G |character |            |
+#'    Same columns as the **EastConfPlayoffPicture** table above.
 #'
 #'    **EastConfStandings**
 #'
 #'
-#'    |col_name            |types     |description                                               |
-#'    |:-------------------|:---------|:---------------------------------------------------------|
-#'    |CONFERENCE          |character |Conference.                                               |
-#'    |RANK                |character |Rank.                                                     |
-#'    |TEAM                |character |Team-side label or team identifier.                       |
-#'    |TEAM_SLUG           |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
-#'    |TEAM_ID             |character |Unique team identifier.                                   |
-#'    |WINS                |character |Total wins.                                               |
-#'    |LOSSES              |character |Total losses.                                             |
-#'    |PCT                 |character |Pct.                                                      |
-#'    |DIV                 |character |                                                          |
-#'    |CONF                |character |character.                                                |
-#'    |HOME                |character |Home.                                                     |
-#'    |AWAY                |character |                                                          |
-#'    |GB                  |character |                                                          |
-#'    |GR_OVER_500         |character |                                                          |
-#'    |GR_OVER_500_HOME    |character |                                                          |
-#'    |GR_OVER_500_AWAY    |character |                                                          |
-#'    |GR_UNDER_500        |character |                                                          |
-#'    |GR_UNDER_500_HOME   |character |                                                          |
-#'    |GR_UNDER_500_AWAY   |character |                                                          |
-#'    |RANKING_CRITERIA    |character |                                                          |
-#'    |CLINCHED_PLAYOFFS   |character |                                                          |
-#'    |CLINCHED_CONFERENCE |character |                                                          |
-#'    |CLINCHED_DIVISION   |character |                                                          |
-#'    |ELIMINATED_PLAYOFFS |character |                                                          |
-#'    |SOSA_REMAINING      |character |                                                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       CONFERENCE \tab character \tab Conference. \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       TEAM \tab character \tab Team-side label or team identifier. \cr
+#'       TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       WINS \tab character \tab Total wins. \cr
+#'       LOSSES \tab character \tab Total losses. \cr
+#'       PCT \tab character \tab Pct. \cr
+#'       DIV \tab character \tab  \cr
+#'       CONF \tab character \tab character. \cr
+#'       HOME \tab character \tab Home. \cr
+#'       AWAY \tab character \tab  \cr
+#'       GB \tab character \tab  \cr
+#'       GR_OVER_500 \tab character \tab  \cr
+#'       GR_OVER_500_HOME \tab character \tab  \cr
+#'       GR_OVER_500_AWAY \tab character \tab  \cr
+#'       GR_UNDER_500 \tab character \tab  \cr
+#'       GR_UNDER_500_HOME \tab character \tab  \cr
+#'       GR_UNDER_500_AWAY \tab character \tab  \cr
+#'       RANKING_CRITERIA \tab character \tab  \cr
+#'       CLINCHED_PLAYOFFS \tab character \tab  \cr
+#'       CLINCHED_CONFERENCE \tab character \tab  \cr
+#'       CLINCHED_DIVISION \tab character \tab  \cr
+#'       ELIMINATED_PLAYOFFS \tab character \tab  \cr
+#'       SOSA_REMAINING \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **WestConfStandings**
 #'
 #'
-#'    |col_name            |types     |description                                               |
-#'    |:-------------------|:---------|:---------------------------------------------------------|
-#'    |CONFERENCE          |character |Conference.                                               |
-#'    |RANK                |character |Rank.                                                     |
-#'    |TEAM                |character |Team-side label or team identifier.                       |
-#'    |TEAM_SLUG           |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
-#'    |TEAM_ID             |character |Unique team identifier.                                   |
-#'    |WINS                |character |Total wins.                                               |
-#'    |LOSSES              |character |Total losses.                                             |
-#'    |PCT                 |character |Pct.                                                      |
-#'    |DIV                 |character |                                                          |
-#'    |CONF                |character |character.                                                |
-#'    |HOME                |character |Home.                                                     |
-#'    |AWAY                |character |                                                          |
-#'    |GB                  |character |                                                          |
-#'    |GR_OVER_500         |character |                                                          |
-#'    |GR_OVER_500_HOME    |character |                                                          |
-#'    |GR_OVER_500_AWAY    |character |                                                          |
-#'    |GR_UNDER_500        |character |                                                          |
-#'    |GR_UNDER_500_HOME   |character |                                                          |
-#'    |GR_UNDER_500_AWAY   |character |                                                          |
-#'    |RANKING_CRITERIA    |character |                                                          |
-#'    |CLINCHED_PLAYOFFS   |character |                                                          |
-#'    |CLINCHED_CONFERENCE |character |                                                          |
-#'    |CLINCHED_DIVISION   |character |                                                          |
-#'    |ELIMINATED_PLAYOFFS |character |                                                          |
-#'    |SOSA_REMAINING      |character |                                                          |
+#'    Same columns as the **EastConfStandings** table above.
 #'
 #'    **EastConfRemainingGames**
 #'
@@ -569,13 +540,7 @@ NULL
 #'    **WestConfRemainingGames**
 #'
 #'
-#'    |col_name         |types     |description                         |
-#'    |:----------------|:---------|:-----------------------------------|
-#'    |TEAM             |character |Team-side label or team identifier. |
-#'    |TEAM_ID          |character |Unique team identifier.             |
-#'    |REMAINING_G      |character |                                    |
-#'    |REMAINING_HOME_G |character |                                    |
-#'    |REMAINING_AWAY_G |character |                                    |
+#'    Same columns as the **EastConfRemainingGames** table above.
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -726,36 +691,38 @@ NULL
 #'    **LeagueGameFinderResults**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |SEASON_ID         |character |Unique season identifier.                       |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |GAME_DATE         |character |Game date (YYYY-MM-DD).                         |
-#'    |MATCHUP           |character |Matchup.                                        |
-#'    |WL                |character |Wl.                                             |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |PTS               |character |Points scored.                                  |
-#'    |FGM               |character |Field goals made.                               |
-#'    |FGA               |character |Field goal attempts.                            |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'    |FG3M              |character |Three-point field goals made.                   |
-#'    |FG3A              |character |Three-point field goal attempts.                |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
-#'    |FTM               |character |Free throws made.                               |
-#'    |FTA               |character |Free throw attempts.                            |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
-#'    |OREB              |character |Offensive rebounds.                             |
-#'    |DREB              |character |Defensive rebounds.                             |
-#'    |REB               |character |Total rebounds.                                 |
-#'    |AST               |character |Assists.                                        |
-#'    |STL               |character |Steals.                                         |
-#'    |BLK               |character |Blocks.                                         |
-#'    |TOV               |character |Turnovers.                                      |
-#'    |PF                |character |Personal fouls.                                 |
-#'    |PLUS_MINUS        |character |Plus/minus point differential while on court.   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       SEASON_ID \tab character \tab Unique season identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+#'       MATCHUP \tab character \tab Matchup. \cr
+#'       WL \tab character \tab Wl. \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       TOV \tab character \tab Turnovers. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -995,32 +962,34 @@ NULL
 #'    **Standings**
 #'
 #'
-#'    |col_name              |types     |description                                                           |
-#'    |:---------------------|:---------|:---------------------------------------------------------------------|
-#'    |league_id             |character |League identifier ('10' = WNBA).                                      |
-#'    |season_year           |character |Season year string ('YYYY-YY' format).                                |
-#'    |team_id               |character |Unique team identifier.                                               |
-#'    |team_city             |character |Team city or region (e.g. 'Las Vegas').                               |
-#'    |team_name             |character |Full team display name (e.g. 'Las Vegas Aces').                       |
-#'    |team_abbreviation     |character |Short team abbreviation (e.g. 'LAS').                                 |
-#'    |team_slug             |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces').             |
-#'    |conference            |character |Conference.                                                           |
-#'    |ist_group             |character |Ist group.                                                            |
-#'    |clinch_indicator      |character |Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated). |
-#'    |clinched_ist_knockout |character |Clinched ist knockout.                                                |
-#'    |clinched_ist_group    |character |Clinched ist group.                                                   |
-#'    |clinched_ist_wildcard |character |Clinched ist wildcard.                                                |
-#'    |ist_wildcard_rank     |character |League/season rank for ist wildcard.                                  |
-#'    |ist_group_rank        |character |League/season rank for ist group.                                     |
-#'    |ist_knockout_rank     |character |League/season rank for ist knockout.                                  |
-#'    |wins                  |character |Total wins.                                                           |
-#'    |losses                |character |Total losses.                                                         |
-#'    |pct                   |character |Pct.                                                                  |
-#'    |ist_group_gb          |character |Ist group gb.                                                         |
-#'    |ist_wildcard_gb       |character |Ist wildcard gb.                                                      |
-#'    |diff                  |character |Diff.                                                                 |
-#'    |pts                   |character |Points scored.                                                        |
-#'    |opp_pts               |character |Opponent points.                                                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league_id \tab character \tab League identifier ('10' = WNBA). \cr
+#'       season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+#'       team_id \tab character \tab Unique team identifier. \cr
+#'       team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+#'       conference \tab character \tab Conference. \cr
+#'       ist_group \tab character \tab Ist group. \cr
+#'       clinch_indicator \tab character \tab Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated). \cr
+#'       clinched_ist_knockout \tab character \tab Clinched ist knockout. \cr
+#'       clinched_ist_group \tab character \tab Clinched ist group. \cr
+#'       clinched_ist_wildcard \tab character \tab Clinched ist wildcard. \cr
+#'       ist_wildcard_rank \tab character \tab League/season rank for ist wildcard. \cr
+#'       ist_group_rank \tab character \tab League/season rank for ist group. \cr
+#'       ist_knockout_rank \tab character \tab League/season rank for ist knockout. \cr
+#'       wins \tab character \tab Total wins. \cr
+#'       losses \tab character \tab Total losses. \cr
+#'       pct \tab character \tab Pct. \cr
+#'       ist_group_gb \tab character \tab Ist group gb. \cr
+#'       ist_wildcard_gb \tab character \tab Ist wildcard gb. \cr
+#'       diff \tab character \tab Diff. \cr
+#'       pts \tab character \tab Points scored. \cr
+#'       opp_pts \tab character \tab Opponent points. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

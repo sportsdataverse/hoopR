@@ -23,36 +23,39 @@ nba_gravityleaders(
 \value{
 Returns a named list of data frames: GravityLeaders
 
-\strong{GravityLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   playerid \tab character \tab Playerid. \cr
-   firstname \tab character \tab Firstname. \cr
-   lastname \tab character \tab Lastname. \cr
-   teamid \tab character \tab Teamid. \cr
-   teamabbreviation \tab character \tab Teamabbreviation. \cr
-   teamname \tab character \tab Teamname. \cr
-   teamcity \tab character \tab Teamcity. \cr
-   frames \tab character \tab Frames. \cr
-   gravityscore \tab character \tab Gravityscore. \cr
-   avggravityscore \tab character \tab Avggravityscore. \cr
-   onballperimeterframes \tab character \tab Onballperimeterframes. \cr
-   onballperimetergravityscore \tab character \tab Onballperimetergravityscore. \cr
-   avgonballperimetergravityscore \tab character \tab Avgonballperimetergravityscore. \cr
-   offballperimeterframes \tab character \tab Offballperimeterframes. \cr
-   offballperimetergravityscore \tab character \tab Offballperimetergravityscore. \cr
-   avgoffballperimetergravityscore \tab character \tab Avgoffballperimetergravityscore. \cr
-   onballinteriorframes \tab character \tab Onballinteriorframes. \cr
-   onballinteriorgravityscore \tab character \tab Onballinteriorgravityscore. \cr
-   avgonballinteriorgravityscore \tab character \tab Avgonballinteriorgravityscore. \cr
-   offballinteriorframes \tab character \tab Offballinteriorframes. \cr
-   offballinteriorgravityscore \tab character \tab Offballinteriorgravityscore. \cr
-   avgoffballinteriorgravityscore \tab character \tab Avgoffballinteriorgravityscore. \cr
-   gamesplayed \tab character \tab Gamesplayed. \cr
-   minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-   pts \tab character \tab Points scored. \cr
-   reb \tab character \tab Total rebounds. \cr
-   ast \tab character \tab Assists. \cr
-}
+\strong{GravityLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      playerid \tab character \tab Playerid. \cr
+      firstname \tab character \tab Firstname. \cr
+      lastname \tab character \tab Lastname. \cr
+      teamid \tab character \tab Teamid. \cr
+      teamabbreviation \tab character \tab Teamabbreviation. \cr
+      teamname \tab character \tab Teamname. \cr
+      teamcity \tab character \tab Teamcity. \cr
+      frames \tab character \tab Frames. \cr
+      gravityscore \tab character \tab Gravityscore. \cr
+      avggravityscore \tab character \tab Avggravityscore. \cr
+      onballperimeterframes \tab character \tab Onballperimeterframes. \cr
+      onballperimetergravityscore \tab character \tab Onballperimetergravityscore. \cr
+      avgonballperimetergravityscore \tab character \tab Avgonballperimetergravityscore. \cr
+      offballperimeterframes \tab character \tab Offballperimeterframes. \cr
+      offballperimetergravityscore \tab character \tab Offballperimetergravityscore. \cr
+      avgoffballperimetergravityscore \tab character \tab Avgoffballperimetergravityscore. \cr
+      onballinteriorframes \tab character \tab Onballinteriorframes. \cr
+      onballinteriorgravityscore \tab character \tab Onballinteriorgravityscore. \cr
+      avgonballinteriorgravityscore \tab character \tab Avgonballinteriorgravityscore. \cr
+      offballinteriorframes \tab character \tab Offballinteriorframes. \cr
+      offballinteriorgravityscore \tab character \tab Offballinteriorgravityscore. \cr
+      avgoffballinteriorgravityscore \tab character \tab Avgoffballinteriorgravityscore. \cr
+      gamesplayed \tab character \tab Gamesplayed. \cr
+      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      pts \tab character \tab Points scored. \cr
+      reb \tab character \tab Total rebounds. \cr
+      ast \tab character \tab Assists. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Gravity Leaders}

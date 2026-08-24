@@ -412,9 +412,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}

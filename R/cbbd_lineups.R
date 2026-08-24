@@ -11,18 +11,20 @@
 #'   is a list of lineup members; `team_stats`/`opponent_stats` are flattened
 #'   into prefixed columns. Key identifying columns:
 #'
-#'    |col_name       |types     |description                                  |
-#'    |:--------------|:---------|:--------------------------------------------|
-#'    |team_id        |integer   |Team id.                                      |
-#'    |team           |character |Team name.                                    |
-#'    |conference     |character |Conference name.                              |
-#'    |id_hash        |character |Unique hash identifying the lineup.           |
-#'    |athletes       |list      |List of athletes in the lineup.               |
-#'    |total_seconds  |numeric   |Total seconds the lineup played.              |
-#'    |pace           |numeric   |Lineup pace (possessions).                    |
-#'    |offense_rating |numeric   |Lineup offensive rating.                      |
-#'    |defense_rating |numeric   |Lineup defensive rating.                      |
-#'    |net_rating     |numeric   |Lineup net rating.                            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       id_hash \tab character \tab Unique hash identifying the lineup. \cr
+#'       athletes \tab list \tab List of athletes in the lineup. \cr
+#'       total_seconds \tab numeric \tab Total seconds the lineup played. \cr
+#'       pace \tab numeric \tab Lineup pace (possessions). \cr
+#'       offense_rating \tab numeric \tab Lineup offensive rating. \cr
+#'       defense_rating \tab numeric \tab Lineup defensive rating. \cr
+#'       net_rating \tab numeric \tab Lineup net rating. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Lineups
 #' @importFrom jsonlite fromJSON

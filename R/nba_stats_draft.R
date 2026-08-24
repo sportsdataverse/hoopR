@@ -12,60 +12,64 @@ NULL
 #'    **Picks**
 #'
 #'
-#'    |col_name                         |types     |description                       |
-#'    |:--------------------------------|:---------|:---------------------------------|
-#'    |pick_number                      |integer   |Pick number.                      |
-#'    |pick_details                     |character |Pick details.                     |
-#'    |team_id                          |integer   |Unique team identifier.           |
-#'    |team_type                        |character |Team type.                        |
-#'    |team_season                      |integer   |Team season.                      |
-#'    |team_team_id                     |integer   |Unique identifier for team team.  |
-#'    |team_permalink                   |character |Team permalink.                   |
-#'    |team_app_url                     |character |URL for team app.                 |
-#'    |team_trade_details               |list      |Team trade details.               |
-#'    |team_team_name                   |character |Team team name.                   |
-#'    |team_team_abbr                   |character |Team team abbr.                   |
-#'    |team_picked_first_round          |logical   |Team picked first round.          |
-#'    |team_picked_second_round         |logical   |Team picked second round.         |
-#'    |team_team_record_season          |character |Team team record season.          |
-#'    |team_team_record_wins_and_losses |character |Team team record wins and losses. |
-#'    |team_team_record_season_finish   |character |Team team record season finish.   |
-#'    |team_team_record_playoffs_finish |character |Team team record playoffs finish. |
-#'    |prospect_id                      |integer   |Unique identifier for prospect.   |
-#'    |prospect_type                    |character |Prospect type.                    |
-#'    |prospect_season                  |integer   |Prospect season.                  |
-#'    |prospect_display_name            |character |Prospect display name.            |
-#'    |prospect_first_name              |character |Prospect first name.              |
-#'    |prospect_last_name               |character |Prospect last name.               |
-#'    |prospect_permalink               |character |Prospect permalink.               |
-#'    |prospect_app_url                 |character |URL for prospect app.             |
-#'    |prospect_position                |character |Prospect position.                |
-#'    |prospect_weight_lbs              |integer   |Prospect weight lbs.              |
-#'    |prospect_school                  |character |Prospect school.                  |
-#'    |prospect_status                  |character |Prospect status.                  |
-#'    |prospect_birthday                |character |Prospect birthday.                |
-#'    |prospect_country                 |character |Prospect country.                 |
-#'    |prospect_trade_details           |list      |Prospect trade details.           |
-#'    |prospect_height_feet_and_inches  |character |Prospect height feet and inches.  |
-#'    |prospect_height_inches_only      |integer   |Prospect height inches only.      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       pick_number \tab integer \tab Pick number. \cr
+#'       pick_details \tab character \tab Pick details. \cr
+#'       team_id \tab integer \tab Unique team identifier. \cr
+#'       team_type \tab character \tab Team type. \cr
+#'       team_season \tab integer \tab Team season. \cr
+#'       team_team_id \tab integer \tab Unique identifier for team team. \cr
+#'       team_permalink \tab character \tab Team permalink. \cr
+#'       team_app_url \tab character \tab URL for team app. \cr
+#'       team_trade_details \tab list \tab Team trade details. \cr
+#'       team_team_name \tab character \tab Team team name. \cr
+#'       team_team_abbr \tab character \tab Team team abbr. \cr
+#'       team_picked_first_round \tab logical \tab Team picked first round. \cr
+#'       team_picked_second_round \tab logical \tab Team picked second round. \cr
+#'       team_team_record_season \tab character \tab Team team record season. \cr
+#'       team_team_record_wins_and_losses \tab character \tab Team team record wins and losses. \cr
+#'       team_team_record_season_finish \tab character \tab Team team record season finish. \cr
+#'       team_team_record_playoffs_finish \tab character \tab Team team record playoffs finish. \cr
+#'       prospect_id \tab integer \tab Unique identifier for prospect. \cr
+#'       prospect_type \tab character \tab Prospect type. \cr
+#'       prospect_season \tab integer \tab Prospect season. \cr
+#'       prospect_display_name \tab character \tab Prospect display name. \cr
+#'       prospect_first_name \tab character \tab Prospect first name. \cr
+#'       prospect_last_name \tab character \tab Prospect last name. \cr
+#'       prospect_permalink \tab character \tab Prospect permalink. \cr
+#'       prospect_app_url \tab character \tab URL for prospect app. \cr
+#'       prospect_position \tab character \tab Prospect position. \cr
+#'       prospect_weight_lbs \tab integer \tab Prospect weight lbs. \cr
+#'       prospect_school \tab character \tab Prospect school. \cr
+#'       prospect_status \tab character \tab Prospect status. \cr
+#'       prospect_birthday \tab character \tab Prospect birthday. \cr
+#'       prospect_country \tab character \tab Prospect country. \cr
+#'       prospect_trade_details \tab list \tab Prospect trade details. \cr
+#'       prospect_height_feet_and_inches \tab character \tab Prospect height feet and inches. \cr
+#'       prospect_height_inches_only \tab integer \tab Prospect height inches only. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamsWithoutPicks**
 #'
 #'
-#'    |col_name            |types      |description                                           |
-#'    |:-------------------|:----------|:-----------------------------------------------------|
-#'    |id                  |integer    |Id.                                                   |
-#'    |type                |character  |Record type / category.                               |
-#'    |season              |integer    |Season identifier (4-digit year or 'YYYY-YY' string). |
-#'    |team_id             |integer    |Unique team identifier.                               |
-#'    |team_record         |data.frame |Team record string (e.g. '8-3' or '8-3 Overall').     |
-#'    |permalink           |character  |Permalink.                                            |
-#'    |app_url             |character  |URL for app.                                          |
-#'    |trade_details       |list       |Trade details.                                        |
-#'    |team_name           |character  |Full team display name (e.g. 'Las Vegas Aces').       |
-#'    |team_abbr           |character  |Team abbr.                                            |
-#'    |picked_second_round |logical    |Picked second round.                                  |
-#'    |picked_first_round  |logical    |Picked first round.                                   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Id. \cr
+#'       type \tab character \tab Record type / category. \cr
+#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       team_id \tab integer \tab Unique team identifier. \cr
+#'       team_record \tab data.frame \tab Team record string (e.g. '8-3' or '8-3 Overall'). \cr
+#'       permalink \tab character \tab Permalink. \cr
+#'       app_url \tab character \tab URL for app. \cr
+#'       trade_details \tab list \tab Trade details. \cr
+#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       team_abbr \tab character \tab Team abbr. \cr
+#'       picked_second_round \tab logical \tab Picked second round. \cr
+#'       picked_first_round \tab logical \tab Picked first round. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **LiveDetails**
 #'
@@ -176,55 +180,57 @@ NULL
 #'    **DraftCombineStats**
 #'
 #'
-#'    |col_name                     |types     |description                                           |
-#'    |:----------------------------|:---------|:-----------------------------------------------------|
-#'    |SEASON                       |character |Season identifier (4-digit year or 'YYYY-YY' string). |
-#'    |PLAYER_ID                    |character |Unique player identifier.                             |
-#'    |FIRST_NAME                   |character |Player's first name.                                  |
-#'    |LAST_NAME                    |character |Player's last name.                                   |
-#'    |PLAYER_NAME                  |character |Player name.                                          |
-#'    |POSITION                     |character |Listed roster position (G, F, C, etc.).               |
-#'    |HEIGHT_WO_SHOES              |character |                                                      |
-#'    |HEIGHT_WO_SHOES_FT_IN        |character |                                                      |
-#'    |HEIGHT_W_SHOES               |character |                                                      |
-#'    |HEIGHT_W_SHOES_FT_IN         |character |                                                      |
-#'    |WEIGHT                       |character |Player weight in pounds.                              |
-#'    |WINGSPAN                     |character |                                                      |
-#'    |WINGSPAN_FT_IN               |character |                                                      |
-#'    |STANDING_REACH               |character |                                                      |
-#'    |STANDING_REACH_FT_IN         |character |                                                      |
-#'    |BODY_FAT_PCT                 |character |                                                      |
-#'    |HAND_LENGTH                  |character |                                                      |
-#'    |HAND_WIDTH                   |character |                                                      |
-#'    |STANDING_VERTICAL_LEAP       |character |                                                      |
-#'    |MAX_VERTICAL_LEAP            |character |                                                      |
-#'    |LANE_AGILITY_TIME            |character |                                                      |
-#'    |MODIFIED_LANE_AGILITY_TIME   |character |                                                      |
-#'    |THREE_QUARTER_SPRINT         |character |                                                      |
-#'    |BENCH_PRESS                  |character |                                                      |
-#'    |SPOT_FIFTEEN_CORNER_LEFT     |character |                                                      |
-#'    |SPOT_FIFTEEN_BREAK_LEFT      |character |                                                      |
-#'    |SPOT_FIFTEEN_TOP_KEY         |character |                                                      |
-#'    |SPOT_FIFTEEN_BREAK_RIGHT     |character |                                                      |
-#'    |SPOT_FIFTEEN_CORNER_RIGHT    |character |                                                      |
-#'    |SPOT_COLLEGE_CORNER_LEFT     |character |                                                      |
-#'    |SPOT_COLLEGE_BREAK_LEFT      |character |                                                      |
-#'    |SPOT_COLLEGE_TOP_KEY         |character |                                                      |
-#'    |SPOT_COLLEGE_BREAK_RIGHT     |character |                                                      |
-#'    |SPOT_COLLEGE_CORNER_RIGHT    |character |                                                      |
-#'    |SPOT_NBA_CORNER_LEFT         |character |                                                      |
-#'    |SPOT_NBA_BREAK_LEFT          |character |                                                      |
-#'    |SPOT_NBA_TOP_KEY             |character |                                                      |
-#'    |SPOT_NBA_BREAK_RIGHT         |character |                                                      |
-#'    |SPOT_NBA_CORNER_RIGHT        |character |                                                      |
-#'    |OFF_DRIB_FIFTEEN_BREAK_LEFT  |character |                                                      |
-#'    |OFF_DRIB_FIFTEEN_TOP_KEY     |character |                                                      |
-#'    |OFF_DRIB_FIFTEEN_BREAK_RIGHT |character |                                                      |
-#'    |OFF_DRIB_COLLEGE_BREAK_LEFT  |character |                                                      |
-#'    |OFF_DRIB_COLLEGE_TOP_KEY     |character |                                                      |
-#'    |OFF_DRIB_COLLEGE_BREAK_RIGHT |character |                                                      |
-#'    |ON_MOVE_FIFTEEN              |character |                                                      |
-#'    |ON_MOVE_COLLEGE              |character |                                                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       FIRST_NAME \tab character \tab Player's first name. \cr
+#'       LAST_NAME \tab character \tab Player's last name. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       HEIGHT_WO_SHOES \tab character \tab  \cr
+#'       HEIGHT_WO_SHOES_FT_IN \tab character \tab  \cr
+#'       HEIGHT_W_SHOES \tab character \tab  \cr
+#'       HEIGHT_W_SHOES_FT_IN \tab character \tab  \cr
+#'       WEIGHT \tab character \tab Player weight in pounds. \cr
+#'       WINGSPAN \tab character \tab  \cr
+#'       WINGSPAN_FT_IN \tab character \tab  \cr
+#'       STANDING_REACH \tab character \tab  \cr
+#'       STANDING_REACH_FT_IN \tab character \tab  \cr
+#'       BODY_FAT_PCT \tab character \tab  \cr
+#'       HAND_LENGTH \tab character \tab  \cr
+#'       HAND_WIDTH \tab character \tab  \cr
+#'       STANDING_VERTICAL_LEAP \tab character \tab  \cr
+#'       MAX_VERTICAL_LEAP \tab character \tab  \cr
+#'       LANE_AGILITY_TIME \tab character \tab  \cr
+#'       MODIFIED_LANE_AGILITY_TIME \tab character \tab  \cr
+#'       THREE_QUARTER_SPRINT \tab character \tab  \cr
+#'       BENCH_PRESS \tab character \tab  \cr
+#'       SPOT_FIFTEEN_CORNER_LEFT \tab character \tab  \cr
+#'       SPOT_FIFTEEN_BREAK_LEFT \tab character \tab  \cr
+#'       SPOT_FIFTEEN_TOP_KEY \tab character \tab  \cr
+#'       SPOT_FIFTEEN_BREAK_RIGHT \tab character \tab  \cr
+#'       SPOT_FIFTEEN_CORNER_RIGHT \tab character \tab  \cr
+#'       SPOT_COLLEGE_CORNER_LEFT \tab character \tab  \cr
+#'       SPOT_COLLEGE_BREAK_LEFT \tab character \tab  \cr
+#'       SPOT_COLLEGE_TOP_KEY \tab character \tab  \cr
+#'       SPOT_COLLEGE_BREAK_RIGHT \tab character \tab  \cr
+#'       SPOT_COLLEGE_CORNER_RIGHT \tab character \tab  \cr
+#'       SPOT_NBA_CORNER_LEFT \tab character \tab  \cr
+#'       SPOT_NBA_BREAK_LEFT \tab character \tab  \cr
+#'       SPOT_NBA_TOP_KEY \tab character \tab  \cr
+#'       SPOT_NBA_BREAK_RIGHT \tab character \tab  \cr
+#'       SPOT_NBA_CORNER_RIGHT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_LEFT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_TOP_KEY \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_RIGHT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_LEFT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_TOP_KEY \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_RIGHT \tab character \tab  \cr
+#'       ON_MOVE_FIFTEEN \tab character \tab  \cr
+#'       ON_MOVE_COLLEGE \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -271,12 +277,9 @@ nba_draftcombinestats <- function(
 }
 
 
-#' **Get NBA Stats API Draft Combine Drill Results**
-#' @name nba_draftcombinedrillresults
-NULL
 #' @title
 #' **Get NBA Stats API Draft Combine Drill Results**
-#' @rdname nba_draftcombinedrillresults
+#' @rdname nba_draftcombinestats
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
@@ -286,20 +289,22 @@ NULL
 #'    **Results**
 #'
 #'
-#'    |col_name                   |types     |description                             |
-#'    |:--------------------------|:---------|:---------------------------------------|
-#'    |TEMP_PLAYER_ID             |character |                                        |
-#'    |PLAYER_ID                  |character |Unique player identifier.               |
-#'    |FIRST_NAME                 |character |Player's first name.                    |
-#'    |LAST_NAME                  |character |Player's last name.                     |
-#'    |PLAYER_NAME                |character |Player name.                            |
-#'    |POSITION                   |character |Listed roster position (G, F, C, etc.). |
-#'    |STANDING_VERTICAL_LEAP     |character |                                        |
-#'    |MAX_VERTICAL_LEAP          |character |                                        |
-#'    |LANE_AGILITY_TIME          |character |                                        |
-#'    |MODIFIED_LANE_AGILITY_TIME |character |                                        |
-#'    |THREE_QUARTER_SPRINT       |character |                                        |
-#'    |BENCH_PRESS                |character |                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEMP_PLAYER_ID \tab character \tab  \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       FIRST_NAME \tab character \tab Player's first name. \cr
+#'       LAST_NAME \tab character \tab Player's last name. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       STANDING_VERTICAL_LEAP \tab character \tab  \cr
+#'       MAX_VERTICAL_LEAP \tab character \tab  \cr
+#'       LANE_AGILITY_TIME \tab character \tab  \cr
+#'       MODIFIED_LANE_AGILITY_TIME \tab character \tab  \cr
+#'       THREE_QUARTER_SPRINT \tab character \tab  \cr
+#'       BENCH_PRESS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -347,12 +352,9 @@ nba_draftcombinedrillresults <- function(
 }
 
 
-#' **Get NBA Stats API Draft Combine Non-Stationary Shooting**
-#' @name nba_draftcombinenonstationaryshooting
-NULL
 #' @title
 #' **Get NBA Stats API Draft Combine Non-Stationary Shooting**
-#' @rdname nba_draftcombinenonstationaryshooting
+#' @rdname nba_draftcombinestats
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
@@ -362,38 +364,40 @@ NULL
 #'    **Results**
 #'
 #'
-#'    |col_name                             |types     |description                             |
-#'    |:------------------------------------|:---------|:---------------------------------------|
-#'    |TEMP_PLAYER_ID                       |character |                                        |
-#'    |PLAYER_ID                            |character |Unique player identifier.               |
-#'    |FIRST_NAME                           |character |Player's first name.                    |
-#'    |LAST_NAME                            |character |Player's last name.                     |
-#'    |PLAYER_NAME                          |character |Player name.                            |
-#'    |POSITION                             |character |Listed roster position (G, F, C, etc.). |
-#'    |OFF_DRIB_FIFTEEN_BREAK_LEFT_MADE     |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_BREAK_LEFT_ATTEMPT  |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_BREAK_LEFT_PCT      |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_TOP_KEY_MADE        |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_TOP_KEY_ATTEMPT     |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_TOP_KEY_PCT         |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_BREAK_RIGHT_MADE    |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_BREAK_RIGHT_ATTEMPT |character |                                        |
-#'    |OFF_DRIB_FIFTEEN_BREAK_RIGHT_PCT     |character |                                        |
-#'    |OFF_DRIB_COLLEGE_BREAK_LEFT_MADE     |character |                                        |
-#'    |OFF_DRIB_COLLEGE_BREAK_LEFT_ATTEMPT  |character |                                        |
-#'    |OFF_DRIB_COLLEGE_BREAK_LEFT_PCT      |character |                                        |
-#'    |OFF_DRIB_COLLEGE_TOP_KEY_MADE        |character |                                        |
-#'    |OFF_DRIB_COLLEGE_TOP_KEY_ATTEMPT     |character |                                        |
-#'    |OFF_DRIB_COLLEGE_TOP_KEY_PCT         |character |                                        |
-#'    |OFF_DRIB_COLLEGE_BREAK_RIGHT_MADE    |character |                                        |
-#'    |OFF_DRIB_COLLEGE_BREAK_RIGHT_ATTEMPT |character |                                        |
-#'    |OFF_DRIB_COLLEGE_BREAK_RIGHT_PCT     |character |                                        |
-#'    |ON_MOVE_FIFTEEN_MADE                 |character |                                        |
-#'    |ON_MOVE_FIFTEEN_ATTEMPT              |character |                                        |
-#'    |ON_MOVE_FIFTEEN_PCT                  |character |                                        |
-#'    |ON_MOVE_COLLEGE_MADE                 |character |                                        |
-#'    |ON_MOVE_COLLEGE_ATTEMPT              |character |                                        |
-#'    |ON_MOVE_COLLEGE_PCT                  |character |                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEMP_PLAYER_ID \tab character \tab  \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       FIRST_NAME \tab character \tab Player's first name. \cr
+#'       LAST_NAME \tab character \tab Player's last name. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_LEFT_MADE \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_LEFT_PCT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_TOP_KEY_MADE \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_TOP_KEY_ATTEMPT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_TOP_KEY_PCT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_RIGHT_MADE \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       OFF_DRIB_FIFTEEN_BREAK_RIGHT_PCT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_LEFT_MADE \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_LEFT_PCT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_TOP_KEY_MADE \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_TOP_KEY_ATTEMPT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_TOP_KEY_PCT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_RIGHT_MADE \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       OFF_DRIB_COLLEGE_BREAK_RIGHT_PCT \tab character \tab  \cr
+#'       ON_MOVE_FIFTEEN_MADE \tab character \tab  \cr
+#'       ON_MOVE_FIFTEEN_ATTEMPT \tab character \tab  \cr
+#'       ON_MOVE_FIFTEEN_PCT \tab character \tab  \cr
+#'       ON_MOVE_COLLEGE_MADE \tab character \tab  \cr
+#'       ON_MOVE_COLLEGE_ATTEMPT \tab character \tab  \cr
+#'       ON_MOVE_COLLEGE_PCT \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -441,12 +445,9 @@ nba_draftcombinenonstationaryshooting <- function(
 }
 
 
-#' **Get NBA Stats API Draft Combine Player Anthropological Measurements**
-#' @name nba_draftcombineplayeranthro
-NULL
 #' @title
 #' **Get NBA Stats API Draft Combine Player Anthropological Measurements**
-#' @rdname nba_draftcombineplayeranthro
+#' @rdname nba_draftcombinestats
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
@@ -456,26 +457,28 @@ NULL
 #'    **Results**
 #'
 #'
-#'    |col_name              |types     |description                             |
-#'    |:---------------------|:---------|:---------------------------------------|
-#'    |TEMP_PLAYER_ID        |character |                                        |
-#'    |PLAYER_ID             |character |Unique player identifier.               |
-#'    |FIRST_NAME            |character |Player's first name.                    |
-#'    |LAST_NAME             |character |Player's last name.                     |
-#'    |PLAYER_NAME           |character |Player name.                            |
-#'    |POSITION              |character |Listed roster position (G, F, C, etc.). |
-#'    |HEIGHT_WO_SHOES       |character |                                        |
-#'    |HEIGHT_WO_SHOES_FT_IN |character |                                        |
-#'    |HEIGHT_W_SHOES        |character |                                        |
-#'    |HEIGHT_W_SHOES_FT_IN  |character |                                        |
-#'    |WEIGHT                |character |Player weight in pounds.                |
-#'    |WINGSPAN              |character |                                        |
-#'    |WINGSPAN_FT_IN        |character |                                        |
-#'    |STANDING_REACH        |character |                                        |
-#'    |STANDING_REACH_FT_IN  |character |                                        |
-#'    |BODY_FAT_PCT          |character |                                        |
-#'    |HAND_LENGTH           |character |                                        |
-#'    |HAND_WIDTH            |character |                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEMP_PLAYER_ID \tab character \tab  \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       FIRST_NAME \tab character \tab Player's first name. \cr
+#'       LAST_NAME \tab character \tab Player's last name. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       HEIGHT_WO_SHOES \tab character \tab  \cr
+#'       HEIGHT_WO_SHOES_FT_IN \tab character \tab  \cr
+#'       HEIGHT_W_SHOES \tab character \tab  \cr
+#'       HEIGHT_W_SHOES_FT_IN \tab character \tab  \cr
+#'       WEIGHT \tab character \tab Player weight in pounds. \cr
+#'       WINGSPAN \tab character \tab  \cr
+#'       WINGSPAN_FT_IN \tab character \tab  \cr
+#'       STANDING_REACH \tab character \tab  \cr
+#'       STANDING_REACH_FT_IN \tab character \tab  \cr
+#'       BODY_FAT_PCT \tab character \tab  \cr
+#'       HAND_LENGTH \tab character \tab  \cr
+#'       HAND_WIDTH \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -522,12 +525,9 @@ nba_draftcombineplayeranthro <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Draft Combine - Spot Shooting**
-#' @name nba_draftcombinespotshooting
-NULL
 #' @title
 #' **Get NBA Stats API Draft Combine - Spot Shooting**
-#' @rdname nba_draftcombinespotshooting
+#' @rdname nba_draftcombinestats
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param season_year season_year
@@ -537,59 +537,61 @@ NULL
 #'    **Results**
 #'
 #'
-#'    |col_name                     |types     |description                             |
-#'    |:----------------------------|:---------|:---------------------------------------|
-#'    |TEMP_PLAYER_ID               |character |                                        |
-#'    |PLAYER_ID                    |character |Unique player identifier.               |
-#'    |FIRST_NAME                   |character |Player's first name.                    |
-#'    |LAST_NAME                    |character |Player's last name.                     |
-#'    |PLAYER_NAME                  |character |Player name.                            |
-#'    |POSITION                     |character |Listed roster position (G, F, C, etc.). |
-#'    |FIFTEEN_CORNER_LEFT_MADE     |character |                                        |
-#'    |FIFTEEN_CORNER_LEFT_ATTEMPT  |character |                                        |
-#'    |FIFTEEN_CORNER_LEFT_PCT      |character |                                        |
-#'    |FIFTEEN_BREAK_LEFT_MADE      |character |                                        |
-#'    |FIFTEEN_BREAK_LEFT_ATTEMPT   |character |                                        |
-#'    |FIFTEEN_BREAK_LEFT_PCT       |character |                                        |
-#'    |FIFTEEN_TOP_KEY_MADE         |character |                                        |
-#'    |FIFTEEN_TOP_KEY_ATTEMPT      |character |                                        |
-#'    |FIFTEEN_TOP_KEY_PCT          |character |                                        |
-#'    |FIFTEEN_BREAK_RIGHT_MADE     |character |                                        |
-#'    |FIFTEEN_BREAK_RIGHT_ATTEMPT  |character |                                        |
-#'    |FIFTEEN_BREAK_RIGHT_PCT      |character |                                        |
-#'    |FIFTEEN_CORNER_RIGHT_MADE    |character |                                        |
-#'    |FIFTEEN_CORNER_RIGHT_ATTEMPT |character |                                        |
-#'    |FIFTEEN_CORNER_RIGHT_PCT     |character |                                        |
-#'    |COLLEGE_CORNER_LEFT_MADE     |character |                                        |
-#'    |COLLEGE_CORNER_LEFT_ATTEMPT  |character |                                        |
-#'    |COLLEGE_CORNER_LEFT_PCT      |character |                                        |
-#'    |COLLEGE_BREAK_LEFT_MADE      |character |                                        |
-#'    |COLLEGE_BREAK_LEFT_ATTEMPT   |character |                                        |
-#'    |COLLEGE_BREAK_LEFT_PCT       |character |                                        |
-#'    |COLLEGE_TOP_KEY_MADE         |character |                                        |
-#'    |COLLEGE_TOP_KEY_ATTEMPT      |character |                                        |
-#'    |COLLEGE_TOP_KEY_PCT          |character |                                        |
-#'    |COLLEGE_BREAK_RIGHT_MADE     |character |                                        |
-#'    |COLLEGE_BREAK_RIGHT_ATTEMPT  |character |                                        |
-#'    |COLLEGE_BREAK_RIGHT_PCT      |character |                                        |
-#'    |COLLEGE_CORNER_RIGHT_MADE    |character |                                        |
-#'    |COLLEGE_CORNER_RIGHT_ATTEMPT |character |                                        |
-#'    |COLLEGE_CORNER_RIGHT_PCT     |character |                                        |
-#'    |NBA_CORNER_LEFT_MADE         |character |                                        |
-#'    |NBA_CORNER_LEFT_ATTEMPT      |character |                                        |
-#'    |NBA_CORNER_LEFT_PCT          |character |                                        |
-#'    |NBA_BREAK_LEFT_MADE          |character |                                        |
-#'    |NBA_BREAK_LEFT_ATTEMPT       |character |                                        |
-#'    |NBA_BREAK_LEFT_PCT           |character |                                        |
-#'    |NBA_TOP_KEY_MADE             |character |                                        |
-#'    |NBA_TOP_KEY_ATTEMPT          |character |                                        |
-#'    |NBA_TOP_KEY_PCT              |character |                                        |
-#'    |NBA_BREAK_RIGHT_MADE         |character |                                        |
-#'    |NBA_BREAK_RIGHT_ATTEMPT      |character |                                        |
-#'    |NBA_BREAK_RIGHT_PCT          |character |                                        |
-#'    |NBA_CORNER_RIGHT_MADE        |character |                                        |
-#'    |NBA_CORNER_RIGHT_ATTEMPT     |character |                                        |
-#'    |NBA_CORNER_RIGHT_PCT         |character |                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEMP_PLAYER_ID \tab character \tab  \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       FIRST_NAME \tab character \tab Player's first name. \cr
+#'       LAST_NAME \tab character \tab Player's last name. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       FIFTEEN_CORNER_LEFT_MADE \tab character \tab  \cr
+#'       FIFTEEN_CORNER_LEFT_ATTEMPT \tab character \tab  \cr
+#'       FIFTEEN_CORNER_LEFT_PCT \tab character \tab  \cr
+#'       FIFTEEN_BREAK_LEFT_MADE \tab character \tab  \cr
+#'       FIFTEEN_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+#'       FIFTEEN_BREAK_LEFT_PCT \tab character \tab  \cr
+#'       FIFTEEN_TOP_KEY_MADE \tab character \tab  \cr
+#'       FIFTEEN_TOP_KEY_ATTEMPT \tab character \tab  \cr
+#'       FIFTEEN_TOP_KEY_PCT \tab character \tab  \cr
+#'       FIFTEEN_BREAK_RIGHT_MADE \tab character \tab  \cr
+#'       FIFTEEN_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       FIFTEEN_BREAK_RIGHT_PCT \tab character \tab  \cr
+#'       FIFTEEN_CORNER_RIGHT_MADE \tab character \tab  \cr
+#'       FIFTEEN_CORNER_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       FIFTEEN_CORNER_RIGHT_PCT \tab character \tab  \cr
+#'       COLLEGE_CORNER_LEFT_MADE \tab character \tab  \cr
+#'       COLLEGE_CORNER_LEFT_ATTEMPT \tab character \tab  \cr
+#'       COLLEGE_CORNER_LEFT_PCT \tab character \tab  \cr
+#'       COLLEGE_BREAK_LEFT_MADE \tab character \tab  \cr
+#'       COLLEGE_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+#'       COLLEGE_BREAK_LEFT_PCT \tab character \tab  \cr
+#'       COLLEGE_TOP_KEY_MADE \tab character \tab  \cr
+#'       COLLEGE_TOP_KEY_ATTEMPT \tab character \tab  \cr
+#'       COLLEGE_TOP_KEY_PCT \tab character \tab  \cr
+#'       COLLEGE_BREAK_RIGHT_MADE \tab character \tab  \cr
+#'       COLLEGE_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       COLLEGE_BREAK_RIGHT_PCT \tab character \tab  \cr
+#'       COLLEGE_CORNER_RIGHT_MADE \tab character \tab  \cr
+#'       COLLEGE_CORNER_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       COLLEGE_CORNER_RIGHT_PCT \tab character \tab  \cr
+#'       NBA_CORNER_LEFT_MADE \tab character \tab  \cr
+#'       NBA_CORNER_LEFT_ATTEMPT \tab character \tab  \cr
+#'       NBA_CORNER_LEFT_PCT \tab character \tab  \cr
+#'       NBA_BREAK_LEFT_MADE \tab character \tab  \cr
+#'       NBA_BREAK_LEFT_ATTEMPT \tab character \tab  \cr
+#'       NBA_BREAK_LEFT_PCT \tab character \tab  \cr
+#'       NBA_TOP_KEY_MADE \tab character \tab  \cr
+#'       NBA_TOP_KEY_ATTEMPT \tab character \tab  \cr
+#'       NBA_TOP_KEY_PCT \tab character \tab  \cr
+#'       NBA_BREAK_RIGHT_MADE \tab character \tab  \cr
+#'       NBA_BREAK_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       NBA_BREAK_RIGHT_PCT \tab character \tab  \cr
+#'       NBA_CORNER_RIGHT_MADE \tab character \tab  \cr
+#'       NBA_CORNER_RIGHT_ATTEMPT \tab character \tab  \cr
+#'       NBA_CORNER_RIGHT_PCT \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -654,22 +656,24 @@ nba_draftcombinespotshooting <- function(
 #'    **DraftHistory**
 #'
 #'
-#'    |col_name            |types     |description                                           |
-#'    |:-------------------|:---------|:-----------------------------------------------------|
-#'    |PERSON_ID           |character |Unique player identifier (V3 endpoints).              |
-#'    |PLAYER_NAME         |character |Player name.                                          |
-#'    |SEASON              |character |Season identifier (4-digit year or 'YYYY-YY' string). |
-#'    |ROUND_NUMBER        |character |Numeric round.                                        |
-#'    |ROUND_PICK          |character |                                                      |
-#'    |OVERALL_PICK        |character |                                                      |
-#'    |DRAFT_TYPE          |character |                                                      |
-#'    |TEAM_ID             |character |Unique team identifier.                               |
-#'    |TEAM_CITY           |character |Team city or region (e.g. 'Las Vegas').               |
-#'    |TEAM_NAME           |character |Full team display name (e.g. 'Las Vegas Aces').       |
-#'    |TEAM_ABBREVIATION   |character |Short team abbreviation (e.g. 'LAS').                 |
-#'    |ORGANIZATION        |character |                                                      |
-#'    |ORGANIZATION_TYPE   |character |                                                      |
-#'    |PLAYER_PROFILE_FLAG |character |                                                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       ROUND_NUMBER \tab character \tab Numeric round. \cr
+#'       ROUND_PICK \tab character \tab  \cr
+#'       OVERALL_PICK \tab character \tab  \cr
+#'       DRAFT_TYPE \tab character \tab  \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       ORGANIZATION \tab character \tab  \cr
+#'       ORGANIZATION_TYPE \tab character \tab  \cr
+#'       PLAYER_PROFILE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

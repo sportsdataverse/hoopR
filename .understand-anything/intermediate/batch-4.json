@@ -1,0 +1,255 @@
+{
+  "nodes": [
+    {
+      "id": "file:R/bref_injuries.R",
+      "type": "file",
+      "name": "bref_injuries.R",
+      "filePath": "R/bref_injuries.R",
+      "summary": "Scrapes the current NBA injury report from Basketball-Reference and returns it as a tidy data frame via the shared bref helper layer.",
+      "tags": ["web-scraper", "basketball-reference", "nba", "injuries", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_player_bios.R",
+      "type": "file",
+      "name": "bref_player_bios.R",
+      "filePath": "R/bref_player_bios.R",
+      "summary": "Scrapes player biographical information (height, weight, birth date, college, etc.) from a player's Basketball-Reference page.",
+      "tags": ["web-scraper", "basketball-reference", "player-bio", "rvest", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_player_game_log.R",
+      "type": "file",
+      "name": "bref_player_game_log.R",
+      "filePath": "R/bref_player_game_log.R",
+      "summary": "Scrapes a player's per-game game log for a given season from Basketball-Reference and returns the box-score rows as a tidy frame.",
+      "tags": ["web-scraper", "basketball-reference", "game-log", "player-stats", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_players_stats.R",
+      "type": "file",
+      "name": "bref_players_stats.R",
+      "filePath": "R/bref_players_stats.R",
+      "summary": "Scrapes season-level player statistics tables (per-game, totals, advanced, etc.) from Basketball-Reference league pages.",
+      "tags": ["web-scraper", "basketball-reference", "player-stats", "season-stats", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_standings.R",
+      "type": "file",
+      "name": "bref_standings.R",
+      "filePath": "R/bref_standings.R",
+      "summary": "Scrapes NBA conference/division standings for a season from Basketball-Reference and returns them as a tidy frame.",
+      "tags": ["web-scraper", "basketball-reference", "standings", "nba", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_team_roster.R",
+      "type": "file",
+      "name": "bref_team_roster.R",
+      "filePath": "R/bref_team_roster.R",
+      "summary": "Scrapes a team's season roster from Basketball-Reference and returns player listings as a tidy data frame.",
+      "tags": ["web-scraper", "basketball-reference", "roster", "team", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_teams_stats.R",
+      "type": "file",
+      "name": "bref_teams_stats.R",
+      "filePath": "R/bref_teams_stats.R",
+      "summary": "Scrapes team-level season statistics tables (per-game, opponent, advanced) from Basketball-Reference league pages.",
+      "tags": ["web-scraper", "basketball-reference", "team-stats", "season-stats", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/bref_utils.R",
+      "type": "file",
+      "name": "bref_utils.R",
+      "filePath": "R/bref_utils.R",
+      "summary": "Shared internal helper layer for the Basketball-Reference scrapers: .bref_text fetches a page body, .bref_table parses an HTML table, and .bref_type_convert coerces column types.",
+      "tags": ["utility", "basketball-reference", "http", "html-parsing", "rvest"],
+      "complexity": "moderate",
+      "languageNotes": "Internal (dot-prefixed) helpers wrap httr::GET + rvest::read_html so each endpoint scraper stays thin."
+    },
+    {
+      "id": "file:R/cbbd_api_key.R",
+      "type": "file",
+      "name": "cbbd_api_key.R",
+      "filePath": "R/cbbd_api_key.R",
+      "summary": "Manages the CollegeBasketballData API key (cbbd_key/has_cbbd_key/check_cbbd_key) and provides the shared authenticated .cbbd_get request helper used by every cbbd_* endpoint wrapper.",
+      "tags": ["api-client", "authentication", "config", "collegebasketballdata", "utility"],
+      "complexity": "moderate",
+      "languageNotes": "Key is read from the CBD_API_KEY system env var; .cbbd_get centralizes the bearer-token GET + JSON parse."
+    },
+    {
+      "id": "file:R/cbbd_conferences.R",
+      "type": "file",
+      "name": "cbbd_conferences.R",
+      "filePath": "R/cbbd_conferences.R",
+      "summary": "Wraps the CollegeBasketballData conferences endpoints (cbbd_conferences and cbbd_conferences_history) returning conference metadata as tidy frames.",
+      "tags": ["api-client", "collegebasketballdata", "conferences", "mbb", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_draft.R",
+      "type": "file",
+      "name": "cbbd_draft.R",
+      "filePath": "R/cbbd_draft.R",
+      "summary": "Wraps the CollegeBasketballData NBA-draft endpoints (cbbd_draft_teams, cbbd_draft_positions, cbbd_draft_picks) for draft-pick and prospect data.",
+      "tags": ["api-client", "collegebasketballdata", "draft", "mbb", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_games.R",
+      "type": "file",
+      "name": "cbbd_games.R",
+      "filePath": "R/cbbd_games.R",
+      "summary": "Wraps the CollegeBasketballData games surface (cbbd_games, cbbd_games_media, cbbd_games_teams, cbbd_games_players, cbbd_scoreboard) returning schedule, box-score, and scoreboard frames.",
+      "tags": ["api-client", "collegebasketballdata", "games", "box-score", "data-loader"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/cbbd_lines.R",
+      "type": "file",
+      "name": "cbbd_lines.R",
+      "filePath": "R/cbbd_lines.R",
+      "summary": "Wraps the CollegeBasketballData betting-lines endpoints (cbbd_lines and cbbd_lines_providers) returning game odds and provider metadata.",
+      "tags": ["api-client", "collegebasketballdata", "betting-lines", "odds", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_lineups.R",
+      "type": "file",
+      "name": "cbbd_lineups.R",
+      "filePath": "R/cbbd_lineups.R",
+      "summary": "Wraps the CollegeBasketballData lineup-statistics endpoints (cbbd_lineups_team and cbbd_lineups_game) returning five-man lineup metrics.",
+      "tags": ["api-client", "collegebasketballdata", "lineups", "advanced-stats", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_plays.R",
+      "type": "file",
+      "name": "cbbd_plays.R",
+      "filePath": "R/cbbd_plays.R",
+      "summary": "Wraps the CollegeBasketballData play-by-play surface (by game, player, team, date, and tournament, plus cbbd_play_types) returning detailed PBP event frames.",
+      "tags": ["api-client", "collegebasketballdata", "play-by-play", "pbp", "data-loader"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/cbbd_rankings.R",
+      "type": "file",
+      "name": "cbbd_rankings.R",
+      "filePath": "R/cbbd_rankings.R",
+      "summary": "Wraps the CollegeBasketballData poll-rankings endpoint (cbbd_rankings) returning AP and Coaches poll standings.",
+      "tags": ["api-client", "collegebasketballdata", "rankings", "polls", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_ratings.R",
+      "type": "file",
+      "name": "cbbd_ratings.R",
+      "filePath": "R/cbbd_ratings.R",
+      "summary": "Wraps the CollegeBasketballData team-ratings endpoints (cbbd_ratings_srs, cbbd_ratings_adjusted, cbbd_ratings_elo) returning SRS, adjusted-efficiency, and Elo ratings.",
+      "tags": ["api-client", "collegebasketballdata", "ratings", "advanced-stats", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_recruiting.R",
+      "type": "file",
+      "name": "cbbd_recruiting.R",
+      "filePath": "R/cbbd_recruiting.R",
+      "summary": "Wraps the CollegeBasketballData recruiting endpoints (cbbd_recruiting_players, cbbd_recruiting_teams, cbbd_recruiting_portal) returning prospect rankings and transfer-portal data.",
+      "tags": ["api-client", "collegebasketballdata", "recruiting", "transfer-portal", "data-loader"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/cbbd_stats.R",
+      "type": "file",
+      "name": "cbbd_stats.R",
+      "filePath": "R/cbbd_stats.R",
+      "summary": "Wraps the CollegeBasketballData statistics surface (team-season, team-leaderboard, team/player shooting, player-season) returning aggregate and shooting-split stat frames.",
+      "tags": ["api-client", "collegebasketballdata", "statistics", "shooting", "data-loader"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/cbbd_substitutions.R",
+      "type": "file",
+      "name": "cbbd_substitutions.R",
+      "filePath": "R/cbbd_substitutions.R",
+      "summary": "Wraps the CollegeBasketballData substitution endpoints (by game, player, and team) returning on/off substitution event data.",
+      "tags": ["api-client", "collegebasketballdata", "substitutions", "lineups", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_teams.R",
+      "type": "file",
+      "name": "cbbd_teams.R",
+      "filePath": "R/cbbd_teams.R",
+      "summary": "Wraps the CollegeBasketballData teams endpoints (cbbd_teams and cbbd_teams_roster) returning team metadata and season rosters.",
+      "tags": ["api-client", "collegebasketballdata", "teams", "roster", "data-loader"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/cbbd_venues.R",
+      "type": "file",
+      "name": "cbbd_venues.R",
+      "filePath": "R/cbbd_venues.R",
+      "summary": "Wraps the CollegeBasketballData venues endpoint (cbbd_venues) returning arena/venue metadata as a tidy frame.",
+      "tags": ["api-client", "collegebasketballdata", "venues", "mbb", "data-loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/crosswalk_basketball.R",
+      "type": "file",
+      "name": "crosswalk_basketball.R",
+      "filePath": "R/crosswalk_basketball.R",
+      "summary": "Internal, deterministic normalization engine for NBA/MBB cross-source crosswalks: name/team normalizers, timezone conversion, and fuzzy matching used to reproduce cached crosswalk artifacts exactly.",
+      "tags": ["utility", "crosswalk", "normalization", "fuzzy-matching", "internal"],
+      "complexity": "complex",
+      "languageNotes": "All helpers are dot-prefixed (unexported) and deterministic so a cached loader reproduces the live builder; uses stringi/stringr for Latin-ASCII + name cleaning."
+    },
+    {
+      "id": "file:R/data.R",
+      "type": "file",
+      "name": "data.R",
+      "filePath": "R/data.R",
+      "summary": "Roxygen dataset documentation for teams_links, the men's college basketball KenPom team-link reference dictionary (357 rows, 6 variables) bundled with the package.",
+      "tags": ["data-documentation", "kenpom", "mbb", "reference-data", "roxygen"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/espn_basketball_athlete_career_helpers.R",
+      "type": "file",
+      "name": "espn_basketball_athlete_career_helpers.R",
+      "filePath": "R/espn_basketball_athlete_career_helpers.R",
+      "summary": "Internal ESPN basketball helpers for career-level athlete endpoints (athlete seasons index, career statistics, and v2 event log) shared across the league-specific athlete wrappers.",
+      "tags": ["api-client", "espn", "athlete-career", "internal", "utility"],
+      "complexity": "complex",
+      "languageNotes": "Dot-prefixed @noRd helpers validate the league slug then build ESPN core-API requests for athletes/{id}/seasons and statistics."
+    }
+  ],
+  "edges": [
+    {"source": "file:R/bref_injuries.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/bref_player_bios.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/bref_player_game_log.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/bref_players_stats.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/bref_standings.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/bref_team_roster.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/bref_teams_stats.R", "target": "file:R/bref_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_conferences.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_draft.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_games.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_lines.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_lineups.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_plays.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_rankings.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_ratings.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_recruiting.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_stats.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_substitutions.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_teams.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/cbbd_venues.R", "target": "file:R/cbbd_api_key.R", "type": "depends_on", "direction": "forward", "weight": 0.6}
+  ]
+}

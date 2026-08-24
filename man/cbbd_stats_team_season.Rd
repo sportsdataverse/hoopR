@@ -2,6 +2,9 @@
 % Please edit documentation in R/cbbd_stats.R
 \name{cbbd_stats_team_season}
 \alias{cbbd_stats_team_season}
+\alias{cbbd_stats_team_shooting_season}
+\alias{cbbd_stats_player_season}
+\alias{cbbd_stats_player_shooting_season}
 \title{\strong{CBD Team Season Stats}}
 \usage{
 cbbd_stats_team_season(
@@ -12,9 +15,36 @@ cbbd_stats_team_season(
   start_date_range = NULL,
   end_date_range = NULL
 )
+
+cbbd_stats_team_shooting_season(
+  season = most_recent_mbb_season(),
+  season_type = NULL,
+  team = NULL,
+  conference = NULL,
+  start_date_range = NULL,
+  end_date_range = NULL
+)
+
+cbbd_stats_player_season(
+  season = most_recent_mbb_season(),
+  season_type = NULL,
+  team = NULL,
+  conference = NULL,
+  start_date_range = NULL,
+  end_date_range = NULL
+)
+
+cbbd_stats_player_shooting_season(
+  season = most_recent_mbb_season(),
+  season_type = NULL,
+  team = NULL,
+  conference = NULL,
+  start_date_range = NULL,
+  end_date_range = NULL
+)
 }
 \arguments{
-\item{season}{(\emph{integer} optional): Season, 4-digit ending-year (e.g. \code{2024}).
+\item{season}{(\emph{integer} required): Season, 4-digit ending-year (e.g. \code{2024}).
 Defaults to \code{most_recent_mbb_season()}.}
 
 \item{season_type}{(\emph{character} optional): One of \code{regular}, \code{postseason},
@@ -31,33 +61,97 @@ Defaults to \code{most_recent_mbb_season()}.}
 \value{
 A \code{hoopR_data} tibble with one row per team-season. The \code{team_stats}
 and \code{opponent_stats} objects are flattened into \verb{team_stats_*} /
-\verb{opponent_stats_*} columns. Key identifying columns:\tabular{lll}{
+\verb{opponent_stats_*} columns. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      games \tab integer \tab Games played. \cr
+      wins \tab numeric \tab Wins. \cr
+      losses \tab numeric \tab Losses. \cr
+      total_minutes \tab numeric \tab Total minutes played. \cr
+      pace \tab numeric \tab Average pace (possessions). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team-season. Shot-type objects
+(\code{dunks}, \code{layups}, \code{tip_ins}, \code{two_point_jumpers}, \code{three_point_jumpers},
+\code{free_throws}, \code{attempts_breakdown}) are flattened into prefixed columns.
+Key identifying columns:\tabular{lll}{
    col_name \tab types \tab description \cr
    season \tab integer \tab Season (4-digit ending-year). \cr
    team_id \tab integer \tab Team id. \cr
    team \tab character \tab Team name. \cr
    conference \tab character \tab Conference name. \cr
-   games \tab integer \tab Games played. \cr
-   wins \tab numeric \tab Wins. \cr
-   losses \tab numeric \tab Losses. \cr
-   total_minutes \tab numeric \tab Total minutes played. \cr
-   pace \tab numeric \tab Average pace (possessions). \cr
+   tracked_shots \tab integer \tab Number of tracked shots. \cr
+   assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
 }
+
+A \code{hoopR_data} tibble with one row per player-season. Nested
+statistic objects (\code{field_goals}, \code{two_point_field_goals},
+\code{three_point_field_goals}, \code{free_throws}, \code{rebounds}, \code{win_shares}) are
+flattened into prefixed columns. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      athlete_id \tab integer \tab Athlete id. \cr
+      name \tab character \tab Player name. \cr
+      position \tab character \tab Player position. \cr
+      games \tab numeric \tab Games played. \cr
+      minutes \tab numeric \tab Minutes played. \cr
+      points \tab numeric \tab Total points. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per player-season. Shot-type
+objects are flattened into prefixed columns. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      athlete_id \tab integer \tab Athlete id. \cr
+      athlete_name \tab character \tab Player name. \cr
+      tracked_shots \tab integer \tab Number of tracked shots. \cr
+      assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get team season statistics from the CollegeBasketballData API.}
+
+\strong{Get team season shooting statistics from the CollegeBasketballData API.}
+
+\strong{Get player season statistics from the CollegeBasketballData API.}
+
+\strong{Get player season shooting statistics from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_stats_team_season(season = 2024, team = "Duke"))
 }
+\donttest{
+  try(cbbd_stats_team_shooting_season(season = 2024, team = "Duke"))
+}
+\donttest{
+  try(cbbd_stats_player_season(season = 2024, team = "Duke"))
+}
+\donttest{
+  try(cbbd_stats_player_shooting_season(season = 2024, team = "Duke"))
+}
 }
 \seealso{
 Other CBD Stats Functions:
-\code{\link[=cbbd_stats_player_season]{cbbd_stats_player_season()}},
-\code{\link[=cbbd_stats_player_shooting_season]{cbbd_stats_player_shooting_season()}},
-\code{\link[=cbbd_stats_team_leaderboard]{cbbd_stats_team_leaderboard()}},
-\code{\link[=cbbd_stats_team_shooting_season]{cbbd_stats_team_shooting_season()}}
+\code{\link[=cbbd_stats_team_leaderboard]{cbbd_stats_team_leaderboard()}}
 }
 \concept{CBD Stats Functions}
 \keyword{CBD}

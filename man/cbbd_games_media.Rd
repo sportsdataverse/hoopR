@@ -2,9 +2,31 @@
 % Please edit documentation in R/cbbd_games.R
 \name{cbbd_games_media}
 \alias{cbbd_games_media}
+\alias{cbbd_games_teams}
+\alias{cbbd_games_players}
 \title{\strong{CBD Game Media}}
 \usage{
 cbbd_games_media(
+  season = most_recent_mbb_season(),
+  season_type = NULL,
+  team = NULL,
+  conference = NULL,
+  start_date_range = NULL,
+  end_date_range = NULL,
+  tournament = NULL
+)
+
+cbbd_games_teams(
+  season = most_recent_mbb_season(),
+  season_type = NULL,
+  team = NULL,
+  conference = NULL,
+  start_date_range = NULL,
+  end_date_range = NULL,
+  tournament = NULL
+)
+
+cbbd_games_players(
   season = most_recent_mbb_season(),
   season_type = NULL,
   team = NULL,
@@ -33,34 +55,86 @@ Defaults to \code{most_recent_mbb_season()}.}
 }
 \value{
 A \code{hoopR_data} tibble with one row per game. The \code{broadcasts} column is
-a nested list of broadcast outlets:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab integer \tab CollegeBasketballData game id. \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   season_type \tab character \tab Season type. \cr
-   start_date \tab character \tab Game start date (ISO 8601). \cr
-   home_team_id \tab integer \tab Home team id. \cr
-   home_team \tab character \tab Home team name. \cr
-   away_team_id \tab integer \tab Away team id. \cr
-   away_team \tab character \tab Away team name. \cr
-   neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-   conference_game \tab logical \tab Whether the game was a conference game. \cr
-   broadcasts \tab list \tab Nested list of broadcast outlets. \cr
-}
+a nested list of broadcast outlets:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab integer \tab CollegeBasketballData game id. \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      season_type \tab character \tab Season type. \cr
+      start_date \tab character \tab Game start date (ISO 8601). \cr
+      home_team_id \tab integer \tab Home team id. \cr
+      home_team \tab character \tab Home team name. \cr
+      away_team_id \tab integer \tab Away team id. \cr
+      away_team \tab character \tab Away team name. \cr
+      neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
+      conference_game \tab logical \tab Whether the game was a conference game. \cr
+      broadcasts \tab list \tab Nested list of broadcast outlets. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team-game. Per-team statistic
+objects (\code{team_stats}, \code{opponent_stats}) are flattened into \verb{team_stats_*} /
+\verb{opponent_stats_*} columns. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab integer \tab CollegeBasketballData game id. \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      start_date \tab character \tab Game start date (ISO 8601). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Team conference. \cr
+      opponent_id \tab integer \tab Opponent team id. \cr
+      opponent \tab character \tab Opponent team name. \cr
+      is_home \tab logical \tab Whether the team was home. \cr
+      neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
+      game_minutes \tab numeric \tab Total team minutes. \cr
+      pace \tab numeric \tab Game pace (possessions). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team-game. The \code{players} column
+is a nested list of per-player box scores. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab integer \tab CollegeBasketballData game id. \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      start_date \tab character \tab Game start date (ISO 8601). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Team conference. \cr
+      opponent_id \tab integer \tab Opponent team id. \cr
+      opponent \tab character \tab Opponent team name. \cr
+      is_home \tab logical \tab Whether the team was home. \cr
+      game_minutes \tab numeric \tab Total team minutes. \cr
+      game_pace \tab numeric \tab Game pace (possessions). \cr
+      players \tab list \tab Nested list of per-player box scores. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get game broadcast media information from the CollegeBasketballData API.}
+
+\strong{Get team box score statistics from the CollegeBasketballData API.}
+
+\strong{Get player box score statistics from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_games_media(season = 2024, team = "Duke"))
 }
+\donttest{
+  try(cbbd_games_teams(season = 2024, team = "Duke"))
+}
+\donttest{
+  try(cbbd_games_players(season = 2024, team = "Duke"))
+}
 }
 \seealso{
 Other CBD Games Functions:
 \code{\link[=cbbd_games]{cbbd_games()}},
-\code{\link[=cbbd_games_players]{cbbd_games_players()}},
-\code{\link[=cbbd_games_teams]{cbbd_games_teams()}},
 \code{\link[=cbbd_scoreboard]{cbbd_scoreboard()}}
 }
 \concept{CBD Games Functions}

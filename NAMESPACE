@@ -709,6 +709,7 @@ importFrom(rlang,
   "%||%",
   ":=",
   .data,
+  .env,
   expr
 )
 importFrom(rvest,

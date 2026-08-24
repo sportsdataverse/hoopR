@@ -12,19 +12,21 @@
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @return A `hoopR_data` tibble with one row per ranked team per poll:
 #'
-#'    |col_name          |types     |description                                 |
-#'    |:-----------------|:---------|:-------------------------------------------|
-#'    |season            |integer   |Season (4-digit ending-year).               |
-#'    |season_type       |character |Season type.                                |
-#'    |week              |integer   |Poll week.                                  |
-#'    |poll_date         |character |Date the poll was released.                 |
-#'    |poll_type         |character |Poll type (`ap` or `coaches`).              |
-#'    |team_id           |integer   |CollegeBasketballData team id.              |
-#'    |team              |character |Team name.                                  |
-#'    |conference        |character |Conference name.                            |
-#'    |ranking           |integer   |Poll rank.                                  |
-#'    |points            |numeric   |Poll points received.                       |
-#'    |first_place_votes |numeric   |Number of first-place votes.                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       season_type \tab character \tab Season type. \cr
+#'       week \tab integer \tab Poll week. \cr
+#'       poll_date \tab character \tab Date the poll was released. \cr
+#'       poll_type \tab character \tab Poll type (\code{ap} or \code{coaches}). \cr
+#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       ranking \tab integer \tab Poll rank. \cr
+#'       points \tab numeric \tab Poll points received. \cr
+#'       first_place_votes \tab numeric \tab Number of first-place votes. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Rankings
 #' @importFrom jsonlite fromJSON

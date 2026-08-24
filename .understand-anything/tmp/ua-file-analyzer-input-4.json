@@ -1,0 +1,182 @@
+{
+ "projectRoot": "c:/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/hoopR",
+ "batchFiles": [
+  {
+   "path": "R/bref_injuries.R",
+   "language": "r",
+   "sizeLines": 58,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_player_bios.R",
+   "language": "r",
+   "sizeLines": 80,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_player_game_log.R",
+   "language": "r",
+   "sizeLines": 80,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_players_stats.R",
+   "language": "r",
+   "sizeLines": 87,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_standings.R",
+   "language": "r",
+   "sizeLines": 73,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_team_roster.R",
+   "language": "r",
+   "sizeLines": 64,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_teams_stats.R",
+   "language": "r",
+   "sizeLines": 81,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/bref_utils.R",
+   "language": "r",
+   "sizeLines": 92,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_api_key.R",
+   "language": "r",
+   "sizeLines": 92,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_conferences.R",
+   "language": "r",
+   "sizeLines": 97,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_draft.R",
+   "language": "r",
+   "sizeLines": 155,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_games.R",
+   "language": "r",
+   "sizeLines": 310,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_lines.R",
+   "language": "r",
+   "sizeLines": 108,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_lineups.R",
+   "language": "r",
+   "sizeLines": 101,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_plays.R",
+   "language": "r",
+   "sizeLines": 290,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_rankings.R",
+   "language": "r",
+   "sizeLines": 63,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_ratings.R",
+   "language": "r",
+   "sizeLines": 155,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_recruiting.R",
+   "language": "r",
+   "sizeLines": 174,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_stats.R",
+   "language": "r",
+   "sizeLines": 298,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_substitutions.R",
+   "language": "r",
+   "sizeLines": 139,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_teams.R",
+   "language": "r",
+   "sizeLines": 113,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/cbbd_venues.R",
+   "language": "r",
+   "sizeLines": 47,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/crosswalk_basketball.R",
+   "language": "r",
+   "sizeLines": 158,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/data.R",
+   "language": "r",
+   "sizeLines": 15,
+   "fileCategory": "code"
+  },
+  {
+   "path": "R/espn_basketball_athlete_career_helpers.R",
+   "language": "r",
+   "sizeLines": 258,
+   "fileCategory": "code"
+  }
+ ],
+ "batchImportData": {
+  "R/bref_injuries.R": [],
+  "R/bref_player_bios.R": [],
+  "R/bref_player_game_log.R": [],
+  "R/bref_players_stats.R": [],
+  "R/bref_standings.R": [],
+  "R/bref_team_roster.R": [],
+  "R/bref_teams_stats.R": [],
+  "R/bref_utils.R": [],
+  "R/cbbd_api_key.R": [],
+  "R/cbbd_conferences.R": [],
+  "R/cbbd_draft.R": [],
+  "R/cbbd_games.R": [],
+  "R/cbbd_lines.R": [],
+  "R/cbbd_lineups.R": [],
+  "R/cbbd_plays.R": [],
+  "R/cbbd_rankings.R": [],
+  "R/cbbd_ratings.R": [],
+  "R/cbbd_recruiting.R": [],
+  "R/cbbd_stats.R": [],
+  "R/cbbd_substitutions.R": [],
+  "R/cbbd_teams.R": [],
+  "R/cbbd_venues.R": [],
+  "R/crosswalk_basketball.R": [],
+  "R/data.R": [],
+  "R/espn_basketball_athlete_career_helpers.R": []
+ }
+}

@@ -23,39 +23,42 @@ nba_teamestimatedmetrics(
 \value{
 Return a named list of data frames: TeamEstimatedMetrics
 
-\strong{TeamEstimatedMetrics}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   W_PCT \tab character \tab  \cr
-   MIN \tab character \tab Minutes played. \cr
-   E_OFF_RATING \tab character \tab  \cr
-   E_DEF_RATING \tab character \tab  \cr
-   E_NET_RATING \tab character \tab  \cr
-   E_PACE \tab character \tab  \cr
-   E_AST_RATIO \tab character \tab  \cr
-   E_OREB_PCT \tab character \tab  \cr
-   E_DREB_PCT \tab character \tab  \cr
-   E_REB_PCT \tab character \tab  \cr
-   E_TM_TOV_PCT \tab character \tab  \cr
-   GP_RANK \tab character \tab  \cr
-   W_RANK \tab character \tab  \cr
-   L_RANK \tab character \tab  \cr
-   W_PCT_RANK \tab character \tab  \cr
-   MIN_RANK \tab character \tab  \cr
-   E_OFF_RATING_RANK \tab character \tab  \cr
-   E_DEF_RATING_RANK \tab character \tab  \cr
-   E_NET_RATING_RANK \tab character \tab  \cr
-   E_AST_RATIO_RANK \tab character \tab  \cr
-   E_OREB_PCT_RANK \tab character \tab  \cr
-   E_DREB_PCT_RANK \tab character \tab  \cr
-   E_REB_PCT_RANK \tab character \tab  \cr
-   E_TM_TOV_PCT_RANK \tab character \tab  \cr
-   E_PACE_RANK \tab character \tab  \cr
-}
+\strong{TeamEstimatedMetrics}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      GP \tab character \tab Games played. \cr
+      W \tab character \tab Wins. \cr
+      L \tab character \tab Losses. \cr
+      W_PCT \tab character \tab  \cr
+      MIN \tab character \tab Minutes played. \cr
+      E_OFF_RATING \tab character \tab  \cr
+      E_DEF_RATING \tab character \tab  \cr
+      E_NET_RATING \tab character \tab  \cr
+      E_PACE \tab character \tab  \cr
+      E_AST_RATIO \tab character \tab  \cr
+      E_OREB_PCT \tab character \tab  \cr
+      E_DREB_PCT \tab character \tab  \cr
+      E_REB_PCT \tab character \tab  \cr
+      E_TM_TOV_PCT \tab character \tab  \cr
+      GP_RANK \tab character \tab  \cr
+      W_RANK \tab character \tab  \cr
+      L_RANK \tab character \tab  \cr
+      W_PCT_RANK \tab character \tab  \cr
+      MIN_RANK \tab character \tab  \cr
+      E_OFF_RATING_RANK \tab character \tab  \cr
+      E_DEF_RATING_RANK \tab character \tab  \cr
+      E_NET_RATING_RANK \tab character \tab  \cr
+      E_AST_RATIO_RANK \tab character \tab  \cr
+      E_OREB_PCT_RANK \tab character \tab  \cr
+      E_DREB_PCT_RANK \tab character \tab  \cr
+      E_REB_PCT_RANK \tab character \tab  \cr
+      E_TM_TOV_PCT_RANK \tab character \tab  \cr
+      E_PACE_RANK \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Team Estimated Metrics}
@@ -83,9 +86,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}

@@ -220,69 +220,9 @@ ShotDistanceOverall, vsPlayerOverall
 }
 
 
-\strong{OnOffCourt}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GROUP_SET \tab character \tab  \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   VS_PLAYER_ID \tab character \tab  \cr
-   VS_PLAYER_NAME \tab character \tab  \cr
-   COURT_STATUS \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   W_PCT \tab character \tab  \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   TOV \tab character \tab Turnovers. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   BLKA \tab character \tab  \cr
-   PF \tab character \tab Personal fouls. \cr
-   PFD \tab character \tab  \cr
-   PTS \tab character \tab Points scored. \cr
-   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-   GP_RANK \tab character \tab  \cr
-   W_RANK \tab character \tab  \cr
-   L_RANK \tab character \tab  \cr
-   W_PCT_RANK \tab character \tab  \cr
-   MIN_RANK \tab character \tab  \cr
-   FGM_RANK \tab character \tab  \cr
-   FGA_RANK \tab character \tab  \cr
-   FG_PCT_RANK \tab character \tab  \cr
-   FG3M_RANK \tab character \tab  \cr
-   FG3A_RANK \tab character \tab  \cr
-   FG3_PCT_RANK \tab character \tab  \cr
-   FTM_RANK \tab character \tab  \cr
-   FTA_RANK \tab character \tab  \cr
-   FT_PCT_RANK \tab character \tab  \cr
-   OREB_RANK \tab character \tab  \cr
-   DREB_RANK \tab character \tab  \cr
-   REB_RANK \tab character \tab  \cr
-   AST_RANK \tab character \tab  \cr
-   TOV_RANK \tab character \tab  \cr
-   STL_RANK \tab character \tab  \cr
-   BLK_RANK \tab character \tab  \cr
-   BLKA_RANK \tab character \tab  \cr
-   PF_RANK \tab character \tab  \cr
-   PFD_RANK \tab character \tab  \cr
-   PTS_RANK \tab character \tab  \cr
-   PLUS_MINUS_RANK \tab character \tab  \cr
-}
+\strong{OnOffCourt}
 
+Columns as documented in the shared \link{nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema} table.
 
 \strong{ShotDistanceOverall}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -313,65 +253,21 @@ ShotDistanceOverall, vsPlayerOverall
 }
 
 
-\strong{ShotDistanceOffCourt}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GROUP_SET \tab character \tab  \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   VS_PLAYER_ID \tab character \tab  \cr
-   VS_PLAYER_NAME \tab character \tab  \cr
-   COURT_STATUS \tab character \tab  \cr
-   GROUP_VALUE \tab character \tab  \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-}
+\strong{ShotDistanceOffCourt}
 
+Same columns as the \strong{ShotDistanceOnCourt} table above.
 
-\strong{ShotAreaOverall}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GROUP_SET \tab character \tab  \cr
-   GROUP_VALUE \tab character \tab  \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-}
+\strong{ShotAreaOverall}
 
+Same columns as the \strong{ShotDistanceOverall} table above.
 
-\strong{ShotAreaOnCourt}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GROUP_SET \tab character \tab  \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   VS_PLAYER_ID \tab character \tab  \cr
-   VS_PLAYER_NAME \tab character \tab  \cr
-   COURT_STATUS \tab character \tab  \cr
-   GROUP_VALUE \tab character \tab  \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-}
+\strong{ShotAreaOnCourt}
 
+Same columns as the \strong{ShotDistanceOnCourt} table above.
 
-\strong{ShotAreaOffCourt}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GROUP_SET \tab character \tab  \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   VS_PLAYER_ID \tab character \tab  \cr
-   VS_PLAYER_NAME \tab character \tab  \cr
-   COURT_STATUS \tab character \tab  \cr
-   GROUP_VALUE \tab character \tab  \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-}
+\strong{ShotAreaOffCourt}
+
+Same columns as the \strong{ShotDistanceOnCourt} table above.
 }
 \description{
 \strong{Get NBA Stats API Team vs Player}
@@ -398,9 +294,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}
 }

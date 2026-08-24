@@ -27,18 +27,20 @@
 #' [bref_injuries()] for the Basketball-Reference injury report.
 #' @return A `hoopR_data` tibble with one row per injured player:
 #'
-#'    |col_name    |types     |description                                      |
-#'    |:-----------|:---------|:------------------------------------------------|
-#'    |player_id   |character |RotoWire player id.                              |
-#'    |player      |character |Player name.                                     |
-#'    |first_name  |character |First name.                                      |
-#'    |last_name   |character |Last name.                                       |
-#'    |team        |character |Team abbreviation.                               |
-#'    |position    |character |Position.                                        |
-#'    |injury      |character |Injury (body part / description).                |
-#'    |status      |character |Injury designation (Out, GTD, Questionable, ...).|
-#'    |return_date |character |Projected return (`NA` unless a subscriber).     |
-#'    |url         |character |RotoWire player page URL.                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player_id \tab character \tab RotoWire player id. \cr
+#'       player \tab character \tab Player name. \cr
+#'       first_name \tab character \tab First name. \cr
+#'       last_name \tab character \tab Last name. \cr
+#'       team \tab character \tab Team abbreviation. \cr
+#'       position \tab character \tab Position. \cr
+#'       injury \tab character \tab Injury (body part / description). \cr
+#'       status \tab character \tab Injury designation (Out, GTD, Questionable, ...). \cr
+#'       return_date \tab character \tab Projected return (\code{NA} unless a subscriber). \cr
+#'       url \tab character \tab RotoWire player page URL. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RotoWire
 #' @importFrom jsonlite fromJSON

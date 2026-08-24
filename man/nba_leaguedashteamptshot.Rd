@@ -92,27 +92,9 @@ nba_leaguedashteamptshot(
 \value{
 Returns a named list of data frames: LeagueDashPTShots
 
-\strong{LeagueDashPTShots}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   GP \tab character \tab Games played. \cr
-   G \tab character \tab Games played. \cr
-   FGA_FREQUENCY \tab character \tab  \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
-   FG2A_FREQUENCY \tab character \tab  \cr
-   FG2M \tab character \tab  \cr
-   FG2A \tab character \tab  \cr
-   FG2_PCT \tab character \tab  \cr
-   FG3A_FREQUENCY \tab character \tab  \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-}
+\strong{LeagueDashPTShots}
+
+Columns as documented in the shared \link{nba_leaguedashoppptshot_leaguedashptshots_schema} table.
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Team Shots}
@@ -153,7 +135,7 @@ Other NBA League Functions:
 \code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}}
 
 Other NBA Player Tracking Functions:
-\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
 \code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
 \code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
@@ -161,8 +143,6 @@ Other NBA Player Tracking Functions:
 \code{\link[=nba_leaguedashptteamdefend]{nba_leaguedashptteamdefend()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
 \code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
 \code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},

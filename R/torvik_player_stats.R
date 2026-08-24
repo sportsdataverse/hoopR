@@ -13,39 +13,41 @@
 #'   (e.g. `2024`). Defaults to `most_recent_mbb_season()`.
 #' @return A `hoopR_data` tibble with one row per player (key columns shown):
 #'
-#'    |col_name    |types     |description                                       |
-#'    |:-----------|:---------|:-------------------------------------------------|
-#'    |player_name |character |Player name.                                      |
-#'    |team        |character |Team name.                                        |
-#'    |conf        |character |Conference abbreviation.                          |
-#'    |games       |integer   |Games played.                                     |
-#'    |min_pct     |numeric   |Percentage of available minutes played.           |
-#'    |o_rtg       |numeric   |Offensive rating (points produced per 100 poss).  |
-#'    |usage       |numeric   |Usage rate.                                       |
-#'    |e_fg        |numeric   |Effective field goal percentage.                  |
-#'    |ts_pct      |numeric   |True shooting percentage.                          |
-#'    |orb_pct     |numeric   |Offensive rebound percentage.                     |
-#'    |drb_pct     |numeric   |Defensive rebound percentage.                     |
-#'    |ast_pct     |numeric   |Assist percentage.                                |
-#'    |to_pct      |numeric   |Turnover percentage.                              |
-#'    |ft_pct      |numeric   |Free-throw percentage.                            |
-#'    |two_p_pct   |numeric   |Two-point field goal percentage.                  |
-#'    |three_p_pct |numeric   |Three-point field goal percentage.                |
-#'    |blk_pct     |numeric   |Block percentage.                                 |
-#'    |stl_pct     |numeric   |Steal percentage.                                 |
-#'    |ftr         |numeric   |Free-throw rate.                                  |
-#'    |class       |character |Class (Fr/So/Jr/Sr).                              |
-#'    |height      |character |Listed height.                                    |
-#'    |porpag      |numeric   |Points over replacement per adjusted game.        |
-#'    |adj_oe      |numeric   |Adjusted offensive efficiency.                    |
-#'    |year        |integer   |Season (4-digit ending-year).                     |
-#'    |player_id   |integer   |Bart Torvik player id.                            |
-#'    |hometown    |character |Player hometown.                                  |
-#'    |bpm         |numeric   |Box plus/minus.                                   |
-#'    |obpm        |numeric   |Offensive box plus/minus.                         |
-#'    |dbpm        |numeric   |Defensive box plus/minus.                         |
-#'    |role        |character |Bart Torvik player role/position label.           |
-#'    |pts         |numeric   |Points per game.                                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player_name \tab character \tab Player name. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conf \tab character \tab Conference abbreviation. \cr
+#'       games \tab integer \tab Games played. \cr
+#'       min_pct \tab numeric \tab Percentage of available minutes played. \cr
+#'       o_rtg \tab numeric \tab Offensive rating (points produced per 100 poss). \cr
+#'       usage \tab numeric \tab Usage rate. \cr
+#'       e_fg \tab numeric \tab Effective field goal percentage. \cr
+#'       ts_pct \tab numeric \tab True shooting percentage. \cr
+#'       orb_pct \tab numeric \tab Offensive rebound percentage. \cr
+#'       drb_pct \tab numeric \tab Defensive rebound percentage. \cr
+#'       ast_pct \tab numeric \tab Assist percentage. \cr
+#'       to_pct \tab numeric \tab Turnover percentage. \cr
+#'       ft_pct \tab numeric \tab Free-throw percentage. \cr
+#'       two_p_pct \tab numeric \tab Two-point field goal percentage. \cr
+#'       three_p_pct \tab numeric \tab Three-point field goal percentage. \cr
+#'       blk_pct \tab numeric \tab Block percentage. \cr
+#'       stl_pct \tab numeric \tab Steal percentage. \cr
+#'       ftr \tab numeric \tab Free-throw rate. \cr
+#'       class \tab character \tab Class (Fr/So/Jr/Sr). \cr
+#'       height \tab character \tab Listed height. \cr
+#'       porpag \tab numeric \tab Points over replacement per adjusted game. \cr
+#'       adj_oe \tab numeric \tab Adjusted offensive efficiency. \cr
+#'       year \tab integer \tab Season (4-digit ending-year). \cr
+#'       player_id \tab integer \tab Bart Torvik player id. \cr
+#'       hometown \tab character \tab Player hometown. \cr
+#'       bpm \tab numeric \tab Box plus/minus. \cr
+#'       obpm \tab numeric \tab Offensive box plus/minus. \cr
+#'       dbpm \tab numeric \tab Defensive box plus/minus. \cr
+#'       role \tab character \tab Bart Torvik player role/position label. \cr
+#'       pts \tab numeric \tab Points per game. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'   Additional made/attempt splits (`ftm`/`fta`, `two_pm`/`two_pa`,
 #'   `three_pm`/`three_pa`), rim/mid/dunk shooting splits, defensive ratings

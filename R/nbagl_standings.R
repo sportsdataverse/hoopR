@@ -14,32 +14,34 @@ NULL
 #'
 #'    **Standings**
 #'
-#'    |col_name            |types     |description                  |
-#'    |:-------------------|:---------|:----------------------------|
-#'    |LeagueID            |character |                             |
-#'    |SeasonID            |character |                             |
-#'    |TeamID              |character |Teamid.                      |
-#'    |TeamCity            |character |Teamcity.                    |
-#'    |TeamName            |character |Teamname.                    |
-#'    |TeamSlug            |character |                             |
-#'    |Conference          |character |Conference.                  |
-#'    |ConferenceRecord    |character |                             |
-#'    |PlayoffRank         |character |                             |
-#'    |Division            |character |Team division.               |
-#'    |WINS                |character |Total wins.                  |
-#'    |LOSSES              |character |Total losses.                |
-#'    |WinPCT              |character |                             |
-#'    |LeagueRank          |character |                             |
-#'    |Record              |character |Record string (e.g. '12-4'). |
-#'    |HOME                |character |Home.                        |
-#'    |ROAD                |character |Road.                        |
-#'    |CurrentStreak       |character |                             |
-#'    |strCurrentStreak    |character |                             |
-#'    |ConferenceGamesBack |character |                             |
-#'    |DivisionGamesBack   |character |                             |
-#'    |LeagueGamesBack     |character |                             |
-#'    |ClinchedPostSeason  |character |                             |
-#'    |NEUTRAL             |character |                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       LeagueID \tab character \tab  \cr
+#'       SeasonID \tab character \tab  \cr
+#'       TeamID \tab character \tab Teamid. \cr
+#'       TeamCity \tab character \tab Teamcity. \cr
+#'       TeamName \tab character \tab Teamname. \cr
+#'       TeamSlug \tab character \tab  \cr
+#'       Conference \tab character \tab Conference. \cr
+#'       ConferenceRecord \tab character \tab  \cr
+#'       PlayoffRank \tab character \tab  \cr
+#'       Division \tab character \tab Team division. \cr
+#'       WINS \tab character \tab Total wins. \cr
+#'       LOSSES \tab character \tab Total losses. \cr
+#'       WinPCT \tab character \tab  \cr
+#'       LeagueRank \tab character \tab  \cr
+#'       Record \tab character \tab Record string (e.g. '12-4'). \cr
+#'       HOME \tab character \tab Home. \cr
+#'       ROAD \tab character \tab Road. \cr
+#'       CurrentStreak \tab character \tab  \cr
+#'       strCurrentStreak \tab character \tab  \cr
+#'       ConferenceGamesBack \tab character \tab  \cr
+#'       DivisionGamesBack \tab character \tab  \cr
+#'       LeagueGamesBack \tab character \tab  \cr
+#'       ClinchedPostSeason \tab character \tab  \cr
+#'       NEUTRAL \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange

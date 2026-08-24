@@ -302,32 +302,34 @@ NULL
 #'   ~60-second Fox enumeration when calling repeatedly.
 #' @return A `hoopR_data` tibble, one row per ESPN team:
 #'
-#'   |col_name               |types     |description                                       |
-#'   |:----------------------|:---------|:-------------------------------------------------|
-#'   |season                 |integer   |Season year.                                      |
-#'   |espn_team_id           |integer   |ESPN team id (canonical key).                     |
-#'   |espn_abbreviation      |character |ESPN abbreviation.                                |
-#'   |espn_display_name      |character |ESPN display name (school + mascot).              |
-#'   |espn_short_name        |character |ESPN short name.                                  |
-#'   |espn_location          |character |ESPN school/location only.                        |
-#'   |espn_mascot            |character |ESPN mascot/nickname.                             |
-#'   |espn_conference        |character |ESPN conference name.                             |
-#'   |fox_team_id            |character |Fox Bifrost team id (NA if unmatched).            |
-#'   |fox_team_name          |character |Fox team name (NA if unmatched).                  |
-#'   |fox_section            |character |Fox conference/section label (NA if unmatched).   |
-#'   |bart_team              |character |Torvik team name (NA if unmatched).               |
-#'   |bart_conf              |character |Torvik conference abbreviation (NA if unmatched). |
-#'   |kp_team                |character |KenPom team name (NA if unmatched).               |
-#'   |kp_conf                |character |KenPom conference abbreviation (NA if unmatched). |
-#'   |yahoo_team_id          |character |Yahoo team id (NA placeholder).                   |
-#'   |yahoo_team_name        |character |Yahoo team name (NA placeholder).                 |
-#'   |fox_match_confidence   |numeric   |1 for matched, NA for unmatched.                  |
-#'   |bart_match_confidence  |numeric   |1 for matched, NA for unmatched.                  |
-#'   |kp_match_confidence    |numeric   |1 for matched, NA for unmatched.                  |
-#'   |match_method           |character |Combination of matched sources, e.g.              |
-#'   |                       |          |"fox+bart+kp" / "fox+bart" / "bart+kp" /         |
-#'   |                       |          |"fox_only" / "bart_only" / "kp_only" /            |
-#'   |                       |          |"espn_only".                                      |
+#'   \if{html}{\tabular{lll}{
+#'      col_name \tab types \tab description \cr
+#'      season \tab integer \tab Season year. \cr
+#'      espn_team_id \tab integer \tab ESPN team id (canonical key). \cr
+#'      espn_abbreviation \tab character \tab ESPN abbreviation. \cr
+#'      espn_display_name \tab character \tab ESPN display name (school + mascot). \cr
+#'      espn_short_name \tab character \tab ESPN short name. \cr
+#'      espn_location \tab character \tab ESPN school/location only. \cr
+#'      espn_mascot \tab character \tab ESPN mascot/nickname. \cr
+#'      espn_conference \tab character \tab ESPN conference name. \cr
+#'      fox_team_id \tab character \tab Fox Bifrost team id (NA if unmatched). \cr
+#'      fox_team_name \tab character \tab Fox team name (NA if unmatched). \cr
+#'      fox_section \tab character \tab Fox conference/section label (NA if unmatched). \cr
+#'      bart_team \tab character \tab Torvik team name (NA if unmatched). \cr
+#'      bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
+#'      kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
+#'      kp_conf \tab character \tab KenPom conference abbreviation (NA if unmatched). \cr
+#'      yahoo_team_id \tab character \tab Yahoo team id (NA placeholder). \cr
+#'      yahoo_team_name \tab character \tab Yahoo team name (NA placeholder). \cr
+#'      fox_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+#'      bart_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+#'      kp_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+#'      match_method \tab character \tab Combination of matched sources, e.g. \cr
+#'       \tab  \tab "fox+bart+kp" / "fox+bart" / "bart+kp" / \cr
+#'       \tab  \tab "fox_only" / "bart_only" / "kp_only" / \cr
+#'       \tab  \tab "espn_only". \cr
+#'   }}
+#'   \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom dplyr transmute left_join mutate select if_else case_when
 #' @export
@@ -509,22 +511,24 @@ NULL
 #'   Default `FALSE`.
 #' @return A `hoopR_data` tibble, one row per game:
 #'
-#'    |col_name            |types     |description                                       |
-#'    |:-------------------|:---------|:-------------------------------------------------|
-#'    |season              |integer   |Season year.                                      |
-#'    |game_date           |Date      |ET game date.                                     |
-#'    |home_espn_team_id   |integer   |ESPN home team id (NA for bart-only rows).        |
-#'    |away_espn_team_id   |integer   |ESPN away team id (NA for bart-only rows).        |
-#'    |espn_game_id        |character |ESPN game id (NA for bart-only rows).             |
-#'    |bart_muid           |character |Torvik muid (NA for espn-only rows).              |
-#'    |bart_team1          |character |Torvik team1 name (NA for espn-only rows).        |
-#'    |bart_team2          |character |Torvik team2 name (NA for espn-only rows).        |
-#'    |bart_winner         |character |Torvik winner name (NA for espn-only rows).       |
-#'    |kp_game_id          |character |KenPom game id (NA unless kenpom enabled).        |
-#'    |fox_game_id         |character |Fox game id (NA placeholder).                     |
-#'    |yahoo_game_id       |character |Yahoo game id (NA placeholder).                   |
-#'    |match_method        |character |"both"/"espn_only"/"bart_only".                   |
-#'    |match_confidence    |numeric   |1 for matched, NA for unmatched.                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season year. \cr
+#'       game_date \tab Date \tab ET game date. \cr
+#'       home_espn_team_id \tab integer \tab ESPN home team id (NA for bart-only rows). \cr
+#'       away_espn_team_id \tab integer \tab ESPN away team id (NA for bart-only rows). \cr
+#'       espn_game_id \tab character \tab ESPN game id (NA for bart-only rows). \cr
+#'       bart_muid \tab character \tab Torvik muid (NA for espn-only rows). \cr
+#'       bart_team1 \tab character \tab Torvik team1 name (NA for espn-only rows). \cr
+#'       bart_team2 \tab character \tab Torvik team2 name (NA for espn-only rows). \cr
+#'       bart_winner \tab character \tab Torvik winner name (NA for espn-only rows). \cr
+#'       kp_game_id \tab character \tab KenPom game id (NA unless kenpom enabled). \cr
+#'       fox_game_id \tab character \tab Fox game id (NA placeholder). \cr
+#'       yahoo_game_id \tab character \tab Yahoo game id (NA placeholder). \cr
+#'       match_method \tab character \tab "both"/"espn_only"/"bart_only". \cr
+#'       match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom dplyr transmute bind_rows left_join mutate
 #' @export
@@ -839,25 +843,27 @@ NULL
 #'   (default 0.92).
 #' @return A `hoopR_data` tibble, one row per player per team (ESPN-anchored):
 #'
-#'    |col_name            |types     |description                                       |
-#'    |:-------------------|:---------|:-------------------------------------------------|
-#'    |season              |integer   |Season year.                                      |
-#'    |espn_team_id        |integer   |ESPN team id (canonical key).                     |
-#'    |team_abbreviation   |character |ESPN team abbreviation.                           |
-#'    |player_name         |character |Normalized player name (matching key).            |
-#'    |espn_athlete_id     |character |ESPN athlete id.                                  |
-#'    |espn_full_name      |character |ESPN full name.                                   |
-#'    |espn_jersey         |character |ESPN jersey number.                               |
-#'    |espn_position       |character |ESPN position abbreviation.                       |
-#'    |fox_athlete_id      |character |Fox athlete id (NA if unmatched).                 |
-#'    |fox_player          |character |Fox player name (NA if unmatched).                |
-#'    |fox_jersey          |character |Fox jersey number (NA if unmatched).              |
-#'    |fox_position_group  |character |Fox position group label (NA if unmatched).       |
-#'    |yahoo_player_id     |character |Yahoo player id (NA placeholder).                 |
-#'    |yahoo_player_name   |character |Yahoo player name (NA placeholder).               |
-#'    |match_method        |character |"exact_name"/"fuzzy_jw"/"unmatched".              |
-#'    |match_confidence    |numeric   |Jaro-Winkler score or 1 for exact (NA if none).  |
-#'    |match_keys          |character |NA (reserved for future use).                     |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season year. \cr
+#'       espn_team_id \tab integer \tab ESPN team id (canonical key). \cr
+#'       team_abbreviation \tab character \tab ESPN team abbreviation. \cr
+#'       player_name \tab character \tab Normalized player name (matching key). \cr
+#'       espn_athlete_id \tab character \tab ESPN athlete id. \cr
+#'       espn_full_name \tab character \tab ESPN full name. \cr
+#'       espn_jersey \tab character \tab ESPN jersey number. \cr
+#'       espn_position \tab character \tab ESPN position abbreviation. \cr
+#'       fox_athlete_id \tab character \tab Fox athlete id (NA if unmatched). \cr
+#'       fox_player \tab character \tab Fox player name (NA if unmatched). \cr
+#'       fox_jersey \tab character \tab Fox jersey number (NA if unmatched). \cr
+#'       fox_position_group \tab character \tab Fox position group label (NA if unmatched). \cr
+#'       yahoo_player_id \tab character \tab Yahoo player id (NA placeholder). \cr
+#'       yahoo_player_name \tab character \tab Yahoo player name (NA placeholder). \cr
+#'       match_method \tab character \tab "exact_name"/"fuzzy_jw"/"unmatched". \cr
+#'       match_confidence \tab numeric \tab Jaro-Winkler score or 1 for exact (NA if none). \cr
+#'       match_keys \tab character \tab NA (reserved for future use). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom dplyr transmute bind_rows
 #' @importFrom purrr map list_rbind

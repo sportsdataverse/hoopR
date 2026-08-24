@@ -13,17 +13,20 @@ completed season.}
 \item{...}{Additional arguments passed to \code{\link[=nba_playerindex]{nba_playerindex()}} (e.g. \code{proxy}).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab character \tab Team id. \cr
-   team_abbreviation \tab character \tab Team abbreviation. \cr
-   team_city \tab character \tab Team city / region. \cr
-   team_name \tab character \tab Team nickname. \cr
-   team_full \tab character \tab Full team name. \cr
-   conference \tab character \tab Conference (\code{Eastern} / \code{Western}). \cr
-   division \tab character \tab Division. \cr
-   logo_url \tab character \tab NBA CDN primary logo URL. \cr
-}
+A \code{hoopR_data} tibble with one row per team:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab character \tab Team id. \cr
+      team_abbreviation \tab character \tab Team abbreviation. \cr
+      team_city \tab character \tab Team city / region. \cr
+      team_name \tab character \tab Team nickname. \cr
+      team_full \tab character \tab Full team name. \cr
+      conference \tab character \tab Conference (\code{Eastern} / \code{Western}). \cr
+      division \tab character \tab Division. \cr
+      logo_url \tab character \tab NBA CDN primary logo URL. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 A tidy team dictionary (id, abbreviation, name, conference,

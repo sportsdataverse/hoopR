@@ -13,28 +13,31 @@ nba_possession_lineups(game_id, ...)
 \item{...}{reserved for future use.}
 }
 \value{
-Returns a data frame with one row per possession:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab Unique game identifier (10-character NBA Stats ID). \cr
-   period \tab integer \tab Game period (1-4 regular, 5+ overtime). \cr
-   possession_number \tab integer \tab Sequential possession counter within the game (1-based). \cr
-   offense_team_id \tab integer \tab NBA Stats team ID of the team on offense for this possession. \cr
-   defense_team_id \tab integer \tab NBA Stats team ID of the team on defense for this possession. \cr
-   points \tab integer \tab Points scored by the offense during this possession (0 or positive). \cr
-   second_chance \tab logical \tab TRUE if the possession was extended by an offensive rebound (second-chance opportunity). \cr
-   start_event_idx \tab integer \tab 1-based row index into the source PBP frame for the first event of this possession. \cr
-   end_event_idx \tab integer \tab 1-based row index into the source PBP frame for the last event of this possession. \cr
-   off_player_1 \tab integer \tab NBA Stats person_id for offensive on-court player slot 1. \cr
-   off_player_2 \tab integer \tab NBA Stats person_id for offensive on-court player slot 2. \cr
-   off_player_3 \tab integer \tab NBA Stats person_id for offensive on-court player slot 3. \cr
-   off_player_4 \tab integer \tab NBA Stats person_id for offensive on-court player slot 4. \cr
-   off_player_5 \tab integer \tab NBA Stats person_id for offensive on-court player slot 5. \cr
-   def_player_1 \tab integer \tab NBA Stats person_id for defensive on-court player slot 1. \cr
-   def_player_2 \tab integer \tab NBA Stats person_id for defensive on-court player slot 2. \cr
-   def_player_3 \tab integer \tab NBA Stats person_id for defensive on-court player slot 3. \cr
-   def_player_4 \tab integer \tab NBA Stats person_id for defensive on-court player slot 4. \cr
-   def_player_5 \tab integer \tab NBA Stats person_id for defensive on-court player slot 5. \cr
-}
+Returns a data frame with one row per possession:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier (10-character NBA Stats ID). \cr
+      period \tab integer \tab Game period (1-4 regular, 5+ overtime). \cr
+      possession_number \tab integer \tab Sequential possession counter within the game (1-based). \cr
+      offense_team_id \tab integer \tab NBA Stats team ID of the team on offense for this possession. \cr
+      defense_team_id \tab integer \tab NBA Stats team ID of the team on defense for this possession. \cr
+      points \tab integer \tab Points scored by the offense during this possession (0 or positive). \cr
+      second_chance \tab logical \tab TRUE if the possession was extended by an offensive rebound (second-chance opportunity). \cr
+      start_event_idx \tab integer \tab 1-based row index into the source PBP frame for the first event of this possession. \cr
+      end_event_idx \tab integer \tab 1-based row index into the source PBP frame for the last event of this possession. \cr
+      off_player_1 \tab integer \tab NBA Stats person_id for offensive on-court player slot 1. \cr
+      off_player_2 \tab integer \tab NBA Stats person_id for offensive on-court player slot 2. \cr
+      off_player_3 \tab integer \tab NBA Stats person_id for offensive on-court player slot 3. \cr
+      off_player_4 \tab integer \tab NBA Stats person_id for offensive on-court player slot 4. \cr
+      off_player_5 \tab integer \tab NBA Stats person_id for offensive on-court player slot 5. \cr
+      def_player_1 \tab integer \tab NBA Stats person_id for defensive on-court player slot 1. \cr
+      def_player_2 \tab integer \tab NBA Stats person_id for defensive on-court player slot 2. \cr
+      def_player_3 \tab integer \tab NBA Stats person_id for defensive on-court player slot 3. \cr
+      def_player_4 \tab integer \tab NBA Stats person_id for defensive on-court player slot 4. \cr
+      def_player_5 \tab integer \tab NBA Stats person_id for defensive on-court player slot 5. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Possession-Level Stint Matrix}

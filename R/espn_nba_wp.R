@@ -5,29 +5,31 @@
 #'
 #' @return [espn_nba_wp()] - A data frame with 21 variables:
 #'
-#'   |col_name             |types     |description                                              |
-#'   |:--------------------|:---------|:--------------------------------------------------------|
-#'   |game_id              |numeric   |Unique game identifier.                                  |
-#'   |play_id              |character |Unique play identifier within a game.                    |
-#'   |home_win_percentage  |numeric   |Home win percentage (0-1 decimal).                       |
-#'   |away_win_percentage  |numeric   |Away win percentage (0-1 decimal).                       |
-#'   |tie_percentage       |numeric   |Tie percentage (0-1 decimal).                            |
-#'   |sequence_number      |character |Sequence number representing a shot-possession (V3 PBP). |
-#'   |text                 |character |Text description of the play / record.                   |
-#'   |away_score           |integer   |Away team score at the time of the play.                 |
-#'   |home_score           |integer   |Home team score at the time of the play.                 |
-#'   |scoring_play         |logical   |TRUE if the play resulted in points scored.              |
-#'   |score_value          |integer   |Point value of the play (2 / 3 / 1).                     |
-#'   |participants         |list      |Participants.                                            |
-#'   |shooting_play        |logical   |TRUE if the play was a shooting attempt.                 |
-#'   |type_id              |character |Type identifier (numeric).                               |
-#'   |type_text            |character |Display text for the type field.                         |
-#'   |period_number        |integer   |Numeric period (1-4 for quarters; 5+ for OT).            |
-#'   |period_display_value |character |Period display label (e.g. '1st Quarter', 'OT').         |
-#'   |clock_display_value  |character |Game clock display string (e.g. '8:32').                 |
-#'   |team_id              |character |Unique team identifier.                                  |
-#'   |coordinate_x         |integer   |X coordinate on the court (half-court layout).           |
-#'   |coordinate_y         |integer   |Y coordinate on the court (half-court layout).           |
+#'   \if{html}{\tabular{lll}{
+#'      col_name \tab types \tab description \cr
+#'      game_id \tab numeric \tab Unique game identifier. \cr
+#'      play_id \tab character \tab Unique play identifier within a game. \cr
+#'      home_win_percentage \tab numeric \tab Home win percentage (0-1 decimal). \cr
+#'      away_win_percentage \tab numeric \tab Away win percentage (0-1 decimal). \cr
+#'      tie_percentage \tab numeric \tab Tie percentage (0-1 decimal). \cr
+#'      sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+#'      text \tab character \tab Text description of the play / record. \cr
+#'      away_score \tab integer \tab Away team score at the time of the play. \cr
+#'      home_score \tab integer \tab Home team score at the time of the play. \cr
+#'      scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+#'      score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
+#'      participants \tab list \tab Participants. \cr
+#'      shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
+#'      type_id \tab character \tab Type identifier (numeric). \cr
+#'      type_text \tab character \tab Display text for the type field. \cr
+#'      period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
+#'      period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
+#'      clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+#'      team_id \tab character \tab Unique team identifier. \cr
+#'      coordinate_x \tab integer \tab X coordinate on the court (half-court layout). \cr
+#'      coordinate_y \tab integer \tab Y coordinate on the court (half-court layout). \cr
+#'   }}
+#'   \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr2 request req_headers req_timeout req_retry req_perform resp_body_string

@@ -281,18 +281,21 @@ nba_playergamestreakfinder(
 \value{
 Return a named list of data frames: PlayerGameStreakFinderResults
 
-\strong{PlayerGameStreakFinderResults}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_NAME_LAST_FIRST \tab character \tab  \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   GAMESTREAK \tab character \tab  \cr
-   STARTDATE \tab character \tab  \cr
-   ENDDATE \tab character \tab  \cr
-   ACTIVESTREAK \tab character \tab  \cr
-   NUMSEASONS \tab character \tab  \cr
-   LASTSEASON \tab character \tab  \cr
-   FIRSTSEASON \tab character \tab  \cr
-}
+\strong{PlayerGameStreakFinderResults}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_NAME_LAST_FIRST \tab character \tab  \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      GAMESTREAK \tab character \tab  \cr
+      STARTDATE \tab character \tab  \cr
+      ENDDATE \tab character \tab  \cr
+      ACTIVESTREAK \tab character \tab  \cr
+      NUMSEASONS \tab character \tab  \cr
+      LASTSEASON \tab character \tab  \cr
+      FIRSTSEASON \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Player Game Streak Finder}
@@ -321,8 +324,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},

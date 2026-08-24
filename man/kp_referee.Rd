@@ -12,20 +12,23 @@ kp_referee(referee, year)
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with the following columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_number \tab integer \tab Game number. \cr
-   date \tab character \tab Date in YYYY-MM-DD format. \cr
-   time_et \tab character \tab Time et. \cr
-   game \tab character \tab Game. \cr
-   location \tab character \tab Location. \cr
-   venue \tab character \tab Venue name. \cr
-   conference \tab character \tab Conference. \cr
-   thrill_score \tab numeric \tab Thrill score. \cr
-   referee_name \tab character \tab Referee name. \cr
-   ref_rank \tab numeric \tab League/season rank for ref. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+A data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_number \tab integer \tab Game number. \cr
+      date \tab character \tab Date in YYYY-MM-DD format. \cr
+      time_et \tab character \tab Time et. \cr
+      game \tab character \tab Game. \cr
+      location \tab character \tab Location. \cr
+      venue \tab character \tab Venue name. \cr
+      conference \tab character \tab Conference. \cr
+      thrill_score \tab numeric \tab Thrill score. \cr
+      referee_name \tab character \tab Referee name. \cr
+      ref_rank \tab numeric \tab League/season rank for ref. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get referee game log}

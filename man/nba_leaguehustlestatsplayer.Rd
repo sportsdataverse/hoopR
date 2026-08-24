@@ -2,9 +2,102 @@
 % Please edit documentation in R/nba_stats_hustle.R
 \name{nba_leaguehustlestatsplayer}
 \alias{nba_leaguehustlestatsplayer}
+\alias{nba_leaguehustlestatsplayerleaders}
+\alias{nba_leaguehustlestatsteam}
+\alias{nba_leaguehustlestatsteamleaders}
 \title{\strong{Get NBA Stats API League Hustle Stats Player}}
 \usage{
 nba_leaguehustlestatsplayer(
+  college = "",
+  conference = "",
+  country = "",
+  date_from = "",
+  date_to = "",
+  division = "",
+  draft_pick = "",
+  draft_year = "",
+  height = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  po_round = "",
+  per_mode = "Totals",
+  player_experience = "",
+  player_position = "",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "",
+  vs_conference = "",
+  vs_division = "",
+  weight = "",
+  ...
+)
+
+nba_leaguehustlestatsplayerleaders(
+  college = "",
+  conference = "",
+  country = "",
+  date_from = "",
+  date_to = "",
+  division = "",
+  draft_pick = "",
+  draft_year = "",
+  height = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  po_round = "",
+  per_mode = "Totals",
+  player_experience = "",
+  player_position = "",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "",
+  vs_conference = "",
+  vs_division = "",
+  weight = "",
+  ...
+)
+
+nba_leaguehustlestatsteam(
+  college = "",
+  conference = "",
+  country = "",
+  date_from = "",
+  date_to = "",
+  division = "",
+  draft_pick = "",
+  draft_year = "",
+  height = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  po_round = "",
+  per_mode = "Totals",
+  player_experience = "",
+  player_position = "",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "",
+  vs_conference = "",
+  vs_division = "",
+  weight = "",
+  ...
+)
+
+nba_leaguehustlestatsteamleaders(
   college = "",
   conference = "",
   country = "",
@@ -92,42 +185,221 @@ nba_leaguehustlestatsplayer(
 \value{
 Returns a named list of data frames: HustleStatsPlayer
 
-\strong{HustleStatsPlayer}\tabular{lll}{
+\strong{HustleStatsPlayer}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      AGE \tab character \tab Player age (in years). \cr
+      G \tab character \tab Games played. \cr
+      MIN \tab character \tab Minutes played. \cr
+      CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+      CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+      CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+      DEFLECTIONS \tab character \tab Defensive deflections. \cr
+      CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+      SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+      SCREEN_AST_PTS \tab character \tab  \cr
+      OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+      PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
+      PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
+      OFF_BOXOUTS \tab character \tab  \cr
+      DEF_BOXOUTS \tab character \tab  \cr
+      BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+      BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+      BOX_OUTS \tab character \tab Box-outs executed. \cr
+      PCT_BOX_OUTS_OFF \tab character \tab  \cr
+      PCT_BOX_OUTS_DEF \tab character \tab  \cr
+      PCT_BOX_OUTS_TEAM_REB \tab character \tab  \cr
+      PCT_BOX_OUTS_REB \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: PlayerChargesDrawnLeaders,
+PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders,
+PlayerScreenAssistLeaders, Table5
+
+\strong{PlayerContestedShotsLeaders}\tabular{lll}{
    col_name \tab types \tab description \cr
    PLAYER_ID \tab character \tab Unique player identifier. \cr
    PLAYER_NAME \tab character \tab Player name. \cr
    TEAM_ID \tab character \tab Unique team identifier. \cr
    TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
    AGE \tab character \tab Player age (in years). \cr
-   G \tab character \tab Games played. \cr
-   MIN \tab character \tab Minutes played. \cr
+   RANK \tab character \tab Rank. \cr
    CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
-   CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
-   CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
-   DEFLECTIONS \tab character \tab Defensive deflections. \cr
-   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
-   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
-   SCREEN_AST_PTS \tab character \tab  \cr
-   OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
-   DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
-   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
-   PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
-   PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
-   OFF_BOXOUTS \tab character \tab  \cr
-   DEF_BOXOUTS \tab character \tab  \cr
-   BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
-   BOX_OUT_PLAYER_REBS \tab character \tab  \cr
-   BOX_OUTS \tab character \tab Box-outs executed. \cr
-   PCT_BOX_OUTS_OFF \tab character \tab  \cr
-   PCT_BOX_OUTS_DEF \tab character \tab  \cr
-   PCT_BOX_OUTS_TEAM_REB \tab character \tab  \cr
-   PCT_BOX_OUTS_REB \tab character \tab  \cr
 }
+
+
+\strong{PlayerChargesDrawnLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   RANK \tab character \tab Rank. \cr
+   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+}
+
+
+\strong{PlayerDeflectionsLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   RANK \tab character \tab Rank. \cr
+   DEFLECTIONS \tab character \tab Defensive deflections. \cr
+}
+
+
+\strong{PlayerLooseBallLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   RANK \tab character \tab Rank. \cr
+   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+}
+
+
+\strong{PlayerScreenAssistLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   RANK \tab character \tab Rank. \cr
+   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+}
+
+
+\strong{Table5}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   AGE \tab character \tab Player age (in years). \cr
+   RANK \tab character \tab Rank. \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
+}
+
+Returns a named list of data frames: HustleStatsTeam
+
+\strong{HustleStatsTeam}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      MIN \tab character \tab Minutes played. \cr
+      CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+      CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+      CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+      DEFLECTIONS \tab character \tab Defensive deflections. \cr
+      CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+      SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+      SCREEN_AST_PTS \tab character \tab  \cr
+      OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+      PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
+      PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
+      OFF_BOXOUTS \tab character \tab  \cr
+      DEF_BOXOUTS \tab character \tab  \cr
+      BOX_OUTS \tab character \tab Box-outs executed. \cr
+      PCT_BOX_OUTS_OFF \tab character \tab  \cr
+      PCT_BOX_OUTS_DEF \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, TeamContestedShotsLeaders, TeamDeflectionsLeaders,  TeamLooseBallLeaders, TeamScreenAssistLeaders
+
+\strong{TeamContestedShotsLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+}
+
+
+\strong{TeamChargesDrawnLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+}
+
+
+\strong{TeamDeflectionsLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   DEFLECTIONS \tab character \tab Defensive deflections. \cr
+}
+
+
+\strong{TeamLooseBallLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+}
+
+
+\strong{TeamScreenAssistLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+}
+
+
+\strong{Table5}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   RANK \tab character \tab Rank. \cr
+   BOX_OUTS \tab character \tab Box-outs executed. \cr
+}
+
+
+\strong{Table6}
+
+Same columns as the \strong{Table5} table above.
 }
 \description{
 \strong{Get NBA Stats API League Hustle Stats Player}
 
 \strong{Get NBA Stats API League Hustle Stats Player}
+
+\strong{Get NBA Stats API League Hustle Stats Player Leaders}
+
+\strong{Get NBA Stats API League Hustle Stats Team}
+
+\strong{Get NBA Stats API League Hustle Stats Team Leaders}
 }
 \details{
 \href{https://www.nba.com/stats/players/hustle}{Player Hustle Stats}
@@ -136,13 +408,25 @@ Returns a named list of data frames: HustleStatsPlayer
  nba_leaguehustlestatsplayer(league_id = '00', team_id = '1610612761')
 
 }\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/players/hustle-leaders}{Player Hustle Stats Leaders}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguehustlestatsplayerleaders(league_id = '00')
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/teams/hustle}{Team Hustle Stats}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguehustlestatsteam(league_id = '00')
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/teams/hustle-leaders}{Team Hustle Stats Leaders}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguehustlestatsteamleaders(league_id = '00')
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBA Hustle Functions:
-\code{\link[=nba_hustlestatsboxscore]{nba_hustlestatsboxscore()}},
-\code{\link[=nba_leaguehustlestatsplayerleaders]{nba_leaguehustlestatsplayerleaders()}},
-\code{\link[=nba_leaguehustlestatsteam]{nba_leaguehustlestatsteam()}},
-\code{\link[=nba_leaguehustlestatsteamleaders]{nba_leaguehustlestatsteamleaders()}}
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}}
 }
 \author{
 Saiem Gilani

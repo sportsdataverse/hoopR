@@ -2,36 +2,115 @@
 % Please edit documentation in R/load_crosswalk.R
 \name{load_nba_team_crosswalk}
 \alias{load_nba_team_crosswalk}
+\alias{load_nba_schedule_crosswalk}
+\alias{load_nba_player_crosswalk}
+\alias{load_mbb_team_crosswalk}
+\alias{load_mbb_schedule_crosswalk}
+\alias{load_mbb_player_crosswalk}
 \title{\strong{Load hoopR NBA team crosswalk}}
 \usage{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
+
+load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
+
+load_nba_player_crosswalk(seasons = most_recent_nba_season())
+
+load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
+
+load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
+
+load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given NBA seasons.
-(Min: 2002; default: \code{most_recent_nba_season()})}
+\item{seasons}{A vector of 4-digit years associated with given MBB seasons.
+(Min: 2002; default: \code{most_recent_mbb_season()})}
 }
 \value{
 Returns a tibble of class \code{hoopR_data} with one row per
 NBA team per season. Columns include at minimum \code{season},
 \code{espn_team_id}, and \code{nba_team_id}.
+
+Returns a tibble of class \code{hoopR_data} with one row per
+NBA game per season. Columns include at minimum \code{season},
+\code{espn_game_id}, and \code{nba_game_id}.
+
+Returns a tibble of class \code{hoopR_data} with one row per
+NBA player per season. Columns include at minimum \code{season},
+\code{espn_athlete_id}, and \code{nba_player_id}.
+
+Returns a tibble of class \code{hoopR_data} with one row per
+MBB team per season. Columns include at minimum \code{season} and
+\code{espn_team_id}.
+
+Returns a tibble of class \code{hoopR_data} with one row per
+MBB game per season. Columns include at minimum \code{season} and
+\code{espn_game_id}.
+
+Returns a tibble of class \code{hoopR_data} with one row per
+MBB player per season. Columns include at minimum \code{season} and
+\code{espn_athlete_id}.
 }
 \description{
 Loads a pre-built per-season NBA team crosswalk that maps ESPN
 team identifiers to NBA.com identifiers and canonical abbreviations. The
 files are versioned \code{.rds} snapshots stored in the \code{nba_crosswalk} release
 of the sportsdataverse-data repository.
+
+Loads a pre-built per-season NBA schedule crosswalk that links
+ESPN game identifiers to NBA.com game identifiers. The files are versioned
+\code{.rds} snapshots stored in the \code{nba_crosswalk} release of the
+sportsdataverse-data repository.
+
+Loads a pre-built per-season NBA player crosswalk that maps ESPN
+athlete identifiers to NBA.com player identifiers. The files are versioned
+\code{.rds} snapshots stored in the \code{nba_crosswalk} release of the
+sportsdataverse-data repository.
+
+Loads a pre-built per-season MBB team crosswalk that maps ESPN
+team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
+and canonical abbreviations. The files are versioned \code{.rds} snapshots stored
+in the \code{mbb_crosswalk} release of the sportsdataverse-data repository.
+
+Loads a pre-built per-season MBB schedule crosswalk that links
+ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
+\code{.rds} snapshots stored in the \code{mbb_crosswalk} release of the
+sportsdataverse-data repository.
+
+Loads a pre-built per-season MBB player crosswalk that maps ESPN
+athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
+versioned \code{.rds} snapshots stored in the \code{mbb_crosswalk} release of the
+sportsdataverse-data repository.
 }
 \examples{
 \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 }
+\donttest{
+load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
+}
+\donttest{
+load_nba_player_crosswalk(seasons = most_recent_nba_season())
+}
+\donttest{
+load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
+}
+\donttest{
+load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
+}
+\donttest{
+load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
+}
 }
 \seealso{
 Other NBA Crosswalk Functions:
-\code{\link[=load_nba_player_crosswalk]{load_nba_player_crosswalk()}},
-\code{\link[=load_nba_schedule_crosswalk]{load_nba_schedule_crosswalk()}},
 \code{\link[=nba_player_crosswalk]{nba_player_crosswalk()}},
 \code{\link[=nba_schedule_crosswalk]{nba_schedule_crosswalk()}},
 \code{\link[=nba_team_crosswalk]{nba_team_crosswalk()}}
+
+Other MBB Crosswalk Functions:
+\code{\link[=mbb_player_crosswalk]{mbb_player_crosswalk()}},
+\code{\link[=mbb_schedule_crosswalk]{mbb_schedule_crosswalk()}},
+\code{\link[=mbb_team_crosswalk]{mbb_team_crosswalk()}}
 }
+\concept{MBB Crosswalk Functions}
 \concept{NBA Crosswalk Functions}

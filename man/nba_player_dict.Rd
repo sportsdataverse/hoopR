@@ -13,25 +13,28 @@ completed season.}
 \item{...}{Additional arguments passed to \code{\link[=nba_playerindex]{nba_playerindex()}} (e.g. \code{proxy}).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per player:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player_id \tab character \tab Player id (\code{PERSON_ID}). \cr
-   player_name \tab character \tab Full name. \cr
-   player_slug \tab character \tab URL-safe player slug. \cr
-   team_id \tab character \tab Team id. \cr
-   team_abbreviation \tab character \tab Team abbreviation. \cr
-   team_name \tab character \tab Full team name. \cr
-   position \tab character \tab Listed position. \cr
-   jersey_number \tab character \tab Jersey number. \cr
-   height \tab character \tab Listed height. \cr
-   weight \tab character \tab Listed weight. \cr
-   country \tab character \tab Country. \cr
-   draft_year \tab character \tab Draft year. \cr
-   from_year \tab character \tab First season. \cr
-   to_year \tab character \tab Most recent season. \cr
-   headshot_url \tab character \tab NBA CDN headshot URL. \cr
-   season \tab character \tab Season (echoes the \code{season} argument). \cr
-}
+A \code{hoopR_data} tibble with one row per player:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player_id \tab character \tab Player id (\code{PERSON_ID}). \cr
+      player_name \tab character \tab Full name. \cr
+      player_slug \tab character \tab URL-safe player slug. \cr
+      team_id \tab character \tab Team id. \cr
+      team_abbreviation \tab character \tab Team abbreviation. \cr
+      team_name \tab character \tab Full team name. \cr
+      position \tab character \tab Listed position. \cr
+      jersey_number \tab character \tab Jersey number. \cr
+      height \tab character \tab Listed height. \cr
+      weight \tab character \tab Listed weight. \cr
+      country \tab character \tab Country. \cr
+      draft_year \tab character \tab Draft year. \cr
+      from_year \tab character \tab First season. \cr
+      to_year \tab character \tab Most recent season. \cr
+      headshot_url \tab character \tab NBA CDN headshot URL. \cr
+      season \tab character \tab Season (echoes the \code{season} argument). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 A tidy player dictionary (id, name, team, bio, headshot URL)

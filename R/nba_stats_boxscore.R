@@ -18,99 +18,105 @@ NULL
 #'    **PlayerStats**
 #'
 #'
-#'    |col_name          |types     |description                                                                  |
-#'    |:-----------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                                      |
-#'    |TEAM_ID           |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID         |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME       |character |Player name.                                                                 |
-#'    |NICKNAME          |character |Team or athlete nickname.                                                    |
-#'    |START_POSITION    |character |                                                                             |
-#'    |COMMENT           |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN               |character |Minutes played.                                                              |
-#'    |FGM               |character |Field goals made.                                                            |
-#'    |FGA               |character |Field goal attempts.                                                         |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                                                 |
-#'    |FG3M              |character |Three-point field goals made.                                                |
-#'    |FG3A              |character |Three-point field goal attempts.                                             |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).                                     |
-#'    |FTM               |character |Free throws made.                                                            |
-#'    |FTA               |character |Free throw attempts.                                                         |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                                                 |
-#'    |OREB              |character |Offensive rebounds.                                                          |
-#'    |DREB              |character |Defensive rebounds.                                                          |
-#'    |REB               |character |Total rebounds.                                                              |
-#'    |AST               |character |Assists.                                                                     |
-#'    |STL               |character |Steals.                                                                      |
-#'    |BLK               |character |Blocks.                                                                      |
-#'    |TO                |character |To.                                                                          |
-#'    |PF                |character |Personal fouls.                                                              |
-#'    |PTS               |character |Points scored.                                                               |
-#'    |PLUS_MINUS        |character |Plus/minus point differential while on court.                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       TO \tab character \tab To. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamStats**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |FGM               |character |Field goals made.                               |
-#'    |FGA               |character |Field goal attempts.                            |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'    |FG3M              |character |Three-point field goals made.                   |
-#'    |FG3A              |character |Three-point field goal attempts.                |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
-#'    |FTM               |character |Free throws made.                               |
-#'    |FTA               |character |Free throw attempts.                            |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
-#'    |OREB              |character |Offensive rebounds.                             |
-#'    |DREB              |character |Defensive rebounds.                             |
-#'    |REB               |character |Total rebounds.                                 |
-#'    |AST               |character |Assists.                                        |
-#'    |STL               |character |Steals.                                         |
-#'    |BLK               |character |Blocks.                                         |
-#'    |TO                |character |To.                                             |
-#'    |PF                |character |Personal fouls.                                 |
-#'    |PTS               |character |Points scored.                                  |
-#'    |PLUS_MINUS        |character |Plus/minus point differential while on court.   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       TO \tab character \tab To. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamStarterBenchStats**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |STARTERS_BENCH    |character |                                                |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |FGM               |character |Field goals made.                               |
-#'    |FGA               |character |Field goal attempts.                            |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'    |FG3M              |character |Three-point field goals made.                   |
-#'    |FG3A              |character |Three-point field goal attempts.                |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
-#'    |FTM               |character |Free throws made.                               |
-#'    |FTA               |character |Free throw attempts.                            |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
-#'    |OREB              |character |Offensive rebounds.                             |
-#'    |DREB              |character |Defensive rebounds.                             |
-#'    |REB               |character |Total rebounds.                                 |
-#'    |AST               |character |Assists.                                        |
-#'    |STL               |character |Steals.                                         |
-#'    |BLK               |character |Blocks.                                         |
-#'    |TO                |character |To.                                             |
-#'    |PF                |character |Personal fouls.                                 |
-#'    |PTS               |character |Points scored.                                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       STARTERS_BENCH \tab character \tab  \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       TO \tab character \tab To. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -167,12 +173,9 @@ nba_boxscoretraditionalv2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Advanced V2**
-#' @name nba_boxscoreadvancedv2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Advanced V2**
-#' @rdname nba_boxscoreadvancedv2
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -185,74 +188,78 @@ NULL
 #'
 #'    PlayerStats
 #'
-#'    |col_name          |types     |description                                                                  |
-#'    |:-----------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                                      |
-#'    |TEAM_ID           |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID         |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME       |character |Player name.                                                                 |
-#'    |NICKNAME          |character |Team or athlete nickname.                                                    |
-#'    |START_POSITION    |character |                                                                             |
-#'    |COMMENT           |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN               |character |Minutes played.                                                              |
-#'    |E_OFF_RATING      |character |                                                                             |
-#'    |OFF_RATING        |character |Offensive rating (points produced per 100 possessions).                      |
-#'    |E_DEF_RATING      |character |                                                                             |
-#'    |DEF_RATING        |character |Defensive rating (points allowed per 100 possessions).                       |
-#'    |E_NET_RATING      |character |                                                                             |
-#'    |NET_RATING        |character |Net rating (off rating - def rating).                                        |
-#'    |AST_PCT           |character |Assist percentage (0-1).                                                     |
-#'    |AST_TOV           |character |                                                                             |
-#'    |AST_RATIO         |character |Assist ratio (assists per 100 possessions used).                             |
-#'    |OREB_PCT          |character |Offensive rebound percentage (0-1).                                          |
-#'    |DREB_PCT          |character |Defensive rebound percentage (0-1).                                          |
-#'    |REB_PCT           |character |Total rebound percentage (0-1).                                              |
-#'    |TM_TOV_PCT        |character |                                                                             |
-#'    |EFG_PCT           |character |Effective field goal percentage (0-1).                                       |
-#'    |TS_PCT            |character |True shooting percentage (0-1).                                              |
-#'    |USG_PCT           |character |Usage percentage (0-1).                                                      |
-#'    |E_USG_PCT         |character |                                                                             |
-#'    |E_PACE            |character |                                                                             |
-#'    |PACE              |character |Possessions per 48 minutes.                                                  |
-#'    |PACE_PER40        |character |Pace per40.                                                                  |
-#'    |POSS              |character |Poss.                                                                        |
-#'    |PIE               |character |Player Impact Estimate (0-1).                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       E_OFF_RATING \tab character \tab  \cr
+#'       OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
+#'       E_DEF_RATING \tab character \tab  \cr
+#'       DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
+#'       E_NET_RATING \tab character \tab  \cr
+#'       NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
+#'       AST_PCT \tab character \tab Assist percentage (0-1). \cr
+#'       AST_TOV \tab character \tab  \cr
+#'       AST_RATIO \tab character \tab Assist ratio (assists per 100 possessions used). \cr
+#'       OREB_PCT \tab character \tab Offensive rebound percentage (0-1). \cr
+#'       DREB_PCT \tab character \tab Defensive rebound percentage (0-1). \cr
+#'       REB_PCT \tab character \tab Total rebound percentage (0-1). \cr
+#'       TM_TOV_PCT \tab character \tab  \cr
+#'       EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+#'       TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+#'       USG_PCT \tab character \tab Usage percentage (0-1). \cr
+#'       E_USG_PCT \tab character \tab  \cr
+#'       E_PACE \tab character \tab  \cr
+#'       PACE \tab character \tab Possessions per 48 minutes. \cr
+#'       PACE_PER40 \tab character \tab Pace per40. \cr
+#'       POSS \tab character \tab Poss. \cr
+#'       PIE \tab character \tab Player Impact Estimate (0-1). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    TeamStats
 #'
-#'    |col_name          |types     |description                                             |
-#'    |:-----------------|:---------|:-------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                 |
-#'    |TEAM_ID           |character |Unique team identifier.                                 |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces').         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                   |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                 |
-#'    |MIN               |character |Minutes played.                                         |
-#'    |E_OFF_RATING      |character |                                                        |
-#'    |OFF_RATING        |character |Offensive rating (points produced per 100 possessions). |
-#'    |E_DEF_RATING      |character |                                                        |
-#'    |DEF_RATING        |character |Defensive rating (points allowed per 100 possessions).  |
-#'    |E_NET_RATING      |character |                                                        |
-#'    |NET_RATING        |character |Net rating (off rating - def rating).                   |
-#'    |AST_PCT           |character |Assist percentage (0-1).                                |
-#'    |AST_TOV           |character |                                                        |
-#'    |AST_RATIO         |character |Assist ratio (assists per 100 possessions used).        |
-#'    |OREB_PCT          |character |Offensive rebound percentage (0-1).                     |
-#'    |DREB_PCT          |character |Defensive rebound percentage (0-1).                     |
-#'    |REB_PCT           |character |Total rebound percentage (0-1).                         |
-#'    |E_TM_TOV_PCT      |character |                                                        |
-#'    |TM_TOV_PCT        |character |                                                        |
-#'    |EFG_PCT           |character |Effective field goal percentage (0-1).                  |
-#'    |TS_PCT            |character |True shooting percentage (0-1).                         |
-#'    |USG_PCT           |character |Usage percentage (0-1).                                 |
-#'    |E_USG_PCT         |character |                                                        |
-#'    |E_PACE            |character |                                                        |
-#'    |PACE              |character |Possessions per 48 minutes.                             |
-#'    |PACE_PER40        |character |Pace per40.                                             |
-#'    |POSS              |character |Poss.                                                   |
-#'    |PIE               |character |Player Impact Estimate (0-1).                           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       E_OFF_RATING \tab character \tab  \cr
+#'       OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
+#'       E_DEF_RATING \tab character \tab  \cr
+#'       DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
+#'       E_NET_RATING \tab character \tab  \cr
+#'       NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
+#'       AST_PCT \tab character \tab Assist percentage (0-1). \cr
+#'       AST_TOV \tab character \tab  \cr
+#'       AST_RATIO \tab character \tab Assist ratio (assists per 100 possessions used). \cr
+#'       OREB_PCT \tab character \tab Offensive rebound percentage (0-1). \cr
+#'       DREB_PCT \tab character \tab Defensive rebound percentage (0-1). \cr
+#'       REB_PCT \tab character \tab Total rebound percentage (0-1). \cr
+#'       E_TM_TOV_PCT \tab character \tab  \cr
+#'       TM_TOV_PCT \tab character \tab  \cr
+#'       EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+#'       TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+#'       USG_PCT \tab character \tab Usage percentage (0-1). \cr
+#'       E_USG_PCT \tab character \tab  \cr
+#'       E_PACE \tab character \tab  \cr
+#'       PACE \tab character \tab Possessions per 48 minutes. \cr
+#'       PACE_PER40 \tab character \tab Pace per40. \cr
+#'       POSS \tab character \tab Poss. \cr
+#'       PIE \tab character \tab Player Impact Estimate (0-1). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -370,9 +377,6 @@ nba_boxscoredefensive <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Four Factors V2**
-#' @name nba_boxscorefourfactorsv2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Four Factors V2**
 #' @description
@@ -381,7 +385,7 @@ NULL
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_boxscorefourfactorsv3()` instead.
-#' @rdname nba_boxscorefourfactorsv2
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -395,46 +399,50 @@ NULL
 #'    **sqlPlayersFourFactors**
 #'
 #'
-#'    |col_name          |types     |description                                                                  |
-#'    |:-----------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                                      |
-#'    |TEAM_ID           |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID         |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME       |character |Player name.                                                                 |
-#'    |NICKNAME          |character |Team or athlete nickname.                                                    |
-#'    |START_POSITION    |character |                                                                             |
-#'    |COMMENT           |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN               |character |Minutes played.                                                              |
-#'    |EFG_PCT           |character |Effective field goal percentage (0-1).                                       |
-#'    |FTA_RATE          |character |Free throw attempt rate (FTA / FGA).                                         |
-#'    |TM_TOV_PCT        |character |                                                                             |
-#'    |OREB_PCT          |character |Offensive rebound percentage (0-1).                                          |
-#'    |OPP_EFG_PCT       |character |                                                                             |
-#'    |OPP_FTA_RATE      |character |                                                                             |
-#'    |OPP_TOV_PCT       |character |                                                                             |
-#'    |OPP_OREB_PCT      |character |                                                                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+#'       FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
+#'       TM_TOV_PCT \tab character \tab  \cr
+#'       OREB_PCT \tab character \tab Offensive rebound percentage (0-1). \cr
+#'       OPP_EFG_PCT \tab character \tab  \cr
+#'       OPP_FTA_RATE \tab character \tab  \cr
+#'       OPP_TOV_PCT \tab character \tab  \cr
+#'       OPP_OREB_PCT \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **sqlTeamsFourFactors**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |EFG_PCT           |character |Effective field goal percentage (0-1).          |
-#'    |FTA_RATE          |character |Free throw attempt rate (FTA / FGA).            |
-#'    |TM_TOV_PCT        |character |                                                |
-#'    |OREB_PCT          |character |Offensive rebound percentage (0-1).             |
-#'    |OPP_EFG_PCT       |character |                                                |
-#'    |OPP_FTA_RATE      |character |                                                |
-#'    |OPP_TOV_PCT       |character |                                                |
-#'    |OPP_OREB_PCT      |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+#'       FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
+#'       TM_TOV_PCT \tab character \tab  \cr
+#'       OREB_PCT \tab character \tab Offensive rebound percentage (0-1). \cr
+#'       OPP_EFG_PCT \tab character \tab  \cr
+#'       OPP_FTA_RATE \tab character \tab  \cr
+#'       OPP_TOV_PCT \tab character \tab  \cr
+#'       OPP_OREB_PCT \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -497,9 +505,6 @@ nba_boxscorefourfactorsv2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Misc V2**
-#' @name nba_boxscoremiscv2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Misc V2**
 #' @description
@@ -508,7 +513,7 @@ NULL
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_boxscoremiscv3()` instead.
-#' @rdname nba_boxscoremiscv2
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -522,54 +527,58 @@ NULL
 #'    **sqlPlayersMisc**
 #'
 #'
-#'    |col_name           |types     |description                                                                  |
-#'    |:------------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID            |character |Unique game identifier.                                                      |
-#'    |TEAM_ID            |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION  |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY          |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID          |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME        |character |Player name.                                                                 |
-#'    |NICKNAME           |character |Team or athlete nickname.                                                    |
-#'    |START_POSITION     |character |                                                                             |
-#'    |COMMENT            |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN                |character |Minutes played.                                                              |
-#'    |PTS_OFF_TOV        |character |Points scored off opponent turnovers.                                        |
-#'    |PTS_2ND_CHANCE     |character |                                                                             |
-#'    |PTS_FB             |character |                                                                             |
-#'    |PTS_PAINT          |character |Points scored in the paint.                                                  |
-#'    |OPP_PTS_OFF_TOV    |character |                                                                             |
-#'    |OPP_PTS_2ND_CHANCE |character |                                                                             |
-#'    |OPP_PTS_FB         |character |                                                                             |
-#'    |OPP_PTS_PAINT      |character |                                                                             |
-#'    |BLK                |character |Blocks.                                                                      |
-#'    |BLKA               |character |                                                                             |
-#'    |PF                 |character |Personal fouls.                                                              |
-#'    |PFD                |character |                                                                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       PTS_OFF_TOV \tab character \tab Points scored off opponent turnovers. \cr
+#'       PTS_2ND_CHANCE \tab character \tab  \cr
+#'       PTS_FB \tab character \tab  \cr
+#'       PTS_PAINT \tab character \tab Points scored in the paint. \cr
+#'       OPP_PTS_OFF_TOV \tab character \tab  \cr
+#'       OPP_PTS_2ND_CHANCE \tab character \tab  \cr
+#'       OPP_PTS_FB \tab character \tab  \cr
+#'       OPP_PTS_PAINT \tab character \tab  \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       BLKA \tab character \tab  \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PFD \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **sqlTeamsMisc**
 #'
 #'
-#'    |col_name           |types     |description                                     |
-#'    |:------------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID            |character |Unique game identifier.                         |
-#'    |TEAM_ID            |character |Unique team identifier.                         |
-#'    |TEAM_NAME          |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION  |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY          |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |MIN                |character |Minutes played.                                 |
-#'    |PTS_OFF_TOV        |character |Points scored off opponent turnovers.           |
-#'    |PTS_2ND_CHANCE     |character |                                                |
-#'    |PTS_FB             |character |                                                |
-#'    |PTS_PAINT          |character |Points scored in the paint.                     |
-#'    |OPP_PTS_OFF_TOV    |character |                                                |
-#'    |OPP_PTS_2ND_CHANCE |character |                                                |
-#'    |OPP_PTS_FB         |character |                                                |
-#'    |OPP_PTS_PAINT      |character |                                                |
-#'    |BLK                |character |Blocks.                                         |
-#'    |BLKA               |character |                                                |
-#'    |PF                 |character |Personal fouls.                                 |
-#'    |PFD                |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       PTS_OFF_TOV \tab character \tab Points scored off opponent turnovers. \cr
+#'       PTS_2ND_CHANCE \tab character \tab  \cr
+#'       PTS_FB \tab character \tab  \cr
+#'       PTS_PAINT \tab character \tab Points scored in the paint. \cr
+#'       OPP_PTS_OFF_TOV \tab character \tab  \cr
+#'       OPP_PTS_2ND_CHANCE \tab character \tab  \cr
+#'       OPP_PTS_FB \tab character \tab  \cr
+#'       OPP_PTS_PAINT \tab character \tab  \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       BLKA \tab character \tab  \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PFD \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -632,9 +641,6 @@ nba_boxscoremiscv2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Scoring V2**
-#' @name nba_boxscorescoringv2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Scoring V2**
 #' @description
@@ -643,7 +649,7 @@ NULL
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_boxscorescoringv3()` instead.
-#' @rdname nba_boxscorescoringv2
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -657,60 +663,64 @@ NULL
 #'    **sqlPlayersScoring**
 #'
 #'
-#'    |col_name          |types     |description                                                                  |
-#'    |:-----------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                                      |
-#'    |TEAM_ID           |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID         |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME       |character |Player name.                                                                 |
-#'    |NICKNAME          |character |Team or athlete nickname.                                                    |
-#'    |START_POSITION    |character |                                                                             |
-#'    |COMMENT           |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN               |character |Minutes played.                                                              |
-#'    |PCT_FGA_2PT       |character |                                                                             |
-#'    |PCT_FGA_3PT       |character |                                                                             |
-#'    |PCT_PTS_2PT       |character |                                                                             |
-#'    |PCT_PTS_2PT_MR    |character |                                                                             |
-#'    |PCT_PTS_3PT       |character |                                                                             |
-#'    |PCT_PTS_FB        |character |                                                                             |
-#'    |PCT_PTS_FT        |character |                                                                             |
-#'    |PCT_PTS_OFF_TOV   |character |                                                                             |
-#'    |PCT_PTS_PAINT     |character |                                                                             |
-#'    |PCT_AST_2PM       |character |                                                                             |
-#'    |PCT_UAST_2PM      |character |                                                                             |
-#'    |PCT_AST_3PM       |character |                                                                             |
-#'    |PCT_UAST_3PM      |character |                                                                             |
-#'    |PCT_AST_FGM       |character |                                                                             |
-#'    |PCT_UAST_FGM      |character |                                                                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       PCT_FGA_2PT \tab character \tab  \cr
+#'       PCT_FGA_3PT \tab character \tab  \cr
+#'       PCT_PTS_2PT \tab character \tab  \cr
+#'       PCT_PTS_2PT_MR \tab character \tab  \cr
+#'       PCT_PTS_3PT \tab character \tab  \cr
+#'       PCT_PTS_FB \tab character \tab  \cr
+#'       PCT_PTS_FT \tab character \tab  \cr
+#'       PCT_PTS_OFF_TOV \tab character \tab  \cr
+#'       PCT_PTS_PAINT \tab character \tab  \cr
+#'       PCT_AST_2PM \tab character \tab  \cr
+#'       PCT_UAST_2PM \tab character \tab  \cr
+#'       PCT_AST_3PM \tab character \tab  \cr
+#'       PCT_UAST_3PM \tab character \tab  \cr
+#'       PCT_AST_FGM \tab character \tab  \cr
+#'       PCT_UAST_FGM \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **sqlTeamsScoring**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |PCT_FGA_2PT       |character |                                                |
-#'    |PCT_FGA_3PT       |character |                                                |
-#'    |PCT_PTS_2PT       |character |                                                |
-#'    |PCT_PTS_2PT_MR    |character |                                                |
-#'    |PCT_PTS_3PT       |character |                                                |
-#'    |PCT_PTS_FB        |character |                                                |
-#'    |PCT_PTS_FT        |character |                                                |
-#'    |PCT_PTS_OFF_TOV   |character |                                                |
-#'    |PCT_PTS_PAINT     |character |                                                |
-#'    |PCT_AST_2PM       |character |                                                |
-#'    |PCT_UAST_2PM      |character |                                                |
-#'    |PCT_AST_3PM       |character |                                                |
-#'    |PCT_UAST_3PM      |character |                                                |
-#'    |PCT_AST_FGM       |character |                                                |
-#'    |PCT_UAST_FGM      |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       PCT_FGA_2PT \tab character \tab  \cr
+#'       PCT_FGA_3PT \tab character \tab  \cr
+#'       PCT_PTS_2PT \tab character \tab  \cr
+#'       PCT_PTS_2PT_MR \tab character \tab  \cr
+#'       PCT_PTS_3PT \tab character \tab  \cr
+#'       PCT_PTS_FB \tab character \tab  \cr
+#'       PCT_PTS_FT \tab character \tab  \cr
+#'       PCT_PTS_OFF_TOV \tab character \tab  \cr
+#'       PCT_PTS_PAINT \tab character \tab  \cr
+#'       PCT_AST_2PM \tab character \tab  \cr
+#'       PCT_UAST_2PM \tab character \tab  \cr
+#'       PCT_AST_3PM \tab character \tab  \cr
+#'       PCT_UAST_3PM \tab character \tab  \cr
+#'       PCT_AST_FGM \tab character \tab  \cr
+#'       PCT_UAST_FGM \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -773,9 +783,6 @@ nba_boxscorescoringv2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Usage V2**
-#' @name nba_boxscoreusagev2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Usage V2**
 #' @description
@@ -784,7 +791,7 @@ NULL
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_boxscoreusagev3()` instead.
-#' @rdname nba_boxscoreusagev2
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param start_period start_period
@@ -798,66 +805,70 @@ NULL
 #'    **sqlPlayersUsage**
 #'
 #'
-#'    |col_name          |types     |description                                                                  |
-#'    |:-----------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                                      |
-#'    |TEAM_ID           |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID         |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME       |character |Player name.                                                                 |
-#'    |NICKNAME          |character |Team or athlete nickname.                                                    |
-#'    |START_POSITION    |character |                                                                             |
-#'    |COMMENT           |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN               |character |Minutes played.                                                              |
-#'    |USG_PCT           |character |Usage percentage (0-1).                                                      |
-#'    |PCT_FGM           |character |                                                                             |
-#'    |PCT_FGA           |character |                                                                             |
-#'    |PCT_FG3M          |character |                                                                             |
-#'    |PCT_FG3A          |character |                                                                             |
-#'    |PCT_FTM           |character |                                                                             |
-#'    |PCT_FTA           |character |                                                                             |
-#'    |PCT_OREB          |character |                                                                             |
-#'    |PCT_DREB          |character |                                                                             |
-#'    |PCT_REB           |character |                                                                             |
-#'    |PCT_AST           |character |                                                                             |
-#'    |PCT_TOV           |character |                                                                             |
-#'    |PCT_STL           |character |                                                                             |
-#'    |PCT_BLK           |character |                                                                             |
-#'    |PCT_BLKA          |character |                                                                             |
-#'    |PCT_PF            |character |                                                                             |
-#'    |PCT_PFD           |character |                                                                             |
-#'    |PCT_PTS           |character |                                                                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       USG_PCT \tab character \tab Usage percentage (0-1). \cr
+#'       PCT_FGM \tab character \tab  \cr
+#'       PCT_FGA \tab character \tab  \cr
+#'       PCT_FG3M \tab character \tab  \cr
+#'       PCT_FG3A \tab character \tab  \cr
+#'       PCT_FTM \tab character \tab  \cr
+#'       PCT_FTA \tab character \tab  \cr
+#'       PCT_OREB \tab character \tab  \cr
+#'       PCT_DREB \tab character \tab  \cr
+#'       PCT_REB \tab character \tab  \cr
+#'       PCT_AST \tab character \tab  \cr
+#'       PCT_TOV \tab character \tab  \cr
+#'       PCT_STL \tab character \tab  \cr
+#'       PCT_BLK \tab character \tab  \cr
+#'       PCT_BLKA \tab character \tab  \cr
+#'       PCT_PF \tab character \tab  \cr
+#'       PCT_PFD \tab character \tab  \cr
+#'       PCT_PTS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **sqlTeamsUsage**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |USG_PCT           |character |Usage percentage (0-1).                         |
-#'    |PCT_FGM           |character |                                                |
-#'    |PCT_FGA           |character |                                                |
-#'    |PCT_FG3M          |character |                                                |
-#'    |PCT_FG3A          |character |                                                |
-#'    |PCT_FTM           |character |                                                |
-#'    |PCT_FTA           |character |                                                |
-#'    |PCT_OREB          |character |                                                |
-#'    |PCT_DREB          |character |                                                |
-#'    |PCT_REB           |character |                                                |
-#'    |PCT_AST           |character |                                                |
-#'    |PCT_TOV           |character |                                                |
-#'    |PCT_STL           |character |                                                |
-#'    |PCT_BLK           |character |                                                |
-#'    |PCT_BLKA          |character |                                                |
-#'    |PCT_PF            |character |                                                |
-#'    |PCT_PFD           |character |                                                |
-#'    |PCT_PTS           |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       USG_PCT \tab character \tab Usage percentage (0-1). \cr
+#'       PCT_FGM \tab character \tab  \cr
+#'       PCT_FGA \tab character \tab  \cr
+#'       PCT_FG3M \tab character \tab  \cr
+#'       PCT_FG3A \tab character \tab  \cr
+#'       PCT_FTM \tab character \tab  \cr
+#'       PCT_FTA \tab character \tab  \cr
+#'       PCT_OREB \tab character \tab  \cr
+#'       PCT_DREB \tab character \tab  \cr
+#'       PCT_REB \tab character \tab  \cr
+#'       PCT_AST \tab character \tab  \cr
+#'       PCT_TOV \tab character \tab  \cr
+#'       PCT_STL \tab character \tab  \cr
+#'       PCT_BLK \tab character \tab  \cr
+#'       PCT_BLKA \tab character \tab  \cr
+#'       PCT_PF \tab character \tab  \cr
+#'       PCT_PFD \tab character \tab  \cr
+#'       PCT_PTS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -920,12 +931,9 @@ nba_boxscoreusagev2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Summary V2**
-#' @name nba_boxscoresummaryv2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Summary V2**
-#' @rdname nba_boxscoresummaryv2
+#' @rdname nba_boxscoredefensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -935,22 +943,7 @@ NULL
 #'    **GameSummary**
 #'
 #'
-#'    |col_name                         |types     |description                                            |
-#'    |:--------------------------------|:---------|:------------------------------------------------------|
-#'    |GAME_DATE_EST                    |character |Game date est.                                         |
-#'    |GAME_SEQUENCE                    |character |Game sequence.                                         |
-#'    |GAME_ID                          |character |Unique game identifier.                                |
-#'    |GAME_STATUS_ID                   |character |Numeric game status identifier.                        |
-#'    |GAME_STATUS_TEXT                 |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
-#'    |GAMECODE                         |character |                                                       |
-#'    |HOME_TEAM_ID                     |character |Unique identifier for the home team.                   |
-#'    |VISITOR_TEAM_ID                  |character |                                                       |
-#'    |SEASON                           |character |Season identifier (4-digit year or 'YYYY-YY' string).  |
-#'    |LIVE_PERIOD                      |character |                                                       |
-#'    |LIVE_PC_TIME                     |character |                                                       |
-#'    |NATL_TV_BROADCASTER_ABBREVIATION |character |                                                       |
-#'    |LIVE_PERIOD_TIME_BCAST           |character |                                                       |
-#'    |WH_STATUS                        |character |Wh status.                                             |
+#'    Columns as documented in the shared [nba_boxscoresummaryv2_gamesummary_schema] table.
 #'
 #'    **OtherStats**
 #'
@@ -1037,34 +1030,12 @@ NULL
 #'    **LastMeeting**
 #'
 #'
-#'    |col_name                         |types     |description             |
-#'    |:--------------------------------|:---------|:-----------------------|
-#'    |GAME_ID                          |character |Unique game identifier. |
-#'    |LAST_GAME_ID                     |character |                        |
-#'    |LAST_GAME_DATE_EST               |character |                        |
-#'    |LAST_GAME_HOME_TEAM_ID           |character |                        |
-#'    |LAST_GAME_HOME_TEAM_CITY         |character |                        |
-#'    |LAST_GAME_HOME_TEAM_NAME         |character |                        |
-#'    |LAST_GAME_HOME_TEAM_ABBREVIATION |character |                        |
-#'    |LAST_GAME_HOME_TEAM_POINTS       |character |                        |
-#'    |LAST_GAME_VISITOR_TEAM_ID        |character |                        |
-#'    |LAST_GAME_VISITOR_TEAM_CITY      |character |                        |
-#'    |LAST_GAME_VISITOR_TEAM_NAME      |character |                        |
-#'    |LAST_GAME_VISITOR_TEAM_CITY1     |character |                        |
-#'    |LAST_GAME_VISITOR_TEAM_POINTS    |character |                        |
+#'    Columns as documented in the shared [nba_boxscoresummaryv2_lastmeeting_schema] table.
 #'
 #'    **SeasonSeries**
 #'
 #'
-#'    |col_name         |types     |description                          |
-#'    |:----------------|:---------|:------------------------------------|
-#'    |GAME_ID          |character |Unique game identifier.              |
-#'    |HOME_TEAM_ID     |character |Unique identifier for the home team. |
-#'    |VISITOR_TEAM_ID  |character |                                     |
-#'    |GAME_DATE_EST    |character |Game date est.                       |
-#'    |HOME_TEAM_WINS   |character |Home team's team wins.               |
-#'    |HOME_TEAM_LOSSES |character |Home team's team losses.             |
-#'    |SERIES_LEADER    |character |                                     |
+#'    Columns as documented in the shared [nba_boxscoresummaryv2_seasonseries_schema] table.
 #'
 #'    **AvailableVideo**
 #'
@@ -1124,12 +1095,9 @@ nba_boxscoresummaryv2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Matchups**
-#' @name nba_boxscorematchups
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Matchups**
-#' @rdname nba_boxscorematchups
+#' @rdname nba_boxscoredefensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1179,9 +1147,6 @@ nba_boxscorematchups <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Boxscore Player Tracking V2**
-#' @name nba_boxscoreplayertrackv2
-NULL
 #' @title
 #' **Get NBA Stats API Boxscore Player Tracking V2**
 #' @description
@@ -1190,7 +1155,7 @@ NULL
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_boxscoreplayertrackv3()` instead.
-#' @rdname nba_boxscoreplayertrackv2
+#' @rdname nba_boxscoredefensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1199,68 +1164,72 @@ NULL
 #'    **PlayerStats**
 #'
 #'
-#'    |col_name          |types     |description                                                                  |
-#'    |:-----------------|:---------|:----------------------------------------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                                                      |
-#'    |TEAM_ID           |character |Unique team identifier.                                                      |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                                        |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                                      |
-#'    |PLAYER_ID         |character |Unique player identifier.                                                    |
-#'    |PLAYER_NAME       |character |Player name.                                                                 |
-#'    |START_POSITION    |character |                                                                             |
-#'    |COMMENT           |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
-#'    |MIN               |character |Minutes played.                                                              |
-#'    |SPD               |character |                                                                             |
-#'    |DIST              |character |                                                                             |
-#'    |ORBC              |character |                                                                             |
-#'    |DRBC              |character |                                                                             |
-#'    |RBC               |character |                                                                             |
-#'    |TCHS              |character |                                                                             |
-#'    |SAST              |character |                                                                             |
-#'    |FTAST             |character |                                                                             |
-#'    |PASS              |character |                                                                             |
-#'    |AST               |character |Assists.                                                                     |
-#'    |CFGM              |character |                                                                             |
-#'    |CFGA              |character |                                                                             |
-#'    |CFG_PCT           |character |                                                                             |
-#'    |UFGM              |character |                                                                             |
-#'    |UFGA              |character |                                                                             |
-#'    |UFG_PCT           |character |                                                                             |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                                                 |
-#'    |DFGM              |character |                                                                             |
-#'    |DFGA              |character |                                                                             |
-#'    |DFG_PCT           |character |                                                                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       SPD \tab character \tab  \cr
+#'       DIST \tab character \tab  \cr
+#'       ORBC \tab character \tab  \cr
+#'       DRBC \tab character \tab  \cr
+#'       RBC \tab character \tab  \cr
+#'       TCHS \tab character \tab  \cr
+#'       SAST \tab character \tab  \cr
+#'       FTAST \tab character \tab  \cr
+#'       PASS \tab character \tab  \cr
+#'       AST \tab character \tab Assists. \cr
+#'       CFGM \tab character \tab  \cr
+#'       CFGA \tab character \tab  \cr
+#'       CFG_PCT \tab character \tab  \cr
+#'       UFGM \tab character \tab  \cr
+#'       UFGA \tab character \tab  \cr
+#'       UFG_PCT \tab character \tab  \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       DFGM \tab character \tab  \cr
+#'       DFGA \tab character \tab  \cr
+#'       DFG_PCT \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamStats**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GAME_ID           |character |Unique game identifier.                         |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').         |
-#'    |MIN               |character |Minutes played.                                 |
-#'    |DIST              |character |                                                |
-#'    |ORBC              |character |                                                |
-#'    |DRBC              |character |                                                |
-#'    |RBC               |character |                                                |
-#'    |TCHS              |character |                                                |
-#'    |SAST              |character |                                                |
-#'    |FTAST             |character |                                                |
-#'    |PASS              |character |                                                |
-#'    |AST               |character |Assists.                                        |
-#'    |CFGM              |character |                                                |
-#'    |CFGA              |character |                                                |
-#'    |CFG_PCT           |character |                                                |
-#'    |UFGM              |character |                                                |
-#'    |UFGA              |character |                                                |
-#'    |UFG_PCT           |character |                                                |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'    |DFGM              |character |                                                |
-#'    |DFGA              |character |                                                |
-#'    |DFG_PCT           |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       DIST \tab character \tab  \cr
+#'       ORBC \tab character \tab  \cr
+#'       DRBC \tab character \tab  \cr
+#'       RBC \tab character \tab  \cr
+#'       TCHS \tab character \tab  \cr
+#'       SAST \tab character \tab  \cr
+#'       FTAST \tab character \tab  \cr
+#'       PASS \tab character \tab  \cr
+#'       AST \tab character \tab Assists. \cr
+#'       CFGM \tab character \tab  \cr
+#'       CFGA \tab character \tab  \cr
+#'       CFG_PCT \tab character \tab  \cr
+#'       UFGM \tab character \tab  \cr
+#'       UFGA \tab character \tab  \cr
+#'       UFG_PCT \tab character \tab  \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       DFGM \tab character \tab  \cr
+#'       DFGA \tab character \tab  \cr
+#'       DFG_PCT \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1315,12 +1284,9 @@ nba_boxscoreplayertrackv2 <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API Hustle Stats Boxscore**
-#' @name nba_hustlestatsboxscore
-NULL
 #' @title
 #' **Get NBA Stats API Hustle Stats Boxscore**
-#' @rdname nba_hustlestatsboxscore
+#' @rdname nba_boxscoredefensive
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1337,61 +1303,65 @@ NULL
 #'    **PlayerStats**
 #'
 #'
-#'    |col_name                  |types     |description                                                                      |
-#'    |:-------------------------|:---------|:--------------------------------------------------------------------------------|
-#'    |GAME_ID                   |character |Unique game identifier.                                                          |
-#'    |TEAM_ID                   |character |Unique team identifier.                                                          |
-#'    |TEAM_ABBREVIATION         |character |Short team abbreviation (e.g. 'LAS').                                            |
-#'    |TEAM_CITY                 |character |Team city or region (e.g. 'Las Vegas').                                          |
-#'    |PLAYER_ID                 |character |Unique player identifier.                                                        |
-#'    |PLAYER_NAME               |character |Player name.                                                                     |
-#'    |START_POSITION            |character |                                                                                 |
-#'    |COMMENT                   |character |Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive').     |
-#'    |MINUTES                   |character |Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
-#'    |PTS                       |character |Points scored.                                                                   |
-#'    |CONTESTED_SHOTS           |character |Defensively contested shots.                                                     |
-#'    |CONTESTED_SHOTS_2PT       |character |Contested two-point shots.                                                       |
-#'    |CONTESTED_SHOTS_3PT       |character |Contested three-point shots.                                                     |
-#'    |DEFLECTIONS               |character |Defensive deflections.                                                           |
-#'    |CHARGES_DRAWN             |character |Charges drawn.                                                                   |
-#'    |SCREEN_ASSISTS            |character |Screen assists (resulting in a basket).                                          |
-#'    |SCREEN_AST_PTS            |character |                                                                                 |
-#'    |OFF_LOOSE_BALLS_RECOVERED |character |                                                                                 |
-#'    |DEF_LOOSE_BALLS_RECOVERED |character |                                                                                 |
-#'    |LOOSE_BALLS_RECOVERED     |character |Loose balls recovered.                                                           |
-#'    |OFF_BOXOUTS               |character |                                                                                 |
-#'    |DEF_BOXOUTS               |character |                                                                                 |
-#'    |BOX_OUT_PLAYER_TEAM_REBS  |character |                                                                                 |
-#'    |BOX_OUT_PLAYER_REBS       |character |                                                                                 |
-#'    |BOX_OUTS                  |character |Box-outs executed.                                                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       START_POSITION \tab character \tab  \cr
+#'       COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+#'       MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+#'       CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+#'       CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
+#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+#'       SCREEN_AST_PTS \tab character \tab  \cr
+#'       OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+#'       OFF_BOXOUTS \tab character \tab  \cr
+#'       DEF_BOXOUTS \tab character \tab  \cr
+#'       BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+#'       BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamStats**
 #'
 #'
-#'    |col_name                  |types     |description                                                                      |
-#'    |:-------------------------|:---------|:--------------------------------------------------------------------------------|
-#'    |GAME_ID                   |character |Unique game identifier.                                                          |
-#'    |TEAM_ID                   |character |Unique team identifier.                                                          |
-#'    |TEAM_NAME                 |character |Full team display name (e.g. 'Las Vegas Aces').                                  |
-#'    |TEAM_ABBREVIATION         |character |Short team abbreviation (e.g. 'LAS').                                            |
-#'    |TEAM_CITY                 |character |Team city or region (e.g. 'Las Vegas').                                          |
-#'    |MINUTES                   |character |Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
-#'    |PTS                       |character |Points scored.                                                                   |
-#'    |CONTESTED_SHOTS           |character |Defensively contested shots.                                                     |
-#'    |CONTESTED_SHOTS_2PT       |character |Contested two-point shots.                                                       |
-#'    |CONTESTED_SHOTS_3PT       |character |Contested three-point shots.                                                     |
-#'    |DEFLECTIONS               |character |Defensive deflections.                                                           |
-#'    |CHARGES_DRAWN             |character |Charges drawn.                                                                   |
-#'    |SCREEN_ASSISTS            |character |Screen assists (resulting in a basket).                                          |
-#'    |SCREEN_AST_PTS            |character |                                                                                 |
-#'    |OFF_LOOSE_BALLS_RECOVERED |character |                                                                                 |
-#'    |DEF_LOOSE_BALLS_RECOVERED |character |                                                                                 |
-#'    |LOOSE_BALLS_RECOVERED     |character |Loose balls recovered.                                                           |
-#'    |OFF_BOXOUTS               |character |                                                                                 |
-#'    |DEF_BOXOUTS               |character |                                                                                 |
-#'    |BOX_OUT_PLAYER_TEAM_REBS  |character |                                                                                 |
-#'    |BOX_OUT_PLAYER_REBS       |character |                                                                                 |
-#'    |BOX_OUTS                  |character |Box-outs executed.                                                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+#'       CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+#'       CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
+#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+#'       SCREEN_AST_PTS \tab character \tab  \cr
+#'       OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+#'       OFF_BOXOUTS \tab character \tab  \cr
+#'       DEF_BOXOUTS \tab character \tab  \cr
+#'       BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+#'       BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

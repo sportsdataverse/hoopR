@@ -14,61 +14,65 @@ nba_draftboard(season = most_recent_nba_season() - 1, ...)
 \value{
 Returns a named list of data frames: Picks, TeamsWithoutPicks, LiveDetails
 
-\strong{Picks}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   pick_number \tab integer \tab Pick number. \cr
-   pick_details \tab character \tab Pick details. \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   team_type \tab character \tab Team type. \cr
-   team_season \tab integer \tab Team season. \cr
-   team_team_id \tab integer \tab Unique identifier for team team. \cr
-   team_permalink \tab character \tab Team permalink. \cr
-   team_app_url \tab character \tab URL for team app. \cr
-   team_trade_details \tab list \tab Team trade details. \cr
-   team_team_name \tab character \tab Team team name. \cr
-   team_team_abbr \tab character \tab Team team abbr. \cr
-   team_picked_first_round \tab logical \tab Team picked first round. \cr
-   team_picked_second_round \tab logical \tab Team picked second round. \cr
-   team_team_record_season \tab character \tab Team team record season. \cr
-   team_team_record_wins_and_losses \tab character \tab Team team record wins and losses. \cr
-   team_team_record_season_finish \tab character \tab Team team record season finish. \cr
-   team_team_record_playoffs_finish \tab character \tab Team team record playoffs finish. \cr
-   prospect_id \tab integer \tab Unique identifier for prospect. \cr
-   prospect_type \tab character \tab Prospect type. \cr
-   prospect_season \tab integer \tab Prospect season. \cr
-   prospect_display_name \tab character \tab Prospect display name. \cr
-   prospect_first_name \tab character \tab Prospect first name. \cr
-   prospect_last_name \tab character \tab Prospect last name. \cr
-   prospect_permalink \tab character \tab Prospect permalink. \cr
-   prospect_app_url \tab character \tab URL for prospect app. \cr
-   prospect_position \tab character \tab Prospect position. \cr
-   prospect_weight_lbs \tab integer \tab Prospect weight lbs. \cr
-   prospect_school \tab character \tab Prospect school. \cr
-   prospect_status \tab character \tab Prospect status. \cr
-   prospect_birthday \tab character \tab Prospect birthday. \cr
-   prospect_country \tab character \tab Prospect country. \cr
-   prospect_trade_details \tab list \tab Prospect trade details. \cr
-   prospect_height_feet_and_inches \tab character \tab Prospect height feet and inches. \cr
-   prospect_height_inches_only \tab integer \tab Prospect height inches only. \cr
-}
+\strong{Picks}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      pick_number \tab integer \tab Pick number. \cr
+      pick_details \tab character \tab Pick details. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_type \tab character \tab Team type. \cr
+      team_season \tab integer \tab Team season. \cr
+      team_team_id \tab integer \tab Unique identifier for team team. \cr
+      team_permalink \tab character \tab Team permalink. \cr
+      team_app_url \tab character \tab URL for team app. \cr
+      team_trade_details \tab list \tab Team trade details. \cr
+      team_team_name \tab character \tab Team team name. \cr
+      team_team_abbr \tab character \tab Team team abbr. \cr
+      team_picked_first_round \tab logical \tab Team picked first round. \cr
+      team_picked_second_round \tab logical \tab Team picked second round. \cr
+      team_team_record_season \tab character \tab Team team record season. \cr
+      team_team_record_wins_and_losses \tab character \tab Team team record wins and losses. \cr
+      team_team_record_season_finish \tab character \tab Team team record season finish. \cr
+      team_team_record_playoffs_finish \tab character \tab Team team record playoffs finish. \cr
+      prospect_id \tab integer \tab Unique identifier for prospect. \cr
+      prospect_type \tab character \tab Prospect type. \cr
+      prospect_season \tab integer \tab Prospect season. \cr
+      prospect_display_name \tab character \tab Prospect display name. \cr
+      prospect_first_name \tab character \tab Prospect first name. \cr
+      prospect_last_name \tab character \tab Prospect last name. \cr
+      prospect_permalink \tab character \tab Prospect permalink. \cr
+      prospect_app_url \tab character \tab URL for prospect app. \cr
+      prospect_position \tab character \tab Prospect position. \cr
+      prospect_weight_lbs \tab integer \tab Prospect weight lbs. \cr
+      prospect_school \tab character \tab Prospect school. \cr
+      prospect_status \tab character \tab Prospect status. \cr
+      prospect_birthday \tab character \tab Prospect birthday. \cr
+      prospect_country \tab character \tab Prospect country. \cr
+      prospect_trade_details \tab list \tab Prospect trade details. \cr
+      prospect_height_feet_and_inches \tab character \tab Prospect height feet and inches. \cr
+      prospect_height_inches_only \tab integer \tab Prospect height inches only. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{TeamsWithoutPicks}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab Id. \cr
-   type \tab character \tab Record type / category. \cr
-   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   team_record \tab data.frame \tab Team record string (e.g. '8-3' or '8-3 Overall'). \cr
-   permalink \tab character \tab Permalink. \cr
-   app_url \tab character \tab URL for app. \cr
-   trade_details \tab list \tab Trade details. \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_abbr \tab character \tab Team abbr. \cr
-   picked_second_round \tab logical \tab Picked second round. \cr
-   picked_first_round \tab logical \tab Picked first round. \cr
-}
+\strong{TeamsWithoutPicks}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Id. \cr
+      type \tab character \tab Record type / category. \cr
+      season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_record \tab data.frame \tab Team record string (e.g. '8-3' or '8-3 Overall'). \cr
+      permalink \tab character \tab Permalink. \cr
+      app_url \tab character \tab URL for app. \cr
+      trade_details \tab list \tab Trade details. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_abbr \tab character \tab Team abbr. \cr
+      picked_second_round \tab logical \tab Picked second round. \cr
+      picked_first_round \tab logical \tab Picked first round. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{LiveDetails}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -87,10 +91,6 @@ Returns a named list of data frames: Picks, TeamsWithoutPicks, LiveDetails
 }
 \seealso{
 Other NBA Draft Functions:
-\code{\link[=nba_draftcombinedrillresults]{nba_draftcombinedrillresults()}},
-\code{\link[=nba_draftcombinenonstationaryshooting]{nba_draftcombinenonstationaryshooting()}},
-\code{\link[=nba_draftcombineplayeranthro]{nba_draftcombineplayeranthro()}},
-\code{\link[=nba_draftcombinespotshooting]{nba_draftcombinespotshooting()}},
 \code{\link[=nba_draftcombinestats]{nba_draftcombinestats()}},
 \code{\link[=nba_drafthistory]{nba_drafthistory()}}
 }

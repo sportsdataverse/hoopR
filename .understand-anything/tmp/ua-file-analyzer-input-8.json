@@ -1,0 +1,39 @@
+{
+  "projectRoot": "c:/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/hoopR",
+  "batchFiles": [
+    {"path": "R/kp_misc_stats.R", "language": "r", "sizeLines": 712, "fileCategory": "code"},
+    {"path": "R/kp_ratings_tables.R", "language": "r", "sizeLines": 1468, "fileCategory": "code"},
+    {"path": "R/kp_team_tables.R", "language": "r", "sizeLines": 2435, "fileCategory": "code"},
+    {"path": "R/kp.R", "language": "r", "sizeLines": 72, "fileCategory": "code"},
+    {"path": "R/load_crosswalk.R", "language": "r", "sizeLines": 200, "fileCategory": "code"},
+    {"path": "R/load_hoopR.R", "language": "r", "sizeLines": 36, "fileCategory": "code"},
+    {"path": "R/load_mbb.R", "language": "r", "sizeLines": 1001, "fileCategory": "code"},
+    {"path": "R/load_nba.R", "language": "r", "sizeLines": 960, "fileCategory": "code"},
+    {"path": "R/mbb_crosswalk.R", "language": "r", "sizeLines": 937, "fileCategory": "code"},
+    {"path": "R/nba_crosswalk.R", "language": "r", "sizeLines": 372, "fileCategory": "code"},
+    {"path": "R/nba_data_pbp.R", "language": "r", "sizeLines": 159, "fileCategory": "code"},
+    {"path": "R/nba_datasets.R", "language": "r", "sizeLines": 160, "fileCategory": "code"},
+    {"path": "R/nba_dictionaries.R", "language": "r", "sizeLines": 194, "fileCategory": "code"},
+    {"path": "R/nba_metrics.R", "language": "r", "sizeLines": 201, "fileCategory": "code"},
+    {"path": "R/nba_reduce.R", "language": "r", "sizeLines": 99, "fileCategory": "code"},
+    {"path": "R/nba_scaling.R", "language": "r", "sizeLines": 130, "fileCategory": "code"},
+    {"path": "R/nba_stats_boxscore_v3.R", "language": "r", "sizeLines": 3624, "fileCategory": "code"},
+    {"path": "R/nba_stats_boxscore.R", "language": "r", "sizeLines": 1648, "fileCategory": "code"},
+    {"path": "R/nba_stats_cume.R", "language": "r", "sizeLines": 514, "fileCategory": "code"},
+    {"path": "R/nba_stats_draft.R", "language": "r", "sizeLines": 729, "fileCategory": "code"},
+    {"path": "R/nba_stats_franchise.R", "language": "r", "sizeLines": 405, "fileCategory": "code"},
+    {"path": "R/nba_stats_hustle.R", "language": "r", "sizeLines": 748, "fileCategory": "code"},
+    {"path": "R/nba_stats_leaders.R", "language": "r", "sizeLines": 1334, "fileCategory": "code"},
+    {"path": "R/nba_stats_league_dash.R", "language": "r", "sizeLines": 2530, "fileCategory": "code"},
+    {"path": "R/nba_stats_league.R", "language": "r", "sizeLines": 1113, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "R/kp_misc_stats.R": [], "R/kp_ratings_tables.R": [], "R/kp_team_tables.R": [], "R/kp.R": [],
+    "R/load_crosswalk.R": [], "R/load_hoopR.R": [], "R/load_mbb.R": [], "R/load_nba.R": [],
+    "R/mbb_crosswalk.R": [], "R/nba_crosswalk.R": [], "R/nba_data_pbp.R": [], "R/nba_datasets.R": [],
+    "R/nba_dictionaries.R": [], "R/nba_metrics.R": [], "R/nba_reduce.R": [], "R/nba_scaling.R": [],
+    "R/nba_stats_boxscore_v3.R": [], "R/nba_stats_boxscore.R": [], "R/nba_stats_cume.R": [],
+    "R/nba_stats_draft.R": [], "R/nba_stats_franchise.R": [], "R/nba_stats_hustle.R": [],
+    "R/nba_stats_leaders.R": [], "R/nba_stats_league_dash.R": [], "R/nba_stats_league.R": []
+  }
+}

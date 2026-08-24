@@ -1,0 +1,207 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "R/nba_stats_lineups.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 915,
+      "nonEmptyLines": 863,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_pbp.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 2171,
+      "nonEmptyLines": 2010,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_player_dash.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1587,
+      "nonEmptyLines": 1466,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_player.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 3109,
+      "nonEmptyLines": 3007,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_roster.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 446,
+      "nonEmptyLines": 405,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_scoreboard.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1215,
+      "nonEmptyLines": 1152,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_shotchart.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 503,
+      "nonEmptyLines": 480,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_team_dash.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1516,
+      "nonEmptyLines": 1406,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_team.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 3158,
+      "nonEmptyLines": 3063,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_video.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 604,
+      "nonEmptyLines": 563,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 78,
+      "metrics": {}
+    },
+    {
+      "path": "R/nbadraft_mock_draft.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 73,
+      "metrics": {}
+    },
+    {
+      "path": "R/nbagl_pbp.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 827,
+      "nonEmptyLines": 780,
+      "metrics": {}
+    },
+    {
+      "path": "R/nbagl_players.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 144,
+      "metrics": {}
+    },
+    {
+      "path": "R/nbagl_schedule.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 153,
+      "metrics": {}
+    },
+    {
+      "path": "R/nbagl_standings.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 112,
+      "metrics": {}
+    },
+    {
+      "path": "R/ncaa_mbb_data.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 215,
+      "nonEmptyLines": 192,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_draft.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 124,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_players.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 177,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_salaries.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 101,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_staff.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 78,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_standings.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 135,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_stats.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 266,
+      "nonEmptyLines": 251,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_transactions.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 66,
+      "metrics": {}
+    },
+    {
+      "path": "R/realgm_utils.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 108,
+      "metrics": {}
+    }
+  ]
+}

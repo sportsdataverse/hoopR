@@ -95,33 +95,36 @@ nba_leaguelineupviz(
 \value{
 Returns a named list of data frames: LeagueLineupViz
 
-\strong{LeagueLineupViz}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
-   GROUP_NAME \tab character \tab Group name. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   MIN \tab character \tab Minutes played. \cr
-   OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
-   DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
-   NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
-   PACE \tab character \tab Possessions per 48 minutes. \cr
-   TS_PCT \tab character \tab True shooting percentage (0-1). \cr
-   FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
-   TM_AST_PCT \tab character \tab  \cr
-   PCT_FGA_2PT \tab character \tab  \cr
-   PCT_FGA_3PT \tab character \tab  \cr
-   PCT_PTS_2PT_MR \tab character \tab  \cr
-   PCT_PTS_FB \tab character \tab  \cr
-   PCT_PTS_FT \tab character \tab  \cr
-   PCT_PTS_PAINT \tab character \tab  \cr
-   PCT_AST_FGM \tab character \tab  \cr
-   PCT_UAST_FGM \tab character \tab  \cr
-   OPP_FG3_PCT \tab character \tab  \cr
-   OPP_EFG_PCT \tab character \tab  \cr
-   OPP_FTA_RATE \tab character \tab  \cr
-   OPP_TOV_PCT \tab character \tab  \cr
-}
+\strong{LeagueLineupViz}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
+      GROUP_NAME \tab character \tab Group name. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      MIN \tab character \tab Minutes played. \cr
+      OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
+      DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
+      NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
+      PACE \tab character \tab Possessions per 48 minutes. \cr
+      TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+      FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
+      TM_AST_PCT \tab character \tab  \cr
+      PCT_FGA_2PT \tab character \tab  \cr
+      PCT_FGA_3PT \tab character \tab  \cr
+      PCT_PTS_2PT_MR \tab character \tab  \cr
+      PCT_PTS_FB \tab character \tab  \cr
+      PCT_PTS_FT \tab character \tab  \cr
+      PCT_PTS_PAINT \tab character \tab  \cr
+      PCT_AST_FGM \tab character \tab  \cr
+      PCT_UAST_FGM \tab character \tab  \cr
+      OPP_FG3_PCT \tab character \tab  \cr
+      OPP_EFG_PCT \tab character \tab  \cr
+      OPP_FTA_RATE \tab character \tab  \cr
+      OPP_TOV_PCT \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Lineup Visual Data}

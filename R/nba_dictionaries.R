@@ -56,24 +56,26 @@ nba_team_logo_url <- function(team_id, variant = "primary") {
 #' @param ... Additional arguments passed to [nba_playerindex()] (e.g. `proxy`).
 #' @return A `hoopR_data` tibble with one row per player:
 #'
-#'    |col_name          |types     |description                                |
-#'    |:-----------------|:---------|:------------------------------------------|
-#'    |player_id         |character |Player id (`PERSON_ID`).                   |
-#'    |player_name       |character |Full name.                                 |
-#'    |player_slug       |character |URL-safe player slug.                      |
-#'    |team_id           |character |Team id.                                   |
-#'    |team_abbreviation |character |Team abbreviation.                         |
-#'    |team_name         |character |Full team name.                            |
-#'    |position          |character |Listed position.                           |
-#'    |jersey_number     |character |Jersey number.                             |
-#'    |height            |character |Listed height.                             |
-#'    |weight            |character |Listed weight.                             |
-#'    |country           |character |Country.                                   |
-#'    |draft_year        |character |Draft year.                                |
-#'    |from_year         |character |First season.                              |
-#'    |to_year           |character |Most recent season.                        |
-#'    |headshot_url      |character |NBA CDN headshot URL.                      |
-#'    |season            |character |Season (echoes the `season` argument).     |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player_id \tab character \tab Player id (\code{PERSON_ID}). \cr
+#'       player_name \tab character \tab Full name. \cr
+#'       player_slug \tab character \tab URL-safe player slug. \cr
+#'       team_id \tab character \tab Team id. \cr
+#'       team_abbreviation \tab character \tab Team abbreviation. \cr
+#'       team_name \tab character \tab Full team name. \cr
+#'       position \tab character \tab Listed position. \cr
+#'       jersey_number \tab character \tab Jersey number. \cr
+#'       height \tab character \tab Listed height. \cr
+#'       weight \tab character \tab Listed weight. \cr
+#'       country \tab character \tab Country. \cr
+#'       draft_year \tab character \tab Draft year. \cr
+#'       from_year \tab character \tab First season. \cr
+#'       to_year \tab character \tab Most recent season. \cr
+#'       headshot_url \tab character \tab NBA CDN headshot URL. \cr
+#'       season \tab character \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords NBA Dictionary
 #' @importFrom janitor clean_names
@@ -137,16 +139,18 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 1
 #' @param ... Additional arguments passed to [nba_playerindex()] (e.g. `proxy`).
 #' @return A `hoopR_data` tibble with one row per team:
 #'
-#'    |col_name          |types     |description                                |
-#'    |:-----------------|:---------|:------------------------------------------|
-#'    |team_id           |character |Team id.                                   |
-#'    |team_abbreviation |character |Team abbreviation.                         |
-#'    |team_city         |character |Team city / region.                        |
-#'    |team_name         |character |Team nickname.                             |
-#'    |team_full         |character |Full team name.                            |
-#'    |conference        |character |Conference (`Eastern` / `Western`).        |
-#'    |division          |character |Division.                                  |
-#'    |logo_url          |character |NBA CDN primary logo URL.                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team_id \tab character \tab Team id. \cr
+#'       team_abbreviation \tab character \tab Team abbreviation. \cr
+#'       team_city \tab character \tab Team city / region. \cr
+#'       team_name \tab character \tab Team nickname. \cr
+#'       team_full \tab character \tab Full team name. \cr
+#'       conference \tab character \tab Conference (\code{Eastern} / \code{Western}). \cr
+#'       division \tab character \tab Division. \cr
+#'       logo_url \tab character \tab NBA CDN primary logo URL. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords NBA Dictionary
 #' @importFrom janitor clean_names

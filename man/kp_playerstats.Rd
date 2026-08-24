@@ -32,17 +32,20 @@ Only available if specific conference is defined. Only available for season afte
 \item{year}{Year of data to pull (earliest year of data available: 2004)}
 }
 \value{
-Returns a tibble of player stats\tabular{lll}{
-   col_name \tab types \tab description \cr
-   rk \tab character \tab Rk. \cr
-   player \tab character \tab Player. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   e_fg \tab character \tab E fg. \cr
-   hgt \tab character \tab Hgt. \cr
-   wgt \tab character \tab Wgt. \cr
-   yr \tab character \tab Yr. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+Returns a tibble of player stats
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab character \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      e_fg \tab character \tab E fg. \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab character \tab Wgt. \cr
+      yr \tab character \tab Yr. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get Player Stats Leaders by Metric}
@@ -54,14 +57,8 @@ try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 }
 \seealso{
 Other KenPom Ratings Functions:
-\code{\link[=kp_efficiency]{kp_efficiency()}},
-\code{\link[=kp_foul_trouble]{kp_foul_trouble()}},
-\code{\link[=kp_fourfactors]{kp_fourfactors()}},
-\code{\link[=kp_height]{kp_height()}},
 \code{\link[=kp_kpoy]{kp_kpoy()}},
-\code{\link[=kp_pointdist]{kp_pointdist()}},
-\code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}},
-\code{\link[=kp_teamstats]{kp_teamstats()}}
+\code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}}
 }
 \concept{KenPom Ratings Functions}
 \keyword{Player}

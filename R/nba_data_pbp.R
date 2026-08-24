@@ -9,28 +9,30 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a tibble
 #'
-#'    |col_name          |types     |description                                             |
-#'    |:-----------------|:---------|:-------------------------------------------------------|
-#'    |game_id           |character |Unique game identifier.                                 |
-#'    |league            |character |League.                                                 |
-#'    |period            |integer   |Period of the game (1-4 quarters; 5+ for OT).           |
-#'    |event_num         |integer   |Sequential event number within the game (V2 PBP).       |
-#'    |clock             |character |Game clock value.                                       |
-#'    |description       |character |Long-form description text.                             |
-#'    |locX              |integer   |                                                        |
-#'    |locY              |integer   |                                                        |
-#'    |opt1              |integer   |Opt1.                                                   |
-#'    |opt2              |integer   |Opt2.                                                   |
-#'    |event_action_type |integer   |Numeric event-action-type code (V2 PBP).                |
-#'    |event_type        |integer   |Event / play type code (V2 PBP).                        |
-#'    |team_id           |integer   |Unique team identifier.                                 |
-#'    |offense_team_id   |integer   |Unique identifier for offense team.                     |
-#'    |player1_id        |integer   |V2 PBP primary player ID (e.g. shooter / fouler).       |
-#'    |player2_id        |integer   |V2 PBP secondary player ID (e.g. assister / fouled-by). |
-#'    |player3_id        |integer   |V2 PBP tertiary player ID (e.g. blocker).               |
-#'    |home_score        |integer   |Home team score at the time of the play.                |
-#'    |away_score        |integer   |Away team score at the time of the play.                |
-#'    |order             |integer   |Display order within the result set.                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       league \tab character \tab League. \cr
+#'       period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+#'       event_num \tab integer \tab Sequential event number within the game (V2 PBP). \cr
+#'       clock \tab character \tab Game clock value. \cr
+#'       description \tab character \tab Long-form description text. \cr
+#'       locX \tab integer \tab  \cr
+#'       locY \tab integer \tab  \cr
+#'       opt1 \tab integer \tab Opt1. \cr
+#'       opt2 \tab integer \tab Opt2. \cr
+#'       event_action_type \tab integer \tab Numeric event-action-type code (V2 PBP). \cr
+#'       event_type \tab integer \tab Event / play type code (V2 PBP). \cr
+#'       team_id \tab integer \tab Unique team identifier. \cr
+#'       offense_team_id \tab integer \tab Unique identifier for offense team. \cr
+#'       player1_id \tab integer \tab V2 PBP primary player ID (e.g. shooter / fouler). \cr
+#'       player2_id \tab integer \tab V2 PBP secondary player ID (e.g. assister / fouled-by). \cr
+#'       player3_id \tab integer \tab V2 PBP tertiary player ID (e.g. blocker). \cr
+#'       home_score \tab integer \tab Home team score at the time of the play. \cr
+#'       away_score \tab integer \tab Away team score at the time of the play. \cr
+#'       order \tab integer \tab Display order within the result set. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'   Event Message Types (event_type):
 #'

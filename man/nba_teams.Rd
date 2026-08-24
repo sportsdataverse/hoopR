@@ -10,33 +10,36 @@ nba_teams(...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Return a data frame with the following columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   league_id \tab character \tab League identifier ('10' = WNBA). \cr
-   season_id \tab character \tab Unique season identifier. \cr
-   team_id \tab character \tab Unique team identifier. \cr
-   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   conference \tab character \tab Conference. \cr
-   division \tab character \tab Team division. \cr
-   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   team_name_full \tab character \tab Team name full. \cr
-   season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   espn_team_id \tab integer \tab Unique identifier for espn team. \cr
-   abbreviation \tab character \tab Short abbreviation. \cr
-   display_name \tab character \tab Display name. \cr
-   mascot \tab character \tab Team mascot. \cr
-   nickname \tab character \tab Team or athlete nickname. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   color \tab character \tab Primary color (hex without leading '#'). \cr
-   alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
-   logo \tab character \tab Team or league logo URL. \cr
-   logo_dark \tab character \tab Logo dark. \cr
-   logos_href_3 \tab character \tab Logos href 3. \cr
-   logos_href_4 \tab character \tab Logos href 4. \cr
-   nba_logo_svg \tab character \tab Nba logo svg. \cr
-}
+Return a data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+      season_id \tab character \tab Unique season identifier. \cr
+      team_id \tab character \tab Unique team identifier. \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      conference \tab character \tab Conference. \cr
+      division \tab character \tab Team division. \cr
+      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      team_name_full \tab character \tab Team name full. \cr
+      season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      espn_team_id \tab integer \tab Unique identifier for espn team. \cr
+      abbreviation \tab character \tab Short abbreviation. \cr
+      display_name \tab character \tab Display name. \cr
+      mascot \tab character \tab Team mascot. \cr
+      nickname \tab character \tab Team or athlete nickname. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      color \tab character \tab Primary color (hex without leading '#'). \cr
+      alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+      logo \tab character \tab Team or league logo URL. \cr
+      logo_dark \tab character \tab Logo dark. \cr
+      logos_href_3 \tab character \tab Logos href 3. \cr
+      logos_href_4 \tab character \tab Logos href 4. \cr
+      nba_logo_svg \tab character \tab Nba logo svg. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Teams}
@@ -63,9 +66,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}
 }

@@ -131,29 +131,32 @@ nba_leaguedashplayerptshot(
 \value{
 Returns a named list of data frames: LeagueDashPTShots
 
-\strong{LeagueDashPTShots}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   PLAYER_LAST_TEAM_ID \tab character \tab  \cr
-   PLAYER_LAST_TEAM_ABBREVIATION \tab character \tab  \cr
-   AGE \tab character \tab Player age (in years). \cr
-   GP \tab character \tab Games played. \cr
-   G \tab character \tab Games played. \cr
-   FGA_FREQUENCY \tab character \tab  \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
-   FG2A_FREQUENCY \tab character \tab  \cr
-   FG2M \tab character \tab  \cr
-   FG2A \tab character \tab  \cr
-   FG2_PCT \tab character \tab  \cr
-   FG3A_FREQUENCY \tab character \tab  \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-}
+\strong{LeagueDashPTShots}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      PLAYER_LAST_TEAM_ID \tab character \tab  \cr
+      PLAYER_LAST_TEAM_ABBREVIATION \tab character \tab  \cr
+      AGE \tab character \tab Player age (in years). \cr
+      GP \tab character \tab Games played. \cr
+      G \tab character \tab Games played. \cr
+      FGA_FREQUENCY \tab character \tab  \cr
+      FGM \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+      FG2A_FREQUENCY \tab character \tab  \cr
+      FG2M \tab character \tab  \cr
+      FG2A \tab character \tab  \cr
+      FG2_PCT \tab character \tab  \cr
+      FG3A_FREQUENCY \tab character \tab  \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Player Shots}
@@ -194,7 +197,7 @@ Other NBA League Functions:
 \code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}}
 
 Other NBA Player Tracking Functions:
-\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
 \code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
 \code{\link[=nba_leaguedashptstats]{nba_leaguedashptstats()}},
@@ -202,8 +205,6 @@ Other NBA Player Tracking Functions:
 \code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
 \code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
 \code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},

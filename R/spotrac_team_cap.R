@@ -10,16 +10,18 @@
 #' @return A `hoopR_data` tibble with one row per team (columns reflect Spotrac's
 #'   table; dollar figures are returned as numeric):
 #'
-#'    |col_name                |types     |description                              |
-#'    |:-----------------------|:---------|:----------------------------------------|
-#'    |rank                    |integer   |Spotrac cap rank.                        |
-#'    |team                    |character |Team abbreviation.                       |
-#'    |record                  |character |Win-loss record.                         |
-#'    |players_active          |integer   |Number of active players.                |
-#'    |avg_age_team            |numeric   |Average roster age.                      |
-#'    |total_cap_allocations   |numeric   |Total cap allocations (USD).             |
-#'    |cap_space_all           |numeric   |Cap space / over-the-cap amount (USD).   |
-#'    |season                  |integer   |Season (echoes the `season` argument).   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rank \tab integer \tab Spotrac cap rank. \cr
+#'       team \tab character \tab Team abbreviation. \cr
+#'       record \tab character \tab Win-loss record. \cr
+#'       players_active \tab integer \tab Number of active players. \cr
+#'       avg_age_team \tab numeric \tab Average roster age. \cr
+#'       total_cap_allocations \tab numeric \tab Total cap allocations (USD). \cr
+#'       cap_space_all \tab numeric \tab Cap space / over-the-cap amount (USD). \cr
+#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Salaries
 #' @importFrom rvest html_element html_table

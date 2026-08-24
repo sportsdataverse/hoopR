@@ -20,75 +20,81 @@ No filter applied by default.}
 \value{
 A list of named data frames:
 
-\strong{Standings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   overall \tab character \tab Overall. \cr
-   conf \tab character \tab character. \cr
-   adj_em \tab numeric \tab Adj em. \cr
-   adj_em_rk \tab numeric \tab Adj em rk. \cr
-   adj_o \tab numeric \tab Adj o. \cr
-   adj_o_rk \tab numeric \tab Adj o rk. \cr
-   adj_d \tab numeric \tab Adj d. \cr
-   adj_d_rk \tab numeric \tab Adj d rk. \cr
-   adj_t \tab numeric \tab Adj t. \cr
-   adj_t_rk \tab numeric \tab Adj t rk. \cr
-   conf_sos \tab numeric \tab Conf sos. \cr
-   conf_sos_rk \tab numeric \tab Conf sos rk. \cr
-   next_game \tab character \tab Next game date or opponent. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{Standings}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      overall \tab character \tab Overall. \cr
+      conf \tab character \tab character. \cr
+      adj_em \tab numeric \tab Adj em. \cr
+      adj_em_rk \tab numeric \tab Adj em rk. \cr
+      adj_o \tab numeric \tab Adj o. \cr
+      adj_o_rk \tab numeric \tab Adj o rk. \cr
+      adj_d \tab numeric \tab Adj d. \cr
+      adj_d_rk \tab numeric \tab Adj d rk. \cr
+      adj_t \tab numeric \tab Adj t. \cr
+      adj_t_rk \tab numeric \tab Adj t rk. \cr
+      conf_sos \tab numeric \tab Conf sos. \cr
+      conf_sos_rk \tab numeric \tab Conf sos rk. \cr
+      next_game \tab character \tab Next game date or opponent. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{ConferencePlayOffense}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   oe \tab numeric \tab Oe. \cr
-   oe_rk \tab numeric \tab Oe rk. \cr
-   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
-   e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
-   to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
-   to_pct_rk \tab numeric \tab To pct rk. \cr
-   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
-   or_pct_rk \tab numeric \tab Or pct rk. \cr
-   ft_rate \tab numeric \tab Ft rate. \cr
-   ft_rate_rk \tab numeric \tab Ft rate rk. \cr
-   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
-   fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
-   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
-   fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
-   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
-   ft_pct_rk \tab numeric \tab Ft pct rk. \cr
-   tempo \tab numeric \tab Tempo. \cr
-   tempo_rk \tab numeric \tab Tempo rk. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{ConferencePlayOffense}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      oe \tab numeric \tab Oe. \cr
+      oe_rk \tab numeric \tab Oe rk. \cr
+      e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+      e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
+      to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
+      to_pct_rk \tab numeric \tab To pct rk. \cr
+      or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+      or_pct_rk \tab numeric \tab Or pct rk. \cr
+      ft_rate \tab numeric \tab Ft rate. \cr
+      ft_rate_rk \tab numeric \tab Ft rate rk. \cr
+      fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+      fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
+      fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+      fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
+      ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+      ft_pct_rk \tab numeric \tab Ft pct rk. \cr
+      tempo \tab numeric \tab Tempo. \cr
+      tempo_rk \tab numeric \tab Tempo rk. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{ConferencePlayDefense}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   de \tab numeric \tab De. \cr
-   de_rk \tab numeric \tab De rk. \cr
-   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
-   e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
-   to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
-   to_pct_rk \tab numeric \tab To pct rk. \cr
-   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
-   or_pct_rk \tab numeric \tab Or pct rk. \cr
-   ft_rate \tab numeric \tab Ft rate. \cr
-   ft_rate_rk \tab numeric \tab Ft rate rk. \cr
-   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
-   fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
-   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
-   fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
-   blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
-   blk_pct_rk \tab numeric \tab Blk pct rk. \cr
-   stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
-   stl_pct_rk \tab numeric \tab Stl pct rk. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{ConferencePlayDefense}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      de \tab numeric \tab De. \cr
+      de_rk \tab numeric \tab De rk. \cr
+      e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+      e_fg_pct_rk \tab numeric \tab E fg pct rk. \cr
+      to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
+      to_pct_rk \tab numeric \tab To pct rk. \cr
+      or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+      or_pct_rk \tab numeric \tab Or pct rk. \cr
+      ft_rate \tab numeric \tab Ft rate. \cr
+      ft_rate_rk \tab numeric \tab Ft rate rk. \cr
+      fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+      fg_2_pct_rk \tab numeric \tab Fg 2 pct rk. \cr
+      fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+      fg_3_pct_rk \tab numeric \tab Fg 3 pct rk. \cr
+      blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+      blk_pct_rk \tab numeric \tab Blk pct rk. \cr
+      stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+      stl_pct_rk \tab numeric \tab Stl pct rk. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{AllKenPom}\tabular{lll}{
    col_name \tab types \tab description \cr

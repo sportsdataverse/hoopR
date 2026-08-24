@@ -41,43 +41,45 @@ NULL
 #' @return A one-row tibble carrying the full 35-column set (absent fields are
 #'   `NA`), so callers see a stable schema regardless of payload completeness:
 #'
-#'   |col_name|types|
-#'   |---|---|
-#'   |athlete_id|integer|
-#'   |guid|character|
-#'   |uid|character|
-#'   |slug|character|
-#'   |type|character|
-#'   |first_name|character|
-#'   |last_name|character|
-#'   |full_name|character|
-#'   |display_name|character|
-#'   |short_name|character|
-#'   |height|numeric|
-#'   |display_height|character|
-#'   |weight|numeric|
-#'   |display_weight|character|
-#'   |age|integer|
-#'   |date_of_birth|character|
-#'   |birth_city|character|
-#'   |birth_state|character|
-#'   |birth_country|character|
-#'   |jersey|character|
-#'   |position_id|integer|
-#'   |position_name|character|
-#'   |position_abbreviation|character|
-#'   |position_display_name|character|
-#'   |college_id|integer|
-#'   |current_team_id|integer|
-#'   |headshot_href|character|
-#'   |experience_years|integer|
-#'   |status_id|integer|
-#'   |status_name|character|
-#'   |status_type|character|
-#'   |draft_year|integer|
-#'   |draft_round|integer|
-#'   |draft_selection|integer|
-#'   |active|logical|
+#'   \if{html}{\tabular{ll}{
+#'      col_name \tab types \cr
+#'      athlete_id \tab integer \cr
+#'      guid \tab character \cr
+#'      uid \tab character \cr
+#'      slug \tab character \cr
+#'      type \tab character \cr
+#'      first_name \tab character \cr
+#'      last_name \tab character \cr
+#'      full_name \tab character \cr
+#'      display_name \tab character \cr
+#'      short_name \tab character \cr
+#'      height \tab numeric \cr
+#'      display_height \tab character \cr
+#'      weight \tab numeric \cr
+#'      display_weight \tab character \cr
+#'      age \tab integer \cr
+#'      date_of_birth \tab character \cr
+#'      birth_city \tab character \cr
+#'      birth_state \tab character \cr
+#'      birth_country \tab character \cr
+#'      jersey \tab character \cr
+#'      position_id \tab integer \cr
+#'      position_name \tab character \cr
+#'      position_abbreviation \tab character \cr
+#'      position_display_name \tab character \cr
+#'      college_id \tab integer \cr
+#'      current_team_id \tab integer \cr
+#'      headshot_href \tab character \cr
+#'      experience_years \tab integer \cr
+#'      status_id \tab integer \cr
+#'      status_name \tab character \cr
+#'      status_type \tab character \cr
+#'      draft_year \tab integer \cr
+#'      draft_round \tab integer \cr
+#'      draft_selection \tab integer \cr
+#'      active \tab logical \cr
+#'   }}
+#'   \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @examples
 #' \donttest{

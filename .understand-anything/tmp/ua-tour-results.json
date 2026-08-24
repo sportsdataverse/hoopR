@@ -1,0 +1,1501 @@
+{
+  "scriptCompleted": true,
+  "entryPointCandidates": [
+    {
+      "id": "document:README.md",
+      "score": 5,
+      "name": "README.md",
+      "type": "document",
+      "summary": "Project landing page (rendered from README.Rmd) with badges, installation instructions, quick-start examples for loading full NBA (2002-2026) and men's college basketball (2006-2026) play-by-play seasons, documentation links, breaking-change notes, authors, contributors, and citations."
+    },
+    {
+      "id": "config:.Rbuildignore",
+      "score": 3,
+      "name": ".Rbuildignore",
+      "type": "config",
+      "summary": "R CMD build ignore list excluding non-package files (data-raw, vignettes source, docs, CI config, CLAUDE.md, tooling, and dev artifacts) from the built tarball."
+    },
+    {
+      "id": "file:data-raw/pull_coach_links.R",
+      "score": 3,
+      "name": "pull_coach_links.R",
+      "type": "file",
+      "summary": "KenPom scraping script that logs in and parses a team page to extract coach names and profile link references, building a coaches reference table."
+    },
+    {
+      "id": "file:data-raw/team_page_calls.R",
+      "score": 3,
+      "name": "team_page_calls.R",
+      "type": "file",
+      "summary": "Driver script that sources pull_team_page.R and invokes gather_team_pages() season-by-season (most calls commented out) against an authenticated KenPom session."
+    },
+    {
+      "id": "file:R/bref_awards.R",
+      "score": 3,
+      "name": "bref_awards.R",
+      "type": "file",
+      "summary": "Exports bref_awards(), scraping end-of-season NBA award voting (MVP, ROY, DPOY, etc.) from Basketball-Reference into a tidy hoopR_data tibble with one row per candidate."
+    }
+  ],
+  "fanInRanking": [
+    {
+      "id": "file:R/cbbd_api_key.R",
+      "fanIn": 13,
+      "name": "cbbd_api_key.R"
+    },
+    {
+      "id": "file:R/bref_utils.R",
+      "fanIn": 7,
+      "name": "bref_utils.R"
+    },
+    {
+      "id": "file:R/espn_mbb_data.R",
+      "fanIn": 7,
+      "name": "espn_mbb_data.R"
+    },
+    {
+      "id": "file:R/realgm_utils.R",
+      "fanIn": 7,
+      "name": "realgm_utils.R"
+    },
+    {
+      "id": "file:R/torvik_utils.R",
+      "fanIn": 6,
+      "name": "torvik_utils.R"
+    },
+    {
+      "id": "file:R/espn_basketball_event_helpers.R",
+      "fanIn": 4,
+      "name": "espn_basketball_event_helpers.R"
+    },
+    {
+      "id": "file:R/espn_basketball_team_helpers.R",
+      "fanIn": 3,
+      "name": "espn_basketball_team_helpers.R"
+    },
+    {
+      "id": "file:R/espn_mbb_season_meta.R",
+      "fanIn": 3,
+      "name": "espn_mbb_season_meta.R"
+    },
+    {
+      "id": "file:R/espn_nba_athletes.R",
+      "fanIn": 3,
+      "name": "espn_nba_athletes.R"
+    },
+    {
+      "id": "file:R/kp_misc_stats.R",
+      "fanIn": 3,
+      "name": "kp_misc_stats.R"
+    },
+    {
+      "id": "file:R/nba_stats_player.R",
+      "fanIn": 3,
+      "name": "nba_stats_player.R"
+    },
+    {
+      "id": "file:data-raw/pull_team_links.R",
+      "fanIn": 2,
+      "name": "pull_team_links.R"
+    },
+    {
+      "id": "file:data-raw/pull_team_page.R",
+      "fanIn": 2,
+      "name": "pull_team_page.R"
+    },
+    {
+      "id": "file:R/crosswalk_basketball.R",
+      "fanIn": 2,
+      "name": "crosswalk_basketball.R"
+    },
+    {
+      "id": "file:R/espn_basketball_athlete_helpers.R",
+      "fanIn": 2,
+      "name": "espn_basketball_athlete_helpers.R"
+    },
+    {
+      "id": "file:R/espn_basketball_season_meta_helpers.R",
+      "fanIn": 2,
+      "name": "espn_basketball_season_meta_helpers.R"
+    },
+    {
+      "id": "file:R/espn_nba_data.R",
+      "fanIn": 2,
+      "name": "espn_nba_data.R"
+    },
+    {
+      "id": "file:R/espn_nba_team_detail.R",
+      "fanIn": 2,
+      "name": "espn_nba_team_detail.R"
+    },
+    {
+      "id": "file:R/kp_team_tables.R",
+      "fanIn": 2,
+      "name": "kp_team_tables.R"
+    },
+    {
+      "id": "file:R/load_mbb.R",
+      "fanIn": 2,
+      "name": "load_mbb.R"
+    }
+  ],
+  "fanOutRanking": [
+    {
+      "id": "file:R/espn_basketball.R",
+      "fanOut": 4,
+      "name": "espn_basketball.R"
+    },
+    {
+      "id": "file:R/kp.R",
+      "fanOut": 3,
+      "name": "kp.R"
+    },
+    {
+      "id": "file:R/nba_stats.R",
+      "fanOut": 3,
+      "name": "nba_stats.R"
+    },
+    {
+      "id": "document:README.md",
+      "fanOut": 2,
+      "name": "README.md"
+    },
+    {
+      "id": "file:R/espn_mbb_athletes.R",
+      "fanOut": 2,
+      "name": "espn_mbb_athletes.R"
+    },
+    {
+      "id": "file:R/espn_mbb_team_deep.R",
+      "fanOut": 2,
+      "name": "espn_mbb_team_deep.R"
+    },
+    {
+      "id": "file:R/kp_ratings_tables.R",
+      "fanOut": 2,
+      "name": "kp_ratings_tables.R"
+    },
+    {
+      "id": "file:R/load_crosswalk.R",
+      "fanOut": 2,
+      "name": "load_crosswalk.R"
+    },
+    {
+      "id": "file:R/load_hoopR.R",
+      "fanOut": 2,
+      "name": "load_hoopR.R"
+    },
+    {
+      "id": "file:R/nba_crosswalk.R",
+      "fanOut": 2,
+      "name": "nba_crosswalk.R"
+    },
+    {
+      "id": "file:R/nba_scaling.R",
+      "fanOut": 2,
+      "name": "nba_scaling.R"
+    },
+    {
+      "id": "file:R/nbagl_pbp.R",
+      "fanOut": 2,
+      "name": "nbagl_pbp.R"
+    },
+    {
+      "id": "file:R/torvik_game_schedule.R",
+      "fanOut": 2,
+      "name": "torvik_game_schedule.R"
+    },
+    {
+      "id": "file:R/torvik_ratings.R",
+      "fanOut": 2,
+      "name": "torvik_ratings.R"
+    },
+    {
+      "id": "file:vignettes/mbb-cookbook.Rmd",
+      "fanOut": 2,
+      "name": "mbb-cookbook.Rmd"
+    },
+    {
+      "id": "pipeline:.github/workflows/R-CMD-check.yaml",
+      "fanOut": 1,
+      "name": "R-CMD-check.yaml"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "fanOut": 1,
+      "name": "CLAUDE.md"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "fanOut": 1,
+      "name": "CONTRIBUTING.md"
+    },
+    {
+      "id": "document:NEWS.md",
+      "fanOut": 1,
+      "name": "NEWS.md"
+    },
+    {
+      "id": "document:cran-comments.md",
+      "fanOut": 1,
+      "name": "cran-comments.md"
+    }
+  ],
+  "bfsTraversal": {
+    "startNode": "config:.Rbuildignore",
+    "order": [
+      "config:.Rbuildignore",
+      "config:DESCRIPTION"
+    ],
+    "depthMap": {
+      "config:.Rbuildignore": 0,
+      "config:DESCRIPTION": 1
+    },
+    "byDepth": {
+      "0": [
+        "config:.Rbuildignore"
+      ],
+      "1": [
+        "config:DESCRIPTION"
+      ]
+    }
+  },
+  "nonCodeFiles": {
+    "documentation": [
+      {
+        "id": "document:CLAUDE.md",
+        "name": "CLAUDE.md",
+        "type": "document",
+        "summary": "AI/contributor development guide for hoopR documenting the package overview (270+ functions across nba_*/espn_*/kp_* families), branching/PR workflow, NBA Stats API function pattern, V2-vs-V3 differences, null-safety and return-value initialization conventions, the httr2 HTTP layer with proxy support, testing gates, and the NEWS/cran-comments/_pkgdown release triad."
+      },
+      {
+        "id": "document:CODE_OF_CONDUCT.md",
+        "name": "CODE_OF_CONDUCT.md",
+        "type": "document",
+        "summary": "Standard Contributor Covenant code of conduct defining community pledge, behavioral standards, enforcement responsibilities, scope, and a four-tier enforcement guideline (correction through permanent ban)."
+      },
+      {
+        "id": "document:CONTRIBUTING.md",
+        "name": "CONTRIBUTING.md",
+        "type": "document",
+        "summary": "Contributor onboarding guide covering development setup, the devel-branch workflow, the step-by-step recipe for adding a new NBA Stats API endpoint, function naming conventions, roxygen documentation rules, testing gates with environment variables, CI/GitHub Actions, and commit-message standards."
+      },
+      {
+        "id": "document:LICENSE.md",
+        "name": "LICENSE.md",
+        "type": "document",
+        "summary": "MIT license text for the hoopR package."
+      },
+      {
+        "id": "document:NEWS.md",
+        "name": "NEWS.md",
+        "type": "document",
+        "summary": "Full release changelog from v0.0.0.9 through v3.1.0, documenting new exported functions, behavior changes, deprecations, and internals per version — including the 3.1.0 cross-source crosswalks, Fox Sports / CBD / Torvik / Basketball-Reference / RealGM wrappers, and the 3.0.0 httr-to-httr2 and usethis-to-cli migrations."
+      },
+      {
+        "id": "document:README.md",
+        "name": "README.md",
+        "type": "document",
+        "summary": "Project landing page (rendered from README.Rmd) with badges, installation instructions, quick-start examples for loading full NBA (2002-2026) and men's college basketball (2006-2026) play-by-play seasons, documentation links, breaking-change notes, authors, contributors, and citations."
+      },
+      {
+        "id": "document:cran-comments.md",
+        "name": "cran-comments.md",
+        "type": "document",
+        "summary": "CRAN submission notes for v3.1.0 summarizing the release themes (NBA schedule CDN migration, proxy-support regression fix, three-column @return table upgrade), per-source wrapper additions, R CMD check results, and revdepcheck results."
+      },
+      {
+        "id": "document:.github/copilot-instructions.md",
+        "name": "copilot-instructions.md",
+        "type": "document",
+        "summary": "GitHub Copilot guidance for the hoopR package covering project context, repository workflow, code style, the httr2 HTTP/proxy layer, cli messaging, function naming, roxygen documentation, and testing conventions."
+      },
+      {
+        "id": "document:.github/ISSUE_TEMPLATE/bug_report.md",
+        "name": "bug_report.md",
+        "type": "document",
+        "summary": "GitHub issue template for reporting bugs in hoopR, prompting for the affected function/parameters, a reprex, expected behavior, error output, and session info."
+      },
+      {
+        "id": "document:.github/ISSUE_TEMPLATE/feature_request.md",
+        "name": "feature_request.md",
+        "type": "document",
+        "summary": "GitHub issue template for proposing a new function, endpoint, or improvement, with prompts for the desired solution, NBA Stats API endpoint details, and alternatives considered."
+      },
+      {
+        "id": "document:.github/PULL_REQUEST_TEMPLATE.md",
+        "name": "PULL_REQUEST_TEMPLATE.md",
+        "type": "document",
+        "summary": "Pull request template structuring contributions with summary, type-of-change, related issues, changes made, submission/testing checklists, and reviewer checklist sections."
+      },
+      {
+        "id": "document:data-raw/gap_analysis.md",
+        "name": "gap_analysis.md",
+        "type": "document",
+        "summary": "Coverage gap analysis comparing the Python nba_api endpoints (146) against hoopR's nba_* exports (184), listing missing endpoints by priority, deprecation candidates, and hoopR-only extras."
+      },
+      {
+        "id": "document:data-raw/intro-to-hoopR.Rmd",
+        "name": "intro-to-hoopR.Rmd",
+        "type": "document",
+        "summary": "R Markdown tutorial walking new users through acquiring KenPom men's college basketball data with hoopR, including configuring KP_USER/KP_PW credentials and the kp_ scraping functions."
+      },
+      {
+        "id": "document:data-raw/PR_devel.md",
+        "name": "PR_devel.md",
+        "type": "document",
+        "summary": "Drafted pull-request writeup documenting a development PR's new functions, bug fixes, documentation, infrastructure changes, and testing notes for the devel branch."
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "pipeline:.github/workflows/pkgdown.yaml",
+        "name": "pkgdown.yaml",
+        "type": "pipeline",
+        "summary": "GitHub Actions workflow that builds the hoopR pkgdown documentation site on pushes to main/master (or manual dispatch) and deploys it via pkgdown::deploy_to_branch, installing SportsDataverse companion packages and KenPom (KP_USER/KP_PW) credentials needed to render vignettes."
+      },
+      {
+        "id": "pipeline:.github/workflows/R-CMD-check.yaml",
+        "name": "R-CMD-check.yaml",
+        "type": "pipeline",
+        "summary": "Primary CI workflow running R CMD check across a macOS/Windows/Ubuntu matrix (R release) on push, pull request, and a weekly Friday cron, with optional live-API test toggles (NBA Stats, NBA G-League, ESPN, NCAA MBB) supplied via secrets."
+      },
+      {
+        "id": "pipeline:.github/workflows/rhub.yaml",
+        "name": "rhub.yaml",
+        "type": "pipeline",
+        "summary": "Manually-dispatched R-hub v2 workflow that fans out R CMD check across user-selected R-hub platforms (linux containers + windows/macos) for CRAN-submission validation, with a setup job emitting the platform/container matrix consumed by the downstream check jobs."
+      }
+    ],
+    "data": [],
+    "config": [
+      {
+        "id": "config:_pkgdown.yml",
+        "name": "_pkgdown.yml",
+        "type": "config",
+        "summary": "pkgdown site configuration for hoopR.sportsdataverse.org defining the Bootstrap template, navbar, authors, home metadata, and the full reference index grouping all exported functions by data-source family (hoopR loaders, crosswalks, ESPN, NBA Stats, NCAA, KenPom, CBD, Torvik, injury reports)."
+      },
+      {
+        "id": "config:.gitattributes",
+        "name": ".gitattributes",
+        "type": "config",
+        "summary": "Git attributes file normalizing all text/source files to LF line endings cross-platform and marking binary asset types (png, rds, rda, qs) so they are never normalized."
+      },
+      {
+        "id": "config:.Rbuildignore",
+        "name": ".Rbuildignore",
+        "type": "config",
+        "summary": "R CMD build ignore list excluding non-package files (data-raw, vignettes source, docs, CI config, CLAUDE.md, tooling, and dev artifacts) from the built tarball."
+      },
+      {
+        "id": "config:.understand-anything/.understandignore",
+        "name": ".understandignore",
+        "type": "config",
+        "summary": "Scoping config for the understand-anything knowledge-graph indexer that keeps R source, data-raw generators, vignettes, and CI while excluding tests, generated man pages, bundled data, and binary artifacts."
+      },
+      {
+        "id": "config:DESCRIPTION",
+        "name": "DESCRIPTION",
+        "type": "config",
+        "summary": "R package manifest for hoopR 3.1.0 declaring metadata, authors, MIT license, R >= 4.1 dependency, and Imports/Suggests (httr2, dplyr, rvest, data.table, etc.) for ESPN/NBA Stats/KenPom access."
+      },
+      {
+        "id": "config:hoopR.Rproj",
+        "name": "hoopR.Rproj",
+        "type": "config",
+        "summary": "RStudio project configuration for the hoopR package setting build type, devtools usage, roxygenize outputs, and two-space-tab editing conventions."
+      },
+      {
+        "id": "config:NAMESPACE",
+        "name": "NAMESPACE",
+        "type": "config",
+        "summary": "Roxygen2-generated package namespace exporting 270+ hoopR functions (bref_, cbbd_, espn_, kp_, nba_, load_, torvik_, realgm_ families) and registering the print.hoopR_data S3 method."
+      }
+    ]
+  },
+  "clusters": [],
+  "layers": {
+    "count": 10,
+    "list": [
+      {
+        "id": "layer:espn-mbb",
+        "name": "ESPN MBB",
+        "description": "ESPN men’s college basketball scrapers (espn_mbb_*) for play-by-play, schedules, rosters, box scores, and team/standings data."
+      },
+      {
+        "id": "layer:espn-nba",
+        "name": "ESPN NBA",
+        "description": "ESPN NBA scrapers (espn_nba_*) for play-by-play, schedules, rosters, box scores, and team/standings data."
+      },
+      {
+        "id": "layer:espn-shared",
+        "name": "ESPN Shared Helpers",
+        "description": "Cross-league ESPN Core v2 helper functions (espn_basketball_*_helpers) shared by both the MBB and NBA ESPN scrapers for athletes, events, betting, franchises, and league metadata."
+      },
+      {
+        "id": "layer:nba-stats-api",
+        "name": "NBA Stats API",
+        "description": "NBA Stats API endpoint wrappers (nba_*) plus their shared request/parse utilities covering box scores, tracking, leaders, and synergy data."
+      },
+      {
+        "id": "layer:cbbd",
+        "name": "College Basketball Data API",
+        "description": "College Basketball Data API wrappers (cbbd_*) for games, lines, rankings, stats, and team/player data."
+      },
+      {
+        "id": "layer:aux-sources",
+        "name": "Basketball-Reference, RealGM & Aux Sources",
+        "description": "Auxiliary data-source scrapers: Basketball-Reference (bref_*), RealGM (realgm_*), KenPom (kp_*), Torvik, NBA G-League (nbagl_*), salary/cap (hoopshype, spotrac, RotoWire, draft), and NCAA/Fox feeds."
+      },
+      {
+        "id": "layer:loaders",
+        "name": "Data Loaders",
+        "description": "Pre-processed data loaders (load_mbb_*/load_nba_*/load_hoopR/load_crosswalk) that pull cached SportsDataverse release parquet/RDS assets."
+      },
+      {
+        "id": "layer:utilities",
+        "name": "Utilities & Crosswalks",
+        "description": "Shared package utilities (utils.R, data.R) and ID crosswalk builders (crosswalk_basketball, mbb_crosswalk) used across the scraping and loader surfaces."
+      },
+      {
+        "id": "layer:docs",
+        "name": "Vignettes & Docs",
+        "description": "Package documentation: Rmd vignettes, root README/NEWS/CONTRIBUTING/LICENSE markdown, and data-raw authoring/analysis scripts and notes."
+      },
+      {
+        "id": "layer:ci-config",
+        "name": "CI/CD & Config",
+        "description": "GitHub Actions workflows (R-CMD-check, pkgdown, rhub), issue/PR templates, and R package configuration (DESCRIPTION, NAMESPACE, _pkgdown.yml, Rproj, build/git settings)."
+      }
+    ]
+  },
+  "nodeSummaryIndex": {
+    "pipeline:.github/workflows/pkgdown.yaml": {
+      "name": "pkgdown.yaml",
+      "type": "pipeline",
+      "summary": "GitHub Actions workflow that builds the hoopR pkgdown documentation site on pushes to main/master (or manual dispatch) and deploys it via pkgdown::deploy_to_branch, installing SportsDataverse companion packages and KenPom (KP_USER/KP_PW) credentials needed to render vignettes."
+    },
+    "pipeline:.github/workflows/R-CMD-check.yaml": {
+      "name": "R-CMD-check.yaml",
+      "type": "pipeline",
+      "summary": "Primary CI workflow running R CMD check across a macOS/Windows/Ubuntu matrix (R release) on push, pull request, and a weekly Friday cron, with optional live-API test toggles (NBA Stats, NBA G-League, ESPN, NCAA MBB) supplied via secrets."
+    },
+    "pipeline:.github/workflows/rhub.yaml": {
+      "name": "rhub.yaml",
+      "type": "pipeline",
+      "summary": "Manually-dispatched R-hub v2 workflow that fans out R CMD check across user-selected R-hub platforms (linux containers + windows/macos) for CRAN-submission validation, with a setup job emitting the platform/container matrix consumed by the downstream check jobs."
+    },
+    "document:CLAUDE.md": {
+      "name": "CLAUDE.md",
+      "type": "document",
+      "summary": "AI/contributor development guide for hoopR documenting the package overview (270+ functions across nba_*/espn_*/kp_* families), branching/PR workflow, NBA Stats API function pattern, V2-vs-V3 differences, null-safety and return-value initialization conventions, the httr2 HTTP layer with proxy support, testing gates, and the NEWS/cran-comments/_pkgdown release triad."
+    },
+    "document:CODE_OF_CONDUCT.md": {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "document",
+      "summary": "Standard Contributor Covenant code of conduct defining community pledge, behavioral standards, enforcement responsibilities, scope, and a four-tier enforcement guideline (correction through permanent ban)."
+    },
+    "document:CONTRIBUTING.md": {
+      "name": "CONTRIBUTING.md",
+      "type": "document",
+      "summary": "Contributor onboarding guide covering development setup, the devel-branch workflow, the step-by-step recipe for adding a new NBA Stats API endpoint, function naming conventions, roxygen documentation rules, testing gates with environment variables, CI/GitHub Actions, and commit-message standards."
+    },
+    "document:LICENSE.md": {
+      "name": "LICENSE.md",
+      "type": "document",
+      "summary": "MIT license text for the hoopR package."
+    },
+    "document:NEWS.md": {
+      "name": "NEWS.md",
+      "type": "document",
+      "summary": "Full release changelog from v0.0.0.9 through v3.1.0, documenting new exported functions, behavior changes, deprecations, and internals per version — including the 3.1.0 cross-source crosswalks, Fox Sports / CBD / Torvik / Basketball-Reference / RealGM wrappers, and the 3.0.0 httr-to-httr2 and usethis-to-cli migrations."
+    },
+    "document:README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Project landing page (rendered from README.Rmd) with badges, installation instructions, quick-start examples for loading full NBA (2002-2026) and men's college basketball (2006-2026) play-by-play seasons, documentation links, breaking-change notes, authors, contributors, and citations."
+    },
+    "config:_pkgdown.yml": {
+      "name": "_pkgdown.yml",
+      "type": "config",
+      "summary": "pkgdown site configuration for hoopR.sportsdataverse.org defining the Bootstrap template, navbar, authors, home metadata, and the full reference index grouping all exported functions by data-source family (hoopR loaders, crosswalks, ESPN, NBA Stats, NCAA, KenPom, CBD, Torvik, injury reports)."
+    },
+    "document:cran-comments.md": {
+      "name": "cran-comments.md",
+      "type": "document",
+      "summary": "CRAN submission notes for v3.1.0 summarizing the release themes (NBA schedule CDN migration, proxy-support regression fix, three-column @return table upgrade), per-source wrapper additions, R CMD check results, and revdepcheck results."
+    },
+    "config:.gitattributes": {
+      "name": ".gitattributes",
+      "type": "config",
+      "summary": "Git attributes file normalizing all text/source files to LF line endings cross-platform and marking binary asset types (png, rds, rda, qs) so they are never normalized."
+    },
+    "document:.github/copilot-instructions.md": {
+      "name": "copilot-instructions.md",
+      "type": "document",
+      "summary": "GitHub Copilot guidance for the hoopR package covering project context, repository workflow, code style, the httr2 HTTP/proxy layer, cli messaging, function naming, roxygen documentation, and testing conventions."
+    },
+    "document:.github/ISSUE_TEMPLATE/bug_report.md": {
+      "name": "bug_report.md",
+      "type": "document",
+      "summary": "GitHub issue template for reporting bugs in hoopR, prompting for the affected function/parameters, a reprex, expected behavior, error output, and session info."
+    },
+    "document:.github/ISSUE_TEMPLATE/feature_request.md": {
+      "name": "feature_request.md",
+      "type": "document",
+      "summary": "GitHub issue template for proposing a new function, endpoint, or improvement, with prompts for the desired solution, NBA Stats API endpoint details, and alternatives considered."
+    },
+    "document:.github/PULL_REQUEST_TEMPLATE.md": {
+      "name": "PULL_REQUEST_TEMPLATE.md",
+      "type": "document",
+      "summary": "Pull request template structuring contributions with summary, type-of-change, related issues, changes made, submission/testing checklists, and reviewer checklist sections."
+    },
+    "config:.Rbuildignore": {
+      "name": ".Rbuildignore",
+      "type": "config",
+      "summary": "R CMD build ignore list excluding non-package files (data-raw, vignettes source, docs, CI config, CLAUDE.md, tooling, and dev artifacts) from the built tarball."
+    },
+    "config:.understand-anything/.understandignore": {
+      "name": ".understandignore",
+      "type": "config",
+      "summary": "Scoping config for the understand-anything knowledge-graph indexer that keeps R source, data-raw generators, vignettes, and CI while excluding tests, generated man pages, bundled data, and binary artifacts."
+    },
+    "document:data-raw/gap_analysis.md": {
+      "name": "gap_analysis.md",
+      "type": "document",
+      "summary": "Coverage gap analysis comparing the Python nba_api endpoints (146) against hoopR's nba_* exports (184), listing missing endpoints by priority, deprecation candidates, and hoopR-only extras."
+    },
+    "file:data-raw/get_exported_functions.R": {
+      "name": "get_exported_functions.R",
+      "type": "file",
+      "summary": "Developer data-prep script using pkgapi to map the package, extract exported function definitions and their parameters, and write CSV manifests of exported functions and nba_ stats parameters."
+    },
+    "document:data-raw/intro-to-hoopR.Rmd": {
+      "name": "intro-to-hoopR.Rmd",
+      "type": "document",
+      "summary": "R Markdown tutorial walking new users through acquiring KenPom men's college basketball data with hoopR, including configuring KP_USER/KP_PW credentials and the kp_ scraping functions."
+    },
+    "file:data-raw/markdown_man_table_helper.R": {
+      "name": "markdown_man_table_helper.R",
+      "type": "file",
+      "summary": "Authoring helper snippets that emit column-name/type markdown tables and roxygen documentation blocks for NBA Stats data frames, easing manual @return table maintenance."
+    },
+    "file:data-raw/mbb_teams.R": {
+      "name": "mbb_teams.R",
+      "type": "file",
+      "summary": "Short exploratory script joining NCAA men's basketball team listings with ESPN MBB teams to reconcile team-name keys across sources."
+    },
+    "document:data-raw/PR_devel.md": {
+      "name": "PR_devel.md",
+      "type": "document",
+      "summary": "Drafted pull-request writeup documenting a development PR's new functions, bug fixes, documentation, infrastructure changes, and testing notes for the devel branch."
+    },
+    "file:data-raw/pull_coach_links.R": {
+      "name": "pull_coach_links.R",
+      "type": "file",
+      "summary": "KenPom scraping script that logs in and parses a team page to extract coach names and profile link references, building a coaches reference table."
+    },
+    "file:data-raw/pull_nba_teams.R": {
+      "name": "pull_nba_teams.R",
+      "type": "file",
+      "summary": "Data generator that pulls NBA league standings via nba_leaguestandingsv3, joins to ESPN NBA teams, and writes the bundled nba_teams dataset with usethis::use_data."
+    },
+    "file:data-raw/pull_team_links.R": {
+      "name": "pull_team_links.R",
+      "type": "file",
+      "summary": "KenPom scraping loop spanning seasons that harvests team and conference page links per year, joins against ncaahoopR dictionaries, and persists the bundled teams_links dataset."
+    },
+    "file:data-raw/pull_team_page.R": {
+      "name": "pull_team_page.R",
+      "type": "file",
+      "summary": "Large KenPom team-page harvester defining gather_team_pages() to scrape coaches, schedules, depth charts, and player stats per team and year into bundled data frames."
+    },
+    "file:data-raw/sdv_author_helpers.R": {
+      "name": "sdv_author_helpers.R",
+      "type": "file",
+      "summary": "Small helper script that summarizes installed-package authorship/maintainer fields to support SportsDataverse author/credit tabulation."
+    },
+    "file:data-raw/selenium try.R": {
+      "name": "selenium try.R",
+      "type": "file",
+      "summary": "Experimental RSelenium scratch script launching headless Chrome to render and scrape the KenPom rankings table as an alternative to the rvest session approach."
+    },
+    "file:data-raw/team_page_calls.R": {
+      "name": "team_page_calls.R",
+      "type": "file",
+      "summary": "Driver script that sources pull_team_page.R and invokes gather_team_pages() season-by-season (most calls commented out) against an authenticated KenPom session."
+    },
+    "config:DESCRIPTION": {
+      "name": "DESCRIPTION",
+      "type": "config",
+      "summary": "R package manifest for hoopR 3.1.0 declaring metadata, authors, MIT license, R >= 4.1 dependency, and Imports/Suggests (httr2, dplyr, rvest, data.table, etc.) for ESPN/NBA Stats/KenPom access."
+    },
+    "config:hoopR.Rproj": {
+      "name": "hoopR.Rproj",
+      "type": "config",
+      "summary": "RStudio project configuration for the hoopR package setting build type, devtools usage, roxygenize outputs, and two-space-tab editing conventions."
+    },
+    "config:NAMESPACE": {
+      "name": "NAMESPACE",
+      "type": "config",
+      "summary": "Roxygen2-generated package namespace exporting 270+ hoopR functions (bref_, cbbd_, espn_, kp_, nba_, load_, torvik_, realgm_ families) and registering the print.hoopR_data S3 method."
+    },
+    "file:R/bref_awards.R": {
+      "name": "bref_awards.R",
+      "type": "file",
+      "summary": "Exports bref_awards(), scraping end-of-season NBA award voting (MVP, ROY, DPOY, etc.) from Basketball-Reference into a tidy hoopR_data tibble with one row per candidate."
+    },
+    "file:R/bref_draft.R": {
+      "name": "bref_draft.R",
+      "type": "file",
+      "summary": "Exports bref_draft(), scraping NBA draft results with career totals and advanced metrics from Basketball-Reference into a tidy hoopR_data tibble, one row per pick."
+    },
+    "file:R/bref_injuries.R": {
+      "name": "bref_injuries.R",
+      "type": "file",
+      "summary": "Scrapes the current NBA injury report from Basketball-Reference and returns it as a tidy data frame via the shared bref helper layer."
+    },
+    "file:R/bref_player_bios.R": {
+      "name": "bref_player_bios.R",
+      "type": "file",
+      "summary": "Scrapes player biographical information (height, weight, birth date, college, etc.) from a player's Basketball-Reference page."
+    },
+    "file:R/bref_player_game_log.R": {
+      "name": "bref_player_game_log.R",
+      "type": "file",
+      "summary": "Scrapes a player's per-game game log for a given season from Basketball-Reference and returns the box-score rows as a tidy frame."
+    },
+    "file:R/bref_players_stats.R": {
+      "name": "bref_players_stats.R",
+      "type": "file",
+      "summary": "Scrapes season-level player statistics tables (per-game, totals, advanced, etc.) from Basketball-Reference league pages."
+    },
+    "file:R/bref_standings.R": {
+      "name": "bref_standings.R",
+      "type": "file",
+      "summary": "Scrapes NBA conference/division standings for a season from Basketball-Reference and returns them as a tidy frame."
+    },
+    "file:R/bref_team_roster.R": {
+      "name": "bref_team_roster.R",
+      "type": "file",
+      "summary": "Scrapes a team's season roster from Basketball-Reference and returns player listings as a tidy data frame."
+    },
+    "file:R/bref_teams_stats.R": {
+      "name": "bref_teams_stats.R",
+      "type": "file",
+      "summary": "Scrapes team-level season statistics tables (per-game, opponent, advanced) from Basketball-Reference league pages."
+    },
+    "file:R/bref_utils.R": {
+      "name": "bref_utils.R",
+      "type": "file",
+      "summary": "Shared internal helper layer for the Basketball-Reference scrapers: .bref_text fetches a page body, .bref_table parses an HTML table, and .bref_type_convert coerces column types."
+    },
+    "file:R/cbbd_api_key.R": {
+      "name": "cbbd_api_key.R",
+      "type": "file",
+      "summary": "Manages the CollegeBasketballData API key (cbbd_key/has_cbbd_key/check_cbbd_key) and provides the shared authenticated .cbbd_get request helper used by every cbbd_* endpoint wrapper."
+    },
+    "file:R/cbbd_conferences.R": {
+      "name": "cbbd_conferences.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData conferences endpoints (cbbd_conferences and cbbd_conferences_history) returning conference metadata as tidy frames."
+    },
+    "file:R/cbbd_draft.R": {
+      "name": "cbbd_draft.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData NBA-draft endpoints (cbbd_draft_teams, cbbd_draft_positions, cbbd_draft_picks) for draft-pick and prospect data."
+    },
+    "file:R/cbbd_games.R": {
+      "name": "cbbd_games.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData games surface (cbbd_games, cbbd_games_media, cbbd_games_teams, cbbd_games_players, cbbd_scoreboard) returning schedule, box-score, and scoreboard frames."
+    },
+    "file:R/cbbd_lines.R": {
+      "name": "cbbd_lines.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData betting-lines endpoints (cbbd_lines and cbbd_lines_providers) returning game odds and provider metadata."
+    },
+    "file:R/cbbd_lineups.R": {
+      "name": "cbbd_lineups.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData lineup-statistics endpoints (cbbd_lineups_team and cbbd_lineups_game) returning five-man lineup metrics."
+    },
+    "file:R/cbbd_plays.R": {
+      "name": "cbbd_plays.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData play-by-play surface (by game, player, team, date, and tournament, plus cbbd_play_types) returning detailed PBP event frames."
+    },
+    "file:R/cbbd_rankings.R": {
+      "name": "cbbd_rankings.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData poll-rankings endpoint (cbbd_rankings) returning AP and Coaches poll standings."
+    },
+    "file:R/cbbd_ratings.R": {
+      "name": "cbbd_ratings.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData team-ratings endpoints (cbbd_ratings_srs, cbbd_ratings_adjusted, cbbd_ratings_elo) returning SRS, adjusted-efficiency, and Elo ratings."
+    },
+    "file:R/cbbd_recruiting.R": {
+      "name": "cbbd_recruiting.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData recruiting endpoints (cbbd_recruiting_players, cbbd_recruiting_teams, cbbd_recruiting_portal) returning prospect rankings and transfer-portal data."
+    },
+    "file:R/cbbd_stats.R": {
+      "name": "cbbd_stats.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData statistics surface (team-season, team-leaderboard, team/player shooting, player-season) returning aggregate and shooting-split stat frames."
+    },
+    "file:R/cbbd_substitutions.R": {
+      "name": "cbbd_substitutions.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData substitution endpoints (by game, player, and team) returning on/off substitution event data."
+    },
+    "file:R/cbbd_teams.R": {
+      "name": "cbbd_teams.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData teams endpoints (cbbd_teams and cbbd_teams_roster) returning team metadata and season rosters."
+    },
+    "file:R/cbbd_venues.R": {
+      "name": "cbbd_venues.R",
+      "type": "file",
+      "summary": "Wraps the CollegeBasketballData venues endpoint (cbbd_venues) returning arena/venue metadata as a tidy frame."
+    },
+    "file:R/crosswalk_basketball.R": {
+      "name": "crosswalk_basketball.R",
+      "type": "file",
+      "summary": "Internal, deterministic normalization engine for NBA/MBB cross-source crosswalks: name/team normalizers, timezone conversion, and fuzzy matching used to reproduce cached crosswalk artifacts exactly."
+    },
+    "file:R/data.R": {
+      "name": "data.R",
+      "type": "file",
+      "summary": "Roxygen dataset documentation for teams_links, the men's college basketball KenPom team-link reference dictionary (357 rows, 6 variables) bundled with the package."
+    },
+    "file:R/espn_basketball_athlete_career_helpers.R": {
+      "name": "espn_basketball_athlete_career_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball helpers for career-level athlete endpoints (athlete seasons index, career statistics, and v2 event log) shared across the league-specific athlete wrappers."
+    },
+    "file:R/espn_basketball_athlete_helpers.R": {
+      "name": "espn_basketball_athlete_helpers.R",
+      "type": "file",
+      "summary": "Internal, cross-league ESPN basketball athlete backend: ~14 helpers (info, overview, stats, gamelog, splits, eventlog) that fetch core-v2 / site-v2 athlete resources and tidy them into tibbles, shared by both espn_nba_* and espn_mbb_* wrappers."
+    },
+    "file:R/espn_basketball_awards_helpers.R": {
+      "name": "espn_basketball_awards_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball season-awards helper that fetches the paginated per-season award index from the core-v2 API and returns a tidy long-format tibble of award winners."
+    },
+    "file:R/espn_basketball_calendar_helpers.R": {
+      "name": "espn_basketball_calendar_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball calendar helper that fetches the schedule calendar for a league and returns a tidy tibble of calendar entries/date ranges."
+    },
+    "file:R/espn_basketball_coach_helpers.R": {
+      "name": "espn_basketball_coach_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball coach helper that fetches a single coach detail resource (core-v2 coaches/{coach_id}) and returns a one-row tibble of coach attributes."
+    },
+    "file:R/espn_basketball_draft_helpers.R": {
+      "name": "espn_basketball_draft_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball draft backend: ~7 helpers covering draft pick detail, rounds index, draftable athletes, draft status, and the season-draft roll-up, each tidying core-v2 draft resources into tibbles."
+    },
+    "file:R/espn_basketball_event_betting_helpers.R": {
+      "name": "espn_basketball_event_betting_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball event-odds/betting helper that fetches per-event odds-market data from the core-v2 API and returns a tidy long-format betting tibble."
+    },
+    "file:R/espn_basketball_event_competitor_helpers.R": {
+      "name": "espn_basketball_event_competitor_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball per-competitor event backend: ~8 helpers (linescores, leaders, roster, statistics, records, player box, score) that tidy a single competitor's nested event resources into tibbles."
+    },
+    "file:R/espn_basketball_event_helpers.R": {
+      "name": "espn_basketball_event_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball event-level backend: ~9 helpers (win probabilities, officials, broadcasts, situation, predictor, powerindex) that fetch and tidy nested competition resources for a single game."
+    },
+    "file:R/espn_basketball_event_play_helpers.R": {
+      "name": "espn_basketball_event_play_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball single-play helper wrapping events/{eid}/competitions/{cid}/plays/{pid}, returning a one-row tibble of play-by-play detail."
+    },
+    "file:R/espn_basketball_franchise_helpers.R": {
+      "name": "espn_basketball_franchise_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball franchise helper that fetches the core-v2 franchise resource and returns a tidy tibble of franchise metadata."
+    },
+    "file:R/espn_basketball_futures_helpers.R": {
+      "name": "espn_basketball_futures_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball season-futures helper that fetches the per-season futures-market index from the core-v2 API and returns a tidy long-format tibble."
+    },
+    "file:R/espn_basketball_group_helpers.R": {
+      "name": "espn_basketball_group_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball season-groups (conference/division) helper that fetches the per-season groups index across season types and returns a tidy tibble of group hierarchy."
+    },
+    "file:R/espn_basketball_injuries_helpers.R": {
+      "name": "espn_basketball_injuries_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball injuries helper that fetches the league-wide injuries array and returns a tidy tibble of player injury statuses."
+    },
+    "file:R/espn_basketball_league_helpers.R": {
+      "name": "espn_basketball_league_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball league-wide backend: ~9 helpers (statistical leaders by athlete, venues, coaches, athletes index, seasons, season info) plus league-validation and $ref-parsing utilities, each tidying league-scoped API resources."
+    },
+    "file:R/espn_basketball_news_helpers.R": {
+      "name": "espn_basketball_news_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball news helper that fetches the league-level news feed and returns a tidy tibble of articles/headlines."
+    },
+    "file:R/espn_basketball_position_helpers.R": {
+      "name": "espn_basketball_position_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball positions helper that fetches the position dictionary resource and returns a tidy reference tibble of position codes."
+    },
+    "file:R/espn_basketball_powerindex_helpers.R": {
+      "name": "espn_basketball_powerindex_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball power-index helper that fetches the per-season BPI/powerindex resource and returns a tidy long-format tibble of team metrics."
+    },
+    "file:R/espn_basketball_record_helpers.R": {
+      "name": "espn_basketball_record_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball team-record helper that fetches the per-season-type team record resource and returns a tidy long-format tibble of W/L and category records."
+    },
+    "file:R/espn_basketball_season_meta_helpers.R": {
+      "name": "espn_basketball_season_meta_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball season-metadata backend: ~6 helpers (season-types index/detail, season leaders, season rankings/ranking) that tidy per-season core-v2 metadata resources into tibbles."
+    },
+    "file:R/espn_basketball_team_deep_helpers.R": {
+      "name": "espn_basketball_team_deep_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball deep-team backend: ~6 helpers (odds-records, depth chart, season roster, coach-by-season, season statistics) that tidy team-scoped per-season resources into long-format tibbles."
+    },
+    "file:R/espn_basketball_team_helpers.R": {
+      "name": "espn_basketball_team_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball team backend: ~6 helpers (team detail, roster, schedule, leaders, season profile) plus league validation, tidying site-v2 team resources into tibbles shared by NBA and MBB wrappers."
+    },
+    "file:R/espn_basketball_tournaments_helpers.R": {
+      "name": "espn_basketball_tournaments_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball tournaments helper that fetches the league tournament index and returns a tidy tibble of tournament/bracket metadata."
+    },
+    "file:R/espn_basketball_week_helpers.R": {
+      "name": "espn_basketball_week_helpers.R",
+      "type": "file",
+      "summary": "Internal ESPN basketball season-weeks helper that fetches the per-season weeks index across season types and returns a tidy tibble of week boundaries."
+    },
+    "file:R/espn_basketball.R": {
+      "name": "espn_basketball.R",
+      "type": "file",
+      "summary": "Roxygen documentation landing page (@name espn_basketball) giving the cross-league ESPN Basketball endpoint overview that ties together the espn_nba_* and espn_mbb_* wrapper surfaces; contains no executable code."
+    },
+    "file:R/espn_mbb_athlete_career.R": {
+      "name": "espn_mbb_athlete_career.R",
+      "type": "file",
+      "summary": "Public MBB athlete-career loaders: espn_mbb_player_seasons, espn_mbb_player_career_stats, and espn_mbb_player_eventlog_v2 — exported thin wrappers that surface ESPN men's college basketball athlete career data as tibbles."
+    },
+    "file:R/espn_mbb_athletes.R": {
+      "name": "espn_mbb_athletes.R",
+      "type": "file",
+      "summary": "ESPN men's college basketball athlete endpoint wrappers (espn_mbb_player_info, _overview, _stats_v3, _gamelog, etc.), returning per-player bio, overview, V3 stats and game-log frames from ESPN's web/core athlete APIs."
+    },
+    "file:R/espn_mbb_awards.R": {
+      "name": "espn_mbb_awards.R",
+      "type": "file",
+      "summary": "ESPN MBB awards wrappers (espn_mbb_season_awards, espn_mbb_award) that fetch season award lists and single-award detail from ESPN's core awards endpoints."
+    },
+    "file:R/espn_mbb_calendar.R": {
+      "name": "espn_mbb_calendar.R",
+      "type": "file",
+      "summary": "Single-function wrapper (espn_mbb_calendar) returning the ESPN MBB season calendar of date ranges and season types for a given season."
+    },
+    "file:R/espn_mbb_coach.R": {
+      "name": "espn_mbb_coach.R",
+      "type": "file",
+      "summary": "ESPN MBB coach wrappers (espn_mbb_coach, espn_mbb_coach_record) that fetch a coach's profile and win/loss record from ESPN's core coach endpoints."
+    },
+    "file:R/espn_mbb_data.R": {
+      "name": "espn_mbb_data.R",
+      "type": "file",
+      "summary": "Core ESPN men's college basketball data module: play-by-play, team/player box scores, game rosters, scoreboard, schedule, teams, conferences, rankings, standings, betting and team/player stats, plus the helper parsers that flatten ESPN summary payloads."
+    },
+    "file:R/espn_mbb_event_detail.R": {
+      "name": "espn_mbb_event_detail.R",
+      "type": "file",
+      "summary": "ESPN MBB per-event (game) detail wrappers (odds, win probabilities, officials, broadcasts, and other event sub-resources) drawn from ESPN's core event endpoints."
+    },
+    "file:R/espn_mbb_franchise.R": {
+      "name": "espn_mbb_franchise.R",
+      "type": "file",
+      "summary": "ESPN MBB franchise wrappers (espn_mbb_franchises, espn_mbb_franchise) listing all program franchises and fetching a single franchise's detail."
+    },
+    "file:R/espn_mbb_futures.R": {
+      "name": "espn_mbb_futures.R",
+      "type": "file",
+      "summary": "Single-function wrapper (espn_mbb_futures) returning ESPN MBB season futures betting markets for a given season."
+    },
+    "file:R/espn_mbb_groups_v2.R": {
+      "name": "espn_mbb_groups_v2.R",
+      "type": "file",
+      "summary": "ESPN MBB v2 group/conference wrappers (espn_mbb_season_groups, espn_mbb_season_group, and children) resolving conference and grouping hierarchies for a season."
+    },
+    "file:R/espn_mbb_injuries.R": {
+      "name": "espn_mbb_injuries.R",
+      "type": "file",
+      "summary": "ESPN MBB injury wrappers (espn_mbb_injuries, espn_mbb_team_injuries) returning league-wide and per-team injury reports."
+    },
+    "file:R/espn_mbb_league.R": {
+      "name": "espn_mbb_league.R",
+      "type": "file",
+      "summary": "ESPN MBB league-level index wrappers (espn_mbb_leaders, espn_mbb_venues, espn_mbb_coaches, espn_mbb_athletes_index, and more) exposing season-wide leaders, venues and entity directories."
+    },
+    "file:R/espn_mbb_news.R": {
+      "name": "espn_mbb_news.R",
+      "type": "file",
+      "summary": "ESPN MBB news wrappers (espn_mbb_news, espn_mbb_team_news) returning league and team headline feeds."
+    },
+    "file:R/espn_mbb_positions.R": {
+      "name": "espn_mbb_positions.R",
+      "type": "file",
+      "summary": "ESPN MBB position wrappers (espn_mbb_positions, espn_mbb_position) listing roster positions and fetching a single position's detail."
+    },
+    "file:R/espn_mbb_powerindex.R": {
+      "name": "espn_mbb_powerindex.R",
+      "type": "file",
+      "summary": "Single-function wrapper (espn_mbb_powerindex) returning ESPN's MBB power index team ratings for a season."
+    },
+    "file:R/espn_mbb_season_meta.R": {
+      "name": "espn_mbb_season_meta.R",
+      "type": "file",
+      "summary": "ESPN MBB season metadata wrappers (espn_mbb_season_types, espn_mbb_season_type, and children) describing a season's structure, types and associated sub-resources."
+    },
+    "file:R/espn_mbb_team_deep.R": {
+      "name": "espn_mbb_team_deep.R",
+      "type": "file",
+      "summary": "ESPN MBB deep team-resource wrappers (espn_mbb_team_odds_records, espn_mbb_team_season_roster, and more) exposing season-scoped team odds records and rosters from core team endpoints."
+    },
+    "file:R/espn_mbb_team_detail.R": {
+      "name": "espn_mbb_team_detail.R",
+      "type": "file",
+      "summary": "ESPN MBB team detail wrappers (espn_mbb_team, espn_mbb_team_roster, espn_mbb_team_schedule, espn_mbb_team_leaders, etc.) returning a single team's profile, roster, schedule and statistical leaders."
+    },
+    "file:R/espn_mbb_team_record.R": {
+      "name": "espn_mbb_team_record.R",
+      "type": "file",
+      "summary": "Single-function wrapper (espn_mbb_team_record) returning a team's season win/loss record splits from ESPN's core team record endpoint."
+    },
+    "file:R/espn_mbb_tournaments.R": {
+      "name": "espn_mbb_tournaments.R",
+      "type": "file",
+      "summary": "ESPN MBB tournament wrappers (espn_mbb_tournaments, espn_mbb_tournament, and children) listing postseason tournaments and resolving a single tournament's bracket/detail."
+    },
+    "file:R/espn_mbb_weeks.R": {
+      "name": "espn_mbb_weeks.R",
+      "type": "file",
+      "summary": "ESPN MBB scheduling-week wrappers (espn_mbb_season_weeks, espn_mbb_season_week, and children) enumerating a season's weeks and per-week sub-resources."
+    },
+    "file:R/espn_mbb_wp.R": {
+      "name": "espn_mbb_wp.R",
+      "type": "file",
+      "summary": "Single-function wrapper (espn_mbb_wp) that extracts ESPN's per-game win-probability time series for a men's college basketball game."
+    },
+    "file:R/espn_nba_athlete_career.R": {
+      "name": "espn_nba_athlete_career.R",
+      "type": "file",
+      "summary": "ESPN NBA athlete career wrappers (espn_nba_player_seasons, espn_nba_player_career_stats, and more) returning a player's season list and career statistical history."
+    },
+    "file:R/espn_nba_athlete_contracts.R": {
+      "name": "espn_nba_athlete_contracts.R",
+      "type": "file",
+      "summary": "ESPN NBA athlete contract wrappers (espn_nba_player_contracts, espn_nba_player_contract) returning a player's contract list and single-contract detail."
+    },
+    "file:R/espn_nba_athletes.R": {
+      "name": "espn_nba_athletes.R",
+      "type": "file",
+      "summary": "ESPN NBA athlete endpoint wrappers (espn_nba_player_info, _overview, _stats_v3, _gamelog, etc.) returning per-player bio, overview, V3 stats and game-log frames; NBA mirror of espn_mbb_athletes.R."
+    },
+    "file:R/espn_nba_awards.R": {
+      "name": "espn_nba_awards.R",
+      "type": "file",
+      "summary": "ESPN NBA awards wrappers (espn_nba_season_awards, espn_nba_award) that fetch season award lists and single-award detail; NBA mirror of espn_mbb_awards.R."
+    },
+    "file:R/espn_nba_calendar.R": {
+      "name": "espn_nba_calendar.R",
+      "type": "file",
+      "summary": "Wraps the ESPN NBA calendar endpoint, returning the league's season calendar (date ranges and season types) as a tidy tibble."
+    },
+    "file:R/espn_nba_coach.R": {
+      "name": "espn_nba_coach.R",
+      "type": "file",
+      "summary": "Fetches single-coach detail and per-coach win/loss records from ESPN's NBA Core v2 coach endpoints."
+    },
+    "file:R/espn_nba_data.R": {
+      "name": "espn_nba_data.R",
+      "type": "file",
+      "summary": "Core ESPN NBA game-data module providing play-by-play, team/player box scores, rosters, schedules, scoreboard, standings, betting, and team/player stats from ESPN Site v2 game summaries."
+    },
+    "file:R/espn_nba_event_detail.R": {
+      "name": "espn_nba_event_detail.R",
+      "type": "file",
+      "summary": "Per-event (game) detail scrapers covering ESPN NBA odds, win probabilities, officials, broadcasts, predictors, prop bets, linescores, leaders, rosters, and team statistics."
+    },
+    "file:R/espn_nba_franchise.R": {
+      "name": "espn_nba_franchise.R",
+      "type": "file",
+      "summary": "Retrieves the ESPN NBA franchises index and single-franchise detail records (franchise identity, venue, colors) from Core v2 endpoints."
+    },
+    "file:R/espn_nba_futures.R": {
+      "name": "espn_nba_futures.R",
+      "type": "file",
+      "summary": "Returns ESPN NBA season futures betting markets in long format from the Core v2 futures endpoint."
+    },
+    "file:R/espn_nba_groups_v2.R": {
+      "name": "espn_nba_groups_v2.R",
+      "type": "file",
+      "summary": "Season-scoped group hierarchy scrapers for ESPN NBA: groups index, single group, child groups, and group team membership."
+    },
+    "file:R/espn_nba_groups.R": {
+      "name": "espn_nba_groups.R",
+      "type": "file",
+      "summary": "Fetches the ESPN NBA conferences listing (Eastern/Western and their groupings) as a tidy tibble."
+    },
+    "file:R/espn_nba_injuries.R": {
+      "name": "espn_nba_injuries.R",
+      "type": "file",
+      "summary": "Provides league-wide and per-team ESPN NBA injury reports resolved from Core v2 injury reference endpoints."
+    },
+    "file:R/espn_nba_league.R": {
+      "name": "espn_nba_league.R",
+      "type": "file",
+      "summary": "League-level ESPN NBA reference scrapers: league leaders, venues, coaches index, athletes index, seasons list, and per-season info."
+    },
+    "file:R/espn_nba_news.R": {
+      "name": "espn_nba_news.R",
+      "type": "file",
+      "summary": "Retrieves league-wide and team-specific ESPN NBA news articles from the Site v2 news endpoint."
+    },
+    "file:R/espn_nba_positions.R": {
+      "name": "espn_nba_positions.R",
+      "type": "file",
+      "summary": "Returns the ESPN NBA positions index and single-position detail from Core v2 position reference endpoints."
+    },
+    "file:R/espn_nba_powerindex.R": {
+      "name": "espn_nba_powerindex.R",
+      "type": "file",
+      "summary": "Fetches ESPN NBA season Basketball Power Index (BPI) ratings in long format from the Core v2 powerindex endpoint."
+    },
+    "file:R/espn_nba_season_meta.R": {
+      "name": "espn_nba_season_meta.R",
+      "type": "file",
+      "summary": "Season metadata scrapers for ESPN NBA: season types index/detail, season leaders, and season rankings index/detail."
+    },
+    "file:R/espn_nba_team_deep.R": {
+      "name": "espn_nba_team_deep.R",
+      "type": "file",
+      "summary": "Deep per-team ESPN NBA scrapers covering odds records, depth charts, season rosters, coach-by-season, and detailed records."
+    },
+    "file:R/espn_nba_team_detail.R": {
+      "name": "espn_nba_team_detail.R",
+      "type": "file",
+      "summary": "Per-team ESPN NBA detail scrapers: team identity, roster, schedule, leaders, season profile, and season statistics."
+    },
+    "file:R/espn_nba_team_record.R": {
+      "name": "espn_nba_team_record.R",
+      "type": "file",
+      "summary": "Returns an ESPN NBA team's win/loss record broken out per season type from the Core v2 record endpoint."
+    },
+    "file:R/espn_nba_tournaments.R": {
+      "name": "espn_nba_tournaments.R",
+      "type": "file",
+      "summary": "Scrapes ESPN NBA tournament metadata: tournaments index, single tournament, and per-tournament season listings (e.g., In-Season Tournament)."
+    },
+    "file:R/espn_nba_transactions.R": {
+      "name": "espn_nba_transactions.R",
+      "type": "file",
+      "summary": "Provides ESPN NBA draft picks, free-agent listings, and roster transaction feeds parsed from Core v2 transaction endpoints."
+    },
+    "file:R/espn_nba_weeks.R": {
+      "name": "espn_nba_weeks.R",
+      "type": "file",
+      "summary": "Season-week scrapers for ESPN NBA: weeks index, single week, and per-week rankings index/detail."
+    },
+    "file:R/espn_nba_wp.R": {
+      "name": "espn_nba_wp.R",
+      "type": "file",
+      "summary": "Builds NBA win-probability chart data per play from ESPN's game-summary win-probability feed."
+    },
+    "file:R/fox_basketball.R": {
+      "name": "fox_basketball.R",
+      "type": "file",
+      "summary": "Fox Sports basketball scrapers exposing parallel NBA and MBB functions for play-by-play, box scores, odds, rosters, team stats, and game logs."
+    },
+    "file:R/hoopshype_salaries.R": {
+      "name": "hoopshype_salaries.R",
+      "type": "file",
+      "summary": "Scrapes HoopsHype player salary tables, returning multi-season NBA player salary figures as a tidy data frame."
+    },
+    "file:R/kp_box_tables.R": {
+      "name": "kp_box_tables.R",
+      "type": "file",
+      "summary": "KenPom game-level scrapers parsing box scores and in-game win-probability tables from the (subscriber-gated) kenpom.com HTML pages."
+    },
+    "file:R/kp_historical_tables.R": {
+      "name": "kp_historical_tables.R",
+      "type": "file",
+      "summary": "KenPom historical-data scrapers for team/coach efficiency history, program ratings, the Pomeroy archive ratings, and conference statistics tables."
+    },
+    "file:R/kp_misc_stats.R": {
+      "name": "kp_misc_stats.R",
+      "type": "file",
+      "summary": "Authenticated KenPom scrapers for miscellaneous men's college-basketball pages — trends, officials/referee, home-court advantage, arenas, game attributes, and FanMatch projections. Uses an httr2 cookie-jar session plus rvest CSS-selector parsing."
+    },
+    "file:R/kp_ratings_tables.R": {
+      "name": "kp_ratings_tables.R",
+      "type": "file",
+      "summary": "Authenticated KenPom scrapers for season ratings tables — Pomeroy ratings, efficiency, four-factors, point distribution, height/experience, foul trouble, team/player stats, and KPOY award tracking."
+    },
+    "file:R/kp_team_tables.R": {
+      "name": "kp_team_tables.R",
+      "type": "file",
+      "summary": "Authenticated KenPom scrapers for team-level detail pages — schedule, game plan, opponent tracker, roster/players, player career, minutes matrix, per-player stats, depth chart, and lineups. The largest KenPom module in the package."
+    },
+    "file:R/kp.R": {
+      "name": "kp.R",
+      "type": "file",
+      "summary": "Documentation-only overview hub for the KenPom scraper family, cataloguing the kp_* functions and describing the httr2 cookie-jar login() auth flow that reads KP_USER/KP_PW credentials."
+    },
+    "file:R/load_crosswalk.R": {
+      "name": "load_crosswalk.R",
+      "type": "file",
+      "summary": "Loaders that download pre-built cross-source crosswalk tables (team / schedule / player) for NBA and MBB from the sportsdataverse-data releases, validating seasons and tagging results."
+    },
+    "file:R/load_hoopR.R": {
+      "name": "load_hoopR.R",
+      "type": "file",
+      "summary": "Documentation-only overview hub for the hoopR data loaders, cataloguing the load_nba_* and load_mbb_* season loaders that pull pre-scraped data from the hoopR-{nba,mbb}-data releases."
+    },
+    "file:R/load_mbb.R": {
+      "name": "load_mbb.R",
+      "type": "file",
+      "summary": "Season-level MBB data loaders pulling pre-scraped play-by-play, box scores, schedules, rosters, stats, standings, and officials from sportsdataverse-data releases, with parallel download, optional progressr progress, and DBI database build/update helpers."
+    },
+    "file:R/load_nba.R": {
+      "name": "load_nba.R",
+      "type": "file",
+      "summary": "Season-level NBA data loaders pulling pre-scraped play-by-play, box scores, schedules, rosters, stats, standings, draft, and officials from sportsdataverse-data releases, with parallel download and DBI database build/update helpers."
+    },
+    "file:R/mbb_crosswalk.R": {
+      "name": "mbb_crosswalk.R",
+      "type": "file",
+      "summary": "Builds MBB cross-source crosswalks (team / schedule / player) by reconciling ESPN, Fox, Barttorvik, and KenPom identities through normalization, alias tables, and fuzzy matching atop the shared .bb_* crosswalk engine."
+    },
+    "file:R/nba_crosswalk.R": {
+      "name": "nba_crosswalk.R",
+      "type": "file",
+      "summary": "Builds NBA cross-source crosswalks (team / schedule / player) reconciling ESPN, NBA Stats, and Fox identities via the shared .bb_* normalization and fuzzy-matching engine."
+    },
+    "file:R/nba_data_pbp.R": {
+      "name": "nba_data_pbp.R",
+      "type": "file",
+      "summary": "Provides nba_data_pbp(), a loader for tidy NBA play-by-play data scraped from the data.nba.com feed for a given game id."
+    },
+    "file:R/nba_datasets.R": {
+      "name": "nba_datasets.R",
+      "type": "file",
+      "summary": "Tidy reshaping helpers that flatten raw NBA Stats payloads into analysis-ready frames — franchise history, player box scores with team context, and nested player profiles."
+    },
+    "file:R/nba_dictionaries.R": {
+      "name": "nba_dictionaries.R",
+      "type": "file",
+      "summary": "Reference-data helpers exposing NBA player/team dictionaries and URL builders for player headshots and team logos."
+    },
+    "file:R/nba_metrics.R": {
+      "name": "nba_metrics.R",
+      "type": "file",
+      "summary": "Vectorized basketball analytics primitives — true shooting, eFG%, free-throw rate, game score, assist/turnover ratios, possessions, pace, offensive/defensive/net ratings, usage, and the four factors."
+    },
+    "file:R/nba_reduce.R": {
+      "name": "nba_reduce.R",
+      "type": "file",
+      "summary": "Set-combination utilities for multi-table NBA Stats results — bind, join, and nest lists of named data frames into a single structure."
+    },
+    "file:R/nba_scaling.R": {
+      "name": "nba_scaling.R",
+      "type": "file",
+      "summary": "Box-score scaling helpers that rescale counting stats to per-N-minutes or per-N-possessions and append advanced metrics, with a private column-finder helper."
+    },
+    "file:R/nba_stats_boxscore_v3.R": {
+      "name": "nba_stats_boxscore_v3.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats v3 boxscore endpoints — traditional, advanced, misc, scoring, usage, four-factors, player-track, matchups, hustle, defensive, game rotation, and summary. The largest boxscore module in the package."
+    },
+    "file:R/nba_stats_boxscore.R": {
+      "name": "nba_stats_boxscore.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats v2/legacy boxscore endpoints — traditional, advanced, defensive, four-factors, misc, scoring, usage, summary, matchups, player-track, hustle, and similarity scores."
+    },
+    "file:R/nba_stats_cume.R": {
+      "name": "nba_stats_cume.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats cumulative-stats endpoints covering player and team cumulative totals and per-game cumulative breakdowns."
+    },
+    "file:R/nba_stats_draft.R": {
+      "name": "nba_stats_draft.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats draft endpoints — draft board, draft history, and the full draft-combine suite (measurements, drills, shooting, anthro)."
+    },
+    "file:R/nba_stats_franchise.R": {
+      "name": "nba_stats_franchise.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats franchise endpoints — franchise leaders (with and without rank), franchise players, and franchise history."
+    },
+    "file:R/nba_stats_hustle.R": {
+      "name": "nba_stats_hustle.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats league hustle-stats endpoints covering player and team hustle stats plus their leaderboards."
+    },
+    "file:R/nba_stats_leaders.R": {
+      "name": "nba_stats_leaders.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats leaders/leaderboard endpoints — all-time grids, assist leaders/tracker, homepage leaders, leader tiles, defense hub, league leaders, and dunk/gravity score leaders."
+    },
+    "file:R/nba_stats_league_dash.R": {
+      "name": "nba_stats_league_dash.R",
+      "type": "file",
+      "summary": "Wrappers for the NBA Stats leaguedash endpoints — player/team stats, clutch, bio, shot dashboards (opponent, point, shot locations), and tracking defend/stats. One of the largest endpoint modules."
+    },
+    "file:R/nba_stats_league.R": {
+      "name": "nba_stats_league.R",
+      "type": "file",
+      "summary": "Wrappers for league-wide NBA Stats endpoints — game log, standings (legacy + v3), playoff picture, game finder, and in-season tournament standings."
+    },
+    "file:R/nba_stats_lineups.R": {
+      "name": "nba_stats_lineups.R",
+      "type": "file",
+      "summary": "Wraps the NBA Stats API lineup and matchup endpoints (leaguedashlineups, leaguelineupviz, leagueplayerondetails, leagueseasonmatchups, matchupsrollup, fantasywidget), returning tidy data frames of five-man lineup and head-to-head matchup statistics."
+    },
+    "file:R/nba_stats_pbp.R": {
+      "name": "nba_stats_pbp.R",
+      "type": "file",
+      "summary": "Core NBA play-by-play retrieval module exposing nba_playbyplayv3, nba_pbp/nba_pbps (multi-game), and the live cdn.nba.com feeds nba_live_pbp and nba_live_boxscore; assembles enriched per-event play-by-play frames."
+    },
+    "file:R/nba_stats_player_dash.R": {
+      "name": "nba_stats_player_dash.R",
+      "type": "file",
+      "summary": "Wraps the NBA Stats player-dashboard family (by clutch, game splits, general splits, last-N games, opponent, shooting splits, team performance, year-over-year) plus the player-tracking dashboards (pt pass/reb/shots/shotdefend), returning split player statistics."
+    },
+    "file:R/nba_stats_player.R": {
+      "name": "nba_stats_player.R",
+      "type": "file",
+      "summary": "Largest player-data module: wraps NBA Stats player endpoints including playerindex, career stats, game logs, awards, fantasy profiles, estimated metrics, and the cdn.nba.com player headshot helper; several legacy endpoints are lifecycle-deprecated."
+    },
+    "file:R/nba_stats_roster.R": {
+      "name": "nba_stats_roster.R",
+      "type": "file",
+      "summary": "Wraps the NBA Stats common-info endpoints (commonallplayers, commonplayerinfo, commonplayoffseries, commonteamroster, commonteamyears), providing league player directories, individual bios, playoff series, and team roster tables."
+    },
+    "file:R/nba_stats_scoreboard.R": {
+      "name": "nba_stats_scoreboard.R",
+      "type": "file",
+      "summary": "Provides NBA schedule and scoreboard access (nba_schedule, scoreboard/scoreboardv2/scoreboardv3, todays_scoreboard, winprobabilitypbp, scheduleleaguev2int) drawing on both the cdn.nba.com schedule feed and the stats.nba.com scoreboard endpoints."
+    },
+    "file:R/nba_stats_shotchart.R": {
+      "name": "nba_stats_shotchart.R",
+      "type": "file",
+      "summary": "Wraps the NBA Stats shot-chart endpoints (shotchartdetail, shotchartleaguewide, shotchartlineupdetail), returning per-shot location and make/miss data for players, the league, and lineups."
+    },
+    "file:R/nba_stats_team_dash.R": {
+      "name": "nba_stats_team_dash.R",
+      "type": "file",
+      "summary": "Team-side counterpart to the player dashboards: wraps the NBA Stats team-dashboard family (clutch, game/general/last-N/opponent/shooting splits, team performance, year-over-year) plus team lineups and player-tracking dashboards."
+    },
+    "file:R/nba_stats_team.R": {
+      "name": "nba_stats_team.R",
+      "type": "file",
+      "summary": "Largest team-data module: wraps NBA Stats team endpoints including teams, teamdetails, estimated metrics, game logs, historical leaders, info-common, player on/off details, year-by-year stats, and team-vs-player splits."
+    },
+    "file:R/nba_stats_video.R": {
+      "name": "nba_stats_video.R",
+      "type": "file",
+      "summary": "Wraps the NBA Stats video endpoints (videodetails/videodetailsasset, videoevents/videoeventsasset, videostatus), returning play video metadata and asset URLs tied to game events."
+    },
+    "file:R/nba_stats.R": {
+      "name": "nba_stats.R",
+      "type": "file",
+      "summary": "Overview/index module for the NBA Stats API surface, documenting the stats.nba.com endpoint families and serving as the conceptual entry point for the nba_stats_* wrapper modules."
+    },
+    "file:R/nbadraft_mock_draft.R": {
+      "name": "nbadraft_mock_draft.R",
+      "type": "file",
+      "summary": "Scrapes NBADraft.net mock-draft tables via rvest and returns a tidy data frame of projected draft picks for a given draft year."
+    },
+    "file:R/nbagl_pbp.R": {
+      "name": "nbagl_pbp.R",
+      "type": "file",
+      "summary": "Retrieves NBA G-League play-by-play (nbagl_pbp) and live feeds (nbagl_live_pbp, nbagl_live_boxscore) by reusing the NBA Stats play-by-play pipeline against G-League game IDs."
+    },
+    "file:R/nbagl_players.R": {
+      "name": "nbagl_players.R",
+      "type": "file",
+      "summary": "Retrieves the NBA G-League player index (nbagl_players) via the NBA Stats playerindex endpoint scoped to gleague.nba.com, returning a tidy player directory."
+    },
+    "file:R/nbagl_schedule.R": {
+      "name": "nbagl_schedule.R",
+      "type": "file",
+      "summary": "Retrieves the NBA G-League schedule (nbagl_schedule) from the data.nba.com schedule feed, returning a tidy season schedule with game dates and matchups."
+    },
+    "file:R/nbagl_standings.R": {
+      "name": "nbagl_standings.R",
+      "type": "file",
+      "summary": "Retrieves current NBA G-League standings (nbagl_standings) via the NBA Stats standings feed on s.data.nba.com, returning a tidy team standings table."
+    },
+    "file:R/ncaa_mbb_data.R": {
+      "name": "ncaa_mbb_data.R",
+      "type": "file",
+      "summary": "Scrapes NCAA.com / stats.ncaa.org for men's college basketball NET rankings (ncaa_mbb_NET_rankings) and the Division I/II/III team directory (ncaa_mbb_teams) by year and division."
+    },
+    "file:R/realgm_draft.R": {
+      "name": "realgm_draft.R",
+      "type": "file",
+      "summary": "Scrapes basketball.realgm.com draft pages for historical draft results (realgm_draft) and early-entry candidate lists (realgm_early_entry), returning tidy draft data frames."
+    },
+    "file:R/realgm_players.R": {
+      "name": "realgm_players.R",
+      "type": "file",
+      "summary": "Scrapes basketball.realgm.com player pages for the player directory (realgm_players), players abroad (realgm_players_abroad), and future free agents (realgm_future_free_agents)."
+    },
+    "file:R/realgm_salaries.R": {
+      "name": "realgm_salaries.R",
+      "type": "file",
+      "summary": "Scrapes basketball.realgm.com salary-cap pages for the league salary cap history (realgm_salary_cap) and the rookie scale tables (realgm_rookie_scale)."
+    },
+    "file:R/realgm_staff.R": {
+      "name": "realgm_staff.R",
+      "type": "file",
+      "summary": "Scrapes basketball.realgm.com staff pages for coaching staff (realgm_coaches) and general manager (realgm_gms) directories, returning tidy personnel tables."
+    },
+    "file:R/realgm_standings.R": {
+      "name": "realgm_standings.R",
+      "type": "file",
+      "summary": "Scrapes basketball.realgm.com for league standings (realgm_standings) and the team directory (realgm_teams), returning tidy standings and team-lookup data frames."
+    },
+    "file:R/realgm_stats.R": {
+      "name": "realgm_stats.R",
+      "type": "file",
+      "summary": "Largest RealGM scraper: pulls player and team season stats, individual season/game logs, and draft-prospect stats (realgm_player_stats, realgm_team_stats, realgm_individual_seasons, realgm_individual_games, realgm_draft_prospects) from basketball.realgm.com."
+    },
+    "file:R/realgm_transactions.R": {
+      "name": "realgm_transactions.R",
+      "type": "file",
+      "summary": "Scrapes basketball.realgm.com transaction pages via rvest (realgm_transactions), returning a tidy table of player signings, trades, and roster moves."
+    },
+    "file:R/realgm_utils.R": {
+      "name": "realgm_utils.R",
+      "type": "file",
+      "summary": "Shared internal helpers for the RealGM scrapers, providing chromote-driven page rendering, URL building, and rvest/janitor table-cleaning utilities consumed across the realgm_* modules."
+    },
+    "file:R/rotowire_injuries.R": {
+      "name": "rotowire_injuries.R",
+      "type": "file",
+      "summary": "Exports rotowire_injuries(), which pulls the current NBA injury report from RotoWire's public JSON feed and returns a tidy tibble of player injury statuses."
+    },
+    "file:R/salary_draft_utils.R": {
+      "name": "salary_draft_utils.R",
+      "type": "file",
+      "summary": "Internal shared HTML-scraping helpers (ext_html, parse_currency, next_data) used by the HoopsHype salaries, Spotrac team-cap, and NBADraft.net mock-draft wrappers; all sources are public HTML requiring no API key."
+    },
+    "file:R/spotrac_team_cap.R": {
+      "name": "spotrac_team_cap.R",
+      "type": "file",
+      "summary": "Exports spotrac_team_cap(), scraping Spotrac's public team salary-cap pages into a tibble of per-team cap and contract figures."
+    },
+    "file:R/torvik_game_schedule.R": {
+      "name": "torvik_game_schedule.R",
+      "type": "file",
+      "summary": "Exports torvik_game_schedule(), retrieving Bart Torvik's men's college basketball game schedule data as a tidy tibble."
+    },
+    "file:R/torvik_game_stats.R": {
+      "name": "torvik_game_stats.R",
+      "type": "file",
+      "summary": "Exports torvik_game_stats(), fetching per-game advanced statistics from barttorvik.com for men's college basketball games."
+    },
+    "file:R/torvik_ncaa_results.R": {
+      "name": "torvik_ncaa_results.R",
+      "type": "file",
+      "summary": "Exports torvik_ncaa_results(), scraping Bart Torvik's historical NCAA tournament results tables into a tidy tibble."
+    },
+    "file:R/torvik_player_stats.R": {
+      "name": "torvik_player_stats.R",
+      "type": "file",
+      "summary": "Exports torvik_player_stats(), pulling Bart Torvik player-level season statistics for men's college basketball."
+    },
+    "file:R/torvik_ratings.R": {
+      "name": "torvik_ratings.R",
+      "type": "file",
+      "summary": "Exports torvik_ratings(), retrieving Bart Torvik's team efficiency ratings for men's college basketball as a tibble."
+    },
+    "file:R/torvik_team_factors.R": {
+      "name": "torvik_team_factors.R",
+      "type": "file",
+      "summary": "Exports torvik_team_factors(), fetching Bart Torvik four-factors and tempo-free team metrics for men's college basketball."
+    },
+    "file:R/torvik_utils.R": {
+      "name": "torvik_utils.R",
+      "type": "file",
+      "summary": "Internal shared HTTP layer (torvik_text) for the family of torvik_*() scrapers, centralizing requests to barttorvik.com which needs no account or API key."
+    },
+    "file:R/utils_nba_stats.R": {
+      "name": "utils_nba_stats.R",
+      "type": "file",
+      "summary": "Internal HTTP and result-parsing layer for the NBA Stats / G-League APIs: builds endpoint requests (with proxy support), maps stats.nba.com resultSets into tibbles, and provides id/time padding plus schedule-rejoin helpers."
+    },
+    "file:R/utils.R": {
+      "name": "utils.R",
+      "type": "file",
+      "summary": "Package-wide utility module: KenPom login/credential handling, cached CSV/RDS loaders from URLs, season/year helpers (most_recent_mbb_season, year_to_season), team-name normalization, progress messaging, and the hoopR_data S3 class with its print method."
+    },
+    "file:README.Rmd": {
+      "name": "README.Rmd",
+      "type": "file",
+      "summary": "Source R Markdown for the package README rendered to README.md, covering hoopR's purpose, installation, quick-start usage, and documentation links."
+    },
+    "file:vignettes/cbbd-college-basketball-data.Rmd": {
+      "name": "cbbd-college-basketball-data.Rmd",
+      "type": "file",
+      "summary": "Vignette documenting the CollegeBasketballData (CBD/CBBD) endpoints in hoopR, including API-key registration and worked examples for conferences, teams, venues, and other reference data."
+    },
+    "file:vignettes/espn-endpoints.Rmd": {
+      "name": "espn-endpoints.Rmd",
+      "type": "file",
+      "summary": "Comprehensive vignette walking through hoopR's ESPN NBA and MBB endpoint surface, organized by use case with worked examples (news, scores, schedules, rosters, and more)."
+    },
+    "file:vignettes/getting-started-hoopR.Rmd": {
+      "name": "getting-started-hoopR.Rmd",
+      "type": "file",
+      "summary": "Getting-started vignette covering hoopR installation, a quick-start example, and credits to authors and contributors."
+    },
+    "file:vignettes/kenpom-example-functions.Rmd": {
+      "name": "kenpom-example-functions.Rmd",
+      "type": "file",
+      "summary": "Vignette demonstrating the KenPom (kp_*) ratings, team, and historical table functions in hoopR with example calls."
+    },
+    "file:vignettes/mbb-cookbook.Rmd": {
+      "name": "mbb-cookbook.Rmd",
+      "type": "file",
+      "summary": "Recipe-style men's college basketball cookbook vignette stitching together hoopR loaders (schedule, PBP, KenPom tempo-free metrics) into end-to-end analysis workflows."
+    },
+    "file:vignettes/nba-cookbook.Rmd": {
+      "name": "nba-cookbook.Rmd",
+      "type": "file",
+      "summary": "Recipe-style NBA cookbook vignette showing how to combine hoopR's ESPN and NBA Stats loaders at different levels of detail (game summary, box scores, play-by-play) into worked analysis examples."
+    }
+  },
+  "totalNodes": 205,
+  "totalEdges": 124
+}

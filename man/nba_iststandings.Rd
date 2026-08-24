@@ -23,33 +23,36 @@ nba_iststandings(
 \value{
 Returns a named list of data frames: Standings
 
-\strong{Standings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   league_id \tab character \tab League identifier ('10' = WNBA). \cr
-   season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
-   team_id \tab character \tab Unique team identifier. \cr
-   team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   conference \tab character \tab Conference. \cr
-   ist_group \tab character \tab Ist group. \cr
-   clinch_indicator \tab character \tab Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated). \cr
-   clinched_ist_knockout \tab character \tab Clinched ist knockout. \cr
-   clinched_ist_group \tab character \tab Clinched ist group. \cr
-   clinched_ist_wildcard \tab character \tab Clinched ist wildcard. \cr
-   ist_wildcard_rank \tab character \tab League/season rank for ist wildcard. \cr
-   ist_group_rank \tab character \tab League/season rank for ist group. \cr
-   ist_knockout_rank \tab character \tab League/season rank for ist knockout. \cr
-   wins \tab character \tab Total wins. \cr
-   losses \tab character \tab Total losses. \cr
-   pct \tab character \tab Pct. \cr
-   ist_group_gb \tab character \tab Ist group gb. \cr
-   ist_wildcard_gb \tab character \tab Ist wildcard gb. \cr
-   diff \tab character \tab Diff. \cr
-   pts \tab character \tab Points scored. \cr
-   opp_pts \tab character \tab Opponent points. \cr
-}
+\strong{Standings}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+      season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+      team_id \tab character \tab Unique team identifier. \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      conference \tab character \tab Conference. \cr
+      ist_group \tab character \tab Ist group. \cr
+      clinch_indicator \tab character \tab Playoff clinch indicator (e.g. 'x' clinched playoff, 'e' eliminated). \cr
+      clinched_ist_knockout \tab character \tab Clinched ist knockout. \cr
+      clinched_ist_group \tab character \tab Clinched ist group. \cr
+      clinched_ist_wildcard \tab character \tab Clinched ist wildcard. \cr
+      ist_wildcard_rank \tab character \tab League/season rank for ist wildcard. \cr
+      ist_group_rank \tab character \tab League/season rank for ist group. \cr
+      ist_knockout_rank \tab character \tab League/season rank for ist knockout. \cr
+      wins \tab character \tab Total wins. \cr
+      losses \tab character \tab Total losses. \cr
+      pct \tab character \tab Pct. \cr
+      ist_group_gb \tab character \tab Ist group gb. \cr
+      ist_wildcard_gb \tab character \tab Ist wildcard gb. \cr
+      diff \tab character \tab Diff. \cr
+      pts \tab character \tab Points scored. \cr
+      opp_pts \tab character \tab Opponent points. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API In-Season Tournament Standings}

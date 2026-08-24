@@ -13,35 +13,37 @@
 #' @return A `hoopR_data` tibble with one row per game (key columns shown; the
 #'   `_1`/`_2` suffixes denote `team1` and `team2`):
 #'
-#'    |col_name    |types     |description                                          |
-#'    |:-----------|:---------|:----------------------------------------------------|
-#'    |muid        |character |Matchup unique id.                                   |
-#'    |date        |character |Game date (M/D/YY).                                  |
-#'    |conmatch    |character |Conference matchup descriptor.                       |
-#'    |matchup     |character |Ranked-matchup descriptor.                           |
-#'    |prediction  |character |Pre-game prediction (favorite, score, win %).        |
-#'    |ttq         |numeric   |Torvik Thrill Quotient (game excitement).            |
-#'    |conf        |numeric   |Conference-game flag.                                |
-#'    |venue       |numeric   |Venue / neutral-site flag.                           |
-#'    |team1       |character |Team 1 name.                                         |
-#'    |t1oe        |numeric   |Team 1 offensive efficiency in the game.             |
-#'    |t1de        |numeric   |Team 1 defensive efficiency in the game.             |
-#'    |team2       |character |Team 2 name.                                         |
-#'    |t2oe        |numeric   |Team 2 offensive efficiency in the game.             |
-#'    |t2de        |numeric   |Team 2 defensive efficiency in the game.             |
-#'    |gp          |numeric   |Game-played flag (1 if completed).                   |
-#'    |result      |character |Final result string.                                 |
-#'    |tempo       |numeric   |Game tempo (possessions).                            |
-#'    |possessions |numeric   |Possessions in the game.                             |
-#'    |t1pts       |numeric   |Team 1 points.                                       |
-#'    |t2pts       |numeric   |Team 2 points.                                       |
-#'    |winner      |character |Winning team.                                        |
-#'    |loser       |character |Losing team.                                         |
-#'    |gamevalue   |numeric   |Game quality value.                                  |
-#'    |t1ppp       |numeric   |Team 1 points per possession.                        |
-#'    |t2ppp       |numeric   |Team 2 points per possession.                        |
-#'    |overtimes   |numeric   |Number of overtimes.                                 |
-#'    |year        |integer   |Season (echoes the `year` argument).                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       muid \tab character \tab Matchup unique id. \cr
+#'       date \tab character \tab Game date (M/D/YY). \cr
+#'       conmatch \tab character \tab Conference matchup descriptor. \cr
+#'       matchup \tab character \tab Ranked-matchup descriptor. \cr
+#'       prediction \tab character \tab Pre-game prediction (favorite, score, win \%). \cr
+#'       ttq \tab numeric \tab Torvik Thrill Quotient (game excitement). \cr
+#'       conf \tab numeric \tab Conference-game flag. \cr
+#'       venue \tab numeric \tab Venue / neutral-site flag. \cr
+#'       team1 \tab character \tab Team 1 name. \cr
+#'       t1oe \tab numeric \tab Team 1 offensive efficiency in the game. \cr
+#'       t1de \tab numeric \tab Team 1 defensive efficiency in the game. \cr
+#'       team2 \tab character \tab Team 2 name. \cr
+#'       t2oe \tab numeric \tab Team 2 offensive efficiency in the game. \cr
+#'       t2de \tab numeric \tab Team 2 defensive efficiency in the game. \cr
+#'       gp \tab numeric \tab Game-played flag (1 if completed). \cr
+#'       result \tab character \tab Final result string. \cr
+#'       tempo \tab numeric \tab Game tempo (possessions). \cr
+#'       possessions \tab numeric \tab Possessions in the game. \cr
+#'       t1pts \tab numeric \tab Team 1 points. \cr
+#'       t2pts \tab numeric \tab Team 2 points. \cr
+#'       winner \tab character \tab Winning team. \cr
+#'       loser \tab character \tab Losing team. \cr
+#'       gamevalue \tab numeric \tab Game quality value. \cr
+#'       t1ppp \tab numeric \tab Team 1 points per possession. \cr
+#'       t2ppp \tab numeric \tab Team 2 points per possession. \cr
+#'       overtimes \tab numeric \tab Number of overtimes. \cr
+#'       year \tab integer \tab Season (echoes the \code{year} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'   Additional adjusted-efficiency, quality, and ranking columns (`t1adjo`,
 #'   `t2adjd`, `t1qual`, `mismatch`, `t1rk`, ...) are also returned.

@@ -10,33 +10,35 @@ NULL
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame of the G League Season Schedule
 #'
-#'    |col_name                |types     |description                                            |
-#'    |:-----------------------|:---------|:------------------------------------------------------|
-#'    |game_date               |date      |Game date (YYYY-MM-DD).                                |
-#'    |game_id                 |character |Unique game identifier.                                |
-#'    |game_code               |character |ESPN game code (numeric identifier).                   |
-#'    |game_status             |integer   |Game status label.                                     |
-#'    |game_status_text        |character |Game status display text (e.g. 'Final', '4:32 - 4th'). |
-#'    |game_sequence           |integer   |Game sequence.                                         |
-#'    |game_date_est           |character |Game date est.                                         |
-#'    |game_time_est           |character |Game time est.                                         |
-#'    |game_date_utc           |character |Game date utc.                                         |
-#'    |game_time_utc           |character |Game start time in UTC (ISO 8601 timestamp).           |
-#'    |arena_name              |character |Arena name.                                            |
-#'    |arena_state             |character |Arena state.                                           |
-#'    |arena_city              |character |Arena city.                                            |
-#'    |home_team_id            |character |Unique identifier for the home team.                   |
-#'    |home_team_name          |character |Home team name.                                        |
-#'    |home_team_tricode       |character |Home team three-letter code.                           |
-#'    |home_team_score         |character |Home team's score.                                     |
-#'    |away_team_id            |character |Unique identifier for the away team.                   |
-#'    |away_team_name          |character |Away team name.                                        |
-#'    |away_team_tricode       |character |Away team three-letter code.                           |
-#'    |away_team_score         |character |Away team's score.                                     |
-#'    |season                  |character |Season identifier (4-digit year or 'YYYY-YY' string).  |
-#'    |league_id               |character |League identifier ('10' = WNBA).                       |
-#'    |season_type_id          |character |Unique identifier for season type.                     |
-#'    |season_type_description |character |Season type description.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_date \tab date \tab Game date (YYYY-MM-DD). \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       game_code \tab character \tab ESPN game code (numeric identifier). \cr
+#'       game_status \tab integer \tab Game status label. \cr
+#'       game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+#'       game_sequence \tab integer \tab Game sequence. \cr
+#'       game_date_est \tab character \tab Game date est. \cr
+#'       game_time_est \tab character \tab Game time est. \cr
+#'       game_date_utc \tab character \tab Game date utc. \cr
+#'       game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+#'       arena_name \tab character \tab Arena name. \cr
+#'       arena_state \tab character \tab Arena state. \cr
+#'       arena_city \tab character \tab Arena city. \cr
+#'       home_team_id \tab character \tab Unique identifier for the home team. \cr
+#'       home_team_name \tab character \tab Home team name. \cr
+#'       home_team_tricode \tab character \tab Home team three-letter code. \cr
+#'       home_team_score \tab character \tab Home team's score. \cr
+#'       away_team_id \tab character \tab Unique identifier for the away team. \cr
+#'       away_team_name \tab character \tab Away team name. \cr
+#'       away_team_tricode \tab character \tab Away team three-letter code. \cr
+#'       away_team_score \tab character \tab Away team's score. \cr
+#'       season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       league_id \tab character \tab League identifier ('10' = WNBA). \cr
+#'       season_type_id \tab character \tab Unique identifier for season type. \cr
+#'       season_type_description \tab character \tab Season type description. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows arrange

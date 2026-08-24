@@ -7,22 +7,25 @@
 realgm_future_free_agents()
 }
 \value{
-A \code{hoopR_data} tibble with one row per future free agent:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player \tab character \tab Player name. \cr
-   pos \tab character \tab Position. \cr
-   team \tab character \tab Current team abbreviation. \cr
-   season \tab character \tab Free-agency season (e.g. \code{2026-2027}). \cr
-   age \tab integer \tab Age. \cr
-   yos \tab integer \tab Years of service. \cr
-   veteran_fa_status \tab character \tab Bird / Non-Bird / veteran FA status. \cr
-   gp \tab integer \tab Games played. \cr
-   pts \tab numeric \tab Points per game. \cr
-   reb \tab numeric \tab Rebounds per game. \cr
-   ast \tab numeric \tab Assists per game. \cr
-   per \tab numeric \tab Player Efficiency Rating. \cr
-   agent \tab character \tab Listed player agent. \cr
-}
+A \code{hoopR_data} tibble with one row per future free agent:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player \tab character \tab Player name. \cr
+      pos \tab character \tab Position. \cr
+      team \tab character \tab Current team abbreviation. \cr
+      season \tab character \tab Free-agency season (e.g. \code{2026-2027}). \cr
+      age \tab integer \tab Age. \cr
+      yos \tab integer \tab Years of service. \cr
+      veteran_fa_status \tab character \tab Bird / Non-Bird / veteran FA status. \cr
+      gp \tab integer \tab Games played. \cr
+      pts \tab numeric \tab Points per game. \cr
+      reb \tab numeric \tab Rebounds per game. \cr
+      ast \tab numeric \tab Assists per game. \cr
+      per \tab numeric \tab Player Efficiency Rating. \cr
+      agent \tab character \tab Listed player agent. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get RealGM's projected future NBA free-agent class from

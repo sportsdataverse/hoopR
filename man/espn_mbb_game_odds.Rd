@@ -2,50 +2,94 @@
 % Please edit documentation in R/espn_mbb_event_detail.R
 \name{espn_mbb_game_odds}
 \alias{espn_mbb_game_odds}
+\alias{espn_mbb_game_officials}
+\alias{espn_mbb_game_broadcasts}
+\alias{espn_mbb_game_situation}
+\alias{espn_mbb_game_predictor}
+\alias{espn_mbb_game_powerindex}
 \title{\strong{Get ESPN Women's College Basketball Event Odds}}
 \usage{
 espn_mbb_game_odds(event_id, ...)
+
+espn_mbb_game_officials(event_id, ...)
+
+espn_mbb_game_broadcasts(event_id, ...)
+
+espn_mbb_game_situation(event_id, ...)
+
+espn_mbb_game_predictor(event_id, ...)
+
+espn_mbb_game_powerindex(event_id, ...)
 }
 \arguments{
-\item{event_id}{ESPN event/game identifier (character or numeric).}
+\item{event_id}{ESPN event identifier.}
 
-\item{...}{Additional arguments; currently unused but retained for
-forward compatibility. Proxy configuration should use
-\code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
+\item{...}{Additional arguments; currently unused.}
 }
 \value{
 A tibble with one row per odds provider (typically empty for MBB
-because ESPN does not carry NCAA basketball betting lines).\tabular{lll}{
-   col_name \tab types \tab description \cr
-   event_id \tab character \tab Unique event / game identifier (ESPN). \cr
-   provider_id \tab character \tab Unique identifier for provider. \cr
-   provider_name \tab character \tab Provider name. \cr
-   details \tab character \tab Details. \cr
-   over_under \tab numeric \tab Over under. \cr
-   spread \tab numeric \tab Spread. \cr
-   home_money_line \tab integer \tab  \cr
-   away_money_line \tab integer \tab  \cr
-   home_team_odds_open \tab numeric \tab  \cr
-   home_team_odds_close \tab numeric \tab  \cr
-   away_team_odds_open \tab numeric \tab  \cr
-   away_team_odds_close \tab numeric \tab  \cr
-}
+because ESPN does not carry NCAA basketball betting lines).
+
+Columns as documented in the shared \link{espn_mbb_game_odds_schema} table.
+
+A tibble with one row per official assigned to the game.
+
+Columns as documented in the shared \link{espn_mbb_game_officials_schema} table.
+
+A tibble with one row per broadcast outlet for the game.
+
+Columns as documented in the shared \link{espn_mbb_game_broadcasts_schema} table.
+
+A single-row tibble with timeouts + fouls for both teams.
+
+A long tibble with rows for both home and away teams.
+
+A tibble with one row per team-game power-index entry.
 }
 \description{
-\strong{Get ESPN Women's College Basketball Event Odds}
+Returns the live game situation for one MBB event: timeouts remaining,
+team fouls, fouls to give, bonus state, and a \verb{$ref} to the last play.
+During a live game this reflects current state; after the game ends
+the values are frozen.
 
-\strong{Get ESPN Women's College Basketball Event Odds}
+Returns pre-game predictor statistics for one MBB event in long
+format: one row per (team × statistic). Typical stats include
+matchup quality, predicted score, win probability, and team
+strength metrics. Returns empty for events without predictor data
+(often the case for already-played games).
+
+Returns the per-team power-index \verb{$ref} URLs for one MBB event.
+Coverage is sparse — many events return zero items.
+}
+\details{
+\strong{Get ESPN MBB Event Predictor (Pre-game)}
+
+\strong{Get ESPN MBB Event Power Index Index}
 }
 \examples{
 \donttest{
   espn_mbb_game_odds(event_id = "401256760")
+}
+\donttest{
+  espn_mbb_game_officials(event_id = "401256760")
+}
+\donttest{
+  espn_mbb_game_broadcasts(event_id = "401256760")
+}
+\donttest{
+  espn_mbb_game_situation(event_id = 401256760)
+}
+\donttest{
+  espn_mbb_game_predictor(event_id = 401256760)
+}
+\donttest{
+  espn_mbb_game_powerindex(event_id = 401256760)
 }
 }
 \seealso{
 Other ESPN MBB Functions:
 \code{\link[=espn_mbb_athletes_index]{espn_mbb_athletes_index()}},
 \code{\link[=espn_mbb_award]{espn_mbb_award()}},
-\code{\link[=espn_mbb_betting]{espn_mbb_betting()}},
 \code{\link[=espn_mbb_calendar]{espn_mbb_calendar()}},
 \code{\link[=espn_mbb_coach]{espn_mbb_coach()}},
 \code{\link[=espn_mbb_coach_record]{espn_mbb_coach_record()}},
@@ -56,42 +100,24 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_franchises]{espn_mbb_franchises()}},
 \code{\link[=espn_mbb_futures]{espn_mbb_futures()}},
 \code{\link[=espn_mbb_game_all]{espn_mbb_game_all()}},
-\code{\link[=espn_mbb_game_broadcasts]{espn_mbb_game_broadcasts()}},
 \code{\link[=espn_mbb_game_official_detail]{espn_mbb_game_official_detail()}},
-\code{\link[=espn_mbb_game_officials]{espn_mbb_game_officials()}},
 \code{\link[=espn_mbb_game_play]{espn_mbb_game_play()}},
 \code{\link[=espn_mbb_game_play_personnel]{espn_mbb_game_play_personnel()}},
 \code{\link[=espn_mbb_game_player_box]{espn_mbb_game_player_box()}},
-\code{\link[=espn_mbb_game_powerindex]{espn_mbb_game_powerindex()}},
-\code{\link[=espn_mbb_game_predictor]{espn_mbb_game_predictor()}},
 \code{\link[=espn_mbb_game_probabilities]{espn_mbb_game_probabilities()}},
 \code{\link[=espn_mbb_game_propbets]{espn_mbb_game_propbets()}},
-\code{\link[=espn_mbb_game_rosters]{espn_mbb_game_rosters()}},
-\code{\link[=espn_mbb_game_situation]{espn_mbb_game_situation()}},
-\code{\link[=espn_mbb_game_team_leaders]{espn_mbb_game_team_leaders()}},
 \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}},
-\code{\link[=espn_mbb_game_team_records]{espn_mbb_game_team_records()}},
-\code{\link[=espn_mbb_game_team_roster]{espn_mbb_game_team_roster()}},
 \code{\link[=espn_mbb_game_team_roster_entry]{espn_mbb_game_team_roster_entry()}},
-\code{\link[=espn_mbb_game_team_score]{espn_mbb_game_team_score()}},
-\code{\link[=espn_mbb_game_team_statistics]{espn_mbb_game_team_statistics()}},
 \code{\link[=espn_mbb_injuries]{espn_mbb_injuries()}},
 \code{\link[=espn_mbb_leaders]{espn_mbb_leaders()}},
 \code{\link[=espn_mbb_news]{espn_mbb_news()}},
-\code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}},
 \code{\link[=espn_mbb_player_awards]{espn_mbb_player_awards()}},
-\code{\link[=espn_mbb_player_box]{espn_mbb_player_box()}},
 \code{\link[=espn_mbb_player_career_stats]{espn_mbb_player_career_stats()}},
-\code{\link[=espn_mbb_player_eventlog]{espn_mbb_player_eventlog()}},
 \code{\link[=espn_mbb_player_eventlog_v2]{espn_mbb_player_eventlog_v2()}},
-\code{\link[=espn_mbb_player_gamelog]{espn_mbb_player_gamelog()}},
 \code{\link[=espn_mbb_player_info]{espn_mbb_player_info()}},
 \code{\link[=espn_mbb_player_overview]{espn_mbb_player_overview()}},
 \code{\link[=espn_mbb_player_seasons]{espn_mbb_player_seasons()}},
-\code{\link[=espn_mbb_player_splits]{espn_mbb_player_splits()}},
-\code{\link[=espn_mbb_player_statisticslog]{espn_mbb_player_statisticslog()}},
 \code{\link[=espn_mbb_player_stats]{espn_mbb_player_stats()}},
-\code{\link[=espn_mbb_player_stats_v3]{espn_mbb_player_stats_v3()}},
 \code{\link[=espn_mbb_position]{espn_mbb_position()}},
 \code{\link[=espn_mbb_positions]{espn_mbb_positions()}},
 \code{\link[=espn_mbb_powerindex]{espn_mbb_powerindex()}},
@@ -99,8 +125,6 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_scoreboard]{espn_mbb_scoreboard()}},
 \code{\link[=espn_mbb_season_awards]{espn_mbb_season_awards()}},
 \code{\link[=espn_mbb_season_group]{espn_mbb_season_group()}},
-\code{\link[=espn_mbb_season_group_children]{espn_mbb_season_group_children()}},
-\code{\link[=espn_mbb_season_group_teams]{espn_mbb_season_group_teams()}},
 \code{\link[=espn_mbb_season_groups]{espn_mbb_season_groups()}},
 \code{\link[=espn_mbb_season_info]{espn_mbb_season_info()}},
 \code{\link[=espn_mbb_season_leaders]{espn_mbb_season_leaders()}},
@@ -113,17 +137,13 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_seasons]{espn_mbb_seasons()}},
 \code{\link[=espn_mbb_standings]{espn_mbb_standings()}},
 \code{\link[=espn_mbb_team]{espn_mbb_team()}},
-\code{\link[=espn_mbb_team_box]{espn_mbb_team_box()}},
 \code{\link[=espn_mbb_team_current_roster]{espn_mbb_team_current_roster()}},
 \code{\link[=espn_mbb_team_injuries]{espn_mbb_team_injuries()}},
-\code{\link[=espn_mbb_team_leaders]{espn_mbb_team_leaders()}},
 \code{\link[=espn_mbb_team_news]{espn_mbb_team_news()}},
 \code{\link[=espn_mbb_team_odds_records]{espn_mbb_team_odds_records()}},
 \code{\link[=espn_mbb_team_record]{espn_mbb_team_record()}},
 \code{\link[=espn_mbb_team_record_detail]{espn_mbb_team_record_detail()}},
-\code{\link[=espn_mbb_team_roster]{espn_mbb_team_roster()}},
 \code{\link[=espn_mbb_team_schedule]{espn_mbb_team_schedule()}},
-\code{\link[=espn_mbb_team_season_profile]{espn_mbb_team_season_profile()}},
 \code{\link[=espn_mbb_team_season_roster]{espn_mbb_team_season_roster()}},
 \code{\link[=espn_mbb_team_season_statistics]{espn_mbb_team_season_statistics()}},
 \code{\link[=espn_mbb_team_stats]{espn_mbb_team_stats()}},

@@ -97,15 +97,13 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}
 
 Other NBA Player Tracking Functions:
-\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
 \code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
 \code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
@@ -114,8 +112,6 @@ Other NBA Player Tracking Functions:
 \code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
 \code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
 \code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},

@@ -27,21 +27,7 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category × stat).
 #'
-#'    |col_name         |types     |description                                |
-#'    |:----------------|:---------|:------------------------------------------|
-#'    |league           |character |League slug.                               |
-#'    |team_id          |character |ESPN team identifier.                      |
-#'    |season           |integer   |Season year.                               |
-#'    |season_type      |integer   |Season-type id.                            |
-#'    |category_type    |character |Category type code (e.g. "moneyLineOverall"). |
-#'    |category_abbrev  |character |Category abbreviation (e.g. "ML").         |
-#'    |category_short   |character |Short display.                             |
-#'    |category_display |character |Full category name.                        |
-#'    |stat_type        |character |Stat type code (e.g. "win", "loss").       |
-#'    |stat_abbrev      |character |Stat abbreviation (e.g. "W", "L").         |
-#'    |stat_display     |character |Stat display name.                         |
-#'    |value            |numeric   |Numeric stat value.                        |
-#'    |display_value    |character |Display-formatted value.                   |
+#'    Columns as documented in the shared [espn_mbb_team_odds_records_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -78,18 +64,20 @@ espn_nba_team_odds_records <- function(team_id,
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per athlete depth entry.
 #'
-#'    |col_name        |types     |description                                |
-#'    |:---------------|:---------|:------------------------------------------|
-#'    |league          |character |League slug.                               |
-#'    |team_id         |character |ESPN team id.                              |
-#'    |season          |integer   |Season year.                               |
-#'    |depthchart_id   |character |Depth chart id (typically "1").            |
-#'    |depthchart_name |character |Depth chart name.                          |
-#'    |position        |character |Position code (`pg`/`sg`/`sf`/`pf`/`c`).   |
-#'    |rank            |integer   |Depth rank (1 = starter).                  |
-#'    |athlete_id      |character |ESPN athlete id.                           |
-#'    |athlete_ref     |character |`$ref` URL to athlete-in-season.           |
-#'    |position_ref    |character |`$ref` URL to position resource.           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug. \cr
+#'       team_id \tab character \tab ESPN team id. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       depthchart_id \tab character \tab Depth chart id (typically "1"). \cr
+#'       depthchart_name \tab character \tab Depth chart name. \cr
+#'       position \tab character \tab Position code (\code{pg}/\code{sg}/\code{sf}/\code{pf}/\code{c}). \cr
+#'       rank \tab integer \tab Depth rank (1 = starter). \cr
+#'       athlete_id \tab character \tab ESPN athlete id. \cr
+#'       athlete_ref \tab character \tab \verb{$ref} URL to athlete-in-season. \cr
+#'       position_ref \tab character \tab \verb{$ref} URL to position resource. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -128,13 +116,7 @@ espn_nba_team_depthchart <- function(team_id,
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per athlete on the season roster.
 #'
-#'    |col_name   |types     |description                              |
-#'    |:----------|:---------|:----------------------------------------|
-#'    |league     |character |League slug.                             |
-#'    |team_id    |character |ESPN team id.                            |
-#'    |season     |integer   |Season year.                             |
-#'    |athlete_id |character |ESPN athlete id.                         |
-#'    |ref        |character |`$ref` URL to athlete-in-season detail.  |
+#'    Columns as documented in the shared [espn_mbb_team_season_roster_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -171,21 +153,7 @@ espn_nba_team_season_roster <- function(team_id,
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name      |types     |description                                |
-#'    |:-------------|:---------|:------------------------------------------|
-#'    |league        |character |League slug.                               |
-#'    |season        |integer   |Season year.                               |
-#'    |coach_id      |character |ESPN coach id.                             |
-#'    |uid           |character |ESPN UID string.                           |
-#'    |first_name    |character |First name.                                |
-#'    |last_name     |character |Last name.                                 |
-#'    |date_of_birth |character |Date of birth.                             |
-#'    |birth_city    |character |Birth city.                                |
-#'    |birth_state   |character |Birth state / region.                      |
-#'    |n_records     |integer   |Count of records entries.                  |
-#'    |person_ref    |character |`$ref` to person resource.                 |
-#'    |college_ref   |character |`$ref` to college.                         |
-#'    |team_ref      |character |`$ref` to team-in-season.                  |
+#'    Columns as documented in the shared [espn_mbb_coach_season_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

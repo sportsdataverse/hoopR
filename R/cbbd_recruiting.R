@@ -9,21 +9,23 @@
 #' @return A `hoopR_data` tibble with one row per recruit. The `hometown` and
 #'   `committed_to` objects are flattened into prefixed columns:
 #'
-#'    |col_name      |types     |description                                   |
-#'    |:-------------|:---------|:---------------------------------------------|
-#'    |id            |integer   |Recruit id.                                    |
-#'    |source_id     |character |Source (ESPN) recruit id.                      |
-#'    |position      |character |Recruit position.                              |
-#'    |school_id     |integer   |High school / club id.                         |
-#'    |school        |character |High school / club name.                       |
-#'    |athlete_id    |integer   |Athlete id (once enrolled).                    |
-#'    |year          |integer   |Recruiting class year.                         |
-#'    |name          |character |Recruit name.                                  |
-#'    |height_inches |numeric   |Height in inches.                              |
-#'    |weight_pounds |integer   |Weight in pounds.                              |
-#'    |stars         |integer   |Star rating.                                   |
-#'    |rating        |numeric   |Numeric recruit rating.                        |
-#'    |ranking       |integer   |Overall ranking.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Recruit id. \cr
+#'       source_id \tab character \tab Source (ESPN) recruit id. \cr
+#'       position \tab character \tab Recruit position. \cr
+#'       school_id \tab integer \tab High school / club id. \cr
+#'       school \tab character \tab High school / club name. \cr
+#'       athlete_id \tab integer \tab Athlete id (once enrolled). \cr
+#'       year \tab integer \tab Recruiting class year. \cr
+#'       name \tab character \tab Recruit name. \cr
+#'       height_inches \tab numeric \tab Height in inches. \cr
+#'       weight_pounds \tab integer \tab Weight in pounds. \cr
+#'       stars \tab integer \tab Star rating. \cr
+#'       rating \tab numeric \tab Numeric recruit rating. \cr
+#'       ranking \tab integer \tab Overall ranking. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Recruiting
 #' @importFrom jsonlite fromJSON
@@ -123,18 +125,20 @@ cbbd_recruiting_teams <- function(year = NULL, team = NULL, conference = NULL) {
 #' @return A `hoopR_data` tibble with one row per transfer. The `origin` and
 #'   `destination` objects are flattened into prefixed columns:
 #'
-#'    |col_name        |types     |description                                 |
-#'    |:---------------|:---------|:-------------------------------------------|
-#'    |id              |integer   |Transfer id.                                |
-#'    |source_id       |character |Source (ESPN) athlete id.                   |
-#'    |year            |integer   |Transfer class year.                        |
-#'    |first_name      |character |Player first name.                          |
-#'    |last_name       |character |Player last name.                           |
-#'    |position        |character |Player position.                            |
-#'    |eligibility     |character |Eligibility status.                         |
-#'    |years_remaining |integer   |Years of eligibility remaining.             |
-#'    |stars           |integer   |Star rating.                                |
-#'    |rating          |numeric   |Numeric rating.                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Transfer id. \cr
+#'       source_id \tab character \tab Source (ESPN) athlete id. \cr
+#'       year \tab integer \tab Transfer class year. \cr
+#'       first_name \tab character \tab Player first name. \cr
+#'       last_name \tab character \tab Player last name. \cr
+#'       position \tab character \tab Player position. \cr
+#'       eligibility \tab character \tab Eligibility status. \cr
+#'       years_remaining \tab integer \tab Years of eligibility remaining. \cr
+#'       stars \tab integer \tab Star rating. \cr
+#'       rating \tab numeric \tab Numeric rating. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Recruiting
 #' @importFrom jsonlite fromJSON

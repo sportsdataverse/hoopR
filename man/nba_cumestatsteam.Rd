@@ -29,99 +29,104 @@ nba_cumestatsteam(
 \value{
 Returns a named list of data frames: GameByGameStats, TotalTeamStats
 
-\strong{GameByGameStats}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
-   PLAYER \tab character \tab Player. \cr
-   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   ACTUAL_MINUTES \tab character \tab  \cr
-   ACTUAL_SECONDS \tab character \tab  \cr
-   FG \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3 \tab character \tab  \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FT \tab character \tab  \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OFF_REB \tab character \tab  \cr
-   DEF_REB \tab character \tab  \cr
-   TOT_REB \tab character \tab  \cr
-   AST \tab character \tab Assists. \cr
-   PF \tab character \tab Personal fouls. \cr
-   DQ \tab character \tab  \cr
-   STL \tab character \tab Steals. \cr
-   TURNOVERS \tab character \tab Total turnovers. \cr
-   BLK \tab character \tab Blocks. \cr
-   PTS \tab character \tab Points scored. \cr
-   MAX_ACTUAL_MINUTES \tab character \tab  \cr
-   MAX_ACTUAL_SECONDS \tab character \tab  \cr
-   MAX_REB \tab character \tab  \cr
-   MAX_AST \tab character \tab  \cr
-   MAX_STL \tab character \tab  \cr
-   MAX_TURNOVERS \tab character \tab  \cr
-   MAX_BLKP \tab character \tab  \cr
-   MAX_PTS \tab character \tab  \cr
-   AVG_ACTUAL_MINUTES \tab character \tab  \cr
-   AVG_ACTUAL_SECONDS \tab character \tab  \cr
-   AVG_REB \tab character \tab  \cr
-   AVG_AST \tab character \tab  \cr
-   AVG_STL \tab character \tab  \cr
-   AVG_TURNOVERS \tab character \tab The average turnovers committed per game. \cr
-   AVG_BLKP \tab character \tab  \cr
-   AVG_PTS \tab character \tab  \cr
-   PER_MIN_REB \tab character \tab  \cr
-   PER_MIN_AST \tab character \tab  \cr
-   PER_MIN_STL \tab character \tab  \cr
-   PER_MIN_TURNOVERS \tab character \tab  \cr
-   PER_MIN_BLK \tab character \tab  \cr
-   PER_MIN_PTS \tab character \tab  \cr
-}
+\strong{GameByGameStats}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+      PLAYER \tab character \tab Player. \cr
+      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      GP \tab character \tab Games played. \cr
+      GS \tab character \tab Games started. \cr
+      ACTUAL_MINUTES \tab character \tab  \cr
+      ACTUAL_SECONDS \tab character \tab  \cr
+      FG \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3 \tab character \tab  \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FT \tab character \tab  \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OFF_REB \tab character \tab  \cr
+      DEF_REB \tab character \tab  \cr
+      TOT_REB \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      PF \tab character \tab Personal fouls. \cr
+      DQ \tab character \tab  \cr
+      STL \tab character \tab Steals. \cr
+      TURNOVERS \tab character \tab Total turnovers. \cr
+      BLK \tab character \tab Blocks. \cr
+      PTS \tab character \tab Points scored. \cr
+      MAX_ACTUAL_MINUTES \tab character \tab  \cr
+      MAX_ACTUAL_SECONDS \tab character \tab  \cr
+      MAX_REB \tab character \tab  \cr
+      MAX_AST \tab character \tab  \cr
+      MAX_STL \tab character \tab  \cr
+      MAX_TURNOVERS \tab character \tab  \cr
+      MAX_BLKP \tab character \tab  \cr
+      MAX_PTS \tab character \tab  \cr
+      AVG_ACTUAL_MINUTES \tab character \tab  \cr
+      AVG_ACTUAL_SECONDS \tab character \tab  \cr
+      AVG_REB \tab character \tab  \cr
+      AVG_AST \tab character \tab  \cr
+      AVG_STL \tab character \tab  \cr
+      AVG_TURNOVERS \tab character \tab The average turnovers committed per game. \cr
+      AVG_BLKP \tab character \tab  \cr
+      AVG_PTS \tab character \tab  \cr
+      PER_MIN_REB \tab character \tab  \cr
+      PER_MIN_AST \tab character \tab  \cr
+      PER_MIN_STL \tab character \tab  \cr
+      PER_MIN_TURNOVERS \tab character \tab  \cr
+      PER_MIN_BLK \tab character \tab  \cr
+      PER_MIN_PTS \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{TotalTeamStats}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   CITY \tab character \tab City. \cr
-   NICKNAME \tab character \tab Team or athlete nickname. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   W_HOME \tab character \tab  \cr
-   L_HOME \tab character \tab  \cr
-   W_ROAD \tab character \tab  \cr
-   L_ROAD \tab character \tab  \cr
-   TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
-   TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   ACTUAL_MINUTES \tab character \tab  \cr
-   ACTUAL_SECONDS \tab character \tab  \cr
-   FG \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3 \tab character \tab  \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FT \tab character \tab  \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OFF_REB \tab character \tab  \cr
-   DEF_REB \tab character \tab  \cr
-   TOT_REB \tab character \tab  \cr
-   AST \tab character \tab Assists. \cr
-   PF \tab character \tab Personal fouls. \cr
-   STL \tab character \tab Steals. \cr
-   TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
-   BLK \tab character \tab Blocks. \cr
-   PTS \tab character \tab Points scored. \cr
-   AVG_REB \tab character \tab  \cr
-   AVG_PTS \tab character \tab  \cr
-   DQ \tab character \tab  \cr
-}
+\strong{TotalTeamStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      CITY \tab character \tab City. \cr
+      NICKNAME \tab character \tab Team or athlete nickname. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      W \tab character \tab Wins. \cr
+      L \tab character \tab Losses. \cr
+      W_HOME \tab character \tab  \cr
+      L_HOME \tab character \tab  \cr
+      W_ROAD \tab character \tab  \cr
+      L_ROAD \tab character \tab  \cr
+      TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+      TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+      GP \tab character \tab Games played. \cr
+      GS \tab character \tab Games started. \cr
+      ACTUAL_MINUTES \tab character \tab  \cr
+      ACTUAL_SECONDS \tab character \tab  \cr
+      FG \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3 \tab character \tab  \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FT \tab character \tab  \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OFF_REB \tab character \tab  \cr
+      DEF_REB \tab character \tab  \cr
+      TOT_REB \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      PF \tab character \tab Personal fouls. \cr
+      STL \tab character \tab Steals. \cr
+      TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+      BLK \tab character \tab Blocks. \cr
+      PTS \tab character \tab Points scored. \cr
+      AVG_REB \tab character \tab  \cr
+      AVG_PTS \tab character \tab  \cr
+      DQ \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Team Stats}

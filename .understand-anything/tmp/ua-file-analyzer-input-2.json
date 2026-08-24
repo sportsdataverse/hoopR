@@ -1,0 +1,23 @@
+{
+  "projectRoot": "c:/Users/saiem/Documents/GitHub-Data/sdv-dev/hoopR-dev/hoopR",
+  "batchFiles": [
+    {"path": "CLAUDE.md", "language": "markdown", "sizeLines": 511, "fileCategory": "docs"},
+    {"path": "CODE_OF_CONDUCT.md", "language": "markdown", "sizeLines": 147, "fileCategory": "docs"},
+    {"path": "CONTRIBUTING.md", "language": "markdown", "sizeLines": 261, "fileCategory": "docs"},
+    {"path": "LICENSE.md", "language": "markdown", "sizeLines": 29, "fileCategory": "docs"},
+    {"path": "NEWS.md", "language": "markdown", "sizeLines": 1212, "fileCategory": "docs"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 160, "fileCategory": "docs"},
+    {"path": "_pkgdown.yml", "language": "yaml", "sizeLines": 398, "fileCategory": "config"},
+    {"path": "cran-comments.md", "language": "markdown", "sizeLines": 281, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "CLAUDE.md": [],
+    "CODE_OF_CONDUCT.md": [],
+    "CONTRIBUTING.md": [],
+    "LICENSE.md": [],
+    "NEWS.md": [],
+    "README.md": [],
+    "_pkgdown.yml": [],
+    "cran-comments.md": []
+  }
+}

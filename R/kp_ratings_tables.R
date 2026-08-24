@@ -4,31 +4,33 @@
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of ratings
 #'
-#'    |col_name        |types     |description                         |
-#'    |:---------------|:---------|:-----------------------------------|
-#'    |year            |integer   |4-digit year.                       |
-#'    |rk              |numeric   |Rk.                                 |
-#'    |team            |character |Team-side label or team identifier. |
-#'    |conf            |character |character.                          |
-#'    |w_l             |character |W l.                                |
-#'    |adj_em          |numeric   |Adj em.                             |
-#'    |adj_o           |numeric   |Adj o.                              |
-#'    |adj_o_rk        |numeric   |Adj o rk.                           |
-#'    |adj_d           |numeric   |Adj d.                              |
-#'    |adj_d_rk        |numeric   |Adj d rk.                           |
-#'    |adj_t           |numeric   |Adj t.                              |
-#'    |adj_t_rk        |numeric   |Adj t rk.                           |
-#'    |luck            |numeric   |Luck.                               |
-#'    |luck_rk         |numeric   |Luck rk.                            |
-#'    |sos_adj_em      |numeric   |Sos adj em.                         |
-#'    |sos_adj_em_rk   |numeric   |Sos adj em rk.                      |
-#'    |sos_opp_o       |numeric   |Sos opp o.                          |
-#'    |sos_opp_o_rk    |numeric   |Sos opp o rk.                       |
-#'    |sos_opp_d       |numeric   |Sos opp d.                          |
-#'    |sos_opp_d_rk    |numeric   |Sos opp d rk.                       |
-#'    |ncsos_adj_em    |numeric   |Ncsos adj em.                       |
-#'    |ncsos_adj_em_rk |numeric   |Ncsos adj em rk.                    |
-#'    |ncaa_seed       |numeric   |Ncaa seed.                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       year \tab integer \tab 4-digit year. \cr
+#'       rk \tab numeric \tab Rk. \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       w_l \tab character \tab W l. \cr
+#'       adj_em \tab numeric \tab Adj em. \cr
+#'       adj_o \tab numeric \tab Adj o. \cr
+#'       adj_o_rk \tab numeric \tab Adj o rk. \cr
+#'       adj_d \tab numeric \tab Adj d. \cr
+#'       adj_d_rk \tab numeric \tab Adj d rk. \cr
+#'       adj_t \tab numeric \tab Adj t. \cr
+#'       adj_t_rk \tab numeric \tab Adj t rk. \cr
+#'       luck \tab numeric \tab Luck. \cr
+#'       luck_rk \tab numeric \tab Luck rk. \cr
+#'       sos_adj_em \tab numeric \tab Sos adj em. \cr
+#'       sos_adj_em_rk \tab numeric \tab Sos adj em rk. \cr
+#'       sos_opp_o \tab numeric \tab Sos opp o. \cr
+#'       sos_opp_o_rk \tab numeric \tab Sos opp o rk. \cr
+#'       sos_opp_d \tab numeric \tab Sos opp d. \cr
+#'       sos_opp_d_rk \tab numeric \tab Sos opp d rk. \cr
+#'       ncsos_adj_em \tab numeric \tab Ncsos adj em. \cr
+#'       ncsos_adj_em_rk \tab numeric \tab Ncsos adj em rk. \cr
+#'       ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows
@@ -131,32 +133,35 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get KenPom Efficiency and Tempo Summary**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of efficiency and tempo ratings
 #'
-#'    |col_name               |types     |description                         |
-#'    |:----------------------|:---------|:-----------------------------------|
-#'    |team                   |character |Team-side label or team identifier. |
-#'    |conf                   |character |character.                          |
-#'    |adj_t                  |numeric   |Adj t.                              |
-#'    |adj_t_rk               |numeric   |Adj t rk.                           |
-#'    |raw_t                  |numeric   |Raw t.                              |
-#'    |raw_t_rk               |numeric   |Raw t rk.                           |
-#'    |avg_poss_length_off    |numeric   |Avg poss length off.                |
-#'    |avg_poss_length_off_rk |numeric   |Avg poss length off rk.             |
-#'    |avg_poss_length_def    |numeric   |Avg poss length def.                |
-#'    |avg_poss_length_def_rk |numeric   |Avg poss length def rk.             |
-#'    |adj_o                  |numeric   |Adj o.                              |
-#'    |adj_o_rk               |numeric   |Adj o rk.                           |
-#'    |raw_o                  |numeric   |Raw o.                              |
-#'    |raw_o_rk               |numeric   |Raw o rk.                           |
-#'    |adj_d                  |numeric   |Adj d.                              |
-#'    |adj_d_rk               |numeric   |Adj d rk.                           |
-#'    |raw_d                  |numeric   |Raw d.                              |
-#'    |raw_d_rk               |numeric   |Raw d rk.                           |
-#'    |ncaa_seed              |numeric   |Ncaa seed.                          |
-#'    |year                   |numeric   |4-digit year.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       adj_t \tab numeric \tab Adj t. \cr
+#'       adj_t_rk \tab numeric \tab Adj t rk. \cr
+#'       raw_t \tab numeric \tab Raw t. \cr
+#'       raw_t_rk \tab numeric \tab Raw t rk. \cr
+#'       avg_poss_length_off \tab numeric \tab Avg poss length off. \cr
+#'       avg_poss_length_off_rk \tab numeric \tab Avg poss length off rk. \cr
+#'       avg_poss_length_def \tab numeric \tab Avg poss length def. \cr
+#'       avg_poss_length_def_rk \tab numeric \tab Avg poss length def rk. \cr
+#'       adj_o \tab numeric \tab Adj o. \cr
+#'       adj_o_rk \tab numeric \tab Adj o rk. \cr
+#'       raw_o \tab numeric \tab Raw o. \cr
+#'       raw_o_rk \tab numeric \tab Raw o rk. \cr
+#'       adj_d \tab numeric \tab Adj d. \cr
+#'       adj_d_rk \tab numeric \tab Adj d rk. \cr
+#'       raw_d \tab numeric \tab Raw d. \cr
+#'       raw_d_rk \tab numeric \tab Raw d rk. \cr
+#'       ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate mutate_at bind_rows
@@ -318,38 +323,41 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get Four Factors Data**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of four factors ratings
 #'
-#'    |col_name        |types     |description                                 |
-#'    |:---------------|:---------|:-------------------------------------------|
-#'    |team            |character |Team-side label or team identifier.         |
-#'    |conf            |character |character.                                  |
-#'    |adj_t           |numeric   |Adj t.                                      |
-#'    |adj_t_rk        |numeric   |Adj t rk.                                   |
-#'    |adj_o           |numeric   |Adj o.                                      |
-#'    |adj_o_rk        |numeric   |Adj o rk.                                   |
-#'    |off_e_fg_pct    |numeric   |Off e field goals percentage (0-1 decimal). |
-#'    |off_e_fg_pct_rk |numeric   |Off e fg pct rk.                            |
-#'    |off_to_pct      |numeric   |Off to percentage (0-1 decimal).            |
-#'    |off_to_pct_rk   |numeric   |Off to pct rk.                              |
-#'    |off_or_pct      |numeric   |Off or percentage (0-1 decimal).            |
-#'    |off_or_pct_rk   |numeric   |Off or pct rk.                              |
-#'    |off_ft_rate     |numeric   |Off ft rate.                                |
-#'    |off_ft_rate_rk  |numeric   |Off ft rate rk.                             |
-#'    |adj_d           |numeric   |Adj d.                                      |
-#'    |adj_d_rk        |numeric   |Adj d rk.                                   |
-#'    |def_e_fg_pct    |numeric   |Def e field goals percentage (0-1 decimal). |
-#'    |def_e_fg_pct_rk |numeric   |Def e fg pct rk.                            |
-#'    |def_to_pct      |numeric   |Def to percentage (0-1 decimal).            |
-#'    |def_to_pct_rk   |numeric   |Def to pct rk.                              |
-#'    |def_or_pct      |numeric   |Def or percentage (0-1 decimal).            |
-#'    |def_or_pct_rk   |numeric   |Def or pct rk.                              |
-#'    |def_ft_rate     |numeric   |Def ft rate.                                |
-#'    |def_ft_rate_rk  |numeric   |Def ft rate rk.                             |
-#'    |ncaa_seed       |numeric   |Ncaa seed.                                  |
-#'    |year            |numeric   |4-digit year.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       adj_t \tab numeric \tab Adj t. \cr
+#'       adj_t_rk \tab numeric \tab Adj t rk. \cr
+#'       adj_o \tab numeric \tab Adj o. \cr
+#'       adj_o_rk \tab numeric \tab Adj o rk. \cr
+#'       off_e_fg_pct \tab numeric \tab Off e field goals percentage (0-1 decimal). \cr
+#'       off_e_fg_pct_rk \tab numeric \tab Off e fg pct rk. \cr
+#'       off_to_pct \tab numeric \tab Off to percentage (0-1 decimal). \cr
+#'       off_to_pct_rk \tab numeric \tab Off to pct rk. \cr
+#'       off_or_pct \tab numeric \tab Off or percentage (0-1 decimal). \cr
+#'       off_or_pct_rk \tab numeric \tab Off or pct rk. \cr
+#'       off_ft_rate \tab numeric \tab Off ft rate. \cr
+#'       off_ft_rate_rk \tab numeric \tab Off ft rate rk. \cr
+#'       adj_d \tab numeric \tab Adj d. \cr
+#'       adj_d_rk \tab numeric \tab Adj d rk. \cr
+#'       def_e_fg_pct \tab numeric \tab Def e field goals percentage (0-1 decimal). \cr
+#'       def_e_fg_pct_rk \tab numeric \tab Def e fg pct rk. \cr
+#'       def_to_pct \tab numeric \tab Def to percentage (0-1 decimal). \cr
+#'       def_to_pct_rk \tab numeric \tab Def to pct rk. \cr
+#'       def_or_pct \tab numeric \tab Def or percentage (0-1 decimal). \cr
+#'       def_or_pct_rk \tab numeric \tab Def or pct rk. \cr
+#'       def_ft_rate \tab numeric \tab Def ft rate. \cr
+#'       def_ft_rate_rk \tab numeric \tab Def ft rate rk. \cr
+#'       ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate filter bind_rows
@@ -458,28 +466,31 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get Team Points Distribution**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of team points distributions
 #'
-#'    |col_name        |types     |description                                 |
-#'    |:---------------|:---------|:-------------------------------------------|
-#'    |team            |character |Team-side label or team identifier.         |
-#'    |conf            |character |character.                                  |
-#'    |off_ft_pct      |numeric   |Off free throws percentage (0-1 decimal).   |
-#'    |off_ft_pct_rk   |numeric   |Off ft pct rk.                              |
-#'    |off_fg_2_pct    |numeric   |Off field goals 2 percentage (0-1 decimal). |
-#'    |off_fg_2_pct_rk |numeric   |Off fg 2 pct rk.                            |
-#'    |off_fg_3_pct    |numeric   |Off field goals 3 percentage (0-1 decimal). |
-#'    |off_fg_3_pct_rk |numeric   |Off fg 3 pct rk.                            |
-#'    |def_ft_pct      |numeric   |Def free throws percentage (0-1 decimal).   |
-#'    |def_ft_pct_rk   |numeric   |Def ft pct rk.                              |
-#'    |def_fg_2_pct    |numeric   |Def field goals 2 percentage (0-1 decimal). |
-#'    |def_fg_2_pct_rk |numeric   |Def fg 2 pct rk.                            |
-#'    |def_fg_3_pct    |numeric   |Def field goals 3 percentage (0-1 decimal). |
-#'    |def_fg_3_pct_rk |numeric   |Def fg 3 pct rk.                            |
-#'    |ncaa_seed       |numeric   |Ncaa seed.                                  |
-#'    |year            |numeric   |4-digit year.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       off_ft_pct \tab numeric \tab Off free throws percentage (0-1 decimal). \cr
+#'       off_ft_pct_rk \tab numeric \tab Off ft pct rk. \cr
+#'       off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+#'       off_fg_2_pct_rk \tab numeric \tab Off fg 2 pct rk. \cr
+#'       off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+#'       off_fg_3_pct_rk \tab numeric \tab Off fg 3 pct rk. \cr
+#'       def_ft_pct \tab numeric \tab Def free throws percentage (0-1 decimal). \cr
+#'       def_ft_pct_rk \tab numeric \tab Def ft pct rk. \cr
+#'       def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+#'       def_fg_2_pct_rk \tab numeric \tab Def fg 2 pct rk. \cr
+#'       def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+#'       def_fg_3_pct_rk \tab numeric \tab Def fg 3 pct rk. \cr
+#'       ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
@@ -589,36 +600,39 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get Heights, Experience, Bench and Continuity Data**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of heights
 #'
-#'    |col_name      |types     |description                         |
-#'    |:-------------|:---------|:-----------------------------------|
-#'    |team          |character |Team-side label or team identifier. |
-#'    |conf          |character |character.                          |
-#'    |avg_hgt       |numeric   |Avg hgt.                            |
-#'    |avg_hgt_rk    |numeric   |Avg hgt rk.                         |
-#'    |eff_hgt       |numeric   |Eff hgt.                            |
-#'    |eff_hgt_rk    |numeric   |Eff hgt rk.                         |
-#'    |c_hgt         |numeric   |C hgt.                              |
-#'    |c_hgt_rk      |numeric   |C hgt rk.                           |
-#'    |pf_hgt        |numeric   |Pf hgt.                             |
-#'    |pf_hgt_rk     |numeric   |Pf hgt rk.                          |
-#'    |sf_hgt        |numeric   |Sf hgt.                             |
-#'    |sf_hgt_rk     |numeric   |Sf hgt rk.                          |
-#'    |sg_hgt        |numeric   |Sg hgt.                             |
-#'    |sg_hgt_rk     |numeric   |Sg hgt rk.                          |
-#'    |pg_hgt        |numeric   |Pg hgt.                             |
-#'    |pg_hgt_rk     |numeric   |Pg hgt rk.                          |
-#'    |experience    |numeric   |Years of professional experience.   |
-#'    |experience_rk |numeric   |Experience rk.                      |
-#'    |bench         |numeric   |Bench.                              |
-#'    |bench_rk      |numeric   |Bench rk.                           |
-#'    |continuity    |numeric   |Continuity.                         |
-#'    |continuity_rk |numeric   |Continuity rk.                      |
-#'    |ncaa_seed     |numeric   |Ncaa seed.                          |
-#'    |year          |integer   |4-digit year.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       avg_hgt \tab numeric \tab Avg hgt. \cr
+#'       avg_hgt_rk \tab numeric \tab Avg hgt rk. \cr
+#'       eff_hgt \tab numeric \tab Eff hgt. \cr
+#'       eff_hgt_rk \tab numeric \tab Eff hgt rk. \cr
+#'       c_hgt \tab numeric \tab C hgt. \cr
+#'       c_hgt_rk \tab numeric \tab C hgt rk. \cr
+#'       pf_hgt \tab numeric \tab Pf hgt. \cr
+#'       pf_hgt_rk \tab numeric \tab Pf hgt rk. \cr
+#'       sf_hgt \tab numeric \tab Sf hgt. \cr
+#'       sf_hgt_rk \tab numeric \tab Sf hgt rk. \cr
+#'       sg_hgt \tab numeric \tab Sg hgt. \cr
+#'       sg_hgt_rk \tab numeric \tab Sg hgt rk. \cr
+#'       pg_hgt \tab numeric \tab Pg hgt. \cr
+#'       pg_hgt_rk \tab numeric \tab Pg hgt rk. \cr
+#'       experience \tab numeric \tab Years of professional experience. \cr
+#'       experience_rk \tab numeric \tab Experience rk. \cr
+#'       bench \tab numeric \tab Bench. \cr
+#'       bench_rk \tab numeric \tab Bench rk. \cr
+#'       continuity \tab numeric \tab Continuity. \cr
+#'       continuity_rk \tab numeric \tab Continuity rk. \cr
+#'       ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'       year \tab integer \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
@@ -784,26 +798,29 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get 2-Foul Participation Stats**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of foul participation stats
 #'
-#'    |col_name                     |types     |description                                     |
-#'    |:----------------------------|:---------|:-----------------------------------------------|
-#'    |team                         |character |Team-side label or team identifier.             |
-#'    |conf                         |character |character.                                      |
-#'    |two_foul_particpation_pct    |numeric   |Two foul particpation percentage (0-1 decimal). |
-#'    |two_foul_particpation_pct_rk |numeric   |Two foul particpation pct rk.                   |
-#'    |adj2fp                       |numeric   |Adj2fp.                                         |
-#'    |adj2fp_rk                    |numeric   |Adj2fp rk.                                      |
-#'    |two_foul_total_time          |character |Time / clock value.                             |
-#'    |two_foul_total_time_rk       |character |Two foul total time rk.                         |
-#'    |two_foul_time_on             |character |Two foul time on.                               |
-#'    |two_foul_time_on_rk          |character |Two foul time on rk.                            |
-#'    |bench_pct                    |numeric   |Bench percentage (0-1 decimal).                 |
-#'    |bench_pct_rk                 |numeric   |Bench pct rk.                                   |
-#'    |ncaa_seed                    |numeric   |Ncaa seed.                                      |
-#'    |year                         |integer   |4-digit year.                                   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       two_foul_particpation_pct \tab numeric \tab Two foul particpation percentage (0-1 decimal). \cr
+#'       two_foul_particpation_pct_rk \tab numeric \tab Two foul particpation pct rk. \cr
+#'       adj2fp \tab numeric \tab Adj2fp. \cr
+#'       adj2fp_rk \tab numeric \tab Adj2fp rk. \cr
+#'       two_foul_total_time \tab character \tab Time / clock value. \cr
+#'       two_foul_total_time_rk \tab character \tab Two foul total time rk. \cr
+#'       two_foul_time_on \tab character \tab Two foul time on. \cr
+#'       two_foul_time_on_rk \tab character \tab Two foul time on rk. \cr
+#'       bench_pct \tab numeric \tab Bench percentage (0-1 decimal). \cr
+#'       bench_pct_rk \tab numeric \tab Bench pct rk. \cr
+#'       ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'       year \tab integer \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate filter bind_rows
@@ -907,52 +924,55 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get Team Stats**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param min_year First year of data to pull
 #' @param max_year Last year of data to pull
 #' @return Returns a tibble of team stats
 #'
-#'   |col_name           |types     |description                                  |
-#'   |:------------------|:---------|:--------------------------------------------|
-#'   |team               |character |Team-side label or team identifier.          |
-#'   |conf               |character |character.                                   |
-#'   |off_fg_3_pct       |numeric   |Off field goals 3 percentage (0-1 decimal).  |
-#'   |off_fg_3_pct_rk    |numeric   |Off fg 3 pct rk.                             |
-#'   |off_fg_2_pct       |numeric   |Off field goals 2 percentage (0-1 decimal).  |
-#'   |off_fg_2_pct_rk    |numeric   |Off fg 2 pct rk.                             |
-#'   |off_ft_pct         |numeric   |Off free throws percentage (0-1 decimal).    |
-#'   |off_ft_pct_rk      |numeric   |Off ft pct rk.                               |
-#'   |off_blk_pct        |numeric   |Off blocks percentage (0-1 decimal).         |
-#'   |off_blk_pct_rk     |numeric   |Off blk pct rk.                              |
-#'   |off_stl_pct        |numeric   |Off steals percentage (0-1 decimal).         |
-#'   |off_stl_pct_rk     |numeric   |Off stl pct rk.                              |
-#'   |off_non_stl_pct    |numeric   |Off non steals percentage (0-1 decimal).     |
-#'   |off_non_stl_pct_rk |numeric   |Off non stl pct rk.                          |
-#'   |off_a_pct          |numeric   |Off a percentage (0-1 decimal).              |
-#'   |off_a_pct_rk       |numeric   |Off a pct rk.                                |
-#'   |off_fg_3a_pct      |numeric   |Off field goals 3a percentage (0-1 decimal). |
-#'   |off_fg_3a_pct_rk   |numeric   |Off fg 3a pct rk.                            |
-#'   |adj_o              |numeric   |Adj o.                                       |
-#'   |adj_o_rk           |numeric   |Adj o rk.                                    |
-#'   |ncaa_seed          |numeric   |Ncaa seed.                                   |
-#'   |year               |numeric   |4-digit year.                                |
-#'   |def_fg_3_pct       |numeric   |Def field goals 3 percentage (0-1 decimal).  |
-#'   |def_fg_3_pct_rk    |numeric   |Def fg 3 pct rk.                             |
-#'   |def_fg_2_pct       |numeric   |Def field goals 2 percentage (0-1 decimal).  |
-#'   |def_fg_2_pct_rk    |numeric   |Def fg 2 pct rk.                             |
-#'   |def_ft_pct         |numeric   |Def free throws percentage (0-1 decimal).    |
-#'   |def_ft_pct_rk      |numeric   |Def ft pct rk.                               |
-#'   |def_blk_pct        |numeric   |Def blocks percentage (0-1 decimal).         |
-#'   |def_blk_pct_rk     |numeric   |Def blk pct rk.                              |
-#'   |def_stl_pct        |numeric   |Def steals percentage (0-1 decimal).         |
-#'   |def_stl_pct_rk     |numeric   |Def stl pct rk.                              |
-#'   |def_non_stl_pct    |numeric   |Def non steals percentage (0-1 decimal).     |
-#'   |def_non_stl_pct_rk |numeric   |Def non stl pct rk.                          |
-#'   |def_a_pct          |numeric   |Def a percentage (0-1 decimal).              |
-#'   |def_a_pct_rk       |numeric   |Def a pct rk.                                |
-#'   |def_fg_3a_pct      |numeric   |Def field goals 3a percentage (0-1 decimal). |
-#'   |def_fg_3a_pct_rk   |numeric   |Def fg 3a pct rk.                            |
-#'   |adj_d              |numeric   |Adj d.                                       |
-#'   |adj_d_rk           |numeric   |Adj d rk.                                    |
+#'   \if{html}{\tabular{lll}{
+#'      col_name \tab types \tab description \cr
+#'      team \tab character \tab Team-side label or team identifier. \cr
+#'      conf \tab character \tab character. \cr
+#'      off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+#'      off_fg_3_pct_rk \tab numeric \tab Off fg 3 pct rk. \cr
+#'      off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+#'      off_fg_2_pct_rk \tab numeric \tab Off fg 2 pct rk. \cr
+#'      off_ft_pct \tab numeric \tab Off free throws percentage (0-1 decimal). \cr
+#'      off_ft_pct_rk \tab numeric \tab Off ft pct rk. \cr
+#'      off_blk_pct \tab numeric \tab Off blocks percentage (0-1 decimal). \cr
+#'      off_blk_pct_rk \tab numeric \tab Off blk pct rk. \cr
+#'      off_stl_pct \tab numeric \tab Off steals percentage (0-1 decimal). \cr
+#'      off_stl_pct_rk \tab numeric \tab Off stl pct rk. \cr
+#'      off_non_stl_pct \tab numeric \tab Off non steals percentage (0-1 decimal). \cr
+#'      off_non_stl_pct_rk \tab numeric \tab Off non stl pct rk. \cr
+#'      off_a_pct \tab numeric \tab Off a percentage (0-1 decimal). \cr
+#'      off_a_pct_rk \tab numeric \tab Off a pct rk. \cr
+#'      off_fg_3a_pct \tab numeric \tab Off field goals 3a percentage (0-1 decimal). \cr
+#'      off_fg_3a_pct_rk \tab numeric \tab Off fg 3a pct rk. \cr
+#'      adj_o \tab numeric \tab Adj o. \cr
+#'      adj_o_rk \tab numeric \tab Adj o rk. \cr
+#'      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+#'      year \tab numeric \tab 4-digit year. \cr
+#'      def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+#'      def_fg_3_pct_rk \tab numeric \tab Def fg 3 pct rk. \cr
+#'      def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+#'      def_fg_2_pct_rk \tab numeric \tab Def fg 2 pct rk. \cr
+#'      def_ft_pct \tab numeric \tab Def free throws percentage (0-1 decimal). \cr
+#'      def_ft_pct_rk \tab numeric \tab Def ft pct rk. \cr
+#'      def_blk_pct \tab numeric \tab Def blocks percentage (0-1 decimal). \cr
+#'      def_blk_pct_rk \tab numeric \tab Def blk pct rk. \cr
+#'      def_stl_pct \tab numeric \tab Def steals percentage (0-1 decimal). \cr
+#'      def_stl_pct_rk \tab numeric \tab Def stl pct rk. \cr
+#'      def_non_stl_pct \tab numeric \tab Def non steals percentage (0-1 decimal). \cr
+#'      def_non_stl_pct_rk \tab numeric \tab Def non stl pct rk. \cr
+#'      def_a_pct \tab numeric \tab Def a percentage (0-1 decimal). \cr
+#'      def_a_pct_rk \tab numeric \tab Def a pct rk. \cr
+#'      def_fg_3a_pct \tab numeric \tab Def field goals 3a percentage (0-1 decimal). \cr
+#'      def_fg_3a_pct_rk \tab numeric \tab Def fg 3a pct rk. \cr
+#'      adj_d \tab numeric \tab Adj d. \cr
+#'      adj_d_rk \tab numeric \tab Adj d rk. \cr
+#'   }}
+#'   \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate bind_rows
@@ -1144,16 +1164,18 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @param year Year of data to pull (earliest year of data available: 2004)
 #' @return Returns a tibble of player stats
 #'
-#'    |col_name |types     |description                         |
-#'    |:--------|:---------|:-----------------------------------|
-#'    |rk       |character |Rk.                                 |
-#'    |player   |character |Player.                             |
-#'    |team     |character |Team-side label or team identifier. |
-#'    |e_fg     |character |E fg.                               |
-#'    |hgt      |character |Hgt.                                |
-#'    |wgt      |character |Wgt.                                |
-#'    |yr       |character |Yr.                                 |
-#'    |year     |numeric   |4-digit year.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab character \tab Rk. \cr
+#'       player \tab character \tab Player. \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       e_fg \tab character \tab E fg. \cr
+#'       hgt \tab character \tab Hgt. \cr
+#'       wgt \tab character \tab Wgt. \cr
+#'       yr \tab character \tab Yr. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate
@@ -1313,34 +1335,38 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
 #'    **KPoYRatings**
 #'
 #'
-#'    |col_name    |types     |description                                    |
-#'    |:-----------|:---------|:----------------------------------------------|
-#'    |rk          |integer   |Rk.                                            |
-#'    |player      |character |Player.                                        |
-#'    |kpoy_rating |numeric   |Kpoy rating.                                   |
-#'    |team        |character |Team-side label or team identifier.            |
-#'    |hgt         |character |Hgt.                                           |
-#'    |wgt         |numeric   |Wgt.                                           |
-#'    |exp         |character |Exp.                                           |
-#'    |home_town   |character |Home team's town.                              |
-#'    |year        |numeric   |4-digit year.                                  |
-#'    |group       |character |Group identifier (e.g. conference 'group_id'). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab integer \tab Rk. \cr
+#'       player \tab character \tab Player. \cr
+#'       kpoy_rating \tab numeric \tab Kpoy rating. \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       hgt \tab character \tab Hgt. \cr
+#'       wgt \tab numeric \tab Wgt. \cr
+#'       exp \tab character \tab Exp. \cr
+#'       home_town \tab character \tab Home team's town. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'       group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **GameMVPs**
 #'
 #'
-#'    |col_name   |types     |description                                    |
-#'    |:----------|:---------|:----------------------------------------------|
-#'    |rk         |numeric   |Rk.                                            |
-#'    |player     |character |Player.                                        |
-#'    |game_mv_ps |numeric   |Game mv ps.                                    |
-#'    |team       |character |Team-side label or team identifier.            |
-#'    |hgt        |character |Hgt.                                           |
-#'    |wgt        |numeric   |Wgt.                                           |
-#'    |exp        |character |Exp.                                           |
-#'    |home_town  |character |Home team's town.                              |
-#'    |year       |numeric   |4-digit year.                                  |
-#'    |group      |character |Group identifier (e.g. conference 'group_id'). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab numeric \tab Rk. \cr
+#'       player \tab character \tab Player. \cr
+#'       game_mv_ps \tab numeric \tab Game mv ps. \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       hgt \tab character \tab Hgt. \cr
+#'       wgt \tab numeric \tab Wgt. \cr
+#'       exp \tab character \tab Exp. \cr
+#'       home_town \tab character \tab Home team's town. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'       group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate

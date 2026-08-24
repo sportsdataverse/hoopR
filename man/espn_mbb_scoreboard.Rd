@@ -10,43 +10,46 @@ espn_mbb_scoreboard(season)
 \item{season}{Either numeric or character}
 }
 \value{
-Returns a tibble\tabular{lll}{
-   col_name \tab types \tab description \cr
-   matchup \tab character \tab Matchup. \cr
-   matchup_short \tab character \tab Matchup short. \cr
-   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-   season_slug \tab character \tab Season slug. \cr
-   game_id \tab integer \tab Unique game identifier. \cr
-   game_uid \tab character \tab Game uid. \cr
-   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
-   attendance \tab integer \tab Reported attendance. \cr
-   status_name \tab character \tab Status label. \cr
-   broadcast_market \tab character \tab Broadcast market label (e.g. 'national', 'home'). \cr
-   broadcast_name \tab character \tab Broadcast name. \cr
-   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
-   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
-   home_team_name \tab character \tab Home team name. \cr
-   home_team_logo \tab character \tab Home team logo URL. \cr
-   home_team_abb \tab character \tab Home team's team abb. \cr
-   home_team_id \tab integer \tab Unique identifier for the home team. \cr
-   home_team_location \tab character \tab Home team's team location. \cr
-   home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
-   home_team_color \tab character \tab Home team primary color (hex). \cr
-   home_score \tab integer \tab Home team score at the time of the play. \cr
-   home_win \tab integer \tab Home team's win. \cr
-   home_record \tab character \tab Home win-loss record. \cr
-   away_team_name \tab character \tab Away team name. \cr
-   away_team_logo \tab character \tab Away team logo URL. \cr
-   away_team_abb \tab character \tab Away team's team abb. \cr
-   away_team_id \tab integer \tab Unique identifier for the away team. \cr
-   away_team_location \tab character \tab Away team's team location. \cr
-   away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
-   away_team_color \tab character \tab Away team primary color (hex). \cr
-   away_score \tab integer \tab Away team score at the time of the play. \cr
-   away_win \tab integer \tab Away team's win. \cr
-   away_record \tab character \tab Away win-loss record. \cr
-}
+Returns a tibble
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      matchup \tab character \tab Matchup. \cr
+      matchup_short \tab character \tab Matchup short. \cr
+      season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+      season_slug \tab character \tab Season slug. \cr
+      game_id \tab integer \tab Unique game identifier. \cr
+      game_uid \tab character \tab Game uid. \cr
+      game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+      attendance \tab integer \tab Reported attendance. \cr
+      status_name \tab character \tab Status label. \cr
+      broadcast_market \tab character \tab Broadcast market label (e.g. 'national', 'home'). \cr
+      broadcast_name \tab character \tab Broadcast name. \cr
+      start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+      game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+      home_team_name \tab character \tab Home team name. \cr
+      home_team_logo \tab character \tab Home team logo URL. \cr
+      home_team_abb \tab character \tab Home team's team abb. \cr
+      home_team_id \tab integer \tab Unique identifier for the home team. \cr
+      home_team_location \tab character \tab Home team's team location. \cr
+      home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
+      home_team_color \tab character \tab Home team primary color (hex). \cr
+      home_score \tab integer \tab Home team score at the time of the play. \cr
+      home_win \tab integer \tab Home team's win. \cr
+      home_record \tab character \tab Home win-loss record. \cr
+      away_team_name \tab character \tab Away team name. \cr
+      away_team_logo \tab character \tab Away team logo URL. \cr
+      away_team_abb \tab character \tab Away team's team abb. \cr
+      away_team_id \tab integer \tab Unique identifier for the away team. \cr
+      away_team_location \tab character \tab Away team's team location. \cr
+      away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
+      away_team_color \tab character \tab Away team primary color (hex). \cr
+      away_score \tab integer \tab Away team score at the time of the play. \cr
+      away_win \tab integer \tab Away team's win. \cr
+      away_record \tab character \tab Away win-loss record. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball schedule for a specific year}
@@ -62,7 +65,6 @@ try(espn_mbb_scoreboard(season = "20221117"))
 Other ESPN MBB Functions:
 \code{\link[=espn_mbb_athletes_index]{espn_mbb_athletes_index()}},
 \code{\link[=espn_mbb_award]{espn_mbb_award()}},
-\code{\link[=espn_mbb_betting]{espn_mbb_betting()}},
 \code{\link[=espn_mbb_calendar]{espn_mbb_calendar()}},
 \code{\link[=espn_mbb_coach]{espn_mbb_coach()}},
 \code{\link[=espn_mbb_coach_record]{espn_mbb_coach_record()}},
@@ -73,51 +75,31 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_franchises]{espn_mbb_franchises()}},
 \code{\link[=espn_mbb_futures]{espn_mbb_futures()}},
 \code{\link[=espn_mbb_game_all]{espn_mbb_game_all()}},
-\code{\link[=espn_mbb_game_broadcasts]{espn_mbb_game_broadcasts()}},
 \code{\link[=espn_mbb_game_odds]{espn_mbb_game_odds()}},
 \code{\link[=espn_mbb_game_official_detail]{espn_mbb_game_official_detail()}},
-\code{\link[=espn_mbb_game_officials]{espn_mbb_game_officials()}},
 \code{\link[=espn_mbb_game_play]{espn_mbb_game_play()}},
 \code{\link[=espn_mbb_game_play_personnel]{espn_mbb_game_play_personnel()}},
 \code{\link[=espn_mbb_game_player_box]{espn_mbb_game_player_box()}},
-\code{\link[=espn_mbb_game_powerindex]{espn_mbb_game_powerindex()}},
-\code{\link[=espn_mbb_game_predictor]{espn_mbb_game_predictor()}},
 \code{\link[=espn_mbb_game_probabilities]{espn_mbb_game_probabilities()}},
 \code{\link[=espn_mbb_game_propbets]{espn_mbb_game_propbets()}},
-\code{\link[=espn_mbb_game_rosters]{espn_mbb_game_rosters()}},
-\code{\link[=espn_mbb_game_situation]{espn_mbb_game_situation()}},
-\code{\link[=espn_mbb_game_team_leaders]{espn_mbb_game_team_leaders()}},
 \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}},
-\code{\link[=espn_mbb_game_team_records]{espn_mbb_game_team_records()}},
-\code{\link[=espn_mbb_game_team_roster]{espn_mbb_game_team_roster()}},
 \code{\link[=espn_mbb_game_team_roster_entry]{espn_mbb_game_team_roster_entry()}},
-\code{\link[=espn_mbb_game_team_score]{espn_mbb_game_team_score()}},
-\code{\link[=espn_mbb_game_team_statistics]{espn_mbb_game_team_statistics()}},
 \code{\link[=espn_mbb_injuries]{espn_mbb_injuries()}},
 \code{\link[=espn_mbb_leaders]{espn_mbb_leaders()}},
 \code{\link[=espn_mbb_news]{espn_mbb_news()}},
-\code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}},
 \code{\link[=espn_mbb_player_awards]{espn_mbb_player_awards()}},
-\code{\link[=espn_mbb_player_box]{espn_mbb_player_box()}},
 \code{\link[=espn_mbb_player_career_stats]{espn_mbb_player_career_stats()}},
-\code{\link[=espn_mbb_player_eventlog]{espn_mbb_player_eventlog()}},
 \code{\link[=espn_mbb_player_eventlog_v2]{espn_mbb_player_eventlog_v2()}},
-\code{\link[=espn_mbb_player_gamelog]{espn_mbb_player_gamelog()}},
 \code{\link[=espn_mbb_player_info]{espn_mbb_player_info()}},
 \code{\link[=espn_mbb_player_overview]{espn_mbb_player_overview()}},
 \code{\link[=espn_mbb_player_seasons]{espn_mbb_player_seasons()}},
-\code{\link[=espn_mbb_player_splits]{espn_mbb_player_splits()}},
-\code{\link[=espn_mbb_player_statisticslog]{espn_mbb_player_statisticslog()}},
 \code{\link[=espn_mbb_player_stats]{espn_mbb_player_stats()}},
-\code{\link[=espn_mbb_player_stats_v3]{espn_mbb_player_stats_v3()}},
 \code{\link[=espn_mbb_position]{espn_mbb_position()}},
 \code{\link[=espn_mbb_positions]{espn_mbb_positions()}},
 \code{\link[=espn_mbb_powerindex]{espn_mbb_powerindex()}},
 \code{\link[=espn_mbb_rankings]{espn_mbb_rankings()}},
 \code{\link[=espn_mbb_season_awards]{espn_mbb_season_awards()}},
 \code{\link[=espn_mbb_season_group]{espn_mbb_season_group()}},
-\code{\link[=espn_mbb_season_group_children]{espn_mbb_season_group_children()}},
-\code{\link[=espn_mbb_season_group_teams]{espn_mbb_season_group_teams()}},
 \code{\link[=espn_mbb_season_groups]{espn_mbb_season_groups()}},
 \code{\link[=espn_mbb_season_info]{espn_mbb_season_info()}},
 \code{\link[=espn_mbb_season_leaders]{espn_mbb_season_leaders()}},
@@ -130,17 +112,13 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_seasons]{espn_mbb_seasons()}},
 \code{\link[=espn_mbb_standings]{espn_mbb_standings()}},
 \code{\link[=espn_mbb_team]{espn_mbb_team()}},
-\code{\link[=espn_mbb_team_box]{espn_mbb_team_box()}},
 \code{\link[=espn_mbb_team_current_roster]{espn_mbb_team_current_roster()}},
 \code{\link[=espn_mbb_team_injuries]{espn_mbb_team_injuries()}},
-\code{\link[=espn_mbb_team_leaders]{espn_mbb_team_leaders()}},
 \code{\link[=espn_mbb_team_news]{espn_mbb_team_news()}},
 \code{\link[=espn_mbb_team_odds_records]{espn_mbb_team_odds_records()}},
 \code{\link[=espn_mbb_team_record]{espn_mbb_team_record()}},
 \code{\link[=espn_mbb_team_record_detail]{espn_mbb_team_record_detail()}},
-\code{\link[=espn_mbb_team_roster]{espn_mbb_team_roster()}},
 \code{\link[=espn_mbb_team_schedule]{espn_mbb_team_schedule()}},
-\code{\link[=espn_mbb_team_season_profile]{espn_mbb_team_season_profile()}},
 \code{\link[=espn_mbb_team_season_roster]{espn_mbb_team_season_roster()}},
 \code{\link[=espn_mbb_team_season_statistics]{espn_mbb_team_season_statistics()}},
 \code{\link[=espn_mbb_team_stats]{espn_mbb_team_stats()}},

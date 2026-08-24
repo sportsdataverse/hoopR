@@ -58,24 +58,26 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name           |types     |description                                |
-#'    |:------------------|:---------|:------------------------------------------|
-#'    |id                 |character |ESPN franchise identifier.                 |
-#'    |uid                |character |ESPN UID string.                           |
-#'    |slug               |character |URL-safe identifier.                       |
-#'    |location           |character |Franchise location.                        |
-#'    |name               |character |Franchise name.                            |
-#'    |nickname           |character |Common nickname.                           |
-#'    |abbreviation       |character |Short abbreviation.                        |
-#'    |display_name       |character |Full display name.                         |
-#'    |short_display_name |character |Short display name.                        |
-#'    |color              |character |Primary color (hex, no leading '#').       |
-#'    |is_active          |logical   |Whether franchise is currently active.     |
-#'    |league             |character |League slug.                               |
-#'    |logo               |character |Primary logo URL.                          |
-#'    |logo_dark          |character |Dark-mode logo URL.                        |
-#'    |venue_ref          |character |`$ref` to franchise's primary venue.       |
-#'    |team_ref           |character |`$ref` to the current team for franchise.  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab character \tab ESPN franchise identifier. \cr
+#'       uid \tab character \tab ESPN UID string. \cr
+#'       slug \tab character \tab URL-safe identifier. \cr
+#'       location \tab character \tab Franchise location. \cr
+#'       name \tab character \tab Franchise name. \cr
+#'       nickname \tab character \tab Common nickname. \cr
+#'       abbreviation \tab character \tab Short abbreviation. \cr
+#'       display_name \tab character \tab Full display name. \cr
+#'       short_display_name \tab character \tab Short display name. \cr
+#'       color \tab character \tab Primary color (hex, no leading '#'). \cr
+#'       is_active \tab logical \tab Whether franchise is currently active. \cr
+#'       league \tab character \tab League slug. \cr
+#'       logo \tab character \tab Primary logo URL. \cr
+#'       logo_dark \tab character \tab Dark-mode logo URL. \cr
+#'       venue_ref \tab character \tab \verb{$ref} to franchise's primary venue. \cr
+#'       team_ref \tab character \tab \verb{$ref} to the current team for franchise. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

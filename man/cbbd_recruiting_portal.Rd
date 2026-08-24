@@ -28,19 +28,22 @@ cbbd_recruiting_portal(
 }
 \value{
 A \code{hoopR_data} tibble with one row per transfer. The \code{origin} and
-\code{destination} objects are flattened into prefixed columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab Transfer id. \cr
-   source_id \tab character \tab Source (ESPN) athlete id. \cr
-   year \tab integer \tab Transfer class year. \cr
-   first_name \tab character \tab Player first name. \cr
-   last_name \tab character \tab Player last name. \cr
-   position \tab character \tab Player position. \cr
-   eligibility \tab character \tab Eligibility status. \cr
-   years_remaining \tab integer \tab Years of eligibility remaining. \cr
-   stars \tab integer \tab Star rating. \cr
-   rating \tab numeric \tab Numeric rating. \cr
-}
+\code{destination} objects are flattened into prefixed columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Transfer id. \cr
+      source_id \tab character \tab Source (ESPN) athlete id. \cr
+      year \tab integer \tab Transfer class year. \cr
+      first_name \tab character \tab Player first name. \cr
+      last_name \tab character \tab Player last name. \cr
+      position \tab character \tab Player position. \cr
+      eligibility \tab character \tab Eligibility status. \cr
+      years_remaining \tab integer \tab Years of eligibility remaining. \cr
+      stars \tab integer \tab Star rating. \cr
+      rating \tab numeric \tab Numeric rating. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get transfer portal data from the CollegeBasketballData API.}

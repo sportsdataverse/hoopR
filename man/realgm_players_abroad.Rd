@@ -7,20 +7,23 @@
 realgm_players_abroad()
 }
 \value{
-A \code{hoopR_data} tibble with one row per player:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player \tab character \tab Player name. \cr
-   pos \tab character \tab Position. \cr
-   ht \tab character \tab Listed height. \cr
-   wt \tab integer \tab Listed weight (lbs). \cr
-   nba_status \tab character \tab NBA contract / rights status. \cr
-   team_s \tab character \tab Current overseas team(s) and NBA affiliation. \cr
-   gp \tab integer \tab Games played. \cr
-   mpg \tab numeric \tab Minutes per game. \cr
-   ppg \tab numeric \tab Points per game. \cr
-   rpg \tab numeric \tab Rebounds per game. \cr
-   apg \tab numeric \tab Assists per game. \cr
-}
+A \code{hoopR_data} tibble with one row per player:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player \tab character \tab Player name. \cr
+      pos \tab character \tab Position. \cr
+      ht \tab character \tab Listed height. \cr
+      wt \tab integer \tab Listed weight (lbs). \cr
+      nba_status \tab character \tab NBA contract / rights status. \cr
+      team_s \tab character \tab Current overseas team(s) and NBA affiliation. \cr
+      gp \tab integer \tab Games played. \cr
+      mpg \tab numeric \tab Minutes per game. \cr
+      ppg \tab numeric \tab Points per game. \cr
+      rpg \tab numeric \tab Rebounds per game. \cr
+      apg \tab numeric \tab Assists per game. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get the list of NBA-affiliated players currently playing overseas from

@@ -35,37 +35,40 @@ nba_leagueleaders(
 \value{
 Returns a named list of data frames: LeagueLeaders
 
-\strong{LeagueLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   RANK \tab character \tab Rank. \cr
-   PLAYER \tab character \tab Player. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-   EFF \tab character \tab Eff. \cr
-   AST_TOV \tab character \tab  \cr
-   STL_TOV \tab character \tab  \cr
-}
+\strong{LeagueLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      RANK \tab character \tab Rank. \cr
+      PLAYER \tab character \tab Player. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM \tab character \tab Team-side label or team identifier. \cr
+      GP \tab character \tab Games played. \cr
+      MIN \tab character \tab Minutes played. \cr
+      FGM \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FTM \tab character \tab Free throws made. \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OREB \tab character \tab Offensive rebounds. \cr
+      DREB \tab character \tab Defensive rebounds. \cr
+      REB \tab character \tab Total rebounds. \cr
+      AST \tab character \tab Assists. \cr
+      STL \tab character \tab Steals. \cr
+      BLK \tab character \tab Blocks. \cr
+      TOV \tab character \tab Turnovers. \cr
+      PF \tab character \tab Personal fouls. \cr
+      PTS \tab character \tab Points scored. \cr
+      EFF \tab character \tab Eff. \cr
+      AST_TOV \tab character \tab  \cr
+      STL_TOV \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Leaders}

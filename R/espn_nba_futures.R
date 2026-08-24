@@ -22,19 +22,21 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long-format tibble.
 #'
-#'    |col_name        |types     |description                                                       |
-#'    |:---------------|:---------|:-----------------------------------------------------------------|
-#'    |season          |integer   |Season year.                                                      |
-#'    |league          |character |League slug (`"nba"`).                                            |
-#'    |market_id       |character |ESPN futures-market identifier.                                   |
-#'    |market_name     |character |Internal market name (e.g. "NBA - Winner").                       |
-#'    |market_type     |character |Market type code (`winLeague`, `winConference`, `winDivision`, ...).|
-#'    |market_display  |character |Human-readable name (e.g. "NBA Championship Winner").             |
-#'    |provider_id     |character |Sportsbook provider identifier.                                   |
-#'    |provider_name   |character |Sportsbook provider name (e.g. "ESPN BET").                       |
-#'    |team_id         |character |ESPN team id (parsed from `team_ref`).                            |
-#'    |odds_value      |character |American odds for the team (e.g. "-250", "+800").                 |
-#'    |team_ref        |character |`$ref` to the per-season team resource.                           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season year. \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'       market_id \tab character \tab ESPN futures-market identifier. \cr
+#'       market_name \tab character \tab Internal market name (e.g. "NBA - Winner"). \cr
+#'       market_type \tab character \tab Market type code (\code{winLeague}, \code{winConference}, \code{winDivision}, ...). \cr
+#'       market_display \tab character \tab Human-readable name (e.g. "NBA Championship Winner"). \cr
+#'       provider_id \tab character \tab Sportsbook provider identifier. \cr
+#'       provider_name \tab character \tab Sportsbook provider name (e.g. "ESPN BET"). \cr
+#'       team_id \tab character \tab ESPN team id (parsed from \code{team_ref}). \cr
+#'       odds_value \tab character \tab American odds for the team (e.g. "-250", "+800"). \cr
+#'       team_ref \tab character \tab \verb{$ref} to the per-season team resource. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

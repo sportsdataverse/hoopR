@@ -15,29 +15,32 @@ torvik_ncaa_results(min_year, max_year, type = "team")
 \code{coach}, \code{conf}, or \code{seed}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team/coach/conference/seed:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   rk \tab integer \tab Rank within the queried split. \cr
-   team \tab character \tab Team / coach / conference / seed (per \code{type}). \cr
-   pake \tab numeric \tab Performance above KenPom expectation (wins). \cr
-   pase \tab numeric \tab Performance above seed expectation (wins). \cr
-   wins \tab integer \tab Total tournament wins. \cr
-   loss \tab integer \tab Total tournament losses. \cr
-   w_percent \tab numeric \tab Tournament win percentage. \cr
-   r64 \tab integer \tab Round of 64 appearances. \cr
-   r32 \tab integer \tab Round of 32 appearances. \cr
-   s16 \tab integer \tab Sweet 16 appearances. \cr
-   e8 \tab integer \tab Elite 8 appearances. \cr
-   f4 \tab integer \tab Final 4 appearances. \cr
-   f2 \tab integer \tab Championship-game appearances. \cr
-   champ \tab integer \tab National championships. \cr
-   top2 \tab integer \tab Top-2 (runner-up or champion) finishes. \cr
-   f4_percent \tab numeric \tab Final 4 rate. \cr
-   champ_percent \tab numeric \tab Championship rate. \cr
-   min_year \tab integer \tab Minimum year queried (echoes \code{min_year}). \cr
-   max_year \tab integer \tab Maximum year queried (echoes \code{max_year}). \cr
-   type \tab character \tab Aggregation level queried (echoes \code{type}). \cr
-}
+A \code{hoopR_data} tibble with one row per team/coach/conference/seed:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab integer \tab Rank within the queried split. \cr
+      team \tab character \tab Team / coach / conference / seed (per \code{type}). \cr
+      pake \tab numeric \tab Performance above KenPom expectation (wins). \cr
+      pase \tab numeric \tab Performance above seed expectation (wins). \cr
+      wins \tab integer \tab Total tournament wins. \cr
+      loss \tab integer \tab Total tournament losses. \cr
+      w_percent \tab numeric \tab Tournament win percentage. \cr
+      r64 \tab integer \tab Round of 64 appearances. \cr
+      r32 \tab integer \tab Round of 32 appearances. \cr
+      s16 \tab integer \tab Sweet 16 appearances. \cr
+      e8 \tab integer \tab Elite 8 appearances. \cr
+      f4 \tab integer \tab Final 4 appearances. \cr
+      f2 \tab integer \tab Championship-game appearances. \cr
+      champ \tab integer \tab National championships. \cr
+      top2 \tab integer \tab Top-2 (runner-up or champion) finishes. \cr
+      f4_percent \tab numeric \tab Final 4 rate. \cr
+      champ_percent \tab numeric \tab Championship rate. \cr
+      min_year \tab integer \tab Minimum year queried (echoes \code{min_year}). \cr
+      max_year \tab integer \tab Maximum year queried (echoes \code{max_year}). \cr
+      type \tab character \tab Aggregation level queried (echoes \code{type}). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get historical NCAA tournament performance from

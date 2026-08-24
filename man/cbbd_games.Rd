@@ -37,27 +37,30 @@ Defaults to \code{most_recent_mbb_season()}.}
 }
 \value{
 A \code{hoopR_data} tibble with one row per game (key columns; period-point
-arrays are returned as list-columns):\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab CollegeBasketballData game id. \cr
-   source_id \tab character \tab Source (ESPN) game id. \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   season_type \tab character \tab Season type. \cr
-   start_date \tab character \tab Game start date (ISO 8601). \cr
-   neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-   conference_game \tab logical \tab Whether the game was a conference game. \cr
-   status \tab character \tab Game status. \cr
-   home_team_id \tab integer \tab Home team id. \cr
-   home_team \tab character \tab Home team name. \cr
-   home_points \tab integer \tab Home team points. \cr
-   home_winner \tab logical \tab Whether the home team won. \cr
-   away_team_id \tab integer \tab Away team id. \cr
-   away_team \tab character \tab Away team name. \cr
-   away_points \tab integer \tab Away team points. \cr
-   away_winner \tab logical \tab Whether the away team won. \cr
-   venue_id \tab integer \tab Venue id. \cr
-   venue \tab character \tab Venue name. \cr
-}
+arrays are returned as list-columns):
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab CollegeBasketballData game id. \cr
+      source_id \tab character \tab Source (ESPN) game id. \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      season_type \tab character \tab Season type. \cr
+      start_date \tab character \tab Game start date (ISO 8601). \cr
+      neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
+      conference_game \tab logical \tab Whether the game was a conference game. \cr
+      status \tab character \tab Game status. \cr
+      home_team_id \tab integer \tab Home team id. \cr
+      home_team \tab character \tab Home team name. \cr
+      home_points \tab integer \tab Home team points. \cr
+      home_winner \tab logical \tab Whether the home team won. \cr
+      away_team_id \tab integer \tab Away team id. \cr
+      away_team \tab character \tab Away team name. \cr
+      away_points \tab integer \tab Away team points. \cr
+      away_winner \tab logical \tab Whether the away team won. \cr
+      venue_id \tab integer \tab Venue id. \cr
+      venue \tab character \tab Venue name. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get college basketball games from the CollegeBasketballData API.}
@@ -70,8 +73,6 @@ arrays are returned as list-columns):\tabular{lll}{
 \seealso{
 Other CBD Games Functions:
 \code{\link[=cbbd_games_media]{cbbd_games_media()}},
-\code{\link[=cbbd_games_players]{cbbd_games_players()}},
-\code{\link[=cbbd_games_teams]{cbbd_games_teams()}},
 \code{\link[=cbbd_scoreboard]{cbbd_scoreboard()}}
 }
 \concept{CBD Games Functions}

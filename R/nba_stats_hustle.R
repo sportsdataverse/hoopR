@@ -37,36 +37,38 @@ NULL
 #'    **HustleStatsPlayer**
 #'
 #'
-#'    |col_name                      |types     |description                             |
-#'    |:-----------------------------|:---------|:---------------------------------------|
-#'    |PLAYER_ID                     |character |Unique player identifier.               |
-#'    |PLAYER_NAME                   |character |Player name.                            |
-#'    |TEAM_ID                       |character |Unique team identifier.                 |
-#'    |TEAM_ABBREVIATION             |character |Short team abbreviation (e.g. 'LAS').   |
-#'    |AGE                           |character |Player age (in years).                  |
-#'    |G                             |character |Games played.                           |
-#'    |MIN                           |character |Minutes played.                         |
-#'    |CONTESTED_SHOTS               |character |Defensively contested shots.            |
-#'    |CONTESTED_SHOTS_2PT           |character |Contested two-point shots.              |
-#'    |CONTESTED_SHOTS_3PT           |character |Contested three-point shots.            |
-#'    |DEFLECTIONS                   |character |Defensive deflections.                  |
-#'    |CHARGES_DRAWN                 |character |Charges drawn.                          |
-#'    |SCREEN_ASSISTS                |character |Screen assists (resulting in a basket). |
-#'    |SCREEN_AST_PTS                |character |                                        |
-#'    |OFF_LOOSE_BALLS_RECOVERED     |character |                                        |
-#'    |DEF_LOOSE_BALLS_RECOVERED     |character |                                        |
-#'    |LOOSE_BALLS_RECOVERED         |character |Loose balls recovered.                  |
-#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |                                        |
-#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |                                        |
-#'    |OFF_BOXOUTS                   |character |                                        |
-#'    |DEF_BOXOUTS                   |character |                                        |
-#'    |BOX_OUT_PLAYER_TEAM_REBS      |character |                                        |
-#'    |BOX_OUT_PLAYER_REBS           |character |                                        |
-#'    |BOX_OUTS                      |character |Box-outs executed.                      |
-#'    |PCT_BOX_OUTS_OFF              |character |                                        |
-#'    |PCT_BOX_OUTS_DEF              |character |                                        |
-#'    |PCT_BOX_OUTS_TEAM_REB         |character |                                        |
-#'    |PCT_BOX_OUTS_REB              |character |                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       G \tab character \tab Games played. \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+#'       CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+#'       CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
+#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+#'       SCREEN_AST_PTS \tab character \tab  \cr
+#'       OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+#'       PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
+#'       PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
+#'       OFF_BOXOUTS \tab character \tab  \cr
+#'       DEF_BOXOUTS \tab character \tab  \cr
+#'       BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+#'       BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
+#'       PCT_BOX_OUTS_OFF \tab character \tab  \cr
+#'       PCT_BOX_OUTS_DEF \tab character \tab  \cr
+#'       PCT_BOX_OUTS_TEAM_REB \tab character \tab  \cr
+#'       PCT_BOX_OUTS_REB \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -167,12 +169,9 @@ nba_leaguehustlestatsplayer <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API League Hustle Stats Player Leaders**
-#' @name nba_leaguehustlestatsplayerleaders
-NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Player Leaders**
-#' @rdname nba_leaguehustlestatsplayerleaders
+#' @rdname nba_leaguehustlestatsplayer
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -379,12 +378,9 @@ nba_leaguehustlestatsplayerleaders <- function(
   return(df_list)
 }
 
-#' **Get NBA Stats API League Hustle Stats Team**
-#' @name nba_leaguehustlestatsteam
-NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Team**
-#' @rdname nba_leaguehustlestatsteam
+#' @rdname nba_leaguehustlestatsplayer
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -418,28 +414,30 @@ NULL
 #'    **HustleStatsTeam**
 #'
 #'
-#'    |col_name                      |types     |description                                     |
-#'    |:-----------------------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID                       |character |Unique team identifier.                         |
-#'    |TEAM_NAME                     |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |MIN                           |character |Minutes played.                                 |
-#'    |CONTESTED_SHOTS               |character |Defensively contested shots.                    |
-#'    |CONTESTED_SHOTS_2PT           |character |Contested two-point shots.                      |
-#'    |CONTESTED_SHOTS_3PT           |character |Contested three-point shots.                    |
-#'    |DEFLECTIONS                   |character |Defensive deflections.                          |
-#'    |CHARGES_DRAWN                 |character |Charges drawn.                                  |
-#'    |SCREEN_ASSISTS                |character |Screen assists (resulting in a basket).         |
-#'    |SCREEN_AST_PTS                |character |                                                |
-#'    |OFF_LOOSE_BALLS_RECOVERED     |character |                                                |
-#'    |DEF_LOOSE_BALLS_RECOVERED     |character |                                                |
-#'    |LOOSE_BALLS_RECOVERED         |character |Loose balls recovered.                          |
-#'    |PCT_LOOSE_BALLS_RECOVERED_OFF |character |                                                |
-#'    |PCT_LOOSE_BALLS_RECOVERED_DEF |character |                                                |
-#'    |OFF_BOXOUTS                   |character |                                                |
-#'    |DEF_BOXOUTS                   |character |                                                |
-#'    |BOX_OUTS                      |character |Box-outs executed.                              |
-#'    |PCT_BOX_OUTS_OFF              |character |                                                |
-#'    |PCT_BOX_OUTS_DEF              |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+#'       CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+#'       CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
+#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+#'       SCREEN_AST_PTS \tab character \tab  \cr
+#'       OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+#'       PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
+#'       PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
+#'       OFF_BOXOUTS \tab character \tab  \cr
+#'       DEF_BOXOUTS \tab character \tab  \cr
+#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
+#'       PCT_BOX_OUTS_OFF \tab character \tab  \cr
+#'       PCT_BOX_OUTS_DEF \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -537,12 +535,9 @@ nba_leaguehustlestatsteam <- function(
   )
   return(df_list)
 }
-#' **Get NBA Stats API League Hustle Stats Team Leaders**
-#' @name nba_leaguehustlestatsteamleaders
-NULL
 #' @title
 #' **Get NBA Stats API League Hustle Stats Team Leaders**
-#' @rdname nba_leaguehustlestatsteamleaders
+#' @rdname nba_leaguehustlestatsplayer
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -642,13 +637,7 @@ NULL
 #'    **Table6**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK              |character |Rank.                                           |
-#'    |BOX_OUTS          |character |Box-outs executed.                              |
+#'    Same columns as the **Table5** table above.
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

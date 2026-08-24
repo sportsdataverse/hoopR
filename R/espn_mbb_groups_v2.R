@@ -24,13 +24,7 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per group.
 #'
-#'    |col_name    |types     |description                              |
-#'    |:-----------|:---------|:----------------------------------------|
-#'    |league      |character |League slug.                             |
-#'    |season      |integer   |Season year.                             |
-#'    |season_type |integer   |Season-type id.                          |
-#'    |group_id    |character |ESPN group id.                           |
-#'    |ref         |character |`$ref` URL for the group detail.         |
+#'    Columns as documented in the shared [espn_mbb_season_groups_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -67,23 +61,7 @@ espn_mbb_season_groups <- function(season = most_recent_mbb_season(),
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name       |types     |description                                |
-#'    |:--------------|:---------|:------------------------------------------|
-#'    |league         |character |League slug.                               |
-#'    |season         |integer   |Season year.                               |
-#'    |season_type    |integer   |Season-type id.                            |
-#'    |group_id       |character |ESPN group id.                             |
-#'    |uid            |character |ESPN UID string.                           |
-#'    |name           |character |Full name (e.g. "Eastern Conference").     |
-#'    |abbreviation   |character |Short code (e.g. "EAST").                  |
-#'    |short_name     |character |Short name.                                |
-#'    |midsize_name   |character |Mid-size display name.                     |
-#'    |is_conference  |logical   |Whether this group is a conference.        |
-#'    |slug           |character |URL slug.                                  |
-#'    |parent_ref     |character |`$ref` to parent group (if any).           |
-#'    |children_ref   |character |`$ref` to child-groups endpoint.           |
-#'    |teams_ref      |character |`$ref` to teams-in-group endpoint.         |
-#'    |standings_ref  |character |`$ref` to standings endpoint.              |
+#'    Columns as documented in the shared [espn_mbb_season_group_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -109,7 +87,7 @@ espn_mbb_season_group <- function(group_id,
 #' @name espn_mbb_season_group_children
 #' @title
 #' **Get ESPN MBB Season Group Children Index**
-#' @rdname espn_mbb_season_group_children
+#' @rdname espn_mbb_season_group
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of child groups (e.g. divisions within a conference)
@@ -121,14 +99,7 @@ espn_mbb_season_group <- function(group_id,
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per child group.
 #'
-#'    |col_name        |types     |description                            |
-#'    |:---------------|:---------|:--------------------------------------|
-#'    |league          |character |League slug.                           |
-#'    |season          |integer   |Season year.                           |
-#'    |season_type     |integer   |Season-type id.                        |
-#'    |parent_group_id |character |Parent group id (queried).             |
-#'    |child_group_id  |character |Child group id.                        |
-#'    |ref             |character |`$ref` to child group detail.          |
+#'    Columns as documented in the shared [espn_mbb_season_group_children_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -154,7 +125,7 @@ espn_mbb_season_group_children <- function(group_id,
 #' @name espn_mbb_season_group_teams
 #' @title
 #' **Get ESPN MBB Season Group Teams Index**
-#' @rdname espn_mbb_season_group_teams
+#' @rdname espn_mbb_season_group
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of team IDs that belong to one group (conference or
@@ -166,14 +137,7 @@ espn_mbb_season_group_children <- function(group_id,
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per team in the group.
 #'
-#'    |col_name    |types     |description                              |
-#'    |:-----------|:---------|:----------------------------------------|
-#'    |league      |character |League slug.                             |
-#'    |season      |integer   |Season year.                             |
-#'    |season_type |integer   |Season-type id.                          |
-#'    |group_id    |character |ESPN group id.                           |
-#'    |team_id     |character |ESPN team id.                            |
-#'    |ref         |character |`$ref` URL to the team-in-season entry.  |
+#'    Columns as documented in the shared [espn_mbb_season_group_teams_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

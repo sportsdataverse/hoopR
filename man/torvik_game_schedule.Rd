@@ -12,37 +12,39 @@ torvik_game_schedule(year = most_recent_mbb_season())
 }
 \value{
 A \code{hoopR_data} tibble with one row per game (key columns shown; the
-\verb{_1}/\verb{_2} suffixes denote \code{team1} and \code{team2}):\tabular{lll}{
-   col_name \tab types \tab description \cr
-   muid \tab character \tab Matchup unique id. \cr
-   date \tab character \tab Game date (M/D/YY). \cr
-   conmatch \tab character \tab Conference matchup descriptor. \cr
-   matchup \tab character \tab Ranked-matchup descriptor. \cr
-   prediction \tab character \tab Pre-game prediction (favorite, score, win \%). \cr
-   ttq \tab numeric \tab Torvik Thrill Quotient (game excitement). \cr
-   conf \tab numeric \tab Conference-game flag. \cr
-   venue \tab numeric \tab Venue / neutral-site flag. \cr
-   team1 \tab character \tab Team 1 name. \cr
-   t1oe \tab numeric \tab Team 1 offensive efficiency in the game. \cr
-   t1de \tab numeric \tab Team 1 defensive efficiency in the game. \cr
-   team2 \tab character \tab Team 2 name. \cr
-   t2oe \tab numeric \tab Team 2 offensive efficiency in the game. \cr
-   t2de \tab numeric \tab Team 2 defensive efficiency in the game. \cr
-   gp \tab numeric \tab Game-played flag (1 if completed). \cr
-   result \tab character \tab Final result string. \cr
-   tempo \tab numeric \tab Game tempo (possessions). \cr
-   possessions \tab numeric \tab Possessions in the game. \cr
-   t1pts \tab numeric \tab Team 1 points. \cr
-   t2pts \tab numeric \tab Team 2 points. \cr
-   winner \tab character \tab Winning team. \cr
-   loser \tab character \tab Losing team. \cr
-   gamevalue \tab numeric \tab Game quality value. \cr
-   t1ppp \tab numeric \tab Team 1 points per possession. \cr
-   t2ppp \tab numeric \tab Team 2 points per possession. \cr
-   overtimes \tab numeric \tab Number of overtimes. \cr
-   year \tab integer \tab Season (echoes the \code{year} argument). \cr
-}
+\verb{_1}/\verb{_2} suffixes denote \code{team1} and \code{team2}):
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      muid \tab character \tab Matchup unique id. \cr
+      date \tab character \tab Game date (M/D/YY). \cr
+      conmatch \tab character \tab Conference matchup descriptor. \cr
+      matchup \tab character \tab Ranked-matchup descriptor. \cr
+      prediction \tab character \tab Pre-game prediction (favorite, score, win \%). \cr
+      ttq \tab numeric \tab Torvik Thrill Quotient (game excitement). \cr
+      conf \tab numeric \tab Conference-game flag. \cr
+      venue \tab numeric \tab Venue / neutral-site flag. \cr
+      team1 \tab character \tab Team 1 name. \cr
+      t1oe \tab numeric \tab Team 1 offensive efficiency in the game. \cr
+      t1de \tab numeric \tab Team 1 defensive efficiency in the game. \cr
+      team2 \tab character \tab Team 2 name. \cr
+      t2oe \tab numeric \tab Team 2 offensive efficiency in the game. \cr
+      t2de \tab numeric \tab Team 2 defensive efficiency in the game. \cr
+      gp \tab numeric \tab Game-played flag (1 if completed). \cr
+      result \tab character \tab Final result string. \cr
+      tempo \tab numeric \tab Game tempo (possessions). \cr
+      possessions \tab numeric \tab Possessions in the game. \cr
+      t1pts \tab numeric \tab Team 1 points. \cr
+      t2pts \tab numeric \tab Team 2 points. \cr
+      winner \tab character \tab Winning team. \cr
+      loser \tab character \tab Losing team. \cr
+      gamevalue \tab numeric \tab Game quality value. \cr
+      t1ppp \tab numeric \tab Team 1 points per possession. \cr
+      t2ppp \tab numeric \tab Team 2 points per possession. \cr
+      overtimes \tab numeric \tab Number of overtimes. \cr
+      year \tab integer \tab Season (echoes the \code{year} argument). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Additional adjusted-efficiency, quality, and ranking columns (\code{t1adjo},
 \code{t2adjd}, \code{t1qual}, \code{mismatch}, \code{t1rk}, ...) are also returned.

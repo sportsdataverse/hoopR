@@ -16,26 +16,28 @@
 #' @return A `hoopR_data` tibble with one row per game (key columns; period-point
 #'   arrays are returned as list-columns):
 #'
-#'    |col_name         |types     |description                                |
-#'    |:----------------|:---------|:------------------------------------------|
-#'    |id               |integer   |CollegeBasketballData game id.             |
-#'    |source_id        |character |Source (ESPN) game id.                     |
-#'    |season           |integer   |Season (4-digit ending-year).              |
-#'    |season_type      |character |Season type.                               |
-#'    |start_date       |character |Game start date (ISO 8601).                |
-#'    |neutral_site     |logical   |Whether the game was at a neutral site.    |
-#'    |conference_game  |logical   |Whether the game was a conference game.    |
-#'    |status           |character |Game status.                               |
-#'    |home_team_id     |integer   |Home team id.                              |
-#'    |home_team        |character |Home team name.                            |
-#'    |home_points      |integer   |Home team points.                          |
-#'    |home_winner      |logical   |Whether the home team won.                 |
-#'    |away_team_id     |integer   |Away team id.                              |
-#'    |away_team        |character |Away team name.                            |
-#'    |away_points      |integer   |Away team points.                          |
-#'    |away_winner      |logical   |Whether the away team won.                 |
-#'    |venue_id         |integer   |Venue id.                                  |
-#'    |venue            |character |Venue name.                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab CollegeBasketballData game id. \cr
+#'       source_id \tab character \tab Source (ESPN) game id. \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       season_type \tab character \tab Season type. \cr
+#'       start_date \tab character \tab Game start date (ISO 8601). \cr
+#'       neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
+#'       conference_game \tab logical \tab Whether the game was a conference game. \cr
+#'       status \tab character \tab Game status. \cr
+#'       home_team_id \tab integer \tab Home team id. \cr
+#'       home_team \tab character \tab Home team name. \cr
+#'       home_points \tab integer \tab Home team points. \cr
+#'       home_winner \tab logical \tab Whether the home team won. \cr
+#'       away_team_id \tab integer \tab Away team id. \cr
+#'       away_team \tab character \tab Away team name. \cr
+#'       away_points \tab integer \tab Away team points. \cr
+#'       away_winner \tab logical \tab Whether the away team won. \cr
+#'       venue_id \tab integer \tab Venue id. \cr
+#'       venue \tab character \tab Venue name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
@@ -83,19 +85,21 @@ cbbd_games <- function(season = most_recent_mbb_season(), season_type = NULL, te
 #' @return A `hoopR_data` tibble with one row per game. The `broadcasts` column is
 #'   a nested list of broadcast outlets:
 #'
-#'    |col_name        |types     |description                                 |
-#'    |:---------------|:---------|:-------------------------------------------|
-#'    |game_id         |integer   |CollegeBasketballData game id.              |
-#'    |season          |integer   |Season (4-digit ending-year).               |
-#'    |season_type     |character |Season type.                                |
-#'    |start_date      |character |Game start date (ISO 8601).                 |
-#'    |home_team_id    |integer   |Home team id.                               |
-#'    |home_team       |character |Home team name.                             |
-#'    |away_team_id    |integer   |Away team id.                               |
-#'    |away_team       |character |Away team name.                             |
-#'    |neutral_site    |logical   |Whether the game was at a neutral site.     |
-#'    |conference_game |logical   |Whether the game was a conference game.     |
-#'    |broadcasts      |list      |Nested list of broadcast outlets.           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       season_type \tab character \tab Season type. \cr
+#'       start_date \tab character \tab Game start date (ISO 8601). \cr
+#'       home_team_id \tab integer \tab Home team id. \cr
+#'       home_team \tab character \tab Home team name. \cr
+#'       away_team_id \tab integer \tab Away team id. \cr
+#'       away_team \tab character \tab Away team name. \cr
+#'       neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
+#'       conference_game \tab logical \tab Whether the game was a conference game. \cr
+#'       broadcasts \tab list \tab Nested list of broadcast outlets. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
@@ -134,6 +138,7 @@ cbbd_games_media <- function(season = most_recent_mbb_season(), season_type = NU
   return(df)
 }
 
+#' @rdname cbbd_games_media
 #' @title
 #' **CBD Team Box Scores**
 #' @description
@@ -143,20 +148,22 @@ cbbd_games_media <- function(season = most_recent_mbb_season(), season_type = NU
 #'   objects (`team_stats`, `opponent_stats`) are flattened into `team_stats_*` /
 #'   `opponent_stats_*` columns. Key identifying columns:
 #'
-#'    |col_name      |types     |description                                   |
-#'    |:-------------|:---------|:---------------------------------------------|
-#'    |game_id       |integer   |CollegeBasketballData game id.                |
-#'    |season        |integer   |Season (4-digit ending-year).                 |
-#'    |start_date    |character |Game start date (ISO 8601).                   |
-#'    |team_id       |integer   |Team id.                                      |
-#'    |team          |character |Team name.                                    |
-#'    |conference    |character |Team conference.                              |
-#'    |opponent_id   |integer   |Opponent team id.                             |
-#'    |opponent      |character |Opponent team name.                           |
-#'    |is_home       |logical   |Whether the team was home.                    |
-#'    |neutral_site  |logical   |Whether the game was at a neutral site.       |
-#'    |game_minutes  |numeric   |Total team minutes.                           |
-#'    |pace          |numeric   |Game pace (possessions).                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       start_date \tab character \tab Game start date (ISO 8601). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Team conference. \cr
+#'       opponent_id \tab integer \tab Opponent team id. \cr
+#'       opponent \tab character \tab Opponent team name. \cr
+#'       is_home \tab logical \tab Whether the team was home. \cr
+#'       neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
+#'       game_minutes \tab numeric \tab Total team minutes. \cr
+#'       pace \tab numeric \tab Game pace (possessions). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
@@ -195,6 +202,7 @@ cbbd_games_teams <- function(season = most_recent_mbb_season(), season_type = NU
   return(df)
 }
 
+#' @rdname cbbd_games_media
 #' @title
 #' **CBD Player Box Scores**
 #' @description
@@ -203,20 +211,22 @@ cbbd_games_teams <- function(season = most_recent_mbb_season(), season_type = NU
 #' @return A `hoopR_data` tibble with one row per team-game. The `players` column
 #'   is a nested list of per-player box scores. Key identifying columns:
 #'
-#'    |col_name      |types     |description                                   |
-#'    |:-------------|:---------|:---------------------------------------------|
-#'    |game_id       |integer   |CollegeBasketballData game id.                |
-#'    |season        |integer   |Season (4-digit ending-year).                 |
-#'    |start_date    |character |Game start date (ISO 8601).                   |
-#'    |team_id       |integer   |Team id.                                      |
-#'    |team          |character |Team name.                                    |
-#'    |conference    |character |Team conference.                              |
-#'    |opponent_id   |integer   |Opponent team id.                             |
-#'    |opponent      |character |Opponent team name.                           |
-#'    |is_home       |logical   |Whether the team was home.                    |
-#'    |game_minutes  |numeric   |Total team minutes.                           |
-#'    |game_pace     |numeric   |Game pace (possessions).                      |
-#'    |players       |list      |Nested list of per-player box scores.         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       start_date \tab character \tab Game start date (ISO 8601). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Team conference. \cr
+#'       opponent_id \tab integer \tab Opponent team id. \cr
+#'       opponent \tab character \tab Opponent team name. \cr
+#'       is_home \tab logical \tab Whether the team was home. \cr
+#'       game_minutes \tab numeric \tab Total team minutes. \cr
+#'       game_pace \tab numeric \tab Game pace (possessions). \cr
+#'       players \tab list \tab Nested list of per-player box scores. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
@@ -264,17 +274,19 @@ cbbd_games_players <- function(season = most_recent_mbb_season(), season_type = 
 #'   `away_team` and `betting` objects are flattened into `home_team_*`,
 #'   `away_team_*` and `betting_*` columns. Key identifying columns:
 #'
-#'    |col_name        |types     |description                                 |
-#'    |:---------------|:---------|:-------------------------------------------|
-#'    |id              |integer   |CollegeBasketballData game id.              |
-#'    |start_date      |character |Game start date (ISO 8601).                 |
-#'    |tv              |character |Broadcast TV network.                       |
-#'    |neutral_site    |logical   |Whether the game is at a neutral site.      |
-#'    |conference_game |logical   |Whether the game is a conference game.      |
-#'    |status          |character |Game status.                               |
-#'    |period          |integer   |Current period.                             |
-#'    |clock           |character |Game clock.                                 |
-#'    |venue           |character |Venue name.                                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab CollegeBasketballData game id. \cr
+#'       start_date \tab character \tab Game start date (ISO 8601). \cr
+#'       tv \tab character \tab Broadcast TV network. \cr
+#'       neutral_site \tab logical \tab Whether the game is at a neutral site. \cr
+#'       conference_game \tab logical \tab Whether the game is a conference game. \cr
+#'       status \tab character \tab Game status. \cr
+#'       period \tab integer \tab Current period. \cr
+#'       clock \tab character \tab Game clock. \cr
+#'       venue \tab character \tab Venue name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON

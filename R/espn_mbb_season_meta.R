@@ -62,24 +62,7 @@ espn_mbb_season_types <- function(season = most_recent_mbb_season(), ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name      |types     |description                                |
-#'    |:-------------|:---------|:------------------------------------------|
-#'    |league        |character |League slug.                               |
-#'    |season        |integer   |Season year.                               |
-#'    |season_type   |integer   |Season-type id.                            |
-#'    |type          |integer   |Numeric type code.                         |
-#'    |name          |character |Display name (e.g. "Regular Season").      |
-#'    |abbreviation  |character |Short code (e.g. "reg").                   |
-#'    |year          |integer   |Year stamp.                                |
-#'    |start_date    |character |ISO 8601 start date.                       |
-#'    |end_date      |character |ISO 8601 end date.                         |
-#'    |has_groups    |logical   |Whether groups exist for this type.        |
-#'    |has_standings |logical   |Whether standings exist.                   |
-#'    |has_legs      |logical   |Whether playoff legs exist.                |
-#'    |slug          |character |URL slug.                                  |
-#'    |groups_ref    |character |`$ref` to the groups endpoint.             |
-#'    |weeks_ref     |character |`$ref` to the weeks endpoint.              |
-#'    |leaders_ref   |character |`$ref` to the leaders endpoint.            |
+#'    Columns as documented in the shared [espn_mbb_season_type_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -116,23 +99,7 @@ espn_mbb_season_type <- function(season_type = 2L,
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x leader).
 #'
-#'    |col_name         |types     |description                              |
-#'    |:----------------|:---------|:----------------------------------------|
-#'    |league           |character |League slug.                             |
-#'    |season           |integer   |Season year.                             |
-#'    |season_type      |integer   |Season-type id.                          |
-#'    |category_name    |character |Internal category key (e.g. "pointsPerGame"). |
-#'    |category_display |character |Human-readable category name.            |
-#'    |category_short   |character |Short display name.                      |
-#'    |category_abbrev  |character |Stat abbreviation (e.g. "PTS").          |
-#'    |rank             |integer   |Rank within the category (1 = best).     |
-#'    |athlete_id       |character |ESPN athlete id.                         |
-#'    |team_id          |character |ESPN team id.                            |
-#'    |display_value    |character |Display-formatted value.                 |
-#'    |value            |numeric   |Numeric leader value.                    |
-#'    |rel              |character |Comma-joined `rel` tags from ESPN.       |
-#'    |athlete_ref      |character |`$ref` URL to the leader's athlete.      |
-#'    |team_ref         |character |`$ref` URL to the leader's team.         |
+#'    Columns as documented in the shared [espn_mbb_season_leaders_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -207,17 +174,7 @@ espn_mbb_season_rankings <- function(season = most_recent_mbb_season(), ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per weekly snapshot.
 #'
-#'    |col_name    |types     |description                                |
-#'    |:-----------|:---------|:------------------------------------------|
-#'    |league      |character |League slug.                               |
-#'    |season      |integer   |Season year.                               |
-#'    |ranking_id  |character |ESPN ranking id.                           |
-#'    |name        |character |Ranking name (e.g. "AP Top 25").           |
-#'    |short_name  |character |Short name (e.g. "AP Poll").               |
-#'    |type        |character |Ranking type code (e.g. "ap").             |
-#'    |season_type |integer   |Season-type id of this snapshot.           |
-#'    |week        |integer   |Week number of this snapshot.              |
-#'    |ref         |character |`$ref` URL for the per-week ranking detail.|
+#'    Columns as documented in the shared [espn_mbb_season_ranking_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

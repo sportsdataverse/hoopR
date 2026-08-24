@@ -49,6 +49,7 @@ cbbd_ratings_srs <- function(season = most_recent_mbb_season(), team = NULL, con
   return(df)
 }
 
+#' @rdname cbbd_ratings_srs
 #' @title
 #' **CBD Adjusted Efficiency Ratings**
 #' @description
@@ -103,6 +104,7 @@ cbbd_ratings_adjusted <- function(season = most_recent_mbb_season(), team = NULL
   return(df)
 }
 
+#' @rdname cbbd_ratings_srs
 #' @title
 #' **CBD Elo Ratings**
 #' @description

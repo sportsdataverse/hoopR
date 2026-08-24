@@ -11,18 +11,21 @@ nbadraft_mock_draft(year = NULL)
 site's current mock; older years use the \verb{/\{year\}/} path when available.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per mock-draft pick:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   round \tab integer \tab Draft round (1 or 2). \cr
-   pick \tab integer \tab Pick number within the round. \cr
-   team \tab character \tab Projected team (\code{*} traded-pick marker stripped). \cr
-   player \tab character \tab Projected player. \cr
-   height \tab character \tab Player height. \cr
-   weight \tab character \tab Player weight. \cr
-   position \tab character \tab Player position. \cr
-   school \tab character \tab Player school / pre-draft team. \cr
-   class \tab character \tab Player class / draft eligibility. \cr
-}
+A \code{hoopR_data} tibble with one row per mock-draft pick:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      round \tab integer \tab Draft round (1 or 2). \cr
+      pick \tab integer \tab Pick number within the round. \cr
+      team \tab character \tab Projected team (\code{*} traded-pick marker stripped). \cr
+      player \tab character \tab Projected player. \cr
+      height \tab character \tab Player height. \cr
+      weight \tab character \tab Player weight. \cr
+      position \tab character \tab Player position. \cr
+      school \tab character \tab Player school / pre-draft team. \cr
+      class \tab character \tab Player class / draft eligibility. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get the latest mock draft from \href{https://www.nbadraft.net}{NBADraft.net}.}

@@ -16,37 +16,42 @@ nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second", ...)
 \value{
 Return a named list of data frames: WinProbPBP, GameInfo
 
-\strong{WinProbPBP}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   EVENT_NUM \tab character \tab Sequential event number within the game (V2 PBP). \cr
-   HOME_PCT \tab character \tab  \cr
-   VISITOR_PCT \tab character \tab  \cr
-   HOME_PTS \tab character \tab  \cr
-   VISITOR_PTS \tab character \tab  \cr
-   HOME_SCORE_MARGIN \tab character \tab  \cr
-   PERIOD \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   SECONDS_REMAINING \tab character \tab Seconds remaining in the period. \cr
-   HOME_POSS_IND \tab character \tab  \cr
-   HOME_G \tab character \tab  \cr
-   DESCRIPTION \tab character \tab Long-form description text. \cr
-   LOCATION \tab character \tab Location. \cr
-   PCTIMESTRING \tab character \tab  \cr
-   ISVISIBLE \tab character \tab  \cr
-}
+\strong{WinProbPBP}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      EVENT_NUM \tab character \tab Sequential event number within the game (V2 PBP). \cr
+      HOME_PCT \tab character \tab  \cr
+      VISITOR_PCT \tab character \tab  \cr
+      HOME_PTS \tab character \tab  \cr
+      VISITOR_PTS \tab character \tab  \cr
+      HOME_SCORE_MARGIN \tab character \tab  \cr
+      PERIOD \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      SECONDS_REMAINING \tab character \tab Seconds remaining in the period. \cr
+      HOME_POSS_IND \tab character \tab  \cr
+      HOME_G \tab character \tab  \cr
+      DESCRIPTION \tab character \tab Long-form description text. \cr
+      LOCATION \tab character \tab Location. \cr
+      PCTIMESTRING \tab character \tab  \cr
+      ISVISIBLE \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{GameInfo}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
-   HOME_TEAM_ABR \tab character \tab  \cr
-   HOME_TEAM_PTS \tab character \tab  \cr
-   VISITOR_TEAM_ID \tab character \tab  \cr
-   VISITOR_TEAM_ABR \tab character \tab  \cr
-   VISITOR_TEAM_PTS \tab character \tab  \cr
-}
+\strong{GameInfo}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+      HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+      HOME_TEAM_ABR \tab character \tab  \cr
+      HOME_TEAM_PTS \tab character \tab  \cr
+      VISITOR_TEAM_ID \tab character \tab  \cr
+      VISITOR_TEAM_ABR \tab character \tab  \cr
+      VISITOR_TEAM_PTS \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

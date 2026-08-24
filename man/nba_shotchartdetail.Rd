@@ -106,16 +106,9 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 }
 
 
-\strong{LeagueAverages}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GRID_TYPE \tab character \tab  \cr
-   SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
-   SHOT_ZONE_AREA \tab character \tab Shot zone area ('Left Side', 'Right Side', 'Center'). \cr
-   SHOT_ZONE_RANGE \tab character \tab Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-}
+\strong{LeagueAverages}
+
+Columns as documented in the shared \link{nba_shotchartdetail_leagueaverages_schema} table.
 }
 \description{
 \strong{Get NBA Stats API Shot Chart Detail}

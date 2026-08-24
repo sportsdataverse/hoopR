@@ -12,29 +12,32 @@ torvik_team_factors(year = most_recent_mbb_season())
 }
 \value{
 A \code{hoopR_data} tibble with one row per team. Each statistic is paired
-with an interspersed national-rank column (\code{rk}, \code{rk_2}, ...):\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_name \tab character \tab Team name. \cr
-   e_fg_percent \tab numeric \tab Effective field goal percentage (offense). \cr
-   e_fg_percent_def \tab numeric \tab Effective field goal percentage allowed (defense). \cr
-   ftr \tab numeric \tab Free-throw rate (offense). \cr
-   ftr_def \tab numeric \tab Free-throw rate allowed (defense). \cr
-   or_percent \tab numeric \tab Offensive rebound percentage. \cr
-   dr_percent \tab numeric \tab Defensive rebound percentage. \cr
-   to_percent \tab numeric \tab Turnover percentage (offense). \cr
-   to_percent_def \tab numeric \tab Turnover percentage forced (defense). \cr
-   x3p_percent \tab numeric \tab Three-point percentage (offense). \cr
-   x3p_d_percent \tab numeric \tab Three-point percentage allowed (defense). \cr
-   x2p_percent \tab numeric \tab Two-point percentage (offense). \cr
-   x2p_percent_d \tab numeric \tab Two-point percentage allowed (defense). \cr
-   ft_percent \tab numeric \tab Free-throw percentage (offense). \cr
-   ft_percent_d \tab numeric \tab Free-throw percentage allowed (defense). \cr
-   x3p_rate \tab numeric \tab Three-point attempt rate (offense). \cr
-   x3p_rate_d \tab numeric \tab Three-point attempt rate allowed (defense). \cr
-   arate \tab numeric \tab Assist rate (offense). \cr
-   arate_d \tab numeric \tab Assist rate allowed (defense). \cr
-   year \tab integer \tab Season (echoes the \code{year} argument). \cr
-}
+with an interspersed national-rank column (\code{rk}, \code{rk_2}, ...):
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_name \tab character \tab Team name. \cr
+      e_fg_percent \tab numeric \tab Effective field goal percentage (offense). \cr
+      e_fg_percent_def \tab numeric \tab Effective field goal percentage allowed (defense). \cr
+      ftr \tab numeric \tab Free-throw rate (offense). \cr
+      ftr_def \tab numeric \tab Free-throw rate allowed (defense). \cr
+      or_percent \tab numeric \tab Offensive rebound percentage. \cr
+      dr_percent \tab numeric \tab Defensive rebound percentage. \cr
+      to_percent \tab numeric \tab Turnover percentage (offense). \cr
+      to_percent_def \tab numeric \tab Turnover percentage forced (defense). \cr
+      x3p_percent \tab numeric \tab Three-point percentage (offense). \cr
+      x3p_d_percent \tab numeric \tab Three-point percentage allowed (defense). \cr
+      x2p_percent \tab numeric \tab Two-point percentage (offense). \cr
+      x2p_percent_d \tab numeric \tab Two-point percentage allowed (defense). \cr
+      ft_percent \tab numeric \tab Free-throw percentage (offense). \cr
+      ft_percent_d \tab numeric \tab Free-throw percentage allowed (defense). \cr
+      x3p_rate \tab numeric \tab Three-point attempt rate (offense). \cr
+      x3p_rate_d \tab numeric \tab Three-point attempt rate allowed (defense). \cr
+      arate \tab numeric \tab Assist rate (offense). \cr
+      arate_d \tab numeric \tab Assist rate allowed (defense). \cr
+      year \tab integer \tab Season (echoes the \code{year} argument). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get team four-factor and shooting splits from \href{https://barttorvik.com}{barttorvik.com}.}

@@ -15,24 +15,27 @@ cbbd_teams(conference = NULL, season = most_recent_mbb_season())
 \code{most_recent_mbb_season()}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab CollegeBasketballData team id. \cr
-   source_id \tab character \tab Source (ESPN) team id. \cr
-   school \tab character \tab School name. \cr
-   mascot \tab character \tab Team mascot. \cr
-   abbreviation \tab character \tab Team abbreviation. \cr
-   display_name \tab character \tab Full team display name. \cr
-   short_display_name \tab character \tab Short team display name. \cr
-   primary_color \tab character \tab Primary team color (hex). \cr
-   secondary_color \tab character \tab Secondary team color (hex). \cr
-   current_venue_id \tab integer \tab Current home venue id. \cr
-   current_venue \tab character \tab Current home venue name. \cr
-   current_city \tab character \tab Current home venue city. \cr
-   current_state \tab character \tab Current home venue state. \cr
-   conference_id \tab integer \tab Conference id. \cr
-   conference \tab character \tab Conference name. \cr
-}
+A \code{hoopR_data} tibble with one row per team:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab CollegeBasketballData team id. \cr
+      source_id \tab character \tab Source (ESPN) team id. \cr
+      school \tab character \tab School name. \cr
+      mascot \tab character \tab Team mascot. \cr
+      abbreviation \tab character \tab Team abbreviation. \cr
+      display_name \tab character \tab Full team display name. \cr
+      short_display_name \tab character \tab Short team display name. \cr
+      primary_color \tab character \tab Primary team color (hex). \cr
+      secondary_color \tab character \tab Secondary team color (hex). \cr
+      current_venue_id \tab integer \tab Current home venue id. \cr
+      current_venue \tab character \tab Current home venue name. \cr
+      current_city \tab character \tab Current home venue city. \cr
+      current_state \tab character \tab Current home venue state. \cr
+      conference_id \tab integer \tab Conference id. \cr
+      conference \tab character \tab Conference name. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get college basketball teams from the CollegeBasketballData API.}

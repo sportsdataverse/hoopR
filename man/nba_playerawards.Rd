@@ -14,23 +14,26 @@ nba_playerawards(player_id, ...)
 \value{
 Return a named list of data frames: PlayerAwards
 
-\strong{PlayerAwards}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-   FIRST_NAME \tab character \tab Player's first name. \cr
-   LAST_NAME \tab character \tab Player's last name. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   DESCRIPTION \tab character \tab Long-form description text. \cr
-   ALL_NBA_TEAM_NUMBER \tab character \tab  \cr
-   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   MONTH \tab character \tab Month number. \cr
-   WEEK \tab character \tab Week number within the season. \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   TYPE \tab character \tab Record type / category. \cr
-   SUBTYPE1 \tab character \tab  \cr
-   SUBTYPE2 \tab character \tab  \cr
-   SUBTYPE3 \tab character \tab  \cr
-}
+\strong{PlayerAwards}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+      FIRST_NAME \tab character \tab Player's first name. \cr
+      LAST_NAME \tab character \tab Player's last name. \cr
+      TEAM \tab character \tab Team-side label or team identifier. \cr
+      DESCRIPTION \tab character \tab Long-form description text. \cr
+      ALL_NBA_TEAM_NUMBER \tab character \tab  \cr
+      SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      MONTH \tab character \tab Month number. \cr
+      WEEK \tab character \tab Week number within the season. \cr
+      CONFERENCE \tab character \tab Conference. \cr
+      TYPE \tab character \tab Record type / category. \cr
+      SUBTYPE1 \tab character \tab  \cr
+      SUBTYPE2 \tab character \tab  \cr
+      SUBTYPE3 \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Player Awards}
@@ -60,8 +63,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},

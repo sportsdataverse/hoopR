@@ -20,12 +20,7 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per career season.
 #'
-#'    |col_name   |types     |description                              |
-#'    |:----------|:---------|:----------------------------------------|
-#'    |league     |character |League slug.                             |
-#'    |athlete_id |character |ESPN athlete id.                         |
-#'    |season     |integer   |Season year.                             |
-#'    |ref        |character |`$ref` URL to the season detail.         |
+#'    Columns as documented in the shared [espn_mbb_player_seasons_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -68,25 +63,7 @@ espn_nba_player_seasons <- function(athlete_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble (one row per stat_type × split × category × stat).
 #'
-#'    |col_name         |types     |description                                |
-#'    |:----------------|:---------|:------------------------------------------|
-#'    |league           |character |League slug.                               |
-#'    |athlete_id       |character |ESPN athlete id.                           |
-#'    |stat_type_id     |character |Stat-type code (0 = reg, 1 = post, 2 = career). |
-#'    |split_id         |character |Split id.                                  |
-#'    |split_name       |character |Split name (typically "All Splits").       |
-#'    |split_type       |character |Split type code.                           |
-#'    |category_name    |character |Category key (e.g. "defensive").           |
-#'    |category_display |character |Category display name.                     |
-#'    |category_short   |character |Category short display.                    |
-#'    |category_abbrev  |character |Category abbreviation.                     |
-#'    |stat_name        |character |Stat key.                                  |
-#'    |stat_abbrev      |character |Stat abbreviation.                         |
-#'    |stat_display     |character |Stat display name.                         |
-#'    |stat_short       |character |Stat short display.                        |
-#'    |description      |character |Stat description.                          |
-#'    |value            |numeric   |Stat value.                                |
-#'    |display_value    |character |Display-formatted value.                   |
+#'    Columns as documented in the shared [espn_mbb_player_career_stats_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -127,20 +104,22 @@ espn_nba_player_career_stats <- function(athlete_id,
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name    |types     |description                                |
-#'    |:-----------|:---------|:------------------------------------------|
-#'    |league      |character |League slug.                               |
-#'    |season      |integer   |Season year of the draft.                  |
-#'    |round       |integer   |Round number.                              |
-#'    |pick        |integer   |Pick within the round.                     |
-#'    |overall     |integer   |Overall pick number.                       |
-#'    |traded      |logical   |Whether the pick was traded.               |
-#'    |trade_note  |character |Trade note (if any).                       |
-#'    |status      |character |Pick status name.                          |
-#'    |athlete_id  |character |Drafted athlete's ESPN id.                 |
-#'    |team_id     |character |Drafting team's ESPN id.                   |
-#'    |athlete_ref |character |`$ref` to athlete.                         |
-#'    |team_ref    |character |`$ref` to team.                            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug. \cr
+#'       season \tab integer \tab Season year of the draft. \cr
+#'       round \tab integer \tab Round number. \cr
+#'       pick \tab integer \tab Pick within the round. \cr
+#'       overall \tab integer \tab Overall pick number. \cr
+#'       traded \tab logical \tab Whether the pick was traded. \cr
+#'       trade_note \tab character \tab Trade note (if any). \cr
+#'       status \tab character \tab Pick status name. \cr
+#'       athlete_id \tab character \tab Drafted athlete's ESPN id. \cr
+#'       team_id \tab character \tab Drafting team's ESPN id. \cr
+#'       athlete_ref \tab character \tab \verb{$ref} to athlete. \cr
+#'       team_ref \tab character \tab \verb{$ref} to team. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -227,7 +206,7 @@ espn_nba_draft_rounds <- function(season = most_recent_nba_season(), ...) {
 #' @name espn_nba_draft_athletes
 #' @title
 #' **Get ESPN NBA Draft Athletes Index**
-#' @rdname espn_nba_draft_athletes
+#' @rdname espn_nba_draft_rounds
 #' @author Saiem Gilani
 #' @description
 #' Returns one row per drafted athlete in a given NBA draft year.
@@ -253,7 +232,7 @@ espn_nba_draft_athletes <- function(season = most_recent_nba_season(), ...) {
 #' @name espn_nba_draft_status
 #' @title
 #' **Get ESPN NBA Draft Status**
-#' @rdname espn_nba_draft_status
+#' @rdname espn_nba_draft_rounds
 #' @author Saiem Gilani
 #' @description
 #' Returns the current status of one NBA draft year (round, state,
@@ -276,12 +255,9 @@ espn_nba_draft_status <- function(season = most_recent_nba_season(), ...) {
 # espn_nba_season_draft
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Season Draft (Top-Level Metadata)**
-#' @name espn_nba_season_draft
-NULL
 #' @title
 #' **Get ESPN NBA Season Draft (Top-Level Metadata)**
-#' @rdname espn_nba_season_draft
+#' @rdname espn_nba_draft_rounds
 #' @author Saiem Gilani
 #' @description
 #' Returns a single-row tibble with top-level draft-year metadata: year,

@@ -17,20 +17,22 @@ or \code{per_poss} (per 100 possessions).}
 \value{
 A \code{hoopR_data} tibble with one row per player (columns vary by
 \code{table}; common identifying columns shown -- column names are
-Basketball-Reference \code{data-stat} keys):\tabular{lll}{
-   col_name \tab types \tab description \cr
-   ranker \tab integer \tab Row rank. \cr
-   player \tab character \tab Player name. \cr
-   age \tab integer \tab Player age on Feb 1 of the season. \cr
-   team_id \tab character \tab Team abbreviation (\code{TOT} for players on >1 team). \cr
-   pos \tab character \tab Position. \cr
-   g \tab integer \tab Games played. \cr
-   gs \tab integer \tab Games started. \cr
-   mp_per_g \tab numeric \tab Minutes (per_game table) / \code{mp} total (totals table). \cr
-   pts_per_g \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
-   season \tab integer \tab Season (echoes the \code{season} argument). \cr
-}
+Basketball-Reference \code{data-stat} keys):
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      ranker \tab integer \tab Row rank. \cr
+      player \tab character \tab Player name. \cr
+      age \tab integer \tab Player age on Feb 1 of the season. \cr
+      team_id \tab character \tab Team abbreviation (\code{TOT} for players on >1 team). \cr
+      pos \tab character \tab Position. \cr
+      g \tab integer \tab Games played. \cr
+      gs \tab integer \tab Games started. \cr
+      mp_per_g \tab numeric \tab Minutes (per_game table) / \code{mp} total (totals table). \cr
+      pts_per_g \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
+      season \tab integer \tab Season (echoes the \code{season} argument). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 The \code{advanced} table adds \code{per}, \code{ts_pct}, \code{usg_pct}, \code{ws}, \code{bpm}, \code{vorp},
 etc.; \code{totals}/\code{per_minute}/\code{per_poss} return the same box categories scaled

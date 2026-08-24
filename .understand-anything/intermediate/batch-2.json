@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "AI/contributor development guide for hoopR documenting the package overview (270+ functions across nba_*/espn_*/kp_* families), branching/PR workflow, NBA Stats API function pattern, V2-vs-V3 differences, null-safety and return-value initialization conventions, the httr2 HTTP layer with proxy support, testing gates, and the NEWS/cran-comments/_pkgdown release triad.",
+      "tags": ["documentation", "development", "conventions", "ai-guide", "r-package"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:CODE_OF_CONDUCT.md",
+      "type": "document",
+      "name": "CODE_OF_CONDUCT.md",
+      "filePath": "CODE_OF_CONDUCT.md",
+      "summary": "Standard Contributor Covenant code of conduct defining community pledge, behavioral standards, enforcement responsibilities, scope, and a four-tier enforcement guideline (correction through permanent ban).",
+      "tags": ["documentation", "community", "governance", "code-of-conduct"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Contributor onboarding guide covering development setup, the devel-branch workflow, the step-by-step recipe for adding a new NBA Stats API endpoint, function naming conventions, roxygen documentation rules, testing gates with environment variables, CI/GitHub Actions, and commit-message standards.",
+      "tags": ["documentation", "development", "contributing", "conventions", "r-package"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:LICENSE.md",
+      "type": "document",
+      "name": "LICENSE.md",
+      "filePath": "LICENSE.md",
+      "summary": "MIT license text for the hoopR package.",
+      "tags": ["documentation", "license", "mit", "legal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:NEWS.md",
+      "type": "document",
+      "name": "NEWS.md",
+      "filePath": "NEWS.md",
+      "summary": "Full release changelog from v0.0.0.9 through v3.1.0, documenting new exported functions, behavior changes, deprecations, and internals per version — including the 3.1.0 cross-source crosswalks, Fox Sports / CBD / Torvik / Basketball-Reference / RealGM wrappers, and the 3.0.0 httr-to-httr2 and usethis-to-cli migrations.",
+      "tags": ["documentation", "changelog", "release-notes", "versioning"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project landing page (rendered from README.Rmd) with badges, installation instructions, quick-start examples for loading full NBA (2002-2026) and men's college basketball (2006-2026) play-by-play seasons, documentation links, breaking-change notes, authors, contributors, and citations.",
+      "tags": ["documentation", "entry-point", "overview", "quick-start"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:_pkgdown.yml",
+      "type": "config",
+      "name": "_pkgdown.yml",
+      "filePath": "_pkgdown.yml",
+      "summary": "pkgdown site configuration for hoopR.sportsdataverse.org defining the Bootstrap template, navbar, authors, home metadata, and the full reference index grouping all exported functions by data-source family (hoopR loaders, crosswalks, ESPN, NBA Stats, NCAA, KenPom, CBD, Torvik, injury reports).",
+      "tags": ["configuration", "pkgdown", "documentation-site", "build-system"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:cran-comments.md",
+      "type": "document",
+      "name": "cran-comments.md",
+      "filePath": "cran-comments.md",
+      "summary": "CRAN submission notes for v3.1.0 summarizing the release themes (NBA schedule CDN migration, proxy-support regression fix, three-column @return table upgrade), per-source wrapper additions, R CMD check results, and revdepcheck results.",
+      "tags": ["documentation", "cran", "release", "submission-notes"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "document:NEWS.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "document:CODE_OF_CONDUCT.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "document:CONTRIBUTING.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:NEWS.md",
+      "target": "document:cran-comments.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:cran-comments.md",
+      "target": "config:_pkgdown.yml",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:LICENSE.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

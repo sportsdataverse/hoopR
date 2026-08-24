@@ -7,23 +7,26 @@
 kp_hca()
 }
 \value{
-A data frame with the following columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   conf \tab character \tab character. \cr
-   hca \tab numeric \tab Hca. \cr
-   hca_rk \tab numeric \tab Hca rk. \cr
-   pf \tab numeric \tab Personal fouls. \cr
-   pf_rk \tab numeric \tab Pf rk. \cr
-   pts \tab numeric \tab Points scored. \cr
-   pts_rk \tab numeric \tab Pts rk. \cr
-   nst \tab numeric \tab Nst. \cr
-   nst_rk \tab numeric \tab Nst rk. \cr
-   blk \tab numeric \tab Blocks. \cr
-   blk_rk \tab numeric \tab Blk rk. \cr
-   elev \tab numeric \tab Elev. \cr
-   elev_rk \tab numeric \tab Elev rk. \cr
-}
+A data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      hca \tab numeric \tab Hca. \cr
+      hca_rk \tab numeric \tab Hca rk. \cr
+      pf \tab numeric \tab Personal fouls. \cr
+      pf_rk \tab numeric \tab Pf rk. \cr
+      pts \tab numeric \tab Points scored. \cr
+      pts_rk \tab numeric \tab Pts rk. \cr
+      nst \tab numeric \tab Nst. \cr
+      nst_rk \tab numeric \tab Nst rk. \cr
+      blk \tab numeric \tab Blocks. \cr
+      blk_rk \tab numeric \tab Blk rk. \cr
+      elev \tab numeric \tab Elev. \cr
+      elev_rk \tab numeric \tab Elev rk. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get Home Court Advantage Estimates}

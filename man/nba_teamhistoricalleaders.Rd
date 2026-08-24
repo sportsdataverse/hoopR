@@ -23,26 +23,29 @@ nba_teamhistoricalleaders(
 \value{
 Return a named list of data frames: CareerLeadersByTeam
 
-\strong{CareerLeadersByTeam}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   PTS \tab character \tab Points scored. \cr
-   PTS_PERSON_ID \tab character \tab  \cr
-   PTS_PLAYER \tab character \tab  \cr
-   AST \tab character \tab Assists. \cr
-   AST_PERSON_ID \tab character \tab  \cr
-   AST_PLAYER \tab character \tab  \cr
-   REB \tab character \tab Total rebounds. \cr
-   REB_PERSON_ID \tab character \tab  \cr
-   REB_PLAYER \tab character \tab  \cr
-   BLK \tab character \tab Blocks. \cr
-   BLK_PERSON_ID \tab character \tab  \cr
-   BLK_PLAYER \tab character \tab  \cr
-   STL \tab character \tab Steals. \cr
-   STL_PERSON_ID \tab character \tab  \cr
-   STL_PLAYER \tab character \tab  \cr
-   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-}
+\strong{CareerLeadersByTeam}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      PTS \tab character \tab Points scored. \cr
+      PTS_PERSON_ID \tab character \tab  \cr
+      PTS_PLAYER \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      AST_PERSON_ID \tab character \tab  \cr
+      AST_PLAYER \tab character \tab  \cr
+      REB \tab character \tab Total rebounds. \cr
+      REB_PERSON_ID \tab character \tab  \cr
+      REB_PLAYER \tab character \tab  \cr
+      BLK \tab character \tab Blocks. \cr
+      BLK_PERSON_ID \tab character \tab  \cr
+      BLK_PLAYER \tab character \tab  \cr
+      STL \tab character \tab Steals. \cr
+      STL_PERSON_ID \tab character \tab  \cr
+      STL_PLAYER \tab character \tab  \cr
+      SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
@@ -70,9 +73,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamelogs]{nba_teamgamelogs()}},
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}

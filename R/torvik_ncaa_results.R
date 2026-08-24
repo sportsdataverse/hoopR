@@ -14,28 +14,30 @@
 #'   `coach`, `conf`, or `seed`.
 #' @return A `hoopR_data` tibble with one row per team/coach/conference/seed:
 #'
-#'    |col_name      |types     |description                                          |
-#'    |:-------------|:---------|:----------------------------------------------------|
-#'    |rk            |integer   |Rank within the queried split.                       |
-#'    |team          |character |Team / coach / conference / seed (per `type`).       |
-#'    |pake          |numeric   |Performance above KenPom expectation (wins).         |
-#'    |pase          |numeric   |Performance above seed expectation (wins).           |
-#'    |wins          |integer   |Total tournament wins.                               |
-#'    |loss          |integer   |Total tournament losses.                             |
-#'    |w_percent     |numeric   |Tournament win percentage.                           |
-#'    |r64           |integer   |Round of 64 appearances.                             |
-#'    |r32           |integer   |Round of 32 appearances.                             |
-#'    |s16           |integer   |Sweet 16 appearances.                                |
-#'    |e8            |integer   |Elite 8 appearances.                                 |
-#'    |f4            |integer   |Final 4 appearances.                                 |
-#'    |f2            |integer   |Championship-game appearances.                       |
-#'    |champ         |integer   |National championships.                              |
-#'    |top2          |integer   |Top-2 (runner-up or champion) finishes.              |
-#'    |f4_percent    |numeric   |Final 4 rate.                                        |
-#'    |champ_percent |numeric   |Championship rate.                                   |
-#'    |min_year      |integer   |Minimum year queried (echoes `min_year`).            |
-#'    |max_year      |integer   |Maximum year queried (echoes `max_year`).            |
-#'    |type          |character |Aggregation level queried (echoes `type`).           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab integer \tab Rank within the queried split. \cr
+#'       team \tab character \tab Team / coach / conference / seed (per \code{type}). \cr
+#'       pake \tab numeric \tab Performance above KenPom expectation (wins). \cr
+#'       pase \tab numeric \tab Performance above seed expectation (wins). \cr
+#'       wins \tab integer \tab Total tournament wins. \cr
+#'       loss \tab integer \tab Total tournament losses. \cr
+#'       w_percent \tab numeric \tab Tournament win percentage. \cr
+#'       r64 \tab integer \tab Round of 64 appearances. \cr
+#'       r32 \tab integer \tab Round of 32 appearances. \cr
+#'       s16 \tab integer \tab Sweet 16 appearances. \cr
+#'       e8 \tab integer \tab Elite 8 appearances. \cr
+#'       f4 \tab integer \tab Final 4 appearances. \cr
+#'       f2 \tab integer \tab Championship-game appearances. \cr
+#'       champ \tab integer \tab National championships. \cr
+#'       top2 \tab integer \tab Top-2 (runner-up or champion) finishes. \cr
+#'       f4_percent \tab numeric \tab Final 4 rate. \cr
+#'       champ_percent \tab numeric \tab Championship rate. \cr
+#'       min_year \tab integer \tab Minimum year queried (echoes \code{min_year}). \cr
+#'       max_year \tab integer \tab Maximum year queried (echoes \code{max_year}). \cr
+#'       type \tab character \tab Aggregation level queried (echoes \code{type}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Torvik
 #' @importFrom rvest read_html html_table

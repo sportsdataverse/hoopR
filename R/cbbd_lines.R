@@ -11,21 +11,23 @@
 #' @return A `hoopR_data` tibble with one row per game. The `lines` column is a
 #'   nested list of per-provider lines:
 #'
-#'    |col_name        |types     |description                                 |
-#'    |:---------------|:---------|:-------------------------------------------|
-#'    |game_id         |integer   |CollegeBasketballData game id.              |
-#'    |season          |integer   |Season (4-digit ending-year).               |
-#'    |season_type     |character |Season type.                                |
-#'    |start_date      |character |Game start date (ISO 8601).                 |
-#'    |home_team_id    |integer   |Home team id.                               |
-#'    |home_team       |character |Home team name.                             |
-#'    |home_conference |character |Home team conference.                       |
-#'    |home_score      |numeric   |Home team final score.                      |
-#'    |away_team_id    |integer   |Away team id.                               |
-#'    |away_team       |character |Away team name.                             |
-#'    |away_conference |character |Away team conference.                       |
-#'    |away_score      |numeric   |Away team final score.                      |
-#'    |lines           |list      |Nested list of per-provider betting lines.  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       season_type \tab character \tab Season type. \cr
+#'       start_date \tab character \tab Game start date (ISO 8601). \cr
+#'       home_team_id \tab integer \tab Home team id. \cr
+#'       home_team \tab character \tab Home team name. \cr
+#'       home_conference \tab character \tab Home team conference. \cr
+#'       home_score \tab numeric \tab Home team final score. \cr
+#'       away_team_id \tab integer \tab Away team id. \cr
+#'       away_team \tab character \tab Away team name. \cr
+#'       away_conference \tab character \tab Away team conference. \cr
+#'       away_score \tab numeric \tab Away team final score. \cr
+#'       lines \tab list \tab Nested list of per-provider betting lines. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Lines
 #' @importFrom jsonlite fromJSON

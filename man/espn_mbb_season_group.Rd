@@ -2,9 +2,25 @@
 % Please edit documentation in R/espn_mbb_groups_v2.R
 \name{espn_mbb_season_group}
 \alias{espn_mbb_season_group}
+\alias{espn_mbb_season_group_children}
+\alias{espn_mbb_season_group_teams}
 \title{\strong{Get ESPN MBB Season Group Detail}}
 \usage{
 espn_mbb_season_group(
+  group_id,
+  season = most_recent_mbb_season(),
+  season_type = 2L,
+  ...
+)
+
+espn_mbb_season_group_children(
+  group_id,
+  season = most_recent_mbb_season(),
+  season_type = 2L,
+  ...
+)
+
+espn_mbb_season_group_teams(
   group_id,
   season = most_recent_mbb_season(),
   season_type = 2L,
@@ -21,43 +37,51 @@ espn_mbb_season_group(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single-row tibble.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   league \tab character \tab League slug. \cr
-   season \tab integer \tab Season year. \cr
-   season_type \tab integer \tab Season-type id. \cr
-   group_id \tab character \tab ESPN group id. \cr
-   uid \tab character \tab ESPN UID string. \cr
-   name \tab character \tab Full name (e.g. "Eastern Conference"). \cr
-   abbreviation \tab character \tab Short code (e.g. "EAST"). \cr
-   short_name \tab character \tab Short name. \cr
-   midsize_name \tab character \tab Mid-size display name. \cr
-   is_conference \tab logical \tab Whether this group is a conference. \cr
-   slug \tab character \tab URL slug. \cr
-   parent_ref \tab character \tab \verb{$ref} to parent group (if any). \cr
-   children_ref \tab character \tab \verb{$ref} to child-groups endpoint. \cr
-   teams_ref \tab character \tab \verb{$ref} to teams-in-group endpoint. \cr
-   standings_ref \tab character \tab \verb{$ref} to standings endpoint. \cr
-}
+A single-row tibble.
+
+Columns as documented in the shared \link{espn_mbb_season_group_schema} table.
+
+A tibble with one row per child group.
+
+Columns as documented in the shared \link{espn_mbb_season_group_children_schema} table.
+
+A tibble with one row per team in the group.
+
+Columns as documented in the shared \link{espn_mbb_season_group_teams_schema} table.
 }
 \description{
 Returns metadata for one group (conference or division) in one
 (MBB season x season-type), plus \verb{$ref} URLs to its parent group,
 children groups, member teams, and standings.
+
+Returns the list of child groups (e.g. divisions within a conference)
+for one (MBB season x season-type x parent-group).
+
+Returns the list of team IDs that belong to one group (conference or
+division) for one (MBB season x season-type).
 }
 \details{
 \strong{Get ESPN MBB Season Group Detail}
+
+\strong{Get ESPN MBB Season Group Children Index}
+
+\strong{Get ESPN MBB Season Group Teams Index}
 }
 \examples{
 \donttest{
   espn_mbb_season_group(group_id = 5, season = 2025)
+}
+\donttest{
+  espn_mbb_season_group_children(group_id = 5, season = 2025)
+}
+\donttest{
+  espn_mbb_season_group_teams(group_id = 5, season = 2025)
 }
 }
 \seealso{
 Other ESPN MBB Functions:
 \code{\link[=espn_mbb_athletes_index]{espn_mbb_athletes_index()}},
 \code{\link[=espn_mbb_award]{espn_mbb_award()}},
-\code{\link[=espn_mbb_betting]{espn_mbb_betting()}},
 \code{\link[=espn_mbb_calendar]{espn_mbb_calendar()}},
 \code{\link[=espn_mbb_coach]{espn_mbb_coach()}},
 \code{\link[=espn_mbb_coach_record]{espn_mbb_coach_record()}},
@@ -68,51 +92,31 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_franchises]{espn_mbb_franchises()}},
 \code{\link[=espn_mbb_futures]{espn_mbb_futures()}},
 \code{\link[=espn_mbb_game_all]{espn_mbb_game_all()}},
-\code{\link[=espn_mbb_game_broadcasts]{espn_mbb_game_broadcasts()}},
 \code{\link[=espn_mbb_game_odds]{espn_mbb_game_odds()}},
 \code{\link[=espn_mbb_game_official_detail]{espn_mbb_game_official_detail()}},
-\code{\link[=espn_mbb_game_officials]{espn_mbb_game_officials()}},
 \code{\link[=espn_mbb_game_play]{espn_mbb_game_play()}},
 \code{\link[=espn_mbb_game_play_personnel]{espn_mbb_game_play_personnel()}},
 \code{\link[=espn_mbb_game_player_box]{espn_mbb_game_player_box()}},
-\code{\link[=espn_mbb_game_powerindex]{espn_mbb_game_powerindex()}},
-\code{\link[=espn_mbb_game_predictor]{espn_mbb_game_predictor()}},
 \code{\link[=espn_mbb_game_probabilities]{espn_mbb_game_probabilities()}},
 \code{\link[=espn_mbb_game_propbets]{espn_mbb_game_propbets()}},
-\code{\link[=espn_mbb_game_rosters]{espn_mbb_game_rosters()}},
-\code{\link[=espn_mbb_game_situation]{espn_mbb_game_situation()}},
-\code{\link[=espn_mbb_game_team_leaders]{espn_mbb_game_team_leaders()}},
 \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}},
-\code{\link[=espn_mbb_game_team_records]{espn_mbb_game_team_records()}},
-\code{\link[=espn_mbb_game_team_roster]{espn_mbb_game_team_roster()}},
 \code{\link[=espn_mbb_game_team_roster_entry]{espn_mbb_game_team_roster_entry()}},
-\code{\link[=espn_mbb_game_team_score]{espn_mbb_game_team_score()}},
-\code{\link[=espn_mbb_game_team_statistics]{espn_mbb_game_team_statistics()}},
 \code{\link[=espn_mbb_injuries]{espn_mbb_injuries()}},
 \code{\link[=espn_mbb_leaders]{espn_mbb_leaders()}},
 \code{\link[=espn_mbb_news]{espn_mbb_news()}},
-\code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}},
 \code{\link[=espn_mbb_player_awards]{espn_mbb_player_awards()}},
-\code{\link[=espn_mbb_player_box]{espn_mbb_player_box()}},
 \code{\link[=espn_mbb_player_career_stats]{espn_mbb_player_career_stats()}},
-\code{\link[=espn_mbb_player_eventlog]{espn_mbb_player_eventlog()}},
 \code{\link[=espn_mbb_player_eventlog_v2]{espn_mbb_player_eventlog_v2()}},
-\code{\link[=espn_mbb_player_gamelog]{espn_mbb_player_gamelog()}},
 \code{\link[=espn_mbb_player_info]{espn_mbb_player_info()}},
 \code{\link[=espn_mbb_player_overview]{espn_mbb_player_overview()}},
 \code{\link[=espn_mbb_player_seasons]{espn_mbb_player_seasons()}},
-\code{\link[=espn_mbb_player_splits]{espn_mbb_player_splits()}},
-\code{\link[=espn_mbb_player_statisticslog]{espn_mbb_player_statisticslog()}},
 \code{\link[=espn_mbb_player_stats]{espn_mbb_player_stats()}},
-\code{\link[=espn_mbb_player_stats_v3]{espn_mbb_player_stats_v3()}},
 \code{\link[=espn_mbb_position]{espn_mbb_position()}},
 \code{\link[=espn_mbb_positions]{espn_mbb_positions()}},
 \code{\link[=espn_mbb_powerindex]{espn_mbb_powerindex()}},
 \code{\link[=espn_mbb_rankings]{espn_mbb_rankings()}},
 \code{\link[=espn_mbb_scoreboard]{espn_mbb_scoreboard()}},
 \code{\link[=espn_mbb_season_awards]{espn_mbb_season_awards()}},
-\code{\link[=espn_mbb_season_group_children]{espn_mbb_season_group_children()}},
-\code{\link[=espn_mbb_season_group_teams]{espn_mbb_season_group_teams()}},
 \code{\link[=espn_mbb_season_groups]{espn_mbb_season_groups()}},
 \code{\link[=espn_mbb_season_info]{espn_mbb_season_info()}},
 \code{\link[=espn_mbb_season_leaders]{espn_mbb_season_leaders()}},
@@ -125,17 +129,13 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_seasons]{espn_mbb_seasons()}},
 \code{\link[=espn_mbb_standings]{espn_mbb_standings()}},
 \code{\link[=espn_mbb_team]{espn_mbb_team()}},
-\code{\link[=espn_mbb_team_box]{espn_mbb_team_box()}},
 \code{\link[=espn_mbb_team_current_roster]{espn_mbb_team_current_roster()}},
 \code{\link[=espn_mbb_team_injuries]{espn_mbb_team_injuries()}},
-\code{\link[=espn_mbb_team_leaders]{espn_mbb_team_leaders()}},
 \code{\link[=espn_mbb_team_news]{espn_mbb_team_news()}},
 \code{\link[=espn_mbb_team_odds_records]{espn_mbb_team_odds_records()}},
 \code{\link[=espn_mbb_team_record]{espn_mbb_team_record()}},
 \code{\link[=espn_mbb_team_record_detail]{espn_mbb_team_record_detail()}},
-\code{\link[=espn_mbb_team_roster]{espn_mbb_team_roster()}},
 \code{\link[=espn_mbb_team_schedule]{espn_mbb_team_schedule()}},
-\code{\link[=espn_mbb_team_season_profile]{espn_mbb_team_season_profile()}},
 \code{\link[=espn_mbb_team_season_roster]{espn_mbb_team_season_roster()}},
 \code{\link[=espn_mbb_team_season_statistics]{espn_mbb_team_season_statistics()}},
 \code{\link[=espn_mbb_team_stats]{espn_mbb_team_stats()}},

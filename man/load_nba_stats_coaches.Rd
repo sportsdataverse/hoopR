@@ -156,71 +156,83 @@ the season data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per coach-team-season.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   coach_id \tab integer \tab Unique coach identifier. \cr
-   first_name \tab character \tab Coach's first name. \cr
-   last_name \tab character \tab Coach's last name. \cr
-   coach_name \tab character \tab Coach's full name. \cr
-   is_assistant \tab integer \tab Whether the coach is an assistant coach (1) or head coach (0). \cr
-   coach_type \tab character \tab Coaching role (e.g. 'Head Coach', 'Assistant Coach'). \cr
-   sort_sequence \tab integer \tab Display sort order within the coaching staff. \cr
-   sub_sort_sequence \tab integer \tab Secondary display sort order within the coaching staff. \cr
-   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
-}
+Returns a \code{hoopR_data} tibble with one row per coach-team-season.
 
-Returns a \code{hoopR_data} tibble of NBA draft picks.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   person_id \tab integer \tab Unique player identifier. \cr
-   player_name \tab character \tab Player's name. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   round_number \tab integer \tab Draft round number. \cr
-   round_pick \tab integer \tab Pick number within the round. \cr
-   overall_pick \tab integer \tab Overall pick number. \cr
-   draft_type \tab character \tab Draft type ('Draft', 'Undrafted', etc.). \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   team_city \tab character \tab Team city or region. \cr
-   team_name \tab character \tab Full team display name. \cr
-   team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
-   organization \tab character \tab Player's college / organization prior to the draft. \cr
-   organization_type \tab character \tab Type of organization (e.g. college, international). \cr
-   player_profile_flag \tab integer \tab Player profile flag. \cr
-}
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      coach_id \tab integer \tab Unique coach identifier. \cr
+      first_name \tab character \tab Coach's first name. \cr
+      last_name \tab character \tab Coach's last name. \cr
+      coach_name \tab character \tab Coach's full name. \cr
+      is_assistant \tab integer \tab Whether the coach is an assistant coach (1) or head coach (0). \cr
+      coach_type \tab character \tab Coaching role (e.g. 'Head Coach', 'Assistant Coach'). \cr
+      sort_sequence \tab integer \tab Display sort order within the coaching staff. \cr
+      sub_sort_sequence \tab integer \tab Secondary display sort order within the coaching staff. \cr
+      season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a \code{hoopR_data} tibble with one row per play-by-play action.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   action_number \tab integer \tab Sequential play-by-play action number within the game. \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   home_player_1 \tab integer \tab Home on-court lineup slot 1 player identifier. \cr
-   home_player_2 \tab integer \tab Home on-court lineup slot 2 player identifier. \cr
-   home_player_3 \tab integer \tab Home on-court lineup slot 3 player identifier. \cr
-   home_player_4 \tab integer \tab Home on-court lineup slot 4 player identifier. \cr
-   home_player_5 \tab integer \tab Home on-court lineup slot 5 player identifier. \cr
-   away_player_1 \tab integer \tab Away on-court lineup slot 1 player identifier. \cr
-   away_player_2 \tab integer \tab Away on-court lineup slot 2 player identifier. \cr
-   away_player_3 \tab integer \tab Away on-court lineup slot 3 player identifier. \cr
-   away_player_4 \tab integer \tab Away on-court lineup slot 4 player identifier. \cr
-   away_player_5 \tab integer \tab Away on-court lineup slot 5 player identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-}
+Returns a \code{hoopR_data} tibble of NBA draft picks.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      person_id \tab integer \tab Unique player identifier. \cr
+      player_name \tab character \tab Player's name. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      round_number \tab integer \tab Draft round number. \cr
+      round_pick \tab integer \tab Pick number within the round. \cr
+      overall_pick \tab integer \tab Overall pick number. \cr
+      draft_type \tab character \tab Draft type ('Draft', 'Undrafted', etc.). \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      team_city \tab character \tab Team city or region. \cr
+      team_name \tab character \tab Full team display name. \cr
+      team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
+      organization \tab character \tab Player's college / organization prior to the draft. \cr
+      organization_type \tab character \tab Type of organization (e.g. college, international). \cr
+      player_profile_flag \tab integer \tab Player profile flag. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a \code{hoopR_data} tibble with one row per play-by-play action.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      action_number \tab integer \tab Sequential play-by-play action number within the game. \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      home_player_1 \tab integer \tab Home on-court lineup slot 1 player identifier. \cr
+      home_player_2 \tab integer \tab Home on-court lineup slot 2 player identifier. \cr
+      home_player_3 \tab integer \tab Home on-court lineup slot 3 player identifier. \cr
+      home_player_4 \tab integer \tab Home on-court lineup slot 4 player identifier. \cr
+      home_player_5 \tab integer \tab Home on-court lineup slot 5 player identifier. \cr
+      away_player_1 \tab integer \tab Away on-court lineup slot 1 player identifier. \cr
+      away_player_2 \tab integer \tab Away on-court lineup slot 2 player identifier. \cr
+      away_player_3 \tab integer \tab Away on-court lineup slot 3 player identifier. \cr
+      away_player_4 \tab integer \tab Away on-court lineup slot 4 player identifier. \cr
+      away_player_5 \tab integer \tab Away on-court lineup slot 5 player identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble with one row per inactive
-athlete-game pair.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player_id \tab integer \tab Unique player identifier. \cr
-   first_name \tab character \tab Player's first name. \cr
-   last_name \tab character \tab Player's last name. \cr
-   jersey_num \tab character \tab Jersey number worn by the player. \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   team_city \tab character \tab Team city or region. \cr
-   team_name \tab character \tab Full team display name. \cr
-   team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   game_id \tab character \tab Unique game identifier. \cr
-}
+athlete-game pair.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player_id \tab integer \tab Unique player identifier. \cr
+      first_name \tab character \tab Player's first name. \cr
+      last_name \tab character \tab Player's last name. \cr
+      jersey_num \tab character \tab Jersey number worn by the player. \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      team_city \tab character \tab Team city or region. \cr
+      team_name \tab character \tab Full team display name. \cr
+      team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      game_id \tab character \tab Unique game identifier. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble of 5-man lineup season stats (182
 columns: standard box-score rate/counting stats plus the 5 player-id
@@ -238,131 +250,140 @@ Returns a \code{hoopR_data} tibble with one row per official-game pair.\tabular{
    game_id \tab character \tab Unique game identifier. \cr
 }
 
-Returns a \code{hoopR_data} tibble of per-event play-by-play rows.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   order_index \tab integer \tab Play-by-play chronological order index within the game. \cr
-   action_number \tab integer \tab Sequential play-by-play action number within the game. \cr
-   clock \tab character \tab Game clock remaining in the period. \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier for the acting team. \cr
-   team_tricode \tab character \tab Three-letter team code. \cr
-   person_id \tab integer \tab Unique player identifier for the acting player. \cr
-   player_name \tab character \tab Acting player's name. \cr
-   player_name_i \tab character \tab Acting player's name with abbreviated first initial. \cr
-   x_legacy \tab integer \tab Legacy X coordinate on the court (0 = basket center). \cr
-   y_legacy \tab integer \tab Legacy Y coordinate on the court (baseline at 0). \cr
-   shot_distance \tab integer \tab Shot distance from the basket, in feet (shot events only). \cr
-   shot_result \tab character \tab Shot result, 'Made' or 'Missed' (shot events only). \cr
-   is_field_goal \tab integer \tab Whether the action is a field goal attempt (1) or not (0). \cr
-   score_home \tab character \tab Home team score after the play. \cr
-   score_away \tab character \tab Away team score after the play. \cr
-   points_total \tab integer \tab Points scored on the action, if any. \cr
-   location \tab character \tab Court location code for the action. \cr
-   description \tab character \tab Text description of the play. \cr
-   action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Missed Shot', 'Rebound'). \cr
-   sub_type \tab character \tab Sub type of the action (e.g. 'Jump Shot', 'Layup'). \cr
-   video_available \tab integer \tab Whether NBA Stats video is available for the action. \cr
-   shot_value \tab integer \tab Points the shot was worth, 2 or 3 (shot events only). \cr
-   action_id \tab integer \tab Unique play-by-play action identifier. \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   seconds_remaining \tab numeric \tab Seconds remaining in the period at the action. \cr
-   event_type \tab character \tab Normalized event type label. \cr
-   is_made_shot \tab logical \tab Whether the action is a made shot. \cr
-   is_missed_shot \tab logical \tab Whether the action is a missed shot. \cr
-   is_free_throw \tab logical \tab Whether the action is a free throw. \cr
-   is_rebound \tab logical \tab Whether the action is a rebound. \cr
-   is_turnover \tab logical \tab Whether the action is a turnover. \cr
-   is_foul \tab logical \tab Whether the action is a foul. \cr
-   is_substitution \tab logical \tab Whether the action is a substitution. \cr
-   is_jump_ball \tab logical \tab Whether the action is a jump ball. \cr
-   is_timeout \tab logical \tab Whether the action is a timeout. \cr
-   is_period \tab logical \tab Whether the action is a period-boundary marker. \cr
-   possession_number \tab integer \tab Sequential possession number within the game. \cr
-   off_player_1 \tab integer \tab Offensive on-court lineup slot 1 player identifier. \cr
-   off_player_2 \tab integer \tab Offensive on-court lineup slot 2 player identifier. \cr
-   off_player_3 \tab integer \tab Offensive on-court lineup slot 3 player identifier. \cr
-   off_player_4 \tab integer \tab Offensive on-court lineup slot 4 player identifier. \cr
-   off_player_5 \tab integer \tab Offensive on-court lineup slot 5 player identifier. \cr
-   def_player_1 \tab integer \tab Defensive on-court lineup slot 1 player identifier. \cr
-   def_player_2 \tab integer \tab Defensive on-court lineup slot 2 player identifier. \cr
-   def_player_3 \tab integer \tab Defensive on-court lineup slot 3 player identifier. \cr
-   def_player_4 \tab integer \tab Defensive on-court lineup slot 4 player identifier. \cr
-   def_player_5 \tab integer \tab Defensive on-court lineup slot 5 player identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-}
+Returns a \code{hoopR_data} tibble of per-event play-by-play rows.
 
-Returns a \code{hoopR_data} tibble with one row per athlete-game pair.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   team_name \tab character \tab Full team display name. \cr
-   team_tricode \tab character \tab Three-letter team code. \cr
-   side \tab character \tab Whether the team was 'home' or 'away'. \cr
-   person_id \tab integer \tab Unique player identifier. \cr
-   first_name \tab character \tab Player's first name. \cr
-   family_name \tab character \tab Player's family (last) name. \cr
-   name_i \tab character \tab Player's name with abbreviated first initial. \cr
-   player_slug \tab character \tab URL-safe player name slug. \cr
-   position \tab character \tab Player's roster position. \cr
-   comment \tab character \tab Reason the player did not play, if applicable (e.g. 'DND - Injury'). \cr
-   jersey_num \tab character \tab Jersey number worn by the player. \cr
-   minutes \tab character \tab Minutes played, as an \code{MM:SS} string. \cr
-   field_goals_made \tab integer \tab Field goals made. \cr
-   field_goals_attempted \tab integer \tab Field goal attempts. \cr
-   field_goals_percentage \tab numeric \tab Field goal percentage (0-1). \cr
-   three_pointers_made \tab integer \tab Three-point field goals made. \cr
-   three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
-   three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1). \cr
-   free_throws_made \tab integer \tab Free throws made. \cr
-   free_throws_attempted \tab integer \tab Free throw attempts. \cr
-   free_throws_percentage \tab numeric \tab Free throw percentage (0-1). \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds. \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds. \cr
-   rebounds_total \tab integer \tab Total rebounds. \cr
-   assists \tab integer \tab Assists. \cr
-   steals \tab integer \tab Steals. \cr
-   blocks \tab integer \tab Blocks. \cr
-   turnovers \tab integer \tab Turnovers. \cr
-   fouls_personal \tab integer \tab Personal fouls. \cr
-   points \tab integer \tab Points scored. \cr
-   plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-}
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      order_index \tab integer \tab Play-by-play chronological order index within the game. \cr
+      action_number \tab integer \tab Sequential play-by-play action number within the game. \cr
+      clock \tab character \tab Game clock remaining in the period. \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier for the acting team. \cr
+      team_tricode \tab character \tab Three-letter team code. \cr
+      person_id \tab integer \tab Unique player identifier for the acting player. \cr
+      player_name \tab character \tab Acting player's name. \cr
+      player_name_i \tab character \tab Acting player's name with abbreviated first initial. \cr
+      x_legacy \tab integer \tab Legacy X coordinate on the court (0 = basket center). \cr
+      y_legacy \tab integer \tab Legacy Y coordinate on the court (baseline at 0). \cr
+      shot_distance \tab integer \tab Shot distance from the basket, in feet (shot events only). \cr
+      shot_result \tab character \tab Shot result, 'Made' or 'Missed' (shot events only). \cr
+      is_field_goal \tab integer \tab Whether the action is a field goal attempt (1) or not (0). \cr
+      score_home \tab character \tab Home team score after the play. \cr
+      score_away \tab character \tab Away team score after the play. \cr
+      points_total \tab integer \tab Points scored on the action, if any. \cr
+      location \tab character \tab Court location code for the action. \cr
+      description \tab character \tab Text description of the play. \cr
+      action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Missed Shot', 'Rebound'). \cr
+      sub_type \tab character \tab Sub type of the action (e.g. 'Jump Shot', 'Layup'). \cr
+      video_available \tab integer \tab Whether NBA Stats video is available for the action. \cr
+      shot_value \tab integer \tab Points the shot was worth, 2 or 3 (shot events only). \cr
+      action_id \tab integer \tab Unique play-by-play action identifier. \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      seconds_remaining \tab numeric \tab Seconds remaining in the period at the action. \cr
+      event_type \tab character \tab Normalized event type label. \cr
+      is_made_shot \tab logical \tab Whether the action is a made shot. \cr
+      is_missed_shot \tab logical \tab Whether the action is a missed shot. \cr
+      is_free_throw \tab logical \tab Whether the action is a free throw. \cr
+      is_rebound \tab logical \tab Whether the action is a rebound. \cr
+      is_turnover \tab logical \tab Whether the action is a turnover. \cr
+      is_foul \tab logical \tab Whether the action is a foul. \cr
+      is_substitution \tab logical \tab Whether the action is a substitution. \cr
+      is_jump_ball \tab logical \tab Whether the action is a jump ball. \cr
+      is_timeout \tab logical \tab Whether the action is a timeout. \cr
+      is_period \tab logical \tab Whether the action is a period-boundary marker. \cr
+      possession_number \tab integer \tab Sequential possession number within the game. \cr
+      off_player_1 \tab integer \tab Offensive on-court lineup slot 1 player identifier. \cr
+      off_player_2 \tab integer \tab Offensive on-court lineup slot 2 player identifier. \cr
+      off_player_3 \tab integer \tab Offensive on-court lineup slot 3 player identifier. \cr
+      off_player_4 \tab integer \tab Offensive on-court lineup slot 4 player identifier. \cr
+      off_player_5 \tab integer \tab Offensive on-court lineup slot 5 player identifier. \cr
+      def_player_1 \tab integer \tab Defensive on-court lineup slot 1 player identifier. \cr
+      def_player_2 \tab integer \tab Defensive on-court lineup slot 2 player identifier. \cr
+      def_player_3 \tab integer \tab Defensive on-court lineup slot 3 player identifier. \cr
+      def_player_4 \tab integer \tab Defensive on-court lineup slot 4 player identifier. \cr
+      def_player_5 \tab integer \tab Defensive on-court lineup slot 5 player identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a \code{hoopR_data} tibble of per-athlete per-game log rows.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season_id \tab character \tab Unique season identifier string. \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
-   team_name \tab character \tab Full team display name. \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   game_date \tab character \tab Date the game was played, as an ISO 'YYYY-MM-DD' string. \cr
-   matchup \tab character \tab Matchup string, e.g. 'BOS vs. NYK' or 'BOS @ NYK'. \cr
-   wl \tab character \tab Game result, 'W' or 'L'. \cr
-   min \tab integer \tab Minutes played. \cr
-   fgm \tab integer \tab Field goals made. \cr
-   fga \tab integer \tab Field goal attempts. \cr
-   fg_pct \tab numeric \tab Field goal percentage (0-1). \cr
-   fg3m \tab integer \tab Three-point field goals made. \cr
-   fg3a \tab integer \tab Three-point field goal attempts. \cr
-   fg3_pct \tab numeric \tab Three-point field goal percentage (0-1). \cr
-   ftm \tab integer \tab Free throws made. \cr
-   fta \tab integer \tab Free throw attempts. \cr
-   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
-   oreb \tab integer \tab Offensive rebounds. \cr
-   dreb \tab integer \tab Defensive rebounds. \cr
-   reb \tab integer \tab Total rebounds. \cr
-   ast \tab integer \tab Assists. \cr
-   stl \tab integer \tab Steals. \cr
-   blk \tab integer \tab Blocks. \cr
-   tov \tab integer \tab Turnovers. \cr
-   pf \tab integer \tab Personal fouls. \cr
-   pts \tab integer \tab Points scored. \cr
-   plus_minus \tab integer \tab Plus/minus point differential while on court. \cr
-   video_available \tab integer \tab Whether NBA Stats video is available for the game. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
-}
+Returns a \code{hoopR_data} tibble with one row per athlete-game pair.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      team_name \tab character \tab Full team display name. \cr
+      team_tricode \tab character \tab Three-letter team code. \cr
+      side \tab character \tab Whether the team was 'home' or 'away'. \cr
+      person_id \tab integer \tab Unique player identifier. \cr
+      first_name \tab character \tab Player's first name. \cr
+      family_name \tab character \tab Player's family (last) name. \cr
+      name_i \tab character \tab Player's name with abbreviated first initial. \cr
+      player_slug \tab character \tab URL-safe player name slug. \cr
+      position \tab character \tab Player's roster position. \cr
+      comment \tab character \tab Reason the player did not play, if applicable (e.g. 'DND - Injury'). \cr
+      jersey_num \tab character \tab Jersey number worn by the player. \cr
+      minutes \tab character \tab Minutes played, as an \code{MM:SS} string. \cr
+      field_goals_made \tab integer \tab Field goals made. \cr
+      field_goals_attempted \tab integer \tab Field goal attempts. \cr
+      field_goals_percentage \tab numeric \tab Field goal percentage (0-1). \cr
+      three_pointers_made \tab integer \tab Three-point field goals made. \cr
+      three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1). \cr
+      free_throws_made \tab integer \tab Free throws made. \cr
+      free_throws_attempted \tab integer \tab Free throw attempts. \cr
+      free_throws_percentage \tab numeric \tab Free throw percentage (0-1). \cr
+      rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+      rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+      rebounds_total \tab integer \tab Total rebounds. \cr
+      assists \tab integer \tab Assists. \cr
+      steals \tab integer \tab Steals. \cr
+      blocks \tab integer \tab Blocks. \cr
+      turnovers \tab integer \tab Turnovers. \cr
+      fouls_personal \tab integer \tab Personal fouls. \cr
+      points \tab integer \tab Points scored. \cr
+      plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a \code{hoopR_data} tibble of per-athlete per-game log rows.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season_id \tab character \tab Unique season identifier string. \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
+      team_name \tab character \tab Full team display name. \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_date \tab character \tab Date the game was played, as an ISO 'YYYY-MM-DD' string. \cr
+      matchup \tab character \tab Matchup string, e.g. 'BOS vs. NYK' or 'BOS @ NYK'. \cr
+      wl \tab character \tab Game result, 'W' or 'L'. \cr
+      min \tab integer \tab Minutes played. \cr
+      fgm \tab integer \tab Field goals made. \cr
+      fga \tab integer \tab Field goal attempts. \cr
+      fg_pct \tab numeric \tab Field goal percentage (0-1). \cr
+      fg3m \tab integer \tab Three-point field goals made. \cr
+      fg3a \tab integer \tab Three-point field goal attempts. \cr
+      fg3_pct \tab numeric \tab Three-point field goal percentage (0-1). \cr
+      ftm \tab integer \tab Free throws made. \cr
+      fta \tab integer \tab Free throw attempts. \cr
+      ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+      oreb \tab integer \tab Offensive rebounds. \cr
+      dreb \tab integer \tab Defensive rebounds. \cr
+      reb \tab integer \tab Total rebounds. \cr
+      ast \tab integer \tab Assists. \cr
+      stl \tab integer \tab Steals. \cr
+      blk \tab integer \tab Blocks. \cr
+      tov \tab integer \tab Turnovers. \cr
+      pf \tab integer \tab Personal fouls. \cr
+      pts \tab integer \tab Points scored. \cr
+      plus_minus \tab integer \tab Plus/minus point differential while on court. \cr
+      video_available \tab integer \tab Whether NBA Stats video is available for the game. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble of player season stats (210
 columns: rank fields, bio fields, and standard/rank box-score
@@ -371,108 +392,120 @@ rate/counting stats for the season). See
 or the \code{player_stats_base} table of \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash()}} for
 the equivalent parameter-cube asset.
 
-Returns a \code{hoopR_data} tibble with one row per possession.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   possession_number \tab integer \tab Sequential possession number within the game. \cr
-   offense_team_id \tab integer \tab Team identifier for the team on offense. \cr
-   defense_team_id \tab integer \tab Team identifier for the team on defense. \cr
-   start_order_index \tab integer \tab Play-by-play order index at the start of the possession. \cr
-   end_order_index \tab integer \tab Play-by-play order index at the end of the possession. \cr
-   start_seconds_remaining \tab numeric \tab Seconds remaining in the period at possession start. \cr
-   end_seconds_remaining \tab numeric \tab Seconds remaining in the period at possession end. \cr
-   points \tab integer \tab Points scored on the possession. \cr
-   is_second_chance \tab logical \tab Whether the possession followed an offensive rebound. \cr
-   number_in_period \tab integer \tab Sequential possession number within the period. \cr
-   possession_start_type \tab character \tab How the possession started (e.g. 'OffDeadball', 'OffRebound'). \cr
-   count_as_possession \tab logical \tab Whether the event counts as a scoreable possession. \cr
-   fg2a \tab integer \tab 2-point field goal attempts by the lineup. \cr
-   fg2m \tab integer \tab 2-point field goals made by the lineup. \cr
-   fg3a \tab integer \tab 3-point field goal attempts by the lineup. \cr
-   fg3m \tab integer \tab 3-point field goals made by the lineup. \cr
-   fta \tab integer \tab Free throw attempts by the lineup. \cr
-   ftm \tab integer \tab Free throws made by the lineup. \cr
-   oreb \tab integer \tab Offensive rebounds. \cr
-   dreb \tab integer \tab Defensive rebounds. \cr
-   tov \tab integer \tab Turnovers. \cr
-   off_player_1 \tab integer \tab Offensive lineup slot 1 player identifier. \cr
-   off_player_2 \tab integer \tab Offensive lineup slot 2 player identifier. \cr
-   off_player_3 \tab integer \tab Offensive lineup slot 3 player identifier. \cr
-   off_player_4 \tab integer \tab Offensive lineup slot 4 player identifier. \cr
-   off_player_5 \tab integer \tab Offensive lineup slot 5 player identifier. \cr
-   def_player_1 \tab integer \tab Defensive lineup slot 1 player identifier. \cr
-   def_player_2 \tab integer \tab Defensive lineup slot 2 player identifier. \cr
-   def_player_3 \tab integer \tab Defensive lineup slot 3 player identifier. \cr
-   def_player_4 \tab integer \tab Defensive lineup slot 4 player identifier. \cr
-   def_player_5 \tab integer \tab Defensive lineup slot 5 player identifier. \cr
-   lineup_source \tab character \tab Provenance of the lineup join (e.g. 'game_lineups', 'derived'). \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-}
+Returns a \code{hoopR_data} tibble with one row per possession.
 
-Returns a \code{hoopR_data} tibble with one row per athlete-team-season.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   league_id \tab character \tab League identifier ('00' for NBA). \cr
-   player \tab character \tab Player's full name. \cr
-   nickname \tab character \tab Player's nickname. \cr
-   player_slug \tab character \tab URL-safe player name slug. \cr
-   num \tab character \tab Jersey number worn by the player. \cr
-   position \tab character \tab Player's roster position. \cr
-   height \tab character \tab Player's listed height (feet-inches). \cr
-   weight \tab character \tab Player's listed weight (lbs). \cr
-   birth_date \tab character \tab Player's date of birth. \cr
-   age \tab numeric \tab Player's age. \cr
-   exp \tab character \tab Years of NBA experience ('R' for rookie). \cr
-   school \tab character \tab Player's last college / school attended. \cr
-   player_id \tab integer \tab Unique player identifier. \cr
-   how_acquired \tab character \tab How the player joined the roster (e.g. 'Draft', 'Trade'). \cr
-   supplemental_status \tab integer \tab Roster supplemental / two-way status flag. \cr
-   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
-}
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      possession_number \tab integer \tab Sequential possession number within the game. \cr
+      offense_team_id \tab integer \tab Team identifier for the team on offense. \cr
+      defense_team_id \tab integer \tab Team identifier for the team on defense. \cr
+      start_order_index \tab integer \tab Play-by-play order index at the start of the possession. \cr
+      end_order_index \tab integer \tab Play-by-play order index at the end of the possession. \cr
+      start_seconds_remaining \tab numeric \tab Seconds remaining in the period at possession start. \cr
+      end_seconds_remaining \tab numeric \tab Seconds remaining in the period at possession end. \cr
+      points \tab integer \tab Points scored on the possession. \cr
+      is_second_chance \tab logical \tab Whether the possession followed an offensive rebound. \cr
+      number_in_period \tab integer \tab Sequential possession number within the period. \cr
+      possession_start_type \tab character \tab How the possession started (e.g. 'OffDeadball', 'OffRebound'). \cr
+      count_as_possession \tab logical \tab Whether the event counts as a scoreable possession. \cr
+      fg2a \tab integer \tab 2-point field goal attempts by the lineup. \cr
+      fg2m \tab integer \tab 2-point field goals made by the lineup. \cr
+      fg3a \tab integer \tab 3-point field goal attempts by the lineup. \cr
+      fg3m \tab integer \tab 3-point field goals made by the lineup. \cr
+      fta \tab integer \tab Free throw attempts by the lineup. \cr
+      ftm \tab integer \tab Free throws made by the lineup. \cr
+      oreb \tab integer \tab Offensive rebounds. \cr
+      dreb \tab integer \tab Defensive rebounds. \cr
+      tov \tab integer \tab Turnovers. \cr
+      off_player_1 \tab integer \tab Offensive lineup slot 1 player identifier. \cr
+      off_player_2 \tab integer \tab Offensive lineup slot 2 player identifier. \cr
+      off_player_3 \tab integer \tab Offensive lineup slot 3 player identifier. \cr
+      off_player_4 \tab integer \tab Offensive lineup slot 4 player identifier. \cr
+      off_player_5 \tab integer \tab Offensive lineup slot 5 player identifier. \cr
+      def_player_1 \tab integer \tab Defensive lineup slot 1 player identifier. \cr
+      def_player_2 \tab integer \tab Defensive lineup slot 2 player identifier. \cr
+      def_player_3 \tab integer \tab Defensive lineup slot 3 player identifier. \cr
+      def_player_4 \tab integer \tab Defensive lineup slot 4 player identifier. \cr
+      def_player_5 \tab integer \tab Defensive lineup slot 5 player identifier. \cr
+      lineup_source \tab character \tab Provenance of the lineup join (e.g. 'game_lineups', 'derived'). \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a \code{hoopR_data} tibble with one row per athlete-team-season.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      league_id \tab character \tab League identifier ('00' for NBA). \cr
+      player \tab character \tab Player's full name. \cr
+      nickname \tab character \tab Player's nickname. \cr
+      player_slug \tab character \tab URL-safe player name slug. \cr
+      num \tab character \tab Jersey number worn by the player. \cr
+      position \tab character \tab Player's roster position. \cr
+      height \tab character \tab Player's listed height (feet-inches). \cr
+      weight \tab character \tab Player's listed weight (lbs). \cr
+      birth_date \tab character \tab Player's date of birth. \cr
+      age \tab numeric \tab Player's age. \cr
+      exp \tab character \tab Years of NBA experience ('R' for rookie). \cr
+      school \tab character \tab Player's last college / school attended. \cr
+      player_id \tab integer \tab Unique player identifier. \cr
+      how_acquired \tab character \tab How the player joined the roster (e.g. 'Draft', 'Trade'). \cr
+      supplemental_status \tab integer \tab Roster supplemental / two-way status flag. \cr
+      season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble of per-season schedules, one row per
-game with the home/away sides pre-joined into \verb{home_*} / \verb{away_*} columns.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
-   game_date \tab character \tab Date the game was played, as an ISO 'YYYY-MM-DD' string. \cr
-   matchup \tab character \tab Matchup string, home side first (e.g. 'BOS vs. NYK'). \cr
-   home_team_id \tab integer \tab Unique NBA Stats team identifier for the home team. \cr
-   home_team_abbreviation \tab character \tab Home team abbreviation. \cr
-   home_team_name \tab character \tab Home team full name. \cr
-   home_pts \tab integer \tab Points scored by the home team. \cr
-   home_wl \tab character \tab Home team result, 'W' or 'L'. \cr
-   away_team_id \tab integer \tab Unique NBA Stats team identifier for the away team. \cr
-   away_team_abbreviation \tab character \tab Away team abbreviation. \cr
-   away_team_name \tab character \tab Away team full name. \cr
-   away_pts \tab integer \tab Points scored by the away team. \cr
-   away_wl \tab character \tab Away team result, 'W' or 'L'. \cr
-}
+game with the home/away sides pre-joined into \verb{home_*} / \verb{away_*} columns.
 
-Returns a \code{hoopR_data} tibble with one row per shot attempt.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   clock \tab character \tab Game clock remaining in the period. \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier for the shooting team. \cr
-   team_tricode \tab character \tab Three-letter team code (e.g. 'BOS' / 'NYK'). \cr
-   person_id \tab integer \tab Unique player identifier for the shooter. \cr
-   player_name \tab character \tab Shooter's name. \cr
-   action_type \tab character \tab Action type label ('Made Shot' or 'Missed Shot'). \cr
-   sub_type \tab character \tab Shot sub type (e.g. 'Jump Shot', 'Layup', 'Dunk'). \cr
-   shot_result \tab character \tab Shot result, 'Made' or 'Missed'. \cr
-   shot_value \tab integer \tab Points the shot was worth (2 or 3). \cr
-   shot_distance \tab integer \tab Shot distance from the basket, in feet. \cr
-   x_legacy \tab integer \tab Legacy X coordinate on the court (0 = basket center). \cr
-   y_legacy \tab integer \tab Legacy Y coordinate on the court (baseline at 0). \cr
-   description \tab character \tab Text description of the play. \cr
-   score_home \tab character \tab Home team score after the play. \cr
-   score_away \tab character \tab Away team score after the play. \cr
-}
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
+      game_date \tab character \tab Date the game was played, as an ISO 'YYYY-MM-DD' string. \cr
+      matchup \tab character \tab Matchup string, home side first (e.g. 'BOS vs. NYK'). \cr
+      home_team_id \tab integer \tab Unique NBA Stats team identifier for the home team. \cr
+      home_team_abbreviation \tab character \tab Home team abbreviation. \cr
+      home_team_name \tab character \tab Home team full name. \cr
+      home_pts \tab integer \tab Points scored by the home team. \cr
+      home_wl \tab character \tab Home team result, 'W' or 'L'. \cr
+      away_team_id \tab integer \tab Unique NBA Stats team identifier for the away team. \cr
+      away_team_abbreviation \tab character \tab Away team abbreviation. \cr
+      away_team_name \tab character \tab Away team full name. \cr
+      away_pts \tab integer \tab Points scored by the away team. \cr
+      away_wl \tab character \tab Away team result, 'W' or 'L'. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a \code{hoopR_data} tibble with one row per shot attempt.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      clock \tab character \tab Game clock remaining in the period. \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier for the shooting team. \cr
+      team_tricode \tab character \tab Three-letter team code (e.g. 'BOS' / 'NYK'). \cr
+      person_id \tab integer \tab Unique player identifier for the shooter. \cr
+      player_name \tab character \tab Shooter's name. \cr
+      action_type \tab character \tab Action type label ('Made Shot' or 'Missed Shot'). \cr
+      sub_type \tab character \tab Shot sub type (e.g. 'Jump Shot', 'Layup', 'Dunk'). \cr
+      shot_result \tab character \tab Shot result, 'Made' or 'Missed'. \cr
+      shot_value \tab integer \tab Points the shot was worth (2 or 3). \cr
+      shot_distance \tab integer \tab Shot distance from the basket, in feet. \cr
+      x_legacy \tab integer \tab Legacy X coordinate on the court (0 = basket center). \cr
+      y_legacy \tab integer \tab Legacy Y coordinate on the court (baseline at 0). \cr
+      description \tab character \tab Text description of the play. \cr
+      score_home \tab character \tab Home team score after the play. \cr
+      score_away \tab character \tab Away team score after the play. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble of team standings (94 columns: win/
 loss splits by home/road/conference/division/last-10, streak fields,
@@ -481,35 +514,38 @@ and points-per-game aggregates). See
 \code{standings} table of \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash()}} is the equivalent
 parameter-cube asset (same underlying \code{leaguestandingsv3} endpoint).
 
-Returns a \code{hoopR_data} tibble with one row per team-game pair.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
-   team_name \tab character \tab Full team display name. \cr
-   team_tricode \tab character \tab Three-letter team code. \cr
-   side \tab character \tab Whether the team was 'home' or 'away'. \cr
-   minutes \tab character \tab Total minutes played, as an \code{MM:SS} string. \cr
-   field_goals_made \tab integer \tab Field goals made. \cr
-   field_goals_attempted \tab integer \tab Field goal attempts. \cr
-   field_goals_percentage \tab numeric \tab Field goal percentage (0-1). \cr
-   three_pointers_made \tab integer \tab Three-point field goals made. \cr
-   three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
-   three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1). \cr
-   free_throws_made \tab integer \tab Free throws made. \cr
-   free_throws_attempted \tab integer \tab Free throw attempts. \cr
-   free_throws_percentage \tab numeric \tab Free throw percentage (0-1). \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds. \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds. \cr
-   rebounds_total \tab integer \tab Total rebounds. \cr
-   assists \tab integer \tab Assists. \cr
-   steals \tab integer \tab Steals. \cr
-   blocks \tab integer \tab Blocks. \cr
-   turnovers \tab integer \tab Turnovers. \cr
-   fouls_personal \tab integer \tab Personal fouls. \cr
-   points \tab integer \tab Points scored. \cr
-   plus_minus_points \tab numeric \tab Plus/minus point differential. \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-}
+Returns a \code{hoopR_data} tibble with one row per team-game pair.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+      team_name \tab character \tab Full team display name. \cr
+      team_tricode \tab character \tab Three-letter team code. \cr
+      side \tab character \tab Whether the team was 'home' or 'away'. \cr
+      minutes \tab character \tab Total minutes played, as an \code{MM:SS} string. \cr
+      field_goals_made \tab integer \tab Field goals made. \cr
+      field_goals_attempted \tab integer \tab Field goal attempts. \cr
+      field_goals_percentage \tab numeric \tab Field goal percentage (0-1). \cr
+      three_pointers_made \tab integer \tab Three-point field goals made. \cr
+      three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1). \cr
+      free_throws_made \tab integer \tab Free throws made. \cr
+      free_throws_attempted \tab integer \tab Free throw attempts. \cr
+      free_throws_percentage \tab numeric \tab Free throw percentage (0-1). \cr
+      rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+      rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+      rebounds_total \tab integer \tab Total rebounds. \cr
+      assists \tab integer \tab Assists. \cr
+      steals \tab integer \tab Steals. \cr
+      blocks \tab integer \tab Blocks. \cr
+      turnovers \tab integer \tab Turnovers. \cr
+      fouls_personal \tab integer \tab Personal fouls. \cr
+      points \tab integer \tab Points scored. \cr
+      plus_minus_points \tab numeric \tab Plus/minus point differential. \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble of team season stats (178 columns:
 rank fields plus standard/rank box-score rate/counting stats for the

@@ -7,19 +7,22 @@
 rotowire_injuries()
 }
 \value{
-A \code{hoopR_data} tibble with one row per injured player:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player_id \tab character \tab RotoWire player id. \cr
-   player \tab character \tab Player name. \cr
-   first_name \tab character \tab First name. \cr
-   last_name \tab character \tab Last name. \cr
-   team \tab character \tab Team abbreviation. \cr
-   position \tab character \tab Position. \cr
-   injury \tab character \tab Injury (body part / description). \cr
-   status \tab character \tab Injury designation (Out, GTD, Questionable, ...). \cr
-   return_date \tab character \tab Projected return (\code{NA} unless a subscriber). \cr
-   url \tab character \tab RotoWire player page URL. \cr
-}
+A \code{hoopR_data} tibble with one row per injured player:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player_id \tab character \tab RotoWire player id. \cr
+      player \tab character \tab Player name. \cr
+      first_name \tab character \tab First name. \cr
+      last_name \tab character \tab Last name. \cr
+      team \tab character \tab Team abbreviation. \cr
+      position \tab character \tab Position. \cr
+      injury \tab character \tab Injury (body part / description). \cr
+      status \tab character \tab Injury designation (Out, GTD, Questionable, ...). \cr
+      return_date \tab character \tab Projected return (\code{NA} unless a subscriber). \cr
+      url \tab character \tab RotoWire player page URL. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get the current NBA injury report from

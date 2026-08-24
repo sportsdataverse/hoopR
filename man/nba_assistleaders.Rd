@@ -29,14 +29,9 @@ nba_assistleaders(
 \value{
 Returns a named list of data frames: AssistLeaders
 
-\strong{AssistLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   AST \tab character \tab Assists. \cr
-}
+\strong{AssistLeaders}
+
+Columns as documented in the shared \link{nba_assistleaders_assistleaders_schema} table.
 }
 \description{
 \strong{Get NBA Stats API Assist Leaders}

@@ -3,27 +3,29 @@
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name     |types   |description                                           |
-#'    |:------------|:-------|:-----------------------------------------------------|
-#'    |season       |numeric |Season identifier (4-digit year or 'YYYY-YY' string). |
-#'    |efficiency   |numeric |Efficiency.                                           |
-#'    |tempo        |numeric |Tempo.                                                |
-#'    |e_fg_pct     |numeric |E field goals percentage (0-1 decimal).               |
-#'    |to_pct       |numeric |To percentage (0-1 decimal).                          |
-#'    |or_pct       |numeric |Or percentage (0-1 decimal).                          |
-#'    |ft_rate      |numeric |Ft rate.                                              |
-#'    |fg_2_pct     |numeric |Field goals 2 percentage (0-1 decimal).               |
-#'    |fg_3_pct     |numeric |Field goals 3 percentage (0-1 decimal).               |
-#'    |fg_3a_pct    |numeric |Field goals 3a percentage (0-1 decimal).              |
-#'    |ft_pct       |numeric |Free throw percentage (0-1).                          |
-#'    |a_pct        |numeric |A percentage (0-1 decimal).                           |
-#'    |blk_pct      |numeric |Blocks percentage (0-1 decimal).                      |
-#'    |stl_pct      |numeric |Steals percentage (0-1 decimal).                      |
-#'    |non_stl_pct  |numeric |Non steals percentage (0-1 decimal).                  |
-#'    |avg_hgt      |numeric |Avg hgt.                                              |
-#'    |continuity   |numeric |Continuity.                                           |
-#'    |home_win_pct |numeric |Home win percentage (0-1 decimal).                    |
-#'    |ppg          |numeric |Points per game.                                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab numeric \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       efficiency \tab numeric \tab Efficiency. \cr
+#'       tempo \tab numeric \tab Tempo. \cr
+#'       e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+#'       to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
+#'       or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+#'       ft_rate \tab numeric \tab Ft rate. \cr
+#'       fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+#'       fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+#'       fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
+#'       ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+#'       a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
+#'       blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+#'       stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+#'       non_stl_pct \tab numeric \tab Non steals percentage (0-1 decimal). \cr
+#'       avg_hgt \tab numeric \tab Avg hgt. \cr
+#'       continuity \tab numeric \tab Continuity. \cr
+#'       home_win_pct \tab numeric \tab Home win percentage (0-1 decimal). \cr
+#'       ppg \tab numeric \tab Points per game. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
@@ -184,19 +186,21 @@ kp_officials <- function(year = most_recent_mbb_season()) {
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name     |types     |description                 |
-#'    |:------------|:---------|:---------------------------|
-#'    |game_number  |integer   |Game number.                |
-#'    |date         |character |Date in YYYY-MM-DD format.  |
-#'    |time_et      |character |Time et.                    |
-#'    |game         |character |Game.                       |
-#'    |location     |character |Location.                   |
-#'    |venue        |character |Venue name.                 |
-#'    |conference   |character |Conference.                 |
-#'    |thrill_score |numeric   |Thrill score.               |
-#'    |referee_name |character |Referee name.               |
-#'    |ref_rank     |numeric   |League/season rank for ref. |
-#'    |year         |numeric   |4-digit year.               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_number \tab integer \tab Game number. \cr
+#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'       time_et \tab character \tab Time et. \cr
+#'       game \tab character \tab Game. \cr
+#'       location \tab character \tab Location. \cr
+#'       venue \tab character \tab Venue name. \cr
+#'       conference \tab character \tab Conference. \cr
+#'       thrill_score \tab numeric \tab Thrill score. \cr
+#'       referee_name \tab character \tab Referee name. \cr
+#'       ref_rank \tab numeric \tab League/season rank for ref. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
@@ -277,22 +281,24 @@ kp_referee <- function(referee, year) {
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name |types     |description                         |
-#'    |:--------|:---------|:-----------------------------------|
-#'    |team     |character |Team-side label or team identifier. |
-#'    |conf     |character |character.                          |
-#'    |hca      |numeric   |Hca.                                |
-#'    |hca_rk   |numeric   |Hca rk.                             |
-#'    |pf       |numeric   |Personal fouls.                     |
-#'    |pf_rk    |numeric   |Pf rk.                              |
-#'    |pts      |numeric   |Points scored.                      |
-#'    |pts_rk   |numeric   |Pts rk.                             |
-#'    |nst      |numeric   |Nst.                                |
-#'    |nst_rk   |numeric   |Nst rk.                             |
-#'    |blk      |numeric   |Blocks.                             |
-#'    |blk_rk   |numeric   |Blk rk.                             |
-#'    |elev     |numeric   |Elev.                               |
-#'    |elev_rk  |numeric   |Elev rk.                            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       hca \tab numeric \tab Hca. \cr
+#'       hca_rk \tab numeric \tab Hca rk. \cr
+#'       pf \tab numeric \tab Personal fouls. \cr
+#'       pf_rk \tab numeric \tab Pf rk. \cr
+#'       pts \tab numeric \tab Points scored. \cr
+#'       pts_rk \tab numeric \tab Pts rk. \cr
+#'       nst \tab numeric \tab Nst. \cr
+#'       nst_rk \tab numeric \tab Nst rk. \cr
+#'       blk \tab numeric \tab Blocks. \cr
+#'       blk_rk \tab numeric \tab Blk rk. \cr
+#'       elev \tab numeric \tab Elev. \cr
+#'       elev_rk \tab numeric \tab Elev rk. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr filter mutate_at
@@ -532,28 +538,30 @@ kp_game_attrs <- function(
 #'
 #' @return A data frame with the following columns:
 #'
-#'  |col_name     |types     |description                |
-#'  |:------------|:---------|:--------------------------|
-#'  |prediction   |character |Prediction.                |
-#'  |time_et      |character |Time et.                   |
-#'  |location     |character |Location.                  |
-#'  |thrill_score |numeric   |Thrill score.              |
-#'  |comeback     |numeric   |Comeback.                  |
-#'  |excitement   |numeric   |Excitement.                |
-#'  |road_rk      |numeric   |Road rk.                   |
-#'  |road_team    |character |Road team.                 |
-#'  |home_rk      |numeric   |Home team's rk.            |
-#'  |home_team    |character |Home team's team.          |
-#'  |win_rk       |numeric   |Win rk.                    |
-#'  |win_team     |character |Win team.                  |
-#'  |win_score    |numeric   |Win score.                 |
-#'  |loss_rk      |numeric   |Loss rk.                   |
-#'  |loss_team    |character |Loss team.                 |
-#'  |loss_score   |numeric   |Loss score.                |
-#'  |poss         |numeric   |Poss.                      |
-#'  |mvp          |character |Mvp.                       |
-#'  |event        |character |Event.                     |
-#'  |date         |character |Date in YYYY-MM-DD format. |
+#'  \if{html}{\tabular{lll}{
+#'     col_name \tab types \tab description \cr
+#'     prediction \tab character \tab Prediction. \cr
+#'     time_et \tab character \tab Time et. \cr
+#'     location \tab character \tab Location. \cr
+#'     thrill_score \tab numeric \tab Thrill score. \cr
+#'     comeback \tab numeric \tab Comeback. \cr
+#'     excitement \tab numeric \tab Excitement. \cr
+#'     road_rk \tab numeric \tab Road rk. \cr
+#'     road_team \tab character \tab Road team. \cr
+#'     home_rk \tab numeric \tab Home team's rk. \cr
+#'     home_team \tab character \tab Home team's team. \cr
+#'     win_rk \tab numeric \tab Win rk. \cr
+#'     win_team \tab character \tab Win team. \cr
+#'     win_score \tab numeric \tab Win score. \cr
+#'     loss_rk \tab numeric \tab Loss rk. \cr
+#'     loss_team \tab character \tab Loss team. \cr
+#'     loss_score \tab numeric \tab Loss score. \cr
+#'     poss \tab numeric \tab Poss. \cr
+#'     mvp \tab character \tab Mvp. \cr
+#'     event \tab character \tab Event. \cr
+#'     date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'  }}
+#'  \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate

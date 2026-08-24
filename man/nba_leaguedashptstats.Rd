@@ -107,34 +107,37 @@ nba_leaguedashptstats(
 \value{
 Returns a named list of data frames: LeagueDashPtStats
 
-\strong{LeagueDashPtStats}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   GP \tab character \tab Games played. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   MIN \tab character \tab Minutes played. \cr
-   DRIVES \tab character \tab  \cr
-   DRIVE_FGM \tab character \tab  \cr
-   DRIVE_FGA \tab character \tab  \cr
-   DRIVE_FG_PCT \tab character \tab  \cr
-   DRIVE_FTM \tab character \tab  \cr
-   DRIVE_FTA \tab character \tab  \cr
-   DRIVE_FT_PCT \tab character \tab  \cr
-   DRIVE_PTS \tab character \tab  \cr
-   DRIVE_PTS_PCT \tab character \tab  \cr
-   DRIVE_PASSES \tab character \tab  \cr
-   DRIVE_PASSES_PCT \tab character \tab  \cr
-   DRIVE_AST \tab character \tab  \cr
-   DRIVE_AST_PCT \tab character \tab  \cr
-   DRIVE_TOV \tab character \tab  \cr
-   DRIVE_TOV_PCT \tab character \tab  \cr
-   DRIVE_PF \tab character \tab  \cr
-   DRIVE_PF_PCT \tab character \tab  \cr
-}
+\strong{LeagueDashPtStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      GP \tab character \tab Games played. \cr
+      W \tab character \tab Wins. \cr
+      L \tab character \tab Losses. \cr
+      MIN \tab character \tab Minutes played. \cr
+      DRIVES \tab character \tab  \cr
+      DRIVE_FGM \tab character \tab  \cr
+      DRIVE_FGA \tab character \tab  \cr
+      DRIVE_FG_PCT \tab character \tab  \cr
+      DRIVE_FTM \tab character \tab  \cr
+      DRIVE_FTA \tab character \tab  \cr
+      DRIVE_FT_PCT \tab character \tab  \cr
+      DRIVE_PTS \tab character \tab  \cr
+      DRIVE_PTS_PCT \tab character \tab  \cr
+      DRIVE_PASSES \tab character \tab  \cr
+      DRIVE_PASSES_PCT \tab character \tab  \cr
+      DRIVE_AST \tab character \tab  \cr
+      DRIVE_AST_PCT \tab character \tab  \cr
+      DRIVE_TOV \tab character \tab  \cr
+      DRIVE_TOV_PCT \tab character \tab  \cr
+      DRIVE_PF \tab character \tab  \cr
+      DRIVE_PF_PCT \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Stats}
@@ -175,7 +178,7 @@ Other NBA League Functions:
 \code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}}
 
 Other NBA Player Tracking Functions:
-\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
 \code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
 \code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
@@ -183,8 +186,6 @@ Other NBA Player Tracking Functions:
 \code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
 \code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
 \code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},

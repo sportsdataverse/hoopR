@@ -1,0 +1,257 @@
+{
+  "nodes": [
+    {
+      "id": "file:R/nba_stats_lineups.R",
+      "type": "file",
+      "name": "nba_stats_lineups.R",
+      "filePath": "R/nba_stats_lineups.R",
+      "summary": "Wraps the NBA Stats API lineup and matchup endpoints (leaguedashlineups, leaguelineupviz, leagueplayerondetails, leagueseasonmatchups, matchupsrollup, fantasywidget), returning tidy data frames of five-man lineup and head-to-head matchup statistics.",
+      "tags": ["nba-stats-api", "api-handler", "lineups", "matchups", "data-model"],
+      "complexity": "complex",
+      "languageNotes": "Each exported wrapper builds a stats.nba.com query string and parses the resultSets JSON into a data frame via the shared NBA Stats helper."
+    },
+    {
+      "id": "file:R/nba_stats_pbp.R",
+      "type": "file",
+      "name": "nba_stats_pbp.R",
+      "filePath": "R/nba_stats_pbp.R",
+      "summary": "Core NBA play-by-play retrieval module exposing nba_playbyplayv3, nba_pbp/nba_pbps (multi-game), and the live cdn.nba.com feeds nba_live_pbp and nba_live_boxscore; assembles enriched per-event play-by-play frames.",
+      "tags": ["nba-stats-api", "play-by-play", "api-handler", "live-data", "data-pipeline"],
+      "complexity": "complex",
+      "languageNotes": "Largest PBP module in the batch; combines the classic stats endpoint with live JSON feeds and uses progressr for multi-game progress reporting."
+    },
+    {
+      "id": "file:R/nba_stats_player_dash.R",
+      "type": "file",
+      "name": "nba_stats_player_dash.R",
+      "filePath": "R/nba_stats_player_dash.R",
+      "summary": "Wraps the NBA Stats player-dashboard family (by clutch, game splits, general splits, last-N games, opponent, shooting splits, team performance, year-over-year) plus the player-tracking dashboards (pt pass/reb/shots/shotdefend), returning split player statistics.",
+      "tags": ["nba-stats-api", "api-handler", "player-stats", "dashboard", "data-model"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_player.R",
+      "type": "file",
+      "name": "nba_stats_player.R",
+      "filePath": "R/nba_stats_player.R",
+      "summary": "Largest player-data module: wraps NBA Stats player endpoints including playerindex, career stats, game logs, awards, fantasy profiles, estimated metrics, and the cdn.nba.com player headshot helper; several legacy endpoints are lifecycle-deprecated.",
+      "tags": ["nba-stats-api", "api-handler", "player-stats", "data-model", "deprecation"],
+      "complexity": "complex",
+      "languageNotes": "Uses the lifecycle package to mark unstable/empty endpoints deprecated in hoopR 3.0.0 while keeping the canonical replacements live."
+    },
+    {
+      "id": "file:R/nba_stats_roster.R",
+      "type": "file",
+      "name": "nba_stats_roster.R",
+      "filePath": "R/nba_stats_roster.R",
+      "summary": "Wraps the NBA Stats common-info endpoints (commonallplayers, commonplayerinfo, commonplayoffseries, commonteamroster, commonteamyears), providing league player directories, individual bios, playoff series, and team roster tables.",
+      "tags": ["nba-stats-api", "api-handler", "roster", "metadata", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_stats_scoreboard.R",
+      "type": "file",
+      "name": "nba_stats_scoreboard.R",
+      "filePath": "R/nba_stats_scoreboard.R",
+      "summary": "Provides NBA schedule and scoreboard access (nba_schedule, scoreboard/scoreboardv2/scoreboardv3, todays_scoreboard, winprobabilitypbp, scheduleleaguev2int) drawing on both the cdn.nba.com schedule feed and the stats.nba.com scoreboard endpoints.",
+      "tags": ["nba-stats-api", "api-handler", "schedule", "scoreboard", "data-model"],
+      "complexity": "complex",
+      "languageNotes": "Older scoreboard versions are lifecycle-deprecated in favor of nba_scoreboardv3()."
+    },
+    {
+      "id": "file:R/nba_stats_shotchart.R",
+      "type": "file",
+      "name": "nba_stats_shotchart.R",
+      "filePath": "R/nba_stats_shotchart.R",
+      "summary": "Wraps the NBA Stats shot-chart endpoints (shotchartdetail, shotchartleaguewide, shotchartlineupdetail), returning per-shot location and make/miss data for players, the league, and lineups.",
+      "tags": ["nba-stats-api", "api-handler", "shot-chart", "spatial-data", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_stats_team_dash.R",
+      "type": "file",
+      "name": "nba_stats_team_dash.R",
+      "filePath": "R/nba_stats_team_dash.R",
+      "summary": "Team-side counterpart to the player dashboards: wraps the NBA Stats team-dashboard family (clutch, game/general/last-N/opponent/shooting splits, team performance, year-over-year) plus team lineups and player-tracking dashboards.",
+      "tags": ["nba-stats-api", "api-handler", "team-stats", "dashboard", "data-model"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_team.R",
+      "type": "file",
+      "name": "nba_stats_team.R",
+      "filePath": "R/nba_stats_team.R",
+      "summary": "Largest team-data module: wraps NBA Stats team endpoints including teams, teamdetails, estimated metrics, game logs, historical leaders, info-common, player on/off details, year-by-year stats, and team-vs-player splits.",
+      "tags": ["nba-stats-api", "api-handler", "team-stats", "data-model", "metadata"],
+      "complexity": "complex",
+      "languageNotes": "Uses lifecycle to deprecate legacy team endpoints; draws team metadata from both cdn.nba.com and stats.nba.com."
+    },
+    {
+      "id": "file:R/nba_stats_video.R",
+      "type": "file",
+      "name": "nba_stats_video.R",
+      "filePath": "R/nba_stats_video.R",
+      "summary": "Wraps the NBA Stats video endpoints (videodetails/videodetailsasset, videoevents/videoeventsasset, videostatus), returning play video metadata and asset URLs tied to game events.",
+      "tags": ["nba-stats-api", "api-handler", "video", "media-metadata", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_stats.R",
+      "type": "file",
+      "name": "nba_stats.R",
+      "filePath": "R/nba_stats.R",
+      "summary": "Overview/index module for the NBA Stats API surface, documenting the stats.nba.com endpoint families and serving as the conceptual entry point for the nba_stats_* wrapper modules.",
+      "tags": ["nba-stats-api", "documentation", "overview", "entry-point"],
+      "complexity": "simple",
+      "languageNotes": "Contains roxygen overview prose (no exported functions) cataloguing the endpoint groups implemented across the sibling nba_stats_* files."
+    },
+    {
+      "id": "file:R/nbadraft_mock_draft.R",
+      "type": "file",
+      "name": "nbadraft_mock_draft.R",
+      "filePath": "R/nbadraft_mock_draft.R",
+      "summary": "Scrapes NBADraft.net mock-draft tables via rvest and returns a tidy data frame of projected draft picks for a given draft year.",
+      "tags": ["web-scraper", "draft", "rvest", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/nbagl_pbp.R",
+      "type": "file",
+      "name": "nbagl_pbp.R",
+      "filePath": "R/nbagl_pbp.R",
+      "summary": "Retrieves NBA G-League play-by-play (nbagl_pbp) and live feeds (nbagl_live_pbp, nbagl_live_boxscore) by reusing the NBA Stats play-by-play pipeline against G-League game IDs.",
+      "tags": ["g-league", "play-by-play", "api-handler", "live-data", "data-pipeline"],
+      "complexity": "complex",
+      "languageNotes": "Delegates parsing to the same JSON resultSets pipeline as nba_stats_pbp.R, parameterized for the G-League."
+    },
+    {
+      "id": "file:R/nbagl_players.R",
+      "type": "file",
+      "name": "nbagl_players.R",
+      "filePath": "R/nbagl_players.R",
+      "summary": "Retrieves the NBA G-League player index (nbagl_players) via the NBA Stats playerindex endpoint scoped to gleague.nba.com, returning a tidy player directory.",
+      "tags": ["g-league", "api-handler", "player-index", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nbagl_schedule.R",
+      "type": "file",
+      "name": "nbagl_schedule.R",
+      "filePath": "R/nbagl_schedule.R",
+      "summary": "Retrieves the NBA G-League schedule (nbagl_schedule) from the data.nba.com schedule feed, returning a tidy season schedule with game dates and matchups.",
+      "tags": ["g-league", "api-handler", "schedule", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nbagl_standings.R",
+      "type": "file",
+      "name": "nbagl_standings.R",
+      "filePath": "R/nbagl_standings.R",
+      "summary": "Retrieves current NBA G-League standings (nbagl_standings) via the NBA Stats standings feed on s.data.nba.com, returning a tidy team standings table.",
+      "tags": ["g-league", "api-handler", "standings", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/ncaa_mbb_data.R",
+      "type": "file",
+      "name": "ncaa_mbb_data.R",
+      "filePath": "R/ncaa_mbb_data.R",
+      "summary": "Scrapes NCAA.com / stats.ncaa.org for men's college basketball NET rankings (ncaa_mbb_NET_rankings) and the Division I/II/III team directory (ncaa_mbb_teams) by year and division.",
+      "tags": ["ncaa", "web-scraper", "rankings", "teams", "data-model"],
+      "complexity": "moderate",
+      "languageNotes": "Uses xml2 + rvest for HTML table scraping with cli progress messaging."
+    },
+    {
+      "id": "file:R/realgm_draft.R",
+      "type": "file",
+      "name": "realgm_draft.R",
+      "filePath": "R/realgm_draft.R",
+      "summary": "Scrapes basketball.realgm.com draft pages for historical draft results (realgm_draft) and early-entry candidate lists (realgm_early_entry), returning tidy draft data frames.",
+      "tags": ["realgm", "web-scraper", "draft", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/realgm_players.R",
+      "type": "file",
+      "name": "realgm_players.R",
+      "filePath": "R/realgm_players.R",
+      "summary": "Scrapes basketball.realgm.com player pages for the player directory (realgm_players), players abroad (realgm_players_abroad), and future free agents (realgm_future_free_agents).",
+      "tags": ["realgm", "web-scraper", "players", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/realgm_salaries.R",
+      "type": "file",
+      "name": "realgm_salaries.R",
+      "filePath": "R/realgm_salaries.R",
+      "summary": "Scrapes basketball.realgm.com salary-cap pages for the league salary cap history (realgm_salary_cap) and the rookie scale tables (realgm_rookie_scale).",
+      "tags": ["realgm", "web-scraper", "salaries", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/realgm_staff.R",
+      "type": "file",
+      "name": "realgm_staff.R",
+      "filePath": "R/realgm_staff.R",
+      "summary": "Scrapes basketball.realgm.com staff pages for coaching staff (realgm_coaches) and general manager (realgm_gms) directories, returning tidy personnel tables.",
+      "tags": ["realgm", "web-scraper", "staff", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/realgm_standings.R",
+      "type": "file",
+      "name": "realgm_standings.R",
+      "filePath": "R/realgm_standings.R",
+      "summary": "Scrapes basketball.realgm.com for league standings (realgm_standings) and the team directory (realgm_teams), returning tidy standings and team-lookup data frames.",
+      "tags": ["realgm", "web-scraper", "standings", "teams", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/realgm_stats.R",
+      "type": "file",
+      "name": "realgm_stats.R",
+      "filePath": "R/realgm_stats.R",
+      "summary": "Largest RealGM scraper: pulls player and team season stats, individual season/game logs, and draft-prospect stats (realgm_player_stats, realgm_team_stats, realgm_individual_seasons, realgm_individual_games, realgm_draft_prospects) from basketball.realgm.com.",
+      "tags": ["realgm", "web-scraper", "stats", "data-model"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/realgm_transactions.R",
+      "type": "file",
+      "name": "realgm_transactions.R",
+      "filePath": "R/realgm_transactions.R",
+      "summary": "Scrapes basketball.realgm.com transaction pages via rvest (realgm_transactions), returning a tidy table of player signings, trades, and roster moves.",
+      "tags": ["realgm", "web-scraper", "transactions", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/realgm_utils.R",
+      "type": "file",
+      "name": "realgm_utils.R",
+      "filePath": "R/realgm_utils.R",
+      "summary": "Shared internal helpers for the RealGM scrapers, providing chromote-driven page rendering, URL building, and rvest/janitor table-cleaning utilities consumed across the realgm_* modules.",
+      "tags": ["realgm", "utility", "web-scraper", "shared-helpers"],
+      "complexity": "moderate",
+      "languageNotes": "Uses chromote for headless-browser rendering of JS-driven RealGM pages; no exported (top-level assigned) functions detected by the structural pass."
+    }
+  ],
+  "edges": [
+    {"source": "file:R/nbagl_pbp.R", "target": "file:R/nba_stats_pbp.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/nbagl_players.R", "target": "file:R/nba_stats_player.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nbagl_pbp.R", "target": "file:R/nbagl_players.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nbagl_schedule.R", "target": "file:R/nbagl_standings.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats.R", "target": "file:R/nba_stats_pbp.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats.R", "target": "file:R/nba_stats_player.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats.R", "target": "file:R/nba_stats_team.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats_player_dash.R", "target": "file:R/nba_stats_player.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats_team_dash.R", "target": "file:R/nba_stats_team.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats_lineups.R", "target": "file:R/nba_stats_team_dash.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/realgm_draft.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/realgm_players.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/realgm_salaries.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/realgm_staff.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/realgm_standings.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/realgm_stats.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/realgm_transactions.R", "target": "file:R/realgm_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6}
+  ]
+}

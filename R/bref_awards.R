@@ -13,18 +13,20 @@
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.
 #' @return A `hoopR_data` tibble with one row per award candidate:
 #'
-#'    |col_name     |types     |description                                       |
-#'    |:------------|:---------|:-------------------------------------------------|
-#'    |award        |character |Award slug (`mvp`, `roy`, `dpoy`, `smoy`, `mip`, `clutch_poy`, `coy`). |
-#'    |rank         |integer   |Finish in the voting.                             |
-#'    |player       |character |Player (or coach) name.                           |
-#'    |age          |integer   |Age.                                              |
-#'    |team         |character |Team abbreviation.                                |
-#'    |votes_first  |numeric   |First-place votes.                                |
-#'    |points_won   |numeric   |Voting points won.                                |
-#'    |points_max   |numeric   |Maximum possible voting points.                   |
-#'    |award_share  |numeric   |Share of the maximum voting points.               |
-#'    |season       |integer   |Season (echoes the `season` argument).            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       award \tab character \tab Award slug (\code{mvp}, \code{roy}, \code{dpoy}, \code{smoy}, \code{mip}, \code{clutch_poy}, \code{coy}). \cr
+#'       rank \tab integer \tab Finish in the voting. \cr
+#'       player \tab character \tab Player (or coach) name. \cr
+#'       age \tab integer \tab Age. \cr
+#'       team \tab character \tab Team abbreviation. \cr
+#'       votes_first \tab numeric \tab First-place votes. \cr
+#'       points_won \tab numeric \tab Voting points won. \cr
+#'       points_max \tab numeric \tab Maximum possible voting points. \cr
+#'       award_share \tab numeric \tab Share of the maximum voting points. \cr
+#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names

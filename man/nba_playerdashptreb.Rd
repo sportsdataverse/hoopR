@@ -2,9 +2,55 @@
 % Please edit documentation in R/nba_stats_player_dash.R
 \name{nba_playerdashptreb}
 \alias{nba_playerdashptreb}
+\alias{nba_playerdashptshotdefend}
+\alias{nba_playerdashptshots}
 \title{\strong{Get NBA Stats API Player Dashboard Player Tracking - Rebounding}}
 \usage{
 nba_playerdashptreb(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptshotdefend(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptshots(
   date_from = "",
   date_to = "",
   game_segment = "",
@@ -69,16 +115,44 @@ nba_playerdashptreb(
 Return a named list of data frames: NumContestedRebounding,
 OverallRebounding, RebDistanceRebounding,
 ShotDistanceRebounding, ShotTypeRebounding
+
+Return a named list of data frames: DefendingShots
+
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
+
+Return a named list of data frames: ClosestDefender10ftPlusShooting,
+ClosestDefenderShooting, DribbleShooting,
+GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
+
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Rebounding}
 
 \strong{Get NBA Stats API Player Dashboard Player Tracking - Rebounding}
+
+\strong{Get NBA Stats API Player Dashboard Player Tracking - Defense}
+
+\strong{Get NBA Stats API Player Dashboard Player Tracking - Shots}
 }
 \details{
 \href{https://www.nba.com/stats/player/2544/rebounds-dash}{Player Tracking (Second Spectrum) Stats - Rebounding}
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/defense-dash}{Player Tracking (Second Spectrum) Stats - Defending}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/shots-dash}{Player Tracking (Second Spectrum) Stats - Shooting}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
 }
 \seealso{
@@ -98,8 +172,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playercompare]{nba_playercompare()}},
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},
@@ -113,7 +185,7 @@ Other NBA Player Functions:
 \code{\link[=nba_playervsplayer]{nba_playervsplayer()}}
 
 Other NBA Player Tracking Functions:
-\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
 \code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
 \code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
@@ -121,8 +193,6 @@ Other NBA Player Tracking Functions:
 \code{\link[=nba_leaguedashptteamdefend]{nba_leaguedashptteamdefend()}},
 \code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
 \code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
 \code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},

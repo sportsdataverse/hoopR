@@ -24,20 +24,7 @@ NULL
 #'
 #'    **Info**
 #'
-#'    |col_name           |types     |description                                |
-#'    |:------------------|:---------|:------------------------------------------|
-#'    |id                 |character |Id.                                        |
-#'    |uid                |character |ESPN UID string (universal identifier).    |
-#'    |slug               |character |URL-safe identifier.                       |
-#'    |abbreviation       |character |Short abbreviation.                        |
-#'    |display_name       |character |Display name.                              |
-#'    |short_display_name |character |Short display name.                        |
-#'    |name               |character |Display name.                              |
-#'    |nickname           |character |Team or athlete nickname.                  |
-#'    |location           |character |Location.                                  |
-#'    |color              |character |Primary color (hex without leading '#').   |
-#'    |alternate_color    |character |Alternate color (hex without leading '#'). |
-#'    |logo               |character |Team or league logo URL.                   |
+#'    Columns as documented in the shared [espn_mbb_team_info_schema] table.
 #'
 #'    **Record**
 #'
@@ -95,35 +82,16 @@ espn_nba_team <- function(team_id,
 # espn_nba_team_roster
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Team Roster**
-#' @name espn_nba_team_roster
-NULL
 #' @title
 #' **Get ESPN NBA Team Roster**
-#' @rdname espn_nba_team_roster
+#' @rdname espn_nba_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single tibble with one row per athlete.
 #'
-#'    |col_name        |types     |description                                            |
-#'    |:---------------|:---------|:------------------------------------------------------|
-#'    |athlete_id      |character |Unique athlete identifier (ESPN).                      |
-#'    |full_name       |character |Player's full name.                                    |
-#'    |jersey          |character |Jersey number worn by the player.                      |
-#'    |position_abbrev |character |                                                       |
-#'    |position_name   |character |Listed roster position ('Guard', 'Forward', 'Center'). |
-#'    |height          |character |Player height (string e.g. '6-2' or inches).           |
-#'    |weight          |character |Player weight in pounds.                               |
-#'    |age             |character |Player age (in years).                                 |
-#'    |birth_date      |character |Date of birth (YYYY-MM-DD).                            |
-#'    |birth_place     |character |Place of birth.                                        |
-#'    |headshot        |character |Headshot image URL.                                    |
-#'    |link_web        |character |Web link / URL.                                        |
-#'    |status          |character |Status label.                                          |
-#'    |team_id         |character |Unique team identifier.                                |
-#'    |season          |integer   |Season identifier (4-digit year or 'YYYY-YY' string).  |
+#'    Columns as documented in the shared [espn_mbb_team_roster_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
@@ -163,29 +131,7 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single tibble with one row per event.
 #'
-#'    |col_name               |types     |description                                                                                                        |
-#'    |:----------------------|:---------|:------------------------------------------------------------------------------------------------------------------|
-#'    |event_id               |character |Unique event / game identifier (ESPN).                                                                             |
-#'    |season                 |integer   |Season identifier (4-digit year or 'YYYY-YY' string).                                                              |
-#'    |season_type            |integer   |Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-#'    |week                   |integer   |Week number within the season.                                                                                     |
-#'    |date                   |character |Date in YYYY-MM-DD format.                                                                                         |
-#'    |name                   |character |Display name.                                                                                                      |
-#'    |short_name             |character |Short display name.                                                                                                |
-#'    |opponent_id            |character |Unique identifier for opponent.                                                                                    |
-#'    |opponent_abbrev        |character |Abbreviation for opponent.                                                                                         |
-#'    |home_away              |character |Game venue label ('home' or 'away').                                                                               |
-#'    |neutral_site           |logical   |Neutral site.                                                                                                      |
-#'    |conference_competition |logical   |Conference competition.                                                                                            |
-#'    |venue_id               |character |Unique venue identifier.                                                                                           |
-#'    |venue_name             |character |Venue name.                                                                                                        |
-#'    |venue_city             |character |Venue city.                                                                                                        |
-#'    |venue_state            |character |Venue state / region.                                                                                              |
-#'    |broadcast              |character |Broadcast information string.                                                                                      |
-#'    |result                 |character |Result.                                                                                                            |
-#'    |team_score             |character |Team's score / final score.                                                                                        |
-#'    |opponent_score         |character |Opponent score.                                                                                                    |
-#'    |winner                 |logical   |Winner.                                                                                                            |
+#'    Columns as documented in the shared [espn_mbb_team_schedule_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
@@ -213,28 +159,16 @@ espn_nba_team_schedule <- function(team_id,
 # espn_nba_team_leaders
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Team Leaders**
-#' @name espn_nba_team_leaders
-NULL
 #' @title
 #' **Get ESPN NBA Team Leaders**
-#' @rdname espn_nba_team_leaders
+#' @rdname espn_nba_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single long-format tibble (one row per category-rank-athlete).
 #'
-#'    |col_name     |types     |description                                           |
-#'    |:------------|:---------|:-----------------------------------------------------|
-#'    |team_id      |character |Unique team identifier.                               |
-#'    |season       |integer   |Season identifier (4-digit year or 'YYYY-YY' string). |
-#'    |category     |character |Category label.                                       |
-#'    |display_name |character |Display name.                                         |
-#'    |athlete_id   |character |Unique athlete identifier (ESPN).                     |
-#'    |athlete_name |character |Athlete display name (ESPN).                          |
-#'    |value        |numeric   |Numeric or string value field.                        |
-#'    |rank         |integer   |Rank.                                                 |
+#'    Columns as documented in the shared [espn_mbb_team_leaders_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
@@ -260,12 +194,9 @@ espn_nba_team_leaders <- function(team_id,
 # espn_nba_team_season_profile
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Team-in-Season Profile**
-#' @name espn_nba_team_season_profile
-NULL
 #' @title
 #' **Get ESPN NBA Team-in-Season Profile**
-#' @rdname espn_nba_team_season_profile
+#' @rdname espn_nba_team
 #' @author Saiem Gilani
 #' @description
 #' Era-correct team identity for an NBA franchise in a specific season,
@@ -282,31 +213,33 @@ NULL
 #' @return A single-row tibble with team identity scalars and `_ref` URL
 #'   columns. Selected columns:
 #'
-#'    |col_name              |types     |description                                        |
-#'    |:---------------------|:---------|:--------------------------------------------------|
-#'    |id                    |character |ESPN team identifier.                              |
-#'    |guid                  |character |Stable cross-league team GUID.                     |
-#'    |uid                   |character |ESPN UID string.                                   |
-#'    |slug                  |character |URL-safe identifier.                               |
-#'    |location              |character |Team city/region (e.g. "Los Angeles").             |
-#'    |name                  |character |Team name (e.g. "Lakers").                         |
-#'    |abbreviation          |character |Short abbreviation (e.g. "LAL").                   |
-#'    |display_name          |character |Full display name.                                 |
-#'    |short_display_name    |character |Short display name.                                |
-#'    |color                 |character |Primary color (hex, no leading '#').               |
-#'    |alternate_color       |character |Alternate color (hex, no leading '#').             |
-#'    |is_active             |logical   |Whether the team was active in this season.        |
-#'    |season                |integer   |Season year.                                       |
-#'    |logo                  |character |Primary logo URL.                                  |
-#'    |logo_dark             |character |Dark-mode logo URL.                                |
-#'    |record_ref            |character |`$ref` to team record resource (if present).       |
-#'    |statistics_ref        |character |`$ref` to team statistics resource (if present).   |
-#'    |leaders_ref           |character |`$ref` to team leaders resource (if present).      |
-#'    |coaches_ref           |character |`$ref` to team coaches resource (if present).      |
-#'    |depth_charts_ref      |character |`$ref` to depth chart resource (NBA-only).         |
-#'    |events_ref            |character |`$ref` to team events resource (if present).       |
-#'    |transactions_ref      |character |`$ref` to team transactions resource (if present). |
-#'    |franchise_ref         |character |`$ref` to franchise resource.                      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab character \tab ESPN team identifier. \cr
+#'       guid \tab character \tab Stable cross-league team GUID. \cr
+#'       uid \tab character \tab ESPN UID string. \cr
+#'       slug \tab character \tab URL-safe identifier. \cr
+#'       location \tab character \tab Team city/region (e.g. "Los Angeles"). \cr
+#'       name \tab character \tab Team name (e.g. "Lakers"). \cr
+#'       abbreviation \tab character \tab Short abbreviation (e.g. "LAL"). \cr
+#'       display_name \tab character \tab Full display name. \cr
+#'       short_display_name \tab character \tab Short display name. \cr
+#'       color \tab character \tab Primary color (hex, no leading '#'). \cr
+#'       alternate_color \tab character \tab Alternate color (hex, no leading '#'). \cr
+#'       is_active \tab logical \tab Whether the team was active in this season. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       logo \tab character \tab Primary logo URL. \cr
+#'       logo_dark \tab character \tab Dark-mode logo URL. \cr
+#'       record_ref \tab character \tab \verb{$ref} to team record resource (if present). \cr
+#'       statistics_ref \tab character \tab \verb{$ref} to team statistics resource (if present). \cr
+#'       leaders_ref \tab character \tab \verb{$ref} to team leaders resource (if present). \cr
+#'       coaches_ref \tab character \tab \verb{$ref} to team coaches resource (if present). \cr
+#'       depth_charts_ref \tab character \tab \verb{$ref} to depth chart resource (NBA-only). \cr
+#'       events_ref \tab character \tab \verb{$ref} to team events resource (if present). \cr
+#'       transactions_ref \tab character \tab \verb{$ref} to team transactions resource (if present). \cr
+#'       franchise_ref \tab character \tab \verb{$ref} to franchise resource. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

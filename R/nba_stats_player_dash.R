@@ -1268,12 +1268,9 @@ nba_playerdashptreb  <- function(
 
 
 
-#' **Get NBA Stats API Player Dashboard Player Tracking - Defense**
-#' @name nba_playerdashptshotdefend
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Defense**
-#' @rdname nba_playerdashptshotdefend
+#' @rdname nba_playerdashptreb
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1384,12 +1381,9 @@ nba_playerdashptshotdefend  <- function(
 }
 
 
-#' **Get NBA Stats API Player Dashboard Player Tracking - Shots**
-#' @name nba_playerdashptshots
-NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Shots**
-#' @rdname nba_playerdashptshots
+#' @rdname nba_playerdashptreb
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to

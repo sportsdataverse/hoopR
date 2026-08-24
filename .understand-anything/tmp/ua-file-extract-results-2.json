@@ -1,0 +1,1190 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 511,
+      "nonEmptyLines": 387,
+      "sections": [
+        {
+          "heading": "CLAUDE.md -- hoopR Development Guide",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "Package Overview",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Branching & PR Workflow",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Build & Development Commands",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Project Structure",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Key Coding Conventions",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Function Naming",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Function Pattern (NBA Stats API)",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "Data Processing Pipeline",
+          "level": 3,
+          "line": 160
+        },
+        {
+          "heading": "V2 vs V3 API Differences",
+          "level": 3,
+          "line": 172
+        },
+        {
+          "heading": "Null Safety",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "Return-Value Initialization (CRITICAL)",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Column Drift Resilience",
+          "level": 3,
+          "line": 222
+        },
+        {
+          "heading": "HTTP Layer",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Proxy support",
+          "level": 4,
+          "line": 243
+        },
+        {
+          "heading": "Messaging Layer",
+          "level": 3,
+          "line": 264
+        },
+        {
+          "heading": "Testing",
+          "level": 2,
+          "line": 274
+        },
+        {
+          "heading": "Test Pattern",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "Environment Variables for Tests",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "CI Secrets",
+          "level": 3,
+          "line": 359
+        },
+        {
+          "heading": "Rate Limiting",
+          "level": 3,
+          "line": 371
+        },
+        {
+          "heading": "NAMESPACE",
+          "level": 2,
+          "line": 375
+        },
+        {
+          "heading": "Documentation Maintenance",
+          "level": 2,
+          "line": 379
+        },
+        {
+          "heading": "Markdown TOCs (doctoc)",
+          "level": 3,
+          "line": 383
+        },
+        {
+          "heading": "README.md (rmarkdown)",
+          "level": 3,
+          "line": 397
+        },
+        {
+          "heading": "DESCRIPTION (usethis)",
+          "level": 3,
+          "line": 407
+        },
+        {
+          "heading": "Release notes triad: NEWS.md / cran-comments.md / _pkgdown.yml",
+          "level": 3,
+          "line": 417
+        },
+        {
+          "heading": "Commit Convention",
+          "level": 2,
+          "line": 429
+        },
+        {
+          "heading": "Cross-Source Crosswalk Surface",
+          "level": 2,
+          "line": 449
+        },
+        {
+          "heading": "Common Pitfalls",
+          "level": 2,
+          "line": 495
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 147,
+      "nonEmptyLines": 109,
+      "sections": [
+        {
+          "heading": "Contributor Covenant Code of Conduct",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "Our Pledge",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Our Standards",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Enforcement Responsibilities",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "Scope",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Enforcement",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "Enforcement Guidelines",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "1. Correction",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "2. Warning",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "3. Temporary Ban",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "4. Permanent Ban",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Attribution",
+          "level": 2,
+          "line": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 261,
+      "nonEmptyLines": 184,
+      "sections": [
+        {
+          "heading": "Contributing to hoopR",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "Development Setup",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Making Changes",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Adding a New NBA Stats API Endpoint",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Naming Conventions",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "Function Names",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "General Naming Rules",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "V2 vs V3 API Patterns",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Data Processing Pipeline",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Roxygen Documentation",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "Code Style",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "Documentation Maintenance",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "Markdown TOCs (doctoc)",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "README.md (rmarkdown)",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "DESCRIPTION (usethis)",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "Release notes triad: NEWS.md / cran-comments.md / _pkgdown.yml",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "Commit Messages",
+          "level": 2,
+          "line": 159
+        },
+        {
+          "heading": "Pull Requests",
+          "level": 2,
+          "line": 173
+        },
+        {
+          "heading": "Testing",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "Environment Variables",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "Test Pattern",
+          "level": 3,
+          "line": 214
+        },
+        {
+          "heading": "Rate Limiting",
+          "level": 3,
+          "line": 234
+        },
+        {
+          "heading": "CI / GitHub Actions",
+          "level": 2,
+          "line": 238
+        },
+        {
+          "heading": "Reporting Issues",
+          "level": 2,
+          "line": 250
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 259
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 26
+      }
+    },
+    {
+      "path": "LICENSE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "MIT License",
+          "level": 1,
+          "line": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "NEWS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1212,
+      "nonEmptyLines": 978,
+      "sections": [
+        {
+          "heading": "**hoopR 3.1.0**",
+          "level": 1,
+          "line": 40
+        },
+        {
+          "heading": "**NBA cross-source crosswalks (`nba_*_crosswalk` + `load_nba_*_crosswalk`)**",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "**MBB cross-source crosswalks (`mbb_*_crosswalk` + `load_mbb_*_crosswalk`)**",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "**Fox Sports basketball wrappers (`fox_nba_*` / `fox_mbb_*`)**",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "**CollegeBasketballData API (`cbbd_*`)**",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "**Bart Torvik / T-Rank (`torvik_*`)**",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "**Basketball-Reference (`bref_*`)**",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "**Salary & mock-draft sources (Spotrac / HoopsHype / NBADraft.net)**",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "**RealGM (`realgm_*`) — Cloudflare-challenge bypass via headless Chrome**",
+          "level": 3,
+          "line": 214
+        },
+        {
+          "heading": "**NBA injury reports (`rotowire_injuries()` / `bref_injuries()`)**",
+          "level": 3,
+          "line": 272
+        },
+        {
+          "heading": "**Basketball analytics utilities (`nba_*`, no network)**",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "**NBA player / team dictionaries & media (`nba_*`)**",
+          "level": 3,
+          "line": 303
+        },
+        {
+          "heading": "**NBA result-set helpers (`nba_bind_sets()` / `nba_join_sets()` / `nba_nest_sets()`)**",
+          "level": 3,
+          "line": 311
+        },
+        {
+          "heading": "**NBA combined-dataset wrappers (`nba_tidy_*()`)**",
+          "level": 3,
+          "line": 332
+        },
+        {
+          "heading": "**ESPN endpoint naming convention (game_*/player_*)**",
+          "level": 3,
+          "line": 349
+        },
+        {
+          "heading": "**New data loaders**",
+          "level": 3,
+          "line": 359
+        },
+        {
+          "heading": "**New exported functions**",
+          "level": 3,
+          "line": 378
+        },
+        {
+          "heading": "*Athlete coverage (×8 per league)*",
+          "level": 4,
+          "line": 387
+        },
+        {
+          "heading": "*Team detail (×5 per league)*",
+          "level": 4,
+          "line": 400
+        },
+        {
+          "heading": "*Event detail (×4 per league)*",
+          "level": 4,
+          "line": 410
+        },
+        {
+          "heading": "*League catalog (×6 per league)*",
+          "level": 4,
+          "line": 419
+        },
+        {
+          "heading": "*News + calendar (×2 per league)*",
+          "level": 4,
+          "line": 430
+        },
+        {
+          "heading": "*Injuries (×2 per league)*",
+          "level": 4,
+          "line": 437
+        },
+        {
+          "heading": "*NBA-only ESPN endpoints*",
+          "level": 4,
+          "line": 446
+        },
+        {
+          "heading": "*Tier 1 core-v2 expansion (crawler-driven)*",
+          "level": 4,
+          "line": 455
+        },
+        {
+          "heading": "*Tier 2A core-v2 expansion — season metadata*",
+          "level": 4,
+          "line": 476
+        },
+        {
+          "heading": "*Tier 2A core-v2 expansion — weeks + per-week rankings*",
+          "level": 4,
+          "line": 488
+        },
+        {
+          "heading": "*Tier 2A core-v2 expansion — groups (conferences and divisions)*",
+          "level": 4,
+          "line": 499
+        },
+        {
+          "heading": "*Tier 2A core-v2 expansion — team deep + coach-in-season*",
+          "level": 4,
+          "line": 510
+        },
+        {
+          "heading": "*Tier 2A core-v2 expansion — athlete career + draft pick*",
+          "level": 4,
+          "line": 521
+        },
+        {
+          "heading": "*Tier 2B core-v2 expansion — athlete event log + draft completion*",
+          "level": 4,
+          "line": 531
+        },
+        {
+          "heading": "*Tier 2B core-v2 expansion — event meta endpoints*",
+          "level": 4,
+          "line": 542
+        },
+        {
+          "heading": "*Tier 2B core-v2 expansion — event competitor sub-resources*",
+          "level": 4,
+          "line": 553
+        },
+        {
+          "heading": "*Tier 2F core-v2 expansion — typed-detail companions*",
+          "level": 4,
+          "line": 565
+        },
+        {
+          "heading": "*Tier 2E.2 core-v2 expansion — team-season stats + quick lookups*",
+          "level": 4,
+          "line": 577
+        },
+        {
+          "heading": "*Tier 2E.1 core-v2 expansion — event-scoped player + play deep dives*",
+          "level": 4,
+          "line": 587
+        },
+        {
+          "heading": "*Tier 2D core-v2 expansion — position dictionary*",
+          "level": 4,
+          "line": 598
+        },
+        {
+          "heading": "**Behavior changes to existing functions**",
+          "level": 3,
+          "line": 607
+        },
+        {
+          "heading": "*Bug fixes*",
+          "level": 4,
+          "line": 609
+        },
+        {
+          "heading": "**Documentation improvements**",
+          "level": 3,
+          "line": 619
+        },
+        {
+          "heading": "*@return column descriptions on every exported function*",
+          "level": 4,
+          "line": 621
+        },
+        {
+          "heading": "**Internals**",
+          "level": 3,
+          "line": 649
+        },
+        {
+          "heading": "*HTTP layer — proxy support restored*",
+          "level": 4,
+          "line": 651
+        },
+        {
+          "heading": "*Error-handling consolidation*",
+          "level": 4,
+          "line": 661
+        },
+        {
+          "heading": "*Dependency cleanup*",
+          "level": 4,
+          "line": 672
+        },
+        {
+          "heading": "*Tooling*",
+          "level": 4,
+          "line": 678
+        },
+        {
+          "heading": "*Test infrastructure*",
+          "level": 4,
+          "line": 683
+        },
+        {
+          "heading": "**Release / CRAN preparation**",
+          "level": 3,
+          "line": 688
+        },
+        {
+          "heading": "**hoopR 3.0.0**",
+          "level": 1,
+          "line": 694
+        },
+        {
+          "heading": "**New exported functions**",
+          "level": 3,
+          "line": 696
+        },
+        {
+          "heading": "*NBA Play-by-Play V3*",
+          "level": 4,
+          "line": 698
+        },
+        {
+          "heading": "*NBA Boxscore Summary V3*",
+          "level": 4,
+          "line": 717
+        },
+        {
+          "heading": "*New NBA Stats API endpoint wrappers*",
+          "level": 4,
+          "line": 723
+        },
+        {
+          "heading": "*ESPN & G-League functions*",
+          "level": 4,
+          "line": 735
+        },
+        {
+          "heading": "**Behavior changes to existing functions**",
+          "level": 3,
+          "line": 744
+        },
+        {
+          "heading": "*Bug fixes*",
+          "level": 4,
+          "line": 746
+        },
+        {
+          "heading": "**Deprecations**",
+          "level": 3,
+          "line": 768
+        },
+        {
+          "heading": "**Internals**",
+          "level": 3,
+          "line": 792
+        },
+        {
+          "heading": "*HTTP backend migration (httr → httr2)*",
+          "level": 4,
+          "line": 794
+        },
+        {
+          "heading": "*Messaging migration (usethis → cli)*",
+          "level": 4,
+          "line": 810
+        },
+        {
+          "heading": "*Stability and test robustness*",
+          "level": 4,
+          "line": 826
+        },
+        {
+          "heading": "*Dependency changes*",
+          "level": 4,
+          "line": 838
+        },
+        {
+          "heading": "*CI, build, and contribution improvements*",
+          "level": 4,
+          "line": 852
+        },
+        {
+          "heading": "*Social branding (Twitter → X)*",
+          "level": 4,
+          "line": 862
+        },
+        {
+          "heading": "**hoopR 2.1.0**",
+          "level": 1,
+          "line": 868
+        },
+        {
+          "heading": "**hoopR 2.0.0**",
+          "level": 1,
+          "line": 873
+        },
+        {
+          "heading": "**NBA Stats API Live Endpoints**",
+          "level": 3,
+          "line": 875
+        },
+        {
+          "heading": "**NBA Boxscore V3 (and V3-styled) Endpoints Added**",
+          "level": 3,
+          "line": 881
+        },
+        {
+          "heading": "**Other NBA Stats API functions added**",
+          "level": 3,
+          "line": 895
+        },
+        {
+          "heading": "**Other Functions Added**",
+          "level": 3,
+          "line": 904
+        },
+        {
+          "heading": "**Proxy Capability Added and Other Notes**",
+          "level": 3,
+          "line": 908
+        },
+        {
+          "heading": "**hoopR 1.9.1**",
+          "level": 1,
+          "line": 915
+        },
+        {
+          "heading": "**hoopR 1.9.0**",
+          "level": 1,
+          "line": 918
+        },
+        {
+          "heading": "**hoopR 1.8.1**",
+          "level": 1,
+          "line": 924
+        },
+        {
+          "heading": "**hoopR 1.8.0**",
+          "level": 1,
+          "line": 929
+        },
+        {
+          "heading": "**hoopR 1.7.0**",
+          "level": 1,
+          "line": 935
+        },
+        {
+          "heading": "**hoopR 1.6.0**",
+          "level": 1,
+          "line": 943
+        },
+        {
+          "heading": "**hoopR 1.5.0**",
+          "level": 1,
+          "line": 948
+        },
+        {
+          "heading": "**hoopR 1.4.5**",
+          "level": 1,
+          "line": 951
+        },
+        {
+          "heading": "**hoopR 1.4.4**",
+          "level": 1,
+          "line": 954
+        },
+        {
+          "heading": "**hoopR 1.4.3**",
+          "level": 1,
+          "line": 957
+        },
+        {
+          "heading": "**hoopR 1.4.2**",
+          "level": 1,
+          "line": 960
+        },
+        {
+          "heading": "**hoopR 1.4.1**",
+          "level": 1,
+          "line": 963
+        },
+        {
+          "heading": "**hoopR 1.4.0**",
+          "level": 1,
+          "line": 967
+        },
+        {
+          "heading": "**hoopR 1.3.1**",
+          "level": 1,
+          "line": 973
+        },
+        {
+          "heading": "**hoopR 1.3.0**",
+          "level": 1,
+          "line": 976
+        },
+        {
+          "heading": "**Add Full Coverage for NBA Stats API**",
+          "level": 3,
+          "line": 978
+        },
+        {
+          "heading": "**hoopR 1.2.0**",
+          "level": 1,
+          "line": 1111
+        },
+        {
+          "heading": "**Add schedule loaders**",
+          "level": 3,
+          "line": 1113
+        },
+        {
+          "heading": "**hoopR 1.1.0**",
+          "level": 1,
+          "line": 1120
+        },
+        {
+          "heading": "**Add team box score loaders**",
+          "level": 3,
+          "line": 1121
+        },
+        {
+          "heading": "**Add player box score loaders**",
+          "level": 3,
+          "line": 1125
+        },
+        {
+          "heading": "**hoopR 1.0.5**",
+          "level": 1,
+          "line": 1129
+        },
+        {
+          "heading": "**Standings functions**",
+          "level": 3,
+          "line": 1130
+        },
+        {
+          "heading": "**hoopR 1.0.4**",
+          "level": 1,
+          "line": 1134
+        },
+        {
+          "heading": "**Add retry**",
+          "level": 3,
+          "line": 1135
+        },
+        {
+          "heading": "**hoopR 1.0.2-3**",
+          "level": 1,
+          "line": 1138
+        },
+        {
+          "heading": "**Quick fix for update db functions**",
+          "level": 3,
+          "line": 1139
+        },
+        {
+          "heading": "**hoopR 1.0.1-4**",
+          "level": 1,
+          "line": 1141
+        },
+        {
+          "heading": "**Dependency pruning**",
+          "level": 3,
+          "line": 1142
+        },
+        {
+          "heading": "**hoopR 1.0.0**",
+          "level": 1,
+          "line": 1145
+        },
+        {
+          "heading": "**Package renamed to hoopR**",
+          "level": 3,
+          "line": 1146
+        },
+        {
+          "heading": "**Clean names and team returns**",
+          "level": 3,
+          "line": 1149
+        },
+        {
+          "heading": "**Loading capabilities added to the package**",
+          "level": 3,
+          "line": 1155
+        },
+        {
+          "heading": "**hoopR 0.4**",
+          "level": 1,
+          "line": 1159
+        },
+        {
+          "heading": "**hoopR 0.3.0**",
+          "level": 1,
+          "line": 1168
+        },
+        {
+          "heading": "**Dependencies**",
+          "level": 3,
+          "line": 1169
+        },
+        {
+          "heading": "**Test coverage**",
+          "level": 3,
+          "line": 1182
+        },
+        {
+          "heading": "**Function Naming Convention Change**",
+          "level": 4,
+          "line": 1185
+        },
+        {
+          "heading": "**hoopR 0.2.0-3**",
+          "level": 1,
+          "line": 1191
+        },
+        {
+          "heading": "**hoopR 0.1.0**",
+          "level": 1,
+          "line": 1203
+        },
+        {
+          "heading": "**hoopR 0.0.0.9**",
+          "level": 1,
+          "line": 1206
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 112
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 160,
+      "nonEmptyLines": 119,
+      "sections": [
+        {
+          "heading": "hoopR <a href='https://hoopR.sportsdataverse.org/'><img src=\"https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png\" align=\"right\"  width=\"20%\" min-width=\"100px\" alt=\"hoopR logo\"/></a>",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "Installation",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Quick Start",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "**NBA full play-by-play seasons (2002-2026) \\~ 1-2 minutes**",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "**Men’s college basketball full play-by-play seasons (2006-2026) \\~ 2-3 minutes**",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "**Documentation**",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "**Breaking Changes**",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Follow the SportsDataverse (@SportsDataverse) on X and star this repo",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "**Our Authors**",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "**Our Contributors (they’re awesome)**",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "**Citations**",
+          "level": 2,
+          "line": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "_pkgdown.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 398,
+      "nonEmptyLines": 396,
+      "sections": [
+        {
+          "heading": "url",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "template",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "toc",
+          "level": 1,
+          "line": 37
+        },
+        {
+          "heading": "authors",
+          "level": 1,
+          "line": 39
+        },
+        {
+          "heading": "home",
+          "level": 1,
+          "line": 50
+        },
+        {
+          "heading": "navbar",
+          "level": 1,
+          "line": 60
+        },
+        {
+          "heading": "reference",
+          "level": 1,
+          "line": 183
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "cran-comments.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 281,
+      "nonEmptyLines": 248,
+      "sections": [
+        {
+          "heading": "Release summary",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Bug fixes",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Documentation improvements",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Internals",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "Dependency changes",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Release prep / CRAN compliance",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "ESPN core-v2 deep expansion",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "CollegeBasketballData (CBD) API wrappers",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "Bart Torvik / T-Rank (`torvik_*`) wrappers",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "Basketball-Reference (`bref_*`) wrappers",
+          "level": 3,
+          "line": 186
+        },
+        {
+          "heading": "R CMD check results",
+          "level": 2,
+          "line": 254
+        },
+        {
+          "heading": "revdepcheck results",
+          "level": 2,
+          "line": 275
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    }
+  ]
+}

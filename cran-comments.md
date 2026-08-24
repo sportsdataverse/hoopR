@@ -303,7 +303,11 @@ the development cycle (see "Late-cycle additions" below):
 
 ## R CMD check results
 
-RESULTS PENDING — coordinator fills after the check.
+0 errors | 0 warnings | 0 notes
+
+Checked with `--as-cran` under CRAN-equivalent conditions (NOT_CRAN unset,
+all live-API test gates disabled so every network-dependent test skips, as
+they do on CRAN).
 
 
 ## revdepcheck results

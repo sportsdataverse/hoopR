@@ -1,0 +1,207 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "R/kp_misc_stats.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 712,
+      "nonEmptyLines": 658,
+      "metrics": {}
+    },
+    {
+      "path": "R/kp_ratings_tables.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1468,
+      "nonEmptyLines": 1333,
+      "metrics": {}
+    },
+    {
+      "path": "R/kp_team_tables.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 2435,
+      "nonEmptyLines": 2226,
+      "metrics": {}
+    },
+    {
+      "path": "R/kp.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 72,
+      "metrics": {}
+    },
+    {
+      "path": "R/load_crosswalk.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 200,
+      "nonEmptyLines": 181,
+      "metrics": {}
+    },
+    {
+      "path": "R/load_hoopR.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 36,
+      "metrics": {}
+    },
+    {
+      "path": "R/load_mbb.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1001,
+      "nonEmptyLines": 915,
+      "metrics": {}
+    },
+    {
+      "path": "R/load_nba.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 960,
+      "nonEmptyLines": 862,
+      "metrics": {}
+    },
+    {
+      "path": "R/mbb_crosswalk.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 937,
+      "nonEmptyLines": 881,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_crosswalk.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 372,
+      "nonEmptyLines": 351,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_data_pbp.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 159,
+      "nonEmptyLines": 153,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_datasets.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 151,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_dictionaries.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 194,
+      "nonEmptyLines": 185,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_metrics.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 185,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_reduce.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 95,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_scaling.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 123,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_boxscore_v3.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 3624,
+      "nonEmptyLines": 3394,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_boxscore.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1648,
+      "nonEmptyLines": 1534,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_cume.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 514,
+      "nonEmptyLines": 483,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_draft.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 729,
+      "nonEmptyLines": 683,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_franchise.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 405,
+      "nonEmptyLines": 373,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_hustle.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 748,
+      "nonEmptyLines": 718,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_leaders.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1334,
+      "nonEmptyLines": 1236,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_league_dash.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 2530,
+      "nonEmptyLines": 2417,
+      "metrics": {}
+    },
+    {
+      "path": "R/nba_stats_league.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 1113,
+      "nonEmptyLines": 1057,
+      "metrics": {}
+    }
+  ]
+}

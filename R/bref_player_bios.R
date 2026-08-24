@@ -15,18 +15,20 @@
 #'   initial). Defaults to `"a"`.
 #' @return A `hoopR_data` tibble with one row per player:
 #'
-#'    |col_name   |types     |description                                       |
-#'    |:----------|:---------|:-------------------------------------------------|
-#'    |player     |character |Player name.                                      |
-#'    |player_id  |character |Basketball-Reference id slug (e.g. `jamesle01`).  |
-#'    |year_min   |integer   |First season played.                              |
-#'    |year_max   |integer   |Last season played.                               |
-#'    |pos        |character |Position(s).                                      |
-#'    |height     |character |Listed height (e.g. `6-9`).                       |
-#'    |weight     |integer   |Listed weight (lbs).                              |
-#'    |birth_date |character |Birth date.                                       |
-#'    |colleges   |character |College(s).                                       |
-#'    |letter     |character |Last-name initial (echoes the `letter` argument). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player \tab character \tab Player name. \cr
+#'       player_id \tab character \tab Basketball-Reference id slug (e.g. \code{jamesle01}). \cr
+#'       year_min \tab integer \tab First season played. \cr
+#'       year_max \tab integer \tab Last season played. \cr
+#'       pos \tab character \tab Position(s). \cr
+#'       height \tab character \tab Listed height (e.g. \code{6-9}). \cr
+#'       weight \tab integer \tab Listed weight (lbs). \cr
+#'       birth_date \tab character \tab Birth date. \cr
+#'       colleges \tab character \tab College(s). \cr
+#'       letter \tab character \tab Last-name initial (echoes the \code{letter} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom rvest read_html html_elements html_attr

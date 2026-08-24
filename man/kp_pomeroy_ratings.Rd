@@ -2,9 +2,27 @@
 % Please edit documentation in R/kp_ratings_tables.R
 \name{kp_pomeroy_ratings}
 \alias{kp_pomeroy_ratings}
+\alias{kp_efficiency}
+\alias{kp_fourfactors}
+\alias{kp_pointdist}
+\alias{kp_height}
+\alias{kp_foul_trouble}
+\alias{kp_teamstats}
 \title{\strong{Get KenPom Ratings}}
 \usage{
 kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
+
+kp_efficiency(min_year, max_year = most_recent_mbb_season())
+
+kp_fourfactors(min_year, max_year = most_recent_mbb_season())
+
+kp_pointdist(min_year, max_year = most_recent_mbb_season())
+
+kp_height(min_year, max_year = most_recent_mbb_season())
+
+kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
+
+kp_teamstats(min_year, max_year = most_recent_mbb_season())
 }
 \arguments{
 \item{min_year}{First year of data to pull}
@@ -12,51 +30,268 @@ kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
 \item{max_year}{Last year of data to pull}
 }
 \value{
-Returns a tibble of ratings\tabular{lll}{
-   col_name \tab types \tab description \cr
-   year \tab integer \tab 4-digit year. \cr
-   rk \tab numeric \tab Rk. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   conf \tab character \tab character. \cr
-   w_l \tab character \tab W l. \cr
-   adj_em \tab numeric \tab Adj em. \cr
-   adj_o \tab numeric \tab Adj o. \cr
-   adj_o_rk \tab numeric \tab Adj o rk. \cr
-   adj_d \tab numeric \tab Adj d. \cr
-   adj_d_rk \tab numeric \tab Adj d rk. \cr
-   adj_t \tab numeric \tab Adj t. \cr
-   adj_t_rk \tab numeric \tab Adj t rk. \cr
-   luck \tab numeric \tab Luck. \cr
-   luck_rk \tab numeric \tab Luck rk. \cr
-   sos_adj_em \tab numeric \tab Sos adj em. \cr
-   sos_adj_em_rk \tab numeric \tab Sos adj em rk. \cr
-   sos_opp_o \tab numeric \tab Sos opp o. \cr
-   sos_opp_o_rk \tab numeric \tab Sos opp o rk. \cr
-   sos_opp_d \tab numeric \tab Sos opp d. \cr
-   sos_opp_d_rk \tab numeric \tab Sos opp d rk. \cr
-   ncsos_adj_em \tab numeric \tab Ncsos adj em. \cr
-   ncsos_adj_em_rk \tab numeric \tab Ncsos adj em rk. \cr
-   ncaa_seed \tab numeric \tab Ncaa seed. \cr
-}
+Returns a tibble of ratings
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      year \tab integer \tab 4-digit year. \cr
+      rk \tab numeric \tab Rk. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      w_l \tab character \tab W l. \cr
+      adj_em \tab numeric \tab Adj em. \cr
+      adj_o \tab numeric \tab Adj o. \cr
+      adj_o_rk \tab numeric \tab Adj o rk. \cr
+      adj_d \tab numeric \tab Adj d. \cr
+      adj_d_rk \tab numeric \tab Adj d rk. \cr
+      adj_t \tab numeric \tab Adj t. \cr
+      adj_t_rk \tab numeric \tab Adj t rk. \cr
+      luck \tab numeric \tab Luck. \cr
+      luck_rk \tab numeric \tab Luck rk. \cr
+      sos_adj_em \tab numeric \tab Sos adj em. \cr
+      sos_adj_em_rk \tab numeric \tab Sos adj em rk. \cr
+      sos_opp_o \tab numeric \tab Sos opp o. \cr
+      sos_opp_o_rk \tab numeric \tab Sos opp o rk. \cr
+      sos_opp_d \tab numeric \tab Sos opp d. \cr
+      sos_opp_d_rk \tab numeric \tab Sos opp d rk. \cr
+      ncsos_adj_em \tab numeric \tab Ncsos adj em. \cr
+      ncsos_adj_em_rk \tab numeric \tab Ncsos adj em rk. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of efficiency and tempo ratings
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      adj_t \tab numeric \tab Adj t. \cr
+      adj_t_rk \tab numeric \tab Adj t rk. \cr
+      raw_t \tab numeric \tab Raw t. \cr
+      raw_t_rk \tab numeric \tab Raw t rk. \cr
+      avg_poss_length_off \tab numeric \tab Avg poss length off. \cr
+      avg_poss_length_off_rk \tab numeric \tab Avg poss length off rk. \cr
+      avg_poss_length_def \tab numeric \tab Avg poss length def. \cr
+      avg_poss_length_def_rk \tab numeric \tab Avg poss length def rk. \cr
+      adj_o \tab numeric \tab Adj o. \cr
+      adj_o_rk \tab numeric \tab Adj o rk. \cr
+      raw_o \tab numeric \tab Raw o. \cr
+      raw_o_rk \tab numeric \tab Raw o rk. \cr
+      adj_d \tab numeric \tab Adj d. \cr
+      adj_d_rk \tab numeric \tab Adj d rk. \cr
+      raw_d \tab numeric \tab Raw d. \cr
+      raw_d_rk \tab numeric \tab Raw d rk. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of four factors ratings
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      adj_t \tab numeric \tab Adj t. \cr
+      adj_t_rk \tab numeric \tab Adj t rk. \cr
+      adj_o \tab numeric \tab Adj o. \cr
+      adj_o_rk \tab numeric \tab Adj o rk. \cr
+      off_e_fg_pct \tab numeric \tab Off e field goals percentage (0-1 decimal). \cr
+      off_e_fg_pct_rk \tab numeric \tab Off e fg pct rk. \cr
+      off_to_pct \tab numeric \tab Off to percentage (0-1 decimal). \cr
+      off_to_pct_rk \tab numeric \tab Off to pct rk. \cr
+      off_or_pct \tab numeric \tab Off or percentage (0-1 decimal). \cr
+      off_or_pct_rk \tab numeric \tab Off or pct rk. \cr
+      off_ft_rate \tab numeric \tab Off ft rate. \cr
+      off_ft_rate_rk \tab numeric \tab Off ft rate rk. \cr
+      adj_d \tab numeric \tab Adj d. \cr
+      adj_d_rk \tab numeric \tab Adj d rk. \cr
+      def_e_fg_pct \tab numeric \tab Def e field goals percentage (0-1 decimal). \cr
+      def_e_fg_pct_rk \tab numeric \tab Def e fg pct rk. \cr
+      def_to_pct \tab numeric \tab Def to percentage (0-1 decimal). \cr
+      def_to_pct_rk \tab numeric \tab Def to pct rk. \cr
+      def_or_pct \tab numeric \tab Def or percentage (0-1 decimal). \cr
+      def_or_pct_rk \tab numeric \tab Def or pct rk. \cr
+      def_ft_rate \tab numeric \tab Def ft rate. \cr
+      def_ft_rate_rk \tab numeric \tab Def ft rate rk. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of team points distributions
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      off_ft_pct \tab numeric \tab Off free throws percentage (0-1 decimal). \cr
+      off_ft_pct_rk \tab numeric \tab Off ft pct rk. \cr
+      off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+      off_fg_2_pct_rk \tab numeric \tab Off fg 2 pct rk. \cr
+      off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+      off_fg_3_pct_rk \tab numeric \tab Off fg 3 pct rk. \cr
+      def_ft_pct \tab numeric \tab Def free throws percentage (0-1 decimal). \cr
+      def_ft_pct_rk \tab numeric \tab Def ft pct rk. \cr
+      def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+      def_fg_2_pct_rk \tab numeric \tab Def fg 2 pct rk. \cr
+      def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+      def_fg_3_pct_rk \tab numeric \tab Def fg 3 pct rk. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of heights
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      avg_hgt \tab numeric \tab Avg hgt. \cr
+      avg_hgt_rk \tab numeric \tab Avg hgt rk. \cr
+      eff_hgt \tab numeric \tab Eff hgt. \cr
+      eff_hgt_rk \tab numeric \tab Eff hgt rk. \cr
+      c_hgt \tab numeric \tab C hgt. \cr
+      c_hgt_rk \tab numeric \tab C hgt rk. \cr
+      pf_hgt \tab numeric \tab Pf hgt. \cr
+      pf_hgt_rk \tab numeric \tab Pf hgt rk. \cr
+      sf_hgt \tab numeric \tab Sf hgt. \cr
+      sf_hgt_rk \tab numeric \tab Sf hgt rk. \cr
+      sg_hgt \tab numeric \tab Sg hgt. \cr
+      sg_hgt_rk \tab numeric \tab Sg hgt rk. \cr
+      pg_hgt \tab numeric \tab Pg hgt. \cr
+      pg_hgt_rk \tab numeric \tab Pg hgt rk. \cr
+      experience \tab numeric \tab Years of professional experience. \cr
+      experience_rk \tab numeric \tab Experience rk. \cr
+      bench \tab numeric \tab Bench. \cr
+      bench_rk \tab numeric \tab Bench rk. \cr
+      continuity \tab numeric \tab Continuity. \cr
+      continuity_rk \tab numeric \tab Continuity rk. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+      year \tab integer \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of foul participation stats
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      two_foul_particpation_pct \tab numeric \tab Two foul particpation percentage (0-1 decimal). \cr
+      two_foul_particpation_pct_rk \tab numeric \tab Two foul particpation pct rk. \cr
+      adj2fp \tab numeric \tab Adj2fp. \cr
+      adj2fp_rk \tab numeric \tab Adj2fp rk. \cr
+      two_foul_total_time \tab character \tab Time / clock value. \cr
+      two_foul_total_time_rk \tab character \tab Two foul total time rk. \cr
+      two_foul_time_on \tab character \tab Two foul time on. \cr
+      two_foul_time_on_rk \tab character \tab Two foul time on rk. \cr
+      bench_pct \tab numeric \tab Bench percentage (0-1 decimal). \cr
+      bench_pct_rk \tab numeric \tab Bench pct rk. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+      year \tab integer \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of team stats
+
+\if{html}{\tabular{lll}{
+     col_name \tab types \tab description \cr
+     team \tab character \tab Team-side label or team identifier. \cr
+     conf \tab character \tab character. \cr
+     off_fg_3_pct \tab numeric \tab Off field goals 3 percentage (0-1 decimal). \cr
+     off_fg_3_pct_rk \tab numeric \tab Off fg 3 pct rk. \cr
+     off_fg_2_pct \tab numeric \tab Off field goals 2 percentage (0-1 decimal). \cr
+     off_fg_2_pct_rk \tab numeric \tab Off fg 2 pct rk. \cr
+     off_ft_pct \tab numeric \tab Off free throws percentage (0-1 decimal). \cr
+     off_ft_pct_rk \tab numeric \tab Off ft pct rk. \cr
+     off_blk_pct \tab numeric \tab Off blocks percentage (0-1 decimal). \cr
+     off_blk_pct_rk \tab numeric \tab Off blk pct rk. \cr
+     off_stl_pct \tab numeric \tab Off steals percentage (0-1 decimal). \cr
+     off_stl_pct_rk \tab numeric \tab Off stl pct rk. \cr
+     off_non_stl_pct \tab numeric \tab Off non steals percentage (0-1 decimal). \cr
+     off_non_stl_pct_rk \tab numeric \tab Off non stl pct rk. \cr
+     off_a_pct \tab numeric \tab Off a percentage (0-1 decimal). \cr
+     off_a_pct_rk \tab numeric \tab Off a pct rk. \cr
+     off_fg_3a_pct \tab numeric \tab Off field goals 3a percentage (0-1 decimal). \cr
+     off_fg_3a_pct_rk \tab numeric \tab Off fg 3a pct rk. \cr
+     adj_o \tab numeric \tab Adj o. \cr
+     adj_o_rk \tab numeric \tab Adj o rk. \cr
+     ncaa_seed \tab numeric \tab Ncaa seed. \cr
+     year \tab numeric \tab 4-digit year. \cr
+     def_fg_3_pct \tab numeric \tab Def field goals 3 percentage (0-1 decimal). \cr
+     def_fg_3_pct_rk \tab numeric \tab Def fg 3 pct rk. \cr
+     def_fg_2_pct \tab numeric \tab Def field goals 2 percentage (0-1 decimal). \cr
+     def_fg_2_pct_rk \tab numeric \tab Def fg 2 pct rk. \cr
+     def_ft_pct \tab numeric \tab Def free throws percentage (0-1 decimal). \cr
+     def_ft_pct_rk \tab numeric \tab Def ft pct rk. \cr
+     def_blk_pct \tab numeric \tab Def blocks percentage (0-1 decimal). \cr
+     def_blk_pct_rk \tab numeric \tab Def blk pct rk. \cr
+     def_stl_pct \tab numeric \tab Def steals percentage (0-1 decimal). \cr
+     def_stl_pct_rk \tab numeric \tab Def stl pct rk. \cr
+     def_non_stl_pct \tab numeric \tab Def non steals percentage (0-1 decimal). \cr
+     def_non_stl_pct_rk \tab numeric \tab Def non stl pct rk. \cr
+     def_a_pct \tab numeric \tab Def a percentage (0-1 decimal). \cr
+     def_a_pct_rk \tab numeric \tab Def a pct rk. \cr
+     def_fg_3a_pct \tab numeric \tab Def field goals 3a percentage (0-1 decimal). \cr
+     def_fg_3a_pct_rk \tab numeric \tab Def fg 3a pct rk. \cr
+     adj_d \tab numeric \tab Adj d. \cr
+     adj_d_rk \tab numeric \tab Adj d rk. \cr
+  }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get KenPom Ratings}
+
+\strong{Get KenPom Efficiency and Tempo Summary}
+
+\strong{Get Four Factors Data}
+
+\strong{Get Team Points Distribution}
+
+\strong{Get Heights, Experience, Bench and Continuity Data}
+
+\strong{Get 2-Foul Participation Stats}
+
+\strong{Get Team Stats}
 }
 \examples{
 \donttest{
 try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
 }
+\donttest{
+try(kp_efficiency(min_year = 2020, max_year = 2021))
+}
+\donttest{
+try(kp_fourfactors(min_year = 2020, max_year = 2021))
+}
+\donttest{
+try(kp_pointdist(min_year = 2020, max_year = 2021))
+}
+\donttest{
+try(kp_height(min_year = 2020, max_year = 2021))
+}
+\donttest{
+try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
+}
+\donttest{
+try(kp_teamstats(min_year = 2019, max_year = 2021))
+}
 }
 \seealso{
 Other KenPom Ratings Functions:
-\code{\link[=kp_efficiency]{kp_efficiency()}},
-\code{\link[=kp_foul_trouble]{kp_foul_trouble()}},
-\code{\link[=kp_fourfactors]{kp_fourfactors()}},
-\code{\link[=kp_height]{kp_height()}},
 \code{\link[=kp_kpoy]{kp_kpoy()}},
-\code{\link[=kp_playerstats]{kp_playerstats()}},
-\code{\link[=kp_pointdist]{kp_pointdist()}},
-\code{\link[=kp_teamstats]{kp_teamstats()}}
+\code{\link[=kp_playerstats]{kp_playerstats()}}
 }
 \concept{KenPom Ratings Functions}
+\keyword{Efficiency}
+\keyword{Factors}
+\keyword{Foul}
+\keyword{Four}
+\keyword{Points}
 \keyword{Ratings}
+\keyword{Roster}
+\keyword{Team}
+\keyword{Trouble}

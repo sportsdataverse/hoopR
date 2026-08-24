@@ -10,19 +10,21 @@
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.
 #' @return A `hoopR_data` tibble with one row per team:
 #'
-#'    |col_name      |types     |description                                      |
-#'    |:-------------|:---------|:------------------------------------------------|
-#'    |conference    |character |Conference (`E` or `W`).                         |
-#'    |team          |character |Team name (with playoff-seed marker stripped).   |
-#'    |wins          |integer   |Wins.                                            |
-#'    |losses        |integer   |Losses.                                          |
-#'    |win_loss_pct  |numeric   |Win-loss percentage.                             |
-#'    |gb            |character |Games behind the conference leader.              |
-#'    |pts_per_g     |numeric   |Points scored per game.                          |
-#'    |opp_pts_per_g |numeric   |Opponent points per game.                        |
-#'    |srs           |numeric   |Simple Rating System (point margin + SOS).       |
-#'    |playoffs      |logical   |`TRUE` if the team made the playoffs (`*` marker).|
-#'    |season        |integer   |Season (echoes the `season` argument).           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       conference \tab character \tab Conference (\code{E} or \code{W}). \cr
+#'       team \tab character \tab Team name (with playoff-seed marker stripped). \cr
+#'       wins \tab integer \tab Wins. \cr
+#'       losses \tab integer \tab Losses. \cr
+#'       win_loss_pct \tab numeric \tab Win-loss percentage. \cr
+#'       gb \tab character \tab Games behind the conference leader. \cr
+#'       pts_per_g \tab numeric \tab Points scored per game. \cr
+#'       opp_pts_per_g \tab numeric \tab Opponent points per game. \cr
+#'       srs \tab numeric \tab Simple Rating System (point margin + SOS). \cr
+#'       playoffs \tab logical \tab \code{TRUE} if the team made the playoffs (\code{*} marker). \cr
+#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names

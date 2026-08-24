@@ -10,29 +10,32 @@ kp_fanmatch(date)
 \item{date}{Date of games to pull (YYYY-MM-DD)}
 }
 \value{
-A data frame with the following columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   prediction \tab character \tab Prediction. \cr
-   time_et \tab character \tab Time et. \cr
-   location \tab character \tab Location. \cr
-   thrill_score \tab numeric \tab Thrill score. \cr
-   comeback \tab numeric \tab Comeback. \cr
-   excitement \tab numeric \tab Excitement. \cr
-   road_rk \tab numeric \tab Road rk. \cr
-   road_team \tab character \tab Road team. \cr
-   home_rk \tab numeric \tab Home team's rk. \cr
-   home_team \tab character \tab Home team's team. \cr
-   win_rk \tab numeric \tab Win rk. \cr
-   win_team \tab character \tab Win team. \cr
-   win_score \tab numeric \tab Win score. \cr
-   loss_rk \tab numeric \tab Loss rk. \cr
-   loss_team \tab character \tab Loss team. \cr
-   loss_score \tab numeric \tab Loss score. \cr
-   poss \tab numeric \tab Poss. \cr
-   mvp \tab character \tab Mvp. \cr
-   event \tab character \tab Event. \cr
-   date \tab character \tab Date in YYYY-MM-DD format. \cr
-}
+A data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+    col_name \tab types \tab description \cr
+    prediction \tab character \tab Prediction. \cr
+    time_et \tab character \tab Time et. \cr
+    location \tab character \tab Location. \cr
+    thrill_score \tab numeric \tab Thrill score. \cr
+    comeback \tab numeric \tab Comeback. \cr
+    excitement \tab numeric \tab Excitement. \cr
+    road_rk \tab numeric \tab Road rk. \cr
+    road_team \tab character \tab Road team. \cr
+    home_rk \tab numeric \tab Home team's rk. \cr
+    home_team \tab character \tab Home team's team. \cr
+    win_rk \tab numeric \tab Win rk. \cr
+    win_team \tab character \tab Win team. \cr
+    win_score \tab numeric \tab Win score. \cr
+    loss_rk \tab numeric \tab Loss rk. \cr
+    loss_team \tab character \tab Loss team. \cr
+    loss_score \tab numeric \tab Loss score. \cr
+    poss \tab numeric \tab Poss. \cr
+    mvp \tab character \tab Mvp. \cr
+    event \tab character \tab Event. \cr
+    date \tab character \tab Date in YYYY-MM-DD format. \cr
+ }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get FanMatch by date}

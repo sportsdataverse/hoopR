@@ -20,20 +20,7 @@ NULL
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
 #' @return A tibble with one row per odds provider.
 #'
-#'    |col_name             |types     |description                            |
-#'    |:--------------------|:---------|:--------------------------------------|
-#'    |event_id             |character |Unique event / game identifier (ESPN). |
-#'    |provider_id          |character |Unique identifier for provider.        |
-#'    |provider_name        |character |Provider name.                         |
-#'    |details              |character |Details.                               |
-#'    |over_under           |numeric   |Over under.                            |
-#'    |spread               |numeric   |Spread.                                |
-#'    |home_money_line      |integer   |                                       |
-#'    |away_money_line      |integer   |                                       |
-#'    |home_team_odds_open  |numeric   |                                       |
-#'    |home_team_odds_close |numeric   |                                       |
-#'    |away_team_odds_open  |numeric   |                                       |
-#'    |away_team_odds_close |numeric   |                                       |
+#'    Columns as documented in the shared [espn_mbb_game_odds_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
@@ -69,18 +56,7 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per play-level win-probability entry.
 #'
-#'    |col_name              |types     |description                                              |
-#'    |:---------------------|:---------|:--------------------------------------------------------|
-#'    |event_id              |character |Unique event / game identifier (ESPN).                   |
-#'    |sequence_number       |character |Sequence number representing a shot-possession (V3 PBP). |
-#'    |play_id               |character |Unique play identifier within a game.                    |
-#'    |period                |integer   |Period of the game (1-4 quarters; 5+ for OT).            |
-#'    |clock                 |character |Game clock value.                                        |
-#'    |home_win_percentage   |numeric   |Home win percentage (0-1 decimal).                       |
-#'    |away_win_percentage   |numeric   |Away win percentage (0-1 decimal).                       |
-#'    |tie_percentage        |numeric   |Tie percentage (0-1 decimal).                            |
-#'    |secs_to_end_of_period |numeric   |                                                         |
-#'    |secs_to_end_of_game   |numeric   |                                                         |
+#'    Columns as documented in the shared [espn_mbb_game_probabilities_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
@@ -104,27 +80,15 @@ espn_nba_game_probabilities <- function(event_id, limit = 200, ...) {
 # espn_nba_game_officials
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Officials**
-#' @name espn_nba_game_officials
-NULL
 #' @title
 #' **Get ESPN NBA Event Officials**
-#' @rdname espn_nba_game_officials
+#' @rdname espn_nba_game_odds
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per official assigned to the game.
 #'
-#'    |col_name      |types     |description                                            |
-#'    |:-------------|:---------|:------------------------------------------------------|
-#'    |event_id      |character |Unique event / game identifier (ESPN).                 |
-#'    |official_id   |character |Unique official / referee identifier.                  |
-#'    |full_name     |character |Player's full name.                                    |
-#'    |display_name  |character |Display name.                                          |
-#'    |position_id   |character |Unique position identifier.                            |
-#'    |position_name |character |Listed roster position ('Guard', 'Forward', 'Center'). |
-#'    |position_type |character |                                                       |
-#'    |order         |integer   |Display order within the result set.                   |
+#'    Columns as documented in the shared [espn_mbb_game_officials_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
@@ -147,29 +111,15 @@ espn_nba_game_officials <- function(event_id, ...) {
 # espn_nba_game_broadcasts
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Broadcasts**
-#' @name espn_nba_game_broadcasts
-NULL
 #' @title
 #' **Get ESPN NBA Event Broadcasts**
-#' @rdname espn_nba_game_broadcasts
+#' @rdname espn_nba_game_odds
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per broadcast outlet for the game.
 #'
-#'    |col_name        |types     |description                            |
-#'    |:---------------|:---------|:--------------------------------------|
-#'    |event_id        |character |Unique event / game identifier (ESPN). |
-#'    |broadcast_id    |character |                                       |
-#'    |type_id         |character |Type identifier (numeric).             |
-#'    |type_short_name |character |                                       |
-#'    |type_long_name  |character |                                       |
-#'    |market_id       |character |                                       |
-#'    |market_type     |character |                                       |
-#'    |names           |character |                                       |
-#'    |lang            |character |                                       |
-#'    |region          |character |Region label.                          |
+#'    Columns as documented in the shared [espn_mbb_game_broadcasts_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
@@ -192,12 +142,9 @@ espn_nba_game_broadcasts <- function(event_id, ...) {
 # espn_nba_game_situation
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Situation (Live)**
-#' @name espn_nba_game_situation
-NULL
 #' @title
 #' **Get ESPN NBA Event Situation (Live)**
-#' @rdname espn_nba_game_situation
+#' @rdname espn_nba_game_odds
 #' @author Saiem Gilani
 #' @description
 #' Returns the live game situation for one NBA event: timeouts remaining,
@@ -226,7 +173,7 @@ espn_nba_game_situation <- function(event_id, ...) {
 #' @name espn_nba_game_predictor
 #' @title
 #' **Get ESPN NBA Event Predictor (Pre-game)**
-#' @rdname espn_nba_game_predictor
+#' @rdname espn_nba_game_odds
 #' @author Saiem Gilani
 #' @description
 #' Returns pre-game predictor statistics for one NBA event in long
@@ -256,7 +203,7 @@ espn_nba_game_predictor <- function(event_id, ...) {
 #' @name espn_nba_game_powerindex
 #' @title
 #' **Get ESPN NBA Event Power Index Index**
-#' @rdname espn_nba_game_powerindex
+#' @rdname espn_nba_game_odds
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team power-index `$ref` URLs for one NBA event.
@@ -345,12 +292,9 @@ espn_nba_game_team_linescores <- function(event_id, team_id, ...) {
 # espn_nba_game_team_leaders
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
-#' @name espn_nba_game_team_leaders
-NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
-#' @rdname espn_nba_game_team_leaders
+#' @rdname espn_nba_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team statistical leaders for one NBA event in long
@@ -377,12 +321,9 @@ espn_nba_game_team_leaders <- function(event_id, team_id, ...) {
 # espn_nba_game_team_roster
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Competitor Roster (Game-Day)**
-#' @name espn_nba_game_team_roster
-NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Roster (Game-Day)**
-#' @rdname espn_nba_game_team_roster
+#' @rdname espn_nba_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns the game-day roster index for one team in one NBA event.
@@ -409,12 +350,9 @@ espn_nba_game_team_roster <- function(event_id, team_id, ...) {
 # espn_nba_game_team_statistics
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
-#' @name espn_nba_game_team_statistics
-NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
-#' @rdname espn_nba_game_team_statistics
+#' @rdname espn_nba_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns full team-game statistics for one team in one NBA event in
@@ -442,12 +380,9 @@ espn_nba_game_team_statistics <- function(event_id, team_id, ...) {
 # espn_nba_game_team_records
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
-#' @name espn_nba_game_team_records
-NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
-#' @rdname espn_nba_game_team_records
+#' @rdname espn_nba_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns team records as of the given NBA event: overall, home,
@@ -621,12 +556,9 @@ espn_nba_game_play_personnel <- function(event_id, play_id, ...) {
 # espn_nba_game_team_score
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Event Competitor Score (Single Row)**
-#' @name espn_nba_game_team_score
-NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Score (Single Row)**
-#' @rdname espn_nba_game_team_score
+#' @rdname espn_nba_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns a one-row tibble with one team's final score for one NBA event:

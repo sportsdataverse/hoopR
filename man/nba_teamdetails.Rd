@@ -16,21 +16,23 @@ Return a named list of data frames: TeamAwardsChampionships,
 TeamAwardsConf, TeamAwardsDiv, TeamBackground,
 TeamHistory, TeamHof, TeamRetired, TeamSocialSites
 
-\strong{TeamBackground}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   ABBREVIATION \tab character \tab Short abbreviation. \cr
-   NICKNAME \tab character \tab Team or athlete nickname. \cr
-   YEARFOUNDED \tab character \tab  \cr
-   CITY \tab character \tab City. \cr
-   ARENA \tab character \tab Arena. \cr
-   ARENACAPACITY \tab character \tab  \cr
-   OWNER \tab character \tab  \cr
-   GENERALMANAGER \tab character \tab  \cr
-   HEADCOACH \tab character \tab  \cr
-   DLEAGUEAFFILIATION \tab character \tab  \cr
-}
+\strong{TeamBackground}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      ABBREVIATION \tab character \tab Short abbreviation. \cr
+      NICKNAME \tab character \tab Team or athlete nickname. \cr
+      YEARFOUNDED \tab character \tab  \cr
+      CITY \tab character \tab City. \cr
+      ARENA \tab character \tab Arena. \cr
+      ARENACAPACITY \tab character \tab  \cr
+      OWNER \tab character \tab  \cr
+      GENERALMANAGER \tab character \tab  \cr
+      HEADCOACH \tab character \tab  \cr
+      DLEAGUEAFFILIATION \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{TeamHistory}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -63,12 +65,9 @@ TeamHistory, TeamHof, TeamRetired, TeamSocialSites
 }
 
 
-\strong{TeamAwardsDiv}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   YEARAWARDED \tab integer \tab  \cr
-   OPPOSITETEAM \tab integer \tab  \cr
-}
+\strong{TeamAwardsDiv}
 
+Same columns as the \strong{TeamAwardsConf} table above.
 
 \strong{TeamHof}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -81,15 +80,9 @@ TeamHistory, TeamHof, TeamRetired, TeamSocialSites
 }
 
 
-\strong{TeamRetired}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYERID \tab character \tab Playerid. \cr
-   PLAYER \tab character \tab Player. \cr
-   POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
-   JERSEY \tab character \tab Jersey number worn by the player. \cr
-   SEASONSWITHTEAM \tab character \tab  \cr
-   YEAR \tab character \tab 4-digit year. \cr
-}
+\strong{TeamRetired}
+
+Same columns as the \strong{TeamHof} table above.
 }
 \description{
 \strong{Get NBA Stats API Team Details}
@@ -115,9 +108,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}

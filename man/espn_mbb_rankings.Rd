@@ -7,46 +7,49 @@
 espn_mbb_rankings()
 }
 \value{
-Returns a tibble\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   short_name \tab character \tab Short display name. \cr
-   type \tab character \tab Record type / category. \cr
-   headline \tab character \tab News headline. \cr
-   short_headline \tab character \tab Short news headline. \cr
-   current \tab integer \tab Current. \cr
-   previous \tab integer \tab Previous. \cr
-   points \tab numeric \tab Points scored. \cr
-   first_place_votes \tab integer \tab First place votes. \cr
-   trend \tab character \tab Trend. \cr
-   date \tab character \tab Date in YYYY-MM-DD format. \cr
-   last_updated \tab character \tab Last updated. \cr
-   record_summary \tab character \tab Win-loss record summary string. \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-   team_location \tab character \tab Team city or location string. \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_nickname \tab character \tab Team nickname. \cr
-   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-   team_logo \tab character \tab Team logo image URL. \cr
-   occurrence_number \tab integer \tab Occurrence number. \cr
-   occurrence_type \tab character \tab Occurrence type. \cr
-   occurrence_last \tab logical \tab Occurrence last. \cr
-   occurrence_value \tab character \tab Occurrence value. \cr
-   occurrence_display_value \tab character \tab Occurrence display value. \cr
-   season_year \tab integer \tab Season year string ('YYYY-YY' format). \cr
-   season_start_date \tab character \tab Date in YYYY-MM-DD format. \cr
-   season_end_date \tab character \tab Date in YYYY-MM-DD format. \cr
-   season_display_name \tab character \tab Season display label. \cr
-   season_type_type \tab integer \tab Season type type. \cr
-   season_type_name \tab character \tab Season type name. \cr
-   season_type_abbreviation \tab character \tab Season type abbreviation. \cr
-   season_futures_ref \tab character \tab Season futures ref. \cr
-   first_occurrence_type \tab character \tab First occurrence type. \cr
-   first_occurrence_value \tab character \tab First occurrence value. \cr
-}
+Returns a tibble
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Id. \cr
+      name \tab character \tab Display name. \cr
+      short_name \tab character \tab Short display name. \cr
+      type \tab character \tab Record type / category. \cr
+      headline \tab character \tab News headline. \cr
+      short_headline \tab character \tab Short news headline. \cr
+      current \tab integer \tab Current. \cr
+      previous \tab integer \tab Previous. \cr
+      points \tab numeric \tab Points scored. \cr
+      first_place_votes \tab integer \tab First place votes. \cr
+      trend \tab character \tab Trend. \cr
+      date \tab character \tab Date in YYYY-MM-DD format. \cr
+      last_updated \tab character \tab Last updated. \cr
+      record_summary \tab character \tab Win-loss record summary string. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+      team_location \tab character \tab Team city or location string. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_nickname \tab character \tab Team nickname. \cr
+      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+      team_logo \tab character \tab Team logo image URL. \cr
+      occurrence_number \tab integer \tab Occurrence number. \cr
+      occurrence_type \tab character \tab Occurrence type. \cr
+      occurrence_last \tab logical \tab Occurrence last. \cr
+      occurrence_value \tab character \tab Occurrence value. \cr
+      occurrence_display_value \tab character \tab Occurrence display value. \cr
+      season_year \tab integer \tab Season year string ('YYYY-YY' format). \cr
+      season_start_date \tab character \tab Date in YYYY-MM-DD format. \cr
+      season_end_date \tab character \tab Date in YYYY-MM-DD format. \cr
+      season_display_name \tab character \tab Season display label. \cr
+      season_type_type \tab integer \tab Season type type. \cr
+      season_type_name \tab character \tab Season type name. \cr
+      season_type_abbreviation \tab character \tab Season type abbreviation. \cr
+      season_futures_ref \tab character \tab Season futures ref. \cr
+      first_occurrence_type \tab character \tab First occurrence type. \cr
+      first_occurrence_value \tab character \tab First occurrence value. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get men's college basketball AP and Coaches Poll rankings from ESPN}
@@ -61,7 +64,6 @@ try(espn_mbb_rankings())
 Other ESPN MBB Functions:
 \code{\link[=espn_mbb_athletes_index]{espn_mbb_athletes_index()}},
 \code{\link[=espn_mbb_award]{espn_mbb_award()}},
-\code{\link[=espn_mbb_betting]{espn_mbb_betting()}},
 \code{\link[=espn_mbb_calendar]{espn_mbb_calendar()}},
 \code{\link[=espn_mbb_coach]{espn_mbb_coach()}},
 \code{\link[=espn_mbb_coach_record]{espn_mbb_coach_record()}},
@@ -72,51 +74,31 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_franchises]{espn_mbb_franchises()}},
 \code{\link[=espn_mbb_futures]{espn_mbb_futures()}},
 \code{\link[=espn_mbb_game_all]{espn_mbb_game_all()}},
-\code{\link[=espn_mbb_game_broadcasts]{espn_mbb_game_broadcasts()}},
 \code{\link[=espn_mbb_game_odds]{espn_mbb_game_odds()}},
 \code{\link[=espn_mbb_game_official_detail]{espn_mbb_game_official_detail()}},
-\code{\link[=espn_mbb_game_officials]{espn_mbb_game_officials()}},
 \code{\link[=espn_mbb_game_play]{espn_mbb_game_play()}},
 \code{\link[=espn_mbb_game_play_personnel]{espn_mbb_game_play_personnel()}},
 \code{\link[=espn_mbb_game_player_box]{espn_mbb_game_player_box()}},
-\code{\link[=espn_mbb_game_powerindex]{espn_mbb_game_powerindex()}},
-\code{\link[=espn_mbb_game_predictor]{espn_mbb_game_predictor()}},
 \code{\link[=espn_mbb_game_probabilities]{espn_mbb_game_probabilities()}},
 \code{\link[=espn_mbb_game_propbets]{espn_mbb_game_propbets()}},
-\code{\link[=espn_mbb_game_rosters]{espn_mbb_game_rosters()}},
-\code{\link[=espn_mbb_game_situation]{espn_mbb_game_situation()}},
-\code{\link[=espn_mbb_game_team_leaders]{espn_mbb_game_team_leaders()}},
 \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}},
-\code{\link[=espn_mbb_game_team_records]{espn_mbb_game_team_records()}},
-\code{\link[=espn_mbb_game_team_roster]{espn_mbb_game_team_roster()}},
 \code{\link[=espn_mbb_game_team_roster_entry]{espn_mbb_game_team_roster_entry()}},
-\code{\link[=espn_mbb_game_team_score]{espn_mbb_game_team_score()}},
-\code{\link[=espn_mbb_game_team_statistics]{espn_mbb_game_team_statistics()}},
 \code{\link[=espn_mbb_injuries]{espn_mbb_injuries()}},
 \code{\link[=espn_mbb_leaders]{espn_mbb_leaders()}},
 \code{\link[=espn_mbb_news]{espn_mbb_news()}},
-\code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}},
 \code{\link[=espn_mbb_player_awards]{espn_mbb_player_awards()}},
-\code{\link[=espn_mbb_player_box]{espn_mbb_player_box()}},
 \code{\link[=espn_mbb_player_career_stats]{espn_mbb_player_career_stats()}},
-\code{\link[=espn_mbb_player_eventlog]{espn_mbb_player_eventlog()}},
 \code{\link[=espn_mbb_player_eventlog_v2]{espn_mbb_player_eventlog_v2()}},
-\code{\link[=espn_mbb_player_gamelog]{espn_mbb_player_gamelog()}},
 \code{\link[=espn_mbb_player_info]{espn_mbb_player_info()}},
 \code{\link[=espn_mbb_player_overview]{espn_mbb_player_overview()}},
 \code{\link[=espn_mbb_player_seasons]{espn_mbb_player_seasons()}},
-\code{\link[=espn_mbb_player_splits]{espn_mbb_player_splits()}},
-\code{\link[=espn_mbb_player_statisticslog]{espn_mbb_player_statisticslog()}},
 \code{\link[=espn_mbb_player_stats]{espn_mbb_player_stats()}},
-\code{\link[=espn_mbb_player_stats_v3]{espn_mbb_player_stats_v3()}},
 \code{\link[=espn_mbb_position]{espn_mbb_position()}},
 \code{\link[=espn_mbb_positions]{espn_mbb_positions()}},
 \code{\link[=espn_mbb_powerindex]{espn_mbb_powerindex()}},
 \code{\link[=espn_mbb_scoreboard]{espn_mbb_scoreboard()}},
 \code{\link[=espn_mbb_season_awards]{espn_mbb_season_awards()}},
 \code{\link[=espn_mbb_season_group]{espn_mbb_season_group()}},
-\code{\link[=espn_mbb_season_group_children]{espn_mbb_season_group_children()}},
-\code{\link[=espn_mbb_season_group_teams]{espn_mbb_season_group_teams()}},
 \code{\link[=espn_mbb_season_groups]{espn_mbb_season_groups()}},
 \code{\link[=espn_mbb_season_info]{espn_mbb_season_info()}},
 \code{\link[=espn_mbb_season_leaders]{espn_mbb_season_leaders()}},
@@ -129,17 +111,13 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_seasons]{espn_mbb_seasons()}},
 \code{\link[=espn_mbb_standings]{espn_mbb_standings()}},
 \code{\link[=espn_mbb_team]{espn_mbb_team()}},
-\code{\link[=espn_mbb_team_box]{espn_mbb_team_box()}},
 \code{\link[=espn_mbb_team_current_roster]{espn_mbb_team_current_roster()}},
 \code{\link[=espn_mbb_team_injuries]{espn_mbb_team_injuries()}},
-\code{\link[=espn_mbb_team_leaders]{espn_mbb_team_leaders()}},
 \code{\link[=espn_mbb_team_news]{espn_mbb_team_news()}},
 \code{\link[=espn_mbb_team_odds_records]{espn_mbb_team_odds_records()}},
 \code{\link[=espn_mbb_team_record]{espn_mbb_team_record()}},
 \code{\link[=espn_mbb_team_record_detail]{espn_mbb_team_record_detail()}},
-\code{\link[=espn_mbb_team_roster]{espn_mbb_team_roster()}},
 \code{\link[=espn_mbb_team_schedule]{espn_mbb_team_schedule()}},
-\code{\link[=espn_mbb_team_season_profile]{espn_mbb_team_season_profile()}},
 \code{\link[=espn_mbb_team_season_roster]{espn_mbb_team_season_roster()}},
 \code{\link[=espn_mbb_team_season_statistics]{espn_mbb_team_season_statistics()}},
 \code{\link[=espn_mbb_team_stats]{espn_mbb_team_stats()}},

@@ -26,43 +26,46 @@ nba_teamyearbyyearstats(
 \value{
 Return a named list of data frames: TeamStats
 
-\strong{TeamStats}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   YEAR \tab character \tab 4-digit year. \cr
-   GP \tab character \tab Games played. \cr
-   WINS \tab character \tab Total wins. \cr
-   LOSSES \tab character \tab Total losses. \cr
-   WIN_PCT \tab character \tab  \cr
-   CONF_RANK \tab character \tab  \cr
-   DIV_RANK \tab character \tab  \cr
-   PO_WINS \tab character \tab  \cr
-   PO_LOSSES \tab character \tab  \cr
-   CONF_COUNT \tab character \tab  \cr
-   DIV_COUNT \tab character \tab  \cr
-   NBA_FINALS_APPEARANCE \tab character \tab  \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   PF \tab character \tab Personal fouls. \cr
-   STL \tab character \tab Steals. \cr
-   TOV \tab character \tab Turnovers. \cr
-   BLK \tab character \tab Blocks. \cr
-   PTS \tab character \tab Points scored. \cr
-   PTS_RANK \tab character \tab  \cr
-}
+\strong{TeamStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      YEAR \tab character \tab 4-digit year. \cr
+      GP \tab character \tab Games played. \cr
+      WINS \tab character \tab Total wins. \cr
+      LOSSES \tab character \tab Total losses. \cr
+      WIN_PCT \tab character \tab  \cr
+      CONF_RANK \tab character \tab  \cr
+      DIV_RANK \tab character \tab  \cr
+      PO_WINS \tab character \tab  \cr
+      PO_LOSSES \tab character \tab  \cr
+      CONF_COUNT \tab character \tab  \cr
+      DIV_COUNT \tab character \tab  \cr
+      NBA_FINALS_APPEARANCE \tab character \tab  \cr
+      FGM \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FTM \tab character \tab Free throws made. \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OREB \tab character \tab Offensive rebounds. \cr
+      DREB \tab character \tab Defensive rebounds. \cr
+      REB \tab character \tab Total rebounds. \cr
+      AST \tab character \tab Assists. \cr
+      PF \tab character \tab Personal fouls. \cr
+      STL \tab character \tab Steals. \cr
+      TOV \tab character \tab Turnovers. \cr
+      BLK \tab character \tab Blocks. \cr
+      PTS \tab character \tab Points scored. \cr
+      PTS_RANK \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Team Year by Year Stats}
@@ -91,9 +94,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamestreakfinder]{nba_teamgamestreakfinder()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}}
 }

@@ -104,43 +104,48 @@ nba_videodetails(
 \value{
 Return a list of tibbles: videoUrls, playlist
 
-\strong{videoUrls}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   uuid \tab character \tab Uuid. \cr
-   dur \tab logical \tab Dur. \cr
-   stt \tab logical \tab Stt. \cr
-   stp \tab logical \tab Stp. \cr
-   sth \tab logical \tab Sth. \cr
-   stw \tab logical \tab Stw. \cr
-   mtt \tab logical \tab Mtt. \cr
-   mtp \tab logical \tab Mtp. \cr
-   mth \tab logical \tab Mth. \cr
-   mtw \tab logical \tab Mtw. \cr
-   ltt \tab logical \tab Ltt. \cr
-   ltp \tab logical \tab Ltp. \cr
-   lth \tab logical \tab Lth. \cr
-   ltw \tab logical \tab Ltw. \cr
-}
+\strong{videoUrls}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      uuid \tab character \tab Uuid. \cr
+      dur \tab logical \tab Dur. \cr
+      stt \tab logical \tab Stt. \cr
+      stp \tab logical \tab Stp. \cr
+      sth \tab logical \tab Sth. \cr
+      stw \tab logical \tab Stw. \cr
+      mtt \tab logical \tab Mtt. \cr
+      mtp \tab logical \tab Mtp. \cr
+      mth \tab logical \tab Mth. \cr
+      mtw \tab logical \tab Mtw. \cr
+      ltt \tab logical \tab Ltt. \cr
+      ltp \tab logical \tab Ltp. \cr
+      lth \tab logical \tab Lth. \cr
+      ltw \tab logical \tab Ltw. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{playlist}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   gi \tab character \tab Gi. \cr
-   ei \tab integer \tab Ei. \cr
-   y \tab integer \tab Y. \cr
-   m \tab character \tab M. \cr
-   d \tab character \tab D. \cr
-   gc \tab character \tab Gc. \cr
-   p \tab integer \tab P. \cr
-   dsc \tab character \tab Dsc. \cr
-   ha \tab character \tab Ha. \cr
-   va \tab character \tab Va. \cr
-   hpb \tab integer \tab Hpb. \cr
-   hpa \tab integer \tab Hpa. \cr
-   vpb \tab integer \tab Vpb. \cr
-   vpa \tab integer \tab Vpa. \cr
-   pta \tab integer \tab Pta. \cr
-}
+\strong{playlist}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      gi \tab character \tab Gi. \cr
+      ei \tab integer \tab Ei. \cr
+      y \tab integer \tab Y. \cr
+      m \tab character \tab M. \cr
+      d \tab character \tab D. \cr
+      gc \tab character \tab Gc. \cr
+      p \tab integer \tab P. \cr
+      dsc \tab character \tab Dsc. \cr
+      ha \tab character \tab Ha. \cr
+      va \tab character \tab Va. \cr
+      hpb \tab integer \tab Hpb. \cr
+      hpa \tab integer \tab Hpa. \cr
+      vpb \tab integer \tab Vpb. \cr
+      vpa \tab integer \tab Vpa. \cr
+      pta \tab integer \tab Pta. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

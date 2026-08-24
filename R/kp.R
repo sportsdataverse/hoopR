@@ -25,29 +25,33 @@
 #'
 #' ## **Per-game / per-team detail**
 #'
-#' | Function | Purpose |
-#' |---|---|
-#' | [kp_box()]                          | Box-score detail |
-#' | [kp_fanmatch()]                     | FanMatch daily slate |
-#' | [kp_gameplan()]                     | Game-plan page |
-#' | [kp_team_lineups()]                 | Team lineup stats |
-#' | [kp_team_depth_chart()]             | Team depth chart |
-#' | [kp_team_player_stats()]            | Per-team player stats |
-#' | [kp_team_schedule()]                | Per-team schedule |
-#' | [kp_team_players()]                 | Team roster |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Purpose \cr
+#'    \code{\link[=kp_box]{kp_box()}} \tab Box-score detail \cr
+#'    \code{\link[=kp_fanmatch]{kp_fanmatch()}} \tab FanMatch daily slate \cr
+#'    \code{\link[=kp_gameplan]{kp_gameplan()}} \tab Game-plan page \cr
+#'    \code{\link[=kp_team_lineups]{kp_team_lineups()}} \tab Team lineup stats \cr
+#'    \code{\link[=kp_team_depth_chart]{kp_team_depth_chart()}} \tab Team depth chart \cr
+#'    \code{\link[=kp_team_player_stats]{kp_team_player_stats()}} \tab Per-team player stats \cr
+#'    \code{\link[=kp_team_schedule]{kp_team_schedule()}} \tab Per-team schedule \cr
+#'    \code{\link[=kp_team_players]{kp_team_players()}} \tab Team roster \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' ## **Conference / efficiency / four-factor splits**
 #'
-#' | Function | Purpose |
-#' |---|---|
-#' | [kp_conf()]                  | Conference summary |
-#' | [kp_confhistory()]           | Conference history |
-#' | [kp_confstats()]             | Conference stats |
-#' | [kp_efficiency()]            | Efficiency rankings |
-#' | [kp_fourfactors()]           | Four-factor rankings |
-#' | [kp_pointdist()]             | Points distribution |
-#' | [kp_teamstats()]             | Team stats |
-#' | [kp_hca()]                   | Home-court advantage |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Purpose \cr
+#'    \code{\link[=kp_conf]{kp_conf()}} \tab Conference summary \cr
+#'    \code{\link[=kp_confhistory]{kp_confhistory()}} \tab Conference history \cr
+#'    \code{\link[=kp_confstats]{kp_confstats()}} \tab Conference stats \cr
+#'    \code{\link[=kp_efficiency]{kp_efficiency()}} \tab Efficiency rankings \cr
+#'    \code{\link[=kp_fourfactors]{kp_fourfactors()}} \tab Four-factor rankings \cr
+#'    \code{\link[=kp_pointdist]{kp_pointdist()}} \tab Points distribution \cr
+#'    \code{\link[=kp_teamstats]{kp_teamstats()}} \tab Team stats \cr
+#'    \code{\link[=kp_hca]{kp_hca()}} \tab Home-court advantage \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' ## **Player + coach + officials**
 #'

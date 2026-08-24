@@ -23,25 +23,28 @@ nba_commonallplayers(
 \value{
 Return a named list of data frames: CommonAllPlayers
 
-\strong{CommonAllPlayers}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-   DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
-   DISPLAY_FIRST_LAST \tab character \tab  \cr
-   ROSTERSTATUS \tab character \tab  \cr
-   FROM_YEAR \tab character \tab  \cr
-   TO_YEAR \tab character \tab  \cr
-   PLAYERCODE \tab character \tab  \cr
-   PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_CODE \tab character \tab  \cr
-   TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   GAMES_PLAYED_FLAG \tab character \tab  \cr
-   OTHERLEAGUE_EXPERIENCE_CH \tab character \tab  \cr
-}
+\strong{CommonAllPlayers}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+      DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
+      DISPLAY_FIRST_LAST \tab character \tab  \cr
+      ROSTERSTATUS \tab character \tab  \cr
+      FROM_YEAR \tab character \tab  \cr
+      TO_YEAR \tab character \tab  \cr
+      PLAYERCODE \tab character \tab  \cr
+      PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CODE \tab character \tab  \cr
+      TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      GAMES_PLAYED_FLAG \tab character \tab  \cr
+      OTHERLEAGUE_EXPERIENCE_CH \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API All Players}

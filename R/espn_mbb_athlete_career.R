@@ -20,12 +20,7 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per career season.
 #'
-#'    |col_name   |types     |description                              |
-#'    |:----------|:---------|:----------------------------------------|
-#'    |league     |character |League slug.                             |
-#'    |athlete_id |character |ESPN athlete id.                         |
-#'    |season     |integer   |Season year.                             |
-#'    |ref        |character |`$ref` URL to the season detail.         |
+#'    Columns as documented in the shared [espn_mbb_player_seasons_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -68,25 +63,7 @@ espn_mbb_player_seasons <- function(athlete_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble (one row per stat_type × split × category × stat).
 #'
-#'    |col_name         |types     |description                                |
-#'    |:----------------|:---------|:------------------------------------------|
-#'    |league           |character |League slug.                               |
-#'    |athlete_id       |character |ESPN athlete id.                           |
-#'    |stat_type_id     |character |Stat-type code (0 = reg, 1 = post, 2 = career). |
-#'    |split_id         |character |Split id.                                  |
-#'    |split_name       |character |Split name (typically "All Splits").       |
-#'    |split_type       |character |Split type code.                           |
-#'    |category_name    |character |Category key (e.g. "defensive").           |
-#'    |category_display |character |Category display name.                     |
-#'    |category_short   |character |Category short display.                    |
-#'    |category_abbrev  |character |Category abbreviation.                     |
-#'    |stat_name        |character |Stat key.                                  |
-#'    |stat_abbrev      |character |Stat abbreviation.                         |
-#'    |stat_display     |character |Stat display name.                         |
-#'    |stat_short       |character |Stat short display.                        |
-#'    |description      |character |Stat description.                          |
-#'    |value            |numeric   |Stat value.                                |
-#'    |display_value    |character |Display-formatted value.                   |
+#'    Columns as documented in the shared [espn_mbb_player_career_stats_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

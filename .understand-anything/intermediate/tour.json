@@ -1,0 +1,132 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the README to understand what hoopR is: a SportsDataverse R package that delivers tidy men's basketball data across NBA (2002-2026) and college (2006-2026) from ESPN, the NBA Stats API, the College Basketball Data API, and auxiliary sources. The landing page frames the two core access patterns the rest of the tour expands on — scraping live endpoints function-by-function, and bulk-loading pre-processed season releases. Read it first to get the map before diving into the code.",
+    "nodeIds": ["document:README.md"]
+  },
+  {
+    "order": 2,
+    "title": "Shared ESPN Basketball Helpers",
+    "description": "Before the per-league scrapers, hoopR factors the ESPN logic shared by NBA and MBB into one internal backend. espn_basketball.R is the documentation hub tying the families together, while the event, team, and athlete helper modules fetch and tidy ESPN Core v2 / Site v2 resources into tibbles that both leagues reuse. Understanding this 'one core + thin per-league wrappers' pattern is key — it explains why the next two steps look like mirror images of each other.",
+    "nodeIds": [
+      "file:R/espn_basketball.R",
+      "file:R/espn_basketball_event_helpers.R",
+      "file:R/espn_basketball_team_helpers.R",
+      "file:R/espn_basketball_athlete_helpers.R"
+    ],
+    "languageLesson": "R packages keep internal helpers un-exported (no @export tag) so they stay private to the package namespace. Functions prefixed with a dot (.bb_*) are an additional convention signaling 'internal, do not call directly'."
+  },
+  {
+    "order": 3,
+    "title": "ESPN Men's College Basketball",
+    "description": "espn_mbb_data.R is the heart of the MBB ESPN surface: play-by-play, team/player box scores, rosters, scoreboard, schedule, rankings, standings, and the parsers that flatten ESPN summary payloads. It leans on the shared helpers from Step 2 and is complemented by focused wrappers like deep team resources, season metadata, and the per-game win-probability extractor. This is the highest-traffic college data path in the package.",
+    "nodeIds": [
+      "file:R/espn_mbb_data.R",
+      "file:R/espn_mbb_team_deep.R",
+      "file:R/espn_mbb_season_meta.R",
+      "file:R/espn_mbb_wp.R"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "ESPN NBA",
+    "description": "The NBA ESPN surface mirrors the MBB one structurally — espn_nba_data.R provides play-by-play, box scores, rosters, schedules, and standings from ESPN Site v2, while the athlete and team-detail wrappers are direct counterparts to their MBB siblings. Building on the shared helpers from Step 2, this symmetry is deliberate: the same backend serves both leagues, so once you know the MBB shape you already know the NBA shape.",
+    "nodeIds": [
+      "file:R/espn_nba_data.R",
+      "file:R/espn_nba_athletes.R",
+      "file:R/espn_nba_team_detail.R"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "NBA Stats API",
+    "description": "Beyond ESPN, hoopR wraps the official stats.nba.com endpoints for richer data. nba_stats.R is the index hub; utils_nba_stats.R is the shared HTTP and result-parsing layer that builds requests (with proxy support) and maps NBA Stats resultSets into tibbles. The player module is the largest wrapper, and nba_stats_pbp.R adds enriched and live cdn.nba.com play-by-play feeds. Note the recurring pattern: a utils layer owns transport and parsing, and thin endpoint modules sit on top.",
+    "nodeIds": [
+      "file:R/nba_stats.R",
+      "file:R/utils_nba_stats.R",
+      "file:R/nba_stats_player.R",
+      "file:R/nba_stats_pbp.R"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "College Basketball Data API",
+    "description": "The cbbd_* family wraps the third-party College Basketball Data API. cbbd_api_key.R is foundational — it manages the API key and exposes the shared authenticated .cbbd_get helper that every other cbbd_* wrapper depends on (the highest fan-in node in the whole graph). The games, lines, and stats wrappers sit on top, returning schedule/box-score, betting-odds, and aggregate-stat frames respectively.",
+    "nodeIds": [
+      "file:R/cbbd_api_key.R",
+      "file:R/cbbd_games.R",
+      "file:R/cbbd_lines.R",
+      "file:R/cbbd_stats.R"
+    ],
+    "languageLesson": "hoopR stores API keys in an environment variable read at request time (cbbd_key/has_cbbd_key), keeping secrets out of source and letting CI inject them via repository secrets rather than committing credentials."
+  },
+  {
+    "order": 7,
+    "title": "Auxiliary Sources & Web Scrapers",
+    "description": "hoopR also scrapes sources without clean APIs. Each family has a shared internal utils layer: bref_utils.R parses Basketball-Reference HTML tables, realgm_utils.R drives chromote page rendering for RealGM, torvik_utils.R centralizes barttorvik.com requests, and the kp_* family logs into KenPom with an httr2 cookie jar. This step shows how the same 'shared utils + thin scrapers' pattern from Steps 5-6 scales to heterogeneous HTML and authenticated sources.",
+    "nodeIds": [
+      "file:R/bref_utils.R",
+      "file:R/realgm_utils.R",
+      "file:R/torvik_utils.R",
+      "file:R/kp.R",
+      "file:R/kp_misc_stats.R"
+    ],
+    "languageLesson": "R web scraping leans on rvest (CSS/XPath HTML parsing) and httr2 (modern request pipelines with cookie-jar sessions). chromote drives a headless Chrome for JavaScript-rendered pages that rvest alone cannot read."
+  },
+  {
+    "order": 8,
+    "title": "Pre-Processed Data Loaders",
+    "description": "Scraping live endpoints is slow; for whole-season analysis hoopR ships loaders that pull pre-scraped parquet/RDS assets from SportsDataverse-data releases. load_hoopR.R is the overview hub, while load_mbb.R and load_nba.R provide season-level play-by-play, box scores, schedules, rosters, and standings with parallel download and DBI database-build helpers. These are the functions the cookbook vignettes (Step 12) actually use — the fast path most users start with.",
+    "nodeIds": [
+      "file:R/load_hoopR.R",
+      "file:R/load_mbb.R",
+      "file:R/load_nba.R",
+      "file:R/load_crosswalk.R"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "Utilities & Cross-Source Crosswalks",
+    "description": "utils.R is the package-wide backbone — KenPom credential handling, cached URL loaders, season/year helpers, team-name normalization, and the hoopR_data S3 class with its print method. data.R documents the bundled team-links reference dataset. crosswalk_basketball.R is the deterministic normalization engine that the NBA and MBB crosswalk builders use to reconcile ESPN, NBA Stats, Fox, KenPom, and Barttorvik identities into one ID map — the glue that lets data from Steps 3-8 be joined together.",
+    "nodeIds": [
+      "file:R/utils.R",
+      "file:R/data.R",
+      "file:R/crosswalk_basketball.R",
+      "file:R/mbb_crosswalk.R",
+      "file:R/nba_crosswalk.R"
+    ],
+    "languageLesson": "S3 is R's lightweight object system: a class is just an attribute on a value, and dispatch happens by naming a method generic.class (here print.hoopR_data). It needs no formal class declaration — the print method is registered in NAMESPACE."
+  },
+  {
+    "order": 10,
+    "title": "Package Manifest & Namespace",
+    "description": "Two generated/authored config files define hoopR as an installable R package. DESCRIPTION is the manifest: version 3.1.0, MIT license, R >= 4.1, and the Imports/Suggests (httr2, dplyr, rvest, data.table) that power every layer you have seen. NAMESPACE is roxygen2-generated and exports the 270+ functions across the bref_/cbbd_/espn_/kp_/nba_/load_/torvik_/realgm_ families plus the print.hoopR_data S3 method, controlling exactly what users can call.",
+    "nodeIds": ["config:DESCRIPTION", "config:NAMESPACE"],
+    "languageLesson": "In R packages DESCRIPTION declares dependencies and metadata, while NAMESPACE — regenerated from roxygen2 @export/@importFrom tags, never hand-edited — governs which functions are public and which packages' symbols are imported."
+  },
+  {
+    "order": 11,
+    "title": "Worked Examples: Vignettes",
+    "description": "Vignettes are hoopR's runnable tutorials and the best end-to-end view of how the layers combine. getting-started walks installation and a quick-start; the MBB and NBA cookbooks stitch loaders (Step 8), ESPN data (Steps 3-4), NBA Stats (Step 5), and KenPom metrics (Step 7) into real analysis workflows. The ESPN-endpoints, CBBD, and KenPom vignettes document those specific surfaces by use case. Read these to see the package used the way an analyst would.",
+    "nodeIds": [
+      "file:vignettes/getting-started-hoopR.Rmd",
+      "file:vignettes/mbb-cookbook.Rmd",
+      "file:vignettes/nba-cookbook.Rmd",
+      "file:vignettes/espn-endpoints.Rmd",
+      "file:vignettes/cbbd-college-basketball-data.Rmd"
+    ]
+  },
+  {
+    "order": 12,
+    "title": "CI/CD & Docs Pipeline",
+    "description": "Finally, the automation that keeps hoopR healthy. R-CMD-check.yaml runs R CMD check across a macOS/Windows/Ubuntu matrix on push, PR, and a weekly cron, with opt-in live-API test toggles supplied via secrets. pkgdown.yaml builds and deploys the documentation site (configured by _pkgdown.yml, which groups the reference index by data-source family), and rhub.yaml fans out cross-platform checks for CRAN submission. Together they enforce that every layer in this tour stays installable and documented.",
+    "nodeIds": [
+      "pipeline:.github/workflows/R-CMD-check.yaml",
+      "pipeline:.github/workflows/pkgdown.yaml",
+      "pipeline:.github/workflows/rhub.yaml",
+      "config:_pkgdown.yml"
+    ],
+    "languageLesson": "GitHub Actions workflows use 'on' triggers (push/pull_request/schedule), a matrix to test across OS/R-version combinations in parallel, and repository secrets to inject API credentials so live-API tests run without committing keys."
+  }
+]

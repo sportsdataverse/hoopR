@@ -32,16 +32,18 @@
 #'
 #' ## **Play-by-play**
 #'
-#' | Function | Purpose |
-#' |---|---|
-#' | [nba_pbp()]                | V2 + V3 play-by-play (with V3-to-V2 conversion pipeline) |
-#' | [nba_pbps()]               | Multi-game PBP loader |
-#' | [nba_playbyplayv3()]       | V3-only PBP |
-#' | `nba_pbp_v2`             | V2-only PBP (legacy) |
-#' | [nba_data_pbp()]           | Data.nba.com PBP scraper |
-#' | [nba_live_pbp()]           | Live PBP (CDN feed) |
-#' | [nba_live_boxscore()]      | Live boxscore (CDN feed) |
-#' | [nba_winprobabilitypbp()]  | Win-probability PBP overlay |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Purpose \cr
+#'    \code{\link[=nba_pbp]{nba_pbp()}} \tab V2 + V3 play-by-play (with V3-to-V2 conversion pipeline) \cr
+#'    \code{\link[=nba_pbps]{nba_pbps()}} \tab Multi-game PBP loader \cr
+#'    \code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}} \tab V3-only PBP \cr
+#'    \code{nba_pbp_v2} \tab V2-only PBP (legacy) \cr
+#'    \code{\link[=nba_data_pbp]{nba_data_pbp()}} \tab Data.nba.com PBP scraper \cr
+#'    \code{\link[=nba_live_pbp]{nba_live_pbp()}} \tab Live PBP (CDN feed) \cr
+#'    \code{\link[=nba_live_boxscore]{nba_live_boxscore()}} \tab Live boxscore (CDN feed) \cr
+#'    \code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}} \tab Win-probability PBP overlay \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' ## **Leaders / standings / league**
 #'

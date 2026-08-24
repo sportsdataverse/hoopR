@@ -13,35 +13,37 @@
 #'   (e.g. `2024`). Defaults to `most_recent_mbb_season()`.
 #' @return A `hoopR_data` tibble with one row per team-game:
 #'
-#'    |col_name  |types     |description                                          |
-#'    |:---------|:---------|:----------------------------------------------------|
-#'    |date      |character |Game date (M/D/YY).                                  |
-#'    |type      |numeric   |Game-type flag.                                      |
-#'    |team      |character |Team name.                                           |
-#'    |conf      |character |Team conference.                                     |
-#'    |opp       |character |Opponent name.                                       |
-#'    |venue     |character |Venue relative to `team` (`H`/`A`/`N`).              |
-#'    |result    |character |Result string (e.g. `L, 78-73`).                     |
-#'    |adj_oe    |numeric   |Adjusted offensive efficiency.                       |
-#'    |adj_de    |numeric   |Adjusted defensive efficiency.                       |
-#'    |oe        |numeric   |Raw offensive efficiency (points/100 poss).          |
-#'    |off_efg   |numeric   |Offensive effective field goal percentage.           |
-#'    |off_to    |numeric   |Offensive turnover percentage.                       |
-#'    |off_or    |numeric   |Offensive rebound percentage.                        |
-#'    |off_ftr   |numeric   |Offensive free-throw rate.                           |
-#'    |de        |numeric   |Raw defensive efficiency (points allowed/100 poss).  |
-#'    |def_efg   |numeric   |Defensive effective field goal percentage allowed.   |
-#'    |def_to    |numeric   |Defensive turnover percentage forced.                |
-#'    |def_or    |numeric   |Defensive (opponent) rebound percentage.             |
-#'    |def_ftr   |numeric   |Defensive free-throw rate allowed.                   |
-#'    |game_score|numeric   |Bart Torvik single-game quality score.               |
-#'    |opp_conf  |character |Opponent conference.                                 |
-#'    |year      |integer   |Season (4-digit ending-year).                        |
-#'    |tempo     |numeric   |Game tempo (possessions).                            |
-#'    |muid      |character |Matchup unique id.                                   |
-#'    |coach     |character |Team head coach.                                     |
-#'    |opp_coach |character |Opponent head coach.                                 |
-#'    |win_prob  |numeric   |Pre-game win probability for `team`.                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       date \tab character \tab Game date (M/D/YY). \cr
+#'       type \tab numeric \tab Game-type flag. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conf \tab character \tab Team conference. \cr
+#'       opp \tab character \tab Opponent name. \cr
+#'       venue \tab character \tab Venue relative to \code{team} (\code{H}/\code{A}/\code{N}). \cr
+#'       result \tab character \tab Result string (e.g. \verb{L, 78-73}). \cr
+#'       adj_oe \tab numeric \tab Adjusted offensive efficiency. \cr
+#'       adj_de \tab numeric \tab Adjusted defensive efficiency. \cr
+#'       oe \tab numeric \tab Raw offensive efficiency (points/100 poss). \cr
+#'       off_efg \tab numeric \tab Offensive effective field goal percentage. \cr
+#'       off_to \tab numeric \tab Offensive turnover percentage. \cr
+#'       off_or \tab numeric \tab Offensive rebound percentage. \cr
+#'       off_ftr \tab numeric \tab Offensive free-throw rate. \cr
+#'       de \tab numeric \tab Raw defensive efficiency (points allowed/100 poss). \cr
+#'       def_efg \tab numeric \tab Defensive effective field goal percentage allowed. \cr
+#'       def_to \tab numeric \tab Defensive turnover percentage forced. \cr
+#'       def_or \tab numeric \tab Defensive (opponent) rebound percentage. \cr
+#'       def_ftr \tab numeric \tab Defensive free-throw rate allowed. \cr
+#'       game_score \tab numeric \tab Bart Torvik single-game quality score. \cr
+#'       opp_conf \tab character \tab Opponent conference. \cr
+#'       year \tab integer \tab Season (4-digit ending-year). \cr
+#'       tempo \tab numeric \tab Game tempo (possessions). \cr
+#'       muid \tab character \tab Matchup unique id. \cr
+#'       coach \tab character \tab Team head coach. \cr
+#'       opp_coach \tab character \tab Opponent head coach. \cr
+#'       win_prob \tab numeric \tab Pre-game win probability for \code{team}. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Torvik
 #' @importFrom jsonlite fromJSON

@@ -11,19 +11,22 @@ bref_awards(season = most_recent_nba_season())
 (e.g. \code{2024}). Defaults to \code{most_recent_nba_season()}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per award candidate:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   award \tab character \tab Award slug (\code{mvp}, \code{roy}, \code{dpoy}, \code{smoy}, \code{mip}, \code{clutch_poy}, \code{coy}). \cr
-   rank \tab integer \tab Finish in the voting. \cr
-   player \tab character \tab Player (or coach) name. \cr
-   age \tab integer \tab Age. \cr
-   team \tab character \tab Team abbreviation. \cr
-   votes_first \tab numeric \tab First-place votes. \cr
-   points_won \tab numeric \tab Voting points won. \cr
-   points_max \tab numeric \tab Maximum possible voting points. \cr
-   award_share \tab numeric \tab Share of the maximum voting points. \cr
-   season \tab integer \tab Season (echoes the \code{season} argument). \cr
-}
+A \code{hoopR_data} tibble with one row per award candidate:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      award \tab character \tab Award slug (\code{mvp}, \code{roy}, \code{dpoy}, \code{smoy}, \code{mip}, \code{clutch_poy}, \code{coy}). \cr
+      rank \tab integer \tab Finish in the voting. \cr
+      player \tab character \tab Player (or coach) name. \cr
+      age \tab integer \tab Age. \cr
+      team \tab character \tab Team abbreviation. \cr
+      votes_first \tab numeric \tab First-place votes. \cr
+      points_won \tab numeric \tab Voting points won. \cr
+      points_max \tab numeric \tab Maximum possible voting points. \cr
+      award_share \tab numeric \tab Share of the maximum voting points. \cr
+      season \tab integer \tab Season (echoes the \code{season} argument). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get end-of-season award voting from

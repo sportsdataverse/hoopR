@@ -11,22 +11,24 @@
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per team:
 #'
-#'    |col_name   |types     |description                                     |
-#'    |:----------|:---------|:-----------------------------------------------|
-#'    |number     |integer   |Conference rank.                                |
-#'    |team       |character |Team name.                                      |
-#'    |w          |integer   |Wins.                                           |
-#'    |l          |integer   |Losses.                                         |
-#'    |pct        |numeric   |Win percentage.                                 |
-#'    |gb         |numeric   |Games back.                                     |
-#'    |l10        |character |Last-ten record.                                |
-#'    |strk       |character |Current streak.                                 |
-#'    |ppg        |numeric   |Points per game.                                |
-#'    |oppg       |numeric   |Opponent points per game.                       |
-#'    |diff       |numeric   |Scoring margin.                                 |
-#'    |home       |character |Home record.                                    |
-#'    |away       |character |Away record.                                    |
-#'    |conference |character |`Eastern` or `Western`.                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       number \tab integer \tab Conference rank. \cr
+#'       team \tab character \tab Team name. \cr
+#'       w \tab integer \tab Wins. \cr
+#'       l \tab integer \tab Losses. \cr
+#'       pct \tab numeric \tab Win percentage. \cr
+#'       gb \tab numeric \tab Games back. \cr
+#'       l10 \tab character \tab Last-ten record. \cr
+#'       strk \tab character \tab Current streak. \cr
+#'       ppg \tab numeric \tab Points per game. \cr
+#'       oppg \tab numeric \tab Opponent points per game. \cr
+#'       diff \tab numeric \tab Scoring margin. \cr
+#'       home \tab character \tab Home record. \cr
+#'       away \tab character \tab Away record. \cr
+#'       conference \tab character \tab \code{Eastern} or \code{Western}. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table

@@ -104,44 +104,49 @@ nba_videodetailsasset(
 \value{
 Return a list of tibbles: videoUrls, playlist
 
-\strong{videoUrls}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   uuid \tab character \tab Uuid. \cr
-   sdur \tab integer \tab Sdur. \cr
-   surl \tab character \tab Surl. \cr
-   sth \tab character \tab Sth. \cr
-   mdur \tab integer \tab Mdur. \cr
-   murl \tab character \tab Murl. \cr
-   mth \tab character \tab Mth. \cr
-   ldur \tab integer \tab Ldur. \cr
-   lurl \tab character \tab Lurl. \cr
-   lth \tab character \tab Lth. \cr
-   vtt \tab character \tab Vtt. \cr
-   scc \tab character \tab Scc. \cr
-   srt \tab character \tab Srt. \cr
-}
+\strong{videoUrls}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      uuid \tab character \tab Uuid. \cr
+      sdur \tab integer \tab Sdur. \cr
+      surl \tab character \tab Surl. \cr
+      sth \tab character \tab Sth. \cr
+      mdur \tab integer \tab Mdur. \cr
+      murl \tab character \tab Murl. \cr
+      mth \tab character \tab Mth. \cr
+      ldur \tab integer \tab Ldur. \cr
+      lurl \tab character \tab Lurl. \cr
+      lth \tab character \tab Lth. \cr
+      vtt \tab character \tab Vtt. \cr
+      scc \tab character \tab Scc. \cr
+      srt \tab character \tab Srt. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{playlist}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   gi \tab character \tab Gi. \cr
-   ei \tab integer \tab Ei. \cr
-   y \tab integer \tab Y. \cr
-   m \tab character \tab M. \cr
-   d \tab character \tab D. \cr
-   gc \tab character \tab Gc. \cr
-   p \tab integer \tab P. \cr
-   dsc \tab character \tab Dsc. \cr
-   ha \tab character \tab Ha. \cr
-   hid \tab integer \tab Hid. \cr
-   va \tab character \tab Va. \cr
-   vid \tab integer \tab Vid. \cr
-   hpb \tab integer \tab Hpb. \cr
-   hpa \tab integer \tab Hpa. \cr
-   vpb \tab integer \tab Vpb. \cr
-   vpa \tab integer \tab Vpa. \cr
-   pta \tab integer \tab Pta. \cr
-}
+\strong{playlist}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      gi \tab character \tab Gi. \cr
+      ei \tab integer \tab Ei. \cr
+      y \tab integer \tab Y. \cr
+      m \tab character \tab M. \cr
+      d \tab character \tab D. \cr
+      gc \tab character \tab Gc. \cr
+      p \tab integer \tab P. \cr
+      dsc \tab character \tab Dsc. \cr
+      ha \tab character \tab Ha. \cr
+      hid \tab integer \tab Hid. \cr
+      va \tab character \tab Va. \cr
+      vid \tab integer \tab Vid. \cr
+      hpb \tab integer \tab Hpb. \cr
+      hpa \tab integer \tab Hpa. \cr
+      vpb \tab integer \tab Vpb. \cr
+      vpa \tab integer \tab Vpa. \cr
+      pta \tab integer \tab Pta. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Video Details}

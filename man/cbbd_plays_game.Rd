@@ -15,24 +15,27 @@ shooting plays. Defaults to \code{FALSE}.}
 }
 \value{
 A \code{hoopR_data} tibble with one row per play (key columns; \code{shot_info}
-is flattened to \verb{shot_info_*}, \code{participants}/\code{on_floor} are list-columns):\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab Play id. \cr
-   game_id \tab integer \tab Game id. \cr
-   season \tab numeric \tab Season (4-digit ending-year). \cr
-   play_type \tab character \tab Play type description. \cr
-   team_id \tab integer \tab Team id of the team on the play. \cr
-   team \tab character \tab Team on the play. \cr
-   period \tab integer \tab Period number. \cr
-   clock \tab character \tab Game clock. \cr
-   seconds_remaining \tab integer \tab Seconds remaining in the period. \cr
-   home_score \tab integer \tab Home score after the play. \cr
-   away_score \tab integer \tab Away score after the play. \cr
-   scoring_play \tab logical \tab Whether the play scored. \cr
-   shooting_play \tab logical \tab Whether the play was a shot. \cr
-   score_value \tab numeric \tab Point value of the play. \cr
-   play_text \tab character \tab Play description text. \cr
-}
+is flattened to \verb{shot_info_*}, \code{participants}/\code{on_floor} are list-columns):
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Play id. \cr
+      game_id \tab integer \tab Game id. \cr
+      season \tab numeric \tab Season (4-digit ending-year). \cr
+      play_type \tab character \tab Play type description. \cr
+      team_id \tab integer \tab Team id of the team on the play. \cr
+      team \tab character \tab Team on the play. \cr
+      period \tab integer \tab Period number. \cr
+      clock \tab character \tab Game clock. \cr
+      seconds_remaining \tab integer \tab Seconds remaining in the period. \cr
+      home_score \tab integer \tab Home score after the play. \cr
+      away_score \tab integer \tab Away score after the play. \cr
+      scoring_play \tab logical \tab Whether the play scored. \cr
+      shooting_play \tab logical \tab Whether the play was a shot. \cr
+      score_value \tab numeric \tab Point value of the play. \cr
+      play_text \tab character \tab Play description text. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get play-by-play data for a single game from the CollegeBasketballData API.}

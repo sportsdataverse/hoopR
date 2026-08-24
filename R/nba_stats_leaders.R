@@ -297,13 +297,7 @@ NULL
 #'    **AssistLeaders**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |RANK              |character |Rank.                                           |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |AST               |character |Assists.                                        |
+#'    Columns as documented in the shared [nba_assistleaders_assistleaders_schema] table.
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -451,19 +445,21 @@ NULL
 #'    **HomePageLeaders**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |RANK              |character |Rank.                                           |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |PTS               |character |Points scored.                                  |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).        |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                    |
-#'    |EFG_PCT           |character |Effective field goal percentage (0-1).          |
-#'    |TS_PCT            |character |True shooting percentage (0-1).                 |
-#'    |PTS_PER48         |character |                                                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+#'       TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+#'       PTS_PER48 \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **LeagueAverage**
 #'
@@ -481,15 +477,7 @@ NULL
 #'    **LeagueMax**
 #'
 #'
-#'    |col_name  |types   |description                              |
-#'    |:---------|:-------|:----------------------------------------|
-#'    |PTS       |numeric |Points scored.                           |
-#'    |FG_PCT    |numeric |Field goal percentage (0-1).             |
-#'    |FG3_PCT   |numeric |Three-point field goal percentage (0-1). |
-#'    |FT_PCT    |numeric |Free throw percentage (0-1).             |
-#'    |EFG_PCT   |numeric |Effective field goal percentage (0-1).   |
-#'    |TS_PCT    |numeric |True shooting percentage (0-1).          |
-#'    |PTS_PER48 |numeric |                                         |
+#'    Same columns as the **LeagueAverage** table above.
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -588,13 +576,7 @@ NULL
 #'    **HomePageStat1**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |RANK              |character |Rank.                                           |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |PTS               |character |Points scored.                                  |
+#'    Columns as documented in the shared [nba_homepagev2_homepagestat1_schema] table.
 #'
 #'    **HomePageStat2**
 #'
@@ -610,13 +592,7 @@ NULL
 #'    **HomePageStat3**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |RANK              |character |Rank.                                           |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |AST               |character |Assists.                                        |
+#'    Columns as documented in the shared [nba_assistleaders_assistleaders_schema] table.
 #'
 #'    **HomePageStat4**
 #'
@@ -770,13 +746,7 @@ NULL
 #'    **LeadersTiles**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |RANK              |character |Rank.                                           |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |PTS               |character |Points scored.                                  |
+#'    Columns as documented in the shared [nba_homepagev2_homepagestat1_schema] table.
 #'
 #'    **AllTimeSeasonHigh**
 #'
@@ -792,24 +762,12 @@ NULL
 #'    **LastSeasonHigh**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |RANK              |character |Rank.                                           |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |PTS               |character |Points scored.                                  |
+#'    Columns as documented in the shared [nba_homepagev2_homepagestat1_schema] table.
 #'
 #'    **LowSeasonHigh**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |SEASON_YEAR       |character |Season year string ('YYYY-YY' format).          |
-#'    |PTS               |character |Points scored.                                  |
+#'    Same columns as the **AllTimeSeasonHigh** table above.
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -980,36 +938,38 @@ NULL
 #'    **LeagueLeaders**
 #'
 #'
-#'    |col_name  |types     |description                              |
-#'    |:---------|:---------|:----------------------------------------|
-#'    |PLAYER_ID |character |Unique player identifier.                |
-#'    |RANK      |character |Rank.                                    |
-#'    |PLAYER    |character |Player.                                  |
-#'    |TEAM_ID   |character |Unique team identifier.                  |
-#'    |TEAM      |character |Team-side label or team identifier.      |
-#'    |GP        |character |Games played.                            |
-#'    |MIN       |character |Minutes played.                          |
-#'    |FGM       |character |Field goals made.                        |
-#'    |FGA       |character |Field goal attempts.                     |
-#'    |FG_PCT    |character |Field goal percentage (0-1).             |
-#'    |FG3M      |character |Three-point field goals made.            |
-#'    |FG3A      |character |Three-point field goal attempts.         |
-#'    |FG3_PCT   |character |Three-point field goal percentage (0-1). |
-#'    |FTM       |character |Free throws made.                        |
-#'    |FTA       |character |Free throw attempts.                     |
-#'    |FT_PCT    |character |Free throw percentage (0-1).             |
-#'    |OREB      |character |Offensive rebounds.                      |
-#'    |DREB      |character |Defensive rebounds.                      |
-#'    |REB       |character |Total rebounds.                          |
-#'    |AST       |character |Assists.                                 |
-#'    |STL       |character |Steals.                                  |
-#'    |BLK       |character |Blocks.                                  |
-#'    |TOV       |character |Turnovers.                               |
-#'    |PF        |character |Personal fouls.                          |
-#'    |PTS       |character |Points scored.                           |
-#'    |EFF       |character |Eff.                                     |
-#'    |AST_TOV   |character |                                         |
-#'    |STL_TOV   |character |                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       PLAYER \tab character \tab Player. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM \tab character \tab Team-side label or team identifier. \cr
+#'       GP \tab character \tab Games played. \cr
+#'       MIN \tab character \tab Minutes played. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       TOV \tab character \tab Turnovers. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       EFF \tab character \tab Eff. \cr
+#'       AST_TOV \tab character \tab  \cr
+#'       STL_TOV \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1102,63 +1062,65 @@ NULL
 #'    **DunkScoreLeaders**
 #'
 #'
-#'    |col_name                   |types     |description                                       |
-#'    |:--------------------------|:---------|:-------------------------------------------------|
-#'    |game_id                    |character |Unique game identifier.                           |
-#'    |game_date                  |character |Game date (YYYY-MM-DD).                           |
-#'    |matchup                    |character |Matchup.                                          |
-#'    |period                     |character |Period of the game (1-4 quarters; 5+ for OT).     |
-#'    |game_clock_time            |character |Time / clock value.                               |
-#'    |event_num                  |character |Sequential event number within the game (V2 PBP). |
-#'    |player_id                  |character |Unique player identifier.                         |
-#'    |player_name                |character |Player name.                                      |
-#'    |first_name                 |character |Player's first name.                              |
-#'    |last_name                  |character |Player's last name.                               |
-#'    |team_id                    |character |Unique team identifier.                           |
-#'    |team_name                  |character |Full team display name (e.g. 'Las Vegas Aces').   |
-#'    |team_city                  |character |Team city or region (e.g. 'Las Vegas').           |
-#'    |team_abbreviation          |character |Short team abbreviation (e.g. 'LAS').             |
-#'    |dunk_score                 |character |Dunk score.                                       |
-#'    |jump_subscore              |character |Jump subscore.                                    |
-#'    |power_subscore             |character |Power subscore.                                   |
-#'    |style_subscore             |character |Style subscore.                                   |
-#'    |defensive_contest_subscore |character |Defensive contest subscore.                       |
-#'    |max_ball_height            |character |Max ball height.                                  |
-#'    |ball_speed_through_rim     |character |Ball speed through rim.                           |
-#'    |player_vertical            |character |Player vertical.                                  |
-#'    |hang_time                  |character |Time / clock value.                               |
-#'    |takeoff_distance           |character |Takeoff distance.                                 |
-#'    |reverse_dunk               |character |Reverse dunk.                                     |
-#'    |dunk360                    |character |Dunk360.                                          |
-#'    |through_the_legs           |character |Through the legs.                                 |
-#'    |alley_oop                  |character |Alley oop.                                        |
-#'    |tip_in                     |character |Tip in.                                           |
-#'    |self_oop                   |character |Self oop.                                         |
-#'    |player_rotation            |character |Player rotation.                                  |
-#'    |player_lateral_speed       |character |Player lateral speed.                             |
-#'    |ball_distance_traveled     |character |Ball distance traveled.                           |
-#'    |ball_reach_back            |character |Ball reach back.                                  |
-#'    |total_ball_acceleration    |character |Total ball acceleration.                          |
-#'    |dunking_hand               |character |Dunking hand.                                     |
-#'    |jumping_foot               |character |Jumping foot.                                     |
-#'    |pass_length                |character |Pass length.                                      |
-#'    |catching_hand              |character |Catching hand.                                    |
-#'    |catch_distance             |character |Catch distance.                                   |
-#'    |lateral_catch_distance     |character |Lateral catch distance.                           |
-#'    |passer_id                  |character |Unique identifier for passer.                     |
-#'    |passer_name                |character |Passer name.                                      |
-#'    |passer_first_name          |character |Passer first name.                                |
-#'    |passer_last_name           |character |Passer last name.                                 |
-#'    |pass_release_point         |character |Pass release point.                               |
-#'    |shooter_id                 |character |Unique identifier for shooter.                    |
-#'    |shooter_name               |character |Shooter name (for shot events).                   |
-#'    |shooter_first_name         |character |Shooter first name.                               |
-#'    |shooter_last_name          |character |Shooter last name.                                |
-#'    |shot_release_point         |character |Shot release point.                               |
-#'    |shot_length                |character |Shot length.                                      |
-#'    |defensive_contest_level    |character |Defensive contest level.                          |
-#'    |possible_attempted_charge  |character |Possible attempted charge.                        |
-#'    |video_available            |character |Video available.                                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+#'       matchup \tab character \tab Matchup. \cr
+#'       period \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+#'       game_clock_time \tab character \tab Time / clock value. \cr
+#'       event_num \tab character \tab Sequential event number within the game (V2 PBP). \cr
+#'       player_id \tab character \tab Unique player identifier. \cr
+#'       player_name \tab character \tab Player name. \cr
+#'       first_name \tab character \tab Player's first name. \cr
+#'       last_name \tab character \tab Player's last name. \cr
+#'       team_id \tab character \tab Unique team identifier. \cr
+#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       dunk_score \tab character \tab Dunk score. \cr
+#'       jump_subscore \tab character \tab Jump subscore. \cr
+#'       power_subscore \tab character \tab Power subscore. \cr
+#'       style_subscore \tab character \tab Style subscore. \cr
+#'       defensive_contest_subscore \tab character \tab Defensive contest subscore. \cr
+#'       max_ball_height \tab character \tab Max ball height. \cr
+#'       ball_speed_through_rim \tab character \tab Ball speed through rim. \cr
+#'       player_vertical \tab character \tab Player vertical. \cr
+#'       hang_time \tab character \tab Time / clock value. \cr
+#'       takeoff_distance \tab character \tab Takeoff distance. \cr
+#'       reverse_dunk \tab character \tab Reverse dunk. \cr
+#'       dunk360 \tab character \tab Dunk360. \cr
+#'       through_the_legs \tab character \tab Through the legs. \cr
+#'       alley_oop \tab character \tab Alley oop. \cr
+#'       tip_in \tab character \tab Tip in. \cr
+#'       self_oop \tab character \tab Self oop. \cr
+#'       player_rotation \tab character \tab Player rotation. \cr
+#'       player_lateral_speed \tab character \tab Player lateral speed. \cr
+#'       ball_distance_traveled \tab character \tab Ball distance traveled. \cr
+#'       ball_reach_back \tab character \tab Ball reach back. \cr
+#'       total_ball_acceleration \tab character \tab Total ball acceleration. \cr
+#'       dunking_hand \tab character \tab Dunking hand. \cr
+#'       jumping_foot \tab character \tab Jumping foot. \cr
+#'       pass_length \tab character \tab Pass length. \cr
+#'       catching_hand \tab character \tab Catching hand. \cr
+#'       catch_distance \tab character \tab Catch distance. \cr
+#'       lateral_catch_distance \tab character \tab Lateral catch distance. \cr
+#'       passer_id \tab character \tab Unique identifier for passer. \cr
+#'       passer_name \tab character \tab Passer name. \cr
+#'       passer_first_name \tab character \tab Passer first name. \cr
+#'       passer_last_name \tab character \tab Passer last name. \cr
+#'       pass_release_point \tab character \tab Pass release point. \cr
+#'       shooter_id \tab character \tab Unique identifier for shooter. \cr
+#'       shooter_name \tab character \tab Shooter name (for shot events). \cr
+#'       shooter_first_name \tab character \tab Shooter first name. \cr
+#'       shooter_last_name \tab character \tab Shooter last name. \cr
+#'       shot_release_point \tab character \tab Shot release point. \cr
+#'       shot_length \tab character \tab Shot length. \cr
+#'       defensive_contest_level \tab character \tab Defensive contest level. \cr
+#'       possible_attempted_charge \tab character \tab Possible attempted charge. \cr
+#'       video_available \tab character \tab Video available. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -1245,35 +1207,37 @@ NULL
 #'    **GravityLeaders**
 #'
 #'
-#'    |col_name                        |types     |description                                                                      |
-#'    |:-------------------------------|:---------|:--------------------------------------------------------------------------------|
-#'    |playerid                        |character |Playerid.                                                                        |
-#'    |firstname                       |character |Firstname.                                                                       |
-#'    |lastname                        |character |Lastname.                                                                        |
-#'    |teamid                          |character |Teamid.                                                                          |
-#'    |teamabbreviation                |character |Teamabbreviation.                                                                |
-#'    |teamname                        |character |Teamname.                                                                        |
-#'    |teamcity                        |character |Teamcity.                                                                        |
-#'    |frames                          |character |Frames.                                                                          |
-#'    |gravityscore                    |character |Gravityscore.                                                                    |
-#'    |avggravityscore                 |character |Avggravityscore.                                                                 |
-#'    |onballperimeterframes           |character |Onballperimeterframes.                                                           |
-#'    |onballperimetergravityscore     |character |Onballperimetergravityscore.                                                     |
-#'    |avgonballperimetergravityscore  |character |Avgonballperimetergravityscore.                                                  |
-#'    |offballperimeterframes          |character |Offballperimeterframes.                                                          |
-#'    |offballperimetergravityscore    |character |Offballperimetergravityscore.                                                    |
-#'    |avgoffballperimetergravityscore |character |Avgoffballperimetergravityscore.                                                 |
-#'    |onballinteriorframes            |character |Onballinteriorframes.                                                            |
-#'    |onballinteriorgravityscore      |character |Onballinteriorgravityscore.                                                      |
-#'    |avgonballinteriorgravityscore   |character |Avgonballinteriorgravityscore.                                                   |
-#'    |offballinteriorframes           |character |Offballinteriorframes.                                                           |
-#'    |offballinteriorgravityscore     |character |Offballinteriorgravityscore.                                                     |
-#'    |avgoffballinteriorgravityscore  |character |Avgoffballinteriorgravityscore.                                                  |
-#'    |gamesplayed                     |character |Gamesplayed.                                                                     |
-#'    |minutes                         |character |Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
-#'    |pts                             |character |Points scored.                                                                   |
-#'    |reb                             |character |Total rebounds.                                                                  |
-#'    |ast                             |character |Assists.                                                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       playerid \tab character \tab Playerid. \cr
+#'       firstname \tab character \tab Firstname. \cr
+#'       lastname \tab character \tab Lastname. \cr
+#'       teamid \tab character \tab Teamid. \cr
+#'       teamabbreviation \tab character \tab Teamabbreviation. \cr
+#'       teamname \tab character \tab Teamname. \cr
+#'       teamcity \tab character \tab Teamcity. \cr
+#'       frames \tab character \tab Frames. \cr
+#'       gravityscore \tab character \tab Gravityscore. \cr
+#'       avggravityscore \tab character \tab Avggravityscore. \cr
+#'       onballperimeterframes \tab character \tab Onballperimeterframes. \cr
+#'       onballperimetergravityscore \tab character \tab Onballperimetergravityscore. \cr
+#'       avgonballperimetergravityscore \tab character \tab Avgonballperimetergravityscore. \cr
+#'       offballperimeterframes \tab character \tab Offballperimeterframes. \cr
+#'       offballperimetergravityscore \tab character \tab Offballperimetergravityscore. \cr
+#'       avgoffballperimetergravityscore \tab character \tab Avgoffballperimetergravityscore. \cr
+#'       onballinteriorframes \tab character \tab Onballinteriorframes. \cr
+#'       onballinteriorgravityscore \tab character \tab Onballinteriorgravityscore. \cr
+#'       avgonballinteriorgravityscore \tab character \tab Avgonballinteriorgravityscore. \cr
+#'       offballinteriorframes \tab character \tab Offballinteriorframes. \cr
+#'       offballinteriorgravityscore \tab character \tab Offballinteriorgravityscore. \cr
+#'       avgoffballinteriorgravityscore \tab character \tab Avgoffballinteriorgravityscore. \cr
+#'       gamesplayed \tab character \tab Gamesplayed. \cr
+#'       minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+#'       pts \tab character \tab Points scored. \cr
+#'       reb \tab character \tab Total rebounds. \cr
+#'       ast \tab character \tab Assists. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

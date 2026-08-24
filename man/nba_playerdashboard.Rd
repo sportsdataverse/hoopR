@@ -416,8 +416,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playercompare]{nba_playercompare()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},

@@ -11,15 +11,7 @@ NULL
 #' @author Saiem Gilani
 #' @return A `hoopR_data` tibble with one row per conference:
 #'
-#'    |col_name              |types     |description                                  |
-#'    |:---------------------|:---------|:--------------------------------------------|
-#'    |group_id              |integer   |Group identifier (e.g. conference group_id). |
-#'    |conference_short_name |character |Conference short name (e.g. 'ACC').          |
-#'    |conference_uid        |character |ESPN universal conference identifier.        |
-#'    |conference_name       |character |Full conference name.                        |
-#'    |conference_logo       |character |Logo image URL for conference.               |
-#'    |parent_group_id       |integer   |Unique identifier for parent group.          |
-#'    |conference_id         |integer   |Conference identifier.                       |
+#'    Columns as documented in the shared [espn_mbb_conferences_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

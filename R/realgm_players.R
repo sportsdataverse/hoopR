@@ -14,19 +14,21 @@
 #' client receives an HTTP 403 challenge page.
 #' @return A `hoopR_data` tibble with one row per active player:
 #'
-#'    |col_name       |types     |description                                     |
-#'    |:--------------|:---------|:-----------------------------------------------|
-#'    |number         |integer   |Row number.                                     |
-#'    |player         |character |Player name.                                    |
-#'    |pos            |character |Position.                                       |
-#'    |ht             |character |Listed height.                                  |
-#'    |wt             |integer   |Listed weight (lbs).                            |
-#'    |age            |numeric   |Age.                                            |
-#'    |current_team   |character |Current NBA team.                               |
-#'    |yos            |integer   |Years of service.                              |
-#'    |pre_draft_team |character |Pre-draft team / school.                        |
-#'    |draft_status   |character |Draft pick / undrafted status.                  |
-#'    |nationality    |character |Player nationality.                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       number \tab integer \tab Row number. \cr
+#'       player \tab character \tab Player name. \cr
+#'       pos \tab character \tab Position. \cr
+#'       ht \tab character \tab Listed height. \cr
+#'       wt \tab integer \tab Listed weight (lbs). \cr
+#'       age \tab numeric \tab Age. \cr
+#'       current_team \tab character \tab Current NBA team. \cr
+#'       yos \tab integer \tab Years of service. \cr
+#'       pre_draft_team \tab character \tab Pre-draft team / school. \cr
+#'       draft_status \tab character \tab Draft pick / undrafted status. \cr
+#'       nationality \tab character \tab Player nationality. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
@@ -73,19 +75,21 @@ realgm_players <- function() {
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per player:
 #'
-#'    |col_name   |types     |description                                     |
-#'    |:----------|:---------|:-----------------------------------------------|
-#'    |player     |character |Player name.                                    |
-#'    |pos        |character |Position.                                       |
-#'    |ht         |character |Listed height.                                  |
-#'    |wt         |integer   |Listed weight (lbs).                            |
-#'    |nba_status |character |NBA contract / rights status.                   |
-#'    |team_s     |character |Current overseas team(s) and NBA affiliation.   |
-#'    |gp         |integer   |Games played.                                   |
-#'    |mpg        |numeric   |Minutes per game.                               |
-#'    |ppg        |numeric   |Points per game.                                |
-#'    |rpg        |numeric   |Rebounds per game.                              |
-#'    |apg        |numeric   |Assists per game.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player \tab character \tab Player name. \cr
+#'       pos \tab character \tab Position. \cr
+#'       ht \tab character \tab Listed height. \cr
+#'       wt \tab integer \tab Listed weight (lbs). \cr
+#'       nba_status \tab character \tab NBA contract / rights status. \cr
+#'       team_s \tab character \tab Current overseas team(s) and NBA affiliation. \cr
+#'       gp \tab integer \tab Games played. \cr
+#'       mpg \tab numeric \tab Minutes per game. \cr
+#'       ppg \tab numeric \tab Points per game. \cr
+#'       rpg \tab numeric \tab Rebounds per game. \cr
+#'       apg \tab numeric \tab Assists per game. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
@@ -134,21 +138,23 @@ realgm_players_abroad <- function() {
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per future free agent:
 #'
-#'    |col_name           |types     |description                              |
-#'    |:------------------|:---------|:----------------------------------------|
-#'    |player             |character |Player name.                             |
-#'    |pos                |character |Position.                                |
-#'    |team               |character |Current team abbreviation.               |
-#'    |season             |character |Free-agency season (e.g. `2026-2027`).   |
-#'    |age                |integer   |Age.                                     |
-#'    |yos                |integer   |Years of service.                        |
-#'    |veteran_fa_status  |character |Bird / Non-Bird / veteran FA status.     |
-#'    |gp                 |integer   |Games played.                            |
-#'    |pts                |numeric   |Points per game.                         |
-#'    |reb                |numeric   |Rebounds per game.                       |
-#'    |ast                |numeric   |Assists per game.                        |
-#'    |per                |numeric   |Player Efficiency Rating.                |
-#'    |agent              |character |Listed player agent.                     |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player \tab character \tab Player name. \cr
+#'       pos \tab character \tab Position. \cr
+#'       team \tab character \tab Current team abbreviation. \cr
+#'       season \tab character \tab Free-agency season (e.g. \code{2026-2027}). \cr
+#'       age \tab integer \tab Age. \cr
+#'       yos \tab integer \tab Years of service. \cr
+#'       veteran_fa_status \tab character \tab Bird / Non-Bird / veteran FA status. \cr
+#'       gp \tab integer \tab Games played. \cr
+#'       pts \tab numeric \tab Points per game. \cr
+#'       reb \tab numeric \tab Rebounds per game. \cr
+#'       ast \tab numeric \tab Assists per game. \cr
+#'       per \tab numeric \tab Player Efficiency Rating. \cr
+#'       agent \tab character \tab Listed player agent. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table

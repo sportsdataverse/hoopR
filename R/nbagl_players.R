@@ -26,27 +26,29 @@ NULL
 #'
 #'    **PlayerIndex**
 #'
-#'    |col_name          |types     |description                                               |
-#'    |:-----------------|:---------|:---------------------------------------------------------|
-#'    |PERSON_ID         |character |Unique player identifier (V3 endpoints).                  |
-#'    |PLAYER_LAST_NAME  |character |                                                          |
-#'    |PLAYER_FIRST_NAME |character |                                                          |
-#'    |PLAYER_SLUG       |character |URL-safe player identifier.                               |
-#'    |TEAM_ID           |character |Unique team identifier.                                   |
-#'    |TEAM_SLUG         |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
-#'    |TEAM_CITY         |character |Team city or region (e.g. 'Las Vegas').                   |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces').           |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                     |
-#'    |JERSEY_NUMBER     |character |                                                          |
-#'    |POSITION          |character |Listed roster position (G, F, C, etc.).                   |
-#'    |HEIGHT            |character |Player height (string e.g. '6-2' or inches).              |
-#'    |WEIGHT            |character |Player weight in pounds.                                  |
-#'    |COLLEGE           |character |College or school attended.                               |
-#'    |COUNTRY           |character |Country (full name or code).                              |
-#'    |DRAFT_YEAR        |character |Draft year (4-digit).                                     |
-#'    |DRAFT_ROUND       |character |Round of the draft selection.                             |
-#'    |DRAFT_NUMBER      |character |                                                          |
-#'    |ROSTER_STATUS     |character |                                                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+#'       PLAYER_LAST_NAME \tab character \tab  \cr
+#'       PLAYER_FIRST_NAME \tab character \tab  \cr
+#'       PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       JERSEY_NUMBER \tab character \tab  \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
+#'       WEIGHT \tab character \tab Player weight in pounds. \cr
+#'       COLLEGE \tab character \tab College or school attended. \cr
+#'       COUNTRY \tab character \tab Country (full name or code). \cr
+#'       DRAFT_YEAR \tab character \tab Draft year (4-digit). \cr
+#'       DRAFT_ROUND \tab character \tab Round of the draft selection. \cr
+#'       DRAFT_NUMBER \tab character \tab  \cr
+#'       ROSTER_STATUS \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @import rvest

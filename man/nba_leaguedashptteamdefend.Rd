@@ -77,20 +77,23 @@ nba_leaguedashptteamdefend(
 \value{
 Returns a named list of data frames: LeagueDashPtTeamDefend
 
-\strong{LeagueDashPtTeamDefend}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   GP \tab character \tab Games played. \cr
-   G \tab character \tab Games played. \cr
-   FREQ \tab character \tab  \cr
-   D_FGM \tab character \tab  \cr
-   D_FGA \tab character \tab  \cr
-   D_FG_PCT \tab character \tab  \cr
-   NORMAL_FG_PCT \tab character \tab  \cr
-   PCT_PLUSMINUS \tab character \tab  \cr
-}
+\strong{LeagueDashPtTeamDefend}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      GP \tab character \tab Games played. \cr
+      G \tab character \tab Games played. \cr
+      FREQ \tab character \tab  \cr
+      D_FGM \tab character \tab  \cr
+      D_FGA \tab character \tab  \cr
+      D_FG_PCT \tab character \tab  \cr
+      NORMAL_FG_PCT \tab character \tab  \cr
+      PCT_PLUSMINUS \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Team Defense}
@@ -131,7 +134,7 @@ Other NBA League Functions:
 \code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}}
 
 Other NBA Player Tracking Functions:
-\code{\link[=nba_boxscoreplayertrackv2]{nba_boxscoreplayertrackv2()}},
+\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
 \code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_leaguedashplayerptshot]{nba_leaguedashplayerptshot()}},
 \code{\link[=nba_leaguedashptdefend]{nba_leaguedashptdefend()}},
@@ -139,8 +142,6 @@ Other NBA Player Tracking Functions:
 \code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_synergyplaytypes]{nba_synergyplaytypes()}},
 \code{\link[=nba_teamdashptpass]{nba_teamdashptpass()}},
 \code{\link[=nba_teamdashptreb]{nba_teamdashptreb()}},

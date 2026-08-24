@@ -76,12 +76,9 @@ load_nba_team_crosswalk <- function(seasons = most_recent_nba_season()) {
 }
 
 
-#' **Load hoopR NBA schedule crosswalk**
-#' @name load_nba_schedule_crosswalk
-NULL
 #' @title
 #' **Load cached NBA schedule crosswalk from the data repo**
-#' @rdname load_nba_schedule_crosswalk
+#' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season NBA schedule crosswalk that links
 #' ESPN game identifiers to NBA.com game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `nba_crosswalk` release of the
@@ -102,12 +99,9 @@ load_nba_schedule_crosswalk <- function(seasons = most_recent_nba_season()) {
 }
 
 
-#' **Load hoopR NBA player crosswalk**
-#' @name load_nba_player_crosswalk
-NULL
 #' @title
 #' **Load cached NBA player crosswalk from the data repo**
-#' @rdname load_nba_player_crosswalk
+#' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season NBA player crosswalk that maps ESPN
 #' athlete identifiers to NBA.com player identifiers. The files are versioned
 #' `.rds` snapshots stored in the `nba_crosswalk` release of the
@@ -128,12 +122,9 @@ load_nba_player_crosswalk <- function(seasons = most_recent_nba_season()) {
 }
 
 
-#' **Load hoopR MBB team crosswalk**
-#' @name load_mbb_team_crosswalk
-NULL
 #' @title
 #' **Load cached MBB team crosswalk from the data repo**
-#' @rdname load_mbb_team_crosswalk
+#' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season MBB team crosswalk that maps ESPN
 #' team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
 #' and canonical abbreviations. The files are versioned `.rds` snapshots stored
@@ -154,12 +145,9 @@ load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
 }
 
 
-#' **Load hoopR MBB schedule crosswalk**
-#' @name load_mbb_schedule_crosswalk
-NULL
 #' @title
 #' **Load cached MBB schedule crosswalk from the data repo**
-#' @rdname load_mbb_schedule_crosswalk
+#' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season MBB schedule crosswalk that links
 #' ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `mbb_crosswalk` release of the
@@ -180,12 +168,9 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 }
 
 
-#' **Load hoopR MBB player crosswalk**
-#' @name load_mbb_player_crosswalk
-NULL
 #' @title
 #' **Load cached MBB player crosswalk from the data repo**
-#' @rdname load_mbb_player_crosswalk
+#' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season MBB player crosswalk that maps ESPN
 #' athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
 #' versioned `.rds` snapshots stored in the `mbb_crosswalk` release of the

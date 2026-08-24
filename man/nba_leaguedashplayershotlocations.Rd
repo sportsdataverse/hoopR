@@ -125,39 +125,42 @@ nba_leaguedashplayershotlocations(
 \value{
 Returns a named list of data frames: ShotLocations
 
-\strong{ShotLocations}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   AGE \tab character \tab Player age (in years). \cr
-   NICKNAME \tab character \tab Team or athlete nickname. \cr
-   Restricted_Area_FGM \tab character \tab  \cr
-   Restricted_Area_FGA \tab character \tab  \cr
-   Restricted_Area_FG_PCT \tab character \tab  \cr
-   In_The_Paint_Non_RA_FGM \tab character \tab  \cr
-   In_The_Paint_Non_RA_FGA \tab character \tab  \cr
-   In_The_Paint_Non_RA_FG_PCT \tab character \tab  \cr
-   Mid_Range_FGM \tab character \tab  \cr
-   Mid_Range_FGA \tab character \tab  \cr
-   Mid_Range_FG_PCT \tab character \tab  \cr
-   Left_Corner_3_FGM \tab character \tab  \cr
-   Left_Corner_3_FGA \tab character \tab  \cr
-   Left_Corner_3_FG_PCT \tab character \tab  \cr
-   Right_Corner_3_FGM \tab character \tab  \cr
-   Right_Corner_3_FGA \tab character \tab  \cr
-   Right_Corner_3_FG_PCT \tab character \tab  \cr
-   Above_the_Break_3_FGM \tab character \tab  \cr
-   Above_the_Break_3_FGA \tab character \tab  \cr
-   Above_the_Break_3_FG_PCT \tab character \tab  \cr
-   Backcourt_FGM \tab character \tab  \cr
-   Backcourt_FGA \tab character \tab  \cr
-   Backcourt_FG_PCT \tab character \tab  \cr
-   Corner_3_FGM \tab character \tab  \cr
-   Corner_3_FGA \tab character \tab  \cr
-   Corner_3_FG_PCT \tab character \tab  \cr
-}
+\strong{ShotLocations}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      AGE \tab character \tab Player age (in years). \cr
+      NICKNAME \tab character \tab Team or athlete nickname. \cr
+      Restricted_Area_FGM \tab character \tab  \cr
+      Restricted_Area_FGA \tab character \tab  \cr
+      Restricted_Area_FG_PCT \tab character \tab  \cr
+      In_The_Paint_Non_RA_FGM \tab character \tab  \cr
+      In_The_Paint_Non_RA_FGA \tab character \tab  \cr
+      In_The_Paint_Non_RA_FG_PCT \tab character \tab  \cr
+      Mid_Range_FGM \tab character \tab  \cr
+      Mid_Range_FGA \tab character \tab  \cr
+      Mid_Range_FG_PCT \tab character \tab  \cr
+      Left_Corner_3_FGM \tab character \tab  \cr
+      Left_Corner_3_FGA \tab character \tab  \cr
+      Left_Corner_3_FG_PCT \tab character \tab  \cr
+      Right_Corner_3_FGM \tab character \tab  \cr
+      Right_Corner_3_FGA \tab character \tab  \cr
+      Right_Corner_3_FG_PCT \tab character \tab  \cr
+      Above_the_Break_3_FGM \tab character \tab  \cr
+      Above_the_Break_3_FGA \tab character \tab  \cr
+      Above_the_Break_3_FG_PCT \tab character \tab  \cr
+      Backcourt_FGM \tab character \tab  \cr
+      Backcourt_FGA \tab character \tab  \cr
+      Backcourt_FG_PCT \tab character \tab  \cr
+      Corner_3_FGM \tab character \tab  \cr
+      Corner_3_FGA \tab character \tab  \cr
+      Corner_3_FG_PCT \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Shot Locations}
@@ -213,8 +216,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},

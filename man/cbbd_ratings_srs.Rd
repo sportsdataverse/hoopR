@@ -2,9 +2,23 @@
 % Please edit documentation in R/cbbd_ratings.R
 \name{cbbd_ratings_srs}
 \alias{cbbd_ratings_srs}
+\alias{cbbd_ratings_adjusted}
+\alias{cbbd_ratings_elo}
 \title{\strong{CBD SRS Ratings}}
 \usage{
 cbbd_ratings_srs(
+  season = most_recent_mbb_season(),
+  team = NULL,
+  conference = NULL
+)
+
+cbbd_ratings_adjusted(
+  season = most_recent_mbb_season(),
+  team = NULL,
+  conference = NULL
+)
+
+cbbd_ratings_elo(
   season = most_recent_mbb_season(),
   team = NULL,
   conference = NULL
@@ -14,7 +28,7 @@ cbbd_ratings_srs(
 \item{season}{(\emph{integer} optional): Season, 4-digit ending-year (e.g. \code{2024}).
 Defaults to \code{most_recent_mbb_season()}.}
 
-\item{team}{(\emph{character} optional): Team name filter (e.g. \code{Duke}).}
+\item{team}{(\emph{character} optional): Team name filter.}
 
 \item{conference}{(\emph{character} optional): Conference abbreviation filter.}
 }
@@ -27,19 +41,45 @@ A \code{hoopR_data} tibble with one row per team-season:\tabular{lll}{
    conference \tab character \tab Conference name. \cr
    rating \tab numeric \tab Simple Rating System (SRS) value. \cr
 }
+
+A \code{hoopR_data} tibble with one row per team-season. \verb{rankings_*}
+columns are flattened from the nested \code{rankings} object:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   season \tab integer \tab Season (4-digit ending-year). \cr
+   team_id \tab integer \tab CollegeBasketballData team id. \cr
+   team \tab character \tab Team name. \cr
+   conference \tab character \tab Conference name. \cr
+   offensive_rating \tab numeric \tab Adjusted offensive efficiency rating. \cr
+   defensive_rating \tab numeric \tab Adjusted defensive efficiency rating. \cr
+   net_rating \tab numeric \tab Adjusted net efficiency rating. \cr
+}
+
+A \code{hoopR_data} tibble with one row per team-season:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   season \tab integer \tab Season (4-digit ending-year). \cr
+   team_id \tab integer \tab CollegeBasketballData team id. \cr
+   team \tab character \tab Team name. \cr
+   conference \tab character \tab Conference name. \cr
+   elo \tab integer \tab End-of-season Elo rating. \cr
+}
 }
 \description{
 \strong{Get Simple Rating System (SRS) ratings from the CollegeBasketballData API.}
+
+\strong{Get adjusted efficiency ratings from the CollegeBasketballData API.}
+
+\strong{Get Elo ratings from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_ratings_srs(season = 2024))
 }
+\donttest{
+  try(cbbd_ratings_adjusted(season = 2024))
 }
-\seealso{
-Other CBD Ratings Functions:
-\code{\link[=cbbd_ratings_adjusted]{cbbd_ratings_adjusted()}},
-\code{\link[=cbbd_ratings_elo]{cbbd_ratings_elo()}}
+\donttest{
+  try(cbbd_ratings_elo(season = 2024))
+}
 }
 \concept{CBD Ratings Functions}
 \keyword{CBD}

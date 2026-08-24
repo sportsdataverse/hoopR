@@ -24,19 +24,22 @@ Defaults to \code{most_recent_mbb_season()}.}
 \value{
 A \code{hoopR_data} tibble with one row per lineup. The \code{athletes} column
 is a list of lineup members; \code{team_stats}/\code{opponent_stats} are flattened
-into prefixed columns. Key identifying columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab integer \tab Team id. \cr
-   team \tab character \tab Team name. \cr
-   conference \tab character \tab Conference name. \cr
-   id_hash \tab character \tab Unique hash identifying the lineup. \cr
-   athletes \tab list \tab List of athletes in the lineup. \cr
-   total_seconds \tab numeric \tab Total seconds the lineup played. \cr
-   pace \tab numeric \tab Lineup pace (possessions). \cr
-   offense_rating \tab numeric \tab Lineup offensive rating. \cr
-   defense_rating \tab numeric \tab Lineup defensive rating. \cr
-   net_rating \tab numeric \tab Lineup net rating. \cr
-}
+into prefixed columns. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      id_hash \tab character \tab Unique hash identifying the lineup. \cr
+      athletes \tab list \tab List of athletes in the lineup. \cr
+      total_seconds \tab numeric \tab Total seconds the lineup played. \cr
+      pace \tab numeric \tab Lineup pace (possessions). \cr
+      offense_rating \tab numeric \tab Lineup offensive rating. \cr
+      defense_rating \tab numeric \tab Lineup defensive rating. \cr
+      net_rating \tab numeric \tab Lineup net rating. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get lineup statistics for a team-season from the CollegeBasketballData API.}

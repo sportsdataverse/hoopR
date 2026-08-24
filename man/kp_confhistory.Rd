@@ -22,32 +22,35 @@ you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid tab
 No filter applied by default.}
 }
 \value{
-A data frame with the following columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   year \tab integer \tab 4-digit year. \cr
-   rank \tab character \tab Rank. \cr
-   tempo \tab numeric \tab Tempo. \cr
-   efficiency \tab numeric \tab Efficiency. \cr
-   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
-   to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
-   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
-   ft_rate \tab numeric \tab Ft rate. \cr
-   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
-   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
-   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
-   fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
-   a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
-   blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
-   stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
-   home_record \tab character \tab Home win-loss record. \cr
-   bids \tab character \tab Bids. \cr
-   s16 \tab character \tab S16. \cr
-   f4 \tab character \tab F4. \cr
-   ch \tab character \tab Ch. \cr
-   reg_season_champ \tab character \tab Reg season champ. \cr
-   tourney_champ \tab character \tab Tourney champ. \cr
-   best_team \tab character \tab Best team. \cr
-}
+A data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      year \tab integer \tab 4-digit year. \cr
+      rank \tab character \tab Rank. \cr
+      tempo \tab numeric \tab Tempo. \cr
+      efficiency \tab numeric \tab Efficiency. \cr
+      e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+      to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
+      or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+      ft_rate \tab numeric \tab Ft rate. \cr
+      fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+      fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+      ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+      fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
+      a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
+      blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+      stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+      home_record \tab character \tab Home win-loss record. \cr
+      bids \tab character \tab Bids. \cr
+      s16 \tab character \tab S16. \cr
+      f4 \tab character \tab F4. \cr
+      ch \tab character \tab Ch. \cr
+      reg_season_champ \tab character \tab Reg season champ. \cr
+      tourney_champ \tab character \tab Tourney champ. \cr
+      best_team \tab character \tab Best team. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get KenPom's historical conference ratings}

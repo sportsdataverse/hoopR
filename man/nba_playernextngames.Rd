@@ -29,22 +29,25 @@ nba_playernextngames(
 \value{
 Return a named list of data frames: NextNGames
 
-\strong{NextNGames}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
-   VISITOR_TEAM_ID \tab character \tab  \cr
-   HOME_TEAM_NAME \tab character \tab Home team name. \cr
-   VISITOR_TEAM_NAME \tab character \tab  \cr
-   HOME_TEAM_ABBREVIATION \tab character \tab  \cr
-   VISITOR_TEAM_ABBREVIATION \tab character \tab  \cr
-   HOME_TEAM_NICKNAME \tab character \tab  \cr
-   VISITOR_TEAM_NICKNAME \tab character \tab  \cr
-   GAME_TIME \tab character \tab Game start time. \cr
-   HOME_WL \tab character \tab  \cr
-   VISITOR_WL \tab character \tab  \cr
-}
+\strong{NextNGames}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+      HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+      VISITOR_TEAM_ID \tab character \tab  \cr
+      HOME_TEAM_NAME \tab character \tab Home team name. \cr
+      VISITOR_TEAM_NAME \tab character \tab  \cr
+      HOME_TEAM_ABBREVIATION \tab character \tab  \cr
+      VISITOR_TEAM_ABBREVIATION \tab character \tab  \cr
+      HOME_TEAM_NICKNAME \tab character \tab  \cr
+      VISITOR_TEAM_NICKNAME \tab character \tab  \cr
+      GAME_TIME \tab character \tab Game start time. \cr
+      HOME_WL \tab character \tab  \cr
+      VISITOR_WL \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba_playerprofilev2()} instead.
@@ -71,8 +74,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},

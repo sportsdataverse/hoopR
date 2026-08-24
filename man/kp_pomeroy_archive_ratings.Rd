@@ -10,31 +10,34 @@ kp_pomeroy_archive_ratings(date)
 \item{date}{Date (YYYY-MM-DD)}
 }
 \value{
-A data frame with 22 columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   adj_em_rk \tab numeric \tab Adj em rk. \cr
-   team \tab character \tab Team-side label or team identifier. \cr
-   conf \tab character \tab character. \cr
-   adj_em \tab numeric \tab Adj em. \cr
-   adj_o \tab numeric \tab Adj o. \cr
-   adj_o_rk \tab numeric \tab Adj o rk. \cr
-   adj_d \tab numeric \tab Adj d. \cr
-   adj_d_rk \tab numeric \tab Adj d rk. \cr
-   adj_t \tab numeric \tab Adj t. \cr
-   adj_t_rk \tab numeric \tab Adj t rk. \cr
-   final_rk \tab numeric \tab Final rk. \cr
-   final_adj_em \tab numeric \tab Final adj em. \cr
-   final_adj_o \tab numeric \tab Final adj o. \cr
-   final_adj_o_rk \tab numeric \tab Final adj o rk. \cr
-   final_adj_d \tab numeric \tab Final adj d. \cr
-   final_adj_d_rk \tab numeric \tab Final adj d rk. \cr
-   final_adj_t \tab numeric \tab Final adj t. \cr
-   final_adj_t_rk \tab numeric \tab Final adj t rk. \cr
-   rk_chg \tab numeric \tab Rk chg. \cr
-   em_chg \tab numeric \tab Em chg. \cr
-   adj_t_chg \tab numeric \tab Adj t chg. \cr
-   ncaa_seed \tab numeric \tab Ncaa seed. \cr
-}
+A data frame with 22 columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      adj_em_rk \tab numeric \tab Adj em rk. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      conf \tab character \tab character. \cr
+      adj_em \tab numeric \tab Adj em. \cr
+      adj_o \tab numeric \tab Adj o. \cr
+      adj_o_rk \tab numeric \tab Adj o rk. \cr
+      adj_d \tab numeric \tab Adj d. \cr
+      adj_d_rk \tab numeric \tab Adj d rk. \cr
+      adj_t \tab numeric \tab Adj t. \cr
+      adj_t_rk \tab numeric \tab Adj t rk. \cr
+      final_rk \tab numeric \tab Final rk. \cr
+      final_adj_em \tab numeric \tab Final adj em. \cr
+      final_adj_o \tab numeric \tab Final adj o. \cr
+      final_adj_o_rk \tab numeric \tab Final adj o rk. \cr
+      final_adj_d \tab numeric \tab Final adj d. \cr
+      final_adj_d_rk \tab numeric \tab Final adj d rk. \cr
+      final_adj_t \tab numeric \tab Final adj t. \cr
+      final_adj_t_rk \tab numeric \tab Final adj t rk. \cr
+      rk_chg \tab numeric \tab Rk chg. \cr
+      em_chg \tab numeric \tab Em chg. \cr
+      adj_t_chg \tab numeric \tab Adj t chg. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get KenPom's ratings archive pages}

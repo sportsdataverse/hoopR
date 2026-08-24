@@ -13,18 +13,20 @@
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.
 #' @return A `hoopR_data` tibble with one row per player on the roster:
 #'
-#'    |col_name         |types     |description                                   |
-#'    |:----------------|:---------|:---------------------------------------------|
-#'    |number           |character |Jersey number.                                |
-#'    |player           |character |Player name.                                  |
-#'    |pos              |character |Position.                                     |
-#'    |height           |character |Height.                                       |
-#'    |weight           |integer   |Weight (lbs).                                 |
-#'    |birth_date       |character |Birth date.                                   |
-#'    |years_experience |character |Years of NBA experience (`R` for rookies).    |
-#'    |college          |character |College.                                      |
-#'    |team             |character |Team abbreviation (echoes the `team` argument).|
-#'    |season           |integer   |Season (echoes the `season` argument).        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       number \tab character \tab Jersey number. \cr
+#'       player \tab character \tab Player name. \cr
+#'       pos \tab character \tab Position. \cr
+#'       height \tab character \tab Height. \cr
+#'       weight \tab integer \tab Weight (lbs). \cr
+#'       birth_date \tab character \tab Birth date. \cr
+#'       years_experience \tab character \tab Years of NBA experience (\code{R} for rookies). \cr
+#'       college \tab character \tab College. \cr
+#'       team \tab character \tab Team abbreviation (echoes the \code{team} argument). \cr
+#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names

@@ -14,32 +14,35 @@ espn_nba_player_contract(athlete_id, season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single-row tibble.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   athlete_id \tab character \tab ESPN athlete identifier. \cr
-   season \tab integer \tab Contract season year. \cr
-   bird_status \tab integer \tab Bird-rights tier (0 = Non, 1 = Early, 2 = Full). \cr
-   salary \tab numeric \tab Total cap-counting salary for the season ($). \cr
-   salary_remaining \tab numeric \tab Remaining salary owed. \cr
-   years_remaining \tab integer \tab Years left on the contract. \cr
-   incoming_trade_value \tab numeric \tab Trade value if receiving this contract ($). \cr
-   outgoing_trade_value \tab numeric \tab Trade value if sending out this contract ($). \cr
-   option_type \tab integer \tab Option type code (e.g. team / player option). \cr
-   minimum_salary_exception \tab logical \tab Signed under the minimum-salary exception. \cr
-   trade_restriction \tab logical \tab Whether a trade restriction is active. \cr
-   unsigned_foreign_pick \tab logical \tab Unsigned-foreign-pick flag. \cr
-   active \tab logical \tab Whether the contract is currently active. \cr
-   base_year_compensation_active \tab logical \tab Base-year-compensation rule active. \cr
-   poison_pill_provision_active \tab logical \tab Poison-pill provision active. \cr
-   trade_kicker_active \tab logical \tab Trade kicker active. \cr
-   trade_kicker_percentage \tab numeric \tab Trade kicker percentage of salary. \cr
-   trade_kicker_value \tab numeric \tab Trade kicker dollar value. \cr
-   trade_kicker_trade_value \tab numeric \tab Trade kicker post-trade dollar value. \cr
-   season_ref \tab character \tab \verb{$ref} to the season resource. \cr
-   team_ref \tab character \tab \verb{$ref} to the team-in-season resource. \cr
-   team_id \tab character \tab ESPN team id parsed from \code{team_ref}. \cr
-   league \tab character \tab League slug (\code{"nba"}). \cr
-}
+A single-row tibble.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      athlete_id \tab character \tab ESPN athlete identifier. \cr
+      season \tab integer \tab Contract season year. \cr
+      bird_status \tab integer \tab Bird-rights tier (0 = Non, 1 = Early, 2 = Full). \cr
+      salary \tab numeric \tab Total cap-counting salary for the season ($). \cr
+      salary_remaining \tab numeric \tab Remaining salary owed. \cr
+      years_remaining \tab integer \tab Years left on the contract. \cr
+      incoming_trade_value \tab numeric \tab Trade value if receiving this contract ($). \cr
+      outgoing_trade_value \tab numeric \tab Trade value if sending out this contract ($). \cr
+      option_type \tab integer \tab Option type code (e.g. team / player option). \cr
+      minimum_salary_exception \tab logical \tab Signed under the minimum-salary exception. \cr
+      trade_restriction \tab logical \tab Whether a trade restriction is active. \cr
+      unsigned_foreign_pick \tab logical \tab Unsigned-foreign-pick flag. \cr
+      active \tab logical \tab Whether the contract is currently active. \cr
+      base_year_compensation_active \tab logical \tab Base-year-compensation rule active. \cr
+      poison_pill_provision_active \tab logical \tab Poison-pill provision active. \cr
+      trade_kicker_active \tab logical \tab Trade kicker active. \cr
+      trade_kicker_percentage \tab numeric \tab Trade kicker percentage of salary. \cr
+      trade_kicker_value \tab numeric \tab Trade kicker dollar value. \cr
+      trade_kicker_trade_value \tab numeric \tab Trade kicker post-trade dollar value. \cr
+      season_ref \tab character \tab \verb{$ref} to the season resource. \cr
+      team_ref \tab character \tab \verb{$ref} to the team-in-season resource. \cr
+      team_id \tab character \tab ESPN team id parsed from \code{team_ref}. \cr
+      league \tab character \tab League slug (\code{"nba"}). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the full contract record for one NBA athlete in one season,
@@ -57,7 +60,6 @@ protections. Backed by
 Other ESPN NBA Functions:
 \code{\link[=espn_nba_athletes_index]{espn_nba_athletes_index()}},
 \code{\link[=espn_nba_award]{espn_nba_award()}},
-\code{\link[=espn_nba_betting]{espn_nba_betting()}},
 \code{\link[=espn_nba_calendar]{espn_nba_calendar()}},
 \code{\link[=espn_nba_coach]{espn_nba_coach()}},
 \code{\link[=espn_nba_coach_record]{espn_nba_coach_record()}},
@@ -66,62 +68,39 @@ Other ESPN NBA Functions:
 \code{\link[=espn_nba_conferences]{espn_nba_conferences()}},
 \code{\link[=espn_nba_draft]{espn_nba_draft()}},
 \code{\link[=espn_nba_draft_athlete_detail]{espn_nba_draft_athlete_detail()}},
-\code{\link[=espn_nba_draft_athletes]{espn_nba_draft_athletes()}},
 \code{\link[=espn_nba_draft_pick]{espn_nba_draft_pick()}},
 \code{\link[=espn_nba_draft_rounds]{espn_nba_draft_rounds()}},
-\code{\link[=espn_nba_draft_status]{espn_nba_draft_status()}},
 \code{\link[=espn_nba_franchise]{espn_nba_franchise()}},
 \code{\link[=espn_nba_franchises]{espn_nba_franchises()}},
 \code{\link[=espn_nba_freeagents]{espn_nba_freeagents()}},
 \code{\link[=espn_nba_futures]{espn_nba_futures()}},
 \code{\link[=espn_nba_game_all]{espn_nba_game_all()}},
-\code{\link[=espn_nba_game_broadcasts]{espn_nba_game_broadcasts()}},
 \code{\link[=espn_nba_game_odds]{espn_nba_game_odds()}},
 \code{\link[=espn_nba_game_official_detail]{espn_nba_game_official_detail()}},
-\code{\link[=espn_nba_game_officials]{espn_nba_game_officials()}},
 \code{\link[=espn_nba_game_play]{espn_nba_game_play()}},
 \code{\link[=espn_nba_game_play_personnel]{espn_nba_game_play_personnel()}},
 \code{\link[=espn_nba_game_player_box]{espn_nba_game_player_box()}},
-\code{\link[=espn_nba_game_powerindex]{espn_nba_game_powerindex()}},
-\code{\link[=espn_nba_game_predictor]{espn_nba_game_predictor()}},
 \code{\link[=espn_nba_game_probabilities]{espn_nba_game_probabilities()}},
 \code{\link[=espn_nba_game_propbets]{espn_nba_game_propbets()}},
-\code{\link[=espn_nba_game_rosters]{espn_nba_game_rosters()}},
-\code{\link[=espn_nba_game_situation]{espn_nba_game_situation()}},
-\code{\link[=espn_nba_game_team_leaders]{espn_nba_game_team_leaders()}},
 \code{\link[=espn_nba_game_team_linescores]{espn_nba_game_team_linescores()}},
-\code{\link[=espn_nba_game_team_records]{espn_nba_game_team_records()}},
-\code{\link[=espn_nba_game_team_roster]{espn_nba_game_team_roster()}},
 \code{\link[=espn_nba_game_team_roster_entry]{espn_nba_game_team_roster_entry()}},
-\code{\link[=espn_nba_game_team_score]{espn_nba_game_team_score()}},
-\code{\link[=espn_nba_game_team_statistics]{espn_nba_game_team_statistics()}},
 \code{\link[=espn_nba_injuries]{espn_nba_injuries()}},
 \code{\link[=espn_nba_leaders]{espn_nba_leaders()}},
 \code{\link[=espn_nba_news]{espn_nba_news()}},
-\code{\link[=espn_nba_pbp]{espn_nba_pbp()}},
 \code{\link[=espn_nba_player_awards]{espn_nba_player_awards()}},
-\code{\link[=espn_nba_player_box]{espn_nba_player_box()}},
 \code{\link[=espn_nba_player_career_stats]{espn_nba_player_career_stats()}},
 \code{\link[=espn_nba_player_contracts]{espn_nba_player_contracts()}},
-\code{\link[=espn_nba_player_eventlog]{espn_nba_player_eventlog()}},
 \code{\link[=espn_nba_player_eventlog_v2]{espn_nba_player_eventlog_v2()}},
-\code{\link[=espn_nba_player_gamelog]{espn_nba_player_gamelog()}},
 \code{\link[=espn_nba_player_info]{espn_nba_player_info()}},
 \code{\link[=espn_nba_player_overview]{espn_nba_player_overview()}},
 \code{\link[=espn_nba_player_seasons]{espn_nba_player_seasons()}},
-\code{\link[=espn_nba_player_splits]{espn_nba_player_splits()}},
-\code{\link[=espn_nba_player_statisticslog]{espn_nba_player_statisticslog()}},
 \code{\link[=espn_nba_player_stats]{espn_nba_player_stats()}},
-\code{\link[=espn_nba_player_stats_v3]{espn_nba_player_stats_v3()}},
 \code{\link[=espn_nba_position]{espn_nba_position()}},
 \code{\link[=espn_nba_positions]{espn_nba_positions()}},
 \code{\link[=espn_nba_powerindex]{espn_nba_powerindex()}},
 \code{\link[=espn_nba_scoreboard]{espn_nba_scoreboard()}},
 \code{\link[=espn_nba_season_awards]{espn_nba_season_awards()}},
-\code{\link[=espn_nba_season_draft]{espn_nba_season_draft()}},
 \code{\link[=espn_nba_season_group]{espn_nba_season_group()}},
-\code{\link[=espn_nba_season_group_children]{espn_nba_season_group_children()}},
-\code{\link[=espn_nba_season_group_teams]{espn_nba_season_group_teams()}},
 \code{\link[=espn_nba_season_groups]{espn_nba_season_groups()}},
 \code{\link[=espn_nba_season_info]{espn_nba_season_info()}},
 \code{\link[=espn_nba_season_leaders]{espn_nba_season_leaders()}},
@@ -134,18 +113,14 @@ Other ESPN NBA Functions:
 \code{\link[=espn_nba_seasons]{espn_nba_seasons()}},
 \code{\link[=espn_nba_standings]{espn_nba_standings()}},
 \code{\link[=espn_nba_team]{espn_nba_team()}},
-\code{\link[=espn_nba_team_box]{espn_nba_team_box()}},
 \code{\link[=espn_nba_team_current_roster]{espn_nba_team_current_roster()}},
 \code{\link[=espn_nba_team_depthchart]{espn_nba_team_depthchart()}},
 \code{\link[=espn_nba_team_injuries]{espn_nba_team_injuries()}},
-\code{\link[=espn_nba_team_leaders]{espn_nba_team_leaders()}},
 \code{\link[=espn_nba_team_news]{espn_nba_team_news()}},
 \code{\link[=espn_nba_team_odds_records]{espn_nba_team_odds_records()}},
 \code{\link[=espn_nba_team_record]{espn_nba_team_record()}},
 \code{\link[=espn_nba_team_record_detail]{espn_nba_team_record_detail()}},
-\code{\link[=espn_nba_team_roster]{espn_nba_team_roster()}},
 \code{\link[=espn_nba_team_schedule]{espn_nba_team_schedule()}},
-\code{\link[=espn_nba_team_season_profile]{espn_nba_team_season_profile()}},
 \code{\link[=espn_nba_team_season_roster]{espn_nba_team_season_roster()}},
 \code{\link[=espn_nba_team_season_statistics]{espn_nba_team_season_statistics()}},
 \code{\link[=espn_nba_team_stats]{espn_nba_team_stats()}},

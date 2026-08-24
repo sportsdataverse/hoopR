@@ -16,25 +16,28 @@ nba_franchiseleaders(league_id = "00", team_id = "1610612739", ...)
 \value{
 Returns a named list of data frames: FranchiseLeaders
 
-\strong{FranchiseLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   PTS \tab character \tab Points scored. \cr
-   PTS_PERSON_ID \tab character \tab  \cr
-   PTS_PLAYER \tab character \tab  \cr
-   AST \tab character \tab Assists. \cr
-   AST_PERSON_ID \tab character \tab  \cr
-   AST_PLAYER \tab character \tab  \cr
-   REB \tab character \tab Total rebounds. \cr
-   REB_PERSON_ID \tab character \tab  \cr
-   REB_PLAYER \tab character \tab  \cr
-   BLK \tab character \tab Blocks. \cr
-   BLK_PERSON_ID \tab character \tab  \cr
-   BLK_PLAYER \tab character \tab  \cr
-   STL \tab character \tab Steals. \cr
-   STL_PERSON_ID \tab character \tab  \cr
-   STL_PLAYER \tab character \tab  \cr
-}
+\strong{FranchiseLeaders}
+
+\if{html}{\tabular{lll}{
+     col_name \tab types \tab description \cr
+     TEAM_ID \tab character \tab Unique team identifier. \cr
+     PTS \tab character \tab Points scored. \cr
+     PTS_PERSON_ID \tab character \tab  \cr
+     PTS_PLAYER \tab character \tab  \cr
+     AST \tab character \tab Assists. \cr
+     AST_PERSON_ID \tab character \tab  \cr
+     AST_PLAYER \tab character \tab  \cr
+     REB \tab character \tab Total rebounds. \cr
+     REB_PERSON_ID \tab character \tab  \cr
+     REB_PLAYER \tab character \tab  \cr
+     BLK \tab character \tab Blocks. \cr
+     BLK_PERSON_ID \tab character \tab  \cr
+     BLK_PLAYER \tab character \tab  \cr
+     STL \tab character \tab Steals. \cr
+     STL_PERSON_ID \tab character \tab  \cr
+     STL_PLAYER \tab character \tab  \cr
+  }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Franchise Leaders}

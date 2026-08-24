@@ -7,28 +7,31 @@
 kp_trends()
 }
 \value{
-A data frame with the following columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season \tab numeric \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   efficiency \tab numeric \tab Efficiency. \cr
-   tempo \tab numeric \tab Tempo. \cr
-   e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
-   to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
-   or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
-   ft_rate \tab numeric \tab Ft rate. \cr
-   fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
-   fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
-   fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
-   ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
-   a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
-   blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
-   stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
-   non_stl_pct \tab numeric \tab Non steals percentage (0-1 decimal). \cr
-   avg_hgt \tab numeric \tab Avg hgt. \cr
-   continuity \tab numeric \tab Continuity. \cr
-   home_win_pct \tab numeric \tab Home win percentage (0-1 decimal). \cr
-   ppg \tab numeric \tab Points per game. \cr
-}
+A data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab numeric \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      efficiency \tab numeric \tab Efficiency. \cr
+      tempo \tab numeric \tab Tempo. \cr
+      e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+      to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
+      or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+      ft_rate \tab numeric \tab Ft rate. \cr
+      fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+      fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+      fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
+      ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+      a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
+      blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+      stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+      non_stl_pct \tab numeric \tab Non steals percentage (0-1 decimal). \cr
+      avg_hgt \tab numeric \tab Avg hgt. \cr
+      continuity \tab numeric \tab Continuity. \cr
+      home_win_pct \tab numeric \tab Home win percentage (0-1 decimal). \cr
+      ppg \tab numeric \tab Points per game. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get Division-I statistical trends}

@@ -27,7 +27,9 @@ args). See \code{?login} for the auth flow.
 
 }
 
-\subsection{\strong{Per-game / per-team detail}}{\tabular{ll}{
+\subsection{\strong{Per-game / per-team detail}}{
+
+\if{html}{\tabular{ll}{
    Function \tab Purpose \cr
    \code{\link[=kp_box]{kp_box()}} \tab Box-score detail \cr
    \code{\link[=kp_fanmatch]{kp_fanmatch()}} \tab FanMatch daily slate \cr
@@ -37,11 +39,13 @@ args). See \code{?login} for the auth flow.
    \code{\link[=kp_team_player_stats]{kp_team_player_stats()}} \tab Per-team player stats \cr
    \code{\link[=kp_team_schedule]{kp_team_schedule()}} \tab Per-team schedule \cr
    \code{\link[=kp_team_players]{kp_team_players()}} \tab Team roster \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
-}
+\subsection{\strong{Conference / efficiency / four-factor splits}}{
 
-\subsection{\strong{Conference / efficiency / four-factor splits}}{\tabular{ll}{
+\if{html}{\tabular{ll}{
    Function \tab Purpose \cr
    \code{\link[=kp_conf]{kp_conf()}} \tab Conference summary \cr
    \code{\link[=kp_confhistory]{kp_confhistory()}} \tab Conference history \cr
@@ -51,8 +55,8 @@ args). See \code{?login} for the auth flow.
    \code{\link[=kp_pointdist]{kp_pointdist()}} \tab Points distribution \cr
    \code{\link[=kp_teamstats]{kp_teamstats()}} \tab Team stats \cr
    \code{\link[=kp_hca]{kp_hca()}} \tab Home-court advantage \cr
-}
-
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
 \subsection{\strong{Player + coach + officials}}{\tabular{ll}{

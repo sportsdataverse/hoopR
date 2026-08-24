@@ -19,18 +19,20 @@
 #'   `table`; common identifying columns shown -- column names are
 #'   Basketball-Reference `data-stat` keys):
 #'
-#'    |col_name |types     |description                                           |
-#'    |:--------|:---------|:-----------------------------------------------------|
-#'    |ranker   |integer   |Row rank.                                             |
-#'    |player   |character |Player name.                                          |
-#'    |age      |integer   |Player age on Feb 1 of the season.                    |
-#'    |team_id  |character |Team abbreviation (`TOT` for players on >1 team).     |
-#'    |pos      |character |Position.                                             |
-#'    |g        |integer   |Games played.                                         |
-#'    |gs       |integer   |Games started.                                        |
-#'    |mp_per_g |numeric   |Minutes (per_game table) / `mp` total (totals table). |
-#'    |pts_per_g|numeric   |Points (scaled to the chosen `table`).               |
-#'    |season   |integer   |Season (echoes the `season` argument).               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       ranker \tab integer \tab Row rank. \cr
+#'       player \tab character \tab Player name. \cr
+#'       age \tab integer \tab Player age on Feb 1 of the season. \cr
+#'       team_id \tab character \tab Team abbreviation (\code{TOT} for players on >1 team). \cr
+#'       pos \tab character \tab Position. \cr
+#'       g \tab integer \tab Games played. \cr
+#'       gs \tab integer \tab Games started. \cr
+#'       mp_per_g \tab numeric \tab Minutes (per_game table) / \code{mp} total (totals table). \cr
+#'       pts_per_g \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
+#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'   The `advanced` table adds `per`, `ts_pct`, `usg_pct`, `ws`, `bpm`, `vorp`,
 #'   etc.; `totals`/`per_minute`/`per_poss` return the same box categories scaled

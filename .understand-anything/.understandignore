@@ -1,0 +1,22 @@
+# Scope: the hoopR R package SOURCE only (R is not tree-sitter-supported -> coarse file-level nodes).
+# Keep: R/ (package functions), data-raw/ (dataset generators), vignettes/, .github/workflows, DESCRIPTION/NAMESPACE.
+# Exclude the test suite, codegen tooling, generated man pages, bundled data, and the doc site.
+
+tests/
+tools/
+man/
+inst/
+docs/
+pkgdown/
+data/
+.Rproj.user/
+.claude/
+.vscode/
+
+# bundled / binary data artifacts (keep the .R generators in data-raw/, drop the data they emit)
+*.rda
+*.rds
+*.parquet
+*.csv
+*.png
+*.svg

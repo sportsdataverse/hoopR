@@ -2,9 +2,24 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{espn_nba_game_all}
 \alias{espn_nba_game_all}
+\alias{espn_nba_pbp}
+\alias{espn_nba_team_box}
+\alias{espn_nba_player_box}
+\alias{espn_nba_game_rosters}
+\alias{espn_nba_betting}
 \title{\strong{Get ESPN NBA game data (Pbp, Team and Player Box)}}
 \usage{
 espn_nba_game_all(game_id)
+
+espn_nba_pbp(game_id)
+
+espn_nba_team_box(game_id)
+
+espn_nba_player_box(game_id)
+
+espn_nba_game_rosters(game_id)
+
+espn_nba_betting(game_id)
 }
 \arguments{
 \item{game_id}{Game ID}
@@ -12,200 +27,188 @@ espn_nba_game_all(game_id)
 \value{
 A named list of data frames: Plays, Team, Player
 
-\strong{Plays}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
-   text \tab character \tab Text description of the play / record. \cr
-   away_score \tab integer \tab Away team score at the time of the play. \cr
-   home_score \tab integer \tab Home team score at the time of the play. \cr
-   scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
-   score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
-   wallclock \tab character \tab Wallclock. \cr
-   shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
-   type_id \tab integer \tab Type identifier (numeric). \cr
-   type_text \tab character \tab Display text for the type field. \cr
-   period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
-   period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
-   clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   coordinate_x_raw \tab numeric \tab X coordinate as returned by the API before any adjustment. \cr
-   coordinate_y_raw \tab numeric \tab Y coordinate as returned by the API before any adjustment. \cr
-   coordinate_x \tab numeric \tab X coordinate on the court (half-court layout). \cr
-   coordinate_y \tab numeric \tab Y coordinate on the court (half-court layout). \cr
-   play_id \tab character \tab Unique play identifier within a game. \cr
-   athlete_id_1 \tab integer \tab Primary athlete identifier (e.g. shooter). \cr
-   athlete_id_2 \tab integer \tab Secondary athlete identifier (e.g. assister / fouler). \cr
-   athlete_id_3 \tab integer \tab Athlete id 3. \cr
-   home_team_id \tab integer \tab Unique identifier for the home team. \cr
-   home_team_mascot \tab character \tab Home team mascot. \cr
-   home_team_name \tab character \tab Home team name. \cr
-   home_team_abbrev \tab character \tab Home team three-letter abbreviation. \cr
-   home_team_logo \tab character \tab Home team logo URL. \cr
-   home_team_logo_dark \tab character \tab Home team logo URL for dark backgrounds. \cr
-   home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
-   home_team_color \tab character \tab Home team primary color (hex). \cr
-   home_team_alternate_color \tab character \tab Home team alternate color (hex). \cr
-   home_team_score \tab integer \tab Home team's score. \cr
-   home_team_winner \tab logical \tab TRUE if the home team won this game. \cr
-   home_team_record \tab character \tab Home team's win-loss record. \cr
-   away_team_id \tab integer \tab Unique identifier for the away team. \cr
-   away_team_mascot \tab character \tab Away team mascot. \cr
-   away_team_name \tab character \tab Away team name. \cr
-   away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
-   away_team_logo \tab character \tab Away team logo URL. \cr
-   away_team_logo_dark \tab character \tab Away team logo URL for dark backgrounds. \cr
-   away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
-   away_team_color \tab character \tab Away team primary color (hex). \cr
-   away_team_alternate_color \tab character \tab Away team alternate color (hex). \cr
-   away_team_score \tab integer \tab Away team's score. \cr
-   away_team_winner \tab logical \tab TRUE if the away team won this game. \cr
-   away_team_record \tab character \tab Away team's win-loss record. \cr
-   game_id \tab integer \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
-   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
-}
+\strong{Plays}
 
+Columns as documented in the shared \link{espn_nba_game_all_plays_schema} table.
 
-\strong{Team}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab integer \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
-   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   team_location \tab character \tab Team city or location string. \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   team_display_name \tab character \tab Full team display name. \cr
-   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
-   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
-   team_logo \tab character \tab Team logo image URL. \cr
-   team_home_away \tab character \tab Team home away. \cr
-   team_score \tab integer \tab Team's score / final score. \cr
-   team_winner \tab logical \tab TRUE if the team won this game. \cr
-   assists \tab integer \tab Total assists. \cr
-   blocks \tab integer \tab Total blocks. \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds. \cr
-   fast_break_points \tab character \tab Fast-break points scored. \cr
-   field_goal_pct \tab numeric \tab Field goal percentage (0-1). \cr
-   field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
-   field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
-   flagrant_fouls \tab integer \tab Total flagrant fouls. \cr
-   fouls \tab integer \tab Personal fouls. \cr
-   free_throw_pct \tab numeric \tab Free throw percentage (0-1). \cr
-   free_throws_made \tab integer \tab Free throws made. \cr
-   free_throws_attempted \tab integer \tab Free throw attempts. \cr
-   largest_lead \tab character \tab Largest lead during the game. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds. \cr
-   points_in_paint \tab character \tab Points scored in the paint. \cr
-   steals \tab integer \tab Total steals. \cr
-   team_turnovers \tab integer \tab Team turnovers (turnovers credited to the team rather than a player). \cr
-   technical_fouls \tab integer \tab Total technical fouls. \cr
-   three_point_field_goal_pct \tab numeric \tab Three-point field goal percentage (0-1). \cr
-   three_point_field_goals_made \tab integer \tab Three-point field goals made. \cr
-   three_point_field_goals_attempted \tab integer \tab Three-point field goal attempts. \cr
-   total_rebounds \tab integer \tab Total rebounds. \cr
-   total_technical_fouls \tab integer \tab Total technical fouls (player + team). \cr
-   total_turnovers \tab integer \tab Total turnovers (player + team). \cr
-   turnover_points \tab character \tab Turnover points. \cr
-   turnovers \tab integer \tab Total turnovers. \cr
-   opponent_team_id \tab integer \tab Unique identifier for the opponent team. \cr
-   opponent_team_uid \tab character \tab Opponent team uid. \cr
-   opponent_team_slug \tab character \tab Opponent team slug. \cr
-   opponent_team_location \tab character \tab Opponent team city / location. \cr
-   opponent_team_name \tab character \tab Opponent team display name. \cr
-   opponent_team_abbreviation \tab character \tab Opponent team abbreviation. \cr
-   opponent_team_display_name \tab character \tab Opponent team full display name. \cr
-   opponent_team_short_display_name \tab character \tab Opponent team short display name. \cr
-   opponent_team_color \tab character \tab Opponent team primary color (hex). \cr
-   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
-   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
-   opponent_team_score \tab integer \tab Opponent team's score. \cr
-}
+\strong{Team}
 
+Columns as documented in the shared \link{espn_nba_game_all_team_schema} table.
 
-\strong{Player}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab integer \tab Unique game identifier. \cr
-   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
-   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
-   athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
-   athlete_display_name \tab character \tab Athlete display name (full). \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_location \tab character \tab Team city or location string. \cr
-   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
-   minutes \tab numeric \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-   field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
-   field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
-   three_point_field_goals_made \tab integer \tab Three-point field goals made. \cr
-   three_point_field_goals_attempted \tab integer \tab Three-point field goal attempts. \cr
-   free_throws_made \tab integer \tab Free throws made. \cr
-   free_throws_attempted \tab integer \tab Free throw attempts. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds. \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds. \cr
-   rebounds \tab integer \tab Total rebounds. \cr
-   assists \tab integer \tab Total assists. \cr
-   steals \tab integer \tab Total steals. \cr
-   blocks \tab integer \tab Total blocks. \cr
-   turnovers \tab integer \tab Total turnovers. \cr
-   fouls \tab integer \tab Personal fouls. \cr
-   plus_minus \tab character \tab Plus/minus point differential while on court. \cr
-   points \tab integer \tab Points scored. \cr
-   starter \tab logical \tab TRUE if the player was in the starting lineup; FALSE otherwise. \cr
-   ejected \tab logical \tab TRUE if the player was ejected from the game. \cr
-   did_not_play \tab logical \tab TRUE if the player did not appear in the game. \cr
-   reason \tab character \tab Reason. \cr
-   active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
-   athlete_jersey \tab character \tab Athlete jersey number. \cr
-   athlete_short_name \tab character \tab Athlete short display name. \cr
-   athlete_headshot_href \tab character \tab Athlete headshot image URL. \cr
-   athlete_position_name \tab character \tab Athlete position ('Guard', 'Forward', 'Center'). \cr
-   athlete_position_abbreviation \tab character \tab Athlete position abbreviation (G / F / C). \cr
-   team_display_name \tab character \tab Full team display name. \cr
-   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   team_logo \tab character \tab Team logo image URL. \cr
-   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
-   home_away \tab character \tab Game venue label ('home' or 'away'). \cr
-   team_winner \tab logical \tab TRUE if the team won this game. \cr
-   team_score \tab integer \tab Team's score / final score. \cr
-   opponent_team_id \tab integer \tab Unique identifier for the opponent team. \cr
-   opponent_team_name \tab character \tab Opponent team display name. \cr
-   opponent_team_location \tab character \tab Opponent team city / location. \cr
-   opponent_team_display_name \tab character \tab Opponent team full display name. \cr
-   opponent_team_abbreviation \tab character \tab Opponent team abbreviation. \cr
-   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
-   opponent_team_color \tab character \tab Opponent team primary color (hex). \cr
-   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
-   opponent_team_score \tab integer \tab Opponent team's score. \cr
-}
+\strong{Player}
+
+Columns as documented in the shared \link{espn_nba_game_all_player_schema} table.
+
+A play-by-play data frame.
+
+\strong{Plays}
+
+Columns as documented in the shared \link{espn_nba_game_all_plays_schema} table.
+
+A team boxscore data frame
+
+\strong{Team}
+
+Columns as documented in the shared \link{espn_nba_game_all_team_schema} table.
+
+A player boxscore data frame
+
+\strong{Player}
+
+Columns as documented in the shared \link{espn_nba_game_all_player_schema} table.
+
+A game rosters data frame
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
+      athlete_uid \tab character \tab ESPN athlete UID (universal identifier). \cr
+      athlete_guid \tab character \tab ESPN athlete GUID. \cr
+      athlete_type \tab character \tab Athlete type / class. \cr
+      sdr \tab integer \tab Sdr. \cr
+      first_name \tab character \tab Player's first name. \cr
+      last_name \tab character \tab Player's last name. \cr
+      full_name \tab character \tab Player's full name. \cr
+      athlete_display_name \tab character \tab Athlete display name (full). \cr
+      short_name \tab character \tab Short display name. \cr
+      weight \tab integer \tab Player weight in pounds. \cr
+      display_weight \tab character \tab Player weight in display format (e.g. '180 lbs'). \cr
+      height \tab integer \tab Player height (string e.g. '6-2' or inches). \cr
+      display_height \tab character \tab Player height in display format (e.g. '6-2'). \cr
+      age \tab integer \tab Player age (in years). \cr
+      date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+      debut_year \tab integer \tab Year of professional debut. \cr
+      birth_place_city \tab character \tab Birth place city. \cr
+      birth_place_state \tab character \tab Birth place state. \cr
+      birth_place_country \tab character \tab Birth place country. \cr
+      slug \tab character \tab URL-safe identifier. \cr
+      headshot_href \tab character \tab Headshot image URL. \cr
+      headshot_alt \tab character \tab Alternative-text label for the headshot. \cr
+      jersey \tab character \tab Jersey number worn by the player. \cr
+      position_id \tab integer \tab Unique position identifier. \cr
+      position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+      position_display_name \tab character \tab Position display name. \cr
+      position_abbreviation \tab character \tab Position abbreviation ('G' / 'F' / 'C'). \cr
+      position_leaf \tab logical \tab Position leaf. \cr
+      linked \tab logical \tab TRUE if the record is linked to a related entity. \cr
+      years \tab integer \tab Years. \cr
+      active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
+      contract_bird_status \tab integer \tab Contract bird status. \cr
+      contract_active \tab logical \tab Contract active. \cr
+      contract_active_1 \tab logical \tab Contract active 1. \cr
+      contract_incoming_trade_value \tab integer \tab Contract incoming trade value. \cr
+      contract_outgoing_trade_value \tab integer \tab Contract outgoing trade value. \cr
+      contract_minimum_salary_exception \tab logical \tab Contract minimum salary exception. \cr
+      contract_option_type \tab integer \tab Contract option type. \cr
+      contract_salary \tab integer \tab Contract salary. \cr
+      contract_salary_remaining \tab integer \tab Contract salary remaining. \cr
+      contract_years_remaining \tab integer \tab Contract years remaining. \cr
+      contract_trade_kicker_active \tab logical \tab Contract trade kicker active. \cr
+      contract_trade_kicker_percentage \tab integer \tab Contract trade kicker percentage (0-1 decimal). \cr
+      contract_trade_kicker_value \tab integer \tab Contract trade kicker value. \cr
+      contract_trade_kicker_trade_value \tab integer \tab Contract trade kicker trade value. \cr
+      contract_trade_restriction \tab logical \tab Contract trade restriction. \cr
+      contract_unsigned_foreign_pick \tab logical \tab Contract unsigned foreign pick. \cr
+      contract_active_2 \tab logical \tab Contract active 2. \cr
+      draft_display_text \tab character \tab Draft display text. \cr
+      draft_round \tab integer \tab Round of the draft selection. \cr
+      draft_year \tab integer \tab Draft year (4-digit). \cr
+      draft_selection \tab integer \tab Draft selection. \cr
+      status_id \tab integer \tab Status identifier. \cr
+      status_name \tab character \tab Status label. \cr
+      status_type \tab character \tab Status type. \cr
+      status_abbreviation \tab character \tab Status abbreviation. \cr
+      starter \tab logical \tab TRUE if the player was in the starting lineup; FALSE otherwise. \cr
+      valid \tab logical \tab Valid. \cr
+      did_not_play \tab logical \tab TRUE if the player did not appear in the game. \cr
+      display_name \tab character \tab Display name. \cr
+      reason \tab character \tab Reason. \cr
+      ejected \tab logical \tab TRUE if the player was ejected from the game. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_guid \tab character \tab ESPN team GUID. \cr
+      team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      team_location \tab character \tab Team city or location string. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      team_display_name \tab character \tab Full team display name. \cr
+      team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+      team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+      team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+      team_is_active \tab logical \tab TRUE if the team is currently active. \cr
+      team_is_all_star \tab logical \tab TRUE if the row represents an All-Star team. \cr
+      logo_href \tab character \tab Team or league logo URL. \cr
+      logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
+      logos_href_2 \tab character \tab Logos href 2. \cr
+      logos_href_3 \tab character \tab Logos href 3. \cr
+      game_id \tab integer \tab Unique game identifier. \cr
+      order \tab integer \tab Display order within the result set. \cr
+      home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+      winner \tab logical \tab Winner. \cr
+      citizenship \tab character \tab Citizenship. \cr
+      contract_base_year_compensation_active \tab logical \tab Contract base year compensation active. \cr
+      contract_base_year_compensation_expiration \tab character \tab Contract base year compensation expiration. \cr
+      hand_type \tab character \tab Hand type. \cr
+      hand_abbreviation \tab character \tab Hand abbreviation. \cr
+      hand_display_value \tab character \tab Hand display value. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: pickcenter, againstTheSpread, predictor
+
+\strong{pickcenter}
+
+Columns as documented in the shared \link{espn_mbb_betting_pickcenter_schema} table.
+
+\strong{againstTheSpread}
+
+Columns as documented in the shared \link{espn_mbb_betting_againstthespread_schema} table.
+
+\strong{predictor}
+
+Columns as documented in the shared \link{espn_mbb_betting_predictor_schema} table.
 }
 \description{
 \strong{Get ESPN NBA game data (Pbp, Team and Player Box)}
+
+\strong{Get ESPN NBA PBP data}
+
+\strong{Get ESPN NBA team box scores}
+
+\strong{Get ESPN NBA player box scores}
+
+\strong{Get ESPN NBA game rosters}
+
+\strong{Get ESPN NBA's Betting information}
 }
 \examples{
 \donttest{
 try(espn_nba_game_all(game_id = 401283399))
 }
 
+\donttest{
+try(espn_nba_pbp(game_id = 401071880))
+}
+
+\donttest{
+try(espn_nba_team_box(game_id = 401071880))
+}
+
+\donttest{
+try(espn_nba_player_box(game_id = 401071880))
+}
+
+\donttest{
+try(espn_nba_game_rosters(game_id = 401283399))
+}
+\donttest{
+try(espn_nba_betting(game_id = 401283399))
+}
 }
 \seealso{
 Other ESPN NBA Functions:
 \code{\link[=espn_nba_athletes_index]{espn_nba_athletes_index()}},
 \code{\link[=espn_nba_award]{espn_nba_award()}},
-\code{\link[=espn_nba_betting]{espn_nba_betting()}},
 \code{\link[=espn_nba_calendar]{espn_nba_calendar()}},
 \code{\link[=espn_nba_coach]{espn_nba_coach()}},
 \code{\link[=espn_nba_coach_record]{espn_nba_coach_record()}},
@@ -214,62 +217,39 @@ Other ESPN NBA Functions:
 \code{\link[=espn_nba_conferences]{espn_nba_conferences()}},
 \code{\link[=espn_nba_draft]{espn_nba_draft()}},
 \code{\link[=espn_nba_draft_athlete_detail]{espn_nba_draft_athlete_detail()}},
-\code{\link[=espn_nba_draft_athletes]{espn_nba_draft_athletes()}},
 \code{\link[=espn_nba_draft_pick]{espn_nba_draft_pick()}},
 \code{\link[=espn_nba_draft_rounds]{espn_nba_draft_rounds()}},
-\code{\link[=espn_nba_draft_status]{espn_nba_draft_status()}},
 \code{\link[=espn_nba_franchise]{espn_nba_franchise()}},
 \code{\link[=espn_nba_franchises]{espn_nba_franchises()}},
 \code{\link[=espn_nba_freeagents]{espn_nba_freeagents()}},
 \code{\link[=espn_nba_futures]{espn_nba_futures()}},
-\code{\link[=espn_nba_game_broadcasts]{espn_nba_game_broadcasts()}},
 \code{\link[=espn_nba_game_odds]{espn_nba_game_odds()}},
 \code{\link[=espn_nba_game_official_detail]{espn_nba_game_official_detail()}},
-\code{\link[=espn_nba_game_officials]{espn_nba_game_officials()}},
 \code{\link[=espn_nba_game_play]{espn_nba_game_play()}},
 \code{\link[=espn_nba_game_play_personnel]{espn_nba_game_play_personnel()}},
 \code{\link[=espn_nba_game_player_box]{espn_nba_game_player_box()}},
-\code{\link[=espn_nba_game_powerindex]{espn_nba_game_powerindex()}},
-\code{\link[=espn_nba_game_predictor]{espn_nba_game_predictor()}},
 \code{\link[=espn_nba_game_probabilities]{espn_nba_game_probabilities()}},
 \code{\link[=espn_nba_game_propbets]{espn_nba_game_propbets()}},
-\code{\link[=espn_nba_game_rosters]{espn_nba_game_rosters()}},
-\code{\link[=espn_nba_game_situation]{espn_nba_game_situation()}},
-\code{\link[=espn_nba_game_team_leaders]{espn_nba_game_team_leaders()}},
 \code{\link[=espn_nba_game_team_linescores]{espn_nba_game_team_linescores()}},
-\code{\link[=espn_nba_game_team_records]{espn_nba_game_team_records()}},
-\code{\link[=espn_nba_game_team_roster]{espn_nba_game_team_roster()}},
 \code{\link[=espn_nba_game_team_roster_entry]{espn_nba_game_team_roster_entry()}},
-\code{\link[=espn_nba_game_team_score]{espn_nba_game_team_score()}},
-\code{\link[=espn_nba_game_team_statistics]{espn_nba_game_team_statistics()}},
 \code{\link[=espn_nba_injuries]{espn_nba_injuries()}},
 \code{\link[=espn_nba_leaders]{espn_nba_leaders()}},
 \code{\link[=espn_nba_news]{espn_nba_news()}},
-\code{\link[=espn_nba_pbp]{espn_nba_pbp()}},
 \code{\link[=espn_nba_player_awards]{espn_nba_player_awards()}},
-\code{\link[=espn_nba_player_box]{espn_nba_player_box()}},
 \code{\link[=espn_nba_player_career_stats]{espn_nba_player_career_stats()}},
 \code{\link[=espn_nba_player_contract]{espn_nba_player_contract()}},
 \code{\link[=espn_nba_player_contracts]{espn_nba_player_contracts()}},
-\code{\link[=espn_nba_player_eventlog]{espn_nba_player_eventlog()}},
 \code{\link[=espn_nba_player_eventlog_v2]{espn_nba_player_eventlog_v2()}},
-\code{\link[=espn_nba_player_gamelog]{espn_nba_player_gamelog()}},
 \code{\link[=espn_nba_player_info]{espn_nba_player_info()}},
 \code{\link[=espn_nba_player_overview]{espn_nba_player_overview()}},
 \code{\link[=espn_nba_player_seasons]{espn_nba_player_seasons()}},
-\code{\link[=espn_nba_player_splits]{espn_nba_player_splits()}},
-\code{\link[=espn_nba_player_statisticslog]{espn_nba_player_statisticslog()}},
 \code{\link[=espn_nba_player_stats]{espn_nba_player_stats()}},
-\code{\link[=espn_nba_player_stats_v3]{espn_nba_player_stats_v3()}},
 \code{\link[=espn_nba_position]{espn_nba_position()}},
 \code{\link[=espn_nba_positions]{espn_nba_positions()}},
 \code{\link[=espn_nba_powerindex]{espn_nba_powerindex()}},
 \code{\link[=espn_nba_scoreboard]{espn_nba_scoreboard()}},
 \code{\link[=espn_nba_season_awards]{espn_nba_season_awards()}},
-\code{\link[=espn_nba_season_draft]{espn_nba_season_draft()}},
 \code{\link[=espn_nba_season_group]{espn_nba_season_group()}},
-\code{\link[=espn_nba_season_group_children]{espn_nba_season_group_children()}},
-\code{\link[=espn_nba_season_group_teams]{espn_nba_season_group_teams()}},
 \code{\link[=espn_nba_season_groups]{espn_nba_season_groups()}},
 \code{\link[=espn_nba_season_info]{espn_nba_season_info()}},
 \code{\link[=espn_nba_season_leaders]{espn_nba_season_leaders()}},
@@ -282,18 +262,14 @@ Other ESPN NBA Functions:
 \code{\link[=espn_nba_seasons]{espn_nba_seasons()}},
 \code{\link[=espn_nba_standings]{espn_nba_standings()}},
 \code{\link[=espn_nba_team]{espn_nba_team()}},
-\code{\link[=espn_nba_team_box]{espn_nba_team_box()}},
 \code{\link[=espn_nba_team_current_roster]{espn_nba_team_current_roster()}},
 \code{\link[=espn_nba_team_depthchart]{espn_nba_team_depthchart()}},
 \code{\link[=espn_nba_team_injuries]{espn_nba_team_injuries()}},
-\code{\link[=espn_nba_team_leaders]{espn_nba_team_leaders()}},
 \code{\link[=espn_nba_team_news]{espn_nba_team_news()}},
 \code{\link[=espn_nba_team_odds_records]{espn_nba_team_odds_records()}},
 \code{\link[=espn_nba_team_record]{espn_nba_team_record()}},
 \code{\link[=espn_nba_team_record_detail]{espn_nba_team_record_detail()}},
-\code{\link[=espn_nba_team_roster]{espn_nba_team_roster()}},
 \code{\link[=espn_nba_team_schedule]{espn_nba_team_schedule()}},
-\code{\link[=espn_nba_team_season_profile]{espn_nba_team_season_profile()}},
 \code{\link[=espn_nba_team_season_roster]{espn_nba_team_season_roster()}},
 \code{\link[=espn_nba_team_season_statistics]{espn_nba_team_season_statistics()}},
 \code{\link[=espn_nba_team_stats]{espn_nba_team_stats()}},
@@ -312,5 +288,11 @@ Other ESPN NBA Functions:
 Saiem Gilani
 }
 \concept{ESPN NBA Functions}
+\keyword{Betting}
+\keyword{Box}
 \keyword{Game}
 \keyword{NBA}
+\keyword{PBP}
+\keyword{Player}
+\keyword{Roster}
+\keyword{Team}

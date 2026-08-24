@@ -26,56 +26,59 @@ nba_franchiseleaderswrank(
 \value{
 Returns a named list of data frames: FranchiseLeaderswRank
 
-\strong{FranchiseLeaderswRank}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-   PLAYER \tab character \tab Player. \cr
-   SEASON_TYPE \tab character \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-   ACTIVE_WITH_TEAM \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   PF \tab character \tab Personal fouls. \cr
-   STL \tab character \tab Steals. \cr
-   TOV \tab character \tab Turnovers. \cr
-   BLK \tab character \tab Blocks. \cr
-   PTS \tab character \tab Points scored. \cr
-   F_RANK_GP \tab character \tab  \cr
-   F_RANK_MINUTES \tab character \tab  \cr
-   F_RANK_FGM \tab character \tab  \cr
-   F_RANK_FGA \tab character \tab  \cr
-   F_RANK_FG_PCT \tab character \tab  \cr
-   F_RANK_FG3M \tab character \tab  \cr
-   F_RANK_FG3A \tab character \tab  \cr
-   F_RANK_FG3_PCT \tab character \tab  \cr
-   F_RANK_FTM \tab character \tab  \cr
-   F_RANK_FTA \tab character \tab  \cr
-   F_RANK_FT_PCT \tab character \tab  \cr
-   F_RANK_OREB \tab character \tab  \cr
-   F_RANK_DREB \tab character \tab  \cr
-   F_RANK_REB \tab character \tab  \cr
-   F_RANK_AST \tab character \tab  \cr
-   F_RANK_PF \tab character \tab  \cr
-   F_RANK_STL \tab character \tab  \cr
-   F_RANK_TOV \tab character \tab  \cr
-   F_RANK_BLK \tab character \tab  \cr
-   F_RANK_PTS \tab character \tab  \cr
-}
+\strong{FranchiseLeaderswRank}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM \tab character \tab Team-side label or team identifier. \cr
+      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+      PLAYER \tab character \tab Player. \cr
+      SEASON_TYPE \tab character \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+      ACTIVE_WITH_TEAM \tab character \tab  \cr
+      GP \tab character \tab Games played. \cr
+      MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      FGM \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FTM \tab character \tab Free throws made. \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OREB \tab character \tab Offensive rebounds. \cr
+      DREB \tab character \tab Defensive rebounds. \cr
+      REB \tab character \tab Total rebounds. \cr
+      AST \tab character \tab Assists. \cr
+      PF \tab character \tab Personal fouls. \cr
+      STL \tab character \tab Steals. \cr
+      TOV \tab character \tab Turnovers. \cr
+      BLK \tab character \tab Blocks. \cr
+      PTS \tab character \tab Points scored. \cr
+      F_RANK_GP \tab character \tab  \cr
+      F_RANK_MINUTES \tab character \tab  \cr
+      F_RANK_FGM \tab character \tab  \cr
+      F_RANK_FGA \tab character \tab  \cr
+      F_RANK_FG_PCT \tab character \tab  \cr
+      F_RANK_FG3M \tab character \tab  \cr
+      F_RANK_FG3A \tab character \tab  \cr
+      F_RANK_FG3_PCT \tab character \tab  \cr
+      F_RANK_FTM \tab character \tab  \cr
+      F_RANK_FTA \tab character \tab  \cr
+      F_RANK_FT_PCT \tab character \tab  \cr
+      F_RANK_OREB \tab character \tab  \cr
+      F_RANK_DREB \tab character \tab  \cr
+      F_RANK_REB \tab character \tab  \cr
+      F_RANK_AST \tab character \tab  \cr
+      F_RANK_PF \tab character \tab  \cr
+      F_RANK_STL \tab character \tab  \cr
+      F_RANK_TOV \tab character \tab  \cr
+      F_RANK_BLK \tab character \tab  \cr
+      F_RANK_PTS \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Franchise Leaders with Rank}

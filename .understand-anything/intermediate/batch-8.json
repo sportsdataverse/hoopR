@@ -1,0 +1,260 @@
+{
+  "nodes": [
+    {
+      "id": "file:R/kp_misc_stats.R",
+      "type": "file",
+      "name": "kp_misc_stats.R",
+      "filePath": "R/kp_misc_stats.R",
+      "summary": "Authenticated KenPom scrapers for miscellaneous men's college-basketball pages — trends, officials/referee, home-court advantage, arenas, game attributes, and FanMatch projections. Uses an httr2 cookie-jar session plus rvest CSS-selector parsing.",
+      "tags": ["kenpom", "web-scraper", "college-basketball", "api-handler"],
+      "complexity": "complex",
+      "languageNotes": "Each exported kp_* function pulls one authenticated KenPom HTML page and parses fragile CSS-selected tables with rvest."
+    },
+    {
+      "id": "file:R/kp_ratings_tables.R",
+      "type": "file",
+      "name": "kp_ratings_tables.R",
+      "filePath": "R/kp_ratings_tables.R",
+      "summary": "Authenticated KenPom scrapers for season ratings tables — Pomeroy ratings, efficiency, four-factors, point distribution, height/experience, foul trouble, team/player stats, and KPOY award tracking.",
+      "tags": ["kenpom", "web-scraper", "ratings", "college-basketball", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/kp_team_tables.R",
+      "type": "file",
+      "name": "kp_team_tables.R",
+      "filePath": "R/kp_team_tables.R",
+      "summary": "Authenticated KenPom scrapers for team-level detail pages — schedule, game plan, opponent tracker, roster/players, player career, minutes matrix, per-player stats, depth chart, and lineups. The largest KenPom module in the package.",
+      "tags": ["kenpom", "web-scraper", "college-basketball", "team-data", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/kp.R",
+      "type": "file",
+      "name": "kp.R",
+      "filePath": "R/kp.R",
+      "summary": "Documentation-only overview hub for the KenPom scraper family, cataloguing the kp_* functions and describing the httr2 cookie-jar login() auth flow that reads KP_USER/KP_PW credentials.",
+      "tags": ["kenpom", "documentation", "overview", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/load_crosswalk.R",
+      "type": "file",
+      "name": "load_crosswalk.R",
+      "filePath": "R/load_crosswalk.R",
+      "summary": "Loaders that download pre-built cross-source crosswalk tables (team / schedule / player) for NBA and MBB from the sportsdataverse-data releases, validating seasons and tagging results.",
+      "tags": ["loader", "crosswalk", "data-loader", "nba", "college-basketball"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/load_hoopR.R",
+      "type": "file",
+      "name": "load_hoopR.R",
+      "filePath": "R/load_hoopR.R",
+      "summary": "Documentation-only overview hub for the hoopR data loaders, cataloguing the load_nba_* and load_mbb_* season loaders that pull pre-scraped data from the hoopR-{nba,mbb}-data releases.",
+      "tags": ["documentation", "overview", "loader", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/load_mbb.R",
+      "type": "file",
+      "name": "load_mbb.R",
+      "filePath": "R/load_mbb.R",
+      "summary": "Season-level MBB data loaders pulling pre-scraped play-by-play, box scores, schedules, rosters, stats, standings, and officials from sportsdataverse-data releases, with parallel download, optional progressr progress, and DBI database build/update helpers.",
+      "tags": ["loader", "data-loader", "college-basketball", "play-by-play", "database"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/load_nba.R",
+      "type": "file",
+      "name": "load_nba.R",
+      "filePath": "R/load_nba.R",
+      "summary": "Season-level NBA data loaders pulling pre-scraped play-by-play, box scores, schedules, rosters, stats, standings, draft, and officials from sportsdataverse-data releases, with parallel download and DBI database build/update helpers.",
+      "tags": ["loader", "data-loader", "nba", "play-by-play", "database"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/mbb_crosswalk.R",
+      "type": "file",
+      "name": "mbb_crosswalk.R",
+      "filePath": "R/mbb_crosswalk.R",
+      "summary": "Builds MBB cross-source crosswalks (team / schedule / player) by reconciling ESPN, Fox, Barttorvik, and KenPom identities through normalization, alias tables, and fuzzy matching atop the shared .bb_* crosswalk engine.",
+      "tags": ["crosswalk", "college-basketball", "data-reconciliation", "fuzzy-match", "factory"],
+      "complexity": "complex",
+      "languageNotes": "Thin assembler wrappers over the .bb_* engine in crosswalk_basketball.R; carries MBB-specific KP/Fox alias maps for team-name reconciliation."
+    },
+    {
+      "id": "file:R/nba_crosswalk.R",
+      "type": "file",
+      "name": "nba_crosswalk.R",
+      "filePath": "R/nba_crosswalk.R",
+      "summary": "Builds NBA cross-source crosswalks (team / schedule / player) reconciling ESPN, NBA Stats, and Fox identities via the shared .bb_* normalization and fuzzy-matching engine.",
+      "tags": ["crosswalk", "nba", "data-reconciliation", "fuzzy-match", "factory"],
+      "complexity": "moderate",
+      "languageNotes": "Thin wrappers over the .bb_* engine in crosswalk_basketball.R."
+    },
+    {
+      "id": "file:R/nba_data_pbp.R",
+      "type": "file",
+      "name": "nba_data_pbp.R",
+      "filePath": "R/nba_data_pbp.R",
+      "summary": "Provides nba_data_pbp(), a loader for tidy NBA play-by-play data scraped from the data.nba.com feed for a given game id.",
+      "tags": ["nba", "play-by-play", "data-loader", "api-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_datasets.R",
+      "type": "file",
+      "name": "nba_datasets.R",
+      "filePath": "R/nba_datasets.R",
+      "summary": "Tidy reshaping helpers that flatten raw NBA Stats payloads into analysis-ready frames — franchise history, player box scores with team context, and nested player profiles.",
+      "tags": ["nba", "data-transformation", "serialization", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_dictionaries.R",
+      "type": "file",
+      "name": "nba_dictionaries.R",
+      "filePath": "R/nba_dictionaries.R",
+      "summary": "Reference-data helpers exposing NBA player/team dictionaries and URL builders for player headshots and team logos.",
+      "tags": ["nba", "reference-data", "utility", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_metrics.R",
+      "type": "file",
+      "name": "nba_metrics.R",
+      "filePath": "R/nba_metrics.R",
+      "summary": "Vectorized basketball analytics primitives — true shooting, eFG%, free-throw rate, game score, assist/turnover ratios, possessions, pace, offensive/defensive/net ratings, usage, and the four factors.",
+      "tags": ["nba", "analytics", "metrics", "utility"],
+      "complexity": "moderate",
+      "languageNotes": "Pure vectorized formula functions with a private .nz() null-guard helper; no network I/O."
+    },
+    {
+      "id": "file:R/nba_reduce.R",
+      "type": "file",
+      "name": "nba_reduce.R",
+      "filePath": "R/nba_reduce.R",
+      "summary": "Set-combination utilities for multi-table NBA Stats results — bind, join, and nest lists of named data frames into a single structure.",
+      "tags": ["nba", "data-transformation", "utility", "reduce"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/nba_scaling.R",
+      "type": "file",
+      "name": "nba_scaling.R",
+      "filePath": "R/nba_scaling.R",
+      "summary": "Box-score scaling helpers that rescale counting stats to per-N-minutes or per-N-possessions and append advanced metrics, with a private column-finder helper.",
+      "tags": ["nba", "analytics", "scaling", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/nba_stats_boxscore_v3.R",
+      "type": "file",
+      "name": "nba_stats_boxscore_v3.R",
+      "filePath": "R/nba_stats_boxscore_v3.R",
+      "summary": "Wrappers for the NBA Stats v3 boxscore endpoints — traditional, advanced, misc, scoring, usage, four-factors, player-track, matchups, hustle, defensive, game rotation, and summary. The largest boxscore module in the package.",
+      "tags": ["nba", "nba-stats-api", "boxscore", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_boxscore.R",
+      "type": "file",
+      "name": "nba_stats_boxscore.R",
+      "filePath": "R/nba_stats_boxscore.R",
+      "summary": "Wrappers for the NBA Stats v2/legacy boxscore endpoints — traditional, advanced, defensive, four-factors, misc, scoring, usage, summary, matchups, player-track, hustle, and similarity scores.",
+      "tags": ["nba", "nba-stats-api", "boxscore", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_cume.R",
+      "type": "file",
+      "name": "nba_stats_cume.R",
+      "filePath": "R/nba_stats_cume.R",
+      "summary": "Wrappers for the NBA Stats cumulative-stats endpoints covering player and team cumulative totals and per-game cumulative breakdowns.",
+      "tags": ["nba", "nba-stats-api", "cumulative-stats", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_draft.R",
+      "type": "file",
+      "name": "nba_stats_draft.R",
+      "filePath": "R/nba_stats_draft.R",
+      "summary": "Wrappers for the NBA Stats draft endpoints — draft board, draft history, and the full draft-combine suite (measurements, drills, shooting, anthro).",
+      "tags": ["nba", "nba-stats-api", "draft", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_franchise.R",
+      "type": "file",
+      "name": "nba_stats_franchise.R",
+      "filePath": "R/nba_stats_franchise.R",
+      "summary": "Wrappers for the NBA Stats franchise endpoints — franchise leaders (with and without rank), franchise players, and franchise history.",
+      "tags": ["nba", "nba-stats-api", "franchise", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_hustle.R",
+      "type": "file",
+      "name": "nba_stats_hustle.R",
+      "filePath": "R/nba_stats_hustle.R",
+      "summary": "Wrappers for the NBA Stats league hustle-stats endpoints covering player and team hustle stats plus their leaderboards.",
+      "tags": ["nba", "nba-stats-api", "hustle-stats", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_leaders.R",
+      "type": "file",
+      "name": "nba_stats_leaders.R",
+      "filePath": "R/nba_stats_leaders.R",
+      "summary": "Wrappers for the NBA Stats leaders/leaderboard endpoints — all-time grids, assist leaders/tracker, homepage leaders, leader tiles, defense hub, league leaders, and dunk/gravity score leaders.",
+      "tags": ["nba", "nba-stats-api", "leaderboard", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_league_dash.R",
+      "type": "file",
+      "name": "nba_stats_league_dash.R",
+      "filePath": "R/nba_stats_league_dash.R",
+      "summary": "Wrappers for the NBA Stats leaguedash endpoints — player/team stats, clutch, bio, shot dashboards (opponent, point, shot locations), and tracking defend/stats. One of the largest endpoint modules.",
+      "tags": ["nba", "nba-stats-api", "league-dashboard", "api-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/nba_stats_league.R",
+      "type": "file",
+      "name": "nba_stats_league.R",
+      "filePath": "R/nba_stats_league.R",
+      "summary": "Wrappers for league-wide NBA Stats endpoints — game log, standings (legacy + v3), playoff picture, game finder, and in-season tournament standings.",
+      "tags": ["nba", "nba-stats-api", "standings", "schedule", "api-handler"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {"source": "file:R/kp.R", "target": "file:R/kp_ratings_tables.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/kp.R", "target": "file:R/kp_team_tables.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/kp.R", "target": "file:R/kp_misc_stats.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/kp_ratings_tables.R", "target": "file:R/kp_team_tables.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/kp_ratings_tables.R", "target": "file:R/kp_misc_stats.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/kp_team_tables.R", "target": "file:R/kp_misc_stats.R", "type": "related", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:R/load_hoopR.R", "target": "file:R/load_nba.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/load_hoopR.R", "target": "file:R/load_mbb.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/load_nba.R", "target": "file:R/load_mbb.R", "type": "related", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:R/load_crosswalk.R", "target": "file:R/nba_crosswalk.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/load_crosswalk.R", "target": "file:R/mbb_crosswalk.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_crosswalk.R", "target": "file:R/crosswalk_basketball.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/mbb_crosswalk.R", "target": "file:R/crosswalk_basketball.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/nba_crosswalk.R", "target": "file:R/mbb_crosswalk.R", "type": "related", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:R/nba_scaling.R", "target": "file:R/nba_metrics.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/nba_datasets.R", "target": "file:R/nba_dictionaries.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_scaling.R", "target": "file:R/nba_datasets.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_reduce.R", "target": "file:R/nba_datasets.R", "type": "related", "direction": "forward", "weight": 0.5},
+
+    {"source": "file:R/nba_stats_boxscore_v3.R", "target": "file:R/nba_stats_boxscore.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats_league_dash.R", "target": "file:R/nba_stats_league.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/nba_stats_hustle.R", "target": "file:R/nba_stats_leaders.R", "type": "related", "direction": "forward", "weight": 0.5}
+  ]
+}

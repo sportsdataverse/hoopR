@@ -71,29 +71,32 @@ nba_fantasywidget(
 \value{
 Returns a named list of data frames: FantasyWidgetResult
 
-\strong{FantasyWidgetResult}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   PLAYER_POSITION \tab character \tab  \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   GP \tab character \tab Games played. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FAN_DUEL_PTS \tab character \tab  \cr
-   NBA_FANTASY_PTS \tab character \tab  \cr
-   PTS \tab character \tab Points scored. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   BLK \tab character \tab Blocks. \cr
-   STL \tab character \tab Steals. \cr
-   TOV \tab character \tab Turnovers. \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-}
+\strong{FantasyWidgetResult}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      PLAYER_POSITION \tab character \tab  \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      GP \tab character \tab Games played. \cr
+      MIN \tab character \tab Minutes played. \cr
+      FAN_DUEL_PTS \tab character \tab  \cr
+      NBA_FANTASY_PTS \tab character \tab  \cr
+      PTS \tab character \tab Points scored. \cr
+      REB \tab character \tab Total rebounds. \cr
+      AST \tab character \tab Assists. \cr
+      BLK \tab character \tab Blocks. \cr
+      STL \tab character \tab Steals. \cr
+      TOV \tab character \tab Turnovers. \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Fantasy Widget}

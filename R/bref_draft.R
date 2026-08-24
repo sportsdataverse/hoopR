@@ -13,22 +13,24 @@
 #' @return A `hoopR_data` tibble with one row per draft pick (career columns
 #'   shown -- column names are Basketball-Reference `data-stat` keys):
 #'
-#'    |col_name     |types     |description                                       |
-#'    |:------------|:---------|:-------------------------------------------------|
-#'    |pick_overall |integer   |Overall draft pick number.                        |
-#'    |round        |integer   |Draft round.                                      |
-#'    |team         |character |Drafting team abbreviation.                       |
-#'    |player       |character |Player name.                                      |
-#'    |college_name |character |College / pre-draft team.                         |
-#'    |seasons      |integer   |NBA seasons played.                               |
-#'    |g            |integer   |Career games.                                     |
-#'    |pts          |numeric   |Career points.                                    |
-#'    |trb          |numeric   |Career total rebounds.                            |
-#'    |ast          |numeric   |Career assists.                                   |
-#'    |ws           |numeric   |Career win shares.                                |
-#'    |bpm          |numeric   |Career box plus/minus.                            |
-#'    |vorp         |numeric   |Career value over replacement player.             |
-#'    |season       |integer   |Draft year (echoes the `season` argument).        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       pick_overall \tab integer \tab Overall draft pick number. \cr
+#'       round \tab integer \tab Draft round. \cr
+#'       team \tab character \tab Drafting team abbreviation. \cr
+#'       player \tab character \tab Player name. \cr
+#'       college_name \tab character \tab College / pre-draft team. \cr
+#'       seasons \tab integer \tab NBA seasons played. \cr
+#'       g \tab integer \tab Career games. \cr
+#'       pts \tab numeric \tab Career points. \cr
+#'       trb \tab numeric \tab Career total rebounds. \cr
+#'       ast \tab numeric \tab Career assists. \cr
+#'       ws \tab numeric \tab Career win shares. \cr
+#'       bpm \tab numeric \tab Career box plus/minus. \cr
+#'       vorp \tab numeric \tab Career value over replacement player. \cr
+#'       season \tab integer \tab Draft year (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names

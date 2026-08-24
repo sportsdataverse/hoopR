@@ -13,63 +13,65 @@ NULL
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
-#'    |col_name                        |types     |description                                                                                                        |
-#'    |:-------------------------------|:---------|:------------------------------------------------------------------------------------------------------------------|
-#'    |id                              |numeric   |Id.                                                                                                                |
-#'    |sequence_number                 |character |Sequence number representing a shot-possession (V3 PBP).                                                           |
-#'    |type_id                         |character |Type identifier (numeric).                                                                                         |
-#'    |type_text                       |character |Display text for the type field.                                                                                   |
-#'    |text                            |character |Text description of the play / record.                                                                             |
-#'    |away_score                      |integer   |Away team score at the time of the play.                                                                           |
-#'    |home_score                      |integer   |Home team score at the time of the play.                                                                           |
-#'    |period_number                   |integer   |Numeric period (1-4 for quarters; 5+ for OT).                                                                      |
-#'    |period_display_value            |character |Period display label (e.g. '1st Quarter', 'OT').                                                                   |
-#'    |clock_display_value             |character |Game clock display string (e.g. '8:32').                                                                           |
-#'    |scoring_play                    |logical   |TRUE if the play resulted in points scored.                                                                        |
-#'    |score_value                     |integer   |Point value of the play (2 / 3 / 1).                                                                               |
-#'    |team_id                         |character |Unique team identifier.                                                                                            |
-#'    |participants_0_athlete_id       |character |V2 PBP participant 0 (primary) athlete ID.                                                                         |
-#'    |wallclock                       |character |Wallclock.                                                                                                         |
-#'    |shooting_play                   |logical   |TRUE if the play was a shooting attempt.                                                                           |
-#'    |participants_1_athlete_id       |character |V2 PBP participant 1 (secondary) athlete ID.                                                                       |
-#'    |season                          |integer   |Season identifier (4-digit year or 'YYYY-YY' string).                                                              |
-#'    |season_type                     |integer   |Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-#'    |away_team_id                    |integer   |Unique identifier for the away team.                                                                               |
-#'    |away_team_name                  |character |Away team name.                                                                                                    |
-#'    |away_team_mascot                |character |Away team mascot.                                                                                                  |
-#'    |away_team_abbrev                |character |Away team three-letter abbreviation.                                                                               |
-#'    |away_team_name_alt              |character |Alternate away team name.                                                                                          |
-#'    |home_team_id                    |integer   |Unique identifier for the home team.                                                                               |
-#'    |home_team_name                  |character |Home team name.                                                                                                    |
-#'    |home_team_mascot                |character |Home team mascot.                                                                                                  |
-#'    |home_team_abbrev                |character |Home team three-letter abbreviation.                                                                               |
-#'    |home_team_name_alt              |character |Alternate home team name.                                                                                          |
-#'    |home_team_spread                |numeric   |Home team's point spread.                                                                                          |
-#'    |game_spread                     |numeric   |Game spread (signed; positive = home favored).                                                                     |
-#'    |home_favorite                   |logical   |TRUE if the home team is the betting favorite.                                                                     |
-#'    |game_spread_available           |logical   |TRUE if a point spread was available.                                                                              |
-#'    |game_id                         |integer   |Unique game identifier.                                                                                            |
-#'    |qtr                             |integer   |Quarter (1-4) or OT period (5+).                                                                                   |
-#'    |time                            |character |Time / clock value.                                                                                                |
-#'    |clock_minutes                   |character |Clock minutes split out for convenience.                                                                           |
-#'    |clock_seconds                   |character |Clock seconds split out for convenience.                                                                           |
-#'    |half                            |character |Half of the game (1 or 2).                                                                                         |
-#'    |game_half                       |character |Half of the game (1 or 2).                                                                                         |
-#'    |lag_qtr                         |numeric   |Quarter lag (the previous-play's quarter).                                                                         |
-#'    |lead_qtr                        |numeric   |Quarter lead (the next-play's quarter).                                                                            |
-#'    |lag_game_half                   |character |Half lag (the previous-play's half).                                                                               |
-#'    |lead_game_half                  |character |Half lead (the next-play's half).                                                                                  |
-#'    |start_quarter_seconds_remaining |integer   |Seconds remaining in the period at the start of the play.                                                          |
-#'    |start_half_seconds_remaining    |integer   |Seconds remaining in the half at the start of the play.                                                            |
-#'    |start_game_seconds_remaining    |integer   |Seconds remaining in the game at the start of the play.                                                            |
-#'    |game_play_number                |integer   |Sequential play number within the game.                                                                            |
-#'    |end_quarter_seconds_remaining   |numeric   |Seconds remaining in the period at the end of the play.                                                            |
-#'    |end_half_seconds_remaining      |numeric   |Seconds remaining in the half at the end of the play.                                                              |
-#'    |end_game_seconds_remaining      |numeric   |Seconds remaining in the game at the end of the play.                                                              |
-#'    |period                          |integer   |Period of the game (1-4 quarters; 5+ for OT).                                                                      |
-#'    |coordinate_x                    |integer   |X coordinate on the court (half-court layout).                                                                     |
-#'    |coordinate_y                    |integer   |Y coordinate on the court (half-court layout).                                                                     |
-#'    |media_id                        |character |Media identifier (video / image).                                                                                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab numeric \tab Id. \cr
+#'       sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+#'       type_id \tab character \tab Type identifier (numeric). \cr
+#'       type_text \tab character \tab Display text for the type field. \cr
+#'       text \tab character \tab Text description of the play / record. \cr
+#'       away_score \tab integer \tab Away team score at the time of the play. \cr
+#'       home_score \tab integer \tab Home team score at the time of the play. \cr
+#'       period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
+#'       period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
+#'       clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+#'       scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+#'       score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
+#'       team_id \tab character \tab Unique team identifier. \cr
+#'       participants_0_athlete_id \tab character \tab V2 PBP participant 0 (primary) athlete ID. \cr
+#'       wallclock \tab character \tab Wallclock. \cr
+#'       shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
+#'       participants_1_athlete_id \tab character \tab V2 PBP participant 1 (secondary) athlete ID. \cr
+#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+#'       away_team_id \tab integer \tab Unique identifier for the away team. \cr
+#'       away_team_name \tab character \tab Away team name. \cr
+#'       away_team_mascot \tab character \tab Away team mascot. \cr
+#'       away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
+#'       away_team_name_alt \tab character \tab Alternate away team name. \cr
+#'       home_team_id \tab integer \tab Unique identifier for the home team. \cr
+#'       home_team_name \tab character \tab Home team name. \cr
+#'       home_team_mascot \tab character \tab Home team mascot. \cr
+#'       home_team_abbrev \tab character \tab Home team three-letter abbreviation. \cr
+#'       home_team_name_alt \tab character \tab Alternate home team name. \cr
+#'       home_team_spread \tab numeric \tab Home team's point spread. \cr
+#'       game_spread \tab numeric \tab Game spread (signed; positive = home favored). \cr
+#'       home_favorite \tab logical \tab TRUE if the home team is the betting favorite. \cr
+#'       game_spread_available \tab logical \tab TRUE if a point spread was available. \cr
+#'       game_id \tab integer \tab Unique game identifier. \cr
+#'       qtr \tab integer \tab Quarter (1-4) or OT period (5+). \cr
+#'       time \tab character \tab Time / clock value. \cr
+#'       clock_minutes \tab character \tab Clock minutes split out for convenience. \cr
+#'       clock_seconds \tab character \tab Clock seconds split out for convenience. \cr
+#'       half \tab character \tab Half of the game (1 or 2). \cr
+#'       game_half \tab character \tab Half of the game (1 or 2). \cr
+#'       lag_qtr \tab numeric \tab Quarter lag (the previous-play's quarter). \cr
+#'       lead_qtr \tab numeric \tab Quarter lead (the next-play's quarter). \cr
+#'       lag_game_half \tab character \tab Half lag (the previous-play's half). \cr
+#'       lead_game_half \tab character \tab Half lead (the next-play's half). \cr
+#'       start_quarter_seconds_remaining \tab integer \tab Seconds remaining in the period at the start of the play. \cr
+#'       start_half_seconds_remaining \tab integer \tab Seconds remaining in the half at the start of the play. \cr
+#'       start_game_seconds_remaining \tab integer \tab Seconds remaining in the game at the start of the play. \cr
+#'       game_play_number \tab integer \tab Sequential play number within the game. \cr
+#'       end_quarter_seconds_remaining \tab numeric \tab Seconds remaining in the period at the end of the play. \cr
+#'       end_half_seconds_remaining \tab numeric \tab Seconds remaining in the half at the end of the play. \cr
+#'       end_game_seconds_remaining \tab numeric \tab Seconds remaining in the game at the end of the play. \cr
+#'       period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+#'       coordinate_x \tab integer \tab X coordinate on the court (half-court layout). \cr
+#'       coordinate_y \tab integer \tab Y coordinate on the court (half-court layout). \cr
+#'       media_id \tab character \tab Media identifier (video / image). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family hoopR Loader Functions
@@ -123,12 +125,9 @@ load_mbb_pbp <- function(
   out
 }
 
-#' **Load hoopR men's college basketball team box scores**
-#' @name load_mbb_team_box
-NULL
 #' @title
 #' **Load cleaned men's college basketball team box scores from the data repo**
-#' @rdname load_mbb_team_box
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)
@@ -138,48 +137,50 @@ NULL
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
-#'    |col_name                                                       |types     |description                                                                                                        |
-#'    |:--------------------------------------------------------------|:---------|:------------------------------------------------------------------------------------------------------------------|
-#'    |team_id                                                        |character |Unique team identifier.                                                                                            |
-#'    |team_uid                                                       |character |ESPN universal team identifier (UID format 's:40~l:...~t:...').                                                    |
-#'    |team_slug                                                      |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces').                                                          |
-#'    |team_location                                                  |character |Team city or location string.                                                                                      |
-#'    |team_name                                                      |character |Full team display name (e.g. 'Las Vegas Aces').                                                                    |
-#'    |team_abbreviation                                              |character |Short team abbreviation (e.g. 'LAS').                                                                              |
-#'    |team_display_name                                              |character |Full team display name.                                                                                            |
-#'    |team_short_display_name                                        |character |Short team display name (e.g. 'Aces').                                                                             |
-#'    |team_color                                                     |character |Team primary color (hex without leading '#').                                                                      |
-#'    |team_alternate_color                                           |character |Team alternate color (hex without leading '#').                                                                    |
-#'    |team_logo                                                      |character |Team logo image URL.                                                                                               |
-#'    |field_goals_made_field_goals_attempted                         |character |Field Goals Made-Attempted.                                                                                        |
-#'    |field_goal_pct                                                 |character |Field goal percentage (0-1).                                                                                       |
-#'    |three_point_field_goals_made_three_point_field_goals_attempted |character |3-Point Field Goals Made-Attempted.                                                                                |
-#'    |three_point_field_goal_pct                                     |character |Three-point field goal percentage (0-1).                                                                           |
-#'    |free_throws_made_free_throws_attempted                         |character |Free Throws Made-Attempted.                                                                                        |
-#'    |free_throw_pct                                                 |character |Free throw percentage (0-1).                                                                                       |
-#'    |total_rebounds                                                 |character |Total rebounds.                                                                                                    |
-#'    |offensive_rebounds                                             |character |Offensive rebounds.                                                                                                |
-#'    |defensive_rebounds                                             |character |Defensive rebounds.                                                                                                |
-#'    |assists                                                        |character |Total assists.                                                                                                     |
-#'    |steals                                                         |character |Total steals.                                                                                                      |
-#'    |blocks                                                         |character |Total blocks.                                                                                                      |
-#'    |turnovers                                                      |character |Total turnovers.                                                                                                   |
-#'    |team_turnovers                                                 |character |Team turnovers (turnovers credited to the team rather than a player).                                              |
-#'    |total_turnovers                                                |character |Total turnovers (player + team).                                                                                   |
-#'    |technical_fouls                                                |character |Total technical fouls.                                                                                             |
-#'    |total_technical_fouls                                          |character |Total technical fouls (player + team).                                                                             |
-#'    |flagrant_fouls                                                 |character |Total flagrant fouls.                                                                                              |
-#'    |fouls                                                          |character |Personal fouls.                                                                                                    |
-#'    |largest_lead                                                   |character |Largest lead during the game.                                                                                      |
-#'    |home_away                                                      |character |Game venue label ('home' or 'away').                                                                               |
-#'    |opponent_id                                                    |integer   |Unique identifier for opponent.                                                                                    |
-#'    |opponent_name                                                  |character |Opponent name.                                                                                                     |
-#'    |opponent_mascot                                                |character |Opponent mascot.                                                                                                   |
-#'    |opponent_abbrev                                                |character |Abbreviation for opponent.                                                                                         |
-#'    |game_id                                                        |integer   |Unique game identifier.                                                                                            |
-#'    |season                                                         |integer   |Season identifier (4-digit year or 'YYYY-YY' string).                                                              |
-#'    |season_type                                                    |integer   |Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-#'    |game_date                                                      |Date      |Game date (YYYY-MM-DD).                                                                                            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team_id \tab character \tab Unique team identifier. \cr
+#'       team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+#'       team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+#'       team_location \tab character \tab Team city or location string. \cr
+#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       team_display_name \tab character \tab Full team display name. \cr
+#'       team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+#'       team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+#'       team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+#'       team_logo \tab character \tab Team logo image URL. \cr
+#'       field_goals_made_field_goals_attempted \tab character \tab Field Goals Made-Attempted. \cr
+#'       field_goal_pct \tab character \tab Field goal percentage (0-1). \cr
+#'       three_point_field_goals_made_three_point_field_goals_attempted \tab character \tab 3-Point Field Goals Made-Attempted. \cr
+#'       three_point_field_goal_pct \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       free_throws_made_free_throws_attempted \tab character \tab Free Throws Made-Attempted. \cr
+#'       free_throw_pct \tab character \tab Free throw percentage (0-1). \cr
+#'       total_rebounds \tab character \tab Total rebounds. \cr
+#'       offensive_rebounds \tab character \tab Offensive rebounds. \cr
+#'       defensive_rebounds \tab character \tab Defensive rebounds. \cr
+#'       assists \tab character \tab Total assists. \cr
+#'       steals \tab character \tab Total steals. \cr
+#'       blocks \tab character \tab Total blocks. \cr
+#'       turnovers \tab character \tab Total turnovers. \cr
+#'       team_turnovers \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+#'       total_turnovers \tab character \tab Total turnovers (player + team). \cr
+#'       technical_fouls \tab character \tab Total technical fouls. \cr
+#'       total_technical_fouls \tab character \tab Total technical fouls (player + team). \cr
+#'       flagrant_fouls \tab character \tab Total flagrant fouls. \cr
+#'       fouls \tab character \tab Personal fouls. \cr
+#'       largest_lead \tab character \tab Largest lead during the game. \cr
+#'       home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+#'       opponent_id \tab integer \tab Unique identifier for opponent. \cr
+#'       opponent_name \tab character \tab Opponent name. \cr
+#'       opponent_mascot \tab character \tab Opponent mascot. \cr
+#'       opponent_abbrev \tab character \tab Abbreviation for opponent. \cr
+#'       game_id \tab integer \tab Unique game identifier. \cr
+#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+#'       game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family hoopR Loader Functions
@@ -233,12 +234,9 @@ load_mbb_team_box <- function(
 }
 
 
-#' **Load hoopR men's college basketball player box scores**
-#' @name load_mbb_player_box
-NULL
 #' @title
 #' **Load cleaned men's college basketball player box scores from the data repo**
-#' @rdname load_mbb_player_box
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)
@@ -248,63 +246,7 @@ NULL
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
-#'    |col_name                          |types     |description                                                                                                        |
-#'    |:---------------------------------|:---------|:------------------------------------------------------------------------------------------------------------------|
-#'    |game_id                           |integer   |Unique game identifier.                                                                                            |
-#'    |season                            |integer   |Season identifier (4-digit year or 'YYYY-YY' string).                                                              |
-#'    |season_type                       |integer   |Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-#'    |game_date                         |Date      |Game date (YYYY-MM-DD).                                                                                            |
-#'    |game_date_time                    |POSIXct   |Game start date/time (ISO 8601).                                                                                   |
-#'    |athlete_id                        |integer   |Unique athlete identifier (ESPN).                                                                                  |
-#'    |athlete_display_name              |character |Athlete display name (full).                                                                                       |
-#'    |team_id                           |integer   |Unique team identifier.                                                                                            |
-#'    |team_name                         |character |Full team display name (e.g. 'Las Vegas Aces').                                                                    |
-#'    |team_location                     |character |Team city or location string.                                                                                      |
-#'    |team_short_display_name           |character |Short team display name (e.g. 'Aces').                                                                             |
-#'    |minutes                           |numeric   |Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2).                                   |
-#'    |field_goals_made                  |integer   |Field goals made (2-pt + 3-pt).                                                                                    |
-#'    |field_goals_attempted             |integer   |Field goal attempts (2-pt + 3-pt).                                                                                 |
-#'    |three_point_field_goals_made      |integer   |Three-point field goals made.                                                                                      |
-#'    |three_point_field_goals_attempted |integer   |Three-point field goal attempts.                                                                                   |
-#'    |free_throws_made                  |integer   |Free throws made.                                                                                                  |
-#'    |free_throws_attempted             |integer   |Free throw attempts.                                                                                               |
-#'    |offensive_rebounds                |integer   |Offensive rebounds.                                                                                                |
-#'    |defensive_rebounds                |integer   |Defensive rebounds.                                                                                                |
-#'    |rebounds                          |integer   |Total rebounds.                                                                                                    |
-#'    |assists                           |integer   |Total assists.                                                                                                     |
-#'    |steals                            |integer   |Total steals.                                                                                                      |
-#'    |blocks                            |integer   |Total blocks.                                                                                                      |
-#'    |turnovers                         |integer   |Total turnovers.                                                                                                   |
-#'    |fouls                             |integer   |Personal fouls.                                                                                                    |
-#'    |points                            |integer   |Points scored.                                                                                                     |
-#'    |starter                           |logical   |TRUE if the player was in the starting lineup; FALSE otherwise.                                                    |
-#'    |ejected                           |logical   |TRUE if the player was ejected from the game.                                                                      |
-#'    |did_not_play                      |logical   |TRUE if the player did not appear in the game.                                                                     |
-#'    |active                            |logical   |TRUE if the row represents an active record (player / team / season).                                              |
-#'    |athlete_jersey                    |character |Athlete jersey number.                                                                                             |
-#'    |athlete_short_name                |character |Athlete short display name.                                                                                        |
-#'    |athlete_headshot_href             |character |Athlete headshot image URL.                                                                                        |
-#'    |athlete_position_name             |character |Athlete position ('Guard', 'Forward', 'Center').                                                                   |
-#'    |athlete_position_abbreviation     |character |Athlete position abbreviation (G / F / C).                                                                         |
-#'    |team_display_name                 |character |Full team display name.                                                                                            |
-#'    |team_uid                          |character |ESPN universal team identifier (UID format 's:40~l:...~t:...').                                                    |
-#'    |team_slug                         |character |URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces').                                                          |
-#'    |team_logo                         |character |Team logo image URL.                                                                                               |
-#'    |team_abbreviation                 |character |Short team abbreviation (e.g. 'LAS').                                                                              |
-#'    |team_color                        |character |Team primary color (hex without leading '#').                                                                      |
-#'    |team_alternate_color              |character |Team alternate color (hex without leading '#').                                                                    |
-#'    |home_away                         |character |Game venue label ('home' or 'away').                                                                               |
-#'    |team_winner                       |logical   |TRUE if the team won this game.                                                                                    |
-#'    |team_score                        |integer   |Team's score / final score.                                                                                        |
-#'    |opponent_team_id                  |integer   |Unique identifier for the opponent team.                                                                           |
-#'    |opponent_team_name                |character |Opponent team display name.                                                                                        |
-#'    |opponent_team_location            |character |Opponent team city / location.                                                                                     |
-#'    |opponent_team_display_name        |character |Opponent team full display name.                                                                                   |
-#'    |opponent_team_abbreviation        |character |Opponent team abbreviation.                                                                                        |
-#'    |opponent_team_logo                |character |Opponent team logo URL.                                                                                            |
-#'    |opponent_team_color               |character |Opponent team primary color (hex).                                                                                 |
-#'    |opponent_team_alternate_color     |character |Opponent team alternate color (hex).                                                                               |
-#'    |opponent_team_score               |integer   |Opponent team's score.                                                                                             |
+#'    Columns as documented in the shared [espn_mbb_game_all_player_schema] table.
 #'
 #' @export
 #' @family hoopR Loader Functions
@@ -357,12 +299,9 @@ load_mbb_player_box <- function(
   out
 }
 
-#' **Load hoopR men's college basketball schedule**
-#' @name load_mbb_schedule
-NULL
 #' @title
 #' **Load cleaned men's college basketball schedule from the data repo**
-#' @rdname load_mbb_schedule
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
 #' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2002)
@@ -372,82 +311,84 @@ NULL
 #' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
-#'    |col_name                  |types     |description                                                                                                        |
-#'    |:-------------------------|:---------|:------------------------------------------------------------------------------------------------------------------|
-#'    |id                        |integer   |Id.                                                                                                                |
-#'    |uid                       |character |ESPN UID string (universal identifier).                                                                            |
-#'    |date                      |character |Date in YYYY-MM-DD format.                                                                                         |
-#'    |attendance                |integer   |Reported attendance.                                                                                               |
-#'    |time_valid                |logical   |Time valid.                                                                                                        |
-#'    |neutral_site              |logical   |Neutral site.                                                                                                      |
-#'    |conference_competition    |logical   |Conference competition.                                                                                            |
-#'    |recent                    |logical   |Recent.                                                                                                            |
-#'    |start_date                |character |Start date (YYYY-MM-DD).                                                                                           |
-#'    |notes_type                |character |Notes type.                                                                                                        |
-#'    |notes_headline            |character |Notes headline.                                                                                                    |
-#'    |type_id                   |character |Type identifier (numeric).                                                                                         |
-#'    |type_abbreviation         |character |Type abbreviation.                                                                                                 |
-#'    |venue_id                  |character |Unique venue identifier.                                                                                           |
-#'    |venue_full_name           |character |Venue full name.                                                                                                   |
-#'    |venue_address_city        |character |Venue address city.                                                                                                |
-#'    |venue_address_state       |character |Venue address state / region.                                                                                      |
-#'    |venue_capacity            |integer   |Venue seating capacity.                                                                                            |
-#'    |venue_indoor              |logical   |TRUE if the venue is indoors.                                                                                      |
-#'    |status_clock              |numeric   |Status clock.                                                                                                      |
-#'    |status_display_clock      |character |Status display clock.                                                                                              |
-#'    |status_period             |integer   |Status period.                                                                                                     |
-#'    |status_type_id            |character |Unique identifier for status type.                                                                                 |
-#'    |status_type_name          |character |Status type name.                                                                                                  |
-#'    |status_type_state         |character |Status type state.                                                                                                 |
-#'    |status_type_completed     |logical   |Status type completed.                                                                                             |
-#'    |status_type_description   |character |Status type description.                                                                                           |
-#'    |status_type_detail        |character |Status type detail.                                                                                                |
-#'    |status_type_short_detail  |character |Status type short detail.                                                                                          |
-#'    |format_regulation_periods |integer   |Format regulation periods.                                                                                         |
-#'    |home_id                   |character |Unique identifier for home.                                                                                        |
-#'    |home_uid                  |character |Home team's uid.                                                                                                   |
-#'    |home_location             |character |Home team's location.                                                                                              |
-#'    |home_name                 |character |Home name.                                                                                                         |
-#'    |home_abbreviation         |character |Home team's abbreviation.                                                                                          |
-#'    |home_display_name         |character |Home display name.                                                                                                 |
-#'    |home_short_display_name   |character |Home short display name.                                                                                           |
-#'    |home_color                |character |Color code (hex) for home.                                                                                         |
-#'    |home_alternate_color      |character |Color code (hex) for home alternate.                                                                               |
-#'    |home_is_active            |logical   |Home team's is active.                                                                                             |
-#'    |home_venue_id             |character |Unique identifier for home venue.                                                                                  |
-#'    |home_logo                 |character |Home team logo URL.                                                                                                |
-#'    |home_conference_id        |character |Unique identifier for home conference.                                                                             |
-#'    |home_score                |character |Home team score at the time of the play.                                                                           |
-#'    |home_winner               |logical   |Home team's winner.                                                                                                |
-#'    |away_id                   |character |Unique identifier for away.                                                                                        |
-#'    |away_uid                  |character |Away team's uid.                                                                                                   |
-#'    |away_location             |character |Away team's location.                                                                                              |
-#'    |away_name                 |character |Away name.                                                                                                         |
-#'    |away_abbreviation         |character |Away team's abbreviation.                                                                                          |
-#'    |away_display_name         |character |Away display name.                                                                                                 |
-#'    |away_short_display_name   |character |Away short display name.                                                                                           |
-#'    |away_color                |character |Color code (hex) for away.                                                                                         |
-#'    |away_alternate_color      |character |Color code (hex) for away alternate.                                                                               |
-#'    |away_is_active            |logical   |Away team's is active.                                                                                             |
-#'    |away_venue_id             |character |Unique identifier for away venue.                                                                                  |
-#'    |away_logo                 |character |Away team logo URL.                                                                                                |
-#'    |away_conference_id        |character |Unique identifier for away conference.                                                                             |
-#'    |away_score                |character |Away team score at the time of the play.                                                                           |
-#'    |away_winner               |logical   |Away team's winner.                                                                                                |
-#'    |game_id                   |integer   |Unique game identifier.                                                                                            |
-#'    |season                    |integer   |Season identifier (4-digit year or 'YYYY-YY' string).                                                              |
-#'    |season_type               |integer   |Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-#'    |status_type_alt_detail    |character |Status type alt detail.                                                                                            |
-#'    |groups_id                 |character |Unique identifier for groups.                                                                                      |
-#'    |groups_name               |character |Groups name.                                                                                                       |
-#'    |groups_short_name         |character |Groups short name.                                                                                                 |
-#'    |groups_is_conference      |logical   |Groups is conference.                                                                                              |
-#'    |tournament_id             |numeric   |Unique identifier for tournament.                                                                                  |
-#'    |game_date_time            |POSIXct   |Game start date/time (ISO 8601).                                                                                   |
-#'    |game_date                 |Date      |Game date (YYYY-MM-DD).                                                                                            |
-#'    |PBP                       |logical   |                                                                                                                   |
-#'    |team_box                  |logical   |Team box.                                                                                                          |
-#'    |player_box                |logical   |Player box.                                                                                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Id. \cr
+#'       uid \tab character \tab ESPN UID string (universal identifier). \cr
+#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'       attendance \tab integer \tab Reported attendance. \cr
+#'       time_valid \tab logical \tab Time valid. \cr
+#'       neutral_site \tab logical \tab Neutral site. \cr
+#'       conference_competition \tab logical \tab Conference competition. \cr
+#'       recent \tab logical \tab Recent. \cr
+#'       start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+#'       notes_type \tab character \tab Notes type. \cr
+#'       notes_headline \tab character \tab Notes headline. \cr
+#'       type_id \tab character \tab Type identifier (numeric). \cr
+#'       type_abbreviation \tab character \tab Type abbreviation. \cr
+#'       venue_id \tab character \tab Unique venue identifier. \cr
+#'       venue_full_name \tab character \tab Venue full name. \cr
+#'       venue_address_city \tab character \tab Venue address city. \cr
+#'       venue_address_state \tab character \tab Venue address state / region. \cr
+#'       venue_capacity \tab integer \tab Venue seating capacity. \cr
+#'       venue_indoor \tab logical \tab TRUE if the venue is indoors. \cr
+#'       status_clock \tab numeric \tab Status clock. \cr
+#'       status_display_clock \tab character \tab Status display clock. \cr
+#'       status_period \tab integer \tab Status period. \cr
+#'       status_type_id \tab character \tab Unique identifier for status type. \cr
+#'       status_type_name \tab character \tab Status type name. \cr
+#'       status_type_state \tab character \tab Status type state. \cr
+#'       status_type_completed \tab logical \tab Status type completed. \cr
+#'       status_type_description \tab character \tab Status type description. \cr
+#'       status_type_detail \tab character \tab Status type detail. \cr
+#'       status_type_short_detail \tab character \tab Status type short detail. \cr
+#'       format_regulation_periods \tab integer \tab Format regulation periods. \cr
+#'       home_id \tab character \tab Unique identifier for home. \cr
+#'       home_uid \tab character \tab Home team's uid. \cr
+#'       home_location \tab character \tab Home team's location. \cr
+#'       home_name \tab character \tab Home name. \cr
+#'       home_abbreviation \tab character \tab Home team's abbreviation. \cr
+#'       home_display_name \tab character \tab Home display name. \cr
+#'       home_short_display_name \tab character \tab Home short display name. \cr
+#'       home_color \tab character \tab Color code (hex) for home. \cr
+#'       home_alternate_color \tab character \tab Color code (hex) for home alternate. \cr
+#'       home_is_active \tab logical \tab Home team's is active. \cr
+#'       home_venue_id \tab character \tab Unique identifier for home venue. \cr
+#'       home_logo \tab character \tab Home team logo URL. \cr
+#'       home_conference_id \tab character \tab Unique identifier for home conference. \cr
+#'       home_score \tab character \tab Home team score at the time of the play. \cr
+#'       home_winner \tab logical \tab Home team's winner. \cr
+#'       away_id \tab character \tab Unique identifier for away. \cr
+#'       away_uid \tab character \tab Away team's uid. \cr
+#'       away_location \tab character \tab Away team's location. \cr
+#'       away_name \tab character \tab Away name. \cr
+#'       away_abbreviation \tab character \tab Away team's abbreviation. \cr
+#'       away_display_name \tab character \tab Away display name. \cr
+#'       away_short_display_name \tab character \tab Away short display name. \cr
+#'       away_color \tab character \tab Color code (hex) for away. \cr
+#'       away_alternate_color \tab character \tab Color code (hex) for away alternate. \cr
+#'       away_is_active \tab logical \tab Away team's is active. \cr
+#'       away_venue_id \tab character \tab Unique identifier for away venue. \cr
+#'       away_logo \tab character \tab Away team logo URL. \cr
+#'       away_conference_id \tab character \tab Unique identifier for away conference. \cr
+#'       away_score \tab character \tab Away team score at the time of the play. \cr
+#'       away_winner \tab logical \tab Away team's winner. \cr
+#'       game_id \tab integer \tab Unique game identifier. \cr
+#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'       season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+#'       status_type_alt_detail \tab character \tab Status type alt detail. \cr
+#'       groups_id \tab character \tab Unique identifier for groups. \cr
+#'       groups_name \tab character \tab Groups name. \cr
+#'       groups_short_name \tab character \tab Groups short name. \cr
+#'       groups_is_conference \tab logical \tab Groups is conference. \cr
+#'       tournament_id \tab numeric \tab Unique identifier for tournament. \cr
+#'       game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+#'       game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+#'       PBP \tab logical \tab  \cr
+#'       team_box \tab logical \tab Team box. \cr
+#'       player_box \tab logical \tab Player box. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family hoopR Loader Functions
@@ -738,11 +679,9 @@ get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
   return(need_scrape)
 }
 
-#' @name load_mbb_rosters
-NULL
 #' @title
 #' **Load cleaned MBB team rosters from the data repo**
-#' @rdname load_mbb_rosters
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball team rosters from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
@@ -785,11 +724,9 @@ load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' @name load_mbb_player_stats
-NULL
 #' @title
 #' **Load cleaned MBB player season stats (long format) from the data repo**
-#' @rdname load_mbb_player_stats
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball player season stats (long format) from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
@@ -832,11 +769,9 @@ load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' @name load_mbb_team_stats
-NULL
 #' @title
 #' **Load cleaned MBB team season stats (long format) from the data repo**
-#' @rdname load_mbb_team_stats
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball team season stats (long format) from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
@@ -879,11 +814,9 @@ load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' @name load_mbb_standings
-NULL
 #' @title
 #' **Load cleaned MBB standings from the data repo**
-#' @rdname load_mbb_standings
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball standings from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
@@ -926,11 +859,9 @@ load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' @name load_mbb_game_rosters
-NULL
 #' @title
 #' **Load cleaned MBB per-game rosters from the data repo**
-#' @rdname load_mbb_game_rosters
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball per-game rosters from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
@@ -973,11 +904,9 @@ load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' @name load_mbb_officials
-NULL
 #' @title
 #' **Load cleaned MBB per-game officials from the data repo**
-#' @rdname load_mbb_officials
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball per-game officials from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
@@ -1020,11 +949,9 @@ load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' @name load_mbb_player_core
-NULL
 #' @title
 #' **Load cleaned MBB player core (identity + bio) from the data repo**
-#' @rdname load_mbb_player_core
+#' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons of ESPN MBB athlete core
 #' records -- identity and biographical fields, one row per athlete who
 #' appeared in the season -- from the sportsdataverse-data release repo,
@@ -1083,12 +1010,9 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
   out
 }
 
-#' **Load hoopR MBB shot events**
-#' @name load_mbb_shots
-NULL
 #' @title
 #' **Load cleaned men's college basketball shot events from the data repo**
-#' @rdname load_mbb_shots
+#' @rdname load_mbb_pbp
 #' @description Loads shot events parsed from ESPN men's college basketball
 #' play-by-play feeds. One row per shot attempt (made or missed), with court
 #' coordinates and shot metadata. Backed by the `hoopR-mbb-data` pipeline,
@@ -1104,28 +1028,30 @@ NULL
 #' @param tablename The name of the shots data table within the database.
 #' @return Returns a tibble with one row per shot attempt.
 #'
-#'    |col_name             |types     |description                                                     |
-#'    |:--------------------|:---------|:----------------------------------------------------------------|
-#'    |game_id               |integer   |Unique game identifier.                                          |
-#'    |season                |integer   |Season identifier (4-digit year).                                |
-#'    |period_number         |integer   |Numeric period (1-2 halves).                                     |
-#'    |clock_display_value   |character |Game clock display string (e.g. '8:32').                         |
-#'    |team_id               |integer   |Unique team identifier.                                          |
-#'    |athlete_id_1          |integer   |Primary athlete identifier (the shooter).                        |
-#'    |athlete_id_2          |integer   |Secondary athlete identifier (e.g. assister / fouler).            |
-#'    |type_id               |integer   |Type identifier (numeric).                                       |
-#'    |type_text             |character |Display text for the shot/play type.                             |
-#'    |scoring_play          |logical   |TRUE if the play resulted in points scored.                      |
-#'    |score_value           |integer   |Point value of the shot (2 / 3 / 1).                             |
-#'    |coordinate_x          |numeric   |X coordinate on the court (half-court layout).                   |
-#'    |coordinate_y          |numeric   |Y coordinate on the court (half-court layout).                   |
-#'    |coordinate_x_raw      |numeric   |X coordinate as returned by the API before any adjustment.       |
-#'    |coordinate_y_raw      |numeric   |Y coordinate as returned by the API before any adjustment.       |
-#'    |athlete_name_1        |character |Display name of the primary athlete (the shooter).                |
-#'    |athlete_name_2        |character |Display name of the secondary athlete, when present.             |
-#'    |team_name             |character |Full team display name.                                          |
-#'    |team_mascot           |character |Team mascot / nickname.                                          |
-#'    |team_abbrev           |character |Short team abbreviation.                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab integer \tab Unique game identifier. \cr
+#'       season \tab integer \tab Season identifier (4-digit year). \cr
+#'       period_number \tab integer \tab Numeric period (1-2 halves). \cr
+#'       clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+#'       team_id \tab integer \tab Unique team identifier. \cr
+#'       athlete_id_1 \tab integer \tab Primary athlete identifier (the shooter). \cr
+#'       athlete_id_2 \tab integer \tab Secondary athlete identifier (e.g. assister / fouler). \cr
+#'       type_id \tab integer \tab Type identifier (numeric). \cr
+#'       type_text \tab character \tab Display text for the shot/play type. \cr
+#'       scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+#'       score_value \tab integer \tab Point value of the shot (2 / 3 / 1). \cr
+#'       coordinate_x \tab numeric \tab X coordinate on the court (half-court layout). \cr
+#'       coordinate_y \tab numeric \tab Y coordinate on the court (half-court layout). \cr
+#'       coordinate_x_raw \tab numeric \tab X coordinate as returned by the API before any adjustment. \cr
+#'       coordinate_y_raw \tab numeric \tab Y coordinate as returned by the API before any adjustment. \cr
+#'       athlete_name_1 \tab character \tab Display name of the primary athlete (the shooter). \cr
+#'       athlete_name_2 \tab character \tab Display name of the secondary athlete, when present. \cr
+#'       team_name \tab character \tab Full team display name. \cr
+#'       team_mascot \tab character \tab Team mascot / nickname. \cr
+#'       team_abbrev \tab character \tab Short team abbreviation. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family hoopR Loader Functions

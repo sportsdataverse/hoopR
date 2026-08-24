@@ -578,19 +578,22 @@ nba_teamgamestreakfinder(
 \value{
 Return a named list of data frames: TeamGameStreakFinderParametersResults
 
-\strong{TeamGameStreakFinderParametersResults}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GAMESTREAK \tab character \tab  \cr
-   STARTDATE \tab character \tab  \cr
-   ENDDATE \tab character \tab  \cr
-   ACTIVESTREAK \tab character \tab  \cr
-   NUMSEASONS \tab character \tab  \cr
-   LASTSEASON \tab character \tab  \cr
-   FIRSTSEASON \tab character \tab  \cr
-   ABBREVIATION \tab character \tab Short abbreviation. \cr
-}
+\strong{TeamGameStreakFinderParametersResults}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      GAMESTREAK \tab character \tab  \cr
+      STARTDATE \tab character \tab  \cr
+      ENDDATE \tab character \tab  \cr
+      ACTIVESTREAK \tab character \tab  \cr
+      NUMSEASONS \tab character \tab  \cr
+      LASTSEASON \tab character \tab  \cr
+      FIRSTSEASON \tab character \tab  \cr
+      ABBREVIATION \tab character \tab Short abbreviation. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
@@ -618,9 +621,7 @@ Other NBA Team Functions:
 \code{\link[=nba_teamgamelogs]{nba_teamgamelogs()}},
 \code{\link[=nba_teamhistoricalleaders]{nba_teamhistoricalleaders()}},
 \code{\link[=nba_teaminfocommon]{nba_teaminfocommon()}},
-\code{\link[=nba_teamplayerdashboard]{nba_teamplayerdashboard()}},
 \code{\link[=nba_teamplayeronoffdetails]{nba_teamplayeronoffdetails()}},
-\code{\link[=nba_teamplayeronoffsummary]{nba_teamplayeronoffsummary()}},
 \code{\link[=nba_teams]{nba_teams()}},
 \code{\link[=nba_teamvsplayer]{nba_teamvsplayer()}},
 \code{\link[=nba_teamyearbyyearstats]{nba_teamyearbyyearstats()}}

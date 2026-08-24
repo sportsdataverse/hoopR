@@ -20,34 +20,36 @@ nba_scheduleleaguev2int(
 \value{
 Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 
-\strong{SeasonGames}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_date \tab character \tab Game date (YYYY-MM-DD). \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   game_code \tab character \tab ESPN game code (numeric identifier). \cr
-   game_status \tab character \tab Game status label. \cr
-   game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
-   game_sequence \tab character \tab Game sequence. \cr
-   home_team_id \tab character \tab Unique identifier for the home team. \cr
-   home_team_name \tab character \tab Home team name. \cr
-   home_team_city \tab character \tab Home team city / location. \cr
-   home_team_tricode \tab character \tab Home team three-letter code. \cr
-   home_team_slug \tab character \tab Home team's team slug. \cr
-   home_team_wins \tab character \tab Home team's team wins. \cr
-   home_team_losses \tab character \tab Home team's team losses. \cr
-   home_team_score \tab character \tab Home team's score. \cr
-   away_team_id \tab character \tab Unique identifier for the away team. \cr
-   away_team_name \tab character \tab Away team name. \cr
-   away_team_city \tab character \tab Away team city / location. \cr
-   away_team_tricode \tab character \tab Away team three-letter code. \cr
-   away_team_slug \tab character \tab Away team's team slug. \cr
-   away_team_wins \tab character \tab Away team's team wins. \cr
-   away_team_losses \tab character \tab Away team's team losses. \cr
-   away_team_score \tab character \tab Away team's score. \cr
-   season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-   league_id \tab character \tab League identifier ('10' = WNBA). \cr
-}
+\strong{SeasonGames}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_code \tab character \tab ESPN game code (numeric identifier). \cr
+      game_status \tab character \tab Game status label. \cr
+      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+      game_sequence \tab character \tab Game sequence. \cr
+      home_team_id \tab character \tab Unique identifier for the home team. \cr
+      home_team_name \tab character \tab Home team name. \cr
+      home_team_city \tab character \tab Home team city / location. \cr
+      home_team_tricode \tab character \tab Home team three-letter code. \cr
+      home_team_slug \tab character \tab Home team's team slug. \cr
+      home_team_wins \tab character \tab Home team's team wins. \cr
+      home_team_losses \tab character \tab Home team's team losses. \cr
+      home_team_score \tab character \tab Home team's score. \cr
+      away_team_id \tab character \tab Unique identifier for the away team. \cr
+      away_team_name \tab character \tab Away team name. \cr
+      away_team_city \tab character \tab Away team city / location. \cr
+      away_team_tricode \tab character \tab Away team three-letter code. \cr
+      away_team_slug \tab character \tab Away team's team slug. \cr
+      away_team_wins \tab character \tab Away team's team wins. \cr
+      away_team_losses \tab character \tab Away team's team losses. \cr
+      away_team_score \tab character \tab Away team's score. \cr
+      season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{SeasonWeeks}\tabular{lll}{
    col_name \tab types \tab description \cr

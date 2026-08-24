@@ -12,67 +12,9 @@ nbagl_live_pbp(game_id, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame: PlayByPlay\tabular{lll}{
-   col_name \tab types \tab description \cr
-   event_num \tab integer \tab Sequential event number within the game (V2 PBP). \cr
-   clock \tab character \tab Game clock value. \cr
-   time_actual \tab character \tab Time actual. \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   period_type \tab character \tab Period type. \cr
-   action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
-   sub_type \tab character \tab Action sub-type label. \cr
-   qualifiers \tab list \tab Qualifiers. \cr
-   player1_id \tab integer \tab V2 PBP primary player ID (e.g. shooter / fouler). \cr
-   x \tab numeric \tab X. \cr
-   y \tab numeric \tab Y. \cr
-   offense_team_id \tab integer \tab Unique identifier for offense team. \cr
-   home_score \tab character \tab Home team score at the time of the play. \cr
-   away_score \tab character \tab Away team score at the time of the play. \cr
-   edited \tab character \tab Edited. \cr
-   order \tab integer \tab Display order within the result set. \cr
-   is_target_score_last_period \tab logical \tab Is target score last period. \cr
-   x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
-   y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
-   is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
-   side \tab character \tab Side label (e.g. 'home', 'away', or 'overUnder'). \cr
-   description \tab character \tab Long-form description text. \cr
-   person_ids_filter \tab list \tab Person ids filter. \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-   descriptor \tab character \tab Descriptor. \cr
-   jump_ball_recovered_name \tab character \tab Jump ball recovered name. \cr
-   jump_ball_recoverd_person_id \tab integer \tab Unique identifier for jump ball recoverd person. \cr
-   player_name \tab character \tab Player name. \cr
-   player_name_i \tab character \tab Player name i. \cr
-   jump_ball_won_player_name \tab character \tab Jump ball won player name. \cr
-   jump_ball_won_person_id \tab integer \tab Unique identifier for jump ball won person. \cr
-   jump_ball_lost_player_name \tab character \tab Jump ball lost player name. \cr
-   jump_ball_lost_person_id \tab integer \tab Unique identifier for jump ball lost person. \cr
-   area \tab character \tab Area. \cr
-   area_detail \tab character \tab Area detail. \cr
-   shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
-   shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
-   points_total \tab integer \tab Running total of points scored. \cr
-   assist_player_name_initial \tab character \tab Assist player name initial. \cr
-   assist_person_id \tab integer \tab Unique identifier for assist person. \cr
-   assist_total \tab integer \tab Assist total. \cr
-   shot_action_number \tab integer \tab Shot action number. \cr
-   rebound_total \tab integer \tab Rebound total. \cr
-   rebound_defensive_total \tab integer \tab Rebound defensive total. \cr
-   rebound_offensive_total \tab integer \tab Rebound offensive total. \cr
-   official_id \tab integer \tab Unique official / referee identifier. \cr
-   foul_personal_total \tab integer \tab Foul personal total. \cr
-   foul_technical_total \tab integer \tab Foul technical total. \cr
-   foul_drawn_player_name \tab character \tab Foul drawn player name. \cr
-   foul_drawn_person_id \tab integer \tab Unique identifier for foul drawn person. \cr
-   block_player_name \tab character \tab Block player name. \cr
-   block_person_id \tab integer \tab Unique identifier for block person. \cr
-   turnover_total \tab integer \tab Turnover total. \cr
-   steal_player_name \tab character \tab Steal player name. \cr
-   steal_person_id \tab integer \tab Unique identifier for steal person. \cr
-   player2_id \tab integer \tab V2 PBP secondary player ID (e.g. assister / fouled-by). \cr
-   player3_id \tab integer \tab V2 PBP tertiary player ID (e.g. blocker). \cr
-}
+Returns a data frame: PlayByPlay
+
+Columns as documented in the shared \link{nba_live_pbp_schema} table.
 }
 \description{
 \strong{Get NBA G-League Stats API Live play-by-play}

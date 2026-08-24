@@ -26,22 +26,25 @@ Defaults to \code{most_recent_mbb_season()}.}
 }
 \value{
 A \code{hoopR_data} tibble with one row per game. The \code{lines} column is a
-nested list of per-provider lines:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab integer \tab CollegeBasketballData game id. \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   season_type \tab character \tab Season type. \cr
-   start_date \tab character \tab Game start date (ISO 8601). \cr
-   home_team_id \tab integer \tab Home team id. \cr
-   home_team \tab character \tab Home team name. \cr
-   home_conference \tab character \tab Home team conference. \cr
-   home_score \tab numeric \tab Home team final score. \cr
-   away_team_id \tab integer \tab Away team id. \cr
-   away_team \tab character \tab Away team name. \cr
-   away_conference \tab character \tab Away team conference. \cr
-   away_score \tab numeric \tab Away team final score. \cr
-   lines \tab list \tab Nested list of per-provider betting lines. \cr
-}
+nested list of per-provider lines:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab integer \tab CollegeBasketballData game id. \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      season_type \tab character \tab Season type. \cr
+      start_date \tab character \tab Game start date (ISO 8601). \cr
+      home_team_id \tab integer \tab Home team id. \cr
+      home_team \tab character \tab Home team name. \cr
+      home_conference \tab character \tab Home team conference. \cr
+      home_score \tab numeric \tab Home team final score. \cr
+      away_team_id \tab integer \tab Away team id. \cr
+      away_team \tab character \tab Away team name. \cr
+      away_conference \tab character \tab Away team conference. \cr
+      away_score \tab numeric \tab Away team final score. \cr
+      lines \tab list \tab Nested list of per-provider betting lines. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get game betting lines from the CollegeBasketballData API.}

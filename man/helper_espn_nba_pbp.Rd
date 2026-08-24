@@ -2,16 +2,30 @@
 % Please edit documentation in R/espn_nba_data.R
 \name{helper_espn_nba_pbp}
 \alias{helper_espn_nba_pbp}
+\alias{helper_espn_nba_team_box}
+\alias{helper_espn_nba_player_box}
 \title{\strong{Parse ESPN NBA PBP, helper function}}
 \usage{
 helper_espn_nba_pbp(resp)
+
+helper_espn_nba_team_box(resp)
+
+helper_espn_nba_player_box(resp)
 }
 \arguments{
 \item{resp}{Response object from the ESPN NBA game summary endpoint}
 }
 \value{
 Returns a tibble
+
+Returns a tibble
+
+Returns a tibble
 }
 \description{
 \strong{Parse ESPN NBA PBP, helper function}
+
+\strong{Parse ESPN NBA Team Box, helper function}
+
+\strong{Parse ESPN NBA Player Box, helper function}
 }

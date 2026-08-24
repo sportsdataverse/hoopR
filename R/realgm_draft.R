@@ -13,22 +13,24 @@
 #'   the most recently completed draft (`most_recent_nba_season() - 1`).
 #' @return A `hoopR_data` tibble carrying `draft_year` and `round` columns:
 #'
-#'    |col_name       |types     |description                                 |
-#'    |:--------------|:---------|:-------------------------------------------|
-#'    |pick           |integer   |Overall pick number (`NA` for undrafted).   |
-#'    |player         |character |Player name.                                |
-#'    |team           |character |Drafting team abbreviation.                 |
-#'    |draft_trades   |character |Draft-night trade note, if any.             |
-#'    |pos            |character |Position.                                   |
-#'    |ht             |character |Listed height.                              |
-#'    |wt             |integer   |Listed weight (lbs).                        |
-#'    |age            |numeric   |Age at draft.                               |
-#'    |yos            |integer   |Years of service since.                     |
-#'    |pre_draft_team |character |Pre-draft team / school / club.             |
-#'    |class          |character |College class / draft eligibility note.     |
-#'    |nationality    |character |Player nationality.                         |
-#'    |round          |integer   |Draft round (`1`, `2`, or `NA` undrafted).  |
-#'    |draft_year     |numeric   |Draft year (echoes `year`).                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       pick \tab integer \tab Overall pick number (\code{NA} for undrafted). \cr
+#'       player \tab character \tab Player name. \cr
+#'       team \tab character \tab Drafting team abbreviation. \cr
+#'       draft_trades \tab character \tab Draft-night trade note, if any. \cr
+#'       pos \tab character \tab Position. \cr
+#'       ht \tab character \tab Listed height. \cr
+#'       wt \tab integer \tab Listed weight (lbs). \cr
+#'       age \tab numeric \tab Age at draft. \cr
+#'       yos \tab integer \tab Years of service since. \cr
+#'       pre_draft_team \tab character \tab Pre-draft team / school / club. \cr
+#'       class \tab character \tab College class / draft eligibility note. \cr
+#'       nationality \tab character \tab Player nationality. \cr
+#'       round \tab integer \tab Draft round (\code{1}, \code{2}, or \code{NA} undrafted). \cr
+#'       draft_year \tab numeric \tab Draft year (echoes \code{year}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table

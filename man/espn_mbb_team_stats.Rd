@@ -16,102 +16,105 @@ espn_mbb_team_stats(team_id, year, season_type = "regular", total = FALSE)
 \item{total}{(boolean, default: FALSE): Totals}
 }
 \value{
-Returns a tibble with the team stats data\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team_id \tab character \tab Unique team identifier. \cr
-   team_guid \tab character \tab ESPN team GUID. \cr
-   team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-   team_sdr \tab character \tab ESPN team SDR identifier. \cr
-   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   team_location \tab character \tab Team city or location string. \cr
-   team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   team_nickname \tab character \tab Team nickname. \cr
-   team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   team_display_name \tab character \tab Full team display name. \cr
-   team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
-   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
-   is_active \tab logical \tab Is active. \cr
-   is_all_star \tab logical \tab Is all star. \cr
-   logo_href \tab character \tab Team or league logo URL. \cr
-   logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
-   defensive_blocks \tab numeric \tab Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. \cr
-   defensive_defensive_rebounds \tab numeric \tab The number of times when the defense obtains the possession of the ball after a missed shot by the offense. \cr
-   defensive_steals \tab numeric \tab The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. \cr
-   defensive_turnover_points \tab numeric \tab The amount of points resulting from the possession following a turnover. \cr
-   defensive_avg_defensive_rebounds \tab numeric \tab The average defensive rebounds per game. \cr
-   defensive_avg_blocks \tab numeric \tab The average blocks per game. \cr
-   defensive_avg_steals \tab numeric \tab The average steals per game. \cr
-   general_disqualifications \tab numeric \tab The number of times a player reached the foul limit. \cr
-   general_flagrant_fouls \tab numeric \tab The number of fouls that the officials thought were unnecessary or excessive. \cr
-   general_fouls \tab numeric \tab The number of times a player had illegal contact with the opponent. \cr
-   general_ejections \tab numeric \tab The number of times a player or coach is removed from the game as a result of a serious offense. \cr
-   general_technical_fouls \tab numeric \tab The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). \cr
-   general_rebounds \tab numeric \tab The total number of rebounds (offensive and defensive). \cr
-   general_minutes \tab numeric \tab The total number of minutes played. \cr
-   general_avg_minutes \tab numeric \tab The average number of minutes per game. \cr
-   general_fantasy_rating \tab numeric \tab The Fantasy Rating of a player. \cr
-   general_avg_rebounds \tab numeric \tab The average rebounds per game. \cr
-   general_avg_fouls \tab numeric \tab The average fouls committed per game. \cr
-   general_avg_flagrant_fouls \tab numeric \tab The average number of flagrant fouls per game. \cr
-   general_avg_technical_fouls \tab numeric \tab The average number of technical fouls per game. \cr
-   general_avg_ejections \tab numeric \tab The average ejections per game. \cr
-   general_avg_disqualifications \tab numeric \tab The average number of disqualifications per game. \cr
-   general_assist_turnover_ratio \tab numeric \tab The average number of assists a player or team records per turnover. \cr
-   general_steal_foul_ratio \tab numeric \tab The average number of steals a player or team records per foul committed. \cr
-   general_block_foul_ratio \tab numeric \tab The average number of blocks a player or record per foul committed. \cr
-   general_avg_team_rebounds \tab numeric \tab The average number of rebounds for a team per game. \cr
-   general_total_rebounds \tab numeric \tab The total number of rebounds for a team or player. \cr
-   general_total_technical_fouls \tab numeric \tab The total number of technical fouls for a team or player. \cr
-   general_team_assist_turnover_ratio \tab numeric \tab The number of assists per turnover for a team. \cr
-   general_team_rebounds \tab numeric \tab The total number of rebounds for a team. \cr
-   general_steal_turnover_ratio \tab numeric \tab The number of steals per turnover. \cr
-   general_games_played \tab numeric \tab Games Played. \cr
-   general_games_started \tab numeric \tab The number of games started by an athlete. \cr
-   general_double_double \tab numeric \tab The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
-   general_triple_double \tab numeric \tab The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
-   offensive_assists \tab numeric \tab The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was "assisting" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist. \cr
-   offensive_field_goals \tab numeric \tab Field Goal makes and attempts. \cr
-   offensive_field_goals_attempted \tab numeric \tab The number of times a 2pt field goal was attempted. \cr
-   offensive_field_goals_made \tab numeric \tab The number of times a 2pt field goal was made. \cr
-   offensive_field_goal_pct \tab numeric \tab The ratio of field goals made to field goals attempted: FGM / FGA. \cr
-   offensive_free_throws \tab numeric \tab Free Throw makes and attempts. \cr
-   offensive_free_throw_pct \tab numeric \tab The ratio of free throws made to free throws attempted: FTM / FTA. \cr
-   offensive_free_throws_attempted \tab numeric \tab The number of times a free throw was attempted. \cr
-   offensive_free_throws_made \tab numeric \tab The number of times a free throw was made. \cr
-   offensive_offensive_rebounds \tab numeric \tab The number of times when the offense obtains the possession of the ball after a missed shot. \cr
-   offensive_points \tab numeric \tab The number of points scored. \cr
-   offensive_turnovers \tab numeric \tab The number of times a player loses possession to the other team. \cr
-   offensive_three_point_field_goals_attempted \tab numeric \tab The number of times a 3pt field goal was attempted. \cr
-   offensive_three_point_field_goals_made \tab numeric \tab The number of times a 3pt field goal was made. \cr
-   offensive_team_turnovers \tab numeric \tab The number of turnovers for the team. \cr
-   offensive_total_turnovers \tab numeric \tab The number of turnovers plus team turnovers for the team. \cr
-   offensive_fast_break_points \tab numeric \tab The number of points scored on fast breaks. \cr
-   offensive_avg_field_goals_made \tab numeric \tab The average field goals made per game. \cr
-   offensive_avg_field_goals_attempted \tab numeric \tab The average field goals attempted per game. \cr
-   offensive_avg_three_point_field_goals_made \tab numeric \tab The average three point field goals made per game. \cr
-   offensive_avg_three_point_field_goals_attempted \tab numeric \tab The average three point field goals attempted per game. \cr
-   offensive_avg_free_throws_made \tab numeric \tab The average free throw shots made per game. \cr
-   offensive_avg_free_throws_attempted \tab numeric \tab The average free throw shots attempted per game. \cr
-   offensive_avg_points \tab numeric \tab The average number of points scored per game. \cr
-   offensive_avg_offensive_rebounds \tab numeric \tab The average offensive rebounds per game. \cr
-   offensive_avg_assists \tab numeric \tab The average assists per game. \cr
-   offensive_avg_turnovers \tab numeric \tab The average turnovers committed per game. \cr
-   offensive_offensive_rebound_pct \tab numeric \tab The percentage of the number of times they obtain the possession of the ball after a missed shot. \cr
-   offensive_estimated_possessions \tab numeric \tab An estimation of the number of possessions for a team or player. \cr
-   offensive_avg_estimated_possessions \tab numeric \tab The average number of estimated possessions per game for a team or player. \cr
-   offensive_points_per_estimated_possessions \tab numeric \tab The number of points per estimated possession for a team or player. \cr
-   offensive_avg_team_turnovers \tab numeric \tab The average number of turnovers for a team per game. \cr
-   offensive_avg_total_turnovers \tab numeric \tab The average number of total turnovers for a team per game. \cr
-   offensive_three_point_field_goal_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
-   offensive_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made for a team or player. \cr
-   offensive_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted for a team or player. \cr
-   offensive_avg_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made per game for a team or player. \cr
-   offensive_avg_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted per game for a team or player. \cr
-   offensive_two_point_field_goal_pct \tab numeric \tab The percentage of 2-points fields goals made by a team or player. \cr
-   offensive_shooting_efficiency \tab numeric \tab The efficiency with which a team or player shoots the basketball. \cr
-   offensive_scoring_efficiency \tab numeric \tab The efficiency with which a team or player scores the basketball. \cr
-}
+Returns a tibble with the team stats data
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab character \tab Unique team identifier. \cr
+      team_guid \tab character \tab ESPN team GUID. \cr
+      team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+      team_sdr \tab character \tab ESPN team SDR identifier. \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      team_location \tab character \tab Team city or location string. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_nickname \tab character \tab Team nickname. \cr
+      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      team_display_name \tab character \tab Full team display name. \cr
+      team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
+      team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+      team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
+      is_active \tab logical \tab Is active. \cr
+      is_all_star \tab logical \tab Is all star. \cr
+      logo_href \tab character \tab Team or league logo URL. \cr
+      logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
+      defensive_blocks \tab numeric \tab Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. \cr
+      defensive_defensive_rebounds \tab numeric \tab The number of times when the defense obtains the possession of the ball after a missed shot by the offense. \cr
+      defensive_steals \tab numeric \tab The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. \cr
+      defensive_turnover_points \tab numeric \tab The amount of points resulting from the possession following a turnover. \cr
+      defensive_avg_defensive_rebounds \tab numeric \tab The average defensive rebounds per game. \cr
+      defensive_avg_blocks \tab numeric \tab The average blocks per game. \cr
+      defensive_avg_steals \tab numeric \tab The average steals per game. \cr
+      general_disqualifications \tab numeric \tab The number of times a player reached the foul limit. \cr
+      general_flagrant_fouls \tab numeric \tab The number of fouls that the officials thought were unnecessary or excessive. \cr
+      general_fouls \tab numeric \tab The number of times a player had illegal contact with the opponent. \cr
+      general_ejections \tab numeric \tab The number of times a player or coach is removed from the game as a result of a serious offense. \cr
+      general_technical_fouls \tab numeric \tab The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). \cr
+      general_rebounds \tab numeric \tab The total number of rebounds (offensive and defensive). \cr
+      general_minutes \tab numeric \tab The total number of minutes played. \cr
+      general_avg_minutes \tab numeric \tab The average number of minutes per game. \cr
+      general_fantasy_rating \tab numeric \tab The Fantasy Rating of a player. \cr
+      general_avg_rebounds \tab numeric \tab The average rebounds per game. \cr
+      general_avg_fouls \tab numeric \tab The average fouls committed per game. \cr
+      general_avg_flagrant_fouls \tab numeric \tab The average number of flagrant fouls per game. \cr
+      general_avg_technical_fouls \tab numeric \tab The average number of technical fouls per game. \cr
+      general_avg_ejections \tab numeric \tab The average ejections per game. \cr
+      general_avg_disqualifications \tab numeric \tab The average number of disqualifications per game. \cr
+      general_assist_turnover_ratio \tab numeric \tab The average number of assists a player or team records per turnover. \cr
+      general_steal_foul_ratio \tab numeric \tab The average number of steals a player or team records per foul committed. \cr
+      general_block_foul_ratio \tab numeric \tab The average number of blocks a player or record per foul committed. \cr
+      general_avg_team_rebounds \tab numeric \tab The average number of rebounds for a team per game. \cr
+      general_total_rebounds \tab numeric \tab The total number of rebounds for a team or player. \cr
+      general_total_technical_fouls \tab numeric \tab The total number of technical fouls for a team or player. \cr
+      general_team_assist_turnover_ratio \tab numeric \tab The number of assists per turnover for a team. \cr
+      general_team_rebounds \tab numeric \tab The total number of rebounds for a team. \cr
+      general_steal_turnover_ratio \tab numeric \tab The number of steals per turnover. \cr
+      general_games_played \tab numeric \tab Games Played. \cr
+      general_games_started \tab numeric \tab The number of games started by an athlete. \cr
+      general_double_double \tab numeric \tab The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
+      general_triple_double \tab numeric \tab The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
+      offensive_assists \tab numeric \tab The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was "assisting" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist. \cr
+      offensive_field_goals \tab numeric \tab Field Goal makes and attempts. \cr
+      offensive_field_goals_attempted \tab numeric \tab The number of times a 2pt field goal was attempted. \cr
+      offensive_field_goals_made \tab numeric \tab The number of times a 2pt field goal was made. \cr
+      offensive_field_goal_pct \tab numeric \tab The ratio of field goals made to field goals attempted: FGM / FGA. \cr
+      offensive_free_throws \tab numeric \tab Free Throw makes and attempts. \cr
+      offensive_free_throw_pct \tab numeric \tab The ratio of free throws made to free throws attempted: FTM / FTA. \cr
+      offensive_free_throws_attempted \tab numeric \tab The number of times a free throw was attempted. \cr
+      offensive_free_throws_made \tab numeric \tab The number of times a free throw was made. \cr
+      offensive_offensive_rebounds \tab numeric \tab The number of times when the offense obtains the possession of the ball after a missed shot. \cr
+      offensive_points \tab numeric \tab The number of points scored. \cr
+      offensive_turnovers \tab numeric \tab The number of times a player loses possession to the other team. \cr
+      offensive_three_point_field_goals_attempted \tab numeric \tab The number of times a 3pt field goal was attempted. \cr
+      offensive_three_point_field_goals_made \tab numeric \tab The number of times a 3pt field goal was made. \cr
+      offensive_team_turnovers \tab numeric \tab The number of turnovers for the team. \cr
+      offensive_total_turnovers \tab numeric \tab The number of turnovers plus team turnovers for the team. \cr
+      offensive_fast_break_points \tab numeric \tab The number of points scored on fast breaks. \cr
+      offensive_avg_field_goals_made \tab numeric \tab The average field goals made per game. \cr
+      offensive_avg_field_goals_attempted \tab numeric \tab The average field goals attempted per game. \cr
+      offensive_avg_three_point_field_goals_made \tab numeric \tab The average three point field goals made per game. \cr
+      offensive_avg_three_point_field_goals_attempted \tab numeric \tab The average three point field goals attempted per game. \cr
+      offensive_avg_free_throws_made \tab numeric \tab The average free throw shots made per game. \cr
+      offensive_avg_free_throws_attempted \tab numeric \tab The average free throw shots attempted per game. \cr
+      offensive_avg_points \tab numeric \tab The average number of points scored per game. \cr
+      offensive_avg_offensive_rebounds \tab numeric \tab The average offensive rebounds per game. \cr
+      offensive_avg_assists \tab numeric \tab The average assists per game. \cr
+      offensive_avg_turnovers \tab numeric \tab The average turnovers committed per game. \cr
+      offensive_offensive_rebound_pct \tab numeric \tab The percentage of the number of times they obtain the possession of the ball after a missed shot. \cr
+      offensive_estimated_possessions \tab numeric \tab An estimation of the number of possessions for a team or player. \cr
+      offensive_avg_estimated_possessions \tab numeric \tab The average number of estimated possessions per game for a team or player. \cr
+      offensive_points_per_estimated_possessions \tab numeric \tab The number of points per estimated possession for a team or player. \cr
+      offensive_avg_team_turnovers \tab numeric \tab The average number of turnovers for a team per game. \cr
+      offensive_avg_total_turnovers \tab numeric \tab The average number of total turnovers for a team per game. \cr
+      offensive_three_point_field_goal_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
+      offensive_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made for a team or player. \cr
+      offensive_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted for a team or player. \cr
+      offensive_avg_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made per game for a team or player. \cr
+      offensive_avg_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted per game for a team or player. \cr
+      offensive_two_point_field_goal_pct \tab numeric \tab The percentage of 2-points fields goals made by a team or player. \cr
+      offensive_shooting_efficiency \tab numeric \tab The efficiency with which a team or player shoots the basketball. \cr
+      offensive_scoring_efficiency \tab numeric \tab The efficiency with which a team or player scores the basketball. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball team stats data}
@@ -125,7 +128,6 @@ try(espn_mbb_team_stats(team_id = 150, year = 2020))
 Other ESPN MBB Functions:
 \code{\link[=espn_mbb_athletes_index]{espn_mbb_athletes_index()}},
 \code{\link[=espn_mbb_award]{espn_mbb_award()}},
-\code{\link[=espn_mbb_betting]{espn_mbb_betting()}},
 \code{\link[=espn_mbb_calendar]{espn_mbb_calendar()}},
 \code{\link[=espn_mbb_coach]{espn_mbb_coach()}},
 \code{\link[=espn_mbb_coach_record]{espn_mbb_coach_record()}},
@@ -136,43 +138,25 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_franchises]{espn_mbb_franchises()}},
 \code{\link[=espn_mbb_futures]{espn_mbb_futures()}},
 \code{\link[=espn_mbb_game_all]{espn_mbb_game_all()}},
-\code{\link[=espn_mbb_game_broadcasts]{espn_mbb_game_broadcasts()}},
 \code{\link[=espn_mbb_game_odds]{espn_mbb_game_odds()}},
 \code{\link[=espn_mbb_game_official_detail]{espn_mbb_game_official_detail()}},
-\code{\link[=espn_mbb_game_officials]{espn_mbb_game_officials()}},
 \code{\link[=espn_mbb_game_play]{espn_mbb_game_play()}},
 \code{\link[=espn_mbb_game_play_personnel]{espn_mbb_game_play_personnel()}},
 \code{\link[=espn_mbb_game_player_box]{espn_mbb_game_player_box()}},
-\code{\link[=espn_mbb_game_powerindex]{espn_mbb_game_powerindex()}},
-\code{\link[=espn_mbb_game_predictor]{espn_mbb_game_predictor()}},
 \code{\link[=espn_mbb_game_probabilities]{espn_mbb_game_probabilities()}},
 \code{\link[=espn_mbb_game_propbets]{espn_mbb_game_propbets()}},
-\code{\link[=espn_mbb_game_rosters]{espn_mbb_game_rosters()}},
-\code{\link[=espn_mbb_game_situation]{espn_mbb_game_situation()}},
-\code{\link[=espn_mbb_game_team_leaders]{espn_mbb_game_team_leaders()}},
 \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}},
-\code{\link[=espn_mbb_game_team_records]{espn_mbb_game_team_records()}},
-\code{\link[=espn_mbb_game_team_roster]{espn_mbb_game_team_roster()}},
 \code{\link[=espn_mbb_game_team_roster_entry]{espn_mbb_game_team_roster_entry()}},
-\code{\link[=espn_mbb_game_team_score]{espn_mbb_game_team_score()}},
-\code{\link[=espn_mbb_game_team_statistics]{espn_mbb_game_team_statistics()}},
 \code{\link[=espn_mbb_injuries]{espn_mbb_injuries()}},
 \code{\link[=espn_mbb_leaders]{espn_mbb_leaders()}},
 \code{\link[=espn_mbb_news]{espn_mbb_news()}},
-\code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}},
 \code{\link[=espn_mbb_player_awards]{espn_mbb_player_awards()}},
-\code{\link[=espn_mbb_player_box]{espn_mbb_player_box()}},
 \code{\link[=espn_mbb_player_career_stats]{espn_mbb_player_career_stats()}},
-\code{\link[=espn_mbb_player_eventlog]{espn_mbb_player_eventlog()}},
 \code{\link[=espn_mbb_player_eventlog_v2]{espn_mbb_player_eventlog_v2()}},
-\code{\link[=espn_mbb_player_gamelog]{espn_mbb_player_gamelog()}},
 \code{\link[=espn_mbb_player_info]{espn_mbb_player_info()}},
 \code{\link[=espn_mbb_player_overview]{espn_mbb_player_overview()}},
 \code{\link[=espn_mbb_player_seasons]{espn_mbb_player_seasons()}},
-\code{\link[=espn_mbb_player_splits]{espn_mbb_player_splits()}},
-\code{\link[=espn_mbb_player_statisticslog]{espn_mbb_player_statisticslog()}},
 \code{\link[=espn_mbb_player_stats]{espn_mbb_player_stats()}},
-\code{\link[=espn_mbb_player_stats_v3]{espn_mbb_player_stats_v3()}},
 \code{\link[=espn_mbb_position]{espn_mbb_position()}},
 \code{\link[=espn_mbb_positions]{espn_mbb_positions()}},
 \code{\link[=espn_mbb_powerindex]{espn_mbb_powerindex()}},
@@ -180,8 +164,6 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_scoreboard]{espn_mbb_scoreboard()}},
 \code{\link[=espn_mbb_season_awards]{espn_mbb_season_awards()}},
 \code{\link[=espn_mbb_season_group]{espn_mbb_season_group()}},
-\code{\link[=espn_mbb_season_group_children]{espn_mbb_season_group_children()}},
-\code{\link[=espn_mbb_season_group_teams]{espn_mbb_season_group_teams()}},
 \code{\link[=espn_mbb_season_groups]{espn_mbb_season_groups()}},
 \code{\link[=espn_mbb_season_info]{espn_mbb_season_info()}},
 \code{\link[=espn_mbb_season_leaders]{espn_mbb_season_leaders()}},
@@ -194,17 +176,13 @@ Other ESPN MBB Functions:
 \code{\link[=espn_mbb_seasons]{espn_mbb_seasons()}},
 \code{\link[=espn_mbb_standings]{espn_mbb_standings()}},
 \code{\link[=espn_mbb_team]{espn_mbb_team()}},
-\code{\link[=espn_mbb_team_box]{espn_mbb_team_box()}},
 \code{\link[=espn_mbb_team_current_roster]{espn_mbb_team_current_roster()}},
 \code{\link[=espn_mbb_team_injuries]{espn_mbb_team_injuries()}},
-\code{\link[=espn_mbb_team_leaders]{espn_mbb_team_leaders()}},
 \code{\link[=espn_mbb_team_news]{espn_mbb_team_news()}},
 \code{\link[=espn_mbb_team_odds_records]{espn_mbb_team_odds_records()}},
 \code{\link[=espn_mbb_team_record]{espn_mbb_team_record()}},
 \code{\link[=espn_mbb_team_record_detail]{espn_mbb_team_record_detail()}},
-\code{\link[=espn_mbb_team_roster]{espn_mbb_team_roster()}},
 \code{\link[=espn_mbb_team_schedule]{espn_mbb_team_schedule()}},
-\code{\link[=espn_mbb_team_season_profile]{espn_mbb_team_season_profile()}},
 \code{\link[=espn_mbb_team_season_roster]{espn_mbb_team_season_roster()}},
 \code{\link[=espn_mbb_team_season_statistics]{espn_mbb_team_season_statistics()}},
 \code{\link[=espn_mbb_teams]{espn_mbb_teams()}},

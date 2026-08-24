@@ -11,20 +11,23 @@ bref_standings(season = most_recent_nba_season())
 (e.g. \code{2024}). Defaults to \code{most_recent_nba_season()}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   conference \tab character \tab Conference (\code{E} or \code{W}). \cr
-   team \tab character \tab Team name (with playoff-seed marker stripped). \cr
-   wins \tab integer \tab Wins. \cr
-   losses \tab integer \tab Losses. \cr
-   win_loss_pct \tab numeric \tab Win-loss percentage. \cr
-   gb \tab character \tab Games behind the conference leader. \cr
-   pts_per_g \tab numeric \tab Points scored per game. \cr
-   opp_pts_per_g \tab numeric \tab Opponent points per game. \cr
-   srs \tab numeric \tab Simple Rating System (point margin + SOS). \cr
-   playoffs \tab logical \tab \code{TRUE} if the team made the playoffs (\code{*} marker). \cr
-   season \tab integer \tab Season (echoes the \code{season} argument). \cr
-}
+A \code{hoopR_data} tibble with one row per team:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      conference \tab character \tab Conference (\code{E} or \code{W}). \cr
+      team \tab character \tab Team name (with playoff-seed marker stripped). \cr
+      wins \tab integer \tab Wins. \cr
+      losses \tab integer \tab Losses. \cr
+      win_loss_pct \tab numeric \tab Win-loss percentage. \cr
+      gb \tab character \tab Games behind the conference leader. \cr
+      pts_per_g \tab numeric \tab Points scored per game. \cr
+      opp_pts_per_g \tab numeric \tab Opponent points per game. \cr
+      srs \tab numeric \tab Simple Rating System (point margin + SOS). \cr
+      playoffs \tab logical \tab \code{TRUE} if the team made the playoffs (\code{*} marker). \cr
+      season \tab integer \tab Season (echoes the \code{season} argument). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get end-of-season conference standings from

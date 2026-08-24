@@ -82,69 +82,21 @@ TicketLinks, WestConfStandingsByDay, WinProbability
 }
 
 
-\strong{SeriesStandings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
-   VISITOR_TEAM_ID \tab character \tab  \cr
-   GAME_DATE_EST \tab character \tab Game date est. \cr
-   HOME_TEAM_WINS \tab character \tab Home team's team wins. \cr
-   HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
-   SERIES_LEADER \tab character \tab  \cr
-}
+\strong{SeriesStandings}
 
+Columns as documented in the shared \link{nba_boxscoresummaryv2_seasonseries_schema} table.
 
-\strong{LastMeeting}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   LAST_GAME_ID \tab character \tab  \cr
-   LAST_GAME_DATE_EST \tab character \tab  \cr
-   LAST_GAME_HOME_TEAM_ID \tab character \tab  \cr
-   LAST_GAME_HOME_TEAM_CITY \tab character \tab  \cr
-   LAST_GAME_HOME_TEAM_NAME \tab character \tab  \cr
-   LAST_GAME_HOME_TEAM_ABBREVIATION \tab character \tab  \cr
-   LAST_GAME_HOME_TEAM_POINTS \tab character \tab  \cr
-   LAST_GAME_VISITOR_TEAM_ID \tab character \tab  \cr
-   LAST_GAME_VISITOR_TEAM_CITY \tab character \tab  \cr
-   LAST_GAME_VISITOR_TEAM_NAME \tab character \tab  \cr
-   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \tab  \cr
-   LAST_GAME_VISITOR_TEAM_POINTS \tab character \tab  \cr
-}
+\strong{LastMeeting}
 
+Columns as documented in the shared \link{nba_boxscoresummaryv2_lastmeeting_schema} table.
 
-\strong{EastConfStandingsByDay}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   STANDINGSDATE \tab character \tab  \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   G \tab character \tab Games played. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   W_PCT \tab character \tab  \cr
-   HOME_RECORD \tab character \tab Home win-loss record. \cr
-   ROAD_RECORD \tab character \tab  \cr
-}
+\strong{EastConfStandingsByDay}
 
+Columns as documented in the shared \link{nba_scoreboard_eastconfstandingsbyday_schema} table.
 
-\strong{WestConfStandingsByDay}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   STANDINGSDATE \tab character \tab  \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   G \tab character \tab Games played. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   W_PCT \tab character \tab  \cr
-   HOME_RECORD \tab character \tab Home win-loss record. \cr
-   ROAD_RECORD \tab character \tab  \cr
-}
+\strong{WestConfStandingsByDay}
 
+Columns as documented in the shared \link{nba_scoreboard_eastconfstandingsbyday_schema} table.
 
 \strong{Available}\tabular{lll}{
    col_name \tab types \tab description \cr

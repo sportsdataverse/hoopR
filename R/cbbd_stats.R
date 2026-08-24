@@ -14,17 +14,19 @@
 #'   and `opponent_stats` objects are flattened into `team_stats_*` /
 #'   `opponent_stats_*` columns. Key identifying columns:
 #'
-#'    |col_name      |types     |description                                   |
-#'    |:-------------|:---------|:---------------------------------------------|
-#'    |season        |integer   |Season (4-digit ending-year).                 |
-#'    |team_id       |integer   |Team id.                                       |
-#'    |team          |character |Team name.                                     |
-#'    |conference    |character |Conference name.                               |
-#'    |games         |integer   |Games played.                                  |
-#'    |wins          |numeric   |Wins.                                          |
-#'    |losses        |numeric   |Losses.                                        |
-#'    |total_minutes |numeric   |Total minutes played.                          |
-#'    |pace          |numeric   |Average pace (possessions).                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       games \tab integer \tab Games played. \cr
+#'       wins \tab numeric \tab Wins. \cr
+#'       losses \tab numeric \tab Losses. \cr
+#'       total_minutes \tab numeric \tab Total minutes played. \cr
+#'       pace \tab numeric \tab Average pace (possessions). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
@@ -114,6 +116,7 @@ cbbd_stats_team_leaderboard <- function(season = most_recent_mbb_season(), team 
   return(df)
 }
 
+#' @rdname cbbd_stats_team_season
 #' @title
 #' **CBD Team Shooting Stats**
 #' @description
@@ -176,6 +179,7 @@ cbbd_stats_team_shooting_season <- function(season = most_recent_mbb_season(), s
   return(df)
 }
 
+#' @rdname cbbd_stats_team_season
 #' @title
 #' **CBD Player Season Stats**
 #' @description
@@ -193,18 +197,20 @@ cbbd_stats_team_shooting_season <- function(season = most_recent_mbb_season(), s
 #'   `three_point_field_goals`, `free_throws`, `rebounds`, `win_shares`) are
 #'   flattened into prefixed columns. Key identifying columns:
 #'
-#'    |col_name    |types     |description                                     |
-#'    |:-----------|:---------|:-----------------------------------------------|
-#'    |season      |integer   |Season (4-digit ending-year).                   |
-#'    |team_id     |integer   |Team id.                                         |
-#'    |team        |character |Team name.                                       |
-#'    |conference  |character |Conference name.                                 |
-#'    |athlete_id  |integer   |Athlete id.                                      |
-#'    |name        |character |Player name.                                     |
-#'    |position    |character |Player position.                                 |
-#'    |games       |numeric   |Games played.                                    |
-#'    |minutes     |numeric   |Minutes played.                                  |
-#'    |points      |numeric   |Total points.                                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       athlete_id \tab integer \tab Athlete id. \cr
+#'       name \tab character \tab Player name. \cr
+#'       position \tab character \tab Player position. \cr
+#'       games \tab numeric \tab Games played. \cr
+#'       minutes \tab numeric \tab Minutes played. \cr
+#'       points \tab numeric \tab Total points. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
@@ -242,24 +248,26 @@ cbbd_stats_player_season <- function(season = most_recent_mbb_season(), season_t
   return(df)
 }
 
+#' @rdname cbbd_stats_team_season
 #' @title
 #' **CBD Player Shooting Stats**
 #' @description
 #' **Get player season shooting statistics from the CollegeBasketballData API.**
-#' @inheritParams cbbd_stats_team_shooting_season
 #' @return A `hoopR_data` tibble with one row per player-season. Shot-type
 #'   objects are flattened into prefixed columns. Key identifying columns:
 #'
-#'    |col_name      |types     |description                                   |
-#'    |:-------------|:---------|:---------------------------------------------|
-#'    |season        |integer   |Season (4-digit ending-year).                 |
-#'    |team_id       |integer   |Team id.                                       |
-#'    |team          |character |Team name.                                     |
-#'    |conference    |character |Conference name.                               |
-#'    |athlete_id    |integer   |Athlete id.                                    |
-#'    |athlete_name  |character |Player name.                                   |
-#'    |tracked_shots |integer   |Number of tracked shots.                       |
-#'    |assisted_pct  |numeric   |Assisted field-goal percentage.                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       athlete_id \tab integer \tab Athlete id. \cr
+#'       athlete_name \tab character \tab Player name. \cr
+#'       tracked_shots \tab integer \tab Number of tracked shots. \cr
+#'       assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON

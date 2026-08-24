@@ -18,99 +18,64 @@ Return a named list of data frames: EastConfPlayoffPicture,
 EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
 WestConfRemainingGames, WestConfStandings
 
-\strong{EastConfPlayoffPicture}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   HIGH_SEED_RANK \tab character \tab  \cr
-   HIGH_SEED_TEAM \tab character \tab  \cr
-   HIGH_SEED_TEAM_ID \tab character \tab  \cr
-   LOW_SEED_RANK \tab character \tab  \cr
-   LOW_SEED_TEAM \tab character \tab  \cr
-   LOW_SEED_TEAM_ID \tab character \tab  \cr
-   HIGH_SEED_SERIES_W \tab character \tab  \cr
-   HIGH_SEED_SERIES_L \tab character \tab  \cr
-   HIGH_SEED_SERIES_REMAINING_G \tab character \tab  \cr
-   HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \tab  \cr
-   HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \tab  \cr
-}
+\strong{EastConfPlayoffPicture}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      CONFERENCE \tab character \tab Conference. \cr
+      HIGH_SEED_RANK \tab character \tab  \cr
+      HIGH_SEED_TEAM \tab character \tab  \cr
+      HIGH_SEED_TEAM_ID \tab character \tab  \cr
+      LOW_SEED_RANK \tab character \tab  \cr
+      LOW_SEED_TEAM \tab character \tab  \cr
+      LOW_SEED_TEAM_ID \tab character \tab  \cr
+      HIGH_SEED_SERIES_W \tab character \tab  \cr
+      HIGH_SEED_SERIES_L \tab character \tab  \cr
+      HIGH_SEED_SERIES_REMAINING_G \tab character \tab  \cr
+      HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \tab  \cr
+      HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{WestConfPlayoffPicture}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   HIGH_SEED_RANK \tab character \tab  \cr
-   HIGH_SEED_TEAM \tab character \tab  \cr
-   HIGH_SEED_TEAM_ID \tab character \tab  \cr
-   LOW_SEED_RANK \tab character \tab  \cr
-   LOW_SEED_TEAM \tab character \tab  \cr
-   LOW_SEED_TEAM_ID \tab character \tab  \cr
-   HIGH_SEED_SERIES_W \tab character \tab  \cr
-   HIGH_SEED_SERIES_L \tab character \tab  \cr
-   HIGH_SEED_SERIES_REMAINING_G \tab character \tab  \cr
-   HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \tab  \cr
-   HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \tab  \cr
-}
+\strong{WestConfPlayoffPicture}
 
+Same columns as the \strong{EastConfPlayoffPicture} table above.
 
-\strong{EastConfStandings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   WINS \tab character \tab Total wins. \cr
-   LOSSES \tab character \tab Total losses. \cr
-   PCT \tab character \tab Pct. \cr
-   DIV \tab character \tab  \cr
-   CONF \tab character \tab character. \cr
-   HOME \tab character \tab Home. \cr
-   AWAY \tab character \tab  \cr
-   GB \tab character \tab  \cr
-   GR_OVER_500 \tab character \tab  \cr
-   GR_OVER_500_HOME \tab character \tab  \cr
-   GR_OVER_500_AWAY \tab character \tab  \cr
-   GR_UNDER_500 \tab character \tab  \cr
-   GR_UNDER_500_HOME \tab character \tab  \cr
-   GR_UNDER_500_AWAY \tab character \tab  \cr
-   RANKING_CRITERIA \tab character \tab  \cr
-   CLINCHED_PLAYOFFS \tab character \tab  \cr
-   CLINCHED_CONFERENCE \tab character \tab  \cr
-   CLINCHED_DIVISION \tab character \tab  \cr
-   ELIMINATED_PLAYOFFS \tab character \tab  \cr
-   SOSA_REMAINING \tab character \tab  \cr
-}
+\strong{EastConfStandings}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      CONFERENCE \tab character \tab Conference. \cr
+      RANK \tab character \tab Rank. \cr
+      TEAM \tab character \tab Team-side label or team identifier. \cr
+      TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      WINS \tab character \tab Total wins. \cr
+      LOSSES \tab character \tab Total losses. \cr
+      PCT \tab character \tab Pct. \cr
+      DIV \tab character \tab  \cr
+      CONF \tab character \tab character. \cr
+      HOME \tab character \tab Home. \cr
+      AWAY \tab character \tab  \cr
+      GB \tab character \tab  \cr
+      GR_OVER_500 \tab character \tab  \cr
+      GR_OVER_500_HOME \tab character \tab  \cr
+      GR_OVER_500_AWAY \tab character \tab  \cr
+      GR_UNDER_500 \tab character \tab  \cr
+      GR_UNDER_500_HOME \tab character \tab  \cr
+      GR_UNDER_500_AWAY \tab character \tab  \cr
+      RANKING_CRITERIA \tab character \tab  \cr
+      CLINCHED_PLAYOFFS \tab character \tab  \cr
+      CLINCHED_CONFERENCE \tab character \tab  \cr
+      CLINCHED_DIVISION \tab character \tab  \cr
+      ELIMINATED_PLAYOFFS \tab character \tab  \cr
+      SOSA_REMAINING \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{WestConfStandings}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   CONFERENCE \tab character \tab Conference. \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   WINS \tab character \tab Total wins. \cr
-   LOSSES \tab character \tab Total losses. \cr
-   PCT \tab character \tab Pct. \cr
-   DIV \tab character \tab  \cr
-   CONF \tab character \tab character. \cr
-   HOME \tab character \tab Home. \cr
-   AWAY \tab character \tab  \cr
-   GB \tab character \tab  \cr
-   GR_OVER_500 \tab character \tab  \cr
-   GR_OVER_500_HOME \tab character \tab  \cr
-   GR_OVER_500_AWAY \tab character \tab  \cr
-   GR_UNDER_500 \tab character \tab  \cr
-   GR_UNDER_500_HOME \tab character \tab  \cr
-   GR_UNDER_500_AWAY \tab character \tab  \cr
-   RANKING_CRITERIA \tab character \tab  \cr
-   CLINCHED_PLAYOFFS \tab character \tab  \cr
-   CLINCHED_CONFERENCE \tab character \tab  \cr
-   CLINCHED_DIVISION \tab character \tab  \cr
-   ELIMINATED_PLAYOFFS \tab character \tab  \cr
-   SOSA_REMAINING \tab character \tab  \cr
-}
+\strong{WestConfStandings}
 
+Same columns as the \strong{EastConfStandings} table above.
 
 \strong{EastConfRemainingGames}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -122,14 +87,9 @@ WestConfRemainingGames, WestConfStandings
 }
 
 
-\strong{WestConfRemainingGames}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM \tab character \tab Team-side label or team identifier. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   REMAINING_G \tab character \tab  \cr
-   REMAINING_HOME_G \tab character \tab  \cr
-   REMAINING_AWAY_G \tab character \tab  \cr
-}
+\strong{WestConfRemainingGames}
+
+Same columns as the \strong{EastConfRemainingGames} table above.
 }
 \description{
 \strong{Get NBA Stats API Playoff Picture}

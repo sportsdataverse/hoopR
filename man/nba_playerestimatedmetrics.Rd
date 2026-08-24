@@ -23,41 +23,44 @@ nba_playerestimatedmetrics(
 \value{
 Return a named list of data frames: PlayerEstimatedMetrics
 
-\strong{PlayerEstimatedMetrics}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   GP \tab character \tab Games played. \cr
-   W \tab character \tab Wins. \cr
-   L \tab character \tab Losses. \cr
-   W_PCT \tab character \tab  \cr
-   MIN \tab character \tab Minutes played. \cr
-   E_OFF_RATING \tab character \tab  \cr
-   E_DEF_RATING \tab character \tab  \cr
-   E_NET_RATING \tab character \tab  \cr
-   E_AST_RATIO \tab character \tab  \cr
-   E_OREB_PCT \tab character \tab  \cr
-   E_DREB_PCT \tab character \tab  \cr
-   E_REB_PCT \tab character \tab  \cr
-   E_TOV_PCT \tab character \tab  \cr
-   E_USG_PCT \tab character \tab  \cr
-   E_PACE \tab character \tab  \cr
-   GP_RANK \tab character \tab  \cr
-   W_RANK \tab character \tab  \cr
-   L_RANK \tab character \tab  \cr
-   W_PCT_RANK \tab character \tab  \cr
-   MIN_RANK \tab character \tab  \cr
-   E_OFF_RATING_RANK \tab character \tab  \cr
-   E_DEF_RATING_RANK \tab character \tab  \cr
-   E_NET_RATING_RANK \tab character \tab  \cr
-   E_AST_RATIO_RANK \tab character \tab  \cr
-   E_OREB_PCT_RANK \tab character \tab  \cr
-   E_DREB_PCT_RANK \tab character \tab  \cr
-   E_REB_PCT_RANK \tab character \tab  \cr
-   E_TOV_PCT_RANK \tab character \tab  \cr
-   E_USG_PCT_RANK \tab character \tab  \cr
-   E_PACE_RANK \tab character \tab  \cr
-}
+\strong{PlayerEstimatedMetrics}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      GP \tab character \tab Games played. \cr
+      W \tab character \tab Wins. \cr
+      L \tab character \tab Losses. \cr
+      W_PCT \tab character \tab  \cr
+      MIN \tab character \tab Minutes played. \cr
+      E_OFF_RATING \tab character \tab  \cr
+      E_DEF_RATING \tab character \tab  \cr
+      E_NET_RATING \tab character \tab  \cr
+      E_AST_RATIO \tab character \tab  \cr
+      E_OREB_PCT \tab character \tab  \cr
+      E_DREB_PCT \tab character \tab  \cr
+      E_REB_PCT \tab character \tab  \cr
+      E_TOV_PCT \tab character \tab  \cr
+      E_USG_PCT \tab character \tab  \cr
+      E_PACE \tab character \tab  \cr
+      GP_RANK \tab character \tab  \cr
+      W_RANK \tab character \tab  \cr
+      L_RANK \tab character \tab  \cr
+      W_PCT_RANK \tab character \tab  \cr
+      MIN_RANK \tab character \tab  \cr
+      E_OFF_RATING_RANK \tab character \tab  \cr
+      E_DEF_RATING_RANK \tab character \tab  \cr
+      E_NET_RATING_RANK \tab character \tab  \cr
+      E_AST_RATIO_RANK \tab character \tab  \cr
+      E_OREB_PCT_RANK \tab character \tab  \cr
+      E_DREB_PCT_RANK \tab character \tab  \cr
+      E_REB_PCT_RANK \tab character \tab  \cr
+      E_TOV_PCT_RANK \tab character \tab  \cr
+      E_USG_PCT_RANK \tab character \tab  \cr
+      E_PACE_RANK \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Player Estimated Metrics}
@@ -88,8 +91,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},
 \code{\link[=nba_playergamelog]{nba_playergamelog()}},

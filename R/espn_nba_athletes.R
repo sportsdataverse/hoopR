@@ -23,15 +23,7 @@ NULL
 #'
 #'    **Bio**
 #'
-#'    |col_name      |types     |description                       |
-#'    |:-------------|:---------|:---------------------------------|
-#'    |id            |character |Id.                               |
-#'    |full_name     |character |Player's full name.               |
-#'    |display_name  |character |Display name.                     |
-#'    |jersey        |character |Jersey number worn by the player. |
-#'    |age           |character |Player age (in years).            |
-#'    |date_of_birth |character |Date of birth (YYYY-MM-DD).       |
-#'    |headshot_href |character |Headshot image URL.               |
+#'    Columns as documented in the shared [espn_mbb_player_info_bio_schema] table.
 #'
 #'    **Team**
 #'
@@ -166,12 +158,9 @@ espn_nba_player_overview <- function(athlete_id,
 # espn_nba_player_stats_v3
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Athlete Stats**
-#' @name espn_nba_player_stats_v3
-NULL
 #' @title
 #' **Get ESPN NBA Athlete Stats**
-#' @rdname espn_nba_player_stats_v3
+#' @rdname espn_nba_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -206,12 +195,9 @@ espn_nba_player_stats_v3 <- function(athlete_id,
 # espn_nba_player_gamelog
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Athlete Gamelog**
-#' @name espn_nba_player_gamelog
-NULL
 #' @title
 #' **Get ESPN NBA Athlete Gamelog**
-#' @rdname espn_nba_player_gamelog
+#' @rdname espn_nba_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -243,12 +229,9 @@ espn_nba_player_gamelog <- function(athlete_id,
 # espn_nba_player_splits
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Athlete Splits**
-#' @name espn_nba_player_splits
-NULL
 #' @title
 #' **Get ESPN NBA Athlete Splits**
-#' @rdname espn_nba_player_splits
+#' @rdname espn_nba_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -281,12 +264,9 @@ espn_nba_player_splits <- function(athlete_id,
 # espn_nba_player_eventlog
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Athlete Eventlog**
-#' @name espn_nba_player_eventlog
-NULL
 #' @title
 #' **Get ESPN NBA Athlete Eventlog**
-#' @rdname espn_nba_player_eventlog
+#' @rdname espn_nba_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.
@@ -296,12 +276,7 @@ NULL
 #'   are NOT resolved. Similarly, `event_ref`, `competition_ref`, and
 #'   `team_ref` are returned as character columns.
 #'
-#'    |col_name        |types     |description                              |
-#'    |:---------------|:---------|:----------------------------------------|
-#'    |event_ref       |character |Reference link to the originating event. |
-#'    |competition_ref |character |                                         |
-#'    |team_ref        |character |                                         |
-#'    |statistics_ref  |character |                                         |
+#'    Columns as documented in the shared [espn_mbb_player_eventlog_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
@@ -340,14 +315,7 @@ NULL
 #'   award data, in which case an empty tibble with canonical columns is
 #'   returned.
 #'
-#'    |col_name    |types     |description                                           |
-#'    |:-----------|:---------|:-----------------------------------------------------|
-#'    |season      |character |Season identifier (4-digit year or 'YYYY-YY' string). |
-#'    |award_id    |character |                                                      |
-#'    |name        |character |Display name.                                         |
-#'    |description |character |Long-form description text.                           |
-#'    |date        |character |Date in YYYY-MM-DD format.                            |
-#'    |type        |character |Record type / category.                               |
+#'    Columns as documented in the shared [espn_mbb_player_awards_schema] table.
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble select any_of
@@ -370,12 +338,9 @@ espn_nba_player_awards <- function(athlete_id, ...) {
 # espn_nba_player_statisticslog
 # ---------------------------------------------------------------------------
 
-#' **Get ESPN NBA Athlete Statisticslog**
-#' @name espn_nba_player_statisticslog
-NULL
 #' @title
 #' **Get ESPN NBA Athlete Statisticslog**
-#' @rdname espn_nba_player_statisticslog
+#' @rdname espn_nba_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent NBA season.

@@ -25,37 +25,9 @@ Return a named list of data frames: CareerHighs, CareerTotalsAllStarSeason, Care
 CareerTotalsRegularSeason, NextGame, SeasonHighs, SeasonRankingsPostSeason, SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
 SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 
-\strong{SeasonTotalsRegularSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   PLAYER_AGE \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{SeasonTotalsRegularSeason}
 
+Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
 
 \strong{CareerTotalsRegularSeason}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -86,256 +58,41 @@ SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 }
 
 
-\strong{SeasonTotalsPostSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   PLAYER_AGE \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{SeasonTotalsPostSeason}
 
+Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
 
-\strong{CareerTotalsPostSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{CareerTotalsPostSeason}
 
+Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
-\strong{SeasonTotalsAllStarSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   PLAYER_AGE \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{SeasonTotalsAllStarSeason}
 
+Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
 
-\strong{CareerTotalsAllStarSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{CareerTotalsAllStarSeason}
 
+Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
 \strong{SeasonTotalsCollegeSeason}
 
 \strong{CareerTotalsCollegeSeason}
 
-\strong{SeasonTotalsPreseason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   PLAYER_AGE \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{SeasonTotalsPreseason}
 
+Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
 
-\strong{CareerTotalsPreseason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{CareerTotalsPreseason}
 
+Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
-\strong{SeasonRankingsRegularSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   PLAYER_AGE \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   RANK_MIN \tab character \tab  \cr
-   RANK_FGM \tab character \tab  \cr
-   RANK_FGA \tab character \tab  \cr
-   RANK_FG_PCT \tab character \tab  \cr
-   RANK_FG3M \tab character \tab  \cr
-   RANK_FG3A \tab character \tab  \cr
-   RANK_FG3_PCT \tab character \tab  \cr
-   RANK_FTM \tab character \tab  \cr
-   RANK_FTA \tab character \tab  \cr
-   RANK_FT_PCT \tab character \tab  \cr
-   RANK_OREB \tab character \tab  \cr
-   RANK_DREB \tab character \tab  \cr
-   RANK_REB \tab character \tab  \cr
-   RANK_AST \tab character \tab  \cr
-   RANK_STL \tab character \tab  \cr
-   RANK_BLK \tab character \tab  \cr
-   RANK_TOV \tab character \tab  \cr
-   RANK_PTS \tab character \tab  \cr
-   RANK_EFF \tab character \tab  \cr
-}
+\strong{SeasonRankingsRegularSeason}
 
+Columns as documented in the shared \link{nba_playercareerstats_seasonrankingsregularseason_schema} table.
 
-\strong{SeasonRankingsPostSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   SEASON_ID \tab character \tab Unique season identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   PLAYER_AGE \tab character \tab  \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   RANK_MIN \tab character \tab  \cr
-   RANK_FGM \tab character \tab  \cr
-   RANK_FGA \tab character \tab  \cr
-   RANK_FG_PCT \tab character \tab  \cr
-   RANK_FG3M \tab character \tab  \cr
-   RANK_FG3A \tab character \tab  \cr
-   RANK_FG3_PCT \tab character \tab  \cr
-   RANK_FTM \tab character \tab  \cr
-   RANK_FTA \tab character \tab  \cr
-   RANK_FT_PCT \tab character \tab  \cr
-   RANK_OREB \tab character \tab  \cr
-   RANK_DREB \tab character \tab  \cr
-   RANK_REB \tab character \tab  \cr
-   RANK_AST \tab character \tab  \cr
-   RANK_STL \tab character \tab  \cr
-   RANK_BLK \tab character \tab  \cr
-   RANK_TOV \tab character \tab  \cr
-   RANK_PTS \tab character \tab  \cr
-   RANK_EFF \tab character \tab  \cr
-}
+\strong{SeasonRankingsPostSeason}
 
+Columns as documented in the shared \link{nba_playercareerstats_seasonrankingsregularseason_schema} table.
 
 \strong{SeasonHighs}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -353,21 +110,9 @@ SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 }
 
 
-\strong{CareerHighs}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-   VS_TEAM_ID \tab character \tab  \cr
-   VS_TEAM_CITY \tab character \tab  \cr
-   VS_TEAM_NAME \tab character \tab  \cr
-   VS_TEAM_ABBREVIATION \tab character \tab  \cr
-   STAT \tab character \tab Stat. \cr
-   STAT_VALUE \tab character \tab  \cr
-   STAT_ORDER \tab character \tab  \cr
-   DATE_EST \tab character \tab  \cr
-}
+\strong{CareerHighs}
 
+Same columns as the \strong{SeasonHighs} table above.
 
 \strong{NextGame}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -414,8 +159,6 @@ Other NBA Player Functions:
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
 \code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
 \code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerdashptshotdefend]{nba_playerdashptshotdefend()}},
-\code{\link[=nba_playerdashptshots]{nba_playerdashptshots()}},
 \code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
 \code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
 \code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},

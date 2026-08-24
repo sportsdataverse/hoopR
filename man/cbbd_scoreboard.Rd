@@ -12,18 +12,21 @@ cbbd_scoreboard(conference = NULL)
 \value{
 A \code{hoopR_data} tibble with one row per game. The \code{home_team},
 \code{away_team} and \code{betting} objects are flattened into \verb{home_team_*},
-\verb{away_team_*} and \verb{betting_*} columns. Key identifying columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab CollegeBasketballData game id. \cr
-   start_date \tab character \tab Game start date (ISO 8601). \cr
-   tv \tab character \tab Broadcast TV network. \cr
-   neutral_site \tab logical \tab Whether the game is at a neutral site. \cr
-   conference_game \tab logical \tab Whether the game is a conference game. \cr
-   status \tab character \tab Game status. \cr
-   period \tab integer \tab Current period. \cr
-   clock \tab character \tab Game clock. \cr
-   venue \tab character \tab Venue name. \cr
-}
+\verb{away_team_*} and \verb{betting_*} columns. Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab CollegeBasketballData game id. \cr
+      start_date \tab character \tab Game start date (ISO 8601). \cr
+      tv \tab character \tab Broadcast TV network. \cr
+      neutral_site \tab logical \tab Whether the game is at a neutral site. \cr
+      conference_game \tab logical \tab Whether the game is a conference game. \cr
+      status \tab character \tab Game status. \cr
+      period \tab integer \tab Current period. \cr
+      clock \tab character \tab Game clock. \cr
+      venue \tab character \tab Venue name. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get the current scoreboard from the CollegeBasketballData API.}
@@ -36,9 +39,7 @@ A \code{hoopR_data} tibble with one row per game. The \code{home_team},
 \seealso{
 Other CBD Games Functions:
 \code{\link[=cbbd_games]{cbbd_games()}},
-\code{\link[=cbbd_games_media]{cbbd_games_media()}},
-\code{\link[=cbbd_games_players]{cbbd_games_players()}},
-\code{\link[=cbbd_games_teams]{cbbd_games_teams()}}
+\code{\link[=cbbd_games_media]{cbbd_games_media()}}
 }
 \concept{CBD Games Functions}
 \keyword{CBD}

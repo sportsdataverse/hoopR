@@ -61,17 +61,19 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per winner.
 #'
-#'    |col_name    |types     |description                                              |
-#'    |:-----------|:---------|:--------------------------------------------------------|
-#'    |league      |character |League slug.                                             |
-#'    |season      |integer   |Season year.                                             |
-#'    |award_id    |character |ESPN award identifier.                                   |
-#'    |name        |character |Award name.                                              |
-#'    |description |character |Award description.                                       |
-#'    |athlete_id  |character |ESPN athlete id of winner.                               |
-#'    |team_id     |character |ESPN team id.                                            |
-#'    |athlete_ref |character |`$ref` to winner's per-season athlete resource.          |
-#'    |team_ref    |character |`$ref` to winner's per-season team resource.             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       award_id \tab character \tab ESPN award identifier. \cr
+#'       name \tab character \tab Award name. \cr
+#'       description \tab character \tab Award description. \cr
+#'       athlete_id \tab character \tab ESPN athlete id of winner. \cr
+#'       team_id \tab character \tab ESPN team id. \cr
+#'       athlete_ref \tab character \tab \verb{$ref} to winner's per-season athlete resource. \cr
+#'       team_ref \tab character \tab \verb{$ref} to winner's per-season team resource. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

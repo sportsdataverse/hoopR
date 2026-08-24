@@ -7,23 +7,26 @@
 realgm_standings()
 }
 \value{
-A \code{hoopR_data} tibble with one row per team:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   number \tab integer \tab Conference rank. \cr
-   team \tab character \tab Team name. \cr
-   w \tab integer \tab Wins. \cr
-   l \tab integer \tab Losses. \cr
-   pct \tab numeric \tab Win percentage. \cr
-   gb \tab numeric \tab Games back. \cr
-   l10 \tab character \tab Last-ten record. \cr
-   strk \tab character \tab Current streak. \cr
-   ppg \tab numeric \tab Points per game. \cr
-   oppg \tab numeric \tab Opponent points per game. \cr
-   diff \tab numeric \tab Scoring margin. \cr
-   home \tab character \tab Home record. \cr
-   away \tab character \tab Away record. \cr
-   conference \tab character \tab \code{Eastern} or \code{Western}. \cr
-}
+A \code{hoopR_data} tibble with one row per team:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      number \tab integer \tab Conference rank. \cr
+      team \tab character \tab Team name. \cr
+      w \tab integer \tab Wins. \cr
+      l \tab integer \tab Losses. \cr
+      pct \tab numeric \tab Win percentage. \cr
+      gb \tab numeric \tab Games back. \cr
+      l10 \tab character \tab Last-ten record. \cr
+      strk \tab character \tab Current streak. \cr
+      ppg \tab numeric \tab Points per game. \cr
+      oppg \tab numeric \tab Opponent points per game. \cr
+      diff \tab numeric \tab Scoring margin. \cr
+      home \tab character \tab Home record. \cr
+      away \tab character \tab Away record. \cr
+      conference \tab character \tab \code{Eastern} or \code{Western}. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get the current NBA standings (both conferences) from

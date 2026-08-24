@@ -11,36 +11,39 @@ torvik_game_stats(year = most_recent_mbb_season())
 (e.g. \code{2024}). Defaults to \code{most_recent_mbb_season()}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team-game:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   date \tab character \tab Game date (M/D/YY). \cr
-   type \tab numeric \tab Game-type flag. \cr
-   team \tab character \tab Team name. \cr
-   conf \tab character \tab Team conference. \cr
-   opp \tab character \tab Opponent name. \cr
-   venue \tab character \tab Venue relative to \code{team} (\code{H}/\code{A}/\code{N}). \cr
-   result \tab character \tab Result string (e.g. \verb{L, 78-73}). \cr
-   adj_oe \tab numeric \tab Adjusted offensive efficiency. \cr
-   adj_de \tab numeric \tab Adjusted defensive efficiency. \cr
-   oe \tab numeric \tab Raw offensive efficiency (points/100 poss). \cr
-   off_efg \tab numeric \tab Offensive effective field goal percentage. \cr
-   off_to \tab numeric \tab Offensive turnover percentage. \cr
-   off_or \tab numeric \tab Offensive rebound percentage. \cr
-   off_ftr \tab numeric \tab Offensive free-throw rate. \cr
-   de \tab numeric \tab Raw defensive efficiency (points allowed/100 poss). \cr
-   def_efg \tab numeric \tab Defensive effective field goal percentage allowed. \cr
-   def_to \tab numeric \tab Defensive turnover percentage forced. \cr
-   def_or \tab numeric \tab Defensive (opponent) rebound percentage. \cr
-   def_ftr \tab numeric \tab Defensive free-throw rate allowed. \cr
-   game_score \tab numeric \tab Bart Torvik single-game quality score. \cr
-   opp_conf \tab character \tab Opponent conference. \cr
-   year \tab integer \tab Season (4-digit ending-year). \cr
-   tempo \tab numeric \tab Game tempo (possessions). \cr
-   muid \tab character \tab Matchup unique id. \cr
-   coach \tab character \tab Team head coach. \cr
-   opp_coach \tab character \tab Opponent head coach. \cr
-   win_prob \tab numeric \tab Pre-game win probability for \code{team}. \cr
-}
+A \code{hoopR_data} tibble with one row per team-game:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      date \tab character \tab Game date (M/D/YY). \cr
+      type \tab numeric \tab Game-type flag. \cr
+      team \tab character \tab Team name. \cr
+      conf \tab character \tab Team conference. \cr
+      opp \tab character \tab Opponent name. \cr
+      venue \tab character \tab Venue relative to \code{team} (\code{H}/\code{A}/\code{N}). \cr
+      result \tab character \tab Result string (e.g. \verb{L, 78-73}). \cr
+      adj_oe \tab numeric \tab Adjusted offensive efficiency. \cr
+      adj_de \tab numeric \tab Adjusted defensive efficiency. \cr
+      oe \tab numeric \tab Raw offensive efficiency (points/100 poss). \cr
+      off_efg \tab numeric \tab Offensive effective field goal percentage. \cr
+      off_to \tab numeric \tab Offensive turnover percentage. \cr
+      off_or \tab numeric \tab Offensive rebound percentage. \cr
+      off_ftr \tab numeric \tab Offensive free-throw rate. \cr
+      de \tab numeric \tab Raw defensive efficiency (points allowed/100 poss). \cr
+      def_efg \tab numeric \tab Defensive effective field goal percentage allowed. \cr
+      def_to \tab numeric \tab Defensive turnover percentage forced. \cr
+      def_or \tab numeric \tab Defensive (opponent) rebound percentage. \cr
+      def_ftr \tab numeric \tab Defensive free-throw rate allowed. \cr
+      game_score \tab numeric \tab Bart Torvik single-game quality score. \cr
+      opp_conf \tab character \tab Opponent conference. \cr
+      year \tab integer \tab Season (4-digit ending-year). \cr
+      tempo \tab numeric \tab Game tempo (possessions). \cr
+      muid \tab character \tab Matchup unique id. \cr
+      coach \tab character \tab Team head coach. \cr
+      opp_coach \tab character \tab Opponent head coach. \cr
+      win_prob \tab numeric \tab Pre-game win probability for \code{team}. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get per-game team statistics from \href{https://barttorvik.com}{barttorvik.com}.}

@@ -1,0 +1,207 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "R/espn_mbb_athletes.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 410,
+      "nonEmptyLines": 394,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_awards.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 89,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_calendar.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 49,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_coach.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 60,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_data.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 3768,
+      "nonEmptyLines": 3485,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_event_detail.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 685,
+      "nonEmptyLines": 646,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_franchise.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 91,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_futures.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 48,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_groups_v2.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 184,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_injuries.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 95,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_league.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 301,
+      "nonEmptyLines": 289,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_news.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 87,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_positions.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 57,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_powerindex.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 47,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_season_meta.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 235,
+      "nonEmptyLines": 225,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_team_deep.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 194,
+      "nonEmptyLines": 187,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_team_detail.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 369,
+      "nonEmptyLines": 357,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_team_record.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 34,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_tournaments.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 143,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_weeks.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 190,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_mbb_wp.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 111,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_nba_athlete_career.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 337,
+      "nonEmptyLines": 319,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_nba_athlete_contracts.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 113,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_nba_athletes.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 410,
+      "nonEmptyLines": 394,
+      "metrics": {}
+    },
+    {
+      "path": "R/espn_nba_awards.R",
+      "language": "r",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 91,
+      "metrics": {}
+    }
+  ]
+}

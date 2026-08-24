@@ -35,15 +35,9 @@ nba_leaderstiles(
 \value{
 Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,
 
-\strong{LeadersTiles}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{LeadersTiles}
 
+Columns as documented in the shared \link{nba_homepagev2_homepagestat1_schema} table.
 
 \strong{AllTimeSeasonHigh}\tabular{lll}{
    col_name \tab types \tab description \cr
@@ -55,24 +49,13 @@ Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersT
 }
 
 
-\strong{LastSeasonHigh}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   RANK \tab character \tab Rank. \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{LastSeasonHigh}
 
+Columns as documented in the shared \link{nba_homepagev2_homepagestat1_schema} table.
 
-\strong{LowSeasonHigh}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{LowSeasonHigh}
+
+Same columns as the \strong{AllTimeSeasonHigh} table above.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

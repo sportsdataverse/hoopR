@@ -22,22 +22,25 @@ cbbd_recruiting_players(
 }
 \value{
 A \code{hoopR_data} tibble with one row per recruit. The \code{hometown} and
-\code{committed_to} objects are flattened into prefixed columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab Recruit id. \cr
-   source_id \tab character \tab Source (ESPN) recruit id. \cr
-   position \tab character \tab Recruit position. \cr
-   school_id \tab integer \tab High school / club id. \cr
-   school \tab character \tab High school / club name. \cr
-   athlete_id \tab integer \tab Athlete id (once enrolled). \cr
-   year \tab integer \tab Recruiting class year. \cr
-   name \tab character \tab Recruit name. \cr
-   height_inches \tab numeric \tab Height in inches. \cr
-   weight_pounds \tab integer \tab Weight in pounds. \cr
-   stars \tab integer \tab Star rating. \cr
-   rating \tab numeric \tab Numeric recruit rating. \cr
-   ranking \tab integer \tab Overall ranking. \cr
-}
+\code{committed_to} objects are flattened into prefixed columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Recruit id. \cr
+      source_id \tab character \tab Source (ESPN) recruit id. \cr
+      position \tab character \tab Recruit position. \cr
+      school_id \tab integer \tab High school / club id. \cr
+      school \tab character \tab High school / club name. \cr
+      athlete_id \tab integer \tab Athlete id (once enrolled). \cr
+      year \tab integer \tab Recruiting class year. \cr
+      name \tab character \tab Recruit name. \cr
+      height_inches \tab numeric \tab Height in inches. \cr
+      weight_pounds \tab integer \tab Weight in pounds. \cr
+      stars \tab integer \tab Star rating. \cr
+      rating \tab numeric \tab Numeric recruit rating. \cr
+      ranking \tab integer \tab Overall ranking. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get player recruiting rankings from the CollegeBasketballData API.}

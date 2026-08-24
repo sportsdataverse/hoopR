@@ -16,41 +16,44 @@ nbagl_pbp(game_id, on_court = TRUE, ...)
 \value{
 Returns a data frame of play-by-play with core columns:
 When \code{on_court = TRUE}, lineup columns are included and may be \code{NA} when lineup
-inference data is unavailable for a given game.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab Unique game identifier. \cr
-   action_number \tab integer \tab Sequential action number within a game (V3 PBP). \cr
-   clock \tab character \tab Game clock value. \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   team_id \tab integer \tab Unique team identifier. \cr
-   person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-   player_name \tab character \tab Player name. \cr
-   x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
-   y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
-   shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
-   shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
-   is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
-   score_home \tab character \tab Score home. \cr
-   score_away \tab character \tab Score away. \cr
-   points_total \tab integer \tab Running total of points scored. \cr
-   location \tab character \tab Location. \cr
-   description \tab character \tab Long-form description text. \cr
-   action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
-   sub_type \tab character \tab Action sub-type label. \cr
-   video_available \tab logical \tab Video available. \cr
-   shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
-   action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
-   away_player1 \tab numeric \tab Away team's player1. \cr
-   away_player2 \tab numeric \tab Away team's player2. \cr
-   away_player3 \tab numeric \tab Away team's player3. \cr
-   away_player4 \tab numeric \tab Away team's player4. \cr
-   away_player5 \tab numeric \tab Away team's player5. \cr
-   home_player1 \tab numeric \tab Home team's player1. \cr
-   home_player2 \tab numeric \tab Home team's player2. \cr
-   home_player3 \tab numeric \tab Home team's player3. \cr
-   home_player4 \tab numeric \tab Home team's player4. \cr
-   home_player5 \tab numeric \tab Home team's player5. \cr
-}
+inference data is unavailable for a given game.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      action_number \tab integer \tab Sequential action number within a game (V3 PBP). \cr
+      clock \tab character \tab Game clock value. \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+      player_name \tab character \tab Player name. \cr
+      x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
+      y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
+      shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
+      shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
+      is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
+      score_home \tab character \tab Score home. \cr
+      score_away \tab character \tab Score away. \cr
+      points_total \tab integer \tab Running total of points scored. \cr
+      location \tab character \tab Location. \cr
+      description \tab character \tab Long-form description text. \cr
+      action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+      sub_type \tab character \tab Action sub-type label. \cr
+      video_available \tab logical \tab Video available. \cr
+      shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
+      action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
+      away_player1 \tab numeric \tab Away team's player1. \cr
+      away_player2 \tab numeric \tab Away team's player2. \cr
+      away_player3 \tab numeric \tab Away team's player3. \cr
+      away_player4 \tab numeric \tab Away team's player4. \cr
+      away_player5 \tab numeric \tab Away team's player5. \cr
+      home_player1 \tab numeric \tab Home team's player1. \cr
+      home_player2 \tab numeric \tab Home team's player2. \cr
+      home_player3 \tab numeric \tab Home team's player3. \cr
+      home_player4 \tab numeric \tab Home team's player4. \cr
+      home_player5 \tab numeric \tab Home team's player5. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Retrieves G-League play-by-play using the NBA Stats play-by-play pipeline.

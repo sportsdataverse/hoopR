@@ -1,0 +1,191 @@
+{
+  "nodes": [
+    {
+      "id": "file:R/rotowire_injuries.R",
+      "type": "file",
+      "name": "rotowire_injuries.R",
+      "filePath": "R/rotowire_injuries.R",
+      "summary": "Exports rotowire_injuries(), which pulls the current NBA injury report from RotoWire's public JSON feed and returns a tidy tibble of player injury statuses.",
+      "tags": ["data-loader", "injuries", "nba", "json", "scraper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/salary_draft_utils.R",
+      "type": "file",
+      "name": "salary_draft_utils.R",
+      "filePath": "R/salary_draft_utils.R",
+      "summary": "Internal shared HTML-scraping helpers (ext_html, parse_currency, next_data) used by the HoopsHype salaries, Spotrac team-cap, and NBADraft.net mock-draft wrappers; all sources are public HTML requiring no API key.",
+      "tags": ["utility", "scraper", "salary", "html-parsing", "internal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/spotrac_team_cap.R",
+      "type": "file",
+      "name": "spotrac_team_cap.R",
+      "filePath": "R/spotrac_team_cap.R",
+      "summary": "Exports spotrac_team_cap(), scraping Spotrac's public team salary-cap pages into a tibble of per-team cap and contract figures.",
+      "tags": ["data-loader", "salary", "nba", "scraper", "html-parsing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/torvik_game_schedule.R",
+      "type": "file",
+      "name": "torvik_game_schedule.R",
+      "filePath": "R/torvik_game_schedule.R",
+      "summary": "Exports torvik_game_schedule(), retrieving Bart Torvik's men's college basketball game schedule data as a tidy tibble.",
+      "tags": ["data-loader", "torvik", "mbb", "schedule", "scraper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/torvik_game_stats.R",
+      "type": "file",
+      "name": "torvik_game_stats.R",
+      "filePath": "R/torvik_game_stats.R",
+      "summary": "Exports torvik_game_stats(), fetching per-game advanced statistics from barttorvik.com for men's college basketball games.",
+      "tags": ["data-loader", "torvik", "mbb", "box-score", "scraper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/torvik_ncaa_results.R",
+      "type": "file",
+      "name": "torvik_ncaa_results.R",
+      "filePath": "R/torvik_ncaa_results.R",
+      "summary": "Exports torvik_ncaa_results(), scraping Bart Torvik's historical NCAA tournament results tables into a tidy tibble.",
+      "tags": ["data-loader", "torvik", "mbb", "tournament", "scraper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/torvik_player_stats.R",
+      "type": "file",
+      "name": "torvik_player_stats.R",
+      "filePath": "R/torvik_player_stats.R",
+      "summary": "Exports torvik_player_stats(), pulling Bart Torvik player-level season statistics for men's college basketball.",
+      "tags": ["data-loader", "torvik", "mbb", "player-stats", "scraper"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:R/torvik_ratings.R",
+      "type": "file",
+      "name": "torvik_ratings.R",
+      "filePath": "R/torvik_ratings.R",
+      "summary": "Exports torvik_ratings(), retrieving Bart Torvik's team efficiency ratings for men's college basketball as a tibble.",
+      "tags": ["data-loader", "torvik", "mbb", "ratings", "scraper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/torvik_team_factors.R",
+      "type": "file",
+      "name": "torvik_team_factors.R",
+      "filePath": "R/torvik_team_factors.R",
+      "summary": "Exports torvik_team_factors(), fetching Bart Torvik four-factors and tempo-free team metrics for men's college basketball.",
+      "tags": ["data-loader", "torvik", "mbb", "four-factors", "scraper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/torvik_utils.R",
+      "type": "file",
+      "name": "torvik_utils.R",
+      "filePath": "R/torvik_utils.R",
+      "summary": "Internal shared HTTP layer (torvik_text) for the family of torvik_*() scrapers, centralizing requests to barttorvik.com which needs no account or API key.",
+      "tags": ["utility", "torvik", "http", "internal", "scraper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:R/utils_nba_stats.R",
+      "type": "file",
+      "name": "utils_nba_stats.R",
+      "filePath": "R/utils_nba_stats.R",
+      "summary": "Internal HTTP and result-parsing layer for the NBA Stats / G-League APIs: builds endpoint requests (with proxy support), maps stats.nba.com resultSets into tibbles, and provides id/time padding plus schedule-rejoin helpers.",
+      "tags": ["utility", "nba", "http", "api-client", "internal"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:R/utils.R",
+      "type": "file",
+      "name": "utils.R",
+      "filePath": "R/utils.R",
+      "summary": "Package-wide utility module: KenPom login/credential handling, cached CSV/RDS loaders from URLs, season/year helpers (most_recent_mbb_season, year_to_season), team-name normalization, progress messaging, and the hoopR_data S3 class with its print method.",
+      "tags": ["utility", "core", "season-helpers", "data-loader", "internal"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:README.Rmd",
+      "type": "file",
+      "name": "README.Rmd",
+      "filePath": "README.Rmd",
+      "summary": "Source R Markdown for the package README rendered to README.md, covering hoopR's purpose, installation, quick-start usage, and documentation links.",
+      "tags": ["documentation", "readme", "entry-point", "rmarkdown"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:vignettes/cbbd-college-basketball-data.Rmd",
+      "type": "file",
+      "name": "cbbd-college-basketball-data.Rmd",
+      "filePath": "vignettes/cbbd-college-basketball-data.Rmd",
+      "summary": "Vignette documenting the CollegeBasketballData (CBD/CBBD) endpoints in hoopR, including API-key registration and worked examples for conferences, teams, venues, and other reference data.",
+      "tags": ["documentation", "vignette", "cbbd", "mbb", "tutorial"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:vignettes/espn-endpoints.Rmd",
+      "type": "file",
+      "name": "espn-endpoints.Rmd",
+      "filePath": "vignettes/espn-endpoints.Rmd",
+      "summary": "Comprehensive vignette walking through hoopR's ESPN NBA and MBB endpoint surface, organized by use case with worked examples (news, scores, schedules, rosters, and more).",
+      "tags": ["documentation", "vignette", "espn", "nba", "mbb"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:vignettes/getting-started-hoopR.Rmd",
+      "type": "file",
+      "name": "getting-started-hoopR.Rmd",
+      "filePath": "vignettes/getting-started-hoopR.Rmd",
+      "summary": "Getting-started vignette covering hoopR installation, a quick-start example, and credits to authors and contributors.",
+      "tags": ["documentation", "vignette", "getting-started", "tutorial", "entry-point"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:vignettes/kenpom-example-functions.Rmd",
+      "type": "file",
+      "name": "kenpom-example-functions.Rmd",
+      "filePath": "vignettes/kenpom-example-functions.Rmd",
+      "summary": "Vignette demonstrating the KenPom (kp_*) ratings, team, and historical table functions in hoopR with example calls.",
+      "tags": ["documentation", "vignette", "kenpom", "mbb", "tutorial"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:vignettes/mbb-cookbook.Rmd",
+      "type": "file",
+      "name": "mbb-cookbook.Rmd",
+      "filePath": "vignettes/mbb-cookbook.Rmd",
+      "summary": "Recipe-style men's college basketball cookbook vignette stitching together hoopR loaders (schedule, PBP, KenPom tempo-free metrics) into end-to-end analysis workflows.",
+      "tags": ["documentation", "vignette", "cookbook", "mbb", "tutorial"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:vignettes/nba-cookbook.Rmd",
+      "type": "file",
+      "name": "nba-cookbook.Rmd",
+      "filePath": "vignettes/nba-cookbook.Rmd",
+      "summary": "Recipe-style NBA cookbook vignette showing how to combine hoopR's ESPN and NBA Stats loaders at different levels of detail (game summary, box scores, play-by-play) into worked analysis examples.",
+      "tags": ["documentation", "vignette", "cookbook", "nba", "tutorial"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {"source": "file:R/spotrac_team_cap.R", "target": "file:R/salary_draft_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_game_schedule.R", "target": "file:R/torvik_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_game_stats.R", "target": "file:R/torvik_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_ncaa_results.R", "target": "file:R/torvik_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_player_stats.R", "target": "file:R/torvik_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_ratings.R", "target": "file:R/torvik_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_team_factors.R", "target": "file:R/torvik_utils.R", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:R/torvik_ratings.R", "target": "file:R/torvik_team_factors.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:R/torvik_game_schedule.R", "target": "file:R/torvik_game_stats.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:vignettes/kenpom-example-functions.Rmd", "target": "file:R/utils.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:vignettes/mbb-cookbook.Rmd", "target": "file:R/utils.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:vignettes/nba-cookbook.Rmd", "target": "file:R/utils_nba_stats.R", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "file:vignettes/mbb-cookbook.Rmd", "target": "file:R/torvik_ratings.R", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "file:README.Rmd", "target": "file:vignettes/getting-started-hoopR.Rmd", "type": "related", "direction": "forward", "weight": 0.5}
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "updatedAt": "2026-08-24T19:47:41.644Z",
+  "missions": [
+    {
+      "id": "session:ac31729b-3312-4061-b427-a30faf868305:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-08-24T16:44:26.900Z",
+      "updatedAt": "2026-08-24T19:47:41.644Z",
+      "status": "done",
+      "workerCount": 13,
+      "taskCounts": {
+        "total": 13,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 0,
+        "completed": 13,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "sdv-toolkit:sdv-issue-triage:ab66794",
+          "role": "sdv-toolkit:sdv-issue-triage",
+          "ownership": "ab66794da44e35fba",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:50:51.375Z"
+        },
+        {
+          "name": "sdv-toolkit:sdv-issue-triage:af62802",
+          "role": "sdv-toolkit:sdv-issue-triage",
+          "ownership": "af628029d4266c888",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:49:16.869Z"
+        },
+        {
+          "name": "sdv-toolkit:sdv-issue-triage:a6d046b",
+          "role": "sdv-toolkit:sdv-issue-triage",
+          "ownership": "a6d046bfa9685cfde",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:48:30.496Z"
+        },
+        {
+          "name": "sdv-toolkit:sdv-issue-triage:a4a37b0",
+          "role": "sdv-toolkit:sdv-issue-triage",
+          "ownership": "a4a37b0bb65db1a4f",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:49:06.711Z"
+        },
+        {
+          "name": "sdv-toolkit:sdv-issue-triage:a5a17ad",
+          "role": "sdv-toolkit:sdv-issue-triage",
+          "ownership": "a5a17aded4ec96f30",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:52:04.592Z"
+        },
+        {
+          "name": "sdv-toolkit:sdv-issue-triage:a6d4902",
+          "role": "sdv-toolkit:sdv-issue-triage",
+          "ownership": "a6d4902a90dfd31d7",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:46:45.291Z"
+        },
+        {
+          "name": "Explore:a02e40e",
+          "role": "Explore",
+          "ownership": "a02e40eba4afc9e69",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T16:50:51.655Z"
+        },
+        {
+          "name": "executor:aae283b",
+          "role": "executor",
+          "ownership": "aae283b2646a35201",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T17:35:24.208Z"
+        },
+        {
+          "name": "executor:a9e144b",
+          "role": "executor",
+          "ownership": "a9e144b9aa0abc0f2",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T17:23:10.825Z"
+        },
+        {
+          "name": "executor:a74c01b",
+          "role": "executor",
+          "ownership": "a74c01bd091d0c6eb",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T17:14:43.292Z"
+        },
+        {
+          "name": "executor:abf6a14",
+          "role": "executor",
+          "ownership": "abf6a1427cce6ad89",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T17:12:50.457Z"
+        },
+        {
+          "name": "executor:a197849",
+          "role": "executor",
+          "ownership": "a197849b72a2fd367",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T17:25:55.659Z"
+        },
+        {
+          "name": "executor:a89ffc7",
+          "role": "executor",
+          "ownership": "a89ffc77946d65f5e",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-08-24T19:47:41.644Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-stop:a197849b72a2fd367:2026-08-24T17:25:55.659Z",
+          "at": "2026-08-24T17:25:55.659Z",
+          "kind": "completion",
+          "agent": "executor:a197849",
+          "detail": "completed",
+          "sourceKey": "session-stop:a197849b72a2fd367"
+        },
+        {
+          "id": "session-stop:aae283b2646a35201:2026-08-24T17:35:24.208Z",
+          "at": "2026-08-24T17:35:24.208Z",
+          "kind": "completion",
+          "agent": "executor:aae283b",
+          "detail": "completed",
+          "sourceKey": "session-stop:aae283b2646a35201"
+        },
+        {
+          "id": "session-start:a89ffc77946d65f5e:2026-08-24T19:05:15.423Z",
+          "at": "2026-08-24T19:05:15.423Z",
+          "kind": "update",
+          "agent": "executor:a89ffc7",
+          "detail": "started executor:a89ffc7",
+          "sourceKey": "session-start:a89ffc77946d65f5e"
+        },
+        {
+          "id": "session-stop:a89ffc77946d65f5e:2026-08-24T19:47:41.644Z",
+          "at": "2026-08-24T19:47:41.644Z",
+          "kind": "completion",
+          "agent": "executor:a89ffc7",
+          "detail": "completed",
+          "sourceKey": "session-stop:a89ffc77946d65f5e"
+        }
+      ]
+    }
+  ]
+}
