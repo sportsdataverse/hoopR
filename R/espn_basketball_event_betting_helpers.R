@@ -11,8 +11,7 @@
 #'
 #' Fetches
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/events/{event_id}/competitions/{event_id}/odds`
-#' and returns a tidy tibble (one row per provider). MBB will typically return
-#' an empty tibble because ESPN does not carry NCAA basketball odds lines.
+#' and returns a tidy tibble (one row per provider).
 #'
 #' @param league character. `"nba"` or `"mens-college-basketball"`.
 #' @param event_id character or numeric. ESPN event/game identifier.
@@ -143,6 +142,78 @@
     finally = {}
   )
   return(result)
+}
+
+# ---------------------------------------------------------------------------
+# .espn_basketball_pickcenter_fallback
+# ---------------------------------------------------------------------------
+
+#' Internal: build a pickcenter-shaped tibble from Core v2 event odds
+#'
+#' ESPN's Site v2 `summary` payload now frequently ships an empty
+#' `pickcenter` array (key present, zero rows) -- see hoopR issues #136,
+#' #153, #173. The Core v2 `.../odds` endpoint still carries the same
+#' provider-level betting lines, so this maps its columns onto the
+#' documented `pickcenter` shape (columns the Core v2 odds payload
+#' doesn't carry, e.g. spread odds / win percentage, are filled `NA`).
+#'
+#' @param league character. `"nba"` or `"mens-college-basketball"`.
+#' @param game_id character or numeric. ESPN event/game identifier.
+#' @return A `hoopR_data` tibble with the `pickcenter` column shape,
+#'   or a zero-row/column `data.frame()` if the Core v2 odds endpoint
+#'   has no providers either.
+#' @noRd
+.espn_basketball_pickcenter_fallback <- function(league, game_id) {
+  odds <- tryCatch(
+    .espn_basketball_event_odds(league = league, event_id = game_id),
+    error = function(e) NULL
+  )
+  if (is.null(odds) || nrow(odds) == 0) {
+    return(data.frame())
+  }
+  odds %>%
+    dplyr::transmute(
+      details = .data$details,
+      over_under = .data$over_under,
+      spread = .data$spread,
+      provider_id = suppressWarnings(as.integer(.data$provider_id)),
+      provider_name = .data$provider_name,
+      provider_priority = NA_integer_,
+      away_team_odds_favorite = NA,
+      away_team_odds_underdog = NA,
+      away_team_odds_money_line = .data$away_money_line,
+      away_team_odds_spread_odds = NA_real_,
+      away_team_odds_team_id = NA_integer_,
+      away_team_odds_win_percentage = NA_real_,
+      away_team_odds_average_score = NA_real_,
+      away_team_odds_money_line_odds = NA_real_,
+      away_team_odds_spread_return = NA_real_,
+      away_team_odds_spread_record_wins = NA_integer_,
+      away_team_odds_spread_record_losses = NA_integer_,
+      away_team_odds_spread_record_pushes = NA_integer_,
+      away_team_odds_spread_record_summary = NA_character_,
+      home_team_odds_favorite = NA,
+      home_team_odds_underdog = NA,
+      home_team_odds_money_line = .data$home_money_line,
+      home_team_odds_spread_odds = NA_real_,
+      home_team_odds_team_id = NA_integer_,
+      home_team_odds_win_percentage = NA_real_,
+      home_team_odds_average_score = NA_real_,
+      home_team_odds_money_line_odds = NA_real_,
+      home_team_odds_spread_return = NA_real_,
+      home_team_odds_spread_record_wins = NA_integer_,
+      home_team_odds_spread_record_losses = NA_integer_,
+      home_team_odds_spread_record_pushes = NA_integer_,
+      home_team_odds_spread_record_summary = NA_character_,
+      game_id = as.integer(game_id)
+    ) %>%
+    make_hoopR_data(
+      paste0(
+        "ESPN ", toupper(league),
+        " Pickcenter Information (Core v2 odds fallback) from ESPN.com"
+      ),
+      Sys.time()
+    )
 }
 
 # ---------------------------------------------------------------------------

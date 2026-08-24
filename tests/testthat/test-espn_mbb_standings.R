@@ -90,3 +90,12 @@ test_that("ESPN - Get MBB Standings", {
   expect_s3_class(x, "data.frame")
 
 })
+
+test_that("ESPN - MBB Standings includes newer D1 teams (#144)", {
+  skip_on_cran()
+  skip_espn_test()
+  x <- espn_mbb_standings(year = 2025)
+  expect_gte(nrow(x), 362)
+  expect_true(any(grepl("Southern Indiana", x$team)))
+  expect_in("conference", colnames(x))
+})

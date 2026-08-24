@@ -1257,6 +1257,51 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
         return(conf_items)
       })
 
+      # ESPN's flat teams?limit=1000 list silently drops some current D1
+      # teams (#144, e.g. Queens/Lindenwood/Southern Indiana) that the
+      # conference-group listing above still carries. Backfill any team_id
+      # present in conference_teams but missing from the flat fetch by
+      # querying it individually before joining conference info back on.
+      missing_team_ids <- setdiff(unique(conference_teams$team_id), teams$team_id)
+      if (length(missing_team_ids) > 0) {
+        missing_teams <- purrr::map_dfr(missing_team_ids, function(tid) {
+          t_res <- tryCatch(
+            .retry_request(paste0(
+              "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/",
+              tid
+            )),
+            error = function(e) NULL
+          )
+          if (is.null(t_res) || httr2::resp_status(t_res) != 200L) {
+            return(NULL)
+          }
+          # Named `team_json` (not `team`) -- tibble() argument evaluation is
+          # data-masked, so a `team = ` output column would otherwise shadow
+          # this list for every later argument in the same tibble() call.
+          team_json <- t_res %>% .resp_text() %>% jsonlite::fromJSON() %>% purrr::pluck("team")
+          if (is.null(team_json) || is.null(team_json[["id"]])) {
+            return(NULL)
+          }
+          logos <- team_json[["logos"]]
+          tibble::tibble(
+            team_id = as.integer(team_json[["id"]]),
+            abbreviation = team_json[["abbreviation"]] %||% NA_character_,
+            display_name = team_json[["displayName"]] %||% NA_character_,
+            short_name = team_json[["shortDisplayName"]] %||% NA_character_,
+            mascot = team_json[["name"]] %||% NA_character_,
+            nickname = team_json[["nickname"]] %||% NA_character_,
+            team = team_json[["location"]] %||% NA_character_,
+            color = team_json[["color"]] %||% NA_character_,
+            alternate_color = team_json[["alternateColor"]] %||% NA_character_,
+            logo = if (is.data.frame(logos) && nrow(logos) > 0) logos[["href"]][1] else NA_character_,
+            logo_dark = if (is.data.frame(logos) && nrow(logos) > 1) logos[["href"]][2] else NA_character_
+          )
+        })
+        if (!is.null(missing_teams) && nrow(missing_teams) > 0) {
+          teams <- dplyr::bind_rows(teams, missing_teams)
+        }
+      }
+
       teams <- teams %>%
         dplyr::left_join(conference_teams, by = c("team_id" = "team_id")) %>%
         dplyr::left_join(conferences, by = c("group_id" = "group_id")) %>%
@@ -1715,7 +1760,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 #' try(espn_mbb_scoreboard(season = "20221117"))
 #' }
 espn_mbb_scoreboard <- function(season) {
-  max_year <- substr(Sys.Date(), 1, 4)
+  max_year <- as.integer(substr(Sys.Date(), 1, 4))
 
   if (!(as.integer(substr(season, 1, 4)) > 2001)) {
     message(paste("Error: Season must be between 2001 and", max_year + 1))
@@ -1724,21 +1769,67 @@ espn_mbb_scoreboard <- function(season) {
   # year > 2000
   season <- as.character(season)
 
-  season_dates <- season
+  # A bare 4-digit season (e.g. "2024") is a season YEAR, not a calendar
+  # year -- the MBB season runs November of {season - 1} through April of
+  # {season}. ESPN's `dates=` param treats a bare year as calendar-year-only
+  # (Jan 1 onward), silently dropping the season's November/December games
+  # (#150). Query both the season year and the prior calendar year and
+  # filter down to the games ESPN itself assigns to this season; ESPN
+  # rejects date-RANGE syntax for MBB, so this has to be two separate
+  # `dates=` requests per group rather than one `dates=Y0101-Y1231` call.
+  # A specific date (e.g. "20231108", the documented single-day usage) is
+  # left untouched -- it already resolves to the right games.
+  is_season_year <- nchar(season) == 4L
+  season_dates <- if (is_season_year) {
+    c(as.character(as.integer(season) - 1L), season)
+  } else {
+    season
+  }
 
   # check for regular and postseason games
 
   scoreboard_df <-
     purrr::map2_dfr(
-      c("56", "55", "50", "100"),
-      rep(season, 4),
+      rep(c("56", "55", "50", "100"), each = length(season_dates)),
+      rep(season_dates, times = 4),
       parse_espn_mbb_scoreboard
     )
 
+  if (is_season_year) {
+    # The regular-season group ("50") runs thousands of games/year, so a
+    # single `dates={season - 1}` whole-year request above hits ESPN's
+    # `limit=1000` cap in mid-January and never reaches November/December
+    # -- the exact months this fix needs. Backfill them with one request
+    # per day (postseason groups 56/55/100 never play in Nov/Dec, so only
+    # "50" needs this).
+    fall_dates <- format(
+      seq(
+        as.Date(paste0(as.integer(season) - 1L, "-11-01")),
+        as.Date(paste0(as.integer(season) - 1L, "-12-31")),
+        by = "day"
+      ),
+      "%Y%m%d"
+    )
+    fall_df <- purrr::map_dfr(
+      fall_dates,
+      function(d) parse_espn_mbb_scoreboard(group = "50", season_dates = d)
+    )
+    scoreboard_df <- dplyr::bind_rows(scoreboard_df, fall_df)
+  }
+
+  if (is_season_year && nrow(scoreboard_df)) {
+    # `.env$season` disambiguates the function argument from the identically
+    # named `season` data column -- dplyr's data mask otherwise resolves the
+    # bare name to the column on both sides, making this filter a silent
+    # no-op.
+    scoreboard_df <- scoreboard_df %>%
+      dplyr::filter(as.integer(.data$season) == as.integer(.env$season))
+  }
+
   # A game can be returned under more than one ESPN group ID (e.g. a
   # Division I conference tournament game also carries a national group
-  # tag), so the four-group union above can duplicate rows for the same
-  # game_id. Keep one row per game (#160).
+  # tag), and the per-day fall backfill re-returns games the whole-year
+  # request already captured, so keep one row per game (#160).
   if (nrow(scoreboard_df) && "game_id" %in% names(scoreboard_df)) {
     scoreboard_df <- scoreboard_df %>%
       dplyr::distinct(.data$game_id, .keep_all = TRUE)
@@ -1897,6 +1988,7 @@ espn_mbb_rankings <- function() {
 #'    |:---------------------------------|:---------|:-----------------------------------------------------|
 #'    |team_id                           |integer   |Unique team identifier.                               |
 #'    |team                              |character |Team-side label or team identifier.                   |
+#'    |conference                        |character |Conference group name from ESPN standings.            |
 #'    |avgpointsagainst                  |numeric   |Avgpointsagainst.                                     |
 #'    |avgpointsfor                      |numeric   |Avgpointsfor.                                         |
 #'    |gamesbehind                       |numeric   |Gamesbehind.                                          |
@@ -1984,7 +2076,7 @@ espn_mbb_rankings <- function() {
 espn_mbb_standings <- function(year = most_recent_mbb_season()) {
   .args <- mget(setdiff(names(formals()), "..."))
   standings_url <-
-    "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
+    "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
 
   ## Inputs
   ## year
@@ -2008,16 +2100,39 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
       raw_resp <- resp %>%
         jsonlite::fromJSON()
 
-      raw_standings <- raw_resp %>%
-        purrr::pluck("standings")
-      # Create a dataframe of all NBA teams by extracting from the raw_standings file
+      # level=3 groups standings by conference under "children"; ESPN's flat
+      # level=1 list silently omits some current D1 teams (#144), so
+      # row-bind each conference group's entries instead.
+      raw_children <- raw_resp %>%
+        purrr::pluck("children")
+
+      conference_entries <- raw_children[["standings"]][["entries"]]
+      conference_names <- raw_children[["name"]]
+
+      # Conferences with no season played yet come back with a NULL entries
+      # list -- drop them instead of binding a bogus row.
+      has_entries <- !vapply(conference_entries, is.null, logical(1))
+
+      entries_list <- Map(
+        function(entries, conference) {
+          entries$conference <- conference
+          entries
+        },
+        conference_entries[has_entries],
+        conference_names[has_entries]
+      )
+
+      raw_standings <- list(entries = dplyr::bind_rows(entries_list))
+      # Create a dataframe of all MBB teams by extracting from the raw_standings file
 
       teams <- raw_standings[["entries"]][["team"]]
+      teams$conference <- raw_standings[["entries"]][["conference"]]
 
       teams <- teams %>%
         dplyr::select(
           "id",
-          "displayName"
+          "displayName",
+          "conference"
         ) %>%
         dplyr::rename(
           "team_id" = "id",
@@ -2320,6 +2435,9 @@ espn_mbb_betting <- function(game_id) {
 
     }
   )
+  if (nrow(pickcenter) == 0) {
+    pickcenter <- .espn_basketball_pickcenter_fallback("mens-college-basketball", game_id)
+  }
   betting <-
     c(
       list(pickcenter),

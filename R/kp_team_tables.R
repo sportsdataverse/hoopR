@@ -1998,52 +1998,30 @@ kp_team_player_stats <- function(team, year = 2021){
 #'
 #' @param team Team filter to select.
 #' @param year Year of data to pull
-#' @return A data frame with the following columns:
+#' @return A data frame with one row per rostered player, with the following columns:
 #'
-#'    |col_name             |types     |description                                  |
-#'    |:--------------------|:---------|:--------------------------------------------|
-#'    |pg_number            |numeric   |Pg number.                                   |
-#'    |pg_player_first_name |character |Pg player first name.                        |
-#'    |pg_player_last_name  |character |Pg player last name.                         |
-#'    |pg_hgt               |character |Pg hgt.                                      |
-#'    |pg_wgt               |numeric   |Pg wgt.                                      |
-#'    |pg_yr                |character |Pg yr.                                       |
-#'    |pg_min_pct           |numeric   |Pg min percentage (0-1 decimal).             |
-#'    |sg_number            |numeric   |Sg number.                                   |
-#'    |sg_player_first_name |character |Sg player first name.                        |
-#'    |sg_player_last_name  |character |Sg player last name.                         |
-#'    |sg_hgt               |character |Sg hgt.                                      |
-#'    |sg_wgt               |numeric   |Sg wgt.                                      |
-#'    |sg_yr                |character |Sg yr.                                       |
-#'    |sg_min_pct           |numeric   |Sg min percentage (0-1 decimal).             |
-#'    |sf_number            |numeric   |Sf number.                                   |
-#'    |sf_player_first_name |character |Sf player first name.                        |
-#'    |sf_player_last_name  |character |Sf player last name.                         |
-#'    |sf_hgt               |character |Sf hgt.                                      |
-#'    |sf_wgt               |numeric   |Sf wgt.                                      |
-#'    |sf_yr                |character |Sf yr.                                       |
-#'    |sf_min_pct           |numeric   |Sf min percentage (0-1 decimal).             |
-#'    |pf_number            |numeric   |Pf number.                                   |
-#'    |pf_player_first_name |character |Personal fouls player first name.            |
-#'    |pf_player_last_name  |character |Personal fouls player last name.             |
-#'    |pf_hgt               |character |Pf hgt.                                      |
-#'    |pf_wgt               |numeric   |Pf wgt.                                      |
-#'    |pf_yr                |character |Pf yr.                                       |
-#'    |pf_min_pct           |numeric   |Personal fouls min percentage (0-1 decimal). |
-#'    |c_number             |numeric   |C number.                                    |
-#'    |c_player_first_name  |character |C player first name.                         |
-#'    |c_player_last_name   |character |C player last name.                          |
-#'    |c_hgt                |character |C hgt.                                       |
-#'    |c_wgt                |numeric   |C wgt.                                       |
-#'    |c_yr                 |character |C yr.                                        |
-#'    |c_min_pct            |numeric   |C min percentage (0-1 decimal).              |
-#'    |team                 |character |Team-side label or team identifier.          |
-#'    |year                 |numeric   |4-digit year.                                |
+#'    |col_name    |types     |description                                                  |
+#'    |:-----------|:---------|:-------------------------------------------------------------|
+#'    |team        |character |Team-side label or team identifier.                            |
+#'    |year        |numeric   |4-digit year.                                                  |
+#'    |player_id   |integer   |KenPom player identifier.                                       |
+#'    |player_name |character |Player full name.                                               |
+#'    |class_year  |character |Class year (e.g. 'Fr', 'So', 'Jr', 'Sr').                       |
+#'    |height      |character |Height (e.g. '6-9').                                            |
+#'    |weight      |numeric   |Weight in pounds.                                               |
+#'    |pct_pg      |numeric   |Percentage of the player's minutes played at point guard (0-1 decimal). |
+#'    |pct_sg      |numeric   |Percentage of the player's minutes played at shooting guard (0-1 decimal). |
+#'    |pct_sf      |numeric   |Percentage of the player's minutes played at small forward (0-1 decimal). |
+#'    |pct_pf      |numeric   |Percentage of the player's minutes played at power forward (0-1 decimal). |
+#'    |pct_c       |numeric   |Percentage of the player's minutes played at center (0-1 decimal). |
+#'    |pct_poss    |numeric   |Percentage of team possessions used while the player was on the floor (0-1 decimal). |
+#'    |fta         |integer   |Season free throw attempts.                                     |
+#'    |fg2a        |integer   |Season 2-point field goal attempts.                             |
+#'    |fg3a        |integer   |Season 3-point field goal attempts.                             |
 #'
 #' @importFrom cli cli_abort
-#' @importFrom dplyr select mutate filter  bind_cols bind_rows
-#' @importFrom stringr str_extract str_remove str_replace str_detect str_trim
-#' @importFrom tidyr separate
+#' @importFrom dplyr select mutate filter rename
+#' @importFrom stringr str_extract
 #' @import rvest
 #' @export
 #' @keywords Depth Chart
@@ -2085,125 +2063,60 @@ kp_team_depth_chart <- function(team, year= 2021){
 
       page <- .kp_get_page(browser, url)
       Sys.sleep(5)
-      depth1_header_cols <- c("PG", "PG.Min.Pct", "SG", "SG.Min.Pct", "SF", "SF.Min.Pct",
-                             "PF", "PF.Min.Pct", "C", "C.Min.Pct")
 
-      depth1 <- (page %>%
-                   rvest::html_elements(css = '#dc-table'))[[1]] %>%
-        rvest::html_table() %>%
-        as.data.frame()
+      # KenPom removed the `#dc-table` depth chart table (#152); team.php
+      # now renders an empty `<div id="depth-chart">` client-side from a
+      # `const players = [...]` JSON array embedded in an inline <script>
+      # tag. Extract that JSON directly rather than scraping rendered HTML.
+      scripts <- page %>% rvest::html_elements("script") %>% rvest::html_text()
+      players_script <- scripts[stringr::str_detect(scripts, "const players = ")]
+      if (length(players_script) == 0) {
+        cli::cli_abort("Could not find the depth chart player data on KenPom's team page -- the site layout may have changed again.")
+      }
+      players_json <- stringr::str_extract(players_script[[1]], "const players = (\\[.*?\\]);", group = 1)
 
-      colnames(depth1) <- depth1_header_cols
-
-      suppressWarnings(
-        depth1 <- depth1 %>%
-          dplyr::filter(.data$PG != "PG")
-      )
-
-      depth1 <- depth1 %>%
+      depth1 <- jsonlite::fromJSON(players_json) %>%
+        dplyr::rename(
+          player_id = "playerID",
+          player_name = "Name",
+          class_year = "Year",
+          height = "Height",
+          weight = "Weight"
+        ) %>%
         dplyr::mutate(
-          PG.Yr = substr(.data$PG, nchar(.data$PG) - 2, nchar(.data$PG)),
-          PG = substr(.data$PG, 1, nchar(.data$PG) - 3),
-          PG.Wgt = stringr::str_extract(.data$PG, '\\d{3}'),
-          PG = stringr::str_trim(stringr::str_remove(.data$PG, '\\d{3}')),
-          PG.Hgt = stringr::str_extract(.data$PG, '\\d{1}-\\d{0,2}'),
-          PG = stringr::str_remove(.data$PG, '\\d{1}-\\d{0,2}'),
-          SG.Yr = substr(.data$SG, nchar(.data$SG) - 2, nchar(.data$SG)),
-          SG = substr(.data$SG, 1, nchar(.data$SG) - 3),
-          SG.Wgt = stringr::str_extract(.data$SG, '\\d{3}'),
-          SG = stringr::str_trim(stringr::str_remove(.data$SG, '\\d{3}')),
-          SG.Hgt = stringr::str_extract(.data$SG, '\\d{1}-\\d{0,2}'),
-          SG = stringr::str_remove(.data$SG, '\\d{1}-\\d{0,2}'),
-          SF.Yr = substr(.data$SF, nchar(.data$SF) - 2, nchar(.data$SF)),
-          SF = substr(.data$SF, 1, nchar(.data$SF) - 3),
-          SF.Wgt = stringr::str_extract(.data$SF, '\\d{3}'),
-          SF = stringr::str_trim(stringr::str_remove(.data$SF, '\\d{3}')),
-          SF.Hgt = stringr::str_extract(.data$SF, '\\d{1}-\\d{0,2}'),
-          SF = stringr::str_remove(.data$SF, '\\d{1}-\\d{0,2}'),
-          PF.Yr = substr(.data$PF, nchar(.data$PF) - 2, nchar(.data$PF)),
-          PF = substr(.data$PF, 1, nchar(.data$PF) - 3),
-          PF.Wgt = stringr::str_extract(.data$PF,'\\d{3}'),
-          PF = stringr::str_trim(stringr::str_remove(.data$PF,'\\d{3}')),
-          PF.Hgt = stringr::str_extract(.data$PF, '\\d{1}-\\d{0,2}'),
-          PF = stringr::str_remove(.data$PF, '\\d{1}-\\d{0,2}'),
-          C.Yr = substr(.data$C, nchar(.data$C) - 2, nchar(.data$C)),
-          C = substr(.data$C, 1, nchar(.data$C) - 3),
-          C.Wgt = stringr::str_extract(.data$C, '\\d{3}'),
-          C = stringr::str_trim(stringr::str_remove(.data$C, '\\d{3}')),
-          C.Hgt = stringr::str_extract(.data$C, '\\d{1}-\\d{0,2}'),
-          C = stringr::str_remove(.data$C, '\\d{1}-\\d{0,2}')
-        )
-      suppressWarnings(
-        depth1 <- depth1 %>%
-          tidyr::separate("PG", into = c("PG.Number", "PG.PlayerFirstName", "PG.PlayerLastName"), sep = "[^\\w']") %>%
-          tidyr::separate("SG", into = c("SG.Number", "SG.PlayerFirstName", "SG.PlayerLastName"), sep = "[^\\w']") %>%
-          tidyr::separate("SF", into = c("SF.Number", "SF.PlayerFirstName", "SF.PlayerLastName"), sep = "[^\\w']") %>%
-          tidyr::separate("PF", into = c("PF.Number", "PF.PlayerFirstName", "PF.PlayerLastName"), sep = "[^\\w']") %>%
-          tidyr::separate("C", into = c("C.Number", "C.PlayerFirstName", "C.PlayerLastName"), sep = "[^\\w']")
-      )
-      suppressWarnings(
-        depth1 <- depth1 %>%
-          dplyr::mutate(
-            Team = team,
-            Year = year,
-            PG.Min.Pct = as.numeric(stringr::str_replace(.data$PG.Min.Pct, '%', ''))/100,
-            SG.Min.Pct = as.numeric(stringr::str_replace(.data$SG.Min.Pct, '%', ''))/100,
-            SF.Min.Pct = as.numeric(stringr::str_replace(.data$SF.Min.Pct, '%', ''))/100,
-            PF.Min.Pct = as.numeric(stringr::str_replace(.data$PF.Min.Pct, '%', ''))/100,
-            C.Min.Pct = as.numeric(stringr::str_replace(.data$C.Min.Pct, '%', ''))/100,
-            PG.Number = as.numeric(.data$PG.Number),
-            SG.Number = as.numeric(.data$SG.Number),
-            SF.Number = as.numeric(.data$SF.Number),
-            PF.Number = as.numeric(.data$PF.Number),
-            C.Number = as.numeric(.data$C.Number),
-            PG.Wgt = as.numeric(.data$PG.Wgt),
-            SG.Wgt = as.numeric(.data$SG.Wgt),
-            SF.Wgt = as.numeric(.data$SF.Wgt),
-            PF.Wgt = as.numeric(.data$PF.Wgt),
-            C.Wgt = as.numeric(.data$C.Wgt))
-      )
-      depth1 <- depth1 %>%
+          team = team,
+          year = year,
+          pct_pg = .data$PctPG / 100,
+          pct_sg = .data$PctSG / 100,
+          pct_sf = .data$PctSF / 100,
+          pct_pf = .data$PctPF / 100,
+          pct_c = .data$PctC / 100,
+          pct_poss = .data$PctPoss / 100,
+          fta = as.integer(.data$FTA),
+          fg2a = as.integer(.data$FG2A),
+          fg3a = as.integer(.data$FG3A)
+        ) %>%
         dplyr::select(
-          "PG.Number",
-          "PG.PlayerFirstName",
-          "PG.PlayerLastName",
-          "PG.Hgt",
-          "PG.Wgt",
-          "PG.Yr",
-          "PG.Min.Pct",
-          "SG.Number",
-          "SG.PlayerFirstName",
-          "SG.PlayerLastName",
-          "SG.Hgt",
-          "SG.Wgt",
-          "SG.Yr",
-          "SG.Min.Pct",
-          "SF.Number",
-          "SF.PlayerFirstName",
-          "SF.PlayerLastName",
-          "SF.Hgt",
-          "SF.Wgt",
-          "SF.Yr",
-          "SF.Min.Pct",
-          "PF.Number",
-          "PF.PlayerFirstName",
-          "PF.PlayerLastName",
-          "PF.Hgt",
-          "PF.Wgt",
-          "PF.Yr",
-          "PF.Min.Pct",
-          "C.Number",
-          "C.PlayerFirstName",
-          "C.PlayerLastName",
-          "C.Hgt",
-          "C.Wgt",
-          "C.Yr",
-          "C.Min.Pct",
-          "Team",
-          "Year")
+          "team",
+          "year",
+          "player_id",
+          "player_name",
+          "class_year",
+          "height",
+          "weight",
+          "pct_pg",
+          "pct_sg",
+          "pct_sf",
+          "pct_pf",
+          "pct_c",
+          "pct_poss",
+          "fta",
+          "fg2a",
+          "fg3a"
+        )
+
       ### Store Data
-      kenpom <- depth1 %>%
-        janitor::clean_names()
+      kenpom <- depth1
     },
     error = function(e) .report_api_error(
       e,

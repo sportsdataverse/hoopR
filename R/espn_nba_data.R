@@ -1376,7 +1376,7 @@ espn_nba_team_current_roster <- function(team_id) {
 #' }
 espn_nba_scoreboard <- function(season) {
   .args <- mget(setdiff(names(formals()), "..."))
-  max_year <- substr(Sys.Date(), 1, 4)
+  max_year <- as.integer(substr(Sys.Date(), 1, 4))
 
   if (!(as.integer(substr(season, 1, 4)) > 2001)) {
     message(paste("Error: Season must be between 2001 and", max_year + 1))
@@ -2105,6 +2105,9 @@ espn_nba_betting <- function(game_id) {
     warning = function(w) {},
     finally = {}
   )
+  if (nrow(pickcenter) == 0) {
+    pickcenter <- .espn_basketball_pickcenter_fallback("nba", game_id)
+  }
   betting <- c(list(pickcenter), list(againstTheSpread), list(predictor_df))
   names(betting) <- c("pickcenter", "againstTheSpread", "predictor")
   return(betting)

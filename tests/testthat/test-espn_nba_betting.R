@@ -48,3 +48,16 @@ test_that("ESPN - Get NBA Betting", {
   expect_type(x, "list")
 
 })
+
+test_that("ESPN - Get NBA Betting falls back to Core v2 odds when pickcenter is empty (#136, #153, #173)", {
+  skip_on_cran()
+  skip_espn_test()
+
+  x <- espn_nba_betting(game_id = 401809781)
+
+  expect_gt(nrow(x$pickcenter), 0)
+  expect_in(
+    c("provider_id", "provider_name", "over_under", "spread", "game_id"),
+    colnames(x$pickcenter)
+  )
+})
