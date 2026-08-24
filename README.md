@@ -48,6 +48,14 @@ Pomeroy’s men’s college basketball statistics website,
 subscription the capability to scrape the website tables and analyze the
 data for themselves.
 
+As of version 3.1.0, the package exports 600+ functions spanning the NBA
+Stats API (`nba_*`), ESPN (`espn_nba_*` / `espn_mbb_*`), KenPom
+(`kp_*`), CollegeBasketballData (`cbbd_*`), Basketball-Reference
+(`bref_*`), Bart Torvik (`torvik_*`), RealGM (`realgm_*`), Fox Sports
+(`fox_*`), NCAA (`ncaa_mbb_*`), and NBA G-League (`nbagl_*`), plus
+`load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` bulk-data loaders
+backed by the `sportsdataverse-data` release repos.
+
 ## Installation
 
 You can install the CRAN version of
@@ -81,9 +89,9 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.39 sec elapsed
+    ## 4.05 sec elapsed
 
-    ## 619841 rows of NBA play-by-play data from 1279 games.
+    ## 642472 rows of NBA play-by-play data from 1325 games.
 
 ### **Men’s college basketball full play-by-play seasons (2006-2026) \~ 2-3 minutes**
 
@@ -95,7 +103,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 10.62 sec elapsed
+    ## 12.98 sec elapsed
 
     ## 2915731 rows of men's college basketball play-by-play data from 6275 games.
 
@@ -131,7 +139,7 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
     <a href="https://x.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge" alt="@theFirmAISports" /></a>
     <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
-  - Billy Fryer (@\_b4billy\_)
+  - Billy Fryer (@BillyFryer42)
     <a href="https://x.com/BillyFryer42" target="blank"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge" alt="@BillyFryer42" /></a>
     <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
 

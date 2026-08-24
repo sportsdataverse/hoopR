@@ -18,7 +18,7 @@
 
 ## Project Context
 
-hoopR is an R package (v3.0.0) that wraps the NBA Stats API, ESPN API, and KenPom. It exports 270+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
+hoopR is an R package (v3.1.0) that wraps the NBA Stats API, ESPN API, KenPom, CollegeBasketballData, Basketball-Reference, Bart Torvik, RealGM, and Fox Sports. It exports 600+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
 
 When there is any conflict between this file and repository contributor docs, follow `CONTRIBUTING.md` and the current helper/test implementations under `tests/testthat/` as the source of truth.
 
@@ -69,9 +69,14 @@ All user-facing messages use `cli`. The `usethis` package is in `Suggests` only 
 | NBA Stats API | `nba_`                    | `nba_leagueleaders()`, `nba_boxscoretraditionalv3()` |
 | ESPN API      | `espn_nba_` / `espn_mbb_` | `espn_nba_pbp()`, `espn_mbb_teams()`                 |
 | KenPom        | `kp_`                     | `kp_pomeroy_ratings()`, `kp_box()`                   |
+| CollegeBasketballData | `cbbd_`           | `cbbd_games()`, `cbbd_ratings_srs()`                 |
+| Basketball-Reference | `bref_`            | `bref_players_stats()`, `bref_standings()`           |
+| Bart Torvik   | `torvik_`                 | `torvik_ratings()`, `torvik_game_stats()`            |
+| RealGM        | `realgm_`                 | `realgm_players()`, `realgm_standings()`             |
+| Fox Sports    | `fox_nba_` / `fox_mbb_`   | `fox_nba_pbp()`, `fox_mbb_standings()`               |
 | NBA G-League  | `nbagl_`                  | `nbagl_schedule()`, `nbagl_standings()`              |
 | NCAA          | `ncaa_mbb_`               | `ncaa_mbb_teams()`                                   |
-| Data loaders  | `load_nba_` / `load_mbb_` | `load_nba_pbp()`, `load_mbb_team_box()`              |
+| Data loaders  | `load_nba_` / `load_mbb_` / `load_ncaa_mbb_` | `load_nba_pbp()`, `load_mbb_team_box()`, `load_ncaa_mbb_rapm()` |
 
 ## Roxygen Documentation
 
@@ -175,7 +180,7 @@ Two regeneration steps are part of the commit workflow whenever the relevant sou
 - **DESCRIPTION.** After editing `DESCRIPTION` (deps, versions, `Authors@R`, etc.), run `usethis::use_tidy_description()` to normalize field order, alphabetize `Imports`/`Suggests`, and reflow long lines. Run it even for one-line edits.
 
 - **Release notes triad — `NEWS.md` / `cran-comments.md` / `_pkgdown.yml`.** Whenever you add a `NEWS.md` bullet, check the other two:
-  - `NEWS.md` — all new bullets go under the most recent **unreleased** version heading (currently `# **hoopR 3.0.0**`). Do NOT create a new version section ahead of release; extend the existing subsections (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, ...). After the release ships the rule rolls forward to the next dev version.
+  - `NEWS.md` — all new bullets go under the most recent **unreleased** version heading (currently `# **hoopR 3.1.0**`). Do NOT create a new version section ahead of release; extend the existing subsections (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, ...). After the release ships the rule rolls forward to the next dev version.
   - `cran-comments.md` — every user-visible / behavioral change in `NEWS.md` should be reflected in `cran-comments.md` before submission. Internal-only changes (refactors, test infra, dev tooling) can be omitted.
   - `_pkgdown.yml` — new exports go in the right `reference:` section. `starts_with()` selectors auto-pick up `nba_*` / `espn_*` / `kp_*` / `ncaa_*` prefixes; explicitly-listed functions need a manual entry. `lifecycle::deprecate_stop()` + `@keywords internal` excludes a function from the rendered index by default.
 

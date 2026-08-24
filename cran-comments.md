@@ -1,7 +1,9 @@
 ## Release summary
 
 This is a minor release (v3.1.0) on top of v3.0.0. It addresses three
-themes that emerged after the 3.0.0 CRAN submission:
+themes that emerged after the 3.0.0 CRAN submission, plus a further round
+of loaders, database-write fixes, and endpoint corrections added late in
+the development cycle (see "Late-cycle additions" below):
 
 1. **An upstream endpoint emergency** — `stats.nba.com/stats/scheduleleaguev2`
    started returning `Connection was reset` to many client environments in
@@ -251,25 +253,57 @@ themes that emerged after the 3.0.0 CRAN submission:
   `\donttest{}` examples, network-gated tests.
 
 
+### Late-cycle additions (August 2026)
+
+* Adds 36 further bulk-data loaders late in the release cycle, following the
+  same loader shape: a 13-function NCAA men's-basketball family
+  (`load_ncaa_mbb_pbp()`, `_shots()`, `_lineups()`, `_matchup_stints()`,
+  `_possessions()`, `_rapm()`, `_rapm_within_team()`, `_player_box()`,
+  `_team_box()`, `_rosters()`, `_team_rosters()`, `_schedule()`,
+  `_team_ids()`) reading stats.ncaa.org-derived datasets produced by the
+  companion `sportsdataverse-py` engine (hoopR ships loaders only — no new
+  scraping surface or dependencies), `load_nba_shots()` / `load_mbb_shots()`
+  (ESPN shot events), three model datasets (`load_nba_player_impact()`,
+  `load_mbb_ratings()`, `load_mbb_player_value()`), and an 18-function
+  `nba_stats` release-dataset family (17 tag loaders + the
+  `load_nba_stats_leaguedash()` 36-table cube, plus `update_nba_stats_db()`
+  and `most_recent_nba_stats_season()`). `parquet_from_url()` is added to
+  `utils.R` for the two parquet-only model tags; `arrow` moves to
+  `Suggests`. All were verified live against the published release assets,
+  with returns documentation derived from the real files.
+* `...` is now genuinely forwarded to `DBI::dbWriteTable()` in every
+  `load_*()` loader that documents it (23 call sites), and 16 loaders that
+  documented an optional database write without performing it now perform
+  it. The `hoopR_data` class vector no longer includes `"data.table"`,
+  which was causing `tail()`/`head()` on loader results to mis-dispatch and
+  error (`Error in x[i]: Can't subset columns past the end.`). Fixes #88.
+* NBA Stats API lifecycle corrections from a residential-IP live re-probe:
+  restores `nba_scoreboardv2()`; soft-deprecates `nba_videoeventsasset()`
+  (confirmed permanently empty); documents `nba_boxscoreadvancedv2()` as
+  league-scoped (dead for NBA, live for WNBA/G-League) rather than
+  deprecating it; applies the `LeagueID`-first parameter ordering (see Bug
+  fixes above) mechanically across 78 additional params-list sites; and
+  deduplicates `espn_mbb_scoreboard()`, which was double-counting games
+  tagged under more than one ESPN group id. Fixes #160.
+* ESPN fixes: `espn_mbb_betting()` / `espn_nba_betting()` cascade to the
+  Core v2 event odds endpoint when the summary `pickcenter` is empty (Fixes
+  #136, #153, #173); `espn_mbb_standings()` switches to ESPN's
+  conference-grouped `level=3` view and `espn_mbb_teams()` backfills teams
+  its flat fetch drops (Fixes #144, all 366 teams); `espn_mbb_scoreboard()`
+  / `espn_nba_scoreboard()` fix an integer-cast bug and backfill
+  November/December games that ESPN's calendar-year `dates=` semantics
+  otherwise drop for a season-year input (Fixes #150).
+* `kp_team_depth_chart()` is repointed at KenPom's new embedded-JSON depth
+  chart source (`team.php` dropped the `#dc-table` HTML table). The return
+  shape changes from one wide row per team to one row per player, with
+  `pct_pg`/`pct_sg`/`pct_sf`/`pct_pf`/`pct_c` position-share columns. Fixes
+  #152.
+* CI: bumped r-hub actions to v1.7.7 (node 24 runners); added
+  `skip_on_cran()` to every `test_that()` block (466 blocks).
+
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* checking CRAN incoming feasibility ... NOTE
-  - Days since last update: <n> (minor release on top of 3.0.0 published
-    <date>).
-
-* Win-builder R-devel: [PLACEHOLDER — run win-builder against 3.1.0 source
-  tarball and paste the result here. Expected: 0 errors | 0 warnings | 1
-  NOTE for the same nba.com URL false-positive flagged in 3.0.0 (HTTP/2
-  INTERNAL_ERROR to automated URL checkers; URLs are valid in browsers).]
-
-* R-hub: [PLACEHOLDER — run `rhub::rhub_check()` and paste the result here.]
-
-* Local R CMD check (R 4.5.x, Windows 11): clean per the most recent
-  `devtools::check()` run. Live API tests are gated by `RUN_NBA_TESTS=1`,
-  `RUN_ESPN_TESTS=1`, `RUN_KENPOM_TESTS=1`, etc., and are skipped under
-  routine `R CMD check --as-cran`.
+RESULTS PENDING — coordinator fills after the check.
 
 
 ## revdepcheck results

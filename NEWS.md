@@ -685,6 +685,135 @@ Every `tryCatch(expr = ...)` block in ESPN, NBA Stats, and KenPom wrappers now u
 - Live API test env vars enabled by default in the R CMD check workflow (previously had to be set per-job).
 - Additional test-suite hardening sweeps applied via the ported `tools/` scripts: return-value init guards on edge-case wrappers, subset-direction column assertions, skip-on-empty guards where wrappers can legitimately return empty.
 
+### **Late-cycle additions and fixes (August 2026)**
+
+#### *NCAA MBB + shots + model-dataset loaders*
+
+36 further bulk-data loaders, following the established `load_*()` shape:
+
+* A 13-function NCAA men's-basketball family reading the stats.ncaa.org-derived
+  datasets produced by the companion `sportsdataverse-py` engine (hoopR ships
+  loaders only): `load_ncaa_mbb_pbp()`, `_shots()`, `_lineups()`,
+  `_matchup_stints()`, `_possessions()`, `_rapm()` (league-wide regularized
+  adjusted plus-minus), `_rapm_within_team()`, `_player_box()`, `_team_box()`,
+  `_rosters()`, `_team_rosters()`, `_schedule()`, and `_team_ids()`.
+* `load_nba_shots()` and `load_mbb_shots()` for ESPN shot events (20-column
+  schema verified against real downloaded assets). `load_mbb_shots()`
+  documents and enforces the 2004/2005 gap seasons (no shot-coordinate assets
+  were published for those two seasons).
+* Three model datasets: `load_nba_player_impact()` (RAPM/SPM/BPM/DARKO),
+  `load_mbb_ratings()` (KenPom-style adjusted efficiency), and
+  `load_mbb_player_value()` (box-BPM), reading the `nba_player_impact` /
+  `mbb_ratings` / `mbb_player_value` release tags. The latter two are
+  parquet-only, so `parquet_from_url()` is added to `utils.R` and `arrow`
+  moves into `Suggests`.
+* An 18-function `nba_stats` release-dataset family mirroring the
+  `wnba_stats_*` loaders in `wehoop`: 17 tag loaders (`load_nba_stats_coaches()`,
+  `_draft()`, `_game_lineups()`, `_game_rosters()`, `_lineups()`,
+  `_officials()`, `_pbp()`, `_player_boxscores()`, `_player_game_logs()`,
+  `_player_season_stats()`, `_possessions()`, `_rosters()`, `_schedule()`,
+  `_shots()`, `_standings()`, `_team_boxscores()`, `_team_season_stats()`) plus
+  `load_nba_stats_leaguedash()` (a 36-table cube), `update_nba_stats_db()`, and
+  `most_recent_nba_stats_season()`. **Seasons are keyed on the START year**
+  (e.g. `2024` = the 2024-25 season), unlike the ESPN-backed `load_nba_*()`
+  family which keys on the season's end year — documented on each function.
+
+All were verified live against the published release assets, with returns
+documentation derived from the real files.
+
+#### *Database write plumbing*
+
+* `...` is now genuinely forwarded to `DBI::dbWriteTable()` across 23 loader
+  call sites, and the dead `dots <- rlang::dots_list(...)` capture that never
+  fed anywhere is removed.
+* 16 loaders that accepted/documented an optional `dbConnection`/`tablename`
+  write without performing it now perform it: `load_nba_team_box()`,
+  `load_nba_standings()`, `load_nba_game_rosters()`, `load_nba_officials()`,
+  `load_nba_draft()`, `load_nba_player_stats()`, `load_nba_team_stats()`,
+  `load_nba_rosters()`, `load_nba_player_core()`, `load_mbb_rosters()`,
+  `load_mbb_player_stats()`, `load_mbb_team_stats()`, `load_mbb_standings()`,
+  `load_mbb_game_rosters()`, `load_mbb_officials()`, `load_mbb_player_core()`.
+* Repaired the `hoopR_data` class vector (`make_hoopR_data()` and every
+  `load_nba_*()` / `load_mbb_*()` / crosswalk loader): `"data.table"` had been
+  mixed into the class vector alongside `"tbl_df"` without the internal state
+  `data.table` needs, so `tail()`/`head()` dispatched
+  `data.table:::tail.data.table()`, whose row-filter re-dispatched to
+  `tibble:::[.tbl_df()` (column semantics, not row semantics) and threw
+  `Error in x[i]: Can't subset columns past the end.` `tail()`/`head()`/
+  `print()`/`dplyr::filter()` now work correctly on loader results. Fixes #88.
+
+#### *NBA Stats API lifecycle corrections*
+
+A residential-IP live re-probe (2026-08-24) of the `nba_stats` family's
+mis-flagged/untested/dead-exported endpoints, backed by real probes rather
+than the endpoint catalog's capture flags alone:
+
+* **Restored**: `nba_scoreboardv2()` (`lifecycle::deprecate_stop()` removed —
+  confirmed live with real rows).
+* **Newly soft-deprecated**: `nba_videoeventsasset()` — HTTP 200 with zero
+  rows across multiple game/event IDs; `lifecycle::deprecate_warn(when =
+  "3.1.0")` (call still proceeds).
+* **Documented as league-scoped, not deprecated**: `nba_boxscoreadvancedv2()`
+  is dead for NBA (`LeagueID '00'`) but live for WNBA (`'10'`) and G-League
+  (`'20'`) — gains a `@details` note instead of a deprecation.
+* Probe dates and rationale recorded in `@details` on every already-deprecated
+  endpoint that was re-probed and kept deprecated (`nba_boxscorehustlev2()`,
+  `nba_homepageleaders()` / `nba_homepagev2()` / `nba_leaderstiles()`,
+  `nba_boxscoreplayertrackv2()`, `nba_scoreboard()`,
+  `nba_teamhistoricalleaders()`, `nba_videodetails()`,
+  `nba_winprobabilitypbp()`).
+* Doc notes: `nba_scoreboard()` / `nba_scoreboardv2()` point real-time users at
+  `nba_todays_scoreboard()`; `nba_homepageleaders()` notes `stat_category =
+  "Defense"` was never supported upstream; a shared `?hoopR` note covers
+  `stats.nba.com` / `stats.wnba.com` blocking datacenter/cloud IPs and the
+  `options(hoopR.proxy = ...)` escape hatch.
+* **LeagueID-first hardening sweep**: the `LeagueID`-first parameter-ordering
+  fix applied to `nba_leaguegamelog()` in 3.1.0 (see Bug fixes above) is now
+  applied mechanically to every other `nba_stats_*.R` wrapper that sends a
+  `LeagueID` param — 78 params-list sites across 15 files. No signature or
+  behavior changes.
+* `espn_mbb_scoreboard()` unioned four ESPN group IDs (56, 55, 50, 100)
+  without deduplicating, so a game tagged under more than one group was
+  double-counted (e.g. 18 rows for a 10-game slate). Fixed with
+  `dplyr::distinct(game_id, .keep_all = TRUE)`. Fixes #160.
+
+#### *ESPN fixes*
+
+* `espn_mbb_betting()` / `espn_nba_betting()`: ESPN's Site v2 `summary`
+  payload now frequently ships an empty `pickcenter` array. Both now cascade
+  to the Core v2 event odds endpoint and map its columns onto the documented
+  `pickcenter` shape when the summary is empty. Fixes #136, #153, #173.
+* `espn_mbb_standings()` switches from ESPN's flat `level=1` list to `level=3`
+  (conference-grouped), which includes D1 newcomers the flat list drops, and
+  gains a `conference` column. `espn_mbb_teams()` backfills the same
+  conference-crawl information for team ids its own flat `teams?limit=1000`
+  fetch independently drops. Fixes #144 (all 366 teams now returned).
+* `espn_mbb_scoreboard()` / `espn_nba_scoreboard()`: `max_year` was character,
+  so `max_year + 1` threw for out-of-range seasons — cast to integer.
+  `espn_mbb_scoreboard()` also passed a bare season year straight through to
+  ESPN's `dates=` param, which ESPN treats as calendar-year-only (Jan 1
+  onward), silently dropping the season's November/December games; for a
+  season-year input it now additionally queries the prior calendar year and
+  backfills the high-volume window (which otherwise hits ESPN's `limit=1000`
+  cap before reaching Nov/Dec) with one request per day, filtered to the
+  season ESPN itself assigns each game and deduplicated. Fixes #150.
+
+#### *KenPom fix*
+
+* `kp_team_depth_chart()`: KenPom removed the `#dc-table` table from
+  `team.php` — the page now ships an empty `<div id="depth-chart">` rendered
+  client-side from a `const players = [...]` JSON array embedded in an inline
+  `<script>` tag. The parser is repointed at that embedded JSON. The new
+  source reports each rostered player's percentage of minutes at every
+  position rather than a single starter/backup per slot, so **the return
+  shape changed from one wide row per team to one row per player** with
+  `pct_pg`/`pct_sg`/`pct_sf`/`pct_pf`/`pct_c` columns. Fixes #152.
+
+#### *CI*
+
+* Bumped r-hub actions to v1.7.7 (node 24 runners).
+* Added `skip_on_cran()` to every `test_that()` block (466 blocks).
+
 ### **Release / CRAN preparation**
 
 - Added `cph` (copyright holder) role to `Saiem Gilani` in `Authors@R` (CRAN strict requirement caught between releases).

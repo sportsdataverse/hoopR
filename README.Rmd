@@ -35,6 +35,8 @@ The package has functions to access **live play by play and box score** data fro
 
 It is additionally a scraping and aggregating interface for Ken Pomeroy's men's college basketball statistics website, [kenpom.com](https://kenpom.com/). It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.
 
+As of version 3.1.0, the package exports 600+ functions spanning the NBA Stats API (`nba_*`), ESPN (`espn_nba_*` / `espn_mbb_*`), KenPom (`kp_*`), CollegeBasketballData (`cbbd_*`), Basketball-Reference (`bref_*`), Bart Torvik (`torvik_*`), RealGM (`realgm_*`), Fox Sports (`fox_*`), NCAA (`ncaa_mbb_*`), and NBA G-League (`nbagl_*`), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` bulk-data loaders backed by the `sportsdataverse-data` release repos.
+
 ## Installation
 
 You can install the CRAN version of [**```hoopR```** ](https://CRAN.R-project.org/package=hoopR) with:
