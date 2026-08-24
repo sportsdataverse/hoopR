@@ -22,6 +22,14 @@ skip_nba_stats_test <- function(){
   }
 }
 
+skip_nba_stats_load_test <- function(){
+  if(Sys.getenv("NBA_STATS_LOAD_TESTS") != "1"){
+    skip("User can't run nba_stats release-loader tests")
+  } else {
+    invisible()
+  }
+}
+
 skip_nbagl_stats_test <- function(){
   if(Sys.getenv("NBAGL_STATS_TESTS") != "1"){
     skip("User can't run NBA G-League Stats tests")
