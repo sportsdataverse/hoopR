@@ -5,6 +5,7 @@
 
 test_that("load_nba_pbp forwards ... to DBI::dbWriteTable", {
   skip_on_cran()
+  skip_on_ci()
   skip_espn_test()
   skip_if_not_installed("RSQLite")
 
@@ -23,6 +24,7 @@ test_that("load_nba_pbp forwards ... to DBI::dbWriteTable", {
 
 test_that("load_mbb_pbp forwards ... to DBI::dbWriteTable", {
   skip_on_cran()
+  skip_on_ci()
   skip_espn_test()
   skip_if_not_installed("RSQLite")
 

@@ -6,6 +6,7 @@
 
 test_that("load_nba_team_box writes into the db when dbConnection/tablename are supplied", {
   skip_on_cran()
+  skip_on_ci()
   skip_espn_test()
   skip_if_not_installed("RSQLite")
 
@@ -24,6 +25,7 @@ test_that("load_nba_team_box writes into the db when dbConnection/tablename are 
 
 test_that("load_mbb_rosters writes into the db when dbConnection/tablename are supplied", {
   skip_on_cran()
+  skip_on_ci()
   skip_espn_test()
   skip_if_not_installed("RSQLite")
 

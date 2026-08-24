@@ -22,6 +22,12 @@
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
 
   chunks <- lapply(urls, progressively(loader, p))
+  .bind_crosswalk_chunks(chunks)
+}
+
+#' Bind crosswalk chunks and apply the public hoopR_data class
+#' @noRd
+.bind_crosswalk_chunks <- function(chunks) {
   meta_idx <- tail(which(vapply(
     chunks,
     function(x) {

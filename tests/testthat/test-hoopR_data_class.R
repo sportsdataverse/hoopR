@@ -32,15 +32,15 @@ test_that("make_hoopR_data() output supports tail()/head()/print()/dplyr without
   }
 })
 
-test_that("hoopR_data class vector set directly (rbindlist_with_attrs path) supports tail()", {
+test_that("production crosswalk bind path emits a tail()-safe class vector", {
   chunks <- list(
     data.frame(a = 1:5, b = 6:10),
     data.frame(a = 11:15, b = 16:20)
   )
-  out <- rbindlist_with_attrs(chunks)
-  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
+  out <- .bind_crosswalk_chunks(chunks)
 
   expect_false("data.table" %in% class(out))
+  expect_s3_class(out, "hoopR_data")
 
   tail_out <- tail(out)
   expect_equal(nrow(tail_out), 6L)
