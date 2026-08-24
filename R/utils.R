@@ -675,7 +675,7 @@ NULL
 make_hoopR_data <- function(df, type, timestamp) {
   out <- df
 
-  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   attr(out, "hoopR_timestamp") <- timestamp
   attr(out, "hoopR_type") <- type
   return(out)
@@ -705,6 +705,6 @@ rbindlist_with_attrs <- function(dflist) {
   out <- data.table::rbindlist(dflist, use.names = TRUE, fill = TRUE)
   attr(out, "hoopR_timestamp") <- hoopR_timestamp
   attr(out, "hoopR_type") <- hoopR_type
-  # class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+  # class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
   out
 }
