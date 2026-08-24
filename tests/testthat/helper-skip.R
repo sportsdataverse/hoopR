@@ -62,6 +62,14 @@ skip_bref_test <- function(){
   }
 }
 
+skip_load_test <- function(){
+  if(Sys.getenv("HOOPR_LOAD_TESTS") != "1"){
+    skip("User can't run hoopR load_* tests")
+  } else {
+    invisible()
+  }
+}
+
 skip_realgm_test <- function(){
   if(Sys.getenv("REALGM_TESTS") != "1"){
     skip("User can't run RealGM tests (REALGM_TESTS not set; needs chromote + Google Chrome)")

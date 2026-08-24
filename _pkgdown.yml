@@ -201,6 +201,7 @@ reference:
       - '`load_nba_game_rosters`'
       - '`load_nba_officials`'
       - '`load_nba_player_core`'
+      - '`load_nba_shots`'
       - '`update_nba_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
@@ -216,7 +217,30 @@ reference:
       - '`load_mbb_game_rosters`'
       - '`load_mbb_officials`'
       - '`load_mbb_player_core`'
+      - '`load_mbb_shots`'
       - '`update_mbb_db`'
+  - subtitle: NCAA Men's College Basketball Play-by-Play Engine Data Loaders
+    desc: Functions exported by hoopR to access the sdv-py `ncaa_mbb` engine's published output on sportsdataverse-data
+    contents:
+      - '`load_ncaa_mbb_pbp`'
+      - '`load_ncaa_mbb_shots`'
+      - '`load_ncaa_mbb_lineups`'
+      - '`load_ncaa_mbb_matchup_stints`'
+      - '`load_ncaa_mbb_possessions`'
+      - '`load_ncaa_mbb_rapm_within_team`'
+      - '`load_ncaa_mbb_rapm`'
+      - '`load_ncaa_mbb_player_box`'
+      - '`load_ncaa_mbb_team_box`'
+      - '`load_ncaa_mbb_rosters`'
+      - '`load_ncaa_mbb_team_rosters`'
+      - '`load_ncaa_mbb_schedule`'
+      - '`load_ncaa_mbb_team_ids`'
+  - subtitle: Model Dataset Loaders
+    desc: Functions exported by hoopR to access model-derived datasets (player-impact, ratings, player-value) published to sportsdataverse-data
+    contents:
+      - '`load_nba_player_impact`'
+      - '`load_mbb_player_value`'
+      - '`load_mbb_ratings`'
   - title: Cross-Source Crosswalks
   - subtitle: NBA Crosswalk Functions
     desc: Cross-source team/schedule/player crosswalks linking ESPN, NBA Stats, and Fox identities (keyed on espn_team_id), plus cached loaders
@@ -383,6 +407,7 @@ reference:
       - '`clean_team_names_NCAA_merge`'
       - '`csv_from_url`'
       - '`rds_from_url`'
+      - '`parquet_from_url`'
       - '`rejoin_schedules`'
       - '`most_recent_mbb_season`'
       - '`most_recent_nba_season`'

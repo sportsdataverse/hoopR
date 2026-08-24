@@ -169,6 +169,36 @@ rds_from_url <- function(url) {
   return(load)
 }
 
+#' @title
+#' **Load .parquet file from a remote connection**
+#' @description
+#' Sibling of [`rds_from_url()`] for release assets published as parquet
+#' (e.g. the `mbb_ratings` / `mbb_player_value` model-dataset tags).
+#' 404-safe: an unpublished asset returns an empty `data.table` + a warning,
+#' matching `rds_from_url()`'s contract, instead of raising.
+#' @param url a character url
+#' @return a dataframe as created by [`arrow::read_parquet()`]
+#' @importFrom data.table data.table setDT
+parquet_from_url <- function(url) {
+  tmp <- tempfile(fileext = ".parquet")
+  on.exit(unlink(tmp), add = TRUE)
+  dl <- try(utils::download.file(url, tmp, mode = "wb", quiet = TRUE), silent = TRUE)
+
+  if (inherits(dl, "try-error") || !file.exists(tmp) || file.size(tmp) == 0) {
+    warning(paste0("Failed to download parquet from <", url, ">"), call. = FALSE)
+    return(data.table::data.table())
+  }
+
+  load <- try(arrow::read_parquet(tmp), silent = TRUE)
+  if (inherits(load, "try-error")) {
+    warning(paste0("Failed to read_parquet from <", url, ">"), call. = FALSE)
+    return(data.table::data.table())
+  }
+
+  data.table::setDT(load)
+  return(load)
+}
+
 # The function `message_completed` to create the green "...completed" message
 # only exists to hide the option `in_builder` in dots
 message_completed <- function(x, in_builder = FALSE) {

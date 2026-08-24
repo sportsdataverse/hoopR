@@ -80,9 +80,11 @@ Other hoopR Loader Functions:
 \code{\link[=load_mbb_pbp]{load_mbb_pbp()}},
 \code{\link[=load_mbb_player_box]{load_mbb_player_box()}},
 \code{\link[=load_mbb_schedule]{load_mbb_schedule()}},
+\code{\link[=load_mbb_shots]{load_mbb_shots()}},
 \code{\link[=load_nba_pbp]{load_nba_pbp()}},
 \code{\link[=load_nba_player_box]{load_nba_player_box()}},
 \code{\link[=load_nba_schedule]{load_nba_schedule()}},
+\code{\link[=load_nba_shots]{load_nba_shots()}},
 \code{\link[=load_nba_team_box]{load_nba_team_box()}}
 }
 \concept{hoopR Loader Functions}
