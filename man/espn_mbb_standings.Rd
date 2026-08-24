@@ -14,6 +14,7 @@ A standings data frame\tabular{lll}{
    col_name \tab types \tab description \cr
    team_id \tab integer \tab Unique team identifier. \cr
    team \tab character \tab Team-side label or team identifier. \cr
+   conference \tab character \tab Conference group name from ESPN standings. \cr
    avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
    avgpointsfor \tab numeric \tab Avgpointsfor. \cr
    gamesbehind \tab numeric \tab Gamesbehind. \cr

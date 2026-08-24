@@ -29,3 +29,11 @@ test_that("ESPN - Get MBB teams", {
   expect_s3_class(x, "data.frame")
 
 })
+
+test_that("ESPN - MBB teams includes teams missing from the flat fetch (#144)", {
+  skip_on_cran()
+  skip_espn_test()
+  x <- espn_mbb_teams(year = 2025)
+  expect_gte(nrow(x), 362)
+  expect_in(c(2511, 2330, 2815, 88), x$team_id)
+})

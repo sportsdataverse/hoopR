@@ -1257,6 +1257,51 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
         return(conf_items)
       })
 
+      # ESPN's flat teams?limit=1000 list silently drops some current D1
+      # teams (#144, e.g. Queens/Lindenwood/Southern Indiana) that the
+      # conference-group listing above still carries. Backfill any team_id
+      # present in conference_teams but missing from the flat fetch by
+      # querying it individually before joining conference info back on.
+      missing_team_ids <- setdiff(unique(conference_teams$team_id), teams$team_id)
+      if (length(missing_team_ids) > 0) {
+        missing_teams <- purrr::map_dfr(missing_team_ids, function(tid) {
+          t_res <- tryCatch(
+            .retry_request(paste0(
+              "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/",
+              tid
+            )),
+            error = function(e) NULL
+          )
+          if (is.null(t_res) || httr2::resp_status(t_res) != 200L) {
+            return(NULL)
+          }
+          # Named `team_json` (not `team`) -- tibble() argument evaluation is
+          # data-masked, so a `team = ` output column would otherwise shadow
+          # this list for every later argument in the same tibble() call.
+          team_json <- t_res %>% .resp_text() %>% jsonlite::fromJSON() %>% purrr::pluck("team")
+          if (is.null(team_json) || is.null(team_json[["id"]])) {
+            return(NULL)
+          }
+          logos <- team_json[["logos"]]
+          tibble::tibble(
+            team_id = as.integer(team_json[["id"]]),
+            abbreviation = team_json[["abbreviation"]] %||% NA_character_,
+            display_name = team_json[["displayName"]] %||% NA_character_,
+            short_name = team_json[["shortDisplayName"]] %||% NA_character_,
+            mascot = team_json[["name"]] %||% NA_character_,
+            nickname = team_json[["nickname"]] %||% NA_character_,
+            team = team_json[["location"]] %||% NA_character_,
+            color = team_json[["color"]] %||% NA_character_,
+            alternate_color = team_json[["alternateColor"]] %||% NA_character_,
+            logo = if (is.data.frame(logos) && nrow(logos) > 0) logos[["href"]][1] else NA_character_,
+            logo_dark = if (is.data.frame(logos) && nrow(logos) > 1) logos[["href"]][2] else NA_character_
+          )
+        })
+        if (!is.null(missing_teams) && nrow(missing_teams) > 0) {
+          teams <- dplyr::bind_rows(teams, missing_teams)
+        }
+      }
+
       teams <- teams %>%
         dplyr::left_join(conference_teams, by = c("team_id" = "team_id")) %>%
         dplyr::left_join(conferences, by = c("group_id" = "group_id")) %>%
@@ -1897,6 +1942,7 @@ espn_mbb_rankings <- function() {
 #'    |:---------------------------------|:---------|:-----------------------------------------------------|
 #'    |team_id                           |integer   |Unique team identifier.                               |
 #'    |team                              |character |Team-side label or team identifier.                   |
+#'    |conference                        |character |Conference group name from ESPN standings.            |
 #'    |avgpointsagainst                  |numeric   |Avgpointsagainst.                                     |
 #'    |avgpointsfor                      |numeric   |Avgpointsfor.                                         |
 #'    |gamesbehind                       |numeric   |Gamesbehind.                                          |
@@ -1984,7 +2030,7 @@ espn_mbb_rankings <- function() {
 espn_mbb_standings <- function(year = most_recent_mbb_season()) {
   .args <- mget(setdiff(names(formals()), "..."))
   standings_url <-
-    "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
+    "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&"
 
   ## Inputs
   ## year
@@ -2008,16 +2054,39 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
       raw_resp <- resp %>%
         jsonlite::fromJSON()
 
-      raw_standings <- raw_resp %>%
-        purrr::pluck("standings")
-      # Create a dataframe of all NBA teams by extracting from the raw_standings file
+      # level=3 groups standings by conference under "children"; ESPN's flat
+      # level=1 list silently omits some current D1 teams (#144), so
+      # row-bind each conference group's entries instead.
+      raw_children <- raw_resp %>%
+        purrr::pluck("children")
+
+      conference_entries <- raw_children[["standings"]][["entries"]]
+      conference_names <- raw_children[["name"]]
+
+      # Conferences with no season played yet come back with a NULL entries
+      # list -- drop them instead of binding a bogus row.
+      has_entries <- !vapply(conference_entries, is.null, logical(1))
+
+      entries_list <- Map(
+        function(entries, conference) {
+          entries$conference <- conference
+          entries
+        },
+        conference_entries[has_entries],
+        conference_names[has_entries]
+      )
+
+      raw_standings <- list(entries = dplyr::bind_rows(entries_list))
+      # Create a dataframe of all MBB teams by extracting from the raw_standings file
 
       teams <- raw_standings[["entries"]][["team"]]
+      teams$conference <- raw_standings[["entries"]][["conference"]]
 
       teams <- teams %>%
         dplyr::select(
           "id",
-          "displayName"
+          "displayName",
+          "conference"
         ) %>%
         dplyr::rename(
           "team_id" = "id",
