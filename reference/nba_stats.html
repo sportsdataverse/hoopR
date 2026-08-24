@@ -122,12 +122,12 @@ All requests go through <code><a href="request_with_proxy.html">request_with_pro
 
 
 <p>Tabular <code>resultSets[]</code> responses parsed via <code>nba_stats_map_result_sets()</code>.
-See <code><a href="nba_boxscoreadvancedv2.html">nba_boxscoreadvancedv2()</a></code>, <code><a href="nba_boxscoretraditionalv2.html">nba_boxscoretraditionalv2()</a></code>,
-<code><a href="nba_boxscoredefensivev2.html">nba_boxscoredefensivev2()</a></code>, <code><a href="nba_boxscorefourfactorsv2.html">nba_boxscorefourfactorsv2()</a></code>,
-<code><a href="nba_boxscorematchups.html">nba_boxscorematchups()</a></code>, <code><a href="nba_boxscoremiscv2.html">nba_boxscoremiscv2()</a></code>,
-<code><a href="nba_boxscoreplayertrackv2.html">nba_boxscoreplayertrackv2()</a></code>, <code><a href="nba_boxscorescoringv2.html">nba_boxscorescoringv2()</a></code>,
-<code><a href="nba_boxscoresimilarityscore.html">nba_boxscoresimilarityscore()</a></code>, <code><a href="nba_boxscoresummaryv2.html">nba_boxscoresummaryv2()</a></code>,
-<code><a href="nba_boxscoreusagev2.html">nba_boxscoreusagev2()</a></code>, <code><a href="nba_hustlestatsboxscore.html">nba_hustlestatsboxscore()</a></code>.</p>
+See <code><a href="nba_boxscoretraditionalv2.html">nba_boxscoreadvancedv2()</a></code>, <code><a href="nba_boxscoretraditionalv2.html">nba_boxscoretraditionalv2()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoredefensivev2()</a></code>, <code><a href="nba_boxscoretraditionalv2.html">nba_boxscorefourfactorsv2()</a></code>,
+<code><a href="nba_boxscoredefensive.html">nba_boxscorematchups()</a></code>, <code><a href="nba_boxscoretraditionalv2.html">nba_boxscoremiscv2()</a></code>,
+<code><a href="nba_boxscoredefensive.html">nba_boxscoreplayertrackv2()</a></code>, <code><a href="nba_boxscoretraditionalv2.html">nba_boxscorescoringv2()</a></code>,
+<code><a href="nba_boxscoresimilarityscore.html">nba_boxscoresimilarityscore()</a></code>, <code><a href="nba_boxscoredefensive.html">nba_boxscoresummaryv2()</a></code>,
+<code><a href="nba_boxscoretraditionalv2.html">nba_boxscoreusagev2()</a></code>, <code><a href="nba_boxscoredefensive.html">nba_hustlestatsboxscore()</a></code>.</p>
 </div>
 
 <div class="section">
@@ -135,16 +135,18 @@ See <code><a href="nba_boxscoreadvancedv2.html">nba_boxscoreadvancedv2()</a></co
 
 
 <p>Nested JSON responses parsed via <code><a href="https://purrr.tidyverse.org/reference/pluck.html" class="external-link">purrr::pluck()</a></code>. See
-<code><a href="nba_boxscoreadvancedv3.html">nba_boxscoreadvancedv3()</a></code>, <code><a href="nba_boxscoredefensivev2.html">nba_boxscoredefensivev2()</a></code>,
-<code><a href="nba_boxscorefourfactorsv3.html">nba_boxscorefourfactorsv3()</a></code>, <code><a href="nba_boxscorehustlev2.html">nba_boxscorehustlev2()</a></code>,
-<code><a href="nba_boxscorematchupsv3.html">nba_boxscorematchupsv3()</a></code>, <code><a href="nba_boxscoremiscv3.html">nba_boxscoremiscv3()</a></code>,
-<code><a href="nba_boxscoreplayertrackv3.html">nba_boxscoreplayertrackv3()</a></code>, <code><a href="nba_boxscorescoringv3.html">nba_boxscorescoringv3()</a></code>,
-<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>, <code><a href="nba_boxscoreusagev3.html">nba_boxscoreusagev3()</a></code>.</p>
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoreadvancedv3()</a></code>, <code><a href="nba_boxscoretraditionalv3.html">nba_boxscoredefensivev2()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscorefourfactorsv3()</a></code>, <code><a href="nba_boxscorehustlev2.html">nba_boxscorehustlev2()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscorematchupsv3()</a></code>, <code><a href="nba_boxscoretraditionalv3.html">nba_boxscoremiscv3()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoreplayertrackv3()</a></code>, <code><a href="nba_boxscoretraditionalv3.html">nba_boxscorescoringv3()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>, <code><a href="nba_boxscoretraditionalv3.html">nba_boxscoreusagev3()</a></code>.</p>
 </div>
 
 <div class="section">
 <h3 id="play-by-play"><strong>Play-by-play</strong><a class="anchor" aria-label="anchor" href="#play-by-play"></a></h3>
-<table class="table table"><tr><td>Function</td><td>Purpose</td></tr><tr><td><code><a href="nba_pbp.html">nba_pbp()</a></code></td><td>V2 + V3 play-by-play (with V3-to-V2 conversion pipeline)</td></tr><tr><td><code><a href="nba_pbps.html">nba_pbps()</a></code></td><td>Multi-game PBP loader</td></tr><tr><td><code><a href="nba_playbyplayv3.html">nba_playbyplayv3()</a></code></td><td>V3-only PBP</td></tr><tr><td><code>nba_pbp_v2</code></td><td>V2-only PBP (legacy)</td></tr><tr><td><code><a href="nba_data_pbp.html">nba_data_pbp()</a></code></td><td>Data.nba.com PBP scraper</td></tr><tr><td><code><a href="nba_live_pbp.html">nba_live_pbp()</a></code></td><td>Live PBP (CDN feed)</td></tr><tr><td><code><a href="nba_live_boxscore.html">nba_live_boxscore()</a></code></td><td>Live boxscore (CDN feed)</td></tr><tr><td><code><a href="nba_winprobabilitypbp.html">nba_winprobabilitypbp()</a></code></td><td>Win-probability PBP overlay</td></tr></table></div>
+
+
+<p></p><table class="table table"><tr><td>Function</td><td>Purpose</td></tr><tr><td><code><a href="nba_pbp.html">nba_pbp()</a></code></td><td>V2 + V3 play-by-play (with V3-to-V2 conversion pipeline)</td></tr><tr><td><code><a href="nba_pbps.html">nba_pbps()</a></code></td><td>Multi-game PBP loader</td></tr><tr><td><code><a href="nba_playbyplayv3.html">nba_playbyplayv3()</a></code></td><td>V3-only PBP</td></tr><tr><td><code>nba_pbp_v2</code></td><td>V2-only PBP (legacy)</td></tr><tr><td><code><a href="nba_data_pbp.html">nba_data_pbp()</a></code></td><td>Data.nba.com PBP scraper</td></tr><tr><td><code><a href="nba_live_pbp.html">nba_live_pbp()</a></code></td><td>Live PBP (CDN feed)</td></tr><tr><td><code><a href="nba_live_boxscore.html">nba_live_boxscore()</a></code></td><td>Live boxscore (CDN feed)</td></tr><tr><td><code><a href="nba_winprobabilitypbp.html">nba_winprobabilitypbp()</a></code></td><td>Win-probability PBP overlay</td></tr></table></div>
 
 <div class="section">
 <h3 id="leaders-standings-league"><strong>Leaders / standings / league</strong><a class="anchor" aria-label="anchor" href="#leaders-standings-league"></a></h3>
@@ -180,10 +182,10 @@ See <code><a href="nba_boxscoreadvancedv2.html">nba_boxscoreadvancedv2()</a></co
 
 
 <p><code><a href="nba_draftboard.html">nba_draftboard()</a></code>, <code><a href="nba_drafthistory.html">nba_drafthistory()</a></code>,
-<code><a href="nba_draftcombinestats.html">nba_draftcombinestats()</a></code>, <code><a href="nba_draftcombinedrillresults.html">nba_draftcombinedrillresults()</a></code>,
-<code><a href="nba_draftcombineplayeranthro.html">nba_draftcombineplayeranthro()</a></code>,
-<code><a href="nba_draftcombinenonstationaryshooting.html">nba_draftcombinenonstationaryshooting()</a></code>,
-<code><a href="nba_draftcombinespotshooting.html">nba_draftcombinespotshooting()</a></code>,
+<code><a href="nba_draftcombinestats.html">nba_draftcombinestats()</a></code>, <code><a href="nba_draftcombinestats.html">nba_draftcombinedrillresults()</a></code>,
+<code><a href="nba_draftcombinestats.html">nba_draftcombineplayeranthro()</a></code>,
+<code><a href="nba_draftcombinestats.html">nba_draftcombinenonstationaryshooting()</a></code>,
+<code><a href="nba_draftcombinestats.html">nba_draftcombinespotshooting()</a></code>,
 <code><a href="nba_franchisehistory.html">nba_franchisehistory()</a></code>, <code><a href="nba_franchiseleaders.html">nba_franchiseleaders()</a></code>,
 <code><a href="nba_franchiseleaderswrank.html">nba_franchiseleaderswrank()</a></code>, <code><a href="nba_franchiseplayers.html">nba_franchiseplayers()</a></code>.</p>
 </div>

@@ -50,14 +50,9 @@ Returns a named list of data frames: AssistLeaders
 
 **AssistLeaders**
 
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| RANK | character | Rank. |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| AST | character | Assists. |
+Columns as documented in the shared
+[nba_assistleaders_assistleaders_schema](https://hoopR.sportsdataverse.org/reference/nba_assistleaders_assistleaders_schema.md)
+table.
 
 ## Details
 

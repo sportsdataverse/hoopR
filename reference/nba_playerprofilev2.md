@@ -46,36 +46,9 @@ SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 
 **SeasonTotalsRegularSeason**
 
-|                   |           |                                          |
-|-------------------|-----------|------------------------------------------|
-| col_name          | types     | description                              |
-| PLAYER_ID         | character | Unique player identifier.                |
-| SEASON_ID         | character | Unique season identifier.                |
-| LEAGUE_ID         | character | League identifier ('10' = WNBA).         |
-| TEAM_ID           | character | Unique team identifier.                  |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').    |
-| PLAYER_AGE        | character |                                          |
-| GP                | character | Games played.                            |
-| GS                | character | Games started.                           |
-| MIN               | character | Minutes played.                          |
-| FGM               | character | Field goals made.                        |
-| FGA               | character | Field goal attempts.                     |
-| FG_PCT            | character | Field goal percentage (0-1).             |
-| FG3M              | character | Three-point field goals made.            |
-| FG3A              | character | Three-point field goal attempts.         |
-| FG3_PCT           | character | Three-point field goal percentage (0-1). |
-| FTM               | character | Free throws made.                        |
-| FTA               | character | Free throw attempts.                     |
-| FT_PCT            | character | Free throw percentage (0-1).             |
-| OREB              | character | Offensive rebounds.                      |
-| DREB              | character | Defensive rebounds.                      |
-| REB               | character | Total rebounds.                          |
-| AST               | character | Assists.                                 |
-| STL               | character | Steals.                                  |
-| BLK               | character | Blocks.                                  |
-| TOV               | character | Turnovers.                               |
-| PF                | character | Personal fouls.                          |
-| PTS               | character | Points scored.                           |
+Columns as documented in the shared
+[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
+table.
 
 **CareerTotalsRegularSeason**
 
@@ -109,129 +82,23 @@ SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 
 **SeasonTotalsPostSeason**
 
-|                   |           |                                          |
-|-------------------|-----------|------------------------------------------|
-| col_name          | types     | description                              |
-| PLAYER_ID         | character | Unique player identifier.                |
-| SEASON_ID         | character | Unique season identifier.                |
-| LEAGUE_ID         | character | League identifier ('10' = WNBA).         |
-| TEAM_ID           | character | Unique team identifier.                  |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').    |
-| PLAYER_AGE        | character |                                          |
-| GP                | character | Games played.                            |
-| GS                | character | Games started.                           |
-| MIN               | character | Minutes played.                          |
-| FGM               | character | Field goals made.                        |
-| FGA               | character | Field goal attempts.                     |
-| FG_PCT            | character | Field goal percentage (0-1).             |
-| FG3M              | character | Three-point field goals made.            |
-| FG3A              | character | Three-point field goal attempts.         |
-| FG3_PCT           | character | Three-point field goal percentage (0-1). |
-| FTM               | character | Free throws made.                        |
-| FTA               | character | Free throw attempts.                     |
-| FT_PCT            | character | Free throw percentage (0-1).             |
-| OREB              | character | Offensive rebounds.                      |
-| DREB              | character | Defensive rebounds.                      |
-| REB               | character | Total rebounds.                          |
-| AST               | character | Assists.                                 |
-| STL               | character | Steals.                                  |
-| BLK               | character | Blocks.                                  |
-| TOV               | character | Turnovers.                               |
-| PF                | character | Personal fouls.                          |
-| PTS               | character | Points scored.                           |
+Columns as documented in the shared
+[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
+table.
 
 **CareerTotalsPostSeason**
 
-|           |           |                                          |
-|-----------|-----------|------------------------------------------|
-| col_name  | types     | description                              |
-| PLAYER_ID | character | Unique player identifier.                |
-| LEAGUE_ID | character | League identifier ('10' = WNBA).         |
-| TEAM_ID   | character | Unique team identifier.                  |
-| GP        | character | Games played.                            |
-| GS        | character | Games started.                           |
-| MIN       | character | Minutes played.                          |
-| FGM       | character | Field goals made.                        |
-| FGA       | character | Field goal attempts.                     |
-| FG_PCT    | character | Field goal percentage (0-1).             |
-| FG3M      | character | Three-point field goals made.            |
-| FG3A      | character | Three-point field goal attempts.         |
-| FG3_PCT   | character | Three-point field goal percentage (0-1). |
-| FTM       | character | Free throws made.                        |
-| FTA       | character | Free throw attempts.                     |
-| FT_PCT    | character | Free throw percentage (0-1).             |
-| OREB      | character | Offensive rebounds.                      |
-| DREB      | character | Defensive rebounds.                      |
-| REB       | character | Total rebounds.                          |
-| AST       | character | Assists.                                 |
-| STL       | character | Steals.                                  |
-| BLK       | character | Blocks.                                  |
-| TOV       | character | Turnovers.                               |
-| PF        | character | Personal fouls.                          |
-| PTS       | character | Points scored.                           |
+Same columns as the **CareerTotalsRegularSeason** table above.
 
 **SeasonTotalsAllStarSeason**
 
-|                   |           |                                          |
-|-------------------|-----------|------------------------------------------|
-| col_name          | types     | description                              |
-| PLAYER_ID         | character | Unique player identifier.                |
-| SEASON_ID         | character | Unique season identifier.                |
-| LEAGUE_ID         | character | League identifier ('10' = WNBA).         |
-| TEAM_ID           | character | Unique team identifier.                  |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').    |
-| PLAYER_AGE        | character |                                          |
-| GP                | character | Games played.                            |
-| GS                | character | Games started.                           |
-| MIN               | character | Minutes played.                          |
-| FGM               | character | Field goals made.                        |
-| FGA               | character | Field goal attempts.                     |
-| FG_PCT            | character | Field goal percentage (0-1).             |
-| FG3M              | character | Three-point field goals made.            |
-| FG3A              | character | Three-point field goal attempts.         |
-| FG3_PCT           | character | Three-point field goal percentage (0-1). |
-| FTM               | character | Free throws made.                        |
-| FTA               | character | Free throw attempts.                     |
-| FT_PCT            | character | Free throw percentage (0-1).             |
-| OREB              | character | Offensive rebounds.                      |
-| DREB              | character | Defensive rebounds.                      |
-| REB               | character | Total rebounds.                          |
-| AST               | character | Assists.                                 |
-| STL               | character | Steals.                                  |
-| BLK               | character | Blocks.                                  |
-| TOV               | character | Turnovers.                               |
-| PF                | character | Personal fouls.                          |
-| PTS               | character | Points scored.                           |
+Columns as documented in the shared
+[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
+table.
 
 **CareerTotalsAllStarSeason**
 
-|           |           |                                          |
-|-----------|-----------|------------------------------------------|
-| col_name  | types     | description                              |
-| PLAYER_ID | character | Unique player identifier.                |
-| LEAGUE_ID | character | League identifier ('10' = WNBA).         |
-| TEAM_ID   | character | Unique team identifier.                  |
-| GP        | character | Games played.                            |
-| GS        | character | Games started.                           |
-| MIN       | character | Minutes played.                          |
-| FGM       | character | Field goals made.                        |
-| FGA       | character | Field goal attempts.                     |
-| FG_PCT    | character | Field goal percentage (0-1).             |
-| FG3M      | character | Three-point field goals made.            |
-| FG3A      | character | Three-point field goal attempts.         |
-| FG3_PCT   | character | Three-point field goal percentage (0-1). |
-| FTM       | character | Free throws made.                        |
-| FTA       | character | Free throw attempts.                     |
-| FT_PCT    | character | Free throw percentage (0-1).             |
-| OREB      | character | Offensive rebounds.                      |
-| DREB      | character | Defensive rebounds.                      |
-| REB       | character | Total rebounds.                          |
-| AST       | character | Assists.                                 |
-| STL       | character | Steals.                                  |
-| BLK       | character | Blocks.                                  |
-| TOV       | character | Turnovers.                               |
-| PF        | character | Personal fouls.                          |
-| PTS       | character | Points scored.                           |
+Same columns as the **CareerTotalsRegularSeason** table above.
 
 **SeasonTotalsCollegeSeason**
 
@@ -239,132 +106,25 @@ SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 
 **SeasonTotalsPreseason**
 
-|                   |           |                                          |
-|-------------------|-----------|------------------------------------------|
-| col_name          | types     | description                              |
-| PLAYER_ID         | character | Unique player identifier.                |
-| SEASON_ID         | character | Unique season identifier.                |
-| LEAGUE_ID         | character | League identifier ('10' = WNBA).         |
-| TEAM_ID           | character | Unique team identifier.                  |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').    |
-| PLAYER_AGE        | character |                                          |
-| GP                | character | Games played.                            |
-| GS                | character | Games started.                           |
-| MIN               | character | Minutes played.                          |
-| FGM               | character | Field goals made.                        |
-| FGA               | character | Field goal attempts.                     |
-| FG_PCT            | character | Field goal percentage (0-1).             |
-| FG3M              | character | Three-point field goals made.            |
-| FG3A              | character | Three-point field goal attempts.         |
-| FG3_PCT           | character | Three-point field goal percentage (0-1). |
-| FTM               | character | Free throws made.                        |
-| FTA               | character | Free throw attempts.                     |
-| FT_PCT            | character | Free throw percentage (0-1).             |
-| OREB              | character | Offensive rebounds.                      |
-| DREB              | character | Defensive rebounds.                      |
-| REB               | character | Total rebounds.                          |
-| AST               | character | Assists.                                 |
-| STL               | character | Steals.                                  |
-| BLK               | character | Blocks.                                  |
-| TOV               | character | Turnovers.                               |
-| PF                | character | Personal fouls.                          |
-| PTS               | character | Points scored.                           |
+Columns as documented in the shared
+[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
+table.
 
 **CareerTotalsPreseason**
 
-|           |           |                                          |
-|-----------|-----------|------------------------------------------|
-| col_name  | types     | description                              |
-| PLAYER_ID | character | Unique player identifier.                |
-| LEAGUE_ID | character | League identifier ('10' = WNBA).         |
-| TEAM_ID   | character | Unique team identifier.                  |
-| GP        | character | Games played.                            |
-| GS        | character | Games started.                           |
-| MIN       | character | Minutes played.                          |
-| FGM       | character | Field goals made.                        |
-| FGA       | character | Field goal attempts.                     |
-| FG_PCT    | character | Field goal percentage (0-1).             |
-| FG3M      | character | Three-point field goals made.            |
-| FG3A      | character | Three-point field goal attempts.         |
-| FG3_PCT   | character | Three-point field goal percentage (0-1). |
-| FTM       | character | Free throws made.                        |
-| FTA       | character | Free throw attempts.                     |
-| FT_PCT    | character | Free throw percentage (0-1).             |
-| OREB      | character | Offensive rebounds.                      |
-| DREB      | character | Defensive rebounds.                      |
-| REB       | character | Total rebounds.                          |
-| AST       | character | Assists.                                 |
-| STL       | character | Steals.                                  |
-| BLK       | character | Blocks.                                  |
-| TOV       | character | Turnovers.                               |
-| PF        | character | Personal fouls.                          |
-| PTS       | character | Points scored.                           |
+Same columns as the **CareerTotalsRegularSeason** table above.
 
 **SeasonRankingsRegularSeason**
 
-|                   |           |                                       |
-|-------------------|-----------|---------------------------------------|
-| col_name          | types     | description                           |
-| PLAYER_ID         | character | Unique player identifier.             |
-| SEASON_ID         | character | Unique season identifier.             |
-| LEAGUE_ID         | character | League identifier ('10' = WNBA).      |
-| TEAM_ID           | character | Unique team identifier.               |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| PLAYER_AGE        | character |                                       |
-| GP                | character | Games played.                         |
-| GS                | character | Games started.                        |
-| RANK_MIN          | character |                                       |
-| RANK_FGM          | character |                                       |
-| RANK_FGA          | character |                                       |
-| RANK_FG_PCT       | character |                                       |
-| RANK_FG3M         | character |                                       |
-| RANK_FG3A         | character |                                       |
-| RANK_FG3_PCT      | character |                                       |
-| RANK_FTM          | character |                                       |
-| RANK_FTA          | character |                                       |
-| RANK_FT_PCT       | character |                                       |
-| RANK_OREB         | character |                                       |
-| RANK_DREB         | character |                                       |
-| RANK_REB          | character |                                       |
-| RANK_AST          | character |                                       |
-| RANK_STL          | character |                                       |
-| RANK_BLK          | character |                                       |
-| RANK_TOV          | character |                                       |
-| RANK_PTS          | character |                                       |
-| RANK_EFF          | character |                                       |
+Columns as documented in the shared
+[nba_playercareerstats_seasonrankingsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasonrankingsregularseason_schema.md)
+table.
 
 **SeasonRankingsPostSeason**
 
-|                   |           |                                       |
-|-------------------|-----------|---------------------------------------|
-| col_name          | types     | description                           |
-| PLAYER_ID         | character | Unique player identifier.             |
-| SEASON_ID         | character | Unique season identifier.             |
-| LEAGUE_ID         | character | League identifier ('10' = WNBA).      |
-| TEAM_ID           | character | Unique team identifier.               |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| PLAYER_AGE        | character |                                       |
-| GP                | character | Games played.                         |
-| GS                | character | Games started.                        |
-| RANK_MIN          | character |                                       |
-| RANK_FGM          | character |                                       |
-| RANK_FGA          | character |                                       |
-| RANK_FG_PCT       | character |                                       |
-| RANK_FG3M         | character |                                       |
-| RANK_FG3A         | character |                                       |
-| RANK_FG3_PCT      | character |                                       |
-| RANK_FTM          | character |                                       |
-| RANK_FTA          | character |                                       |
-| RANK_FT_PCT       | character |                                       |
-| RANK_OREB         | character |                                       |
-| RANK_DREB         | character |                                       |
-| RANK_REB          | character |                                       |
-| RANK_AST          | character |                                       |
-| RANK_STL          | character |                                       |
-| RANK_BLK          | character |                                       |
-| RANK_TOV          | character |                                       |
-| RANK_PTS          | character |                                       |
-| RANK_EFF          | character |                                       |
+Columns as documented in the shared
+[nba_playercareerstats_seasonrankingsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasonrankingsregularseason_schema.md)
+table.
 
 **SeasonHighs**
 
@@ -385,20 +145,7 @@ SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
 
 **CareerHighs**
 
-|                      |           |                           |
-|----------------------|-----------|---------------------------|
-| col_name             | types     | description               |
-| PLAYER_ID            | character | Unique player identifier. |
-| GAME_ID              | character | Unique game identifier.   |
-| GAME_DATE            | character | Game date (YYYY-MM-DD).   |
-| VS_TEAM_ID           | character |                           |
-| VS_TEAM_CITY         | character |                           |
-| VS_TEAM_NAME         | character |                           |
-| VS_TEAM_ABBREVIATION | character |                           |
-| STAT                 | character | Stat.                     |
-| STAT_VALUE           | character |                           |
-| STAT_ORDER           | character |                           |
-| DATE_EST             | character |                           |
+Same columns as the **SeasonHighs** table above.
 
 **NextGame**
 
@@ -443,8 +190,6 @@ Other NBA Player Functions:
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.md),
 [`nba_playerfantasyprofile()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.md),
 [`nba_playerfantasyprofilebargraph()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.md),

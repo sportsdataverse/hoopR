@@ -210,8 +210,8 @@ and same-day games (so it is empty in the off-season).</p>
 <span><span class="va">games</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games_media</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>    <span class="co"># broadcast info</span></span>
-<span><span class="fu"><a href="../reference/cbbd_games_teams.html">cbbd_games_teams</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>    <span class="co"># team box scores</span></span>
-<span><span class="fu"><a href="../reference/cbbd_games_players.html">cbbd_games_players</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>  <span class="co"># player box scores</span></span>
+<span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games_teams</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>    <span class="co"># team box scores</span></span>
+<span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games_players</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>  <span class="co"># player box scores</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_scoreboard.html">cbbd_scoreboard</a></span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span></span></code></pre></div>
 <p>Most by-id endpoints take a CollegeBasketballData
@@ -253,10 +253,10 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_team_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_stats_team_leaderboard.html">cbbd_stats_team_leaderboard</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_stats_team_shooting_season.html">cbbd_stats_team_shooting_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_team_shooting_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/cbbd_stats_player_season.html">cbbd_stats_player_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_stats_player_shooting_season.html">cbbd_stats_player_shooting_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_player_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_player_shooting_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="lineups">Lineups<a class="anchor" aria-label="anchor" href="#lineups"></a>
@@ -271,8 +271,8 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 </h2>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_srs</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>        <span class="co"># Simple Rating System</span></span>
-<span><span class="fu"><a href="../reference/cbbd_ratings_adjusted.html">cbbd_ratings_adjusted</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>   <span class="co"># adjusted offensive/defensive efficiency</span></span>
-<span><span class="fu"><a href="../reference/cbbd_ratings_elo.html">cbbd_ratings_elo</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>        <span class="co"># Elo</span></span>
+<span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_adjusted</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>   <span class="co"># adjusted offensive/defensive efficiency</span></span>
+<span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_elo</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>        <span class="co"># Elo</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_rankings.html">cbbd_rankings</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, poll_type <span class="op">=</span> <span class="st">"ap"</span><span class="op">)</span></span></code></pre></div>
 </div>

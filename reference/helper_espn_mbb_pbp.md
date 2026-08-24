@@ -2,10 +2,18 @@
 
 **Parse ESPN MBB PBP, helper function**
 
+**Parse ESPN MBB Team Box, helper function**
+
+**Parse ESPN MBB Player Box, helper function**
+
 ## Usage
 
 ``` r
 helper_espn_mbb_pbp(resp)
+
+helper_espn_mbb_team_box(resp)
+
+helper_espn_mbb_player_box(resp)
 ```
 
 ## Arguments
@@ -15,5 +23,9 @@ helper_espn_mbb_pbp(resp)
   Response object from the ESPN MBB game summary endpoint
 
 ## Value
+
+Returns a tibble
+
+Returns a tibble
 
 Returns a tibble

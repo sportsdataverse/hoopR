@@ -174,27 +174,9 @@ Returns a named list of data frames: LeagueDashPTShots
 
 **LeagueDashPTShots**
 
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| GP | character | Games played. |
-| G | character | Games played. |
-| FGA_FREQUENCY | character |  |
-| FGM | character | Field goals made. |
-| FGA | character | Field goal attempts. |
-| FG_PCT | character | Field goal percentage (0-1). |
-| EFG_PCT | character | Effective field goal percentage (0-1). |
-| FG2A_FREQUENCY | character |  |
-| FG2M | character |  |
-| FG2A | character |  |
-| FG2_PCT | character |  |
-| FG3A_FREQUENCY | character |  |
-| FG3M | character | Three-point field goals made. |
-| FG3A | character | Three-point field goal attempts. |
-| FG3_PCT | character | Three-point field goal percentage (0-1). |
+Columns as documented in the shared
+[nba_leaguedashoppptshot_leaguedashptshots_schema](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot_leaguedashptshots_schema.md)
+table.
 
 ## Details
 
@@ -232,7 +214,7 @@ Other NBA League Functions:
 [`nba_shotchartleaguewide()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.md)
 
 Other NBA Player Tracking Functions:
-[`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md),
+[`nba_boxscoredefensive()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
 [`nba_leaguedashplayerptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerptshot.md),
 [`nba_leaguedashptdefend()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptdefend.md),
 [`nba_leaguedashptstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptstats.md),
@@ -240,8 +222,6 @@ Other NBA Player Tracking Functions:
 [`nba_leaguedashteamptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_synergyplaytypes()`](https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.md),
 [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
 [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),

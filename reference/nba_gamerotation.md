@@ -52,21 +52,7 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 
 **HomeTeam**
 
-|               |           |                                                 |
-|---------------|-----------|-------------------------------------------------|
-| col_name      | types     | description                                     |
-| GAME_ID       | character | Unique game identifier.                         |
-| TEAM_ID       | character | Unique team identifier.                         |
-| TEAM_CITY     | character | Team city or region (e.g. 'Las Vegas').         |
-| TEAM_NAME     | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| PERSON_ID     | character | Unique player identifier (V3 endpoints).        |
-| PLAYER_FIRST  | character |                                                 |
-| PLAYER_LAST   | character |                                                 |
-| IN_TIME_REAL  | character |                                                 |
-| OUT_TIME_REAL | character |                                                 |
-| PLAYER_PTS    | character |                                                 |
-| PT_DIFF       | character |                                                 |
-| USG_PCT       | character | Usage percentage (0-1).                         |
+Same columns as the **AwayTeam** table above.
 
 ## Details
 
@@ -75,17 +61,8 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 ## See also
 
 Other NBA Boxscore Functions:
-[`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.md),
 [`nba_boxscoredefensive()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
-[`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md),
-[`nba_boxscorematchups()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorematchups.md),
-[`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md),
-[`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md),
-[`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md),
-[`nba_boxscoresummaryv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2.md),
 [`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
-[`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md),
-[`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md),
 [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
 
 Other NBA Lineup Functions:

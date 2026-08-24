@@ -138,7 +138,9 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with one row per ranked team (typically 25).</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id.</td></tr><tr><td>week</td><td>integer</td><td>Week number.</td></tr><tr><td>ranking_id</td><td>character</td><td>ESPN ranking id.</td></tr><tr><td>name</td><td>character</td><td>Ranking name (e.g. "AP Top 25").</td></tr><tr><td>short_name</td><td>character</td><td>Short name.</td></tr><tr><td>type</td><td>character</td><td>Ranking type code.</td></tr><tr><td>headline</td><td>character</td><td>Full headline.</td></tr><tr><td>date</td><td>character</td><td>Date of the ranking.</td></tr><tr><td>current</td><td>integer</td><td>Current rank.</td></tr><tr><td>previous</td><td>integer</td><td>Previous-week rank.</td></tr><tr><td>points</td><td>numeric</td><td>Voting points.</td></tr><tr><td>first_place_votes</td><td>integer</td><td>First-place vote count.</td></tr><tr><td>trend</td><td>character</td><td>Trend indicator (e.g. "+3", "-2", "-").</td></tr><tr><td>record_summary</td><td>character</td><td>Team's record at time of poll (e.g. "20-2").</td></tr><tr><td>team_id</td><td>character</td><td>ESPN team id.</td></tr><tr><td>team_ref</td><td>character</td><td><code>$ref</code> to the team-in-season resource.</td></tr><tr><td>last_updated</td><td>character</td><td>Last-updated timestamp.</td></tr></table></div>
+    <p>A tibble with one row per ranked team (typically 25).</p>
+<p>Columns as documented in the shared <a href="espn_mbb_week_ranking_schema.html">espn_mbb_week_ranking_schema</a> table.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Get ESPN NBA Per-Week Ranking Detail</strong></p>
@@ -148,7 +150,6 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
     <div class="dont-index"><p>Other ESPN NBA Functions:
 <code><a href="espn_nba_athletes_index.html">espn_nba_athletes_index()</a></code>,
 <code><a href="espn_nba_award.html">espn_nba_award()</a></code>,
-<code><a href="espn_nba_betting.html">espn_nba_betting()</a></code>,
 <code><a href="espn_nba_calendar.html">espn_nba_calendar()</a></code>,
 <code><a href="espn_nba_coach.html">espn_nba_coach()</a></code>,
 <code><a href="espn_nba_coach_record.html">espn_nba_coach_record()</a></code>,
@@ -157,63 +158,40 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
 <code><a href="espn_nba_conferences.html">espn_nba_conferences()</a></code>,
 <code><a href="espn_nba_draft.html">espn_nba_draft()</a></code>,
 <code><a href="espn_nba_draft_athlete_detail.html">espn_nba_draft_athlete_detail()</a></code>,
-<code><a href="espn_nba_draft_athletes.html">espn_nba_draft_athletes()</a></code>,
 <code><a href="espn_nba_draft_pick.html">espn_nba_draft_pick()</a></code>,
 <code><a href="espn_nba_draft_rounds.html">espn_nba_draft_rounds()</a></code>,
-<code><a href="espn_nba_draft_status.html">espn_nba_draft_status()</a></code>,
 <code><a href="espn_nba_franchise.html">espn_nba_franchise()</a></code>,
 <code><a href="espn_nba_franchises.html">espn_nba_franchises()</a></code>,
 <code><a href="espn_nba_freeagents.html">espn_nba_freeagents()</a></code>,
 <code><a href="espn_nba_futures.html">espn_nba_futures()</a></code>,
 <code><a href="espn_nba_game_all.html">espn_nba_game_all()</a></code>,
-<code><a href="espn_nba_game_broadcasts.html">espn_nba_game_broadcasts()</a></code>,
 <code><a href="espn_nba_game_odds.html">espn_nba_game_odds()</a></code>,
 <code><a href="espn_nba_game_official_detail.html">espn_nba_game_official_detail()</a></code>,
-<code><a href="espn_nba_game_officials.html">espn_nba_game_officials()</a></code>,
 <code><a href="espn_nba_game_play.html">espn_nba_game_play()</a></code>,
 <code><a href="espn_nba_game_play_personnel.html">espn_nba_game_play_personnel()</a></code>,
 <code><a href="espn_nba_game_player_box.html">espn_nba_game_player_box()</a></code>,
-<code><a href="espn_nba_game_powerindex.html">espn_nba_game_powerindex()</a></code>,
-<code><a href="espn_nba_game_predictor.html">espn_nba_game_predictor()</a></code>,
 <code><a href="espn_nba_game_probabilities.html">espn_nba_game_probabilities()</a></code>,
 <code><a href="espn_nba_game_propbets.html">espn_nba_game_propbets()</a></code>,
-<code><a href="espn_nba_game_rosters.html">espn_nba_game_rosters()</a></code>,
-<code><a href="espn_nba_game_situation.html">espn_nba_game_situation()</a></code>,
-<code><a href="espn_nba_game_team_leaders.html">espn_nba_game_team_leaders()</a></code>,
 <code><a href="espn_nba_game_team_linescores.html">espn_nba_game_team_linescores()</a></code>,
-<code><a href="espn_nba_game_team_records.html">espn_nba_game_team_records()</a></code>,
-<code><a href="espn_nba_game_team_roster.html">espn_nba_game_team_roster()</a></code>,
 <code><a href="espn_nba_game_team_roster_entry.html">espn_nba_game_team_roster_entry()</a></code>,
-<code><a href="espn_nba_game_team_score.html">espn_nba_game_team_score()</a></code>,
-<code><a href="espn_nba_game_team_statistics.html">espn_nba_game_team_statistics()</a></code>,
 <code><a href="espn_nba_injuries.html">espn_nba_injuries()</a></code>,
 <code><a href="espn_nba_leaders.html">espn_nba_leaders()</a></code>,
 <code><a href="espn_nba_news.html">espn_nba_news()</a></code>,
-<code><a href="espn_nba_pbp.html">espn_nba_pbp()</a></code>,
 <code><a href="espn_nba_player_awards.html">espn_nba_player_awards()</a></code>,
-<code><a href="espn_nba_player_box.html">espn_nba_player_box()</a></code>,
 <code><a href="espn_nba_player_career_stats.html">espn_nba_player_career_stats()</a></code>,
 <code><a href="espn_nba_player_contract.html">espn_nba_player_contract()</a></code>,
 <code><a href="espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code>,
-<code><a href="espn_nba_player_eventlog.html">espn_nba_player_eventlog()</a></code>,
 <code><a href="espn_nba_player_eventlog_v2.html">espn_nba_player_eventlog_v2()</a></code>,
-<code><a href="espn_nba_player_gamelog.html">espn_nba_player_gamelog()</a></code>,
 <code><a href="espn_nba_player_info.html">espn_nba_player_info()</a></code>,
 <code><a href="espn_nba_player_overview.html">espn_nba_player_overview()</a></code>,
 <code><a href="espn_nba_player_seasons.html">espn_nba_player_seasons()</a></code>,
-<code><a href="espn_nba_player_splits.html">espn_nba_player_splits()</a></code>,
-<code><a href="espn_nba_player_statisticslog.html">espn_nba_player_statisticslog()</a></code>,
 <code><a href="espn_nba_player_stats.html">espn_nba_player_stats()</a></code>,
-<code><a href="espn_nba_player_stats_v3.html">espn_nba_player_stats_v3()</a></code>,
 <code><a href="espn_nba_position.html">espn_nba_position()</a></code>,
 <code><a href="espn_nba_positions.html">espn_nba_positions()</a></code>,
 <code><a href="espn_nba_powerindex.html">espn_nba_powerindex()</a></code>,
 <code><a href="espn_nba_scoreboard.html">espn_nba_scoreboard()</a></code>,
 <code><a href="espn_nba_season_awards.html">espn_nba_season_awards()</a></code>,
-<code><a href="espn_nba_season_draft.html">espn_nba_season_draft()</a></code>,
 <code><a href="espn_nba_season_group.html">espn_nba_season_group()</a></code>,
-<code><a href="espn_nba_season_group_children.html">espn_nba_season_group_children()</a></code>,
-<code><a href="espn_nba_season_group_teams.html">espn_nba_season_group_teams()</a></code>,
 <code><a href="espn_nba_season_groups.html">espn_nba_season_groups()</a></code>,
 <code><a href="espn_nba_season_info.html">espn_nba_season_info()</a></code>,
 <code><a href="espn_nba_season_leaders.html">espn_nba_season_leaders()</a></code>,
@@ -226,18 +204,14 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
 <code><a href="espn_nba_seasons.html">espn_nba_seasons()</a></code>,
 <code><a href="espn_nba_standings.html">espn_nba_standings()</a></code>,
 <code><a href="espn_nba_team.html">espn_nba_team()</a></code>,
-<code><a href="espn_nba_team_box.html">espn_nba_team_box()</a></code>,
 <code><a href="espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code>,
 <code><a href="espn_nba_team_depthchart.html">espn_nba_team_depthchart()</a></code>,
 <code><a href="espn_nba_team_injuries.html">espn_nba_team_injuries()</a></code>,
-<code><a href="espn_nba_team_leaders.html">espn_nba_team_leaders()</a></code>,
 <code><a href="espn_nba_team_news.html">espn_nba_team_news()</a></code>,
 <code><a href="espn_nba_team_odds_records.html">espn_nba_team_odds_records()</a></code>,
 <code><a href="espn_nba_team_record.html">espn_nba_team_record()</a></code>,
 <code><a href="espn_nba_team_record_detail.html">espn_nba_team_record_detail()</a></code>,
-<code><a href="espn_nba_team_roster.html">espn_nba_team_roster()</a></code>,
 <code><a href="espn_nba_team_schedule.html">espn_nba_team_schedule()</a></code>,
-<code><a href="espn_nba_team_season_profile.html">espn_nba_team_season_profile()</a></code>,
 <code><a href="espn_nba_team_season_roster.html">espn_nba_team_season_roster()</a></code>,
 <code><a href="espn_nba_team_season_statistics.html">espn_nba_team_season_statistics()</a></code>,
 <code><a href="espn_nba_team_stats.html">espn_nba_team_stats()</a></code>,
@@ -260,11 +234,11 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_week_ranking</span><span class="op">(</span>ranking_id <span class="op">=</span> <span class="fl">1</span>, week <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:11:19.60555: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:40:35.398114: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "nba", season = 2025, season_type = 2L, week = 5, ranking_id = 1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Week Ranking Detail ───────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-24 19:11:19 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-24 20:40:35 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

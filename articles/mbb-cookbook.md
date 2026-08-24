@@ -32,7 +32,7 @@ So “a team’s schedule from ESPN” is `espn_` + `mbb_` + `team_schedule`
 -\>
 [`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md).
 “KenPom’s efficiency ratings” is `kp_` + `efficiency` -\>
-[`kp_efficiency()`](https://hoopR.sportsdataverse.org/reference/kp_efficiency.md).
+[`kp_efficiency()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md).
 You will be right far more often than you’ll be wrong, and being wrong
 just means opening the reference index.
 

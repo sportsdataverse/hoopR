@@ -57,35 +57,7 @@ linescore, officials
 
 **home_team**
 
-|            |           |                                     |
-|------------|-----------|-------------------------------------|
-| col_name   | types     | description                         |
-| hgt        | character | Hgt.                                |
-| wgt        | numeric   | Wgt.                                |
-| yr         | character | Yr.                                 |
-| number     | numeric   | Number.                             |
-| player     | character | Player.                             |
-| min        | numeric   | Minutes played.                     |
-| o_rtg      | numeric   | O rtg.                              |
-| percent_ps | numeric   | Percent ps.                         |
-| pts        | numeric   | Points scored.                      |
-| fgm_2      | numeric   | Fgm 2.                              |
-| fga_2      | numeric   | Fga 2.                              |
-| fgm_3      | numeric   | Fgm 3.                              |
-| fga_3      | numeric   | Fga 3.                              |
-| ftm        | numeric   | Free throws made.                   |
-| fta        | numeric   | Free throw attempts.                |
-| or         | numeric   | Or.                                 |
-| dr         | numeric   | Dr.                                 |
-| a          | numeric   | A.                                  |
-| to         | numeric   | To.                                 |
-| blk        | numeric   | Blocks.                             |
-| stl        | numeric   | Steals.                             |
-| pf         | numeric   | Personal fouls.                     |
-| team       | character | Team-side label or team identifier. |
-| wp_note    | character | Wp note.                            |
-| game_id    | numeric   | Unique game identifier.             |
-| year       | numeric   | 4-digit year.                       |
+Same columns as the **away_team** table above.
 
 **linescore**
 
@@ -119,7 +91,7 @@ Other KenPom Boxscore Functions:
 ``` r
 # \donttest{
 try(kp_box(game_id = 6, year = 2021))
-#> ✖ 2026-08-24 19:11:50.642044: Invalid arguments or no box data for 6 available!
+#> ✖ 2026-08-24 20:40:56.869758: Invalid arguments or no box data for 6 available!
 #> ✖ Args: game_id = 6, year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

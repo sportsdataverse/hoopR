@@ -123,13 +123,13 @@ by <code>sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/{coac
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A single-row tibble.</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>coach_id</td><td>character</td><td>ESPN coach identifier.</td></tr><tr><td>uid</td><td>character</td><td>ESPN UID string.</td></tr><tr><td>first_name</td><td>character</td><td>First name.</td></tr><tr><td>last_name</td><td>character</td><td>Last name.</td></tr><tr><td>date_of_birth</td><td>character</td><td>Date of birth (ISO 8601).</td></tr><tr><td>birth_city</td><td>character</td><td>Birth city.</td></tr><tr><td>birth_state</td><td>character</td><td>Birth state / region.</td></tr><tr><td>n_career_records</td><td>integer</td><td>Count of career-records entries.</td></tr><tr><td>n_coach_seasons</td><td>integer</td><td>Count of seasons coached.</td></tr><tr><td>college_ref</td><td>character</td><td><code>$ref</code> to the coach's college.</td></tr><tr><td>team_ref</td><td>character</td><td><code>$ref</code> to the coach's current team.</td></tr><tr><td>league</td><td>character</td><td>League slug (<code>"nba"</code>).</td></tr></table></div>
+    <p>A single-row tibble.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>coach_id</td><td>character</td><td>ESPN coach identifier.</td></tr><tr><td>uid</td><td>character</td><td>ESPN UID string.</td></tr><tr><td>first_name</td><td>character</td><td>First name.</td></tr><tr><td>last_name</td><td>character</td><td>Last name.</td></tr><tr><td>date_of_birth</td><td>character</td><td>Date of birth (ISO 8601).</td></tr><tr><td>birth_city</td><td>character</td><td>Birth city.</td></tr><tr><td>birth_state</td><td>character</td><td>Birth state / region.</td></tr><tr><td>n_career_records</td><td>integer</td><td>Count of career-records entries.</td></tr><tr><td>n_coach_seasons</td><td>integer</td><td>Count of seasons coached.</td></tr><tr><td>college_ref</td><td>character</td><td><code>$ref</code> to the coach's college.</td></tr><tr><td>team_ref</td><td>character</td><td><code>$ref</code> to the coach's current team.</td></tr><tr><td>league</td><td>character</td><td>League slug (<code>"nba"</code>).</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ESPN NBA Functions:
 <code><a href="espn_nba_athletes_index.html">espn_nba_athletes_index()</a></code>,
 <code><a href="espn_nba_award.html">espn_nba_award()</a></code>,
-<code><a href="espn_nba_betting.html">espn_nba_betting()</a></code>,
 <code><a href="espn_nba_calendar.html">espn_nba_calendar()</a></code>,
 <code><a href="espn_nba_coach_record.html">espn_nba_coach_record()</a></code>,
 <code><a href="espn_nba_coach_season.html">espn_nba_coach_season()</a></code>,
@@ -137,63 +137,40 @@ by <code>sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/{coac
 <code><a href="espn_nba_conferences.html">espn_nba_conferences()</a></code>,
 <code><a href="espn_nba_draft.html">espn_nba_draft()</a></code>,
 <code><a href="espn_nba_draft_athlete_detail.html">espn_nba_draft_athlete_detail()</a></code>,
-<code><a href="espn_nba_draft_athletes.html">espn_nba_draft_athletes()</a></code>,
 <code><a href="espn_nba_draft_pick.html">espn_nba_draft_pick()</a></code>,
 <code><a href="espn_nba_draft_rounds.html">espn_nba_draft_rounds()</a></code>,
-<code><a href="espn_nba_draft_status.html">espn_nba_draft_status()</a></code>,
 <code><a href="espn_nba_franchise.html">espn_nba_franchise()</a></code>,
 <code><a href="espn_nba_franchises.html">espn_nba_franchises()</a></code>,
 <code><a href="espn_nba_freeagents.html">espn_nba_freeagents()</a></code>,
 <code><a href="espn_nba_futures.html">espn_nba_futures()</a></code>,
 <code><a href="espn_nba_game_all.html">espn_nba_game_all()</a></code>,
-<code><a href="espn_nba_game_broadcasts.html">espn_nba_game_broadcasts()</a></code>,
 <code><a href="espn_nba_game_odds.html">espn_nba_game_odds()</a></code>,
 <code><a href="espn_nba_game_official_detail.html">espn_nba_game_official_detail()</a></code>,
-<code><a href="espn_nba_game_officials.html">espn_nba_game_officials()</a></code>,
 <code><a href="espn_nba_game_play.html">espn_nba_game_play()</a></code>,
 <code><a href="espn_nba_game_play_personnel.html">espn_nba_game_play_personnel()</a></code>,
 <code><a href="espn_nba_game_player_box.html">espn_nba_game_player_box()</a></code>,
-<code><a href="espn_nba_game_powerindex.html">espn_nba_game_powerindex()</a></code>,
-<code><a href="espn_nba_game_predictor.html">espn_nba_game_predictor()</a></code>,
 <code><a href="espn_nba_game_probabilities.html">espn_nba_game_probabilities()</a></code>,
 <code><a href="espn_nba_game_propbets.html">espn_nba_game_propbets()</a></code>,
-<code><a href="espn_nba_game_rosters.html">espn_nba_game_rosters()</a></code>,
-<code><a href="espn_nba_game_situation.html">espn_nba_game_situation()</a></code>,
-<code><a href="espn_nba_game_team_leaders.html">espn_nba_game_team_leaders()</a></code>,
 <code><a href="espn_nba_game_team_linescores.html">espn_nba_game_team_linescores()</a></code>,
-<code><a href="espn_nba_game_team_records.html">espn_nba_game_team_records()</a></code>,
-<code><a href="espn_nba_game_team_roster.html">espn_nba_game_team_roster()</a></code>,
 <code><a href="espn_nba_game_team_roster_entry.html">espn_nba_game_team_roster_entry()</a></code>,
-<code><a href="espn_nba_game_team_score.html">espn_nba_game_team_score()</a></code>,
-<code><a href="espn_nba_game_team_statistics.html">espn_nba_game_team_statistics()</a></code>,
 <code><a href="espn_nba_injuries.html">espn_nba_injuries()</a></code>,
 <code><a href="espn_nba_leaders.html">espn_nba_leaders()</a></code>,
 <code><a href="espn_nba_news.html">espn_nba_news()</a></code>,
-<code><a href="espn_nba_pbp.html">espn_nba_pbp()</a></code>,
 <code><a href="espn_nba_player_awards.html">espn_nba_player_awards()</a></code>,
-<code><a href="espn_nba_player_box.html">espn_nba_player_box()</a></code>,
 <code><a href="espn_nba_player_career_stats.html">espn_nba_player_career_stats()</a></code>,
 <code><a href="espn_nba_player_contract.html">espn_nba_player_contract()</a></code>,
 <code><a href="espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code>,
-<code><a href="espn_nba_player_eventlog.html">espn_nba_player_eventlog()</a></code>,
 <code><a href="espn_nba_player_eventlog_v2.html">espn_nba_player_eventlog_v2()</a></code>,
-<code><a href="espn_nba_player_gamelog.html">espn_nba_player_gamelog()</a></code>,
 <code><a href="espn_nba_player_info.html">espn_nba_player_info()</a></code>,
 <code><a href="espn_nba_player_overview.html">espn_nba_player_overview()</a></code>,
 <code><a href="espn_nba_player_seasons.html">espn_nba_player_seasons()</a></code>,
-<code><a href="espn_nba_player_splits.html">espn_nba_player_splits()</a></code>,
-<code><a href="espn_nba_player_statisticslog.html">espn_nba_player_statisticslog()</a></code>,
 <code><a href="espn_nba_player_stats.html">espn_nba_player_stats()</a></code>,
-<code><a href="espn_nba_player_stats_v3.html">espn_nba_player_stats_v3()</a></code>,
 <code><a href="espn_nba_position.html">espn_nba_position()</a></code>,
 <code><a href="espn_nba_positions.html">espn_nba_positions()</a></code>,
 <code><a href="espn_nba_powerindex.html">espn_nba_powerindex()</a></code>,
 <code><a href="espn_nba_scoreboard.html">espn_nba_scoreboard()</a></code>,
 <code><a href="espn_nba_season_awards.html">espn_nba_season_awards()</a></code>,
-<code><a href="espn_nba_season_draft.html">espn_nba_season_draft()</a></code>,
 <code><a href="espn_nba_season_group.html">espn_nba_season_group()</a></code>,
-<code><a href="espn_nba_season_group_children.html">espn_nba_season_group_children()</a></code>,
-<code><a href="espn_nba_season_group_teams.html">espn_nba_season_group_teams()</a></code>,
 <code><a href="espn_nba_season_groups.html">espn_nba_season_groups()</a></code>,
 <code><a href="espn_nba_season_info.html">espn_nba_season_info()</a></code>,
 <code><a href="espn_nba_season_leaders.html">espn_nba_season_leaders()</a></code>,
@@ -206,18 +183,14 @@ by <code>sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/{coac
 <code><a href="espn_nba_seasons.html">espn_nba_seasons()</a></code>,
 <code><a href="espn_nba_standings.html">espn_nba_standings()</a></code>,
 <code><a href="espn_nba_team.html">espn_nba_team()</a></code>,
-<code><a href="espn_nba_team_box.html">espn_nba_team_box()</a></code>,
 <code><a href="espn_nba_team_current_roster.html">espn_nba_team_current_roster()</a></code>,
 <code><a href="espn_nba_team_depthchart.html">espn_nba_team_depthchart()</a></code>,
 <code><a href="espn_nba_team_injuries.html">espn_nba_team_injuries()</a></code>,
-<code><a href="espn_nba_team_leaders.html">espn_nba_team_leaders()</a></code>,
 <code><a href="espn_nba_team_news.html">espn_nba_team_news()</a></code>,
 <code><a href="espn_nba_team_odds_records.html">espn_nba_team_odds_records()</a></code>,
 <code><a href="espn_nba_team_record.html">espn_nba_team_record()</a></code>,
 <code><a href="espn_nba_team_record_detail.html">espn_nba_team_record_detail()</a></code>,
-<code><a href="espn_nba_team_roster.html">espn_nba_team_roster()</a></code>,
 <code><a href="espn_nba_team_schedule.html">espn_nba_team_schedule()</a></code>,
-<code><a href="espn_nba_team_season_profile.html">espn_nba_team_season_profile()</a></code>,
 <code><a href="espn_nba_team_season_roster.html">espn_nba_team_season_roster()</a></code>,
 <code><a href="espn_nba_team_season_statistics.html">espn_nba_team_season_statistics()</a></code>,
 <code><a href="espn_nba_team_stats.html">espn_nba_team_stats()</a></code>,
@@ -242,7 +215,7 @@ by <code>sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/{coac
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_coach</span><span class="op">(</span>coach_id <span class="op">=</span> <span class="fl">52120</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Coach Detail ──────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-24 19:10:47 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-24 20:40:03 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 12</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   coach_id uid         first_name last_name date_of_birth birth_city birth_state</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>

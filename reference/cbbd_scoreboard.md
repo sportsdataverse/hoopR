@@ -37,16 +37,14 @@ A `hoopR_data` tibble with one row per game. The `home_team`,
 
 Other CBD Games Functions:
 [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md),
-[`cbbd_games_media()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md),
-[`cbbd_games_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_players.md),
-[`cbbd_games_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_teams.md)
+[`cbbd_games_media()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md)
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_scoreboard(conference = "ACC"))
-#> ✖ 2026-08-24 19:10:02.665685: Invalid arguments or no scoreboard data available!
+#> ✖ 2026-08-24 20:39:07.742884: Invalid arguments or no scoreboard data available!
 #> ✖ Args: conference = "ACC"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

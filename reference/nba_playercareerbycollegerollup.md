@@ -75,93 +75,15 @@ Return a named list of data frames: East, Midwest, South, West
 
 **South**
 
-|          |           |                                          |
-|----------|-----------|------------------------------------------|
-| col_name | types     | description                              |
-| REGION   | character | Region label.                            |
-| SEED     | character | Tournament seed.                         |
-| COLLEGE  | character | College or school attended.              |
-| PLAYERS  | character |                                          |
-| GP       | character | Games played.                            |
-| MIN      | character | Minutes played.                          |
-| FGM      | character | Field goals made.                        |
-| FGA      | character | Field goal attempts.                     |
-| FG_PCT   | character | Field goal percentage (0-1).             |
-| FG3M     | character | Three-point field goals made.            |
-| FG3A     | character | Three-point field goal attempts.         |
-| FG3_PCT  | character | Three-point field goal percentage (0-1). |
-| FTM      | character | Free throws made.                        |
-| FTA      | character | Free throw attempts.                     |
-| FT_PCT   | character | Free throw percentage (0-1).             |
-| OREB     | character | Offensive rebounds.                      |
-| DREB     | character | Defensive rebounds.                      |
-| REB      | character | Total rebounds.                          |
-| AST      | character | Assists.                                 |
-| STL      | character | Steals.                                  |
-| BLK      | character | Blocks.                                  |
-| TOV      | character | Turnovers.                               |
-| PF       | character | Personal fouls.                          |
-| PTS      | character | Points scored.                           |
+Same columns as the **East** table above.
 
 **Midwest**
 
-|          |           |                                          |
-|----------|-----------|------------------------------------------|
-| col_name | types     | description                              |
-| REGION   | character | Region label.                            |
-| SEED     | character | Tournament seed.                         |
-| COLLEGE  | character | College or school attended.              |
-| PLAYERS  | character |                                          |
-| GP       | character | Games played.                            |
-| MIN      | character | Minutes played.                          |
-| FGM      | character | Field goals made.                        |
-| FGA      | character | Field goal attempts.                     |
-| FG_PCT   | character | Field goal percentage (0-1).             |
-| FG3M     | character | Three-point field goals made.            |
-| FG3A     | character | Three-point field goal attempts.         |
-| FG3_PCT  | character | Three-point field goal percentage (0-1). |
-| FTM      | character | Free throws made.                        |
-| FTA      | character | Free throw attempts.                     |
-| FT_PCT   | character | Free throw percentage (0-1).             |
-| OREB     | character | Offensive rebounds.                      |
-| DREB     | character | Defensive rebounds.                      |
-| REB      | character | Total rebounds.                          |
-| AST      | character | Assists.                                 |
-| STL      | character | Steals.                                  |
-| BLK      | character | Blocks.                                  |
-| TOV      | character | Turnovers.                               |
-| PF       | character | Personal fouls.                          |
-| PTS      | character | Points scored.                           |
+Same columns as the **East** table above.
 
 **West**
 
-|          |           |                                          |
-|----------|-----------|------------------------------------------|
-| col_name | types     | description                              |
-| REGION   | character | Region label.                            |
-| SEED     | character | Tournament seed.                         |
-| COLLEGE  | character | College or school attended.              |
-| PLAYERS  | character |                                          |
-| GP       | character | Games played.                            |
-| MIN      | character | Minutes played.                          |
-| FGM      | character | Field goals made.                        |
-| FGA      | character | Field goal attempts.                     |
-| FG_PCT   | character | Field goal percentage (0-1).             |
-| FG3M     | character | Three-point field goals made.            |
-| FG3A     | character | Three-point field goal attempts.         |
-| FG3_PCT  | character | Three-point field goal percentage (0-1). |
-| FTM      | character | Free throws made.                        |
-| FTA      | character | Free throw attempts.                     |
-| FT_PCT   | character | Free throw percentage (0-1).             |
-| OREB     | character | Offensive rebounds.                      |
-| DREB     | character | Defensive rebounds.                      |
-| REB      | character | Total rebounds.                          |
-| AST      | character | Assists.                                 |
-| STL      | character | Steals.                                  |
-| BLK      | character | Blocks.                                  |
-| TOV      | character | Turnovers.                               |
-| PF       | character | Personal fouls.                          |
-| PTS      | character | Points scored.                           |
+Same columns as the **East** table above.
 
 ## Details
 
@@ -185,8 +107,6 @@ Other NBA Player Functions:
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.md),
 [`nba_playerfantasyprofile()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.md),
 [`nba_playerfantasyprofilebargraph()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.md),

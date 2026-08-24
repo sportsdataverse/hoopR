@@ -53,21 +53,15 @@ Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 ## See also
 
 Other KenPom Ratings Functions:
-[`kp_efficiency()`](https://hoopR.sportsdataverse.org/reference/kp_efficiency.md),
-[`kp_foul_trouble()`](https://hoopR.sportsdataverse.org/reference/kp_foul_trouble.md),
-[`kp_fourfactors()`](https://hoopR.sportsdataverse.org/reference/kp_fourfactors.md),
-[`kp_height()`](https://hoopR.sportsdataverse.org/reference/kp_height.md),
 [`kp_playerstats()`](https://hoopR.sportsdataverse.org/reference/kp_playerstats.md),
-[`kp_pointdist()`](https://hoopR.sportsdataverse.org/reference/kp_pointdist.md),
-[`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md),
-[`kp_teamstats()`](https://hoopR.sportsdataverse.org/reference/kp_teamstats.md)
+[`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md)
 
 ## Examples
 
 ``` r
 # \donttest{
 try(kp_kpoy(year = 2026))
-#> ✖ 2026-08-24 19:11:53.165083: Invalid arguments or no KenPom player of the year data for 2026 available!
+#> ✖ 2026-08-24 20:40:58.705226: Invalid arguments or no KenPom player of the year data for 2026 available!
 #> ✖ Args: year = 2026
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

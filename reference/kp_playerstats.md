@@ -71,23 +71,17 @@ Returns a tibble of player stats
 ## See also
 
 Other KenPom Ratings Functions:
-[`kp_efficiency()`](https://hoopR.sportsdataverse.org/reference/kp_efficiency.md),
-[`kp_foul_trouble()`](https://hoopR.sportsdataverse.org/reference/kp_foul_trouble.md),
-[`kp_fourfactors()`](https://hoopR.sportsdataverse.org/reference/kp_fourfactors.md),
-[`kp_height()`](https://hoopR.sportsdataverse.org/reference/kp_height.md),
 [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_kpoy.md),
-[`kp_pointdist()`](https://hoopR.sportsdataverse.org/reference/kp_pointdist.md),
-[`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md),
-[`kp_teamstats()`](https://hoopR.sportsdataverse.org/reference/kp_teamstats.md)
+[`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md)
 
 ## Examples
 
 ``` r
 # \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
-#> ✖ 2026-08-24 19:11:54.085717: Invalid arguments or no player stats data for 2021 eFG available!
+#> ✖ 2026-08-24 20:40:59.38915: Invalid arguments or no player stats data for 2021 eFG available!
 #> ✖ Args: metric = "eFG", conf = NULL, conf_only = FALSE, year = 2021
-#> ✖ Error: HTTP 429 Too Many Requests.
+#> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 ```

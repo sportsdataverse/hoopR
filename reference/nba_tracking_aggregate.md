@@ -100,7 +100,7 @@ semantics before using rate-heavy measures.
 ## See also
 
 Other NBA Player Tracking Functions:
-[`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md),
+[`nba_boxscoredefensive()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
 [`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
 [`nba_leaguedashplayerptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerptshot.md),
 [`nba_leaguedashptdefend()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptdefend.md),
@@ -109,8 +109,6 @@ Other NBA Player Tracking Functions:
 [`nba_leaguedashteamptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_synergyplaytypes()`](https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.md),
 [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
 [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),
@@ -132,10 +130,10 @@ Saiem Gilani
     )
     print(df[1:5, c("PLAYER_ID", "PLAYER_NAME", "DRIVES", "DRIVE_FG_PCT")])
   })
-#> ✖ 2026-08-24 19:29:19.393236: Invalid arguments or no league dashboard player-tracking stats data for 2022-23 available!
+#> ✖ 2026-08-24 20:58:43.135795: Invalid arguments or no league dashboard player-tracking stats data for 2022-23 available!
 #> ✖ Args: college = "", conference = "", country = "", date_from = "", date_to = "", division = "", draft_pick = "", draft_year = "", game_scope = "", height = "", last_n_games = 0, league_id = "00", location = "", month = 0, opponent_team_id = 0, outcome = "", po_round = "", per_mode = "Totals", period = "", player_experience = "", player_or_team = "Player", player_position = "", pt_measure_type = "Drives", season = "2022-23", season_segment = "", season_type = "Regular Season", starter_bench = "", team_id = "", vs_conference = "", vs_division = "", weight = ""
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-08-24 19:30:19.424216: Invalid arguments or no league dashboard player-tracking stats data for 2023-24 available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-08-24 20:59:43.172154: Invalid arguments or no league dashboard player-tracking stats data for 2023-24 available!
 #> ✖ Args: college = "", conference = "", country = "", date_from = "", date_to = "", division = "", draft_pick = "", draft_year = "", game_scope = "", height = "", last_n_games = 0, league_id = "00", location = "", month = 0, opponent_team_id = 0, outcome = "", po_round = "", per_mode = "Totals", period = "", player_experience = "", player_or_team = "Player", player_position = "", pt_measure_type = "Drives", season = "2023-24", season_segment = "", season_type = "Regular Season", starter_bench = "", team_id = "", vs_conference = "", vs_division = "", weight = ""
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
 #> Error in df[1:5, c("PLAYER_ID", "PLAYER_NAME", "DRIVES", "DRIVE_FG_PCT")] : 

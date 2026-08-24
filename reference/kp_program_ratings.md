@@ -48,7 +48,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_program_ratings())
-#> ✖ 2026-08-24 19:11:54.836482: Invalid arguments or no program ratings available!
+#> ✖ 2026-08-24 20:41:00.507548: Invalid arguments or no program ratings available!
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }

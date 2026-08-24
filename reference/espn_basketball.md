@@ -18,12 +18,12 @@ does the actual HTTP call + parsing.
 |  |  |
 |----|----|
 | NBA function | MBB function |
-| [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md) | [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.md) |
+| [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) |
 | [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md) | [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md) |
 | [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) |
-| [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md) | [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.md) |
-| [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md) | [`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.md) |
-| [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md) | [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md) |
+| [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) |
+| [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | [`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) |
+| [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) |
 | [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_wp.md) | [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md) |
 
 ### **Reference data**
@@ -35,7 +35,7 @@ does the actual HTTP call + parsing.
 | [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md) | [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md) |
 | [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md) | [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) |
 | [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md) | [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md) |
-| [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md) | [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md) |
+| [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) |
 |  | [`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md) |
 |  | [`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md) |
 

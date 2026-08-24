@@ -201,7 +201,7 @@ read left to right from general to specific:
 <p>So if you want “a team’s roster for a given season, from ESPN,” you
 can assemble the name in your head before you ever open the docs:
 <code>espn_</code> + <code>nba_</code> + <code>team</code> +
-<code>_roster</code> -&gt; <code><a href="../reference/espn_nba_team_roster.html">espn_nba_team_roster()</a></code>. If you
+<code>_roster</code> -&gt; <code><a href="../reference/espn_nba_team.html">espn_nba_team_roster()</a></code>. If you
 want “the league leaders from NBA.com,” it’s <code>nba_</code> +
 <code>leagueleaders</code> -&gt; <code><a href="../reference/nba_leagueleaders.html">nba_leagueleaders()</a></code>. The
 package has hundreds of functions; you do not need to memorize them. You
@@ -233,11 +233,11 @@ tell you which zoom you’re asking for. Start wide, then push in.</p>
 <span></span>
 <span><span class="co"># Medium: the box score. "team_box" and "player_box" are siblings --</span></span>
 <span><span class="co"># same noun (box), different grain (team vs. player).</span></span>
-<span><span class="va">team_box</span>   <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_team_box.html">espn_nba_team_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
-<span><span class="va">player_box</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_player_box.html">espn_nba_player_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
+<span><span class="va">team_box</span>   <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_game_all.html">espn_nba_team_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
+<span><span class="va">player_box</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_game_all.html">espn_nba_player_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Tightest: the play-by-play. Every possession, one row each.</span></span>
-<span><span class="va">pbp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_pbp.html">espn_nba_pbp</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">pbp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_game_all.html">espn_nba_pbp</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span></code></pre></div>
 <p>The lesson hiding in the margin: <code>team_box</code> and
 <code>player_box</code> differ by exactly one word, and that word is the
 <em>grain</em> of the table. Whenever you see two functions whose names
@@ -310,7 +310,7 @@ quarter. You want to <em>see</em> the momentum swing.</p>
 <span><span class="va">pbp_v3</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">sched</span><span class="op">$</span><span class="va">game_id</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `if (zeros == 0) ...`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> argument is of length zero</span></span></code></pre></div>
-<p>This is the grammar doing real work. <code><a href="../reference/espn_nba_pbp.html">espn_nba_pbp()</a></code> and
+<p>This is the grammar doing real work. <code><a href="../reference/espn_nba_game_all.html">espn_nba_pbp()</a></code> and
 <code><a href="../reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> answer almost the same question – give
 me the plays – and you can tell at a glance that the first is ESPN’s
 take and the second is NBA.com’s, <em>because the prefix is the data
@@ -361,7 +361,7 @@ pattern <code>espn_nba_event_*</code>:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> nba    401283399 29           3    29 29            Basic/Manual</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> nba    401283399 29           4    36 36            1           </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> nba    401283399 29           4    36 36            Basic/Manual</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_game_officials.html">espn_nba_game_officials</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_nba_game_odds.html">espn_nba_game_officials</a></span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 3 × 8</span></span></span>
 <span><span class="co">#&gt;   event_id  official_id full_name   display_name position_id position_name</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
@@ -393,7 +393,7 @@ menu is sensibly named.</p>
 <span></span>
 <span><span class="co"># The "season profile" is a hub -- it hands you $refs to everything</span></span>
 <span><span class="co"># else about this team-season.</span></span>
-<span><span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_team_season_profile.html">espn_nba_team_season_profile</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
+<span><span class="va">profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_nba_team.html">espn_nba_team_season_profile</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/espn_nba_team_schedule.html">espn_nba_team_schedule</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 82 × 21</span></span></span>
@@ -414,7 +414,7 @@ menu is sensibly named.</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   neutral_site &lt;lgl&gt;, conference_competition &lt;lgl&gt;, venue_id &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   venue_name &lt;chr&gt;, venue_city &lt;chr&gt;, venue_state &lt;chr&gt;, broadcast &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   result &lt;chr&gt;, team_score &lt;chr&gt;, opponent_score &lt;chr&gt;, winner &lt;lgl&gt;</span></span></span>
-<span><span class="fu"><a href="../reference/espn_nba_team_roster.html">espn_nba_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_nba_team.html">espn_nba_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 18 × 15</span></span></span>
 <span><span class="co">#&gt;    athlete_id full_name jersey position_abbrev position_name height weight age  </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
@@ -548,7 +548,7 @@ general to specific exactly as the grammar promises:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">season</span> <span class="op">&lt;-</span> <span class="fl">2024</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/espn_nba_season_draft.html">espn_nba_season_draft</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>        <span class="co"># the draft, top level</span></span>
+<span><span class="fu"><a href="../reference/espn_nba_draft_rounds.html">espn_nba_season_draft</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>        <span class="co"># the draft, top level</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 10</span></span></span>
 <span><span class="co">#&gt;   league season  year uid       number_of_rounds display_name short_display_name</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span></span>
@@ -560,7 +560,7 @@ general to specific exactly as the grammar promises:</p>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>024     1 1st Round    1st                     30 COMPLETED</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> nba      <span style="text-decoration: underline;">2</span>024     2 2nd Round    2nd                     28 COMPLETED</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_draft_athletes.html">espn_nba_draft_athletes</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>      <span class="co"># every drafted player</span></span>
+<span><span class="fu"><a href="../reference/espn_nba_draft_rounds.html">espn_nba_draft_athletes</a></span><span class="op">(</span>season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>      <span class="co"># every drafted player</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 102 × 4</span></span></span>
 <span><span class="co">#&gt;    league season athlete_id ref                                                 </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                               </span></span>
@@ -603,7 +603,7 @@ usually <em>also</em> between them alphabetically and conceptually.</p>
 </h2>
 <p><strong>The story.</strong> You don’t want one game. You want
 <em>every</em> game – a full season of play-by-play to model on.</p>
-<p>Calling <code><a href="../reference/espn_nba_pbp.html">espn_nba_pbp()</a></code> in a loop over a thousand
+<p>Calling <code><a href="../reference/espn_nba_game_all.html">espn_nba_pbp()</a></code> in a loop over a thousand
 <code>game_id</code>s would work, and it would also be slow and rude to
 ESPN’s servers. The <code>load_</code> prefix exists precisely for this:
 pre-built, pre-cleaned season files.</p>
@@ -612,12 +612,12 @@ pre-built, pre-cleaned season files.</p>
 <span><span class="va">pbp_2024</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># The whole family loads the same way.</span></span>
-<span><span class="fu"><a href="../reference/load_nba_player_box.html">load_nba_player_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_nba_team_box.html">load_nba_team_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_nba_schedule.html">load_nba_schedule</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_player_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_team_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_schedule</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 <p>The grammar lesson: the <code>load_</code> prefix changes the
 <em>performance contract</em>, not the subject.
-<code><a href="../reference/load_nba_pbp.html">load_nba_pbp()</a></code> and <code><a href="../reference/espn_nba_pbp.html">espn_nba_pbp()</a></code> both hand
+<code><a href="../reference/load_nba_pbp.html">load_nba_pbp()</a></code> and <code><a href="../reference/espn_nba_game_all.html">espn_nba_pbp()</a></code> both hand
 you play-by-play; the first hands you a whole season fast, the second
 hands you one game live. Reach for <code>load_</code> when you’re doing
 research across many games, and for <code>espn_</code> when you want one
@@ -674,7 +674,7 @@ ESPN, NBA Stats, KenPom, loaders, all of it.</p>
 <span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># From here on, nothing changes -- just call functions normally.</span></span>
-<span><span class="fu"><a href="../reference/espn_nba_team_roster.html">espn_nba_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">13</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_nba_team.html">espn_nba_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">13</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/nba_leagueleaders.html">nba_leagueleaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="st">"2024-25"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Layer 2 – one call, one proxy.</strong> Every NBA Stats API
 function (<code>nba_*</code>) threads <code>...</code> down to the HTTP

@@ -105,13 +105,6 @@ Returns a named list of tibbles: player_stats, gamelog
 ## See also
 
 Other KenPom Team Functions:
-[`kp_gameplan()`](https://hoopR.sportsdataverse.org/reference/kp_gameplan.md),
-[`kp_minutes_matrix()`](https://hoopR.sportsdataverse.org/reference/kp_minutes_matrix.md),
-[`kp_opptracker()`](https://hoopR.sportsdataverse.org/reference/kp_opptracker.md),
-[`kp_team_depth_chart()`](https://hoopR.sportsdataverse.org/reference/kp_team_depth_chart.md),
-[`kp_team_lineups()`](https://hoopR.sportsdataverse.org/reference/kp_team_lineups.md),
-[`kp_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/kp_team_player_stats.md),
-[`kp_team_players()`](https://hoopR.sportsdataverse.org/reference/kp_team_players.md),
 [`kp_team_schedule()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md)
 
 ## Examples
@@ -119,9 +112,9 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_player_career(player_id = '41180'))
-#> ✖ 2026-08-24 19:11:53.886151: 2026-08-24 19:11:53.885895 - No Player Career Data available for 41180
+#> ✖ 2026-08-24 20:40:59.148312: 2026-08-24 20:40:59.148013 - No Player Career Data available for 41180
 #> ✖ Args: player_id = "41180"
-#> ✖ Error: HTTP 429 Too Many Requests.
+#> ✖ Error: HTTP 403 Forbidden.
 #> NULL
   # }
 ```

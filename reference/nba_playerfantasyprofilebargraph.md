@@ -66,24 +66,7 @@ Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
 
 **LastFiveGamesAvg**
 
-|                   |           |                                       |
-|-------------------|-----------|---------------------------------------|
-| col_name          | types     | description                           |
-| PLAYER_ID         | character | Unique player identifier.             |
-| PLAYER_NAME       | character | Player name.                          |
-| TEAM_ID           | character | Unique team identifier.               |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| FAN_DUEL_PTS      | character |                                       |
-| NBA_FANTASY_PTS   | character |                                       |
-| PTS               | character | Points scored.                        |
-| REB               | character | Total rebounds.                       |
-| AST               | character | Assists.                              |
-| FG3M              | character | Three-point field goals made.         |
-| FT_PCT            | character | Free throw percentage (0-1).          |
-| STL               | character | Steals.                               |
-| BLK               | character | Blocks.                               |
-| TOV               | character | Turnovers.                            |
-| FG_PCT            | character | Field goal percentage (0-1).          |
+Same columns as the **SeasonAvg** table above.
 
 ## Details
 
@@ -108,8 +91,6 @@ Other NBA Player Functions:
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.md),
 [`nba_playerfantasyprofile()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.md),
 [`nba_playergamelog()`](https://hoopR.sportsdataverse.org/reference/nba_playergamelog.md),

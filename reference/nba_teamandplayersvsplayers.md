@@ -265,97 +265,15 @@ TeamVsPlayersOff
 
 **TeamPlayersVsPlayersOff**
 
-|                   |           |                                               |
-|-------------------|-----------|-----------------------------------------------|
-| col_name          | types     | description                                   |
-| GROUP_SET         | character |                                               |
-| TITLE_DESCRIPTION | character |                                               |
-| PLAYER_ID         | character | Unique player identifier.                     |
-| PLAYER_NAME       | character | Player name.                                  |
-| MIN               | character | Minutes played.                               |
-| FGM               | character | Field goals made.                             |
-| FGA               | character | Field goal attempts.                          |
-| FG_PCT            | character | Field goal percentage (0-1).                  |
-| FG3M              | character | Three-point field goals made.                 |
-| FG3A              | character | Three-point field goal attempts.              |
-| FG3_PCT           | character | Three-point field goal percentage (0-1).      |
-| FTM               | character | Free throws made.                             |
-| FTA               | character | Free throw attempts.                          |
-| FT_PCT            | character | Free throw percentage (0-1).                  |
-| OREB              | character | Offensive rebounds.                           |
-| DREB              | character | Defensive rebounds.                           |
-| REB               | character | Total rebounds.                               |
-| AST               | character | Assists.                                      |
-| TOV               | character | Turnovers.                                    |
-| STL               | character | Steals.                                       |
-| BLK               | character | Blocks.                                       |
-| BLKA              | character |                                               |
-| PF                | character | Personal fouls.                               |
-| PFD               | character |                                               |
-| PTS               | character | Points scored.                                |
-| PLUS_MINUS        | character | Plus/minus point differential while on court. |
+Same columns as the **TeamPlayersVsPlayersOn** table above.
 
 **TeamVsPlayers**
 
-|                   |           |                                               |
-|-------------------|-----------|-----------------------------------------------|
-| col_name          | types     | description                                   |
-| GROUP_SET         | character |                                               |
-| TITLE_DESCRIPTION | character |                                               |
-| DESCRIPTION       | character | Long-form description text.                   |
-| MIN               | character | Minutes played.                               |
-| FGM               | character | Field goals made.                             |
-| FGA               | character | Field goal attempts.                          |
-| FG_PCT            | character | Field goal percentage (0-1).                  |
-| FG3M              | character | Three-point field goals made.                 |
-| FG3A              | character | Three-point field goal attempts.              |
-| FG3_PCT           | character | Three-point field goal percentage (0-1).      |
-| FTM               | character | Free throws made.                             |
-| FTA               | character | Free throw attempts.                          |
-| FT_PCT            | character | Free throw percentage (0-1).                  |
-| OREB              | character | Offensive rebounds.                           |
-| DREB              | character | Defensive rebounds.                           |
-| REB               | character | Total rebounds.                               |
-| AST               | character | Assists.                                      |
-| TOV               | character | Turnovers.                                    |
-| STL               | character | Steals.                                       |
-| BLK               | character | Blocks.                                       |
-| BLKA              | character |                                               |
-| PF                | character | Personal fouls.                               |
-| PFD               | character |                                               |
-| PTS               | character | Points scored.                                |
-| PLUS_MINUS        | character | Plus/minus point differential while on court. |
+Same columns as the **PlayersVsPlayers** table above.
 
 **TeamVsPlayersOff**
 
-|                   |           |                                               |
-|-------------------|-----------|-----------------------------------------------|
-| col_name          | types     | description                                   |
-| GROUP_SET         | character |                                               |
-| TITLE_DESCRIPTION | character |                                               |
-| DESCRIPTION       | character | Long-form description text.                   |
-| MIN               | character | Minutes played.                               |
-| FGM               | character | Field goals made.                             |
-| FGA               | character | Field goal attempts.                          |
-| FG_PCT            | character | Field goal percentage (0-1).                  |
-| FG3M              | character | Three-point field goals made.                 |
-| FG3A              | character | Three-point field goal attempts.              |
-| FG3_PCT           | character | Three-point field goal percentage (0-1).      |
-| FTM               | character | Free throws made.                             |
-| FTA               | character | Free throw attempts.                          |
-| FT_PCT            | character | Free throw percentage (0-1).                  |
-| OREB              | character | Offensive rebounds.                           |
-| DREB              | character | Defensive rebounds.                           |
-| REB               | character | Total rebounds.                               |
-| AST               | character | Assists.                                      |
-| TOV               | character | Turnovers.                                    |
-| STL               | character | Steals.                                       |
-| BLK               | character | Blocks.                                       |
-| BLKA              | character |                                               |
-| PF                | character | Personal fouls.                               |
-| PFD               | character |                                               |
-| PTS               | character | Points scored.                                |
-| PLUS_MINUS        | character | Plus/minus point differential while on court. |
+Same columns as the **PlayersVsPlayers** table above.
 
 ## Details
 
@@ -386,9 +304,7 @@ Other NBA Team Functions:
 [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md),
 [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md),
 [`nba_teaminfocommon()`](https://hoopR.sportsdataverse.org/reference/nba_teaminfocommon.md),
-[`nba_teamplayerdashboard()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayerdashboard.md),
 [`nba_teamplayeronoffdetails()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md),
-[`nba_teamplayeronoffsummary()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffsummary.md),
 [`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teams.md),
 [`nba_teamvsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.md),
 [`nba_teamyearbyyearstats()`](https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.md)

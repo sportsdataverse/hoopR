@@ -59,9 +59,9 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
-#> ✖ 2026-08-24 19:11:54.478597: Invalid arguments or no kp_pomeroy_archive_ratings data for 2018-11-22 available!
+#> ✖ 2026-08-24 20:40:59.620131: Invalid arguments or no kp_pomeroy_archive_ratings data for 2018-11-22 available!
 #> ✖ Args: date = "2018-11-22"
-#> ✖ Error: HTTP 429 Too Many Requests.
+#> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 ```

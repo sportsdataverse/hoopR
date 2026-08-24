@@ -14,34 +14,34 @@ requests go through
 
 Tabular `resultSets[]` responses parsed via
 `nba_stats_map_result_sets()`. See
-[`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.md),
+[`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
 [`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
-[`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.md),
-[`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md),
-[`nba_boxscorematchups()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorematchups.md),
-[`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md),
-[`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md),
-[`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md),
+[`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
+[`nba_boxscorematchups()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
+[`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
+[`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
+[`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
 [`nba_boxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresimilarityscore.md),
-[`nba_boxscoresummaryv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2.md),
-[`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md),
-[`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md).
+[`nba_boxscoresummaryv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
+[`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
+[`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md).
 
 ### **Boxscores (V3)**
 
 Nested JSON responses parsed via
 [`purrr::pluck()`](https://purrr.tidyverse.org/reference/pluck.html).
 See
-[`nba_boxscoreadvancedv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.md),
-[`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.md),
-[`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md),
+[`nba_boxscoreadvancedv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
 [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md),
-[`nba_boxscorematchupsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorematchupsv3.md),
-[`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md),
-[`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md),
-[`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md),
+[`nba_boxscorematchupsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
 [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
-[`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md).
+[`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md).
 
 ### **Play-by-play**
 
@@ -92,10 +92,10 @@ Full per-mode / per-split families. Search the reference index for
 [`nba_draftboard()`](https://hoopR.sportsdataverse.org/reference/nba_draftboard.md),
 [`nba_drafthistory()`](https://hoopR.sportsdataverse.org/reference/nba_drafthistory.md),
 [`nba_draftcombinestats()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md),
-[`nba_draftcombinedrillresults()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinedrillresults.md),
-[`nba_draftcombineplayeranthro()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombineplayeranthro.md),
-[`nba_draftcombinenonstationaryshooting()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinenonstationaryshooting.md),
-[`nba_draftcombinespotshooting()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinespotshooting.md),
+[`nba_draftcombinedrillresults()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md),
+[`nba_draftcombineplayeranthro()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md),
+[`nba_draftcombinenonstationaryshooting()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md),
+[`nba_draftcombinespotshooting()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md),
 [`nba_franchisehistory()`](https://hoopR.sportsdataverse.org/reference/nba_franchisehistory.md),
 [`nba_franchiseleaders()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaders.md),
 [`nba_franchiseleaderswrank()`](https://hoopR.sportsdataverse.org/reference/nba_franchiseleaderswrank.md),

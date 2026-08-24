@@ -4,10 +4,58 @@
 
 **Get NBA Stats API Player Dashboard Player Tracking - Rebounding**
 
+**Get NBA Stats API Player Dashboard Player Tracking - Defense**
+
+**Get NBA Stats API Player Dashboard Player Tracking - Shots**
+
 ## Usage
 
 ``` r
 nba_playerdashptreb(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptshotdefend(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptshots(
   date_from = "",
   date_to = "",
   game_segment = "",
@@ -114,12 +162,36 @@ Return a named list of data frames: NumContestedRebounding,
 OverallRebounding, RebDistanceRebounding, ShotDistanceRebounding,
 ShotTypeRebounding
 
+Return a named list of data frames: DefendingShots
+
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_playerdashboard_columns.md` for full column tables.
+
+Return a named list of data frames: ClosestDefender10ftPlusShooting,
+ClosestDefenderShooting, DribbleShooting, GeneralShooting, Overall,
+ShotClockShooting, TouchTimeShooting
+
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_playerdashboard_columns.md` for full column tables.
+
 ## Details
 
 [Player Tracking (Second Spectrum) Stats -
 Rebounding](https://www.nba.com/stats/player/2544/rebounds-dash)
 
      nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+
+[Player Tracking (Second Spectrum) Stats -
+Defending](https://www.nba.com/stats/player/2544/defense-dash)
+
+     nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+
+[Player Tracking (Second Spectrum) Stats -
+Shooting](https://www.nba.com/stats/player/2544/shots-dash)
+
+     nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
 
 ## See also
 
@@ -139,8 +211,6 @@ Other NBA Player Functions:
 [`nba_playercompare()`](https://hoopR.sportsdataverse.org/reference/nba_playercompare.md),
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.md),
 [`nba_playerfantasyprofile()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.md),
 [`nba_playerfantasyprofilebargraph()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.md),
@@ -154,7 +224,7 @@ Other NBA Player Functions:
 [`nba_playervsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_playervsplayer.md)
 
 Other NBA Player Tracking Functions:
-[`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md),
+[`nba_boxscoredefensive()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
 [`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
 [`nba_leaguedashplayerptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayerptshot.md),
 [`nba_leaguedashptdefend()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptdefend.md),
@@ -162,8 +232,6 @@ Other NBA Player Tracking Functions:
 [`nba_leaguedashptteamdefend()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashptteamdefend.md),
 [`nba_leaguedashteamptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_synergyplaytypes()`](https://hoopR.sportsdataverse.org/reference/nba_synergyplaytypes.md),
 [`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
 [`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),

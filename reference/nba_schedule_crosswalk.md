@@ -26,8 +26,6 @@ A `hoopR_data` tibble, one row per game.
 ## See also
 
 Other NBA Crosswalk Functions:
-[`load_nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_crosswalk.md),
-[`load_nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_schedule_crosswalk.md),
 [`load_nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md),
 [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md),
 [`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
@@ -37,13 +35,13 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_schedule_crosswalk())
-#> ✖ 2026-08-24 19:19:11.842482: Invalid arguments or no league standings v3 data available for 2025-26!
+#> ✖ 2026-08-24 20:48:35.055603: Invalid arguments or no league standings v3 data available for 2025-26!
 #> ✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-08-24 19:20:11.875071: Invalid arguments or no league game log data for 2025-26 available!
+#> ✖ 2026-08-24 20:49:35.095034: Invalid arguments or no league game log data for 2025-26 available!
 #> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-#> ✖ 2026-08-24 19:20:11.884387: Invalid arguments or no team details data available!
+#> ✖ 2026-08-24 20:49:35.107466: Invalid arguments or no team details data available!
 #> ✖ Error: argument is of length zero
 #> Error in !nrow(nt) : invalid argument type
 # }

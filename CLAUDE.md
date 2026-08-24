@@ -107,7 +107,7 @@ pkgdown::build_site()
 | Data Source | Prefix | Example |
 |----|----|----|
 | NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
-| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
+| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
 | KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
 | CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
 | Basketball-Reference | `bref_` | [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md), [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md) |
@@ -116,7 +116,7 @@ pkgdown::build_site()
 | Fox Sports | `fox_nba_` / `fox_mbb_` | [`fox_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_pbp.md), [`fox_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_standings.md) |
 | NBA G-League | `nbagl_` | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md) |
 | NCAA | `ncaa_mbb_` | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md) |
-| Data loaders | `load_nba_` / `load_mbb_` / `load_ncaa_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md), [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md) |
+| Data loaders | `load_nba_` / `load_mbb_` / `load_ncaa_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md), [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md) |
 
 ### Function Pattern (NBA Stats API)
 

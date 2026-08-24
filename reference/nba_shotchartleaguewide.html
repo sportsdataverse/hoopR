@@ -129,7 +129,9 @@ Get NBA Stats API Shot Chart League-Wide"><meta property="og:image" content="htt
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>Return a named list of data frames: League_Wide</p>
-<p><strong>League_Wide</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>GRID_TYPE</td><td>character</td><td></td></tr><tr><td>SHOT_ZONE_BASIC</td><td>character</td><td>Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3').</td></tr><tr><td>SHOT_ZONE_AREA</td><td>character</td><td>Shot zone area ('Left Side', 'Right Side', 'Center').</td></tr><tr><td>SHOT_ZONE_RANGE</td><td>character</td><td>Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.).</td></tr><tr><td>FGA</td><td>character</td><td>Field goal attempts.</td></tr><tr><td>FGM</td><td>character</td><td>Field goals made.</td></tr><tr><td>FG_PCT</td><td>character</td><td>Field goal percentage (0-1).</td></tr></table></div>
+<p><strong>League_Wide</strong></p>
+<p>Columns as documented in the shared <a href="nba_shotchartdetail_leagueaverages_schema.html">nba_shotchartdetail_leagueaverages_schema</a> table.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nba_shotchartleaguewide.html">nba_shotchartleaguewide</a></span><span class="op">(</span>league_id <span class="op">=</span> <span class="st">'00'</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/year_to_season.html">year_to_season</a></span><span class="op">(</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre><p></p></div>

@@ -117,7 +117,8 @@
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A data frame with the following columns:</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>game_number</td><td>integer</td><td>Game number.</td></tr><tr><td>date</td><td>character</td><td>Date in YYYY-MM-DD format.</td></tr><tr><td>time_et</td><td>character</td><td>Time et.</td></tr><tr><td>game</td><td>character</td><td>Game.</td></tr><tr><td>location</td><td>character</td><td>Location.</td></tr><tr><td>venue</td><td>character</td><td>Venue name.</td></tr><tr><td>conference</td><td>character</td><td>Conference.</td></tr><tr><td>thrill_score</td><td>numeric</td><td>Thrill score.</td></tr><tr><td>referee_name</td><td>character</td><td>Referee name.</td></tr><tr><td>ref_rank</td><td>numeric</td><td>League/season rank for ref.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr></table></div>
+    <p>A data frame with the following columns:</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>game_number</td><td>integer</td><td>Game number.</td></tr><tr><td>date</td><td>character</td><td>Date in YYYY-MM-DD format.</td></tr><tr><td>time_et</td><td>character</td><td>Time et.</td></tr><tr><td>game</td><td>character</td><td>Game.</td></tr><tr><td>location</td><td>character</td><td>Location.</td></tr><tr><td>venue</td><td>character</td><td>Venue name.</td></tr><tr><td>conference</td><td>character</td><td>Conference.</td></tr><tr><td>thrill_score</td><td>numeric</td><td>Thrill score.</td></tr><tr><td>referee_name</td><td>character</td><td>Referee name.</td></tr><tr><td>ref_rank</td><td>numeric</td><td>League/season rank for ref.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KP Misc. Functions:
@@ -133,7 +134,7 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_referee</span><span class="op">(</span>referee <span class="op">=</span> <span class="fl">714363</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:11:55.202538: Invalid arguments or no referee data for 714363 in 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:41:00.728958: Invalid arguments or no referee data for 714363 in 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: referee = 714363, year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>

@@ -46,17 +46,14 @@ identifying columns:
 ## See also
 
 Other CBD Stats Functions:
-[`cbbd_stats_player_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_season.md),
-[`cbbd_stats_player_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_shooting_season.md),
-[`cbbd_stats_team_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md),
-[`cbbd_stats_team_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_shooting_season.md)
+[`cbbd_stats_team_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md)
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_stats_team_leaderboard(season = 2024))
-#> ✖ 2026-08-24 19:10:03.108105: Invalid arguments or no team stats leaderboard available!
+#> ✖ 2026-08-24 20:39:07.919982: Invalid arguments or no team stats leaderboard available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

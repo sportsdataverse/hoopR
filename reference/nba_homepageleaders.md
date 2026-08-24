@@ -96,16 +96,7 @@ LeagueMax
 
 **LeagueMax**
 
-|           |         |                                          |
-|-----------|---------|------------------------------------------|
-| col_name  | types   | description                              |
-| PTS       | numeric | Points scored.                           |
-| FG_PCT    | numeric | Field goal percentage (0-1).             |
-| FG3_PCT   | numeric | Three-point field goal percentage (0-1). |
-| FT_PCT    | numeric | Free throw percentage (0-1).             |
-| EFG_PCT   | numeric | Effective field goal percentage (0-1).   |
-| TS_PCT    | numeric | True shooting percentage (0-1).          |
-| PTS_PER48 | numeric |                                          |
+Same columns as the **LeagueAverage** table above.
 
 ## Details
 

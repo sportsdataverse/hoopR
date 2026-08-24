@@ -194,7 +194,7 @@ to specific.</li>
 <code>mbb_</code> + <code>team_schedule</code> -&gt;
 <code><a href="../reference/espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>. “KenPom’s efficiency ratings” is
 <code>kp_</code> + <code>efficiency</code> -&gt;
-<code><a href="../reference/kp_efficiency.html">kp_efficiency()</a></code>. You will be right far more often than
+<code><a href="../reference/kp_pomeroy_ratings.html">kp_efficiency()</a></code>. You will be right far more often than
 you’ll be wrong, and being wrong just means opening the reference
 index.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -258,7 +258,7 @@ you:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   neutral_site &lt;lgl&gt;, conference_competition &lt;lgl&gt;, venue_id &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   venue_name &lt;chr&gt;, venue_city &lt;chr&gt;, venue_state &lt;chr&gt;, broadcast &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   result &lt;chr&gt;, team_score &lt;chr&gt;, opponent_score &lt;chr&gt;, winner &lt;lgl&gt;</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_team_roster.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>      <span class="co"># the players</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_team.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span>      <span class="co"># the players</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 15</span></span></span>
 <span><span class="co">#&gt;    athlete_id full_name jersey position_abbrev position_name height weight age  </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
@@ -310,7 +310,7 @@ pro – so the reliable move is to pull the current roster first and lift
 an <code>athlete_id</code> straight off it, then walk the
 <code>athlete_</code> family:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">roster</span>     <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_team_roster.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">roster</span>     <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_team.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">athlete_id</span> <span class="op">&lt;-</span> <span class="va">roster</span><span class="op">$</span><span class="va">athlete_id</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>   <span class="co"># whoever is first on the roster</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_player_info.html">espn_mbb_player_info</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span>            <span class="co"># bio</span></span>
@@ -346,7 +346,7 @@ an <code>athlete_id</code> straight off it, then walk the
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $Draft</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 0</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_player_gamelog.html">espn_mbb_player_gamelog</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_player_overview.html">espn_mbb_player_gamelog</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 38 × 26</span></span></span>
 <span><span class="co">#&gt;    id        at_vs game_date     score home_team_id away_team_id home_team_score</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span></span>
@@ -416,10 +416,10 @@ KenPom’s whole reason to exist.</p>
 <span><span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2024</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># The four factors: shooting, turnovers, rebounding, free throws.</span></span>
-<span><span class="fu"><a href="../reference/kp_fourfactors.html">kp_fourfactors</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_fourfactors</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Raw adjusted-efficiency table.</span></span>
-<span><span class="fu"><a href="../reference/kp_efficiency.html">kp_efficiency</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_efficiency</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre></div>
 <p>The grammar lesson here is about <em>prefixes as capabilities</em>.
 The moment you see <code>kp_</code>, three things are implied without
 another word: the data is men’s-college-only, it is tempo-free, and it
@@ -428,7 +428,7 @@ each prefix promises and half the documentation becomes redundant.</p>
 <p>KenPom’s own family is deep – and, of course, regular:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/kp_team_schedule.html">kp_team_schedule</a></span><span class="op">(</span>team <span class="op">=</span> <span class="st">"Duke"</span>, year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/kp_teamstats.html">kp_teamstats</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_teamstats</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/kp_playerstats.html">kp_playerstats</a></span><span class="op">(</span>metric <span class="op">=</span> <span class="st">"eFG"</span>, year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/kp_kpoy.html">kp_kpoy</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span>         <span class="co"># KenPom Player of the Year race</span></span>
 <span><span class="fu"><a href="../reference/kp_fanmatch.html">kp_fanmatch</a></span><span class="op">(</span>date <span class="op">=</span> <span class="st">"2025-02-01"</span><span class="op">)</span>   <span class="co"># every game on a date, win probs attached</span></span></code></pre></div>
@@ -501,7 +501,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   three_point_field_goals_made &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   three_point_field_goals_attempted &lt;int&gt;, free_throws_made &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   free_throws_attempted &lt;int&gt;, offensive_rebounds &lt;int&gt;, …</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_team_box.html">espn_mbb_team_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>      <span class="co"># team box</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_game_all.html">espn_mbb_team_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>      <span class="co"># team box</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 57</span></span></span>
 <span><span class="co">#&gt;     game_id season season_type game_date  game_date_time      team_id team_uid  </span></span>
 <span><span class="co">#&gt;       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span></span>
@@ -514,7 +514,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   team_score &lt;int&gt;, team_winner &lt;lgl&gt;, assists &lt;int&gt;, blocks &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   defensive_rebounds &lt;int&gt;, fast_break_points &lt;chr&gt;, field_goal_pct &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   field_goals_made &lt;int&gt;, field_goals_attempted &lt;int&gt;, …</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_player_box.html">espn_mbb_player_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>    <span class="co"># player box</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_game_all.html">espn_mbb_player_box</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>    <span class="co"># player box</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 34 × 54</span></span></span>
 <span><span class="co">#&gt;      game_id season season_type game_date  game_date_time      athlete_id</span></span>
 <span><span class="co">#&gt;        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
@@ -535,7 +535,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   three_point_field_goals_made &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   three_point_field_goals_attempted &lt;int&gt;, free_throws_made &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   free_throws_attempted &lt;int&gt;, offensive_rebounds &lt;int&gt;, …</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_pbp.html">espn_mbb_pbp</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>           <span class="co"># play-by-play</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_game_all.html">espn_mbb_pbp</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>           <span class="co"># play-by-play</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 353 × 48</span></span></span>
 <span><span class="co">#&gt;    id       sequence_number text  away_score home_score scoring_play score_value</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
@@ -664,7 +664,7 @@ with the <code>season_group</code> family.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-…   <span style="text-decoration: underline;">2</span>026           2 50       s:40… NCAA… NCAA         Division I</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 7 more variables: midsize_name &lt;chr&gt;, is_conference &lt;lgl&gt;, slug &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   parent_ref &lt;chr&gt;, children_ref &lt;chr&gt;, teams_ref &lt;chr&gt;, standings_ref &lt;chr&gt;</span></span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_season_group_teams.html">espn_mbb_season_group_teams</a></span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">50</span>, season <span class="op">=</span> <span class="va">season</span>, season_type <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_season_group.html">espn_mbb_season_group_teams</a></span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">50</span>, season <span class="op">=</span> <span class="va">season</span>, season_type <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 200 × 6</span></span></span>
 <span><span class="co">#&gt;    league                  season season_type group_id team_id ref              </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span></span>
@@ -755,9 +755,9 @@ every college game of a season to model on.</p>
 <code class="sourceCode R"><span><span class="co"># load / mbb / pbp -- one call, one season.</span></span>
 <span><span class="va">pbp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/load_mbb_player_box.html">load_mbb_player_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_mbb_team_box.html">load_mbb_team_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/load_mbb_schedule.html">load_mbb_schedule</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_player_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_team_box</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_schedule</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 <p>And straight into a database, with the same
 <code>(seasons, dbConnection, tablename)</code> plumbing every
 <code>load_</code> function shares:</p>
@@ -786,7 +786,7 @@ everything: ESPN, KenPom, loaders.</p>
 <span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Then just work -- every call inherits it.</span></span>
-<span><span class="fu"><a href="../reference/espn_mbb_team_roster.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/espn_mbb_team.html">espn_mbb_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings</a></span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2025</span>, max_year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Layer 2 – environment variables.</strong> For shared scripts
 and CI, where the proxy belongs to the machine and not the analysis, set

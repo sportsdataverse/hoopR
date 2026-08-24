@@ -153,13 +153,12 @@ Torvik is a single CSV; KenPom uses the bundled <code>teams_links</code> object.
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per ESPN team:</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>espn_abbreviation</td><td>character</td><td>ESPN abbreviation.</td></tr><tr><td>espn_display_name</td><td>character</td><td>ESPN display name (school + mascot).</td></tr><tr><td>espn_short_name</td><td>character</td><td>ESPN short name.</td></tr><tr><td>espn_location</td><td>character</td><td>ESPN school/location only.</td></tr><tr><td>espn_mascot</td><td>character</td><td>ESPN mascot/nickname.</td></tr><tr><td>espn_conference</td><td>character</td><td>ESPN conference name.</td></tr><tr><td>fox_team_id</td><td>character</td><td>Fox Bifrost team id (NA if unmatched).</td></tr><tr><td>fox_team_name</td><td>character</td><td>Fox team name (NA if unmatched).</td></tr><tr><td>fox_section</td><td>character</td><td>Fox conference/section label (NA if unmatched).</td></tr><tr><td>bart_team</td><td>character</td><td>Torvik team name (NA if unmatched).</td></tr><tr><td>bart_conf</td><td>character</td><td>Torvik conference abbreviation (NA if unmatched).</td></tr><tr><td>kp_team</td><td>character</td><td>KenPom team name (NA if unmatched).</td></tr><tr><td>kp_conf</td><td>character</td><td>KenPom conference abbreviation (NA if unmatched).</td></tr><tr><td>yahoo_team_id</td><td>character</td><td>Yahoo team id (NA placeholder).</td></tr><tr><td>yahoo_team_name</td><td>character</td><td>Yahoo team name (NA placeholder).</td></tr><tr><td>fox_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>bart_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>kp_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>match_method</td><td>character</td><td>Combination of matched sources, e.g.</td></tr><tr><td></td><td></td><td>"fox+bart+kp" / "fox+bart" / "bart+kp" /</td></tr><tr><td></td><td></td><td>"fox_only" / "bart_only" / "kp_only" /</td></tr><tr><td></td><td></td><td>"espn_only".</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble, one row per ESPN team:</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>espn_abbreviation</td><td>character</td><td>ESPN abbreviation.</td></tr><tr><td>espn_display_name</td><td>character</td><td>ESPN display name (school + mascot).</td></tr><tr><td>espn_short_name</td><td>character</td><td>ESPN short name.</td></tr><tr><td>espn_location</td><td>character</td><td>ESPN school/location only.</td></tr><tr><td>espn_mascot</td><td>character</td><td>ESPN mascot/nickname.</td></tr><tr><td>espn_conference</td><td>character</td><td>ESPN conference name.</td></tr><tr><td>fox_team_id</td><td>character</td><td>Fox Bifrost team id (NA if unmatched).</td></tr><tr><td>fox_team_name</td><td>character</td><td>Fox team name (NA if unmatched).</td></tr><tr><td>fox_section</td><td>character</td><td>Fox conference/section label (NA if unmatched).</td></tr><tr><td>bart_team</td><td>character</td><td>Torvik team name (NA if unmatched).</td></tr><tr><td>bart_conf</td><td>character</td><td>Torvik conference abbreviation (NA if unmatched).</td></tr><tr><td>kp_team</td><td>character</td><td>KenPom team name (NA if unmatched).</td></tr><tr><td>kp_conf</td><td>character</td><td>KenPom conference abbreviation (NA if unmatched).</td></tr><tr><td>yahoo_team_id</td><td>character</td><td>Yahoo team id (NA placeholder).</td></tr><tr><td>yahoo_team_name</td><td>character</td><td>Yahoo team name (NA placeholder).</td></tr><tr><td>fox_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>bart_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>kp_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>match_method</td><td>character</td><td>Combination of matched sources, e.g.</td></tr><tr><td></td><td></td><td>"fox+bart+kp" / "fox+bart" / "bart+kp" /</td></tr><tr><td></td><td></td><td>"fox_only" / "bart_only" / "kp_only" /</td></tr><tr><td></td><td></td><td>"espn_only".</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other MBB Crosswalk Functions:
-<code><a href="load_mbb_player_crosswalk.html">load_mbb_player_crosswalk()</a></code>,
-<code><a href="load_mbb_schedule_crosswalk.html">load_mbb_schedule_crosswalk()</a></code>,
-<code><a href="load_mbb_team_crosswalk.html">load_mbb_team_crosswalk()</a></code>,
+<code><a href="load_nba_team_crosswalk.html">load_nba_team_crosswalk()</a></code>,
 <code><a href="mbb_player_crosswalk.html">mbb_player_crosswalk()</a></code>,
 <code><a href="mbb_schedule_crosswalk.html">mbb_schedule_crosswalk()</a></code></p></div>
     </div>
@@ -168,64 +167,64 @@ Torvik is a single CSV; KenPom uses the bundled <code>teams_links</code> object.
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">mbb_team_crosswalk</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:46.925146: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:01.667759: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.383305: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:02.67272: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.591843: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:03.281671: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.609914: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:03.531321: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.62844: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:03.746251: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.687749: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:03.99209: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.730681: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:04.237278: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.750794: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:04.415036: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.78741: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:04.595737: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.806304: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:04.85983: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.824996: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:05.044494: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.844433: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:05.43548: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.863153: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:05.708768: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.881636: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:06.136722: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.900561: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:06.379249: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.921799: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:06.819803: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.941247: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:07.030505: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.959086: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:07.236478: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.977355: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:07.520228: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:47.996655: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:07.88098: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.02292: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:08.146079: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.04142: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:08.492038: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.059212: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:08.874453: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.078758: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:09.066034: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.133734: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:09.252383: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.154095: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:09.438605: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.173679: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:09.640952: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:14:48.208754: no Fox CBK teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:44:09.864527: no Fox CBK teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-24 19:14:48 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-24 20:44:09 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 366 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>

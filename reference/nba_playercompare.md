@@ -175,33 +175,7 @@ Return a named list of data frames: Individual, OverallCompare
 
 **Individual**
 
-|             |           |                                               |
-|-------------|-----------|-----------------------------------------------|
-| col_name    | types     | description                                   |
-| GROUP_SET   | character |                                               |
-| DESCRIPTION | character | Long-form description text.                   |
-| MIN         | character | Minutes played.                               |
-| FGM         | character | Field goals made.                             |
-| FGA         | character | Field goal attempts.                          |
-| FG_PCT      | character | Field goal percentage (0-1).                  |
-| FG3M        | character | Three-point field goals made.                 |
-| FG3A        | character | Three-point field goal attempts.              |
-| FG3_PCT     | character | Three-point field goal percentage (0-1).      |
-| FTM         | character | Free throws made.                             |
-| FTA         | character | Free throw attempts.                          |
-| FT_PCT      | character | Free throw percentage (0-1).                  |
-| OREB        | character | Offensive rebounds.                           |
-| DREB        | character | Defensive rebounds.                           |
-| REB         | character | Total rebounds.                               |
-| AST         | character | Assists.                                      |
-| TOV         | character | Turnovers.                                    |
-| STL         | character | Steals.                                       |
-| BLK         | character | Blocks.                                       |
-| BLKA        | character |                                               |
-| PF          | character | Personal fouls.                               |
-| PFD         | character |                                               |
-| PTS         | character | Points scored.                                |
-| PLUS_MINUS  | character | Plus/minus point differential while on court. |
+Same columns as the **OverallCompare** table above.
 
 ## Details
 
@@ -225,8 +199,6 @@ Other NBA Player Functions:
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
 [`nba_playerdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptpass.md),
 [`nba_playerdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
-[`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
-[`nba_playerdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshots.md),
 [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_playerestimatedmetrics.md),
 [`nba_playerfantasyprofile()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofile.md),
 [`nba_playerfantasyprofilebargraph()`](https://hoopR.sportsdataverse.org/reference/nba_playerfantasyprofilebargraph.md),

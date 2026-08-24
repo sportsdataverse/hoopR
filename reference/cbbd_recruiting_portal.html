@@ -141,7 +141,8 @@
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble with one row per transfer. The <code>origin</code> and
-<code>destination</code> objects are flattened into prefixed columns:</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>Transfer id.</td></tr><tr><td>source_id</td><td>character</td><td>Source (ESPN) athlete id.</td></tr><tr><td>year</td><td>integer</td><td>Transfer class year.</td></tr><tr><td>first_name</td><td>character</td><td>Player first name.</td></tr><tr><td>last_name</td><td>character</td><td>Player last name.</td></tr><tr><td>position</td><td>character</td><td>Player position.</td></tr><tr><td>eligibility</td><td>character</td><td>Eligibility status.</td></tr><tr><td>years_remaining</td><td>integer</td><td>Years of eligibility remaining.</td></tr><tr><td>stars</td><td>integer</td><td>Star rating.</td></tr><tr><td>rating</td><td>numeric</td><td>Numeric rating.</td></tr></table></div>
+<code>destination</code> objects are flattened into prefixed columns:</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>Transfer id.</td></tr><tr><td>source_id</td><td>character</td><td>Source (ESPN) athlete id.</td></tr><tr><td>year</td><td>integer</td><td>Transfer class year.</td></tr><tr><td>first_name</td><td>character</td><td>Player first name.</td></tr><tr><td>last_name</td><td>character</td><td>Player last name.</td></tr><tr><td>position</td><td>character</td><td>Player position.</td></tr><tr><td>eligibility</td><td>character</td><td>Eligibility status.</td></tr><tr><td>years_remaining</td><td>integer</td><td>Years of eligibility remaining.</td></tr><tr><td>stars</td><td>integer</td><td>Star rating.</td></tr><tr><td>rating</td><td>numeric</td><td>Numeric rating.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CBD Recruiting Functions:
@@ -153,7 +154,7 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_recruiting_portal</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 19:10:02.166946: Invalid arguments or no transfer portal data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:39:07.38124: Invalid arguments or no transfer portal data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: year = 2024, source_team = NULL, destination_team = NULL, source_conference = NULL, destination_conference = NULL, position = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>

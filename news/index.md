@@ -77,8 +77,8 @@ categories:
 - **Games**:
   [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md),
   [`cbbd_games_media()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md),
-  [`cbbd_games_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_teams.md),
-  [`cbbd_games_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_players.md),
+  [`cbbd_games_teams()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md),
+  [`cbbd_games_players()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md),
   [`cbbd_scoreboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_scoreboard.md)
 - **Plays**:
   [`cbbd_plays_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_game.md),
@@ -94,16 +94,16 @@ categories:
 - **Stats**:
   [`cbbd_stats_team_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md),
   [`cbbd_stats_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_leaderboard.md),
-  [`cbbd_stats_team_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_shooting_season.md),
-  [`cbbd_stats_player_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_season.md),
-  [`cbbd_stats_player_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_player_shooting_season.md)
+  [`cbbd_stats_team_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md),
+  [`cbbd_stats_player_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md),
+  [`cbbd_stats_player_shooting_season()`](https://hoopR.sportsdataverse.org/reference/cbbd_stats_team_season.md)
 - **Lineups**:
   [`cbbd_lineups_team()`](https://hoopR.sportsdataverse.org/reference/cbbd_lineups_team.md),
   [`cbbd_lineups_game()`](https://hoopR.sportsdataverse.org/reference/cbbd_lineups_game.md)
 - **Ratings**:
   [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md),
-  [`cbbd_ratings_adjusted()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_adjusted.md),
-  [`cbbd_ratings_elo()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_elo.md)
+  [`cbbd_ratings_adjusted()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md),
+  [`cbbd_ratings_elo()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md)
 - **Rankings**:
   [`cbbd_rankings()`](https://hoopR.sportsdataverse.org/reference/cbbd_rankings.md)
 - **Lines**:
@@ -453,20 +453,20 @@ reading the corresponding `espn_nba_*` /
 `espn_mens_college_basketball_*` release tags on `sportsdataverse-data`:
 
 - **NBA (7):**
-  [`load_nba_standings()`](https://hoopR.sportsdataverse.org/reference/load_nba_standings.md),
-  [`load_nba_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_draft.md),
-  [`load_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_stats.md),
-  [`load_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_stats.md),
-  [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_rosters.md),
-  [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_game_rosters.md),
-  [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_officials.md).
+  [`load_nba_standings()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md).
 - **MBB (6):**
-  [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_rosters.md),
-  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_stats.md),
-  [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_stats.md),
-  [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_standings.md),
-  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_game_rosters.md),
-  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_officials.md).
+  [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md).
 
 Player/team season-stats loaders return long-format frames (averages /
 totals / miscellaneous categories). Draft is NBA-only. All accept a
@@ -500,9 +500,9 @@ pair.
 | Function | Description |
 |----|----|
 | [`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) | Single-team info as a named list (`Info`, `Record`, `NextEvent`, `StandingSummary`, `Coaches`). |
-| [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster.md) / [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_roster.md) | Roster (one row per athlete with position, height, weight, headshot). |
+| [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) | Roster (one row per athlete with position, height, weight, headshot). |
 | [`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md) / [`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md) | Schedule (one row per event with opponent, venue, broadcast, result). |
-| [`espn_mbb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_leaders.md) / [`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_leaders.md) | Statistical leaders in long format per category-rank-athlete. |
+| [`espn_mbb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) | Statistical leaders in long format per category-rank-athlete. |
 | [`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md) / [`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md) | Team-scoped news feed. |
 
 ##### *Event detail (×4 per league)*
@@ -562,7 +562,7 @@ matching release.
 
 | Function | Description |
 |----|----|
-| [`espn_nba_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_profile.md) / [`espn_mbb_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_profile.md) | Era-correct team identity in a specific season plus `$ref` URLs for deeper resources (record, statistics, leaders, coaches, etc.). Historical depth back to **1947** (NBA) / **1939** (MBB). |
+| [`espn_nba_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) / [`espn_mbb_team_season_profile()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) | Era-correct team identity in a specific season plus `$ref` URLs for deeper resources (record, statistics, leaders, coaches, etc.). Historical depth back to **1947** (NBA) / **1939** (MBB). |
 | [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchise.md) / [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md) | Franchise-level metadata. IDs are stable across relocations and rebrands. |
 | [`espn_nba_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_nba_franchises.md) / [`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md) | Index of franchise IDs in the league. |
 | `espn_nba_athlete_contracts()` | Index of contract seasons recorded for an NBA athlete (NBA-only — WNBA athletes return empty). |
@@ -617,8 +617,8 @@ wehoop’s matching release.
 |----|----|
 | [`espn_nba_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_groups.md) / [`espn_mbb_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups.md) | Index of group IDs (conferences / divisions) for one (season × season-type). |
 | [`espn_nba_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group.md) / [`espn_mbb_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md) | Single-group metadata (name, abbreviation, midsize / short name, `is_conference` flag) plus `$ref` URLs to parent, children, member teams, and standings. |
-| [`espn_nba_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_children.md) / [`espn_mbb_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_children.md) | Index of child groups (e.g. divisions inside a conference, or conferences inside the NCAA Division I umbrella group). |
-| [`espn_nba_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group_teams.md) / [`espn_mbb_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_teams.md) | Index of team IDs that belong to the group for that (season × season-type). |
+| [`espn_nba_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group.md) / [`espn_mbb_season_group_children()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md) | Index of child groups (e.g. divisions inside a conference, or conferences inside the NCAA Division I umbrella group). |
+| [`espn_nba_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_group.md) / [`espn_mbb_season_group_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md) | Index of team IDs that belong to the group for that (season × season-type). |
 
 ##### *Tier 2A core-v2 expansion — team deep + coach-in-season*
 
@@ -656,8 +656,8 @@ endpoint coverage with the remaining per-season core-v2 endpoints.
 |----|----|
 | `espn_nba_athlete_eventlog_v2()` / `espn_mbb_athlete_eventlog_v2()` | Per-season event log from core-v2 (`seasons/{y}/athletes/{id}/eventlog`). One row per (event × team) appearance with `played` flag + event/competition `$ref`s. Distinct from the existing `espn_*_athlete_eventlog()` which hits the web-common-v3 gamelog endpoint with stats per game. |
 | [`espn_nba_draft_rounds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md) | Round-level summary for one NBA draft year (one row per round with pick count + completion status). |
-| [`espn_nba_draft_athletes()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_athletes.md) | Index of every athlete in a given NBA draft year (~102 entries: 60 picks + undrafted invitees). |
-| [`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_status.md) | Single-row snapshot of one draft year’s current state. |
+| [`espn_nba_draft_athletes()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md) | Index of every athlete in a given NBA draft year (~102 entries: 60 picks + undrafted invitees). |
+| [`espn_nba_draft_status()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md) | Single-row snapshot of one draft year’s current state. |
 
 ##### *Tier 2B core-v2 expansion — event meta endpoints*
 
@@ -714,7 +714,7 @@ event, and the draft-year top-level metadata.
 |----|----|
 | [`espn_nba_team_season_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_season_statistics.md) / [`espn_mbb_team_season_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_statistics.md) | **Full team-season-type stat sheet in long format** (one row per category × stat). Each row carries `rank` + `rank_display_value` for league ranking per stat. Smoke-tested: 109 rows × 13 cols for one NBA team. |
 | `espn_nba_event_competitor_score()` / `espn_mbb_event_competitor_score()` | Single-row final score for one team in one event: `value`, `display_value`, `winner` flag, source metadata. |
-| [`espn_nba_season_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_draft.md) | Draft-year top-level metadata: `year`, `number_of_rounds`, `display_name`, plus sub-refs to athletes/rounds/status. |
+| [`espn_nba_season_draft()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft_rounds.md) | Draft-year top-level metadata: `year`, `number_of_rounds`, `display_name`, plus sub-refs to athletes/rounds/status. |
 
 ##### *Tier 2E.1 core-v2 expansion — event-scoped player + play deep dives*
 
@@ -910,12 +910,12 @@ shape:
   `_rapm()` (league-wide regularized adjusted plus-minus),
   `_rapm_within_team()`, `_player_box()`, `_team_box()`, `_rosters()`,
   `_team_rosters()`, `_schedule()`, and `_team_ids()`.
-- [`load_nba_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_shots.md)
+- [`load_nba_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
   and
-  [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_shots.md)
+  [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   for ESPN shot events (20-column schema verified against real
   downloaded assets).
-  [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_shots.md)
+  [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   documents and enforces the 2004/2005 gap seasons (no shot-coordinate
   assets were published for those two seasons).
 - Three model datasets:
@@ -957,22 +957,22 @@ returns documentation derived from the real files.
   removed.
 - 16 loaders that accepted/documented an optional
   `dbConnection`/`tablename` write without performing it now perform it:
-  [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_box.md),
-  [`load_nba_standings()`](https://hoopR.sportsdataverse.org/reference/load_nba_standings.md),
-  [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_game_rosters.md),
-  [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_officials.md),
-  [`load_nba_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_draft.md),
-  [`load_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_stats.md),
-  [`load_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_stats.md),
-  [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_rosters.md),
-  [`load_nba_player_core()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_core.md),
-  [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_rosters.md),
-  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_stats.md),
-  [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_stats.md),
-  [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_standings.md),
-  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_game_rosters.md),
-  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_officials.md),
-  [`load_mbb_player_core()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_core.md).
+  [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_standings()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_player_core()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_player_core()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md).
 - Repaired the `hoopR_data` class vector (`make_hoopR_data()` and every
   `load_nba_*()` / `load_mbb_*()` / crosswalk loader): `"data.table"`
   had been mixed into the class vector alongside `"tbl_df"` without the
@@ -1002,7 +1002,7 @@ rather than the endpoint catalog’s capture flags alone:
   — HTTP 200 with zero rows across multiple game/event IDs;
   `lifecycle::deprecate_warn(when = "3.1.0")` (call still proceeds).
 - **Documented as league-scoped, not deprecated**:
-  [`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv2.md)
+  [`nba_boxscoreadvancedv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
   is dead for NBA (`LeagueID '00'`) but live for WNBA (`'10'`) and
   G-League (`'20'`) — gains a `@details` note instead of a deprecation.
 - Probe dates and rationale recorded in `@details` on every
@@ -1013,7 +1013,7 @@ rather than the endpoint catalog’s capture flags alone:
   [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md)
   /
   [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md),
-  [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md),
+  [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md),
   [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboard.md),
   [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md),
   [`nba_videodetails()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md),
@@ -1046,9 +1046,9 @@ rather than the endpoint catalog’s capture flags alone:
 
 ##### *ESPN fixes*
 
-- [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_betting.md)
+- [`espn_mbb_betting()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
   /
-  [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_betting.md):
+  [`espn_nba_betting()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md):
   ESPN’s Site v2 `summary` payload now frequently ships an empty
   `pickcenter` array. Both now cascade to the Core v2 event odds
   endpoint and map its columns onto the documented `pickcenter` shape
@@ -1082,7 +1082,7 @@ rather than the endpoint catalog’s capture flags alone:
 
 ##### *KenPom fix*
 
-- [`kp_team_depth_chart()`](https://hoopR.sportsdataverse.org/reference/kp_team_depth_chart.md):
+- [`kp_team_depth_chart()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md):
   KenPom removed the `#dc-table` table from `team.php` — the page now
   ships an empty `<div id="depth-chart">` rendered client-side from a
   `const players = [...]` JSON array embedded in an inline `<script>`
@@ -1207,12 +1207,12 @@ in production.
 
 | Deprecated function | Replacement | Reason |
 |----|----|----|
-| [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv2.md) | [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md) | Unstable/partial V2 responses |
-| [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv2.md) | [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md) | Unstable/partial V2 responses |
-| [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv2.md) | [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md) | Unstable/partial V2 responses |
-| [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev2.md) | [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md) | Unstable/partial V2 responses |
-| [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv2.md) | [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md) | Unstable/partial V2 responses |
-| [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md) | [`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_hustlestatsboxscore.md) | Unstable/partial V2 responses |
+| [`nba_boxscorefourfactorsv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md) | [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscoremiscv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md) | [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscorescoringv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md) | [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscoreusagev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md) | [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscoreplayertrackv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md) | [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) | Unstable/partial V2 responses |
+| [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md) | [`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md) | Unstable/partial V2 responses |
 | [`nba_homepageleaders()`](https://hoopR.sportsdataverse.org/reference/nba_homepageleaders.md) | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md) | Unstable/empty responses |
 | [`nba_homepagev2()`](https://hoopR.sportsdataverse.org/reference/nba_homepagev2.md) | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md) | Unstable/empty responses |
 | [`nba_leaderstiles()`](https://hoopR.sportsdataverse.org/reference/nba_leaderstiles.md) | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md) | Unstable/empty responses |
@@ -1276,7 +1276,7 @@ was quietly dropped during this migration. The restoration shipped in
 - Updated expected columns for currently active payloads in key NBA
   endpoints (including
   [`nba_playercareerstats()`](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats.md),
-  [`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptshotdefend.md),
+  [`nba_playerdashptshotdefend()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashptreb.md),
   and
   [`nba_playerprofilev2()`](https://hoopR.sportsdataverse.org/reference/nba_playerprofilev2.md)).
 - Improved
@@ -1367,23 +1367,23 @@ CRAN release: 2023-11-25
   function added.
 - [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscoreadvancedv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.md)
+- [`nba_boxscoreadvancedv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoremiscv3.md)
+- [`nba_boxscoremiscv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorescoringv3.md)
+- [`nba_boxscorescoringv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreusagev3.md)
+- [`nba_boxscoreusagev3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorefourfactorsv3.md)
+- [`nba_boxscorefourfactorsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreplayertrackv3.md)
+- [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
-- [`nba_boxscorematchupsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorematchupsv3.md)
+- [`nba_boxscorematchupsv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
 - [`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md)
   function added.
-- [`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensivev2.md)
+- [`nba_boxscoredefensivev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
 
 #### **Other NBA Stats API functions added**
@@ -1425,9 +1425,9 @@ CRAN release: 2023-11-25
 - Takes care of tidyselect deprecation of data masking for certain tidyr
   and dplyr functions.
 - Regular minor maintenance on `kp_*` functions
-- [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_rosters.md)
+- [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
   function added.
-- [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_rosters.md)
+- [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
   function added.
 
 ## **hoopR 1.8.1**
@@ -1750,9 +1750,9 @@ and KenPom package, but also an NBA package.
 - [`hoopR::espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) -
   a convenience wrapper function around the following three functions
   (returns the results as a list of three data frames)
-- [`hoopR::espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_box.md)
-- [`hoopR::espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_box.md)
-- [`hoopR::espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md)
+- [`hoopR::espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
+- [`hoopR::espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
+- [`hoopR::espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
 - [`hoopR::espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md)
 - [`hoopR::espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md)
 
@@ -1793,9 +1793,9 @@ and KenPom package, but also an NBA package.
 - [`hoopR::espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) -
   a convenience wrapper function around the following three functions
   (returns the results as a list of three data frames)
-- [`hoopR::espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_box.md)
-- [`hoopR::espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_box.md)
-- [`hoopR::espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_pbp.md)
+- [`hoopR::espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+- [`hoopR::espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+- [`hoopR::espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
 - [`hoopR::espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)
   (bumps to v0.2.1)
 - [`hoopR::espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md)

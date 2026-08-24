@@ -80,11 +80,7 @@ TeamRetired, TeamSocialSites
 
 **TeamAwardsDiv**
 
-|              |         |             |
-|--------------|---------|-------------|
-| col_name     | types   | description |
-| YEARAWARDED  | integer |             |
-| OPPOSITETEAM | integer |             |
+Same columns as the **TeamAwardsConf** table above.
 
 **TeamHof**
 
@@ -100,15 +96,7 @@ TeamRetired, TeamSocialSites
 
 **TeamRetired**
 
-|                 |           |                                         |
-|-----------------|-----------|-----------------------------------------|
-| col_name        | types     | description                             |
-| PLAYERID        | character | Playerid.                               |
-| PLAYER          | character | Player.                                 |
-| POSITION        | character | Listed roster position (G, F, C, etc.). |
-| JERSEY          | character | Jersey number worn by the player.       |
-| SEASONSWITHTEAM | character |                                         |
-| YEAR            | character | 4-digit year.                           |
+Same columns as the **TeamHof** table above.
 
 ## Details
 
@@ -130,9 +118,7 @@ Other NBA Team Functions:
 [`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md),
 [`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md),
 [`nba_teaminfocommon()`](https://hoopR.sportsdataverse.org/reference/nba_teaminfocommon.md),
-[`nba_teamplayerdashboard()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayerdashboard.md),
 [`nba_teamplayeronoffdetails()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md),
-[`nba_teamplayeronoffsummary()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffsummary.md),
 [`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teams.md),
 [`nba_teamvsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.md),
 [`nba_teamyearbyyearstats()`](https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.md)

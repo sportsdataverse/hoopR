@@ -65,14 +65,9 @@ HomePageStat7, HomePageStat8
 
 **HomePageStat1**
 
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| RANK | character | Rank. |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| PTS | character | Points scored. |
+Columns as documented in the shared
+[nba_homepagev2_homepagestat1_schema](https://hoopR.sportsdataverse.org/reference/nba_homepagev2_homepagestat1_schema.md)
+table.
 
 **HomePageStat2**
 
@@ -87,14 +82,9 @@ HomePageStat7, HomePageStat8
 
 **HomePageStat3**
 
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| RANK | character | Rank. |
-| TEAM_ID | character | Unique team identifier. |
-| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
-| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
-| AST | character | Assists. |
+Columns as documented in the shared
+[nba_assistleaders_assistleaders_schema](https://hoopR.sportsdataverse.org/reference/nba_assistleaders_assistleaders_schema.md)
+table.
 
 **HomePageStat4**
 
