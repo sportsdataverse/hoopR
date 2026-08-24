@@ -12,45 +12,24 @@ kp_team_depth_chart(team, year = 2021)
 \item{year}{Year of data to pull}
 }
 \value{
-A data frame with the following columns:\tabular{lll}{
+A data frame with one row per rostered player, with the following columns:\tabular{lll}{
    col_name \tab types \tab description \cr
-   pg_number \tab numeric \tab Pg number. \cr
-   pg_player_first_name \tab character \tab Pg player first name. \cr
-   pg_player_last_name \tab character \tab Pg player last name. \cr
-   pg_hgt \tab character \tab Pg hgt. \cr
-   pg_wgt \tab numeric \tab Pg wgt. \cr
-   pg_yr \tab character \tab Pg yr. \cr
-   pg_min_pct \tab numeric \tab Pg min percentage (0-1 decimal). \cr
-   sg_number \tab numeric \tab Sg number. \cr
-   sg_player_first_name \tab character \tab Sg player first name. \cr
-   sg_player_last_name \tab character \tab Sg player last name. \cr
-   sg_hgt \tab character \tab Sg hgt. \cr
-   sg_wgt \tab numeric \tab Sg wgt. \cr
-   sg_yr \tab character \tab Sg yr. \cr
-   sg_min_pct \tab numeric \tab Sg min percentage (0-1 decimal). \cr
-   sf_number \tab numeric \tab Sf number. \cr
-   sf_player_first_name \tab character \tab Sf player first name. \cr
-   sf_player_last_name \tab character \tab Sf player last name. \cr
-   sf_hgt \tab character \tab Sf hgt. \cr
-   sf_wgt \tab numeric \tab Sf wgt. \cr
-   sf_yr \tab character \tab Sf yr. \cr
-   sf_min_pct \tab numeric \tab Sf min percentage (0-1 decimal). \cr
-   pf_number \tab numeric \tab Pf number. \cr
-   pf_player_first_name \tab character \tab Personal fouls player first name. \cr
-   pf_player_last_name \tab character \tab Personal fouls player last name. \cr
-   pf_hgt \tab character \tab Pf hgt. \cr
-   pf_wgt \tab numeric \tab Pf wgt. \cr
-   pf_yr \tab character \tab Pf yr. \cr
-   pf_min_pct \tab numeric \tab Personal fouls min percentage (0-1 decimal). \cr
-   c_number \tab numeric \tab C number. \cr
-   c_player_first_name \tab character \tab C player first name. \cr
-   c_player_last_name \tab character \tab C player last name. \cr
-   c_hgt \tab character \tab C hgt. \cr
-   c_wgt \tab numeric \tab C wgt. \cr
-   c_yr \tab character \tab C yr. \cr
-   c_min_pct \tab numeric \tab C min percentage (0-1 decimal). \cr
    team \tab character \tab Team-side label or team identifier. \cr
    year \tab numeric \tab 4-digit year. \cr
+   player_id \tab integer \tab KenPom player identifier. \cr
+   player_name \tab character \tab Player full name. \cr
+   class_year \tab character \tab Class year (e.g. 'Fr', 'So', 'Jr', 'Sr'). \cr
+   height \tab character \tab Height (e.g. '6-9'). \cr
+   weight \tab numeric \tab Weight in pounds. \cr
+   pct_pg \tab numeric \tab Percentage of the player's minutes played at point guard (0-1 decimal). \cr
+   pct_sg \tab numeric \tab Percentage of the player's minutes played at shooting guard (0-1 decimal). \cr
+   pct_sf \tab numeric \tab Percentage of the player's minutes played at small forward (0-1 decimal). \cr
+   pct_pf \tab numeric \tab Percentage of the player's minutes played at power forward (0-1 decimal). \cr
+   pct_c \tab numeric \tab Percentage of the player's minutes played at center (0-1 decimal). \cr
+   pct_poss \tab numeric \tab Percentage of team possessions used while the player was on the floor (0-1 decimal). \cr
+   fta \tab integer \tab Season free throw attempts. \cr
+   fg2a \tab integer \tab Season 2-point field goal attempts. \cr
+   fg3a \tab integer \tab Season 3-point field goal attempts. \cr
 }
 }
 \description{
