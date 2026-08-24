@@ -141,16 +141,19 @@ load_nba_stats_team_season_stats(
 }
 \arguments{
 \item{seasons}{A vector of 4-digit years -- the season's \strong{START} year
-(e.g. \code{2024} for the 2024-25 season). Published coverage runs 1996
-through the most recent season, with no gaps. Pass \code{seasons = TRUE} for
-every published season. (Min: 1996)}
+(e.g. \code{2024} for the 2024-25 season), matching sdv-py's \verb{load_nba_stats_*}
+convention (see the file-level note in \code{R/load_nba_stats.R}). Published
+coverage floors vary by loader (1996 for most; 2007 for
+\code{\link[=load_nba_stats_lineups]{load_nba_stats_lineups()}} -- see that function's own Description) and
+run through the most recent season with no gaps. Pass \code{seasons = TRUE}
+for every published season for that specific loader.}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database.}
 
 \item{dbConnection}{A \code{DBIConnection} object, as returned by \code{\link[DBI:dbConnect]{DBI::dbConnect()}}}
 
-\item{tablename}{The name of the team season stats table within the database}
+\item{tablename}{The name of the data table within the database}
 }
 \value{
 Returns a \code{hoopR_data} tibble with one row per coach-team-season.\tabular{lll}{

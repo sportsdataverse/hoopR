@@ -34,13 +34,16 @@ NULL
 #'   `hoopR-nba-stats-raw` and publishes csv/parquet/rds artifacts to the
 #'   `nba_stats_coaches` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the coaches data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per coach-team-season.
 #'
 #'    |col_name    |types     |description                                     |
@@ -107,14 +110,17 @@ load_nba_stats_coaches <- function(seasons = most_recent_nba_stats_season(),
 #'   the `hoopR-nba-stats-data` pipeline that reads raw JSONs from
 #'   `hoopR-nba-stats-raw` and publishes csv/parquet/rds artifacts to the
 #'   `nba_stats_draft` release tag.
-#' @param seasons A vector of 4-digit years -- the draft season's **START**
-#'   year (e.g. `2024` for the 2024 NBA draft). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#' @param seasons A vector of 4-digit years -- the season's **START** year
+#'   (e.g. `2024` for the 2024 NBA draft class), matching sdv-py's
+#'   `load_nba_stats_*` convention (see the file-level note in
+#'   `R/load_nba_stats.R`). Published coverage floors vary by loader (1996
+#'   for most; 2007 for [load_nba_stats_lineups()] -- see that function's own
+#'   Description) and run through the most recent season with no gaps. Pass
+#'   `seasons = TRUE` for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the draft data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of NBA draft picks.
 #'
 #'    |col_name    |types     |description                                     |
@@ -185,13 +191,16 @@ load_nba_stats_draft <- function(seasons = most_recent_nba_stats_season(),
 #'   by the `hoopR-nba-stats-data` pipeline that publishes csv.gz/parquet/rds
 #'   artifacts to the `nba_stats_game_lineups` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the game lineups data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per play-by-play action.
 #'
 #'    |col_name    |types     |description                                     |
@@ -264,13 +273,16 @@ load_nba_stats_game_lineups <- function(seasons = most_recent_nba_stats_season()
 #'   that publishes csv/parquet/rds artifacts to the `nba_stats_game_rosters`
 #'   release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the game rosters data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per inactive
 #'   athlete-game pair.
 #'
@@ -339,13 +351,16 @@ load_nba_stats_game_rosters <- function(seasons = most_recent_nba_stats_season()
 #'   `Opponent`/`Four Factors` measures and 2/3/4-man groupings, use
 #'   [load_nba_stats_leaguedash()] with `table = "lineups_*"`.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 2007
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 2007)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader; **this loader's own floor is 2007**
+#'   (earlier seasons don't exist upstream), while most other `nba_stats_*`
+#'   loaders floor at 1996. Coverage runs through the most recent season with
+#'   no gaps. Pass `seasons = TRUE` for every published season for this loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the lineups data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of 5-man lineup season stats (182
 #'   columns: standard box-score rate/counting stats plus the 5 player-id
 #'   slots and `group_id`/`group_name`). See `names(load_nba_stats_lineups())`
@@ -404,13 +419,16 @@ load_nba_stats_lineups <- function(seasons = most_recent_nba_stats_season(),
 #'   Backed by the `hoopR-nba-stats-data` pipeline that publishes
 #'   csv/parquet/rds artifacts to the `nba_stats_officials` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the officials data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per official-game pair.
 #'
 #'    |col_name    |types     |description                                     |
@@ -474,13 +492,16 @@ load_nba_stats_officials <- function(seasons = most_recent_nba_stats_season(),
 #'   pipeline that publishes csv.gz/parquet/rds artifacts to the
 #'   `nba_stats_pbp` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the play-by-play data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of per-event play-by-play rows.
 #'
 #'    |col_name    |types     |description                                     |
@@ -586,13 +607,16 @@ load_nba_stats_pbp <- function(seasons = most_recent_nba_stats_season(),
 #'   publishes csv/parquet/rds artifacts to the `nba_stats_player_boxscores`
 #'   release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the player boxscores data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per athlete-game pair.
 #'
 #'    |col_name    |types     |description                                     |
@@ -684,13 +708,16 @@ load_nba_stats_player_boxscores <- function(seasons = most_recent_nba_stats_seas
 #'   `hoopR-nba-stats-data` pipeline that publishes csv/parquet/rds
 #'   artifacts to the `nba_stats_player_game_logs` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the player game logs table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of per-athlete per-game log rows.
 #'
 #'    |col_name    |types     |description                                     |
@@ -781,13 +808,16 @@ load_nba_stats_player_game_logs <- function(seasons = most_recent_nba_stats_seas
 #'   [load_nba_stats_leaguedash()] with `table = "player_stats_*"` or
 #'   `table = "player_tracking_*"`.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the player season stats table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of player season stats (210
 #'   columns: rank fields, bio fields, and standard/rank box-score
 #'   rate/counting stats for the season). See
@@ -846,9 +876,12 @@ load_nba_stats_player_season_stats <- function(seasons = most_recent_nba_stats_s
 #'   that publishes csv.gz/parquet/rds artifacts to the
 #'   `nba_stats_possessions` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -943,13 +976,16 @@ load_nba_stats_possessions <- function(seasons = most_recent_nba_stats_season(),
 #'   `hoopR-nba-stats-data` pipeline that publishes csv/parquet/rds
 #'   artifacts to the `nba_stats_rosters` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the rosters data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per athlete-team-season.
 #'
 #'    |col_name    |types     |description                                     |
@@ -1024,13 +1060,16 @@ load_nba_stats_rosters <- function(seasons = most_recent_nba_stats_season(),
 #'   that publishes csv/parquet/rds artifacts to the `nba_stats_schedules`
 #'   release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the schedules data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of per-season schedules, one row per
 #'   game with the home/away sides pre-joined into `home_*` / `away_*` columns.
 #'
@@ -1104,13 +1143,16 @@ load_nba_stats_schedule <- function(seasons = most_recent_nba_stats_season(),
 #'   pipeline that publishes csv/parquet/rds artifacts to the
 #'   `nba_stats_shots` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the shots data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per shot attempt.
 #'
 #'    |col_name    |types     |description                                     |
@@ -1184,13 +1226,16 @@ load_nba_stats_shots <- function(seasons = most_recent_nba_stats_season(),
 #'   pipeline that publishes csv/parquet/rds artifacts to the
 #'   `nba_stats_standings` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the standings data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of team standings (94 columns: win/
 #'   loss splits by home/road/conference/division/last-10, streak fields,
 #'   and points-per-game aggregates). See
@@ -1247,13 +1292,16 @@ load_nba_stats_standings <- function(seasons = most_recent_nba_stats_season(),
 #'   pair. Backed by the `hoopR-nba-stats-data` pipeline that publishes
 #'   csv/parquet/rds artifacts to the `nba_stats_team_boxscores` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the team boxscores data table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per team-game pair.
 #'
 #'    |col_name    |types     |description                                     |
@@ -1337,13 +1385,16 @@ load_nba_stats_team_boxscores <- function(seasons = most_recent_nba_stats_season
 #'   `Advanced`/`Misc`/`Scoring`/`Defense`/`Opponent`/`Four Factors`
 #'   measures, use [load_nba_stats_leaguedash()] with `table = "team_stats_*"`.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season). Published coverage runs 1996
-#'   through the most recent season, with no gaps. Pass `seasons = TRUE` for
-#'   every published season. (Min: 1996)
+#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   convention (see the file-level note in `R/load_nba_stats.R`). Published
+#'   coverage floors vary by loader (1996 for most; 2007 for
+#'   [load_nba_stats_lineups()] -- see that function's own Description) and
+#'   run through the most recent season with no gaps. Pass `seasons = TRUE`
+#'   for every published season for that specific loader.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
-#' @param tablename The name of the team season stats table within the database
+#' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble of team season stats (178 columns:
 #'   rank fields plus standard/rank box-score rate/counting stats for the
 #'   season). See `names(load_nba_stats_team_season_stats())` for the full
@@ -1558,7 +1609,10 @@ update_nba_stats_db <- function(dbdir = ".",
 
   if (!is_installed("DBI") |
       (!is_installed("RSQLite") & is.null(db_connection))) {
-    usethis::ui_stop("{my_time()} | Packages {usethis::ui_value('DBI')} and {usethis::ui_value('RSQLite')} required for database communication. Please install them.")
+    cli::cli_abort(c(
+      "x" = "Packages {.pkg DBI} and {.pkg RSQLite} required for database communication.",
+      "i" = "Install them and retry."
+    ))
   }
 
   valid <- c("coaches", "draft", "game_lineups", "game_rosters", "lineups",
@@ -1580,7 +1634,7 @@ update_nba_stats_db <- function(dbdir = ".",
   }
 
   if (!dir.exists(dbdir) & is.null(db_connection)) {
-    usethis::ui_oops("{my_time()} | Directory {usethis::ui_path(dbdir)} doesn't exist yet. Try creating...")
+    user_message(paste0("Directory '", dbdir, "' doesn't exist yet. Try creating..."), "oops")
     dir.create(dbdir)
   }
 
@@ -1624,7 +1678,7 @@ update_nba_stats_db <- function(dbdir = ".",
   }
 
   message_completed("Database update completed", in_builder = TRUE)
-  usethis::ui_info("{my_time()} | Path to your db: {usethis::ui_path(DBI::dbGetInfo(connection)$dbname)}")
+  user_message(paste0("Path to your db: ", DBI::dbGetInfo(connection)$dbname), "info")
   if (is.null(db_connection)) DBI::dbDisconnect(connection)
   invisible(TRUE)
 }
