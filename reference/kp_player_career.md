@@ -119,7 +119,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_player_career(player_id = '41180'))
-#> ✖ 2026-08-06 04:00:53.565216: 2026-08-06 04:00:53.564993 - No Player Career Data available for 41180
+#> ✖ 2026-08-24 19:11:53.886151: 2026-08-24 19:11:53.885895 - No Player Career Data available for 41180
 #> ✖ Args: player_id = "41180"
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

@@ -92,7 +92,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-06 04:00:53.380194: 2026-08-06 04:00:53.379944 - Florida St. - 2021 Team opponent tracker data is missing
+#> ✖ 2026-08-24 19:11:53.684655: 2026-08-24 19:11:53.684401 - Florida St. - 2021 Team opponent tracker data is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

@@ -148,10 +148,12 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_statisticslog(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Statisticslog from ESPN.com ────────────
-#> ℹ Data updated: 2026-08-06 03:59:20 UTC
-#> # A tibble: 1 × 2
+#> ℹ Data updated: 2026-08-24 19:10:28 UTC
+#> # A tibble: 3 × 2
 #>   season$`$ref`                                                       statistics
 #>   <chr>                                                               <list>    
 #> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-… <df>      
+#> 2 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-… <df>      
+#> 3 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-… <df>      
 # }
 ```

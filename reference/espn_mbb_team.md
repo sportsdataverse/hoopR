@@ -196,7 +196,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:30 UTC
+#> ℹ Data updated: 2026-08-24 19:10:38 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -209,15 +209,15 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:30 UTC
+#> ℹ Data updated: 2026-08-24 19:10:38 UTC
 #> # A tibble: 1 × 4
-#>   id        date              name                              short_name  
-#>   <chr>     <chr>             <chr>                             <chr>       
-#> 1 401856577 2026-03-29T21:05Z UConn Huskies at Duke Blue Devils CONN VS DUKE
+#>   id        date              name                                   short_name 
+#>   <chr>     <chr>             <chr>                                  <chr>      
+#> 1 401909562 2026-11-02T05:00Z Army Black Knights at Duke Blue Devils ARMY @ DUKE
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-08-06 03:59:30 UTC
+#> ℹ Data updated: 2026-08-24 19:10:38 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           

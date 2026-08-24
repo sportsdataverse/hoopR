@@ -1,8 +1,10 @@
 # **Get NBA Stats API Scoreboard V2**
 
-Deprecated in `hoopR` 3.0.0. This endpoint is unstable/partial; use
-[`nba_scoreboardv3()`](https://hoopR.sportsdataverse.org/reference/nba_scoreboardv3.md)
-instead.
+Restored in `hoopR` 3.1.0 – a residential-IP live re-probe (2026-08-24)
+confirmed this endpoint still serves real rows for NBA. For real-time
+scores, prefer
+[`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_todays_scoreboard.md)
+instead (see \#129).
 
 ## Usage
 

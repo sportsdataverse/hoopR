@@ -85,7 +85,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
-#> ✖ 2026-08-06 04:00:53.76388: Invalid arguments or no player stats data for 2021 eFG available!
+#> ✖ 2026-08-24 19:11:54.085717: Invalid arguments or no player stats data for 2021 eFG available!
 #> ✖ Args: metric = "eFG", conf = NULL, conf_only = FALSE, year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

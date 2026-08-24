@@ -23,6 +23,7 @@ A standings data frame
 | col_name | types | description |
 | team_id | integer | Unique team identifier. |
 | team | character | Team-side label or team identifier. |
+| conference | character | Conference group name from ESPN standings. |
 | avgpointsagainst | numeric | Avgpointsagainst. |
 | avgpointsfor | numeric | Avgpointsfor. |
 | gamesbehind | numeric | Gamesbehind. |
@@ -199,22 +200,22 @@ Other ESPN MBB Functions:
 # \donttest{
 try(espn_mbb_standings(2021))
 #> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:29 UTC
-#> # A tibble: 348 × 86
-#>    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent
-#>  *   <int> <chr>                 <dbl>        <dbl>       <dbl>            <dbl>
-#>  1    2250 Gonzaga B…             69.7         91.0        -6.5            1    
-#>  2     239 Baylor Be…             65.5         82.9         0              0.929
-#>  3    2737 Winthrop …             67.0         78.9         0              0.944
-#>  4     248 Houston C…             58.2         76.1         1              0.824
-#>  5    2142 Colgate R…             69.6         85.2         0              0.917
-#>  6    2057 Belmont B…             69.1         81.3        -0.5            0.9  
-#>  7    2350 Loyola Ch…             56.1         71.0        -5              0.889
-#>  8    2181 Drake Bul…             64.5         75.9         0              0.833
-#>  9     253 Southern …             69.5         84.2         0              0.857
-#> 10    2426 Navy Mids…             67           71.5         0              0.923
-#> # ℹ 338 more rows
-#> # ℹ 80 more variables: losses <dbl>, playoffseed <dbl>,
+#> ℹ Data updated: 2026-08-24 19:10:37 UTC
+#> # A tibble: 302 × 87
+#>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
+#>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
+#>  1    2378 UMBC Retrievers  America E…             64.9         69.6         0  
+#>  2     261 Vermont Catamou… America E…             63.4         73           1.5
+#>  3      42 Hartford Hawks   America E…             63.9         65.4         2  
+#>  4     160 New Hampshire W… America E…             66.6         67.3         3.5
+#>  5    2349 UMass Lowell Ri… America E…             70.9         68.5         4.5
+#>  6     399 UAlbany Great D… America E…             68.7         69.4         5  
+#>  7    2619 Stony Brook Sea… America E…             65.6         66.2         5.5
+#>  8    2885 NJIT Highlanders America E…             70.2         66.1         6.5
+#>  9    2066 Binghamton Bear… America E…             72.3         65.4         9  
+#> 10     311 Maine Black Bea… America E…             64.6         53.1         6.5
+#> # ℹ 292 more rows
+#> # ℹ 81 more variables: leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
 #> #   pointdifferential <chr>, pointsagainst <dbl>, pointsfor <dbl>,
 #> #   streak <dbl>, winpercent <dbl>, wins <dbl>, gamesahead <chr>, total <chr>,
 #> #   home_avgpointsagainst <dbl>, home_avgpointsfor <dbl>,

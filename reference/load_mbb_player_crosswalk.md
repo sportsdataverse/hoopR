@@ -39,7 +39,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-03 03:42:11 UTC
+#> ℹ Data updated: 2026-08-12 07:30:32 UTC
 #> # A tibble: 5,442 × 17
 #>    season espn_team_id team_abbreviation player_name      espn_athlete_id
 #>     <int>        <int> <chr>             <chr>            <chr>          

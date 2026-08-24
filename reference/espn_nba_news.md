@@ -157,14 +157,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:52 UTC
+#> ℹ Data updated: 2026-08-24 19:10:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.95e7 Head… Lonnie … Lonnie Wal… 2026-08-… FALSE   Shams… https:/… 46       
-#> 2  4.95e7 Head… Suns ke… Suns forwa… 2026-08-… FALSE   Shams… https:/… 46       
-#> 3  4.95e7 Story Spurs' … The San An… 2026-08-… FALSE   Micha… https:/… 46       
-#> 4  4.84e7 Story 2026 NB… We're trac… 2026-08-… FALSE   ESPN   https:/… 46       
-#> 5  4.95e7 Story LeBron … The Philad… 2026-08-… FALSE   Kalan… https:/… 46       
+#> 1  4.96e7 Story NBA Sum… The top fi… 2026-08-… FALSE   NBA i… https:/… 46       
+#> 2  4.97e7 Story Los Ang… The LeBron… 2026-08-… FALSE   NBA i… https:/… 46       
+#> 3  2.97e7 Etic… Kobe Br… The late L… 2026-08-… FALSE   NA     https:/… 46       
+#> 4  4.96e7 Story NBA off… We're look… 2026-08-… FALSE   NBA I… https:/… 46       
+#> 5  4.97e7 Head… Klay Th… Klay Thomp… 2026-08-… FALSE   NA     https:/… 46       
 # }
 ```

@@ -361,9 +361,11 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_core.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_rosters.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_schedule.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_schedule_crosswalk.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_shots.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_standings.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_team_crosswalk.html</loc></url>
@@ -379,15 +381,20 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_rosters.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_schedule.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_schedule_crosswalk.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_shots.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_standings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_stats_leaguedash.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_team_box.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_team_stats.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/most_recent_nba_stats_season.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_assist_pct.html</loc></url>
@@ -578,6 +585,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nbagl_standings.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/parquet_from_url.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/progressively.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/rds_from_url.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/realgm_coaches.html</loc></url>
@@ -611,6 +619,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/torvik_team_factors.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/update_mbb_db.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/update_nba_db.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/update_nba_stats_db.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/year_to_season.html</loc></url>
 </urlset>
 

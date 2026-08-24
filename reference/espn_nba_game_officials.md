@@ -154,7 +154,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_officials(event_id = "401283399")
 #> ── ESPN NBA Event Officials (event_id=401283399) from ESPN.com ── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:47 UTC
+#> ℹ Data updated: 2026-08-24 19:10:52 UTC
 #> # A tibble: 3 × 8
 #>   event_id  official_id full_name   display_name position_id position_name
 #>   <chr>     <chr>       <chr>       <chr>        <chr>       <chr>        

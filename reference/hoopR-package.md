@@ -9,6 +9,19 @@ college basketball statistics website<https://kenpom.com>. It provides
 users with an active subscription the capability to scrape the website
 tables and analyze the data for themselves.
 
+## Details
+
+**`stats.nba.com` / `stats.wnba.com` blocking (#142):** the NBA Stats
+API family (`nba_*` wrappers targeting `stats.nba.com`) blocks requests
+from datacenter/cloud IP ranges outright – calls that work from a
+residential connection will fail (timeout, empty body, or an HTML error
+page instead of JSON) from CI runners, most VPS/cloud hosts, and many
+corporate networks. If you're hitting this from a blocked network, route
+requests through a proxy on a residential/unblocked IP via
+`options(hoopR.proxy = "http://host:port")` (or the `http_proxy` /
+`https_proxy` environment variables, or a per-call `proxy = ` argument
+where the wrapper threads `...` through to the request layer).
+
 ## See also
 
 Useful links:

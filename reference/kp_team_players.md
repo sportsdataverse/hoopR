@@ -97,7 +97,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
-#> ✖ 2026-08-06 04:00:55.544241: 2026-08-06 04:00:55.544003 - No Player Data available for Florida St. in 2024
+#> ✖ 2026-08-24 19:11:56.283312: 2026-08-24 19:11:56.28304 - No Player Data available for Florida St. in 2024
 #> ✖ Args: team = "Florida St.", year = 2024
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

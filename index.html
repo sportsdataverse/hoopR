@@ -161,6 +161,7 @@
 <p><a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a> is an R package for working with men’s basketball data.</p>
 <p>The package has functions to access <strong>live play by play and box score</strong> data from ESPN with shot locations when available. As of version 1.3.0, <a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a> is also a full NBA Stats API wrapper with 127 functions added in this release.</p>
 <p>It is additionally a scraping and aggregating interface for Ken Pomeroy’s men’s college basketball statistics website, <a href="https://kenpom.com/" class="external-link">kenpom.com</a>. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.</p>
+<p>As of version 3.1.0, the package exports 600+ functions spanning the NBA Stats API (<code>nba_*</code>), ESPN (<code>espn_nba_*</code> / <code>espn_mbb_*</code>), KenPom (<code>kp_*</code>), CollegeBasketballData (<code>cbbd_*</code>), Basketball-Reference (<code>bref_*</code>), Bart Torvik (<code>torvik_*</code>), RealGM (<code>realgm_*</code>), Fox Sports (<code>fox_*</code>), NCAA (<code>ncaa_mbb_*</code>), and NBA G-League (<code>nbagl_*</code>), plus <code>load_nba_*()</code> / <code>load_mbb_*()</code> / <code>load_ncaa_mbb_*()</code> bulk-data loaders backed by the <code>sportsdataverse-data</code> release repos.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -188,9 +189,9 @@
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## 3.39 sec elapsed</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">## 4.05 sec elapsed</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">## 619841 rows of NBA play-by-play data from 1279 games.</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="do">## 642472 rows of NBA play-by-play data from 1325 games.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="mens-college-basketball-full-play-by-play-seasons-2006-2026--2-3-minutes">
@@ -202,7 +203,7 @@
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span>  <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="do">## 10.62 sec elapsed</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="do">## 12.98 sec elapsed</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="do">## 2915731 rows of men's college basketball play-by-play data from 6275 games.</span></span></code></pre></div>
 </div>
@@ -241,7 +242,7 @@
 </h2>
 <ul>
 <li><p>Jason Lee (@theFirmAISports) <a href="https://x.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge" alt="@theFirmAISports"></a> <a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a></p></li>
-<li><p>Billy Fryer (@_b4billy_) <a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a> <a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a></p></li>
+<li><p>Billy Fryer (@BillyFryer42) <a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a> <a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a></p></li>
 <li><p>Ross Drucker (@rossdrucker9) <a href="https://x.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge" alt="@rossdrucker9"></a> <a href="https://github.com/rossdrucker" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@rossdrucker"></a></p></li>
 <li><p>Vladislav Shufinskiy (@vshufinskiy) <a href="https://x.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=x&amp;style=for-the-badge" alt="@vshufinskiy"></a> <a href="https://github.com/shufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@shufinskiy"></a></p></li>
 </ul>

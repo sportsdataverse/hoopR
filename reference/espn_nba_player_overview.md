@@ -188,12 +188,12 @@ Saiem Gilani
   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:55 UTC
+#> ℹ Data updated: 2026-08-24 19:11:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:55 UTC
+#> ℹ Data updated: 2026-08-24 19:11:00 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -201,32 +201,32 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:55 UTC
+#> ℹ Data updated: 2026-08-24 19:11:00 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:55 UTC
+#> ℹ Data updated: 2026-08-24 19:11:00 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 2026 NBA buzz: Latest free agency and tra… We're trac… 2026-08-… ESPN   Story
-#>  2 LeBron James denies Jaylen Brown's skydiv… The Philad… 2026-08-… Kalan… Story
-#>  3 Stephen A.: Jaylen Brown makes Sixers tit… Stephen A.… 2026-08-… NA     Media
-#>  4 NBA free agency 2027 preview: Our Way-Too… Golden Sta… 2026-08-… Bobby… Story
-#>  5 VJ Edgecombe was just as surprised as the… VJ Edgecom… 2026-08-… NA     Media
-#>  6 NBA free agency 2026: Let's play fact vs.… NBA front … 2026-08-… Bobby… Story
-#>  7 Kevin Durant compares 76ers' star power t… Kevin Dura… 2026-08-… Ben G… Head…
-#>  8 Who has more to lose next season: Joel Em… Who has mo… 2026-07-… NA     Media
-#>  9 Perk says Draymond's LeBron take is 'delu… Perk says … 2026-07-… NA     Media
-#> 10 Inside LeBron James' decision to join the… For 22-tim… 2026-07-… Dave … Story
-#> 11 What position should LeBron play for the … What posit… 2026-07-… NA     Media
-#> 12 Team USA Olympic stock watch: Which NBA p… Whose Olym… 2026-07-… Zach … Story
-#> 13 76ers celebrate LeBron James' arrival wit… The 76ers … 2026-07-… NA     Head…
+#>  1 2026 NBA buzz: Latest free agency and tra… "We're tra… 2026-08-… ESPN   Story
+#>  2 Shaq: It's 'championship or bust' for LeB… "Shaq: It'… 2026-08-… NA     Media
+#>  3 LeBron nearly sinks his first hole-in-one  "LeBron ne… 2026-08-… NA     Media
+#>  4 LeBron James launches YouTube golf ventur… "New 76ers… 2026-08-… NA     Head…
+#>  5 Rory: I'd love to give LeBron a golf less… "Rory: I'd… 2026-08-… NA     Media
+#>  6 Knicks-Sixers, Lakers-Warriors highlight … "A second … 2026-08-… NA     Head…
+#>  7 Philly artist paints LeBron mural in Chin… "The mural… 2026-08-… Antho… Story
+#>  8 Cohen: LeBron's still the face of the NBA  "Cohen: Le… 2026-08-… NA     Media
+#>  9 Why Malika Andrews is excited for LeBron'… "Why Malik… 2026-08-… NA     Media
+#> 10 Champion Knicks to face Sixers, LeBron in… "The NBA a… 2026-08-… Micha… Head…
+#> 11 76ers' Mike Gansey says Joel Embiid is he… "Joel Embi… 2026-08-… Ohm Y… Head…
+#> 12 LeBron James denies Jaylen Brown's skydiv… "The Phila… 2026-08-… Kalan… Story
+#> 13 NBA free agency 2027 preview: Our Way-Too… "Golden St… 2026-08-… Bobby… Story
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:55 UTC
+#> ℹ Data updated: 2026-08-24 19:11:00 UTC
 #> # A tibble: 1 × 1
 #>   outlook
 #>   <chr>  

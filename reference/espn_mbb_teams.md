@@ -149,8 +149,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_teams())
 #> ── ESPN MBB Teams Information from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:37 UTC
-#> # A tibble: 362 × 32
+#> ℹ Data updated: 2026-08-24 19:10:43 UTC
+#> # A tibble: 366 × 32
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    
 #>  1 ACU          b1b3b3          592d… Abilene Chr…    2000 Abil… http… https://…
@@ -163,7 +163,7 @@ try(espn_mbb_teams())
 #>  8 AMER         c8102e          c411… American Un…      44 Amer… http… https://…
 #>  9 APP          ffcd00          0000… App State M…    2026 App … http… https://…
 #> 10 ASU          8c1d40          ffc6… Arizona Sta…       9 Ariz… http… https://…
-#> # ℹ 352 more rows
+#> # ℹ 356 more rows
 #> # ℹ 24 more variables: logos_href_3 <chr>, logos_href_4 <chr>,
 #> #   logos_href_5 <chr>, logos_href_6 <chr>, logos_href_7 <chr>,
 #> #   logos_href_8 <chr>, logos_href_9 <chr>, logos_href_10 <chr>,

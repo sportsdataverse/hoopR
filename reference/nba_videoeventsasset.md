@@ -31,6 +31,8 @@ by response)
 
 ## Details
 
+(Possibly Defunct)
+
      nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
 
 ## See also

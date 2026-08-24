@@ -162,7 +162,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_roster(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Season Roster ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 04:00:12 UTC
+#> ℹ Data updated: 2026-08-24 19:11:16 UTC
 #> # A tibble: 18 × 5
 #>    league team_id season athlete_id ref                                         
 #>    <chr>  <chr>    <int> <chr>      <chr>                                       

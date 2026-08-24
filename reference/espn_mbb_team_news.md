@@ -151,14 +151,14 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-08-06 03:59:31 UTC
+#> ℹ Data updated: 2026-08-24 19:10:39 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.95e7 Story Men's N… Texas move… 2026-08-… FALSE   Jeff … https:/… 41       
-#> 2  4.94e7 Story 100 day… It's a new… 2026-07-… FALSE   Jeff … https:/… 41       
-#> 3  4.94e7 Head… Sources… A nonconfe… 2026-07-… FALSE   Jeff … https:/… 41       
-#> 4  4.84e7 Story Ranking… Top portal… 2026-07-… FALSE   Jeff … https:/… 41       
-#> 5  4.87e7 Story Transfe… We're trac… 2026-07-… FALSE   Jeff … https:/… 41       
+#> 1  4.97e7 Story NBA dra… After a su… 2026-08-… FALSE   Jerem… https:/… 46       
+#> 2  3.03e7 Etic… NCAA Br… The Blue D… 2026-08-… FALSE   Joe L… https:/… 41       
+#> 3  4.95e7 Story Men's N… Texas move… 2026-08-… FALSE   Jeff … https:/… 41       
+#> 4  4.94e7 Story 100 day… It's a new… 2026-07-… FALSE   Jeff … https:/… 41       
+#> 5  4.94e7 Head… Sources… A nonconfe… 2026-07-… FALSE   Jeff … https:/… 41       
 # }
 ```

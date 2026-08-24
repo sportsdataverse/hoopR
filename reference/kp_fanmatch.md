@@ -57,7 +57,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_fanmatch(date = "2022-02-22"))
-#> ✖ 2026-08-06 04:00:51.645535: Invalid arguments or no Fan Match data for 2022-02-22 available!
+#> ✖ 2026-08-24 19:11:51.891136: Invalid arguments or no Fan Match data for 2022-02-22 available!
 #> ✖ Args: date = "2022-02-22"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

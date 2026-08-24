@@ -143,7 +143,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_officials(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Officials (event_id=401256760) from ESPN.c
-#> ℹ Data updated: 2026-08-06 03:59:09 UTC
+#> ℹ Data updated: 2026-08-24 19:10:20 UTC
 #> # A tibble: 3 × 8
 #>   event_id  official_id full_name     display_name  position_id position_name
 #>   <chr>     <chr>       <chr>         <chr>         <chr>       <chr>        

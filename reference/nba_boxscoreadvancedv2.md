@@ -127,6 +127,14 @@ TeamStats
 
 ## Details
 
+League-scoped: as of a 2026-08-24 residential-IP probe sweep this V2
+endpoint returns HTTP 200 with zero rows for NBA (LeagueID '00') game
+IDs – use
+[`nba_boxscoreadvancedv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoreadvancedv3.md)
+for NBA instead. It still serves real rows for WNBA (LeagueID '10') and
+G-League (LeagueID '20') game IDs, so the wrapper stays exported/active
+rather than deprecated.
+
      nba_boxscoreadvancedv2(game_id = "0022200021")
 
 ## See also

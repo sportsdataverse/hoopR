@@ -67,7 +67,7 @@ Other CBD Draft Functions:
 ``` r
 # \donttest{
   try(cbbd_draft_picks(year = 2024))
-#> ✖ 2026-08-06 03:58:48.757533: Invalid arguments or no draft picks available!
+#> ✖ 2026-08-24 19:09:58.712811: Invalid arguments or no draft picks available!
 #> ✖ Args: year = 2024, draft_team = NULL, source_team = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

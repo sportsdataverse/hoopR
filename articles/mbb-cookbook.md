@@ -68,9 +68,9 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> 
 #> $NextEvent
 #> # A tibble: 1 × 4
-#>   id        date              name                              short_name  
-#>   <chr>     <chr>             <chr>                             <chr>       
-#> 1 401856577 2026-03-29T21:05Z UConn Huskies at Duke Blue Devils CONN VS DUKE
+#>   id        date              name                                   short_name 
+#>   <chr>     <chr>             <chr>                                  <chr>      
+#> 1 401909562 2026-11-02T05:00Z Army Black Knights at Duke Blue Devils ARMY @ DUKE
 #> 
 #> $StandingSummary
 #> # A tibble: 1 × 1
@@ -488,21 +488,21 @@ season <- most_recent_mbb_season()
 # `year` -- when an argument name surprises you, ?function is the
 # two-second fix.
 espn_mbb_standings(year = season)
-#> # A tibble: 365 × 86
-#>    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent
-#>  *   <int> <chr>                 <dbl>        <dbl>       <dbl>            <dbl>
-#>  1     193 Miami (OH…             75.5         89.6         0              1    
-#>  2     130 Michigan …             69.5         87.3         0              0.95 
-#>  3      12 Arizona W…             69.4         86.2         0              0.889
-#>  4     150 Duke Blue…             63.6         81.6         0              0.944
-#>  5    2250 Gonzaga B…             66.2         84.3         0              0.889
-#>  6    2272 High Poin…             71.2         89.7         0              0.938
-#>  7      41 UConn Hus…             65.2         76.6         0              0.85 
-#>  8     258 Virginia …             68.8         80.4         4              0.833
-#>  9     139 Saint Lou…             70.5         87.2         0              0.833
-#> 10    2006 Akron Zips             74           87.9         3.5            0.944
+#> # A tibble: 365 × 87
+#>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
+#>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
+#>  1    2378 UMBC Retrievers  America E…             67.6         76.4         0  
+#>  2     261 Vermont Catamou… America E…             68.5         73.4         2.5
+#>  3    2885 NJIT Highlanders America E…             73.2         67.0         8  
+#>  4    2349 UMass Lowell Ri… America E…             76.3         74.9         9  
+#>  5     399 UAlbany Great D… America E…             72.9         72.0        12.5
+#>  6     160 New Hampshire W… America E…             74.6         69.2        13.5
+#>  7    2803 Bryant Bulldogs  America E…             72.5         64.8        14  
+#>  8    2066 Binghamton Bear… America E…             74.9         67.9        15  
+#>  9     311 Maine Black Bea… America E…             68.4         62.5        15.5
+#> 10     202 Tulsa Golden Hu… American …             73.7         85.1         0  
 #> # ℹ 355 more rows
-#> # ℹ 80 more variables: losses <dbl>, playoffseed <dbl>,
+#> # ℹ 81 more variables: leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
 #> #   pointdifferential <chr>, pointsagainst <dbl>, pointsfor <dbl>,
 #> #   streak <dbl>, winpercent <dbl>, wins <dbl>, gamesahead <chr>, total <chr>,
 #> #   home_avgpointsagainst <dbl>, home_avgpointsfor <dbl>,

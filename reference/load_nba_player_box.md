@@ -106,9 +106,11 @@ Other hoopR Loader Functions:
 [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
 [`load_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_box.md),
 [`load_mbb_schedule()`](https://hoopR.sportsdataverse.org/reference/load_mbb_schedule.md),
+[`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_shots.md),
 [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md),
 [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
 [`load_nba_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_schedule.md),
+[`load_nba_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_shots.md),
 [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_box.md)
 
 ## Examples
@@ -117,7 +119,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA player_box from hoopR data repository ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-03 02:13:22 UTC
+#> ℹ Data updated: 2026-08-12 05:59:46 UTC
 #> # A tibble: 34,883 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

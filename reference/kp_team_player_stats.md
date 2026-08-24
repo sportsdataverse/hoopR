@@ -159,7 +159,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-06 04:00:55.335353: 2026-08-06 04:00:55.335114 - Florida St. - 2021 team player stats are missing
+#> ✖ 2026-08-24 19:11:56.058825: 2026-08-24 19:11:56.058537 - Florida St. - 2021 team player stats are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

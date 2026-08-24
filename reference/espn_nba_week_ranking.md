@@ -185,11 +185,11 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_week_ranking(ranking_id = 1, week = 5, season = 2025)
-#> ✖ 2026-08-06 04:00:15.119815: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
+#> ✖ 2026-08-24 19:11:19.60555: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, season_type = 2L, week = 5, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Week Ranking Detail ───────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 04:00:15 UTC
+#> ℹ Data updated: 2026-08-24 19:11:19 UTC
 #> # A tibble: 0 × 0
 # }
 ```

@@ -50,7 +50,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_trends())
-#> ✖ 2026-08-06 04:00:56.082801: Invalid arguments or no trends data available!
+#> ✖ 2026-08-24 19:11:56.849279: Invalid arguments or no trends data available!
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }

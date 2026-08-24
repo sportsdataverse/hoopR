@@ -69,7 +69,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_fourfactors(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-06 04:00:51.985187: Invalid arguments or no four factors data for 2020 - 2021 available!
+#> ✖ 2026-08-24 19:11:52.241652: Invalid arguments or no four factors data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

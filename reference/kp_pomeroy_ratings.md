@@ -66,7 +66,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-06 04:00:54.27126: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!
+#> ✖ 2026-08-24 19:11:54.662762: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

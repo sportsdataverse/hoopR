@@ -111,7 +111,7 @@
 
 <div class="section level2">
 <h2 id="package-overview">Package Overview<a class="anchor" aria-label="anchor" href="#package-overview"></a></h2>
-<p>hoopR is an R package providing clean, tidy men’s basketball (NBA + Men’s College Basketball) play-by-play and box score data. It wraps the NBA Stats API (<code>stats.nba.com</code>), the ESPN API, and KenPom, exporting ~576 functions. Primary source families: <code>nba_*()</code> (NBA Stats API), <code>espn_nba_*()</code> / <code>espn_mbb_*()</code> (ESPN), <code>kp_*()</code> (KenPom), <code>cbbd_*()</code> (CollegeBasketballData), <code>bref_*()</code> (Basketball Reference), <code>torvik_*()</code> (Bart Torvik), <code>nbagl_*()</code> (NBA G-League), <code>ncaa_mbb_*()</code> (NCAA), plus <code>load_nba_*()</code> / <code>load_mbb_*()</code> bulk loaders that pull pre-built data from the sibling <code>hoopR-data</code> / <code>sportsdataverse-data</code> release repos.</p>
+<p>hoopR is an R package providing clean, tidy men’s basketball (NBA + Men’s College Basketball) play-by-play and box score data. It wraps the NBA Stats API (<code>stats.nba.com</code>), the ESPN API, and KenPom, exporting 600+ functions. Primary source families: <code>nba_*()</code> (NBA Stats API), <code>espn_nba_*()</code> / <code>espn_mbb_*()</code> (ESPN), <code>kp_*()</code> (KenPom), <code>cbbd_*()</code> (CollegeBasketballData), <code>bref_*()</code> (Basketball Reference), <code>torvik_*()</code> (Bart Torvik), <code>realgm_*()</code> (RealGM), <code>fox_*()</code> (Fox Sports), <code>nbagl_*()</code> (NBA G-League), <code>ncaa_mbb_*()</code> (NCAA), plus <code>load_nba_*()</code> / <code>load_mbb_*()</code> / <code>load_ncaa_mbb_*()</code> / <code>load_nba_stats_*()</code> bulk loaders that pull pre-built data from the sibling <code>hoopR-data</code> / <code>sportsdataverse-data</code> release repos.</p>
 <p>Sibling repos in the family: <code>hoopR-data</code> (NBA + MBB build/aggregate/publish), <code>hoopR-mbb-raw</code> / <code>hoopR-mbb-data</code>, <code>hoopR-nba-raw</code> / <code>hoopR-nba-data</code>, and <code>hoopR-nba-stats-raw</code> / <code>hoopR-nba-stats-data</code>.</p>
 <p>When this guide differs from current repository docs, treat <code>CONTRIBUTING.md</code> and current test helper implementations as authoritative.</p>
 <ul><li>
@@ -197,6 +197,33 @@
 <td>
 <code><a href="reference/kp_pomeroy_ratings.html">kp_pomeroy_ratings()</a></code>, <code><a href="reference/kp_box.html">kp_box()</a></code>
 </td>
+</tr><tr><td>CollegeBasketballData</td>
+<td><code>cbbd_</code></td>
+<td>
+<code><a href="reference/cbbd_games.html">cbbd_games()</a></code>, <code><a href="reference/cbbd_ratings_srs.html">cbbd_ratings_srs()</a></code>
+</td>
+</tr><tr><td>Basketball-Reference</td>
+<td><code>bref_</code></td>
+<td>
+<code><a href="reference/bref_players_stats.html">bref_players_stats()</a></code>, <code><a href="reference/bref_standings.html">bref_standings()</a></code>
+</td>
+</tr><tr><td>Bart Torvik</td>
+<td><code>torvik_</code></td>
+<td>
+<code><a href="reference/torvik_ratings.html">torvik_ratings()</a></code>, <code><a href="reference/torvik_game_stats.html">torvik_game_stats()</a></code>
+</td>
+</tr><tr><td>RealGM</td>
+<td><code>realgm_</code></td>
+<td>
+<code><a href="reference/realgm_players.html">realgm_players()</a></code>, <code><a href="reference/realgm_standings.html">realgm_standings()</a></code>
+</td>
+</tr><tr><td>Fox Sports</td>
+<td>
+<code>fox_nba_</code> / <code>fox_mbb_</code>
+</td>
+<td>
+<code><a href="reference/fox_basketball_pbp.html">fox_nba_pbp()</a></code>, <code><a href="reference/fox_basketball_standings.html">fox_mbb_standings()</a></code>
+</td>
 </tr><tr><td>NBA G-League</td>
 <td><code>nbagl_</code></td>
 <td>
@@ -207,10 +234,10 @@
 <td><code><a href="reference/ncaa_mbb_teams.html">ncaa_mbb_teams()</a></code></td>
 </tr><tr><td>Data loaders</td>
 <td>
-<code>load_nba_</code> / <code>load_mbb_</code>
+<code>load_nba_</code> / <code>load_mbb_</code> / <code>load_ncaa_mbb_</code>
 </td>
 <td>
-<code><a href="reference/load_nba_pbp.html">load_nba_pbp()</a></code>, <code><a href="reference/load_mbb_team_box.html">load_mbb_team_box()</a></code>
+<code><a href="reference/load_nba_pbp.html">load_nba_pbp()</a></code>, <code><a href="reference/load_mbb_team_box.html">load_mbb_team_box()</a></code>, <code><a href="reference/load_ncaa_mbb_lineups.html">load_ncaa_mbb_rapm()</a></code>
 </td>
 </tr></tbody></table></div>
 <div class="section level3">

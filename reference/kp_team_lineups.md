@@ -76,7 +76,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-06 04:00:55.156101: 2026-08-06 04:00:55.155856 - Florida St. - 2021 Team Lineups are missing
+#> ✖ 2026-08-24 19:11:55.81364: 2026-08-24 19:11:55.81336 - Florida St. - 2021 Team Lineups are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

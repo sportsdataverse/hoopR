@@ -20,48 +20,28 @@ kp_team_depth_chart(team, year = 2021)
 
 ## Value
 
-A data frame with the following columns:
+A data frame with one row per rostered player, with the following
+columns:
 
 |  |  |  |
 |----|----|----|
 | col_name | types | description |
-| pg_number | numeric | Pg number. |
-| pg_player_first_name | character | Pg player first name. |
-| pg_player_last_name | character | Pg player last name. |
-| pg_hgt | character | Pg hgt. |
-| pg_wgt | numeric | Pg wgt. |
-| pg_yr | character | Pg yr. |
-| pg_min_pct | numeric | Pg min percentage (0-1 decimal). |
-| sg_number | numeric | Sg number. |
-| sg_player_first_name | character | Sg player first name. |
-| sg_player_last_name | character | Sg player last name. |
-| sg_hgt | character | Sg hgt. |
-| sg_wgt | numeric | Sg wgt. |
-| sg_yr | character | Sg yr. |
-| sg_min_pct | numeric | Sg min percentage (0-1 decimal). |
-| sf_number | numeric | Sf number. |
-| sf_player_first_name | character | Sf player first name. |
-| sf_player_last_name | character | Sf player last name. |
-| sf_hgt | character | Sf hgt. |
-| sf_wgt | numeric | Sf wgt. |
-| sf_yr | character | Sf yr. |
-| sf_min_pct | numeric | Sf min percentage (0-1 decimal). |
-| pf_number | numeric | Pf number. |
-| pf_player_first_name | character | Personal fouls player first name. |
-| pf_player_last_name | character | Personal fouls player last name. |
-| pf_hgt | character | Pf hgt. |
-| pf_wgt | numeric | Pf wgt. |
-| pf_yr | character | Pf yr. |
-| pf_min_pct | numeric | Personal fouls min percentage (0-1 decimal). |
-| c_number | numeric | C number. |
-| c_player_first_name | character | C player first name. |
-| c_player_last_name | character | C player last name. |
-| c_hgt | character | C hgt. |
-| c_wgt | numeric | C wgt. |
-| c_yr | character | C yr. |
-| c_min_pct | numeric | C min percentage (0-1 decimal). |
 | team | character | Team-side label or team identifier. |
 | year | numeric | 4-digit year. |
+| player_id | integer | KenPom player identifier. |
+| player_name | character | Player full name. |
+| class_year | character | Class year (e.g. 'Fr', 'So', 'Jr', 'Sr'). |
+| height | character | Height (e.g. '6-9'). |
+| weight | numeric | Weight in pounds. |
+| pct_pg | numeric | Percentage of the player's minutes played at point guard (0-1 decimal). |
+| pct_sg | numeric | Percentage of the player's minutes played at shooting guard (0-1 decimal). |
+| pct_sf | numeric | Percentage of the player's minutes played at small forward (0-1 decimal). |
+| pct_pf | numeric | Percentage of the player's minutes played at power forward (0-1 decimal). |
+| pct_c | numeric | Percentage of the player's minutes played at center (0-1 decimal). |
+| pct_poss | numeric | Percentage of team possessions used while the player was on the floor (0-1 decimal). |
+| fta | integer | Season free throw attempts. |
+| fg2a | integer | Season 2-point field goal attempts. |
+| fg3a | integer | Season 3-point field goal attempts. |
 
 ## See also
 
@@ -80,7 +60,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
-#> ✖ 2026-08-06 04:00:54.783403: 2026-08-06 04:00:54.783155 - Florida St. - 2021 Team Depth Chart is missing
+#> ✖ 2026-08-24 19:11:55.378964: 2026-08-24 19:11:55.378711 - Florida St. - 2021 Team Depth Chart is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

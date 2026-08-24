@@ -5,7 +5,8 @@
 NBA Stats no longer returns stable data for this endpoint. This function
 is deprecated and now errors when called. Use
 [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md)
-instead.
+instead. Note: `stat_category = "Defense"` was never supported upstream
+by this endpoint even before deprecation (#51).
 
 ## Usage
 

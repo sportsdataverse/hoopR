@@ -78,10 +78,51 @@ Data
 
   **Load cleaned NBA player core (identity + bio) from the data repo**
 
+- [`load_nba_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_shots.md)
+  :
+
+  **Load hoopR NBA shot events**
+
 - [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
   :
 
   **Update or create a hoopR NBA play-by-play database**
+
+### NBA Stats API Data Loaders
+
+Functions exported by hoopR to access hoopR-nba-stats-data NBA Stats API
+artifacts
+
+- [`load_nba_stats_coaches()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_game_lineups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_lineups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_player_boxscores()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_player_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_player_season_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_possessions()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_standings()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_team_boxscores()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_team_season_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  :
+
+  **Load hoopR NBA Stats Coaches**
+
+- [`load_nba_stats_leaguedash()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_leaguedash.md)
+  :
+
+  **Load hoopR NBA Stats League Dashboard cube**
+
+- [`update_nba_stats_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_stats_db.md)
+  :
+
+  **Build/update hoopR NBA Stats database**
 
 ### Men’s College Basketball Data Functions
 
@@ -145,10 +186,51 @@ College Basketball Data
 
   **Load cleaned MBB player core (identity + bio) from the data repo**
 
+- [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_shots.md)
+  :
+
+  **Load hoopR MBB shot events**
+
 - [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md)
   :
 
   **Update or create a hoopR MBB play-by-play database**
+
+### NCAA Men’s College Basketball Play-by-Play Engine Data Loaders
+
+Functions exported by hoopR to access the sdv-py `ncaa_mbb` engine’s
+published output on sportsdataverse-data
+
+- [`load_ncaa_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_lineups()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_matchup_stints()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_possessions()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_rapm_within_team()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_team_rosters()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_schedule()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  [`load_ncaa_mbb_team_ids()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  :
+
+  **Load cleaned NCAA men's college basketball play-by-play from the
+  data repo**
+
+### Model Dataset Loaders
+
+Functions exported by hoopR to access model-derived datasets
+(player-impact, ratings, player-value) published to sportsdataverse-data
+
+- [`load_nba_player_impact()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.md)
+  [`load_mbb_player_value()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.md)
+  [`load_mbb_ratings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.md)
+  :
+
+  **Load NBA player-impact ratings (RAPM / SPM / BPM / DARKO) from the
+  data repo**
 
 ## Cross-Source Crosswalks
 
@@ -3122,6 +3204,11 @@ Internal functions used by hoopR
 
   **Load .rds file from a remote connection**
 
+- [`parquet_from_url()`](https://hoopR.sportsdataverse.org/reference/parquet_from_url.md)
+  :
+
+  **Load .parquet file from a remote connection**
+
 - [`rejoin_schedules()`](https://hoopR.sportsdataverse.org/reference/rejoin_schedules.md)
   :
 
@@ -3136,6 +3223,11 @@ Internal functions used by hoopR
   :
 
   **Most Recent NBA Season**
+
+- [`most_recent_nba_stats_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_stats_season.md)
+  :
+
+  **Most Recent NBA Stats Season**
 
 - [`progressively()`](https://hoopR.sportsdataverse.org/reference/progressively.md)
   :

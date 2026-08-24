@@ -15,8 +15,9 @@
 
 ## Project Context
 
-hoopR is an R package (v3.0.0) that wraps the NBA Stats API, ESPN API,
-and KenPom. It exports 270+ functions and uses roxygen2 for
+hoopR is an R package (v3.1.0) that wraps the NBA Stats API, ESPN API,
+KenPom, CollegeBasketballData, Basketball-Reference, Bart Torvik,
+RealGM, and Fox Sports. It exports 600+ functions and uses roxygen2 for
 documentation, testthat for testing, and pkgdown for the documentation
 site.
 
@@ -117,9 +118,14 @@ documentation references).
 | NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
 | ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
 | KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
+| CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
+| Basketball-Reference | `bref_` | [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md), [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md) |
+| Bart Torvik | `torvik_` | [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md), [`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md) |
+| RealGM | `realgm_` | [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md), [`realgm_standings()`](https://hoopR.sportsdataverse.org/reference/realgm_standings.md) |
+| Fox Sports | `fox_nba_` / `fox_mbb_` | [`fox_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_pbp.md), [`fox_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_standings.md) |
 | NBA G-League | `nbagl_` | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md) |
 | NCAA | `ncaa_mbb_` | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md) |
-| Data loaders | `load_nba_` / `load_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md) |
+| Data loaders | `load_nba_` / `load_mbb_` / `load_ncaa_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md), [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md) |
 
 ## Roxygen Documentation
 
@@ -290,7 +296,7 @@ regions by hand.
   two:
 
   - `NEWS.md` — all new bullets go under the most recent **unreleased**
-    version heading (currently `# **hoopR 3.0.0**`). Do NOT create a new
+    version heading (currently `# **hoopR 3.1.0**`). Do NOT create a new
     version section ahead of release; extend the existing subsections
     (`### Bug Fixes`, `### Deprecations`,
     `### Stability and Test Robustness`, …). After the release ships the

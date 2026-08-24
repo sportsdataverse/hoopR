@@ -68,7 +68,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
-#> ✖ 2026-08-06 04:00:55.727379: 2026-08-06 - No team schedule tables available for Florida St. - 2022
+#> ✖ 2026-08-24 19:11:56.475452: 2026-08-24 - No team schedule tables available for Florida St. - 2022
 #> ✖ Args: team = "Florida St.", year = 2022
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

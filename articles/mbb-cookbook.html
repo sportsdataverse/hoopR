@@ -227,9 +227,9 @@ you:</p>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $NextEvent</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 4</span></span></span>
-<span><span class="co">#&gt;   id        date              name                              short_name  </span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 401856577 2026-03-29T21:05Z UConn Huskies at Duke Blue Devils CONN VS DUKE</span></span>
+<span><span class="co">#&gt;   id        date              name                                   short_name </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 401909562 2026-11-02T05:00Z Army Black Knights at Duke Blue Devils ARMY @ DUKE</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $StandingSummary</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 1</span></span></span>
@@ -629,21 +629,21 @@ with the <code>season_group</code> family.</p>
 <span><span class="co"># `year` -- when an argument name surprises you, ?function is the</span></span>
 <span><span class="co"># two-second fix.</span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_standings.html">espn_mbb_standings</a></span><span class="op">(</span>year <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 365 × 86</span></span></span>
-<span><span class="co">#&gt;    team_id team       avgpointsagainst avgpointsfor gamesbehind leaguewinpercent</span></span>
-<span><span class="co">#&gt;  <span style="color: #BCBCBC;">*</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     193 Miami (OH…             75.5         89.6         0              1    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     130 Michigan …             69.5         87.3         0              0.95 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>      12 Arizona W…             69.4         86.2         0              0.889</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     150 Duke Blue…             63.6         81.6         0              0.944</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>    <span style="text-decoration: underline;">2</span>250 Gonzaga B…             66.2         84.3         0              0.889</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>    <span style="text-decoration: underline;">2</span>272 High Poin…             71.2         89.7         0              0.938</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>      41 UConn Hus…             65.2         76.6         0              0.85 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     258 Virginia …             68.8         80.4         4              0.833</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     139 Saint Lou…             70.5         87.2         0              0.833</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>    <span style="text-decoration: underline;">2</span>006 Akron Zips             74           87.9         3.5            0.944</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 365 × 87</span></span></span>
+<span><span class="co">#&gt;    team_id team             conference avgpointsagainst avgpointsfor gamesbehind</span></span>
+<span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>    <span style="text-decoration: underline;">2</span>378 UMBC Retrievers  America E…             67.6         76.4         0  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     261 Vermont Catamou… America E…             68.5         73.4         2.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>    <span style="text-decoration: underline;">2</span>885 NJIT Highlanders America E…             73.2         67.0         8  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>    <span style="text-decoration: underline;">2</span>349 UMass Lowell Ri… America E…             76.3         74.9         9  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>     399 UAlbany Great D… America E…             72.9         72.0        12.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     160 New Hampshire W… America E…             74.6         69.2        13.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>    <span style="text-decoration: underline;">2</span>803 Bryant Bulldogs  America E…             72.5         64.8        14  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>    <span style="text-decoration: underline;">2</span>066 Binghamton Bear… America E…             74.9         67.9        15  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>     311 Maine Black Bea… America E…             68.4         62.5        15.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>     202 Tulsa Golden Hu… American …             73.7         85.1         0  </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 355 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 80 more variables: losses &lt;dbl&gt;, playoffseed &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 81 more variables: leaguewinpercent &lt;dbl&gt;, losses &lt;dbl&gt;, playoffseed &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   pointdifferential &lt;chr&gt;, pointsagainst &lt;dbl&gt;, pointsfor &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   streak &lt;dbl&gt;, winpercent &lt;dbl&gt;, wins &lt;dbl&gt;, gamesahead &lt;chr&gt;, total &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   home_avgpointsagainst &lt;dbl&gt;, home_avgpointsfor &lt;dbl&gt;,</span></span></span>

@@ -103,6 +103,19 @@ A utility to quickly obtain clean and tidy men's basketball play by play data. P
 
 
     <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p><strong><code>stats.nba.com</code> / <code>stats.wnba.com</code> blocking (#142):</strong> the NBA Stats API
+family (<code>nba_*</code> wrappers targeting <code>stats.nba.com</code>) blocks requests from
+datacenter/cloud IP ranges outright – calls that work from a residential
+connection will fail (timeout, empty body, or an HTML error page instead
+of JSON) from CI runners, most VPS/cloud hosts, and many corporate
+networks. If you're hitting this from a blocked network, route requests
+through a proxy on a residential/unblocked IP via
+<code>options(hoopR.proxy = "http://host:port")</code> (or the <code>http_proxy</code> /
+<code>https_proxy</code> environment variables, or a per-call <code>proxy = </code> argument
+where the wrapper threads <code>...</code> through to the request layer).</p>
+    </div>
+    <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Useful links:</p><ul><li><p><a href="https://github.com/sportsdataverse/hoopR" class="external-link">https://github.com/sportsdataverse/hoopR</a></p></li>
 <li><p><a href="https://hoopR.sportsdataverse.org/">https://hoopR.sportsdataverse.org/</a></p></li>

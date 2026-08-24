@@ -122,7 +122,7 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
-#> ✖ 2026-08-06 04:00:52.331648: 2026-08-06 - No Game Plan Points distribution tables available for Florida St. - 2021
+#> ✖ 2026-08-24 19:11:52.604403: 2026-08-24 - No Game Plan Points distribution tables available for Florida St. - 2021
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

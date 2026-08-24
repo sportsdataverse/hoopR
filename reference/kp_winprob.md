@@ -93,7 +93,7 @@ Other KenPom Boxscore Functions:
 ``` r
 # \donttest{
 try(kp_winprob(game_id = 1238, year = 2020))
-#> ✖ 2026-08-06 04:00:56.569601: Invalid arguments or no win probability data for 1238 available!
+#> ✖ 2026-08-24 19:11:57.376911: Invalid arguments or no win probability data for 1238 available!
 #> ✖ Args: game_id = 1238, year = 2020
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> list()

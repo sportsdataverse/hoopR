@@ -22,12 +22,14 @@
 hoopR is an R package providing clean, tidy men’s basketball (NBA +
 Men’s College Basketball) play-by-play and box score data. It wraps the
 NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting
-~576 functions. Primary source families: `nba_*()` (NBA Stats API),
+600+ functions. Primary source families: `nba_*()` (NBA Stats API),
 `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()`
 (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()`
-(Bart Torvik), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus
-`load_nba_*()` / `load_mbb_*()` bulk loaders that pull pre-built data
-from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
+(Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports),
+`nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus `load_nba_*()` /
+`load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders
+that pull pre-built data from the sibling `hoopR-data` /
+`sportsdataverse-data` release repos.
 
 Sibling repos in the family: `hoopR-data` (NBA + MBB
 build/aggregate/publish), `hoopR-mbb-raw` / `hoopR-mbb-data`,
@@ -107,9 +109,14 @@ pkgdown::build_site()
 | NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
 | ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_pbp.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
 | KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
+| CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
+| Basketball-Reference | `bref_` | [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md), [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md) |
+| Bart Torvik | `torvik_` | [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md), [`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md) |
+| RealGM | `realgm_` | [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md), [`realgm_standings()`](https://hoopR.sportsdataverse.org/reference/realgm_standings.md) |
+| Fox Sports | `fox_nba_` / `fox_mbb_` | [`fox_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_pbp.md), [`fox_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_standings.md) |
 | NBA G-League | `nbagl_` | [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md), [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md) |
 | NCAA | `ncaa_mbb_` | [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md) |
-| Data loaders | `load_nba_` / `load_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md) |
+| Data loaders | `load_nba_` / `load_mbb_` / `load_ncaa_mbb_` | [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md), [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md), [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md) |
 
 ### Function Pattern (NBA Stats API)
 

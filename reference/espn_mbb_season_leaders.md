@@ -162,7 +162,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_leaders(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season-Type Leaders ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:26 UTC
+#> ℹ Data updated: 2026-08-24 19:10:34 UTC
 #> # A tibble: 350 × 15
 #>    league       season season_type category_name category_display category_short
 #>    <chr>         <int>       <int> <chr>         <chr>            <chr>         

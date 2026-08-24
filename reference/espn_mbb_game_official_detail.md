@@ -138,7 +138,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_official_detail(event_id = 401256760, order = 1)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Official Detail ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-06 03:59:08 UTC
+#> ℹ Data updated: 2026-08-24 19:10:20 UTC
 #> # A tibble: 1 × 10
 #>   league        event_id official_id first_name last_name full_name display_name
 #>   <chr>         <chr>    <chr>       <chr>      <chr>     <chr>     <chr>       

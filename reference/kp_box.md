@@ -119,7 +119,7 @@ Other KenPom Boxscore Functions:
 ``` r
 # \donttest{
 try(kp_box(game_id = 6, year = 2021))
-#> ✖ 2026-08-06 04:00:50.53001: Invalid arguments or no box data for 6 available!
+#> ✖ 2026-08-24 19:11:50.642044: Invalid arguments or no box data for 6 available!
 #> ✖ Args: game_id = 6, year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

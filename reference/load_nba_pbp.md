@@ -109,9 +109,11 @@ Other hoopR Loader Functions:
 [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
 [`load_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_box.md),
 [`load_mbb_schedule()`](https://hoopR.sportsdataverse.org/reference/load_mbb_schedule.md),
+[`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_shots.md),
 [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_box.md),
 [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_player_box.md),
 [`load_nba_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_schedule.md),
+[`load_nba_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_shots.md),
 [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_box.md)
 
 ## Examples
@@ -120,7 +122,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA pbp from hoopR data repository ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-03 02:11:05 UTC
+#> ℹ Data updated: 2026-08-12 05:57:36 UTC
 #> # A tibble: 642,472 × 67
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>

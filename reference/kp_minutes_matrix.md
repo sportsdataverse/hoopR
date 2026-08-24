@@ -39,7 +39,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-06 04:00:53.043044: 2026-08-06 04:00:53.042781 - Florida St. - 2021 minutes matrix is missing
+#> ✖ 2026-08-24 19:11:53.346888: 2026-08-24 19:11:53.346631 - Florida St. - 2021 minutes matrix is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
