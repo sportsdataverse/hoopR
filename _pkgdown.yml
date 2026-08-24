@@ -203,6 +203,28 @@ reference:
       - '`load_nba_player_core`'
       - '`load_nba_shots`'
       - '`update_nba_db`'
+  - subtitle: NBA Stats API Data Loaders
+    desc: Functions exported by hoopR to access hoopR-nba-stats-data NBA Stats API artifacts
+    contents:
+      - '`load_nba_stats_coaches`'
+      - '`load_nba_stats_draft`'
+      - '`load_nba_stats_game_lineups`'
+      - '`load_nba_stats_game_rosters`'
+      - '`load_nba_stats_leaguedash`'
+      - '`load_nba_stats_lineups`'
+      - '`load_nba_stats_officials`'
+      - '`load_nba_stats_pbp`'
+      - '`load_nba_stats_player_boxscores`'
+      - '`load_nba_stats_player_game_logs`'
+      - '`load_nba_stats_player_season_stats`'
+      - '`load_nba_stats_possessions`'
+      - '`load_nba_stats_rosters`'
+      - '`load_nba_stats_schedule`'
+      - '`load_nba_stats_shots`'
+      - '`load_nba_stats_standings`'
+      - '`load_nba_stats_team_boxscores`'
+      - '`load_nba_stats_team_season_stats`'
+      - '`update_nba_stats_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
     contents:
@@ -411,6 +433,7 @@ reference:
       - '`rejoin_schedules`'
       - '`most_recent_mbb_season`'
       - '`most_recent_nba_season`'
+      - '`most_recent_nba_stats_season`'
       - '`progressively`'
       - '`year_to_season`'
       - '`request_with_proxy`'
