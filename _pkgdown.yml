@@ -235,6 +235,12 @@ reference:
       - '`load_ncaa_mbb_team_rosters`'
       - '`load_ncaa_mbb_schedule`'
       - '`load_ncaa_mbb_team_ids`'
+  - subtitle: Model Dataset Loaders
+    desc: Functions exported by hoopR to access model-derived datasets (player-impact, ratings, player-value) published to sportsdataverse-data
+    contents:
+      - '`load_nba_player_impact`'
+      - '`load_mbb_player_value`'
+      - '`load_mbb_ratings`'
   - title: Cross-Source Crosswalks
   - subtitle: NBA Crosswalk Functions
     desc: Cross-source team/schedule/player crosswalks linking ESPN, NBA Stats, and Fox identities (keyed on espn_team_id), plus cached loaders
@@ -401,6 +407,7 @@ reference:
       - '`clean_team_names_NCAA_merge`'
       - '`csv_from_url`'
       - '`rds_from_url`'
+      - '`parquet_from_url`'
       - '`rejoin_schedules`'
       - '`most_recent_mbb_season`'
       - '`most_recent_nba_season`'

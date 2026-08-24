@@ -47,6 +47,7 @@ Imports:
     stringr (>= 1.3.0),
     tidyr (>= 1.0.0)
 Suggests:
+    arrow (>= 6.0.0),
     chromote,
     crayon (>= 1.3.4),
     curl,
