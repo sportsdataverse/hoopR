@@ -1,24 +1,11 @@
 # **Get NBA Stats API Boxscore Traditional V3**
 
-**Get NBA Stats API Boxscore Traditional V3**
+**\[deprecated\]**
 
-**Get NBA Stats API Boxscore Traditional V3**
-
-**Get NBA Stats API Boxscore Advanced V3**
-
-**Get NBA Stats API Boxscore Misc V3**
-
-**Get NBA Stats API Boxscore Scoring V3**
-
-**Get NBA Stats API Boxscore Usage V3**
-
-**Get NBA Stats API Boxscore Four Factors V3**
-
-**Get NBA Stats API Boxscore Player Tracking V3**
-
-**Get NBA Stats API Boxscore Matchups V3**
-
-**Get NBA Stats API Boxscore Defensive V2**
+NBA Stats no longer returns stable data for this V2 endpoint. This
+function is deprecated and now errors when called. Use
+[`nba_hustlestatsboxscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+instead.
 
 ## Usage
 
@@ -103,6 +90,8 @@ nba_boxscorematchupsv3(
   ...
 )
 
+nba_boxscorehustlev2(game_id = "0022200021", ...)
+
 nba_boxscoredefensivev2(
   game_id = "0022200021",
   start_period = 0,
@@ -112,13 +101,17 @@ nba_boxscoredefensivev2(
   range_type = 0,
   ...
 )
+
+nba_gamerotation(game_id, league_id = "00", rotation_stat = "PLAYER_PTS", ...)
+
+nba_boxscoresummaryv3(game_id = "0022200021", ...)
 ```
 
 ## Arguments
 
 - game_id:
 
-  Game ID
+  Game ID - 10-digit zero-padded ID (e.g., '0022200021')
 
 - start_period:
 
@@ -143,6 +136,14 @@ nba_boxscoredefensivev2(
 - ...:
 
   Additional arguments passed to an underlying function like httr.
+
+- league_id:
+
+  League ID
+
+- rotation_stat:
+
+  Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT
 
 ## Value
 
@@ -830,6 +831,88 @@ away_team_player_matchups
 
 Same columns as the **home_team_player_matchups** table above.
 
+Returns a named list of data frames: home_team_player_hustle,
+away_team_player_hustle, home_team_hustle_totals,
+away_team_hustle_totals
+
+**home_team_player_hustle**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| person_id | integer | Unique player identifier (V3 endpoints). |
+| first_name | character | Player's first name. |
+| family_name | character | Player's family / last name. |
+| name_i | character | Initialed name (e.g. 'A. Wilson'). |
+| player_slug | character | URL-safe player identifier. |
+| position | character | Listed roster position (G, F, C, etc.). |
+| comment | character | Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). |
+| jersey_num | character | Jersey number worn by the player. |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| points | integer | Points scored. |
+| contested_shots | integer | Defensively contested shots. |
+| contested_shots2pt | integer | Contested shots2pt. |
+| contested_shots3pt | integer | Contested shots3pt. |
+| deflections | integer | Defensive deflections. |
+| charges_drawn | integer | Charges drawn. |
+| screen_assists | integer | Screen assists (resulting in a basket). |
+| screen_assist_points | integer | Points generated from screen assists. |
+| loose_balls_recovered_offensive | integer | Loose balls recovered on offense. |
+| loose_balls_recovered_defensive | integer | Loose balls recovered on defense. |
+| loose_balls_recovered_total | integer | Loose balls recovered total. |
+| offensive_box_outs | integer | Offensive box outs. |
+| defensive_box_outs | integer | Defensive box outs. |
+| box_out_player_team_rebounds | integer | Box-outs that led to either a player or team rebound. |
+| box_out_player_rebounds | integer | Box-outs that led to a player rebound. |
+| box_outs | integer | Box-outs executed. |
+
+**away_team_player_hustle**
+
+Same columns as the **home_team_player_hustle** table above.
+
+**home_team_totals_hustle**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| minutes | character | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| points | integer | Points scored. |
+| contested_shots | integer | Defensively contested shots. |
+| contested_shots2pt | integer | Contested shots2pt. |
+| contested_shots3pt | integer | Contested shots3pt. |
+| deflections | integer | Defensive deflections. |
+| charges_drawn | integer | Charges drawn. |
+| screen_assists | integer | Screen assists (resulting in a basket). |
+| screen_assist_points | integer | Points generated from screen assists. |
+| loose_balls_recovered_offensive | integer | Loose balls recovered on offense. |
+| loose_balls_recovered_defensive | integer | Loose balls recovered on defense. |
+| loose_balls_recovered_total | integer | Loose balls recovered total. |
+| offensive_box_outs | integer | Offensive box outs. |
+| defensive_box_outs | integer | Defensive box outs. |
+| box_out_player_team_rebounds | integer | Box-outs that led to either a player or team rebound. |
+| box_out_player_rebounds | integer | Box-outs that led to a player rebound. |
+| box_outs | integer | Box-outs executed. |
+
+**away_team_totals_hustle**
+
+Same columns as the **home_team_totals_hustle** table above.
+
 Returns a named list of data frames: home_team_player_defensive,
 away_team_player_defensive, home_team_totals_defensive,
 away_team_totals_defensive
@@ -893,6 +976,191 @@ Same columns as the **home_team_player_defensive** table above.
 
 Same columns as the **home_team_totals_defensive** table above.
 
+Returns a named list of data frames: AwayTeam, HomeTeam
+
+**AwayTeam**
+
+|               |           |                                                 |
+|---------------|-----------|-------------------------------------------------|
+| col_name      | types     | description                                     |
+| GAME_ID       | character | Unique game identifier.                         |
+| TEAM_ID       | character | Unique team identifier.                         |
+| TEAM_CITY     | character | Team city or region (e.g. 'Las Vegas').         |
+| TEAM_NAME     | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PERSON_ID     | character | Unique player identifier (V3 endpoints).        |
+| PLAYER_FIRST  | character |                                                 |
+| PLAYER_LAST   | character |                                                 |
+| IN_TIME_REAL  | character |                                                 |
+| OUT_TIME_REAL | character |                                                 |
+| PLAYER_PTS    | character |                                                 |
+| PT_DIFF       | character |                                                 |
+| USG_PCT       | character | Usage percentage (0-1).                         |
+
+**HomeTeam**
+
+Same columns as the **AwayTeam** table above.
+
+Returns a named list of data frames: GameSummary, GameInfo, ArenaInfo,
+Officials, LineScore, InactivePlayers, LastFiveMeetings, OtherStats,
+AvailableVideo
+
+**GameSummary**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| game_code | character | ESPN game code (numeric identifier). |
+| game_status | integer | Game status label. |
+| game_status_text | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| period | integer | Period of the game (1-4 quarters; 5+ for OT). |
+| game_clock | character | Game clock. |
+| game_time_utc | character | Game start time in UTC (ISO 8601 timestamp). |
+| game_et | character | Game et. |
+| away_team_id | integer | Unique identifier for the away team. |
+| home_team_id | integer | Unique identifier for the home team. |
+| duration | integer | Duration. |
+| attendance | integer | Reported attendance. |
+| sellout | character | Sellout. |
+
+**GameInfo**
+
+|               |           |                         |
+|---------------|-----------|-------------------------|
+| col_name      | types     | description             |
+| game_id       | character | Unique game identifier. |
+| game_date     | character | Game date (YYYY-MM-DD). |
+| attendance    | integer   | Reported attendance.    |
+| game_duration | integer   | Game duration.          |
+
+**ArenaInfo**
+
+|                |           |                              |
+|----------------|-----------|------------------------------|
+| col_name       | types     | description                  |
+| game_id        | character | Unique game identifier.      |
+| arena_id       | integer   | Unique identifier for arena. |
+| arena_name     | character | Arena name.                  |
+| arena_city     | character | Arena city.                  |
+| arena_state    | character | Arena state.                 |
+| arena_country  | character | Arena country.               |
+| arena_timezone | character | Arena timezone.              |
+
+**Officials**
+
+|             |           |                                          |
+|-------------|-----------|------------------------------------------|
+| col_name    | types     | description                              |
+| game_id     | character | Unique game identifier.                  |
+| person_id   | integer   | Unique player identifier (V3 endpoints). |
+| name        | character | Display name.                            |
+| name_i      | character | Initialed name (e.g. 'A. Wilson').       |
+| first_name  | character | Player's first name.                     |
+| family_name | character | Player's family / last name.             |
+| jersey_num  | character | Jersey number worn by the player.        |
+
+**LineScore**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| team_id | integer | Unique team identifier. |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_wins | integer | Team wins. |
+| team_losses | integer | Team losses. |
+| period1_score | integer | Period1 score. |
+| period2_score | integer | Period2 score. |
+| period3_score | integer | Period3 score. |
+| period4_score | integer | Period4 score. |
+| score | integer | Final score. |
+
+**InactivePlayers**
+
+|             |           |                                          |
+|-------------|-----------|------------------------------------------|
+| col_name    | types     | description                              |
+| game_id     | character | Unique game identifier.                  |
+| team_id     | integer   | Unique team identifier.                  |
+| person_id   | integer   | Unique player identifier (V3 endpoints). |
+| first_name  | character | Player's first name.                     |
+| family_name | character | Player's family / last name.             |
+| jersey_num  | character | Jersey number worn by the player.        |
+
+**LastFiveMeetings**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| recency_order | integer | Recency order. |
+| game_id | character | Unique game identifier. |
+| game_time_utc | character | Game start time in UTC (ISO 8601 timestamp). |
+| game_et | character | Game et. |
+| game_status | integer | Game status label. |
+| game_status_text | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| away_team_id | integer | Unique identifier for the away team. |
+| away_team_city | character | Away team city / location. |
+| away_team_name | character | Away team name. |
+| away_team_tricode | character | Away team three-letter code. |
+| away_team_score | integer | Away team's score. |
+| away_team_wins | integer | Away team's team wins. |
+| away_team_losses | integer | Away team's team losses. |
+| home_team_id | integer | Unique identifier for the home team. |
+| home_team_city | character | Home team city / location. |
+| home_team_name | character | Home team name. |
+| home_team_tricode | character | Home team three-letter code. |
+| home_team_score | integer | Home team's score. |
+| home_team_wins | integer | Home team's team wins. |
+| home_team_losses | integer | Home team's team losses. |
+
+**OtherStats**
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | character | Unique game identifier. |
+| team_id | integer | Unique team identifier. |
+| team_city | character | Team city or region (e.g. 'Las Vegas'). |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_tricode | character | Three-letter team code (e.g. 'LAS' / 'NYL'). |
+| points | integer | Points scored. |
+| rebounds_total | integer | Total rebounds. |
+| assists | integer | Total assists. |
+| steals | integer | Total steals. |
+| blocks | integer | Total blocks. |
+| turnovers | integer | Total turnovers. |
+| field_goals_percentage | numeric | Field goal percentage (0-1 decimal). |
+| three_pointers_percentage | numeric | Three-point field goal percentage (0-1 decimal). |
+| free_throws_percentage | numeric | Free throw percentage (0-1 decimal). |
+| points_in_the_paint | integer | Points in the paint. |
+| points_second_chance | integer | Second-chance points scored. |
+| points_fast_break | integer | Fast-break points scored. |
+| biggest_lead | integer | Biggest lead. |
+| lead_changes | integer | Lead changes. |
+| times_tied | integer | Times tied. |
+| biggest_scoring_run | integer | Biggest scoring run. |
+| turnovers_team | integer | Turnovers team. |
+| turnovers_total | integer | Turnovers total. |
+| rebounds_team | integer | Rebounds team. |
+| points_from_turnovers | integer | Points from turnovers. |
+| bench_points | integer | Points scored by the bench. |
+
+**AvailableVideo**
+
+|                      |           |                         |
+|----------------------|-----------|-------------------------|
+| col_name             | types     | description             |
+| game_id              | character | Unique game identifier. |
+| video_available_flag | integer   | Video available flag.   |
+| pt_available         | integer   | Pt available.           |
+| pt_xyz_available     | integer   | Pt xyz available.       |
+| wh_status            | integer   | Wh status.              |
+| hustle_status        | integer   | Hustle status.          |
+| historical_status    | integer   | Historical status.      |
+
 ## Details
 
      nba_boxscoretraditionalv3(game_id = "0022200021")
@@ -911,13 +1179,27 @@ Same columns as the **home_team_totals_defensive** table above.
 
      nba_boxscorematchupsv3(game_id = "0022200021")
 
+     nba_boxscorehustlev2(game_id = "0022200021")
+
      nba_boxscoredefensivev2(game_id = "0022200021")
+
+     nba_gamerotation(game_id = "0022200021")
+
+     nba_boxscoresummaryv3(game_id = "0022200021")
 
 ## See also
 
-Other NBA Boxscore V3 Functions:
-[`nba_boxscorehustlev2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscorehustlev2.md),
-[`nba_boxscoresummaryv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv3.md)
+Other NBA Boxscore Functions:
+[`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
+
+Other NBA Lineup Functions:
+[`nba_fantasywidget()`](https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.md),
+[`nba_possession_lineups()`](https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.md),
+[`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md),
+[`nba_shot_zones()`](https://hoopR.sportsdataverse.org/reference/nba_shot_zones.md),
+[`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md),
+[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
 
 ## Author
 

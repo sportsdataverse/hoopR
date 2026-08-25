@@ -2,6 +2,8 @@
 
 **Get game betting lines from the CollegeBasketballData API.**
 
+**Get betting line providers from the CollegeBasketballData API.**
+
 ## Usage
 
 ``` r
@@ -12,6 +14,8 @@ cbbd_lines(
   start_date_range = NULL,
   end_date_range = NULL
 )
+
+cbbd_lines_providers()
 ```
 
 ## Arguments
@@ -60,18 +64,27 @@ nested list of per-provider lines:
 | away_score      | numeric   | Away team final score.                     |
 | lines           | list      | Nested list of per-provider betting lines. |
 
-## See also
+A `hoopR_data` tibble with one row per line provider:
 
-Other CBD Lines Functions:
-[`cbbd_lines_providers()`](https://hoopR.sportsdataverse.org/reference/cbbd_lines_providers.md)
+|          |           |                     |
+|----------|-----------|---------------------|
+| col_name | types     | description         |
+| id       | integer   | Line provider id.   |
+| name     | character | Line provider name. |
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_lines(season = 2024, team = "Duke"))
-#> ✖ 2026-08-25 01:40:39.41956: Invalid arguments or no betting lines available!
+#> ✖ 2026-08-25 02:46:49.553104: Invalid arguments or no betting lines available!
 #> ✖ Args: season = 2024, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
+#> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
+#> data frame with 0 columns and 0 rows
+# }
+# \donttest{
+  try(cbbd_lines_providers())
+#> ✖ 2026-08-25 02:46:49.564012: Invalid arguments or no line providers available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

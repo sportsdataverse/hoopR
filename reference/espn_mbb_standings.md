@@ -2,10 +2,14 @@
 
 **Get ESPN men's college basketball standings**
 
+**Get ESPN NBA's Standings**
+
 ## Usage
 
 ``` r
 espn_mbb_standings(year = most_recent_mbb_season())
+
+espn_nba_standings(year)
 ```
 
 ## Arguments
@@ -97,6 +101,32 @@ A standings data frame
 | vsconf_wins | numeric | Vsconf wins. |
 | vsconf | character | Vsconf. |
 
+A standings data frame
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | integer | Unique team identifier. |
+| team | character | Team-side label or team identifier. |
+| avgpointsagainst | numeric | Avgpointsagainst. |
+| avgpointsfor | numeric | Avgpointsfor. |
+| clincher | numeric | Clincher. |
+| differential | numeric | Differential. |
+| divisionwinpercent | numeric | Divisionwinpercent. |
+| gamesbehind | numeric | Gamesbehind. |
+| leaguewinpercent | numeric | Leaguewinpercent. |
+| losses | numeric | Total losses. |
+| playoffseed | numeric | Playoffseed. |
+| streak | numeric | Current streak (e.g. 'W3' for three-game win streak). |
+| winpercent | numeric | Winpercent. |
+| wins | numeric | Total wins. |
+| leaguestandings | character | Leaguestandings. |
+| home | character | Home. |
+| road | character | Road. |
+| vsdiv | character | Vsdiv. |
+| vsconf | character | Vsconf. |
+| lasttengames | character | Lasttengames. |
+
 ## See also
 
 Other ESPN MBB Functions:
@@ -169,13 +199,87 @@ Other ESPN MBB Functions:
 [`espn_mbb_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
 
+Other ESPN NBA Functions:
+[`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
+[`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md),
+[`espn_mbb_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md),
+[`espn_mbb_coach()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach.md),
+[`espn_mbb_coach_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_record.md),
+[`espn_mbb_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_season.md),
+[`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md),
+[`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md),
+[`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
+[`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
+[`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
+[`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+[`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md),
+[`espn_mbb_game_official_detail()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_official_detail.md),
+[`espn_mbb_game_play()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play.md),
+[`espn_mbb_game_play_personnel()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play_personnel.md),
+[`espn_mbb_game_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_player_box.md),
+[`espn_mbb_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_probabilities.md),
+[`espn_mbb_game_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_propbets.md),
+[`espn_mbb_game_team_linescores()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_team_linescores.md),
+[`espn_mbb_game_team_roster_entry()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_team_roster_entry.md),
+[`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md),
+[`espn_mbb_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md),
+[`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md),
+[`espn_mbb_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards.md),
+[`espn_mbb_player_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_career_stats.md),
+[`espn_mbb_player_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_eventlog_v2.md),
+[`espn_mbb_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_info.md),
+[`espn_mbb_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md),
+[`espn_mbb_player_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_seasons.md),
+[`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md),
+[`espn_mbb_positions()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_positions.md),
+[`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
+[`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
+[`espn_mbb_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_awards.md),
+[`espn_mbb_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md),
+[`espn_mbb_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups.md),
+[`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md),
+[`espn_mbb_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_leaders.md),
+[`espn_mbb_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking.md),
+[`espn_mbb_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_rankings.md),
+[`espn_mbb_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_type.md),
+[`espn_mbb_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_types.md),
+[`espn_mbb_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_week.md),
+[`espn_mbb_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_weeks.md),
+[`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md),
+[`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
+[`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md),
+[`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md),
+[`espn_mbb_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_odds_records.md),
+[`espn_mbb_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record.md),
+[`espn_mbb_team_record_detail()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record_detail.md),
+[`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md),
+[`espn_mbb_team_season_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_roster.md),
+[`espn_mbb_team_season_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_statistics.md),
+[`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
+[`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
+[`espn_mbb_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament.md),
+[`espn_mbb_tournament_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament_season.md),
+[`espn_mbb_tournament_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament_seasons.md),
+[`espn_mbb_tournaments()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournaments.md),
+[`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md),
+[`espn_mbb_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking.md),
+[`espn_mbb_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings.md),
+[`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md),
+[`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md),
+[`espn_nba_team_depthchart()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_depthchart.md),
+[`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md)
+
 ## Examples
 
 ``` r
 # \donttest{
 try(espn_mbb_standings(2021))
 #> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:24 UTC
+#> ℹ Data updated: 2026-08-25 02:47:50 UTC
 #> # A tibble: 302 × 87
 #>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
 #>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
@@ -196,5 +300,30 @@ try(espn_mbb_standings(2021))
 #> #   home_avgpointsagainst <dbl>, home_avgpointsfor <dbl>,
 #> #   home_gamesbehind <dbl>, home_leaguewinpercent <dbl>, home_losses <dbl>,
 #> #   home_playoffseed <dbl>, home_pointdifferential <chr>, …
+# }
+# \donttest{
+try(espn_nba_standings(year = 2021))
+#> ── ESPN NBA Standings Information from ESPN.com ───────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:51 UTC
+#> # A tibble: 30 × 25
+#>    team_id team              avgpointsagainst avgpointsfor clincher differential
+#>  *   <int> <chr>                        <dbl>        <dbl>    <dbl>        <dbl>
+#>  1      26 Utah Jazz                     107.         116.        5         9.2 
+#>  2      21 Phoenix Suns                  109.         115.        2         5.8 
+#>  3      20 Philadelphia 76e…             108.         114.        3         5.5 
+#>  4      17 Brooklyn Nets                 114.         119.        1         4.5 
+#>  5       7 Denver Nuggets                110.         115.        1         5   
+#>  6      12 LA Clippers                   108.         114.        1         6.2 
+#>  7      15 Milwaukee Bucks               114.         120.        2         5.90
+#>  8       6 Dallas Mavericks              110.         112.        2         2.2 
+#>  9      13 Los Angeles Lake…             107.         110.        7         2.7 
+#> 10      22 Portland Trail B…             114.         116.        1         1.8 
+#> # ℹ 20 more rows
+#> # ℹ 19 more variables: divisionwinpercent <dbl>, gamesbehind <dbl>,
+#> #   leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
+#> #   pointdifferential <chr>, points <chr>, pointsagainst <chr>,
+#> #   pointsfor <chr>, streak <dbl>, winpercent <dbl>, wins <dbl>,
+#> #   gamesahead <chr>, leaguestandings <chr>, home <chr>, road <chr>,
+#> #   vsdiv <chr>, vsconf <chr>, lasttengames <chr>
 # }
 ```

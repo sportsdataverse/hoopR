@@ -183,14 +183,14 @@
 </tr></thead><tbody><tr><td>NBA Stats API</td>
 <td><code>nba_</code></td>
 <td>
-<code><a href="reference/nba_leagueleaders.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
+<code><a href="reference/nba_alltimeleadersgrids.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
 </td>
 </tr><tr><td>ESPN API</td>
 <td>
 <code>espn_nba_</code> / <code>espn_mbb_</code>
 </td>
 <td>
-<code><a href="reference/espn_nba_game_all.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
+<code><a href="reference/espn_mbb_game_all.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
 </td>
 </tr><tr><td>KenPom</td>
 <td><code>kp_</code></td>
@@ -200,7 +200,7 @@
 </tr><tr><td>CollegeBasketballData</td>
 <td><code>cbbd_</code></td>
 <td>
-<code><a href="reference/cbbd_games.html">cbbd_games()</a></code>, <code><a href="reference/cbbd_ratings_srs.html">cbbd_ratings_srs()</a></code>
+<code><a href="reference/cbbd_games_media.html">cbbd_games()</a></code>, <code><a href="reference/cbbd_ratings_srs.html">cbbd_ratings_srs()</a></code>
 </td>
 </tr><tr><td>Basketball-Reference</td>
 <td><code>bref_</code></td>
@@ -315,13 +315,13 @@
 <li>
 <strong>V3</strong>: Returns nested JSON (e.g., <code>game.actions[]</code>, <code>boxScoreSummary.homeTeam.periods[]</code>). Parsed via <code><a href="https://purrr.tidyverse.org/reference/pluck.html" class="external-link">purrr::pluck()</a></code> -&gt; <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> -&gt; pipeline.</li>
 <li>
-<strong>V3-style leader/standings endpoints</strong>: Return flat nested JSON arrays (e.g., <code>dunks[]</code>, <code>leaders[]</code>, <code>teams[]</code>). Parsed via <code>purrr::pluck("key")</code> -&gt; <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">dplyr::as_tibble()</a></code> -&gt; <code>dplyr::mutate(across(everything(), as.character))</code> -&gt; <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code> -&gt; <code>make_hoopR_data()</code>. Examples: <code><a href="reference/nba_dunkscoreleaders.html">nba_dunkscoreleaders()</a></code>, <code><a href="reference/nba_gravityleaders.html">nba_gravityleaders()</a></code>, <code><a href="reference/nba_iststandings.html">nba_iststandings()</a></code>.</li>
+<strong>V3-style leader/standings endpoints</strong>: Return flat nested JSON arrays (e.g., <code>dunks[]</code>, <code>leaders[]</code>, <code>teams[]</code>). Parsed via <code>purrr::pluck("key")</code> -&gt; <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">dplyr::as_tibble()</a></code> -&gt; <code>dplyr::mutate(across(everything(), as.character))</code> -&gt; <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code> -&gt; <code>make_hoopR_data()</code>. Examples: <code><a href="reference/nba_alltimeleadersgrids.html">nba_dunkscoreleaders()</a></code>, <code><a href="reference/nba_alltimeleadersgrids.html">nba_gravityleaders()</a></code>, <code><a href="reference/nba_iststandings.html">nba_iststandings()</a></code>.</li>
 <li>
-<strong>V3-to-V2 conversion pipeline</strong> (<code><a href="reference/nba_pbp.html">nba_pbp()</a></code> V3 path): <code><a href="reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> -&gt; <code><a href="reference/dot-build_player_roster.html">.build_player_roster()</a></code> -&gt; <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> -&gt; <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>. This produces V2-compatible columns (event_type, player1/2/3, etc.) while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).</li>
+<strong>V3-to-V2 conversion pipeline</strong> (<code><a href="reference/nba_live_boxscore.html">nba_pbp()</a></code> V3 path): <code><a href="reference/nba_live_boxscore.html">nba_playbyplayv3()</a></code> -&gt; <code><a href="reference/dot-build_player_roster.html">.build_player_roster()</a></code> -&gt; <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> -&gt; <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>. This produces V2-compatible columns (event_type, player1/2/3, etc.) while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).</li>
 <li>V3 PBP has a single <code>personId</code> per action (not <code>player1_id</code>/<code>player2_id</code>/<code>player3_id</code> like V2).</li>
 <li>V3 substitutions: <code>actionType="Substitution"</code>, <code>personId</code>=outgoing player, description contains “SUB: IncomingPlayer FOR OutgoingPlayer”.</li>
 <li>V3 clock format: ISO 8601 duration <code>"PT10M30.00S"</code> (not <code>"MM:SS"</code>). Parsed with base R <code><a href="https://rdrr.io/r/base/grep.html" class="external-link">regexec()</a></code>/<code><a href="https://rdrr.io/r/base/regmatches.html" class="external-link">regmatches()</a></code>.</li>
-<li>V3 on-court players: <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> uses <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping via <code><a href="https://rdrr.io/r/base/findInterval.html" class="external-link">findInterval()</a></code> (not substitution-event parsing like V2).</li>
+<li>V3 on-court players: <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> uses <code><a href="reference/nba_boxscoretraditionalv3.html">nba_gamerotation()</a></code> stint data with interval mapping via <code><a href="https://rdrr.io/r/base/findInterval.html" class="external-link">findInterval()</a></code> (not substitution-event parsing like V2).</li>
 <li>NBAGL wrappers now use NBA Stats-backed sources for several endpoints. <code><a href="reference/nbagl_players.html">nbagl_players()</a></code> and <code><a href="reference/nbagl_standings.html">nbagl_standings()</a></code> return named lists of data frames (not single data frames), while <code><a href="reference/nbagl_schedule.html">nbagl_schedule()</a></code> and <code><a href="reference/nbagl_pbp.html">nbagl_pbp()</a></code> expose current core columns from active payloads.</li>
 </ul></div>
 <div class="section level3">
@@ -582,7 +582,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 <li>
 <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> uses row-level loops for player resolution – performance-sensitive for large PBP datasets. The <code>%||%</code> operator from rlang is used for null-safe named vector lookups in event type maps.</li>
 <li>
-<code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> depends on <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> returning <code>IN_TIME_REAL</code>/<code>OUT_TIME_REAL</code> in tenths of a second – ensure time unit consistency when modifying.</li>
+<code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> depends on <code><a href="reference/nba_boxscoretraditionalv3.html">nba_gamerotation()</a></code> returning <code>IN_TIME_REAL</code>/<code>OUT_TIME_REAL</code> in tenths of a second – ensure time unit consistency when modifying.</li>
 <li>Local dev artifacts (for example <code>.vscode</code>, <code>.claude</code>, ad-hoc logs) can surface as <code>R CMD check</code> notes/warnings if not excluded from build inputs.</li>
 <li>KenPom HTML structure changes periodically – CSS selectors for tables (<code>table#player-table</code>), referee links (<code>div.refline</code>), and navigation elements are fragile and may need updating.</li>
 <li>

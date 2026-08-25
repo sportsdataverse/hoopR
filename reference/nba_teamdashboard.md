@@ -234,6 +234,96 @@ nba_teamdashboardbyyearoveryear(
   vs_division = "",
   ...
 )
+
+nba_teamdashlineups(
+  date_from = "",
+  date_to = "",
+  game_id = "",
+  game_segment = "",
+  group_quantity = 5,
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  measure_type = "Base",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  pace_adjust = "N",
+  plus_minus = "N",
+  po_round = "",
+  per_mode = "Totals",
+  period = 0,
+  rank = "N",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  shot_clock_range = "",
+  team_id = "1610612749",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_teamdashptpass(
+  date_from = "",
+  date_to = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "1610612749",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_teamdashptreb(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "1610612749",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_teamdashptshots(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "1610612749",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
 ```
 
 ## Arguments
@@ -334,6 +424,14 @@ nba_teamdashboardbyyearoveryear(
 
   Additional arguments passed to an underlying function like httr.
 
+- game_id:
+
+  game_id
+
+- group_quantity:
+
+  group_quantity
+
 ## Value
 
 Return a named list of data frames: Last10Sec3Point2TeamDashboard,
@@ -401,6 +499,34 @@ Column schemas omitted from help to keep the package under the CRAN 5 MB
 installed-size limit. See the package source at
 `tools/docs/nba_teamdashboard_columns.md` for full column tables.
 
+Return a named list of data frames: Lineups, Overall
+
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
+
+Return a named list of data frames: PassesMade, PassesReceived
+
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
+
+Return a named list of data frames: NumContestedRebounding,
+OverallRebounding, RebDistanceRebounding, ShotDistanceRebounding,
+ShotTypeRebounding
+
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
+
+Return a named list of data frames: ClosestDefender10ftPlusShooting,
+ClosestDefenderShooting, DribbleShooting, GeneralShooting,
+ShotClockShooting, TouchTimeShooting
+
+Column schemas omitted from help to keep the package under the CRAN 5 MB
+installed-size limit. See the package source at
+`tools/docs/nba_teamdashboard_columns.md` for full column tables.
+
 ## Details
 
 [Team Clutch Stats
@@ -443,39 +569,54 @@ Year](https://www.nba.com/stats/team/1610612749/traditional?Split=yoy)
 
      nba_teamdashboardbyyearoveryear(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
 
+[Team Lineups
+Dashboard](https://www.nba.com/stats/team/1610612749/lineups-traditional)
+
+     nba_teamdashlineups(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+
+[Team Player Tracking (Second Spectrum) Stats -
+Passing](https://www.nba.com/stats/team/1610612749/passes-dash)
+
+     nba_teamdashptpass(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+
+[Team Player Tracking (Second Spectrum) Stats -
+Rebounds](https://www.nba.com/stats/team/1610612749/rebounds-dash)
+
+     nba_teamdashptreb(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+
+[Team Player Tracking (Second Spectrum) Stats -
+Shooting](https://www.nba.com/stats/team/1610612749/shots-dash)
+
+     nba_teamdashptshots(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+
 ## See also
 
 Other NBA Team Functions:
-[`nba_leaguedashteamstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamstats.md),
-[`nba_teamandplayersvsplayers()`](https://hoopR.sportsdataverse.org/reference/nba_teamandplayersvsplayers.md),
-[`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md),
-[`nba_teamdashptpass()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptpass.md),
-[`nba_teamdashptreb()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptreb.md),
-[`nba_teamdashptshots()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashptshots.md),
-[`nba_teamdetails()`](https://hoopR.sportsdataverse.org/reference/nba_teamdetails.md),
-[`nba_teamestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_teamestimatedmetrics.md),
-[`nba_teamgamelog()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelog.md),
-[`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamelogs.md),
-[`nba_teamgamestreakfinder()`](https://hoopR.sportsdataverse.org/reference/nba_teamgamestreakfinder.md),
-[`nba_teamhistoricalleaders()`](https://hoopR.sportsdataverse.org/reference/nba_teamhistoricalleaders.md),
-[`nba_teaminfocommon()`](https://hoopR.sportsdataverse.org/reference/nba_teaminfocommon.md),
-[`nba_teamplayeronoffdetails()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md),
-[`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teams.md),
-[`nba_teamvsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_teamvsplayer.md),
-[`nba_teamyearbyyearstats()`](https://hoopR.sportsdataverse.org/reference/nba_teamyearbyyearstats.md)
+[`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
+[`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
 
 Other NBA Clutch Functions:
-[`nba_leaguedashteamclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch.md),
+[`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md)
 
 Other NBA Shooting Functions:
-[`nba_leaguedashplayershotlocations()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashplayershotlocations.md),
-[`nba_leaguedashteamptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamptshot.md),
-[`nba_leaguedashteamshotlocations()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamshotlocations.md),
+[`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
 [`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
-[`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md),
-[`nba_shotchartleaguewide()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartleaguewide.md),
-[`nba_shotchartlineupdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.md)
+[`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md)
+
+Other NBA Lineup Functions:
+[`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_fantasywidget()`](https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.md),
+[`nba_possession_lineups()`](https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.md),
+[`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md),
+[`nba_shot_zones()`](https://hoopR.sportsdataverse.org/reference/nba_shot_zones.md),
+[`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md)
+
+Other NBA Player Tracking Functions:
+[`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md),
+[`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
+[`nba_playerdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_playerdashboard.md),
+[`nba_tracking_aggregate()`](https://hoopR.sportsdataverse.org/reference/nba_tracking_aggregate.md)
 
 ## Author
 

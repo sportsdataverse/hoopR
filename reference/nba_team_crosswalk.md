@@ -2,7 +2,7 @@
 
 Build a wide, one-row-per-team crosswalk linking ESPN, NBA Stats, and
 Fox team identities, keyed on `espn_team_id`.
-[`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teams.md)
+[`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
 already supplies the ESPN\<-\>Stats linkage; this reshapes it and
 attaches Fox. Yahoo columns are NA placeholders. NOTE: ESPN/Stats team
 endpoints are current-season snapshots, so `season` is a stamp;
@@ -39,13 +39,13 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_team_crosswalk())
-#> ✖ 2026-08-25 01:56:22.178208: Invalid arguments or no league standings v3 data available for 2025-26!
+#> ✖ 2026-08-25 03:02:34.803401: Invalid arguments or no league standings v3 data available for 2025-26!
 #> ✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-#> ✖ 2026-08-25 01:57:22.251355: Invalid arguments or no league game log data for 2025-26 available!
+#> ✖ 2026-08-25 03:03:34.843432: Invalid arguments or no league game log data for 2025-26 available!
 #> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-#> ✖ 2026-08-25 01:57:22.263308: Invalid arguments or no team details data available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-08-25 03:03:34.855638: Invalid arguments or no team details data available!
 #> ✖ Error: argument is of length zero
 #> Error in !nrow(nt) : invalid argument type
 # }

@@ -67,10 +67,10 @@ cbbd_venues()
 
 ## Games and box scores
 
-[`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md)
+[`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md)
 returns the schedule/results; the `*_teams` and `*_players` variants
 return team- and player-level box scores.
-[`cbbd_scoreboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_scoreboard.md)
+[`cbbd_scoreboard()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md)
 returns live and same-day games (so it is empty in the off-season).
 
 ``` r
@@ -86,7 +86,7 @@ cbbd_scoreboard(conference = "ACC")
 ```
 
 Most by-id endpoints take a CollegeBasketballData `game_id` from
-[`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md):
+[`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md):
 
 ``` r
 
@@ -189,8 +189,8 @@ cbbd_draft_picks(year = 2024)
   (CBD)** section of the [reference
   index](https://hoopR.sportsdataverse.org/reference/index.md).
 - Each wrapper’s help page
-  ([`?cbbd_games`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md),
-  [`?cbbd_plays_game`](https://hoopR.sportsdataverse.org/reference/cbbd_plays_game.md),
+  ([`?cbbd_games`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md),
+  [`?cbbd_plays_game`](https://hoopR.sportsdataverse.org/reference/cbbd_play_types.md),
   …) documents its parameters and the columns it returns.
 - Inspect your remaining API usage and rate limits in the response
   headers from the [CollegeBasketballData

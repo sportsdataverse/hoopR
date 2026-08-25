@@ -490,7 +490,7 @@ Leaders](https://www.nba.com/stats/teams/hustle-leaders)
 ## See also
 
 Other NBA Hustle Functions:
-[`nba_boxscoredefensive()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoredefensive.md)
+[`nba_boxscoretraditionalv2()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
 
 ## Author
 

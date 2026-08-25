@@ -5,13 +5,27 @@ children groups, member teams, and standings.
 Returns the list of child groups (e.g. divisions within a conference)
 for one (MBB season x season-type x parent-group).
 Returns the list of team IDs that belong to one group (conference or
-division) for one (MBB season x season-type)."><meta property="og:description" content="Returns metadata for one group (conference or division) in one
+division) for one (MBB season x season-type).
+Returns metadata for one group (conference or division) in one
+(NBA season x season-type), plus $ref URLs to its parent group,
+children groups, member teams, and standings.
+Returns the list of child groups (e.g. divisions within a conference)
+for one (NBA season x season-type x parent-group).
+Returns the list of team IDs that belong to one group (conference or
+division) for one (NBA season x season-type)."><meta property="og:description" content="Returns metadata for one group (conference or division) in one
 (MBB season x season-type), plus $ref URLs to its parent group,
 children groups, member teams, and standings.
 Returns the list of child groups (e.g. divisions within a conference)
 for one (MBB season x season-type x parent-group).
 Returns the list of team IDs that belong to one group (conference or
-division) for one (MBB season x season-type)."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
+division) for one (MBB season x season-type).
+Returns metadata for one group (conference or division) in one
+(NBA season x season-type), plus $ref URLs to its parent group,
+children groups, member teams, and standings.
+Returns the list of child groups (e.g. divisions within a conference)
+for one (NBA season x season-type x parent-group).
+Returns the list of team IDs that belong to one group (conference or
+division) for one (NBA season x season-type)."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -102,7 +116,7 @@ division) for one (MBB season x season-type)."><meta property="og:image" content
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1><strong>Get ESPN MBB Season Group Detail</strong></h1>
-      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/main/R/espn_mbb_groups_v2.R" class="external-link"><code>R/espn_mbb_groups_v2.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/main/R/espn_mbb_groups_v2.R" class="external-link"><code>R/espn_mbb_groups_v2.R</code></a>, <a href="https://github.com/sportsdataverse/hoopR/blob/main/R/espn_nba_groups_v2.R" class="external-link"><code>R/espn_nba_groups_v2.R</code></a></small>
       <div class="d-none name"><code>espn_mbb_season_group.Rd</code></div>
     </div>
 
@@ -114,6 +128,13 @@ children groups, member teams, and standings.</p>
 for one (MBB season x season-type x parent-group).</p>
 <p>Returns the list of team IDs that belong to one group (conference or
 division) for one (MBB season x season-type).</p>
+<p>Returns metadata for one group (conference or division) in one
+(NBA season x season-type), plus <code>$ref</code> URLs to its parent group,
+children groups, member teams, and standings.</p>
+<p>Returns the list of child groups (e.g. divisions within a conference)
+for one (NBA season x season-type x parent-group).</p>
+<p>Returns the list of team IDs that belong to one group (conference or
+division) for one (NBA season x season-type).</p>
     </div>
 
     <div class="section level2">
@@ -135,6 +156,27 @@ division) for one (MBB season x season-type).</p>
 <span><span class="fu">espn_mbb_season_group_teams</span><span class="op">(</span></span>
 <span>  <span class="va">group_id</span>,</span>
 <span>  season <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  season_type <span class="op">=</span> <span class="fl">2L</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">espn_nba_season_group</span><span class="op">(</span></span>
+<span>  <span class="va">group_id</span>,</span>
+<span>  season <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  season_type <span class="op">=</span> <span class="fl">2L</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">espn_nba_season_group_children</span><span class="op">(</span></span>
+<span>  <span class="va">group_id</span>,</span>
+<span>  season <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  season_type <span class="op">=</span> <span class="fl">2L</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">espn_nba_season_group_teams</span><span class="op">(</span></span>
+<span>  <span class="va">group_id</span>,</span>
+<span>  season <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  season_type <span class="op">=</span> <span class="fl">2L</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -168,12 +210,21 @@ division) for one (MBB season x season-type).</p>
 <p>Columns as documented in the shared <a href="espn_mbb_season_group_children_schema.html">espn_mbb_season_group_children_schema</a> table.</p>
 <p>A tibble with one row per team in the group.</p>
 <p>Columns as documented in the shared <a href="espn_mbb_season_group_teams_schema.html">espn_mbb_season_group_teams_schema</a> table.</p>
+<p>A single-row tibble.</p>
+<p>Columns as documented in the shared <a href="espn_mbb_season_group_schema.html">espn_mbb_season_group_schema</a> table.</p>
+<p>A tibble with one row per child group.</p>
+<p>Columns as documented in the shared <a href="espn_mbb_season_group_children_schema.html">espn_mbb_season_group_children_schema</a> table.</p>
+<p>A tibble with one row per team in the group.</p>
+<p>Columns as documented in the shared <a href="espn_mbb_season_group_teams_schema.html">espn_mbb_season_group_teams_schema</a> table.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Get ESPN MBB Season Group Detail</strong></p>
 <p><strong>Get ESPN MBB Season Group Children Index</strong></p>
 <p><strong>Get ESPN MBB Season Group Teams Index</strong></p>
+<p><strong>Get ESPN NBA Season Group Detail</strong></p>
+<p><strong>Get ESPN NBA Season Group Children Index</strong></p>
+<p><strong>Get ESPN NBA Season Group Teams Index</strong></p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -245,7 +296,80 @@ division) for one (MBB season x season-type).</p>
 <code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
 <code><a href="espn_mbb_week_ranking.html">espn_mbb_week_ranking()</a></code>,
 <code><a href="espn_mbb_week_rankings.html">espn_mbb_week_rankings()</a></code>,
-<code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p></div>
+<code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p>
+<p>Other ESPN NBA Functions:
+<code><a href="espn_mbb_athletes_index.html">espn_mbb_athletes_index()</a></code>,
+<code><a href="espn_mbb_award.html">espn_mbb_award()</a></code>,
+<code><a href="espn_mbb_calendar.html">espn_mbb_calendar()</a></code>,
+<code><a href="espn_mbb_coach.html">espn_mbb_coach()</a></code>,
+<code><a href="espn_mbb_coach_record.html">espn_mbb_coach_record()</a></code>,
+<code><a href="espn_mbb_coach_season.html">espn_mbb_coach_season()</a></code>,
+<code><a href="espn_mbb_coaches.html">espn_mbb_coaches()</a></code>,
+<code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code>,
+<code><a href="espn_mbb_franchise.html">espn_mbb_franchise()</a></code>,
+<code><a href="espn_mbb_franchises.html">espn_mbb_franchises()</a></code>,
+<code><a href="espn_mbb_futures.html">espn_mbb_futures()</a></code>,
+<code><a href="espn_mbb_game_all.html">espn_mbb_game_all()</a></code>,
+<code><a href="espn_mbb_game_odds.html">espn_mbb_game_odds()</a></code>,
+<code><a href="espn_mbb_game_official_detail.html">espn_mbb_game_official_detail()</a></code>,
+<code><a href="espn_mbb_game_play.html">espn_mbb_game_play()</a></code>,
+<code><a href="espn_mbb_game_play_personnel.html">espn_mbb_game_play_personnel()</a></code>,
+<code><a href="espn_mbb_game_player_box.html">espn_mbb_game_player_box()</a></code>,
+<code><a href="espn_mbb_game_probabilities.html">espn_mbb_game_probabilities()</a></code>,
+<code><a href="espn_mbb_game_propbets.html">espn_mbb_game_propbets()</a></code>,
+<code><a href="espn_mbb_game_team_linescores.html">espn_mbb_game_team_linescores()</a></code>,
+<code><a href="espn_mbb_game_team_roster_entry.html">espn_mbb_game_team_roster_entry()</a></code>,
+<code><a href="espn_mbb_injuries.html">espn_mbb_injuries()</a></code>,
+<code><a href="espn_mbb_leaders.html">espn_mbb_leaders()</a></code>,
+<code><a href="espn_mbb_news.html">espn_mbb_news()</a></code>,
+<code><a href="espn_mbb_player_awards.html">espn_mbb_player_awards()</a></code>,
+<code><a href="espn_mbb_player_career_stats.html">espn_mbb_player_career_stats()</a></code>,
+<code><a href="espn_mbb_player_eventlog_v2.html">espn_mbb_player_eventlog_v2()</a></code>,
+<code><a href="espn_mbb_player_info.html">espn_mbb_player_info()</a></code>,
+<code><a href="espn_mbb_player_overview.html">espn_mbb_player_overview()</a></code>,
+<code><a href="espn_mbb_player_seasons.html">espn_mbb_player_seasons()</a></code>,
+<code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats()</a></code>,
+<code><a href="espn_mbb_position.html">espn_mbb_position()</a></code>,
+<code><a href="espn_mbb_positions.html">espn_mbb_positions()</a></code>,
+<code><a href="espn_mbb_powerindex.html">espn_mbb_powerindex()</a></code>,
+<code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
+<code><a href="espn_mbb_season_awards.html">espn_mbb_season_awards()</a></code>,
+<code><a href="espn_mbb_season_groups.html">espn_mbb_season_groups()</a></code>,
+<code><a href="espn_mbb_season_info.html">espn_mbb_season_info()</a></code>,
+<code><a href="espn_mbb_season_leaders.html">espn_mbb_season_leaders()</a></code>,
+<code><a href="espn_mbb_season_ranking.html">espn_mbb_season_ranking()</a></code>,
+<code><a href="espn_mbb_season_rankings.html">espn_mbb_season_rankings()</a></code>,
+<code><a href="espn_mbb_season_type.html">espn_mbb_season_type()</a></code>,
+<code><a href="espn_mbb_season_types.html">espn_mbb_season_types()</a></code>,
+<code><a href="espn_mbb_season_week.html">espn_mbb_season_week()</a></code>,
+<code><a href="espn_mbb_season_weeks.html">espn_mbb_season_weeks()</a></code>,
+<code><a href="espn_mbb_seasons.html">espn_mbb_seasons()</a></code>,
+<code><a href="espn_mbb_standings.html">espn_mbb_standings()</a></code>,
+<code><a href="espn_mbb_team.html">espn_mbb_team()</a></code>,
+<code><a href="espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code>,
+<code><a href="espn_mbb_team_injuries.html">espn_mbb_team_injuries()</a></code>,
+<code><a href="espn_mbb_team_news.html">espn_mbb_team_news()</a></code>,
+<code><a href="espn_mbb_team_odds_records.html">espn_mbb_team_odds_records()</a></code>,
+<code><a href="espn_mbb_team_record.html">espn_mbb_team_record()</a></code>,
+<code><a href="espn_mbb_team_record_detail.html">espn_mbb_team_record_detail()</a></code>,
+<code><a href="espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>,
+<code><a href="espn_mbb_team_season_roster.html">espn_mbb_team_season_roster()</a></code>,
+<code><a href="espn_mbb_team_season_statistics.html">espn_mbb_team_season_statistics()</a></code>,
+<code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
+<code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
+<code><a href="espn_mbb_tournament.html">espn_mbb_tournament()</a></code>,
+<code><a href="espn_mbb_tournament_season.html">espn_mbb_tournament_season()</a></code>,
+<code><a href="espn_mbb_tournament_seasons.html">espn_mbb_tournament_seasons()</a></code>,
+<code><a href="espn_mbb_tournaments.html">espn_mbb_tournaments()</a></code>,
+<code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
+<code><a href="espn_mbb_week_ranking.html">espn_mbb_week_ranking()</a></code>,
+<code><a href="espn_mbb_week_rankings.html">espn_mbb_week_rankings()</a></code>,
+<code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code>,
+<code><a href="espn_nba_draft.html">espn_nba_draft_pick()</a></code>,
+<code><a href="espn_nba_freeagents.html">espn_nba_freeagents()</a></code>,
+<code><a href="espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code>,
+<code><a href="espn_nba_team_depthchart.html">espn_nba_team_depthchart()</a></code>,
+<code><a href="espn_nba_transactions.html">espn_nba_transactions()</a></code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -257,7 +381,7 @@ division) for one (MBB season x season-type).</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_season_group</span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Detail ───────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 01:41:17 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:39 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 15</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   league         season season_type group_id uid   name  abbreviation short_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
@@ -268,7 +392,7 @@ division) for one (MBB season x season-type).</p>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_season_group_children</span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Children Index ───── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 01:41:17 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:39 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 variables: league &lt;chr&gt;, season &lt;int&gt;, season_type &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   parent_group_id &lt;chr&gt;, child_group_id &lt;chr&gt;, ref &lt;chr&gt;</span></span>
@@ -276,7 +400,7 @@ division) for one (MBB season x season-type).</p>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_season_group_teams</span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Teams Index ──────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 01:41:17 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:39 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league                  season season_type group_id team_id ref              </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
@@ -290,6 +414,51 @@ division) for one (MBB season x season-type).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> mens-college-basketball   <span style="text-decoration: underline;">2</span>025           2 5        2464    http://sports.co…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> mens-college-basketball   <span style="text-decoration: underline;">2</span>025           2 5        2502    http://sports.co…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> mens-college-basketball   <span style="text-decoration: underline;">2</span>025           2 5        2692    http://sports.co…</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu">espn_nba_season_group</span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Group Detail ───────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:39 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 15</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   league season season_type group_id uid           name  abbreviation short_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        s:40~l:46~g:5 East… East         <span style="color: #BB0000;">NA</span>        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: midsize_name &lt;chr&gt;, is_conference &lt;lgl&gt;, slug &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   parent_ref &lt;chr&gt;, children_ref &lt;chr&gt;, teams_ref &lt;chr&gt;, standings_ref &lt;chr&gt;</span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu">espn_nba_season_group_children</span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Group Children Index ───────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:39 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   league season season_type parent_group_id child_group_id ref                  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>025           2 5               1              http://sports.core.a…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> nba      <span style="text-decoration: underline;">2</span>025           2 5               2              http://sports.core.a…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> nba      <span style="text-decoration: underline;">2</span>025           2 5               9              http://sports.core.a…</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu">espn_nba_season_group_teams</span><span class="op">(</span>group_id <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Group Teams Index ──────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:40 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 15 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    league season season_type group_id team_id ref                               </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        1       http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        2       http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        4       http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        5       http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        8       http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        11      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        14      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        15      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        17      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        18      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        19      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        20      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        27      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        28      http://sports.core.api.espn.com/v…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> nba      <span style="text-decoration: underline;">2</span>025           2 5        30      http://sports.core.api.espn.com/v…</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

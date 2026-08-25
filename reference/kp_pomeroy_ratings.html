@@ -5,13 +5,17 @@ Get Four Factors Data
 Get Team Points Distribution
 Get Heights, Experience, Bench and Continuity Data
 Get 2-Foul Participation Stats
-Get Team Stats"><meta property="og:description" content="Get KenPom Ratings
+Get Team Stats
+Get Player Stats Leaders by Metric
+Get KPoY Leaders Tables"><meta property="og:description" content="Get KenPom Ratings
 Get KenPom Efficiency and Tempo Summary
 Get Four Factors Data
 Get Team Points Distribution
 Get Heights, Experience, Bench and Continuity Data
 Get 2-Foul Participation Stats
-Get Team Stats"><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
+Get Team Stats
+Get Player Stats Leaders by Metric
+Get KPoY Leaders Tables"><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -114,6 +118,8 @@ Get Team Stats"><meta property="og:image" content="https://raw.githubusercontent
 <p><strong>Get Heights, Experience, Bench and Continuity Data</strong></p>
 <p><strong>Get 2-Foul Participation Stats</strong></p>
 <p><strong>Get Team Stats</strong></p>
+<p><strong>Get Player Stats Leaders by Metric</strong></p>
+<p><strong>Get KPoY Leaders Tables</strong></p>
     </div>
 
     <div class="section level2">
@@ -130,7 +136,16 @@ Get Team Stats"><meta property="og:image" content="https://raw.githubusercontent
 <span></span>
 <span><span class="fu">kp_foul_trouble</span><span class="op">(</span><span class="va">min_year</span>, max_year <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">kp_teamstats</span><span class="op">(</span><span class="va">min_year</span>, max_year <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">kp_teamstats</span><span class="op">(</span><span class="va">min_year</span>, max_year <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kp_playerstats</span><span class="op">(</span></span>
+<span>  metric <span class="op">=</span> <span class="st">"eFG"</span>,</span>
+<span>  conf <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  conf_only <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  year <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">kp_kpoy</span><span class="op">(</span>year <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -144,6 +159,33 @@ Get Team Stats"><meta property="og:image" content="https://raw.githubusercontent
 <dt id="arg-max-year">max_year<a class="anchor" aria-label="anchor" href="#arg-max-year"></a></dt>
 <dd><p>Last year of data to pull</p></dd>
 
+
+<dt id="arg-metric">metric<a class="anchor" aria-label="anchor" href="#arg-metric"></a></dt>
+<dd><p>Used to get leaders for different metrics. Available values are: <br>
+'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', <br>
+'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. <br>
+Default is 'eFG'. 'ORtg' returns a list of four dataframes, as there are four tables: <br>
+players that used more than 28 percent of possessions, more than 24 percent of possessions, more than 20 percent of possessions, and with no possession restriction.</p></dd>
+
+
+<dt id="arg-conf">conf<a class="anchor" aria-label="anchor" href="#arg-conf"></a></dt>
+<dd><p>Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', <br>
+'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', <br>
+'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', <br>
+'SUM', 'SWAC', 'WAC', 'WCC'. <br>
+If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', <br>
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.<br>
+No filter applied by default.</p></dd>
+
+
+<dt id="arg-conf-only">conf_only<a class="anchor" aria-label="anchor" href="#arg-conf-only"></a></dt>
+<dd><p>Used to define whether stats should reflect conference games only.<br>
+Only available if specific conference is defined. Only available for season after 2013, FALSE by default.</p></dd>
+
+
+<dt id="arg-year">year<a class="anchor" aria-label="anchor" href="#arg-year"></a></dt>
+<dd><p>Year of data to pull (earliest year of data available: 2004)</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -154,65 +196,78 @@ Get Team Stats"><meta property="og:image" content="https://raw.githubusercontent
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>conf</td><td>character</td><td>character.</td></tr><tr><td>off_ft_pct</td><td>numeric</td><td>Off free throws percentage (0-1 decimal).</td></tr><tr><td>off_ft_pct_rk</td><td>numeric</td><td>Off ft pct rk.</td></tr><tr><td>off_fg_2_pct</td><td>numeric</td><td>Off field goals 2 percentage (0-1 decimal).</td></tr><tr><td>off_fg_2_pct_rk</td><td>numeric</td><td>Off fg 2 pct rk.</td></tr><tr><td>off_fg_3_pct</td><td>numeric</td><td>Off field goals 3 percentage (0-1 decimal).</td></tr><tr><td>off_fg_3_pct_rk</td><td>numeric</td><td>Off fg 3 pct rk.</td></tr><tr><td>def_ft_pct</td><td>numeric</td><td>Def free throws percentage (0-1 decimal).</td></tr><tr><td>def_ft_pct_rk</td><td>numeric</td><td>Def ft pct rk.</td></tr><tr><td>def_fg_2_pct</td><td>numeric</td><td>Def field goals 2 percentage (0-1 decimal).</td></tr><tr><td>def_fg_2_pct_rk</td><td>numeric</td><td>Def fg 2 pct rk.</td></tr><tr><td>def_fg_3_pct</td><td>numeric</td><td>Def field goals 3 percentage (0-1 decimal).</td></tr><tr><td>def_fg_3_pct_rk</td><td>numeric</td><td>Def fg 3 pct rk.</td></tr><tr><td>ncaa_seed</td><td>numeric</td><td>Ncaa seed.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr></table><p>Returns a tibble of heights</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>conf</td><td>character</td><td>character.</td></tr><tr><td>avg_hgt</td><td>numeric</td><td>Avg hgt.</td></tr><tr><td>avg_hgt_rk</td><td>numeric</td><td>Avg hgt rk.</td></tr><tr><td>eff_hgt</td><td>numeric</td><td>Eff hgt.</td></tr><tr><td>eff_hgt_rk</td><td>numeric</td><td>Eff hgt rk.</td></tr><tr><td>c_hgt</td><td>numeric</td><td>C hgt.</td></tr><tr><td>c_hgt_rk</td><td>numeric</td><td>C hgt rk.</td></tr><tr><td>pf_hgt</td><td>numeric</td><td>Pf hgt.</td></tr><tr><td>pf_hgt_rk</td><td>numeric</td><td>Pf hgt rk.</td></tr><tr><td>sf_hgt</td><td>numeric</td><td>Sf hgt.</td></tr><tr><td>sf_hgt_rk</td><td>numeric</td><td>Sf hgt rk.</td></tr><tr><td>sg_hgt</td><td>numeric</td><td>Sg hgt.</td></tr><tr><td>sg_hgt_rk</td><td>numeric</td><td>Sg hgt rk.</td></tr><tr><td>pg_hgt</td><td>numeric</td><td>Pg hgt.</td></tr><tr><td>pg_hgt_rk</td><td>numeric</td><td>Pg hgt rk.</td></tr><tr><td>experience</td><td>numeric</td><td>Years of professional experience.</td></tr><tr><td>experience_rk</td><td>numeric</td><td>Experience rk.</td></tr><tr><td>bench</td><td>numeric</td><td>Bench.</td></tr><tr><td>bench_rk</td><td>numeric</td><td>Bench rk.</td></tr><tr><td>continuity</td><td>numeric</td><td>Continuity.</td></tr><tr><td>continuity_rk</td><td>numeric</td><td>Continuity rk.</td></tr><tr><td>ncaa_seed</td><td>numeric</td><td>Ncaa seed.</td></tr><tr><td>year</td><td>integer</td><td>4-digit year.</td></tr></table><p>Returns a tibble of foul participation stats</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>conf</td><td>character</td><td>character.</td></tr><tr><td>two_foul_particpation_pct</td><td>numeric</td><td>Two foul particpation percentage (0-1 decimal).</td></tr><tr><td>two_foul_particpation_pct_rk</td><td>numeric</td><td>Two foul particpation pct rk.</td></tr><tr><td>adj2fp</td><td>numeric</td><td>Adj2fp.</td></tr><tr><td>adj2fp_rk</td><td>numeric</td><td>Adj2fp rk.</td></tr><tr><td>two_foul_total_time</td><td>character</td><td>Time / clock value.</td></tr><tr><td>two_foul_total_time_rk</td><td>character</td><td>Two foul total time rk.</td></tr><tr><td>two_foul_time_on</td><td>character</td><td>Two foul time on.</td></tr><tr><td>two_foul_time_on_rk</td><td>character</td><td>Two foul time on rk.</td></tr><tr><td>bench_pct</td><td>numeric</td><td>Bench percentage (0-1 decimal).</td></tr><tr><td>bench_pct_rk</td><td>numeric</td><td>Bench pct rk.</td></tr><tr><td>ncaa_seed</td><td>numeric</td><td>Ncaa seed.</td></tr><tr><td>year</td><td>integer</td><td>4-digit year.</td></tr></table><p>Returns a tibble of team stats</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>conf</td><td>character</td><td>character.</td></tr><tr><td>off_fg_3_pct</td><td>numeric</td><td>Off field goals 3 percentage (0-1 decimal).</td></tr><tr><td>off_fg_3_pct_rk</td><td>numeric</td><td>Off fg 3 pct rk.</td></tr><tr><td>off_fg_2_pct</td><td>numeric</td><td>Off field goals 2 percentage (0-1 decimal).</td></tr><tr><td>off_fg_2_pct_rk</td><td>numeric</td><td>Off fg 2 pct rk.</td></tr><tr><td>off_ft_pct</td><td>numeric</td><td>Off free throws percentage (0-1 decimal).</td></tr><tr><td>off_ft_pct_rk</td><td>numeric</td><td>Off ft pct rk.</td></tr><tr><td>off_blk_pct</td><td>numeric</td><td>Off blocks percentage (0-1 decimal).</td></tr><tr><td>off_blk_pct_rk</td><td>numeric</td><td>Off blk pct rk.</td></tr><tr><td>off_stl_pct</td><td>numeric</td><td>Off steals percentage (0-1 decimal).</td></tr><tr><td>off_stl_pct_rk</td><td>numeric</td><td>Off stl pct rk.</td></tr><tr><td>off_non_stl_pct</td><td>numeric</td><td>Off non steals percentage (0-1 decimal).</td></tr><tr><td>off_non_stl_pct_rk</td><td>numeric</td><td>Off non stl pct rk.</td></tr><tr><td>off_a_pct</td><td>numeric</td><td>Off a percentage (0-1 decimal).</td></tr><tr><td>off_a_pct_rk</td><td>numeric</td><td>Off a pct rk.</td></tr><tr><td>off_fg_3a_pct</td><td>numeric</td><td>Off field goals 3a percentage (0-1 decimal).</td></tr><tr><td>off_fg_3a_pct_rk</td><td>numeric</td><td>Off fg 3a pct rk.</td></tr><tr><td>adj_o</td><td>numeric</td><td>Adj o.</td></tr><tr><td>adj_o_rk</td><td>numeric</td><td>Adj o rk.</td></tr><tr><td>ncaa_seed</td><td>numeric</td><td>Ncaa seed.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr><tr><td>def_fg_3_pct</td><td>numeric</td><td>Def field goals 3 percentage (0-1 decimal).</td></tr><tr><td>def_fg_3_pct_rk</td><td>numeric</td><td>Def fg 3 pct rk.</td></tr><tr><td>def_fg_2_pct</td><td>numeric</td><td>Def field goals 2 percentage (0-1 decimal).</td></tr><tr><td>def_fg_2_pct_rk</td><td>numeric</td><td>Def fg 2 pct rk.</td></tr><tr><td>def_ft_pct</td><td>numeric</td><td>Def free throws percentage (0-1 decimal).</td></tr><tr><td>def_ft_pct_rk</td><td>numeric</td><td>Def ft pct rk.</td></tr><tr><td>def_blk_pct</td><td>numeric</td><td>Def blocks percentage (0-1 decimal).</td></tr><tr><td>def_blk_pct_rk</td><td>numeric</td><td>Def blk pct rk.</td></tr><tr><td>def_stl_pct</td><td>numeric</td><td>Def steals percentage (0-1 decimal).</td></tr><tr><td>def_stl_pct_rk</td><td>numeric</td><td>Def stl pct rk.</td></tr><tr><td>def_non_stl_pct</td><td>numeric</td><td>Def non steals percentage (0-1 decimal).</td></tr><tr><td>def_non_stl_pct_rk</td><td>numeric</td><td>Def non stl pct rk.</td></tr><tr><td>def_a_pct</td><td>numeric</td><td>Def a percentage (0-1 decimal).</td></tr><tr><td>def_a_pct_rk</td><td>numeric</td><td>Def a pct rk.</td></tr><tr><td>def_fg_3a_pct</td><td>numeric</td><td>Def field goals 3a percentage (0-1 decimal).</td></tr><tr><td>def_fg_3a_pct_rk</td><td>numeric</td><td>Def fg 3a pct rk.</td></tr><tr><td>adj_d</td><td>numeric</td><td>Adj d.</td></tr><tr><td>adj_d_rk</td><td>numeric</td><td>Adj d rk.</td></tr></table></div>
-    <div class="section level2">
-    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other KenPom Ratings Functions:
-<code><a href="kp_kpoy.html">kp_kpoy()</a></code>,
-<code><a href="kp_playerstats.html">kp_playerstats()</a></code></p></div>
-    </div>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>conf</td><td>character</td><td>character.</td></tr><tr><td>off_fg_3_pct</td><td>numeric</td><td>Off field goals 3 percentage (0-1 decimal).</td></tr><tr><td>off_fg_3_pct_rk</td><td>numeric</td><td>Off fg 3 pct rk.</td></tr><tr><td>off_fg_2_pct</td><td>numeric</td><td>Off field goals 2 percentage (0-1 decimal).</td></tr><tr><td>off_fg_2_pct_rk</td><td>numeric</td><td>Off fg 2 pct rk.</td></tr><tr><td>off_ft_pct</td><td>numeric</td><td>Off free throws percentage (0-1 decimal).</td></tr><tr><td>off_ft_pct_rk</td><td>numeric</td><td>Off ft pct rk.</td></tr><tr><td>off_blk_pct</td><td>numeric</td><td>Off blocks percentage (0-1 decimal).</td></tr><tr><td>off_blk_pct_rk</td><td>numeric</td><td>Off blk pct rk.</td></tr><tr><td>off_stl_pct</td><td>numeric</td><td>Off steals percentage (0-1 decimal).</td></tr><tr><td>off_stl_pct_rk</td><td>numeric</td><td>Off stl pct rk.</td></tr><tr><td>off_non_stl_pct</td><td>numeric</td><td>Off non steals percentage (0-1 decimal).</td></tr><tr><td>off_non_stl_pct_rk</td><td>numeric</td><td>Off non stl pct rk.</td></tr><tr><td>off_a_pct</td><td>numeric</td><td>Off a percentage (0-1 decimal).</td></tr><tr><td>off_a_pct_rk</td><td>numeric</td><td>Off a pct rk.</td></tr><tr><td>off_fg_3a_pct</td><td>numeric</td><td>Off field goals 3a percentage (0-1 decimal).</td></tr><tr><td>off_fg_3a_pct_rk</td><td>numeric</td><td>Off fg 3a pct rk.</td></tr><tr><td>adj_o</td><td>numeric</td><td>Adj o.</td></tr><tr><td>adj_o_rk</td><td>numeric</td><td>Adj o rk.</td></tr><tr><td>ncaa_seed</td><td>numeric</td><td>Ncaa seed.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr><tr><td>def_fg_3_pct</td><td>numeric</td><td>Def field goals 3 percentage (0-1 decimal).</td></tr><tr><td>def_fg_3_pct_rk</td><td>numeric</td><td>Def fg 3 pct rk.</td></tr><tr><td>def_fg_2_pct</td><td>numeric</td><td>Def field goals 2 percentage (0-1 decimal).</td></tr><tr><td>def_fg_2_pct_rk</td><td>numeric</td><td>Def fg 2 pct rk.</td></tr><tr><td>def_ft_pct</td><td>numeric</td><td>Def free throws percentage (0-1 decimal).</td></tr><tr><td>def_ft_pct_rk</td><td>numeric</td><td>Def ft pct rk.</td></tr><tr><td>def_blk_pct</td><td>numeric</td><td>Def blocks percentage (0-1 decimal).</td></tr><tr><td>def_blk_pct_rk</td><td>numeric</td><td>Def blk pct rk.</td></tr><tr><td>def_stl_pct</td><td>numeric</td><td>Def steals percentage (0-1 decimal).</td></tr><tr><td>def_stl_pct_rk</td><td>numeric</td><td>Def stl pct rk.</td></tr><tr><td>def_non_stl_pct</td><td>numeric</td><td>Def non steals percentage (0-1 decimal).</td></tr><tr><td>def_non_stl_pct_rk</td><td>numeric</td><td>Def non stl pct rk.</td></tr><tr><td>def_a_pct</td><td>numeric</td><td>Def a percentage (0-1 decimal).</td></tr><tr><td>def_a_pct_rk</td><td>numeric</td><td>Def a pct rk.</td></tr><tr><td>def_fg_3a_pct</td><td>numeric</td><td>Def field goals 3a percentage (0-1 decimal).</td></tr><tr><td>def_fg_3a_pct_rk</td><td>numeric</td><td>Def fg 3a pct rk.</td></tr><tr><td>adj_d</td><td>numeric</td><td>Adj d.</td></tr><tr><td>adj_d_rk</td><td>numeric</td><td>Adj d rk.</td></tr></table><p>Returns a tibble of player stats</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>rk</td><td>character</td><td>Rk.</td></tr><tr><td>player</td><td>character</td><td>Player.</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>e_fg</td><td>character</td><td>E fg.</td></tr><tr><td>hgt</td><td>character</td><td>Hgt.</td></tr><tr><td>wgt</td><td>character</td><td>Wgt.</td></tr><tr><td>yr</td><td>character</td><td>Yr.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr></table><p>Returns a list of tibbles: "kPoYRatings", "GameMVPs"</p>
+<p><strong>KPoYRatings</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>rk</td><td>integer</td><td>Rk.</td></tr><tr><td>player</td><td>character</td><td>Player.</td></tr><tr><td>kpoy_rating</td><td>numeric</td><td>Kpoy rating.</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>hgt</td><td>character</td><td>Hgt.</td></tr><tr><td>wgt</td><td>numeric</td><td>Wgt.</td></tr><tr><td>exp</td><td>character</td><td>Exp.</td></tr><tr><td>home_town</td><td>character</td><td>Home team's town.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr><tr><td>group</td><td>character</td><td>Group identifier (e.g. conference 'group_id').</td></tr></table><p><strong>GameMVPs</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>rk</td><td>numeric</td><td>Rk.</td></tr><tr><td>player</td><td>character</td><td>Player.</td></tr><tr><td>game_mv_ps</td><td>numeric</td><td>Game mv ps.</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>hgt</td><td>character</td><td>Hgt.</td></tr><tr><td>wgt</td><td>numeric</td><td>Wgt.</td></tr><tr><td>exp</td><td>character</td><td>Exp.</td></tr><tr><td>home_town</td><td>character</td><td>Home team's town.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr><tr><td>group</td><td>character</td><td>Group identifier (e.g. conference 'group_id').</td></tr></table></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_pomeroy_ratings</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:47.744552: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:44.994843: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2020, max_year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 403 Forbidden.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_efficiency</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:47.790902: Invalid arguments or no efficiency data for 2020 - 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.036611: Invalid arguments or no efficiency data for 2020 - 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2020, max_year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_fourfactors</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:47.835274: Invalid arguments or no four factors data for 2020 - 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.078304: Invalid arguments or no four factors data for 2020 - 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2020, max_year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_pointdist</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:47.888568: Invalid arguments or no point distribution data for 2020 - 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.12808: Invalid arguments or no point distribution data for 2020 - 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2020, max_year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_height</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:47.934937: Invalid arguments or no height data for 2020 - 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.16925: Invalid arguments or no height data for 2020 - 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2020, max_year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_foul_trouble</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2020</span>, max_year <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:47.979499: Invalid arguments or no foul trouble data for 2020 - 2026 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.215145: Invalid arguments or no foul trouble data for 2020 - 2026 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2020, max_year = 2026</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_teamstats</span><span class="op">(</span>min_year <span class="op">=</span> <span class="fl">2019</span>, max_year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:42:48.023292: Invalid arguments or no team stats data for 2019 - 2021 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.255997: Invalid arguments or no team stats data for 2019 - 2021 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: min_year = 2019, max_year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_playerstats</span><span class="op">(</span>metric <span class="op">=</span> <span class="st">"eFG"</span>, conf_only <span class="op">=</span> <span class="cn">FALSE</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.303846: Invalid arguments or no player stats data for 2021 eFG available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: metric = "eFG", conf = NULL, conf_only = FALSE, year = 2021</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_kpoy</span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:48:45.347121: Invalid arguments or no KenPom player of the year data for 2026 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: year = 2026</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

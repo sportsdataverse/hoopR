@@ -184,11 +184,10 @@ load_nba_shots(
 - dbConnection:
 
   A `DBIConnection` object, as returned by
-  [`DBI::dbConnect()`](https://dbi.r-dbi.org/reference/dbConnect.html).
 
 - tablename:
 
-  The name of the shots data table within the database.
+  The name of the play by play data table within the database
 
 ## Value
 

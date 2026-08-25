@@ -24,6 +24,30 @@ numeric `value`, display string, `winner` flag, and source metadata.
 Quick-lookup wrapper — use `espn_mbb_game_team_linescores()` for
 per-period detail.
 
+Returns the per-quarter scoring breakdown for one team in one NBA event.
+One row per period (regulation quarters + any overtime periods).
+
+Returns the per-team statistical leaders for one NBA event in long
+format: one row per (category x athlete rank). Categories typically
+include points, rebounds, assists, and rating.
+
+Returns the game-day roster index for one team in one NBA event. Each
+row carries the athlete id and the core-v2 `$ref` URL — use the ref to
+dereference athlete-game splits or biographical data.
+
+Returns full team-game statistics for one team in one NBA event in long
+format: one row per (category x stat). Covers offensive, defensive, and
+general categories with both raw values and display strings.
+
+Returns team records as of the given NBA event: overall, home, away,
+conference, and division breakdowns where available. One row per record
+type.
+
+Returns a one-row tibble with one team's final score for one NBA event:
+numeric `value`, display string, `winner` flag, and source metadata.
+Quick-lookup wrapper — use `espn_nba_game_team_linescores()` for
+per-period detail.
+
 ## Usage
 
 ``` r
@@ -38,6 +62,18 @@ espn_mbb_game_team_statistics(event_id, team_id, ...)
 espn_mbb_game_team_records(event_id, team_id, ...)
 
 espn_mbb_game_team_score(event_id, team_id, ...)
+
+espn_nba_game_team_linescores(event_id, team_id, ...)
+
+espn_nba_game_team_leaders(event_id, team_id, ...)
+
+espn_nba_game_team_roster(event_id, team_id, ...)
+
+espn_nba_game_team_statistics(event_id, team_id, ...)
+
+espn_nba_game_team_records(event_id, team_id, ...)
+
+espn_nba_game_team_score(event_id, team_id, ...)
 ```
 
 ## Arguments
@@ -48,13 +84,25 @@ espn_mbb_game_team_score(event_id, team_id, ...)
 
 - team_id:
 
-  ESPN team identifier.
+  ESPN team identifier (the competitor whose linescore to fetch).
 
 - ...:
 
   Additional arguments; currently unused.
 
 ## Value
+
+A tibble with one row per period.
+
+A long tibble with one row per (category x rank).
+
+A tibble with one row per active athlete.
+
+A long tibble with one row per (category x stat).
+
+A tibble with one row per record type.
+
+A single-row tibble.
 
 A tibble with one row per period.
 
@@ -140,6 +188,80 @@ Other ESPN MBB Functions:
 [`espn_mbb_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings.md),
 [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md)
 
+Other ESPN NBA Functions:
+[`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md),
+[`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md),
+[`espn_mbb_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md),
+[`espn_mbb_coach()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach.md),
+[`espn_mbb_coach_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_record.md),
+[`espn_mbb_coach_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_season.md),
+[`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md),
+[`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md),
+[`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md),
+[`espn_mbb_franchises()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchises.md),
+[`espn_mbb_futures()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_futures.md),
+[`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+[`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md),
+[`espn_mbb_game_official_detail()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_official_detail.md),
+[`espn_mbb_game_play()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play.md),
+[`espn_mbb_game_play_personnel()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play_personnel.md),
+[`espn_mbb_game_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_player_box.md),
+[`espn_mbb_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_probabilities.md),
+[`espn_mbb_game_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_propbets.md),
+[`espn_mbb_game_team_roster_entry()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_team_roster_entry.md),
+[`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md),
+[`espn_mbb_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md),
+[`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md),
+[`espn_mbb_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards.md),
+[`espn_mbb_player_career_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_career_stats.md),
+[`espn_mbb_player_eventlog_v2()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_eventlog_v2.md),
+[`espn_mbb_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_info.md),
+[`espn_mbb_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md),
+[`espn_mbb_player_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_seasons.md),
+[`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md),
+[`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md),
+[`espn_mbb_positions()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_positions.md),
+[`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
+[`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md),
+[`espn_mbb_season_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_awards.md),
+[`espn_mbb_season_group()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group.md),
+[`espn_mbb_season_groups()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups.md),
+[`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md),
+[`espn_mbb_season_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_leaders.md),
+[`espn_mbb_season_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking.md),
+[`espn_mbb_season_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_rankings.md),
+[`espn_mbb_season_type()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_type.md),
+[`espn_mbb_season_types()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_types.md),
+[`espn_mbb_season_week()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_week.md),
+[`espn_mbb_season_weeks()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_weeks.md),
+[`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md),
+[`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md),
+[`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md),
+[`espn_mbb_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md),
+[`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md),
+[`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md),
+[`espn_mbb_team_odds_records()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_odds_records.md),
+[`espn_mbb_team_record()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record.md),
+[`espn_mbb_team_record_detail()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_record_detail.md),
+[`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md),
+[`espn_mbb_team_season_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_roster.md),
+[`espn_mbb_team_season_statistics()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_statistics.md),
+[`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md),
+[`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
+[`espn_mbb_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament.md),
+[`espn_mbb_tournament_season()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament_season.md),
+[`espn_mbb_tournament_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament_seasons.md),
+[`espn_mbb_tournaments()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournaments.md),
+[`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md),
+[`espn_mbb_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking.md),
+[`espn_mbb_week_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings.md),
+[`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md),
+[`espn_nba_draft_pick()`](https://hoopR.sportsdataverse.org/reference/espn_nba_draft.md),
+[`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md),
+[`espn_nba_player_contracts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_contracts.md),
+[`espn_nba_team_depthchart()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_depthchart.md),
+[`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md)
+
 ## Author
 
 Saiem Gilani
@@ -150,7 +272,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_linescores(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Linescores ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:08 UTC
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
 #> # A tibble: 4 × 7
 #>   league                  event_id  team_id period value display_value source   
 #>   <chr>                   <chr>     <chr>    <int> <dbl> <chr>         <chr>    
@@ -162,7 +284,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_leaders(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Leaders ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:08 UTC
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
 #> # A tibble: 46 × 11
 #>    league  event_id team_id category_name category_display category_abbrev  rank
 #>    <chr>   <chr>    <chr>   <chr>         <chr>            <chr>           <int>
@@ -183,7 +305,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_roster(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Roster ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:08 UTC
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
 #> # A tibble: 0 × 5
 #> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
 #> #   ref <chr>
@@ -191,7 +313,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_statistics(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Statistics ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:08 UTC
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
 #> # A tibble: 71 × 10
 #>    league  event_id team_id category_name category_display stat_name stat_abbrev
 #>    <chr>   <chr>    <chr>   <chr>         <chr>            <chr>     <chr>      
@@ -211,7 +333,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_records(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Competitor Records ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:08 UTC
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
 #> # A tibble: 4 × 11
 #>   league              event_id team_id record_id name  abbreviation display_name
 #>   <chr>               <chr>    <chr>   <chr>     <chr> <chr>        <chr>       
@@ -225,11 +347,101 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_team_score(event_id = 401256760, team_id = 52)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Competitor Score ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 01:41:08 UTC
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
 #> # A tibble: 1 × 8
 #>   league                  event_id  team_id value display_value winner source_id
 #>   <chr>                   <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    
 #> 1 mens-college-basketball 401256760 52         83 83            TRUE   1        
+#> # ℹ 1 more variable: source_description <chr>
+# }
+# \donttest{
+  espn_nba_game_team_linescores(event_id = 401283399, team_id = 29)
+#> ── ESPN NBA Competitor Linescores ─────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
+#> # A tibble: 8 × 7
+#>   league event_id  team_id period value display_value source      
+#>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       
+#> 1 nba    401283399 29           1    30 30            1           
+#> 2 nba    401283399 29           1    30 30            Basic/Manual
+#> 3 nba    401283399 29           2    27 27            1           
+#> 4 nba    401283399 29           2    27 27            Basic/Manual
+#> 5 nba    401283399 29           3    29 29            1           
+#> 6 nba    401283399 29           3    29 29            Basic/Manual
+#> 7 nba    401283399 29           4    36 36            1           
+#> 8 nba    401283399 29           4    36 36            Basic/Manual
+# }
+# \donttest{
+  espn_nba_game_team_leaders(event_id = 401283399, team_id = 29)
+#> ── ESPN NBA Competitor Leaders ────────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
+#> # A tibble: 48 × 11
+#>    league event_id  team_id category_name category_display category_abbrev  rank
+#>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>           <int>
+#>  1 nba    401283399 29      points        Points           Pts                 1
+#>  2 nba    401283399 29      points        Points           Pts                 2
+#>  3 nba    401283399 29      points        Points           Pts                 3
+#>  4 nba    401283399 29      points        Points           Pts                 4
+#>  5 nba    401283399 29      points        Points           Pts                 5
+#>  6 nba    401283399 29      points        Points           Pts                 6
+#>  7 nba    401283399 29      points        Points           Pts                 7
+#>  8 nba    401283399 29      points        Points           Pts                 8
+#>  9 nba    401283399 29      points        Points           Pts                 9
+#> 10 nba    401283399 29      assists       Assists          Ast                 1
+#> # ℹ 38 more rows
+#> # ℹ 4 more variables: athlete_id <chr>, display_value <chr>, value <dbl>,
+#> #   athlete_ref <chr>
+# }
+# \donttest{
+  espn_nba_game_team_roster(event_id = 401283399, team_id = 29)
+#> ── ESPN NBA Competitor Roster ─────────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
+#> # A tibble: 0 × 5
+#> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
+#> #   ref <chr>
+# }
+# \donttest{
+  espn_nba_game_team_statistics(event_id = 401283399, team_id = 29)
+#> ── ESPN NBA Competitor Statistics ─────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
+#> # A tibble: 98 × 10
+#>    league event_id  team_id category_name category_display stat_name stat_abbrev
+#>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>     <chr>      
+#>  1 nba    401283399 29      defensive     Defensive        blocks    BLK        
+#>  2 nba    401283399 29      defensive     Defensive        defensiv… DR         
+#>  3 nba    401283399 29      defensive     Defensive        steals    STL        
+#>  4 nba    401283399 29      defensive     Defensive        turnover… Points Con…
+#>  5 nba    401283399 29      defensive     Defensive        avgDefen… DR         
+#>  6 nba    401283399 29      defensive     Defensive        avgBlocks BLK        
+#>  7 nba    401283399 29      defensive     Defensive        avgSteals STL        
+#>  8 nba    401283399 29      defensive     Defensive        avg48Def… DR         
+#>  9 nba    401283399 29      defensive     Defensive        avg48Blo… BLK        
+#> 10 nba    401283399 29      defensive     Defensive        avg48Ste… STL        
+#> # ℹ 88 more rows
+#> # ℹ 3 more variables: stat_display <chr>, value <dbl>, display_value <chr>
+# }
+# \donttest{
+  espn_nba_game_team_records(event_id = 401283399, team_id = 29)
+#> ── ESPN NBA Competitor Records ────────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
+#> # A tibble: 5 × 11
+#>   league event_id  team_id record_id name      abbreviation display_name       
+#>   <chr>  <chr>     <chr>   <chr>     <chr>     <chr>        <chr>              
+#> 1 nba    401283399 29      900       overall   Game         Record Year To Date
+#> 2 nba    401283399 29      33        Home      NA           Home               
+#> 3 nba    401283399 29      34        Road      NA           Road               
+#> 4 nba    401283399 29      60        vs. Div.  NA           DIV                
+#> 5 nba    401283399 29      61        vs. Conf. NA           CONF               
+#> # ℹ 4 more variables: short_display_name <chr>, type <chr>, summary <chr>,
+#> #   value <dbl>
+# }
+# \donttest{
+  espn_nba_game_team_score(event_id = 401283399, team_id = 29)
+#> ── ESPN NBA Event Competitor Score ────────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 02:47:23 UTC
+#> # A tibble: 1 × 8
+#>   league event_id  team_id value display_value winner source_id
+#>   <chr>  <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    
+#> 1 nba    401283399 29        122 122           TRUE   1        
 #> # ℹ 1 more variable: source_description <chr>
 # }
 ```

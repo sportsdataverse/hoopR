@@ -158,14 +158,14 @@
 </tr></thead><tbody><tr><td>NBA Stats API</td>
 <td><code>nba_</code></td>
 <td>
-<code><a href="reference/nba_leagueleaders.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
+<code><a href="reference/nba_alltimeleadersgrids.html">nba_leagueleaders()</a></code>, <code><a href="reference/nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>
 </td>
 </tr><tr><td>ESPN API</td>
 <td>
 <code>espn_nba_</code> / <code>espn_mbb_</code>
 </td>
 <td>
-<code><a href="reference/espn_nba_game_all.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
+<code><a href="reference/espn_mbb_game_all.html">espn_nba_pbp()</a></code>, <code><a href="reference/espn_mbb_teams.html">espn_mbb_teams()</a></code>
 </td>
 </tr><tr><td>KenPom</td>
 <td><code>kp_</code></td>
@@ -175,7 +175,7 @@
 </tr><tr><td>CollegeBasketballData</td>
 <td><code>cbbd_</code></td>
 <td>
-<code><a href="reference/cbbd_games.html">cbbd_games()</a></code>, <code><a href="reference/cbbd_ratings_srs.html">cbbd_ratings_srs()</a></code>
+<code><a href="reference/cbbd_games_media.html">cbbd_games()</a></code>, <code><a href="reference/cbbd_ratings_srs.html">cbbd_ratings_srs()</a></code>
 </td>
 </tr><tr><td>Basketball-Reference</td>
 <td><code>bref_</code></td>
@@ -338,9 +338,9 @@
 <ul><li>V3 endpoints return nested JSON – use <code><a href="https://purrr.tidyverse.org/reference/pluck.html" class="external-link">purrr::pluck()</a></code> for extraction.</li>
 <li>V3 PBP clock format is <code>"PT10M30.00S"</code> not <code>"MM:SS"</code>. Parsed with base R <code><a href="https://rdrr.io/r/base/grep.html" class="external-link">regexec()</a></code>/<code><a href="https://rdrr.io/r/base/regmatches.html" class="external-link">regmatches()</a></code>.</li>
 <li>V3 PBP substitutions: <code>personId</code> = outgoing player, incoming parsed from “SUB: IncomingPlayer FOR OutgoingPlayer” in description.</li>
-<li>V3-to-V2 conversion pipeline (<code><a href="reference/nba_pbp.html">nba_pbp()</a></code> V3 path): <code><a href="reference/nba_playbyplayv3.html">nba_playbyplayv3()</a></code> -&gt; <code><a href="reference/dot-build_player_roster.html">.build_player_roster()</a></code> -&gt; <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> -&gt; <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>. Produces V2-compatible columns while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).</li>
+<li>V3-to-V2 conversion pipeline (<code><a href="reference/nba_live_boxscore.html">nba_pbp()</a></code> V3 path): <code><a href="reference/nba_live_boxscore.html">nba_playbyplayv3()</a></code> -&gt; <code><a href="reference/dot-build_player_roster.html">.build_player_roster()</a></code> -&gt; <code><a href="reference/dot-v3_to_v2_format.html">.v3_to_v2_format()</a></code> -&gt; <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>. Produces V2-compatible columns while retaining V3-only columns (x_legacy, y_legacy, shot_distance, shot_result, is_field_goal, points_total, shot_value).</li>
 <li>
-<code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> uses <code><a href="reference/nba_gamerotation.html">nba_gamerotation()</a></code> stint data with interval mapping (not substitution-event parsing like V2).</li>
+<code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code> uses <code><a href="reference/nba_boxscoretraditionalv3.html">nba_gamerotation()</a></code> stint data with interval mapping (not substitution-event parsing like V2).</li>
 <li>V3 boxscore endpoints namespace: <code>boxscoretraditionalv3</code>, <code>boxscoreadvancedv3</code>, etc.</li>
 <li>V3-style leader/standings endpoints (dunkscoreleaders, gravityleaders, iststandings) return flat nested JSON arrays. Parse via <code>purrr::pluck("key")</code> -&gt; <code><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">dplyr::as_tibble()</a></code> -&gt; <code>dplyr::mutate(across(everything(), as.character))</code> -&gt; <code><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">janitor::clean_names()</a></code>.</li>
 <li>V3-style schedule endpoint (scheduleleaguev2int) follows the same nested structure as <code><a href="reference/nba_schedule.html">nba_schedule()</a></code>.</li>

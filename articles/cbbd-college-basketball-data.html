@@ -189,11 +189,11 @@ id.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Conferences (and historical membership)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_conferences.html">cbbd_conferences</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_conferences_history.html">cbbd_conferences_history</a></span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_conferences.html">cbbd_conferences_history</a></span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Teams for a season, and a single team's roster</span></span>
 <span><span class="fu"><a href="../reference/cbbd_teams.html">cbbd_teams</a></span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_teams_roster.html">cbbd_teams_roster</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_teams.html">cbbd_teams_roster</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Venues</span></span>
 <span><span class="fu"><a href="../reference/cbbd_venues.html">cbbd_venues</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -201,21 +201,21 @@ id.</p>
 <div class="section level2">
 <h2 id="games-and-box-scores">Games and box scores<a class="anchor" aria-label="anchor" href="#games-and-box-scores"></a>
 </h2>
-<p><code><a href="../reference/cbbd_games.html">cbbd_games()</a></code> returns the schedule/results; the
+<p><code><a href="../reference/cbbd_games_media.html">cbbd_games()</a></code> returns the schedule/results; the
 <code>*_teams</code> and <code>*_players</code> variants return team-
-and player-level box scores. <code><a href="../reference/cbbd_scoreboard.html">cbbd_scoreboard()</a></code> returns live
+and player-level box scores. <code><a href="../reference/cbbd_games_media.html">cbbd_scoreboard()</a></code> returns live
 and same-day games (so it is empty in the off-season).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">games</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cbbd_games.html">cbbd_games</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">games</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="va">games</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games_media</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>    <span class="co"># broadcast info</span></span>
 <span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games_teams</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>    <span class="co"># team box scores</span></span>
 <span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_games_players</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span>  <span class="co"># player box scores</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/cbbd_scoreboard.html">cbbd_scoreboard</a></span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/cbbd_games_media.html">cbbd_scoreboard</a></span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span></span></code></pre></div>
 <p>Most by-id endpoints take a CollegeBasketballData
-<code>game_id</code> from <code><a href="../reference/cbbd_games.html">cbbd_games()</a></code>:</p>
+<code>game_id</code> from <code><a href="../reference/cbbd_games_media.html">cbbd_games()</a></code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">game_id</span> <span class="op">&lt;-</span> <span class="va">games</span><span class="op">$</span><span class="va">id</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 </div>
@@ -226,11 +226,11 @@ and same-day games (so it is empty in the off-season).</p>
 tournament. Pass <code>shooting_plays_only = TRUE</code> to restrict to
 shot events.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_plays_game.html">cbbd_plays_game</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_plays_team.html">cbbd_plays_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_plays_player.html">cbbd_plays_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">160</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_plays_date.html">cbbd_plays_date</a></span><span class="op">(</span>date <span class="op">=</span> <span class="st">"2024-02-01T00:00:00.000Z"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_plays_tournament.html">cbbd_plays_tournament</a></span><span class="op">(</span>tournament <span class="op">=</span> <span class="st">"NCAA"</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_plays_game</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_plays_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_plays_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">160</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_plays_date</a></span><span class="op">(</span>date <span class="op">=</span> <span class="st">"2024-02-01T00:00:00.000Z"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_plays_tournament</a></span><span class="op">(</span>tournament <span class="op">=</span> <span class="st">"NCAA"</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Reference: the list of play types</span></span>
 <span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_play_types</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -240,8 +240,8 @@ shot events.</p>
 </h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_game</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_substitutions_team.html">cbbd_substitutions_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_substitutions_player.html">cbbd_substitutions_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">160</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">160</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="team-and-player-statistics">Team and player statistics<a class="anchor" aria-label="anchor" href="#team-and-player-statistics"></a>
@@ -252,7 +252,7 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 <code>field_goals_*</code>).</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_team_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_stats_team_leaderboard.html">cbbd_stats_team_leaderboard</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_team_leaderboard</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_team_shooting_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_player_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
@@ -263,7 +263,7 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 </h2>
 <p>Five-player lineup stats for a team-season or a single game.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_lineups_team.html">cbbd_lineups_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_lineups_game.html">cbbd_lineups_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_lineups_game.html">cbbd_lineups_game</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -281,22 +281,22 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 </h2>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_lines.html">cbbd_lines</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_lines_providers.html">cbbd_lines_providers</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/cbbd_lines.html">cbbd_lines_providers</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="recruiting-and-the-transfer-portal">Recruiting and the transfer portal<a class="anchor" aria-label="anchor" href="#recruiting-and-the-transfer-portal"></a>
 </h2>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_players</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_recruiting_teams.html">cbbd_recruiting_teams</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_recruiting_portal.html">cbbd_recruiting_portal</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_teams</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_portal</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="nba-draft">NBA draft<a class="anchor" aria-label="anchor" href="#nba-draft"></a>
 </h2>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_draft_teams.html">cbbd_draft_teams</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/cbbd_draft_positions.html">cbbd_draft_positions</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_draft_picks.html">cbbd_draft_teams</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_draft_picks.html">cbbd_draft_positions</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_draft_picks.html">cbbd_draft_picks</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -305,8 +305,8 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 <ul>
 <li>Browse the full function reference under the
 <strong>CollegeBasketballData (CBD)</strong> section of the <a href="../reference/index.html">reference index</a>.</li>
-<li>Each wrapper’s help page (<code><a href="../reference/cbbd_games.html">?cbbd_games</a></code>,
-<code><a href="../reference/cbbd_plays_game.html">?cbbd_plays_game</a></code>, …) documents its parameters and the
+<li>Each wrapper’s help page (<code><a href="../reference/cbbd_games_media.html">?cbbd_games</a></code>,
+<code><a href="../reference/cbbd_play_types.html">?cbbd_plays_game</a></code>, …) documents its parameters and the
 columns it returns.</li>
 <li>Inspect your remaining API usage and rate limits in the response
 headers from the <a href="https://collegebasketballdata.com" class="external-link">CollegeBasketballData

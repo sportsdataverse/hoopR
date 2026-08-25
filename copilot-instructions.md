@@ -115,10 +115,10 @@ documentation references).
 
 | Data Source | Prefix | Example |
 |----|----|----|
-| NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
-| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
+| NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
+| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
 | KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
-| CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
+| CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
 | Basketball-Reference | `bref_` | [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md), [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md) |
 | Bart Torvik | `torvik_` | [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md), [`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md) |
 | RealGM | `realgm_` | [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md), [`realgm_standings()`](https://hoopR.sportsdataverse.org/reference/realgm_standings.md) |
@@ -323,9 +323,9 @@ regions by hand.
 - V3 PBP substitutions: `personId` = outgoing player, incoming parsed
   from “SUB: IncomingPlayer FOR OutgoingPlayer” in description.
 - V3-to-V2 conversion pipeline
-  ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
   V3 path):
-  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
   -\>
   [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
   -\>
@@ -337,7 +337,7 @@ regions by hand.
   points_total, shot_value).
 - [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
   uses
-  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   stint data with interval mapping (not substitution-event parsing like
   V2).
 - V3 boxscore endpoints namespace: `boxscoretraditionalv3`,

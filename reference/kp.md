@@ -31,7 +31,7 @@ for the auth flow.
 |----|----|
 | Function | Purpose |
 | [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) | Box-score detail |
-| [`kp_fanmatch()`](https://hoopR.sportsdataverse.org/reference/kp_fanmatch.md) | FanMatch daily slate |
+| [`kp_fanmatch()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md) | FanMatch daily slate |
 | [`kp_gameplan()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md) | Game-plan page |
 | [`kp_team_lineups()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md) | Team lineup stats |
 | [`kp_team_depth_chart()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md) | Team depth chart |
@@ -51,27 +51,27 @@ for the auth flow.
 | [`kp_fourfactors()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md) | Four-factor rankings |
 | [`kp_pointdist()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md) | Points distribution |
 | [`kp_teamstats()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md) | Team stats |
-| [`kp_hca()`](https://hoopR.sportsdataverse.org/reference/kp_hca.md) | Home-court advantage |
+| [`kp_hca()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md) | Home-court advantage |
 
 ### **Player + coach + officials**
 
 |  |  |
 |----|----|
 | Function | Purpose |
-| [`kp_player_career()`](https://hoopR.sportsdataverse.org/reference/kp_player_career.md) | Player career page |
-| [`kp_playerstats()`](https://hoopR.sportsdataverse.org/reference/kp_playerstats.md) | Player stats |
-| [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_kpoy.md) | KenPom player of the year |
+| [`kp_player_career()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md) | Player career page |
+| [`kp_playerstats()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md) | Player stats |
+| [`kp_kpoy()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md) | KenPom player of the year |
 | [`kp_height()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md) | Team height/experience |
 | [`kp_coach_history()`](https://hoopR.sportsdataverse.org/reference/kp_coach_history.md) | Coach history |
-| [`kp_referee()`](https://hoopR.sportsdataverse.org/reference/kp_referee.md) | Referee splits |
-| [`kp_officials()`](https://hoopR.sportsdataverse.org/reference/kp_officials.md) | Game officials |
+| [`kp_referee()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md) | Referee splits |
+| [`kp_officials()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md) | Game officials |
 
 ### **Trends and miscellany**
 
-[`kp_trends()`](https://hoopR.sportsdataverse.org/reference/kp_trends.md),
-[`kp_winprob()`](https://hoopR.sportsdataverse.org/reference/kp_winprob.md),
+[`kp_trends()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md),
+[`kp_winprob()`](https://hoopR.sportsdataverse.org/reference/kp_box.md),
 [`kp_minutes_matrix()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
 [`kp_foul_trouble()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md),
 [`kp_opptracker()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
-[`kp_game_attrs()`](https://hoopR.sportsdataverse.org/reference/kp_game_attrs.md),
+[`kp_game_attrs()`](https://hoopR.sportsdataverse.org/reference/kp_arenas.md),
 `kp_user_pw`.

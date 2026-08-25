@@ -160,8 +160,8 @@ load_mbb_shots(
 
 - seasons:
 
-  A vector of 4-digit years associated with given MBB seasons. 2004 and
-  2005 are not published. (Min: 2003)
+  A vector of 4-digit years associated with given men's college
+  basketball seasons. (Min: 2006)
 
 - ...:
 
@@ -172,11 +172,10 @@ load_mbb_shots(
 - dbConnection:
 
   A `DBIConnection` object, as returned by
-  [`DBI::dbConnect()`](https://dbi.r-dbi.org/reference/dbConnect.html).
 
 - tablename:
 
-  The name of the shots data table within the database.
+  The name of the play by play data table within the database
 
 ## Value
 

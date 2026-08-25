@@ -8,6 +8,8 @@
 
 **Get KenPom's player stats from the team page**
 
+**Get KenPom's player career stats from the player page**
+
 **Get Minutes Matrix from Expanded Player Page**
 
 **Get Team Player Stats**
@@ -27,6 +29,8 @@ kp_opptracker(team, year = 2021)
 
 kp_team_players(team, year = 2021)
 
+kp_player_career(player_id)
+
 kp_minutes_matrix(team, year = 2021)
 
 kp_team_player_stats(team, year = 2021)
@@ -45,6 +49,10 @@ kp_team_lineups(team, year = 2021)
 - year:
 
   Year of data to pull
+
+- player_id:
+
+  Player Id filter to select.
 
 ## Value
 
@@ -279,6 +287,92 @@ Returns a tibble of team player data
 | year          | numeric   | 4-digit year.                           |
 | player_id     | numeric   | Unique player identifier.               |
 
+Returns a named list of tibbles: player_stats, gamelog
+
+**player_stats**
+
+|               |           |                                         |
+|---------------|-----------|-----------------------------------------|
+| col_name      | types     | description                             |
+| year          | numeric   | 4-digit year.                           |
+| team_rk       | numeric   | Team rk.                                |
+| team          | character | Team-side label or team identifier.     |
+| number        | numeric   | Number.                                 |
+| name          | character | Display name.                           |
+| position      | character | Listed roster position (G, F, C, etc.). |
+| hgt           | character | Hgt.                                    |
+| wgt           | numeric   | Wgt.                                    |
+| yr            | character | Yr.                                     |
+| g             | numeric   | Games played.                           |
+| min_pct       | numeric   | Min percentage (0-1 decimal).           |
+| o_rtg         | numeric   | O rtg.                                  |
+| poss_pct      | numeric   | Poss percentage (0-1 decimal).          |
+| shots_pct     | numeric   | Shots percentage (0-1 decimal).         |
+| e_fg_pct      | numeric   | E field goals percentage (0-1 decimal). |
+| ts_pct        | numeric   | True shooting percentage (0-1).         |
+| or_pct        | numeric   | Or percentage (0-1 decimal).            |
+| dr_pct        | numeric   | Dr percentage (0-1 decimal).            |
+| a_rate        | numeric   | A rate.                                 |
+| to_rate       | numeric   | To rate.                                |
+| blk_pct       | numeric   | Blocks percentage (0-1 decimal).        |
+| stl_pct       | numeric   | Steals percentage (0-1 decimal).        |
+| f_cper40      | numeric   | F cper40.                               |
+| f_dper40      | numeric   | F dper40.                               |
+| ft_rate       | numeric   | Ft rate.                                |
+| ftm           | numeric   | Free throws made.                       |
+| fta           | numeric   | Free throw attempts.                    |
+| ft_pct        | numeric   | Free throw percentage (0-1).            |
+| fgm_2         | numeric   | Fgm 2.                                  |
+| fga_2         | numeric   | Fga 2.                                  |
+| fg_2_pct      | numeric   | Field goals 2 percentage (0-1 decimal). |
+| fgm_3         | numeric   | Fgm 3.                                  |
+| fga_3         | numeric   | Fga 3.                                  |
+| fg_3_pct      | numeric   | Field goals 3 percentage (0-1 decimal). |
+| group_rank    | character | League/season rank for group.           |
+| team_finish   | character | Team finish.                            |
+| ncaa_seed     | numeric   | Ncaa seed.                              |
+| hometown      | character | Player hometown.                        |
+| date_of_birth | character | Date of birth (YYYY-MM-DD).             |
+| age           | character | Player age (in years).                  |
+| comparisons   | character | Comparisons.                            |
+
+**gamelog**
+
+|                |           |                                         |
+|----------------|-----------|-----------------------------------------|
+| col_name       | types     | description                             |
+| year           | numeric   | 4-digit year.                           |
+| team           | character | Team-side label or team identifier.     |
+| name           | character | Display name.                           |
+| position       | character | Listed roster position (G, F, C, etc.). |
+| opponent_tier  | logical   | Opponent tier.                          |
+| date           | character | Date in YYYY-MM-DD format.              |
+| opponent_rk    | numeric   | Opponent rk.                            |
+| opponent       | character | Opponent.                               |
+| result         | character | Result.                                 |
+| ot             | character | Ot.                                     |
+| location       | character | Location.                               |
+| game_type      | character | Game type.                              |
+| mvp            | character | Mvp.                                    |
+| start          | character | Start.                                  |
+| minutes_played | numeric   | Minutes played.                         |
+| o_rtg          | numeric   | O rtg.                                  |
+| poss_pct       | numeric   | Poss percentage (0-1 decimal).          |
+| pts            | numeric   | Points scored.                          |
+| fgm_2          | numeric   | Fgm 2.                                  |
+| fga_2          | numeric   | Fga 2.                                  |
+| fgm_3          | numeric   | Fgm 3.                                  |
+| fga_3          | numeric   | Fga 3.                                  |
+| ftm            | numeric   | Free throws made.                       |
+| fta            | numeric   | Free throw attempts.                    |
+| or             | numeric   | Or.                                     |
+| dr             | numeric   | Dr.                                     |
+| a              | numeric   | A.                                      |
+| to             | numeric   | To.                                     |
+| blk            | numeric   | Blocks.                                 |
+| stl            | numeric   | Steals.                                 |
+| pf             | numeric   | Personal fouls.                         |
+
 Returns a tibble of minutes matrix data
 
 Returns a list of named data frames: all_games, conference_games
@@ -409,46 +503,49 @@ A data frame with the following columns:
 | c_wgt                | numeric   | C wgt.                              |
 | c_yr                 | character | C yr.                               |
 
-## See also
-
-Other KenPom Team Functions:
-[`kp_player_career()`](https://hoopR.sportsdataverse.org/reference/kp_player_career.md)
-
 ## Examples
 
 ``` r
 # \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
-#> ✖ 2026-08-25 01:42:49.111777: 2026-08-25 - No team schedule tables available for Florida St. - 2022
+#> ✖ 2026-08-25 02:48:46.245586: 2026-08-25 - No team schedule tables available for Florida St. - 2022
 #> ✖ Args: team = "Florida St.", year = 2022
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
-#> ✖ 2026-08-25 01:42:49.158512: 2026-08-25 - No Game Plan Points distribution tables available for Florida St. - 2021
+#> ✖ 2026-08-25 02:48:46.287673: 2026-08-25 - No Game Plan Points distribution tables available for Florida St. - 2021
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 01:42:49.203758: 2026-08-25 01:42:49.203444 - Florida St. - 2021 Team opponent tracker data is missing
+#> ✖ 2026-08-25 02:48:46.329752: 2026-08-25 02:48:46.329449 - Florida St. - 2021 Team opponent tracker data is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
-#> ✖ 2026-08-25 01:42:49.246805: 2026-08-25 01:42:49.246503 - No Player Data available for Florida St. in 2024
+#> ✖ 2026-08-25 02:48:46.384683: 2026-08-25 02:48:46.38438 - No Player Data available for Florida St. in 2024
 #> ✖ Args: team = "Florida St.", year = 2024
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
   # }
 
   # \donttest{
+    try(kp_player_career(player_id = '41180'))
+#> ✖ 2026-08-25 02:48:46.429276: 2026-08-25 02:48:46.429028 - No Player Career Data available for 41180
+#> ✖ Args: player_id = "41180"
+#> ✖ Error: HTTP 429 Too Many Requests.
+#> NULL
+  # }
+
+  # \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 01:42:49.291184: 2026-08-25 01:42:49.290887 - Florida St. - 2021 minutes matrix is missing
+#> ✖ 2026-08-25 02:48:46.470899: 2026-08-25 02:48:46.470618 - Florida St. - 2021 minutes matrix is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -457,14 +554,14 @@ Other KenPom Team Functions:
 
   # \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 01:42:49.334384: 2026-08-25 01:42:49.33408 - Florida St. - 2021 team player stats are missing
+#> ✖ 2026-08-25 02:48:46.512383: 2026-08-25 02:48:46.512112 - Florida St. - 2021 team player stats are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
   # }
   # \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
-#> ✖ 2026-08-25 01:42:49.382603: 2026-08-25 01:42:49.382292 - Florida St. - 2021 Team Depth Chart is missing
+#> ✖ 2026-08-25 02:48:46.5627: 2026-08-25 02:48:46.562373 - Florida St. - 2021 Team Depth Chart is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -473,7 +570,7 @@ Other KenPom Team Functions:
 
   # \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 01:42:49.437994: 2026-08-25 01:42:49.437658 - Florida St. - 2021 Team Lineups are missing
+#> ✖ 2026-08-25 02:48:46.604795: 2026-08-25 02:48:46.604504 - Florida St. - 2021 Team Lineups are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

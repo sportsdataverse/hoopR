@@ -51,9 +51,9 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 
 - seasons:
 
-  A vector of 4-digit years associated with given MBB seasons. (Min:
+  A vector of 4-digit years associated with given NBA seasons. (Min:
   2002; default:
-  [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md))
+  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md))
 
 ## Value
 

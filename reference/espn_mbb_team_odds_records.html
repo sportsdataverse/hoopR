@@ -4,7 +4,19 @@ season. Each row is one (category × stat) — typical categories include
 Money Line Overall, Money Line Home, Money Line Road, Against The
 Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
 sparse; many (team × season-type) combinations return 404, in which
+case the wrapper returns an empty tibble.
+Returns the long-format odds-records breakdown for a team in one
+season. Each row is one (category × stat) — typical categories include
+Money Line Overall, Money Line Home, Money Line Road, Against The
+Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
+sparse; many (team × season-type) combinations return 404, in which
 case the wrapper returns an empty tibble."><meta property="og:description" content="Returns the long-format odds-records breakdown for a team in one
+season. Each row is one (category × stat) — typical categories include
+Money Line Overall, Money Line Home, Money Line Road, Against The
+Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
+sparse; many (team × season-type) combinations return 404, in which
+case the wrapper returns an empty tibble.
+Returns the long-format odds-records breakdown for a team in one
 season. Each row is one (category × stat) — typical categories include
 Money Line Overall, Money Line Home, Money Line Road, Against The
 Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
@@ -100,12 +112,18 @@ case the wrapper returns an empty tibble."><meta property="og:image" content="ht
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1><strong>Get ESPN MBB Team Odds-Records (Long Format)</strong></h1>
-      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/main/R/espn_mbb_team_deep.R" class="external-link"><code>R/espn_mbb_team_deep.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/sportsdataverse/hoopR/blob/main/R/espn_mbb_team_deep.R" class="external-link"><code>R/espn_mbb_team_deep.R</code></a>, <a href="https://github.com/sportsdataverse/hoopR/blob/main/R/espn_nba_team_deep.R" class="external-link"><code>R/espn_nba_team_deep.R</code></a></small>
       <div class="d-none name"><code>espn_mbb_team_odds_records.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
     <p>Returns the long-format odds-records breakdown for a team in one
+season. Each row is one (category × stat) — typical categories include
+Money Line Overall, Money Line Home, Money Line Road, Against The
+Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
+sparse; many (team × season-type) combinations return 404, in which
+case the wrapper returns an empty tibble.</p>
+<p>Returns the long-format odds-records breakdown for a team in one
 season. Each row is one (category × stat) — typical categories include
 Money Line Overall, Money Line Home, Money Line Road, Against The
 Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
@@ -118,6 +136,13 @@ case the wrapper returns an empty tibble.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">espn_mbb_team_odds_records</span><span class="op">(</span></span>
 <span>  <span class="va">team_id</span>,</span>
 <span>  season <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  season_type <span class="op">=</span> <span class="fl">0L</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">espn_nba_team_odds_records</span><span class="op">(</span></span>
+<span>  <span class="va">team_id</span>,</span>
+<span>  season <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  season_type <span class="op">=</span> <span class="fl">0L</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -147,6 +172,8 @@ under <code>season_type = 0</code> (all-types aggregate), so that is the default
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A long tibble with one row per (category × stat).</p>
+<p>Columns as documented in the shared <a href="espn_mbb_team_odds_records_schema.html">espn_mbb_team_odds_records_schema</a> table.</p>
+<p>A long tibble with one row per (category × stat).</p>
 <p>Columns as documented in the shared <a href="espn_mbb_team_odds_records_schema.html">espn_mbb_team_odds_records_schema</a> table.</p>
     </div>
     <div class="section level2">
@@ -219,7 +246,80 @@ under <code>season_type = 0</code> (all-types aggregate), so that is the default
 <code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
 <code><a href="espn_mbb_week_ranking.html">espn_mbb_week_ranking()</a></code>,
 <code><a href="espn_mbb_week_rankings.html">espn_mbb_week_rankings()</a></code>,
-<code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p></div>
+<code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code></p>
+<p>Other ESPN NBA Functions:
+<code><a href="espn_mbb_athletes_index.html">espn_mbb_athletes_index()</a></code>,
+<code><a href="espn_mbb_award.html">espn_mbb_award()</a></code>,
+<code><a href="espn_mbb_calendar.html">espn_mbb_calendar()</a></code>,
+<code><a href="espn_mbb_coach.html">espn_mbb_coach()</a></code>,
+<code><a href="espn_mbb_coach_record.html">espn_mbb_coach_record()</a></code>,
+<code><a href="espn_mbb_coach_season.html">espn_mbb_coach_season()</a></code>,
+<code><a href="espn_mbb_coaches.html">espn_mbb_coaches()</a></code>,
+<code><a href="espn_mbb_conferences.html">espn_mbb_conferences()</a></code>,
+<code><a href="espn_mbb_franchise.html">espn_mbb_franchise()</a></code>,
+<code><a href="espn_mbb_franchises.html">espn_mbb_franchises()</a></code>,
+<code><a href="espn_mbb_futures.html">espn_mbb_futures()</a></code>,
+<code><a href="espn_mbb_game_all.html">espn_mbb_game_all()</a></code>,
+<code><a href="espn_mbb_game_odds.html">espn_mbb_game_odds()</a></code>,
+<code><a href="espn_mbb_game_official_detail.html">espn_mbb_game_official_detail()</a></code>,
+<code><a href="espn_mbb_game_play.html">espn_mbb_game_play()</a></code>,
+<code><a href="espn_mbb_game_play_personnel.html">espn_mbb_game_play_personnel()</a></code>,
+<code><a href="espn_mbb_game_player_box.html">espn_mbb_game_player_box()</a></code>,
+<code><a href="espn_mbb_game_probabilities.html">espn_mbb_game_probabilities()</a></code>,
+<code><a href="espn_mbb_game_propbets.html">espn_mbb_game_propbets()</a></code>,
+<code><a href="espn_mbb_game_team_linescores.html">espn_mbb_game_team_linescores()</a></code>,
+<code><a href="espn_mbb_game_team_roster_entry.html">espn_mbb_game_team_roster_entry()</a></code>,
+<code><a href="espn_mbb_injuries.html">espn_mbb_injuries()</a></code>,
+<code><a href="espn_mbb_leaders.html">espn_mbb_leaders()</a></code>,
+<code><a href="espn_mbb_news.html">espn_mbb_news()</a></code>,
+<code><a href="espn_mbb_player_awards.html">espn_mbb_player_awards()</a></code>,
+<code><a href="espn_mbb_player_career_stats.html">espn_mbb_player_career_stats()</a></code>,
+<code><a href="espn_mbb_player_eventlog_v2.html">espn_mbb_player_eventlog_v2()</a></code>,
+<code><a href="espn_mbb_player_info.html">espn_mbb_player_info()</a></code>,
+<code><a href="espn_mbb_player_overview.html">espn_mbb_player_overview()</a></code>,
+<code><a href="espn_mbb_player_seasons.html">espn_mbb_player_seasons()</a></code>,
+<code><a href="espn_mbb_player_stats.html">espn_mbb_player_stats()</a></code>,
+<code><a href="espn_mbb_position.html">espn_mbb_position()</a></code>,
+<code><a href="espn_mbb_positions.html">espn_mbb_positions()</a></code>,
+<code><a href="espn_mbb_powerindex.html">espn_mbb_powerindex()</a></code>,
+<code><a href="espn_mbb_scoreboard.html">espn_mbb_scoreboard()</a></code>,
+<code><a href="espn_mbb_season_awards.html">espn_mbb_season_awards()</a></code>,
+<code><a href="espn_mbb_season_group.html">espn_mbb_season_group()</a></code>,
+<code><a href="espn_mbb_season_groups.html">espn_mbb_season_groups()</a></code>,
+<code><a href="espn_mbb_season_info.html">espn_mbb_season_info()</a></code>,
+<code><a href="espn_mbb_season_leaders.html">espn_mbb_season_leaders()</a></code>,
+<code><a href="espn_mbb_season_ranking.html">espn_mbb_season_ranking()</a></code>,
+<code><a href="espn_mbb_season_rankings.html">espn_mbb_season_rankings()</a></code>,
+<code><a href="espn_mbb_season_type.html">espn_mbb_season_type()</a></code>,
+<code><a href="espn_mbb_season_types.html">espn_mbb_season_types()</a></code>,
+<code><a href="espn_mbb_season_week.html">espn_mbb_season_week()</a></code>,
+<code><a href="espn_mbb_season_weeks.html">espn_mbb_season_weeks()</a></code>,
+<code><a href="espn_mbb_seasons.html">espn_mbb_seasons()</a></code>,
+<code><a href="espn_mbb_standings.html">espn_mbb_standings()</a></code>,
+<code><a href="espn_mbb_team.html">espn_mbb_team()</a></code>,
+<code><a href="espn_mbb_team_current_roster.html">espn_mbb_team_current_roster()</a></code>,
+<code><a href="espn_mbb_team_injuries.html">espn_mbb_team_injuries()</a></code>,
+<code><a href="espn_mbb_team_news.html">espn_mbb_team_news()</a></code>,
+<code><a href="espn_mbb_team_record.html">espn_mbb_team_record()</a></code>,
+<code><a href="espn_mbb_team_record_detail.html">espn_mbb_team_record_detail()</a></code>,
+<code><a href="espn_mbb_team_schedule.html">espn_mbb_team_schedule()</a></code>,
+<code><a href="espn_mbb_team_season_roster.html">espn_mbb_team_season_roster()</a></code>,
+<code><a href="espn_mbb_team_season_statistics.html">espn_mbb_team_season_statistics()</a></code>,
+<code><a href="espn_mbb_team_stats.html">espn_mbb_team_stats()</a></code>,
+<code><a href="espn_mbb_teams.html">espn_mbb_teams()</a></code>,
+<code><a href="espn_mbb_tournament.html">espn_mbb_tournament()</a></code>,
+<code><a href="espn_mbb_tournament_season.html">espn_mbb_tournament_season()</a></code>,
+<code><a href="espn_mbb_tournament_seasons.html">espn_mbb_tournament_seasons()</a></code>,
+<code><a href="espn_mbb_tournaments.html">espn_mbb_tournaments()</a></code>,
+<code><a href="espn_mbb_venues.html">espn_mbb_venues()</a></code>,
+<code><a href="espn_mbb_week_ranking.html">espn_mbb_week_ranking()</a></code>,
+<code><a href="espn_mbb_week_rankings.html">espn_mbb_week_rankings()</a></code>,
+<code><a href="espn_mbb_wp.html">espn_mbb_wp()</a></code>,
+<code><a href="espn_nba_draft.html">espn_nba_draft_pick()</a></code>,
+<code><a href="espn_nba_freeagents.html">espn_nba_freeagents()</a></code>,
+<code><a href="espn_nba_player_contracts.html">espn_nba_player_contracts()</a></code>,
+<code><a href="espn_nba_team_depthchart.html">espn_nba_team_depthchart()</a></code>,
+<code><a href="espn_nba_transactions.html">espn_nba_transactions()</a></code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -230,12 +330,34 @@ under <code>season_type = 0</code> (all-types aggregate), so that is the default
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_team_odds_records</span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:41:27.596547: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:47:54.862248: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", team_id = 150, season = 2026, season_type = 0L</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Team Odds-Records ─────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 01:41:27 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:54 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu">espn_nba_team_odds_records</span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">13</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Odds-Records ─────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-25 02:47:54 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 60 × 13</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    league team_id season season_type category_type    category_abbrev</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineOverall ML             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineOverall ML             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineOverall ML             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineOverall ML             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineOverall ML             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineOverall ML             </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineHome    ML HOME        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineHome    ML HOME        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineHome    ML HOME        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nba    13        <span style="text-decoration: underline;">2</span>026           0 moneyLineHome    ML HOME        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 50 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: category_short &lt;chr&gt;, category_display &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   stat_type &lt;chr&gt;, stat_abbrev &lt;chr&gt;, stat_display &lt;chr&gt;, value &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   display_value &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

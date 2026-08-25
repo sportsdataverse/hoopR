@@ -104,7 +104,7 @@ season is a stamp; historical relocations are not back-modeled live."><meta prop
 
     <div class="ref-description section level2">
     <p>Build a wide, one-row-per-team crosswalk linking ESPN, NBA Stats, and Fox team
-identities, keyed on <code>espn_team_id</code>. <code><a href="nba_teams.html">nba_teams()</a></code> already supplies the
+identities, keyed on <code>espn_team_id</code>. <code><a href="nba_teamplayeronoffdetails.html">nba_teams()</a></code> already supplies the
 ESPN&lt;-&gt;Stats linkage; this reshapes it and attaches Fox. Yahoo columns are NA
 placeholders. NOTE: ESPN/Stats team endpoints are current-season snapshots, so
 <code>season</code> is a stamp; historical relocations are not back-modeled live.</p>
@@ -141,13 +141,13 @@ column groups + <code>match_method</code> / <code>match_confidence</code>).</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nba_team_crosswalk</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:56:22.178208: Invalid arguments or no league standings v3 data available for 2025-26!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:02:34.803401: Invalid arguments or no league standings v3 data available for 2025-26!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:57:22.251355: Invalid arguments or no league game log data for 2025-26 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:03:34.843432: Invalid arguments or no league game log data for 2025-26 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:57:22.263308: Invalid arguments or no team details data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:03:34.855638: Invalid arguments or no team details data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: argument is of length zero</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error in !nrow(nt) : invalid argument type</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

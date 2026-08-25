@@ -39,10 +39,10 @@ Almost every function answers three questions in order:
 So if you want “a team’s roster for a given season, from ESPN,” you can
 assemble the name in your head before you ever open the docs: `espn_` +
 `nba_` + `team` + `_roster` -\>
-[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md).
+[`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md).
 If you want “the league leaders from NBA.com,” it’s `nba_` +
 `leagueleaders` -\>
-[`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md).
+[`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md).
 The package has hundreds of functions; you do not need to memorize them.
 You need to memorize the grammar.
 
@@ -162,9 +162,9 @@ pbp_v3 <- nba_playbyplayv3(game_id = sched$game_id[1])
 ```
 
 This is the grammar doing real work.
-[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
 and
-[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
 answer almost the same question – give me the plays – and you can tell
 at a glance that the first is ESPN’s take and the second is NBA.com’s,
 *because the prefix is the data source*. When two functions look like
@@ -172,9 +172,9 @@ near-synonyms, check the prefix; that’s the tiebreaker. (A small caveat
 the grammar can’t tell you: the NBA Stats API churns faster than ESPN’s.
 If a `nba_*` function ever tells you it is deprecated, it will name its
 replacement in the same breath – here, the older
-[`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_winprobabilitypbp.md)
+[`nba_winprobabilitypbp()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
 now points you at
-[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md).
+[`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md).
 Read the message; it is doing you a favor.)
 
 ## Recipe 4: How did each player do in one game, one at a time?
@@ -470,7 +470,7 @@ wanting something *between* two of these, the name you want is usually
 season of play-by-play to model on.
 
 Calling
-[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
 in a loop over a thousand `game_id`s would work, and it would also be
 slow and rude to ESPN’s servers. The `load_` prefix exists precisely for
 this: pre-built, pre-cleaned season files.
@@ -490,7 +490,7 @@ The grammar lesson: the `load_` prefix changes the *performance
 contract*, not the subject.
 [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
 and
-[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md)
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
 both hand you play-by-play; the first hands you a whole season fast, the
 second hands you one game live. Reach for `load_` when you’re doing
 research across many games, and for `espn_` when you want one specific,

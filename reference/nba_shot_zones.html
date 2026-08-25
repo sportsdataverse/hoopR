@@ -123,7 +123,8 @@ game identifier (e.g. <code>"0022200001"</code> for the first game of the
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>Returns a <code>data.frame</code> containing the full V3 play-by-play for
-<code>game_id</code> with an appended <code>shot_zone</code> column:</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>event_type</td><td>character</td><td>Play event type code. <code>"1"</code> = MadeShot, <code>"2"</code> = MissedShot, <code>"3"</code> = FreeThrow, etc.</td></tr><tr><td>shot_value</td><td>integer</td><td>Point value of the shot attempt (2 or 3); 0 for non-FGA events.</td></tr><tr><td>x_legacy</td><td>numeric</td><td>Horizontal court coordinate (legacy units). Negative = left side of the court.</td></tr><tr><td>y_legacy</td><td>numeric</td><td>Vertical court coordinate (legacy units). Values near 0 = baseline.</td></tr><tr><td>shot_distance</td><td>numeric</td><td>Distance from the basket in feet.</td></tr><tr><td>shot_zone</td><td>character</td><td>Shot-zone classification. One of <code>"corner_3"</code>, <code>"above_the_break_3"</code>, <code>"restricted_area"</code>, <code>"in_the_paint_non_ra"</code>, <code>"mid_range"</code>. <code>NA</code> on non-field-goal rows.</td></tr></table><p>All other columns from the V3 PBP schema (<code><a href="nba_pbp.html">nba_pbp()</a></code>) are also
+<code>game_id</code> with an appended <code>shot_zone</code> column:</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>event_type</td><td>character</td><td>Play event type code. <code>"1"</code> = MadeShot, <code>"2"</code> = MissedShot, <code>"3"</code> = FreeThrow, etc.</td></tr><tr><td>shot_value</td><td>integer</td><td>Point value of the shot attempt (2 or 3); 0 for non-FGA events.</td></tr><tr><td>x_legacy</td><td>numeric</td><td>Horizontal court coordinate (legacy units). Negative = left side of the court.</td></tr><tr><td>y_legacy</td><td>numeric</td><td>Vertical court coordinate (legacy units). Values near 0 = baseline.</td></tr><tr><td>shot_distance</td><td>numeric</td><td>Distance from the basket in feet.</td></tr><tr><td>shot_zone</td><td>character</td><td>Shot-zone classification. One of <code>"corner_3"</code>, <code>"above_the_break_3"</code>, <code>"restricted_area"</code>, <code>"in_the_paint_non_ra"</code>, <code>"mid_range"</code>. <code>NA</code> on non-field-goal rows.</td></tr></table><p>All other columns from the V3 PBP schema (<code><a href="nba_live_boxscore.html">nba_pbp()</a></code>) are also
 present.  Returns a 0-row frame when the game cannot be fetched (never-raise).</p>
 <p><strong>Shot zone definitions (pbpstats-core aligned):</strong></p><ul><li><p><code>"corner_3"</code> — three-point attempt with
 <code>abs(x_legacy) &gt;= 220</code> and <code>y_legacy &lt;= 87.5</code>
@@ -143,13 +144,12 @@ the basket and within 80 legacy units of the paint center
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other NBA Lineup Functions:
-<code><a href="nba_gamerotation.html">nba_gamerotation()</a></code>,
-<code><a href="nba_leaguedashlineups.html">nba_leaguedashlineups()</a></code>,
-<code><a href="nba_leaguelineupviz.html">nba_leaguelineupviz()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>,
+<code><a href="nba_fantasywidget.html">nba_fantasywidget()</a></code>,
 <code><a href="nba_possession_lineups.html">nba_possession_lineups()</a></code>,
 <code><a href="nba_rapm.html">nba_rapm()</a></code>,
-<code><a href="nba_shotchartlineupdetail.html">nba_shotchartlineupdetail()</a></code>,
-<code><a href="nba_teamdashlineups.html">nba_teamdashlineups()</a></code></p></div>
+<code><a href="nba_shotchartdetail.html">nba_shotchartdetail()</a></code>,
+<code><a href="nba_teamdashboard.html">nba_teamdashboardbyclutch()</a></code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -163,13 +163,13 @@ the basket and within 80 legacy units of the paint center
 <span class="r-in"><span>    <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">nba_shot_zones</span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"0022200001"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">shot_zone</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"shot_distance"</span>, <span class="st">"shot_zone"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:54:20.455674: Invalid arguments or no V3 play-by-play data for 0022200001 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:00:33.596532: Invalid arguments or no V3 play-by-play data for 0022200001 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: game_id = "0022200001", start_period = 0, end_period = 0</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:55:20.494849: Invalid arguments or no traditional boxscore v3 data for 0022200001 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:01:33.635199: Invalid arguments or no traditional boxscore v3 data for 0022200001 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: game_id = "0022200001", start_period = 0, end_period = 14, start_range = 0, end_range = 0, range_type = 0</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 01:55:20.512025: Invalid arguments or no V3 play-by-play data for 0022200001 available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:01:33.652064: Invalid arguments or no V3 play-by-play data for 0022200001 available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: game_id = "0022200001", on_court = FALSE, version = "v3", p = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: incorrect number of dimensions</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error in if (nrow(pbp) == 0L) { : argument is of length zero</span>

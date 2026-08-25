@@ -38,7 +38,7 @@ with an appended `shot_zone` column:
 | shot_zone | character | Shot-zone classification. One of `"corner_3"`, `"above_the_break_3"`, `"restricted_area"`, `"in_the_paint_non_ra"`, `"mid_range"`. `NA` on non-field-goal rows. |
 
 All other columns from the V3 PBP schema
-([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md))
+([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md))
 are also present. Returns a 0-row frame when the game cannot be fetched
 (never-raise).
 
@@ -64,13 +64,12 @@ are also present. Returns a 0-row frame when the game cannot be fetched
 ## See also
 
 Other NBA Lineup Functions:
-[`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md),
-[`nba_leaguedashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashlineups.md),
-[`nba_leaguelineupviz()`](https://hoopR.sportsdataverse.org/reference/nba_leaguelineupviz.md),
+[`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+[`nba_fantasywidget()`](https://hoopR.sportsdataverse.org/reference/nba_fantasywidget.md),
 [`nba_possession_lineups()`](https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.md),
 [`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md),
-[`nba_shotchartlineupdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartlineupdetail.md),
-[`nba_teamdashlineups()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashlineups.md)
+[`nba_shotchartdetail()`](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail.md),
+[`nba_teamdashboardbyclutch()`](https://hoopR.sportsdataverse.org/reference/nba_teamdashboard.md)
 
 ## Author
 
@@ -84,13 +83,13 @@ Saiem Gilani
     df <- nba_shot_zones(game_id = "0022200001")
     print(df[!is.na(df$shot_zone), c("shot_distance", "shot_zone")])
   })
-#> ✖ 2026-08-25 01:54:20.455674: Invalid arguments or no V3 play-by-play data for 0022200001 available!
+#> ✖ 2026-08-25 03:00:33.596532: Invalid arguments or no V3 play-by-play data for 0022200001 available!
 #> ✖ Args: game_id = "0022200001", start_period = 0, end_period = 0
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-#> ✖ 2026-08-25 01:55:20.494849: Invalid arguments or no traditional boxscore v3 data for 0022200001 available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-08-25 03:01:33.635199: Invalid arguments or no traditional boxscore v3 data for 0022200001 available!
 #> ✖ Args: game_id = "0022200001", start_period = 0, end_period = 14, start_range = 0, end_range = 0, range_type = 0
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-#> ✖ 2026-08-25 01:55:20.512025: Invalid arguments or no V3 play-by-play data for 0022200001 available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-08-25 03:01:33.652064: Invalid arguments or no V3 play-by-play data for 0022200001 available!
 #> ✖ Args: game_id = "0022200001", on_court = FALSE, version = "v3", p = NULL
 #> ✖ Error: incorrect number of dimensions
 #> Error in if (nrow(pbp) == 0L) { : argument is of length zero

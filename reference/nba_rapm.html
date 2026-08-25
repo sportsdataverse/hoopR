@@ -124,7 +124,8 @@ on that possession).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Returns a <code>data.frame</code> with one row per player:</p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>player_id</td><td>integer</td><td>NBA Stats person ID. Rows are sorted ascending by player_id.</td></tr><tr><td>o_rapm</td><td>numeric</td><td>Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player.</td></tr><tr><td>d_rapm</td><td>numeric</td><td>Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive).</td></tr><tr><td>rapm</td><td>numeric</td><td>Total RAPM = o_rapm + d_rapm. Positive = net positive impact.</td></tr><tr><td>off_poss</td><td>integer</td><td>Number of possessions the player appeared on offense.</td></tr><tr><td>def_poss</td><td>integer</td><td>Number of possessions the player appeared on defense.</td></tr></table><p>Returns a 0-row frame with the same schema when input is empty or all
+    <p>Returns a <code>data.frame</code> with one row per player:</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>player_id</td><td>integer</td><td>NBA Stats person ID. Rows are sorted ascending by player_id.</td></tr><tr><td>o_rapm</td><td>numeric</td><td>Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player.</td></tr><tr><td>d_rapm</td><td>numeric</td><td>Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive).</td></tr><tr><td>rapm</td><td>numeric</td><td>Total RAPM = o_rapm + d_rapm. Positive = net positive impact.</td></tr><tr><td>off_poss</td><td>integer</td><td>Number of possessions the player appeared on offense.</td></tr><tr><td>def_poss</td><td>integer</td><td>Number of possessions the player appeared on defense.</td></tr></table><p>Returns a 0-row frame with the same schema when input is empty or all
 possessions have NA lineup cells (never-raise).</p>
 <p><strong>Note:</strong> RAPM is expressed in per-100-possession units. A <strong>full season</strong>
 of possessions (~5,000–8,000) is needed for statistically meaningful
@@ -142,13 +143,12 @@ possessions return identical output with no need to set a seed.</p>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other NBA Lineup Functions:
-<code><a href="nba_gamerotation.html">nba_gamerotation()</a></code>,
-<code><a href="nba_leaguedashlineups.html">nba_leaguedashlineups()</a></code>,
-<code><a href="nba_leaguelineupviz.html">nba_leaguelineupviz()</a></code>,
+<code><a href="nba_boxscoretraditionalv3.html">nba_boxscoretraditionalv3()</a></code>,
+<code><a href="nba_fantasywidget.html">nba_fantasywidget()</a></code>,
 <code><a href="nba_possession_lineups.html">nba_possession_lineups()</a></code>,
 <code><a href="nba_shot_zones.html">nba_shot_zones()</a></code>,
-<code><a href="nba_shotchartlineupdetail.html">nba_shotchartlineupdetail()</a></code>,
-<code><a href="nba_teamdashlineups.html">nba_teamdashlineups()</a></code></p></div>
+<code><a href="nba_shotchartdetail.html">nba_shotchartdetail()</a></code>,
+<code><a href="nba_teamdashboard.html">nba_teamdashboardbyclutch()</a></code></p></div>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>

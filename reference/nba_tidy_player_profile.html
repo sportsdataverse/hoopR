@@ -104,7 +104,7 @@ this nests each populated set into a .data list-column, one row per
 
     <div class="ref-description section level2">
     <p>A player's full profile collapsed to one self-describing tibble (tactic <strong>D</strong>).
-<code><a href="nba_playerprofilev2.html">nba_playerprofilev2()</a></code> returns many heterogeneous, <code>PLAYER_ID</code>-keyed sets
+<code><a href="nba_infographicfanduelplayer.html">nba_playerprofilev2()</a></code> returns many heterogeneous, <code>PLAYER_ID</code>-keyed sets
 (season totals, career totals, season/career highs, rankings, next game);
 this nests each populated set into a <code>.data</code> list-column, one row per
 <code>(set_name, PLAYER_ID)</code>. Recover a table with <code><a href="https://tidyr.tidyverse.org/reference/unnest.html" class="external-link">tidyr::unnest()</a></code>.</p>
@@ -124,7 +124,7 @@ this nests each populated set into a <code>.data</code> list-column, one row per
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Additional arguments passed to <code><a href="nba_playerprofilev2.html">nba_playerprofilev2()</a></code>.</p></dd>
+<dd><p>Additional arguments passed to <code><a href="nba_infographicfanduelplayer.html">nba_playerprofilev2()</a></code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -143,10 +143,10 @@ list-column.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="va">prof</span> <span class="op">&lt;-</span> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nba_tidy_player_profile</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">201939</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:01:27.031596: Invalid arguments or no player profile v2 data available for 201939!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:07:37.133811: Invalid arguments or no player profile v2 data available for 201939!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league_id = "", per_mode = "Totals", player_id = 201939</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 02:01:27.044188: No NBA player profile for 201939!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-25 03:07:37.145938: No NBA player profile for 201939!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: player_id = 201939</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: No player profile data returned</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

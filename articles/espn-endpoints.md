@@ -4,7 +4,7 @@
 
 If you’ve used `hoopR` before, you’ve probably reached for
 [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
-[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md),
+[`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
 and the box score wrappers. Those get you the bulk of any analysis built
 around individual games. The package now also wraps a much wider slice
 of ESPN’s basketball API – team rosters, schedules, league news, athlete
@@ -68,50 +68,50 @@ they’re the same thing).
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | Full game summary as a named list |
-| [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | Play-by-play |
-| [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | Team box score |
-| [`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | Player box score |
-| [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md) | Game-day rosters |
+| [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Full game summary as a named list |
+| [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Play-by-play |
+| [`espn_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Team box score |
+| [`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Player box score |
+| [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Game-day rosters |
 
 ### Scoreboard, conferences, and league reference
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md) / [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_nba_scoreboard.md) | Daily scoreboard |
-| [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) / [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md) | All teams |
-| [`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md) / [`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_nba_conferences.md) | Conferences |
+| [`espn_mbb_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md) / [`espn_nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_scoreboard.md) | Daily scoreboard |
+| [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) / [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) | All teams |
+| [`espn_mbb_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md) / [`espn_nba_conferences()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences.md) | Conferences |
 | [`espn_mbb_rankings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_rankings.md) | AP / coaches poll (MBB only – NBA has no poll) |
-| [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md) / [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_nba_standings.md) | Conference / league standings |
-| [`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md) / [`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_news.md) | League-wide news feed |
-| [`espn_mbb_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md) / [`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_nba_calendar.md) | Season calendar weeks |
+| [`espn_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md) / [`espn_nba_standings()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_standings.md) | Conference / league standings |
+| [`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md) / [`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md) | League-wide news feed |
+| [`espn_mbb_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md) / [`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md) | Season calendar weeks |
 
 ### Team detail
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) | Single-team info, record, coaches |
-| [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) | Roster |
-| [`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md) / [`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_schedule.md) | Schedule |
-| [`espn_mbb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md) | Statistical leaders |
-| [`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md) / [`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_news.md) | Team news feed |
-| [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md) / [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_stats.md) | Team-level season stats |
-| [`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md) / [`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team_injuries.md) | Team injury report |
-| [`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md) / [`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_nba_injuries.md) | League-wide injury report |
+| [`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) | Single-team info, record, coaches |
+| [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) | Roster |
+| [`espn_mbb_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md) / [`espn_nba_team_schedule()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule.md) | Schedule |
+| [`espn_mbb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) / [`espn_nba_team_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md) | Statistical leaders |
+| [`espn_mbb_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md) / [`espn_nba_team_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_news.md) | Team news feed |
+| [`espn_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md) / [`espn_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_stats.md) | Team-level season stats |
+| [`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md) / [`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md) | Team injury report |
+| [`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md) / [`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md) | League-wide injury report |
 
 ### Athlete detail
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_info.md) / [`espn_nba_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_info.md) | Bio and profile |
-| [`espn_mbb_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Season overview (web-common-v3) |
-| [`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Season stats by category |
-| [`espn_mbb_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Game-by-game log |
-| [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Situational splits |
-| [`espn_mbb_player_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Event log (`$ref` links) |
-| [`espn_mbb_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards.md) / [`espn_nba_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_awards.md) | Awards history |
-| [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_overview.md) | Stats log (core-v2) |
-| [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) / [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_nba_player_stats.md) | Cross-athlete season stats |
+| [`espn_mbb_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_info.md) / [`espn_nba_player_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_info.md) | Bio and profile |
+| [`espn_mbb_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_overview()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Season overview (web-common-v3) |
+| [`espn_mbb_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_stats_v3()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Season stats by category |
+| [`espn_mbb_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Game-by-game log |
+| [`espn_mbb_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_splits()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Situational splits |
+| [`espn_mbb_player_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_eventlog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Event log (`$ref` links) |
+| [`espn_mbb_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards.md) / [`espn_nba_player_awards()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards.md) | Awards history |
+| [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Stats log (core-v2) |
+| [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) / [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) | Cross-athlete season stats |
 
 ### Per-event enrichment
 
@@ -119,21 +119,21 @@ These take an `event_id` and complement the play-by-play.
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_odds.md) | Opening / closing lines (NBA only – empty for MBB) |
-| [`espn_mbb_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_probabilities.md) / [`espn_nba_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_probabilities.md) | Win probability per play |
-| [`espn_mbb_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_odds.md) | Officials |
-| [`espn_mbb_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_odds.md) | Broadcast outlets |
+| [`espn_mbb_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_odds()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) | Opening / closing lines (NBA only – empty for MBB) |
+| [`espn_mbb_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_probabilities.md) / [`espn_nba_game_probabilities()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_probabilities.md) | Win probability per play |
+| [`espn_mbb_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) | Officials |
+| [`espn_mbb_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) | Broadcast outlets |
 
 ### League-wide catalogs
 
 | Function | Returns |
 |----|----|
-| [`espn_mbb_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md) / [`espn_nba_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_nba_leaders.md) | League statistical leaders |
-| [`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md) / [`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_nba_venues.md) | Arenas |
-| [`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md) / [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_nba_coaches.md) | Coaches |
-| [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md) / [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_nba_athletes_index.md) | Full athlete index |
-| [`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md) / [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_nba_seasons.md) | Seasons on record |
-| [`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md) / [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_nba_season_info.md) | Single-season metadata |
+| [`espn_mbb_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md) / [`espn_nba_leaders()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders.md) | League statistical leaders |
+| [`espn_mbb_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md) / [`espn_nba_venues()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues.md) | Arenas |
+| [`espn_mbb_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md) / [`espn_nba_coaches()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches.md) | Coaches |
+| [`espn_mbb_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md) / [`espn_nba_athletes_index()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_athletes_index.md) | Full athlete index |
+| [`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md) / [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md) | Seasons on record |
+| [`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md) / [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md) | Single-season metadata |
 
 ### NBA-only (draft, free agency, transactions)
 
@@ -154,7 +154,7 @@ Angeles Lakers (`team_id = 13`) for the NBA. Most ESPN team IDs and
 athlete IDs are easy to discover with
 [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)
 /
-[`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_nba_teams.md)
+[`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)
 and the various roster endpoints.
 
 ### Browsing news and the season calendar
@@ -209,7 +209,7 @@ specific portion of the year.
 
 [`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
 and
-[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_nba_team.md)
+[`espn_nba_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
 return a small named list with high-level identity, record, next event,
 and coaching info. Pair it with the roster, schedule, and team-leader
 wrappers when you want a fuller picture.

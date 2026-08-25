@@ -106,10 +106,10 @@ pkgdown::build_site()
 
 | Data Source | Prefix | Example |
 |----|----|----|
-| NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leagueleaders.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
-| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
+| NBA Stats API | `nba_` | [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md), [`nba_boxscoretraditionalv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md) |
+| ESPN API | `espn_nba_` / `espn_mbb_` | [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md), [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md) |
 | KenPom | `kp_` | [`kp_pomeroy_ratings()`](https://hoopR.sportsdataverse.org/reference/kp_pomeroy_ratings.md), [`kp_box()`](https://hoopR.sportsdataverse.org/reference/kp_box.md) |
-| CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
+| CollegeBasketballData | `cbbd_` | [`cbbd_games()`](https://hoopR.sportsdataverse.org/reference/cbbd_games_media.md), [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md) |
 | Basketball-Reference | `bref_` | [`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md), [`bref_standings()`](https://hoopR.sportsdataverse.org/reference/bref_standings.md) |
 | Bart Torvik | `torvik_` | [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md), [`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md) |
 | RealGM | `realgm_` | [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md), [`realgm_standings()`](https://hoopR.sportsdataverse.org/reference/realgm_standings.md) |
@@ -216,13 +216,13 @@ attaches `hoopR_timestamp` and `hoopR_type` attributes.
   -\> `dplyr::mutate(across(everything(), as.character))` -\>
   [`janitor::clean_names()`](https://sfirke.github.io/janitor/reference/clean_names.html)
   -\> `make_hoopR_data()`. Examples:
-  [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_dunkscoreleaders.md),
-  [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_gravityleaders.md),
+  [`nba_dunkscoreleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md),
+  [`nba_gravityleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md),
   [`nba_iststandings()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md).
 - **V3-to-V2 conversion pipeline**
-  ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_pbp.md)
+  ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
   V3 path):
-  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_playbyplayv3.md)
+  [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
   -\>
   [`.build_player_roster()`](https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.md)
   -\>
@@ -242,7 +242,7 @@ attaches `hoopR_timestamp` and `hoopR_type` attributes.
 - V3 on-court players:
   [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
   uses
-  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   stint data with interval mapping via
   [`findInterval()`](https://rdrr.io/r/base/findInterval.html) (not
   substitution-event parsing like V2).
@@ -752,7 +752,7 @@ by a shared internal engine in `R/crosswalk_basketball.R`.
   null-safe named vector lookups in event type maps.
 - [`.players_on_court_v3()`](https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.md)
   depends on
-  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_gamerotation.md)
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   returning `IN_TIME_REAL`/`OUT_TIME_REAL` in tenths of a second –
   ensure time unit consistency when modifying.
 - Local dev artifacts (for example `.vscode`, `.claude`, ad-hoc logs)
