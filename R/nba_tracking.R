@@ -9,8 +9,7 @@
 ## Column classification is therefore name-pattern driven, NOT R-type driven.
 ## ---------------------------------------------------------------------------
 
-#' @keywords internal
-#' Entity-key lookup: player_or_team string → column name
+## Entity-key lookup: player_or_team string to column name
 TRACKING_ENTITY_KEYS <- c(Player = "PLAYER_ID", Team = "TEAM_ID")
 
 ## ---------------------------------------------------------------------------
@@ -200,7 +199,7 @@ NULL
 #'   non-numeric string column such as `TEAM_CITY`) are carried via `first()`
 #'   — never summed.
 #' - **`*_FG_PCT` / `*_FT_PCT`** are recomputed from the summed FGM/FGA and
-#'   FTM/FTA denominators (denom 0 → `NA`); a `*_FG_PCT` / `*_FT_PCT` column
+#'   FTM/FTA denominators (denom 0 -> `NA`); a `*_FG_PCT` / `*_FT_PCT` column
 #'   whose makes/attempts pair is absent is dropped rather than recomputed.
 #' - **Other `*_PCT` columns** (e.g., `DRIVE_PTS_PCT` — "% of total" rates)
 #'   are **dropped** from the output because they are not additive.

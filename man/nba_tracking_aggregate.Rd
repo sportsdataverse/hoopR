@@ -56,7 +56,7 @@ ported from \code{sportsdataverse-py}'s \code{aggregate_tracking_frames}:
 non-numeric string column such as \code{TEAM_CITY}) are carried via \code{first()}
 — never summed.
 \item \strong{\verb{*_FG_PCT} / \verb{*_FT_PCT}} are recomputed from the summed FGM/FGA and
-FTM/FTA denominators (denom 0 → \code{NA}); a \verb{*_FG_PCT} / \verb{*_FT_PCT} column
+FTM/FTA denominators (denom 0 -> \code{NA}); a \verb{*_FG_PCT} / \verb{*_FT_PCT} column
 whose makes/attempts pair is absent is dropped rather than recomputed.
 \item \strong{Other \verb{*_PCT} columns} (e.g., \code{DRIVE_PTS_PCT} — "\% of total" rates)
 are \strong{dropped} from the output because they are not additive.
