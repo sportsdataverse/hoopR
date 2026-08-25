@@ -1045,11 +1045,12 @@ nba_playerdashboardbyyearoveryear <- function(
 }
 
 #' **Get NBA Stats API Player Dashboard Player Tracking - Passing**
+#' @rdname nba_playerdashboard
 #' @name nba_playerdashptpass
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Passing**
-#' @rdname nba_playerdashptpass
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1155,11 +1156,12 @@ nba_playerdashptpass  <- function(
 
 
 #' **Get NBA Stats API Player Dashboard Player Tracking - Rebounding**
+#' @rdname nba_playerdashboard
 #' @name nba_playerdashptreb
 NULL
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Rebounding**
-#' @rdname nba_playerdashptreb
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1270,7 +1272,7 @@ nba_playerdashptreb  <- function(
 
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Defense**
-#' @rdname nba_playerdashptreb
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1383,7 +1385,7 @@ nba_playerdashptshotdefend  <- function(
 
 #' @title
 #' **Get NBA Stats API Player Dashboard Player Tracking - Shots**
-#' @rdname nba_playerdashptreb
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1499,11 +1501,12 @@ nba_playerdashptshots  <- function(
 
 
 #' **Get NBA Stats API Synergy Play Type Stats**
+#' @rdname nba_playerdashboard
 #' @name nba_synergyplaytypes
 NULL
 #' @title
 #' **Get NBA Stats API Synergy Play Type Stats**
-#' @rdname nba_synergyplaytypes
+#' @rdname nba_playerdashboard
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param per_mode per_mode

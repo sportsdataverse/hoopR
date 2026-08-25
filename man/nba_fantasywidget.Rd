@@ -2,6 +2,11 @@
 % Please edit documentation in R/nba_stats_lineups.R
 \name{nba_fantasywidget}
 \alias{nba_fantasywidget}
+\alias{nba_leaguedashlineups}
+\alias{nba_leaguelineupviz}
+\alias{nba_leagueplayerondetails}
+\alias{nba_leagueseasonmatchups}
+\alias{nba_matchupsrollup}
 \title{\strong{Get NBA Stats API Fantasy Widget}}
 \usage{
 nba_fantasywidget(
@@ -24,6 +29,116 @@ nba_fantasywidget(
   todays_players = "N",
   vs_conference = "",
   vs_division = "",
+  ...
+)
+
+nba_leaguedashlineups(
+  conference = "",
+  date_from = "",
+  date_to = "",
+  division = "",
+  game_segment = "",
+  group_quantity = 5,
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  measure_type = "Base",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  po_round = "",
+  pace_adjust = "N",
+  per_mode = "Totals",
+  period = 0,
+  plus_minus = "N",
+  rank = "N",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  shot_clock_range = "",
+  team_id = "",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_leaguelineupviz(
+  conference = "",
+  date_from = "",
+  date_to = "",
+  division = "",
+  game_segment = "",
+  group_quantity = 5,
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  measure_type = "Base",
+  minutes_min = 10,
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  po_round = "",
+  pace_adjust = "N",
+  per_mode = "Totals",
+  period = 0,
+  plus_minus = "N",
+  rank = "N",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  shot_clock_range = "",
+  team_id = "",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_leagueplayerondetails(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  measure_type = "Base",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  pace_adjust = "N",
+  per_mode = "Totals",
+  period = 0,
+  plus_minus = "N",
+  rank = "N",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "1610612749",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_leagueseasonmatchups(
+  def_player_id = "",
+  def_team_id = "",
+  league_id = "00",
+  off_player_id = "",
+  off_team_id = "",
+  per_mode = "Totals",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  ...
+)
+
+nba_matchupsrollup(
+  def_player_id = "",
+  def_team_id = "",
+  league_id = "00",
+  off_player_id = "",
+  off_team_id = "",
+  per_mode = "Totals",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
   ...
 )
 }
@@ -67,6 +182,40 @@ nba_fantasywidget(
 \item{vs_division}{vs_division}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{conference}{conference}
+
+\item{division}{division}
+
+\item{game_segment}{game_segment}
+
+\item{group_quantity}{group_quantity}
+
+\item{measure_type}{measure_type}
+
+\item{outcome}{outcome}
+
+\item{pace_adjust}{pace_adjust}
+
+\item{per_mode}{per_mode}
+
+\item{period}{period}
+
+\item{plus_minus}{plus_minus}
+
+\item{rank}{rank}
+
+\item{shot_clock_range}{shot_clock_range}
+
+\item{minutes_min}{minutes_min}
+
+\item{def_player_id}{def_player_id}
+
+\item{def_team_id}{def_team_id}
+
+\item{off_player_id}{off_player_id}
+
+\item{off_team_id}{off_team_id}
 }
 \value{
 Returns a named list of data frames: FantasyWidgetResult
@@ -97,23 +246,257 @@ Returns a named list of data frames: FantasyWidgetResult
       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: Lineups
+
+\strong{Lineups}
+
+\if{html}{\tabular{lll}{
+    col_name \tab types \tab description \cr
+    GROUP_SET \tab character \tab  \cr
+    GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
+    GROUP_NAME \tab character \tab Group name. \cr
+    TEAM_ID \tab character \tab Unique team identifier. \cr
+    TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+    GP \tab character \tab Games played. \cr
+    W \tab character \tab Wins. \cr
+    L \tab character \tab Losses. \cr
+    W_PCT \tab character \tab  \cr
+    MIN \tab character \tab Minutes played. \cr
+    FGM \tab character \tab Field goals made. \cr
+    FGA \tab character \tab Field goal attempts. \cr
+    FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+    FG3M \tab character \tab Three-point field goals made. \cr
+    FG3A \tab character \tab Three-point field goal attempts. \cr
+    FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+    FTM \tab character \tab Free throws made. \cr
+    FTA \tab character \tab Free throw attempts. \cr
+    FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+    OREB \tab character \tab Offensive rebounds. \cr
+    DREB \tab character \tab Defensive rebounds. \cr
+    REB \tab character \tab Total rebounds. \cr
+    AST \tab character \tab Assists. \cr
+    TOV \tab character \tab Turnovers. \cr
+    STL \tab character \tab Steals. \cr
+    BLK \tab character \tab Blocks. \cr
+    BLKA \tab character \tab  \cr
+    PF \tab character \tab Personal fouls. \cr
+    PFD \tab character \tab  \cr
+    PTS \tab character \tab Points scored. \cr
+    PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+    GP_RANK \tab character \tab  \cr
+    W_RANK \tab character \tab  \cr
+    L_RANK \tab character \tab  \cr
+    W_PCT_RANK \tab character \tab  \cr
+    MIN_RANK \tab character \tab  \cr
+    FGM_RANK \tab character \tab  \cr
+    FGA_RANK \tab character \tab  \cr
+    FG_PCT_RANK \tab character \tab  \cr
+    FG3M_RANK \tab character \tab  \cr
+    FG3A_RANK \tab character \tab  \cr
+    FG3_PCT_RANK \tab character \tab  \cr
+    FTM_RANK \tab character \tab  \cr
+    FTA_RANK \tab character \tab  \cr
+    FT_PCT_RANK \tab character \tab  \cr
+    OREB_RANK \tab character \tab  \cr
+    DREB_RANK \tab character \tab  \cr
+    REB_RANK \tab character \tab  \cr
+    AST_RANK \tab character \tab  \cr
+    TOV_RANK \tab character \tab  \cr
+    STL_RANK \tab character \tab  \cr
+    BLK_RANK \tab character \tab  \cr
+    BLKA_RANK \tab character \tab  \cr
+    PF_RANK \tab character \tab  \cr
+    PFD_RANK \tab character \tab  \cr
+    PTS_RANK \tab character \tab  \cr
+    PLUS_MINUS_RANK \tab character \tab  \cr
+ }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: LeagueLineupViz
+
+\strong{LeagueLineupViz}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
+      GROUP_NAME \tab character \tab Group name. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      MIN \tab character \tab Minutes played. \cr
+      OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
+      DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
+      NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
+      PACE \tab character \tab Possessions per 48 minutes. \cr
+      TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+      FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
+      TM_AST_PCT \tab character \tab  \cr
+      PCT_FGA_2PT \tab character \tab  \cr
+      PCT_FGA_3PT \tab character \tab  \cr
+      PCT_PTS_2PT_MR \tab character \tab  \cr
+      PCT_PTS_FB \tab character \tab  \cr
+      PCT_PTS_FT \tab character \tab  \cr
+      PCT_PTS_PAINT \tab character \tab  \cr
+      PCT_AST_FGM \tab character \tab  \cr
+      PCT_UAST_FGM \tab character \tab  \cr
+      OPP_FG3_PCT \tab character \tab  \cr
+      OPP_EFG_PCT \tab character \tab  \cr
+      OPP_FTA_RATE \tab character \tab  \cr
+      OPP_TOV_PCT \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
+
+\strong{PlayersOnCourtLeaguePlayerDetails}
+
+Columns as documented in the shared \link{nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema} table.
+
+Returns a named list of data frames: SeasonMatchups
+
+\strong{SeasonMatchups}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      SEASON_ID \tab character \tab Unique season identifier. \cr
+      OFF_PLAYER_ID \tab character \tab  \cr
+      OFF_PLAYER_NAME \tab character \tab  \cr
+      DEF_PLAYER_ID \tab character \tab  \cr
+      DEF_PLAYER_NAME \tab character \tab  \cr
+      GP \tab character \tab Games played. \cr
+      MATCHUP_MIN \tab character \tab  \cr
+      PARTIAL_POSS \tab character \tab  \cr
+      PLAYER_PTS \tab character \tab  \cr
+      TEAM_PTS \tab character \tab  \cr
+      MATCHUP_AST \tab character \tab  \cr
+      MATCHUP_TOV \tab character \tab  \cr
+      MATCHUP_BLK \tab character \tab  \cr
+      MATCHUP_FGM \tab character \tab  \cr
+      MATCHUP_FGA \tab character \tab  \cr
+      MATCHUP_FG_PCT \tab character \tab  \cr
+      MATCHUP_FG3M \tab character \tab  \cr
+      MATCHUP_FG3A \tab character \tab  \cr
+      MATCHUP_FG3_PCT \tab character \tab  \cr
+      HELP_BLK \tab character \tab  \cr
+      HELP_FGM \tab character \tab  \cr
+      HELP_FGA \tab character \tab  \cr
+      HELP_FG_PERC \tab character \tab  \cr
+      MATCHUP_FTM \tab character \tab  \cr
+      MATCHUP_FTA \tab character \tab  \cr
+      SFL \tab character \tab  \cr
+      MATCHUP_TIME_SEC \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: MatchupsRollup
+
+\strong{MatchupsRollup}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      SEASON_ID \tab character \tab Unique season identifier. \cr
+      POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+      PERCENT_OF_TIME \tab character \tab  \cr
+      DEF_PLAYER_ID \tab character \tab  \cr
+      DEF_PLAYER_NAME \tab character \tab  \cr
+      GP \tab character \tab Games played. \cr
+      MATCHUP_MIN \tab character \tab  \cr
+      PARTIAL_POSS \tab character \tab  \cr
+      PLAYER_PTS \tab character \tab  \cr
+      TEAM_PTS \tab character \tab  \cr
+      MATCHUP_AST \tab character \tab  \cr
+      MATCHUP_TOV \tab character \tab  \cr
+      MATCHUP_BLK \tab character \tab  \cr
+      MATCHUP_FGM \tab character \tab  \cr
+      MATCHUP_FGA \tab character \tab  \cr
+      MATCHUP_FG_PCT \tab character \tab  \cr
+      MATCHUP_FG3M \tab character \tab  \cr
+      MATCHUP_FG3A \tab character \tab  \cr
+      MATCHUP_FG3_PCT \tab character \tab  \cr
+      MATCHUP_FTM \tab character \tab  \cr
+      MATCHUP_FTA \tab character \tab  \cr
+      SFL \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Fantasy Widget}
 
 \strong{Get NBA Stats API Fantasy Widget}
+
+\strong{Get NBA Stats API League Dashboard Lineups}
+
+\strong{Get NBA Stats API League Dashboard Lineups}
+
+\strong{Get NBA Stats API League Lineup Visual Data}
+
+\strong{Get NBA Stats API League Lineup Visual Data}
+
+\strong{Get NBA Stats API League Player On/Off Details}
+
+\strong{Get NBA Stats API League Player On/Off Details}
+
+\strong{Get NBA Stats API League Season Matchups}
+
+\strong{Get NBA Stats API League Season Matchups}
+
+\strong{Get NBA Stats API Matchups Rollup}
+
+\strong{Get NBA Stats API Matchups Rollup}
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_fantasywidget(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/lineups/traditional}{Lineups Dashboard}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguedashlineups(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/lineups/traditional}{Lineups Dashboard}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguelineupviz(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueplayerondetails(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/head-to-head}{Player Season Matchups}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueseasonmatchups(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/by-position}{Player Matchups Rollup}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_matchupsrollup(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBA Fantasy Functions:
-\code{\link[=nba_infographicfanduelplayer]{nba_infographicfanduelplayer()}},
-\code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
-\code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}}
+\code{\link[=nba_playerindex]{nba_playerindex()}}
+
+Other NBA League Functions:
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_leaguegamelog]{nba_leaguegamelog()}},
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}}
+
+Other NBA Lineup Functions:
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_rapm]{nba_rapm()}},
+\code{\link[=nba_shot_zones]{nba_shot_zones()}},
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
+
+Other NBA Player Functions:
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
+\code{\link[=nba_playerindex]{nba_playerindex()}}
 }
 \author{
 Saiem Gilani
 }
 \concept{NBA Fantasy Functions}
+\concept{NBA League Functions}
+\concept{NBA Lineup Functions}
+\concept{NBA Player Functions}

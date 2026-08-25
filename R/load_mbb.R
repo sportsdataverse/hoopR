@@ -130,11 +130,8 @@ load_mbb_pbp <- function(
 #' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by
-#' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
 #'    \if{html}{\tabular{lll}{
@@ -239,11 +236,8 @@ load_mbb_team_box <- function(
 #' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by
-#' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
 #'    Columns as documented in the shared [espn_mbb_game_all_player_schema] table.
@@ -304,11 +298,8 @@ load_mbb_player_box <- function(
 #' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by
-#' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
 #'    \if{html}{\tabular{lll}{
@@ -685,11 +676,8 @@ get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball team rosters from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the data table within the database.
 #' @return Returns a tibble of MBB team rosters.
 #' @export
 load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
@@ -730,11 +718,8 @@ load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball player season stats (long format) from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the data table within the database.
 #' @return Returns a tibble of MBB player season stats (long format).
 #' @export
 load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
@@ -775,11 +760,8 @@ load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball team season stats (long format) from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the data table within the database.
 #' @return Returns a tibble of MBB team season stats (long format).
 #' @export
 load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
@@ -820,11 +802,8 @@ load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball standings from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the data table within the database.
 #' @return Returns a tibble of MBB standings.
 #' @export
 load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
@@ -865,11 +844,8 @@ load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball per-game rosters from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the data table within the database.
 #' @return Returns a tibble of MBB per-game rosters.
 #' @export
 load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
@@ -910,11 +886,8 @@ load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
 #' @description helper that loads multiple seasons of ESPN men's college
 #' basketball per-game officials from the sportsdataverse-data release repo, either into
 #' memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the data table within the database.
 #' @return Returns a tibble of MBB per-game officials.
 #' @export
 load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
@@ -971,11 +944,8 @@ load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
 #' }
 #' Field coverage is era-dependent by nature -- headshots exist only for modern
 #' players, while college and date of birth thin out the other way.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the player core data table within the database.
 #' @return Returns a tibble of MBB athlete core records (one row per athlete-season).
 #' @export
 load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
@@ -1020,12 +990,8 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
 #' release tag. Published coverage runs 2003 and 2006 through the most recent
 #' season -- 2004 and 2005 are a documented gap (no shot-coordinate assets were
 #' published for those two seasons).
-#' @param seasons A vector of 4-digit years associated with given MBB seasons.
-#' 2004 and 2005 are not published. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the shots data table within the database.
 #' @return Returns a tibble with one row per shot attempt.
 #'
 #'    \if{html}{\tabular{lll}{

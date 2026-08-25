@@ -4,14 +4,16 @@
 #' **Get college basketball venues from the CollegeBasketballData API.**
 #' @return A `hoopR_data` tibble with one row per venue:
 #'
-#'    |col_name  |types     |description                                  |
-#'    |:---------|:---------|:--------------------------------------------|
-#'    |id        |integer   |CollegeBasketballData venue id.              |
-#'    |source_id |character |Source (ESPN) venue id.                      |
-#'    |name      |character |Venue name.                                  |
-#'    |city      |character |Venue city.                                  |
-#'    |state     |character |Venue state.                                 |
-#'    |country   |character |Venue country.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab CollegeBasketballData venue id. \cr
+#'       source_id \tab character \tab Source (ESPN) venue id. \cr
+#'       name \tab character \tab Venue name. \cr
+#'       city \tab character \tab Venue city. \cr
+#'       state \tab character \tab Venue state. \cr
+#'       country \tab character \tab Venue country. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Venues
 #' @importFrom jsonlite fromJSON

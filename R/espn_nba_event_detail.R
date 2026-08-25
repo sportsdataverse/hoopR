@@ -8,16 +8,13 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Odds**
+#' @rdname espn_mbb_game_odds
 #' @name espn_nba_game_odds
 NULL
 #' @title
 #' **Get ESPN NBA Event Odds**
-#' @rdname espn_nba_game_odds
+#' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @param event_id ESPN event/game identifier (character or numeric).
-#' @param ... Additional arguments; currently unused but retained for
-#'   forward compatibility. Proxy configuration should use
-#'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
 #' @return A tibble with one row per odds provider.
 #'
 #'    Columns as documented in the shared [espn_mbb_game_odds_schema] table.
@@ -44,11 +41,12 @@ espn_nba_game_odds <- function(event_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Win Probabilities**
+#' @rdname espn_mbb_game_probabilities
 #' @name espn_nba_game_probabilities
 NULL
 #' @title
 #' **Get ESPN NBA Event Win Probabilities**
-#' @rdname espn_nba_game_probabilities
+#' @rdname espn_mbb_game_probabilities
 #' @author Saiem Gilani
 #' @param event_id ESPN event/game identifier (character or numeric).
 #' @param limit integer. Maximum number of probability rows to return.
@@ -82,10 +80,8 @@ espn_nba_game_probabilities <- function(event_id, limit = 200, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Officials**
-#' @rdname espn_nba_game_odds
+#' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @param event_id ESPN event/game identifier (character or numeric).
-#' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per official assigned to the game.
 #'
 #'    Columns as documented in the shared [espn_mbb_game_officials_schema] table.
@@ -113,10 +109,8 @@ espn_nba_game_officials <- function(event_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Broadcasts**
-#' @rdname espn_nba_game_odds
+#' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @param event_id ESPN event/game identifier (character or numeric).
-#' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per broadcast outlet for the game.
 #'
 #'    Columns as documented in the shared [espn_mbb_game_broadcasts_schema] table.
@@ -144,7 +138,7 @@ espn_nba_game_broadcasts <- function(event_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Situation (Live)**
-#' @rdname espn_nba_game_odds
+#' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
 #' @description
 #' Returns the live game situation for one NBA event: timeouts remaining,
@@ -152,8 +146,6 @@ espn_nba_game_broadcasts <- function(event_id, ...) {
 #' During a live game this reflects current state; after the game ends
 #' the values are frozen.
 #'
-#' @param event_id ESPN event identifier.
-#' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble with timeouts + fouls for both teams.
 #' @export
 #' @family ESPN NBA Functions
@@ -173,7 +165,7 @@ espn_nba_game_situation <- function(event_id, ...) {
 #' @name espn_nba_game_predictor
 #' @title
 #' **Get ESPN NBA Event Predictor (Pre-game)**
-#' @rdname espn_nba_game_odds
+#' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
 #' @description
 #' Returns pre-game predictor statistics for one NBA event in long
@@ -182,8 +174,6 @@ espn_nba_game_situation <- function(event_id, ...) {
 #' strength metrics. Returns empty for events without predictor data
 #' (often the case for already-played games).
 #'
-#' @param event_id ESPN event identifier.
-#' @param ... Additional arguments; currently unused.
 #' @return A long tibble with rows for both home and away teams.
 #' @export
 #' @family ESPN NBA Functions
@@ -203,14 +193,12 @@ espn_nba_game_predictor <- function(event_id, ...) {
 #' @name espn_nba_game_powerindex
 #' @title
 #' **Get ESPN NBA Event Power Index Index**
-#' @rdname espn_nba_game_odds
+#' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team power-index `$ref` URLs for one NBA event.
 #' Coverage is sparse — many events return zero items.
 #'
-#' @param event_id ESPN event identifier.
-#' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per team-game power-index entry.
 #' @export
 #' @family ESPN NBA Functions
@@ -230,7 +218,7 @@ espn_nba_game_powerindex <- function(event_id, ...) {
 #' @name espn_nba_game_propbets
 #' @title
 #' **Get ESPN NBA Event Prop Bets (Long Format)**
-#' @rdname espn_nba_game_propbets
+#' @rdname espn_mbb_game_propbets
 #' @author Saiem Gilani
 #' @description
 #' Returns prop-bet markets for one NBA event + provider in long format:
@@ -240,8 +228,6 @@ espn_nba_game_powerindex <- function(event_id, ...) {
 #' auto-paginates.
 #'
 #' @param event_id ESPN event identifier.
-#' @param provider_id Sportsbook provider id (e.g. 58 = ESPN BET,
-#'   100 = Caesars). Look up via [espn_nba_game_odds()].
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (athlete × prop type).
 #' @export
@@ -260,11 +246,12 @@ espn_nba_game_propbets <- function(event_id, provider_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Linescores (Per-Quarter)**
+#' @rdname espn_mbb_game_team_linescores
 #' @name espn_nba_game_team_linescores
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Linescores (Per-Quarter)**
-#' @rdname espn_nba_game_team_linescores
+#' @rdname espn_mbb_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-quarter scoring breakdown for one team in one NBA
@@ -272,8 +259,6 @@ NULL
 #' periods).
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier (the competitor whose linescore
-#'   to fetch).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per period.
 #' @export
@@ -294,7 +279,7 @@ espn_nba_game_team_linescores <- function(event_id, team_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Competitor Leaders (Top Performers)**
-#' @rdname espn_nba_game_team_linescores
+#' @rdname espn_mbb_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team statistical leaders for one NBA event in long
@@ -302,7 +287,6 @@ espn_nba_game_team_linescores <- function(event_id, team_id, ...) {
 #' include points, rebounds, assists, and rating.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x rank).
 #' @export
@@ -323,7 +307,7 @@ espn_nba_game_team_leaders <- function(event_id, team_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Competitor Roster (Game-Day)**
-#' @rdname espn_nba_game_team_linescores
+#' @rdname espn_mbb_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns the game-day roster index for one team in one NBA event.
@@ -331,7 +315,6 @@ espn_nba_game_team_leaders <- function(event_id, team_id, ...) {
 #' the ref to dereference athlete-game splits or biographical data.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per active athlete.
 #' @export
@@ -352,7 +335,7 @@ espn_nba_game_team_roster <- function(event_id, team_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Competitor Team Statistics (Long Format)**
-#' @rdname espn_nba_game_team_linescores
+#' @rdname espn_mbb_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns full team-game statistics for one team in one NBA event in
@@ -361,7 +344,6 @@ espn_nba_game_team_roster <- function(event_id, team_id, ...) {
 #' strings.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x stat).
 #' @export
@@ -382,7 +364,7 @@ espn_nba_game_team_statistics <- function(event_id, team_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Competitor Records (At-Game Breakdown)**
-#' @rdname espn_nba_game_team_linescores
+#' @rdname espn_mbb_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns team records as of the given NBA event: overall, home,
@@ -390,7 +372,6 @@ espn_nba_game_team_statistics <- function(event_id, team_id, ...) {
 #' per record type.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per record type.
 #' @export
@@ -410,11 +391,12 @@ espn_nba_game_team_records <- function(event_id, team_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Player Box Score (Long Format)**
+#' @rdname espn_mbb_game_player_box
 #' @name espn_nba_game_player_box
 NULL
 #' @title
 #' **Get ESPN NBA Event Player Box Score (Long Format)**
-#' @rdname espn_nba_game_player_box
+#' @rdname espn_mbb_game_player_box
 #' @author Saiem Gilani
 #' @description
 #' Returns the long-format per-game box score for a single athlete in one
@@ -451,11 +433,12 @@ espn_nba_game_player_box <- function(event_id, team_id, athlete_id,
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Competitor Roster Entry (Per-Athlete Game-Day Row)**
+#' @rdname espn_mbb_game_team_roster_entry
 #' @name espn_nba_game_team_roster_entry
 NULL
 #' @title
 #' **Get ESPN NBA Event Competitor Roster Entry (Per-Athlete Game-Day Row)**
-#' @rdname espn_nba_game_team_roster_entry
+#' @rdname espn_mbb_game_team_roster_entry
 #' @author Saiem Gilani
 #' @description
 #' Returns a single-row tibble describing one athlete's game-day roster
@@ -490,11 +473,12 @@ espn_nba_game_team_roster_entry <- function(event_id, team_id,
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Play Detail (Single Play)**
+#' @rdname espn_mbb_game_play
 #' @name espn_nba_game_play
 NULL
 #' @title
 #' **Get ESPN NBA Event Play Detail (Single Play)**
-#' @rdname espn_nba_game_play
+#' @rdname espn_mbb_game_play
 #' @author Saiem Gilani
 #' @description
 #' Returns the rich detail block for a single NBA play: sequence, period,
@@ -524,11 +508,12 @@ espn_nba_game_play <- function(event_id, play_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Play Personnel (On-Court Lineup at Play)**
+#' @rdname espn_mbb_game_play_personnel
 #' @name espn_nba_game_play_personnel
 NULL
 #' @title
 #' **Get ESPN NBA Event Play Personnel (On-Court Lineup at Play)**
-#' @rdname espn_nba_game_play_personnel
+#' @rdname espn_mbb_game_play_personnel
 #' @author Saiem Gilani
 #' @description
 #' Returns the players on court at a specific NBA play in long format
@@ -558,7 +543,7 @@ espn_nba_game_play_personnel <- function(event_id, play_id, ...) {
 
 #' @title
 #' **Get ESPN NBA Event Competitor Score (Single Row)**
-#' @rdname espn_nba_game_team_linescores
+#' @rdname espn_mbb_game_team_linescores
 #' @author Saiem Gilani
 #' @description
 #' Returns a one-row tibble with one team's final score for one NBA event:
@@ -567,7 +552,6 @@ espn_nba_game_play_personnel <- function(event_id, play_id, ...) {
 #' per-period detail.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export
@@ -587,11 +571,12 @@ espn_nba_game_team_score <- function(event_id, team_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Event Official Detail (Single Official)**
+#' @rdname espn_mbb_game_official_detail
 #' @name espn_nba_game_official_detail
 NULL
 #' @title
 #' **Get ESPN NBA Event Official Detail (Single Official)**
-#' @rdname espn_nba_game_official_detail
+#' @rdname espn_mbb_game_official_detail
 #' @author Saiem Gilani
 #' @description
 #' Returns a single-row tibble for one referee assigned to one NBA event,

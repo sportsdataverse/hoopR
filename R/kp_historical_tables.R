@@ -889,42 +889,50 @@ kp_pomeroy_archive_ratings <- function(date){
 #'    **AllKenPom**
 #'
 #'
-#'    |col_name |types     |description   |
-#'    |:--------|:---------|:-------------|
-#'    |rk       |integer   |Rk.           |
-#'    |player   |character |Player.       |
-#'    |year     |numeric   |4-digit year. |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab integer \tab Rk. \cr
+#'       player \tab character \tab Player. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **ConferenceAggregateStats**
 #'
 #'
-#'    |col_name |types     |description                    |
-#'    |:--------|:---------|:------------------------------|
-#'    |stat     |character |Stat.                          |
-#'    |value    |numeric   |Numeric or string value field. |
-#'    |rk       |numeric   |Rk.                            |
-#'    |year     |numeric   |4-digit year.                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       stat \tab character \tab Stat. \cr
+#'       value \tab numeric \tab Numeric or string value field. \cr
+#'       rk \tab numeric \tab Rk. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **WinningTrends**
 #'
 #'
-#'    |col_name |types     |description                    |
-#'    |:--------|:---------|:------------------------------|
-#'    |stat     |character |Stat.                          |
-#'    |count    |character |Count of count.                |
-#'    |value    |numeric   |Numeric or string value field. |
-#'    |rk       |numeric   |Rk.                            |
-#'    |year     |numeric   |4-digit year.                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       stat \tab character \tab Stat. \cr
+#'       count \tab character \tab Count of count. \cr
+#'       value \tab numeric \tab Numeric or string value field. \cr
+#'       rk \tab numeric \tab Rk. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **ConferenceComparison**
 #'
 #'
-#'    |col_name   |types     |description   |
-#'    |:----------|:---------|:-------------|
-#'    |rk         |numeric   |Rk.           |
-#'    |conference |character |Conference.   |
-#'    |rating     |numeric   |Rating.       |
-#'    |year       |numeric   |4-digit year. |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab numeric \tab Rk. \cr
+#'       conference \tab character \tab Conference. \cr
+#'       rating \tab numeric \tab Rating. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
@@ -1081,8 +1089,6 @@ kp_conf <- function(year, conf){
 #' **Get KenPom's conference comparison stats**
 #'
 #'
-#' @param year Year (YYYY)
-#'
 #' @return A data frame with the following columns:
 #'
 #'    \if{html}{\tabular{lll}{
@@ -1126,6 +1132,8 @@ kp_conf <- function(year, conf){
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
+#' @param year Year (YYYY)
+#'
 #' @importFrom dplyr mutate filter mutate_at
 #' @import rvest
 #' @export
@@ -1202,20 +1210,6 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' **Get KenPom's historical conference ratings**
 #'
 #'
-#' @param conf Used to limit to players in a specific conference.
-#'
-#' Allowed values are:
-#' 'A10', 'ACC', 'AE', 'AMER',
-#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',
-#' 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY',
-#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC',
-#' 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND',
-#' 'SUM', 'SWAC', 'WAC', 'WCC'.
-#'
-#' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018',
-#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
-#' No filter applied by default.
-#'
 #' @return A data frame with the following columns:
 #'
 #'    \if{html}{\tabular{lll}{
@@ -1245,6 +1239,20 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #'       best_team \tab character \tab Best team. \cr
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
+#'
+#' @param conf Used to limit to players in a specific conference.
+#'
+#' Allowed values are:
+#' 'A10', 'ACC', 'AE', 'AMER',
+#' 'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH',
+#' 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY',
+#' 'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC',
+#' 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND',
+#' 'SUM', 'SWAC', 'WAC', 'WCC'.
+#'
+#' If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018',
+#' you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.
+#' No filter applied by default.
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate_at

@@ -40,7 +40,7 @@
 ## those are link lines, not tables -- but the guard is kept for parity
 ## with tools/docs/markdown_man_table_helper.R).
 
-GATE_MIN_ROWS <- 8L
+GATE_MIN_ROWS <- 2L
 
 args <- commandArgs(trailingOnly = TRUE)
 dry_run <- "--dry-run" %in% args
@@ -141,7 +141,12 @@ extract_tabular_blocks <- function(rd_text) {
       i <- i + 1L
     }
     content_end <- i - 1L
-    blocks <- c(blocks, substring(rd_text, start_abs, content_end))
+    ## Skip tables a previous gating pass already wrapped in \if{html}{...} --
+    ## only ungated tables correspond 1:1 with remaining markdown source tables.
+    preceding <- substring(rd_text, max(1L, start_abs - 10L), start_abs - 1L)
+    if (!endsWith(preceding, "\\if{html}{")) {
+      blocks <- c(blocks, substring(rd_text, start_abs, content_end))
+    }
     pos <- content_end + 1L
   }
   blocks
@@ -179,7 +184,12 @@ process_file <- function(r_path, man_dir = "man", dry_run = FALSE) {
   for (b in blocks) {
     bstart <- b[1]; bend <- b[2]
     block_lines <- lines[bstart:bend]
-    if (block_already_gated(block_lines)) next
+    ## NOTE: no block-level already-gated skip here. A round-1 pass could
+    ## leave a block PARTIALLY gated (big tables gated, small ones left as
+    ## markdown); per-table correspondence still holds because both sides
+    ## exclude gated tables (find_table_blocks sees only markdown rows;
+    ## extract_tabular_blocks skips \if{html}{-wrapped tabulars). A fully
+    ## gated block simply yields length(tbls) == 0 below.
     if (block_schema_guarded(block_lines)) next
 
     tbls <- find_table_blocks(lines, bstart, bend)

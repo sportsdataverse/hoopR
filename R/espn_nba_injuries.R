@@ -1,14 +1,11 @@
 #' **Get ESPN NBA Injuries**
+#' @rdname espn_mbb_injuries
 #' @name espn_nba_injuries
 NULL
 #' @title
 #' **Get ESPN NBA Injuries**
-#' @rdname espn_nba_injuries
+#' @rdname espn_mbb_injuries
 #' @author Saiem Gilani
-#' @param season Numeric or character season year (e.g. `2025`). The ESPN
-#'   injury endpoint does not filter by season server-side; the value is
-#'   attached as a constant column on the returned tibble for downstream joins.
-#'   Defaults to `most_recent_nba_season()`.
 #' @param ... Currently unused; reserved for future argument threading.
 #' @return Returns a tibble of league-wide NBA injury records.
 #'   Returns an empty tibble (zero rows) when no injuries are reported.
@@ -36,15 +33,13 @@ espn_nba_injuries <- function(season = most_recent_nba_season(), ...) {
 
 
 #' **Get ESPN NBA Team Injuries**
+#' @rdname espn_mbb_team_injuries
 #' @name espn_nba_team_injuries
 NULL
 #' @title
 #' **Get ESPN NBA Team Injuries**
-#' @rdname espn_nba_team_injuries
+#' @rdname espn_mbb_team_injuries
 #' @author Saiem Gilani
-#' @param team_id ESPN team identifier (character or numeric; passed as-is).
-#'   Use `espn_nba_teams()` to look up team IDs. Example: `"17"` (Las Vegas
-#'   Aces).
 #' @param ... Currently unused; reserved for future argument threading.
 #' @return Returns a tibble of injury records for the specified NBA team.
 #'   Returns an empty tibble (zero rows) when the team has no reported

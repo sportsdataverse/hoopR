@@ -2,6 +2,7 @@
 % Please edit documentation in R/cbbd_stats.R
 \name{cbbd_stats_team_season}
 \alias{cbbd_stats_team_season}
+\alias{cbbd_stats_team_leaderboard}
 \alias{cbbd_stats_team_shooting_season}
 \alias{cbbd_stats_player_season}
 \alias{cbbd_stats_player_shooting_season}
@@ -14,6 +15,12 @@ cbbd_stats_team_season(
   conference = NULL,
   start_date_range = NULL,
   end_date_range = NULL
+)
+
+cbbd_stats_team_leaderboard(
+  season = most_recent_mbb_season(),
+  team = NULL,
+  conference = NULL
 )
 
 cbbd_stats_team_shooting_season(
@@ -44,7 +51,7 @@ cbbd_stats_player_shooting_season(
 )
 }
 \arguments{
-\item{season}{(\emph{integer} required): Season, 4-digit ending-year (e.g. \code{2024}).
+\item{season}{(\emph{integer} optional): Season, 4-digit ending-year (e.g. \code{2024}).
 Defaults to \code{most_recent_mbb_season()}.}
 
 \item{season_type}{(\emph{character} optional): One of \code{regular}, \code{postseason},
@@ -77,18 +84,34 @@ and \code{opponent_stats} objects are flattened into \verb{team_stats_*} /
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
+A \code{hoopR_data} tibble with one row per team. Nested statistic objects
+(\code{record}, \code{summary}, \code{team_stats}, \code{opponent_stats}, \code{shot_profile},
+\code{adjusted_efficiency}) are flattened into prefixed columns. Key identifying
+columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
 A \code{hoopR_data} tibble with one row per team-season. Shot-type objects
 (\code{dunks}, \code{layups}, \code{tip_ins}, \code{two_point_jumpers}, \code{three_point_jumpers},
 \code{free_throws}, \code{attempts_breakdown}) are flattened into prefixed columns.
-Key identifying columns:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   team_id \tab integer \tab Team id. \cr
-   team \tab character \tab Team name. \cr
-   conference \tab character \tab Conference name. \cr
-   tracked_shots \tab integer \tab Number of tracked shots. \cr
-   assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
-}
+Key identifying columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab Team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      tracked_shots \tab integer \tab Number of tracked shots. \cr
+      assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 A \code{hoopR_data} tibble with one row per player-season. Nested
 statistic objects (\code{field_goals}, \code{two_point_field_goals},
@@ -129,6 +152,8 @@ objects are flattened into prefixed columns. Key identifying columns:
 \description{
 \strong{Get team season statistics from the CollegeBasketballData API.}
 
+\strong{Get the team statistics leaderboard from the CollegeBasketballData API.}
+
 \strong{Get team season shooting statistics from the CollegeBasketballData API.}
 
 \strong{Get player season statistics from the CollegeBasketballData API.}
@@ -140,6 +165,9 @@ objects are flattened into prefixed columns. Key identifying columns:
   try(cbbd_stats_team_season(season = 2024, team = "Duke"))
 }
 \donttest{
+  try(cbbd_stats_team_leaderboard(season = 2024))
+}
+\donttest{
   try(cbbd_stats_team_shooting_season(season = 2024, team = "Duke"))
 }
 \donttest{
@@ -148,10 +176,6 @@ objects are flattened into prefixed columns. Key identifying columns:
 \donttest{
   try(cbbd_stats_player_shooting_season(season = 2024, team = "Duke"))
 }
-}
-\seealso{
-Other CBD Stats Functions:
-\code{\link[=cbbd_stats_team_leaderboard]{cbbd_stats_team_leaderboard()}}
 }
 \concept{CBD Stats Functions}
 \keyword{CBD}

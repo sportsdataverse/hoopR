@@ -1,12 +1,11 @@
 #' **Get ESPN NBA Calendar**
+#' @rdname espn_mbb_calendar
 #' @name espn_nba_calendar
 NULL
 #' @title
 #' **Get ESPN NBA Calendar**
-#' @rdname espn_nba_calendar
+#' @rdname espn_mbb_calendar
 #' @author Saiem Gilani
-#' @param season integer or character. Four-digit season year (e.g. `2025`).
-#'   Defaults to `most_recent_nba_season()`.
 #' @return Returns a tibble of calendar entries.
 #'
 #'    Columns as documented in the shared [espn_mbb_calendar_schema] table.

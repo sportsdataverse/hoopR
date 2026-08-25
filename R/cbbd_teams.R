@@ -64,22 +64,23 @@ cbbd_teams <- function(conference = NULL, season = most_recent_mbb_season()) {
 
 #' @title
 #' **CBD Team Roster**
+#' @rdname cbbd_teams
 #' @description
 #' **Get a college basketball team roster from the CollegeBasketballData API.**
-#' @param season (*integer* required): Season, in 4-digit format ending-year
-#'   (e.g. `2024`). Defaults to `most_recent_mbb_season()`.
 #' @param team (*character* optional): Team name filter (e.g. `Duke`).
 #' @return A `hoopR_data` tibble with one row per team. The `players` column is a
 #'   nested list of roster players:
 #'
-#'    |col_name       |types     |description                                  |
-#'    |:--------------|:---------|:--------------------------------------------|
-#'    |team_id        |integer   |CollegeBasketballData team id.               |
-#'    |team_source_id |character |Source (ESPN) team id.                       |
-#'    |team           |character |Team name.                                   |
-#'    |conference     |character |Conference name.                             |
-#'    |season         |integer   |Season (4-digit ending-year).                |
-#'    |players        |list      |Nested list of roster players.               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
+#'       team_source_id \tab character \tab Source (ESPN) team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       players \tab list \tab Nested list of roster players. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Teams
 #' @importFrom jsonlite fromJSON

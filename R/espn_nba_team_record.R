@@ -1,11 +1,12 @@
 # espn_nba_team_record.R
 
 #' **Get ESPN NBA Team Record (Per Season Type)**
+#' @rdname espn_mbb_team_record
 #' @name espn_nba_team_record
 NULL
 #' @title
 #' **Get ESPN NBA Team Record (Per Season Type)**
-#' @rdname espn_nba_team_record
+#' @rdname espn_mbb_team_record
 #' @author Saiem Gilani
 #' @description
 #' Returns the long-format record breakdown for an NBA team in one season
@@ -14,8 +15,6 @@ NULL
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/types/{season_type}/teams/{team_id}/record`.
 #'
 #' @param team_id ESPN team identifier.
-#' @param season Season year (numeric). Defaults to most recent NBA season.
-#' @param season_type Integer (2 = regular season default; 3 = postseason).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per record category.
 #'

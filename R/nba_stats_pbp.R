@@ -981,13 +981,13 @@ NULL
 
 
 #' **Get NBA Stats API Play-by-Play V3**
+#' @rdname nba_live_boxscore
 #' @name nba_playbyplayv3
 NULL
 #' @title
 #' **Get NBA Stats API Play-by-Play V3**
-#' @rdname nba_playbyplayv3
+#' @rdname nba_live_boxscore
 #' @author Saiem Gilani
-#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022201086')
 #' @param start_period Start period filter (default: 0 = all periods). Use 1-4 for regulation quarters, 5+ for overtime.
 #' @param end_period End period filter (default: 0 = all periods). Use 1-4 for regulation quarters, 5+ for overtime.
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1102,13 +1102,13 @@ nba_playbyplayv3 <- function(
 
 
 #' **Get NBA Stats API play-by-play**
+#' @rdname nba_live_boxscore
 #' @name nba_pbp
 NULL
 #' @title
 #' **Get NBA Stats API play-by-play**
-#' @rdname nba_pbp
+#' @rdname nba_live_boxscore
 #' @author Jason Lee
-#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022201086')
 #' @param on_court If TRUE (default), on-court player IDs are added for each play event.
 #'   V3 uses `nba_gamerotation()` stint data; V2 infers lineups from substitution events.
 #' @param version Play-by-play version - `"v3"` (default) or `"v2"`. V3 returns richer data
@@ -1275,15 +1275,14 @@ nba_pbp <- function(
 
 
 #' **Get NBA Stats API play-by-play (Multiple Games)**
+#' @rdname nba_live_boxscore
 #' @name nba_pbps
 NULL
 #' @title
 #' **Get NBA Stats API play-by-play (Multiple Games)**
-#' @rdname nba_pbps
+#' @rdname nba_live_boxscore
 #' @author Jason Lee
 #' @param game_ids Game IDs
-#' @param on_court IF TRUE will be added ID of players on court
-#' @param version Play-by-play version ("v3" is the default, "v2" available from 2016-17 onwards)
 #' @param nest_data If TRUE returns nested data by game
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
@@ -1336,13 +1335,13 @@ nba_pbps <- function(
 
 
 #' **Get NBA Stats API Live play-by-play**
+#' @rdname nba_live_boxscore
 #' @name nba_live_pbp
 NULL
 #' @title
 #' **Get NBA Stats API Live play-by-play**
-#' @rdname nba_live_pbp
+#' @rdname nba_live_boxscore
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
 #'

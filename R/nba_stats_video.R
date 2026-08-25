@@ -1,9 +1,10 @@
 #' **Get NBA Stats API Video Details**
+#' @rdname nba_videodetails
 #' @name nba_videodetailsasset
 NULL
 #' @title
 #' **Get NBA Stats API Video Details**
-#' @rdname nba_videodetailsasset
+#' @rdname nba_videodetails
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param clutch_time clutch_time
@@ -13,7 +14,6 @@ NULL
 #' @param date_to date_to
 #' @param end_period end_period
 #' @param end_range end_range
-#' @param game_id game_id
 #' @param game_segment game_segment
 #' @param last_n_games last_n_games
 #' @param league_id league_id
@@ -404,13 +404,13 @@ nba_videodetails <- function(
 
 
 #' **Get NBA Stats API Video Events**
+#' @rdname nba_videodetails
 #' @name nba_videoevents
 NULL
 #' @title
 #' **Get NBA Stats API Video Events**
-#' @rdname nba_videoevents
+#' @rdname nba_videodetails
 #' @author Saiem Gilani
-#' @param game_id game_id
 #' @param game_event_id game_event_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a list of tibbles: videoUrls, playlist
@@ -471,11 +471,12 @@ nba_videoevents <- function(
 
 
 #' **Get NBA Stats API Video Status**
+#' @rdname nba_videodetails
 #' @name nba_videostatus
 NULL
 #' @title
 #' **Get NBA Stats API Video Status**
-#' @rdname nba_videostatus
+#' @rdname nba_videodetails
 #' @author Saiem Gilani
 #' @param game_date game_date
 #' @param league_id league_id
@@ -553,14 +554,13 @@ nba_videostatus <- function(
 
 
 #' **Get NBA Stats API Video Events Asset**
+#' @rdname nba_videodetails
 #' @name nba_videoeventsasset
 NULL
 #' @title
 #' **Get NBA Stats API Video Events Asset**
-#' @rdname nba_videoeventsasset
+#' @rdname nba_videodetails
 #' @author Saiem Gilani
-#' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0021700807')
-#' @param game_event_id Game Event ID - event number from play-by-play data
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list containing video event asset data (structure varies by response)
 #' @importFrom jsonlite fromJSON toJSON

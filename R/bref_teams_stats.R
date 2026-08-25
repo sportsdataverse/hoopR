@@ -16,14 +16,16 @@
 #'   common identifying columns shown -- names are Basketball-Reference
 #'   `data-stat` keys):
 #'
-#'    |col_name |types     |description                                          |
-#'    |:--------|:---------|:----------------------------------------------------|
-#'    |ranker   |integer   |Row rank.                                            |
-#'    |team     |character |Team name.                                           |
-#'    |g        |integer   |Games played.                                        |
-#'    |mp       |numeric   |Minutes played.                                      |
-#'    |pts      |numeric   |Points (scaled to the chosen `table`).              |
-#'    |season   |integer   |Season (echoes the `season` argument).               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       ranker \tab integer \tab Row rank. \cr
+#'       team \tab character \tab Team name. \cr
+#'       g \tab integer \tab Games played. \cr
+#'       mp \tab numeric \tab Minutes played. \cr
+#'       pts \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
+#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names

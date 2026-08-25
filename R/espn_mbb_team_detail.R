@@ -87,8 +87,6 @@ espn_mbb_team <- function(team_id,
 #' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
-#' @param ... Additional arguments; currently unused.
 #' @return A single tibble with one row per athlete.
 #'
 #'    Columns as documented in the shared [espn_mbb_team_roster_schema] table.
@@ -164,8 +162,6 @@ espn_mbb_team_schedule <- function(team_id,
 #' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
-#' @param ... Additional arguments; currently unused.
 #' @return A single long-format tibble (one row per category-rank-athlete).
 #'
 #'    Columns as documented in the shared [espn_mbb_team_leaders_schema] table.
@@ -209,8 +205,6 @@ espn_mbb_team_leaders <- function(team_id,
 #' fewer `$ref` keys; missing refs become `NA`.
 #'
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
-#' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble with team identity scalars and `_ref` URL
 #'   columns. Selected columns:
 #'

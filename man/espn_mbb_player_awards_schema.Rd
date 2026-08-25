@@ -7,7 +7,7 @@
 Columns shared verbatim across: espn_mbb_player_awards, espn_nba_player_awards.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
    award_id \tab character \tab  \cr
@@ -15,6 +15,7 @@ Columns shared verbatim across: espn_mbb_player_awards, espn_nba_player_awards.
    description \tab character \tab Long-form description text. \cr
    date \tab character \tab Date in YYYY-MM-DD format. \cr
    type \tab character \tab Record type / category. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

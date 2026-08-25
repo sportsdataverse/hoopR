@@ -139,15 +139,14 @@ nba_fantasywidget <- function(
 }
 
 #' **Get NBA Stats API League Dashboard Lineups**
+#' @rdname nba_fantasywidget
 #' @name nba_leaguedashlineups
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Lineups**
-#' @rdname nba_leaguedashlineups
+#' @rdname nba_fantasywidget
 #' @author Saiem Gilani
 #' @param conference conference
-#' @param date_from date_from
-#' @param date_to date_to
 #' @param division division
 #' @param game_segment game_segment
 #' @param group_quantity group_quantity
@@ -339,15 +338,14 @@ nba_leaguedashlineups <- function(
 }
 
 #' **Get NBA Stats API League Lineup Visual Data**
+#' @rdname nba_fantasywidget
 #' @name nba_leaguelineupviz
 NULL
 #' @title
 #' **Get NBA Stats API League Lineup Visual Data**
-#' @rdname nba_leaguelineupviz
+#' @rdname nba_fantasywidget
 #' @author Saiem Gilani
 #' @param conference conference
-#' @param date_from date_from
-#' @param date_to date_to
 #' @param division division
 #' @param game_segment game_segment
 #' @param group_quantity group_quantity
@@ -511,14 +509,13 @@ nba_leaguelineupviz <- function(
 
 
 #' **Get NBA Stats API League Player On/Off Details**
+#' @rdname nba_fantasywidget
 #' @name nba_leagueplayerondetails
 NULL
 #' @title
 #' **Get NBA Stats API League Player On/Off Details**
-#' @rdname nba_leagueplayerondetails
+#' @rdname nba_fantasywidget
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
 #' @param game_segment game_segment
 #' @param last_n_games last_n_games
 #' @param league_id league_id
@@ -637,11 +634,12 @@ nba_leagueplayerondetails <- function(
 
 
 #' **Get NBA Stats API League Season Matchups**
+#' @rdname nba_fantasywidget
 #' @name nba_leagueseasonmatchups
 NULL
 #' @title
 #' **Get NBA Stats API League Season Matchups**
-#' @rdname nba_leagueseasonmatchups
+#' @rdname nba_fantasywidget
 #' @author Saiem Gilani
 #' @param def_player_id def_player_id
 #' @param def_team_id def_team_id
@@ -754,11 +752,12 @@ nba_leagueseasonmatchups <- function(
 
 
 #' **Get NBA Stats API Matchups Rollup**
+#' @rdname nba_fantasywidget
 #' @name nba_matchupsrollup
 NULL
 #' @title
 #' **Get NBA Stats API Matchups Rollup**
-#' @rdname nba_matchupsrollup
+#' @rdname nba_fantasywidget
 #' @author Saiem Gilani
 #' @param def_player_id def_player_id
 #' @param def_team_id def_team_id

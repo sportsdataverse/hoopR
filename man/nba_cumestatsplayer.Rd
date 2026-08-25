@@ -2,6 +2,9 @@
 % Please edit documentation in R/nba_stats_cume.R
 \name{nba_cumestatsplayer}
 \alias{nba_cumestatsplayer}
+\alias{nba_cumestatsplayergames}
+\alias{nba_cumestatsteam}
+\alias{nba_cumestatsteamgames}
 \title{\strong{Get NBA Stats API Cumulative Player Stats}}
 \usage{
 nba_cumestatsplayer(
@@ -11,6 +14,42 @@ nba_cumestatsplayer(
   season = "2020-21",
   season_type = "Regular Season",
   team_id = "",
+  ...
+)
+
+nba_cumestatsplayergames(
+  league_id = "00",
+  location = "",
+  outcome = "",
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  vs_conference = "",
+  vs_division = "",
+  vs_team_id = "",
+  ...
+)
+
+nba_cumestatsteam(
+  game_ids = "0022201094",
+  league_id = "00",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  team_id = "1610612739",
+  ...
+)
+
+nba_cumestatsteamgames(
+  league_id = "00",
+  location = "",
+  outcome = "",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_id = "",
+  season_type = "Regular Season",
+  team_id = 1610612739,
+  vs_conference = "",
+  vs_division = "",
+  vs_team_id = "",
   ...
 )
 }
@@ -28,6 +67,18 @@ nba_cumestatsplayer(
 \item{team_id}{team_id}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{location}{location}
+
+\item{outcome}{outcome}
+
+\item{vs_conference}{vs_conference}
+
+\item{vs_division}{vs_division}
+
+\item{vs_team_id}{vs_team_id}
+
+\item{season_id}{season_id}
 }
 \value{
 Return a named list of data frames: GameByGameStats, TotalPlayerStats
@@ -121,23 +172,167 @@ Return a named list of data frames: GameByGameStats, TotalPlayerStats
       PER_MIN_PTS \tab character \tab  \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: CumeStatsPlayerGames
+
+\strong{CumeStatsPlayerGames}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      MATCHUP \tab character \tab Matchup. \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: GameByGameStats, TotalTeamStats
+
+\strong{GameByGameStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+      PLAYER \tab character \tab Player. \cr
+      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      GP \tab character \tab Games played. \cr
+      GS \tab character \tab Games started. \cr
+      ACTUAL_MINUTES \tab character \tab  \cr
+      ACTUAL_SECONDS \tab character \tab  \cr
+      FG \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3 \tab character \tab  \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FT \tab character \tab  \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OFF_REB \tab character \tab  \cr
+      DEF_REB \tab character \tab  \cr
+      TOT_REB \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      PF \tab character \tab Personal fouls. \cr
+      DQ \tab character \tab  \cr
+      STL \tab character \tab Steals. \cr
+      TURNOVERS \tab character \tab Total turnovers. \cr
+      BLK \tab character \tab Blocks. \cr
+      PTS \tab character \tab Points scored. \cr
+      MAX_ACTUAL_MINUTES \tab character \tab  \cr
+      MAX_ACTUAL_SECONDS \tab character \tab  \cr
+      MAX_REB \tab character \tab  \cr
+      MAX_AST \tab character \tab  \cr
+      MAX_STL \tab character \tab  \cr
+      MAX_TURNOVERS \tab character \tab  \cr
+      MAX_BLKP \tab character \tab  \cr
+      MAX_PTS \tab character \tab  \cr
+      AVG_ACTUAL_MINUTES \tab character \tab  \cr
+      AVG_ACTUAL_SECONDS \tab character \tab  \cr
+      AVG_REB \tab character \tab  \cr
+      AVG_AST \tab character \tab  \cr
+      AVG_STL \tab character \tab  \cr
+      AVG_TURNOVERS \tab character \tab The average turnovers committed per game. \cr
+      AVG_BLKP \tab character \tab  \cr
+      AVG_PTS \tab character \tab  \cr
+      PER_MIN_REB \tab character \tab  \cr
+      PER_MIN_AST \tab character \tab  \cr
+      PER_MIN_STL \tab character \tab  \cr
+      PER_MIN_TURNOVERS \tab character \tab  \cr
+      PER_MIN_BLK \tab character \tab  \cr
+      PER_MIN_PTS \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{TotalTeamStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      CITY \tab character \tab City. \cr
+      NICKNAME \tab character \tab Team or athlete nickname. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      W \tab character \tab Wins. \cr
+      L \tab character \tab Losses. \cr
+      W_HOME \tab character \tab  \cr
+      L_HOME \tab character \tab  \cr
+      W_ROAD \tab character \tab  \cr
+      L_ROAD \tab character \tab  \cr
+      TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+      TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+      GP \tab character \tab Games played. \cr
+      GS \tab character \tab Games started. \cr
+      ACTUAL_MINUTES \tab character \tab  \cr
+      ACTUAL_SECONDS \tab character \tab  \cr
+      FG \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3 \tab character \tab  \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FT \tab character \tab  \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OFF_REB \tab character \tab  \cr
+      DEF_REB \tab character \tab  \cr
+      TOT_REB \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      PF \tab character \tab Personal fouls. \cr
+      STL \tab character \tab Steals. \cr
+      TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+      BLK \tab character \tab Blocks. \cr
+      PTS \tab character \tab Points scored. \cr
+      AVG_REB \tab character \tab  \cr
+      AVG_PTS \tab character \tab  \cr
+      DQ \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: CumeStatsTeamGames
+
+\strong{CumeStatsTeamGames}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      MATCHUP \tab character \tab Matchup. \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Player Stats}
 
 \strong{Get NBA Stats API Cumulative Player Stats}
+
+\strong{Get NBA Stats API Cumulative Player Game Stats}
+
+\strong{Get NBA Stats API Cumulative Player Game Stats}
+
+\strong{Get NBA Stats API Cumulative Team Stats}
+
+\strong{Get NBA Stats API Cumulative Team Stats}
+
+\strong{Get NBA Stats API Cumulative Team Game Stats}
+
+\strong{Get NBA Stats API Cumulative Team Game Stats}
 }
 \details{
 \href{https://www.nba.com/stats/cumestats}{CUME Stats}
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsplayer()
 }\if{html}{\out{</div>}}
-}
-\seealso{
-Other NBA Cume Functions:
-\code{\link[=nba_cumestatsplayergames]{nba_cumestatsplayergames()}},
-\code{\link[=nba_cumestatsteam]{nba_cumestatsteam()}},
-\code{\link[=nba_cumestatsteamgames]{nba_cumestatsteamgames()}}
+
+\href{https://www.nba.com/stats/cumestats}{CUME Stats}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsplayergames(player_id = '2544')
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/cumestats}{CUME Stats}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteam(game_ids = '0022201094', season = '2022-23', team_id = '1610612739')
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/cumestats}{CUME Stats}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \author{
 Saiem Gilani

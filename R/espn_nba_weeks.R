@@ -6,18 +6,18 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Weeks Index**
+#' @rdname espn_mbb_season_weeks
 #' @name espn_nba_season_weeks
 NULL
 #' @title
 #' **Get ESPN NBA Season Weeks Index**
-#' @rdname espn_nba_season_weeks
+#' @rdname espn_mbb_season_weeks
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of week IDs for one (NBA season x season-type). NBA
 #' uses a week structure inherited from ESPN's schema, but week-level
 #' rankings are populated only for college (MBB / WBB).
 #'
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default), 3 = postseason).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per week.
@@ -46,14 +46,13 @@ espn_nba_season_weeks <- function(season = most_recent_nba_season(),
 #' @name espn_nba_season_week
 #' @title
 #' **Get ESPN NBA Season-Week Detail**
-#' @rdname espn_nba_season_week
+#' @rdname espn_mbb_season_week
 #' @author Saiem Gilani
 #' @description
 #' Returns metadata for one week (number, start / end dates, text label,
 #' and `$ref` to the per-week rankings endpoint).
 #'
 #' @param week Week number.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
@@ -84,7 +83,7 @@ espn_nba_season_week <- function(week,
 #' @name espn_nba_week_rankings
 #' @title
 #' **Get ESPN NBA Per-Week Rankings Index**
-#' @rdname espn_nba_week_rankings
+#' @rdname espn_mbb_week_rankings
 #' @author Saiem Gilani
 #' @description
 #' Returns the index of ranking sources available for one (NBA season x
@@ -93,7 +92,6 @@ espn_nba_season_week <- function(week,
 #' symmetry with college (MBB / WBB).
 #'
 #' @param week Week number.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per ranking source.
@@ -124,7 +122,7 @@ espn_nba_week_rankings <- function(week,
 #' @name espn_nba_week_ranking
 #' @title
 #' **Get ESPN NBA Per-Week Ranking Detail**
-#' @rdname espn_nba_week_ranking
+#' @rdname espn_mbb_week_ranking
 #' @author Saiem Gilani
 #' @description
 #' Returns the long-format ranked teams for one (season x season-type x
@@ -132,7 +130,6 @@ espn_nba_week_rankings <- function(week,
 #'
 #' @param ranking_id Ranking source id (1 = AP, 2 = Coaches, etc.).
 #' @param week Week number.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per ranked team (typically 25).

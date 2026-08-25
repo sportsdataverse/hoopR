@@ -153,13 +153,13 @@ nba_shotchartdetail <- function(
 
 
 #' **Get NBA Stats API Shot Chart League-Wide**
+#' @rdname nba_shotchartdetail
 #' @name nba_shotchartleaguewide
 NULL
 #' @title
 #' **Get NBA Stats API Shot Chart League-Wide**
-#' @rdname nba_shotchartleaguewide
+#' @rdname nba_shotchartdetail
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param season season
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: League_Wide
@@ -218,11 +218,12 @@ nba_shotchartleaguewide <- function(
 }
 
 #' **Get NBA Stats API Shot Chart for Lineups**
+#' @rdname nba_shotchartdetail
 #' @name nba_shotchartlineupdetail
 NULL
 #' @title
 #' **Get NBA Stats API Shot Chart for Lineups**
-#' @rdname nba_shotchartlineupdetail
+#' @rdname nba_shotchartdetail
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param cfid cfid
@@ -243,7 +244,6 @@ NULL
 #' @param group_mode group_mode
 #' @param group_quantity group_quantity
 #' @param last_n_games last_n_games
-#' @param league_id league_id
 #' @param location location
 #' @param month month
 #' @param on_off on_off

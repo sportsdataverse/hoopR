@@ -100,15 +100,14 @@ load_mbb_shots(
 )
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given MBB seasons.
-2004 and 2005 are not published. (Min: 2003)}
+\item{seasons}{A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2006)}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_mbb_db()}).}
 
-\item{dbConnection}{A \code{DBIConnection} object, as returned by \code{DBI::dbConnect()}.}
+\item{dbConnection}{A \code{DBIConnection} object, as returned by}
 
-\item{tablename}{The name of the shots data table within the database.}
+\item{tablename}{The name of the play by play data table within the database}
 }
 \value{
 Returns a tibble

@@ -6,11 +6,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Types Index**
+#' @rdname espn_mbb_season_types
 #' @name espn_nba_season_types
 NULL
 #' @title
 #' **Get ESPN NBA Season Types Index**
-#' @rdname espn_nba_season_types
+#' @rdname espn_mbb_season_types
 #' @author Saiem Gilani
 #' @description
 #' Returns the index of season-type IDs that exist for one NBA season
@@ -18,16 +19,17 @@ NULL
 #' Pass an ID to [espn_nba_season_type()] for the start/end dates and
 #' whether that type carries groups, standings, or legs.
 #'
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per season type.
 #'
-#'    |col_name    |types     |description                       |
-#'    |:-----------|:---------|:---------------------------------|
-#'    |league      |character |League slug (`"nba"`).            |
-#'    |season      |integer   |Season year.                      |
-#'    |season_type |integer   |Season-type id (1/2/3/4).         |
-#'    |ref         |character |`$ref` URL for the type detail.   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'       season \tab integer \tab Season year. \cr
+#'       season_type \tab integer \tab Season-type id (1/2/3/4). \cr
+#'       ref \tab character \tab \verb{$ref} URL for the type detail. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -49,7 +51,7 @@ espn_nba_season_types <- function(season = most_recent_nba_season(), ...) {
 #' @name espn_nba_season_type
 #' @title
 #' **Get ESPN NBA Season-Type Detail**
-#' @rdname espn_nba_season_type
+#' @rdname espn_mbb_season_type
 #' @author Saiem Gilani
 #' @description
 #' Returns metadata for one season-type within an NBA season: name,
@@ -58,7 +60,6 @@ espn_nba_season_types <- function(season = most_recent_nba_season(), ...) {
 #'
 #' @param season_type Season-type id (1 = preseason, 2 = regular (default),
 #'   3 = postseason, 4 = off-season).
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
@@ -87,14 +88,13 @@ espn_nba_season_type <- function(season_type = 2L,
 #' @name espn_nba_season_leaders
 #' @title
 #' **Get ESPN NBA Season Leaders (Long Format)**
-#' @rdname espn_nba_season_leaders
+#' @rdname espn_mbb_season_leaders
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-category leaderboard for one (NBA season x season-type),
 #' in long format. Each row is one (category x rank) entry, e.g.
 #' "Points Per Game x rank 1 x LeBron James".
 #'
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default), 3 = postseason).
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x leader).
@@ -123,7 +123,7 @@ espn_nba_season_leaders <- function(season = most_recent_nba_season(),
 #' @name espn_nba_season_rankings
 #' @title
 #' **Get ESPN NBA Season Rankings Index**
-#' @rdname espn_nba_season_rankings
+#' @rdname espn_mbb_season_rankings
 #' @author Saiem Gilani
 #' @description
 #' Returns the index of season-level rankings recorded for one NBA season.
@@ -132,16 +132,17 @@ espn_nba_season_leaders <- function(season = most_recent_nba_season(),
 #' For MBB / WBB use the matching `espn_mbb_season_rankings()` /
 #' `espn_wbb_season_rankings()`.
 #'
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per ranking source.
 #'
-#'    |col_name   |types     |description                          |
-#'    |:----------|:---------|:------------------------------------|
-#'    |league     |character |League slug.                         |
-#'    |season     |integer   |Season year.                         |
-#'    |ranking_id |character |ESPN ranking id.                     |
-#'    |ref        |character |`$ref` URL for the ranking detail.   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       ranking_id \tab character \tab ESPN ranking id. \cr
+#'       ref \tab character \tab \verb{$ref} URL for the ranking detail. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -163,7 +164,7 @@ espn_nba_season_rankings <- function(season = most_recent_nba_season(), ...) {
 #' @name espn_nba_season_ranking
 #' @title
 #' **Get ESPN NBA Season Ranking Detail**
-#' @rdname espn_nba_season_ranking
+#' @rdname espn_mbb_season_ranking
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-week snapshot index for one ranking source (e.g. AP
@@ -172,7 +173,6 @@ espn_nba_season_rankings <- function(season = most_recent_nba_season(), ...) {
 #' wrapped by a forthcoming `espn_nba_week_ranking()`.
 #'
 #' @param ranking_id ESPN ranking identifier (character or numeric).
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per weekly snapshot.
 #'

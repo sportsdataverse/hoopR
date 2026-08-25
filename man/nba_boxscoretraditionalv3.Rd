@@ -9,7 +9,10 @@
 \alias{nba_boxscorefourfactorsv3}
 \alias{nba_boxscoreplayertrackv3}
 \alias{nba_boxscorematchupsv3}
+\alias{nba_boxscorehustlev2}
 \alias{nba_boxscoredefensivev2}
+\alias{nba_gamerotation}
+\alias{nba_boxscoresummaryv3}
 \title{\strong{Get NBA Stats API Boxscore Traditional V3}}
 \usage{
 nba_boxscoretraditionalv3(
@@ -92,6 +95,8 @@ nba_boxscorematchupsv3(
   ...
 )
 
+nba_boxscorehustlev2(game_id = "0022200021", ...)
+
 nba_boxscoredefensivev2(
   game_id = "0022200021",
   start_period = 0,
@@ -101,9 +106,13 @@ nba_boxscoredefensivev2(
   range_type = 0,
   ...
 )
+
+nba_gamerotation(game_id, league_id = "00", rotation_stat = "PLAYER_PTS", ...)
+
+nba_boxscoresummaryv3(game_id = "0022200021", ...)
 }
 \arguments{
-\item{game_id}{Game ID}
+\item{game_id}{Game ID - 10-digit zero-padded ID (e.g., '0022200021')}
 
 \item{start_period}{Start period filter - default: 0}
 
@@ -116,6 +125,10 @@ nba_boxscoredefensivev2(
 \item{range_type}{Range type - 0: by half, 1: by period, 2: custom range}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{league_id}{League ID}
+
+\item{rotation_stat}{Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT}
 }
 \value{
 Returns a named list of data frames:
@@ -813,6 +826,89 @@ Returns a named list of data frames: home_team_player_matchups, away_team_player
 
 Same columns as the \strong{home_team_player_matchups} table above.
 
+Returns a named list of data frames: home_team_player_hustle, away_team_player_hustle,
+home_team_hustle_totals, away_team_hustle_totals
+
+\strong{home_team_player_hustle}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      away_team_id \tab integer \tab Unique identifier for the away team. \cr
+      home_team_id \tab integer \tab Unique identifier for the home team. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+      first_name \tab character \tab Player's first name. \cr
+      family_name \tab character \tab Player's family / last name. \cr
+      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+      player_slug \tab character \tab URL-safe player identifier. \cr
+      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+      jersey_num \tab character \tab Jersey number worn by the player. \cr
+      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      points \tab integer \tab Points scored. \cr
+      contested_shots \tab integer \tab Defensively contested shots. \cr
+      contested_shots2pt \tab integer \tab Contested shots2pt. \cr
+      contested_shots3pt \tab integer \tab Contested shots3pt. \cr
+      deflections \tab integer \tab Defensive deflections. \cr
+      charges_drawn \tab integer \tab Charges drawn. \cr
+      screen_assists \tab integer \tab Screen assists (resulting in a basket). \cr
+      screen_assist_points \tab integer \tab Points generated from screen assists. \cr
+      loose_balls_recovered_offensive \tab integer \tab Loose balls recovered on offense. \cr
+      loose_balls_recovered_defensive \tab integer \tab Loose balls recovered on defense. \cr
+      loose_balls_recovered_total \tab integer \tab Loose balls recovered total. \cr
+      offensive_box_outs \tab integer \tab Offensive box outs. \cr
+      defensive_box_outs \tab integer \tab Defensive box outs. \cr
+      box_out_player_team_rebounds \tab integer \tab Box-outs that led to either a player or team rebound. \cr
+      box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
+      box_outs \tab integer \tab Box-outs executed. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{away_team_player_hustle}
+
+Same columns as the \strong{home_team_player_hustle} table above.
+
+\strong{home_team_totals_hustle}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      away_team_id \tab integer \tab Unique identifier for the away team. \cr
+      home_team_id \tab integer \tab Unique identifier for the home team. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      points \tab integer \tab Points scored. \cr
+      contested_shots \tab integer \tab Defensively contested shots. \cr
+      contested_shots2pt \tab integer \tab Contested shots2pt. \cr
+      contested_shots3pt \tab integer \tab Contested shots3pt. \cr
+      deflections \tab integer \tab Defensive deflections. \cr
+      charges_drawn \tab integer \tab Charges drawn. \cr
+      screen_assists \tab integer \tab Screen assists (resulting in a basket). \cr
+      screen_assist_points \tab integer \tab Points generated from screen assists. \cr
+      loose_balls_recovered_offensive \tab integer \tab Loose balls recovered on offense. \cr
+      loose_balls_recovered_defensive \tab integer \tab Loose balls recovered on defense. \cr
+      loose_balls_recovered_total \tab integer \tab Loose balls recovered total. \cr
+      offensive_box_outs \tab integer \tab Offensive box outs. \cr
+      defensive_box_outs \tab integer \tab Defensive box outs. \cr
+      box_out_player_team_rebounds \tab integer \tab Box-outs that led to either a player or team rebound. \cr
+      box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
+      box_outs \tab integer \tab Box-outs executed. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{away_team_totals_hustle}
+
+Same columns as the \strong{home_team_totals_hustle} table above.
+
 Returns a named list of data frames: home_team_player_defensive, away_team_player_defensive,
 home_team_totals_defensive, away_team_totals_defensive
 
@@ -876,27 +972,208 @@ Same columns as the \strong{home_team_player_defensive} table above.
 \strong{away_team_totals_defensive}
 
 Same columns as the \strong{home_team_totals_defensive} table above.
+
+Returns a named list of data frames: AwayTeam, HomeTeam
+
+\strong{AwayTeam}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+      PLAYER_FIRST \tab character \tab  \cr
+      PLAYER_LAST \tab character \tab  \cr
+      IN_TIME_REAL \tab character \tab  \cr
+      OUT_TIME_REAL \tab character \tab  \cr
+      PLAYER_PTS \tab character \tab  \cr
+      PT_DIFF \tab character \tab  \cr
+      USG_PCT \tab character \tab Usage percentage (0-1). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{HomeTeam}
+
+Same columns as the \strong{AwayTeam} table above.
+
+Returns a named list of data frames:
+GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
+InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
+
+\strong{GameSummary}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_code \tab character \tab ESPN game code (numeric identifier). \cr
+      game_status \tab integer \tab Game status label. \cr
+      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      game_clock \tab character \tab Game clock. \cr
+      game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+      game_et \tab character \tab Game et. \cr
+      away_team_id \tab integer \tab Unique identifier for the away team. \cr
+      home_team_id \tab integer \tab Unique identifier for the home team. \cr
+      duration \tab integer \tab Duration. \cr
+      attendance \tab integer \tab Reported attendance. \cr
+      sellout \tab character \tab Sellout. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{GameInfo}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+      attendance \tab integer \tab Reported attendance. \cr
+      game_duration \tab integer \tab Game duration. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{ArenaInfo}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      arena_id \tab integer \tab Unique identifier for arena. \cr
+      arena_name \tab character \tab Arena name. \cr
+      arena_city \tab character \tab Arena city. \cr
+      arena_state \tab character \tab Arena state. \cr
+      arena_country \tab character \tab Arena country. \cr
+      arena_timezone \tab character \tab Arena timezone. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{Officials}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+      name \tab character \tab Display name. \cr
+      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+      first_name \tab character \tab Player's first name. \cr
+      family_name \tab character \tab Player's family / last name. \cr
+      jersey_num \tab character \tab Jersey number worn by the player. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{LineScore}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+      team_wins \tab integer \tab Team wins. \cr
+      team_losses \tab integer \tab Team losses. \cr
+      period1_score \tab integer \tab Period1 score. \cr
+      period2_score \tab integer \tab Period2 score. \cr
+      period3_score \tab integer \tab Period3 score. \cr
+      period4_score \tab integer \tab Period4 score. \cr
+      score \tab integer \tab Final score. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{InactivePlayers}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+      first_name \tab character \tab Player's first name. \cr
+      family_name \tab character \tab Player's family / last name. \cr
+      jersey_num \tab character \tab Jersey number worn by the player. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{LastFiveMeetings}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      recency_order \tab integer \tab Recency order. \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+      game_et \tab character \tab Game et. \cr
+      game_status \tab integer \tab Game status label. \cr
+      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+      away_team_id \tab integer \tab Unique identifier for the away team. \cr
+      away_team_city \tab character \tab Away team city / location. \cr
+      away_team_name \tab character \tab Away team name. \cr
+      away_team_tricode \tab character \tab Away team three-letter code. \cr
+      away_team_score \tab integer \tab Away team's score. \cr
+      away_team_wins \tab integer \tab Away team's team wins. \cr
+      away_team_losses \tab integer \tab Away team's team losses. \cr
+      home_team_id \tab integer \tab Unique identifier for the home team. \cr
+      home_team_city \tab character \tab Home team city / location. \cr
+      home_team_name \tab character \tab Home team name. \cr
+      home_team_tricode \tab character \tab Home team three-letter code. \cr
+      home_team_score \tab integer \tab Home team's score. \cr
+      home_team_wins \tab integer \tab Home team's team wins. \cr
+      home_team_losses \tab integer \tab Home team's team losses. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{OtherStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      team_id \tab integer \tab Unique team identifier. \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+      points \tab integer \tab Points scored. \cr
+      rebounds_total \tab integer \tab Total rebounds. \cr
+      assists \tab integer \tab Total assists. \cr
+      steals \tab integer \tab Total steals. \cr
+      blocks \tab integer \tab Total blocks. \cr
+      turnovers \tab integer \tab Total turnovers. \cr
+      field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+      free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+      points_in_the_paint \tab integer \tab Points in the paint. \cr
+      points_second_chance \tab integer \tab Second-chance points scored. \cr
+      points_fast_break \tab integer \tab Fast-break points scored. \cr
+      biggest_lead \tab integer \tab Biggest lead. \cr
+      lead_changes \tab integer \tab Lead changes. \cr
+      times_tied \tab integer \tab Times tied. \cr
+      biggest_scoring_run \tab integer \tab Biggest scoring run. \cr
+      turnovers_team \tab integer \tab Turnovers team. \cr
+      turnovers_total \tab integer \tab Turnovers total. \cr
+      rebounds_team \tab integer \tab Rebounds team. \cr
+      points_from_turnovers \tab integer \tab Points from turnovers. \cr
+      bench_points \tab integer \tab Points scored by the bench. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{AvailableVideo}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      video_available_flag \tab integer \tab Video available flag. \cr
+      pt_available \tab integer \tab Pt available. \cr
+      pt_xyz_available \tab integer \tab Pt xyz available. \cr
+      wh_status \tab integer \tab Wh status. \cr
+      hustle_status \tab integer \tab Hustle status. \cr
+      historical_status \tab integer \tab Historical status. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
-\strong{Get NBA Stats API Boxscore Traditional V3}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API Boxscore Traditional V3}
-
-\strong{Get NBA Stats API Boxscore Advanced V3}
-
-\strong{Get NBA Stats API Boxscore Misc V3}
-
-\strong{Get NBA Stats API Boxscore Scoring V3}
-
-\strong{Get NBA Stats API Boxscore Usage V3}
-
-\strong{Get NBA Stats API Boxscore Four Factors V3}
-
-\strong{Get NBA Stats API Boxscore Player Tracking V3}
-
-\strong{Get NBA Stats API Boxscore Matchups V3}
-
-\strong{Get NBA Stats API Boxscore Defensive V2}
+NBA Stats no longer returns stable data for this V2 endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_hustlestatsboxscore()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoretraditionalv3(game_id = "0022200021")
@@ -923,15 +1200,34 @@ Same columns as the \strong{home_team_totals_defensive} table above.
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscorematchupsv3(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscorehustlev2(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoredefensivev2(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_gamerotation(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoresummaryv3(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Boxscore V3 Functions:
-\code{\link[=nba_boxscorehustlev2]{nba_boxscorehustlev2()}},
-\code{\link[=nba_boxscoresummaryv3]{nba_boxscoresummaryv3()}}
+Other NBA Boxscore Functions:
+\code{\link[=nba_boxscoretraditionalv2]{nba_boxscoretraditionalv2()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}}
+
+Other NBA Lineup Functions:
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_rapm]{nba_rapm()}},
+\code{\link[=nba_shot_zones]{nba_shot_zones()}},
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani
 }
+\concept{NBA Boxscore Functions}
 \concept{NBA Boxscore V3 Functions}
+\concept{NBA Lineup Functions}

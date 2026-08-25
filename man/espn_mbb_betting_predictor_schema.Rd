@@ -7,13 +7,14 @@
 Columns shared verbatim across: espn_mbb_betting, espn_nba_betting.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    game_id \tab integer \tab Unique game identifier. \cr
    home_team_id \tab integer \tab Unique identifier for the home team. \cr
    away_team_id \tab integer \tab Unique identifier for the away team. \cr
    away_team_game_projection \tab numeric \tab Away team's team game projection. \cr
    away_team_chance_loss \tab numeric \tab Away team's team chance loss. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

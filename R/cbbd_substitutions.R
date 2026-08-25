@@ -58,6 +58,7 @@ cbbd_substitutions_game <- function(game_id) {
 
 #' @title
 #' **CBD Substitutions by Player**
+#' @rdname cbbd_substitutions_game
 #' @description
 #' **Get substitution data for a single player from the CollegeBasketballData API.**
 #' @param player_id (*integer* required): Athlete id.
@@ -100,6 +101,7 @@ cbbd_substitutions_player <- function(player_id, season = most_recent_mbb_season
 
 #' @title
 #' **CBD Substitutions by Team**
+#' @rdname cbbd_substitutions_game
 #' @description
 #' **Get substitution data for a team-season from the CollegeBasketballData API.**
 #' @param season (*integer* required): Season, 4-digit ending-year (e.g. `2024`).

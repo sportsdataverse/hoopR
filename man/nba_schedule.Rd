@@ -2,9 +2,36 @@
 % Please edit documentation in R/nba_stats_scoreboard.R
 \name{nba_schedule}
 \alias{nba_schedule}
+\alias{nba_scoreboard}
+\alias{nba_scoreboardv2}
+\alias{nba_scoreboardv3}
+\alias{nba_todays_scoreboard}
+\alias{nba_winprobabilitypbp}
+\alias{nba_scheduleleaguev2int}
 \title{\strong{Get NBA Stats API Season Schedule}}
 \usage{
 nba_schedule(
+  league_id = "00",
+  season = year_to_season(most_recent_nba_season() - 1),
+  ...
+)
+
+nba_scoreboard(league_id = "00", game_date = "2021-07-20", day_offset = 0, ...)
+
+nba_scoreboardv2(
+  league_id = "00",
+  game_date = "2021-07-20",
+  day_offset = 0,
+  ...
+)
+
+nba_scoreboardv3(league_id = "00", game_date = "2023-03-26", ...)
+
+nba_todays_scoreboard(...)
+
+nba_winprobabilitypbp(game_id = "0021700807", run_type = "each second", ...)
+
+nba_scheduleleaguev2int(
   league_id = "00",
   season = year_to_season(most_recent_nba_season() - 1),
   ...
@@ -16,6 +43,14 @@ nba_schedule(
 \item{season}{Season}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{game_date}{Game Date}
+
+\item{day_offset}{Day Offset (integer 0,-1)}
+
+\item{game_id}{Game ID}
+
+\item{run_type}{Run Type}
 }
 \value{
 Returns a tibble with the following columns:
@@ -71,26 +106,473 @@ Returns a tibble with the following columns:
       league_id \tab character \tab League identifier ('10' = WNBA). \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Return a named list of data frames: Available, EastConfStandingsByDay,
+GameHeader, LastMeeting, LineScore, SeriesStandings, WestConfStandingsByDay
+
+\strong{GameHeader}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_gamesummary_schema} table.
+
+\strong{LineScore}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   GAME_SEQUENCE \tab character \tab Game sequence. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY_NAME \tab character \tab  \cr
+   TEAM_WINS_LOSSES \tab character \tab  \cr
+   PTS_QTR1 \tab character \tab  \cr
+   PTS_QTR2 \tab character \tab  \cr
+   PTS_QTR3 \tab character \tab  \cr
+   PTS_QTR4 \tab character \tab  \cr
+   PTS_OT1 \tab character \tab  \cr
+   PTS_OT2 \tab character \tab  \cr
+   PTS_OT3 \tab character \tab  \cr
+   PTS_OT4 \tab character \tab  \cr
+   PTS_OT5 \tab character \tab  \cr
+   PTS_OT6 \tab character \tab  \cr
+   PTS_OT7 \tab character \tab  \cr
+   PTS_OT8 \tab character \tab  \cr
+   PTS_OT9 \tab character \tab  \cr
+   PTS_OT10 \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   AST \tab character \tab Assists. \cr
+   REB \tab character \tab Total rebounds. \cr
+   TOV \tab character \tab Turnovers. \cr
+}
+
+
+\strong{SeriesStandings}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_seasonseries_schema} table.
+
+\strong{LastMeeting}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_lastmeeting_schema} table.
+
+\strong{EastConfStandingsByDay}
+
+Columns as documented in the shared \link{nba_scoreboard_eastconfstandingsbyday_schema} table.
+
+\strong{WestConfStandingsByDay}
+
+Columns as documented in the shared \link{nba_scoreboard_eastconfstandingsbyday_schema} table.
+
+\strong{Available}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   PT_AVAILABLE \tab character \tab Pt available. \cr
+}
+
+Return a named list of data frames: Available, EastConfStandingsByDay,
+GameHeader, LastMeeting, LineScore, SeriesStandings, TeamLeaders,
+TicketLinks, WestConfStandingsByDay, WinProbability
+
+\strong{GameHeader}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   GAME_SEQUENCE \tab character \tab Game sequence. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   GAME_STATUS_ID \tab character \tab Numeric game status identifier. \cr
+   GAME_STATUS_TEXT \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+   GAMECODE \tab character \tab  \cr
+   HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+   VISITOR_TEAM_ID \tab character \tab  \cr
+   SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+   LIVE_PERIOD \tab character \tab  \cr
+   LIVE_PC_TIME \tab character \tab  \cr
+   NATL_TV_BROADCASTER_ABBREVIATION \tab character \tab  \cr
+   HOME_TV_BROADCASTER_ABBREVIATION \tab character \tab  \cr
+   AWAY_TV_BROADCASTER_ABBREVIATION \tab character \tab  \cr
+   LIVE_PERIOD_TIME_BCAST \tab character \tab  \cr
+   ARENA_NAME \tab character \tab Arena name. \cr
+   WH_STATUS \tab character \tab Wh status. \cr
+   WNBA_COMMISSIONER_FLAG \tab character \tab  \cr
+}
+
+
+\strong{LineScore}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   GAME_SEQUENCE \tab character \tab Game sequence. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY_NAME \tab character \tab  \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_WINS_LOSSES \tab character \tab  \cr
+   PTS_QTR1 \tab character \tab  \cr
+   PTS_QTR2 \tab character \tab  \cr
+   PTS_QTR3 \tab character \tab  \cr
+   PTS_QTR4 \tab character \tab  \cr
+   PTS_OT1 \tab character \tab  \cr
+   PTS_OT2 \tab character \tab  \cr
+   PTS_OT3 \tab character \tab  \cr
+   PTS_OT4 \tab character \tab  \cr
+   PTS_OT5 \tab character \tab  \cr
+   PTS_OT6 \tab character \tab  \cr
+   PTS_OT7 \tab character \tab  \cr
+   PTS_OT8 \tab character \tab  \cr
+   PTS_OT9 \tab character \tab  \cr
+   PTS_OT10 \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+   AST \tab character \tab Assists. \cr
+   REB \tab character \tab Total rebounds. \cr
+   TOV \tab character \tab Turnovers. \cr
+}
+
+
+\strong{SeriesStandings}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_seasonseries_schema} table.
+
+\strong{LastMeeting}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_lastmeeting_schema} table.
+
+\strong{EastConfStandingsByDay}
+
+Columns as documented in the shared \link{nba_scoreboard_eastconfstandingsbyday_schema} table.
+
+\strong{WestConfStandingsByDay}
+
+Columns as documented in the shared \link{nba_scoreboard_eastconfstandingsbyday_schema} table.
+
+\strong{Available}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   PT_AVAILABLE \tab character \tab Pt available. \cr
+}
+
+
+\strong{TeamLeaders}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   TEAM_NICKNAME \tab character \tab Team nickname. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   PTS_PLAYER_ID \tab character \tab  \cr
+   PTS_PLAYER_NAME \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+   REB_PLAYER_ID \tab character \tab  \cr
+   REB_PLAYER_NAME \tab character \tab  \cr
+   REB \tab character \tab Total rebounds. \cr
+   AST_PLAYER_ID \tab character \tab  \cr
+   AST_PLAYER_NAME \tab character \tab  \cr
+   AST \tab character \tab Assists. \cr
+}
+
+
+\strong{TicketLinks}
+
+\strong{WinProbability}
+
+Return a tibble with the following scoreboard data:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_code \tab character \tab ESPN game code (numeric identifier). \cr
+      game_status \tab integer \tab Game status label. \cr
+      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+      game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+      game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+      game_et \tab character \tab Game et. \cr
+      home_team_id \tab integer \tab Unique identifier for the home team. \cr
+      home_team_name \tab character \tab Home team name. \cr
+      home_team_city \tab character \tab Home team city / location. \cr
+      home_team_tricode \tab character \tab Home team three-letter code. \cr
+      home_team_slug \tab character \tab Home team's team slug. \cr
+      away_team_id \tab integer \tab Unique identifier for the away team. \cr
+      away_team_name \tab character \tab Away team name. \cr
+      away_team_city \tab character \tab Away team city / location. \cr
+      away_team_tricode \tab character \tab Away team three-letter code. \cr
+      away_team_slug \tab character \tab Away team's team slug. \cr
+      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      game_clock \tab character \tab Game clock. \cr
+      regulation_periods \tab integer \tab Regulation periods. \cr
+      series_game_number \tab character \tab Series game number. \cr
+      series_text \tab character \tab Series text. \cr
+      if_necessary \tab logical \tab If necessary. \cr
+      series_conference \tab character \tab Series conference. \cr
+      po_round_desc \tab character \tab Po round desc. \cr
+      game_subtype \tab character \tab Game subtype. \cr
+      game_home_leaders_person_id \tab integer \tab Unique identifier for game home leaders person. \cr
+      game_home_leaders_name \tab character \tab Game home leaders name. \cr
+      game_home_leaders_player_slug \tab character \tab Game home leaders player slug. \cr
+      game_home_leaders_jersey_num \tab character \tab Game home leaders jersey num. \cr
+      game_home_leaders_position \tab character \tab Game home leaders position. \cr
+      game_home_leaders_team_tricode \tab character \tab Game home leaders team tricode. \cr
+      game_home_leaders_points \tab integer \tab Game home leaders points. \cr
+      game_home_leaders_rebounds \tab integer \tab Game home leaders rebounds. \cr
+      game_home_leaders_assists \tab integer \tab Game home leaders assists. \cr
+      game_away_leaders_person_id \tab integer \tab Unique identifier for game away leaders person. \cr
+      game_away_leaders_name \tab character \tab Game away leaders name. \cr
+      game_away_leaders_player_slug \tab character \tab Game away leaders player slug. \cr
+      game_away_leaders_jersey_num \tab character \tab Game away leaders jersey num. \cr
+      game_away_leaders_position \tab character \tab Game away leaders position. \cr
+      game_away_leaders_team_tricode \tab character \tab Game away leaders team tricode. \cr
+      game_away_leaders_points \tab integer \tab Game away leaders points. \cr
+      game_away_leaders_rebounds \tab integer \tab Game away leaders rebounds. \cr
+      game_away_leaders_assists \tab integer \tab Game away leaders assists. \cr
+      team_home_leaders_person_id \tab integer \tab Unique identifier for team home leaders person. \cr
+      team_home_leaders_name \tab character \tab Team home leaders name. \cr
+      team_home_leaders_player_slug \tab character \tab Team home leaders player slug. \cr
+      team_home_leaders_jersey_num \tab character \tab Team home leaders jersey num. \cr
+      team_home_leaders_position \tab character \tab Team home leaders position. \cr
+      team_home_leaders_team_tricode \tab character \tab Team home leaders team tricode. \cr
+      team_home_leaders_points \tab numeric \tab Team home leaders points. \cr
+      team_home_leaders_rebounds \tab numeric \tab Team home leaders rebounds. \cr
+      team_home_leaders_assists \tab numeric \tab Team home leaders assists. \cr
+      team_away_leaders_person_id \tab integer \tab Unique identifier for team away leaders person. \cr
+      team_away_leaders_name \tab character \tab Team away leaders name. \cr
+      team_away_leaders_player_slug \tab character \tab Team away leaders player slug. \cr
+      team_away_leaders_jersey_num \tab character \tab Team away leaders jersey num. \cr
+      team_away_leaders_position \tab character \tab Team away leaders position. \cr
+      team_away_leaders_team_tricode \tab character \tab Team away leaders team tricode. \cr
+      team_away_leaders_points \tab numeric \tab Team away leaders points. \cr
+      team_away_leaders_rebounds \tab numeric \tab Team away leaders rebounds. \cr
+      team_away_leaders_assists \tab numeric \tab Team away leaders assists. \cr
+      team_season_leaders_flag \tab integer \tab Team season leaders flag. \cr
+      home_wins \tab integer \tab Home team's wins. \cr
+      home_losses \tab integer \tab Home team's losses. \cr
+      home_score \tab integer \tab Home team score at the time of the play. \cr
+      home_seed \tab integer \tab Home team's seed. \cr
+      home_in_bonus \tab logical \tab Home team's in bonus. \cr
+      home_timeouts_remaining \tab integer \tab Home team's timeouts remaining. \cr
+      home_periods \tab list \tab Home team's periods. \cr
+      away_wins \tab integer \tab Away team's wins. \cr
+      away_losses \tab integer \tab Away team's losses. \cr
+      away_score \tab integer \tab Away team score at the time of the play. \cr
+      away_seed \tab integer \tab Away team's seed. \cr
+      away_in_bonus \tab logical \tab Away team's in bonus. \cr
+      away_timeouts_remaining \tab integer \tab Away team's timeouts remaining. \cr
+      away_periods \tab list \tab Away team's periods. \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+      league \tab character \tab League. \cr
+      broadcasters \tab data.frame \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Return a data frame with the following columns:
+
+\if{html}{\tabular{lll}{
+     col_name \tab types \tab description \cr
+     game_id \tab character \tab Unique game identifier. \cr
+     game_code \tab character \tab ESPN game code (numeric identifier). \cr
+     game_status \tab integer \tab Game status label. \cr
+     game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+     period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+     game_clock \tab character \tab Game clock. \cr
+     game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+     game_et \tab character \tab Game et. \cr
+     regulation_periods \tab integer \tab Regulation periods. \cr
+     if_necessary \tab logical \tab If necessary. \cr
+     series_game_number \tab character \tab Series game number. \cr
+     series_text \tab character \tab Series text. \cr
+     series_conference \tab character \tab Series conference. \cr
+     po_round_desc \tab character \tab Po round desc. \cr
+     game_subtype \tab character \tab Game subtype. \cr
+     home_team_id \tab integer \tab Unique identifier for the home team. \cr
+     home_team_name \tab character \tab Home team name. \cr
+     home_team_city \tab character \tab Home team city / location. \cr
+     home_team_tricode \tab character \tab Home team three-letter code. \cr
+     home_wins \tab integer \tab Home team's wins. \cr
+     home_losses \tab integer \tab Home team's losses. \cr
+     home_score \tab integer \tab Home team score at the time of the play. \cr
+     home_seed \tab logical \tab Home team's seed. \cr
+     home_in_bonus \tab character \tab Home team's in bonus. \cr
+     home_timeouts_remaining \tab integer \tab Home team's timeouts remaining. \cr
+     home_periods \tab list \tab Home team's periods. \cr
+     away_team_id \tab integer \tab Unique identifier for the away team. \cr
+     away_team_name \tab character \tab Away team name. \cr
+     away_team_city \tab character \tab Away team city / location. \cr
+     away_team_tricode \tab character \tab Away team three-letter code. \cr
+     away_wins \tab integer \tab Away team's wins. \cr
+     away_losses \tab integer \tab Away team's losses. \cr
+     away_score \tab integer \tab Away team score at the time of the play. \cr
+     away_seed \tab logical \tab Away team's seed. \cr
+     away_in_bonus \tab character \tab Away team's in bonus. \cr
+     away_timeouts_remaining \tab integer \tab Away team's timeouts remaining. \cr
+     away_periods \tab list \tab Away team's periods. \cr
+     home_leaders_person_id \tab integer \tab Unique identifier for home leaders person. \cr
+     home_leaders_name \tab character \tab Home leaders name. \cr
+     home_leaders_jersey_num \tab character \tab Home team's leaders jersey num. \cr
+     home_leaders_position \tab character \tab Home team's leaders position. \cr
+     home_leaders_team_tricode \tab character \tab Home team's leaders team tricode. \cr
+     home_leaders_player_slug \tab character \tab Home team's leaders player slug. \cr
+     home_leaders_points \tab integer \tab Home team's leaders points. \cr
+     home_leaders_rebounds \tab integer \tab Home team's leaders rebounds. \cr
+     home_leaders_assists \tab integer \tab Home team's leaders assists. \cr
+     away_leaders_person_id \tab integer \tab Unique identifier for away leaders person. \cr
+     away_leaders_name \tab character \tab Away leaders name. \cr
+     away_leaders_jersey_num \tab character \tab Away team's leaders jersey num. \cr
+     away_leaders_position \tab character \tab Away team's leaders position. \cr
+     away_leaders_team_tricode \tab character \tab Away team's leaders team tricode. \cr
+     away_leaders_player_slug \tab character \tab Away team's leaders player slug. \cr
+     away_leaders_points \tab integer \tab Away team's leaders points. \cr
+     away_leaders_rebounds \tab integer \tab Away team's leaders rebounds. \cr
+     away_leaders_assists \tab integer \tab Away team's leaders assists. \cr
+     pb_odds_team \tab logical \tab Pb odds team. \cr
+     pb_odds_odds \tab numeric \tab Pb odds odds. \cr
+     pb_odds_suspended \tab integer \tab Pb odds suspended. \cr
+  }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Return a named list of data frames: WinProbPBP, GameInfo
+
+\strong{WinProbPBP}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      EVENT_NUM \tab character \tab Sequential event number within the game (V2 PBP). \cr
+      HOME_PCT \tab character \tab  \cr
+      VISITOR_PCT \tab character \tab  \cr
+      HOME_PTS \tab character \tab  \cr
+      VISITOR_PTS \tab character \tab  \cr
+      HOME_SCORE_MARGIN \tab character \tab  \cr
+      PERIOD \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      SECONDS_REMAINING \tab character \tab Seconds remaining in the period. \cr
+      HOME_POSS_IND \tab character \tab  \cr
+      HOME_G \tab character \tab  \cr
+      DESCRIPTION \tab character \tab Long-form description text. \cr
+      LOCATION \tab character \tab Location. \cr
+      PCTIMESTRING \tab character \tab  \cr
+      ISVISIBLE \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{GameInfo}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+      HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+      HOME_TEAM_ABR \tab character \tab  \cr
+      HOME_TEAM_PTS \tab character \tab  \cr
+      VISITOR_TEAM_ID \tab character \tab  \cr
+      VISITOR_TEAM_ABR \tab character \tab  \cr
+      VISITOR_TEAM_PTS \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
+
+\strong{SeasonGames}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_code \tab character \tab ESPN game code (numeric identifier). \cr
+      game_status \tab character \tab Game status label. \cr
+      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+      game_sequence \tab character \tab Game sequence. \cr
+      home_team_id \tab character \tab Unique identifier for the home team. \cr
+      home_team_name \tab character \tab Home team name. \cr
+      home_team_city \tab character \tab Home team city / location. \cr
+      home_team_tricode \tab character \tab Home team three-letter code. \cr
+      home_team_slug \tab character \tab Home team's team slug. \cr
+      home_team_wins \tab character \tab Home team's team wins. \cr
+      home_team_losses \tab character \tab Home team's team losses. \cr
+      home_team_score \tab character \tab Home team's score. \cr
+      away_team_id \tab character \tab Unique identifier for the away team. \cr
+      away_team_name \tab character \tab Away team name. \cr
+      away_team_city \tab character \tab Away team city / location. \cr
+      away_team_tricode \tab character \tab Away team three-letter code. \cr
+      away_team_slug \tab character \tab Away team's team slug. \cr
+      away_team_wins \tab character \tab Away team's team wins. \cr
+      away_team_losses \tab character \tab Away team's team losses. \cr
+      away_team_score \tab character \tab Away team's score. \cr
+      season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{SeasonWeeks}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+      season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+      week_number \tab character \tab Week number. \cr
+      week_name \tab character \tab Week name. \cr
+      start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+      end_date \tab character \tab End date (YYYY-MM-DD). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{BroadcasterList}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      league_id \tab character \tab League identifier ('10' = WNBA). \cr
+      season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+      broadcaster_abbreviation \tab character \tab Broadcaster abbreviation. \cr
+      broadcaster_display \tab character \tab Broadcaster display. \cr
+      broadcaster_id \tab character \tab Unique identifier for broadcaster. \cr
+      region_id \tab character \tab Unique identifier for region. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
-\strong{Get NBA Stats API Season Schedule}
+Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba_scoreboardv3()} instead.
 
-\strong{Get NBA Stats API Season Schedule}
+Restored in \code{hoopR} 3.1.0 -- a residential-IP live re-probe (2026-08-24)
+confirmed this endpoint still serves real rows for NBA. For real-time
+scores, prefer \code{\link[=nba_todays_scoreboard]{nba_todays_scoreboard()}} instead (see #129).
+
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_playbyplayv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
  nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboard(league_id = '00', game_date = '2021-07-20')
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboardv2(league_id = '00', game_date = '2021-07-20')
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scoreboardv3(league_id = '00', game_date = '2023-03-26')
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_todays_scoreboard()
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_winprobabilitypbp(game_id = '0021700807', run_type = 'each second')
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_scheduleleaguev2int(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBA Schedule Functions:
-\code{\link[=nba_scheduleleaguev2int]{nba_scheduleleaguev2int()}},
-\code{\link[=nba_scoreboard]{nba_scoreboard()}},
-\code{\link[=nba_scoreboardv2]{nba_scoreboardv2()}},
-\code{\link[=nba_scoreboardv3]{nba_scoreboardv3()}},
-\code{\link[=nba_todays_scoreboard]{nba_todays_scoreboard()}}
+Other NBA Live Functions:
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}}
+
+Other NBA PBP Functions:
+\code{\link[=nba_data_pbp]{nba_data_pbp()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}}
 }
 \author{
 Saiem Gilani
 }
+\concept{NBA Live Functions}
+\concept{NBA PBP Functions}
 \concept{NBA Schedule Functions}

@@ -1,9 +1,10 @@
 #' **Get NBA Stats API Franchise Leaders**
+#' @rdname nba_franchisehistory
 #' @name nba_franchiseleaders
 NULL
 #' @title
 #' **Get NBA Stats API Franchise Leaders**
-#' @rdname nba_franchiseleaders
+#' @rdname nba_franchisehistory
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param team_id team_id
@@ -83,11 +84,12 @@ nba_franchiseleaders <- function(
 }
 
 #' **Get NBA Stats API Franchise Leaders with Rank**
+#' @rdname nba_franchisehistory
 #' @name nba_franchiseleaderswrank
 NULL
 #' @title
 #' **Get NBA Stats API Franchise Leaders with Rank**
-#' @rdname nba_franchiseleaderswrank
+#' @rdname nba_franchisehistory
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param per_mode per_mode
@@ -206,11 +208,12 @@ nba_franchiseleaderswrank <- function(
 }
 
 #' **Get NBA Stats API Franchise Players**
+#' @rdname nba_franchisehistory
 #' @name nba_franchiseplayers
 NULL
 #' @title
 #' **Get NBA Stats API Franchise Players**
-#' @rdname nba_franchiseplayers
+#' @rdname nba_franchisehistory
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param per_mode per_mode

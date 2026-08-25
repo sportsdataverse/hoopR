@@ -24,16 +24,19 @@ Defaults to \code{most_recent_nba_season()}.}
 \value{
 A \code{hoopR_data} tibble (one row per qualified player) carrying the
 requested \code{season}, \code{stat_type} and \code{season_type} as columns. Columns vary
-by \code{stat_type}; for \code{"Averages"}:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player \tab character \tab Player name. \cr
-   team \tab character \tab Team abbreviation. \cr
-   gp \tab integer \tab Games played. \cr
-   mpg \tab numeric \tab Minutes per game. \cr
-   ppg \tab numeric \tab Points per game. \cr
-   rpg \tab numeric \tab Rebounds per game. \cr
-   apg \tab numeric \tab Assists per game. \cr
-}
+by \code{stat_type}; for \code{"Averages"}:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player \tab character \tab Player name. \cr
+      team \tab character \tab Team abbreviation. \cr
+      gp \tab integer \tab Games played. \cr
+      mpg \tab numeric \tab Minutes per game. \cr
+      ppg \tab numeric \tab Points per game. \cr
+      rpg \tab numeric \tab Rebounds per game. \cr
+      apg \tab numeric \tab Assists per game. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get season player statistics leaders from

@@ -1,9 +1,10 @@
 #' **Get NBA Stats API Player Index**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerindex
 NULL
 #' @title
 #' **Get NBA Stats API Player Index**
-#' @rdname nba_playerindex
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param college Player College
 #' @param country Player Country
@@ -122,11 +123,12 @@ nba_playerindex <- function(
 }
 
 #' **Get NBA Stats API Player Head-shot**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerheadshot
 NULL
 #' @title
 #' **Get NBA Stats API Player Head-shot**
-#' @rdname nba_playerheadshot
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param player_id Player ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -169,13 +171,13 @@ nba_playerheadshot <- function(
 }
 
 #' **Get NBA Stats API Player Awards**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerawards
 NULL
 #' @title
 #' **Get NBA Stats API Player Awards**
-#' @rdname nba_playerawards
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param player_id Player ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PlayerAwards
 #'
@@ -245,18 +247,15 @@ nba_playerawards <- function(
 }
 
 #' **Get NBA Stats API Player Career By College**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playercareerbycollege
 NULL
 #' @title
 #' **Get NBA Stats API Player Career By College**
 #' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use `nba_playercareerbycollegerollup()` instead.
-#' @rdname nba_playercareerbycollege
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param college College Name
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param per_mode Per Mode - PerGame, Totals
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PlayerCareerByCollege
 #'
@@ -352,16 +351,13 @@ nba_playercareerbycollege <- function(
 
 
 #' **Get NBA Stats API Player Career By College Rollup**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playercareerbycollegerollup
 NULL
 #' @title
 #' **Get NBA Stats API Player Career By College Rollup**
-#' @rdname nba_playercareerbycollegerollup
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param per_mode Per Mode - PerGame, Totals
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: East, Midwest, South, West
 #'
@@ -464,15 +460,13 @@ nba_playercareerbycollegerollup <- function(
 
 
 #' **Get NBA Stats API Player Career Stats**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playercareerstats
 NULL
 #' @title
 #' **Get NBA Stats API Player Career Stats**
-#' @rdname nba_playercareerstats
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param player_id Player ID
-#' @param per_mode Per Mode - PerGame, Totals
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: CareerTotalsAllStarSeason,
 #' CareerTotalsCollegeSeason, CareerTotalsPostSeason,
@@ -696,21 +690,17 @@ nba_infographicfanduelplayer <- function(
 }
 
 #' **Get NBA Stats API Player Fantasy Profile**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerfantasyprofile
 NULL
 #' @title
 #' **Get NBA Stats API Player Fantasy Profile**
-#' @rdname nba_playerfantasyprofile
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param measure_type measure_type
-#' @param player_id Player ID
-#' @param per_mode Per Mode - PerGame, Totals
 #' @param pace_adjust Pace Adjustment - Y/N
 #' @param plus_minus Plus Minus - Y/N
 #' @param rank Rank - Y/N
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: DaysRestModified, LastNGames, Location, Opponent, Overall
 #'
@@ -874,16 +864,13 @@ nba_playerfantasyprofile <- function(
 
 
 #' **Get NBA Stats API Player Fantasy Profile Bar Graph**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerfantasyprofilebargraph
 NULL
 #' @title
 #' **Get NBA Stats API Player Fantasy Profile Bar Graph**
-#' @rdname nba_playerfantasyprofilebargraph
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param player_id Player ID
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
 #'
@@ -968,15 +955,13 @@ nba_playerfantasyprofilebargraph <- function(
 
 
 #' **Get NBA Stats API Player Estimated Metrics**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerestimatedmetrics
 NULL
 #' @title
 #' **Get NBA Stats API Player Estimated Metrics**
-#' @rdname nba_playerestimatedmetrics
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PlayerEstimatedMetrics
 #'
@@ -1081,18 +1066,15 @@ nba_playerestimatedmetrics <- function(
 
 
 #' **Get NBA Stats API Player Game Log**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playergamelog
 NULL
 #' @title
 #' **Get NBA Stats API Player Game Log**
-#' @rdname nba_playergamelog
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param player_id Player ID
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PlayerGameLog
 #'
@@ -1187,30 +1169,25 @@ nba_playergamelog <- function(
 }
 
 #' **Get NBA Stats API Player Game Logs**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playergamelogs
 NULL
 #' @title
 #' **Get NBA Stats API Player Game Logs**
-#' @rdname nba_playergamelogs
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
 #' @param game_segment game_segment
 #' @param last_n_games last_n_games
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param location location
 #' @param measure_type measure_type
 #' @param month month
 #' @param opponent_team_id opponent_team_id
 #' @param outcome outcome
 #' @param po_round po_round
-#' @param per_mode per_mode
 #' @param period period
-#' @param player_id Player ID
-#' @param season Season - format 2020-21
 #' @param season_segment season_segment
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1378,20 +1355,19 @@ nba_playergamelogs <- function(
 
 
 #' **Get NBA Stats API Player Game Streak Finder**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playergamestreakfinder
 NULL
 #' @title
 #' **Get NBA Stats API Player Game Streak Finder**
-#' @rdname nba_playergamestreakfinder
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param active_streaks_only active_streaks_only
 #' @param conference conference
 #' @param date_from date_from
 #' @param date_to date_to
 #' @param division division
-#' @param draft_year draft_year
 #' @param draft_team_id draft_team_id
-#' @param draft_round draft_round
 #' @param draft_number draft_number
 #' @param et_ast et_ast
 #' @param et_blk et_blk
@@ -1436,7 +1412,6 @@ NULL
 #' @param gt_stl gt_stl
 #' @param gt_td gt_td
 #' @param gt_tov gt_tov
-#' @param league_id league_id
 #' @param location location
 #' @param lt_ast lt_ast
 #' @param lt_blk lt_blk
@@ -1462,13 +1437,9 @@ NULL
 #' @param min_games min_games
 #' @param outcome outcome
 #' @param po_round po_round
-#' @param player_id player_id
 #' @param rookie_year rookie_year
-#' @param season season
 #' @param season_segment season_segment
-#' @param season_type season_type
 #' @param starter_bench starter_bench
-#' @param team_id team_id
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_team_id vs_team_id
@@ -1717,18 +1688,15 @@ nba_playergamestreakfinder <- function(
 
 
 #' **Get NBA Stats API Player Next N Games**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playernextngames
 NULL
 #' @title
 #' **Get NBA Stats API Player Next N Games**
 #' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use `nba_playerprofilev2()` instead.
-#' @rdname nba_playernextngames
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param number_of_games N in number of games
-#' @param player_id Player ID
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: NextNGames
 #'
@@ -1815,15 +1783,13 @@ nba_playernextngames <- function(
 
 
 #' **Get NBA Stats API Player Profile V2**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playerprofilev2
 NULL
 #' @title
 #' **Get NBA Stats API Player Profile V2**
-#' @rdname nba_playerprofilev2
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param player_id Player ID
-#' @param per_mode Season - format 2020-21
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: CareerHighs, CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason, CareerTotalsPreseason,
 #' CareerTotalsRegularSeason, NextGame, SeasonHighs, SeasonRankingsPostSeason, SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
@@ -1997,31 +1963,24 @@ nba_playerprofilev2 <- function(
 
 
 #' **Get NBA Stats API Player vs Player**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playervsplayer
 NULL
 #' @title
 #' **Get NBA Stats API Player vs Player**
-#' @rdname nba_playervsplayer
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
 #' @param game_segment game_segment
 #' @param last_n_games last_n_games
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param location location
 #' @param measure_type measure_type
 #' @param month month
 #' @param opponent_team_id opponent_team_id
 #' @param outcome outcome
-#' @param pace_adjust pace_adjust
-#' @param per_mode per_mode
 #' @param period period
-#' @param player_id Player ID
-#' @param plus_minus plus_minus
-#' @param rank rank
-#' @param season Season - format 2020-21
 #' @param season_segment season_segment
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param vs_player_id vs_player_id
@@ -2113,15 +2072,17 @@ NULL
 #'    **ShotDistanceOverall**
 #'
 #'
-#'    |col_name    |types     |description                  |
-#'    |:-----------|:---------|:----------------------------|
-#'    |GROUP_SET   |character |                             |
-#'    |GROUP_VALUE |character |                             |
-#'    |PLAYER_ID   |character |Unique player identifier.    |
-#'    |PLAYER_NAME |character |Player name.                 |
-#'    |FGM         |character |Field goals made.            |
-#'    |FGA         |character |Field goal attempts.         |
-#'    |FG_PCT      |character |Field goal percentage (0-1). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GROUP_SET \tab character \tab  \cr
+#'       GROUP_VALUE \tab character \tab  \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **ShotDistanceOnCourt**
 #'
@@ -2272,32 +2233,26 @@ nba_playervsplayer <- function(
 
 
 #' **Get NBA Stats API Player Compare**
+#' @rdname nba_infographicfanduelplayer
 #' @name nba_playercompare
 NULL
 #' @title
 #' **Get NBA Stats API Player Compare**
-#' @rdname nba_playercompare
+#' @rdname nba_infographicfanduelplayer
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
 #' @param date_to date_to
 #' @param game_segment game_segment
 #' @param last_n_games last_n_games
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param location location
 #' @param measure_type measure_type
 #' @param month month
 #' @param opponent_team_id opponent_team_id
 #' @param outcome outcome
-#' @param pace_adjust pace_adjust
-#' @param per_mode per_mode
 #' @param period period
 #' @param player_id_list Player ID
-#' @param plus_minus plus_minus
-#' @param rank rank
-#' @param season Season - format 2020-21
 #' @param season_segment season_segment
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param shot_clock_range shot_clock_range
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division

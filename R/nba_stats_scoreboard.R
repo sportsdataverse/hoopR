@@ -176,12 +176,13 @@ nba_schedule <- function(
 
 
 #' **Get NBA Stats API Scoreboard**
+#' @rdname nba_schedule
 #' @name nba_scoreboard
 NULL
 #' @title
 #' **Get NBA Stats API Scoreboard**
 #' @description Deprecated in `hoopR` 3.0.0. This endpoint is unstable/empty; use `nba_scoreboardv3()` instead.
-#' @rdname nba_scoreboard
+#' @rdname nba_schedule
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
@@ -314,6 +315,7 @@ nba_scoreboard <- function(
 
 
 #' **Get NBA Stats API Scoreboard V2**
+#' @rdname nba_schedule
 #' @name nba_scoreboardv2
 NULL
 #' @title
@@ -322,7 +324,7 @@ NULL
 #' Restored in `hoopR` 3.1.0 -- a residential-IP live re-probe (2026-08-24)
 #' confirmed this endpoint still serves real rows for NBA. For real-time
 #' scores, prefer [nba_todays_scoreboard()] instead (see #129).
-#' @rdname nba_scoreboardv2
+#' @rdname nba_schedule
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
@@ -491,11 +493,12 @@ nba_scoreboardv2 <- function(
 }
 
 #' **Get NBA Stats API Scoreboard V3**
+#' @rdname nba_schedule
 #' @name nba_scoreboardv3
 NULL
 #' @title
 #' **Get NBA Stats API Scoreboard V3**
-#' @rdname nba_scoreboardv3
+#' @rdname nba_schedule
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param game_date Game Date
@@ -679,11 +682,12 @@ nba_scoreboardv3 <- function(
 
 
 #' **Get NBA Stats API Today's Scoreboard**
+#' @rdname nba_schedule
 #' @name nba_todays_scoreboard
 NULL
 #' @title
 #' **Get NBA Stats API Today's Scoreboard**
-#' @rdname nba_todays_scoreboard
+#' @rdname nba_schedule
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a data frame with the following columns:
@@ -826,6 +830,7 @@ nba_todays_scoreboard <- function(
 
 
 #' **Get NBA Stats API Win Probability PBP**
+#' @rdname nba_schedule
 #' @name nba_winprobabilitypbp
 NULL
 #' @title
@@ -836,7 +841,7 @@ NULL
 #' NBA Stats no longer returns stable data for this endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_playbyplayv3()` instead.
-#' @rdname nba_winprobabilitypbp
+#' @rdname nba_schedule
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param run_type Run Type
@@ -938,14 +943,14 @@ nba_winprobabilitypbp <- function(
 
 
 #' **Get NBA Stats API International Schedule**
+#' @rdname nba_schedule
 #' @name nba_scheduleleaguev2int
 NULL
 #' @title
 #' **Get NBA Stats API International Schedule**
-#' @rdname nba_scheduleleaguev2int
+#' @rdname nba_schedule
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param season Season - format: '2023-24'
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: SeasonGames, SeasonWeeks, BroadcasterList
 #'
@@ -984,26 +989,30 @@ NULL
 #'    **SeasonWeeks**
 #'
 #'
-#'    |col_name    |types     |description                            |
-#'    |:-----------|:---------|:--------------------------------------|
-#'    |league_id   |character |League identifier ('10' = WNBA).       |
-#'    |season_year |character |Season year string ('YYYY-YY' format). |
-#'    |week_number |character |Week number.                           |
-#'    |week_name   |character |Week name.                             |
-#'    |start_date  |character |Start date (YYYY-MM-DD).               |
-#'    |end_date    |character |End date (YYYY-MM-DD).                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league_id \tab character \tab League identifier ('10' = WNBA). \cr
+#'       season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+#'       week_number \tab character \tab Week number. \cr
+#'       week_name \tab character \tab Week name. \cr
+#'       start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+#'       end_date \tab character \tab End date (YYYY-MM-DD). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **BroadcasterList**
 #'
 #'
-#'    |col_name                 |types     |description                            |
-#'    |:------------------------|:---------|:--------------------------------------|
-#'    |league_id                |character |League identifier ('10' = WNBA).       |
-#'    |season_year              |character |Season year string ('YYYY-YY' format). |
-#'    |broadcaster_abbreviation |character |Broadcaster abbreviation.              |
-#'    |broadcaster_display      |character |Broadcaster display.                   |
-#'    |broadcaster_id           |character |Unique identifier for broadcaster.     |
-#'    |region_id                |character |Unique identifier for region.          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league_id \tab character \tab League identifier ('10' = WNBA). \cr
+#'       season_year \tab character \tab Season year string ('YYYY-YY' format). \cr
+#'       broadcaster_abbreviation \tab character \tab Broadcaster abbreviation. \cr
+#'       broadcaster_display \tab character \tab Broadcaster display. \cr
+#'       broadcaster_id \tab character \tab Unique identifier for broadcaster. \cr
+#'       region_id \tab character \tab Unique identifier for region. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

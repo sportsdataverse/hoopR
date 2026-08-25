@@ -8,18 +8,18 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Groups Index**
+#' @rdname espn_mbb_season_groups
 #' @name espn_nba_season_groups
 NULL
 #' @title
 #' **Get ESPN NBA Season Groups Index**
-#' @rdname espn_nba_season_groups
+#' @rdname espn_mbb_season_groups
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of group IDs (conferences / divisions) for one
 #' (NBA season x season-type) via core-v2
 #' `/seasons/{season}/types/{season_type}/groups`.
 #'
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per group.
@@ -48,15 +48,13 @@ espn_nba_season_groups <- function(season = most_recent_nba_season(),
 #' @name espn_nba_season_group
 #' @title
 #' **Get ESPN NBA Season Group Detail**
-#' @rdname espn_nba_season_group
+#' @rdname espn_mbb_season_group
 #' @author Saiem Gilani
 #' @description
 #' Returns metadata for one group (conference or division) in one
 #' (NBA season x season-type), plus `$ref` URLs to its parent group,
 #' children groups, member teams, and standings.
 #'
-#' @param group_id ESPN group identifier.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
@@ -87,14 +85,12 @@ espn_nba_season_group <- function(group_id,
 #' @name espn_nba_season_group_children
 #' @title
 #' **Get ESPN NBA Season Group Children Index**
-#' @rdname espn_nba_season_group
+#' @rdname espn_mbb_season_group
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of child groups (e.g. divisions within a conference)
 #' for one (NBA season x season-type x parent-group).
 #'
-#' @param group_id Parent group identifier.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per child group.
@@ -125,14 +121,12 @@ espn_nba_season_group_children <- function(group_id,
 #' @name espn_nba_season_group_teams
 #' @title
 #' **Get ESPN NBA Season Group Teams Index**
-#' @rdname espn_nba_season_group
+#' @rdname espn_mbb_season_group
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of team IDs that belong to one group (conference or
 #' division) for one (NBA season x season-type).
 #'
-#' @param group_id ESPN group identifier.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per team in the group.

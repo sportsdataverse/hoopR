@@ -22,12 +22,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per award.
 #'
-#'    |col_name |types     |description                                |
-#'    |:--------|:---------|:------------------------------------------|
-#'    |season   |integer   |Season year.                               |
-#'    |award_id |character |ESPN award identifier.                     |
-#'    |ref      |character |Full `$ref` URL for the award detail.      |
-#'    |league   |character |League slug (`"mens-college-basketball"`). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season year. \cr
+#'       award_id \tab character \tab ESPN award identifier. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for the award detail. \cr
+#'       league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

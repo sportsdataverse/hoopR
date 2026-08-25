@@ -22,8 +22,8 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given MBB seasons.
-(Min: 2002; default: \code{most_recent_mbb_season()})}
+\item{seasons}{A vector of 4-digit years associated with given NBA seasons.
+(Min: 2002; default: \code{most_recent_nba_season()})}
 }
 \value{
 Returns a tibble of class \code{hoopR_data} with one row per

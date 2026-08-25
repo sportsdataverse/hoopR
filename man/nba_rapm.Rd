@@ -16,16 +16,18 @@ on that possession).}
 \item{...}{Reserved for future keyword arguments (currently ignored).}
 }
 \value{
-Returns a \code{data.frame} with one row per player:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   player_id \tab integer \tab NBA Stats person ID. Rows are sorted ascending by player_id. \cr
-   o_rapm \tab numeric \tab Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player. \cr
-   d_rapm \tab numeric \tab Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive). \cr
-   rapm \tab numeric \tab Total RAPM = o_rapm + d_rapm. Positive = net positive impact. \cr
-   off_poss \tab integer \tab Number of possessions the player appeared on offense. \cr
-   def_poss \tab integer \tab Number of possessions the player appeared on defense. \cr
-}
+Returns a \code{data.frame} with one row per player:
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      player_id \tab integer \tab NBA Stats person ID. Rows are sorted ascending by player_id. \cr
+      o_rapm \tab numeric \tab Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player. \cr
+      d_rapm \tab numeric \tab Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive). \cr
+      rapm \tab numeric \tab Total RAPM = o_rapm + d_rapm. Positive = net positive impact. \cr
+      off_poss \tab integer \tab Number of possessions the player appeared on offense. \cr
+      def_poss \tab integer \tab Number of possessions the player appeared on defense. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a 0-row frame with the same schema when input is empty or all
 possessions have NA lineup cells (never-raise).
@@ -51,13 +53,12 @@ possessions return identical output with no need to set a seed.
 }
 \seealso{
 Other NBA Lineup Functions:
-\code{\link[=nba_gamerotation]{nba_gamerotation()}},
-\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
-\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
 \code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
 \code{\link[=nba_shot_zones]{nba_shot_zones()}},
-\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
-\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani

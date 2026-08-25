@@ -2,13 +2,26 @@
 % Please edit documentation in R/cbbd_substitutions.R
 \name{cbbd_substitutions_game}
 \alias{cbbd_substitutions_game}
+\alias{cbbd_substitutions_player}
+\alias{cbbd_substitutions_team}
 \title{\strong{CBD Substitutions by Game}}
 \usage{
 cbbd_substitutions_game(game_id)
+
+cbbd_substitutions_player(player_id, season = most_recent_mbb_season())
+
+cbbd_substitutions_team(season = most_recent_mbb_season(), team)
 }
 \arguments{
 \item{game_id}{(\emph{integer} required): CollegeBasketballData game id. See
 \code{\link[=cbbd_games]{cbbd_games()}}.}
+
+\item{player_id}{(\emph{integer} required): Athlete id.}
+
+\item{season}{(\emph{integer} required): Season, 4-digit ending-year (e.g. \code{2024}).
+Defaults to \code{most_recent_mbb_season()}.}
+
+\item{team}{(\emph{character} required): Team name (e.g. \code{Duke}).}
 }
 \value{
 A \code{hoopR_data} tibble with one row per substitution. \code{sub_in} and
@@ -29,19 +42,30 @@ A \code{hoopR_data} tibble with one row per substitution. \code{sub_in} and
       opponent_conference \tab character \tab Opponent conference. \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per substitution (same columns as
+\code{\link[=cbbd_substitutions_game]{cbbd_substitutions_game()}}).
+
+A \code{hoopR_data} tibble with one row per substitution (same columns as
+\code{\link[=cbbd_substitutions_game]{cbbd_substitutions_game()}}).
 }
 \description{
 \strong{Get substitution data for a single game from the CollegeBasketballData API.}
+
+\strong{Get substitution data for a single player from the CollegeBasketballData API.}
+
+\strong{Get substitution data for a team-season from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_substitutions_game(game_id = 5881))
 }
+\donttest{
+  try(cbbd_substitutions_player(player_id = 160, season = 2024))
 }
-\seealso{
-Other CBD Substitutions Functions:
-\code{\link[=cbbd_substitutions_player]{cbbd_substitutions_player()}},
-\code{\link[=cbbd_substitutions_team]{cbbd_substitutions_team()}}
+\donttest{
+  try(cbbd_substitutions_team(season = 2024, team = "Duke"))
+}
 }
 \concept{CBD Substitutions Functions}
 \keyword{CBD}

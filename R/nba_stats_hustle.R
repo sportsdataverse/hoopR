@@ -207,80 +207,92 @@ nba_leaguehustlestatsplayer <- function(
 #'    **PlayerContestedShotsLeaders**
 #'
 #'
-#'    |col_name          |types     |description                           |
-#'    |:-----------------|:---------|:-------------------------------------|
-#'    |PLAYER_ID         |character |Unique player identifier.             |
-#'    |PLAYER_NAME       |character |Player name.                          |
-#'    |TEAM_ID           |character |Unique team identifier.               |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
-#'    |AGE               |character |Player age (in years).                |
-#'    |RANK              |character |Rank.                                 |
-#'    |CONTESTED_SHOTS   |character |Defensively contested shots.          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PlayerChargesDrawnLeaders**
 #'
 #'
-#'    |col_name          |types     |description                           |
-#'    |:-----------------|:---------|:-------------------------------------|
-#'    |PLAYER_ID         |character |Unique player identifier.             |
-#'    |PLAYER_NAME       |character |Player name.                          |
-#'    |TEAM_ID           |character |Unique team identifier.               |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
-#'    |AGE               |character |Player age (in years).                |
-#'    |RANK              |character |Rank.                                 |
-#'    |CHARGES_DRAWN     |character |Charges drawn.                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PlayerDeflectionsLeaders**
 #'
 #'
-#'    |col_name          |types     |description                           |
-#'    |:-----------------|:---------|:-------------------------------------|
-#'    |PLAYER_ID         |character |Unique player identifier.             |
-#'    |PLAYER_NAME       |character |Player name.                          |
-#'    |TEAM_ID           |character |Unique team identifier.               |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
-#'    |AGE               |character |Player age (in years).                |
-#'    |RANK              |character |Rank.                                 |
-#'    |DEFLECTIONS       |character |Defensive deflections.                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PlayerLooseBallLeaders**
 #'
 #'
-#'    |col_name              |types     |description                           |
-#'    |:---------------------|:---------|:-------------------------------------|
-#'    |PLAYER_ID             |character |Unique player identifier.             |
-#'    |PLAYER_NAME           |character |Player name.                          |
-#'    |TEAM_ID               |character |Unique team identifier.               |
-#'    |TEAM_ABBREVIATION     |character |Short team abbreviation (e.g. 'LAS'). |
-#'    |AGE                   |character |Player age (in years).                |
-#'    |RANK                  |character |Rank.                                 |
-#'    |LOOSE_BALLS_RECOVERED |character |Loose balls recovered.                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PlayerScreenAssistLeaders**
 #'
 #'
-#'    |col_name          |types     |description                             |
-#'    |:-----------------|:---------|:---------------------------------------|
-#'    |PLAYER_ID         |character |Unique player identifier.               |
-#'    |PLAYER_NAME       |character |Player name.                            |
-#'    |TEAM_ID           |character |Unique team identifier.                 |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').   |
-#'    |AGE               |character |Player age (in years).                  |
-#'    |RANK              |character |Rank.                                   |
-#'    |SCREEN_ASSISTS    |character |Screen assists (resulting in a basket). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **Table5**
 #'
 #'
-#'    |col_name          |types     |description                           |
-#'    |:-----------------|:---------|:-------------------------------------|
-#'    |PLAYER_ID         |character |Unique player identifier.             |
-#'    |PLAYER_NAME       |character |Player name.                          |
-#'    |TEAM_ID           |character |Unique team identifier.               |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS'). |
-#'    |AGE               |character |Player age (in years).                |
-#'    |RANK              |character |Rank.                                 |
-#'    |BOX_OUTS          |character |Box-outs executed.                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       AGE \tab character \tab Player age (in years). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -571,68 +583,80 @@ nba_leaguehustlestatsteam <- function(
 #'    **TeamContestedShotsLeaders**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK              |character |Rank.                                           |
-#'    |CONTESTED_SHOTS   |character |Defensively contested shots.                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamChargesDrawnLeaders**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK              |character |Rank.                                           |
-#'    |CHARGES_DRAWN     |character |Charges drawn.                                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamDeflectionsLeaders**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK              |character |Rank.                                           |
-#'    |DEFLECTIONS       |character |Defensive deflections.                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamLooseBallLeaders**
 #'
 #'
-#'    |col_name              |types     |description                                     |
-#'    |:---------------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID               |character |Unique team identifier.                         |
-#'    |TEAM_NAME             |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION     |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK                  |character |Rank.                                           |
-#'    |LOOSE_BALLS_RECOVERED |character |Loose balls recovered.                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamScreenAssistLeaders**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK              |character |Rank.                                           |
-#'    |SCREEN_ASSISTS    |character |Screen assists (resulting in a basket).         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **Table5**
 #'
 #'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |RANK              |character |Rank.                                           |
-#'    |BOX_OUTS          |character |Box-outs executed.                              |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       RANK \tab character \tab Rank. \cr
+#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **Table6**
 #'

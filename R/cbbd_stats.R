@@ -66,10 +66,9 @@ cbbd_stats_team_season <- function(season = most_recent_mbb_season(), season_typ
 
 #' @title
 #' **CBD Team Stats Leaderboard**
+#' @rdname cbbd_stats_team_season
 #' @description
 #' **Get the team statistics leaderboard from the CollegeBasketballData API.**
-#' @param season (*integer* optional): Season, 4-digit ending-year (e.g. `2024`).
-#'   Defaults to `most_recent_mbb_season()`.
 #' @param team (*character* optional): Team name filter.
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @return A `hoopR_data` tibble with one row per team. Nested statistic objects
@@ -77,11 +76,13 @@ cbbd_stats_team_season <- function(season = most_recent_mbb_season(), season_typ
 #'   `adjusted_efficiency`) are flattened into prefixed columns. Key identifying
 #'   columns:
 #'
-#'    |col_name   |types     |description                                      |
-#'    |:----------|:---------|:------------------------------------------------|
-#'    |season     |integer   |Season (4-digit ending-year).                    |
-#'    |team_id    |integer   |Team id.                                          |
-#'    |team       |character |Team name.                                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
@@ -121,8 +122,6 @@ cbbd_stats_team_leaderboard <- function(season = most_recent_mbb_season(), team 
 #' **CBD Team Shooting Stats**
 #' @description
 #' **Get team season shooting statistics from the CollegeBasketballData API.**
-#' @param season (*integer* required): Season, 4-digit ending-year (e.g. `2024`).
-#'   Defaults to `most_recent_mbb_season()`.
 #' @param season_type (*character* optional): One of `regular`, `postseason`,
 #'   `preseason`.
 #' @param team (*character* optional): Team name filter.
@@ -134,14 +133,16 @@ cbbd_stats_team_leaderboard <- function(season = most_recent_mbb_season(), team 
 #'   `free_throws`, `attempts_breakdown`) are flattened into prefixed columns.
 #'   Key identifying columns:
 #'
-#'    |col_name      |types     |description                                   |
-#'    |:-------------|:---------|:---------------------------------------------|
-#'    |season        |integer   |Season (4-digit ending-year).                 |
-#'    |team_id       |integer   |Team id.                                       |
-#'    |team          |character |Team name.                                     |
-#'    |conference    |character |Conference name.                               |
-#'    |tracked_shots |integer   |Number of tracked shots.                       |
-#'    |assisted_pct  |numeric   |Assisted field-goal percentage.                |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season (4-digit ending-year). \cr
+#'       team_id \tab integer \tab Team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       tracked_shots \tab integer \tab Number of tracked shots. \cr
+#'       assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
@@ -184,8 +185,6 @@ cbbd_stats_team_shooting_season <- function(season = most_recent_mbb_season(), s
 #' **CBD Player Season Stats**
 #' @description
 #' **Get player season statistics from the CollegeBasketballData API.**
-#' @param season (*integer* required): Season, 4-digit ending-year (e.g. `2024`).
-#'   Defaults to `most_recent_mbb_season()`.
 #' @param season_type (*character* optional): One of `regular`, `postseason`,
 #'   `preseason`.
 #' @param team (*character* optional): Team name filter.

@@ -8,14 +8,13 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA League Leaders**
+#' @rdname espn_mbb_leaders
 #' @name espn_nba_leaders
 NULL
 #' @title
 #' **Get ESPN NBA League Leaders**
-#' @rdname espn_nba_leaders
+#' @rdname espn_mbb_leaders
 #' @author Saiem Gilani
-#' @param season Season year (numeric, e.g. 2025). Defaults to the most
-#'   recent NBA season.
 #' @param season_type Integer season type: 1 = preseason, 2 = regular
 #'   (default), 3 = postseason.
 #' @param ... Additional arguments; currently unused but retained for
@@ -51,11 +50,12 @@ espn_nba_leaders <- function(season      = most_recent_nba_season(),
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Venues**
+#' @rdname espn_mbb_venues
 #' @name espn_nba_venues
 NULL
 #' @title
 #' **Get ESPN NBA Venues**
-#' @rdname espn_nba_venues
+#' @rdname espn_mbb_venues
 #' @author Saiem Gilani
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
@@ -85,14 +85,13 @@ espn_nba_venues <- function(...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Coaches**
+#' @rdname espn_mbb_coaches
 #' @name espn_nba_coaches
 NULL
 #' @title
 #' **Get ESPN NBA Coaches**
-#' @rdname espn_nba_coaches
+#' @rdname espn_mbb_coaches
 #' @author Saiem Gilani
-#' @param season Season year (numeric, e.g. 2025). Defaults to the most
-#'   recent NBA season.
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
@@ -123,18 +122,15 @@ espn_nba_coaches <- function(season = most_recent_nba_season(),
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athletes Index**
+#' @rdname espn_mbb_athletes_index
 #' @name espn_nba_athletes_index
 NULL
 #' @title
 #' **Get ESPN NBA Athletes Index**
-#' @rdname espn_nba_athletes_index
+#' @rdname espn_mbb_athletes_index
 #' @author Saiem Gilani
-#' @param season Season year (numeric, e.g. 2025). Defaults to the most
-#'   recent NBA season.
 #' @param active logical. When `TRUE` (default) only active athletes are
 #'   returned. Set to `FALSE` for the full historical roster.
-#' @param limit integer. Maximum number of rows to return. Default 5000.
-#'   Pass a small value (e.g. `limit = 50`) in tests to keep execution fast.
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
@@ -169,11 +165,12 @@ espn_nba_athletes_index <- function(season = most_recent_nba_season(),
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Seasons**
+#' @rdname espn_mbb_seasons
 #' @name espn_nba_seasons
 NULL
 #' @title
 #' **Get ESPN NBA Seasons**
-#' @rdname espn_nba_seasons
+#' @rdname espn_mbb_seasons
 #' @author Saiem Gilani
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
@@ -203,14 +200,13 @@ espn_nba_seasons <- function(...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Info**
+#' @rdname espn_mbb_season_info
 #' @name espn_nba_season_info
 NULL
 #' @title
 #' **Get ESPN NBA Season Info**
-#' @rdname espn_nba_season_info
+#' @rdname espn_mbb_season_info
 #' @author Saiem Gilani
-#' @param season Season year (numeric, e.g. 2025). Defaults to the most
-#'   recent NBA season.
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.

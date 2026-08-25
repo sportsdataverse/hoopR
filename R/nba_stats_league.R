@@ -1,17 +1,16 @@
 #' **Get NBA Stats API League Game Log**
+#' @rdname nba_iststandings
 #' @name nba_leaguegamelog
 NULL
 #' @title
 #' **Get NBA Stats API League Game Log**
-#' @rdname nba_leaguegamelog
+#' @rdname nba_iststandings
 #' @author Saiem Gilani
 #' @param counter counter
 #' @param date_from date_from
 #' @param date_to date_to
 #' @param direction direction
-#' @param league_id league_id
 #' @param player_or_team player_or_team
-#' @param season season
 #' @param season_type season_type
 #' @param sorter sorter
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -127,14 +126,13 @@ nba_leaguegamelog <- function(
 
 
 #' **Get NBA Stats API League Standings**
+#' @rdname nba_iststandings
 #' @name nba_leaguestandings
 NULL
 #' @title
 #' **Get NBA Stats API League Standings**
-#' @rdname nba_leaguestandings
+#' @rdname nba_iststandings
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param season season
 #' @param season_type season_type
 #' @param season_year season_year
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -285,14 +283,13 @@ nba_leaguestandings <- function(
 
 
 #' **Get NBA Stats API League Standings V3**
+#' @rdname nba_iststandings
 #' @name nba_leaguestandingsv3
 NULL
 #' @title
 #' **Get NBA Stats API League Standings V3**
-#' @rdname nba_leaguestandingsv3
+#' @rdname nba_iststandings
 #' @author Saiem Gilani
-#' @param league_id league_id
-#' @param season season
 #' @param season_type season_type
 #' @param season_year season_year
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -450,13 +447,13 @@ nba_leaguestandingsv3 <- function(
 
 
 #' **Get NBA Stats API Playoff Picture**
+#' @rdname nba_iststandings
 #' @name nba_playoffpicture
 NULL
 #' @title
 #' **Get NBA Stats API Playoff Picture**
-#' @rdname nba_playoffpicture
+#' @rdname nba_iststandings
 #' @author Saiem Gilani
-#' @param league_id league_id
 #' @param season_id season_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: EastConfPlayoffPicture,
@@ -529,13 +526,15 @@ NULL
 #'    **EastConfRemainingGames**
 #'
 #'
-#'    |col_name         |types     |description                         |
-#'    |:----------------|:---------|:-----------------------------------|
-#'    |TEAM             |character |Team-side label or team identifier. |
-#'    |TEAM_ID          |character |Unique team identifier.             |
-#'    |REMAINING_G      |character |                                    |
-#'    |REMAINING_HOME_G |character |                                    |
-#'    |REMAINING_AWAY_G |character |                                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM \tab character \tab Team-side label or team identifier. \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       REMAINING_G \tab character \tab  \cr
+#'       REMAINING_HOME_G \tab character \tab  \cr
+#'       REMAINING_AWAY_G \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **WestConfRemainingGames**
 #'
@@ -591,11 +590,12 @@ nba_playoffpicture <- function(
 
 
 #' **Get NBA Stats API League Game Streak Finder**
+#' @rdname nba_iststandings
 #' @name nba_leaguegamefinder
 NULL
 #' @title
 #' **Get NBA Stats API League Game Streak Finder**
-#' @rdname nba_leaguegamefinder
+#' @rdname nba_iststandings
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -648,7 +648,6 @@ NULL
 #' @param gt_stl gt_stl
 #' @param gt_td gt_td
 #' @param gt_tov gt_tov
-#' @param league_id league_id
 #' @param location location
 #' @param lt_ast lt_ast
 #' @param lt_blk lt_blk
@@ -676,7 +675,6 @@ NULL
 #' @param player_or_team player_or_team
 #' @param player_id player_id
 #' @param rookie_year rookie_year
-#' @param season season - Min: '1983-84'
 #' @param season_segment season_segment
 #' @param season_type season_type
 #' @param starter_bench starter_bench

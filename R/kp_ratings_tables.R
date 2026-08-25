@@ -1147,6 +1147,7 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
 
 #' **Get Player Stats Leaders by Metric**
 #'
+#' @rdname kp_pomeroy_ratings
 #' @param metric Used to get leaders for different metrics. Available values are: \cr
 #' 'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', \cr
 #' 'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. \cr
@@ -1329,7 +1330,7 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
 
 #' **Get KPoY Leaders Tables**
 #'
-#' @param year Year of data to pull (earliest year of data available: 2011)
+#' @rdname kp_pomeroy_ratings
 #' @return Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 #'
 #'    **KPoYRatings**

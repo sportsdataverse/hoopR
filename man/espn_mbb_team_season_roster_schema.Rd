@@ -7,13 +7,14 @@
 Columns shared verbatim across: espn_mbb_team_season_roster, espn_nba_team_season_roster.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    league \tab character \tab League slug. \cr
    team_id \tab character \tab ESPN team id. \cr
    season \tab integer \tab Season year. \cr
    athlete_id \tab character \tab ESPN athlete id. \cr
    ref \tab character \tab \verb{$ref} URL to athlete-in-season detail. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

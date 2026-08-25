@@ -12,10 +12,12 @@
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per transaction:
 #'
-#'    |col_name    |types     |description                                    |
-#'    |:-----------|:---------|:----------------------------------------------|
-#'    |date        |Date      |Transaction date.                              |
-#'    |transaction |character |Transaction description.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       date \tab Date \tab Transaction date. \cr
+#'       transaction \tab character \tab Transaction description. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_element html_elements html_text2

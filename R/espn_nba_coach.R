@@ -1,11 +1,12 @@
 # espn_nba_coach.R
 
 #' **Get ESPN NBA Single-Coach Detail**
+#' @rdname espn_mbb_coach
 #' @name espn_nba_coach
 NULL
 #' @title
 #' **Get ESPN NBA Single-Coach Detail**
-#' @rdname espn_nba_coach
+#' @rdname espn_mbb_coach
 #' @author Saiem Gilani
 #' @description
 #' Returns biography, current team / college refs, and counts of career
@@ -50,11 +51,12 @@ espn_nba_coach <- function(coach_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Coach Career Record (Long Format)**
+#' @rdname espn_mbb_coach_record
 #' @name espn_nba_coach_record
 NULL
 #' @title
 #' **Get ESPN NBA Coach Career Record (Long Format)**
-#' @rdname espn_nba_coach_record
+#' @rdname espn_mbb_coach_record
 #' @author Saiem Gilani
 #' @description
 #' Returns a coach's career record by type in long format (one row per
@@ -62,7 +64,6 @@ NULL
 #' populated: 0 = Total, 1 = Pre Season, 2 = Regular Season, 3 = Post
 #' Season. Use [espn_nba_coaches()] to discover coach_ids for a season.
 #'
-#' @param coach_id ESPN coach identifier (use [espn_nba_coaches()] to find).
 #' @param record_type Integer record type: 0 = Total (default), 1 = Pre Season,
 #'   2 = Regular Season, 3 = Post Season.
 #' @param ... Additional arguments; currently unused.

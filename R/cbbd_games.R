@@ -1,5 +1,6 @@
 #' @title
 #' **CBD Games**
+#' @rdname cbbd_games_media
 #' @description
 #' **Get college basketball games from the CollegeBasketballData API.**
 #' @param season (*integer* optional): Season, 4-digit ending-year (e.g. `2024`).
@@ -81,7 +82,6 @@ cbbd_games <- function(season = most_recent_mbb_season(), season_type = NULL, te
 #' **CBD Game Media**
 #' @description
 #' **Get game broadcast media information from the CollegeBasketballData API.**
-#' @inheritParams cbbd_games
 #' @return A `hoopR_data` tibble with one row per game. The `broadcasts` column is
 #'   a nested list of broadcast outlets:
 #'
@@ -143,7 +143,6 @@ cbbd_games_media <- function(season = most_recent_mbb_season(), season_type = NU
 #' **CBD Team Box Scores**
 #' @description
 #' **Get team box score statistics from the CollegeBasketballData API.**
-#' @inheritParams cbbd_games
 #' @return A `hoopR_data` tibble with one row per team-game. Per-team statistic
 #'   objects (`team_stats`, `opponent_stats`) are flattened into `team_stats_*` /
 #'   `opponent_stats_*` columns. Key identifying columns:
@@ -207,7 +206,6 @@ cbbd_games_teams <- function(season = most_recent_mbb_season(), season_type = NU
 #' **CBD Player Box Scores**
 #' @description
 #' **Get player box score statistics from the CollegeBasketballData API.**
-#' @inheritParams cbbd_games
 #' @return A `hoopR_data` tibble with one row per team-game. The `players` column
 #'   is a nested list of per-player box scores. Key identifying columns:
 #'
@@ -267,6 +265,7 @@ cbbd_games_players <- function(season = most_recent_mbb_season(), season_type = 
 
 #' @title
 #' **CBD Scoreboard**
+#' @rdname cbbd_games_media
 #' @description
 #' **Get the current scoreboard from the CollegeBasketballData API.**
 #' @param conference (*character* optional): Conference abbreviation filter.

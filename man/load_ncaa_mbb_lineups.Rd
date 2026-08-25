@@ -684,13 +684,16 @@ Returns a \code{hoopR_data} tibble with one row per team-game.
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a \code{hoopR_data} tibble with one row per player-team-season.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season \tab integer \tab Season identifier (4-digit season-ending year). \cr
-   team \tab character \tab Team name. \cr
-   player \tab character \tab Player name (raw, upper-cased). \cr
-   games \tab integer \tab Games played (season total). \cr
-}
+Returns a \code{hoopR_data} tibble with one row per player-team-season.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+      team \tab character \tab Team name. \cr
+      player \tab character \tab Player name (raw, upper-cased). \cr
+      games \tab integer \tab Games played (season total). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble with one row per player-team-season.
 
@@ -715,24 +718,30 @@ Returns a \code{hoopR_data} tibble with one row per player-team-season.
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a \code{hoopR_data} tibble with one row per game.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
-   game_date \tab character \tab Date the game was played (MM/DD/YYYY). \cr
-   home \tab character \tab Home team name. \cr
-   away \tab character \tab Away team name. \cr
-   home_score \tab integer \tab Home team score after the event. \cr
-   away_score \tab integer \tab Away team score after the event. \cr
-   season \tab integer \tab Season identifier (4-digit season-ending year). \cr
-}
+Returns a \code{hoopR_data} tibble with one row per game.
 
-Returns a \code{hoopR_data} tibble with one row per team-season.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   team \tab character \tab Team name. \cr
-   conference \tab character \tab Conference affiliation. \cr
-   id \tab character \tab stats.ncaa.org team identifier. \cr
-   season \tab integer \tab Season identifier (4-digit season-ending year). \cr
-}
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
+      game_date \tab character \tab Date the game was played (MM/DD/YYYY). \cr
+      home \tab character \tab Home team name. \cr
+      away \tab character \tab Away team name. \cr
+      home_score \tab integer \tab Home team score after the event. \cr
+      away_score \tab integer \tab Away team score after the event. \cr
+      season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a \code{hoopR_data} tibble with one row per team-season.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference affiliation. \cr
+      id \tab character \tab stats.ncaa.org team identifier. \cr
+      season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Loads season-level NCAA men's college basketball

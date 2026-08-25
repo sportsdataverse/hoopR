@@ -346,7 +346,6 @@ nba_boxscoretraditionalv3 <- function(
 #' **Get NBA Stats API Boxscore Advanced V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -595,7 +594,6 @@ nba_boxscoreadvancedv3 <- function(
 #' **Get NBA Stats API Boxscore Misc V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -822,7 +820,6 @@ nba_boxscoremiscv3 <- function(
 #' **Get NBA Stats API Boxscore Scoring V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -1055,7 +1052,6 @@ nba_boxscorescoringv3 <- function(
 #' **Get NBA Stats API Boxscore Usage V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -1294,7 +1290,6 @@ nba_boxscoreusagev3 <- function(
 #' **Get NBA Stats API Boxscore Four Factors V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -1514,7 +1509,6 @@ nba_boxscorefourfactorsv3 <- function(
 #' **Get NBA Stats API Boxscore Player Tracking V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -1756,7 +1750,6 @@ nba_boxscoreplayertrackv3 <- function(
 #' **Get NBA Stats API Boxscore Matchups V3**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -1942,6 +1935,7 @@ nba_boxscorematchupsv3 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Hustle V2**
+#' @rdname nba_boxscoretraditionalv3
 #' @name nba_boxscorehustlev2
 NULL
 #' @title
@@ -1952,9 +1946,8 @@ NULL
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_hustlestatsboxscore()` instead.
-#' @rdname nba_boxscorehustlev2
+#' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: home_team_player_hustle, away_team_player_hustle,
 #'  home_team_hustle_totals, away_team_hustle_totals
@@ -2178,7 +2171,6 @@ nba_boxscorehustlev2 <- function(
 #' **Get NBA Stats API Boxscore Defensive V2**
 #' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param start_period Start period filter - default: 0
 #' @param end_period End period filter - default: 0
 #' @param start_range Start range filter (in tenths of a second) - default: 0
@@ -2392,13 +2384,13 @@ nba_boxscoredefensivev2 <- function(
 
 
 #' **Get NBA Stats API Game Rotation**
+#' @rdname nba_boxscoretraditionalv3
 #' @name nba_gamerotation
 NULL
 #' @title
 #' **Get NBA Stats API Game Rotation**
-#' @rdname nba_gamerotation
+#' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param league_id League ID
 #' @param rotation_stat Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -2487,13 +2479,13 @@ nba_gamerotation <- function(
 
 
 #' **Get NBA Stats API Boxscore Summary V3**
+#' @rdname nba_boxscoretraditionalv3
 #' @name nba_boxscoresummaryv3
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Summary V3**
-#' @rdname nba_boxscoresummaryv3
+#' @rdname nba_boxscoretraditionalv3
 #' @author Saiem Gilani
-#' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames:
 #' GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
@@ -2523,38 +2515,44 @@ NULL
 #'    **GameInfo**
 #'
 #'
-#'    |col_name      |types     |description             |
-#'    |:-------------|:---------|:-----------------------|
-#'    |game_id       |character |Unique game identifier. |
-#'    |game_date     |character |Game date (YYYY-MM-DD). |
-#'    |attendance    |integer   |Reported attendance.    |
-#'    |game_duration |integer   |Game duration.          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+#'       attendance \tab integer \tab Reported attendance. \cr
+#'       game_duration \tab integer \tab Game duration. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **ArenaInfo**
 #'
 #'
-#'    |col_name       |types     |description                  |
-#'    |:--------------|:---------|:----------------------------|
-#'    |game_id        |character |Unique game identifier.      |
-#'    |arena_id       |integer   |Unique identifier for arena. |
-#'    |arena_name     |character |Arena name.                  |
-#'    |arena_city     |character |Arena city.                  |
-#'    |arena_state    |character |Arena state.                 |
-#'    |arena_country  |character |Arena country.               |
-#'    |arena_timezone |character |Arena timezone.              |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       arena_id \tab integer \tab Unique identifier for arena. \cr
+#'       arena_name \tab character \tab Arena name. \cr
+#'       arena_city \tab character \tab Arena city. \cr
+#'       arena_state \tab character \tab Arena state. \cr
+#'       arena_country \tab character \tab Arena country. \cr
+#'       arena_timezone \tab character \tab Arena timezone. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **Officials**
 #'
 #'
-#'    |col_name    |types     |description                              |
-#'    |:-----------|:---------|:----------------------------------------|
-#'    |game_id     |character |Unique game identifier.                  |
-#'    |person_id   |integer   |Unique player identifier (V3 endpoints). |
-#'    |name        |character |Display name.                            |
-#'    |name_i      |character |Initialed name (e.g. 'A. Wilson').       |
-#'    |first_name  |character |Player's first name.                     |
-#'    |family_name |character |Player's family / last name.             |
-#'    |jersey_num  |character |Jersey number worn by the player.        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+#'       name \tab character \tab Display name. \cr
+#'       name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+#'       first_name \tab character \tab Player's first name. \cr
+#'       family_name \tab character \tab Player's family / last name. \cr
+#'       jersey_num \tab character \tab Jersey number worn by the player. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **LineScore**
 #'
@@ -2580,14 +2578,16 @@ NULL
 #'    **InactivePlayers**
 #'
 #'
-#'    |col_name    |types     |description                              |
-#'    |:-----------|:---------|:----------------------------------------|
-#'    |game_id     |character |Unique game identifier.                  |
-#'    |team_id     |integer   |Unique team identifier.                  |
-#'    |person_id   |integer   |Unique player identifier (V3 endpoints). |
-#'    |first_name  |character |Player's first name.                     |
-#'    |family_name |character |Player's family / last name.             |
-#'    |jersey_num  |character |Jersey number worn by the player.        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       team_id \tab integer \tab Unique team identifier. \cr
+#'       person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+#'       first_name \tab character \tab Player's first name. \cr
+#'       family_name \tab character \tab Player's family / last name. \cr
+#'       jersey_num \tab character \tab Jersey number worn by the player. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **LastFiveMeetings**
 #'
@@ -2654,15 +2654,17 @@ NULL
 #'    **AvailableVideo**
 #'
 #'
-#'    |col_name             |types     |description             |
-#'    |:--------------------|:---------|:-----------------------|
-#'    |game_id              |character |Unique game identifier. |
-#'    |video_available_flag |integer   |Video available flag.   |
-#'    |pt_available         |integer   |Pt available.           |
-#'    |pt_xyz_available     |integer   |Pt xyz available.       |
-#'    |wh_status            |integer   |Wh status.              |
-#'    |hustle_status        |integer   |Hustle status.          |
-#'    |historical_status    |integer   |Historical status.      |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       game_id \tab character \tab Unique game identifier. \cr
+#'       video_available_flag \tab integer \tab Video available flag. \cr
+#'       pt_available \tab integer \tab Pt available. \cr
+#'       pt_xyz_available \tab integer \tab Pt xyz available. \cr
+#'       wh_status \tab integer \tab Wh status. \cr
+#'       hustle_status \tab integer \tab Hustle status. \cr
+#'       historical_status \tab integer \tab Historical status. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

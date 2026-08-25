@@ -107,12 +107,14 @@ NULL
 #'
 #'    **NextGame**
 #'
-#'    |col_name   |types     |description                |
-#'    |:----------|:---------|:--------------------------|
-#'    |id         |character |Id.                        |
-#'    |date       |character |Date in YYYY-MM-DD format. |
-#'    |name       |character |Display name.              |
-#'    |short_name |character |Short display name.        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab character \tab Id. \cr
+#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'       name \tab character \tab Display name. \cr
+#'       short_name \tab character \tab Short display name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **Last5Games**
 #'
@@ -122,11 +124,13 @@ NULL
 #'
 #'    **Headlines**
 #'
-#'    |col_name    |types     |description                       |
-#'    |:-----------|:---------|:---------------------------------|
-#'    |headline    |character |News headline.                    |
-#'    |description |character |Long-form description text.       |
-#'    |published   |character |Publication timestamp (ISO 8601). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       headline \tab character \tab News headline. \cr
+#'       description \tab character \tab Long-form description text. \cr
+#'       published \tab character \tab Publication timestamp (ISO 8601). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FantasyOutlook**
 #'
@@ -163,7 +167,6 @@ espn_mbb_player_overview <- function(athlete_id,
 #' @rdname espn_mbb_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
 #' @return A named list of per-category tibbles. Default category names are
 #'   `General`, `Offensive`, `Defensive`, `Rebounding`, `Shooting`, `Misc`.
@@ -200,7 +203,6 @@ espn_mbb_player_stats_v3 <- function(athlete_id,
 #' @rdname espn_mbb_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single tibble with one row per game. Column names reflect the
 #'   stat labels returned by ESPN and will vary by season and player.
@@ -234,7 +236,6 @@ espn_mbb_player_gamelog <- function(athlete_id,
 #' @rdname espn_mbb_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single long-format tibble. When data are present, columns include
 #'   at minimum `category` and `split_name`, plus per-stat columns driven by
@@ -269,7 +270,6 @@ espn_mbb_player_splits <- function(athlete_id,
 #' @rdname espn_mbb_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single tibble. Per-event `statistics.$ref` URLs from the ESPN
 #'   core-v2 API are returned as the character column `statistics_ref` and
@@ -343,16 +343,17 @@ espn_mbb_player_awards <- function(athlete_id, ...) {
 #' @rdname espn_mbb_player_overview
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single tibble. When resolved, each row corresponds to one
 #'   statistical entry in the core-v2 statistics log, with `event_ref` and
 #'   `statistics_ref` character columns pointing to resolvable ESPN endpoints.
 #'
-#'    |col_name       |types     |description                              |
-#'    |:--------------|:---------|:----------------------------------------|
-#'    |event_ref      |character |Reference link to the originating event. |
-#'    |statistics_ref |character |                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       event_ref \tab character \tab Reference link to the originating event. \cr
+#'       statistics_ref \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of

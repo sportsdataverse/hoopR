@@ -6,11 +6,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Futures (Long Format)**
+#' @rdname espn_mbb_futures
 #' @name espn_nba_futures
 NULL
 #' @title
 #' **Get ESPN NBA Season Futures (Long Format)**
-#' @rdname espn_nba_futures
+#' @rdname espn_mbb_futures
 #' @author Saiem Gilani
 #' @description
 #' Returns the full futures-betting board for an NBA season, in long
@@ -18,7 +19,6 @@ NULL
 #' winner, conference winner, division winner, MVP odds, etc. Backed by
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/futures`.
 #'
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A long-format tibble.
 #'

@@ -15,10 +15,6 @@
 #'   (stats.ncaa.org play-by-play parsed, cleaned, and enriched); backed by
 #'   the `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_pbp`
 #'   release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -171,10 +167,6 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
 #'   MBB datasets start at 2010. Produced by the sdv-py `ncaa_mbb` engine;
 #'   backed by the `ncaa-mbb-hoops-data` pipeline, published to the
 #'   `ncaa_mbb_shots` release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2019 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2019)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -406,10 +398,6 @@ load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
 #'   rosters. Produced by the sdv-py `ncaa_mbb` engine's lineup reconstructor;
 #'   backed by the `ncaa-mbb-hoops-data` pipeline, published to the
 #'   `ncaa_mbb_matchup_stints` release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -507,10 +495,6 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
 #'   sdv-py `ncaa_mbb` engine's possession detector; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_possessions`
 #'   release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -632,10 +616,6 @@ load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
 #'   lineup/possession data; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_rapm_within_team` release tag as
 #'   csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -716,10 +696,6 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
 #'   fit over all Division I stints per season, distinct from
 #'   [load_ncaa_mbb_rapm_within_team()]'s within-team fit. Published
 #'   coverage runs seasons 2011 through 2026.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2011 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2011)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -797,10 +773,6 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
 #'   alongside the advanced splits). Produced by the sdv-py `ncaa_mbb` engine;
 #'   backed by the `ncaa-mbb-hoops-data` pipeline, published to the
 #'   `ncaa_mbb_player_box` release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -990,10 +962,6 @@ load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),
 #'   splits. Produced by the sdv-py `ncaa_mbb` engine; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_team_box`
 #'   release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -1138,22 +1106,20 @@ load_ncaa_mbb_team_box <- function(seasons = most_recent_mbb_season(),
 #'   school), use [load_ncaa_mbb_team_rosters()]. Produced by the sdv-py
 #'   `ncaa_mbb` engine; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_rosters` release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per player-team-season.
 #'
-#'    |col_name |types     |description                                     |
-#'    |:-------|:--------|:----------------------------------------------|
-#'    |season   |integer   |Season identifier (4-digit season-ending year). |
-#'    |team     |character |Team name.                                      |
-#'    |player   |character |Player name (raw, upper-cased).                 |
-#'    |games    |integer   |Games played (season total).                    |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+#'       team \tab character \tab Team name. \cr
+#'       player \tab character \tab Player name (raw, upper-cased). \cr
+#'       games \tab integer \tab Games played (season total). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family NCAA MBB loader functions
@@ -1207,10 +1173,6 @@ load_ncaa_mbb_rosters <- function(seasons = most_recent_mbb_season(),
 #'   Produced by the sdv-py `ncaa_mbb` engine; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_team_rosters`
 #'   release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -1289,25 +1251,23 @@ load_ncaa_mbb_team_rosters <- function(seasons = most_recent_mbb_season(),
 #'   Produced by the sdv-py `ncaa_mbb` engine; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_schedule`
 #'   release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per game.
 #'
-#'    |col_name   |types     |description                                     |
-#'    |:---------|:--------|:----------------------------------------------|
-#'    |contest_id |character |Unique stats.ncaa.org contest identifier.       |
-#'    |game_date  |character |Date the game was played (MM/DD/YYYY).          |
-#'    |home       |character |Home team name.                                 |
-#'    |away       |character |Away team name.                                 |
-#'    |home_score |integer   |Home team score after the event.                |
-#'    |away_score |integer   |Away team score after the event.                |
-#'    |season     |integer   |Season identifier (4-digit season-ending year). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
+#'       game_date \tab character \tab Date the game was played (MM/DD/YYYY). \cr
+#'       home \tab character \tab Home team name. \cr
+#'       away \tab character \tab Away team name. \cr
+#'       home_score \tab integer \tab Home team score after the event. \cr
+#'       away_score \tab integer \tab Away team score after the event. \cr
+#'       season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family NCAA MBB loader functions
@@ -1361,22 +1321,20 @@ load_ncaa_mbb_schedule <- function(seasons = most_recent_mbb_season(),
 #'   datasets back to a team name and conference. Produced by the sdv-py
 #'   `ncaa_mbb` engine; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_team_ids` release tag as csv.gz/parquet/rds.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball (e.g. `2024` for the 2023-24 season). Published
-#'   coverage runs 2010 through the most recent season, with no gaps. Pass
-#'   `seasons = TRUE` for every published season. (Min: 2010)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @return Returns a `hoopR_data` tibble with one row per team-season.
 #'
-#'    |col_name   |types     |description                                     |
-#'    |:---------|:--------|:----------------------------------------------|
-#'    |team       |character |Team name.                                      |
-#'    |conference |character |Conference affiliation.                         |
-#'    |id         |character |stats.ncaa.org team identifier.                 |
-#'    |season     |integer   |Season identifier (4-digit season-ending year). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference affiliation. \cr
+#'       id \tab character \tab stats.ncaa.org team identifier. \cr
+#'       season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @export
 #' @family NCAA MBB loader functions

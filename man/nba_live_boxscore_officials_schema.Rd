@@ -7,7 +7,7 @@
 Columns shared verbatim across: nba_live_boxscore, nbagl_live_boxscore.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
    name \tab character \tab Display name. \cr
@@ -16,6 +16,7 @@ Columns shared verbatim across: nba_live_boxscore, nbagl_live_boxscore.
    family_name \tab character \tab Player's family / last name. \cr
    jersey_num \tab character \tab Jersey number worn by the player. \cr
    assignment \tab character \tab Assignment. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

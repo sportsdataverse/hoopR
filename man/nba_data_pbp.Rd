@@ -80,11 +80,8 @@ Event Message Types (event_type):
 }
 \seealso{
 Other NBA PBP Functions:
-\code{\link[=nba_live_pbp]{nba_live_pbp()}},
-\code{\link[=nba_pbp]{nba_pbp()}},
-\code{\link[=nba_pbps]{nba_pbps()}},
 \code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}},
-\code{\link[=nba_winprobabilitypbp]{nba_winprobabilitypbp()}}
+\code{\link[=nba_schedule]{nba_schedule()}}
 }
 \author{
 Saiem Gilani

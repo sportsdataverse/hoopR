@@ -50,13 +50,12 @@ Returns a data frame with one row per possession:
 }
 \seealso{
 Other NBA Lineup Functions:
-\code{\link[=nba_gamerotation]{nba_gamerotation()}},
-\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
-\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
 \code{\link[=nba_rapm]{nba_rapm()}},
 \code{\link[=nba_shot_zones]{nba_shot_zones()}},
-\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
-\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani

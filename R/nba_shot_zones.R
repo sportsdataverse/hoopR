@@ -59,14 +59,16 @@ NULL
 #' @return Returns a \code{data.frame} containing the full V3 play-by-play for
 #'   \code{game_id} with an appended \code{shot_zone} column:
 #'
-#'    |col_name            |types     |description                                                                                                 |
-#'    |:-------------------|:---------|:-----------------------------------------------------------------------------------------------------------|
-#'    |event_type          |character |Play event type code. \code{"1"} = MadeShot, \code{"2"} = MissedShot, \code{"3"} = FreeThrow, etc.         |
-#'    |shot_value          |integer   |Point value of the shot attempt (2 or 3); 0 for non-FGA events.                                            |
-#'    |x_legacy            |numeric   |Horizontal court coordinate (legacy units). Negative = left side of the court.                              |
-#'    |y_legacy            |numeric   |Vertical court coordinate (legacy units). Values near 0 = baseline.                                         |
-#'    |shot_distance       |numeric   |Distance from the basket in feet.                                                                           |
-#'    |shot_zone           |character |Shot-zone classification. One of \code{"corner_3"}, \code{"above_the_break_3"}, \code{"restricted_area"}, \code{"in_the_paint_non_ra"}, \code{"mid_range"}. \code{NA} on non-field-goal rows.|
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       event_type \tab character \tab Play event type code. \code{"1"} = MadeShot, \code{"2"} = MissedShot, \code{"3"} = FreeThrow, etc. \cr
+#'       shot_value \tab integer \tab Point value of the shot attempt (2 or 3); 0 for non-FGA events. \cr
+#'       x_legacy \tab numeric \tab Horizontal court coordinate (legacy units). Negative = left side of the court. \cr
+#'       y_legacy \tab numeric \tab Vertical court coordinate (legacy units). Values near 0 = baseline. \cr
+#'       shot_distance \tab numeric \tab Distance from the basket in feet. \cr
+#'       shot_zone \tab character \tab Shot-zone classification. One of \code{"corner_3"}, \code{"above_the_break_3"}, \code{"restricted_area"}, \code{"in_the_paint_non_ra"}, \code{"mid_range"}. \code{NA} on non-field-goal rows. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'   All other columns from the V3 PBP schema (\code{nba_pbp()}) are also
 #'   present.  Returns a 0-row frame when the game cannot be fetched (never-raise).

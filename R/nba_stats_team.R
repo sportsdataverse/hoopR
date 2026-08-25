@@ -1,9 +1,10 @@
 #' **Get NBA Stats API Teams**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teams
 NULL
 #' @title
 #' **Get NBA Stats API Teams**
-#' @rdname nba_teams
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a data frame with the following columns:
@@ -123,13 +124,13 @@ nba_teams <- function(...) {
 
 
 #' **Get NBA Stats API Team Details**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamdetails
 NULL
 #' @title
 #' **Get NBA Stats API Team Details**
-#' @rdname nba_teamdetails
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param team_id Team ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: TeamAwardsChampionships,
 #' TeamAwardsConf, TeamAwardsDiv, TeamBackground,
@@ -157,37 +158,45 @@ NULL
 #'    **TeamHistory**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |TEAM_ID        |character |Unique team identifier.   |
-#'    |CITY           |character |City.                     |
-#'    |NICKNAME       |character |Team or athlete nickname. |
-#'    |YEARFOUNDED    |character |                          |
-#'    |YEARACTIVETILL |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       CITY \tab character \tab City. \cr
+#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
+#'       YEARFOUNDED \tab character \tab  \cr
+#'       YEARACTIVETILL \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamSocialSites**
 #'
 #'
-#'    |col_name     |types     |description |
-#'    |:------------|:---------|:-----------|
-#'    |ACCOUNTTYPE  |character |            |
-#'    |WEBSITE_LINK |character |            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       ACCOUNTTYPE \tab character \tab  \cr
+#'       WEBSITE_LINK \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamAwardsChampionships**
 #'
 #'
-#'    |col_name     |types     |description |
-#'    |:------------|:---------|:-----------|
-#'    |YEARAWARDED  |character |            |
-#'    |OPPOSITETEAM |character |            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       YEARAWARDED \tab character \tab  \cr
+#'       OPPOSITETEAM \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamAwardsConf**
 #'
 #'
-#'    |col_name     |types   |description |
-#'    |:------------|:-------|:-----------|
-#'    |YEARAWARDED  |integer |            |
-#'    |OPPOSITETEAM |integer |            |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       YEARAWARDED \tab integer \tab  \cr
+#'       OPPOSITETEAM \tab integer \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamAwardsDiv**
 #'
@@ -197,14 +206,16 @@ NULL
 #'    **TeamHof**
 #'
 #'
-#'    |col_name        |types     |description                             |
-#'    |:---------------|:---------|:---------------------------------------|
-#'    |PLAYERID        |character |Playerid.                               |
-#'    |PLAYER          |character |Player.                                 |
-#'    |POSITION        |character |Listed roster position (G, F, C, etc.). |
-#'    |JERSEY          |character |Jersey number worn by the player.       |
-#'    |SEASONSWITHTEAM |character |                                        |
-#'    |YEAR            |character |4-digit year.                           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYERID \tab character \tab Playerid. \cr
+#'       PLAYER \tab character \tab Player. \cr
+#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+#'       JERSEY \tab character \tab Jersey number worn by the player. \cr
+#'       SEASONSWITHTEAM \tab character \tab  \cr
+#'       YEAR \tab character \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TeamRetired**
 #'
@@ -255,15 +266,13 @@ nba_teamdetails <- function(
 
 
 #' **Get NBA Stats API Team Estimated Metrics**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamestimatedmetrics
 NULL
 #' @title
 #' **Get NBA Stats API Team Estimated Metrics**
-#' @rdname nba_teamestimatedmetrics
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: TeamEstimatedMetrics
 #'
@@ -367,18 +376,13 @@ nba_teamestimatedmetrics <- function(
 
 
 #' **Get NBA Stats API Team Game Log**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamgamelog
 NULL
 #' @title
 #' **Get NBA Stats API Team Game Log**
-#' @rdname nba_teamgamelog
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param team_id Team ID
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: TeamGameLog
 #'
@@ -474,32 +478,15 @@ nba_teamgamelog <- function(
 
 
 #' **Get NBA Stats API Team Game Logs**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamgamelogs
 NULL
 #' @title
 #' **Get NBA Stats API Team Game Logs**
-#' @rdname nba_teamgamelogs
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param game_segment game_segment
-#' @param last_n_games last_n_games
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param location location
-#' @param measure_type measure_type
-#' @param month month
-#' @param opponent_team_id opponent_team_id
-#' @param outcome outcome
 #' @param po_round po_round
-#' @param per_mode per_mode
-#' @param period period
 #' @param player_id Player ID
-#' @param season Season - format 2020-21
-#' @param season_segment season_segment
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param team_id team_id
-#' @param vs_conference vs_conference
-#' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: TeamGameLogs
 #'
@@ -653,6 +640,7 @@ nba_teamgamelogs <- function(
 
 
 #' **Get NBA Stats API Team Historical Leaders**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamhistoricalleaders
 NULL
 #' @title
@@ -663,11 +651,9 @@ NULL
 #' NBA Stats no longer returns stable data for this endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_franchiseleaders()` instead.
-#' @rdname nba_teamhistoricalleaders
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param league_id league_id
 #' @param season_id season_id
-#' @param team_id team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: CareerLeadersByTeam
 #'
@@ -751,16 +737,13 @@ nba_teamhistoricalleaders <- function(
 
 
 #' **Get NBA Stats API Team Common Info**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teaminfocommon
 NULL
 #' @title
 #' **Get NBA Stats API Team Common Info**
-#' @rdname nba_teaminfocommon
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param team_id Team ID
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: AvailableSeasons, TeamInfoCommon,
 #' TeamSeasonRanks
@@ -1009,29 +992,7 @@ nba_teamplayeronoffdetails <- function(
 #' **Get NBA Stats API Team Player On/Off Summary**
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param game_segment game_segment
-#' @param last_n_games last_n_games
-#' @param league_id league_id
-#' @param location location
-#' @param measure_type measure_type
-#' @param month month
-#' @param opponent_team_id opponent_team_id
-#' @param outcome outcome
 #' @param po_round po_round
-#' @param pace_adjust pace_adjust
-#' @param per_mode per_mode
-#' @param period period
-#' @param plus_minus plus_minus
-#' @param rank rank
-#' @param season season
-#' @param season_segment season_segment
-#' @param season_type season_type
-#' @param shot_clock_range shot_clock_range
-#' @param team_id team_id
-#' @param vs_conference vs_conference
-#' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: OverallTeamPlayerOnOffSummary,
 #' PlayersOffCourtTeamPlayerOnOffSummary, PlayersOnCourtTeamPlayerOnOffSummary
@@ -1159,29 +1120,7 @@ nba_teamplayeronoffsummary <- function(
 #' **Get NBA Stats API Team Player Dashboard**
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param game_segment game_segment
-#' @param last_n_games last_n_games
-#' @param league_id league_id
-#' @param location location
-#' @param measure_type measure_type
-#' @param month month
-#' @param opponent_team_id opponent_team_id
-#' @param outcome outcome
 #' @param po_round po_round
-#' @param pace_adjust pace_adjust
-#' @param per_mode per_mode
-#' @param period period
-#' @param plus_minus plus_minus
-#' @param rank rank
-#' @param season season
-#' @param season_segment season_segment
-#' @param season_type season_type
-#' @param shot_clock_range shot_clock_range
-#' @param team_id team_id
-#' @param vs_conference vs_conference
-#' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: PlayersSeasonTotals, TeamOverall
 #'
@@ -1412,16 +1351,13 @@ nba_teamplayerdashboard <- function(
 
 
 #' **Get NBA Stats API Team Year by Year Stats**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamyearbyyearstats
 NULL
 #' @title
 #' **Get NBA Stats API Team Year by Year Stats**
-#' @rdname nba_teamyearbyyearstats
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param per_mode Per Mode
-#' @param team_id Team ID
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: TeamStats
 #'
@@ -1521,36 +1457,15 @@ nba_teamyearbyyearstats <- function(
 
 
 #' **Get NBA Stats API Team vs Player**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamvsplayer
 NULL
 #' @title
 #' **Get NBA Stats API Team vs Player**
-#' @rdname nba_teamvsplayer
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param game_segment game_segment
-#' @param last_n_games last_n_games
-#' @param league_id league_id
-#' @param location location
-#' @param measure_type measure_type
-#' @param month month
-#' @param opponent_team_id opponent_team_id
-#' @param outcome outcome
 #' @param po_round po_round
-#' @param pace_adjust pace_adjust
-#' @param per_mode per_mode
-#' @param period period
 #' @param player_id Player ID
-#' @param plus_minus plus_minus
-#' @param rank rank
-#' @param season season
-#' @param season_segment season_segment
-#' @param season_type season_type
-#' @param shot_clock_range shot_clock_range
-#' @param team_id team_id
-#' @param vs_conference vs_conference
-#' @param vs_division vs_division
 #' @param vs_player_id vs_player_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: OnOffCourt, Overall, ShotAreaOffCourt,
@@ -1838,13 +1753,13 @@ nba_teamvsplayer <- function(
 
 
 #' **Get NBA Stats API Team and Players vs Players**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamandplayersvsplayers
 NULL
 #' @title
 #' **Get NBA Stats API Team and Players vs Players**
-#' @rdname nba_teamandplayersvsplayers
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
-#' @param team_id Team ID
 #' @param vs_team_id Opponent Team ID to compare against
 #' @param player_id1 Player ID 1 for team lineup
 #' @param player_id2 Player ID 2 for team lineup
@@ -1856,29 +1771,8 @@ NULL
 #' @param vs_player_id3 Opponent Player ID 3 for comparison lineup
 #' @param vs_player_id4 Opponent Player ID 4 for comparison lineup
 #' @param vs_player_id5 Opponent Player ID 5 for comparison lineup
-#' @param season Season - format: '2023-24'
-#' @param season_type Season Type - 'Regular Season', 'Playoffs'
-#' @param measure_type Measure Type - 'Base', 'Advanced', 'Misc', 'Scoring', 'Usage'
-#' @param per_mode Per Mode - 'Totals', 'PerGame', 'Per36', 'Per48'
-#' @param plus_minus Plus Minus - 'Y' or 'N'
-#' @param pace_adjust Pace Adjust - 'Y' or 'N'
-#' @param rank Rank - 'Y' or 'N'
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param last_n_games Last N Games filter
-#' @param month Month filter (0 for all)
-#' @param opponent_team_id Opponent Team ID filter
-#' @param period Period filter (0 for all)
 #' @param conference Conference filter - 'East', 'West', or ''
-#' @param date_from Date From filter - format: 'MM/DD/YYYY'
-#' @param date_to Date To filter - format: 'MM/DD/YYYY'
 #' @param division Division filter
-#' @param game_segment Game Segment - 'First Half', 'Second Half', 'Overtime', or ''
-#' @param location Location filter - 'Home', 'Road', or ''
-#' @param outcome Outcome filter - 'W', 'L', or ''
-#' @param season_segment Season Segment - 'Pre All-Star', 'Post All-Star', or ''
-#' @param shot_clock_range Shot Clock Range filter
-#' @param vs_conference Opponent Conference filter
-#' @param vs_division Opponent Division filter
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: PlayersVsPlayers,
 #'  TeamPlayersVsPlayersOff, TeamPlayersVsPlayersOn, TeamVsPlayers, TeamVsPlayersOff
@@ -2089,6 +1983,7 @@ nba_teamandplayersvsplayers <- function(
 
 
 #' **Get NBA Stats API Team Game Streak Finder**
+#' @rdname nba_teamplayeronoffdetails
 #' @name nba_teamgamestreakfinder
 NULL
 #' @title
@@ -2099,7 +1994,7 @@ NULL
 #' NBA Stats no longer returns stable data for this endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_teamgamelogs()` instead.
-#' @rdname nba_teamgamestreakfinder
+#' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param active_streaks_only active_streaks_only
 #' @param active_teams_only active_teams_only
@@ -2125,10 +2020,6 @@ NULL
 #' @param btr_opp_reb btr_opp_reb
 #' @param btr_opp_stl btr_opp_stl
 #' @param btr_opp_tov btr_opp_tov
-#' @param conference conference
-#' @param date_from date_from
-#' @param date_to date_to
-#' @param division division
 #' @param et_ast et_ast
 #' @param et_blk et_blk
 #' @param et_dd et_dd
@@ -2207,8 +2098,6 @@ NULL
 #' @param gt_td gt_td
 #' @param gt_tov gt_tov
 #' @param lstreak lstreak
-#' @param league_id league_id
-#' @param location location
 #' @param lt_ast lt_ast
 #' @param lt_blk lt_blk
 #' @param lt_dd lt_dd
@@ -2257,15 +2146,7 @@ NULL
 #' @param lt_td lt_td
 #' @param lt_tov lt_tov
 #' @param min_games min_games
-#' @param outcome outcome
 #' @param po_round po_round
-#' @param season season
-#' @param season_segment season_segment
-#' @param season_type season_type
-#' @param team_id team_id
-#' @param vs_conference vs_conference
-#' @param vs_division vs_division
-#' @param vs_team_id vs_team_id
 #' @param wstreak wstreak
 #' @param wrs_opp_ast wrs_opp_ast
 #' @param wrs_opp_blk wrs_opp_blk

@@ -15,10 +15,6 @@
 #'   replacement (WAR), and a DARKO-style skill/projection pair. Produced by
 #'   the sdv-py NBA/WNBA possession-engine model program; published to the
 #'   `nba_player_impact` release tag as csv/parquet/rds.
-#' @param seasons A vector of 4-digit years associated with given NBA
-#'   seasons. Published coverage runs 1997 through the most recent season,
-#'   with no gaps. Pass `seasons = TRUE` for every published season. (Min:
-#'   1997)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -190,10 +186,6 @@ load_mbb_player_value <- function(seasons = most_recent_mbb_season(),
 #'   adjusted-efficiency-margin rating. This tag is parquet-only, with no
 #'   csv/rds sibling assets. Produced by the sdv-py NCAA MBB model program;
 #'   published to the `mbb_ratings` release tag.
-#' @param seasons A vector of 4-digit season-ending years for NCAA men's
-#'   college basketball. Published coverage runs 2006 through the most recent
-#'   season, with no gaps. Pass `seasons = TRUE` for every published season.
-#'   (Min: 2006)
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]

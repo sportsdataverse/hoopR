@@ -7,11 +7,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Tournaments Index**
+#' @rdname espn_mbb_tournaments
 #' @name espn_nba_tournaments
 NULL
 #' @title
 #' **Get ESPN NBA Tournaments Index**
-#' @rdname espn_nba_tournaments
+#' @rdname espn_mbb_tournaments
 #' @author Saiem Gilani
 #' @description
 #' Returns the index of NBA-branded tournaments tracked by ESPN
@@ -21,11 +22,13 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per tournament.
 #'
-#'    |col_name      |types     |description                         |
-#'    |:-------------|:---------|:-----------------------------------|
-#'    |tournament_id |character |ESPN tournament identifier.         |
-#'    |ref           |character |Full `$ref` URL for the detail.     |
-#'    |league        |character |League slug (`"nba"`).              |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for the detail. \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -44,11 +47,12 @@ espn_nba_tournaments <- function(...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Tournament Detail**
+#' @rdname espn_mbb_tournament
 #' @name espn_nba_tournament
 NULL
 #' @title
 #' **Get ESPN NBA Tournament Detail**
-#' @rdname espn_nba_tournament
+#' @rdname espn_mbb_tournament
 #' @author Saiem Gilani
 #' @description
 #' Returns metadata for a single tournament plus the `$ref` URL for the
@@ -59,12 +63,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name      |types     |description                                    |
-#'    |:-------------|:---------|:----------------------------------------------|
-#'    |tournament_id |character |ESPN tournament identifier.                    |
-#'    |display_name  |character |Human-readable tournament name.                |
-#'    |seasons_ref   |character |`$ref` to the seasons-list endpoint.           |
-#'    |league        |character |League slug (`"nba"`).                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
+#'       display_name \tab character \tab Human-readable tournament name. \cr
+#'       seasons_ref \tab character \tab \verb{$ref} to the seasons-list endpoint. \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -84,11 +90,12 @@ espn_nba_tournament <- function(tournament_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Tournament Seasons List**
+#' @rdname espn_mbb_tournament_seasons
 #' @name espn_nba_tournament_seasons
 NULL
 #' @title
 #' **Get ESPN NBA Tournament Seasons List**
-#' @rdname espn_nba_tournament_seasons
+#' @rdname espn_mbb_tournament_seasons
 #' @author Saiem Gilani
 #' @description
 #' Returns the seasons in which a given NBA tournament was held.
@@ -97,12 +104,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per season.
 #'
-#'    |col_name      |types     |description                              |
-#'    |:-------------|:---------|:----------------------------------------|
-#'    |league        |character |League slug (`"nba"`).                   |
-#'    |tournament_id |character |ESPN tournament identifier.              |
-#'    |season        |integer   |Season year.                             |
-#'    |ref           |character |Full `$ref` URL for that season.         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for that season. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -122,11 +131,12 @@ espn_nba_tournament_seasons <- function(tournament_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Tournament Season Detail**
+#' @rdname espn_mbb_tournament_season
 #' @name espn_nba_tournament_season
 NULL
 #' @title
 #' **Get ESPN NBA Tournament Season Detail**
-#' @rdname espn_nba_tournament_season
+#' @rdname espn_mbb_tournament_season
 #' @author Saiem Gilani
 #' @description
 #' Returns single-row detail for one (tournament, season) pair: id,

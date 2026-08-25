@@ -16,15 +16,17 @@ Credentials are read from \code{KP_USER} / \code{KP_PW} env vars (or function
 args). See \code{?login} for the auth flow.
 }
 \details{
-\subsection{\strong{Team / season ratings}}{\tabular{ll}{
+\subsection{\strong{Team / season ratings}}{
+
+\if{html}{\tabular{ll}{
    Function \tab Purpose \cr
    \code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}} \tab Pomeroy season ratings \cr
    \code{\link[=kp_pomeroy_archive_ratings]{kp_pomeroy_archive_ratings()}} \tab Historical Pomeroy ratings \cr
    \code{\link[=kp_program_ratings]{kp_program_ratings()}} \tab Program-level ratings \cr
    \code{\link[=kp_team_history]{kp_team_history()}} \tab Team history page \cr
    \code{\link[=kp_arenas]{kp_arenas()}} \tab Arena reference \cr
-}
-
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
 \subsection{\strong{Per-game / per-team detail}}{
@@ -59,7 +61,9 @@ args). See \code{?login} for the auth flow.
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
-\subsection{\strong{Player + coach + officials}}{\tabular{ll}{
+\subsection{\strong{Player + coach + officials}}{
+
+\if{html}{\tabular{ll}{
    Function \tab Purpose \cr
    \code{\link[=kp_player_career]{kp_player_career()}} \tab Player career page \cr
    \code{\link[=kp_playerstats]{kp_playerstats()}} \tab Player stats \cr
@@ -68,8 +72,8 @@ args). See \code{?login} for the auth flow.
    \code{\link[=kp_coach_history]{kp_coach_history()}} \tab Coach history \cr
    \code{\link[=kp_referee]{kp_referee()}} \tab Referee splits \cr
    \code{\link[=kp_officials]{kp_officials()}} \tab Game officials \cr
-}
-
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
 \subsection{\strong{Trends and miscellany}}{

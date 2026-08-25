@@ -85,8 +85,6 @@ espn_mbb_game_probabilities <- function(event_id, limit = 200, ...) {
 #' **Get ESPN Women's College Basketball Event Officials**
 #' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @param event_id ESPN event/game identifier (character or numeric).
-#' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per official assigned to the game.
 #'
 #'    Columns as documented in the shared [espn_mbb_game_officials_schema] table.
@@ -116,8 +114,6 @@ espn_mbb_game_officials <- function(event_id, ...) {
 #' **Get ESPN Women's College Basketball Event Broadcasts**
 #' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @param event_id ESPN event/game identifier (character or numeric).
-#' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per broadcast outlet for the game.
 #'
 #'    Columns as documented in the shared [espn_mbb_game_broadcasts_schema] table.
@@ -153,8 +149,6 @@ espn_mbb_game_broadcasts <- function(event_id, ...) {
 #' During a live game this reflects current state; after the game ends
 #' the values are frozen.
 #'
-#' @param event_id ESPN event identifier.
-#' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble with timeouts + fouls for both teams.
 #' @export
 #' @family ESPN MBB Functions
@@ -183,8 +177,6 @@ espn_mbb_game_situation <- function(event_id, ...) {
 #' strength metrics. Returns empty for events without predictor data
 #' (often the case for already-played games).
 #'
-#' @param event_id ESPN event identifier.
-#' @param ... Additional arguments; currently unused.
 #' @return A long tibble with rows for both home and away teams.
 #' @export
 #' @family ESPN MBB Functions
@@ -210,8 +202,6 @@ espn_mbb_game_predictor <- function(event_id, ...) {
 #' Returns the per-team power-index `$ref` URLs for one MBB event.
 #' Coverage is sparse — many events return zero items.
 #'
-#' @param event_id ESPN event identifier.
-#' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per team-game power-index entry.
 #' @export
 #' @family ESPN MBB Functions
@@ -303,7 +293,6 @@ espn_mbb_game_team_linescores <- function(event_id, team_id, ...) {
 #' include points, rebounds, assists, and rating.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x rank).
 #' @export
@@ -332,7 +321,6 @@ espn_mbb_game_team_leaders <- function(event_id, team_id, ...) {
 #' the ref to dereference athlete-game splits or biographical data.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per active athlete.
 #' @export
@@ -362,7 +350,6 @@ espn_mbb_game_team_roster <- function(event_id, team_id, ...) {
 #' strings.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x stat).
 #' @export
@@ -391,7 +378,6 @@ espn_mbb_game_team_statistics <- function(event_id, team_id, ...) {
 #' per record type.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per record type.
 #' @export
@@ -568,7 +554,6 @@ espn_mbb_game_play_personnel <- function(event_id, play_id, ...) {
 #' per-period detail.
 #'
 #' @param event_id ESPN event identifier.
-#' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export

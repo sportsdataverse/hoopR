@@ -7,18 +7,14 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Team Detail**
+#' @rdname espn_mbb_team
 #' @name espn_nba_team
 NULL
 #' @title
 #' **Get ESPN NBA Team Detail**
-#' @rdname espn_nba_team
+#' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric, e.g. 2025). Defaults to the most
-#'   recent NBA season.
-#' @param ... Additional arguments; currently unused but retained for
-#'   forward compatibility. Proxy configuration should use
-#'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
 #' @return A named list of data frames: `Info`, `Record`, `NextEvent`,
 #'   `StandingSummary`, `Coaches`.
 #'
@@ -84,11 +80,9 @@ espn_nba_team <- function(team_id,
 
 #' @title
 #' **Get ESPN NBA Team Roster**
-#' @rdname espn_nba_team
+#' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
-#' @param ... Additional arguments; currently unused.
 #' @return A single tibble with one row per athlete.
 #'
 #'    Columns as documented in the shared [espn_mbb_team_roster_schema] table.
@@ -118,14 +112,14 @@ espn_nba_team_roster <- function(team_id,
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Team Schedule**
+#' @rdname espn_mbb_team_schedule
 #' @name espn_nba_team_schedule
 NULL
 #' @title
 #' **Get ESPN NBA Team Schedule**
-#' @rdname espn_nba_team_schedule
+#' @rdname espn_mbb_team_schedule
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param season_type Integer season type: 1 = preseason, 2 = regular (default),
 #'   3 = postseason.
 #' @param ... Additional arguments; currently unused.
@@ -161,11 +155,9 @@ espn_nba_team_schedule <- function(team_id,
 
 #' @title
 #' **Get ESPN NBA Team Leaders**
-#' @rdname espn_nba_team
+#' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
-#' @param ... Additional arguments; currently unused.
 #' @return A single long-format tibble (one row per category-rank-athlete).
 #'
 #'    Columns as documented in the shared [espn_mbb_team_leaders_schema] table.
@@ -196,7 +188,7 @@ espn_nba_team_leaders <- function(team_id,
 
 #' @title
 #' **Get ESPN NBA Team-in-Season Profile**
-#' @rdname espn_nba_team
+#' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @description
 #' Era-correct team identity for an NBA franchise in a specific season,
@@ -208,8 +200,6 @@ espn_nba_team_leaders <- function(team_id,
 #' return fewer `$ref` keys; missing refs become `NA`.
 #'
 #' @param team_id ESPN team identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
-#' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble with team identity scalars and `_ref` URL
 #'   columns. Selected columns:
 #'
@@ -266,11 +256,12 @@ espn_nba_team_season_profile <- function(team_id,
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Team Season Statistics (Long Format with Rank)**
+#' @rdname espn_mbb_team_season_statistics
 #' @name espn_nba_team_season_statistics
 NULL
 #' @title
 #' **Get ESPN NBA Team Season Statistics (Long Format with Rank)**
-#' @rdname espn_nba_team_season_statistics
+#' @rdname espn_mbb_team_season_statistics
 #' @author Saiem Gilani
 #' @description
 #' Returns the full team-season-type statistics sheet for one NBA team in
@@ -280,7 +271,6 @@ NULL
 #' with the full stat package.
 #'
 #' @param team_id ESPN team identifier.
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param season_type Integer season type: 1 = preseason, 2 = regular
 #'   (default), 3 = postseason.
 #' @param ... Additional arguments; currently unused.

@@ -7,7 +7,7 @@
 Columns shared verbatim across: espn_mbb_season_info, espn_nba_season_info.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    year \tab integer \tab 4-digit year. \cr
    start_date \tab character \tab Start date (YYYY-MM-DD). \cr
@@ -15,6 +15,7 @@ Columns shared verbatim across: espn_mbb_season_info, espn_nba_season_info.
    display_name \tab character \tab Display name. \cr
    type_id \tab character \tab Type identifier (numeric). \cr
    type_name \tab character \tab  \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

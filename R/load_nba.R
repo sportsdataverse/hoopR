@@ -122,11 +122,8 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
 #' @rdname load_nba_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by
-#' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
 #'    Columns as documented in the shared [espn_nba_game_all_team_schema] table.
@@ -176,11 +173,8 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
 #' @rdname load_nba_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by
-#' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
 #'    Columns as documented in the shared [espn_nba_game_all_player_schema] table.
@@ -228,11 +222,8 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
 #' @rdname load_nba_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by
-#' @param tablename The name of the play by play data table within the database
 #' @return Returns a tibble
 #'
 #'    \if{html}{\tabular{lll}{
@@ -534,11 +525,8 @@ get_missing_nba_games <- function(completed_games, dbConnection, tablename) {
 #' @description helper that loads multiple seasons of ESPN NBA standings from the
 #' sportsdataverse-data release repo (tidy long format: one row per team-per-stat),
 #' either into memory or into a database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the standings data table within the database.
 #' @return Returns a tibble of per-season NBA standings.
 #' @export
 load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
@@ -580,11 +568,8 @@ load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
 #' @description helper that loads multiple seasons of ESPN NBA per-game rosters
 #' from the sportsdataverse-data release repo, either into memory or into a
 #' database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the game-rosters data table within the database.
 #' @return Returns a tibble of per-game NBA rosters.
 #' @export
 load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
@@ -626,11 +611,8 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
 #' @description helper that loads multiple seasons of ESPN NBA per-game officials
 #' from the sportsdataverse-data release repo, either into memory or into a
 #' database via forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the officials data table within the database.
 #' @return Returns a tibble of per-game NBA officials.
 #' @export
 load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
@@ -672,11 +654,8 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
 #' (overall pick, round, drafted player, and team) from the sportsdataverse-data
 #' release repo, either into memory or into a database via forwarded arguments in
 #' the dots.
-#' @param seasons A vector of 4-digit years associated with given NBA draft years. (Min: 2003)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the draft data table within the database.
 #' @return Returns a tibble of NBA draft picks.
 #' @export
 load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
@@ -718,11 +697,8 @@ load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
 #' stats (averages / totals / miscellaneous categories, long format) from the
 #' sportsdataverse-data release repo, either into memory or into a database via
 #' forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the player season stats data table within the database.
 #' @return Returns a tibble of NBA player season stats (long format).
 #' @export
 load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
@@ -764,11 +740,8 @@ load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
 #' stats (general / offensive / defensive categories, long format) from the
 #' sportsdataverse-data release repo, either into memory or into a database via
 #' forwarded arguments in the dots.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the team season stats data table within the database.
 #' @return Returns a tibble of NBA team season stats (long format).
 #' @export
 load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
@@ -811,11 +784,8 @@ load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
 #' memory or into a database via forwarded arguments in the dots. NOTE: ESPN's
 #' roster endpoint returns the current roster, so season files are snapshots
 #' as-of-scrape rather than true historical rosters.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the rosters data table within the database.
 #' @return Returns a tibble of NBA team rosters.
 #' @export
 load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
@@ -872,11 +842,8 @@ load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
 #' }
 #' Field coverage is era-dependent by nature -- headshots exist only for modern
 #' players, while college and date of birth thin out the other way.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the player core data table within the database.
 #' @return Returns a tibble of NBA athlete core records (one row per athlete-season).
 #' @export
 load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
@@ -918,11 +885,8 @@ load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
 #' One row per shot attempt (made or missed), with court coordinates and
 #' shot metadata. Backed by the `hoopR-nba-data` pipeline, publishing
 #' parquet/rds artifacts to the `espn_nba_shots` release tag.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
-#' @param dbConnection A `DBIConnection` object, as returned by `DBI::dbConnect()`.
-#' @param tablename The name of the shots data table within the database.
 #' @return Returns a tibble with one row per shot attempt.
 #'
 #'    \if{html}{\tabular{lll}{

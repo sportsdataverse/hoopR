@@ -30,15 +30,17 @@
 #'   requested `season`, `stat_type` and `season_type` as columns. Columns vary
 #'   by `stat_type`; for `"Averages"`:
 #'
-#'    |col_name |types     |description                |
-#'    |:--------|:---------|:--------------------------|
-#'    |player   |character |Player name.               |
-#'    |team     |character |Team abbreviation.         |
-#'    |gp       |integer   |Games played.              |
-#'    |mpg      |numeric   |Minutes per game.          |
-#'    |ppg      |numeric   |Points per game.           |
-#'    |rpg      |numeric   |Rebounds per game.         |
-#'    |apg      |numeric   |Assists per game.          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player \tab character \tab Player name. \cr
+#'       team \tab character \tab Team abbreviation. \cr
+#'       gp \tab integer \tab Games played. \cr
+#'       mpg \tab numeric \tab Minutes per game. \cr
+#'       ppg \tab numeric \tab Points per game. \cr
+#'       rpg \tab numeric \tab Rebounds per game. \cr
+#'       apg \tab numeric \tab Assists per game. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table

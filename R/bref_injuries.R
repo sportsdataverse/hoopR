@@ -14,12 +14,14 @@
 #' note fields.
 #' @return A `hoopR_data` tibble with one row per injured player:
 #'
-#'    |col_name    |types     |description                                      |
-#'    |:-----------|:---------|:------------------------------------------------|
-#'    |player      |character |Player name.                                     |
-#'    |team_name   |character |Team name.                                       |
-#'    |date_update |character |Date the status was last updated.                |
-#'    |note        |character |Injury status and description.                   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       player \tab character \tab Player name. \cr
+#'       team_name \tab character \tab Team name. \cr
+#'       date_update \tab character \tab Date the status was last updated. \cr
+#'       note \tab character \tab Injury status and description. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names

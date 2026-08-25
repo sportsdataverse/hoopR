@@ -83,8 +83,6 @@ load_nba_team_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' ESPN game identifiers to NBA.com game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `nba_crosswalk` release of the
 #' sportsdataverse-data repository.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons.
-#'   (Min: 2002; default: \code{most_recent_nba_season()})
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   NBA game per season. Columns include at minimum \code{season},
 #'   \code{espn_game_id}, and \code{nba_game_id}.
@@ -106,8 +104,6 @@ load_nba_schedule_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' athlete identifiers to NBA.com player identifiers. The files are versioned
 #' `.rds` snapshots stored in the `nba_crosswalk` release of the
 #' sportsdataverse-data repository.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons.
-#'   (Min: 2002; default: \code{most_recent_nba_season()})
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   NBA player per season. Columns include at minimum \code{season},
 #'   \code{espn_athlete_id}, and \code{nba_player_id}.
@@ -129,8 +125,6 @@ load_nba_player_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
 #' and canonical abbreviations. The files are versioned `.rds` snapshots stored
 #' in the `mbb_crosswalk` release of the sportsdataverse-data repository.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons.
-#'   (Min: 2002; default: \code{most_recent_mbb_season()})
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   MBB team per season. Columns include at minimum \code{season} and
 #'   \code{espn_team_id}.
@@ -152,8 +146,6 @@ load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `mbb_crosswalk` release of the
 #' sportsdataverse-data repository.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons.
-#'   (Min: 2002; default: \code{most_recent_mbb_season()})
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   MBB game per season. Columns include at minimum \code{season} and
 #'   \code{espn_game_id}.
@@ -175,8 +167,6 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
 #' versioned `.rds` snapshots stored in the `mbb_crosswalk` release of the
 #' sportsdataverse-data repository.
-#' @param seasons A vector of 4-digit years associated with given MBB seasons.
-#'   (Min: 2002; default: \code{most_recent_mbb_season()})
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   MBB player per season. Columns include at minimum \code{season} and
 #'   \code{espn_athlete_id}.

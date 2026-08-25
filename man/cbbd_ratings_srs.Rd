@@ -28,40 +28,49 @@ cbbd_ratings_elo(
 \item{season}{(\emph{integer} optional): Season, 4-digit ending-year (e.g. \code{2024}).
 Defaults to \code{most_recent_mbb_season()}.}
 
-\item{team}{(\emph{character} optional): Team name filter.}
+\item{team}{(\emph{character} optional): Team name filter (e.g. \code{Duke}).}
 
 \item{conference}{(\emph{character} optional): Conference abbreviation filter.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team-season:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   team_id \tab integer \tab CollegeBasketballData team id. \cr
-   team \tab character \tab Team name. \cr
-   conference \tab character \tab Conference name. \cr
-   rating \tab numeric \tab Simple Rating System (SRS) value. \cr
-}
+A \code{hoopR_data} tibble with one row per team-season:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab CollegeBasketballData team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      rating \tab numeric \tab Simple Rating System (SRS) value. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 A \code{hoopR_data} tibble with one row per team-season. \verb{rankings_*}
-columns are flattened from the nested \code{rankings} object:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   team_id \tab integer \tab CollegeBasketballData team id. \cr
-   team \tab character \tab Team name. \cr
-   conference \tab character \tab Conference name. \cr
-   offensive_rating \tab numeric \tab Adjusted offensive efficiency rating. \cr
-   defensive_rating \tab numeric \tab Adjusted defensive efficiency rating. \cr
-   net_rating \tab numeric \tab Adjusted net efficiency rating. \cr
-}
+columns are flattened from the nested \code{rankings} object:
 
-A \code{hoopR_data} tibble with one row per team-season:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   season \tab integer \tab Season (4-digit ending-year). \cr
-   team_id \tab integer \tab CollegeBasketballData team id. \cr
-   team \tab character \tab Team name. \cr
-   conference \tab character \tab Conference name. \cr
-   elo \tab integer \tab End-of-season Elo rating. \cr
-}
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab CollegeBasketballData team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      offensive_rating \tab numeric \tab Adjusted offensive efficiency rating. \cr
+      defensive_rating \tab numeric \tab Adjusted defensive efficiency rating. \cr
+      net_rating \tab numeric \tab Adjusted net efficiency rating. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team-season:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      team_id \tab integer \tab CollegeBasketballData team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      elo \tab integer \tab End-of-season Elo rating. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get Simple Rating System (SRS) ratings from the CollegeBasketballData API.}

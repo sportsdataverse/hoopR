@@ -3,11 +3,12 @@
 # scoreboard-conferences endpoint.
 
 #' **Get ESPN NBA Conferences**
+#' @rdname espn_mbb_conferences
 #' @name espn_nba_conferences
 NULL
 #' @title
 #' **Get ESPN NBA Conferences**
-#' @rdname espn_nba_conferences
+#' @rdname espn_mbb_conferences
 #' @author Saiem Gilani
 #' @return A `hoopR_data` tibble with one row per conference:
 #'

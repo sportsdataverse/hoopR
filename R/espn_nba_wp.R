@@ -1,5 +1,5 @@
 #' **Get NBA win probability chart data from ESPN**
-#' @rdname espn_nba_wp
+#' @rdname espn_mbb_wp
 #'
 #' @param game_id (*Integer* required): Game ID filter for querying a single game
 #'

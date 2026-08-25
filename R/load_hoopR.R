@@ -13,23 +13,27 @@
 #'
 #' ## **NBA loaders**
 #'
-#' | Function | Asset family |
-#' |---|---|
-#' | [load_nba_pbp()]            | NBA play-by-play |
-#' | [load_nba_player_box()]     | NBA player boxscores |
-#' | [load_nba_team_box()]       | NBA team boxscores |
-#' | [load_nba_schedule()]       | NBA schedule |
-#' | [update_nba_db()]           | Delta loader -> DB |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Asset family \cr
+#'    \code{\link[=load_nba_pbp]{load_nba_pbp()}} \tab NBA play-by-play \cr
+#'    \code{\link[=load_nba_player_box]{load_nba_player_box()}} \tab NBA player boxscores \cr
+#'    \code{\link[=load_nba_team_box]{load_nba_team_box()}} \tab NBA team boxscores \cr
+#'    \code{\link[=load_nba_schedule]{load_nba_schedule()}} \tab NBA schedule \cr
+#'    \code{\link[=update_nba_db]{update_nba_db()}} \tab Delta loader -> DB \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' ## **MBB loaders**
 #'
-#' | Function | Asset family |
-#' |---|---|
-#' | [load_mbb_pbp()]            | Men's college basketball PBP |
-#' | [load_mbb_player_box()]     | MBB player boxscores |
-#' | [load_mbb_team_box()]       | MBB team boxscores |
-#' | [load_mbb_schedule()]       | MBB schedule |
-#' | [update_mbb_db()]           | Delta loader -> DB |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Asset family \cr
+#'    \code{\link[=load_mbb_pbp]{load_mbb_pbp()}} \tab Men's college basketball PBP \cr
+#'    \code{\link[=load_mbb_player_box]{load_mbb_player_box()}} \tab MBB player boxscores \cr
+#'    \code{\link[=load_mbb_team_box]{load_mbb_team_box()}} \tab MBB team boxscores \cr
+#'    \code{\link[=load_mbb_schedule]{load_mbb_schedule()}} \tab MBB schedule \cr
+#'    \code{\link[=update_mbb_db]{update_mbb_db()}} \tab Delta loader -> DB \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords Loaders
 #' @family hoopR Loaders

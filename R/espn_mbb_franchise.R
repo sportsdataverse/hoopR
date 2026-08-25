@@ -21,11 +21,13 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per franchise.
 #'
-#'    |col_name     |types     |description                                |
-#'    |:------------|:---------|:------------------------------------------|
-#'    |franchise_id |character |ESPN franchise identifier.                 |
-#'    |ref          |character |Full `$ref` URL for franchise detail.      |
-#'    |league       |character |League slug (`"mens-college-basketball"`). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       franchise_id \tab character \tab ESPN franchise identifier. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for franchise detail. \cr
+#'       league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

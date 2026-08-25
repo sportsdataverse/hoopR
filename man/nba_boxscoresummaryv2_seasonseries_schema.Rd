@@ -7,7 +7,7 @@
 Columns shared verbatim across: nba_boxscoresummaryv2, nba_scoreboard, nba_scoreboardv2.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    GAME_ID \tab character \tab Unique game identifier. \cr
    HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
@@ -16,6 +16,7 @@ Columns shared verbatim across: nba_boxscoresummaryv2, nba_scoreboard, nba_score
    HOME_TEAM_WINS \tab character \tab Home team's team wins. \cr
    HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
    SERIES_LEADER \tab character \tab  \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

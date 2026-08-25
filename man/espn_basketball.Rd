@@ -18,7 +18,9 @@ a \code{league} argument (\code{"nba"} or \code{"mens-college-basketball"}); the
 helper does the actual HTTP call + parsing.
 }
 \details{
-\subsection{\strong{Play-by-play, scoreboard, schedule}}{\tabular{ll}{
+\subsection{\strong{Play-by-play, scoreboard, schedule}}{
+
+\if{html}{\tabular{ll}{
    NBA function \tab MBB function \cr
    \code{\link[=espn_nba_pbp]{espn_nba_pbp()}} \tab \code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}} \cr
    \code{\link[=espn_nba_scoreboard]{espn_nba_scoreboard()}} \tab \code{\link[=espn_mbb_scoreboard]{espn_mbb_scoreboard()}} \cr
@@ -27,11 +29,13 @@ helper does the actual HTTP call + parsing.
    \code{\link[=espn_nba_player_box]{espn_nba_player_box()}} \tab \code{\link[=espn_mbb_player_box]{espn_mbb_player_box()}} \cr
    \code{\link[=espn_nba_team_box]{espn_nba_team_box()}} \tab \code{\link[=espn_mbb_team_box]{espn_mbb_team_box()}} \cr
    \code{\link[=espn_nba_wp]{espn_nba_wp()}} \tab \code{\link[=espn_mbb_wp]{espn_mbb_wp()}} \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
-}
+\subsection{\strong{Reference data}}{
 
-\subsection{\strong{Reference data}}{\tabular{ll}{
+\if{html}{\tabular{ll}{
    NBA function \tab MBB function \cr
    \code{\link[=espn_nba_teams]{espn_nba_teams()}} \tab \code{\link[=espn_mbb_teams]{espn_mbb_teams()}} \cr
    \code{\link[=espn_nba_standings]{espn_nba_standings()}} \tab \code{\link[=espn_mbb_standings]{espn_mbb_standings()}} \cr
@@ -40,8 +44,8 @@ helper does the actual HTTP call + parsing.
    \code{\link[=espn_nba_betting]{espn_nba_betting()}} \tab \code{\link[=espn_mbb_betting]{espn_mbb_betting()}} \cr
     \tab \code{\link[=espn_mbb_conferences]{espn_mbb_conferences()}} \cr
     \tab \code{\link[=espn_mbb_rankings]{espn_mbb_rankings()}} \cr
-}
-
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 
 \subsection{\strong{HTTP layer}}{

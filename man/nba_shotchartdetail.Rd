@@ -2,6 +2,8 @@
 % Please edit documentation in R/nba_stats_shotchart.R
 \name{nba_shotchartdetail}
 \alias{nba_shotchartdetail}
+\alias{nba_shotchartleaguewide}
+\alias{nba_shotchartlineupdetail}
 \title{\strong{Get NBA Stats API Shot Chart Detail}}
 \usage{
 nba_shotchartdetail(
@@ -26,6 +28,71 @@ nba_shotchartdetail(
   team_id = 0,
   vs_conference = "",
   vs_division = "",
+  ...
+)
+
+nba_shotchartleaguewide(
+  league_id = "00",
+  season = year_to_season(most_recent_nba_season() - 1),
+  ...
+)
+
+nba_shotchartlineupdetail(
+  ahead_behind = "",
+  cfid = "",
+  cfparams = "",
+  clutch_time = "",
+  conference = "",
+  context_filter = "",
+  context_measure = "FGA",
+  date_from = "",
+  date_to = "",
+  division = "",
+  end_period = "10",
+  end_range = "28800",
+  group_id = "-202689-203493-203501-1626174-1627827-",
+  game_event_id = "",
+  game_id = "",
+  game_segment = "",
+  group_mode = "",
+  group_quantity = "5",
+  last_n_games = "0",
+  league_id = "00",
+  location = "",
+  month = "0",
+  on_off = "",
+  opp_player_id = "",
+  opponent_team_id = "0",
+  outcome = "",
+  po_round = "0",
+  period = "0",
+  player_id = "0",
+  player_id1 = "",
+  player_id2 = "",
+  player_id3 = "",
+  player_id4 = "",
+  player_id5 = "",
+  player_position = "",
+  point_diff = "",
+  position = "",
+  range_type = "0",
+  rookie_year = "",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  shot_clock_range = "",
+  start_period = "1",
+  start_range = "0",
+  starter_bench = "",
+  team_id = "1610612742",
+  vs_conference = "",
+  vs_division = "",
+  vs_player_id1 = "",
+  vs_player_id2 = "",
+  vs_player_id3 = "",
+  vs_player_id4 = "",
+  vs_player_id5 = "",
+  vs_team_id = "",
   ...
 )
 }
@@ -73,6 +140,74 @@ nba_shotchartdetail(
 \item{vs_division}{vs_division}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{ahead_behind}{ahead_behind}
+
+\item{cfid}{cfid}
+
+\item{cfparams}{cfparams}
+
+\item{clutch_time}{clutch_time}
+
+\item{conference}{conference}
+
+\item{context_filter}{context_filter}
+
+\item{division}{division}
+
+\item{end_period}{end_period}
+
+\item{end_range}{end_range}
+
+\item{group_id}{group_id}
+
+\item{game_event_id}{game_event_id}
+
+\item{group_mode}{group_mode}
+
+\item{group_quantity}{group_quantity}
+
+\item{on_off}{on_off}
+
+\item{opp_player_id}{opp_player_id}
+
+\item{po_round}{po_round}
+
+\item{player_id1}{player_id1}
+
+\item{player_id2}{player_id2}
+
+\item{player_id3}{player_id3}
+
+\item{player_id4}{player_id4}
+
+\item{player_id5}{player_id5}
+
+\item{point_diff}{point_diff}
+
+\item{position}{position}
+
+\item{range_type}{range_type}
+
+\item{shot_clock_range}{shot_clock_range}
+
+\item{start_period}{start_period}
+
+\item{start_range}{start_range}
+
+\item{starter_bench}{starter_bench}
+
+\item{vs_player_id1}{vs_player_id1}
+
+\item{vs_player_id2}{vs_player_id2}
+
+\item{vs_player_id3}{vs_player_id3}
+
+\item{vs_player_id4}{vs_player_id4}
+
+\item{vs_player_id5}{vs_player_id5}
+
+\item{vs_team_id}{vs_team_id}
 }
 \value{
 Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
@@ -109,27 +244,97 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 \strong{LeagueAverages}
 
 Columns as documented in the shared \link{nba_shotchartdetail_leagueaverages_schema} table.
+
+Return a named list of data frames: League_Wide
+
+\strong{League_Wide}
+
+Columns as documented in the shared \link{nba_shotchartdetail_leagueaverages_schema} table.
+
+Return a named list of data frames: ShotChartLineupDetail, ShotChartLineupLeagueAverage
+
+\strong{ShotChartLineupDetail}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GRID_TYPE \tab character \tab  \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   GAME_EVENT_ID \tab character \tab  \cr
+   GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
+   GROUP_NAME \tab character \tab Group name. \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   PLAYER_NAME \tab character \tab Player name. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   PERIOD \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+   MINUTES_REMAINING \tab character \tab  \cr
+   SECONDS_REMAINING \tab character \tab Seconds remaining in the period. \cr
+   EVENT_TYPE \tab character \tab Event / play type code (V2 PBP). \cr
+   ACTION_TYPE \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+   SHOT_TYPE \tab character \tab Shot type label (e.g. 'Jump Shot', 'Layup'). \cr
+   SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
+   SHOT_ZONE_AREA \tab character \tab Shot zone area ('Left Side', 'Right Side', 'Center'). \cr
+   SHOT_ZONE_RANGE \tab character \tab Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). \cr
+   SHOT_DISTANCE \tab character \tab Shot distance from the basket, in feet. \cr
+   LOC_X \tab character \tab X coordinate on the court (units of inches; 0 = basket center). \cr
+   LOC_Y \tab character \tab Y coordinate on the court (units of inches; baseline at 0). \cr
+   SHOT_ATTEMPTED_FLAG \tab character \tab 1 if a shot was attempted on this event. \cr
+   SHOT_MADE_FLAG \tab character \tab 1 if the shot was made; 0 if missed. \cr
+   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+   HTM \tab character \tab  \cr
+   VTM \tab character \tab  \cr
+}
+
+
+\strong{ShotChartLineupLeagueAverage}
+
+Columns as documented in the shared \link{nba_shotchartdetail_leagueaverages_schema} table.
 }
 \description{
 \strong{Get NBA Stats API Shot Chart Detail}
 
 \strong{Get NBA Stats API Shot Chart Detail}
+
+\strong{Get NBA Stats API Shot Chart League-Wide}
+
+\strong{Get NBA Stats API Shot Chart League-Wide}
+
+\strong{Get NBA Stats API Shot Chart for Lineups}
+
+\strong{Get NBA Stats API Shot Chart for Lineups}
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_shotchartdetail(league_id = '00', player_id = '202696', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_shotchartleaguewide(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_shotchartlineupdetail(group_id = '-202689-203493-203501-1626174-1627827-',
+                           group_id2 = '-202689-203493-203501-1626174-1627827-',
+                           season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBA Shooting Functions:
-\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
-\code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
-\code{\link[=nba_leaguedashteamshotlocations]{nba_leaguedashteamshotlocations()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
-\code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}},
-\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
+
+Other NBA League Functions:
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_leaguegamelog]{nba_leaguegamelog()}}
+
+Other NBA Lineup Functions:
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
+\code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
+\code{\link[=nba_rapm]{nba_rapm()}},
+\code{\link[=nba_shot_zones]{nba_shot_zones()}},
 \code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani
 }
+\concept{NBA League Functions}
+\concept{NBA Lineup Functions}
 \concept{NBA Shooting Functions}

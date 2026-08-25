@@ -93,8 +93,6 @@ espn_mbb_season_group <- function(group_id,
 #' Returns the list of child groups (e.g. divisions within a conference)
 #' for one (MBB season x season-type x parent-group).
 #'
-#' @param group_id Parent group identifier.
-#' @param season Season year. Defaults to most recent MBB season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per child group.
@@ -131,8 +129,6 @@ espn_mbb_season_group_children <- function(group_id,
 #' Returns the list of team IDs that belong to one group (conference or
 #' division) for one (MBB season x season-type).
 #'
-#' @param group_id ESPN group identifier.
-#' @param season Season year. Defaults to most recent MBB season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per team in the group.

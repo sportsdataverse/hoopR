@@ -63,21 +63,22 @@ cbbd_recruiting_players <- function(year = NULL, team = NULL, conference = NULL,
 
 #' @title
 #' **CBD Recruiting Team Rankings**
+#' @rdname cbbd_recruiting_players
 #' @description
 #' **Get team recruiting rankings from the CollegeBasketballData API.**
-#' @param year (*integer* optional): Recruiting class year (e.g. `2024`).
-#' @param team (*character* optional): Team name filter.
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @return A `hoopR_data` tibble with one row per team:
 #'
-#'    |col_name   |types     |description                                    |
-#'    |:----------|:---------|:----------------------------------------------|
-#'    |team_id    |integer   |CollegeBasketballData team id.                 |
-#'    |team       |character |Team name.                                     |
-#'    |conference |character |Conference name.                               |
-#'    |year       |integer   |Recruiting class year.                         |
-#'    |ranking    |integer   |Team recruiting ranking.                       |
-#'    |rating     |numeric   |Team recruiting rating.                        |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
+#'       team \tab character \tab Team name. \cr
+#'       conference \tab character \tab Conference name. \cr
+#'       year \tab integer \tab Recruiting class year. \cr
+#'       ranking \tab integer \tab Team recruiting ranking. \cr
+#'       rating \tab numeric \tab Team recruiting rating. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Recruiting
 #' @importFrom jsonlite fromJSON
@@ -114,9 +115,9 @@ cbbd_recruiting_teams <- function(year = NULL, team = NULL, conference = NULL) {
 
 #' @title
 #' **CBD Transfer Portal**
+#' @rdname cbbd_recruiting_players
 #' @description
 #' **Get transfer portal data from the CollegeBasketballData API.**
-#' @param year (*integer* optional): Transfer class year (e.g. `2024`).
 #' @param source_team (*character* optional): Origin team filter.
 #' @param destination_team (*character* optional): Destination team filter.
 #' @param source_conference (*character* optional): Origin conference filter.

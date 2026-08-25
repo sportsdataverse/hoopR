@@ -5,6 +5,7 @@
 \alias{kp_gameplan}
 \alias{kp_opptracker}
 \alias{kp_team_players}
+\alias{kp_player_career}
 \alias{kp_minutes_matrix}
 \alias{kp_team_player_stats}
 \alias{kp_team_depth_chart}
@@ -19,6 +20,8 @@ kp_opptracker(team, year = 2021)
 
 kp_team_players(team, year = 2021)
 
+kp_player_career(player_id)
+
 kp_minutes_matrix(team, year = 2021)
 
 kp_team_player_stats(team, year = 2021)
@@ -31,6 +34,8 @@ kp_team_lineups(team, year = 2021)
 \item{team}{Team filter to select.}
 
 \item{year}{Year of data to pull}
+
+\item{player_id}{Player Id filter to select.}
 }
 \value{
 Returns a tibble of team schedules
@@ -269,6 +274,94 @@ Returns a tibble of team player data
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
+Returns a named list of tibbles: player_stats, gamelog
+
+\strong{player_stats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      year \tab numeric \tab 4-digit year. \cr
+      team_rk \tab numeric \tab Team rk. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      number \tab numeric \tab Number. \cr
+      name \tab character \tab Display name. \cr
+      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab numeric \tab Wgt. \cr
+      yr \tab character \tab Yr. \cr
+      g \tab numeric \tab Games played. \cr
+      min_pct \tab numeric \tab Min percentage (0-1 decimal). \cr
+      o_rtg \tab numeric \tab O rtg. \cr
+      poss_pct \tab numeric \tab Poss percentage (0-1 decimal). \cr
+      shots_pct \tab numeric \tab Shots percentage (0-1 decimal). \cr
+      e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
+      ts_pct \tab numeric \tab True shooting percentage (0-1). \cr
+      or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
+      dr_pct \tab numeric \tab Dr percentage (0-1 decimal). \cr
+      a_rate \tab numeric \tab A rate. \cr
+      to_rate \tab numeric \tab To rate. \cr
+      blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
+      stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
+      f_cper40 \tab numeric \tab F cper40. \cr
+      f_dper40 \tab numeric \tab F dper40. \cr
+      ft_rate \tab numeric \tab Ft rate. \cr
+      ftm \tab numeric \tab Free throws made. \cr
+      fta \tab numeric \tab Free throw attempts. \cr
+      ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+      fgm_2 \tab numeric \tab Fgm 2. \cr
+      fga_2 \tab numeric \tab Fga 2. \cr
+      fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
+      fgm_3 \tab numeric \tab Fgm 3. \cr
+      fga_3 \tab numeric \tab Fga 3. \cr
+      fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
+      group_rank \tab character \tab League/season rank for group. \cr
+      team_finish \tab character \tab Team finish. \cr
+      ncaa_seed \tab numeric \tab Ncaa seed. \cr
+      hometown \tab character \tab Player hometown. \cr
+      date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+      age \tab character \tab Player age (in years). \cr
+      comparisons \tab character \tab Comparisons. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{gamelog}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      year \tab numeric \tab 4-digit year. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      name \tab character \tab Display name. \cr
+      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+      opponent_tier \tab logical \tab Opponent tier. \cr
+      date \tab character \tab Date in YYYY-MM-DD format. \cr
+      opponent_rk \tab numeric \tab Opponent rk. \cr
+      opponent \tab character \tab Opponent. \cr
+      result \tab character \tab Result. \cr
+      ot \tab character \tab Ot. \cr
+      location \tab character \tab Location. \cr
+      game_type \tab character \tab Game type. \cr
+      mvp \tab character \tab Mvp. \cr
+      start \tab character \tab Start. \cr
+      minutes_played \tab numeric \tab Minutes played. \cr
+      o_rtg \tab numeric \tab O rtg. \cr
+      poss_pct \tab numeric \tab Poss percentage (0-1 decimal). \cr
+      pts \tab numeric \tab Points scored. \cr
+      fgm_2 \tab numeric \tab Fgm 2. \cr
+      fga_2 \tab numeric \tab Fga 2. \cr
+      fgm_3 \tab numeric \tab Fgm 3. \cr
+      fga_3 \tab numeric \tab Fga 3. \cr
+      ftm \tab numeric \tab Free throws made. \cr
+      fta \tab numeric \tab Free throw attempts. \cr
+      or \tab numeric \tab Or. \cr
+      dr \tab numeric \tab Dr. \cr
+      a \tab numeric \tab A. \cr
+      to \tab numeric \tab To. \cr
+      blk \tab numeric \tab Blocks. \cr
+      stl \tab numeric \tab Steals. \cr
+      pf \tab numeric \tab Personal fouls. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
 Returns a tibble of minutes matrix data
 
 Returns a list of named data frames: all_games, conference_games
@@ -410,6 +503,8 @@ A data frame with the following columns:
 
 \strong{Get KenPom's player stats from the team page}
 
+\strong{Get KenPom's player career stats from the player page}
+
 \strong{Get Minutes Matrix from Expanded Player Page}
 
 \strong{Get Team Player Stats}
@@ -433,6 +528,10 @@ A data frame with the following columns:
   }
 
   \donttest{
+    try(kp_player_career(player_id = '41180'))
+  }
+
+  \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
   }
 
@@ -450,11 +549,8 @@ A data frame with the following columns:
   }
 
 }
-\seealso{
-Other KenPom Team Functions:
-\code{\link[=kp_player_career]{kp_player_career()}}
-}
 \concept{KenPom Team Functions}
+\keyword{Career}
 \keyword{Chart}
 \keyword{Depth}
 \keyword{Game}

@@ -7,7 +7,7 @@
 Columns shared verbatim across: espn_mbb_coaches, espn_nba_coaches.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    coach_id \tab character \tab  \cr
    first_name \tab character \tab Player's first name. \cr
@@ -15,6 +15,7 @@ Columns shared verbatim across: espn_mbb_coaches, espn_nba_coaches.
    full_name \tab character \tab Player's full name. \cr
    experience \tab integer \tab Years of professional experience. \cr
    team_id \tab character \tab Unique team identifier. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

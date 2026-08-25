@@ -7,13 +7,14 @@
 Columns shared verbatim across: espn_mbb_season_weeks, espn_nba_season_weeks.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    league \tab character \tab League slug. \cr
    season \tab integer \tab Season year. \cr
    season_type \tab integer \tab Season-type id. \cr
    week \tab integer \tab Week number (1-based). \cr
    ref \tab character \tab \verb{$ref} URL for the week detail. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

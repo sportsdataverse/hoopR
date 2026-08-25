@@ -9,12 +9,14 @@
 #'
 #' Columns shared verbatim across: espn_mbb_player_seasons, espn_nba_player_seasons.
 #'
-#' |col_name   |types     |description                              |
-#' |:----------|:---------|:----------------------------------------|
-#' |league     |character |League slug.                             |
-#' |athlete_id |character |ESPN athlete id.                         |
-#' |season     |integer   |Season year.                             |
-#' |ref        |character |`$ref` URL to the season detail.         |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    athlete_id \tab character \tab ESPN athlete id. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    ref \tab character \tab \verb{$ref} URL to the season detail. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_player_seasons_schema
 #' @keywords internal
@@ -54,15 +56,17 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_player_info, espn_nba_player_info.
 #'
-#' |col_name      |types     |description                       |
-#' |:-------------|:---------|:---------------------------------|
-#' |id            |character |Id.                               |
-#' |full_name     |character |Player's full name.               |
-#' |display_name  |character |Display name.                     |
-#' |jersey        |character |Jersey number worn by the player. |
-#' |age           |character |Player age (in years).            |
-#' |date_of_birth |character |Date of birth (YYYY-MM-DD).       |
-#' |headshot_href |character |Headshot image URL.               |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    id \tab character \tab Id. \cr
+#'    full_name \tab character \tab Player's full name. \cr
+#'    display_name \tab character \tab Display name. \cr
+#'    jersey \tab character \tab Jersey number worn by the player. \cr
+#'    age \tab character \tab Player age (in years). \cr
+#'    date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+#'    headshot_href \tab character \tab Headshot image URL. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_player_info_bio_schema
 #' @keywords internal
@@ -72,12 +76,14 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_player_eventlog, espn_nba_player_eventlog.
 #'
-#' |col_name        |types     |description                              |
-#' |:---------------|:---------|:----------------------------------------|
-#' |event_ref       |character |Reference link to the originating event. |
-#' |competition_ref |character |                                         |
-#' |team_ref        |character |                                         |
-#' |statistics_ref  |character |                                         |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    event_ref \tab character \tab Reference link to the originating event. \cr
+#'    competition_ref \tab character \tab  \cr
+#'    team_ref \tab character \tab  \cr
+#'    statistics_ref \tab character \tab  \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_player_eventlog_schema
 #' @keywords internal
@@ -87,14 +93,16 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_player_awards, espn_nba_player_awards.
 #'
-#' |col_name    |types     |description                                           |
-#' |:-----------|:---------|:-----------------------------------------------------|
-#' |season      |character |Season identifier (4-digit year or 'YYYY-YY' string). |
-#' |award_id    |character |                                                      |
-#' |name        |character |Display name.                                         |
-#' |description |character |Long-form description text.                           |
-#' |date        |character |Date in YYYY-MM-DD format.                            |
-#' |type        |character |Record type / category.                               |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'    award_id \tab character \tab  \cr
+#'    name \tab character \tab Display name. \cr
+#'    description \tab character \tab Long-form description text. \cr
+#'    date \tab character \tab Date in YYYY-MM-DD format. \cr
+#'    type \tab character \tab Record type / category. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_player_awards_schema
 #' @keywords internal
@@ -327,15 +335,17 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_conferences, espn_nba_conferences.
 #'
-#' |col_name              |types     |description                                  |
-#' |:---------------------|:---------|:--------------------------------------------|
-#' |group_id              |integer   |Group identifier (e.g. conference group_id). |
-#' |conference_short_name |character |Conference short name (e.g. 'ACC').          |
-#' |conference_uid        |character |ESPN universal conference identifier.        |
-#' |conference_name       |character |Full conference name.                        |
-#' |conference_logo       |character |Logo image URL for conference.               |
-#' |parent_group_id       |integer   |Unique identifier for parent group.          |
-#' |conference_id         |integer   |Conference identifier.                       |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    group_id \tab integer \tab Group identifier (e.g. conference group_id). \cr
+#'    conference_short_name \tab character \tab Conference short name (e.g. 'ACC'). \cr
+#'    conference_uid \tab character \tab ESPN universal conference identifier. \cr
+#'    conference_name \tab character \tab Full conference name. \cr
+#'    conference_logo \tab character \tab Logo image URL for conference. \cr
+#'    parent_group_id \tab integer \tab Unique identifier for parent group. \cr
+#'    conference_id \tab integer \tab Conference identifier. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_conferences_schema
 #' @keywords internal
@@ -413,13 +423,15 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_betting, espn_nba_betting.
 #'
-#' |col_name                  |types   |description                          |
-#' |:-------------------------|:-------|:------------------------------------|
-#' |game_id                   |integer |Unique game identifier.              |
-#' |home_team_id              |integer |Unique identifier for the home team. |
-#' |away_team_id              |integer |Unique identifier for the away team. |
-#' |away_team_game_projection |numeric |Away team's team game projection.    |
-#' |away_team_chance_loss     |numeric |Away team's team chance loss.        |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    game_id \tab integer \tab Unique game identifier. \cr
+#'    home_team_id \tab integer \tab Unique identifier for the home team. \cr
+#'    away_team_id \tab integer \tab Unique identifier for the away team. \cr
+#'    away_team_game_projection \tab numeric \tab Away team's team game projection. \cr
+#'    away_team_chance_loss \tab numeric \tab Away team's team chance loss. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_betting_predictor_schema
 #' @keywords internal
@@ -521,13 +533,15 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_season_groups, espn_nba_season_groups.
 #'
-#' |col_name    |types     |description                              |
-#' |:-----------|:---------|:----------------------------------------|
-#' |league      |character |League slug.                             |
-#' |season      |integer   |Season year.                             |
-#' |season_type |integer   |Season-type id.                          |
-#' |group_id    |character |ESPN group id.                           |
-#' |ref         |character |`$ref` URL for the group detail.         |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    season_type \tab integer \tab Season-type id. \cr
+#'    group_id \tab character \tab ESPN group id. \cr
+#'    ref \tab character \tab \verb{$ref} URL for the group detail. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_season_groups_schema
 #' @keywords internal
@@ -565,14 +579,16 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_season_group_children, espn_nba_season_group_children.
 #'
-#' |col_name        |types     |description                            |
-#' |:---------------|:---------|:--------------------------------------|
-#' |league          |character |League slug.                           |
-#' |season          |integer   |Season year.                           |
-#' |season_type     |integer   |Season-type id.                        |
-#' |parent_group_id |character |Parent group id (queried).             |
-#' |child_group_id  |character |Child group id.                        |
-#' |ref             |character |`$ref` to child group detail.          |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    season_type \tab integer \tab Season-type id. \cr
+#'    parent_group_id \tab character \tab Parent group id (queried). \cr
+#'    child_group_id \tab character \tab Child group id. \cr
+#'    ref \tab character \tab \verb{$ref} to child group detail. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_season_group_children_schema
 #' @keywords internal
@@ -582,14 +598,16 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_season_group_teams, espn_nba_season_group_teams.
 #'
-#' |col_name    |types     |description                              |
-#' |:-----------|:---------|:----------------------------------------|
-#' |league      |character |League slug.                             |
-#' |season      |integer   |Season year.                             |
-#' |season_type |integer   |Season-type id.                          |
-#' |group_id    |character |ESPN group id.                           |
-#' |team_id     |character |ESPN team id.                            |
-#' |ref         |character |`$ref` URL to the team-in-season entry.  |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    season_type \tab integer \tab Season-type id. \cr
+#'    group_id \tab character \tab ESPN group id. \cr
+#'    team_id \tab character \tab ESPN team id. \cr
+#'    ref \tab character \tab \verb{$ref} URL to the team-in-season entry. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_season_group_teams_schema
 #' @keywords internal
@@ -694,14 +712,16 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_coaches, espn_nba_coaches.
 #'
-#' |col_name   |types     |description                       |
-#' |:----------|:---------|:---------------------------------|
-#' |coach_id   |character |                                  |
-#' |first_name |character |Player's first name.              |
-#' |last_name  |character |Player's last name.               |
-#' |full_name  |character |Player's full name.               |
-#' |experience |integer   |Years of professional experience. |
-#' |team_id    |character |Unique team identifier.           |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    coach_id \tab character \tab  \cr
+#'    first_name \tab character \tab Player's first name. \cr
+#'    last_name \tab character \tab Player's last name. \cr
+#'    full_name \tab character \tab Player's full name. \cr
+#'    experience \tab integer \tab Years of professional experience. \cr
+#'    team_id \tab character \tab Unique team identifier. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_coaches_schema
 #' @keywords internal
@@ -732,13 +752,15 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_seasons, espn_nba_seasons.
 #'
-#' |col_name          |types     |description                                           |
-#' |:-----------------|:---------|:-----------------------------------------------------|
-#' |season            |integer   |Season identifier (4-digit year or 'YYYY-YY' string). |
-#' |start_date        |character |Start date (YYYY-MM-DD).                              |
-#' |end_date          |character |End date (YYYY-MM-DD).                                |
-#' |display_name      |character |Display name.                                         |
-#' |season_type_count |integer   |                                                      |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+#'    start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+#'    end_date \tab character \tab End date (YYYY-MM-DD). \cr
+#'    display_name \tab character \tab Display name. \cr
+#'    season_type_count \tab integer \tab  \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_seasons_schema
 #' @keywords internal
@@ -748,14 +770,16 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_season_info, espn_nba_season_info.
 #'
-#' |col_name     |types     |description                |
-#' |:------------|:---------|:--------------------------|
-#' |year         |integer   |4-digit year.              |
-#' |start_date   |character |Start date (YYYY-MM-DD).   |
-#' |end_date     |character |End date (YYYY-MM-DD).     |
-#' |display_name |character |Display name.              |
-#' |type_id      |character |Type identifier (numeric). |
-#' |type_name    |character |                           |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    year \tab integer \tab 4-digit year. \cr
+#'    start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+#'    end_date \tab character \tab End date (YYYY-MM-DD). \cr
+#'    display_name \tab character \tab Display name. \cr
+#'    type_id \tab character \tab Type identifier (numeric). \cr
+#'    type_name \tab character \tab  \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_season_info_info_schema
 #' @keywords internal
@@ -892,13 +916,15 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_team_season_roster, espn_nba_team_season_roster.
 #'
-#' |col_name   |types     |description                              |
-#' |:----------|:---------|:----------------------------------------|
-#' |league     |character |League slug.                             |
-#' |team_id    |character |ESPN team id.                            |
-#' |season     |integer   |Season year.                             |
-#' |athlete_id |character |ESPN athlete id.                         |
-#' |ref        |character |`$ref` URL to athlete-in-season detail.  |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    team_id \tab character \tab ESPN team id. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    athlete_id \tab character \tab ESPN athlete id. \cr
+#'    ref \tab character \tab \verb{$ref} URL to athlete-in-season detail. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_team_season_roster_schema
 #' @keywords internal
@@ -1042,13 +1068,15 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_season_weeks, espn_nba_season_weeks.
 #'
-#' |col_name    |types     |description                              |
-#' |:-----------|:---------|:----------------------------------------|
-#' |league      |character |League slug.                             |
-#' |season      |integer   |Season year.                             |
-#' |season_type |integer   |Season-type id.                          |
-#' |week        |integer   |Week number (1-based).                   |
-#' |ref         |character |`$ref` URL for the week detail.          |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    season_type \tab integer \tab Season-type id. \cr
+#'    week \tab integer \tab Week number (1-based). \cr
+#'    ref \tab character \tab \verb{$ref} URL for the week detail. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_season_weeks_schema
 #' @keywords internal
@@ -1079,14 +1107,16 @@ NULL
 #'
 #' Columns shared verbatim across: espn_mbb_week_rankings, espn_nba_week_rankings.
 #'
-#' |col_name    |types     |description                              |
-#' |:-----------|:---------|:----------------------------------------|
-#' |league      |character |League slug.                             |
-#' |season      |integer   |Season year.                             |
-#' |season_type |integer   |Season-type id.                          |
-#' |week        |integer   |Week number.                             |
-#' |ranking_id  |character |ESPN ranking id.                         |
-#' |ref         |character |`$ref` URL for the ranked-teams detail.  |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    league \tab character \tab League slug. \cr
+#'    season \tab integer \tab Season year. \cr
+#'    season_type \tab integer \tab Season-type id. \cr
+#'    week \tab integer \tab Week number. \cr
+#'    ranking_id \tab character \tab ESPN ranking id. \cr
+#'    ref \tab character \tab \verb{$ref} URL for the ranked-teams detail. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name espn_mbb_week_rankings_schema
 #' @keywords internal
@@ -1386,15 +1416,17 @@ NULL
 #'
 #' Columns shared verbatim across: nba_boxscoresummaryv2, nba_scoreboard, nba_scoreboardv2.
 #'
-#' |col_name         |types     |description                          |
-#' |:----------------|:---------|:------------------------------------|
-#' |GAME_ID          |character |Unique game identifier.              |
-#' |HOME_TEAM_ID     |character |Unique identifier for the home team. |
-#' |VISITOR_TEAM_ID  |character |                                     |
-#' |GAME_DATE_EST    |character |Game date est.                       |
-#' |HOME_TEAM_WINS   |character |Home team's team wins.               |
-#' |HOME_TEAM_LOSSES |character |Home team's team losses.             |
-#' |SERIES_LEADER    |character |                                     |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    GAME_ID \tab character \tab Unique game identifier. \cr
+#'    HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+#'    VISITOR_TEAM_ID \tab character \tab  \cr
+#'    GAME_DATE_EST \tab character \tab Game date est. \cr
+#'    HOME_TEAM_WINS \tab character \tab Home team's team wins. \cr
+#'    HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
+#'    SERIES_LEADER \tab character \tab  \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name nba_boxscoresummaryv2_seasonseries_schema
 #' @keywords internal
@@ -1404,13 +1436,15 @@ NULL
 #'
 #' Columns shared verbatim across: nba_assistleaders, nba_homepagev2.
 #'
-#' |col_name          |types     |description                                     |
-#' |:-----------------|:---------|:-----------------------------------------------|
-#' |RANK              |character |Rank.                                           |
-#' |TEAM_ID           |character |Unique team identifier.                         |
-#' |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#' |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#' |AST               |character |Assists.                                        |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    RANK \tab character \tab Rank. \cr
+#'    TEAM_ID \tab character \tab Unique team identifier. \cr
+#'    TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'    TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'    AST \tab character \tab Assists. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name nba_assistleaders_assistleaders_schema
 #' @keywords internal
@@ -1420,13 +1454,15 @@ NULL
 #'
 #' Columns shared verbatim across: nba_homepagev2, nba_leaderstiles.
 #'
-#' |col_name          |types     |description                                     |
-#' |:-----------------|:---------|:-----------------------------------------------|
-#' |RANK              |character |Rank.                                           |
-#' |TEAM_ID           |character |Unique team identifier.                         |
-#' |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#' |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#' |PTS               |character |Points scored.                                  |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    RANK \tab character \tab Rank. \cr
+#'    TEAM_ID \tab character \tab Unique team identifier. \cr
+#'    TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'    TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+#'    PTS \tab character \tab Points scored. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name nba_homepagev2_homepagestat1_schema
 #' @keywords internal
@@ -1795,14 +1831,16 @@ NULL
 #'
 #' Columns shared verbatim across: nba_live_boxscore, nbagl_live_boxscore.
 #'
-#' |col_name       |types     |description                  |
-#' |:--------------|:---------|:----------------------------|
-#' |arena_id       |integer   |Unique identifier for arena. |
-#' |arena_name     |character |Arena name.                  |
-#' |arena_city     |character |Arena city.                  |
-#' |arena_state    |character |Arena state.                 |
-#' |arena_country  |character |Arena country.               |
-#' |arena_timezone |character |Arena timezone.              |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    arena_id \tab integer \tab Unique identifier for arena. \cr
+#'    arena_name \tab character \tab Arena name. \cr
+#'    arena_city \tab character \tab Arena city. \cr
+#'    arena_state \tab character \tab Arena state. \cr
+#'    arena_country \tab character \tab Arena country. \cr
+#'    arena_timezone \tab character \tab Arena timezone. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name nba_live_boxscore_arena_schema
 #' @keywords internal
@@ -1812,15 +1850,17 @@ NULL
 #'
 #' Columns shared verbatim across: nba_live_boxscore, nbagl_live_boxscore.
 #'
-#' |col_name    |types     |description                              |
-#' |:-----------|:---------|:----------------------------------------|
-#' |person_id   |integer   |Unique player identifier (V3 endpoints). |
-#' |name        |character |Display name.                            |
-#' |name_i      |character |Initialed name (e.g. 'A. Wilson').       |
-#' |first_name  |character |Player's first name.                     |
-#' |family_name |character |Player's family / last name.             |
-#' |jersey_num  |character |Jersey number worn by the player.        |
-#' |assignment  |character |Assignment.                              |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+#'    name \tab character \tab Display name. \cr
+#'    name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+#'    first_name \tab character \tab Player's first name. \cr
+#'    family_name \tab character \tab Player's family / last name. \cr
+#'    jersey_num \tab character \tab Jersey number worn by the player. \cr
+#'    assignment \tab character \tab Assignment. \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name nba_live_boxscore_officials_schema
 #' @keywords internal
@@ -2083,15 +2123,17 @@ NULL
 #'
 #' Columns shared verbatim across: nba_shotchartdetail, nba_shotchartleaguewide, nba_shotchartlineupdetail.
 #'
-#' |col_name        |types     |description                                                           |
-#' |:---------------|:---------|:---------------------------------------------------------------------|
-#' |GRID_TYPE       |character |                                                                      |
-#' |SHOT_ZONE_BASIC |character |Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). |
-#' |SHOT_ZONE_AREA  |character |Shot zone area ('Left Side', 'Right Side', 'Center').                 |
-#' |SHOT_ZONE_RANGE |character |Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.).   |
-#' |FGA             |character |Field goal attempts.                                                  |
-#' |FGM             |character |Field goals made.                                                     |
-#' |FG_PCT          |character |Field goal percentage (0-1).                                          |
+#' \if{html}{\tabular{lll}{
+#'    col_name \tab types \tab description \cr
+#'    GRID_TYPE \tab character \tab  \cr
+#'    SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
+#'    SHOT_ZONE_AREA \tab character \tab Shot zone area ('Left Side', 'Right Side', 'Center'). \cr
+#'    SHOT_ZONE_RANGE \tab character \tab Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). \cr
+#'    FGA \tab character \tab Field goal attempts. \cr
+#'    FGM \tab character \tab Field goals made. \cr
+#'    FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @name nba_shotchartdetail_leagueaverages_schema
 #' @keywords internal

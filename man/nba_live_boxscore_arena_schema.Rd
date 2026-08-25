@@ -7,7 +7,7 @@
 Columns shared verbatim across: nba_live_boxscore, nbagl_live_boxscore.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    arena_id \tab integer \tab Unique identifier for arena. \cr
    arena_name \tab character \tab Arena name. \cr
@@ -15,6 +15,7 @@ Columns shared verbatim across: nba_live_boxscore, nbagl_live_boxscore.
    arena_state \tab character \tab Arena state. \cr
    arena_country \tab character \tab Arena country. \cr
    arena_timezone \tab character \tab Arena timezone. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

@@ -22,12 +22,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per season type.
 #'
-#'    |col_name    |types     |description                       |
-#'    |:-----------|:---------|:---------------------------------|
-#'    |league      |character |League slug (`"mens-college-basketball"`).            |
-#'    |season      |integer   |Season year.                      |
-#'    |season_type |integer   |Season-type id (1/2/3/4).         |
-#'    |ref         |character |`$ref` URL for the type detail.   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+#'       season \tab integer \tab Season year. \cr
+#'       season_type \tab integer \tab Season-type id (1/2/3/4). \cr
+#'       ref \tab character \tab \verb{$ref} URL for the type detail. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -134,12 +136,14 @@ espn_mbb_season_leaders <- function(season = most_recent_mbb_season(),
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per ranking source.
 #'
-#'    |col_name   |types     |description                          |
-#'    |:----------|:---------|:------------------------------------|
-#'    |league     |character |League slug.                         |
-#'    |season     |integer   |Season year.                         |
-#'    |ranking_id |character |ESPN ranking id.                     |
-#'    |ref        |character |`$ref` URL for the ranking detail.   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       ranking_id \tab character \tab ESPN ranking id. \cr
+#'       ref \tab character \tab \verb{$ref} URL for the ranking detail. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

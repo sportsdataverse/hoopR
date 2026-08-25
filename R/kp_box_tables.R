@@ -47,24 +47,28 @@
 #'    **linescore**
 #'
 #'
-#'    |col_name |types     |description                         |
-#'    |:--------|:---------|:-----------------------------------|
-#'    |team     |character |Team-side label or team identifier. |
-#'    |q1       |integer   |Q1.                                 |
-#'    |q2       |integer   |Q2.                                 |
-#'    |q3       |integer   |Q3.                                 |
-#'    |q4       |integer   |Q4.                                 |
-#'    |t        |integer   |T.                                  |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       q1 \tab integer \tab Q1. \cr
+#'       q2 \tab integer \tab Q2. \cr
+#'       q3 \tab integer \tab Q3. \cr
+#'       q4 \tab integer \tab Q4. \cr
+#'       t \tab integer \tab T. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **officials**
 #'
 #'
-#'    |col_name      |types     |description                           |
-#'    |:-------------|:---------|:-------------------------------------|
-#'    |official_id   |character |Unique official / referee identifier. |
-#'    |official_name |character |Official name.                        |
-#'    |game_id       |numeric   |Unique game identifier.               |
-#'    |year          |numeric   |4-digit year.                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       official_id \tab character \tab Unique official / referee identifier. \cr
+#'       official_name \tab character \tab Official name. \cr
+#'       game_id \tab numeric \tab Unique game identifier. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows mutate_at rename
@@ -249,6 +253,7 @@ kp_box <- function(game_id, year) {
 
 #' **Get KenPom Win Probability**
 #'
+#' @rdname kp_box
 #' @param game_id Game id of game to pull
 #' @param year Year of game to pull
 #' @return Returns a named list of tibbles: winprob_dataset, game_data, runs
@@ -311,12 +316,14 @@ kp_box <- function(game_id, year) {
 #'    **runs**
 #'
 #'
-#'    |col_name |types   |description |
-#'    |:--------|:-------|:-----------|
-#'    |start    |numeric |Start.      |
-#'    |end      |numeric |End.        |
-#'    |visitor  |integer |Visitor.    |
-#'    |home     |integer |Home.       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       start \tab numeric \tab Start. \cr
+#'       end \tab numeric \tab End. \cr
+#'       visitor \tab integer \tab Visitor. \cr
+#'       home \tab integer \tab Home. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate arrange bind_rows bind_cols rename

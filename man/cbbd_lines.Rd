@@ -2,6 +2,7 @@
 % Please edit documentation in R/cbbd_lines.R
 \name{cbbd_lines}
 \alias{cbbd_lines}
+\alias{cbbd_lines_providers}
 \title{\strong{CBD Betting Lines}}
 \usage{
 cbbd_lines(
@@ -11,6 +12,8 @@ cbbd_lines(
   start_date_range = NULL,
   end_date_range = NULL
 )
+
+cbbd_lines_providers()
 }
 \arguments{
 \item{season}{(\emph{integer} optional): Season, 4-digit ending-year (e.g. \code{2024}).
@@ -45,18 +48,28 @@ nested list of per-provider lines:
       lines \tab list \tab Nested list of per-provider betting lines. \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per line provider:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Line provider id. \cr
+      name \tab character \tab Line provider name. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get game betting lines from the CollegeBasketballData API.}
+
+\strong{Get betting line providers from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_lines(season = 2024, team = "Duke"))
 }
+\donttest{
+  try(cbbd_lines_providers())
 }
-\seealso{
-Other CBD Lines Functions:
-\code{\link[=cbbd_lines_providers]{cbbd_lines_providers()}}
 }
 \concept{CBD Lines Functions}
 \keyword{CBD}

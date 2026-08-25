@@ -7,12 +7,13 @@
 Columns shared verbatim across: espn_mbb_player_eventlog, espn_nba_player_eventlog.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    event_ref \tab character \tab Reference link to the originating event. \cr
    competition_ref \tab character \tab  \cr
    team_ref \tab character \tab  \cr
    statistics_ref \tab character \tab  \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

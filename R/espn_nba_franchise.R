@@ -6,11 +6,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Franchises Index**
+#' @rdname espn_mbb_franchises
 #' @name espn_nba_franchises
 NULL
 #' @title
 #' **Get ESPN NBA Franchises Index**
-#' @rdname espn_nba_franchises
+#' @rdname espn_mbb_franchises
 #' @author Saiem Gilani
 #' @description
 #' Returns the full NBA franchises index from
@@ -21,11 +22,13 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per franchise.
 #'
-#'    |col_name     |types     |description                            |
-#'    |:------------|:---------|:--------------------------------------|
-#'    |franchise_id |character |ESPN franchise identifier.             |
-#'    |ref          |character |Full `$ref` URL for franchise detail.  |
-#'    |league       |character |League slug (`"nba"`).                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       franchise_id \tab character \tab ESPN franchise identifier. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for franchise detail. \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -44,11 +47,12 @@ espn_nba_franchises <- function(...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Franchise Detail**
+#' @rdname espn_mbb_franchise
 #' @name espn_nba_franchise
 NULL
 #' @title
 #' **Get ESPN NBA Franchise Detail**
-#' @rdname espn_nba_franchise
+#' @rdname espn_mbb_franchise
 #' @author Saiem Gilani
 #' @description
 #' Returns franchise-level metadata for an NBA franchise. Franchise IDs are

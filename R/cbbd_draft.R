@@ -1,17 +1,20 @@
 #' @title
 #' **CBD Draft Teams**
+#' @rdname cbbd_draft_picks
 #' @description
 #' **Get NBA draft teams from the CollegeBasketballData API.**
 #' @return A `hoopR_data` tibble with one row per NBA team:
 #'
-#'    |col_name     |types     |description                                  |
-#'    |:------------|:---------|:--------------------------------------------|
-#'    |id           |integer   |NBA team id.                                 |
-#'    |source_id    |character |Source (ESPN) team id.                       |
-#'    |location     |character |Team location (city).                        |
-#'    |name         |character |Team name.                                   |
-#'    |display_name |character |Full team display name.                      |
-#'    |abbreviation |character |Team abbreviation.                           |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab NBA team id. \cr
+#'       source_id \tab character \tab Source (ESPN) team id. \cr
+#'       location \tab character \tab Team location (city). \cr
+#'       name \tab character \tab Team name. \cr
+#'       display_name \tab character \tab Full team display name. \cr
+#'       abbreviation \tab character \tab Team abbreviation. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Draft
 #' @importFrom jsonlite fromJSON
@@ -48,14 +51,17 @@ cbbd_draft_teams <- function() {
 
 #' @title
 #' **CBD Draft Positions**
+#' @rdname cbbd_draft_picks
 #' @description
 #' **Get NBA draft positions from the CollegeBasketballData API.**
 #' @return A `hoopR_data` tibble with one row per draft position:
 #'
-#'    |col_name     |types     |description                                  |
-#'    |:------------|:---------|:--------------------------------------------|
-#'    |name         |character |Position name.                               |
-#'    |abbreviation |character |Position abbreviation.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       name \tab character \tab Position name. \cr
+#'       abbreviation \tab character \tab Position abbreviation. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Draft
 #' @importFrom jsonlite fromJSON

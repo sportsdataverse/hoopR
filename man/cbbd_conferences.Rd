@@ -2,31 +2,56 @@
 % Please edit documentation in R/cbbd_conferences.R
 \name{cbbd_conferences}
 \alias{cbbd_conferences}
+\alias{cbbd_conferences_history}
 \title{\strong{CBD Conferences}}
 \usage{
 cbbd_conferences()
+
+cbbd_conferences_history(conference = NULL)
+}
+\arguments{
+\item{conference}{(\emph{character} optional): Conference abbreviation filter
+(e.g. \code{B1G}). See \code{\link[=cbbd_conferences]{cbbd_conferences()}} for valid values.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per conference:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab integer \tab CollegeBasketballData conference id. \cr
-   source_id \tab character \tab Source (ESPN) conference id. \cr
-   name \tab character \tab Conference name (e.g. \verb{Big Ten}). \cr
-   abbreviation \tab character \tab Conference abbreviation (e.g. \code{B1G}). \cr
-   short_name \tab character \tab Conference short name. \cr
-}
+A \code{hoopR_data} tibble with one row per conference:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab CollegeBasketballData conference id. \cr
+      source_id \tab character \tab Source (ESPN) conference id. \cr
+      name \tab character \tab Conference name (e.g. \verb{Big Ten}). \cr
+      abbreviation \tab character \tab Conference abbreviation (e.g. \code{B1G}). \cr
+      short_name \tab character \tab Conference short name. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per conference. The \code{teams} column
+is a nested list of per-team membership spans:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab CollegeBasketballData conference id. \cr
+      source_id \tab character \tab Source (ESPN) conference id. \cr
+      name \tab character \tab Conference name. \cr
+      abbreviation \tab character \tab Conference abbreviation. \cr
+      short_name \tab character \tab Conference short name. \cr
+      teams \tab list \tab Nested list of member-team membership spans. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get college basketball conferences from the CollegeBasketballData API.}
+
+\strong{Get historical conference membership from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_conferences())
 }
+\donttest{
+  try(cbbd_conferences_history(conference = "B1G"))
 }
-\seealso{
-Other CBD Conferences Functions:
-\code{\link[=cbbd_conferences_history]{cbbd_conferences_history()}}
 }
 \concept{CBD Conferences Functions}
 \keyword{CBD}

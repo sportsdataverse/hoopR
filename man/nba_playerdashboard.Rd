@@ -9,6 +9,11 @@
 \alias{nba_playerdashboardbyshootingsplits}
 \alias{nba_playerdashboardbyteamperformance}
 \alias{nba_playerdashboardbyyearoveryear}
+\alias{nba_playerdashptpass}
+\alias{nba_playerdashptreb}
+\alias{nba_playerdashptshotdefend}
+\alias{nba_playerdashptshots}
+\alias{nba_synergyplaytypes}
 \title{\strong{Get NBA Stats API Player Dashboard by Clutch Splits}}
 \usage{
 nba_playerdashboardbyclutch(
@@ -226,6 +231,103 @@ nba_playerdashboardbyyearoveryear(
   vs_division = "",
   ...
 )
+
+nba_playerdashptpass(
+  date_from = "",
+  date_to = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptreb(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptshotdefend(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_playerdashptshots(
+  date_from = "",
+  date_to = "",
+  game_segment = "",
+  last_n_games = 0,
+  league_id = "00",
+  location = "",
+  month = 0,
+  opponent_team_id = 0,
+  outcome = "",
+  per_mode = "Totals",
+  period = 0,
+  player_id = "2544",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_segment = "",
+  season_type = "Regular Season",
+  team_id = "0",
+  vs_conference = "",
+  vs_division = "",
+  ...
+)
+
+nba_synergyplaytypes(
+  league_id = "00",
+  per_mode = "PerGame",
+  play_type = "Isolation",
+  player_or_team = "P",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  type_grouping = "Offensive",
+  ...
+)
 }
 \arguments{
 \item{date_from}{date_from}
@@ -275,6 +377,15 @@ nba_playerdashboardbyyearoveryear(
 \item{vs_division}{vs_division}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{team_id}{team_id}
+
+\item{play_type}{play_type - 'Isolation', 'Transition', 'PRBallHandler', 'PRRollman', 'Postup',
+'Spotup', 'Handoff', 'Cut', 'OffScreen', 'OffRebound', 'Misc'}
+
+\item{player_or_team}{player_or_team ('P' or 'T')}
+
+\item{type_grouping}{type_grouping - Offensive, Defensive}
 }
 \value{
 Return a named list of data frames: Last10Sec3Point2PlayerDashboard,
@@ -340,6 +451,36 @@ Return a named list of data frames: ByYearPlayerDashboard, OverallPlayerDashboar
 Column schemas omitted from help to keep the package under the
 CRAN 5 MB installed-size limit. See the package source at
 \code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
+
+Return a named list of data frames: PassesMade, PassesReceived
+
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
+
+Return a named list of data frames: NumContestedRebounding,
+OverallRebounding, RebDistanceRebounding,
+ShotDistanceRebounding, ShotTypeRebounding
+
+Return a named list of data frames: DefendingShots
+
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
+
+Return a named list of data frames: ClosestDefender10ftPlusShooting,
+ClosestDefenderShooting, DribbleShooting,
+GeneralShooting, Overall, ShotClockShooting, TouchTimeShooting
+
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
+
+Return a named list of data frames: SynergyPlayType
+
+Column schemas omitted from help to keep the package under the
+CRAN 5 MB installed-size limit. See the package source at
+\code{tools/docs/nba_playerdashboard_columns.md} for full column tables.
 }
 \description{
 \strong{Get NBA Stats API Player Dashboard by Clutch Splits}
@@ -398,52 +539,57 @@ CRAN 5 MB installed-size limit. See the package source at
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashboardbyyearoveryear(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/passes-dash}{Player Tracking (Second Spectrum) Stats - Passing}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/rebounds-dash}{Player Tracking (Second Spectrum) Stats - Rebounding}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/defense-dash}{Player Tracking (Second Spectrum) Stats - Defending}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/player/2544/shots-dash}{Player Tracking (Second Spectrum) Stats - Shooting}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/teams/isolation}{Synergy Play Type Stats}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_synergyplaytypes(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBA Player Functions:
-\code{\link[=nba_infographicfanduelplayer]{nba_infographicfanduelplayer()}},
-\code{\link[=nba_leaguedashplayerbiostats]{nba_leaguedashplayerbiostats()}},
-\code{\link[=nba_leaguedashplayerclutch]{nba_leaguedashplayerclutch()}},
-\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
-\code{\link[=nba_leaguedashplayerstats]{nba_leaguedashplayerstats()}},
-\code{\link[=nba_leagueplayerondetails]{nba_leagueplayerondetails()}},
-\code{\link[=nba_leagueseasonmatchups]{nba_leagueseasonmatchups()}},
-\code{\link[=nba_matchupsrollup]{nba_matchupsrollup()}},
-\code{\link[=nba_playerawards]{nba_playerawards()}},
-\code{\link[=nba_playercareerbycollege]{nba_playercareerbycollege()}},
-\code{\link[=nba_playercareerbycollegerollup]{nba_playercareerbycollegerollup()}},
-\code{\link[=nba_playercareerstats]{nba_playercareerstats()}},
-\code{\link[=nba_playercompare]{nba_playercompare()}},
-\code{\link[=nba_playerdashptpass]{nba_playerdashptpass()}},
-\code{\link[=nba_playerdashptreb]{nba_playerdashptreb()}},
-\code{\link[=nba_playerestimatedmetrics]{nba_playerestimatedmetrics()}},
-\code{\link[=nba_playerfantasyprofile]{nba_playerfantasyprofile()}},
-\code{\link[=nba_playerfantasyprofilebargraph]{nba_playerfantasyprofilebargraph()}},
-\code{\link[=nba_playergamelog]{nba_playergamelog()}},
-\code{\link[=nba_playergamelogs]{nba_playergamelogs()}},
-\code{\link[=nba_playergamestreakfinder]{nba_playergamestreakfinder()}},
-\code{\link[=nba_playerheadshot]{nba_playerheadshot()}},
-\code{\link[=nba_playerindex]{nba_playerindex()}},
-\code{\link[=nba_playernextngames]{nba_playernextngames()}},
-\code{\link[=nba_playerprofilev2]{nba_playerprofilev2()}},
-\code{\link[=nba_playervsplayer]{nba_playervsplayer()}}
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_playerindex]{nba_playerindex()}}
 
 Other NBA Clutch Functions:
-\code{\link[=nba_leaguedashteamclutch]{nba_leaguedashteamclutch()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 
 Other NBA Shooting Functions:
-\code{\link[=nba_leaguedashplayershotlocations]{nba_leaguedashplayershotlocations()}},
-\code{\link[=nba_leaguedashteamptshot]{nba_leaguedashteamptshot()}},
-\code{\link[=nba_leaguedashteamshotlocations]{nba_leaguedashteamshotlocations()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
 \code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
-\code{\link[=nba_shotchartleaguewide]{nba_shotchartleaguewide()}},
-\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
 \code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
+
+Other NBA Player Tracking Functions:
+\code{\link[=nba_boxscoretraditionalv2]{nba_boxscoretraditionalv2()}},
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}},
+\code{\link[=nba_tracking_aggregate]{nba_tracking_aggregate()}}
 }
 \author{
 Saiem Gilani
 }
 \concept{NBA Clutch Functions}
 \concept{NBA Player Functions}
+\concept{NBA Player Tracking Functions}
 \concept{NBA Shooting Functions}

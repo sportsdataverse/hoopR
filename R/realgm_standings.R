@@ -83,11 +83,13 @@ realgm_standings <- function() {
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per team:
 #'
-#'    |col_name   |types     |description                                     |
-#'    |:----------|:---------|:-----------------------------------------------|
-#'    |team       |character |Team name.                                      |
-#'    |division   |character |Division (e.g. `Atlantic`).                     |
-#'    |conference |character |`Eastern` or `Western`.                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       team \tab character \tab Team name. \cr
+#'       division \tab character \tab Division (e.g. \code{Atlantic}). \cr
+#'       conference \tab character \tab \code{Eastern} or \code{Western}. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table

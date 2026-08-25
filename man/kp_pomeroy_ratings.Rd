@@ -8,6 +8,8 @@
 \alias{kp_height}
 \alias{kp_foul_trouble}
 \alias{kp_teamstats}
+\alias{kp_playerstats}
+\alias{kp_kpoy}
 \title{\strong{Get KenPom Ratings}}
 \usage{
 kp_pomeroy_ratings(min_year, max_year = most_recent_mbb_season())
@@ -23,11 +25,39 @@ kp_height(min_year, max_year = most_recent_mbb_season())
 kp_foul_trouble(min_year, max_year = most_recent_mbb_season())
 
 kp_teamstats(min_year, max_year = most_recent_mbb_season())
+
+kp_playerstats(
+  metric = "eFG",
+  conf = NULL,
+  conf_only = FALSE,
+  year = most_recent_mbb_season()
+)
+
+kp_kpoy(year = most_recent_mbb_season())
 }
 \arguments{
 \item{min_year}{First year of data to pull}
 
 \item{max_year}{Last year of data to pull}
+
+\item{metric}{Used to get leaders for different metrics. Available values are: \cr
+'ORtg', 'Min', 'eFG', 'Poss', Shots', 'OR', 'DR', 'TO', 'ARate', 'Blk', \cr
+'FTRate', 'Stl', 'TS', 'FC40', 'FD40', '2P', '3P', 'FT'. \cr
+Default is 'eFG'. 'ORtg' returns a list of four dataframes, as there are four tables: \cr
+players that used more than 28 percent of possessions, more than 24 percent of possessions, more than 20 percent of possessions, and with no possession restriction.}
+
+\item{conf}{Used to limit to players in a specific conference. Allowed values are: 'A10', 'ACC', 'AE', 'AMER', \cr
+'ASUN', 'B10', 'B12', 'BE', 'BSKY', 'BSTH', 'BW', 'CAA', 'CUSA', 'HORZ', 'IND', IVY', \cr
+'MAAC', 'MAC', 'MEAC', 'MVC', 'MWC', 'NEC', 'OVC', 'P12', 'PAT', 'SB', 'SC', 'SEC', 'SLND', \cr
+'SUM', 'SWAC', 'WAC', 'WCC'. \cr
+If you try to use a conference that doesn't exist for a given season, like 'IND' and '2018', \cr
+you'll get an empty table, as kenpom.com doesn't serve 404 pages for invalid table queries like that.\cr
+No filter applied by default.}
+
+\item{conf_only}{Used to define whether stats should reflect conference games only.\cr
+Only available if specific conference is defined. Only available for season after 2013, FALSE by default.}
+
+\item{year}{Year of data to pull (earliest year of data available: 2004)}
 }
 \value{
 Returns a tibble of ratings
@@ -241,6 +271,57 @@ Returns a tibble of team stats
      adj_d_rk \tab numeric \tab Adj d rk. \cr
   }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a tibble of player stats
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab character \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      e_fg \tab character \tab E fg. \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab character \tab Wgt. \cr
+      yr \tab character \tab Yr. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a list of tibbles: "kPoYRatings", "GameMVPs"
+
+\strong{KPoYRatings}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab integer \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      kpoy_rating \tab numeric \tab Kpoy rating. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab numeric \tab Wgt. \cr
+      exp \tab character \tab Exp. \cr
+      home_town \tab character \tab Home team's town. \cr
+      year \tab numeric \tab 4-digit year. \cr
+      group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{GameMVPs}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab numeric \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      game_mv_ps \tab numeric \tab Game mv ps. \cr
+      team \tab character \tab Team-side label or team identifier. \cr
+      hgt \tab character \tab Hgt. \cr
+      wgt \tab numeric \tab Wgt. \cr
+      exp \tab character \tab Exp. \cr
+      home_town \tab character \tab Home team's town. \cr
+      year \tab numeric \tab 4-digit year. \cr
+      group \tab character \tab Group identifier (e.g. conference 'group_id'). \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get KenPom Ratings}
@@ -256,6 +337,10 @@ Returns a tibble of team stats
 \strong{Get 2-Foul Participation Stats}
 
 \strong{Get Team Stats}
+
+\strong{Get Player Stats Leaders by Metric}
+
+\strong{Get KPoY Leaders Tables}
 }
 \examples{
 \donttest{
@@ -279,17 +364,21 @@ try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
 \donttest{
 try(kp_teamstats(min_year = 2019, max_year = 2021))
 }
+\donttest{
+try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 }
-\seealso{
-Other KenPom Ratings Functions:
-\code{\link[=kp_kpoy]{kp_kpoy()}},
-\code{\link[=kp_playerstats]{kp_playerstats()}}
+\donttest{
+try(kp_kpoy(year = 2026))
+}
+
 }
 \concept{KenPom Ratings Functions}
 \keyword{Efficiency}
 \keyword{Factors}
 \keyword{Foul}
 \keyword{Four}
+\keyword{Leaders}
+\keyword{Player}
 \keyword{Points}
 \keyword{Ratings}
 \keyword{Roster}

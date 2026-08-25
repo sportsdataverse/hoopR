@@ -322,11 +322,12 @@ nba_boxscoreadvancedv2 <- function(
 }
 
 #' **Get NBA Stats API Boxscore Defensive**
+#' @rdname nba_boxscoretraditionalv2
 #' @name nba_boxscoredefensive
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Defensive**
-#' @rdname nba_boxscoredefensive
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -933,7 +934,7 @@ nba_boxscoreusagev2 <- function(
 
 #' @title
 #' **Get NBA Stats API Boxscore Summary V2**
-#' @rdname nba_boxscoredefensive
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1097,7 +1098,7 @@ nba_boxscoresummaryv2 <- function(
 
 #' @title
 #' **Get NBA Stats API Boxscore Matchups**
-#' @rdname nba_boxscoredefensive
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1155,7 +1156,7 @@ nba_boxscorematchups <- function(
 #' NBA Stats no longer returns stable data for this V2 endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_boxscoreplayertrackv3()` instead.
-#' @rdname nba_boxscoredefensive
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1286,7 +1287,7 @@ nba_boxscoreplayertrackv2 <- function(
 
 #' @title
 #' **Get NBA Stats API Hustle Stats Boxscore**
-#' @rdname nba_boxscoredefensive
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -1295,10 +1296,24 @@ nba_boxscoreplayertrackv2 <- function(
 #'    **HustleStatsAvailable**
 #'
 #'
-#'    |col_name      |types     |description             |
-#'    |:-------------|:---------|:-----------------------|
-#'    |GAME_ID       |character |Unique game identifier. |
-#'    |HUSTLE_STATUS |character |Hustle status.          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+#'       PTS_PAINT \tab character \tab Points scored in the paint. \cr
+#'       PTS_2ND_CHANCE \tab character \tab  \cr
+#'       PTS_FB \tab character \tab  \cr
+#'       LARGEST_LEAD \tab character \tab Largest lead during the game. \cr
+#'       LEAD_CHANGES \tab character \tab Lead changes. \cr
+#'       TIMES_TIED \tab character \tab Times tied. \cr
+#'       TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+#'       TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+#'       TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+#'       PTS_OFF_TO \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PlayerStats**
 #'
@@ -1411,11 +1426,12 @@ nba_hustlestatsboxscore <- function(
 
 
 #' **Get NBA Stats API Boxscore Similarity Score**
+#' @rdname nba_boxscoretraditionalv2
 #' @name nba_boxscoresimilarityscore
 NULL
 #' @title
 #' **Get NBA Stats API Boxscore Similarity Score**
-#' @rdname nba_boxscoresimilarityscore
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id
@@ -1510,11 +1526,12 @@ nba_boxscoresimilarityscore <- function(
 }
 
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
+#' @rdname nba_boxscoretraditionalv2
 #' @name nba_glalumboxscoresimilarityscore
 NULL
 #' @title
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
-#' @rdname nba_glalumboxscoresimilarityscore
+#' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id

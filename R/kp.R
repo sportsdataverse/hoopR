@@ -15,13 +15,15 @@
 #'
 #' ## **Team / season ratings**
 #'
-#' | Function | Purpose |
-#' |---|---|
-#' | [kp_pomeroy_ratings()]              | Pomeroy season ratings |
-#' | [kp_pomeroy_archive_ratings()]      | Historical Pomeroy ratings |
-#' | [kp_program_ratings()]              | Program-level ratings |
-#' | [kp_team_history()]                 | Team history page |
-#' | [kp_arenas()]                       | Arena reference |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Purpose \cr
+#'    \code{\link[=kp_pomeroy_ratings]{kp_pomeroy_ratings()}} \tab Pomeroy season ratings \cr
+#'    \code{\link[=kp_pomeroy_archive_ratings]{kp_pomeroy_archive_ratings()}} \tab Historical Pomeroy ratings \cr
+#'    \code{\link[=kp_program_ratings]{kp_program_ratings()}} \tab Program-level ratings \cr
+#'    \code{\link[=kp_team_history]{kp_team_history()}} \tab Team history page \cr
+#'    \code{\link[=kp_arenas]{kp_arenas()}} \tab Arena reference \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' ## **Per-game / per-team detail**
 #'
@@ -55,15 +57,17 @@
 #'
 #' ## **Player + coach + officials**
 #'
-#' | Function | Purpose |
-#' |---|---|
-#' | [kp_player_career()]         | Player career page |
-#' | [kp_playerstats()]           | Player stats |
-#' | [kp_kpoy()]                  | KenPom player of the year |
-#' | [kp_height()]                | Team height/experience |
-#' | [kp_coach_history()]         | Coach history |
-#' | [kp_referee()]               | Referee splits |
-#' | [kp_officials()]             | Game officials |
+#' \if{html}{\tabular{ll}{
+#'    Function \tab Purpose \cr
+#'    \code{\link[=kp_player_career]{kp_player_career()}} \tab Player career page \cr
+#'    \code{\link[=kp_playerstats]{kp_playerstats()}} \tab Player stats \cr
+#'    \code{\link[=kp_kpoy]{kp_kpoy()}} \tab KenPom player of the year \cr
+#'    \code{\link[=kp_height]{kp_height()}} \tab Team height/experience \cr
+#'    \code{\link[=kp_coach_history]{kp_coach_history()}} \tab Coach history \cr
+#'    \code{\link[=kp_referee]{kp_referee()}} \tab Referee splits \cr
+#'    \code{\link[=kp_officials]{kp_officials()}} \tab Game officials \cr
+#' }}
+#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' ## **Trends and miscellany**
 #'

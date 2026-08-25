@@ -29,14 +29,16 @@
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per coach:
 #'
-#'    |col_name      |types     |description                                  |
-#'    |:-------------|:---------|:--------------------------------------------|
-#'    |staff         |character |Coach name.                                  |
-#'    |team          |character |Team name.                                   |
-#'    |start_season  |character |Season the coach started with the team.      |
-#'    |years_in_role |integer   |Seasons in the role.                         |
-#'    |birth_date    |character |Birth date (when listed).                    |
-#'    |nationality   |character |Nationality.                                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       staff \tab character \tab Coach name. \cr
+#'       team \tab character \tab Team name. \cr
+#'       start_season \tab character \tab Season the coach started with the team. \cr
+#'       years_in_role \tab integer \tab Seasons in the role. \cr
+#'       birth_date \tab character \tab Birth date (when listed). \cr
+#'       nationality \tab character \tab Nationality. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table

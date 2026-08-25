@@ -7,7 +7,7 @@
 Columns shared verbatim across: nba_shotchartdetail, nba_shotchartleaguewide, nba_shotchartlineupdetail.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    GRID_TYPE \tab character \tab  \cr
    SHOT_ZONE_BASIC \tab character \tab Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). \cr
@@ -16,6 +16,7 @@ Columns shared verbatim across: nba_shotchartdetail, nba_shotchartleaguewide, nb
    FGA \tab character \tab Field goal attempts. \cr
    FGM \tab character \tab Field goals made. \cr
    FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

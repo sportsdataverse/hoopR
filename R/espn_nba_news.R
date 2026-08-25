@@ -1,9 +1,10 @@
 #' **Get ESPN NBA News**
+#' @rdname espn_mbb_news
 #' @name espn_nba_news
 NULL
 #' @title
 #' **Get ESPN NBA News**
-#' @rdname espn_nba_news
+#' @rdname espn_mbb_news
 #' @author Saiem Gilani
 #' @param limit integer. Maximum number of articles to return. Default `50`.
 #' @return Returns a tibble of news articles.
@@ -31,14 +32,13 @@ espn_nba_news <- function(limit = 50) {
 
 
 #' **Get ESPN NBA Team News**
+#' @rdname espn_mbb_team_news
 #' @name espn_nba_team_news
 NULL
 #' @title
 #' **Get ESPN NBA Team News**
-#' @rdname espn_nba_team_news
+#' @rdname espn_mbb_team_news
 #' @author Saiem Gilani
-#' @param team_id character or integer. ESPN team ID (e.g. `17` for
-#'   Las Vegas Aces).
 #' @param limit integer. Maximum number of articles to return. Default `25`.
 #' @return Returns a tibble of team news articles.
 #'

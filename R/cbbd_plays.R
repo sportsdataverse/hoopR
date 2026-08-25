@@ -4,6 +4,7 @@
 
 #' @title
 #' **CBD Plays by Game**
+#' @rdname cbbd_play_types
 #' @description
 #' **Get play-by-play data for a single game from the CollegeBasketballData API.**
 #' @param game_id (*integer* required): CollegeBasketballData game id. See
@@ -69,6 +70,7 @@ cbbd_plays_game <- function(game_id, shooting_plays_only = FALSE) {
 
 #' @title
 #' **CBD Plays by Player**
+#' @rdname cbbd_play_types
 #' @description
 #' **Get play-by-play data for a single player from the CollegeBasketballData API.**
 #' @param player_id (*integer* required): Athlete id.
@@ -114,6 +116,7 @@ cbbd_plays_player <- function(player_id, season = most_recent_mbb_season(), shoo
 
 #' @title
 #' **CBD Plays by Team**
+#' @rdname cbbd_play_types
 #' @description
 #' **Get play-by-play data for a team-season from the CollegeBasketballData API.**
 #' @param season (*integer* required): Season, 4-digit ending-year (e.g. `2024`).
@@ -159,6 +162,7 @@ cbbd_plays_team <- function(season = most_recent_mbb_season(), team, shooting_pl
 
 #' @title
 #' **CBD Plays by Date**
+#' @rdname cbbd_play_types
 #' @description
 #' **Get play-by-play data for all games on a date from the CollegeBasketballData API.**
 #' @param date (*character* required): Date-time in ISO 8601 format
@@ -204,6 +208,7 @@ cbbd_plays_date <- function(date, shooting_plays_only = FALSE, utc_offset = NULL
 
 #' @title
 #' **CBD Plays by Tournament**
+#' @rdname cbbd_play_types
 #' @description
 #' **Get play-by-play data for a tournament from the CollegeBasketballData API.**
 #' @param tournament (*character* required): Tournament name (e.g. `NCAA`).
@@ -253,10 +258,12 @@ cbbd_plays_tournament <- function(tournament, season = most_recent_mbb_season(),
 #' **Get the list of play types from the CollegeBasketballData API.**
 #' @return A `hoopR_data` tibble with one row per play type:
 #'
-#'    |col_name |types     |description                                       |
-#'    |:--------|:---------|:-------------------------------------------------|
-#'    |id       |integer   |Play type id.                                     |
-#'    |name     |character |Play type name.                                   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Play type id. \cr
+#'       name \tab character \tab Play type name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Plays
 #' @importFrom jsonlite fromJSON

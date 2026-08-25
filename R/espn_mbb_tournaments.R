@@ -21,11 +21,13 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per tournament.
 #'
-#'    |col_name      |types     |description                                |
-#'    |:-------------|:---------|:------------------------------------------|
-#'    |tournament_id |character |ESPN tournament identifier.                |
-#'    |ref           |character |Full `$ref` URL for the detail.            |
-#'    |league        |character |League slug (`"mens-college-basketball"`). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for the detail. \cr
+#'       league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -59,12 +61,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
-#'    |col_name      |types     |description                                    |
-#'    |:-------------|:---------|:----------------------------------------------|
-#'    |tournament_id |character |ESPN tournament identifier.                    |
-#'    |display_name  |character |Human-readable tournament name.                |
-#'    |seasons_ref   |character |`$ref` to the seasons-list endpoint.           |
-#'    |league        |character |League slug.                                   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
+#'       display_name \tab character \tab Human-readable tournament name. \cr
+#'       seasons_ref \tab character \tab \verb{$ref} to the seasons-list endpoint. \cr
+#'       league \tab character \tab League slug. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -97,12 +101,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per season.
 #'
-#'    |col_name      |types     |description                              |
-#'    |:-------------|:---------|:----------------------------------------|
-#'    |league        |character |League slug.                             |
-#'    |tournament_id |character |ESPN tournament identifier.              |
-#'    |season        |integer   |Season year.                             |
-#'    |ref           |character |Full `$ref` URL for that season.         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       league \tab character \tab League slug. \cr
+#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
+#'       season \tab integer \tab Season year. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for that season. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble

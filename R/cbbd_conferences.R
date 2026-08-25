@@ -4,13 +4,15 @@
 #' **Get college basketball conferences from the CollegeBasketballData API.**
 #' @return A `hoopR_data` tibble with one row per conference:
 #'
-#'    |col_name     |types     |description                                        |
-#'    |:------------|:---------|:--------------------------------------------------|
-#'    |id           |integer   |CollegeBasketballData conference id.               |
-#'    |source_id    |character |Source (ESPN) conference id.                       |
-#'    |name         |character |Conference name (e.g. `Big Ten`).                  |
-#'    |abbreviation |character |Conference abbreviation (e.g. `B1G`).              |
-#'    |short_name   |character |Conference short name.                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab CollegeBasketballData conference id. \cr
+#'       source_id \tab character \tab Source (ESPN) conference id. \cr
+#'       name \tab character \tab Conference name (e.g. \verb{Big Ten}). \cr
+#'       abbreviation \tab character \tab Conference abbreviation (e.g. \code{B1G}). \cr
+#'       short_name \tab character \tab Conference short name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Conferences
 #' @importFrom jsonlite fromJSON
@@ -47,6 +49,7 @@ cbbd_conferences <- function() {
 
 #' @title
 #' **CBD Conference Membership History**
+#' @rdname cbbd_conferences
 #' @description
 #' **Get historical conference membership from the CollegeBasketballData API.**
 #' @param conference (*character* optional): Conference abbreviation filter
@@ -54,14 +57,16 @@ cbbd_conferences <- function() {
 #' @return A `hoopR_data` tibble with one row per conference. The `teams` column
 #'   is a nested list of per-team membership spans:
 #'
-#'    |col_name     |types     |description                                        |
-#'    |:------------|:---------|:--------------------------------------------------|
-#'    |id           |integer   |CollegeBasketballData conference id.               |
-#'    |source_id    |character |Source (ESPN) conference id.                       |
-#'    |name         |character |Conference name.                                   |
-#'    |abbreviation |character |Conference abbreviation.                           |
-#'    |short_name   |character |Conference short name.                             |
-#'    |teams        |list      |Nested list of member-team membership spans.       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab CollegeBasketballData conference id. \cr
+#'       source_id \tab character \tab Source (ESPN) conference id. \cr
+#'       name \tab character \tab Conference name. \cr
+#'       abbreviation \tab character \tab Conference abbreviation. \cr
+#'       short_name \tab character \tab Conference short name. \cr
+#'       teams \tab list \tab Nested list of member-team membership spans. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Conferences
 #' @importFrom jsonlite fromJSON

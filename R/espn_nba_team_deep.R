@@ -6,11 +6,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Team Odds-Records (Long Format)**
+#' @rdname espn_mbb_team_odds_records
 #' @name espn_nba_team_odds_records
 NULL
 #' @title
 #' **Get ESPN NBA Team Odds-Records (Long Format)**
-#' @rdname espn_nba_team_odds_records
+#' @rdname espn_mbb_team_odds_records
 #' @author Saiem Gilani
 #' @description
 #' Returns the long-format odds-records breakdown for a team in one
@@ -21,7 +22,6 @@ NULL
 #' case the wrapper returns an empty tibble.
 #'
 #' @param team_id ESPN team identifier.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param season_type Season-type id. ESPN populates odds-records mostly
 #'   under `season_type = 0` (all-types aggregate), so that is the default.
 #' @param ... Additional arguments; currently unused.
@@ -102,7 +102,7 @@ espn_nba_team_depthchart <- function(team_id,
 #' @name espn_nba_team_season_roster
 #' @title
 #' **Get ESPN NBA Team Roster (Per-Season, core-v2)**
-#' @rdname espn_nba_team_season_roster
+#' @rdname espn_mbb_team_season_roster
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-season team roster as a tibble of athlete IDs from
@@ -112,7 +112,6 @@ espn_nba_team_depthchart <- function(team_id,
 #' season for each league.
 #'
 #' @param team_id ESPN team identifier.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per athlete on the season roster.
 #'
@@ -141,7 +140,7 @@ espn_nba_team_season_roster <- function(team_id,
 #' @name espn_nba_coach_season
 #' @title
 #' **Get ESPN NBA Coach-in-Season Detail**
-#' @rdname espn_nba_coach_season
+#' @rdname espn_mbb_coach_season
 #' @author Saiem Gilani
 #' @description
 #' Per-season coach detail (name, birth info, `$ref`s to team/college/
@@ -149,7 +148,6 @@ espn_nba_team_season_roster <- function(team_id,
 #' (coach × season) combinations return 404.
 #'
 #' @param coach_id ESPN coach identifier.
-#' @param season Season year. Defaults to most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #'
@@ -174,11 +172,12 @@ espn_nba_coach_season <- function(coach_id,
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Team Record Detail (Long Format)**
+#' @rdname espn_mbb_team_record_detail
 #' @name espn_nba_team_record_detail
 NULL
 #' @title
 #' **Get ESPN NBA Team Record Detail (Long Format)**
-#' @rdname espn_nba_team_record_detail
+#' @rdname espn_mbb_team_record_detail
 #' @author Saiem Gilani
 #' @description
 #' Returns one team's record detail in long format: one row per stat in
@@ -188,7 +187,6 @@ NULL
 #'
 #' @param team_id ESPN team identifier.
 #' @param season Season year (numeric).
-#' @param record_id Record identifier (from [espn_nba_team_record()] index).
 #' @param season_type Integer season type: 1 = preseason, 2 = regular (default),
 #'   3 = postseason.
 #' @param ... Additional arguments; currently unused.

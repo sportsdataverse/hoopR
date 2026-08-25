@@ -1,5 +1,6 @@
 #' @title
 #' **CBD Team Lineups**
+#' @rdname cbbd_lineups_game
 #' @description
 #' **Get lineup statistics for a team-season from the CollegeBasketballData API.**
 #' @param season (*integer* required): Season, 4-digit ending-year (e.g. `2024`).

@@ -86,13 +86,13 @@ nba_commonallplayers <- function(
 }
 
 #' **Get NBA Stats API Player Info**
+#' @rdname nba_commonallplayers
 #' @name nba_commonplayerinfo
 NULL
 #' @title
 #' **Get NBA Stats API Player Info**
-#' @rdname nba_commonplayerinfo
+#' @rdname nba_commonallplayers
 #' @author Saiem Gilani
-#' @param league_id league_id
 #' @param player_id player_id
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Return a named list of data frames: CommonPlayerInfo, PlayerHeadlineStats,
@@ -142,15 +142,17 @@ NULL
 #'    **PlayerHeadlineStats**
 #'
 #'
-#'    |col_name    |types     |description                   |
-#'    |:-----------|:---------|:-----------------------------|
-#'    |PLAYER_ID   |character |Unique player identifier.     |
-#'    |PLAYER_NAME |character |Player name.                  |
-#'    |TimeFrame   |character |                              |
-#'    |PTS         |character |Points scored.                |
-#'    |AST         |character |Assists.                      |
-#'    |REB         |character |Total rebounds.               |
-#'    |PIE         |character |Player Impact Estimate (0-1). |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TimeFrame \tab character \tab  \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       PIE \tab character \tab Player Impact Estimate (0-1). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **AvailableSeasons**
 #'
@@ -209,13 +211,13 @@ nba_commonplayerinfo <- function(
 }
 
 #' **Get NBA Stats API Playoff Series**
+#' @rdname nba_commonallplayers
 #' @name nba_commonplayoffseries
 NULL
 #' @title
 #' **Get NBA Stats API Playoff Series**
-#' @rdname nba_commonplayoffseries
+#' @rdname nba_commonallplayers
 #' @author Saiem Gilani
-#' @param league_id league_id
 #' @param season season
 #' @param series_id series_id
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -224,13 +226,15 @@ NULL
 #'    **PlayoffSeries**
 #'
 #'
-#'    |col_name        |types     |description                          |
-#'    |:---------------|:---------|:------------------------------------|
-#'    |GAME_ID         |character |Unique game identifier.              |
-#'    |HOME_TEAM_ID    |character |Unique identifier for the home team. |
-#'    |VISITOR_TEAM_ID |character |                                     |
-#'    |SERIES_ID       |character |                                     |
-#'    |GAME_NUM        |character |                                     |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'       HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+#'       VISITOR_TEAM_ID \tab character \tab  \cr
+#'       SERIES_ID \tab character \tab  \cr
+#'       GAME_NUM \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -281,13 +285,13 @@ nba_commonplayoffseries <- function(
 }
 
 #' **Get NBA Stats API Team Roster**
+#' @rdname nba_commonallplayers
 #' @name nba_commonteamroster
 NULL
 #' @title
 #' **Get NBA Stats API Team Roster**
-#' @rdname nba_commonteamroster
+#' @rdname nba_commonallplayers
 #' @author Saiem Gilani
-#' @param league_id league_id
 #' @param season season
 #' @param team_id team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -387,26 +391,28 @@ nba_commonteamroster <- function(
 
 
 #' **Get NBA Stats API Common Team Years**
+#' @rdname nba_commonallplayers
 #' @name nba_commonteamyears
 NULL
 #' @title
 #' **Get NBA Stats API Common Team Years**
-#' @rdname nba_commonteamyears
+#' @rdname nba_commonallplayers
 #' @author Saiem Gilani
-#' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: TeamYears
 #'
 #'    **TeamYears**
 #'
 #'
-#'    |col_name     |types     |description                      |
-#'    |:------------|:---------|:--------------------------------|
-#'    |LEAGUE_ID    |character |League identifier ('10' = WNBA). |
-#'    |TEAM_ID      |character |Unique team identifier.          |
-#'    |MIN_YEAR     |character |                                 |
-#'    |MAX_YEAR     |character |                                 |
-#'    |ABBREVIATION |character |Short abbreviation.              |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+#'       TEAM_ID \tab character \tab Unique team identifier. \cr
+#'       MIN_YEAR \tab character \tab  \cr
+#'       MAX_YEAR \tab character \tab  \cr
+#'       ABBREVIATION \tab character \tab Short abbreviation. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

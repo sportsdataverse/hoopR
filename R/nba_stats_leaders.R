@@ -18,211 +18,249 @@ NULL
 #'    **GPLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |GP             |character |Games played.             |
-#'    |GP_RANK        |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       GP \tab character \tab Games played. \cr
+#'       GP_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PTSLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |PTS            |character |Points scored.            |
-#'    |PTS_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       PTS \tab character \tab Points scored. \cr
+#'       PTS_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **ASTLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |AST            |character |Assists.                  |
-#'    |AST_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       AST \tab character \tab Assists. \cr
+#'       AST_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **STLLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |STL            |character |Steals.                   |
-#'    |STL_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       STL \tab character \tab Steals. \cr
+#'       STL_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **OREBLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |OREB           |character |Offensive rebounds.       |
-#'    |OREB_RANK      |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       OREB \tab character \tab Offensive rebounds. \cr
+#'       OREB_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **DREBLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |DREB           |character |Defensive rebounds.       |
-#'    |DREB_RANK      |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       DREB \tab character \tab Defensive rebounds. \cr
+#'       DREB_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **REBLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |REB            |character |Total rebounds.           |
-#'    |REB_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       REB \tab character \tab Total rebounds. \cr
+#'       REB_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **BLKLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |BLK            |character |Blocks.                   |
-#'    |BLK_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       BLK \tab character \tab Blocks. \cr
+#'       BLK_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FGMLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |FGM            |character |Field goals made.         |
-#'    |FGM_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FGM \tab character \tab Field goals made. \cr
+#'       FGM_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FGALeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |FGA            |character |Field goal attempts.      |
-#'    |FGA_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FGA \tab character \tab Field goal attempts. \cr
+#'       FGA_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FG_PCTLeaders**
 #'
 #'
-#'    |col_name       |types     |description                  |
-#'    |:--------------|:---------|:----------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier.    |
-#'    |PLAYER_NAME    |character |Player name.                 |
-#'    |FG_PCT         |character |Field goal percentage (0-1). |
-#'    |FG_PCT_RANK    |character |                             |
-#'    |IS_ACTIVE_FLAG |character |                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+#'       FG_PCT_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **TOVLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |TOV            |character |Turnovers.                |
-#'    |TOV_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       TOV \tab character \tab Turnovers. \cr
+#'       TOV_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FG3MLeaders**
 #'
 #'
-#'    |col_name       |types     |description                   |
-#'    |:--------------|:---------|:-----------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier.     |
-#'    |PLAYER_NAME    |character |Player name.                  |
-#'    |FG3M           |character |Three-point field goals made. |
-#'    |FG3M_RANK      |character |                              |
-#'    |IS_ACTIVE_FLAG |character |                              |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FG3M \tab character \tab Three-point field goals made. \cr
+#'       FG3M_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FG3ALeaders**
 #'
 #'
-#'    |col_name       |types     |description                      |
-#'    |:--------------|:---------|:--------------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier.        |
-#'    |PLAYER_NAME    |character |Player name.                     |
-#'    |FG3A           |character |Three-point field goal attempts. |
-#'    |FG3A_RANK      |character |                                 |
-#'    |IS_ACTIVE_FLAG |character |                                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FG3A \tab character \tab Three-point field goal attempts. \cr
+#'       FG3A_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FG3_PCTLeaders**
 #'
 #'
-#'    |col_name       |types     |description                              |
-#'    |:--------------|:---------|:----------------------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier.                |
-#'    |PLAYER_NAME    |character |Player name.                             |
-#'    |FG3_PCT        |character |Three-point field goal percentage (0-1). |
-#'    |FG3_PCT_RANK   |character |                                         |
-#'    |IS_ACTIVE_FLAG |character |                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+#'       FG3_PCT_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **PFLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |PF             |character |Personal fouls.           |
-#'    |PF_RANK        |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       PF \tab character \tab Personal fouls. \cr
+#'       PF_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FTMLeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |FTM            |character |Free throws made.         |
-#'    |FTM_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FTM \tab character \tab Free throws made. \cr
+#'       FTM_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FTALeaders**
 #'
 #'
-#'    |col_name       |types     |description               |
-#'    |:--------------|:---------|:-------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier. |
-#'    |PLAYER_NAME    |character |Player name.              |
-#'    |FTA            |character |Free throw attempts.      |
-#'    |FTA_RANK       |character |                          |
-#'    |IS_ACTIVE_FLAG |character |                          |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FTA \tab character \tab Free throw attempts. \cr
+#'       FTA_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **FT_PCTLeaders**
 #'
 #'
-#'    |col_name       |types     |description                  |
-#'    |:--------------|:---------|:----------------------------|
-#'    |PLAYER_ID      |character |Unique player identifier.    |
-#'    |PLAYER_NAME    |character |Player name.                 |
-#'    |FT_PCT         |character |Free throw percentage (0-1). |
-#'    |FT_PCT_RANK    |character |                             |
-#'    |IS_ACTIVE_FLAG |character |                             |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
+#'       PLAYER_NAME \tab character \tab Player name. \cr
+#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+#'       FT_PCT_RANK \tab character \tab  \cr
+#'       IS_ACTIVE_FLAG \tab character \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -280,15 +318,14 @@ nba_alltimeleadersgrids <- function(
 
 
 #' **Get NBA Stats API Assist Leaders**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_assistleaders
 NULL
 #' @title
 #' **Get NBA Stats API Assist Leaders**
-#' @rdname nba_assistleaders
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param per_mode Per Mode - PerGame, Totals
 #' @param player_or_team Player or Team
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -355,15 +392,13 @@ nba_assistleaders <- function(
   return(df_list)
 }
 #' **Get NBA Stats API Assist Tracker**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_assisttracker
 NULL
 #' @title
 #' **Get NBA Stats API Assist Tracker**
-#' @rdname nba_assisttracker
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs, All-Star
-#' @param per_mode Per Mode - PerGame, Totals
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: AssistTracker
@@ -419,6 +454,7 @@ nba_assisttracker <- function(
 }
 
 #' **Get NBA Stats API Homepage Leaders**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_homepageleaders
 NULL
 #' @title
@@ -430,11 +466,9 @@ NULL
 #' This function is deprecated and now errors when called.
 #' Use `nba_leagueleaders()` instead. Note: `stat_category = "Defense"` was
 #' never supported upstream by this endpoint even before deprecation (#51).
-#' @rdname nba_homepageleaders
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -464,15 +498,17 @@ NULL
 #'    **LeagueAverage**
 #'
 #'
-#'    |col_name  |types   |description                              |
-#'    |:---------|:-------|:----------------------------------------|
-#'    |PTS       |numeric |Points scored.                           |
-#'    |FG_PCT    |numeric |Field goal percentage (0-1).             |
-#'    |FG3_PCT   |numeric |Three-point field goal percentage (0-1). |
-#'    |FT_PCT    |numeric |Free throw percentage (0-1).             |
-#'    |EFG_PCT   |numeric |Effective field goal percentage (0-1).   |
-#'    |TS_PCT    |numeric |True shooting percentage (0-1).          |
-#'    |PTS_PER48 |numeric |                                         |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       PTS \tab numeric \tab Points scored. \cr
+#'       FG_PCT \tab numeric \tab Field goal percentage (0-1). \cr
+#'       FG3_PCT \tab numeric \tab Three-point field goal percentage (0-1). \cr
+#'       FT_PCT \tab numeric \tab Free throw percentage (0-1). \cr
+#'       EFG_PCT \tab numeric \tab Effective field goal percentage (0-1). \cr
+#'       TS_PCT \tab numeric \tab True shooting percentage (0-1). \cr
+#'       PTS_PER48 \tab numeric \tab  \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'    **LeagueMax**
 #'
@@ -550,6 +586,7 @@ nba_homepageleaders <- function(
 
 
 #' **Get NBA Stats API HomepageV2 Leaders**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_homepagev2
 NULL
 #' @title
@@ -560,11 +597,9 @@ NULL
 #' NBA Stats no longer returns stable data for this endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_leagueleaders()` instead.
-#' @rdname nba_homepagev2
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -721,6 +756,7 @@ nba_homepagev2 <- function(
 
 
 #' **Get NBA Stats API Leaders Tiles**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_leaderstiles
 NULL
 #' @title
@@ -731,11 +767,9 @@ NULL
 #' NBA Stats no longer returns stable data for this endpoint.
 #' This function is deprecated and now errors when called.
 #' Use `nba_leagueleaders()` instead.
-#' @rdname nba_leaderstiles
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -840,15 +874,14 @@ nba_leaderstiles <- function(
 
 
 #' **Get NBA Stats API Defense Hub**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_defensehub
 NULL
 #' @title
 #' **Get NBA Stats API Defense Hub**
-#' @rdname nba_defensehub
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
@@ -919,19 +952,16 @@ nba_defensehub <- function(
 
 
 #' **Get NBA Stats API League Leaders**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_leagueleaders
 NULL
 #' @title
 #' **Get NBA Stats API League Leaders**
-#' @rdname nba_leagueleaders
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param active_flag Active Flag
-#' @param season Season - format 2020-21
-#' @param season_type Season Type - Regular Season, Playoffs
-#' @param per_mode Per Mode - Totals, PerGame, Per48
 #' @param scope Scope - RS, S, Rookies
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param stat_category Stat Category: PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: LeagueLeaders
 #'
@@ -1044,15 +1074,14 @@ nba_leagueleaders <- function(
 
 
 #' **Get NBA Stats API Dunk Score Leaders**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_dunkscoreleaders
 NULL
 #' @title
 #' **Get NBA Stats API Dunk Score Leaders**
-#' @rdname nba_dunkscoreleaders
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param season Season - format: '2023-24'
-#' @param season_type Season Type - 'Regular Season', 'Playoffs'
 #' @param player_id Player ID filter (optional, leave empty for all players)
 #' @param team_id Team ID filter (optional, leave empty for all teams)
 #' @param game_id Game ID filter (optional, leave empty for all games)
@@ -1192,15 +1221,14 @@ nba_dunkscoreleaders <- function(
 
 
 #' **Get NBA Stats API Gravity Leaders**
+#' @rdname nba_alltimeleadersgrids
 #' @name nba_gravityleaders
 NULL
 #' @title
 #' **Get NBA Stats API Gravity Leaders**
-#' @rdname nba_gravityleaders
+#' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
 #' @param league_id League - default: '00'. Other options include '10': WNBA, '20': G-League
-#' @param season Season - format: '2023-24'
-#' @param season_type Season Type - 'Regular Season', 'Playoffs'
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a named list of data frames: GravityLeaders
 #'

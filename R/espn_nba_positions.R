@@ -6,11 +6,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Positions Index**
+#' @rdname espn_mbb_positions
 #' @name espn_nba_positions
 NULL
 #' @title
 #' **Get ESPN NBA Positions Index**
-#' @rdname espn_nba_positions
+#' @rdname espn_mbb_positions
 #' @author Saiem Gilani
 #' @description
 #' Returns the NBA position dictionary index. One row per position with
@@ -35,11 +36,12 @@ espn_nba_positions <- function(...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Position Detail**
+#' @rdname espn_mbb_position
 #' @name espn_nba_position
 NULL
 #' @title
 #' **Get ESPN NBA Position Detail**
-#' @rdname espn_nba_position
+#' @rdname espn_mbb_position
 #' @author Saiem Gilani
 #' @description
 #' Returns metadata for a single NBA position. Useful for dereferencing

@@ -1,9 +1,10 @@
 #' **Get NBA Stats API Draft Board**
+#' @rdname nba_draftcombinestats
 #' @name nba_draftboard
 NULL
 #' @title
 #' **Get NBA Stats API Draft Board**
-#' @rdname nba_draftboard
+#' @rdname nba_draftcombinestats
 #' @author Saiem Gilani
 #' @param season season
 #' @param ... Additional arguments passed to an underlying function like httr.
@@ -74,10 +75,12 @@ NULL
 #'    **LiveDetails**
 #'
 #'
-#'    |col_name                       |types   |description                     |
-#'    |:------------------------------|:-------|:-------------------------------|
-#'    |is_draft_live                  |logical |Is draft live.                  |
-#'    |live_draft_current_pick_number |numeric |Live draft current pick number. |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       is_draft_live \tab logical \tab Is draft live. \cr
+#'       live_draft_current_pick_number \tab numeric \tab Live draft current pick number. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -640,7 +643,7 @@ nba_draftcombinespotshooting <- function(
 
 #' @title
 #' **Get NBA Stats API Draft History**
-#' @rdname nba_drafthistory
+#' @rdname nba_draftcombinestats
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param college college

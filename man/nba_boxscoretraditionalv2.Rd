@@ -3,10 +3,17 @@
 \name{nba_boxscoretraditionalv2}
 \alias{nba_boxscoretraditionalv2}
 \alias{nba_boxscoreadvancedv2}
+\alias{nba_boxscoredefensive}
 \alias{nba_boxscorefourfactorsv2}
 \alias{nba_boxscoremiscv2}
 \alias{nba_boxscorescoringv2}
 \alias{nba_boxscoreusagev2}
+\alias{nba_boxscoresummaryv2}
+\alias{nba_boxscorematchups}
+\alias{nba_boxscoreplayertrackv2}
+\alias{nba_hustlestatsboxscore}
+\alias{nba_boxscoresimilarityscore}
+\alias{nba_glalumboxscoresimilarityscore}
 \title{\strong{Get NBA Stats API Boxscore Traditional V2}}
 \usage{
 nba_boxscoretraditionalv2(
@@ -28,6 +35,8 @@ nba_boxscoreadvancedv2(
   range_type = 0,
   ...
 )
+
+nba_boxscoredefensive(game_id, ...)
 
 nba_boxscorefourfactorsv2(
   game_id,
@@ -68,6 +77,38 @@ nba_boxscoreusagev2(
   range_type = 0,
   ...
 )
+
+nba_boxscoresummaryv2(game_id, ...)
+
+nba_boxscorematchups(game_id, ...)
+
+nba_boxscoreplayertrackv2(game_id, ...)
+
+nba_hustlestatsboxscore(game_id, ...)
+
+nba_boxscoresimilarityscore(
+  person_1_id = "202691",
+  person_1_league_id = "00",
+  person_1_season = most_recent_nba_season() - 3,
+  person_1_season_type = "Regular Season",
+  person_2_id = "1626164",
+  person_2_league_id = "00",
+  person_2_season = most_recent_nba_season() - 3,
+  person_2_season_type = "Regular Season",
+  ...
+)
+
+nba_glalumboxscoresimilarityscore(
+  person_1_id,
+  person_1_league_id,
+  person_1_season,
+  person_1_season_type,
+  person_2_id,
+  person_2_league_id,
+  person_2_season,
+  person_2_season_type,
+  ...
+)
 }
 \arguments{
 \item{game_id}{Game ID}
@@ -83,6 +124,22 @@ nba_boxscoreusagev2(
 \item{range_type}{range_type}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{person_1_id}{person_1_id}
+
+\item{person_1_league_id}{person_1_league_id}
+
+\item{person_1_season}{person_1_season}
+
+\item{person_1_season_type}{person_1_season_type}
+
+\item{person_2_id}{person_2_id}
+
+\item{person_2_league_id}{person_2_league_id}
+
+\item{person_2_season}{person_2_season}
+
+\item{person_2_season_type}{person_2_season_type}
 }
 \value{
 A list of data frames: PlayerStats, TeamStats, TeamStarterBenchStats
@@ -263,6 +320,8 @@ TeamStats
       PIE \tab character \tab Player Impact Estimate (0-1). \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: PlayerDefensiveStats, Table1
 
 Returns a named list of data frames: sqlPlayersFourFactors, sqlTeamFourFactors
 
@@ -497,6 +556,269 @@ Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
       PCT_PTS \tab character \tab  \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: AvailableVideo, GameInfo, GameSummary,
+InactivePlayers, LastMeeting, LineScore, Officials, OtherStats, SeasonSeries
+
+\strong{GameSummary}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_gamesummary_schema} table.
+
+\strong{OtherStats}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   PTS_PAINT \tab character \tab Points scored in the paint. \cr
+   PTS_2ND_CHANCE \tab character \tab  \cr
+   PTS_FB \tab character \tab  \cr
+   LARGEST_LEAD \tab character \tab Largest lead during the game. \cr
+   LEAD_CHANGES \tab character \tab Lead changes. \cr
+   TIMES_TIED \tab character \tab Times tied. \cr
+   TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+   TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+   TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+   PTS_OFF_TO \tab character \tab  \cr
+}
+
+
+\strong{Officials}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   OFFICIAL_ID \tab character \tab Unique official / referee identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+}
+
+
+\strong{InactivePlayers}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   PLAYER_ID \tab character \tab Unique player identifier. \cr
+   FIRST_NAME \tab character \tab Player's first name. \cr
+   LAST_NAME \tab character \tab Player's last name. \cr
+   JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+}
+
+
+\strong{GameInfo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+   ATTENDANCE \tab character \tab Reported attendance. \cr
+   GAME_TIME \tab character \tab Game start time. \cr
+}
+
+
+\strong{LineScore}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_DATE_EST \tab character \tab Game date est. \cr
+   GAME_SEQUENCE \tab character \tab Game sequence. \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_CITY_NAME \tab character \tab  \cr
+   TEAM_NICKNAME \tab character \tab Team nickname. \cr
+   TEAM_WINS_LOSSES \tab character \tab  \cr
+   PTS_QTR1 \tab character \tab  \cr
+   PTS_QTR2 \tab character \tab  \cr
+   PTS_QTR3 \tab character \tab  \cr
+   PTS_QTR4 \tab character \tab  \cr
+   PTS_OT1 \tab character \tab  \cr
+   PTS_OT2 \tab character \tab  \cr
+   PTS_OT3 \tab character \tab  \cr
+   PTS_OT4 \tab character \tab  \cr
+   PTS_OT5 \tab character \tab  \cr
+   PTS_OT6 \tab character \tab  \cr
+   PTS_OT7 \tab character \tab  \cr
+   PTS_OT8 \tab character \tab  \cr
+   PTS_OT9 \tab character \tab  \cr
+   PTS_OT10 \tab character \tab  \cr
+   PTS \tab character \tab Points scored. \cr
+}
+
+
+\strong{LastMeeting}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_lastmeeting_schema} table.
+
+\strong{SeasonSeries}
+
+Columns as documented in the shared \link{nba_boxscoresummaryv2_seasonseries_schema} table.
+
+\strong{AvailableVideo}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   GAME_ID \tab character \tab Unique game identifier. \cr
+   VIDEO_AVAILABLE_FLAG \tab character \tab Video available flag. \cr
+   PT_AVAILABLE \tab character \tab Pt available. \cr
+   PT_XYZ_AVAILABLE \tab character \tab Pt xyz available. \cr
+   WH_STATUS \tab character \tab Wh status. \cr
+   HUSTLE_STATUS \tab character \tab Hustle status. \cr
+   HISTORICAL_STATUS \tab character \tab Historical status. \cr
+}
+
+Returns a named list of data frames: PlayerMatchupsStats
+
+Returns a named list of data frames: PlayerStats, TeamStats
+
+\strong{PlayerStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      START_POSITION \tab character \tab  \cr
+      COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+      MIN \tab character \tab Minutes played. \cr
+      SPD \tab character \tab  \cr
+      DIST \tab character \tab  \cr
+      ORBC \tab character \tab  \cr
+      DRBC \tab character \tab  \cr
+      RBC \tab character \tab  \cr
+      TCHS \tab character \tab  \cr
+      SAST \tab character \tab  \cr
+      FTAST \tab character \tab  \cr
+      PASS \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      CFGM \tab character \tab  \cr
+      CFGA \tab character \tab  \cr
+      CFG_PCT \tab character \tab  \cr
+      UFGM \tab character \tab  \cr
+      UFGA \tab character \tab  \cr
+      UFG_PCT \tab character \tab  \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      DFGM \tab character \tab  \cr
+      DFGA \tab character \tab  \cr
+      DFG_PCT \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{TeamStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      MIN \tab character \tab Minutes played. \cr
+      DIST \tab character \tab  \cr
+      ORBC \tab character \tab  \cr
+      DRBC \tab character \tab  \cr
+      RBC \tab character \tab  \cr
+      TCHS \tab character \tab  \cr
+      SAST \tab character \tab  \cr
+      FTAST \tab character \tab  \cr
+      PASS \tab character \tab  \cr
+      AST \tab character \tab Assists. \cr
+      CFGM \tab character \tab  \cr
+      CFGA \tab character \tab  \cr
+      CFG_PCT \tab character \tab  \cr
+      UFGM \tab character \tab  \cr
+      UFGA \tab character \tab  \cr
+      UFG_PCT \tab character \tab  \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      DFGM \tab character \tab  \cr
+      DFGA \tab character \tab  \cr
+      DFG_PCT \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: HustleStatsAvailable, PlayerStats, TeamStats
+
+\strong{HustleStatsAvailable}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      PTS_PAINT \tab character \tab Points scored in the paint. \cr
+      PTS_2ND_CHANCE \tab character \tab  \cr
+      PTS_FB \tab character \tab  \cr
+      LARGEST_LEAD \tab character \tab Largest lead during the game. \cr
+      LEAD_CHANGES \tab character \tab Lead changes. \cr
+      TIMES_TIED \tab character \tab Times tied. \cr
+      TEAM_TURNOVERS \tab character \tab Team turnovers (turnovers credited to the team rather than a player). \cr
+      TOTAL_TURNOVERS \tab character \tab Total turnovers (player + team). \cr
+      TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
+      PTS_OFF_TO \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{PlayerStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      START_POSITION \tab character \tab  \cr
+      COMMENT \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+      MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      PTS \tab character \tab Points scored. \cr
+      CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+      CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+      CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+      DEFLECTIONS \tab character \tab Defensive deflections. \cr
+      CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+      SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+      SCREEN_AST_PTS \tab character \tab  \cr
+      OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+      OFF_BOXOUTS \tab character \tab  \cr
+      DEF_BOXOUTS \tab character \tab  \cr
+      BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+      BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+      BOX_OUTS \tab character \tab Box-outs executed. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{TeamStats}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      GAME_ID \tab character \tab Unique game identifier. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      MINUTES \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      PTS \tab character \tab Points scored. \cr
+      CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
+      CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
+      CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
+      DEFLECTIONS \tab character \tab Defensive deflections. \cr
+      CHARGES_DRAWN \tab character \tab Charges drawn. \cr
+      SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
+      SCREEN_AST_PTS \tab character \tab  \cr
+      OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
+      LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
+      OFF_BOXOUTS \tab character \tab  \cr
+      DEF_BOXOUTS \tab character \tab  \cr
+      BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
+      BOX_OUT_PLAYER_REBS \tab character \tab  \cr
+      BOX_OUTS \tab character \tab Box-outs executed. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: BoxScoreSimilarityScores
+
+Returns a named list of data frames: GLeagueAlumBoxScoreSimilarityScores
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
@@ -522,6 +844,12 @@ Use \code{nba_boxscorescoringv3()} instead.
 NBA Stats no longer returns stable data for this V2 endpoint.
 This function is deprecated and now errors when called.
 Use \code{nba_boxscoreusagev3()} instead.
+
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+NBA Stats no longer returns stable data for this V2 endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_boxscoreplayertrackv3()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoretraditionalv2(game_id = "0022200021")
@@ -536,6 +864,11 @@ the wrapper stays exported/active rather than deprecated.
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreadvancedv2(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 
+(Possibly Deprecated)
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoredefensive(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscorefourfactorsv2(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 
@@ -547,14 +880,57 @@ the wrapper stays exported/active rather than deprecated.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreusagev2(game_id = "0022200021")
 }\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoresummaryv2(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
+(Possibly Deprecated)
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscorematchups(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoreplayertrackv2(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_hustlestatsboxscore(game_id = "0022200021")
+}\if{html}{\out{</div>}}
+
+(Possibly Deprecated)
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{z <- nba_commonallplayers()$CommonAllPlayers
+klay <- z \%>\% dplyr::filter(DISPLAY_FIRST_LAST == 'Klay Thompson')
+book <- z \%>\% dplyr::filter(DISPLAY_FIRST_LAST == 'Devin Booker')
+nba_boxscoresimilarityscore(person_1_id = klay$PERSON_ID,
+  person_1_league_id = '00',
+  person_1_season = year_to_season(most_recent_nba_season() - 1),
+  person_1_season_type = 'Regular Season',
+  person_2_id = book$PERSON_ID,
+  person_2_league_id = '00',
+  person_2_season = year_to_season(most_recent_nba_season() - 1),
+  person_2_season_type = 'Regular Season'
+)
+}\if{html}{\out{</div>}}
+
+(Possibly Deprecated)
 }
 \seealso{
 Other NBA Boxscore Functions:
-\code{\link[=nba_boxscoredefensive]{nba_boxscoredefensive()}},
-\code{\link[=nba_gamerotation]{nba_gamerotation()}},
-\code{\link[=nba_live_boxscore]{nba_live_boxscore()}}
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_playbyplayv3]{nba_playbyplayv3()}}
+
+Other NBA Player Tracking Functions:
+\code{\link[=nba_leaguedashoppptshot]{nba_leaguedashoppptshot()}},
+\code{\link[=nba_playerdashboardbyclutch]{nba_playerdashboardbyclutch()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}},
+\code{\link[=nba_tracking_aggregate]{nba_tracking_aggregate()}}
+
+Other NBA Hustle Functions:
+\code{\link[=nba_leaguehustlestatsplayer]{nba_leaguehustlestatsplayer()}}
 }
 \author{
 Saiem Gilani
 }
 \concept{NBA Boxscore Functions}
+\concept{NBA Boxscore Similarity Functions}
+\concept{NBA Hustle Functions}
+\concept{NBA Player Tracking Functions}

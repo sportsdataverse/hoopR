@@ -7,7 +7,7 @@
 Columns shared verbatim across: espn_mbb_player_info, espn_nba_player_info.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    id \tab character \tab Id. \cr
    full_name \tab character \tab Player's full name. \cr
@@ -16,6 +16,7 @@ Columns shared verbatim across: espn_mbb_player_info, espn_nba_player_info.
    age \tab character \tab Player age (in years). \cr
    date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
    headshot_href \tab character \tab Headshot image URL. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

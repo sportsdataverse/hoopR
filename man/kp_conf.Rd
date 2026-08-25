@@ -96,40 +96,49 @@ A list of named data frames:
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{AllKenPom}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   rk \tab integer \tab Rk. \cr
-   player \tab character \tab Player. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{AllKenPom}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab integer \tab Rk. \cr
+      player \tab character \tab Player. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{ConferenceAggregateStats}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   stat \tab character \tab Stat. \cr
-   value \tab numeric \tab Numeric or string value field. \cr
-   rk \tab numeric \tab Rk. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{ConferenceAggregateStats}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      stat \tab character \tab Stat. \cr
+      value \tab numeric \tab Numeric or string value field. \cr
+      rk \tab numeric \tab Rk. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{WinningTrends}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   stat \tab character \tab Stat. \cr
-   count \tab character \tab Count of count. \cr
-   value \tab numeric \tab Numeric or string value field. \cr
-   rk \tab numeric \tab Rk. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{WinningTrends}
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      stat \tab character \tab Stat. \cr
+      count \tab character \tab Count of count. \cr
+      value \tab numeric \tab Numeric or string value field. \cr
+      rk \tab numeric \tab Rk. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{ConferenceComparison}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   rk \tab numeric \tab Rk. \cr
-   conference \tab character \tab Conference. \cr
-   rating \tab numeric \tab Rating. \cr
-   year \tab numeric \tab 4-digit year. \cr
-}
+\strong{ConferenceComparison}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      rk \tab numeric \tab Rk. \cr
+      conference \tab character \tab Conference. \cr
+      rating \tab numeric \tab Rating. \cr
+      year \tab numeric \tab 4-digit year. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get KenPom's conference-wide stats}

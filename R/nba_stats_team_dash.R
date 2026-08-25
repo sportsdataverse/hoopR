@@ -1044,11 +1044,12 @@ nba_teamdashboardbyyearoveryear <- function(
 
 
 #' **Get NBA Stats API Team Dashboard - Lineups**
+#' @rdname nba_teamdashboard
 #' @name nba_teamdashlineups
 NULL
 #' @title
 #' **Get NBA Stats API Team Dashboard - Lineups**
-#' @rdname nba_teamdashlineups
+#' @rdname nba_teamdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1182,11 +1183,12 @@ nba_teamdashlineups <- function(
 
 
 #' **Get NBA Stats API Team Dashboard Player Tracking - Passing**
+#' @rdname nba_teamdashboard
 #' @name nba_teamdashptpass
 NULL
 #' @title
 #' **Get NBA Stats API Team Dashboard Player Tracking - Passing**
-#' @rdname nba_teamdashptpass
+#' @rdname nba_teamdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1289,11 +1291,12 @@ nba_teamdashptpass  <- function(
 
 
 #' **Get NBA Stats API Team Dashboard Player Tracking - Rebounding**
+#' @rdname nba_teamdashboard
 #' @name nba_teamdashptreb
 NULL
 #' @title
 #' **Get NBA Stats API Team Dashboard Player Tracking - Rebounding**
-#' @rdname nba_teamdashptreb
+#' @rdname nba_teamdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to
@@ -1402,11 +1405,12 @@ nba_teamdashptreb  <- function(
 }
 
 #' **Get NBA Stats API Team Dashboard Player Tracking - Shots**
+#' @rdname nba_teamdashboard
 #' @name nba_teamdashptshots
 NULL
 #' @title
 #' **Get NBA Stats API Team Dashboard Player Tracking - Shots**
-#' @rdname nba_teamdashptshots
+#' @rdname nba_teamdashboard
 #' @author Saiem Gilani
 #' @param date_from date_from
 #' @param date_to date_to

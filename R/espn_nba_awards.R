@@ -6,11 +6,12 @@
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Awards Index**
+#' @rdname espn_mbb_season_awards
 #' @name espn_nba_season_awards
 NULL
 #' @title
 #' **Get ESPN NBA Season Awards Index**
-#' @rdname espn_nba_season_awards
+#' @rdname espn_mbb_season_awards
 #' @author Saiem Gilani
 #' @description
 #' Returns the list of award IDs given out in an NBA season from
@@ -18,16 +19,17 @@ NULL
 #' The index only contains IDs and `$ref` URLs — pass an ID to
 #' [espn_nba_award()] for the award name, description, and winners.
 #'
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per award.
 #'
-#'    |col_name |types     |description                            |
-#'    |:--------|:---------|:--------------------------------------|
-#'    |season   |integer   |Season year.                           |
-#'    |award_id |character |ESPN award identifier.                 |
-#'    |ref      |character |Full `$ref` URL for the award detail.  |
-#'    |league   |character |League slug (`"nba"`).                 |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       season \tab integer \tab Season year. \cr
+#'       award_id \tab character \tab ESPN award identifier. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for the award detail. \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -46,11 +48,12 @@ espn_nba_season_awards <- function(season = most_recent_nba_season(), ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Season Award Detail**
+#' @rdname espn_mbb_award
 #' @name espn_nba_award
 NULL
 #' @title
 #' **Get ESPN NBA Season Award Detail**
-#' @rdname espn_nba_award
+#' @rdname espn_mbb_award
 #' @author Saiem Gilani
 #' @description
 #' Returns the name, description, and winners of one NBA season award.
@@ -58,7 +61,6 @@ NULL
 #' First Team) return one row per winner.
 #'
 #' @param award_id ESPN award identifier (character or numeric).
-#' @param season Season year (numeric). Defaults to the most recent NBA season.
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per winner.
 #'

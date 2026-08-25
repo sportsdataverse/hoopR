@@ -24,12 +24,14 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per contract year.
 #'
-#'    |col_name   |types     |description                                |
-#'    |:----------|:---------|:------------------------------------------|
-#'    |athlete_id |character |ESPN athlete identifier.                   |
-#'    |season     |integer   |Contract season year.                      |
-#'    |ref        |character |Full `$ref` URL for the contract detail.   |
-#'    |league     |character |League slug (`"nba"`).                     |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       athlete_id \tab character \tab ESPN athlete identifier. \cr
+#'       season \tab integer \tab Contract season year. \cr
+#'       ref \tab character \tab Full \verb{$ref} URL for the contract detail. \cr
+#'       league \tab character \tab League slug (\code{"nba"}). \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
@@ -53,11 +55,12 @@ espn_nba_player_contracts <- function(athlete_id, ...) {
 # ---------------------------------------------------------------------------
 
 #' **Get ESPN NBA Athlete Contract (Single Season)**
+#' @rdname espn_nba_player_contracts
 #' @name espn_nba_player_contract
 NULL
 #' @title
 #' **Get ESPN NBA Athlete Contract (Single Season)**
-#' @rdname espn_nba_player_contract
+#' @rdname espn_nba_player_contracts
 #' @author Saiem Gilani
 #' @description
 #' Returns the full contract record for one NBA athlete in one season,

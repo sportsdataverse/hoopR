@@ -166,11 +166,12 @@ nba_cumestatsplayer <- function(
 }
 
 #' **Get NBA Stats API Cumulative Player Game Stats**
+#' @rdname nba_cumestatsplayer
 #' @name nba_cumestatsplayergames
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Player Game Stats**
-#' @rdname nba_cumestatsplayergames
+#' @rdname nba_cumestatsplayer
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param location location
@@ -187,10 +188,12 @@ NULL
 #'    **CumeStatsPlayerGames**
 #'
 #'
-#'    |col_name |types     |description             |
-#'    |:--------|:---------|:-----------------------|
-#'    |MATCHUP  |character |Matchup.                |
-#'    |GAME_ID  |character |Unique game identifier. |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       MATCHUP \tab character \tab Matchup. \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
@@ -257,11 +260,12 @@ nba_cumestatsplayergames <- function(
 }
 
 #' **Get NBA Stats API Cumulative Team Stats**
+#' @rdname nba_cumestatsplayer
 #' @name nba_cumestatsteam
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Team Stats**
-#' @rdname nba_cumestatsteam
+#' @rdname nba_cumestatsplayer
 #' @author Saiem Gilani
 #' @param game_ids game_ids
 #' @param league_id league_id
@@ -428,11 +432,12 @@ nba_cumestatsteam <- function(
   return(df_list)
 }
 #' **Get NBA Stats API Cumulative Team Game Stats**
+#' @rdname nba_cumestatsplayer
 #' @name nba_cumestatsteamgames
 NULL
 #' @title
 #' **Get NBA Stats API Cumulative Team Game Stats**
-#' @rdname nba_cumestatsteamgames
+#' @rdname nba_cumestatsplayer
 #' @author Saiem Gilani
 #' @param league_id league_id
 #' @param location location
@@ -450,10 +455,12 @@ NULL
 #'    **CumeStatsTeamGames**
 #'
 #'
-#'    |col_name |types     |description             |
-#'    |:--------|:---------|:-----------------------|
-#'    |MATCHUP  |character |Matchup.                |
-#'    |GAME_ID  |character |Unique game identifier. |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       MATCHUP \tab character \tab Matchup. \cr
+#'       GAME_ID \tab character \tab Unique game identifier. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble

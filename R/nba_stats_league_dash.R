@@ -154,11 +154,12 @@ nba_leaguedashoppptshot <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Biographical Stats**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashplayerbiostats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Biographical Stats**
-#' @rdname nba_leaguedashplayerbiostats
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -338,11 +339,12 @@ nba_leaguedashplayerbiostats <- function(
 }
 
 #' **Get NBA Stats API League Dashboard by Player Clutch Splits**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashplayerclutch
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard by Player Clutch Splits**
-#' @rdname nba_leaguedashplayerclutch
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param clutch_time clutch_time
@@ -590,11 +592,12 @@ nba_leaguedashplayerclutch <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Player Shots**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashplayerptshot
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Player Shots**
-#' @rdname nba_leaguedashplayerptshot
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param close_def_dist_range close_def_dist_range
 #' @param college college
@@ -800,11 +803,12 @@ nba_leaguedashplayerptshot <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Stats**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashplayerstats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Stats**
-#' @rdname nba_leaguedashplayerstats
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -1039,11 +1043,12 @@ nba_leaguedashplayerstats <- function(
 }
 
 #' **Get NBA Stats API League Dashboard Player Shot Locations**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashplayershotlocations
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Shot Locations**
-#' @rdname nba_leaguedashplayershotlocations
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -1260,11 +1265,12 @@ nba_leaguedashplayershotlocations <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Defense**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashptdefend
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Defense**
-#' @rdname nba_leaguedashptdefend
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -1433,11 +1439,12 @@ nba_leaguedashptdefend <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Stats**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashptstats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Stats**
-#' @rdname nba_leaguedashptstats
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param college college
 #' @param conference conference
@@ -1617,11 +1624,12 @@ nba_leaguedashptstats <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Defense**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashptteamdefend
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Defense**
-#' @rdname nba_leaguedashptteamdefend
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -1757,11 +1765,12 @@ nba_leaguedashptteamdefend <- function(
 
 
 #' **Get NBA Stats API League Dashboard by Team Clutch Splits**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashteamclutch
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard by Team Clutch Splits**
-#' @rdname nba_leaguedashteamclutch
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param ahead_behind ahead_behind
 #' @param clutch_time clutch_time
@@ -1918,11 +1927,12 @@ nba_leaguedashteamclutch <- function(
 
 
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Shots**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashteamptshot
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Player Tracking - Team Shots**
-#' @rdname nba_leaguedashteamptshot
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param close_def_dist_range close_def_dist_range
 #' @param conference conference
@@ -2059,11 +2069,12 @@ nba_leaguedashteamptshot <- function(
 
 
 #' **Get NBA Stats API League Dashboard Team Stats**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashteamstats
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Team Stats**
-#' @rdname nba_leaguedashteamstats
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from
@@ -2206,11 +2217,12 @@ nba_leaguedashteamstats <- function(
 
 
 #' **Get NBA Stats API League Dashboard Team Shot Locations**
+#' @rdname nba_leaguedashoppptshot
 #' @name nba_leaguedashteamshotlocations
 NULL
 #' @title
 #' **Get NBA Stats API League Dashboard Team Shot Locations**
-#' @rdname nba_leaguedashteamshotlocations
+#' @rdname nba_leaguedashoppptshot
 #' @author Saiem Gilani
 #' @param conference conference
 #' @param date_from date_from

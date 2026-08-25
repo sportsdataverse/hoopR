@@ -2,9 +2,12 @@
 % Please edit documentation in R/cbbd_teams.R
 \name{cbbd_teams}
 \alias{cbbd_teams}
+\alias{cbbd_teams_roster}
 \title{\strong{CBD Teams}}
 \usage{
 cbbd_teams(conference = NULL, season = most_recent_mbb_season())
+
+cbbd_teams_roster(season = most_recent_mbb_season(), team = NULL)
 }
 \arguments{
 \item{conference}{(\emph{character} optional): Conference abbreviation filter
@@ -13,6 +16,8 @@ cbbd_teams(conference = NULL, season = most_recent_mbb_season())
 \item{season}{(\emph{integer} optional): Season, in 4-digit format ending-year
 (e.g. \code{2024} for the 2023-24 season). Defaults to
 \code{most_recent_mbb_season()}.}
+
+\item{team}{(\emph{character} optional): Team name filter (e.g. \code{Duke}).}
 }
 \value{
 A \code{hoopR_data} tibble with one row per team:
@@ -36,18 +41,33 @@ A \code{hoopR_data} tibble with one row per team:
       conference \tab character \tab Conference name. \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team. The \code{players} column is a
+nested list of roster players:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab CollegeBasketballData team id. \cr
+      team_source_id \tab character \tab Source (ESPN) team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      season \tab integer \tab Season (4-digit ending-year). \cr
+      players \tab list \tab Nested list of roster players. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get college basketball teams from the CollegeBasketballData API.}
+
+\strong{Get a college basketball team roster from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_teams(conference = "ACC"))
 }
+\donttest{
+  try(cbbd_teams_roster(season = 2024, team = "Duke"))
 }
-\seealso{
-Other CBD Teams Functions:
-\code{\link[=cbbd_teams_roster]{cbbd_teams_roster()}}
 }
 \concept{CBD Teams Functions}
 \keyword{CBD}

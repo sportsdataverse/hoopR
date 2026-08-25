@@ -15,16 +15,18 @@ game identifier (e.g. \code{"0022200001"} for the first game of the
 }
 \value{
 Returns a \code{data.frame} containing the full V3 play-by-play for
-\code{game_id} with an appended \code{shot_zone} column:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   event_type \tab character \tab Play event type code. \code{"1"} = MadeShot, \code{"2"} = MissedShot, \code{"3"} = FreeThrow, etc. \cr
-   shot_value \tab integer \tab Point value of the shot attempt (2 or 3); 0 for non-FGA events. \cr
-   x_legacy \tab numeric \tab Horizontal court coordinate (legacy units). Negative = left side of the court. \cr
-   y_legacy \tab numeric \tab Vertical court coordinate (legacy units). Values near 0 = baseline. \cr
-   shot_distance \tab numeric \tab Distance from the basket in feet. \cr
-   shot_zone \tab character \tab Shot-zone classification. One of \code{"corner_3"}, \code{"above_the_break_3"}, \code{"restricted_area"}, \code{"in_the_paint_non_ra"}, \code{"mid_range"}. \code{NA} on non-field-goal rows. \cr
-}
+\code{game_id} with an appended \code{shot_zone} column:
 
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      event_type \tab character \tab Play event type code. \code{"1"} = MadeShot, \code{"2"} = MissedShot, \code{"3"} = FreeThrow, etc. \cr
+      shot_value \tab integer \tab Point value of the shot attempt (2 or 3); 0 for non-FGA events. \cr
+      x_legacy \tab numeric \tab Horizontal court coordinate (legacy units). Negative = left side of the court. \cr
+      y_legacy \tab numeric \tab Vertical court coordinate (legacy units). Values near 0 = baseline. \cr
+      shot_distance \tab numeric \tab Distance from the basket in feet. \cr
+      shot_zone \tab character \tab Shot-zone classification. One of \code{"corner_3"}, \code{"above_the_break_3"}, \code{"restricted_area"}, \code{"in_the_paint_non_ra"}, \code{"mid_range"}. \code{NA} on non-field-goal rows. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 All other columns from the V3 PBP schema (\code{nba_pbp()}) are also
 present.  Returns a 0-row frame when the game cannot be fetched (never-raise).
@@ -62,13 +64,12 @@ the basket and within 80 legacy units of the paint center
 }
 \seealso{
 Other NBA Lineup Functions:
-\code{\link[=nba_gamerotation]{nba_gamerotation()}},
-\code{\link[=nba_leaguedashlineups]{nba_leaguedashlineups()}},
-\code{\link[=nba_leaguelineupviz]{nba_leaguelineupviz()}},
+\code{\link[=nba_boxscoretraditionalv3]{nba_boxscoretraditionalv3()}},
+\code{\link[=nba_fantasywidget]{nba_fantasywidget()}},
 \code{\link[=nba_possession_lineups]{nba_possession_lineups()}},
 \code{\link[=nba_rapm]{nba_rapm()}},
-\code{\link[=nba_shotchartlineupdetail]{nba_shotchartlineupdetail()}},
-\code{\link[=nba_teamdashlineups]{nba_teamdashlineups()}}
+\code{\link[=nba_shotchartdetail]{nba_shotchartdetail()}},
+\code{\link[=nba_teamdashboardbyclutch]{nba_teamdashboardbyclutch()}}
 }
 \author{
 Saiem Gilani

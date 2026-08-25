@@ -113,9 +113,9 @@ load_nba_shots(
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_nba_db()}).}
 
-\item{dbConnection}{A \code{DBIConnection} object, as returned by \code{DBI::dbConnect()}.}
+\item{dbConnection}{A \code{DBIConnection} object, as returned by}
 
-\item{tablename}{The name of the shots data table within the database.}
+\item{tablename}{The name of the play by play data table within the database}
 }
 \value{
 Returns a tibble

@@ -1,6 +1,7 @@
 #' **Get Division-I statistical trends**
 #'
 #'
+#' @rdname kp_arenas
 #' @return A data frame with the following columns:
 #'
 #'    \if{html}{\tabular{lll}{
@@ -94,19 +95,22 @@ kp_trends <- function() {
 
 #' **Get officials rankings**
 #'
+#' @rdname kp_arenas
 #' @param year Year of data to pull
 #'
 #' @return A data frame with the following columns:
 #'
-#'    |col_name      |types     |description                     |
-#'    |:-------------|:---------|:-------------------------------|
-#'    |rk            |integer   |Rk.                             |
-#'    |official_name |character |Official name.                  |
-#'    |ref_rating    |numeric   |Ref rating.                     |
-#'    |gms           |numeric   |Gms.                            |
-#'    |last_game     |character |Last game date or score string. |
-#'    |last_game_1   |character |Last game 1.                    |
-#'    |year          |numeric   |4-digit year.                   |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab integer \tab Rk. \cr
+#'       official_name \tab character \tab Official name. \cr
+#'       ref_rating \tab numeric \tab Ref rating. \cr
+#'       gms \tab numeric \tab Gms. \cr
+#'       last_game \tab character \tab Last game date or score string. \cr
+#'       last_game_1 \tab character \tab Last game 1. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select filter mutate mutate_at
@@ -181,6 +185,7 @@ kp_officials <- function(year = most_recent_mbb_season()) {
 }
 
 #' **Get referee game log**
+#' @rdname kp_arenas
 #' @param referee Referee ID
 #' @param year Year of data to pull
 #'
@@ -279,6 +284,7 @@ kp_referee <- function(referee, year) {
 #' **Get Home Court Advantage Estimates**
 #'
 #'
+#' @rdname kp_arenas
 #' @return A data frame with the following columns:
 #'
 #'    \if{html}{\tabular{lll}{
@@ -370,14 +376,16 @@ kp_hca <- function() {
 #' @param year Year of data to pull
 #' @return A data frame with the following columns:
 #'
-#'    |col_name  |types     |description                         |
-#'    |:---------|:---------|:-----------------------------------|
-#'    |rk        |numeric   |Rk.                                 |
-#'    |team      |character |Team-side label or team identifier. |
-#'    |conf      |character |character.                          |
-#'    |arena     |character |Arena.                              |
-#'    |alternate |character |Alternate.                          |
-#'    |year      |numeric   |4-digit year.                       |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab numeric \tab Rk. \cr
+#'       team \tab character \tab Team-side label or team identifier. \cr
+#'       conf \tab character \tab character. \cr
+#'       arena \tab character \tab Arena. \cr
+#'       alternate \tab character \tab Alternate. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr mutate
@@ -445,6 +453,7 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
 #' **Get Game Attributes**
 #'
 #'
+#' @rdname kp_arenas
 #' @param year Year of data to pull
 #' @param attr Game Attribute, valid values include: \cr
 #' 'Excitement', 'Tension','Dominance','MinWp','FanMatch',\cr
@@ -452,15 +461,17 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
 #'
 #' @return Returns a tibble with game attributes
 #'
-#'    |col_name   |types     |description   |
-#'    |:----------|:---------|:-------------|
-#'    |rk         |integer   |Rk.           |
-#'    |data       |character |Data.         |
-#'    |game       |character |Game.         |
-#'    |location   |character |Location.     |
-#'    |conf       |character |character.    |
-#'    |excitement |numeric   |Excitement.   |
-#'    |year       |numeric   |4-digit year. |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       rk \tab integer \tab Rk. \cr
+#'       data \tab character \tab Data. \cr
+#'       game \tab character \tab Game. \cr
+#'       location \tab character \tab Location. \cr
+#'       conf \tab character \tab character. \cr
+#'       excitement \tab numeric \tab Excitement. \cr
+#'       year \tab numeric \tab 4-digit year. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @importFrom cli cli_abort
 #' @importFrom dplyr select mutate
@@ -534,6 +545,7 @@ kp_game_attrs <- function(
 
 #' **Get FanMatch by date**
 #'
+#' @rdname kp_arenas
 #' @param date Date of games to pull (YYYY-MM-DD)
 #'
 #' @return A data frame with the following columns:

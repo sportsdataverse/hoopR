@@ -2,12 +2,25 @@
 % Please edit documentation in R/cbbd_recruiting.R
 \name{cbbd_recruiting_players}
 \alias{cbbd_recruiting_players}
+\alias{cbbd_recruiting_teams}
+\alias{cbbd_recruiting_portal}
 \title{\strong{CBD Recruiting Players}}
 \usage{
 cbbd_recruiting_players(
   year = NULL,
   team = NULL,
   conference = NULL,
+  position = NULL
+)
+
+cbbd_recruiting_teams(year = NULL, team = NULL, conference = NULL)
+
+cbbd_recruiting_portal(
+  year = NULL,
+  source_team = NULL,
+  destination_team = NULL,
+  source_conference = NULL,
+  destination_conference = NULL,
   position = NULL
 )
 }
@@ -19,6 +32,14 @@ cbbd_recruiting_players(
 \item{conference}{(\emph{character} optional): Conference abbreviation filter.}
 
 \item{position}{(\emph{character} optional): Position filter.}
+
+\item{source_team}{(\emph{character} optional): Origin team filter.}
+
+\item{destination_team}{(\emph{character} optional): Destination team filter.}
+
+\item{source_conference}{(\emph{character} optional): Origin conference filter.}
+
+\item{destination_conference}{(\emph{character} optional): Destination conference filter.}
 }
 \value{
 A \code{hoopR_data} tibble with one row per recruit. The \code{hometown} and
@@ -41,19 +62,55 @@ A \code{hoopR_data} tibble with one row per recruit. The \code{hometown} and
       ranking \tab integer \tab Overall ranking. \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      team_id \tab integer \tab CollegeBasketballData team id. \cr
+      team \tab character \tab Team name. \cr
+      conference \tab character \tab Conference name. \cr
+      year \tab integer \tab Recruiting class year. \cr
+      ranking \tab integer \tab Team recruiting ranking. \cr
+      rating \tab numeric \tab Team recruiting rating. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per transfer. The \code{origin} and
+\code{destination} objects are flattened into prefixed columns:
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      id \tab integer \tab Transfer id. \cr
+      source_id \tab character \tab Source (ESPN) athlete id. \cr
+      year \tab integer \tab Transfer class year. \cr
+      first_name \tab character \tab Player first name. \cr
+      last_name \tab character \tab Player last name. \cr
+      position \tab character \tab Player position. \cr
+      eligibility \tab character \tab Eligibility status. \cr
+      years_remaining \tab integer \tab Years of eligibility remaining. \cr
+      stars \tab integer \tab Star rating. \cr
+      rating \tab numeric \tab Numeric rating. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get player recruiting rankings from the CollegeBasketballData API.}
+
+\strong{Get team recruiting rankings from the CollegeBasketballData API.}
+
+\strong{Get transfer portal data from the CollegeBasketballData API.}
 }
 \examples{
 \donttest{
   try(cbbd_recruiting_players(year = 2024))
 }
+\donttest{
+  try(cbbd_recruiting_teams(year = 2024))
 }
-\seealso{
-Other CBD Recruiting Functions:
-\code{\link[=cbbd_recruiting_portal]{cbbd_recruiting_portal()}},
-\code{\link[=cbbd_recruiting_teams]{cbbd_recruiting_teams()}}
+\donttest{
+  try(cbbd_recruiting_portal(year = 2024))
+}
 }
 \concept{CBD Recruiting Functions}
 \keyword{CBD}

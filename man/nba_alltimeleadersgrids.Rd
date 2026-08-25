@@ -2,6 +2,15 @@
 % Please edit documentation in R/nba_stats_leaders.R
 \name{nba_alltimeleadersgrids}
 \alias{nba_alltimeleadersgrids}
+\alias{nba_assistleaders}
+\alias{nba_assisttracker}
+\alias{nba_homepageleaders}
+\alias{nba_homepagev2}
+\alias{nba_leaderstiles}
+\alias{nba_defensehub}
+\alias{nba_leagueleaders}
+\alias{nba_dunkscoreleaders}
+\alias{nba_gravityleaders}
 \title{\strong{Get NBA Stats API All-time Leaders Grid}}
 \usage{
 nba_alltimeleadersgrids(
@@ -9,6 +18,94 @@ nba_alltimeleadersgrids(
   per_mode = "PerGame",
   season_type = "Regular Season",
   top_x = 10,
+  ...
+)
+
+nba_assistleaders(
+  league_id = "00",
+  per_mode = "PerGame",
+  player_or_team = "Team",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  ...
+)
+
+nba_assisttracker(
+  league_id = "00",
+  per_mode = "PerGame",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  ...
+)
+
+nba_homepageleaders(
+  league_id = "00",
+  game_scope = "Season",
+  player_or_team = "Team",
+  player_scope = "All Players",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  stat_category = "Points",
+  ...
+)
+
+nba_homepagev2(
+  league_id = "00",
+  game_scope = "Season",
+  player_or_team = "Team",
+  player_scope = "All Players",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  stat_type = "Traditional",
+  ...
+)
+
+nba_leaderstiles(
+  league_id = "00",
+  game_scope = "Season",
+  player_or_team = "Team",
+  player_scope = "All Players",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  stat = "PTS",
+  ...
+)
+
+nba_defensehub(
+  league_id = "00",
+  game_scope = "Season",
+  player_or_team = "Team",
+  player_scope = "All Players",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  ...
+)
+
+nba_leagueleaders(
+  active_flag = "",
+  league_id = "00",
+  per_mode = "Totals",
+  scope = "S",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  stat_category = "PTS",
+  ...
+)
+
+nba_dunkscoreleaders(
+  league_id = "00",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
+  player_id = "",
+  team_id = "",
+  game_id = "",
+  ...
+)
+
+nba_gravityleaders(
+  league_id = "00",
+  season = year_to_season(most_recent_nba_season() - 1),
+  season_type = "Regular Season",
   ...
 )
 }
@@ -22,6 +119,30 @@ nba_alltimeleadersgrids(
 \item{top_x}{Top X}
 
 \item{...}{Additional arguments passed to an underlying function like httr.}
+
+\item{player_or_team}{Player or Team}
+
+\item{season}{Season - format 2020-21}
+
+\item{game_scope}{Game Scope - Season, Last 10, ,Yesterday, Finals}
+
+\item{player_scope}{Player Scope - All Players, Rookies}
+
+\item{stat_category}{Stat Category: Points, Rebounds, Assists, Defense, Clutch, Playmaking, Efficiency, Fast Break, Scoring Breakdown}
+
+\item{stat_type}{Stat Type - Traditional, Advanced, Tracking}
+
+\item{stat}{Stat - PTS, REB, AST, FG_PCT, FT_PCT, FG3_PCT, STL, BLK}
+
+\item{active_flag}{Active Flag}
+
+\item{scope}{Scope - RS, S, Rookies}
+
+\item{player_id}{Player ID filter (optional, leave empty for all players)}
+
+\item{team_id}{Team ID filter (optional, leave empty for all teams)}
+
+\item{game_id}{Game ID filter (optional, leave empty for all games)}
 }
 \value{
 Returns a named list of data frames: ASTLeaders, BLKLeaders, DREBLeaders, FG3ALeaders,
@@ -29,215 +150,573 @@ FG3MLeaders, FG3_PCTLeaders, FGALeaders, FGMLeaders,
 FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders, GPLeaders,
 OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders, TOVLeaders
 
-\strong{GPLeaders}\tabular{lll}{
+\strong{GPLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      GP \tab character \tab Games played. \cr
+      GP_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{PTSLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      PTS \tab character \tab Points scored. \cr
+      PTS_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{ASTLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      AST \tab character \tab Assists. \cr
+      AST_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{STLLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      STL \tab character \tab Steals. \cr
+      STL_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{OREBLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      OREB \tab character \tab Offensive rebounds. \cr
+      OREB_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{DREBLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      DREB \tab character \tab Defensive rebounds. \cr
+      DREB_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{REBLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      REB \tab character \tab Total rebounds. \cr
+      REB_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{BLKLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      BLK \tab character \tab Blocks. \cr
+      BLK_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FGMLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FGM \tab character \tab Field goals made. \cr
+      FGM_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FGALeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FGA_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FG_PCTLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG_PCT_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{TOVLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      TOV \tab character \tab Turnovers. \cr
+      TOV_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FG3MLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FG3M_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FG3ALeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3A_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FG3_PCTLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FG3_PCT_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{PFLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      PF \tab character \tab Personal fouls. \cr
+      PF_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FTMLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FTM \tab character \tab Free throws made. \cr
+      FTM_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FTALeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FTA_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{FT_PCTLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      PLAYER_NAME \tab character \tab Player name. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      FT_PCT_RANK \tab character \tab  \cr
+      IS_ACTIVE_FLAG \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: AssistLeaders
+
+\strong{AssistLeaders}
+
+Columns as documented in the shared \link{nba_assistleaders_assistleaders_schema} table.
+
+Returns a named list of data frames: AssistTracker
+
+Returns a named list of data frames: HomePageLeaders, LeagueAverage, LeagueMax
+
+\strong{HomePageLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      RANK \tab character \tab Rank. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      PTS \tab character \tab Points scored. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      EFG_PCT \tab character \tab Effective field goal percentage (0-1). \cr
+      TS_PCT \tab character \tab True shooting percentage (0-1). \cr
+      PTS_PER48 \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{LeagueAverage}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PTS \tab numeric \tab Points scored. \cr
+      FG_PCT \tab numeric \tab Field goal percentage (0-1). \cr
+      FG3_PCT \tab numeric \tab Three-point field goal percentage (0-1). \cr
+      FT_PCT \tab numeric \tab Free throw percentage (0-1). \cr
+      EFG_PCT \tab numeric \tab Effective field goal percentage (0-1). \cr
+      TS_PCT \tab numeric \tab True shooting percentage (0-1). \cr
+      PTS_PER48 \tab numeric \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{LeagueMax}
+
+Same columns as the \strong{LeagueAverage} table above.
+
+Returns a named list of data frames: HomePageStat1, HomePageStat2, HomePageStat3,
+HomePageStat4, HomePageStat5, HomePageStat6, HomePageStat7, HomePageStat8
+
+\strong{HomePageStat1}
+
+Columns as documented in the shared \link{nba_homepagev2_homepagestat1_schema} table.
+
+\strong{HomePageStat2}\tabular{lll}{
    col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   GP \tab character \tab Games played. \cr
-   GP_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{PTSLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   PTS \tab character \tab Points scored. \cr
-   PTS_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{ASTLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   AST \tab character \tab Assists. \cr
-   AST_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{STLLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   STL \tab character \tab Steals. \cr
-   STL_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{OREBLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   OREB_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{DREBLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   DREB_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{REBLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
    REB \tab character \tab Total rebounds. \cr
-   REB_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
 }
 
 
-\strong{BLKLeaders}\tabular{lll}{
+\strong{HomePageStat3}
+
+Columns as documented in the shared \link{nba_assistleaders_assistleaders_schema} table.
+
+\strong{HomePageStat4}\tabular{lll}{
    col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   BLK \tab character \tab Blocks. \cr
-   BLK_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   STL \tab character \tab Steals. \cr
 }
 
 
-\strong{FGMLeaders}\tabular{lll}{
+\strong{HomePageStat5}\tabular{lll}{
    col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGM_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FGALeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FGA_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FG_PCTLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
    FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG_PCT_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
 }
 
 
-\strong{TOVLeaders}\tabular{lll}{
+\strong{HomePageStat6}\tabular{lll}{
    col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   TOV \tab character \tab Turnovers. \cr
-   TOV_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FG3MLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3M_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FG3ALeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3A_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FG3_PCTLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FG3_PCT_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{PFLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PF_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FTMLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTM_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FTALeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FTA_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
-}
-
-
-\strong{FT_PCTLeaders}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   PLAYER_NAME \tab character \tab Player name. \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
    FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   FT_PCT_RANK \tab character \tab  \cr
-   IS_ACTIVE_FLAG \tab character \tab  \cr
 }
+
+
+\strong{HomePageStat7}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+}
+
+
+\strong{HomePageStat8}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   RANK \tab character \tab Rank. \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   BLK \tab character \tab Blocks. \cr
+}
+
+Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh, LeadersTiles, LowSeasonHigh,
+
+\strong{LeadersTiles}
+
+Columns as documented in the shared \link{nba_homepagev2_homepagestat1_schema} table.
+
+\strong{AllTimeSeasonHigh}\tabular{lll}{
+   col_name \tab types \tab description \cr
+   TEAM_ID \tab character \tab Unique team identifier. \cr
+   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+   PTS \tab character \tab Points scored. \cr
+}
+
+
+\strong{LastSeasonHigh}
+
+Columns as documented in the shared \link{nba_homepagev2_homepagestat1_schema} table.
+
+\strong{LowSeasonHigh}
+
+Same columns as the \strong{AllTimeSeasonHigh} table above.
+
+Returns a named list of data frames: DefenseHubStat1, DefenseHubStat10, DefenseHubStat2, DefenseHubStat3, DefenseHubStat4, DefenseHubStat5, DefenseHubStat6,
+DefenseHubStat7, DefenseHubStat8, DefenseHubStat9
+
+Returns a named list of data frames: LeagueLeaders
+
+\strong{LeagueLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      PLAYER_ID \tab character \tab Unique player identifier. \cr
+      RANK \tab character \tab Rank. \cr
+      PLAYER \tab character \tab Player. \cr
+      TEAM_ID \tab character \tab Unique team identifier. \cr
+      TEAM \tab character \tab Team-side label or team identifier. \cr
+      GP \tab character \tab Games played. \cr
+      MIN \tab character \tab Minutes played. \cr
+      FGM \tab character \tab Field goals made. \cr
+      FGA \tab character \tab Field goal attempts. \cr
+      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+      FG3M \tab character \tab Three-point field goals made. \cr
+      FG3A \tab character \tab Three-point field goal attempts. \cr
+      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+      FTM \tab character \tab Free throws made. \cr
+      FTA \tab character \tab Free throw attempts. \cr
+      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+      OREB \tab character \tab Offensive rebounds. \cr
+      DREB \tab character \tab Defensive rebounds. \cr
+      REB \tab character \tab Total rebounds. \cr
+      AST \tab character \tab Assists. \cr
+      STL \tab character \tab Steals. \cr
+      BLK \tab character \tab Blocks. \cr
+      TOV \tab character \tab Turnovers. \cr
+      PF \tab character \tab Personal fouls. \cr
+      PTS \tab character \tab Points scored. \cr
+      EFF \tab character \tab Eff. \cr
+      AST_TOV \tab character \tab  \cr
+      STL_TOV \tab character \tab  \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: DunkScoreLeaders
+
+\strong{DunkScoreLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      game_id \tab character \tab Unique game identifier. \cr
+      game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+      matchup \tab character \tab Matchup. \cr
+      period \tab character \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+      game_clock_time \tab character \tab Time / clock value. \cr
+      event_num \tab character \tab Sequential event number within the game (V2 PBP). \cr
+      player_id \tab character \tab Unique player identifier. \cr
+      player_name \tab character \tab Player name. \cr
+      first_name \tab character \tab Player's first name. \cr
+      last_name \tab character \tab Player's last name. \cr
+      team_id \tab character \tab Unique team identifier. \cr
+      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+      dunk_score \tab character \tab Dunk score. \cr
+      jump_subscore \tab character \tab Jump subscore. \cr
+      power_subscore \tab character \tab Power subscore. \cr
+      style_subscore \tab character \tab Style subscore. \cr
+      defensive_contest_subscore \tab character \tab Defensive contest subscore. \cr
+      max_ball_height \tab character \tab Max ball height. \cr
+      ball_speed_through_rim \tab character \tab Ball speed through rim. \cr
+      player_vertical \tab character \tab Player vertical. \cr
+      hang_time \tab character \tab Time / clock value. \cr
+      takeoff_distance \tab character \tab Takeoff distance. \cr
+      reverse_dunk \tab character \tab Reverse dunk. \cr
+      dunk360 \tab character \tab Dunk360. \cr
+      through_the_legs \tab character \tab Through the legs. \cr
+      alley_oop \tab character \tab Alley oop. \cr
+      tip_in \tab character \tab Tip in. \cr
+      self_oop \tab character \tab Self oop. \cr
+      player_rotation \tab character \tab Player rotation. \cr
+      player_lateral_speed \tab character \tab Player lateral speed. \cr
+      ball_distance_traveled \tab character \tab Ball distance traveled. \cr
+      ball_reach_back \tab character \tab Ball reach back. \cr
+      total_ball_acceleration \tab character \tab Total ball acceleration. \cr
+      dunking_hand \tab character \tab Dunking hand. \cr
+      jumping_foot \tab character \tab Jumping foot. \cr
+      pass_length \tab character \tab Pass length. \cr
+      catching_hand \tab character \tab Catching hand. \cr
+      catch_distance \tab character \tab Catch distance. \cr
+      lateral_catch_distance \tab character \tab Lateral catch distance. \cr
+      passer_id \tab character \tab Unique identifier for passer. \cr
+      passer_name \tab character \tab Passer name. \cr
+      passer_first_name \tab character \tab Passer first name. \cr
+      passer_last_name \tab character \tab Passer last name. \cr
+      pass_release_point \tab character \tab Pass release point. \cr
+      shooter_id \tab character \tab Unique identifier for shooter. \cr
+      shooter_name \tab character \tab Shooter name (for shot events). \cr
+      shooter_first_name \tab character \tab Shooter first name. \cr
+      shooter_last_name \tab character \tab Shooter last name. \cr
+      shot_release_point \tab character \tab Shot release point. \cr
+      shot_length \tab character \tab Shot length. \cr
+      defensive_contest_level \tab character \tab Defensive contest level. \cr
+      possible_attempted_charge \tab character \tab Possible attempted charge. \cr
+      video_available \tab character \tab Video available. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Returns a named list of data frames: GravityLeaders
+
+\strong{GravityLeaders}
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      playerid \tab character \tab Playerid. \cr
+      firstname \tab character \tab Firstname. \cr
+      lastname \tab character \tab Lastname. \cr
+      teamid \tab character \tab Teamid. \cr
+      teamabbreviation \tab character \tab Teamabbreviation. \cr
+      teamname \tab character \tab Teamname. \cr
+      teamcity \tab character \tab Teamcity. \cr
+      frames \tab character \tab Frames. \cr
+      gravityscore \tab character \tab Gravityscore. \cr
+      avggravityscore \tab character \tab Avggravityscore. \cr
+      onballperimeterframes \tab character \tab Onballperimeterframes. \cr
+      onballperimetergravityscore \tab character \tab Onballperimetergravityscore. \cr
+      avgonballperimetergravityscore \tab character \tab Avgonballperimetergravityscore. \cr
+      offballperimeterframes \tab character \tab Offballperimeterframes. \cr
+      offballperimetergravityscore \tab character \tab Offballperimetergravityscore. \cr
+      avgoffballperimetergravityscore \tab character \tab Avgoffballperimetergravityscore. \cr
+      onballinteriorframes \tab character \tab Onballinteriorframes. \cr
+      onballinteriorgravityscore \tab character \tab Onballinteriorgravityscore. \cr
+      avgonballinteriorgravityscore \tab character \tab Avgonballinteriorgravityscore. \cr
+      offballinteriorframes \tab character \tab Offballinteriorframes. \cr
+      offballinteriorgravityscore \tab character \tab Offballinteriorgravityscore. \cr
+      avgoffballinteriorgravityscore \tab character \tab Avgoffballinteriorgravityscore. \cr
+      gamesplayed \tab character \tab Gamesplayed. \cr
+      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+      pts \tab character \tab Points scored. \cr
+      reb \tab character \tab Total rebounds. \cr
+      ast \tab character \tab Assists. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
-\strong{Get NBA Stats API All-time Leaders Grid}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
 
-\strong{Get NBA Stats API All-time Leaders Grid}
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_leagueleaders()} instead. Note: \code{stat_category = "Defense"} was
+never supported upstream by this endpoint even before deprecation (#51).
+
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_leagueleaders()} instead.
+
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+NBA Stats no longer returns stable data for this endpoint.
+This function is deprecated and now errors when called.
+Use \code{nba_leagueleaders()} instead.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_alltimeleadersgrids(league_id = '00')
 }\if{html}{\out{</div>}}
-}
-\seealso{
-Other NBA Leaders Functions:
-\code{\link[=nba_assistleaders]{nba_assistleaders()}},
-\code{\link[=nba_assisttracker]{nba_assisttracker()}},
-\code{\link[=nba_defensehub]{nba_defensehub()}},
-\code{\link[=nba_dunkscoreleaders]{nba_dunkscoreleaders()}},
-\code{\link[=nba_gravityleaders]{nba_gravityleaders()}},
-\code{\link[=nba_homepageleaders]{nba_homepageleaders()}},
-\code{\link[=nba_homepagev2]{nba_homepagev2()}},
-\code{\link[=nba_leaderstiles]{nba_leaderstiles()}},
-\code{\link[=nba_leagueleaders]{nba_leagueleaders()}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_assistleaders(league_id = '00', player_or_team = "Player")
+ nba_assistleaders(league_id = '00', player_or_team = "Team")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_assisttracker(league_id = '00')
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_homepageleaders(league_id = '00', player_or_team = "Player")
+ nba_homepageleaders(league_id = '00', player_or_team = "Team")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_homepagev2(league_id = '00', player_or_team = "Player")
+ nba_homepagev2(league_id = '00', player_or_team = "Team")
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaderstiles(league_id = '00', player_or_team = "Player")
+ nba_leaderstiles(league_id = '00', player_or_team = "Team")
+}\if{html}{\out{</div>}}
+
+(Possibly Deprecated)
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_defensehub(league_id = '00', player_or_team = "Player")
+ nba_defensehub(league_id = '00', player_or_team = "Team")
+}\if{html}{\out{</div>}}
+
+\href{https://www.nba.com/stats/leaders}{League Leaders}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueleaders(league_id = '00')
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 1))
+}\if{html}{\out{</div>}}
 }
 \author{
 Saiem Gilani

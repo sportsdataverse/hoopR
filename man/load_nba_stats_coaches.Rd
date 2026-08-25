@@ -240,15 +240,18 @@ slots and \code{group_id}/\code{group_name}). See \code{names(load_nba_stats_lin
 for the full column set, or the \code{lineups_base} table of
 \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash()}} for the equivalent parameter-cube asset.
 
-Returns a \code{hoopR_data} tibble with one row per official-game pair.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   official_id \tab integer \tab Unique official / referee identifier. \cr
-   first_name \tab character \tab Official's first name. \cr
-   last_name \tab character \tab Official's last name. \cr
-   jersey_num \tab character \tab Jersey number worn by the official. \cr
-   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-   game_id \tab character \tab Unique game identifier. \cr
-}
+Returns a \code{hoopR_data} tibble with one row per official-game pair.
+
+\if{html}{\tabular{lll}{
+      col_name \tab types \tab description \cr
+      official_id \tab integer \tab Unique official / referee identifier. \cr
+      first_name \tab character \tab Official's first name. \cr
+      last_name \tab character \tab Official's last name. \cr
+      jersey_num \tab character \tab Jersey number worn by the official. \cr
+      season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+      game_id \tab character \tab Unique game identifier. \cr
+   }}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a \code{hoopR_data} tibble of per-event play-by-play rows.
 

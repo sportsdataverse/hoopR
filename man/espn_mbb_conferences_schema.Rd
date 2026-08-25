@@ -7,7 +7,7 @@
 Columns shared verbatim across: espn_mbb_conferences, espn_nba_conferences.
 }
 \details{
-\tabular{lll}{
+\if{html}{\tabular{lll}{
    col_name \tab types \tab description \cr
    group_id \tab integer \tab Group identifier (e.g. conference group_id). \cr
    conference_short_name \tab character \tab Conference short name (e.g. 'ACC'). \cr
@@ -16,6 +16,7 @@ Columns shared verbatim across: espn_mbb_conferences, espn_nba_conferences.
    conference_logo \tab character \tab Logo image URL for conference. \cr
    parent_group_id \tab integer \tab Unique identifier for parent group. \cr
    conference_id \tab integer \tab Conference identifier. \cr
-}
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \keyword{internal}

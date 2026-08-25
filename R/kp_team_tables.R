@@ -2,8 +2,6 @@
 #'
 #'
 #' @param team Team filter to select.
-#' @param year Year of data to pull
-#'
 #' @return Returns a tibble of team schedules
 #'
 #'    \if{html}{\tabular{lll}{
@@ -1245,6 +1243,7 @@ kp_team_players <- function(team, year = 2021){
 #' **Get KenPom's player career stats from the player page**
 #'
 #'
+#' @rdname kp_team_schedule
 #' @param player_id Player Id filter to select.
 #' @return Returns a named list of tibbles: player_stats, gamelog
 #'

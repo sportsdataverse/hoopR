@@ -67,14 +67,17 @@ cbbd_lines <- function(season = most_recent_mbb_season(), team = NULL, conferenc
 
 #' @title
 #' **CBD Line Providers**
+#' @rdname cbbd_lines
 #' @description
 #' **Get betting line providers from the CollegeBasketballData API.**
 #' @return A `hoopR_data` tibble with one row per line provider:
 #'
-#'    |col_name |types     |description                                       |
-#'    |:--------|:---------|:-------------------------------------------------|
-#'    |id       |integer   |Line provider id.                                 |
-#'    |name     |character |Line provider name.                               |
+#'    \if{html}{\tabular{lll}{
+#'       col_name \tab types \tab description \cr
+#'       id \tab integer \tab Line provider id. \cr
+#'       name \tab character \tab Line provider name. \cr
+#'    }}
+#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #' @keywords CBD Lines
 #' @importFrom jsonlite fromJSON
