@@ -309,6 +309,9 @@ Checked with `--as-cran` under CRAN-equivalent conditions (NOT_CRAN unset,
 all live-API test gates disabled so every network-dependent test skips, as
 they do on CRAN).
 
+win-builder (R-release 4.6.1, x86_64-w64-mingw32, 2026-08-24): Status OK —
+0 errors | 0 warnings | 0 notes.
+
 
 ## revdepcheck results
 
