@@ -72,7 +72,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_confstats(year=most_recent_mbb_season()))
-#> ✖ 2026-08-25 02:48:44.513022: Invalid arguments or no conference stats data for 2026 available!
+#> ✖ 2026-08-25 04:53:41.901942: Invalid arguments or no conference stats data for 2026 available!
 #> ✖ Args: year = 2026
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

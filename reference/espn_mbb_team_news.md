@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-08-25 02:47:54 UTC
+#> ℹ Data updated: 2026-08-25 04:52:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -221,7 +221,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 02:47:54 UTC
+#> ℹ Data updated: 2026-08-25 04:52:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

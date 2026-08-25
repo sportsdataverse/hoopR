@@ -209,7 +209,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_ranking(ranking_id = 1, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Ranking Snapshots Index ── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 02:47:45 UTC
+#> ℹ Data updated: 2026-08-25 04:52:49 UTC
 #> # A tibble: 21 × 9
 #>    league       season ranking_id name  short_name type  season_type  week ref  
 #>    <chr>         <int> <chr>      <chr> <chr>      <chr>       <int> <int> <chr>
@@ -227,11 +227,11 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_season_ranking(ranking_id = 1, season = 2025)
-#> ✖ 2026-08-25 02:47:46.037367: Failed to retrieve ESPN nba ranking 1 for season=2025
+#> ✖ 2026-08-25 04:52:49.77328: Failed to retrieve ESPN nba ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Season Ranking Snapshots Index ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 02:47:46 UTC
+#> ℹ Data updated: 2026-08-25 04:52:49 UTC
 #> # A tibble: 0 × 0
 # }
 ```

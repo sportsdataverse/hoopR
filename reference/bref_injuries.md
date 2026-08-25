@@ -49,7 +49,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_injuries())
 #> ── NBA injury report from basketball-reference.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 02:46:36 UTC
+#> ℹ Data updated: 2026-08-25 04:51:34 UTC
 #> # A tibble: 38 × 4
 #>    player             team_name         date_update       note                  
 #>    <chr>              <chr>             <chr>             <chr>                 
