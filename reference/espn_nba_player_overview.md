@@ -217,12 +217,12 @@ Saiem Gilani
   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -230,12 +230,12 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
@@ -255,7 +255,7 @@ Saiem Gilani
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 1 × 1
 #>   outlook
 #>   <chr>  
@@ -266,7 +266,7 @@ Saiem Gilani
   espn_nba_player_stats_v3(athlete_id = "1966", season = 2024)
 #> $`Regular Season Averages`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -284,7 +284,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -302,7 +302,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Misc Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -320,39 +320,39 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:22 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
 # \donttest{
   espn_nba_player_gamelog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Gamelog from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:23 UTC
 #> # A tibble: 82 × 24
 #>    id        at_vs game_date     score home_team_id away_team_id home_team_score
 #>    <chr>     <chr> <chr>         <chr> <chr>        <chr>        <chr>          
@@ -377,7 +377,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_splits(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Splits from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:23 UTC
 #> # A tibble: 6 × 3
 #>   name       display_name splits       
 #>   <chr>      <chr>        <list>       
@@ -391,7 +391,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_eventlog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Eventlog from ESPN.com ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:16 UTC
+#> ℹ Data updated: 2026-08-25 00:23:23 UTC
 #> # A tibble: 25 × 6
 #>    event_ref              competition_ref team_ref statistics_ref team_id played
 #>    <chr>                  <chr>           <chr>    <chr>          <chr>   <lgl> 
@@ -410,7 +410,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_statisticslog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Statisticslog from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:17 UTC
+#> ℹ Data updated: 2026-08-25 00:23:23 UTC
 #> # A tibble: 23 × 2
 #>    season$`$ref`                                                      statistics
 #>    <chr>                                                              <list>    

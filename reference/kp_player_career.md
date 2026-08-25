@@ -112,7 +112,7 @@ Other KenPom Team Functions:
 ``` r
   # \donttest{
     try(kp_player_career(player_id = '41180'))
-#> ✖ 2026-08-24 20:40:59.148312: 2026-08-24 20:40:59.148013 - No Player Career Data available for 41180
+#> ✖ 2026-08-25 00:24:44.41945: 2026-08-25 00:24:44.419156 - No Player Career Data available for 41180
 #> ✖ Args: player_id = "41180"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

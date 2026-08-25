@@ -126,11 +126,11 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_odds_records(team_id = 150, season = 2026)
-#> ✖ 2026-08-24 20:39:54.369234: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026
+#> ✖ 2026-08-25 00:22:59.263199: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026
 #> ✖ Args: league = "mens-college-basketball", team_id = 150, season = 2026, season_type = 0L
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Odds-Records ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:54 UTC
+#> ℹ Data updated: 2026-08-25 00:22:59 UTC
 #> # A tibble: 0 × 0
 # }
 ```

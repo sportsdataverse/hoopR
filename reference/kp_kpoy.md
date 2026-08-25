@@ -61,7 +61,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_kpoy(year = 2026))
-#> ✖ 2026-08-24 20:40:58.705226: Invalid arguments or no KenPom player of the year data for 2026 available!
+#> ✖ 2026-08-25 00:24:43.964304: Invalid arguments or no KenPom player of the year data for 2026 available!
 #> ✖ Args: year = 2026
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

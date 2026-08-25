@@ -73,7 +73,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_game_stats(year = 2024))
-#> ✖ 2026-08-24 20:59:51.572052: Invalid arguments or no game stats available for 2024!
+#> ✖ 2026-08-25 00:32:42.407796: Invalid arguments or no game stats available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: lexical error: invalid char in json text.                                        <!DOCTYPE HTML PUBLIC "-//W3C//                      (right here) ------^ 
 #> data frame with 0 columns and 0 rows

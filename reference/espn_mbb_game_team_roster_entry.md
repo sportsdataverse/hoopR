@@ -118,11 +118,11 @@ Saiem Gilani
   espn_mbb_game_team_roster_entry(event_id = 401256760,
                                             team_id = 150,
                                             athlete_id = 4593919)
-#> ✖ 2026-08-24 20:39:36.417381: Failed to retrieve ESPN mens-college-basketball event roster entry for event_id=401256760, team_id=150, athlete_id=4593919
+#> ✖ 2026-08-25 00:22:39.606492: Failed to retrieve ESPN mens-college-basketball event roster entry for event_id=401256760, team_id=150, athlete_id=4593919
 #> ✖ Args: league = "mens-college-basketball", event_id = 401256760, team_id = 150, athlete_id = 4593919
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Competitor Roster Entry ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:36 UTC
+#> ℹ Data updated: 2026-08-25 00:22:39 UTC
 #> # A tibble: 0 × 0
 # }
 ```

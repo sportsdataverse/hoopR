@@ -140,7 +140,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_freeagents(season = 2025)
-#> ✖ 2026-08-24 20:40:06.038198: Failed to retrieve ESPN NBA free agents for season 2025
+#> ✖ 2026-08-25 00:23:11.761461: Failed to retrieve ESPN NBA free agents for season 2025
 #> ✖ Args: season = 2025
 #> ✖ Error: The API returned an error
 #> data frame with 0 columns and 0 rows

@@ -32,7 +32,7 @@ Other CBD Conferences Functions:
 ``` r
 # \donttest{
   try(cbbd_conferences())
-#> ✖ 2026-08-24 20:39:03.730482: Invalid arguments or no conferences data available!
+#> ✖ 2026-08-25 00:22:07.078149: Invalid arguments or no conferences data available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

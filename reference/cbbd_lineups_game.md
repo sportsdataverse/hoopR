@@ -31,7 +31,7 @@ Other CBD Lineups Functions:
 ``` r
 # \donttest{
   try(cbbd_lineups_game(game_id = 5881))
-#> ✖ 2026-08-24 20:39:05.371269: Invalid arguments or no lineup data available for 5881!
+#> ✖ 2026-08-25 00:22:08.782869: Invalid arguments or no lineup data available for 5881!
 #> ✖ Args: game_id = 5881
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

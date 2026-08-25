@@ -35,14 +35,17 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_schedule_crosswalk())
-#> ✖ 2026-08-24 20:48:35.055603: Invalid arguments or no league standings v3 data available for 2025-26!
-#> ✖ Args: league_id = "00", season = "2025-26", season_type = "Regular Season", season_year = ""
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-08-24 20:49:35.095034: Invalid arguments or no league game log data for 2025-26 available!
-#> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2025-26", season_type = "Regular Season", sorter = "DATE"
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
-#> ✖ 2026-08-24 20:49:35.107466: Invalid arguments or no team details data available!
-#> ✖ Error: argument is of length zero
-#> Error in !nrow(nt) : invalid argument type
+#> ✖ 2026-08-25 00:32:23.698596: Invalid arguments or no league schedule data for 2025-26 available!
+#> ✖ Args: league_id = "00", season = "2025-26"
+#> ✖ Error: lexical error: invalid char in json text.                                        <HTML><HEAD> <TITLE>Access Deni                      (right here) ------^ 
+#> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-25 00:32:23 UTC
+#> # A tibble: 0 × 16
+#> # ℹ 16 variables: season <int>, season_type <chr>, game_date <date>,
+#> #   home_espn_team_id <int>, away_espn_team_id <int>, espn_game_id <chr>,
+#> #   nba_game_id <chr>, nba_game_code <chr>, nba_home_team_id <chr>,
+#> #   nba_away_team_id <chr>, fox_game_id <chr>, fox_home_team_id <chr>,
+#> #   fox_away_team_id <chr>, yahoo_game_id <chr>, match_method <chr>,
+#> #   match_confidence <dbl>
 # }
 ```

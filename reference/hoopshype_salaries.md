@@ -10,7 +10,7 @@ key is required; dollar figures are returned as numeric.
 HoopsHype is a Next.js app whose single salaries page paginates
 client-side, but each team's salary page (`/salaries/{team}/`) embeds
 that team's complete roster in its `__NEXT_DATA__` payload. This
-function iterates the 30 team pages and stitches them together (≈30
+function iterates the 30 team pages and stitches them together (~30
 requests per call) using a team-by-team approach.
 
 ## Usage
@@ -52,7 +52,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(hoopshype_salaries())
 #> ── Player salaries from hoopshype.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:56 UTC
+#> ℹ Data updated: 2026-08-25 00:24:41 UTC
 #> # A tibble: 2,010 × 13
 #>    player_id player        first_name last_name team_id team  season   salary
 #>    <chr>     <chr>         <chr>      <chr>     <chr>   <chr>  <int>    <int>

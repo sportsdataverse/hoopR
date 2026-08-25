@@ -261,7 +261,7 @@ Saiem Gilani
 try(espn_mbb_game_all(game_id = 401479672))
 #> $Plays
 #> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:29 UTC
+#> ℹ Data updated: 2026-08-25 00:22:31 UTC
 #> # A tibble: 360 × 53
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -285,7 +285,7 @@ try(espn_mbb_game_all(game_id = 401479672))
 #> 
 #> $Team
 #> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:29 UTC
+#> ℹ Data updated: 2026-08-25 00:22:31 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -301,7 +301,7 @@ try(espn_mbb_game_all(game_id = 401479672))
 #> 
 #> $Player
 #> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:29 UTC
+#> ℹ Data updated: 2026-08-25 00:22:31 UTC
 #> # A tibble: 30 × 54
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -327,7 +327,7 @@ try(espn_mbb_game_all(game_id = 401479672))
 # \donttest{
 try(espn_mbb_pbp(game_id = 401479672))
 #> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:30 UTC
+#> ℹ Data updated: 2026-08-25 00:22:32 UTC
 #> # A tibble: 360 × 53
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -353,7 +353,7 @@ try(espn_mbb_pbp(game_id = 401479672))
 # \donttest{
 try(espn_mbb_team_box(game_id = 401479672))
 #> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:30 UTC
+#> ℹ Data updated: 2026-08-25 00:22:33 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -370,7 +370,7 @@ try(espn_mbb_team_box(game_id = 401479672))
 # \donttest{
 try(espn_mbb_player_box(game_id = 401479672))
 #> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:31 UTC
+#> ℹ Data updated: 2026-08-25 00:22:33 UTC
 #> # A tibble: 30 × 54
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -395,7 +395,7 @@ try(espn_mbb_player_box(game_id = 401479672))
 # \donttest{
 try(espn_mbb_game_rosters(game_id = 401256760))
 #> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:32 UTC
+#> ℹ Data updated: 2026-08-25 00:22:35 UTC
 #> # A tibble: 34 × 151
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    
@@ -421,7 +421,7 @@ try(espn_mbb_game_rosters(game_id = 401256760))
 try(espn_mbb_betting(game_id = 401256760))
 #> $pickcenter
 #> ── ESPN MBB Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:32 UTC
+#> ℹ Data updated: 2026-08-25 00:22:35 UTC
 #> # A tibble: 3 × 66
 #>   details  over_under spread over_odds under_odds provider_id provider_name
 #> * <chr>         <dbl>  <dbl>     <dbl>      <dbl>       <int> <chr>        
@@ -438,7 +438,7 @@ try(espn_mbb_betting(game_id = 401256760))
 #> 
 #> $againstTheSpread
 #> ── ESPN MBB Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:39:32 UTC
+#> ℹ Data updated: 2026-08-25 00:22:35 UTC
 #> # A tibble: 2 × 9
 #>      id uid        display_name abbreviation logo  logos records game_id team_id
 #> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>

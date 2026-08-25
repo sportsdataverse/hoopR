@@ -143,12 +143,6 @@ list-column.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="va">prof</span> <span class="op">&lt;-</span> <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nba_tidy_player_profile</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">201939</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:57:42.747965: Invalid arguments or no player profile v2 data available for 201939!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league_id = "", per_mode = "Totals", player_id = 201939</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-08-24 20:57:42.759773: No NBA player profile for 201939!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: player_id = 201939</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: No player profile data returned</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

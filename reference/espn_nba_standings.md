@@ -128,7 +128,7 @@ Other ESPN NBA Functions:
 # \donttest{
 try(espn_nba_standings(year = 2021))
 #> ── ESPN NBA Standings Information from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:27 UTC
+#> ℹ Data updated: 2026-08-25 00:23:34 UTC
 #> # A tibble: 30 × 25
 #>    team_id team              avgpointsagainst avgpointsfor clincher differential
 #>  *   <int> <chr>                        <dbl>        <dbl>    <dbl>        <dbl>

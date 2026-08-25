@@ -118,7 +118,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_venues()
 #> ── ESPN NBA Venues from ESPN.com ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:35 UTC
+#> ℹ Data updated: 2026-08-25 00:23:42 UTC
 #> # A tibble: 648 × 9
 #>    venue_id name  full_name address_city address_state capacity indoor grass
 #>    <chr>    <chr> <chr>     <chr>        <chr>            <int> <lgl>  <lgl>

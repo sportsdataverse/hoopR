@@ -79,7 +79,7 @@ Other KenPom Ratings Functions:
 ``` r
 # \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
-#> ✖ 2026-08-24 20:40:59.38915: Invalid arguments or no player stats data for 2021 eFG available!
+#> ✖ 2026-08-25 00:24:44.684015: Invalid arguments or no player stats data for 2021 eFG available!
 #> ✖ Args: metric = "eFG", conf = NULL, conf_only = FALSE, year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

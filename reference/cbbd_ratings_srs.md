@@ -88,21 +88,21 @@ A `hoopR_data` tibble with one row per team-season:
 ``` r
 # \donttest{
   try(cbbd_ratings_srs(season = 2024))
-#> ✖ 2026-08-24 20:39:06.975834: Invalid arguments or no SRS ratings available!
+#> ✖ 2026-08-25 00:22:10.457805: Invalid arguments or no SRS ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_adjusted(season = 2024))
-#> ✖ 2026-08-24 20:39:06.985834: Invalid arguments or no adjusted ratings available!
+#> ✖ 2026-08-25 00:22:10.468554: Invalid arguments or no adjusted ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_elo(season = 2024))
-#> ✖ 2026-08-24 20:39:06.995781: Invalid arguments or no Elo ratings available!
+#> ✖ 2026-08-25 00:22:10.478802: Invalid arguments or no Elo ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

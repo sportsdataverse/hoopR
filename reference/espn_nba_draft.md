@@ -147,7 +147,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft(season = 2024)
 #> ── ESPN NBA Draft Picks from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:04 UTC
+#> ℹ Data updated: 2026-08-25 00:23:10 UTC
 #> # A tibble: 58 × 11
 #>    season round  pick overall traded trade_note status    athlete_id athlete_ref
 #>     <int> <int> <int>   <int> <lgl>  <chr>      <chr>     <chr>      <chr>      

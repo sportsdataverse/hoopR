@@ -50,7 +50,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_game_attrs(year = 2021, attr = "Excitement"))
-#> ✖ 2026-08-24 20:40:58.283688: Invalid arguments or no game attributes data for Excitement available!
+#> ✖ 2026-08-25 00:24:43.529701: Invalid arguments or no game attributes data for Excitement available!
 #> ✖ Args: year = 2021, attr = "Excitement"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

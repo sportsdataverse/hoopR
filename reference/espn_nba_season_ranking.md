@@ -127,11 +127,11 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_season_ranking(ranking_id = 1, season = 2025)
-#> ✖ 2026-08-24 20:40:25.564752: Failed to retrieve ESPN nba ranking 1 for season=2025
+#> ✖ 2026-08-25 00:23:32.222938: Failed to retrieve ESPN nba ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Season Ranking Snapshots Index ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-24 20:40:25 UTC
+#> ℹ Data updated: 2026-08-25 00:23:32 UTC
 #> # A tibble: 0 × 0
 # }
 ```
