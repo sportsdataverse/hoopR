@@ -43,7 +43,7 @@ Other CBD Conferences Functions:
 ``` r
 # \donttest{
   try(cbbd_conferences_history(conference = "B1G"))
-#> ✖ 2026-08-25 00:22:07.246404: Invalid arguments or no conference history available!
+#> ✖ 2026-08-25 01:40:38.272832: Invalid arguments or no conference history available!
 #> ✖ Args: conference = "B1G"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

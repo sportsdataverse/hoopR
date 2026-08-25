@@ -40,27 +40,12 @@ Other NBA Combined Datasets:
 ``` r
 # \donttest{
   try(nba_tidy_boxscore(game_id = "0022300061"))
-#> ── NBA player box score with team context from stats.nba.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:32:31 UTC
-#> # A tibble: 27 × 52
-#>    GAME_ID    TEAM_ID TEAM_ABBREVIATION TEAM_CITY PLAYER_ID PLAYER_NAME NICKNAME
-#>    <chr>      <chr>   <chr>             <chr>     <chr>     <chr>       <chr>   
-#>  1 0022300061 161061… LAL               Los Ange… 1627752   Taurean Pr… Taurean 
-#>  2 0022300061 161061… LAL               Los Ange… 2544      LeBron Jam… LeBron  
-#>  3 0022300061 161061… LAL               Los Ange… 203076    Anthony Da… Anthony 
-#>  4 0022300061 161061… LAL               Los Ange… 1630559   Austin Rea… Austin  
-#>  5 0022300061 161061… LAL               Los Ange… 1626156   D'Angelo R… D'Angelo
-#>  6 0022300061 161061… LAL               Los Ange… 1629060   Rui Hachim… Rui     
-#>  7 0022300061 161061… LAL               Los Ange… 1629216   Gabe Vince… Gabe    
-#>  8 0022300061 161061… LAL               Los Ange… 1629637   Jaxson Hay… Jaxson  
-#>  9 0022300061 161061… LAL               Los Ange… 1629629   Cam Reddish Cam     
-#> 10 0022300061 161061… LAL               Los Ange… 1626174   Christian … Christi…
-#> # ℹ 17 more rows
-#> # ℹ 45 more variables: START_POSITION <chr>, COMMENT <chr>, MIN <chr>,
-#> #   FGM <chr>, FGA <chr>, FG_PCT <chr>, FG3M <chr>, FG3A <chr>, FG3_PCT <chr>,
-#> #   FTM <chr>, FTA <chr>, FT_PCT <chr>, OREB <chr>, DREB <chr>, REB <chr>,
-#> #   AST <chr>, STL <chr>, BLK <chr>, TO <chr>, PF <chr>, PTS <chr>,
-#> #   PLUS_MINUS <chr>, TEAM_NAME <chr>, TEAM_ABBREVIATION_team <chr>,
-#> #   TEAM_CITY_team <chr>, MIN_team <chr>, FGM_team <chr>, FGA_team <chr>, …
+#> ✖ 2026-08-25 01:59:26.572443: Invalid arguments or no traditional boxscore v2 data for 0022300061 available!
+#> ✖ Args: game_id = "0022300061", start_period = 0, end_period = 14, start_range = 0, end_range = 0, range_type = 0
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-08-25 01:59:26.585056: No NBA box score for 0022300061!
+#> ✖ Args: game_id = "0022300061"
+#> ✖ Error: No player box score returned
+#> data frame with 0 columns and 0 rows
 # }
 ```

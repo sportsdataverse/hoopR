@@ -131,7 +131,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_week_ranking(ranking_id = 1, week = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Week Ranking Detail ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:06 UTC
+#> ℹ Data updated: 2026-08-25 01:41:34 UTC
 #> # A tibble: 25 × 19
 #>    league    season season_type  week ranking_id name  short_name type  headline
 #>    <chr>      <int>       <int> <int> <chr>      <chr> <chr>      <chr> <chr>   

@@ -155,7 +155,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_odds(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Odds (event_id=401256760) from ESPN.com ──
-#> ℹ Data updated: 2026-08-25 00:22:36 UTC
+#> ℹ Data updated: 2026-08-25 01:41:05 UTC
 #> # A tibble: 9 × 12
 #>   event_id  provider_id provider_name  details over_under spread home_money_line
 #>   <chr>     <chr>       <chr>          <chr>        <dbl>  <dbl>           <int>
@@ -175,7 +175,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_officials(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Officials (event_id=401256760) from ESPN.c
-#> ℹ Data updated: 2026-08-25 00:22:36 UTC
+#> ℹ Data updated: 2026-08-25 01:41:05 UTC
 #> # A tibble: 3 × 8
 #>   event_id  official_id full_name     display_name  position_id position_name
 #>   <chr>     <chr>       <chr>         <chr>         <chr>       <chr>        
@@ -187,7 +187,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_broadcasts(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Broadcasts (event_id=401256760) from ESPN.
-#> ℹ Data updated: 2026-08-25 00:22:36 UTC
+#> ℹ Data updated: 2026-08-25 01:41:05 UTC
 #> # A tibble: 1 × 10
 #>   event_id  broadcast_id type_id type_short_name type_long_name market_id
 #>   <chr>     <chr>        <chr>   <chr>           <chr>          <chr>    
@@ -197,7 +197,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_situation(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Situation ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:22:36 UTC
+#> ℹ Data updated: 2026-08-25 01:41:05 UTC
 #> # A tibble: 1 × 15
 #>   league                  event_id  home_timeouts_current home_timeouts_remain…¹
 #>   <chr>                   <chr>                     <int>                  <int>
@@ -213,7 +213,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_predictor(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Predictor ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:22:36 UTC
+#> ℹ Data updated: 2026-08-25 01:41:05 UTC
 #> # A tibble: 16 × 13
 #>    league        event_id name  short_name last_modified side  team_id stat_name
 #>    <chr>         <chr>    <chr> <chr>      <chr>         <chr> <chr>   <chr>    
@@ -239,7 +239,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_powerindex(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Power Index ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:22:36 UTC
+#> ℹ Data updated: 2026-08-25 01:41:06 UTC
 #> # A tibble: 2 × 4
 #>   league                  event_id  team_id ref                                 
 #>   <chr>                   <chr>     <chr>   <chr>                               

@@ -132,7 +132,7 @@ Saiem Gilani
   # MVP award id = 33
   espn_nba_award(award_id = 33, season = 2024)
 #> ── ESPN NBA Season Award Detail from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:07 UTC
+#> ℹ Data updated: 2026-08-25 01:41:36 UTC
 #> # A tibble: 1 × 9
 #>   league season award_id name  description        athlete_id team_id athlete_ref
 #>   <chr>   <int> <chr>    <chr> <chr>              <chr>      <chr>   <chr>      

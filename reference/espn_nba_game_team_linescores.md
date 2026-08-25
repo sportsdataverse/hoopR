@@ -158,7 +158,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_linescores(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Linescores ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:18 UTC
+#> ℹ Data updated: 2026-08-25 01:41:47 UTC
 #> # A tibble: 8 × 7
 #>   league event_id  team_id period value display_value source      
 #>   <chr>  <chr>     <chr>    <int> <dbl> <chr>         <chr>       
@@ -174,7 +174,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_leaders(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Leaders ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:18 UTC
+#> ℹ Data updated: 2026-08-25 01:41:47 UTC
 #> # A tibble: 48 × 11
 #>    league event_id  team_id category_name category_display category_abbrev  rank
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>           <int>
@@ -195,7 +195,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_roster(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Roster ─────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:19 UTC
+#> ℹ Data updated: 2026-08-25 01:41:47 UTC
 #> # A tibble: 0 × 5
 #> # ℹ 5 variables: league <chr>, event_id <chr>, team_id <chr>, athlete_id <chr>,
 #> #   ref <chr>
@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_statistics(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Statistics ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:19 UTC
+#> ℹ Data updated: 2026-08-25 01:41:48 UTC
 #> # A tibble: 98 × 10
 #>    league event_id  team_id category_name category_display stat_name stat_abbrev
 #>    <chr>  <chr>     <chr>   <chr>         <chr>            <chr>     <chr>      
@@ -223,7 +223,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_records(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Competitor Records ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:19 UTC
+#> ℹ Data updated: 2026-08-25 01:41:48 UTC
 #> # A tibble: 5 × 11
 #>   league event_id  team_id record_id name      abbreviation display_name       
 #>   <chr>  <chr>     <chr>   <chr>     <chr>     <chr>        <chr>              
@@ -238,7 +238,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_team_score(event_id = 401283399, team_id = 29)
 #> ── ESPN NBA Event Competitor Score ────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:19 UTC
+#> ℹ Data updated: 2026-08-25 01:41:48 UTC
 #> # A tibble: 1 × 8
 #>   league event_id  team_id value display_value winner source_id
 #>   <chr>  <chr>     <chr>   <dbl> <chr>         <lgl>  <chr>    

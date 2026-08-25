@@ -120,7 +120,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournament_season(tournament_id = 1, season = 2024)
 #> ── ESPN NBA Tournament Season Detail ──────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:23:41 UTC
+#> ℹ Data updated: 2026-08-25 01:42:09 UTC
 #> # A tibble: 1 × 8
 #>   league tournament_id season display_name   short_display_name number_of_rounds
 #>   <chr>  <chr>          <int> <chr>          <chr>                         <int>

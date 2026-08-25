@@ -36,24 +36,11 @@ Other NBA Combined Datasets:
 ``` r
 # \donttest{
   try(nba_tidy_franchise_history())
-#> ── NBA franchise history (active + defunct) from stats.nba.com ── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 00:32:32 UTC
-#> # A tibble: 89 × 16
-#>    franchise_status LEAGUE_ID TEAM_ID    TEAM_CITY TEAM_NAME START_YEAR END_YEAR
-#>    <chr>            <chr>     <chr>      <chr>     <chr>     <chr>      <chr>   
-#>  1 active           00        1610612737 Atlanta   Hawks     1949       2025    
-#>  2 active           00        1610612737 Atlanta   Hawks     1968       2025    
-#>  3 active           00        1610612737 St. Louis Hawks     1955       1967    
-#>  4 active           00        1610612737 Milwaukee Hawks     1951       1954    
-#>  5 active           00        1610612737 Tri-Citi… Blackhaw… 1949       1950    
-#>  6 active           00        1610612738 Boston    Celtics   1946       2025    
-#>  7 active           00        1610612751 Brooklyn  Nets      1976       2025    
-#>  8 active           00        1610612751 Brooklyn  Nets      2012       2025    
-#>  9 active           00        1610612751 New Jers… Nets      1977       2011    
-#> 10 active           00        1610612751 New York  Nets      1976       1976    
-#> # ℹ 79 more rows
-#> # ℹ 9 more variables: YEARS <chr>, GAMES <chr>, WINS <chr>, LOSSES <chr>,
-#> #   WIN_PCT <chr>, PO_APPEARANCES <chr>, DIV_TITLES <chr>, CONF_TITLES <chr>,
-#> #   LEAGUE_TITLES <chr>
+#> ✖ 2026-08-25 02:00:26.81979: Invalid arguments or no franchise history data available for {team_id}!
+#> ✖ Args: league_id = "00"
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-08-25 02:00:26.831768: No NBA franchise history available!
+#> ✖ Error: No franchise history returned
+#> data frame with 0 columns and 0 rows
 # }
 ```

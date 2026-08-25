@@ -44,7 +44,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_officials(year = 2021))
-#> ✖ 2026-08-25 00:24:44.207211: Invalid arguments or no officials data for 2021 available!
+#> ✖ 2026-08-25 01:42:46.806281: Invalid arguments or no officials data for 2021 available!
 #> ✖ Args: year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

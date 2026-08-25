@@ -43,7 +43,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_arenas(year = 2021))
-#> ✖ 2026-08-25 00:24:41.899912: Invalid arguments or no arenas data available!
+#> ✖ 2026-08-25 01:42:44.494029: Invalid arguments or no arenas data available!
 #> ✖ Args: year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

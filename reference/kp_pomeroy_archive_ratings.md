@@ -59,7 +59,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
-#> ✖ 2026-08-25 00:24:44.892139: Invalid arguments or no kp_pomeroy_archive_ratings data for 2018-11-22 available!
+#> ✖ 2026-08-25 01:42:47.513215: Invalid arguments or no kp_pomeroy_archive_ratings data for 2018-11-22 available!
 #> ✖ Args: date = "2018-11-22"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

@@ -45,7 +45,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_hca())
-#> ✖ 2026-08-25 00:24:43.750777: Invalid arguments or no home court advantage data available!
+#> ✖ 2026-08-25 01:42:46.372092: Invalid arguments or no home court advantage data available!
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }

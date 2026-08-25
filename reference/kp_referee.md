@@ -52,7 +52,7 @@ Other KP Misc. Functions:
 ``` r
 # \donttest{
 try(kp_referee(referee = 714363, year = 2021))
-#> ✖ 2026-08-25 00:24:45.969469: Invalid arguments or no referee data for 714363 in 2021 available!
+#> ✖ 2026-08-25 01:42:48.616701: Invalid arguments or no referee data for 714363 in 2021 available!
 #> ✖ Args: referee = 714363, year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

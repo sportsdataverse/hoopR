@@ -419,28 +419,28 @@ Other KenPom Team Functions:
 ``` r
 # \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
-#> ✖ 2026-08-25 00:24:46.43893: 2026-08-25 - No team schedule tables available for Florida St. - 2022
+#> ✖ 2026-08-25 01:42:49.111777: 2026-08-25 - No team schedule tables available for Florida St. - 2022
 #> ✖ Args: team = "Florida St.", year = 2022
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
-#> ✖ 2026-08-25 00:24:46.482547: 2026-08-25 - No Game Plan Points distribution tables available for Florida St. - 2021
+#> ✖ 2026-08-25 01:42:49.158512: 2026-08-25 - No Game Plan Points distribution tables available for Florida St. - 2021
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 00:24:46.52547: 2026-08-25 00:24:46.525194 - Florida St. - 2021 Team opponent tracker data is missing
+#> ✖ 2026-08-25 01:42:49.203758: 2026-08-25 01:42:49.203444 - Florida St. - 2021 Team opponent tracker data is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
-#> ✖ 2026-08-25 00:24:46.570752: 2026-08-25 00:24:46.570422 - No Player Data available for Florida St. in 2024
+#> ✖ 2026-08-25 01:42:49.246805: 2026-08-25 01:42:49.246503 - No Player Data available for Florida St. in 2024
 #> ✖ Args: team = "Florida St.", year = 2024
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -448,7 +448,7 @@ Other KenPom Team Functions:
 
   # \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 00:24:46.615594: 2026-08-25 00:24:46.615304 - Florida St. - 2021 minutes matrix is missing
+#> ✖ 2026-08-25 01:42:49.291184: 2026-08-25 01:42:49.290887 - Florida St. - 2021 minutes matrix is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -457,14 +457,14 @@ Other KenPom Team Functions:
 
   # \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 00:24:46.661021: 2026-08-25 00:24:46.660751 - Florida St. - 2021 team player stats are missing
+#> ✖ 2026-08-25 01:42:49.334384: 2026-08-25 01:42:49.33408 - Florida St. - 2021 team player stats are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
   # }
   # \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
-#> ✖ 2026-08-25 00:24:46.701829: 2026-08-25 00:24:46.701538 - Florida St. - 2021 Team Depth Chart is missing
+#> ✖ 2026-08-25 01:42:49.382603: 2026-08-25 01:42:49.382292 - Florida St. - 2021 Team Depth Chart is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -473,7 +473,7 @@ Other KenPom Team Functions:
 
   # \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
-#> ✖ 2026-08-25 00:24:46.743913: 2026-08-25 00:24:46.743645 - Florida St. - 2021 Team Lineups are missing
+#> ✖ 2026-08-25 01:42:49.437994: 2026-08-25 01:42:49.437658 - Florida St. - 2021 Team Lineups are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
