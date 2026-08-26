@@ -569,7 +569,8 @@ NULL
 #' @export
 #' @family NBA Video Functions
 #' @details
-#' (Possibly Defunct)
+#' Requires a real scoring-play `game_event_id` -- the default `0` is a
+#' placeholder with no clip attached and returns zero rows.
 #' ```r
 #'  nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
 #' ```
@@ -578,12 +579,6 @@ nba_videoeventsasset <- function(
     game_event_id = 0,
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
-
-  lifecycle::deprecate_warn(
-    when = "3.1.0",
-    what = "nba_videoeventsasset()",
-    details = "The videoeventsasset endpoint returns HTTP 200 but zero rows across multiple game/event IDs (2026-08-24 residential-IP probe sweep). The endpoint no longer serves NBA data; no direct replacement exists (nba_videodetailsasset() serves the analogous live data). This is a soft warning -- the call still proceeds."
-  )
 
   version <- "videoeventsasset"
   endpoint <- nba_endpoint(version)
@@ -601,11 +596,16 @@ nba_videoeventsasset <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      if ("resultSets" %in% names(resp) || "resultSet" %in% names(resp)) {
-        df_list <- nba_stats_map_result_sets(resp)
-      } else {
-        df_list <- resp
-      }
+      # Video envelope: resultSets is {Meta: {videoUrls}, playlist}, not the
+      # tabular headers/rowSet shape nba_stats_map_result_sets() expects.
+      videoUrls <- resp$resultSets$Meta$videoUrls %>%
+        data.frame() %>%
+        dplyr::as_tibble()
+      playlist <- resp$resultSets$playlist %>%
+        data.frame() %>%
+        dplyr::as_tibble()
+      df_list <- c(list(videoUrls), list(playlist))
+      names(df_list) <- c("videoUrls", "playlist")
 
     },
     error = function(e) .report_api_error(

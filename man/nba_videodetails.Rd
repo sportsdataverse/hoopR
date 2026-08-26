@@ -288,7 +288,8 @@ Use \code{nba_videodetailsasset()} instead.
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videostatus(game_date = '2023-03-10', league_id = '00')
 }\if{html}{\out{</div>}}
 
-(Possibly Defunct)
+Requires a real scoring-play \code{game_event_id} -- the default \code{0} is a
+placeholder with no clip attached and returns zero rows.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
 }\if{html}{\out{</div>}}
