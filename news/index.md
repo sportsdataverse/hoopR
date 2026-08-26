@@ -2,6 +2,8 @@
 
 ## **hoopR 3.1.0**
 
+CRAN release: 2026-08-25
+
 Development release on top of the CRAN-shipped 3.0.0 (commit
 [b76100b3](https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b)).
 Headline change is a **58-wrapper ESPN endpoint expansion** that brings

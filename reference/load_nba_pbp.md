@@ -396,7 +396,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA pbp from hoopR data repository ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 05:57:36 UTC
+#> ℹ Data updated: 2026-08-26 06:19:35 UTC
 #> # A tibble: 642,472 × 67
 #>    game_play_number        id sequence_number type_id type_text text  away_score
 #>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
@@ -421,7 +421,7 @@ load_nba_pbp(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA team_box from hoopR data repository ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 05:59:25 UTC
+#> ℹ Data updated: 2026-08-26 06:09:43 UTC
 #> # A tibble: 2,652 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
@@ -446,7 +446,7 @@ load_nba_team_box(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA player_box from hoopR data repository ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 05:59:46 UTC
+#> ℹ Data updated: 2026-08-26 06:09:55 UTC
 #> # A tibble: 34,883 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>

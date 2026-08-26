@@ -520,7 +520,7 @@ Saiem Gilani
 try(espn_mbb_game_all(game_id = 401479672))
 #> $Plays
 #> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:13 UTC
+#> ℹ Data updated: 2026-08-26 19:08:17 UTC
 #> # A tibble: 360 × 53
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -544,7 +544,7 @@ try(espn_mbb_game_all(game_id = 401479672))
 #> 
 #> $Team
 #> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:13 UTC
+#> ℹ Data updated: 2026-08-26 19:08:18 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -560,7 +560,7 @@ try(espn_mbb_game_all(game_id = 401479672))
 #> 
 #> $Player
 #> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:14 UTC
+#> ℹ Data updated: 2026-08-26 19:08:18 UTC
 #> # A tibble: 30 × 54
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -586,7 +586,7 @@ try(espn_mbb_game_all(game_id = 401479672))
 # \donttest{
 try(espn_mbb_pbp(game_id = 401479672))
 #> ── ESPN MBB Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:14 UTC
+#> ℹ Data updated: 2026-08-26 19:08:19 UTC
 #> # A tibble: 360 × 53
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -612,7 +612,7 @@ try(espn_mbb_pbp(game_id = 401479672))
 # \donttest{
 try(espn_mbb_team_box(game_id = 401479672))
 #> ── ESPN MBB Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:15 UTC
+#> ℹ Data updated: 2026-08-26 19:08:19 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -629,7 +629,7 @@ try(espn_mbb_team_box(game_id = 401479672))
 # \donttest{
 try(espn_mbb_player_box(game_id = 401479672))
 #> ── ESPN MBB Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:15 UTC
+#> ℹ Data updated: 2026-08-26 19:08:19 UTC
 #> # A tibble: 30 × 54
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -654,7 +654,7 @@ try(espn_mbb_player_box(game_id = 401479672))
 # \donttest{
 try(espn_mbb_game_rosters(game_id = 401256760))
 #> ── ESPN MBB Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:20 UTC
+#> ℹ Data updated: 2026-08-26 19:08:21 UTC
 #> # A tibble: 34 × 151
 #>    athlete_id athlete_uid  athlete_guid athlete_type    sdr first_name last_name
 #>         <int> <chr>        <chr>        <chr>         <int> <chr>      <chr>    
@@ -680,7 +680,7 @@ try(espn_mbb_game_rosters(game_id = 401256760))
 try(espn_mbb_betting(game_id = 401256760))
 #> $pickcenter
 #> ── ESPN MBB Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:21 UTC
+#> ℹ Data updated: 2026-08-26 19:08:21 UTC
 #> # A tibble: 3 × 66
 #>   details  over_under spread over_odds under_odds provider_id provider_name
 #> * <chr>         <dbl>  <dbl>     <dbl>      <dbl>       <int> <chr>        
@@ -697,7 +697,7 @@ try(espn_mbb_betting(game_id = 401256760))
 #> 
 #> $againstTheSpread
 #> ── ESPN MBB Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:21 UTC
+#> ℹ Data updated: 2026-08-26 19:08:21 UTC
 #> # A tibble: 2 × 9
 #>      id uid        display_name abbreviation logo  logos records game_id team_id
 #> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>
@@ -712,7 +712,7 @@ try(espn_mbb_betting(game_id = 401256760))
 try(espn_nba_game_all(game_id = 401283399))
 #> $Plays
 #> ── ESPN NBA Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:22 UTC
+#> ℹ Data updated: 2026-08-26 19:08:22 UTC
 #> # A tibble: 472 × 54
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -736,7 +736,7 @@ try(espn_nba_game_all(game_id = 401283399))
 #> 
 #> $Team
 #> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:22 UTC
+#> ℹ Data updated: 2026-08-26 19:08:22 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -752,7 +752,7 @@ try(espn_nba_game_all(game_id = 401283399))
 #> 
 #> $Player
 #> ── ESPN NBA Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:22 UTC
+#> ℹ Data updated: 2026-08-26 19:08:22 UTC
 #> # A tibble: 24 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -779,7 +779,7 @@ try(espn_nba_game_all(game_id = 401283399))
 # \donttest{
 try(espn_nba_pbp(game_id = 401071880))
 #> ── ESPN NBA Play-by-Play Information from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:23 UTC
+#> ℹ Data updated: 2026-08-26 19:08:24 UTC
 #> # A tibble: 475 × 54
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
@@ -805,7 +805,7 @@ try(espn_nba_pbp(game_id = 401071880))
 # \donttest{
 try(espn_nba_team_box(game_id = 401071880))
 #> ── ESPN NBA Team Box Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:23 UTC
+#> ℹ Data updated: 2026-08-26 19:08:24 UTC
 #> # A tibble: 2 × 57
 #>     game_id season season_type game_date  game_date_time      team_id team_uid  
 #>       <int>  <int>       <int> <date>     <dttm>                <int> <chr>     
@@ -823,7 +823,7 @@ try(espn_nba_team_box(game_id = 401071880))
 # \donttest{
 try(espn_nba_player_box(game_id = 401071880))
 #> ── ESPN NBA Player Box Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:24 UTC
+#> ℹ Data updated: 2026-08-26 19:08:24 UTC
 #> # A tibble: 26 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -848,18 +848,18 @@ try(espn_nba_player_box(game_id = 401071880))
 
 # \donttest{
 try(espn_nba_game_rosters(game_id = 401283399))
-#> ✖ 2026-08-25 04:52:24.539447: Invalid arguments or no game roster data for 401283399 available!
+#> ✖ 2026-08-26 19:08:25.072163: Invalid arguments or no game roster data for 401283399 available!
 #> ✖ Args: game_id = 401283399
 #> ✖ Error: ℹ In index: 1. Caused by error in `dplyr::rename()`: ! Can't rename columns that don't exist. ✖ Column `jersey` doesn't exist.
 #> ── ESPN NBA Game Roster Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:24 UTC
+#> ℹ Data updated: 2026-08-26 19:08:24 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 try(espn_nba_betting(game_id = 401283399))
 #> $pickcenter
 #> ── ESPN NBA Pickcenter Information from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:24 UTC
+#> ℹ Data updated: 2026-08-26 19:08:25 UTC
 #> # A tibble: 3 × 66
 #>   details over_under spread over_odds under_odds provider_id provider_name
 #> * <chr>        <int>  <int>     <dbl>      <dbl>       <int> <chr>        
@@ -876,7 +876,7 @@ try(espn_nba_betting(game_id = 401283399))
 #> 
 #> $againstTheSpread
 #> ── ESPN NBA Against the Spread Information from ESPN.com ──────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:24 UTC
+#> ℹ Data updated: 2026-08-26 19:08:25 UTC
 #> # A tibble: 2 × 9
 #>      id uid        display_name abbreviation logo  logos records game_id team_id
 #> * <int> <chr>      <chr>        <chr>        <chr> <lis> <list>    <int>   <int>

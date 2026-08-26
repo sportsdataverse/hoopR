@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-08-25 04:52:57 UTC
+#> ℹ Data updated: 2026-08-26 19:09:01 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -221,14 +221,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 04:52:57 UTC
+#> ℹ Data updated: 2026-08-26 19:09:01 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.97e7 Media Remberi… Rembering … 2026-08-… FALSE   NA     https:/… 46       
-#> 2  4.96e7 Story NBA Sum… The top fi… 2026-08-… FALSE   NBA i… https:/… 46       
-#> 3  4.97e7 Story Los Ang… The LeBron… 2026-08-… FALSE   NBA i… https:/… 46       
-#> 4  2.97e7 Etic… Kobe Br… The late L… 2026-08-… FALSE   NA     https:/… 46       
-#> 5  4.90e7 Story 2026 NB… We're grad… 2026-08-… FALSE   Zach … https:/… 46       
+#> 1  4.97e7 Head… TWG Glo… "TWG Globa… 2026-08-… FALSE   Alden… https:/… 10       
+#> 2  4.90e7 Story 2026 NB… "We're gra… 2026-08-… FALSE   Zach … https:/… 46       
+#> 3  4.97e7 Head… Buss br… "The Buss … 2026-08-… FALSE   Dave … https:/… 1        
+#> 4  4.96e7 Story NBA Sum… "Our Summe… 2026-08-… FALSE   NBA i… https:/… 46       
+#> 5  4.97e7 Story NBA Sum… "Our Summe… 2026-08-… FALSE   NBA i… https:/… 46       
 # }
 ```

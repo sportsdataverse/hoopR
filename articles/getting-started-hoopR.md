@@ -114,7 +114,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 30.964 sec elapsed
+    ## 30.023 sec elapsed
 
 ``` r
 
@@ -210,21 +210,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.216 sec elapsed
+    ## 3.539 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
 ```
 
-    ## 15472 rows of NBA team boxscore data from 7736 games.
+    ## 15562 rows of NBA team boxscore data from 7781 games.
 
 ``` r
 
 dplyr::glimpse(nba_team_box)
 ```
 
-    ## Rows: 15,472
+    ## Rows: 15,562
     ## Columns: 59
     ## $ game_id                           <int> 401344140, 401344140, 401344139, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -297,7 +297,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.275 sec elapsed
+    ## 4.237 sec elapsed
 
 ``` r
 
@@ -382,7 +382,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 73.739 sec elapsed
+    ## 73.303 sec elapsed
 
 ``` r
 
@@ -484,7 +484,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.533 sec elapsed
+    ## 3.714 sec elapsed
 
 ``` r
 
@@ -571,21 +571,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 8.622 sec elapsed
+    ## 10.233 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
 ```
 
-    ## 1126146 rows of men's college basketball player boxscore data from 35302 games.
+    ## 1126124 rows of men's college basketball player boxscore data from 35302 games.
 
 ``` r
 
 dplyr::glimpse(mbb_player_box)
 ```
 
-    ## Rows: 1,126,146
+    ## Rows: 1,126,124
     ## Columns: 55
     ## $ game_id                           <int> 401310865, 401310865, 401310865, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -617,7 +617,6 @@ dplyr::glimpse(mbb_player_box)
     ## $ starter                           <lgl> TRUE, TRUE, TRUE, TRUE, TRUE, FALSE,…
     ## $ ejected                           <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, F…
     ## $ did_not_play                      <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, F…
-    ## $ active                            <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, F…
     ## $ athlete_jersey                    <chr> "0", "12", "45", "31", "11", "32", "…
     ## $ athlete_short_name                <chr> "F. Thamba", "J. Butler", "D. Mitche…
     ## $ athlete_headshot_href             <chr> "https://a.espncdn.com/i/headshots/m…
@@ -642,6 +641,7 @@ dplyr::glimpse(mbb_player_box)
     ## $ opponent_team_color               <chr> "041e42", "041e42", "041e42", "041e4…
     ## $ opponent_team_alternate_color     <chr> "c8102e", "c8102e", "c8102e", "c8102…
     ## $ opponent_team_score               <int> 70, 70, 70, 70, 70, 70, 70, 70, 70, …
+    ## $ active                            <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, F…
 
 ## **Our Authors**
 

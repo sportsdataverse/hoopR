@@ -44,7 +44,7 @@ A `hoopR_data` tibble with one row per injured player:
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-25 05:13:57 UTC
+#> ℹ Data updated: 2026-08-26 19:28:21 UTC
 #> # A tibble: 78 × 10
 #>    player_id player            first_name last_name team  position injury status
 #>    <chr>     <chr>             <chr>      <chr>     <chr> <chr>    <chr>  <chr> 

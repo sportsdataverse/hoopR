@@ -279,7 +279,7 @@ back to.</p>
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 30.964 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 30.023 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 3666011 rows of nba play-by-play data from 7786 games.</span></span></code></pre>
@@ -366,13 +366,13 @@ back to.</p>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.216 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.539 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 15472 rows of NBA team boxscore data from 7736 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 15562 rows of NBA team boxscore data from 7781 games.</span></span></code></pre>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">nba_team_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 15,472</span></span>
+<pre><code><span><span class="co">## Rows: 15,562</span></span>
 <span><span class="co">## Columns: 59</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401344140<span style="color: #949494;">, </span>401344140<span style="color: #949494;">, </span>401344139<span style="color: #949494;">, </span>401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>…</span></span>
@@ -445,7 +445,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scor
 <span>  <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 3.275 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 4.237 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 204691 rows of NBA player boxscore data from 7787 games.</span></span></code></pre>
@@ -522,7 +522,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 73.739 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 73.303 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 12225017 rows of men's college basketball play-by-play data from 34523 games.</span></span></code></pre>
@@ -616,7 +616,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.533 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.714 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 70586 rows of men's college basketball team boxscore data from 35293 games.</span></span></code></pre>
@@ -695,13 +695,13 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 8.622 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 10.233 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 1126146 rows of men's college basketball player boxscore data from 35302 games.</span></span></code></pre>
+<pre><code><span><span class="co">## 1126124 rows of men's college basketball player boxscore data from 35302 games.</span></span></code></pre>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">mbb_player_box</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Rows: 1,126,146</span></span>
+<pre><code><span><span class="co">## Rows: 1,126,124</span></span>
 <span><span class="co">## Columns: 55</span></span>
 <span><span class="co">## $ game_id                           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 401310865<span style="color: #949494;">, </span>401310865<span style="color: #949494;">, </span>401310865<span style="color: #949494;">, </span>401…</span></span>
 <span><span class="co">## $ season                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>2021<span style="color: #949494;">, </span>…</span></span>
@@ -733,7 +733,6 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span><span class="co">## $ starter                           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> TRUE<span style="color: #949494;">, </span>TRUE<span style="color: #949494;">, </span>TRUE<span style="color: #949494;">, </span>TRUE<span style="color: #949494;">, </span>TRUE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">,</span>…</span></span>
 <span><span class="co">## $ ejected                           <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>F…</span></span>
 <span><span class="co">## $ did_not_play                      <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>F…</span></span>
-<span><span class="co">## $ active                            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>F…</span></span>
 <span><span class="co">## $ athlete_jersey                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "0"<span style="color: #949494;">, </span>"12"<span style="color: #949494;">, </span>"45"<span style="color: #949494;">, </span>"31"<span style="color: #949494;">, </span>"11"<span style="color: #949494;">, </span>"32"<span style="color: #949494;">, </span>"…</span></span>
 <span><span class="co">## $ athlete_short_name                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "F. Thamba"<span style="color: #949494;">, </span>"J. Butler"<span style="color: #949494;">, </span>"D. Mitche…</span></span>
 <span><span class="co">## $ athlete_headshot_href             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/headshots/m…</span></span>
@@ -757,7 +756,8 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span><span class="co">## $ opponent_team_logo                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "https://a.espncdn.com/i/teamlogos/n…</span></span>
 <span><span class="co">## $ opponent_team_color               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "041e42"<span style="color: #949494;">, </span>"041e42"<span style="color: #949494;">, </span>"041e42"<span style="color: #949494;">, </span>"041e4…</span></span>
 <span><span class="co">## $ opponent_team_alternate_color     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "c8102e"<span style="color: #949494;">, </span>"c8102e"<span style="color: #949494;">, </span>"c8102e"<span style="color: #949494;">, </span>"c8102…</span></span>
-<span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>…</span></span></code></pre>
+<span><span class="co">## $ opponent_team_score               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>70<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">## $ active                            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>FALSE<span style="color: #949494;">, </span>F…</span></span></code></pre>
 </div>
 </div>
 <div class="section level2">

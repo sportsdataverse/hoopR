@@ -206,5 +206,11 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_team_injuries(team_id = "13")
+#> ✖ 2026-08-26 19:09:01.180585: Invalid arguments or no injury data available for team 13 in nba!
+#> ✖ Args: league = "nba", team_id = "13"
+#> ✖ Error: The API returned an error
+#> ── ESPN NBA Team Injury Information from ESPN.com ─────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-08-26 19:09:01 UTC
+#> # A tibble: 0 × 0
 # }
 ```
