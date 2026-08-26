@@ -2441,9 +2441,11 @@ nba_gamerotation <- function(
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
 
+  # stats.nba.com's edge rejects this endpoint (empty 500 / stall) unless
+  # GameID precedes LeagueID in the query string; RotationStat stays last.
   params <- list(
-    LeagueID = league_id,
     GameID = pad_id(game_id),
+    LeagueID = league_id,
     RotationStat = rotation_stat
   )
 
