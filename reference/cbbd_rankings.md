@@ -67,7 +67,7 @@ A `hoopR_data` tibble with one row per ranked team per poll:
 ``` r
 # \donttest{
   try(cbbd_rankings(season = 2024, poll_type = "ap"))
-#> ✖ 2026-08-26 19:07:56.729778: Invalid arguments or no rankings data available!
+#> ✖ 2026-08-26 19:54:17.617942: Invalid arguments or no rankings data available!
 #> ✖ Args: season = 2024, season_type = NULL, week = NULL, poll_type = "ap", team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

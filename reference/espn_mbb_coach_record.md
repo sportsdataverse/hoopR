@@ -201,22 +201,22 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach Record ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:08:12 UTC
+#> ℹ Data updated: 2026-08-26 19:54:31 UTC
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 # }
 # \donttest{
   espn_nba_coach_record(coach_id = 52120, record_type = 2)
 #> ── ESPN NBA Coach Record ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:08:12 UTC
+#> ℹ Data updated: 2026-08-26 19:54:31 UTC
 #> # A tibble: 5 × 12
 #>   league coach_id record_type_id record_name    record_type    record_summary
 #>   <chr>  <chr>             <int> <chr>          <chr>          <chr>         

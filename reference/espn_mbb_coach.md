@@ -204,7 +204,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach(coach_id = 32116)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach Detail ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:08:12 UTC
+#> ℹ Data updated: 2026-08-26 19:54:30 UTC
 #> # A tibble: 1 × 12
 #>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
 #>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      
@@ -215,7 +215,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coach(coach_id = 52120)
 #> ── ESPN NBA Coach Detail ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:08:12 UTC
+#> ℹ Data updated: 2026-08-26 19:54:31 UTC
 #> # A tibble: 1 × 12
 #>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
 #>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      

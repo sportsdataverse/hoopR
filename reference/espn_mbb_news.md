@@ -203,20 +203,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:08:33 UTC
+#> ℹ Data updated: 2026-08-26 19:54:50 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.97e7 Story Project… "Predictin… 2026-08-… FALSE   Myron… https:/… 41       
-#> 2  4.97e7 Head… SEC dra… "After the… 2026-08-… FALSE   Heath… https:/… 23       
-#> 3  4.97e7 Head… RJ Luis… "A Louisia… 2026-08-… FALSE   Myron… https:/… 41       
-#> 4  4.97e7 Head… SEC: Pr… "As LSU ho… 2026-08-… FALSE   Heath… https:/… 23       
-#> 5  4.97e7 Head… Ex-Mizz… "Former Mi… 2026-08-… FALSE   Myron… https:/… 41       
+#> 1  4.97e7 Head… Sources… "SEC schoo… 2026-08-… FALSE   Mark … https:/… 28       
+#> 2  4.97e7 Story Project… "Predictin… 2026-08-… FALSE   Myron… https:/… 41       
+#> 3  4.97e7 Head… SEC dra… "After the… 2026-08-… FALSE   Heath… https:/… 23       
+#> 4  4.97e7 Head… RJ Luis… "A Louisia… 2026-08-… FALSE   Myron… https:/… 41       
+#> 5  4.97e7 Head… SEC: Pr… "As LSU ho… 2026-08-… FALSE   Heath… https:/… 23       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:08:33 UTC
+#> ℹ Data updated: 2026-08-26 19:54:50 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

@@ -344,7 +344,8 @@ by response)
 
      nba_videostatus(game_date = '2023-03-10', league_id = '00')
 
-(Possibly Defunct)
+Requires a real scoring-play `game_event_id` – the default `0` is a
+placeholder with no clip attached and returns zero rows.
 
      nba_videoeventsasset(game_id = '0021700807', game_event_id = 10)
 

@@ -352,63 +352,63 @@ Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 ``` r
 # \donttest{
 try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-26 19:09:57.828099: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!
+#> ✖ 2026-08-26 19:56:00.115546: Invalid arguments or no pomeroy ratings data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_efficiency(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-26 19:09:57.871348: Invalid arguments or no efficiency data for 2020 - 2021 available!
+#> ✖ 2026-08-26 19:56:00.173868: Invalid arguments or no efficiency data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_fourfactors(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-26 19:09:57.915465: Invalid arguments or no four factors data for 2020 - 2021 available!
+#> ✖ 2026-08-26 19:56:00.231632: Invalid arguments or no four factors data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_pointdist(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-26 19:09:57.956856: Invalid arguments or no point distribution data for 2020 - 2021 available!
+#> ✖ 2026-08-26 19:56:00.289066: Invalid arguments or no point distribution data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_height(min_year = 2020, max_year = 2021))
-#> ✖ 2026-08-26 19:09:58.008565: Invalid arguments or no height data for 2020 - 2021 available!
+#> ✖ 2026-08-26 19:56:00.345633: Invalid arguments or no height data for 2020 - 2021 available!
 #> ✖ Args: min_year = 2020, max_year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
-#> ✖ 2026-08-26 19:09:58.05144: Invalid arguments or no foul trouble data for 2020 - 2026 available!
+#> ✖ 2026-08-26 19:56:00.40874: Invalid arguments or no foul trouble data for 2020 - 2026 available!
 #> ✖ Args: min_year = 2020, max_year = 2026
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_teamstats(min_year = 2019, max_year = 2021))
-#> ✖ 2026-08-26 19:09:58.094667: Invalid arguments or no team stats data for 2019 - 2021 available!
+#> ✖ 2026-08-26 19:56:00.466027: Invalid arguments or no team stats data for 2019 - 2021 available!
 #> ✖ Args: min_year = 2019, max_year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
-#> ✖ 2026-08-26 19:09:58.139485: Invalid arguments or no player stats data for 2021 eFG available!
+#> ✖ 2026-08-26 19:56:00.522486: Invalid arguments or no player stats data for 2021 eFG available!
 #> ✖ Args: metric = "eFG", conf = NULL, conf_only = FALSE, year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
 try(kp_kpoy(year = 2026))
-#> ✖ 2026-08-26 19:09:58.180722: Invalid arguments or no KenPom player of the year data for 2026 available!
+#> ✖ 2026-08-26 19:56:00.579651: Invalid arguments or no KenPom player of the year data for 2026 available!
 #> ✖ Args: year = 2026
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
