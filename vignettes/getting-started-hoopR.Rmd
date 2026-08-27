@@ -43,13 +43,17 @@ I'm Saiem Gilani, one of the [authors](https://hoopR.sportsdataverse.org/authors
 
 ## **Install** [**`hoopR`**](https://hoopr.sportsdataverse.org/)
 ```{r install_hoopR_gs, message=FALSE,eval=FALSE}
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
-pacman::p_load(dplyr, zoo, ggimage, gt)
+pak::pak(c("dplyr", "zoo", "ggimage", "gt"))
+library(dplyr)
+library(zoo)
+library(ggimage)
+library(gt)
 ```
 
 ### **The Data**

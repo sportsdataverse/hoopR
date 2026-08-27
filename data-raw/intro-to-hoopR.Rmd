@@ -53,12 +53,18 @@ browser <- login(Sys.getenv("KP_USER"), Sys.getenv("KP_PW"))
 ### **Import libraries**
 
 ```{r load_import, warning=FALSE,  message = FALSE}
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("saiemgilani/hoopR")
-pacman::p_load(dplyr, ggplot2,animation,ggimage,png, glue)
+pak::pak("saiemgilani/hoopR")
+pak::pak(c("dplyr", "ggplot2", "animation", "ggimage", "png", "glue"))
+library(dplyr)
+library(ggplot2)
+library(animation)
+library(ggimage)
+library(png)
+library(glue)
 
 ```
 
