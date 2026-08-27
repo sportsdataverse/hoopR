@@ -318,3 +318,45 @@ The women's game runs on `wehoop`, a sibling package with the exact
 same grammar. `espn_mbb_team_roster` has a mirror image in
 `espn_wbb_team_roster`; everything you just learned crosses straight
 over. That's the WBB cookbook.
+
+# **Our Authors**
+-   [Saiem Gilani](https://x.com/saiemgilani)
+<a href='https://x.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge' alt='@saiemgilani'/></a>
+<a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>
+
+## **Our Contributors**
+-   [Jason Lee](https://x.com/theFirmAISports)
+<a href='https://x.com/theFirmAISports' target='blank'><img src='https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge' alt='@theFirmAISports'/></a>
+-   [Billy Fryer](https://x.com/BillyFryer42)
+<a href='https://x.com/BillyFryer42' target='blank'><img src='https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge' alt='@BillyFryer42'/></a>
+-   [Ross Drucker](https://x.com/rossdrucker9)
+<a href='https://x.com/rossdrucker9' target='blank'><img src='https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge' alt='@rossdrucker9'/></a>
+-   [Vladislav Shufinskiy](https://x.com/vshufinskiy)
+<a href='https://x.com/vshufinskiy' target='blank'><img src='https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=x&amp;style=for-the-badge' alt='@vshufinskiy'/></a>
+
+## **Citation**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package in publications, use:
+
+BibTex Citation
+
+```bibtex
+@misc{hoopr,
+  author = {Saiem Gilani},
+  title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data},
+  url = {https://hoopR.sportsdataverse.org/},
+  year = {2026}
+}
+```
+
+## **Related SportsDataverse packages**
+
+-   [**cfbfastR**](https://cfbfastR.sportsdataverse.org/) - college football
+-   [**hoopR**](https://hoopR.sportsdataverse.org/) - men's basketball
+-   [**wehoop**](https://wehoop.sportsdataverse.org/) - women's basketball
+-   [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
+-   [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
+-   [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
+-   [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+-   [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python package
+-   [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R meta-package
