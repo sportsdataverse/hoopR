@@ -72,14 +72,14 @@ A `hoopR_data` tibble with one row per lineup (same columns as
 ``` r
 # \donttest{
   try(cbbd_lineups_team(season = 2024, team = "Duke"))
-#> ✖ 2026-08-26 19:54:17.157689: Invalid arguments or no lineup data available for Duke!
+#> ✖ 2026-08-27 17:46:33.634761: Invalid arguments or no lineup data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke", start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_lineups_game(game_id = 5881))
-#> ✖ 2026-08-26 19:54:17.168019: Invalid arguments or no lineup data available for 5881!
+#> ✖ 2026-08-27 17:46:33.653544: Invalid arguments or no lineup data available for 5881!
 #> ✖ Args: game_id = 5881
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

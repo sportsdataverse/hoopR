@@ -147,9 +147,9 @@
 
     
     
-<div class="section level2">
-<h2 id="before-we-cook">Before we cook<a class="anchor" aria-label="anchor" href="#before-we-cook"></a>
-</h2>
+<div class="section level3">
+<h3 id="before-we-cook">Before we cook<a class="anchor" aria-label="anchor" href="#before-we-cook"></a>
+</h3>
 <p>Men’s college basketball is a sprawl – 360-odd Division I teams, a
 month of March that decides everything, and a stats culture built as
 much on tempo-free efficiency as on raw box scores. <code>hoopR</code>
@@ -160,9 +160,9 @@ can guess your way to almost anything.</strong></p>
 grammar. This one adds one new prefix – <code>kp_</code> for KenPom –
 and swaps the league token from <code>nba</code> to <code>mbb</code>.
 That’s nearly the whole diff.</p>
-<div class="section level3">
-<h3 id="the-grammar-refreshed-for-college">The grammar, refreshed for college<a class="anchor" aria-label="anchor" href="#the-grammar-refreshed-for-college"></a>
-</h3>
+<div class="section level4">
+<h4 id="the-grammar-refreshed-for-college">The grammar, refreshed for college<a class="anchor" aria-label="anchor" href="#the-grammar-refreshed-for-college"></a>
+</h4>
 <p>A <code>hoopR</code> college function answers three questions in
 order:</p>
 <ol style="list-style-type: decimal">
@@ -202,9 +202,9 @@ index.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="recipe-1-a-blue-blood-programs-season">Recipe 1: A blue-blood program’s season<a class="anchor" aria-label="anchor" href="#recipe-1-a-blue-blood-programs-season"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-1-a-blue-blood-programs-season">Recipe 1: A blue-blood program’s season<a class="anchor" aria-label="anchor" href="#recipe-1-a-blue-blood-programs-season"></a>
+</h3>
 <p><strong>The story.</strong> It’s November and you want to set the
 table for Duke’s season – schedule, roster, and where they sit.</p>
 <p>Type <code>espn_mbb_team</code> and the grammar lays out the menu for
@@ -300,9 +300,9 @@ note. Every league in <code>hoopR</code> has a
 <em>omit</em> <code>season</code> and get the current year – the
 function already knows what “now” means.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-2-the-freshman-phenom">Recipe 2: The freshman phenom<a class="anchor" aria-label="anchor" href="#recipe-2-the-freshman-phenom"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-2-the-freshman-phenom">Recipe 2: The freshman phenom<a class="anchor" aria-label="anchor" href="#recipe-2-the-freshman-phenom"></a>
+</h3>
 <p><strong>The story.</strong> Every college season has a one-and-done
 freshman everyone argues about. You want that player’s numbers.</p>
 <p>College players turn over fast – this year’s phenom is next year’s
@@ -398,9 +398,9 @@ stem. When a stem repeats across many functions, that stem is a
 same subject. Browsing by stem (<code>espn_mbb_athlete</code> + Tab) is
 often faster than searching.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-3-tempo-free-the-kenpom-way">Recipe 3: Tempo-free, the KenPom way<a class="anchor" aria-label="anchor" href="#recipe-3-tempo-free-the-kenpom-way"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-3-tempo-free-the-kenpom-way">Recipe 3: Tempo-free, the KenPom way<a class="anchor" aria-label="anchor" href="#recipe-3-tempo-free-the-kenpom-way"></a>
+</h3>
 <p><strong>The story.</strong> Box scores lie a little in college – a
 team that plays fast will pile up points without being good. You want
 <em>efficiency</em>: points per possession, not per game. That’s
@@ -433,9 +433,9 @@ each prefix promises and half the documentation becomes redundant.</p>
 <span><span class="fu"><a href="../reference/kp_pomeroy_ratings.html">kp_kpoy</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span>         <span class="co"># KenPom Player of the Year race</span></span>
 <span><span class="fu"><a href="../reference/kp_arenas.html">kp_fanmatch</a></span><span class="op">(</span>date <span class="op">=</span> <span class="st">"2025-02-01"</span><span class="op">)</span>   <span class="co"># every game on a date, win probs attached</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="recipe-4-game-flow-without-the-bracket-pressure">Recipe 4: Game flow without the bracket pressure<a class="anchor" aria-label="anchor" href="#recipe-4-game-flow-without-the-bracket-pressure"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-4-game-flow-without-the-bracket-pressure">Recipe 4: Game flow without the bracket pressure<a class="anchor" aria-label="anchor" href="#recipe-4-game-flow-without-the-bracket-pressure"></a>
+</h3>
 <p><strong>The story.</strong> A January road game went to overtime. You
 want the play- by-play and a sense of the swing.</p>
 <p>Same three zoom levels as the NBA cookbook – the grammar is
@@ -582,9 +582,9 @@ with <em>only the league token changing</em>. That’s the payoff of a
 regular grammar: a recipe you learned for the NBA transfers to college
 by editing one word.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-5-per-player-per-game-box-scores">Recipe 5: Per-player, per-game box scores<a class="anchor" aria-label="anchor" href="#recipe-5-per-player-per-game-box-scores"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-5-per-player-per-game-box-scores">Recipe 5: Per-player, per-game box scores<a class="anchor" aria-label="anchor" href="#recipe-5-per-player-per-game-box-scores"></a>
+</h3>
 <p><strong>The story.</strong> You want a single player’s line from a
 single game, tidy and long – not the whole <code>player_box</code>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
@@ -612,9 +612,9 @@ single game, tidy and long – not the whole <code>player_box</code>.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;, stat_display &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   value &lt;dbl&gt;, display_value &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="recipe-6-the-conference-race">Recipe 6: The conference race<a class="anchor" aria-label="anchor" href="#recipe-6-the-conference-race"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-6-the-conference-race">Recipe 6: The conference race<a class="anchor" aria-label="anchor" href="#recipe-6-the-conference-race"></a>
+</h3>
 <p><strong>The story.</strong> It’s February and your league is a
 three-team knife fight. You want the standings and the structure
 underneath them.</p>
@@ -688,9 +688,9 @@ pair shows up all over the package –
 list,” singular = “give me this one.” It’s the most reliable two-word
 rule in the whole grammar.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-7-march">Recipe 7: March<a class="anchor" aria-label="anchor" href="#recipe-7-march"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-7-march">Recipe 7: March<a class="anchor" aria-label="anchor" href="#recipe-7-march"></a>
+</h3>
 <p><strong>The story.</strong> It’s the only story in college
 basketball. You want the tournament.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -746,9 +746,9 @@ from <code>tournaments</code> down to one
 <em>predict</em> this family before you read it – which is the entire
 point of the cookbook.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-8-a-whole-season-in-bulk">Recipe 8: A whole season, in bulk<a class="anchor" aria-label="anchor" href="#recipe-8-a-whole-season-in-bulk"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-8-a-whole-season-in-bulk">Recipe 8: A whole season, in bulk<a class="anchor" aria-label="anchor" href="#recipe-8-a-whole-season-in-bulk"></a>
+</h3>
 <p><strong>The story.</strong> You’re done with single games. You want
 every college game of a season to model on.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
@@ -767,9 +767,9 @@ every college game of a season to model on.</p>
 <span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span>seasons <span class="op">=</span> <span class="fl">2020</span><span class="op">:</span><span class="fl">2024</span>, dbConnection <span class="op">=</span> <span class="va">con</span>, tablename <span class="op">=</span> <span class="st">"mbb_pbp"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://dbi.r-dbi.org/reference/dbDisconnect.html" class="external-link">dbDisconnect</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="working-through-a-proxy">Working through a proxy<a class="anchor" aria-label="anchor" href="#working-through-a-proxy"></a>
-</h2>
+<div class="section level3">
+<h3 id="working-through-a-proxy">Working through a proxy<a class="anchor" aria-label="anchor" href="#working-through-a-proxy"></a>
+</h3>
 <p>Campus networks love a proxy. <code>hoopR</code> handles them in
 three layers – reach for the least invasive one that works.</p>
 <p><strong>Layer 1 – set it once for the session.</strong> Covers
@@ -808,9 +808,9 @@ College basketball has no equivalent NBA-Stats-style surface, so for
 <code>mbb</code> you’ll use Layer 1 or Layer 2 every time.) The prefix,
 once again, tells you the capability before you go looking.</p>
 </div>
-<div class="section level2">
-<h2 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
-</h2>
+<div class="section level3">
+<h3 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
+</h3>
 <p>The college game has more teams, a deeper conference hierarchy, and
 the <code>kp_</code> prefix – but the grammar is identical to the NBA’s.
 You decided where the data lived, you named the league, you named the
@@ -820,6 +820,93 @@ the shared stems carry you the rest of the way.</p>
 the exact same grammar. <code>espn_mbb_team_roster</code> has a mirror
 image in <code>espn_wbb_team_roster</code>; everything you just learned
 crosses straight over. That’s the WBB cookbook.</p>
+</div>
+<div class="section level2">
+<h2 id="our-authors">
+<strong>Our Authors</strong><a class="anchor" aria-label="anchor" href="#our-authors"></a>
+</h2>
+<ul>
+<li>
+<a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>
+<a href="https://x.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge" alt="@saiemgilani"></a>
+<a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
+</li>
+</ul>
+<div class="section level3">
+<h3 id="our-contributors">
+<strong>Our Contributors</strong><a class="anchor" aria-label="anchor" href="#our-contributors"></a>
+</h3>
+<ul>
+<li>
+<a href="https://x.com/theFirmAISports" class="external-link">Jason Lee</a>
+<a href="https://x.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge" alt="@theFirmAISports"></a>
+<a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a>
+</li>
+<li>
+<a href="https://x.com/BillyFryer42" class="external-link">Billy Fryer</a>
+<a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a>
+<a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a>
+</li>
+<li>
+<a href="https://x.com/rossdrucker9" class="external-link">Ross Drucker</a>
+<a href="https://x.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge" alt="@rossdrucker9"></a>
+<a href="https://github.com/rossdrucker" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@rossdrucker"></a>
+</li>
+<li>
+<a href="https://x.com/vshufinskiy" class="external-link">Vladislav Shufinskiy</a>
+<a href="https://x.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=x&amp;style=for-the-badge" alt="@vshufinskiy"></a>
+<a href="https://github.com/shufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@shufinskiy"></a>
+</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="citation">
+<strong>Citation</strong><a class="anchor" aria-label="anchor" href="#citation"></a>
+</h3>
+<p>To cite the <a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a>
+R package in publications, use:</p>
+<p>BibTeX Citation</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">hoopr</span>,</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="dt">author</span> = {Saiem Gilani},</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="dt">title</span> = {hoopR: Access Men’s Basketball Play by Play Data.},</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="dt">url</span> = {https://hoopR.sportsdataverse.org/},</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>  <span class="dt">year</span> = {2026}</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="related-sportsdataverse-packages">
+<strong>Related SportsDataverse packages</strong><a class="anchor" aria-label="anchor" href="#related-sportsdataverse-packages"></a>
+</h3>
+<ul>
+<li>
+<a href="https://cfbfastR.sportsdataverse.org/" class="external-link"><strong>cfbfastR</strong></a>
+- college football</li>
+<li>
+<a href="https://hoopR.sportsdataverse.org/"><strong>hoopR</strong></a> -
+men’s basketball</li>
+<li>
+<a href="https://wehoop.sportsdataverse.org/" class="external-link"><strong>wehoop</strong></a> -
+women’s basketball</li>
+<li>
+<a href="https://baseballr.sportsdataverse.org/" class="external-link"><strong>baseballr</strong></a>
+- baseball</li>
+<li>
+<a href="https://fastRhockey.sportsdataverse.org/" class="external-link"><strong>fastRhockey</strong></a>
+- hockey</li>
+<li>
+<a href="https://oddsapiR.sportsdataverse.org/" class="external-link"><strong>oddsapiR</strong></a>
+- betting odds</li>
+<li>
+<a href="https://sportyR.sportsdataverse.org/" class="external-link"><strong>sportyR</strong></a>
+- playing surfaces</li>
+<li>
+<a href="https://py.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-py</strong></a>
+- the Python package</li>
+<li>
+<a href="https://r.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-R</strong></a>
+- the R meta-package</li>
+</ul>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

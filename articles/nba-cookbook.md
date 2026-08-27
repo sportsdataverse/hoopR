@@ -1,6 +1,6 @@
 # NBA Cookbook
 
-## Before we cook
+### Before we cook
 
 Every recipe in this cookbook is a small story: a question you might
 actually ask about the NBA, and the shortest honest path from that
@@ -17,7 +17,7 @@ the grammar, you can *guess* the function you need instead of hunting
 for it. That guessing skill is the real subject of this cookbook; the
 basketball is just the excuse.
 
-### The grammar of a `hoopR` function name
+#### The grammar of a `hoopR` function name
 
 Almost every function answers three questions in order:
 
@@ -55,7 +55,7 @@ library(hoopR)
 library(dplyr)
 ```
 
-## Recipe 1: One game, three levels of detail
+### Recipe 1: One game, three levels of detail
 
 **The story.** A friend texts you about last night’s game and you want
 to actually look at it – not a headline, the game itself.
@@ -87,7 +87,7 @@ exactly one word, and that word is the *grain* of the table. Whenever
 you see two functions whose names differ by a single noun, that noun is
 almost always telling you “one row per \_\_\_.”
 
-## Recipe 2: A superstar’s whole career on one screen
+### Recipe 2: A superstar’s whole career on one screen
 
 **The story.** You want to see LeBron James’s career arc – not this
 season, the whole thing – and you want it tidy enough to plot.
@@ -140,7 +140,7 @@ espn_nba_player_seasons(athlete_id = 1966)
 #> # ℹ 13 more rows
 ```
 
-## Recipe 3: Game flow and the comeback
+### Recipe 3: Game flow and the comeback
 
 **The story.** The game in Recipe 1 had a wild fourth quarter. You want
 to *see* the momentum swing.
@@ -177,7 +177,7 @@ now points you at
 [`nba_playbyplayv3()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md).
 Read the message; it is doing you a favor.)
 
-## Recipe 4: How did each player do in one game, one at a time?
+### Recipe 4: How did each player do in one game, one at a time?
 
 **The story.** You want one player’s stat line from one game, broken out
 into a tidy long table – not the whole `player_box`, just them.
@@ -238,7 +238,7 @@ espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #> #   coordinate_x <dbl>, coordinate_y <dbl>, team_ref <chr>, wallclock <chr>
 ```
 
-## Recipe 5: A team’s season at a glance
+### Recipe 5: A team’s season at a glance
 
 **The story.** You’re previewing a team and want the essentials –
 record, schedule, roster, and how they actually stack up statistically.
@@ -345,7 +345,7 @@ Notice the family resemblance: `team_season_profile`,
 (`team_season`) is the subject; the last word is the lens. Find one
 member of a family and you’ve found the whole family.
 
-## Recipe 6: The MVP leaderboard race
+### Recipe 6: The MVP leaderboard race
 
 **The story.** It’s March and you want the scoring, rebounding, and
 assist leaders – the raw material of every MVP argument.
@@ -401,7 +401,7 @@ The package mirrors the data sources honestly rather than papering one
 over the other – so you choose based on which columns you want, not on
 which name you happened to remember.
 
-## Recipe 7: Tracking a draft class
+### Recipe 7: Tracking a draft class
 
 **The story.** You want to follow a draft class – who went where, and in
 what order.
@@ -464,7 +464,7 @@ specific, left to right” rule made visible. When you find yourself
 wanting something *between* two of these, the name you want is usually
 *also* between them alphabetically and conceptually.
 
-## Recipe 8: A whole season at once, the fast way
+### Recipe 8: A whole season at once, the fast way
 
 **The story.** You don’t want one game. You want *every* game – a full
 season of play-by-play to model on.
@@ -496,7 +496,7 @@ second hands you one game live. Reach for `load_` when you’re doing
 research across many games, and for `espn_` when you want one specific,
 fresh game.
 
-## Recipe 9: Pour it straight into a database
+### Recipe 9: Pour it straight into a database
 
 **The story.** A season of play-by-play is big. You’d rather not hold it
 all in memory – you want it in a database you can query.
@@ -525,7 +525,7 @@ one teaches you all of them. When a package keeps signatures parallel
 like this, lean on it – guess the arguments the same way you guess the
 names.
 
-## Working through a proxy
+### Working through a proxy
 
 If you’re on a corporate or campus network, your traffic may need to go
 through a proxy. `hoopR` understands proxies in three layers, and you
@@ -589,7 +589,7 @@ These are read by libcurl automatically whenever you *haven’t* set an
 explicit proxy. It’s the right layer for shared scripts and CI, where
 the proxy is a property of the machine, not the analysis.
 
-## Where to go next
+### Where to go next
 
 You now have the grammar. Every recipe above was really the same trick:
 decide where the data lives (the prefix), name the league, then name the
@@ -599,3 +599,55 @@ it is *regular* – and regular things are guessable.
 When you want the men’s college game, the same grammar carries over
 almost unchanged – swap `nba` for `mbb`, meet a new prefix (`kp_` for
 KenPom), and keep cooking. That’s the MBB cookbook.
+
+## **Our Authors**
+
+- [Saiem Gilani](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
+
+### **Our Contributors**
+
+- [Jason Lee](https://x.com/theFirmAISports)
+  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
+  [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
+- [Billy Fryer](https://x.com/BillyFryer42)
+  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
+  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- [Ross Drucker](https://x.com/rossdrucker9)
+  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
+  [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
+- [Vladislav Shufinskiy](https://x.com/vshufinskiy)
+  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
+  [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
+
+### **Citation**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package
+in publications, use:
+
+BibTeX Citation
+
+``` bibtex
+@misc{hoopr,
+  author = {Saiem Gilani},
+  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  url = {https://hoopR.sportsdataverse.org/},
+  year = {2026}
+}
+```
+
+### **Related SportsDataverse packages**
+
+- [**cfbfastR**](https://cfbfastR.sportsdataverse.org/) - college
+  football
+- [**hoopR**](https://hoopR.sportsdataverse.org/) - men’s basketball
+- [**wehoop**](https://wehoop.sportsdataverse.org/) - women’s basketball
+- [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
+- [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
+- [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
+- [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+- [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python
+  package
+- [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R
+  meta-package

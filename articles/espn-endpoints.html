@@ -136,7 +136,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>ESPN basketball endpoints -- NBA &amp; MBB</h1>
                         <h4 data-toc-skip class="author">Saiem Gilani
-<br><a href="https://x.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge" alt="@saiemgilani"></a>
+<br><a href="https://x.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge" alt="@saiemgilani"></a>
 <a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
 </h4>
             
@@ -147,9 +147,9 @@
 
     
     
-<div class="section level2">
-<h2 id="what-this-vignette-covers">What this vignette covers<a class="anchor" aria-label="anchor" href="#what-this-vignette-covers"></a>
-</h2>
+<div class="section level3">
+<h3 id="what-this-vignette-covers">What this vignette covers<a class="anchor" aria-label="anchor" href="#what-this-vignette-covers"></a>
+</h3>
 <p>If you’ve used <code>hoopR</code> before, you’ve probably reached for
 <code><a href="../reference/espn_mbb_game_all.html">espn_mbb_pbp()</a></code>, <code><a href="../reference/espn_mbb_game_all.html">espn_nba_pbp()</a></code>, and the box
 score wrappers. Those get you the bulk of any analysis built around
@@ -166,9 +166,9 @@ pieces. Most of the chunks run live when the package website is built,
 so the tables below are real ESPN responses – and every one of them
 works the same way when you copy it into an interactive session.</p>
 </div>
-<div class="section level2">
-<h2 id="a-note-on-the-api-surface">A note on the API surface<a class="anchor" aria-label="anchor" href="#a-note-on-the-api-surface"></a>
-</h2>
+<div class="section level3">
+<h3 id="a-note-on-the-api-surface">A note on the API surface<a class="anchor" aria-label="anchor" href="#a-note-on-the-api-surface"></a>
+</h3>
 <p>ESPN exposes basketball data through three public, unauthenticated
 API hosts, and <code>hoopR</code> reaches into each:</p>
 <ul>
@@ -207,14 +207,14 @@ directly. Set the proxy once at the top of your session with
 authenticated proxies) and every ESPN call will pick it up
 automatically.</p>
 </div>
-<div class="section level2">
-<h2 id="whats-available-by-use-case">What’s available, by use case<a class="anchor" aria-label="anchor" href="#whats-available-by-use-case"></a>
-</h2>
+<div class="section level3">
+<h3 id="whats-available-by-use-case">What’s available, by use case<a class="anchor" aria-label="anchor" href="#whats-available-by-use-case"></a>
+</h3>
 <p>The tables below are grouped by what you’re likely trying to do.
 Function names are clickable on the pkgdown reference.</p>
-<div class="section level3">
-<h3 id="game-data">Game data<a class="anchor" aria-label="anchor" href="#game-data"></a>
-</h3>
+<div class="section level4">
+<h4 id="game-data">Game data<a class="anchor" aria-label="anchor" href="#game-data"></a>
+</h4>
 <p>These all key off <code>game_id</code> (also called
 <code>event_id</code> in some endpoints – they’re the same thing).</p>
 <table class="table">
@@ -264,9 +264,9 @@ Function names are clickable on the pkgdown reference.</p>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="scoreboard-conferences-and-league-reference">Scoreboard, conferences, and league reference<a class="anchor" aria-label="anchor" href="#scoreboard-conferences-and-league-reference"></a>
-</h3>
+<div class="section level4">
+<h4 id="scoreboard-conferences-and-league-reference">Scoreboard, conferences, and league reference<a class="anchor" aria-label="anchor" href="#scoreboard-conferences-and-league-reference"></a>
+</h4>
 <table class="table">
 <colgroup>
 <col width="50%">
@@ -324,9 +324,9 @@ Function names are clickable on the pkgdown reference.</p>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="team-detail">Team detail<a class="anchor" aria-label="anchor" href="#team-detail"></a>
-</h3>
+<div class="section level4">
+<h4 id="team-detail">Team detail<a class="anchor" aria-label="anchor" href="#team-detail"></a>
+</h4>
 <table class="table">
 <colgroup>
 <col width="50%">
@@ -395,9 +395,9 @@ Function names are clickable on the pkgdown reference.</p>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="athlete-detail">Athlete detail<a class="anchor" aria-label="anchor" href="#athlete-detail"></a>
-</h3>
+<div class="section level4">
+<h4 id="athlete-detail">Athlete detail<a class="anchor" aria-label="anchor" href="#athlete-detail"></a>
+</h4>
 <table class="table">
 <colgroup>
 <col width="50%">
@@ -474,9 +474,9 @@ Function names are clickable on the pkgdown reference.</p>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="per-event-enrichment">Per-event enrichment<a class="anchor" aria-label="anchor" href="#per-event-enrichment"></a>
-</h3>
+<div class="section level4">
+<h4 id="per-event-enrichment">Per-event enrichment<a class="anchor" aria-label="anchor" href="#per-event-enrichment"></a>
+</h4>
 <p>These take an <code>event_id</code> and complement the
 play-by-play.</p>
 <table class="table">
@@ -520,9 +520,9 @@ play-by-play.</p>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="league-wide-catalogs">League-wide catalogs<a class="anchor" aria-label="anchor" href="#league-wide-catalogs"></a>
-</h3>
+<div class="section level4">
+<h4 id="league-wide-catalogs">League-wide catalogs<a class="anchor" aria-label="anchor" href="#league-wide-catalogs"></a>
+</h4>
 <table class="table">
 <colgroup>
 <col width="50%">
@@ -577,9 +577,9 @@ play-by-play.</p>
 </tbody>
 </table>
 </div>
-<div class="section level3">
-<h3 id="nba-only-draft-free-agency-transactions">NBA-only (draft, free agency, transactions)<a class="anchor" aria-label="anchor" href="#nba-only-draft-free-agency-transactions"></a>
-</h3>
+<div class="section level4">
+<h4 id="nba-only-draft-free-agency-transactions">NBA-only (draft, free agency, transactions)<a class="anchor" aria-label="anchor" href="#nba-only-draft-free-agency-transactions"></a>
+</h4>
 <p>These three endpoints exist only on the NBA side – the NCAA does not
 run an in-league draft and ESPN tracks free agency / transactions only
 at the pro level.</p>
@@ -605,17 +605,17 @@ at the pro level.</p>
 </table>
 </div>
 </div>
-<div class="section level2">
-<h2 id="worked-examples">Worked examples<a class="anchor" aria-label="anchor" href="#worked-examples"></a>
-</h2>
+<div class="section level3">
+<h3 id="worked-examples">Worked examples<a class="anchor" aria-label="anchor" href="#worked-examples"></a>
+</h3>
 <p>The examples below use Duke (<code>team_id = 150</code>) for MBB and
 the Los Angeles Lakers (<code>team_id = 13</code>) for the NBA. Most
 ESPN team IDs and athlete IDs are easy to discover with
 <code><a href="../reference/espn_mbb_teams.html">espn_mbb_teams()</a></code> / <code><a href="../reference/espn_mbb_teams.html">espn_nba_teams()</a></code> and the
 various roster endpoints.</p>
-<div class="section level3">
-<h3 id="browsing-news-and-the-season-calendar">Browsing news and the season calendar<a class="anchor" aria-label="anchor" href="#browsing-news-and-the-season-calendar"></a>
-</h3>
+<div class="section level4">
+<h4 id="browsing-news-and-the-season-calendar">Browsing news and the season calendar<a class="anchor" aria-label="anchor" href="#browsing-news-and-the-season-calendar"></a>
+</h4>
 <p>When you’re starting a new analysis, the easiest way to confirm the
 season is active and you’re hitting current data is to pull the news
 feed and the calendar.</p>
@@ -626,14 +626,14 @@ feed and the calendar.</p>
 <span><span class="va">mbb_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_news.html">espn_mbb_news</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mbb_news</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"headline"</span>, <span class="st">"published"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
-<span><span class="co">#&gt;   headline                                                           published  </span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Sources: SEC to suspend head coaches who add pro players           2026-08-26…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Projecting every Big 12 team's floor and ceiling for 2026-27       2026-08-26…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> SEC draws rule to stop NFL, NBA, WNBA players from returning       2026-08-26…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> RJ Luis Jr., '25 Big East POY, granted injunction to play for LSU  2026-08-25…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> SEC: Pro athletes should not 'return to college competition'       2026-08-25…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Ex-Mizzou star Mitchell picks Kentucky after judge grants 5th year 2026-08-23…</span></span>
+<span><span class="co">#&gt;   headline                                                             published</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Men's college basketball recruiting: Top 25 players regardless of c… 2026-08-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Big 12 announces ban on all professionals from returning             2026-08-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Big Ten rewards commissioner Tony Petitti with five-year extension   2026-08-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Sources: SEC to suspend head coaches who add pro players             2026-08-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Projecting every Big 12 team's floor and ceiling for 2026-27         2026-08-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> SEC draws rule to stop NFL, NBA, WNBA players from returning         2026-08-…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -658,9 +658,9 @@ regular season, postseason, championship weeks, etc.), with start and
 end dates. It’s useful for filtering schedules and scoreboards down to a
 specific portion of the year.</p>
 </div>
-<div class="section level3">
-<h3 id="looking-at-a-team">Looking at a team<a class="anchor" aria-label="anchor" href="#looking-at-a-team"></a>
-</h3>
+<div class="section level4">
+<h4 id="looking-at-a-team">Looking at a team<a class="anchor" aria-label="anchor" href="#looking-at-a-team"></a>
+</h4>
 <p><code><a href="../reference/espn_mbb_team.html">espn_mbb_team()</a></code> and <code><a href="../reference/espn_mbb_team.html">espn_nba_team()</a></code> return
 a small named list with high-level identity, record, next event, and
 coaching info. Pair it with the roster, schedule, and team-leader
@@ -700,9 +700,9 @@ the <em>current</em> roster and leaders for each team, regardless of any
 <code>season</code> you pass. The argument is preserved in the function
 signature for API symmetry, but it doesn’t change the request URL.</p>
 </div>
-<div class="section level3">
-<h3 id="tracking-injuries">Tracking injuries<a class="anchor" aria-label="anchor" href="#tracking-injuries"></a>
-</h3>
+<div class="section level4">
+<h4 id="tracking-injuries">Tracking injuries<a class="anchor" aria-label="anchor" href="#tracking-injuries"></a>
+</h4>
 <p>Injury data is a soft spot in ESPN’s MBB coverage – most college
 games don’t carry an active injury report. NBA injuries are more
 reliably populated when the league is in season.</p>
@@ -718,9 +718,9 @@ reliably populated when the league is in season.</p>
 <p>If you’re building a workflow that depends on injury data, gate
 downstream code on <code>nrow(...) &gt; 0</code>.</p>
 </div>
-<div class="section level3">
-<h3 id="following-an-athlete">Following an athlete<a class="anchor" aria-label="anchor" href="#following-an-athlete"></a>
-</h3>
+<div class="section level4">
+<h4 id="following-an-athlete">Following an athlete<a class="anchor" aria-label="anchor" href="#following-an-athlete"></a>
+</h4>
 <p>The athlete endpoints are the deepest part of the surface. Pull a
 roster, pick a player, and you have biographical data, season-level
 totals, a per-game log, situational splits, and an awards history all
@@ -744,7 +744,7 @@ keyed off the same <code>athlete_id</code>.</p>
 <span><span class="va">bio</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_player_info.html">espn_mbb_player_info</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> object 'athlete_id' not found</span></span>
-<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">bio</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pillar/man/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">bio</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> object 'bio' not found</span></span>
 <span></span>
@@ -797,9 +797,9 @@ surface. Some seasons before roughly 2018 return HTTP 404, and not every
 athlete is in the index.</li>
 </ul>
 </div>
-<div class="section level3">
-<h3 id="charting-win-probability">Charting win probability<a class="anchor" aria-label="anchor" href="#charting-win-probability"></a>
-</h3>
+<div class="section level4">
+<h4 id="charting-win-probability">Charting win probability<a class="anchor" aria-label="anchor" href="#charting-win-probability"></a>
+</h4>
 <p>The combination of <code>_pbp()</code> and
 <code>_event_probabilities()</code> is the quickest way to chart a
 game’s momentum. Event <code>'401283399'</code> below is a 2024 NBA
@@ -853,9 +853,9 @@ momentum swings, or join <code>_event_officials()</code> and
 function exists for API symmetry; it’s not a bug. Win probabilities,
 officials, and broadcasts are all populated for both leagues.</p>
 </div>
-<div class="section level3">
-<h3 id="working-with-the-nba-draft-and-transactions">Working with the NBA draft and transactions<a class="anchor" aria-label="anchor" href="#working-with-the-nba-draft-and-transactions"></a>
-</h3>
+<div class="section level4">
+<h4 id="working-with-the-nba-draft-and-transactions">Working with the NBA draft and transactions<a class="anchor" aria-label="anchor" href="#working-with-the-nba-draft-and-transactions"></a>
+</h4>
 <p>The draft, free agency, and transaction logs only exist on the NBA
 side – the NCAA doesn’t have a pro-style draft on ESPN, and the transfer
 portal isn’t part of ESPN’s basketball API.</p>
@@ -883,9 +883,9 @@ portal isn’t part of ESPN’s basketball API.</p>
 is draft -&gt; free agents -&gt; transactions, joined on
 <code>athlete_id</code>.</p>
 </div>
-<div class="section level3">
-<h3 id="browsing-league-wide-catalogs">Browsing league-wide catalogs<a class="anchor" aria-label="anchor" href="#browsing-league-wide-catalogs"></a>
-</h3>
+<div class="section level4">
+<h4 id="browsing-league-wide-catalogs">Browsing league-wide catalogs<a class="anchor" aria-label="anchor" href="#browsing-league-wide-catalogs"></a>
+</h4>
 <p>Sometimes you don’t have a specific team or athlete in mind – you
 want the league-wide leaderboard, every venue, every coach, or the full
 athlete index. The catalog endpoints cover that.</p>
@@ -928,7 +928,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 616</span></span>
+<span><span class="co">#&gt; [1] 619</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>
@@ -954,18 +954,18 @@ ESPN has on record before you start a multi-season pull.</p>
 <span><span class="va">nba_s2025</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_season_info.html">espn_nba_season_info</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="core-v2-deep-expansion">Core-v2 deep expansion<a class="anchor" aria-label="anchor" href="#core-v2-deep-expansion"></a>
-</h2>
+<div class="section level3">
+<h3 id="core-v2-deep-expansion">Core-v2 deep expansion<a class="anchor" aria-label="anchor" href="#core-v2-deep-expansion"></a>
+</h3>
 <p>The post-3.0.0 release adds another ~73 ESPN core-v2 wrappers to
 <code>espn_nba_*</code> + <code>espn_mbb_*</code>, bringing the total
 ESPN basketball surface in <code>hoopR</code> to <strong>199
 functions</strong>. Everything here is shimmed over an internal
 <code>.espn_basketball_*</code> helper so NBA and MBB share parsing
 logic and bug fixes propagate to both leagues at once.</p>
-<div class="section level3">
-<h3 id="function-overview">Function overview<a class="anchor" aria-label="anchor" href="#function-overview"></a>
-</h3>
+<div class="section level4">
+<h4 id="function-overview">Function overview<a class="anchor" aria-label="anchor" href="#function-overview"></a>
+</h4>
 <table class="table">
 <colgroup>
 <col width="20%">
@@ -1328,9 +1328,9 @@ Post Season)</td>
 <p>Dashes mark families that don’t apply at ESPN for that league (no MBB
 in-league draft, no MBB depth chart endpoint).</p>
 </div>
-<div class="section level3">
-<h3 id="athlete-career-contracts-splits-and-event-log">Athlete career, contracts, splits, and event log<a class="anchor" aria-label="anchor" href="#athlete-career-contracts-splits-and-event-log"></a>
-</h3>
+<div class="section level4">
+<h4 id="athlete-career-contracts-splits-and-event-log">Athlete career, contracts, splits, and event log<a class="anchor" aria-label="anchor" href="#athlete-career-contracts-splits-and-event-log"></a>
+</h4>
 <p>Beyond the gamelog and per-season stats wrappers we shipped in the
 initial ESPN batch, the core-v2 surface adds career-level rollups,
 season-by-season indexes, and a richer event log.</p>
@@ -1378,9 +1378,9 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> nba    1966         <span style="text-decoration: underline;">2</span>017 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 13 more rows</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="franchises-tournaments-and-league-dictionaries">Franchises, tournaments, and league dictionaries<a class="anchor" aria-label="anchor" href="#franchises-tournaments-and-league-dictionaries"></a>
-</h3>
+<div class="section level4">
+<h4 id="franchises-tournaments-and-league-dictionaries">Franchises, tournaments, and league dictionaries<a class="anchor" aria-label="anchor" href="#franchises-tournaments-and-league-dictionaries"></a>
+</h4>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Franchise records are stable across relocations and rebrands.</span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_franchises.html">espn_nba_franchises</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -1469,9 +1469,9 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 1           Point Guard Point Guard  PG           TRUE  http://sports.… nba</span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="season-metadata-rankings-awards">Season metadata, rankings, awards<a class="anchor" aria-label="anchor" href="#season-metadata-rankings-awards"></a>
-</h3>
+<div class="section level4">
+<h4 id="season-metadata-rankings-awards">Season metadata, rankings, awards<a class="anchor" aria-label="anchor" href="#season-metadata-rankings-awards"></a>
+</h4>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Per-season-type leaders, long format. Default fetches RS + post.</span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_season_leaders.html">espn_nba_season_leaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
@@ -1533,9 +1533,9 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> mens-college-basketball   <span style="text-decoration: underline;">2</span>024           2 50       23      http://sports.co…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 190 more rows</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="team-season-profile-roster-and-stats">Team season profile, roster, and stats<a class="anchor" aria-label="anchor" href="#team-season-profile-roster-and-stats"></a>
-</h3>
+<div class="section level4">
+<h4 id="team-season-profile-roster-and-stats">Team season profile, roster, and stats<a class="anchor" aria-label="anchor" href="#team-season-profile-roster-and-stats"></a>
+</h4>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Per-(team x season) profile — a $ref index for that team-season's</span></span>
 <span><span class="co"># deeper resources (record, statistics, leaders, roster, ...).</span></span>
@@ -1598,9 +1598,9 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: stat_abbrev &lt;chr&gt;, stat_display &lt;chr&gt;, value &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   display_value &lt;chr&gt;, rank &lt;int&gt;, rank_display_value &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="coach-detail-coach-in-season-and-coach-career-record">Coach detail, coach-in-season, and coach career record<a class="anchor" aria-label="anchor" href="#coach-detail-coach-in-season-and-coach-career-record"></a>
-</h3>
+<div class="section level4">
+<h4 id="coach-detail-coach-in-season-and-coach-career-record">Coach detail, coach-in-season, and coach career record<a class="anchor" aria-label="anchor" href="#coach-detail-coach-in-season-and-coach-career-record"></a>
+</h4>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Coach detail (single-row).</span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_coach.html">espn_mbb_coach</a></span><span class="op">(</span>coach_id <span class="op">=</span> <span class="fl">32116</span><span class="op">)</span></span>
@@ -1634,9 +1634,9 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: record_display &lt;chr&gt;, stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   stat_display &lt;chr&gt;, value &lt;dbl&gt;, stat_display_value &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="event-meta-live-situation-predictor-power-index-prop-bets">Event meta: live situation, predictor, power index, prop bets<a class="anchor" aria-label="anchor" href="#event-meta-live-situation-predictor-power-index-prop-bets"></a>
-</h3>
+<div class="section level4">
+<h4 id="event-meta-live-situation-predictor-power-index-prop-bets">Event meta: live situation, predictor, power index, prop bets<a class="anchor" aria-label="anchor" href="#event-meta-live-situation-predictor-power-index-prop-bets"></a>
+</h4>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># All four take an event_id from espn_*_schedule() or any boxscore.</span></span>
 <span><span class="va">EID</span> <span class="op">&lt;-</span> <span class="st">"401283399"</span></span>
@@ -1684,9 +1684,9 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   decimal &lt;dbl&gt;, fraction &lt;chr&gt;, total &lt;dbl&gt;, current_target &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   last_updated &lt;chr&gt;, athlete_ref &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="event-competitor-sub-resources">Event competitor sub-resources<a class="anchor" aria-label="anchor" href="#event-competitor-sub-resources"></a>
-</h3>
+<div class="section level4">
+<h4 id="event-competitor-sub-resources">Event competitor sub-resources<a class="anchor" aria-label="anchor" href="#event-competitor-sub-resources"></a>
+</h4>
 <p>Five resource families under
 <code>events/{eid}/competitions/{cid}/competitors/{team_id}/</code>,
 each shimmed for NBA + MBB. Pair <code>team_id</code> with
@@ -1773,9 +1773,9 @@ team_id from any boxscore-style call).</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba    401283399 29        122 122           TRUE   1        </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: source_description &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="per-game-player-box-score-play-detail-and-on-court-lineups">Per-game player box score, play detail, and on-court lineups<a class="anchor" aria-label="anchor" href="#per-game-player-box-score-play-detail-and-on-court-lineups"></a>
-</h3>
+<div class="section level4">
+<h4 id="per-game-player-box-score-play-detail-and-on-court-lineups">Per-game player box score, play detail, and on-court lineups<a class="anchor" aria-label="anchor" href="#per-game-player-box-score-play-detail-and-on-court-lineups"></a>
+</h4>
 <p>This is the headline 2E.1 batch – the per-(game x player) box score
 in long format plus single-play deep dives.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
@@ -1811,9 +1811,9 @@ in long format plus single-play deep dives.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 7 variables: league &lt;chr&gt;, event_id &lt;chr&gt;, play_id &lt;chr&gt;, team_id &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   athlete_id &lt;chr&gt;, athlete_ref &lt;chr&gt;, competitor_ref &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="officials-team-records-and-the-draft">Officials, team records, and the draft<a class="anchor" aria-label="anchor" href="#officials-team-records-and-the-draft"></a>
-</h3>
+<div class="section level4">
+<h4 id="officials-team-records-and-the-draft">Officials, team records, and the draft<a class="anchor" aria-label="anchor" href="#officials-team-records-and-the-draft"></a>
+</h4>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Single official detail. The URL segment is the CREW ORDER, not the</span></span>
 <span><span class="co"># ESPN-stable official_id -- so pair this with the `order` column from</span></span>
@@ -1863,9 +1863,9 @@ in long format plus single-play deep dives.</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   position_abbrev &lt;chr&gt;, pick_overall &lt;int&gt;, pick_round &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   pick_team_id &lt;chr&gt;, athlete_ref &lt;chr&gt;, headshot &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level3">
-<h3 id="one-thing-to-know-about-default-season-types">One thing to know about default season types<a class="anchor" aria-label="anchor" href="#one-thing-to-know-about-default-season-types"></a>
-</h3>
+<div class="section level4">
+<h4 id="one-thing-to-know-about-default-season-types">One thing to know about default season types<a class="anchor" aria-label="anchor" href="#one-thing-to-know-about-default-season-types"></a>
+</h4>
 <p>Most of the new wrappers that take a <code>season_type</code>
 parameter default to <code>c(2L, 3L)</code> (regular season +
 postseason) and bind the two results into a single tibble keyed by a
@@ -1914,9 +1914,9 @@ pass <code>season_type = 2</code> to limit to regular season only.</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   athlete_ref &lt;chr&gt;, team_ref &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="whats-not-here">What’s not here<a class="anchor" aria-label="anchor" href="#whats-not-here"></a>
-</h2>
+<div class="section level3">
+<h3 id="whats-not-here">What’s not here<a class="anchor" aria-label="anchor" href="#whats-not-here"></a>
+</h3>
 <p>A few endpoints exist on ESPN but are deliberately not wrapped:</p>
 <table class="table">
 <colgroup>
@@ -1989,6 +1989,93 @@ correct, expected return than a bug. ESPN’s basketball coverage is
 uneven across leagues, seasons, and franchise tenures, and
 <code>hoopR</code> mirrors that unevenness honestly rather than papering
 over it.</p>
+</div>
+<div class="section level2">
+<h2 id="our-authors">
+<strong>Our Authors</strong><a class="anchor" aria-label="anchor" href="#our-authors"></a>
+</h2>
+<ul>
+<li>
+<a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>
+<a href="https://x.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge" alt="@saiemgilani"></a>
+<a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
+</li>
+</ul>
+<div class="section level3">
+<h3 id="our-contributors">
+<strong>Our Contributors</strong><a class="anchor" aria-label="anchor" href="#our-contributors"></a>
+</h3>
+<ul>
+<li>
+<a href="https://x.com/theFirmAISports" class="external-link">Jason Lee</a>
+<a href="https://x.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge" alt="@theFirmAISports"></a>
+<a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a>
+</li>
+<li>
+<a href="https://x.com/BillyFryer42" class="external-link">Billy Fryer</a>
+<a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a>
+<a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a>
+</li>
+<li>
+<a href="https://x.com/rossdrucker9" class="external-link">Ross Drucker</a>
+<a href="https://x.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge" alt="@rossdrucker9"></a>
+<a href="https://github.com/rossdrucker" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@rossdrucker"></a>
+</li>
+<li>
+<a href="https://x.com/vshufinskiy" class="external-link">Vladislav Shufinskiy</a>
+<a href="https://x.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=x&amp;style=for-the-badge" alt="@vshufinskiy"></a>
+<a href="https://github.com/shufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@shufinskiy"></a>
+</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="citation">
+<strong>Citation</strong><a class="anchor" aria-label="anchor" href="#citation"></a>
+</h3>
+<p>To cite the <a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a>
+R package in publications, use:</p>
+<p>BibTeX Citation</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">hoopr</span>,</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>  <span class="dt">author</span> = {Saiem Gilani},</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>  <span class="dt">title</span> = {hoopR: Access Men’s Basketball Play by Play Data.},</span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>  <span class="dt">url</span> = {https://hoopR.sportsdataverse.org/},</span>
+<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a>  <span class="dt">year</span> = {2026}</span>
+<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="related-sportsdataverse-packages">
+<strong>Related SportsDataverse packages</strong><a class="anchor" aria-label="anchor" href="#related-sportsdataverse-packages"></a>
+</h3>
+<ul>
+<li>
+<a href="https://cfbfastR.sportsdataverse.org/" class="external-link"><strong>cfbfastR</strong></a>
+- college football</li>
+<li>
+<a href="https://hoopR.sportsdataverse.org/"><strong>hoopR</strong></a> -
+men’s basketball</li>
+<li>
+<a href="https://wehoop.sportsdataverse.org/" class="external-link"><strong>wehoop</strong></a> -
+women’s basketball</li>
+<li>
+<a href="https://baseballr.sportsdataverse.org/" class="external-link"><strong>baseballr</strong></a>
+- baseball</li>
+<li>
+<a href="https://fastRhockey.sportsdataverse.org/" class="external-link"><strong>fastRhockey</strong></a>
+- hockey</li>
+<li>
+<a href="https://oddsapiR.sportsdataverse.org/" class="external-link"><strong>oddsapiR</strong></a>
+- betting odds</li>
+<li>
+<a href="https://sportyR.sportsdataverse.org/" class="external-link"><strong>sportyR</strong></a>
+- playing surfaces</li>
+<li>
+<a href="https://py.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-py</strong></a>
+- the Python package</li>
+<li>
+<a href="https://r.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-R</strong></a>
+- the R meta-package</li>
+</ul>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

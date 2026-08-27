@@ -184,7 +184,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_conferences())
 #> ── ESPN MBB Conferences Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:54:32 UTC
+#> ℹ Data updated: 2026-08-27 17:46:50 UTC
 #> # A tibble: 32 × 7
 #>    group_id conference_name conference_short_name conference_uid conference_logo
 #>       <int> <chr>           <chr>                 <chr>          <chr>          
@@ -203,10 +203,10 @@ try(espn_mbb_conferences())
 # }
 # \donttest{
   try(espn_nba_conferences())
-#> ✖ 2026-08-26 19:54:32.672686: Invalid arguments or no conferences info available!
+#> ✖ 2026-08-27 17:46:50.163504: Invalid arguments or no conferences info available!
 #> ✖ Error: `select()` doesn't handle lists.
 #> ── ESPN NBA Conferences Information from ESPN.com ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:54:32 UTC
+#> ℹ Data updated: 2026-08-27 17:46:50 UTC
 #> # A tibble: 0 × 7
 #> # ℹ 7 variables: group_id <chr>, conference_short_name <chr>,
 #> #   conference_uid <chr>, conference_name <chr>, conference_logo <chr>,

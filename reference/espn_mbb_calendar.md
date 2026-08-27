@@ -210,7 +210,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_calendar(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Calendar from ESPN.com ────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:54:29 UTC
+#> ℹ Data updated: 2026-08-27 17:46:46 UTC
 #> # A tibble: 131 × 12
 #>    season season_type season_type_label season_start_date season_end_date  
 #>    <chr>  <chr>       <chr>             <chr>             <chr>            
@@ -231,7 +231,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_calendar(season = 2025)
 #> ── ESPN NBA Calendar from ESPN.com ────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:54:30 UTC
+#> ℹ Data updated: 2026-08-27 17:46:48 UTC
 #> # A tibble: 230 × 12
 #>    season season_type season_type_label season_start_date season_end_date  
 #>    <chr>  <chr>       <chr>             <chr>             <chr>            

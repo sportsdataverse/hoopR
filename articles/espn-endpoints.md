@@ -1,6 +1,6 @@
 # ESPN basketball endpoints -- NBA & MBB
 
-## What this vignette covers
+### What this vignette covers
 
 If you’ve used `hoopR` before, you’ve probably reached for
 [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
@@ -19,7 +19,7 @@ pieces. Most of the chunks run live when the package website is built,
 so the tables below are real ESPN responses – and every one of them
 works the same way when you copy it into an interactive session.
 
-## A note on the API surface
+### A note on the API surface
 
 ESPN exposes basketball data through three public, unauthenticated API
 hosts, and `hoopR` reaches into each:
@@ -56,12 +56,12 @@ the top of your session with `options(hoopR.proxy = "http://host:port")`
 (or a list, for authenticated proxies) and every ESPN call will pick it
 up automatically.
 
-## What’s available, by use case
+### What’s available, by use case
 
 The tables below are grouped by what you’re likely trying to do.
 Function names are clickable on the pkgdown reference.
 
-### Game data
+#### Game data
 
 These all key off `game_id` (also called `event_id` in some endpoints –
 they’re the same thing).
@@ -74,7 +74,7 @@ they’re the same thing).
 | [`espn_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Player box score |
 | [`espn_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) / [`espn_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md) | Game-day rosters |
 
-### Scoreboard, conferences, and league reference
+#### Scoreboard, conferences, and league reference
 
 | Function | Returns |
 |----|----|
@@ -86,7 +86,7 @@ they’re the same thing).
 | [`espn_mbb_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md) / [`espn_nba_news()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_news.md) | League-wide news feed |
 | [`espn_mbb_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md) / [`espn_nba_calendar()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar.md) | Season calendar weeks |
 
-### Team detail
+#### Team detail
 
 | Function | Returns |
 |----|----|
@@ -99,7 +99,7 @@ they’re the same thing).
 | [`espn_mbb_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md) / [`espn_nba_team_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries.md) | Team injury report |
 | [`espn_mbb_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md) / [`espn_nba_injuries()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_injuries.md) | League-wide injury report |
 
-### Athlete detail
+#### Athlete detail
 
 | Function | Returns |
 |----|----|
@@ -113,7 +113,7 @@ they’re the same thing).
 | [`espn_mbb_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) / [`espn_nba_player_statisticslog()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_overview.md) | Stats log (core-v2) |
 | [`espn_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) / [`espn_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_stats.md) | Cross-athlete season stats |
 
-### Per-event enrichment
+#### Per-event enrichment
 
 These take an `event_id` and complement the play-by-play.
 
@@ -124,7 +124,7 @@ These take an `event_id` and complement the play-by-play.
 | [`espn_mbb_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_officials()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) | Officials |
 | [`espn_mbb_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) / [`espn_nba_game_broadcasts()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds.md) | Broadcast outlets |
 
-### League-wide catalogs
+#### League-wide catalogs
 
 | Function | Returns |
 |----|----|
@@ -135,7 +135,7 @@ These take an `event_id` and complement the play-by-play.
 | [`espn_mbb_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md) / [`espn_nba_seasons()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons.md) | Seasons on record |
 | [`espn_mbb_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md) / [`espn_nba_season_info()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info.md) | Single-season metadata |
 
-### NBA-only (draft, free agency, transactions)
+#### NBA-only (draft, free agency, transactions)
 
 These three endpoints exist only on the NBA side – the NCAA does not run
 an in-league draft and ESPN tracks free agency / transactions only at
@@ -147,7 +147,7 @@ the pro level.
 | [`espn_nba_freeagents()`](https://hoopR.sportsdataverse.org/reference/espn_nba_freeagents.md) | Free agents (during the FA window) |
 | [`espn_nba_transactions()`](https://hoopR.sportsdataverse.org/reference/espn_nba_transactions.md) | Transactions log |
 
-## Worked examples
+### Worked examples
 
 The examples below use Duke (`team_id = 150`) for MBB and the Los
 Angeles Lakers (`team_id = 13`) for the NBA. Most ESPN team IDs and
@@ -157,7 +157,7 @@ athlete IDs are easy to discover with
 [`espn_nba_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md)
 and the various roster endpoints.
 
-### Browsing news and the season calendar
+#### Browsing news and the season calendar
 
 When you’re starting a new analysis, the easiest way to confirm the
 season is active and you’re hitting current data is to pull the news
@@ -171,14 +171,14 @@ library(hoopR)
 mbb_news <- espn_mbb_news(limit = 10)
 head(mbb_news[, c("headline", "published")])
 #> # A tibble: 6 × 2
-#>   headline                                                           published  
-#>   <chr>                                                              <chr>      
-#> 1 Sources: SEC to suspend head coaches who add pro players           2026-08-26…
-#> 2 Projecting every Big 12 team's floor and ceiling for 2026-27       2026-08-26…
-#> 3 SEC draws rule to stop NFL, NBA, WNBA players from returning       2026-08-26…
-#> 4 RJ Luis Jr., '25 Big East POY, granted injunction to play for LSU  2026-08-25…
-#> 5 SEC: Pro athletes should not 'return to college competition'       2026-08-25…
-#> 6 Ex-Mizzou star Mitchell picks Kentucky after judge grants 5th year 2026-08-23…
+#>   headline                                                             published
+#>   <chr>                                                                <chr>    
+#> 1 Men's college basketball recruiting: Top 25 players regardless of c… 2026-08-…
+#> 2 Big 12 announces ban on all professionals from returning             2026-08-…
+#> 3 Big Ten rewards commissioner Tony Petitti with five-year extension   2026-08-…
+#> 4 Sources: SEC to suspend head coaches who add pro players             2026-08-…
+#> 5 Projecting every Big 12 team's floor and ceiling for 2026-27         2026-08-…
+#> 6 SEC draws rule to stop NFL, NBA, WNBA players from returning         2026-08-…
 
 # 2025 MBB season calendar
 mbb_cal <- espn_mbb_calendar(season = 2025)
@@ -205,7 +205,7 @@ regular season, postseason, championship weeks, etc.), with start and
 end dates. It’s useful for filtering schedules and scoreboards down to a
 specific portion of the year.
 
-### Looking at a team
+#### Looking at a team
 
 [`espn_mbb_team()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
 and
@@ -251,7 +251,7 @@ A small caveat on the roster and leaders endpoints: ESPN serves only the
 you pass. The argument is preserved in the function signature for API
 symmetry, but it doesn’t change the request URL.
 
-### Tracking injuries
+#### Tracking injuries
 
 Injury data is a soft spot in ESPN’s MBB coverage – most college games
 don’t carry an active injury report. NBA injuries are more reliably
@@ -272,7 +272,7 @@ mbb_inj <- espn_mbb_injuries(season = 2025)
 If you’re building a workflow that depends on injury data, gate
 downstream code on `nrow(...) > 0`.
 
-### Following an athlete
+#### Following an athlete
 
 The athlete endpoints are the deepest part of the surface. Pull a
 roster, pick a player, and you have biographical data, season-level
@@ -349,7 +349,7 @@ A few things to know about the athlete endpoints:
   of the surface. Some seasons before roughly 2018 return HTTP 404, and
   not every athlete is in the index.
 
-### Charting win probability
+#### Charting win probability
 
 The combination of `_pbp()` and `_event_probabilities()` is the quickest
 way to chart a game’s momentum. Event `'401283399'` below is a 2024 NBA
@@ -413,7 +413,7 @@ always returns an empty tibble. The function exists for API symmetry;
 it’s not a bug. Win probabilities, officials, and broadcasts are all
 populated for both leagues.
 
-### Working with the NBA draft and transactions
+#### Working with the NBA draft and transactions
 
 The draft, free agency, and transaction logs only exist on the NBA side
 – the NCAA doesn’t have a pro-style draft on ESPN, and the transfer
@@ -445,7 +445,7 @@ nrow(fa)
 If you’re stitching together a roster history, the natural sequence is
 draft -\> free agents -\> transactions, joined on `athlete_id`.
 
-### Browsing league-wide catalogs
+#### Browsing league-wide catalogs
 
 Sometimes you don’t have a specific team or athlete in mind – you want
 the league-wide leaderboard, every venue, every coach, or the full
@@ -494,7 +494,7 @@ nba_athletes <- espn_nba_athletes_index(
   season = 2025, active = TRUE, limit = 5000
 )
 nrow(nba_athletes)
-#> [1] 616
+#> [1] 619
 head(nba_athletes[, c("display_name", "position_name", "team_name")])
 #> Error in `nba_athletes[, c("display_name", "position_name", "team_name")]`:
 #> ! Can't subset columns that don't exist.
@@ -524,7 +524,7 @@ head(nba_seasons[, c("year", "start_date", "end_date")])
 nba_s2025 <- espn_nba_season_info(season = 2025)
 ```
 
-## Core-v2 deep expansion
+### Core-v2 deep expansion
 
 The post-3.0.0 release adds another ~73 ESPN core-v2 wrappers to
 `espn_nba_*` + `espn_mbb_*`, bringing the total ESPN basketball surface
@@ -532,7 +532,7 @@ in `hoopR` to **199 functions**. Everything here is shimmed over an
 internal `.espn_basketball_*` helper so NBA and MBB share parsing logic
 and bug fixes propagate to both leagues at once.
 
-### Function overview
+#### Function overview
 
 | Tier | Family | NBA | MBB | What it gives you |
 |----|----|----|----|----|
@@ -582,7 +582,7 @@ and bug fixes propagate to both leagues at once.
 Dashes mark families that don’t apply at ESPN for that league (no MBB
 in-league draft, no MBB depth chart endpoint).
 
-### Athlete career, contracts, splits, and event log
+#### Athlete career, contracts, splits, and event log
 
 Beyond the gamelog and per-season stats wrappers we shipped in the
 initial ESPN batch, the core-v2 surface adds career-level rollups,
@@ -634,7 +634,7 @@ espn_nba_player_seasons(athlete_id = 1966)
 #> # ℹ 13 more rows
 ```
 
-### Franchises, tournaments, and league dictionaries
+#### Franchises, tournaments, and league dictionaries
 
 ``` r
 
@@ -726,7 +726,7 @@ espn_nba_position(position_id = 1)
 #> 1 1           Point Guard Point Guard  PG           TRUE  http://sports.… nba
 ```
 
-### Season metadata, rankings, awards
+#### Season metadata, rankings, awards
 
 ``` r
 
@@ -791,7 +791,7 @@ espn_mbb_season_group_teams(group_id = 50, season = 2024, season_type = 2)
 #> # ℹ 190 more rows
 ```
 
-### Team season profile, roster, and stats
+#### Team season profile, roster, and stats
 
 ``` r
 
@@ -857,7 +857,7 @@ espn_mbb_team_season_statistics(team_id = 150, season = 2024,
 #> #   display_value <chr>, rank <int>, rank_display_value <chr>
 ```
 
-### Coach detail, coach-in-season, and coach career record
+#### Coach detail, coach-in-season, and coach career record
 
 ``` r
 
@@ -894,7 +894,7 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```
 
-### Event meta: live situation, predictor, power index, prop bets
+#### Event meta: live situation, predictor, power index, prop bets
 
 ``` r
 
@@ -945,7 +945,7 @@ espn_nba_game_propbets(event_id = EID, provider_id = 58)
 #> #   last_updated <chr>, athlete_ref <chr>
 ```
 
-### Event competitor sub-resources
+#### Event competitor sub-resources
 
 Five resource families under
 `events/{eid}/competitions/{cid}/competitors/{team_id}/`, each shimmed
@@ -1035,7 +1035,7 @@ espn_nba_game_team_score(event_id = EID, team_id = TID)
 #> # ℹ 1 more variable: source_description <chr>
 ```
 
-### Per-game player box score, play detail, and on-court lineups
+#### Per-game player box score, play detail, and on-court lineups
 
 This is the headline 2E.1 batch – the per-(game x player) box score in
 long format plus single-play deep dives.
@@ -1075,7 +1075,7 @@ espn_nba_game_play_personnel(event_id = EID, play_id = PID)
 #> #   athlete_id <chr>, athlete_ref <chr>, competitor_ref <chr>
 ```
 
-### Officials, team records, and the draft
+#### Officials, team records, and the draft
 
 ``` r
 
@@ -1128,7 +1128,7 @@ espn_nba_draft_athlete_detail(season = 2024, athlete_id = 108206)
 #> #   pick_team_id <chr>, athlete_ref <chr>, headshot <chr>
 ```
 
-### One thing to know about default season types
+#### One thing to know about default season types
 
 Most of the new wrappers that take a `season_type` parameter default to
 `c(2L, 3L)` (regular season + postseason) and bind the two results into
@@ -1179,7 +1179,7 @@ espn_nba_season_leaders(season = 2024)
 #> #   athlete_ref <chr>, team_ref <chr>
 ```
 
-## What’s not here
+### What’s not here
 
 A few endpoints exist on ESPN but are deliberately not wrapped:
 
@@ -1211,3 +1211,55 @@ When something looks off, an empty tibble is far more often the correct,
 expected return than a bug. ESPN’s basketball coverage is uneven across
 leagues, seasons, and franchise tenures, and `hoopR` mirrors that
 unevenness honestly rather than papering over it.
+
+## **Our Authors**
+
+- [Saiem Gilani](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
+
+### **Our Contributors**
+
+- [Jason Lee](https://x.com/theFirmAISports)
+  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
+  [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
+- [Billy Fryer](https://x.com/BillyFryer42)
+  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
+  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- [Ross Drucker](https://x.com/rossdrucker9)
+  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
+  [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
+- [Vladislav Shufinskiy](https://x.com/vshufinskiy)
+  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
+  [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
+
+### **Citation**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package
+in publications, use:
+
+BibTeX Citation
+
+``` bibtex
+@misc{hoopr,
+  author = {Saiem Gilani},
+  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  url = {https://hoopR.sportsdataverse.org/},
+  year = {2026}
+}
+```
+
+### **Related SportsDataverse packages**
+
+- [**cfbfastR**](https://cfbfastR.sportsdataverse.org/) - college
+  football
+- [**hoopR**](https://hoopR.sportsdataverse.org/) - men’s basketball
+- [**wehoop**](https://wehoop.sportsdataverse.org/) - women’s basketball
+- [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
+- [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
+- [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
+- [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+- [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python
+  package
+- [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R
+  meta-package

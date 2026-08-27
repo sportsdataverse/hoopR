@@ -1,6 +1,6 @@
 # KenPom Example Functions
 
-## Ratings Table Function examples
+### Ratings Table Function examples
 
 ``` r
 
@@ -22,7 +22,7 @@ playerstats <- kp_playerstats(metric = 'eFG', conf_only = FALSE, year = 2020)
 kpoy <- kp_kpoy(year = 2020)
 ```
 
-## Team Tables
+### Team Tables
 
 ``` r
 
@@ -48,7 +48,7 @@ team_depth_chart <- kp_team_depth_chart(team = 'Florida St.', year = 2020)
 team_lineups <- kp_team_lineups(team = 'Florida St.', year = 2020)
 ```
 
-## Historical Tables
+### Historical Tables
 
 ``` r
 
@@ -72,7 +72,7 @@ conf_stats <- kp_confstats(year = '2020')
 conf_history <- kp_confhistory(conf = 'ACC')
 ```
 
-## Miscellaneous Stats Tables
+### Miscellaneous Stats Tables
 
 ``` r
 
@@ -93,3 +93,55 @@ game_attrs <- kp_game_attrs(year = 2020, attr = "Excitement")
 
 fanmatch <- kp_fanmatch(date = "2020-03-10")
 ```
+
+## **Our Authors**
+
+- [Saiem Gilani](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
+
+### **Our Contributors**
+
+- [Jason Lee](https://x.com/theFirmAISports)
+  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
+  [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
+- [Billy Fryer](https://x.com/BillyFryer42)
+  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
+  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- [Ross Drucker](https://x.com/rossdrucker9)
+  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
+  [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
+- [Vladislav Shufinskiy](https://x.com/vshufinskiy)
+  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
+  [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
+
+### **Citation**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package
+in publications, use:
+
+BibTeX Citation
+
+``` bibtex
+@misc{hoopr,
+  author = {Saiem Gilani},
+  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  url = {https://hoopR.sportsdataverse.org/},
+  year = {2026}
+}
+```
+
+### **Related SportsDataverse packages**
+
+- [**cfbfastR**](https://cfbfastR.sportsdataverse.org/) - college
+  football
+- [**hoopR**](https://hoopR.sportsdataverse.org/) - men’s basketball
+- [**wehoop**](https://wehoop.sportsdataverse.org/) - women’s basketball
+- [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
+- [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
+- [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
+- [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+- [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python
+  package
+- [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R
+  meta-package

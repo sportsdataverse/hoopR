@@ -1,6 +1,6 @@
 # Men's College Basketball Cookbook
 
-## Before we cook
+### Before we cook
 
 Men’s college basketball is a sprawl – 360-odd Division I teams, a month
 of March that decides everything, and a stats culture built as much on
@@ -13,7 +13,7 @@ If you’ve read the NBA cookbook, you already know most of the grammar.
 This one adds one new prefix – `kp_` for KenPom – and swaps the league
 token from `nba` to `mbb`. That’s nearly the whole diff.
 
-### The grammar, refreshed for college
+#### The grammar, refreshed for college
 
 A `hoopR` college function answers three questions in order:
 
@@ -42,7 +42,7 @@ library(hoopR)
 library(dplyr)
 ```
 
-## Recipe 1: A blue-blood program’s season
+### Recipe 1: A blue-blood program’s season
 
 **The story.** It’s November and you want to set the table for Duke’s
 season – schedule, roster, and where they sit.
@@ -143,7 +143,7 @@ functions use it as their default `season` argument. So most of the time
 you can simply *omit* `season` and get the current year – the function
 already knows what “now” means.
 
-## Recipe 2: The freshman phenom
+### Recipe 2: The freshman phenom
 
 **The story.** Every college season has a one-and-done freshman everyone
 argues about. You want that player’s numbers.
@@ -244,7 +244,7 @@ functions, that stem is a *namespace* – a promise that everything under
 it is about the same subject. Browsing by stem (`espn_mbb_athlete` +
 Tab) is often faster than searching.
 
-## Recipe 3: Tempo-free, the KenPom way
+### Recipe 3: Tempo-free, the KenPom way
 
 **The story.** Box scores lie a little in college – a team that plays
 fast will pile up points without being good. You want *efficiency*:
@@ -286,7 +286,7 @@ kp_kpoy(year = 2025)         # KenPom Player of the Year race
 kp_fanmatch(date = "2025-02-01")   # every game on a date, win probs attached
 ```
 
-## Recipe 4: Game flow without the bracket pressure
+### Recipe 4: Game flow without the bracket pressure
 
 **The story.** A January road game went to overtime. You want the play-
 by-play and a sense of the swing.
@@ -438,7 +438,7 @@ If you read the NBA cookbook, you’ve now seen `espn_*_game_all`,
 grammar: a recipe you learned for the NBA transfers to college by
 editing one word.
 
-## Recipe 5: Per-player, per-game box scores
+### Recipe 5: Per-player, per-game box scores
 
 **The story.** You want a single player’s line from a single game, tidy
 and long – not the whole `player_box`.
@@ -470,7 +470,7 @@ espn_mbb_game_player_box(
 #> #   value <dbl>, display_value <chr>
 ```
 
-## Recipe 6: The conference race
+### Recipe 6: The conference race
 
 **The story.** It’s February and your league is a three-team knife
 fight. You want the standings and the structure underneath them.
@@ -546,7 +546,7 @@ package – `franchises`/`franchise`, `tournaments`/`tournament`,
 `positions`/`position`. Plural = “give me the list,” singular = “give me
 this one.” It’s the most reliable two-word rule in the whole grammar.
 
-## Recipe 7: March
+### Recipe 7: March
 
 **The story.** It’s the only story in college basketball. You want the
 tournament.
@@ -606,7 +606,7 @@ from `tournaments` down to one `tournament_season`. By now you should be
 able to *predict* this family before you read it – which is the entire
 point of the cookbook.
 
-## Recipe 8: A whole season, in bulk
+### Recipe 8: A whole season, in bulk
 
 **The story.** You’re done with single games. You want every college
 game of a season to model on.
@@ -633,7 +633,7 @@ load_mbb_pbp(seasons = 2020:2024, dbConnection = con, tablename = "mbb_pbp")
 dbDisconnect(con)
 ```
 
-## Working through a proxy
+### Working through a proxy
 
 Campus networks love a proxy. `hoopR` handles them in three layers –
 reach for the least invasive one that works.
@@ -680,7 +680,7 @@ Stats API functions *do* accept per-call `proxy =`, because they thread
 surface, so for `mbb` you’ll use Layer 1 or Layer 2 every time.) The
 prefix, once again, tells you the capability before you go looking.
 
-## Where to go next
+### Where to go next
 
 The college game has more teams, a deeper conference hierarchy, and the
 `kp_` prefix – but the grammar is identical to the NBA’s. You decided
@@ -692,3 +692,55 @@ The women’s game runs on `wehoop`, a sibling package with the exact same
 grammar. `espn_mbb_team_roster` has a mirror image in
 `espn_wbb_team_roster`; everything you just learned crosses straight
 over. That’s the WBB cookbook.
+
+## **Our Authors**
+
+- [Saiem Gilani](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
+  [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
+
+### **Our Contributors**
+
+- [Jason Lee](https://x.com/theFirmAISports)
+  [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
+  [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
+- [Billy Fryer](https://x.com/BillyFryer42)
+  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
+  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- [Ross Drucker](https://x.com/rossdrucker9)
+  [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
+  [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
+- [Vladislav Shufinskiy](https://x.com/vshufinskiy)
+  [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
+  [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
+
+### **Citation**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package
+in publications, use:
+
+BibTeX Citation
+
+``` bibtex
+@misc{hoopr,
+  author = {Saiem Gilani},
+  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  url = {https://hoopR.sportsdataverse.org/},
+  year = {2026}
+}
+```
+
+### **Related SportsDataverse packages**
+
+- [**cfbfastR**](https://cfbfastR.sportsdataverse.org/) - college
+  football
+- [**hoopR**](https://hoopR.sportsdataverse.org/) - men’s basketball
+- [**wehoop**](https://wehoop.sportsdataverse.org/) - women’s basketball
+- [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
+- [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
+- [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
+- [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+- [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python
+  package
+- [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R
+  meta-package

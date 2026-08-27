@@ -40,13 +40,17 @@ show you some of what you can do with this edition of the package.
 
 ``` r
 
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
+# You can install using the pak package using the following code:
+if (!requireNamespace('pak', quietly = TRUE)){
+  install.packages('pak')
 }
-pacman::p_load_current_gh("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
+pak::pak("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
-pacman::p_load(dplyr, zoo, ggimage, gt)
+pak::pak(c("dplyr", "zoo", "ggimage", "gt"))
+library(dplyr)
+library(zoo)
+library(ggimage)
+library(gt)
 ```
 
 #### **The Data**
@@ -114,7 +118,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 28.405 sec elapsed
+    ## 33.402 sec elapsed
 
 ``` r
 
@@ -210,7 +214,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.561 sec elapsed
+    ## 2.478 sec elapsed
 
 ``` r
 
@@ -297,7 +301,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.468 sec elapsed
+    ## 3.56 sec elapsed
 
 ``` r
 
@@ -382,7 +386,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 67.679 sec elapsed
+    ## 77.748 sec elapsed
 
 ``` r
 
@@ -484,7 +488,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.887 sec elapsed
+    ## 3.142 sec elapsed
 
 ``` r
 
@@ -571,7 +575,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.736 sec elapsed
+    ## 9.747 sec elapsed
 
 ``` r
 
@@ -649,20 +653,48 @@ dplyr::glimpse(mbb_player_box)
   [![@saiemgilani](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
   [![@saiemgilani](https://img.shields.io/github/followers/saiemgilani?color=eee&logo=Github&style=for-the-badge)](https://github.com/saiemgilani)
 
-### **Our Contributors (they’re awesome)**
+### **Our Contributors**
 
 - [Jason Lee](https://x.com/theFirmAISports)
   [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
-
 - [Billy Fryer](https://x.com/BillyFryer42)
   [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
   [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
-
 - [Ross Drucker](https://x.com/rossdrucker9)
   [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
-
 - [Vladislav Shufinskiy](https://x.com/vshufinskiy)
   [![@vshufinskiy](https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge)](https://x.com/vshufinskiy)
   [![@shufinskiy](https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge)](https://github.com/shufinskiy)
+
+### **Citation**
+
+To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org/) R package
+in publications, use:
+
+BibTeX Citation
+
+``` bibtex
+@misc{hoopr,
+  author = {Saiem Gilani},
+  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  url = {https://hoopR.sportsdataverse.org/},
+  year = {2026}
+}
+```
+
+### **Related SportsDataverse packages**
+
+- [**cfbfastR**](https://cfbfastR.sportsdataverse.org/) - college
+  football
+- [**hoopR**](https://hoopR.sportsdataverse.org/) - men’s basketball
+- [**wehoop**](https://wehoop.sportsdataverse.org/) - women’s basketball
+- [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
+- [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
+- [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
+- [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+- [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python
+  package
+- [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R
+  meta-package

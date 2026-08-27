@@ -156,9 +156,9 @@ recruiting, the transfer portal, the NBA draft, and reference data for
 teams, venues and conferences.</p>
 <p>Every wrapper returns a tidy <code>hoopR_data</code> tibble and
 prints its usage with the shared hoopR theming.</p>
-<div class="section level2">
-<h2 id="registering-an-api-key">Registering an API key<a class="anchor" aria-label="anchor" href="#registering-an-api-key"></a>
-</h2>
+<div class="section level3">
+<h3 id="registering-an-api-key">Registering an API key<a class="anchor" aria-label="anchor" href="#registering-an-api-key"></a>
+</h3>
 <p>The CollegeBasketballData API requires a free Bearer-token API key.
 Request one at <a href="https://collegebasketballdata.com/key" class="external-link">collegebasketballdata.com/key</a>,
 then store it as the <code>CBBD_API_KEY</code> environment variable. The
@@ -179,9 +179,9 @@ easiest way is to add it to your <code>.Renviron</code> file:</p>
 <span></span>
 <span><span class="op">?</span><span class="va">register_cbbd</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="reference-data-conferences-teams-venues">Reference data: conferences, teams, venues<a class="anchor" aria-label="anchor" href="#reference-data-conferences-teams-venues"></a>
-</h2>
+<div class="section level3">
+<h3 id="reference-data-conferences-teams-venues">Reference data: conferences, teams, venues<a class="anchor" aria-label="anchor" href="#reference-data-conferences-teams-venues"></a>
+</h3>
 <p>Start with the lookups you will use to filter the other endpoints.
 The <code>id</code> values returned here are the CollegeBasketballData
 ids consumed elsewhere; <code>source_id</code> holds the matching ESPN
@@ -198,9 +198,9 @@ id.</p>
 <span><span class="co"># Venues</span></span>
 <span><span class="fu"><a href="../reference/cbbd_venues.html">cbbd_venues</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="games-and-box-scores">Games and box scores<a class="anchor" aria-label="anchor" href="#games-and-box-scores"></a>
-</h2>
+<div class="section level3">
+<h3 id="games-and-box-scores">Games and box scores<a class="anchor" aria-label="anchor" href="#games-and-box-scores"></a>
+</h3>
 <p><code><a href="../reference/cbbd_games_media.html">cbbd_games()</a></code> returns the schedule/results; the
 <code>*_teams</code> and <code>*_players</code> variants return team-
 and player-level box scores. <code><a href="../reference/cbbd_games_media.html">cbbd_scoreboard()</a></code> returns live
@@ -219,9 +219,9 @@ and same-day games (so it is empty in the off-season).</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">game_id</span> <span class="op">&lt;-</span> <span class="va">games</span><span class="op">$</span><span class="va">id</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="play-by-play">Play-by-play<a class="anchor" aria-label="anchor" href="#play-by-play"></a>
-</h2>
+<div class="section level3">
+<h3 id="play-by-play">Play-by-play<a class="anchor" aria-label="anchor" href="#play-by-play"></a>
+</h3>
 <p>Pull play-by-play by game, by player, by team, by date, or by
 tournament. Pass <code>shooting_plays_only = TRUE</code> to restrict to
 shot events.</p>
@@ -235,17 +235,17 @@ shot events.</p>
 <span><span class="co"># Reference: the list of play types</span></span>
 <span><span class="fu"><a href="../reference/cbbd_play_types.html">cbbd_play_types</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="substitutions">Substitutions<a class="anchor" aria-label="anchor" href="#substitutions"></a>
-</h2>
+<div class="section level3">
+<h3 id="substitutions">Substitutions<a class="anchor" aria-label="anchor" href="#substitutions"></a>
+</h3>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_game</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_substitutions_game.html">cbbd_substitutions_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">160</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="team-and-player-statistics">Team and player statistics<a class="anchor" aria-label="anchor" href="#team-and-player-statistics"></a>
-</h2>
+<div class="section level3">
+<h3 id="team-and-player-statistics">Team and player statistics<a class="anchor" aria-label="anchor" href="#team-and-player-statistics"></a>
+</h3>
 <p>Season aggregates for teams and players, plus dedicated shooting
 splits and a team leaderboard. Nested statistic objects are flattened
 into prefixed columns (e.g. <code>team_stats_*</code>,
@@ -258,17 +258,17 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 <span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_player_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_stats_team_season.html">cbbd_stats_player_shooting_season</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="lineups">Lineups<a class="anchor" aria-label="anchor" href="#lineups"></a>
-</h2>
+<div class="section level3">
+<h3 id="lineups">Lineups<a class="anchor" aria-label="anchor" href="#lineups"></a>
+</h3>
 <p>Five-player lineup stats for a team-season or a single game.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_lineups_game.html">cbbd_lineups_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_lineups_game.html">cbbd_lineups_game</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="ratings-and-rankings">Ratings and rankings<a class="anchor" aria-label="anchor" href="#ratings-and-rankings"></a>
-</h2>
+<div class="section level3">
+<h3 id="ratings-and-rankings">Ratings and rankings<a class="anchor" aria-label="anchor" href="#ratings-and-rankings"></a>
+</h3>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_srs</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>        <span class="co"># Simple Rating System</span></span>
 <span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_adjusted</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>   <span class="co"># adjusted offensive/defensive efficiency</span></span>
@@ -276,32 +276,32 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_rankings.html">cbbd_rankings</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, poll_type <span class="op">=</span> <span class="st">"ap"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="betting-lines">Betting lines<a class="anchor" aria-label="anchor" href="#betting-lines"></a>
-</h2>
+<div class="section level3">
+<h3 id="betting-lines">Betting lines<a class="anchor" aria-label="anchor" href="#betting-lines"></a>
+</h3>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_lines.html">cbbd_lines</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_lines.html">cbbd_lines_providers</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="recruiting-and-the-transfer-portal">Recruiting and the transfer portal<a class="anchor" aria-label="anchor" href="#recruiting-and-the-transfer-portal"></a>
-</h2>
+<div class="section level3">
+<h3 id="recruiting-and-the-transfer-portal">Recruiting and the transfer portal<a class="anchor" aria-label="anchor" href="#recruiting-and-the-transfer-portal"></a>
+</h3>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_players</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_teams</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_recruiting_players.html">cbbd_recruiting_portal</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="nba-draft">NBA draft<a class="anchor" aria-label="anchor" href="#nba-draft"></a>
-</h2>
+<div class="section level3">
+<h3 id="nba-draft">NBA draft<a class="anchor" aria-label="anchor" href="#nba-draft"></a>
+</h3>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_draft_picks.html">cbbd_draft_teams</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_draft_picks.html">cbbd_draft_positions</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/cbbd_draft_picks.html">cbbd_draft_picks</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
-</h2>
+<div class="section level3">
+<h3 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
+</h3>
 <ul>
 <li>Browse the full function reference under the
 <strong>CollegeBasketballData (CBD)</strong> section of the <a href="../reference/index.html">reference index</a>.</li>
@@ -312,6 +312,93 @@ columns it returns.</li>
 headers from the <a href="https://collegebasketballdata.com" class="external-link">CollegeBasketballData
 API</a>.</li>
 </ul>
+</div>
+<div class="section level2">
+<h2 id="our-authors">
+<strong>Our Authors</strong><a class="anchor" aria-label="anchor" href="#our-authors"></a>
+</h2>
+<ul>
+<li>
+<a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>
+<a href="https://x.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge" alt="@saiemgilani"></a>
+<a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
+</li>
+</ul>
+<div class="section level3">
+<h3 id="our-contributors">
+<strong>Our Contributors</strong><a class="anchor" aria-label="anchor" href="#our-contributors"></a>
+</h3>
+<ul>
+<li>
+<a href="https://x.com/theFirmAISports" class="external-link">Jason Lee</a>
+<a href="https://x.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge" alt="@theFirmAISports"></a>
+<a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a>
+</li>
+<li>
+<a href="https://x.com/BillyFryer42" class="external-link">Billy Fryer</a>
+<a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a>
+<a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a>
+</li>
+<li>
+<a href="https://x.com/rossdrucker9" class="external-link">Ross Drucker</a>
+<a href="https://x.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge" alt="@rossdrucker9"></a>
+<a href="https://github.com/rossdrucker" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@rossdrucker"></a>
+</li>
+<li>
+<a href="https://x.com/vshufinskiy" class="external-link">Vladislav Shufinskiy</a>
+<a href="https://x.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=x&amp;style=for-the-badge" alt="@vshufinskiy"></a>
+<a href="https://github.com/shufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@shufinskiy"></a>
+</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="citation">
+<strong>Citation</strong><a class="anchor" aria-label="anchor" href="#citation"></a>
+</h3>
+<p>To cite the <a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a>
+R package in publications, use:</p>
+<p>BibTeX Citation</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">hoopr</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="dt">author</span> = {Saiem Gilani},</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="dt">title</span> = {hoopR: Access Men’s Basketball Play by Play Data.},</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>  <span class="dt">url</span> = {https://hoopR.sportsdataverse.org/},</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="dt">year</span> = {2026}</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="related-sportsdataverse-packages">
+<strong>Related SportsDataverse packages</strong><a class="anchor" aria-label="anchor" href="#related-sportsdataverse-packages"></a>
+</h3>
+<ul>
+<li>
+<a href="https://cfbfastR.sportsdataverse.org/" class="external-link"><strong>cfbfastR</strong></a>
+- college football</li>
+<li>
+<a href="https://hoopR.sportsdataverse.org/"><strong>hoopR</strong></a> -
+men’s basketball</li>
+<li>
+<a href="https://wehoop.sportsdataverse.org/" class="external-link"><strong>wehoop</strong></a> -
+women’s basketball</li>
+<li>
+<a href="https://baseballr.sportsdataverse.org/" class="external-link"><strong>baseballr</strong></a>
+- baseball</li>
+<li>
+<a href="https://fastRhockey.sportsdataverse.org/" class="external-link"><strong>fastRhockey</strong></a>
+- hockey</li>
+<li>
+<a href="https://oddsapiR.sportsdataverse.org/" class="external-link"><strong>oddsapiR</strong></a>
+- betting odds</li>
+<li>
+<a href="https://sportyR.sportsdataverse.org/" class="external-link"><strong>sportyR</strong></a>
+- playing surfaces</li>
+<li>
+<a href="https://py.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-py</strong></a>
+- the Python package</li>
+<li>
+<a href="https://r.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-R</strong></a>
+- the R meta-package</li>
+</ul>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

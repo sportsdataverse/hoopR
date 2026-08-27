@@ -60,7 +60,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_awards(season = 2024))
 #> ── Award voting from basketball-reference.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:54:04 UTC
+#> ℹ Data updated: 2026-08-27 17:46:14 UTC
 #> # A tibble: 80 × 10
 #>    rank  player    age team  votes_first points_won points_max award_share award
 #>    <chr> <chr>   <dbl> <chr>       <dbl>      <dbl>      <dbl>       <dbl> <chr>

@@ -147,9 +147,9 @@
 
     
     
-<div class="section level2">
-<h2 id="before-we-cook">Before we cook<a class="anchor" aria-label="anchor" href="#before-we-cook"></a>
-</h2>
+<div class="section level3">
+<h3 id="before-we-cook">Before we cook<a class="anchor" aria-label="anchor" href="#before-we-cook"></a>
+</h3>
 <p>Every recipe in this cookbook is a small story: a question you might
 actually ask about the NBA, and the shortest honest path from that
 question to a data frame you can work with. Most of the code blocks run
@@ -164,9 +164,9 @@ grammar.</strong> Once you can read the grammar, you can <em>guess</em>
 the function you need instead of hunting for it. That guessing skill is
 the real subject of this cookbook; the basketball is just the
 excuse.</p>
-<div class="section level3">
-<h3 id="the-grammar-of-a-hoopr-function-name">The grammar of a <code>hoopR</code> function name<a class="anchor" aria-label="anchor" href="#the-grammar-of-a-hoopr-function-name"></a>
-</h3>
+<div class="section level4">
+<h4 id="the-grammar-of-a-hoopr-function-name">The grammar of a <code>hoopR</code> function name<a class="anchor" aria-label="anchor" href="#the-grammar-of-a-hoopr-function-name"></a>
+</h4>
 <p>Almost every function answers three questions in order:</p>
 <ol style="list-style-type: decimal">
 <li>
@@ -214,9 +214,9 @@ cooking show host muttering “and notice we salt the water
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div class="section level2">
-<h2 id="recipe-1-one-game-three-levels-of-detail">Recipe 1: One game, three levels of detail<a class="anchor" aria-label="anchor" href="#recipe-1-one-game-three-levels-of-detail"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-1-one-game-three-levels-of-detail">Recipe 1: One game, three levels of detail<a class="anchor" aria-label="anchor" href="#recipe-1-one-game-three-levels-of-detail"></a>
+</h3>
 <p><strong>The story.</strong> A friend texts you about last night’s
 game and you want to actually look at it – not a headline, the game
 itself.</p>
@@ -244,9 +244,9 @@ tell you which zoom you’re asking for. Start wide, then push in.</p>
 differ by a single noun, that noun is almost always telling you “one row
 per ___.”</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-2-a-superstars-whole-career-on-one-screen">Recipe 2: A superstar’s whole career on one screen<a class="anchor" aria-label="anchor" href="#recipe-2-a-superstars-whole-career-on-one-screen"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-2-a-superstars-whole-career-on-one-screen">Recipe 2: A superstar’s whole career on one screen<a class="anchor" aria-label="anchor" href="#recipe-2-a-superstars-whole-career-on-one-screen"></a>
+</h3>
 <p><strong>The story.</strong> You want to see LeBron James’s career arc
 – not this season, the whole thing – and you want it tidy enough to
 plot.</p>
@@ -292,9 +292,9 @@ grammar predicts it: swap <code>career_stats</code> for
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> nba    1966         <span style="text-decoration: underline;">2</span>017 http://sports.core.api.espn.com/v2/sports/basketbal…</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 13 more rows</span></span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="recipe-3-game-flow-and-the-comeback">Recipe 3: Game flow and the comeback<a class="anchor" aria-label="anchor" href="#recipe-3-game-flow-and-the-comeback"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-3-game-flow-and-the-comeback">Recipe 3: Game flow and the comeback<a class="anchor" aria-label="anchor" href="#recipe-3-game-flow-and-the-comeback"></a>
+</h3>
 <p><strong>The story.</strong> The game in Recipe 1 had a wild fourth
 quarter. You want to <em>see</em> the momentum swing.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -323,9 +323,9 @@ name its replacement in the same breath – here, the older
 <code><a href="../reference/nba_live_boxscore.html">nba_playbyplayv3()</a></code>. Read the message; it is doing you a
 favor.)</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-4-how-did-each-player-do-in-one-game-one-at-a-time">Recipe 4: How did each player do in one game, one at a time?<a class="anchor" aria-label="anchor" href="#recipe-4-how-did-each-player-do-in-one-game-one-at-a-time"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-4-how-did-each-player-do-in-one-game-one-at-a-time">Recipe 4: How did each player do in one game, one at a time?<a class="anchor" aria-label="anchor" href="#recipe-4-how-did-each-player-do-in-one-game-one-at-a-time"></a>
+</h3>
 <p><strong>The story.</strong> You want one player’s stat line from one
 game, broken out into a tidy long table – not the whole
 <code>player_box</code>, just them.</p>
@@ -378,9 +378,9 @@ pattern <code>espn_nba_event_*</code>:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   score_value &lt;dbl&gt;, away_score &lt;int&gt;, home_score &lt;int&gt;, shooting_play &lt;lgl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   coordinate_x &lt;dbl&gt;, coordinate_y &lt;dbl&gt;, team_ref &lt;chr&gt;, wallclock &lt;chr&gt;</span></span></span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="recipe-5-a-teams-season-at-a-glance">Recipe 5: A team’s season at a glance<a class="anchor" aria-label="anchor" href="#recipe-5-a-teams-season-at-a-glance"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-5-a-teams-season-at-a-glance">Recipe 5: A team’s season at a glance<a class="anchor" aria-label="anchor" href="#recipe-5-a-teams-season-at-a-glance"></a>
+</h3>
 <p><strong>The story.</strong> You’re previewing a team and want the
 essentials – record, schedule, roster, and how they actually stack up
 statistically.</p>
@@ -483,9 +483,9 @@ The shared middle (<code>team_season</code>) is the subject; the last
 word is the lens. Find one member of a family and you’ve found the whole
 family.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-6-the-mvp-leaderboard-race">Recipe 6: The MVP leaderboard race<a class="anchor" aria-label="anchor" href="#recipe-6-the-mvp-leaderboard-race"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-6-the-mvp-leaderboard-race">Recipe 6: The MVP leaderboard race<a class="anchor" aria-label="anchor" href="#recipe-6-the-mvp-leaderboard-race"></a>
+</h3>
 <p><strong>The story.</strong> It’s March and you want the scoring,
 rebounding, and assist leaders – the raw material of every MVP
 argument.</p>
@@ -538,9 +538,9 @@ honestly rather than papering one over the other – so you choose based
 on which columns you want, not on which name you happened to
 remember.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-7-tracking-a-draft-class">Recipe 7: Tracking a draft class<a class="anchor" aria-label="anchor" href="#recipe-7-tracking-a-draft-class"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-7-tracking-a-draft-class">Recipe 7: Tracking a draft class<a class="anchor" aria-label="anchor" href="#recipe-7-tracking-a-draft-class"></a>
+</h3>
 <p><strong>The story.</strong> You want to follow a draft class – who
 went where, and in what order.</p>
 <p>The draft has a little family of its own, and the names sort from
@@ -598,9 +598,9 @@ specific, left to right” rule made visible. When you find yourself
 wanting something <em>between</em> two of these, the name you want is
 usually <em>also</em> between them alphabetically and conceptually.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-8-a-whole-season-at-once-the-fast-way">Recipe 8: A whole season at once, the fast way<a class="anchor" aria-label="anchor" href="#recipe-8-a-whole-season-at-once-the-fast-way"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-8-a-whole-season-at-once-the-fast-way">Recipe 8: A whole season at once, the fast way<a class="anchor" aria-label="anchor" href="#recipe-8-a-whole-season-at-once-the-fast-way"></a>
+</h3>
 <p><strong>The story.</strong> You don’t want one game. You want
 <em>every</em> game – a full season of play-by-play to model on.</p>
 <p>Calling <code><a href="../reference/espn_mbb_game_all.html">espn_nba_pbp()</a></code> in a loop over a thousand
@@ -623,9 +623,9 @@ hands you one game live. Reach for <code>load_</code> when you’re doing
 research across many games, and for <code>espn_</code> when you want one
 specific, fresh game.</p>
 </div>
-<div class="section level2">
-<h2 id="recipe-9-pour-it-straight-into-a-database">Recipe 9: Pour it straight into a database<a class="anchor" aria-label="anchor" href="#recipe-9-pour-it-straight-into-a-database"></a>
-</h2>
+<div class="section level3">
+<h3 id="recipe-9-pour-it-straight-into-a-database">Recipe 9: Pour it straight into a database<a class="anchor" aria-label="anchor" href="#recipe-9-pour-it-straight-into-a-database"></a>
+</h3>
 <p><strong>The story.</strong> A season of play-by-play is big. You’d
 rather not hold it all in memory – you want it in a database you can
 query.</p>
@@ -651,9 +651,9 @@ one teaches you all of them. When a package keeps signatures parallel
 like this, lean on it – guess the arguments the same way you guess the
 names.</p>
 </div>
-<div class="section level2">
-<h2 id="working-through-a-proxy">Working through a proxy<a class="anchor" aria-label="anchor" href="#working-through-a-proxy"></a>
-</h2>
+<div class="section level3">
+<h3 id="working-through-a-proxy">Working through a proxy<a class="anchor" aria-label="anchor" href="#working-through-a-proxy"></a>
+</h3>
 <p>If you’re on a corporate or campus network, your traffic may need to
 go through a proxy. <code>hoopR</code> understands proxies in three
 layers, and you should reach for the <em>least</em> invasive one that
@@ -705,9 +705,9 @@ honor the standard environment variables:</p>
 set an explicit proxy. It’s the right layer for shared scripts and CI,
 where the proxy is a property of the machine, not the analysis.</p>
 </div>
-<div class="section level2">
-<h2 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
-</h2>
+<div class="section level3">
+<h3 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
+</h3>
 <p>You now have the grammar. Every recipe above was really the same
 trick: decide where the data lives (the prefix), name the league, then
 name the thing from general to specific. The NBA surface in
@@ -717,6 +717,93 @@ things are guessable.</p>
 almost unchanged – swap <code>nba</code> for <code>mbb</code>, meet a
 new prefix (<code>kp_</code> for KenPom), and keep cooking. That’s the
 MBB cookbook.</p>
+</div>
+<div class="section level2">
+<h2 id="our-authors">
+<strong>Our Authors</strong><a class="anchor" aria-label="anchor" href="#our-authors"></a>
+</h2>
+<ul>
+<li>
+<a href="https://x.com/saiemgilani" class="external-link">Saiem Gilani</a>
+<a href="https://x.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge" alt="@saiemgilani"></a>
+<a href="https://github.com/saiemgilani" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@saiemgilani"></a>
+</li>
+</ul>
+<div class="section level3">
+<h3 id="our-contributors">
+<strong>Our Contributors</strong><a class="anchor" aria-label="anchor" href="#our-contributors"></a>
+</h3>
+<ul>
+<li>
+<a href="https://x.com/theFirmAISports" class="external-link">Jason Lee</a>
+<a href="https://x.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge" alt="@theFirmAISports"></a>
+<a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a>
+</li>
+<li>
+<a href="https://x.com/BillyFryer42" class="external-link">Billy Fryer</a>
+<a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a>
+<a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a>
+</li>
+<li>
+<a href="https://x.com/rossdrucker9" class="external-link">Ross Drucker</a>
+<a href="https://x.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge" alt="@rossdrucker9"></a>
+<a href="https://github.com/rossdrucker" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@rossdrucker"></a>
+</li>
+<li>
+<a href="https://x.com/vshufinskiy" class="external-link">Vladislav Shufinskiy</a>
+<a href="https://x.com/vshufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&amp;label=%40vshufinskiy&amp;logo=x&amp;style=for-the-badge" alt="@vshufinskiy"></a>
+<a href="https://github.com/shufinskiy" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@shufinskiy"></a>
+</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="citation">
+<strong>Citation</strong><a class="anchor" aria-label="anchor" href="#citation"></a>
+</h3>
+<p>To cite the <a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a>
+R package in publications, use:</p>
+<p>BibTeX Citation</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">hoopr</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="dt">author</span> = {Saiem Gilani},</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="dt">title</span> = {hoopR: Access Men’s Basketball Play by Play Data.},</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="dt">url</span> = {https://hoopR.sportsdataverse.org/},</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="dt">year</span> = {2026}</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="related-sportsdataverse-packages">
+<strong>Related SportsDataverse packages</strong><a class="anchor" aria-label="anchor" href="#related-sportsdataverse-packages"></a>
+</h3>
+<ul>
+<li>
+<a href="https://cfbfastR.sportsdataverse.org/" class="external-link"><strong>cfbfastR</strong></a>
+- college football</li>
+<li>
+<a href="https://hoopR.sportsdataverse.org/"><strong>hoopR</strong></a> -
+men’s basketball</li>
+<li>
+<a href="https://wehoop.sportsdataverse.org/" class="external-link"><strong>wehoop</strong></a> -
+women’s basketball</li>
+<li>
+<a href="https://baseballr.sportsdataverse.org/" class="external-link"><strong>baseballr</strong></a>
+- baseball</li>
+<li>
+<a href="https://fastRhockey.sportsdataverse.org/" class="external-link"><strong>fastRhockey</strong></a>
+- hockey</li>
+<li>
+<a href="https://oddsapiR.sportsdataverse.org/" class="external-link"><strong>oddsapiR</strong></a>
+- betting odds</li>
+<li>
+<a href="https://sportyR.sportsdataverse.org/" class="external-link"><strong>sportyR</strong></a>
+- playing surfaces</li>
+<li>
+<a href="https://py.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-py</strong></a>
+- the Python package</li>
+<li>
+<a href="https://r.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-R</strong></a>
+- the R meta-package</li>
+</ul>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

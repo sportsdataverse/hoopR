@@ -221,7 +221,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_teams())
 #> ── ESPN MBB Teams Information from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:55:23 UTC
+#> ℹ Data updated: 2026-08-27 17:47:42 UTC
 #> # A tibble: 366 × 32
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    
@@ -246,7 +246,7 @@ try(espn_mbb_teams())
 # \donttest{
 try(espn_nba_teams())
 #> ── ESPN NBA Teams Information from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-26 19:55:24 UTC
+#> ℹ Data updated: 2026-08-27 17:47:42 UTC
 #> # A tibble: 13 × 25
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    
