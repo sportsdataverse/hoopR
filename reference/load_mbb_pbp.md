@@ -424,7 +424,7 @@ Other hoopR Loader Functions:
 # \donttest{
 load_mbb_pbp(seasons = most_recent_mbb_season())
 #> ── ESPN MBB pbp from hoopR data repository ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 07:31:02 UTC
+#> ℹ Data updated: 2026-09-01 20:29:09 UTC
 #> # A tibble: 2,915,731 × 62
 #>    game_play_number      id sequence_number type_id type_text   text  away_score
 #>               <int>   <dbl>           <int>   <int> <chr>       <chr>      <int>
@@ -449,7 +449,7 @@ load_mbb_pbp(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
 #> ── ESPN MBB team_box from hoopR data repository ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 07:09:42 UTC
+#> ℹ Data updated: 2026-09-01 19:44:38 UTC
 #> # A tibble: 12,598 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
@@ -474,7 +474,7 @@ load_mbb_team_box(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_player_box(seasons = most_recent_mbb_season())
 #> ── ESPN MBB player_box from hoopR data repository ─────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 07:10:41 UTC
+#> ℹ Data updated: 2026-09-01 19:45:57 UTC
 #> # A tibble: 196,876 × 55
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
@@ -499,7 +499,7 @@ load_mbb_player_box(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
 #> ── ESPN MBB schedules from hoopR data repository ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 06:43:59 UTC
+#> ℹ Data updated: 2026-09-01 20:00:34 UTC
 #> # A tibble: 6,318 × 86
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
@@ -524,7 +524,7 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_shots(seasons = most_recent_mbb_season())
 #> ── ESPN MBB shots from hoopR data repository ──────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-12 06:56:32 UTC
+#> ℹ Data updated: 2026-09-01 20:00:46 UTC
 #> # A tibble: 991,836 × 20
 #>      game_id season period_number clock_display_value team_id athlete_id_1
 #>        <int>  <int>         <int> <chr>                 <int>        <int>

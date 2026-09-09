@@ -41,6 +41,7 @@ Get ESPN NBA Team News"><meta property="og:image" content="https://raw.githubuse
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown--sdv" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"><span class="fa fas fa-project-diagram"></span>  SDV</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown--sdv"><li><a class="external-link dropdown-item" href="https://sportsdataverse.org/">SportsDataverse</a></li>
+    <li><a class="external-link dropdown-item" href="https://sportsdataverse.org/cheatsheets/hoopR.pdf">Cheat Sheet (PDF)</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>R Packages</h6></li>
     <li><a class="external-link dropdown-item" href="https://r.sportsdataverse.org/">sportsdataverse-R</a></li>
@@ -299,28 +300,28 @@ supported for ESPN wrappers).</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_team_news</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"150"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-27 17:47:35 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 22:10:41 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        id type  headline description published premium byline link_web league_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.97<span style="color: #949494;">e</span>7 Story Men's c… Led by Bec… 2026-08-… FALSE   Paul … https:/… 3550     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.97<span style="color: #949494;">e</span>7 Story NBA dra… After a su… 2026-08-… FALSE   Jerem… https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  3.03<span style="color: #949494;">e</span>7 Etic… NCAA Br… The Blue D… 2026-08-… FALSE   Joe L… https:/… 41       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  4.95<span style="color: #949494;">e</span>7 Story Men's N… Texas move… 2026-08-… FALSE   Jeff … https:/… 41       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.94<span style="color: #949494;">e</span>7 Story 100 day… It's a new… 2026-07-… FALSE   Jeff … https:/… 41       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.98<span style="color: #949494;">e</span>7 Story Project… Ranking ev… 2026-09-… FALSE   Myron… https:/… 41       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.98<span style="color: #949494;">e</span>7 Story Vitale:… From story… 2026-09-… FALSE   Dick … https:/… 41       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  4.98<span style="color: #949494;">e</span>7 Story UConn r… UConn unve… 2026-09-… FALSE   Kalan… https:/… 41       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  4.98<span style="color: #949494;">e</span>7 Story Men's N… Eligibilit… 2026-09-… FALSE   Jeff … https:/… 41       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.87<span style="color: #949494;">e</span>7 Story Transfe… We're trac… 2026-09-… FALSE   Jeff … https:/… 41       </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_team_news</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"13"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-27 17:47:35 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 22:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        id type  headline description published premium byline link_web league_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.96<span style="color: #949494;">e</span>7 Story NBA Sum… <span style="color: #949494;">"</span>Our exper… 2026-08-… FALSE   NBA i… https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.90<span style="color: #949494;">e</span>7 Story 2026 NB… <span style="color: #949494;">"</span>We're gra… 2026-08-… FALSE   Zach … https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  4.97<span style="color: #949494;">e</span>7 Head… Jeanie … <span style="color: #949494;">"</span>In a peti… 2026-08-… FALSE   Ramon… https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  4.97<span style="color: #949494;">e</span>7 Head… TWG Glo… <span style="color: #949494;">"</span>TWG Globa… 2026-08-… FALSE   Alden… https:/… 10       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.97<span style="color: #949494;">e</span>7 Head… Buss br… <span style="color: #949494;">"</span>The Buss … 2026-08-… FALSE   Dave … https:/… 1        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  4.99<span style="color: #949494;">e</span>7 Head… Sources… The Lakers… 2026-09-… FALSE   Dave … https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  4.99<span style="color: #949494;">e</span>7 Story NBA pre… Six weeks … 2026-09-… FALSE   Zach … https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  4.99<span style="color: #949494;">e</span>7 Head… Lakers … The Lakers… 2026-09-… FALSE   Dave … https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  4.98<span style="color: #949494;">e</span>7 Story Biggest… Which star… 2026-09-… FALSE   NBA i… https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.90<span style="color: #949494;">e</span>7 Story 2026 NB… We're grad… 2026-09-… FALSE   Zach … https:/… 46       </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

@@ -67,6 +67,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown--sdv" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"><span class="fa fas fa-project-diagram"></span>  SDV</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown--sdv">
 <li><a class="external-link dropdown-item" href="https://sportsdataverse.org/">SportsDataverse</a></li>
+    <li><a class="external-link dropdown-item" href="https://sportsdataverse.org/cheatsheets/hoopR.pdf">Cheat Sheet (PDF)</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>R Packages</h6></li>
     <li><a class="external-link dropdown-item" href="https://r.sportsdataverse.org/">sportsdataverse-R</a></li>
@@ -626,14 +627,14 @@ feed and the calendar.</p>
 <span><span class="va">mbb_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_news.html">espn_mbb_news</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mbb_news</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"headline"</span>, <span class="st">"published"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
-<span><span class="co">#&gt;   headline                                                             published</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Men's college basketball recruiting: Top 25 players regardless of c… 2026-08-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Big 12 announces ban on all professionals from returning             2026-08-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Big Ten rewards commissioner Tony Petitti with five-year extension   2026-08-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Sources: SEC to suspend head coaches who add pro players             2026-08-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Projecting every Big 12 team's floor and ceiling for 2026-27         2026-08-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> SEC draws rule to stop NFL, NBA, WNBA players from returning         2026-08-…</span></span>
+<span><span class="co">#&gt;   headline                                                         published    </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Chase Lumpkin, No. 28 recruit in 2027 class, commits to Alabama  2026-09-09T2…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> CSC clears $227M+ in NIL deals in July, August in major increase 2026-09-09T1…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Rutgers coach Steve Pikiell to focus on his cancer treatment     2026-09-09T1…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Projecting every ACC team's floor and ceiling for 2026-27        2026-09-09T1…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Cade Tyson rejoins Minnesota in aim for fifth year               2026-09-09T0…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Ex-NFL star Edgerrin James: Son Jizzle has substance abuse issue 2026-09-08T2…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -744,7 +745,7 @@ keyed off the same <code>athlete_id</code>.</p>
 <span><span class="va">bio</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_player_info.html">espn_mbb_player_info</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> object 'athlete_id' not found</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/pillar/man/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">bio</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">bio</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> object 'bio' not found</span></span>
 <span></span>
@@ -928,7 +929,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 619</span></span>
+<span><span class="co">#&gt; [1] 631</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>

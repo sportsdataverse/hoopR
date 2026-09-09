@@ -196,8 +196,8 @@ Saiem Gilani
 # \donttest{
   espn_mbb_venues()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Venues from ESPN.com ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-27 17:47:43 UTC
-#> # A tibble: 990 × 9
+#> ℹ Data updated: 2026-09-09 22:10:50 UTC
+#> # A tibble: 991 × 9
 #>    venue_id name  full_name address_city address_state capacity indoor grass
 #>    <chr>    <chr> <chr>     <chr>        <chr>            <int> <lgl>  <lgl>
 #>  1 NA       NA    NA        NA           NA                  NA NA     NA   
@@ -210,13 +210,13 @@ Saiem Gilani
 #>  8 NA       NA    NA        NA           NA                  NA NA     NA   
 #>  9 NA       NA    NA        NA           NA                  NA NA     NA   
 #> 10 NA       NA    NA        NA           NA                  NA NA     NA   
-#> # ℹ 980 more rows
+#> # ℹ 981 more rows
 #> # ℹ 1 more variable: images_url <chr>
 # }
 # \donttest{
   espn_nba_venues()
 #> ── ESPN NBA Venues from ESPN.com ──────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-27 17:47:44 UTC
+#> ℹ Data updated: 2026-09-09 22:10:50 UTC
 #> # A tibble: 648 × 9
 #>    venue_id name  full_name address_city address_state capacity indoor grass
 #>    <chr>    <chr> <chr>     <chr>        <chr>            <int> <lgl>  <lgl>

@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-27 17:47:08 UTC
+#> ℹ Data updated: 2026-09-09 22:10:16 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.97e7 Story Men's c… Led by Bec… 2026-08-… FALSE   Paul … https:/… 3550     
-#> 2  4.97e7 Head… Big 12 … The Big 12… 2026-08-… FALSE   NA     https:/… 23       
-#> 3  4.97e7 Head… Big Ten… The Big Te… 2026-08-… FALSE   Jake … https:/… 23       
-#> 4  4.97e7 Head… Sources… SEC school… 2026-08-… FALSE   Mark … https:/… 28       
-#> 5  4.97e7 Story Project… Predicting… 2026-08-… FALSE   Myron… https:/… 41       
+#> 1  4.99e7 Head… Chase L… Top-30 sen… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 2  4.99e7 Head… CSC cle… The Colleg… 2026-09-… FALSE   NA     https:/… 3170     
+#> 3  4.99e7 Head… Rutgers… Steve Piki… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 4  4.98e7 Story Project… Ranking ev… 2026-09-… FALSE   Myron… https:/… 41       
+#> 5  4.99e7 Head… Cade Ty… Cade Tyson… 2026-09-… FALSE   NA     https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-27 17:47:08 UTC
+#> ℹ Data updated: 2026-09-09 22:10:16 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.97e7 Head… Raptors… The Raptor… 2026-08-… FALSE   NA     https:/… 46       
-#> 2  4.96e7 Story NBA off… We're look… 2026-08-… FALSE   NBA I… https:/… 46       
-#> 3  4.97e7 Story Phoenix… What could… 2026-08-… FALSE   NBA I… https:/… 46       
-#> 4  4.96e7 Story NBA Sum… Our expert… 2026-08-… FALSE   NBA i… https:/… 46       
-#> 5  4.97e7 Story Blake G… The weekly… 2026-08-… FALSE   Antho… https:/… 46       
+#> 1  4.99e7 Head… Sources… "The Laker… 2026-09-… FALSE   Dave … https:/… 46       
+#> 2  4.99e7 Head… EuroLea… "EuroLeagu… 2026-09-… FALSE   NA     https:/… 46       
+#> 3  3.58e7 Story Jalen B… "There hav… 2026-09-… FALSE   Jerem… https:/… 28       
+#> 4  4.99e7 Head… NBA cha… "Newly cro… 2026-09-… FALSE   NA     https:/… 46       
+#> 5  4.96e7 Story NBA off… "We're loo… 2026-09-… FALSE   NBA I… https:/… 46       
 # }
 ```

@@ -770,3 +770,12 @@ by a shared internal engine in `R/crosswalk_basketball.R`.
   `@noRd` on the function block.
 - Never hand-edit `NAMESPACE` or files under `man/`; regenerate with
   `devtools::document()`.
+
+## Cheat sheet
+
+There is a printable one-page reference for this package at
+<https://sportsdataverse.org/cheatsheets/hoopR.pdf>, one of [a set
+covering every SportsDataverse
+package](https://sportsdataverse.org/cheatsheets). Keep it in mind when
+adding or renaming an exported function: the sheet is a hand-built
+canvas, so a surface change means the sheet needs a revision too.

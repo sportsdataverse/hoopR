@@ -42,10 +42,10 @@ Other NBA Combined Datasets:
 ``` r
 # \donttest{
   prof <- try(nba_tidy_player_profile(player_id = 201939))
-#> ✖ 2026-08-27 18:04:40.06302: Invalid arguments or no player profile v2 data available for 201939!
+#> ✖ 2026-09-09 22:31:16.70923: Invalid arguments or no player profile v2 data available for 201939!
 #> ✖ Args: league_id = "", per_mode = "Totals", player_id = 201939
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-08-27 18:04:40.075225: No NBA player profile for 201939!
+#> ✖ 2026-09-09 22:31:16.76642: No NBA player profile for 201939!
 #> ✖ Args: player_id = 201939
 #> ✖ Error: No player profile data returned
 # }

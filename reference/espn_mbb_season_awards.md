@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_awards(season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards Index ───────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-27 17:47:20 UTC
+#> ℹ Data updated: 2026-09-09 22:10:28 UTC
 #> # A tibble: 11 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 
@@ -227,7 +227,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_awards(season = 2024)
 #> ── ESPN NBA Season Awards Index ───────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-08-27 17:47:21 UTC
+#> ℹ Data updated: 2026-09-09 22:10:28 UTC
 #> # A tibble: 20 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 
