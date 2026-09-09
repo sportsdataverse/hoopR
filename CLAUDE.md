@@ -516,3 +516,10 @@ shared internal engine in `R/crosswalk_basketball.R`.
 - KenPom HTML structure changes periodically -- CSS selectors for tables (`table#player-table`), referee links (`div.refline`), and navigation elements are fragile and may need updating.
 - **Two-block roxygen pattern + `@noRd` trap:** when an internal helper uses the `@name` + `NULL` topic block above the function-block, putting `@noRd` only on the function block leaves the topic block to generate an orphan `man/dot-*.Rd` file. pkgdown's `build_reference_index()` will then fail with "topics missing from index". Fix: put `@keywords internal` on the topic block as well as `@noRd` on the function block.
 - Never hand-edit `NAMESPACE` or files under `man/`; regenerate with `devtools::document()`.
+
+## Cheat sheet
+
+There is a printable one-page reference for this package at
+<https://sportsdataverse.org/cheatsheets/hoopR.pdf>, one of [a set covering every SportsDataverse package](https://sportsdataverse.org/cheatsheets).
+Keep it in mind when adding or renaming an exported function: the sheet is a
+hand-built canvas, so a surface change means the sheet needs a revision too.

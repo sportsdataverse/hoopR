@@ -113,6 +113,9 @@ For more information on the package and function reference, please see
 the [**`hoopR`** documentation
 website](https://hoopR.sportsdataverse.org).
 
+There is also a printable [**`hoopR` cheat sheet (PDF)**](https://sportsdataverse.org/cheatsheets/hoopR.pdf), one of [a set covering every SportsDataverse package](https://sportsdataverse.org/cheatsheets).
+
+
 ## **Breaking Changes**
 
 [**Full News on
@@ -150,6 +153,17 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
   - Vladislav Shufinskiy (@vshufinskiy)
     <a href="https://x.com/vshufinskiy" target="blank"><img src="https://img.shields.io/twitter/follow/vshufinskiy?color=blue&label=%40vshufinskiy&logo=x&style=for-the-badge" alt="@vshufinskiy" /></a>
     <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
+
+<!-- cheatsheet-section -->
+## **Cheat sheet**
+
+A printable one-page reference for **`hoopR`** — the function families, the loaders, and what each one returns.
+
+📄 **[Download the hoopR cheat sheet (PDF)](https://sportsdataverse.org/cheatsheets/hoopR.pdf)**
+
+Free to download, print and hand out; light and dark, US Letter landscape.
+Every SportsDataverse package has one — browse them all at
+**[sportsdataverse.org/cheatsheets](https://sportsdataverse.org/cheatsheets)**.
 
 ## **Citations**
 

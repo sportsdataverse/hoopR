@@ -108,6 +108,8 @@ navbar:
       menu:
       - text: SportsDataverse
         href: https://sportsdataverse.org/
+      - text: "Cheat Sheet (PDF)"
+        href: https://sportsdataverse.org/cheatsheets/hoopR.pdf
       - text: --------------------------------
       - text: "R Packages"
       - text: sportsdataverse-R

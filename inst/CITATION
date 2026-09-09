@@ -4,7 +4,7 @@ note <- sprintf("R package version %s", meta$Version)
 citHeader("To cite the hoopR R package in publications, use:")
 
 citEntry(entry = "Misc",
-         author = personList(as.person("Saiem Gilani")),
+         author = c(person("Saiem", "Gilani", comment = c(ORCID = "0000-0002-7194-9067"))),
          title = "hoopR: Access Men’s Basketball Play by Play Data.",
          url = c("https://doi.org/10.32614/CRAN.package.hoopR"),
          DOI = "10.32614/CRAN.package.hoopR",
