@@ -421,7 +421,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_stats(team_id = 150, year = 2020))
 #> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-09 22:10:47 UTC
+#> ℹ Data updated: 2026-09-10 00:49:49 UTC
 #> # A tibble: 1 × 168
 #>   team_id team_guid          team_uid team_sdr team_slug team_location team_name
 #>     <int> <chr>              <chr>       <int> <chr>     <chr>         <chr>    
@@ -437,7 +437,7 @@ try(espn_mbb_team_stats(team_id = 150, year = 2020))
 # \donttest{
 try(espn_nba_team_stats(team_id = 13, year = 2020))
 #> ── ESPN NBA Team Season Stats from ESPN.com ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-09 22:10:47 UTC
+#> ℹ Data updated: 2026-09-10 00:49:50 UTC
 #> # A tibble: 1 × 213
 #>   team_id team_guid team_uid team_slug team_location team_name team_abbreviation
 #>     <int> <chr>     <chr>    <chr>     <chr>         <chr>     <chr>            

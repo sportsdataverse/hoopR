@@ -44,8 +44,8 @@ A `hoopR_data` tibble with one row per injured player:
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-09 22:33:24 UTC
-#> # A tibble: 76 × 10
+#> ℹ Data updated: 2026-09-10 01:10:44 UTC
+#> # A tibble: 77 × 10
 #>    player_id player            first_name last_name team  position injury status
 #>    <chr>     <chr>             <chr>      <chr>     <chr> <chr>    <chr>  <chr> 
 #>  1 3445      Steven Adams      Steven     Adams     HOU   C        Ankle  Quest…
@@ -58,7 +58,7 @@ A `hoopR_data` tibble with one row per injured player:
 #>  8 6999      Trevon Brazile    Trevon     Brazile   DEN   F        Undis… Quest…
 #>  9 4405      Jalen Brunson     Jalen      Brunson   NYK   G        Wrist  Quest…
 #> 10 3231      Jimmy Butler      Jimmy      Butler    GSW   F        Knee   Out   
-#> # ℹ 66 more rows
+#> # ℹ 67 more rows
 #> # ℹ 2 more variables: return_date <chr>, url <chr>
 # }
 ```

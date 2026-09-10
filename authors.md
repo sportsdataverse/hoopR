@@ -28,5 +28,6 @@ Retrieved from https://doi.org/10.32614/CRAN.package.hoopR
       doi = {10.32614/CRAN.package.hoopR},
       journal = {CRAN: Contributed Packages},
       publisher = {The R Foundation},
+      year = {2026},
       note = {R package version 3.1.0},
     }

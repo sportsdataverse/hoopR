@@ -153,14 +153,14 @@ Returns a named list of tibbles: winprob_dataset, game_data, runs
 ``` r
 # \donttest{
 try(kp_box(game_id = 6, year = 2021))
-#> ✖ 2026-09-09 22:11:14.518264: Invalid arguments or no box data for 6 available!
+#> ✖ 2026-09-10 00:50:28.237034: Invalid arguments or no box data for 6 available!
 #> ✖ Args: game_id = 6, year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_winprob(game_id = 1238, year = 2020))
-#> ✖ 2026-09-09 22:11:14.574487: Invalid arguments or no win probability data for 1238 available!
+#> ✖ 2026-09-10 00:50:28.294717: Invalid arguments or no win probability data for 1238 available!
 #> ✖ Args: game_id = 1238, year = 2020
 #> ✖ Error: HTTP 403 Forbidden.
 #> list()

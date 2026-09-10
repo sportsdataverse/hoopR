@@ -79,64 +79,64 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_team_crosswalk(season = 2025))
-#> ✖ 2026-09-09 22:17:57.925702: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:20.830621: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:58.563929: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:21.707403: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:58.784944: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.15613: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:58.811907: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.310294: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:58.837966: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.352804: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:58.961602: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.517671: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.015754: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.60165: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.041212: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.64289: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.066227: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.682909: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.093382: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.723629: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.118714: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.763861: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.145534: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.804337: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.169975: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.844762: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.194538: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.885077: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.220311: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.925515: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.245486: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:22.967546: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.27114: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.010704: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.297132: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.052932: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.324745: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.095107: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.349392: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.137185: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.374709: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.17988: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.403956: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.221117: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.429491: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.263416: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.455006: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.304825: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.480513: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.346161: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.505615: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.387934: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.530873: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.429045: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-09 22:17:59.55716: no Fox CBK teams data available!
+#> ✖ 2026-09-10 00:55:23.471118: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
 #> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-09 22:17:59 UTC
+#> ℹ Data updated: 2026-09-10 00:55:23 UTC
 #> # A tibble: 366 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
 #>     <int>        <int> <chr>             <chr>                   <chr>          
