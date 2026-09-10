@@ -177,6 +177,7 @@ BibTex Citation
   author = {Gilani, Saiem},
   title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
   url = {https://hoopR.sportsdataverse.org},
+  doi = {10.32614/CRAN.package.hoopR},
   year = {2026}
 }
 ```
