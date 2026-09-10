@@ -3,7 +3,7 @@
 ## empty year, and a current-date fallback made the same package version
 ## cite as a different year every calendar year. Keep this in sync with the
 ## bibtex block in README.md.
-year <- 2021
+year <- 2026
 note <- sprintf("R package version %s", meta$Version)
 
 citHeader("To cite the hoopR R package in publications, use:")
