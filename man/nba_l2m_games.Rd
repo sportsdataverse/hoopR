@@ -2,14 +2,7 @@
 % Please edit documentation in R/nba_officiating.R
 \name{nba_l2m_games}
 \alias{nba_l2m_games}
-\title{Fetch the list of NBA games with a Last Two Minute report for a season
-
-Scrapes official.nba.com's season index page. JSON L2M reports exist only
-from 2019-01-01 onward; earlier seasons' index pages list PDFs, which this
-function ignores (use a release loader for that history once published).
-Port of the scraping logic in
-\href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M} (MIT,
-(c) 2019 atlhawksfanatic).}
+\title{Fetch the list of NBA games with a Last Two Minute report for a season}
 \usage{
 nba_l2m_games(season, proxy = NULL)
 }
@@ -30,8 +23,6 @@ A \code{hoopR_data} tibble, one row per unique game id in page order:\tabular{ll
 }
 }
 \description{
-Fetch the list of NBA games with a Last Two Minute report for a season
-
 Scrapes official.nba.com's season index page. JSON L2M reports exist only
 from 2019-01-01 onward; earlier seasons' index pages list PDFs, which this
 function ignores (use a release loader for that history once published).

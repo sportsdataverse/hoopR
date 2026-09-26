@@ -2,19 +2,7 @@
 % Please edit documentation in R/nba_officiating.R
 \name{nba_referee_assignments}
 \alias{nba_referee_assignments}
-\title{Fetch NBA/G-League/WNBA referee crew assignments for a date
-
-Retrieves referee crew assignments and replay-center officials for every
-game on a date, from official.nba.com's \code{get-game-officials} endpoint
-(covers NBA, G-League, and WNBA in one payload). Port of the scraping
-logic in \href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M}
-(MIT, (c) 2019 atlhawksfanatic).
-
-\code{crew_position} is the feed's slot order (1-4); slot 1 is \emph{inferred} to be
-the crew chief from that ordering -- the API does not label roles
-directly. \code{season} converts the feed's \verb{<type digit><START year>} code to
-an END year: START+1 for \code{"nba"}/\code{"gl"} (two-calendar-year seasons), START
-unchanged for \code{"wnba"} (single-year seasons).}
+\title{Fetch NBA/G-League/WNBA referee crew assignments for a date}
 \usage{
 nba_referee_assignments(date, league = "nba", proxy = NULL)
 }
@@ -64,14 +52,13 @@ A date with no games for the league is not an error -- both tibbles come
 back zero-row rather than raising.
 }
 \description{
-Fetch NBA/G-League/WNBA referee crew assignments for a date
-
 Retrieves referee crew assignments and replay-center officials for every
 game on a date, from official.nba.com's \code{get-game-officials} endpoint
 (covers NBA, G-League, and WNBA in one payload). Port of the scraping
 logic in \href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M}
 (MIT, (c) 2019 atlhawksfanatic).
-
+}
+\details{
 \code{crew_position} is the feed's slot order (1-4); slot 1 is \emph{inferred} to be
 the crew chief from that ordering -- the API does not label roles
 directly. \code{season} converts the feed's \verb{<type digit><START year>} code to

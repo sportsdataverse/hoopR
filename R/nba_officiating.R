@@ -313,7 +313,7 @@ NULL
 
 #' @title
 #' Fetch an NBA Last Two Minute (L2M) report
-#'
+#' @description
 #' Retrieves and parses the Last Two Minute officiating report for a single
 #' NBA game from official.nba.com. A report is published for any game that is
 #' within 3 points (5 points before 2017-18) at any point in the last two
@@ -460,7 +460,7 @@ nba_l2m <- function(game_id, proxy = NULL) {
 
 #' @title
 #' Fetch the list of NBA games with a Last Two Minute report for a season
-#'
+#' @description
 #' Scrapes official.nba.com's season index page. JSON L2M reports exist only
 #' from 2019-01-01 onward; earlier seasons' index pages list PDFs, which this
 #' function ignores (use a release loader for that history once published).
@@ -615,13 +615,14 @@ nba_l2m_games <- function(season, proxy = NULL) {
 
 #' @title
 #' Fetch NBA/G-League/WNBA referee crew assignments for a date
-#'
+#' @description
 #' Retrieves referee crew assignments and replay-center officials for every
 #' game on a date, from official.nba.com's `get-game-officials` endpoint
 #' (covers NBA, G-League, and WNBA in one payload). Port of the scraping
 #' logic in \href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M}
 #' (MIT, (c) 2019 atlhawksfanatic).
 #'
+#' @details
 #' `crew_position` is the feed's slot order (1-4); slot 1 is *inferred* to be
 #' the crew chief from that ordering -- the API does not label roles
 #' directly. `season` converts the feed's `<type digit><START year>` code to

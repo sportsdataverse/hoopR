@@ -2,15 +2,7 @@
 % Please edit documentation in R/nba_officiating.R
 \name{nba_l2m}
 \alias{nba_l2m}
-\title{Fetch an NBA Last Two Minute (L2M) report
-
-Retrieves and parses the Last Two Minute officiating report for a single
-NBA game from official.nba.com. A report is published for any game that is
-within 3 points (5 points before 2017-18) at any point in the last two
-minutes of the 4th quarter or overtime -- not only playoff games. JSON
-reports exist only from 2019-01-01 onward. Port of the scraping logic in
-\href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M} (MIT,
-(c) 2019 atlhawksfanatic).}
+\title{Fetch an NBA Last Two Minute (L2M) report}
 \usage{
 nba_l2m(game_id, proxy = NULL)
 }
@@ -81,8 +73,6 @@ stripped, blank/\code{"Undetectable"} -> \code{NA}, never \code{INC}). \code{gam
 }
 }
 \description{
-Fetch an NBA Last Two Minute (L2M) report
-
 Retrieves and parses the Last Two Minute officiating report for a single
 NBA game from official.nba.com. A report is published for any game that is
 within 3 points (5 points before 2017-18) at any point in the last two
