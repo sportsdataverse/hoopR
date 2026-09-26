@@ -307,10 +307,13 @@ test_that("nba_l2m_games(season): accepts numeric-like string or number, rejects
 
 test_that("nba_referee_assignments(date): Date/POSIXct formatted directly (no as.Date tz shift), bad string errors", {
   captured <- NULL
+  # The shape of a real day without games: every league block is present,
+  # with zero-row tables.
+  empty_day <- '{"nba":{"Table":{"rows":[]},"Table1":{"rows":[]}},"gl":{"Table":{"rows":[]},"Table1":{"rows":[]}},"wnba":{"Table":{"rows":[]},"Table1":{"rows":[]}}}'
   local_mocked_bindings(
     .official_nba_get = function(url, params = list(), proxy = NULL) {
       captured <<- params$date
-      '{"nba":{},"gl":{},"wnba":{}}'
+      empty_day
     }
   )
   nba_referee_assignments(as.Date("2026-06-13"))
@@ -323,6 +326,29 @@ test_that("nba_referee_assignments(date): Date/POSIXct formatted directly (no as
 
   expect_error(nba_referee_assignments("06/13/2026"), regexp = "YYYY-MM-DD")
   expect_error(nba_referee_assignments(date = "2026-6-13"), regexp = "YYYY-MM-DD")
+
+  # Shape-valid but impossible dates are rejected before any request.
+  captured <- NULL
+  expect_error(nba_referee_assignments("2026-02-31"), regexp = "valid 'YYYY-MM-DD'")
+  expect_null(captured)
+})
+
+test_that("nba_referee_assignments(): a missing league block is a fetch error, an empty one is an empty day", {
+  payload <- NULL
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) payload
+  )
+  # The feed always carries all three league blocks; one without its block
+  # is an error envelope or a changed schema, not a day without games.
+  payload <- '{"nba":{"Table":{"rows":[]},"Table1":{"rows":[]}}}'
+  expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error")
+  payload <- '{"wnba":{"Table":{"rows":[]}}}'
+  expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error")
+
+  payload <- '{"wnba":{"Table":{"rows":[]},"Table1":{"rows":[]}}}'
+  out <- nba_referee_assignments("2026-06-13", league = "wnba")
+  expect_equal(nrow(out$officials), 0)
+  expect_equal(nrow(out$replay_center), 0)
 })
 
 # ---------------------------------------------------------------------------

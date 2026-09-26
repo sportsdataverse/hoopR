@@ -311,6 +311,7 @@ NULL
   )
 }
 
+#' @title
 #' Fetch an NBA Last Two Minute (L2M) report
 #'
 #' Retrieves and parses the Last Two Minute officiating report for a single
@@ -392,6 +393,7 @@ NULL
 #'   Akamai WAF block) or returned a 200 response that isn't valid JSON.
 #'
 #' An invalid argument is an ordinary error, raised before any request.
+#' @author Saiem Gilani
 #' @family NBA Officiating Functions
 #' @export
 #' @examples
@@ -456,6 +458,7 @@ nba_l2m <- function(game_id, proxy = NULL) {
   )
 }
 
+#' @title
 #' Fetch the list of NBA games with a Last Two Minute report for a season
 #'
 #' Scrapes official.nba.com's season index page. JSON L2M reports exist only
@@ -485,6 +488,7 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #'   the parser itself never raises.
 #'
 #' An invalid argument is an ordinary error, raised before any request.
+#' @author Saiem Gilani
 #' @family NBA Officiating Functions
 #' @export
 #' @examples
@@ -609,6 +613,7 @@ nba_l2m_games <- function(season, proxy = NULL) {
   )
 }
 
+#' @title
 #' Fetch NBA/G-League/WNBA referee crew assignments for a date
 #'
 #' Retrieves referee crew assignments and replay-center officials for every
@@ -664,9 +669,14 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'    back zero-row rather than raising.
 #' @section Errors:
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
-#'   Akamai WAF block) or returned a 200 response that isn't valid JSON.
+#'   Akamai WAF block), returned a 200 response that isn't valid JSON, or
+#'   returned JSON without the league's `Table`/`Table1` block. The feed
+#'   carries every league's block on every date, with zero rows on a day
+#'   without games, so a missing block is never an empty day.
 #'
-#' An invalid argument is an ordinary error, raised before any request.
+#' An invalid argument, including an impossible date such as `"2026-02-31"`,
+#' is an ordinary error, raised before any request.
+#' @author Saiem Gilani
 #' @family NBA Officiating Functions
 #' @export
 #' @examples
@@ -682,14 +692,27 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
   day <- if (inherits(date, c("Date", "POSIXt"))) format(date, "%Y-%m-%d") else as.character(date)
   # One check for every branch: a length-2 or NA Date must fail here too, not
   # reach the request as a multi-valued or "NA" query parameter.
-  if (length(day) != 1 || is.na(day) || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", day)) {
+  # The as.Date() parse rejects shape-valid but impossible dates ("2026-02-31").
+  if (length(day) != 1 || is.na(day) || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", day) ||
+      is.na(as.Date(day, format = "%Y-%m-%d"))) {
     cli::cli_abort(
-      "{.arg date} must be a single Date/POSIXct or a string matching 'YYYY-MM-DD', got {.val {date}}",
+      "{.arg date} must be a single Date/POSIXct or a valid 'YYYY-MM-DD' date string, got {.val {date}}",
       call = call
     )
   }
   url <- "https://official.nba.com/wp-json/api/v1/get-game-officials"
   body <- .official_nba_get(url, params = list(date = day), proxy = proxy)
   x <- .official_nba_json(body, url, simplifyVector = FALSE, call = call)
+  # The feed always carries nba, gl and wnba blocks, each with Table and Table1
+  # (zero rows on a day without games), so a missing block is a changed schema
+  # or an error envelope, not an empty day.
+  block <- if (is.list(x)) x[[league]] else NULL
+  if (!is.list(block) || !all(c("Table", "Table1") %in% names(block))) {
+    cli::cli_abort(
+      "official.nba.com returned no {.val {league}} Table/Table1 block for {.val {day}}",
+      class = c("hoopR_fetch_error", "hoopR_error"),
+      call = call
+    )
+  }
   .parse_nba_referee_assignments(x, league)
 }
