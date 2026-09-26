@@ -243,7 +243,10 @@ one class. This mirrors sdv-py's `NoDataError`/`AssetFetchError` vocabulary
 surfaces are parity-tested against the same fixtures, and collapsing a failed
 fetch into a silently-empty return would make that parity untestable and
 would hide a rate limit or a WAF block as if it were "no report for this
-game." Do not "fix" this back to the empty-fallback convention.
+game." Do not "fix" this back to the empty-fallback convention. Caller
+mistakes (a non-digit `game_id`, a bad `date`, a malformed `proxy`) are
+ordinary errors raised before any request, not `hoopR_error`s: only
+`httr2::req_perform()` sits inside the transport `tryCatch`.
 
 ### Column Drift Resilience
 
@@ -444,7 +447,7 @@ This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines
 
 Three files describe the same release at different audiences. Whenever you add a `NEWS.md` bullet, **think through all three before committing**:
 
-- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.1.0.9000 (development version)**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.1.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.1.0.9000 (development version)**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. When the next version ships to CRAN, rename that heading to the released version and open a new development heading above it.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral or user-visible change you add to `NEWS.md` should also be reflected in `cran-comments.md` before submission. The two files are not duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md` is the short-form release summary. If a `NEWS.md` bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from `cran-comments.md`.
 

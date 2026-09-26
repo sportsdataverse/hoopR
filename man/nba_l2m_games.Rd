@@ -14,12 +14,12 @@ nba_l2m_games(season, proxy = NULL)
 named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per unique game id in page order:\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   season \tab integer \cr
-   season_type \tab character \cr
-   label \tab character \cr
+A \code{hoopR_data} tibble, one row per unique game id in page order:\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab 10-digit zero-padded game id from the report link. \cr
+   season \tab integer \tab Season end year passed in, stamped on every row. \cr
+   season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
+   label \tab character \tab Matchup label text of the report link, edges trimmed. \cr
 }
 }
 \description{
@@ -39,6 +39,8 @@ Minute" page marker (an Akamai interstitial, a blank body, or a
 redesigned page) -- checked here, not in \code{\link[=.parse_nba_l2m_games]{.parse_nba_l2m_games()}}, so
 the parser itself never raises.
 }
+
+An invalid argument is an ordinary error, raised before any request.
 }
 
 \examples{

@@ -7,8 +7,9 @@
 nba_l2m(game_id, proxy = NULL)
 }
 \arguments{
-\item{game_id}{character or numeric. NBA game id; zero-padded to 10
-digits automatically (e.g. \code{42500405} becomes \code{"0042500405"}).}
+\item{game_id}{character or numeric. A single all-digit NBA game id;
+zero-padded to 10 digits automatically (e.g. \code{42500405} becomes
+\code{"0042500405"}). Anything else errors before any request is made.}
 
 \item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
 named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code{url}, \code{port}, \code{username},
@@ -21,54 +22,54 @@ Named list of \code{hoopR_data} tibbles:
 \code{CC}/\code{CNC}/\code{IC}/\code{INC} (\code{NCC}->\code{CNC}, \code{NCI}->\code{INC}, trailing \code{*}
 stripped, blank/\code{"Undetectable"} -> \code{NA}, never \code{INC}). \code{game_id} is a
 10-char zero-padded string. Player and team names are kept verbatim
-(no ASCII folding).\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   period \tab integer \cr
-   period_name \tab character \cr
-   pc_time \tab character \cr
-   seconds_remaining \tab double \cr
-   call_type \tab character \cr
-   call \tab character \cr
-   type \tab character \cr
-   committing \tab character \cr
-   disadvantaged \tab character \cr
-   decision \tab character \cr
-   decision_raw \tab character \cr
-   comment \tab character \cr
-   difficulty \tab character \cr
-   video_event_id \tab character \cr
-   pos_id \tab integer \cr
-   pos_start \tab character \cr
-   pos_end \tab character \cr
-   pos_team_id \tab integer \cr
+(no ASCII folding).\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab 10-digit zero-padded game id; joins to game and stats. \cr
+   period \tab integer \tab Period number from period_name (4 = fourth quarter, 5+ = overtime). \cr
+   period_name \tab character \tab Raw period label, e.g. Q4, or Q5 for the first overtime. \cr
+   pc_time \tab character \tab Raw game clock string, MM:SS or MM:SS.t. \cr
+   seconds_remaining \tab double \tab Seconds left in the period, parsed from pc_time. \cr
+   call_type \tab character \tab Raw "Call: Type" label, whitespace untouched. \cr
+   call \tab character \tab Upper-cased part of call_type before the colon, e.g. FOUL. \cr
+   type \tab character \tab Upper-cased part of call_type after the colon, e.g. SHOOTING. \cr
+   committing \tab character \tab Player, team or coach committing the graded action. \cr
+   disadvantaged \tab character \tab Player or team disadvantaged by the graded action. \cr
+   decision \tab character \tab Normalized grade: CC, CNC, IC or INC. \cr
+   decision_raw \tab character \tab Raw grading code before normalization. \cr
+   comment \tab character \tab Grader's free-text explanation of the ruling. \cr
+   difficulty \tab character \tab Grader's difficulty rating, e.g. Observable or Difficult. \cr
+   video_event_id \tab character \tab Report video event id (source field VideolLink); not a play-by-play event number. \cr
+   pos_id \tab integer \tab Report possession id; rows sharing it belong to one possession. \cr
+   pos_start \tab character \tab Game clock at the start of the possession. \cr
+   pos_end \tab character \tab Game clock at the end of the possession. \cr
+   pos_team_id \tab integer \tab NBA team id of the team in possession. \cr
 }
 
 
-\strong{game} -- one row of game metadata.\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   game_date \tab Date \cr
-   season_type \tab character \cr
-   home_team_id \tab integer \cr
-   away_team_id \tab integer \cr
-   home_team_abbr \tab character \cr
-   away_team_abbr \tab character \cr
-   home_team_name \tab character \cr
-   away_team_name \tab character \cr
-   home_score \tab integer \cr
-   away_score \tab integer \cr
-   l2m_comments \tab character \cr
+\strong{game} -- one row of game metadata.\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab 10-digit zero-padded game id; joins to calls and stats. \cr
+   game_date \tab Date \tab Game date from the report's local tip-off timestamp. \cr
+   season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
+   home_team_id \tab integer \tab NBA team id of the home team. \cr
+   away_team_id \tab integer \tab NBA team id of the away team. \cr
+   home_team_abbr \tab character \tab Home team three-letter abbreviation. \cr
+   away_team_abbr \tab character \tab Away team three-letter abbreviation. \cr
+   home_team_name \tab character \tab Home team nickname as published in the report. \cr
+   away_team_name \tab character \tab Away team nickname as published in the report. \cr
+   home_score \tab integer \tab Home team final score. \cr
+   away_score \tab integer \tab Away team final score. \cr
+   l2m_comments \tab character \tab Report-level note from the league; NA for almost every game. \cr
 }
 
 
 \strong{stats} -- 3 rows of error-count stats (\code{Calls}, \verb{Errors in Favor},
-\verb{Possessions in Favor}).\tabular{ll}{
-   col_name \tab types \cr
-   game_id \tab character \cr
-   stat_name \tab character \cr
-   home \tab integer \cr
-   away \tab integer \cr
+\verb{Possessions in Favor}).\tabular{lll}{
+   col_name \tab types \tab description \cr
+   game_id \tab character \tab 10-digit zero-padded game id; joins to calls and game. \cr
+   stat_name \tab character \tab Statistic: Calls, Errors in Favor or Possessions in Favor. \cr
+   home \tab integer \tab Value of stat_name for the home team. \cr
+   away \tab integer \tab Value of stat_name for the away team. \cr
 }
 }
 \description{
@@ -82,8 +83,7 @@ reports exist only from 2019-01-01 onward. Port of the scraping logic in
 }
 \section{Errors}{
 
-Raises a classed condition instead of returning on failure (see
-\code{vignette("nba_officiating")}-style notes in \code{?nba_officiating}):
+Raises a classed condition instead of returning on failure:
 \itemize{
 \item \code{hoopR_no_data} -- the game has no L2M report (common for regular-season
 games, games that did not reach the final two minutes, or very recent
@@ -91,6 +91,8 @@ games), or official.nba.com 404s the request.
 \item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
 Akamai WAF block) or returned a 200 response that isn't valid JSON.
 }
+
+An invalid argument is an ordinary error, raised before any request.
 }
 
 \examples{

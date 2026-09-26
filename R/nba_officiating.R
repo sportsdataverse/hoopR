@@ -7,9 +7,9 @@
 #' Manager: a browser User-Agent is required, and a 403 means two different
 #' things -- an S3 XML `AccessDenied` body means "no such report" (signalled
 #' as a `hoopR_no_data` condition) while an Akamai HTML interstitial means the
-#' fetch was blocked (signalled as a `hoopR_fetch_error` condition). See
-#' `vignette("nba_officiating")`-style docs on `?nba_l2m`, `?nba_l2m_games`,
-#' and `?nba_referee_assignments` for the conditions each function can raise.
+#' fetch was blocked (signalled as a `hoopR_fetch_error` condition). Each of
+#' [nba_l2m()], [nba_l2m_games()] and [nba_referee_assignments()] lists the
+#' conditions it can raise in its own Errors section.
 #' @name nba_officiating
 #' @keywords internal
 NULL
@@ -59,11 +59,6 @@ NULL
   "fetch_error"
 }
 
-.signal_official_condition <- function(kind, message, call = sys.call(-1)) {
-  cls <- if (identical(kind, "no_data")) "hoopR_no_data" else "hoopR_fetch_error"
-  cli::cli_abort(message, class = c(cls, "hoopR_error"), call = call)
-}
-
 #' GET a URL from official.nba.com, signalling classed conditions on failure
 #'
 #' Returns the response body (character) on HTTP 200. On any other status,
@@ -72,8 +67,12 @@ NULL
 #' request is built directly against httr2 here (rather than delegating to
 #' the shared [.retry_request()]) so the retry policy can treat 403/404 as
 #' definitive instead of transient, and so a transport-level failure (DNS,
-#' TLS, a dropped connection) is reclassified into the same error vocabulary
-#' instead of escaping as a raw curl/httr2 condition.
+#' TLS, a dropped connection) is retried, then reclassified into the same
+#' error vocabulary instead of escaping as a raw curl/httr2 condition. Only
+#' [httr2::req_perform()] is wrapped: an error while building the request (a
+#' malformed `proxy`, say) is the caller's mistake and propagates unchanged.
+#' A response without a body (a bare 503, an empty 200) is classified by its
+#' status like any other.
 #' @param url character(1). Full official.nba.com URL to fetch.
 #' @param params Named list of query parameters, spliced onto `url` (default:
 #'   empty list).
@@ -84,29 +83,30 @@ NULL
 #' @keywords internal
 .official_nba_get <- function(url, params = list(), proxy = NULL) {
   call <- sys.call(-1)
+  req <- httr2::request(url)
+  if (length(params) > 0) {
+    req <- httr2::req_url_query(req, !!!params)
+  }
+  req <- httr2::req_headers(req, !!!as.list(.official_nba_headers()))
+  if (!is.null(proxy)) {
+    req <- if (is.list(proxy)) {
+      do.call(httr2::req_proxy, c(list(req = req), proxy))
+    } else {
+      httr2::req_proxy(req, url = proxy)
+    }
+  }
+  req <- req |>
+    httr2::req_timeout(60) |>
+    httr2::req_retry(
+      max_tries = 3,
+      # A dropped connection gets the same retry budget as a 5xx, as sdv-py's
+      # download() does (httr2 >= 1.0.4 no longer retries failures by default).
+      retry_on_failure = TRUE,
+      is_transient = function(resp) httr2::resp_status(resp) %in% c(408L, 429L, 500L, 502L, 503L, 504L)
+    ) |>
+    httr2::req_error(is_error = function(resp) FALSE)
   resp <- tryCatch(
-    {
-      req <- httr2::request(url)
-      if (length(params) > 0) {
-        req <- httr2::req_url_query(req, !!!params)
-      }
-      req <- httr2::req_headers(req, !!!as.list(.official_nba_headers()))
-      if (!is.null(proxy)) {
-        req <- if (is.list(proxy)) {
-          do.call(httr2::req_proxy, c(list(req = req), proxy))
-        } else {
-          httr2::req_proxy(req, url = proxy)
-        }
-      }
-      req |>
-        httr2::req_timeout(60) |>
-        httr2::req_retry(
-          max_tries = 3,
-          is_transient = function(resp) httr2::resp_status(resp) %in% c(408L, 429L, 500L, 502L, 503L, 504L)
-        ) |>
-        httr2::req_error(is_error = function(resp) FALSE) |>
-        httr2::req_perform()
-    },
+    httr2::req_perform(req),
     error = function(cnd) {
       cli::cli_abort(
         "official.nba.com fetch failed (transport error) for {.url {url}}: {conditionMessage(cnd)}",
@@ -117,14 +117,17 @@ NULL
     }
   )
   status <- httr2::resp_status(resp)
-  body <- .resp_text(resp)
+  # resp_body_string() raises an unclassed "empty body" error on a bodiless
+  # response; read it as "" so the status still decides the class.
+  body <- if (httr2::resp_has_body(resp)) .resp_text(resp) else ""
   if (identical(status, 200L)) {
     return(body)
   }
   kind <- .classify_official_response(status, body)
-  .signal_official_condition(
-    kind,
-    sprintf("official.nba.com %s (HTTP %d): %s", kind, status, url),
+  # A literal template: `url` is interpolated as a value, never re-parsed as glue.
+  cli::cli_abort(
+    "official.nba.com {kind} (HTTP {status}): {.url {url}}",
+    class = c(paste0("hoopR_", kind), "hoopR_error"),
     call = call
   )
 }
@@ -152,15 +155,25 @@ NULL
 # already-long, NULL/NA) is returned verbatim as a string -- never raises.
 # Deliberately string-only (no as.integer()/sprintf("%d")) so it never
 # overflows R's 32-bit integer range the way `sprintf("%010d", 3e9)` would.
+# `digits = 15` keeps a fractional part visible: at format()'s default 7
+# significant digits, 42500405.5 would round to "42500406", another game.
 .gid10 <- function(game_id) {
   if (is.null(game_id) || (length(game_id) == 1 && is.na(game_id))) {
     return(NA_character_)
   }
-  s <- if (is.numeric(game_id)) format(game_id, scientific = FALSE, trim = TRUE) else as.character(game_id)
+  s <- if (is.numeric(game_id)) format(game_id, scientific = FALSE, trim = TRUE, digits = 15) else as.character(game_id)
   if (!grepl("^[0-9]+$", s) || nchar(s) >= 10) {
     return(s)
   }
   paste0(strrep("0", 10 - nchar(s)), s)
+}
+
+# A field absent from EVERY row of a parsed JSON table comes back NULL, and a
+# length-0 column breaks tibble() recycling; it becomes an all-NA column
+# instead, as sdv-py's parser does.
+.chr_col <- function(df, name) {
+  v <- df[[name]]
+  if (is.null(v)) rep(NA_character_, nrow(df)) else as.character(v)
 }
 
 .validate_league <- function(league, call = sys.call(-1)) {
@@ -213,8 +226,8 @@ NULL
     .L2M_CALLS_PTYPE
   } else {
     l2m <- as.data.frame(l2m, stringsAsFactors = FALSE)
-    period_name <- as.character(l2m[["PeriodName"]])
-    pc_time <- as.character(l2m[["PCTime"]])
+    period_name <- .chr_col(l2m, "PeriodName")
+    pc_time <- .chr_col(l2m, "PCTime")
     pc_norm <- sub("^(\\d+):(\\d+):(\\d+)$", "\\1:\\2.\\3", pc_time)
     # str_match()[, 2] (not sub()-as-extractor / regmatches(regexpr())): a
     # non-match must yield NA, aligned 1:1 with the input, never a dropped
@@ -224,9 +237,9 @@ NULL
     seconds <- suppressWarnings(as.numeric(stringr::str_match(pc_norm, ":(\\d+(?:\\.\\d+)?)\\.?$")[, 2]))
     # call_type is stored verbatim (untouched) in the output; `ct` is a
     # transient whitespace-normalized copy used only to split call/type.
-    call_type_raw <- as.character(l2m[["CallType"]])
+    call_type_raw <- .chr_col(l2m, "CallType")
     ct <- stringr::str_squish(call_type_raw)
-    decision_raw <- as.character(l2m[["CallRatingName"]])
+    decision_raw <- .chr_col(l2m, "CallRatingName")
     decision_clean <- sub("\\*$", "", stringr::str_trim(decision_raw))
     decision <- unname(.OFFICIAL_DECISIONS[decision_clean])
 
@@ -239,17 +252,17 @@ NULL
       call_type = call_type_raw,
       call = toupper(stringr::str_trim(stringr::str_match(ct, "^([^:]+):")[, 2])),
       type = toupper(stringr::str_match(ct, ":\\s*(.+)$")[, 2]),
-      committing = dplyr::na_if(as.character(l2m[["CP"]]), ""),
-      disadvantaged = dplyr::na_if(as.character(l2m[["DP"]]), ""),
+      committing = dplyr::na_if(.chr_col(l2m, "CP"), ""),
+      disadvantaged = dplyr::na_if(.chr_col(l2m, "DP"), ""),
       decision = decision,
       decision_raw = decision_raw,
-      comment = as.character(l2m[["Comment"]]),
-      difficulty = as.character(l2m[["Difficulty"]]),
-      video_event_id = if (!is.null(l2m[["VideolLink"]])) as.character(l2m[["VideolLink"]]) else NA_character_,
-      pos_id = as.integer(suppressWarnings(as.numeric(l2m[["posID"]]))),
-      pos_start = as.character(l2m[["posStart"]]),
-      pos_end = as.character(l2m[["posEnd"]]),
-      pos_team_id = as.integer(suppressWarnings(as.numeric(l2m[["posTeamId"]])))
+      comment = .chr_col(l2m, "Comment"),
+      difficulty = .chr_col(l2m, "Difficulty"),
+      video_event_id = .chr_col(l2m, "VideolLink"),
+      pos_id = as.integer(suppressWarnings(as.numeric(.chr_col(l2m, "posID")))),
+      pos_start = .chr_col(l2m, "posStart"),
+      pos_end = .chr_col(l2m, "posEnd"),
+      pos_team_id = as.integer(suppressWarnings(as.numeric(.chr_col(l2m, "posTeamId"))))
     )
     calls[, names(.L2M_CALLS_PTYPE)]
   }
@@ -284,9 +297,9 @@ NULL
     s <- as.data.frame(s, stringsAsFactors = FALSE)
     dplyr::tibble(
       game_id = rep(gid, nrow(s)),
-      stat_name = as.character(s[["stats_name"]]),
-      home = as.integer(suppressWarnings(as.integer(s[["home"]]))),
-      away = as.integer(suppressWarnings(as.integer(s[["away"]])))
+      stat_name = .chr_col(s, "stats_name"),
+      home = as.integer(suppressWarnings(as.integer(.chr_col(s, "home")))),
+      away = as.integer(suppressWarnings(as.integer(.chr_col(s, "away"))))
     )
   }
 
@@ -308,8 +321,9 @@ NULL
 #' \href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M} (MIT,
 #' (c) 2019 atlhawksfanatic).
 #'
-#' @param game_id character or numeric. NBA game id; zero-padded to 10
-#'   digits automatically (e.g. `42500405` becomes `"0042500405"`).
+#' @param game_id character or numeric. A single all-digit NBA game id;
+#'   zero-padded to 10 digits automatically (e.g. `42500405` becomes
+#'   `"0042500405"`). Anything else errors before any request is made.
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments (`url`, `port`, `username`,
 #'   `password`, `auth`).
@@ -321,62 +335,63 @@ NULL
 #'    10-char zero-padded string. Player and team names are kept verbatim
 #'    (no ASCII folding).
 #'
-#'    |col_name           |types     |
-#'    |:-------------------|:---------|
-#'    |game_id             |character |
-#'    |period              |integer   |
-#'    |period_name         |character |
-#'    |pc_time             |character |
-#'    |seconds_remaining   |double    |
-#'    |call_type           |character |
-#'    |call                |character |
-#'    |type                |character |
-#'    |committing          |character |
-#'    |disadvantaged       |character |
-#'    |decision            |character |
-#'    |decision_raw        |character |
-#'    |comment             |character |
-#'    |difficulty          |character |
-#'    |video_event_id      |character |
-#'    |pos_id              |integer   |
-#'    |pos_start           |character |
-#'    |pos_end             |character |
-#'    |pos_team_id         |integer   |
+#'    |col_name          |types     |description                                                                       |
+#'    |:-----------------|:---------|:---------------------------------------------------------------------------------|
+#'    |game_id           |character |10-digit zero-padded game id; joins to game and stats.                            |
+#'    |period            |integer   |Period number from period_name (4 = fourth quarter, 5+ = overtime).               |
+#'    |period_name       |character |Raw period label, e.g. Q4, or Q5 for the first overtime.                          |
+#'    |pc_time           |character |Raw game clock string, MM:SS or MM:SS.t.                                          |
+#'    |seconds_remaining |double    |Seconds left in the period, parsed from pc_time.                                  |
+#'    |call_type         |character |Raw "Call: Type" label, whitespace untouched.                                     |
+#'    |call              |character |Upper-cased part of call_type before the colon, e.g. FOUL.                        |
+#'    |type              |character |Upper-cased part of call_type after the colon, e.g. SHOOTING.                     |
+#'    |committing        |character |Player, team or coach committing the graded action.                               |
+#'    |disadvantaged     |character |Player or team disadvantaged by the graded action.                                |
+#'    |decision          |character |Normalized grade: CC, CNC, IC or INC.                                             |
+#'    |decision_raw      |character |Raw grading code before normalization.                                            |
+#'    |comment           |character |Grader's free-text explanation of the ruling.                                     |
+#'    |difficulty        |character |Grader's difficulty rating, e.g. Observable or Difficult.                         |
+#'    |video_event_id    |character |Report video event id (source field VideolLink); not a play-by-play event number. |
+#'    |pos_id            |integer   |Report possession id; rows sharing it belong to one possession.                   |
+#'    |pos_start         |character |Game clock at the start of the possession.                                        |
+#'    |pos_end           |character |Game clock at the end of the possession.                                          |
+#'    |pos_team_id       |integer   |NBA team id of the team in possession.                                            |
 #'
 #'    **game** -- one row of game metadata.
 #'
-#'    |col_name         |types     |
-#'    |:-----------------|:---------|
-#'    |game_id           |character |
-#'    |game_date         |Date      |
-#'    |season_type       |character |
-#'    |home_team_id      |integer   |
-#'    |away_team_id      |integer   |
-#'    |home_team_abbr    |character |
-#'    |away_team_abbr    |character |
-#'    |home_team_name    |character |
-#'    |away_team_name    |character |
-#'    |home_score        |integer   |
-#'    |away_score        |integer   |
-#'    |l2m_comments      |character |
+#'    |col_name       |types     |description                                                  |
+#'    |:--------------|:---------|:------------------------------------------------------------|
+#'    |game_id        |character |10-digit zero-padded game id; joins to calls and stats.      |
+#'    |game_date      |Date      |Game date from the report's local tip-off timestamp.         |
+#'    |season_type    |character |Season type from the third digit of game_id, e.g. playoffs.  |
+#'    |home_team_id   |integer   |NBA team id of the home team.                                |
+#'    |away_team_id   |integer   |NBA team id of the away team.                                |
+#'    |home_team_abbr |character |Home team three-letter abbreviation.                         |
+#'    |away_team_abbr |character |Away team three-letter abbreviation.                         |
+#'    |home_team_name |character |Home team nickname as published in the report.               |
+#'    |away_team_name |character |Away team nickname as published in the report.               |
+#'    |home_score     |integer   |Home team final score.                                       |
+#'    |away_score     |integer   |Away team final score.                                       |
+#'    |l2m_comments   |character |Report-level note from the league; NA for almost every game. |
 #'
 #'    **stats** -- 3 rows of error-count stats (`Calls`, `Errors in Favor`,
 #'    `Possessions in Favor`).
 #'
-#'    |col_name  |types     |
-#'    |:----------|:---------|
-#'    |game_id    |character |
-#'    |stat_name  |character |
-#'    |home       |integer   |
-#'    |away       |integer   |
+#'    |col_name  |types     |description                                                |
+#'    |:---------|:---------|:----------------------------------------------------------|
+#'    |game_id   |character |10-digit zero-padded game id; joins to calls and game.     |
+#'    |stat_name |character |Statistic: Calls, Errors in Favor or Possessions in Favor. |
+#'    |home      |integer   |Value of stat_name for the home team.                      |
+#'    |away      |integer   |Value of stat_name for the away team.                      |
 #' @section Errors:
-#' Raises a classed condition instead of returning on failure (see
-#' `vignette("nba_officiating")`-style notes in `?nba_officiating`):
+#' Raises a classed condition instead of returning on failure:
 #' * `hoopR_no_data` -- the game has no L2M report (common for regular-season
 #'   games, games that did not reach the final two minutes, or very recent
 #'   games), or official.nba.com 404s the request.
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
 #'   Akamai WAF block) or returned a 200 response that isn't valid JSON.
+#'
+#' An invalid argument is an ordinary error, raised before any request.
 #' @family NBA Officiating Functions
 #' @export
 #' @examples
@@ -387,10 +402,20 @@ NULL
 #'   })
 #' }
 nba_l2m <- function(game_id, proxy = NULL) {
-  gid <- .gid10(game_id)
+  call <- sys.call()
+  # Strict, like sdv-py's _gid(): the caller's id builds the request URL, so
+  # anything but one all-digit id stops here. The lenient .gid10() alone is
+  # for ids read back out of a payload.
+  gid <- if (length(game_id) == 1 && !is.na(game_id)) .gid10(game_id) else NA_character_
+  if (!grepl("^[0-9]+$", gid)) {
+    cli::cli_abort(
+      "{.arg game_id} must be a single all-digit NBA game id (e.g. {.val 0042500405}), got {.val {game_id}}",
+      call = call
+    )
+  }
   url <- sprintf("https://official.nba.com/l2m/json/%s.json", gid)
   body <- .official_nba_get(url, proxy = proxy)
-  x <- .official_nba_json(body, url, simplifyVector = TRUE, call = sys.call())
+  x <- .official_nba_json(body, url, simplifyVector = TRUE, call = call)
   .parse_nba_l2m(x)
 }
 
@@ -409,17 +434,17 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #' @return A `hoopR_data`-ready tibble: `game_id`, `season`, `season_type`, `label`.
 #' @keywords internal
 .parse_nba_l2m_games <- function(html, season) {
-  m <- gregexpr(.LISTING_RE, html, perl = TRUE)
-  matches <- regmatches(html, m)[[1]]
-  if (length(matches) == 0) {
+  # Read the regex's own capture groups (as sdv-py's findall() does); the
+  # label group `[^<]*` stops at `</a>`, so a ">" inside a label is kept.
+  m <- stringr::str_match_all(html, .LISTING_RE)[[1]]
+  if (nrow(m) == 0) {
     return(.LISTING_PTYPE)
   }
-  gid <- sub("^.*gameId=(?:%0[dD])?(\\d{10}).*$", "\\1", matches, perl = TRUE)
-  label_raw <- sub("^.*>([^<]*)</a>$", "\\1", matches, perl = TRUE)
+  gid <- m[, 2]
   # str_trim() strips all Unicode whitespace (NBSP, thin space, ...) from the
   # edges only, matching Python's str.strip() exactly -- interior NBSPs (e.g.
   # inside a matchup label) are left untouched (T2/P3).
-  label <- stringr::str_trim(label_raw)
+  label <- stringr::str_trim(m[, 3])
   keep <- !duplicated(gid)
   gid <- gid[keep]
   label <- label[keep]
@@ -446,18 +471,20 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #'   named list of [httr2::req_proxy()] arguments.
 #' @return A `hoopR_data` tibble, one row per unique game id in page order:
 #'
-#'    |col_name    |types     |
-#'    |:------------|:---------|
-#'    |game_id      |character |
-#'    |season       |integer   |
-#'    |season_type  |character |
-#'    |label        |character |
+#'    |col_name    |types     |description                                                 |
+#'    |:-----------|:---------|:-----------------------------------------------------------|
+#'    |game_id     |character |10-digit zero-padded game id from the report link.          |
+#'    |season      |integer   |Season end year passed in, stamped on every row.            |
+#'    |season_type |character |Season type from the third digit of game_id, e.g. playoffs. |
+#'    |label       |character |Matchup label text of the report link, edges trimmed.       |
 #' @section Errors:
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
 #'   Akamai WAF block), or a 200 response is missing the expected "Last Two
 #'   Minute" page marker (an Akamai interstitial, a blank body, or a
 #'   redesigned page) -- checked here, not in [.parse_nba_l2m_games()], so
 #'   the parser itself never raises.
+#'
+#' An invalid argument is an ordinary error, raised before any request.
 #' @family NBA Officiating Functions
 #' @export
 #' @examples
@@ -481,9 +508,9 @@ nba_l2m_games <- function(season, proxy = NULL) {
   html <- .official_nba_get(url, proxy = proxy)
   # An Akamai 200 interstitial must not look like "no reports for this page".
   if (!grepl("last two minute", html, ignore.case = TRUE)) {
-    .signal_official_condition(
-      "fetch_error",
-      sprintf("official.nba.com listing page missing the 'Last Two Minute' marker (Akamai interstitial?): %s", url),
+    cli::cli_abort(
+      "official.nba.com listing page is missing the 'Last Two Minute' marker (Akamai interstitial?): {.url {url}}",
+      class = c("hoopR_fetch_error", "hoopR_error"),
       call = call
     )
   }
@@ -596,10 +623,10 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #' an END year: START+1 for `"nba"`/`"gl"` (two-calendar-year seasons), START
 #' unchanged for `"wnba"` (single-year seasons).
 #'
-#' @param date character or Date/POSIXct. Date to fetch. A Date/POSIXct is
-#'   formatted directly (never routed through `as.Date()`, which can shift a
-#'   POSIXct's calendar day across a timezone boundary); a character must
-#'   match `"YYYY-MM-DD"`.
+#' @param date character or Date/POSIXct, length 1. Date to fetch. A
+#'   Date/POSIXct is formatted directly (never routed through `as.Date()`,
+#'   which can shift a POSIXct's calendar day across a timezone boundary); a
+#'   character must match `"YYYY-MM-DD"`.
 #' @param league character(1). One of `"nba"` (default), `"gl"`, `"wnba"`.
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments.
@@ -607,37 +634,39 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'
 #'    **officials** -- one row per game x crew slot.
 #'
-#'    |col_name        |types     |
-#'    |:----------------|:---------|
-#'    |league           |character |
-#'    |game_id          |character |
-#'    |game_date        |Date      |
-#'    |season           |integer   |
-#'    |season_type      |character |
-#'    |game_code        |character |
-#'    |home_team_id     |integer   |
-#'    |home_team_abbr   |character |
-#'    |away_team_id     |integer   |
-#'    |away_team_abbr   |character |
-#'    |crew_position    |integer   |
-#'    |official_id      |integer   |
-#'    |official_name    |character |
-#'    |jersey_num       |character |
+#'    |col_name       |types     |description                                                      |
+#'    |:--------------|:---------|:----------------------------------------------------------------|
+#'    |league         |character |League: nba, gl (G League) or wnba.                              |
+#'    |game_id        |character |10-digit zero-padded game id.                                    |
+#'    |game_date      |Date      |Game date, parsed from the feed's MM/DD/YYYY.                    |
+#'    |season         |integer   |Season end year (start year + 1 for nba/gl, unchanged for wnba). |
+#'    |season_type    |character |Season type from the first digit of the feed's season code.      |
+#'    |game_code      |character |League game code, YYYYMMDD/AWYHOM.                               |
+#'    |home_team_id   |integer   |Team id of the home team.                                        |
+#'    |home_team_abbr |character |Home team three-letter abbreviation.                             |
+#'    |away_team_id   |integer   |Team id of the away team.                                        |
+#'    |away_team_abbr |character |Away team three-letter abbreviation.                             |
+#'    |crew_position  |integer   |Feed slot order (1-4); slot 1 is the inferred crew chief.        |
+#'    |official_id    |integer   |Official's person id from the feed.                              |
+#'    |official_name  |character |Official's display name.                                         |
+#'    |jersey_num     |character |Official's jersey number, as a string.                           |
 #'
 #'    **replay_center** -- one row per replay-center official per game/day.
 #'
-#'    |col_name       |types     |
-#'    |:---------------|:---------|
-#'    |league          |character |
-#'    |game_date       |Date      |
-#'    |official_id     |integer   |
-#'    |official_name   |character |
+#'    |col_name      |types     |description                                                    |
+#'    |:-------------|:---------|:--------------------------------------------------------------|
+#'    |league        |character |League: nba, gl or wnba.                                       |
+#'    |game_date     |Date      |Date the replay-center official worked (not tied to one game). |
+#'    |official_id   |integer   |Replay-center official's person id from the feed.              |
+#'    |official_name |character |Replay-center official's display name.                         |
 #'
 #'    A date with no games for the league is not an error -- both tibbles come
 #'    back zero-row rather than raising.
 #' @section Errors:
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
 #'   Akamai WAF block) or returned a 200 response that isn't valid JSON.
+#'
+#' An invalid argument is an ordinary error, raised before any request.
 #' @family NBA Officiating Functions
 #' @export
 #' @examples
@@ -650,17 +679,14 @@ nba_l2m_games <- function(season, proxy = NULL) {
 nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
   call <- sys.call()
   .validate_league(league, call = call)
-  day <- if (inherits(date, "Date") || inherits(date, "POSIXt")) {
-    format(date, "%Y-%m-%d")
-  } else {
-    s <- as.character(date)
-    if (length(s) != 1 || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", s)) {
-      cli::cli_abort(
-        "{.arg date} must be a Date/POSIXct or a string matching 'YYYY-MM-DD', got {.val {date}}",
-        call = call
-      )
-    }
-    s
+  day <- if (inherits(date, c("Date", "POSIXt"))) format(date, "%Y-%m-%d") else as.character(date)
+  # One check for every branch: a length-2 or NA Date must fail here too, not
+  # reach the request as a multi-valued or "NA" query parameter.
+  if (length(day) != 1 || is.na(day) || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", day)) {
+    cli::cli_abort(
+      "{.arg date} must be a single Date/POSIXct or a string matching 'YYYY-MM-DD', got {.val {date}}",
+      call = call
+    )
   }
   url <- "https://official.nba.com/wp-json/api/v1/get-game-officials"
   body <- .official_nba_get(url, params = list(date = day), proxy = proxy)

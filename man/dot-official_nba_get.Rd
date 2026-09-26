@@ -26,7 +26,11 @@ condition (\code{hoopR_no_data} / \code{hoopR_fetch_error}) instead of returning
 request is built directly against httr2 here (rather than delegating to
 the shared \code{\link[=.retry_request]{.retry_request()}}) so the retry policy can treat 403/404 as
 definitive instead of transient, and so a transport-level failure (DNS,
-TLS, a dropped connection) is reclassified into the same error vocabulary
-instead of escaping as a raw curl/httr2 condition.
+TLS, a dropped connection) is retried, then reclassified into the same
+error vocabulary instead of escaping as a raw curl/httr2 condition. Only
+\code{\link[httr2:req_perform]{httr2::req_perform()}} is wrapped: an error while building the request (a
+malformed \code{proxy}, say) is the caller's mistake and propagates unchanged.
+A response without a body (a bare 503, an empty 200) is classified by its
+status like any other.
 }
 \keyword{internal}

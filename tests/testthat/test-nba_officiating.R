@@ -25,11 +25,8 @@ test_that("L2M parser matches sdv-py golden output (game, stats)", {
   gold_game <- .read_gold("l2m_0042500405_game.csv")
   gold_stats <- .read_gold("l2m_0042500405_stats.csv")
 
-  expect_identical(names(out$game), names(gold_game))
-  expect_identical(as.character(out$game$game_id), gold_game$game_id)
-  expect_identical(as.character(out$game$season_type), gold_game$season_type)
-  expect_identical(format(out$game$game_date, "%Y-%m-%d"), gold_game$game_date)
-  expect_equal(as.numeric(out$game$home_score), as.numeric(gold_game$home_score))
+  .expect_matches_gold(out$game, gold_game)
+  expect_s3_class(out$game$game_date, "Date")
   expect_type(out$game$home_team_id, "integer")
 
   .expect_matches_gold(out$stats, gold_stats)
@@ -112,10 +109,7 @@ test_that("L2M games listing matches sdv-py golden output (415 rows)", {
 
   expect_equal(nrow(got), 415)
   expect_equal(length(unique(got$game_id)), 415)
-  expect_identical(names(got), names(gold))
-  expect_identical(as.character(got$game_id), gold$game_id)
-  expect_identical(as.character(got$season_type), gold$season_type)
-  expect_identical(.blank_as_na(got$label), .blank_as_na(gold$label))
+  .expect_matches_gold(got, gold)
   expect_identical(got$game_id[1], "0042500405")
   expect_identical(got$season_type[1], "playoffs")
   expect_identical(got$label[1], "Knicks 94, Spurs 90")
@@ -164,13 +158,13 @@ test_that("clock '45.3' (no minutes) parses to NA seconds_remaining", {
 
 test_that("decision 'CC'+NBSP normalizes to 'CC'", {
   x <- jsonlite::fromJSON(file.path(fx, "l2m_json_0042500405.json"))
-  x$l2m$CallRatingName[1] <- "CC "
+  x$l2m$CallRatingName[1] <- "CC\u00a0"
   expect_identical(.parse_nba_l2m(x)$calls$decision[1], "CC")
 })
 
 test_that("call_type 'Foul:'+NBSP+'Personal' splits to call FOUL / type PERSONAL", {
   x <- jsonlite::fromJSON(file.path(fx, "l2m_json_0042500405.json"))
-  x$l2m$CallType[1] <- "Foul: Personal"
+  x$l2m$CallType[1] <- "Foul:\u00a0Personal"
   got <- .parse_nba_l2m(x)$calls
   expect_identical(got$call[1], "FOUL")
   expect_identical(got$type[1], "PERSONAL")
@@ -178,12 +172,17 @@ test_that("call_type 'Foul:'+NBSP+'Personal' splits to call FOUL / type PERSONAL
 
 test_that("listing labels: interior NBSP kept, edge whitespace incl. thin space stripped", {
   h <- paste0(
-    '<a href="L2MReport.html?gameId=0042500405">Knicks 94, Spurs 90</a>',
-    '<a href="L2MReport.html?gameId=0042500406"> Spurs 90, Knicks 94 </a>'
+    '<a href="L2MReport.html?gameId=0042500405">Knicks 94,\u00a0Spurs 90</a>',
+    '<a href="L2MReport.html?gameId=0042500406">\u2009Spurs 90, Knicks 94\u2009</a>'
   )
   got <- .parse_nba_l2m_games(h, 2026)
-  expect_identical(got$label[1], "Knicks 94, Spurs 90")
+  expect_identical(got$label[1], "Knicks 94,\u00a0Spurs 90")
   expect_identical(got$label[2], "Spurs 90, Knicks 94")
+})
+
+test_that("listing labels: a '>' inside a label is kept whole (N5)", {
+  h <- '<a href="L2MReport.html?gameId=0042500405">Knicks 94 > Spurs 90</a>'
+  expect_identical(.parse_nba_l2m_games(h, 2026)$label, "Knicks 94 > Spurs 90")
 })
 
 # ---------------------------------------------------------------------------
@@ -205,6 +204,34 @@ test_that("missing GameDate gives NA date, not GameDateOut's value", {
   x$game$GameDate <- NULL
   got <- .parse_nba_l2m(x)$game
   expect_identical(got$game_date, as.Date(NA))
+})
+
+test_that("a field missing from every row becomes an NA column, not a tibble size error (P-a)", {
+  x <- jsonlite::fromJSON(file.path(fx, "l2m_json_0042500405.json"))
+  n <- nrow(x$l2m)
+  # Every field in turn, as an older report might omit any one of them.
+  for (f in names(x$l2m)) {
+    y <- x
+    y$l2m[[f]] <- NULL
+    expect_equal(nrow(.parse_nba_l2m(y)$calls), n, info = f)
+  }
+  for (f in names(x$stats)) {
+    y <- x
+    y$stats[[f]] <- NULL
+    expect_equal(nrow(.parse_nba_l2m(y)$stats), nrow(x$stats), info = f)
+  }
+
+  x$l2m$Difficulty <- NULL
+  x$l2m$posID <- NULL
+  x$l2m$CP <- NULL
+  x$l2m$CallRatingName <- NULL
+  x$stats$stats_name <- NULL
+  out <- .parse_nba_l2m(x)
+  expect_identical(out$calls$difficulty, rep(NA_character_, n))
+  expect_identical(out$calls$pos_id, rep(NA_integer_, n))
+  expect_identical(out$calls$committing, rep(NA_character_, n))
+  expect_identical(out$calls$decision, rep(NA_character_, n))
+  expect_identical(out$stats$stat_name, rep(NA_character_, nrow(x$stats)))
 })
 
 # ---------------------------------------------------------------------------
@@ -261,6 +288,8 @@ test_that(".gid10 zero-pads all-digit ids, keeps others verbatim, never overflow
   expect_identical(.gid10(NA), NA_character_)
   # 3e9 > .Machine$integer.max: must stay a pure string op, never overflow.
   expect_identical(.gid10(3e9), "3000000000")
+  # A fractional id is kept verbatim, never rounded into another game's id.
+  expect_identical(.gid10(42500405.5), "42500405.5")
 })
 
 test_that("nba_l2m_games(season): accepts numeric-like string or number, rejects a non-4-digit season", {
@@ -287,7 +316,9 @@ test_that("nba_referee_assignments(date): Date/POSIXct formatted directly (no as
   nba_referee_assignments(as.Date("2026-06-13"))
   expect_identical(captured, "2026-06-13")
 
-  nba_referee_assignments(as.POSIXct("2026-06-13 19:30:00", tz = "UTC"))
+  # 22:30 in New York is already 2026-06-14 in UTC: format() keeps the
+  # caller's calendar day, as.Date() would move it forward one.
+  nba_referee_assignments(as.POSIXct("2026-06-13 22:30:00", tz = "America/New_York"))
   expect_identical(captured, "2026-06-13")
 
   expect_error(nba_referee_assignments("06/13/2026"), regexp = "YYYY-MM-DD")
@@ -357,6 +388,88 @@ test_that("a transport-level failure surfaces as a hoopR_fetch_error, not a raw 
     .package = "httr2"
   )
   expect_error(.official_nba_get("https://official.nba.com/l2m/json/0042500405.json"), class = "hoopR_fetch_error")
+})
+
+test_that("a response without a body is still classified by its status (finding 8)", {
+  bodiless <- function(status) function(req, ...) httr2::response(status_code = status)
+  u <- "https://official.nba.com/l2m/json/0042500405.json"
+
+  local_mocked_bindings(req_perform = bodiless(503L), .package = "httr2")
+  expect_error(.official_nba_get(u), class = "hoopR_fetch_error")
+  local_mocked_bindings(req_perform = bodiless(403L), .package = "httr2")
+  expect_error(.official_nba_get(u), class = "hoopR_fetch_error")
+  local_mocked_bindings(req_perform = bodiless(404L), .package = "httr2")
+  expect_error(.official_nba_get(u), class = "hoopR_no_data")
+
+  # An empty 200 is a fetch error from every public function, as in sdv-py.
+  local_mocked_bindings(req_perform = bodiless(200L), .package = "httr2")
+  expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error")
+  expect_error(nba_l2m_games(2026), class = "hoopR_fetch_error")
+  expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_fetch_error")
+})
+
+test_that("nba_l2m(game_id): anything but one all-digit id errors before any request (N1)", {
+  requested <- character()
+  l2m_json <- readBin(file.path(fx, "l2m_json_0042500405.json"), "raw", file.size(file.path(fx, "l2m_json_0042500405.json")))
+  local_mocked_bindings(
+    req_perform = function(req, ...) {
+      requested <<- c(requested, req$url)
+      httr2::response(status_code = 200L, body = l2m_json)
+    },
+    .package = "httr2"
+  )
+  bad_ids <- list("abc", NA, NULL, "{1+1}", "0042500405.json", -5, 42500405.5, c("0042500405", "0042500406"))
+  for (bad in bad_ids) {
+    err <- expect_error(nba_l2m(bad), regexp = "game_id")
+    expect_false(inherits(err, "hoopR_error"))
+  }
+  expect_identical(requested, character())
+
+  # A good numeric id is zero-padded into the URL and parses end to end.
+  out <- nba_l2m(42500405)
+  expect_identical(requested, "https://official.nba.com/l2m/json/0042500405.json")
+  expect_equal(nrow(out$calls), 21)
+})
+
+test_that("error messages interpolate the URL as a value, never as a glue template (N1)", {
+  local_mocked_bindings(
+    req_perform = .mock_resp(403L, "<html><body>Access Denied</body></html>", "text/html"),
+    .package = "httr2"
+  )
+  err <- expect_error(.official_nba_get("https://official.nba.com/l2m/json/{1+1}.json"), class = "hoopR_fetch_error")
+  expect_match(conditionMessage(err), "{1+1}", fixed = TRUE)
+})
+
+test_that("caller mistakes are ordinary errors raised before any request, not hoopR_fetch_error (N2)", {
+  requested <- FALSE
+  local_mocked_bindings(
+    req_perform = function(req, ...) {
+      requested <<- TRUE
+      httr2::response(status_code = 200L, body = charToRaw('{"nba":{},"gl":{},"wnba":{}}'))
+    },
+    .package = "httr2"
+  )
+  err <- expect_error(.official_nba_get("https://official.nba.com/l2m/json/0042500405.json", proxy = list(bogus = 1)))
+  expect_false(inherits(err, "hoopR_error"))
+  for (bad in list(as.Date(c("2026-06-13", "2026-06-14")), as.Date(NA), NULL, c("2026-06-13", "2026-06-14"))) {
+    err <- expect_error(nba_referee_assignments(bad), regexp = "date")
+    expect_false(inherits(err, "hoopR_error"))
+  }
+  expect_false(requested)
+})
+
+test_that("transport failures get the retry budget: retry_on_failure is set (N3)", {
+  captured <- NULL
+  local_mocked_bindings(
+    req_perform = function(req, ...) {
+      captured <<- req
+      httr2::response(status_code = 200L, body = charToRaw("ok"))
+    },
+    .package = "httr2"
+  )
+  .official_nba_get("https://official.nba.com/l2m/json/0042500405.json")
+  expect_true(isTRUE(captured$policies$retry_on_failure))
+  expect_equal(captured$policies$retry_max_tries, 3)
 })
 
 # ---------------------------------------------------------------------------

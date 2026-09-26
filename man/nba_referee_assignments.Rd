@@ -7,10 +7,10 @@
 nba_referee_assignments(date, league = "nba", proxy = NULL)
 }
 \arguments{
-\item{date}{character or Date/POSIXct. Date to fetch. A Date/POSIXct is
-formatted directly (never routed through \code{as.Date()}, which can shift a
-POSIXct's calendar day across a timezone boundary); a character must
-match \code{"YYYY-MM-DD"}.}
+\item{date}{character or Date/POSIXct, length 1. Date to fetch. A
+Date/POSIXct is formatted directly (never routed through \code{as.Date()},
+which can shift a POSIXct's calendar day across a timezone boundary); a
+character must match \code{"YYYY-MM-DD"}.}
 
 \item{league}{character(1). One of \code{"nba"} (default), \code{"gl"}, \code{"wnba"}.}
 
@@ -20,31 +20,31 @@ named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments.}
 \value{
 Named list of \code{hoopR_data} tibbles:
 
-\strong{officials} -- one row per game x crew slot.\tabular{ll}{
-   col_name \tab types \cr
-   league \tab character \cr
-   game_id \tab character \cr
-   game_date \tab Date \cr
-   season \tab integer \cr
-   season_type \tab character \cr
-   game_code \tab character \cr
-   home_team_id \tab integer \cr
-   home_team_abbr \tab character \cr
-   away_team_id \tab integer \cr
-   away_team_abbr \tab character \cr
-   crew_position \tab integer \cr
-   official_id \tab integer \cr
-   official_name \tab character \cr
-   jersey_num \tab character \cr
+\strong{officials} -- one row per game x crew slot.\tabular{lll}{
+   col_name \tab types \tab description \cr
+   league \tab character \tab League: nba, gl (G League) or wnba. \cr
+   game_id \tab character \tab 10-digit zero-padded game id. \cr
+   game_date \tab Date \tab Game date, parsed from the feed's MM/DD/YYYY. \cr
+   season \tab integer \tab Season end year (start year + 1 for nba/gl, unchanged for wnba). \cr
+   season_type \tab character \tab Season type from the first digit of the feed's season code. \cr
+   game_code \tab character \tab League game code, YYYYMMDD/AWYHOM. \cr
+   home_team_id \tab integer \tab Team id of the home team. \cr
+   home_team_abbr \tab character \tab Home team three-letter abbreviation. \cr
+   away_team_id \tab integer \tab Team id of the away team. \cr
+   away_team_abbr \tab character \tab Away team three-letter abbreviation. \cr
+   crew_position \tab integer \tab Feed slot order (1-4); slot 1 is the inferred crew chief. \cr
+   official_id \tab integer \tab Official's person id from the feed. \cr
+   official_name \tab character \tab Official's display name. \cr
+   jersey_num \tab character \tab Official's jersey number, as a string. \cr
 }
 
 
-\strong{replay_center} -- one row per replay-center official per game/day.\tabular{ll}{
-   col_name \tab types \cr
-   league \tab character \cr
-   game_date \tab Date \cr
-   official_id \tab integer \cr
-   official_name \tab character \cr
+\strong{replay_center} -- one row per replay-center official per game/day.\tabular{lll}{
+   col_name \tab types \tab description \cr
+   league \tab character \tab League: nba, gl or wnba. \cr
+   game_date \tab Date \tab Date the replay-center official worked (not tied to one game). \cr
+   official_id \tab integer \tab Replay-center official's person id from the feed. \cr
+   official_name \tab character \tab Replay-center official's display name. \cr
 }
 
 
@@ -71,6 +71,8 @@ unchanged for \code{"wnba"} (single-year seasons).
 \item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
 Akamai WAF block) or returned a 200 response that isn't valid JSON.
 }
+
+An invalid argument is an ordinary error, raised before any request.
 }
 
 \examples{

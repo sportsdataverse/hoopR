@@ -25,11 +25,11 @@ BugReports: https://github.com/sportsdataverse/hoopR/issues
 Depends:
     R (>= 4.1.0)
 Imports:
-    cli (>= 1.1.0),
+    cli (>= 3.0.0),
     data.table (>= 1.14.0),
     dplyr,
     glmnet,
-    httr2 (>= 1.0.0),
+    httr2 (>= 1.0.4),
     janitor,
     jsonlite,
     lifecycle,
@@ -60,7 +60,7 @@ Suggests:
     rmarkdown,
     RSQLite,
     stats,
-    testthat,
+    testthat (>= 3.1.7),
     tibble (>= 3.0),
     usethis (>= 1.6.0),
     xml2 (>= 1.3),
