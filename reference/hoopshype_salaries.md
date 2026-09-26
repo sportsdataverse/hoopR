@@ -51,9 +51,9 @@ Other Salary & Draft Functions:
 ``` r
 # \donttest{
   try(hoopshype_salaries())
-#> ── Player salaries from hoopshype.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:48:27 UTC
-#> # A tibble: 2,052 × 13
+#> ── Player salaries from hoopshype.com ────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:30:39 UTC
+#> # A tibble: 2,060 × 13
 #>    player_id player        first_name last_name team_id team  season   salary
 #>    <chr>     <chr>         <chr>      <chr>     <chr>   <chr>  <int>    <int>
 #>  1 1230356   Jalen Johnson NA         NA        NA      NA      2029 30000000
@@ -66,7 +66,7 @@ Other Salary & Draft Functions:
 #>  8 1230356   Jalen Johnson NA         NA        NA      NA      2022  2792640
 #>  9 1230356   Jalen Johnson NA         NA        NA      NA      2021  2659680
 #> 10 1357745   Dyson Daniels NA         NA        NA      NA      2029 25000000
-#> # ℹ 2,042 more rows
+#> # ℹ 2,050 more rows
 #> # ℹ 5 more variables: cap_allocation <int>, team_option <lgl>,
 #> #   player_option <lgl>, two_way <lgl>, qualifying_offer <lgl>
 # }

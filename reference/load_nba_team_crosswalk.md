@@ -95,7 +95,7 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
-#> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.1.0 ──
+#> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-07-14 11:58:51 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
@@ -120,7 +120,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
-#> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.1.0 ──
+#> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-06-13 04:51:46 UTC
 #> # A tibble: 1,416 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
@@ -143,7 +143,7 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
-#> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.1.0 ──
+#> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-07-14 11:59:23 UTC
 #> # A tibble: 544 × 21
 #>    season espn_team_id team_abbreviation player_name             espn_athlete_id
@@ -168,7 +168,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
-#> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.1.0 ──
+#> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ─────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-08-12 07:28:33 UTC
 #> # A tibble: 362 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
@@ -193,7 +193,7 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
-#> ── MBB schedule crosswalk (ESPN / Torvik) ─────────────────────── hoopR 3.1.0 ──
+#> ── MBB schedule crosswalk (ESPN / Torvik) ────────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-06-13 04:55:41 UTC
 #> # A tibble: 6,386 × 14
 #>    season game_date  home_espn_team_id away_espn_team_id espn_game_id bart_muid 
@@ -215,7 +215,7 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
-#> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.1.0 ──
+#> ── MBB player crosswalk (ESPN / Fox) ─────────────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-08-12 07:30:32 UTC
 #> # A tibble: 5,442 × 17
 #>    season espn_team_id team_abbreviation player_name      espn_athlete_id

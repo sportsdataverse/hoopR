@@ -147,7 +147,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 812 × 28
 #>    player_id player_name        team_id team_abbreviation team_name teams season
 #>        <int> <chr>                <int> <chr>             <chr>     <chr>  <int>
@@ -171,7 +171,7 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_mbb_player_value(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 9,990 × 8
 #>    player_id player              season team_id   min box_obpm box_dbpm box_bpm
 #>    <chr>     <chr>                <int> <chr>   <dbl>    <dbl>    <dbl>   <dbl>
@@ -189,7 +189,7 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_mbb_ratings(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 727 × 11
 #>    season team_id adj_o adj_d adj_em adj_tempo raw_o raw_d games  rank adj_em_z
 #>     <int> <chr>   <dbl> <dbl>  <dbl>     <dbl> <dbl> <dbl> <int> <int>    <dbl>

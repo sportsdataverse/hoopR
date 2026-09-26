@@ -423,7 +423,7 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_mbb_pbp(seasons = most_recent_mbb_season())
-#> ── ESPN MBB pbp from hoopR data repository ────────────────────── hoopR 3.1.0 ──
+#> ── ESPN MBB pbp from hoopR data repository ───────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-01 20:29:09 UTC
 #> # A tibble: 2,915,731 × 62
 #>    game_play_number      id sequence_number type_id type_text   text  away_score
@@ -448,7 +448,7 @@ load_mbb_pbp(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
-#> ── ESPN MBB team_box from hoopR data repository ───────────────── hoopR 3.1.0 ──
+#> ── ESPN MBB team_box from hoopR data repository ──────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-01 19:44:38 UTC
 #> # A tibble: 12,598 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
@@ -473,7 +473,7 @@ load_mbb_team_box(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_player_box(seasons = most_recent_mbb_season())
-#> ── ESPN MBB player_box from hoopR data repository ─────────────── hoopR 3.1.0 ──
+#> ── ESPN MBB player_box from hoopR data repository ────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-01 19:45:57 UTC
 #> # A tibble: 196,876 × 55
 #>      game_id season season_type game_date  game_date_time      athlete_id
@@ -498,7 +498,7 @@ load_mbb_player_box(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
-#> ── ESPN MBB schedules from hoopR data repository ──────────────── hoopR 3.1.0 ──
+#> ── ESPN MBB schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-01 20:00:34 UTC
 #> # A tibble: 6,318 × 86
 #>         id uid   date  attendance time_valid neutral_site conference_competition
@@ -523,7 +523,7 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_shots(seasons = most_recent_mbb_season())
-#> ── ESPN MBB shots from hoopR data repository ──────────────────── hoopR 3.1.0 ──
+#> ── ESPN MBB shots from hoopR data repository ─────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-01 20:00:46 UTC
 #> # A tibble: 991,836 × 20
 #>      game_id season period_number clock_display_value team_id athlete_id_1

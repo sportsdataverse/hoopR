@@ -90,7 +90,7 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_leaguedash(seasons = most_recent_nba_stats_season(),
                                 table = "player_bio"))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 812 × 27
 #>    player_id player_name      team_id team_abbreviation   age player_height
 #>        <int> <chr>              <int> <chr>             <dbl> <chr>        

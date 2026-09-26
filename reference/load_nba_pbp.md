@@ -395,7 +395,7 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
-#> ── ESPN NBA pbp from hoopR data repository ────────────────────── hoopR 3.1.0 ──
+#> ── ESPN NBA pbp from hoopR data repository ───────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-09 05:15:23 UTC
 #> # A tibble: 642,472 × 67
 #>    game_play_number        id sequence_number type_id type_text text  away_score
@@ -420,7 +420,7 @@ load_nba_pbp(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
-#> ── ESPN NBA team_box from hoopR data repository ───────────────── hoopR 3.1.0 ──
+#> ── ESPN NBA team_box from hoopR data repository ──────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-09 05:17:08 UTC
 #> # A tibble: 2,652 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
@@ -445,7 +445,7 @@ load_nba_team_box(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
-#> ── ESPN NBA player_box from hoopR data repository ─────────────── hoopR 3.1.0 ──
+#> ── ESPN NBA player_box from hoopR data repository ────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-09 05:17:31 UTC
 #> # A tibble: 34,883 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
@@ -470,7 +470,7 @@ load_nba_player_box(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
-#> ── ESPN NBA schedules from hoopR data repository ──────────────── hoopR 3.1.0 ──
+#> ── ESPN NBA schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-09 05:18:06 UTC
 #> # A tibble: 1,330 × 77
 #>         id uid   date  attendance time_valid neutral_site conference_competition
@@ -495,7 +495,7 @@ load_nba_schedule(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_shots(seasons = most_recent_nba_season())
-#> ── ESPN NBA shots from hoopR data repository ──────────────────── hoopR 3.1.0 ──
+#> ── ESPN NBA shots from hoopR data repository ─────────────── hoopR 3.1.0.9000 ──
 #> ℹ Data updated: 2026-09-09 05:18:31 UTC
 #> # A tibble: 298,411 × 20
 #>      game_id season period_number clock_display_value team_id athlete_id_1

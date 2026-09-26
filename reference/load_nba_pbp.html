@@ -114,7 +114,7 @@ parquet/rds artifacts to the espn_nba_shots release tag."><meta property="og:ima
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -400,7 +400,7 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_pbp</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA pbp from hoopR data repository ────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA pbp from hoopR data repository ───────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 05:15:23 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 642,472 × 67</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    game_play_number        id sequence_number type_id type_text text  away_score</span>
@@ -425,7 +425,7 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_team_box</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA team_box from hoopR data repository ───────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA team_box from hoopR data repository ──────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 05:17:08 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2,652 × 59</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      game_id season season_type game_date  game_date_time      team_id team_uid </span>
@@ -450,7 +450,7 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_player_box</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA player_box from hoopR data repository ─────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA player_box from hoopR data repository ────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 05:17:31 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 34,883 × 57</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      game_id season season_type game_date  game_date_time      athlete_id</span>
@@ -475,7 +475,7 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_schedule</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA schedules from hoopR data repository ──────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA schedules from hoopR data repository ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 05:18:06 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,330 × 77</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         id uid   date  attendance time_valid neutral_site conference_competition</span>
@@ -500,7 +500,7 @@ the season data into a database (used by <code><a href="update_nba_db.html">upda
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_shots</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA shots from hoopR data repository ──────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA shots from hoopR data repository ─────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-09 05:18:31 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 298,411 × 20</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      game_id season period_number clock_display_value team_id athlete_id_1</span>

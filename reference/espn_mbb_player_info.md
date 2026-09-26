@@ -296,8 +296,8 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_info(athlete_id = "4593919")
 #> $Bio
-#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Bio from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Bio from ESPN.com ── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 18
 #>   id      uid       guid  first_name last_name full_name display_name short_name
 #>   <chr>   <chr>     <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
@@ -307,45 +307,45 @@ Saiem Gilani
 #> #   birth_city <chr>, birth_state <chr>, birth_country <chr>
 #> 
 #> $Team
-#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Team from ESPN.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Team from ESPN.com ─────────────────────
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 1
 #>   x_ref                                                                         
 #>   <chr>                                                                         
 #> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-bas…
 #> 
 #> $Position
-#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Position from ESPN.com ── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Position from ESPN.com ─────────────────
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 5
 #>   id    name  display_name abbreviation leaf 
 #>   <chr> <chr> <chr>        <chr>        <lgl>
 #> 1 3     Guard Guard        G            FALSE
 #> 
 #> $Status
-#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Status from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Status from ESPN.com ───────────────────
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 4
 #>   id    name     type     abbreviation
 #>   <chr> <chr>    <chr>    <chr>       
 #> 1 2     Inactive inactive Inactive    
 #> 
 #> $College
-#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete College from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete College from ESPN.com ──────────────────
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Draft
-#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Draft from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Draft from ESPN.com ────────────────────
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
 # \donttest{
   espn_nba_player_info(athlete_id = "1966")
 #> $Bio
-#> ── ESPN NBA Athlete Bio from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN NBA Athlete Bio from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 21
 #>   id    uid         guid  first_name last_name full_name display_name short_name
 #>   <chr> <chr>       <chr> <chr>      <chr>     <chr>     <chr>        <chr>     
@@ -356,37 +356,37 @@ Saiem Gilani
 #> #   birth_state <chr>, birth_country <chr>
 #> 
 #> $Team
-#> ── ESPN NBA Athlete Team from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN NBA Athlete Team from ESPN.com ───────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 1
 #>   x_ref                                                                         
 #>   <chr>                                                                         
 #> 1 http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2026…
 #> 
 #> $Position
-#> ── ESPN NBA Athlete Position from ESPN.com ────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN NBA Athlete Position from ESPN.com ───────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 5
 #>   id    name    display_name abbreviation leaf 
 #>   <chr> <chr>   <chr>        <chr>        <lgl>
 #> 1 7     Forward Forward      F            FALSE
 #> 
 #> $Status
-#> ── ESPN NBA Athlete Status from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN NBA Athlete Status from ESPN.com ─────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 4
 #>   id    name   type   abbreviation
 #>   <chr> <chr>  <chr>  <chr>       
 #> 1 1     Active active Active      
 #> 
 #> $College
-#> ── ESPN NBA Athlete College from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN NBA Athlete College from ESPN.com ────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Draft
-#> ── ESPN NBA Athlete Draft from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:00 UTC
+#> ── ESPN NBA Athlete Draft from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:23 UTC
 #> # A tibble: 1 × 4
 #>   year  round selection display_text               
 #>   <chr> <chr> <chr>     <chr>                      

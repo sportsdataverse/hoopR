@@ -56,7 +56,7 @@ sportsdataverse-data repository."><meta property="og:image" content="https://raw
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -232,7 +232,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_team_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-07-14 11:58:51 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name</span>
@@ -257,7 +257,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_schedule_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-13 04:51:46 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,416 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_type game_date  home_espn_team_id away_espn_team_id</span>
@@ -280,7 +280,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_player_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-07-14 11:59:23 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 544 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id team_abbreviation player_name             espn_athlete_id</span>
@@ -305,7 +305,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_team_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ─────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-12 07:28:33 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 362 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name</span>
@@ -330,7 +330,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_schedule_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB schedule crosswalk (ESPN / Torvik) ─────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB schedule crosswalk (ESPN / Torvik) ────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-06-13 04:55:41 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,386 × 14</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season game_date  home_espn_team_id away_espn_team_id espn_game_id bart_muid </span>
@@ -352,7 +352,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_player_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── <span style="font-style: italic;">hoopR 3.1.0</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB player crosswalk (ESPN / Fox) ─────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-08-12 07:30:32 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,442 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id team_abbreviation player_name      espn_athlete_id</span>

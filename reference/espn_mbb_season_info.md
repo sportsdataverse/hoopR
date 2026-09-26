@@ -227,42 +227,42 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_info(season = 2025)
 #> $Info
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Info from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Info from ESPN.com ── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name 
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>     
 #> 1  2025 2024-07-13T07:00Z 2025-04-09T06:59Z 2024-25      3       Postseason
 #> 
 #> $Types
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Types from ESPN.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Types from ESPN.com ─────────────────────
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
 #> 1     4 http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-colle…
 #> 
 #> $Athletes
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Athletes from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Athletes from ESPN.com ──────────────────
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
 #> 1    NA http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-colle…
 #> 
 #> $Coaches
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Coaches from ESPN.com ──── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Coaches from ESPN.com ───────────────────
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Teams from ESPN.com ────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Teams from ESPN.com ─────────────────────
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards from ESPN.com ───── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards from ESPN.com ────────────────────
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -272,39 +272,39 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_info(season = 2025)
 #> $Info
-#> ── ESPN NBA Season Info from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN NBA Season Info from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name     
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>         
 #> 1  2025 2024-09-24T07:00Z 2025-06-27T06:59Z 2024-25      2       Regular Season
 #> 
 #> $Types
-#> ── ESPN NBA Season Types from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN NBA Season Types from ESPN.com ───────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
 #> 1     5 http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/season…
 #> 
 #> $Athletes
-#> ── ESPN NBA Season Athletes from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN NBA Season Athletes from ESPN.com ────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Coaches
-#> ── ESPN NBA Season Coaches from ESPN.com ──────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN NBA Season Coaches from ESPN.com ─────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
-#> ── ESPN NBA Season Teams from ESPN.com ────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN NBA Season Teams from ESPN.com ───────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
-#> ── ESPN NBA Season Awards from ESPN.com ───────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:13 UTC
+#> ── ESPN NBA Season Awards from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:35 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   

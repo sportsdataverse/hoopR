@@ -135,8 +135,8 @@ Saiem Gilani
 # Get current AP and Coaches Poll rankings
 # \donttest{
 try(espn_mbb_rankings())
-#> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:09 UTC
+#> ── ESPN MBB Rankings Information from ESPN.com ───────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:31 UTC
 #> # A tibble: 81 × 39
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>

@@ -76,30 +76,32 @@ accessed from this package:
   scores, and player box scores.
 
 - Functions that use the NBA Stats API start with `nba_` by convention
-  and should be assumed as `get` functions. As of `hoopR` version 3.1.0,
-  the package exports 127 functions covering the NBA Stats API
+  and should be assumed as `get` functions. As of `hoopR` version
+  3.1.0.9000, the package exports 127 functions covering the NBA Stats
+  API
 
 - Functions that use the NBA G-League Stats API start with `nbagl_` by
   convention and should be assumed as `get` functions. As of `hoopR`
-  version 3.1.0, the package exports 4 functions covering the NBA
+  version 3.1.0.9000, the package exports 4 functions covering the NBA
   G-League Stats API
 
 - Functions that use one of ESPN’s APIs start with `espn_` by convention
   and should be assumed as `get` functions. These functions allow for
   live access to game data for both men’s college basketball and the
-  NBA. As of `hoopR` version 3.1.0, the package exports 10 functions
-  covering the men’s college basketball endpoints and 10 for the NBA.
+  NBA. As of `hoopR` version 3.1.0.9000, the package exports 10
+  functions covering the men’s college basketball endpoints and 10 for
+  the NBA.
 
 - Functions that use Ken Pomeroy’s college basketball website start with
   `kp_` by convention and should be assumed as `get` functions. These
   functions allow users with an active subscription to get access to the
-  data in a tidy format. As of `hoopR` version 3.1.0, the package
+  data in a tidy format. As of `hoopR` version 3.1.0.9000, the package
   exports 36 functions covering the [KenPom.com](https://kenpom.com).
 
 - Functions that use the NCAA website start with `ncaa_` by convention
-  and should be assumed as `get` functions. As of `hoopR` version 3.1.0,
-  the package exports 1 function(s) covering the NCAA website, namely
-  the function to access current NET rankings.
+  and should be assumed as `get` functions. As of `hoopR` version
+  3.1.0.9000, the package exports 1 function(s) covering the NCAA
+  website, namely the function to access current NET rankings.
 
 ### **Quick Start**
 
@@ -118,7 +120,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 28.467 sec elapsed
+    ## 28.173 sec elapsed
 
 ``` r
 
@@ -214,7 +216,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.122 sec elapsed
+    ## 3.097 sec elapsed
 
 ``` r
 
@@ -301,7 +303,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.131 sec elapsed
+    ## 3.773 sec elapsed
 
 ``` r
 
@@ -386,7 +388,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 70.818 sec elapsed
+    ## 63.938 sec elapsed
 
 ``` r
 
@@ -488,7 +490,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.776 sec elapsed
+    ## 3.742 sec elapsed
 
 ``` r
 
@@ -575,7 +577,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.582 sec elapsed
+    ## 8.611 sec elapsed
 
 ``` r
 

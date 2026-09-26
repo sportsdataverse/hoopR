@@ -213,8 +213,8 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_season_rankings(season = 2025)
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ─────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:17 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:39 UTC
 #> # A tibble: 2 × 4
 #>   league                  season ranking_id ref                                 
 #>   <chr>                    <int> <chr>      <chr>                               
@@ -223,8 +223,8 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_season_rankings(season = 2025)
-#> ── ESPN NBA Season Rankings Index ─────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:18 UTC
+#> ── ESPN NBA Season Rankings Index ────────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:39 UTC
 #> # A tibble: 0 × 4
 #> # ℹ 4 variables: league <chr>, season <int>, ranking_id <chr>, ref <chr>
 # }

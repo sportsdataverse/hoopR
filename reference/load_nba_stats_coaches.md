@@ -660,7 +660,7 @@ Other NBA Stats loader functions:
 ``` r
 # \donttest{
   try(load_nba_stats_coaches(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 267 × 11
 #>       team_id season coach_id first_name last_name coach_name     is_assistant
 #>         <int>  <int>    <int> <chr>      <chr>     <chr>                 <int>
@@ -680,7 +680,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_draft(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 59 × 14
 #>    person_id player_name  season round_number round_pick overall_pick draft_type
 #>        <int> <chr>         <int>        <int>      <int>        <int> <chr>     
@@ -701,7 +701,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 707,440 × 14
 #>    game_id    action_number period home_player_1 home_player_2 home_player_3
 #>    <chr>              <int>  <int>         <int>         <int>         <int>
@@ -722,7 +722,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 156 × 10
 #>    player_id first_name last_name jersey_num    team_id team_city     team_name
 #>        <int> <chr>      <chr>     <chr>           <int> <chr>         <chr>    
@@ -741,7 +741,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 48,188 × 182
 #>    group_set group_id     group_name team_id team_abbreviation    gp     w     l
 #>    <chr>     <chr>        <chr>        <int> <chr>             <int> <int> <int>
@@ -765,7 +765,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 260 × 6
 #>    official_id first_name last_name  jersey_num season game_id   
 #>          <int> <chr>      <chr>      <chr>       <int> <chr>     
@@ -783,7 +783,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 707,440 × 49
 #>    order_index action_number clock       period   team_id team_tricode person_id
 #>          <int>         <int> <chr>        <int>     <int> <chr>            <int>
@@ -807,7 +807,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 34,587 × 34
 #>     team_id team_name team_tricode side  person_id first_name family_name name_i
 #>       <int> <chr>     <chr>        <chr>     <int> <chr>      <chr>       <chr> 
@@ -831,7 +831,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 2,630 × 31
 #>    season_id team_id team_abbreviation team_name game_id game_date matchup wl   
 #>    <chr>       <int> <chr>             <chr>     <chr>   <chr>     <chr>   <chr>
@@ -854,7 +854,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 9,744 × 210
 #>    player_id player_name    nickname team_id team_abbreviation   age    gp     w
 #>        <int> <chr>          <chr>      <int> <chr>             <dbl> <int> <int>
@@ -878,7 +878,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 278,341 × 35
 #>    game_id    period possession_number offense_team_id defense_team_id
 #>    <chr>       <int>             <int>           <int>           <int>
@@ -902,7 +902,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 495 × 17
 #>       team_id season league_id player nickname player_slug num   position height
 #>         <int>  <int> <chr>     <chr>  <chr>    <chr>       <chr> <chr>    <chr> 
@@ -922,7 +922,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 1,400 × 15
 #>    game_id    season season_type game_date  matchup     home_team_id
 #>    <chr>       <int> <chr>       <chr>      <chr>              <int>
@@ -944,7 +944,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 233,632 × 18
 #>    game_id    season period clock     team_id team_tricode person_id player_name
 #>    <chr>       <int>  <int> <chr>       <int> <chr>            <int> <chr>      
@@ -965,7 +965,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 30 × 94
 #>    league_id season_id    team_id team_city     team_name team_slug conference
 #>    <chr>     <chr>          <int> <chr>         <chr>     <chr>     <chr>     
@@ -989,7 +989,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 2,630 × 26
 #>       team_id team_name team_tricode side  minutes field_goals_made
 #>         <int> <chr>     <chr>        <chr> <chr>              <int>
@@ -1013,7 +1013,7 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.1.0 ──
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
 #> # A tibble: 552 × 178
 #>       team_id team_name       gp     w     l w_pct   min e_off_rating off_rating
 #>         <int> <chr>        <int> <int> <int> <dbl> <dbl>        <dbl>      <dbl>

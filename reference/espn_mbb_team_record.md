@@ -224,8 +224,8 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_record(team_id = 150, season = 2025)
-#> ── ESPN MENS-COLLEGE-BASKETBALL Team Record ───────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:26 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Team Record ──────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:48 UTC
 #> # A tibble: 12 × 14
 #>    league   team_id season season_type record_id name  abbreviation display_name
 #>    <chr>    <chr>    <int>       <int> <chr>     <chr> <chr>        <chr>       
@@ -246,8 +246,8 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_team_record(team_id = 13, season = 2025)
-#> ── ESPN NBA Team Record ───────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:27 UTC
+#> ── ESPN NBA Team Record ──────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:48 UTC
 #> # A tibble: 12 × 14
 #>    league team_id season season_type record_id name    abbreviation display_name
 #>    <chr>  <chr>    <int>       <int> <chr>     <chr>   <chr>        <chr>       

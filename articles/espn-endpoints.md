@@ -494,7 +494,7 @@ nba_athletes <- espn_nba_athletes_index(
   season = 2025, active = TRUE, limit = 5000
 )
 nrow(nba_athletes)
-#> [1] 644
+#> [1] 645
 head(nba_athletes[, c("display_name", "position_name", "team_name")])
 #> Error in `nba_athletes[, c("display_name", "position_name", "team_name")]`:
 #> ! Can't subset columns that don't exist.

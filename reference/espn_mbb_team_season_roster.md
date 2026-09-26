@@ -211,8 +211,8 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_season_roster(team_id = 150, season = 2025)
-#> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Roster ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:29 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Roster ───────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:50 UTC
 #> # A tibble: 23 × 5
 #>    league                  team_id season athlete_id ref                        
 #>    <chr>                   <chr>    <int> <chr>      <chr>                      
@@ -230,8 +230,8 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_team_season_roster(team_id = 13, season = 2025)
-#> ── ESPN NBA Team Season Roster ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:47:29 UTC
+#> ── ESPN NBA Team Season Roster ───────────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:50 UTC
 #> # A tibble: 20 × 5
 #>    league team_id season athlete_id ref                                         
 #>    <chr>  <chr>    <int> <chr>      <chr>                                       

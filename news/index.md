@@ -1,5 +1,17 @@
 # Changelog
 
+## **hoopR 3.1.0.9000 (development version)**
+
+- [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
+  failed on every call with “invalid first argument” and returned an
+  empty tibble: it recorded its arguments with
+  `mget(setdiff(names(formals()), "..."))`, and for a function with no
+  arguments current R returns `NULL` from that
+  [`setdiff()`](https://generics.r-lib.org/reference/setops.html), which
+  [`mget()`](https://rdrr.io/r/base/get.html) rejects. It records none
+  now. A new offline test runs the parser on a two-row NET table built
+  inline; the live test stays skipped.
+
 ## **hoopR 3.1.0**
 
 CRAN release: 2026-08-25

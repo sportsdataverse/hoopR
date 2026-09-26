@@ -72,8 +72,8 @@ Other Basketball-Reference Functions:
 ``` r
 # \donttest{
   try(bref_player_game_log(player_id = "jokicni01", season = 2024))
-#> ── Player game log from basketball-reference.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:46:08 UTC
+#> ── Player game log from basketball-reference.com ─────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:28:38 UTC
 #> # A tibble: 82 × 36
 #>    ranker player_game_num_career team_game_num_season date  team  location opp  
 #>     <dbl>                  <dbl>                <dbl> <chr> <chr> <chr>    <chr>

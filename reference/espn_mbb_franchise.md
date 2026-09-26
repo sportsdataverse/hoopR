@@ -226,8 +226,8 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_franchise(franchise_id = 150)
-#> ── ESPN MENS-COLLEGE-BASKETBALL Franchise from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:46:39 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Franchise from ESPN.com ──── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:03 UTC
 #> # A tibble: 1 × 16
 #>   id    uid             slug   location name  nickname abbreviation display_name
 #>   <chr> <chr>           <chr>  <chr>    <chr> <chr>    <chr>        <chr>       
@@ -237,8 +237,8 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_franchise(franchise_id = 13)
-#> ── ESPN NBA Franchise from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-26 06:46:39 UTC
+#> ── ESPN NBA Franchise from ESPN.com ──────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-09-26 20:29:03 UTC
 #> # A tibble: 1 × 16
 #>   id    uid            slug    location name  nickname abbreviation display_name
 #>   <chr> <chr>          <chr>   <chr>    <chr> <lgl>    <chr>        <chr>       
