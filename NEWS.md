@@ -2,6 +2,7 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
+- [**hoopR 3.1.0.9000 (development version)**](#hoopr-3109000-development-version)
 - [**hoopR 3.1.0**](#hoopr-310)
 - [**hoopR 3.0.0**](#hoopr-300)
 - [**hoopR 2.1.0**](#hoopr-210)
@@ -36,6 +37,15 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+
+# **hoopR 3.1.0.9000 (development version)**
+
+* `ncaa_mbb_NET_rankings()` failed on every call with "invalid first
+  argument" and returned an empty tibble: it recorded its arguments with
+  `mget(setdiff(names(formals()), "..."))`, and for a function with no
+  arguments current R returns `NULL` from that `setdiff()`, which `mget()`
+  rejects. It records none now. A new offline test runs the parser on a
+  two-row NET table built inline; the live test stays skipped.
 
 # **hoopR 3.1.0**
 
