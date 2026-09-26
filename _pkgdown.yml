@@ -1,4 +1,12 @@
 url: https://hoopR.sportsdataverse.org/
+# pkgdown renders every top-level and .github/*.md file as a page; keep the
+# contributor/agent notes out of the search index so results stay on-topic.
+search:
+  exclude:
+  - CLAUDE.html
+  - copilot-instructions.html
+  - PULL_REQUEST_TEMPLATE.html
+
 template:
   bootstrap: 5
   light-switch: true
@@ -6,7 +14,12 @@ template:
   ganalytics: G-FN028W4QW6
   includes:
     in_header: |
-      <script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script>
+      <!-- Privacy-friendly analytics by Plausible -->
+      <script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script>
+      <script>
+        window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+        plausible.init()
+      </script>
   bslib:
     primary: "#2C3D50"
     secondary: "#A7C6E6"
