@@ -94,7 +94,7 @@ Other KenPom Historical Functions:
 ``` r
   # \donttest{
     try(kp_team_history(team = 'Florida St.'))
-#> ✖ 2026-09-10 00:50:30.507207: Invalid arguments or no team history data for Florida St. available!
+#> ✖ 2026-09-26 06:48:31.105365: Invalid arguments or no team history data for Florida St. available!
 #> ✖ Args: team = "Florida St."
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

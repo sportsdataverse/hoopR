@@ -45,77 +45,77 @@ Other Fox Basketball Functions:
 ``` r
 # \donttest{
   try(fox_mbb_teams_all())
-#> ✖ 2026-09-10 00:50:02.840323: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:47:47.717002: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:04.012924: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:01.712483: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:04.712492: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:07.162271: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:04.992954: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:07.531327: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:05.232972: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:07.69192: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:05.478218: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:09.700149: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:05.667736: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:10.58661: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:05.848205: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:10.896973: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:06.112125: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:11.222665: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:06.258205: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:11.525792: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:06.497517: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:11.836851: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:06.750942: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:12.128901: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:06.94446: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:12.43444: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:07.125079: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:12.759131: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:07.280037: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:13.072862: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:07.49112: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:13.392142: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:07.695187: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:13.702122: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:07.872365: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:14.052346: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:08.150502: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:14.355141: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:08.316487: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:14.864928: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:08.488124: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:15.204257: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:08.701677: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:15.564148: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:09.012558: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:15.897871: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:09.201012: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:16.154656: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:09.556377: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:16.487973: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:09.910216: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:16.874093: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:10.064763: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:17.120522: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-09-10 00:50:10.446116: no Fox CBK teams data available!
+#> ✖ 2026-09-26 06:48:17.508322: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
 #> ── Fox Sports MBB full team directory ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:50:10 UTC
+#> ℹ Data updated: 2026-09-26 06:48:17 UTC
 #> # A tibble: 365 × 3
 #>    fox_team_id fox_team_name              fox_section   
 #>    <chr>       <chr>                      <chr>         
-#>  1 236         Navy Midshipmen            Patriot League
-#>  2 232         Colgate Raiders            Patriot League
-#>  3 235         Lehigh Mountain Hawks      Patriot League
+#>  1 232         Colgate Raiders            Patriot League
+#>  2 236         Navy Midshipmen            Patriot League
+#>  3 150         Loyola Maryland Greyhounds Patriot League
 #>  4 1           Boston University Terriers Patriot League
 #>  5 104         American Eagles            Patriot League
-#>  6 150         Loyola Maryland Greyhounds Patriot League
-#>  7 234         Lafayette Leopards         Patriot League
-#>  8 231         Bucknell Bison             Patriot League
-#>  9 230         Army Black Knights         Patriot League
-#> 10 233         Holy Cross Crusaders       Patriot League
+#>  6 234         Lafayette Leopards         Patriot League
+#>  7 235         Lehigh Mountain Hawks      Patriot League
+#>  8 230         Army Black Knights         Patriot League
+#>  9 233         Holy Cross Crusaders       Patriot League
+#> 10 231         Bucknell Bison             Patriot League
 #> # ℹ 355 more rows
 # }
 ```

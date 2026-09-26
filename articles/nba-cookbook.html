@@ -23,7 +23,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@saiemgilani">
 <meta name="twitter:site" content="@sportsdataverse">
-<script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script>
+<!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -416,7 +419,7 @@ menu is sensibly named.</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   venue_name &lt;chr&gt;, venue_city &lt;chr&gt;, venue_state &lt;chr&gt;, broadcast &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   result &lt;chr&gt;, team_score &lt;chr&gt;, opponent_score &lt;chr&gt;, winner &lt;lgl&gt;</span></span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_team.html">espn_nba_team_roster</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="va">team_id</span>, season <span class="op">=</span> <span class="va">season</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 18 × 15</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 20 × 15</span></span></span>
 <span><span class="co">#&gt;    athlete_id full_name jersey position_abbrev position_name height weight age  </span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 5113969    Cameron … <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 5… 184 l… 21   </span></span>
@@ -424,19 +427,21 @@ menu is sensibly named.</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 4397014    Quentin … <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 4… 210 l… 26   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 4868423    Jaden Ha… <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 3… 198 l… 24   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 4683774    Bronny J… 9      G               Guard         <span style="color: #949494;">"</span>6' 2… 210 l… 21   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 4433136    Walker K… <span style="color: #BB0000;">NA</span>     C               Center        <span style="color: #949494;">"</span>7' 2… 245 l… 25   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 4897943    Dalton K… 4      F               Forward       <span style="color: #949494;">"</span>6' 6… 215 l… 25   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 4592691    Jake LaR… 12     F               Forward       <span style="color: #949494;">"</span>6' 7… 235 l… 24   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 3155535    Kevon Lo… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 9… 222 l… 30   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 4278580    Sandro M… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 9… 240 l… 27   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 4702972    Chris Ma… 30     G               Guard         <span style="color: #949494;">"</span>6' 4… 209 l… 24   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 5114350    AK Okere… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 7… 244 l… 23   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 4066457    Austin R… 15     G               Guard         <span style="color: #949494;">"</span>6' 5… 197 l… 28   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 4277811    Collin S… <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 3… 190 l… 27   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 5060631    Adou Thi… 1      F               Forward       <span style="color: #949494;">"</span>6' 8… 220 l… 22   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 3907498    Matisse … <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 5… 202 l… 29   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 4278077    Jarred V… 2      F               Forward       <span style="color: #949494;">"</span>6' 8… 214 l… 27   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> 4433137    Ziaire W… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 9… 185 l… 24   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 4710770    Meechie … <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 1… 200 l… 24   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 4433136    Walker K… <span style="color: #BB0000;">NA</span>     C               Center        <span style="color: #949494;">"</span>7' 2… 245 l… 25   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 4897943    Dalton K… 4      F               Forward       <span style="color: #949494;">"</span>6' 6… 215 l… 25   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 4592691    Jake LaR… 12     F               Forward       <span style="color: #949494;">"</span>6' 7… 235 l… 24   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 3155535    Kevon Lo… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 9… 222 l… 30   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> 4278580    Sandro M… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 9… 240 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> 4702972    Chris Ma… 30     G               Guard         <span style="color: #949494;">"</span>6' 4… 209 l… 24   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> 5114350    AK Okere… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 7… 244 l… 23   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> 4066457    Austin R… 15     G               Guard         <span style="color: #949494;">"</span>6' 5… 197 l… 28   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> 5105598    Chase Ro… 29     G               Guard         <span style="color: #949494;">"</span>6' 5… 210 l… 23   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">16</span> 4277811    Collin S… <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 3… 190 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">17</span> 5060631    Adou Thi… 1      F               Forward       <span style="color: #949494;">"</span>6' 8… 220 l… 22   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">18</span> 3907498    Matisse … <span style="color: #BB0000;">NA</span>     G               Guard         <span style="color: #949494;">"</span>6' 5… 202 l… 29   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">19</span> 4278077    Jarred V… 2      F               Forward       <span style="color: #949494;">"</span>6' 8… 214 l… 27   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">20</span> 4433137    Ziaire W… <span style="color: #BB0000;">NA</span>     F               Forward       <span style="color: #949494;">"</span>6' 9… 185 l… 25   </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 7 more variables: birth_date &lt;chr&gt;, birth_place &lt;chr&gt;, headshot &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   link_web &lt;chr&gt;, status &lt;chr&gt;, team_id &lt;chr&gt;, season &lt;int&gt;</span></span></span>
 <span></span>

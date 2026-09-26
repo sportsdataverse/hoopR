@@ -186,7 +186,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_positions()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Positions Index ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:27 UTC
+#> ℹ Data updated: 2026-09-26 06:47:04 UTC
 #> # A tibble: 14 × 3
 #>    position_id ref                                                        league
 #>    <chr>       <chr>                                                      <chr> 
@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_positions()
 #> ── ESPN NBA Positions Index ───────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:27 UTC
+#> ℹ Data updated: 2026-09-26 06:47:04 UTC
 #> # A tibble: 11 × 3
 #>    position_id ref                                                        league
 #>    <chr>       <chr>                                                      <chr> 

@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:20 UTC
+#> ℹ Data updated: 2026-09-26 06:46:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.99e7 Head… Chase L… Top-30 sen… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 2  4.99e7 Head… CSC cle… The Colleg… 2026-09-… FALSE   NA     https:/… 3170     
-#> 3  4.99e7 Head… Rutgers… Steve Piki… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 4  4.98e7 Story Project… Ranking ev… 2026-09-… FALSE   Myron… https:/… 41       
-#> 5  4.99e7 Head… Cade Ty… Cade Tyson… 2026-09-… FALSE   NA     https:/… 41       
+#> 1  5.00e7 Story How top… "How these… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 2  5.00e7 Head… Five-st… "Five-star… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 3  5.00e7 Head… Touted … "Arkansas … 2026-09-… FALSE   Jeff … https:/… 41       
+#> 4  5.00e7 Head… Duke's … "Head coac… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 5  5.00e7 Head… Nevada … "Steve Alf… 2026-09-… FALSE   NA     https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:21 UTC
+#> ℹ Data updated: 2026-09-26 06:46:58 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.99e7 Head… Sources… "The Laker… 2026-09-… FALSE   Dave … https:/… 46       
-#> 2  4.99e7 Head… EuroLea… "EuroLeagu… 2026-09-… FALSE   NA     https:/… 46       
-#> 3  3.58e7 Story Jalen B… "There hav… 2026-09-… FALSE   Jerem… https:/… 28       
-#> 4  4.99e7 Head… NBA cha… "Newly cro… 2026-09-… FALSE   NA     https:/… 46       
-#> 5  4.96e7 Story NBA off… "We're loo… 2026-09-… FALSE   NBA I… https:/… 46       
+#> 1  5.00e7 Media SVP ref… "SVP refle… 2026-09-… FALSE   NA     https:/… 46       
+#> 2  4.84e7 Story 2026 NB… "We're tra… 2026-09-… FALSE   ESPN   https:/… 46       
+#> 3  5.00e7 Head… Sources… "Warriors … 2026-09-… FALSE   Antho… https:/… 46       
+#> 4  5.00e7 Head… Altman:… "Cavs pres… 2026-09-… FALSE   NA     https:/… 46       
+#> 5  5.00e7 Head… Hornets… "The Charl… 2026-09-… FALSE   Ohm Y… https:/… 46       
 # }
 ```

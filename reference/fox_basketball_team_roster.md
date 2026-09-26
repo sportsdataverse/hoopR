@@ -47,25 +47,28 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_roster("1"))
 #> ── Fox Sports NBA roster ──────────────────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:50:01 UTC
-#> # A tibble: 16 × 9
+#> ℹ Data updated: 2026-09-26 06:47:46 UTC
+#> # A tibble: 19 × 9
 #>    team_id position_group player       pos   age   ht    wt    school athlete_id
 #>    <chr>   <chr>          <chr>        <chr> <chr> <chr> <chr> <chr>  <chr>     
-#>  1 1       GUARD          Mike Conley  PG    38    "6'1… 175 … Ohio … 1441      
-#>  2 1       GUARD          Hugo Gonzál… SG    20    "6'6… 200 … -      4141      
-#>  3 1       GUARD          Payton Prit… PG    28    "6'1… 195 … Oregon 3414      
-#>  4 1       GUARD          Baylor Sche… SG    25    "6'6… 205 … Creig… 3981      
-#>  5 1       GUARD          Derrick Whi… SG    32    "6'4… 190 … Color… 2373      
-#>  6 1       FORWARD        Chris Cenac… PF    19    "6'1… 240 … Houst… 6319      
-#>  7 1       FORWARD        Paul George  PF    36    "6'8… 230 … Fresn… 1611      
-#>  8 1       FORWARD        Ron Harper … SF    26    "6'5… 233 … Rutge… 3690      
-#>  9 1       FORWARD        Sam Hauser   PF    28    "6'7… 217 … Virgi… 3603      
-#> 10 1       FORWARD        Dillon Mitc… SF    22    "6'8… 210 … St. J… 6349      
-#> 11 1       FORWARD        Jayson Tatum PF    28    "6'8… 210 … Duke   2343      
-#> 12 1       FORWARD        Jordan Walsh PF    22    "6'6… 205 … Arkan… 3863      
-#> 13 1       FORWARD        Amari Willi… PF    24    "6'1… 250 … Kentu… 4171      
-#> 14 1       CENTER         Luka Garza   C     27    "6'1… 243 … Iowa   3557      
-#> 15 1       CENTER         Neemias Que… C     27    "7'0… 248 … Utah … 3574      
-#> 16 1       CENTER         Mitchell Ro… C     28    "7'0… 240 … Chalm… 2529      
+#>  1 1       GUARD          Devin Carter PG    24    "6'2… 195 … Provi… 3999      
+#>  2 1       GUARD          Mike Conley  PG    38    "6'1… 175 … Ohio … 1441      
+#>  3 1       GUARD          Hugo Gonzál… SG    20    "6'6… 200 … -      4141      
+#>  4 1       GUARD          Hayden Gray  SG    23    "6'4… 190 … UC Sa… 6318      
+#>  5 1       GUARD          Caleb Grill  G     26    "6'3… 205 … Misso… 6399      
+#>  6 1       GUARD          Payton Prit… PG    28    "6'1… 195 … Oregon 3414      
+#>  7 1       GUARD          Baylor Sche… SG    26    "6'6… 205 … Creig… 3981      
+#>  8 1       GUARD          Derrick Whi… SG    32    "6'4… 190 … Color… 2373      
+#>  9 1       FORWARD        Chris Cenac… PF    19    "6'1… 240 … Houst… 6319      
+#> 10 1       FORWARD        Paul George  PF    36    "6'8… 230 … Fresn… 1611      
+#> 11 1       FORWARD        Ron Harper … SF    26    "6'5… 233 … Rutge… 3690      
+#> 12 1       FORWARD        Sam Hauser   PF    28    "6'7… 217 … Virgi… 3603      
+#> 13 1       FORWARD        Dillon Mitc… SF    22    "6'8… 210 … St. J… 6349      
+#> 14 1       FORWARD        Jayson Tatum PF    28    "6'8… 210 … Duke   2343      
+#> 15 1       FORWARD        Jordan Walsh PF    22    "6'6… 205 … Arkan… 3863      
+#> 16 1       FORWARD        Amari Willi… PF    24    "6'1… 250 … Kentu… 4171      
+#> 17 1       CENTER         Luka Garza   C     27    "6'1… 243 … Iowa   3557      
+#> 18 1       CENTER         Neemias Que… C     27    "7'0… 248 … Utah … 3574      
+#> 19 1       CENTER         Mitchell Ro… C     28    "7'0… 240 … Chalm… 2529      
 # }
 ```

@@ -23,7 +23,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@saiemgilani">
 <meta name="twitter:site" content="@sportsdataverse">
-<script defer data-domain="hoopr.sportsdataverse.org" src="https://plausible.io/js/plausible.js"></script>
+<!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -627,14 +630,14 @@ feed and the calendar.</p>
 <span><span class="va">mbb_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_news.html">espn_mbb_news</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mbb_news</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"headline"</span>, <span class="st">"published"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
-<span><span class="co">#&gt;   headline                                                         published    </span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Chase Lumpkin, No. 28 recruit in 2027 class, commits to Alabama  2026-09-09T2…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> CSC clears $227M+ in NIL deals in July, August in major increase 2026-09-09T1…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Rutgers coach Steve Pikiell to focus on his cancer treatment     2026-09-09T1…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Projecting every ACC team's floor and ceiling for 2026-27        2026-09-09T1…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Cade Tyson rejoins Minnesota in aim for fifth year               2026-09-09T0…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Ex-NFL star Edgerrin James: Son Jizzle has substance abuse issue 2026-09-08T2…</span></span>
+<span><span class="co">#&gt;   headline                                                           published  </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> How top 2027 men's basketball recruits fit with their new programs 2026-09-25…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Five-star forward Moussa Kamissoko commits to Syracuse             2026-09-25…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Touted 7-foot prospect Muurinen cleared to play for Arkansas       2026-09-25…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Duke's Jon Scheyer 'where I'm supposed to be' after NBA interest   2026-09-25…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Nevada coach Steve Alford to retire at end of upcoming season      2026-09-25…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Reranking the men's basketball recruiting class of 2024            2026-09-24…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -929,7 +932,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 631</span></span>
+<span><span class="co">#&gt; [1] 644</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>

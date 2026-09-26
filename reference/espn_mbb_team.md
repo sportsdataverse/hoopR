@@ -388,7 +388,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:42 UTC
+#> ℹ Data updated: 2026-09-26 06:47:22 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -401,7 +401,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ─── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:42 UTC
+#> ℹ Data updated: 2026-09-26 06:47:22 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                   short_name 
 #>   <chr>     <chr>             <chr>                                  <chr>      
@@ -409,7 +409,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-09-10 00:49:42 UTC
+#> ℹ Data updated: 2026-09-26 06:47:22 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -422,7 +422,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com ─────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:42 UTC
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
 #> # A tibble: 11 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -447,7 +447,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-09-10 00:49:42 UTC
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -464,7 +464,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:42 UTC
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -473,11 +473,18 @@ Saiem Gilani
 #> #   logo_dark <chr>
 #> 
 #> $Record
-#> data frame with 0 columns and 0 rows
+#> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
+#> # A tibble: 3 × 4
+#>   description    type  summary stats        
+#>   <chr>          <chr> <chr>   <list>       
+#> 1 Overall Record total 0-0     <df [20 × 2]>
+#> 2 Home Record    home  0-0     <df [5 × 2]> 
+#> 3 Away Record    road  0-0     <df [5 × 2]> 
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ─────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:43 UTC
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                   short_name
 #>   <chr>     <chr>             <chr>                                  <chr>     
@@ -485,7 +492,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:43 UTC
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -498,8 +505,8 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com ─────────────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:43 UTC
-#> # A tibble: 18 × 15
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
+#> # A tibble: 20 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
 #>  1 5113969    Cameron … NA     G               Guard         "6' 5… 184 l… 21   
@@ -507,19 +514,21 @@ Saiem Gilani
 #>  3 4397014    Quentin … NA     G               Guard         "6' 4… 210 l… 26   
 #>  4 4868423    Jaden Ha… NA     G               Guard         "6' 3… 198 l… 24   
 #>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 21   
-#>  6 4433136    Walker K… NA     C               Center        "7' 2… 245 l… 25   
-#>  7 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
-#>  8 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
-#>  9 3155535    Kevon Lo… NA     F               Forward       "6' 9… 222 l… 30   
-#> 10 4278580    Sandro M… NA     F               Forward       "6' 9… 240 l… 27   
-#> 11 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
-#> 12 5114350    AK Okere… NA     F               Forward       "6' 7… 244 l… 23   
-#> 13 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
-#> 14 4277811    Collin S… NA     G               Guard         "6' 3… 190 l… 27   
-#> 15 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
-#> 16 3907498    Matisse … NA     G               Guard         "6' 5… 202 l… 29   
-#> 17 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
-#> 18 4433137    Ziaire W… NA     F               Forward       "6' 9… 185 l… 24   
+#>  6 4710770    Meechie … NA     G               Guard         "6' 1… 200 l… 24   
+#>  7 4433136    Walker K… NA     C               Center        "7' 2… 245 l… 25   
+#>  8 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
+#>  9 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
+#> 10 3155535    Kevon Lo… NA     F               Forward       "6' 9… 222 l… 30   
+#> 11 4278580    Sandro M… NA     F               Forward       "6' 9… 240 l… 27   
+#> 12 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
+#> 13 5114350    AK Okere… NA     F               Forward       "6' 7… 244 l… 23   
+#> 14 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
+#> 15 5105598    Chase Ro… 29     G               Guard         "6' 5… 210 l… 23   
+#> 16 4277811    Collin S… NA     G               Guard         "6' 3… 190 l… 27   
+#> 17 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
+#> 18 3907498    Matisse … NA     G               Guard         "6' 5… 202 l… 29   
+#> 19 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
+#> 20 4433137    Ziaire W… NA     F               Forward       "6' 9… 185 l… 25   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }
@@ -530,7 +539,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ─────────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:43 UTC
+#> ℹ Data updated: 2026-09-26 06:47:23 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

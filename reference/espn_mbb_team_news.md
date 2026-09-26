@@ -208,27 +208,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-09-10 00:49:45 UTC
+#> ℹ Data updated: 2026-09-26 06:47:25 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.98e7 Story Project… Ranking ev… 2026-09-… FALSE   Myron… https:/… 41       
-#> 2  4.98e7 Story Vitale:… From story… 2026-09-… FALSE   Dick … https:/… 41       
-#> 3  4.98e7 Story UConn r… UConn unve… 2026-09-… FALSE   Kalan… https:/… 41       
-#> 4  4.98e7 Story Men's N… Eligibilit… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 5  4.87e7 Story Transfe… We're trac… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 1  5.00e7 Head… Duke's … "Head coac… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 2  5.00e7 Story Reranki… "Cooper Fl… 2026-09-… FALSE   Paul … https:/… 3550     
+#> 3  5.00e7 Story Inside … "In honor … 2026-09-… FALSE   Tory … https:/… 46       
+#> 4  3.03e7 Etic… NCAA Br… "LSU has j… 2026-09-… FALSE   Joe L… https:/… 41       
+#> 5  4.98e7 Story Project… "Ranking e… 2026-09-… FALSE   Myron… https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.1.0 ──
-#> ℹ Data updated: 2026-09-10 00:49:45 UTC
+#> ℹ Data updated: 2026-09-26 06:47:25 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.99e7 Head… Sources… The Lakers… 2026-09-… FALSE   Dave … https:/… 46       
-#> 2  4.99e7 Story NBA pre… Six weeks … 2026-09-… FALSE   Zach … https:/… 46       
-#> 3  4.99e7 Head… Lakers … The Lakers… 2026-09-… FALSE   Dave … https:/… 46       
-#> 4  4.98e7 Story Biggest… Which star… 2026-09-… FALSE   NBA i… https:/… 46       
-#> 5  4.90e7 Story 2026 NB… We're grad… 2026-09-… FALSE   Zach … https:/… 46       
+#> 1  5.00e7 Story NBA Ran… ESPN's NBA… 2026-09-… FALSE   Ben G… https:/… 46       
+#> 2  5.00e7 Head… Pelinka… Lakers GM … 2026-09-… FALSE   Ben G… https:/… 46       
+#> 3  5.00e7 Head… Pelinka… Rob Pelink… 2026-09-… FALSE   Dave … https:/… 46       
+#> 4  5.00e7 Media How the… How the La… 2026-09-… FALSE   NA     https:/… 46       
+#> 5  5.00e7 Story NBA Ran… Our countd… 2026-09-… FALSE   NBA i… https:/… 46       
 # }
 ```
