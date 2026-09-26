@@ -47,6 +47,21 @@
   rejects. It records none now. A new offline test runs the parser on a
   two-row NET table built inline; the live test stays skipped.
 
+### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
+
+New scrapers for official.nba.com officiating data, parity-tested against
+sdv-py's `sportsdataverse.nba.nba_officiating` on the same captured fixtures:
+`nba_l2m()` (Last Two Minute report calls/game/stats), `nba_l2m_games()`
+(a season's L2M game index), and `nba_referee_assignments()` (NBA/G-League/WNBA
+referee crew assignments + replay center officials for a date). Port of the
+scraping logic in [atlhawksfanatic/L2M](https://github.com/atlhawksfanatic/L2M) (MIT).
+Every returned table (calls/game/stats, listing, officials/replay_center) is
+built from one typed prototype tibble shared by the empty and non-empty paths,
+so `dplyr::bind_rows()` across calls (e.g. looping dates) always works; id
+columns (team/official/`pos_id`/`pos_team_id`) are integer. HTTP failures raise
+classed conditions (`hoopR_no_data` / `hoopR_fetch_error`) instead of returning
+an empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
+
 # **hoopR 3.1.0**
 
 Development release on top of the CRAN-shipped 3.0.0 (commit
@@ -59,15 +74,6 @@ for endpoint behavior that drifted after CRAN submission, the
 package-wide `@return` documentation upgrade, and a proxy-support
 restoration that addresses a regression introduced by the 3.0.0
 `httr` → `httr2` migration.
-
-### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
-
-New scrapers for official.nba.com officiating data, parity-tested against
-sdv-py's `sportsdataverse.nba.nba_officiating` on the same captured fixtures:
-`nba_l2m()` (Last Two Minute report calls/game/stats), `nba_l2m_games()`
-(a season's L2M game index), and `nba_referee_assignments()` (NBA/G-League/WNBA
-referee crew assignments + replay center officials for a date). Port of the
-scraping logic in [atlhawksfanatic/L2M](https://github.com/atlhawksfanatic/L2M) (MIT).
 
 ### **NBA cross-source crosswalks (`nba_*_crosswalk` + `load_nba_*_crosswalk`)**
 
