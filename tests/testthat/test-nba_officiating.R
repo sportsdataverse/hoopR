@@ -517,3 +517,23 @@ test_that("live: nba_l2m / nba_l2m_games / nba_referee_assignments real schemas"
   refs <- nba_referee_assignments("2026-06-13")
   expect_gte(nrow(refs$officials), 4)
 })
+
+test_that("a malformed GameDate gives NA, not an error", {
+  x <- jsonlite::fromJSON(file.path(fx, "l2m_json_0042500405.json"))
+  x$game$GameDate <- "not-a-date"
+  got <- .parse_nba_l2m(x)$game
+  expect_equal(nrow(got), 1L)
+  expect_true(is.na(got$game_date))
+})
+
+test_that("a 200 whose JSON is not an object is a hoopR_fetch_error", {
+  body <- NULL
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) body
+  )
+  for (b in c("null", "[]", '"error"', "42")) {
+    body <- b
+    expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error", info = b)
+    expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_fetch_error", info = b)
+  }
+})

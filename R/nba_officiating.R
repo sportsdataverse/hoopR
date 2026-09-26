@@ -138,7 +138,7 @@ NULL
 # 200 status, and jsonlite::fromJSON() would otherwise raise a raw parse
 # error instead of the package's classed error vocabulary.
 .official_nba_json <- function(body, url, simplifyVector = TRUE, call = sys.call(-1)) {
-  tryCatch(
+  x <- tryCatch(
     jsonlite::fromJSON(body, simplifyVector = simplifyVector),
     error = function(e) {
       cli::cli_abort(
@@ -149,6 +149,16 @@ NULL
       )
     }
   )
+  # Every official.nba.com payload is a JSON object (a named list here); null,
+  # an array or a bare value is a failed fetch, not an empty report.
+  if (!is.list(x) || is.data.frame(x) || is.null(names(x))) {
+    cli::cli_abort(
+      "official.nba.com returned JSON that is not an object for {.url {url}}",
+      class = c("hoopR_fetch_error", "hoopR_error"),
+      call = call
+    )
+  }
+  x
 }
 
 # Zero-pads an all-digit id to 10 characters; anything else (non-numeric,
@@ -274,7 +284,8 @@ NULL
   game <- if (!is.null(g)) {
     dplyr::tibble(
       game_id = gid,
-      game_date = if (!is.null(g[["GameDate"]])) as.Date(substr(as.character(g[["GameDate"]]), 1, 10)) else as.Date(NA),
+      # An explicit format gives NA on a malformed date instead of an error.
+      game_date = if (!is.null(g[["GameDate"]])) as.Date(substr(as.character(g[["GameDate"]]), 1, 10), format = "%Y-%m-%d") else as.Date(NA),
       season_type = if (!is.na(gid)) unname(.OFFICIAL_SEASON_TYPES[substr(gid, 3, 3)]) else NA_character_,
       home_team_id = as.integer(suppressWarnings(as.numeric(g[["HomeTeamId"]] %||% NA))),
       away_team_id = as.integer(suppressWarnings(as.numeric(g[["AwayTeamId"]] %||% NA))),
