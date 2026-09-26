@@ -11,7 +11,9 @@
 #' try(ncaa_mbb_NET_rankings())
 #' }
 ncaa_mbb_NET_rankings <- function() {
-  .args <- mget(setdiff(names(formals()), "..."))
+  # no arguments to record: mget(setdiff(names(formals()), "...")) fails here,
+  # because setdiff(NULL, "...") is NULL in current R and mget(NULL) errors
+  .args <- list()
   NET_url <- "https://www.ncaa.com/rankings/basketball-men/d1/ncaa-mens-basketball-net-rankings"
 
   x <- .empty_hoopR_data("NCAA MBB NET Rankings Information from NCAA.com")

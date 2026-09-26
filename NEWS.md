@@ -809,6 +809,15 @@ than the endpoint catalog's capture flags alone:
   shape changed from one wide row per team to one row per player** with
   `pct_pg`/`pct_sg`/`pct_sf`/`pct_pf`/`pct_c` columns. Fixes #152.
 
+#### *NCAA NET fix*
+
+* `ncaa_mbb_NET_rankings()` failed on every call with \"invalid first
+  argument\" and returned an empty tibble: it recorded its arguments with
+  `mget(setdiff(names(formals()), "..."))`, and for a function with no
+  arguments current R returns `NULL` from that `setdiff()`, which `mget()`
+  rejects. It records none now. Its test was `skip()`ped outright; a new
+  offline test runs the parser against a saved copy of the NCAA table.
+
 #### *CI*
 
 * Bumped r-hub actions to v1.7.7 (node 24 runners).
