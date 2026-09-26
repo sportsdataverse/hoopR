@@ -78,6 +78,14 @@ skip_load_test <- function(){
   }
 }
 
+skip_official_nba_test <- function(){
+  if(Sys.getenv("OFFICIAL_NBA_TESTS") != "1"){
+    skip("User can't run official.nba.com officiating live tests (OFFICIAL_NBA_TESTS not set)")
+  } else {
+    invisible()
+  }
+}
+
 skip_realgm_test <- function(){
   if(Sys.getenv("REALGM_TESTS") != "1"){
     skip("User can't run RealGM tests (REALGM_TESTS not set; needs chromote + Google Chrome)")

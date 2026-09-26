@@ -7,20 +7,40 @@
 nba_l2m_games(season, proxy = NULL)
 }
 \arguments{
-\item{season}{integer. NBA season, END year (e.g. \code{2026} for 2025-26).}
+\item{season}{integer, or a numeric-like string. NBA season, END year
+(e.g. \code{2026} or \code{"2026"} for 2025-26).}
 
-\item{proxy}{optional proxy passed to the HTTP layer.}
+\item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
+named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per unique game id in page order:
-\code{game_id} (10-char zero-padded string), \code{season} (END year), \code{season_type},
-\code{label} (e.g. \code{"Knicks 94, Spurs 90"}).
+A \code{hoopR_data} tibble, one row per unique game id in page order:\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   season \tab integer \cr
+   season_type \tab character \cr
+   label \tab character \cr
+}
 }
 \description{
 Scrapes official.nba.com's season index page. JSON L2M reports exist only
 from 2019-01-01 onward; earlier seasons' index pages list PDFs, which this
 function ignores (use a release loader for that history once published).
+Port of the scraping logic in
+\href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M} (MIT,
+(c) 2019 atlhawksfanatic).
 }
+\section{Errors}{
+
+\itemize{
+\item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
+Akamai WAF block), or a 200 response is missing the expected "Last Two
+Minute" page marker (an Akamai interstitial, a blank body, or a
+redesigned page) -- checked here, not in \code{\link[=.parse_nba_l2m_games]{.parse_nba_l2m_games()}}, so
+the parser itself never raises.
+}
+}
+
 \examples{
 \donttest{
   try({
@@ -30,8 +50,8 @@ function ignores (use a release loader for that history once published).
 }
 }
 \seealso{
-Other NBA Functions:
+Other NBA Officiating Functions:
 \code{\link[=nba_l2m]{nba_l2m()}},
 \code{\link[=nba_referee_assignments]{nba_referee_assignments()}}
 }
-\concept{NBA Functions}
+\concept{NBA Officiating Functions}

@@ -2,11 +2,20 @@
 % Please edit documentation in R/nba_officiating.R
 \name{.classify_official_403}
 \alias{.classify_official_403}
-\title{Classify an official.nba.com 403 body}
+\title{Classify an official.nba.com 403 response body}
 \usage{
 .classify_official_403(body)
 }
+\arguments{
+\item{body}{character(1). Response body text.}
+}
+\value{
+character(1). \code{"no_data"} or \code{"fetch_error"}.
+}
 \description{
-Classify an official.nba.com 403 body
+A 403 from official.nba.com means two different things depending on the
+body: an S3 XML \code{AccessDenied} document means "no such object" (there is
+no report/no data for the request), while anything else (typically an
+Akamai HTML interstitial) means the fetch itself was blocked.
 }
 \keyword{internal}

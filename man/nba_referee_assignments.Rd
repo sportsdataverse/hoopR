@@ -7,22 +7,46 @@
 nba_referee_assignments(date, league = "nba", proxy = NULL)
 }
 \arguments{
-\item{date}{character or Date. Date to fetch, \code{"YYYY-MM-DD"}.}
+\item{date}{character or Date/POSIXct. Date to fetch. A Date/POSIXct is
+formatted directly (never routed through \code{as.Date()}, which can shift a
+POSIXct's calendar day across a timezone boundary); a character must
+match \code{"YYYY-MM-DD"}.}
 
 \item{league}{character(1). One of \code{"nba"} (default), \code{"gl"}, \code{"wnba"}.}
 
-\item{proxy}{optional proxy passed to the HTTP layer.}
+\item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
+named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments.}
 }
 \value{
 Named list of \code{hoopR_data} tibbles:
-\itemize{
-\item \code{officials} -- one row per game x crew slot: \code{league}, \code{game_id},
-\code{game_date}, \code{season}, \code{season_type}, \code{game_code}, \code{home_team_id},
-\code{home_team_abbr}, \code{away_team_id}, \code{away_team_abbr}, \code{crew_position},
-\code{official_id}, \code{official_name}, \code{jersey_num}.
-\item \code{replay_center} -- one row per replay-center official per game/day:
-\code{league}, \code{game_date}, \code{official_id}, \code{official_name}.
+
+\strong{officials} -- one row per game x crew slot.\tabular{ll}{
+   col_name \tab types \cr
+   league \tab character \cr
+   game_id \tab character \cr
+   game_date \tab Date \cr
+   season \tab integer \cr
+   season_type \tab character \cr
+   game_code \tab character \cr
+   home_team_id \tab integer \cr
+   home_team_abbr \tab character \cr
+   away_team_id \tab integer \cr
+   away_team_abbr \tab character \cr
+   crew_position \tab integer \cr
+   official_id \tab integer \cr
+   official_name \tab character \cr
+   jersey_num \tab character \cr
 }
+
+
+\strong{replay_center} -- one row per replay-center official per game/day.\tabular{ll}{
+   col_name \tab types \cr
+   league \tab character \cr
+   game_date \tab Date \cr
+   official_id \tab integer \cr
+   official_name \tab character \cr
+}
+
 
 A date with no games for the league is not an error -- both tibbles come
 back zero-row rather than raising.
@@ -30,7 +54,9 @@ back zero-row rather than raising.
 \description{
 Retrieves referee crew assignments and replay-center officials for every
 game on a date, from official.nba.com's \code{get-game-officials} endpoint
-(covers NBA, G-League, and WNBA in one payload).
+(covers NBA, G-League, and WNBA in one payload). Port of the scraping
+logic in \href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M}
+(MIT, (c) 2019 atlhawksfanatic).
 }
 \details{
 \code{crew_position} is the feed's slot order (1-4); slot 1 is \emph{inferred} to be
@@ -39,6 +65,14 @@ directly. \code{season} converts the feed's \verb{<type digit><START year>} code
 an END year: START+1 for \code{"nba"}/\code{"gl"} (two-calendar-year seasons), START
 unchanged for \code{"wnba"} (single-year seasons).
 }
+\section{Errors}{
+
+\itemize{
+\item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
+Akamai WAF block) or returned a 200 response that isn't valid JSON.
+}
+}
+
 \examples{
 \donttest{
   try({
@@ -48,8 +82,8 @@ unchanged for \code{"wnba"} (single-year seasons).
 }
 }
 \seealso{
-Other NBA Functions:
+Other NBA Officiating Functions:
 \code{\link[=nba_l2m]{nba_l2m()}},
 \code{\link[=nba_l2m_games]{nba_l2m_games()}}
 }
-\concept{NBA Functions}
+\concept{NBA Officiating Functions}

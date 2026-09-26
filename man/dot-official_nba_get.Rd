@@ -6,11 +6,27 @@
 \usage{
 .official_nba_get(url, params = list(), proxy = NULL)
 }
+\arguments{
+\item{url}{character(1). Full official.nba.com URL to fetch.}
+
+\item{params}{Named list of query parameters, spliced onto \code{url} (default:
+empty list).}
+
+\item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
+named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code{url}, \code{port}, \code{username},
+\code{password}, \code{auth}). \code{NULL} (the default) uses no proxy.}
+}
+\value{
+character(1). The response body text.
+}
 \description{
 Returns the response body (character) on HTTP 200. On any other status,
-classifies the body via \code{\link[=.classify_official_403]{.classify_official_403()}} and \code{stop()}s a classed
-condition (\code{hoopR_no_data} / \code{hoopR_fetch_error}) instead of returning.
-\code{.retry_request()} never errors on HTTP status itself, so the status/body
-must be read here.
+classifies the body via \code{\link[=.classify_official_403]{.classify_official_403()}} and raises a classed
+condition (\code{hoopR_no_data} / \code{hoopR_fetch_error}) instead of returning. The
+request is built directly against httr2 here (rather than delegating to
+the shared \code{\link[=.retry_request]{.retry_request()}}) so the retry policy can treat 403/404 as
+definitive instead of transient, and so a transport-level failure (DNS,
+TLS, a dropped connection) is reclassified into the same error vocabulary
+instead of escaping as a raw curl/httr2 condition.
 }
 \keyword{internal}

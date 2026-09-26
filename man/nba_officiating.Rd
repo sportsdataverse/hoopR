@@ -11,6 +11,8 @@ official.nba.com. Port of the scraping logic in
 Manager: a browser User-Agent is required, and a 403 means two different
 things -- an S3 XML \code{AccessDenied} body means "no such report" (signalled
 as a \code{hoopR_no_data} condition) while an Akamai HTML interstitial means the
-fetch was blocked (signalled as a \code{hoopR_fetch_error} condition).
+fetch was blocked (signalled as a \code{hoopR_fetch_error} condition). See
+\code{vignette("nba_officiating")}-style docs on \code{?nba_l2m}, \code{?nba_l2m_games},
+and \code{?nba_referee_assignments} for the conditions each function can raise.
 }
 \keyword{internal}

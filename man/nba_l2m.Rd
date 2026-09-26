@@ -10,24 +10,65 @@ nba_l2m(game_id, proxy = NULL)
 \item{game_id}{character or numeric. NBA game id; zero-padded to 10
 digits automatically (e.g. \code{42500405} becomes \code{"0042500405"}).}
 
-\item{proxy}{optional proxy passed to the HTTP layer (see
-\code{\link[=.retry_request]{.retry_request()}}).}
+\item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
+named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code{url}, \code{port}, \code{username},
+\code{password}, \code{auth}).}
 }
 \value{
 Named list of \code{hoopR_data} tibbles:
-\itemize{
-\item \code{calls} -- one row per graded play (\code{game_id}, \code{period}, \code{period_name},
-\code{pc_time}, \code{seconds_remaining}, \code{call_type}, \code{call}, \code{type},
-\code{committing}, \code{disadvantaged}, \code{decision}, \code{decision_raw}, \code{comment},
-\code{difficulty}, \code{video_event_id}, \code{pos_id}, \code{pos_start}, \code{pos_end},
-\code{pos_team_id}). \code{decision} is normalized to \code{CC}/\code{CNC}/\code{IC}/\code{INC}
-(\code{NCC}->\code{CNC}, \code{NCI}->\code{INC}, trailing \code{*} stripped, blank/
-\code{"Undetectable"} -> \code{NA}, never \code{INC}). \code{game_id} is a 10-char
-zero-padded string. Player and team names are kept verbatim (no ASCII
-folding).
-\item \code{game} -- one row of game metadata.
-\item \code{stats} -- 3 rows of error-count stats (\code{Calls}, \verb{Errors in Favor},
-\verb{Possessions in Favor}).
+
+\strong{calls} -- one row per graded play. \code{decision} is normalized to
+\code{CC}/\code{CNC}/\code{IC}/\code{INC} (\code{NCC}->\code{CNC}, \code{NCI}->\code{INC}, trailing \code{*}
+stripped, blank/\code{"Undetectable"} -> \code{NA}, never \code{INC}). \code{game_id} is a
+10-char zero-padded string. Player and team names are kept verbatim
+(no ASCII folding).\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   period \tab integer \cr
+   period_name \tab character \cr
+   pc_time \tab character \cr
+   seconds_remaining \tab double \cr
+   call_type \tab character \cr
+   call \tab character \cr
+   type \tab character \cr
+   committing \tab character \cr
+   disadvantaged \tab character \cr
+   decision \tab character \cr
+   decision_raw \tab character \cr
+   comment \tab character \cr
+   difficulty \tab character \cr
+   video_event_id \tab character \cr
+   pos_id \tab integer \cr
+   pos_start \tab character \cr
+   pos_end \tab character \cr
+   pos_team_id \tab integer \cr
+}
+
+
+\strong{game} -- one row of game metadata.\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   game_date \tab Date \cr
+   season_type \tab character \cr
+   home_team_id \tab integer \cr
+   away_team_id \tab integer \cr
+   home_team_abbr \tab character \cr
+   away_team_abbr \tab character \cr
+   home_team_name \tab character \cr
+   away_team_name \tab character \cr
+   home_score \tab integer \cr
+   away_score \tab integer \cr
+   l2m_comments \tab character \cr
+}
+
+
+\strong{stats} -- 3 rows of error-count stats (\code{Calls}, \verb{Errors in Favor},
+\verb{Possessions in Favor}).\tabular{ll}{
+   col_name \tab types \cr
+   game_id \tab character \cr
+   stat_name \tab character \cr
+   home \tab integer \cr
+   away \tab integer \cr
 }
 }
 \description{
@@ -35,8 +76,23 @@ Retrieves and parses the Last Two Minute officiating report for a single
 NBA game from official.nba.com. A report is published for any game that is
 within 3 points (5 points before 2017-18) at any point in the last two
 minutes of the 4th quarter or overtime -- not only playoff games. JSON
-reports exist only from 2019-01-01 onward.
+reports exist only from 2019-01-01 onward. Port of the scraping logic in
+\href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M} (MIT,
+(c) 2019 atlhawksfanatic).
 }
+\section{Errors}{
+
+Raises a classed condition instead of returning on failure (see
+\code{vignette("nba_officiating")}-style notes in \code{?nba_officiating}):
+\itemize{
+\item \code{hoopR_no_data} -- the game has no L2M report (common for regular-season
+games, games that did not reach the final two minutes, or very recent
+games), or official.nba.com 404s the request.
+\item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
+Akamai WAF block) or returned a 200 response that isn't valid JSON.
+}
+}
+
 \examples{
 \donttest{
   try({
@@ -46,8 +102,8 @@ reports exist only from 2019-01-01 onward.
 }
 }
 \seealso{
-Other NBA Functions:
+Other NBA Officiating Functions:
 \code{\link[=nba_l2m_games]{nba_l2m_games()}},
 \code{\link[=nba_referee_assignments]{nba_referee_assignments()}}
 }
-\concept{NBA Functions}
+\concept{NBA Officiating Functions}

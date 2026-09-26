@@ -6,6 +6,14 @@
 \usage{
 .parse_nba_l2m_games(html, season)
 }
+\arguments{
+\item{html}{character(1). HTML of the L2M season listing page.}
+
+\item{season}{integer(1). NBA season (end year) to stamp onto every row.}
+}
+\value{
+A \code{hoopR_data}-ready tibble: \code{game_id}, \code{season}, \code{season_type}, \code{label}.
+}
 \description{
 Parse an L2M season listing page (internal)
 }

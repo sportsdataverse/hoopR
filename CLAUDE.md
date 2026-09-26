@@ -14,6 +14,7 @@
 - [Commit Convention](#commit-convention)
 - [Cross-Source Crosswalk Surface](#cross-source-crosswalk-surface)
 - [Common Pitfalls](#common-pitfalls)
+- [Cheat sheet](#cheat-sheet)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -226,6 +227,24 @@ nba_func <- function(...) {
 
 This rule applies to **every return variable name**, not just `df_list`: `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. Initialize to the appropriate empty value — `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.
 
+### Officiating errors are classed conditions (sanctioned exception)
+
+`R/nba_officiating.R` (`nba_l2m()`, `nba_l2m_games()`, `nba_referee_assignments()`)
+deliberately does **not** follow the tryCatch-and-return-an-empty-fallback
+pattern above. A failed fetch **raises** a classed condition instead of
+returning an empty list/tibble: `hoopR_no_data` when official.nba.com's
+answer is definitively "nothing here" (a 404, or a 403 with an S3
+`AccessDenied` body), `hoopR_fetch_error` when the fetch itself failed or is
+unclassifiable (a network/transport error, a non-403 non-404 status, a 403
+Akamai block, or a 200 response that isn't valid JSON where JSON was
+expected). Both inherit from `hoopR_error` so callers can catch either with
+one class. This mirrors sdv-py's `NoDataError`/`AssetFetchError` vocabulary
+(`sportsdataverse/errors.py`) on purpose — the R and Python officiating
+surfaces are parity-tested against the same fixtures, and collapsing a failed
+fetch into a silently-empty return would make that parity untestable and
+would hide a rate limit or a WAF block as if it were "no report for this
+game." Do not "fix" this back to the empty-fallback convention.
+
 ### Column Drift Resilience
 
 Both the NBA Stats API and ESPN's JSON payloads add columns over time without removing old ones, and occasionally rename or drop columns. Two guardrails apply:
@@ -425,7 +444,7 @@ This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines
 
 Three files describe the same release at different audiences. Whenever you add a `NEWS.md` bullet, **think through all three before committing**:
 
-- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.1.0**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.1.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.1.0.9000 (development version)**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.1.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral or user-visible change you add to `NEWS.md` should also be reflected in `cran-comments.md` before submission. The two files are not duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md` is the short-form release summary. If a `NEWS.md` bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from `cran-comments.md`.
 
