@@ -682,6 +682,9 @@ test_that("nba_l2m: a payload without a one-row game table is a hoopR_fetch_erro
     body <- b
     expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error", info = b)
   }
+  # Two game rows: the parser would keep the first and silently drop the rest.
+  body <- '{"game":[{"GameId":"0042500405"},{"GameId":"0042500406"}],"l2m":[],"stats":[]}'
+  expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error")
 })
 
 test_that("nba_l2m: a game/l2m/stats table of the wrong shape is a hoopR_fetch_error, never made-up rows", {

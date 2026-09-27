@@ -470,7 +470,7 @@ nba_l2m <- function(game_id, proxy = NULL) {
   # fetch, never an empty report or made-up rows.
   is_table <- function(v) is.data.frame(v) && all(vapply(v, is.atomic, logical(1)))
   is_table_or_empty <- function(v) is.null(v) || is_table(v) || (is.list(v) && length(v) == 0)
-  if (!is_table(x[["game"]]) || nrow(x[["game"]]) == 0 ||
+  if (!is_table(x[["game"]]) || nrow(x[["game"]]) != 1 ||
       !is_table_or_empty(x[["l2m"]]) || !is_table_or_empty(x[["stats"]])) {
     cli::cli_abort(
       "official.nba.com returned no well-formed L2M report (game/l2m/stats tables) for {.url {url}}",
