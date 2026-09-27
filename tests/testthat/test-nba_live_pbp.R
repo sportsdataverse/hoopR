@@ -4,14 +4,13 @@ test_that("NBA Live PBP", {
   skip_nba_stats_test()
 
 
-  # The live CDN play-by-play feed only retains recent games (older
-  # game_ids 404 / return empty), so this id needs periodic refreshing.
-  x <- nba_live_pbp(game_id = "0042500316")
+  # The 2025-26 opener. On 2026-09-27 UTC the CDN still served it and a
+  # 2019-20 game (0021900001). An empty result is a failure (refused request,
+  # network error, or a warning swallowed by the wrapper), not an aged-out
+  # game, so fail on it rather than skip (see test-nba_live_cdn.R).
+  x <- nba_live_pbp(game_id = "0022500001")
 
-  # Skip rather than fail if the chosen game has aged out of the live feed.
-  if (is.null(x) || !is.data.frame(x) || nrow(x) == 0 || ncol(x) == 0) {
-    skip("No rows returned from nba_live_pbp at test time")
-  }
+  expect_gt(nrow(x), 0)
 
   cols_x1 <- c(
     "event_num",

@@ -108,19 +108,48 @@ nba_live_endpoint <- function(endpoint) {
   return(base_url)
 }
 
-# Browser-like headers required by the NBA CDN (cdn.nba.com). Without them
-# the CDN returns an "Access Denied" HTML page instead of JSON. Shared by
-# the live-data wrappers (nba_live_pbp, nba_live_boxscore, nba_todays_scoreboard)
-# and the schedule wrapper.
+# The headers a Chrome page on www.nba.com sends with its XHR to the NBA CDNs.
+# Shared by every wrapper that fetches cdn.nba.com or cdn-gleague.nba.com:
+# nba_live_pbp(), nba_live_boxscore(), nba_todays_scoreboard(), nba_schedule(),
+# nbagl_live_pbp(), nbagl_live_boxscore().
+#
+# Both hosts sit behind Akamai Bot Manager. Measured 2026-09-27 UTC from a
+# residential IP, Windows R 4.6.1 (libcurl 8.14.1, Schannel and OpenSSL 3.5
+# backends):
+# - No browser headers: a 403 "Access Denied" page from both hosts.
+# - The old set (User-Agent, Accept, Accept-Language, Origin, Referer):
+#   cdn.nba.com sent the JSON over HTTP/2 but a 403 over HTTP/1.1.
+#   cdn-gleague.nba.com, which speaks only HTTP/1.1, sent its home page
+#   (200 text/html) instead of the JSON.
+# - This set, which adds the client hints (sec-ch-*) and fetch metadata
+#   (Sec-Fetch-*): the JSON from cdn.nba.com over HTTP/2 and HTTP/1.1, and
+#   from cdn-gleague.nba.com.
+# Over HTTP/1.1 the TLS client matters too. Git for Windows' curl 8.19 sent
+# this exact set and was refused (403 on cdn.nba.com, the home page on
+# cdn-gleague.nba.com). Only Windows R and Python requests were verified;
+# Linux and macOS libcurl builds are unverified.
+#
+# Chrome 140, last verified live 2026-09-27 UTC (Windows R). To move to
+# another version, copy the WHOLE sec-ch-ua value from a real Chrome of the
+# User-Agent's major version: Chromium derives the placeholder brand and the
+# brand order from the major version, so editing only the numbers is wrong.
+# cdn.nba.com refused a request without Accept-Encoding (measured); the R curl
+# package, not libcurl, adds Accept-Encoding by default.
 .nba_cdn_headers <- function() {
   c(
+    `sec-ch-ua` = '"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"',
+    `sec-ch-ua-mobile` = "?0",
+    `sec-ch-ua-platform` = '"Windows"',
     `User-Agent` = paste0(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ",
-      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"),
+      "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"),
     `Accept` = "application/json, text/plain, */*",
-    `Accept-Language` = "en-US,en;q=0.9",
     `Origin` = "https://www.nba.com",
-    `Referer` = "https://www.nba.com/"
+    `Sec-Fetch-Site` = "same-site",
+    `Sec-Fetch-Mode` = "cors",
+    `Sec-Fetch-Dest` = "empty",
+    `Referer` = "https://www.nba.com/",
+    `Accept-Language` = "en-US,en;q=0.9"
   )
 }
 

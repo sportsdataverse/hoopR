@@ -94,21 +94,12 @@ nba_schedule <- function(
   } else {
     "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
   }
-  cdn_headers <- c(
-    `User-Agent` = paste0(
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ",
-      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"),
-    `Accept` = "application/json, text/plain, */*",
-    `Accept-Language` = "en-US,en;q=0.9",
-    `Origin` = "https://www.nba.com",
-    `Referer` = "https://www.nba.com/"
-  )
 
   games <- NULL
 
   tryCatch(
     expr = {
-      resp <- .retry_request(cdn_host, headers = cdn_headers) %>%
+      resp <- .retry_request(cdn_host, headers = .nba_cdn_headers()) %>%
         .resp_text() %>%
         jsonlite::fromJSON()
 
@@ -773,23 +764,10 @@ nba_todays_scoreboard <- function(
 
   games <- .empty_hoopR_data("NBA Today's Scoreboard Information from NBA.com")
 
-  # The NBA CDN rejects requests without browser-like headers with an
-  # "Access Denied" HTML page (not JSON). Match the headers nba_schedule()
-  # uses for the same cdn.nba.com host.
-  cdn_headers <- c(
-    `User-Agent` = paste0(
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ",
-      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"),
-    `Accept` = "application/json, text/plain, */*",
-    `Accept-Language` = "en-US,en;q=0.9",
-    `Origin` = "https://www.nba.com",
-    `Referer` = "https://www.nba.com/"
-  )
-
   tryCatch(
     expr = {
       full_url <- "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
-      res <- .retry_request(full_url, headers = cdn_headers)
+      res <- .retry_request(full_url, headers = .nba_cdn_headers())
 
       resp <- res %>%
         .resp_text() %>%
