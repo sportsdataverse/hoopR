@@ -350,8 +350,12 @@ NULL
   )
 }
 
+#' Fetch an NBA Last Two Minute (L2M) report
+#' @name nba_l2m
+NULL
 #' @title
 #' Fetch an NBA Last Two Minute (L2M) report
+#' @rdname nba_l2m
 #' @description
 #' Retrieves and parses the Last Two Minute officiating report for a single
 #' NBA game from official.nba.com. A report is published for any game that is
@@ -533,8 +537,12 @@ nba_l2m <- function(game_id, proxy = NULL) {
   )
 }
 
+#' Fetch the list of NBA games with a Last Two Minute report for a season
+#' @name nba_l2m_games
+NULL
 #' @title
 #' Fetch the list of NBA games with a Last Two Minute report for a season
+#' @rdname nba_l2m_games
 #' @description
 #' Scrapes official.nba.com's season index page. JSON L2M reports exist only
 #' from 2019-01-01 onward; earlier seasons' index pages list PDFs, which this
@@ -711,8 +719,12 @@ nba_l2m_games <- function(season, proxy = NULL) {
   )
 }
 
+#' Fetch NBA/G-League/WNBA referee crew assignments for a date
+#' @name nba_referee_assignments
+NULL
 #' @title
 #' Fetch NBA/G-League/WNBA referee crew assignments for a date
+#' @rdname nba_referee_assignments
 #' @description
 #' Retrieves referee crew assignments and replay-center officials for every
 #' game on a date, from official.nba.com's `get-game-officials` endpoint
