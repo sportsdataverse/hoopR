@@ -36,6 +36,7 @@ test_that("team_group_seasons loaders validate the seasons argument", {
   expect_error(load_mbb_team_group_seasons(2001))
   expect_error(load_nba_team_group_seasons(1970))
   expect_error(load_nba_team_group_seasons("2005"))
+  expect_error(load_nba_team_group_seasons(2005.5))
 })
 
 test_that("group loaders return the published mbb_groups / nba_groups tables", {
@@ -44,7 +45,7 @@ test_that("group loaders return the published mbb_groups / nba_groups tables", {
   skip_load_test()
 
   x <- load_nba_team_group_seasons(c(2004, 2005))
-  if (nrow(x) == 0) skip("No rows returned at test time -- release may not exist yet")
+  expect_gt(nrow(x), 0)
 
   expect_s3_class(x, "hoopR_data")
   expect_in(c("season", "team_id", "team_name", "conference_id", "division_id"), colnames(x))

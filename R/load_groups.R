@@ -298,8 +298,9 @@ load_mbb_team_group_seasons <- function(seasons = most_recent_mbb_season(),
     files <- "mbb_team_group_seasons"
   } else {
     stopifnot(is.numeric(seasons),
-              all(seasons >= 2002))
-    files <- paste0("mbb_team_group_seasons_", seasons)
+              all(seasons >= 2002),
+              all(seasons == trunc(seasons)))
+    files <- paste0("mbb_team_group_seasons_", unique(seasons))
   }
 
   urls <- paste0(
@@ -341,8 +342,9 @@ load_nba_team_group_seasons <- function(seasons = most_recent_nba_season(),
     files <- "nba_team_group_seasons"
   } else {
     stopifnot(is.numeric(seasons),
-              all(seasons >= 1971))
-    files <- paste0("nba_team_group_seasons_", seasons)
+              all(seasons >= 1971),
+              all(seasons == trunc(seasons)))
+    files <- paste0("nba_team_group_seasons_", unique(seasons))
   }
 
   urls <- paste0(
