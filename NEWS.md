@@ -61,6 +61,19 @@
   skip. They fail now; the scoreboard test still skips when the feed lists
   no games.
 
+* Eight new loaders read the `mbb_groups` and `nba_groups` releases on
+  sportsdataverse-data, which record conference and division membership as
+  it was each season rather than back-applying today's alignment:
+  `load_mbb_groups()` / `load_nba_groups()` (one row per lineage, with one
+  `group_id` kept across renames), `load_mbb_group_seasons()` /
+  `load_nba_group_seasons()` (names, parent group and member count as of
+  each season), `load_mbb_group_aliases()` / `load_nba_group_aliases()` (the
+  names and ids ESPN, NCAA, KenPom and NBA Stats use for each group) and
+  `load_mbb_team_group_seasons(seasons)` (2002 onward) /
+  `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team per
+  season. Seasons are ending years. The loaders read parquet, not the tags'
+  csv copies, so `team_id` stays character.
+
 # **hoopR 3.1.0**
 
 Development release on top of the CRAN-shipped 3.0.0 (commit

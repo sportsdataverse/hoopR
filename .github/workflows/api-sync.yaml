@@ -1,0 +1,31 @@
+name: api-sync
+# Daily: is hoopR's cbbd_* surface behind the CBBD OpenAPI spec? Opens/refreshes one
+# `api-sync` issue; never commits. Logic lives in sportsdataverse/.github (api-spec-sync.yml).
+on:
+  schedule:
+    - cron: "0 11 * * *"   # 07:00 America/New_York (EDT)
+  push:                    # a merged wrapper PR re-diffs at once, so the tracker closes then
+    branches: [main]
+    paths: ['R/**']
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-diff even if the upstream version is unchanged
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: api-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    uses: sportsdataverse/.github/.github/workflows/api-spec-sync.yml@main
+    with:
+      upstream_repo: CFBD/cbb-api
+      spec_url_template: https://api.collegebasketballdata.com/api/{version}/cbbd-openapi.json
+      host: api.collegebasketballdata.com
+      fn_prefix: cbbd
+      force: ${{ inputs.force || github.event_name == 'push' }}
+    secrets: inherit
