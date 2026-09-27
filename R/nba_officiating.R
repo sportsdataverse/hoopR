@@ -805,7 +805,8 @@ NULL
 #'   Akamai WAF block, any other HTTP status), or a 200 response is not valid
 #'   JSON, is JSON that is not an object, or has the league's
 #'   `Table`/`Table1` `rows` missing or malformed (a `Table` row without a
-#'   10-digit `game_id` included). The feed carries every league's block on every
+#'   10-digit `game_id`, or a `Table1` row without a `replaycenter_official`
+#'   name, included). The feed carries every league's block on every
 #'   date, with zero rows on a day without games, so a missing block is never
 #'   an empty day.
 #'
@@ -859,8 +860,17 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
     v <- r[["game_id"]]
     is.atomic(v) && length(v) == 1L && !is.na(v) && grepl("^[0-9]{10}$", .gid10(v))
   }
+  # A replay-center row names its official (every real row does): an empty
+  # record, a missing, null or blank name, or a renamed field would otherwise
+  # parse to a row of NAs. A non-scalar name keeps its row with an NA name, as
+  # a crew slot does.
+  has_replay_name <- function(r) {
+    v <- r[["replaycenter_official"]]
+    length(v) > 0L && !(is.character(v) && length(v) == 1L && !nzchar(trimws(v)))
+  }
   if (!is.list(block) || !has_rows("Table") || !has_rows("Table1") ||
-      !all(vapply(block[["Table"]][["rows"]], has_gid, logical(1)))) {
+      !all(vapply(block[["Table"]][["rows"]], has_gid, logical(1))) ||
+      !all(vapply(block[["Table1"]][["rows"]], has_replay_name, logical(1)))) {
     cli::cli_abort(
       "official.nba.com returned a missing or malformed {.val {league}} Table/Table1 block for {.val {day}}",
       class = c("hoopR_fetch_error", "hoopR_error"),

@@ -382,6 +382,10 @@ test_that("nba_referee_assignments(): a missing league block is a fetch error, a
               # rows as an object of row objects, not an array of them
               '{"wnba":{"Table":{"rows":{"a":{"game_id":"1"}}},"Table1":{"rows":[]}}}',
               '{"wnba":{"Table":{"rows":[1,2]},"Table1":{"rows":[]}}}',
+              # every replay-center row names its official (sdv-py parity)
+              '{"wnba":{"Table":{"rows":[]},"Table1":{"rows":[{}]}}}',
+              '{"wnba":{"Table":{"rows":[]},"Table1":{"rows":[{"game_date":"06/13/2026","official":"A Ref"}]}}}',
+              '{"wnba":{"Table":{"rows":[]},"Table1":{"rows":[{"replaycenter_official":" "}]}}}',
               # every game row needs a non-empty game_id (sdv-py parity)
               '{"wnba":{"Table":{"rows":[{"official1":"A","season":"22026"}]},"Table1":{"rows":[]}}}',
               '{"wnba":{"Table":{"rows":[{}]},"Table1":{"rows":[]}}}',
