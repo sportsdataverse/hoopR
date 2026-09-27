@@ -86,7 +86,7 @@ with an S3 \code{AccessDenied} body.
 Akamai WAF block, any other HTTP status), or a 200 response is not valid
 JSON, is JSON that is not an object, or has the league's
 \code{Table}/\code{Table1} \code{rows} missing or malformed (a \code{Table} row without a
-\code{game_id} included). The feed carries every league's block on every
+10-digit \code{game_id} included). The feed carries every league's block on every
 date, with zero rows on a day without games, so a missing block is never
 an empty day.
 }

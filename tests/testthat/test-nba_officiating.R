@@ -385,9 +385,19 @@ test_that("nba_referee_assignments(): a missing league block is a fetch error, a
               # every game row needs a non-empty game_id (sdv-py parity)
               '{"wnba":{"Table":{"rows":[{"official1":"A","season":"22026"}]},"Table1":{"rows":[]}}}',
               '{"wnba":{"Table":{"rows":[{}]},"Table1":{"rows":[]}}}',
-              '{"wnba":{"Table":{"rows":[{"game_id":"","official1":"A"}]},"Table1":{"rows":[]}}}')) {
+              '{"wnba":{"Table":{"rows":[{"game_id":"","official1":"A"}]},"Table1":{"rows":[]}}}',
+              # ... that .gid10() makes a 10-digit id (the documented game_id)
+              '{"wnba":{"Table":{"rows":[{"game_id":"not-an-id","official1":"A"}]},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[{"game_id":"12345678901","official1":"A"}]},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[{"game_id":"4.2e7","official1":"A"}]},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[{"game_id":42500405.5,"official1":"A"}]},"Table1":{"rows":[]}}}')) {
     payload <- p
     expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error", info = p)
+  }
+  # A short id, number or string, is zero-padded to 10 digits and still passes.
+  for (id in c("42500405", '"42500405"')) {
+    payload <- sprintf('{"nba":{"Table":{"rows":[{"game_id":%s,"official1":"A"}]},"Table1":{"rows":[]}}}', id)
+    expect_identical(nba_referee_assignments("2026-06-13")$officials$game_id, "0042500405", info = id)
   }
 
   payload <- '{"wnba":{"Table":{"rows":[]},"Table1":{"rows":[]}}}'

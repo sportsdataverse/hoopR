@@ -785,7 +785,7 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'   Akamai WAF block, any other HTTP status), or a 200 response is not valid
 #'   JSON, is JSON that is not an object, or has the league's
 #'   `Table`/`Table1` `rows` missing or malformed (a `Table` row without a
-#'   `game_id` included). The feed carries every league's block on every
+#'   10-digit `game_id` included). The feed carries every league's block on every
 #'   date, with zero rows on a day without games, so a missing block is never
 #'   an empty day.
 #'
@@ -832,10 +832,12 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
     is.list(r) && is.null(names(r)) &&
       all(vapply(r, function(x) is.list(x) && !is.null(names(x)), logical(1)))
   }
-  # Every game row names its game with one non-empty game_id (as sdv-py requires).
+  # Every game row names its game with one game_id that .gid10() turns into the
+  # documented 10-digit id; "not-an-id", "12345678901" or "4.2e7" would come
+  # through .gid10() unchanged.
   has_gid <- function(r) {
     v <- r[["game_id"]]
-    is.atomic(v) && length(v) == 1L && !is.na(v) && nzchar(v)
+    is.atomic(v) && length(v) == 1L && !is.na(v) && grepl("^[0-9]{10}$", .gid10(v))
   }
   if (!is.list(block) || !has_rows("Table") || !has_rows("Table1") ||
       !all(vapply(block[["Table"]][["rows"]], has_gid, logical(1)))) {
