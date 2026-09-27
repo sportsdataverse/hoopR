@@ -138,6 +138,39 @@ Functions exported by hoopR to access model-derived datasets
   **Load NBA player-impact ratings (RAPM / SPM / BPM / DARKO) from the
   data repo**
 
+### Conference and Division Group Loaders
+
+Season-by-season conference and division lineages, names, aliases, and
+team membership published to sportsdataverse-data
+
+- [`load_mbb_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
+  [`load_nba_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
+  :
+
+  **Load conference and division lineages (MBB / NBA) from the data
+  repo**
+
+- [`load_mbb_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
+  [`load_nba_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
+  :
+
+  **Load conference and division names by season (MBB / NBA) from the
+  data repo**
+
+- [`load_mbb_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
+  [`load_nba_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
+  :
+
+  **Load conference and division aliases (MBB / NBA) from the data
+  repo**
+
+- [`load_mbb_team_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_group_seasons.md)
+  [`load_nba_team_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_group_seasons.md)
+  :
+
+  **Load team conference membership by season (MBB / NBA) from the data
+  repo**
+
 ## Cross-Source Crosswalks
 
 ### NBA Crosswalk Functions

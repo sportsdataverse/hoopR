@@ -47,7 +47,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_roster("1"))
 #> ── Fox Sports NBA roster ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 03:37:46 UTC
+#> ℹ Data updated: 2026-09-27 05:27:13 UTC
 #> # A tibble: 19 × 9
 #>    team_id position_group player       pos   age   ht    wt    school athlete_id
 #>    <chr>   <chr>          <chr>        <chr> <chr> <chr> <chr> <chr>  <chr>     

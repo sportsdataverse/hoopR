@@ -11,6 +11,25 @@
   [`mget()`](https://rdrr.io/r/base/get.html) rejects. It records none
   now. A new offline test runs the parser on a two-row NET table built
   inline; the live test stays skipped.
+- Eight new loaders read the `mbb_groups` and `nba_groups` releases on
+  sportsdataverse-data, which record conference and division membership
+  as it was each season rather than back-applying today’s alignment:
+  [`load_mbb_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
+  /
+  [`load_nba_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
+  (one row per lineage, with one `group_id` kept across renames),
+  [`load_mbb_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
+  /
+  [`load_nba_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
+  (names, parent group and member count as of each season),
+  [`load_mbb_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
+  /
+  [`load_nba_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
+  (the names and ids ESPN, NCAA, KenPom and NBA Stats use for each
+  group) and `load_mbb_team_group_seasons(seasons)` (2002 onward) /
+  `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team
+  per season. Seasons are ending years. The loaders read parquet, not
+  the tags’ csv copies, so `team_id` stays character.
 
 ## **hoopR 3.1.0**
 

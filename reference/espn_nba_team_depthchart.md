@@ -131,7 +131,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_depthchart(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Depth Chart ─────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 03:37:44 UTC
+#> ℹ Data updated: 2026-09-27 05:27:08 UTC
 #> # A tibble: 30 × 10
 #>    league team_id season depthchart_id depthchart_name position  rank athlete_id
 #>    <chr>  <chr>    <int> <chr>         <chr>           <chr>    <int> <chr>     

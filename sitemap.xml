@@ -224,8 +224,12 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_history.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/kp_team_schedule.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/kp_user_pw.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_groups.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/load_mbb_team_group_seasons.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_pbp.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/load_nba_stats_leaguedash.html</loc></url>
