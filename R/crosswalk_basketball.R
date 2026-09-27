@@ -181,6 +181,9 @@
 #' @keywords internal
 #' @noRd
 .bb_release_parquet <- function(file, missing_ok = FALSE) {
+  if (!requireNamespace("arrow", quietly = TRUE)) {
+    .bb_source_error("reading the SportsDataverse groups reference release needs the 'arrow' package")
+  }
   resp <- .retry_request(paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/", file
   ))
