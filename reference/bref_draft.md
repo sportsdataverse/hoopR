@@ -62,7 +62,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_draft(season = 2024))
 #> ── Draft results from basketball-reference.com ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-26 20:28:36 UTC
+#> ℹ Data updated: 2026-09-27 03:36:34 UTC
 #> # A tibble: 60 × 23
 #>    ranker pick_overall team  player college_name seasons     g    mp   pts   trb
 #>     <dbl>        <dbl> <chr> <chr>  <chr>          <dbl> <dbl> <dbl> <dbl> <dbl>

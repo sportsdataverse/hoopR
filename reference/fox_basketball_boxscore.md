@@ -46,7 +46,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_boxscore("106422"))
 #> ── Fox Sports NBA boxscore ───────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-26 20:30:01 UTC
+#> ℹ Data updated: 2026-09-27 03:37:45 UTC
 #> # A tibble: 326 × 7
 #>    game_id team    stat_group player   athlete_id stat  value
 #>    <chr>   <chr>   <chr>      <chr>    <chr>      <chr> <chr>

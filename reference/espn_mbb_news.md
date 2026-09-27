@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-26 20:29:20 UTC
+#> ℹ Data updated: 2026-09-27 03:37:10 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -216,14 +216,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-26 20:29:20 UTC
+#> ℹ Data updated: 2026-09-27 03:37:11 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.90e7 Story 2026 NB… "We're gra… 2026-09-… FALSE   Zach … https:/… 46       
-#> 2  4.84e7 Story 2026 NB… "We're tra… 2026-09-… FALSE   ESPN   https:/… 46       
-#> 3  5.00e7 Media SVP ref… "SVP refle… 2026-09-… FALSE   NA     https:/… 46       
-#> 4  5.00e7 Head… Sources… "Warriors … 2026-09-… FALSE   Antho… https:/… 46       
-#> 5  5.00e7 Head… Altman:… "Cavs pres… 2026-09-… FALSE   NA     https:/… 46       
+#> 1  5.00e7 Head… Sources… The Chicag… 2026-09-… FALSE   NA     https:/… 46       
+#> 2  4.90e7 Story 2026 NB… We're grad… 2026-09-… FALSE   Zach … https:/… 46       
+#> 3  4.84e7 Story 2026 NB… We're trac… 2026-09-… FALSE   ESPN   https:/… 46       
+#> 4  5.00e7 Media SVP ref… SVP reflec… 2026-09-… FALSE   NA     https:/… 46       
+#> 5  5.00e7 Head… Sources… Warriors s… 2026-09-… FALSE   Antho… https:/… 46       
 # }
 ```

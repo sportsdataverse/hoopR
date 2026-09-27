@@ -71,21 +71,21 @@ A `hoopR_data` tibble with one row per substitution (same columns as
 ``` r
 # \donttest{
   try(cbbd_substitutions_game(game_id = 5881))
-#> ✖ 2026-09-26 20:28:49.278027: Invalid arguments or no substitution data available for 5881!
+#> ✖ 2026-09-27 03:36:44.657198: Invalid arguments or no substitution data available for 5881!
 #> ✖ Args: game_id = 5881
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_substitutions_player(player_id = 160, season = 2024))
-#> ✖ 2026-09-26 20:28:49.287019: Invalid arguments or no substitution data available for player 160!
+#> ✖ 2026-09-27 03:36:44.6628: Invalid arguments or no substitution data available for player 160!
 #> ✖ Args: player_id = 160, season = 2024
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_substitutions_team(season = 2024, team = "Duke"))
-#> ✖ 2026-09-26 20:28:49.295783: Invalid arguments or no substitution data available for Duke!
+#> ✖ 2026-09-27 03:36:44.668274: Invalid arguments or no substitution data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

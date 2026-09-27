@@ -94,7 +94,7 @@ Other KenPom Historical Functions:
 ``` r
   # \donttest{
    try(kp_coach_history(coach = 'Leonard Hamilton'))
-#> ✖ 2026-09-26 20:30:41.286512: Invalid arguments or no coach history data for Leonard Hamilton available!
+#> ✖ 2026-09-27 03:38:04.197432: Invalid arguments or no coach history data for Leonard Hamilton available!
 #> ✖ Args: coach = "Leonard Hamilton"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
