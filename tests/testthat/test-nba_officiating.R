@@ -42,8 +42,8 @@ test_that("decision normalization: NCC/NCI/star/blank/Undetectable", {
 
 test_that("names are kept verbatim (no ASCII folding)", {
   x <- jsonlite::fromJSON(file.path(fx, "l2m_json_0042500405.json"))
-  x$l2m$DP[1] <- "Nikola Jokić"
-  expect_identical(.parse_nba_l2m(x)$calls$disadvantaged[1], "Nikola Jokić")
+  x$l2m$DP[1] <- "Nikola Joki\u0107"
+  expect_identical(.parse_nba_l2m(x)$calls$disadvantaged[1], "Nikola Joki\u0107")
 })
 
 test_that("game_id is a 10-char zero-padded string from an int game id", {
@@ -88,7 +88,7 @@ test_that("referee assignments parser matches sdv-py golden output (wnba)", {
   expect_true(all(out$officials$league == "wnba"))
 })
 
-test_that("referee assignments: unknown league keeps schema, empty rows", {
+test_that("referee assignments: a league block with zero-row tables keeps the schema", {
   x <- jsonlite::fromJSON(file.path(fx, "referee_assignments_2026-06-13.json"), simplifyVector = FALSE)
   x[["gl"]] <- list(Table = list(rows = list()), Table1 = list(rows = list()))
   out <- .parse_nba_referee_assignments(x, "gl")
@@ -396,6 +396,26 @@ test_that("nba_referee_assignments(): a missing league block is a fetch error, a
   expect_equal(nrow(out$replay_center), 0)
 })
 
+test_that("replay_center is per date: the real fixture's gl block has no games but one replay row", {
+  txt <- paste(readLines(file.path(fx, "referee_assignments_2026-06-13.json"), warn = FALSE), collapse = "\n")
+  x <- jsonlite::fromJSON(txt, simplifyVector = FALSE)
+  gl <- .parse_nba_referee_assignments(x, "gl")
+  expect_equal(nrow(gl$officials), 0)
+  expect_equal(nrow(gl$replay_center), 1)
+  # The same replay-center row sits in every league block; `league` only
+  # records which block was read.
+  nba <- .parse_nba_referee_assignments(x, "nba")
+  expect_identical(gl$replay_center$official_id, nba$replay_center$official_id)
+  expect_identical(gl$replay_center$league, "gl")
+
+  # The unmodified payload passes every fetch-time check, for every league.
+  local_mocked_bindings(.official_nba_get = function(url, params = list(), proxy = NULL) txt)
+  for (lg in c("nba", "gl", "wnba")) {
+    expect_equal(nrow(nba_referee_assignments("2026-06-13", league = lg)$replay_center), 1, info = lg)
+  }
+  expect_equal(nrow(nba_referee_assignments("2026-06-13", league = "gl")$officials), 0)
+})
+
 # ---------------------------------------------------------------------------
 # P1: HTTP error classification through .official_nba_get(), mocked at the
 # httr2::req_perform() boundary (the request is now built inline rather than
@@ -436,7 +456,32 @@ test_that("S3 XML 403 -> hoopR_no_data, Akamai HTML 403 -> hoopR_fetch_error, 40
   expect_error(.official_nba_get("https://official.nba.com/l2m/json/0022500002.json"), class = "hoopR_fetch_error")
 })
 
-test_that("a 200 response with a non-JSON body is a hoopR_fetch_error (all three functions)", {
+test_that("403/404 classification holds through the real httr2 pipeline (its error policy included)", {
+  # local_mocked_responses() (not a req_perform() replacement) runs httr2's own
+  # error policy, so dropping req_error(is_error = function(resp) FALSE) turns
+  # every 403/404 into a transport-level hoopR_fetch_error and fails this test.
+  u <- "https://official.nba.com/l2m/json/0022500002.json"
+  xml <- paste(readLines(file.path(fx, "l2m_json_0022500002_no_report_s3_403.xml"), warn = FALSE), collapse = "\n")
+  html <- paste(readLines(file.path(fx, "akamai_403_blocked_ua.html"), warn = FALSE), collapse = "\n")
+
+  httr2::local_mocked_responses(function(req) httr2::response(403L, body = charToRaw(xml)))
+  err <- expect_error(.official_nba_get(u), class = "hoopR_no_data")
+  expect_s3_class(err, "hoopR_error")
+  expect_error(nba_l2m("0022500002"), class = "hoopR_no_data")
+  expect_error(nba_l2m_games(2030), class = "hoopR_no_data")
+  expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_no_data")
+
+  httr2::local_mocked_responses(function(req) httr2::response(403L, body = charToRaw(html)))
+  err <- expect_error(.official_nba_get(u), class = "hoopR_fetch_error")
+  expect_s3_class(err, "hoopR_error")
+
+  httr2::local_mocked_responses(function(req) httr2::response(404L, body = charToRaw("<html>Not Found</html>")))
+  expect_error(.official_nba_get(u), class = "hoopR_no_data")
+  expect_error(nba_l2m_games(2030), class = "hoopR_no_data")
+  expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_no_data")
+})
+
+test_that("a 200 response with a non-JSON body is a hoopR_fetch_error (both JSON endpoints)", {
   local_mocked_bindings(
     req_perform = .mock_resp(200L, "<html><body>Access Denied</body></html>", "text/html"),
     .package = "httr2"
@@ -530,6 +575,10 @@ test_that("caller mistakes are ordinary errors raised before any request, not ho
 })
 
 test_that("transport failures get the retry budget: retry_on_failure is set (N3)", {
+  # Reads httr2's internal request fields (policies, headers), which can
+  # change between httr2 releases: not a CRAN check. A mocked response
+  # returns before httr2's retry loop, so the policy is read, not driven.
+  skip_on_cran()
   captured <- NULL
   local_mocked_bindings(
     req_perform = function(req, ...) {
@@ -541,6 +590,20 @@ test_that("transport failures get the retry budget: retry_on_failure is set (N3)
   .official_nba_get("https://official.nba.com/l2m/json/0042500405.json")
   expect_true(isTRUE(captured$policies$retry_on_failure))
   expect_equal(captured$policies$retry_max_tries, 3)
+  # Timeouts, rate limits and 5xx are retried (408/500/502/504 beyond httr2's
+  # default 429/503); a 403 or 404 is a definitive answer, never retried.
+  transient <- captured$policies$retry_is_transient
+  for (st in c(408L, 429L, 500L, 502L, 503L, 504L)) {
+    expect_true(transient(httr2::response(st)), info = st)
+  }
+  for (st in c(403L, 404L)) expect_false(transient(httr2::response(st)), info = st)
+  expect_identical(captured$headers[["Referer"]], "https://official.nba.com/")
+})
+
+test_that("requests carry the official.nba.com Referer and a browser User-Agent", {
+  h <- .official_nba_headers()
+  expect_identical(h[["Referer"]], "https://official.nba.com/")
+  expect_match(h[["User-Agent"]], "^Mozilla/")
 })
 
 # ---------------------------------------------------------------------------
@@ -576,11 +639,13 @@ test_that("a 200 whose JSON is not an object is a hoopR_fetch_error", {
   local_mocked_bindings(
     .official_nba_get = function(url, params = list(), proxy = NULL) body
   )
-  for (b in c("null", "[]", '"error"', "42")) {
+  # '[{"game":1}]' simplifies to a data.frame: a named list, but not an object.
+  for (b in c("null", "[]", '"error"', "42", '[{"game":1}]')) {
     body <- b
     expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error", info = b)
     expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_fetch_error", info = b)
   }
+  expect_error(.official_nba_json('[{"game":1}]', "https://official.nba.com/x.json"), class = "hoopR_fetch_error")
 })
 
 test_that("the hoopR.proxy option is the fallback proxy; an explicit proxy wins", {
