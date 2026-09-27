@@ -278,6 +278,17 @@ reference:
       - '`load_nba_player_impact`'
       - '`load_mbb_player_value`'
       - '`load_mbb_ratings`'
+  - subtitle: Conference and Division Group Loaders
+    desc: Season-by-season conference and division lineages, names, aliases, and team membership published to sportsdataverse-data
+    contents:
+      - '`load_mbb_groups`'
+      - '`load_mbb_group_seasons`'
+      - '`load_mbb_group_aliases`'
+      - '`load_mbb_team_group_seasons`'
+      - '`load_nba_groups`'
+      - '`load_nba_group_seasons`'
+      - '`load_nba_group_aliases`'
+      - '`load_nba_team_group_seasons`'
   - title: Cross-Source Crosswalks
   - subtitle: NBA Crosswalk Functions
     desc: Cross-source team/schedule/player crosswalks linking ESPN, NBA Stats, and Fox identities (keyed on espn_team_id), plus cached loaders
