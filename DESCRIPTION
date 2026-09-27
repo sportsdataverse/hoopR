@@ -40,7 +40,7 @@ Imports:
     purrr (>= 1.0.0),
     Rcpp (>= 1.0.7),
     RcppParallel (>= 5.1.4),
-    rlang (>= 0.4.0),
+    rlang (>= 1.0.0),
     rvest (>= 1.0.0),
     stringdist (>= 0.9.0),
     stringi (>= 1.7.0),
