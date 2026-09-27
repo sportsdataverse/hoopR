@@ -138,11 +138,13 @@ NULL
 # Decode a successful (200) official.nba.com body as JSON, or raise
 # hoopR_fetch_error (P1): a 200 status does not guarantee a JSON body -- an
 # Akamai interstitial or a misconfigured edge response can return HTML with a
-# 200 status, and jsonlite::fromJSON() would otherwise raise a raw parse
-# error instead of the package's classed error vocabulary.
+# 200 status, and the JSON parser would otherwise raise a raw parse error
+# instead of the package's classed error vocabulary. parse_json() (not
+# fromJSON()) only ever parses the string: fromJSON() would fetch a body that
+# looks like a URL, or read one that names a local file.
 .official_nba_json <- function(body, url, simplifyVector = TRUE, call = sys.call(-1)) {
   x <- tryCatch(
-    jsonlite::fromJSON(body, simplifyVector = simplifyVector),
+    jsonlite::parse_json(body, simplifyVector = simplifyVector),
     error = function(e) {
       cli::cli_abort(
         "official.nba.com returned a non-JSON 200 body for {.url {url}}",
@@ -197,6 +199,20 @@ NULL
     )
   }
   invisible(league)
+}
+
+# Run a parser on a payload that passed the fetch-time shape checks. A value
+# the parser still cannot read is a bad payload, re-raised in the package's
+# error vocabulary instead of escaping as a raw R error.
+.official_parse <- function(expr, url, call) {
+  tryCatch(expr, error = function(e) {
+    cli::cli_abort(
+      "official.nba.com returned a malformed payload for {.url {url}}",
+      class = c("hoopR_fetch_error", "hoopR_error"),
+      parent = e,
+      call = call
+    )
+  })
 }
 
 # ---------------------------------------------------------------------------
@@ -433,7 +449,21 @@ nba_l2m <- function(game_id, proxy = NULL) {
   url <- sprintf("https://official.nba.com/l2m/json/%s.json", gid)
   body <- .official_nba_get(url, proxy = proxy)
   x <- .official_nba_json(body, url, simplifyVector = TRUE, call = call)
-  .parse_nba_l2m(x)
+  # A report holds a one-row `game` table plus `l2m` and `stats` tables
+  # (possibly empty) of scalar fields. `{}`, an error envelope, or a table sent
+  # as a string, a bare array, an object or with nested fields is a failed
+  # fetch, never an empty report or made-up rows.
+  is_table <- function(v) is.data.frame(v) && all(vapply(v, is.atomic, logical(1)))
+  is_table_or_empty <- function(v) is.null(v) || is_table(v) || (is.list(v) && length(v) == 0)
+  if (!is_table(x[["game"]]) || nrow(x[["game"]]) == 0 ||
+      !is_table_or_empty(x[["l2m"]]) || !is_table_or_empty(x[["stats"]])) {
+    cli::cli_abort(
+      "official.nba.com returned no well-formed L2M report (game/l2m/stats tables) for {.url {url}}",
+      class = c("hoopR_fetch_error", "hoopR_error"),
+      call = call
+    )
+  }
+  .official_parse(.parse_nba_l2m(x), url, call)
 }
 
 # ---------------------------------------------------------------------------
@@ -534,7 +564,7 @@ nba_l2m_games <- function(season, proxy = NULL) {
       call = call
     )
   }
-  df <- .parse_nba_l2m_games(html, s)
+  df <- .official_parse(.parse_nba_l2m_games(html, s), url, call)
   make_hoopR_data(df, "NBA L2M games listing (official.nba.com)", Sys.time())
 }
 
@@ -735,12 +765,18 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
     is.list(r) && is.null(names(r)) &&
       all(vapply(r, function(x) is.list(x) && !is.null(names(x)), logical(1)))
   }
-  if (!is.list(block) || !has_rows("Table") || !has_rows("Table1")) {
+  # Every game row names its game with one non-empty game_id (as sdv-py requires).
+  has_gid <- function(r) {
+    v <- r[["game_id"]]
+    is.atomic(v) && length(v) == 1L && !is.na(v) && nzchar(v)
+  }
+  if (!is.list(block) || !has_rows("Table") || !has_rows("Table1") ||
+      !all(vapply(block[["Table"]][["rows"]], has_gid, logical(1)))) {
     cli::cli_abort(
-      "official.nba.com returned no {.val {league}} Table/Table1 block for {.val {day}}",
+      "official.nba.com returned a missing or malformed {.val {league}} Table/Table1 block for {.val {day}}",
       class = c("hoopR_fetch_error", "hoopR_error"),
       call = call
     )
   }
-  .parse_nba_referee_assignments(x, league)
+  .official_parse(.parse_nba_referee_assignments(x, league), url, call)
 }

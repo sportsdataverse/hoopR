@@ -349,7 +349,13 @@ test_that("nba_referee_assignments(): a missing league block is a fetch error, a
               '{"wnba":{"Table":{},"Table1":{"rows":[]}}}',
               '{"wnba":{"Table":{"rows":null},"Table1":{"rows":[]}}}',
               '{"wnba":{"Table":{"rows":{"game_id":"1022600097"}},"Table1":{"rows":[]}}}',
-              '{"wnba":{"Table":{"rows":[1,2]},"Table1":{"rows":[]}}}')) {
+              # rows as an object of row objects, not an array of them
+              '{"wnba":{"Table":{"rows":{"a":{"game_id":"1"}}},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[1,2]},"Table1":{"rows":[]}}}',
+              # every game row needs a non-empty game_id (sdv-py parity)
+              '{"wnba":{"Table":{"rows":[{"official1":"A","season":"22026"}]},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[{}]},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[{"game_id":"","official1":"A"}]},"Table1":{"rows":[]}}}')) {
     payload <- p
     expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error", info = p)
   }
@@ -563,4 +569,92 @@ test_that("the hoopR.proxy option is the fallback proxy; an explicit proxy wins"
     .official_nba_get("https://official.nba.com/l2m/json/0042500405.json", proxy = "http://127.0.0.2:9")
     expect_identical(seen, "http://127.0.0.2:9")
   }, finally = options(old))
+})
+
+# ---------------------------------------------------------------------------
+# Payload validation after a 200: a body that is not the expected report is a
+# hoopR_fetch_error, never an empty result, made-up rows or a raw R error.
+# ---------------------------------------------------------------------------
+
+test_that("nba_l2m: a payload without a one-row game table is a hoopR_fetch_error, not an empty report", {
+  body <- NULL
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) body
+  )
+  for (b in c("{}", '{"message":"Too Many Requests"}', '{"game":[],"l2m":[],"stats":[]}')) {
+    body <- b
+    expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error", info = b)
+  }
+})
+
+test_that("nba_l2m: a game/l2m/stats table of the wrong shape is a hoopR_fetch_error, never made-up rows", {
+  body <- NULL
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) body
+  )
+  g <- '"game":[{"GameId":"0042500405"}]'
+  for (b in c('{"game":"abc"}', '{"game":5}', '{"game":[1,2]}', '{"game":{"GameId":"0042500405"}}',
+              '{"game":[{"GameId":"0042500405","HomeTeamId":[1,2]}]}',
+              sprintf('{%s,"l2m":"abc"}', g),
+              sprintf('{%s,"l2m":[1,2,3]}', g),
+              sprintf('{%s,"l2m":[{"PCTime":"01:00"},5]}', g),
+              sprintf('{%s,"l2m":{"PCTime":"01:00"}}', g),
+              sprintf('{%s,"l2m":[{"CP":{"a":1,"b":2,"c":3}}]}', g),
+              sprintf('{%s,"stats":"abc"}', g),
+              sprintf('{%s,"stats":[{"home":{"x":1,"y":2,"z":3}}]}', g))) {
+    body <- b
+    expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error", info = b)
+  }
+  # Empty or absent l2m/stats tables are still a report.
+  for (b in c(sprintf('{%s,"l2m":[],"stats":[]}', g), sprintf("{%s}", g))) {
+    body <- b
+    out <- nba_l2m("0042500405")
+    expect_equal(nrow(out$game), 1, info = b)
+    expect_equal(nrow(out$calls), 0, info = b)
+  }
+})
+
+test_that("nba_referee_assignments: a field the parser cannot read is a hoopR_fetch_error, not a raw error", {
+  body <- NULL
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) body
+  )
+  ok <- '"game_id":"1022600097","season":"22026","game_date":"06/13/2026"'
+  wrap <- function(rows) sprintf('{"wnba":{"Table":{"rows":%s},"Table1":{"rows":[]}}}', rows)
+  for (rows in c(sprintf('[{%s,"official1":{}}]', ok),
+                 sprintf('[{%s,"official1":[]}]', ok),
+                 sprintf('[{%s,"official1":["A","B"]}]', ok),
+                 '[{"game_id":"1022600097","official1":"A","season":["2","2025"]}]',
+                 '[{"game_id":"1022600097","official1":"A","game_date":["a","b"]}]',
+                 '[{"game_id":["1","2"],"official1":"A"}]')) {
+    body <- wrap(rows)
+    expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error", info = rows)
+  }
+  body <- wrap(sprintf('[{%s,"official1":{}}]', ok))
+  err <- expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error")
+  expect_false(is.null(err$parent))
+})
+
+test_that("every public parse call re-raises a parser error as hoopR_fetch_error, keeping it as parent", {
+  l2m <- paste(readLines(file.path(fx, "l2m_json_0042500405.json"), warn = FALSE), collapse = "\n")
+  refs <- paste(readLines(file.path(fx, "referee_assignments_2026-06-13.json"), warn = FALSE), collapse = "\n")
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) {
+      if (grepl("l2m/json", url)) l2m else if (grepl("officials", url)) refs else "Last Two Minute"
+    },
+    .parse_nba_l2m = function(x) stop("parser exploded"),
+    .parse_nba_l2m_games = function(html, season) stop("parser exploded"),
+    .parse_nba_referee_assignments = function(x, league = "nba") stop("parser exploded")
+  )
+  for (err in list(expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error"),
+                   expect_error(nba_l2m_games(2026), class = "hoopR_fetch_error"),
+                   expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_fetch_error"))) {
+    expect_match(conditionMessage(err$parent), "parser exploded")
+  }
+})
+
+test_that("a 200 body that is a local file path is a hoopR_fetch_error, never read from disk", {
+  path <- normalizePath(file.path(fx, "l2m_json_0042500405.json"), winslash = "/")
+  httr2::local_mocked_responses(function(req) httr2::response(200L, body = charToRaw(path)))
+  expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error")
 })
