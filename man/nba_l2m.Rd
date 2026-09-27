@@ -21,7 +21,8 @@ Named list of \code{hoopR_data} tibbles:
 
 \strong{calls} -- one row per graded play. \code{decision} is normalized to
 \code{CC}/\code{CNC}/\code{IC}/\code{INC} (\code{NCC}->\code{CNC}, \code{NCI}->\code{INC}, trailing \code{*}
-stripped, blank/\code{"Undetectable"} -> \code{NA}, never \code{INC}). \code{game_id} is a
+stripped; a real \code{INC} stays \code{INC}, while a blank or \code{"Undetectable"}
+grade becomes \code{NA} and is never counted as \code{INC}). \code{game_id} is a
 10-char zero-padded string. Player and team names are kept verbatim
 (no ASCII folding).\tabular{lll}{
    col_name \tab types \tab description \cr

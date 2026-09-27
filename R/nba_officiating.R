@@ -376,7 +376,8 @@ NULL
 #'
 #'    **calls** -- one row per graded play. `decision` is normalized to
 #'    `CC`/`CNC`/`IC`/`INC` (`NCC`->`CNC`, `NCI`->`INC`, trailing `*`
-#'    stripped, blank/`"Undetectable"` -> `NA`, never `INC`). `game_id` is a
+#'    stripped; a real `INC` stays `INC`, while a blank or `"Undetectable"`
+#'    grade becomes `NA` and is never counted as `INC`). `game_id` is a
 #'    10-char zero-padded string. Player and team names are kept verbatim
 #'    (no ASCII folding).
 #'
