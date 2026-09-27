@@ -347,7 +347,9 @@ test_that("nba_referee_assignments(): a missing league block is a fetch error, a
   # A null table, a table without rows, or null rows is not an empty day either.
   for (p in c('{"wnba":{"Table":null,"Table1":{"rows":[]}}}',
               '{"wnba":{"Table":{},"Table1":{"rows":[]}}}',
-              '{"wnba":{"Table":{"rows":null},"Table1":{"rows":[]}}}')) {
+              '{"wnba":{"Table":{"rows":null},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":{"game_id":"1022600097"}},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":[1,2]},"Table1":{"rows":[]}}}')) {
     payload <- p
     expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error", info = p)
   }
