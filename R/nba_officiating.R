@@ -473,9 +473,16 @@ nba_l2m <- function(game_id, proxy = NULL) {
   # (possibly empty) of scalar fields. `{}`, an error envelope, or a table sent
   # as a string, a bare array, an object or with nested fields is a failed
   # fetch, never an empty report or made-up rows.
-  is_table <- function(v) is.data.frame(v) && all(vapply(v, is.atomic, logical(1)))
-  is_table_or_empty <- function(v) is.null(v) || is_table(v) || (is.list(v) && length(v) == 0)
-  # The one game row must name its game: `[{}]` is a one-row, zero-column table.
+  # A table with rows needs columns: `[{}]` is one row of zero columns, which
+  # would otherwise parse to a made-up all-NA record. A data frame is a list
+  # whose length is its column count, so the empty-list case must exclude it.
+  is_table <- function(v) {
+    is.data.frame(v) && (nrow(v) == 0L || ncol(v) > 0L) && all(vapply(v, is.atomic, logical(1)))
+  }
+  is_table_or_empty <- function(v) {
+    is.null(v) || is_table(v) || (is.list(v) && !is.data.frame(v) && length(v) == 0)
+  }
+  # The one game row must name its game.
   has_game_id <- function(g) {
     id <- g[["GameId"]]
     length(id) == 1L && !is.na(id) && nzchar(trimws(as.character(id)))

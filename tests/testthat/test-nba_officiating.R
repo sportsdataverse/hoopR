@@ -722,6 +722,8 @@ test_that("nba_l2m: a game/l2m/stats table of the wrong shape is a hoopR_fetch_e
               sprintf('{%s,"l2m":[{"PCTime":"01:00"},5]}', g),
               sprintf('{%s,"l2m":{"PCTime":"01:00"}}', g),
               sprintf('{%s,"l2m":[{"CP":{"a":1,"b":2,"c":3}}]}', g),
+              sprintf('{%s,"l2m":[{}]}', g),
+              sprintf('{%s,"stats":[{}]}', g),
               sprintf('{%s,"stats":"abc"}', g),
               sprintf('{%s,"stats":[{"home":{"x":1,"y":2,"z":3}}]}', g))) {
     body <- b
