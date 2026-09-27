@@ -483,6 +483,16 @@ nba_l2m <- function(game_id, proxy = NULL) {
       call = call
     )
   }
+  # The report must be for the game asked for: a cached or misrouted payload for
+  # another game is a failed fetch, never that game's report.
+  got <- .gid10(x[["game"]][["GameId"]])
+  if (!identical(got, gid)) {
+    cli::cli_abort(
+      "official.nba.com returned the report for game {.val {got}} when {.val {gid}} was requested: {.url {url}}",
+      class = c("hoopR_fetch_error", "hoopR_error"),
+      call = call
+    )
+  }
   .official_parse(.parse_nba_l2m(x), url, call)
 }
 
