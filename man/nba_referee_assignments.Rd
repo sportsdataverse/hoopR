@@ -15,7 +15,8 @@ character must match \code{"YYYY-MM-DD"}.}
 \item{league}{character(1). One of \code{"nba"} (default), \code{"gl"}, \code{"wnba"}.}
 
 \item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
-named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments.}
+named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments. \code{NULL} (the default) falls back to \code{getOption("hoopR.proxy")}, then the
+\code{http_proxy}/\code{https_proxy} environment variables.}
 }
 \value{
 Named list of \code{hoopR_data} tibbles:
@@ -70,7 +71,7 @@ unchanged for \code{"wnba"} (single-year seasons).
 \itemize{
 \item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
 Akamai WAF block), returned a 200 response that isn't valid JSON, or
-returned JSON without the league's \code{Table}/\code{Table1} block. The feed
+returned JSON without the league's \code{Table}/\code{Table1} \code{rows} lists. The feed
 carries every league's block on every date, with zero rows on a day
 without games, so a missing block is never an empty day.
 }

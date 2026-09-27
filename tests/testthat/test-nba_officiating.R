@@ -344,6 +344,13 @@ test_that("nba_referee_assignments(): a missing league block is a fetch error, a
   expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error")
   payload <- '{"wnba":{"Table":{"rows":[]}}}'
   expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error")
+  # A null table, a table without rows, or null rows is not an empty day either.
+  for (p in c('{"wnba":{"Table":null,"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{},"Table1":{"rows":[]}}}',
+              '{"wnba":{"Table":{"rows":null},"Table1":{"rows":[]}}}')) {
+    payload <- p
+    expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error", info = p)
+  }
 
   payload <- '{"wnba":{"Table":{"rows":[]},"Table1":{"rows":[]}}}'
   out <- nba_referee_assignments("2026-06-13", league = "wnba")
@@ -536,4 +543,22 @@ test_that("a 200 whose JSON is not an object is a hoopR_fetch_error", {
     expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error", info = b)
     expect_error(nba_referee_assignments("2026-06-13"), class = "hoopR_fetch_error", info = b)
   }
+})
+
+test_that("the hoopR.proxy option is the fallback proxy; an explicit proxy wins", {
+  seen <- NULL
+  local_mocked_bindings(
+    req_perform = function(req, ...) {
+      seen <<- req$options$proxy
+      httr2::response(status_code = 200L, body = charToRaw("{}"))
+    },
+    .package = "httr2"
+  )
+  old <- options(hoopR.proxy = "http://127.0.0.1:9")
+  tryCatch({
+    .official_nba_get("https://official.nba.com/l2m/json/0042500405.json")
+    expect_identical(seen, "http://127.0.0.1:9")
+    .official_nba_get("https://official.nba.com/l2m/json/0042500405.json", proxy = "http://127.0.0.2:9")
+    expect_identical(seen, "http://127.0.0.2:9")
+  }, finally = options(old))
 })

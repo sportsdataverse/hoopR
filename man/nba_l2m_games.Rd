@@ -11,7 +11,8 @@ nba_l2m_games(season, proxy = NULL)
 (e.g. \code{2026} or \code{"2026"} for 2025-26).}
 
 \item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
-named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments.}
+named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments. \code{NULL} (the default) falls back to \code{getOption("hoopR.proxy")}, then the
+\code{http_proxy}/\code{https_proxy} environment variables.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per unique game id in page order:\tabular{lll}{

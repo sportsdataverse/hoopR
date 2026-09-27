@@ -13,7 +13,8 @@ zero-padded to 10 digits automatically (e.g. \code{42500405} becomes
 
 \item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
 named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code{url}, \code{port}, \code{username},
-\code{password}, \code{auth}).}
+\code{password}, \code{auth}). \code{NULL} (the default) falls back to \code{getOption("hoopR.proxy")}, then the
+\code{http_proxy}/\code{https_proxy} environment variables.}
 }
 \value{
 Named list of \code{hoopR_data} tibbles:

@@ -78,7 +78,8 @@ NULL
 #'   empty list).
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments (`url`, `port`, `username`,
-#'   `password`, `auth`). `NULL` (the default) uses no proxy.
+#'   `password`, `auth`). `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
+#'   `http_proxy`/`https_proxy` environment variables.
 #' @return character(1). The response body text.
 #' @keywords internal
 .official_nba_get <- function(url, params = list(), proxy = NULL) {
@@ -88,6 +89,8 @@ NULL
     req <- httr2::req_url_query(req, !!!params)
   }
   req <- httr2::req_headers(req, !!!as.list(.official_nba_headers()))
+  # Same resolution order as .retry_request(): argument, then the session option.
+  if (is.null(proxy)) proxy <- getOption("hoopR.proxy", default = NULL)
   if (!is.null(proxy)) {
     req <- if (is.list(proxy)) {
       do.call(httr2::req_proxy, c(list(req = req), proxy))
@@ -338,7 +341,8 @@ NULL
 #'   `"0042500405"`). Anything else errors before any request is made.
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments (`url`, `port`, `username`,
-#'   `password`, `auth`).
+#'   `password`, `auth`). `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
+#'   `http_proxy`/`https_proxy` environment variables.
 #' @return Named list of `hoopR_data` tibbles:
 #'
 #'    **calls** -- one row per graded play. `decision` is normalized to
@@ -482,7 +486,8 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #' @param season integer, or a numeric-like string. NBA season, END year
 #'   (e.g. `2026` or `"2026"` for 2025-26).
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
-#'   named list of [httr2::req_proxy()] arguments.
+#'   named list of [httr2::req_proxy()] arguments. `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
+#'   `http_proxy`/`https_proxy` environment variables.
 #' @return A `hoopR_data` tibble, one row per unique game id in page order:
 #'
 #'    |col_name    |types     |description                                                 |
@@ -646,7 +651,8 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'   character must match `"YYYY-MM-DD"`.
 #' @param league character(1). One of `"nba"` (default), `"gl"`, `"wnba"`.
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
-#'   named list of [httr2::req_proxy()] arguments.
+#'   named list of [httr2::req_proxy()] arguments. `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
+#'   `http_proxy`/`https_proxy` environment variables.
 #' @return Named list of `hoopR_data` tibbles:
 #'
 #'    **officials** -- one row per game x crew slot.
@@ -682,7 +688,7 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #' @section Errors:
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
 #'   Akamai WAF block), returned a 200 response that isn't valid JSON, or
-#'   returned JSON without the league's `Table`/`Table1` block. The feed
+#'   returned JSON without the league's `Table`/`Table1` `rows` lists. The feed
 #'   carries every league's block on every date, with zero rows on a day
 #'   without games, so a missing block is never an empty day.
 #'
@@ -704,9 +710,11 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
   day <- if (inherits(date, c("Date", "POSIXt"))) format(date, "%Y-%m-%d") else as.character(date)
   # One check for every branch: a length-2 or NA Date must fail here too, not
   # reach the request as a multi-valued or "NA" query parameter.
-  # The as.Date() parse rejects shape-valid but impossible dates ("2026-02-31").
+  # Parse and round-trip, so a shape-valid but impossible date ("2026-02-31") is
+  # rejected even where strptime would normalize it.
+  parsed <- if (length(day) == 1 && !is.na(day)) as.Date(day, format = "%Y-%m-%d") else as.Date(NA)
   if (length(day) != 1 || is.na(day) || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", day) ||
-      is.na(as.Date(day, format = "%Y-%m-%d"))) {
+      is.na(parsed) || format(parsed, "%Y-%m-%d") != day) {
     cli::cli_abort(
       "{.arg date} must be a single Date/POSIXct or a valid 'YYYY-MM-DD' date string, got {.val {date}}",
       call = call
@@ -719,7 +727,9 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
   # (zero rows on a day without games), so a missing block is a changed schema
   # or an error envelope, not an empty day.
   block <- if (is.list(x)) x[[league]] else NULL
-  if (!is.list(block) || !all(c("Table", "Table1") %in% names(block))) {
+  # Each table must hold a rows list; a null table or missing rows is not an empty day.
+  has_rows <- function(t) is.list(block[[t]]) && is.list(block[[t]][["rows"]])
+  if (!is.list(block) || !has_rows("Table") || !has_rows("Table1")) {
     cli::cli_abort(
       "official.nba.com returned no {.val {league}} Table/Table1 block for {.val {day}}",
       class = c("hoopR_fetch_error", "hoopR_error"),
