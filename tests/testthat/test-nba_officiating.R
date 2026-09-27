@@ -97,9 +97,39 @@ test_that("referee assignments: unknown league keeps schema, empty rows", {
   expect_type(out$officials$official_id, "integer")
 })
 
-test_that("referee assignments: bad league errors", {
+test_that("referee assignments: a bad league is an ordinary error, raised before any request", {
+  # A validation regression must fail here, never reach the network.
+  requested <- FALSE
+  local_mocked_bindings(
+    req_perform = function(req, ...) {
+      requested <<- TRUE
+      stop("no request expected")
+    },
+    .package = "httr2"
+  )
   expect_error(.parse_nba_referee_assignments(list(), "mlb"), regexp = "nba.*gl.*wnba|league")
-  expect_error(nba_referee_assignments("2026-06-13", league = "mlb"), regexp = "nba.*gl.*wnba|league")
+  # A factor passes %in% by its label but would index the payload by its
+  # level code, reading another league's block.
+  expect_error(.parse_nba_referee_assignments(list(), factor("wnba")), regexp = "league")
+  for (bad in list("mlb", factor("wnba"), NA_character_, c("nba", "gl"), NULL, 1)) {
+    err <- expect_error(nba_referee_assignments("2026-06-13", league = bad), regexp = "league")
+    expect_false(inherits(err, "hoopR_error"))
+  }
+  expect_false(requested)
+})
+
+test_that("nba_l2m_games(factor): the season label builds the URL, not the factor's level code", {
+  html <- paste(readLines(file.path(fx, "l2m_listing_2025-26.html"), warn = FALSE), collapse = "\n")
+  seen <- NULL
+  local_mocked_bindings(
+    .official_nba_get = function(url, params = list(), proxy = NULL) {
+      seen <<- url
+      html
+    }
+  )
+  out <- nba_l2m_games(factor("2026"))
+  expect_identical(seen, "https://official.nba.com/2025-26-nba-officiating-last-two-minute-reports/")
+  expect_identical(unique(out$season), 2026L)
 })
 
 test_that("L2M games listing matches sdv-py golden output (415 rows)", {
@@ -657,4 +687,36 @@ test_that("a 200 body that is a local file path is a hoopR_fetch_error, never re
   path <- normalizePath(file.path(fx, "l2m_json_0042500405.json"), winslash = "/")
   httr2::local_mocked_responses(function(req) httr2::response(200L, body = charToRaw(path)))
   expect_error(nba_l2m("0042500405"), class = "hoopR_fetch_error")
+})
+
+test_that("season codes must be five digits and game dates exactly MM/DD/YYYY", {
+  officials <- function(season = "22026", game_date = "06/13/2026") {
+    row <- list(game_id = "1022600097", season = season, game_date = game_date, official1 = "A")
+    x <- list(wnba = list(Table = list(rows = list(row)), Table1 = list(rows = list())))
+    .parse_nba_referee_assignments(x, "wnba")$officials
+  }
+  expect_identical(officials()$season, 2026L)
+  for (s in c("2 025", "2+025", "20x25", "21e03")) {
+    expect_identical(officials(season = s)$season, NA_integer_, info = s)
+  }
+  expect_identical(officials(game_date = "6/13/2026")$game_date, as.Date("2026-06-13"))
+  for (d in c("06/13/2026 extra", "06/13/26", "2026-06-13")) {
+    expect_identical(officials(game_date = d)$game_date, as.Date(NA), info = d)
+  }
+})
+
+test_that("an id beyond the 32-bit integer range is NA without a coercion warning", {
+  x <- jsonlite::fromJSON(file.path(fx, "l2m_json_0042500405.json"))
+  x$l2m$posID[1] <- "3000000000"
+  x$game$HomeTeamId <- 3e9
+  expect_no_warning(out <- .parse_nba_l2m(x))
+  expect_identical(out$calls$pos_id[1], NA_integer_)
+  expect_identical(out$game$home_team_id, NA_integer_)
+
+  r <- jsonlite::fromJSON(file.path(fx, "referee_assignments_2026-06-13.json"), simplifyVector = FALSE)
+  r$wnba$Table$rows[[1]]$official1_code <- 3e9
+  r$wnba$Table1$rows[[1]]$official_code <- 3e9
+  expect_no_warning(ref <- .parse_nba_referee_assignments(r, "wnba"))
+  expect_identical(ref$officials$official_id[1], NA_integer_)
+  expect_identical(ref$replay_center$official_id, NA_integer_)
 })

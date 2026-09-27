@@ -191,15 +191,22 @@ NULL
   if (is.null(v)) rep(NA_character_, nrow(df)) else as.character(v)
 }
 
+# A character string only: a factor passes %in% by its label but indexes
+# x[[league]] by its integer code, so it would read another league's block.
 .validate_league <- function(league, call = sys.call(-1)) {
-  if (!identical(length(league), 1L) || is.na(league) || !league %in% c("nba", "gl", "wnba")) {
+  if (!is.character(league) || !identical(length(league), 1L) || is.na(league) ||
+      !league %in% c("nba", "gl", "wnba")) {
     cli::cli_abort(
-      "{.arg league} must be one of 'nba', 'gl' or 'wnba', got {.val {league}}",
+      "{.arg league} must be one character string: 'nba', 'gl' or 'wnba', got {.val {league}} ({class(league)[1]})",
       call = call
     )
   }
   invisible(league)
 }
+
+# Id/count fields to integer; a non-number, or a value outside R's 32-bit
+# integer range, becomes NA without a coercion warning.
+.as_int <- function(x) suppressWarnings(as.integer(as.numeric(x)))
 
 # Run a parser on a payload that passed the fetch-time shape checks. A value
 # the parser still cannot read is a bad payload, re-raised in the package's
@@ -288,10 +295,10 @@ NULL
       comment = .chr_col(l2m, "Comment"),
       difficulty = .chr_col(l2m, "Difficulty"),
       video_event_id = .chr_col(l2m, "VideolLink"),
-      pos_id = as.integer(suppressWarnings(as.numeric(.chr_col(l2m, "posID")))),
+      pos_id = .as_int(.chr_col(l2m, "posID")),
       pos_start = .chr_col(l2m, "posStart"),
       pos_end = .chr_col(l2m, "posEnd"),
-      pos_team_id = as.integer(suppressWarnings(as.numeric(.chr_col(l2m, "posTeamId"))))
+      pos_team_id = .as_int(.chr_col(l2m, "posTeamId"))
     )
     calls[, names(.L2M_CALLS_PTYPE)]
   }
@@ -306,14 +313,14 @@ NULL
       # An explicit format gives NA on a malformed date instead of an error.
       game_date = if (!is.null(g[["GameDate"]])) as.Date(substr(as.character(g[["GameDate"]]), 1, 10), format = "%Y-%m-%d") else as.Date(NA),
       season_type = if (!is.na(gid)) unname(.OFFICIAL_SEASON_TYPES[substr(gid, 3, 3)]) else NA_character_,
-      home_team_id = as.integer(suppressWarnings(as.numeric(g[["HomeTeamId"]] %||% NA))),
-      away_team_id = as.integer(suppressWarnings(as.numeric(g[["AwayTeamId"]] %||% NA))),
+      home_team_id = .as_int(g[["HomeTeamId"]] %||% NA),
+      away_team_id = .as_int(g[["AwayTeamId"]] %||% NA),
       home_team_abbr = as.character(g[["Home_team_abbr"]] %||% NA_character_),
       away_team_abbr = as.character(g[["Away_team_abbr"]] %||% NA_character_),
       home_team_name = as.character(g[["Home_team"]] %||% NA_character_),
       away_team_name = as.character(g[["Away_team"]] %||% NA_character_),
-      home_score = as.integer(suppressWarnings(as.integer(g[["HomeTeamScore"]] %||% NA))),
-      away_score = as.integer(suppressWarnings(as.integer(g[["VisitorTeamScore"]] %||% NA))),
+      home_score = .as_int(g[["HomeTeamScore"]] %||% NA),
+      away_score = .as_int(g[["VisitorTeamScore"]] %||% NA),
       l2m_comments = as.character(g[["L2M_Comments"]] %||% NA_character_)
     )
   } else {
@@ -328,8 +335,8 @@ NULL
     dplyr::tibble(
       game_id = rep(gid, nrow(s)),
       stat_name = .chr_col(s, "stats_name"),
-      home = as.integer(suppressWarnings(as.integer(.chr_col(s, "home")))),
-      away = as.integer(suppressWarnings(as.integer(.chr_col(s, "away"))))
+      home = .as_int(.chr_col(s, "home")),
+      away = .as_int(.chr_col(s, "away"))
     )
   }
 
@@ -546,7 +553,8 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #' }
 nba_l2m_games <- function(season, proxy = NULL) {
   call <- sys.call()
-  s <- suppressWarnings(as.integer(season))
+  # as.character() first: as.integer() on a factor is its level code, not its label.
+  s <- suppressWarnings(as.integer(as.character(season)))
   if (length(season) != 1 || is.na(s) || !grepl("^[0-9]{4}$", trimws(as.character(season)))) {
     cli::cli_abort(
       "{.arg season} must be a 4-digit year (numeric or numeric-like string), got {.val {season}}",
@@ -572,15 +580,20 @@ nba_l2m_games <- function(season, proxy = NULL) {
 # Referee assignments
 # ---------------------------------------------------------------------------
 
+# Exactly five digits, <type digit><START year>: "2 025" or "21e03" is a
+# malformed code, not a year (as in sdv-py).
 .official_season_end_year <- function(s, league) {
-  if (nchar(s) != 5) return(NA_integer_)
-  start_year <- suppressWarnings(as.integer(substr(s, 2, 5)))
+  if (!grepl("^[0-9]{5}$", s)) return(NA_integer_)
+  start_year <- as.integer(substr(s, 2, 5))
   if (league %in% c("nba", "gl")) start_year + 1L else start_year
 }
 
-# Parse "MM/DD/YYYY" (the feed's date format) to a Date; NULL/NA/empty -> NA.
+# Parse "MM/DD/YYYY" (the feed's date format) to a Date; NULL/NA/empty or any
+# other text -> NA. The whole string must match, as with Python's strptime:
+# R's format= parse alone ignores trailing text and reads "26" as year 26.
 .mdy <- function(s) {
-  if (is.null(s) || (length(s) == 1 && is.na(s)) || !nzchar(as.character(s))) {
+  if (is.null(s) || (length(s) == 1 && is.na(s)) ||
+      !grepl("^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$", as.character(s))) {
     return(as.Date(NA))
   }
   as.Date(as.character(s), format = "%m/%d/%Y")
@@ -626,12 +639,12 @@ nba_l2m_games <- function(season, proxy = NULL) {
         season = .official_season_end_year(s, league),
         season_type = unname(.OFFICIAL_SEASON_TYPES[substr(s, 1, 1)]),
         game_code = as.character(g[["game_code"]] %||% NA_character_),
-        home_team_id = as.integer(suppressWarnings(as.numeric(g[["home_team_id"]] %||% NA))),
+        home_team_id = .as_int(g[["home_team_id"]] %||% NA),
         home_team_abbr = as.character(g[["home_team_abbr"]] %||% NA_character_),
-        away_team_id = as.integer(suppressWarnings(as.numeric(g[["away_team_id"]] %||% NA))),
+        away_team_id = .as_int(g[["away_team_id"]] %||% NA),
         away_team_abbr = as.character(g[["away_team_abbr"]] %||% NA_character_),
         crew_position = as.integer(k),
-        official_id = as.integer(suppressWarnings(as.numeric(g[[paste0("official", k, "_code")]] %||% NA))),
+        official_id = .as_int(g[[paste0("official", k, "_code")]] %||% NA),
         official_name = as.character(nm),
         jersey_num = as.character(g[[paste0("official", k, "_JNum")]] %||% NA_character_)
       )
@@ -645,7 +658,7 @@ nba_l2m_games <- function(season, proxy = NULL) {
       dplyr::tibble(
         league = league,
         game_date = .mdy(r[["game_date"]]),
-        official_id = as.integer(suppressWarnings(as.numeric(r[["official_code"]] %||% NA))),
+        official_id = .as_int(r[["official_code"]] %||% NA),
         official_name = as.character(r[["replaycenter_official"]] %||% NA_character_)
       )
     }),
