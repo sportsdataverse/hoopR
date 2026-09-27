@@ -84,13 +84,19 @@ reports exist only from 2019-01-01 onward. Port of the scraping logic in
 }
 \section{Errors}{
 
-Raises a classed condition instead of returning on failure:
+Raises a classed condition instead of returning on failure. Both classes
+inherit from \code{hoopR_error}, so one handler can catch either:
 \itemize{
 \item \code{hoopR_no_data} -- the game has no L2M report (common for regular-season
 games, games that did not reach the final two minutes, or very recent
-games), or official.nba.com 404s the request.
+games): official.nba.com answers 403 with an S3 \code{AccessDenied} body, or
+404s the request.
 \item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
-Akamai WAF block) or returned a 200 response that isn't valid JSON.
+Akamai WAF block, any other HTTP status), or a 200 response is not a
+report: not valid JSON, JSON that is not an object, a payload without a
+one-row \code{game} table (an empty object or an error envelope, say), a
+\code{game}, \code{l2m} or \code{stats} table of the wrong shape, or a field the parser
+cannot read.
 }
 
 An invalid argument is an ordinary error, raised before any request.

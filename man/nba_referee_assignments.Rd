@@ -40,17 +40,22 @@ Named list of \code{hoopR_data} tibbles:
 }
 
 
-\strong{replay_center} -- one row per replay-center official per game/day.\tabular{lll}{
+\strong{replay_center} -- the replay-center officials on duty that date, one
+row per official. The rows are per date, not tied to a game or a league:
+the feed can repeat the same rows in every league block (\code{league} only
+records which block was read), and they can be present when the league
+has no games.\tabular{lll}{
    col_name \tab types \tab description \cr
-   league \tab character \tab League: nba, gl or wnba. \cr
+   league \tab character \tab League block the row was read from (nba, gl or wnba); not league-specific. \cr
    game_date \tab Date \tab Date the replay-center official worked (not tied to one game). \cr
    official_id \tab integer \tab Replay-center official's person id from the feed. \cr
    official_name \tab character \tab Replay-center official's display name. \cr
 }
 
 
-A date with no games for the league is not an error -- both tibbles come
-back zero-row rather than raising.
+A date with no games for the league is not an error: \code{officials} comes
+back zero-row rather than raising, while \code{replay_center} can still hold
+that date's replay-center officials.
 }
 \description{
 Retrieves referee crew assignments and replay-center officials for every
@@ -68,10 +73,16 @@ unchanged for \code{"wnba"} (single-year seasons).
 }
 \section{Errors}{
 
+Raises a classed condition instead of returning on failure. Both classes
+inherit from \code{hoopR_error}, so one handler can catch either:
 \itemize{
+\item \code{hoopR_no_data} -- official.nba.com 404s the endpoint, or answers 403
+with an S3 \code{AccessDenied} body.
 \item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
-Akamai WAF block), returned a 200 response that isn't valid JSON, or
-returned JSON without the league's \code{Table}/\code{Table1} \code{rows} lists. The feed
+Akamai WAF block, any other HTTP status), or a 200 response is not valid
+JSON, is JSON that is not an object, or has the league's
+\code{Table}/\code{Table1} \code{rows} missing or malformed (a \code{Table} row without a
+\code{game_id}, or a field the parser cannot read, included). The feed
 carries every league's block on every date, with zero rows on a day
 without games, so a missing block is never an empty day.
 }

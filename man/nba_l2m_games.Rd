@@ -33,12 +33,16 @@ Port of the scraping logic in
 }
 \section{Errors}{
 
+Raises a classed condition instead of returning on failure. Both classes
+inherit from \code{hoopR_error}, so one handler can catch either:
 \itemize{
+\item \code{hoopR_no_data} -- official.nba.com 404s the season's page (a season
+without one), or answers 403 with an S3 \code{AccessDenied} body.
 \item \code{hoopR_fetch_error} -- the fetch failed (network error, rate limit,
-Akamai WAF block), or a 200 response is missing the expected "Last Two
-Minute" page marker (an Akamai interstitial, a blank body, or a
-redesigned page) -- checked here, not in \code{\link[=.parse_nba_l2m_games]{.parse_nba_l2m_games()}}, so
-the parser itself never raises.
+Akamai WAF block, any other HTTP status), or a 200 response is missing
+the expected "Last Two Minute" page marker (an Akamai interstitial, a
+blank body, or a redesigned page) -- checked here, not in
+\code{\link[=.parse_nba_l2m_games]{.parse_nba_l2m_games()}}, so the parser itself never raises.
 }
 
 An invalid argument is an ordinary error, raised before any request.

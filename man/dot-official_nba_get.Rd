@@ -21,9 +21,11 @@ named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code
 character(1). The response body text.
 }
 \description{
-Returns the response body (character) on HTTP 200. On any other status,
-classifies the body via \code{\link[=.classify_official_403]{.classify_official_403()}} and raises a classed
-condition (\code{hoopR_no_data} / \code{hoopR_fetch_error}) instead of returning. The
+Returns the response body (character) on HTTP 200. Any other status raises
+a classed condition instead of returning: a 404 is always \code{hoopR_no_data};
+only a 403 reads the body, via \code{\link[=.classify_official_403]{.classify_official_403()}} (an S3
+\code{AccessDenied} document is \code{hoopR_no_data}, anything else
+\code{hoopR_fetch_error}); every other status is \code{hoopR_fetch_error}. The
 request is built directly against httr2 here (rather than delegating to
 the shared \code{\link[=.retry_request]{.retry_request()}}) so the retry policy can treat 403/404 as
 definitive instead of transient, and so a transport-level failure (DNS,

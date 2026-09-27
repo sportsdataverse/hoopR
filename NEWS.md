@@ -55,12 +55,14 @@ sdv-py's `sportsdataverse.nba.nba_officiating` on the same captured fixtures:
 (a season's L2M game index), and `nba_referee_assignments()` (NBA/G-League/WNBA
 referee crew assignments + replay center officials for a date). Port of the
 scraping logic in [atlhawksfanatic/L2M](https://github.com/atlhawksfanatic/L2M) (MIT).
-Every returned table (calls/game/stats, listing, officials/replay_center) is
-built from one typed prototype tibble shared by the empty and non-empty paths,
-so `dplyr::bind_rows()` across calls (e.g. looping dates) always works; id
-columns (team/official/`pos_id`/`pos_team_id`) are integer. HTTP failures raise
-classed conditions (`hoopR_no_data` / `hoopR_fetch_error`) instead of returning
-an empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
+Every returned table (calls/game/stats, listing, officials/replay_center)
+shares its column names and types with a typed prototype tibble, which is what
+the empty path returns, so `dplyr::bind_rows()` across calls (e.g. looping
+dates) always works; id columns (team/official/`pos_id`/`pos_team_id`) are
+integer. HTTP and payload failures (a 404, a blocked fetch, a 200 whose body is
+not the expected report) raise classed conditions (`hoopR_no_data` /
+`hoopR_fetch_error`, both inheriting `hoopR_error`) instead of returning an
+empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
 
 # **hoopR 3.1.0**
 

@@ -61,9 +61,11 @@ NULL
 
 #' GET a URL from official.nba.com, signalling classed conditions on failure
 #'
-#' Returns the response body (character) on HTTP 200. On any other status,
-#' classifies the body via [.classify_official_403()] and raises a classed
-#' condition (`hoopR_no_data` / `hoopR_fetch_error`) instead of returning. The
+#' Returns the response body (character) on HTTP 200. Any other status raises
+#' a classed condition instead of returning: a 404 is always `hoopR_no_data`;
+#' only a 403 reads the body, via [.classify_official_403()] (an S3
+#' `AccessDenied` document is `hoopR_no_data`, anything else
+#' `hoopR_fetch_error`); every other status is `hoopR_fetch_error`. The
 #' request is built directly against httr2 here (rather than delegating to
 #' the shared [.retry_request()]) so the retry policy can treat 403/404 as
 #' definitive instead of transient, and so a transport-level failure (DNS,
@@ -423,12 +425,18 @@ NULL
 #'    |home      |integer   |Value of stat_name for the home team.                      |
 #'    |away      |integer   |Value of stat_name for the away team.                      |
 #' @section Errors:
-#' Raises a classed condition instead of returning on failure:
+#' Raises a classed condition instead of returning on failure. Both classes
+#' inherit from `hoopR_error`, so one handler can catch either:
 #' * `hoopR_no_data` -- the game has no L2M report (common for regular-season
 #'   games, games that did not reach the final two minutes, or very recent
-#'   games), or official.nba.com 404s the request.
+#'   games): official.nba.com answers 403 with an S3 `AccessDenied` body, or
+#'   404s the request.
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
-#'   Akamai WAF block) or returned a 200 response that isn't valid JSON.
+#'   Akamai WAF block, any other HTTP status), or a 200 response is not a
+#'   report: not valid JSON, JSON that is not an object, a payload without a
+#'   one-row `game` table (an empty object or an error envelope, say), a
+#'   `game`, `l2m` or `stats` table of the wrong shape, or a field the parser
+#'   cannot read.
 #'
 #' An invalid argument is an ordinary error, raised before any request.
 #' @author Saiem Gilani
@@ -534,11 +542,15 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #'    |season_type |character |Season type from the third digit of game_id, e.g. playoffs. |
 #'    |label       |character |Matchup label text of the report link, edges trimmed.       |
 #' @section Errors:
+#' Raises a classed condition instead of returning on failure. Both classes
+#' inherit from `hoopR_error`, so one handler can catch either:
+#' * `hoopR_no_data` -- official.nba.com 404s the season's page (a season
+#'   without one), or answers 403 with an S3 `AccessDenied` body.
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
-#'   Akamai WAF block), or a 200 response is missing the expected "Last Two
-#'   Minute" page marker (an Akamai interstitial, a blank body, or a
-#'   redesigned page) -- checked here, not in [.parse_nba_l2m_games()], so
-#'   the parser itself never raises.
+#'   Akamai WAF block, any other HTTP status), or a 200 response is missing
+#'   the expected "Last Two Minute" page marker (an Akamai interstitial, a
+#'   blank body, or a redesigned page) -- checked here, not in
+#'   [.parse_nba_l2m_games()], so the parser itself never raises.
 #'
 #' An invalid argument is an ordinary error, raised before any request.
 #' @author Saiem Gilani
@@ -717,21 +729,32 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'    |official_name  |character |Official's display name.                                         |
 #'    |jersey_num     |character |Official's jersey number, as a string.                           |
 #'
-#'    **replay_center** -- one row per replay-center official per game/day.
+#'    **replay_center** -- the replay-center officials on duty that date, one
+#'    row per official. The rows are per date, not tied to a game or a league:
+#'    the feed can repeat the same rows in every league block (`league` only
+#'    records which block was read), and they can be present when the league
+#'    has no games.
 #'
-#'    |col_name      |types     |description                                                    |
-#'    |:-------------|:---------|:--------------------------------------------------------------|
-#'    |league        |character |League: nba, gl or wnba.                                       |
-#'    |game_date     |Date      |Date the replay-center official worked (not tied to one game). |
-#'    |official_id   |integer   |Replay-center official's person id from the feed.              |
-#'    |official_name |character |Replay-center official's display name.                         |
+#'    |col_name      |types     |description                                                                |
+#'    |:-------------|:---------|:--------------------------------------------------------------------------|
+#'    |league        |character |League block the row was read from (nba, gl or wnba); not league-specific. |
+#'    |game_date     |Date      |Date the replay-center official worked (not tied to one game).             |
+#'    |official_id   |integer   |Replay-center official's person id from the feed.                          |
+#'    |official_name |character |Replay-center official's display name.                                     |
 #'
-#'    A date with no games for the league is not an error -- both tibbles come
-#'    back zero-row rather than raising.
+#'    A date with no games for the league is not an error: `officials` comes
+#'    back zero-row rather than raising, while `replay_center` can still hold
+#'    that date's replay-center officials.
 #' @section Errors:
+#' Raises a classed condition instead of returning on failure. Both classes
+#' inherit from `hoopR_error`, so one handler can catch either:
+#' * `hoopR_no_data` -- official.nba.com 404s the endpoint, or answers 403
+#'   with an S3 `AccessDenied` body.
 #' * `hoopR_fetch_error` -- the fetch failed (network error, rate limit,
-#'   Akamai WAF block), returned a 200 response that isn't valid JSON, or
-#'   returned JSON without the league's `Table`/`Table1` `rows` lists. The feed
+#'   Akamai WAF block, any other HTTP status), or a 200 response is not valid
+#'   JSON, is JSON that is not an object, or has the league's
+#'   `Table`/`Table1` `rows` missing or malformed (a `Table` row without a
+#'   `game_id`, or a field the parser cannot read, included). The feed
 #'   carries every league's block on every date, with zero rows on a day
 #'   without games, so a missing block is never an empty day.
 #'

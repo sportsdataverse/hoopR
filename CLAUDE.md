@@ -236,10 +236,16 @@ returning an empty list/tibble: `hoopR_no_data` when official.nba.com's
 answer is definitively "nothing here" (a 404, or a 403 with an S3
 `AccessDenied` body), `hoopR_fetch_error` when the fetch itself failed or is
 unclassifiable (a network/transport error, a non-403 non-404 status, a 403
-Akamai block, or a 200 response that isn't valid JSON where JSON was
-expected). Both inherit from `hoopR_error` so callers can catch either with
-one class. This mirrors sdv-py's `NoDataError`/`AssetFetchError` vocabulary
-(`sportsdataverse/errors.py`) on purpose — the R and Python officiating
+Akamai block) or a 200 response is not the expected payload (not valid JSON
+or JSON that is not an object; an L2M report without its one-row `game`
+table or with a `game`/`l2m`/`stats` table of the wrong shape; a referee
+payload whose league `Table`/`Table1` rows are missing or malformed,
+including a `Table` row without a `game_id`; a listing page without the
+"Last Two Minute" marker; or a field the parser cannot read, re-raised with
+the parser's error as `parent`). Both inherit from `hoopR_error` so callers
+can catch either with one class. This mirrors sdv-py's
+`NoDataError`/`AssetFetchError` vocabulary (`sportsdataverse/errors.py`) on
+purpose — the R and Python officiating
 surfaces are parity-tested against the same fixtures, and collapsing a failed
 fetch into a silently-empty return would make that parity untestable and
 would hide a rate limit or a WAF block as if it were "no report for this
