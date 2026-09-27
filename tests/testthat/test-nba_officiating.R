@@ -514,8 +514,8 @@ test_that("transport failures get the retry budget: retry_on_failure is set (N3)
 test_that("live: nba_l2m / nba_l2m_games / nba_referee_assignments real schemas", {
   skip_on_cran()
   skip_on_ci()
-  skip_if_offline("official.nba.com")
   skip_official_nba_test()
+  skip_if_offline("official.nba.com")
 
   l2m <- nba_l2m("0042500405")
   expect_equal(nrow(l2m$calls), 21)
