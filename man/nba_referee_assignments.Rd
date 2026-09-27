@@ -21,7 +21,11 @@ named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments. \code
 \value{
 Named list of \code{hoopR_data} tibbles:
 
-\strong{officials} -- one row per game x crew slot.\tabular{lll}{
+\strong{officials} -- one row per game x filled crew slot. A slot whose
+official's name is absent, null or empty is skipped. A field sent as
+null, an array or an object reads as NA, never as a dropped or
+duplicated row: an array or object name keeps its row, and the
+official's id, with an NA \code{official_name}.\tabular{lll}{
    col_name \tab types \tab description \cr
    league \tab character \tab League: nba, gl (G League) or wnba. \cr
    game_id \tab character \tab 10-digit zero-padded game id. \cr
@@ -82,9 +86,9 @@ with an S3 \code{AccessDenied} body.
 Akamai WAF block, any other HTTP status), or a 200 response is not valid
 JSON, is JSON that is not an object, or has the league's
 \code{Table}/\code{Table1} \code{rows} missing or malformed (a \code{Table} row without a
-\code{game_id}, or a field the parser cannot read, included). The feed
-carries every league's block on every date, with zero rows on a day
-without games, so a missing block is never an empty day.
+\code{game_id} included). The feed carries every league's block on every
+date, with zero rows on a day without games, so a missing block is never
+an empty day.
 }
 
 An invalid argument, including an impossible date such as \code{"2026-02-31"},

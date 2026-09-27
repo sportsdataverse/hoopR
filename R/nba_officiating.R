@@ -592,6 +592,12 @@ nba_l2m_games <- function(season, proxy = NULL) {
 # Referee assignments
 # ---------------------------------------------------------------------------
 
+# One parsed JSON field as one value, else NA (wehoop's guard). A null (NULL),
+# an array or an object (a list) would otherwise drop the row (a length-0
+# column recycles a one-row tibble() to zero rows), duplicate it (a length-2
+# column makes two) or raise.
+.scalar <- function(x) if (length(x) == 1L && !is.list(x)) x else NA
+
 # Exactly five digits, <type digit><START year>: "2 025" or "21e03" is a
 # malformed code, not a year (as in sdv-py).
 .official_season_end_year <- function(s, league) {
@@ -600,15 +606,16 @@ nba_l2m_games <- function(season, proxy = NULL) {
   if (league %in% c("nba", "gl")) start_year + 1L else start_year
 }
 
-# Parse "MM/DD/YYYY" (the feed's date format) to a Date; NULL/NA/empty or any
-# other text -> NA. The whole string must match, as with Python's strptime:
-# R's format= parse alone ignores trailing text and reads "26" as year 26.
+# Parse "MM/DD/YYYY" (the feed's date format) to a Date; a null, non-scalar,
+# empty or any other value -> NA. The whole string must match, as with
+# Python's strptime: R's format= parse alone ignores trailing text and reads
+# "26" as year 26.
 .mdy <- function(s) {
-  if (is.null(s) || (length(s) == 1 && is.na(s)) ||
-      !grepl("^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$", as.character(s))) {
+  s <- as.character(.scalar(s))
+  if (is.na(s) || !grepl("^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$", s)) {
     return(as.Date(NA))
   }
-  as.Date(as.character(s), format = "%m/%d/%Y")
+  as.Date(s, format = "%m/%d/%Y")
 }
 
 .ASSIGN_OFFICIALS_PTYPE <- dplyr::tibble(
@@ -637,28 +644,33 @@ nba_l2m_games <- function(season, proxy = NULL) {
   table_rows <- block[["Table"]][["rows"]] %||% list()
   table1_rows <- block[["Table1"]][["rows"]] %||% list()
 
+  # Every field goes through .scalar(), so a null, array or object field is NA:
+  # it never drops the row, duplicates it, or raises (as in wehoop).
   officials_for_game <- function(g) {
-    s <- as.character(g[["season"]] %||% "")
+    s <- as.character(.scalar(g[["season"]]))
     rows <- purrr::map(1:4, function(k) {
       nm <- g[[paste0("official", k)]]
-      if (is.null(nm) || !nzchar(as.character(nm))) {
+      # An absent, null, "" or empty name is an empty slot. Any other name fills
+      # the slot and keeps its row (and the official's id), with NA as the name
+      # when it is not a scalar.
+      if (length(nm) == 0L || identical(nm, "")) {
         return(NULL)
       }
       dplyr::tibble(
         league = league,
-        game_id = .gid10(g[["game_id"]]),
+        game_id = .gid10(.scalar(g[["game_id"]])),
         game_date = .mdy(g[["game_date"]]),
         season = .official_season_end_year(s, league),
         season_type = unname(.OFFICIAL_SEASON_TYPES[substr(s, 1, 1)]),
-        game_code = as.character(g[["game_code"]] %||% NA_character_),
-        home_team_id = .as_int(g[["home_team_id"]] %||% NA),
-        home_team_abbr = as.character(g[["home_team_abbr"]] %||% NA_character_),
-        away_team_id = .as_int(g[["away_team_id"]] %||% NA),
-        away_team_abbr = as.character(g[["away_team_abbr"]] %||% NA_character_),
+        game_code = as.character(.scalar(g[["game_code"]])),
+        home_team_id = .as_int(.scalar(g[["home_team_id"]])),
+        home_team_abbr = as.character(.scalar(g[["home_team_abbr"]])),
+        away_team_id = .as_int(.scalar(g[["away_team_id"]])),
+        away_team_abbr = as.character(.scalar(g[["away_team_abbr"]])),
         crew_position = as.integer(k),
-        official_id = .as_int(g[[paste0("official", k, "_code")]] %||% NA),
-        official_name = as.character(nm),
-        jersey_num = as.character(g[[paste0("official", k, "_JNum")]] %||% NA_character_)
+        official_id = .as_int(.scalar(g[[paste0("official", k, "_code")]])),
+        official_name = as.character(.scalar(nm)),
+        jersey_num = as.character(.scalar(g[[paste0("official", k, "_JNum")]]))
       )
     })
     purrr::list_rbind(purrr::compact(rows), ptype = .ASSIGN_OFFICIALS_PTYPE)
@@ -670,8 +682,8 @@ nba_l2m_games <- function(season, proxy = NULL) {
       dplyr::tibble(
         league = league,
         game_date = .mdy(r[["game_date"]]),
-        official_id = .as_int(r[["official_code"]] %||% NA),
-        official_name = as.character(r[["replaycenter_official"]] %||% NA_character_)
+        official_id = .as_int(.scalar(r[["official_code"]])),
+        official_name = as.character(.scalar(r[["replaycenter_official"]]))
       )
     }),
     ptype = .ASSIGN_REPLAY_PTYPE
@@ -710,7 +722,11 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'   `http_proxy`/`https_proxy` environment variables.
 #' @return Named list of `hoopR_data` tibbles:
 #'
-#'    **officials** -- one row per game x crew slot.
+#'    **officials** -- one row per game x filled crew slot. A slot whose
+#'    official's name is absent, null or empty is skipped. A field sent as
+#'    null, an array or an object reads as NA, never as a dropped or
+#'    duplicated row: an array or object name keeps its row, and the
+#'    official's id, with an NA `official_name`.
 #'
 #'    |col_name       |types     |description                                                      |
 #'    |:--------------|:---------|:----------------------------------------------------------------|
@@ -754,9 +770,9 @@ nba_l2m_games <- function(season, proxy = NULL) {
 #'   Akamai WAF block, any other HTTP status), or a 200 response is not valid
 #'   JSON, is JSON that is not an object, or has the league's
 #'   `Table`/`Table1` `rows` missing or malformed (a `Table` row without a
-#'   `game_id`, or a field the parser cannot read, included). The feed
-#'   carries every league's block on every date, with zero rows on a day
-#'   without games, so a missing block is never an empty day.
+#'   `game_id` included). The feed carries every league's block on every
+#'   date, with zero rows on a day without games, so a missing block is never
+#'   an empty day.
 #'
 #' An invalid argument, including an impossible date such as `"2026-02-31"`,
 #' is an ordinary error, raised before any request.

@@ -649,6 +649,8 @@ test_that("a 200 whose JSON is not an object is a hoopR_fetch_error", {
 })
 
 test_that("the hoopR.proxy option is the fallback proxy; an explicit proxy wins", {
+  # Reads httr2's internal request field `options`: not a CRAN check.
+  skip_on_cran()
   seen <- NULL
   local_mocked_bindings(
     req_perform = function(req, ...) {
@@ -709,25 +711,60 @@ test_that("nba_l2m: a game/l2m/stats table of the wrong shape is a hoopR_fetch_e
   }
 })
 
-test_that("nba_referee_assignments: a field the parser cannot read is a hoopR_fetch_error, not a raw error", {
+test_that("referee rows: a null, array or object field reads as NA, never a dropped or duplicated row", {
   body <- NULL
   local_mocked_bindings(
     .official_nba_get = function(url, params = list(), proxy = NULL) body
   )
-  ok <- '"game_id":"1022600097","season":"22026","game_date":"06/13/2026"'
-  wrap <- function(rows) sprintf('{"wnba":{"Table":{"rows":%s},"Table1":{"rows":[]}}}', rows)
-  for (rows in c(sprintf('[{%s,"official1":{}}]', ok),
-                 sprintf('[{%s,"official1":[]}]', ok),
-                 sprintf('[{%s,"official1":["A","B"]}]', ok),
-                 '[{"game_id":"1022600097","official1":"A","season":["2","2025"]}]',
-                 '[{"game_id":"1022600097","official1":"A","game_date":["a","b"]}]',
-                 '[{"game_id":["1","2"],"official1":"A"}]')) {
-    body <- wrap(rows)
-    expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error", info = rows)
+  wrap <- function(rows, replay = "[]") {
+    sprintf('{"wnba":{"Table":{"rows":%s},"Table1":{"rows":%s}}}', rows, replay)
   }
-  body <- wrap(sprintf('[{%s,"official1":{}}]', ok))
-  err <- expect_error(nba_referee_assignments("2026-06-13", league = "wnba"), class = "hoopR_fetch_error")
-  expect_false(is.null(err$parent))
+  fetch <- function() nba_referee_assignments("2026-06-13", league = "wnba")
+  no_stamp <- function(d) {
+    attr(d, "hoopR_timestamp") <- NULL
+    d
+  }
+  # One filled slot. Each case adds one field as an array, an empty array or an
+  # object, which must read exactly like that field being absent: the same one
+  # row, the field NA (a length-0 value used to drop the row, a length-2 one
+  # to duplicate it).
+  base <- '"game_id":"1022600097","official1":"A","official1_code":7'
+  body <- wrap(sprintf("[{%s}]", base))
+  ref <- no_stamp(fetch()$officials)
+  for (f in c('"home_team_id":[1,2]', '"home_team_id":[]', '"home_team_id":{"a":1}',
+              '"away_team_id":[1,2]', '"official1_JNum":["1","2"]', '"game_code":[]',
+              '"season":["2","2025"]', '"game_date":["06/13/2026","06/14/2026"]')) {
+    body <- wrap(sprintf("[{%s,%s}]", base, f))
+    expect_identical(no_stamp(fetch()$officials), ref, info = f)
+  }
+
+  # An array or object name keeps its row and the official's id, with an NA
+  # name; an absent, null, "" or empty name is an empty slot.
+  for (nm in c('["A","B"]', '["A"]', '{"a":"A"}')) {
+    body <- wrap(sprintf('[{"game_id":"1022600097","official1":%s,"official1_code":7}]', nm))
+    out <- fetch()$officials
+    expect_identical(out$official_id, 7L, info = nm)
+    expect_identical(out$official_name, NA_character_, info = nm)
+  }
+  for (nm in c("null", '""', "[]", "{}")) {
+    body <- wrap(sprintf('[{"game_id":"1022600097","official1":%s,"official1_code":7}]', nm))
+    expect_equal(nrow(fetch()$officials), 0, info = nm)
+  }
+  body <- wrap('[{"game_id":"1022600097","official1_code":7}]')
+  expect_equal(nrow(fetch()$officials), 0)
+
+  # Replay-center rows follow the same rule.
+  for (r in c('[{"official_code":[1,2],"replaycenter_official":"X"}]',
+              '[{"official_code":[],"replaycenter_official":"X"}]',
+              '[{"official_code":7,"replaycenter_official":["X","Y"]}]',
+              '[{"official_code":7,"replaycenter_official":"X","game_date":["a","b"]}]')) {
+    body <- wrap("[]", r)
+    expect_equal(nrow(fetch()$replay_center), 1, info = r)
+  }
+
+  # A game row still needs one non-empty game_id: an array is a fetch error.
+  body <- wrap('[{"game_id":["1","2"],"official1":"A"}]')
+  expect_error(fetch(), class = "hoopR_fetch_error")
 })
 
 test_that("every public parse call re-raises a parser error as hoopR_fetch_error, keeping it as parent", {
