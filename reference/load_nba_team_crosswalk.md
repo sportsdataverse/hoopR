@@ -169,7 +169,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-08-12 07:28:33 UTC
+#> ℹ Data updated: 2026-09-27 09:54:56 UTC
 #> # A tibble: 362 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
 #>     <int>        <int> <chr>             <chr>                   <chr>          

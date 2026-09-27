@@ -76,72 +76,9 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_schedule_crosswalk(season = 2025))
-#> ✖ 2026-09-27 05:31:12.233809: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:13.010803: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:14.009788: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:14.186159: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:14.358222: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:14.727998: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:14.970381: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:15.145899: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:15.477875: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:15.787883: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:15.963175: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:16.168484: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:16.347224: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:16.545815: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:16.855195: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:17.228375: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:17.562692: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:17.736702: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:17.904454: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:18.139637: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:18.47634: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:18.644875: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:18.81384: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:18.986421: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:19.153983: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:19.353026: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:19.519996: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:19.848025: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:31:19.904005: Invalid arguments or no schedule available for 2025!
-#> ✖ Args: year = 2025
-#> ✖ Error: lexical error: invalid char in json text.                                        <!DOCTYPE HTML PUBLIC "-//W3C//                      (right here) ------^ 
-#> ── MBB schedule crosswalk (ESPN / Torvik) ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 05:31:19 UTC
-#> # A tibble: 0 × 14
-#> # ℹ 14 variables: season <int>, game_date <date>, home_espn_team_id <int>,
-#> #   away_espn_team_id <int>, espn_game_id <chr>, bart_muid <chr>,
-#> #   bart_team1 <chr>, bart_team2 <chr>, bart_winner <chr>, kp_game_id <chr>,
-#> #   fox_game_id <chr>, yahoo_game_id <chr>, match_method <chr>,
-#> #   match_confidence <dbl>
+#> ✖ 2026-09-27 21:25:27.510208: Could not build MBB schedule crosswalk for 2025!
+#> ✖ Args: season = 2025, include_kenpom = FALSE
+#> ✖ Error: Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns
+#> data frame with 0 columns and 0 rows
 # }
 ```

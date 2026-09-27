@@ -61,82 +61,9 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_player_crosswalk(season = 2025))
-#> ✖ 2026-09-27 05:29:52.48482: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:53.293196: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:53.659375: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:54.013521: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:54.185076: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:54.549161: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:54.741024: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:55.051889: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:55.395729: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:55.708174: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:56.009596: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:56.379905: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:56.548779: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:56.716658: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:56.889026: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:57.236134: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:57.559598: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:57.895193: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:58.209037: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:58.377134: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:58.544066: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:58.716388: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:59.015483: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:59.188384: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:59.355988: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:59.532129: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:29:59.87729: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ✖ 2026-09-27 05:30:00.194398: no Fox CBK teams data available!
-#> ✖ Error: The API returned an error
-#> ── MBB player crosswalk (ESPN / Fox) ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 05:31:09 UTC
-#> # A tibble: 5,509 × 17
-#>    season espn_team_id team_abbreviation player_name      espn_athlete_id
-#>     <int>        <int> <chr>             <chr>            <chr>          
-#>  1   2025         2000 ACU               christian alston 5241312        
-#>  2   2025         2000 ACU               isaiah carrillo  5314819        
-#>  3   2025         2000 ACU               isaac dye        5314820        
-#>  4   2025         2000 ACU               mashy hill       5177705        
-#>  5   2025         2000 ACU               cade hornecker   5107885        
-#>  6   2025         2000 ACU               bradyn hubbard   5241314        
-#>  7   2025         2000 ACU               tylan lewis      5314817        
-#>  8   2025         2000 ACU               cbo newton       5177575        
-#>  9   2025         2000 ACU               yaniel rivera    5177702        
-#> 10   2025         2000 ACU               joseph scott     5314818        
-#> # ℹ 5,499 more rows
-#> # ℹ 12 more variables: espn_full_name <chr>, espn_jersey <chr>,
-#> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
-#> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,
-#> #   yahoo_player_name <chr>, match_method <chr>, match_confidence <dbl>,
-#> #   match_keys <chr>
+#> ✖ 2026-09-27 21:25:24.645776: Could not build MBB player crosswalk for 2025!
+#> ✖ Args: season = 2025, min_confidence = 0.92
+#> ✖ Error: Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns
+#> data frame with 0 columns and 0 rows
 # }
 ```

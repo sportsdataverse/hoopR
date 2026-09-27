@@ -203,25 +203,25 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 05:26:21 UTC
+#> ℹ Data updated: 2026-09-27 21:21:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
 #> 1  5.00e7 Story How top… "How these… 2026-09-… FALSE   Jeff … https:/… 41       
 #> 2  5.00e7 Head… Five-st… "Five-star… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 3  5.00e7 Head… Touted … "Arkansas … 2026-09-… FALSE   Jeff … https:/… 41       
-#> 4  5.00e7 Head… Duke's … "Head coac… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 5  5.00e7 Head… Nevada … "Steve Alf… 2026-09-… FALSE   NA     https:/… 41       
+#> 3  5.00e7 Head… Ex-NC S… "Robert Mu… 2026-09-… FALSE   Xuan … https:/… 3170     
+#> 4  5.00e7 Head… Touted … "Arkansas … 2026-09-… FALSE   Jeff … https:/… 41       
+#> 5  5.00e7 Head… Duke's … "Head coac… 2026-09-… FALSE   Jeff … https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 05:26:21 UTC
+#> ℹ Data updated: 2026-09-27 21:21:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
 #> 1  5.00e7 Head… Host Ja… "Jalen Bru… 2026-09-… FALSE   NA     https:/… 46       
-#> 2  5.00e7 Head… Sources… "The Chica… 2026-09-… FALSE   NA     https:/… 46       
+#> 2  5.00e7 Head… Bulls t… "The Bulls… 2026-09-… FALSE   NA     https:/… 46       
 #> 3  4.90e7 Story 2026 NB… "We're gra… 2026-09-… FALSE   Zach … https:/… 46       
 #> 4  4.84e7 Story 2026 NB… "We're tra… 2026-09-… FALSE   ESPN   https:/… 46       
 #> 5  5.00e7 Media SVP ref… "SVP refle… 2026-09-… FALSE   NA     https:/… 46       

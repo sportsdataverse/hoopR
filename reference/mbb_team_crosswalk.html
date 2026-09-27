@@ -9,8 +9,30 @@ bridge for cases where Fox and ESPN differ). Torvik and KenPom are each
 joined on the normalized school/location name after a curated alias pass
 for common divergences (e.g. &quot;UConn&quot; / &quot;Connecticut&quot;, &quot;Ole Miss&quot; /
 &quot;Mississippi&quot;, &quot;LIU&quot; / &quot;Long Island University&quot;). No authentication is
-required for any source — Fox is the only network call (slow, ~60 s);
-Torvik is a single CSV; KenPom uses the bundled teams_links object."><meta property="og:description" content="Build a wide, one-row-per-team-per-season crosswalk linking ESPN,
+required for any source.
+Every source is read as of season:
+espn_conference is the conference each team was in that season, under
+that season's name, from the SDV conference reference
+(load_mbb_team_group_seasons() and load_mbb_group_seasons()). The
+ESPN team list itself is today's Division I list, so a team that was not
+in a Division I conference that season has an NA espn_conference.
+fox_section comes from Fox's per-conference standings for that season
+(league/standings?groupId=&amp;amp;season=), which start in 2017-18: earlier
+seasons get NA fox_*. Fox lists teams under the conference they joined
+the NEXT season, so fox_section is set to NA where it disagrees with
+espn_conference, and for any Fox conference with fewer than two
+agreeing teams that stay put the next season. fox_team_id is kept.
+bart_* comes from Torvik's {season}_team_results.csv (2008 on;
+earlier seasons get NA bart_*).
+kp_* comes from teams_links for that season (2002-2026); a season it
+does not carry gets NA kp_*.
+
+
+A source that fails raises an error instead of returning a crosswalk
+whose columns are silently all NA. Torvik answering with no teams
+(blocked or empty) for a season it covers, Fox returning no standings for
+the season, and a missing conference reference raise an error of class
+crosswalk_source_error."><meta property="og:description" content="Build a wide, one-row-per-team-per-season crosswalk linking ESPN,
 Fox Sports (Bifrost), Bart Torvik (barttorvik.com), and KenPom
 (hoopR::teams_links bundled data) men's college basketball team
 identities, keyed on espn_team_id. Yahoo columns are NA placeholders.
@@ -20,8 +42,30 @@ bridge for cases where Fox and ESPN differ). Torvik and KenPom are each
 joined on the normalized school/location name after a curated alias pass
 for common divergences (e.g. &quot;UConn&quot; / &quot;Connecticut&quot;, &quot;Ole Miss&quot; /
 &quot;Mississippi&quot;, &quot;LIU&quot; / &quot;Long Island University&quot;). No authentication is
-required for any source — Fox is the only network call (slow, ~60 s);
-Torvik is a single CSV; KenPom uses the bundled teams_links object."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+required for any source.
+Every source is read as of season:
+espn_conference is the conference each team was in that season, under
+that season's name, from the SDV conference reference
+(load_mbb_team_group_seasons() and load_mbb_group_seasons()). The
+ESPN team list itself is today's Division I list, so a team that was not
+in a Division I conference that season has an NA espn_conference.
+fox_section comes from Fox's per-conference standings for that season
+(league/standings?groupId=&amp;amp;season=), which start in 2017-18: earlier
+seasons get NA fox_*. Fox lists teams under the conference they joined
+the NEXT season, so fox_section is set to NA where it disagrees with
+espn_conference, and for any Fox conference with fewer than two
+agreeing teams that stay put the next season. fox_team_id is kept.
+bart_* comes from Torvik's {season}_team_results.csv (2008 on;
+earlier seasons get NA bart_*).
+kp_* comes from teams_links for that season (2002-2026); a season it
+does not carry gets NA kp_*.
+
+
+A source that fails raises an error instead of returning a crosswalk
+whose columns are silently all NA. Torvik answering with no teams
+(blocked or empty) for a season it covers, Fox returning no standings for
+the season, and a missing conference reference raise an error of class
+crosswalk_source_error."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script></head><body>
@@ -131,8 +175,27 @@ bridge for cases where Fox and ESPN differ). Torvik and KenPom are each
 joined on the normalized school/location name after a curated alias pass
 for common divergences (e.g. "UConn" / "Connecticut", "Ole Miss" /
 "Mississippi", "LIU" / "Long Island University"). No authentication is
-required for any source — Fox is the only network call (slow, ~60 s);
-Torvik is a single CSV; KenPom uses the bundled <code>teams_links</code> object.</p>
+required for any source.</p>
+<p>Every source is read <strong>as of <code>season</code></strong>:</p><ul><li><p><code>espn_conference</code> is the conference each team was in that season, under
+that season's name, from the SDV conference reference
+(<code><a href="load_mbb_team_group_seasons.html">load_mbb_team_group_seasons()</a></code> and <code><a href="load_mbb_group_seasons.html">load_mbb_group_seasons()</a></code>). The
+ESPN team list itself is today's Division I list, so a team that was not
+in a Division I conference that season has an NA <code>espn_conference</code>.</p></li>
+<li><p><code>fox_section</code> comes from Fox's per-conference standings for that season
+(<code>league/standings?groupId=&amp;season=</code>), which start in 2017-18: earlier
+seasons get NA <code>fox_*</code>. Fox lists teams under the conference they joined
+the NEXT season, so <code>fox_section</code> is set to NA where it disagrees with
+<code>espn_conference</code>, and for any Fox conference with fewer than two
+agreeing teams that stay put the next season. <code>fox_team_id</code> is kept.</p></li>
+<li><p><code>bart_*</code> comes from Torvik's <code>{season}_team_results.csv</code> (2008 on;
+earlier seasons get NA <code>bart_*</code>).</p></li>
+<li><p><code>kp_*</code> comes from <code>teams_links</code> for that season (2002-2026); a season it
+does not carry gets NA <code>kp_*</code>.</p></li>
+</ul><p>A source that fails raises an error instead of returning a crosswalk
+whose columns are silently all NA. Torvik answering with no teams
+(blocked or empty) for a season it covers, Fox returning no standings for
+the season, and a missing conference reference raise an error of class
+<code>crosswalk_source_error</code>.</p>
     </div>
 
     <div class="section level2">
@@ -145,20 +208,20 @@ Torvik is a single CSV; KenPom uses the bundled <code>teams_links</code> object.
 
 
 <dl><dt id="arg-season">season<a class="anchor" aria-label="anchor" href="#arg-season"></a></dt>
-<dd><p>Season year (4-digit, e.g. <code>2025</code>). Defaults to
-<code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>.</p></dd>
+<dd><p>Season year (4-digit, ending year, e.g. <code>2025</code> = 2024-25).
+Defaults to <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>.</p></dd>
 
 
 <dt id="arg-fox">fox<a class="anchor" aria-label="anchor" href="#arg-fox"></a></dt>
-<dd><p>An already-fetched <code><a href="fox_mbb_teams_all.html">fox_mbb_teams_all()</a></code> frame, or <code>NULL</code>
-(default) to fetch live. Pass a pre-fetched frame to avoid the
-~60-second Fox enumeration when calling repeatedly.</p></dd>
+<dd><p>An already-fetched frame with <code>fox_team_id</code>, <code>fox_team_name</code>
+and <code>fox_section</code>, or <code>NULL</code> (default) to fetch <code>season</code>'s Fox
+standings live. Pass an empty <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> to skip Fox.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble, one row per ESPN team:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>espn_abbreviation</td><td>character</td><td>ESPN abbreviation.</td></tr><tr><td>espn_display_name</td><td>character</td><td>ESPN display name (school + mascot).</td></tr><tr><td>espn_short_name</td><td>character</td><td>ESPN short name.</td></tr><tr><td>espn_location</td><td>character</td><td>ESPN school/location only.</td></tr><tr><td>espn_mascot</td><td>character</td><td>ESPN mascot/nickname.</td></tr><tr><td>espn_conference</td><td>character</td><td>ESPN conference name.</td></tr><tr><td>fox_team_id</td><td>character</td><td>Fox Bifrost team id (NA if unmatched).</td></tr><tr><td>fox_team_name</td><td>character</td><td>Fox team name (NA if unmatched).</td></tr><tr><td>fox_section</td><td>character</td><td>Fox conference/section label (NA if unmatched).</td></tr><tr><td>bart_team</td><td>character</td><td>Torvik team name (NA if unmatched).</td></tr><tr><td>bart_conf</td><td>character</td><td>Torvik conference abbreviation (NA if unmatched).</td></tr><tr><td>kp_team</td><td>character</td><td>KenPom team name (NA if unmatched).</td></tr><tr><td>kp_conf</td><td>character</td><td>KenPom conference abbreviation (NA if unmatched).</td></tr><tr><td>yahoo_team_id</td><td>character</td><td>Yahoo team id (NA placeholder).</td></tr><tr><td>yahoo_team_name</td><td>character</td><td>Yahoo team name (NA placeholder).</td></tr><tr><td>fox_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>bart_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>kp_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>match_method</td><td>character</td><td>Combination of matched sources, e.g.</td></tr><tr><td></td><td></td><td>"fox+bart+kp" / "fox+bart" / "bart+kp" /</td></tr><tr><td></td><td></td><td>"fox_only" / "bart_only" / "kp_only" /</td></tr><tr><td></td><td></td><td>"espn_only".</td></tr></table></div>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>espn_abbreviation</td><td>character</td><td>ESPN abbreviation.</td></tr><tr><td>espn_display_name</td><td>character</td><td>ESPN display name (school + mascot).</td></tr><tr><td>espn_short_name</td><td>character</td><td>ESPN short name.</td></tr><tr><td>espn_location</td><td>character</td><td>ESPN school/location only.</td></tr><tr><td>espn_mascot</td><td>character</td><td>ESPN mascot/nickname.</td></tr><tr><td>espn_conference</td><td>character</td><td>Conference that season, under that season's name (NA if not in a Division I conference).</td></tr><tr><td>fox_team_id</td><td>character</td><td>Fox Bifrost team id (NA if unmatched).</td></tr><tr><td>fox_team_name</td><td>character</td><td>Fox team name (NA if unmatched).</td></tr><tr><td>fox_section</td><td>character</td><td>Fox conference that season (NA if unmatched or unconfirmed).</td></tr><tr><td>bart_team</td><td>character</td><td>Torvik team name (NA if unmatched).</td></tr><tr><td>bart_conf</td><td>character</td><td>Torvik conference abbreviation (NA if unmatched).</td></tr><tr><td>kp_team</td><td>character</td><td>KenPom team name (NA if unmatched).</td></tr><tr><td>kp_conf</td><td>character</td><td>KenPom conference abbreviation (NA if unmatched).</td></tr><tr><td>yahoo_team_id</td><td>character</td><td>Yahoo team id (NA placeholder).</td></tr><tr><td>yahoo_team_name</td><td>character</td><td>Yahoo team name (NA placeholder).</td></tr><tr><td>fox_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>bart_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>kp_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>match_method</td><td>character</td><td>Combination of matched sources, e.g.</td></tr><tr><td></td><td></td><td>"fox+bart+kp" / "fox+bart" / "bart+kp" /</td></tr><tr><td></td><td></td><td>"fox_only" / "bart_only" / "kp_only" /</td></tr><tr><td></td><td></td><td>"espn_only".</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other MBB Crosswalk Functions:
@@ -171,84 +234,8 @@ Torvik is a single CSV; KenPom uses the bundled <code>teams_links</code> object.
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">mbb_team_crosswalk</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:22.816036: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.628945: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.80736: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.826766: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.84636: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.910112: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.951514: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.972734: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:23.998019: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.025537: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.04671: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.067672: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.08813: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.108802: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.128106: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.147013: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.166876: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.187199: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.206042: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.224556: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.243131: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.263352: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.283855: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.304206: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.324414: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.343905: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.363259: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-27 05:31:24.38281: no Fox CBK teams data available!</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ─────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-09-27 05:31:24 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 366 × 21</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>000 ACU               Abilene Christian Wild… Abilene Chrstn </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>005 AF                Air Force Falcons       Air Force      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>006 AKR               Akron Zips              Akron          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>010 AAMU              Alabama A&amp;M Bulldogs    Alabama A&amp;M    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>025          333 ALA               Alabama Crimson Tide    Alabama        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>011 ALST              Alabama State Hornets   Alabama St     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>016 ALCN              Alcorn State Braves     Alcorn St      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>025           44 AMER              American University Ea… American       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>025         <span style="text-decoration: underline;">2</span>026 APP               App State Mountaineers  App State      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>025            9 ASU               Arizona State Sun Devi… Arizona St     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 356 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more variables: espn_location &lt;chr&gt;, espn_mascot &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   espn_conference &lt;chr&gt;, fox_team_id &lt;chr&gt;, fox_team_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fox_section &lt;chr&gt;, bart_team &lt;chr&gt;, bart_conf &lt;chr&gt;, kp_team &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   kp_conf &lt;chr&gt;, yahoo_team_id &lt;chr&gt;, yahoo_team_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fox_match_confidence &lt;dbl&gt;, bart_match_confidence &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   kp_match_confidence &lt;dbl&gt;, match_method &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in .bb_source_error(sprintf("Torvik %d: no team rows (%d rows, columns %s); a blocked or empty response must not ship as NA bart_* columns",  : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
