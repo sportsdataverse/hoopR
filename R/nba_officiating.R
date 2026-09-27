@@ -861,12 +861,13 @@ nba_referee_assignments <- function(date, league = "nba", proxy = NULL) {
     is.atomic(v) && length(v) == 1L && !is.na(v) && grepl("^[0-9]{10}$", .gid10(v))
   }
   # A replay-center row names its official (every real row does): an empty
-  # record, a missing, null or blank name, or a renamed field would otherwise
+  # record, a missing, null or blank name (str_trim(): Unicode whitespace too,
+  # as Python's strip()), or a renamed field would otherwise
   # parse to a row of NAs. A non-scalar name keeps its row with an NA name, as
   # a crew slot does.
   has_replay_name <- function(r) {
     v <- r[["replaycenter_official"]]
-    length(v) > 0L && !(is.character(v) && length(v) == 1L && !nzchar(trimws(v)))
+    length(v) > 0L && !(is.character(v) && length(v) == 1L && (is.na(v) || !nzchar(stringr::str_trim(v))))
   }
   if (!is.list(block) || !has_rows("Table") || !has_rows("Table1") ||
       !all(vapply(block[["Table"]][["rows"]], has_gid, logical(1))) ||
