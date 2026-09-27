@@ -58,6 +58,29 @@
   `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team per
   season. Seasons are ending years. The loaders read parquet, not the tags'
   csv copies, so `team_id` stays character.
+* `mbb_team_crosswalk()` now reads every source as of the requested season,
+  matching the sportsdataverse-py builder (sportsdataverse-py #604 / #605)
+  that `hoopR-mbb-data` runs by default:
+  * `espn_conference` is the conference each team was in that season, under
+    that season's name, from the `mbb_groups` release. It used to be today's
+    ESPN name (the 2025 WAC read "United Athletic Conference"). The ESPN
+    Core v2 group walk is gone.
+  * `fox_section` comes from Fox's `league/standings?groupId=&season=` for
+    that season (2017-18 on; earlier seasons get `NA`), not today's
+    standings. Fox lists teams under the conference they join the next
+    season, so `fox_section` is `NA` where it disagrees with
+    `espn_conference`, or where fewer than two teams that stay put the next
+    season confirm the Fox conference. `fox_team_id` is kept.
+  * A blocked (403) or empty Torvik response now raises an error of class
+    `crosswalk_source_error` instead of writing an all-`NA` `bart_conf`.
+    Seasons before 2008 skip Torvik, which starts there.
+  * A season missing from `teams_links` gets `NA` `kp_*` instead of the
+    newest season's KenPom conferences.
+  * Any failed source (ESPN, Fox, Torvik, or the conference reference) now
+    raises instead of being reported and returned as an empty tibble.
+* `torvik_ratings()` returned an empty tibble for every season from 2008 to
+  2021: those files quote one header, `fread()` warns while fixing it, and
+  the warning discarded the season. That warning is no longer fatal.
 
 # **hoopR 3.1.0**
 

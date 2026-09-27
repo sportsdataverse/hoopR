@@ -60,7 +60,14 @@ torvik_ratings <- function(year = most_recent_mbb_season()) {
   tryCatch(
     expr = {
       txt <- .torvik_text(paste0("/", year, "_team_results.csv"))
-      df <- data.table::fread(text = txt, showProgress = FALSE)
+      # Older files quote one header ("Fun Rk, adjt"). fread resolves it but
+      # warns, and the warning handler below would discard the whole season.
+      df <- withCallingHandlers(
+        data.table::fread(text = txt, showProgress = FALSE),
+        warning = function(w) {
+          if (grepl("improper quoting", conditionMessage(w), fixed = TRUE)) invokeRestart("muffleWarning")
+        }
+      )
       df <- dplyr::as_tibble(janitor::clean_names(as.data.frame(df)))
       df[["year"]] <- as.integer(year)
       df <- make_hoopR_data(df, "Bart Torvik T-Rank ratings from barttorvik.com", Sys.time())

@@ -22,7 +22,7 @@
 
 #' @keywords internal
 #' @importFrom jsonlite fromJSON
-.fox_bb_get <- function(path, query = list()) {
+.fox_bb_get <- function(path, query = list(), missing_ok = FALSE) {
   query[["apikey"]] <- .fox_or(query[["apikey"]], .fox_bb_key())
   query[["api-version"]] <- .fox_or(query[["api-version"]], "1.1")
   # Route through hoopR's shared GET helper so the Fox calls inherit the
@@ -34,6 +34,8 @@
     headers = c(Origin  = "https://www.foxsports.com",
                 Referer = "https://www.foxsports.com/")
   )
+  # A 404 is Fox saying "no such resource"; `missing_ok` callers skip it.
+  if (missing_ok && httr2::resp_status(res) == 404L) return(NULL)
   check_status(res)
   res |>
     .resp_text() |>
