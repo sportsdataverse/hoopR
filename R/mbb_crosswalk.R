@@ -274,6 +274,27 @@
 # Exported builder
 # ---------------------------------------------------------------------------
 
+# First season (ending year) each source answers for. Before it Fox's
+# league/standings?season= returns {} and Torvik's {year}_team_results.csv
+# 404s, so those columns stay NA -- never another season's data.
+.mbb_fox_first_season    <- 2018L
+.mbb_torvik_first_season <- 2008L
+
+#' Bundled KenPom `Team` / `Conf` rows for one season (no fallback)
+#'
+#' A season `teams_links` does not carry yields no rows, so the crosswalk's
+#' `kp_*` columns stay NA -- never the newest season's labels.
+#' @keywords internal
+#' @noRd
+.mbb_kenpom_teams <- function(season) {
+  kp <- hoopR::teams_links
+  out <- kp[kp[["Year"]] %in% season, c("Team", "Conf"), drop = FALSE]
+  if (!nrow(out)) {
+    cli::cli_alert_warning("bundled KenPom directory has no season {season}; kp_* columns stay NA")
+  }
+  out
+}
+
 #' **Get the MBB cross-source team crosswalk**
 #' @name mbb_team_crosswalk
 NULL
@@ -292,14 +313,37 @@ NULL
 #' joined on the normalized school/location name after a curated alias pass
 #' for common divergences (e.g. "UConn" / "Connecticut", "Ole Miss" /
 #' "Mississippi", "LIU" / "Long Island University"). No authentication is
-#' required for any source — Fox is the only network call (slow, ~60 s);
-#' Torvik is a single CSV; KenPom uses the bundled `teams_links` object.
+#' required for any source.
 #'
-#' @param season Season year (4-digit, e.g. `2025`). Defaults to
-#'   `most_recent_mbb_season()`.
-#' @param fox An already-fetched `fox_mbb_teams_all()` frame, or `NULL`
-#'   (default) to fetch live. Pass a pre-fetched frame to avoid the
-#'   ~60-second Fox enumeration when calling repeatedly.
+#' Every source is read **as of `season`**:
+#'
+#' * `espn_conference` is the conference each team was in that season, under
+#'   that season's name, from the SDV conference reference
+#'   ([load_mbb_team_group_seasons()] and [load_mbb_group_seasons()]). The
+#'   ESPN team list itself is today's Division I list, so a team that was not
+#'   in a Division I conference that season has an NA `espn_conference`.
+#' * `fox_section` comes from Fox's per-conference standings for that season
+#'   (`league/standings?groupId=&season=`), which start in 2017-18: earlier
+#'   seasons get NA `fox_*`. Fox lists teams under the conference they joined
+#'   the NEXT season, so `fox_section` is set to NA where it disagrees with
+#'   `espn_conference`, and for any Fox conference with fewer than two
+#'   agreeing teams that stay put the next season. `fox_team_id` is kept.
+#' * `bart_*` comes from Torvik's `{season}_team_results.csv` (2008 on;
+#'   earlier seasons get NA `bart_*`).
+#' * `kp_*` comes from `teams_links` for that season (2002-2026); a season it
+#'   does not carry gets NA `kp_*`.
+#'
+#' A source that fails raises an error instead of returning a crosswalk
+#' whose columns are silently all NA. Torvik answering with no teams
+#' (blocked or empty) for a season it covers, Fox returning no standings for
+#' the season, and a missing conference reference raise an error of class
+#' `crosswalk_source_error`.
+#'
+#' @param season Season year (4-digit, ending year, e.g. `2025` = 2024-25).
+#'   Defaults to `most_recent_mbb_season()`.
+#' @param fox An already-fetched frame with `fox_team_id`, `fox_team_name`
+#'   and `fox_section`, or `NULL` (default) to fetch `season`'s Fox
+#'   standings live. Pass an empty `data.frame()` to skip Fox.
 #' @return A `hoopR_data` tibble, one row per ESPN team:
 #'
 #'   \if{html}{\tabular{lll}{
@@ -311,10 +355,10 @@ NULL
 #'      espn_short_name \tab character \tab ESPN short name. \cr
 #'      espn_location \tab character \tab ESPN school/location only. \cr
 #'      espn_mascot \tab character \tab ESPN mascot/nickname. \cr
-#'      espn_conference \tab character \tab ESPN conference name. \cr
+#'      espn_conference \tab character \tab Conference that season, under that season's name (NA if not in a Division I conference). \cr
 #'      fox_team_id \tab character \tab Fox Bifrost team id (NA if unmatched). \cr
 #'      fox_team_name \tab character \tab Fox team name (NA if unmatched). \cr
-#'      fox_section \tab character \tab Fox conference/section label (NA if unmatched). \cr
+#'      fox_section \tab character \tab Fox conference that season (NA if unmatched or unconfirmed). \cr
 #'      bart_team \tab character \tab Torvik team name (NA if unmatched). \cr
 #'      bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
 #'      kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
@@ -340,54 +384,21 @@ NULL
 #' }
 mbb_team_crosswalk <- function(season = most_recent_mbb_season(),
                                fox = NULL) {
-  .args <- .capture_args()
-  out <- data.frame()
-  tryCatch(
-    expr = {
-      espn_raw <- espn_mbb_teams(year = season)
-      bart_raw <- tryCatch(torvik_ratings(year = season),
-                           error = function(e) NULL)
-      # KenPom: use bundled teams_links; fall back to most-recent year
-      kp_raw <- tryCatch({
-        kp_all  <- hoopR::teams_links
-        kp_yrs  <- sort(unique(kp_all[["Year"]]))
-        kp_yr   <- if (season %in% kp_yrs) season else max(kp_yrs)
-        kp_all[kp_all[["Year"]] == kp_yr, ]
-      }, error = function(e) NULL)
-      if (is.null(kp_raw) || !nrow(kp_raw)) {
-        kp_raw <- data.frame(
-          Team = character(), Conf = character(), stringsAsFactors = FALSE
-        )
-      }
-
-      fox_raw <- if (!is.null(fox)) fox else {
-        tryCatch(fox_mbb_teams_all(), error = function(e) NULL)
-      }
-      out <- .bb_assemble_team_crosswalk_mbb(
-        espn   = as.data.frame(espn_raw),
-        fox    = if (!is.null(fox_raw)) as.data.frame(fox_raw) else NULL,
-        bart   = if (!is.null(bart_raw)) as.data.frame(bart_raw) else NULL,
-        kp     = as.data.frame(kp_raw),
-        season = season
-      ) |>
-        make_hoopR_data(
-          "MBB team crosswalk (ESPN / Fox / Torvik / KenPom)",
-          Sys.time()
-        )
-    },
-    error   = function(e) .report_api_error(
-      e,
-      hint = "Could not build MBB team crosswalk for {season}!",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning building MBB team crosswalk for {season}",
-      args = .args
-    ),
-    finally = {}
+  season <- as.integer(season)
+  espn <- .bb_espn_team_directory("mens-college-basketball", "mbb", season)
+  if (is.null(fox)) fox <- .bb_fox_season_teams("cbk", season, .mbb_fox_first_season)
+  bart <- .bb_torvik_teams(torvik_ratings, season, .mbb_torvik_first_season)
+  out <- .bb_assemble_team_crosswalk_mbb(
+    espn   = espn,
+    fox    = as.data.frame(fox),
+    bart   = bart,
+    kp     = .mbb_kenpom_teams(season),
+    season = season
   )
-  out
+  if (any(!is.na(out$fox_section))) {
+    out <- .bb_drop_unconfirmed_fox_sections(out, .bb_next_season_movers("mbb", season))
+  }
+  make_hoopR_data(out, "MBB team crosswalk (ESPN / Fox / Torvik / KenPom)", Sys.time())
 }
 
 # ===========================================================================
