@@ -60,8 +60,10 @@ NULL
 #'       away_team_losses \tab integer \tab Away team's team losses. \cr
 #'       away_team_score \tab integer \tab Away team's score. \cr
 #'       away_team_seed \tab integer \tab Away team's team seed. \cr
-#'       season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       league_id \tab character \tab League identifier ('10' = WNBA). \cr
+#'       season \tab character \tab Season of the schedule: 'YYYY-YY' for the NBA and G League, a 4-digit year for the WNBA. \cr
+#'       league_id \tab character \tab League identifier ('00' = NBA, '10' = WNBA, '20' = G League). \cr
+#'       season_type_id \tab character \tab Third digit of game_id (1 pre-season, 2 regular season, 3 all-star, 4 playoffs, 5 see details). \cr
+#'       season_type_description \tab character \tab Label for season_type_id; NA where the digit has no label (see details). \cr
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
@@ -73,7 +75,9 @@ NULL
 #' cdn.wnba.com and `'20'` (G League) from cdn-gleague.nba.com. Any other
 #' `league_id` is an error. `season_type_description` labels the id's third
 #' digit; `'5'` is `"Play-In Game"` only for the NBA and `NA` for the other
-#' leagues, which use it for other events.
+#' leagues, which use it for other events. The WNBA's `season` is a single
+#' year (e.g. `"2026"`); a different `season` only prints a message, since the
+#' CDN serves the current season alone.
 #'
 #' ```r
 #'  nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
@@ -125,9 +129,14 @@ nba_schedule <- function(
 
       if (!is.null(cdn_season) &&
           !identical(as.character(season), as.character(cdn_season))) {
+        older <- c(
+          "00" = "For historical seasons use `load_nba_schedule(seasons = ...)`.",
+          "10" = "For historical seasons use `wehoop::load_wnba_schedule(seasons = ...)`.",
+          "20" = "Only the current season is published."
+        )[[league_id]]
         message(glue::glue(
-          "NBA CDN schedule is for season {cdn_season}, not {season}. ",
-          "For historical seasons use `load_nba_schedule(seasons = ...)`."))
+          "The {c('00' = 'NBA', '10' = 'WNBA', '20' = 'G League')[[league_id]]} CDN ",
+          "schedule is for season {cdn_season}, not {season}. {older}"))
       }
 
       games <- league_sched %>%
@@ -798,7 +807,11 @@ nba_todays_scoreboard <- function(
         purrr::pluck("games")
 
       # A day without games ships `games: []`, which fromJSON reads as an empty
-      # list: that is an empty scoreboard, not an error.
+      # list: that is an empty scoreboard, not an error. A payload without a
+      # games list at all is a changed feed, never an empty day.
+      if (!is.list(raw_games) || (!is.data.frame(raw_games) && length(raw_games) > 0)) {
+        stop("the scoreboard payload has no games list")
+      }
       if (is.data.frame(raw_games) && nrow(raw_games) > 0) {
         games <- raw_games %>%
           tidyr::unnest("homeTeam", names_sep = "_") %>%

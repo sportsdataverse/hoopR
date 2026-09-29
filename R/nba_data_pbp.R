@@ -71,6 +71,10 @@ NULL
 #' @export
 #' @family NBA PBP Functions
 #' @details
+#' data.nba.com serves this play-by-play for the 2016-17 through 2024-25
+#' seasons (probed 2026-09-29). Earlier games are missing, and later ones come
+#' back without plays, which returns an empty result with a message.
+#'
 #' ```r
 #'  nba_data_pbp(game_id = "0021900001")
 #' ```
@@ -98,7 +102,9 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
 
   tryCatch(
     expr = {
-      res <- .retry_request(full_url)
+      # data.nba.com sits behind the same Akamai block as the NBA CDN: no browser
+      # headers gets a 403 "Access Denied" page (probed 2026-09-29).
+      res <- .retry_request(full_url, headers = .nba_cdn_headers())
 
       # Check the result
       check_status(res)
@@ -107,54 +113,59 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
         .resp_text()
 
       data <- jsonlite::fromJSON(resp)$g
-      plays <- jsonlite::fromJSON(jsonlite::toJSON(data$pd), flatten = TRUE)
-      plays_df <- purrr::map_df(plays[[1]], function(x) {
-        plays_df <- plays[[2]][[x]] %>%
-          dplyr::mutate(period = x) %>%
-          dplyr::select("period", tidyr::everything())
-      })
+      # data.nba.com stopped updating after 2024-25: later games come back as an
+      # empty shell (`pd: []`) with no plays to parse.
+      if (length(data$pd) == 0) {
+        cli::cli_alert_info("data.nba.com has no play-by-play for {game_id}; it covers 2016-17 through 2024-25.")
+      } else {
+        plays <- jsonlite::fromJSON(jsonlite::toJSON(data$pd), flatten = TRUE)
+        plays_df <- purrr::map_df(plays[[1]], function(x) {
+          plays_df <- plays[[2]][[x]] %>%
+            dplyr::mutate(period = x) %>%
+            dplyr::select("period", tidyr::everything())
+        })
 
-      plays_df <- plays_df %>%
-        dplyr::select(dplyr::any_of(c(
-          "period" = "period",
-          "event_num" = "evt",
-          "clock" = "cl",
-          "description" = "de",
-          "locX" = "locX",
-          "locY" = "locY",
-          "opt1" = "opt1",
-          "opt2" = "opt2",
-          "event_action_type" = "mtype",
-          "event_type" = "etype",
-          "team_id" = "tid",
-          "offense_team_id" = "oftid",
-          "player1_id" = "pid",
-          "player2_id" = "epid",
-          "player3_id" = "opid",
-          "home_score" = "hs",
-          "away_score" = "vs",
-          "order" = "ord"
-        ))) %>%
-        dplyr::mutate(
-          player2_id = as.integer(.data$player2_id),
-          player3_id = as.integer(.data$player3_id),
-          game_id = game_id,
-          league = dplyr::case_when(
-            substr(game_id, 1, 2) == "00" ~ "NBA",
-            substr(game_id, 1, 2) == "10" ~ "WNBA",
-            substr(game_id, 1, 2) == "20" ~ "G-League",
-            TRUE ~ "NBA"
-          )
-        ) %>%
-        dplyr::select("game_id", "league", tidyr::everything()) %>%
-        make_hoopR_data("NBA Play-by-Play Information from NBA.com", Sys.time())
+        plays_df <- plays_df %>%
+          dplyr::select(dplyr::any_of(c(
+            "period" = "period",
+            "event_num" = "evt",
+            "clock" = "cl",
+            "description" = "de",
+            "locX" = "locX",
+            "locY" = "locY",
+            "opt1" = "opt1",
+            "opt2" = "opt2",
+            "event_action_type" = "mtype",
+            "event_type" = "etype",
+            "team_id" = "tid",
+            "offense_team_id" = "oftid",
+            "player1_id" = "pid",
+            "player2_id" = "epid",
+            "player3_id" = "opid",
+            "home_score" = "hs",
+            "away_score" = "vs",
+            "order" = "ord"
+          ))) %>%
+          dplyr::mutate(
+            player2_id = as.integer(.data$player2_id),
+            player3_id = as.integer(.data$player3_id),
+            game_id = game_id,
+            league = dplyr::case_when(
+              substr(game_id, 1, 2) == "00" ~ "NBA",
+              substr(game_id, 1, 2) == "10" ~ "WNBA",
+              substr(game_id, 1, 2) == "20" ~ "G-League",
+              TRUE ~ "NBA"
+            )
+          ) %>%
+          dplyr::select("game_id", "league", tidyr::everything()) %>%
+          make_hoopR_data("NBA Play-by-Play Information from NBA.com", Sys.time())
+      }
     },
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no play-by-play data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {},
     finally = {}
   )
   return(plays_df)

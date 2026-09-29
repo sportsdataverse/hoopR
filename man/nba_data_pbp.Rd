@@ -75,6 +75,10 @@ Event Message Types (event_type):
 \strong{Get NBA Data API Play-by-Play}
 }
 \details{
+data.nba.com serves this play-by-play for the 2016-17 through 2024-25
+seasons (probed 2026-09-29). Earlier games are missing, and later ones come
+back without plays, which returns an empty result with a message.
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_data_pbp(game_id = "0021900001")
 }\if{html}{\out{</div>}}
 }
