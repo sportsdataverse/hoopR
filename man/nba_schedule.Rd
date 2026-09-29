@@ -540,6 +540,13 @@ This function is deprecated and now errors when called.
 Use \code{nba_playbyplayv3()} instead.
 }
 \details{
+\code{nba_schedule()} reads the current season's schedule for each league from
+its own CDN host: \code{'00'} (NBA) from cdn.nba.com, \code{'10'} (WNBA) from
+cdn.wnba.com and \code{'20'} (G League) from cdn-gleague.nba.com. Any other
+\code{league_id} is an error. \code{season_type_description} labels the id's third
+digit; \code{'5'} is \code{"Play-In Game"} only for the NBA and \code{NA} for the other
+leagues, which use it for other events.
+
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
  nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))
 }\if{html}{\out{</div>}}

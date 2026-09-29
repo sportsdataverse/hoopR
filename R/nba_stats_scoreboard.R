@@ -68,6 +68,13 @@ NULL
 #' @export
 #' @family NBA Schedule Functions
 #' @details
+#' `nba_schedule()` reads the current season's schedule for each league from
+#' its own CDN host: `'00'` (NBA) from cdn.nba.com, `'10'` (WNBA) from
+#' cdn.wnba.com and `'20'` (G League) from cdn-gleague.nba.com. Any other
+#' `league_id` is an error. `season_type_description` labels the id's third
+#' digit; `'5'` is `"Play-In Game"` only for the NBA and `NA` for the other
+#' leagues, which use it for other events.
+#'
 #' ```r
 #'  nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
 #'  nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))
@@ -84,16 +91,21 @@ nba_schedule <- function(
   # March 2026 (returns Connection Reset across multiple client environments;
   # see issue #184 and #187). The same payload — identical
   # leagueSchedule.gameDates[].games[] schema — is served unauthenticated from
-  # the public CDN, but only for the current season. The CDN host honors the
-  # NBA/G-League distinction via the host prefix (`cdn.nba.com` vs the WNBA
-  # mirror at `cdn.wnba.com`), and the G-League schedule is exposed at the
-  # `_2`-suffixed variant on the NBA CDN.
-  cdn_host <- if (identical(as.character(league_id), "20")) {
-    # G-League — the same NBA CDN serves its schedule via a variant suffix
-    "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_2.json"
-  } else {
-    "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json"
+  # the public CDN, but only for the current season. Each league has its own
+  # CDN host; `scheduleLeagueV2_2.json` on cdn.nba.com is a second copy of the
+  # NBA schedule (leagueId "00"), not the G League's.
+  hosts <- c(
+    "00" = "https://cdn.nba.com",
+    "10" = "https://cdn.wnba.com",
+    "20" = "https://cdn-gleague.nba.com"
+  )
+  league_id <- as.character(league_id)
+  if (length(league_id) != 1 || !league_id %in% names(hosts)) {
+    cli::cli_abort(
+      "{.arg league_id} must be one of {.val {names(hosts)}} (NBA, WNBA, G League), not {.val {league_id}}."
+    )
   }
+  cdn_host <- paste0(hosts[[league_id]], "/static/json/staticData/scheduleLeagueV2.json")
 
   games <- NULL
 
@@ -105,6 +117,11 @@ nba_schedule <- function(
 
       league_sched <- resp %>% purrr::pluck("leagueSchedule")
       cdn_season   <- league_sched$seasonYear
+      # The schedule must be the requested league's: a CDN variant serving
+      # another league's games is an error, never that league's schedule.
+      if (!identical(as.character(league_sched$leagueId), league_id)) {
+        stop(glue::glue("{cdn_host} returned leagueId {league_sched$leagueId %||% 'NULL'}, not {league_id}"))
+      }
 
       if (!is.null(cdn_season) &&
           !identical(as.character(season), as.character(cdn_season))) {
@@ -147,7 +164,10 @@ nba_schedule <- function(
             .data$season_type_id == 2 ~ "Regular Season",
             .data$season_type_id == 3 ~ "All-Star",
             .data$season_type_id == 4 ~ "Playoffs",
-            .data$season_type_id == 5 ~ "Play-In Game"
+            # "5" is the NBA's Play-In only: the WNBA uses it for the
+            # Commissioner's Cup final and the G League for its November-December
+            # block before the regular season, so it stays NA there.
+            .data$season_type_id == 5 & .data$league_id == "00" ~ "Play-In Game"
           ),
           game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
         )
@@ -157,8 +177,6 @@ nba_schedule <- function(
       hint = "Invalid arguments or no league schedule data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -776,29 +794,33 @@ nba_todays_scoreboard <- function(
       scoreboard <- resp %>%
         purrr::pluck("scoreboard")
 
-      games <- scoreboard %>%
-        purrr::pluck("games") %>%
-        tidyr::unnest("homeTeam", names_sep = "_") %>%
-        tidyr::unnest("awayTeam", names_sep = "_") %>%
-        tidyr::unnest("gameLeaders") %>%
-        tidyr::unnest("homeLeaders", names_sep = "_") %>%
-        tidyr::unnest("awayLeaders", names_sep = "_") %>%
-        tidyr::unnest("pbOdds", names_sep = "_")
+      raw_games <- scoreboard %>%
+        purrr::pluck("games")
 
-      colnames(games) <- gsub("homeTeam", "home", colnames(games))
-      colnames(games) <- gsub("awayTeam", "away", colnames(games))
+      # A day without games ships `games: []`, which fromJSON reads as an empty
+      # list: that is an empty scoreboard, not an error.
+      if (is.data.frame(raw_games) && nrow(raw_games) > 0) {
+        games <- raw_games %>%
+          tidyr::unnest("homeTeam", names_sep = "_") %>%
+          tidyr::unnest("awayTeam", names_sep = "_") %>%
+          tidyr::unnest("gameLeaders") %>%
+          tidyr::unnest("homeLeaders", names_sep = "_") %>%
+          tidyr::unnest("awayLeaders", names_sep = "_") %>%
+          tidyr::unnest("pbOdds", names_sep = "_")
 
-      games <- games %>%
-        janitor::clean_names() %>%
-        make_hoopR_data("NBA Today's Scoreboard Information from NBA.com", Sys.time())
+        colnames(games) <- gsub("homeTeam", "home", colnames(games))
+        colnames(games) <- gsub("awayTeam", "away", colnames(games))
+
+        games <- games %>%
+          janitor::clean_names() %>%
+          make_hoopR_data("NBA Today's Scoreboard Information from NBA.com", Sys.time())
+      }
     },
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no today's scoreboard data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

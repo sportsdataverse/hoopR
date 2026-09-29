@@ -60,6 +60,19 @@
   to skip when the call came back empty, so a refused request passed as a
   skip. They fail now; the scoreboard test still skips when the feed lists
   no games.
+* `nba_schedule(league_id = "20")` returned the NBA schedule: it read
+  `scheduleLeagueV2_2.json` on cdn.nba.com, which is a second copy of the
+  NBA's (`leagueId` "00"). Each league now comes from its own CDN host
+  (`"10"` from cdn.wnba.com, `"20"` from cdn-gleague.nba.com), a payload for
+  a different league is an error, and any other `league_id` is an argument
+  error instead of a silent NBA schedule. `season_type_description` no longer
+  labels the WNBA's and G League's `5` games as "Play-In Game".
+* `nba_todays_scoreboard()` on a day without games printed an "Invalid
+  arguments" error about `unnest`. It returns an empty result quietly now.
+* The six CDN wrappers no longer discard their result when a warning is
+  raised while parsing: an empty `warning` handler in their `tryCatch()`
+  abandoned the parse at the first warning and returned nothing. The warning
+  now reaches the caller along with the data.
 
 * Eight new loaders read the `mbb_groups` and `nba_groups` releases on
   sportsdataverse-data, which record conference and division membership as
