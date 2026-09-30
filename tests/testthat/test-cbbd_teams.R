@@ -106,3 +106,70 @@ test_that("CBD - section helpers flatten records and arrays offline", {
   expect_equal(ncol(hoopR:::.cbbd_record_tbl(NULL)), 0L)
   expect_equal(ncol(hoopR:::.cbbd_rows_tbl(list())), 0L)
 })
+
+# Serve a captured CBD payload (see fixtures/cbbd/README.md) and record the request,
+# so the wrappers run offline and in CI; every live cbbd test is skip_on_ci().
+local_cbbd_fixture <- function(file, env = parent.frame()) {
+  seen <- new.env()
+  local_mocked_bindings(
+    check_cbbd_key = function() invisible(TRUE),
+    cbbd_key = function() "fixture-key",
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      seen$url <- url
+      seen$params <- params
+      con <- gzfile(test_path("fixtures", "cbbd", file), "rb")
+      on.exit(close(con))
+      httr2::response(
+        status_code = 200L,
+        url = url,
+        headers = list(`Content-Type` = "application/json"),
+        body = readBin(con, "raw", n = 1e7)
+      )
+    },
+    .env = env
+  )
+  seen
+}
+
+test_that("CBD - Team Directory parses a captured payload offline", {
+  seen <- local_cbbd_fixture("teams_directory_2025.json.gz")
+  x <- cbbd_teams_directory(season = 2025)
+
+  expect_equal(seen$url, "https://api.collegebasketballdata.com/teams/directory")
+  expect_equal(seen$params$season, 2025)
+  expect_named(x, c("teams", "conferences"))
+  expect_equal(nrow(x$teams), 364L)
+  expect_equal(nrow(x$conferences), 31L)
+  expect_in(c("id", "source_id", "school", "display_name", "conference_id"), colnames(x$teams))
+  expect_in(c("id", "name", "abbreviation"), colnames(x$conferences))
+  for (tbl in x) {
+    expect_s3_class(tbl, "hoopR_data")
+    expect_equal(attr(tbl, "season"), 2025)
+    expect_type(attr(tbl, "season_label"), "character")
+  }
+  expect_equal(attr(x$teams, "season_label"), attr(x$conferences, "season_label"))
+  expect_true(all(x$teams$conference_id %in% x$conferences$id))
+})
+
+test_that("CBD - Team Season Overview parses a captured payload offline", {
+  seen <- local_cbbd_fixture("teams_season_overview_72_2025.json.gz")
+  x <- cbbd_teams_season_overview(team_id = 72, season = 2025)
+
+  expect_equal(seen$url, "https://api.collegebasketballdata.com/teams/72/season/2025/overview")
+  expect_named(
+    x, c("team", "record", "ratings", "efficiency", "shooting", "players", "schedule", "sources")
+  )
+  expect_equal(
+    vapply(x, nrow, integer(1)),
+    c(team = 1L, record = 1L, ratings = 1L, efficiency = 1L,
+      shooting = 3L, players = 15L, schedule = 39L, sources = 1L)
+  )
+  expect_equal(x$team$team_id, 72L)
+  expect_equal(x$team$school, "Duke")
+  expect_in(c("offense_points", "defense_points", "offense_box_score_field_goals_made", "pace"),
+            colnames(x$efficiency))
+  expect_in(c("athlete_id", "name", "season_stats_field_goals_made"), colnames(x$players))
+  expect_type(attr(x$shooting, "tracked_attempts"), "integer")
+  expect_in(c("state", "coveredGames"), names(attr(x$players, "coverage")))
+  expect_true(all(vapply(x, inherits, logical(1), "hoopR_data")))
+})
