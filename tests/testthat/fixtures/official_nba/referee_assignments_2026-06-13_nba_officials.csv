@@ -1,0 +1,5 @@
+league,game_id,game_date,season,season_type,game_code,home_team_id,home_team_abbr,away_team_id,away_team_abbr,crew_position,official_id,official_name,jersey_num
+nba,0042500405,2026-06-13,2026,playoffs,20260613/NYKSAS,1610612759,SAS,1610612752,NYK,1,1162,Scott Foster,48
+nba,0042500405,2026-06-13,2026,playoffs,20260613/NYKSAS,1610612759,SAS,1610612752,NYK,2,1148,James Capers,19
+nba,0042500405,2026-06-13,2026,playoffs,20260613/NYKSAS,1610612759,SAS,1610612752,NYK,3,204059,Tyler Ford,39
+nba,0042500405,2026-06-13,2026,playoffs,20260613/NYKSAS,1610612759,SAS,1610612752,NYK,4,203591,Mitchell Ervin,27

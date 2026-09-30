@@ -422,6 +422,15 @@ reference:
     contents:
       - '`rotowire_injuries`'
       - '`bref_injuries`'
+  - title: Officiating
+  - subtitle: NBA Officiating Functions
+    desc: >
+      Last Two Minute (L2M) reports and referee crew assignments, scraped
+      from official.nba.com.
+    contents:
+      - '`nba_l2m`'
+      - '`nba_l2m_games`'
+      - '`nba_referee_assignments`'
   - title: Basketball-Reference
   - subtitle: Basketball-Reference Functions
     desc: Functions exported by hoopR to scrape basketball-reference.com
