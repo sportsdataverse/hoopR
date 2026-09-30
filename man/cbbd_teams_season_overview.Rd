@@ -26,125 +26,236 @@ follow the values: a field upstream sends as \code{null} parses as logical \code
 a whole-number value as integer, and a nullable object sent as \code{null}
 (e.g. the adjusted ratings) as one \code{NA} column in place of its fields.
 
-\strong{team} - one row:
+\strong{team: one row}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   team_id \tab integer \tab CollegeBasketballData team id. \cr
+   season \tab integer \tab Season, as the 4-digit ending year (e.g. 2025 for 2024-25). \cr
+   season_label \tab character \tab Season label as upstream formats it. \cr
+   generated_at \tab character \tab When upstream built this overview (ISO 8601, UTC). \cr
+   format_version \tab integer \tab Version of the upstream overview format. \cr
+   mascot \tab character \tab Team mascot. \cr
+   school \tab character \tab School name. \cr
+   source_id \tab character \tab Source (ESPN) team id. \cr
+   conference_id \tab integer \tab Conference id. \cr
+   conference_name \tab character \tab Conference name. \cr
+   conference_abbreviation \tab character \tab Conference abbreviation. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team_id \tab integer \tab CollegeBasketballData team id. \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      season_label \tab character \tab Upstream season label. \cr
-      generated_at \tab character \tab When upstream built the overview (ISO 8601). \cr
-      format_version \tab integer \tab Upstream overview format version. \cr
-      school \tab character \tab School name. \cr
-      mascot \tab character \tab Team mascot. \cr
-      source_id \tab character \tab Source (ESPN) team id. \cr
-      conference_id \tab integer \tab Conference id. \cr
-      conference_name \tab character \tab Conference name. \cr
-      conference_abbreviation \tab character \tab Conference abbreviation. \cr
-   }}
 
-\strong{record} - one row:
+\strong{record: one row}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   overall_wins \tab integer \tab Wins in all games. \cr
+   overall_games \tab integer \tab Number of all games in the record. \cr
+   overall_losses \tab integer \tab Losses in all games. \cr
+   overall_unresolved \tab integer \tab All games without a final result yet. \cr
+   complete \tab logical \tab Whether every game in the record has a final result. \cr
+   conference_wins \tab integer \tab Wins in conference games. \cr
+   conference_games \tab integer \tab Number of conference games in the record. \cr
+   conference_losses \tab integer \tab Losses in conference games. \cr
+   conference_unresolved \tab integer \tab Conference games without a final result yet. \cr
+   unknown_conference_games \tab integer \tab Games whose conference-game status is unknown. \cr
+   unknown_eligibility_games \tab integer \tab Games whose eligibility for the overview is unknown. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      overall_games, overall_wins, overall_losses, overall_unresolved \tab integer \tab All games: played, won, lost, not yet resolved. \cr
-      conference_games, conference_wins, conference_losses, conference_unresolved \tab integer \tab Conference games, same counts. \cr
-      complete \tab logical \tab Whether the record covers every game. \cr
-      unknown_conference_games \tab integer \tab Games whose conference status is unknown. \cr
-      unknown_eligibility_games \tab integer \tab Games whose eligibility is unknown. \cr
-   }}
 
-\strong{ratings} - one row:
+\strong{ratings: one row}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   elo \tab double \tab Elo rating. \cr
+   srs \tab double \tab Simple Rating System rating: average scoring margin adjusted for strength of schedule. \cr
+   polls_ap_date \tab character \tab Date of the AP poll the standing comes from (YYYY-MM-DD). \cr
+   polls_ap_rank \tab integer \tab AP poll rank; NA when unranked. \cr
+   polls_ap_week \tab integer \tab Week of that AP poll. \cr
+   polls_ap_state \tab character \tab AP poll standing (e.g. ranked). \cr
+   polls_ap_season_type \tab character \tab Season type of that AP poll (regular or postseason). \cr
+   polls_coaches_date \tab character \tab Date of the Coaches poll the standing comes from (YYYY-MM-DD). \cr
+   polls_coaches_rank \tab integer \tab Coaches poll rank; NA when unranked. \cr
+   polls_coaches_week \tab integer \tab Week of that Coaches poll. \cr
+   polls_coaches_state \tab character \tab Coaches poll standing (e.g. ranked). \cr
+   polls_coaches_season_type \tab character \tab Season type of that Coaches poll (regular or postseason). \cr
+   adjusted_net_rank \tab integer \tab Rank of the adjusted net rating among the rated teams (1 is best). \cr
+   adjusted_net_value \tab double \tab Adjusted net efficiency: adjusted offense minus adjusted defense. \cr
+   adjusted_defense_rank \tab integer \tab Rank of the adjusted defense rating among the rated teams (1 is best). \cr
+   adjusted_defense_value \tab double \tab Opponent-adjusted defensive efficiency: points allowed per 100 possessions against an average offense (lower is better). \cr
+   adjusted_offense_rank \tab integer \tab Rank of the adjusted offense rating among the rated teams (1 is best). \cr
+   adjusted_offense_value \tab double \tab Opponent-adjusted offensive efficiency: points scored per 100 possessions against an average defense. \cr
+   adjusted_population \tab integer \tab Number of teams in the adjusted ratings. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      elo \tab numeric \tab Elo rating. \cr
-      srs \tab numeric \tab Simple Rating System rating. \cr
-      polls_ap_state, polls_coaches_state \tab character \tab Poll standing state (e.g. ranked). \cr
-      polls_ap_date, polls_coaches_date \tab character \tab Date of the poll used. \cr
-      polls_ap_week, polls_coaches_week \tab integer \tab Week of the poll used. \cr
-      polls_ap_season_type, polls_coaches_season_type \tab character \tab Season type of the poll used. \cr
-      polls_ap_rank, polls_coaches_rank \tab integer \tab AP / Coaches poll rank. \cr
-      adjusted_offense_value, adjusted_defense_value, adjusted_net_value \tab numeric \tab Adjusted efficiency ratings. \cr
-      adjusted_offense_rank, adjusted_defense_rank, adjusted_net_rank \tab integer \tab Ranks of the adjusted ratings. \cr
-      adjusted_population \tab integer \tab Number of teams ranked. \cr
-   }}
 
-\strong{efficiency} - one row; every offense_ column has a defense_ twin (opponents):
+\strong{efficiency: one row; each \code{defense_} column is the opponents' version of its \code{offense_} twin}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   pace \tab double \tab Pace: possessions per 40 minutes. \cr
+   defense_points \tab integer \tab Points allowed. \cr
+   defense_box_score_fouls \tab integer \tab Opponents' personal fouls. \cr
+   defense_box_score_blocks \tab integer \tab Opponents' blocked shots. \cr
+   defense_box_score_steals \tab integer \tab Opponents' steals. \cr
+   defense_box_score_assists \tab integer \tab Opponents' assists. \cr
+   defense_box_score_minutes \tab integer \tab Opponents' minutes played (team minutes). \cr
+   defense_box_score_rebounds_total \tab integer \tab Opponents' total rebounds. \cr
+   defense_box_score_rebounds_defensive \tab integer \tab Opponents' defensive rebounds. \cr
+   defense_box_score_rebounds_offensive \tab integer \tab Opponents' offensive rebounds. \cr
+   defense_box_score_turnovers \tab integer \tab Opponents' turnovers credited to players. \cr
+   defense_box_score_field_goals_pct \tab double \tab Opponents' field goals percentage (0-100). \cr
+   defense_box_score_field_goals_made \tab integer \tab Opponents' field goals made. \cr
+   defense_box_score_field_goals_attempted \tab integer \tab Opponents' field goals attempted. \cr
+   defense_box_score_free_throws_pct \tab double \tab Opponents' free throws percentage (0-100). \cr
+   defense_box_score_free_throws_made \tab integer \tab Opponents' free throws made. \cr
+   defense_box_score_free_throws_attempted \tab integer \tab Opponents' free throws attempted. \cr
+   defense_box_score_flagrant_fouls \tab integer \tab Opponents' flagrant fouls. \cr
+   defense_box_score_points_in_paint \tab integer \tab Opponents' points in the paint. \cr
+   defense_box_score_team_turnovers \tab integer \tab Opponents' team turnovers (not credited to a player). \cr
+   defense_box_score_technical_fouls \tab integer \tab Opponents' technical fouls. \cr
+   defense_box_score_fast_break_points \tab integer \tab Opponents' fast-break points. \cr
+   defense_box_score_true_shooting_pct \tab double \tab Opponents' true shooting percentage (0-100). \cr
+   defense_box_score_points_off_turnovers \tab integer \tab Opponents' points off turnovers. \cr
+   defense_box_score_two_point_field_goals_pct \tab double \tab Opponents' two-point field goals percentage (0-100). \cr
+   defense_box_score_two_point_field_goals_made \tab integer \tab Opponents' two-point field goals made. \cr
+   defense_box_score_two_point_field_goals_attempted \tab integer \tab Opponents' two-point field goals attempted. \cr
+   defense_box_score_three_point_field_goals_pct \tab double \tab Opponents' three-point field goals percentage (0-100). \cr
+   defense_box_score_three_point_field_goals_made \tab integer \tab Opponents' three-point field goals made. \cr
+   defense_box_score_three_point_field_goals_attempted \tab integer \tab Opponents' three-point field goals attempted. \cr
+   defense_raw_rating \tab double \tab Points allowed per 100 opponent possessions, not adjusted for opponent. \cr
+   defense_possessions \tab integer \tab Opponent possessions. \cr
+   defense_turnover_pct \tab double \tab Opponents' turnovers per 100 possessions. \cr
+   defense_free_throw_rate \tab double \tab Opponents' free throw attempts per 100 field goal attempts. \cr
+   defense_offensive_rebound_pct \tab double \tab Opponents' offensive rebound percentage (0-100). \cr
+   defense_effective_field_goal_pct \tab double \tab Opponents' effective field goal percentage (0-100). \cr
+   offense_points \tab integer \tab Points scored. \cr
+   offense_box_score_fouls \tab integer \tab Team personal fouls. \cr
+   offense_box_score_blocks \tab integer \tab Team blocked shots. \cr
+   offense_box_score_steals \tab integer \tab Team steals. \cr
+   offense_box_score_assists \tab integer \tab Team assists. \cr
+   offense_box_score_minutes \tab integer \tab Team minutes played (team minutes). \cr
+   offense_box_score_rebounds_total \tab integer \tab Team total rebounds. \cr
+   offense_box_score_rebounds_defensive \tab integer \tab Team defensive rebounds. \cr
+   offense_box_score_rebounds_offensive \tab integer \tab Team offensive rebounds. \cr
+   offense_box_score_turnovers \tab integer \tab Team turnovers credited to players. \cr
+   offense_box_score_field_goals_pct \tab double \tab Team field goals percentage (0-100). \cr
+   offense_box_score_field_goals_made \tab integer \tab Team field goals made. \cr
+   offense_box_score_field_goals_attempted \tab integer \tab Team field goals attempted. \cr
+   offense_box_score_free_throws_pct \tab double \tab Team free throws percentage (0-100). \cr
+   offense_box_score_free_throws_made \tab integer \tab Team free throws made. \cr
+   offense_box_score_free_throws_attempted \tab integer \tab Team free throws attempted. \cr
+   offense_box_score_flagrant_fouls \tab integer \tab Team flagrant fouls. \cr
+   offense_box_score_points_in_paint \tab integer \tab Team points in the paint. \cr
+   offense_box_score_team_turnovers \tab integer \tab Team team turnovers (not credited to a player). \cr
+   offense_box_score_technical_fouls \tab integer \tab Team technical fouls. \cr
+   offense_box_score_fast_break_points \tab integer \tab Team fast-break points. \cr
+   offense_box_score_true_shooting_pct \tab double \tab Team true shooting percentage (0-100). \cr
+   offense_box_score_points_off_turnovers \tab integer \tab Team points off turnovers. \cr
+   offense_box_score_two_point_field_goals_pct \tab double \tab Team two-point field goals percentage (0-100). \cr
+   offense_box_score_two_point_field_goals_made \tab integer \tab Team two-point field goals made. \cr
+   offense_box_score_two_point_field_goals_attempted \tab integer \tab Team two-point field goals attempted. \cr
+   offense_box_score_three_point_field_goals_pct \tab double \tab Team three-point field goals percentage (0-100). \cr
+   offense_box_score_three_point_field_goals_made \tab integer \tab Team three-point field goals made. \cr
+   offense_box_score_three_point_field_goals_attempted \tab integer \tab Team three-point field goals attempted. \cr
+   offense_raw_rating \tab double \tab Points scored per 100 possessions, not adjusted for opponent. \cr
+   offense_possessions \tab integer \tab Possessions. \cr
+   offense_turnover_pct \tab double \tab Team turnovers per 100 possessions. \cr
+   offense_free_throw_rate \tab double \tab Team free throw attempts per 100 field goal attempts. \cr
+   offense_offensive_rebound_pct \tab double \tab Team offensive rebound percentage (0-100). \cr
+   offense_effective_field_goal_pct \tab double \tab Team effective field goal percentage (0-100). \cr
+   coverage_state \tab character \tab Whether the play-by-play this section needs is available (e.g. available, partial). \cr
+   coverage_reason \tab character \tab Why coverage is not complete (e.g. unclassified_shots); NA when available. \cr
+   coverage_covered_games \tab integer \tab Games with the data this section needs. \cr
+   coverage_eligible_games \tab integer \tab Games eligible for this section. \cr
+   pace_games \tab integer \tab Games in the pace sample. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      pace \tab numeric \tab Possessions per 40 minutes. \cr
-      pace_games \tab integer \tab Games in the pace sample. \cr
-      coverage_state, coverage_reason \tab character \tab Data coverage state and reason. \cr
-      coverage_covered_games, coverage_eligible_games \tab integer \tab Games covered / eligible. \cr
-      offense_points, offense_possessions \tab integer \tab Points scored and possessions. \cr
-      offense_raw_rating \tab numeric \tab Unadjusted points per 100 possessions. \cr
-      offense_effective_field_goal_pct, offense_turnover_pct, offense_offensive_rebound_pct, offense_free_throw_rate \tab numeric \tab Four factors. \cr
-      offense_box_score_field_goals_*, offense_box_score_two_point_field_goals_*, offense_box_score_three_point_field_goals_*, offense_box_score_free_throws_* \tab integer, numeric \tab made and attempted (integer), pct (numeric). \cr
-      offense_box_score_rebounds_total, _offensive, _defensive \tab integer \tab Rebounds. \cr
-      offense_box_score_assists, _steals, _blocks, _turnovers, _team_turnovers, _fouls, _technical_fouls, _flagrant_fouls, _minutes \tab integer \tab Box score counting stats. \cr
-      offense_box_score_points_in_paint, _points_off_turnovers, _fast_break_points \tab integer \tab Scoring splits. \cr
-      offense_box_score_true_shooting_pct \tab numeric \tab True shooting percentage. \cr
-   }}
 
-\strong{shooting} - one row per shot bucket:
+\strong{shooting: one row per shot bucket}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   key \tab character \tab Shot bucket: at_rim, two_point_jumper or three_point_jumper. \cr
+   made \tab integer \tab Field goals made from the bucket. \cr
+   attempts \tab integer \tab Field goal attempts from the bucket. \cr
+   attempt_pct \tab double \tab Share of the team's classified tracked attempts taken from the bucket (0-100). \cr
+   field_goal_pct \tab double \tab Field goal percentage from the bucket (0-100). \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      key \tab character \tab Shot bucket. \cr
-      attempts, made \tab integer \tab Tracked attempts and makes. \cr
-      attempt_pct \tab numeric \tab Share of classified tracked attempts. \cr
-      field_goal_pct \tab numeric \tab Field goal percentage. \cr
-   }}
 
-\strong{players} - one row per player:
+\strong{players: one row per player}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   name \tab character \tab Player name. \cr
+   games \tab integer \tab Games played. \cr
+   points \tab integer \tab Points. \cr
+   assists \tab integer \tab Assists. \cr
+   minutes \tab integer \tab Minutes played. \cr
+   complete \tab logical \tab Whether upstream marks the player's season line as complete. \cr
+   has_stats \tab logical \tab Whether the player has recorded statistics this season. \cr
+   on_roster \tab logical \tab Whether the player is on the team's roster. \cr
+   position \tab character \tab Position (e.g. G, F, C). \cr
+   rebounds \tab integer \tab Rebounds. \cr
+   usage_pct \tab double \tab Usage percentage (0-100): share of team possessions the player used while on the floor. \cr
+   athlete_id \tab integer \tab CollegeBasketballData athlete id. \cr
+   usage_games \tab integer \tab Games in the usage sample. \cr
+   points_per_game \tab double \tab Points per game. \cr
+   minutes_per_game \tab double \tab Minutes per game. \cr
+   true_shooting_pct \tab double \tab True shooting percentage (0-100). \cr
+   effective_field_goal_pct \tab double \tab Effective field goal percentage (0-100). \cr
+   season_stats_fouls \tab integer \tab Personal fouls. \cr
+   season_stats_blocks \tab integer \tab Blocked shots. \cr
+   season_stats_starts \tab integer \tab Games started. \cr
+   season_stats_steals \tab integer \tab Steals. \cr
+   season_stats_assists \tab integer \tab Assists. \cr
+   season_stats_turnovers \tab integer \tab Turnovers. \cr
+   season_stats_free_throw_rate \tab double \tab Free throw attempts per 100 field goal attempts. \cr
+   season_stats_assist_turnover_ratio \tab double \tab Assists per turnover. \cr
+   season_stats_offensive_rebound_pct \tab double \tab Offensive rebound percentage (0-100). \cr
+   season_stats_advanced_games \tab integer \tab Games in the advanced-stat sample. \cr
+   season_stats_advanced_porpag \tab double \tab PORPAG: points over replacement per adjusted game. \cr
+   season_stats_advanced_net_rating \tab double \tab Net rating: offensive rating minus defensive rating. \cr
+   season_stats_advanced_defensive_rating \tab double \tab Defensive rating: points allowed per 100 possessions while on the floor. \cr
+   season_stats_advanced_offensive_rating \tab double \tab Offensive rating: points produced per 100 possessions. \cr
+   season_stats_advanced_win_shares_per40 \tab double \tab Win shares per 40 minutes. \cr
+   season_stats_advanced_win_shares_total \tab double \tab Win shares. \cr
+   season_stats_advanced_win_shares_defensive \tab double \tab Defensive win shares. \cr
+   season_stats_advanced_win_shares_offensive \tab double \tab Offensive win shares. \cr
+   season_stats_rebounds_total \tab integer \tab Total rebounds. \cr
+   season_stats_rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+   season_stats_rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+   season_stats_field_goals_pct \tab double \tab Field goals percentage (0-100). \cr
+   season_stats_field_goals_made \tab integer \tab Field goals made. \cr
+   season_stats_field_goals_attempted \tab integer \tab Field goals attempted. \cr
+   season_stats_free_throws_pct \tab double \tab Free throws percentage (0-100). \cr
+   season_stats_free_throws_made \tab integer \tab Free throws made. \cr
+   season_stats_free_throws_attempted \tab integer \tab Free throws attempted. \cr
+   season_stats_two_point_field_goals_pct \tab double \tab Two-point field goals percentage (0-100). \cr
+   season_stats_two_point_field_goals_made \tab integer \tab Two-point field goals made. \cr
+   season_stats_two_point_field_goals_attempted \tab integer \tab Two-point field goals attempted. \cr
+   season_stats_three_point_field_goals_pct \tab double \tab Three-point field goals percentage (0-100). \cr
+   season_stats_three_point_field_goals_made \tab integer \tab Three-point field goals made. \cr
+   season_stats_three_point_field_goals_attempted \tab integer \tab Three-point field goals attempted. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      athlete_id \tab integer \tab CollegeBasketballData athlete id. \cr
-      name \tab character \tab Player name. \cr
-      position \tab character \tab Position. \cr
-      on_roster, has_stats, complete \tab logical \tab Roster / stats / completeness flags. \cr
-      games, minutes, points, rebounds, assists \tab integer \tab Season totals. \cr
-      minutes_per_game, points_per_game \tab numeric \tab Per-game averages. \cr
-      usage_pct, true_shooting_pct, effective_field_goal_pct \tab numeric \tab Rate stats. \cr
-      usage_games \tab integer \tab Games in the usage sample. \cr
-      season_stats_* \tab integer, numeric \tab Season box line: field goal, two, three and free throw made / attempted / pct; rebounds total / offensive / defensive; assists, steals, blocks, turnovers, fouls, starts; assist_turnover_ratio, free_throw_rate, offensive_rebound_pct. \cr
-      season_stats_advanced_* \tab numeric \tab games, porpag, net_rating, offensive_rating, defensive_rating, win_shares_total / offensive / defensive / per40. \cr
-   }}
 
-\strong{schedule} - one row per game:
+\strong{schedule: one row per game}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   id \tab integer \tab CollegeBasketballData game id. \cr
+   venue \tab character \tab Venue name. \cr
+   result \tab character \tab Result for the team: W or L; NA until final. \cr
+   status \tab character \tab Game status (e.g. final). \cr
+   game_type \tab character \tab Upstream game type code (e.g. STD, TRNMNT). \cr
+   location \tab character \tab Where the team played: home, away or neutral. \cr
+   opponent \tab character \tab Opponent school name. \cr
+   start_date \tab character \tab Tipoff (ISO 8601, UTC). \cr
+   opponent_id \tab integer \tab Opponent's CollegeBasketballData team id. \cr
+   season_type \tab character \tab Season type: regular or postseason. \cr
+   team_points \tab integer \tab Points scored by the team. \cr
+   eligibility \tab character \tab Whether the game counts toward the overview (e.g. counted). \cr
+   calendar_date \tab character \tab Local calendar date of the game (YYYY-MM-DD). \cr
+   start_time_tbd \tab logical \tab Whether the tipoff time is to be determined. \cr
+   conference_game \tab logical \tab Whether the game is a conference game. \cr
+   opponent_points \tab integer \tab Points scored by the opponent. \cr
+   opponent_has_profile \tab logical \tab Whether the opponent has its own season overview. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData game id. \cr
-      opponent_id \tab integer \tab Opponent team id. \cr
-      opponent \tab character \tab Opponent name. \cr
-      opponent_has_profile \tab logical \tab Whether the opponent has an overview. \cr
-      start_date \tab character \tab Tipoff (ISO 8601). \cr
-      calendar_date \tab character \tab Local calendar date. \cr
-      start_time_tbd \tab logical \tab Tipoff time to be determined. \cr
-      location \tab character \tab home, away or neutral. \cr
-      status \tab character \tab Game status. \cr
-      season_type \tab character \tab Season type. \cr
-      game_type \tab character \tab Game type. \cr
-      eligibility \tab character \tab Whether the game counts toward the overview. \cr
-      conference_game \tab logical \tab Conference game. \cr
-      team_points, opponent_points \tab integer \tab Final score. \cr
-      result \tab character \tab Result (W / L). \cr
-      venue \tab character \tab Venue name. \cr
-   }}
 
-\strong{sources} - one row:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      notes \tab character \tab Upstream notes, joined with a semicolon. \cr
-      latest_final_start_date \tab character \tab Tipoff of the latest final game included. \cr
-      leaderboard_updated_at \tab character \tab When the leaderboard source last updated. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column tables.}
+\strong{sources: one row}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   notes \tab character \tab Upstream notes on how the overview is built, joined with a semicolon. \cr
+   latest_final_start_date \tab character \tab Tipoff (ISO 8601, UTC) of the latest final game included. \cr
+   leaderboard_updated_at \tab character \tab When the leaderboard data behind the player rows last updated (ISO 8601); NA when upstream sends none. \cr
+}
 }
 \description{
 \strong{Get a stored full-season overview of one team from the CollegeBasketballData API.}

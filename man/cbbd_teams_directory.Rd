@@ -16,29 +16,25 @@ A named list of two \code{hoopR_data} tibbles, \code{teams} and \code{conference
 Both carry the season as attributes: \code{season} (integer) and
 \code{season_label} (character, the upstream season label).
 
-\strong{teams} - one row per team:
+\strong{teams: one row per team}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   id \tab integer \tab CollegeBasketballData team id. \cr
+   source_id \tab character \tab Source (ESPN) team id. \cr
+   school \tab character \tab School name. \cr
+   mascot \tab character \tab Team mascot. \cr
+   abbreviation \tab character \tab Team abbreviation. \cr
+   display_name \tab character \tab Full display name (school and mascot). \cr
+   short_display_name \tab character \tab Short display name. \cr
+   conference_id \tab integer \tab Conference id for the season; joins to \code{id} in \code{conferences}. \cr
+}
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData team id. \cr
-      source_id \tab character \tab Source (ESPN) team id. \cr
-      school \tab character \tab School name. \cr
-      mascot \tab character \tab Team mascot. \cr
-      abbreviation \tab character \tab Team abbreviation. \cr
-      display_name \tab character \tab Full team display name. \cr
-      short_display_name \tab character \tab Short team display name. \cr
-      conference_id \tab integer \tab Conference id; joins to the id column of conferences. \cr
-   }}
 
-\strong{conferences} - one row per conference:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab Conference id. \cr
-      name \tab character \tab Conference name. \cr
-      abbreviation \tab character \tab Conference abbreviation. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column tables.}
+\strong{conferences: one row per conference}\tabular{lll}{
+   col_name \tab type \tab description \cr
+   id \tab integer \tab Conference id. \cr
+   name \tab character \tab Conference name. \cr
+   abbreviation \tab character \tab Conference abbreviation. \cr
+}
 }
 \description{
 \strong{Get the full team directory and conference metadata for a season from the CollegeBasketballData API.}
