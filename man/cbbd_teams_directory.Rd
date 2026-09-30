@@ -50,7 +50,8 @@ Both carry the season as attributes: \code{season} (integer) and
 }
 \seealso{
 Other CBD Teams Functions:
-\code{\link[=cbbd_teams]{cbbd_teams()}}
+\code{\link[=cbbd_teams]{cbbd_teams()}},
+\code{\link[=cbbd_teams_season_overview]{cbbd_teams_season_overview()}}
 }
 \concept{CBD Teams Functions}
 \keyword{CBD}

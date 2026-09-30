@@ -71,7 +71,8 @@ nested list of roster players:
 }
 \seealso{
 Other CBD Teams Functions:
-\code{\link[=cbbd_teams_directory]{cbbd_teams_directory()}}
+\code{\link[=cbbd_teams_directory]{cbbd_teams_directory()}},
+\code{\link[=cbbd_teams_season_overview]{cbbd_teams_season_overview()}}
 }
 \concept{CBD Teams Functions}
 \keyword{CBD}
