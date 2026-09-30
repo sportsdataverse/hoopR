@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 02:06:43 UTC
+#> ℹ Data updated: 2026-09-30 03:47:15 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -216,14 +216,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 02:06:43 UTC
+#> ℹ Data updated: 2026-09-30 03:47:15 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
-#> 2  5.00e7 Story NBA pre… "The NBA r… 2026-09-… FALSE   ESPN … https:/… 46       
-#> 3  5.01e7 Head… Sources… "The NBA i… 2026-09-… FALSE   Shams… https:/… 46       
-#> 4  5.01e7 Head… Knicks … "The Knick… 2026-09-… FALSE   NA     https:/… 46       
-#> 5  5.01e7 Head… Ex-NBA … "Former NB… 2026-09-… FALSE   Micha… https:/… 46       
+#> 1  5.01e7 Head… NBA iss… "The NBA h… 2026-09-… FALSE   Ben G… https:/… 46       
+#> 2  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
+#> 3  5.00e7 Story NBA pre… "The NBA r… 2026-09-… FALSE   ESPN … https:/… 46       
+#> 4  5.01e7 Head… Sources… "The NBA i… 2026-09-… FALSE   Shams… https:/… 46       
+#> 5  5.01e7 Head… Knicks … "The Knick… 2026-09-… FALSE   NA     https:/… 46       
 # }
 ```

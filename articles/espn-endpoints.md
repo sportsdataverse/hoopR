@@ -494,7 +494,7 @@ nba_athletes <- espn_nba_athletes_index(
   season = 2025, active = TRUE, limit = 5000
 )
 nrow(nba_athletes)
-#> [1] 699
+#> [1] 700
 head(nba_athletes[, c("display_name", "position_name", "team_name")])
 #> Error in `nba_athletes[, c("display_name", "position_name", "team_name")]`:
 #> ! Can't subset columns that don't exist.
@@ -885,11 +885,11 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```

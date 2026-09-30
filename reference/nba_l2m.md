@@ -18,9 +18,10 @@ nba_l2m(game_id, proxy = NULL)
 
 - game_id:
 
-  character or numeric. A single all-digit NBA game id; zero-padded to
-  10 digits automatically (e.g. `42500405` becomes `"0042500405"`).
-  Anything else errors before any request is made.
+  character or numeric. A single all-digit NBA game id of at most 10
+  digits; zero-padded to 10 digits automatically (e.g. `42500405`
+  becomes `"0042500405"`). Anything else errors before any request is
+  made.
 
 - proxy:
 
@@ -132,7 +133,7 @@ Saiem Gilani
     head(l2m$calls)
   })
 #> ── NBA L2M calls (official.nba.com) ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 02:09:58 UTC
+#> ℹ Data updated: 2026-09-30 03:50:27 UTC
 #> # A tibble: 6 × 19
 #>   game_id    period period_name pc_time seconds_remaining call_type  call  type 
 #>   <chr>       <int> <chr>       <chr>               <dbl> <chr>      <chr> <chr>
