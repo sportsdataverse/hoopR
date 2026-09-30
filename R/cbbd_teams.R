@@ -459,7 +459,9 @@ cbbd_teams_season_overview <- function(team_id, season = most_recent_mbb_season(
     expr = {
       data <- .cbbd_get(paste0("/teams/", team_id, "/season/", season, "/overview"))
       df <- list(
-        team = .cbbd_record_tbl(c(data[c("teamId", "season", "seasonLabel", "generatedAt", "formatVersion")], data$team)),
+        # intersect(): a field upstream drops would otherwise come back as an
+        # NA-named NULL and flatten into a junk `na` column
+        team = .cbbd_record_tbl(c(data[intersect(c("teamId", "season", "seasonLabel", "generatedAt", "formatVersion"), names(data))], data$team)),
         record = .cbbd_record_tbl(data$record),
         ratings = .cbbd_record_tbl(data$ratings),
         efficiency = .cbbd_record_tbl(data$efficiency),
