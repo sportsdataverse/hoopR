@@ -51,10 +51,10 @@ Other NBA Dictionary Functions:
 ``` r
 # \donttest{
   try(nba_team_dict())
-#> ✖ 2026-09-30 04:00:36.745301: Invalid arguments or no player index data for 2025-26 available!
+#> ✖ 2026-09-30 05:55:00.669748: Invalid arguments or no player index data for 2025-26 available!
 #> ✖ Args: college = "", country = "", draft_pick = "", draft_round = "", draft_year = "", height = "", historical = 0, league_id = "00", season = "2025-26", season_type = "Regular Season", team_id = "0", weight = ""
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-09-30 04:00:36.757573: No NBA team dictionary available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
+#> ✖ 2026-09-30 05:55:00.679172: No NBA team dictionary available!
 #> ✖ Args: season = "2025-26"
 #> ✖ Error: No player index returned
 #> data frame with 0 columns and 0 rows

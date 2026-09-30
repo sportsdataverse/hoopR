@@ -196,7 +196,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_seasons()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Seasons from ESPN.com ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 03:47:40 UTC
+#> ℹ Data updated: 2026-09-30 05:42:01 UTC
 #> # A tibble: 1 × 5
 #>   season start_date end_date display_name season_type_count
 #>    <int> <chr>      <chr>    <chr>                    <int>
@@ -205,7 +205,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_seasons()
 #> ── ESPN NBA Seasons from ESPN.com ────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 03:47:40 UTC
+#> ℹ Data updated: 2026-09-30 05:42:01 UTC
 #> # A tibble: 1 × 5
 #>   season start_date end_date display_name season_type_count
 #>    <int> <chr>      <chr>    <chr>                    <int>

@@ -137,19 +137,25 @@ Get a college basketball team roster from the CollegeBasketballData API."><meta 
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>CollegeBasketballData team id.</td></tr><tr><td>source_id</td><td>character</td><td>Source (ESPN) team id.</td></tr><tr><td>school</td><td>character</td><td>School name.</td></tr><tr><td>mascot</td><td>character</td><td>Team mascot.</td></tr><tr><td>abbreviation</td><td>character</td><td>Team abbreviation.</td></tr><tr><td>display_name</td><td>character</td><td>Full team display name.</td></tr><tr><td>short_display_name</td><td>character</td><td>Short team display name.</td></tr><tr><td>primary_color</td><td>character</td><td>Primary team color (hex).</td></tr><tr><td>secondary_color</td><td>character</td><td>Secondary team color (hex).</td></tr><tr><td>current_venue_id</td><td>integer</td><td>Current home venue id.</td></tr><tr><td>current_venue</td><td>character</td><td>Current home venue name.</td></tr><tr><td>current_city</td><td>character</td><td>Current home venue city.</td></tr><tr><td>current_state</td><td>character</td><td>Current home venue state.</td></tr><tr><td>conference_id</td><td>integer</td><td>Conference id.</td></tr><tr><td>conference</td><td>character</td><td>Conference name.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per team. The <code>players</code> column is a
 nested list of roster players:</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team_id</td><td>integer</td><td>CollegeBasketballData team id.</td></tr><tr><td>team_source_id</td><td>character</td><td>Source (ESPN) team id.</td></tr><tr><td>team</td><td>character</td><td>Team name.</td></tr><tr><td>conference</td><td>character</td><td>Conference name.</td></tr><tr><td>season</td><td>integer</td><td>Season (4-digit ending-year).</td></tr><tr><td>players</td><td>list</td><td>Nested list of roster players.</td></tr></table></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other CBD Teams Functions:
+<code><a href="cbbd_teams_directory.html">cbbd_teams_directory()</a></code>,
+<code><a href="cbbd_teams_season_overview.html">cbbd_teams_season_overview()</a></code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_teams</span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-30 03:46:36.246904: Invalid arguments or no teams data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-30 05:40:50.188851: Invalid arguments or no teams data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: conference = "ACC", season = 2026</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_teams_roster</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-30 03:46:36.257228: Invalid arguments or no roster data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-09-30 05:40:50.206856: Invalid arguments or no roster data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: season = 2024, team = "Duke"</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>

@@ -2126,6 +2126,16 @@ Functions exported by hoopR to access the CollegeBasketballData API
 
   **CBD Teams**
 
+- [`cbbd_teams_directory()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_directory.md)
+  :
+
+  **CBD Team Directory**
+
+- [`cbbd_teams_season_overview()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_season_overview.md)
+  :
+
+  **CBD Team Season Overview**
+
 - [`cbbd_venues()`](https://hoopR.sportsdataverse.org/reference/cbbd_venues.md)
   :
 

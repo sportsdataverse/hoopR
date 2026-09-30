@@ -68,19 +68,25 @@ nested list of roster players:
 | season         | integer   | Season (4-digit ending-year).  |
 | players        | list      | Nested list of roster players. |
 
+## See also
+
+Other CBD Teams Functions:
+[`cbbd_teams_directory()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_directory.md),
+[`cbbd_teams_season_overview()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_season_overview.md)
+
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_teams(conference = "ACC"))
-#> ✖ 2026-09-30 03:46:36.246904: Invalid arguments or no teams data available!
+#> ✖ 2026-09-30 05:40:50.188851: Invalid arguments or no teams data available!
 #> ✖ Args: conference = "ACC", season = 2026
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_teams_roster(season = 2024, team = "Duke"))
-#> ✖ 2026-09-30 03:46:36.257228: Invalid arguments or no roster data available!
+#> ✖ 2026-09-30 05:40:50.206856: Invalid arguments or no roster data available!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

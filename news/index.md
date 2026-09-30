@@ -2,6 +2,18 @@
 
 ## **hoopR 3.1.0.9000 (development version)**
 
+- Added
+  [`cbbd_teams_directory()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_directory.md)
+  (CBD `/teams/directory`, upstream v1.29.0): the season’s full team
+  directory, as a named list of `teams` and `conferences`.
+
+- Added
+  [`cbbd_teams_season_overview()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_season_overview.md)
+  (CBD `/teams/{teamId}/season/{season}/overview`, upstream v1.29.0): a
+  stored full-season team overview, as a named list of `team`, `record`,
+  `ratings`, `efficiency`, `shooting`, `players`, `schedule` and
+  `sources` tibbles.
+
 - [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
   failed on every call with “invalid first argument” and returned an
   empty tibble: it recorded its arguments with

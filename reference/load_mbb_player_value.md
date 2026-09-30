@@ -172,19 +172,19 @@ Saiem Gilani
 # \donttest{
   try(load_mbb_player_value(seasons = most_recent_mbb_season()))
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 9,990 × 8
-#>    player_id player              season team_id   min box_obpm box_dbpm box_bpm
-#>    <chr>     <chr>                <int> <chr>   <dbl>    <dbl>    <dbl>   <dbl>
-#>  1 5312013   Evan Smith            2026 153         8     26.7    -5.55    21.1
-#>  2 5317517   Kyler Penco           2026 2823        5     27.3    -6.88    20.5
-#>  3 5173645   Jason Jakstys         2026 356        47     15.9     4.27    20.1
-#>  4 5317261   Jacob Szep            2026 2018        3     23.4    -3.70    19.7
-#>  5 5312970   Christian Dedivanaj   2026 189        12     16.1     3.06    19.2
-#>  6 5319245   Ryder Block           2026 2913        7     20.1    -1.02    19.1
-#>  7 5257670   Jawan Browder         2026 2207       10     13.7     4.57    18.2
-#>  8 5184076   Ryan Kenney           2026 2591        2     22.6    -4.46    18.2
-#>  9 5325921   Gavin Olson           2026 2600        2     20.0    -2.36    17.6
-#> 10 5258977   Karrington Wallace    2026 420         9     21.7    -4.21    17.5
+#> # A tibble: 9,990 × 9
+#>    player_id player     season team_id   min box_obpm box_dbpm box_bpm qualified
+#>    <chr>     <chr>       <int> <chr>   <dbl>    <dbl>    <dbl>   <dbl> <lgl>    
+#>  1 5312013   Evan Smith   2026 153         8     26.7    -5.55    21.1 FALSE    
+#>  2 5317517   Kyler Pen…   2026 2823        5     27.3    -6.88    20.5 FALSE    
+#>  3 5173645   Jason Jak…   2026 356        47     15.9     4.27    20.1 FALSE    
+#>  4 5317261   Jacob Szep   2026 2018        3     23.4    -3.70    19.7 FALSE    
+#>  5 5312970   Christian…   2026 189        12     16.1     3.06    19.2 FALSE    
+#>  6 5319245   Ryder Blo…   2026 2913        7     20.1    -1.02    19.1 FALSE    
+#>  7 5257670   Jawan Bro…   2026 2207       10     13.7     4.57    18.2 FALSE    
+#>  8 5184076   Ryan Kenn…   2026 2591        2     22.6    -4.46    18.2 FALSE    
+#>  9 5325921   Gavin Ols…   2026 2600        2     20.0    -2.36    17.6 FALSE    
+#> 10 5258977   Karringto…   2026 420         9     21.7    -4.21    17.5 FALSE    
 #> # ℹ 9,980 more rows
 # }
 # \donttest{

@@ -121,10 +121,10 @@ Saiem Gilani
     )
     print(df[1:5, c("PLAYER_ID", "PLAYER_NAME", "DRIVES", "DRIVE_FG_PCT")])
   })
-#> ✖ 2026-09-30 04:04:38.99791: Invalid arguments or no league dashboard player-tracking stats data for 2022-23 available!
+#> ✖ 2026-09-30 05:59:02.646214: Invalid arguments or no league dashboard player-tracking stats data for 2022-23 available!
 #> ✖ Args: college = "", conference = "", country = "", date_from = "", date_to = "", division = "", draft_pick = "", draft_year = "", game_scope = "", height = "", last_n_games = 0, league_id = "00", location = "", month = 0, opponent_team_id = 0, outcome = "", po_round = "", per_mode = "Totals", period = "", player_experience = "", player_or_team = "Player", player_position = "", pt_measure_type = "Drives", season = "2022-23", season_segment = "", season_type = "Regular Season", starter_bench = "", team_id = "", vs_conference = "", vs_division = "", weight = ""
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-09-30 04:05:39.034734: Invalid arguments or no league dashboard player-tracking stats data for 2023-24 available!
+#> ✖ 2026-09-30 06:00:02.67976: Invalid arguments or no league dashboard player-tracking stats data for 2023-24 available!
 #> ✖ Args: college = "", conference = "", country = "", date_from = "", date_to = "", division = "", draft_pick = "", draft_year = "", game_scope = "", height = "", last_n_games = 0, league_id = "00", location = "", month = 0, opponent_team_id = 0, outcome = "", po_round = "", per_mode = "Totals", period = "", player_experience = "", player_or_team = "Player", player_position = "", pt_measure_type = "Drives", season = "2023-24", season_segment = "", season_type = "Regular Season", starter_bench = "", team_id = "", vs_conference = "", vs_division = "", weight = ""
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
 #> Error in df[1:5, c("PLAYER_ID", "PLAYER_NAME", "DRIVES", "DRIVE_FG_PCT")] : 
