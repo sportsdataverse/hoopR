@@ -98,7 +98,7 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
     league, season, game_id
   )
 
-  plays_df <- data.frame()
+  plays_df <- .empty_hoopR_data("NBA Play-by-Play Information from NBA.com")
 
   tryCatch(
     expr = {
@@ -113,6 +113,11 @@ nba_data_pbp <- function(game_id = "0021900001", ...) {
         .resp_text()
 
       data <- jsonlite::fromJSON(resp)$g
+      # A changed or error payload without the g.pd play-by-play list is a failed
+      # fetch, never the empty shell below.
+      if (!is.list(data) || !"pd" %in% names(data)) {
+        stop("the data.nba.com payload has no g.pd play-by-play list")
+      }
       # data.nba.com stopped updating after 2024-25: later games come back as an
       # empty shell (`pd: []`) with no plays to parse.
       if (length(data$pd) == 0) {

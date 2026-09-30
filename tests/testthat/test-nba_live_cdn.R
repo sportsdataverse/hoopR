@@ -134,6 +134,18 @@ test_that("nba_data_pbp() parses data.nba.com and reports its empty 2025-26 shel
 
   expect_message(empty <- nba_data_pbp(game_id = "0022500001"), "2016-17 through 2024-25")
   expect_equal(nrow(empty), 0)
+  expect_s3_class(empty, "hoopR_data")
+})
+
+test_that("nba_data_pbp() reports a payload without g.pd, not an empty shell", {
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      httr2::response(200L, headers = list(`Content-Type` = "application/json"),
+                      body = charToRaw('{"g":{"mid":1,"gid":"0022500001"}}'))
+    }
+  )
+  expect_message(out <- nba_data_pbp(game_id = "0022500001"), "no g.pd")
+  expect_equal(nrow(out), 0)
 })
 
 test_that("a warning while parsing no longer throws the result away", {
@@ -209,6 +221,8 @@ test_that("nba_schedule() returns the requested league's schedule, never another
   body <- schedule("10", "1022600001")
   expect_message(nba_schedule(league_id = "10", season = "2025"), "WNBA CDN schedule is for season 2026-27, not 2025")
   expect_message(nba_schedule(league_id = "10", season = "2025"), "load_wnba_schedule")
+  # The default season is not compared, so a default WNBA call stays quiet.
+  expect_no_message(nba_schedule(league_id = "10"))
 })
 
 test_that("nba_schedule() and nba_todays_scoreboard() keep their result through a parse warning", {

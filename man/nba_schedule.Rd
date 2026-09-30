@@ -548,8 +548,8 @@ cdn.wnba.com and \code{'20'} (G League) from cdn-gleague.nba.com. Any other
 \code{league_id} is an error. \code{season_type_description} labels the id's third
 digit; \code{'5'} is \code{"Play-In Game"} only for the NBA and \code{NA} for the other
 leagues, which use it for other events. The WNBA's \code{season} is a single
-year (e.g. \code{"2026"}); a different \code{season} only prints a message, since the
-CDN serves the current season alone.
+year (e.g. \code{"2026"}). The CDN serves the current season alone, so a \code{season}
+you pass that differs from it prints a message; the default is not compared.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
  nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))

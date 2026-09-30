@@ -76,8 +76,8 @@ NULL
 #' `league_id` is an error. `season_type_description` labels the id's third
 #' digit; `'5'` is `"Play-In Game"` only for the NBA and `NA` for the other
 #' leagues, which use it for other events. The WNBA's `season` is a single
-#' year (e.g. `"2026"`); a different `season` only prints a message, since the
-#' CDN serves the current season alone.
+#' year (e.g. `"2026"`). The CDN serves the current season alone, so a `season`
+#' you pass that differs from it prints a message; the default is not compared.
 #'
 #' ```r
 #'  nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
@@ -88,6 +88,9 @@ nba_schedule <- function(
     season = year_to_season(most_recent_nba_season() - 1),
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
+  # Only a season the caller asked for is compared with the CDN's: the default
+  # is NBA-style "YYYY-YY", which never matches the WNBA's "YYYY".
+  season_supplied <- !missing(season)
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -127,7 +130,7 @@ nba_schedule <- function(
         stop(glue::glue("{cdn_host} returned leagueId {league_sched$leagueId %||% 'NULL'}, not {league_id}"))
       }
 
-      if (!is.null(cdn_season) &&
+      if (season_supplied && !is.null(cdn_season) &&
           !identical(as.character(season), as.character(cdn_season))) {
         older <- c(
           "00" = "For historical seasons use `load_nba_schedule(seasons = ...)`.",
