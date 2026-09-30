@@ -69,6 +69,11 @@ nested list of roster players:
   try(cbbd_teams_roster(season = 2024, team = "Duke"))
 }
 }
+\seealso{
+Other CBD Teams Functions:
+\code{\link[=cbbd_teams_directory]{cbbd_teams_directory()}},
+\code{\link[=cbbd_teams_season_overview]{cbbd_teams_season_overview()}}
+}
 \concept{CBD Teams Functions}
 \keyword{CBD}
 \keyword{Teams}
