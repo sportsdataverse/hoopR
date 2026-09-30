@@ -52,13 +52,18 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-build_player_roster.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-capture_args.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-cbbd_get.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-classify_official_403.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-ext_html.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-interp_braces.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-kp_get_page.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-kp_headers_list.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-kp_request.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-next_data.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-official_nba_get.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-parse_currency.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-parse_nba_l2m.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-parse_nba_l2m_games.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/dot-parse_nba_referee_assignments.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-players_on_court.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-players_on_court_v3.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/dot-realgm_doc.html</loc></url>
@@ -266,6 +271,8 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_homepagev2_homepagestat1_schema.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_infographicfanduelplayer.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_iststandings.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_l2m.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_l2m_games.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot_leaguedashptshots_schema.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch_leaguedashteamclutch_schema.html</loc></url>
@@ -280,6 +287,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_live_pbp_schema.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_net_rating.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_offensive_rating.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_officiating.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_oreb_pct.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_pace.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_pbp_schema.html</loc></url>
@@ -294,6 +302,7 @@
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_possession_lineups.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_possessions.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_rapm.html</loc></url>
+<url><loc>https://hoopR.sportsdataverse.org/reference/nba_referee_assignments.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_schedule.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_schedule_crosswalk.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/nba_scoreboard_eastconfstandingsbyday_schema.html</loc></url>

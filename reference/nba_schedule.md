@@ -128,8 +128,10 @@ Returns a tibble with the following columns:
 | away_team_losses | integer | Away team's team losses. |
 | away_team_score | integer | Away team's score. |
 | away_team_seed | integer | Away team's team seed. |
-| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
-| league_id | character | League identifier ('10' = WNBA). |
+| season | character | Season of the schedule: 'YYYY-YY' for the NBA and G League, a 4-digit year for the WNBA. |
+| league_id | character | League identifier ('00' = NBA, '10' = WNBA, '20' = G League). |
+| season_type_id | character | Third digit of game_id (1 pre-season, 2 regular season, 3 all-star, 4 playoffs, 5 see details). |
+| season_type_description | character | Label for season_type_id; NA where the digit has no label (see details). |
 
 Return a named list of data frames: Available, EastConfStandingsByDay,
 GameHeader, LastMeeting, LineScore, SeriesStandings,
@@ -571,6 +573,16 @@ BroadcasterList
 | region_id                | character | Unique identifier for region.          |
 
 ## Details
+
+`nba_schedule()` reads the current season's schedule for each league
+from its own CDN host: `'00'` (NBA) from cdn.nba.com, `'10'` (WNBA) from
+cdn.wnba.com and `'20'` (G League) from cdn-gleague.nba.com. Any other
+`league_id` is an error. `season_type_description` labels the id's third
+digit; `'5'` is `"Play-In Game"` only for the NBA and `NA` for the other
+leagues, which use it for other events. The WNBA's `season` is a single
+year (e.g. `"2026"`). The CDN serves the current season alone, so a
+`season` you pass that differs from it prints a message; the default is
+not compared.
 
      nba_schedule(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
      nba_schedule(league_id = '20', season = year_to_season(most_recent_nba_season() - 1))

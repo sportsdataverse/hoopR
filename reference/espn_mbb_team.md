@@ -388,7 +388,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:06 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -401,7 +401,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ──────────────────
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:06 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                   short_name 
 #>   <chr>     <chr>             <chr>                                  <chr>      
@@ -409,7 +409,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:06 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -422,21 +422,25 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
-#> # A tibble: 11 × 15
+#> ℹ Data updated: 2026-09-30 02:07:06 UTC
+#> # A tibble: 15 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 5041937    Cayden B… 2      G               Guard         "6' 4… 205 l… NA   
-#>  2 5341547    Brock Da… 50     G               Guard         "6' 4… 195 l… NA   
-#>  3 4711256    Caleb Fo… 1      G               Guard         "6' 5… 205 l… NA   
-#>  4 4873107    Darren H… 8      G               Guard         "6' 5… 195 l… NA   
-#>  5 5144124    Nikolas … 14     G               Guard         "6' 8… 215 l… NA   
-#>  6 4873209    Patrick … 21     C               Center        "6' 1… 250 l… NA   
-#>  7 5287474    Dame Sarr 7      G               Guard         "6' 8… 190 l… NA   
-#>  8 4888720    Jack Sco… 20     G               Guard         "6' 6… 220 l… NA   
-#>  9 4432321    Cameron … 13     G               Guard         "6' 6… 205 l… NA   
-#> 10 5107141    Ifeanyi … 15     C               Center        "6' 1… 240 l… NA   
-#> 11 5144150    Sebastia… 5      G               Guard         "6' 8… 220 l… NA   
+#>  1 5454779    Nick Arn… 55     G               Guard         "5' 1… 175 l… NA   
+#>  2 5103630    John Bla… 13     G               Guard         "6' 5… 205 l… NA   
+#>  3 5041937    Cayden B… 2      G               Guard         "6' 4… 195 l… NA   
+#>  4 5347090    Joaquim … 30     C               Center        "7' 2… 250 l… NA   
+#>  5 5341547    Brock Da… 50     G               Guard         "6' 5… 195 l… NA   
+#>  6 4711256    Caleb Fo… 1      G               Guard         "6' 5… 200 l… NA   
+#>  7 5287512    Bryson H… 12     G               Guard         "6' 4… 190 l… NA   
+#>  8 5323930    Maxime M… 15     C               Center        "7' 1… 225 l… NA   
+#>  9 4873209    Patrick … 21     C               Center        "6' 1… 250 l… NA   
+#> 10 5144476    Deron Ri… 3      G               Guard         "6' 3… 185 l… NA   
+#> 11 5287474    Dame Sarr 7      F               Forward       "6' 8… 200 l… NA   
+#> 12 5176309    Drew Sch… 8      F               Forward       "6' 1… 240 l… NA   
+#> 13 5176286    Jacob Th… 26     G               Guard         "6' 4… 205 l… NA   
+#> 14 5144150    Sebastia… 5      F               Forward       "6' 8… 220 l… NA   
+#> 15 5210407    Cameron … 14     F               Forward       "7' 0… 215 l… NA   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }
@@ -447,7 +451,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:06 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -464,7 +468,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -474,7 +478,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
@@ -484,7 +488,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                   short_name
 #>   <chr>     <chr>             <chr>                                  <chr>     
@@ -492,7 +496,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -505,30 +509,21 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
-#> # A tibble: 20 × 15
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
+#> # A tibble: 21 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 5113969    Cameron … NA     G               Guard         "6' 5… 184 l… 21   
+#>  1 5113969    Cameron … 43     G               Guard         "6' 5… 184 l… 21   
 #>  2 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
-#>  3 4397014    Quentin … NA     G               Guard         "6' 4… 210 l… 26   
-#>  4 4868423    Jaden Ha… NA     G               Guard         "6' 3… 198 l… 24   
+#>  3 4397014    Quentin … 5      G               Guard         "6' 4… 210 l… 26   
+#>  4 4868423    Jaden Ha… 7      G               Guard         "6' 3… 198 l… 24   
 #>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 21   
-#>  6 4710770    Meechie … NA     G               Guard         "6' 1… 200 l… 24   
-#>  7 4433136    Walker K… NA     C               Center        "7' 2… 245 l… 25   
+#>  6 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
+#>  7 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
 #>  8 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
-#>  9 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
-#> 10 3155535    Kevon Lo… NA     F               Forward       "6' 9… 222 l… 30   
-#> 11 4278580    Sandro M… NA     F               Forward       "6' 9… 240 l… 27   
-#> 12 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
-#> 13 5114350    AK Okere… NA     F               Forward       "6' 7… 244 l… 23   
-#> 14 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
-#> 15 5105598    Chase Ro… 29     G               Guard         "6' 5… 210 l… 23   
-#> 16 4277811    Collin S… NA     G               Guard         "6' 3… 190 l… 27   
-#> 17 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
-#> 18 3907498    Matisse … NA     G               Guard         "6' 5… 202 l… 29   
-#> 19 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
-#> 20 4433137    Ziaire W… NA     F               Forward       "6' 9… 185 l… 25   
+#>  9 5107258    William … 45     F               Forward       "6' 9… 230 l… 22   
+#> 10 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
+#> # ℹ 11 more rows
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }
@@ -539,7 +534,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:19 UTC
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

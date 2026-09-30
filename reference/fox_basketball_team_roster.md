@@ -47,7 +47,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_roster("1"))
 #> ── Fox Sports NBA roster ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:41 UTC
+#> ℹ Data updated: 2026-09-30 02:07:27 UTC
 #> # A tibble: 19 × 9
 #>    team_id position_group player       pos   age   ht    wt    school athlete_id
 #>    <chr>   <chr>          <chr>        <chr> <chr> <chr> <chr> <chr>  <chr>     
@@ -63,7 +63,7 @@ Saiem Gilani
 #> 10 1       FORWARD        Paul George  PF    36    "6'8… 230 … Fresn… 1611      
 #> 11 1       FORWARD        Ron Harper … SF    26    "6'5… 233 … Rutge… 3690      
 #> 12 1       FORWARD        Sam Hauser   PF    28    "6'7… 217 … Virgi… 3603      
-#> 13 1       FORWARD        Dillon Mitc… SF    22    "6'8… 210 … St. J… 6349      
+#> 13 1       FORWARD        Dillon Mitc… SF    22    "6'8… 205 … St. J… 6349      
 #> 14 1       FORWARD        Jayson Tatum PF    28    "6'8… 210 … Duke   2343      
 #> 15 1       FORWARD        Jordan Walsh PF    22    "6'6… 205 … Arkan… 3863      
 #> 16 1       FORWARD        Amari Willi… PF    24    "6'1… 250 … Kentu… 4171      

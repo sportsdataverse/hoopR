@@ -16,6 +16,7 @@
 - [Commit Convention](#commit-convention)
 - [Cross-Source Crosswalk Surface](#cross-source-crosswalk-surface)
 - [Common Pitfalls](#common-pitfalls)
+- [Cheat sheet](#cheat-sheet)
 
 ## Package Overview
 
@@ -311,6 +312,39 @@ Initialize to the appropriate empty value —
 [`data.frame()`](https://rdrr.io/r/base/data.frame.html) for tibble
 returns.
 
+### Officiating errors are classed conditions (sanctioned exception)
+
+`R/nba_officiating.R`
+([`nba_l2m()`](https://hoopR.sportsdataverse.org/reference/nba_l2m.md),
+[`nba_l2m_games()`](https://hoopR.sportsdataverse.org/reference/nba_l2m_games.md),
+[`nba_referee_assignments()`](https://hoopR.sportsdataverse.org/reference/nba_referee_assignments.md))
+deliberately does **not** follow the
+tryCatch-and-return-an-empty-fallback pattern above. A failed fetch
+**raises** a classed condition instead of returning an empty
+list/tibble: `hoopR_no_data` when official.nba.com’s answer is
+definitively “nothing here” (a 404, or a 403 with an S3 `AccessDenied`
+body), `hoopR_fetch_error` when the fetch itself failed or is
+unclassifiable (a network/transport error, a non-403 non-404 status, a
+403 Akamai block) or a 200 response is not the expected payload (not
+valid JSON or JSON that is not an object; an L2M report without its
+one-row `game` table or with a `game`/`l2m`/`stats` table of the wrong
+shape; a referee payload whose league `Table`/`Table1` rows are missing
+or malformed, including a `Table` row without a `game_id`; a listing
+page without the “Last Two Minute” marker; or a field the parser cannot
+read, re-raised with the parser’s error as `parent`). Both inherit from
+`hoopR_error` so callers can catch either with one class. This mirrors
+sdv-py’s `NoDataError`/`AssetFetchError` vocabulary
+(`sportsdataverse/errors.py`) on purpose — the R and Python officiating
+surfaces are parity-tested against the same fixtures, and collapsing a
+failed fetch into a silently-empty return would make that parity
+untestable and would hide a rate limit or a WAF block as if it were “no
+report for this game.” Do not “fix” this back to the empty-fallback
+convention. Caller mistakes (a non-digit `game_id`, a bad `date`, a
+malformed `proxy`) are ordinary errors raised before any request, not
+`hoopR_error`s: only
+[`httr2::req_perform()`](https://httr2.r-lib.org/reference/req_perform.html)
+sits inside the transport `tryCatch`.
+
 ### Column Drift Resilience
 
 Both the NBA Stats API and ESPN’s JSON payloads add columns over time
@@ -605,12 +639,14 @@ committing**:
 
 - **`NEWS.md`** — authoritative changelog for downstream users; rendered
   into the pkgdown changelog. **All new bullets go under the most recent
-  unreleased version heading** (currently `# **hoopR 3.1.0**`). Do NOT
-  create a new version section ahead of release. Add to or extend an
-  existing subsection (`### Bug Fixes`, `### Deprecations`,
+  unreleased version heading** (currently
+  `# **hoopR 3.1.0.9000 (development version)**`). Do NOT create a new
+  version section ahead of release. Add to or extend an existing
+  subsection (`### Bug Fixes`, `### Deprecations`,
   `### Stability and Test Robustness`, etc.) instead of starting a new
-  one when the change is incremental. Once `3.1.0` ships to CRAN, the
-  development version gets its own heading and the rule rolls forward.
+  one when the change is incremental. When the next version ships to
+  CRAN, rename that heading to the released version and open a new
+  development heading above it.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral
   or user-visible change you add to `NEWS.md` should also be reflected

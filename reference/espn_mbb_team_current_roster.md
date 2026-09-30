@@ -180,8 +180,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:20 UTC
-#> # A tibble: 11 × 59
+#> ℹ Data updated: 2026-09-30 02:07:07 UTC
+#> # A tibble: 15 × 59
 #>    team_id team_uid        team_slug       team_location team_name team_nickname
 #>      <int> <chr>           <chr>           <chr>         <chr>     <chr>        
 #>  1     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
@@ -195,6 +195,10 @@ try(espn_mbb_team_current_roster(team_id = 150))
 #>  9     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
 #> 10     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
 #> 11     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> 12     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> 13     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> 14     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
+#> 15     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
 #> # ℹ 53 more variables: team_abbreviation <chr>, team_display_name <chr>,
 #> #   team_short_name <chr>, team_color <chr>, team_alternate_color <chr>,
 #> #   team_is_active <lgl>, standingSummary <chr>, logo <chr>, logo_dark <chr>,
@@ -206,8 +210,8 @@ try(espn_mbb_team_current_roster(team_id = 150))
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-27 21:22:20 UTC
-#> # A tibble: 20 × 104
+#> ℹ Data updated: 2026-09-30 02:07:08 UTC
+#> # A tibble: 21 × 104
 #>    team_id team_uid       team_slug    team_location team_name team_abbreviation
 #>      <int> <chr>          <chr>        <chr>         <chr>     <chr>            
 #>  1      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
@@ -220,22 +224,12 @@ try(espn_nba_team_current_roster(team_id = 13))
 #>  8      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
 #>  9      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
 #> 10      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 11      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 12      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 13      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 14      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 15      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 16      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 17      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 18      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 19      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 20      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
+#> # ℹ 11 more rows
 #> # ℹ 98 more variables: team_display_name <chr>, team_short_name <chr>,
 #> #   team_color <chr>, team_alternate_color <chr>, team_is_active <lgl>,
 #> #   franchise..ref <chr>, franchise.id <chr>, franchise.uid <chr>,
 #> #   franchise.slug <chr>, franchise.location <chr>, franchise.name <chr>,
 #> #   franchise.abbreviation <chr>, franchise.displayName <chr>,
-#> #   franchise.shortDisplayName <chr>, franchise.color <chr>,
-#> #   franchise.isActive <lgl>, franchise.venue..ref <chr>, …
+#> #   franchise.shortDisplayName <chr>, franchise.color <chr>, …
 # }
 ```

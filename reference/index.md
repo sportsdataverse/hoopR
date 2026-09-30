@@ -1621,6 +1621,13 @@ Functions exported by hoopR to access the NBA Stats API
 
   **Get NBA Stats API League Game Log**
 
+- [`nba_l2m()`](https://hoopR.sportsdataverse.org/reference/nba_l2m.md)
+  : Fetch an NBA Last Two Minute (L2M) report
+
+- [`nba_l2m_games()`](https://hoopR.sportsdataverse.org/reference/nba_l2m_games.md)
+  : Fetch the list of NBA games with a Last Two Minute report for a
+  season
+
 - [`nba_leaguedashoppptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md)
   [`nba_leaguedashplayerbiostats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md)
   [`nba_leaguedashplayerclutch()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md)
@@ -1732,6 +1739,9 @@ Functions exported by hoopR to access the NBA Stats API
   :
 
   **Fit a Ridge-Regression RAPM Model from Possession Data**
+
+- [`nba_referee_assignments()`](https://hoopR.sportsdataverse.org/reference/nba_referee_assignments.md)
+  : Fetch NBA/G-League/WNBA referee crew assignments for a date
 
 - [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
   [`nba_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
@@ -2180,6 +2190,21 @@ defunct RotoWorld feed; Basketball-Reference offers a second source.
   :
 
   **Basketball-Reference NBA Injury Report**
+
+## Officiating
+
+### NBA Officiating Functions
+
+Last Two Minute (L2M) reports and referee crew assignments, scraped from
+official.nba.com.
+
+- [`nba_l2m()`](https://hoopR.sportsdataverse.org/reference/nba_l2m.md)
+  : Fetch an NBA Last Two Minute (L2M) report
+- [`nba_l2m_games()`](https://hoopR.sportsdataverse.org/reference/nba_l2m_games.md)
+  : Fetch the list of NBA games with a Last Two Minute report for a
+  season
+- [`nba_referee_assignments()`](https://hoopR.sportsdataverse.org/reference/nba_referee_assignments.md)
+  : Fetch NBA/G-League/WNBA referee crew assignments for a date
 
 ## Basketball-Reference
 

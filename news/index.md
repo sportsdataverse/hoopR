@@ -11,6 +11,62 @@
   [`mget()`](https://rdrr.io/r/base/get.html) rejects. It records none
   now. A new offline test runs the parser on a two-row NET table built
   inline; the live test stays skipped.
+
+- [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md)
+  and
+  [`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md)
+  returned nothing on every call. They sent no browser headers, and
+  cdn-gleague.nba.com answered with a 403 “Access Denied” page. The NBA
+  CDN wrappers
+  ([`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md),
+  [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md),
+  [`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+  [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  and the two G League ones) now share one header set, which adds
+  Chrome’s client hints and fetch metadata (verified on Windows R; Linux
+  and macOS libcurl builds are unverified). The old set only worked over
+  HTTP/2. Over HTTP/1.1, which is all cdn-gleague.nba.com speaks,
+  cdn.nba.com answered it with the same 403 and cdn-gleague.nba.com with
+  its home page. New offline tests parse captured payloads from both
+  hosts. The live tests for
+  [`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md),
+  [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md)
+  and
+  [`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  used to skip when the call came back empty, so a refused request
+  passed as a skip. They fail now; the scoreboard test still skips when
+  the feed lists no games.
+
+- [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  returned the NBA schedule for every `league_id`. `"20"` read
+  `scheduleLeagueV2_2.json` on cdn.nba.com, which is a second copy of
+  the NBA’s (`leagueId` “00”), and `"10"` read the NBA file itself. Each
+  league now comes from its own CDN host: `"10"` from cdn.wnba.com,
+  `"20"` from cdn-gleague.nba.com. A payload for another league is
+  reported and returns `NULL`, and any other `league_id` is an argument
+  error. `season_type_description` labels a `5` game “Play-In Game” only
+  for the NBA; the WNBA (Commissioner’s Cup final) and the G League use
+  that digit for other events and get `NA`.
+
+- [`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  printed an “Invalid arguments” error about `unnest` on a day without
+  games. It now returns an empty result quietly; a payload with no games
+  list at all is still reported.
+
+- [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)
+  returned nothing on every call. data.nba.com answered a request
+  without browser headers with a 403 “Access Denied” page, and the
+  parser failed on the empty shell it serves for 2025-26 games. It now
+  sends the CDN header set. data.nba.com has play-by-play for 2016-17
+  through 2024-25; a later game returns an empty result with a message.
+
+- [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)
+  and the six CDN wrappers no longer discard their result when a warning
+  is raised while parsing: an empty `warning` handler in their
+  [`tryCatch()`](https://rdrr.io/r/base/conditions.html) abandoned the
+  parse at the first warning. The warning now reaches the caller along
+  with the data.
+
 - Eight new loaders read the `mbb_groups` and `nba_groups` releases on
   sportsdataverse-data, which record conference and division membership
   as it was each season rather than back-applying today’s alignment:
@@ -30,12 +86,14 @@
   `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team
   per season. Seasons are ending years. The loaders read parquet, not
   the tags’ csv copies, so `team_id` stays character.
+
 - [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
   now reads every source as of the requested season, matching the
   sportsdataverse-py builder (sportsdataverse-py
   [\#604](https://github.com/sportsdataverse/hoopR/issues/604) /
   [\#605](https://github.com/sportsdataverse/hoopR/issues/605)) that
   `hoopR-mbb-data` runs by default:
+
   - `espn_conference` is the conference each team was in that season,
     under that season’s name, from the `mbb_groups` release. It used to
     be today’s ESPN name (the 2025 WAC read “United Athletic
@@ -54,10 +112,35 @@
   - Any failed source (ESPN, Fox, Torvik, or the conference reference)
     now raises instead of being reported and returned as an empty
     tibble.
+
 - [`torvik_ratings()`](https://hoopR.sportsdataverse.org/reference/torvik_ratings.md)
   returned an empty tibble for every season from 2008 to 2021: those
   files quote one header, `fread()` warns while fixing it, and the
   warning discarded the season. That warning is no longer fatal.
+
+#### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
+
+New scrapers for official.nba.com officiating data, parity-tested
+against sdv-py’s `sportsdataverse.nba.nba_officiating` on the same
+captured fixtures:
+[`nba_l2m()`](https://hoopR.sportsdataverse.org/reference/nba_l2m.md)
+(Last Two Minute report calls/game/stats),
+[`nba_l2m_games()`](https://hoopR.sportsdataverse.org/reference/nba_l2m_games.md)
+(a season’s L2M game index), and
+[`nba_referee_assignments()`](https://hoopR.sportsdataverse.org/reference/nba_referee_assignments.md)
+(NBA/G-League/WNBA referee crew assignments + replay center officials
+for a date). Port of the scraping logic in
+[atlhawksfanatic/L2M](https://github.com/atlhawksfanatic/L2M) (MIT).
+Every returned table (calls/game/stats, listing,
+officials/replay_center) shares its column names and types with a typed
+prototype tibble, which is what the empty path returns, so
+[`dplyr::bind_rows()`](https://dplyr.tidyverse.org/reference/bind_rows.html)
+across calls (e.g. looping dates) always works; id columns
+(team/official/`pos_id`/`pos_team_id`) are integer. HTTP and payload
+failures (a 404, a blocked fetch, a 200 whose body is not the expected
+report) raise classed conditions (`hoopR_no_data` / `hoopR_fetch_error`,
+both inheriting `hoopR_error`) instead of returning an empty result,
+mirroring sdv-py’s `NoDataError`/`AssetFetchError` vocabulary.
 
 ## **hoopR 3.1.0**
 
