@@ -53,9 +53,10 @@ test_that("every NBA CDN wrapper sends the shared browser header set", {
     nba_schedule(league_id = "00")
     nbagl_live_pbp(game_id = "2052500034")
     nbagl_live_boxscore(game_id = "2052500034")
+    nba_data_pbp(game_id = "0022400001")
   })
 
-  expect_length(seen, 6)
+  expect_length(seen, 7)
   for (url in names(seen)) {
     expect_identical(seen[[url]]$headers, .nba_cdn_headers(), info = url)
   }
@@ -120,6 +121,159 @@ test_that("nbagl_live_pbp() and nbagl_live_boxscore() parse captured cdn-gleague
   expect_equal(box$game_details$away_team_score, 75)
   expect_equal(nrow(box$home_team_player_boxscore), 14)
   expect_equal(nrow(box$away_team_player_boxscore), 13)
+})
+
+test_that("nba_data_pbp() parses data.nba.com and reports its empty 2025-26 shells", {
+  # data.nba.com serves 2016-17 through 2024-25; later games come back as an
+  # empty shell (probed 2026-09-29), captured here as 0022500001.
+  local_cdn_fixtures()
+  pbp <- nba_data_pbp(game_id = "0022400001")
+  expect_s3_class(pbp, "hoopR_data")
+  expect_equal(nrow(pbp), 462)
+  expect_in(c("game_id", "period", "event_num", "clock", "description", "player1_id"), colnames(pbp))
+
+  expect_message(empty <- nba_data_pbp(game_id = "0022500001"), "2016-17 through 2024-25")
+  expect_equal(nrow(empty), 0)
+  expect_s3_class(empty, "hoopR_data")
+})
+
+test_that("nba_data_pbp() reports a payload without g.pd, not an empty shell", {
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      httr2::response(200L, headers = list(`Content-Type` = "application/json"),
+                      body = charToRaw('{"g":{"mid":1,"gid":"0022500001"}}'))
+    }
+  )
+  expect_message(out <- nba_data_pbp(game_id = "0022500001"), "no g.pd")
+  expect_equal(nrow(out), 0)
+})
+
+test_that("a warning while parsing no longer throws the result away", {
+  # The wrappers' tryCatch() used to carry an empty `warning` handler, which
+  # abandons the whole parse at the first warning and returns an empty result.
+  local_cdn_fixtures()
+  resp_text <- .resp_text
+  local_mocked_bindings(.resp_text = function(resp) {
+    warning("simulated parse warning")
+    resp_text(resp)
+  })
+  expect_warning(pbp <- nba_live_pbp(game_id = "0022500001"), "simulated")
+  expect_equal(nrow(pbp), 707)
+  expect_warning(box <- nba_live_boxscore(game_id = "0022500001"), "simulated")
+  expect_equal(nrow(box$home_team_player_boxscore), 18)
+  expect_warning(pbp <- nbagl_live_pbp(game_id = "2052500034"), "simulated")
+  expect_equal(nrow(pbp), 595)
+  expect_warning(box <- nbagl_live_boxscore(game_id = "2052500034"), "simulated")
+  expect_equal(nrow(box$home_team_player_boxscore), 14)
+  expect_warning(pbp <- nba_data_pbp(game_id = "0022400001"), "simulated")
+  expect_equal(nrow(pbp), 462)
+})
+
+test_that("nba_schedule() fetches each league from its own CDN host", {
+  seen <- character()
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      seen <<- c(seen, url)
+      stop("offline")
+    }
+  )
+  suppressMessages(for (lg in c("00", "10", "20")) nba_schedule(league_id = lg))
+  expect_identical(seen, c(
+    "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2.json",
+    "https://cdn.wnba.com/static/json/staticData/scheduleLeagueV2.json",
+    "https://cdn-gleague.nba.com/static/json/staticData/scheduleLeagueV2.json"
+  ))
+  # An unknown league is an argument error, raised before any request.
+  expect_error(nba_schedule(league_id = "15"), "league_id")
+  expect_length(seen, 3)
+})
+
+test_that("nba_schedule() returns the requested league's schedule, never another's", {
+  body <- NULL
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      httr2::response(200L, headers = list(`Content-Type` = "application/json"), body = charToRaw(body))
+    }
+  )
+  # The leagueSchedule shape of the real feed, cut to one game.
+  schedule <- function(league_id, game_id) {
+    sprintf(paste0(
+      '{"leagueSchedule":{"seasonYear":"2026-27","leagueId":"%s","gameDates":[{"gameDate":',
+      '"11/06/2026 00:00:00","games":[{"gameId":"%s","homeTeam":{"teamId":1},"awayTeam":{"teamId":2}}]}]}}'
+    ), league_id, game_id)
+  }
+  body <- schedule("20", "2052600001")
+  gl <- nba_schedule(league_id = "20", season = "2026-27")
+  expect_equal(nrow(gl), 1)
+  expect_equal(gl$league_id, "20")
+  # "5" is the NBA's Play-In only; a G League "205" game is not one.
+  expect_true(is.na(gl$season_type_description))
+
+  body <- schedule("00", "0052600001")
+  expect_equal(nba_schedule(league_id = "00", season = "2026-27")$season_type_description, "Play-In Game")
+
+  # The old bug: the NBA schedule served for a G League request.
+  body <- schedule("00", "0022600001")
+  expect_message(out <- nba_schedule(league_id = "20", season = "2026-27"), "leagueId 00, not 20")
+  expect_null(out)
+
+  # A season the CDN doesn't serve names the league and its own loader.
+  body <- schedule("10", "1022600001")
+  expect_message(nba_schedule(league_id = "10", season = "2025"), "WNBA CDN schedule is for season 2026-27, not 2025")
+  expect_message(nba_schedule(league_id = "10", season = "2025"), "load_wnba_schedule")
+  # The default season is not compared, so a default WNBA call stays quiet.
+  expect_no_message(nba_schedule(league_id = "10"))
+})
+
+test_that("nba_schedule() and nba_todays_scoreboard() keep their result through a parse warning", {
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      body <- if (grepl("schedule", url, fixed = TRUE)) {
+        paste0(
+          '{"leagueSchedule":{"seasonYear":"2026-27","leagueId":"20","gameDates":[{"gameDate":',
+          '"11/06/2026 00:00:00","games":[{"gameId":"2022600001","homeTeam":{"teamId":1},"awayTeam":{"teamId":2}}]}]}}'
+        )
+      } else {
+        '{"scoreboard":{"gameDate":"2026-09-29","leagueId":"00","games":[]}}'
+      }
+      httr2::response(200L, headers = list(`Content-Type` = "application/json"), body = charToRaw(body))
+    }
+  )
+  resp_text <- .resp_text
+  local_mocked_bindings(.resp_text = function(resp) {
+    warning("simulated parse warning")
+    resp_text(resp)
+  })
+  expect_warning(sched <- nba_schedule(league_id = "20", season = "2026-27"), "simulated")
+  expect_equal(nrow(sched), 1)
+  expect_warning(nba_todays_scoreboard(), "simulated")
+})
+
+test_that("nba_todays_scoreboard() on a day without games is empty, not an error", {
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      httr2::response(
+        200L,
+        headers = list(`Content-Type` = "application/json"),
+        body = charToRaw('{"scoreboard":{"gameDate":"2026-09-29","leagueId":"00","games":[]}}')
+      )
+    }
+  )
+  expect_silent(out <- nba_todays_scoreboard())
+  expect_equal(nrow(out), 0)
+})
+
+test_that("nba_todays_scoreboard() reports a payload without a games list, not an empty day", {
+  local_mocked_bindings(
+    .retry_request = function(url, params = list(), headers = NULL, ...) {
+      httr2::response(
+        200L,
+        headers = list(`Content-Type` = "application/json"),
+        body = charToRaw('{"scoreboard":{"gameDate":"2026-09-29","leagueId":"00"}}')
+      )
+    }
+  )
+  expect_message(nba_todays_scoreboard(), "no games list")
 })
 
 test_that("cdn.nba.com accepts the shared header set over HTTP/1.1 (live)", {

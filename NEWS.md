@@ -60,6 +60,27 @@
   to skip when the call came back empty, so a refused request passed as a
   skip. They fail now; the scoreboard test still skips when the feed lists
   no games.
+* `nba_schedule()` returned the NBA schedule for every `league_id`. `"20"`
+  read `scheduleLeagueV2_2.json` on cdn.nba.com, which is a second copy of
+  the NBA's (`leagueId` "00"), and `"10"` read the NBA file itself. Each
+  league now comes from its own CDN host: `"10"` from cdn.wnba.com, `"20"`
+  from cdn-gleague.nba.com. A payload for another league is reported and
+  returns `NULL`, and any other `league_id` is an argument error.
+  `season_type_description` labels a `5` game "Play-In Game" only for the
+  NBA; the WNBA (Commissioner's Cup final) and the G League use that digit
+  for other events and get `NA`.
+* `nba_todays_scoreboard()` printed an "Invalid arguments" error about
+  `unnest` on a day without games. It now returns an empty result quietly;
+  a payload with no games list at all is still reported.
+* `nba_data_pbp()` returned nothing on every call. data.nba.com answered a
+  request without browser headers with a 403 "Access Denied" page, and the
+  parser failed on the empty shell it serves for 2025-26 games. It now sends
+  the CDN header set. data.nba.com has play-by-play for 2016-17 through
+  2024-25; a later game returns an empty result with a message.
+* `nba_data_pbp()` and the six CDN wrappers no longer discard their result
+  when a warning is raised while parsing: an empty `warning` handler in
+  their `tryCatch()` abandoned the parse at the first warning. The warning
+  now reaches the caller along with the data.
 
 * Eight new loaders read the `mbb_groups` and `nba_groups` releases on
   sportsdataverse-data, which record conference and division membership as
