@@ -698,7 +698,6 @@ importFrom(janitor,
   make_clean_names
 )
 importFrom(jsonlite,
-  flatten,
   fromJSON,
   toJSON
 )

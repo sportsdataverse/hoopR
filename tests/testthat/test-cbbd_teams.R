@@ -70,7 +70,8 @@ test_that("CBD - Team Season Overview", {
   skip_cbbd_test()
 
   x <- cbbd_teams_season_overview(team_id = 72, season = 2025)
-  if (!is.list(x) || !is.data.frame(x$team) || nrow(x$team) == 0) {
+  if (!is.list(x) || !all(c("team", "players", "schedule") %in% names(x)) ||
+      !all(vapply(x[c("team", "players", "schedule")], NROW, integer(1)) > 0)) {
     skip("No team season overview returned at test time")
   }
 
@@ -86,4 +87,22 @@ test_that("CBD - Team Season Overview", {
   expect_s3_class(x$players, "data.frame")
 
   Sys.sleep(1)
+})
+
+test_that("CBD - section helpers flatten records and arrays offline", {
+  rec <- jsonlite::fromJSON(
+    '{"a": 1, "b": {"c": "x", "d": null}, "notes": ["one", "two"], "empty": []}',
+    flatten = TRUE
+  )
+  r <- hoopR:::.cbbd_record_tbl(rec)
+  expect_equal(nrow(r), 1L)
+  expect_in(c("a", "b_c", "b_d", "notes", "empty"), colnames(r))
+  expect_equal(r$notes, "one; two")
+  expect_true(is.na(r$b_d) && is.na(r$empty))
+
+  rows <- jsonlite::fromJSON('[{"id": 1, "seasonStats": {"fieldGoals": {"made": 3}}}]', flatten = TRUE)
+  expect_in("season_stats_field_goals_made", colnames(hoopR:::.cbbd_rows_tbl(rows)))
+
+  expect_equal(ncol(hoopR:::.cbbd_record_tbl(NULL)), 0L)
+  expect_equal(ncol(hoopR:::.cbbd_rows_tbl(list())), 0L)
 })

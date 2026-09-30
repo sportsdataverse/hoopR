@@ -206,7 +206,10 @@ cbbd_teams_directory <- function(season = most_recent_mbb_season()) {
 #'   `schedule` (one row per game) are row tables. `shooting` also carries the
 #'   attributes `tracked_attempts` (integer) and `coverage`, and `players` carries
 #'   `coverage`: a list of `state`, `reason`, `coveredGames` and `eligibleGames`.
-#'   A section upstream leaves empty comes back as a 0-column tibble.
+#'   A section upstream leaves empty comes back as a 0-column tibble. Types
+#'   follow the values: a field upstream sends as `null` parses as logical `NA`,
+#'   a whole-number value as integer, and a nullable object sent as `null`
+#'   (e.g. the adjusted ratings) as one `NA` column in place of its fields.
 #'
 #'   **team** - one row:
 #'
@@ -329,7 +332,7 @@ cbbd_teams_directory <- function(season = most_recent_mbb_season()) {
 #'    \if{latex}{See the HTML help or pkgdown reference for the column tables.}
 #'
 #' @keywords CBD Teams
-#' @importFrom jsonlite fromJSON flatten
+#' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble tibble
 #' @family CBD Teams Functions
@@ -376,7 +379,7 @@ cbbd_teams_season_overview <- function(team_id, season = most_recent_mbb_season(
 #' Flatten a nested CBD record into one row's worth of named scalars
 #'
 #' @description Ported from cfbfastR's `.cfbd_flatten_scalars()`. Nested
-#'   objects are walked with `_`-joined names; `NULL` becomes `NA`. One
+#'   objects are walked with `_`-joined names; `NULL` or an empty array becomes `NA`. One
 #'   difference: an atomic vector longer than one (`sources$notes`) is kept,
 #'   collapsed with `"; "`, instead of dropped. Data frames are skipped --
 #'   array sections go through [.cbbd_rows_tbl()].
@@ -388,7 +391,7 @@ cbbd_teams_season_overview <- function(team_id, season = most_recent_mbb_season(
   for (nm in names(x)) {
     v <- x[[nm]]
     key <- if (nzchar(prefix)) paste0(prefix, "_", nm) else nm
-    if (is.null(v) || (is.atomic(v) && !length(v))) {
+    if (is.null(v) || !length(v)) {
       out[[key]] <- NA
     } else if (is.atomic(v)) {
       out[[key]] <- if (length(v) == 1L) v else paste(v, collapse = "; ")
@@ -413,5 +416,6 @@ cbbd_teams_season_overview <- function(team_id, season = most_recent_mbb_season(
 #' @noRd
 .cbbd_rows_tbl <- function(x) {
   if (!is.data.frame(x) || !nrow(x)) return(dplyr::tibble())
-  janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(x)))
+  # .cbbd_get() already parses with fromJSON(flatten = TRUE)
+  janitor::clean_names(dplyr::as_tibble(x))
 }

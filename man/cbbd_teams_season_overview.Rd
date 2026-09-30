@@ -21,7 +21,10 @@ A named list of \code{hoopR_data} tibbles, one per section of the overview.
 \code{schedule} (one row per game) are row tables. \code{shooting} also carries the
 attributes \code{tracked_attempts} (integer) and \code{coverage}, and \code{players} carries
 \code{coverage}: a list of \code{state}, \code{reason}, \code{coveredGames} and \code{eligibleGames}.
-A section upstream leaves empty comes back as a 0-column tibble.
+A section upstream leaves empty comes back as a 0-column tibble. Types
+follow the values: a field upstream sends as \code{null} parses as logical \code{NA},
+a whole-number value as integer, and a nullable object sent as \code{null}
+(e.g. the adjusted ratings) as one \code{NA} column in place of its fields.
 
 \strong{team} - one row:
 
