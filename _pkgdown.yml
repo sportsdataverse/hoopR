@@ -72,7 +72,7 @@ home:
       href: articles/getting-started-hoopR.html
 navbar:
   structure:
-    left: [home, reference, articles, news, network, data]
+    left: [home, reference, articles, news, network, data, status]
     right: [search, x, github, lightswitch]
   icon: https://raw.githubusercontent.com/sportsdataverse/hoopR/main/man/figures/logo.ico
   title: "hoopR"
@@ -187,6 +187,9 @@ navbar:
           href: https://github.com/sportsdataverse/sportsdataverse-data/releases
         - text: "hoopR Data Repository"
           href: https://github.com/sportsdataverse/hoopR-data
+    status:
+      text: "Data status"
+      href: https://sportsdataverse.org/status
     x:
       icon: "fab fa-x-twitter fa-lg"
       aria-label: X (Twitter)
