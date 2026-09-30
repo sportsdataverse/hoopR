@@ -113,6 +113,7 @@
     <li><a class="external-link dropdown-item" href="https://github.com/sportsdataverse/hoopR-data">hoopR Data Repository</a></li>
   </ul>
 </li>
+<li class="nav-item"><a class="external-link nav-link" href="https://sportsdataverse.org/status">Data status</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -140,6 +141,7 @@
 <li>
 <a href="#hoopr-">hoopR </a><a href="https://hoopR.sportsdataverse.org/"><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right" width="20%" min-width="100px" alt="hoopR logo"></a>
 <ul>
+<li><a href="#data-status">Data status</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#quick-start">Quick Start</a></li>
 <li><a href="#documentation"><strong>Documentation</strong></a></li>
@@ -166,6 +168,68 @@
 <p>The package has functions to access <strong>live play by play and box score</strong> data from ESPN with shot locations when available. As of version 1.3.0, <a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a> is also a full NBA Stats API wrapper with 127 functions added in this release.</p>
 <p>It is additionally a scraping and aggregating interface for Ken Pomeroy’s men’s college basketball statistics website, <a href="https://kenpom.com/" class="external-link">kenpom.com</a>. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.</p>
 <p>As of version 3.1.0, the package exports 600+ functions spanning the NBA Stats API (<code>nba_*</code>), ESPN (<code>espn_nba_*</code> / <code>espn_mbb_*</code>), KenPom (<code>kp_*</code>), CollegeBasketballData (<code>cbbd_*</code>), Basketball-Reference (<code>bref_*</code>), Bart Torvik (<code>torvik_*</code>), RealGM (<code>realgm_*</code>), Fox Sports (<code>fox_*</code>), NCAA (<code>ncaa_mbb_*</code>), and NBA G-League (<code>nbagl_*</code>), plus <code>load_nba_*()</code> / <code>load_mbb_*()</code> / <code>load_ncaa_mbb_*()</code> bulk-data loaders backed by the <code>sportsdataverse-data</code> release repos.</p>
+<div class="section level2">
+<h2 id="data-status">Data status<a class="anchor" aria-label="anchor" href="#data-status"></a>
+</h2>
+<p>The <code>load_*()</code> functions read release assets on <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link">sportsdataverse-data</a>. The badges below are rebuilt nightly from each producer’s latest workflow run and newest release files; idle means the sport is out of season. Full detail: <a href="https://sportsdataverse.org/status" class="external-link">sportsdataverse.org/status</a>.</p>
+<table class="table">
+<colgroup>
+<col width="5%">
+<col width="14%">
+<col width="14%">
+<col width="14%">
+<col width="51%">
+</colgroup>
+<thead><tr>
+<th align="left">Dataset</th>
+<th align="left">Data updated</th>
+<th align="left">Through</th>
+<th align="left">Pipeline</th>
+<th align="left">Update workflows</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/sportsdataverse/hoopR-mbb-data" class="external-link">Men’s college basketball (ESPN)</a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-mbb-data%2Fupdated.json" alt="hoopR-mbb-data data updated"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-mbb-data%2Fthrough.json" alt="hoopR-mbb-data through season"></a></td>
+<td align="left"><a href="https://sportsdataverse.org/status#hoopR-mbb-data" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-mbb-data%2Fstatus.json" alt="hoopR-mbb-data pipeline state"></a></td>
+<td align="left">
+<a href="https://github.com/sportsdataverse/hoopR-mbb-data/actions/workflows/daily_mbb.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-mbb-data%2Fwf-daily_mbb.json" alt="hoopR-mbb-data daily_mbb"></a> <a href="https://github.com/sportsdataverse/hoopR-mbb-data/actions/workflows/mbb_models_cron.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-mbb-data%2Fwf-mbb_models_cron.json" alt="hoopR-mbb-data mbb_models_cron"></a>
+</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/sportsdataverse/ncaa-mbb-hoops-data" class="external-link">Men’s college basketball (stats.ncaa.org)</a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fncaa-mbb-hoops-data%2Fupdated.json" alt="ncaa-mbb-hoops-data data updated"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fncaa-mbb-hoops-data%2Fthrough.json" alt="ncaa-mbb-hoops-data through season"></a></td>
+<td align="left"><a href="https://sportsdataverse.org/status#ncaa-mbb-hoops-data" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fncaa-mbb-hoops-data%2Fstatus.json" alt="ncaa-mbb-hoops-data pipeline state"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/ncaa-mbb-hoops-data/actions/workflows/ncaa_mbb_models.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fncaa-mbb-hoops-data%2Fwf-ncaa_mbb_models.json" alt="ncaa-mbb-hoops-data ncaa_mbb_models"></a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/sportsdataverse/hoopR-nba-data" class="external-link">NBA (ESPN)</a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-data%2Fupdated.json" alt="hoopR-nba-data data updated"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-data%2Fthrough.json" alt="hoopR-nba-data through season"></a></td>
+<td align="left"><a href="https://sportsdataverse.org/status#hoopR-nba-data" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-data%2Fstatus.json" alt="hoopR-nba-data pipeline state"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/hoopR-nba-data/actions/workflows/daily_nba.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-data%2Fwf-daily_nba.json" alt="hoopR-nba-data daily_nba"></a></td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/sportsdataverse/hoopR-nba-stats-data" class="external-link">NBA Stats API</a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-stats-data%2Fupdated.json" alt="hoopR-nba-stats-data data updated"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-stats-data%2Fthrough.json" alt="hoopR-nba-stats-data through season"></a></td>
+<td align="left"><a href="https://sportsdataverse.org/status#hoopR-nba-stats-data" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-stats-data%2Fstatus.json" alt="hoopR-nba-stats-data pipeline state"></a></td>
+<td align="left">
+<a href="https://github.com/sportsdataverse/hoopR-nba-stats-data/actions/workflows/daily_nba_stats.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-stats-data%2Fwf-daily_nba_stats.json" alt="hoopR-nba-stats-data daily_nba_stats"></a> <a href="https://github.com/sportsdataverse/hoopR-nba-stats-data/actions/workflows/nba_models.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-stats-data%2Fwf-nba_models.json" alt="hoopR-nba-stats-data nba_models"></a> <a href="https://github.com/sportsdataverse/hoopR-nba-stats-data/actions/workflows/annual_nba_stats_draft.yml" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2FhoopR-nba-stats-data%2Fwf-annual_nba_stats_draft.json" alt="hoopR-nba-stats-data annual_nba_stats_draft"></a>
+</td>
+</tr>
+<tr>
+<td align="left"><a href="https://github.com/sportsdataverse/sdv-reference-data" class="external-link">Conference, division and ballpark reference</a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fsdv-reference-data%2Fupdated.json" alt="sdv-reference-data data updated"></a></td>
+<td align="left"><a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fsdv-reference-data%2Fthrough.json" alt="sdv-reference-data through season"></a></td>
+<td align="left"><a href="https://sportsdataverse.org/status#sdv-reference-data" class="external-link"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsportsdataverse%2F.github%2Fmain%2Fstatus%2Fbadges%2Fsdv-reference-data%2Fstatus.json" alt="sdv-reference-data pipeline state"></a></td>
+<td align="left">—</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>

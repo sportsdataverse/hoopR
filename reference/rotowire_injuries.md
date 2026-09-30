@@ -44,8 +44,8 @@ A `hoopR_data` tibble with one row per injured player:
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 06:00:11 UTC
-#> # A tibble: 67 × 10
+#> ℹ Data updated: 2026-09-30 15:09:45 UTC
+#> # A tibble: 66 × 10
 #>    player_id player            first_name last_name team  position injury status
 #>    <chr>     <chr>             <chr>      <chr>     <chr> <chr>    <chr>  <chr> 
 #>  1 5428      Santi Aldama      Santi      Aldama    DAL   F        Undis… Quest…
@@ -58,7 +58,7 @@ A `hoopR_data` tibble with one row per injured player:
 #>  8 3231      Jimmy Butler      Jimmy      Butler    GSW   F        Knee   Out   
 #>  9 3450      Kentavious Caldw… Kentavious Caldwell… PHI   G        Finger Proba…
 #> 10 6575      Walter Clayton    Walter     Clayton   MEM   G        Knee   Quest…
-#> # ℹ 57 more rows
+#> # ℹ 56 more rows
 #> # ℹ 2 more variables: return_date <chr>, url <chr>
 # }
 ```

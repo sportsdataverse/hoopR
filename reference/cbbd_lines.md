@@ -77,14 +77,14 @@ A `hoopR_data` tibble with one row per line provider:
 ``` r
 # \donttest{
   try(cbbd_lines(season = 2024, team = "Duke"))
-#> ✖ 2026-09-30 05:40:48.078309: Invalid arguments or no betting lines available!
+#> ✖ 2026-09-30 15:03:46.165993: Invalid arguments or no betting lines available!
 #> ✖ Args: season = 2024, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_lines_providers())
-#> ✖ 2026-09-30 05:40:48.096936: Invalid arguments or no line providers available!
+#> ✖ 2026-09-30 15:03:46.174552: Invalid arguments or no line providers available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

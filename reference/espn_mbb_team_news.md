@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-09-30 05:42:07 UTC
+#> ℹ Data updated: 2026-09-30 15:05:03 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -221,14 +221,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 05:42:07 UTC
+#> ℹ Data updated: 2026-09-30 15:05:03 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
-#> 2  5.00e7 Story NBA pre… "From LeBr… 2026-09-… FALSE   NBA i… https:/… 46       
-#> 3  5.01e7 Media Bronny … "Bronny cr… 2026-09-… FALSE   NA     https:/… 46       
-#> 4  5.01e7 Head… Bronny … "Bronny Ja… 2026-09-… FALSE   Brian… https:/… 46       
-#> 5  5.00e7 Story New-loo… "The 2026-… 2026-09-… FALSE   ESPN   https:/… 46       
+#> 1  5.01e7 Story NBA pre… "As traini… 2026-09-… FALSE   Bobby… https:/… 46       
+#> 2  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
+#> 3  5.00e7 Story NBA pre… "From LeBr… 2026-09-… FALSE   NBA i… https:/… 46       
+#> 4  5.01e7 Media Bronny … "Bronny cr… 2026-09-… FALSE   NA     https:/… 46       
+#> 5  5.01e7 Head… Bronny … "Bronny Ja… 2026-09-… FALSE   Brian… https:/… 46       
 # }
 ```

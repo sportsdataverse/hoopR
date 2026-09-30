@@ -128,7 +128,7 @@ Saiem Gilani
     head(refs$officials)
   })
 #> ── NBA referee assignments -- officials (official.nba.com) ─────────────────────
-#> ℹ Data updated: 2026-09-30 05:47:58 UTC
+#> ℹ Data updated: 2026-09-30 15:08:53 UTC
 #> # A tibble: 4 × 14
 #>   league game_id    game_date  season season_type game_code       home_team_id
 #>   <chr>  <chr>      <date>      <int> <chr>       <chr>                  <int>

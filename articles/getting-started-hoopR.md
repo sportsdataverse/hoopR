@@ -120,7 +120,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 33.279 sec elapsed
+    ## 27.183 sec elapsed
 
 ``` r
 
@@ -216,7 +216,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.203 sec elapsed
+    ## 3.076 sec elapsed
 
 ``` r
 
@@ -303,7 +303,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.333 sec elapsed
+    ## 4.329 sec elapsed
 
 ``` r
 
@@ -388,7 +388,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 73.355 sec elapsed
+    ## 63.064 sec elapsed
 
 ``` r
 
@@ -490,7 +490,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.553 sec elapsed
+    ## 3.643 sec elapsed
 
 ``` r
 
@@ -577,21 +577,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 8.062 sec elapsed
+    ## 9.947 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
 ```
 
-    ## 1126124 rows of men's college basketball player boxscore data from 35302 games.
+    ## 927538 rows of men's college basketball player boxscore data from 29061 games.
 
 ``` r
 
 dplyr::glimpse(mbb_player_box)
 ```
 
-    ## Rows: 1,126,124
+    ## Rows: 927,538
     ## Columns: 55
     ## $ game_id                           <int> 401310865, 401310865, 401310865, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
