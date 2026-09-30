@@ -39,7 +39,7 @@ As of version 3.1.0, the package exports 600+ functions spanning the NBA Stats A
 
 ## Data status
 
-Every `load_*()` function reads release assets on [sportsdataverse-data](https://github.com/sportsdataverse/sportsdataverse-data/releases). The badges below are rebuilt nightly from each producer's latest workflow run and newest release files; idle means the sport is out of season. Full detail: [sportsdataverse.org/status](https://sportsdataverse.org/status).
+The `load_*()` functions read release assets on [sportsdataverse-data](https://github.com/sportsdataverse/sportsdataverse-data/releases). The badges below are rebuilt nightly from each producer's latest workflow run and newest release files; idle means the sport is out of season. Full detail: [sportsdataverse.org/status](https://sportsdataverse.org/status).
 
 | Dataset | Data updated | Through | Pipeline | Update workflows |
 |:--|:--|:--|:--|:--|
