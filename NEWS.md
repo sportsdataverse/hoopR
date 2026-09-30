@@ -46,6 +46,21 @@
   arguments current R returns `NULL` from that `setdiff()`, which `mget()`
   rejects. It records none now. A new offline test runs the parser on a
   two-row NET table built inline; the live test stays skipped.
+* `nbagl_live_pbp()` and `nbagl_live_boxscore()` returned nothing on every
+  call. They sent no browser headers, and cdn-gleague.nba.com answered with
+  a 403 "Access Denied" page. The NBA CDN wrappers (`nba_live_pbp()`,
+  `nba_live_boxscore()`, `nba_todays_scoreboard()`, `nba_schedule()` and the
+  two G League ones) now share one header set, which adds Chrome's client
+  hints and fetch metadata (verified on Windows R; Linux and macOS libcurl
+  builds are unverified). The old set only worked over HTTP/2. Over
+  HTTP/1.1, which is all cdn-gleague.nba.com speaks, cdn.nba.com answered
+  it with the same 403 and cdn-gleague.nba.com with its home page. New
+  offline tests parse captured payloads from both hosts. The live tests for
+  `nba_live_pbp()`, `nba_live_boxscore()` and `nba_todays_scoreboard()` used
+  to skip when the call came back empty, so a refused request passed as a
+  skip. They fail now; the scoreboard test still skips when the feed lists
+  no games.
+
 * Eight new loaders read the `mbb_groups` and `nba_groups` releases on
   sportsdataverse-data, which record conference and division membership as
   it was each season rather than back-applying today's alignment:

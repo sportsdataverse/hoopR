@@ -4,11 +4,13 @@ test_that("NBA Live Boxscore", {
   skip_nba_stats_test()
 
 
-  x <- nba_live_boxscore(game_id = "0022201086")
+  # The 2025-26 opener. An empty result is a failure (refused request, network
+  # error, or a warning swallowed by the wrapper), not an aged-out game, so fail
+  # on it rather than skip (see test-nba_live_cdn.R).
+  x <- nba_live_boxscore(game_id = "0022500001")
 
-  if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
-    skip("No rows returned from endpoint at test time")
-  }
+  expect_length(x, 9)
+  expect_gt(nrow(x$home_team_player_boxscore), 0)
 
   cols_x1 <- c(
     "game_id",
