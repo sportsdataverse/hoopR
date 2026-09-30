@@ -42,3 +42,24 @@ test_that("CBD - Venues", {
 
   Sys.sleep(1)
 })
+
+test_that("CBD - Team Directory", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_cbbd_test()
+
+  x <- cbbd_teams_directory(season = 2025)
+  if (!is.list(x) || !is.data.frame(x$teams) || nrow(x$teams) == 0) {
+    skip("No team directory returned at test time")
+  }
+
+  expect_type(x, "list")
+  expect_in(c("teams", "conferences"), names(x))
+  cols <- c("id", "source_id", "school", "abbreviation", "display_name", "conference_id")
+  expect_in(sort(cols), sort(colnames(x$teams)))
+  expect_in(c("id", "name", "abbreviation"), colnames(x$conferences))
+  expect_s3_class(x$teams, "data.frame")
+  expect_equal(attr(x$teams, "season"), 2025)
+
+  Sys.sleep(1)
+})

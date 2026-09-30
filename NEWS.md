@@ -40,6 +40,8 @@
 
 # **hoopR 3.1.0.9000 (development version)**
 
+* Added `cbbd_teams_directory()` (CBD `/teams/directory`, upstream v1.29.0): the
+  season's full team directory, as a named list of `teams` and `conferences`.
 * `ncaa_mbb_NET_rankings()` failed on every call with "invalid first
   argument" and returned an empty tibble: it recorded its arguments with
   `mget(setdiff(names(formals()), "..."))`, and for a function with no
