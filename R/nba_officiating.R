@@ -365,9 +365,9 @@ NULL
 #' \href{https://github.com/atlhawksfanatic/L2M}{atlhawksfanatic/L2M} (MIT,
 #' (c) 2019 atlhawksfanatic).
 #'
-#' @param game_id character or numeric. A single all-digit NBA game id;
-#'   zero-padded to 10 digits automatically (e.g. `42500405` becomes
-#'   `"0042500405"`). Anything else errors before any request is made.
+#' @param game_id character or numeric. A single all-digit NBA game id of at
+#'   most 10 digits; zero-padded to 10 digits automatically (e.g. `42500405`
+#'   becomes `"0042500405"`). Anything else errors before any request is made.
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments (`url`, `port`, `username`,
 #'   `password`, `auth`). `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
@@ -457,12 +457,13 @@ NULL
 nba_l2m <- function(game_id, proxy = NULL) {
   call <- sys.call()
   # Strict, like sdv-py's _gid(): the caller's id builds the request URL, so
-  # anything but one all-digit id stops here. The lenient .gid10() alone is
-  # for ids read back out of a payload.
+  # anything but one all-digit id of at most 10 digits stops here (a longer one
+  # is not padded, it is a wrong id). The lenient .gid10() alone is for ids
+  # read back out of a payload.
   gid <- if (length(game_id) == 1 && !is.na(game_id)) .gid10(game_id) else NA_character_
-  if (!grepl("^[0-9]+$", gid)) {
+  if (!grepl("^[0-9]{10}$", gid)) {
     cli::cli_abort(
-      "{.arg game_id} must be a single all-digit NBA game id (e.g. {.val 0042500405}), got {.val {game_id}}",
+      "{.arg game_id} must be a single all-digit NBA game id of at most 10 digits (e.g. {.val 0042500405}), got {.val {game_id}}",
       call = call
     )
   }
