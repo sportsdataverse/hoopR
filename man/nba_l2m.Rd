@@ -7,9 +7,9 @@
 nba_l2m(game_id, proxy = NULL)
 }
 \arguments{
-\item{game_id}{character or numeric. A single all-digit NBA game id;
-zero-padded to 10 digits automatically (e.g. \code{42500405} becomes
-\code{"0042500405"}). Anything else errors before any request is made.}
+\item{game_id}{character or numeric. A single all-digit NBA game id of at
+most 10 digits; zero-padded to 10 digits automatically (e.g. \code{42500405}
+becomes \code{"0042500405"}). Anything else errors before any request is made.}
 
 \item{proxy}{Optional proxy: a URL string (e.g. \code{"http://host:port"}) or a
 named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code{url}, \code{port}, \code{username},

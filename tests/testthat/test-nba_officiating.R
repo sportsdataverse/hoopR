@@ -549,7 +549,9 @@ test_that("nba_l2m(game_id): anything but one all-digit id errors before any req
     },
     .package = "httr2"
   )
-  bad_ids <- list("abc", NA, NULL, "{1+1}", "0042500405.json", -5, 42500405.5, c("0042500405", "0042500406"))
+  bad_ids <- list("abc", NA, NULL, "{1+1}", "0042500405.json", -5, 42500405.5, c("0042500405", "0042500406"),
+                  # longer than 10 digits: not padded, a wrong id (sdv-py parity)
+                  "12345678901", 12345678901)
   for (bad in bad_ids) {
     err <- expect_error(nba_l2m(bad), regexp = "game_id")
     expect_false(inherits(err, "hoopR_error"))
