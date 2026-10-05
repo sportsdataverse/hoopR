@@ -29,7 +29,7 @@ nba_playerindex(
   height = "",
   historical = 1,
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   team_id = "0",
   weight = "",
@@ -44,7 +44,7 @@ nba_playercareerbycollege(
   college = "Florida State",
   league_id = "00",
   per_mode = "Totals",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -52,7 +52,7 @@ nba_playercareerbycollege(
 nba_playercareerbycollegerollup(
   league_id = "00",
   per_mode = "Totals",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -74,7 +74,7 @@ nba_playerfantasyprofile(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -82,14 +82,14 @@ nba_playerfantasyprofile(
 nba_playerfantasyprofilebargraph(
   league_id = "00",
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
 
 nba_playerestimatedmetrics(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -99,7 +99,7 @@ nba_playergamelog(
   date_to = "",
   league_id = "00",
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -119,7 +119,7 @@ nba_playergamelogs(
   per_mode = "Totals",
   period = 0,
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "",
@@ -209,7 +209,7 @@ nba_playergamestreakfinder(
   po_round = "",
   player_id = "",
   rookie_year = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   starter_bench = "",
@@ -225,7 +225,7 @@ nba_playernextngames(
   league_id = "",
   number_of_games = 2147483647,
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -254,7 +254,7 @@ nba_playervsplayer(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   vs_conference = "",

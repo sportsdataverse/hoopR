@@ -22,7 +22,7 @@ nba_cumestatsplayergames(
   location = "",
   outcome = "",
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   vs_conference = "",
   vs_division = "",
@@ -33,7 +33,7 @@ nba_cumestatsplayergames(
 nba_cumestatsteam(
   game_ids = "0022201094",
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   team_id = "1610612739",
   ...
@@ -43,7 +43,7 @@ nba_cumestatsteamgames(
   league_id = "00",
   location = "",
   outcome = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_id = "",
   season_type = "Regular Season",
   team_id = 1610612739,
@@ -331,7 +331,7 @@ Returns a named list of data frames: CumeStatsTeamGames
 
 \href{https://www.nba.com/stats/cumestats}{CUME Stats}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 }
 \author{

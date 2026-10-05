@@ -350,7 +350,7 @@ nba_assistleaders <- function(
     league_id = '00',
     per_mode = 'PerGame',
     player_or_team = 'Team',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
@@ -414,7 +414,7 @@ NULL
 nba_assisttracker <- function(
     league_id = '00',
     per_mode = 'PerGame',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
@@ -530,7 +530,7 @@ nba_homepageleaders <- function(
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     stat_category = 'Points',
     ...){
@@ -700,7 +700,7 @@ nba_homepagev2 <- function(
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     stat_type = 'Traditional',
     ...){
@@ -819,7 +819,7 @@ nba_leaderstiles <- function(
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     stat = 'PTS',
     ...){
@@ -905,7 +905,7 @@ nba_defensehub <- function(
     game_scope = 'Season',
     player_or_team = 'Team',
     player_scope = 'All Players',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
@@ -1017,7 +1017,7 @@ nba_leagueleaders <- function(
     league_id = '00',
     per_mode = 'Totals',
     scope = 'S',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     stat_category = 'PTS',
     ...){
@@ -1158,11 +1158,11 @@ NULL
 #' @family NBA Leaders Functions
 #' @details
 #' ```r
-#'  nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_dunkscoreleaders <- function(
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     player_id = '',
     team_id = '',
@@ -1274,11 +1274,11 @@ NULL
 #' @family NBA Leaders Functions
 #' @details
 #' ```r
-#'  nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_gravityleaders <- function(
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))

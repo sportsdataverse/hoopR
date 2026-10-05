@@ -61,7 +61,7 @@ NULL
 #' @details
 #' [Player/Team Boxscores](https://www.nba.com/stats/players/boxscores)
 #' ```r
-#'  nba_leaguegamelog(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_leaguegamelog(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_leaguegamelog <- function(
     counter = 0,
@@ -70,7 +70,7 @@ nba_leaguegamelog <- function(
     direction = 'ASC',
     league_id = '00',
     player_or_team = 'T',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     sorter = 'DATE',
     ...){
@@ -235,11 +235,11 @@ NULL
 #' @details
 #' [League Standings](https://www.nba.com/standings)
 #' ```r
-#'  nba_leaguestandings(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_leaguestandings(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_leaguestandings <- function(
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     season_year = '',
     ...){
@@ -399,11 +399,11 @@ NULL
 #' @details
 #' [League Standings](https://www.nba.com/standings)
 #' ```r
-#'  nba_leaguestandingsv3(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_leaguestandingsv3(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_leaguestandingsv3 <- function(
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     season_year = '',
     ...){
@@ -548,7 +548,7 @@ NULL
 #' @family NBA League Functions
 #' @details
 #' ```r
-#'  nba_playoffpicture(league_id = '00', season_id = paste0(2, most_recent_nba_season() - 1))
+#'  nba_playoffpicture(league_id = '00', season_id = paste0(2, most_recent_nba_season() - 2))
 #' ```
 nba_playoffpicture <- function(
     league_id = '00',
@@ -577,7 +577,7 @@ nba_playoffpicture <- function(
     },
     error = function(e) .report_api_error(
       e,
-      hint = "Invalid arguments or no playoff picture data available for {season}!",
+      hint = "Invalid arguments or no playoff picture data available for {season_id}!",
       args = .args
     ),
     warning = function(w) {
@@ -730,7 +730,7 @@ NULL
 #' @family NBA Game Finder Functions
 #' @details
 #' ```r
-#'  nba_leaguegamefinder(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_leaguegamefinder(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_leaguegamefinder <- function(
     conference = '',
@@ -812,7 +812,7 @@ nba_leaguegamefinder <- function(
     player_id = '',
     player_or_team = 'T',
     rookie_year = '',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     starter_bench = '',
@@ -996,11 +996,11 @@ NULL
 #' @family NBA League Functions
 #' @details
 #' ```r
-#'  nba_iststandings(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_iststandings(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_iststandings <- function(
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     section = 'group',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))

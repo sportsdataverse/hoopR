@@ -11,7 +11,7 @@
 nba_commonallplayers(
   is_only_current_season = 0,
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   ...
 )
 
@@ -26,7 +26,7 @@ nba_commonplayoffseries(
 
 nba_commonteamroster(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   team_id = "1610612739",
   ...
 )
@@ -230,7 +230,7 @@ Returns a named list of data frames: TeamYears
 \details{
 \href{https://www.nba.com/players}{All Players}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/player/2544}{Player Info}
@@ -243,7 +243,7 @@ Returns a named list of data frames: TeamYears
 
 \href{https://www.nba.com/stats/team/1610612756}{Team Roster}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 1), team_id = '1610612739')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 2), team_id = '1610612739')
 }\if{html}{\out{</div>}}
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_commonteamyears(league_id = '00')

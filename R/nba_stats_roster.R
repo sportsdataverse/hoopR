@@ -43,12 +43,12 @@ NULL
 #' @details
 #' [All Players](https://www.nba.com/players)
 #' ```r
-#'   nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'   nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_commonallplayers <- function(
     is_only_current_season = 0,
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
@@ -347,11 +347,11 @@ NULL
 #' @details
 #' [Team Roster](https://www.nba.com/stats/team/1610612756)
 #' ```r
-#'  nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 1), team_id = '1610612739')
+#'  nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 2), team_id = '1610612739')
 #' ```
 nba_commonteamroster <- function(
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     team_id = '1610612739',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))

@@ -210,7 +210,7 @@ nba_cumestatsplayergames <- function(
     location = '',
     outcome = '',
     player_id = '2544',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     vs_conference = '',
     vs_division = '',
@@ -389,7 +389,7 @@ NULL
 nba_cumestatsteam <- function(
     game_ids = '0022201094',
     league_id = '00',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     team_id = '1610612739',
     ...){
@@ -470,13 +470,13 @@ NULL
 #' @details
 #' [CUME Stats](https://www.nba.com/stats/cumestats)
 #' ```r
-#'  nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_cumestatsteamgames(team_id = 1610612739, season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_cumestatsteamgames <- function(
     league_id = '00',
     location = '',
     outcome = '',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_id = '',
     season_type = 'Regular Season',
     team_id = 1610612739,

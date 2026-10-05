@@ -50,12 +50,12 @@ NULL
 #' @family NBA G-League Functions
 #' @details
 #' ```r
-#'  nbagl_standings(season = most_recent_nba_season() - 1)
+#'  nbagl_standings(season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 
 nbagl_standings <- function(
     league_id = "20",
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = "Regular Season",
     season_year = "",
     ...) {
