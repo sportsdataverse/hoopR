@@ -77,7 +77,7 @@ nba_leaguedashoppptshot(
   period = 0,
   plus_minus = "N",
   rank = "Y",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -112,7 +112,7 @@ nba_leaguedashplayerbiostats(
   period = "",
   player_experience = "",
   player_position = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -155,7 +155,7 @@ nba_leaguedashplayerclutch(
   player_experience = "",
   player_position = "",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -197,7 +197,7 @@ nba_leaguedashplayerptshot(
   period = 0,
   player_experience = "",
   player_position = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -238,7 +238,7 @@ nba_leaguedashplayerstats(
   player_position = "",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -280,7 +280,7 @@ nba_leaguedashplayershotlocations(
   player_position = "",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -316,7 +316,7 @@ nba_leaguedashptdefend(
   player_experience = "",
   player_id = "",
   player_position = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   starter_bench = "",
@@ -351,7 +351,7 @@ nba_leaguedashptstats(
   player_or_team = "Player",
   player_position = "",
   pt_measure_type = "Drives",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   starter_bench = "",
@@ -378,7 +378,7 @@ nba_leaguedashptteamdefend(
   po_round = "",
   per_mode = "PerGame",
   period = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "",
@@ -412,7 +412,7 @@ nba_leaguedashteamclutch(
   player_experience = "",
   player_position = "",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -441,7 +441,7 @@ nba_leaguedashteamptshot(
   po_round = "",
   per_mode = "Totals",
   period = 0,
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -473,7 +473,7 @@ nba_leaguedashteamstats(
   period = 0,
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -508,7 +508,7 @@ nba_leaguedashteamshotlocations(
   player_position = "",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -1115,62 +1115,62 @@ Returns a named list of data frames: ShotLocations
 [Opponent Shots -
 General](https://www.nba.com/stats/teams/opponent-shots-general)
 
-     nba_leaguedashoppptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashoppptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Bio Stats](https://www.nba.com/stats/players/bio)
 
-     nba_leaguedashplayerbiostats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashplayerbiostats(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Players Clutch
 Stats](https://www.nba.com/stats/players/clutch-traditional)
 
-     nba_leaguedashplayerclutch(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashplayerclutch(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Players Shot
 Dashboard](https://www.nba.com/stats/players/shots-general)
 
-     nba_leaguedashplayerptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashplayerptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Players Stats](https://www.nba.com/stats/players/traditional)
 
-     nba_leaguedashplayerstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashplayerstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Players Shooting by Shot
 Location](https://www.nba.com/stats/players/shooting)
 
-     nba_leaguedashplayershotlocations(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashplayershotlocations(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Defensive
 Dashboard](https://www.nba.com/stats/players/defense-dash-overall)
 
-     nba_leaguedashptdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashptdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Players Tracking (Second Spectrum)
 Stats](https://www.nba.com/stats/players/drives)
 
-     nba_leaguedashptstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashptstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Team Defensive
 Dashboard](https://www.nba.com/stats/teams/defense-dash-overall)
 
-     nba_leaguedashptteamdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashptteamdefend(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Team Clutch Stats](https://www.nba.com/stats/teams/clutch-traditional)
 
-     nba_leaguedashteamclutch(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashteamclutch(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Team Shot Dashboard](https://www.nba.com/stats/teams/shots-general)
 
-     nba_leaguedashteamptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashteamptshot(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Team Stats](https://www.nba.com/stats/teams/traditional)
 
-     nba_leaguedashteamstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashteamstats(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Team Shooting by Shot
 Location](https://www.nba.com/stats/teams/shooting)
 
-     nba_leaguedashteamshotlocations(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_leaguedashteamshotlocations(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 ## See also
 

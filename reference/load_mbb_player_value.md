@@ -147,62 +147,25 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_player_impact/nba_player_impact_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_player_impact/nba_player_impact_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 812 × 28
-#>    player_id player_name        team_id team_abbreviation team_name teams season
-#>        <int> <chr>                <int> <chr>             <chr>     <chr>  <int>
-#>  1      2544 LeBron James        1.61e9 LAL               Los Ange… LAL     2026
-#>  2    101108 Chris Paul          1.61e9 LAC               LA Clipp… LAC     2026
-#>  3    200768 Kyle Lowry          1.61e9 PHI               Philadel… PHI     2026
-#>  4    201142 Kevin Durant        1.61e9 HOU               Houston … HOU     2026
-#>  5    201143 Al Horford          1.61e9 GSW               Golden S… GSW     2026
-#>  6    201144 Mike Conley         1.61e9 MIN               Minnesot… MIN     2026
-#>  7    201145 Jeff Green          1.61e9 HOU               Houston … HOU     2026
-#>  8    201566 Russell Westbrook   1.61e9 SAC               Sacramen… SAC     2026
-#>  9    201567 Kevin Love          1.61e9 UTA               Utah Jazz UTA     2026
-#> 10    201569 Eric Gordon         1.61e9 PHI               Philadel… PHI     2026
-#> # ℹ 802 more rows
-#> # ℹ 21 more variables: season_type <chr>, o_rapm <dbl>, d_rapm <dbl>,
-#> #   rapm <dbl>, off_poss <int>, def_poss <int>, o_adj_rapm <dbl>,
-#> #   d_adj_rapm <dbl>, adj_rapm <dbl>, ospm <dbl>, dspm <dbl>, spm <dbl>,
-#> #   min <dbl>, gp <int>, obpm <dbl>, dbpm <dbl>, bpm <dbl>, war <dbl>,
-#> #   darko_filtered_skill <dbl>, darko_projected_rating <dbl>,
-#> #   darko_projected_sd <dbl>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_mbb_player_value(seasons = most_recent_mbb_season()))
+#> Warning: downloaded length 0 != reported length 9
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_player_value/mbb_player_value_2027.parquet': HTTP status was '404 Not Found'
+#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_player_value/mbb_player_value_2027.parquet>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 9,990 × 9
-#>    player_id player     season team_id   min box_obpm box_dbpm box_bpm qualified
-#>    <chr>     <chr>       <int> <chr>   <dbl>    <dbl>    <dbl>   <dbl> <lgl>    
-#>  1 5312013   Evan Smith   2026 153         8     26.7    -5.55    21.1 FALSE    
-#>  2 5317517   Kyler Pen…   2026 2823        5     27.3    -6.88    20.5 FALSE    
-#>  3 5173645   Jason Jak…   2026 356        47     15.9     4.27    20.1 FALSE    
-#>  4 5317261   Jacob Szep   2026 2018        3     23.4    -3.70    19.7 FALSE    
-#>  5 5312970   Christian…   2026 189        12     16.1     3.06    19.2 FALSE    
-#>  6 5319245   Ryder Blo…   2026 2913        7     20.1    -1.02    19.1 FALSE    
-#>  7 5257670   Jawan Bro…   2026 2207       10     13.7     4.57    18.2 FALSE    
-#>  8 5184076   Ryan Kenn…   2026 2591        2     22.6    -4.46    18.2 FALSE    
-#>  9 5325921   Gavin Ols…   2026 2600        2     20.0    -2.36    17.6 FALSE    
-#> 10 5258977   Karringto…   2026 420         9     21.7    -4.21    17.5 FALSE    
-#> # ℹ 9,980 more rows
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_mbb_ratings(seasons = most_recent_mbb_season()))
+#> Warning: downloaded length 0 != reported length 9
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_ratings/mbb_ratings_2027.parquet': HTTP status was '404 Not Found'
+#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_ratings/mbb_ratings_2027.parquet>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 727 × 11
-#>    season team_id adj_o adj_d adj_em adj_tempo raw_o raw_d games  rank adj_em_z
-#>     <int> <chr>   <dbl> <dbl>  <dbl>     <dbl> <dbl> <dbl> <int> <int>    <dbl>
-#>  1   2026 130      133.  85.5   47.4      71.7  123.  98.5    40     1     2.15
-#>  2   2026 150      132.  86.5   45.4      66.3  123.  96.3    38     2     2.09
-#>  3   2026 12       130.  86.8   43.4      70.8  121.  97.9    39     3     2.03
-#>  4   2026 356      134.  93.7   40.8      67.0  126. 104.     37     4     1.96
-#>  5   2026 57       130.  89.2   40.4      70.6  122. 101.     35     5     1.95
-#>  6   2026 248      127.  87.1   40.2      63.9  119.  96.9    37     6     1.94
-#>  7   2026 66       128.  89.1   39.0      67.9  120.  97.1    37     7     1.91
-#>  8   2026 2509     135.  96.9   37.8      65.3  126. 109.     39     8     1.87
-#>  9   2026 41       126.  90.0   35.8      65.5  117.  99.5    40     9     1.81
-#> 10   2026 2250     125.  89.1   35.6      69.7  121.  95.1    35    10     1.81
-#> # ℹ 717 more rows
+#> # A tibble: 0 × 0
 # }
 ```

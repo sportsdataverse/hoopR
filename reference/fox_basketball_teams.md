@@ -44,20 +44,20 @@ Other Fox Basketball Functions:
 # \donttest{
   try(fox_nba_teams())
 #> ── Fox Sports NBA teams ──────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:05:23 UTC
+#> ℹ Data updated: 2026-10-05 18:41:46 UTC
 #> # A tibble: 30 × 3
-#>    fox_team_id fox_team_name       fox_section   
-#>    <chr>       <chr>               <chr>         
-#>  1 1           Boston Celtics      Boston Celtics
-#>  2 2           Miami Heat          Boston Celtics
-#>  3 3           Brooklyn Nets       Boston Celtics
-#>  4 4           New York Knicks     Boston Celtics
-#>  5 5           Orlando Magic       Boston Celtics
-#>  6 6           Philadelphia 76ers  Boston Celtics
-#>  7 7           Washington Wizards  Boston Celtics
-#>  8 8           Atlanta Hawks       Boston Celtics
-#>  9 10          Chicago Bulls       Boston Celtics
-#> 10 11          Cleveland Cavaliers Boston Celtics
+#>    fox_team_id fox_team_name      fox_section   
+#>    <chr>       <chr>              <chr>         
+#>  1 2           Miami Heat         Boston Celtics
+#>  2 7           Washington Wizards Boston Celtics
+#>  3 32          Charlotte Hornets  Boston Celtics
+#>  4 8           Atlanta Hawks      Boston Celtics
+#>  5 5           Orlando Magic      Boston Celtics
+#>  6 4           New York Knicks    Boston Celtics
+#>  7 6           Philadelphia 76ers Boston Celtics
+#>  8 3           Brooklyn Nets      Boston Celtics
+#>  9 1           Boston Celtics     Boston Celtics
+#> 10 10          Chicago Bulls      Boston Celtics
 #> # ℹ 20 more rows
 # }
 ```

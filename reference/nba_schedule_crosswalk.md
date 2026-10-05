@@ -35,26 +35,14 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_schedule_crosswalk())
-#> The NBA CDN schedule is for season 2026-27, not 2025-26. For historical seasons use `load_nba_schedule(seasons = ...)`.
-#> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:09:22 UTC
-#> # A tibble: 1,281 × 16
-#>    season season_type game_date  home_espn_team_id away_espn_team_id
-#>     <int> <chr>       <date>                 <int>             <int>
-#>  1   2026 Pre-Season  2026-10-03                28                14
-#>  2   2026 Pre-Season  2026-10-04                 7                26
-#>  3   2026 Pre-Season  2026-10-04                12                 9
-#>  4   2026 Pre-Season  2026-10-05                 1                29
-#>  5   2026 Pre-Season  2026-10-05                 8                21
-#>  6   2026 Pre-Season  2026-10-05                20                18
-#>  7   2026 Pre-Season  2026-10-05                15                16
-#>  8   2026 Pre-Season  2026-10-05                23                13
-#>  9   2026 Pre-Season  2026-10-06                30                17
-#> 10   2026 Pre-Season  2026-10-06                25                 3
-#> # ℹ 1,271 more rows
-#> # ℹ 11 more variables: espn_game_id <chr>, nba_game_id <chr>,
-#> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
-#> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
-#> #   yahoo_game_id <chr>, match_method <chr>, match_confidence <dbl>
+#> ✖ 2026-10-05 18:46:50.93278: Invalid arguments or no league standings v3 data available for 2026-27!
+#> ✖ Args: league_id = "00", season = "2026-27", season_type = "Regular Season", season_year = ""
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-10-05 18:47:51.327601: Invalid arguments or no league game log data for 2026-27 available!
+#> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2026-27", season_type = "Regular Season", sorter = "DATE"
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-10-05 18:47:51.339393: Invalid arguments or no team details data available!
+#> ✖ Error: argument is of length zero
+#> Error in !nrow(nt) : invalid argument type
 # }
 ```

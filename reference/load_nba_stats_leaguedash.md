@@ -90,26 +90,10 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_leaguedash(seasons = most_recent_nba_stats_season(),
                                 table = "player_bio"))
+#> Warning: downloaded length 0 != reported length 9
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_leaguedash/player_bio_2027.parquet': HTTP status was '404 Not Found'
+#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_leaguedash/player_bio_2027.parquet>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 812 × 27
-#>    player_id player_name      team_id team_abbreviation   age player_height
-#>        <int> <chr>              <int> <chr>             <dbl> <chr>        
-#>  1   1630639 A.J. Lawson   1610612761 TOR                  25 6-6          
-#>  2   1631260 AJ Green      1610612749 MIL                  26 6-4          
-#>  3   1642358 AJ Johnson    1610612742 DAL                  21 6-5          
-#>  4    203932 Aaron Gordon  1610612743 DEN                  30 6-8          
-#>  5   1628988 Aaron Holiday 1610612745 HOU                  29 6-0          
-#>  6   1630174 Aaron Nesmith 1610612754 IND                  26 6-5          
-#>  7   1630598 Aaron Wiggins 1610612760 OKC                  27 6-5          
-#>  8   1642846 Ace Bailey    1610612762 UTA                  19 6-9          
-#>  9   1642380 Adama Bal     1610612763 MEM                  22 6-7          
-#> 10   1641737 Adem Bona     1610612755 PHI                  23 6-10         
-#> # ℹ 802 more rows
-#> # ℹ 21 more variables: player_height_inches <int>, player_weight <chr>,
-#> #   college <chr>, country <chr>, draft_year <chr>, draft_round <chr>,
-#> #   draft_number <chr>, gp <int>, pts <int>, reb <int>, ast <int>,
-#> #   net_rating <dbl>, oreb_pct <dbl>, dreb_pct <dbl>, usg_pct <dbl>,
-#> #   ts_pct <dbl>, ast_pct <dbl>, season <int>, league_id <chr>,
-#> #   season_type <chr>, per_mode <chr>
+#> # A tibble: 0 × 0
 # }
 ```

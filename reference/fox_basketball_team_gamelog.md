@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:05:22 UTC
+#> ℹ Data updated: 2026-10-05 18:41:45 UTC
 #> # A tibble: 165 × 8
-#>    team_id season_type category game_id game_date opponent stat         value
-#>    <chr>   <chr>       <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       POSTSEASON  scoring  106426  5/2       PHI      fgm          37   
-#>  2 1       POSTSEASON  scoring  106426  5/2       PHI      fga          93   
-#>  3 1       POSTSEASON  scoring  106426  5/2       PHI      fg_percent   39.8 
-#>  4 1       POSTSEASON  scoring  106426  5/2       PHI      ftm          13   
-#>  5 1       POSTSEASON  scoring  106426  5/2       PHI      fta          16   
-#>  6 1       POSTSEASON  scoring  106426  5/2       PHI      ft_percent   81.3 
-#>  7 1       POSTSEASON  scoring  106426  5/2       PHI      x3fgm        13   
-#>  8 1       POSTSEASON  scoring  106426  5/2       PHI      x3fga        49   
-#>  9 1       POSTSEASON  scoring  106426  5/2       PHI      x3fg_percent 26.5 
-#> 10 1       POSTSEASON  scoring  106426  5/2       PHI      pts          100  
+#>    team_id season_type        category game_id game_date opponent stat     value
+#>    <chr>   <chr>              <chr>    <chr>   <chr>     <chr>    <chr>    <chr>
+#>  1 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fgm      37   
+#>  2 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fga      93   
+#>  3 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fg_perc… 39.8 
+#>  4 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      ftm      13   
+#>  5 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fta      16   
+#>  6 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      ft_perc… 81.3 
+#>  7 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      x3fgm    13   
+#>  8 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      x3fga    49   
+#>  9 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      x3fg_pe… 26.5 
+#> 10 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      pts      100  
 #> # ℹ 155 more rows
 # }
 ```

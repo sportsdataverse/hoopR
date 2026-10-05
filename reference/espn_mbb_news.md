@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:04:37 UTC
+#> ℹ Data updated: 2026-10-05 18:40:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Head… Chris H… "DePaul co… 2026-09-… FALSE   NA     https:/… 41       
-#> 2  5.01e7 Head… Judge g… "Guard Den… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 3  5.01e7 Head… U.S. Se… "The Prote… 2026-09-… FALSE   Dan M… https:/… 3170     
-#> 4  5.00e7 Story What is… "As the Se… 2026-09-… FALSE   Dan M… https:/… 23       
-#> 5  5.01e7 Head… Alabama… "Alabama a… 2026-09-… FALSE   Alex … https:/… 3170     
+#> 1  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 2  5.01e7 Story What ch… What obsta… 2026-10-… FALSE   Dan M… https:/… 23       
+#> 3  5.01e7 Head… LSU's W… LSU landed… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 4  5.01e7 Head… Injunct… Melvin Cou… 2026-10-… FALSE   ESPN … https:/… 41       
+#> 5  5.01e7 Head… Jordan … Five-star … 2026-10-… FALSE   Jeff … https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:04:37 UTC
+#> ℹ Data updated: 2026-10-05 18:40:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  3.86e7 Story Fantasy… "Which fan… 2026-09-… FALSE   Jim M… https:/… 3090     
-#> 2  5.01e7 Story NBA pre… "As traini… 2026-09-… FALSE   Bobby… https:/… 46       
-#> 3  5.01e7 Head… NBA iss… "The NBA h… 2026-09-… FALSE   Ben G… https:/… 46       
-#> 4  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
-#> 5  5.00e7 Story NBA pre… "The NBA r… 2026-09-… FALSE   ESPN … https:/… 46       
+#> 1  5.00e7 Story NBA pre… "The NBA r… 2026-10-… FALSE   ESPN … https:/… 46       
+#> 2  5.01e7 Head… Knicks'… "Karl-Anth… 2026-10-… FALSE   NA     https:/… 46       
+#> 3  5.01e7 Story Fantasy… "Eric Kara… 2026-10-… FALSE   Eric … https:/… 3090     
+#> 4  5.01e7 Story Behind … "From on-c… 2026-10-… FALSE   Dave … https:/… 46       
+#> 5  5.01e7 Media Golden … "Golden St… 2026-10-… FALSE   NA     https:/… 46       
 # }
 ```

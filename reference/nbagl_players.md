@@ -16,7 +16,7 @@ nbagl_players(
   historical = 1,
   league_id = "20",
   player_position = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   team_id = "0",
   weight = "",

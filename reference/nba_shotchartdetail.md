@@ -31,7 +31,7 @@ nba_shotchartdetail(
   player_id = "202696",
   player_position = "",
   rookie_year = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = 0,
@@ -42,7 +42,7 @@ nba_shotchartdetail(
 
 nba_shotchartleaguewide(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   ...
 )
 
@@ -86,7 +86,7 @@ nba_shotchartlineupdetail(
   position = "",
   range_type = "0",
   rookie_year = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -423,13 +423,13 @@ table.
 
 ## Details
 
-     nba_shotchartdetail(league_id = '00', player_id = '202696', season = year_to_season(most_recent_nba_season() - 1))
+     nba_shotchartdetail(league_id = '00', player_id = '202696', season = year_to_season(most_recent_nba_season() - 2))
 
-     nba_shotchartleaguewide(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_shotchartleaguewide(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
      nba_shotchartlineupdetail(group_id = '-202689-203493-203501-1626174-1627827-',
                                group_id2 = '-202689-203493-203501-1626174-1627827-',
-                               season = year_to_season(most_recent_nba_season() - 1))
+                               season = year_to_season(most_recent_nba_season() - 2))
 
 ## See also
 

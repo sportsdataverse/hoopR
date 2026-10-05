@@ -46,24 +46,21 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ──────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:05:21 UTC
-#> # A tibble: 90 × 23
-#>    team_id section  eastern_conference v2    w_l   pct   gb    pf    pa    home 
-#>    <chr>   <chr>    <chr>              <chr> <chr> <chr> <chr> <chr> <chr> <chr>
-#>  1 1       CONFERE… -                  Celt… 0-0   -     -     0.0   0.0   0-0  
-#>  2 1       CONFERE… -                  Heat  0-0   -     -     0.0   0.0   0-0  
-#>  3 1       CONFERE… -                  Nets  0-0   -     -     0.0   0.0   0-0  
-#>  4 1       CONFERE… -                  Knic… 0-0   -     -     0.0   0.0   0-0  
-#>  5 1       CONFERE… -                  Magic 0-0   -     -     0.0   0.0   0-0  
-#>  6 1       CONFERE… -                  76ers 0-0   -     -     0.0   0.0   0-0  
-#>  7 1       CONFERE… -                  Wiza… 0-0   -     -     0.0   0.0   0-0  
-#>  8 1       CONFERE… -                  Hawks 0-0   -     -     0.0   0.0   0-0  
-#>  9 1       CONFERE… -                  Bulls 0-0   -     -     0.0   0.0   0-0  
-#> 10 1       CONFERE… -                  Cava… 0-0   -     -     0.0   0.0   0-0  
-#> # ℹ 80 more rows
-#> # ℹ 13 more variables: away <chr>, conf <chr>, div <chr>, l10 <chr>,
-#> #   strk <chr>, entity_id <chr>, western_conference <chr>, atlantic <chr>,
-#> #   central <chr>, southeast <chr>, northwest <chr>, pacific <chr>,
-#> #   southwest <chr>
+#> ℹ Data updated: 2026-10-05 18:41:45 UTC
+#> # A tibble: 30 × 11
+#>    team_id section   eastern_conference v2      w_l   pct   pf    pa    strk 
+#>    <chr>   <chr>     <chr>              <chr>   <chr> <chr> <chr> <chr> <chr>
+#>  1 1       PRESEASON 1                  Heat    1-0   1.000 129.0 105.0 W1   
+#>  2 1       PRESEASON 2                  Wizards 0-0   -     0.0   0.0   -    
+#>  3 1       PRESEASON 3                  Hornets 0-0   -     0.0   0.0   -    
+#>  4 1       PRESEASON 4                  Hawks   0-0   -     0.0   0.0   -    
+#>  5 1       PRESEASON 5                  Magic   0-0   -     0.0   0.0   -    
+#>  6 1       PRESEASON 6                  Knicks  0-0   -     0.0   0.0   -    
+#>  7 1       PRESEASON 7                  76ers   0-0   -     0.0   0.0   -    
+#>  8 1       PRESEASON 8                  Nets    0-0   -     0.0   0.0   -    
+#>  9 1       PRESEASON 9                  Celtics 0-0   -     0.0   0.0   -    
+#> 10 1       PRESEASON 10                 Bulls   0-0   -     0.0   0.0   -    
+#> # ℹ 20 more rows
+#> # ℹ 2 more variables: entity_id <chr>, western_conference <chr>
 # }
 ```

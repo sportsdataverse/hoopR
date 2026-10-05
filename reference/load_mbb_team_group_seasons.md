@@ -87,16 +87,16 @@ Saiem Gilani
 #> # A tibble: 365 × 11
 #>    league season team_id team_id_source team_name   subdivision_id conference_id
 #>    <chr>   <int> <chr>   <chr>          <chr>       <chr>          <chr>        
-#>  1 mbb      2026 103     espn           Boston Col… mbb:d1         mbb:acc      
-#>  2 mbb      2026 104     espn           Boston Uni… mbb:d1         mbb:patriot  
-#>  3 mbb      2026 107     espn           Holy Cross… mbb:d1         mbb:patriot  
-#>  4 mbb      2026 108     espn           Harvard Cr… mbb:d1         mbb:ivy      
-#>  5 mbb      2026 111     espn           Northeaste… mbb:d1         mbb:caa      
-#>  6 mbb      2026 112358  espn           Long Islan… mbb:d1         mbb:nec      
-#>  7 mbb      2026 113     espn           Massachuse… mbb:d1         mbb:mac      
-#>  8 mbb      2026 116     espn           Mount St. … mbb:d1         mbb:maac     
-#>  9 mbb      2026 119     espn           Towson Tig… mbb:d1         mbb:caa      
-#> 10 mbb      2026 12      espn           Arizona Wi… mbb:d1         mbb:big-12   
+#>  1 mbb      2027 103     espn           Boston Col… mbb:d1         mbb:acc      
+#>  2 mbb      2027 104     espn           Boston Uni… mbb:d1         mbb:patriot  
+#>  3 mbb      2027 107     espn           Holy Cross… mbb:d1         mbb:patriot  
+#>  4 mbb      2027 108     espn           Harvard Cr… mbb:d1         mbb:ivy      
+#>  5 mbb      2027 111     espn           Northeaste… mbb:d1         mbb:caa      
+#>  6 mbb      2027 112358  espn           Long Islan… mbb:d1         mbb:nec      
+#>  7 mbb      2027 113     espn           Massachuse… mbb:d1         mbb:mac      
+#>  8 mbb      2027 116     espn           Mount St. … mbb:d1         mbb:maac     
+#>  9 mbb      2027 119     espn           Towson Tig… mbb:d1         mbb:caa      
+#> 10 mbb      2027 12      espn           Arizona Wi… mbb:d1         mbb:big-12   
 #> # ℹ 355 more rows
 #> # ℹ 4 more variables: division_id <chr>, source <chr>, sources_agree <lgl>,
 #> #   notes <chr>
@@ -107,16 +107,16 @@ Saiem Gilani
 #> # A tibble: 30 × 11
 #>    league season team_id team_id_source team_name   subdivision_id conference_id
 #>    <chr>   <int> <chr>   <chr>          <chr>       <chr>          <chr>        
-#>  1 nba      2026 1       espn           Atlanta Ha… NA             nba:east     
-#>  2 nba      2026 10      espn           Houston Ro… NA             nba:west     
-#>  3 nba      2026 11      espn           Indiana Pa… NA             nba:east     
-#>  4 nba      2026 12      espn           LA Clippers NA             nba:west     
-#>  5 nba      2026 13      espn           Los Angele… NA             nba:west     
-#>  6 nba      2026 14      espn           Miami Heat  NA             nba:east     
-#>  7 nba      2026 15      espn           Milwaukee … NA             nba:east     
-#>  8 nba      2026 16      espn           Minnesota … NA             nba:west     
-#>  9 nba      2026 17      espn           Brooklyn N… NA             nba:east     
-#> 10 nba      2026 18      espn           New York K… NA             nba:east     
+#>  1 nba      2027 1       espn           Atlanta Ha… NA             nba:east     
+#>  2 nba      2027 10      espn           Houston Ro… NA             nba:west     
+#>  3 nba      2027 11      espn           Indiana Pa… NA             nba:east     
+#>  4 nba      2027 12      espn           LA Clippers NA             nba:west     
+#>  5 nba      2027 13      espn           Los Angele… NA             nba:west     
+#>  6 nba      2027 14      espn           Miami Heat  NA             nba:east     
+#>  7 nba      2027 15      espn           Milwaukee … NA             nba:east     
+#>  8 nba      2027 16      espn           Minnesota … NA             nba:west     
+#>  9 nba      2027 17      espn           Brooklyn N… NA             nba:east     
+#> 10 nba      2027 18      espn           New York K… NA             nba:east     
 #> # ℹ 20 more rows
 #> # ℹ 4 more variables: division_id <chr>, source <chr>, sources_agree <lgl>,
 #> #   notes <chr>

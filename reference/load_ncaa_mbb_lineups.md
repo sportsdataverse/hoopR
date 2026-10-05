@@ -846,279 +846,93 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(load_ncaa_mbb_pbp(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_pbp/ncaa_mbb_pbp_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_pbp/ncaa_mbb_pbp_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 3,075,470 × 87
-#>    game_date  home    away        period clock game_time game_seconds home_score
-#>    <chr>      <chr>   <chr>        <int> <chr> <chr>            <int>      <int>
-#>  1 11/03/2025 Buffalo Southern M…      1 19:59 00:01                1          0
-#>  2 11/03/2025 Buffalo Southern M…      1 19:59 00:01                1          0
-#>  3 11/03/2025 Buffalo Southern M…      1 19:37 00:23               23          3
-#>  4 11/03/2025 Buffalo Southern M…      1 19:03 00:57               57          3
-#>  5 11/03/2025 Buffalo Southern M…      1 18:50 01:10               70          3
-#>  6 11/03/2025 Buffalo Southern M…      1 18:46 01:14               74          3
-#>  7 11/03/2025 Buffalo Southern M…      1 18:39 01:21               81          3
-#>  8 11/03/2025 Buffalo Southern M…      1 18:39 01:21               81          3
-#>  9 11/03/2025 Buffalo Southern M…      1 18:32 01:28               88          3
-#> 10 11/03/2025 Buffalo Southern M…      1 18:28 01:32               92          3
-#> # ℹ 3,075,460 more rows
-#> # ℹ 79 more variables: away_score <int>, event_team <chr>,
-#> #   event_description <chr>, player_1 <chr>, player_2 <chr>, event_type <chr>,
-#> #   event_result <chr>, shot_value <int>, event_length <int>, poss_num <int>,
-#> #   poss_team <chr>, poss_length <int>, is_transition <lgl>, home_1 <chr>,
-#> #   home_2 <chr>, home_3 <chr>, home_4 <chr>, home_5 <chr>, away_1 <chr>,
-#> #   away_2 <chr>, away_3 <chr>, away_4 <chr>, away_5 <chr>, status <chr>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_shots(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_shots/ncaa_mbb_shots_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_shots/ncaa_mbb_shots_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 740,861 × 19
-#>    season team_id     shooter_id shot_x shot_y dist_ft shot_zone shot_type made 
-#>     <int> <chr>       <chr>       <dbl>  <dbl>   <dbl> <chr>     <chr>     <lgl>
-#>  1   2026 Buffalo     RySabol     -12.5  23.2    26.4  abovebre… unknown   TRUE 
-#>  2   2026 Buffalo     NoBatchel…   -9    25.1    26.6  abovebre… unknown   FALSE
-#>  3   2026 Buffalo     RySabol     -15.5  21.3    26.4  abovebre… unknown   FALSE
-#>  4   2026 Buffalo     AnBrizzi    -19.5  19.4    27.5  abovebre… unknown   FALSE
-#>  5   2026 Southern M… IsTaveras    -2.5   4.4     5.06 paint     unknown   TRUE 
-#>  6   2026 Buffalo     DaFreitag    10.5   3.46   11.1  paint     unknown   TRUE 
-#>  7   2026 Southern M… BrCarruth    23     5.34   23.6  corner3   unknown   FALSE
-#>  8   2026 Buffalo     DaFreitag    15.5  20.4    25.6  abovebre… unknown   FALSE
-#>  9   2026 Southern M… TyWeeks       1    14.7    14.8  paint     unknown   TRUE 
-#> 10   2026 Southern M… BrCarruth    -1     7.22    7.29 paint     unknown   TRUE 
-#> # ℹ 740,851 more rows
-#> # ℹ 10 more variables: point_value <int>, period <???>, sec_left <???>,
-#> #   source <chr>, contest_id <chr>, ncaa_team_id <chr>, espn_team_id <chr>,
-#> #   shooter_player_id <chr>, shooter_clean_name <chr>, espn_game_id <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_lineups(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_lineups/ncaa_mbb_lineups_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_lineups/ncaa_mbb_lineups_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 288,918 × 77
-#>    lineup_key   date  location_type team  team_year opponent lineup_id start_min
-#>    <chr>        <chr> <chr>         <chr>     <int> <chr>    <chr>         <dbl>
-#>  1 cb9dcbee024… 2025… Home          Buff…      2025 Souther… AnBrizzi…      0   
-#>  2 d6d69475989… 2025… Home          Buff…      2025 Souther… DaFreita…      4.3 
-#>  3 cf3a504da8c… 2025… Home          Buff…      2025 Souther… AnBrizzi…      5.35
-#>  4 c911894db9e… 2025… Home          Buff…      2025 Souther… AnBrizzi…      8.18
-#>  5 6f492046817… 2025… Home          Buff…      2025 Souther… AnBrizzi…      9.18
-#>  6 2e0ff952512… 2025… Home          Buff…      2025 Souther… DeTalton…     12.1 
-#>  7 894b30a0fa2… 2025… Home          Buff…      2025 Souther… DaFreita…     14.0 
-#>  8 819c757268b… 2025… Home          Buff…      2025 Souther… AnBrizzi…     16.4 
-#>  9 aecd97e9b95… 2025… Home          Buff…      2025 Souther… AnBrizzi…     18.0 
-#> 10 9e01a276acf… 2025… Home          Buff…      2025 Souther… AnBrizzi…     18.2 
-#> # ℹ 288,908 more rows
-#> # ℹ 69 more variables: end_min <dbl>, duration_mins <dbl>, player_1 <chr>,
-#> #   player_2 <chr>, player_3 <chr>, player_4 <chr>, player_5 <chr>,
-#> #   players_in <chr>, players_out <chr>, start_scored <int>,
-#> #   start_allowed <int>, end_scored <int>, end_allowed <int>, start_diff <int>,
-#> #   end_diff <int>, player_count_error <???>, poss <int>, pts <int>,
-#> #   plus_minus <int>, fga <int>, fgm <int>, rima <int>, rimm <int>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_matchup_stints(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_matchup_stints/ncaa_mbb_matchup_stints_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_matchup_stints/ncaa_mbb_matchup_stints_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 210,508 × 33
-#>    contest_id season game_date  home   away  game_stint_num period start_seconds
-#>    <chr>       <int> <chr>      <chr>  <chr>          <int>  <int>         <int>
-#>  1 6388769      2026 11/03/2025 Buffa… Sout…              1      1             1
-#>  2 6388769      2026 11/03/2025 Buffa… Sout…              2      1           263
-#>  3 6388769      2026 11/03/2025 Buffa… Sout…              3      1           287
-#>  4 6388769      2026 11/03/2025 Buffa… Sout…              4      1           321
-#>  5 6388769      2026 11/03/2025 Buffa… Sout…              5      1           463
-#>  6 6388769      2026 11/03/2025 Buffa… Sout…              6      1           512
-#>  7 6388769      2026 11/03/2025 Buffa… Sout…              7      1           599
-#>  8 6388769      2026 11/03/2025 Buffa… Sout…              8      1           655
-#>  9 6388769      2026 11/03/2025 Buffa… Sout…              9      1           757
-#> 10 6388769      2026 11/03/2025 Buffa… Sout…             10      1           856
-#> # ℹ 210,498 more rows
-#> # ℹ 25 more variables: end_seconds <int>, duration_seconds <int>,
-#> #   matchup_key <chr>, home_lineup_key <chr>, away_lineup_key <chr>,
-#> #   home_lineup <chr>, away_lineup <chr>, end_home_score <int>,
-#> #   end_away_score <int>, n_events <int>, n_possessions <int>,
-#> #   start_home_score <int>, start_away_score <int>, home_pts <int>,
-#> #   away_pts <int>, home_1 <chr>, home_2 <chr>, home_3 <chr>, home_4 <chr>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_possessions(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_possessions/ncaa_mbb_possessions_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_possessions/ncaa_mbb_possessions_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 878,168 × 56
-#>    game_date  home   away  period poss_num poss_team home_1 home_2 home_3 home_4
-#>    <chr>      <chr>  <chr>  <int>    <int> <chr>     <chr>  <chr>  <chr>  <chr> 
-#>  1 11/03/2025 Buffa… Sout…      1        1 Buffalo   ANGEL… DANIE… NOAH.… RYAN.…
-#>  2 11/03/2025 Buffa… Sout…      1        2 Southern… ANGEL… DANIE… NOAH.… RYAN.…
-#>  3 11/03/2025 Buffa… Sout…      1        3 Buffalo   ANGEL… DANIE… NOAH.… RYAN.…
-#>  4 11/03/2025 Buffa… Sout…      1        4 Southern… ANGEL… DANIE… NOAH.… RYAN.…
-#>  5 11/03/2025 Buffa… Sout…      1        5 Buffalo   ANGEL… DANIE… NOAH.… RYAN.…
-#>  6 11/03/2025 Buffa… Sout…      1        6 Southern… ANGEL… DANIE… NOAH.… RYAN.…
-#>  7 11/03/2025 Buffa… Sout…      1        7 Buffalo   ANGEL… DANIE… NOAH.… RYAN.…
-#>  8 11/03/2025 Buffa… Sout…      1        8 Southern… ANGEL… DANIE… NOAH.… RYAN.…
-#>  9 11/03/2025 Buffa… Sout…      1        9 Buffalo   ANGEL… DANIE… NOAH.… RYAN.…
-#> 10 11/03/2025 Buffa… Sout…      1       10 Southern… ANGEL… DANIE… NOAH.… RYAN.…
-#> # ℹ 878,158 more rows
-#> # ℹ 46 more variables: home_5 <chr>, away_1 <chr>, away_2 <chr>, away_3 <chr>,
-#> #   away_4 <chr>, away_5 <chr>, home_score <int>, away_score <int>, pts <int>,
-#> #   is_assisted <int>, is_transition <int>, is_garbage_time <int>,
-#> #   start_event_type <chr>, first_shot_time <int>, first_shot_type <chr>,
-#> #   last_event_time <int>, last_event_type <chr>, contest_id <chr>,
-#> #   home_ncaa_team_id <chr>, home_espn_team_id <chr>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_rapm_within_team(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_rapm_within_team/ncaa_mbb_rapm_within_team_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_rapm_within_team/ncaa_mbb_rapm_within_team_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 4,130 × 11
-#>    team  player_code rapm_off rapm_def team_off_poss num_players rapm_net season
-#>    <chr> <chr>          <dbl>    <dbl>         <dbl>       <int>    <dbl>  <int>
-#>  1 A&M-… Williams, …   1.57     0.316           2006          14    1.26    2026
-#>  2 A&M-… Gibson, Ma…  -0.448   -2.76            2006          14    2.31    2026
-#>  3 A&M-… Shogbonyo,…   1.03     0.0696          2006          14    0.961   2026
-#>  4 A&M-… Houston, DA  -0.750   -1.88            2006          14    1.13    2026
-#>  5 A&M-… Evran, Cen…  -0.379   -2.85            2006          14    2.47    2026
-#>  6 A&M-… Yetna, Fra…  -0.304    1.51            2006          14   -1.81    2026
-#>  7 A&M-… Torbor, Leo  -2.37    -0.995           2006          14   -1.37    2026
-#>  8 A&M-… Michelini-…  -0.0436  -0.657           2006          14    0.613   2026
-#>  9 A&M-… Parker, Kam  -1.82     0.159           2006          14   -1.97    2026
-#> 10 A&M-… Haire, Jad…  -2.76    -1.58            2006          14   -1.18    2026
-#> # ℹ 4,120 more rows
-#> # ℹ 3 more variables: player_id <chr>, team_id <chr>, person_id <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_rapm(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_rapm/ncaa_mbb_rapm_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_rapm/ncaa_mbb_rapm_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 4,974 × 11
-#>    season player_id person_id     player     team  orapm drapm rapm_net off_poss
-#>     <int> <chr>     <chr>         <chr>      <chr> <dbl> <dbl>    <dbl>    <int>
-#>  1   2026 10803749  pd7efe0f13f3f YAXEL.LEN… Mich…  8.70  6.96    15.7      2132
-#>  2   2026 9331813   pc795a21e83de FLORY.BID… Kans…  5.10  7.97    13.1      1867
-#>  3   2026 10801791  p102e7027e3ca HENRI.VEE… Nort…  6.24  6.47    12.7      1668
-#>  4   2026 10804007  pc83cc20ae61e MJ.COLLINS Utah…  6.84  4.94    11.8      1869
-#>  5   2026 10801396  p4f3bc1812d7e JAKOBI.GI… Tenn…  9.17  2.08    11.2      2183
-#>  6   2026 9336819   pebaa72113554 FLETCHER.… Purd…  5.96  4.64    10.6      1882
-#>  7   2026 10809734  p3a7224d3eee5 KEATON.WA… Illi…  7.65  2.71    10.4      1996
-#>  8   2026 9334537   p9fb8e9596d89 JEREMY.FE… Mich…  4.21  5.65     9.86     1937
-#>  9   2026 9336991   pd9e78de171de ROBBIE.AV… Sain…  6.02  3.68     9.71     1654
-#> 10   2026 9324443   p92da0d5d80ba JOSHUA.JE… Iowa…  5.80  3.81     9.60     1857
-#> # ℹ 4,964 more rows
-#> # ℹ 2 more variables: def_poss <int>, estimand <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_player_box(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_player_box/ncaa_mbb_player_box_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_player_box/ncaa_mbb_player_box_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 127,465 × 125
-#>    game_date home  away  team  player  mins o_poss   pts   orb   drb   ast   stl
-#>    <chr>     <chr> <chr> <chr> <chr>  <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1 11/03/20… Buff… Sout… Buff… ANGEL… 33.1      55    18     0     3     3     1
-#>  2 11/03/20… Buff… Sout… Buff… DANIE… 21.9      37     7     3     0     1     1
-#>  3 11/03/20… Buff… Sout… Buff… DERRI… 22.8      38     4     0     2     4     2
-#>  4 11/03/20… Buff… Sout… Buff… EZRA.… 19.2      31     6     0     2     1     0
-#>  5 11/03/20… Buff… Sout… Buff… KYLE.… 10.2      14     4     3     1     0     1
-#>  6 11/03/20… Buff… Sout… Buff… MIKHA…  4.67      6     0     1     0     0     0
-#>  7 11/03/20… Buff… Sout… Buff… NOAH.… 30.8      52    12     6     5     2     3
-#>  8 11/03/20… Buff… Sout… Buff… OMAR.…  1.53      3     0     0     0     0     0
-#>  9 11/03/20… Buff… Sout… Buff… RYAN.… 34.9      59    32     0     2     4     0
-#> 10 11/03/20… Buff… Sout… Buff… TIM.O… 20.7      35     2     0     1     1     0
-#> # ℹ 127,455 more rows
-#> # ℹ 113 more variables: blk <dbl>, tov <dbl>, pf <dbl>, ts_pct <dbl>,
-#> #   efg_pct <dbl>, fgm <dbl>, fga <dbl>, fg_pct <dbl>, tpm <dbl>, tpa <dbl>,
-#> #   tp_pct <dbl>, ftm <dbl>, fta <dbl>, ft_pct <dbl>, rimm <dbl>, rima <dbl>,
-#> #   rim_pct <dbl>, midm <dbl>, mida <dbl>, mid_pct <dbl>, pbackm <dbl>,
-#> #   pbacka <dbl>, pback_pct <dbl>, blk_rim <dbl>, blk_mid <dbl>,
-#> #   blk_three <dbl>, pct_fga_trans <dbl>, pct_tpa_trans <dbl>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_team_box(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_box/ncaa_mbb_team_box_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_box/ncaa_mbb_team_box_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 12,594 × 81
-#>    home   away  team   mins o_mins d_mins o_poss d_poss  ortg  drtg netrtg   pts
-#>    <chr>  <chr> <chr> <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <dbl> <dbl>  <dbl> <dbl>
-#>  1 Buffa… Sout… Buff…  39.7   20.3   19.4     66     67 129.  118.   10.9     85
-#>  2 Buffa… Sout… Sout…  39.7   19.4   20.3     67     66 118.  129.  -10.9     79
-#>  3 Peppe… Nort… Nort…  44.8   21.6   23.2     81     82 109.   98.8   9.86    88
-#>  4 Peppe… Nort… Pepp…  44.8   23.2   21.6     82     81  98.8 109.   -9.86    81
-#>  5 UCLA   Pepp… Pepp…  39.6   21.5   18.0     62     60 102.  123.  -21.7     63
-#>  6 UCLA   Pepp… UCLA   39.6   18.0   21.5     60     62 123.  102.   21.7     74
-#>  7 Peppe… New … New …  39.9   20.6   19.2     74     74 107.  122.  -14.9     79
-#>  8 Peppe… New … Pepp…  39.9   19.2   20.6     74     74 122.  107.   14.9     90
-#>  9 Peppe… SFA   Pepp…  39.3   20.6   18.7     65     66  92.3  95.5  -3.15    60
-#> 10 Peppe… SFA   SFA    39.3   18.7   20.6     66     65  95.5  92.3   3.15    63
-#> # ℹ 12,584 more rows
-#> # ℹ 69 more variables: d_pts <dbl>, fga <dbl>, d_fga <dbl>, fgm <dbl>,
-#> #   d_fgm <dbl>, tpa <dbl>, d_tpa <dbl>, tpm <dbl>, d_tpm <dbl>, fta <dbl>,
-#> #   d_fta <dbl>, ftm <dbl>, d_ftm <dbl>, rima <dbl>, d_rima <dbl>, rimm <dbl>,
-#> #   d_rimm <dbl>, orb <dbl>, d_orb <dbl>, drb <dbl>, d_drb <dbl>, blk <dbl>,
-#> #   d_blk <dbl>, to <dbl>, d_to <dbl>, ast <dbl>, d_ast <dbl>, e_poss <dbl>,
-#> #   fg_pct <dbl>, d_fg_pct <dbl>, tpp <dbl>, d_tpp <dbl>, ftp <dbl>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_rosters(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_rosters/ncaa_mbb_rosters_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_rosters/ncaa_mbb_rosters_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 10,228 × 4
-#>    season team               player                  games
-#>     <int> <chr>              <chr>                   <int>
-#>  1   2026 A&M-Corpus Christi BRYSON.WHEATFALL           26
-#>  2   2026 A&M-Corpus Christi CEDRIC.HORTON              13
-#>  3   2026 A&M-Corpus Christi CENKER.EVRAN               26
-#>  4   2026 A&M-Corpus Christi DA.HOUSTON                 27
-#>  5   2026 A&M-Corpus Christi DANIEL.MICHELINIJACKSON    29
-#>  6   2026 A&M-Corpus Christi DEVON.KOBI.PEARSON         31
-#>  7   2026 A&M-Corpus Christi FRANCK.YETNA               33
-#>  8   2026 A&M-Corpus Christi JADEN.HAIRE                25
-#>  9   2026 A&M-Corpus Christi JAMAL.AMBROSE              14
-#> 10   2026 A&M-Corpus Christi KAM.PARKER                 26
-#> # ℹ 10,218 more rows
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_team_rosters(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_rosters/ncaa_mbb_team_rosters_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_rosters/ncaa_mbb_team_rosters_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 5,633 × 16
-#>    season team_id team   player_id player clean_name name  jersey class position
-#>     <int> <chr>   <chr>  <chr>     <chr>  <chr>      <chr> <chr>  <chr> <chr>   
-#>  1   2026 609609  A&M-C… 11194274  BRYSO… Bryson Wh… Brys… 8      Fr.   G       
-#>  2   2026 609609  A&M-C… 11194285  CEDRI… Cedric Ho… Cedr… 14     Fr.   G       
-#>  3   2026 609609  A&M-C… 11194293  CENKE… Cenker Ev… Cenk… 99     Jr.   F       
-#>  4   2026 609609  A&M-C… 11194270  DA.HO… DA Houston DA H… 0      Sr.   G       
-#>  5   2026 609609  A&M-C… 11194276  DANIE… Daniel Mi… Dani… 10     Jr.   G       
-#>  6   2026 609609  A&M-C… 11194273  DEVON… Devon Kob… Devo… 5      Fr.   F       
-#>  7   2026 609609  A&M-C… 11194288  FRANC… Franck Ye… Fran… 22     Sr.   F       
-#>  8   2026 609609  A&M-C… 11194279  JADEN… Jaden Hai… Jade… 11     Jr.   F       
-#>  9   2026 609609  A&M-C… 11194291  JAMAL… Jamal Amb… Jama… 24     Jr.   F       
-#> 10   2026 609609  A&M-C… 9333008   KAM.P… Kam Parker Kam … 4      Sr.   G       
-#> # ℹ 5,623 more rows
-#> # ℹ 6 more variables: height <chr>, ht_inches <int>, hometown <chr>,
-#> #   high_school <chr>, gp <chr>, gs <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_schedule(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_schedule/ncaa_mbb_schedule_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_schedule/ncaa_mbb_schedule_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 6,297 × 7
-#>    contest_id game_date  home              away     home_score away_score season
-#>    <chr>      <chr>      <chr>             <chr>         <int>      <int>  <int>
-#>  1 6388769    11/03/2025 Buffalo           Souther…         85         79   2026
-#>  2 6388905    11/15/2025 Pepperdine        Norther…         81         88   2026
-#>  3 6388907    11/07/2025 UCLA              Pepperd…         74         63   2026
-#>  4 6388965    11/18/2025 Pepperdine        New Orl…         90         79   2026
-#>  5 6388997    11/21/2025 Pepperdine        SFA              60         63   2026
-#>  6 6389038    11/29/2025 Cal St. Fullerton Pepperd…         83         69   2026
-#>  7 6389078    12/02/2025 Pepperdine        Abilene…         63         71   2026
-#>  8 6389091    12/06/2025 Pepperdine        Vermont          56         65   2026
-#>  9 6389095    12/13/2025 CSU Bakersfield   Pepperd…         62         70   2026
-#> 10 6389099    12/18/2025 Long Beach St.    Pepperd…         81         78   2026
-#> # ℹ 6,287 more rows
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_ncaa_mbb_team_ids(seasons = most_recent_mbb_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_ids/ncaa_mbb_team_ids_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_ids/ncaa_mbb_team_ids_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 365 × 4
-#>    team               conference id     season
-#>    <chr>              <chr>      <chr>   <int>
-#>  1 A&M-Corpus Christi Southland  609609   2026
-#>  2 Abilene Christian  WAC        609614   2026
-#>  3 Air Force          MWC        609502   2026
-#>  4 Akron              MAC        609541   2026
-#>  5 Alabama            SEC        609617   2026
-#>  6 Alabama A&M        SWAC       609615   2026
-#>  7 Alabama St.        SWAC       609616   2026
-#>  8 Alcorn             SWAC       609619   2026
-#>  9 American           Patriot    609620   2026
-#> 10 App State          Sun Belt   609621   2026
-#> # ℹ 355 more rows
+#> # A tibble: 0 × 0
 # }
 ```

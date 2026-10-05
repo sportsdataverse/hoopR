@@ -200,7 +200,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_tournament_seasons(tournament_id = 3)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournament Seasons ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:05:12 UTC
+#> ℹ Data updated: 2026-10-05 18:41:36 UTC
 #> # A tibble: 14 × 4
 #>    league                  tournament_id season ref                             
 #>    <chr>                   <chr>          <int> <chr>                           
@@ -222,7 +222,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournament_seasons(tournament_id = 1)
 #> ── ESPN NBA Tournament Seasons ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:05:12 UTC
+#> ℹ Data updated: 2026-10-05 18:41:36 UTC
 #> # A tibble: 3 × 4
 #>   league tournament_id season ref                                               
 #>   <chr>  <chr>          <int> <chr>                                             

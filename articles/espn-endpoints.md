@@ -171,14 +171,14 @@ library(hoopR)
 mbb_news <- espn_mbb_news(limit = 10)
 head(mbb_news[, c("headline", "published")])
 #> # A tibble: 6 × 2
-#>   headline                                                        published     
-#>   <chr>                                                           <chr>         
-#> 1 Chris Holtmann, DePaul agree to contract extension              2026-09-29T23…
-#> 2 Judge grants injunction for Denzel Aberdeen to play for Florida 2026-09-29T18…
-#> 3 U.S. Senate votes 77-22 to pass Protect College Sports Act      2026-09-29T13…
-#> 4 What is the Protect College Sports Act? What would the bill do? 2026-09-30T12…
-#> 5 Alabama agrees to 2-year extension, raise with AD Greg Byrne    2026-09-28T19…
-#> 6 Big Ten basketball adopts rule preventing pros from returning   2026-09-28T17…
+#>   headline                                                             published
+#>   <chr>                                                                <chr>    
+#> 1 Transfers, recruits and roster moves for key men's NCAA basketball … 2026-10-…
+#> 2 What challenges lie ahead for the Protect College Sports Act?        2026-10-…
+#> 3 LSU's Will Wade lands first 2027 5-star in guard King Gibson         2026-10-…
+#> 4 Injunction allows Council Jr. back to Kansas for 7th college season  2026-10-…
+#> 5 Jordan Page picks UConn, joins Bowman as five-stars to Huskies       2026-10-…
+#> 6 Windy: Simmons could guard Wembanyama                                2026-10-…
 
 # 2025 MBB season calendar
 mbb_cal <- espn_mbb_calendar(season = 2025)
@@ -494,7 +494,7 @@ nba_athletes <- espn_nba_athletes_index(
   season = 2025, active = TRUE, limit = 5000
 )
 nrow(nba_athletes)
-#> [1] 700
+#> [1] 706
 head(nba_athletes[, c("display_name", "position_name", "team_name")])
 #> Error in `nba_athletes[, c("display_name", "position_name", "team_name")]`:
 #> ! Can't subset columns that don't exist.
@@ -753,11 +753,7 @@ espn_nba_season_leaders(season = 2024)
 # Award index for a season + per-award detail.
 aw <- espn_nba_season_awards(season = 2024)
 espn_nba_award(award_id = aw$award_id[1])
-#> # A tibble: 1 × 9
-#>   league season award_id name  description        athlete_id team_id athlete_ref
-#>   <chr>   <int> <chr>    <chr> <chr>              <chr>      <chr>   <chr>      
-#> 1 nba      2026 33       MVP   NBA Most Valuable… 4278073    25      http://spo…
-#> # ℹ 1 more variable: team_ref <chr>
+#> # A tibble: 0 × 0
 
 # Season group structure (conferences / D-I groups) -- mostly relevant
 # for MBB, which has a deep conference hierarchy.
@@ -885,11 +881,11 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```

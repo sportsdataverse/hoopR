@@ -37,7 +37,7 @@ nba_playerdashboardbyclutch(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -64,7 +64,7 @@ nba_playerdashboardbygamesplits(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -91,7 +91,7 @@ nba_playerdashboardbygeneralsplits(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -118,7 +118,7 @@ nba_playerdashboardbylastngames(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -145,7 +145,7 @@ nba_playerdashboardbyopponent(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -172,7 +172,7 @@ nba_playerdashboardbyshootingsplits(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -199,7 +199,7 @@ nba_playerdashboardbyteamperformance(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -226,7 +226,7 @@ nba_playerdashboardbyyearoveryear(
   player_id = "2544",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -246,7 +246,7 @@ nba_playerdashptpass(
   outcome = "",
   per_mode = "Totals",
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "0",
@@ -268,7 +268,7 @@ nba_playerdashptreb(
   per_mode = "Totals",
   period = 0,
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "0",
@@ -290,7 +290,7 @@ nba_playerdashptshotdefend(
   per_mode = "Totals",
   period = 0,
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "0",
@@ -312,7 +312,7 @@ nba_playerdashptshots(
   per_mode = "Totals",
   period = 0,
   player_id = "2544",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "0",
@@ -326,7 +326,7 @@ nba_synergyplaytypes(
   per_mode = "PerGame",
   play_type = "Isolation",
   player_or_team = "P",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   type_grouping = "Offensive",
   ...
@@ -553,66 +553,66 @@ installed-size limit. See the package source at
 [Player Clutch Stats
 Dashboard](https://www.nba.com/stats/players/clutch-traditional)
 
-     nba_playerdashboardbyclutch(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbyclutch(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by Game
 Splits](https://www.nba.com/stats/player/2544/traditional?Split=ingame)
 
-     nba_playerdashboardbygamesplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbygamesplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by General
 Splits](https://www.nba.com/stats/player/2544/traditional)
 
-     nba_playerdashboardbygeneralsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbygeneralsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by Last N
 Games](https://www.nba.com/stats/player/2544/traditional?Split=lastn)
 
-     nba_playerdashboardbylastngames(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbylastngames(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by
 Opponent](https://www.nba.com/stats/player/2544/traditional?Split=opp)
 
-     nba_playerdashboardbyopponent(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbyopponent(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by Shooting
 Splits](https://www.nba.com/stats/player/2544/shooting)
 
-     nba_playerdashboardbyshootingsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbyshootingsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by Team
 Performance](https://www.nba.com/stats/player/2544/traditional?Split=teamperf&PerMode=PerGame)
 
-     nba_playerdashboardbyteamperformance(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbyteamperformance(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Stats Dashboard by Team
 Performance](https://www.nba.com/stats/player/2544/traditional?Split=yoy&PerMode=PerGame)
 
-     nba_playerdashboardbyyearoveryear(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashboardbyyearoveryear(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Tracking (Second Spectrum) Stats -
 Passing](https://www.nba.com/stats/player/2544/passes-dash)
 
-     nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Tracking (Second Spectrum) Stats -
 Rebounding](https://www.nba.com/stats/player/2544/rebounds-dash)
 
-     nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Tracking (Second Spectrum) Stats -
 Defending](https://www.nba.com/stats/player/2544/defense-dash)
 
-     nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Tracking (Second Spectrum) Stats -
 Shooting](https://www.nba.com/stats/player/2544/shots-dash)
 
-     nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+     nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 
 [Synergy Play Type Stats](https://www.nba.com/stats/teams/isolation)
 
-     nba_synergyplaytypes(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+     nba_synergyplaytypes(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 ## See also
 

@@ -34,7 +34,7 @@ nba_assistleaders(
   league_id = "00",
   per_mode = "PerGame",
   player_or_team = "Team",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -42,7 +42,7 @@ nba_assistleaders(
 nba_assisttracker(
   league_id = "00",
   per_mode = "PerGame",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -52,7 +52,7 @@ nba_homepageleaders(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat_category = "Points",
   ...
@@ -63,7 +63,7 @@ nba_homepagev2(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat_type = "Traditional",
   ...
@@ -74,7 +74,7 @@ nba_leaderstiles(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat = "PTS",
   ...
@@ -85,7 +85,7 @@ nba_defensehub(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -95,7 +95,7 @@ nba_leagueleaders(
   league_id = "00",
   per_mode = "Totals",
   scope = "S",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat_category = "PTS",
   ...
@@ -103,7 +103,7 @@ nba_leagueleaders(
 
 nba_dunkscoreleaders(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   player_id = "",
   team_id = "",
@@ -113,7 +113,7 @@ nba_dunkscoreleaders(
 
 nba_gravityleaders(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -732,9 +732,9 @@ Returns a named list of data frames: GravityLeaders
 
      nba_leagueleaders(league_id = '00')
 
-     nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 1))
+     nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 2))
 
-     nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 1))
+     nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 2))
 
 ## Author
 

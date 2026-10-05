@@ -255,20 +255,20 @@ season  <- most_recent_nba_season()
 profile <- espn_nba_team_season_profile(team_id = team_id, season = season)
 
 espn_nba_team_schedule(team_id = team_id, season = season)
-#> # A tibble: 82 × 21
+#> # A tibble: 80 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
-#>  1 401809244   2026          NA    NA 2025-10-22T0… Gold… GS @ LAL   NA         
-#>  2 401809951   2026          NA    NA 2025-10-25T0… Minn… MIN @ LAL  NA         
-#>  3 401809968   2026          NA    NA 2025-10-27T0… Los … LAL @ SAC  NA         
-#>  4 401809977   2026          NA    NA 2025-10-28T0… Port… POR @ LAL  NA         
-#>  5 401809991   2026          NA    NA 2025-10-30T0… Los … LAL @ MIN  NA         
-#>  6 401809506   2026          NA    NA 2025-11-01T0… Los … LAL @ MEM  NA         
-#>  7 401810010   2026          NA    NA 2025-11-03T0… Miam… MIA @ LAL  NA         
-#>  8 401810018   2026          NA    NA 2025-11-04T0… Los … LAL @ POR  NA         
-#>  9 401810034   2026          NA    NA 2025-11-06T0… San … SA @ LAL   NA         
-#> 10 401810040   2026          NA    NA 2025-11-09T0… Los … LAL @ ATL  NA         
-#> # ℹ 72 more rows
+#>  1 401909092   2027          NA    NA 2026-10-22T0… Gold… GS @ LAL   NA         
+#>  2 401909851   2027          NA    NA 2026-10-24T0… LA C… LAC @ LAL  NA         
+#>  3 401909861   2027          NA    NA 2026-10-25T2… Los … LAL @ UTAH NA         
+#>  4 401909880   2027          NA    NA 2026-10-28T0… Port… POR @ LAL  NA         
+#>  5 401909892   2027          NA    NA 2026-10-29T0… Los … LAL @ LAC  NA         
+#>  6 401909285   2027          NA    NA 2026-10-31T0… Los … LAL @ GS   NA         
+#>  7 401909906   2027          NA    NA 2026-11-02T0… Toro… TOR @ LAL  NA         
+#>  8 401909921   2027          NA    NA 2026-11-03T0… Miam… MIA @ LAL  NA         
+#>  9 401909934   2027          NA    NA 2026-11-05T0… Los … LAL @ SAC  NA         
+#> 10 401909294   2027          NA    NA 2026-11-07T0… Port… POR @ LAL  NA         
+#> # ℹ 70 more rows
 #> # ℹ 13 more variables: opponent_abbrev <chr>, home_away <chr>,
 #> #   neutral_site <lgl>, conference_competition <lgl>, venue_id <chr>,
 #> #   venue_name <chr>, venue_city <chr>, venue_state <chr>, broadcast <chr>,
@@ -295,38 +295,16 @@ espn_nba_team_roster(team_id = team_id, season = season)
 # into every row -- "team_season_statistics" is the long-format sheet,
 # "team_record" is just the W-L.
 espn_nba_team_season_statistics(team_id = team_id, season = season)
-#> # A tibble: 109 × 13
-#>    league season season_type team_id category_name category_display stat_name   
-#>    <chr>   <int>       <int> <chr>   <chr>         <chr>            <chr>       
-#>  1 nba      2026           2 13      defensive     Defensive        blocks      
-#>  2 nba      2026           2 13      defensive     Defensive        defensiveRe…
-#>  3 nba      2026           2 13      defensive     Defensive        steals      
-#>  4 nba      2026           2 13      defensive     Defensive        turnoverPoi…
-#>  5 nba      2026           2 13      defensive     Defensive        defReboundR…
-#>  6 nba      2026           2 13      defensive     Defensive        avgDefensiv…
-#>  7 nba      2026           2 13      defensive     Defensive        avgBlocks   
-#>  8 nba      2026           2 13      defensive     Defensive        avgSteals   
-#>  9 nba      2026           2 13      defensive     Defensive        avg48Defens…
-#> 10 nba      2026           2 13      defensive     Defensive        avg48Blocks 
-#> # ℹ 99 more rows
-#> # ℹ 6 more variables: stat_abbrev <chr>, stat_display <chr>, value <dbl>,
-#> #   display_value <chr>, rank <int>, rank_display_value <chr>
+#> # A tibble: 0 × 0
 espn_nba_team_record(team_id = team_id, season = season)
-#> # A tibble: 12 × 14
-#>    league team_id season season_type record_id name    abbreviation display_name
-#>    <chr>  <chr>    <int>       <int> <chr>     <chr>   <chr>        <chr>       
-#>  1 nba    13        2026           2 0         overall Total        Overall     
-#>  2 nba    13        2026           2 33        Home    NA           Home        
-#>  3 nba    13        2026           2 34        Road    NA           Road        
-#>  4 nba    13        2026           2 60        vs. Di… NA           DIV         
-#>  5 nba    13        2026           2 61        vs. Co… NA           CONF        
-#>  6 nba    13        2026           2 901       Last T… L10          Last Ten Ga…
-#>  7 nba    13        2026           3 0         overall Total        Overall     
-#>  8 nba    13        2026           3 33        Home    NA           Home        
-#>  9 nba    13        2026           3 34        Road    NA           Road        
-#> 10 nba    13        2026           3 60        vs. Di… NA           DIV         
-#> 11 nba    13        2026           3 61        vs. Co… NA           CONF        
-#> 12 nba    13        2026           3 901       Last T… L10          Last Ten Ga…
+#> # A tibble: 5 × 14
+#>   league team_id season season_type record_id name     abbreviation display_name
+#>   <chr>  <chr>    <int>       <int> <chr>     <chr>    <chr>        <chr>       
+#> 1 nba    13        2027           2 0         overall  Total        Overall     
+#> 2 nba    13        2027           2 33        Home     NA           Home        
+#> 3 nba    13        2027           2 34        Road     NA           Road        
+#> 4 nba    13        2027           2 60        vs. Div. NA           DIV         
+#> 5 nba    13        2027           2 61        vs. Con… NA           CONF        
 #> # ℹ 6 more variables: short_display_name <chr>, description <chr>, type <chr>,
 #> #   summary <chr>, display_value <chr>, value <dbl>
 ```
@@ -368,22 +346,7 @@ nba_leagueleaders(season = "2024-25", stat_category = "PTS")
 # ESPN's version of the same idea. Same question, different kitchen --
 # and the prefix tells you which kitchen before you read another word.
 espn_nba_leaders(season = most_recent_nba_season())
-#> # A tibble: 400 × 11
-#>    season season_type category      abbreviation athlete_id athlete_name team_id
-#>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
-#>  1   2026           2 pointsPerGame PTS          3945274    NA           13     
-#>  2   2026           2 pointsPerGame PTS          4278073    NA           25     
-#>  3   2026           2 pointsPerGame PTS          4594268    NA           16     
-#>  4   2026           2 pointsPerGame PTS          3917376    NA           2      
-#>  5   2026           2 pointsPerGame PTS          4431678    NA           20     
-#>  6   2026           2 pointsPerGame PTS          6450       NA           12     
-#>  7   2026           2 pointsPerGame PTS          3908809    NA           5      
-#>  8   2026           2 pointsPerGame PTS          3112335    NA           7      
-#>  9   2026           2 pointsPerGame PTS          3032977    NA           14     
-#> 10   2026           2 pointsPerGame PTS          3059318    NA           20     
-#> # ℹ 390 more rows
-#> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
-#> #   display_value <chr>
+#> # A tibble: 0 × 0
 ```
 
 If you ever forget whether leaders live under `nba_` or `espn_nba_`:

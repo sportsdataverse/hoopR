@@ -2,6 +2,44 @@
 
 ## **hoopR 3.1.0.9000 (development version)**
 
+- The NBA Stats wrappers now default `season` to the previous season. 97
+  season arguments defaulted to the current one,
+  `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com
+  answers with empty tables until that season’s games begin. On
+  2026-10-05 the current season, 2026-27, left
+  [`nba_leaguedashplayerstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
+  [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  and
+  [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
+  empty; the previous season returns 582, 2,460 and 82 rows. They now
+  default to `year_to_season(most_recent_nba_season() - 2)`. Pass
+  `season` for the current season.
+  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md)
+  rolls over in October, so from July to September the default is two
+  seasons back from the one just finished. Unchanged:
+
+  - the schedule functions
+    ([`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+    [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+    [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)),
+    because a schedule is published before its season starts;
+  - the draft and draft-combine functions, whose default
+    (`most_recent_nba_season() - 1`) is already the latest completed
+    draft;
+  - [`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md),
+    which reads the current season’s standings (they list all 30 teams
+    before the season starts);
+  - fixed defaults such as `"2020-21"` and `"22022"`.
+
+  wehoop’s WNBA Stats wrappers use the same previous-season rule, as
+  does sportsdataverse-py. The examples and live tests pass the previous
+  season too. The
+  [`nba_playoffpicture()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  error hint now names `season_id`, the argument it takes, and the
+  [`nba_drafthistory()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md)
+  live test passes `season` rather than an unknown `season_year`, which
+  was silently ignored.
+
 - Added
   [`cbbd_teams_directory()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_directory.md)
   (CBD `/teams/directory`, upstream v1.29.0): the season’s full team

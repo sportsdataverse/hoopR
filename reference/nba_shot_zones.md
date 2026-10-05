@@ -83,21 +83,15 @@ Saiem Gilani
     df <- nba_shot_zones(game_id = "0022200001")
     print(df[!is.na(df$shot_zone), c("shot_distance", "shot_zone")])
   })
-#> ── NBA Shot Zones ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:09:23 UTC
-#> # A tibble: 162 × 2
-#>    shot_distance shot_zone          
-#>            <int> <chr>              
-#>  1            13 mid_range          
-#>  2            13 mid_range          
-#>  3            14 mid_range          
-#>  4             0 restricted_area    
-#>  5            24 corner_3           
-#>  6            27 above_the_break_3  
-#>  7             4 in_the_paint_non_ra
-#>  8            12 mid_range          
-#>  9             2 restricted_area    
-#> 10             2 restricted_area    
-#> # ℹ 152 more rows
+#> ✖ 2026-10-05 18:48:51.677897: Invalid arguments or no V3 play-by-play data for 0022200001 available!
+#> ✖ Args: game_id = "0022200001", start_period = 0, end_period = 0
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-10-05 18:49:51.716408: Invalid arguments or no traditional boxscore v3 data for 0022200001 available!
+#> ✖ Args: game_id = "0022200001", start_period = 0, end_period = 14, start_range = 0, end_range = 0, range_type = 0
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-10-05 18:49:51.73337: Invalid arguments or no V3 play-by-play data for 0022200001 available!
+#> ✖ Args: game_id = "0022200001", on_court = FALSE, version = "v3", p = NULL
+#> ✖ Error: incorrect number of dimensions
+#> Error in if (nrow(pbp) == 0L) { : argument is of length zero
 # }
 ```

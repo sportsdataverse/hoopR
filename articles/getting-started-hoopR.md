@@ -109,7 +109,7 @@ For the sake of your R session, we will only look at the previous 3
 years of data, but I have indicated the years to which the data goes
 back to.
 
-#### **NBA play-by-plays (2002-2026) ~ 60-120 seconds**
+#### **NBA play-by-plays (2002-2027) ~ 60-120 seconds**
 
 ``` r
 
@@ -120,7 +120,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 27.183 sec elapsed
+    ## 32.581 sec elapsed
 
 ``` r
 
@@ -204,7 +204,7 @@ dplyr::glimpse(nba_pbp)
     ## $ points_attempted                <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
     ## $ short_description               <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
 
-#### **NBA team box scores (2002-2026) ~ 5-30 seconds**
+#### **NBA team box scores (2002-2027) ~ 5-30 seconds**
 
 ``` r
 
@@ -216,7 +216,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.076 sec elapsed
+    ## 4.085 sec elapsed
 
 ``` r
 
@@ -292,7 +292,7 @@ dplyr::glimpse(nba_team_box)
     ## $ lead_changes                      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, …
     ## $ lead_percentage                   <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 
-#### **NBA player box scores (2002-2026) ~ 5-30 seconds**
+#### **NBA player box scores (2002-2027) ~ 5-30 seconds**
 
 ``` r
 
@@ -303,7 +303,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.329 sec elapsed
+    ## 5.024 sec elapsed
 
 ``` r
 
@@ -377,7 +377,7 @@ dplyr::glimpse(nba_player_box)
     ## $ opponent_team_alternate_color     <chr> "eee1c6", "eee1c6", "eee1c6", "eee1c…
     ## $ opponent_team_score               <int> 105, 105, 105, 105, 105, 105, 105, 1…
 
-#### **Men’s college basketball play-by-plays (2006-2026) ~ 120-180 seconds**
+#### **Men’s college basketball play-by-plays (2006-2027) ~ 120-180 seconds**
 
 ``` r
 
@@ -388,7 +388,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 63.064 sec elapsed
+    ## 70.63 sec elapsed
 
 ``` r
 
@@ -479,7 +479,7 @@ dplyr::glimpse(mbb_pbp)
     ## $ points_attempted                <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
     ## $ short_description               <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
 
-#### **Men’s college basketball team box scores (2003-2026) ~ 5-30 seconds**
+#### **Men’s college basketball team box scores (2003-2027) ~ 5-30 seconds**
 
 ``` r
 
@@ -490,7 +490,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.643 sec elapsed
+    ## 4.586 sec elapsed
 
 ``` r
 
@@ -566,7 +566,7 @@ dplyr::glimpse(mbb_team_box)
     ## $ lead_changes                      <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, …
     ## $ lead_percentage                   <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, …
 
-#### **Men’s college basketball player box scores (2003-2026) ~ 5-30 seconds**
+#### **Men’s college basketball player box scores (2003-2027) ~ 5-30 seconds**
 
 ``` r
 
@@ -577,21 +577,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.947 sec elapsed
+    ## 10.626 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
 ```
 
-    ## 927538 rows of men's college basketball player boxscore data from 29061 games.
+    ## 1126124 rows of men's college basketball player boxscore data from 35302 games.
 
 ``` r
 
 dplyr::glimpse(mbb_player_box)
 ```
 
-    ## Rows: 927,538
+    ## Rows: 1,126,124
     ## Columns: 55
     ## $ game_id                           <int> 401310865, 401310865, 401310865, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …

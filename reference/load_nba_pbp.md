@@ -395,126 +395,55 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
-#> ── ESPN NBA pbp from hoopR data repository ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-09 05:15:23 UTC
-#> # A tibble: 642,472 × 67
-#>    game_play_number        id sequence_number type_id type_text text  away_score
-#>               <int>     <dbl>           <int>   <int> <chr>     <chr>      <int>
-#>  1                1   4.02e 9               4     615 Jumpball  Karl…          0
-#>  2                2   4.02e 9               7     144 Driving … Jale…          0
-#>  3                3   4.02e 9               8     155 Defensiv… Juli…          0
-#>  4                4   4.02e 9               9      92 Jump Shot Step…          0
-#>  5                5   4.02e10              10     155 Defensiv… OG A…          0
-#>  6                6   4.02e10              11     136 Turnarou… Josh…          0
-#>  7                7   4.02e10              12     155 Defensiv… Vict…          0
-#>  8                8   4.02e10              13      63 Lost Bal… Step…          0
-#>  9                9   4.02e10              15     131 Pullup J… Mika…          0
-#> 10               10   4.02e10              16     156 Offensiv… Knic…          0
-#> # ℹ 642,462 more rows
-#> # ℹ 60 more variables: home_score <int>, period_number <int>,
-#> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
-#> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,
-#> #   athlete_id_3 <int>, wallclock <chr>, shooting_play <lgl>,
-#> #   coordinate_x_raw <dbl>, coordinate_y_raw <dbl>, points_attempted <int>,
-#> #   short_description <chr>, game_id <int>, season <int>, season_type <int>, …
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_2027.rds>
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> # A tibble: 0 × 0
 # }
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
-#> ── ESPN NBA team_box from hoopR data repository ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-09 05:17:08 UTC
-#> # A tibble: 2,652 × 59
-#>      game_id season season_type game_date  game_date_time      team_id team_uid 
-#>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
-#>  1 401859967   2026           3 2026-06-13 2026-06-13 20:30:00      18 s:40~l:4…
-#>  2 401859967   2026           3 2026-06-13 2026-06-13 20:30:00      24 s:40~l:4…
-#>  3 401859966   2026           3 2026-06-10 2026-06-10 20:30:00      24 s:40~l:4…
-#>  4 401859966   2026           3 2026-06-10 2026-06-10 20:30:00      18 s:40~l:4…
-#>  5 401859965   2026           3 2026-06-08 2026-06-08 20:30:00      24 s:40~l:4…
-#>  6 401859965   2026           3 2026-06-08 2026-06-08 20:30:00      18 s:40~l:4…
-#>  7 401859964   2026           3 2026-06-05 2026-06-05 20:30:00      18 s:40~l:4…
-#>  8 401859964   2026           3 2026-06-05 2026-06-05 20:30:00      24 s:40~l:4…
-#>  9 401859963   2026           3 2026-06-03 2026-06-03 20:30:00      18 s:40~l:4…
-#> 10 401859963   2026           3 2026-06-03 2026-06-03 20:30:00      24 s:40~l:4…
-#> # ℹ 2,642 more rows
-#> # ℹ 52 more variables: team_slug <chr>, team_location <chr>, team_name <chr>,
-#> #   team_abbreviation <chr>, team_display_name <chr>,
-#> #   team_short_display_name <chr>, team_color <chr>,
-#> #   team_alternate_color <chr>, team_logo <chr>, team_home_away <chr>,
-#> #   team_score <int>, team_winner <lgl>, assists <int>, blocks <int>,
-#> #   defensive_rebounds <int>, fast_break_points <chr>, field_goal_pct <dbl>, …
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_2027.rds>
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> # A tibble: 0 × 0
 # }
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
-#> ── ESPN NBA player_box from hoopR data repository ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-09 05:17:31 UTC
-#> # A tibble: 34,883 × 57
-#>      game_id season season_type game_date  game_date_time      athlete_id
-#>        <int>  <int>       <int> <date>     <dttm>                   <int>
-#>  1 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    3934719
-#>  2 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    3136195
-#>  3 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    3062679
-#>  4 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    3147657
-#>  5 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    3934672
-#>  6 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    4610139
-#>  7 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    4351852
-#>  8 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    4871141
-#>  9 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    2528426
-#> 10 401859967   2026           3 2026-06-13 2026-06-13 20:30:00    3914044
-#> # ℹ 34,873 more rows
-#> # ℹ 51 more variables: athlete_display_name <chr>, team_id <int>,
-#> #   team_name <chr>, team_location <chr>, team_short_display_name <chr>,
-#> #   minutes <dbl>, field_goals_made <int>, field_goals_attempted <int>,
-#> #   three_point_field_goals_made <int>,
-#> #   three_point_field_goals_attempted <int>, free_throws_made <int>,
-#> #   free_throws_attempted <int>, offensive_rebounds <int>, …
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_2027.rds>
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> # A tibble: 0 × 0
 # }
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
 #> ── ESPN NBA schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-09 05:18:06 UTC
-#> # A tibble: 1,330 × 77
+#> ℹ Data updated: 2026-10-05 12:03:37 UTC
+#> # A tibble: 1,206 × 76
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
-#>  1  4.02e8 s:40… 2026…      18984 TRUE       FALSE        FALSE                 
-#>  2  4.02e8 s:40… 2026…      19812 TRUE       FALSE        FALSE                 
-#>  3  4.02e8 s:40… 2026…      19812 TRUE       FALSE        FALSE                 
-#>  4  4.02e8 s:40… 2026…      19014 TRUE       FALSE        FALSE                 
-#>  5  4.02e8 s:40… 2026…      18835 TRUE       FALSE        FALSE                 
-#>  6  4.02e8 s:40… 2026…      18203 TRUE       FALSE        FALSE                 
-#>  7  4.02e8 s:40… 2026…      19066 TRUE       FALSE        FALSE                 
-#>  8  4.02e8 s:40… 2026…      18203 TRUE       FALSE        FALSE                 
-#>  9  4.02e8 s:40… 2026…      19432 TRUE       FALSE        FALSE                 
-#> 10  4.02e8 s:40… 2026…      19405 TRUE       FALSE        FALSE                 
-#> # ℹ 1,320 more rows
-#> # ℹ 70 more variables: play_by_play_available <lgl>, recent <lgl>,
+#>  1  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  2  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  3  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  4  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  5  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  6  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  7  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  8  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#>  9  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#> 10  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
+#> # ℹ 1,196 more rows
+#> # ℹ 69 more variables: play_by_play_available <lgl>, recent <lgl>,
 #> #   start_date <chr>, broadcast <chr>, highlights <chr>, notes_type <chr>,
 #> #   notes_headline <chr>, broadcast_market <chr>, broadcast_name <chr>,
 #> #   type_id <int>, type_abbreviation <chr>, venue_id <int>,
-#> #   venue_full_name <chr>, venue_address_city <chr>, venue_indoor <lgl>,
-#> #   status_clock <dbl>, status_display_clock <chr>, status_period <dbl>, …
+#> #   venue_full_name <chr>, venue_address_city <chr>, venue_address_state <chr>,
+#> #   venue_indoor <lgl>, status_clock <dbl>, status_display_clock <chr>, …
 # }
 # \donttest{
 load_nba_shots(seasons = most_recent_nba_season())
-#> ── ESPN NBA shots from hoopR data repository ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-09 05:18:31 UTC
-#> # A tibble: 298,411 × 20
-#>      game_id season period_number clock_display_value team_id athlete_id_1
-#>        <int>  <int>         <int> <chr>                 <int>        <int>
-#>  1 401859967   2026             1 11:35                    18      3934672
-#>  2 401859967   2026             1 11:12                    24      4845367
-#>  3 401859967   2026             1 10:45                    18      3062679
-#>  4 401859967   2026             1 10:16                    18      3147657
-#>  5 401859967   2026             1 10:06                    18      3062679
-#>  6 401859967   2026             1 9:57                     18      3136195
-#>  7 401859967   2026             1 9:44                     24      5104157
-#>  8 401859967   2026             1 9:30                     18      3934672
-#>  9 401859967   2026             1 9:15                     24      4066259
-#> 10 401859967   2026             1 8:58                     18      3136195
-#> # ℹ 298,401 more rows
-#> # ℹ 14 more variables: athlete_id_2 <int>, type_id <int>, type_text <chr>,
-#> #   scoring_play <lgl>, score_value <int>, coordinate_x <dbl>,
-#> #   coordinate_y <dbl>, coordinate_x_raw <dbl>, coordinate_y_raw <dbl>,
-#> #   athlete_name_1 <chr>, athlete_name_2 <chr>, team_name <chr>,
-#> #   team_mascot <chr>, team_abbrev <chr>
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_2027.rds>
+#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> # A tibble: 0 × 0
 # }
 ```

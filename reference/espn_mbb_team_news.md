@@ -208,27 +208,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-09-30 15:05:03 UTC
+#> ℹ Data updated: 2026-10-05 18:41:26 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.00e7 Head… Duke's … "Head coac… 2026-09-… FALSE   Jeff … https:/… 41       
-#> 2  5.00e7 Story Reranki… "Cooper Fl… 2026-09-… FALSE   Paul … https:/… 3550     
-#> 3  5.00e7 Story Inside … "In honor … 2026-09-… FALSE   Tory … https:/… 46       
-#> 4  3.03e7 Etic… NCAA Br… "LSU has j… 2026-09-… FALSE   Joe L… https:/… 41       
-#> 5  4.98e7 Story Project… "Ranking e… 2026-09-… FALSE   Myron… https:/… 41       
+#> 1  4.87e7 Story Transfe… "With one … 2026-10-… FALSE   Jeff … https:/… 41       
+#> 2  5.01e7 Head… Aussie … "17-year-o… 2026-10-… FALSE   Olgun… https:/… 55       
+#> 3  5.00e7 Head… Duke's … "Head coac… 2026-09-… FALSE   Jeff … https:/… 41       
+#> 4  5.00e7 Story Reranki… "Cooper Fl… 2026-09-… FALSE   Paul … https:/… 3550     
+#> 5  5.00e7 Story Inside … "In honor … 2026-09-… FALSE   Tory … https:/… 46       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:05:03 UTC
+#> ℹ Data updated: 2026-10-05 18:41:26 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Story NBA pre… "As traini… 2026-09-… FALSE   Bobby… https:/… 46       
-#> 2  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
-#> 3  5.00e7 Story NBA pre… "From LeBr… 2026-09-… FALSE   NBA i… https:/… 46       
-#> 4  5.01e7 Media Bronny … "Bronny cr… 2026-09-… FALSE   NA     https:/… 46       
-#> 5  5.01e7 Head… Bronny … "Bronny Ja… 2026-09-… FALSE   Brian… https:/… 46       
+#> 1  5.01e7 Story Lakers'… "The singe… 2026-10-… FALSE   Kalan… https:/… 46       
+#> 2  4.90e7 Story 2026 NB… "We're gra… 2026-10-… FALSE   Zach … https:/… 46       
+#> 3  5.01e7 Story NBA pre… "As traini… 2026-09-… FALSE   Bobby… https:/… 46       
+#> 4  5.01e7 Head… Kessler… "New addit… 2026-09-… FALSE   Ben G… https:/… 46       
+#> 5  5.00e7 Story NBA pre… "From LeBr… 2026-09-… FALSE   NBA i… https:/… 46       
 # }
 ```

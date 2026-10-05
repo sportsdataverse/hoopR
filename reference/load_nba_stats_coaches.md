@@ -660,379 +660,121 @@ Other NBA Stats loader functions:
 ``` r
 # \donttest{
   try(load_nba_stats_coaches(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_coaches/coaches_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_coaches/coaches_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 267 × 11
-#>       team_id season coach_id first_name last_name coach_name     is_assistant
-#>         <int>  <int>    <int> <chr>      <chr>     <chr>                 <int>
-#>  1 1610612737   2026   202439 Quin       Snyder    Quin Snyder               1
-#>  2 1610612737   2026   203753 Ronald     Nored     Ronald Nored              2
-#>  3 1610612737   2026   204238 Antonio    Lang      Antonio Lang              2
-#>  4 1610612737   2026  1626233 Jeff       Watkinson Jeff Watkinson            2
-#>  5 1610612737   2026     2166 Igor       Kokoskov  Igor Kokoskov             2
-#>  6 1610612737   2026   202327 Ekpe       Udoh      Ekpe Udoh                 2
-#>  7 1610612737   2026  1628216 Bryan      Bailey    Bryan Bailey              2
-#>  8 1610612737   2026  1628852 Ryan       Schmidt   Ryan Schmidt              2
-#>  9 1610612737   2026  1629239 Sanjay     Lumpkin   Sanjay Lumpkin            2
-#> 10 1610612737   2026  1641826 Mike       Brey      Mike Brey                 2
-#> # ℹ 257 more rows
-#> # ℹ 4 more variables: coach_type <chr>, sort_sequence <int>,
-#> #   sub_sort_sequence <int>, season_type <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_draft(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_draft/draft_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_draft/draft_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 59 × 14
-#>    person_id player_name  season round_number round_pick overall_pick draft_type
-#>        <int> <chr>         <int>        <int>      <int>        <int> <chr>     
-#>  1   1642843 Cooper Flagg   2026            1          1            1 Draft     
-#>  2   1642844 Dylan Harper   2026            1          2            2 Draft     
-#>  3   1642845 VJ Edgecombe   2026            1          3            3 Draft     
-#>  4   1642851 Kon Knueppel   2026            1          4            4 Draft     
-#>  5   1642846 Ace Bailey     2026            1          5            5 Draft     
-#>  6   1642848 Tre Johnson    2026            1          6            6 Draft     
-#>  7   1642847 Jeremiah Fe…   2026            1          7            7 Draft     
-#>  8   1642856 Egor Dëmin     2026            1          8            8 Draft     
-#>  9   1642867 Collin Murr…   2026            1          9            9 Draft     
-#> 10   1642863 Khaman Malu…   2026            1         10           10 Draft     
-#> # ℹ 49 more rows
-#> # ℹ 7 more variables: team_id <int>, team_city <chr>, team_name <chr>,
-#> #   team_abbreviation <chr>, organization <chr>, organization_type <chr>,
-#> #   player_profile_flag <int>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_lineups/nba_lineups_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_lineups/nba_lineups_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 707,440 × 14
-#>    game_id    action_number period home_player_1 home_player_2 home_player_3
-#>    <chr>              <int>  <int>         <int>         <int>         <int>
-#>  1 0012500001             2      1       1629020       1629028       1629060
-#>  2 0012500001             4      1       1629020       1629028       1629060
-#>  3 0012500001             7      1       1629020       1629028       1629060
-#>  4 0012500001             8      1       1629020       1629028       1629060
-#>  5 0012500001             9      1       1629020       1629028       1629060
-#>  6 0012500001            10      1       1629020       1629028       1629060
-#>  7 0012500001            11      1       1629020       1629028       1629060
-#>  8 0012500001            13      1       1629020       1629028       1629060
-#>  9 0012500001            13      1       1629020       1629028       1629060
-#> 10 0012500001            15      1       1629020       1629028       1629060
-#> # ℹ 707,430 more rows
-#> # ℹ 8 more variables: home_player_4 <int>, home_player_5 <int>,
-#> #   away_player_1 <int>, away_player_2 <int>, away_player_3 <int>,
-#> #   away_player_4 <int>, away_player_5 <int>, season <int>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_rosters/game_rosters_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_rosters/game_rosters_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 156 × 10
-#>    player_id first_name last_name jersey_num    team_id team_city     team_name
-#>        <int> <chr>      <chr>     <chr>           <int> <chr>         <chr>    
-#>  1   1627832 Fred       VanVleet  "5   "     1610612745 Houston       Rockets  
-#>  2   1642384 Isaiah     Crawford  "24  "     1610612745 Houston       Rockets  
-#>  3   1642850 Thomas     Sorber    "12  "     1610612760 Oklahoma City Thunder  
-#>  4   1629026 Kenrich    Williams  "34  "     1610612760 Oklahoma City Thunder  
-#>  5   1630198 Isaiah     Joe       "11  "     1610612760 Oklahoma City Thunder  
-#>  6   1631114 Jalen      Williams  "8   "     1610612760 Oklahoma City Thunder  
-#>  7   1642260 Nikola     Topic     "44  "     1610612760 Oklahoma City Thunder  
-#>  8   1642382 Branden    Carlson   "15  "     1610612760 Oklahoma City Thunder  
-#>  9      2544 LeBron     James     "23  "     1610612747 Los Angeles   Lakers   
-#> 10   1628467 Maxi       Kleber    "14  "     1610612747 Los Angeles   Lakers   
-#> # ℹ 146 more rows
-#> # ℹ 3 more variables: team_abbreviation <chr>, season <int>, game_id <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_lineups/lineups_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_lineups/lineups_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 48,188 × 182
-#>    group_set group_id     group_name team_id team_abbreviation    gp     w     l
-#>    <chr>     <chr>        <chr>        <int> <chr>             <int> <int> <int>
-#>  1 Lineups   -1626157-16… K. Towns …  1.61e9 NYK                  17    14     3
-#>  2 Lineups   -1628368-16… D. Fox - …  1.61e9 SAS                  20    11     9
-#>  3 Lineups   -201935-162… J. Harden…  1.61e9 CLE                  16     7     9
-#>  4 Lineups   -202699-162… T. Harris…  1.61e9 DET                  12     6     6
-#>  5 Lineups   -201935-162… J. Harden…  1.61e9 CLE                  16     8     8
-#>  6 Lineups   -202331-203… P. George…  1.61e9 PHI                   7     3     4
-#>  7 Lineups   -1630578-16… A. Sengun…  1.61e9 HOU                   6     2     4
-#>  8 Lineups   -2544-20393… L. James …  1.61e9 LAL                   9     4     5
-#>  9 Lineups   -203468-162… C. McColl…  1.61e9 ATL                   6     2     4
-#> 10 Lineups   -2544-20393… L. James …  1.61e9 LAL                   6     1     5
-#> # ℹ 48,178 more rows
-#> # ℹ 174 more variables: w_pct <dbl>, min <dbl>, e_off_rating <dbl>,
-#> #   off_rating <dbl>, e_def_rating <dbl>, def_rating <dbl>, e_net_rating <dbl>,
-#> #   net_rating <dbl>, ast_pct <dbl>, ast_to <dbl>, ast_ratio <dbl>,
-#> #   oreb_pct <dbl>, dreb_pct <dbl>, reb_pct <dbl>, tm_tov_pct <dbl>,
-#> #   efg_pct <dbl>, ts_pct <dbl>, e_pace <dbl>, pace <dbl>, pace_per40 <dbl>,
-#> #   poss <int>, pie <dbl>, gp_rank <int>, w_rank <int>, l_rank <int>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_officials/officials_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_officials/officials_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 260 × 6
-#>    official_id first_name last_name  jersey_num season game_id   
-#>          <int> <chr>      <chr>      <chr>       <int> <chr>     
-#>  1        2534 Zach       Zarba      "15  "       2026 0022500001
-#>  2      200833 Eric       Dalen      "37  "       2026 0022500001
-#>  3     1626301 Jason      Goldenberg "35  "       2026 0022500001
-#>  4        1155 JB         DeRosa     "14  "       2026 0022500002
-#>  5      204059 Tyler      Ford       "39  "       2026 0022500002
-#>  6     1627963 Phenizee   Ransom     "70  "       2026 0022500002
-#>  7        2882 Sean       Wright     "4   "       2026 0022500423
-#>  8     1627524 Nate       Green      "41  "       2026 0022500423
-#>  9     1628954 Jenna      Schroeder  "20  "       2026 0022500423
-#> 10      101283 Brian      Forte      "45  "       2026 0042500101
-#> # ℹ 250 more rows
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_pbp/nba_play_by_play_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_pbp/nba_play_by_play_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 707,440 × 49
-#>    order_index action_number clock       period   team_id team_tricode person_id
-#>          <int>         <int> <chr>        <int>     <int> <chr>            <int>
-#>  1           0             2 PT12M00.00S      1    0      ""                   0
-#>  2           1             4 PT12M00.00S      1    1.61e9 "LAL"          1629028
-#>  3           2             7 PT11M38.00S      1    1.61e9 "LAL"          1630559
-#>  4           3             8 PT11M35.00S      1    1.61e9 "LAL"          1631222
-#>  5           4             9 PT11M29.00S      1    1.61e9 "LAL"          1629060
-#>  6           5            10 PT11M26.00S      1    1.61e9 "LAL"          1629028
-#>  7           6            11 PT11M25.00S      1    1.61e9 "LAL"          1630559
-#>  8           7            13 PT11M07.00S      1    1.61e9 "PHX"          1626164
-#>  9           8            13 PT11M07.00S      1    1.61e9 "LAL"          1629020
-#> 10           9            15 PT11M02.00S      1    1.61e9 "LAL"          1629028
-#> # ℹ 707,430 more rows
-#> # ℹ 42 more variables: player_name <chr>, player_name_i <chr>, x_legacy <int>,
-#> #   y_legacy <int>, shot_distance <int>, shot_result <chr>,
-#> #   is_field_goal <int>, score_home <chr>, score_away <chr>,
-#> #   points_total <int>, location <chr>, description <chr>, action_type <chr>,
-#> #   sub_type <chr>, video_available <int>, shot_value <int>, action_id <int>,
-#> #   game_id <chr>, seconds_remaining <dbl>, event_type <chr>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_boxscores/player_boxscores_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_boxscores/player_boxscores_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 34,587 × 34
-#>     team_id team_name team_tricode side  person_id first_name family_name name_i
-#>       <int> <chr>     <chr>        <chr>     <int> <chr>      <chr>       <chr> 
-#>  1   1.61e9 Thunder   OKC          home    1629652 Luguentz   Dort        L. Do…
-#>  2   1.61e9 Thunder   OKC          home    1631096 Chet       Holmgren    C. Ho…
-#>  3   1.61e9 Thunder   OKC          home    1628392 Isaiah     Hartenstein I. Ha…
-#>  4   1.61e9 Thunder   OKC          home    1641717 Cason      Wallace     C. Wa…
-#>  5   1.61e9 Thunder   OKC          home    1628983 Shai       Gilgeous-A… S. Gi…
-#>  6   1.61e9 Thunder   OKC          home    1631119 Jaylin     Williams    J. Wi…
-#>  7   1.61e9 Thunder   OKC          home    1630598 Aaron      Wiggins     A. Wi…
-#>  8   1.61e9 Thunder   OKC          home    1627936 Alex       Caruso      A. Ca…
-#>  9   1.61e9 Thunder   OKC          home    1642964 Brooks     Barnhizer   B. Ba…
-#> 10   1.61e9 Thunder   OKC          home    1642349 Ajay       Mitchell    A. Mi…
-#> # ℹ 34,577 more rows
-#> # ℹ 26 more variables: player_slug <chr>, position <chr>, comment <chr>,
-#> #   jersey_num <chr>, minutes <chr>, field_goals_made <int>,
-#> #   field_goals_attempted <int>, field_goals_percentage <dbl>,
-#> #   three_pointers_made <int>, three_pointers_attempted <int>,
-#> #   three_pointers_percentage <dbl>, free_throws_made <int>,
-#> #   free_throws_attempted <int>, free_throws_percentage <dbl>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_game_logs/player_game_logs_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_game_logs/player_game_logs_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 2,630 × 31
-#>    season_id team_id team_abbreviation team_name game_id game_date matchup wl   
-#>    <chr>       <int> <chr>             <chr>     <chr>   <chr>     <chr>   <chr>
-#>  1 42025      1.61e9 HOU               Houston … 004250… 2026-04-… HOU @ … L    
-#>  2 42025      1.61e9 DEN               Denver N… 004250… 2026-04-… DEN vs… W    
-#>  3 42025      1.61e9 ATL               Atlanta … 004250… 2026-04-… ATL @ … L    
-#>  4 42025      1.61e9 NYK               New York… 004250… 2026-04-… NYK vs… W    
-#>  5 42025      1.61e9 TOR               Toronto … 004250… 2026-04-… TOR @ … L    
-#>  6 42025      1.61e9 MIN               Minnesot… 004250… 2026-04-… MIN @ … L    
-#>  7 42025      1.61e9 LAL               Los Ange… 004250… 2026-04-… LAL vs… W    
-#>  8 42025      1.61e9 CLE               Clevelan… 004250… 2026-04-… CLE vs… W    
-#>  9 42025      1.61e9 DET               Detroit … 004250… 2026-04-… DET vs… L    
-#> 10 42025      1.61e9 BOS               Boston C… 004250… 2026-04-… BOS vs… W    
-#> # ℹ 2,620 more rows
-#> # ℹ 23 more variables: min <int>, fgm <int>, fga <int>, fg_pct <dbl>,
-#> #   fg3m <int>, fg3a <int>, fg3_pct <dbl>, ftm <int>, fta <int>, ft_pct <dbl>,
-#> #   oreb <int>, dreb <int>, reb <int>, ast <int>, stl <int>, blk <int>,
-#> #   tov <int>, pf <int>, pts <int>, plus_minus <int>, video_available <int>,
-#> #   season <int>, season_type <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_season_stats/player_season_stats_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_season_stats/player_season_stats_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 9,744 × 210
-#>    player_id player_name    nickname team_id team_abbreviation   age    gp     w
-#>        <int> <chr>          <chr>      <int> <chr>             <dbl> <int> <int>
-#>  1   1630639 A.J. Lawson    A.J.      1.61e9 TOR                  25     7     3
-#>  2    203932 Aaron Gordon   Aaron     1.61e9 DEN                  30     3     1
-#>  3   1628988 Aaron Holiday  Aaron     1.61e9 HOU                  29     6     2
-#>  4   1630598 Aaron Wiggins  Aaron     1.61e9 OKC                  27    13    10
-#>  5   1641737 Adem Bona      Adem      1.61e9 PHI                  23    10     3
-#>  6   1642876 Adou Thiero    Adou      1.61e9 LAL                  22     6     1
-#>  7   1642349 Ajay Mitchell  Ajay      1.61e9 OKC                  24    11    10
-#>  8   1627936 Alex Caruso    Alex      1.61e9 OKC                  32    15    11
-#>  9   1630578 Alperen Sengun Alperen   1.61e9 HOU                  23     6     2
-#> 10   1642873 Amari Williams Amari     1.61e9 BOS                  24     1     0
-#> # ℹ 9,734 more rows
-#> # ℹ 202 more variables: l <int>, w_pct <dbl>, min <dbl>, e_off_rating <dbl>,
-#> #   off_rating <dbl>, sp_work_off_rating <dbl>, e_def_rating <dbl>,
-#> #   def_rating <dbl>, sp_work_def_rating <dbl>, e_net_rating <dbl>,
-#> #   net_rating <dbl>, sp_work_net_rating <dbl>, ast_pct <dbl>, ast_to <dbl>,
-#> #   ast_ratio <dbl>, oreb_pct <dbl>, dreb_pct <dbl>, reb_pct <dbl>,
-#> #   tm_tov_pct <dbl>, e_tov_pct <dbl>, efg_pct <dbl>, ts_pct <dbl>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_possessions/nba_possessions_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_possessions/nba_possessions_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 278,341 × 35
-#>    game_id    period possession_number offense_team_id defense_team_id
-#>    <chr>       <int>             <int>           <int>           <int>
-#>  1 0012500001      1                 1      1610612747      1610612756
-#>  2 0012500001      1                 2      1610612756      1610612747
-#>  3 0012500001      1                 3      1610612747      1610612756
-#>  4 0012500001      1                 4      1610612756      1610612747
-#>  5 0012500001      1                 5      1610612747      1610612756
-#>  6 0012500001      1                 6      1610612756      1610612747
-#>  7 0012500001      1                 7      1610612747      1610612756
-#>  8 0012500001      1                 8      1610612756      1610612747
-#>  9 0012500001      1                 9      1610612747      1610612756
-#> 10 0012500001      1                10      1610612756      1610612747
-#> # ℹ 278,331 more rows
-#> # ℹ 30 more variables: start_order_index <int>, end_order_index <int>,
-#> #   start_seconds_remaining <dbl>, end_seconds_remaining <dbl>, points <int>,
-#> #   is_second_chance <lgl>, number_in_period <int>,
-#> #   possession_start_type <chr>, count_as_possession <lgl>, fg2a <int>,
-#> #   fg2m <int>, fg3a <int>, fg3m <int>, fta <int>, ftm <int>, oreb <int>,
-#> #   dreb <int>, tov <int>, off_player_1 <int>, off_player_2 <int>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_rosters/rosters_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_rosters/rosters_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 495 × 17
-#>       team_id season league_id player nickname player_slug num   position height
-#>         <int>  <int> <chr>     <chr>  <chr>    <chr>       <chr> <chr>    <chr> 
-#>  1 1610612737   2026 00        Kesho… Keshon   keshon-gil… NA    G        6-4   
-#>  2 1610612737   2026 00        RayJ … RayJ     rayj-dennis 00    G        6-1   
-#>  3 1610612737   2026 00        Jonat… Jonathan jonathan-k… 0     F        6-7   
-#>  4 1610612737   2026 00        Jalen… Jalen    jalen-john… 1     F        6-8   
-#>  5 1610612737   2026 00        Keato… Keaton   keaton-wal… 2     G        6-3   
-#>  6 1610612737   2026 00        CJ Mc… CJ       cj-mccollum 3     G        6-3   
-#>  7 1610612737   2026 00        Gabe … Gabe     gabe-vince… 4     G        6-2   
-#>  8 1610612737   2026 00        Dyson… Dyson    dyson-dani… 5     G        6-7   
-#>  9 1610612737   2026 00        Nicke… Nickeil  nickeil-al… 7     G        6-5   
-#> 10 1610612737   2026 00        Buddy… Buddy    buddy-hield 8     G        6-4   
-#> # ℹ 485 more rows
-#> # ℹ 8 more variables: weight <chr>, birth_date <chr>, age <dbl>, exp <chr>,
-#> #   school <chr>, player_id <int>, how_acquired <chr>, season_type <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_schedules/nba_schedule_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_schedules/nba_schedule_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 1,400 × 15
-#>    game_id    season season_type game_date  matchup     home_team_id
-#>    <chr>       <int> <chr>       <chr>      <chr>              <int>
-#>  1 0012500001   2026 preseason   2025-10-03 LAL vs. PHX   1610612747
-#>  2 0012500002   2026 preseason   2025-10-06 MIA vs. MIL   1610612748
-#>  3 0012500003   2026 preseason   2025-10-08 MIA vs. SAS   1610612748
-#>  4 0012500004   2026 preseason   2025-10-12 LAL vs. GSW   1610612747
-#>  5 0012500005   2026 preseason   2025-10-15 LAL vs. DAL   1610612747
-#>  6 0012500006   2026 preseason   2025-10-17 MIA vs. MEM   1610612748
-#>  7 0012500007   2026 preseason   2025-10-17 LAL vs. SAC   1610612747
-#>  8 0012500008   2026 preseason   2025-10-02 NYK vs. PHI   1610612752
-#>  9 0012500009   2026 preseason   2025-10-03 NOP vs. MEL   1610612740
-#> 10 0012500010   2026 preseason   2025-10-04 PHI vs. NYK   1610612755
-#> # ℹ 1,390 more rows
-#> # ℹ 9 more variables: home_team_abbreviation <chr>, home_team_name <chr>,
-#> #   home_pts <int>, home_wl <chr>, away_team_id <int>,
-#> #   away_team_abbreviation <chr>, away_team_name <chr>, away_pts <int>,
-#> #   away_wl <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_shots/shots_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_shots/shots_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 233,632 × 18
-#>    game_id    season period clock     team_id team_tricode person_id player_name
-#>    <chr>       <int>  <int> <chr>       <int> <chr>            <int> <chr>      
-#>  1 0022500001   2026      1 PT11M36.…  1.61e9 HOU            1630578 Sengun     
-#>  2 0022500001   2026      1 PT11M26.…  1.61e9 OKC            1631096 Holmgren   
-#>  3 0022500001   2026      1 PT11M08.…  1.61e9 HOU            1641708 Thompson   
-#>  4 0022500001   2026      1 PT11M02.…  1.61e9 HOU            1631095 Smith Jr.  
-#>  5 0022500001   2026      1 PT10M50.…  1.61e9 OKC            1631096 Holmgren   
-#>  6 0022500001   2026      1 PT10M24.…  1.61e9 HOU            1630578 Sengun     
-#>  7 0022500001   2026      1 PT10M07.…  1.61e9 HOU             201142 Durant     
-#>  8 0022500001   2026      1 PT09M52.…  1.61e9 OKC            1631096 Holmgren   
-#>  9 0022500001   2026      1 PT09M35.…  1.61e9 HOU            1631095 Smith Jr.  
-#> 10 0022500001   2026      1 PT09M21.…  1.61e9 OKC            1641717 Wallace    
-#> # ℹ 233,622 more rows
-#> # ℹ 10 more variables: action_type <chr>, sub_type <chr>, shot_result <chr>,
-#> #   shot_value <int>, shot_distance <int>, x_legacy <int>, y_legacy <int>,
-#> #   description <chr>, score_home <chr>, score_away <chr>
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_standings/standings_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_standings/standings_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 30 × 94
-#>    league_id season_id    team_id team_city     team_name team_slug conference
-#>    <chr>     <chr>          <int> <chr>         <chr>     <chr>     <chr>     
-#>  1 00        22025     1610612760 Oklahoma City Thunder   thunder   West      
-#>  2 00        22025     1610612765 Detroit       Pistons   pistons   East      
-#>  3 00        22025     1610612738 Boston        Celtics   celtics   East      
-#>  4 00        22025     1610612759 San Antonio   Spurs     spurs     West      
-#>  5 00        22025     1610612743 Denver        Nuggets   nuggets   West      
-#>  6 00        22025     1610612752 New York      Knicks    knicks    East      
-#>  7 00        22025     1610612739 Cleveland     Cavaliers cavaliers East      
-#>  8 00        22025     1610612747 Los Angeles   Lakers    lakers    West      
-#>  9 00        22025     1610612745 Houston       Rockets   rockets   West      
-#> 10 00        22025     1610612761 Toronto       Raptors   raptors   East      
-#> # ℹ 20 more rows
-#> # ℹ 87 more variables: conference_record <chr>, playoff_rank <int>,
-#> #   clinch_indicator <chr>, division <chr>, division_record <chr>,
-#> #   division_rank <int>, wins <int>, losses <int>, win_pct <dbl>,
-#> #   league_rank <int>, record <chr>, home <chr>, road <chr>, l10 <chr>,
-#> #   last10_home <chr>, last10_road <chr>, ot <chr>, three_pts_or_less <chr>,
-#> #   ten_pts_or_more <chr>, long_home_streak <int>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_boxscores/team_boxscores_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_boxscores/team_boxscores_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 2,630 × 26
-#>       team_id team_name team_tricode side  minutes field_goals_made
-#>         <int> <chr>     <chr>        <chr> <chr>              <int>
-#>  1 1610612760 Thunder   OKC          home  290:00                46
-#>  2 1610612745 Rockets   HOU          away  290:00                43
-#>  3 1610612747 Lakers    LAL          home  240:00                42
-#>  4 1610612744 Warriors  GSW          away  240:00                38
-#>  5 1610612752 Knicks    NYK          home  240:00                37
-#>  6 1610612739 Cavaliers CLE          away  240:00                40
-#>  7 1610612742 Mavericks DAL          home  240:00                31
-#>  8 1610612759 Spurs     SAS          away  240:00                50
-#>  9 1610612754 Pacers    IND          home  290:00                46
-#> 10 1610612760 Thunder   OKC          away  290:00                43
-#> # ℹ 2,620 more rows
-#> # ℹ 20 more variables: field_goals_attempted <int>,
-#> #   field_goals_percentage <dbl>, three_pointers_made <int>,
-#> #   three_pointers_attempted <int>, three_pointers_percentage <dbl>,
-#> #   free_throws_made <int>, free_throws_attempted <int>,
-#> #   free_throws_percentage <dbl>, rebounds_offensive <int>,
-#> #   rebounds_defensive <int>, rebounds_total <int>, assists <int>, …
+#> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_season_stats/team_season_stats_2027.rds': HTTP status was '404 Not Found'
+#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_season_stats/team_season_stats_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 552 × 178
-#>       team_id team_name       gp     w     l w_pct   min e_off_rating off_rating
-#>         <int> <chr>        <int> <int> <int> <dbl> <dbl>        <dbl>      <dbl>
-#>  1 1610612737 Atlanta Haw…     6     2     4 0.333   288         101.       104.
-#>  2 1610612738 Boston Celt…     7     3     4 0.429   336         111.       114.
-#>  3 1610612739 Cleveland C…    18     8    10 0.444   879         109.       110.
-#>  4 1610612743 Denver Nugg…     6     2     4 0.333   288         106.       108.
-#>  5 1610612765 Detroit Pis…    14     7     7 0.5     677         107.       110.
-#>  6 1610612745 Houston Roc…     6     2     4 0.333   293         102.       105.
-#>  7 1610612747 Los Angeles…    10     4     6 0.4     485         106.       108.
-#>  8 1610612750 Minnesota T…    12     6     6 0.5     576         105.       107.
-#>  9 1610612752 New York Kn…    19    16     3 0.842   917         117.       120.
-#> 10 1610612760 Oklahoma Ci…    15    11     4 0.733   730         116.       118.
-#> # ℹ 542 more rows
-#> # ℹ 169 more variables: e_def_rating <dbl>, def_rating <dbl>,
-#> #   e_net_rating <dbl>, net_rating <dbl>, ast_pct <dbl>, ast_to <dbl>,
-#> #   ast_ratio <dbl>, oreb_pct <dbl>, dreb_pct <dbl>, reb_pct <dbl>,
-#> #   tm_tov_pct <dbl>, efg_pct <dbl>, ts_pct <dbl>, e_pace <dbl>, pace <dbl>,
-#> #   pace_per40 <dbl>, poss <int>, pie <dbl>, gp_rank <int>, w_rank <int>,
-#> #   l_rank <int>, w_pct_rank <int>, min_rank <int>, off_rating_rank <int>, …
+#> # A tibble: 0 × 0
 # }
 ```

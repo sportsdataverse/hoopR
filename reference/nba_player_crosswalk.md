@@ -38,27 +38,14 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_player_crosswalk())
-#> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-30 15:08:50 UTC
-#> # A tibble: 607 × 21
-#>    season espn_team_id team_abbreviation player_name             espn_athlete_id
-#>     <int>        <int> <chr>             <chr>                   <chr>          
-#>  1   2026            1 ATL               nickeil alexander walk… 4278039        
-#>  2   2026            1 ATL               cameron corhen          4712902        
-#>  3   2026            1 ATL               dyson daniels           4869342        
-#>  4   2026            1 ATL               rayj dennis             4431941        
-#>  5   2026            1 ATL               luguentz dort           4397020        
-#>  6   2026            1 ATL               zuby ejiofor            5106262        
-#>  7   2026            1 ATL               dorian finney smith     2578185        
-#>  8   2026            1 ATL               kingston flemings       5149077        
-#>  9   2026            1 ATL               keshon gilbert          4585618        
-#> 10   2026            1 ATL               mouhamed gueye          4712863        
-#> # ℹ 597 more rows
-#> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
-#> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
-#> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
-#> #   fox_player <chr>, fox_jersey <chr>, fox_position_group <chr>,
-#> #   yahoo_player_id <chr>, yahoo_player_name <chr>, match_method <chr>,
-#> #   match_confidence <dbl>, match_keys <chr>
+#> ✖ 2026-10-05 18:43:48.16531: Invalid arguments or no league standings v3 data available for 2026-27!
+#> ✖ Args: league_id = "00", season = "2026-27", season_type = "Regular Season", season_year = ""
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-10-05 18:44:48.202785: Invalid arguments or no league game log data for 2026-27 available!
+#> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2026-27", season_type = "Regular Season", sorter = "DATE"
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
+#> ✖ 2026-10-05 18:44:48.215474: Invalid arguments or no team details data available!
+#> ✖ Error: argument is of length zero
+#> Error in !nrow(nt) : invalid argument type
 # }
 ```

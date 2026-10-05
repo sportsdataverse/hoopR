@@ -631,14 +631,14 @@ feed and the calendar.</p>
 <span><span class="va">mbb_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_news.html">espn_mbb_news</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mbb_news</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"headline"</span>, <span class="st">"published"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
-<span><span class="co">#&gt;   headline                                                        published     </span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Chris Holtmann, DePaul agree to contract extension              2026-09-29T23…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Judge grants injunction for Denzel Aberdeen to play for Florida 2026-09-29T18…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> U.S. Senate votes 77-22 to pass Protect College Sports Act      2026-09-29T13…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> What is the Protect College Sports Act? What would the bill do? 2026-09-30T12…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Alabama agrees to 2-year extension, raise with AD Greg Byrne    2026-09-28T19…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Big Ten basketball adopts rule preventing pros from returning   2026-09-28T17…</span></span>
+<span><span class="co">#&gt;   headline                                                             published</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Transfers, recruits and roster moves for key men's NCAA basketball … 2026-10-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> What challenges lie ahead for the Protect College Sports Act?        2026-10-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> LSU's Will Wade lands first 2027 5-star in guard King Gibson         2026-10-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Injunction allows Council Jr. back to Kansas for 7th college season  2026-10-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Jordan Page picks UConn, joins Bowman as five-stars to Huskies       2026-10-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Windy: Simmons could guard Wembanyama                                2026-10-…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -933,7 +933,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 700</span></span>
+<span><span class="co">#&gt; [1] 706</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>
@@ -1501,11 +1501,7 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co"># Award index for a season + per-award detail.</span></span>
 <span><span class="va">aw</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_season_awards.html">espn_nba_season_awards</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_award.html">espn_nba_award</a></span><span class="op">(</span>award_id <span class="op">=</span> <span class="va">aw</span><span class="op">$</span><span class="va">award_id</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 9</span></span></span>
-<span><span class="co">#&gt;   league season award_id name  description        athlete_id team_id athlete_ref</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> nba      <span style="text-decoration: underline;">2</span>026 33       MVP   NBA Most Valuable… 4278073    25      http://spo…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: team_ref &lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 0</span></span></span>
 <span></span>
 <span><span class="co"># Season group structure (conferences / D-I groups) -- mostly relevant</span></span>
 <span><span class="co"># for MBB, which has a deep conference hierarchy.</span></span>
@@ -1631,11 +1627,11 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 12</span></span></span>
 <span><span class="co">#&gt;   league          coach_id record_type_id record_name record_type record_summary</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: record_display &lt;chr&gt;, stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   stat_display &lt;chr&gt;, value &lt;dbl&gt;, stat_display_value &lt;chr&gt;</span></span></span></code></pre></div>
 </div>

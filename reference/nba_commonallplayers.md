@@ -26,7 +26,7 @@
 nba_commonallplayers(
   is_only_current_season = 0,
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   ...
 )
 
@@ -41,7 +41,7 @@ nba_commonplayoffseries(
 
 nba_commonteamroster(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   team_id = "1610612739",
   ...
 )
@@ -237,7 +237,7 @@ Returns a named list of data frames: TeamYears
 
 [All Players](https://www.nba.com/players)
 
-      nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+      nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 
 [Player Info](https://www.nba.com/stats/player/2544)
 
@@ -247,7 +247,7 @@ Returns a named list of data frames: TeamYears
 
 [Team Roster](https://www.nba.com/stats/team/1610612756)
 
-     nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 1), team_id = '1610612739')
+     nba_commonteamroster(season = year_to_season(most_recent_nba_season() - 2), team_id = '1610612739')
 
      nba_commonteamyears(league_id = '00')
 
