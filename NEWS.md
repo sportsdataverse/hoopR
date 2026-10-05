@@ -40,6 +40,31 @@
 
 # **hoopR 3.1.0.9000 (development version)**
 
+* The NBA Stats wrappers now default `season` to the previous season. 97
+  season arguments defaulted to the current one,
+  `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com answers
+  with empty tables until that season's games begin. On 2026-10-05 the
+  current season, 2026-27, left `nba_leaguedashplayerstats()`,
+  `nba_leaguegamelog()` and `nba_teamgamelogs()` empty; the previous season
+  returns 582, 2,460 and 82 rows. They now default to
+  `year_to_season(most_recent_nba_season() - 2)`. Pass `season` for the
+  current season. `most_recent_nba_season()` rolls over in October, so from
+  July to September the default is two seasons back from the one just
+  finished. Unchanged:
+  * the schedule functions (`nba_schedule()`, `nba_scheduleleaguev2int()`,
+    `nbagl_schedule()`), because a schedule is published before its season
+    starts;
+  * the draft and draft-combine functions, whose default
+    (`most_recent_nba_season() - 1`) is already the latest completed draft;
+  * `nba_teams()`, which reads the current season's standings (they list all
+    30 teams before the season starts);
+  * fixed defaults such as `"2020-21"` and `"22022"`.
+
+  wehoop's WNBA Stats wrappers use the same previous-season rule, as does
+  sportsdataverse-py. The examples and live tests pass the previous season
+  too. The `nba_playoffpicture()` error hint now names `season_id`, the
+  argument it takes, and the `nba_drafthistory()` live test passes `season`
+  rather than an unknown `season_year`, which was silently ignored.
 * Added `cbbd_teams_directory()` (CBD `/teams/directory`, upstream v1.29.0): the
   season's full team directory, as a named list of `teams` and `conferences`.
 * Added `cbbd_teams_season_overview()` (CBD

@@ -4,11 +4,12 @@
 \alias{nba_team_dict}
 \title{\strong{NBA Team Dictionary}}
 \usage{
-nba_team_dict(season = year_to_season(most_recent_nba_season() - 1), ...)
+nba_team_dict(season = year_to_season(most_recent_nba_season() - 2), ...)
 }
 \arguments{
-\item{season}{Season in \code{"YYYY-YY"} form. Defaults to the most recent
-completed season.}
+\item{season}{Season in \code{"YYYY-YY"} form. Defaults to the previous season,
+\code{year_to_season(most_recent_nba_season() - 2)} (the current season rolls
+over in October).}
 
 \item{...}{Additional arguments passed to \code{\link[=nba_playerindex]{nba_playerindex()}} (e.g. \code{proxy}).}
 }

@@ -51,8 +51,9 @@ nba_team_logo_url <- function(team_id, variant = "primary") {
 #' @description A tidy player dictionary (id, name, team, bio, headshot URL)
 #'   sourced from the stats.nba.com player index. Handy for joining player ids to
 #'   names/teams and for fetching headshots.
-#' @param season Season in `"YYYY-YY"` form. Defaults to the most recent
-#'   completed season.
+#' @param season Season in `"YYYY-YY"` form. Defaults to the previous season,
+#'   `year_to_season(most_recent_nba_season() - 2)` (the current season rolls
+#'   over in October).
 #' @param ... Additional arguments passed to [nba_playerindex()] (e.g. `proxy`).
 #' @return A `hoopR_data` tibble with one row per player:
 #'
@@ -86,7 +87,7 @@ nba_team_logo_url <- function(team_id, variant = "primary") {
 #' \donttest{
 #'   try(nba_player_dict())
 #' }
-nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 1), ...) {
+nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 2), ...) {
   .args <- .capture_args()
 
   df <- data.frame()
@@ -134,8 +135,9 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 1
 #' @description A tidy team dictionary (id, abbreviation, name, conference,
 #'   division, logo URL) derived from the stats.nba.com player index plus a
 #'   static conference/division map.
-#' @param season Season in `"YYYY-YY"` form. Defaults to the most recent
-#'   completed season.
+#' @param season Season in `"YYYY-YY"` form. Defaults to the previous season,
+#'   `year_to_season(most_recent_nba_season() - 2)` (the current season rolls
+#'   over in October).
 #' @param ... Additional arguments passed to [nba_playerindex()] (e.g. `proxy`).
 #' @return A `hoopR_data` tibble with one row per team:
 #'
@@ -161,7 +163,7 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 1
 #' \donttest{
 #'   try(nba_team_dict())
 #' }
-nba_team_dict <- function(season = year_to_season(most_recent_nba_season() - 1), ...) {
+nba_team_dict <- function(season = year_to_season(most_recent_nba_season() - 2), ...) {
   .args <- .capture_args()
 
   df <- data.frame()

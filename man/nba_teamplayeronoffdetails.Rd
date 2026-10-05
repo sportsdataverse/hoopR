@@ -23,7 +23,7 @@ nba_teamdetails(team_id = "1610612749", ...)
 
 nba_teamestimatedmetrics(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -32,7 +32,7 @@ nba_teamgamelog(
   date_from = "",
   date_to = "",
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   team_id = "1610612749",
   ...
@@ -53,7 +53,7 @@ nba_teamgamelogs(
   per_mode = "Totals",
   period = 0,
   player_id = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "1610612749",
@@ -71,7 +71,7 @@ nba_teamhistoricalleaders(
 
 nba_teaminfocommon(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   team_id = "1610612749",
   ...
@@ -94,7 +94,7 @@ nba_teamplayeronoffdetails(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -121,7 +121,7 @@ nba_teamplayeronoffsummary(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -148,7 +148,7 @@ nba_teamplayerdashboard(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -184,7 +184,7 @@ nba_teamvsplayer(
   player_id = "",
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -208,7 +208,7 @@ nba_teamandplayersvsplayers(
   vs_player_id3,
   vs_player_id4,
   vs_player_id5,
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   measure_type = "Base",
   per_mode = "Totals",
@@ -393,7 +393,7 @@ nba_teamgamestreakfinder(
   min_games = "",
   outcome = "",
   po_round = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "",

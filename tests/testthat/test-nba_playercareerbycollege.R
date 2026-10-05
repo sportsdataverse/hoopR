@@ -8,7 +8,7 @@ test_that("NBA Player Career by College", {
   x <- nba_playercareerbycollege(college = "Florida State",
                                  league_id = "00",
                                  per_mode = "Totals",
-                                 season = year_to_season(most_recent_nba_season() - 1),
+                                 season = year_to_season(most_recent_nba_season() - 2),
                                  season_type = "Regular Season")
 
   if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {

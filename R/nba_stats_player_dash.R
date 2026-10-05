@@ -49,7 +49,7 @@
 #' @details
 #' [Player Clutch Stats Dashboard](https://www.nba.com/stats/players/clutch-traditional)
 #' ```r
-#'  nba_playerdashboardbyclutch(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbyclutch(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbyclutch <- function(
     date_from = '',
@@ -69,7 +69,7 @@ nba_playerdashboardbyclutch <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -179,7 +179,7 @@ nba_playerdashboardbyclutch <- function(
 #' @details
 #' [Player Stats Dashboard by Game Splits](https://www.nba.com/stats/player/2544/traditional?Split=ingame)
 #' ```r
-#'  nba_playerdashboardbygamesplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbygamesplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbygamesplits <- function(
     date_from = '',
@@ -199,7 +199,7 @@ nba_playerdashboardbygamesplits <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -310,7 +310,7 @@ nba_playerdashboardbygamesplits <- function(
 #' @details
 #' [Player Stats Dashboard by General Splits](https://www.nba.com/stats/player/2544/traditional)
 #' ```r
-#'  nba_playerdashboardbygeneralsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbygeneralsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbygeneralsplits <- function(
     date_from = '',
@@ -330,7 +330,7 @@ nba_playerdashboardbygeneralsplits <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -441,7 +441,7 @@ nba_playerdashboardbygeneralsplits <- function(
 #' @details
 #' [Player Stats Dashboard by Last N Games](https://www.nba.com/stats/player/2544/traditional?Split=lastn)
 #' ```r
-#'  nba_playerdashboardbylastngames(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbylastngames(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbylastngames <- function(
     date_from = '',
@@ -461,7 +461,7 @@ nba_playerdashboardbylastngames <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -571,7 +571,7 @@ nba_playerdashboardbylastngames <- function(
 #' @details
 #' [Player Stats Dashboard by Opponent](https://www.nba.com/stats/player/2544/traditional?Split=opp)
 #' ```r
-#'  nba_playerdashboardbyopponent(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbyopponent(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbyopponent <- function(
     date_from = '',
@@ -591,7 +591,7 @@ nba_playerdashboardbyopponent <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -702,7 +702,7 @@ nba_playerdashboardbyopponent <- function(
 #' @details
 #' [Player Stats Dashboard by Shooting Splits](https://www.nba.com/stats/player/2544/shooting)
 #' ```r
-#'  nba_playerdashboardbyshootingsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbyshootingsplits(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbyshootingsplits <- function(
     date_from = '',
@@ -722,7 +722,7 @@ nba_playerdashboardbyshootingsplits <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -832,7 +832,7 @@ nba_playerdashboardbyshootingsplits <- function(
 #' @details
 #' [Player Stats Dashboard by Team Performance](https://www.nba.com/stats/player/2544/traditional?Split=teamperf&PerMode=PerGame)
 #' ```r
-#'  nba_playerdashboardbyteamperformance(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbyteamperformance(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbyteamperformance <- function(
     date_from = '',
@@ -852,7 +852,7 @@ nba_playerdashboardbyteamperformance <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -960,7 +960,7 @@ nba_playerdashboardbyteamperformance <- function(
 #' @details
 #' [Player Stats Dashboard by Team Performance](https://www.nba.com/stats/player/2544/traditional?Split=yoy&PerMode=PerGame)
 #' ```r
-#'  nba_playerdashboardbyyearoveryear(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashboardbyyearoveryear(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashboardbyyearoveryear <- function(
     date_from = '',
@@ -980,7 +980,7 @@ nba_playerdashboardbyyearoveryear <- function(
     player_id = '2544',
     plus_minus = 'N',
     rank = 'N',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     shot_clock_range = '',
@@ -1084,7 +1084,7 @@ NULL
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Passing](https://www.nba.com/stats/player/2544/passes-dash)
 #' ```r
-#'  nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashptpass(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashptpass  <- function(
     date_from = '',
@@ -1097,7 +1097,7 @@ nba_playerdashptpass  <- function(
     outcome = '',
     per_mode = 'Totals',
     player_id = '2544',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1194,7 +1194,7 @@ NULL
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Rebounding](https://www.nba.com/stats/player/2544/rebounds-dash)
 #' ```r
-#'  nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashptreb(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashptreb  <- function(
     date_from = '',
@@ -1209,7 +1209,7 @@ nba_playerdashptreb  <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1308,7 +1308,7 @@ nba_playerdashptreb  <- function(
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Defending](https://www.nba.com/stats/player/2544/defense-dash)
 #' ```r
-#'  nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashptshotdefend(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashptshotdefend  <- function(
     date_from = '',
@@ -1323,7 +1323,7 @@ nba_playerdashptshotdefend  <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1423,7 +1423,7 @@ nba_playerdashptshotdefend  <- function(
 #' @details
 #' [Player Tracking (Second Spectrum) Stats - Shooting](https://www.nba.com/stats/player/2544/shots-dash)
 #' ```r
-#'  nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_playerdashptshots(player_id = '2544', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_playerdashptshots  <- function(
     date_from = '',
@@ -1438,7 +1438,7 @@ nba_playerdashptshots  <- function(
     per_mode = 'Totals',
     period = 0,
     player_id = '2544',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_segment = '',
     season_type = 'Regular Season',
     team_id = '0',
@@ -1531,14 +1531,14 @@ NULL
 #' @details
 #' [Synergy Play Type Stats](https://www.nba.com/stats/teams/isolation)
 #' ```r
-#'  nba_synergyplaytypes(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+#'  nba_synergyplaytypes(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 #' ```
 nba_synergyplaytypes <- function(
     league_id = '00',
     per_mode = 'PerGame',
     play_type = 'Isolation',
     player_or_team = 'P',
-    season = year_to_season(most_recent_nba_season() - 1),
+    season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     type_grouping = 'Offensive',
     ...){

@@ -4,7 +4,7 @@ test_that("NBA Team Game Streak Finder", {
   skip_nba_stats_test()
   skip("Deprecated: nba_teamgamestreakfinder() now errors by design; use nba_teamgamelogs().")
 
-  x <- nba_teamgamestreakfinder(season = year_to_season(most_recent_nba_season() - 1))
+  x <- nba_teamgamestreakfinder(season = year_to_season(most_recent_nba_season() - 2))
 
   if (length(x) == 0 || is.null(x[[1]]) || !is.data.frame(x[[1]]) || nrow(x[[1]]) == 0) {
     skip("No rows returned from endpoint at test time")

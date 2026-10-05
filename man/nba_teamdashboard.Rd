@@ -32,7 +32,7 @@ nba_teamdashboardbyclutch(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -59,7 +59,7 @@ nba_teamdashboardbygamesplits(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -86,7 +86,7 @@ nba_teamdashboardbygeneralsplits(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -113,7 +113,7 @@ nba_teamdashboardbylastngames(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -140,7 +140,7 @@ nba_teamdashboardbyopponent(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -167,7 +167,7 @@ nba_teamdashboardbyshootingsplits(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -194,7 +194,7 @@ nba_teamdashboardbyteamperformance(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -221,7 +221,7 @@ nba_teamdashboardbyyearoveryear(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -250,7 +250,7 @@ nba_teamdashlineups(
   per_mode = "Totals",
   period = 0,
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -270,7 +270,7 @@ nba_teamdashptpass(
   opponent_team_id = 0,
   outcome = "",
   per_mode = "Totals",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "1610612749",
@@ -291,7 +291,7 @@ nba_teamdashptreb(
   outcome = "",
   per_mode = "Totals",
   period = 0,
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "1610612749",
@@ -312,7 +312,7 @@ nba_teamdashptshots(
   outcome = "",
   per_mode = "Totals",
   period = 0,
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "1610612749",
@@ -484,62 +484,62 @@ CRAN 5 MB installed-size limit. See the package source at
 \details{
 \href{https://www.nba.com/stats/teams/clutch-traditional}{Team Clutch Stats Dashboard}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyclutch(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyclutch(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/traditional?Split=ingame}{Team Dashboard by Game Splits}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbygamesplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbygamesplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/traditional?Split=general}{Team Dashboard by General Splits}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbygeneralsplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbygeneralsplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/traditional?Split=lastn}{Team Dashboard by Last N Games}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbylastngames(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbylastngames(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/traditional?Split=opp}{Team Dashboard by Opponent}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyopponent(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyopponent(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/shooting}{Team Dashboard by Shooting Splits}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyshootingsplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyshootingsplits(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/traditional?Split=teamperf}{Team Dashboard by Team Performance}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyteamperformance(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyteamperformance(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/traditional?Split=yoy}{Team Dashboard by Year over Year}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyyearoveryear(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashboardbyyearoveryear(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/lineups-traditional}{Team Lineups Dashboard}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashlineups(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashlineups(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/passes-dash}{Team Player Tracking (Second Spectrum) Stats - Passing}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptpass(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptpass(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/rebounds-dash}{Team Player Tracking (Second Spectrum) Stats - Rebounds}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptreb(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptreb(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/team/1610612749/shots-dash}{Team Player Tracking (Second Spectrum) Stats - Shooting}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptshots(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_teamdashptshots(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 }
 \seealso{

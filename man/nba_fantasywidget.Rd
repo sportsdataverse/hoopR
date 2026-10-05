@@ -21,7 +21,7 @@ nba_fantasywidget(
   po_round = "",
   player_id = "",
   position = "",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "",
@@ -52,7 +52,7 @@ nba_leaguedashlineups(
   period = 0,
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -83,7 +83,7 @@ nba_leaguelineupviz(
   period = 0,
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   shot_clock_range = "",
@@ -109,7 +109,7 @@ nba_leagueplayerondetails(
   period = 0,
   plus_minus = "N",
   rank = "N",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_segment = "",
   season_type = "Regular Season",
   team_id = "1610612749",
@@ -125,7 +125,7 @@ nba_leagueseasonmatchups(
   off_player_id = "",
   off_team_id = "",
   per_mode = "Totals",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -137,7 +137,7 @@ nba_matchupsrollup(
   off_player_id = "",
   off_team_id = "",
   per_mode = "Totals",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -445,30 +445,30 @@ Returns a named list of data frames: MatchupsRollup
 \strong{Get NBA Stats API Matchups Rollup}
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_fantasywidget(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_fantasywidget(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/lineups/traditional}{Lineups Dashboard}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguedashlineups(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguedashlineups(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/lineups/traditional}{Lineups Dashboard}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguelineupviz(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaguelineupviz(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueplayerondetails(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueplayerondetails(team_id = '1610612749', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/player/2544/head-to-head}{Player Season Matchups}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueseasonmatchups(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueseasonmatchups(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
 \href{https://www.nba.com/stats/player/2544/by-position}{Player Matchups Rollup}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_matchupsrollup(league_id = '00', season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_matchupsrollup(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 }
 \seealso{

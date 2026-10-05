@@ -25,7 +25,7 @@ nba_assistleaders(
   league_id = "00",
   per_mode = "PerGame",
   player_or_team = "Team",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -33,7 +33,7 @@ nba_assistleaders(
 nba_assisttracker(
   league_id = "00",
   per_mode = "PerGame",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -43,7 +43,7 @@ nba_homepageleaders(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat_category = "Points",
   ...
@@ -54,7 +54,7 @@ nba_homepagev2(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat_type = "Traditional",
   ...
@@ -65,7 +65,7 @@ nba_leaderstiles(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat = "PTS",
   ...
@@ -76,7 +76,7 @@ nba_defensehub(
   game_scope = "Season",
   player_or_team = "Team",
   player_scope = "All Players",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -86,7 +86,7 @@ nba_leagueleaders(
   league_id = "00",
   per_mode = "Totals",
   scope = "S",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   stat_category = "PTS",
   ...
@@ -94,7 +94,7 @@ nba_leagueleaders(
 
 nba_dunkscoreleaders(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   player_id = "",
   team_id = "",
@@ -104,7 +104,7 @@ nba_dunkscoreleaders(
 
 nba_gravityleaders(
   league_id = "00",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   ...
 )
@@ -712,10 +712,10 @@ Use \code{nba_leagueleaders()} instead.
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leagueleaders(league_id = '00')
 }\if{html}{\out{</div>}}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_dunkscoreleaders(season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 1))
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_gravityleaders(season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 }
 \author{

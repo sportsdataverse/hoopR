@@ -6,7 +6,7 @@
 \usage{
 nbagl_standings(
   league_id = "20",
-  season = year_to_season(most_recent_nba_season() - 1),
+  season = year_to_season(most_recent_nba_season() - 2),
   season_type = "Regular Season",
   season_year = "",
   ...
@@ -61,7 +61,7 @@ Returns a named list of data frames: Standings
 Retrieves G-League standings via the NBA Stats API standings endpoint.
 }
 \details{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_standings(season = most_recent_nba_season() - 1)
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbagl_standings(season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}
 }
 \seealso{
