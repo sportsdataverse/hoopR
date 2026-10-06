@@ -1,0 +1,686 @@
+{
+  "local": {
+    "coach": {
+      "code": "010561",
+      "name": "KOKOSKOV, IGOR"
+    },
+    "players": [
+      {
+        "player": {
+          "person": {
+            "code": "006590",
+            "name": "BEAUBOIS, RODRIGUE",
+            "alias": "Beaubois",
+            "aliasRaw": "Beaubois",
+            "passportName": "RODRIGUE GABRIEL",
+            "passportSurname": "BEAUBOIS",
+            "jerseyName": "BEAUBOIS",
+            "abbreviatedName": "Beaubois, R.",
+            "country": {
+              "code": "FRA",
+              "name": "France"
+            },
+            "height": 188,
+            "weight": 84,
+            "birthDate": "1988-02-24T00:00:00",
+            "birthCountry": {
+              "code": "FRA",
+              "name": "France"
+            },
+            "twitterAccount": "",
+            "instagramAccount": "",
+            "facebookAccount": "",
+            "isReferee": false,
+            "images": {}
+          },
+          "type": "J",
+          "typeName": "Player",
+          "active": true,
+          "startDate": "2025-09-16T06:35:18.346",
+          "endDate": "2026-06-30T00:00:00",
+          "order": 0,
+          "dorsal": "1",
+          "dorsalRaw": "1",
+          "position": 1,
+          "positionName": "Guard",
+          "lastTeam": "ANADOLU EFES",
+          "externalId": 53259,
+          "images": {
+            "action": "https://media-cdn.cortextech.io/281e3d42-9999-46b7-bbe4-4b03c18af2c5.png",
+            "headshot": "https://media-cdn.cortextech.io/281e3d42-9999-46b7-bbe4-4b03c18af2c5.png"
+          },
+          "club": {
+            "code": "IST",
+            "name": "Anadolu Efes Istanbul",
+            "abbreviatedName": "Anadolu Efes",
+            "editorialName": "Efes",
+            "tvCode": "EFS",
+            "isVirtual": false,
+            "images": {
+              "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+            }
+          },
+          "season": {
+            "name": "EuroLeague 2025-26",
+            "code": "E2025",
+            "alias": "2025-26",
+            "competitionCode": "E",
+            "year": 2025,
+            "startDate": "2025-07-01T00:00:00"
+          }
+        },
+        "stats": {
+          "timePlayed": 0.0,
+          "valuation": 0.0,
+          "points": 0.0,
+          "fieldGoalsMade2": 0.0,
+          "fieldGoalsAttempted2": 0.0,
+          "fieldGoalsMade3": 0.0,
+          "fieldGoalsAttempted3": 0.0,
+          "freeThrowsMade": 0.0,
+          "freeThrowsAttempted": 0.0,
+          "fieldGoalsMadeTotal": 0.0,
+          "fieldGoalsAttemptedTotal": 0.0,
+          "accuracyMade": 0.0,
+          "accuracyAttempted": 0.0,
+          "totalRebounds": 0.0,
+          "defensiveRebounds": 0.0,
+          "offensiveRebounds": 0.0,
+          "assistances": 0.0,
+          "steals": 0.0,
+          "turnovers": 0.0,
+          "blocksFavour": 0.0,
+          "blocksAgainst": 0.0,
+          "foulsCommited": 0.0,
+          "foulsReceived": 0.0,
+          "plusMinus": 0.0,
+          "dorsal": 1,
+          "startFive": false,
+          "startFive2": false
+        }
+      },
+      {
+        "player": {
+          "person": {
+            "code": "009549",
+            "name": "CORDINIER, ISAIA",
+            "alias": "CORDINIER, ISAIA",
+            "aliasRaw": "CORDINIER, ISAIA",
+            "passportName": "ISAIA",
+            "passportSurname": "CORDINIER",
+            "jerseyName": "CORDINIER",
+            "abbreviatedName": "Cordinier, I.",
+            "country": {
+              "code": "FRA",
+              "name": "France"
+            },
+            "height": 196,
+            "weight": 90,
+            "birthDate": "1996-11-28T00:00:00",
+            "birthCountry": {
+              "code": "FRA",
+              "name": "France"
+            },
+            "twitterAccount": "izaycordinier",
+            "instagramAccount": "izaycordinier",
+            "facebookAccount": "",
+            "isReferee": false,
+            "images": {}
+          },
+          "type": "J",
+          "typeName": "Player",
+          "active": true,
+          "startDate": "2025-09-16T06:35:19.041",
+          "endDate": "2026-06-30T00:00:00",
+          "order": 0,
+          "dorsal": "10",
+          "dorsalRaw": "10",
+          "position": 1,
+          "positionName": "Guard",
+          "lastTeam": "VIRTUS SEGAFREDO BOLOGNA",
+          "externalId": 53262,
+          "images": {
+            "action": "https://media-cdn.cortextech.io/b9885dd5-53ca-4f41-96f7-4b7f1c8c4d5a.png",
+            "headshot": "https://media-cdn.cortextech.io/b9885dd5-53ca-4f41-96f7-4b7f1c8c4d5a.png"
+          },
+          "club": {
+            "code": "IST",
+            "name": "Anadolu Efes Istanbul",
+            "abbreviatedName": "Anadolu Efes",
+            "editorialName": "Efes",
+            "tvCode": "EFS",
+            "isVirtual": false,
+            "images": {
+              "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+            }
+          },
+          "season": {
+            "name": "EuroLeague 2025-26",
+            "code": "E2025",
+            "alias": "2025-26",
+            "competitionCode": "E",
+            "year": 2025,
+            "startDate": "2025-07-01T00:00:00"
+          }
+        },
+        "stats": {
+          "timePlayed": 1850.0,
+          "valuation": 3.0,
+          "points": 7.0,
+          "fieldGoalsMade2": 3.0,
+          "fieldGoalsAttempted2": 7.0,
+          "fieldGoalsMade3": 0.0,
+          "fieldGoalsAttempted3": 4.0,
+          "freeThrowsMade": 1.0,
+          "freeThrowsAttempted": 1.0,
+          "fieldGoalsMadeTotal": 3.0,
+          "fieldGoalsAttemptedTotal": 11.0,
+          "accuracyMade": 7.0,
+          "accuracyAttempted": 27.0,
+          "totalRebounds": 3.0,
+          "defensiveRebounds": 1.0,
+          "offensiveRebounds": 2.0,
+          "assistances": 2.0,
+          "steals": 0.0,
+          "turnovers": 0.0,
+          "blocksFavour": 0.0,
+          "blocksAgainst": 1.0,
+          "foulsCommited": 2.0,
+          "foulsReceived": 2.0,
+          "plusMinus": 11.0,
+          "dorsal": 10,
+          "startFive": true,
+          "startFive2": false
+        }
+      },
+      {
+        "player": {
+          "person": {
+            "code": "011201",
+            "name": "HAZER, SEHMUS",
+            "alias": "HAZER, SEHMUS",
+            "aliasRaw": "HAZER, SEHMUS",
+            "passportName": "SEHMUS",
+            "passportSurname": "HAZER",
+            "jerseyName": "HAZER",
+            "abbreviatedName": "Hazer, S.",
+            "country": {
+              "code": "TUR",
+              "name": "Turkiye"
+            },
+            "height": 195,
+            "weight": 87,
+            "birthDate": "1999-02-15T00:00:00",
+            "birthCountry": {
+              "code": "TUR",
+              "name": "Turkiye"
+            },
+            "twitterAccount": "",
+            "instagramAccount": "",
+            "facebookAccount": "",
+            "isReferee": false,
+            "images": {}
+          },
+          "type": "J",
+          "typeName": "Player",
+          "active": true,
+          "startDate": "2025-09-23T13:10:26.653",
+          "endDate": "2026-06-30T00:00:00",
+          "order": 0,
+          "dorsal": "2",
+          "dorsalRaw": "2",
+          "position": 1,
+          "positionName": "Guard",
+          "lastTeam": "BAHCESEHIR KOLEJI",
+          "externalId": 53439,
+          "images": {
+            "action": "https://media-cdn.cortextech.io/4ddb1fa4-97c7-4e34-9d0b-eaf23f9bf632.png",
+            "headshot": "https://media-cdn.cortextech.io/4ddb1fa4-97c7-4e34-9d0b-eaf23f9bf632.png"
+          },
+          "club": {
+            "code": "IST",
+            "name": "Anadolu Efes Istanbul",
+            "abbreviatedName": "Anadolu Efes",
+            "editorialName": "Efes",
+            "tvCode": "EFS",
+            "isVirtual": false,
+            "images": {
+              "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+            }
+          },
+          "season": {
+            "name": "EuroLeague 2025-26",
+            "code": "E2025",
+            "alias": "2025-26",
+            "competitionCode": "E",
+            "year": 2025,
+            "startDate": "2025-07-01T00:00:00"
+          }
+        },
+        "stats": {
+          "timePlayed": 461.0,
+          "valuation": -4.0,
+          "points": 0.0,
+          "fieldGoalsMade2": 0.0,
+          "fieldGoalsAttempted2": 1.0,
+          "fieldGoalsMade3": 0.0,
+          "fieldGoalsAttempted3": 2.0,
+          "freeThrowsMade": 0.0,
+          "freeThrowsAttempted": 0.0,
+          "fieldGoalsMadeTotal": 0.0,
+          "fieldGoalsAttemptedTotal": 3.0,
+          "accuracyMade": 0.0,
+          "accuracyAttempted": 8.0,
+          "totalRebounds": 4.0,
+          "defensiveRebounds": 2.0,
+          "offensiveRebounds": 2.0,
+          "assistances": 0.0,
+          "steals": 1.0,
+          "turnovers": 4.0,
+          "blocksFavour": 0.0,
+          "blocksAgainst": 1.0,
+          "foulsCommited": 1.0,
+          "foulsReceived": 0.0,
+          "plusMinus": -1.0,
+          "dorsal": 2,
+          "startFive": false,
+          "startFive2": false
+        }
+      }
+    ],
+    "team": {
+      "timePlayed": 0.0,
+      "valuation": 4.0,
+      "points": 0.0,
+      "fieldGoalsMade2": 0.0,
+      "fieldGoalsAttempted2": 0.0,
+      "fieldGoalsMade3": 0.0,
+      "fieldGoalsAttempted3": 0.0,
+      "freeThrowsMade": 0.0,
+      "freeThrowsAttempted": 0.0,
+      "fieldGoalsMadeTotal": 0.0,
+      "fieldGoalsAttemptedTotal": 0.0,
+      "accuracyMade": 0.0,
+      "accuracyAttempted": 0.0,
+      "totalRebounds": 4.0,
+      "defensiveRebounds": 3.0,
+      "offensiveRebounds": 1.0,
+      "assistances": 0.0,
+      "steals": 0.0,
+      "turnovers": 0.0,
+      "blocksFavour": 0.0,
+      "blocksAgainst": 0.0,
+      "foulsCommited": 0.0,
+      "foulsReceived": 0.0,
+      "plusMinus": 0.0
+    },
+    "total": {
+      "timePlayed": 2400.0,
+      "valuation": 92.0,
+      "points": 85.0,
+      "fieldGoalsMade2": 23.0,
+      "fieldGoalsAttempted2": 37.0,
+      "fieldGoalsMade3": 9.0,
+      "fieldGoalsAttempted3": 29.0,
+      "freeThrowsMade": 12.0,
+      "freeThrowsAttempted": 15.0,
+      "fieldGoalsMadeTotal": 32.0,
+      "fieldGoalsAttemptedTotal": 66.0,
+      "accuracyMade": 85.0,
+      "accuracyAttempted": 176.0,
+      "totalRebounds": 40.0,
+      "defensiveRebounds": 26.0,
+      "offensiveRebounds": 14.0,
+      "assistances": 15.0,
+      "steals": 6.0,
+      "turnovers": 14.0,
+      "blocksFavour": 1.0,
+      "blocksAgainst": 3.0,
+      "foulsCommited": 21.0,
+      "foulsReceived": 20.0,
+      "plusMinus": 35.0
+    }
+  },
+  "road": {
+    "coach": {
+      "code": "TFT",
+      "name": "KATTASH, ODED"
+    },
+    "players": [
+      {
+        "player": {
+          "person": {
+            "code": "011193",
+            "name": "BLATT, TAMIR",
+            "alias": "BLATT, TAMIR",
+            "aliasRaw": "BLATT, TAMIR",
+            "passportName": "TAMIR",
+            "passportSurname": "BLATT",
+            "jerseyName": "BLATT",
+            "abbreviatedName": "Blatt, T.",
+            "country": {
+              "code": "ISR",
+              "name": "Israel"
+            },
+            "height": 178,
+            "weight": 82,
+            "birthDate": "1997-05-04T00:00:00",
+            "birthCountry": {
+              "code": "ISR",
+              "name": "Israel"
+            },
+            "twitterAccount": "",
+            "instagramAccount": "tamirblatt6/",
+            "facebookAccount": "",
+            "isReferee": false,
+            "images": {}
+          },
+          "type": "J",
+          "typeName": "Player",
+          "active": true,
+          "startDate": "2025-09-26T13:34:07.921",
+          "endDate": "2026-06-30T00:00:00",
+          "order": 0,
+          "dorsal": "45",
+          "dorsalRaw": "45",
+          "position": 1,
+          "positionName": "Guard",
+          "lastTeam": "MACCABI TEL AVIV",
+          "externalId": 53518,
+          "images": {
+            "headshot": "https://media-cdn.cortextech.io/780f9309-2c9f-4a43-be7f-9f7a7182d133.png",
+            "action": "https://media-cdn.cortextech.io/780f9309-2c9f-4a43-be7f-9f7a7182d133.png"
+          },
+          "club": {
+            "code": "TEL",
+            "name": "Maccabi Rapyd Tel Aviv",
+            "abbreviatedName": "Maccabi",
+            "editorialName": "Maccabi",
+            "tvCode": "MTA",
+            "isVirtual": false,
+            "images": {
+              "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+            }
+          },
+          "season": {
+            "name": "EuroLeague 2025-26",
+            "code": "E2025",
+            "alias": "2025-26",
+            "competitionCode": "E",
+            "year": 2025,
+            "startDate": "2025-07-01T00:00:00"
+          }
+        },
+        "stats": {
+          "timePlayed": 1418.0,
+          "valuation": 9.0,
+          "points": 6.0,
+          "fieldGoalsMade2": 0.0,
+          "fieldGoalsAttempted2": 2.0,
+          "fieldGoalsMade3": 2.0,
+          "fieldGoalsAttempted3": 4.0,
+          "freeThrowsMade": 0.0,
+          "freeThrowsAttempted": 0.0,
+          "fieldGoalsMadeTotal": 2.0,
+          "fieldGoalsAttemptedTotal": 6.0,
+          "accuracyMade": 6.0,
+          "accuracyAttempted": 16.0,
+          "totalRebounds": 2.0,
+          "defensiveRebounds": 2.0,
+          "offensiveRebounds": 0.0,
+          "assistances": 9.0,
+          "steals": 0.0,
+          "turnovers": 4.0,
+          "blocksFavour": 0.0,
+          "blocksAgainst": 0.0,
+          "foulsCommited": 1.0,
+          "foulsReceived": 1.0,
+          "plusMinus": -11.0,
+          "dorsal": 45,
+          "startFive": true,
+          "startFive2": false
+        }
+      },
+      {
+        "player": {
+          "person": {
+            "code": "014127",
+            "name": "BRISSETT, O'SHAE J",
+            "alias": "BRISSETT, O'SHAE J",
+            "aliasRaw": "BRISSETT, O'SHAE J",
+            "passportName": "OSHAE J",
+            "passportSurname": "BRISSETT",
+            "jerseyName": "BRISSETT",
+            "abbreviatedName": null,
+            "country": {
+              "code": "CAN",
+              "name": "Canada"
+            },
+            "height": 201,
+            "weight": 95,
+            "birthDate": "1998-06-20T00:00:00",
+            "birthCountry": {
+              "code": "CAN",
+              "name": "Canada"
+            },
+            "twitterAccount": "",
+            "instagramAccount": "",
+            "facebookAccount": "",
+            "isReferee": false,
+            "images": {}
+          },
+          "type": "J",
+          "typeName": "Player",
+          "active": true,
+          "startDate": "2025-09-28T16:53:55.373",
+          "endDate": "2026-06-30T00:00:00",
+          "order": 0,
+          "dorsal": "10",
+          "dorsalRaw": "10",
+          "position": 2,
+          "positionName": "Forward",
+          "lastTeam": "BOSTON CELTICS",
+          "externalId": 53541,
+          "images": {
+            "action": "https://media-cdn.cortextech.io/0490793f-09f7-42be-b351-2cd6543d1613.png",
+            "headshot": "https://media-cdn.cortextech.io/0490793f-09f7-42be-b351-2cd6543d1613.png"
+          },
+          "club": {
+            "code": "TEL",
+            "name": "Maccabi Rapyd Tel Aviv",
+            "abbreviatedName": "Maccabi",
+            "editorialName": "Maccabi",
+            "tvCode": "MTA",
+            "isVirtual": false,
+            "images": {
+              "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+            }
+          },
+          "season": {
+            "name": "EuroLeague 2025-26",
+            "code": "E2025",
+            "alias": "2025-26",
+            "competitionCode": "E",
+            "year": 2025,
+            "startDate": "2025-07-01T00:00:00"
+          }
+        },
+        "stats": {
+          "timePlayed": 1525.0,
+          "valuation": 8.0,
+          "points": 9.0,
+          "fieldGoalsMade2": 3.0,
+          "fieldGoalsAttempted2": 6.0,
+          "fieldGoalsMade3": 1.0,
+          "fieldGoalsAttempted3": 3.0,
+          "freeThrowsMade": 0.0,
+          "freeThrowsAttempted": 1.0,
+          "fieldGoalsMadeTotal": 4.0,
+          "fieldGoalsAttemptedTotal": 9.0,
+          "accuracyMade": 9.0,
+          "accuracyAttempted": 22.0,
+          "totalRebounds": 7.0,
+          "defensiveRebounds": 6.0,
+          "offensiveRebounds": 1.0,
+          "assistances": 1.0,
+          "steals": 0.0,
+          "turnovers": 1.0,
+          "blocksFavour": 0.0,
+          "blocksAgainst": 0.0,
+          "foulsCommited": 4.0,
+          "foulsReceived": 2.0,
+          "plusMinus": -4.0,
+          "dorsal": 10,
+          "startFive": true,
+          "startFive2": false
+        }
+      },
+      {
+        "player": {
+          "person": {
+            "code": "013699",
+            "name": "CLARK III, JIMMY",
+            "alias": "CLARK III, JIMMY",
+            "aliasRaw": "CLARK III, JIMMY",
+            "passportName": "JIMMY",
+            "passportSurname": "CLARK JR III",
+            "jerseyName": "CLARK III",
+            "abbreviatedName": "",
+            "country": {
+              "code": "USA",
+              "name": "United States of America"
+            },
+            "height": 190,
+            "weight": 83,
+            "birthDate": "2001-04-04T00:00:00",
+            "birthCountry": {
+              "code": "USA",
+              "name": "United States of America"
+            },
+            "twitterAccount": "",
+            "instagramAccount": "",
+            "facebookAccount": "",
+            "isReferee": false,
+            "images": {}
+          },
+          "type": "J",
+          "typeName": "Player",
+          "active": true,
+          "startDate": "2025-09-15T13:16:53.387",
+          "endDate": "2026-06-30T00:00:00",
+          "order": 0,
+          "dorsal": "2",
+          "dorsalRaw": "2",
+          "position": 1,
+          "positionName": "Guard",
+          "lastTeam": "MACCABI TEL AVIV",
+          "externalId": 53156,
+          "images": {
+            "headshot": "https://media-cdn.cortextech.io/fc0e527c-4d5c-479e-a067-3701084cf554.png",
+            "action": "https://media-cdn.cortextech.io/fc0e527c-4d5c-479e-a067-3701084cf554.png"
+          },
+          "club": {
+            "code": "TEL",
+            "name": "Maccabi Rapyd Tel Aviv",
+            "abbreviatedName": "Maccabi",
+            "editorialName": "Maccabi",
+            "tvCode": "MTA",
+            "isVirtual": false,
+            "images": {
+              "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+            }
+          },
+          "season": {
+            "name": "EuroLeague 2025-26",
+            "code": "E2025",
+            "alias": "2025-26",
+            "competitionCode": "E",
+            "year": 2025,
+            "startDate": "2025-07-01T00:00:00"
+          }
+        },
+        "stats": {
+          "timePlayed": 1043.0,
+          "valuation": 2.0,
+          "points": 7.0,
+          "fieldGoalsMade2": 3.0,
+          "fieldGoalsAttempted2": 9.0,
+          "fieldGoalsMade3": 0.0,
+          "fieldGoalsAttempted3": 2.0,
+          "freeThrowsMade": 1.0,
+          "freeThrowsAttempted": 1.0,
+          "fieldGoalsMadeTotal": 3.0,
+          "fieldGoalsAttemptedTotal": 11.0,
+          "accuracyMade": 7.0,
+          "accuracyAttempted": 25.0,
+          "totalRebounds": 3.0,
+          "defensiveRebounds": 1.0,
+          "offensiveRebounds": 2.0,
+          "assistances": 1.0,
+          "steals": 3.0,
+          "turnovers": 1.0,
+          "blocksFavour": 0.0,
+          "blocksAgainst": 1.0,
+          "foulsCommited": 5.0,
+          "foulsReceived": 3.0,
+          "plusMinus": -6.0,
+          "dorsal": 2,
+          "startFive": true,
+          "startFive2": false
+        }
+      }
+    ],
+    "team": {
+      "timePlayed": 0.0,
+      "valuation": 3.0,
+      "points": 0.0,
+      "fieldGoalsMade2": 0.0,
+      "fieldGoalsAttempted2": 0.0,
+      "fieldGoalsMade3": 0.0,
+      "fieldGoalsAttempted3": 0.0,
+      "freeThrowsMade": 0.0,
+      "freeThrowsAttempted": 0.0,
+      "fieldGoalsMadeTotal": 0.0,
+      "fieldGoalsAttemptedTotal": 0.0,
+      "accuracyMade": 0.0,
+      "accuracyAttempted": 0.0,
+      "totalRebounds": 3.0,
+      "defensiveRebounds": 2.0,
+      "offensiveRebounds": 1.0,
+      "assistances": 0.0,
+      "steals": 0.0,
+      "turnovers": 0.0,
+      "blocksFavour": 0.0,
+      "blocksAgainst": 0.0,
+      "foulsCommited": 0.0,
+      "foulsReceived": 0.0,
+      "plusMinus": 0.0
+    },
+    "total": {
+      "timePlayed": 2400.0,
+      "valuation": 90.0,
+      "points": 78.0,
+      "fieldGoalsMade2": 21.0,
+      "fieldGoalsAttempted2": 38.0,
+      "fieldGoalsMade3": 7.0,
+      "fieldGoalsAttempted3": 27.0,
+      "freeThrowsMade": 15.0,
+      "freeThrowsAttempted": 17.0,
+      "fieldGoalsMadeTotal": 28.0,
+      "fieldGoalsAttemptedTotal": 65.0,
+      "accuracyMade": 78.0,
+      "accuracyAttempted": 174.0,
+      "totalRebounds": 32.0,
+      "defensiveRebounds": 20.0,
+      "offensiveRebounds": 12.0,
+      "assistances": 20.0,
+      "steals": 8.0,
+      "turnovers": 12.0,
+      "blocksFavour": 3.0,
+      "blocksAgainst": 1.0,
+      "foulsCommited": 20.0,
+      "foulsReceived": 21.0,
+      "plusMinus": -35.0
+    }
+  }
+}

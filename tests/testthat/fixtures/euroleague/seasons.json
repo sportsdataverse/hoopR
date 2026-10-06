@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "name": "EuroLeague 2026-27",
+      "code": "E2026",
+      "alias": "2026-27",
+      "competitionCode": "E",
+      "year": 2026,
+      "startDate": "2026-07-01T00:00:00",
+      "activationDate": "2026-07-01T00:00:00",
+      "endDate": "2027-06-30T23:59:59",
+      "winner": null
+    },
+    {
+      "name": "EuroLeague 2025-26",
+      "code": "E2025",
+      "alias": "2025-26",
+      "competitionCode": "E",
+      "year": 2025,
+      "startDate": "2025-07-01T00:00:00",
+      "activationDate": "2025-07-01T00:00:00",
+      "endDate": "2026-06-30T23:59:59",
+      "winner": {
+        "code": "OLY",
+        "name": "Olympiacos Piraeus",
+        "abbreviatedName": "Olympiacos",
+        "editorialName": "Olympiacos",
+        "tvCode": "OLY",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+        }
+      }
+    },
+    {
+      "name": "EuroLeague 2024-25",
+      "code": "E2024",
+      "alias": "2024-25",
+      "competitionCode": "E",
+      "year": 2024,
+      "startDate": "2024-06-29T00:00:00",
+      "activationDate": "2024-06-29T00:00:00",
+      "endDate": "2025-06-30T23:59:59",
+      "winner": {
+        "code": "ULK",
+        "name": "Fenerbahce Beko Istanbul",
+        "abbreviatedName": "Fenerbahce",
+        "editorialName": "",
+        "tvCode": "FBB",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+        }
+      }
+    }
+  ],
+  "total": 27
+}

@@ -229,6 +229,14 @@ This rule applies to **every return variable name**, not just `df_list`: `plays_
 
 ### Officiating errors are classed conditions (sanctioned exception)
 
+The EuroLeague family (`R/euroleague_*.R`, 15 `euroleague_*()` functions)
+follows the same classed-condition contract through its one chokepoint
+`euroleague_api()`: 404 -> `hoopR_no_data`, 400 / 422 ->
+`hoopR_invalid_request`, anything else -> `hoopR_fetch_error`. It mirrors
+sdv-py's `euroleague_*` wrappers column for column (the offline tests assert
+`names()` against `tests/testthat/fixtures/euroleague/columns.json`, generated
+from sdv-py's schema YAMLs); change the columns there first.
+
 `R/nba_officiating.R` (`nba_l2m()`, `nba_l2m_games()`, `nba_referee_assignments()`)
 deliberately does **not** follow the tryCatch-and-return-an-empty-fallback
 pattern above. A failed fetch **raises** a classed condition instead of

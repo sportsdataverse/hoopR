@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "name": "Adriatic League",
+      "code": "AL"
+    },
+    {
+      "name": "Belgium League",
+      "code": "BE"
+    },
+    {
+      "name": "Belgium National Cup",
+      "code": "BEC"
+    }
+  ],
+  "total": 43
+}

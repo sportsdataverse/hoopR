@@ -40,6 +40,21 @@
 
 # **hoopR 3.1.0.9000 (development version)**
 
+* New EuroLeague / EuroCup family, `euroleague_*()` (15 functions), wrapping
+  the keyless, unofficial Competition Engine (`api-live.euroleague.net` v2 +
+  v3) and live (`live.euroleague.net/api`) APIs: `euroleague_competitions()`,
+  `euroleague_seasons()`, `euroleague_rounds()`, `euroleague_clubs()`,
+  `euroleague_people()`, `euroleague_games()`, `euroleague_game_stats()`,
+  `euroleague_game_report()`, `euroleague_standings(kind =)`,
+  `euroleague_player_stats(mode =)`, `euroleague_team_stats(mode =)`,
+  `euroleague_game_points()` (the shot chart, in centimeters from the hoop),
+  `euroleague_game_pbp()`, `euroleague_game_boxscore()` and
+  `euroleague_game_header()`. They mirror sdv-py's `euroleague_*` wrappers
+  (same arguments, defaults and snake_case columns) and raise the classed
+  `hoopR_no_data` / `hoopR_invalid_request` / `hoopR_fetch_error` conditions
+  on a failed request; the live API's empty "no such game" answer is a
+  zero-row tibble with the documented columns. Wrap-only: payloads are not
+  redistributed as release assets.
 * The NBA Stats wrappers now default `season` to the previous season. 97
   season arguments defaulted to the current one,
   `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com answers

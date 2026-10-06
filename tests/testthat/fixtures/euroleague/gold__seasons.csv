@@ -1,0 +1,4 @@
+name,code,alias,competition_code,year,start_date,activation_date,end_date,winner,winner_code,winner_name,winner_abbreviated_name,winner_editorial_name,winner_tv_code,winner_is_virtual,winner_images_crest
+EuroLeague 2026-27,E2026,2026-27,E,2026,2026-07-01T00:00:00,2026-07-01T00:00:00,2027-06-30T23:59:59,,,,,,,nan,
+EuroLeague 2025-26,E2025,2025-26,E,2025,2025-07-01T00:00:00,2025-07-01T00:00:00,2026-06-30T23:59:59,,OLY,Olympiacos Piraeus,Olympiacos,Olympiacos,OLY,False,https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png
+EuroLeague 2024-25,E2024,2024-25,E,2024,2024-06-29T00:00:00,2024-06-29T00:00:00,2025-06-30T23:59:59,,ULK,Fenerbahce Beko Istanbul,Fenerbahce,"",FBB,False,https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png

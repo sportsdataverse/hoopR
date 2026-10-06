@@ -1,0 +1,13 @@
+quarter,team_a,team_b,code_team_a,code_team_b,type,numberofplay,codeteam,player_id,playtype,player,team,dorsal,minute,markertime,points_a,points_b,comment,playinfo
+1,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,8,"","",BP,,,,1,"",,,"",Begin Period
+1,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,9,KLA,"",JB,,Neptunas Klaipeda,"",1,09:59,,,"",""
+1,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,10,KLA,P005860,2FGA,"TAROLIS, DONATAS",Neptunas Klaipeda,1,1,09:42,,,"",Missed Two Pointer (0/1 -  0 pt)
+2,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,178,"","",BP,,,,11,"",,,"",Begin Period
+2,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,176,KLA,P013883,IN,"PACEVICIUS, MARTYNAS",Neptunas Klaipeda,9,11,10:00,,,"",In
+2,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,177,KLA,P009301,OUT,"MACIJAUSKAS, MATAS",Neptunas Klaipeda,16,11,10:00,,,"",Out
+3,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,365,"","",BP,,,,21,"",,,"",Begin Period
+3,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,353,WRO,P011901,OUT,"WISNIEWSKI, ALEKSANDER",Slask Wroclaw,2,21,10:00,,,"",Out
+3,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,354,WRO,P013918,OUT,"KULIKOWSKI, BLAZEJ",Slask Wroclaw,3,21,10:00,,,"",Out
+4,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,529,"","",BP,,,,31,"",,,"",Begin Period
+4,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,523,WRO,P011901,OUT,"WISNIEWSKI, ALEKSANDER",Slask Wroclaw,2,31,10:00,,,"",Out
+4,Slask Wroclaw,Neptunas Klaipeda,WRO,KLA,0,524,WRO,P011947,IN,"SANON, ISSUF",Slask Wroclaw,30,31,10:00,,,"",In

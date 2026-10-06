@@ -1,0 +1,77 @@
+{
+  "total": 20,
+  "teams": [
+    {
+      "teamRanking": 1,
+      "team": {
+        "code": "ASV",
+        "tvCodes": "ASV",
+        "name": "LDLC ASVEL Villeurbanne",
+        "imageUrl": "https://media-cdn.incrowdsports.com/e33c6d1a-95ca-4dbc-b8cb-0201812104cc.png"
+      },
+      "gamesPlayed": 38.0,
+      "effectiveFieldGoalPercentage": "50.7%",
+      "trueShootingPercentage": "54.6%",
+      "offensiveReboundsPercentage": "31.1%",
+      "defensiveReboundsPercentage": "67.2%",
+      "reboundsPercentage": "47.9%",
+      "assistsToTurnoversRatio": 1.4,
+      "assistsRatio": "17%",
+      "turnoversRatio": "12.6%",
+      "twoPointRate": "56.7%",
+      "threePointRate": "43.3%",
+      "freeThrowsRate": "28.9%",
+      "pointsFromTwoPointersPercentage": "47.5%",
+      "pointsFromThreePointersPercentage": "34.9%",
+      "pointsFromFreeThrowsPercentage": "17.6%"
+    },
+    {
+      "teamRanking": 2,
+      "team": {
+        "code": "IST",
+        "tvCodes": "EFS",
+        "name": "Anadolu Efes Istanbul",
+        "imageUrl": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+      },
+      "gamesPlayed": 38.0,
+      "effectiveFieldGoalPercentage": "53.9%",
+      "trueShootingPercentage": "57.9%",
+      "offensiveReboundsPercentage": "28.2%",
+      "defensiveReboundsPercentage": "67.3%",
+      "reboundsPercentage": "47.6%",
+      "assistsToTurnoversRatio": 1.4,
+      "assistsRatio": "17.6%",
+      "turnoversRatio": "12.7%",
+      "twoPointRate": "57.9%",
+      "threePointRate": "42.1%",
+      "freeThrowsRate": "29.2%",
+      "pointsFromTwoPointersPercentage": "48.2%",
+      "pointsFromThreePointersPercentage": "34.3%",
+      "pointsFromFreeThrowsPercentage": "17.5%"
+    },
+    {
+      "teamRanking": 3,
+      "team": {
+        "code": "MUN",
+        "tvCodes": "BAY",
+        "name": "FC Bayern Munich",
+        "imageUrl": "https://media-cdn.incrowdsports.com/817b0e58-d595-4b09-ab0b-1e7cc26249ff.png"
+      },
+      "gamesPlayed": 38.0,
+      "effectiveFieldGoalPercentage": "54.1%",
+      "trueShootingPercentage": "57.5%",
+      "offensiveReboundsPercentage": "30%",
+      "defensiveReboundsPercentage": "67.8%",
+      "reboundsPercentage": "48.6%",
+      "assistsToTurnoversRatio": 1.4,
+      "assistsRatio": "18.3%",
+      "turnoversRatio": "12.8%",
+      "twoPointRate": "57.3%",
+      "threePointRate": "42.7%",
+      "freeThrowsRate": "24.3%",
+      "pointsFromTwoPointersPercentage": "49.1%",
+      "pointsFromThreePointersPercentage": "35.8%",
+      "pointsFromFreeThrowsPercentage": "15.1%"
+    }
+  ]
+}

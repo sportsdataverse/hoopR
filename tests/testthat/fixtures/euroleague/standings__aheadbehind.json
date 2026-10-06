@@ -1,0 +1,105 @@
+{
+  "winner": {
+    "code": "OLY",
+    "name": "Olympiacos Piraeus",
+    "abbreviatedName": "Olympiacos",
+    "editorialName": "Olympiacos",
+    "tvCode": "OLY",
+    "isVirtual": false,
+    "images": {
+      "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+    }
+  },
+  "teams": [
+    {
+      "position": 1,
+      "positionChange": "Equal",
+      "gamesPlayed": 1,
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "qualified": false,
+      "winsPercentage": "100%",
+      "club": {
+        "code": "ULK",
+        "name": "Fenerbahce Beko Istanbul",
+        "abbreviatedName": "Fenerbahce",
+        "editorialName": "Fenerbahce",
+        "tvCode": "FBB",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+        }
+      },
+      "quater1Ahead": "1-0",
+      "quater1Behind": "0-0",
+      "quater1Tied": "0-0",
+      "half1Ahead": "1-0",
+      "half1Behind": "0-0",
+      "half1Tied": "0-0",
+      "quater3Ahead": "1-0",
+      "quater3Behind": "0-0",
+      "quater3Tied": "0-0",
+      "groupName": "Regular Season"
+    },
+    {
+      "position": 2,
+      "positionChange": "Equal",
+      "gamesPlayed": 1,
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "qualified": false,
+      "winsPercentage": "100%",
+      "club": {
+        "code": "HTA",
+        "name": "Hapoel IBI Tel Aviv",
+        "abbreviatedName": "Hapoel Tel Aviv",
+        "editorialName": "Hapoel Tel Aviv",
+        "tvCode": "HTA",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+        }
+      },
+      "quater1Ahead": "0-0",
+      "quater1Behind": "0-0",
+      "quater1Tied": "1-0",
+      "half1Ahead": "1-0",
+      "half1Behind": "0-0",
+      "half1Tied": "0-0",
+      "quater3Ahead": "1-0",
+      "quater3Behind": "0-0",
+      "quater3Tied": "0-0",
+      "groupName": "Regular Season"
+    },
+    {
+      "position": 3,
+      "positionChange": "Equal",
+      "gamesPlayed": 1,
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "qualified": false,
+      "winsPercentage": "100%",
+      "club": {
+        "code": "DUB",
+        "name": "Dubai Basketball",
+        "abbreviatedName": "Dubai",
+        "editorialName": "Dubai",
+        "tvCode": "DUB",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+        }
+      },
+      "quater1Ahead": "1-0",
+      "quater1Behind": "0-0",
+      "quater1Tied": "0-0",
+      "half1Ahead": "1-0",
+      "half1Behind": "0-0",
+      "half1Tied": "0-0",
+      "quater3Ahead": "1-0",
+      "quater3Behind": "0-0",
+      "quater3Tied": "0-0",
+      "groupName": "Regular Season"
+    }
+  ]
+}

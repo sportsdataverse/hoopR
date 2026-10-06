@@ -1,0 +1,69 @@
+{
+  "gameCode": 1,
+  "season": {
+    "name": "EuroLeague 2025-26",
+    "code": "E2025",
+    "alias": "2025-26",
+    "competitionCode": "E",
+    "year": 2025,
+    "startDate": "2025-07-01T00:00:00"
+  },
+  "group": {
+    "id": "b423dc4c-c635-422d-ad84-83cbe5caf086",
+    "order": 1,
+    "name": "Group Regular Season",
+    "rawName": "Regular Season"
+  },
+  "phaseType": {
+    "code": "RS",
+    "alias": "REGULAR SEASON",
+    "name": "Regular Season",
+    "isGroupPhase": true
+  },
+  "round": 1,
+  "roundAlias": "Round 1",
+  "roundName": "Round 1",
+  "played": true,
+  "date": "2025-09-30T19:45:00",
+  "confirmedDate": true,
+  "confirmedHour": true,
+  "localTimeZone": 2,
+  "localDate": "2025-09-30T19:45:00",
+  "utcDate": "2025-09-30T17:45:00Z",
+  "local": {
+    "club": {
+      "code": "IST",
+      "name": "Anadolu Efes Istanbul",
+      "abbreviatedName": "Anadolu Efes",
+      "editorialName": "Efes",
+      "tvCode": "EFS",
+      "isVirtual": false,
+      "images": {
+        "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+      }
+    },
+    "score": 85,
+    "standingsScore": 85
+  },
+  "road": {
+    "club": {
+      "code": "TEL",
+      "name": "Maccabi Rapyd Tel Aviv",
+      "abbreviatedName": "Maccabi",
+      "editorialName": "Maccabi",
+      "tvCode": "MTA",
+      "isVirtual": false,
+      "images": {
+        "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+      }
+    },
+    "score": 78,
+    "standingsScore": 78
+  },
+  "localLast5Form": [
+    "W"
+  ],
+  "roadLast5Form": [
+    "L"
+  ]
+}

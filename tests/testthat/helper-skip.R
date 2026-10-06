@@ -95,3 +95,11 @@ skip_realgm_test <- function(){
     invisible()
   }
 }
+
+skip_euroleague_test <- function(){
+  if(Sys.getenv("EUROLEAGUE_TESTS") != "1"){
+    skip("User can't run EuroLeague live tests (EUROLEAGUE_TESTS not set)")
+  } else {
+    invisible()
+  }
+}

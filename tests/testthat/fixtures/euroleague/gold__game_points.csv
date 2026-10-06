@@ -1,0 +1,4 @@
+num_anot,team,id_player,player,id_action,action,points,coord_x,coord_y,zone,fastbreak,second_chance,points_off_turnover,minute,console,points_a,points_b,utc
+4,IST,P014102,"JONES, KAI",2FGM,Two Pointer,2,-12,-6,A,0,0,0,1,09:39,2,0,20250930174549
+8,IST,P007200,"LARKIN, SHANE",3FGA,Missed Three Pointer,0,414,602,I,0,0,0,1,09:11,2,0,20250930174617
+11,IST,P012710,"OSMANI, ERCAN",2FGM,Two Pointer,2,-307,0,D,0,1,1,2,08:57,4,0,20250930174631
