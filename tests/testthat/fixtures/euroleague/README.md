@@ -56,7 +56,7 @@ order, to `tools/codegen/schemas/native/euroleague/<route>.yaml`), polars dtypes
 classes, the row count, and the frame as CSV (`null_value = "NA"`, so a Python null and an
 empty string stay distinct). **Last generated from sdv-py commit `90372b5a46`** (branch
 `fix/frames-null-promotion`: the shared frame builder keeps nullable boolean / integer columns
-and never writes `"nan"`; merged to sdv-py main as `<sha>` once merged), with that checkout's
+and never writes `"nan"`; merged to sdv-py main as `67ee42280f`, PR #712), with that checkout's
 venv python:
 
 ```sh
