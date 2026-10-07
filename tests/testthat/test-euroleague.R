@@ -57,29 +57,33 @@ euro_calls <- list(
   game_header = quote(euroleague_game_header(1, "E2025"))
 )
 
-# Cell normalization for the value parity: NA == "", logicals lower-cased,
-# Python's JSON spacing / \uXXXX escapes folded, trailing ".0" dropped.
-.euro_norm <- function(v) {
-  v <- as.character(v)
-  v[is.na(v) | v == "nan"] <- ""  # pandas NaN for a bool/int column that is null on some rows
-  v <- tolower(v)
-  v <- gsub(", ", ",", v, fixed = TRUE)
-  v <- gsub(": ", ":", v, fixed = TRUE)
-  v <- gsub("(\\d)\\.0\\b", "\\1", v, perl = TRUE)
-  stringi::stri_unescape_unicode(v)
-}
+# Strict cell parity against the sdv-py golden CSV (polars write_csv, null -> "NA"):
+# every column is compared with the class sdv-py gave it -- logical / integer /
+# numeric read back as that class, character compared verbatim (NA is NA, "" is
+# ""). The one documented difference, JSON-encoded list cells (Python's ", " / ": "
+# separators and unicode escapes), is compared by parsing both sides, never by
+# editing the strings.
 .expect_euro_gold <- function(got, key) {
   gold <- utils::read.csv(file.path(efx, paste0("gold__", key, ".csv")), colClasses = "character",
-                          na.strings = character(0), check.names = FALSE, encoding = "UTF-8")
+                          na.strings = "NA", check.names = FALSE, encoding = "UTF-8")
   expect_identical(names(got), names(gold))
   expect_equal(nrow(got), nrow(gold))
   for (col in names(gold)) {
-    a <- .euro_norm(got[[col]])
-    b <- .euro_norm(gold[[col]])
-    an <- suppressWarnings(as.numeric(a))
-    bn <- suppressWarnings(as.numeric(b))
-    num_ok <- !is.na(an) & !is.na(bn) & abs(an - bn) <= 1e-9 * pmax(1, abs(bn))
-    expect_true(all(a == b | num_ok), info = paste(key, col, "first diff:", a[which(!(a == b | num_ok))[1]], "vs", b[which(!(a == b | num_ok))[1]]))
+    g <- got[[col]]
+    e <- gold[[col]]
+    if (is.logical(g)) {
+      expect_identical(g, as.logical(e), info = paste(key, col))
+    } else if (is.integer(g)) {
+      expect_identical(g, as.integer(e), info = paste(key, col))
+    } else if (is.numeric(g)) {
+      expect_identical(g, as.numeric(e), info = paste(key, col))
+    } else {
+      json <- !is.na(g) & grepl("^[\\[{]", g)
+      expect_identical(g[!json], e[!json], info = paste(key, col))
+      for (i in which(json)) {
+        expect_identical(jsonlite::parse_json(g[i]), jsonlite::parse_json(e[i]), info = paste(key, col, "row", i))
+      }
+    }
   }
 }
 
@@ -91,6 +95,8 @@ for (key in names(egold)) {
     expect_s3_class(df, "hoopR_data")
     expect_identical(names(df), unlist(g$columns))
     expect_equal(nrow(df), g$nrow)
+    # per-column class parity: sdv-py Utf8 -> character, Int64 -> integer, Float64 -> numeric, Boolean -> logical
+    expect_identical(unname(vapply(df, function(v) class(v)[1], character(1))), unlist(g$types))
     .expect_euro_gold(df, key)
   })
 }
@@ -146,9 +152,7 @@ test_that("the live API's empty 200 body is a zero-row tibble with the documente
     expect_s3_class(df, "hoopR_data")
     expect_equal(nrow(df), 0L)
     expect_identical(names(df), unlist(egold[[key]]$columns))
-    # the documented live schema (columns.json$types still carries sdv-py's Float64
-    # `plusminus`, a pandas artifact being fixed there; round 2 re-points this at it)
-    expect_identical(unname(vapply(df, function(v) class(v)[1], character(1))), unname(.euroleague_live_schemas[[key]]))
+    expect_identical(unname(vapply(df, function(v) class(v)[1], character(1))), unlist(egold[[key]]$types))
   }
 })
 

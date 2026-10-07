@@ -44,13 +44,13 @@
    "character",
    "character",
    "character",
-   "numeric",
    "character",
    "character",
    "character",
    "character",
    "character",
    "character",
+   "logical",
    "character"
   ],
   "nrow": 3
@@ -1475,7 +1475,7 @@
    "integer",
    "integer",
    "integer",
-   "numeric"
+   "integer"
   ],
   "nrow": 10
  },

@@ -108,7 +108,8 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
       out[[key]] <- if (grepl("(^|_)ids?$", .euroleague_underscore(key))) {
         paste(vapply(v, function(e) as.character(e), character(1)), collapse = ",")
       } else {
-        as.character(jsonlite::toJSON(v, auto_unbox = TRUE, null = "null", digits = NA))
+        # always_decimal: a JSON 1.0 stays 1.0 (a double), a 1 stays 1, as in Python
+        as.character(jsonlite::toJSON(v, auto_unbox = TRUE, null = "null", digits = NA, always_decimal = TRUE))
       }
     } else if (is.null(v)) {
       out[key] <- list(NA)

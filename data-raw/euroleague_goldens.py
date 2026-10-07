@@ -93,7 +93,8 @@ def main() -> None:
             "types": [RTYPE.get(str(t), str(t)) for t in df.dtypes],
             "nrow": df.height,
         }
-        df.write_csv(FX / f"gold__{key}.csv")
+        # null -> "NA" so a Python null and an empty string stay distinguishable in R
+        df.write_csv(FX / f"gold__{key}.csv", null_value="NA")
     (FX / "columns.json").write_text(json.dumps(golden, indent=1) + "\n", encoding="utf-8", newline="\n")
 
     tables = {}

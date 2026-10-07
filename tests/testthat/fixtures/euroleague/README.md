@@ -53,14 +53,18 @@ parity test, written by the committed generator `data-raw/euroleague_goldens.py`
 sdv-py's parsers (`sportsdataverse.euroleague.euroleague_parsers`) on the fixtures above and
 writes, per route and `kind` / `mode` section, the frame's column names (asserted equal, in
 order, to `tools/codegen/schemas/native/euroleague/<route>.yaml`), polars dtypes mapped to R
-classes, the row count, and the frame as CSV. **Last generated from sdv-py commit
-`ba871739af`** (branch `feat/euroleague-gap`, PR #710; its euroleague tree is identical to
-main `f3fa92d45e`), with that checkout's venv python:
+classes, the row count, and the frame as CSV (`null_value = "NA"`, so a Python null and an
+empty string stay distinct). **Last generated from sdv-py commit `90372b5a46`** (branch
+`fix/frames-null-promotion`: the shared frame builder keeps nullable boolean / integer columns
+and never writes `"nan"`; merged to sdv-py main as `<sha>` once merged), with that checkout's
+venv python:
 
 ```sh
 <sdv-py>/.venv/Scripts/python.exe data-raw/euroleague_goldens.py --sdv-py <sdv-py>
-``` The offline
-tests assert `identical(names(df), columns)` and `nrow`, then compare every cell (`NA` == `""`,
-numbers numerically, JSON-encoded list cells after normalizing Python's `", "` / `": "`
-separators and `\uXXXX` escapes). Regenerate (same command, new commit cited here) when sdv-py's euroleague
-parsers or schemas change.
+```
+
+The offline tests assert `identical(names(df), columns)`, `nrow` and every column's class
+against `types`, then compare every cell strictly with that class (NA is NA, "" is "");
+JSON-encoded list cells are compared by parsing both sides (Python's `", "` / `": "` separators
+and `\uXXXX` escapes are the only byte-level difference). Regenerate (same command, new commit
+cited here) when sdv-py's euroleague parsers or schemas change.
