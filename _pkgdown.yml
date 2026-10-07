@@ -439,6 +439,28 @@ reference:
     desc: Functions exported by hoopR to scrape basketball-reference.com
     contents:
       - starts_with("bref_")
+  - title: Euroleague Data
+  - subtitle: Euroleague Competition Engine API
+    desc: >
+      EuroLeague / EuroCup wrappers over the keyless, unofficial Competition
+      Engine (api-live.euroleague.net v2 + v3) and live (live.euroleague.net)
+      APIs, mirroring sdv-py's `euroleague_*` functions column for column.
+    contents:
+      - '`euroleague_competitions`'
+      - '`euroleague_seasons`'
+      - '`euroleague_rounds`'
+      - '`euroleague_clubs`'
+      - '`euroleague_people`'
+      - '`euroleague_games`'
+      - '`euroleague_game_stats`'
+      - '`euroleague_game_report`'
+      - '`euroleague_standings`'
+      - '`euroleague_player_stats`'
+      - '`euroleague_team_stats`'
+      - '`euroleague_game_points`'
+      - '`euroleague_game_pbp`'
+      - '`euroleague_game_boxscore`'
+      - '`euroleague_game_header`'
   - title: Salary & Mock Draft Sources
   - subtitle: Salary & Draft Functions
     desc: Functions exported by hoopR to scrape Spotrac, HoopsHype, and NBADraft.net

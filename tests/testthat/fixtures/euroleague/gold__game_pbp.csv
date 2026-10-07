@@ -1,0 +1,13 @@
+quarter,team_a,team_b,code_team_a,code_team_b,type,numberofplay,codeteam,player_id,playtype,player,team,dorsal,minute,markertime,points_a,points_b,comment,playinfo
+1,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,2,"","",BP,NA,NA,NA,1,"",NA,NA,"",Begin Period
+1,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,3,IST,"",JB,NA,Anadolu Efes Istanbul,"",1,09:59,NA,NA,"",""
+1,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,4,IST,P014102,2FGM,"JONES, KAI",Anadolu Efes Istanbul,88,1,09:39,2,NA,"",Two Pointer (1/1 -  2 pt)
+2,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,137,"","",BP,NA,NA,NA,11,"",NA,NA,"",Begin Period
+2,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,131,IST,P005844,IN,"PAPAGIANNIS, GEORGIOS",Anadolu Efes Istanbul,9,11,10:00,NA,NA,"",In
+2,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,132,IST,P009549,OUT,"CORDINIER, ISAIA",Anadolu Efes Istanbul,10,11,10:00,NA,NA,"",Out
+3,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,299,"","",BP,NA,NA,NA,21,"",NA,NA,"",Begin Period
+3,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,291,IST,P009754,OUT,"LOYD, JORDAN",Anadolu Efes Istanbul,3,21,10:00,NA,NA,"",Out
+3,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,292,IST,P010391,IN,"WEILER-BABB, NICK",Anadolu Efes Istanbul,8,21,10:00,NA,NA,"",In
+4,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,447,"","",BP,NA,NA,NA,31,"",NA,NA,"",Begin Period
+4,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,441,IST,P007200,IN,"LARKIN, SHANE",Anadolu Efes Istanbul,0,31,10:00,NA,NA,"",In
+4,Anadolu Efes Istanbul,Maccabi Rapyd Tel Aviv,IST,TEL,0,442,IST,P009754,OUT,"LOYD, JORDAN",Anadolu Efes Istanbul,3,31,10:00,NA,NA,"",Out

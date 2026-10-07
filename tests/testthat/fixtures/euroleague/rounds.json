@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "seasonCode": "E2025",
+      "phaseTypeCode": "FF",
+      "round": 47,
+      "index": 2,
+      "name": "Final",
+      "minGameStartDate": "2026-05-23T00:00:00",
+      "maxGameStartDate": "2026-05-25T23:59:59",
+      "datesFormmated": "May 23-25, 2026"
+    },
+    {
+      "seasonCode": "E2025",
+      "phaseTypeCode": "FF",
+      "round": 46,
+      "index": 1,
+      "name": "Semifinal",
+      "minGameStartDate": "2026-05-15T00:00:00",
+      "maxGameStartDate": "2026-05-22T23:59:59",
+      "datesFormmated": "May 15-22, 2026"
+    },
+    {
+      "seasonCode": "E2025",
+      "phaseTypeCode": "PO",
+      "round": 45,
+      "index": 5,
+      "name": "Game 5",
+      "minGameStartDate": "2026-05-11T00:00:00",
+      "maxGameStartDate": "2026-05-17T23:59:59",
+      "datesFormmated": "May 11-17, 2026"
+    }
+  ],
+  "total": 47
+}

@@ -1,0 +1,4 @@
+num_anot,team,id_player,player,id_action,action,points,coord_x,coord_y,zone,fastbreak,second_chance,points_off_turnover,minute,console,points_a,points_b,utc
+10,KLA,P005860,"TAROLIS, DONATAS",2FGA,Missed Two Pointer,0,0,219,B,0,0,0,1,09:42,0,0,20250930170140
+14,WRO,P013921,"GRAY, KADRE",FTM,Free Throw In,1,-1,-1,"",0,0,0,1,09:33,1,0,20250930170214
+15,WRO,P013921,"GRAY, KADRE",FTM,Free Throw In,1,-1,-1,"",0,0,0,1,09:33,2,0,20250930170229

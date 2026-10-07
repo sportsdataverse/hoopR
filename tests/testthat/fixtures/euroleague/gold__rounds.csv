@@ -1,0 +1,4 @@
+season_code,phase_type_code,round,index,name,min_game_start_date,max_game_start_date,dates_formmated
+E2025,FF,47,2,Final,2026-05-23T00:00:00,2026-05-25T23:59:59,"May 23-25, 2026"
+E2025,FF,46,1,Semifinal,2026-05-15T00:00:00,2026-05-22T23:59:59,"May 15-22, 2026"
+E2025,PO,45,5,Game 5,2026-05-11T00:00:00,2026-05-17T23:59:59,"May 11-17, 2026"

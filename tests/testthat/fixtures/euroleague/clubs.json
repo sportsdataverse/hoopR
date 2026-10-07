@@ -1,0 +1,83 @@
+{
+  "data": [
+    {
+      "code": "IST",
+      "name": "Anadolu Efes Istanbul",
+      "abbreviatedName": "Anadolu Efes",
+      "editorialName": "Efes",
+      "tvCode": "EFS",
+      "isVirtual": false,
+      "images": {
+        "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+      },
+      "sponsor": "Anadolu Efes Istanbul",
+      "clubPermanentName": "Anadolu Efes Istanbul",
+      "clubPermanentAlias": "Efes",
+      "country": {
+        "code": "TUR",
+        "name": "Turkiye"
+      },
+      "address": "Kazliçesme Mahallesi 10. Yil Caddesi No : 9/1 Basketbol Gelisim Merkezi 34020, Istanbul, Turkiye",
+      "website": "https://www.anadoluefessk.org/",
+      "ticketsUrl": "https://www.anadoluefessk.org/en/tickets",
+      "twitterAccount": "AnadoluEfesSK",
+      "venueCode": "AVG",
+      "city": "ISTANBUL",
+      "president": "Tuncay Ozilhan",
+      "phone": "+90 212 449 38 84"
+    },
+    {
+      "code": "MCO",
+      "name": "AS Monaco",
+      "abbreviatedName": "Monaco",
+      "editorialName": "Monaco",
+      "tvCode": "ASM",
+      "isVirtual": false,
+      "images": {
+        "crest": "https://media-cdn.incrowdsports.com/89ed276a-2ba3-413f-8ea2-b3be209ca129.png"
+      },
+      "sponsor": "AS Monaco",
+      "clubPermanentName": "AS Monaco",
+      "clubPermanentAlias": "Monaco",
+      "country": {
+        "code": "MON",
+        "name": "Monaco"
+      },
+      "address": "2 Avenue Albert II, Monaco, 98000, Monaco",
+      "website": "https://asmonaco.basketball/",
+      "ticketsUrl": "https://billetterie.asmonaco.basketball/",
+      "twitterAccount": "ASMonaco_Basket",
+      "venueCode": "AUR",
+      "city": "Monaco",
+      "president": "Alekszej Fedoricsev",
+      "phone": "+33 607938076"
+    },
+    {
+      "code": "RED",
+      "name": "Crvena Zvezda Meridianbet Belgrade",
+      "abbreviatedName": "Crvena Zvezda",
+      "editorialName": "Crvena Zvezda",
+      "tvCode": "CZV",
+      "isVirtual": false,
+      "images": {
+        "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+      },
+      "sponsor": "Crvena Zvezda Meridianbet Belgrade",
+      "clubPermanentName": "Crvena Zvezda Meridianbet Belgrade",
+      "clubPermanentAlias": "Crvena Zvezda",
+      "country": {
+        "code": "SRB",
+        "name": "Serbia"
+      },
+      "address": "Mali Kalemegdan 2, 11000 Belgrade, Serbia",
+      "website": "http://www.kkcrvenazvezda.rs/",
+      "ticketsUrl": "https://www.tickets.kkcrvenazvezda.rs/ ",
+      "twitterAccount": "kkcrvenazvezda",
+      "venueCode": "ATM",
+      "city": "BELGRADE",
+      "president": "Zeljko Drcelic",
+      "phone": "+381 116550549"
+    }
+  ],
+  "total": 20
+}

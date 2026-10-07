@@ -1,0 +1,122 @@
+{
+  "total": 208,
+  "players": [
+    {
+      "playerRanking": 1,
+      "player": {
+        "code": "010035",
+        "name": "VILLAR, RAFA",
+        "age": 21,
+        "imageUrl": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS4/e4d41089-6f39-49fe-976d-3a613d66a6d2.png",
+        "team": {
+          "code": "BAS",
+          "tvCodes": "KBA",
+          "name": "Baskonia Vitoria-Gasteiz",
+          "imageUrl": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+        }
+      },
+      "gamesPlayed": 27.0,
+      "gamesStarted": 14.0,
+      "minutesPlayed": 6.230864197530864,
+      "pointsScored": 0.7,
+      "twoPointersMade": 0.3,
+      "twoPointersAttempted": 0.4,
+      "twoPointersPercentage": "66.7%",
+      "threePointersMade": 0.0,
+      "threePointersAttempted": 0.2,
+      "threePointersPercentage": "0%",
+      "freeThrowsMade": 0.1,
+      "freeThrowsAttempted": 0.1,
+      "freeThrowsPercentage": "100%",
+      "offensiveRebounds": 0.1,
+      "defensiveRebounds": 0.4,
+      "totalRebounds": 0.6,
+      "assists": 0.6,
+      "steals": 0.3,
+      "turnovers": 0.1,
+      "blocks": 0.0,
+      "blocksAgainst": 0.0,
+      "foulsCommited": 1.2,
+      "foulsDrawn": 0.4,
+      "pir": 0.9
+    },
+    {
+      "playerRanking": 2,
+      "player": {
+        "code": "011209",
+        "name": "KALAITZAKIS, PANAGIOTIS",
+        "age": 26,
+        "imageUrl": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnONz/d9142339-64d6-403e-a019-0b74bec5611e.png",
+        "team": {
+          "code": "PAN",
+          "tvCodes": "PAO",
+          "name": "Panathinaikos AKTOR Athens",
+          "imageUrl": "https://media-cdn.incrowdsports.com/e3dff28a-9ec6-4faf-9d96-ecbc68f75780.png"
+        }
+      },
+      "gamesPlayed": 26.0,
+      "gamesStarted": 3.0,
+      "minutesPlayed": 5.1089743589743595,
+      "pointsScored": 1.0,
+      "twoPointersMade": 0.3,
+      "twoPointersAttempted": 0.5,
+      "twoPointersPercentage": "66.7%",
+      "threePointersMade": 0.1,
+      "threePointersAttempted": 0.5,
+      "threePointersPercentage": "23.1%",
+      "freeThrowsMade": 0.0,
+      "freeThrowsAttempted": 0.1,
+      "freeThrowsPercentage": "33.3%",
+      "offensiveRebounds": 0.1,
+      "defensiveRebounds": 0.5,
+      "totalRebounds": 0.6,
+      "assists": 0.3,
+      "steals": 0.3,
+      "turnovers": 0.1,
+      "blocks": 0.0,
+      "blocksAgainst": 0.0,
+      "foulsCommited": 0.7,
+      "foulsDrawn": 0.3,
+      "pir": 1.0
+    },
+    {
+      "playerRanking": 3,
+      "player": {
+        "code": "014015",
+        "name": "BACOT JR., ARMANDO",
+        "age": 25,
+        "imageUrl": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCjnOS3/e4a07b77-6908-4790-b710-7187f9a57537.png",
+        "team": {
+          "code": "ULK",
+          "tvCodes": "FBB",
+          "name": "Fenerbahce Istanbul",
+          "imageUrl": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+        }
+      },
+      "gamesPlayed": 26.0,
+      "gamesStarted": 2.0,
+      "minutesPlayed": 10.11602564102564,
+      "pointsScored": 2.4,
+      "twoPointersMade": 0.7,
+      "twoPointersAttempted": 1.5,
+      "twoPointersPercentage": "43.6%",
+      "threePointersMade": 0.2,
+      "threePointersAttempted": 0.6,
+      "threePointersPercentage": "31.2%",
+      "freeThrowsMade": 0.5,
+      "freeThrowsAttempted": 0.6,
+      "freeThrowsPercentage": "81.2%",
+      "offensiveRebounds": 0.8,
+      "defensiveRebounds": 1.0,
+      "totalRebounds": 1.8,
+      "assists": 0.6,
+      "steals": 0.3,
+      "turnovers": 1.0,
+      "blocks": 0.3,
+      "blocksAgainst": 0.3,
+      "foulsCommited": 2.0,
+      "foulsDrawn": 0.7,
+      "pir": 1.3
+    }
+  ]
+}

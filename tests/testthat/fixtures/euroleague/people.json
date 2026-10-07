@@ -1,0 +1,185 @@
+{
+  "data": [
+    {
+      "person": {
+        "code": "000406",
+        "name": "GEORGALLIS, IOANNIS",
+        "alias": "GEORGALLIS, IOANNIS",
+        "aliasRaw": "GEORGALLIS, IOANNIS",
+        "passportName": "IOANNIS",
+        "passportSurname": "GEORGALLIS",
+        "jerseyName": "",
+        "abbreviatedName": "",
+        "country": {
+          "code": "GRE",
+          "name": "Greece"
+        },
+        "height": 0,
+        "weight": 0,
+        "birthDate": "1983-05-17T00:00:00",
+        "birthCountry": {
+          "code": "GRE",
+          "name": "Greece"
+        },
+        "twitterAccount": "",
+        "instagramAccount": "",
+        "facebookAccount": "",
+        "isReferee": false,
+        "images": {}
+      },
+      "type": "A",
+      "typeName": "Assitant coach",
+      "active": false,
+      "startDate": "2025-09-08T13:50:26.188",
+      "endDate": "2026-04-14T10:34:21.267",
+      "order": 7,
+      "dorsal": "",
+      "dorsalRaw": "",
+      "position": 0,
+      "positionName": null,
+      "lastTeam": "",
+      "externalId": 51887,
+      "images": {},
+      "club": {
+        "code": "DUB",
+        "name": "Dubai Basketball",
+        "abbreviatedName": "Dubai",
+        "editorialName": "Dubai",
+        "tvCode": "DUB",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+        }
+      },
+      "season": {
+        "name": "EuroLeague 2025-26",
+        "code": "E2025",
+        "alias": "2025-26",
+        "competitionCode": "E",
+        "year": 2025,
+        "startDate": "2025-07-01T00:00:00"
+      }
+    },
+    {
+      "person": {
+        "code": "012769",
+        "name": "DRAGICEVIC, UROS",
+        "alias": "DRAGICEVIC, UROS",
+        "aliasRaw": "DRAGICEVIC, UROS",
+        "passportName": "UROS",
+        "passportSurname": "DRAGICEVIC DJOKOVIC",
+        "jerseyName": null,
+        "abbreviatedName": null,
+        "country": {
+          "code": "ESP",
+          "name": "Spain"
+        },
+        "height": 0,
+        "weight": 0,
+        "birthDate": "1987-04-02T00:00:00",
+        "birthCountry": {
+          "code": "SRB",
+          "name": "Serbia"
+        },
+        "twitterAccount": null,
+        "instagramAccount": null,
+        "facebookAccount": null,
+        "isReferee": false,
+        "images": {}
+      },
+      "type": "A",
+      "typeName": "Assitant coach",
+      "active": true,
+      "startDate": "2025-12-23T17:48:38.844",
+      "endDate": "2026-06-30T00:00:00",
+      "order": 5,
+      "dorsal": "",
+      "dorsalRaw": "",
+      "position": 0,
+      "positionName": null,
+      "lastTeam": "",
+      "externalId": 53809,
+      "images": {},
+      "club": {
+        "code": "PAR",
+        "name": "Partizan Mozzart Bet Belgrade",
+        "abbreviatedName": "Partizan",
+        "editorialName": "Partizan",
+        "tvCode": "PAR",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/2681304e-77dd-4331-88b1-683078c0fb49.png"
+        }
+      },
+      "season": {
+        "name": "EuroLeague 2025-26",
+        "code": "E2025",
+        "alias": "2025-26",
+        "competitionCode": "E",
+        "year": 2025,
+        "startDate": "2025-07-01T00:00:00"
+      }
+    },
+    {
+      "person": {
+        "code": "010362",
+        "name": "TRIFUNOVIC, RADOVAN",
+        "alias": "TRIFUNOVIC, RADOVAN",
+        "aliasRaw": "TRIFUNOVIC, RADOVAN",
+        "passportName": "RADOVAN",
+        "passportSurname": "TRIFUNOVIC",
+        "jerseyName": null,
+        "abbreviatedName": null,
+        "country": {
+          "code": "SLO",
+          "name": "Slovenia"
+        },
+        "height": 0,
+        "weight": 0,
+        "birthDate": "1973-01-25T00:00:00",
+        "birthCountry": {
+          "code": "SLO",
+          "name": "Slovenia"
+        },
+        "twitterAccount": null,
+        "instagramAccount": null,
+        "facebookAccount": null,
+        "isReferee": false,
+        "images": {}
+      },
+      "type": "E",
+      "typeName": "Coach",
+      "active": false,
+      "startDate": "2025-12-03T10:11:31.076",
+      "endDate": "2025-12-15T07:23:14.123",
+      "order": 5,
+      "dorsal": "",
+      "dorsalRaw": "",
+      "position": 0,
+      "positionName": null,
+      "lastTeam": "",
+      "externalId": 53743,
+      "images": {},
+      "club": {
+        "code": "IST",
+        "name": "Anadolu Efes Istanbul",
+        "abbreviatedName": "Anadolu Efes",
+        "editorialName": "Efes",
+        "tvCode": "EFS",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCgOCxM/a844756c-a58d-4666-93b8-48f7337bc79d.png"
+        }
+      },
+      "season": {
+        "name": "EuroLeague 2025-26",
+        "code": "E2025",
+        "alias": "2025-26",
+        "competitionCode": "E",
+        "year": 2025,
+        "startDate": "2025-07-01T00:00:00"
+      }
+    }
+  ],
+  "total": 1055
+}

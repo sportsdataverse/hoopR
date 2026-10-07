@@ -254,6 +254,17 @@ mistakes (a non-digit `game_id`, a bad `date`, a malformed `proxy`) are
 ordinary errors raised before any request, not `hoopR_error`s: only
 `httr2::req_perform()` sits inside the transport `tryCatch`.
 
+The EuroLeague family (`R/euroleague_*.R`, 15 `euroleague_*()` functions)
+follows the same classed-condition contract through its one chokepoint
+`euroleague_api()`: 404 -> `hoopR_no_data`, 400 / 422 ->
+`hoopR_invalid_request`, anything else -> `hoopR_fetch_error`. It mirrors
+sdv-py's `euroleague_*` wrappers column for column: the offline tests assert
+`names()` (and the cell values) against
+`tests/testthat/fixtures/euroleague/columns.json` + `gold__*.csv`, which
+`data-raw/euroleague_goldens.py` produces by running sdv-py's parsers on the
+same fixtures (sdv-py's generator asserts those parsers agree with its schema
+YAMLs). Change the columns in sdv-py first, then regenerate the goldens.
+
 ### Column Drift Resilience
 
 Both the NBA Stats API and ESPN's JSON payloads add columns over time without removing old ones, and occasionally rename or drop columns. Two guardrails apply:

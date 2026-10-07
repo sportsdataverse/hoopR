@@ -1,0 +1,96 @@
+{
+  "winner": {
+    "code": "OLY",
+    "name": "Olympiacos Piraeus",
+    "abbreviatedName": "Olympiacos",
+    "editorialName": "Olympiacos",
+    "tvCode": "OLY",
+    "isVirtual": false,
+    "images": {
+      "crest": "https://media-cdn.incrowdsports.com/789423ac-3cdf-4b89-b11c-b458aa5f59a6.png"
+    }
+  },
+  "teams": [
+    {
+      "position": 1,
+      "positionChange": "Equal",
+      "gamesPlayed": 1,
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "qualified": false,
+      "groupName": "Regular Season",
+      "club": {
+        "code": "ULK",
+        "name": "Fenerbahce Beko Istanbul",
+        "abbreviatedName": "Fenerbahce",
+        "editorialName": "Fenerbahce",
+        "tvCode": "FBB",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjCiezrk/aa39750a-6203-49ee-a87d-edd0c6f0397d.png"
+        }
+      },
+      "streaks": [
+        {
+          "startDate": "2025-10-01T00:00:00",
+          "endDate": "2025-10-31T00:00:00",
+          "winLossRecord": "1-0"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "positionChange": "Equal",
+      "gamesPlayed": 1,
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "qualified": false,
+      "groupName": "Regular Season",
+      "club": {
+        "code": "HTA",
+        "name": "Hapoel IBI Tel Aviv",
+        "abbreviatedName": "Hapoel Tel Aviv",
+        "editorialName": "Hapoel Tel Aviv",
+        "tvCode": "HTA",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+        }
+      },
+      "streaks": [
+        {
+          "startDate": "2025-09-01T00:00:00",
+          "endDate": "2025-09-30T00:00:00",
+          "winLossRecord": "1-0"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "positionChange": "Equal",
+      "gamesPlayed": 1,
+      "gamesWon": 1,
+      "gamesLost": 0,
+      "qualified": false,
+      "groupName": "Regular Season",
+      "club": {
+        "code": "DUB",
+        "name": "Dubai Basketball",
+        "abbreviatedName": "Dubai",
+        "editorialName": "Dubai",
+        "tvCode": "DUB",
+        "isVirtual": false,
+        "images": {
+          "crest": "https://media-cdn.incrowdsports.com/1efae090-16e2-4963-ae47-4b94f249c244.png"
+        }
+      },
+      "streaks": [
+        {
+          "startDate": "2025-09-01T00:00:00",
+          "endDate": "2025-09-30T00:00:00",
+          "winLossRecord": "1-0"
+        }
+      ]
+    }
+  ]
+}
