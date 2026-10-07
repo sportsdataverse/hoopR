@@ -2,6 +2,33 @@
 
 ## **hoopR 3.1.0.9000 (development version)**
 
+- New EuroLeague / EuroCup family, `euroleague_*()` (15 functions),
+  wrapping the keyless, unofficial Competition Engine
+  (`api-live.euroleague.net` v2 + v3) and live
+  (`live.euroleague.net/api`) APIs:
+  [`euroleague_competitions()`](https://hoopR.sportsdataverse.org/reference/euroleague_competitions.md),
+  [`euroleague_seasons()`](https://hoopR.sportsdataverse.org/reference/euroleague_seasons.md),
+  [`euroleague_rounds()`](https://hoopR.sportsdataverse.org/reference/euroleague_rounds.md),
+  [`euroleague_clubs()`](https://hoopR.sportsdataverse.org/reference/euroleague_clubs.md),
+  [`euroleague_people()`](https://hoopR.sportsdataverse.org/reference/euroleague_people.md),
+  [`euroleague_games()`](https://hoopR.sportsdataverse.org/reference/euroleague_games.md),
+  [`euroleague_game_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_stats.md),
+  [`euroleague_game_report()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_report.md),
+  `euroleague_standings(kind =)`, `euroleague_player_stats(mode =)`,
+  `euroleague_team_stats(mode =)`,
+  [`euroleague_game_points()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_points.md)
+  (the shot chart, in centimeters from the hoop),
+  [`euroleague_game_pbp()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_pbp.md),
+  [`euroleague_game_boxscore()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_boxscore.md)
+  and
+  [`euroleague_game_header()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_header.md).
+  They mirror sdv-py’s `euroleague_*` wrappers (same arguments, defaults
+  and snake_case columns) and raise the classed `hoopR_no_data` /
+  `hoopR_invalid_request` / `hoopR_fetch_error` conditions on a failed
+  request; the live API’s empty “no such game” answer is a zero-row
+  tibble with the documented columns. Wrap-only: payloads are not
+  redistributed as release assets.
+
 - The NBA Stats wrappers now default `season` to the previous season. 97
   season arguments defaulted to the current one,
   `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com

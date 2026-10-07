@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-05 18:40:57 UTC
+#> ℹ Data updated: 2026-10-07 16:29:30 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 2  5.01e7 Story What ch… What obsta… 2026-10-… FALSE   Dan M… https:/… 23       
-#> 3  5.01e7 Head… LSU's W… LSU landed… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 4  5.01e7 Head… Injunct… Melvin Cou… 2026-10-… FALSE   ESPN … https:/… 41       
-#> 5  5.01e7 Head… Jordan … Five-star … 2026-10-… FALSE   Jeff … https:/… 41       
+#> 1  5.01e7 Story Men's c… Florida re… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 2  5.01e7 Head… Five-st… Darius Wab… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 3  5.00e7 Story How top… How these … 2026-10-… FALSE   Jeff … https:/… 41       
+#> 4  5.01e7 Head… NCAA pr… The NCAA i… 2026-10-… FALSE   Myron… https:/… 41       
+#> 5  5.01e7 Head… Commiss… ACC boss J… 2026-10-… FALSE   NA     https:/… 23       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-05 18:40:57 UTC
+#> ℹ Data updated: 2026-10-07 16:29:31 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.00e7 Story NBA pre… "The NBA r… 2026-10-… FALSE   ESPN … https:/… 46       
-#> 2  5.01e7 Head… Knicks'… "Karl-Anth… 2026-10-… FALSE   NA     https:/… 46       
-#> 3  5.01e7 Story Fantasy… "Eric Kara… 2026-10-… FALSE   Eric … https:/… 3090     
-#> 4  5.01e7 Story Behind … "From on-c… 2026-10-… FALSE   Dave … https:/… 46       
-#> 5  5.01e7 Media Golden … "Golden St… 2026-10-… FALSE   NA     https:/… 46       
+#> 1  5.00e7 Story NBA pre… The NBA re… 2026-10-… FALSE   ESPN … https:/… 46       
+#> 2  5.01e7 Media United … Melbourne … 2026-10-… FALSE   NA     https:/… 46       
+#> 3  5.01e7 Story Basketb… ESPN's Bas… 2026-10-… FALSE   Dean … https:/… 46       
+#> 4  5.01e7 Media Los Ang… Los Angele… 2026-10-… FALSE   NA     https:/… 46       
+#> 5  5.01e7 Media Denver … Denver Nug… 2026-10-… FALSE   NA     https:/… 46       
 # }
 ```

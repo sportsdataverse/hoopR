@@ -96,7 +96,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-08-19 01:33:41 UTC
+#> ℹ Data updated: 2026-10-07 11:33:10 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -121,21 +121,21 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-08-19 01:33:58 UTC
-#> # A tibble: 1,277 × 16
+#> ℹ Data updated: 2026-10-07 11:33:44 UTC
+#> # A tibble: 1,281 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
 #>  1   2027 Pre-Season  2026-10-03                28                14
-#>  2   2027 Pre-Season  2026-10-05                 1                29
-#>  3   2027 Pre-Season  2026-10-05                 8                21
-#>  4   2027 Pre-Season  2026-10-05                23                13
-#>  5   2027 Pre-Season  2026-10-06                30                17
-#>  6   2027 Pre-Season  2026-10-06                25                 3
-#>  7   2027 Pre-Season  2026-10-06                 9                13
-#>  8   2027 Pre-Season  2026-10-07                29                19
-#>  9   2027 Pre-Season  2026-10-07                25                15
-#> 10   2027 Pre-Season  2026-10-07                 4                21
-#> # ℹ 1,267 more rows
+#>  2   2027 Pre-Season  2026-10-04                 7                26
+#>  3   2027 Pre-Season  2026-10-04                12                 9
+#>  4   2027 Pre-Season  2026-10-05                 1                29
+#>  5   2027 Pre-Season  2026-10-05                 8                21
+#>  6   2027 Pre-Season  2026-10-05                20                18
+#>  7   2027 Pre-Season  2026-10-05                15                16
+#>  8   2027 Pre-Season  2026-10-05                23                13
+#>  9   2027 Pre-Season  2026-10-06                30                17
+#> 10   2027 Pre-Season  2026-10-06                25                 3
+#> # ℹ 1,271 more rows
 #> # ℹ 11 more variables: espn_game_id <chr>, nba_game_id <chr>,
 #> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
 #> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
@@ -144,21 +144,21 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-08-19 01:34:30 UTC
-#> # A tibble: 548 × 21
+#> ℹ Data updated: 2026-10-07 11:34:11 UTC
+#> # A tibble: 606 × 21
 #>    season espn_team_id team_abbreviation player_name             espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                   <chr>          
 #>  1   2027            1 ATL               nickeil alexander walk… 4278039        
-#>  2   2027            1 ATL               devin carter            4433188        
+#>  2   2027            1 ATL               cameron corhen          4712902        
 #>  3   2027            1 ATL               dyson daniels           4869342        
 #>  4   2027            1 ATL               rayj dennis             4431941        
 #>  5   2027            1 ATL               luguentz dort           4397020        
 #>  6   2027            1 ATL               zuby ejiofor            5106262        
-#>  7   2027            1 ATL               kingston flemings       5149077        
-#>  8   2027            1 ATL               keshon gilbert          4585618        
-#>  9   2027            1 ATL               mouhamed gueye          4712863        
-#> 10   2027            1 ATL               buddy hield             2990984        
-#> # ℹ 538 more rows
+#>  7   2027            1 ATL               dorian finney smith     2578185        
+#>  8   2027            1 ATL               kingston flemings       5149077        
+#>  9   2027            1 ATL               keshon gilbert          4585618        
+#> 10   2027            1 ATL               mouhamed gueye          4712863        
+#> # ℹ 596 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

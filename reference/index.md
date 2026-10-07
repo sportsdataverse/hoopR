@@ -2267,6 +2267,89 @@ Functions exported by hoopR to scrape basketball-reference.com
 
   **Basketball-Reference Team Season Stats**
 
+## Euroleague Data
+
+### Euroleague Competition Engine API
+
+EuroLeague / EuroCup wrappers over the keyless, unofficial Competition
+Engine (api-live.euroleague.net v2 + v3) and live (live.euroleague.net)
+APIs, mirroring sdv-py’s `euroleague_*` functions column for column.
+
+- [`euroleague_competitions()`](https://hoopR.sportsdataverse.org/reference/euroleague_competitions.md)
+  :
+
+  **EuroLeague Competitions**
+
+- [`euroleague_seasons()`](https://hoopR.sportsdataverse.org/reference/euroleague_seasons.md)
+  :
+
+  **EuroLeague Seasons**
+
+- [`euroleague_rounds()`](https://hoopR.sportsdataverse.org/reference/euroleague_rounds.md)
+  :
+
+  **EuroLeague Rounds**
+
+- [`euroleague_clubs()`](https://hoopR.sportsdataverse.org/reference/euroleague_clubs.md)
+  :
+
+  **EuroLeague Clubs**
+
+- [`euroleague_people()`](https://hoopR.sportsdataverse.org/reference/euroleague_people.md)
+  :
+
+  **EuroLeague People**
+
+- [`euroleague_games()`](https://hoopR.sportsdataverse.org/reference/euroleague_games.md)
+  :
+
+  **EuroLeague Games**
+
+- [`euroleague_game_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_stats.md)
+  :
+
+  **EuroLeague Game Stats (Competition Engine box score)**
+
+- [`euroleague_game_report()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_report.md)
+  :
+
+  **EuroLeague Game Report**
+
+- [`euroleague_standings()`](https://hoopR.sportsdataverse.org/reference/euroleague_standings.md)
+  :
+
+  **EuroLeague Standings**
+
+- [`euroleague_player_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_player_stats.md)
+  :
+
+  **EuroLeague Player Stats (season)**
+
+- [`euroleague_team_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_team_stats.md)
+  :
+
+  **EuroLeague Team Stats (season)**
+
+- [`euroleague_game_points()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_points.md)
+  :
+
+  **EuroLeague Game Points (shot chart)**
+
+- [`euroleague_game_pbp()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_pbp.md)
+  :
+
+  **EuroLeague Game Play-by-Play**
+
+- [`euroleague_game_boxscore()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_boxscore.md)
+  :
+
+  **EuroLeague Game Box Score (live API)**
+
+- [`euroleague_game_header()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_header.md)
+  :
+
+  **EuroLeague Game Header**
+
 ## Salary & Mock Draft Sources
 
 ### Salary & Draft Functions

@@ -293,32 +293,32 @@ bounding follow-up calls to per-season endpoints.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="co"># LeBron James (1966): 23 career seasons</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_player_seasons</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">4593919</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-05 18:41:02.70499: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=4593919</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-07 16:29:36.678175: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=4593919</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "mens-college-basketball", athlete_id = 4593919</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Seasons ──────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-05 18:41:02 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-07 16:29:36 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="co"># LeBron James (1966): 23 career seasons</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_player_seasons</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">1966</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Seasons ──────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-05 18:41:02 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 23 × 4</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-07 16:29:36 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 24 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league athlete_id season ref                                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nba    1966         <span style="text-decoration: underline;">2</span>026 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nba    1966         <span style="text-decoration: underline;">2</span>025 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nba    1966         <span style="text-decoration: underline;">2</span>024 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nba    1966         <span style="text-decoration: underline;">2</span>023 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nba    1966         <span style="text-decoration: underline;">2</span>022 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nba    1966         <span style="text-decoration: underline;">2</span>021 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nba    1966         <span style="text-decoration: underline;">2</span>020 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nba    1966         <span style="text-decoration: underline;">2</span>019 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nba    1966         <span style="text-decoration: underline;">2</span>018 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nba    1966         <span style="text-decoration: underline;">2</span>017 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 13 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nba    1966         <span style="text-decoration: underline;">2</span>027 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nba    1966         <span style="text-decoration: underline;">2</span>026 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nba    1966         <span style="text-decoration: underline;">2</span>025 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nba    1966         <span style="text-decoration: underline;">2</span>024 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nba    1966         <span style="text-decoration: underline;">2</span>023 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nba    1966         <span style="text-decoration: underline;">2</span>022 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nba    1966         <span style="text-decoration: underline;">2</span>021 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nba    1966         <span style="text-decoration: underline;">2</span>020 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nba    1966         <span style="text-decoration: underline;">2</span>019 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nba    1966         <span style="text-decoration: underline;">2</span>018 http://sports.core.api.espn.com/v2/sports/basketbal…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more rows</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
