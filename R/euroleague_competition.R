@@ -386,7 +386,9 @@ euroleague_games <- function(competition_code, season_code, limit = NULL, offset
 #' @inheritParams euroleague_rounds
 #' @param game_code (*integer* required): Game number within the season (1-based;
 #'   the `game_code` column of [euroleague_games()]).
-#' @return A `hoopR_data` tibble with one row (the game):
+#' @return A `hoopR_data` tibble with one row (the game). The `local_players` /
+#'   `road_players` cells are JSON text: semantically equal to sdv-py's, not
+#'   byte-equal (separators and unicode escaping differ):
 #'
 #'    \if{html}{\tabular{lll}{
 #'       col_name \tab types \tab description \cr

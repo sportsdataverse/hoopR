@@ -129,9 +129,13 @@ test_that("query params use the API's keys and NULL paging is dropped", {
 
 test_that("an invalid kind / mode errors before any request", {
   seen <- local_euroleague_response(body = "{}")
-  expect_error(euroleague_standings("E", "E2025", 1, kind = "marginsstandings"), "arg")
-  expect_error(euroleague_player_stats("E", mode = "basic"), "arg")
-  expect_error(euroleague_team_stats("E", mode = "basic"), "arg")
+  expect_error(euroleague_standings("E", "E2025", 1, kind = "marginsstandings"), "must be one of")
+  expect_error(euroleague_player_stats("E", mode = "basic"), "must be one of")
+  expect_error(euroleague_team_stats("E", mode = "basic"), "must be one of")
+  # exact matching, as in sdv-py: a prefix is not a value
+  expect_error(euroleague_standings("E", "E2025", 1, kind = "basic"), "must be one of")
+  expect_error(euroleague_standings("E", "E2025", 1, kind = "calendar"), "must be one of")
+  expect_error(euroleague_player_stats("E", mode = "trad"), "must be one of")
   expect_null(seen$calls)
 })
 
@@ -142,7 +146,9 @@ test_that("the live API's empty 200 body is a zero-row tibble with the documente
     expect_s3_class(df, "hoopR_data")
     expect_equal(nrow(df), 0L)
     expect_identical(names(df), unlist(egold[[key]]$columns))
-    expect_identical(unname(vapply(df, function(v) class(v)[1], character(1))), unlist(egold[[key]]$types))
+    # the documented live schema (columns.json$types still carries sdv-py's Float64
+    # `plusminus`, a pandas artifact being fixed there; round 2 re-points this at it)
+    expect_identical(unname(vapply(df, function(v) class(v)[1], character(1))), unname(.euroleague_live_schemas[[key]]))
   }
 })
 
@@ -175,11 +181,33 @@ test_that("a transport error is a fetch error", {
   expect_error(euroleague_competitions(), class = "hoopR_fetch_error")
 })
 
+test_that("all-null api-live columns are character, not logical", {
+  local_euroleague_response("seasons.json")
+  seasons <- euroleague_seasons("E")
+  expect_type(seasons$winner, "character")
+  local_euroleague_response("games.json")
+  games <- euroleague_games("E", "E2025")
+  expect_type(games$referee4, "character")
+  expect_type(games$venue_images_medium, "character")
+  local_euroleague_response("people.json")
+  expect_type(euroleague_people("E", "E2025")$position_name, "character")
+})
+
+test_that("a parsed box score and the empty-200 frame agree on every column class", {
+  local_euroleague_response("game_boxscore.json")
+  box <- euroleague_game_boxscore(1, "E2025")
+  expect_type(box$plusminus, "integer")
+  expect_identical(unname(vapply(box, function(v) class(v)[1], character(1))),
+                   unname(.euroleague_live_schemas$game_boxscore))
+})
+
 test_that("ids and codes are character join keys, never a float suffix", {
   local_euroleague_response("games.json")
   games <- euroleague_games("E", "E2025")
   expect_type(games$game_code, "character")
   expect_identical(games$game_code[1], "406")
+  expect_identical(.euroleague_pin_character(data.frame(x_id = c(406, NA, 12345678901)), "_id$")$x_id,
+                   c("406", NA, "12345678901"))
   expect_type(games$local_club_code, "character")
   expect_type(games$played, "logical")
   expect_type(games$round, "integer")

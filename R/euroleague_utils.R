@@ -156,7 +156,8 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
   for (col in names(df)) {
     v <- df[[col]]
     if (grepl(pattern, col, perl = TRUE) || (all_na && all(is.na(v)))) {
-      if (is.double(v) && all(is.na(v) | v == trunc(v))) v <- as.integer(v)
+      # a whole-number double id prints without a float suffix ("406", never "406.0"), overflow-safe
+      if (is.double(v) && all(is.na(v) | v == trunc(v))) v <- ifelse(is.na(v), NA_character_, sprintf("%.0f", v))
       df[[col]] <- as.character(v)
     }
   }
@@ -178,7 +179,9 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
 # The frame every api-live (v2 / v3) route returns: sdv-py `parse_euroleague`.
 .euroleague_frame <- function(raw) {
   df <- .euroleague_rows(.euroleague_as_rows(raw))
-  .euroleague_pin_character(df, "(^|_)(id|code)$")
+  # an all-null column (a season without a winner, a referee4 never set) is an
+  # unknown string, not a logical: keep it character so the dtype is stable.
+  .euroleague_pin_character(df, "(^|_)(id|code)$", all_na = TRUE)
 }
 
 # --- live.euroleague.net/api parsers (one per route; keys are UPPER-CASE,
@@ -341,7 +344,7 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
     fouls_commited = "integer",
     fouls_received = "integer",
     valuation = "integer",
-    plusminus = "numeric"
+    plusminus = "integer"
   ),
   game_header = c(
     live = "logical",

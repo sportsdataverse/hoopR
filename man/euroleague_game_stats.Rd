@@ -17,7 +17,9 @@ e.g. \code{E2025} for 2025-26.}
 the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()}}).}
 }
 \value{
-A \code{hoopR_data} tibble with one row (the game):
+A \code{hoopR_data} tibble with one row (the game). The \code{local_players} /
+\code{road_players} cells are JSON text: semantically equal to sdv-py's, not
+byte-equal (separators and unicode escaping differ):
 
 \if{html}{\tabular{lll}{
       col_name \tab types \tab description \cr

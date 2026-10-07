@@ -47,4 +47,5 @@ test_that("EuroLeague live: shot chart of E2025 game 1 in cm from the hoop", {
   expect_true(all(fg$coord_y >= -100 & fg$coord_y <= 1100))
   expect_true(all(x$coord_x[x$id_action == "FTM"] == -1L))
   expect_identical(x$team[1], trimws(x$team[1]))
+  expect_setequal(unique(x$team), c("IST", "TEL"))
 })

@@ -49,11 +49,18 @@ live.euroleague.net/api (JSON by default, no Accept header; captured 2026-10-06;
 ## Parity goldens (generated from sdv-py, not hand-written)
 
 `columns.json` and `gold__<route>[__<section>].csv` are the sdv-py side of the R-vs-Python
-parity test. They were produced by running sdv-py's parsers (`sportsdataverse.euroleague.
-euroleague_parsers`, PR #710) on the fixtures above and writing, per route and `kind` / `mode`
-section, the frame's column names (the same list, in the same order, as
-`tools/codegen/schemas/native/euroleague/<route>.yaml` -- the generator asserts the two
-agree), polars dtypes mapped to R types, the row count, and the frame as CSV. The offline
+parity test, written by the committed generator `data-raw/euroleague_goldens.py`: it runs
+sdv-py's parsers (`sportsdataverse.euroleague.euroleague_parsers`) on the fixtures above and
+writes, per route and `kind` / `mode` section, the frame's column names (asserted equal, in
+order, to `tools/codegen/schemas/native/euroleague/<route>.yaml`), polars dtypes mapped to R
+classes, the row count, and the frame as CSV. **Last generated from sdv-py commit
+`ba871739af`** (branch `feat/euroleague-gap`, PR #710; its euroleague tree is identical to
+main `f3fa92d45e`), with that checkout's venv python:
+
+```sh
+<sdv-py>/.venv/Scripts/python.exe data-raw/euroleague_goldens.py --sdv-py <sdv-py>
+``` The offline
 tests assert `identical(names(df), columns)` and `nrow`, then compare every cell (`NA` == `""`,
 numbers numerically, JSON-encoded list cells after normalizing Python's `", "` / `": "`
-separators and `\uXXXX` escapes). Regenerate from sdv-py when its euroleague schemas change.
+separators and `\uXXXX` escapes). Regenerate (same command, new commit cited here) when sdv-py's euroleague
+parsers or schemas change.

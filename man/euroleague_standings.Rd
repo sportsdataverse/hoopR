@@ -23,7 +23,8 @@ standings are as of this round.}
 
 \item{kind}{(\emph{character} default \code{"basicstandings"}): Standings table, one
 of \code{"basicstandings"}, \code{"calendarstandings"}, \code{"streaks"} or
-\code{"aheadbehind"}; the columns depend on it (see Returns).}
+\code{"aheadbehind"}, matched exactly (no prefixes, as in sdv-py); the columns
+depend on it (see Returns).}
 }
 \value{
 A \code{hoopR_data} tibble with one row per team. The columns depend on
@@ -60,7 +61,8 @@ A \code{hoopR_data} tibble with one row per team. The columns depend on
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{\code{kind = "calendarstandings"}}
+\strong{\code{kind = "calendarstandings"}} (the \code{streaks} cell is JSON text: semantically
+equal to sdv-py's, not byte-equal -- separators and unicode escaping differ)
 
 \if{html}{\tabular{lll}{
       col_name \tab types \tab description \cr

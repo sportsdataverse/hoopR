@@ -19,7 +19,8 @@ euroleague_player_stats(
 (see \code{\link[=euroleague_competitions]{euroleague_competitions()}}).}
 
 \item{mode}{(\emph{character} default \code{"traditional"}): \code{"traditional"} or
-\code{"advanced"}; the columns depend on it (see Returns).}
+\code{"advanced"}, matched exactly (no prefixes, as in sdv-py); the columns
+depend on it (see Returns).}
 
 \item{season_mode}{(\emph{character} default \code{"Single"}): Season mode; \code{Single}
 as captured (other values unverified).}

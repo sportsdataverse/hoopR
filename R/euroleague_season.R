@@ -18,7 +18,8 @@
 #'   standings are as of this round.
 #' @param kind (*character* default `"basicstandings"`): Standings table, one
 #'   of `"basicstandings"`, `"calendarstandings"`, `"streaks"` or
-#'   `"aheadbehind"`; the columns depend on it (see Returns).
+#'   `"aheadbehind"`, matched exactly (no prefixes, as in sdv-py); the columns
+#'   depend on it (see Returns).
 #' @return A `hoopR_data` tibble with one row per team. The columns depend on
 #'   `kind`:
 #'
@@ -53,7 +54,8 @@
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#'   **`kind = "calendarstandings"`**
+#'   **`kind = "calendarstandings"`** (the `streaks` cell is JSON text: semantically
+#'   equal to sdv-py's, not byte-equal -- separators and unicode escaping differ)
 #'
 #'    \if{html}{\tabular{lll}{
 #'       col_name \tab types \tab description \cr
@@ -147,7 +149,7 @@
 #' }
 euroleague_standings <- function(competition_code, season_code, round,
                                  kind = c("basicstandings", "calendarstandings", "streaks", "aheadbehind")) {
-  kind <- match.arg(kind)
+  kind <- rlang::arg_match(kind)
   raw <- euroleague_api(
     sprintf("/competitions/%s/seasons/%s/rounds/%s/%s", competition_code, season_code, round, kind),
     host = "v3"
@@ -166,7 +168,8 @@ euroleague_standings <- function(competition_code, season_code, round,
 #' @inherit euroleague_competitions details
 #' @inheritParams euroleague_seasons
 #' @param mode (*character* default `"traditional"`): `"traditional"` or
-#'   `"advanced"`; the columns depend on it (see Returns).
+#'   `"advanced"`, matched exactly (no prefixes, as in sdv-py); the columns
+#'   depend on it (see Returns).
 #' @param season_mode (*character* default `"Single"`): Season mode; `Single`
 #'   as captured (other values unverified).
 #' @param season_code (*character* required by the API): Competition code +
@@ -260,7 +263,7 @@ euroleague_standings <- function(competition_code, season_code, round,
 euroleague_player_stats <- function(competition_code, mode = c("traditional", "advanced"),
                                     season_mode = "Single", season_code = NULL,
                                     statistic_mode = "PerGame", limit = NULL, offset = NULL) {
-  mode <- match.arg(mode)
+  mode <- rlang::arg_match(mode)
   raw <- euroleague_api(
     sprintf("/competitions/%s/statistics/players/%s", competition_code, mode),
     params = list(SeasonMode = season_mode, SeasonCode = season_code, statisticMode = statistic_mode,
@@ -356,7 +359,7 @@ euroleague_player_stats <- function(competition_code, mode = c("traditional", "a
 euroleague_team_stats <- function(competition_code, mode = c("traditional", "advanced"),
                                   season_mode = "Single", season_code = NULL,
                                   statistic_mode = "PerGame", limit = NULL, offset = NULL) {
-  mode <- match.arg(mode)
+  mode <- rlang::arg_match(mode)
   raw <- euroleague_api(
     sprintf("/competitions/%s/statistics/teams/%s", competition_code, mode),
     params = list(SeasonMode = season_mode, SeasonCode = season_code, statisticMode = statistic_mode,
