@@ -181,7 +181,7 @@ landscape. Every SportsDataverse package has one — browse them all at
 To cite the [**`hoopR`**](https://hoopR.sportsdataverse.org) R package
 in publications, use:
 
-BibTex Citation
+BibTeX Citation
 
 ``` bibtex
 @misc{gilani_2021_hoopR,

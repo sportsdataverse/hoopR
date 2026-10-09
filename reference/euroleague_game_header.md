@@ -122,7 +122,7 @@ Other Euroleague:
     euroleague_game_header(game_code = 1, season_code = "E2025")
   })
 #> ── EuroLeague game header from live.euroleague.net ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 04:32:36 UTC
+#> ℹ Data updated: 2026-10-09 05:33:11 UTC
 #> # A tibble: 1 × 44
 #>   live  round date    hour  stadium capacity team_a team_b code_team_a tv_code_a
 #>   <lgl> <chr> <chr>   <chr> <chr>   <chr>    <chr>  <chr>  <chr>       <chr>    

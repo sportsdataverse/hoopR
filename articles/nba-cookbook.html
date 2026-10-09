@@ -470,25 +470,7 @@ argument.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># NBA.com's leaders. Prefix `nba_` -&gt; this is the official Stats API.</span></span>
 <span><span class="fu"><a href="../reference/nba_alltimeleadersgrids.html">nba_leagueleaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="st">"2024-25"</span>, stat_category <span class="op">=</span> <span class="st">"PTS"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; $LeagueLeaders</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 569 × 28</span></span></span>
-<span><span class="co">#&gt;    PLAYER_ID RANK  PLAYER     TEAM_ID TEAM  GP    MIN   FGM   FGA   FG_PCT FG3M </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 1628983   1     Shai Gilg… 161061… OKC   76    2598  860   1656  0.519  163  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 1630162   2     Anthony E… 161061… MIN   79    2871  721   1612  0.447  320  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 203999    3     Nikola Jo… 161061… DEN   70    2571  786   1364  0.576  138  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 203507    4     Giannis A… 161061… MIL   67    2289  793   1319  0.601  14   </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 1628369   5     Jayson Ta… 161061… BOS   72    2624  662   1465  0.452  250  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 1626164   6     Devin Boo… 161061… PHX   75    2795  654   1420  0.461  183  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 1629027   7     Trae Young 161061… ATL   76    2739  566   1376  0.411  218  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 1629639   8     Tyler Her… 161061… MIA   77    2725  651   1378  0.472  251  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 1630595   9     Cade Cunn… 161061… DET   70    2452  684   1457  0.469  149  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 201935    10    James Har… 161061… LAC   79    2789  531   1295  0.41   235  </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 559 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 17 more variables: FG3A &lt;chr&gt;, FG3_PCT &lt;chr&gt;, FTM &lt;chr&gt;, FTA &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   FT_PCT &lt;chr&gt;, OREB &lt;chr&gt;, DREB &lt;chr&gt;, REB &lt;chr&gt;, AST &lt;chr&gt;, STL &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   BLK &lt;chr&gt;, TOV &lt;chr&gt;, PF &lt;chr&gt;, PTS &lt;chr&gt;, EFF &lt;chr&gt;, AST_TOV &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   STL_TOV &lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; list()</span></span>
 <span></span>
 <span><span class="co"># ESPN's version of the same idea. Same question, different kitchen --</span></span>
 <span><span class="co"># and the prefix tells you which kitchen before you read another word.</span></span>

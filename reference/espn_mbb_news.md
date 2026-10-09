@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 04:32:02 UTC
+#> ℹ Data updated: 2026-10-09 05:32:23 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -216,14 +216,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 04:32:02 UTC
-#> # A tibble: 5 × 8
-#>         id type        headline description published premium link_web league_id
-#>      <int> <chr>       <chr>    <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50137673 HeadlineNe… LeBron … LeBron Jam… 2026-10-… FALSE   https:/… 46       
-#> 2 50137491 Media       Atlanta… Atlanta Ha… 2026-10-… FALSE   https:/… 46       
-#> 3 50137286 Media       Philade… Philadelph… 2026-10-… FALSE   https:/… 46       
-#> 4 50137095 Media       Washing… Washington… 2026-10-… FALSE   https:/… 46       
-#> 5 50136993 Media       New Orl… New Orlean… 2026-10-… FALSE   https:/… 46       
+#> ℹ Data updated: 2026-10-09 05:32:23 UTC
+#> # A tibble: 5 × 9
+#>        id type  headline description published premium byline link_web league_id
+#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
+#> 1  5.01e7 Head… 76ers' … "Joel Embi… 2026-10-… FALSE   Dave … https:/… 46       
+#> 2  5.01e7 Head… LeBron … "LeBron Ja… 2026-10-… FALSE   Dave … https:/… 46       
+#> 3  5.01e7 Media Atlanta… "Atlanta H… 2026-10-… FALSE   NA     https:/… 46       
+#> 4  5.01e7 Media Philade… "Philadelp… 2026-10-… FALSE   NA     https:/… 46       
+#> 5  5.01e7 Media Washing… "Washingto… 2026-10-… FALSE   NA     https:/… 46       
 # }
 ```

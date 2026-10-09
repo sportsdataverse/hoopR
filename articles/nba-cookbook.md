@@ -323,25 +323,7 @@ assist leaders – the raw material of every MVP argument.
 
 # NBA.com's leaders. Prefix `nba_` -> this is the official Stats API.
 nba_leagueleaders(season = "2024-25", stat_category = "PTS")
-#> $LeagueLeaders
-#> # A tibble: 569 × 28
-#>    PLAYER_ID RANK  PLAYER     TEAM_ID TEAM  GP    MIN   FGM   FGA   FG_PCT FG3M 
-#>    <chr>     <chr> <chr>      <chr>   <chr> <chr> <chr> <chr> <chr> <chr>  <chr>
-#>  1 1628983   1     Shai Gilg… 161061… OKC   76    2598  860   1656  0.519  163  
-#>  2 1630162   2     Anthony E… 161061… MIN   79    2871  721   1612  0.447  320  
-#>  3 203999    3     Nikola Jo… 161061… DEN   70    2571  786   1364  0.576  138  
-#>  4 203507    4     Giannis A… 161061… MIL   67    2289  793   1319  0.601  14   
-#>  5 1628369   5     Jayson Ta… 161061… BOS   72    2624  662   1465  0.452  250  
-#>  6 1626164   6     Devin Boo… 161061… PHX   75    2795  654   1420  0.461  183  
-#>  7 1629027   7     Trae Young 161061… ATL   76    2739  566   1376  0.411  218  
-#>  8 1629639   8     Tyler Her… 161061… MIA   77    2725  651   1378  0.472  251  
-#>  9 1630595   9     Cade Cunn… 161061… DET   70    2452  684   1457  0.469  149  
-#> 10 201935    10    James Har… 161061… LAC   79    2789  531   1295  0.41   235  
-#> # ℹ 559 more rows
-#> # ℹ 17 more variables: FG3A <chr>, FG3_PCT <chr>, FTM <chr>, FTA <chr>,
-#> #   FT_PCT <chr>, OREB <chr>, DREB <chr>, REB <chr>, AST <chr>, STL <chr>,
-#> #   BLK <chr>, TOV <chr>, PF <chr>, PTS <chr>, EFF <chr>, AST_TOV <chr>,
-#> #   STL_TOV <chr>
+#> list()
 
 # ESPN's version of the same idea. Same question, different kitchen --
 # and the prefix tells you which kitchen before you read another word.
