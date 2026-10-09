@@ -45,64 +45,64 @@ Other Fox Basketball Functions:
 ``` r
 # \donttest{
   try(fox_mbb_teams_all())
-#> ✖ 2026-10-07 16:30:25.548545: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:06.125634: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:27.053809: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:08.351611: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:27.595982: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:09.424489: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:27.771192: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:09.593739: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:27.948473: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:09.871923: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:28.200736: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:10.399954: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:28.540318: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:10.961757: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:28.725179: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:11.147477: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:28.910792: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:11.353548: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:29.072234: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:11.73894: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:29.257616: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:12.275904: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:29.58042: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:12.486702: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:29.759766: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:12.658669: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:29.922249: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:13.045305: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:30.101517: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:13.424982: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:30.273514: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:14.157917: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:30.429683: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:14.518342: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:30.601003: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:14.874521: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:30.938153: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:15.186534: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:31.134132: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:15.515498: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:31.362465: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:15.888816: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:31.517642: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:16.06444: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:31.819752: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:16.495991: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:32.022385: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:16.826627: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:32.37438: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:17.148838: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:32.620408: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:17.479399: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:32.828062: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:17.653544: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
-#> ✖ 2026-10-07 16:30:32.995617: no Fox CBK teams data available!
+#> ✖ 2026-10-09 03:49:18.007986: no Fox CBK teams data available!
 #> ✖ Error: The API returned an error
 #> ── Fox Sports MBB full team directory ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-07 16:30:33 UTC
+#> ℹ Data updated: 2026-10-09 03:49:18 UTC
 #> # A tibble: 365 × 3
 #>    fox_team_id fox_team_name              fox_section   
 #>    <chr>       <chr>                      <chr>         

@@ -122,7 +122,7 @@ Other Euroleague:
     euroleague_game_report(competition_code = "E", season_code = "E2025", game_code = 1)
   })
 #> ── EuroLeague game report from api-live.euroleague.net ───── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-07 16:30:15 UTC
+#> ℹ Data updated: 2026-10-09 03:48:57 UTC
 #> # A tibble: 1 × 45
 #>   game_code round round_alias round_name played date              confirmed_date
 #>   <chr>     <int> <chr>       <chr>      <lgl>  <chr>             <lgl>         

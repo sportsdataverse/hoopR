@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-10-07 16:29:59 UTC
+#> ℹ Data updated: 2026-10-09 03:48:38 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -221,14 +221,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-07 16:29:59 UTC
+#> ℹ Data updated: 2026-10-09 03:48:38 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Story Basketb… ESPN's Bas… 2026-10-… FALSE   Dean … https:/… 46       
-#> 2  5.01e7 Media Los Ang… Los Angele… 2026-10-… FALSE   NA     https:/… 46       
-#> 3  5.01e7 Media Los Ang… Los Angele… 2026-10-… FALSE   NA     https:/… 46       
-#> 4  5.01e7 Story Lakers'… The singer… 2026-10-… FALSE   Kalan… https:/… 46       
-#> 5  4.90e7 Story 2026 NB… We're grad… 2026-10-… FALSE   Zach … https:/… 46       
+#> 1  5.01e7 Story What do… Every NBA … 2026-10-… FALSE   Ben G… https:/… 46       
+#> 2  5.01e7 Head… Buss si… The five B… 2026-10-… FALSE   Dave … https:/… 46       
+#> 3  5.01e7 Story Basketb… ESPN's Bas… 2026-10-… FALSE   Dean … https:/… 46       
+#> 4  5.01e7 Media Los Ang… Los Angele… 2026-10-… FALSE   NA     https:/… 46       
+#> 5  5.01e7 Media Los Ang… Los Angele… 2026-10-… FALSE   NA     https:/… 46       
 # }
 ```

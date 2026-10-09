@@ -66,16 +66,20 @@ Get ESPN NBA Team News"><meta property="og:image" content="https://raw.githubuse
     <li><a class="external-link dropdown-item" href="https://github.com/nwslR/nwslR/">nwslR</a></li>
     <li><a class="external-link dropdown-item" href="https://recruitR.sportsdataverse.org/">recruitR</a></li>
     <li><a class="external-link dropdown-item" href="https://puntalytics.github.io/puntr/">puntr</a></li>
+    <li><a class="external-link dropdown-item" href="https://cfbseedR.sportsdataverse.org/">cfbseedR</a></li>
+    <li><a class="external-link dropdown-item" href="https://sdvplotR.sportsdataverse.org/">sdvplotR</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Python Packages</h6></li>
     <li><a class="external-link dropdown-item" href="https://py.sportsdataverse.org/">sportsdataverse-py</a></li>
     <li><a class="external-link dropdown-item" href="https://sportypy.sportsdataverse.org/">sportypy</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/nwslR/nwslpy/">nwslpy</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/nathanblumenfeld/collegebaseball/">collegebaseball</a></li>
+    <li><a class="external-link dropdown-item" href="https://sdvplot.sportsdataverse.org/">sdvplot</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Node.js Packages</h6></li>
     <li><a class="external-link dropdown-item" href="https://js.sportsdataverse.org/">sportsdataverse.js</a></li>
     <li><a class="external-link dropdown-item" href="https://github.com/nntrn/nfl-nerd/">nfl-nerd</a></li>
+    <li><a class="external-link dropdown-item" href="https://plot.sportsdataverse.org/">sdvplot-js</a></li>
   </ul></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown--data" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"><span class="fa fas fa-database"></span>  Data</button>
@@ -304,7 +308,7 @@ supported for ESPN wrappers).</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_team_news</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"150"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-07 16:29:59 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-09 03:48:38 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        id type  headline description published premium byline link_web league_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
@@ -317,15 +321,15 @@ supported for ESPN wrappers).</p>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_team_news</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"13"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team News (team_id=13) from ESPN.com ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-07 16:29:59 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-09 03:48:38 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        id type  headline description published premium byline link_web league_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  5.01<span style="color: #949494;">e</span>7 Story Basketb… ESPN's Bas… 2026-10-… FALSE   Dean … https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  5.01<span style="color: #949494;">e</span>7 Media Los Ang… Los Angele… 2026-10-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  5.01<span style="color: #949494;">e</span>7 Media Los Ang… Los Angele… 2026-10-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  5.01<span style="color: #949494;">e</span>7 Story Lakers'… The singer… 2026-10-… FALSE   Kalan… https:/… 46       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  4.90<span style="color: #949494;">e</span>7 Story 2026 NB… We're grad… 2026-10-… FALSE   Zach … https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  5.01<span style="color: #949494;">e</span>7 Story What do… Every NBA … 2026-10-… FALSE   Ben G… https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  5.01<span style="color: #949494;">e</span>7 Head… Buss si… The five B… 2026-10-… FALSE   Dave … https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  5.01<span style="color: #949494;">e</span>7 Story Basketb… ESPN's Bas… 2026-10-… FALSE   Dean … https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  5.01<span style="color: #949494;">e</span>7 Media Los Ang… Los Angele… 2026-10-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  5.01<span style="color: #949494;">e</span>7 Media Los Ang… Los Angele… 2026-10-… FALSE   <span style="color: #BB0000;">NA</span>     https:/… 46       </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

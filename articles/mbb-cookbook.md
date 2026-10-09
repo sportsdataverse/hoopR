@@ -70,7 +70,7 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> # A tibble: 1 × 4
 #>   id        date              name                                   short_name 
 #>   <chr>     <chr>             <chr>                                  <chr>      
-#> 1 401909562 2026-11-02T05:00Z Army Black Knights at Duke Blue Devils ARMY @ DUKE
+#> 1 401909562 2026-11-02T23:30Z Army Black Knights at Duke Blue Devils ARMY @ DUKE
 #> 
 #> $StandingSummary
 #> # A tibble: 1 × 1
@@ -84,16 +84,16 @@ espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
 #> # A tibble: 33 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
-#>  1 401909562   2027          NA     1 2026-11-02T0… Army… ARMY @ DU… NA         
-#>  2 401909563   2027          NA     1 2026-11-05T0… Coas… CCU @ DUKE NA         
+#>  1 401909562   2027          NA     1 2026-11-02T2… Army… ARMY @ DU… NA         
+#>  2 401909563   2027          NA     1 2026-11-06T0… Coas… CCU @ DUKE NA         
 #>  3 401909564   2027          NA     2 2026-11-11T0… Duke… DUKE VS M… NA         
-#>  4 401909565   2027          NA     2 2026-11-13T0… SIU … SIUE @ DU… NA         
-#>  5 401909566   2027          NA     3 2026-11-17T0… Illi… ILL @ DUKE NA         
-#>  6 401909567   2027          NA     3 2026-11-22T0… Duke… DUKE VS W… NA         
+#>  4 401909565   2027          NA     2 2026-11-14T0… SIU … SIUE @ DU… NA         
+#>  5 401909566   2027          NA     3 2026-11-18T0… Illi… ILL @ DUKE NA         
+#>  6 401909567   2027          NA     3 2026-11-22T0… Wash… WSU VS DU… NA         
 #>  7 401909568   2027          NA     4 2026-11-26T0… UCon… CONN VS D… NA         
 #>  8 401906775   2027          NA     5 2026-12-02T0… Duke… DUKE @ FLA NA         
-#>  9 401909569   2027          NA     5 2026-12-04T0… Harv… HARV @ DU… NA         
-#> 10 401906786   2027          NA     6 2026-12-09T0… Duke… DUKE VS U… NA         
+#>  9 401909569   2027          NA     5 2026-12-05T0… Harv… HARV @ DU… NA         
+#> 10 401906786   2027          NA     6 2026-12-09T0… Geor… UGA VS DU… NA         
 #> # ℹ 23 more rows
 #> # ℹ 13 more variables: opponent_abbrev <chr>, home_away <chr>,
 #> #   neutral_site <lgl>, conference_competition <lgl>, venue_id <chr>,
