@@ -2,7 +2,7 @@ test_that("hoopR Loader NBA Play-by-Play", {
   skip_on_cran()
   skip_espn_test()
 
-  x <- load_nba_pbp(seasons = most_recent_nba_season())
+  x <- load_nba_pbp(seasons = most_recent_nba_season() - 1)
 
 
   cols <- c(

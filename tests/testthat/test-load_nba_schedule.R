@@ -2,7 +2,7 @@ test_that("hoopR Loader NBA Schedule", {
   skip_on_cran()
   skip_espn_test()
 
-  x <- load_nba_schedule(seasons = most_recent_nba_season())
+  x <- load_nba_schedule(seasons = most_recent_nba_season() - 1)
 
 
   cols <- c(

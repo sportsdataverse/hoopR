@@ -2,7 +2,7 @@ test_that("hoopR Loader MBB Schedule", {
   skip_on_cran()
   skip_espn_test()
 
-  x <- load_mbb_schedule(seasons = most_recent_mbb_season())
+  x <- load_mbb_schedule(seasons = most_recent_mbb_season() - 1)
 
 
   cols <- c(
