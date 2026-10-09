@@ -163,6 +163,10 @@ navbar:
         href: https://recruitR.sportsdataverse.org/
       - text: puntr
         href: https://puntalytics.github.io/puntr/
+      - text: cfbseedR
+        href: https://cfbseedR.sportsdataverse.org/
+      - text: sdvplotR
+        href: https://sdvplotR.sportsdataverse.org/
       - text: --------------------------------
       - text: "Python Packages"
       - text: sportsdataverse-py
@@ -173,12 +177,16 @@ navbar:
         href: https://github.com/nwslR/nwslpy/
       - text: collegebaseball
         href: https://github.com/nathanblumenfeld/collegebaseball/
+      - text: sdvplot
+        href: https://sdvplot.sportsdataverse.org/
       - text: --------------------------------
       - text: "Node.js Packages"
       - text: sportsdataverse.js
         href: https://js.sportsdataverse.org/
       - text: nfl-nerd
         href: https://github.com/nntrn/nfl-nerd/
+      - text: sdvplot-js
+        href: https://plot.sportsdataverse.org/
     data:
       icon: "fas fa-database"
       text: " Data"
