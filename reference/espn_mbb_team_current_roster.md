@@ -180,7 +180,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 03:48:36 UTC
+#> ℹ Data updated: 2026-10-09 04:32:21 UTC
 #> # A tibble: 15 × 59
 #>    team_id team_uid        team_slug       team_location team_name team_nickname
 #>      <int> <chr>           <chr>           <chr>         <chr>     <chr>        
@@ -210,7 +210,7 @@ try(espn_mbb_team_current_roster(team_id = 150))
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 03:48:36 UTC
+#> ℹ Data updated: 2026-10-09 04:32:21 UTC
 #> # A tibble: 21 × 104
 #>    team_id team_uid       team_slug    team_location team_name team_abbreviation
 #>      <int> <chr>          <chr>        <chr>         <chr>     <chr>            

@@ -125,7 +125,7 @@ Other Euroleague:
     shots[shots$id_action != "FTM", c("team", "id_action", "coord_x", "coord_y", "zone")]
   })
 #> ── EuroLeague game points (shot chart) from live.euroleague.net ────────────────
-#> ℹ Data updated: 2026-10-09 03:48:56 UTC
+#> ℹ Data updated: 2026-10-09 04:32:37 UTC
 #> # A tibble: 131 × 5
 #>    team  id_action coord_x coord_y zone 
 #>    <chr> <chr>       <int>   <int> <chr>
