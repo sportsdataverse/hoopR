@@ -210,7 +210,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_types(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Types Index ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:32:46 UTC
+#> ℹ Data updated: 2026-10-10 23:07:12 UTC
 #> # A tibble: 4 × 4
 #>   league                  season season_type ref                                
 #>   <chr>                    <int>       <int> <chr>                              
@@ -222,7 +222,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_types(season = 2025)
 #> ── ESPN NBA Season Types Index ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:32:46 UTC
+#> ℹ Data updated: 2026-10-10 23:07:12 UTC
 #> # A tibble: 5 × 4
 #>   league season season_type ref                                                 
 #>   <chr>   <int>       <int> <chr>                                               

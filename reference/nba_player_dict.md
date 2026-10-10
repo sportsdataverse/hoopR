@@ -61,8 +61,8 @@ Other NBA Dictionary Functions:
 # \donttest{
   try(nba_player_dict())
 #> ── NBA player dictionary from stats.nba.com ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:35:05 UTC
-#> # A tibble: 5,235 × 16
+#> ℹ Data updated: 2026-10-10 23:09:49 UTC
+#> # A tibble: 5,240 × 16
 #>    player_id player_name         player_slug team_id team_abbreviation team_name
 #>    <chr>     <chr>               <chr>       <chr>   <chr>             <chr>    
 #>  1 76001     Alaa Abdelnaby      alaa-abdel… 161061… POR               Portland…
@@ -75,7 +75,7 @@ Other NBA Dictionary Functions:
 #>  8 76006     Forest Able         forest-able 161061… PHI               Philadel…
 #>  9 76007     John Abramovic      john-abram… 161061… PIT               Pittsbur…
 #> 10 203518    Alex Abrines        alex-abrin… 161061… OKC               Oklahoma…
-#> # ℹ 5,225 more rows
+#> # ℹ 5,230 more rows
 #> # ℹ 10 more variables: position <chr>, jersey_number <chr>, height <chr>,
 #> #   weight <chr>, country <chr>, draft_year <chr>, from_year <chr>,
 #> #   to_year <chr>, headshot_url <chr>, season <chr>

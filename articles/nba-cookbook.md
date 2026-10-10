@@ -278,14 +278,14 @@ espn_nba_team_roster(team_id = team_id, season = season)
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
 #>  1 5113969    Cameron … 43     G               Guard         "6' 5… 184 l… 21   
-#>  2 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
-#>  3 4397014    Quentin … 5      G               Guard         "6' 4… 210 l… 26   
-#>  4 4868423    Jaden Ha… 7      G               Guard         "6' 3… 198 l… 24   
-#>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 22   
-#>  6 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
-#>  7 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
-#>  8 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
-#>  9 5107258    William … 45     F               Forward       "6' 9… 230 l… 22   
+#>  2 4684443    Rafael C… NA     F               Forward       "6' 9… 224 l… 23   
+#>  3 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
+#>  4 4397014    Quentin … 5      G               Guard         "6' 4… 210 l… 26   
+#>  5 4868423    Jaden Ha… 7      G               Guard         "6' 3… 198 l… 24   
+#>  6 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 22   
+#>  7 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
+#>  8 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
+#>  9 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
 #> 10 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
 #> # ℹ 11 more rows
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,

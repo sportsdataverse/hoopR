@@ -84,7 +84,7 @@ Saiem Gilani
     print(df[!is.na(df$shot_zone), c("shot_distance", "shot_zone")])
   })
 #> ── NBA Shot Zones ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:35:41 UTC
+#> ℹ Data updated: 2026-10-10 23:10:18 UTC
 #> # A tibble: 162 × 2
 #>    shot_distance shot_zone          
 #>            <int> <chr>              

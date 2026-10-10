@@ -40,7 +40,7 @@ Other NBA Crosswalk Functions:
 # \donttest{
   try(nba_team_crosswalk())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:35:43 UTC
+#> ℹ Data updated: 2026-10-10 23:10:19 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          

@@ -47,12 +47,12 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_roster("1"))
 #> ── Fox Sports NBA roster ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:33:23 UTC
+#> ℹ Data updated: 2026-10-10 23:07:50 UTC
 #> # A tibble: 21 × 9
 #>    team_id position_group player       pos   age   ht    wt    school athlete_id
 #>    <chr>   <chr>          <chr>        <chr> <chr> <chr> <chr> <chr>  <chr>     
 #>  1 1       GUARD          Devin Carter PG    24    "6'2… 195 … Provi… 3999      
-#>  2 1       GUARD          Mike Conley  PG    38    "6'1… 175 … Ohio … 1441      
+#>  2 1       GUARD          Mike Conley  PG    39    "6'1… 175 … Ohio … 1441      
 #>  3 1       GUARD          Hugo Gonzál… SG    20    "6'6… 200 … -      4141      
 #>  4 1       GUARD          Hayden Gray  SG    23    "6'4… 190 … UC Sa… 6318      
 #>  5 1       GUARD          Payton Prit… PG    28    "6'1… 195 … Oregon 3414      

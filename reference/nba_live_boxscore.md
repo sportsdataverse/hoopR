@@ -70,8 +70,11 @@ nba_live_boxscore(game_id, ...)
 - version:
 
   Play-by-play version - `"v3"` (default) or `"v2"`. V3 returns richer
-  data with shot coordinates, shot values, and V3 action types. V2 is
-  available from 2016-17 onwards.
+  data with shot coordinates, shot values, and V3 action types. Both
+  versions reach back to 1996-97 (`playbyplayv2` and `playbyplayv3`
+  share the stats.nba.com floor); the 2016-17 floor belongs to the
+  data.nba.com / cdn.nba.com liveData feed served by
+  [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md).
 
 - p:
 

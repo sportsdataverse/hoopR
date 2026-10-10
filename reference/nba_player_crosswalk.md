@@ -39,8 +39,8 @@ Other NBA Crosswalk Functions:
 # \donttest{
   try(nba_player_crosswalk())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:35:03 UTC
-#> # A tibble: 610 × 21
+#> ℹ Data updated: 2026-10-10 23:09:47 UTC
+#> # A tibble: 618 × 21
 #>    season espn_team_id team_abbreviation player_name             espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                   <chr>          
 #>  1   2027            1 ATL               nickeil alexander walk… 4278039        
@@ -53,7 +53,7 @@ Other NBA Crosswalk Functions:
 #>  8   2027            1 ATL               kingston flemings       5149077        
 #>  9   2027            1 ATL               keshon gilbert          4585618        
 #> 10   2027            1 ATL               mouhamed gueye          4712863        
-#> # ℹ 600 more rows
+#> # ℹ 608 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

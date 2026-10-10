@@ -635,14 +635,14 @@ feed and the calendar.</p>
 <span><span class="va">mbb_news</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_news.html">espn_mbb_news</a></span><span class="op">(</span>limit <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">mbb_news</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"headline"</span>, <span class="st">"published"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
-<span><span class="co">#&gt;   headline                                                             published</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Alabama's Aden Holloway begins 5-game ban following arrest           2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Oregon players say Dana Altman's retirement came as 'a shock'        2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Izzo calls his roster-building strategy 'right school' not 'old-sch… 2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Big Ten has '18 strong members,' no expansion talks, commish says    2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Gerry McNamara vows to restore Syracuse back to 'national relevance' 2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Dana Altman retires as Oregon's winningest men's basketball coach    2026-10-…</span></span>
+<span><span class="co">#&gt;   headline                                                           published  </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Ahmed Nur commits to Ole Miss for school's top recruit in decades  2026-10-10…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Reports - Watchdog eyes NIL violations at 5-10 Power 4 schools     2026-10-09…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Mississippi Valley St. basketball player from China in ICE custody 2026-10-09…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Vitale's 2026-27 preseason All-Rolls-Royce teams, Diaper Dandies   2026-10-10…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Men's March Madness 2027 schedule, sites, locations                2026-10-09…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Alabama's Aden Holloway begins 5-game ban following arrest         2026-10-09…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -937,7 +937,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 715</span></span>
+<span><span class="co">#&gt; [1] 718</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>

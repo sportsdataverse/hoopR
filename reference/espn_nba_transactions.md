@@ -137,7 +137,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_transactions(season = 2025, limit = 10)
 #> ── ESPN NBA Transactions from ESPN.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:33:10 UTC
+#> ℹ Data updated: 2026-10-10 23:07:35 UTC
 #> # A tibble: 10 × 9
 #>    transaction_id date         type  description team_id athlete_id athlete_name
 #>    <chr>          <chr>        <chr> <chr>       <chr>   <chr>      <chr>       

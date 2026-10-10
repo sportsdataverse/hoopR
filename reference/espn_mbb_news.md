@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:32:23 UTC
+#> ℹ Data updated: 2026-10-10 23:06:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Head… Alabama… "Alabama g… 2026-10-… FALSE   NA     https:/… 41       
-#> 2  5.01e7 Head… Oregon … "Oregon se… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 3  5.01e7 Head… Izzo ca… "Longtime … 2026-10-… FALSE   Adam … https:/… 41       
-#> 4  5.01e7 Head… Big Ten… "Big Ten c… 2026-10-… FALSE   Adam … https:/… 41       
-#> 5  5.01e7 Head… Gerry M… "New Syrac… 2026-10-… FALSE   NA     https:/… 41       
+#> 1  5.01e7 Head… Ahmed N… Top-20 sen… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 2  5.01e7 Head… Reports… The Colleg… 2026-10-… FALSE   NA     https:/… 23       
+#> 3  5.01e7 Head… Mississ… Mississipp… 2026-10-… FALSE   NA     https:/… 41       
+#> 4  5.01e7 Story Vitale'… The presea… 2026-10-… FALSE   Dick … https:/… 41       
+#> 5  5.01e7 Story Men's M… Everything… 2026-10-… FALSE   ESPN   https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:32:23 UTC
+#> ℹ Data updated: 2026-10-10 23:06:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.01e7 Head… 76ers' … "Joel Embi… 2026-10-… FALSE   Dave … https:/… 46       
-#> 2  5.01e7 Head… LeBron … "LeBron Ja… 2026-10-… FALSE   Dave … https:/… 46       
-#> 3  5.01e7 Media Atlanta… "Atlanta H… 2026-10-… FALSE   NA     https:/… 46       
-#> 4  5.01e7 Media Philade… "Philadelp… 2026-10-… FALSE   NA     https:/… 46       
-#> 5  5.01e7 Media Washing… "Washingto… 2026-10-… FALSE   NA     https:/… 46       
+#> 1  5.02e7 Head… Knicks'… Karl-Antho… 2026-10-… FALSE   NA     https:/… 46       
+#> 2  4.90e7 Story 2026 NB… We're grad… 2026-10-… FALSE   Zach … https:/… 46       
+#> 3  5.00e7 Story NBA pre… The NBA re… 2026-10-… FALSE   ESPN … https:/… 46       
+#> 4  5.01e7 Head… Warrior… Warriors g… 2026-10-… FALSE   Antho… https:/… 46       
+#> 5  5.01e7 Media Wildcat… Dylan Wind… 2026-10-… FALSE   NA     https:/… 46       
 # }
 ```

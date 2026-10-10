@@ -37,7 +37,7 @@ Other NBA Combined Datasets:
 # \donttest{
   try(nba_tidy_franchise_history())
 #> ── NBA franchise history (active + defunct) from stats.nba.com ─────────────────
-#> ℹ Data updated: 2026-10-09 05:35:47 UTC
+#> ℹ Data updated: 2026-10-10 23:10:21 UTC
 #> # A tibble: 89 × 16
 #>    franchise_status LEAGUE_ID TEAM_ID    TEAM_CITY TEAM_NAME START_YEAR END_YEAR
 #>    <chr>            <chr>     <chr>      <chr>     <chr>     <chr>      <chr>   

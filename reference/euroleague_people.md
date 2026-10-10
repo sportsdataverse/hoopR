@@ -122,7 +122,7 @@ Other Euroleague:
     euroleague_people(competition_code = "E", season_code = "E2025", limit = 50)
   })
 #> ── EuroLeague people from api-live.euroleague.net ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:33:14 UTC
+#> ℹ Data updated: 2026-10-10 23:07:39 UTC
 #> # A tibble: 50 × 48
 #>    type  type_name   active start_date end_date order dorsal dorsal_raw position
 #>    <chr> <chr>       <lgl>  <chr>      <chr>    <int> <chr>  <chr>         <int>

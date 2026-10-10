@@ -41,7 +41,7 @@ Other NBA Combined Datasets:
 # \donttest{
   try(nba_tidy_boxscore(game_id = "0022300061"))
 #> ── NBA player box score with team context from stats.nba.com ───────────────────
-#> ℹ Data updated: 2026-10-09 05:35:46 UTC
+#> ℹ Data updated: 2026-10-10 23:10:21 UTC
 #> # A tibble: 27 × 52
 #>    GAME_ID    TEAM_ID TEAM_ABBREVIATION TEAM_CITY PLAYER_ID PLAYER_NAME NICKNAME
 #>    <chr>      <chr>   <chr>             <chr>     <chr>     <chr>       <chr>   

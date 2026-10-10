@@ -36,7 +36,7 @@ Other NBA Crosswalk Functions:
 # \donttest{
   try(nba_schedule_crosswalk())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:35:40 UTC
+#> ℹ Data updated: 2026-10-10 23:10:17 UTC
 #> # A tibble: 1,281 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>

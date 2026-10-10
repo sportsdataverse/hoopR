@@ -53,7 +53,7 @@ Other NBA Dictionary Functions:
 # \donttest{
   try(nba_team_dict())
 #> ── NBA team dictionary from stats.nba.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-09 05:35:44 UTC
+#> ℹ Data updated: 2026-10-10 23:10:20 UTC
 #> # A tibble: 30 × 8
 #>    team_id   team_abbreviation team_city team_name team_full conference division
 #>    <chr>     <chr>             <chr>     <chr>     <chr>     <chr>      <chr>   

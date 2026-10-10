@@ -86,7 +86,7 @@ espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
 #>  1 401909562   2027          NA     1 2026-11-02T2… Army… ARMY @ DU… NA         
 #>  2 401909563   2027          NA     1 2026-11-06T0… Coas… CCU @ DUKE NA         
-#>  3 401909564   2027          NA     2 2026-11-11T0… Duke… DUKE VS M… NA         
+#>  3 401909564   2027          NA     2 2026-11-11T0… Mich… MSU VS DU… NA         
 #>  4 401909565   2027          NA     2 2026-11-14T0… SIU … SIUE @ DU… NA         
 #>  5 401909566   2027          NA     3 2026-11-18T0… Illi… ILL @ DUKE NA         
 #>  6 401909567   2027          NA     3 2026-11-22T0… Wash… WSU VS DU… NA         

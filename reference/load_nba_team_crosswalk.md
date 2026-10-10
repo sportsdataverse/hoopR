@@ -96,7 +96,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-07 11:33:10 UTC
+#> ℹ Data updated: 2026-10-10 11:50:23 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -121,7 +121,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-07 11:33:44 UTC
+#> ℹ Data updated: 2026-10-10 11:50:54 UTC
 #> # A tibble: 1,281 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -144,8 +144,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-07 11:34:11 UTC
-#> # A tibble: 606 × 21
+#> ℹ Data updated: 2026-10-10 11:51:19 UTC
+#> # A tibble: 610 × 21
 #>    season espn_team_id team_abbreviation player_name             espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                   <chr>          
 #>  1   2027            1 ATL               nickeil alexander walk… 4278039        
@@ -158,7 +158,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027            1 ATL               kingston flemings       5149077        
 #>  9   2027            1 ATL               keshon gilbert          4585618        
 #> 10   2027            1 ATL               mouhamed gueye          4712863        
-#> # ℹ 596 more rows
+#> # ℹ 600 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
