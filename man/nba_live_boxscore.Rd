@@ -37,7 +37,9 @@ nba_live_boxscore(game_id, ...)
 V3 uses \code{nba_gamerotation()} stint data; V2 infers lineups from substitution events.}
 
 \item{version}{Play-by-play version - \code{"v3"} (default) or \code{"v2"}. V3 returns richer data
-with shot coordinates, shot values, and V3 action types. V2 is available from 2016-17 onwards.}
+with shot coordinates, shot values, and V3 action types. Both versions reach back to
+1996-97 (\code{playbyplayv2} and \code{playbyplayv3} share the stats.nba.com floor); the 2016-17
+floor belongs to the data.nba.com / cdn.nba.com liveData feed served by \code{nba_data_pbp()}.}
 
 \item{p}{Optional progress object from \code{progressr} (default: NULL). Used internally by \code{nba_pbps()}.}
 

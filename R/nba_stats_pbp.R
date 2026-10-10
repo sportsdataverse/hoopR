@@ -1112,7 +1112,9 @@ NULL
 #' @param on_court If TRUE (default), on-court player IDs are added for each play event.
 #'   V3 uses `nba_gamerotation()` stint data; V2 infers lineups from substitution events.
 #' @param version Play-by-play version - `"v3"` (default) or `"v2"`. V3 returns richer data
-#'   with shot coordinates, shot values, and V3 action types. V2 is available from 2016-17 onwards.
+#'   with shot coordinates, shot values, and V3 action types. Both versions reach back to
+#'   1996-97 (`playbyplayv2` and `playbyplayv3` share the stats.nba.com floor); the 2016-17
+#'   floor belongs to the data.nba.com / cdn.nba.com liveData feed served by `nba_data_pbp()`.
 #' @param p Optional progress object from `progressr` (default: NULL). Used internally by `nba_pbps()`.
 #' @param ... Additional arguments passed to an underlying function like httr.
 #' @return Returns a data frame: PlayByPlay
