@@ -552,3 +552,16 @@ test_that("player assembler: output columns are correct and non-duplicate", {
   expect_true(all(is.na(out$yahoo_player_id)))
   expect_true(all(is.na(out$yahoo_player_name)))
 })
+
+test_that(".kp_parse_game_date reads KenPom's numeric YYYYMMDD without raising", {
+  expect_equal(
+    hoopR:::.kp_parse_game_date(c(20201128, 20210301)),
+    as.Date(c("2020-11-28", "2021-03-01"))
+  )
+  expect_equal(hoopR:::.kp_parse_game_date("20201128"), as.Date("2020-11-28"))
+  expect_equal(hoopR:::.kp_parse_game_date("2020-11-28"), as.Date("2020-11-28"))
+  expect_equal(
+    hoopR:::.kp_parse_game_date(c("Sat Nov 28", NA)),
+    as.Date(c(NA, NA))
+  )
+})

@@ -120,6 +120,18 @@
 # Internal helpers --------------------------------------------------------
 
 #' @keywords internal
+#' Parse a KenPom schedule date: a YYYYMMDD number or string, or YYYY-MM-DD.
+#' Unparseable values become `NA` rather than raising.
+#' @keywords internal
+#' @noRd
+.kp_parse_game_date <- function(x) {
+  x <- trimws(format(x, scientific = FALSE, trim = TRUE))
+  out <- as.Date(x, format = "%Y%m%d")
+  iso <- is.na(out) & grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", x)
+  out[iso] <- as.Date(x[iso], format = "%Y-%m-%d")
+  out
+}
+
 .mbb_apply_bart_alias <- function(x) {
   hit <- match(x, names(.mbb_bart_alias))
   ifelse(!is.na(hit), unname(.mbb_bart_alias[hit]), x)
@@ -638,7 +650,8 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
           })
         }
 
-        kp_xwalk_list <- lapply(seq_len(nrow(kp_rows)), function(i) {
+        # Per-team tryCatch: one team's bad schedule page must not abort the build.
+        kp_xwalk_list <- lapply(seq_len(nrow(kp_rows)), function(i) tryCatch({
           kp_team  <- kp_rows$kp_team[i]
           home_eid <- kp_rows$espn_team_id[i]
 
@@ -666,13 +679,13 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
           kp_gid <- if ("game_id" %in% names(sched)) as.character(sched$game_id)
                     else NA_character_
 
-          # Parse game date
+          # KenPom's game_date is a YYYYMMDD number (20201128); date is YYYY-MM-DD.
           gdate <- if ("game_date" %in% names(sched)) {
-            as.Date(as.character(sched$game_date))
+            .kp_parse_game_date(sched$game_date)
           } else if ("date" %in% names(sched)) {
-            tryCatch(as.Date(as.character(sched$date)), error = function(e) NA)
+            .kp_parse_game_date(sched$date)
           } else {
-            rep(NA, nrow(sched))
+            rep(as.Date(NA), nrow(sched))
           }
 
           data.frame(
@@ -682,7 +695,7 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
             opp_eid      = as.integer(opp_eid),
             stringsAsFactors = FALSE
           )
-        })
+        }, error = function(e) NULL))
 
         kp_all <- dplyr::bind_rows(kp_xwalk_list)
 
