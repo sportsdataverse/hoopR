@@ -565,3 +565,43 @@ test_that(".kp_parse_game_date reads KenPom's numeric YYYYMMDD without raising",
     as.Date(c(NA, NA))
   )
 })
+
+test_that(".kp_parse_game_date rejects malformed compact dates", {
+  expect_equal(
+    hoopR:::.kp_parse_game_date(c("2020112", "20201128x", "202011280")),
+    as.Date(c(NA, NA, NA))
+  )
+})
+
+test_that("include_kenpom = TRUE isolates one team's KenPom failure", {
+  old <- Sys.getenv(c("KP_USER", "KP_PW"), unset = NA)
+  Sys.setenv(KP_USER = "user", KP_PW = "pw")
+  local_mocked_bindings(
+    mbb_team_crosswalk = function(...) data.frame(
+      espn_team_id = c(150L, 153L),
+      kp_team = c("Duke", "North Carolina"),
+      bart_team = c("Duke", "North Carolina"),
+      stringsAsFactors = FALSE
+    ),
+    torvik_game_schedule = function(...) data.frame(
+      muid = "m1", date = "03/08/25", team1 = "Duke",
+      team2 = "North Carolina", winner = "Duke", stringsAsFactors = FALSE
+    ),
+    espn_mbb_scoreboard = function(...) data.frame(
+      game_id = 401L,
+      game_date_time = as.POSIXct("2025-03-08 23:30:00", tz = "UTC"),
+      home_team_id = 150L, away_team_id = 153L
+    ),
+    kp_team_schedule = function(team, year) {
+      if (team == "North Carolina") stop("KenPom page changed")
+      data.frame(opponent = "North Carolina", game_id = 1201, game_date = 20250308)
+    },
+    .package = "hoopR"
+  )
+  out <- mbb_schedule_crosswalk(season = 2025, include_kenpom = TRUE)
+  for (k in names(old)) {
+    if (is.na(old[[k]])) Sys.unsetenv(k) else do.call(Sys.setenv, as.list(old[k]))
+  }
+  expect_equal(nrow(out), 1L)
+  expect_equal(out$kp_game_id, "1201")
+})

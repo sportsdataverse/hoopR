@@ -126,8 +126,11 @@
 #' @noRd
 .kp_parse_game_date <- function(x) {
   x <- trimws(format(x, scientific = FALSE, trim = TRUE))
-  out <- as.Date(x, format = "%Y%m%d")
-  iso <- is.na(out) & grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", x)
+  out <- rep(as.Date(NA), length(x))
+  # Exact shapes only: as.Date() would accept "2020112" or "20201128x".
+  compact <- grepl("^[0-9]{8}$", x)
+  iso <- grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", x)
+  out[compact] <- as.Date(x[compact], format = "%Y%m%d")
   out[iso] <- as.Date(x[iso], format = "%Y-%m-%d")
   out
 }
