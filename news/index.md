@@ -2,6 +2,11 @@
 
 ## **hoopR 3.1.0.9000 (development version)**
 
+- `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on
+  KenPom’s numeric `game_date` (`20201128`): the date now parses as
+  `YYYYMMDD`, and each team’s KenPom schedule is fetched inside its own
+  error handler.
+
 - New EuroLeague / EuroCup family, `euroleague_*()` (15 functions),
   wrapping the keyless, unofficial Competition Engine
   (`api-live.euroleague.net` v2 + v3) and live
