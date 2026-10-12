@@ -2907,6 +2907,8 @@ helper_espn_nba_pbp <- function(resp) {
         ~ as.integer(.x)
       ))
 
+    plays <- .repair_running_score(plays, homeTeamId, awayTeamId, homeTeamScore, awayTeamScore)
+
     plays_df <- plays %>%
       make_hoopR_data(
         "ESPN NBA Play-by-Play Information from ESPN.com",

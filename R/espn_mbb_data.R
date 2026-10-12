@@ -2984,6 +2984,8 @@ helper_espn_mbb_pbp <- function(resp) {
         "team_id"
       )), ~ as.integer(.x)))
 
+    plays <- .repair_running_score(plays, homeTeamId, awayTeamId, homeTeamScore, awayTeamScore)
+
     plays_df <- plays %>%
       make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com", Sys.time())
 
