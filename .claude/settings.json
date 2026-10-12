@@ -1,0 +1,31 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "extraKnownMarketplaces": {
+    "sportsdataverse": {
+      "source": {
+        "source": "github",
+        "repo": "sportsdataverse/sportsdataverse"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "sdv-toolkit@sportsdataverse": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -qiE 'co-?authored[-[:space:]]?(by|with)[[:space:]]*:[^\"]*(claude|copilot|cursor|gpt|openai|anthropic|gemini)|generated with[^\"]*claude|claude-session:' && { echo 'BLOCKED: AI attribution (Co-Authored-By / Generated with / Claude-Session) is not permitted. See .claude/CLAUDE.md.' >&2; exit 2; }; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}
