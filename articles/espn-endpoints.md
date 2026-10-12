@@ -173,12 +173,12 @@ head(mbb_news[, c("headline", "published")])
 #> # A tibble: 6 × 2
 #>   headline                                                             published
 #>   <chr>                                                                <chr>    
-#> 1 Transfers, recruits and roster moves for key men's NCAA basketball … 2026-10-…
-#> 2 Ahmed Nur commits to Ole Miss for school's top recruit in decades    2026-10-…
-#> 3 Reports - Watchdog eyes NIL violations at 5-10 Power 4 schools       2026-10-…
-#> 4 Mississippi Valley St. basketball player from China in ICE custody   2026-10-…
-#> 5 Vitale's 2026-27 preseason All-Rolls-Royce teams, Diaper Dandies     2026-10-…
-#> 6 Men's March Madness 2027 schedule, sites, locations                  2026-10-…
+#> 1 Men's college basketball coaching changes for 2026-27                2026-10-…
+#> 2 Transfers, recruits and roster moves for key men's NCAA basketball … 2026-10-…
+#> 3 Ahmed Nur commits to Ole Miss for school's top recruit in decades    2026-10-…
+#> 4 Reports - Watchdog eyes NIL violations at 5-10 Power 4 schools       2026-10-…
+#> 5 Mississippi Valley St. basketball player from China in ICE custody   2026-10-…
+#> 6 Vitale's 2026-27 preseason All-Rolls-Royce teams, Diaper Dandies     2026-10-…
 
 # 2025 MBB season calendar
 mbb_cal <- espn_mbb_calendar(season = 2025)
@@ -494,7 +494,7 @@ nba_athletes <- espn_nba_athletes_index(
   season = 2025, active = TRUE, limit = 5000
 )
 nrow(nba_athletes)
-#> [1] 718
+#> [1] 721
 head(nba_athletes[, c("display_name", "position_name", "team_name")])
 #> Error in `nba_athletes[, c("display_name", "position_name", "team_name")]`:
 #> ! Can't subset columns that don't exist.
@@ -881,11 +881,11 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```

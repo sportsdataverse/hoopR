@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ──────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:28 UTC
+#> ℹ Data updated: 2026-10-12 03:08:52 UTC
 #> # A tibble: 30 × 11
 #>    team_id section   eastern_conference v2      w_l   pct   pf    pa    strk 
 #>    <chr>   <chr>     <chr>              <chr>   <chr> <chr> <chr> <chr> <chr>
 #>  1 1       PRESEASON 1                  Celtics 2-0   1.000 134.0 109.5 W2   
 #>  2 1       PRESEASON 2                  Wizards 2-0   1.000 112.5 108.5 W2   
 #>  3 1       PRESEASON 3                  Nets    2-0   1.000 119.0 99.0  W2   
-#>  4 1       PRESEASON 4                  Magic   1-0   1.000 122.0 118.0 W1   
+#>  4 1       PRESEASON 4                  Magic   1-1   .500  113.5 118.5 L1   
 #>  5 1       PRESEASON 5                  Heat    2-1   .667  127.0 116.0 L1   
 #>  6 1       PRESEASON 6                  Hawks   2-1   .667  121.7 121.7 W2   
 #>  7 1       PRESEASON 7                  Pacers  1-1   .500  120.0 115.5 L1   
 #>  8 1       PRESEASON 8                  Bulls   1-1   .500  112.0 110.5 L1   
 #>  9 1       PRESEASON 9                  Pistons 1-1   .500  108.5 110.5 L1   
-#> 10 1       PRESEASON 10                 Bucks   1-1   .500  112.5 121.0 W1   
+#> 10 1       PRESEASON 10                 Bucks   1-2   .333  105.0 115.7 L1   
 #> # ℹ 20 more rows
 #> # ℹ 2 more variables: entity_id <chr>, western_conference <chr>
 # }

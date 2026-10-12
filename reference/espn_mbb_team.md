@@ -107,7 +107,10 @@ A single tibble with one row per athlete.
 
 Columns as documented in the shared
 [espn_mbb_team_roster_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster_schema.md)
-table.
+table. ESPN's roster endpoint ignores the season, so a season before the
+current one is built from that season's published player box scores
+(name, jersey, position and headshot from the athlete's last game; bio
+columns `NA`), and errors when none are published.
 
 A single long-format tibble (one row per category-rank-athlete).
 
@@ -193,7 +196,10 @@ A single tibble with one row per athlete.
 
 Columns as documented in the shared
 [espn_mbb_team_roster_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster_schema.md)
-table.
+table. ESPN's roster endpoint ignores the season, so a season before the
+current one is built from that season's published player box scores
+(name, jersey, position and headshot from the athlete's last game; bio
+columns `NA`), and errors when none are published.
 
 A single long-format tibble (one row per category-rank-athlete).
 
@@ -388,7 +394,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:00:59 UTC
+#> ℹ Data updated: 2026-10-12 03:08:22 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -401,7 +407,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ──────────────────
-#> ℹ Data updated: 2026-10-11 15:00:59 UTC
+#> ℹ Data updated: 2026-10-12 03:08:22 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                   short_name 
 #>   <chr>     <chr>             <chr>                                  <chr>      
@@ -409,7 +415,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-10-11 15:00:59 UTC
+#> ℹ Data updated: 2026-10-12 03:08:22 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -421,26 +427,26 @@ Saiem Gilani
 # }
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
-#> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:00:59 UTC
+#> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com player box scores ────
+#> ℹ Data updated: 2026-10-12 03:08:25 UTC
 #> # A tibble: 15 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 5454779    Nick Arn… 55     G               Guard         "5' 1… 175 l… NA   
-#>  2 5103630    John Bla… 13     G               Guard         "6' 5… 205 l… NA   
-#>  3 5041937    Cayden B… 2      G               Guard         "6' 4… 195 l… NA   
-#>  4 5347090    Joaquim … 30     C               Center        "7' 2… 250 l… NA   
-#>  5 5341547    Brock Da… 50     G               Guard         "6' 5… 195 l… NA   
-#>  6 4711256    Caleb Fo… 1      G               Guard         "6' 5… 200 l… NA   
-#>  7 5287512    Bryson H… 12     G               Guard         "6' 4… 190 l… NA   
-#>  8 5323930    Maxime M… 15     C               Center        "7' 1… 225 l… NA   
-#>  9 4873209    Patrick … 21     C               Center        "6' 1… 250 l… NA   
-#> 10 5144476    Deron Ri… 3      G               Guard         "6' 3… 185 l… NA   
-#> 11 5287474    Dame Sarr 7      F               Forward       "6' 8… 200 l… NA   
-#> 12 5176309    Drew Sch… 8      F               Forward       "6' 1… 240 l… NA   
-#> 13 5176286    Jacob Th… 26     G               Guard         "6' 4… 205 l… NA   
-#> 14 5144150    Sebastia… 5      F               Forward       "6' 8… 220 l… NA   
-#> 15 5210407    Cameron … 14     F               Forward       "7' 0… 215 l… NA   
+#>  1 4431753    Mason Gi… 18     F               Forward       NA     NA     NA   
+#>  2 4431890    Neal Beg… 20     F               Forward       NA     NA     NA   
+#>  3 4432321    Cameron … 13     G               Guard         NA     NA     NA   
+#>  4 4602025    Sion Jam… 14     G               Guard         NA     NA     NA   
+#>  5 4711256    Caleb Fo… 1      G               Guard         NA     NA     NA   
+#>  6 4873107    Darren H… 8      G               Guard         NA     NA     NA   
+#>  7 4873209    Patrick … 21     C               Center        NA     NA     NA   
+#>  8 4897107    Stanley … 52     C               Center        NA     NA     NA   
+#>  9 4897108    Spencer … 55     G               Guard         NA     NA     NA   
+#> 10 5023693    Tyrese P… 5      G               Guard         NA     NA     NA   
+#> 11 5041939    Cooper F… 2      F               Forward       NA     NA     NA   
+#> 12 5061575    Kon Knue… 7      G               Guard         NA     NA     NA   
+#> 13 5061585    Isaiah E… 3      G               Guard         NA     NA     NA   
+#> 14 5105337    Maliq Br… 6      F               Forward       NA     NA     NA   
+#> 15 5203685    Khaman M… 9      C               Center        NA     NA     NA   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }
@@ -451,7 +457,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
+#> ℹ Data updated: 2026-10-12 03:08:25 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -468,7 +474,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
+#> ℹ Data updated: 2026-10-12 03:08:25 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -478,7 +484,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
+#> ℹ Data updated: 2026-10-12 03:08:25 UTC
 #> # A tibble: 3 × 4
 #>   description    type  summary stats        
 #>   <chr>          <chr> <chr>   <list>       
@@ -488,7 +494,7 @@ Saiem Gilani
 #> 
 #> $NextEvent
 #> ── ESPN NBA Team Next Event from ESPN.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
+#> ℹ Data updated: 2026-10-12 03:08:25 UTC
 #> # A tibble: 1 × 4
 #>   id        date              name                                    short_name
 #>   <chr>     <chr>             <chr>                                   <chr>     
@@ -496,7 +502,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
+#> ℹ Data updated: 2026-10-12 03:08:25 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -508,22 +514,22 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
-#> ── ESPN NBA Team Roster from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
-#> # A tibble: 21 × 15
+#> ── ESPN NBA Team Roster from ESPN.com player box scores ──── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-10-12 03:08:26 UTC
+#> # A tibble: 26 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
-#>  1 5113969    Cameron … 43     G               Guard         "6' 5… 184 l… 21   
-#>  2 4684443    Rafael C… NA     F               Forward       "6' 9… 224 l… 23   
-#>  3 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
-#>  4 4397014    Quentin … 5      G               Guard         "6' 4… 210 l… 26   
-#>  5 4868423    Jaden Ha… 7      G               Guard         "6' 3… 198 l… 24   
-#>  6 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 22   
-#>  7 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
-#>  8 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
-#>  9 4897943    Dalton K… 4      F               Forward       "6' 6… 215 l… 25   
-#> 10 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
-#> # ℹ 11 more rows
+#>  1 1966       LeBron J… 23     F               Forward       NA     NA     NA   
+#>  2 6461       Markieff… 88     PF              Power Forward NA     NA     NA   
+#>  3 6583       Anthony … 3      F               Forward       NA     NA     NA   
+#>  4 2578185    Dorian F… 17     F               Forward       NA     NA     NA   
+#>  5 2596107    Alex Len  27     C               Center        NA     NA     NA   
+#>  6 2960236    Maxi Kle… 14     F               Forward       NA     NA     NA   
+#>  7 3058254    Christia… 35     F               Forward       NA     NA     NA   
+#>  8 3136776    D'Angelo… 1      G               Guard         NA     NA     NA   
+#>  9 3137259    Gabe Vin… 7      G               Guard         NA     NA     NA   
+#> 10 3915195    Shake Mi… 20     SG              Shooting Gua… NA     NA     NA   
+#> # ℹ 16 more rows
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 # }
@@ -534,7 +540,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:01:00 UTC
+#> ℹ Data updated: 2026-10-12 03:08:26 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

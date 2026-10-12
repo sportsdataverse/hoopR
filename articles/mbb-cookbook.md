@@ -81,7 +81,7 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> $Coaches
 #> data frame with 0 columns and 0 rows
 espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
-#> # A tibble: 33 × 21
+#> # A tibble: 32 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
 #>  1 401909562   2027          NA     1 2026-11-02T2… Army… ARMY @ DU… NA         
@@ -94,7 +94,7 @@ espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
 #>  8 401906775   2027          NA     5 2026-12-02T0… Duke… DUKE @ FLA NA         
 #>  9 401909569   2027          NA     5 2026-12-05T0… Harv… HARV @ DU… NA         
 #> 10 401906786   2027          NA     6 2026-12-09T0… Geor… UGA VS DU… NA         
-#> # ℹ 23 more rows
+#> # ℹ 22 more rows
 #> # ℹ 13 more variables: opponent_abbrev <chr>, home_away <chr>,
 #> #   neutral_site <lgl>, conference_competition <lgl>, venue_id <chr>,
 #> #   venue_name <chr>, venue_city <chr>, venue_state <chr>, broadcast <chr>,

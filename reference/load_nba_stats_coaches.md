@@ -667,10 +667,24 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_draft(seasons = most_recent_nba_stats_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_draft/draft_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_draft/draft_2027.rds>
 #> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 60 × 14
+#>    person_id player_name  season round_number round_pick overall_pick draft_type
+#>        <int> <chr>         <int>        <int>      <int>        <int> <chr>     
+#>  1   1643407 AJ Dybantsa    2027            1          1            1 Draft     
+#>  2   1643408 Darryn Pete…   2027            1          2            2 Draft     
+#>  3   1643409 Cameron Boo…   2027            1          3            3 Draft     
+#>  4   1643410 Caleb Wilson   2027            1          4            4 Draft     
+#>  5   1643413 Keaton Wagl…   2027            1          5            5 Draft     
+#>  6   1643414 Mikel Brown…   2027            1          6            6 Draft     
+#>  7   1643411 Darius Acuf…   2027            1          7            7 Draft     
+#>  8   1643412 Kingston Fl…   2027            1          8            8 Draft     
+#>  9   1643516 Morez Johns…   2027            1          9            9 Draft     
+#> 10   1643415 Brayden Bur…   2027            1         10           10 Draft     
+#> # ℹ 50 more rows
+#> # ℹ 7 more variables: team_id <int>, team_city <chr>, team_name <chr>,
+#> #   team_abbreviation <chr>, organization <chr>, organization_type <chr>,
+#> #   player_profile_flag <int>
 # }
 # \donttest{
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))

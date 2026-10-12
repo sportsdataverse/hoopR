@@ -2,6 +2,23 @@
 
 ## **hoopR 3.1.0.9000 (development version)**
 
+- [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
+  /
+  [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
+  for a past season now build the roster from that season’s published
+  player box scores
+  ([`load_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  /
+  [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)),
+  and error when none are published. ESPN’s roster endpoint ignores
+  `?season=`, so a past season used to return today’s roster under the
+  past season’s label, which also fed
+  [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+  /
+  [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md).
+  Mirrors sportsdataverse-py
+  [\#782](https://github.com/sportsdataverse/hoopR/issues/782).
+
 - `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on
   KenPom’s numeric `game_date` (`20201128`): the date now parses as
   `YYYYMMDD`, and each team’s KenPom schedule is fetched inside its own

@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:00:36 UTC
+#> ℹ Data updated: 2026-10-12 03:07:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 2  5.01e7 Head… Ahmed N… Top-20 sen… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 3  5.01e7 Head… Reports… The Colleg… 2026-10-… FALSE   NA     https:/… 23       
-#> 4  5.01e7 Head… Mississ… Mississipp… 2026-10-… FALSE   NA     https:/… 41       
-#> 5  5.01e7 Story Vitale'… The presea… 2026-10-… FALSE   Dick … https:/… 41       
+#> 1  4.83e7 Story Men's c… We're trac… 2026-10-… FALSE   ESPN   https:/… 41       
+#> 2  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 3  5.01e7 Head… Ahmed N… Top-20 sen… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 4  5.01e7 Head… Reports… The Colleg… 2026-10-… FALSE   NA     https:/… 23       
+#> 5  5.01e7 Head… Mississ… Mississipp… 2026-10-… FALSE   NA     https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 15:00:36 UTC
+#> ℹ Data updated: 2026-10-12 03:07:57 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Head… Kyrie I… Kyrie Irvi… 2026-10-… FALSE   Tim M… https:/… 46       
-#> 2  5.02e7 Media Dallas … Dallas Mav… 2026-10-… FALSE   NA     https:/… 46       
-#> 3  5.02e7 Media Detroit… Detroit Pi… 2026-10-… FALSE   NA     https:/… 46       
-#> 4  5.02e7 Media Sacrame… Sacramento… 2026-10-… FALSE   NA     https:/… 46       
-#> 5  5.02e7 Media Minneso… Minnesota … 2026-10-… FALSE   NA     https:/… 46       
+#> 1  5.02e7 Media Milwauk… "Milwaukee… 2026-10-… FALSE   NA     https:/… 46       
+#> 2  5.02e7 Media Orlando… "Orlando M… 2026-10-… FALSE   NA     https:/… 46       
+#> 3  5.02e7 Head… Lakers … "Walker Ke… 2026-10-… FALSE   Dave … https:/… 46       
+#> 4  5.02e7 Head… Karl-An… "Karl-Anth… 2026-10-… FALSE   Vince… https:/… 46       
+#> 5  5.02e7 Head… Kings C… "Kings sec… 2026-10-… FALSE   Antho… https:/… 46       
 # }
 ```
