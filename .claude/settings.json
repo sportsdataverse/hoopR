@@ -25,6 +25,15 @@
             "command": "grep -qiE 'co-?authored[-[:space:]]?(by|with)[[:space:]]*:[^\"]*(claude|copilot|cursor|gpt|openai|anthropic|gemini)|generated with[^\"]*claude|claude-session:' && { echo 'BLOCKED: AI attribution (Co-Authored-By / Generated with / Claude-Session) is not permitted. See .claude/CLAUDE.md.' >&2; exit 2; }; exit 0"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "i=$(cat); printf '%s' \"$i\" | grep -qE 'git commit|git notes|gh pr (create|edit|merge)|gh api' || exit 0; printf '%s' \"$i\" | grep -qiE 'co-?authored[-[:space:]]?(by|with)[[:space:]]*:[^\"]*(claude|copilot|cursor|gpt|openai|anthropic|gemini)|generated with[^\"]*claude|claude-session:' && { echo 'BLOCKED: AI attribution (Co-Authored-By / Generated with / Claude-Session) is not permitted. See .claude/CLAUDE.md.' >&2; exit 2; }; exit 0"
+          }
+        ]
       }
     ]
   }
