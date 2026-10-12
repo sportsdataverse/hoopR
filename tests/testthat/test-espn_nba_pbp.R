@@ -57,7 +57,8 @@ test_that("ESPN - Get NBA play by play only", {
     "season",
     "season_type",
     "game_date",
-    "game_date_time"
+    "game_date_time",
+    "score_source"
   )
   expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")

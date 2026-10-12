@@ -2505,7 +2505,10 @@ espn_nba_player_stats <- function(
 
 #'  **Parse ESPN NBA PBP, helper function**
 #' @param resp Response object from the ESPN NBA game summary endpoint
-#' @return Returns a tibble
+#' @return For `helper_espn_nba_pbp()`: a tibble with the columns of [espn_nba_game_all_plays_schema], or `NULL`
+#'   when the game has no play-by-play. `home_score` / `away_score` are rebuilt from the
+#'   scoring plays when that reproduces the header's official final, otherwise they are
+#'   ESPN's per-play values; the last column, `score_source` (`"rebuilt"` / `"espn"`), says which.
 #' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_nba_pbp <- function(resp) {

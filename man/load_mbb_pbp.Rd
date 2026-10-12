@@ -119,8 +119,8 @@ Returns a tibble
       type_id \tab character \tab Type identifier (numeric). \cr
       type_text \tab character \tab Display text for the type field. \cr
       text \tab character \tab Text description of the play / record. \cr
-      away_score \tab integer \tab Away team score at the time of the play. \cr
-      home_score \tab integer \tab Home team score at the time of the play. \cr
+      away_score \tab integer \tab Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
+      home_score \tab integer \tab Home team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
       period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
       period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
       clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
@@ -169,6 +169,7 @@ Returns a tibble
       coordinate_x \tab integer \tab X coordinate on the court (half-court layout). \cr
       coordinate_y \tab integer \tab Y coordinate on the court (half-court layout). \cr
       media_id \tab character \tab Media identifier (video / image). \cr
+      score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. \cr
    }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
