@@ -48,7 +48,7 @@
   last column, `score_source` (`"rebuilt"` / `"espn"`), says which. This repairs plays
   keyed late (ESPN's score ran backwards and could end short of the final), NBA
   2013-2019 free throws, and college neutral-site games whose scores were stored on the
-  wrong side. Mirrors sportsdataverse-py #<sdv-py PR>; `load_nba_pbp()` /
+  wrong side. Mirrors sportsdataverse/sportsdataverse-py#830; `load_nba_pbp()` /
   `load_mbb_pbp()` carry the column once a season is republished.
 
 * `espn_mbb_team_roster()` / `espn_nba_team_roster()` for a past season now
@@ -57,7 +57,7 @@
   published. ESPN's roster endpoint ignores `?season=`, so a past season used
   to return today's roster under the past season's label, which also fed
   `mbb_player_crosswalk()` / `nba_player_crosswalk()`. Mirrors
-  sportsdataverse-py #782.
+  sportsdataverse/sportsdataverse-py#782.
 
 * `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on KenPom's
   numeric `game_date` (`20201128`): the date now parses as `YYYYMMDD`, and each
