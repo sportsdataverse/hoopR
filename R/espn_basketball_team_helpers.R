@@ -181,6 +181,13 @@
   .espn_bball_validate_league(league)
   .args <- list(league = league, team_id = team_id, season = season)
 
+  # ESPN's roster endpoint ignores ?season= and serves today's roster, so a past
+  # season would come back as the current roster under the past season's label.
+  # Read that season's own player box scores instead (or refuse).
+  if (!is.null(season) && !is.na(season) && as.numeric(season) < .espn_bball_current_season(league)) {
+    return(.espn_basketball_past_roster(league, team_id, season))
+  }
+
   result <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " Team Roster from ESPN.com"))
 
   url <- paste0(
@@ -191,9 +198,8 @@
     "/roster"
   )
   # ESPN returns an empty athletes list when ?season=YYYY is appended to the
-  # roster endpoint -- it only serves the current/most recent roster. We keep
-  # the `season` parameter for API symmetry and attach it as an output column
-  # below, but do not pass it on the URL.
+  # roster endpoint -- it only serves the current/most recent roster, so only
+  # the current season reaches this call (a past one returned above).
   invisible(season)
 
   tryCatch(
@@ -312,6 +318,72 @@
     finally = {}
   )
   return(result)
+}
+
+# (league, season) -> that season's box-score rosters: one release read per
+# season, not one per team in the crosswalk builders' team loop.
+.espn_past_roster_cache <- new.env(parent = emptyenv())
+
+.espn_bball_current_season <- function(league) {
+  if (league == "nba") most_recent_nba_season() else most_recent_mbb_season()
+}
+
+#' Internal: a past season's team roster, from that season's player box scores
+#'
+#' ESPN's `/teams/{id}/roster` ignores `?season=`, so a past season is built
+#' from the published player box scores (DNP rows included). Name, jersey,
+#' position and headshot come from the athlete's last game for the team; the
+#' bio columns the box score does not carry are `NA`.
+#'
+#' @param league character.
+#' @param team_id character or numeric.
+#' @param season numeric.
+#' @return A tibble with the live roster's columns.
+#' @noRd
+.espn_basketball_past_roster <- function(league, team_id, season) {
+  key <- paste(league, season)
+  box <- .espn_past_roster_cache[[key]]
+  if (is.null(box)) {
+    loader <- if (league == "nba") load_nba_player_box else load_mbb_player_box
+    box <- loader(seasons = as.integer(season))
+    if (is.null(box) || !nrow(box)) {
+      cli::cli_abort(c(
+        "No {league} player box scores are published for season {season}.",
+        "i" = "ESPN's roster endpoint ignores {.code season}, so a past season cannot fall back to today's roster."
+      ))
+    }
+    .espn_past_roster_cache[[key]] <- box
+  }
+  last <- box %>%
+    dplyr::filter(
+      !is.na(.data$athlete_id),
+      as.character(.data$team_id) == as.character(.env$team_id)
+    ) %>%
+    dplyr::arrange(.data$game_date, .data$game_id) %>%
+    dplyr::group_by(.data$athlete_id) %>%
+    dplyr::slice_tail(n = 1) %>%
+    dplyr::ungroup()
+  dplyr::tibble(
+    athlete_id      = as.character(last$athlete_id),
+    full_name       = as.character(last$athlete_display_name),
+    jersey          = as.character(last$athlete_jersey),
+    position_abbrev = as.character(last$athlete_position_abbreviation),
+    position_name   = as.character(last$athlete_position_name),
+    height          = NA_character_,
+    weight          = NA_character_,
+    age             = NA_character_,
+    birth_date      = NA_character_,
+    birth_place     = NA_character_,
+    headshot        = as.character(last$athlete_headshot_href),
+    link_web        = NA_character_,
+    status          = NA_character_,
+    team_id         = rep(as.character(team_id), nrow(last)),
+    season          = rep(as.integer(season), nrow(last))
+  ) %>%
+    make_hoopR_data(
+      paste0("ESPN ", toupper(league), " Team Roster from ESPN.com player box scores"),
+      Sys.time()
+    )
 }
 
 # ---------------------------------------------------------------------------

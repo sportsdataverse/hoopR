@@ -80,6 +80,10 @@ Columns as documented in the shared \link{espn_mbb_team_info_schema} table.
 A single tibble with one row per athlete.
 
 Columns as documented in the shared \link{espn_mbb_team_roster_schema} table.
+ESPN's roster endpoint ignores the season, so a season before the current
+one is built from that season's published player box scores (name, jersey,
+position and headshot from the athlete's last game; bio columns \code{NA}), and
+errors when none are published.
 
 A single long-format tibble (one row per category-rank-athlete).
 
@@ -156,6 +160,10 @@ Columns as documented in the shared \link{espn_mbb_team_info_schema} table.
 A single tibble with one row per athlete.
 
 Columns as documented in the shared \link{espn_mbb_team_roster_schema} table.
+ESPN's roster endpoint ignores the season, so a season before the current
+one is built from that season's published player box scores (name, jersey,
+position and headshot from the athlete's last game; bio columns \code{NA}), and
+errors when none are published.
 
 A single long-format tibble (one row per category-rank-athlete).
 
