@@ -68,9 +68,9 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> 
 #> $NextEvent
 #> # A tibble: 1 × 4
-#>   id        date              name                                   short_name 
-#>   <chr>     <chr>             <chr>                                  <chr>      
-#> 1 401909562 2026-11-02T23:30Z Army Black Knights at Duke Blue Devils ARMY @ DUKE
+#>   id        date              name                                    short_name
+#>   <chr>     <chr>             <chr>                                   <chr>     
+#> 1 401918100 2027-01-02T19:15Z California Golden Bears at Duke Blue D… CAL @ DUKE
 #> 
 #> $StandingSummary
 #> # A tibble: 1 × 1
@@ -258,7 +258,7 @@ game_id <- 401256760
 
 espn_mbb_game_all(game_id = game_id)      # everything, as a named list
 #> $Plays
-#> # A tibble: 353 × 48
+#> # A tibble: 353 × 49
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
 #>  1 4012567… 101805901       M.J.…          0          0 FALSE                  3
@@ -272,7 +272,7 @@ espn_mbb_game_all(game_id = game_id)      # everything, as a named list
 #>  9 4012567… 101818201       RaiQ…          3          2 FALSE                  0
 #> 10 4012567… 101818202       Tre …          3          2 FALSE                  0
 #> # ℹ 343 more rows
-#> # ℹ 41 more variables: shooting_play <lgl>, points_attempted <int>,
+#> # ℹ 42 more variables: shooting_play <lgl>, points_attempted <int>,
 #> #   short_description <chr>, type_id <int>, type_text <chr>,
 #> #   period_number <int>, period_display_value <chr>, clock_display_value <chr>,
 #> #   team_id <int>, play_id <chr>, athlete_id_1 <int>, athlete_id_2 <int>,
@@ -349,7 +349,7 @@ espn_mbb_player_box(game_id = game_id)    # player box
 #> #   three_point_field_goals_attempted <int>, free_throws_made <int>,
 #> #   free_throws_attempted <int>, offensive_rebounds <int>, …
 espn_mbb_pbp(game_id = game_id)           # play-by-play
-#> # A tibble: 353 × 48
+#> # A tibble: 353 × 49
 #>    id       sequence_number text  away_score home_score scoring_play score_value
 #>    <chr>    <chr>           <chr>      <int>      <int> <lgl>              <int>
 #>  1 4012567… 101805901       M.J.…          0          0 FALSE                  3
@@ -363,7 +363,7 @@ espn_mbb_pbp(game_id = game_id)           # play-by-play
 #>  9 4012567… 101818201       RaiQ…          3          2 FALSE                  0
 #> 10 4012567… 101818202       Tre …          3          2 FALSE                  0
 #> # ℹ 343 more rows
-#> # ℹ 41 more variables: shooting_play <lgl>, points_attempted <int>,
+#> # ℹ 42 more variables: shooting_play <lgl>, points_attempted <int>,
 #> #   short_description <chr>, type_id <int>, type_text <chr>,
 #> #   period_number <int>, period_display_value <chr>, clock_display_value <chr>,
 #> #   team_id <int>, play_id <chr>, athlete_id_1 <int>, athlete_id_2 <int>,

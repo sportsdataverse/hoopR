@@ -189,8 +189,8 @@ Returns a tibble
 | type_id | character | Type identifier (numeric). |
 | type_text | character | Display text for the type field. |
 | text | character | Text description of the play / record. |
-| away_score | integer | Away team score at the time of the play. |
-| home_score | integer | Home team score at the time of the play. |
+| away_score | integer | Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). |
+| home_score | integer | Home team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). |
 | period_number | integer | Numeric period (1-4 for quarters; 5+ for OT). |
 | period_display_value | character | Period display label (e.g. '1st Quarter', 'OT'). |
 | clock_display_value | character | Game clock display string (e.g. '8:32'). |
@@ -239,6 +239,7 @@ Returns a tibble
 | coordinate_x | integer | X coordinate on the court (half-court layout). |
 | coordinate_y | integer | Y coordinate on the court (half-court layout). |
 | media_id | character | Media identifier (video / image). |
+| score_source | character | Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. |
 
 Returns a tibble
 

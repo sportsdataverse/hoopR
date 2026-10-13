@@ -233,7 +233,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_powerindex(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Power Index ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:05 UTC
+#> ℹ Data updated: 2026-10-13 01:16:19 UTC
 #> # A tibble: 1,475 × 12
 #>    league         season season_type team_id stat_name abbreviation display_name
 #>    <chr>           <int>       <int> <chr>   <chr>     <chr>        <chr>       
@@ -254,7 +254,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_powerindex(season = 2025)
 #> ── ESPN NBA Season Power Index ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:08 UTC
+#> ℹ Data updated: 2026-10-13 01:16:21 UTC
 #> # A tibble: 4,260 × 12
 #>    league season season_type team_id stat_name     abbreviation display_name
 #>    <chr>   <int>       <int> <chr>   <chr>         <chr>        <chr>       

@@ -394,7 +394,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:22 UTC
+#> ℹ Data updated: 2026-10-13 01:16:36 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -403,19 +403,19 @@ Saiem Gilani
 #> #   logo <chr>, logo_dark <chr>
 #> 
 #> $Record
-#> data frame with 0 columns and 0 rows
+#> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-10-13 01:16:36 UTC
+#> # A tibble: 1 × 4
+#>   description    stats         summary type 
+#>   <chr>          <list>        <chr>   <chr>
+#> 1 Overall Record <df [30 × 2]> 31-3    total
 #> 
 #> $NextEvent
-#> ── ESPN MENS-COLLEGE-BASKETBALL Team Next Event from ESPN.com ──────────────────
-#> ℹ Data updated: 2026-10-12 03:08:22 UTC
-#> # A tibble: 1 × 4
-#>   id        date              name                                   short_name 
-#>   <chr>     <chr>             <chr>                                  <chr>      
-#> 1 401909562 2026-11-02T23:30Z Army Black Knights at Duke Blue Devils ARMY @ DUKE
+#> data frame with 0 columns and 0 rows
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-10-12 03:08:22 UTC
+#> ℹ Data updated: 2026-10-13 01:16:36 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -428,7 +428,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com player box scores ────
-#> ℹ Data updated: 2026-10-12 03:08:25 UTC
+#> ℹ Data updated: 2026-10-13 01:16:39 UTC
 #> # A tibble: 15 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -457,7 +457,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-10-12 03:08:25 UTC
+#> ℹ Data updated: 2026-10-13 01:16:39 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -474,7 +474,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:25 UTC
+#> ℹ Data updated: 2026-10-13 01:16:40 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -484,25 +484,18 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:25 UTC
-#> # A tibble: 3 × 4
-#>   description    type  summary stats        
-#>   <chr>          <chr> <chr>   <list>       
-#> 1 Overall Record total 2-1     <df [20 × 2]>
-#> 2 Home Record    home  1-0     <df [5 × 2]> 
-#> 3 Away Record    road  1-1     <df [5 × 2]> 
+#> ℹ Data updated: 2026-10-13 01:16:40 UTC
+#> # A tibble: 1 × 4
+#>   description    stats         summary type 
+#>   <chr>          <list>        <chr>   <chr>
+#> 1 Overall Record <df [31 × 2]> 50-32   total
 #> 
 #> $NextEvent
-#> ── ESPN NBA Team Next Event from ESPN.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:25 UTC
-#> # A tibble: 1 × 4
-#>   id        date              name                                    short_name
-#>   <chr>     <chr>             <chr>                                   <chr>     
-#> 1 401898718 2026-10-14T02:00Z Golden State Warriors at Los Angeles L… GS VS LAL 
+#> data frame with 0 columns and 0 rows
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:25 UTC
+#> ℹ Data updated: 2026-10-13 01:16:40 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -515,7 +508,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com player box scores ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:26 UTC
+#> ℹ Data updated: 2026-10-13 01:16:41 UTC
 #> # A tibble: 26 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -540,7 +533,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:26 UTC
+#> ℹ Data updated: 2026-10-13 01:16:41 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

@@ -149,7 +149,7 @@ Saiem Gilani
   )
   espn_basketball_player_core(payload, athlete_id = 1966)
 #> ── ESPN Basketball Player Core from ESPN.com ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:07:28 UTC
+#> ℹ Data updated: 2026-10-13 01:15:38 UTC
 #> # A tibble: 1 × 35
 #>   athlete_id guid  uid   slug  type  first_name last_name full_name display_name
 #>        <int> <chr> <chr> <chr> <chr> <chr>      <chr>     <chr>     <chr>       

@@ -10,8 +10,8 @@ Columns shared verbatim across: espn_mbb_game_all, espn_mbb_pbp.
 | id | character | Id. |
 | sequence_number | character | Sequence number representing a shot-possession (V3 PBP). |
 | text | character | Text description of the play / record. |
-| away_score | integer | Away team score at the time of the play. |
-| home_score | integer | Home team score at the time of the play. |
+| away_score | integer | Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). |
+| home_score | integer | Home team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). |
 | scoring_play | logical | TRUE if the play resulted in points scored. |
 | score_value | integer | Point value of the play (2 / 3 / 1). |
 | wallclock | character | Wallclock. |
@@ -58,3 +58,4 @@ Columns shared verbatim across: espn_mbb_game_all, espn_mbb_pbp.
 | season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
 | game_date | Date | Game date (YYYY-MM-DD). |
 | game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| score_source | character | Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). |

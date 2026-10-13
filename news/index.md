@@ -2,6 +2,30 @@
 
 ## **hoopR 3.1.0.9000 (development version)**
 
+- [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+  [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+  the `Plays` frame of
+  [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  /
+  [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+  and
+  [`helper_espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.md)
+  /
+  [`helper_espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_pbp.md)
+  now rebuild `home_score` / `away_score` from the scoring plays (in
+  ESPN’s order, a made free throw shipped with `scoreValue` 0
+  counting 1) and keep the rebuild only when its last row equals the
+  official final; otherwise ESPN’s per-play scores are kept. A new last
+  column, `score_source` (`"rebuilt"` / `"espn"`), says which. This
+  repairs plays keyed late (ESPN’s score ran backwards and could end
+  short of the final), NBA 2013-2019 free throws, and college
+  neutral-site games whose scores were stored on the wrong side. Mirrors
+  sportsdataverse/sportsdataverse-py#830;
+  [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  /
+  [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  carry the column once a season is republished.
+
 - [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
   /
   [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
@@ -16,8 +40,7 @@
   [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
   /
   [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md).
-  Mirrors sportsdataverse-py
-  [\#782](https://github.com/sportsdataverse/hoopR/issues/782).
+  Mirrors sportsdataverse/sportsdataverse-py#782.
 
 - `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on
   KenPom’s numeric `game_date` (`20201128`): the date now parses as

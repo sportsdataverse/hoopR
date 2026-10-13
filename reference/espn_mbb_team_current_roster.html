@@ -285,57 +285,38 @@ Get ESPN NBA current team roster"><meta property="og:image" content="https://raw
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_mbb_team_current_roster</span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">150</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MBB Team Current Roster Information from ESPN.com ── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-12 03:08:26 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 15 × 59</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id team_uid        team_slug       team_location team_name team_nickname</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 53 more variables: team_abbreviation &lt;chr&gt;, team_display_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_short_name &lt;chr&gt;, team_color &lt;chr&gt;, team_alternate_color &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_is_active &lt;lgl&gt;, standingSummary &lt;chr&gt;, logo &lt;chr&gt;, logo_dark &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   group_id &lt;int&gt;, parent_group_id &lt;int&gt;, group_is_conference &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   conference_id &lt;int&gt;, athlete_id &lt;int&gt;, athlete_uid &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_guid &lt;chr&gt;, athlete_type &lt;chr&gt;, athlete_first_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_last_name &lt;chr&gt;, athlete_full_name &lt;chr&gt;, …</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-13 01:16:42 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 15 × 45</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    team_abbreviation team_alternate_color team_color team_display_name team_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> DUKE              ffffff               00539b     Duke Blue Devils      150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 40 more variables: team_is_active &lt;lgl&gt;, team_location &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_name &lt;chr&gt;, team_nickname &lt;chr&gt;, team_short_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_slug &lt;chr&gt;, team_uid &lt;chr&gt;, logo &lt;chr&gt;, logo_dark &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   group_id &lt;int&gt;, group_is_conference &lt;lgl&gt;, parent_group_id &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   conference_id &lt;int&gt;, athlete_active &lt;lgl&gt;, athlete_display_height &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_display_name &lt;chr&gt;, athlete_display_weight &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   athlete_first_name &lt;chr&gt;, athlete_full_name &lt;chr&gt;, athlete_guid &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">espn_nba_team_current_roster</span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">13</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Team Current Roster Information from ESPN.com ── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-12 03:08:27 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 104</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id team_uid       team_slug    team_location team_name team_abbreviation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 11 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 98 more variables: team_display_name &lt;chr&gt;, team_short_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_color &lt;chr&gt;, team_alternate_color &lt;chr&gt;, team_is_active &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   franchise..ref &lt;chr&gt;, franchise.id &lt;chr&gt;, franchise.uid &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   franchise.slug &lt;chr&gt;, franchise.location &lt;chr&gt;, franchise.name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   franchise.abbreviation &lt;chr&gt;, franchise.displayName &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   franchise.shortDisplayName &lt;chr&gt;, franchise.color &lt;chr&gt;, …</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-13 01:16:42 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

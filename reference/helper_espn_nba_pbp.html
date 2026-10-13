@@ -132,7 +132,10 @@ Parse ESPN NBA Player Box, helper function"><meta property="og:image" content="h
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Returns a tibble</p>
+    <p>For <code>helper_espn_nba_pbp()</code>: a tibble with the columns of <a href="espn_nba_game_all_plays_schema.html">espn_nba_game_all_plays_schema</a>, or <code>NULL</code>
+when the game has no play-by-play. <code>home_score</code> / <code>away_score</code> are rebuilt from the
+scoring plays when that reproduces the header's official final, otherwise they are
+ESPN's per-play values; the last column, <code>score_source</code> (<code>"rebuilt"</code> / <code>"espn"</code>), says which.</p>
 <p>Returns a tibble</p>
 <p>Returns a tibble</p>
     </div>

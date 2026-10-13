@@ -180,56 +180,37 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:26 UTC
-#> # A tibble: 15 × 59
-#>    team_id team_uid        team_slug       team_location team_name team_nickname
-#>      <int> <chr>           <chr>           <chr>         <chr>     <chr>        
-#>  1     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  2     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  3     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  4     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  5     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  6     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  7     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  8     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#>  9     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> 10     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> 11     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> 12     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> 13     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> 14     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> 15     150 s:40~l:41~t:150 duke-blue-devi… Duke          Blue Dev… Duke         
-#> # ℹ 53 more variables: team_abbreviation <chr>, team_display_name <chr>,
-#> #   team_short_name <chr>, team_color <chr>, team_alternate_color <chr>,
-#> #   team_is_active <lgl>, standingSummary <chr>, logo <chr>, logo_dark <chr>,
-#> #   group_id <int>, parent_group_id <int>, group_is_conference <lgl>,
-#> #   conference_id <int>, athlete_id <int>, athlete_uid <chr>,
-#> #   athlete_guid <chr>, athlete_type <chr>, athlete_first_name <chr>,
-#> #   athlete_last_name <chr>, athlete_full_name <chr>, …
+#> ℹ Data updated: 2026-10-13 01:16:42 UTC
+#> # A tibble: 15 × 45
+#>    team_abbreviation team_alternate_color team_color team_display_name team_id
+#>    <chr>             <chr>                <chr>      <chr>               <int>
+#>  1 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  2 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  3 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  4 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  5 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  6 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  7 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  8 DUKE              ffffff               00539b     Duke Blue Devils      150
+#>  9 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> 10 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> 11 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> 12 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> 13 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> 14 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> 15 DUKE              ffffff               00539b     Duke Blue Devils      150
+#> # ℹ 40 more variables: team_is_active <lgl>, team_location <chr>,
+#> #   team_name <chr>, team_nickname <chr>, team_short_name <chr>,
+#> #   team_slug <chr>, team_uid <chr>, logo <chr>, logo_dark <chr>,
+#> #   group_id <int>, group_is_conference <lgl>, parent_group_id <int>,
+#> #   conference_id <int>, athlete_active <lgl>, athlete_display_height <chr>,
+#> #   athlete_display_name <chr>, athlete_display_weight <chr>,
+#> #   athlete_first_name <chr>, athlete_full_name <chr>, athlete_guid <chr>, …
 # }
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-12 03:08:27 UTC
-#> # A tibble: 21 × 104
-#>    team_id team_uid       team_slug    team_location team_name team_abbreviation
-#>      <int> <chr>          <chr>        <chr>         <chr>     <chr>            
-#>  1      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  2      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  3      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  4      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  5      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  6      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  7      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  8      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#>  9      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> 10      13 s:40~l:46~t:13 los-angeles… Los Angeles   Lakers    LAL              
-#> # ℹ 11 more rows
-#> # ℹ 98 more variables: team_display_name <chr>, team_short_name <chr>,
-#> #   team_color <chr>, team_alternate_color <chr>, team_is_active <lgl>,
-#> #   franchise..ref <chr>, franchise.id <chr>, franchise.uid <chr>,
-#> #   franchise.slug <chr>, franchise.location <chr>, franchise.name <chr>,
-#> #   franchise.abbreviation <chr>, franchise.displayName <chr>,
-#> #   franchise.shortDisplayName <chr>, franchise.color <chr>, …
+#> ℹ Data updated: 2026-10-13 01:16:42 UTC
+#> # A tibble: 0 × 0
 # }
 ```
