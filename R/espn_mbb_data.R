@@ -2708,7 +2708,10 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
 
 #'  **Parse ESPN MBB PBP, helper function**
 #' @param resp Response object from the ESPN MBB game summary endpoint
-#' @return Returns a tibble
+#' @return For `helper_espn_mbb_pbp()`: a tibble with the columns of [espn_mbb_game_all_plays_schema], or `NULL`
+#'   when the game has no play-by-play. `home_score` / `away_score` are rebuilt from the
+#'   scoring plays when that reproduces the header's official final, otherwise they are
+#'   ESPN's per-play values; the last column, `score_source` (`"rebuilt"` / `"espn"`), says which.
 #' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_pbp <- function(resp) {
@@ -2983,6 +2986,8 @@ helper_espn_mbb_pbp <- function(resp) {
         "type_id",
         "team_id"
       )), ~ as.integer(.x)))
+
+    plays <- .repair_running_score(plays, homeTeamId, awayTeamId, homeTeamScore, awayTeamScore)
 
     plays_df <- plays %>%
       make_hoopR_data("ESPN MBB Play-by-Play Information from ESPN.com", Sys.time())

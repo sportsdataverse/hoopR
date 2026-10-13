@@ -16,7 +16,10 @@ helper_espn_nba_player_box(resp)
 \item{resp}{Response object from the ESPN NBA game summary endpoint}
 }
 \value{
-Returns a tibble
+For \code{helper_espn_nba_pbp()}: a tibble with the columns of \link{espn_nba_game_all_plays_schema}, or \code{NULL}
+when the game has no play-by-play. \code{home_score} / \code{away_score} are rebuilt from the
+scoring plays when that reproduces the header's official final, otherwise they are
+ESPN's per-play values; the last column, \code{score_source} (\code{"rebuilt"} / \code{"espn"}), says which.
 
 Returns a tibble
 

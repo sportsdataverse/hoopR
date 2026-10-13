@@ -51,7 +51,8 @@ test_that("ESPN - Get MBB play by play only (no coordinate data)", {
     "season",
     "season_type",
     "game_date",
-    "game_date_time"
+    "game_date_time",
+    "score_source"
   )
 
   expect_in(sort(cols), sort(colnames(x)))
@@ -115,7 +116,8 @@ test_that("ESPN - Get MBB play by play only (with coordinate data)", {
     "season",
     "season_type",
     "game_date",
-    "game_date_time"
+    "game_date_time",
+    "score_source"
   )
 
   expect_in(sort(cols), sort(colnames(x)))

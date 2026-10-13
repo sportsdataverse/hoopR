@@ -141,8 +141,8 @@ NULL
 #'    id \tab character \tab Id. \cr
 #'    sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
 #'    text \tab character \tab Text description of the play / record. \cr
-#'    away_score \tab integer \tab Away team score at the time of the play. \cr
-#'    home_score \tab integer \tab Home team score at the time of the play. \cr
+#'    away_score \tab integer \tab Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
+#'    home_score \tab integer \tab Home team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
 #'    scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
 #'    score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
 #'    wallclock \tab character \tab Wallclock. \cr
@@ -189,6 +189,7 @@ NULL
 #'    season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
 #'    game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
 #'    game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+#'    score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 #' }}
 #' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
@@ -1163,8 +1164,8 @@ NULL
 #'    id \tab character \tab Id. \cr
 #'    sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
 #'    text \tab character \tab Text description of the play / record. \cr
-#'    away_score \tab integer \tab Away team score at the time of the play. \cr
-#'    home_score \tab integer \tab Home team score at the time of the play. \cr
+#'    away_score \tab integer \tab Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
+#'    home_score \tab integer \tab Home team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
 #'    scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
 #'    score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
 #'    wallclock \tab character \tab Wallclock. \cr
@@ -1212,6 +1213,7 @@ NULL
 #'    season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
 #'    game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
 #'    game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+#'    score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 #' }}
 #' \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
