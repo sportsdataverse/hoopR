@@ -49,11 +49,9 @@ ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other
 site's answer for an unknown uuid and is not retried), all inheriting \code{hoopR_error}. Wrappers raise; they
 never return an empty frame.
 }
-}
-\examples{
-\donttest{
-  try(sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Basketligaen Functions:

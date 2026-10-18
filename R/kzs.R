@@ -2,6 +2,36 @@
 # kzs.si site calls, at parity with sdv-py sportsdataverse/basketball/kzs (origin/main e3d232ebc9).
 # Transport, season mapping and refusals: R/kzs_runtime.R; frames: R/kzs_parsers.R; columns: R/kzs_schema.R.
 
+# The @details of every kzs topic that shares the kzs_seasons() notes (roxygen @eval .intl_details()).
+.kzs_seasons_details <- c(
+  "* Unofficial and unsupported: these wrappers read the public read API (Java/Spring, built by OnixWeb) that the",
+  "  kzs.si site itself calls. No terms of use were located (unverified), api.kzs.si/robots.txt answers 401 and",
+  "  www.kzs.si/robots.txt 404, so no policy or Crawl-delay is published. The runtime waits at least 1 s before every",
+  "  request, retries included. Payloads are not redistributed as release assets.",
+  "* Personal data: the API serves officials' and coaches' emails, phones and home towns, and clubs' bank accounts and",
+  "  addresses, publicly. The parsers never output them (officials appear by name only; club addresses, personnel and",
+  "  the commissioner report are dropped). Do not add them back.",
+  "* Seasons are END years (2027 = 2026/2027); KZS' own season ids are opaque (27 = 2026/2027) and the runtime maps",
+  "  them. Competition ids are per season. Three team keys are never interchangeable: the match-team id (per match and",
+  "  side), team_id (one club team in one season) and club_id (across seasons). player_id is the registry id,",
+  "  person_id the person behind it.",
+  "* Errors are HTTP 400 for everything (an unknown id and a bad parameter alike), so the runtime raises",
+  "  `hoopR_asset_fetch` for it, never `hoopR_bad_request` or an empty frame. List routes default to 150 rows with no",
+  "  truncation signal: every list wrapper asks for a large limit and refuses a full page. The play-by-play and",
+  "  box-score wrappers, the leaderboards, teams, rounds and playing days each make one extra, cached request (the",
+  "  match header or the competition) to prove the answer is the one asked for and the game is final.",
+  "* Coverage: scores from 2007/08; box scores and play-by-play from 2015/16. Some 2020/21 men's games have a box",
+  "  score but no play-by-play (`hoopR_no_data`): the Genius data.json (genius_match_id in kzs_matches) is the",
+  "  fallback. Shot x/y are Genius court percent; side (LEFT/RIGHT) names the basket end and teams switch ends at half",
+  "  time, so normalise with side before stacking shots. Advanced box-score fields are 0 in every observed game.",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (an empty answer or list, a",
+  "  competition without standings, a final game with no play-by-play or box score, HTTP 404), `hoopR_asset_fetch`",
+  "  (HTTP 400, the API's only error status for an unknown id and a bad parameter alike; any other non-2xx; a non-JSON",
+  "  or empty body; an envelope whose status is not OK; a full list page; a game that is not final; a body for another",
+  "  competition, match, team, player or season than the one asked for) and `hoopR_bad_request` (a bad argument,",
+  "  before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch."
+)
+
 #' @title
 #' **Get KZS Seasons**
 #' @description
@@ -19,33 +49,7 @@
 #' | is_active | logical | True for the current season only (2026/2027 on 2026-10-12). |
 #' | active | logical | Same as `isActive`. |
 #' | season | integer | Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. |
-#' @details
-#' * Unofficial and unsupported: these wrappers read the public read API (Java/Spring, built by OnixWeb) that the
-#'   kzs.si site itself calls. No terms of use were located (unverified), api.kzs.si/robots.txt answers 401 and
-#'   www.kzs.si/robots.txt 404, so no policy or Crawl-delay is published. The runtime waits at least 1 s before every
-#'   request, retries included. Payloads are not redistributed as release assets.
-#' * Personal data: the API serves officials' and coaches' emails, phones and home towns, and clubs' bank accounts and
-#'   addresses, publicly. The parsers never output them (officials appear by name only; club addresses, personnel and
-#'   the commissioner report are dropped). Do not add them back.
-#' * Seasons are END years (2027 = 2026/2027); KZS' own season ids are opaque (27 = 2026/2027) and the runtime maps
-#'   them. Competition ids are per season. Three team keys are never interchangeable: the match-team id (per match and
-#'   side), team_id (one club team in one season) and club_id (across seasons). player_id is the registry id,
-#'   person_id the person behind it.
-#' * Errors are HTTP 400 for everything (an unknown id and a bad parameter alike), so the runtime raises
-#'   `hoopR_asset_fetch` for it, never `hoopR_bad_request` or an empty frame. List routes default to 150 rows with no
-#'   truncation signal: every list wrapper asks for a large limit and refuses a full page. The play-by-play and
-#'   box-score wrappers, the leaderboards, teams, rounds and playing days each make one extra, cached request (the
-#'   match header or the competition) to prove the answer is the one asked for and the game is final.
-#' * Coverage: scores from 2007/08; box scores and play-by-play from 2015/16. Some 2020/21 men's games have a box
-#'   score but no play-by-play (`hoopR_no_data`): the Genius data.json (genius_match_id in kzs_matches) is the
-#'   fallback. Shot x/y are Genius court percent; side (LEFT/RIGHT) names the basket end and teams switch ends at half
-#'   time, so normalise with side before stacking shots. Advanced box-score fields are 0 in every observed game.
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (an empty answer or list, a
-#'   competition without standings, a final game with no play-by-play or box score, HTTP 404), `hoopR_asset_fetch`
-#'   (HTTP 400, the API's only error status for an unknown id and a bad parameter alike; any other non-2xx; a non-JSON
-#'   or empty body; an envelope whose status is not OK; a full list page; a game that is not final; a body for another
-#'   competition, match, team, player or season than the one asked for) and `hoopR_bad_request` (a bad argument,
-#'   before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch.
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_seasons())
@@ -165,11 +169,7 @@ kzs_competition <- function(competition_id) {
 #' | type | character | Phase format (code table). |
 #' | groups | character | Groups of the phase (empty when the phase has one table). |
 #' | wins_needed | integer | Wins needed to take a best-of series. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_phases(competition_id = 579))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_phases(competition_id = 579)")
 #' @export
 #' @family KZS Functions
 kzs_phases <- function(competition_id) {
@@ -198,11 +198,7 @@ kzs_phases <- function(competition_id) {
 #' | competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
 #' | phase_id | integer | Competition-phase id. Joins to `competitions[].competitionPhaseId` on matches and `/competitions/{competitionId}` `phases[].id`. |
 #' | rounds | integer | Number of rounds in the phase. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_rounds(competition_id = 579))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_rounds(competition_id = 579)")
 #' @export
 #' @family KZS Functions
 kzs_rounds <- function(competition_id) {
@@ -256,11 +252,7 @@ kzs_rounds <- function(competition_id) {
 #' | player_firstname | character | The player's given name as registered with KZS (lower-case n in this route). |
 #' | player_lastname | character | The player's family name as registered with KZS (lower-case n in this route). |
 #' | photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_player_leaderboard(competition_id = 579))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_player_leaderboard(competition_id = 579)")
 #' @export
 #' @family KZS Functions
 kzs_player_leaderboard <- function(competition_id, stats_category = "PTS", order_type = "AVERAGE", sort_by = "avg",
@@ -316,11 +308,7 @@ kzs_player_leaderboard <- function(competition_id, stats_category = "PTS", order
 #' | sum | double | Season total of the requested statsCategory. |
 #' | average | double | Per-game average of the statsCategory. |
 #' | max | double | Single-game best of the statsCategory. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_team_leaderboard(competition_id = 579))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_team_leaderboard(competition_id = 579)")
 #' @export
 #' @family KZS Functions
 kzs_team_leaderboard <- function(competition_id, stats_category = "PTS", order_type = "AVERAGE", sort_by = "avg", sort
@@ -677,11 +665,7 @@ kzs_pbp <- function(match_id) {
 #' | player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. Players listed here are the first (home) team. |
 #' | first_name | character | The home player's (as in the feed) given name. |
 #' | last_name | character | The home player's (as in the feed) family name. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_pbp_players(match_id = 101839))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_pbp_players(match_id = 101839)")
 #' @export
 #' @family KZS Functions
 kzs_pbp_players <- function(match_id) {
@@ -904,11 +888,7 @@ kzs_team_box_score <- function(match_id) {
 #' | score1 | integer | First (home) team score at the end of the minute, an integer. |
 #' | score2 | integer | Second (away) team score at the end of the minute, an integer. |
 #' | total_minutes | integer | Game length in minutes (40, 45 with one overtime). |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_score_changes(match_id = 101839))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_score_changes(match_id = 101839)")
 #' @export
 #' @family KZS Functions
 kzs_score_changes <- function(match_id) {
@@ -990,11 +970,7 @@ kzs_standings <- function(competition_id) {
 #' | competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
 #' | date | character | Calendar date of the match day, 'YYYY-MM-DD'. |
 #' | no_of_games | integer | Matches on that day. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_playing_days(competition_id = 579))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_playing_days(competition_id = 579)")
 #' @export
 #' @family KZS Functions
 kzs_playing_days <- function(competition_id) {
@@ -1097,11 +1073,7 @@ kzs_teams <- function(competition_id) {
 #' | logo_uuid | character | Logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
 #' | season | integer | Season of the registration. |
 #' | competitions | character | Competitions of the team this season (id, name, rule, phases). |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_team(team_id = 17551))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_team(team_id = 17551)")
 #' @export
 #' @family KZS Functions
 kzs_team <- function(team_id) {
@@ -1179,11 +1151,7 @@ kzs_team <- function(team_id) {
 #' | best_assists_player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
 #' | best_assists_player_positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
 #' | best_average_assists | double | That player's assists per game. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_team_general(competition_id = 579, team_id = 17551))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_team_general(competition_id = 579, team_id = 17551)")
 #' @export
 #' @family KZS Functions
 kzs_team_general <- function(team_id, competition_id) {
@@ -1230,11 +1198,7 @@ kzs_team_general <- function(team_id, competition_id) {
 #' | photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
 #' | positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
 #' | jersey_number | character | Shirt number worn, sent as a string ('1', '55'). |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_roster(competition_id = 579, team_id = 17551))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_roster(competition_id = 579, team_id = 17551)")
 #' @export
 #' @family KZS Functions
 kzs_roster <- function(team_id, competition_id) {
@@ -1275,11 +1239,7 @@ kzs_roster <- function(team_id, competition_id) {
 #' | homegrown | logical | True when the player counts as homegrown (domaci igralec) for roster limits. |
 #' | photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
 #' | positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-#' @inherit kzs_seasons details
-#' @examples
-#' \donttest{
-#'   try(kzs_player(player_id = 106285))
-#' }
+#' @eval .intl_details(.kzs_seasons_details, "kzs_player(player_id = 106285)")
 #' @export
 #' @family KZS Functions
 kzs_player <- function(player_id) {

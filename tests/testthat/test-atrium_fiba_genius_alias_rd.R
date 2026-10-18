@@ -79,3 +79,13 @@ test_that("every competition alias Rd carries its base wrapper's returns table",
     expect_identical(rd_tabular_cols(tabs[[1]]), base_cols, label = paste0(r$alias, "() col_names"))
   }
 })
+
+test_that("competition alias Rds show their calls as a details code block, not a run example", {
+  for (topic in unique(vapply(alias_rd_routes(), `[[`, "", "topic"))) {
+    rd <- alias_rd_parse(topic)
+    expect_length(Filter(function(x) rd_tag(x) == "\\examples", rd), 0L)
+    details <- Filter(function(x) rd_tag(x) == "\\details", rd)
+    expect_length(details, 1L)
+    expect_length(rd_find(details[[1]], "\\preformatted"), 1L)
+  }
+})

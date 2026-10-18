@@ -3,6 +3,44 @@
 # refusals: R/kbl_runtime.R; frames: R/kbl_parsers.R; columns and code tables: R/kbl_tables.R.
 # WKBL (the women's league) is out of scope by owner ruling.
 
+# The @details of every kbl topic that shares the kbl_seasons() notes (roxygen @eval .intl_details()).
+.kbl_seasons_details <- c(
+  "* Unofficial and unsupported: these wrappers read api.kbl.or.kr, the data API behind the www.kbl.or.kr React site",
+  "  (stats vendor sports2i). No key, cookie or proxy is needed, but two request headers must be present (Channel and",
+  "  TeamCode; the runtime sends WEB and XX). www.kbl.or.kr/robots.txt returns the SPA's HTML and",
+  "  api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or Crawl-delay is published (checked 2026-10-12); the",
+  "  site's terms (/terms/list) were not reviewed for data reuse. The runtime waits at least 1 s before every request,",
+  "  retries included. Payloads are not redistributed as release assets.",
+  "* Not wrapped: the site's /record/* and `/player/player/{pcode}` pages are rendered by the sports2i widget from two",
+  "  other hosts (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors, clutch, hustle, shot dashboards,",
+  "  all-time leaders) and need their own intake. WKBL (the women's league) is out of scope by owner ruling.",
+  "* Seasons are END years (2026 = 2025-26). KBL numbers seasons AND D-League (reserve league) editions with one",
+  "  sequential seasonCode; division picks 'kbl' or 'd_league' and game_code the competition inside the season, and",
+  "  the wrapper sends the API's glkey. The playoff routes take the REGULAR-SEASON key; the old route serves",
+  "  seasonCode below 45 and the new one 45 on, and the wrapper picks it.",
+  "* Ids: gmkey `S{seasonCode}G{gameCode}N{gameNo}` (a string, an object only inside the new playoff bracket),",
+  "  team_code (two-digit string with a leading zero, not stable across ownership changes) and pcode (six-digit",
+  "  string, the same on every route). The play-by-play carries no pcode: join its player_name to the game's box score",
+  "  on name and team_code. isEnded is unreliable (0 on every finished game through 2005-06), so a game is final when",
+  "  isEnded is 1 or when it is dated before today (KST), both teams scored and its play-by-play reached the game-end",
+  "  row; anything else raises `hoopR_asset_fetch`. The first game call also fetches the header (and, for such a game,",
+  "  the play-by-play) once; the answer is cached for the process.",
+  "* Coverage: box scores and play-by-play from the first season (1997); shot x/y from 2006-07 (an earlier game's shot",
+  "  chart is empty: a zero-row tibble); advanced rates are filled from 1997-98 on (the vendor computes them from the",
+  "  box); screen assists and deflections are 0 before the recent seasons. fg is TWO-point field goals made (dunks",
+  "  included), fgt all field goals, and a made dunk is its own row in the play-by-play. Shot x/y are pixels on the",
+  "  site's 726 x 412 full-court image; basket names the target end and teams switch at half-time, so normalise with",
+  "  basket before stacking shots.",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, or the API has nothing",
+  "  for the request: an empty list, a final game with no box score, no playoff bracket, no rounds, no schedule rows",
+  "  in the window), `hoopR_bad_request` (a malformed gmkey, a season that is not an END year between 1997 and 2027,",
+  "  an unknown division or game_code, or bad schedule dates, raised before any request) and `hoopR_asset_fetch` (any",
+  "  other non-2xx including the unknown-id HTTP 500 and the HTTP 400 the API answers without its two headers, the KBL",
+  "  error envelope, an empty or non-JSON body, a game that is not final, or a body for another game, season or window",
+  "  than the one asked for). HTTP 500 is the API's deterministic answer to an unknown id and is not retried. Wrappers",
+  "  raise; they never warn and return empty."
+)
+
 #' @title
 #' **Get KBL Seasons**
 #' @description
@@ -26,41 +64,7 @@
 #' | game_code | character | Competition type within the season: 01 regular season (the only value the list returns). |
 #' | start_date | Date | First date of the season, YYYYMMDD. |
 #' | end_date | Date | Last date of the season, YYYYMMDD. |
-#' @details
-#' * Unofficial and unsupported: these wrappers read api.kbl.or.kr, the data API behind the www.kbl.or.kr React site
-#'   (stats vendor sports2i). No key, cookie or proxy is needed, but two request headers must be present (Channel and
-#'   TeamCode; the runtime sends WEB and XX). www.kbl.or.kr/robots.txt returns the SPA's HTML and
-#'   api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or Crawl-delay is published (checked 2026-10-12); the
-#'   site's terms (/terms/list) were not reviewed for data reuse. The runtime waits at least 1 s before every request,
-#'   retries included. Payloads are not redistributed as release assets.
-#' * Not wrapped: the site's /record/* and `/player/player/{pcode}` pages are rendered by the sports2i widget from two
-#'   other hosts (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors, clutch, hustle, shot dashboards,
-#'   all-time leaders) and need their own intake. WKBL (the women's league) is out of scope by owner ruling.
-#' * Seasons are END years (2026 = 2025-26). KBL numbers seasons AND D-League (reserve league) editions with one
-#'   sequential seasonCode; division picks 'kbl' or 'd_league' and game_code the competition inside the season, and
-#'   the wrapper sends the API's glkey. The playoff routes take the REGULAR-SEASON key; the old route serves
-#'   seasonCode below 45 and the new one 45 on, and the wrapper picks it.
-#' * Ids: gmkey `S{seasonCode}G{gameCode}N{gameNo}` (a string, an object only inside the new playoff bracket),
-#'   team_code (two-digit string with a leading zero, not stable across ownership changes) and pcode (six-digit
-#'   string, the same on every route). The play-by-play carries no pcode: join its player_name to the game's box score
-#'   on name and team_code. isEnded is unreliable (0 on every finished game through 2005-06), so a game is final when
-#'   isEnded is 1 or when it is dated before today (KST), both teams scored and its play-by-play reached the game-end
-#'   row; anything else raises `hoopR_asset_fetch`. The first game call also fetches the header (and, for such a game,
-#'   the play-by-play) once; the answer is cached for the process.
-#' * Coverage: box scores and play-by-play from the first season (1997); shot x/y from 2006-07 (an earlier game's shot
-#'   chart is empty: a zero-row tibble); advanced rates are filled from 1997-98 on (the vendor computes them from the
-#'   box); screen assists and deflections are 0 before the recent seasons. fg is TWO-point field goals made (dunks
-#'   included), fgt all field goals, and a made dunk is its own row in the play-by-play. Shot x/y are pixels on the
-#'   site's 726 x 412 full-court image; basket names the target end and teams switch at half-time, so normalise with
-#'   basket before stacking shots.
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, or the API has nothing
-#'   for the request: an empty list, a final game with no box score, no playoff bracket, no rounds, no schedule rows
-#'   in the window), `hoopR_bad_request` (a malformed gmkey, a season that is not an END year between 1997 and 2027,
-#'   an unknown division or game_code, or bad schedule dates, raised before any request) and `hoopR_asset_fetch` (any
-#'   other non-2xx including the unknown-id HTTP 500 and the HTTP 400 the API answers without its two headers, the KBL
-#'   error envelope, an empty or non-JSON body, a game that is not final, or a body for another game, season or window
-#'   than the one asked for). HTTP 500 is the API's deterministic answer to an unknown id and is not retried. Wrappers
-#'   raise; they never warn and return empty.
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_seasons())
@@ -598,11 +602,7 @@ kbl_shots <- function(gmkey) {
 #' | home_margin | integer | Home margin (home minus away points) at the checkpoint. |
 #' | home_score | integer | Home team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule. |
 #' | away_score | integer | Away team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_score_track(gmkey = "S47G01N49"))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, 'kbl_score_track(gmkey = "S47G01N49")')
 #' @export
 #' @family KBL Functions
 kbl_score_track <- function(gmkey) {
@@ -641,11 +641,7 @@ kbl_score_track <- function(gmkey) {
 #' | value | double | The leader's total in the category in this game. |
 #' | play_min | integer | Minutes the leader played this game; add play_sec seconds. |
 #' | play_sec | integer | Seconds part of the leader's playing time (0-59). |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_game_leaders(gmkey = "S47G01N49"))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, 'kbl_game_leaders(gmkey = "S47G01N49")')
 #' @export
 #' @family KBL Functions
 kbl_game_leaders <- function(gmkey) {
@@ -725,11 +721,7 @@ kbl_game_leaders <- function(gmkey) {
 #' | play_sec | integer | Seconds part of the playing time (0-59), added to `playMin`. Season total for the competition (glkey). |
 #' | foulout | integer | Meaning unverified: values exceed games played (70 for a 40-game player with 74 fouls); possibly fouls drawn, as this route has no `fo`. |
 #' | minutes_played | double | Playing time in minutes (play_min + play_sec / 60), derived. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_player_totals(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_player_totals(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_player_totals <- function(season, division = "kbl", game_code = "01") {
@@ -865,11 +857,7 @@ kbl_standings <- function(season, division = "kbl", game_code = "01") {
 #' | team_name | character | Team short name in English (e.g. 'KT'). |
 #' | game_number | integer | 1-based game number in the team's season: the n-th entry of the team's rank track. |
 #' | rank | integer | Standing (1 = first): after the game_number-th game on the rank track, the current rank on the standings routes. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_team_tracks(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_team_tracks(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_team_tracks <- function(season, division = "kbl", game_code = "01") {
@@ -906,11 +894,7 @@ kbl_team_tracks <- function(season, division = "kbl", game_code = "01") {
 #' | round | integer | Round number of the season (the KBL plays six rounds). |
 #' | from_date | Date | First date of the round, YYYYMMDD. |
 #' | to_date | Date | Last date of the round, YYYYMMDD. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_rounds(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_rounds(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_rounds <- function(season, division = "kbl", game_code = "01") {
@@ -942,11 +926,7 @@ kbl_rounds <- function(season, division = "kbl", game_code = "01") {
 #' | team_code | character | KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList `teamCode`, game `tcodeH`/`tcodeA`, `t` in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (`teamCodeD`). |
 #' | team_name | character | Team short name (Korean, e.g. Wonju DB). English names: /common/teamList `teamNameEn` / `teamNameFullEn`, joined on the team code. |
 #' | team_name_full | character | Team full name (Korean). |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_playoff_seeds(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_playoff_seeds(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_playoff_seeds <- function(season) {
@@ -981,11 +961,7 @@ kbl_playoff_seeds <- function(season) {
 #' | wins | integer | Wins of the team in the series. |
 #' | losses | integer | Losses of the team in the series. |
 #' | game_date | Date | Date of a game of the series, KST (which one is unverified); old bracket format only. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_playoff_series(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_playoff_series(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_playoff_series <- function(season) {
@@ -1024,11 +1000,7 @@ kbl_playoff_series <- function(season) {
 #' | home_score | integer | Home team points. |
 #' | away_score | integer | Away team points. |
 #' | home_win | logical | 1 when the home team won, else 0. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_playoff_games(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_playoff_games(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_playoff_games <- function(season) {
@@ -1064,11 +1036,7 @@ kbl_playoff_games <- function(season) {
 #' | total_score | integer | Points over the round. |
 #' | total_rebound | integer | Rebounds over the round. |
 #' | total_assist | integer | Assists over the round. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_round_mvps(season = 2025))
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_round_mvps(season = 2025)")
 #' @export
 #' @family KBL Functions
 kbl_round_mvps <- function(season) {
@@ -1107,11 +1075,7 @@ kbl_round_mvps <- function(season) {
 #' | max_win | integer | Longest winning streak of the season. |
 #' | max_loss | integer | Longest losing streak of the season. |
 #' | last_five | character | The last five results as a comma-separated string, most recent first: 1 win, 0 loss. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_current_standings())
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_current_standings()")
 #' @export
 #' @family KBL Functions
 kbl_current_standings <- function() {
@@ -1146,11 +1110,7 @@ kbl_current_standings <- function() {
 #' | back_num | character | Jersey number (string). |
 #' | pos | character | Position code (string): C center, FD forward, GD guard, FC forward-center, GF guard-forward; table in the returns md. |
 #' | player_flag | character | Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. |
-#' @inherit kbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(kbl_season_leaders())
-#' }
+#' @eval .intl_details(.kbl_seasons_details, "kbl_season_leaders()")
 #' @export
 #' @family KBL Functions
 kbl_season_leaders <- function() {

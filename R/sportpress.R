@@ -2,6 +2,36 @@
 # (bnxt.sportpress.info/api/v1), at parity with sdv-py sportsdataverse/basketball/bnxt (origin/main e3d232e).
 # Transport and refusals: R/sportpress_runtime.R; frames: R/sportpress_parsers.R.
 
+# The @details of every sportpress topic that shares the sportpress_ui_strings() notes (roxygen @eval .intl_details()).
+.sportpress_ui_strings_details <- c(
+  "* Unofficial and unsupported: the Sportpress API is the JSON backend of bnxtleague.com, not a documented public",
+  "  API. Every route needs a header key; it is public (hard-coded in the site bundle), `bnxt_runtime` reads it from",
+  "  the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs",
+  "  it. A 401 raises AssetFetchError (`key rotated?`). robots.txt allows everything; requests are spaced at least 1 s",
+  "  apart. Payloads are not redistributed as release assets.",
+  "* Season key: the END year (`season=2026` is 2025-26), the API's own key on the season routes. Every other route is",
+  "  keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,",
+  "  24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; `uu_team_id` is the stable club), the",
+  "  roster id (player x team x season) or the game id (unique across seasons). `sportpress_phases(season)` maps a",
+  "  season to its competition id.",
+  "* Coverage: schedule and rosters from 2021-22 (2020-21 is empty); box scores for 2021-22, 2024-25, 2025-26 and",
+  "  2026-27 (2022-23 and 2023-24 answer empty); standings and averages for 2021-22 and 2024-25 on; play-by-play",
+  "  ('film', with court x/y) for 2021-22 and 2026-27 only: for 2022-23 to 2025-26 use Genius play-by-play through",
+  "  `genius_id` ([sportpress_game_slider()], organisation BNXT). The game routes (box score, film, overview) refuse a",
+  "  game that is not finished (AssetFetchError).",
+  "* Data notes: a team's box total can differ from the schedule final score on about 18 of 1,246 sampled team boxes",
+  "  (mostly 2024-25, by 2-21 points); the frames report what the API serves. `nationality_code` is dirty (lower case,",
+  "  `USA/BEL` pairs, empty, `HOL`). Names differ by language and sponsor: join on ids. Contact and social fields are",
+  "  dropped; only a player's public birth date is kept. The sibling tenants sopron.sportpress.info and",
+  "  beac.sportpress.info are not wrapped.",
+  "* Errors are classed conditions: `hoopR_no_data` (HTTP 404, an empty `data` list: an unknown id or a season without",
+  "  data, an empty ranking), `hoopR_bad_request` (an id or season that is not an integer, HTTP 400 / 422) and",
+  "  `hoopR_asset_fetch` (a rejected key after one renewal, any other non-200, a non-JSON or empty body, an error or",
+  "  changed envelope, a game that is not finished, a body for another season, competition, team or game), all",
+  "  inheriting `hoopR_error`. Wrappers raise; they never return an empty frame for a failed request. Whole doubles",
+  "  (`24`) are accepted for integer arguments."
+)
+
 #' @title
 #' **Get BNXT League UI Strings**
 #' @description
@@ -18,37 +48,7 @@
 #' | language | character | ISO 639-1 code of the UI language: en, fr (French) or nl (Dutch). |
 #' | key | character | Dotted UI string key such as 'statistics.individual.points'; 302 keys per language. |
 #' | text | character | The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons. |
-#' @details
-#' * Unofficial and unsupported: the Sportpress API is the JSON backend of bnxtleague.com, not a documented public
-#'   API. Every route needs a header key; it is public (hard-coded in the site bundle), `bnxt_runtime` reads it from
-#'   the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs
-#'   it. A 401 raises AssetFetchError (`key rotated?`). robots.txt allows everything; requests are spaced at least 1 s
-#'   apart. Payloads are not redistributed as release assets.
-#' * Season key: the END year (`season=2026` is 2025-26), the API's own key on the season routes. Every other route is
-#'   keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,
-#'   24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; `uu_team_id` is the stable club), the
-#'   roster id (player x team x season) or the game id (unique across seasons). `sportpress_phases(season)` maps a
-#'   season to its competition id.
-#' * Coverage: schedule and rosters from 2021-22 (2020-21 is empty); box scores for 2021-22, 2024-25, 2025-26 and
-#'   2026-27 (2022-23 and 2023-24 answer empty); standings and averages for 2021-22 and 2024-25 on; play-by-play
-#'   ('film', with court x/y) for 2021-22 and 2026-27 only: for 2022-23 to 2025-26 use Genius play-by-play through
-#'   `genius_id` ([sportpress_game_slider()], organisation BNXT). The game routes (box score, film, overview) refuse a
-#'   game that is not finished (AssetFetchError).
-#' * Data notes: a team's box total can differ from the schedule final score on about 18 of 1,246 sampled team boxes
-#'   (mostly 2024-25, by 2-21 points); the frames report what the API serves. `nationality_code` is dirty (lower case,
-#'   `USA/BEL` pairs, empty, `HOL`). Names differ by language and sponsor: join on ids. Contact and social fields are
-#'   dropped; only a player's public birth date is kept. The sibling tenants sopron.sportpress.info and
-#'   beac.sportpress.info are not wrapped.
-#' * Errors are classed conditions: `hoopR_no_data` (HTTP 404, an empty `data` list: an unknown id or a season without
-#'   data, an empty ranking), `hoopR_bad_request` (an id or season that is not an integer, HTTP 400 / 422) and
-#'   `hoopR_asset_fetch` (a rejected key after one renewal, any other non-200, a non-JSON or empty body, an error or
-#'   changed envelope, a game that is not finished, a body for another season, competition, team or game), all
-#'   inheriting `hoopR_error`. Wrappers raise; they never return an empty frame for a failed request. Whole doubles
-#'   (`24`) are accepted for integer arguments.
-#' @examples
-#' \donttest{
-#'   try(sportpress_ui_strings())
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_ui_strings()")
 #' @export
 #' @family BNXT League Functions
 sportpress_ui_strings <- function() {
@@ -73,7 +73,7 @@ sportpress_ui_strings <- function() {
 #' | col_name | type | description |
 #' |:---|:---|:---|
 #' | season | integer | Season END year in which the clubs (countries) have teams; includes 2021 = 2020-21. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_club_seasons())
@@ -106,11 +106,7 @@ sportpress_club_seasons <- function() {
 #' | name | character | Referee name 'First Last' (free text). |
 #' | title_id | integer | Staff title id: 1 = Head coach, 2 = Referee; Assistant coach has its own id. |
 #' | title_name | character | Staff title in English: Head coach, Assistant coach or Referee. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_referees())
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_referees()")
 #' @export
 #' @family BNXT League Functions
 sportpress_referees <- function() {
@@ -142,7 +138,7 @@ sportpress_referees <- function() {
 #' | phase_id | integer | Phase id (key space: sportpress phases); the `{phaseId}` of the standings route. New every season. |
 #' | phase_name | character | Phase name as entered in the CMS; names differ every season. |
 #' | standings_visible | logical | Whether the phase shows standings; false for playoff phases, which answer the standings route empty. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_phases(season = 2026))
@@ -181,7 +177,7 @@ sportpress_phases <- function(season) {
 #' | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
 #' | club_id | integer | Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. |
 #' | club_name | character | Country name in English, Belgium or Netherlands. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_competition_teams(competition_id = 24))
@@ -219,11 +215,7 @@ sportpress_competition_teams <- function(competition_id) {
 #' | name | character | Staff member name 'First Last' (free text). |
 #' | title_id | integer | Staff title id: 1 = Head coach; Assistant coach has its own id. |
 #' | title_name | character | Staff title in English: Head coach or Assistant coach. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_competition_staff(competition_id = 24))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_competition_staff(competition_id = 24)")
 #' @export
 #' @family BNXT League Functions
 sportpress_competition_staff <- function(competition_id) {
@@ -279,7 +271,7 @@ sportpress_competition_staff <- function(competition_id) {
 #' | streak_is_win | logical | True for a winning streak, false for a losing one. |
 #' | streak_count | integer | Length of the current streak in games. |
 #' | group | character | Group label for split phases; null in every sample. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_standings(competition_id = 24, phase_id = 169))
@@ -332,7 +324,7 @@ sportpress_standings <- function(competition_id, phase_id) {
 #' | away_team | character | Away side. Display name incl. the sponsor. Teams of the playoff phases carry a ' playoff' suffix (2025-26), and standings names vary with X-Localization ('Partena Professional Okapi Aalst Playoff' (en) vs 'Okapi Aalst Playoff' (nl, fr)): never join on it. |
 #' | away_team_short_name | character | Away side. Three-letter club code (CHA, OOS, ANT, MON, LIM, ...), stable across seasons in the samples. |
 #' | away_score | integer | Away side. Final points of the side, including overtime. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_schedule(season = 2026))
@@ -381,11 +373,7 @@ sportpress_schedule <- function(season, month = -1, phase_id = NULL) {
 #' | away_team | character | Away side. Display name incl. the sponsor. Teams of the playoff phases carry a ' playoff' suffix (2025-26), and standings names vary with X-Localization ('Partena Professional Okapi Aalst Playoff' (en) vs 'Okapi Aalst Playoff' (nl, fr)): never join on it. |
 #' | away_team_short_name | character | Away side. Three-letter club code (CHA, OOS, ANT, MON, LIM, ...), stable across seasons in the samples. |
 #' | away_score | integer | Away side. Final points of the side, including overtime. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_game_slider(competition_id = 25))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_game_slider(competition_id = 25)")
 #' @export
 #' @family BNXT League Functions
 sportpress_game_slider <- function(competition_id) {
@@ -422,7 +410,7 @@ sportpress_game_slider <- function(competition_id) {
 #' | team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
 #' | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
 #' | value | numeric | The team's per-game mean (or percentage 0-100) in the row's category. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_team_rankings(competition_id = 24))
@@ -475,7 +463,7 @@ sportpress_team_rankings <- function(competition_id, phase_id = NULL, limit = NU
 #' | value | numeric | The player's per-game mean (or percentage 0-100) in the row's category. |
 #' | throw_made | numeric | Field goals made per game; filled in the three percentage categories only. |
 #' | throw_attempted | numeric | Field goals attempted per game; filled in the three percentage categories only. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_player_rankings(competition_id = 24))
@@ -521,7 +509,7 @@ sportpress_player_rankings <- function(competition_id, phase_id = NULL, limit = 
 #' | last_name | character | Family name of the player as entered in the CMS. |
 #' | nationality_code | character | Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. |
 #' | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_season_roster(season = 2026))
@@ -554,11 +542,7 @@ sportpress_season_roster <- function(season) {
 #' |:---|:---|:---|
 #' | season | integer | Season END year the codes were asked for. |
 #' | nationality_code | character | A distinct nationality code of the season's players, as served (dirty). |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_nationality_codes(season = 2026))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_nationality_codes(season = 2026)")
 #' @export
 #' @family BNXT League Functions
 sportpress_nationality_codes <- function(season) {
@@ -598,11 +582,7 @@ sportpress_nationality_codes <- function(season) {
 #' | last_name | character | Family name of the player as entered in the CMS. |
 #' | nationality_code | character | Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. |
 #' | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_team_roster(competition_team_id = 541))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_roster(competition_team_id = 541)")
 #' @export
 #' @family BNXT League Functions
 sportpress_team_roster <- function(competition_team_id) {
@@ -641,11 +621,7 @@ sportpress_team_roster <- function(competition_team_id) {
 #' | average_score_for | numeric | Points scored per game by the team over the season; null for a team with no statistics. |
 #' | average_score_against | numeric | Points conceded per game; null for a team with no statistics. |
 #' | field_goal_percent | numeric | Team field-goal percentage 0-100; null for a team with no statistics. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_team_find(competition_team_id = 541))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_find(competition_team_id = 541)")
 #' @export
 #' @family BNXT League Functions
 sportpress_team_find <- function(competition_team_id) {
@@ -709,11 +685,7 @@ sportpress_team_find <- function(competition_team_id) {
 #' | assist | numeric | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
 #' | points | numeric | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
 #' | value | numeric | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_team_player_averages(competition_team_id = 541))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_player_averages(competition_team_id = 541)")
 #' @export
 #' @family BNXT League Functions
 sportpress_team_player_averages <- function(competition_team_id) {
@@ -789,11 +761,7 @@ sportpress_team_player_averages <- function(competition_team_id) {
 #' | points | integer | The team's own points scored (2 x two-pointers + 3 x three-pointers + free throws). |
 #' | value | integer | The team's own efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
 #' | plusminus | integer | The team's own plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_team_games(competition_team_id = 541))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_games(competition_team_id = 541)")
 #' @export
 #' @family BNXT League Functions
 sportpress_team_games <- function(competition_team_id) {
@@ -837,11 +805,7 @@ sportpress_team_games <- function(competition_team_id) {
 #' | team_short_name | character | Three-letter club code of the team. |
 #' | competition_id | integer | Competition id the roster entry's team plays in. |
 #' | season | integer | Season END year of the roster entry's competition. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_roster_find(roster_id = 11193))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_roster_find(roster_id = 11193)")
 #' @export
 #' @family BNXT League Functions
 sportpress_roster_find <- function(roster_id) {
@@ -908,11 +872,7 @@ sportpress_roster_find <- function(roster_id) {
 #' | assist | numeric | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
 #' | points | numeric | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
 #' | value | numeric | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_player_career(roster_id = 11193))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_player_career(roster_id = 11193)")
 #' @export
 #' @family BNXT League Functions
 sportpress_player_career <- function(roster_id) {
@@ -989,11 +949,7 @@ sportpress_player_career <- function(roster_id) {
 #' | assist | integer | Assists (passes leading directly to a made basket). |
 #' | points | integer | Points scored (2 x two-pointers + 3 x three-pointers + free throws). |
 #' | value | integer | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_player_games(roster_id = 11193))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_player_games(roster_id = 11193)")
 #' @export
 #' @family BNXT League Functions
 sportpress_player_games <- function(roster_id) {
@@ -1040,7 +996,7 @@ sportpress_player_games <- function(roster_id) {
 #' | away_score | integer | Away side. Final points of the side, including overtime. |
 #' | last_game_id | integer | Latest finished meeting of the same two teams in the competition, which can be LATER than this game; null when none. |
 #' | next_game_id | integer | Next meeting of the same two teams; null in every sample. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_game_find(game_id = 11295))
@@ -1076,7 +1032,7 @@ sportpress_game_find <- function(game_id) {
 #' | competition_team_id | integer | Competition-team id of the side. |
 #' | period | integer | Period number: 1-4 are the quarters, 5 and up are overtimes (5 = first overtime). |
 #' | score | integer | Points the side scored IN that period (not cumulative). |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_game_periods(game_id = 11295))
@@ -1141,7 +1097,7 @@ sportpress_game_periods <- function(game_id) {
 #' | points | integer | The team's total: points scored (2 x two-pointers + 3 x three-pointers + free throws). |
 #' | value | integer | The team's total: efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
 #' | plusminus | integer | The team's total: plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_game_overview(game_id = 11295))
@@ -1211,11 +1167,7 @@ sportpress_game_overview <- function(game_id) {
 #' | assist | integer | Assists (passes leading directly to a made basket). |
 #' | points | integer | Points scored (2 x two-pointers + 3 x three-pointers + free throws). |
 #' | value | integer | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_game_top_performers(game_id = 11295))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_game_top_performers(game_id = 11295)")
 #' @export
 #' @family BNXT League Functions
 sportpress_game_top_performers <- function(game_id) {
@@ -1254,7 +1206,7 @@ sportpress_game_top_performers <- function(game_id) {
 #' | nationality_code | character | Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. |
 #' | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
 #' | value | numeric | The leader's count (or percentage) in that statistic in this game. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_game_leaders(game_id = 11295))
@@ -1331,7 +1283,7 @@ sportpress_game_leaders <- function(game_id) {
 #' | points | integer | Points scored (2 x two-pointers + 3 x three-pointers + free throws). |
 #' | value | integer | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
 #' | plusminus | integer | Plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_game_box(competition_id = 25, game_id = 11295))
@@ -1398,7 +1350,7 @@ sportpress_game_box <- function(competition_id, game_id) {
 #' | points | integer | Team points in the box score; can differ from the schedule final score (about 18 of 1,246 sampled team boxes, by 2-21 points). |
 #' | value | integer | The team's total: efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
 #' | plusminus | integer | The team's total: plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. |
-#' @inherit sportpress_ui_strings details
+#' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
 #'   try(sportpress_game_team_box(competition_id = 25, game_id = 11295))
@@ -1454,11 +1406,7 @@ sportpress_game_team_box <- function(competition_id, game_id) {
 #' | player2_id | integer | Player id of the second player; filled on substitutions only. |
 #' | player2_first_name | character | Given name of the second player; substitutions only. |
 #' | player2_last_name | character | Family name of the second player; substitutions only. |
-#' @inherit sportpress_ui_strings details
-#' @examples
-#' \donttest{
-#'   try(sportpress_game_film(competition_id = 25, game_id = 11295))
-#' }
+#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_game_film(competition_id = 25, game_id = 11295)")
 #' @export
 #' @family BNXT League Functions
 sportpress_game_film <- function(competition_id, game_id) {

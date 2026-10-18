@@ -64,11 +64,7 @@
 #' | info_player_id | integer | Genius person id (Genius key space; an integer). |
 #' | info_ssgt_uuid | character | ssgt uuid of the career row (platform key space). |
 #' | info_team_id | integer | Genius team id (Genius key space; an integer here). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_athlete_career(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_athlete_career(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl")')
 #' @export
 #' @family Basketligaen Functions
 sportality_athlete_career <- function(athlete_uuid, master_site_instance_id = NULL) {
@@ -116,11 +112,7 @@ sportality_athlete_career <- function(athlete_uuid, master_site_instance_id = NU
 #' | nationality | character | ISO 3166-1 alpha-2 country code. |
 #' | shoots | character | Shooting hand (''). |
 #' | weight | integer | Weight of the player in kilograms. |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_athlete_details(athlete_uuid = "dpu0901c0t"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_athlete_details(athlete_uuid = "dpu0901c0t")')
 #' @export
 #' @family Basketligaen Functions
 sportality_athlete_details <- function(athlete_uuid) {
@@ -184,11 +176,7 @@ sportality_athlete_details <- function(athlete_uuid) {
 #' | media_videourl | character | Video URL (''). |
 #' | media_photographer | character | Photographer credit (''). |
 #' | media_focal_point | character | Focal point record (empty). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_athlete_profile(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_athlete_profile(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl")')
 #' @export
 #' @family Basketligaen Functions
 sportality_athlete_profile <- function(athlete_uuid, master_site_instance_id = NULL) {
@@ -557,11 +545,7 @@ sportality_last_game_day <- function(season = NULL, game_type = "regular") {
 #' | season_uuid | character | Season uuid (platform key space). |
 #' | series_uuid | character | Series uuid (platform key space). |
 #' | game_type_uuid | character | Game type uuid (platform key space). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_layout_info())
-#' }
+#' @eval .intl_details(.sportality_schedule_details, "sportality_layout_info()")
 #' @export
 #' @family Basketligaen Functions
 sportality_layout_info <- function() {
@@ -631,11 +615,7 @@ sportality_layout_info <- function() {
 #' | series_uuid | character | Series uuid (platform key space). |
 #' | series_code | character | Series display name (Basketligaen; NOT the DBL code). |
 #' | series_display_name | character | Series display name (Basketligaen). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_next_game_day())
-#' }
+#' @eval .intl_details(.sportality_schedule_details, "sportality_next_game_day()")
 #' @export
 #' @family Basketligaen Functions
 sportality_next_game_day <- function(season = NULL, game_type = "regular") {
@@ -877,14 +857,12 @@ sportality_player_box <- function(game_uuid) {
 #' | statistics_provider | character | Stats provider (genius-basketball). |
 #' | is_in_squad | logical | Whether the player is in the squad. |
 #' | effective_ssgt_uuid | character | The ssgt the head-to-head was computed for: the CURRENT season, whatever the path asked. |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_player_h2h(
-#'     away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
-#'     ssgt_uuid = "xs07bd3fmp"
-#'   ))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, c(
+#'   'sportality_player_h2h(',
+#'   '  away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",',
+#'   '  ssgt_uuid = "xs07bd3fmp"',
+#'   ')'
+#' ))
 #' @export
 #' @family Basketligaen Functions
 sportality_player_h2h <- function(ssgt_uuid, home_team_uuid, away_team_uuid, game_uuid = NULL) {
@@ -936,14 +914,12 @@ sportality_player_h2h <- function(ssgt_uuid, home_team_uuid, away_team_uuid, gam
 #' | away_team_right_value | integer | Value of the right-hand statistic of the comparison row. |
 #' | away_team_center_type | character | Stat code of the centre value (2PPerc = two-point percentage). |
 #' | away_team_center_value | integer | Centre value (percentage as an integer 0-100). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_post_game_team_stats(
-#'     away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
-#'     ssgt_uuid = "xs07bd3fmp"
-#'   ))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, c(
+#'   'sportality_post_game_team_stats(',
+#'   '  away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",',
+#'   '  ssgt_uuid = "xs07bd3fmp"',
+#'   ')'
+#' ))
 #' @export
 #' @family Basketligaen Functions
 sportality_post_game_team_stats <- function(game_uuid, ssgt_uuid, home_team_uuid, away_team_uuid) {
@@ -1009,6 +985,33 @@ sportality_roster <- function(team_uuid) {
   )
 }
 
+# The @details of every sportality topic that shares the sportality_schedule() notes (roxygen @eval .intl_details()).
+.sportality_schedule_details <- c(
+  "* Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,",
+  "  series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan",
+  "  wrappers). The terms page was not read; payloads are not redistributed as release assets.",
+  "* Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids",
+  "  in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius",
+  "  family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The",
+  "  Genius ORG code of Denmark is not exposed.",
+  "* Season = the END year (2026 = 2025/26) everywhere; the runtime maps it, with game_type ('regular' or",
+  "  'finals', the playoffs), to the site's ssgt (season + series + game type) through layout-info. Schedules,",
+  "  standings and season tables start in 2002/03; game-level data (play-by-play with shot x/y, box scores, team",
+  "  stats) starts in 2023/24.",
+  "* Source defects the runtime refuses (`hoopR_asset_fetch`): an unfinished game or a truncated play-by-play",
+  "  feed, a box score or feed that names another game, a cut stats table. The 2002/03 regular-season schedule",
+  "  lists 109 finished games where its own standings count 110: a source gap.",
+  "* Personal data is removed from every body: birth dates, e-mail addresses, phone numbers, addresses and",
+  "  contact blocks.",
+  "* No women's league: Dameligaen has its own domain (dameligaen.dk), which answers 401 to anonymous requests.",
+  "* Errors are classed conditions: `hoopR_no_data` (404, an empty gameday body, `{}` / `[]`, a table with",
+  "  no rows, a season or game type layout-info does not list), `hoopR_bad_request` (a bad argument, a 400 /",
+  "  422) and `hoopR_asset_fetch` (an error envelope or non-JSON 200, a body for another game / team / athlete /",
+  "  ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the",
+  "  site's answer for an unknown uuid and is not retried), all inheriting `hoopR_error`. Wrappers raise; they",
+  "  never return an empty frame."
+)
+
 #' @title
 #' **Get Basketligaen Schedule**
 #' @description
@@ -1067,30 +1070,7 @@ sportality_roster <- function(team_uuid) {
 #' | series_display_name | character | Series display name (Basketligaen). |
 #' | round_number | integer | Round number (0 for every game seen; the league has no rounds). |
 #' | round_label | character | Round label ('' for every game seen). |
-#' @details
-#' * Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
-#'   series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-#'   wrappers). The terms page was not read; payloads are not redistributed as release assets.
-#' * Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
-#'   in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
-#'   family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The
-#'   Genius ORG code of Denmark is not exposed.
-#' * Season = the END year (2026 = 2025/26) everywhere; the runtime maps it, with game_type ('regular' or
-#'   'finals', the playoffs), to the site's ssgt (season + series + game type) through layout-info. Schedules,
-#'   standings and season tables start in 2002/03; game-level data (play-by-play with shot x/y, box scores, team
-#'   stats) starts in 2023/24.
-#' * Source defects the runtime refuses (`hoopR_asset_fetch`): an unfinished game or a truncated play-by-play
-#'   feed, a box score or feed that names another game, a cut stats table. The 2002/03 regular-season schedule
-#'   lists 109 finished games where its own standings count 110: a source gap.
-#' * Personal data is removed from every body: birth dates, e-mail addresses, phone numbers, addresses and
-#'   contact blocks.
-#' * No women's league: Dameligaen has its own domain (dameligaen.dk), which answers 401 to anonymous requests.
-#' * Errors are classed conditions: `hoopR_no_data` (404, an empty gameday body, `{}` / `[]`, a table with
-#'   no rows, a season or game type layout-info does not list), `hoopR_bad_request` (a bad argument, a 400 /
-#'   422) and `hoopR_asset_fetch` (an error envelope or non-JSON 200, a body for another game / team / athlete /
-#'   ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
-#'   site's answer for an unknown uuid and is not retried), all inheriting `hoopR_error`. Wrappers raise; they
-#'   never return an empty frame.
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_schedule(season = 2026))
@@ -1205,11 +1185,7 @@ sportality_sites <- function(ssgt_uuid) {
 #' | col_name | type | description |
 #' |:---|:---|:---|
 #' | provider | character | Stats provider of the ssgt (genius-basketball, a Genius Sports LiveStats relay). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp")')
 #' @export
 #' @family Basketligaen Functions
 sportality_ssgt_provider <- function(ssgt_uuid) {
@@ -1468,11 +1444,7 @@ sportality_standings <- function(ssgt_uuid) {
 #' | pr | integer | Player rebounds (total; Reb minus TR, unverified). |
 #' | pr_avg | numeric | Player rebounds per game (unverified). |
 #' | ord | integer | Offensive rebounds allowed or the opponent's offensive rebounds (0 in every row seen; unverified). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_stats_info(module = "players_summary", season = 2026))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_stats_info(module = "players_summary", season = 2026)')
 #' @export
 #' @family Basketligaen Functions
 sportality_stats_info <- function(module, season, game_type = "regular") {
@@ -1597,11 +1569,7 @@ sportality_team <- function(team_uuid) {
 #' | series_uuid | character | Series uuid (platform key space). |
 #' | series_code | character | Series display name (Basketligaen; NOT the DBL code). |
 #' | series_display_name | character | Series display name (Basketligaen). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_team_played_games(team_uuid = "rfo82vr830"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_team_played_games(team_uuid = "rfo82vr830")')
 #' @export
 #' @family Basketligaen Functions
 sportality_team_played_games <- function(team_uuid) {
@@ -1727,11 +1695,7 @@ sportality_team_stats <- function(game_uuid) {
 #' | series_uuid | character | Series uuid (platform key space). |
 #' | series_code | character | Series display name (Basketligaen; NOT the DBL code). |
 #' | series_display_name | character | Series display name (Basketligaen). |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_team_upcoming_games(team_uuid = "rfo82vr830"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, 'sportality_team_upcoming_games(team_uuid = "rfo82vr830")')
 #' @export
 #' @family Basketligaen Functions
 sportality_team_upcoming_games <- function(team_uuid) {

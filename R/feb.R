@@ -1,3 +1,44 @@
+# The @details of every feb topic that shares the feb_game_info() notes (roxygen @eval .intl_details()).
+.feb_game_info_details <- c(
+  "The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda",
+  "FEB and Liga Femenina Endesa (plus the federation's other groups on the same",
+  "routes). They mirror sdv-py's `sportsdataverse.basketball.feb` wrappers of",
+  "the same names: same arguments, the same snake_case columns and types, one",
+  "row per sdv-py row.",
+  "",
+  "**Legal notice.** The FEB's aviso legal (legal notice) asserts",
+  "intellectual-property rights over the site's content and its databases (the",
+  "EU database right). It has no explicit scraping clause, and robots.txt",
+  "answers 404 on both hosts. Fetching for your own use on your own machine is",
+  "how these wrappers are meant to be used; check the notice before you",
+  "republish the data.",
+  "",
+  "**Unofficial and unsupported.** The LiveStats API",
+  "(`intrafeb.feb.es`) is the federation's own widget backend, not a documented",
+  "public API. It needs a bearer token, which is public: it is read from the",
+  "home page of `baloncestoenvivo.feb.es` at run time, kept in memory for the R",
+  "session (24 h validity, renewed once on an HTTP 401) and never printed,",
+  "logged or written. Requests are spaced at least one second apart per host;",
+  "429 and 5xx answers are retried (three attempts).",
+  "",
+  "**Coverage.** The game routes answer from 2020-21 (Liga Femenina Endesa from",
+  "its first game; Primera FEB from 2021-03-12, so its earlier 2020-21 games",
+  "and every earlier season answer 404). 2020-21 play-by-play is text only. The",
+  "schedule pages go back to 1996-97 (`season = 1997`).",
+  "",
+  "**Seasons** are END years (`season = 2027` is 2026-27); the site's own `t`",
+  "key is the START year, so the request sends `t = season - 1`.",
+  "",
+  "**Errors** are classed conditions, never a warning plus an empty frame:",
+  "`hoopR_no_data` (HTTP 404, an unknown group, a schedule page with no games,",
+  "an empty overview window), `hoopR_bad_request` (HTTP 400 / 422, or a",
+  "`game_id`, `group` or `season` that is not a non-negative integer) and",
+  "`hoopR_asset_fetch` (any other failure: another status, a transport error,",
+  "a token the API still rejects after one renewal, a non-JSON or non-HTML",
+  "body, an error or changed envelope, a play-by-play of another game, a page",
+  "for another group or season, or layout drift). All inherit `hoopR_error`."
+)
+
 #' @title
 #' **FEB Game Info**
 #' @description
@@ -8,44 +49,7 @@
 #' (every game route carries the header; this reads the lightest one).
 #' @param game_id (*integer* required): FEB game id, e.g. `2535725`; the
 #'   `game_id` column of [feb_schedule()], [feb_results()] and [feb_overview()].
-#' @details
-#' The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda
-#' FEB and Liga Femenina Endesa (plus the federation's other groups on the same
-#' routes). They mirror sdv-py's `sportsdataverse.basketball.feb` wrappers of
-#' the same names: same arguments, the same snake_case columns and types, one
-#' row per sdv-py row.
-#'
-#' **Legal notice.** The FEB's aviso legal (legal notice) asserts
-#' intellectual-property rights over the site's content and its databases (the
-#' EU database right). It has no explicit scraping clause, and robots.txt
-#' answers 404 on both hosts. Fetching for your own use on your own machine is
-#' how these wrappers are meant to be used; check the notice before you
-#' republish the data.
-#'
-#' **Unofficial and unsupported.** The LiveStats API
-#' (`intrafeb.feb.es`) is the federation's own widget backend, not a documented
-#' public API. It needs a bearer token, which is public: it is read from the
-#' home page of `baloncestoenvivo.feb.es` at run time, kept in memory for the R
-#' session (24 h validity, renewed once on an HTTP 401) and never printed,
-#' logged or written. Requests are spaced at least one second apart per host;
-#' 429 and 5xx answers are retried (three attempts).
-#'
-#' **Coverage.** The game routes answer from 2020-21 (Liga Femenina Endesa from
-#' its first game; Primera FEB from 2021-03-12, so its earlier 2020-21 games
-#' and every earlier season answer 404). 2020-21 play-by-play is text only. The
-#' schedule pages go back to 1996-97 (`season = 1997`).
-#'
-#' **Seasons** are END years (`season = 2027` is 2026-27); the site's own `t`
-#' key is the START year, so the request sends `t = season - 1`.
-#'
-#' **Errors** are classed conditions, never a warning plus an empty frame:
-#' `hoopR_no_data` (HTTP 404, an unknown group, a schedule page with no games,
-#' an empty overview window), `hoopR_bad_request` (HTTP 400 / 422, or a
-#' `game_id`, `group` or `season` that is not a non-negative integer) and
-#' `hoopR_asset_fetch` (any other failure: another status, a transport error,
-#' a token the API still rejects after one renewal, a non-JSON or non-HTML
-#' body, an error or changed envelope, a play-by-play of another game, a page
-#' for another group or season, or layout drift). All inherit `hoopR_error`.
+#' @eval .intl_details(.feb_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -96,7 +100,7 @@ feb_game_info <- function(game_id) {
 #' One row per period played; the points are scored IN the period, not
 #' cumulative. Overtime numbering is unverified.
 #' @inheritParams feb_game_info
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details, "feb_period_scores(game_id = 2535725)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -107,10 +111,6 @@ feb_game_info <- function(game_id) {
 #' | away_points | integer | Points the away team scored IN this period (not cumulative). |
 #' @family FEB
 #' @export
-#' @examples
-#' \donttest{
-#'   try(feb_period_scores(game_id = 2535725))
-#' }
 feb_period_scores <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   gid <- .feb_int_arg(game_id, "game_id")
@@ -129,7 +129,7 @@ feb_period_scores <- function(game_id) {
 #' `paint` are null on every sampled game (the stat crews do not fill them);
 #' `seconds_played` and `val` are null on these rows.
 #' @inheritParams feb_game_info
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details, "feb_team_stats(game_id = 2535725)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -175,10 +175,6 @@ feb_period_scores <- function(game_id) {
 #' | paint | integer | Points in the paint. Null on every sampled game: the federation's stat crews do not fill it. |
 #' @family FEB
 #' @export
-#' @examples
-#' \donttest{
-#'   try(feb_team_stats(game_id = 2535725))
-#' }
 feb_team_stats <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   gid <- .feb_int_arg(game_id, "game_id")
@@ -325,7 +321,7 @@ feb_pbp <- function(game_id) {
 #' resolved through the game's roster (side + shirt number) and is `NA` when
 #' that pair is not unique.
 #' @inheritParams feb_game_info
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details, "feb_shots(game_id = 2535725)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -343,10 +339,6 @@ feb_pbp <- function(game_id) {
 #' | y | numeric | Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. |
 #' @family FEB
 #' @export
-#' @examples
-#' \donttest{
-#'   try(feb_shots(game_id = 2535725))
-#' }
 feb_shots <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   gid <- .feb_int_arg(game_id, "game_id")
@@ -364,7 +356,7 @@ feb_shots <- function(game_id) {
 #' One row per team, category and ranked player (`rank` 1 = the leader, in the
 #' order the feed lists them).
 #' @inheritParams feb_game_info
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details, "feb_leaders(game_id = 2535725)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -383,10 +375,6 @@ feb_shots <- function(game_id) {
 #' | value | integer | The player's count in the row's category (points, rebounds, assists or personal fouls). |
 #' @family FEB
 #' @export
-#' @examples
-#' \donttest{
-#'   try(feb_leaders(game_id = 2535725))
-#' }
 feb_leaders <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   gid <- .feb_int_arg(game_id, "game_id")
@@ -404,7 +392,7 @@ feb_leaders <- function(game_id) {
 #' One row per game across the competitions with games in the window. An off
 #' day with no competitions raises `hoopR_no_data`; a game listed under
 #' another competition is refused (`hoopR_asset_fetch`).
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details, "feb_overview()")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -436,10 +424,6 @@ feb_leaders <- function(game_id) {
 #' | period_scores | character | Points per period as 'home-away' pairs joined by ';' ('16-16;19-16;10-21;14-14'); null before tip-off. |
 #' @family FEB
 #' @export
-#' @examples
-#' \donttest{
-#'   try(feb_overview())
-#' }
 feb_overview <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .feb_parse_overview(.feb_api_get("overview"))

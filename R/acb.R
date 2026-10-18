@@ -2,6 +2,36 @@
 # sportsdataverse/basketball/acb (origin/main e3d232ebc9). 45 wrappers over 33 routes. Transport, key and
 # refusals: R/acb_runtime.R; frames: R/acb_parsers.R; field tables: R/acb_schema.R.
 
+# The @details of every acb topic that shares the acb_match_header() notes (roxygen @eval .intl_details()).
+.acb_match_header_details <- c(
+  "* Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com read 2026-10-12): ACEB, S.A.U.",
+  "  claims intellectual property in the site's databases (the EU sui generis database right) among its other",
+  "  content. It authorises viewing and private copies for personal or journalistic use with the source credited,",
+  "  and requires prior express consent for distribution, reproduction or public communication. These wrappers",
+  "  fetch on the user's behalf; a published data release or a hosted mirror needs the owner's decision first.",
+  "  robots.txt allows the paths.",
+  "* Unofficial and unsupported: api2.acb.com is the .NET API behind acb.com and live.acb.com, not a documented",
+  "  public API. It needs the header `X-APIKEY`, a public key shipped in acb.com's bundle: the runtime sends the",
+  "  documented value (`$ACB_API_KEY` overrides it), re-reads the live bundle once on a 401, and never prints the",
+  "  key.",
+  "* Seasons: the API keys a season by `editionId` = season START year - 1935 (91 = 2026-27, 48 = 1983-84, the",
+  "  first). The wrappers take `season`, the END year (2027 = 2026-27), and the runtime sends `editionId = season -",
+  "  1936`. A route that omits `season` serves the current edition. `team_id` is a season-team entry (new every",
+  "  season); `club_id` is the stable club.",
+  "* Coverage: box scores from 1983-84 (old seasons carry only the whole-game period, quarter 0); play-by-play",
+  "  and shots from 2016-17 (earlier games answer empty lists, which raise `hoopR_no_data`). Shot coordinates",
+  "  come in two systems, split by match id: millimetres from the attacked basket from 2020-21 (`coord_system`",
+  "  mm), a 0-100 full-court percent grid before (grid). A game that is not finished (`matchFinished` false)",
+  "  raises `hoopR_asset_fetch` for the routes that report it.",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404 / 204, a route",
+  "  whose rows are empty: an unknown id, a game outside a playoff series, play-by-play or shots before 2016-17,",
+  "  a club with no games that season), `hoopR_bad_request` (a missing, unknown or non-integer argument or a",
+  "  season before 1984, raised before any request; HTTP 400 / 422) and `hoopR_asset_fetch` (a key the API still",
+  "  rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or",
+  "  `problem+json` body, an error envelope or empty stub, a body for another season, round, club, player or",
+  "  match, a game that is not finished). Wrappers raise; they never warn and return empty."
+)
+
 #' @title
 #' **Get ACB Match Header**
 #' @description
@@ -49,33 +79,7 @@
 #' | has_boxscore | logical | True when the site offers a box score for the game. |
 #' | has_advanced | logical | True when the site offers advanced statistics for the game. |
 #' | highlights_url | character | Highlights video URL; null when none is published. |
-#' @details
-#' * Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com read 2026-10-12): ACEB, S.A.U.
-#'   claims intellectual property in the site's databases (the EU sui generis database right) among its other
-#'   content. It authorises viewing and private copies for personal or journalistic use with the source credited,
-#'   and requires prior express consent for distribution, reproduction or public communication. These wrappers
-#'   fetch on the user's behalf; a published data release or a hosted mirror needs the owner's decision first.
-#'   robots.txt allows the paths.
-#' * Unofficial and unsupported: api2.acb.com is the .NET API behind acb.com and live.acb.com, not a documented
-#'   public API. It needs the header `X-APIKEY`, a public key shipped in acb.com's bundle: the runtime sends the
-#'   documented value (`$ACB_API_KEY` overrides it), re-reads the live bundle once on a 401, and never prints the
-#'   key.
-#' * Seasons: the API keys a season by `editionId` = season START year - 1935 (91 = 2026-27, 48 = 1983-84, the
-#'   first). The wrappers take `season`, the END year (2027 = 2026-27), and the runtime sends `editionId = season -
-#'   1936`. A route that omits `season` serves the current edition. `team_id` is a season-team entry (new every
-#'   season); `club_id` is the stable club.
-#' * Coverage: box scores from 1983-84 (old seasons carry only the whole-game period, quarter 0); play-by-play
-#'   and shots from 2016-17 (earlier games answer empty lists, which raise `hoopR_no_data`). Shot coordinates
-#'   come in two systems, split by match id: millimetres from the attacked basket from 2020-21 (`coord_system`
-#'   mm), a 0-100 full-court percent grid before (grid). A game that is not finished (`matchFinished` false)
-#'   raises `hoopR_asset_fetch` for the routes that report it.
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404 / 204, a route
-#'   whose rows are empty: an unknown id, a game outside a playoff series, play-by-play or shots before 2016-17,
-#'   a club with no games that season), `hoopR_bad_request` (a missing, unknown or non-integer argument or a
-#'   season before 1984, raised before any request; HTTP 400 / 422) and `hoopR_asset_fetch` (a key the API still
-#'   rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
-#'   `problem+json` body, an error envelope or empty stub, a body for another season, round, club, player or
-#'   match, a game that is not finished). Wrappers raise; they never warn and return empty.
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_match_header(match_id = 105401))
@@ -470,11 +474,7 @@ acb_shots <- function(match_id) {
 #' | home_score | integer | Home score at that moment. |
 #' | away_score | integer | Away score at that moment. |
 #' | margin | integer | Home score minus away score at that moment (positive = the home team leads). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_lead_tracker(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_lead_tracker(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_lead_tracker <- function(match_id) {
@@ -509,11 +509,7 @@ acb_lead_tracker <- function(match_id) {
 #' | value | character | Display value as sent: a count, or 'mm:ss' for time_ahead. |
 #' | bar_progress | numeric | Length of the site's comparison bar (a drawing value, not a statistic). |
 #' | is_highlighted | logical | True for the side whose bar the site highlights as the better value. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_lead_stats(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_lead_stats(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_lead_stats <- function(match_id) {
@@ -564,11 +560,7 @@ acb_lead_stats <- function(match_id) {
 #' | fouls | integer | Personal fouls committed in the game. |
 #' | differential | integer | Point differential while the player was on court (plus/minus). |
 #' | rating | integer | ACB rating (valoracion) of the game. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_lineup(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_lineup(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_lineup <- function(match_id) {
@@ -613,11 +605,7 @@ acb_lineup <- function(match_id) {
 #' | last_name | character | Legal last name(s) |
 #' | shirt_number | character | Shirt number, a string ('' or null when unknown) |
 #' | game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_match_leaders(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_match_leaders(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_match_leaders <- function(match_id) {
@@ -658,11 +646,7 @@ acb_match_leaders <- function(match_id) {
 #' | away_attempted | integer | Away shots attempted, from the subtitle; null for the non-shooting statistics. |
 #' | home_is_highlighted | logical | True when the site highlights the home bar as the better value. |
 #' | away_is_highlighted | logical | True when the site highlights the away bar as the better value. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_team_comparison(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_team_comparison(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_team_comparison <- function(match_id) {
@@ -715,11 +699,7 @@ acb_team_comparison <- function(match_id) {
 #' | status | character | Game state: FINALIZED once over. |
 #' | is_on_half_time | logical | True during the half-time break of a live game. |
 #' | current_quarter | integer | Current or last period of the game (4 for a finished regulation game). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_serie(match_id = 17718))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_serie(match_id = 17718)")
 #' @export
 #' @family ACB Functions
 acb_serie <- function(match_id) {
@@ -759,11 +739,7 @@ acb_serie <- function(match_id) {
 #' | wins | integer | Wins before the game. |
 #' | losses | integer | Losses before the game (the API's currentLoses). |
 #' | last_results | character | Recent results joined with '; ' (WIN / LOSS), in the order the API sends them. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_quickfacts(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_quickfacts(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_quickfacts <- function(match_id) {
@@ -859,11 +835,7 @@ acb_season_leaders <- function(match_id) {
 #' | season_diff | numeric | Game value minus season value (temporadaDiff). |
 #' | win_diff | numeric | Game value minus the wins value (winDiff). |
 #' | loss_diff | numeric | Game value minus the losses value (lossDiff). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_match_advanced_stats(match_id = 105401))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_match_advanced_stats(match_id = 105401)")
 #' @export
 #' @family ACB Functions
 acb_match_advanced_stats <- function(match_id) {
@@ -905,11 +877,7 @@ acb_match_advanced_stats <- function(match_id) {
 #' | season_diff | numeric | Game value minus season value (temporadaDiff). |
 #' | win_diff | numeric | Game value minus the wins value (winDiff). |
 #' | loss_diff | numeric | Game value minus the losses value (lossDiff). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_player_advanced_stats(match_id = 105401, player_id = 20212243))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_player_advanced_stats(match_id = 105401, player_id = 20212243)")
 #' @export
 #' @family ACB Functions
 acb_player_advanced_stats <- function(match_id, player_id) {
@@ -1085,11 +1053,7 @@ acb_competition_rounds <- function(competition_ids = NULL) {
 #' | week_id | integer | Week id: global across seasons (2989 = the week of 2026-10-10) |
 #' | description | character | Spanish week label ('Semana 1'). |
 #' | start_date | POSIXct | Monday the week starts (UTC midnight). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_competition_weeks())
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_competition_weeks()")
 #' @export
 #' @family ACB Functions
 acb_competition_weeks <- function(competition_ids = NULL) {
@@ -1306,11 +1270,7 @@ acb_standings <- function(competition_id = NULL, season = NULL, round_id = NULL)
 #' | subphase_number | integer | Sub-phase number; null in the regular season |
 #' | position | integer | The team's league position after this round. |
 #' | match_id | integer | The team's game in this round. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_standings_rounds(season = 2027))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_standings_rounds(season = 2027)")
 #' @export
 #' @family ACB Functions
 acb_standings_rounds <- function(competition_id = NULL, season = NULL, round_id = NULL) {
@@ -1414,11 +1374,7 @@ acb_bracket <- function(competition_id = NULL, season = NULL) {
 #' | status | character | Match state (x-match-statuses) |
 #' | is_on_half_time | logical | At half time (live) |
 #' | current_quarter | integer | Current or last quarter (5+ = overtime); not reliable after the match (1 in the 2017 series rows) |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_bracket_games(season = 2026))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_bracket_games(season = 2026)")
 #' @export
 #' @family ACB Functions
 acb_bracket_games <- function(competition_id = NULL, season = NULL) {
@@ -1515,11 +1471,7 @@ acb_calendar <- function(competition_id = NULL, season = NULL) {
 #' | attempts | integer | Field-goal attempts in the zone, league-wide. |
 #' | made | integer | Field goals made in the zone, league-wide. |
 #' | points_scored | integer | Points scored from the zone, league-wide. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_league_zones(season = 2027))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_league_zones(season = 2027)")
 #' @export
 #' @family ACB Functions
 acb_league_zones <- function(competition_id = NULL, season = NULL) {
@@ -1692,11 +1644,7 @@ acb_team_matches <- function(club_id, competition_id = NULL, season = NULL) {
 #' | edition_id | integer | Season id (`editionId`) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry `seasonStartYear` / `seasonEndYear` |
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
 #' | is_selected_local | logical | Not sent by this route (always null). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_next_matches(club_id = 2, number_of_matches = 5))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_next_matches(club_id = 2, number_of_matches = 5)")
 #' @export
 #' @family ACB Functions
 acb_next_matches <- function(club_id, number_of_matches = NULL, competition_id = NULL, season = NULL) {
@@ -1745,11 +1693,7 @@ acb_next_matches <- function(club_id, number_of_matches = NULL, competition_id =
 #' | tiktok_url | character | Club TikTok URL. |
 #' | validated | logical | True when the club profile is validated by the league. |
 #' | temporary_roster | logical | True while the club's roster is provisional. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_club_data(club_id = 2))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_club_data(club_id = 2)")
 #' @export
 #' @family ACB Functions
 acb_club_data <- function(club_id) {
@@ -1856,11 +1800,7 @@ acb_current_roster <- function(club_id, competition_id = NULL, season = NULL) {
 #' | last_name | character | Legal last name(s) |
 #' | shirt_number | character | Shirt number, a string ('' or null when unknown) |
 #' | game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_team_leaders(club_id = 2, number_of_players = 3, season = 2027))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_team_leaders(club_id = 2, number_of_players = 3, season = 2027)")
 #' @export
 #' @family ACB Functions
 acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, season = NULL) {
@@ -2119,11 +2059,7 @@ acb_team_stats <- function(club_id, competition_id = NULL, season = NULL) {
 #' | per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
 #' | per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
 #' | per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_team_totals(club_id = 2, season = 2027))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_team_totals(club_id = 2, season = 2027)")
 #' @export
 #' @family ACB Functions
 acb_team_totals <- function(club_id, competition_id = NULL, season = NULL) {
@@ -2169,11 +2105,7 @@ acb_team_totals <- function(club_id, competition_id = NULL, season = NULL) {
 #' | visitor_club_id | integer | Away stable club id of the record game. |
 #' | visitor_team | character | Away team name in the record game. |
 #' | visitor_team_abbr | character | Away team abbreviation in the record game. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_team_records(club_id = 2))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_team_records(club_id = 2)")
 #' @export
 #' @family ACB Functions
 acb_team_records <- function(club_id) {
@@ -2491,11 +2423,7 @@ acb_player_stats <- function(player_id, competition_id = NULL, season = NULL) {
 #' | per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
 #' | per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
 #' | per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_player_totals(player_id = 20209407))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_player_totals(player_id = 20209407)")
 #' @export
 #' @family ACB Functions
 acb_player_totals <- function(player_id, competition_id = NULL, season = NULL) {
@@ -2532,11 +2460,7 @@ acb_player_totals <- function(player_id, competition_id = NULL, season = NULL) {
 #' | edition_id | integer | Season id of the stint's team entry (START year - 1935). |
 #' | n_editions | integer | Editions the stint spans. |
 #' | has_no_validated_data | logical | True when the stint has no validated data. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_career_stints(player_id = 20209407))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_career_stints(player_id = 20209407)")
 #' @export
 #' @family ACB Functions
 acb_career_stints <- function(player_id) {
@@ -2566,11 +2490,7 @@ acb_career_stints <- function(player_id) {
 #' | competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) |
 #' | times_champion | integer | Times the player won the competition. |
 #' | times_runner_up | integer | Times the player was runner-up in the competition. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_career_trophies(player_id = 20209407))
-#' }
+#' @eval .intl_details(.acb_match_header_details, "acb_career_trophies(player_id = 20209407)")
 #' @export
 #' @family ACB Functions
 acb_career_trophies <- function(player_id) {
@@ -2688,11 +2608,7 @@ acb_player_matches <- function(player_id, season = NULL) {
 #' | club_id | integer | Stable club id of a team hit; null for players. |
 #' | edition_id | integer | Season id of the record; null in search results. |
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-#' @inherit acb_match_header details
-#' @examples
-#' \donttest{
-#'   try(acb_search(limit = 5, search_term = "tavares"))
-#' }
+#' @eval .intl_details(.acb_match_header_details, 'acb_search(limit = 5, search_term = "tavares")')
 #' @export
 #' @family ACB Functions
 acb_search <- function(search_term, limit = NULL) {

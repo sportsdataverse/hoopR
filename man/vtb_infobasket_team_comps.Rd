@@ -81,11 +81,9 @@ final or a stub, a partial or possibly truncated page, or a body for another gam
 league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
 warn and return empty.
 }
-}
-\examples{
-\donttest{
-  try(vtb_infobasket_team_comps(season = 2026, team_id = 2650))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ vtb_infobasket_team_comps(season = 2026, team_id = 2650)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other VTB Functions:

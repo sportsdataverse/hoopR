@@ -398,3 +398,16 @@
   x <- gsub("([a-z0-9])([A-Z])", "\\1_\\2", x, perl = TRUE)
   tolower(gsub("-", "_", x, fixed = TRUE))
 }
+
+#' Roxygen lines of one topic's `@details` (roxygen `@eval`): a family's shared notes, then, for a
+#' function whose example is not run, the call as a code block (the NBA Stats house style). A topic
+#' that defines `@details` inherits none, so the notes are held once in a `.<primary>_details`
+#' vector instead of `@inherit <primary> details`.
+#'
+#' @param notes Character vector of roxygen markdown lines.
+#' @param example Character vector of code lines, or `NULL` for none.
+#' @return Character vector of roxygen lines.
+#' @noRd
+.intl_details <- function(notes, example = NULL) {
+  c("@details", notes, if (length(example)) c("", "```r", paste0(" ", example), "```"))
+}

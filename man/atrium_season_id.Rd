@@ -34,11 +34,9 @@ known Atrium site, it lists no seasons (236), or the year is shared by several
 competitions and \code{competition_id} is missing; \code{hoopR_no_data} when the site lists no
 such season; \code{hoopR_asset_fetch} when the season list could not be fetched or is
 not the site's.
-}
-\examples{
-\donttest{
-  try(atrium_season_id(14, 2026, competition_id = "16be8396-24fb-11ef-9ab7-df6be196e88f"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ atrium_season_id(14, 2026, competition_id = "16be8396-24fb-11ef-9ab7-df6be196e88f")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Atrium:

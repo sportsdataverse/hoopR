@@ -51,11 +51,9 @@ the league list lacks, an empty list, a finished game before 2025-26 asked for p
 the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 an error envelope, a redirect, a partial page or a changed capped list). All inherit \code{hoopR_error}.
 Timestamps are Turkey local time (\code{Europe/Istanbul}).
-}
-\examples{
-\donttest{
-  try(tbf_highlights(match_id = 346279))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ tbf_highlights(match_id = 346279)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other TBF:

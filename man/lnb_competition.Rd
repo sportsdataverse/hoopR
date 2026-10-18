@@ -323,12 +323,10 @@ Thin bindings of the parameterised \verb{atrium_*()} wrappers to this site, mint
 Season rule: END year (2026 = 2025-26; the site's own year is the START year).
 
 Errors and terms of use are those of \code{\link[=atrium_fixtures]{atrium_fixtures()}}: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets.
-}
-\examples{
-\donttest{
-  try(lnb_seasons())
-  try(lnb_schedule())
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ lnb_seasons()
+ lnb_schedule()
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Atrium:

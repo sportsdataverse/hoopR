@@ -2,6 +2,30 @@
 # with sdv-py sportsdataverse/basketball/lba (origin/main e3d232ebc9). Transport, season mapping and refusals:
 # R/lba_runtime.R; frames: R/lba_parsers.R; columns: R/lba_schema.R. Generated from sdv-py
 # tools/codegen/endpoints/legabasket.yaml and manual_column_descriptions.yaml.
+# The @details of every lba topic that shares the lba_championships() notes (roxygen @eval .intl_details()).
+.lba_championships_details <- c(
+  "* Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself",
+  "  calls. Legal notice: the site's terms say \"Non e' consentito copiare ... dati e informazioni senza",
+  '  autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for',
+  "  personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are",
+  "  not redistributed as release assets, and any published data release of this source needs separate sign-off.",
+  "* robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.",
+  "  Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per",
+  "  round, and do not backfill a history in a burst.",
+  "* Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the",
+  "  wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable",
+  "  club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).",
+  "* Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see",
+  "  lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, or a body with no rows:",
+  "  an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),",
+  "  `hoopR_bad_request` (a season that is not an END year, a bad choice, HTTP 400 / 422) and `hoopR_asset_fetch`",
+  "  (any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is",
+  "  not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,",
+  "  championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which",
+  "  is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns."
+)
+
 #' @title
 #' **Get LBA Championships**
 #' @description
@@ -30,27 +54,7 @@
 #' | cserie_code | character | Series code, `A1` = Serie A. |
 #' | cserie_name | character | Name of the championship series, e.g. Serie A. |
 #' | logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @details
-#' * Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-#'   calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-#'   autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-#'   personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-#'   not redistributed as release assets, and any published data release of this source needs separate sign-off.
-#' * robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-#'   Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-#'   round, and do not backfill a history in a burst.
-#' * Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-#'   wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-#'   club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).
-#' * Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-#'   lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, or a body with no rows:
-#'   an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-#'   `hoopR_bad_request` (a season that is not an END year, a bad choice, HTTP 400 / 422) and `hoopR_asset_fetch`
-#'   (any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-#'   not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-#'   championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-#'   is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_championships(season = 2027))
@@ -416,11 +420,7 @@ lba_pbp <- function(game_id) {
 #' |:---|:---|:---|
 #' | code | integer | Qualifier code, the value of action_1_qualifier_code / action_2_qualifier_code on the actions. |
 #' | label | character | Italian label of the qualifier code, as sent (translated in sdv-internal-refs legabasket-returns.md). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_pbp_legend(game_id = 25602))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_pbp_legend(game_id = 25602)")
 #' @export
 #' @family LBA Functions
 lba_pbp_legend <- function(game_id) {
@@ -620,11 +620,7 @@ lba_teams <- function(season = NULL) {
 #' | team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
 #' | player_picture_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
 #' | team_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_roster(team_id = 1764))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_roster(team_id = 1764)")
 #' @export
 #' @family LBA Functions
 lba_roster <- function(team_id) {
@@ -661,11 +657,7 @@ lba_roster <- function(team_id) {
 #' | team_name | character | Team, short name. |
 #' | coach_picture_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
 #' | team_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_roster_coach(team_id = 1764))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_roster_coach(team_id = 1764)")
 #' @export
 #' @family LBA Functions
 lba_roster_coach <- function(team_id) {
@@ -726,11 +718,7 @@ lba_roster_coach <- function(team_id) {
 #' | free_throws_realized_sum | integer | Season total of free throws made. |
 #' | free_throws_total_sum | integer | Season total of free throws attempted. |
 #' | free_throws_perc_sum | double | Season free-throw percentage, 0-100 (a rate despite `_sum`). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_team_players_stats(team_id = 1764, season = 2027))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_team_players_stats(team_id = 1764, season = 2027)")
 #' @export
 #' @family LBA Functions
 lba_team_players_stats <- function(team_id, season = NULL) {
@@ -895,11 +883,7 @@ lba_players <- function(season = NULL, page = NULL) {
 #' | stats_avg_rs_rating_oer_avg | double | Per-game average OER (a number, unlike the other `_avg` values). |
 #' | stats_avg_rs_avg_points_avg | double | Current regular-season per-game average of plus-minus, despite the name (see the game-log row, where it equals the box score `plus_minus`), number sent as a string. |
 #' | stats_avg_rs_id | integer | Always null (not a key). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_player(player_id = 969))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_player(player_id = 969)")
 #' @export
 #' @family LBA Functions
 lba_player <- function(player_id) {
@@ -955,11 +939,7 @@ lba_player <- function(player_id) {
 #' | rating_oer | double | Per-game average of OER (points / (FGA + turnovers + FTA / 2)) in that season, competition and team. |
 #' | avg_points | double | Per-game average of plus-minus, despite the name (see the game-log row, where it equals the box score `plus_minus`) in that season, competition and team. |
 #' | aplus_dp | integer | Per-game average of `aplus_dp`, an unverified metric (not plus-minus or assists: Macura 2026-27 has 9 against plus-minus 8 and 3 assists) in that season, competition and team. |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_player_stats(player_id = 969))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_player_stats(player_id = 969)")
 #' @export
 #' @family LBA Functions
 lba_player_stats <- function(player_id) {
@@ -1051,11 +1031,7 @@ lba_player_stats <- function(player_id) {
 #' | match_adp | integer | The player's plus-minus in the game (the site's name is misleading). |
 #' | home_match_result | character | `w` / `l` for the home team when the player was on it, else null. |
 #' | visitor_match_result | character | `w` / `l` for the away team when the player was on it, else null. |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_game_log(player_id = 969, season = 2027))
-#' }
+#' @eval .intl_details(.lba_championships_details, "lba_game_log(player_id = 969, season = 2027)")
 #' @export
 #' @family LBA Functions
 lba_game_log <- function(player_id, season = NULL) {
@@ -1094,11 +1070,7 @@ lba_game_log <- function(player_id, season = NULL) {
 #' | score | double | Value in the category under the `ob` order (default `avg` = per game); players send a decimal string, teams a number. |
 #' | team_id | integer | Team id (team-season). |
 #' | player_photo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_players_leaderboard(season = 2027, category = "points"))
-#' }
+#' @eval .intl_details(.lba_championships_details, 'lba_players_leaderboard(season = 2027, category = "points")')
 #' @export
 #' @family LBA Functions
 lba_players_leaderboard <- function(season = NULL, category = "points") {
@@ -1137,11 +1109,7 @@ lba_players_leaderboard <- function(season = NULL, category = "points") {
 #' | score_40_min | double | Value per 40 minutes. |
 #' | score | double | Value in the category under the `ob` order (default `avg` = per game); players send a decimal string, teams a number. |
 #' | team_id | integer | Team id (team-season). |
-#' @inherit lba_championships details
-#' @examples
-#' \donttest{
-#'   try(lba_teams_leaderboard(board = "teams_offensive", season = 2027))
-#' }
+#' @eval .intl_details(.lba_championships_details, 'lba_teams_leaderboard(board = "teams_offensive", season = 2027)')
 #' @export
 #' @family LBA Functions
 lba_teams_leaderboard <- function(board, season = NULL) {

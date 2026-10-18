@@ -98,11 +98,9 @@ rejects after one re-read of the bundle, any other non-200 after three attempts,
 \code{problem+json} body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.
 }
-}
-\examples{
-\donttest{
-  try(acb_next_matches(club_id = 2, number_of_matches = 5))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ acb_next_matches(club_id = 2, number_of_matches = 5)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other ACB Functions:

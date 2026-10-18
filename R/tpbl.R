@@ -3,6 +3,40 @@
 # e3d232ebc9). Transport, season mapping and refusals: R/tpbl_runtime.R; frames and columns:
 # R/tpbl_parsers.R. Roxygen generated from sdv-py's endpoint YAML and column descriptions.
 
+# The @details of every tpbl topic that shares the tpbl_seasons() notes (roxygen @eval .intl_details()).
+.tpbl_seasons_details <- c(
+  "* Unofficial and unsupported: these are the routes the tpbl.basketball site's own front end calls on",
+  "  api.tpbl.basketball (read from its JavaScript bundle). The API is keyless and needs no headers;",
+  "  tpbl.basketball/robots.txt answers 200 with an empty body. The runtime waits at least 1 s before every request,",
+  "  retries included. Payloads are not redistributed as release assets.",
+  "* Coverage: three seasons so far (2024-25 = season 2025 to 2026-27 = season 2027). There is NO play-by-play",
+  "  route; the two shot lists carry court coordinates only, with no shooter, game, quarter or time. Names (teams",
+  "  with their sponsor, venues, players, referees) are Traditional Chinese; the column descriptions translate the",
+  "  codes.",
+  "* Seasons are END years (2026 = 2025-26). The API keys a season by its own small integer (1, 2, 3 = 2024-25,",
+  "  2025-26, 2026-27); the runtime reads tpbl_seasons once per session and sends that id. A year the list lacks is",
+  "  `hoopR_no_data`.",
+  "* Ids: every route takes TPBL's own ids (season, division, team, game, player); the `gohoops_*` ids belong to",
+  "  GoHoops, the stats platform behind the league, and are echoed beside them. The box score keys its players by",
+  "  gohoops_roster_id (a person registered with one squad in one season), not by the TPBL player id: join",
+  "  tpbl_box_players to tpbl_roster on gohoops_roster_id. Every id is an integer. tipoff is a POSIXct in",
+  "  Asia/Taipei (the API sends naive Taiwan-local times).",
+  "* Finished games only: the game wrappers first read the game detail (cached per session) and refuse",
+  "  (`hoopR_asset_fetch`) a game that is not COMPLETED or still live; the box-score wrappers also refuse a stats",
+  "  body whose teams (in home / away order), final scores, quarter count or player points disagree with it. The",
+  "  season game list, the roster and the player game log are checked against the object asked for; the two shot",
+  "  lists name no team, player or division in the body, so only their shape and court bounds are checked.",
+  "  tpbl_games(verify = TRUE) also checks every division's completed games against its standings (falling back to",
+  "  the team-filtered lists for a division whose standings answer empty, as the 2024-25 playoffs do).",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, a season the API does",
+  "  not list, an empty list such as the standings of a playoff division), `hoopR_bad_request` (a non-integer id or",
+  "  season, HTTP 400 / 422, an invalid verify or rounds, raised before the request where it can be) and",
+  "  `hoopR_asset_fetch` (any other failure: a non-2xx after retries, a non-JSON body, an error envelope, an",
+  "  unfinished game, a body that disagrees with the object asked for). HTTP 500 is retried on every route except",
+  "  the player game log, where an unknown division_id answers 500 deterministically: it fails after one request.",
+  "  Wrappers raise; they never warn and return an empty frame."
+)
+
 #' @title
 #' **Get TPBL Seasons**
 #' @description
@@ -22,37 +56,7 @@
 #' | status | character | Season status: COMPLETED or IN_PROGRESS. |
 #' | started_at | character | Season start, 'YYYY-MM-DD 00:00:00' text. Preseason games can be played before it (the 2026-27 start is 2026-10-17, its first games were played 2026-10-09). |
 #' | ended_at | character | Season end, 'YYYY-MM-DD 00:00:00' text (the planned end for a season in progress). |
-#' @details
-#' * Unofficial and unsupported: these are the routes the tpbl.basketball site's own front end calls on
-#'   api.tpbl.basketball (read from its JavaScript bundle). The API is keyless and needs no headers;
-#'   tpbl.basketball/robots.txt answers 200 with an empty body. The runtime waits at least 1 s before every request,
-#'   retries included. Payloads are not redistributed as release assets.
-#' * Coverage: three seasons so far (2024-25 = season 2025 to 2026-27 = season 2027). There is NO play-by-play
-#'   route; the two shot lists carry court coordinates only, with no shooter, game, quarter or time. Names (teams
-#'   with their sponsor, venues, players, referees) are Traditional Chinese; the column descriptions translate the
-#'   codes.
-#' * Seasons are END years (2026 = 2025-26). The API keys a season by its own small integer (1, 2, 3 = 2024-25,
-#'   2025-26, 2026-27); the runtime reads tpbl_seasons once per session and sends that id. A year the list lacks is
-#'   `hoopR_no_data`.
-#' * Ids: every route takes TPBL's own ids (season, division, team, game, player); the `gohoops_*` ids belong to
-#'   GoHoops, the stats platform behind the league, and are echoed beside them. The box score keys its players by
-#'   gohoops_roster_id (a person registered with one squad in one season), not by the TPBL player id: join
-#'   tpbl_box_players to tpbl_roster on gohoops_roster_id. Every id is an integer. tipoff is a POSIXct in
-#'   Asia/Taipei (the API sends naive Taiwan-local times).
-#' * Finished games only: the game wrappers first read the game detail (cached per session) and refuse
-#'   (`hoopR_asset_fetch`) a game that is not COMPLETED or still live; the box-score wrappers also refuse a stats
-#'   body whose teams (in home / away order), final scores, quarter count or player points disagree with it. The
-#'   season game list, the roster and the player game log are checked against the object asked for; the two shot
-#'   lists name no team, player or division in the body, so only their shape and court bounds are checked.
-#'   tpbl_games(verify = TRUE) also checks every division's completed games against its standings (falling back to
-#'   the team-filtered lists for a division whose standings answer empty, as the 2024-25 playoffs do).
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, a season the API does
-#'   not list, an empty list such as the standings of a playoff division), `hoopR_bad_request` (a non-integer id or
-#'   season, HTTP 400 / 422, an invalid verify or rounds, raised before the request where it can be) and
-#'   `hoopR_asset_fetch` (any other failure: a non-2xx after retries, a non-JSON body, an error envelope, an
-#'   unfinished game, a body that disagrees with the object asked for). HTTP 500 is retried on every route except
-#'   the player game log, where an unknown division_id answers 500 deterministically: it fails after one request.
-#'   Wrappers raise; they never warn and return an empty frame.
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_seasons())
@@ -89,11 +93,7 @@ tpbl_seasons <- function() {
 #' | gohoops_event_id | integer | GoHoops event id (key space: GoHoops events, one per TPBL season; 319 = 2024-25, 490 = 2025-26, 613 = 2026-27). Not the TPBL season id and not the GoHoops season id. |
 #' | name | character | Division name (Traditional Chinese: preseason (warm-up games), regular season, postseason challenge (play-in round), playoffs, finals). |
 #' | status | character | Division status: COMPLETED or IN_PROGRESS. |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_divisions(season = 2026))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_divisions(season = 2026)")
 #' @export
 #' @family TPBL Functions
 tpbl_divisions <- function(season) {
@@ -274,11 +274,7 @@ tpbl_standings <- function(division_id) {
 #' | won | integer | Games the ranked team won against this opponent in the division. |
 #' | lost | integer | Games the ranked team lost against this opponent in the division. |
 #' | drawn | integer | Games drawn against this opponent (always 0). |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_standings_against(division_id = 2))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_standings_against(division_id = 2)")
 #' @export
 #' @family TPBL Functions
 tpbl_standings_against <- function(division_id) {
@@ -370,11 +366,7 @@ tpbl_game <- function(game_id) {
 #' | gohoops_referee_id | integer | GoHoops referee id (key space: GoHoops referees). Not the TPBL referee id. |
 #' | name | character | Referee name in Traditional Chinese. Names only: no contact or birth data is published. |
 #' | role | character | Crew role enum: BASKETBALL_CHIEF_REFEREE = crew chief, BASKETBALL_FIRST_ASSISTANT_REFEREE = first assistant (umpire 1), BASKETBALL_SECOND_ASSISTANT_REFEREE = second assistant (umpire 2). |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_referees(game_id = 6))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_referees(game_id = 6)")
 #' @export
 #' @family TPBL Functions
 tpbl_referees <- function(game_id) {
@@ -701,11 +693,7 @@ tpbl_box_players <- function(game_id) {
 #' | three_pointers_pull_up_jump_shot_made | integer | 3-point field goals made that were a pull-up jump shot by the player in this quarter. |
 #' | three_pointers_pull_up_jump_shot_missed | integer | 3-point field goals missed that were a pull-up jump shot by the player in this quarter. |
 #' | three_pointers_pull_up_jump_shot_attempted | integer | 3-point field goals attempted that were a pull-up jump shot by the player in this quarter. |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_box_player_periods(game_id = 6))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_box_player_periods(game_id = 6)")
 #' @export
 #' @family TPBL Functions
 tpbl_box_player_periods <- function(game_id) {
@@ -840,11 +828,7 @@ tpbl_box_teams <- function(game_id) {
 #' | points_in_paint | integer | Points scored in the paint by the team in this quarter. |
 #' | second_chance_points | integer | Points scored on second chances (after an offensive rebound) by the team in this quarter. |
 #' | fast_break_points | integer | Points scored on the fast break by the team in this quarter. |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_box_team_periods(game_id = 6))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_box_team_periods(game_id = 6)")
 #' @export
 #' @family TPBL Functions
 tpbl_box_team_periods <- function(game_id) {
@@ -932,11 +916,7 @@ tpbl_roster <- function(division_id, team_id) {
 #' | point_x | integer | Shot position in MILLIMETRES, 0-28000 along the court length (a 28 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. Verified on 2,971 shots of one team: the made rate within 1.2 m of the hoop is 62-71 %. Which baseline is x = 0 is unverified. |
 #' | point_y | integer | Shot position in MILLIMETRES, 0-15000 across the court (a 15 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. The direction of y is unverified. |
 #' | offense_basket | integer | Basket the team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425. |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1)")
 #' @export
 #' @family TPBL Functions
 tpbl_team_shots <- function(division_id, team_id, rounds = NULL) {
@@ -969,11 +949,7 @@ tpbl_team_shots <- function(division_id, team_id, rounds = NULL) {
 #' | point_x | integer | Shot position in MILLIMETRES, 0-28000 along the court length (a 28 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. Same frame as the team list, where it was verified; here it is only checked to stay on the court. |
 #' | point_y | integer | Shot position in MILLIMETRES, 0-15000 across the court (a 15 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. The direction of y is unverified. |
 #' | offense_basket | integer | Basket the player's team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425. |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_player_shots(division_id = 2, player_id = 75))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_player_shots(division_id = 2, player_id = 75)")
 #' @export
 #' @family TPBL Functions
 tpbl_player_shots <- function(division_id, player_id) {
@@ -1145,11 +1121,7 @@ tpbl_player_shots <- function(division_id, player_id) {
 #' | turnovers_percentage | double | Turnover percentage, 0-100 (a one-decimal string on the API; the exact formula is not documented). |
 #' | efg | double | Effective field-goal percentage, 0-100 (the API's effective_field_goals_percentage, a one-decimal string). |
 #' | tsp | double | True-shooting percentage, 0-100 (the API's true_shooting_percentage, a one-decimal string). |
-#' @inherit tpbl_seasons details
-#' @examples
-#' \donttest{
-#'   try(tpbl_player_games(player_id = 75, division_id = 2))
-#' }
+#' @eval .intl_details(.tpbl_seasons_details, "tpbl_player_games(player_id = 75, division_id = 2)")
 #' @export
 #' @family TPBL Functions
 tpbl_player_games <- function(player_id, division_id) {

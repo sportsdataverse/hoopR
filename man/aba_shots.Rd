@@ -75,11 +75,9 @@ Errors: \code{hoopR_no_data} when the site has nothing for the request (HTTP 404
 after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 \code{hoopR_error}.
-}
-\examples{
-\donttest{
-  try(aba_shots(game_no = 6, season = 2026))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ aba_shots(game_no = 6, season = 2026)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other ABA:

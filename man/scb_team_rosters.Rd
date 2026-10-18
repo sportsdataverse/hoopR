@@ -59,11 +59,9 @@ a game not yet started), \code{hoopR_bad_request} (a bad argument, another 400 /
 truncated page, a body for another game, season, club or league, a box score still in play), all
 inheriting \code{hoopR_error}. Wrappers raise; they never return an empty frame.
 }
-}
-\examples{
-\donttest{
-  try(scb_team_rosters())
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ scb_team_rosters()
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other SCB Functions:

@@ -3,6 +3,45 @@
 # sportsdataverse/basketball/easl (origin/main e3d232ebc9). Transport, season mapping and refusals:
 # R/easl_runtime.R; frames: R/easl_parsers.R; columns: R/easl_schema.R.
 
+# The @details of every easl topic that shares the easl_health() notes (roxygen @eval .intl_details()).
+.easl_health_details <- c(
+  "* WARNING: UNOFFICIAL THIRD-PARTY INTERMEDIARY. These wrappers read easl.joshricha.com/api/v1, an Express server",
+  "  run by an individual. It is not EASL's and not Sportradar's: it mirrors Sportradar DataCore (organisation b1e0z)",
+  "  into SQLite and serves it keyless, and it can change or vanish without notice. Its routes, field names (steak,",
+  "  facebook_username) and sync freshness are the proxy author's. A first-party DataCore feed needs credentials this",
+  "  package does not have. The host serves no robots.txt (404) and states no terms; the runtime waits at least 1 s",
+  "  before every request, retries included, and honours Retry-After. Payloads are not redistributed as release",
+  "  assets.",
+  "* Seasons are END years (2026 = EASL 25-26). The server's season key is the START year; the runtime reads the",
+  "  season list, maps the END year to the DataCore seasonId and defaults to the ACTIVE season. Four editions exist",
+  "  (2023-24 to 2026-27). The server defaults to the active season on /matches, /standings and /leaders; the runtime",
+  "  always sends the resolved seasonId. A season is two calendar years: group by season_id, not by the year of the",
+  "  tip-off.",
+  "* Finished games only: the game routes first read the fixture and refuse (`hoopR_asset_fetch`) one that is not",
+  "  CONFIRMED with two scores, a box score whose player points do not add up to the score (the server serves",
+  "  one-team, four-row boxes for some games), a play-by-play that does not end on the final score in its highest",
+  "  period (4 or more, and the last period of the period table), and team totals that disagree with the score. For",
+  "  the ACTIVE season's fixture lists the runtime reads /health: a server clock more than a day from yours, or a",
+  "  game still SCHEDULED more than a day after its tip-off, means the mirror has stalled (`hoopR_asset_fetch`). That",
+  "  proves the mirror kept up with the games played, not that a game is final upstream.",
+  "* Ids: every DataCore id is a UUID v1 string. team_id = entityId, player_id = personId; fixture_number (YYSSNNN)",
+  "  is null on every 2023-24 fixture; `*_row_id` columns are the sync server's own integers, not DataCore ids. The",
+  "  fixture's competitors come in arbitrary order: read `home_*` / `away_*`, which the parsers take from isHome.",
+  "* No shot x/y, no game clock and no lineups exist on this server. The play-by-play text always says 'missed' for",
+  "  field goals and 'Free throw K of M made' for free throws, made or not: use points_scored (the change of the",
+  "  event team's running score), which lags on a minority of events. 301 of 2,444 sampled box rows are players who",
+  "  did not play (null minutes and counting stats; points are 0); player_box.played tells them apart.",
+  "  easl_player_stats ignores a season filter: it is the career line over every season. Names: nameFullLocal is the",
+  "  English display name and nameFullLatin the native-script name, so the columns are name and name_native.",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, an empty list or leaders",
+  "  object, a team or player without games), `hoopR_bad_request` (a malformed id, or a season that is not one of the",
+  "  server's END years, raised before the request that would use it) and `hoopR_asset_fetch` (any other failure: any",
+  "  non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for an unknown fixture, which is not",
+  "  retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a",
+  "  stalled sync on the active season; a body for another game, season, team or player than the one asked for).",
+  "  Wrappers raise; they never warn and return an empty frame."
+)
+
 #' @title
 #' **Get EASL Health**
 #' @description
@@ -19,46 +58,7 @@
 #' | status | character | Server status: 'OK'. |
 #' | message | character | Human-readable status text ('EASL Basketball API is running'). |
 #' | timestamp | character | Server time, ISO 8601 with milliseconds and Z (UTC). |
-#' @details
-#' * WARNING: UNOFFICIAL THIRD-PARTY INTERMEDIARY. These wrappers read easl.joshricha.com/api/v1, an Express server
-#'   run by an individual. It is not EASL's and not Sportradar's: it mirrors Sportradar DataCore (organisation b1e0z)
-#'   into SQLite and serves it keyless, and it can change or vanish without notice. Its routes, field names (steak,
-#'   facebook_username) and sync freshness are the proxy author's. A first-party DataCore feed needs credentials this
-#'   package does not have. The host serves no robots.txt (404) and states no terms; the runtime waits at least 1 s
-#'   before every request, retries included, and honours Retry-After. Payloads are not redistributed as release
-#'   assets.
-#' * Seasons are END years (2026 = EASL 25-26). The server's season key is the START year; the runtime reads the
-#'   season list, maps the END year to the DataCore seasonId and defaults to the ACTIVE season. Four editions exist
-#'   (2023-24 to 2026-27). The server defaults to the active season on /matches, /standings and /leaders; the runtime
-#'   always sends the resolved seasonId. A season is two calendar years: group by season_id, not by the year of the
-#'   tip-off.
-#' * Finished games only: the game routes first read the fixture and refuse (`hoopR_asset_fetch`) one that is not
-#'   CONFIRMED with two scores, a box score whose player points do not add up to the score (the server serves
-#'   one-team, four-row boxes for some games), a play-by-play that does not end on the final score in its highest
-#'   period (4 or more, and the last period of the period table), and team totals that disagree with the score. For
-#'   the ACTIVE season's fixture lists the runtime reads /health: a server clock more than a day from yours, or a
-#'   game still SCHEDULED more than a day after its tip-off, means the mirror has stalled (`hoopR_asset_fetch`). That
-#'   proves the mirror kept up with the games played, not that a game is final upstream.
-#' * Ids: every DataCore id is a UUID v1 string. team_id = entityId, player_id = personId; fixture_number (YYSSNNN)
-#'   is null on every 2023-24 fixture; `*_row_id` columns are the sync server's own integers, not DataCore ids. The
-#'   fixture's competitors come in arbitrary order: read `home_*` / `away_*`, which the parsers take from isHome.
-#' * No shot x/y, no game clock and no lineups exist on this server. The play-by-play text always says 'missed' for
-#'   field goals and 'Free throw K of M made' for free throws, made or not: use points_scored (the change of the
-#'   event team's running score), which lags on a minority of events. 301 of 2,444 sampled box rows are players who
-#'   did not play (null minutes and counting stats; points are 0); player_box.played tells them apart.
-#'   easl_player_stats ignores a season filter: it is the career line over every season. Names: nameFullLocal is the
-#'   English display name and nameFullLatin the native-script name, so the columns are name and name_native.
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, an empty list or leaders
-#'   object, a team or player without games), `hoopR_bad_request` (a malformed id, or a season that is not one of the
-#'   server's END years, raised before the request that would use it) and `hoopR_asset_fetch` (any other failure: any
-#'   non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for an unknown fixture, which is not
-#'   retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
-#'   stalled sync on the active season; a body for another game, season, team or player than the one asked for).
-#'   Wrappers raise; they never warn and return an empty frame.
-#' @examples
-#' \donttest{
-#'   try(easl_health())
-#' }
+#' @eval .intl_details(.easl_health_details, "easl_health()")
 #' @export
 #' @family EASL Functions
 easl_health <- function() {
@@ -101,7 +101,7 @@ easl_health <- function() {
 #' | standard | character | Competition standard: ELITE. |
 #' | created_at | character | When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). |
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_seasons())
@@ -174,7 +174,7 @@ easl_seasons <- function() {
 #' | away_score | integer | Away team final points (the wire sends a numeric string; cast to Int64); null before the game is played. |
 #' | away_result_place | integer | Away team: result place: 1 = winner, 2 = loser. The /matches list holds null here for fixtures not yet played; `/matches/{fixtureId}` is sampled for finished games only. |
 #' | away_draw | logical | Away team: true when the game has no winner YET or ever: true on every unplayed competitor, false on every finished one (a tie has never happened). |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_schedule(season = 2026))
@@ -248,7 +248,7 @@ easl_schedule <- function(season = NULL) {
 #' | away_score | integer | Away team final points (the wire sends a numeric string; cast to Int64); null before the game is played. |
 #' | away_result_place | integer | Away team: result place: 1 = winner, 2 = loser. The /matches list holds null here for fixtures not yet played; `/matches/{fixtureId}` is sampled for finished games only. |
 #' | away_draw | logical | Away team: true when the game has no winner YET or ever: true on every unplayed competitor, false on every finished one (a tie has never happened). |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_game(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
@@ -372,7 +372,7 @@ easl_game <- function(fixture_id) {
 #' | turnovers | integer | Turnovers committed by players. Null on some rows. |
 #' | turnovers_percentage | double | Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Float64). |
 #' | usage_rate | double | Usage rate on a 0-100 scale: share of the team's possessions used while on the court (up to 136 observed); definition unverified. Null on some rows. |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_player_box(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
@@ -422,7 +422,7 @@ easl_player_box <- function(fixture_id) {
 #' | team1_score | integer | Running score of team1_id as of this event. |
 #' | team2_id | character | Second team of the body's teams array; team2_score belongs to it. |
 #' | team2_score | integer | Running score of team2_id as of this event. |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_pbp(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
@@ -557,7 +557,7 @@ easl_pbp <- function(fixture_id) {
 #' | turnovers_against | integer | Opponent's figure in the same games: turnovers committed by players. Team total for the game. Absent on some rows. |
 #' | turnovers_team | integer | Team turnovers not charged to a player (shot-clock and similar violations). Team total for the game. |
 #' | turnovers_team_against | integer | Opponent's figure in the same games: team turnovers not charged to a player (shot-clock and similar violations). Team total for the game. Absent on some rows. |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_team_box(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
@@ -694,11 +694,7 @@ easl_team_box <- function(fixture_id) {
 #' | turnovers_against | integer | Opponent's figure in the same games: turnovers committed by players. Team total for the period. Absent on some rows. |
 #' | turnovers_team | integer | Team turnovers not charged to a player (shot-clock and similar violations). Team total for the period. |
 #' | turnovers_team_against | integer | Opponent's figure in the same games: team turnovers not charged to a player (shot-clock and similar violations). Team total for the period. Absent on some rows. |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_team_box_by_period(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_team_box_by_period(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3")')
 #' @export
 #' @family EASL Functions
 easl_team_box_by_period <- function(fixture_id) {
@@ -759,7 +755,7 @@ easl_team_box_by_period <- function(fixture_id) {
 #' | streak_home | integer | Current winning streak in home games; 0 after a loss. |
 #' | streak_away | integer | Current winning streak in away games; 0 after a loss. |
 #' | last_five | character | Results of the team's last five games as a comma-separated string, most recent first (W win, L loss). |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_standings(season = 2026))
@@ -804,11 +800,7 @@ easl_standings <- function(season = NULL) {
 #' | team_name_native | character | Alternative name: the native-script name of some Japanese clubs (for example the Japanese-script name of Utsunomiya Brex), blank for most clubs; for players it usually equals nameFullLocal. Despite the field name it is not always Latin script. Null on some rows. |
 #' | team_code_latin | character | Three-letter club code (for example BRE); null or empty for some clubs. |
 #' | team_code_local | character | Alternative three-letter club code (for example TPP); null for most clubs. A club may have only one of codeLatin / codeLocal. |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_leaders(season = 2026))
-#' }
+#' @eval .intl_details(.easl_health_details, "easl_leaders(season = 2026)")
 #' @export
 #' @family EASL Functions
 easl_leaders <- function(season = NULL) {
@@ -852,7 +844,7 @@ easl_leaders <- function(season = NULL) {
 #' | organization_id | character | DataCore organisation id: b1e0z (EASL). |
 #' | created_at | character | When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). |
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_teams())
@@ -903,11 +895,7 @@ easl_teams <- function() {
 #' | organization_id | character | DataCore organisation id: b1e0z (EASL). |
 #' | created_at | character | When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). |
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_team(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_team(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
 #' @family EASL Functions
 easl_team <- function(team_id) {
@@ -978,11 +966,7 @@ easl_team <- function(team_id) {
 #' | away_score | integer | Away team final points (the wire sends a numeric string; cast to Int64); null before the game is played. |
 #' | away_result_place | integer | Away team: result place: 1 = winner, 2 = loser. The /matches list holds null here for fixtures not yet played; `/matches/{fixtureId}` is sampled for finished games only. |
 #' | away_draw | logical | Away team: true when the game has no winner YET or ever: true on every unplayed competitor, false on every finished one (a tie has never happened). |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_team_schedule(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_team_schedule(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
 #' @family EASL Functions
 easl_team_schedule <- function(team_id, season = NULL) {
@@ -1172,11 +1156,7 @@ easl_team_schedule <- function(team_id, season = NULL) {
 #' | turnovers_team_against | integer | Opponent's figure in the same games: team turnovers not charged to a player (shot-clock and similar violations). Season total of the team's finished games. |
 #' | turnovers_team_against_per_game | double | Opponent's figure in the same games: team turnovers not charged to a player (shot-clock and similar violations). Per-game average: the total divided by `games`. |
 #' | wins | integer | Games won (for a player: by his team while he is in the line). Season total of the team's finished games. |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_team_stats(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_team_stats(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
 #' @family EASL Functions
 easl_team_stats <- function(team_id, season = NULL) {
@@ -1219,11 +1199,7 @@ easl_team_stats <- function(team_id, season = NULL) {
 #' | team_name_native | character | Alternative name: the native-script name of some Japanese clubs (for example the Japanese-script name of Utsunomiya Brex), blank for most clubs; for players it usually equals nameFullLocal. Despite the field name it is not always Latin script. |
 #' | team_code_latin | character | Three-letter club code (for example BRE); null or empty for some clubs. |
 #' | team_code_local | character | Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_team_leaders(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_team_leaders(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
 #' @family EASL Functions
 easl_team_leaders <- function(team_id, season = NULL) {
@@ -1271,7 +1247,7 @@ easl_team_leaders <- function(team_id, season = NULL) {
 #' | organization_id | character | DataCore organisation id: b1e0z (EASL). |
 #' | created_at | character | When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). |
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
-#' @inherit easl_health details
+#' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{
 #'   try(easl_players(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
@@ -1317,11 +1293,7 @@ easl_players <- function(season = NULL, team_id = NULL) {
 #' | organization_id | character | DataCore organisation id: b1e0z (EASL). |
 #' | created_at | character | When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). |
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_player(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_player(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5")')
 #' @export
 #' @family EASL Functions
 easl_player <- function(player_id) {
@@ -1449,11 +1421,7 @@ easl_player <- function(player_id) {
 #' | turnovers_per_game | double | Turnovers committed by players. Per-game average: the total divided by `games`. |
 #' | turnovers_percentage | double | Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Float64). |
 #' | wins | integer | Games won (for a player: by his team while he is in the line). Total over the player's games. |
-#' @inherit easl_health details
-#' @examples
-#' \donttest{
-#'   try(easl_player_stats(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5"))
-#' }
+#' @eval .intl_details(.easl_health_details, 'easl_player_stats(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5")')
 #' @export
 #' @family EASL Functions
 easl_player_stats <- function(player_id) {

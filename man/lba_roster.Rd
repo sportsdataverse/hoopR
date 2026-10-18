@@ -67,11 +67,9 @@ not final on the box score, play-by-play and shot routes, a truncated page, or a
 championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
 is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.
 }
-}
-\examples{
-\donttest{
-  try(lba_roster(team_id = 1764))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ lba_roster(team_id = 1764)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other LBA Functions:

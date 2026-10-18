@@ -76,11 +76,9 @@ retried; an error envelope; a game that is not finished or whose box score or pl
 stalled sync on the active season; a body for another game, season, team or player than the one asked for).
 Wrappers raise; they never warn and return an empty frame.
 }
-}
-\examples{
-\donttest{
-  try(easl_leaders(season = 2026))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ easl_leaders(season = 2026)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other EASL Functions:

@@ -121,6 +121,10 @@ genius_game <- function(match_id, return_parsed = TRUE) {
 #' has occurred" page (`transient = TRUE`: retry later), a dead connection, an error
 #' envelope, a cut-off page, an unfinished game, or a body for another match, competition
 #' or ORG.
+#'
+#' ```r
+#'  genius_team_box(match_id = 2902690)
+#' ```
 #' @param match_id Genius match id (`match_id` of [genius_schedule()], [genius_widget_games()] or
 #'   [genius_competition_games()]), e.g. 2902690.
 #' @param return_parsed Parse into a tibble (default `TRUE`); `FALSE` returns the parsed body or
@@ -199,10 +203,6 @@ genius_game <- function(match_id, return_parsed = TRUE) {
 #'
 #' @family Genius
 #' @export
-#' @examples
-#' \donttest{
-#'   try(genius_team_box(match_id = 2902690))
-#' }
 genius_team_box <- function(match_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .genius_get(paste0("https://", .GENIUS_LIVE, "/data/", match_id, "/data.json"))
@@ -439,6 +439,10 @@ genius_pbp <- function(match_id, return_parsed = TRUE) {
 #' has occurred" page (`transient = TRUE`: retry later), a dead connection, an error
 #' envelope, a cut-off page, an unfinished game, or a body for another match, competition
 #' or ORG.
+#'
+#' ```r
+#'  genius_shots(match_id = 2902690)
+#' ```
 #' @param match_id Genius match id (`match_id` of [genius_schedule()], [genius_widget_games()] or
 #'   [genius_competition_games()]), e.g. 2902690.
 #' @param return_parsed Parse into a tibble (default `TRUE`); `FALSE` returns the parsed body or
@@ -465,10 +469,6 @@ genius_pbp <- function(match_id, return_parsed = TRUE) {
 #'
 #' @family Genius
 #' @export
-#' @examples
-#' \donttest{
-#'   try(genius_shots(match_id = 2902690))
-#' }
 genius_shots <- function(match_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .genius_get(paste0("https://", .GENIUS_LIVE, "/data/", match_id, "/data.json"))
@@ -590,6 +590,10 @@ genius_competition_games <- function(comp_id, return_parsed = TRUE) {
 #' has occurred" page (`transient = TRUE`: retry later), a dead connection, an error
 #' envelope, a cut-off page, an unfinished game, or a body for another match, competition
 #' or ORG.
+#'
+#' ```r
+#'  genius_match_competition(org = "ESAKE", match_id = 2902690)
+#' ```
 #' @param org LiveStats ORG of the game's shell (can differ from the hosted ORG: NZN vs NZNBL).
 #' @param match_id Genius match id (`match_id` of [genius_schedule()], [genius_widget_games()] or
 #'   [genius_competition_games()]), e.g. 2902690.
@@ -610,10 +614,6 @@ genius_competition_games <- function(comp_id, return_parsed = TRUE) {
 #'
 #' @family Genius
 #' @export
-#' @examples
-#' \donttest{
-#'   try(genius_match_competition(org = "ESAKE", match_id = 2902690))
-#' }
 genius_match_competition <- function(org, match_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .genius_get(paste0("https://", .GENIUS_LIVE, "/u/", org, "/", match_id, "/"))
@@ -799,6 +799,10 @@ genius_schedule <- function(org, comp_id, round_number = -1, return_parsed = TRU
 #' has occurred" page (`transient = TRUE`: retry later), a dead connection, an error
 #' envelope, a cut-off page, an unfinished game, or a body for another match, competition
 #' or ORG.
+#'
+#' ```r
+#'  genius_schedule_embed(org = "HKS", comp_id = 49946)
+#' ```
 #' @param org Genius ORG code of the league (ESAKE, CEBL, BNXT, SLB, ...); see [genius_competitions()].
 #' @param comp_id Genius competition id: one per org competition-season (`comp_id` of
 #'   [genius_competitions()]), e.g. 49915.
@@ -830,10 +834,6 @@ genius_schedule <- function(org, comp_id, round_number = -1, return_parsed = TRU
 #'
 #' @family Genius
 #' @export
-#' @examples
-#' \donttest{
-#'   try(genius_schedule_embed(org = "HKS", comp_id = 49946))
-#' }
 genius_schedule_embed <- function(org, comp_id, round_number = -1, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .genius_get(paste0("https://", .GENIUS_HOSTED, "/embednf/", org, "/en/competition/", comp_id, "/schedule"), query = list(roundNumber = round_number))
@@ -876,6 +876,10 @@ genius_schedule_embed <- function(org, comp_id, round_number = -1, return_parsed
 #' has occurred" page (`transient = TRUE`: retry later), a dead connection, an error
 #' envelope, a cut-off page, an unfinished game, or a body for another match, competition
 #' or ORG.
+#'
+#' ```r
+#'  genius_widget_games(widget_key = "RFJIN037I07QV520B7WEXKV1GYNA31")
+#' ```
 #' @param widget_key The league site's public widget key (the bare query string of
 #'   `widget.wh.geniussports.com/widget/`), e.g. `"RFJIN037I07QV520B7WEXKV1GYNA31"` (ESAKE).
 #' @param return_parsed Parse into a tibble (default `TRUE`); `FALSE` returns the parsed body or
@@ -900,10 +904,6 @@ genius_schedule_embed <- function(org, comp_id, round_number = -1, return_parsed
 #'
 #' @family Genius
 #' @export
-#' @examples
-#' \donttest{
-#'   try(genius_widget_games(widget_key = "RFJIN037I07QV520B7WEXKV1GYNA31"))
-#' }
 genius_widget_games <- function(widget_key, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .genius_get(paste0("https://", .GENIUS_WIDGET, "/widget/?", widget_key))

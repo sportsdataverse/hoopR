@@ -652,12 +652,10 @@
 #' @return A character string: the ssgt uuid (e.g. `"qzw34da6jg"` for the 2025/26 regular season).
 #'   A season or game type layout-info does not list raises `hoopR_no_data`; a season that is not a
 #'   year raises `hoopR_bad_request`.
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_ssgt_uuid(season = 2026))
-#'   try(sportality_ssgt_uuid(season = 2026, game_type = "finals"))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, c(
+#'   'sportality_ssgt_uuid(season = 2026)',
+#'   'sportality_ssgt_uuid(season = 2026, game_type = "finals")'
+#' ))
 #' @export
 #' @family Basketligaen Functions
 sportality_ssgt_uuid <- function(season, game_type = "regular") {
@@ -697,11 +695,7 @@ sportality_ssgt_uuid <- function(season, game_type = "regular") {
 #' | gender | character | Gender as recorded by the site (`male`, or empty). |
 #' | weight | integer | Weight in kilograms. |
 #' | height | integer | Height in centimetres. |
-#' @inherit sportality_schedule details
-#' @examples
-#' \donttest{
-#'   try(sportality_player_crosswalk(season = 2026))
-#' }
+#' @eval .intl_details(.sportality_schedule_details, "sportality_player_crosswalk(season = 2026)")
 #' @export
 #' @family Basketligaen Functions
 sportality_player_crosswalk <- function(season, game_type = "regular") {

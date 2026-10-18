@@ -88,11 +88,9 @@ game per wrapper you need.
 error, a non-JSON or non-HTML body, an error or changed body, an unfinished
 game, a context or page for another game, season, tab or day, a truncated
 schedule list, or layout drift). All inherit \code{hoopR_error}.
-}
-\examples{
-\donttest{
-  try(bleague_leaders(schedule_key = 10693))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ bleague_leaders(schedule_key = 10693)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other B.LEAGUE:

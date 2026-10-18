@@ -142,12 +142,12 @@
     paste0("Errors and terms of use are those of [atrium_fixtures()]: unofficial use of the public widget endpoint, ",
            "at least 1 s between requests, not republished as release assets.",
            if (e$gender %in% c("women", "both")) " The site also serves women's competitions (pass their `competition_id`)." else ""),
-    "@family Atrium",
-    "@examples",
-    "\\donttest{",
-    paste0("  try(", prefix, "_seasons())"),
-    paste0("  try(", prefix, "_schedule())"),
-    "}"
+    "",
+    "```r",
+    paste0(" ", prefix, "_seasons()"),
+    paste0(" ", prefix, "_schedule()"),
+    "```",
+    "@family Atrium"
   )
 }
 

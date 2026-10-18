@@ -90,11 +90,9 @@ changed envelope, a game that is not finished, a body for another season, compet
 inheriting \code{hoopR_error}. Wrappers raise; they never return an empty frame for a failed request. Whole doubles
 (\code{24}) are accepted for integer arguments.
 }
-}
-\examples{
-\donttest{
-  try(sportpress_player_career(roster_id = 11193))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ sportpress_player_career(roster_id = 11193)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other BNXT League Functions:

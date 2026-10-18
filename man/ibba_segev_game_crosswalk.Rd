@@ -28,11 +28,9 @@ id casts) and the mapping must be one-to-one both ways.
 \details{
 Raises \code{hoopR_bad_request} when \code{df} is not a data frame, lacks a column, has an id
 column of the wrong type, or maps one id to two.
-}
-\examples{
-\donttest{
-  try(ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1)))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1))
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other IBBA:

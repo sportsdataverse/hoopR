@@ -410,12 +410,10 @@ Per-competition aliases of the FIBA wrappers for FIBA AmeriCup (GDAP competition
 FIBA's terms restrict this source: the GDAP developer-portal terms limit API use to 'Authorized Users' and the fiba.basketball terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included. Users who are not themselves authorised by FIBA should check the terms before using the wrappers. See \code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}} for the shared notes.
 
 A \code{comp} of another competition family, or one GDAP gives no family, is \code{hoopR_asset_fetch}; a season with no edition is \code{hoopR_no_data}; a season listing several editions, or a game function called with neither \code{season} nor \code{comp}, is \code{hoopR_bad_request}.
-}
-\examples{
-\donttest{
-  try(fiba_americup_editions(season = 2025))
-  try(fiba_americup_schedule(season = 2025))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ fiba_americup_editions(season = 2025)
+ fiba_americup_schedule(season = 2025)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other FIBA Competition Functions:

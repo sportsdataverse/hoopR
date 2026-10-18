@@ -79,11 +79,9 @@ rotation lists), \code{hoopR_bad_request} (a uuid that is not a uuid, a \code{gi
 422) and \code{hoopR_asset_fetch} (any other failed or wrong answer, including a \code{gid} whose game has another uuid
 and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up to three attempts.
 }
-}
-\examples{
-\donttest{
-  try(pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other P. LEAGUE+ Functions:
