@@ -1,0 +1,11 @@
+game_id,team_id,team_side,period,period_type,points
+11446,11,home,1,regular,23
+11446,11,home,2,regular,17
+11446,11,home,3,regular,13
+11446,11,home,4,regular,24
+11446,11,home,5,overtime,11
+11446,41,away,1,regular,20
+11446,41,away,2,regular,22
+11446,41,away,3,regular,17
+11446,41,away,4,regular,18
+11446,41,away,5,overtime,8

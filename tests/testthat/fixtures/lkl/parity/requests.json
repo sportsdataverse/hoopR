@@ -1,0 +1,292 @@
+{
+ "game_info": {
+  "function": "lkl_game_info",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 1,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   }
+  ]
+ },
+ "game_players": {
+  "function": "lkl_game_players",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 22,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   }
+  ]
+ },
+ "player_box": {
+  "function": "lkl_player_box",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 22,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/boxscore/11446",
+    "query": {}
+   }
+  ]
+ },
+ "team_box": {
+  "function": "lkl_team_box",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 2,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/boxscore/11446",
+    "query": {}
+   }
+  ]
+ },
+ "period_scores": {
+  "function": "lkl_period_scores",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 10,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/boxscore/11446",
+    "query": {}
+   }
+  ]
+ },
+ "summary": {
+  "function": "lkl_summary",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 14,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/summary/11446",
+    "query": {}
+   }
+  ]
+ },
+ "game_score": {
+  "function": "lkl_game_score",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 1,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/game-score/11446",
+    "query": {}
+   }
+  ]
+ },
+ "game_stats": {
+  "function": "lkl_game_stats",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 13,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/game-stats/11446",
+    "query": {}
+   }
+  ]
+ },
+ "lead_chart": {
+  "function": "lkl_lead_chart",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 50,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/game-stats/11446",
+    "query": {}
+   }
+  ]
+ },
+ "leaders": {
+  "function": "lkl_leaders",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 60,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/leaders/11446",
+    "query": {}
+   }
+  ]
+ },
+ "pbp": {
+  "function": "lkl_pbp",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 668,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/play-by-play/11446",
+    "query": {}
+   }
+  ]
+ },
+ "shots": {
+  "function": "lkl_shots",
+  "args": {
+   "game_id": 11446
+  },
+  "rows": 148,
+  "requests": [
+   {
+    "path": "/rungtynes/11446",
+    "query": {}
+   },
+   {
+    "path": "/api/livestream/shot-chart/11446",
+    "query": {}
+   }
+  ]
+ },
+ "results": {
+  "function": "lkl_results",
+  "args": {
+   "season": 2027
+  },
+  "rows": 22,
+  "requests": [
+   {
+    "path": "/rezultatai",
+    "query": {}
+   },
+   {
+    "path": "/loadResults",
+    "query": {
+     "team": "-",
+     "opponent": "-",
+     "month": "-",
+     "season": "49436",
+     "page": "1"
+    }
+   },
+   {
+    "path": "/loadResults",
+    "query": {
+     "team": "-",
+     "opponent": "-",
+     "month": "-",
+     "season": "49436",
+     "page": "2"
+    }
+   },
+   {
+    "path": "/loadResults",
+    "query": {
+     "team": "-",
+     "opponent": "-",
+     "month": "-",
+     "season": "49436",
+     "page": "3"
+    }
+   }
+  ]
+ },
+ "standings": {
+  "function": "lkl_standings",
+  "args": {
+   "season": 2027
+  },
+  "rows": 9,
+  "requests": [
+   {
+    "path": "/turnyrine-lentele",
+    "query": {}
+   },
+   {
+    "path": "/loadStandings/35",
+    "query": {}
+   }
+  ]
+ },
+ "standings__2026": {
+  "function": "lkl_standings",
+  "args": {
+   "season": 2026
+  },
+  "rows": 12,
+  "requests": [
+   {
+    "path": "/turnyrine-lentele",
+    "query": {}
+   },
+   {
+    "path": "/loadStandings/34",
+    "query": {}
+   }
+  ]
+ },
+ "standings__2008": {
+  "function": "lkl_standings",
+  "args": {
+   "season": 2008
+  },
+  "rows": 9,
+  "requests": [
+   {
+    "path": "/turnyrine-lentele",
+    "query": {}
+   },
+   {
+    "path": "/loadStandings/3",
+    "query": {}
+   }
+  ]
+ }
+}
