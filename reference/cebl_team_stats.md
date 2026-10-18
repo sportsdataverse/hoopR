@@ -153,6 +153,8 @@ columns are always these, in this order (sdv-py `cebl_team_stats`):
   `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
+     cebl_team_stats(mode = "TOTALS", season = 2025, competition = "REGULAR")
+
 ## See also
 
 Other CEBL Functions:
@@ -167,34 +169,3 @@ Other CEBL Functions:
 [`cebl_seasons()`](https://hoopR.sportsdataverse.org/reference/cebl_seasons.md),
 [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md),
 [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cebl_team_stats(mode = "TOTALS", season = 2025, competition = "REGULAR"))
-#> ── CEBL Team Statistics from the CEBL Stats API ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:52 UTC
-#> # A tibble: 11 × 42
-#>    season mode   competition segment vs_conference vs_team_id team_id
-#>     <int> <chr>  <chr>       <chr>   <chr>              <int>   <int>
-#>  1   2025 TOTALS REGULAR     NA      NA                    NA      18
-#>  2   2025 TOTALS REGULAR     NA      NA                    NA      16
-#>  3   2025 TOTALS REGULAR     NA      NA                    NA      19
-#>  4   2025 TOTALS REGULAR     NA      NA                    NA      17
-#>  5   2025 TOTALS REGULAR     NA      NA                    NA      14
-#>  6   2025 TOTALS REGULAR     NA      NA                    NA      15
-#>  7   2025 TOTALS REGULAR     NA      NA                    NA      20
-#>  8   2025 TOTALS REGULAR     NA      NA                    NA      22
-#>  9   2025 TOTALS REGULAR     NA      NA                    NA      21
-#> 10   2025 TOTALS REGULAR     NA      NA                    NA      24
-#> 11   2025 TOTALS REGULAR     NA      NA                    NA      NA
-#> # ℹ 35 more variables: is_league_row <lgl>, name_en <chr>, short_name_en <chr>,
-#> #   name_fr <chr>, short_name_fr <chr>, played <int>, wins <int>,
-#> #   win_percentage <dbl>, losses <int>, points <dbl>, points_against <dbl>,
-#> #   point_difference <dbl>, field_goals_made <dbl>,
-#> #   field_goals_attempted <dbl>, field_goal_percentage <dbl>,
-#> #   three_points_made <dbl>, three_points_attempted <dbl>,
-#> #   three_point_percentage <dbl>, free_throws_made <dbl>, …
-# }
-```

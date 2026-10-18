@@ -157,7 +157,8 @@ competition without standings, a final game with no play-by-play or box score, H
 or empty body; an envelope whose status is not OK; a full list page; a game that is not final; a body for another
 competition, match, team, player or season than the one asked for) and <code>hoopR_bad_request</code> (a bad argument,
 before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kzs_playing_days.html">kzs_playing_days</a></span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KZS Functions:
@@ -185,29 +186,6 @@ before any request). HTTP 500 is retried. Wrappers raise; they never return an e
 <code><a href="kzs_teams.html">kzs_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kzs_playing_days</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── KZS Playing Days from api.kzs.si ──────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:08 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 107 × 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    competition_id date       no_of_games</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>            579 2025-09-26           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>            579 2025-09-27           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>            579 2025-09-29           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>            579 2025-10-01           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>            579 2025-10-04           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>            579 2025-10-06           2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>            579 2025-10-09           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>            579 2025-10-11           3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>            579 2025-10-13           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>            579 2025-10-14           1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 97 more rows</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

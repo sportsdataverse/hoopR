@@ -73,6 +73,8 @@ after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_pbp_legend(game_id = 25602)
+
 ## See also
 
 Other LBA Functions:
@@ -94,27 +96,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_pbp_legend(game_id = 25602))
-#> ── LBA Play-by-Play Legend from legabasket.it ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:48 UTC
-#> # A tibble: 59 × 2
-#>     code label              
-#>    <int> <chr>              
-#>  1     1 Tiro in sospensione
-#>  2     2 Tiro in corsa      
-#>  3     3 Tiro in fadeaway   
-#>  4     4 Giro e Tiro        
-#>  5     5 Tiro in Step Back  
-#>  6     6 Arresto e tiro     
-#>  7     7 Appoggio a canestro
-#>  8     8 Da penetrazione    
-#>  9     9 Schiacciata        
-#> 10    10 Alley-oop          
-#> # ℹ 49 more rows
-# }
-```

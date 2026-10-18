@@ -163,7 +163,8 @@ season before 1984, raised before any request; HTTP 400 / 422) and <code>hoopR_a
 rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
 <code>problem+json</code> body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/acb_team_records.html">acb_team_records</a></span><span class="op">(</span>club_id <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ACB Functions:
@@ -213,37 +214,6 @@ match, a game that is not finished). Wrappers raise; they never warn and return 
 <code><a href="acb_teams.html">acb_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_team_records</span><span class="op">(</span>club_id <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Team Records from api2.acb.com ────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:19 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 15 × 19</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    club_id stat          value game_id game_date           player_id player_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>       2 rating           46    <span style="text-decoration: underline;">5</span>573 1988-01-30 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>740 Steve Trum…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>       2 points           54    <span style="text-decoration: underline;">4</span>606 1984-02-18 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>741 Epi        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>       2 rebounds         19    <span style="text-decoration: underline;">5</span>092 1986-02-22 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>740 Steve Trum…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>       2 assists          14   <span style="text-decoration: underline;">18</span>227 2018-12-16 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">204</span>097 Thomas Heu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>       2 steals            8    <span style="text-decoration: underline;">5</span>525 1987-12-06 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>739 Nacho Solo…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>       2 blocks           12   <span style="text-decoration: underline;">12</span>701 2007-01-07 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>648 Fran Vázqu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>       2 three_pointer    12   <span style="text-decoration: underline;">15</span>578 2014-03-08 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">210</span>662 Jacob Pull…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>       2 two_pointer      24    <span style="text-decoration: underline;">4</span>606 1984-02-18 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>741 Epi        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>       2 free_throws      20   <span style="text-decoration: underline;">12</span>280 2005-11-05 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>515 Juan Carlo…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>       2 defensive_re…    15  <span style="text-decoration: underline;">102</span>920 2021-09-22 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">202</span>101 Nikola Mir…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>       2 offensive_re…    10    <span style="text-decoration: underline;">8</span>729 1995-03-24 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">201</span>030 Darryl Mid…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>       2 received_fou…    13   <span style="text-decoration: underline;">12</span>280 2005-11-05 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>515 Juan Carlo…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>       2 committed_fo…     5  <span style="text-decoration: underline;">105</span>392 2026-10-04 <span style="color: #949494;">00:00:00</span>  30<span style="text-decoration: underline;">005</span>355 Umoja Gibs…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>       2 dunks             6   <span style="text-decoration: underline;">15</span>848 2014-06-10 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">209</span>874 Joey Dorsey</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>       2 turnovers        13   <span style="text-decoration: underline;">10</span>659 2000-12-16 <span style="color: #949494;">00:00:00</span>  20<span style="text-decoration: underline;">200</span>511 Saras Jasi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: first_name &lt;chr&gt;, last_name &lt;chr&gt;, shirt_number &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   game_role &lt;chr&gt;, local_team_id &lt;int&gt;, local_club_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   local_team &lt;chr&gt;, local_team_abbr &lt;chr&gt;, visitor_team_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   visitor_club_id &lt;int&gt;, visitor_team &lt;chr&gt;, visitor_team_abbr &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

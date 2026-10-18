@@ -110,6 +110,8 @@ columns are always these, in this order (sdv-py `easl_player`):
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_player(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5")
+
 ## See also
 
 Other EASL Functions:
@@ -130,20 +132,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_player(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5"))
-#> ── EASL Player from easl.joshricha.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:10 UTC
-#> # A tibble: 1 × 18
-#>   player_row_id player_id   name  name_latin name_abbreviated nationality gender
-#>           <int> <chr>       <chr> <chr>      <chr>            <chr>       <chr> 
-#> 1           164 85c99dab-9… D.J.… D.J. NEWB… NA               USA         MALE  
-#> # ℹ 11 more variables: dob <date>, height_cm <int>, height_feet <chr>,
-#> #   weight_kg <int>, weight_lbs <int>, status <chr>, jersey_number <chr>,
-#> #   position <chr>, organization_id <chr>, created_at <chr>, updated_at <chr>
-# }
-```

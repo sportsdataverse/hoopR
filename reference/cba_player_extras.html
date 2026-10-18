@@ -175,7 +175,8 @@ non-integer id or season, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (an
 this API answers for a body it dislikes and which is not retried; a dead connection; an empty or undecryptable
 body; an unfinished game; a body for another game, team, season or day), all inheriting <code>hoopR_error</code>. HTTP 429
 / 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cba_player_extras.html">cba_player_extras</a></span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CBA Functions:
@@ -207,31 +208,6 @@ body; an unfinished game; a body for another game, team, season or day), all inh
 <code><a href="cba_teams.html">cba_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cba_player_extras</span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CBA Player Extras from data-server.cbaleague.com ──────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:23 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 24 × 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    schedule_id side  cn_alias dunks_points fast_break_points</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   100<span style="text-decoration: underline;">105</span>799 home  朱俊龙              0                 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   100<span style="text-decoration: underline;">105</span>799 home  胡金秋              0                 4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   100<span style="text-decoration: underline;">105</span>799 home  布朗                0                 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   100<span style="text-decoration: underline;">105</span>799 home  孙铭徽              0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   100<span style="text-decoration: underline;">105</span>799 home  卡尔顿              2                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   100<span style="text-decoration: underline;">105</span>799 home  林秉圣              0                 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   100<span style="text-decoration: underline;">105</span>799 home  桑普森              4                 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   100<span style="text-decoration: underline;">105</span>799 home  塔克                2                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   100<span style="text-decoration: underline;">105</span>799 home  赵嘉仁              0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   100<span style="text-decoration: underline;">105</span>799 home  吴骁                0                 0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: field_goals_at_rim_made &lt;int&gt;, game_start &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   number &lt;chr&gt;, player_id &lt;int&gt;, up_time &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

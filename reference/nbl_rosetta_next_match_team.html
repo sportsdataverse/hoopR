@@ -150,6 +150,7 @@ season id, an org or season type with nothing, or no season in progress); <code>
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 <code>hoopR_bad_request</code> for an unknown <code>org</code> / <code>season_type</code>, a malformed id, or HTTP 400 / 422.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl_rosetta_next_match_team.html">nbl_rosetta_next_match_team</a></span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2027</span>, team_code <span class="op">=</span> <span class="st">"PER"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -177,26 +178,6 @@ another org, season or entity than the one asked for, or any other failed fetch;
 <code><a href="nbl_rosetta_teams.html">nbl_rosetta_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl_rosetta_next_match_team</span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2027</span>, team_code <span class="op">=</span> <span class="st">"PER"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBL Rosetta next_match_team from prod.rosetta.nbl.com.au ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:00:54 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 53</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   org   match_id   external_media_id date_updated start_time start_time_datetime</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> nbl   370d79db-… 72016832          2026-10-18T… 2026-10-2… 2026-10-21T08:30:00</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 47 more variables: round &lt;chr&gt;, match_type &lt;chr&gt;, match_status &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status &lt;chr&gt;, home_score &lt;int&gt;, away_score &lt;int&gt;, attendance &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   match_slug &lt;chr&gt;, match_title &lt;chr&gt;, venue_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rosetta_venue_id &lt;chr&gt;, venue_name &lt;chr&gt;, venue_address &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_suburb &lt;chr&gt;, venue_state &lt;chr&gt;, venue_country &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_capacity &lt;int&gt;, venue_timezone &lt;chr&gt;, venue_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_latitude &lt;dbl&gt;, venue_longitude &lt;dbl&gt;, home_team_id &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

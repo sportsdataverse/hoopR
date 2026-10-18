@@ -244,7 +244,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_team_stats(club_id = 2, season = 2027))
 #> ── ACB Team Stats from api2.acb.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:20 UTC
+#> ℹ Data updated: 2026-10-18 17:20:24 UTC
 #> # A tibble: 14 × 97
 #>    club_id team_id edition_id season player_id player_name  first_name last_name
 #>      <int>   <int>      <int>  <int>     <int> <chr>        <chr>      <chr>    

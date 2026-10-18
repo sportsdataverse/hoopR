@@ -66,6 +66,8 @@ changed body, a truncated results list). All inherit `hoopR_error`.
 Dates and times are Lithuanian local (Europe/Vilnius) as the site prints
 them.
 
+     lkl_game_score(game_id = 11446)
+
 ## See also
 
 Other LKL:
@@ -82,16 +84,3 @@ Other LKL:
 [`lkl_standings()`](https://hoopR.sportsdataverse.org/reference/lkl_standings.md),
 [`lkl_summary()`](https://hoopR.sportsdataverse.org/reference/lkl_summary.md),
 [`lkl_team_box()`](https://hoopR.sportsdataverse.org/reference/lkl_team_box.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lkl_game_score(game_id = 11446))
-#> Error in lkl_game_score(game_id = 11446) : 
-#>   lkl.lt/rungtynes/11446 answered HTTP 403: <!DOCTYPE html><html
-#> lang="en-US"><head><title>Just a moment...</title><meta
-#> http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta
-#> http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
-# }
-```

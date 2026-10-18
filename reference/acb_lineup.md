@@ -103,6 +103,8 @@ are always these, in this order (sdv-py `acb_lineup`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_lineup(match_id = 105401)
+
 ## See also
 
 Other ACB Functions:
@@ -150,31 +152,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_lineup(match_id = 105401))
-#> ── ACB Lineup from api2.acb.com ──────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:53 UTC
-#> # A tibble: 24 × 22
-#>    match_id edition_id season team_side team_id club_id team  team_abbr
-#>       <int>      <int>  <int> <chr>       <int>   <int> <chr> <chr>    
-#>  1   105401         91   2027 home         4467       2 Barça BAR      
-#>  2   105401         91   2027 home         4467       2 Barça BAR      
-#>  3   105401         91   2027 home         4467       2 Barça BAR      
-#>  4   105401         91   2027 home         4467       2 Barça BAR      
-#>  5   105401         91   2027 home         4467       2 Barça BAR      
-#>  6   105401         91   2027 home         4467       2 Barça BAR      
-#>  7   105401         91   2027 home         4467       2 Barça BAR      
-#>  8   105401         91   2027 home         4467       2 Barça BAR      
-#>  9   105401         91   2027 home         4467       2 Barça BAR      
-#> 10   105401         91   2027 home         4467       2 Barça BAR      
-#> # ℹ 14 more rows
-#> # ℹ 14 more variables: lineup_order <int>, player_id <int>, player_name <chr>,
-#> #   short_name <chr>, shirt_number <chr>, play_time <chr>,
-#> #   seconds_played <int>, is_playing <lgl>, points <int>, rebounds <int>,
-#> #   assists <int>, fouls <int>, differential <int>, rating <int>
-# }
-```

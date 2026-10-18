@@ -90,6 +90,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_awards(comp = 208182)
+
 ## See also
 
 Other FIBA Functions:
@@ -129,34 +131,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_awards(comp = 208182))
-#> ── FIBA gdap_awards from fiba.basketball ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:58 UTC
-#> # A tibble: 13 × 16
-#>    competition_id competition_end_date award_date competition_season
-#>             <int> <chr>                <chr>                   <int>
-#>  1         208182 2023-09-10           2023-09-10               2023
-#>  2         208182 2023-09-10           2023-09-10               2023
-#>  3         208182 2023-09-10           2023-09-10               2023
-#>  4         208182 2023-09-10           2023-09-10               2023
-#>  5         208182 2023-09-10           2023-09-10               2023
-#>  6         208182 2023-09-10           2023-09-10               2023
-#>  7         208182 2023-09-10           2023-09-10               2023
-#>  8         208182 2023-09-10           2023-09-10               2023
-#>  9         208182 2023-09-10           2023-09-10               2023
-#> 10         208182 2023-09-10           2023-09-10               2023
-#> 11         208182 2023-09-10           2023-09-10               2023
-#> 12         208182 2023-09-10           2023-09-10               2023
-#> 13         208182 2023-09-10           2023-09-10               2023
-#> # ℹ 12 more variables: competition_official_name <chr>, award_name <chr>,
-#> #   award_code <chr>, award_level_id <int>, award_level <chr>,
-#> #   award_label <chr>, player_id <int>, player_first_name <chr>,
-#> #   player_last_name <chr>, player_date_of_birth <chr>,
-#> #   player_nationality <chr>, teams <chr>
-# }
-```

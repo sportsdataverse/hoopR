@@ -107,6 +107,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_games_by_team(season = 2026, team_uid = 10)
+
 ## See also
 
 Other IBBA:
@@ -126,33 +128,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_games_by_team(season = 2026, team_uid = 10))
-#> ── IBBA games by team ────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:07 UTC
-#> # A tibble: 83 × 30
-#>    game_id game_date  season home_team_id away_team_id home_team_he away_team_he
-#>      <int> <date>      <int>        <int>        <int> <chr>        <chr>       
-#>  1    8888 2025-09-07   2026          120          119 "מכבי ת\"א"  "בני הרצליה"
-#>  2    9895 2025-09-12   2026          120          252 "מכבי ת\"א"  "זניט"      
-#>  3    9896 2025-09-13   2026          120          240 "מכבי ת\"א"  "פרטיזן בלג…
-#>  4    9897 2025-09-17   2026          120          266 "מכבי ת\"א"  "מכבי רעננה"
-#>  5   26586 2025-09-21   2026         1109         1112 "מכבי Rapyd… "הפועל מידט…
-#>  6   26595 2025-09-24   2026         1109         1114 "מכבי Rapyd… "עירוני לאט…
-#>  7   26597 2025-09-26   2026         1109         1112 "מכבי Rapyd… "הפועל מידט…
-#>  8    7886 2025-09-30   2026          172          120 "אנאדולו אפ… "מכבי ת\"א" 
-#>  9    7888 2025-10-03   2026          120          304 "מכבי ת\"א"  "פריז"      
-#> 10    7891 2025-10-08   2026          127          120 "הפועל ת\"א" "מכבי ת\"א" 
-#> # ℹ 73 more rows
-#> # ℹ 23 more variables: home_team <chr>, away_team <chr>, home_logo_url <chr>,
-#> #   away_logo_url <chr>, home_score <int>, away_score <int>, board_id <int>,
-#> #   board_name_he <chr>, board_name <chr>, round <int>, tip_off <chr>,
-#> #   venue_he <chr>, venue <chr>, referees_he <chr>, attendance <int>,
-#> #   overtime <lgl>, overtimes <int>, home_score_by_period <chr>,
-#> #   away_score_by_period <chr>, tickets_url <chr>, external_id <chr>, …
-# }
-```

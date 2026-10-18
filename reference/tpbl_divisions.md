@@ -93,6 +93,8 @@ play-in, playoffs, finals) of one season. An empty answer raises
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_divisions(season = 2026)
+
 ## See also
 
 Other TPBL Functions:
@@ -111,21 +113,3 @@ Other TPBL Functions:
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_divisions(season = 2026))
-#> ── TPBL Divisions from api.tpbl.basketball ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:19 UTC
-#> # A tibble: 5 × 7
-#>   season season_id division_id gohoops_division_id gohoops_event_id name  status
-#>    <int>     <int>       <int>               <int>            <int> <chr> <chr> 
-#> 1   2026         2           8                 357              490 熱身賽…… COMPL…
-#> 2   2026         2           9                 358              490 例行賽…… COMPL…
-#> 3   2026         2          11                 466              490 季後挑戰… COMPL…
-#> 4   2026         2          12                 467              490 季後賽…… COMPL…
-#> 5   2026         2          35                 576              490 冠軍賽…… COMPL…
-# }
-```

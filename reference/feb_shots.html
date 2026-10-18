@@ -179,6 +179,7 @@ an empty overview window), <code>hoopR_bad_request</code> (HTTP 400 / 422, or a
 a token the API still rejects after one renewal, a non-JSON or non-HTML
 body, an error or changed envelope, a play-by-play of another game, a page
 for another group or season, or layout drift). All inherit <code>hoopR_error</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/feb_shots.html">feb_shots</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">2535725</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -195,30 +196,6 @@ for another group or season, or layout drift). All inherit <code>hoopR_error</co
 <code><a href="feb_team_stats.html">feb_team_stats()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">feb_shots</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">2535725</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FEB shots from intrafeb.feb.es ────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:38:30 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 122 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id period clock clock_seconds team_side team_id shirt_number player_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2<span style="text-decoration: underline;">535</span>725      3 08:34           514 home      1<span style="text-decoration: underline;">009</span>716 11             1<span style="text-decoration: underline;">603</span>635</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2<span style="text-decoration: underline;">535</span>725      2 04:38           278 home      1<span style="text-decoration: underline;">009</span>716 22             2<span style="text-decoration: underline;">500</span>822</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2<span style="text-decoration: underline;">535</span>725      4 09:15           555 home      1<span style="text-decoration: underline;">009</span>716 6              2<span style="text-decoration: underline;">880</span>241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2<span style="text-decoration: underline;">535</span>725      1 06:19           379 away      1<span style="text-decoration: underline;">010</span>207 8              2<span style="text-decoration: underline;">533</span>871</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2<span style="text-decoration: underline;">535</span>725      2 02:04           124 away      1<span style="text-decoration: underline;">010</span>207 13             2<span style="text-decoration: underline;">640</span>789</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2<span style="text-decoration: underline;">535</span>725      3 09:53           593 home      1<span style="text-decoration: underline;">009</span>716 16             2<span style="text-decoration: underline;">880</span>232</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2<span style="text-decoration: underline;">535</span>725      2 09:13           553 home      1<span style="text-decoration: underline;">009</span>716 11             1<span style="text-decoration: underline;">603</span>635</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2<span style="text-decoration: underline;">535</span>725      2 01:06            66 away      1<span style="text-decoration: underline;">010</span>207 13             2<span style="text-decoration: underline;">640</span>789</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2<span style="text-decoration: underline;">535</span>725      3 09:18           558 home      1<span style="text-decoration: underline;">009</span>716 66             2<span style="text-decoration: underline;">814</span>191</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2<span style="text-decoration: underline;">535</span>725      3 01:41           101 home      1<span style="text-decoration: underline;">009</span>716 3              1<span style="text-decoration: underline;">371</span>559</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 112 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: made &lt;lgl&gt;, x &lt;dbl&gt;, y &lt;dbl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

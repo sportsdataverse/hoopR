@@ -100,6 +100,8 @@ changed body, an unfinished game, a context or page for another game,
 season, tab or day, a truncated schedule list, or layout drift). All
 inherit `hoopR_error`.
 
+     bleague_schedule_clubs(season = 2026, tab = 1, month = 10, day = 4)
+
 ## See also
 
 Other B.LEAGUE:
@@ -116,27 +118,3 @@ Other B.LEAGUE:
 [`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md),
 [`bleague_team_box()`](https://hoopR.sportsdataverse.org/reference/bleague_team_box.md),
 [`bleague_team_summary()`](https://hoopR.sportsdataverse.org/reference/bleague_team_summary.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(bleague_schedule_clubs(season = 2026, tab = 1, month = 10, day = 4))
-#> ── B.LEAGUE schedule clubs from www.bleague.jp ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:38 UTC
-#> # A tibble: 26 × 5
-#>    season   tab event team_id name  
-#>     <int> <int> <int> <chr>   <chr> 
-#>  1   2026     1     2 702     北海道
-#>  2   2026     1     2 692     仙台  
-#>  3   2026     1     2 693     秋田  
-#>  4   2026     1     2 712     茨城  
-#>  5   2026     1     2 703     宇都宮
-#>  6   2026     1     2 713     群馬  
-#>  7   2026     1     2 745     越谷  
-#>  8   2026     1     2 2486    A千葉 
-#>  9   2026     1     2 704     千葉J 
-#> 10   2026     1     2 706     A東京 
-#> # ℹ 16 more rows
-# }
-```

@@ -135,7 +135,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_period_scores(gmkey = "S47G01N49"))
 #> ── KBL Period Scores from api.kbl.or.kr ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:25 UTC
+#> ℹ Data updated: 2026-10-18 17:24:27 UTC
 #> # A tibble: 8 × 10
 #>   gmkey season_code season game_code game_no side  team_code period period_label
 #>   <chr>       <int>  <int> <chr>       <int> <chr> <chr>      <int> <chr>       

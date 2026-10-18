@@ -136,7 +136,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_shots(schedule_key = 504734))
 #> ── B.LEAGUE shots from b-league.s3.amazonaws.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:45 UTC
+#> ℹ Data updated: 2026-10-18 17:20:55 UTC
 #> # A tibble: 134 × 23
 #>    schedule_key season feed  period event_no team_side team_id player_id 
 #>           <int>  <int> <chr>  <int>    <int> <chr>     <chr>   <chr>     

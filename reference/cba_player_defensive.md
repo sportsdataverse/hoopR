@@ -199,6 +199,8 @@ order (sdv-py `cba_player_defensive`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_player_defensive(season = 2026, team_id = 29128)
+
 ## See also
 
 Other CBA Functions:
@@ -228,43 +230,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_player_defensive(season = 2026, team_id = 29128))
-#> ── CBA Player Defensive from data-server.cbaleague.com ───── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:22 UTC
-#> # A tibble: 20 × 31
-#>      age blocked_rate blocked_rate_rank blocked_rate_sort first_position
-#>    <int>        <dbl>             <dbl>             <dbl> <chr>         
-#>  1    19        0.687              0               0.686  中锋          
-#>  2    27        0.051              0.73            0.0509 中锋          
-#>  3    33        0.048              0.93            0.0483 大前锋        
-#>  4    22        0.02               0               0.0198 控球后卫      
-#>  5    28        0.018              1               0.0178 得分后卫      
-#>  6    26        0.017              0.81            0.0168 小前锋        
-#>  7    28        0.014              0.88            0.0135 控球后卫      
-#>  8    19        0.013              0               0.0133 控球后卫      
-#>  9    30        0.012              0.84            0.0121 控球后卫      
-#> 10    27        0.011              0.28            0.0108 大前锋        
-#> 11    34        0.009              0.12            0.0094 中锋          
-#> 12    28        0.006              0.12            0.0062 大前锋        
-#> 13    29        0.005              0.62            0.0053 控球后卫      
-#> 14    26        0.005              0.02            0.0049 中锋          
-#> 15    29        0.005              0.51            0.0047 得分后卫      
-#> 16    26        0                  0               0      控球后卫      
-#> 17    23        0                  0               0      中锋          
-#> 18    22        0                  0               0      小前锋        
-#> 19    20        0                  0               0      小前锋        
-#> 20    27        0                  0               0      中锋          
-#> # ℹ 26 more variables: fouls_rate <dbl>, fouls_rate_rank <dbl>,
-#> #   fouls_rate_sort <dbl>, is_color <int>, minutes <int>, nationality <chr>,
-#> #   number <chr>, play_times <int>, player_id <int>, player_name <chr>,
-#> #   position <chr>, position_num <dbl>, rank <chr>,
-#> #   rebounds_defensive_rate <dbl>, rebounds_defensive_rate_rank <dbl>,
-#> #   rebounds_defensive_rate_sort <dbl>, rebounds_offensive_rate <dbl>,
-#> #   rebounds_offensive_rate_rank <dbl>, rebounds_offensive_rate_sort <dbl>, …
-# }
-```

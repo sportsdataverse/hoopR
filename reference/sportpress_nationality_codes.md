@@ -79,6 +79,8 @@ A `hoopR_data` tibble: Distinct player nationality codes of a season
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_nationality_codes(season = 2026)
+
 ## See also
 
 Other BNXT League Functions:
@@ -109,27 +111,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_nationality_codes(season = 2026))
-#> ── BNXT League Nationality Codes from Sportpress ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:10 UTC
-#> # A tibble: 25 × 2
-#>    season nationality_code
-#>     <int> <chr>           
-#>  1   2026 NED             
-#>  2   2026 BEL             
-#>  3   2026 SLO             
-#>  4   2026 USA             
-#>  5   2026 CRO             
-#>  6   2026 usa             
-#>  7   2026 LTU             
-#>  8   2026 SWE             
-#>  9   2026 ANG             
-#> 10   2026 MLT             
-#> # ℹ 15 more rows
-# }
-```

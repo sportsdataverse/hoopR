@@ -162,7 +162,8 @@ unreadable body, a page for another game, season, stage or player, an unfinished
 play-by-play phrase outside the observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to three
 attempts; HTTP 500 is NOT retried (the site answers 500 for an unknown id). Wrappers raise; they never warn
 and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/pleague_player_seasons.html">pleague_player_seasons</a></span><span class="op">(</span>player_page_id <span class="op">=</span> <span class="st">"1JbPozLB"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other P. LEAGUE+ Functions:
@@ -186,15 +187,6 @@ and return empty.</p></li>
 <code><a href="pleague_team_crosswalk.html">pleague_team_crosswalk()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pleague_player_seasons</span><span class="op">(</span>player_page_id <span class="op">=</span> <span class="st">"1JbPozLB"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in pleague_player_seasons(player_page_id = "1JbPozLB") : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   pleagueofficial.com/player/1JbPozLB answered HTTP 403, not 200</span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

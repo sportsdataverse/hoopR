@@ -115,7 +115,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_sites(ssgt_uuid = "xs07bd3fmp"))
 #> ── Basketligaen Sites (Clubs) of an ssgt from basketligaen.dk ──────────────────
-#> ℹ Data updated: 2026-10-18 16:02:41 UTC
+#> ℹ Data updated: 2026-10-18 17:43:06 UTC
 #> # A tibble: 12 × 5
 #>    id       instance_id public_url                                name     icon 
 #>    <chr>    <chr>       <chr>                                     <chr>    <chr>

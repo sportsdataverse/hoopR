@@ -163,6 +163,11 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_player_game_log(
+       org = "nbl", participated = 1, player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f",
+       season = 2026
+     )
+
 ## See also
 
 Other NBL Rosetta:
@@ -187,36 +192,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_player_game_log(
-    org = "nbl", participated = 1, player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f",
-    season = 2026
-  ))
-#> ── NBL Rosetta player_game_log from prod.rosetta.nbl.com.au ────────────────────
-#> ℹ Data updated: 2026-10-18 16:00:57 UTC
-#> # A tibble: 37 × 68
-#>    org   period playing_position points rebounds assists blocks steals turnovers
-#>    <chr>  <int> <chr>             <int>    <int>   <int>  <int>  <int>     <int>
-#>  1 nbl        0 G                    12        9       0      1      1         3
-#>  2 nbl        0 G                     8        3       2      0      0         2
-#>  3 nbl        0 G                     3        1       1      0      0         1
-#>  4 nbl        0 G                    20        3       5      0      1         0
-#>  5 nbl        0 G                    18        2       2      1      3         2
-#>  6 nbl        0 G                    12        4       2      0      3         0
-#>  7 nbl        0 G                    14        6       1      0      1         0
-#>  8 nbl        0 G                    11        6       2      0      1         2
-#>  9 nbl        0 G                    12        2       0      0      3         1
-#> 10 nbl        0 G                     3        1       0      0      0         0
-#> # ℹ 27 more rows
-#> # ℹ 59 more variables: offensive_rebounds <int>, defensive_rebounds <int>,
-#> #   personal_fouls <int>, three_points_attempted <int>,
-#> #   three_points_made <int>, three_points_percentage <dbl>,
-#> #   two_points_attempted <int>, two_points_made <int>,
-#> #   two_points_percentage <dbl>, field_goals_attempted <int>,
-#> #   field_goals_made <int>, field_goals_percentage <dbl>, …
-# }
-```

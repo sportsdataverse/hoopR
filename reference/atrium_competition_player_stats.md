@@ -92,6 +92,10 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_competition_player_stats(
+       website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+     )
+
 ## See also
 
 Other Atrium:
@@ -123,31 +127,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_competition_player_stats(
-    website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
-  ))
-#> ── Atrium competition player stats from embed-api.eui.connect.sportradar.com ───
-#> ℹ Data updated: 2026-10-18 15:33:28 UTC
-#> # A tibble: 13,550 × 13
-#>    website_id season_id table_key table_label person_id person_name entity_id
-#>         <int> <chr>     <chr>     <chr>       <chr>     <chr>       <chr>    
-#>  1         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  2         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  3         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  4         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  5         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  6         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  7         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  8         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#>  9         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#> 10         12 NA        averages  Moyennes    NA        Ismael Bako NA       
-#> # ℹ 13,540 more rows
-#> # ℹ 6 more variables: entity_name <chr>, stat_key <chr>, stat_name <chr>,
-#> #   stat_label <chr>, value <dbl>, value_text <chr>
-# }
-```

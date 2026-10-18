@@ -351,6 +351,9 @@ unofficial use of the public widget endpoint, at least 1 s between
 requests, not republished as release assets. The site also serves
 women's competitions (pass their `competition_id`).
 
+     lpb_seasons()
+     lpb_schedule()
+
 ## See also
 
 Other Atrium:
@@ -382,37 +385,3 @@ Other Atrium:
 [`lnb_competition`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md),
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lpb_seasons())
-#> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 15:44:18 UTC
-#> # A tibble: 4 × 9
-#>   website_id season_id               competition_id competition_name season_name
-#>        <int> <chr>                   <chr>          <chr>            <chr>      
-#> 1         22 f723df4e-8434-11ef-b37… cf8724fa-8354… Liga Profesiona… LPB 2024   
-#> 2         22 a5e38200-8a72-11ef-8ed… 06e1d925-8a72… LPBF 2024        LPBF 2024  
-#> 3         22 e0c1d814-5b10-11ef-985… 809df7f9-5b10… Nacional de Bal… Nacional d…
-#> 4         22 910db1a3-bbdb-11ed-ad1… 283db19a-bbda… LBN U23          LBN U23 20…
-#> # ℹ 4 more variables: abbreviation_local <chr>, year <int>,
-#> #   season_end_year <int>, is_default_season <lgl>
-  try(lpb_schedule())
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────
-#> ℹ Data updated: 2026-10-18 15:44:18 UTC
-#> # A tibble: 2 × 40
-#>   website_id season_id           competition_id competition_name season_end_year
-#>        <int> <chr>               <chr>          <chr>                      <int>
-#> 1         22 f723df4e-8434-11ef… cf8724fa-8354… Liga Profesiona…            2024
-#> 2         22 f723df4e-8434-11ef… cf8724fa-8354… Liga Profesiona…            2024
-#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
-#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
-#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
-#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
-#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>,
-#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
-# }
-```

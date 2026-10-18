@@ -161,7 +161,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_player_box(schedule_key = 504734))
 #> ── B.LEAGUE player box from b-league.s3.amazonaws.com ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:36 UTC
+#> ℹ Data updated: 2026-10-18 17:20:52 UTC
 #> # A tibble: 175 × 50
 #>    schedule_key season feed  team_side team_id category period_category
 #>           <int>  <int> <chr> <chr>     <chr>      <int>           <int>

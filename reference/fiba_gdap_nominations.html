@@ -157,6 +157,7 @@ season or date; <code>hoopR_asset_fetch</code> for any other failed fetch or an 
 error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
 federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
 competitions, the event year for national-team events, the target tournament year for qualifiers.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_gdap_nominations.html">fiba_gdap_nominations</a></span><span class="op">(</span>comp <span class="op">=</span> <span class="fl">208182</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -199,35 +200,6 @@ competitions, the event year for national-team events, the target tournament yea
 <code><a href="fiba_gdap_teams.html">fiba_gdap_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_gdap_nominations</span><span class="op">(</span>comp <span class="op">=</span> <span class="fl">208182</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gdap_nominations from fiba.basketball ────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:39:12 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 138 × 17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    competition_level competition_level_id competition_role role        role_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               FIBA Techn… FIBATDEL </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               FIBA Techn… FIBATDEL </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               FIBA Techn… FIBATDEL </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               FIBA Techn… FIBATDEL </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               Referee     REF      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               Referee     REF      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               Referee     REF      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               Referee     REF      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               Referee     REF      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Competition                     <span style="text-decoration: underline;">208</span>182 <span style="color: #BB0000;">NA</span>               Referee     REF      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 128 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: game_assignment_role &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   game_assignment_role_code &lt;chr&gt;, game_assignment_role_order &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   person_id &lt;int&gt;, first_name &lt;chr&gt;, last_name &lt;chr&gt;, gender &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nationalities &lt;chr&gt;, license_nationality &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   affiliated_national_federation_country_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   affiliated_national_federation_country_name &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

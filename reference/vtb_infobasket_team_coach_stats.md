@@ -135,6 +135,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_team_coach_stats(season = 2026, team_id = 2650)
+
 ## See also
 
 Other VTB Functions:
@@ -175,25 +177,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_team_coach_stats(season = 2026, team_id = 2650))
-#> ── VTB Infobasket Team Coach Stats from org.infobasket.su ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:05:01 UTC
-#> # A tibble: 5 × 19
-#>   season team_id person_id player_number display_number is_active active_status
-#>    <int>   <int>     <int>         <int> <chr>          <lgl>     <chr>        
-#> 1   2026    2650    131047             1 1              FALSE     NA           
-#> 2   2026    2650    363133             1 1              FALSE     NA           
-#> 3   2026    2650    260113             2 2              FALSE     NA           
-#> 4   2026    2650     25351             3 3              FALSE     NA           
-#> 5   2026    2650     21016             4 4              FALSE     NA           
-#> # ℹ 12 more variables: foul_c <int>, foul_b <int>, foul_d <int>, foul <int>,
-#> #   game_count <int>, person_last_name_ru <chr>, person_last_name_en <chr>,
-#> #   person_first_name_ru <chr>, person_first_name_en <chr>,
-#> #   person_full_name_ru <chr>, person_full_name_en <chr>, person_gender <int>
-# }
-```

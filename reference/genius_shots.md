@@ -92,6 +92,8 @@ intermittent HTTP 500 "A website error has occurred" page
 a cut-off page, an unfinished game, or a body for another match,
 competition or ORG.
 
+     genius_shots(match_id = 2902690)
+
 ## See also
 
 Other Genius:
@@ -113,29 +115,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(genius_shots(match_id = 2902690))
-#> ── Genius LiveStats shot chart ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:40:56 UTC
-#> # A tibble: 145 × 13
-#>    match_id   tno   pno action_number period period_type action_type sub_type   
-#>       <int> <int> <int>         <int>  <int> <chr>       <chr>       <chr>      
-#>  1  2902690     1    17             7      1 REGULAR     2pt         layup      
-#>  2  2902690     1    11            12      1 REGULAR     2pt         drivinglay…
-#>  3  2902690     1    18            19      1 REGULAR     2pt         floatingju…
-#>  4  2902690     1    17            41      1 REGULAR     2pt         layup      
-#>  5  2902690     1    12            57      1 REGULAR     2pt         dunk       
-#>  6  2902690     1     3           109      1 REGULAR     2pt         drivinglay…
-#>  7  2902690     1    11           112      1 REGULAR     3pt         jumpshot   
-#>  8  2902690     1    17           114      1 REGULAR     2pt         layup      
-#>  9  2902690     1    17           117      1 REGULAR     2pt         drivinglay…
-#> 10  2902690     1    11           125      1 REGULAR     2pt         drivinglay…
-#> # ℹ 135 more rows
-#> # ℹ 5 more variables: result <int>, x <dbl>, y <dbl>, player <chr>,
-#> #   shirt_number <chr>
-# }
-```

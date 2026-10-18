@@ -177,6 +177,8 @@ averages (one row). The columns are always these, in this order (sdv-py
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_player(player_id = 969)
+
 ## See also
 
 Other LBA Functions:
@@ -198,24 +200,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_player(player_id = 969))
-#> ── LBA Player from legabasket.it ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:55 UTC
-#> # A tibble: 1 × 109
-#>   player_id code     name  surname place_of_birth birth_date updated_at ext_code
-#>       <int> <chr>    <chr> <chr>   <chr>          <chr>      <chr>      <chr>   
-#> 1       969 CAP-ALE… Ales… Cappel… Assisi         1995-10-22 2022-10-2… CAP-ALE…
-#> # ℹ 101 more variables: seo_meta_title <chr>, seo_meta_description <chr>,
-#> #   photo_picture_key <chr>, fullbody_picture_key <chr>, start_date <chr>,
-#> #   end_date <chr>, player_number <chr>, uefa_ratio <chr>, height <int>,
-#> #   weight <int>, team_id <int>, player_role_description <chr>,
-#> #   player_alpha3 <chr>, player_country_name <chr>, player_country <chr>,
-#> #   team_code <chr>, team_name <chr>, year <int>, team_logo_key <chr>,
-#> #   stats_played_matches <int>, stats_totals_highs_rs_player_id <int>, …
-# }
-```

@@ -168,7 +168,8 @@ non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for a
 retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
 stalled sync on the active season; a body for another game, season, team or player than the one asked for).
 Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/easl_team_box_by_period.html">easl_team_box_by_period</a></span><span class="op">(</span>fixture_id <span class="op">=</span> <span class="st">"10af8fd4-106e-11f1-960b-5798087c7aa3"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -191,33 +192,6 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
 <code><a href="easl_teams.html">easl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_team_box_by_period</span><span class="op">(</span>fixture_id <span class="op">=</span> <span class="st">"10af8fd4-106e-11f1-960b-5798087c7aa3"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Team Box Score By Period from easl.joshricha.com ─── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:36:22 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 107</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   fixture_id      team_id team_name team_name_native period period_label assists</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      1 Q1                10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      2 Q2                 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      3 Q3                 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      4 Q4                 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      1 Q1                 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      2 Q2                 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      3 Q3                 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      4 Q4                 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 100 more variables: assists_against &lt;int&gt;, assists_defensive &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   assists_turnover_ratio &lt;dbl&gt;, biggest_lead &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   biggest_scoring_run &lt;int&gt;, blocks &lt;int&gt;, blocks_received &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   dunks &lt;int&gt;, efficiency &lt;int&gt;, efficiency_custom &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_attempted &lt;int&gt;, field_goals_attempted_against &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_effective_percentage &lt;dbl&gt;, field_goals_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made_against &lt;int&gt;, field_goals_percentage &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

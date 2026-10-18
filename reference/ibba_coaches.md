@@ -91,6 +91,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_coaches(season = 2026, team_id = 1109, team_uid = 10)
+
 ## See also
 
 Other IBBA:
@@ -110,22 +112,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_coaches(season = 2026, team_id = 1109, team_uid = 10))
-#> ── IBBA coaches ──────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:04 UTC
-#> # A tibble: 5 × 9
-#>   coach_id coach_type season team_id coach_name_he coach_name  is_replaced
-#>      <int>      <int>  <int>   <int> <chr>         <chr>       <lgl>      
-#> 1     3707          1   2026    1109 עודד קטש      Oded Katash FALSE      
-#> 2     5668          2   2026    1109 גיא פניני     Guy Pnini   FALSE      
-#> 3     5669          2   2026    1109 נועם לוי      Noam Levy   FALSE      
-#> 4     5670          2   2026    1109 עדי עמוס      Adi Amos    FALSE      
-#> 5     5671          2   2026    1109 עמית לוי      Amit Levi   FALSE      
-#> # ℹ 2 more variables: photo_path <chr>, sort_order <int>
-# }
-```

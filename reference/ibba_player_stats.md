@@ -141,7 +141,7 @@ Other IBBA:
 # \donttest{
   try(ibba_player_stats(player_id = 21912, season = 2026))
 #> ── IBBA player stats ─────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:10 UTC
+#> ℹ Data updated: 2026-10-18 17:24:19 UTC
 #> # A tibble: 1 × 29
 #>   player_id jersey season team_id games minutes   pts  fg2m  fg2a fg2_pct  fg3m
 #>       <int> <chr>   <int>   <int> <int>   <dbl> <dbl> <dbl> <dbl>   <dbl> <dbl>

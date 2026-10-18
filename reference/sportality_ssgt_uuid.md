@@ -80,6 +80,9 @@ regular season). A season or game type layout-info does not list raises
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_ssgt_uuid(season = 2026)
+     sportality_ssgt_uuid(season = 2026, game_type = "finals")
+
 ## See also
 
 Other Basketligaen Functions:
@@ -109,14 +112,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_ssgt_uuid(season = 2026))
-#> [1] "qzw34da6jg"
-  try(sportality_ssgt_uuid(season = 2026, game_type = "finals"))
-#> [1] "al4a0u2go5"
-# }
-```

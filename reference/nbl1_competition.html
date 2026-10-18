@@ -201,6 +201,8 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Season rule: calendar year, Mar-Aug (END year); conferences are competition_ids.</p>
 <p>Errors and terms of use are those of <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets. The site also serves women's competitions (pass their <code>competition_id</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl1_competition.html">nbl1_seasons</a></span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/nbl1_competition.html">nbl1_schedule</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -235,51 +237,6 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
 <code><a href="lpb_competition.html">lpb_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl1_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:00:43 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 63 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id season_id              competition_id competition_name season_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>          3 a415b51d-d621-11f0-81… e1be4a98-7b55… NBL1 Central Men 2026 Centr…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>          3 8a25ee23-d621-11f0-a2… e1bb825e-7b55… NBL1 Central Wo… 2026 Centr…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>          3 216fef65-d623-11f0-89… a9909f44-168d… NBL1 East Men    2026 East …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>          3 3a1147c7-d623-11f0-b7… bce6b1f0-168d… NBL1 East Women  2026 East …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>          3 754ec78d-83e3-11f1-b7… 2585800c-c980… NBL1 Finals Men  2026 Men's…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>          3 8d2456d6-3e12-11f1-b5… 8c694ac3-d1eb… NBL1 Exhibition  2026 NBL1 …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>          3 73b5e50d-d623-11f0-b1… e1b956a0-7b55… NBL1 North Men   2026 North…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>          3 584fb251-d623-11f0-95… e1b77240-7b55… NBL1 North Women 2026 North…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>          3 6d96d605-d3ce-11f0-9f… e1b54948-7b55… NBL1 South Men   2026 South…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>          3 9ee95531-d3ce-11f0-a3… e1b24202-7b55… NBL1 South Women 2026 South…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 53 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: abbreviation_local &lt;chr&gt;, year &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_end_year &lt;int&gt;, is_default_season &lt;lgl&gt;</span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl1_schedule</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:00:44 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 40</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id season_id           competition_id competition_name season_end_year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more variables: fixture_id &lt;chr&gt;, fixture_type &lt;chr&gt;, name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   round &lt;chr&gt;, round_code &lt;chr&gt;, pool &lt;chr&gt;, series &lt;chr&gt;, stage_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status &lt;chr&gt;, status_label &lt;chr&gt;, start_time_utc &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   start_time_local &lt;chr&gt;, timezone &lt;chr&gt;, times_unconfirmed &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue &lt;chr&gt;, venue_id &lt;chr&gt;, attendance &lt;int&gt;, home_entity_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_code &lt;chr&gt;, home_name &lt;chr&gt;, home_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_result_place &lt;int&gt;, home_result_status &lt;chr&gt;, home_draw &lt;lgl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

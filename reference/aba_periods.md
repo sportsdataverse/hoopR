@@ -94,6 +94,8 @@ or the answer is not the one asked for (a page for another game, season
 or league, an unfinished game, a helper that does not belong to the
 game, layout drift). All inherit `hoopR_error`.
 
+     aba_periods(game_no = 6, season = 2026)
+
 ## See also
 
 Other ABA:
@@ -108,21 +110,3 @@ Other ABA:
 [`aba_score_flow()`](https://hoopR.sportsdataverse.org/reference/aba_score_flow.md),
 [`aba_shots()`](https://hoopR.sportsdataverse.org/reference/aba_shots.md),
 [`aba_standings()`](https://hoopR.sportsdataverse.org/reference/aba_standings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(aba_periods(game_no = 6, season = 2026))
-#> ── ABA League Periods ────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:27 UTC
-#> # A tibble: 5 × 8
-#>   game_no season league_id league period period_no home_points away_points
-#>     <int>  <int>     <int> <chr>  <chr>      <int>       <int>       <int>
-#> 1       6   2026         1 aba    Q1             1          31          21
-#> 2       6   2026         1 aba    Q2             2          14          19
-#> 3       6   2026         1 aba    Q3             3          18          19
-#> 4       6   2026         1 aba    Q4             4          20          24
-#> 5       6   2026         1 aba    OT1            5          10          14
-# }
-```

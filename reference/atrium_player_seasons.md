@@ -130,6 +130,8 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_player_seasons(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654")
+
 ## See also
 
 Other Atrium:
@@ -161,26 +163,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_player_seasons(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654"))
-#> ── Atrium player seasons from embed-api.eui.connect.sportradar.com ─────────────
-#> ℹ Data updated: 2026-10-18 15:33:43 UTC
-#> # A tibble: 3 × 29
-#>   website_id person_id season_name season_year season_end_year team_id team_name
-#>        <int> <chr>     <chr>             <int>           <int> <chr>   <chr>    
-#> 1         12 4458f165… Betclic ÉL…        2025            2026 25bcb2… Lyon-Vil…
-#> 2         12 4458f165… Betclic ÉL…        2025            2026 25bcb2… Lyon-Vil…
-#> 3         12 4458f165… Leaders Cu…        2025            2026 25bcb2… Lyon-Vil…
-#> # ℹ 22 more variables: minutes_per_game <chr>, points_per_game <dbl>,
-#> #   rebounds_per_game <dbl>, rebounds_offensive_per_game <dbl>,
-#> #   rebounds_defensive_per_game <dbl>, assists_per_game <dbl>,
-#> #   steals_per_game <dbl>, blocks_per_game <dbl>, turnovers_per_game <dbl>,
-#> #   fouls_personal_per_game <dbl>, dunks_per_game <dbl>, efficiency <int>,
-#> #   points_two_made <int>, points_two_attempted <int>,
-#> #   points_two_percentage <dbl>, points_three_made <int>, …
-# }
-```

@@ -116,6 +116,8 @@ is a zero-row tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_cross_table(comp_id = 50720)
+
 ## See also
 
 Other VTB Functions:
@@ -156,29 +158,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_cross_table(comp_id = 50720))
-#> ── VTB Infobasket Cross Table from org.infobasket.su ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:42 UTC
-#> # A tibble: 440 × 14
-#>    comp_id game_id game_status score  plus_minus game_date team1_id team2_id
-#>      <int>   <int>       <int> <chr>       <int> <chr>        <int>    <int>
-#>  1   50720  921391          21 85:86          -1 28.09         2650     1390
-#>  2   50720  921391          21 86:85           1 28.09         1390     2650
-#>  3   50720  921390          21 103:83         20 28.09          697     3059
-#>  4   50720  921390          21 83:103        -20 28.09         3059      697
-#>  5   50720  921392          21 63:82         -19 30.09         2792       15
-#>  6   50720  921392          21 82:63          19 30.09           15     2792
-#>  7   50720  921394          21 73:69           4 01.10          468     3059
-#>  8   50720  921394          21 69:73          -4 01.10         3059      468
-#>  9   50720  921393          21 90:67          23 01.10         2994      682
-#> 10   50720  921393          21 67:90         -23 01.10          682     2994
-#> # ℹ 430 more rows
-#> # ℹ 6 more variables: team1_place <int>, team2_place <int>, home_team <int>,
-#> #   win_team <int>, score1 <int>, score2 <int>
-# }
-```

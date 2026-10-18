@@ -77,6 +77,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_game_officials(game_id = 100720)
+
 ## See also
 
 Other FIBA Functions:
@@ -116,30 +118,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_game_officials(game_id = 100720))
-#> ── FIBA gdap_game_officials from fiba.basketball ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:04 UTC
-#> # A tibble: 13 × 10
-#>    game_id person_id first_name  last_name gender role_code role_name role_order
-#>      <int>     <int> <chr>       <chr>     <chr>  <chr>     <chr>     <chr>     
-#>  1  100720      9454 Eleonora    Rangelova F      FIBATD    FIBA Tec… NA        
-#>  2  100720      2044 Michael     Thomson   M      FIBAREFI… FIBA Ref… NA        
-#>  3  100720    244669 Victor Hon… Bayais    M      SCORER    Scorer    NA        
-#>  4  100720    298802 Vic Martin… Bayais    M      ASSCORER  Assistan… NA        
-#>  5  100720    297721 Enrico      Bayais    M      TIMER     Timer     NA        
-#>  6  100720    297723 Luigi Daryl Dulo      M      24SECCL   Shot clo… NA        
-#>  7  100720      6392 Roberto     Vazquez   M      CC        Crew chi… NA        
-#>  8  100720     15948 Omar        Bermudez  M      UMP       Umpire    1         
-#>  9  100720     24102 Gatis       Salins    M      UMP       Umpire    2         
-#> 10  100720     18215 Manuel      Mazzoni   M      BCLSTDBR… 4th Refe… NA        
-#> 11  100720    323803 Patrisha M… Concepci… NA     STOPER    Stat. op… NA        
-#> 12  100720    243096 Rodolfo Jr  Ducanes   NA     STCALLER  Stat. ca… NA        
-#> 13  100720    242142 Michael     Abalos    NA     STASSIST  Stat. as… NA        
-#> # ℹ 2 more variables: default_nationality <chr>, license_nationality <chr>
-# }
-```

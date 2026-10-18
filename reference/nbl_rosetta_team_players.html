@@ -150,6 +150,9 @@ season id, an org or season type with nothing, or no season in progress); <code>
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 <code>hoopR_bad_request</code> for an unknown <code>org</code> / <code>season_type</code>, a malformed id, or HTTP 400 / 422.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl_rosetta_team_players.html">nbl_rosetta_team_players</a></span><span class="op">(</span></span>
+<span>   org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"befee10a-410c-11f0-b3f4-1b3c55488bbb"</span></span>
+<span> <span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -177,43 +180,6 @@ another org, season or entity than the one asked for, or any other failed fetch;
 <code><a href="nbl_rosetta_teams.html">nbl_rosetta_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl_rosetta_team_players</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"befee10a-410c-11f0-b3f4-1b3c55488bbb"</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBL Rosetta team_players from prod.rosetta.nbl.com.au ─── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:01:06 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 26</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    org   jersey_number playing_position team_id        rosetta_team_id team_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nbl   2             F                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nbl   12            G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nbl   1             G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nbl   40            G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nbl   9             G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nbl   22            F                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nbl   35            F                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nbl   8             G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nbl   24            F                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nbl   0             C                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> nbl   13            G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> nbl   25            F                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> nbl   5             F                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> nbl   18            G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> nbl   10            G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> nbl   3             G                befee10a-410c… bc5327d5-322e-… Perth Wi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more variables: team_code &lt;chr&gt;, team_gender &lt;chr&gt;, player_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rosetta_player_id &lt;chr&gt;, player_first_name &lt;chr&gt;, player_last_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_full_name &lt;chr&gt;, player_jersey_number &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_playing_position &lt;chr&gt;, player_active &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_date_of_birth &lt;chr&gt;, player_nationality &lt;chr&gt;, player_height &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_weight &lt;dbl&gt;, player_dominant_hand &lt;chr&gt;, player_gender &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_nationality_code &lt;chr&gt;, player_birthplace &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

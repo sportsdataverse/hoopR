@@ -162,7 +162,8 @@ competition without standings, a final game with no play-by-play or box score, H
 or empty body; an envelope whose status is not OK; a full list page; a game that is not final; a body for another
 competition, match, team, player or season than the one asked for) and <code>hoopR_bad_request</code> (a bad argument,
 before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kzs_roster.html">kzs_roster</a></span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span>, team_id <span class="op">=</span> <span class="fl">17551</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KZS Functions:
@@ -190,34 +191,6 @@ before any request). HTTP 500 is retried. Wrappers raise; they never return an e
 <code><a href="kzs_teams.html">kzs_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kzs_roster</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span>, team_id <span class="op">=</span> <span class="fl">17551</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── KZS Team Roster from api.kzs.si ───────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:09 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 22 × 18</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    team_id competition_id roster_entry_id player_id identification_number</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">241</span>739     <span style="text-decoration: underline;">94</span>385                <span style="text-decoration: underline;">145</span>829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">245</span>700     <span style="text-decoration: underline;">86</span>209                <span style="text-decoration: underline;">138</span>036</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">241</span>743     <span style="text-decoration: underline;">85</span>445                <span style="text-decoration: underline;">137</span>305</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">241</span>741     <span style="text-decoration: underline;">84</span>389                <span style="text-decoration: underline;">136</span>309</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">241</span>733    <span style="text-decoration: underline;">106</span>285                <span style="text-decoration: underline;">915</span>164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">245</span>795     <span style="text-decoration: underline;">48</span>151                <span style="text-decoration: underline;">132</span>264</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">241</span>738     <span style="text-decoration: underline;">78</span>946                <span style="text-decoration: underline;">131</span>360</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">245</span>702     <span style="text-decoration: underline;">86</span>134                <span style="text-decoration: underline;">137</span>962</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">245</span>701     <span style="text-decoration: underline;">87</span>936                <span style="text-decoration: underline;">139</span>659</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">17</span>551            579          <span style="text-decoration: underline;">241</span>735     <span style="text-decoration: underline;">51</span>727                <span style="text-decoration: underline;">123</span>645</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 13 more variables: person_id &lt;int&gt;, first_name &lt;chr&gt;, last_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   year_of_birth &lt;int&gt;, nationality_id &lt;int&gt;, nationality_alpha2_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nationality_alpha3_code &lt;chr&gt;, nationality_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nationality_eng_name &lt;chr&gt;, homegrown &lt;lgl&gt;, photo_uuid &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   positions &lt;chr&gt;, jersey_number &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

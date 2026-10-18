@@ -111,6 +111,8 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_match_player_period_box(match_id = "b217a699-4bef-11f0-bc08-933162362355")
+
 ## See also
 
 Other NBL Rosetta:
@@ -135,33 +137,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_match_player_period_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
-#> ── NBL Rosetta match_player_period_box from prod.rosetta.nbl.com.au ────────────
-#> ℹ Data updated: 2026-10-18 16:00:49 UTC
-#> # A tibble: 91 × 38
-#>    match_id           match_status player_id rosetta_player_id player_first_name
-#>    <chr>              <chr>        <chr>     <chr>             <chr>            
-#>  1 b217a699-4bef-11f… complete     092a74a1… 229b6769-821b-41… Hunter           
-#>  2 b217a699-4bef-11f… complete     092a74a1… 229b6769-821b-41… Hunter           
-#>  3 b217a699-4bef-11f… complete     092a74a1… 229b6769-821b-41… Hunter           
-#>  4 b217a699-4bef-11f… complete     092a74a1… 229b6769-821b-41… Hunter           
-#>  5 b217a699-4bef-11f… complete     092a74a1… 229b6769-821b-41… Hunter           
-#>  6 b217a699-4bef-11f… complete     258cd515… fdeea6c4-05cd-46… John             
-#>  7 b217a699-4bef-11f… complete     258cd515… fdeea6c4-05cd-46… John             
-#>  8 b217a699-4bef-11f… complete     258cd515… fdeea6c4-05cd-46… John             
-#>  9 b217a699-4bef-11f… complete     258cd515… fdeea6c4-05cd-46… John             
-#> 10 b217a699-4bef-11f… complete     258cd515… fdeea6c4-05cd-46… John             
-#> # ℹ 81 more rows
-#> # ℹ 33 more variables: player_last_name <chr>, player_jersey_number <chr>,
-#> #   player_playing_position <chr>, team_id <chr>, rosetta_team_id <chr>,
-#> #   period <int>, period_type <chr>, rosetta_match_id <chr>, assists <int>,
-#> #   blocks <int>, defensive_rebounds <int>, field_goals_attempted <int>,
-#> #   field_goals_made <int>, field_goals_percentage <dbl>, fouls <int>,
-#> #   free_throws_attempted <int>, free_throws_made <int>, …
-# }
-```

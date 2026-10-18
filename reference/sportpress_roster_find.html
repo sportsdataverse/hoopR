@@ -156,7 +156,8 @@ data, an empty ranking), <code>hoopR_bad_request</code> (an id or season that is
 changed envelope, a game that is not finished, a body for another season, competition, team or game), all
 inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame for a failed request. Whole doubles
 (<code>24</code>) are accepted for integer arguments.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportpress_roster_find.html">sportpress_roster_find</a></span><span class="op">(</span>roster_id <span class="op">=</span> <span class="fl">11193</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other BNXT League Functions:
@@ -189,22 +190,6 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
 <code><a href="sportpress_ui_strings.html">sportpress_ui_strings()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportpress_roster_find</span><span class="op">(</span>roster_id <span class="op">=</span> <span class="fl">11193</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── BNXT League Roster Entry from Sportpress ──────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:03:30 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 18</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   roster_id competition_team_id jersey weight height active position_id position</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     <span style="text-decoration: underline;">11</span>193                 541 13         <span style="color: #BB0000;">NA</span>    183 TRUE             2 shootin…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 10 more variables: player_id &lt;int&gt;, first_name &lt;chr&gt;, last_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nationality_code &lt;chr&gt;, birth_date &lt;date&gt;, uu_team_id &lt;int&gt;, team &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_short_name &lt;chr&gt;, competition_id &lt;int&gt;, season &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

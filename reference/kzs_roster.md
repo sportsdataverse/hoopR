@@ -102,6 +102,8 @@ carry no team or competition id). An empty valid answer raises
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_roster(competition_id = 579, team_id = 17551)
+
 ## See also
 
 Other KZS Functions:
@@ -127,32 +129,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_roster(competition_id = 579, team_id = 17551))
-#> ── KZS Team Roster from api.kzs.si ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:09 UTC
-#> # A tibble: 22 × 18
-#>    team_id competition_id roster_entry_id player_id identification_number
-#>      <int>          <int>           <int>     <int>                 <int>
-#>  1   17551            579          241739     94385                145829
-#>  2   17551            579          245700     86209                138036
-#>  3   17551            579          241743     85445                137305
-#>  4   17551            579          241741     84389                136309
-#>  5   17551            579          241733    106285                915164
-#>  6   17551            579          245795     48151                132264
-#>  7   17551            579          241738     78946                131360
-#>  8   17551            579          245702     86134                137962
-#>  9   17551            579          245701     87936                139659
-#> 10   17551            579          241735     51727                123645
-#> # ℹ 12 more rows
-#> # ℹ 13 more variables: person_id <int>, first_name <chr>, last_name <chr>,
-#> #   year_of_birth <int>, nationality_id <int>, nationality_alpha2_code <chr>,
-#> #   nationality_alpha3_code <chr>, nationality_name <chr>,
-#> #   nationality_eng_name <chr>, homegrown <lgl>, photo_uuid <chr>,
-#> #   positions <chr>, jersey_number <chr>
-# }
-```

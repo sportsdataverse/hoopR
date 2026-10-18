@@ -155,6 +155,7 @@ Asia/Jerusalem; the feed carries no offset).</p>
 other failure: another status, a transport error, an empty or non-JSON body, an error or
 changed envelope, a body for another game, a game that is not final). All inherit
 <code>hoopR_error</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/ibba_segev_rosters.html">ibba_segev_rosters</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -166,31 +167,6 @@ changed envelope, a body for another game, a game that is not final). All inheri
 <code><a href="ibba_segev_team_box.html">ibba_segev_team_box()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">ibba_segev_rosters</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">50</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── IBBA Segev rosters ────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:41:16 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 31 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id team_side team_id player_id jersey_number first_name last_name </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>      50 home           11      <span style="text-decoration: underline;">1</span>120            93 CODY       DEMPS     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      50 home           11      <span style="text-decoration: underline;">1</span>111             0 NAVE       BEN SHEMEN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>      50 home           11      <span style="text-decoration: underline;">1</span>215            55 MATAN      FOGEL     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>      50 home           11      <span style="text-decoration: underline;">1</span>117            22 SAM        IORIO     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>      50 home           11      <span style="text-decoration: underline;">1</span>114            14 NETA       SEGAL     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      50 home           11      <span style="text-decoration: underline;">1</span>266             6 TARYN      TODD      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      50 home           11      <span style="text-decoration: underline;">1</span>249            17 AMIT       GERSHON   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>      50 home           11      <span style="text-decoration: underline;">1</span>115            16 C.J.       ELLEBY    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>      50 home           11      <span style="text-decoration: underline;">1</span>112             4 AKILI      VINING    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>      50 home           11      <span style="text-decoration: underline;">1</span>118            24 YOAV       VITLEM    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 21 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: first_name_local &lt;chr&gt;, last_name_local &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   in_roster &lt;int&gt;, api_id &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

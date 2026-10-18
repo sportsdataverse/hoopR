@@ -167,7 +167,8 @@ non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for a
 retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
 stalled sync on the active season; a body for another game, season, team or player than the one asked for).
 Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/easl_leaders.html">easl_leaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -190,32 +191,6 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
 <code><a href="easl_teams.html">easl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_leaders</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Leaders from easl.joshricha.com ──────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:36:07 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 45 × 16</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season season_id category  rank value player_id player_name player_name_latin</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     1  7.11 85c99dab… D.J. NEWBI… D.J. NEWBILL     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     2  7    b96030e9… Assem MAREI Assem MAREI      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     3  7    e5491d74… YANG Junse… YANG Junseok     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     4  6.6  8c661bff… Ryan ROSSI… Ryan Rossiter    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     5  6.2  bafb18f6… Damian CHO… Damian CHONGQUI  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     1  3    ac19677d… Brandon DA… Brandon DAVIES   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     2  2.2  8b869ebe… Rondae HOL… Rondae HOLLIS-JE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     3  1.89 689dc46e… Alec BROWN  Alec BROWN       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     4  1.4  810891a9… Samuel DEG… Samuel DEGUARA   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     5  1.17 d65fcad9… ALTANGEREL… <span style="color: #BB0000;">NA</span>               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: jersey_number &lt;chr&gt;, position &lt;chr&gt;, player_status &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_id &lt;chr&gt;, team_name &lt;chr&gt;, team_name_native &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_code_latin &lt;chr&gt;, team_code_local &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

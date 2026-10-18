@@ -87,6 +87,8 @@ are always these, in this order (sdv-py `acb_lead_stats`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_lead_stats(match_id = 105401)
+
 ## See also
 
 Other ACB Functions:
@@ -134,24 +136,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_lead_stats(match_id = 105401))
-#> ── ACB Lead Stats from api2.acb.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:50 UTC
-#> # A tibble: 8 × 6
-#>   match_id stat           side  value bar_progress is_highlighted
-#>      <int> <chr>          <chr> <chr>        <dbl> <lgl>         
-#> 1   105401 best_score_run home  11            90   TRUE          
-#> 2   105401 best_score_run away  5             40.9 FALSE         
-#> 3   105401 max_difference home  13            90   TRUE          
-#> 4   105401 max_difference away  9             62.3 FALSE         
-#> 5   105401 time_ahead     home  25:37         90   TRUE          
-#> 6   105401 time_ahead     away  10:56         38.4 FALSE         
-#> 7   105401 lead_changes   home  5             90   TRUE          
-#> 8   105401 lead_changes   away  5             90   FALSE         
-# }
-```

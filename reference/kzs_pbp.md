@@ -139,7 +139,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_pbp(match_id = 101839))
 #> ── KZS Play-by-Play from api.kzs.si ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:58 UTC
+#> ℹ Data updated: 2026-10-18 17:24:50 UTC
 #> # A tibble: 816 × 27
 #>    match_id action_number team_side source clock action_type sub_type qualifiers
 #>       <int>         <int> <chr>     <chr>  <chr> <chr>       <chr>    <chr>     

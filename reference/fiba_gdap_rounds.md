@@ -133,7 +133,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_rounds(comp = 208182))
 #> ── FIBA gdap_rounds from fiba.basketball ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:22 UTC
+#> ℹ Data updated: 2026-10-18 17:23:24 UTC
 #> # A tibble: 10 × 18
 #>    game_system game_system_code parent_round_id round_code round_id round_name  
 #>    <chr>       <chr>                      <int> <chr>         <int> <chr>       

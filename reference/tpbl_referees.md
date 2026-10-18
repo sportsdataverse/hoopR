@@ -87,6 +87,8 @@ columns are always these, in this order (sdv-py `tpbl_referees`):
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_referees(game_id = 6)
+
 ## See also
 
 Other TPBL Functions:
@@ -105,19 +107,3 @@ Other TPBL Functions:
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_referees(game_id = 6))
-#> ── TPBL Referees from api.tpbl.basketball ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:23 UTC
-#> # A tibble: 3 × 6
-#>   game_id sequence referee_id gohoops_referee_id name   role                    
-#>     <int>    <int>      <int>              <int> <chr>  <chr>                   
-#> 1       6        1          5                122 葉俊宏 BASKETBALL_CHIEF_REFEREE
-#> 2       6        2          6                123 楊士賢 BASKETBALL_FIRST_ASSIST…
-#> 3       6        3          4                121 黃少伯 BASKETBALL_SECOND_ASSIS…
-# }
-```

@@ -89,6 +89,8 @@ play-offs, finals) with dates and type. An empty valid answer raises
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_phases(competition_id = 579)
+
 ## See also
 
 Other KZS Functions:
@@ -114,21 +116,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_phases(competition_id = 579))
-#> ── KZS Competition Phases from api.kzs.si ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:01 UTC
-#> # A tibble: 4 × 9
-#>   competition_id season phase_id name        start_date    end_date type  groups
-#>            <int>  <int>    <int> <chr>       <chr>         <chr>    <chr> <chr> 
-#> 1            579   2026     5811 Redni del   2025-09-24T0… 2026-05… GROUP []    
-#> 2            579   2026     5889 Četrtfinale 2026-05-06T0… 2026-05… BRAC… []    
-#> 3            579   2026     5890 Polfinale   2026-05-17T0… 2026-05… BRAC… []    
-#> 4            579   2026     5894 Finale      2026-05-27T0… 2026-06… BRAC… []    
-#> # ℹ 1 more variable: wins_needed <int>
-# }
-```

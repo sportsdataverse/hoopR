@@ -130,6 +130,8 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_best_stats(schedule_id = 100105799)
+
 ## See also
 
 Other CBA Functions:
@@ -159,27 +161,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_best_stats(schedule_id = 100105799))
-#> ── CBA Best Stats from data-server.cbaleague.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:08 UTC
-#> # A tibble: 10 × 10
-#>    schedule_id side  ctype    cvalue player_id player_name player_no seconds
-#>          <int> <chr> <chr>    <chr>      <int> <chr>       <chr>       <int>
-#>  1   100105799 home  assists  4      100005271 朱俊龙      10           1692
-#>  2   100105799 home  points   16     100107411 NA          NA            913
-#>  3   100105799 home  steals   3      100024772 NA          NA           1279
-#>  4   100105799 home  rebounds 10     100016690 NA          NA           1205
-#>  5   100105799 home  blocked  2      100005271 朱俊龙      10           1692
-#>  6   100105799 away  assists  3      100098648 NA          NA            554
-#>  7   100105799 away  points   17     100098032 迪亚洛      11           1571
-#>  8   100105799 away  steals   2      100012158 陈彭宇迪    1             635
-#>  9   100105799 away  rebounds 9      100013553 刘传兴      21           1209
-#> 10   100105799 away  blocked  2      100013553 刘传兴      21           1209
-#> # ℹ 2 more variables: team_id <int>, type <int>
-# }
-```

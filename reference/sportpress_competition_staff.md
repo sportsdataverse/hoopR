@@ -84,6 +84,8 @@ competition team of one competition. An empty valid answer raises
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_competition_staff(competition_id = 24)
+
 ## See also
 
 Other BNXT League Functions:
@@ -114,27 +116,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_competition_staff(competition_id = 24))
-#> ── BNXT League Competition Staff from Sportpress ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:52 UTC
-#> # A tibble: 43 × 6
-#>    competition_id competition_team_id staff_id name          title_id title_name
-#>             <int>               <int>    <int> <chr>            <int> <chr>     
-#>  1             24                 502      441 Sam Rotsaert         1 Head coach
-#>  2             24                 502      541 Frederic Wil…       12 Assistant…
-#>  3             24                 504      701 Thierry Decl…       12 Assistant…
-#>  4             24                 504      917 Thomas Drees…       12 Assistant…
-#>  5             24                 504      951 Dennis Wuche…        1 Head coach
-#>  6             24                 506      551 Christophe B…       12 Assistant…
-#>  7             24                 506      911 Roel Moors           1 Head coach
-#>  8             24                 506      931 Tom Vandenbo…       12 Assistant…
-#>  9             24                 508      721 Frank De Meu…        1 Head coach
-#> 10             24                 508      937 Yves Defraig…       12 Assistant…
-#> # ℹ 33 more rows
-# }
-```

@@ -165,6 +165,8 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_stats_leaders(org = "nbl", season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd")
+
 ## See also
 
 Other NBL Rosetta:
@@ -189,33 +191,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_stats_leaders(org = "nbl", season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd"))
-#> ── NBL Rosetta stats_leaders from prod.rosetta.nbl.com.au ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:05 UTC
-#> # A tibble: 165 × 82
-#>    org   assists_average blocks_average field_goals_attempted field_goals_made
-#>    <chr>           <dbl>          <dbl>                 <int>            <int>
-#>  1 nbl              7.62         0.25                     757              334
-#>  2 nbl              7.12         0                        724              341
-#>  3 nbl              2.67         0.5                      221              109
-#>  4 nbl              4.86         0.194                    633              275
-#>  5 nbl              3.97         0.552                    435              217
-#>  6 nbl              2.10         1.84                     431              243
-#>  7 nbl              3.33         0.185                    409              192
-#>  8 nbl              1.67         0.407                    352              187
-#>  9 nbl              7.55         0.0606                   511              229
-#> 10 nbl              3.65         0.135                    471              212
-#> # ℹ 155 more rows
-#> # ℹ 77 more variables: field_goals_attempted_average <dbl>,
-#> #   field_goals_made_average <dbl>, field_goals_percentage <dbl>,
-#> #   fouls_average <dbl>, free_throws_attempted <int>, free_throws_made <int>,
-#> #   free_throws_attempted_average <dbl>, free_throws_made_average <dbl>,
-#> #   free_throws_percentage <dbl>, games <int>, games_started <int>,
-#> #   offensive_rebounds <int>, fouls <int>, personal_fouls <int>, …
-# }
-```

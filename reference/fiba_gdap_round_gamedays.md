@@ -89,6 +89,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_round_gamedays(comp = 208182)
+
 ## See also
 
 Other FIBA Functions:
@@ -128,35 +130,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_round_gamedays(comp = 208182))
-#> ── FIBA gdap_round_gamedays from fiba.basketball ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:19 UTC
-#> # A tibble: 12 × 20
-#>    competition_id round_game_system round_game_system_code round_parent_round_id
-#>             <int> <chr>             <chr>                                  <int>
-#>  1         208182 NA                NA                                        NA
-#>  2         208182 NA                NA                                        NA
-#>  3         208182 Single            S                                      25274
-#>  4         208182 Single            S                                      25275
-#>  5         208182 Single            S                                      25275
-#>  6         208182 Single            S                                      25275
-#>  7         208182 Single            S                                      25275
-#>  8         208182 Single            S                                      25275
-#>  9         208182 Single            S                                      25275
-#> 10         208182 Single            S                                      25275
-#> 11         208182 Single            S                                         NA
-#> 12         208182 Single            S                                      25274
-#> # ℹ 16 more variables: round_round_code <chr>, round_round_id <int>,
-#> #   round_round_name <chr>, round_round_number <int>, round_round_type <chr>,
-#> #   round_round_type_code <chr>, round_round_status_code <chr>,
-#> #   round_start_date <chr>, round_end_date <chr>,
-#> #   round_has_teams_assigned <lgl>, round_round_kind <chr>,
-#> #   round_standing_header_code <chr>, round_standing_header_name <chr>,
-#> #   round_qualified_team_information <chr>, round_round_order <int>, …
-# }
-```

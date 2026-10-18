@@ -118,6 +118,8 @@ are always these, in this order (sdv-py `acb_team_leaders`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_team_leaders(club_id = 2, number_of_players = 3, season = 2027)
+
 ## See also
 
 Other ACB Functions:
@@ -165,29 +167,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_team_leaders(club_id = 2, number_of_players = 3, season = 2027))
-#> ── ACB Team Leaders from api2.acb.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:17 UTC
-#> # A tibble: 198 × 14
-#>    club_id competition_id edition_id season scope   metric  rank value player_id
-#>      <int>          <int>      <int>  <int> <chr>   <chr>  <int> <dbl>     <int>
-#>  1       2              1         91   2027 all_ti… playe…     1   689  20200515
-#>  2       2              1         91   2027 all_ti… playe…     2   422  20200741
-#>  3       2              1         91   2027 all_ti… playe…     3   376  20200738
-#>  4       2              1         91   2027 all_ti… rating     1  7842  20200515
-#>  5       2              1         91   2027 all_ti… rating     2  5571  20200741
-#>  6       2              1         91   2027 all_ti… rating     3  4843  20202172
-#>  7       2              1         91   2027 all_ti… points     1  8318  20200515
-#>  8       2              1         91   2027 all_ti… points     2  7029  20200741
-#>  9       2              1         91   2027 all_ti… points     3  4516  20200739
-#> 10       2              1         91   2027 all_ti… rebou…     1  2113  20201436
-#> # ℹ 188 more rows
-#> # ℹ 5 more variables: player_name <chr>, first_name <chr>, last_name <chr>,
-#> #   shirt_number <chr>, game_role <chr>
-# }
-```

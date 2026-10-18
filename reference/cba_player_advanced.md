@@ -163,6 +163,8 @@ columns, in this order (sdv-py `cba_player_advanced`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_player_advanced(schedule_id = 100105799)
+
 ## See also
 
 Other CBA Functions:
@@ -192,33 +194,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_player_advanced(schedule_id = 100105799))
-#> ── CBA Player Advanced from data-server.cbaleague.com ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:19 UTC
-#> # A tibble: 24 × 42
-#>    schedule_id side  assists_percentage assists_percentage_rank
-#>          <int> <chr>              <dbl>                   <dbl>
-#>  1   100105799 home               0.22                     0.9 
-#>  2   100105799 home               0.139                    0.85
-#>  3   100105799 home               0.211                    0.39
-#>  4   100105799 home               0.27                     0.61
-#>  5   100105799 home               0.451                    1   
-#>  6   100105799 home               0.231                    0.59
-#>  7   100105799 home               0.083                    0.59
-#>  8   100105799 home               0.27                     0.61
-#>  9   100105799 home               0.094                    0.69
-#> 10   100105799 home               0.111                    0.74
-#> # ℹ 14 more rows
-#> # ℹ 38 more variables: assists_percentage_sort <dbl>, blocked_percentage <dbl>,
-#> #   blocked_percentage_rank <dbl>, blocked_percentage_sort <dbl>,
-#> #   cn_alias <chr>, field_goals_at_rim_percentage <chr>,
-#> #   field_goals_at_rim_percentage_rank <chr>,
-#> #   field_goals_at_rim_percentage_sort <chr>, field_goals_mid_percentage <chr>,
-#> #   field_goals_mid_percentage_rank <chr>, …
-# }
-```

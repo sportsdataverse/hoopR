@@ -130,6 +130,8 @@ columns are always these, in this order (sdv-py `cebl_player_seasons`):
   `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
+     cebl_player_seasons(player_id = 570965, mode = "PER_GAME")
+
 ## See also
 
 Other CEBL Functions:
@@ -144,26 +146,3 @@ Other CEBL Functions:
 [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md),
 [`cebl_team_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_team_stats.md),
 [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cebl_player_seasons(player_id = 570965, mode = "PER_GAME"))
-#> ── CEBL Player Seasons from the CEBL Stats API ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:47 UTC
-#> # A tibble: 3 × 35
-#>   mode     competition player_id season is_career team_id team_name_en     
-#>   <chr>    <chr>           <int>  <int> <lgl>       <int> <chr>            
-#> 1 PER_GAME NA             570965   2025 FALSE          20 Ottawa BlackJacks
-#> 2 PER_GAME NA             570965   2026 FALSE          20 Ottawa BlackJacks
-#> 3 PER_GAME NA             570965     NA TRUE           20 Ottawa BlackJacks
-#> # ℹ 28 more variables: team_short_name_en <chr>, team_name_fr <chr>,
-#> #   team_short_name_fr <chr>, team_logo_url <chr>, played <int>, started <int>,
-#> #   minutes <dbl>, points <dbl>, field_goals_made <dbl>,
-#> #   field_goals_attempted <dbl>, field_goal_percentage <dbl>,
-#> #   three_points_made <dbl>, three_points_attempted <dbl>,
-#> #   three_point_percentage <dbl>, free_throws_made <dbl>,
-#> #   free_throws_attempted <dbl>, free_throw_percentage <dbl>, …
-# }
-```

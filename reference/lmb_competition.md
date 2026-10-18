@@ -350,6 +350,9 @@ unofficial use of the public widget endpoint, at least 1 s between
 requests, not republished as release assets. The site also serves
 women's competitions (pass their `competition_id`).
 
+     lmb_seasons()
+     lmb_schedule()
+
 ## See also
 
 Other Atrium:
@@ -381,43 +384,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lmb_seasons())
-#> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 15:43:43 UTC
-#> # A tibble: 54 × 9
-#>    website_id season_id              competition_id competition_name season_name
-#>         <int> <chr>                  <chr>          <chr>            <chr>      
-#>  1         13 859fbc91-177d-11f1-87… 00054680-87dd… LIGA MAYOR DE B… APERTURA 2…
-#>  2         13 3bcb4c99-a03d-11f1-83… 00054680-87dd… LIGA MAYOR DE B… CLAUSURA 2…
-#>  3         13 bf1f4d4d-b8ff-11f1-bd… 7bb396d9-48a5… JR. NBA EL SALV… JR NBA FEM…
-#>  4         13 8896c792-b8ff-11f1-8a… 7bb396d9-48a5… JR. NBA EL SALV… JR NBA MAS…
-#>  5         13 89365f1a-35eb-11f1-8b… 25f85e27-fdf1… LIGA DE DESARRO… LDU14F APE…
-#>  6         13 c016b5c5-b773-11f1-94… 25f85e27-fdf1… LIGA DE DESARRO… LDU14F CLA…
-#>  7         13 469bcc03-35e8-11f1-ba… b1123379-fdf1… LIGA DE DESARRO… LDU14M APE…
-#>  8         13 d716790f-b774-11f1-a7… b1123379-fdf1… LIGA DE DESARRO… LDU14M CLA…
-#>  9         13 f618689d-35eb-11f1-aa… 5b28211c-fdf1… LIGA DE DESARRO… LDU16F APE…
-#> 10         13 6bc9b9ed-b775-11f1-96… 5b28211c-fdf1… LIGA DE DESARRO… LDU16F CLA…
-#> # ℹ 44 more rows
-#> # ℹ 4 more variables: abbreviation_local <chr>, year <int>,
-#> #   season_end_year <int>, is_default_season <lgl>
-  try(lmb_schedule())
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────
-#> ℹ Data updated: 2026-10-18 15:43:44 UTC
-#> # A tibble: 1 × 40
-#>   website_id season_id           competition_id competition_name season_end_year
-#>        <int> <chr>               <chr>          <chr>                      <int>
-#> 1         13 3bcb4c99-a03d-11f1… 00054680-87dd… LIGA MAYOR DE B…            2026
-#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
-#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
-#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
-#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
-#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>,
-#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
-# }
-```

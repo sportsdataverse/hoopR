@@ -198,6 +198,7 @@ fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that 
 mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
 any other failed fetch, an error / stub body, or a body that belongs to another
 site, type, season, game, player or team than the one asked for.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_player_seasons.html">atrium_player_seasons</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -232,28 +233,6 @@ site, type, season, game, player or team than the one asked for.</p>
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">atrium_player_seasons</span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium player seasons from embed-api.eui.connect.sportradar.com ─────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:43 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 29</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id person_id season_name season_year season_end_year team_id team_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         12 4458f165… Betclic ÉL…        <span style="text-decoration: underline;">2</span>025            <span style="text-decoration: underline;">2</span>026 25bcb2… Lyon-Vil…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>         12 4458f165… Betclic ÉL…        <span style="text-decoration: underline;">2</span>025            <span style="text-decoration: underline;">2</span>026 25bcb2… Lyon-Vil…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>         12 4458f165… Leaders Cu…        <span style="text-decoration: underline;">2</span>025            <span style="text-decoration: underline;">2</span>026 25bcb2… Lyon-Vil…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more variables: minutes_per_game &lt;chr&gt;, points_per_game &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_per_game &lt;dbl&gt;, rebounds_offensive_per_game &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_defensive_per_game &lt;dbl&gt;, assists_per_game &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   steals_per_game &lt;dbl&gt;, blocks_per_game &lt;dbl&gt;, turnovers_per_game &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fouls_personal_per_game &lt;dbl&gt;, dunks_per_game &lt;dbl&gt;, efficiency &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   points_two_made &lt;int&gt;, points_two_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   points_two_percentage &lt;dbl&gt;, points_three_made &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

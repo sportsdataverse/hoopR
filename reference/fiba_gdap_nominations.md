@@ -90,6 +90,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_nominations(comp = 208182)
+
 ## See also
 
 Other FIBA Functions:
@@ -129,33 +131,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_nominations(comp = 208182))
-#> ── FIBA gdap_nominations from fiba.basketball ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:12 UTC
-#> # A tibble: 138 × 17
-#>    competition_level competition_level_id competition_role role        role_code
-#>    <chr>                            <int> <chr>            <chr>       <chr>    
-#>  1 Competition                     208182 NA               FIBA Techn… FIBATDEL 
-#>  2 Competition                     208182 NA               FIBA Techn… FIBATDEL 
-#>  3 Competition                     208182 NA               FIBA Techn… FIBATDEL 
-#>  4 Competition                     208182 NA               FIBA Techn… FIBATDEL 
-#>  5 Competition                     208182 NA               Referee     REF      
-#>  6 Competition                     208182 NA               Referee     REF      
-#>  7 Competition                     208182 NA               Referee     REF      
-#>  8 Competition                     208182 NA               Referee     REF      
-#>  9 Competition                     208182 NA               Referee     REF      
-#> 10 Competition                     208182 NA               Referee     REF      
-#> # ℹ 128 more rows
-#> # ℹ 12 more variables: game_assignment_role <chr>,
-#> #   game_assignment_role_code <chr>, game_assignment_role_order <chr>,
-#> #   person_id <int>, first_name <chr>, last_name <chr>, gender <chr>,
-#> #   nationalities <chr>, license_nationality <chr>,
-#> #   affiliated_national_federation_country_code <chr>,
-#> #   affiliated_national_federation_country_name <chr>, …
-# }
-```

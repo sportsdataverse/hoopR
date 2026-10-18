@@ -109,6 +109,8 @@ this order (sdv-py `easl_leaders`):
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_leaders(season = 2026)
+
 ## See also
 
 Other EASL Functions:
@@ -129,30 +131,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_leaders(season = 2026))
-#> ── EASL Leaders from easl.joshricha.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:07 UTC
-#> # A tibble: 45 × 16
-#>    season season_id category  rank value player_id player_name player_name_latin
-#>     <int> <chr>     <chr>    <int> <dbl> <chr>     <chr>       <chr>            
-#>  1   2026 77441bb3… assists…     1  7.11 85c99dab… D.J. NEWBI… D.J. NEWBILL     
-#>  2   2026 77441bb3… assists…     2  7    b96030e9… Assem MAREI Assem MAREI      
-#>  3   2026 77441bb3… assists…     3  7    e5491d74… YANG Junse… YANG Junseok     
-#>  4   2026 77441bb3… assists…     4  6.6  8c661bff… Ryan ROSSI… Ryan Rossiter    
-#>  5   2026 77441bb3… assists…     5  6.2  bafb18f6… Damian CHO… Damian CHONGQUI  
-#>  6   2026 77441bb3… blocksP…     1  3    ac19677d… Brandon DA… Brandon DAVIES   
-#>  7   2026 77441bb3… blocksP…     2  2.2  8b869ebe… Rondae HOL… Rondae HOLLIS-JE…
-#>  8   2026 77441bb3… blocksP…     3  1.89 689dc46e… Alec BROWN  Alec BROWN       
-#>  9   2026 77441bb3… blocksP…     4  1.4  810891a9… Samuel DEG… Samuel DEGUARA   
-#> 10   2026 77441bb3… blocksP…     5  1.17 d65fcad9… ALTANGEREL… NA               
-#> # ℹ 35 more rows
-#> # ℹ 8 more variables: jersey_number <chr>, position <chr>, player_status <chr>,
-#> #   team_id <chr>, team_name <chr>, team_name_native <chr>,
-#> #   team_code_latin <chr>, team_code_local <chr>
-# }
-```

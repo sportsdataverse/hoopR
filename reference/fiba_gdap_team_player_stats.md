@@ -134,6 +134,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_team_player_stats(team_id = 279569)
+
 ## See also
 
 Other FIBA Functions:
@@ -173,35 +175,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_team_player_stats(team_id = 279569))
-#> ── FIBA gdap_team_player_stats from fiba.basketball ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:25 UTC
-#> # A tibble: 12 × 66
-#>    competition_id player_id first_name last_name uniform_number team_id
-#>             <int>     <int> <chr>      <chr>     <chr>            <int>
-#>  1         208182    189145 Dennis     Schroder  17              279569
-#>  2         208182    227403 Franz      Wagner    9               279569
-#>  3         208182    210175 Moritz     Wagner    13              279569
-#>  4         208182    181996 Daniel     Theis     10              279569
-#>  5         208182    188677 Johannes   Voigtmann 7               279569
-#>  6         208182    198299 Johannes   Thiemann  32              279569
-#>  7         208182    196287 Andreas    Obst      42              279569
-#>  8         208182    211501 Isaac      Bonga     0               279569
-#>  9         208182    188675 Maodo      Lo        4               279569
-#> 10         208182    204689 David      Kramer    44              279569
-#> 11         208182    269000 Justus     Hollatz   21              279569
-#> 12         208182    155956 Niels      Giffey    5               279569
-#> # ℹ 60 more variables: points_per_game <dbl>, rebounds_per_game <dbl>,
-#> #   rebounds_offensive_per_game <dbl>, rebounds_defensive_per_game <dbl>,
-#> #   assists_per_game <dbl>, blocks_per_game <dbl>, turnovers_per_game <dbl>,
-#> #   fouls_per_game <dbl>, plus_minus_per_game <dbl>, efficiency_per_game <dbl>,
-#> #   play_time_in_seconds_per_game <dbl>, field_goals_made_per_game <dbl>,
-#> #   field_goals_attempted_per_game <dbl>, two_points_made_per_game <dbl>,
-#> #   two_points_attempted_per_game <dbl>, three_points_made_per_game <dbl>, …
-# }
-```

@@ -106,6 +106,8 @@ are always these, in this order (sdv-py `acb_standings_rounds`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_standings_rounds(season = 2027)
+
 ## See also
 
 Other ACB Functions:
@@ -153,29 +155,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_standings_rounds(season = 2027))
-#> ── ACB Standings Rounds from api2.acb.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:14 UTC
-#> # A tibble: 90 × 13
-#>    competition_id edition_id season team_id club_id team      team_abbr round_id
-#>             <int>      <int>  <int>   <int>   <int> <chr>     <chr>        <int>
-#>  1              1         91   2027    4475       4 Surne Bi… SBB           6015
-#>  2              1         91   2027    4475       4 Surne Bi… SBB           6016
-#>  3              1         91   2027    4475       4 Surne Bi… SBB           6017
-#>  4              1         91   2027    4475       4 Surne Bi… SBB           6018
-#>  5              1         91   2027    4475       4 Surne Bi… SBB           6019
-#>  6              1         91   2027    4471      10 Kids&Us … K&U           6015
-#>  7              1         91   2027    4471      10 Kids&Us … K&U           6016
-#>  8              1         91   2027    4471      10 Kids&Us … K&U           6017
-#>  9              1         91   2027    4471      10 Kids&Us … K&U           6018
-#> 10              1         91   2027    4471      10 Kids&Us … K&U           6019
-#> # ℹ 80 more rows
-#> # ℹ 5 more variables: round_number <int>, subphase_id <int>,
-#> #   subphase_number <int>, position <int>, match_id <int>
-# }
-```

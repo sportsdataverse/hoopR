@@ -93,6 +93,8 @@ nationality, birth date, position, jersey. An empty valid answer raises
   `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
+     cebl_player(player_id = 570965)
+
 ## See also
 
 Other CEBL Functions:
@@ -107,21 +109,3 @@ Other CEBL Functions:
 [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md),
 [`cebl_team_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_team_stats.md),
 [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cebl_player(player_id = 570965))
-#> ── CEBL Player from the CEBL Stats API ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:44 UTC
-#> # A tibble: 1 × 16
-#>   player_id full_name     nationality   birth_date   age position jersey_number
-#>       <int> <chr>         <chr>         <date>     <int> <chr>    <chr>        
-#> 1    570965 Javonte Smart UNITED STATES 1999-06-03    27 G        1            
-#> # ℹ 9 more variables: team_id <int>, team_name_en <chr>,
-#> #   team_short_name_en <chr>, team_name_fr <chr>, team_short_name_fr <chr>,
-#> #   team_icon_url <chr>, team_stats_url_en <chr>, team_stats_url_fr <chr>,
-#> #   photo_url <chr>
-# }
-```

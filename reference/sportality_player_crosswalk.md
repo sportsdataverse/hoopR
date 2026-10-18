@@ -95,6 +95,8 @@ dropped.
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_player_crosswalk(season = 2026)
+
 ## See also
 
 Other Basketligaen Functions:
@@ -124,29 +126,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_player_crosswalk(season = 2026))
-#> ── Basketligaen Player Crosswalk from basketligaen.dk ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:35 UTC
-#> # A tibble: 206 × 13
-#>    player_id athlete_uuid first_name  last_name    jersey_number position shoots
-#>        <int> <chr>        <chr>       <chr>                <int> <chr>    <chr> 
-#>  1    172040 aw1hmw890w   Darko       Jukic                    8 SG       NA    
-#>  2    172060 c2zl1tssz3   Mathias Bak Christensen             NA NA       NA    
-#>  3    172165 p75z5zigsk   Sylvester   Berg                    13 SF       NA    
-#>  4    172234 qoytfuny8d   Oscar       Jørgensen               10 SG       NA    
-#>  5    175351 t988zab17n   Anton       Lønstrup Ha…             8 PG       NA    
-#>  6    288488 th318c12lk   Adama       Darboe                  44 PG       NA    
-#>  7    289150 x4ksj87cdb   David Nørby Knudsen                 77 SG       NA    
-#>  8    337485 yhhv60pe7k   Marius      Kirkholt Sø…             9 SG       NA    
-#>  9    380920 ktryy0lf0c   Anton Gajda Harbo                   13 SG       NA    
-#> 10    531539 opjkpdd63u   Adam        Heede-Ander…            12 PG       R     
-#> # ℹ 196 more rows
-#> # ℹ 6 more variables: ep_url <chr>, full_name <chr>, nationality <chr>,
-#> #   gender <chr>, weight <int>, height <int>
-# }
-```

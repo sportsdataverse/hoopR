@@ -142,6 +142,8 @@ game. The columns are always these, in this order (sdv-py
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_game_log(player_id = 969, season = 2027)
+
 ## See also
 
 Other LBA Functions:
@@ -163,26 +165,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_game_log(player_id = 969, season = 2027))
-#> ── LBA Game Log from legabasket.it ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:44 UTC
-#> # A tibble: 3 × 69
-#>   season stat_line_id championship_id championships_match_id player_id team_id
-#>    <int>        <int>           <int>                  <int>     <int>   <int>
-#> 1   2027       324455             602                  25602       969    1764
-#> 2   2027       324686             602                  25371       969    1764
-#> 3   2027       324924             602                  25376       969    1764
-#> # ℹ 63 more variables: number <int>, played_minutes <int>, points <int>,
-#> #   suffered_fouls <int>, done_fouls <int>, shots_2p_realized <int>,
-#> #   shots_2p_total <int>, shots_3p_realized <int>, shots_3p_total <int>,
-#> #   free_throws_realized <int>, free_throws_total <int>,
-#> #   restricted_area_p1 <chr>, restricted_area_p2 <chr>,
-#> #   restricted_area_p3 <chr>, slam_dunk <int>, offensive_rebound <int>,
-#> #   defensive_rebound <int>, ball_stop_given <int>, ball_stop_received <int>, …
-# }
-```

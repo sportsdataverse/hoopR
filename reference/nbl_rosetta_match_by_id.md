@@ -124,6 +124,8 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_match_by_id(match_id = "b217a699-4bef-11f0-bc08-933162362355")
+
 ## See also
 
 Other NBL Rosetta:
@@ -148,24 +150,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_match_by_id(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
-#> ── NBL Rosetta match_by_id from prod.rosetta.nbl.com.au ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:00:46 UTC
-#> # A tibble: 1 × 52
-#>   org   match_id    match_status start_time_datetime match_type attendance clock
-#>   <chr> <chr>       <chr>        <chr>               <chr>           <int> <chr>
-#> 1 nbl   b217a699-4… complete     2025-12-18T10:30:00 regular         10802 00:0…
-#> # ℹ 45 more variables: current_period <int>, clock_running <lgl>,
-#> #   home_score <int>, away_score <int>, round <chr>, start_time <chr>,
-#> #   status <chr>, external_media_id <chr>, match_slug <chr>, match_title <chr>,
-#> #   secondary_external_id <chr>, live_exclusive <lgl>, season_id <chr>,
-#> #   rosetta_season_id <chr>, season_year <int>, season_type <chr>,
-#> #   season_competition_id <chr>, season_competition_name <chr>,
-#> #   season_competition_gender <chr>, season_competition_league_name <chr>, …
-# }
-```

@@ -79,6 +79,8 @@ non-HTML body, an error or changed envelope, a play-by-play of another
 game, a page for another group or season, or layout drift). All inherit
 `hoopR_error`.
 
+     feb_period_scores(game_id = 2535725)
+
 ## See also
 
 Other FEB:
@@ -92,20 +94,3 @@ Other FEB:
 [`feb_shots()`](https://hoopR.sportsdataverse.org/reference/feb_shots.md),
 [`feb_standings()`](https://hoopR.sportsdataverse.org/reference/feb_standings.md),
 [`feb_team_stats()`](https://hoopR.sportsdataverse.org/reference/feb_team_stats.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(feb_period_scores(game_id = 2535725))
-#> ── FEB period scores from intrafeb.feb.es ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:25 UTC
-#> # A tibble: 4 × 4
-#>   game_id period home_points away_points
-#>     <int>  <int>       <int>       <int>
-#> 1 2535725      1          20          25
-#> 2 2535725      2          14          27
-#> 3 2535725      3          23          23
-#> 4 2535725      4          12          20
-# }
-```

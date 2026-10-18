@@ -351,6 +351,9 @@ unofficial use of the public widget endpoint, at least 1 s between
 requests, not republished as release assets. The site also serves
 women's competitions (pass their `competition_id`).
 
+     nbl1_seasons()
+     nbl1_schedule()
+
 ## See also
 
 Other Atrium:
@@ -382,49 +385,3 @@ Other Atrium:
 [`lnb_competition`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md),
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl1_seasons())
-#> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 16:00:43 UTC
-#> # A tibble: 63 × 9
-#>    website_id season_id              competition_id competition_name season_name
-#>         <int> <chr>                  <chr>          <chr>            <chr>      
-#>  1          3 a415b51d-d621-11f0-81… e1be4a98-7b55… NBL1 Central Men 2026 Centr…
-#>  2          3 8a25ee23-d621-11f0-a2… e1bb825e-7b55… NBL1 Central Wo… 2026 Centr…
-#>  3          3 216fef65-d623-11f0-89… a9909f44-168d… NBL1 East Men    2026 East …
-#>  4          3 3a1147c7-d623-11f0-b7… bce6b1f0-168d… NBL1 East Women  2026 East …
-#>  5          3 754ec78d-83e3-11f1-b7… 2585800c-c980… NBL1 Finals Men  2026 Men's…
-#>  6          3 8d2456d6-3e12-11f1-b5… 8c694ac3-d1eb… NBL1 Exhibition  2026 NBL1 …
-#>  7          3 73b5e50d-d623-11f0-b1… e1b956a0-7b55… NBL1 North Men   2026 North…
-#>  8          3 584fb251-d623-11f0-95… e1b77240-7b55… NBL1 North Women 2026 North…
-#>  9          3 6d96d605-d3ce-11f0-9f… e1b54948-7b55… NBL1 South Men   2026 South…
-#> 10          3 9ee95531-d3ce-11f0-a3… e1b24202-7b55… NBL1 South Women 2026 South…
-#> # ℹ 53 more rows
-#> # ℹ 4 more variables: abbreviation_local <chr>, year <int>,
-#> #   season_end_year <int>, is_default_season <lgl>
-  try(nbl1_schedule())
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────
-#> ℹ Data updated: 2026-10-18 16:00:44 UTC
-#> # A tibble: 7 × 40
-#>   website_id season_id           competition_id competition_name season_end_year
-#>        <int> <chr>               <chr>          <chr>                      <int>
-#> 1          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> 2          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> 3          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> 4          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> 5          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> 6          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> 7          3 754ec78d-83e3-11f1… 2585800c-c980… NBL1 Finals Men             2026
-#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
-#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
-#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
-#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
-#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>,
-#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
-# }
-```

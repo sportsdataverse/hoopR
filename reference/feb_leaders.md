@@ -88,6 +88,8 @@ non-HTML body, an error or changed envelope, a play-by-play of another
 game, a page for another group or season, or layout drift). All inherit
 `hoopR_error`.
 
+     feb_leaders(game_id = 2535725)
+
 ## See also
 
 Other FEB:
@@ -101,28 +103,3 @@ Other FEB:
 [`feb_shots()`](https://hoopR.sportsdataverse.org/reference/feb_shots.md),
 [`feb_standings()`](https://hoopR.sportsdataverse.org/reference/feb_standings.md),
 [`feb_team_stats()`](https://hoopR.sportsdataverse.org/reference/feb_team_stats.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(feb_leaders(game_id = 2535725))
-#> ── FEB leaders from intrafeb.feb.es ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:22 UTC
-#> # A tibble: 24 × 12
-#>    game_id team_side team_id team   category  rank player_id shirt_number player
-#>      <int> <chr>       <int> <chr>  <chr>    <int>     <int> <chr>        <chr> 
-#>  1 2535725 home      1009716 BUENO… points       1   1603635 11           J. GO…
-#>  2 2535725 home      1009716 BUENO… points       2   2813013 5            N. RE…
-#>  3 2535725 home      1009716 BUENO… points       3   2880241 6            J. ZE…
-#>  4 2535725 home      1009716 BUENO… rebounds     1   2880232 16           A. MA…
-#>  5 2535725 home      1009716 BUENO… rebounds     2   2432962 10           S. ME…
-#>  6 2535725 home      1009716 BUENO… rebounds     3   1981843 44           B. VA…
-#>  7 2535725 home      1009716 BUENO… assists      1   2432962 10           S. ME…
-#>  8 2535725 home      1009716 BUENO… assists      2   1371559 3            V. AG…
-#>  9 2535725 home      1009716 BUENO… assists      3   2813013 5            N. RE…
-#> 10 2535725 home      1009716 BUENO… fouls        1   2813013 5            N. RE…
-#> # ℹ 14 more rows
-#> # ℹ 3 more variables: starter <lgl>, captain <lgl>, value <int>
-# }
-```

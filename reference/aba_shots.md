@@ -105,6 +105,8 @@ or the answer is not the one asked for (a page for another game, season
 or league, an unfinished game, a helper that does not belong to the
 game, layout drift). All inherit `hoopR_error`.
 
+     aba_shots(game_no = 6, season = 2026)
+
 ## See also
 
 Other ABA:
@@ -119,27 +121,3 @@ Other ABA:
 [`aba_score_difference()`](https://hoopR.sportsdataverse.org/reference/aba_score_difference.md),
 [`aba_score_flow()`](https://hoopR.sportsdataverse.org/reference/aba_score_flow.md),
 [`aba_standings()`](https://hoopR.sportsdataverse.org/reference/aba_standings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(aba_shots(game_no = 6, season = 2026))
-#> ── ABA League Shots ──────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:36 UTC
-#> # A tibble: 152 × 10
-#>    game_no season league_id league side      x     y made  player_id player_name
-#>      <int>  <int>     <int> <chr>  <chr> <dbl> <dbl> <lgl>     <int> <chr>      
-#>  1       6   2026         1 aba    home   8.92  26.1 FALSE      4781 Juwan Morg…
-#>  2       6   2026         1 aba    home   7.99  37.7 TRUE       4781 Juwan Morg…
-#>  3       6   2026         1 aba    away  91.1   35.1 TRUE       5110 Keondre Ke…
-#>  4       6   2026         1 aba    home  14.7   64.5 TRUE       5072 Oleksandr …
-#>  5       6   2026         1 aba    away  91.9   57.7 TRUE       5110 Keondre Ke…
-#>  6       6   2026         1 aba    home  13.1   39.7 TRUE       5053 Jerry Fran…
-#>  7       6   2026         1 aba    away  90.7   53.2 TRUE       2112 Danilo Nik…
-#>  8       6   2026         1 aba    home   8.3   44.2 FALSE      4769 Rasheed Su…
-#>  9       6   2026         1 aba    home  11.4   33.2 TRUE       4769 Rasheed Su…
-#> 10       6   2026         1 aba    away  93.5   56.0 FALSE      2312 Nikola Reb…
-#> # ℹ 142 more rows
-# }
-```

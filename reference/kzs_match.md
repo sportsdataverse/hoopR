@@ -209,7 +209,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_match(match_id = 101839))
 #> ── KZS Match Header from api.kzs.si ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:55 UTC
+#> ℹ Data updated: 2026-10-18 17:24:47 UTC
 #> # A tibble: 1 × 98
 #>   match_id competition_id competition_name competition_type competition_phase_id
 #>      <int>          <int> <chr>            <chr>                           <int>

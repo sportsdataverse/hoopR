@@ -142,6 +142,7 @@ id casts) and the mapping must be one-to-one both ways.</p>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Raises <code>hoopR_bad_request</code> when <code>df</code> is not a data frame, lacks a column, has an id
 column of the wrong type, or maps one id to two.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/ibba_segev_game_crosswalk.html">ibba_segev_game_crosswalk</a></span><span class="op">(</span><span class="fu"><a href="../reference/ibba_games.html">ibba_games</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, board_id <span class="op">=</span> <span class="fl">5</span>, board_round <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -164,25 +165,6 @@ column of the wrong type, or maps one id to two.</p>
 <code><a href="ibba_teams.html">ibba_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">ibba_segev_game_crosswalk</span><span class="op">(</span><span class="fu"><a href="ibba_games.html">ibba_games</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, board_id <span class="op">=</span> <span class="fl">5</span>, board_round <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── IBBA game crosswalk ───────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:41:12 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   game_id segev_game_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">26</span>391            51</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">26</span>392            50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   <span style="text-decoration: underline;">26</span>394            49</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>   <span style="text-decoration: underline;">26</span>393            48</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>   <span style="text-decoration: underline;">26</span>390            47</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>   <span style="text-decoration: underline;">26</span>395            52</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>   <span style="text-decoration: underline;">26</span>389            23</span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

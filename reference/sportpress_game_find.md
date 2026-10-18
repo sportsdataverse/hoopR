@@ -134,7 +134,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_find(game_id = 11295))
 #> ── BNXT League Game from Sportpress ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:03 UTC
+#> ℹ Data updated: 2026-10-18 17:43:15 UTC
 #> # A tibble: 1 × 21
 #>   game_id game_time           status   competition_id season phase_id phase_name
 #>     <int> <dttm>              <chr>             <int>  <int>    <int> <chr>     

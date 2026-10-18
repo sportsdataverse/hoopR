@@ -85,6 +85,8 @@ these columns, in this order (sdv-py
   redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried,
   up to three attempts.
 
+     pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
+
 ## See also
 
 Other P. LEAGUE+ Functions:
@@ -106,27 +108,3 @@ Other P. LEAGUE+ Functions:
 [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
 [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
 [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#> ── P. LEAGUE+ Win Probability from api.preciser.io ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:25 UTC
-#> # A tibble: 49 × 3
-#>    game_uuid                            minute home_win_pct
-#>    <chr>                                 <int>        <dbl>
-#>  1 e6f98675-3e5b-11ed-949e-5d17350689cf      0           50
-#>  2 e6f98675-3e5b-11ed-949e-5d17350689cf      1           50
-#>  3 e6f98675-3e5b-11ed-949e-5d17350689cf      2           50
-#>  4 e6f98675-3e5b-11ed-949e-5d17350689cf      3           50
-#>  5 e6f98675-3e5b-11ed-949e-5d17350689cf      4           50
-#>  6 e6f98675-3e5b-11ed-949e-5d17350689cf      5           50
-#>  7 e6f98675-3e5b-11ed-949e-5d17350689cf      6           50
-#>  8 e6f98675-3e5b-11ed-949e-5d17350689cf      7           50
-#>  9 e6f98675-3e5b-11ed-949e-5d17350689cf      8           50
-#> 10 e6f98675-3e5b-11ed-949e-5d17350689cf      9           50
-#> # ℹ 39 more rows
-# }
-```

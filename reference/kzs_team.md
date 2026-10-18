@@ -108,6 +108,8 @@ competitions the team entered. An empty valid answer raises
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_team(team_id = 17551)
+
 ## See also
 
 Other KZS Functions:
@@ -133,24 +135,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_team(team_id = 17551))
-#> ── KZS Team Profile from api.kzs.si ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:14 UTC
-#> # A tibble: 1 × 29
-#>   team_id team_application_id club_id club_member category rank  gender
-#>     <int>               <int>   <int> <lgl>       <chr>    <chr> <chr> 
-#> 1   17551               45242      16 TRUE        ABSOLUTE FIRST MALE  
-#> # ℹ 22 more variables: sport_hall_id <int>, sport_hall_name <chr>,
-#> #   sport_hall_address_id <int>, sport_hall_address_post_office_id <int>,
-#> #   sport_hall_address_post_office_zip_code <chr>,
-#> #   sport_hall_address_post_office_name <chr>,
-#> #   sport_hall_address_post_office_municipality <chr>,
-#> #   sport_hall_address_post_office_country <chr>,
-#> #   sport_hall_address_street <chr>, sport_hall_address_house_number <chr>, …
-# }
-```

@@ -87,6 +87,8 @@ and its championship and cup titles. An empty valid answer raises
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_team_seasons(team_id = "413")
+
 ## See also
 
 Other SCB Functions:
@@ -112,28 +114,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_team_seasons(team_id = "413"))
-#> ── BBL/DBBL Team Seasons from the SCB API ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:59 UTC
-#> # A tibble: 52 × 8
-#>    league team_id season season_id season_team_id team_name         
-#>    <chr>  <chr>    <int>     <int> <chr>          <chr>             
-#>  1 bbl    413       1976      1975 413            DTV Charlottenburg
-#>  2 bbl    413       1977      1976 413            DTV Charlottenburg
-#>  3 bbl    413       1978      1977 413            DTV Charlottenburg
-#>  4 bbl    413       1979      1978 413            DTV Charlottenburg
-#>  5 bbl    413       1980      1979 413            DTV Charlottenburg
-#>  6 bbl    413       1981      1980 413            DTV Charlottenburg
-#>  7 bbl    413       1982      1981 413            DTV Charlottenburg
-#>  8 bbl    413       1983      1982 413            DTV Charlottenburg
-#>  9 bbl    413       1984      1983 413            DTV Charlottenburg
-#> 10 bbl    413       1985      1984 413            DTV Charlottenburg
-#> # ℹ 42 more rows
-#> # ℹ 2 more variables: is_championship_winner <lgl>, is_cup_winner <lgl>
-# }
-```

@@ -123,6 +123,8 @@ frame, one row per statistic and leader). An empty valid answer raises
   `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
+     cebl_player_leaders(mode = "PER_GAME", season = 2025)
+
 ## See also
 
 Other CEBL Functions:
@@ -137,39 +139,3 @@ Other CEBL Functions:
 [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md),
 [`cebl_team_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_team_stats.md),
 [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cebl_player_leaders(mode = "PER_GAME", season = 2025))
-#> ── CEBL Player Leaders from the CEBL Stats API ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:46 UTC
-#> # A tibble: 20 × 16
-#>    statistic     ranking season mode     competition player_id full_name team_id
-#>    <chr>           <int>  <int> <chr>    <chr>           <int> <chr>       <int>
-#>  1 POINTS              1   2025 PER_GAME NA             570965 Javonte …      20
-#>  2 POINTS              2   2025 PER_GAME NA             193258 Mitch Cr…      16
-#>  3 POINTS              3   2025 PER_GAME NA              16918 Donovan …      22
-#>  4 POINTS              4   2025 PER_GAME NA             410504 Sean Eas…      18
-#>  5 POINTS              5   2025 PER_GAME NA             570771 Terquavi…      22
-#>  6 REBOUNDS            1   2025 PER_GAME NA              36982 Isaih Mo…      20
-#>  7 REBOUNDS            2   2025 PER_GAME NA                111 Simi Shi…      24
-#>  8 REBOUNDS            3   2025 PER_GAME NA             406695 Tyrese S…      16
-#>  9 REBOUNDS            4   2025 PER_GAME NA             180348 Jaden Be…      15
-#> 10 REBOUNDS            5   2025 PER_GAME NA             406002 Greg Bro…      17
-#> 11 ASSISTS             1   2025 PER_GAME NA             404887 Nate Pie…      15
-#> 12 ASSISTS             2   2025 PER_GAME NA              16080 Corey Da…      16
-#> 13 ASSISTS             3   2025 PER_GAME NA                 44 Deng Adel      20
-#> 14 ASSISTS             4   2025 PER_GAME NA                  7 Cat Barb…      22
-#> 15 ASSISTS             5   2025 PER_GAME NA             501763 Tavian D…      21
-#> 16 TARGET_SCORES       1   2025 PER_GAME NA             406695 Tyrese S…      16
-#> 17 TARGET_SCORES       2   2025 PER_GAME NA                102 Sean Mil…      17
-#> 18 TARGET_SCORES       3   2025 PER_GAME NA                155 Khalil A…      14
-#> 19 TARGET_SCORES       4   2025 PER_GAME NA                  8 Jalen Ha…      24
-#> 20 TARGET_SCORES       5   2025 PER_GAME NA             638406 Evan Gil…      17
-#> # ℹ 8 more variables: team_name_en <chr>, team_short_name_en <chr>,
-#> #   team_name_fr <chr>, team_short_name_fr <chr>, team_abbreviated_name <chr>,
-#> #   team_logo_url <chr>, value <dbl>, photo_url <chr>
-# }
-```

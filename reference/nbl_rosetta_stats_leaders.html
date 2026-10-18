@@ -150,6 +150,7 @@ season id, an org or season type with nothing, or no season in progress); <code>
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 <code>hoopR_bad_request</code> for an unknown <code>org</code> / <code>season_type</code>, a malformed id, or HTTP 400 / 422.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl_rosetta_stats_leaders.html">nbl_rosetta_stats_leaders</a></span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season_id <span class="op">=</span> <span class="st">"1f8e4a79-e98b-457b-85a5-e4b898c6c0bd"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -177,35 +178,6 @@ another org, season or entity than the one asked for, or any other failed fetch;
 <code><a href="nbl_rosetta_teams.html">nbl_rosetta_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl_rosetta_stats_leaders</span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season_id <span class="op">=</span> <span class="st">"1f8e4a79-e98b-457b-85a5-e4b898c6c0bd"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBL Rosetta stats_leaders from prod.rosetta.nbl.com.au ── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:01:05 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 165 × 82</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    org   assists_average blocks_average field_goals_attempted field_goals_made</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nbl              7.62         0.25                     757              334</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nbl              7.12         0                        724              341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nbl              2.67         0.5                      221              109</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nbl              4.86         0.194                    633              275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nbl              3.97         0.552                    435              217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nbl              2.10         1.84                     431              243</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nbl              3.33         0.185                    409              192</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nbl              1.67         0.407                    352              187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nbl              7.55         0.060<span style="text-decoration: underline;">6</span>                   511              229</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nbl              3.65         0.135                    471              212</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 155 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 77 more variables: field_goals_attempted_average &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made_average &lt;dbl&gt;, field_goals_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fouls_average &lt;dbl&gt;, free_throws_attempted &lt;int&gt;, free_throws_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_attempted_average &lt;dbl&gt;, free_throws_made_average &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_percentage &lt;dbl&gt;, games &lt;int&gt;, games_started &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   offensive_rebounds &lt;int&gt;, fouls &lt;int&gt;, personal_fouls &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

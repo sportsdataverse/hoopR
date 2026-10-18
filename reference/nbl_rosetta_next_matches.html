@@ -146,6 +146,7 @@ season id, an org or season type with nothing, or no season in progress); <code>
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 <code>hoopR_bad_request</code> for an unknown <code>org</code> / <code>season_type</code>, a malformed id, or HTTP 400 / 422.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl_rosetta_next_matches.html">nbl_rosetta_next_matches</a></span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -173,31 +174,6 @@ another org, season or entity than the one asked for, or any other failed fetch;
 <code><a href="nbl_rosetta_teams.html">nbl_rosetta_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl_rosetta_next_matches</span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBL Rosetta next_matches from prod.rosetta.nbl.com.au ─── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:00:55 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 16</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    org   rosetta_team_id      team_name team_code division conference match_slug</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nbl   0602b1bc-8dfb-488c-… Tasmania… TAS       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         tasmania-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nbl   f8185bc5-2674-4293-… Brisbane… BRI       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         tasmania-…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nbl   105249a3-251d-4a9d-… Illawarr… ILL       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         illawarra…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nbl   39fc4268-0cdf-455f-… Sydney K… SYD       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         illawarra…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nbl   bc5327d5-322e-4796-… Perth Wi… PER       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         perth-wil…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nbl   41c8f340-4d0a-4d68-… Melbourn… MEL       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         perth-wil…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nbl   3bdb8ad6-7cf0-464d-… South Ea… SEM       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         south-eas…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nbl   3164912c-7e74-463b-… Adelaide… ADL       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         south-eas…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nbl   6bf2a6e3-2626-491d-… Cairns T… CNS       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         cairns-ta…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nbl   bbae77db-317d-4c17-… NZ Break… NZL       <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>         cairns-ta…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 more variables: match_title &lt;chr&gt;, start_time_datetime &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   is_home &lt;lgl&gt;, opponent_name &lt;chr&gt;, venue &lt;chr&gt;, match_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rosetta_match_id &lt;chr&gt;, rosetta_opponent_id &lt;chr&gt;, season_end_year &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -95,6 +95,8 @@ order (sdv-py `sportpress_game_slider`):
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_game_slider(competition_id = 25)
+
 ## See also
 
 Other BNXT League Functions:
@@ -125,31 +127,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_game_slider(competition_id = 25))
-#> ── BNXT League Game Slider from Sportpress ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:07 UTC
-#> # A tibble: 29 × 16
-#>    game_id genius_id game_time           status   competition_id season phase_id
-#>      <int>     <int> <dttm>              <chr>             <int>  <int>    <int>
-#>  1   11291   2873602 2026-10-09 20:30:00 finished             25   2027      183
-#>  2   11293   2873617 2026-10-09 20:30:00 finished             25   2027      183
-#>  3   11297   2873606 2026-10-10 20:00:00 finished             25   2027      183
-#>  4   11295   2873604 2026-10-10 20:30:00 finished             25   2027      183
-#>  5   11299   2873610 2026-10-10 20:30:00 finished             25   2027      183
-#>  6   11301   2873609 2026-10-10 20:30:00 finished             25   2027      183
-#>  7   11303   2873613 2026-10-14 19:30:00 finished             25   2027      183
-#>  8   11305   2873614 2026-10-16 20:30:00 finished             25   2027      183
-#>  9   11307   2873616 2026-10-16 20:30:00 finished             25   2027      183
-#> 10   11309   2873620 2026-10-17 20:00:00 finished             25   2027      183
-#> # ℹ 19 more rows
-#> # ℹ 9 more variables: phase_name <chr>, home_competition_team_id <int>,
-#> #   home_team <chr>, home_team_short_name <chr>, home_score <int>,
-#> #   away_competition_team_id <int>, away_team <chr>,
-#> #   away_team_short_name <chr>, away_score <int>
-# }
-```

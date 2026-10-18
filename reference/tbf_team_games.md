@@ -101,6 +101,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_team_games(season = 2027, team_process_id = 265995)
+
 ## See also
 
 Other TBF:
@@ -135,32 +137,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_team_games(season = 2027, team_process_id = 265995))
-#> ── TBF Team Games ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:06 UTC
-#> # A tibble: 30 × 21
-#>    season competition team_process_id match_id match_code tipoff             
-#>     <int> <chr>                 <int>    <int> <chr>      <dttm>             
-#>  1   2027 bsl                  265995   346279 1EA4917    2026-09-25 19:00:00
-#>  2   2027 bsl                  265995   346287 1EA4925    2026-10-03 13:00:00
-#>  3   2027 bsl                  265995   346295 1EA4933    2026-10-10 18:00:00
-#>  4   2027 bsl                  265995   346303 1EA4941    2026-10-17 18:00:00
-#>  5   2027 bsl                  265995   346311 1EA4949    2026-10-25 18:00:00
-#>  6   2027 bsl                  265995   346319 1EA4957    2026-11-01 15:30:00
-#>  7   2027 bsl                  265995   346326 1EA4964    2026-11-08 15:30:00
-#>  8   2027 bsl                  265995   346333 1EA4971    2026-11-14 15:30:00
-#>  9   2027 bsl                  265995   346340 1EA4978    2026-11-21 15:30:00
-#> 10   2027 bsl                  265995   346347 1EA4985    2026-12-05 20:30:00
-#> # ℹ 20 more rows
-#> # ℹ 15 more variables: week <chr>, city <chr>, venue <chr>,
-#> #   home_team_process_id <int>, home_team <chr>, home_score <int>,
-#> #   away_team_process_id <int>, away_team <chr>, away_score <int>,
-#> #   team_is_home <lgl>, team_won <lgl>, is_played <lgl>, status <chr>,
-#> #   status_id <int>, has_overtime <lgl>
-# }
-```

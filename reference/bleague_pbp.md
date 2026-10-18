@@ -154,7 +154,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_pbp(schedule_key = 504734))
 #> ── B.LEAGUE pbp from b-league.s3.amazonaws.com ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:32 UTC
+#> ℹ Data updated: 2026-10-18 17:20:50 UTC
 #> # A tibble: 809 × 37
 #>    schedule_key season feed  period event_no action_code action  qualifier_code2
 #>           <int>  <int> <chr>  <int>    <int>       <int> <chr>             <int>

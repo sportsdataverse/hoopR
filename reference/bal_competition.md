@@ -316,6 +316,9 @@ unchecked.
 Access, proxy and error notes: see
 [`genius_game()`](https://hoopR.sportsdataverse.org/reference/genius_game.md).
 
+     bal_competitions()
+     bal_schedule()
+
 ## See also
 
 Other Genius:
@@ -337,42 +340,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(bal_competitions())
-#> ── Genius LiveStats competitions ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:17 UTC
-#> # A tibble: 6 × 8
-#>   org   comp_id label    league_id  year season season_rule            selected
-#>   <chr>   <int> <chr>        <int> <int>  <int> <chr>                  <lgl>   
-#> 1 BAL     36139 2023           521  2023   2023 genius year (calendar) FALSE   
-#> 2 BAL     48286 2026           521  2026   2026 genius year (calendar) TRUE    
-#> 3 BAL     33096 BAL 2022       521  2022   2022 genius year (calendar) FALSE   
-#> 4 BAL     35460 BAL 2023       521  2023   2023 genius year (calendar) FALSE   
-#> 5 BAL     38044 BAL 2024       521  2024   2024 genius year (calendar) FALSE   
-#> 6 BAL     40671 BAL 2025       521  2025   2025 genius year (calendar) FALSE   
-  try(bal_schedule())
-#> ── Genius LiveStats schedule ─────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:25 UTC
-#> # A tibble: 42 × 16
-#>    match_id link_match_id comp_id org   status   date_time   venue_id venue_name
-#>       <int>         <int>   <int> <chr> <chr>    <chr>          <int> <chr>     
-#>  1  2816790       2816790   48286 BAL   COMPLETE Mar 27, 20…    34432 SunBet Ar…
-#>  2  2816791       2816791   48286 BAL   COMPLETE Mar 27, 20…    34432 SunBet Ar…
-#>  3  2816795       2816795   48286 BAL   COMPLETE Mar 28, 20…    34432 SunBet Ar…
-#>  4  2816796       2816796   48286 BAL   COMPLETE Mar 28, 20…    34432 SunBet Ar…
-#>  5  2816797       2816797   48286 BAL   COMPLETE Mar 29, 20…    34432 SunBet Ar…
-#>  6  2816798       2816798   48286 BAL   COMPLETE Mar 29, 20…    34432 SunBet Ar…
-#>  7  2816799       2816799   48286 BAL   COMPLETE Mar 31, 20…    34432 SunBet Ar…
-#>  8  2816800       2816800   48286 BAL   COMPLETE Apr 1, 202…    34432 SunBet Ar…
-#>  9  2816801       2816801   48286 BAL   COMPLETE Apr 1, 202…    34432 SunBet Ar…
-#> 10  2816804       2816804   48286 BAL   COMPLETE Apr 3, 202…    34432 SunBet Ar…
-#> # ℹ 32 more rows
-#> # ℹ 8 more variables: home_team_id <int>, home_team_name <chr>,
-#> #   home_team_code <chr>, home_score <int>, away_team_id <int>,
-#> #   away_team_name <chr>, away_team_code <chr>, away_score <int>
-# }
-```

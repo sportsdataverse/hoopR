@@ -108,6 +108,8 @@ is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_game_leaders(gmkey = "S47G01N49")
+
 ## See also
 
 Other KBL Functions:
@@ -132,28 +134,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_game_leaders(gmkey = "S47G01N49"))
-#> ── KBL Game Leaders from api.kbl.or.kr ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:23 UTC
-#> # A tibble: 10 × 14
-#>    gmkey     season_code season game_code game_no part  side  pcode  player_name
-#>    <chr>           <int>  <int> <chr>       <int> <chr> <chr> <chr>  <chr>      
-#>  1 S47G01N49          47   2026 01             49 ast   home  291488 이정현     
-#>  2 S47G01N49          47   2026 01             49 ast   away  290648 한상혁     
-#>  3 S47G01N49          47   2026 01             49 bs    home  291789 제일린 존슨
-#>  4 S47G01N49          47   2026 01             49 bs    away  290478 장민국     
-#>  5 S47G01N49          47   2026 01             49 rb    home  291788 네이던 나이트……
-#>  6 S47G01N49          47   2026 01             49 rb    away  291670 마이클 에릭
-#>  7 S47G01N49          47   2026 01             49 score home  291488 이정현     
-#>  8 S47G01N49          47   2026 01             49 score away  291640 유기상     
-#>  9 S47G01N49          47   2026 01             49 stl   home  291788 네이던 나이트……
-#> 10 S47G01N49          47   2026 01             49 stl   away  290648 한상혁     
-#> # ℹ 5 more variables: player_name_en <chr>, team_name <chr>, value <dbl>,
-#> #   play_min <int>, play_sec <int>
-# }
-```

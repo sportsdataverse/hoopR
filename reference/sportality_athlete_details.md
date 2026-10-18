@@ -89,6 +89,8 @@ then any column the API added later:
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_athlete_details(athlete_uuid = "dpu0901c0t")
+
 ## See also
 
 Other Basketligaen Functions:
@@ -118,20 +120,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_athlete_details(athlete_uuid = "dpu0901c0t"))
-#> ── Basketligaen Athlete Details from basketligaen.dk ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:22 UTC
-#> # A tibble: 1 × 15
-#>   athlete_uuid player_id created_at       created_by creator_site height deleted
-#>   <chr>            <int> <chr>            <chr>      <chr>         <int> <lgl>  
-#> 1 dpu0901c0t     1917467 2026-06-17T12:1… dbl1_dbl   NA              197 FALSE  
-#> # ℹ 8 more variables: first_name <chr>, gender <chr>, last_modified <chr>,
-#> #   last_name <chr>, metadata <chr>, nationality <chr>, shoots <chr>,
-#> #   weight <int>
-# }
-```

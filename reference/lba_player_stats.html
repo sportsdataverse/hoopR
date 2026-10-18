@@ -152,7 +152,8 @@ an unknown season, a play-by-play before 2017-18, standings of a finished champi
 not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
 championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
 is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_player_stats.html">lba_player_stats</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">969</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other LBA Functions:
@@ -176,35 +177,6 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
 <code><a href="lba_teams_leaderboard.html">lba_teams_leaderboard()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_player_stats</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">969</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Player Stats from legabasket.it ───────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:55 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 33</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    player_id stat_type season championship_year championship_position</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>       969 avg         <span style="text-decoration: underline;">2</span>013              <span style="text-decoration: underline;">2</span>012                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>       969 avg         <span style="text-decoration: underline;">2</span>014              <span style="text-decoration: underline;">2</span>013                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>       969 avg         <span style="text-decoration: underline;">2</span>014              <span style="text-decoration: underline;">2</span>013                     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>       969 avg         <span style="text-decoration: underline;">2</span>019              <span style="text-decoration: underline;">2</span>018                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>       969 avg         <span style="text-decoration: underline;">2</span>019              <span style="text-decoration: underline;">2</span>018                     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>       969 avg         <span style="text-decoration: underline;">2</span>023              <span style="text-decoration: underline;">2</span>022                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>       969 avg         <span style="text-decoration: underline;">2</span>024              <span style="text-decoration: underline;">2</span>023                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>       969 avg         <span style="text-decoration: underline;">2</span>025              <span style="text-decoration: underline;">2</span>024                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>       969 avg         <span style="text-decoration: underline;">2</span>026              <span style="text-decoration: underline;">2</span>025                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>       969 avg         <span style="text-decoration: underline;">2</span>027              <span style="text-decoration: underline;">2</span>026                     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 28 more variables: championship_name &lt;chr&gt;, team_name &lt;chr&gt;, quintet &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   points &lt;dbl&gt;, played_minutes &lt;dbl&gt;, played_matches &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_matches &lt;int&gt;, done_fouls &lt;dbl&gt;, suffered_fouls &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   shots_2p_realized &lt;dbl&gt;, shots_2p_total &lt;dbl&gt;, slam_dunk &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   shots_3p_realized &lt;dbl&gt;, shots_3p_total &lt;dbl&gt;, free_throws_realized &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_total &lt;dbl&gt;, offensive_rebound &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

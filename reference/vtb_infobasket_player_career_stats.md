@@ -145,6 +145,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_player_career_stats(person_id = 423011)
+
 ## See also
 
 Other VTB Functions:
@@ -185,24 +187,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_player_career_stats(person_id = 423011))
-#> ── VTB Infobasket Player Career Stats from org.infobasket.su ───────────────────
-#> ℹ Data updated: 2026-10-18 16:04:47 UTC
-#> # A tibble: 1 × 39
-#>   person_id game_count in_game_count start_count has_more_seasons points shot1
-#>       <int>      <int>         <int>       <int> <lgl>             <int> <int>
-#> 1    423011        128           128         119 FALSE              1950   765
-#> # ℹ 32 more variables: goal1 <int>, shot2 <int>, goal2 <int>, shot3 <int>,
-#> #   goal3 <int>, shot1_percent <dbl>, shot2_percent <dbl>, shot3_percent <dbl>,
-#> #   assist <int>, blocks <int>, def_rebound <int>, off_rebound <int>,
-#> #   rebound <int>, steal <int>, turnover <int>, foul <int>,
-#> #   opponent_foul <int>, avg_points <dbl>, avg_assist <dbl>, avg_blocks <dbl>,
-#> #   avg_def_rebound <dbl>, avg_off_rebound <dbl>, avg_rebound <dbl>,
-#> #   avg_steal <dbl>, avg_turnover <dbl>, avg_foul <dbl>, …
-# }
-```

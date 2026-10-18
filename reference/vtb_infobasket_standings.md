@@ -178,7 +178,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_standings(comp_id = 50720))
 #> ── VTB Infobasket Standings from org.infobasket.su ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:56 UTC
+#> ℹ Data updated: 2026-10-18 17:44:24 UTC
 #> # A tibble: 11 × 28
 #>    comp_id comp_team_id team_id place start_place games   won  lost
 #>      <int>        <int>   <int> <int>       <int> <int> <int> <int>

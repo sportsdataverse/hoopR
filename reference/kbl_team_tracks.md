@@ -114,6 +114,8 @@ tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_team_tracks(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -138,27 +140,3 @@ Other KBL Functions:
 [`kbl_standings()`](https://hoopR.sportsdataverse.org/reference/kbl_standings.md),
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_team_tracks(season = 2025))
-#> ── KBL Team Tracks from api.kbl.or.kr ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:44 UTC
-#> # A tibble: 540 × 8
-#>    season season_code game_code glkey  team_code team_name game_number  rank
-#>     <int>       <int> <chr>     <chr>  <chr>     <chr>           <int> <int>
-#>  1   2025          45 01        S45G01 06        KT                  1     4
-#>  2   2025          45 01        S45G01 06        KT                  2     6
-#>  3   2025          45 01        S45G01 06        KT                  3     3
-#>  4   2025          45 01        S45G01 06        KT                  4     6
-#>  5   2025          45 01        S45G01 06        KT                  5     6
-#>  6   2025          45 01        S45G01 06        KT                  6     3
-#>  7   2025          45 01        S45G01 06        KT                  7     5
-#>  8   2025          45 01        S45G01 06        KT                  8     5
-#>  9   2025          45 01        S45G01 06        KT                  9     5
-#> 10   2025          45 01        S45G01 06        KT                 10     4
-#> # ℹ 530 more rows
-# }
-```

@@ -79,6 +79,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_boards_ex(season = 2026, team_uid = 10)
+
 ## See also
 
 Other IBBA:
@@ -98,19 +100,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_boards_ex(season = 2026, team_uid = 10))
-#> ── IBBA boards ex ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:02 UTC
-#> # A tibble: 3 × 2
-#>   board_id board_name_he
-#>      <int> <chr>        
-#> 1     1001 יורוליג      
-#> 2     1005 משחקי הכנה   
-#> 3     1013 גביע המדינה  
-# }
-```

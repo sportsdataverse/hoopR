@@ -100,6 +100,8 @@ intermittent HTTP 500 "A website error has occurred" page
 a cut-off page, an unfinished game, or a body for another match,
 competition or ORG.
 
+     genius_schedule_embed(org = "HKS", comp_id = 49946)
+
 ## See also
 
 Other Genius:
@@ -121,30 +123,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(genius_schedule_embed(org = "HKS", comp_id = 49946))
-#> ── Genius LiveStats embed schedule ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:40:56 UTC
-#> # A tibble: 182 × 16
-#>    match_id link_match_id comp_id org   status   date_time   venue_id venue_name
-#>       <int>         <int>   <int> <chr> <chr>    <chr>          <int> <chr>     
-#>  1  2895763       2895763   49946 HKS   COMPLETE Oct 10, 20…    10352 "Košarkaš…
-#>  2  2895771       2895771   49946 HKS   COMPLETE Oct 10, 20…    29588 "Gradska …
-#>  3  2895765       2895765   49946 HKS   COMPLETE Oct 10, 20…    13193 "Nastavno…
-#>  4  2895773       2895773   49946 HKS   COMPLETE Oct 10, 20…    32664 "Dvorana …
-#>  5  2938626       2938626   49946 HKS   COMPLETE Oct 11, 20…    10355 "Školska …
-#>  6  2895769       2895769   49946 HKS   COMPLETE Oct 11, 20…    10353 "SŠD Bošk…
-#>  7  2895767       2895767   49946 HKS   COMPLETE Oct 11, 20…    10575 "Sportska…
-#>  8  2895766       2895766   49946 HKS   COMPLETE Oct 17, 20…    10353 "SŠD Bošk…
-#>  9  2895779       2895779   49946 HKS   COMPLETE Oct 17, 20…    10354 "Sportska…
-#> 10  2895768       2895768   49946 HKS   COMPLETE Oct 17, 20…    10352 "Košarkaš…
-#> # ℹ 172 more rows
-#> # ℹ 8 more variables: home_team_id <int>, home_team_name <chr>,
-#> #   home_team_code <chr>, home_score <int>, away_team_id <int>,
-#> #   away_team_name <chr>, away_team_code <chr>, away_score <int>
-# }
-```

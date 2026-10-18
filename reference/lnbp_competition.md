@@ -351,6 +351,9 @@ unofficial use of the public widget endpoint, at least 1 s between
 requests, not republished as release assets. The site also serves
 women's competitions (pass their `competition_id`).
 
+     lnbp_seasons()
+     lnbp_schedule()
+
 ## See also
 
 Other Atrium:
@@ -382,49 +385,3 @@ Other Atrium:
 [`lnb_competition`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lnbp_seasons())
-#> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 15:43:50 UTC
-#> # A tibble: 10 × 9
-#>    website_id season_id              competition_id competition_name season_name
-#>         <int> <chr>                  <chr>          <chr>            <chr>      
-#>  1         14 3b2ecaa5-a640-11f1-a2… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…
-#>  2         14 cc7d79f3-43ee-11f1-b8… 16be8396-24fb… LIGA CALIENTE.M… LIGA CALIE…
-#>  3         14 b085bfa6-0b98-11f1-a9… cbd9ecf6-fa02… LIGA CALIENTE.MX LNBP FEMEN…
-#>  4         14 c1b0a47a-81cc-11f0-b2… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…
-#>  5         14 753ba8e7-81cd-11f0-b6… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…
-#>  6         14 b1b57094-3f54-11f0-9a… 16be8396-24fb… LIGA CALIENTE.M… LIGA CALIE…
-#>  7         14 38b63189-1af0-11f0-bf… cbd9ecf6-fa02… LIGA CALIENTE.MX LNBP FEMEN…
-#>  8         14 9a8cdde2-6305-11ef-b3… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…
-#>  9         14 ef1919ad-fa03-11ee-ab… cbd9ecf6-fa02… LIGA CALIENTE.MX LNBP FEMEN…
-#> 10         14 1ac763fc-5c7d-11ee-86… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…
-#> # ℹ 4 more variables: abbreviation_local <chr>, year <int>,
-#> #   season_end_year <int>, is_default_season <lgl>
-  try(lnbp_schedule())
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────
-#> ℹ Data updated: 2026-10-18 15:43:52 UTC
-#> # A tibble: 8 × 40
-#>   website_id season_id           competition_id competition_name season_end_year
-#>        <int> <chr>               <chr>          <chr>                      <int>
-#> 1         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 2         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 3         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 4         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 5         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 6         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 7         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 8         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
-#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
-#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
-#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
-#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>,
-#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
-# }
-```

@@ -113,6 +113,8 @@ always these, in this order (sdv-py `sportpress_team_player_averages`):
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_team_player_averages(competition_team_id = 541)
+
 ## See also
 
 Other BNXT League Functions:
@@ -143,35 +145,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_team_player_averages(competition_team_id = 541))
-#> ── BNXT League Team Player Averages from Sportpress ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:37 UTC
-#> # A tibble: 12 × 37
-#>    competition_team_id roster_id player_id first_name last_name nationality_code
-#>                  <int>     <int>     <int> <chr>      <chr>     <chr>           
-#>  1                 541     11443      5683 Jehloni    James     USA             
-#>  2                 541     11445       513 Kevin      Tumba     BEL             
-#>  3                 541     11447      5255 Noel       Coleman   BEL             
-#>  4                 541     11449       228 Niels      De Ridder BEL             
-#>  5                 541     11193      4232 Joel       Murray    USA             
-#>  6                 541     11451      5685 Nijel      Pack      USA             
-#>  7                 541     11453      5325 Enoch      Cheeks    USA             
-#>  8                 541     11455       202 Vincent    Kesteloot BEL             
-#>  9                 541     11457      5687 Cesare     Edwards   USA             
-#> 10                 541     11195      5567 Jacari     White     USA             
-#> 11                 541     11459      2612 Letto      Van Drom  BEL             
-#> 12                 541     11461      5689 Youssef    Zagdoud   BEL             
-#> # ℹ 31 more variables: birth_date <date>, played_games <int>,
-#> #   games_started <int>, minute <dbl>, foul <dbl>, defensive_foul <dbl>,
-#> #   dunk_made <dbl>, dunk_all <dbl>, dunk_percent <dbl>, two_point_made <dbl>,
-#> #   two_point_all <dbl>, two_point_percent <dbl>, three_point_made <dbl>,
-#> #   three_point_all <dbl>, three_point_percent <dbl>, throw_made <dbl>,
-#> #   throw_all <dbl>, throw_percent <dbl>, free_throw_made <dbl>,
-#> #   free_throw_all <dbl>, free_throw_percent <dbl>, offensive_rebound <dbl>, …
-# }
-```

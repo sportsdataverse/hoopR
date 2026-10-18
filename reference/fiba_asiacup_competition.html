@@ -205,6 +205,8 @@
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>FIBA's terms restrict this source: the GDAP developer-portal terms limit API use to 'Authorized Users' and the fiba.basketball terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included. Users who are not themselves authorised by FIBA should check the terms before using the wrappers. See <code><a href="fiba_gdap_awards.html">fiba_gdap_awards()</a></code> for the shared notes.</p>
 <p>A <code>comp</code> of another competition family, or one GDAP gives no family, is <code>hoopR_asset_fetch</code>; a season with no edition is <code>hoopR_no_data</code>; a season listing several editions, or a game function called with neither <code>season</code> nor <code>comp</code>, is <code>hoopR_bad_request</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_asiacup_competition.html">fiba_asiacup_editions</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/fiba_asiacup_competition.html">fiba_asiacup_schedule</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -219,49 +221,6 @@
 <code><a href="fiba_wc_competition.html">fiba_wc_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_asiacup_editions</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gdap_editions from fiba.basketball ───────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:38:38 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 29</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   hosts  competition_id competition_code season official_name start end   status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">"</span>[{\"…         <span style="text-decoration: underline;">208</span>895 AC25               <span style="text-decoration: underline;">2</span>025 FIBA Asia Cup 2025… 2025… Compl…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 21 more variables: age_category &lt;chr&gt;, gender &lt;chr&gt;, fiba_zone &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   zone_information_zone_id &lt;int&gt;, zone_information_zone_official_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   zone_information_zone_code &lt;chr&gt;, zone_information_top_zone_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   zone_information_top_zone_official_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   zone_information_top_zone_code &lt;chr&gt;, competition_type &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   competition_category_is_league &lt;lgl&gt;, competition_category_age_type &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   competition_category_code &lt;chr&gt;, competition_category_name &lt;chr&gt;, …</span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_asiacup_schedule</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gdap_schedule from fiba.basketball ───────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:38:40 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 36 × 86</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id game_name game_number status_code team_a_team_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  <span style="text-decoration: underline;">128</span>075 29344-A-1 1           VALID               <span style="text-decoration: underline;">283</span>208</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  <span style="text-decoration: underline;">128</span>076 29344-A-2 2           VALID               <span style="text-decoration: underline;">283</span>220</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  <span style="text-decoration: underline;">128</span>077 29344-A-3 3           VALID               <span style="text-decoration: underline;">283</span>216</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  <span style="text-decoration: underline;">128</span>078 29344-A-4 4           VALID               <span style="text-decoration: underline;">283</span>212</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  <span style="text-decoration: underline;">128</span>079 29344-A-5 5           VALID               <span style="text-decoration: underline;">283</span>220</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  <span style="text-decoration: underline;">128</span>080 29344-A-6 6           VALID               <span style="text-decoration: underline;">283</span>216</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  <span style="text-decoration: underline;">128</span>081 29344-B-1 1           VALID               <span style="text-decoration: underline;">283</span>209</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  <span style="text-decoration: underline;">128</span>082 29344-B-2 2           VALID               <span style="text-decoration: underline;">283</span>221</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  <span style="text-decoration: underline;">128</span>083 29344-B-3 3           VALID               <span style="text-decoration: underline;">283</span>211</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  <span style="text-decoration: underline;">128</span>084 29344-B-4 4           VALID               <span style="text-decoration: underline;">283</span>217</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 26 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 81 more variables: team_a_organisation_id &lt;int&gt;, team_a_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_a_official_name &lt;chr&gt;, team_a_short_name &lt;chr&gt;, team_b_team_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b_organisation_id &lt;int&gt;, team_b_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b_official_name &lt;chr&gt;, team_b_short_name &lt;chr&gt;, team_a_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b_score &lt;int&gt;, is_live &lt;lgl&gt;, current_period &lt;chr&gt;, chrono &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   live_game_status &lt;int&gt;, current_period_status &lt;chr&gt;, host_city &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

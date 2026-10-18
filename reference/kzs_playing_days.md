@@ -81,6 +81,8 @@ are always these, in this order (sdv-py `kzs_playing_days`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_playing_days(competition_id = 579)
+
 ## See also
 
 Other KZS Functions:
@@ -106,27 +108,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_playing_days(competition_id = 579))
-#> ── KZS Playing Days from api.kzs.si ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:08 UTC
-#> # A tibble: 107 × 3
-#>    competition_id date       no_of_games
-#>             <int> <chr>            <int>
-#>  1            579 2025-09-26           2
-#>  2            579 2025-09-27           2
-#>  3            579 2025-09-29           1
-#>  4            579 2025-10-01           1
-#>  5            579 2025-10-04           2
-#>  6            579 2025-10-06           2
-#>  7            579 2025-10-09           1
-#>  8            579 2025-10-11           3
-#>  9            579 2025-10-13           1
-#> 10            579 2025-10-14           1
-#> # ℹ 97 more rows
-# }
-```

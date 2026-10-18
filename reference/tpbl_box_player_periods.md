@@ -219,6 +219,8 @@ were on court, overtimes included. An empty answer raises
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_box_player_periods(game_id = 6)
+
 ## See also
 
 Other TPBL Functions:
@@ -237,33 +239,3 @@ Other TPBL Functions:
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_box_player_periods(game_id = 6))
-#> ── TPBL Player Box Score by Quarter from api.tpbl.basketball ───────────────────
-#> ℹ Data updated: 2026-10-18 16:04:15 UTC
-#> # A tibble: 78 × 137
-#>    game_id side  team_id team           gohoops_squad_id period player_id
-#>      <int> <chr>   <int> <chr>                     <int>  <int>     <int>
-#>  1       6 home        4 新竹御嵿攻城獅             8211      1        76
-#>  2       6 home        4 新竹御嵿攻城獅             8211      1        78
-#>  3       6 home        4 新竹御嵿攻城獅             8211      1        96
-#>  4       6 home        4 新竹御嵿攻城獅             8211      1        88
-#>  5       6 home        4 新竹御嵿攻城獅             8211      1        93
-#>  6       6 home        4 新竹御嵿攻城獅             8211      1        71
-#>  7       6 home        4 新竹御嵿攻城獅             8211      1        75
-#>  8       6 home        4 新竹御嵿攻城獅             8211      1        92
-#>  9       6 home        4 新竹御嵿攻城獅             8211      1        90
-#> 10       6 home        4 新竹御嵿攻城獅             8211      1       100
-#> # ℹ 68 more rows
-#> # ℹ 130 more variables: gohoops_person_id <int>, gohoops_roster_id <int>,
-#> #   player <chr>, number <chr>, position <chr>, status <chr>,
-#> #   roster_status <chr>, is_starting <lgl>, entered <lgl>, time_on_court <int>,
-#> #   score <int>, plus_minus <int>, field_goals_made <int>,
-#> #   field_goals_missed <int>, field_goals_attempted <int>,
-#> #   field_goals_percentage <dbl>, two_pointers_made <int>, …
-# }
-```

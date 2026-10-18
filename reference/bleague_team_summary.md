@@ -128,6 +128,8 @@ changed body, an unfinished game, a context or page for another game,
 season, tab or day, a truncated schedule list, or layout drift). All
 inherit `hoopR_error`.
 
+     bleague_team_summary(schedule_key = 504734)
+
 ## See also
 
 Other B.LEAGUE:
@@ -144,37 +146,3 @@ Other B.LEAGUE:
 [`bleague_shots()`](https://hoopR.sportsdataverse.org/reference/bleague_shots.md),
 [`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md),
 [`bleague_team_box()`](https://hoopR.sportsdataverse.org/reference/bleague_team_box.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(bleague_team_summary(schedule_key = 504734))
-#> ── B.LEAGUE team summary from b-league.s3.amazonaws.com ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:49 UTC
-#> # A tibble: 14 × 40
-#>    schedule_key season feed  period_category team_side team_id team_name_j     
-#>           <int>  <int> <chr>           <int> <chr>     <chr>   <chr>           
-#>  1       504734   2026 v2                  1 home      706     アルバルク東京  
-#>  2       504734   2026 v2                  1 away      703     宇都宮ブレックス
-#>  3       504734   2026 v2                  2 home      706     アルバルク東京  
-#>  4       504734   2026 v2                  2 away      703     宇都宮ブレックス
-#>  5       504734   2026 v2                  3 home      706     アルバルク東京  
-#>  6       504734   2026 v2                  3 away      703     宇都宮ブレックス
-#>  7       504734   2026 v2                  4 home      706     アルバルク東京  
-#>  8       504734   2026 v2                  4 away      703     宇都宮ブレックス
-#>  9       504734   2026 v2                 15 home      706     アルバルク東京  
-#> 10       504734   2026 v2                 15 away      703     宇都宮ブレックス
-#> 11       504734   2026 v2                 16 home      706     アルバルク東京  
-#> 12       504734   2026 v2                 16 away      703     宇都宮ブレックス
-#> 13       504734   2026 v2                 18 home      706     アルバルク東京  
-#> 14       504734   2026 v2                 18 away      703     宇都宮ブレックス
-#> # ℹ 33 more variables: team_name_e <chr>, fg_made <int>, fg_attempted <int>,
-#> #   fg_pct <dbl>, fg2_made <int>, fg2_attempted <int>, fg2_pct <dbl>,
-#> #   fg3_made <int>, fg3_attempted <int>, fg3_pct <dbl>, ft_made <int>,
-#> #   ft_attempted <int>, ft_pct <dbl>, reb_off <int>, reb_def <int>, reb <int>,
-#> #   assists <int>, turnovers <int>, steals <int>, blocks <int>,
-#> #   blocks_received <int>, fouls <int>, fouls_drawn <int>, paint_points <int>,
-#> #   points_off_turnover <int>, second_chance_points <int>, …
-# }
-```

@@ -202,6 +202,8 @@ lnbm_team_box(), lnbm_player_box(), lnbm_pbp(), lnbm_shots(): one finished game 
     <p>The season's competition is picked from the <code>FRB</code> chooser by the label rule include = <code>lnbm|liga nationala de baschet masculin</code>, exclude = <code>^$</code> (case-insensitive); cups and play-offs have their own <code>comp_id</code>. Several matching competitions raise <code>hoopR_bad_request</code> (pass <code>comp_id</code>); none raises <code>hoopR_no_data</code>.</p>
 <p>Genius match ids are one global sequence shared by every customer and <code>data.json</code> names no competition, so each game alias checks the id on the game's LiveStats shell (<code>/u/FRB/&lt;match_id&gt;/</code>: one extra request per game, cached per process for an hour): its competition name must pass the label rule. Another org's game, a cup or play-off game of <code>FRB</code>, or a shell request that fails twice (or names no competition) raises <code>hoopR_asset_fetch</code>. The base <code>genius_*()</code> function reads any game unchecked.</p>
 <p>Access, proxy and error notes: see <code><a href="genius_game.html">genius_game()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lnbm_competition.html">lnbm_competitions</a></span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/lnbm_competition.html">lnbm_schedule</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -226,22 +228,6 @@ lnbm_team_box(), lnbm_player_box(), lnbm_pbp(), lnbm_shots(): one finished game 
 <code><a href="slb_competition.html">slb_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lnbm_competitions</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in genius_competitions(org = .genius_entry(key)$ids$org, return_parsed = return_parsed) : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   hosted.dcd.shared.geniussports.com/FRB/en/schedule answered HTTP 500 'A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> website error has occurred': an intermittent Genius host-side failure (it</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sticks to a URL for minutes; retry later).</span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lnbm_schedule</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in genius_competitions(org = org) : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   hosted.dcd.shared.geniussports.com/FRB/en/schedule answered HTTP 500 'A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> website error has occurred': an intermittent Genius host-side failure (it</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> sticks to a URL for minutes; retry later).</span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

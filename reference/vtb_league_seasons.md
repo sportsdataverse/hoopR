@@ -132,7 +132,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_league_seasons(league_slug = "vtb"))
 #> ── VTB League Seasons from api.vtb-league.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:05:16 UTC
+#> ℹ Data updated: 2026-10-18 17:44:33 UTC
 #> # A tibble: 3 × 5
 #>   season league is_current season_name                             season_abbrev
 #>    <int> <chr>  <lgl>      <chr>                                   <chr>        

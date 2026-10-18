@@ -93,6 +93,8 @@ always these, in this order (sdv-py `sportpress_roster_find`):
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_roster_find(roster_id = 11193)
+
 ## See also
 
 Other BNXT League Functions:
@@ -123,20 +125,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_roster_find(roster_id = 11193))
-#> ── BNXT League Roster Entry from Sportpress ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:30 UTC
-#> # A tibble: 1 × 18
-#>   roster_id competition_team_id jersey weight height active position_id position
-#>       <int>               <int> <chr>   <int>  <int> <lgl>        <int> <chr>   
-#> 1     11193                 541 13         NA    183 TRUE             2 shootin…
-#> # ℹ 10 more variables: player_id <int>, first_name <chr>, last_name <chr>,
-#> #   nationality_code <chr>, birth_date <date>, uu_team_id <int>, team <chr>,
-#> #   team_short_name <chr>, competition_id <int>, season <int>
-# }
-```

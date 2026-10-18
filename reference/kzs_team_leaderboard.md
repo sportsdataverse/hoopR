@@ -125,6 +125,8 @@ order (sdv-py `kzs_team_leaderboard`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_team_leaderboard(competition_id = 579)
+
 ## See also
 
 Other KZS Functions:
@@ -150,29 +152,3 @@ Other KZS Functions:
 [`kzs_team_box_score()`](https://hoopR.sportsdataverse.org/reference/kzs_team_box_score.md),
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_team_leaderboard(competition_id = 579))
-#> ── KZS Team Leaderboard from api.kzs.si ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:17 UTC
-#> # A tibble: 11 × 12
-#>    competition_id stats_category club_id club_fullname  club_logo_uuid club_code
-#>             <int> <chr>            <int> <chr>          <chr>          <chr>    
-#>  1            579 PTS                 26 KOŠARKARSKI K… dbf53462-c87d… KRK      
-#>  2            579 PTS                254 KOŠARKARSKI K… 4586ff12-6ac5… COL      
-#>  3            579 PTS                 16 KOŠARKARSKI K… f90fe2e9-905d… ILI      
-#>  4            579 PTS                 55 KOŠARKARSKI K… 45b0ac2b-351a… ŠEN      
-#>  5            579 PTS                 49 KOŠARKARSKI K… 60e0340d-b00f… ROG      
-#>  6            579 PTS                 46 KOŠARKAŠKO DR… e9a0b578-8c96… HOP      
-#>  7            579 PTS                  9 KOŠARKARSKI K… ce68270c-327c… DOM      
-#>  8            579 PTS                 44 KOŠARKARSKI K… e2d136a7-5b41… ZLA      
-#>  9            579 PTS                 59 KOŠARKARSKI K… 2b5aa5eb-a360… TRI      
-#> 10            579 PTS                 56 KOŠARKARSKI K… 4a7a9327-1bf6… ŠEN      
-#> 11            579 PTS                 45 KOŠARKARSKI K… f667bf14-0dc0… POD      
-#> # ℹ 6 more variables: team_id <int>, team_name <chr>, games_played <int>,
-#> #   sum <dbl>, average <dbl>, max <dbl>
-# }
-```

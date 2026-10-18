@@ -89,6 +89,8 @@ raises `hoopR_no_data`; the columns are always these, in this order
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_records_season_averages()
+
 ## See also
 
 Other SCB Functions:
@@ -114,29 +116,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_records_season_averages())
-#> ── BBL/DBBL Season-Average Records from the SCB API ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:50 UTC
-#> # A tibble: 200 × 14
-#>    league stat      season season_id place order_id value ratio season_player_id
-#>    <chr>  <chr>      <int>     <int> <int>    <int> <dbl> <dbl> <chr>           
-#>  1 bbl    assist_a…   2022      2021     1        1  9.67    NA 50133           
-#>  2 bbl    assist_a…   2020      2019     2        2  8.85    NA 44602           
-#>  3 bbl    assist_a…   2016      2015     3        3  8.48    NA 35615           
-#>  4 bbl    assist_a…   2017      2016     4        4  8.15    NA 36064           
-#>  5 bbl    assist_a…   2012      2011     5        5  8.11    NA 21453           
-#>  6 bbl    assist_a…   2019      2018     6        6  8.1     NA 42614           
-#>  7 bbl    assist_a…   2019      2018     7        7  7.84    NA 41300           
-#>  8 bbl    assist_a…   2017      2016     7        8  7.84    NA 36158           
-#>  9 bbl    assist_a…   2013      2012     8        9  7.79    NA 24161           
-#> 10 bbl    assist_a…   2014      2013     9       10  7.78    NA 28137           
-#> # ℹ 190 more rows
-#> # ℹ 5 more variables: real_player_id <int>, first_name <chr>, last_name <chr>,
-#> #   team_name <chr>, team_tlc <chr>
-# }
-```

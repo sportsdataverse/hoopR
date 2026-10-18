@@ -167,7 +167,8 @@ not retried. Wrappers raise; they never return an empty frame.</p></li>
 <li><p>Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
 JSON here (<code>{"name":"TSN"}</code>), where sdv-py's String cast writes Python's <code>str(dict)</code> repr (<code>{'name': 'TSN'}</code>).
 No string column of the committed fixtures carries an object.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cebl_player_gamelog.html">cebl_player_gamelog</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">570965</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CEBL Functions:
@@ -184,41 +185,6 @@ No string column of the committed fixtures carries an object.</p></li>
 <code><a href="cebl_teams.html">cebl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cebl_player_gamelog</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">570965</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CEBL Player Game Log from the CEBL Stats API ──────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:45 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 30</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    player_id season game_date           genius_match_id team_abbreviated_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-08-10 <span style="color: #949494;">19:00:00</span>         2<span style="text-decoration: underline;">600</span>680 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-08-08 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">600</span>673 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-08-06 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">682</span>612 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-08-02 <span style="color: #949494;">18:00:00</span>         2<span style="text-decoration: underline;">600</span>656 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-31 <span style="color: #949494;">23:00:00</span>         2<span style="text-decoration: underline;">600</span>667 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-29 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">600</span>664 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-26 <span style="color: #949494;">18:00:00</span>         2<span style="text-decoration: underline;">600</span>653 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-23 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">600</span>666 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-21 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">600</span>663 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-17 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">600</span>645 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-09 <span style="color: #949494;">16:30:00</span>         2<span style="text-decoration: underline;">600</span>625 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-06 <span style="color: #949494;">01:30:00</span>         2<span style="text-decoration: underline;">600</span>637 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-07-01 <span style="color: #949494;">19:00:00</span>         2<span style="text-decoration: underline;">600</span>626 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-06-28 <span style="color: #949494;">19:00:00</span>         2<span style="text-decoration: underline;">600</span>620 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-06-22 <span style="color: #949494;">18:30:00</span>         2<span style="text-decoration: underline;">600</span>614 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>    <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 2025-06-20 <span style="color: #949494;">23:30:00</span>         2<span style="text-decoration: underline;">600</span>609 OTT                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 25 more variables: matchup &lt;chr&gt;, minutes &lt;dbl&gt;, points &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made &lt;int&gt;, field_goals_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goal_percentage &lt;dbl&gt;, three_points_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_points_attempted &lt;int&gt;, three_point_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_made &lt;int&gt;, free_throws_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throw_percentage &lt;dbl&gt;, offensive_rebounds &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   defensive_rebounds &lt;int&gt;, rebounds &lt;int&gt;, assists &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

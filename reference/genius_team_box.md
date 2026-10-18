@@ -143,6 +143,8 @@ intermittent HTTP 500 "A website error has occurred" page
 a cut-off page, an unfinished game, or a body for another match,
 competition or ORG.
 
+     genius_team_box(match_id = 2902690)
+
 ## See also
 
 Other Genius:
@@ -164,25 +166,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(genius_team_box(match_id = 2902690))
-#> ── Genius LiveStats team box score ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:40:58 UTC
-#> # A tibble: 2 × 65
-#>   match_id   tno name     name_international short_name code  code_international
-#>      <int> <int> <chr>    <chr>              <chr>      <chr> <chr>             
-#> 1  2902690     1 Periste… Peristeri Betsson  PER        PER   PER               
-#> 2  2902690     2 Iraklis… Iraklis BC         IRA        IRA   IRA               
-#> # ℹ 58 more variables: coach <chr>, score <int>, full_score <int>,
-#> #   p1_score <int>, p2_score <int>, p3_score <int>, p4_score <int>,
-#> #   ot_score <int>, fouls <int>, timeouts <int>, minutes <chr>,
-#> #   seconds_played <int>, field_goals_made <int>, field_goals_attempted <int>,
-#> #   field_goals_percentage <dbl>, three_pointers_made <int>,
-#> #   three_pointers_attempted <int>, three_pointers_percentage <dbl>,
-#> #   two_pointers_made <int>, two_pointers_attempted <int>, …
-# }
-```

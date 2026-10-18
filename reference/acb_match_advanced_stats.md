@@ -102,6 +102,8 @@ are always these, in this order (sdv-py `acb_match_advanced_stats`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_match_advanced_stats(match_id = 105401)
+
 ## See also
 
 Other ACB Functions:
@@ -149,30 +151,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_match_advanced_stats(match_id = 105401))
-#> ── ACB Match Advanced Stats from api2.acb.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:54 UTC
-#> # A tibble: 54 × 17
-#>    match_id edition_id season team_side team_id club_id team  team_abbr group   
-#>       <int>      <int>  <int> <chr>       <int>   <int> <chr> <chr>     <chr>   
-#>  1   105401         91   2027 home         4467       2 Barça BAR       four_fa…
-#>  2   105401         91   2027 home         4467       2 Barça BAR       four_fa…
-#>  3   105401         91   2027 home         4467       2 Barça BAR       four_fa…
-#>  4   105401         91   2027 home         4467       2 Barça BAR       four_fa…
-#>  5   105401         91   2027 home         4467       2 Barça BAR       game_rh…
-#>  6   105401         91   2027 home         4467       2 Barça BAR       game_rh…
-#>  7   105401         91   2027 home         4467       2 Barça BAR       game_rh…
-#>  8   105401         91   2027 home         4467       2 Barça BAR       ball_ha…
-#>  9   105401         91   2027 home         4467       2 Barça BAR       ball_ha…
-#> 10   105401         91   2027 home         4467       2 Barça BAR       ball_ha…
-#> # ℹ 44 more rows
-#> # ℹ 8 more variables: stat <chr>, match_value <dbl>, season_value <dbl>,
-#> #   win_value <dbl>, loss_value <dbl>, season_diff <dbl>, win_diff <dbl>,
-#> #   loss_diff <dbl>
-# }
-```

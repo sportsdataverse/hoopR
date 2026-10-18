@@ -168,7 +168,8 @@ no rows, a season or game type layout-info does not list), <code>hoopR_bad_reque
 ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
 site's answer for an unknown uuid and is not retried), all inheriting <code>hoopR_error</code>. Wrappers raise; they
 never return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportality_stats_info.html">sportality_stats_info</a></span><span class="op">(</span>module <span class="op">=</span> <span class="st">"players_summary"</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketligaen Functions:
@@ -200,35 +201,6 @@ never return an empty frame.</p></li>
 <code><a href="sportality_team_upcoming_games.html">sportality_team_upcoming_games()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_stats_info</span><span class="op">(</span>module <span class="op">=</span> <span class="st">"players_summary"</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Stats Table from basketligaen.dk ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:02:44 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 208 × 173</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    player_id    gp   eff  mins   ppg   rpg   apg  stpg blkpg info_uuid </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   2<span style="text-decoration: underline;">292</span>767     4  28.5  36.6  23    14     2     0.3   0.3 lj4hmhc333</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   2<span style="text-decoration: underline;">274</span>043    18  24.5  34.2  21.8   4.3   3.6   3.3   0.3 ypim6ted04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   2<span style="text-decoration: underline;">471</span>100    32  22.5  31.5  20.7   7.9   2.6   1.7   0.8 u94780yaw5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   2<span style="text-decoration: underline;">706</span>370    11  23.4  29.1  19.9  10.7   1.9   1.4   0.5 h51cmipivl</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   2<span style="text-decoration: underline;">477</span>299    32  20.9  30.2  19     5.3   5.4   1.7   0.3 j9t9y8yp59</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   2<span style="text-decoration: underline;">701</span>800    12  23.3  32.2  18.2   5.3   7.4   2.5   1   ve82x6lkuj</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   2<span style="text-decoration: underline;">283</span>973    24  20.2  28.4  18     4.7   4.1   1.6   0.3 y4wbnsikea</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   2<span style="text-decoration: underline;">486</span>953    29  16.9  26.8  18     2.3   4.3   1.1   0.2 dy0bf14qs8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    <span style="text-decoration: underline;">595</span>564    12  16.8  26.4  17.9   5     2.2   1.2   0.3 jfkbp99q1o</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   2<span style="text-decoration: underline;">475</span>827    23  16.3  27.5  17.4   3.4   2.7   0.9   0.3 rzolp5yzn5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 198 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 163 more variables: info_full_name &lt;chr&gt;, info_first_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   info_last_name &lt;chr&gt;, info_nationality &lt;chr&gt;, info_shoots &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   info_gender &lt;chr&gt;, info_weight_value &lt;int&gt;, info_weight_format &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   info_height_value &lt;int&gt;, info_height_format &lt;chr&gt;, info_team_uuid &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   info_team_name &lt;chr&gt;, info_team_code &lt;chr&gt;, info_team_media &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   info_team_owner_instance_id &lt;chr&gt;, info_team_site_display_name &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -265,6 +265,8 @@ the documented columns come first, in this order (sdv-py
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_stats_info(module = "players_summary", season = 2026)
+
 ## See also
 
 Other Basketligaen Functions:
@@ -294,33 +296,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_stats_info(module = "players_summary", season = 2026))
-#> ── Basketligaen Stats Table from basketligaen.dk ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:44 UTC
-#> # A tibble: 208 × 173
-#>    player_id    gp   eff  mins   ppg   rpg   apg  stpg blkpg info_uuid 
-#>        <int> <int> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>     
-#>  1   2292767     4  28.5  36.6  23    14     2     0.3   0.3 lj4hmhc333
-#>  2   2274043    18  24.5  34.2  21.8   4.3   3.6   3.3   0.3 ypim6ted04
-#>  3   2471100    32  22.5  31.5  20.7   7.9   2.6   1.7   0.8 u94780yaw5
-#>  4   2706370    11  23.4  29.1  19.9  10.7   1.9   1.4   0.5 h51cmipivl
-#>  5   2477299    32  20.9  30.2  19     5.3   5.4   1.7   0.3 j9t9y8yp59
-#>  6   2701800    12  23.3  32.2  18.2   5.3   7.4   2.5   1   ve82x6lkuj
-#>  7   2283973    24  20.2  28.4  18     4.7   4.1   1.6   0.3 y4wbnsikea
-#>  8   2486953    29  16.9  26.8  18     2.3   4.3   1.1   0.2 dy0bf14qs8
-#>  9    595564    12  16.8  26.4  17.9   5     2.2   1.2   0.3 jfkbp99q1o
-#> 10   2475827    23  16.3  27.5  17.4   3.4   2.7   0.9   0.3 rzolp5yzn5
-#> # ℹ 198 more rows
-#> # ℹ 163 more variables: info_full_name <chr>, info_first_name <chr>,
-#> #   info_last_name <chr>, info_nationality <chr>, info_shoots <chr>,
-#> #   info_gender <chr>, info_weight_value <int>, info_weight_format <chr>,
-#> #   info_height_value <int>, info_height_format <chr>, info_team_uuid <chr>,
-#> #   info_team_name <chr>, info_team_code <chr>, info_team_media <chr>,
-#> #   info_team_owner_instance_id <chr>, info_team_site_display_name <chr>, …
-# }
-```

@@ -182,7 +182,8 @@ season before 1984, raised before any request; HTTP 400 / 422) and <code>hoopR_a
 rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
 <code>problem+json</code> body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/acb_next_matches.html">acb_next_matches</a></span><span class="op">(</span>club_id <span class="op">=</span> <span class="fl">2</span>, number_of_matches <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ACB Functions:
@@ -232,30 +233,6 @@ match, a game that is not finished). Wrappers raise; they never warn and return 
 <code><a href="acb_teams.html">acb_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_next_matches</span><span class="op">(</span>club_id <span class="op">=</span> <span class="fl">2</span>, number_of_matches <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Next Matches from api2.acb.com ────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:32:58 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 30</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   match_id round_type round_id round_number group_id subphase_id subphase_number</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">105</span>392 <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">6</span>016            2       <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>              <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">105</span>401 <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">6</span>017            3       <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>              <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   <span style="text-decoration: underline;">105</span>410 <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">6</span>018            4       <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>              <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>   <span style="text-decoration: underline;">105</span>414 <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">6</span>019            5       <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>              <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>   <span style="text-decoration: underline;">105</span>428 <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">6</span>020            6       <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>              <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 23 more variables: week_id &lt;int&gt;, status &lt;chr&gt;, is_on_half_time &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   current_quarter &lt;int&gt;, home_score &lt;int&gt;, away_score &lt;int&gt;, start &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_wins &lt;int&gt;, home_losses &lt;int&gt;, away_wins &lt;int&gt;, away_losses &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_id &lt;int&gt;, home_club_id &lt;int&gt;, home_team &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_abbr &lt;chr&gt;, away_team_id &lt;int&gt;, away_club_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team &lt;chr&gt;, away_team_abbr &lt;chr&gt;, competition_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   edition_id &lt;int&gt;, season &lt;int&gt;, is_selected_local &lt;lgl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

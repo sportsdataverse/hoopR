@@ -129,6 +129,8 @@ order (sdv-py `kzs_player_leaderboard`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_player_leaderboard(competition_id = 579)
+
 ## See also
 
 Other KZS Functions:
@@ -154,30 +156,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_player_leaderboard(competition_id = 579))
-#> ── KZS Player Leaderboard from api.kzs.si ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:04 UTC
-#> # A tibble: 186 × 16
-#>    competition_id stats_category club_id club_fullname  club_logo_uuid club_code
-#>             <int> <chr>            <int> <chr>          <chr>          <chr>    
-#>  1            579 PTS                 46 KOŠARKAŠKO DR… e9a0b578-8c96… HOP      
-#>  2            579 PTS                  9 KOŠARKARSKI K… ce68270c-327c… DOM      
-#>  3            579 PTS                 26 KOŠARKARSKI K… dbf53462-c87d… KRK      
-#>  4            579 PTS                 49 KOŠARKARSKI K… 60e0340d-b00f… ROG      
-#>  5            579 PTS                254 KOŠARKARSKI K… 4586ff12-6ac5… COL      
-#>  6            579 PTS                254 KOŠARKARSKI K… 4586ff12-6ac5… COL      
-#>  7            579 PTS                 44 KOŠARKARSKI K… e2d136a7-5b41… ZLA      
-#>  8            579 PTS                254 KOŠARKARSKI K… 4586ff12-6ac5… COL      
-#>  9            579 PTS                 46 KOŠARKAŠKO DR… e9a0b578-8c96… HOP      
-#> 10            579 PTS                 55 KOŠARKARSKI K… 45b0ac2b-351a… ŠEN      
-#> # ℹ 176 more rows
-#> # ℹ 10 more variables: team_id <int>, team_name <chr>, games_played <int>,
-#> #   sum <dbl>, average <dbl>, max <dbl>, player_id <int>,
-#> #   player_firstname <chr>, player_lastname <chr>, photo_uuid <chr>
-# }
-```

@@ -191,7 +191,8 @@ season before 1984, raised before any request; HTTP 400 / 422) and <code>hoopR_a
 rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
 <code>problem+json</code> body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/acb_team_leaders.html">acb_team_leaders</a></span><span class="op">(</span>club_id <span class="op">=</span> <span class="fl">2</span>, number_of_players <span class="op">=</span> <span class="fl">3</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ACB Functions:
@@ -241,31 +242,6 @@ match, a game that is not finished). Wrappers raise; they never warn and return 
 <code><a href="acb_teams.html">acb_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_team_leaders</span><span class="op">(</span>club_id <span class="op">=</span> <span class="fl">2</span>, number_of_players <span class="op">=</span> <span class="fl">3</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Team Leaders from api2.acb.com ────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:17 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 198 × 14</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    club_id competition_id edition_id season scope   metric  rank value player_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… playe…     1   689  20<span style="text-decoration: underline;">200</span>515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… playe…     2   422  20<span style="text-decoration: underline;">200</span>741</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… playe…     3   376  20<span style="text-decoration: underline;">200</span>738</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… rating     1  <span style="text-decoration: underline;">7</span>842  20<span style="text-decoration: underline;">200</span>515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… rating     2  <span style="text-decoration: underline;">5</span>571  20<span style="text-decoration: underline;">200</span>741</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… rating     3  <span style="text-decoration: underline;">4</span>843  20<span style="text-decoration: underline;">202</span>172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… points     1  <span style="text-decoration: underline;">8</span>318  20<span style="text-decoration: underline;">200</span>515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… points     2  <span style="text-decoration: underline;">7</span>029  20<span style="text-decoration: underline;">200</span>741</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… points     3  <span style="text-decoration: underline;">4</span>516  20<span style="text-decoration: underline;">200</span>739</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>       2              1         91   <span style="text-decoration: underline;">2</span>027 all_ti… rebou…     1  <span style="text-decoration: underline;">2</span>113  20<span style="text-decoration: underline;">201</span>436</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 188 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: player_name &lt;chr&gt;, first_name &lt;chr&gt;, last_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   shirt_number &lt;chr&gt;, game_role &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

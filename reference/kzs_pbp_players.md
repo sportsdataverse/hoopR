@@ -83,6 +83,8 @@ columns are always these, in this order (sdv-py `kzs_pbp_players`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_pbp_players(match_id = 101839)
+
 ## See also
 
 Other KZS Functions:
@@ -108,27 +110,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_pbp_players(match_id = 101839))
-#> ── KZS Play-by-Play Players from api.kzs.si ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:59 UTC
-#> # A tibble: 23 × 5
-#>    match_id team_side player_id first_name last_name
-#>       <int> <chr>         <int> <chr>      <chr>    
-#>  1   101839 home          84606 Lovro      Strnad   
-#>  2   101839 home          48170 Edo        Murić    
-#>  3   101839 home          51727 Luka       Kureš    
-#>  4   101839 home          51449 Tim        Tomažič  
-#>  5   101839 home          54498 Bine       Prepelič 
-#>  6   101839 home          79369 Gašper     Škorjanc 
-#>  7   101839 home          78946 Robert     Jurković 
-#>  8   101839 home          84389 Bine       Gabrijel 
-#>  9   101839 home          85445 Lovro      Faganel  
-#> 10   101839 home          94385 Lian       Boisa    
-#> # ℹ 13 more rows
-# }
-```

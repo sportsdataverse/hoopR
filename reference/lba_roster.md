@@ -91,6 +91,8 @@ a column the site adds later is appended after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_roster(team_id = 1764)
+
 ## See also
 
 Other LBA Functions:
@@ -112,34 +114,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_roster(team_id = 1764))
-#> ── LBA Roster from legabasket.it ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:43:04 UTC
-#> # A tibble: 14 × 23
-#>    team_id club_id club_code season player_id name  surname code  place_of_birth
-#>      <int>   <int> <chr>      <int>     <int> <chr> <chr>   <chr> <chr>         
-#>  1    1764     107 TVU         2027       969 Ales… Cappel… CAP-… Assisi        
-#>  2    1764     107 TVU         2027      9331 Chico Carter  CAR-… Columbia      
-#>  3    1764     107 TVU         2027      9041 Brek… Chapman CHA-… Roy           
-#>  4    1764     107 TVU         2027      4879 DeWa… Russell RUS-… Peoria        
-#>  5    1764     107 TVU         2027      9014 Ed    Croswe… CRO-… Philadelphia  
-#>  6    1764     107 TVU         2027      7566 Ales… Manfre… MAN-… Reggio Emilia 
-#>  7    1764     107 TVU         2027      7606 Ales… Vettori VET-… Treviso       
-#>  8    1764     107 TVU         2027      3714 Fede… Miaschi MIA-… Genova        
-#>  9    1764     107 TVU         2027      9042 Ike   Anigbo… ANI-… San Diego     
-#> 10    1764     107 TVU         2027      9332 Greg… Allinei ALL-… Firenze       
-#> 11    1764     107 TVU         2027      7607 Anto… Iaquin… IAQ-… Merano        
-#> 12    1764     107 TVU         2027      1189 Matt… Chillo  CHI-… Bologna       
-#> 13    1764     107 TVU         2027      6191 JP    Macura  MAC-… Lakeville     
-#> 14    1764     107 TVU         2027      9333 Vale… Chery   CHE-… Saint-Priest-…
-#> # ℹ 14 more variables: birth_date <chr>, player_number <chr>, country <chr>,
-#> #   uefa_ratio <chr>, height <int>, weight <int>, year <int>, start_date <chr>,
-#> #   end_date <chr>, player_role_id <int>, player_role <chr>, team_name <chr>,
-#> #   player_picture_key <chr>, team_logo_key <chr>
-# }
-```

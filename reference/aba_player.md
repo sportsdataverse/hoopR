@@ -100,6 +100,8 @@ or the answer is not the one asked for (a page for another game, season
 or league, an unfinished game, a helper that does not belong to the
 game, layout drift). All inherit `hoopR_error`.
 
+     aba_player(player_id = 4807, season = 2026)
+
 ## See also
 
 Other ABA:
@@ -114,19 +116,3 @@ Other ABA:
 [`aba_score_flow()`](https://hoopR.sportsdataverse.org/reference/aba_score_flow.md),
 [`aba_shots()`](https://hoopR.sportsdataverse.org/reference/aba_shots.md),
 [`aba_standings()`](https://hoopR.sportsdataverse.org/reference/aba_standings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(aba_player(player_id = 4807, season = 2026))
-#> ── ABA League Player ─────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:28 UTC
-#> # A tibble: 1 × 13
-#>   player_id season league_id league name        team_id club  position height_cm
-#>       <int>  <int>     <int> <chr>  <chr>         <int> <chr> <chr>        <int>
-#> 1      4807   2026         1 aba    Carlik Jon…      22 Part… Guard          185
-#> # ℹ 4 more variables: birth_date <date>, birth_place <chr>, nationality <chr>,
-#> #   career <chr>
-# }
-```

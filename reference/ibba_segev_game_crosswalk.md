@@ -42,6 +42,8 @@ A `hoopR_data` tibble, one row per game:
 Raises `hoopR_bad_request` when `df` is not a data frame, lacks a
 column, has an id column of the wrong type, or maps one id to two.
 
+     ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1))
+
 ## See also
 
 Other IBBA:
@@ -61,23 +63,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1)))
-#> ── IBBA game crosswalk ───────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:12 UTC
-#> # A tibble: 7 × 2
-#>   game_id segev_game_id
-#>     <int>         <int>
-#> 1   26391            51
-#> 2   26392            50
-#> 3   26394            49
-#> 4   26393            48
-#> 5   26390            47
-#> 6   26395            52
-#> 7   26389            23
-# }
-```

@@ -151,6 +151,7 @@ season or date; <code>hoopR_asset_fetch</code> for any other failed fetch or an 
 error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
 federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
 competitions, the event year for national-team events, the target tournament year for qualifiers.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_gdap_game_officials.html">fiba_gdap_game_officials</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">100720</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -193,32 +194,6 @@ competitions, the event year for national-team events, the target tournament yea
 <code><a href="fiba_gdap_teams.html">fiba_gdap_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_gdap_game_officials</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">100720</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gdap_game_officials from fiba.basketball ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:39:04 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 13 × 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id person_id first_name  last_name gender role_code role_name role_order</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  <span style="text-decoration: underline;">100</span>720      <span style="text-decoration: underline;">9</span>454 Eleonora    Rangelova F      FIBATD    FIBA Tec… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  <span style="text-decoration: underline;">100</span>720      <span style="text-decoration: underline;">2</span>044 Michael     Thomson   M      FIBAREFI… FIBA Ref… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">244</span>669 Victor Hon… Bayais    M      SCORER    Scorer    <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">298</span>802 Vic Martin… Bayais    M      ASSCORER  Assistan… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">297</span>721 Enrico      Bayais    M      TIMER     Timer     <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">297</span>723 Luigi Daryl Dulo      M      24SECCL   Shot clo… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  <span style="text-decoration: underline;">100</span>720      <span style="text-decoration: underline;">6</span>392 Roberto     Vazquez   M      CC        Crew chi… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  <span style="text-decoration: underline;">100</span>720     <span style="text-decoration: underline;">15</span>948 Omar        Bermudez  M      UMP       Umpire    1         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  <span style="text-decoration: underline;">100</span>720     <span style="text-decoration: underline;">24</span>102 Gatis       Salins    M      UMP       Umpire    2         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  <span style="text-decoration: underline;">100</span>720     <span style="text-decoration: underline;">18</span>215 Manuel      Mazzoni   M      BCLSTDBR… 4th Refe… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">323</span>803 Patrisha M… Concepci… <span style="color: #BB0000;">NA</span>     STOPER    Stat. op… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">243</span>096 Rodolfo Jr  Ducanes   <span style="color: #BB0000;">NA</span>     STCALLER  Stat. ca… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>  <span style="text-decoration: underline;">100</span>720    <span style="text-decoration: underline;">242</span>142 Michael     Abalos    <span style="color: #BB0000;">NA</span>     STASSIST  Stat. as… <span style="color: #BB0000;">NA</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: default_nationality &lt;chr&gt;, license_nationality &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -90,6 +90,8 @@ non-HTML body, an error or changed envelope, a play-by-play of another
 game, a page for another group or season, or layout drift). All inherit
 `hoopR_error`.
 
+     feb_overview()
+
 ## See also
 
 Other FEB:
@@ -103,33 +105,3 @@ Other FEB:
 [`feb_shots()`](https://hoopR.sportsdataverse.org/reference/feb_shots.md),
 [`feb_standings()`](https://hoopR.sportsdataverse.org/reference/feb_standings.md),
 [`feb_team_stats()`](https://hoopR.sportsdataverse.org/reference/feb_team_stats.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(feb_overview())
-#> ── FEB overview from intrafeb.feb.es ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:23 UTC
-#> # A tibble: 116 × 25
-#>    comp_id comp_code competition game_id round_id stage venue                   
-#>      <int>     <int> <chr>         <int>    <int> <chr> <chr>                   
-#>  1     115     23473 PRIMERA FEB 2535754        0 0     PALACIO MUNICIPAL DE DE…
-#>  2     115     23473 PRIMERA FEB 2535758        0 0     GRAN CANARIA ARENA      
-#>  3     115     23473 PRIMERA FEB 2535759        0 0     PABELLÓN VICENTE TRUEBA 
-#>  4     115     23473 PRIMERA FEB 2535752        0 0     Pavelló Menorca         
-#>  5     115     23473 PRIMERA FEB 2535760        0 0     PABELLON ANGEL NIETO    
-#>  6     115     23473 PRIMERA FEB 2535756        0 0     MOVISTAR ARENA          
-#>  7     210     23467 LF ENDESA   2522806        0 0     PABELLÓN PRINCIPE FELIPE
-#>  8     210     23467 LF ENDESA   2522805        0 0     POL. MALOSTE            
-#>  9     210     23467 LF ENDESA   2522800        0 0     POL. JOSE ANTONIO GASCA 
-#> 10     210     23467 LF ENDESA   2522802        0 0     PABELLÓN JOSÉ ANTONIO P…
-#> # ℹ 106 more rows
-#> # ℹ 18 more variables: start_time <dttm>, start_time_utc <dttm>, period <int>,
-#> #   clock <chr>, status <int>, home_team_id <int>, home_team <chr>,
-#> #   home_team_code <chr>, home_club_code <chr>, home_abbreviation <chr>,
-#> #   home_score <int>, away_team_id <int>, away_team <chr>,
-#> #   away_team_code <chr>, away_club_code <chr>, away_abbreviation <chr>,
-#> #   away_score <int>, period_scores <chr>
-# }
-```

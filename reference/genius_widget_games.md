@@ -84,6 +84,8 @@ intermittent HTTP 500 "A website error has occurred" page
 a cut-off page, an unfinished game, or a body for another match,
 competition or ORG.
 
+     genius_widget_games(widget_key = "RFJIN037I07QV520B7WEXKV1GYNA31")
+
 ## See also
 
 Other Genius:
@@ -105,25 +107,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(genius_widget_games(widget_key = "RFJIN037I07QV520B7WEXKV1GYNA31"))
-#> ── Genius LiveStats widget games ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:40:59 UTC
-#> # A tibble: 7 × 11
-#>   match_id webcast_org competition_name status date  home_team_id home_team_code
-#>      <int> <chr>       <chr>            <chr>  <chr>        <int> <chr>         
-#> 1  2902704 ESAKE       Stoiximan GBL 2… Final  17/1…        23948 ΑΕΚ           
-#> 2  2902687 ESAKE       Stoiximan GBL 2… Final  17/1…        23952 KOL           
-#> 3  2902689 ESAKE       Stoiximan GBL 2… Final  17/1…       203424 LEF           
-#> 4  2902691 ESAKE       Stoiximan GBL 2… Final  17/1…        26336 IRA           
-#> 5  2902693 ESAKE       Stoiximan GBL 2… Final  17/1…        23960 ARI           
-#> 6  2902695 ESAKE       Stoiximan GBL 2… Final  18/1…       203423 FAL           
-#> 7  2902697 ESAKE       Stoiximan GBL 2… Final  18/1…        23961 PAO           
-#> # ℹ 4 more variables: home_score <int>, away_team_id <int>,
-#> #   away_team_code <chr>, away_score <int>
-# }
-```

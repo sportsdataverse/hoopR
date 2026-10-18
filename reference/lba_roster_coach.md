@@ -83,6 +83,8 @@ site adds later is appended after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_roster_coach(team_id = 1764)
+
 ## See also
 
 Other LBA Functions:
@@ -104,20 +106,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_roster_coach(team_id = 1764))
-#> ── LBA Roster Coach from legabasket.it ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:43:14 UTC
-#> # A tibble: 1 × 15
-#>   team_id club_id club_code season coach_id name    surname birth_date
-#>     <int>   <int> <chr>      <int>    <int> <chr>   <chr>   <chr>     
-#> 1    1764     107 TVU         2027      339 Marcelo Nicola  1971-05-12
-#> # ℹ 7 more variables: place_of_birth <chr>, coach_type_id <int>,
-#> #   coach_type_description <chr>, coach_type_code <chr>, team_name <chr>,
-#> #   coach_picture_key <chr>, team_logo_key <chr>
-# }
-```

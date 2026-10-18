@@ -316,6 +316,9 @@ game unchecked.
 Access, proxy and error notes: see
 [`genius_game()`](https://hoopR.sportsdataverse.org/reference/genius_game.md).
 
+     esake_competitions()
+     esake_schedule()
+
 ## See also
 
 Other Genius:
@@ -337,47 +340,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(esake_competitions())
-#> ── Genius LiveStats competitions ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:36 UTC
-#> # A tibble: 47 × 8
-#>    org   comp_id label               league_id  year season season_rule selected
-#>    <chr>   <int> <chr>                   <int> <int>  <int> <chr>       <lgl>   
-#>  1 ESAKE   28572 1o SUPER CUP              115  2020   2021 genius yea… FALSE   
-#>  2 ESAKE   30872 2o HNC COIN SUPER …       115  2021   2022 genius yea… FALSE   
-#>  3 ESAKE   27218 ALL STAR                  115  2019   2020 genius yea… FALSE   
-#>  4 ESAKE   28567 BASKET LEAGUE             115  2020   2021 genius yea… FALSE   
-#>  5 ESAKE   25989 BASKET LEAGUE 2019…       115  2019   2020 label span  FALSE   
-#>  6 ESAKE   34541 BASKET LEAGUE 2022…       115  2022   2023 label span  TRUE    
-#>  7 ESAKE   22742 BETSHOP BASKET LEA…       115  2018   2019 label span  FALSE   
-#>  8 ESAKE   29847 Esake Woman               115  2020   2021 genius yea… FALSE   
-#>  9 ESAKE   29022 Monday’s Game Nigh…       115  2020   2021 genius yea… FALSE   
-#> 10 ESAKE    5032 Nick Galis Cup            115  2014   2015 genius yea… FALSE   
-#> # ℹ 37 more rows
-  try(esake_schedule())
-#> ── Genius LiveStats schedule ─────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:50 UTC
-#> # A tibble: 161 × 16
-#>    match_id link_match_id comp_id org   status    date_time  venue_id venue_name
-#>       <int>         <int>   <int> <chr> <chr>     <chr>         <int> <chr>     
-#>  1  2268899       2268899   34541 ESAKE POSTPONED NA            33129 "Κ.Γ. \"Α…
-#>  2  2265607       2265607   34541 ESAKE SCHEDULED Oct 1, 20…    28290 "Κ.Γ. ΚΑΛ…
-#>  3  2265606       2265606   34541 ESAKE SCHEDULED Oct 1, 20…    28290 "Κ.Γ. ΚΑΛ…
-#>  4  2265609       2265609   34541 ESAKE SCHEDULED Oct 2, 20…    28290 "Κ.Γ. ΚΑΛ…
-#>  5  2265608       2265608   34541 ESAKE SCHEDULED Oct 2, 20…    28290 "Κ.Γ. ΚΑΛ…
-#>  6  2147860       2147860   34541 ESAKE COMPLETE  Oct 8, 20…     5127 "Lavrio a…
-#>  7  2147858       2147858   34541 ESAKE COMPLETE  Oct 8, 20…    28339 "Κ.Γ. ΝΙΚ…
-#>  8  2147854       2147854   34541 ESAKE COMPLETE  Oct 8, 20…    19822 "Κ.Γ. \"Α…
-#>  9  2147855       2147855   34541 ESAKE COMPLETE  Oct 9, 20…     4655 "Nick Gal…
-#> 10  2147862       2147862   34541 ESAKE COMPLETE  Oct 9, 20…    30138 "Sunel Ar…
-#> # ℹ 151 more rows
-#> # ℹ 8 more variables: home_team_id <int>, home_team_name <chr>,
-#> #   home_team_code <chr>, home_score <int>, away_team_id <int>,
-#> #   away_team_name <chr>, away_team_code <chr>, away_score <int>
-# }
-```

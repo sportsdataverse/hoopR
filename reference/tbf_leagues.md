@@ -116,7 +116,7 @@ Other TBF:
 # \donttest{
   try(tbf_leagues(season = 2027))
 #> ── TBF Leagues ───────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:55 UTC
+#> ℹ Data updated: 2026-10-18 17:43:48 UTC
 #> # A tibble: 8 × 9
 #>   activity_id name        display_name competition gender season_id season_label
 #>         <int> <chr>       <chr>        <chr>       <chr>      <int> <chr>       

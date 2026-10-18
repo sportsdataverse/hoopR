@@ -91,6 +91,8 @@ are always these, in this order (sdv-py `acb_quickfacts`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_quickfacts(match_id = 105401)
+
 ## See also
 
 Other ACB Functions:
@@ -138,19 +140,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_quickfacts(match_id = 105401))
-#> ── ACB Quick Facts from api2.acb.com ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:07 UTC
-#> # A tibble: 2 × 12
-#>   match_id team_side team_id club_id team   team_abbr edition_id season standing
-#>      <int> <chr>       <int>   <int> <chr>  <chr>          <int>  <int>    <int>
-#> 1   105401 home         4467       2 Barça  BAR               91   2027        6
-#> 2   105401 away         4472      13 Valen… VBC               91   2027        9
-#> # ℹ 3 more variables: wins <int>, losses <int>, last_results <chr>
-# }
-```

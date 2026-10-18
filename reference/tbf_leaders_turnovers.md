@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_turnovers(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_turnovers(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Turnovers ────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:54 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         turnove… total     1    501076 Quentin Pe…          265993
-#>  2   2027 bsl         turnove… total     2    778401 Bryce Jones          265995
-#>  3   2027 bsl         turnove… total     3    778246 Max Abmas            266048
-#>  4   2027 bsl         turnove… total     4    129216 Doğuş Özde…          266030
-#>  5   2027 bsl         turnove… total     5    666871 Javon Free…          266176
-#>  6   2027 bsl         turnove… total     6    778402 Zach Nutall          265995
-#>  7   2027 bsl         turnove… total     7    778161 Johnny Dav…          268222
-#>  8   2027 bsl         turnove… total     8    666515 Ty Gordon            265993
-#>  9   2027 bsl         turnove… total     9    779071 Ishmael El…          266027
-#> 10   2027 bsl         turnove… total    10    778181 Boo Buie             268222
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

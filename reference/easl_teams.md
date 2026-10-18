@@ -133,7 +133,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_teams())
 #> ── EASL Teams from easl.joshricha.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:27 UTC
+#> ℹ Data updated: 2026-10-18 17:21:53 UTC
 #> # A tibble: 12 × 22
 #>    team_row_id team_id          name  name_native code_latin code_local standard
 #>          <int> <chr>            <chr> <chr>       <chr>      <chr>      <chr>   

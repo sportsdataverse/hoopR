@@ -84,6 +84,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_player(player_id = 21912, season = 2026)
+
 ## See also
 
 Other IBBA:
@@ -103,18 +105,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_player(player_id = 21912, season = 2026))
-#> ── IBBA player ───────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:09 UTC
-#> # A tibble: 1 × 9
-#>   player_id jersey season team_id player_name_he player_name  is_replaced
-#>       <int> <chr>   <int>   <int> <chr>          <chr>        <lgl>      
-#> 1     21912 01       2026    1109 ג'יילן הורד    Jaylen Hoard FALSE      
-#> # ℹ 2 more variables: is_local <lgl>, photo_path <chr>
-# }
-```

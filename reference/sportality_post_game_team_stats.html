@@ -172,7 +172,11 @@ no rows, a season or game type layout-info does not list), <code>hoopR_bad_reque
 ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
 site's answer for an unknown uuid and is not retried), all inheriting <code>hoopR_error</code>. Wrappers raise; they
 never return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportality_post_game_team_stats.html">sportality_post_game_team_stats</a></span><span class="op">(</span></span>
+<span>   away_team_uuid <span class="op">=</span> <span class="st">"gvvuxe9ysw"</span>, game_uuid <span class="op">=</span> <span class="st">"c4hh5nig6t"</span>, home_team_uuid <span class="op">=</span> <span class="st">"rfo82vr830"</span>,</span>
+<span>   ssgt_uuid <span class="op">=</span> <span class="st">"xs07bd3fmp"</span></span>
+<span> <span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketligaen Functions:
@@ -204,30 +208,6 @@ never return an empty frame.</p></li>
 <code><a href="sportality_team_upcoming_games.html">sportality_team_upcoming_games()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_post_game_team_stats</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    away_team_uuid <span class="op">=</span> <span class="st">"gvvuxe9ysw"</span>, game_uuid <span class="op">=</span> <span class="st">"c4hh5nig6t"</span>, home_team_uuid <span class="op">=</span> <span class="st">"rfo82vr830"</span>,</span></span>
-<span class="r-in"><span>    ssgt_uuid <span class="op">=</span> <span class="st">"xs07bd3fmp"</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Post-Game Team Stats from basketligaen.dk ── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:02:37 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 14</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   home_team_side_translate_key home_team_left_type home_team_left_value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> s_2P                         2PM                                   25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> s_3P                         3PM                                    5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> s_FT                         FTM                                   19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 11 more variables: home_team_right_type &lt;chr&gt;, home_team_right_value &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_center_type &lt;chr&gt;, home_team_center_value &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_side_translate_key &lt;chr&gt;, away_team_left_type &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_left_value &lt;int&gt;, away_team_right_type &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_right_value &lt;int&gt;, away_team_center_type &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_center_value &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

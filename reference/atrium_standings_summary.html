@@ -189,6 +189,8 @@ fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that 
 mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
 any other failed fetch, an error / stub body, or a body that belongs to another
 site, type, season, game, player or team than the one asked for.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_standings_summary.html">atrium_standings_summary</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, season <span class="op">=</span> <span class="fl">2026</span>,</span>
+<span>                          competition_id <span class="op">=</span> <span class="st">"3f4064bb-51ad-11f0-aaaf-2923c944b404"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -223,42 +225,6 @@ site, type, season, game, player or team than the one asked for.</p>
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">atrium_standings_summary</span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, season <span class="op">=</span> <span class="fl">2026</span>,</span></span>
-<span class="r-in"><span>                               competition_id <span class="op">=</span> <span class="st">"3f4064bb-51ad-11f0-aaaf-2923c944b404"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium standings summary from embed-api.eui.connect.sportradar.com ──────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:58 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 28</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id season_id       season_end_year group position entity_id team_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           1 f43b1b0f… Paris    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           2 e796c4fa… Nanterre </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           3 25bcb29d… Lyon-Vil…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           4 c281453b… Cholet   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           5 7e9f3d8d… Le Mans  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           6 703aa4cc… Bourg-en…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           7 88bff512… Strasbou…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           8 989c44aa… Chalon/S…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>           9 da0b634d… Nancy    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          10 c3b5d870… Boulazac </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          11 238ad480… Dijon    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          12 ca771ea2… Limoges  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          13 689d1a0a… Saint-Qu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          14 506c2d71… Gravelin…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          15 736b73ae… Monaco   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>         12 df310a05-51ad-…              <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>          16 9ebf8651… Le Portel</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 21 more variables: is_current_team &lt;lgl&gt;, logo_url &lt;chr&gt;, wins &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   losses &lt;int&gt;, played &lt;int&gt;, standing_points &lt;int&gt;, win_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   scored_for &lt;int&gt;, scored_against &lt;int&gt;, point_difference &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   result_string_home &lt;chr&gt;, scored_for_home &lt;int&gt;, scored_against_home &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   point_difference_home &lt;int&gt;, result_string_away &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   scored_for_away &lt;int&gt;, scored_against_away &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   point_difference_away &lt;int&gt;, streak &lt;int&gt;, streak_home &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

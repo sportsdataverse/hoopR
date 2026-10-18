@@ -81,6 +81,8 @@ these, in this order (sdv-py `kzs_rounds`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_rounds(competition_id = 579)
+
 ## See also
 
 Other KZS Functions:
@@ -106,20 +108,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_rounds(competition_id = 579))
-#> ── KZS Competition Rounds from api.kzs.si ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:10 UTC
-#> # A tibble: 4 × 3
-#>   competition_id phase_id rounds
-#>            <int>    <int>  <int>
-#> 1            579     5889      3
-#> 2            579     5811     27
-#> 3            579     5894      5
-#> 4            579     5890      3
-# }
-```

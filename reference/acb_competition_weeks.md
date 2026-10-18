@@ -82,6 +82,8 @@ are always these, in this order (sdv-py `acb_competition_weeks`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_competition_weeks()
+
 ## See also
 
 Other ACB Functions:
@@ -129,14 +131,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_competition_weeks())
-#> Error in acb_competition_weeks() : 
-#>   api2.acb.com/api/matchdata/Menu/competition-data: the answer holds no
-#> rows (competitions is empty).
-# }
-```

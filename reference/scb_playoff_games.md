@@ -95,6 +95,8 @@ and the points of each series team. An empty valid answer raises
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_playoff_games(season = 2026)
+
 ## See also
 
 Other SCB Functions:
@@ -120,30 +122,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_playoff_games(season = 2026))
-#> ── BBL/DBBL Playoff Games from the SCB API ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:47 UTC
-#> # A tibble: 29 × 15
-#>    league season season_id round         series game_id scheduled_time timestamp
-#>    <chr>   <int>     <int> <chr>          <int> <chr>   <chr>              <int>
-#>  1 bbl      2026      2025 quarter_fina…      1 2005742 2026-05-17T14…    1.78e9
-#>  2 bbl      2026      2025 quarter_fina…      1 2005743 2026-05-19T18…    1.78e9
-#>  3 bbl      2026      2025 quarter_fina…      1 2005744 2026-05-23T12…    1.78e9
-#>  4 bbl      2026      2025 quarter_fina…      2 2005747 2026-05-16T18…    1.78e9
-#>  5 bbl      2026      2025 quarter_fina…      2 2005748 2026-05-18T16…    1.78e9
-#>  6 bbl      2026      2025 quarter_fina…      2 2005749 2026-05-22T18…    1.78e9
-#>  7 bbl      2026      2025 quarter_fina…      2 2005750 2026-05-24T14…    1.78e9
-#>  8 bbl      2026      2025 quarter_fina…      2 2005751 2026-05-27T18…    1.78e9
-#>  9 bbl      2026      2025 quarter_fina…      3 2005757 2026-05-17T16…    1.78e9
-#> 10 bbl      2026      2025 quarter_fina…      3 2005758 2026-05-19T16…    1.78e9
-#> # ℹ 19 more rows
-#> # ℹ 7 more variables: game_winner_id <chr>, home_team_id <chr>,
-#> #   guest_team_id <chr>, team_a_id <chr>, team_b_id <chr>, points_team_a <int>,
-#> #   points_team_b <int>
-# }
-```

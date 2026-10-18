@@ -94,6 +94,8 @@ are always these, in this order (sdv-py `acb_search`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_search(limit = 5, search_term = "tavares")
+
 ## See also
 
 Other ACB Functions:
@@ -141,19 +143,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_search(limit = 5, search_term = "tavares"))
-#> ── ACB Search from api2.acb.com ──────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:09 UTC
-#> # A tibble: 1 × 12
-#>   kind   person_id name   short_name first_name last_name shirt_number game_role
-#>   <chr>      <int> <chr>  <chr>      <chr>      <chr>     <chr>        <chr>    
-#> 1 player  20209407 Edy T… W. Tavares Walter     Tavares   NA           NA       
-#> # ℹ 4 more variables: is_license_active <lgl>, club_id <int>, edition_id <int>,
-#> #   season <int>
-# }
-```

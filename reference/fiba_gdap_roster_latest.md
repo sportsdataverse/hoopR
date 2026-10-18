@@ -93,6 +93,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_roster_latest(team_id = 282183)
+
 ## See also
 
 Other FIBA Functions:
@@ -132,39 +134,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_roster_latest(team_id = 282183))
-#> ── FIBA gdap_roster_latest from fiba.basketball ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:19 UTC
-#> # A tibble: 16 × 25
-#>    team_id team_code team_name      organisation_id competition_id person_id
-#>      <int> <chr>     <chr>                    <int>          <int>     <int>
-#>  1  282183 OOST      Filou Oostende             396         208850    373090
-#>  2  282183 OOST      Filou Oostende             396         208850    373092
-#>  3  282183 OOST      Filou Oostende             396         208850    211546
-#>  4  282183 OOST      Filou Oostende             396         208850    217951
-#>  5  282183 OOST      Filou Oostende             396         208850    238335
-#>  6  282183 OOST      Filou Oostende             396         208850    319357
-#>  7  282183 OOST      Filou Oostende             396         208850    377731
-#>  8  282183 OOST      Filou Oostende             396         208850    300203
-#>  9  282183 OOST      Filou Oostende             396         208850    324238
-#> 10  282183 OOST      Filou Oostende             396         208850    203080
-#> 11  282183 OOST      Filou Oostende             396         208850    320014
-#> 12  282183 OOST      Filou Oostende             396         208850    369617
-#> 13  282183 OOST      Filou Oostende             396         208850    369548
-#> 14  282183 OOST      Filou Oostende             396         208850    320024
-#> 15  282183 OOST      Filou Oostende             396         208850    271544
-#> 16  282183 OOST      Filou Oostende             396         208850    160205
-#> # ℹ 19 more variables: first_name <chr>, last_name <chr>, gender <chr>,
-#> #   date_of_birth <chr>, uniform_number <chr>, uniform_name <chr>,
-#> #   position <chr>, height_in_cm <int>, height_in_feet_inches <chr>,
-#> #   nationality <chr>, is_on_final_roster <lgl>, games_played <int>,
-#> #   club_id <int>, club_name <chr>, country_fiba_code <chr>,
-#> #   club_country_fiba_code <chr>, is_captain <lgl>, is_player_free_agent <lgl>,
-#> #   final_roster_member_status_code <chr>
-# }
-```

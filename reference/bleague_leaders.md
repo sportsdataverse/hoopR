@@ -104,6 +104,8 @@ changed body, an unfinished game, a context or page for another game,
 season, tab or day, a truncated schedule list, or layout drift). All
 inherit `hoopR_error`.
 
+     bleague_leaders(schedule_key = 10693)
+
 ## See also
 
 Other B.LEAGUE:
@@ -120,30 +122,3 @@ Other B.LEAGUE:
 [`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md),
 [`bleague_team_box()`](https://hoopR.sportsdataverse.org/reference/bleague_team_box.md),
 [`bleague_team_summary()`](https://hoopR.sportsdataverse.org/reference/bleague_team_summary.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(bleague_leaders(schedule_key = 10693))
-#> ── B.LEAGUE leaders from b-league.s3.amazonaws.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:29 UTC
-#> # A tibble: 299 × 17
-#>    schedule_key season feed  period_category category category_name  rank
-#>           <int>  <int> <chr>           <int>    <int> <chr>         <int>
-#>  1        10693   2026 v1                  1        1 points            1
-#>  2        10693   2026 v1                  1        1 points            1
-#>  3        10693   2026 v1                  1        1 points            3
-#>  4        10693   2026 v1                  1        1 points            1
-#>  5        10693   2026 v1                  1        1 points            1
-#>  6        10693   2026 v1                  1        1 points            3
-#>  7        10693   2026 v1                  1        1 points            3
-#>  8        10693   2026 v1                  1        1 points            3
-#>  9        10693   2026 v1                  1        1 points            6
-#> 10        10693   2026 v1                  1        1 points            7
-#> # ℹ 289 more rows
-#> # ℹ 10 more variables: tie_order <int>, team_side <chr>, team_id <chr>,
-#> #   team_name_j <chr>, player_id <chr>, player_no <chr>, player_name_j <chr>,
-#> #   count <int>, reb_off_count <int>, reb_def_count <int>
-# }
-```

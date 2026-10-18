@@ -91,6 +91,8 @@ are always these, in this order (sdv-py `kzs_player`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_player(player_id = 106285)
+
 ## See also
 
 Other KZS Functions:
@@ -116,21 +118,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_player(player_id = 106285))
-#> ── KZS Player Profile from api.kzs.si ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:02 UTC
-#> # A tibble: 1 × 14
-#>   player_id identification_number person_id first_name   last_name year_of_birth
-#>       <int>                 <int>     <int> <chr>        <chr>             <int>
-#> 1    106285                915164    109521 Wendell Jer… Green jr           2002
-#> # ℹ 8 more variables: nationality_id <int>, nationality_alpha2_code <chr>,
-#> #   nationality_alpha3_code <chr>, nationality_name <chr>,
-#> #   nationality_eng_name <chr>, homegrown <lgl>, photo_uuid <chr>,
-#> #   positions <chr>
-# }
-```

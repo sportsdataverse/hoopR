@@ -201,6 +201,8 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Season rule: calendar year.</p>
 <p>Errors and terms of use are those of <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets. The site also serves women's competitions (pass their <code>competition_id</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lpb_competition.html">lpb_seasons</a></span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/lpb_competition.html">lpb_schedule</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -235,39 +237,6 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lpb_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:44:18 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id season_id               competition_id competition_name season_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         22 f723df4e-8434-11ef-b37… cf8724fa-8354… Liga Profesiona… LPB 2024   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>         22 a5e38200-8a72-11ef-8ed… 06e1d925-8a72… LPBF 2024        LPBF 2024  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>         22 e0c1d814-5b10-11ef-985… 809df7f9-5b10… Nacional de Bal… Nacional d…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>         22 910db1a3-bbdb-11ed-ad1… 283db19a-bbda… LBN U23          LBN U23 20…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: abbreviation_local &lt;chr&gt;, year &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_end_year &lt;int&gt;, is_default_season &lt;lgl&gt;</span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lpb_schedule</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:44:18 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 40</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id season_id           competition_id competition_name season_end_year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         22 f723df4e-8434-11ef… cf8724fa-8354… Liga Profesiona…            <span style="text-decoration: underline;">2</span>024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>         22 f723df4e-8434-11ef… cf8724fa-8354… Liga Profesiona…            <span style="text-decoration: underline;">2</span>024</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more variables: fixture_id &lt;chr&gt;, fixture_type &lt;chr&gt;, name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   round &lt;chr&gt;, round_code &lt;chr&gt;, pool &lt;chr&gt;, series &lt;chr&gt;, stage_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status &lt;chr&gt;, status_label &lt;chr&gt;, start_time_utc &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   start_time_local &lt;chr&gt;, timezone &lt;chr&gt;, times_unconfirmed &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue &lt;chr&gt;, venue_id &lt;chr&gt;, attendance &lt;int&gt;, home_entity_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_code &lt;chr&gt;, home_name &lt;chr&gt;, home_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_result_place &lt;int&gt;, home_result_status &lt;chr&gt;, home_draw &lt;lgl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

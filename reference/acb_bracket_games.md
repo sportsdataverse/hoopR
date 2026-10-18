@@ -105,6 +105,8 @@ are always these, in this order (sdv-py `acb_bracket_games`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_bracket_games(season = 2026)
+
 ## See also
 
 Other ACB Functions:
@@ -152,32 +154,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_bracket_games(season = 2026))
-#> ── ACB Bracket Games from api2.acb.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:40 UTC
-#> # A tibble: 21 × 22
-#>    stage          phase_id subphase_id series_home_team_id series_home_club_id
-#>    <chr>             <int>       <int>               <int>               <int>
-#>  1 quarter_finals      111         293                4388                   9
-#>  2 quarter_finals      111         293                4388                   9
-#>  3 quarter_finals      111         293                4388                   9
-#>  4 quarter_finals      111         293                4393                  12
-#>  5 quarter_finals      111         293                4393                  12
-#>  6 quarter_finals      111         293                4393                  12
-#>  7 quarter_finals      111         293                4397                  13
-#>  8 quarter_finals      111         293                4397                  13
-#>  9 quarter_finals      111         293                4398                   3
-#> 10 quarter_finals      111         293                4398                   3
-#> # ℹ 11 more rows
-#> # ℹ 17 more variables: series_away_team_id <int>, series_away_club_id <int>,
-#> #   series_home_wins <int>, series_away_wins <int>, series_finished <lgl>,
-#> #   best_of <int>, edition_id <int>, season <int>, match_id <int>,
-#> #   home_team_id <int>, away_team_id <int>, home_score <int>, away_score <int>,
-#> #   start <dttm>, status <chr>, is_on_half_time <lgl>, current_quarter <int>
-# }
-```

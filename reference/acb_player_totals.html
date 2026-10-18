@@ -174,7 +174,8 @@ season before 1984, raised before any request; HTTP 400 / 422) and <code>hoopR_a
 rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
 <code>problem+json</code> body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/acb_player_totals.html">acb_player_totals</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">20209407</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ACB Functions:
@@ -224,26 +225,6 @@ match, a game that is not finished). Wrappers raise; they never warn and return 
 <code><a href="acb_teams.html">acb_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_player_totals</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">20209407</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Player Totals from api2.acb.com ───────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:06 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 93</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   player_id player_name first_name last_name shirt_number game_role</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  20<span style="text-decoration: underline;">209</span>407 Edy Tavares Walter     Tavares   22           <span style="color: #BB0000;">NA</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 87 more variables: total_num_games &lt;int&gt;, total_time_played &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_starter &lt;int&gt;, total_points &lt;int&gt;, total_max_points &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_three_pointers_made &lt;int&gt;, total_three_pointers_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_three_pointers_percentage &lt;dbl&gt;, total_two_pointers_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_two_pointers_attempted &lt;int&gt;, total_two_pointers_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_free_throws_made &lt;int&gt;, total_free_throws_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   total_free_throws_percentage &lt;dbl&gt;, total_rebounds &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

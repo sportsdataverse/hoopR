@@ -83,6 +83,8 @@ always these, in this order (sdv-py `kzs_score_changes`):
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_score_changes(match_id = 101839)
+
 ## See also
 
 Other KZS Functions:
@@ -108,27 +110,3 @@ Other KZS Functions:
 [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_score_changes(match_id = 101839))
-#> ── KZS Score by Minute from api.kzs.si ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:11 UTC
-#> # A tibble: 45 × 5
-#>    match_id minute score1 score2 total_minutes
-#>       <int>  <int>  <int>  <int>         <int>
-#>  1   101839      1      2      3            45
-#>  2   101839      2      5      8            45
-#>  3   101839      3      9      8            45
-#>  4   101839      4      9     11            45
-#>  5   101839      5     12     16            45
-#>  6   101839      6     14     18            45
-#>  7   101839      7     18     20            45
-#>  8   101839      8     18     22            45
-#>  9   101839      9     22     22            45
-#> 10   101839     10     25     24            45
-#> # ℹ 35 more rows
-# }
-```

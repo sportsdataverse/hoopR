@@ -165,7 +165,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gamepage_pbp(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_pbp from fiba.basketball ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:55 UTC
+#> ℹ Data updated: 2026-10-18 17:23:12 UTC
 #> # A tibble: 497 × 26
 #>    game_id competition_id statistic_system period period_number action_id order
 #>      <int>          <int> <chr>            <chr>          <int> <chr>     <int>

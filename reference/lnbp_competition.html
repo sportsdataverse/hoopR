@@ -201,6 +201,8 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Season rule: calendar year.</p>
 <p>Errors and terms of use are those of <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets. The site also serves women's competitions (pass their <code>competition_id</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lnbp_competition.html">lnbp_seasons</a></span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/lnbp_competition.html">lnbp_schedule</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -235,51 +237,6 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lnbp_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:50 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id season_id              competition_id competition_name season_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         14 3b2ecaa5-a640-11f1-a2… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         14 cc7d79f3-43ee-11f1-b8… 16be8396-24fb… LIGA CALIENTE.M… LIGA CALIE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         14 b085bfa6-0b98-11f1-a9… cbd9ecf6-fa02… LIGA CALIENTE.MX LNBP FEMEN…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         14 c1b0a47a-81cc-11f0-b2… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         14 753ba8e7-81cd-11f0-b6… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         14 b1b57094-3f54-11f0-9a… 16be8396-24fb… LIGA CALIENTE.M… LIGA CALIE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         14 38b63189-1af0-11f0-bf… cbd9ecf6-fa02… LIGA CALIENTE.MX LNBP FEMEN…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         14 9a8cdde2-6305-11ef-b3… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         14 ef1919ad-fa03-11ee-ab… cbd9ecf6-fa02… LIGA CALIENTE.MX LNBP FEMEN…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         14 1ac763fc-5c7d-11ee-86… 889eb2bb-5c7c… COPA VALUE LNBP  COPA VALUE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: abbreviation_local &lt;chr&gt;, year &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_end_year &lt;int&gt;, is_default_season &lt;lgl&gt;</span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lnbp_schedule</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:52 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 40</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id season_id           competition_id competition_name season_end_year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span>         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more variables: fixture_id &lt;chr&gt;, fixture_type &lt;chr&gt;, name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   round &lt;chr&gt;, round_code &lt;chr&gt;, pool &lt;chr&gt;, series &lt;chr&gt;, stage_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status &lt;chr&gt;, status_label &lt;chr&gt;, start_time_utc &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   start_time_local &lt;chr&gt;, timezone &lt;chr&gt;, times_unconfirmed &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue &lt;chr&gt;, venue_id &lt;chr&gt;, attendance &lt;int&gt;, home_entity_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_code &lt;chr&gt;, home_name &lt;chr&gt;, home_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_result_place &lt;int&gt;, home_result_status &lt;chr&gt;, home_draw &lt;lgl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

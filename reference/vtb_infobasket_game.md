@@ -204,7 +204,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_game(game_id = 921391))
 #> ── VTB Infobasket Game from org.infobasket.su ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:43 UTC
+#> ℹ Data updated: 2026-10-18 17:44:17 UTC
 #> # A tibble: 1 × 56
 #>   is_online game_status max_period from_date game_date  has_time game_time
 #>   <lgl>           <int>      <int> <chr>     <chr>      <lgl>    <chr>    

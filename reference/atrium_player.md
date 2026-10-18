@@ -123,6 +123,8 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_player(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654")
+
 ## See also
 
 Other Atrium:
@@ -154,20 +156,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_player(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654"))
-#> ── Atrium player from embed-api.eui.connect.sportradar.com ─────────────────────
-#> ℹ Data updated: 2026-10-18 15:33:42 UTC
-#> # A tibble: 1 × 14
-#>   website_id person_id     name  bib   team_id team_name image_url date_of_birth
-#>        <int> <chr>         <chr> <chr> <chr>   <chr>     <chr>     <date>       
-#> 1         12 4458f165-f86… Brai… NA    25bcb2… Lyon-Vil… https://… 1994-04-06   
-#> # ℹ 6 more variables: age <int>, nationality <chr>, points_per_game <dbl>,
-#> #   rebounds_offensive_per_game <dbl>, rebounds_defensive_per_game <dbl>,
-#> #   rebounds_per_game <dbl>
-# }
-```

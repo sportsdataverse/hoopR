@@ -163,6 +163,7 @@ matches); <code>hoopR_bad_request</code> for HTTP 400 / 422 or a URL that is not
 has occurred" page (<code>transient = TRUE</code>: retry later), a dead connection, an error
 envelope, a cut-off page, an unfinished game, or a body for another match, competition
 or ORG.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/genius_widget_games.html">genius_widget_games</a></span><span class="op">(</span>widget_key <span class="op">=</span> <span class="st">"RFJIN037I07QV520B7WEXKV1GYNA31"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -187,27 +188,6 @@ or ORG.</p>
 <code><a href="slb_competition.html">slb_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">genius_widget_games</span><span class="op">(</span>widget_key <span class="op">=</span> <span class="st">"RFJIN037I07QV520B7WEXKV1GYNA31"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Genius LiveStats widget games ─────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:40:59 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   match_id webcast_org competition_name status date  home_team_id home_team_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  2<span style="text-decoration: underline;">902</span>704 ESAKE       Stoiximan GBL 2… Final  17/1…        <span style="text-decoration: underline;">23</span>948 ΑΕΚ           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  2<span style="text-decoration: underline;">902</span>687 ESAKE       Stoiximan GBL 2… Final  17/1…        <span style="text-decoration: underline;">23</span>952 KOL           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  2<span style="text-decoration: underline;">902</span>689 ESAKE       Stoiximan GBL 2… Final  17/1…       <span style="text-decoration: underline;">203</span>424 LEF           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  2<span style="text-decoration: underline;">902</span>691 ESAKE       Stoiximan GBL 2… Final  17/1…        <span style="text-decoration: underline;">26</span>336 IRA           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  2<span style="text-decoration: underline;">902</span>693 ESAKE       Stoiximan GBL 2… Final  17/1…        <span style="text-decoration: underline;">23</span>960 ARI           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>  2<span style="text-decoration: underline;">902</span>695 ESAKE       Stoiximan GBL 2… Final  18/1…       <span style="text-decoration: underline;">203</span>423 FAL           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>  2<span style="text-decoration: underline;">902</span>697 ESAKE       Stoiximan GBL 2… Final  18/1…        <span style="text-decoration: underline;">23</span>961 PAO           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: home_score &lt;int&gt;, away_team_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team_code &lt;chr&gt;, away_score &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

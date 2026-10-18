@@ -165,7 +165,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_current_roster(club_id = 2, season = 2027))
 #> ── ACB Current Roster from api2.acb.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:49 UTC
+#> ℹ Data updated: 2026-10-18 17:20:09 UTC
 #> # A tibble: 18 × 17
 #>    club_id role   person_id person_name        first_name last_name shirt_number
 #>      <int> <chr>      <int> <chr>              <chr>      <chr>     <chr>       

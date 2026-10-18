@@ -100,6 +100,8 @@ are always these, in this order (sdv-py `acb_club_data`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_club_data(club_id = 2)
+
 ## See also
 
 Other ACB Functions:
@@ -147,22 +149,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_club_data(club_id = 2))
-#> ── ACB Club Data from api2.acb.com ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:44 UTC
-#> # A tibble: 1 × 22
-#>   team_id club_id team  team_abbr competition_id edition_id season stadium_name 
-#>     <int>   <int> <chr> <chr>              <int>      <int>  <int> <chr>        
-#> 1    4467       2 Barça BAR                    1         91   2027 Palau Blaugr…
-#> # ℹ 14 more variables: stadium_address <chr>, stadium_capacity <int>,
-#> #   president <chr>, foundation_year <int>, web_url <chr>, ticketing_url <chr>,
-#> #   merchandising_url <chr>, instagram_url <chr>, twitter_url <chr>,
-#> #   facebook_url <chr>, youtube_url <chr>, tiktok_url <chr>, validated <lgl>,
-#> #   temporary_roster <lgl>
-# }
-```

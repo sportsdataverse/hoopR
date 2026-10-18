@@ -72,7 +72,7 @@ Other Genius:
   slider <- data.frame(game_id = c(1L, 2L), genius_id = c(2902690L, NA))
   genius_game_crosswalk(slider, "sportpress")
 #> ── Genius LiveStats game crosswalk ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:40:27 UTC
+#> ℹ Data updated: 2026-10-18 17:24:03 UTC
 #> # A tibble: 1 × 2
 #>   game_key genius_match_id
 #>      <int>           <int>

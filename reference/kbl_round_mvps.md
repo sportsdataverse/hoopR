@@ -103,6 +103,8 @@ body with no rows for this frame is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_round_mvps(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -127,24 +129,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_round_mvps(season = 2025))
-#> ── KBL Round MVPs from api.kbl.or.kr ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:35 UTC
-#> # A tibble: 6 × 12
-#>   season season_code round pcode team_code player_name player_name_en game_count
-#>    <int>       <int> <int> <chr> <chr>     <chr>       <chr>               <int>
-#> 1   2025          45     6 2910… 70        박지훈      PARK JIHOON             9
-#> 2   2025          45     5 2910… 55        안영준      AN YOUNGJUN             9
-#> 3   2025          45     4 2912… 55        자밀 워니   JAMEEL MARCUS…          9
-#> 4   2025          45     3 2916… 50        칼 타마요   Carl Tamayo             6
-#> 5   2025          45     2 2912… 55        자밀 워니   JAMEEL MARCUS…          9
-#> 6   2025          45     1 2912… 55        자밀 워니   JAMEEL MARCUS…          9
-#> # ℹ 4 more variables: total_seconds <int>, total_score <int>,
-#> #   total_rebound <int>, total_assist <int>
-# }
-```

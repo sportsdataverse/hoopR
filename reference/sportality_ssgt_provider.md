@@ -75,6 +75,8 @@ documented columns come first, in this order (sdv-py
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp")
+
 ## See also
 
 Other Basketligaen Functions:
@@ -104,17 +106,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp"))
-#> ── Basketligaen ssgt Stats Provider from basketligaen.dk ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:42 UTC
-#> # A tibble: 1 × 1
-#>   provider         
-#>   <chr>            
-#> 1 genius-basketball
-# }
-```

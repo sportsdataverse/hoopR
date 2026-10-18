@@ -142,7 +142,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_calendar(championship_id = 602, round = 1))
 #> ── LBA Calendar from legabasket.it ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:33 UTC
+#> ℹ Data updated: 2026-10-18 17:25:21 UTC
 #> # A tibble: 8 × 38
 #>   season game_id game_status championship_id championships_day_id  year number
 #>    <int>   <int> <chr>                 <int>                <int> <int>  <int>

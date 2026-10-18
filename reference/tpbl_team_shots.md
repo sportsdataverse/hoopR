@@ -102,6 +102,8 @@ order (sdv-py `tpbl_team_shots`):
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1)
+
 ## See also
 
 Other TPBL Functions:
@@ -120,27 +122,3 @@ Other TPBL Functions:
 [`tpbl_standings()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings.md),
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1))
-#> ── TPBL Team Shots from api.tpbl.basketball ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:28 UTC
-#> # A tibble: 777 × 7
-#>    division_id team_id rounds is_made point_x point_y offense_basket
-#>          <int>   <int> <chr>  <lgl>     <int>   <int>          <int>
-#>  1           2       4 1      FALSE     19090    8650              1
-#>  2           2       4 1      FALSE     24340    7090              1
-#>  3           2       4 1      TRUE      24060    7310              1
-#>  4           2       4 1      FALSE     20770   13120              1
-#>  5           2       4 1      FALSE     22950   13270              1
-#>  6           2       4 1      FALSE     24320   11800              1
-#>  7           2       4 1      TRUE      22140    5200              1
-#>  8           2       4 1      TRUE      25860    8060              1
-#>  9           2       4 1      FALSE     24550    6880              1
-#> 10           2       4 1      TRUE      25900    9180              1
-#> # ℹ 767 more rows
-# }
-```

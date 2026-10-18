@@ -163,6 +163,8 @@ tibble with these columns, in this order (sdv-py `cba_game_team_four`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_game_team_four(schedule_id = 100105799)
+
 ## See also
 
 Other CBA Functions:
@@ -192,25 +194,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_game_team_four(schedule_id = 100105799))
-#> ── CBA Game Team Four from data-server.cbaleague.com ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:10 UTC
-#> # A tibble: 2 × 43
-#>   effective_hit_rate effective_hit_rate_average effective_hit_rate_rank
-#>                <dbl> <chr>                                        <dbl>
-#> 1               53.7 NA                                               9
-#> 2               54.2 NA                                               6
-#> # ℹ 40 more variables: free_throw_rate <dbl>, free_throw_rate_average <chr>,
-#> #   free_throw_rate_rank <dbl>, loss_average <dbl>, loss_num <int>,
-#> #   offensive_rebound_rate <dbl>, offensive_rebound_rate_average <chr>,
-#> #   offensive_rebound_rate_rank <dbl>, other_effective_hit_rate <dbl>,
-#> #   other_effective_hit_rate_average <chr>,
-#> #   other_effective_hit_rate_rank <dbl>, other_free_throw_rate <dbl>,
-#> #   other_free_throw_rate_average <chr>, other_free_throw_rate_rank <dbl>, …
-# }
-```

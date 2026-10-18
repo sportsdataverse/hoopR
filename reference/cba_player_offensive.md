@@ -204,6 +204,8 @@ order (sdv-py `cba_player_offensive`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_player_offensive(season = 2026, team_id = 29128)
+
 ## See also
 
 Other CBA Functions:
@@ -233,43 +235,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_player_offensive(season = 2026, team_id = 29128))
-#> ── CBA Player Offensive from data-server.cbaleague.com ───── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:24 UTC
-#> # A tibble: 20 × 36
-#>      age assists assists_rate assists_rate_rank assists_rate_sort
-#>    <int>   <int>        <dbl>             <dbl>             <dbl>
-#>  1    28     215        0.403              0.96            0.403 
-#>  2    30     140        0.372              0.87            0.372 
-#>  3    26       3        0.344              0               0.344 
-#>  4    29      90        0.288              0.68            0.288 
-#>  5    19      14        0.227              0               0.227 
-#>  6    29      77        0.17               0.51            0.170 
-#>  7    27       2        0.146              0               0.146 
-#>  8    26      88        0.11               0.71            0.110 
-#>  9    27      29        0.099              0.68            0.0992
-#> 10    28      47        0.09               0.69            0.0902
-#> 11    33      43        0.089              0.66            0.0891
-#> 12    28      26        0.077              0.21            0.0772
-#> 13    26      29        0.059              0.24            0.0593
-#> 14    27      30        0.056              0.26            0.0564
-#> 15    34       2        0.031              0.05            0.0307
-#> 16    22       1        0.024              0               0.0244
-#> 17    22       1        0.022              0               0.0220
-#> 18    23       0        0                  0               0     
-#> 19    20       0        0                  0               0     
-#> 20    19       0        0                  0               0     
-#> # ℹ 31 more variables: assists_round_rate <dbl>, assists_round_rate_rank <dbl>,
-#> #   assists_round_rate_sort <dbl>, birth_date <chr>,
-#> #   field_goals_attempted <int>, first_position <chr>, free_throws <int>,
-#> #   is_color <int>, minutes <int>, nationality <chr>, number <chr>,
-#> #   play_times <int>, player_id <int>, player_name <chr>, position <chr>,
-#> #   position_num <dbl>, rank <chr>, real_rate <dbl>, real_rate_rank <dbl>,
-#> #   real_rate_sort <dbl>, round_rate <dbl>, round_rate_rank <dbl>, …
-# }
-```

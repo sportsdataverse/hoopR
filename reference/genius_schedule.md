@@ -132,7 +132,7 @@ Other Genius:
 # \donttest{
   try(genius_schedule(org = "CEBL", comp_id = 47852))
 #> ── Genius LiveStats schedule ─────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:40:45 UTC
+#> ℹ Data updated: 2026-10-18 17:24:13 UTC
 #> # A tibble: 130 × 16
 #>    match_id link_match_id comp_id org   status     date_time venue_id venue_name
 #>       <int>         <int>   <int> <chr> <chr>      <chr>        <int> <chr>     

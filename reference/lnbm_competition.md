@@ -316,6 +316,9 @@ unchecked.
 Access, proxy and error notes: see
 [`genius_game()`](https://hoopR.sportsdataverse.org/reference/genius_game.md).
 
+     lnbm_competitions()
+     lnbm_schedule()
+
 ## See also
 
 Other Genius:
@@ -337,20 +340,3 @@ Other Genius:
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lnbm_competitions())
-#> Error in genius_competitions(org = .genius_entry(key)$ids$org, return_parsed = return_parsed) : 
-#>   hosted.dcd.shared.geniussports.com/FRB/en/schedule answered HTTP 500 'A
-#> website error has occurred': an intermittent Genius host-side failure (it
-#> sticks to a URL for minutes; retry later).
-  try(lnbm_schedule())
-#> Error in genius_competitions(org = org) : 
-#>   hosted.dcd.shared.geniussports.com/FRB/en/schedule answered HTTP 500 'A
-#> website error has occurred': an intermittent Genius host-side failure (it
-#> sticks to a URL for minutes; retry later).
-# }
-```

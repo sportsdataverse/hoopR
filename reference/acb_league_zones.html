@@ -169,7 +169,8 @@ season before 1984, raised before any request; HTTP 400 / 422) and <code>hoopR_a
 rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
 <code>problem+json</code> body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/acb_league_zones.html">acb_league_zones</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ACB Functions:
@@ -219,28 +220,6 @@ match, a game that is not finished). Wrappers raise; they never warn and return 
 <code><a href="acb_teams.html">acb_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_league_zones</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB League Zones from api2.acb.com ────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:32:52 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    competition_id edition_id season phase_id zone   attempts  made points_scored</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> corne…      202    76           228</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> corne…      183    77           231</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> mid_r…       75    35            70</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> mid_r…      171    50           100</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> mid_r…      173    63           126</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> paint      <span style="text-decoration: underline;">1</span>004   452           904</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> restr…     <span style="text-decoration: underline;">1</span>210   862          <span style="text-decoration: underline;">1</span>724</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> top_t…      896   301           903</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> wing_…      343   107           321</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>              1         91   <span style="text-decoration: underline;">2</span>027       <span style="color: #BB0000;">NA</span> wing_…      327   120           360</span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

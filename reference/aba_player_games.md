@@ -122,6 +122,8 @@ or the answer is not the one asked for (a page for another game, season
 or league, an unfinished game, a helper that does not belong to the
 game, layout drift). All inherit `hoopR_error`.
 
+     aba_player_games(player_id = 4807, season = 2026)
+
 ## See also
 
 Other ABA:
@@ -136,41 +138,3 @@ Other ABA:
 [`aba_score_flow()`](https://hoopR.sportsdataverse.org/reference/aba_score_flow.md),
 [`aba_shots()`](https://hoopR.sportsdataverse.org/reference/aba_shots.md),
 [`aba_standings()`](https://hoopR.sportsdataverse.org/reference/aba_standings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(aba_player_games(player_id = 4807, season = 2026))
-#> ── ABA League Player Games ───────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:29 UTC
-#> # A tibble: 18 × 34
-#>    player_id season league_id league round_no game_no game        minutes points
-#>        <int>  <int>     <int> <chr>     <int>   <int> <chr>       <chr>    <int>
-#>  1      4807   2026         1 aba           1       1 Partizan-K… 14:24       10
-#>  2      4807   2026         1 aba           2       9 Split-Part… 18:56       14
-#>  3      4807   2026         1 aba           3      17 Partizan-F… 21:20        9
-#>  4      4807   2026         1 aba          21     156 Bosna-Part… 23:35        5
-#>  5      4807   2026         1 aba          24     169 Partizan-C… 22:28       14
-#>  6      4807   2026         1 aba          26     177 C. Zvezda-… 27:17       14
-#>  7      4807   2026         1 aba          28     187 Partizan-B… 16:42        4
-#>  8      4807   2026         1 aba          30     197 Budućnost-… 24:58       11
-#>  9      4807   2026         1 aba          32     205 C. Olimpij… 26:51       15
-#> 10      4807   2026         1 aba          34     213 Partizan-C… 25:15       13
-#> 11      4807   2026         1 aba          39     231 Partizan-B… 25:01        8
-#> 12      4807   2026         1 aba          40     235 Bosna-Part… 16:02        6
-#> 13      4807   2026         1 aba          42     243 Partizan-C… 23:13       15
-#> 14      4807   2026         1 aba          43     245 C. Zvezda-… 29:36        9
-#> 15      4807   2026         1 aba          45     248 Dubai-Part… 24:46       21
-#> 16      4807   2026         1 aba          46     249 Dubai-Part… 27:45       15
-#> 17      4807   2026         1 aba          47     250 Partizan-D… 26:55       15
-#> 18      4807   2026         1 aba          48     251 Partizan-D… 28:36       10
-#> # ℹ 25 more variables: fg_pct <dbl>, fg2_made <int>, fg2_att <int>,
-#> #   fg2_pct <dbl>, fg3_made <int>, fg3_att <int>, fg3_pct <dbl>, ft_made <int>,
-#> #   ft_att <int>, ft_pct <dbl>, reb_def <int>, reb_off <int>, reb_tot <int>,
-#> #   assists <int>, steals <int>, turnovers <int>, blocks <int>,
-#> #   blocks_against <int>, fouls <int>, fouls_drawn <int>, pts_paint <int>,
-#> #   pts_second_chance <int>, pts_fast_break <int>, plus_minus <int>,
-#> #   valuation <int>
-# }
-```

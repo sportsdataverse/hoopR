@@ -96,6 +96,8 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_outcomes(org = "nbl", season = 2026, season_type = "regular")
+
 ## See also
 
 Other NBL Rosetta:
@@ -120,26 +122,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_outcomes(org = "nbl", season = 2026, season_type = "regular"))
-#> ── NBL Rosetta outcomes from prod.rosetta.nbl.com.au ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:00:56 UTC
-#> # A tibble: 10 × 8
-#>    org   team_name                wins losses last10 last5 last3 season_end_year
-#>    <chr> <chr>                   <int>  <int> <chr>  <chr> <chr>           <int>
-#>  1 nbl   Sydney Kings               29     11 WWWWW… WLWLW WLW              2026
-#>  2 nbl   Adelaide 36ers             27     15 LLWLW… LWLWL LWL              2026
-#>  3 nbl   South East Melbourne P…    24     13 LWWLW… LWLWL LWL              2026
-#>  4 nbl   Perth Wildcats             22     15 WWWWL… WLWLL WLL              2026
-#>  5 nbl   Melbourne United           21     14 WWWLL… WLWWL WWL              2026
-#>  6 nbl   Tasmania JackJumpers       14     20 WLLLL… WWLLL LLL              2026
-#>  7 nbl   NZ Breakers                14     20 WLLWL… LWLWW LWW              2026
-#>  8 nbl   Brisbane Bullets            6     27 LLLLL… LLLLL LLL              2026
-#>  9 nbl   Cairns Taipans              9     24 WLLLW… LLWLL WLL              2026
-#> 10 nbl   Illawarra Hawks            13     20 LWWLL… WLLWW LWW              2026
-# }
-```

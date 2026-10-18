@@ -115,6 +115,8 @@ column the API added later:
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_team_upcoming_games(team_uuid = "rfo82vr830")
+
 ## See also
 
 Other Basketligaen Functions:
@@ -144,28 +146,3 @@ Other Basketligaen Functions:
 [`sportality_team()`](https://hoopR.sportsdataverse.org/reference/sportality_team.md),
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_team_upcoming_games(team_uuid = "rfo82vr830"))
-#> ── Basketligaen Team Upcoming Games from basketligaen.dk ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:48 UTC
-#> # A tibble: 5 × 41
-#>   date   time  game_uuid  start_date_time      state overtime shootout ssgt_uuid
-#>   <chr>  <chr> <chr>      <chr>                <chr> <lgl>    <chr>    <chr>    
-#> 1 24 oct 15:00 oj01tktwv7 2026-10-24T15:00:00… pre-… FALSE    NA       xs07bd3f…
-#> 2 30 oct 18:00 yt52r1gr0n 2026-10-30T18:00:00… pre-… FALSE    NA       xs07bd3f…
-#> 3 4 nov  19:00 j6aymony3a 2026-11-04T19:00:00… pre-… FALSE    NA       xs07bd3f…
-#> 4 6 nov  18:00 yoo9vpujpv 2026-11-06T18:00:00… pre-… FALSE    NA       xs07bd3f…
-#> 5 13 nov 17:30 anfof00w5j 2026-11-13T17:30:00… pre-… FALSE    NA       xs07bd3f…
-#> # ℹ 33 more variables: home_team_status <chr>, home_team_uuid <chr>,
-#> #   home_team_owner_instance_id <chr>, home_team_code <chr>,
-#> #   home_team_names_code <chr>, home_team_names_short <chr>,
-#> #   home_team_names_long <chr>, home_team_names_full <chr>,
-#> #   home_team_names_code_site <chr>, home_team_names_short_site <chr>,
-#> #   home_team_names_full_site <chr>, home_team_names_long_site <chr>,
-#> #   home_team_score <int>, home_team_icon <chr>, away_team_status <chr>, …
-# }
-```

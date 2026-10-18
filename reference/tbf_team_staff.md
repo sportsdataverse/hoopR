@@ -87,6 +87,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_team_staff(season = 2027, team_process_id = 265995)
+
 ## See also
 
 Other TBF:
@@ -121,28 +123,3 @@ Other TBF:
 [`tbf_team_roster()`](https://hoopR.sportsdataverse.org/reference/tbf_team_roster.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_team_staff(season = 2027, team_process_id = 265995))
-#> ── TBF Team Staff ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:09 UTC
-#> # A tibble: 11 × 8
-#>    season competition team_process_id person_id first_name   last_name   role   
-#>     <int> <chr>                 <int>     <int> <chr>        <chr>       <chr>  
-#>  1   2027 bsl                  265995    221970 MEVLÜT TULGA ÖNGÖREN     Genel …
-#>  2   2027 bsl                  265995    776826 MASSIMO      CANCELLIERI Antren…
-#>  3   2027 bsl                  265995    221713 CANER        TOPALOĞLU   Yardım…
-#>  4   2027 bsl                  265995    776827 JOVAN        GOREC       Yardım…
-#>  5   2027 bsl                  265995     26240 SİNAN        ÇAMBEL      Yardım…
-#>  6   2027 bsl                  265995    184315 FERHAT       ŞOFÖR       İdari …
-#>  7   2027 bsl                  265995    742485 ENES         MERCANLI    Fizyot…
-#>  8   2027 bsl                  265995    386369 RECEP        LOKMAOĞLU   Fizyot…
-#>  9   2027 bsl                  265995    411678 FATİH        SERBEST     Masör  
-#> 10   2027 bsl                  265995    412113 RAMAZAN      KABA        Malzem…
-#> 11   2027 bsl                  265995    184731 REMZİ SERDAR ERGÖK       Atleti…
-#> # ℹ 1 more variable: role_code <int>
-# }
-```

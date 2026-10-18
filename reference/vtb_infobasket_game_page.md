@@ -129,6 +129,8 @@ this frame is a zero-row tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_game_page(game_id = 921391)
+
 ## See also
 
 Other VTB Functions:
@@ -169,24 +171,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_game_page(game_id = 921391))
-#> ── VTB Infobasket Game Page from org.infobasket.su ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:43 UTC
-#> # A tibble: 1 × 28
-#>   comp_name_ru comp_name_en league_name_ru league_name_en league_short_name_ru
-#>   <chr>        <chr>        <chr>          <chr>          <chr>               
-#> 1 NA           NA           NA             NA             NA                  
-#> # ℹ 23 more variables: league_short_name_en <chr>, gender <int>, comp_id <int>,
-#> #   league_id <int>, game_id <int>, game_date <chr>, game_time <chr>,
-#> #   game_date_time <chr>, game_number <chr>, game_region <int>,
-#> #   game_arena <int>, game_rules <int>, game_forfeit <int>,
-#> #   game_attendance <int>, game_status <int>, game_stats_status <int>,
-#> #   game_time_moscow_string <chr>, region_name_ru <chr>, region_name_en <chr>,
-#> #   arena_name_ru <chr>, arena_name_en <chr>, arena_full_name_ru <chr>, …
-# }
-```

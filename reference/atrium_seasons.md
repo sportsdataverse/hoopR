@@ -123,7 +123,7 @@ Other Atrium:
 # \donttest{
   try(atrium_seasons(website_id = 12))
 #> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 15:33:53 UTC
+#> ℹ Data updated: 2026-10-18 17:20:37 UTC
 #> # A tibble: 19 × 9
 #>    website_id season_id              competition_id competition_name season_name
 #>         <int> <chr>                  <chr>          <chr>            <chr>      

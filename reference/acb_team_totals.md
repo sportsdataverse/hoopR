@@ -182,6 +182,8 @@ are always these, in this order (sdv-py `acb_team_totals`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_team_totals(club_id = 2, season = 2027)
+
 ## See also
 
 Other ACB Functions:
@@ -229,24 +231,3 @@ Other ACB Functions:
 [`acb_team_records()`](https://hoopR.sportsdataverse.org/reference/acb_team_records.md),
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_team_totals(club_id = 2, season = 2027))
-#> ── ACB Team Totals from api2.acb.com ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:21 UTC
-#> # A tibble: 1 × 91
-#>   club_id team_id edition_id season total_num_games total_time_played
-#>     <int>   <int>      <int>  <int>           <int>             <int>
-#> 1       2    4467         91   2027               3             36000
-#> # ℹ 85 more variables: total_starter <int>, total_points <int>,
-#> #   total_max_points <int>, total_three_pointers_made <int>,
-#> #   total_three_pointers_attempted <int>,
-#> #   total_three_pointers_percentage <dbl>, total_two_pointers_made <int>,
-#> #   total_two_pointers_attempted <int>, total_two_pointers_percentage <dbl>,
-#> #   total_free_throws_made <int>, total_free_throws_attempted <int>,
-#> #   total_free_throws_percentage <dbl>, total_rebounds <int>, …
-# }
-```

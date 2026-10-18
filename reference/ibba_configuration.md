@@ -77,6 +77,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_configuration(season = 2026)
+
 ## See also
 
 Other IBBA:
@@ -96,17 +98,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_configuration(season = 2026))
-#> ── IBBA configuration ────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:05 UTC
-#> # A tibble: 1 × 6
-#>   season season_label red_line active_board_id next_round total_rounds
-#>    <int> <chr>           <int>           <int>      <int>        <int>
-#> 1   2026 2025-26            12              17          4           32
-# }
-```

@@ -122,6 +122,8 @@ API added later:
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_athlete_career(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl")
+
 ## See also
 
 Other Basketligaen Functions:
@@ -151,29 +153,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_athlete_career(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl"))
-#> ── Basketligaen Player Career from basketligaen.dk ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:22 UTC
-#> # A tibble: 6 × 45
-#>       g   gps   mpg   ppg  drpg  orpg   rpg   apg  stpg blkpg  pfpg `2_p_perc`
-#>   <int> <int> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>      <dbl>
-#> 1     1     0   2     0     0     0     0     0     0     0     0          0  
-#> 2     1     0   9.3   4     0     0     0     0     1     0     1         50  
-#> 3     2     0   8.6   3     1     0     1     1     0     0     0         42.9
-#> 4     1     0  17.3   9     4     0     4     2     0     0     3         33.3
-#> 5    31     3  17.8   8.4   2.3   0.8   3.1   1.2   0.7   0.2   1.7       51.4
-#> 6     4     3  25.4  19.3   3.8   1     4.8   0.8   1     0.3   2.5       60  
-#> # ℹ 33 more variables: `3_pm` <int>, `3_pa` <dbl>, `3_p_perc` <dbl>,
-#> #   ft_perc <dbl>, topg <dbl>, plus_minus_pg <dbl>, info_uuid <chr>,
-#> #   info_full_name <chr>, info_first_name <chr>, info_last_name <chr>,
-#> #   info_nationality <chr>, info_gender <chr>, info_age_value <int>,
-#> #   info_age_format <chr>, info_weight_value <int>, info_weight_format <chr>,
-#> #   info_height_value <int>, info_height_format <chr>,
-#> #   info_jersey_number <chr>, info_position <chr>, info_position_code <chr>, …
-# }
-```

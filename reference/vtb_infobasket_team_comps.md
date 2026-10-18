@@ -125,6 +125,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_team_comps(season = 2026, team_id = 2650)
+
 ## See also
 
 Other VTB Functions:
@@ -165,18 +167,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_team_comps(season = 2026, team_id = 2650))
-#> ── VTB Infobasket Team Comps from org.infobasket.su ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:05:02 UTC
-#> # A tibble: 1 × 9
-#>   team_id season comp_id comp_type comp_sort level comp_name_ru    comp_name_en 
-#>     <int>  <int>   <int>     <int>     <int> <int> <chr>           <chr>        
-#> 1    2650   2026   50714         0         1     1 Единая лига ВТБ VTB United L…
-#> # ℹ 1 more variable: parent_comp_id <int>
-# }
-```

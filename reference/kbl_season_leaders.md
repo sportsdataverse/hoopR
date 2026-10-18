@@ -98,6 +98,8 @@ for this frame is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_season_leaders()
+
 ## See also
 
 Other KBL Functions:
@@ -122,29 +124,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_season_leaders())
-#> ── KBL Season Leaders from api.kbl.or.kr ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:39 UTC
-#> # A tibble: 55 × 13
-#>    part  part_label       rank value game_count pcode player_name player_name_en
-#>    <chr> <chr>           <int> <dbl>      <int> <chr> <chr>       <chr>         
-#>  1 score Points per game     1  26.7          7 2916… 패리스 배스 Paris Nickola…
-#>  2 score Points per game     2  25.8          6 2915… 게이지 프림 Gaige Colburn…
-#>  3 score Points per game     3  25.8          5 2917… 케렘 칸터   Kerem Kanter  
-#>  4 score Points per game     4  25            5 2917… 헨리 엘런슨 Henry Ellenson
-#>  5 score Points per game     5  23.2          6 2918… 루이스 킹   Louis Dajon K…
-#>  6 rb    Rebounds per g…     1  13.3          6 2913… 숀 롱       Shawn Long    
-#>  7 rb    Rebounds per g…     2  12.9          7 2918… 존 무니     John Mooney   
-#>  8 rb    Rebounds per g…     3  12.2          5 2914… 아셈 마레이 Assem Marei   
-#>  9 rb    Rebounds per g…     4  11.4          5 2917… 케렘 칸터   Kerem Kanter  
-#> 10 rb    Rebounds per g…     5  10.1          7 2916… 패리스 배스 Paris Nickola…
-#> # ℹ 45 more rows
-#> # ℹ 5 more variables: team_code <chr>, team_name <chr>, back_num <chr>,
-#> #   pos <chr>, player_flag <chr>
-# }
-```

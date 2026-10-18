@@ -156,7 +156,8 @@ an unknown season, a play-by-play before 2017-18, standings of a finished champi
 not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
 championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
 is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_teams_leaderboard.html">lba_teams_leaderboard</a></span><span class="op">(</span>board <span class="op">=</span> <span class="st">"teams_offensive"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other LBA Functions:
@@ -180,31 +181,6 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
 <code><a href="lba_teams.html">lba_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_teams_leaderboard</span><span class="op">(</span>board <span class="op">=</span> <span class="st">"teams_offensive"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Teams Leaderboard from legabasket.it ──────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:29 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 85 × 15</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season category name  sponsor_name short_name tv_name  year logo_key attempts</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>027 points   BC R… <span style="color: #949494;">""</span>           BC Roma    BC Roma  <span style="text-decoration: underline;">2</span>026 gxrVRq4…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>027 points   Virt… <span style="color: #949494;">""</span>           Virtus Co… Virtus…  <span style="text-decoration: underline;">2</span>026 tcKLhHt…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>027 points   Napo… <span style="color: #949494;">""</span>           Napoli Ba… Napoli…  <span style="text-decoration: underline;">2</span>026 48PaXiF…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>027 points   Nutr… <span style="color: #949494;">""</span>           Nutribull… Nutrib…  <span style="text-decoration: underline;">2</span>026 Y6Kc6v8…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>027 points   Uman… <span style="color: #949494;">""</span>           Umana Rey… Umana …  <span style="text-decoration: underline;">2</span>026 EGx6Svr…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>027 rating_… Virt… <span style="color: #949494;">""</span>           Virtus Co… Virtus…  <span style="text-decoration: underline;">2</span>026 tcKLhHt…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>027 rating_… BC R… <span style="color: #949494;">""</span>           BC Roma    BC Roma  <span style="text-decoration: underline;">2</span>026 gxrVRq4…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>027 rating_… Nutr… <span style="color: #949494;">""</span>           Nutribull… Nutrib…  <span style="text-decoration: underline;">2</span>026 Y6Kc6v8…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>027 rating_… Arma… <span style="color: #949494;">""</span>           Armani Ol… Armani…  <span style="text-decoration: underline;">2</span>026 e5xdeyc…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027 rating_… Uman… <span style="color: #949494;">""</span>           Umana Rey… Umana …  <span style="text-decoration: underline;">2</span>026 EGx6Svr…        0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 75 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: total_played_matches &lt;int&gt;, total_points &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   minutes &lt;int&gt;, score_40_min &lt;dbl&gt;, score &lt;dbl&gt;, team_id &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

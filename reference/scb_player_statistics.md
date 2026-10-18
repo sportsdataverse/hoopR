@@ -190,7 +190,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_player_statistics(season = 2026))
 #> ── BBL/DBBL Season Player Statistics from the SCB API ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:47 UTC
+#> ℹ Data updated: 2026-10-18 17:42:49 UTC
 #> # A tibble: 316 × 72
 #>    league season display_type season_player_id real_player_id first_name 
 #>    <chr>   <int> <chr>        <chr>                     <int> <chr>      

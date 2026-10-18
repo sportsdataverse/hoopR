@@ -119,6 +119,8 @@ a zero-row tibble with these columns, in this order (sdv-py
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_team_counts(season = 2026)
+
 ## See also
 
 Other CBA Functions:
@@ -148,18 +150,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_team_counts(season = 2026))
-#> ── CBA Team Counts from data-server.cbaleague.com ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:32 UTC
-#> # A tibble: 2 × 2
-#>   key   value
-#>   <chr> <int>
-#> 1 1        20
-#> 2 2        12
-# }
-```

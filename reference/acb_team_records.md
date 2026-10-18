@@ -98,6 +98,8 @@ are always these, in this order (sdv-py `acb_team_records`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_team_records(club_id = 2)
+
 ## See also
 
 Other ACB Functions:
@@ -145,35 +147,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_team_records(club_id = 2))
-#> ── ACB Team Records from api2.acb.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:19 UTC
-#> # A tibble: 15 × 19
-#>    club_id stat          value game_id game_date           player_id player_name
-#>      <int> <chr>         <dbl>   <int> <dttm>                  <int> <chr>      
-#>  1       2 rating           46    5573 1988-01-30 00:00:00  20200740 Steve Trum…
-#>  2       2 points           54    4606 1984-02-18 00:00:00  20200741 Epi        
-#>  3       2 rebounds         19    5092 1986-02-22 00:00:00  20200740 Steve Trum…
-#>  4       2 assists          14   18227 2018-12-16 00:00:00  20204097 Thomas Heu…
-#>  5       2 steals            8    5525 1987-12-06 00:00:00  20200739 Nacho Solo…
-#>  6       2 blocks           12   12701 2007-01-07 00:00:00  20200648 Fran Vázqu…
-#>  7       2 three_pointer    12   15578 2014-03-08 00:00:00  20210662 Jacob Pull…
-#>  8       2 two_pointer      24    4606 1984-02-18 00:00:00  20200741 Epi        
-#>  9       2 free_throws      20   12280 2005-11-05 00:00:00  20200515 Juan Carlo…
-#> 10       2 defensive_re…    15  102920 2021-09-22 00:00:00  20202101 Nikola Mir…
-#> 11       2 offensive_re…    10    8729 1995-03-24 00:00:00  20201030 Darryl Mid…
-#> 12       2 received_fou…    13   12280 2005-11-05 00:00:00  20200515 Juan Carlo…
-#> 13       2 committed_fo…     5  105392 2026-10-04 00:00:00  30005355 Umoja Gibs…
-#> 14       2 dunks             6   15848 2014-06-10 00:00:00  20209874 Joey Dorsey
-#> 15       2 turnovers        13   10659 2000-12-16 00:00:00  20200511 Saras Jasi…
-#> # ℹ 12 more variables: first_name <chr>, last_name <chr>, shirt_number <chr>,
-#> #   game_role <chr>, local_team_id <int>, local_club_id <int>,
-#> #   local_team <chr>, local_team_abbr <chr>, visitor_team_id <int>,
-#> #   visitor_club_id <int>, visitor_team <chr>, visitor_team_abbr <chr>
-# }
-```

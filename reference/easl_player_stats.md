@@ -199,6 +199,8 @@ A `hoopR_data` tibble: A player's cumulative statistics over ALL seasons
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_player_stats(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5")
+
 ## See also
 
 Other EASL Functions:
@@ -219,24 +221,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_player_stats(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5"))
-#> ── EASL Player Stats from easl.joshricha.com ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:13 UTC
-#> # A tibble: 1 × 104
-#>   player_id    assists assists_defensive assists_per_game assists_turnover_ratio
-#>   <chr>          <int>             <int>            <dbl>                  <dbl>
-#> 1 85c99dab-9f…      64                 0             7.11                    3.2
-#> # ℹ 99 more variables: blocks <int>, blocks_per_game <dbl>,
-#> #   blocks_received <int>, blocks_received_per_game <dbl>, double_double <int>,
-#> #   draws <int>, dunks <int>, dunks_per_game <dbl>, efficiency <int>,
-#> #   efficiency_custom <int>, field_goals_attempted <int>,
-#> #   field_goals_effective_percentage <dbl>, field_goals_made <int>,
-#> #   field_goals_percentage <dbl>, fouls_coach_disqualifying <int>,
-#> #   fouls_coach_technical <int>, fouls_disqualifying <int>, …
-# }
-```

@@ -176,7 +176,8 @@ not retried. Wrappers raise; they never return an empty frame.</p></li>
 <li><p>Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
 JSON here (<code>{"name":"TSN"}</code>), where sdv-py's String cast writes Python's <code>str(dict)</code> repr (<code>{'name': 'TSN'}</code>).
 No string column of the committed fixtures carries an object.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cebl_player_seasons.html">cebl_player_seasons</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">570965</span>, mode <span class="op">=</span> <span class="st">"PER_GAME"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CEBL Functions:
@@ -193,28 +194,6 @@ No string column of the committed fixtures carries an object.</p></li>
 <code><a href="cebl_teams.html">cebl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cebl_player_seasons</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">570965</span>, mode <span class="op">=</span> <span class="st">"PER_GAME"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CEBL Player Seasons from the CEBL Stats API ───────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:47 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 35</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   mode     competition player_id season is_career team_id team_name_en     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>025 FALSE          20 Ottawa BlackJacks</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">570</span>965   <span style="text-decoration: underline;">2</span>026 FALSE          20 Ottawa BlackJacks</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">570</span>965     <span style="color: #BB0000;">NA</span> TRUE           20 Ottawa BlackJacks</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 28 more variables: team_short_name_en &lt;chr&gt;, team_name_fr &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_short_name_fr &lt;chr&gt;, team_logo_url &lt;chr&gt;, played &lt;int&gt;, started &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   minutes &lt;dbl&gt;, points &lt;dbl&gt;, field_goals_made &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_attempted &lt;dbl&gt;, field_goal_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_points_made &lt;dbl&gt;, three_points_attempted &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_percentage &lt;dbl&gt;, free_throws_made &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_attempted &lt;dbl&gt;, free_throw_percentage &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

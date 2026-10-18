@@ -155,7 +155,8 @@ no rows, a season or game type layout-info does not list), <code>hoopR_bad_reque
 ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
 site's answer for an unknown uuid and is not retried), all inheriting <code>hoopR_error</code>. Wrappers raise; they
 never return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportality_team_upcoming_games.html">sportality_team_upcoming_games</a></span><span class="op">(</span>team_uuid <span class="op">=</span> <span class="st">"rfo82vr830"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketligaen Functions:
@@ -187,30 +188,6 @@ never return an empty frame.</p></li>
 <code><a href="sportality_team_stats.html">sportality_team_stats()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_team_upcoming_games</span><span class="op">(</span>team_uuid <span class="op">=</span> <span class="st">"rfo82vr830"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Team Upcoming Games from basketligaen.dk ─── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:02:48 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 41</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   date   time  game_uuid  start_date_time      state overtime shootout ssgt_uuid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 24 oct 15:00 oj01tktwv7 2026-10-24T15:00:00… pre-… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 30 oct 18:00 yt52r1gr0n 2026-10-30T18:00:00… pre-… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 4 nov  19:00 j6aymony3a 2026-11-04T19:00:00… pre-… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 6 nov  18:00 yoo9vpujpv 2026-11-06T18:00:00… pre-… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 13 nov 17:30 anfof00w5j 2026-11-13T17:30:00… pre-… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 33 more variables: home_team_status &lt;chr&gt;, home_team_uuid &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_owner_instance_id &lt;chr&gt;, home_team_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_code &lt;chr&gt;, home_team_names_short &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_long &lt;chr&gt;, home_team_names_full &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_code_site &lt;chr&gt;, home_team_names_short_site &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_full_site &lt;chr&gt;, home_team_names_long_site &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_score &lt;int&gt;, home_team_icon &lt;chr&gt;, away_team_status &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

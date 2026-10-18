@@ -244,7 +244,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_box_players(game_id = 6))
 #> ── TPBL Player Box Score from api.tpbl.basketball ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:15 UTC
+#> ℹ Data updated: 2026-10-18 17:44:03 UTC
 #> # A tibble: 35 × 137
 #>    game_id side  team_id team       gohoops_squad_id player_id gohoops_person_id
 #>      <int> <chr>   <int> <chr>                 <int>     <int>             <int>

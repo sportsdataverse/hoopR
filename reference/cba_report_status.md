@@ -121,6 +121,8 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_report_status(schedule_id = 100105799)
+
 ## See also
 
 Other CBA Functions:
@@ -150,17 +152,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_report_status(schedule_id = 100105799))
-#> ── CBA Report Status from data-server.cbaleague.com ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:26 UTC
-#> # A tibble: 1 × 2
-#>   schedule_id is_report
-#>         <int> <lgl>    
-#> 1   100105799 TRUE     
-# }
-```

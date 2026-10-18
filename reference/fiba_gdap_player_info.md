@@ -102,6 +102,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_player_info(player_id = 211501, comp = 208182)
+
 ## See also
 
 Other FIBA Functions:
@@ -141,24 +143,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_player_info(player_id = 211501, comp = 208182))
-#> ── FIBA gdap_player_info from fiba.basketball ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:13 UTC
-#> # A tibble: 1 × 28
-#>   player_id competition_id competition_team_id organisation_id first_name
-#>       <int>          <int>               <int>           <int> <chr>     
-#> 1    211501         208182              279569              64 Isaac     
-#> # ℹ 23 more variables: last_name <chr>, height_cm <int>, height_ft_in <chr>,
-#> #   club_name <chr>, club_code <chr>, is_player_free_agent <lgl>,
-#> #   points_per_game <dbl>, rank_points_per_game <dbl>, rebounds_per_game <dbl>,
-#> #   rank_rebounds_per_game <dbl>, assists_per_game <dbl>,
-#> #   rank_assists_per_game <dbl>,
-#> #   points_per_game_per_competition_category <dbl>,
-#> #   rebounds_per_game_per_competition_category <dbl>, …
-# }
-```

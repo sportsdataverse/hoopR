@@ -71,6 +71,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_gateway_competition_ids(start_date = "2025-01-14", end_date = "2025-01-16")
+
 ## See also
 
 Other FIBA Functions:
@@ -110,22 +112,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_gateway_competition_ids(start_date = "2025-01-14", end_date = "2025-01-16"))
-#> ── FIBA gdap_gateway_competition_ids from fiba.basketball ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:08 UTC
-#> # A tibble: 6 × 1
-#>   competition_id
-#>            <int>
-#> 1         208898
-#> 2         208884
-#> 3         208850
-#> 4         208858
-#> 5         208857
-#> 6         208856
-# }
-```

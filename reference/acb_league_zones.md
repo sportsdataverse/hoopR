@@ -93,6 +93,8 @@ are always these, in this order (sdv-py `acb_league_zones`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_league_zones(season = 2027)
+
 ## See also
 
 Other ACB Functions:
@@ -140,26 +142,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_league_zones(season = 2027))
-#> ── ACB League Zones from api2.acb.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:52 UTC
-#> # A tibble: 10 × 8
-#>    competition_id edition_id season phase_id zone   attempts  made points_scored
-#>             <int>      <int>  <int>    <int> <chr>     <int> <int>         <int>
-#>  1              1         91   2027       NA corne…      202    76           228
-#>  2              1         91   2027       NA corne…      183    77           231
-#>  3              1         91   2027       NA mid_r…       75    35            70
-#>  4              1         91   2027       NA mid_r…      171    50           100
-#>  5              1         91   2027       NA mid_r…      173    63           126
-#>  6              1         91   2027       NA paint      1004   452           904
-#>  7              1         91   2027       NA restr…     1210   862          1724
-#>  8              1         91   2027       NA top_t…      896   301           903
-#>  9              1         91   2027       NA wing_…      343   107           321
-#> 10              1         91   2027       NA wing_…      327   120           360
-# }
-```

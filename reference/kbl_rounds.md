@@ -113,6 +113,8 @@ tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_rounds(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -137,22 +139,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_rounds(season = 2025))
-#> ── KBL Rounds from api.kbl.or.kr ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:36 UTC
-#> # A tibble: 6 × 7
-#>   season season_code game_code glkey  round from_date  to_date   
-#>    <int>       <int> <chr>     <chr>  <int> <date>     <date>    
-#> 1   2025          45 01        S45G01     1 2024-10-19 2024-11-10
-#> 2   2025          45 01        S45G01     2 2024-11-11 2024-12-17
-#> 3   2025          45 01        S45G01     3 2024-12-18 2025-01-11
-#> 4   2025          45 01        S45G01     4 2025-01-11 2025-02-07
-#> 5   2025          45 01        S45G01     5 2025-02-08 2025-03-16
-#> 6   2025          45 01        S45G01     6 2025-03-16 2025-04-08
-# }
-```

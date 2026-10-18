@@ -117,6 +117,8 @@ API added later:
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_next_game_day()
+
 ## See also
 
 Other Basketligaen Functions:
@@ -146,24 +148,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_next_game_day())
-#> ── Basketligaen Next Game Day from basketligaen.dk ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:31 UTC
-#> # A tibble: 1 × 39
-#>   game_uuid  start_date_time  state overtime shootout ssgt_uuid home_team_status
-#>   <chr>      <chr>            <chr> <lgl>    <chr>    <chr>     <chr>           
-#> 1 blhiuqttjk 2026-10-19T17:0… pre-… FALSE    NA       xs07bd3f… N/A             
-#> # ℹ 32 more variables: home_team_uuid <chr>, home_team_owner_instance_id <chr>,
-#> #   home_team_code <chr>, home_team_names_code <chr>,
-#> #   home_team_names_short <chr>, home_team_names_long <chr>,
-#> #   home_team_names_full <chr>, home_team_names_code_site <chr>,
-#> #   home_team_names_short_site <chr>, home_team_names_full_site <chr>,
-#> #   home_team_names_long_site <chr>, home_team_score <int>,
-#> #   home_team_icon <chr>, away_team_status <chr>, away_team_uuid <chr>, …
-# }
-```

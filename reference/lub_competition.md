@@ -316,6 +316,9 @@ unchecked.
 Access, proxy and error notes: see
 [`genius_game()`](https://hoopR.sportsdataverse.org/reference/genius_game.md).
 
+     lub_competitions()
+     lub_schedule()
+
 ## See also
 
 Other Genius:
@@ -337,47 +340,3 @@ Other Genius:
 [`lnbm_competition`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md),
 [`slb_competition`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lub_competitions())
-#> ── Genius LiveStats competitions ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:44:33 UTC
-#> # A tibble: 139 × 8
-#>    org   comp_id label               league_id  year season season_rule selected
-#>    <chr>   <int> <chr>                   <int> <int>  <int> <chr>       <lgl>   
-#>  1 FUBB    39237 2024                       16  2024   2025 genius yea… FALSE   
-#>  2 FUBB    50123 Amistosos LUB 2026         16  2026   2027 genius yea… FALSE   
-#>  3 FUBB    34366 CAMPEONATO SALTEÑO…        16  2022   2023 genius yea… FALSE   
-#>  4 FUBB    36575 Campeonato Salteño…        16  2023   2024 genius yea… FALSE   
-#>  5 FUBB    25982 COPA BIGUA 2019            16  2019   2020 genius yea… FALSE   
-#>  6 FUBB    41426 Divisional Tercera…        16  2025   2026 genius yea… FALSE   
-#>  7 FUBB    21876 DTA 2018                   16  2018   2019 genius yea… FALSE   
-#>  8 FUBB    25182 DTA 2019                   16  2019   2020 genius yea… FALSE   
-#>  9 FUBB    29746 DTA 2021                   16  2021   2022 genius yea… FALSE   
-#> 10 FUBB    34410 DTA 2022                   16  2022   2023 genius yea… FALSE   
-#> # ℹ 129 more rows
-  try(lub_schedule())
-#> ── Genius LiveStats schedule ─────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:44:45 UTC
-#> # A tibble: 132 × 16
-#>    match_id link_match_id comp_id org   status    date_time venue_id venue_name
-#>       <int>         <int>   <int> <chr> <chr>     <chr>        <int> <chr>     
-#>  1  2919690       2919690   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  2  2919699       2919699   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  3  2919711       2919711   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  4  2919724       2919724   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  5  2919736       2919736   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  6  2919740       2919740   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  7  2919741       2919741   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  8  2919747       2919747   48785 FUBB  SCHEDULED NA             647 Aguada    
-#>  9  2919775       2919775   48785 FUBB  SCHEDULED NA             647 Aguada    
-#> 10  2919794       2919794   48785 FUBB  SCHEDULED NA             647 Aguada    
-#> # ℹ 122 more rows
-#> # ℹ 8 more variables: home_team_id <int>, home_team_name <chr>,
-#> #   home_team_code <chr>, home_score <int>, away_team_id <int>,
-#> #   away_team_name <chr>, away_team_code <chr>, away_score <int>
-# }
-```

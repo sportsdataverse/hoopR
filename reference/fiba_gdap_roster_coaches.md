@@ -96,6 +96,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_roster_coaches(team_id = 279569)
+
 ## See also
 
 Other FIBA Functions:
@@ -135,24 +137,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_roster_coaches(team_id = 279569))
-#> ── FIBA gdap_roster_coaches from fiba.basketball ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:18 UTC
-#> # A tibble: 2 × 19
-#>   team_id team_code team_name organisation_id competition_id person_id
-#>     <int> <chr>     <chr>               <int>          <int>     <int>
-#> 1  279569 GER       Germany                64         208182     15177
-#> 2  279569 GER       Germany                64         208182    308590
-#> # ℹ 13 more variables: first_name <chr>, last_name <chr>, gender <chr>,
-#> #   `function` <chr>, is_head_coach <int>, is_assistant_coach <int>,
-#> #   is_accompanying_coach <lgl>, coach_display_order <int>,
-#> #   is_on_final_roster <lgl>, nationalities <chr>,
-#> #   coach_license_organisation_name <chr>, coach_license_country_code <chr>,
-#> #   final_roster_member_status_code <chr>
-# }
-```

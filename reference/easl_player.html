@@ -166,7 +166,8 @@ non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for a
 retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
 stalled sync on the active season; a body for another game, season, team or player than the one asked for).
 Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/easl_player.html">easl_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="st">"85c99dab-9f67-11f0-8780-a731edb5aad5"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -189,22 +190,6 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
 <code><a href="easl_teams.html">easl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_player</span><span class="op">(</span>player_id <span class="op">=</span> <span class="st">"85c99dab-9f67-11f0-8780-a731edb5aad5"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Player from easl.joshricha.com ───────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:36:10 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 18</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   player_row_id player_id   name  name_latin name_abbreviated nationality gender</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>           164 85c99dab-9… D.J.… D.J. NEWB… <span style="color: #BB0000;">NA</span>               USA         MALE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 11 more variables: dob &lt;date&gt;, height_cm &lt;int&gt;, height_feet &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   weight_kg &lt;int&gt;, weight_lbs &lt;int&gt;, status &lt;chr&gt;, jersey_number &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   position &lt;chr&gt;, organization_id &lt;chr&gt;, created_at &lt;chr&gt;, updated_at &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

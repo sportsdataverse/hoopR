@@ -72,6 +72,8 @@ and Dutch (one row per language and key). An empty valid answer raises
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_ui_strings()
+
 ## See also
 
 Other BNXT League Functions:
@@ -102,27 +104,3 @@ Other BNXT League Functions:
 [`sportpress_team_player_averages()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_player_averages.md),
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_ui_strings())
-#> ── BNXT League UI Strings from Sportpress ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:40 UTC
-#> # A tibble: 894 × 3
-#>    language key                      text                                       
-#>    <chr>    <chr>                    <chr>                                      
-#>  1 en       welcome                  ENWelcome                                  
-#>  2 en       events.pageTitle         EXPLORE OUR OFFICIAL BNXT EVENTS HERE & BU…
-#>  3 en       newsandvideos.pageTitle  EXPLORE NEWS AND VIDEO HIGHLIGHTS          
-#>  4 en       loadMore                 Load more                                  
-#>  5 en       newsandvideos.headTitle  NEWS & VIDEO                               
-#>  6 en       events.header.title      EVENTS                                     
-#>  7 en       events.header.subtitle   DISCOVER THE WORLD OF BNXT LEAGUE          
-#>  8 en       calendar.header.title    CALENDAR                                   
-#>  9 en       calendar.header.subtitle DISCOVER THE WORLD OF BNXT LEAGUE          
-#> 10 en       calendar.pageTitle       EXPLORE BNXT CALENDAR TO SEE PAST AND UPCO…
-#> # ℹ 884 more rows
-# }
-```

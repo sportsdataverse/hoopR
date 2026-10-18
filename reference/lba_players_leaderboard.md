@@ -91,6 +91,8 @@ after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_players_leaderboard(season = 2027, category = "points")
+
 ## See also
 
 Other LBA Functions:
@@ -112,30 +114,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_players_leaderboard(season = 2027, category = "points"))
-#> ── LBA Players Leaderboard from legabasket.it ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:59 UTC
-#> # A tibble: 50 × 16
-#>    season category player_id name     surname team_name            tv_name  year
-#>     <int> <chr>        <int> <chr>    <chr>   <chr>                <chr>   <int>
-#>  1   2027 points        6191 JP       Macura  Nutribullet Treviso… Nutrib…  2026
-#>  2   2027 points        9328 Quincy   Olivari Dolomiti Energia Tr… Dolomi…  2026
-#>  3   2027 points        4879 DeWayne  Russell Nutribullet Treviso… Nutrib…  2026
-#>  4   2027 points        7079 Kyle     Wiltjer Umana Reyer Venezia  Umana …  2026
-#>  5   2027 points        6604 Colbey   Ross    Pallacanestro Tries… Pallac…  2026
-#>  6   2027 points        6640 Riccardo Rossato UNA Hotels Reggio E… UNA Ho…  2026
-#>  7   2027 points         314 Jaylen   Barford UNA Hotels Reggio E… UNA Ho…  2026
-#>  8   2027 points        9334 Hunter   Hale    Openjobmetis Varese  Openjo…  2026
-#>  9   2027 points        9302 Raequan  Battle  APU Old Wild West U… APU Ol…  2026
-#> 10   2027 points        6138 Niccolò  Mannion BC Roma              BC Roma  2026
-#> # ℹ 40 more rows
-#> # ℹ 8 more variables: category_filter_total <int>, attempts <int>,
-#> #   presences <int>, minutes <dbl>, score_40_min <dbl>, score <dbl>,
-#> #   team_id <int>, player_photo_key <chr>
-# }
-```

@@ -125,6 +125,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_team_stats_coaches(season = 2026)
+
 ## See also
 
 Other VTB Functions:
@@ -165,31 +167,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_team_stats_coaches(season = 2026))
-#> ── VTB Infobasket Team Stats Coaches from org.infobasket.su ────────────────────
-#> ℹ Data updated: 2026-10-18 16:05:11 UTC
-#> # A tibble: 41 × 19
-#>    season team_id person_id player_number display_number is_active active_status
-#>     <int>   <int>     <int>         <int> <chr>          <lgl>     <chr>        
-#>  1   2026     682    129117             1 1              FALSE     NA           
-#>  2   2026     682    394083             1 1              FALSE     NA           
-#>  3   2026     682      8752             2 2              FALSE     NA           
-#>  4   2026     682     25851             2 2              FALSE     NA           
-#>  5   2026     688    146014             1 1              FALSE     NA           
-#>  6   2026     688    492790             1 1              FALSE     NA           
-#>  7   2026     688    144480             2 2              FALSE     NA           
-#>  8   2026    2994    148384             1 1              FALSE     NA           
-#>  9   2026    2994    135181             1 1              FALSE     NA           
-#> 10   2026    2994    133514             1 1              FALSE     NA           
-#> # ℹ 31 more rows
-#> # ℹ 12 more variables: foul_c <int>, foul_b <int>, foul_d <int>, foul <int>,
-#> #   game_count <int>, person_last_name_ru <chr>, person_last_name_en <chr>,
-#> #   person_first_name_ru <chr>, person_first_name_en <chr>,
-#> #   person_full_name_ru <chr>, person_full_name_en <chr>, person_gender <int>
-# }
-```

@@ -159,7 +159,8 @@ refused, and no frame keeps a url.</p></li>
 rotation lists), <code>hoopR_bad_request</code> (a uuid that is not a uuid, a <code>gid</code> that is not an integer, HTTP 400 /
 422) and <code>hoopR_asset_fetch</code> (any other failed or wrong answer, including a <code>gid</code> whose game has another uuid
 and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up to three attempts.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/pleague_preciser_win_probability.html">pleague_preciser_win_probability</a></span><span class="op">(</span>uuid <span class="op">=</span> <span class="st">"e6f98675-3e5b-11ed-949e-5d17350689cf"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other P. LEAGUE+ Functions:
@@ -183,29 +184,6 @@ and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up 
 <code><a href="pleague_team_crosswalk.html">pleague_team_crosswalk()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pleague_preciser_win_probability</span><span class="op">(</span>uuid <span class="op">=</span> <span class="st">"e6f98675-3e5b-11ed-949e-5d17350689cf"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── P. LEAGUE+ Win Probability from api.preciser.io ───────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:01:25 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 49 × 3</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_uuid                            minute home_win_pct</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> e6f98675-3e5b-11ed-949e-5d17350689cf      0           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> e6f98675-3e5b-11ed-949e-5d17350689cf      1           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> e6f98675-3e5b-11ed-949e-5d17350689cf      2           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> e6f98675-3e5b-11ed-949e-5d17350689cf      3           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> e6f98675-3e5b-11ed-949e-5d17350689cf      4           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> e6f98675-3e5b-11ed-949e-5d17350689cf      5           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> e6f98675-3e5b-11ed-949e-5d17350689cf      6           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> e6f98675-3e5b-11ed-949e-5d17350689cf      7           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> e6f98675-3e5b-11ed-949e-5d17350689cf      8           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> e6f98675-3e5b-11ed-949e-5d17350689cf      9           50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 39 more rows</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

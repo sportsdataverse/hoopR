@@ -78,6 +78,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_medal_count(family_id = 201)
+
 ## See also
 
 Other FIBA Functions:
@@ -117,29 +119,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_medal_count(family_id = 201))
-#> ── FIBA gdap_medal_count from fiba.basketball ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:10 UTC
-#> # A tibble: 64 × 9
-#>    team_name    organisation_id fiba_code team_zone_code  rank total_first_rank
-#>    <chr>                  <int> <chr>     <chr>          <int>            <int>
-#>  1 USA                      154 USA       NAM                1                5
-#>  2 Yugoslavia               164 YUG       E                  2                5
-#>  3 Soviet Union             977 URS       E                  3                3
-#>  4 Brazil                    27 BRA       SAM                4                2
-#>  5 Spain                    138 ESP       E                  5                2
-#>  6 Argentina                 14 ARG       SAM                6                1
-#>  7 Germany                   64 GER       E                  7                1
-#>  8 Russia                   156 RUS       E                  8                0
-#>  9 Serbia                  8323 SRB       E                  8                0
-#> 10 Greece                    67 GRE       E                 10                0
-#> # ℹ 54 more rows
-#> # ℹ 3 more variables: total_second_rank <int>, total_third_rank <int>,
-#> #   total_participations <int>
-# }
-```

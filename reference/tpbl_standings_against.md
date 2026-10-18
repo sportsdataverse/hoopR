@@ -92,6 +92,8 @@ columns are always these, in this order (sdv-py
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_standings_against(division_id = 2)
+
 ## See also
 
 Other TPBL Functions:
@@ -110,28 +112,3 @@ Other TPBL Functions:
 [`tpbl_standings()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_standings_against(division_id = 2))
-#> ── TPBL Head-to-Head Standings from api.tpbl.basketball ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:26 UTC
-#> # A tibble: 42 × 8
-#>    division_id team_id opponent_team_id opponent_gohoops_team_id opponent    won
-#>          <int>   <int>            <int>                    <int> <chr>     <int>
-#>  1           2       7                3                      941 福爾摩沙夢想家……     2
-#>  2           2       7                2                      940 高雄全家海神……     5
-#>  3           2       7                8                      946 臺北台新戰神……     4
-#>  4           2       7                5                      943 桃園台啤永豐雲豹…     4
-#>  5           2       7                6                      944 新北中信特攻……     5
-#>  6           2       7                4                      942 新竹御嵿攻城獅……     6
-#>  7           2       3                7                      945 新北國王      4
-#>  8           2       3                2                      940 高雄全家海神……     4
-#>  9           2       3                8                      946 臺北台新戰神……     4
-#> 10           2       3                5                      943 桃園台啤永豐雲豹…     2
-#> # ℹ 32 more rows
-#> # ℹ 2 more variables: lost <int>, drawn <int>
-# }
-```

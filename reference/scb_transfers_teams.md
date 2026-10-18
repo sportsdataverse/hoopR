@@ -77,6 +77,8 @@ row per move with its direction (BBL only). An empty valid answer raises
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_transfers_teams()
+
 ## See also
 
 Other SCB Functions:
@@ -102,30 +104,3 @@ Other SCB Functions:
 [`scb_team_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_team_seasons.md),
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_transfers_teams())
-#> ── BBL/DBBL Team Transfers from the SCB API ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:03 UTC
-#> # A tibble: 416 × 13
-#>    team_id direction league transfer_date season_player_id real_player_id
-#>    <chr>   <chr>     <chr>  <chr>         <chr>                     <int>
-#>  1 527     joining   bbl    2026-08-13    1400009                   36443
-#>  2 527     joining   bbl    2026-08-13    2004073               140179040
-#>  3 527     joining   bbl    2026-09-09    2005083                   34096
-#>  4 527     joining   bbl    2026-08-13    2004013                   11422
-#>  5 527     joining   bbl    2026-08-13    2004015               140178650
-#>  6 527     joining   bbl    2026-08-13    2004012               140179566
-#>  7 527     joining   bbl    2026-08-13    2004011               140180933
-#>  8 527     joining   bbl    2026-08-13    1400011               140181771
-#>  9 527     joining   bbl    2026-08-13    2004009               140181778
-#> 10 527     joining   bbl    2026-08-13    2004032               140183263
-#> # ℹ 406 more rows
-#> # ℹ 7 more variables: first_name <chr>, last_name <chr>, position <chr>,
-#> #   source_team_id <chr>, source_team_name <chr>, destination_team_id <chr>,
-#> #   destination_team_name <chr>
-# }
-```

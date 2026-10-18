@@ -95,6 +95,8 @@ or the answer is not the one asked for (a page for another game, season
 or league, an unfinished game, a helper that does not belong to the
 game, layout drift). All inherit `hoopR_error`.
 
+     aba_score_flow(game_no = 6, season = 2026)
+
 ## See also
 
 Other ABA:
@@ -109,27 +111,3 @@ Other ABA:
 [`aba_score_difference()`](https://hoopR.sportsdataverse.org/reference/aba_score_difference.md),
 [`aba_shots()`](https://hoopR.sportsdataverse.org/reference/aba_shots.md),
 [`aba_standings()`](https://hoopR.sportsdataverse.org/reference/aba_standings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(aba_score_flow(game_no = 6, season = 2026))
-#> ── ABA League Score Flow ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:33 UTC
-#> # A tibble: 46 × 7
-#>    game_no season league_id league minute home_score away_score
-#>      <int>  <int>     <int> <chr>   <int>      <int>      <int>
-#>  1       6   2026         1 aba         0          0          0
-#>  2       6   2026         1 aba         1          4          2
-#>  3       6   2026         1 aba         2          4          6
-#>  4       6   2026         1 aba         3         10          6
-#>  5       6   2026         1 aba         4         13          8
-#>  6       6   2026         1 aba         5         15          8
-#>  7       6   2026         1 aba         6         19         10
-#>  8       6   2026         1 aba         7         23         11
-#>  9       6   2026         1 aba         8         24         14
-#> 10       6   2026         1 aba         9         26         18
-#> # ℹ 36 more rows
-# }
-```

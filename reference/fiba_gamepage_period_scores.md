@@ -146,7 +146,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gamepage_period_scores(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_period_scores from fiba.basketball ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:56 UTC
+#> ℹ Data updated: 2026-10-18 17:23:13 UTC
 #> # A tibble: 8 × 8
 #>   game_id competition_id team_side organisation_id period period_number points
 #>     <int>          <int> <chr>               <int> <chr>          <int>  <int>

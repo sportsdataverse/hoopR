@@ -124,6 +124,8 @@ this frame is a zero-row tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_comp_issue(season = 2026)
+
 ## See also
 
 Other VTB Functions:
@@ -164,31 +166,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_comp_issue(season = 2026))
-#> ── VTB Infobasket Comp Issue from org.infobasket.su ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:40 UTC
-#> # A tibble: 11 × 17
-#>    season season_comp_id level comp_id parent_comp_id comp_type comp_sort
-#>     <int>          <int> <int>   <int>          <int>     <int>     <int>
-#>  1   2026          50714     1   55623          50714         0         1
-#>  2   2026          50714     1   54281          50714        10         2
-#>  3   2026          50714     2   54282          54281         5         1
-#>  4   2026          50714     2   54283          54281         5         2
-#>  5   2026          50714     2   54284          54281         5         3
-#>  6   2026          50714     2   54285          54281         5         4
-#>  7   2026          50714     2   54286          54281         7         1
-#>  8   2026          50714     2   54287          54281         7         2
-#>  9   2026          50714     2   54288          54281         7         1
-#> 10   2026          50714     2   54289          54281         5         2
-#> 11   2026          50714     1   50720          50714         0        10
-#> # ℹ 10 more variables: comp_round <int>, comp_short_name_ru <chr>,
-#> #   comp_short_name_en <chr>, comp_abc_name_ru <chr>, comp_abc_name_en <chr>,
-#> #   comp_gender <int>, comp_state <int>, is_public <lgl>, note_ru <chr>,
-#> #   note_en <chr>
-# }
-```

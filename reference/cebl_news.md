@@ -87,6 +87,8 @@ this order (sdv-py `cebl_news`):
   `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
+     cebl_news(language = "en")
+
 ## See also
 
 Other CEBL Functions:
@@ -101,14 +103,3 @@ Other CEBL Functions:
 [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md),
 [`cebl_team_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_team_stats.md),
 [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cebl_news(language = "en"))
-#> Error in cebl_news(language = "en") : 
-#>   api.data.cebl.ca/news/articles/en/: no rows (an unknown season, team or
-#> player, or nothing played yet)
-# }
-```

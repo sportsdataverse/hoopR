@@ -96,6 +96,8 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_next_matches(org = "nbl", season = 2027)
+
 ## See also
 
 Other NBL Rosetta:
@@ -120,29 +122,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_next_matches(org = "nbl", season = 2027))
-#> ── NBL Rosetta next_matches from prod.rosetta.nbl.com.au ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:00:55 UTC
-#> # A tibble: 10 × 16
-#>    org   rosetta_team_id      team_name team_code division conference match_slug
-#>    <chr> <chr>                <chr>     <chr>     <chr>    <chr>      <chr>     
-#>  1 nbl   0602b1bc-8dfb-488c-… Tasmania… TAS       NA       NA         tasmania-…
-#>  2 nbl   f8185bc5-2674-4293-… Brisbane… BRI       NA       NA         tasmania-…
-#>  3 nbl   105249a3-251d-4a9d-… Illawarr… ILL       NA       NA         illawarra…
-#>  4 nbl   39fc4268-0cdf-455f-… Sydney K… SYD       NA       NA         illawarra…
-#>  5 nbl   bc5327d5-322e-4796-… Perth Wi… PER       NA       NA         perth-wil…
-#>  6 nbl   41c8f340-4d0a-4d68-… Melbourn… MEL       NA       NA         perth-wil…
-#>  7 nbl   3bdb8ad6-7cf0-464d-… South Ea… SEM       NA       NA         south-eas…
-#>  8 nbl   3164912c-7e74-463b-… Adelaide… ADL       NA       NA         south-eas…
-#>  9 nbl   6bf2a6e3-2626-491d-… Cairns T… CNS       NA       NA         cairns-ta…
-#> 10 nbl   bbae77db-317d-4c17-… NZ Break… NZL       NA       NA         cairns-ta…
-#> # ℹ 9 more variables: match_title <chr>, start_time_datetime <chr>,
-#> #   is_home <lgl>, opponent_name <chr>, venue <chr>, match_id <chr>,
-#> #   rosetta_match_id <chr>, rosetta_opponent_id <chr>, season_end_year <int>
-# }
-```

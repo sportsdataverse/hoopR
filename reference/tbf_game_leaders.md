@@ -74,6 +74,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_game_leaders(match_id = 346279)
+
 ## See also
 
 Other TBF:
@@ -108,28 +110,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_game_leaders(match_id = 346279))
-#> ── TBF Game Leaders ──────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:43 UTC
-#> # A tibble: 55 × 9
-#>    match_id category        category_label    rank side  player_id player_name  
-#>       <int> <chr>           <chr>            <int> <chr>     <int> <chr>        
-#>  1   346279 VerimlilikPuanı Verimlilik Puanı     1 away     778310 Zach Hankins 
-#>  2   346279 VerimlilikPuanı Verimlilik Puanı     2 away     501076 Quentin Pete…
-#>  3   346279 VerimlilikPuanı Verimlilik Puanı     3 home     778401 Bryce Jones  
-#>  4   346279 VerimlilikPuanı Verimlilik Puanı     4 home     508900 Jamuni McNea…
-#>  5   346279 VerimlilikPuanı Verimlilik Puanı     5 home     196413 Yiğitcan Say…
-#>  6   346279 Sayi            Sayı                 1 away     501076 Quentin Pete…
-#>  7   346279 Sayi            Sayı                 2 home     196413 Yiğitcan Say…
-#>  8   346279 Sayi            Sayı                 3 away     778310 Zach Hankins 
-#>  9   346279 Sayi            Sayı                 4 home     778402 Zach Nutall  
-#> 10   346279 Sayi            Sayı                 5 home     778401 Bryce Jones  
-#> # ℹ 45 more rows
-#> # ℹ 2 more variables: jersey_number <chr>, value <dbl>
-# }
-```

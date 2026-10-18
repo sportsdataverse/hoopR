@@ -170,7 +170,8 @@ malformed id or league slug, a lang other than en or ru, or a season the competi
 final or a stub, a partial or possibly truncated page, or a body for another game, person, team, competition,
 league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
 warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/vtb_infobasket_game_staff.html">vtb_infobasket_game_staff</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">921391</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other VTB Functions:
@@ -213,37 +214,6 @@ warn and return empty.</p></li>
 <code><a href="vtb_league_seasons.html">vtb_league_seasons()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">vtb_infobasket_game_staff</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">921391</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── VTB Infobasket Game Staff from org.infobasket.su ──────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:04:45 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 17 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id team_number team_id start_id start_type role         pos_id person_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>        3          4 referee         101    <span style="text-decoration: underline;">126</span>593</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>        4          4 referee         102      <span style="text-decoration: underline;">3</span>474</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>        5          4 referee         103      <span style="text-decoration: underline;">1</span>140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>        6          4 commissioner    104    <span style="text-decoration: underline;">126</span>584</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       42          4 table offic…    111    <span style="text-decoration: underline;">154</span>032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       51          4 table offic…    112    <span style="text-decoration: underline;">190</span>505</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       44          4 table offic…    113    <span style="text-decoration: underline;">149</span>688</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       45          4 table offic…    114    <span style="text-decoration: underline;">320</span>677</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       46          4 table offic…    115    <span style="text-decoration: underline;">430</span>018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       47          4 table offic…    121    <span style="text-decoration: underline;">154</span>041</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       48          4 table offic…    120     <span style="text-decoration: underline;">25</span>469</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       49          4 table offic…    120    <span style="text-decoration: underline;">154</span>042</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>  <span style="text-decoration: underline;">921</span>391           0      <span style="color: #BB0000;">NA</span>       50          4 table offic…    123    <span style="text-decoration: underline;">160</span>922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>  <span style="text-decoration: underline;">921</span>391           1    <span style="text-decoration: underline;">2</span>650       21          3 head coach     <span style="text-decoration: underline;">1</span>000    <span style="text-decoration: underline;">131</span>047</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>  <span style="text-decoration: underline;">921</span>391           1    <span style="text-decoration: underline;">2</span>650       22          3 assistant c…   <span style="text-decoration: underline;">1</span>001    <span style="text-decoration: underline;">260</span>113</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>  <span style="text-decoration: underline;">921</span>391           2    <span style="text-decoration: underline;">1</span>390       39          3 head coach     <span style="text-decoration: underline;">1</span>000    <span style="text-decoration: underline;">133</span>514</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>  <span style="text-decoration: underline;">921</span>391           2    <span style="text-decoration: underline;">1</span>390       40          3 assistant c…   <span style="text-decoration: underline;">1</span>001    <span style="text-decoration: underline;">135</span>681</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: person_name_en &lt;chr&gt;, person_name_ru &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   country_code_ioc &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

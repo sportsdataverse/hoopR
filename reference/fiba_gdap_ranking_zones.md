@@ -65,6 +65,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_ranking_zones()
+
 ## See also
 
 Other FIBA Functions:
@@ -104,21 +106,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_ranking_zones())
-#> ── FIBA gdap_ranking_zones from fiba.basketball ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:15 UTC
-#> # A tibble: 5 × 3
-#>   zone_ranking_id code  official_name
-#>             <int> <chr> <chr>        
-#> 1               1 W     World        
-#> 2               2 AF    Africa       
-#> 3               3 AM    Americas     
-#> 4               4 AS    Asia         
-#> 5               5 EU    Europe       
-# }
-```

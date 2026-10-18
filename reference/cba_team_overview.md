@@ -153,6 +153,8 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_team_overview(team_id = 29128)
+
 ## See also
 
 Other CBA Functions:
@@ -182,32 +184,3 @@ Other CBA Functions:
 [`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_team_overview(team_id = 29128))
-#> ── CBA Team Overview from data-server.cbaleague.com ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:35 UTC
-#> # A tibble: 21 × 19
-#>    bout_no_points bout_no_points_rank bout_no_points_sort bout_point_sort
-#>             <dbl>               <dbl>               <dbl>           <dbl>
-#>  1           112.                   8                1.12            1.18
-#>  2           108.                   2                1.08            1.20
-#>  3           105.                   1                1.05            1.18
-#>  4           109.                   5                1.09            1.16
-#>  5           106.                  11                1.06            1.08
-#>  6           104.                   5                1.04            1.23
-#>  7           114.                  11                1.14            1.18
-#>  8           107.                   3                1.07            1.13
-#>  9           112.                   4                1.12            1.20
-#> 10           110.                   1                1.10            1.23
-#> # ℹ 11 more rows
-#> # ℹ 15 more variables: bout_points <dbl>, bout_points_rank <dbl>,
-#> #   bout_subtract_points <dbl>, bout_subtract_points_rank <dbl>,
-#> #   bout_subtract_points_sort <dbl>, is_avg <int>, loss_num <dbl>,
-#> #   player_times <dbl>, rhythm <dbl>, rhythm_rank <dbl>, season <int>,
-#> #   team_id <int>, team_name <chr>, win_num <dbl>, win_rate <dbl>
-# }
-```

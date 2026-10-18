@@ -159,6 +159,10 @@ season id, an org or season type with nothing, or no season in progress); <code>
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 <code>hoopR_bad_request</code> for an unknown <code>org</code> / <code>season_type</code>, a malformed id, or HTTP 400 / 422.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl_rosetta_player_game_log.html">nbl_rosetta_player_game_log</a></span><span class="op">(</span></span>
+<span>   org <span class="op">=</span> <span class="st">"nbl"</span>, participated <span class="op">=</span> <span class="fl">1</span>, player_id <span class="op">=</span> <span class="st">"7619d3ea-410d-11f0-9235-2902fc2f936f"</span>,</span>
+<span>   season <span class="op">=</span> <span class="fl">2026</span></span>
+<span> <span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -186,38 +190,6 @@ another org, season or entity than the one asked for, or any other failed fetch;
 <code><a href="nbl_rosetta_teams.html">nbl_rosetta_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl_rosetta_player_game_log</span><span class="op">(</span></span></span>
-<span class="r-in"><span>    org <span class="op">=</span> <span class="st">"nbl"</span>, participated <span class="op">=</span> <span class="fl">1</span>, player_id <span class="op">=</span> <span class="st">"7619d3ea-410d-11f0-9235-2902fc2f936f"</span>,</span></span>
-<span class="r-in"><span>    season <span class="op">=</span> <span class="fl">2026</span></span></span>
-<span class="r-in"><span>  <span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBL Rosetta player_game_log from prod.rosetta.nbl.com.au ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:00:57 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 37 × 68</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    org   period playing_position points rebounds assists blocks steals turnovers</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nbl        0 G                    12        9       0      1      1         3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nbl        0 G                     8        3       2      0      0         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nbl        0 G                     3        1       1      0      0         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nbl        0 G                    20        3       5      0      1         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nbl        0 G                    18        2       2      1      3         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nbl        0 G                    12        4       2      0      3         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nbl        0 G                    14        6       1      0      1         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nbl        0 G                    11        6       2      0      1         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nbl        0 G                    12        2       0      0      3         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nbl        0 G                     3        1       0      0      0         0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 27 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 59 more variables: offensive_rebounds &lt;int&gt;, defensive_rebounds &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   personal_fouls &lt;int&gt;, three_points_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_points_made &lt;int&gt;, three_points_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   two_points_attempted &lt;int&gt;, two_points_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   two_points_percentage &lt;dbl&gt;, field_goals_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made &lt;int&gt;, field_goals_percentage &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

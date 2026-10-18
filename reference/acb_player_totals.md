@@ -182,6 +182,8 @@ are always these, in this order (sdv-py `acb_player_totals`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_player_totals(player_id = 20209407)
+
 ## See also
 
 Other ACB Functions:
@@ -229,24 +231,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_player_totals(player_id = 20209407))
-#> ── ACB Player Totals from api2.acb.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:06 UTC
-#> # A tibble: 1 × 93
-#>   player_id player_name first_name last_name shirt_number game_role
-#>       <int> <chr>       <chr>      <chr>     <chr>        <chr>    
-#> 1  20209407 Edy Tavares Walter     Tavares   22           NA       
-#> # ℹ 87 more variables: total_num_games <int>, total_time_played <int>,
-#> #   total_starter <int>, total_points <int>, total_max_points <int>,
-#> #   total_three_pointers_made <int>, total_three_pointers_attempted <int>,
-#> #   total_three_pointers_percentage <dbl>, total_two_pointers_made <int>,
-#> #   total_two_pointers_attempted <int>, total_two_pointers_percentage <dbl>,
-#> #   total_free_throws_made <int>, total_free_throws_attempted <int>,
-#> #   total_free_throws_percentage <dbl>, total_rebounds <int>, …
-# }
-```

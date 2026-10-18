@@ -137,7 +137,7 @@ Other FEB:
 # \donttest{
   try(feb_player_box(game_id = 2535725))
 #> ── FEB player box from intrafeb.feb.es ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:26 UTC
+#> ℹ Data updated: 2026-10-18 17:23:04 UTC
 #> # A tibble: 24 × 38
 #>    game_id team_side team_id team  player_id shirt_number player starter captain
 #>      <int> <chr>       <int> <chr>     <int> <chr>        <chr>  <lgl>   <lgl>  

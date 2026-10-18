@@ -96,6 +96,8 @@ division with its court position. An empty answer raises
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_player_shots(division_id = 2, player_id = 75)
+
 ## See also
 
 Other TPBL Functions:
@@ -114,27 +116,3 @@ Other TPBL Functions:
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_player_shots(division_id = 2, player_id = 75))
-#> ── TPBL Player Shots from api.tpbl.basketball ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:23 UTC
-#> # A tibble: 366 × 6
-#>    division_id player_id is_made point_x point_y offense_basket
-#>          <int>     <int> <lgl>     <int>   <int>          <int>
-#>  1           2        75 TRUE      18270    7200              1
-#>  2           2        75 TRUE       5530   10230              0
-#>  3           2        75 TRUE      24060    7310              1
-#>  4           2        75 FALSE      4480    7140              0
-#>  5           2        75 FALSE     24320   11800              1
-#>  6           2        75 TRUE      25480     390              1
-#>  7           2        75 TRUE      25860    8060              1
-#>  8           2        75 FALSE     20690   10070              1
-#>  9           2        75 FALSE     24700     510              1
-#> 10           2        75 FALSE      4100    3830              0
-#> # ℹ 356 more rows
-# }
-```

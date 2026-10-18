@@ -109,6 +109,8 @@ court x/y (2021-22 and 2026-27 only). An empty valid answer raises
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_game_film(competition_id = 25, game_id = 11295)
+
 ## See also
 
 Other BNXT League Functions:
@@ -139,33 +141,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_game_film(competition_id = 25, game_id = 11295))
-#> ── BNXT League Game Play-by-Play (Film) from Sportpress ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:02 UTC
-#> # A tibble: 645 × 24
-#>    game_id competition_id order period minute second team_side
-#>      <int>          <int> <int>  <int>  <int>  <int> <chr>    
-#>  1   11295             25     0      1      0     10 away     
-#>  2   11295             25     1      1      0     10 home     
-#>  3   11295             25     2      1      0     28 home     
-#>  4   11295             25     3      1      0     47 away     
-#>  5   11295             25     4      1      0     47 home     
-#>  6   11295             25     5      1      0     51 home     
-#>  7   11295             25     6      1      0     51 home     
-#>  8   11295             25     7      1      1     12 away     
-#>  9   11295             25     8      1      1     17 home     
-#> 10   11295             25     9      1      1     24 home     
-#> # ℹ 635 more rows
-#> # ℹ 17 more variables: competition_team_id <int>, team <chr>,
-#> #   team_short_name <chr>, event_code <int>, event_subcode <int>, x <int>,
-#> #   y <int>, home_score <int>, away_score <int>, player_id <int>,
-#> #   first_name <chr>, last_name <chr>, nationality_code <chr>,
-#> #   birth_date <date>, player2_id <int>, player2_first_name <chr>,
-#> #   player2_last_name <chr>
-# }
-```

@@ -132,7 +132,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_game_actions(game_id = "2006920"))
 #> ── BBL/DBBL Game Play-by-Play from the SCB API ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:40 UTC
+#> ℹ Data updated: 2026-10-18 17:42:43 UTC
 #> # A tibble: 516 × 20
 #>    league game_id action_id order_id action_identifier period game_time
 #>    <chr>  <chr>       <int>    <int> <chr>              <int> <chr>    

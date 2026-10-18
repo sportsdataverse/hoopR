@@ -189,7 +189,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_round_matches(round_id = 6017, season = 2027))
 #> ── ACB Round Matches from api2.acb.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:08 UTC
+#> ℹ Data updated: 2026-10-18 17:20:18 UTC
 #> # A tibble: 9 × 25
 #>   competition_id edition_id season round_id round_number subphase_id
 #>            <int>      <int>  <int>    <int>        <int>       <int>

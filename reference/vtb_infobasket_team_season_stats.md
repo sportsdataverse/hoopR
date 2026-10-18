@@ -173,6 +173,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_team_season_stats(season = 2026, team_id = 2650)
+
 ## See also
 
 Other VTB Functions:
@@ -213,24 +215,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_team_season_stats(season = 2026, team_id = 2650))
-#> ── VTB Infobasket Team Season Stats from org.infobasket.su ─────────────────────
-#> ℹ Data updated: 2026-10-18 16:05:06 UTC
-#> # A tibble: 1 × 57
-#>   season team_id game_count points shot1 goal1 shot2 goal2 shot3 goal3 shot23
-#>    <int>   <int>      <int>  <int> <int> <int> <int> <int> <int> <int>  <int>
-#> 1   2026    2650         53   4521  1317   992  2407  1256  1032   339   3439
-#> # ℹ 46 more variables: goal23 <int>, shot1_percent <dbl>, shot2_percent <dbl>,
-#> #   shot3_percent <dbl>, shot23_percent <dbl>, assist <int>, blocks <int>,
-#> #   def_rebound <int>, off_rebound <int>, rebound <int>, steal <int>,
-#> #   turnover <int>, team_def_rebound <int>, team_off_rebound <int>,
-#> #   team_rebound <int>, team_steal <int>, team_turnover <int>, kpi <int>,
-#> #   avg_points <dbl>, avg_assist <dbl>, avg_blocks <dbl>,
-#> #   avg_def_rebound <dbl>, avg_off_rebound <dbl>, avg_rebound <dbl>, …
-# }
-```

@@ -123,6 +123,8 @@ order (sdv-py `tpbl_box_team_periods`):
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_box_team_periods(game_id = 6)
+
 ## See also
 
 Other TPBL Functions:
@@ -141,31 +143,3 @@ Other TPBL Functions:
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_box_team_periods(game_id = 6))
-#> ── TPBL Team Box Score by Quarter from api.tpbl.basketball ─────────────────────
-#> ℹ Data updated: 2026-10-18 16:04:16 UTC
-#> # A tibble: 8 × 41
-#>   game_id side  team_id team     gohoops_squad_id period won_score time_on_court
-#>     <int> <chr>   <int> <chr>               <int>  <int>     <int>         <int>
-#> 1       6 home        4 新竹御嵿攻城獅…             8211      1        28          3600
-#> 2       6 home        4 新竹御嵿攻城獅…             8211      2        30          3600
-#> 3       6 home        4 新竹御嵿攻城獅…             8211      3        22          3600
-#> 4       6 home        4 新竹御嵿攻城獅…             8211      4        31          3600
-#> 5       6 away        8 臺北台新戰神……             8215      1        38          3600
-#> 6       6 away        8 臺北台新戰神……             8215      2        17          3600
-#> 7       6 away        8 臺北台新戰神……             8215      3        26          3600
-#> 8       6 away        8 臺北台新戰神……             8215      4        27          3600
-#> # ℹ 33 more variables: lost_score <int>, total_won_score <int>,
-#> #   total_lost_score <int>, field_goals_made <int>, field_goals_missed <int>,
-#> #   field_goals_attempted <int>, field_goals_percentage <dbl>,
-#> #   two_pointers_made <int>, two_pointers_missed <int>,
-#> #   two_pointers_attempted <int>, two_pointers_percentage <dbl>,
-#> #   three_pointers_made <int>, three_pointers_missed <int>,
-#> #   three_pointers_attempted <int>, three_pointers_percentage <dbl>, …
-# }
-```

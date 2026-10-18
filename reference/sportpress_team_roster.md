@@ -89,6 +89,8 @@ always these, in this order (sdv-py `sportpress_team_roster`):
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_team_roster(competition_team_id = 541)
+
 ## See also
 
 Other BNXT League Functions:
@@ -119,30 +121,3 @@ Other BNXT League Functions:
 [`sportpress_team_player_averages()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_player_averages.md),
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_team_roster(competition_team_id = 541))
-#> ── BNXT League Team Roster from Sportpress ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:39 UTC
-#> # A tibble: 12 × 13
-#>    roster_id competition_team_id jersey weight height active position_id
-#>        <int>               <int> <chr>   <int>  <int> <lgl>        <int>
-#>  1     11193                 541 "13"       NA    183 TRUE             2
-#>  2     11195                 541 "11"       82    190 TRUE             2
-#>  3     11443                 541 ""         91    197 TRUE             2
-#>  4     11445                 541 "24"      103    206 TRUE             5
-#>  5     11447                 541 "6"        88    188 TRUE             2
-#>  6     11449                 541 "26"       NA    195 TRUE             5
-#>  7     11451                 541 "9"        85    178 TRUE             1
-#>  8     11453                 541 "5"        88    191 TRUE             2
-#>  9     11455                 541 "32"       96    200 TRUE             3
-#> 10     11457                 541 "7"       107    205 TRUE             5
-#> 11     11459                 541 "8"        NA     NA TRUE             2
-#> 12     11461                 541 ""         NA    187 TRUE             1
-#> # ℹ 6 more variables: position <chr>, player_id <int>, first_name <chr>,
-#> #   last_name <chr>, nationality_code <chr>, birth_date <date>
-# }
-```

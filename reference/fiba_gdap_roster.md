@@ -144,7 +144,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_roster(team_id = 279569))
 #> ── FIBA gdap_roster from fiba.basketball ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:17 UTC
+#> ℹ Data updated: 2026-10-18 17:23:22 UTC
 #> # A tibble: 12 × 25
 #>    team_id team_code team_name organisation_id competition_id person_id
 #>      <int> <chr>     <chr>               <int>          <int>     <int>

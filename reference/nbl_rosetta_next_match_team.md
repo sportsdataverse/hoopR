@@ -139,6 +139,8 @@ another org, season or entity than the one asked for, or any other
 failed fetch; `hoopR_bad_request` for an unknown `org` / `season_type`,
 a malformed id, or HTTP 400 / 422.
 
+     nbl_rosetta_next_match_team(org = "nbl", season = 2027, team_code = "PER")
+
 ## See also
 
 Other NBL Rosetta:
@@ -163,24 +165,3 @@ Other NBL Rosetta:
 [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
 [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
 [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(nbl_rosetta_next_match_team(org = "nbl", season = 2027, team_code = "PER"))
-#> ── NBL Rosetta next_match_team from prod.rosetta.nbl.com.au ────────────────────
-#> ℹ Data updated: 2026-10-18 16:00:54 UTC
-#> # A tibble: 1 × 53
-#>   org   match_id   external_media_id date_updated start_time start_time_datetime
-#>   <chr> <chr>      <chr>             <chr>        <chr>      <chr>              
-#> 1 nbl   370d79db-… 72016832          2026-10-18T… 2026-10-2… 2026-10-21T08:30:00
-#> # ℹ 47 more variables: round <chr>, match_type <chr>, match_status <chr>,
-#> #   status <chr>, home_score <int>, away_score <int>, attendance <int>,
-#> #   match_slug <chr>, match_title <chr>, venue_id <chr>,
-#> #   rosetta_venue_id <chr>, venue_name <chr>, venue_address <chr>,
-#> #   venue_suburb <chr>, venue_state <chr>, venue_country <chr>,
-#> #   venue_capacity <int>, venue_timezone <chr>, venue_code <chr>,
-#> #   venue_latitude <dbl>, venue_longitude <dbl>, home_team_id <chr>, …
-# }
-```

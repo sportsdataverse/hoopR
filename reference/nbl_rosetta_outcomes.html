@@ -150,6 +150,7 @@ season id, an org or season type with nothing, or no season in progress); <code>
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 <code>hoopR_bad_request</code> for an unknown <code>org</code> / <code>season_type</code>, a malformed id, or HTTP 400 / 422.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nbl_rosetta_outcomes.html">nbl_rosetta_outcomes</a></span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2026</span>, season_type <span class="op">=</span> <span class="st">"regular"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -177,28 +178,6 @@ another org, season or entity than the one asked for, or any other failed fetch;
 <code><a href="nbl_rosetta_teams.html">nbl_rosetta_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">nbl_rosetta_outcomes</span><span class="op">(</span>org <span class="op">=</span> <span class="st">"nbl"</span>, season <span class="op">=</span> <span class="fl">2026</span>, season_type <span class="op">=</span> <span class="st">"regular"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBL Rosetta outcomes from prod.rosetta.nbl.com.au ─────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:00:56 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    org   team_name                wins losses last10 last5 last3 season_end_year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> nbl   Sydney Kings               29     11 WWWWW… WLWLW WLW              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> nbl   Adelaide 36ers             27     15 LLWLW… LWLWL LWL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> nbl   South East Melbourne P…    24     13 LWWLW… LWLWL LWL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> nbl   Perth Wildcats             22     15 WWWWL… WLWLL WLL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> nbl   Melbourne United           21     14 WWWLL… WLWWL WWL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> nbl   Tasmania JackJumpers       14     20 WLLLL… WWLLL LLL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> nbl   NZ Breakers                14     20 WLLWL… LWLWW LWW              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> nbl   Brisbane Bullets            6     27 LLLLL… LLLLL LLL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> nbl   Cairns Taipans              9     24 WLLLW… LLWLL WLL              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> nbl   Illawarra Hawks            13     20 LWWLL… WLLWW LWW              <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

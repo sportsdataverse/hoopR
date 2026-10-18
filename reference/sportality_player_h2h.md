@@ -146,6 +146,11 @@ documented columns come first, in this order (sdv-py
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_player_h2h(
+       away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
+       ssgt_uuid = "xs07bd3fmp"
+     )
+
 ## See also
 
 Other Basketligaen Functions:
@@ -175,36 +180,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_player_h2h(
-    away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
-    ssgt_uuid = "xs07bd3fmp"
-  ))
-#> ── Basketligaen Player Head-to-Head from basketligaen.dk ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:36 UTC
-#> # A tibble: 26 × 54
-#>    uuid       first_name  last_name  full_name  nationality gender jersey_number
-#>    <chr>      <chr>       <chr>      <chr>      <chr>       <chr>          <int>
-#>  1 m8ajfnag3m Caden       Fry        Caden Fry  US          male              23
-#>  2 rgccnz9pl4 Kaden       Sand       Kaden Sand US          male              32
-#>  3 zu0qp4mq65 Anders      Jellesmark Anders Je… DK          male               3
-#>  4 pe5gbypw8j Morten      Bülow      Morten Bü… DK          male              10
-#>  5 k1nh3mnqzp Julius      Aabling    Julius Aa… DK          male              10
-#>  6 lahvhy4c0z Jusaun      Holt       Jusaun Ho… US          male               4
-#>  7 cjcrt5hlho Bryceson    Burns      Bryceson … US          male               2
-#>  8 zq7gm2cf5y Dibaji      Walker     Dibaji Wa… US          male              35
-#>  9 fyeh5w7iar Oskar Fløng Vanner     Oskar Flø… DK          male               1
-#> 10 khm59ormd2 Sebastian   Reumert    Sebastian… DK          male               6
-#> # ℹ 16 more rows
-#> # ℹ 47 more variables: position <chr>, position_code <chr>, age_value <int>,
-#> #   age_format <chr>, height_value <int>, height_format <chr>,
-#> #   weight_value <int>, weight_format <chr>, team_uuid <chr>,
-#> #   team_instance_id <chr>, team_name <chr>, team_code <chr>, team_media <chr>,
-#> #   media_url <chr>, media_alt <chr>, media_srcset <chr>, season_stats <chr>,
-#> #   career_stats <chr>, match_stats_nr <int>, match_stats_pos <chr>, …
-# }
-```

@@ -202,6 +202,8 @@ per team and period (overtimes after the fourth). An empty answer raises
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_team_box_by_period(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3")
+
 ## See also
 
 Other EASL Functions:
@@ -222,31 +224,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_team_box_by_period(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
-#> ── EASL Team Box Score By Period from easl.joshricha.com ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:22 UTC
-#> # A tibble: 8 × 107
-#>   fixture_id      team_id team_name team_name_native period period_label assists
-#>   <chr>           <chr>   <chr>     <chr>             <int> <chr>          <int>
-#> 1 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      1 Q1                10
-#> 2 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      2 Q2                 3
-#> 3 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      3 Q3                 3
-#> 4 10af8fd4-106e-… 865489… Utsunomi… 宇都宮ブレックス      4 Q4                 3
-#> 5 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      1 Q1                 5
-#> 6 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      2 Q2                 5
-#> 7 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      3 Q3                 8
-#> 8 10af8fd4-106e-… f17004… Taoyuan … Taoyuan Pauian …      4 Q4                 6
-#> # ℹ 100 more variables: assists_against <int>, assists_defensive <int>,
-#> #   assists_turnover_ratio <dbl>, biggest_lead <int>,
-#> #   biggest_scoring_run <int>, blocks <int>, blocks_received <int>,
-#> #   dunks <int>, efficiency <int>, efficiency_custom <int>,
-#> #   field_goals_attempted <int>, field_goals_attempted_against <int>,
-#> #   field_goals_effective_percentage <dbl>, field_goals_made <int>,
-#> #   field_goals_made_against <int>, field_goals_percentage <dbl>, …
-# }
-```

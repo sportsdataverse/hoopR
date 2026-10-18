@@ -71,6 +71,8 @@ this order (sdv-py `sportpress_referees`):
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_referees()
+
 ## See also
 
 Other BNXT League Functions:
@@ -101,27 +103,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_referees())
-#> ── BNXT League Referees from Sportpress ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:29 UTC
-#> # A tibble: 40 × 4
-#>    staff_id name                     title_id title_name
-#>       <int> <chr>                       <int> <chr>     
-#>  1        2 Andy Vanderheyden               2 Referee   
-#>  2       12 Antio Sinterniklaas             2 Referee   
-#>  3       22 Arnoud van Bochove              2 Referee   
-#>  4      411 Bert Van Slooten                2 Referee   
-#>  5       32 Cedric Riedijk                  2 Referee   
-#>  6       42 Chess Van Looy                  2 Referee   
-#>  7       52 Dom Quincy                      2 Referee   
-#>  8       62 Frederik Van den Abbeele        2 Referee   
-#>  9       72 Geert Jacobs                    2 Referee   
-#> 10       82 Gilles Martin                   2 Referee   
-#> # ℹ 30 more rows
-# }
-```

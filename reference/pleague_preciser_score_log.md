@@ -91,6 +91,8 @@ tibble with these columns, in this order (sdv-py
   redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried,
   up to three attempts.
 
+     pleague_preciser_score_log(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
+
 ## See also
 
 Other P. LEAGUE+ Functions:
@@ -112,27 +114,3 @@ Other P. LEAGUE+ Functions:
 [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
 [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
 [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(pleague_preciser_score_log(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#> ── P. LEAGUE+ Score Log from api.preciser.io ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:22 UTC
-#> # A tibble: 204 × 8
-#>    game_uuid       seq period period_no clock seconds_left home_score away_score
-#>    <chr>         <int> <chr>      <int> <chr>        <int>      <int>      <int>
-#>  1 e6f98675-3e5…     1 Q1             1 11:41          701          0          2
-#>  2 e6f98675-3e5…     2 Q1             1 11:20          680          3          2
-#>  3 e6f98675-3e5…     3 Q1             1 10:49          649          6          2
-#>  4 e6f98675-3e5…     4 Q1             1 10:42          642          6          4
-#>  5 e6f98675-3e5…     5 Q1             1 10:24          624          8          4
-#>  6 e6f98675-3e5…     6 Q1             1 10:09          609          8          7
-#>  7 e6f98675-3e5…     7 Q1             1 9:57           597          8          7
-#>  8 e6f98675-3e5…     8 Q1             1 9:47           587         10          7
-#>  9 e6f98675-3e5…     9 Q1             1 9:29           569         10          7
-#> 10 e6f98675-3e5…    10 Q1             1 9:24           564         10          7
-#> # ℹ 194 more rows
-# }
-```

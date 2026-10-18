@@ -73,6 +73,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_game_players(match_id = 346279)
+
 ## See also
 
 Other TBF:
@@ -107,27 +109,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_game_players(match_id = 346279))
-#> ── TBF Game Players ──────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:44 UTC
-#> # A tibble: 24 × 7
-#>    match_id side  team  player_name         jersey_number is_starter is_active
-#>       <int> <chr> <chr> <chr>               <chr>         <lgl>      <lgl>    
-#>  1   346279 home  NA    Zach Nutall         10            FALSE      FALSE    
-#>  2   346279 home  NA    Tre'shawn Thurman   15            FALSE      FALSE    
-#>  3   346279 home  NA    Efe Postel          22            FALSE      FALSE    
-#>  4   346279 home  NA    Emirhan Serbest     24            FALSE      FALSE    
-#>  5   346279 home  NA    Yiğitcan Saybir     3             FALSE      FALSE    
-#>  6   346279 home  NA    Bryce Jones         32            FALSE      FALSE    
-#>  7   346279 home  NA    Shavar Reynolds Jr. 33            FALSE      FALSE    
-#>  8   346279 home  NA    Gabe Brown          44            FALSE      FALSE    
-#>  9   346279 home  NA    Terrell Carter II   5             FALSE      FALSE    
-#> 10   346279 home  NA    Leon Apaydın        55            FALSE      FALSE    
-#> # ℹ 14 more rows
-# }
-```

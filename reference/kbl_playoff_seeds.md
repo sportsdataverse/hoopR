@@ -98,6 +98,8 @@ valid body with no rows for this frame is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_playoff_seeds(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -122,22 +124,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_playoff_seeds(season = 2025))
-#> ── KBL Playoff Seeds from api.kbl.or.kr ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:33 UTC
-#> # A tibble: 6 × 7
-#>   season season_code game_code  seed team_code team_name         team_name_full 
-#>    <int>       <int> <chr>     <int> <chr>     <chr>             <chr>          
-#> 1   2025          45 01            1 55        서울 SK           서울 SK 나이츠 
-#> 2   2025          45 01            2 50        창원 LG           창원 LG 세이커스……
-#> 3   2025          45 01            3 10        울산 현대모비스   울산 현대모비스 피버스……
-#> 4   2025          45 01            4 06        수원 KT           수원 KT 소닉붐 
-#> 5   2025          45 01            5 64        대구 한국가스공사 대구 한국가스공사 페가수스…
-#> 6   2025          45 01            6 70        안양 정관장       안양 정관장 레드부스터스……
-# }
-```

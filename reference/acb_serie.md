@@ -106,6 +106,8 @@ are always these, in this order (sdv-py `acb_serie`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_serie(match_id = 17718)
+
 ## See also
 
 Other ACB Functions:
@@ -153,26 +155,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_serie(match_id = 17718))
-#> ── ACB Playoff Series from api2.acb.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:11 UTC
-#> # A tibble: 4 × 22
-#>   requested_match_id phase_id subphase_id series_home_team_id
-#>                <int>    <int>       <int>               <int>
-#> 1              17718      111         291                3070
-#> 2              17718      111         291                3070
-#> 3              17718      111         291                3070
-#> 4              17718      111         291                3070
-#> # ℹ 18 more variables: series_home_club_id <int>, series_away_team_id <int>,
-#> #   series_away_club_id <int>, series_home_wins <int>, series_away_wins <int>,
-#> #   series_finished <lgl>, best_of <int>, edition_id <int>, season <int>,
-#> #   match_id <int>, home_team_id <int>, away_team_id <int>, home_score <int>,
-#> #   away_score <int>, start <dttm>, status <chr>, is_on_half_time <lgl>,
-#> #   current_quarter <int>
-# }
-```

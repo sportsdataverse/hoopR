@@ -156,6 +156,7 @@ the league list lacks, an empty list, a finished game before 2025-26 asked for p
 the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 an error envelope, a redirect, a partial page or a changed capped list). All inherit <code>hoopR_error</code>.
 Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/tbf_leaders_minutes.html">tbf_leaders_minutes</a></span><span class="op">(</span>competition <span class="op">=</span> <span class="st">"bsl"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -193,30 +194,6 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
 <code><a href="tbf_weeks.html">tbf_weeks()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_leaders_minutes</span><span class="op">(</span>competition <span class="op">=</span> <span class="st">"bsl"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Leaders: Minutes ──────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:03:49 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 40 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season competition category kind   rank person_id player_name team_process_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     1    <span style="text-decoration: underline;">736</span>366 John Meeks           <span style="text-decoration: underline;">266</span>028</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     2    <span style="text-decoration: underline;">778</span>460 Brandon Ta…          <span style="text-decoration: underline;">266</span>176</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     3    <span style="text-decoration: underline;">501</span>134 Jordon Cra…          <span style="text-decoration: underline;">265</span>994</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     4    <span style="text-decoration: underline;">500</span>079 Rashard Ke…          <span style="text-decoration: underline;">266</span>027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     5    <span style="text-decoration: underline;">501</span>076 Quentin Pe…          <span style="text-decoration: underline;">265</span>993</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     6    <span style="text-decoration: underline;">666</span>080 Fabian Whi…          <span style="text-decoration: underline;">265</span>994</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     7    <span style="text-decoration: underline;">779</span>010 Victor Bai…          <span style="text-decoration: underline;">266</span>028</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     8    <span style="text-decoration: underline;">510</span>723 Leyton Ham…          <span style="text-decoration: underline;">266</span>176</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total     9    <span style="text-decoration: underline;">779</span>071 Ishmael El…          <span style="text-decoration: underline;">266</span>027</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027 bsl         minutes  total    10    <span style="text-decoration: underline;">778</span>996 Brae Ivey            <span style="text-decoration: underline;">266</span>028</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 30 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: team_name &lt;chr&gt;, games &lt;int&gt;, value &lt;dbl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

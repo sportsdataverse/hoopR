@@ -195,6 +195,7 @@ fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that 
 mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
 any other failed fetch, an error / stub body, or a body that belongs to another
 site, type, season, game, player or team than the one asked for.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_player.html">atrium_player</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -229,22 +230,6 @@ site, type, season, game, player or team than the one asked for.</p>
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">atrium_player</span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium player from embed-api.eui.connect.sportradar.com ─────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:42 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 14</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id person_id     name  bib   team_id team_name image_url date_of_birth</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         12 4458f165-f86… Brai… <span style="color: #BB0000;">NA</span>    25bcb2… Lyon-Vil… https://… 1994-04-06   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: age &lt;int&gt;, nationality &lt;chr&gt;, points_per_game &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_offensive_per_game &lt;dbl&gt;, rebounds_defensive_per_game &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_per_game &lt;dbl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

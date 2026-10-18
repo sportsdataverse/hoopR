@@ -101,6 +101,8 @@ changed body, an unfinished game, a context or page for another game,
 season, tab or day, a truncated schedule list, or layout drift). All
 inherit `hoopR_error`.
 
+     bleague_schedule_days(season = 2026, tab = 1, month = 10, day = 4)
+
 ## See also
 
 Other B.LEAGUE:
@@ -117,29 +119,3 @@ Other B.LEAGUE:
 [`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md),
 [`bleague_team_box()`](https://hoopR.sportsdataverse.org/reference/bleague_team_box.md),
 [`bleague_team_summary()`](https://hoopR.sportsdataverse.org/reference/bleague_team_summary.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(bleague_schedule_days(season = 2026, tab = 1, month = 10, day = 4))
-#> ── B.LEAGUE schedule days from www.bleague.jp ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:39 UTC
-#> # A tibble: 13 × 4
-#>    season   tab event date      
-#>     <int> <int> <int> <date>    
-#>  1   2026     1     2 2025-10-03
-#>  2   2026     1     2 2025-10-04
-#>  3   2026     1     2 2025-10-05
-#>  4   2026     1     2 2025-10-10
-#>  5   2026     1     2 2025-10-11
-#>  6   2026     1     2 2025-10-12
-#>  7   2026     1     2 2025-10-13
-#>  8   2026     1     2 2025-10-15
-#>  9   2026     1     2 2025-10-18
-#> 10   2026     1     2 2025-10-19
-#> 11   2026     1     2 2025-10-25
-#> 12   2026     1     2 2025-10-26
-#> 13   2026     1     2 2025-10-29
-# }
-```

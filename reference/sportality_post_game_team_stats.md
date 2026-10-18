@@ -105,6 +105,11 @@ column the API added later:
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_post_game_team_stats(
+       away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
+       ssgt_uuid = "xs07bd3fmp"
+     )
+
 ## See also
 
 Other Basketligaen Functions:
@@ -134,28 +139,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_post_game_team_stats(
-    away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
-    ssgt_uuid = "xs07bd3fmp"
-  ))
-#> ── Basketligaen Post-Game Team Stats from basketligaen.dk ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:37 UTC
-#> # A tibble: 3 × 14
-#>   home_team_side_translate_key home_team_left_type home_team_left_value
-#>   <chr>                        <chr>                              <int>
-#> 1 s_2P                         2PM                                   25
-#> 2 s_3P                         3PM                                    5
-#> 3 s_FT                         FTM                                   19
-#> # ℹ 11 more variables: home_team_right_type <chr>, home_team_right_value <int>,
-#> #   home_team_center_type <chr>, home_team_center_value <int>,
-#> #   away_team_side_translate_key <chr>, away_team_left_type <chr>,
-#> #   away_team_left_value <int>, away_team_right_type <chr>,
-#> #   away_team_right_value <int>, away_team_center_type <chr>,
-#> #   away_team_center_value <int>
-# }
-```

@@ -130,6 +130,8 @@ are always these, in this order (sdv-py `acb_next_matches`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_next_matches(club_id = 2, number_of_matches = 5)
+
 ## See also
 
 Other ACB Functions:
@@ -177,28 +179,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_next_matches(club_id = 2, number_of_matches = 5))
-#> ── ACB Next Matches from api2.acb.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:58 UTC
-#> # A tibble: 5 × 30
-#>   match_id round_type round_id round_number group_id subphase_id subphase_number
-#>      <int> <chr>         <int>        <int>    <int>       <int>           <int>
-#> 1   105392 NA             6016            2       NA          NA              NA
-#> 2   105401 NA             6017            3       NA          NA              NA
-#> 3   105410 NA             6018            4       NA          NA              NA
-#> 4   105414 NA             6019            5       NA          NA              NA
-#> 5   105428 NA             6020            6       NA          NA              NA
-#> # ℹ 23 more variables: week_id <int>, status <chr>, is_on_half_time <lgl>,
-#> #   current_quarter <int>, home_score <int>, away_score <int>, start <dttm>,
-#> #   home_wins <int>, home_losses <int>, away_wins <int>, away_losses <int>,
-#> #   home_team_id <int>, home_club_id <int>, home_team <chr>,
-#> #   home_team_abbr <chr>, away_team_id <int>, away_club_id <int>,
-#> #   away_team <chr>, away_team_abbr <chr>, competition_id <int>,
-#> #   edition_id <int>, season <int>, is_selected_local <lgl>
-# }
-```

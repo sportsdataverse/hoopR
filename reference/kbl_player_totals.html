@@ -177,7 +177,8 @@ other non-2xx including the unknown-id HTTP 500 and the HTTP 400 the API answers
 error envelope, an empty or non-JSON body, a game that is not final, or a body for another game, season or window
 than the one asked for). HTTP 500 is the API's deterministic answer to an unknown id and is not retried. Wrappers
 raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kbl_player_totals.html">kbl_player_totals</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KBL Functions:
@@ -204,35 +205,6 @@ raise; they never warn and return empty.</p></li>
 <code><a href="kbl_teams.html">kbl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kbl_player_totals</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── KBL Player Totals from api.kbl.or.kr ──────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:41:27 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 204 × 51</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season season_code game_code glkey pcode player_name player_name_en team_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2910… 강상재      <span style="color: #BB0000;">NA</span>             16       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2915… 게이지 프림 <span style="color: #BB0000;">NA</span>             10       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2916… 고메즈 델 리아노…… <span style="color: #BB0000;">NA</span>             55       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2916… 고찬혁      <span style="color: #BB0000;">NA</span>             06       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2913… 곽정훈      <span style="color: #BB0000;">NA</span>             64       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2917… 글렌 로빈슨 3세…… <span style="color: #BB0000;">NA</span>             35       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2916… 김건우      <span style="color: #BB0000;">NA</span>             55       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2912… 김경원      <span style="color: #BB0000;">NA</span>             70       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2910… 김국찬      <span style="color: #BB0000;">NA</span>             10       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>025          45 01        S45G… 2916… 김근현      <span style="color: #BB0000;">NA</span>             35       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 194 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 43 more variables: team_name &lt;chr&gt;, back_num &lt;chr&gt;, pos &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_flag &lt;chr&gt;, game_count &lt;int&gt;, start_count &lt;int&gt;, score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fg &lt;int&gt;, fg_a &lt;int&gt;, fgt &lt;int&gt;, fgt_a &lt;int&gt;, threep &lt;int&gt;, threep_a &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ft &lt;int&gt;, ft_a &lt;int&gt;, dk &lt;int&gt;, dk_a &lt;int&gt;, rb &lt;int&gt;, offr &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   defr &lt;int&gt;, ast &lt;int&gt;, stl &lt;int&gt;, bs &lt;int&gt;, to &lt;int&gt;, foul &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   wft &lt;int&gt;, woft &lt;int&gt;, pp &lt;int&gt;, pp_a &lt;int&gt;, pscore &lt;int&gt;, sast &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -72,6 +72,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_national_teams()
+
 ## See also
 
 Other FIBA Functions:
@@ -111,29 +113,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_national_teams())
-#> ── FIBA gdap_national_teams from fiba.basketball ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:11 UTC
-#> # A tibble: 260 × 10
-#>    national_federation_id display_name     official_name country_id country_name
-#>                     <int> <chr>            <chr>              <int> <chr>       
-#>  1                      1 Oman Basketball… Oman Basketb…        186 Oman        
-#>  2                      2 Basketball Asso… Basketball A…        182 Northern Ma…
-#>  3                      3 Basketball Fede… Basketball F…        189 Panama      
-#>  4                      8 Afghanistan Nat… Afghanistan …          2 Afghanistan 
-#>  5                      9 Albanian Basket… Albanian Bas…          4 Albania     
-#>  6                     10 Fédération Algé… Fédération A…          5 Algeria     
-#>  7                     11 American Samoa … American Sam…         13 American Sa…
-#>  8                     12 Federaçao Angol… Federaçao An…          7 Angola      
-#>  9                     13 Antigua & Barbu… Antigua & Ba…          9 Antigua & B…
-#> 10                     14 Confederación A… Confederació…         10 Argentina   
-#> # ℹ 250 more rows
-#> # ℹ 5 more variables: country_fiba_code <chr>, zone_id <int>, zone_name <chr>,
-#> #   organisation_status_code <chr>, membership_status_code <chr>
-# }
-```

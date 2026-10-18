@@ -76,6 +76,8 @@ in this order (sdv-py `scb_referees`):
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_referees()
+
 ## See also
 
 Other SCB Functions:
@@ -101,28 +103,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_referees())
-#> ── BBL/DBBL Referees from the SCB API ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:51 UTC
-#> # A tibble: 44 × 7
-#>    league referee_id first_name last_name   official_function participations
-#>    <chr>  <chr>      <chr>      <chr>       <chr>                      <int>
-#>  1 bbl    1          Tamer      Arik        REFEREE                      403
-#>  2 bbl    7          Benjamin   Barth       REFEREE                      749
-#>  3 bbl    12         Steve      Bittner     REFEREE                      517
-#>  4 bbl    20         Johannes   Hack        REFEREE                      490
-#>  5 bbl    25         Oliver     Krause      REFEREE                      782
-#>  6 bbl    26         Moritz     Krüper      REFEREE                      466
-#>  7 bbl    27         Robert     Lottermoser REFEREE                     1098
-#>  8 bbl    28         Christof   Madinger    REFEREE                      803
-#>  9 bbl    32         Anne       Panther     REFEREE                      700
-#> 10 bbl    39         Enrico     Streit      REFEREE                      679
-#> # ℹ 34 more rows
-#> # ℹ 1 more variable: year_joined_bbl <int>
-# }
-```

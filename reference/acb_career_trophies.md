@@ -79,6 +79,8 @@ are always these, in this order (sdv-py `acb_career_trophies`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_career_trophies(player_id = 20209407)
+
 ## See also
 
 Other ACB Functions:
@@ -126,19 +128,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_career_trophies(player_id = 20209407))
-#> ── ACB Career Trophies from api2.acb.com ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:43 UTC
-#> # A tibble: 3 × 4
-#>   player_id competition_id times_champion times_runner_up
-#>       <int>          <int>          <int>           <int>
-#> 1  20209407              3              6               2
-#> 2  20209407              2              2               6
-#> 3  20209407              1              5               2
-# }
-```

@@ -157,7 +157,8 @@ data, an empty ranking), <code>hoopR_bad_request</code> (an id or season that is
 changed envelope, a game that is not finished, a body for another season, competition, team or game), all
 inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame for a failed request. Whole doubles
 (<code>24</code>) are accepted for integer arguments.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportpress_team_roster.html">sportpress_team_roster</a></span><span class="op">(</span>competition_team_id <span class="op">=</span> <span class="fl">541</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other BNXT League Functions:
@@ -190,32 +191,6 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
 <code><a href="sportpress_ui_strings.html">sportpress_ui_strings()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportpress_team_roster</span><span class="op">(</span>competition_team_id <span class="op">=</span> <span class="fl">541</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── BNXT League Team Roster from Sportpress ───────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:03:39 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 12 × 13</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    roster_id competition_team_id jersey weight height active position_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     <span style="text-decoration: underline;">11</span>193                 541 <span style="color: #949494;">"</span>13<span style="color: #949494;">"</span>       <span style="color: #BB0000;">NA</span>    183 TRUE             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     <span style="text-decoration: underline;">11</span>195                 541 <span style="color: #949494;">"</span>11<span style="color: #949494;">"</span>       82    190 TRUE             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     <span style="text-decoration: underline;">11</span>443                 541 <span style="color: #949494;">""</span>         91    197 TRUE             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     <span style="text-decoration: underline;">11</span>445                 541 <span style="color: #949494;">"</span>24<span style="color: #949494;">"</span>      103    206 TRUE             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     <span style="text-decoration: underline;">11</span>447                 541 <span style="color: #949494;">"</span>6<span style="color: #949494;">"</span>        88    188 TRUE             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     <span style="text-decoration: underline;">11</span>449                 541 <span style="color: #949494;">"</span>26<span style="color: #949494;">"</span>       <span style="color: #BB0000;">NA</span>    195 TRUE             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     <span style="text-decoration: underline;">11</span>451                 541 <span style="color: #949494;">"</span>9<span style="color: #949494;">"</span>        85    178 TRUE             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     <span style="text-decoration: underline;">11</span>453                 541 <span style="color: #949494;">"</span>5<span style="color: #949494;">"</span>        88    191 TRUE             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     <span style="text-decoration: underline;">11</span>455                 541 <span style="color: #949494;">"</span>32<span style="color: #949494;">"</span>       96    200 TRUE             3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     <span style="text-decoration: underline;">11</span>457                 541 <span style="color: #949494;">"</span>7<span style="color: #949494;">"</span>       107    205 TRUE             5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     <span style="text-decoration: underline;">11</span>459                 541 <span style="color: #949494;">"</span>8<span style="color: #949494;">"</span>        <span style="color: #BB0000;">NA</span>     <span style="color: #BB0000;">NA</span> TRUE             2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>     <span style="text-decoration: underline;">11</span>461                 541 <span style="color: #949494;">""</span>         <span style="color: #BB0000;">NA</span>    187 TRUE             1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: position &lt;chr&gt;, player_id &lt;int&gt;, first_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_name &lt;chr&gt;, nationality_code &lt;chr&gt;, birth_date &lt;date&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

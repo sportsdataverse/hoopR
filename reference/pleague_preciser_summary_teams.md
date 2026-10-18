@@ -111,6 +111,8 @@ valid answer is a zero-row tibble with these columns, in this order
   redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried,
   up to three attempts.
 
+     pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
+
 ## See also
 
 Other P. LEAGUE+ Functions:
@@ -132,25 +134,3 @@ Other P. LEAGUE+ Functions:
 [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
 [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
 [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#> ── P. LEAGUE+ Summary Teams from api.preciser.io ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:24 UTC
-#> # A tibble: 2 × 28
-#>   game_uuid  side  team_uuid team_name_zh color logo_url points rebounds assists
-#>   <chr>      <chr> <chr>     <chr>        <chr> <chr>     <int>    <int>   <int>
-#> 1 e6f98675-… home  e86394aa… 臺北富邦勇士 #3C8… https:/…    102       43      16
-#> 2 e6f98675-… away  e8674343… 新竹御頂攻城獅…… #4f1… https:/…     94       47      27
-#> # ℹ 19 more variables: steals <int>, blocks <int>, turnovers <int>,
-#> #   fg_made <int>, fg2_pct <dbl>, fg3_pct <dbl>, ft_pct <dbl>,
-#> #   fast_break_points <dbl>, paint_points <dbl>, second_chance_points <dbl>,
-#> #   biggest_lead <int>, biggest_scoring_run <int>, time_leading_seconds <int>,
-#> #   lead_changes <int>, top_player_name <chr>, top_player_jersey <chr>,
-#> #   top_player_points <int>, top_player_rebounds <int>,
-#> #   top_player_assists <int>
-# }
-```

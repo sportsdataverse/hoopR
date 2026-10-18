@@ -150,6 +150,7 @@ the league list lacks, an empty list, a finished game before 2025-26 asked for p
 the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 an error envelope, a redirect, a partial page or a changed capped list). All inherit <code>hoopR_error</code>.
 Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/tbf_game_leaders.html">tbf_game_leaders</a></span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">346279</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -187,30 +188,6 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
 <code><a href="tbf_weeks.html">tbf_weeks()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_game_leaders</span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">346279</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Game Leaders ──────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:03:43 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 55 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    match_id category        category_label    rank side  player_id player_name  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">346</span>279 VerimlilikPuanı Verimlilik Puanı     1 away     <span style="text-decoration: underline;">778</span>310 Zach Hankins </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">346</span>279 VerimlilikPuanı Verimlilik Puanı     2 away     <span style="text-decoration: underline;">501</span>076 Quentin Pete…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">346</span>279 VerimlilikPuanı Verimlilik Puanı     3 home     <span style="text-decoration: underline;">778</span>401 Bryce Jones  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">346</span>279 VerimlilikPuanı Verimlilik Puanı     4 home     <span style="text-decoration: underline;">508</span>900 Jamuni McNea…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">346</span>279 VerimlilikPuanı Verimlilik Puanı     5 home     <span style="text-decoration: underline;">196</span>413 Yiğitcan Say…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">346</span>279 Sayi            Sayı                 1 away     <span style="text-decoration: underline;">501</span>076 Quentin Pete…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">346</span>279 Sayi            Sayı                 2 home     <span style="text-decoration: underline;">196</span>413 Yiğitcan Say…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">346</span>279 Sayi            Sayı                 3 away     <span style="text-decoration: underline;">778</span>310 Zach Hankins </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">346</span>279 Sayi            Sayı                 4 home     <span style="text-decoration: underline;">778</span>402 Zach Nutall  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">346</span>279 Sayi            Sayı                 5 home     <span style="text-decoration: underline;">778</span>401 Bryce Jones  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 45 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: jersey_number &lt;chr&gt;, value &lt;dbl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

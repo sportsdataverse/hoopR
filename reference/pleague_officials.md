@@ -89,6 +89,8 @@ zero-row tibble with these columns, in this order (sdv-py
   three attempts; HTTP 500 is NOT retried (the site answers 500 for an
   unknown id). Wrappers raise; they never warn and return empty.
 
+     pleague_officials(gid = 197)
+
 ## See also
 
 Other P. LEAGUE+ Functions:
@@ -110,13 +112,3 @@ Other P. LEAGUE+ Functions:
 [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
 [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
 [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(pleague_officials(gid = 197))
-#> Error in pleague_officials(gid = 197) : 
-#>   pleagueofficial.com/game/197 answered HTTP 403, not 200
-# }
-```

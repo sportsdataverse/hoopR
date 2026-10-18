@@ -103,6 +103,8 @@ appended after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_player_stats(player_id = 969)
+
 ## See also
 
 Other LBA Functions:
@@ -124,33 +126,3 @@ Other LBA Functions:
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_player_stats(player_id = 969))
-#> ── LBA Player Stats from legabasket.it ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:55 UTC
-#> # A tibble: 30 × 33
-#>    player_id stat_type season championship_year championship_position
-#>        <int> <chr>      <int>             <int>                 <int>
-#>  1       969 avg         2013              2012                     1
-#>  2       969 avg         2014              2013                     1
-#>  3       969 avg         2014              2013                     3
-#>  4       969 avg         2019              2018                     1
-#>  5       969 avg         2019              2018                     3
-#>  6       969 avg         2023              2022                     1
-#>  7       969 avg         2024              2023                     1
-#>  8       969 avg         2025              2024                     1
-#>  9       969 avg         2026              2025                     1
-#> 10       969 avg         2027              2026                     1
-#> # ℹ 20 more rows
-#> # ℹ 28 more variables: championship_name <chr>, team_name <chr>, quintet <dbl>,
-#> #   points <dbl>, played_minutes <dbl>, played_matches <int>,
-#> #   total_matches <int>, done_fouls <dbl>, suffered_fouls <dbl>,
-#> #   shots_2p_realized <dbl>, shots_2p_total <dbl>, slam_dunk <dbl>,
-#> #   shots_3p_realized <dbl>, shots_3p_total <dbl>, free_throws_realized <dbl>,
-#> #   free_throws_total <dbl>, offensive_rebound <dbl>, …
-# }
-```

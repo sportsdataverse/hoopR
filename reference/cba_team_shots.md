@@ -184,6 +184,8 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_team_shots(team_id = 29128)
+
 ## See also
 
 Other CBA Functions:
@@ -213,33 +215,3 @@ Other CBA Functions:
 [`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_team_shots(team_id = 29128))
-#> ── CBA Team Shots from data-server.cbaleague.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:36 UTC
-#> # A tibble: 21 × 50
-#>    bout_no_points_sort bout_point_sort bout_subtract_points_sort
-#>                  <dbl>           <dbl>                     <dbl>
-#>  1                  NA              NA                        NA
-#>  2                  NA              NA                        NA
-#>  3                  NA              NA                        NA
-#>  4                  NA              NA                        NA
-#>  5                  NA              NA                        NA
-#>  6                  NA              NA                        NA
-#>  7                  NA              NA                        NA
-#>  8                  NA              NA                        NA
-#>  9                  NA              NA                        NA
-#> 10                  NA              NA                        NA
-#> # ℹ 11 more rows
-#> # ℹ 47 more variables: guard_field_goals_at_rim <dbl>,
-#> #   guard_field_goals_at_rim_rank <dbl>, guard_field_goals_at_rim_sort <dbl>,
-#> #   guard_hit_at_rim_made_rate <dbl>, guard_hit_at_rim_made_rate_rank <dbl>,
-#> #   guard_hit_at_rim_made_rate_sort <dbl>, guard_hit_middle_rate <dbl>,
-#> #   guard_hit_middle_rate_rank <dbl>, guard_hit_middle_rate_sort <dbl>,
-#> #   guard_middle_rate <dbl>, guard_middle_rate_rank <dbl>, …
-# }
-```

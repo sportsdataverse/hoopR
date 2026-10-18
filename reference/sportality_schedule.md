@@ -156,7 +156,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_schedule(season = 2026))
 #> ── Basketligaen Schedule from basketligaen.dk ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:39 UTC
+#> ℹ Data updated: 2026-10-18 17:43:04 UTC
 #> # A tibble: 192 × 42
 #>    game_uuid  raw_start_date_time      start_date_time   state overtime shootout
 #>    <chr>      <chr>                    <chr>             <chr> <lgl>    <chr>   

@@ -70,7 +70,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
   try(kp_confhistory(conf = 'ACC'))
-#> ✖ 2026-10-18 15:41:47.193111: Invalid arguments or no conference history data for ACC available!
+#> ✖ 2026-10-18 17:24:40.688102: Invalid arguments or no conference history data for ACC available!
 #> ✖ Args: conf = "ACC"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

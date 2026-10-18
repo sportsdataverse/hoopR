@@ -151,6 +151,8 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_player_game_log(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654")
+
 ## See also
 
 Other Atrium:
@@ -182,37 +184,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_player_game_log(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654"))
-#> ── Atrium player game log from embed-api.eui.connect.sportradar.com ────────────
-#> ℹ Data updated: 2026-10-18 15:33:43 UTC
-#> # A tibble: 14 × 39
-#>    website_id person_id  season_id date  opponent_entity_id opponent_name result
-#>         <int> <chr>      <chr>     <chr> <chr>              <chr>         <chr> 
-#>  1         12 4458f165-… df310a05… 2026… 7e9f3d8d-55bb-11f… Le Mans       W     
-#>  2         12 4458f165-… df310a05… 2026… 238ad480-55b8-11f… Dijon         L     
-#>  3         12 4458f165-… df310a05… 2026… e796c4fa-55bc-11f… Nanterre      L     
-#>  4         12 4458f165-… df310a05… 2026… da0b634d-55bc-11f… Nancy         W     
-#>  5         12 4458f165-… df310a05… 2026… 703aa4cc-55b7-11f… Bourg-en-Bre… W     
-#>  6         12 4458f165-… df310a05… 2026… c3b5d870-55b5-11f… Boulazac      L     
-#>  7         12 4458f165-… df310a05… 2026… ca771ea2-55bb-11f… Limoges       W     
-#>  8         12 4458f165-… df310a05… 2026… c281453b-55b7-11f… Cholet        L     
-#>  9         12 4458f165-… df310a05… 2026… 989c44aa-55b7-11f… Chalon/Saône  W     
-#> 10         12 4458f165-… df310a05… 2026… 689d1a0a-55bd-11f… Saint-Quentin W     
-#> 11         12 4458f165-… df310a05… 2026… 736b73ae-55bc-11f… Monaco        W     
-#> 12         12 4458f165-… df310a05… 2026… 506c2d71-55bb-11f… Gravelines-D… W     
-#> 13         12 4458f165-… df310a05… 2026… 88bff512-55bd-11f… Strasbourg    W     
-#> 14         12 4458f165-… df310a05… 2026… f43b1b0f-55bc-11f… Paris         L     
-#> # ℹ 32 more variables: result_label <chr>, score <chr>, minutes <chr>,
-#> #   seconds_played <int>, points <int>, rebounds <int>,
-#> #   rebounds_offensive <int>, rebounds_defensive <int>, assists <int>,
-#> #   steals <int>, blocks <int>, blocks_received <int>, turnovers <int>,
-#> #   fouls_total <int>, fouls_drawn <int>, plus_minus <int>, efficiency <int>,
-#> #   field_goals_made <int>, field_goals_attempted <int>,
-#> #   field_goals_percentage <dbl>, points_two_made <int>, …
-# }
-```

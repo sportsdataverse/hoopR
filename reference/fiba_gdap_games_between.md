@@ -157,6 +157,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_games_between(date_from = "2023-09-08", date_to = "2023-09-11")
+
 ## See also
 
 Other FIBA Functions:
@@ -196,29 +198,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_games_between(date_from = "2023-09-08", date_to = "2023-09-11"))
-#> ── FIBA gdap_games_between from fiba.basketball ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:07 UTC
-#> # A tibble: 6 × 84
-#>   game_id game_name  game_number status_code team_a_team_id
-#>     <int> <chr>      <chr>       <chr>                <int>
-#> 1  100723 25279-87-A A           VALID               279956
-#> 2  100731 25279-88-A A           VALID               279961
-#> 3  100727 25280-89-A A           VALID               279571
-#> 4  100725 25281-90-A A           VALID               279572
-#> 5  100722 25282-91-A A           VALID               279956
-#> 6  100720 25283-92-A A           VALID               279569
-#> # ℹ 79 more variables: team_a_organisation_id <int>, team_a_code <chr>,
-#> #   team_a_official_name <chr>, team_a_short_name <chr>, team_b_team_id <int>,
-#> #   team_b_organisation_id <int>, team_b_code <chr>,
-#> #   team_b_official_name <chr>, team_b_short_name <chr>, team_a_score <int>,
-#> #   team_b_score <int>, is_live <lgl>, current_period <chr>, chrono <chr>,
-#> #   live_game_status <int>, current_period_status <chr>, host_city <chr>,
-#> #   host_country <chr>, host_country_code <chr>, venue_id <int>, …
-# }
-```

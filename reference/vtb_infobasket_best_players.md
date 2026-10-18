@@ -142,6 +142,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_best_players(season = 2026)
+
 ## See also
 
 Other VTB Functions:
@@ -182,33 +184,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_best_players(season = 2026))
-#> ── VTB Infobasket Best Players from org.infobasket.su ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:33 UTC
-#> # A tibble: 25 × 27
-#>    season param_id param_name param_short_name  param_label    param_group  rank
-#>     <int>    <int> <chr>      <chr>             <chr>                <int> <int>
-#>  1   2026        1 Points     Points in a game  Points  in a …           0     1
-#>  2   2026        1 Points     Points in a game  Points  in a …           0     2
-#>  3   2026        1 Points     Points in a game  Points  in a …           0     3
-#>  4   2026        1 Points     Points in a game  Points  in a …           0     4
-#>  5   2026        1 Points     Points in a game  Points  in a …           0     5
-#>  6   2026        2 Assists    Assists in a game Assists in a …           0     1
-#>  7   2026        2 Assists    Assists in a game Assists in a …           0     2
-#>  8   2026        2 Assists    Assists in a game Assists in a …           0     3
-#>  9   2026        2 Assists    Assists in a game Assists in a …           0     4
-#> 10   2026        2 Assists    Assists in a game Assists in a …           0     5
-#> # ℹ 15 more rows
-#> # ℹ 20 more variables: team_id <int>, team_short_name_ru <chr>,
-#> #   team_short_name_en <chr>, team_name_ru <chr>, team_name_en <chr>,
-#> #   team_region_name_ru <chr>, team_region_name_en <chr>, person_id <int>,
-#> #   person_last_name_ru <chr>, person_last_name_en <chr>,
-#> #   person_first_name_ru <chr>, person_first_name_en <chr>,
-#> #   person_full_name_ru <chr>, person_full_name_en <chr>, …
-# }
-```

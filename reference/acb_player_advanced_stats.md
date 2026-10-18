@@ -98,6 +98,8 @@ are always these, in this order (sdv-py `acb_player_advanced_stats`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_player_advanced_stats(match_id = 105401, player_id = 20212243)
+
 ## See also
 
 Other ACB Functions:
@@ -145,28 +147,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_player_advanced_stats(match_id = 105401, player_id = 20212243))
-#> ── ACB Player Advanced Stats from api2.acb.com ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:01 UTC
-#> # A tibble: 24 × 11
-#>    match_id player_id group  stat  match_value season_value win_value loss_value
-#>       <int>     <int> <chr>  <chr>       <dbl>        <dbl>     <dbl>      <dbl>
-#>  1   105401  20212243 four_… efg_…       100           94.1     100         75  
-#>  2   105401  20212243 four_… orb_…         3.8          9.6       6.7       14.3
-#>  3   105401  20212243 four_… tov_…        18.4          4.3       6.3        0  
-#>  4   105401  20212243 four_… f_tr         25           70.6      30.8      200  
-#>  5   105401  20212243 game_… poss…         4.3          4.6       5.6        3.4
-#>  6   105401  20212243 game_… pace        582.         467.      486.       453. 
-#>  7   105401  20212243 game_… poin…         2.1          3.1       2.7        3.6
-#>  8   105401  20212243 ball_… ast_…        15.5         11.4      11.3       11.7
-#>  9   105401  20212243 ball_… ast_…        13.3          9.2       9.2        9.1
-#> 10   105401  20212243 ball_… stl_…         0            4.1       6          0  
-#> # ℹ 14 more rows
-#> # ℹ 3 more variables: season_diff <dbl>, win_diff <dbl>, loss_diff <dbl>
-# }
-```

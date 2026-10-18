@@ -194,6 +194,7 @@ game per wrapper you need.</p>
 error, a non-JSON or non-HTML body, an error or changed body, an unfinished
 game, a context or page for another game, season, tab or day, a truncated
 schedule list, or layout drift). All inherit <code>hoopR_error</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/bleague_schedule_events.html">bleague_schedule_events</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, tab <span class="op">=</span> <span class="fl">1</span>, month <span class="op">=</span> <span class="fl">10</span>, day <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -213,21 +214,6 @@ schedule list, or layout drift). All inherit <code>hoopR_error</code>.</p>
 <code><a href="bleague_team_summary.html">bleague_team_summary()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bleague_schedule_events</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, tab <span class="op">=</span> <span class="fl">1</span>, month <span class="op">=</span> <span class="fl">10</span>, day <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── B.LEAGUE schedule events from www.bleague.jp ──────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:34:40 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   season   tab event_id label                selected</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">2</span>026     1        2 B1リーグ             TRUE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">2</span>026     1        5 オールスターゲーム   FALSE   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   <span style="text-decoration: underline;">2</span>026     1        3 B1チャンピオンシップ FALSE   </span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

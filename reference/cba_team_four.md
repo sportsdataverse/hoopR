@@ -197,6 +197,8 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_team_four(team_id = 29128)
+
 ## See also
 
 Other CBA Functions:
@@ -226,33 +228,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_team_four(team_id = 29128))
-#> ── CBA Team Four from data-server.cbaleague.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:33 UTC
-#> # A tibble: 21 × 72
-#>    effective_hit_rate effective_hit_rate_average effective_hit_rate_rank
-#>                 <dbl> <chr>                                        <dbl>
-#>  1               45.5 NA                                              14
-#>  2               53.7 NA                                               9
-#>  3               53   NA                                              12
-#>  4               54.7 NA                                               3
-#>  5               51.3 NA                                               8
-#>  6               58   NA                                               1
-#>  7               53.4 NA                                               9
-#>  8               52.2 NA                                              15
-#>  9               53.9 NA                                              11
-#> 10               55.5 NA                                               6
-#> # ℹ 11 more rows
-#> # ℹ 69 more variables: effective_hit_sort <dbl>, field_goals <int>,
-#> #   field_goals_attempted <int>, free_throw_rate <dbl>,
-#> #   free_throw_rate_average <chr>, free_throw_rate_rank <dbl>,
-#> #   free_throw_sort <dbl>, free_throws <int>, loss_average <dbl>,
-#> #   loss_num <int>, offensive_rebound_rate <dbl>,
-#> #   offensive_rebound_rate_average <chr>, offensive_rebound_rate_rank <dbl>, …
-# }
-```

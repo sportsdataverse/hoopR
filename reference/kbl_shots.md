@@ -140,7 +140,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_shots(gmkey = "S47G01N49"))
 #> ── KBL Shots from api.kbl.or.kr ──────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:41 UTC
+#> ℹ Data updated: 2026-10-18 17:24:35 UTC
 #> # A tibble: 127 × 15
 #>    gmkey   season_code season game_code game_no pcode player_name player_name_en
 #>    <chr>         <int>  <int> <chr>       <int> <chr> <chr>       <chr>         

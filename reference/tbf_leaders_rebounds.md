@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_rebounds(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_rebounds(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Rebounds ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:51 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         rebounds total     1    734505 Trevion Wi…          265991
-#>  2   2027 bsl         rebounds total     2    778184 Oscar Cluff          268222
-#>  3   2027 bsl         rebounds total     3    470765 Mahir Ağva           266028
-#>  4   2027 bsl         rebounds total     4    120437 Egehan Arna          266024
-#>  5   2027 bsl         rebounds total     5    512379 Boubacar T…          265993
-#>  6   2027 bsl         rebounds total     6    778161 Johnny Dav…          268222
-#>  7   2027 bsl         rebounds total     7    778310 Zach Hanki…          265993
-#>  8   2027 bsl         rebounds total     8    666080 Fabian Whi…          265994
-#>  9   2027 bsl         rebounds total     9    778461 Nate Watson          266176
-#> 10   2027 bsl         rebounds total    10    609083 Steven Eno…          266027
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

@@ -134,6 +134,8 @@ competition (the body echoes neither id). An empty valid answer raises
   bad argument, before any request). HTTP 500 is retried. Wrappers
   raise; they never return an empty frame for a failed fetch.
 
+     kzs_team_general(competition_id = 579, team_id = 17551)
+
 ## See also
 
 Other KZS Functions:
@@ -159,24 +161,3 @@ Other KZS Functions:
 [`kzs_team_box_score()`](https://hoopR.sportsdataverse.org/reference/kzs_team_box_score.md),
 [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md),
 [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kzs_team_general(competition_id = 579, team_id = 17551))
-#> ── KZS Team Summary from api.kzs.si ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:42:16 UTC
-#> # A tibble: 1 × 50
-#>   team_id competition_id   won  lost last_games            best_points_player_id
-#>     <int>          <int> <int> <int> <chr>                                 <int>
-#> 1   17551            579    24     9 "[\"L\", \"W\", \"L\…                106285
-#> # ℹ 44 more variables: best_points_player_identification_number <int>,
-#> #   best_points_player_person_id <int>,
-#> #   best_points_player_person_first_name <chr>,
-#> #   best_points_player_person_last_name <chr>,
-#> #   best_points_player_person_year_of_birth <int>,
-#> #   best_points_player_nationality_id <int>,
-#> #   best_points_player_nationality_alpha2_code <chr>, …
-# }
-```

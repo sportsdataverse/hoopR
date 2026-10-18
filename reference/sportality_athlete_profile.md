@@ -110,6 +110,8 @@ documented columns come first, in this order (sdv-py
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_athlete_profile(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl")
+
 ## See also
 
 Other Basketligaen Functions:
@@ -139,24 +141,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_athlete_profile(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl"))
-#> ── Basketligaen Athlete Profile from basketligaen.dk ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:23 UTC
-#> # A tibble: 1 × 33
-#>   uuid    full_name first_name last_name nationality gender age_value age_format
-#>   <chr>   <chr>     <chr>      <chr>     <chr>       <chr>      <int> <chr>     
-#> 1 dpu090… Luka Chu… Luka       Churchill DK          male          19 years     
-#> # ℹ 25 more variables: weight_value <int>, weight_format <chr>,
-#> #   height_value <int>, height_format <chr>, jersey_number <int>,
-#> #   position <chr>, position_code <chr>, shoots <chr>, team_uuid <chr>,
-#> #   team_instance_id <chr>, team_name <chr>, team_code <chr>, team_media <chr>,
-#> #   season_stats <chr>, career_stats <chr>, statistics_provider <chr>,
-#> #   is_in_squad <lgl>, media_url <chr>, media_alt <chr>, media_srcset <chr>,
-#> #   media_url_img_original_proportion <chr>, …
-# }
-```

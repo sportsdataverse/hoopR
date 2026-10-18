@@ -163,7 +163,8 @@ competition without standings, a final game with no play-by-play or box score, H
 or empty body; an envelope whose status is not OK; a full list page; a game that is not final; a body for another
 competition, match, team, player or season than the one asked for) and <code>hoopR_bad_request</code> (a bad argument,
 before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kzs_team_general.html">kzs_team_general</a></span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span>, team_id <span class="op">=</span> <span class="fl">17551</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KZS Functions:
@@ -191,26 +192,6 @@ before any request). HTTP 500 is retried. Wrappers raise; they never return an e
 <code><a href="kzs_teams.html">kzs_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kzs_team_general</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span>, team_id <span class="op">=</span> <span class="fl">17551</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── KZS Team Summary from api.kzs.si ──────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:16 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 50</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   team_id competition_id   won  lost last_games            best_points_player_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">17</span>551            579    24     9 <span style="color: #949494;">"</span>[\"L\", \"W\", \"L\…                <span style="text-decoration: underline;">106</span>285</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 44 more variables: best_points_player_identification_number &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   best_points_player_person_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   best_points_player_person_first_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   best_points_player_person_last_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   best_points_player_person_year_of_birth &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   best_points_player_nationality_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   best_points_player_nationality_alpha2_code &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

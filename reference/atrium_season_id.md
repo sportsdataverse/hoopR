@@ -45,6 +45,8 @@ shared by several competitions and `competition_id` is missing;
 `hoopR_no_data` when the site lists no such season; `hoopR_asset_fetch`
 when the season list could not be fetched or is not the site's.
 
+     atrium_season_id(14, 2026, competition_id = "16be8396-24fb-11ef-9ab7-df6be196e88f")
+
 ## See also
 
 Other Atrium:
@@ -76,12 +78,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_season_id(14, 2026, competition_id = "16be8396-24fb-11ef-9ab7-df6be196e88f"))
-#> [1] "cc7d79f3-43ee-11f1-b893-293ce3dbc120"
-# }
-```

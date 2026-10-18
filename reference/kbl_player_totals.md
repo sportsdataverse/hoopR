@@ -157,6 +157,8 @@ tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_player_totals(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -181,33 +183,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_player_totals(season = 2025))
-#> ── KBL Player Totals from api.kbl.or.kr ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:27 UTC
-#> # A tibble: 204 × 51
-#>    season season_code game_code glkey pcode player_name player_name_en team_code
-#>     <int>       <int> <chr>     <chr> <chr> <chr>       <chr>          <chr>    
-#>  1   2025          45 01        S45G… 2910… 강상재      NA             16       
-#>  2   2025          45 01        S45G… 2915… 게이지 프림 NA             10       
-#>  3   2025          45 01        S45G… 2916… 고메즈 델 리아노…… NA             55       
-#>  4   2025          45 01        S45G… 2916… 고찬혁      NA             06       
-#>  5   2025          45 01        S45G… 2913… 곽정훈      NA             64       
-#>  6   2025          45 01        S45G… 2917… 글렌 로빈슨 3세…… NA             35       
-#>  7   2025          45 01        S45G… 2916… 김건우      NA             55       
-#>  8   2025          45 01        S45G… 2912… 김경원      NA             70       
-#>  9   2025          45 01        S45G… 2910… 김국찬      NA             10       
-#> 10   2025          45 01        S45G… 2916… 김근현      NA             35       
-#> # ℹ 194 more rows
-#> # ℹ 43 more variables: team_name <chr>, back_num <chr>, pos <chr>,
-#> #   player_flag <chr>, game_count <int>, start_count <int>, score <int>,
-#> #   fg <int>, fg_a <int>, fgt <int>, fgt_a <int>, threep <int>, threep_a <int>,
-#> #   ft <int>, ft_a <int>, dk <int>, dk_a <int>, rb <int>, offr <int>,
-#> #   defr <int>, ast <int>, stl <int>, bs <int>, to <int>, foul <int>,
-#> #   wft <int>, woft <int>, pp <int>, pp_a <int>, pscore <int>, sast <int>, …
-# }
-```

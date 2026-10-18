@@ -133,7 +133,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_games(season = 2025))
 #> ── CEBL Games from the CEBL Stats API ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:42 UTC
+#> ℹ Data updated: 2026-10-18 17:21:30 UTC
 #> # A tibble: 128 × 27
 #>    season  game_id genius_match_id start_time_utc      competition status period
 #>     <int>    <int>           <int> <dttm>              <chr>       <chr>   <int>

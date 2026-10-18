@@ -444,6 +444,9 @@ A `comp` of another competition family, or one GDAP gives no family, is
 season listing several editions, or a game function called with neither
 `season` nor `comp`, is `hoopR_bad_request`.
 
+     fiba_oly_editions(season = 2024)
+     fiba_oly_schedule(season = 2024)
+
 ## See also
 
 Other FIBA Competition Functions:
@@ -455,47 +458,3 @@ Other FIBA Competition Functions:
 [`fiba_eurobasket_competition`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md),
 [`fiba_icup_competition`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md),
 [`fiba_wc_competition`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_oly_editions(season = 2024))
-#> ── FIBA gdap_editions from fiba.basketball ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:31 UTC
-#> # A tibble: 1 × 29
-#>   hosts  competition_id competition_code season official_name start end   status
-#>   <chr>           <int> <chr>             <int> <chr>         <chr> <chr> <chr> 
-#> 1 "[{\"…         208722 WOLYM              2024 Paris 2024 M… 2024… 2024… Compl…
-#> # ℹ 21 more variables: age_category <chr>, gender <chr>, fiba_zone <chr>,
-#> #   zone_information_zone_id <int>, zone_information_zone_official_name <chr>,
-#> #   zone_information_zone_code <chr>, zone_information_top_zone_id <int>,
-#> #   zone_information_top_zone_official_name <chr>,
-#> #   zone_information_top_zone_code <chr>, competition_type <chr>,
-#> #   competition_category_is_league <lgl>, competition_category_age_type <chr>,
-#> #   competition_category_code <chr>, competition_category_name <chr>, …
-  try(fiba_oly_schedule(season = 2024))
-#> ── FIBA gdap_schedule from fiba.basketball ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:34 UTC
-#> # A tibble: 26 × 86
-#>    game_id game_name game_number status_code team_a_team_id
-#>      <int> <chr>     <chr>       <chr>                <int>
-#>  1  117642 28136-A-1 1           VALID               281542
-#>  2  117644 28136-A-2 2           VALID               282018
-#>  3  117643 28136-A-3 3           VALID               281543
-#>  4  117641 28136-A-4 4           VALID               282021
-#>  5  117639 28136-A-5 5           VALID               281542
-#>  6  117640 28136-A-6 6           VALID               281543
-#>  7  117647 28136-B-1 1           VALID               281544
-#>  8  117649 28136-B-2 2           VALID               281545
-#>  9  117648 28136-B-3 3           VALID               281546
-#> 10  117646 28136-B-4 4           VALID               282020
-#> # ℹ 16 more rows
-#> # ℹ 81 more variables: team_a_organisation_id <int>, team_a_code <chr>,
-#> #   team_a_official_name <chr>, team_a_short_name <chr>, team_b_team_id <int>,
-#> #   team_b_organisation_id <int>, team_b_code <chr>,
-#> #   team_b_official_name <chr>, team_b_short_name <chr>, team_a_score <int>,
-#> #   team_b_score <int>, is_live <lgl>, current_period <chr>, chrono <chr>,
-#> #   live_game_status <int>, current_period_status <chr>, host_city <chr>, …
-# }
-```

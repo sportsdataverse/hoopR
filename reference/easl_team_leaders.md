@@ -117,6 +117,8 @@ season, shaped like easl_leaders. An empty answer raises
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_team_leaders(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")
+
 ## See also
 
 Other EASL Functions:
@@ -137,30 +139,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_team_leaders(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#> ── EASL Team Leaders from easl.joshricha.com ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:24 UTC
-#> # A tibble: 45 × 16
-#>    season season_id category  rank value player_id player_name player_name_latin
-#>     <int> <chr>     <chr>    <int> <dbl> <chr>     <chr>       <chr>            
-#>  1   2026 77441bb3… assists…     1 7.11  85c99dab… D.J. NEWBI… D.J. NEWBILL     
-#>  2   2026 77441bb3… assists…     2 4.44  8983317f… HIEJIMA Ma… HIEJIMA Makoto   
-#>  3   2026 77441bb3… assists…     3 4.33  8a530bfe… Isaac FOTU  Isaac FOTU       
-#>  4   2026 77441bb3… assists…     4 3.67  8a4f5e97… Grant JERR… Grant JERRETT    
-#>  5   2026 77441bb3… assists…     5 2.14  8984fe11… OGAWA Atsu… OGAWA Atsuya     
-#>  6   2026 77441bb3… blocksP…     1 0.833 8a4f5e97… Grant JERR… Grant JERRETT    
-#>  7   2026 77441bb3… blocksP…     2 0.667 e670b5bc… Gavin EDWA… Gavin EDWARDS    
-#>  8   2026 77441bb3… blocksP…     3 0.333 8983317f… HIEJIMA Ma… HIEJIMA Makoto   
-#>  9   2026 77441bb3… blocksP…     4 0.333 8a530bfe… Isaac FOTU  Isaac FOTU       
-#> 10   2026 77441bb3… blocksP…     5 0.286 8984fe11… OGAWA Atsu… OGAWA Atsuya     
-#> # ℹ 35 more rows
-#> # ℹ 8 more variables: jersey_number <chr>, position <chr>, player_status <chr>,
-#> #   team_id <chr>, team_name <chr>, team_name_native <chr>,
-#> #   team_code_latin <chr>, team_code_local <chr>
-# }
-```

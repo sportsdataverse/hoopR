@@ -180,6 +180,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_player_game_log(person_id = 423011, season = 2026, team = 2650)
+
 ## See also
 
 Other VTB Functions:
@@ -220,33 +222,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_player_game_log(person_id = 423011, season = 2026, team = 2650))
-#> ── VTB Infobasket Player Game Log from org.infobasket.su ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:49 UTC
-#> # A tibble: 50 × 53
-#>    person_id game_id game_number game_status team_id team_a_id team_b_id score_a
-#>        <int>   <int> <chr>             <int>   <int>     <int>     <int>   <int>
-#>  1    423011  921391 RS-002               21    2650      2650      1390      85
-#>  2    423011  921395 RS-006               21    2650      2650       688      67
-#>  3    423011  921399 RS-010               21    2650      2650       468      93
-#>  4    423011  921407 RS-018               21    2650      2747      2650      85
-#>  5    423011  921415 RS-026               21    2650       697      2650      74
-#>  6    423011  921420 RS-032               21    2650      2650      2792     101
-#>  7    423011  921428 RS-039               21    2650       682      2650      67
-#>  8    423011  921429 RS-040               21    2650        15      2650     104
-#>  9    423011  921437 RS-049               21    2650      2650      2994      89
-#> 10    423011  921443 RS-053               21    2650      2650      3059      90
-#> # ℹ 40 more rows
-#> # ℹ 45 more variables: score_b <int>, team_a_short_name_ru <chr>,
-#> #   team_a_short_name_en <chr>, team_a_name_ru <chr>, team_a_name_en <chr>,
-#> #   team_a_region_name_ru <chr>, team_a_region_name_en <chr>,
-#> #   team_b_short_name_ru <chr>, team_b_short_name_en <chr>,
-#> #   team_b_name_ru <chr>, team_b_name_en <chr>, team_b_region_name_ru <chr>,
-#> #   team_b_region_name_en <chr>, game_date <chr>, team_number <int>, …
-# }
-```

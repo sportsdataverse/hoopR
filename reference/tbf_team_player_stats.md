@@ -120,6 +120,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_team_player_stats(season = 2027, team_process_id = 265995)
+
 ## See also
 
 Other TBF:
@@ -154,34 +156,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_team_player_stats(season = 2027, team_process_id = 265995))
-#> ── TBF Team Player Stats ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:07 UTC
-#> # A tibble: 11 × 40
-#>    season competition team_process_id person_id jersey_number first_name
-#>     <int> <chr>                 <int>     <int> <chr>         <chr>     
-#>  1   2027 bsl                  265995    196413 3             Yiğitcan  
-#>  2   2027 bsl                  265995    485299 5             Terrell   
-#>  3   2027 bsl                  265995    227173 6             Sadık     
-#>  4   2027 bsl                  265995    508900 8             Jamuni    
-#>  5   2027 bsl                  265995    778402 10            Zach      
-#>  6   2027 bsl                  265995    736069 15            Tre'shawn 
-#>  7   2027 bsl                  265995    389934 22            Efe       
-#>  8   2027 bsl                  265995    778401 32            Bryce     
-#>  9   2027 bsl                  265995    778399 33            Shavar    
-#> 10   2027 bsl                  265995    778398 44            Gabe      
-#> 11   2027 bsl                  265995    197570 55            Leon      
-#> # ℹ 34 more variables: last_name <chr>, games <int>, seconds_played <int>,
-#> #   points <int>, fg_made <int>, fg_attempted <int>, fg2_made <int>,
-#> #   fg2_attempted <int>, fg3_made <int>, fg3_attempted <int>, ft_made <int>,
-#> #   ft_attempted <int>, def_rebounds <int>, off_rebounds <int>, rebounds <int>,
-#> #   assists <int>, blocks <int>, steals <int>, turnovers <int>, fouls <int>,
-#> #   plus_minus <dbl>, efficiency <int>, fg_pct <dbl>, fg2_pct <dbl>,
-#> #   fg3_pct <dbl>, ft_pct <dbl>, seconds_per_game <int>, …
-# }
-```

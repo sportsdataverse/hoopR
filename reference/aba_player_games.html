@@ -171,6 +171,7 @@ public player profile.</p>
 after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 <code>hoopR_error</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/aba_player_games.html">aba_player_games</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">4807</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -188,43 +189,6 @@ game, season or league, an unfinished game, a helper that does not belong to the
 <code><a href="aba_standings.html">aba_standings()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">aba_player_games</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">4807</span>, season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── ABA League Player Games ───────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:32:29 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 34</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    player_id season league_id league round_no game_no game        minutes points</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba           1       1 Partizan-K… 14:24       10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba           2       9 Split-Part… 18:56       14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba           3      17 Partizan-F… 21:20        9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          21     156 Bosna-Part… 23:35        5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          24     169 Partizan-C… 22:28       14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          26     177 C. Zvezda-… 27:17       14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          28     187 Partizan-B… 16:42        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          30     197 Budućnost-… 24:58       11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          32     205 C. Olimpij… 26:51       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          34     213 Partizan-C… 25:15       13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          39     231 Partizan-B… 25:01        8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          40     235 Bosna-Part… 16:02        6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          42     243 Partizan-C… 23:13       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          43     245 C. Zvezda-… 29:36        9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          45     248 Dubai-Part… 24:46       21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          46     249 Dubai-Part… 27:45       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          47     250 Partizan-D… 26:55       15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>      <span style="text-decoration: underline;">4</span>807   <span style="text-decoration: underline;">2</span>026         1 aba          48     251 Partizan-D… 28:36       10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 25 more variables: fg_pct &lt;dbl&gt;, fg2_made &lt;int&gt;, fg2_att &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fg2_pct &lt;dbl&gt;, fg3_made &lt;int&gt;, fg3_att &lt;int&gt;, fg3_pct &lt;dbl&gt;, ft_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ft_att &lt;int&gt;, ft_pct &lt;dbl&gt;, reb_def &lt;int&gt;, reb_off &lt;int&gt;, reb_tot &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   assists &lt;int&gt;, steals &lt;int&gt;, turnovers &lt;int&gt;, blocks &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   blocks_against &lt;int&gt;, fouls &lt;int&gt;, fouls_drawn &lt;int&gt;, pts_paint &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pts_second_chance &lt;int&gt;, pts_fast_break &lt;int&gt;, plus_minus &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   valuation &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

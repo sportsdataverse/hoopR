@@ -151,6 +151,7 @@ play-by-play or shots); <code>hoopR_bad_request</code> for a game id or season t
 <code>hoopR_asset_fetch</code> when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 for another game or season, an error or changed body, a truncated results list). All inherit <code>hoopR_error</code>. Dates
 and times are Lithuanian local (Europe/Vilnius) as the site prints them.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lkl_leaders.html">lkl_leaders</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">11446</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -170,18 +171,6 @@ and times are Lithuanian local (Europe/Vilnius) as the site prints them.</p>
 <code><a href="lkl_team_box.html">lkl_team_box()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lkl_leaders</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">11446</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Error in lkl_leaders(game_id = 11446) : </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   lkl.lt/rungtynes/11446 answered HTTP 403: &lt;!DOCTYPE html&gt;&lt;html</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> lang="en-US"&gt;&lt;head&gt;&lt;title&gt;Just a moment...&lt;/title&gt;&lt;meta</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;&lt;meta</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> http-equiv="X-UA-Compatible" content="IE=Edge"&gt;&lt;meta nam</span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

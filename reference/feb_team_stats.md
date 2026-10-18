@@ -116,6 +116,8 @@ non-HTML body, an error or changed envelope, a play-by-play of another
 game, a page for another group or season, or layout drift). All inherit
 `hoopR_error`.
 
+     feb_team_stats(game_id = 2535725)
+
 ## See also
 
 Other FEB:
@@ -129,24 +131,3 @@ Other FEB:
 [`feb_schedule()`](https://hoopR.sportsdataverse.org/reference/feb_schedule.md),
 [`feb_shots()`](https://hoopR.sportsdataverse.org/reference/feb_shots.md),
 [`feb_standings()`](https://hoopR.sportsdataverse.org/reference/feb_standings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(feb_team_stats(game_id = 2535725))
-#> ── FEB team stats from intrafeb.feb.es ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:31 UTC
-#> # A tibble: 2 × 39
-#>   game_id team_side team_id team              team_code club_code seconds_played
-#>     <int> <chr>       <int> <chr>             <chr>     <chr>              <int>
-#> 1 2535725 home      1009716 BUENO ARENAS ALB… 02014401  020144                NA
-#> 2 2535725 away      1010207 IBEROLEA PALENCIA 34000707  340007                NA
-#> # ℹ 32 more variables: min_formatted <chr>, pts <int>, p1m <int>, p1a <int>,
-#> #   p1p <dbl>, p2m <int>, p2a <int>, p2p <dbl>, p3m <int>, p3a <int>,
-#> #   p3p <dbl>, fgm <int>, fga <int>, fgp <dbl>, ro <int>, rd <int>, rt <int>,
-#> #   assist <int>, st <int>, to <int>, bs <int>, tc <int>, mt <int>, pf <int>,
-#> #   rf <int>, fouls <int>, val <int>, fastb <int>, ptsto <int>, secpts <int>,
-#> #   bench <int>, paint <int>
-# }
-```

@@ -88,6 +88,8 @@ are always these, in this order (sdv-py `acb_lead_tracker`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_lead_tracker(match_id = 105401)
+
 ## See also
 
 Other ACB Functions:
@@ -135,28 +137,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_lead_tracker(match_id = 105401))
-#> ── ACB Lead Tracker from api2.acb.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:51 UTC
-#> # A tibble: 97 × 10
-#>    match_id edition_id season quarter minute second clock_seconds home_score
-#>       <int>      <int>  <int>   <int>  <int>  <int>         <int>      <int>
-#>  1   105401         91   2027       1      9     46           586          2
-#>  2   105401         91   2027       1      9     20           560          2
-#>  3   105401         91   2027       1      8     47           527          4
-#>  4   105401         91   2027       1      8     40           520          4
-#>  5   105401         91   2027       1      8     12           492          4
-#>  6   105401         91   2027       1      7     47           467          7
-#>  7   105401         91   2027       1      7     38           458          7
-#>  8   105401         91   2027       1      6     29           389          9
-#>  9   105401         91   2027       1      6     10           370          9
-#> 10   105401         91   2027       1      4     32           272          9
-#> # ℹ 87 more rows
-#> # ℹ 2 more variables: away_score <int>, margin <int>
-# }
-```

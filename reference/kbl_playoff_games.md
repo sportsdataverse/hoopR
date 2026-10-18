@@ -108,6 +108,8 @@ tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_playoff_games(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -132,30 +134,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_playoff_games(season = 2025))
-#> ── KBL Playoff Games from api.kbl.or.kr ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:32 UTC
-#> # A tibble: 22 × 15
-#>    season season_code gmkey     game_code game_no round     series_no game_date 
-#>     <int>       <int> <chr>     <chr>       <int> <chr>         <int> <date>    
-#>  1   2025          45 S45G03N1  03              1 quarterf…         1 2025-04-12
-#>  2   2025          45 S45G03N3  03              3 quarterf…         1 2025-04-14
-#>  3   2025          45 S45G03N5  03              5 quarterf…         1 2025-04-16
-#>  4   2025          45 S45G03N7  03              7 quarterf…         1 2025-04-18
-#>  5   2025          45 S45G03N9  03              9 quarterf…         1 2025-04-20
-#>  6   2025          45 S45G03N2  03              2 quarterf…         2 2025-04-13
-#>  7   2025          45 S45G03N4  03              4 quarterf…         2 2025-04-15
-#>  8   2025          45 S45G03N6  03              6 quarterf…         2 2025-04-17
-#>  9   2025          45 S45G03N11 03             11 semifinal         1 2025-04-23
-#> 10   2025          45 S45G03N13 03             13 semifinal         1 2025-04-25
-#> # ℹ 12 more rows
-#> # ℹ 7 more variables: home_team_code <chr>, away_team_code <chr>,
-#> #   home_team_name <chr>, away_team_name <chr>, home_score <int>,
-#> #   away_score <int>, home_win <lgl>
-# }
-```

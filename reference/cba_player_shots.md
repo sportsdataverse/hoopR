@@ -210,6 +210,8 @@ order (sdv-py `cba_player_shots`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_player_shots(season = 2026, team_id = 29128)
+
 ## See also
 
 Other CBA Functions:
@@ -239,43 +241,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_player_shots(season = 2026, team_id = 29128))
-#> ── CBA Player Shots from data-server.cbaleague.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:25 UTC
-#> # A tibble: 20 × 43
-#>      age at_rim_made_rate at_rim_made_rate_rank at_rim_made_rate_sort
-#>    <int>            <dbl>                 <dbl>                 <dbl>
-#>  1    34              1.1                  0                     1.07
-#>  2    22              2.1                  0                     2.05
-#>  3    28             11.3                  0.9                  11.3 
-#>  4    27              3.1                  0.24                  3.07
-#>  5    33              8.1                  0.78                  8.12
-#>  6    28              9.3                  0.91                  9.28
-#>  7    28              4.7                  0.46                  4.69
-#>  8    27             14.2                  0.9                  14.2 
-#>  9    29              7.1                  0.81                  7.08
-#> 10    26              2                    0                     2.00
-#> 11    29              2.6                  0.28                  2.56
-#> 12    26              3.1                  0.44                  3.12
-#> 13    30              5.2                  0.68                  5.25
-#> 14    19              3.8                  0                     3.81
-#> 15    27             10.9                  0                    10.9 
-#> 16    22              2.7                  0                     2.67
-#> 17    26              0                    0                     0   
-#> 18    23              0                    0                     0   
-#> 19    20              5                    0                     5.04
-#> 20    19              0                    0                     0   
-#> # ℹ 39 more variables: first_position <chr>, free_rate <dbl>,
-#> #   free_rate_rank <dbl>, free_rate_sort <dbl>, hit_at_rim_made_rate <dbl>,
-#> #   hit_at_rim_made_rate_rank <dbl>, hit_at_rim_made_rate_sort <dbl>,
-#> #   hit_free_rate <dbl>, hit_free_rate_rank <dbl>, hit_free_rate_sort <dbl>,
-#> #   hit_middle_rate <dbl>, hit_middle_rate_rank <dbl>,
-#> #   hit_middle_rate_sort <dbl>, hit_rate <dbl>, hit_rate_rank <dbl>,
-#> #   hit_rate_sort <dbl>, hit_three_rate <dbl>, hit_three_rate_rank <dbl>, …
-# }
-```

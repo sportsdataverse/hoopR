@@ -176,6 +176,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_team_player_stats(season = 2026, team_id = 2650)
+
 ## See also
 
 Other VTB Functions:
@@ -216,42 +218,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_team_player_stats(season = 2026, team_id = 2650))
-#> ── VTB Infobasket Team Player Stats from org.infobasket.su ─────────────────────
-#> ℹ Data updated: 2026-10-18 16:05:04 UTC
-#> # A tibble: 19 × 60
-#>    season team_id person_id player_number display_number is_active active_status
-#>     <int>   <int>     <int>         <int> <chr>          <lgl>     <chr>        
-#>  1   2026    2650    337028             0 0              TRUE      ""           
-#>  2   2026    2650    423011             2 2              TRUE      ""           
-#>  3   2026    2650    537998             4 4              TRUE      ""           
-#>  4   2026    2650    393326             5 5              TRUE      ""           
-#>  5   2026    2650     43256             7 7              TRUE      ""           
-#>  6   2026    2650     47609            12 12             TRUE      ""           
-#>  7   2026    2650    254536            14 14             TRUE      ""           
-#>  8   2026    2650     39197            16 16             TRUE      ""           
-#>  9   2026    2650     48680            23 23             TRUE      ""           
-#> 10   2026    2650     24712            27 27             TRUE      ""           
-#> 11   2026    2650    154368            32 32             TRUE      ""           
-#> 12   2026    2650     35822            33 33             TRUE      ""           
-#> 13   2026    2650     51909            37 37             TRUE      ""           
-#> 14   2026    2650     39489            38 38             TRUE      ""           
-#> 15   2026    2650    288451            44 44             TRUE      ""           
-#> 16   2026    2650     55701            99 99             TRUE      ""           
-#> 17   2026    2650    393167             1 1              FALSE     ""           
-#> 18   2026    2650    490452             3 3              FALSE     ""           
-#> 19   2026    2650    377837            17 17             FALSE     ""           
-#> # ℹ 53 more variables: points <int>, shot1 <int>, goal1 <int>, shot2 <int>,
-#> #   goal2 <int>, shot3 <int>, goal3 <int>, shot23 <int>, goal23 <int>,
-#> #   shot1_percent <dbl>, shot2_percent <dbl>, shot3_percent <dbl>,
-#> #   shot23_percent <dbl>, assist <int>, blocks <int>, def_rebound <int>,
-#> #   off_rebound <int>, rebound <int>, steal <int>, turnover <int>, foul <int>,
-#> #   opponent_foul <int>, plus_minus <int>, kpi <int>, avg_points <dbl>,
-#> #   avg_assist <dbl>, avg_blocks <dbl>, avg_def_rebound <dbl>, …
-# }
-```

@@ -78,6 +78,8 @@ raises `hoopR_no_data`; the documented columns come first, in this order
   site's answer for an unknown uuid and is not retried), all inheriting
   `hoopR_error`. Wrappers raise; they never return an empty frame.
 
+     sportality_layout_info()
+
 ## See also
 
 Other Basketligaen Functions:
@@ -107,29 +109,3 @@ Other Basketligaen Functions:
 [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
 [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
 [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportality_layout_info())
-#> ── Basketligaen Layout Info (ssgt Directory) from basketligaen.dk ──────────────
-#> ℹ Data updated: 2026-10-18 16:02:31 UTC
-#> # A tibble: 49 × 11
-#>    season season_code season_name game_type game_type_name series_code ssgt_uuid
-#>     <int> <chr>       <chr>       <chr>     <chr>          <chr>       <chr>    
-#>  1   2008 2007        2007/2008   finals    Slutspil       DBL         a1sok8y8…
-#>  2   2026 2025        2025/2026   finals    Slutspil       DBL         al4a0u2g…
-#>  3   2007 2006        2006/2007   regular   Grundspil      DBL         apuw31u2…
-#>  4   2021 2020        2020/2021   regular   Grundspil      DBL         ays7dt57…
-#>  5   2007 2006        2006/2007   finals    Slutspil       DBL         b0vcz39a…
-#>  6   2015 2014        2014/2015   regular   Grundspil      DBL         b7qlre7n…
-#>  7   2011 2010        2010/2011   finals    Slutspil       DBL         cgrcbk5h…
-#>  8   2020 2019        2019/2020   finals    Slutspil       DBL         cxrqu7ob…
-#>  9   2022 2021        2021/2022   finals    Slutspil       DBL         etmdl9a1…
-#> 10   2015 2014        2014/2015   finals    Slutspil       DBL         f6gxsrza…
-#> # ℹ 39 more rows
-#> # ℹ 4 more variables: state <chr>, season_uuid <chr>, series_uuid <chr>,
-#> #   game_type_uuid <chr>
-# }
-```

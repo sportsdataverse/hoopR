@@ -185,7 +185,8 @@ not retried. Wrappers raise; they never return an empty frame.</p></li>
 <li><p>Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
 JSON here (<code>{"name":"TSN"}</code>), where sdv-py's String cast writes Python's <code>str(dict)</code> repr (<code>{'name': 'TSN'}</code>).
 No string column of the committed fixtures carries an object.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cebl_player_leaders.html">cebl_player_leaders</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"PER_GAME"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CEBL Functions:
@@ -202,41 +203,6 @@ No string column of the committed fixtures carries an object.</p></li>
 <code><a href="cebl_teams.html">cebl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cebl_player_leaders</span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"PER_GAME"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CEBL Player Leaders from the CEBL Stats API ───────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:46 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 16</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    statistic     ranking season mode     competition player_id full_name team_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> POINTS              1   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">570</span>965 Javonte …      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> POINTS              2   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">193</span>258 Mitch Cr…      16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> POINTS              3   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">16</span>918 Donovan …      22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> POINTS              4   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">410</span>504 Sean Eas…      18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> POINTS              5   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">570</span>771 Terquavi…      22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> REBOUNDS            1   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">36</span>982 Isaih Mo…      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> REBOUNDS            2   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>                111 Simi Shi…      24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> REBOUNDS            3   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">406</span>695 Tyrese S…      16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> REBOUNDS            4   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">180</span>348 Jaden Be…      15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> REBOUNDS            5   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">406</span>002 Greg Bro…      17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> ASSISTS             1   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">404</span>887 Nate Pie…      15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> ASSISTS             2   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>              <span style="text-decoration: underline;">16</span>080 Corey Da…      16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> ASSISTS             3   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>                 44 Deng Adel      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> ASSISTS             4   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>                  7 Cat Barb…      22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> ASSISTS             5   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">501</span>763 Tavian D…      21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> TARGET_SCORES       1   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">406</span>695 Tyrese S…      16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> TARGET_SCORES       2   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>                102 Sean Mil…      17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> TARGET_SCORES       3   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>                155 Khalil A…      14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> TARGET_SCORES       4   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>                  8 Jalen Ha…      24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span> TARGET_SCORES       5   <span style="text-decoration: underline;">2</span>025 PER_GAME <span style="color: #BB0000;">NA</span>             <span style="text-decoration: underline;">638</span>406 Evan Gil…      17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: team_name_en &lt;chr&gt;, team_short_name_en &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_name_fr &lt;chr&gt;, team_short_name_fr &lt;chr&gt;, team_abbreviated_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_logo_url &lt;chr&gt;, value &lt;dbl&gt;, photo_url &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

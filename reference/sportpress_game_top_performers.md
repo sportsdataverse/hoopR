@@ -117,6 +117,8 @@ the columns are always these, in this order (sdv-py
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_game_top_performers(game_id = 11295)
+
 ## See also
 
 Other BNXT League Functions:
@@ -147,25 +149,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_game_top_performers(game_id = 11295))
-#> ── BNXT League Game Top Performers from Sportpress ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:09 UTC
-#> # A tibble: 2 × 40
-#>   game_id team_side competition_team_id team           team_short_name player_id
-#>     <int> <chr>                   <int> <chr>          <chr>               <int>
-#> 1   11295 home                      541 Windrose Gian… ANT                  5325
-#> 2   11295 away                      565 House of Tale… KOR                  5645
-#> # ℹ 34 more variables: first_name <chr>, last_name <chr>,
-#> #   nationality_code <chr>, birth_date <date>, jersey <chr>, starter <lgl>,
-#> #   minute <int>, foul <int>, defensive_foul <int>, dunk_made <int>,
-#> #   dunk_all <int>, dunk_percent <dbl>, two_point_made <int>,
-#> #   two_point_all <int>, two_point_percent <dbl>, three_point_made <int>,
-#> #   three_point_all <int>, three_point_percent <dbl>, throw_made <int>,
-#> #   throw_all <int>, throw_percent <dbl>, free_throw_made <int>, …
-# }
-```

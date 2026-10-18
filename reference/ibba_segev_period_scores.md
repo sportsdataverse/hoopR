@@ -76,6 +76,8 @@ another status, a transport error, an empty or non-JSON body, an error
 or changed envelope, a body for another game, a game that is not final).
 All inherit `hoopR_error`.
 
+     ibba_segev_period_scores(game_id = 50)
+
 ## See also
 
 Other IBBA Segev:
@@ -84,20 +86,3 @@ Other IBBA Segev:
 [`ibba_segev_player_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_player_box.md),
 [`ibba_segev_rosters()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_rosters.md),
 [`ibba_segev_team_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_team_box.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_segev_period_scores(game_id = 50))
-#> ── IBBA Segev period scores ──────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:14 UTC
-#> # A tibble: 4 × 6
-#>   game_id period home_points away_points home_fouls away_fouls
-#>     <int>  <int>       <int>       <int>      <int>      <int>
-#> 1      50      1          18          29          4          5
-#> 2      50      2          23          26          6          6
-#> 3      50      3          30          27          6          3
-#> 4      50      4          21          22          2          5
-# }
-```

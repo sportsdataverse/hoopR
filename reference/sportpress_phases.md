@@ -120,7 +120,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_phases(season = 2026))
 #> ── BNXT League Phases from Sportpress ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:11 UTC
+#> ℹ Data updated: 2026-10-18 17:43:20 UTC
 #> # A tibble: 6 × 6
 #>   season competition_id competition_name   phase_id phase_name standings_visible
 #>    <int>          <int> <chr>                 <int> <chr>      <lgl>            

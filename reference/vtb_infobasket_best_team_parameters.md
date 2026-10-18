@@ -102,6 +102,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_best_team_parameters()
+
 ## See also
 
 Other VTB Functions:
@@ -142,27 +144,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_best_team_parameters())
-#> ── VTB Infobasket Best Team Parameters from org.infobasket.su ──────────────────
-#> ℹ Data updated: 2026-10-18 16:04:33 UTC
-#> # A tibble: 46 × 2
-#>    param name                        
-#>    <int> <chr>                       
-#>  1     1 Points  in a game           
-#>  2     2 Assists in a game           
-#>  3     3 Rebounds in a game          
-#>  4     4 Defensive Rebounds in a game
-#>  5     5 Offensive Rebounds in a game
-#>  6     6 Steals in a game            
-#>  7     7 Blocked shots in a game     
-#>  8     8 Ranking in a game           
-#>  9     9 Plus/Minus in a game        
-#> 10    10 Turnovers in a game         
-#> # ℹ 36 more rows
-# }
-```

@@ -82,6 +82,8 @@ another status, a transport error, an empty or non-JSON body, an error
 or changed envelope, a body for another game, a game that is not final).
 All inherit `hoopR_error`.
 
+     ibba_segev_rosters(game_id = 50)
+
 ## See also
 
 Other IBBA Segev:
@@ -90,29 +92,3 @@ Other IBBA Segev:
 [`ibba_segev_period_scores()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_period_scores.md),
 [`ibba_segev_player_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_player_box.md),
 [`ibba_segev_team_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_team_box.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_segev_rosters(game_id = 50))
-#> ── IBBA Segev rosters ────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:16 UTC
-#> # A tibble: 31 × 11
-#>    game_id team_side team_id player_id jersey_number first_name last_name 
-#>      <int> <chr>       <int>     <int>         <int> <chr>      <chr>     
-#>  1      50 home           11      1120            93 CODY       DEMPS     
-#>  2      50 home           11      1111             0 NAVE       BEN SHEMEN
-#>  3      50 home           11      1215            55 MATAN      FOGEL     
-#>  4      50 home           11      1117            22 SAM        IORIO     
-#>  5      50 home           11      1114            14 NETA       SEGAL     
-#>  6      50 home           11      1266             6 TARYN      TODD      
-#>  7      50 home           11      1249            17 AMIT       GERSHON   
-#>  8      50 home           11      1115            16 C.J.       ELLEBY    
-#>  9      50 home           11      1112             4 AKILI      VINING    
-#> 10      50 home           11      1118            24 YOAV       VITLEM    
-#> # ℹ 21 more rows
-#> # ℹ 4 more variables: first_name_local <chr>, last_name_local <chr>,
-#> #   in_roster <int>, api_id <int>
-# }
-```

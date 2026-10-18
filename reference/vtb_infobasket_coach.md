@@ -108,6 +108,8 @@ valid body with no rows for this frame is a zero-row tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_coach(person_id = 131047)
+
 ## See also
 
 Other VTB Functions:
@@ -148,19 +150,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_coach(person_id = 131047))
-#> ── VTB Infobasket Coach from org.infobasket.su ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:40 UTC
-#> # A tibble: 1 × 9
-#>   person_id person_last_name_ru person_first_name_ru person_last_name_en
-#>       <int> <chr>               <chr>                <chr>              
-#> 1    131047 Юдин                Антон                Yudin              
-#> # ℹ 5 more variables: person_first_name_en <chr>, person_gender <int>,
-#> #   person_height <int>, person_weight <int>, person_status <int>
-# }
-```

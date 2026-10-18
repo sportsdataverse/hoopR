@@ -135,7 +135,7 @@ Other IBBA:
 # \donttest{
   try(ibba_box_score(game_id = 26392, season = 2026))
 #> ── IBBA box score ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:03 UTC
+#> ℹ Data updated: 2026-10-18 17:24:17 UTC
 #> # A tibble: 27 × 33
 #>    player_id jersey team_id game_id board_id season round starter minutes   pts
 #>        <int> <chr>    <int>   <int>    <int>  <int> <int> <lgl>     <int> <int>

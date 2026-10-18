@@ -227,7 +227,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_team_box(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #> ── EASL Team Box Score from easl.joshricha.com ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:21 UTC
+#> ℹ Data updated: 2026-10-18 17:21:52 UTC
 #> # A tibble: 2 × 105
 #>   fixture_id          team_id team_name team_name_native assists assists_against
 #>   <chr>               <chr>   <chr>     <chr>              <int>           <int>

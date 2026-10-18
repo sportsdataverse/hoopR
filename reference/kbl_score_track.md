@@ -105,6 +105,8 @@ frame is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_score_track(gmkey = "S47G01N49")
+
 ## See also
 
 Other KBL Functions:
@@ -129,28 +131,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_score_track(gmkey = "S47G01N49"))
-#> ── KBL Score Track from api.kbl.or.kr ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:38 UTC
-#> # A tibble: 32 × 11
-#>    gmkey     season_code season game_code game_no period period_label checkpoint
-#>    <chr>           <int>  <int> <chr>       <int>  <int> <chr>             <int>
-#>  1 S47G01N49          47   2026 01             49      1 Q1                    1
-#>  2 S47G01N49          47   2026 01             49      1 Q1                    2
-#>  3 S47G01N49          47   2026 01             49      1 Q1                    3
-#>  4 S47G01N49          47   2026 01             49      1 Q1                    4
-#>  5 S47G01N49          47   2026 01             49      1 Q1                    5
-#>  6 S47G01N49          47   2026 01             49      1 Q1                    6
-#>  7 S47G01N49          47   2026 01             49      1 Q1                    7
-#>  8 S47G01N49          47   2026 01             49      1 Q1                    8
-#>  9 S47G01N49          47   2026 01             49      2 Q2                    1
-#> 10 S47G01N49          47   2026 01             49      2 Q2                    2
-#> # ℹ 22 more rows
-#> # ℹ 3 more variables: home_margin <int>, home_score <int>, away_score <int>
-# }
-```

@@ -66,6 +66,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_stats_types()
+
 ## See also
 
 Other IBBA:
@@ -85,27 +87,3 @@ Other IBBA:
 [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_stats_types())
-#> ── IBBA stats types ──────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:18 UTC
-#> # A tibble: 25 × 2
-#>    stat_type stat_name_he     
-#>    <chr>     <chr>            
-#>  1 VAL       יעילות           
-#>  2 pts       נקודות           
-#>  3 isr_pts   המלך הישראלי     
-#>  4 plusminus פלוס מינוס       
-#>  5 dunk      הטבעות           
-#>  6 ASS       אסיסטים          
-#>  7 TR        ריבאונדים        
-#>  8 [OR]      ריבאונדר ההתקפה  
-#>  9 DR        ריבאונדר ההגנה   
-#> 10 isr_TR    מלך הריב' הישראלי
-#> # ℹ 15 more rows
-# }
-```

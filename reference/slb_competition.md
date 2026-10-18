@@ -315,6 +315,9 @@ unchecked.
 Access, proxy and error notes: see
 [`genius_game()`](https://hoopR.sportsdataverse.org/reference/genius_game.md).
 
+     slb_competitions()
+     slb_schedule()
+
 ## See also
 
 Other Genius:
@@ -336,46 +339,3 @@ Other Genius:
 [`lnbm_competition`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md),
 [`lub_competition`](https://hoopR.sportsdataverse.org/reference/lub_competition.md),
 [`nznbl_competition`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(slb_competitions())
-#> ── Genius LiveStats competitions ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:04 UTC
-#> # A tibble: 10 × 8
-#>    org   comp_id label               league_id  year season season_rule selected
-#>    <chr>   <int> <chr>                   <int> <int>  <int> <chr>       <lgl>   
-#>  1 SLB     49597 Championship 26-27        610  2026   2027 label span  TRUE    
-#>  2 SLB     39625 Championship 2024-…       610  2024   2025 label span  FALSE   
-#>  3 SLB     41897 Championship 2025-…       610  2025   2026 label span  FALSE   
-#>  4 SLB     49599 Cup 26-27                 610  2026   2027 label span  FALSE   
-#>  5 SLB     39732 Cup 2024-25               610  2024   2025 label span  FALSE   
-#>  6 SLB     47714 Cup 2025-26               610  2025   2026 label span  FALSE   
-#>  7 SLB     39733 Play-offs 2024-25         610  2024   2025 label span  FALSE   
-#>  8 SLB     48758 Play-offs 2025-26         610  2025   2026 label span  FALSE   
-#>  9 SLB     39626 Trophy 2024-25            610  2024   2025 label span  FALSE   
-#> 10 SLB     42212 Trophy 2025-26            610  2025   2026 label span  FALSE   
-  try(slb_schedule())
-#> ── Genius LiveStats schedule ─────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:21 UTC
-#> # A tibble: 176 × 16
-#>    match_id link_match_id comp_id org   status   date_time   venue_id venue_name
-#>       <int>         <int>   <int> <chr> <chr>    <chr>          <int> <chr>     
-#>  1  2882425       2882425   49597 SLB   COMPLETE Sep 18, 20…    35244 SGS Colle…
-#>  2  2882427       2882427   49597 SLB   COMPLETE Sep 20, 20…    35245 Playsport…
-#>  3  2882456       2882456   49597 SLB   COMPLETE Sep 20, 20…    38666 New City …
-#>  4  2882428       2882428   49597 SLB   COMPLETE Sep 20, 20…    35246 Cheshire …
-#>  5  2882535       2882535   49597 SLB   COMPLETE Sep 23, 20…    38666 New City …
-#>  6  2882430       2882430   49597 SLB   COMPLETE Sep 25, 20…    35250 Vertu Are…
-#>  7  2882429       2882429   49597 SLB   COMPLETE Sep 27, 20…    35249 National …
-#>  8  2882432       2882432   49597 SLB   COMPLETE Sep 27, 20…    35251 Canon Med…
-#>  9  2882433       2882433   49597 SLB   COMPLETE Sep 27, 20…    35248 Copper Bo…
-#> 10  2882435       2882435   49597 SLB   COMPLETE Sep 27, 20…    35246 Cheshire …
-#> # ℹ 166 more rows
-#> # ℹ 8 more variables: home_team_id <int>, home_team_name <chr>,
-#> #   home_team_code <chr>, home_score <int>, away_team_id <int>,
-#> #   away_team_name <chr>, away_team_code <chr>, away_score <int>
-# }
-```

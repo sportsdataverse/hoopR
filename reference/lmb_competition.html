@@ -201,6 +201,8 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Season rule: calendar year.</p>
 <p>Errors and terms of use are those of <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets. The site also serves women's competitions (pass their <code>competition_id</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lmb_competition.html">lmb_seasons</a></span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/lmb_competition.html">lmb_schedule</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -235,45 +237,6 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lmb_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:43 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 54 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id season_id              competition_id competition_name season_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         13 859fbc91-177d-11f1-87… 00054680-87dd… LIGA MAYOR DE B… APERTURA 2…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         13 3bcb4c99-a03d-11f1-83… 00054680-87dd… LIGA MAYOR DE B… CLAUSURA 2…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         13 bf1f4d4d-b8ff-11f1-bd… 7bb396d9-48a5… JR. NBA EL SALV… JR NBA FEM…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         13 8896c792-b8ff-11f1-8a… 7bb396d9-48a5… JR. NBA EL SALV… JR NBA MAS…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         13 89365f1a-35eb-11f1-8b… 25f85e27-fdf1… LIGA DE DESARRO… LDU14F APE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         13 c016b5c5-b773-11f1-94… 25f85e27-fdf1… LIGA DE DESARRO… LDU14F CLA…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         13 469bcc03-35e8-11f1-ba… b1123379-fdf1… LIGA DE DESARRO… LDU14M APE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         13 d716790f-b774-11f1-a7… b1123379-fdf1… LIGA DE DESARRO… LDU14M CLA…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         13 f618689d-35eb-11f1-aa… 5b28211c-fdf1… LIGA DE DESARRO… LDU16F APE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         13 6bc9b9ed-b775-11f1-96… 5b28211c-fdf1… LIGA DE DESARRO… LDU16F CLA…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 44 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: abbreviation_local &lt;chr&gt;, year &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_end_year &lt;int&gt;, is_default_season &lt;lgl&gt;</span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lmb_schedule</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:44 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 40</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   website_id season_id           competition_id competition_name season_end_year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>         13 3bcb4c99-a03d-11f1… 00054680-87dd… LIGA MAYOR DE B…            <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more variables: fixture_id &lt;chr&gt;, fixture_type &lt;chr&gt;, name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   round &lt;chr&gt;, round_code &lt;chr&gt;, pool &lt;chr&gt;, series &lt;chr&gt;, stage_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status &lt;chr&gt;, status_label &lt;chr&gt;, start_time_utc &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   start_time_local &lt;chr&gt;, timezone &lt;chr&gt;, times_unconfirmed &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue &lt;chr&gt;, venue_id &lt;chr&gt;, attendance &lt;int&gt;, home_entity_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_code &lt;chr&gt;, home_name &lt;chr&gt;, home_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_result_place &lt;int&gt;, home_result_status &lt;chr&gt;, home_draw &lt;lgl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

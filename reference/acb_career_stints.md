@@ -86,6 +86,8 @@ are always these, in this order (sdv-py `acb_career_stints`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_career_stints(player_id = 20209407)
+
 ## See also
 
 Other ACB Functions:
@@ -133,19 +135,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_career_stints(player_id = 20209407))
-#> ── ACB Career Stints from api2.acb.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:32:42 UTC
-#> # A tibble: 2 × 10
-#>   player_id initial_year end_year team_id club_id team      team_abbr edition_id
-#>       <int>        <int>    <int>   <int>   <int> <chr>     <chr>          <int>
-#> 1  20209407         2017     2027    4476       9 Real Mad… RMB               91
-#> 2  20209407         2013     2015    2997       5 Herbalif… HGC               79
-#> # ℹ 2 more variables: n_editions <int>, has_no_validated_data <lgl>
-# }
-```

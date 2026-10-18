@@ -164,6 +164,7 @@ season or date; <code>hoopR_asset_fetch</code> for any other failed fetch or an 
 error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
 federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
 competitions, the event year for national-team events, the target tournament year for qualifiers.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_gdap_gateway_federation_ranking.html">fiba_gdap_gateway_federation_ranking</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="st">"men"</span>, zone_id <span class="op">=</span> <span class="fl">1</span>, as_of_date <span class="op">=</span> <span class="st">"2025-09-15"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -206,33 +207,6 @@ competitions, the event year for national-team events, the target tournament yea
 <code><a href="fiba_gdap_teams.html">fiba_gdap_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_gdap_gateway_federation_ranking</span><span class="op">(</span>gender <span class="op">=</span> <span class="st">"men"</span>, zone_id <span class="op">=</span> <span class="fl">1</span>, as_of_date <span class="op">=</span> <span class="st">"2025-09-15"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gdap_gateway_federation_ranking from fiba.basketball ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:39:09 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 156 × 13</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    as_of_date   zone_ranking_code zone_ranking_officia…¹ world_rank country_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              1 USA         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              2 Germany     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              3 Serbia      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              4 France      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              5 Canada      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              6 Australia   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              7 Spain       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              8 Argentina   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                              9 Lithuania   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 2025-09-15T… <span style="color: #BB0000;">NA</span>                <span style="color: #BB0000;">NA</span>                             10 Brazil      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 146 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​zone_ranking_official_name</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: zone_rank &lt;int&gt;, ioc_code &lt;chr&gt;, fiba_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   current_points &lt;dbl&gt;, world_rank_variation &lt;int&gt;, comments &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   organisation_id &lt;int&gt;, organisation_status_code &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

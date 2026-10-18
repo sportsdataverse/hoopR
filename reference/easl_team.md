@@ -116,6 +116,8 @@ historical teams easl_teams does not list. An empty answer raises
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_team(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")
+
 ## See also
 
 Other EASL Functions:
@@ -136,22 +138,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_team(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#> ── EASL Team from easl.joshricha.com ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:19 UTC
-#> # A tibble: 1 × 22
-#>   team_row_id team_id name  name_native code_latin code_local standard age_group
-#>         <int> <chr>   <chr> <chr>       <chr>      <chr>      <chr>    <chr>    
-#> 1           8 865489… Utsu… 宇都宮ブレックス…… BRE        NA         ELITE    NA       
-#> # ℹ 14 more variables: gender <chr>, status <chr>, primary_color <chr>,
-#> #   secondary_color <chr>, tertiary_color <chr>, logo <chr>, website <chr>,
-#> #   facebook_username <chr>, twitter_username <chr>, instagram_username <chr>,
-#> #   wikipedia_url <chr>, organization_id <chr>, created_at <chr>,
-#> #   updated_at <chr>
-# }
-```

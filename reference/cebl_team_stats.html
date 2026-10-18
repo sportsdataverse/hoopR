@@ -190,7 +190,8 @@ not retried. Wrappers raise; they never return an empty frame.</p></li>
 <li><p>Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
 JSON here (<code>{"name":"TSN"}</code>), where sdv-py's String cast writes Python's <code>str(dict)</code> repr (<code>{'name': 'TSN'}</code>).
 No string column of the committed fixtures carries an object.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cebl_team_stats.html">cebl_team_stats</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"TOTALS"</span>, season <span class="op">=</span> <span class="fl">2025</span>, competition <span class="op">=</span> <span class="st">"REGULAR"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CEBL Functions:
@@ -207,36 +208,6 @@ No string column of the committed fixtures carries an object.</p></li>
 <code><a href="cebl_teams.html">cebl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cebl_team_stats</span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"TOTALS"</span>, season <span class="op">=</span> <span class="fl">2025</span>, competition <span class="op">=</span> <span class="st">"REGULAR"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CEBL Team Statistics from the CEBL Stats API ──────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:52 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 11 × 42</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season mode   competition segment vs_conference vs_team_id team_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>   <span style="text-decoration: underline;">2</span>025 TOTALS REGULAR     <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>                    <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more variables: is_league_row &lt;lgl&gt;, name_en &lt;chr&gt;, short_name_en &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   name_fr &lt;chr&gt;, short_name_fr &lt;chr&gt;, played &lt;int&gt;, wins &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   win_percentage &lt;dbl&gt;, losses &lt;int&gt;, points &lt;dbl&gt;, points_against &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   point_difference &lt;dbl&gt;, field_goals_made &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_attempted &lt;dbl&gt;, field_goal_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_points_made &lt;dbl&gt;, three_points_attempted &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_percentage &lt;dbl&gt;, free_throws_made &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -350,6 +350,9 @@ Errors and terms of use are those of
 unofficial use of the public widget endpoint, at least 1 s between
 requests, not republished as release assets.
 
+     lnb_seasons()
+     lnb_schedule()
+
 ## See also
 
 Other Atrium:
@@ -381,60 +384,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lnb_seasons())
-#> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 15:43:48 UTC
-#> # A tibble: 19 × 9
-#>    website_id season_id              competition_id competition_name season_name
-#>         <int> <chr>                  <chr>          <chr>            <chr>      
-#>  1         12 4a877e1f-51d1-11f0-a8… 2c58cdf2-51d1… All Star Game    All Star G…
-#>  2         12 d72d56a8-51d3-11f0-94… b98931f7-51d3… Betclic ÉLITE -… Betclic ÉL…
-#>  3         12 df310a05-51ad-11f0-bd… 3f4064bb-51ad… Betclic ÉLITE    Betclic ÉL…
-#>  4         12 c8514e7e-51ae-11f0-94… a355be55-51ae… Espoirs ÉLITE    Espoirs EL…
-#>  5         12 3bfda51f-51ad-11f0-84… 28940adf-51ad… Supercoupe       SuperCoupe…
-#>  6         12 d9c62b61-51d1-11f0-88… c4021a1f-51d1… Young Star Game  Young Star…
-#>  7         12 5e31a852-51ae-11f0-b5… 4c27df72-51ae… ÉLITE 2          ÉLITE 2 20…
-#>  8         12 57b5b7b0-2fd7-11ef-93… 35901fb4-2fd7… All Star Game    All Star G…
-#>  9         12 8d12d86f-6545-11ef-8c… 27a79741-597b… Betclic ÉLITE -… Betclic ÉL…
-#> 10         12 d2dd2541-5978-11ef-81… b5c596e1-5978… Betclic ÉLITE -… Betclic ÉL…
-#> 11         12 cab2f926-2fab-11ef-8b… a2262b45-2fab… Betclic ÉLITE    Betclic ÉL…
-#> 12         12 c68a19df-2fb4-11ef-bf… ac2bc8df-2fb4… Espoirs ELITE    Espoirs EL…
-#> 13         12 e1ffce27-6544-11ef-8b… 4e83de5b-597c… Espoirs PROB - … Espoirs PR…
-#> 14         12 702b8520-2fb5-11ef-8f… 59512848-2fb5… Espoirs PROB     Espoirs PR…
-#> 15         12 add3f98b-5977-11ef-91… 932b5919-5977… Leaders Cup      Leaders Cu…
-#> 16         12 79e39e0e-5978-11ef-95… 405cf027-5978… Leaders Cup PROB Leaders Cu…
-#> 17         12 91334b18-2fb3-11ef-be… 0847055c-2fb3… PROB             PROB 2024  
-#> 18         12 418ecaae-19af-11ee-a5… 2cd1ec93-19af… Betclic ÉLITE    Betclic ÉL…
-#> 19         12 7561dbee-19b5-11ee-af… 213e021f-19b5… PROB             PROB 2023  
-#> # ℹ 4 more variables: abbreviation_local <chr>, year <int>,
-#> #   season_end_year <int>, is_default_season <lgl>
-  try(lnb_schedule())
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────
-#> ℹ Data updated: 2026-10-18 15:43:48 UTC
-#> # A tibble: 240 × 40
-#>    website_id season_id          competition_id competition_name season_end_year
-#>         <int> <chr>              <chr>          <chr>                      <int>
-#>  1         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  2         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  3         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  4         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  5         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  6         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  7         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  8         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#>  9         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#> 10         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               2026
-#> # ℹ 230 more rows
-#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
-#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
-#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
-#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
-#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>, …
-# }
-```

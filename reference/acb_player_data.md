@@ -164,7 +164,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_data(player_id = 20209407))
 #> ── ACB Player Data from api2.acb.com ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:03 UTC
+#> ℹ Data updated: 2026-10-18 17:20:15 UTC
 #> # A tibble: 1 × 28
 #>   player_id player_name first_name last_name shirt_number game_role
 #>       <int> <chr>       <chr>      <chr>     <chr>        <chr>    

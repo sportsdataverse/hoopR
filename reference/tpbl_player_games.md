@@ -235,6 +235,8 @@ game played, with that game's whole stat line. An empty answer raises
   500 deterministically: it fails after one request. Wrappers raise;
   they never warn and return an empty frame.
 
+     tpbl_player_games(player_id = 75, division_id = 2)
+
 ## See also
 
 Other TPBL Functions:
@@ -253,33 +255,3 @@ Other TPBL Functions:
 [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
 [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
 [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tpbl_player_games(player_id = 75, division_id = 2))
-#> ── TPBL Player Game Log from api.tpbl.basketball ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:22 UTC
-#> # A tibble: 33 × 143
-#>    player_id gohoops_person_id gohoops_roster_id player division_id
-#>        <int>             <int>             <int> <chr>        <int>
-#>  1        75             70832            126997 高國豪           2
-#>  2        75             70832            126997 高國豪           2
-#>  3        75             70832            126997 高國豪           2
-#>  4        75             70832            126997 高國豪           2
-#>  5        75             70832            126997 高國豪           2
-#>  6        75             70832            126997 高國豪           2
-#>  7        75             70832            126997 高國豪           2
-#>  8        75             70832            126997 高國豪           2
-#>  9        75             70832            126997 高國豪           2
-#> 10        75             70832            126997 高國豪           2
-#> # ℹ 23 more rows
-#> # ℹ 138 more variables: gohoops_division_id <int>, team_id <int>, team <chr>,
-#> #   game_id <int>, gohoops_game_id <int>, game_title <chr>, home_team_id <int>,
-#> #   away_team_id <int>, home_score <int>, away_score <int>, venue <chr>,
-#> #   tipoff <dttm>, periods_played <int>, score <int>, rebounds <int>,
-#> #   assists <int>, steals <int>, blocks <int>, turnovers <int>, fouls <int>,
-#> #   roster_fouls <int>, bench_fouls <int>, time_on_court <int>, …
-# }
-```

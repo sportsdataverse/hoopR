@@ -139,6 +139,8 @@ order (sdv-py `cba_best_player`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_best_player(schedule_id = 100105799)
+
 ## See also
 
 Other CBA Functions:
@@ -168,22 +170,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_best_player(schedule_id = 100105799))
-#> ── CBA Best Player from data-server.cbaleague.com ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:06 UTC
-#> # A tibble: 2 × 19
-#>   schedule_id side  assists blocked fouls free_throw_str minutes number
-#>         <int> <chr>   <int>   <int> <int> <chr>            <int> <chr> 
-#> 1   100105799 home        1       1     2 4/4                 20 23    
-#> 2   100105799 away        0       0     1 2/2                 26 17    
-#> # ℹ 11 more variables: player_img <chr>, player_name <chr>,
-#> #   player_name_str <chr>, points <int>, real_point_rate <dbl>, rebounds <int>,
-#> #   steals <int>, three_points_str <chr>, turn_share <dbl>, turnovers <int>,
-#> #   two_points_str <chr>
-# }
-```

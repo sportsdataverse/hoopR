@@ -175,7 +175,8 @@ malformed id or league slug, a lang other than en or ru, or a season the competi
 final or a stub, a partial or possibly truncated page, or a body for another game, person, team, competition,
 league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
 warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/vtb_infobasket_player_career_stats.html">vtb_infobasket_player_career_stats</a></span><span class="op">(</span>person_id <span class="op">=</span> <span class="fl">423011</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other VTB Functions:
@@ -218,26 +219,6 @@ warn and return empty.</p></li>
 <code><a href="vtb_league_seasons.html">vtb_league_seasons()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">vtb_infobasket_player_career_stats</span><span class="op">(</span>person_id <span class="op">=</span> <span class="fl">423011</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── VTB Infobasket Player Career Stats from org.infobasket.su ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:04:47 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 39</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   person_id game_count in_game_count start_count has_more_seasons points shot1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>    <span style="text-decoration: underline;">423</span>011        128           128         119 FALSE              <span style="text-decoration: underline;">1</span>950   765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 32 more variables: goal1 &lt;int&gt;, shot2 &lt;int&gt;, goal2 &lt;int&gt;, shot3 &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   goal3 &lt;int&gt;, shot1_percent &lt;dbl&gt;, shot2_percent &lt;dbl&gt;, shot3_percent &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   assist &lt;int&gt;, blocks &lt;int&gt;, def_rebound &lt;int&gt;, off_rebound &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebound &lt;int&gt;, steal &lt;int&gt;, turnover &lt;int&gt;, foul &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   opponent_foul &lt;int&gt;, avg_points &lt;dbl&gt;, avg_assist &lt;dbl&gt;, avg_blocks &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   avg_def_rebound &lt;dbl&gt;, avg_off_rebound &lt;dbl&gt;, avg_rebound &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   avg_steal &lt;dbl&gt;, avg_turnover &lt;dbl&gt;, avg_foul &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

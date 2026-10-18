@@ -89,6 +89,8 @@ this order (sdv-py `pleague_preciser_injury`):
   redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried,
   up to three attempts.
 
+     pleague_preciser_injury(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
+
 ## See also
 
 Other P. LEAGUE+ Functions:
@@ -110,19 +112,3 @@ Other P. LEAGUE+ Functions:
 [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
 [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
 [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(pleague_preciser_injury(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#> ── P. LEAGUE+ Injury Report from api.preciser.io ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:19 UTC
-#> # A tibble: 2 × 8
-#>   game_uuid             side  team_uuid team_name_zh team_name_en color logo_url
-#>   <chr>                 <chr> <chr>     <chr>        <chr>        <chr> <chr>   
-#> 1 e6f98675-3e5b-11ed-9… home  e86394aa… 勇士         Braves       #3C8… https:/…
-#> 2 e6f98675-3e5b-11ed-9… away  e8674343… 攻城獅       Lioneers     #4f1… https:/…
-#> # ℹ 1 more variable: injury_report <chr>
-# }
-```

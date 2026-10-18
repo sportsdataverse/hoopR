@@ -117,7 +117,7 @@ Other TBF:
 # \donttest{
   try(tbf_shots(match_id = 346279))
 #> ── TBF Shots ─────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:03 UTC
+#> ℹ Data updated: 2026-10-18 17:43:55 UTC
 #> # A tibble: 123 × 10
 #>    match_id period period_type side  shot_player_id player_name    jersey_number
 #>       <int>  <int>       <int> <chr>          <int> <chr>          <chr>        

@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_efficiency(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_efficiency(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Efficiency ───────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:48 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         efficie… total     1    778460 Brandon Ta…          266176
-#>  2   2027 bsl         efficie… total     2    501134 Jordon Cra…          265994
-#>  3   2027 bsl         efficie… total     3    734505 Trevion Wi…          265991
-#>  4   2027 bsl         efficie… total     4    778184 Oscar Cluff          268222
-#>  5   2027 bsl         efficie… total     5    736366 John Meeks           266028
-#>  6   2027 bsl         efficie… total     6    778310 Zach Hanki…          265993
-#>  7   2027 bsl         efficie… total     7    778161 Johnny Dav…          268222
-#>  8   2027 bsl         efficie… total     8    516236 Khyri Thom…          266048
-#>  9   2027 bsl         efficie… total     9    734506 Malachi Fl…          265991
-#> 10   2027 bsl         efficie… total    10    609083 Steven Eno…          266027
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

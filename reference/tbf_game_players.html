@@ -150,6 +150,7 @@ the league list lacks, an empty list, a finished game before 2025-26 asked for p
 the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 an error envelope, a redirect, a partial page or a changed capped list). All inherit <code>hoopR_error</code>.
 Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/tbf_game_players.html">tbf_game_players</a></span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">346279</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -187,29 +188,6 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
 <code><a href="tbf_weeks.html">tbf_weeks()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_game_players</span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">346279</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Game Players ──────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:03:44 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 24 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    match_id side  team  player_name         jersey_number is_starter is_active</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Zach Nutall         10            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Tre'shawn Thurman   15            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Efe Postel          22            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Emirhan Serbest     24            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Yiğitcan Saybir     3             FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Bryce Jones         32            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Shavar Reynolds Jr. 33            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Gabe Brown          44            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Terrell Carter II   5             FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">346</span>279 home  <span style="color: #BB0000;">NA</span>    Leon Apaydın        55            FALSE      FALSE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more rows</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

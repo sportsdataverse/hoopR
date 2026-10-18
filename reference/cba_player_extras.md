@@ -130,6 +130,8 @@ columns, in this order (sdv-py `cba_player_extras`):
   retried, up to three attempts. Wrappers raise; they never warn and
   return empty.
 
+     cba_player_extras(schedule_id = 100105799)
+
 ## See also
 
 Other CBA Functions:
@@ -159,29 +161,3 @@ Other CBA Functions:
 [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
 [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
 [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cba_player_extras(schedule_id = 100105799))
-#> ── CBA Player Extras from data-server.cbaleague.com ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:23 UTC
-#> # A tibble: 24 × 10
-#>    schedule_id side  cn_alias dunks_points fast_break_points
-#>          <int> <chr> <chr>           <int>             <int>
-#>  1   100105799 home  朱俊龙              0                 3
-#>  2   100105799 home  胡金秋              0                 4
-#>  3   100105799 home  布朗                0                 3
-#>  4   100105799 home  孙铭徽              0                 0
-#>  5   100105799 home  卡尔顿              2                 0
-#>  6   100105799 home  林秉圣              0                 2
-#>  7   100105799 home  桑普森              4                 2
-#>  8   100105799 home  塔克                2                 0
-#>  9   100105799 home  赵嘉仁              0                 0
-#> 10   100105799 home  吴骁                0                 0
-#> # ℹ 14 more rows
-#> # ℹ 5 more variables: field_goals_at_rim_made <int>, game_start <int>,
-#> #   number <chr>, player_id <int>, up_time <int>
-# }
-```

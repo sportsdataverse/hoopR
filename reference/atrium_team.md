@@ -142,6 +142,8 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_team(website_id = 12, entity_id = "f43b1b0f-55bc-11f0-84d9-01499d2f0a07")
+
 ## See also
 
 Other Atrium:
@@ -173,24 +175,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_team(website_id = 12, entity_id = "f43b1b0f-55bc-11f0-84d9-01499d2f0a07"))
-#> ── Atrium team from embed-api.eui.connect.sportradar.com ─── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:02 UTC
-#> # A tibble: 1 × 31
-#>   website_id entity_id   name  color logo_url previous_fixture_id previous_round
-#>        <int> <chr>       <chr> <chr> <chr>    <chr>               <chr>         
-#> 1         12 f43b1b0f-5… Paris #141… https:/… 5423072b-6715-11f0… 30            
-#> # ℹ 24 more variables: previous_status <chr>, previous_start_time_utc <dttm>,
-#> #   previous_start_time_local <chr>, previous_venue <chr>,
-#> #   previous_attendance <int>, previous_home_entity_id <chr>,
-#> #   previous_home_name <chr>, previous_home_score <int>,
-#> #   previous_away_entity_id <chr>, previous_away_name <chr>,
-#> #   previous_away_score <int>, next_fixture_id <chr>, next_round <chr>,
-#> #   next_status <chr>, next_start_time_utc <dttm>, …
-# }
-```

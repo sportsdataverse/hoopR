@@ -116,7 +116,7 @@ Other IBBA Segev:
 # \donttest{
   try(ibba_segev_pbp(game_id = 50))
 #> ── IBBA Segev play-by-play ───────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:14 UTC
+#> ℹ Data updated: 2026-10-18 17:24:21 UTC
 #> # A tibble: 768 × 30
 #>    game_id action_id parent_action_id period clock user_time_utc type    subtype
 #>      <int>     <int>            <int>  <int> <chr> <chr>         <chr>   <chr>  

@@ -116,6 +116,8 @@ another status, a transport error, a body that is not JSON, an error or
 changed envelope, a row for another season, team, player, board or game,
 or a box score of a game that is not final). All inherit `hoopR_error`.
 
+     ibba_team(season = 2026, team_id = 1109, team_uid = 10)
+
 ## See also
 
 Other IBBA:
@@ -135,24 +137,3 @@ Other IBBA:
 [`ibba_stats_types()`](https://hoopR.sportsdataverse.org/reference/ibba_stats_types.md),
 [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md),
 [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(ibba_team(season = 2026, team_id = 1109, team_uid = 10))
-#> ── IBBA team ─────────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:19 UTC
-#> # A tibble: 1 × 33
-#>   team_uid team_id season team_name_he       team_short_name_he team_name       
-#>      <int>   <int>  <int> <chr>              <chr>              <chr>           
-#> 1       10    1109   2026 מכבי Rapyd תל אביב "מכבי ת\"א"        Maccabi Rapyd T…
-#> # ℹ 27 more variables: team_short_name <chr>, wins <int>, losses <int>,
-#> #   points_for <int>, points_against <int>, table_points <int>, place <int>,
-#> #   website_url <chr>, photo_path <chr>, icon_path <chr>, logo_url <chr>,
-#> #   icon3_path <chr>, arena_id <int>, address_he <chr>, address <chr>,
-#> #   colors_he <chr>, colors <chr>, sponsors_he <chr>, sponsors <chr>,
-#> #   about_he <chr>, about <chr>, facebook_url <chr>, twitter_url <chr>,
-#> #   instagram_url <chr>, youtube_url <chr>, subscribe_url <chr>, …
-# }
-```

@@ -95,6 +95,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_player_career(player_id = 196413)
+
 ## See also
 
 Other TBF:
@@ -129,33 +131,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_player_career(player_id = 196413))
-#> ── TBF Player Career ─────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:59 UTC
-#> # A tibble: 21 × 30
-#>    person_id player_name     nationality height_cm season_label season team_name
-#>        <int> <chr>           <chr>           <int> <chr>         <int> <chr>    
-#>  1    196413 Yiğitcan Saybir TÜRKİYE           201 2026-2027      2027 TOFAŞ    
-#>  2    196413 Yiğitcan Saybir TÜRKİYE           201 2025-2026      2026 TOFAŞ    
-#>  3    196413 Yiğitcan Saybir TÜRKİYE           201 2024-2025      2025 TOFAŞ    
-#>  4    196413 Yiğitcan Saybir TÜRKİYE           201 2023-2024      2024 TÜRK TEL…
-#>  5    196413 Yiğitcan Saybir TÜRKİYE           201 2022-2023      2023 FRUTTİ E…
-#>  6    196413 Yiğitcan Saybir TÜRKİYE           201 2021-2022      2022 ANADOLU …
-#>  7    196413 Yiğitcan Saybir TÜRKİYE           201 2020-2021      2021 ANADOLU …
-#>  8    196413 Yiğitcan Saybir TÜRKİYE           201 2019-2020      2020 ANADOLU …
-#>  9    196413 Yiğitcan Saybir TÜRKİYE           201 2018-2019      2019 ANADOLU …
-#> 10    196413 Yiğitcan Saybir TÜRKİYE           201 2017-2018      2018 ANADOLU …
-#> # ℹ 11 more rows
-#> # ℹ 23 more variables: activity_name <chr>, activity_type_id <int>,
-#> #   activity_id <int>, games <int>, seconds_played <int>, points <int>,
-#> #   assists <int>, fg_made <int>, fg_attempted <int>, fg3_made <int>,
-#> #   fg3_attempted <int>, ft_made <int>, ft_attempted <int>, off_rebounds <int>,
-#> #   def_rebounds <int>, rebounds <int>, steals <int>, turnovers <int>,
-#> #   blocks <int>, fouls <int>, efficiency <int>, fouls_drawn <int>, …
-# }
-```

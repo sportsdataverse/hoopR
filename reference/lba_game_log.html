@@ -155,7 +155,8 @@ an unknown season, a play-by-play before 2017-18, standings of a finished champi
 not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
 championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
 is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_game_log.html">lba_game_log</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">969</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other LBA Functions:
@@ -179,28 +180,6 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
 <code><a href="lba_teams_leaderboard.html">lba_teams_leaderboard()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_game_log</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">969</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Game Log from legabasket.it ───────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:44 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 69</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   season stat_line_id championship_id championships_match_id player_id team_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">2</span>027       <span style="text-decoration: underline;">324</span>455             602                  <span style="text-decoration: underline;">25</span>602       969    <span style="text-decoration: underline;">1</span>764</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">2</span>027       <span style="text-decoration: underline;">324</span>686             602                  <span style="text-decoration: underline;">25</span>371       969    <span style="text-decoration: underline;">1</span>764</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   <span style="text-decoration: underline;">2</span>027       <span style="text-decoration: underline;">324</span>924             602                  <span style="text-decoration: underline;">25</span>376       969    <span style="text-decoration: underline;">1</span>764</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 63 more variables: number &lt;int&gt;, played_minutes &lt;int&gt;, points &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   suffered_fouls &lt;int&gt;, done_fouls &lt;int&gt;, shots_2p_realized &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   shots_2p_total &lt;int&gt;, shots_3p_realized &lt;int&gt;, shots_3p_total &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   free_throws_realized &lt;int&gt;, free_throws_total &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   restricted_area_p1 &lt;chr&gt;, restricted_area_p2 &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   restricted_area_p3 &lt;chr&gt;, slam_dunk &lt;int&gt;, offensive_rebound &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   defensive_rebound &lt;int&gt;, ball_stop_given &lt;int&gt;, ball_stop_received &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

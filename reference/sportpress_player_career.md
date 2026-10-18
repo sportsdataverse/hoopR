@@ -117,6 +117,8 @@ columns are always these, in this order (sdv-py
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_player_career(roster_id = 11193)
+
 ## See also
 
 Other BNXT League Functions:
@@ -147,26 +149,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_player_career(roster_id = 11193))
-#> ── BNXT League Player Career from Sportpress ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:12 UTC
-#> # A tibble: 3 × 41
-#>   roster_id competition_id season competition_name     competition_team_id team 
-#>       <int>          <int>  <int> <chr>                              <int> <chr>
-#> 1     11193             22   2025 BNXT League 2024-20…                 351 LWD …
-#> 2     11193             24   2026 BNXT League 2025-20…                 506 Wind…
-#> 3     11193             25   2027 BNXT League 2026-20…                 541 Wind…
-#> # ℹ 35 more variables: team_short_name <chr>, club_id <int>, club_name <chr>,
-#> #   position <chr>, jersey <chr>, played_games <int>, games_started <int>,
-#> #   minute <dbl>, foul <dbl>, defensive_foul <dbl>, dunk_made <dbl>,
-#> #   dunk_all <dbl>, dunk_percent <dbl>, two_point_made <dbl>,
-#> #   two_point_all <dbl>, two_point_percent <dbl>, three_point_made <dbl>,
-#> #   three_point_all <dbl>, three_point_percent <dbl>, throw_made <dbl>,
-#> #   throw_all <dbl>, throw_percent <dbl>, free_throw_made <dbl>, …
-# }
-```

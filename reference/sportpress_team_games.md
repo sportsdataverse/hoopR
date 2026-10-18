@@ -126,6 +126,8 @@ columns are always these, in this order (sdv-py
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_team_games(competition_team_id = 541)
+
 ## See also
 
 Other BNXT League Functions:
@@ -156,26 +158,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_team_games(competition_team_id = 541))
-#> ── BNXT League Team Games from Sportpress ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:36 UTC
-#> # A tibble: 3 × 49
-#>   competition_team_id game_id game_time           status   competition_id season
-#>                 <int>   <int> <dttm>              <chr>             <int>  <int>
-#> 1                 541   11277 2026-10-03 20:30:00 finished             25   2027
-#> 2                 541   11295 2026-10-10 20:30:00 finished             25   2027
-#> 3                 541   11311 2026-10-17 20:00:00 finished             25   2027
-#> # ℹ 43 more variables: phase_id <int>, phase_name <chr>, round_name <chr>,
-#> #   round_priority <int>, period_name <chr>, arena <chr>,
-#> #   home_competition_team_id <int>, home_team <chr>,
-#> #   home_team_short_name <chr>, home_score <int>,
-#> #   away_competition_team_id <int>, away_team <chr>,
-#> #   away_team_short_name <chr>, away_score <int>, minute <int>, foul <int>,
-#> #   defensive_foul <int>, dunk_made <int>, dunk_all <int>, …
-# }
-```

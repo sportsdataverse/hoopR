@@ -172,6 +172,7 @@ a boolean or a non-empty string as the op needs) and <code>hoopR_asset_fetch</co
 failure: another status, a transport error, a body that is not JSON, an error or changed
 envelope, a row for another season, team, player, board or game, or a box score of a game
 that is not final). All inherit <code>hoopR_error</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/ibba_games_ex.html">ibba_games_ex</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_uid <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -194,32 +195,6 @@ that is not final). All inherit <code>hoopR_error</code>.</p>
 <code><a href="ibba_teams.html">ibba_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">ibba_games_ex</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_uid <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── IBBA games ex ─────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:41:08 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 45 × 16</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id game_date  season home_team_id away_team_id home_team_he away_team_he</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>    <span style="text-decoration: underline;">8</span>888 2025-09-07   <span style="text-decoration: underline;">2</span>026          120          119 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>בני הרצליה<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>    <span style="text-decoration: underline;">9</span>895 2025-09-12   <span style="text-decoration: underline;">2</span>026          120          252 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>זניט<span style="color: #949494;">"</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>    <span style="text-decoration: underline;">9</span>896 2025-09-13   <span style="text-decoration: underline;">2</span>026          120          240 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>פרטיזן בלג…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>    <span style="text-decoration: underline;">9</span>897 2025-09-17   <span style="text-decoration: underline;">2</span>026          120          266 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>מכבי רעננה<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>    <span style="text-decoration: underline;">7</span>886 2025-09-30   <span style="text-decoration: underline;">2</span>026          172          120 <span style="color: #949494;">"</span>אנאדולו אפ… <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>    <span style="text-decoration: underline;">7</span>888 2025-10-03   <span style="text-decoration: underline;">2</span>026          120          304 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>פריז<span style="color: #949494;">"</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    <span style="text-decoration: underline;">7</span>891 2025-10-08   <span style="text-decoration: underline;">2</span>026          127          120 <span style="color: #949494;">"</span>הפועל ת\"א<span style="color: #949494;">"</span> <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>    <span style="text-decoration: underline;">7</span>894 2025-10-14   <span style="text-decoration: underline;">2</span>026          120          163 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>ברצלונה<span style="color: #949494;">"</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    <span style="text-decoration: underline;">7</span>898 2025-10-16   <span style="text-decoration: underline;">2</span>026          120          135 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>אולימפיאקו…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    <span style="text-decoration: underline;">7</span>902 2025-10-22   <span style="text-decoration: underline;">2</span>026          120          166 <span style="color: #949494;">"</span>מכבי ת\"א<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>ריאל מדריד<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 more variables: home_logo_url &lt;chr&gt;, away_logo_url &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_score &lt;int&gt;, away_score &lt;int&gt;, board_id &lt;int&gt;, board_name_he &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   round &lt;int&gt;, tip_off &lt;chr&gt;, venue_he &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

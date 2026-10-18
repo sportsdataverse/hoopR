@@ -162,7 +162,8 @@ a game not yet started), <code>hoopR_bad_request</code> (a bad argument, another
 (a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a
 truncated page, a body for another game, season, club or league, a box score still in play), all
 inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/scb_team_seasons.html">scb_team_seasons</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"413"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other SCB Functions:
@@ -190,30 +191,6 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
 <code><a href="scb_transfers_teams.html">scb_transfers_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">scb_team_seasons</span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"413"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── BBL/DBBL Team Seasons from the SCB API ────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:01:59 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 52 × 8</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    league team_id season season_id season_team_id team_name         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bbl    413       <span style="text-decoration: underline;">1</span>976      <span style="text-decoration: underline;">1</span>975 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bbl    413       <span style="text-decoration: underline;">1</span>977      <span style="text-decoration: underline;">1</span>976 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bbl    413       <span style="text-decoration: underline;">1</span>978      <span style="text-decoration: underline;">1</span>977 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bbl    413       <span style="text-decoration: underline;">1</span>979      <span style="text-decoration: underline;">1</span>978 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bbl    413       <span style="text-decoration: underline;">1</span>980      <span style="text-decoration: underline;">1</span>979 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> bbl    413       <span style="text-decoration: underline;">1</span>981      <span style="text-decoration: underline;">1</span>980 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> bbl    413       <span style="text-decoration: underline;">1</span>982      <span style="text-decoration: underline;">1</span>981 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> bbl    413       <span style="text-decoration: underline;">1</span>983      <span style="text-decoration: underline;">1</span>982 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> bbl    413       <span style="text-decoration: underline;">1</span>984      <span style="text-decoration: underline;">1</span>983 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> bbl    413       <span style="text-decoration: underline;">1</span>985      <span style="text-decoration: underline;">1</span>984 413            DTV Charlottenburg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 42 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: is_championship_winner &lt;lgl&gt;, is_cup_winner &lt;lgl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

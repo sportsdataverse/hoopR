@@ -90,6 +90,8 @@ non-HTML body, an error or changed envelope, a play-by-play of another
 game, a page for another group or season, or layout drift). All inherit
 `hoopR_error`.
 
+     feb_shots(game_id = 2535725)
+
 ## See also
 
 Other FEB:
@@ -103,28 +105,3 @@ Other FEB:
 [`feb_schedule()`](https://hoopR.sportsdataverse.org/reference/feb_schedule.md),
 [`feb_standings()`](https://hoopR.sportsdataverse.org/reference/feb_standings.md),
 [`feb_team_stats()`](https://hoopR.sportsdataverse.org/reference/feb_team_stats.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(feb_shots(game_id = 2535725))
-#> ── FEB shots from intrafeb.feb.es ────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:30 UTC
-#> # A tibble: 122 × 11
-#>    game_id period clock clock_seconds team_side team_id shirt_number player_id
-#>      <int>  <int> <chr>         <int> <chr>       <int> <chr>            <int>
-#>  1 2535725      3 08:34           514 home      1009716 11             1603635
-#>  2 2535725      2 04:38           278 home      1009716 22             2500822
-#>  3 2535725      4 09:15           555 home      1009716 6              2880241
-#>  4 2535725      1 06:19           379 away      1010207 8              2533871
-#>  5 2535725      2 02:04           124 away      1010207 13             2640789
-#>  6 2535725      3 09:53           593 home      1009716 16             2880232
-#>  7 2535725      2 09:13           553 home      1009716 11             1603635
-#>  8 2535725      2 01:06            66 away      1010207 13             2640789
-#>  9 2535725      3 09:18           558 home      1009716 66             2814191
-#> 10 2535725      3 01:41           101 home      1009716 3              1371559
-#> # ℹ 112 more rows
-#> # ℹ 3 more variables: made <lgl>, x <dbl>, y <dbl>
-# }
-```

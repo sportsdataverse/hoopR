@@ -113,6 +113,8 @@ after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_team_players_stats(team_id = 1764, season = 2027)
+
 ## See also
 
 Other LBA Functions:
@@ -134,35 +136,3 @@ Other LBA Functions:
 [`lba_team_box_score()`](https://hoopR.sportsdataverse.org/reference/lba_team_box_score.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md),
 [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_team_players_stats(team_id = 1764, season = 2027))
-#> ── LBA Team Players Stats from legabasket.it ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:43:21 UTC
-#> # A tibble: 12 × 38
-#>    team_id club_id club_code season player_id player_name player_surname
-#>      <int>   <int> <chr>      <int>     <int> <chr>       <chr>         
-#>  1    1764     107 TVU         2027      6191 JP          Macura        
-#>  2    1764     107 TVU         2027      4879 DeWayne     Russell       
-#>  3    1764     107 TVU         2027       969 Alessandro  Cappelletti   
-#>  4    1764     107 TVU         2027      9333 Valentine   Chery         
-#>  5    1764     107 TVU         2027      9042 Ike         Anigbogu      
-#>  6    1764     107 TVU         2027      9041 Brekkott    Chapman       
-#>  7    1764     107 TVU         2027      9331 Chico       Carter        
-#>  8    1764     107 TVU         2027      1189 Matteo      Chillo        
-#>  9    1764     107 TVU         2027      3714 Federico    Miaschi       
-#> 10    1764     107 TVU         2027      7607 Antonio     Iaquinta      
-#> 11    1764     107 TVU         2027      7566 Alessandro  Manfredotti   
-#> 12    1764     107 TVU         2027      9332 Gregorio    Allinei       
-#> # ℹ 31 more variables: player_season <int>, player_photo_key <chr>,
-#> #   played_matches <int>, total_matches <int>, start_formation <int>,
-#> #   points_sum <int>, played_minutes_sum <int>, rating_lega_sum <int>,
-#> #   rating_oer_sum <dbl>, offensive_rebound_sum <int>,
-#> #   defensive_rebound_sum <int>, total_rebound_sum <int>, assists_sum <int>,
-#> #   regain_balls_sum <int>, lost_balls_sum <int>, ball_stop_given_sum <int>,
-#> #   ball_stop_received_sum <int>, done_fouls_sum <int>, …
-# }
-```

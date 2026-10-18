@@ -102,6 +102,8 @@ frame is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_current_standings()
+
 ## See also
 
 Other KBL Functions:
@@ -126,29 +128,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_current_standings())
-#> ── KBL Current Standings from api.kbl.or.kr ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:22 UTC
-#> # A tibble: 10 × 17
-#>     rank team_code team_name         team_name_full   wins losses draws win_diff
-#>    <int> <chr>     <chr>             <chr>           <int>  <int> <int>    <dbl>
-#>  1     1 35        서울 삼성         서울 삼성 썬더스……     5      0     0      0  
-#>  2     2 70        안양 정관장       안양 정관장 레드부스터스……     6      1     0      0  
-#>  3     3 64        대구 한국가스공사 대구 한국가스공사 페가수스…     3      3     0      2.5
-#>  4     4 66        고양 소노         고양 소노 스카이거너스……     3      4     0      3  
-#>  5     4 06        수원 KT           수원 KT 소닉붐      3      4     0      3  
-#>  6     6 16        원주 DB           원주 DB 프로미      2      3     0      3  
-#>  7     7 50        창원 LG           창원 LG 세이커스……     2      4     0      3.5
-#>  8     7 60        부산 KCC          부산 KCC 이지스     2      4     0      3.5
-#>  9     7 10        울산 현대모비스   울산 현대모비스 피버스……     2      4     0      3.5
-#> 10    10 55        서울 SK           서울 SK 나이츠      0      1     0      3  
-#> # ℹ 9 more variables: home_wins <int>, home_losses <int>, away_wins <int>,
-#> #   away_losses <int>, conti_win <int>, conti_loss <int>, max_win <int>,
-#> #   max_loss <int>, last_five <chr>
-# }
-```

@@ -163,6 +163,7 @@ matches); <code>hoopR_bad_request</code> for HTTP 400 / 422 or a URL that is not
 has occurred" page (<code>transient = TRUE</code>: retry later), a dead connection, an error
 envelope, a cut-off page, an unfinished game, or a body for another match, competition
 or ORG.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/genius_team_box.html">genius_team_box</a></span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">2902690</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -187,27 +188,6 @@ or ORG.</p>
 <code><a href="slb_competition.html">slb_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">genius_team_box</span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">2902690</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Genius LiveStats team box score ───────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:40:58 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 65</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   match_id   tno name     name_international short_name code  code_international</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  2<span style="text-decoration: underline;">902</span>690     1 Periste… Peristeri Betsson  PER        PER   PER               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  2<span style="text-decoration: underline;">902</span>690     2 Iraklis… Iraklis BC         IRA        IRA   IRA               </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 58 more variables: coach &lt;chr&gt;, score &lt;int&gt;, full_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   p1_score &lt;int&gt;, p2_score &lt;int&gt;, p3_score &lt;int&gt;, p4_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ot_score &lt;int&gt;, fouls &lt;int&gt;, timeouts &lt;int&gt;, minutes &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   seconds_played &lt;int&gt;, field_goals_made &lt;int&gt;, field_goals_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_percentage &lt;dbl&gt;, three_pointers_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_pointers_attempted &lt;int&gt;, three_pointers_percentage &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   two_pointers_made &lt;int&gt;, two_pointers_attempted &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

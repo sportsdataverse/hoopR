@@ -175,7 +175,8 @@ non-integer id or season, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (an
 this API answers for a body it dislikes and which is not retried; a dead connection; an empty or undecryptable
 body; an unfinished game; a body for another game, team, season or day), all inheriting <code>hoopR_error</code>. HTTP 429
 / 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cba_best_stats.html">cba_best_stats</a></span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CBA Functions:
@@ -207,29 +208,6 @@ body; an unfinished game; a body for another game, team, season or day), all inh
 <code><a href="cba_teams.html">cba_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cba_best_stats</span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CBA Best Stats from data-server.cbaleague.com ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:08 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    schedule_id side  ctype    cvalue player_id player_name player_no seconds</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   100<span style="text-decoration: underline;">105</span>799 home  assists  4      100<span style="text-decoration: underline;">005</span>271 朱俊龙      10           <span style="text-decoration: underline;">1</span>692</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   100<span style="text-decoration: underline;">105</span>799 home  points   16     100<span style="text-decoration: underline;">107</span>411 <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>            913</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   100<span style="text-decoration: underline;">105</span>799 home  steals   3      100<span style="text-decoration: underline;">024</span>772 <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>279</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   100<span style="text-decoration: underline;">105</span>799 home  rebounds 10     100<span style="text-decoration: underline;">016</span>690 <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>           <span style="text-decoration: underline;">1</span>205</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   100<span style="text-decoration: underline;">105</span>799 home  blocked  2      100<span style="text-decoration: underline;">005</span>271 朱俊龙      10           <span style="text-decoration: underline;">1</span>692</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   100<span style="text-decoration: underline;">105</span>799 away  assists  3      100<span style="text-decoration: underline;">098</span>648 <span style="color: #BB0000;">NA</span>          <span style="color: #BB0000;">NA</span>            554</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   100<span style="text-decoration: underline;">105</span>799 away  points   17     100<span style="text-decoration: underline;">098</span>032 迪亚洛      11           <span style="text-decoration: underline;">1</span>571</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   100<span style="text-decoration: underline;">105</span>799 away  steals   2      100<span style="text-decoration: underline;">012</span>158 陈彭宇迪    1             635</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   100<span style="text-decoration: underline;">105</span>799 away  rebounds 9      100<span style="text-decoration: underline;">013</span>553 刘传兴      21           <span style="text-decoration: underline;">1</span>209</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   100<span style="text-decoration: underline;">105</span>799 away  blocked  2      100<span style="text-decoration: underline;">013</span>553 刘传兴      21           <span style="text-decoration: underline;">1</span>209</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: team_id &lt;int&gt;, type &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

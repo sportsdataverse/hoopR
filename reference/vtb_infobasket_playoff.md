@@ -172,7 +172,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_playoff(comp_id = 54281))
 #> ── VTB Infobasket Playoff from org.infobasket.su ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:51 UTC
+#> ℹ Data updated: 2026-10-18 17:44:20 UTC
 #> # A tibble: 8 × 25
 #>   comp_id  tree round is_current_round  sort round_name_ru  round_name_en score1
 #>     <int> <int> <int> <lgl>            <int> <chr>          <chr>          <int>

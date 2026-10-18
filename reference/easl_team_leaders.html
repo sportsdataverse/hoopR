@@ -172,7 +172,8 @@ non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for a
 retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
 stalled sync on the active season; a body for another game, season, team or player than the one asked for).
 Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/easl_team_leaders.html">easl_team_leaders</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"865489e8-b0f5-11ed-8b3f-c199a9dea184"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -195,32 +196,6 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
 <code><a href="easl_teams.html">easl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_team_leaders</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"865489e8-b0f5-11ed-8b3f-c199a9dea184"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Team Leaders from easl.joshricha.com ─────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:36:24 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 45 × 16</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season season_id category  rank value player_id player_name player_name_latin</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     1 7.11  85c99dab… D.J. NEWBI… D.J. NEWBILL     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     2 4.44  8983317f… HIEJIMA Ma… HIEJIMA Makoto   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     3 4.33  8a530bfe… Isaac FOTU  Isaac FOTU       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     4 3.67  8a4f5e97… Grant JERR… Grant JERRETT    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… assists…     5 2.14  8984fe11… OGAWA Atsu… OGAWA Atsuya     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     1 0.833 8a4f5e97… Grant JERR… Grant JERRETT    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     2 0.667 e670b5bc… Gavin EDWA… Gavin EDWARDS    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     3 0.333 8983317f… HIEJIMA Ma… HIEJIMA Makoto   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     4 0.333 8a530bfe… Isaac FOTU  Isaac FOTU       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>026 77441bb3… blocksP…     5 0.286 8984fe11… OGAWA Atsu… OGAWA Atsuya     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: jersey_number &lt;chr&gt;, position &lt;chr&gt;, player_status &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_id &lt;chr&gt;, team_name &lt;chr&gt;, team_name_native &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_code_latin &lt;chr&gt;, team_code_local &lt;chr&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

@@ -88,6 +88,8 @@ status, message and the server's own timestamp. An empty answer raises
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_health()
+
 ## See also
 
 Other EASL Functions:
@@ -108,17 +110,3 @@ Other EASL Functions:
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_health())
-#> ── EASL Health from easl.joshricha.com ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:04 UTC
-#> # A tibble: 1 × 3
-#>   status message                        timestamp               
-#>   <chr>  <chr>                          <chr>                   
-#> 1 OK     EASL Basketball API is running 2026-10-18T15:36:04.231Z
-# }
-```

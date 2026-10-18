@@ -111,6 +111,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_game_staff(game_id = 921391)
+
 ## See also
 
 Other VTB Functions:
@@ -151,35 +153,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_game_staff(game_id = 921391))
-#> ── VTB Infobasket Game Staff from org.infobasket.su ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:45 UTC
-#> # A tibble: 17 × 11
-#>    game_id team_number team_id start_id start_type role         pos_id person_id
-#>      <int>       <int>   <int>    <int>      <int> <chr>         <int>     <int>
-#>  1  921391           0      NA        3          4 referee         101    126593
-#>  2  921391           0      NA        4          4 referee         102      3474
-#>  3  921391           0      NA        5          4 referee         103      1140
-#>  4  921391           0      NA        6          4 commissioner    104    126584
-#>  5  921391           0      NA       42          4 table offic…    111    154032
-#>  6  921391           0      NA       51          4 table offic…    112    190505
-#>  7  921391           0      NA       44          4 table offic…    113    149688
-#>  8  921391           0      NA       45          4 table offic…    114    320677
-#>  9  921391           0      NA       46          4 table offic…    115    430018
-#> 10  921391           0      NA       47          4 table offic…    121    154041
-#> 11  921391           0      NA       48          4 table offic…    120     25469
-#> 12  921391           0      NA       49          4 table offic…    120    154042
-#> 13  921391           0      NA       50          4 table offic…    123    160922
-#> 14  921391           1    2650       21          3 head coach     1000    131047
-#> 15  921391           1    2650       22          3 assistant c…   1001    260113
-#> 16  921391           2    1390       39          3 head coach     1000    133514
-#> 17  921391           2    1390       40          3 assistant c…   1001    135681
-#> # ℹ 3 more variables: person_name_en <chr>, person_name_ru <chr>,
-#> #   country_code_ioc <chr>
-# }
-```

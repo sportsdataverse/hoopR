@@ -73,6 +73,8 @@ in this order (sdv-py `scb_transfers`):
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_transfers()
+
 ## See also
 
 Other SCB Functions:
@@ -98,39 +100,3 @@ Other SCB Functions:
 [`scb_team_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_team_seasons.md),
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_transfers())
-#> ── BBL/DBBL Transfers from the SCB API ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:02:01 UTC
-#> # A tibble: 20 × 11
-#>    league transfer_date season_player_id real_player_id first_name  last_name   
-#>    <chr>  <chr>         <chr>                     <int> <chr>       <chr>       
-#>  1 bbl    2026-10-16    2005402               140183503 Yankuba     Sima Fatty  
-#>  2 bbl    2026-10-14    2005387                   59866 Ryan        Mikesell    
-#>  3 bbl    2026-10-06    2005312               140183148 Terrell     Harris      
-#>  4 bbl    2026-10-01    2005281                   50012 Sacar       Anim        
-#>  5 bbl    2026-09-29    2005242               140179958 Musa        Abra        
-#>  6 bbl    2026-09-18    2005199                   45587 Christian   Skladanowski
-#>  7 bbl    2026-09-16    2005169               140183479 De'Jour     Reaves      
-#>  8 bbl    2026-09-15    2004505               140180029 Cedric Paul Anderson Jr.
-#>  9 bbl    2026-09-14    2005104                   27255 Marvin      Heckel      
-#> 10 bbl    2026-09-14    2005111               140183473 Juom Maker  Bol Meen    
-#> 11 bbl    2026-09-14    2005111               140183473 Juom Maker  Bol Meen    
-#> 12 bbl    2026-09-14    2005114               140183474 Julian      Hilt        
-#> 13 bbl    2026-09-14    2005118                   50349 Nils        Piprek      
-#> 14 bbl    2026-09-12    2005088               140183470 Stefan      Momirov     
-#> 15 bbl    2026-09-11    2005038               140180799 Kilian      Dück        
-#> 16 bbl    2026-09-07    2005022               140183461 Kihei       Clark       
-#> 17 bbl    2026-09-01    2005090               140183455 Kyle        Gruhler     
-#> 18 bbl    2026-09-01    2005090               140183455 Kyle        Gruhler     
-#> 19 bbl    2026-09-01    2005089               140181646 Finn        Stuehlmeyer 
-#> 20 bbl    2026-09-01    2005110                   58374 Noah        Wendland    
-#> # ℹ 5 more variables: position <chr>, source_team_id <chr>,
-#> #   source_team_name <chr>, destination_team_id <chr>,
-#> #   destination_team_name <chr>
-# }
-```

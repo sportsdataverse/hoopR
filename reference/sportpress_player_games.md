@@ -128,6 +128,8 @@ A `hoopR_data` tibble: Game-by-game box lines of a roster entry
   Wrappers raise; they never return an empty frame for a failed request.
   Whole doubles (`24`) are accepted for integer arguments.
 
+     sportpress_player_games(roster_id = 11193)
+
 ## See also
 
 Other BNXT League Functions:
@@ -158,26 +160,3 @@ Other BNXT League Functions:
 [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md),
 [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md),
 [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(sportpress_player_games(roster_id = 11193))
-#> ── BNXT League Player Games from Sportpress ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:13 UTC
-#> # A tibble: 3 × 51
-#>   roster_id game_id game_time           status   competition_id season phase_id
-#>       <int>   <int> <dttm>              <chr>             <int>  <int>    <int>
-#> 1     11193   11277 2026-10-03 20:30:00 finished             25   2027      183
-#> 2     11193   11295 2026-10-10 20:30:00 finished             25   2027      183
-#> 3     11193   11311 2026-10-17 20:00:00 finished             25   2027      183
-#> # ℹ 44 more variables: phase_name <chr>, round_name <chr>,
-#> #   round_priority <int>, period_name <chr>, arena <chr>,
-#> #   home_competition_team_id <int>, home_team <chr>,
-#> #   home_team_short_name <chr>, home_score <int>,
-#> #   away_competition_team_id <int>, away_team <chr>,
-#> #   away_team_short_name <chr>, away_score <int>, competition_team_id <int>,
-#> #   starter <lgl>, jersey <chr>, minute <int>, foul <int>, …
-# }
-```

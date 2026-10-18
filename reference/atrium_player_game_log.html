@@ -201,6 +201,7 @@ fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that 
 mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
 any other failed fetch, an error / stub body, or a body that belongs to another
 site, type, season, game, player or team than the one asked for.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_player_game_log.html">atrium_player_game_log</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -235,39 +236,6 @@ site, type, season, game, player or team than the one asked for.</p>
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">atrium_player_game_log</span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium player game log from embed-api.eui.connect.sportradar.com ────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:33:43 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14 × 39</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id person_id  season_id date  opponent_entity_id opponent_name result</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         12 4458f165-… df310a05… 2026… 7e9f3d8d-55bb-11f… Le Mans       W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         12 4458f165-… df310a05… 2026… 238ad480-55b8-11f… Dijon         L     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         12 4458f165-… df310a05… 2026… e796c4fa-55bc-11f… Nanterre      L     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         12 4458f165-… df310a05… 2026… da0b634d-55bc-11f… Nancy         W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         12 4458f165-… df310a05… 2026… 703aa4cc-55b7-11f… Bourg-en-Bre… W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         12 4458f165-… df310a05… 2026… c3b5d870-55b5-11f… Boulazac      L     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         12 4458f165-… df310a05… 2026… ca771ea2-55bb-11f… Limoges       W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         12 4458f165-… df310a05… 2026… c281453b-55b7-11f… Cholet        L     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         12 4458f165-… df310a05… 2026… 989c44aa-55b7-11f… Chalon/Saône  W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         12 4458f165-… df310a05… 2026… 689d1a0a-55bd-11f… Saint-Quentin W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>         12 4458f165-… df310a05… 2026… 736b73ae-55bc-11f… Monaco        W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>         12 4458f165-… df310a05… 2026… 506c2d71-55bb-11f… Gravelines-D… W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>         12 4458f165-… df310a05… 2026… 88bff512-55bd-11f… Strasbourg    W     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>         12 4458f165-… df310a05… 2026… f43b1b0f-55bc-11f… Paris         L     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 32 more variables: result_label &lt;chr&gt;, score &lt;chr&gt;, minutes &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   seconds_played &lt;int&gt;, points &lt;int&gt;, rebounds &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_offensive &lt;int&gt;, rebounds_defensive &lt;int&gt;, assists &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   steals &lt;int&gt;, blocks &lt;int&gt;, blocks_received &lt;int&gt;, turnovers &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fouls_total &lt;int&gt;, fouls_drawn &lt;int&gt;, plus_minus &lt;int&gt;, efficiency &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made &lt;int&gt;, field_goals_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_percentage &lt;dbl&gt;, points_two_made &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

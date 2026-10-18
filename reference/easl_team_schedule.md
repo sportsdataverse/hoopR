@@ -143,6 +143,8 @@ always these, in this order (sdv-py `easl_team_schedule`):
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_team_schedule(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")
+
 ## See also
 
 Other EASL Functions:
@@ -163,32 +165,3 @@ Other EASL Functions:
 [`easl_team_leaders()`](https://hoopR.sportsdataverse.org/reference/easl_team_leaders.md),
 [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_team_schedule(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#> ── EASL Team Schedule from easl.joshricha.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:25 UTC
-#> # A tibble: 9 × 44
-#>   season season_id    fixture_id fixture_number fixture_type status fixture_name
-#>    <int> <chr>        <chr>               <int> <chr>        <chr>  <chr>       
-#> 1   2026 77441bb3-97… 10af8fd4-…        2526042 FINAL        CONFI… EASL Champi…
-#> 2   2026 77441bb3-97… 9b6a67ec-…        2526039 PLAYOFF      CONFI… Semifinals 1
-#> 3   2026 77441bb3-97… b7b2d03c-…        2526038 PLAYOFF      CONFI… Quarterfina…
-#> 4   2026 77441bb3-97… 25c39958-…        2526034 REGULAR      CONFI… NA          
-#> 5   2026 77441bb3-97… be4c5140-…        2526031 REGULAR      CONFI… NA          
-#> 6   2026 77441bb3-97… 5f30316a-…        2526027 REGULAR      CONFI… NA          
-#> 7   2026 77441bb3-97… 01abe65a-…        2526020 REGULAR      CONFI… NA          
-#> 8   2026 77441bb3-97… 222779ec-…        2526004 REGULAR      CONFI… NA          
-#> 9   2026 77441bb3-97… 4a677264-…        2526001 REGULAR      CONFI… NA          
-#> # ℹ 37 more variables: start_time_utc <chr>, start_time_local <chr>,
-#> #   attendance <int>, live_data_available <lgl>, live_video_available <lgl>,
-#> #   pool_code <chr>, pool_id <chr>, pool_name <chr>, pool_abb <chr>,
-#> #   stage_id <chr>, stage_code <chr>, stage_name <chr>, stage_order <int>,
-#> #   venue_name <chr>, venue_name_latin <chr>, venue_abbreviation_latin <chr>,
-#> #   venue_abbreviation_local <chr>, venue_alternate_name_latin <chr>,
-#> #   venue_country_code <chr>, venue_city <chr>, venue_state <chr>, …
-# }
-```

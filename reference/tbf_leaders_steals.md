@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_steals(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_steals(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Steals ───────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:52 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         steals   total     1    500079 Rashard Ke…          266027
-#>  2   2027 bsl         steals   total     2    778996 Brae Ivey            266028
-#>  3   2027 bsl         steals   total     3    573226 Briante We…          266027
-#>  4   2027 bsl         steals   total     4    778460 Brandon Ta…          266176
-#>  5   2027 bsl         steals   total     5    609266 Matt Mitch…          268222
-#>  6   2027 bsl         steals   total     6    202579 Ata Kahram…          266030
-#>  7   2027 bsl         steals   total     7    666871 Javon Free…          266176
-#>  8   2027 bsl         steals   total     8    485299 Terrell Ca…          265995
-#>  9   2027 bsl         steals   total     9    666515 Ty Gordon            265993
-#> 10   2027 bsl         steals   total    10    129216 Doğuş Özde…          266030
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

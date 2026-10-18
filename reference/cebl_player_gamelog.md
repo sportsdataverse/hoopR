@@ -118,6 +118,8 @@ with the Genius match id of the game. An empty valid answer raises
   `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
+     cebl_player_gamelog(player_id = 570965, season = 2025)
+
 ## See also
 
 Other CEBL Functions:
@@ -132,39 +134,3 @@ Other CEBL Functions:
 [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md),
 [`cebl_team_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_team_stats.md),
 [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(cebl_player_gamelog(player_id = 570965, season = 2025))
-#> ── CEBL Player Game Log from the CEBL Stats API ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:35:45 UTC
-#> # A tibble: 16 × 30
-#>    player_id season game_date           genius_match_id team_abbreviated_name
-#>        <int>  <int> <dttm>                        <int> <chr>                
-#>  1    570965   2025 2025-08-10 19:00:00         2600680 OTT                  
-#>  2    570965   2025 2025-08-08 23:30:00         2600673 OTT                  
-#>  3    570965   2025 2025-08-06 23:30:00         2682612 OTT                  
-#>  4    570965   2025 2025-08-02 18:00:00         2600656 OTT                  
-#>  5    570965   2025 2025-07-31 23:00:00         2600667 OTT                  
-#>  6    570965   2025 2025-07-29 23:30:00         2600664 OTT                  
-#>  7    570965   2025 2025-07-26 18:00:00         2600653 OTT                  
-#>  8    570965   2025 2025-07-23 23:30:00         2600666 OTT                  
-#>  9    570965   2025 2025-07-21 23:30:00         2600663 OTT                  
-#> 10    570965   2025 2025-07-17 23:30:00         2600645 OTT                  
-#> 11    570965   2025 2025-07-09 16:30:00         2600625 OTT                  
-#> 12    570965   2025 2025-07-06 01:30:00         2600637 OTT                  
-#> 13    570965   2025 2025-07-01 19:00:00         2600626 OTT                  
-#> 14    570965   2025 2025-06-28 19:00:00         2600620 OTT                  
-#> 15    570965   2025 2025-06-22 18:30:00         2600614 OTT                  
-#> 16    570965   2025 2025-06-20 23:30:00         2600609 OTT                  
-#> # ℹ 25 more variables: matchup <chr>, minutes <dbl>, points <int>,
-#> #   field_goals_made <int>, field_goals_attempted <int>,
-#> #   field_goal_percentage <dbl>, three_points_made <int>,
-#> #   three_points_attempted <int>, three_point_percentage <dbl>,
-#> #   free_throws_made <int>, free_throws_attempted <int>,
-#> #   free_throw_percentage <dbl>, offensive_rebounds <int>,
-#> #   defensive_rebounds <int>, rebounds <int>, assists <int>, …
-# }
-```

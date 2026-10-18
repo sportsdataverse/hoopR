@@ -73,6 +73,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_highlights(match_id = 346279)
+
 ## See also
 
 Other TBF:
@@ -107,27 +109,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_highlights(match_id = 346279))
-#> ── TBF Highlights ────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:44 UTC
-#> # A tibble: 30 × 7
-#>    match_id title         category home_value away_value home_number away_number
-#>       <int> <chr>         <chr>    <chr>      <chr>            <dbl>       <dbl>
-#>  1   346279 Sayı          Sayi     90         89                  90          89
-#>  2   346279 Ribaund       Ribaund  33         40                  33          40
-#>  3   346279 Hücum Ribaun… HucumRi… 10         14                  10          14
-#>  4   346279 Savunma Riba… Savunma… 23         26                  23          26
-#>  5   346279 Asist         Asist    13         18                  13          18
-#>  6   346279 Top Çalma     TopCalma 9          10                   9          10
-#>  7   346279 Top Kaybı     Turnove… 17         22                  17          22
-#>  8   346279 Blok          Blok     5          0                    5           0
-#>  9   346279 Faul          Fouls    27         24                  27          24
-#> 10   346279 Verimlilik P… Verimli… 92         92                  92          92
-#> # ℹ 20 more rows
-# }
-```

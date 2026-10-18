@@ -172,7 +172,8 @@ non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for a
 retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
 stalled sync on the active season; a body for another game, season, team or player than the one asked for).
 Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/easl_team_schedule.html">easl_team_schedule</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"865489e8-b0f5-11ed-8b3f-c199a9dea184"</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -195,34 +196,6 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
 <code><a href="easl_teams.html">easl_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_team_schedule</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"865489e8-b0f5-11ed-8b3f-c199a9dea184"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Team Schedule from easl.joshricha.com ────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:36:25 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 44</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   season season_id    fixture_id fixture_number fixture_type status fixture_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 10af8fd4-…        2<span style="text-decoration: underline;">526</span>042 FINAL        CONFI… EASL Champi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 9b6a67ec-…        2<span style="text-decoration: underline;">526</span>039 PLAYOFF      CONFI… Semifinals 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… b7b2d03c-…        2<span style="text-decoration: underline;">526</span>038 PLAYOFF      CONFI… Quarterfina…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 25c39958-…        2<span style="text-decoration: underline;">526</span>034 REGULAR      CONFI… <span style="color: #BB0000;">NA</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… be4c5140-…        2<span style="text-decoration: underline;">526</span>031 REGULAR      CONFI… <span style="color: #BB0000;">NA</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 5f30316a-…        2<span style="text-decoration: underline;">526</span>027 REGULAR      CONFI… <span style="color: #BB0000;">NA</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 01abe65a-…        2<span style="text-decoration: underline;">526</span>020 REGULAR      CONFI… <span style="color: #BB0000;">NA</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 222779ec-…        2<span style="text-decoration: underline;">526</span>004 REGULAR      CONFI… <span style="color: #BB0000;">NA</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span>   <span style="text-decoration: underline;">2</span>026 77441bb3-97… 4a677264-…        2<span style="text-decoration: underline;">526</span>001 REGULAR      CONFI… <span style="color: #BB0000;">NA</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 37 more variables: start_time_utc &lt;chr&gt;, start_time_local &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   attendance &lt;int&gt;, live_data_available &lt;lgl&gt;, live_video_available &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   pool_code &lt;chr&gt;, pool_id &lt;chr&gt;, pool_name &lt;chr&gt;, pool_abb &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   stage_id &lt;chr&gt;, stage_code &lt;chr&gt;, stage_name &lt;chr&gt;, stage_order &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_name &lt;chr&gt;, venue_name_latin &lt;chr&gt;, venue_abbreviation_latin &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_abbreviation_local &lt;chr&gt;, venue_alternate_name_latin &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue_country_code &lt;chr&gt;, venue_city &lt;chr&gt;, venue_state &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

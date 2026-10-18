@@ -98,6 +98,8 @@ A `hoopR_data` tibble: Playoff bracket of a season: one row per series
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_playoff_series(season = 2026)
+
 ## See also
 
 Other SCB Functions:
@@ -123,27 +125,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_playoff_series(season = 2026))
-#> ── BBL/DBBL Playoff Series from the SCB API ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:48 UTC
-#> # A tibble: 7 × 18
-#>   league season season_id round         series match_winner_id is_match_finished
-#>   <chr>   <int>     <int> <chr>          <int> <chr>           <lgl>            
-#> 1 bbl      2026      2025 quarter_fina…      1 486             TRUE             
-#> 2 bbl      2026      2025 quarter_fina…      2 415             TRUE             
-#> 3 bbl      2026      2025 quarter_fina…      3 413             TRUE             
-#> 4 bbl      2026      2025 quarter_fina…      4 420             TRUE             
-#> 5 bbl      2026      2025 semi_finals        1 486             TRUE             
-#> 6 bbl      2026      2025 semi_finals        2 413             TRUE             
-#> 7 bbl      2026      2025 finals             1 413             TRUE             
-#> # ℹ 11 more variables: team_a_id <chr>, team_a_name <chr>, team_a_tlc <chr>,
-#> #   team_a_rank <int>, team_a_victories <int>, team_b_id <chr>,
-#> #   team_b_name <chr>, team_b_tlc <chr>, team_b_rank <int>,
-#> #   team_b_victories <int>, games <int>
-# }
-```

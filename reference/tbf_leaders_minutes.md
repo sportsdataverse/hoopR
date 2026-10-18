@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_minutes(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_minutes(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Minutes ──────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:49 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         minutes  total     1    736366 John Meeks           266028
-#>  2   2027 bsl         minutes  total     2    778460 Brandon Ta…          266176
-#>  3   2027 bsl         minutes  total     3    501134 Jordon Cra…          265994
-#>  4   2027 bsl         minutes  total     4    500079 Rashard Ke…          266027
-#>  5   2027 bsl         minutes  total     5    501076 Quentin Pe…          265993
-#>  6   2027 bsl         minutes  total     6    666080 Fabian Whi…          265994
-#>  7   2027 bsl         minutes  total     7    779010 Victor Bai…          266028
-#>  8   2027 bsl         minutes  total     8    510723 Leyton Ham…          266176
-#>  9   2027 bsl         minutes  total     9    779071 Ishmael El…          266027
-#> 10   2027 bsl         minutes  total    10    778996 Brae Ivey            266028
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

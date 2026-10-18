@@ -86,6 +86,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_team_staff(comp = 208182)
+
 ## See also
 
 Other FIBA Functions:
@@ -125,32 +127,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_player_stats.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_team_staff(comp = 208182))
-#> ── FIBA gdap_team_staff from fiba.basketball ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:26 UTC
-#> # A tibble: 79 × 18
-#>    team_id team_name  team_code person_id first_name last_name gender `function`
-#>      <int> <chr>      <chr>         <int> <chr>      <chr>     <chr>  <chr>     
-#>  1  279561 Japan      JPN          106909 Thomas Wa… Hovasse   M      Head Coach
-#>  2  279561 Japan      JPN          119395 Corey Yas… Gaines    M      Assistant…
-#>  3  279562 Philippin… PHI           17260 Vincent    Reyes     M      Head Coach
-#>  4  279562 Philippin… PHI          319745 Earl Timo… Cone      M      Assistant…
-#>  5  279563 Australia  AUS          127880 Matthew P… Nielsen   M      Assistant…
-#>  6  279563 Australia  AUS           13046 Brian War… Goorjian  M      Head Coach
-#>  7  279564 Canada     CAN           19698 Jordi      Fernande… M      Head Coach
-#>  8  279564 Canada     CAN          270351 Nate       Bjorkgren M      Assistant…
-#>  9  279565 China      CHN          102523 Aleksandar Djordjev… M      Head Coach
-#> 10  279565 China      CHN           20632 Goran      Bjedov    M      Assistant…
-#> # ℹ 69 more rows
-#> # ℹ 10 more variables: is_head_coach <int>, is_assistant_coach <int>,
-#> #   is_accompanying_coach <lgl>, coach_display_order <int>,
-#> #   is_on_final_roster <lgl>, nationalities <chr>,
-#> #   coach_license_organisation_name <chr>, coach_license_country_code <chr>,
-#> #   final_roster_member_status_code <chr>, coach_license <chr>
-# }
-```

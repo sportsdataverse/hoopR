@@ -175,7 +175,8 @@ malformed id or league slug, a lang other than en or ru, or a season the competi
 final or a stub, a partial or possibly truncated page, or a body for another game, person, team, competition,
 league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
 warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/vtb_infobasket_team_stats_coaches.html">vtb_infobasket_team_stats_coaches</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other VTB Functions:
@@ -218,33 +219,6 @@ warn and return empty.</p></li>
 <code><a href="vtb_league_seasons.html">vtb_league_seasons()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">vtb_infobasket_team_stats_coaches</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── VTB Infobasket Team Stats Coaches from org.infobasket.su ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 16:05:11 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 41 × 19</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season team_id person_id player_number display_number is_active active_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>026     682    <span style="text-decoration: underline;">129</span>117             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">2</span>026     682    <span style="text-decoration: underline;">394</span>083             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">2</span>026     682      <span style="text-decoration: underline;">8</span>752             2 2              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">2</span>026     682     <span style="text-decoration: underline;">25</span>851             2 2              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">2</span>026     688    <span style="text-decoration: underline;">146</span>014             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">2</span>026     688    <span style="text-decoration: underline;">492</span>790             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>026     688    <span style="text-decoration: underline;">144</span>480             2 2              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>026    <span style="text-decoration: underline;">2</span>994    <span style="text-decoration: underline;">148</span>384             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>026    <span style="text-decoration: underline;">2</span>994    <span style="text-decoration: underline;">135</span>181             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>026    <span style="text-decoration: underline;">2</span>994    <span style="text-decoration: underline;">133</span>514             1 1              FALSE     <span style="color: #BB0000;">NA</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 31 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: foul_c &lt;int&gt;, foul_b &lt;int&gt;, foul_d &lt;int&gt;, foul &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   game_count &lt;int&gt;, person_last_name_ru &lt;chr&gt;, person_last_name_en &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   person_first_name_ru &lt;chr&gt;, person_first_name_en &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   person_full_name_ru &lt;chr&gt;, person_full_name_en &lt;chr&gt;, person_gender &lt;int&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

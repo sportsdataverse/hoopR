@@ -151,6 +151,8 @@ federation, family or season). Seasons are FIBA's own key, which equals
 the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
 
+     fiba_gdap_federation_games(federation_id = 64)
+
 ## See also
 
 Other FIBA Functions:
@@ -190,33 +192,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gdap_federation_games(federation_id = 64))
-#> ── FIBA gdap_federation_games from fiba.basketball ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:39:01 UTC
-#> # A tibble: 22 × 84
-#>    game_id game_name  game_number status_code team_a_team_id
-#>      <int> <chr>      <chr>       <chr>                <int>
-#>  1  128117 29919-A-2  2           VALID               284675
-#>  2  128118 29919-A-3  3           VALID               284650
-#>  3  128121 29919-A-6  6           VALID               284650
-#>  4  127117 29778-K-2  2           VALID               283284
-#>  5  127120 29778-K-5  5           VALID               283293
-#>  6  127124 29778-K-8  8           INIT                283287
-#>  7  127125 29778-K-11 11          INIT                283284
-#>  8  127128 29778-K-14 14          INIT                283820
-#>  9  127132 29778-K-17 17          INIT                283284
-#> 10  132008 30643-37-A A           VALID               284344
-#> # ℹ 12 more rows
-#> # ℹ 79 more variables: team_a_organisation_id <int>, team_a_code <chr>,
-#> #   team_a_official_name <chr>, team_a_short_name <chr>, team_b_team_id <int>,
-#> #   team_b_organisation_id <int>, team_b_code <chr>,
-#> #   team_b_official_name <chr>, team_b_short_name <chr>, team_a_score <int>,
-#> #   team_b_score <int>, is_live <lgl>, current_period <chr>, chrono <chr>,
-#> #   live_game_status <int>, current_period_status <chr>, host_city <chr>, …
-# }
-```

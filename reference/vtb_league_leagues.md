@@ -123,7 +123,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_league_leagues())
 #> ── VTB League Leagues from api.vtb-league.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:05:15 UTC
+#> ℹ Data updated: 2026-10-18 17:44:31 UTC
 #> # A tibble: 3 × 6
 #>   league_id league   league_name_en          league_name_ru     league_abbrev_en
 #>       <int> <chr>    <chr>                   <chr>              <chr>           

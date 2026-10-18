@@ -151,7 +151,8 @@ an unknown season, a play-by-play before 2017-18, standings of a finished champi
 not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
 championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
 is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_player.html">lba_player</a></span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">969</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other LBA Functions:
@@ -175,26 +176,6 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
 <code><a href="lba_teams_leaderboard.html">lba_teams_leaderboard()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_player</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">969</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Player from legabasket.it ─────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:55 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 109</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   player_id code     name  surname place_of_birth birth_date updated_at ext_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>       969 CAP-ALE… Ales… Cappel… Assisi         1995-10-22 2022-10-2… CAP-ALE…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 101 more variables: seo_meta_title &lt;chr&gt;, seo_meta_description &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   photo_picture_key &lt;chr&gt;, fullbody_picture_key &lt;chr&gt;, start_date &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   end_date &lt;chr&gt;, player_number &lt;chr&gt;, uefa_ratio &lt;chr&gt;, height &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   weight &lt;int&gt;, team_id &lt;int&gt;, player_role_description &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   player_alpha3 &lt;chr&gt;, player_country_name &lt;chr&gt;, player_country &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_code &lt;chr&gt;, team_name &lt;chr&gt;, year &lt;int&gt;, team_logo_key &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   stats_played_matches &lt;int&gt;, stats_totals_highs_rs_player_id &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

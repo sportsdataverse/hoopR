@@ -92,6 +92,8 @@ changed body, an unfinished game, a context or page for another game,
 season, tab or day, a truncated schedule list, or layout drift). All
 inherit `hoopR_error`.
 
+     bleague_score_track(schedule_key = 10693)
+
 ## See also
 
 Other B.LEAGUE:
@@ -108,27 +110,3 @@ Other B.LEAGUE:
 [`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md),
 [`bleague_team_box()`](https://hoopR.sportsdataverse.org/reference/bleague_team_box.md),
 [`bleague_team_summary()`](https://hoopR.sportsdataverse.org/reference/bleague_team_summary.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(bleague_score_track(schedule_key = 10693))
-#> ── B.LEAGUE score track from b-league.s3.amazonaws.com ───── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:34:42 UTC
-#> # A tibble: 44 × 7
-#>    schedule_key season feed  period event_index home_points away_points
-#>           <int>  <int> <chr>  <int>       <int>       <int>       <int>
-#>  1        10693   2026 v1         1           0           0           0
-#>  2        10693   2026 v1         1           1           2           2
-#>  3        10693   2026 v1         1           2           2           4
-#>  4        10693   2026 v1         1           3           2           9
-#>  5        10693   2026 v1         1           4           7          12
-#>  6        10693   2026 v1         1           5           7          14
-#>  7        10693   2026 v1         1           6           9          16
-#>  8        10693   2026 v1         1           7          11          22
-#>  9        10693   2026 v1         1           8          13          22
-#> 10        10693   2026 v1         1           9          16          25
-#> # ℹ 34 more rows
-# }
-```

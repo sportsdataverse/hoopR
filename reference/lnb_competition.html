@@ -201,6 +201,8 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Season rule: END year (2026 = 2025-26; the site's own year is the START year).</p>
 <p>Errors and terms of use are those of <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lnb_competition.html">lnb_seasons</a></span><span class="op">(</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="../reference/lnb_competition.html">lnb_schedule</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -235,62 +237,6 @@ Thin bindings of the parameterised atrium_*() wrappers to this site, minted from
 <code><a href="nbl1_competition.html">nbl1_competition</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lnb_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium seasons from embed-api.eui.connect.sportradar.com ────────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:48 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id season_id              competition_id competition_name season_name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         12 4a877e1f-51d1-11f0-a8… 2c58cdf2-51d1… All Star Game    All Star G…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         12 d72d56a8-51d3-11f0-94… b98931f7-51d3… Betclic ÉLITE -… Betclic ÉL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         12 df310a05-51ad-11f0-bd… 3f4064bb-51ad… Betclic ÉLITE    Betclic ÉL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         12 c8514e7e-51ae-11f0-94… a355be55-51ae… Espoirs ÉLITE    Espoirs EL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         12 3bfda51f-51ad-11f0-84… 28940adf-51ad… Supercoupe       SuperCoupe…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         12 d9c62b61-51d1-11f0-88… c4021a1f-51d1… Young Star Game  Young Star…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         12 5e31a852-51ae-11f0-b5… 4c27df72-51ae… ÉLITE 2          ÉLITE 2 20…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         12 57b5b7b0-2fd7-11ef-93… 35901fb4-2fd7… All Star Game    All Star G…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         12 8d12d86f-6545-11ef-8c… 27a79741-597b… Betclic ÉLITE -… Betclic ÉL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         12 d2dd2541-5978-11ef-81… b5c596e1-5978… Betclic ÉLITE -… Betclic ÉL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>         12 cab2f926-2fab-11ef-8b… a2262b45-2fab… Betclic ÉLITE    Betclic ÉL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>         12 c68a19df-2fb4-11ef-bf… ac2bc8df-2fb4… Espoirs ELITE    Espoirs EL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>         12 e1ffce27-6544-11ef-8b… 4e83de5b-597c… Espoirs PROB - … Espoirs PR…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>         12 702b8520-2fb5-11ef-8f… 59512848-2fb5… Espoirs PROB     Espoirs PR…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>         12 add3f98b-5977-11ef-91… 932b5919-5977… Leaders Cup      Leaders Cu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>         12 79e39e0e-5978-11ef-95… 405cf027-5978… Leaders Cup PROB Leaders Cu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>         12 91334b18-2fb3-11ef-be… 0847055c-2fb3… PROB             PROB 2024  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>         12 418ecaae-19af-11ee-a5… 2cd1ec93-19af… Betclic ÉLITE    Betclic ÉL…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span>         12 7561dbee-19b5-11ee-af… 213e021f-19b5… PROB             PROB 2023  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 more variables: abbreviation_local &lt;chr&gt;, year &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_end_year &lt;int&gt;, is_default_season &lt;lgl&gt;</span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lnb_schedule</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:43:48 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 240 × 40</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    website_id season_id          competition_id competition_name season_end_year</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>         12 df310a05-51ad-11f… 3f4064bb-51ad… Betclic ÉLITE               <span style="text-decoration: underline;">2</span>026</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 230 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more variables: fixture_id &lt;chr&gt;, fixture_type &lt;chr&gt;, name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   round &lt;chr&gt;, round_code &lt;chr&gt;, pool &lt;chr&gt;, series &lt;chr&gt;, stage_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   status &lt;chr&gt;, status_label &lt;chr&gt;, start_time_utc &lt;dttm&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   start_time_local &lt;chr&gt;, timezone &lt;chr&gt;, times_unconfirmed &lt;lgl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   venue &lt;chr&gt;, venue_id &lt;chr&gt;, attendance &lt;int&gt;, home_entity_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_code &lt;chr&gt;, home_name &lt;chr&gt;, home_score &lt;int&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

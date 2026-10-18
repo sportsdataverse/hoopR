@@ -193,7 +193,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_team_box(gmkey = "S47G01N49"))
 #> ── KBL Team Box Score from api.kbl.or.kr ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:43 UTC
+#> ℹ Data updated: 2026-10-18 17:24:37 UTC
 #> # A tibble: 2 × 68
 #>   gmkey   season_code season game_code game_no team_code score    fg  fg_a   fgt
 #>   <chr>         <int>  <int> <chr>       <int> <chr>     <int> <int> <int> <int>

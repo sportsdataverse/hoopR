@@ -103,6 +103,8 @@ are FIBA's own key, which equals the sdv key: the END year for club
 competitions, the event year for national-team events, the target
 tournament year for qualifiers.
 
+     fiba_gamepage_lineup(game_id = 100720, comp = 208182)
+
 ## See also
 
 Other FIBA Functions:
@@ -142,29 +144,3 @@ Other FIBA Functions:
 [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md),
 [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md),
 [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(fiba_gamepage_lineup(game_id = 100720, comp = 208182))
-#> ── FIBA gamepage_lineup from fiba.basketball ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:38:54 UTC
-#> # A tibble: 24 × 10
-#>    game_id competition_id team_side organisation_id player_id first_name
-#>      <int>          <int> <chr>               <int>     <int> <chr>     
-#>  1  100720         208182 A                      64    211501 Isaac     
-#>  2  100720         208182 A                      64    181996 Daniel    
-#>  3  100720         208182 A                      64    210175 Moritz    
-#>  4  100720         208182 A                      64    189145 Dennis    
-#>  5  100720         208182 A                      64    269000 Justus    
-#>  6  100720         208182 A                      64    198299 Johannes  
-#>  7  100720         208182 A                      64    188675 Maodo     
-#>  8  100720         208182 A                      64    196287 Andreas   
-#>  9  100720         208182 A                      64    204689 David     
-#> 10  100720         208182 A                      64    155956 Niels     
-#> # ℹ 14 more rows
-#> # ℹ 4 more variables: last_name <chr>, jersey <chr>, position <chr>,
-#> #   is_captain <lgl>
-# }
-```

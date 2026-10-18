@@ -222,7 +222,8 @@ non-integer id or season, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (an
 this API answers for a body it dislikes and which is not retried; a dead connection; an empty or undecryptable
 body; an unfinished game; a body for another game, team, season or day), all inheriting <code>hoopR_error</code>. HTTP 429
 / 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cba_player_defensive.html">cba_player_defensive</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="fl">29128</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CBA Functions:
@@ -254,45 +255,6 @@ body; an unfinished game; a body for another game, team, season or day), all inh
 <code><a href="cba_teams.html">cba_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cba_player_defensive</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="fl">29128</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── CBA Player Defensive from data-server.cbaleague.com ───── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:35:22 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 31</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      age blocked_rate blocked_rate_rank blocked_rate_sort first_position</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>    19        0.687              0               0.686  中锋          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>    27        0.051              0.73            0.050<span style="text-decoration: underline;">9</span> 中锋          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>    33        0.048              0.93            0.048<span style="text-decoration: underline;">3</span> 大前锋        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>    22        0.02               0               0.019<span style="text-decoration: underline;">8</span> 控球后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>    28        0.018              1               0.017<span style="text-decoration: underline;">8</span> 得分后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>    26        0.017              0.81            0.016<span style="text-decoration: underline;">8</span> 小前锋        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    28        0.014              0.88            0.013<span style="text-decoration: underline;">5</span> 控球后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>    19        0.013              0               0.013<span style="text-decoration: underline;">3</span> 控球后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>    30        0.012              0.84            0.012<span style="text-decoration: underline;">1</span> 控球后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>    27        0.011              0.28            0.010<span style="text-decoration: underline;">8</span> 大前锋        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>    34        0.009              0.12            0.009<span style="text-decoration: underline;">4</span> 中锋          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>    28        0.006              0.12            0.006<span style="text-decoration: underline;">2</span> 大前锋        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>    29        0.005              0.62            0.005<span style="text-decoration: underline;">3</span> 控球后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>    26        0.005              0.02            0.004<span style="text-decoration: underline;">9</span> 中锋          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>    29        0.005              0.51            0.004<span style="text-decoration: underline;">7</span> 得分后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>    26        0                  0               0      控球后卫      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>    23        0                  0               0      中锋          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>    22        0                  0               0      小前锋        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span>    20        0                  0               0      小前锋        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span>    27        0                  0               0      中锋          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 26 more variables: fouls_rate &lt;dbl&gt;, fouls_rate_rank &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fouls_rate_sort &lt;dbl&gt;, is_color &lt;int&gt;, minutes &lt;int&gt;, nationality &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   number &lt;chr&gt;, play_times &lt;int&gt;, player_id &lt;int&gt;, player_name &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   position &lt;chr&gt;, position_num &lt;dbl&gt;, rank &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_defensive_rate &lt;dbl&gt;, rebounds_defensive_rate_rank &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_defensive_rate_sort &lt;dbl&gt;, rebounds_offensive_rate &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   rebounds_offensive_rate_rank &lt;dbl&gt;, rebounds_offensive_rate_sort &lt;dbl&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

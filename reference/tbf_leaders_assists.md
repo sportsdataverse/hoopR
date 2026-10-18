@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_assists(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_assists(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Assists ──────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:46 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         assists  total     1    778460 Brandon Ta…          266176
-#>  2   2027 bsl         assists  total     2    501134 Jordon Cra…          265994
-#>  3   2027 bsl         assists  total     3    573226 Briante We…          266027
-#>  4   2027 bsl         assists  total     4    129216 Doğuş Özde…          266030
-#>  5   2027 bsl         assists  total     5    778996 Brae Ivey            266028
-#>  6   2027 bsl         assists  total     6    778401 Bryce Jones          265995
-#>  7   2027 bsl         assists  total     7    734506 Malachi Fl…          265991
-#>  8   2027 bsl         assists  total     8    779255 Marcus Kee…          266029
-#>  9   2027 bsl         assists  total     9    778246 Max Abmas            266048
-#> 10   2027 bsl         assists  total    10    666515 Ty Gordon            265993
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

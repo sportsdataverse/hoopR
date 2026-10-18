@@ -172,7 +172,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_team(team_id = 2650))
 #> ── VTB Infobasket Team from org.infobasket.su ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:04:59 UTC
+#> ℹ Data updated: 2026-10-18 17:44:26 UTC
 #> # A tibble: 1 × 16
 #>   team_id team_type team_name_ru     team_name_en    team_short_name_ru
 #>     <int>     <int> <chr>            <chr>           <chr>             

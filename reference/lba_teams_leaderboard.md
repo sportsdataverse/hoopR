@@ -91,6 +91,8 @@ appended after them:
   body the parser finds no rows in gives a zero-row tibble with these
   columns.
 
+     lba_teams_leaderboard(board = "teams_offensive", season = 2027)
+
 ## See also
 
 Other LBA Functions:
@@ -112,29 +114,3 @@ Other LBA Functions:
 [`lba_team_box_score()`](https://hoopR.sportsdataverse.org/reference/lba_team_box_score.md),
 [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md),
 [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(lba_teams_leaderboard(board = "teams_offensive", season = 2027))
-#> ── LBA Teams Leaderboard from legabasket.it ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:43:29 UTC
-#> # A tibble: 85 × 15
-#>    season category name  sponsor_name short_name tv_name  year logo_key attempts
-#>     <int> <chr>    <chr> <chr>        <chr>      <chr>   <int> <chr>       <int>
-#>  1   2027 points   BC R… ""           BC Roma    BC Roma  2026 gxrVRq4…        0
-#>  2   2027 points   Virt… ""           Virtus Co… Virtus…  2026 tcKLhHt…        0
-#>  3   2027 points   Napo… ""           Napoli Ba… Napoli…  2026 48PaXiF…        0
-#>  4   2027 points   Nutr… ""           Nutribull… Nutrib…  2026 Y6Kc6v8…        0
-#>  5   2027 points   Uman… ""           Umana Rey… Umana …  2026 EGx6Svr…        0
-#>  6   2027 rating_… Virt… ""           Virtus Co… Virtus…  2026 tcKLhHt…        0
-#>  7   2027 rating_… BC R… ""           BC Roma    BC Roma  2026 gxrVRq4…        0
-#>  8   2027 rating_… Nutr… ""           Nutribull… Nutrib…  2026 Y6Kc6v8…        0
-#>  9   2027 rating_… Arma… ""           Armani Ol… Armani…  2026 e5xdeyc…        0
-#> 10   2027 rating_… Uman… ""           Umana Rey… Umana …  2026 EGx6Svr…        0
-#> # ℹ 75 more rows
-#> # ℹ 6 more variables: total_played_matches <int>, total_points <int>,
-#> #   minutes <int>, score_40_min <dbl>, score <dbl>, team_id <int>
-# }
-```

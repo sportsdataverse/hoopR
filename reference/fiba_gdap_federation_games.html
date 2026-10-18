@@ -151,6 +151,7 @@ season or date; <code>hoopR_asset_fetch</code> for any other failed fetch or an 
 error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
 federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
 competitions, the event year for national-team events, the target tournament year for qualifiers.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_gdap_federation_games.html">fiba_gdap_federation_games</a></span><span class="op">(</span>federation_id <span class="op">=</span> <span class="fl">64</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -193,35 +194,6 @@ competitions, the event year for national-team events, the target tournament yea
 <code><a href="fiba_gdap_teams.html">fiba_gdap_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_gdap_federation_games</span><span class="op">(</span>federation_id <span class="op">=</span> <span class="fl">64</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gdap_federation_games from fiba.basketball ───────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:39:01 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 22 × 84</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_id game_name  game_number status_code team_a_team_id</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  <span style="text-decoration: underline;">128</span>117 29919-A-2  2           VALID               <span style="text-decoration: underline;">284</span>675</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  <span style="text-decoration: underline;">128</span>118 29919-A-3  3           VALID               <span style="text-decoration: underline;">284</span>650</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  <span style="text-decoration: underline;">128</span>121 29919-A-6  6           VALID               <span style="text-decoration: underline;">284</span>650</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  <span style="text-decoration: underline;">127</span>117 29778-K-2  2           VALID               <span style="text-decoration: underline;">283</span>284</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  <span style="text-decoration: underline;">127</span>120 29778-K-5  5           VALID               <span style="text-decoration: underline;">283</span>293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  <span style="text-decoration: underline;">127</span>124 29778-K-8  8           INIT                <span style="text-decoration: underline;">283</span>287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  <span style="text-decoration: underline;">127</span>125 29778-K-11 11          INIT                <span style="text-decoration: underline;">283</span>284</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  <span style="text-decoration: underline;">127</span>128 29778-K-14 14          INIT                <span style="text-decoration: underline;">283</span>820</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  <span style="text-decoration: underline;">127</span>132 29778-K-17 17          INIT                <span style="text-decoration: underline;">283</span>284</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  <span style="text-decoration: underline;">132</span>008 30643-37-A A           VALID               <span style="text-decoration: underline;">284</span>344</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 79 more variables: team_a_organisation_id &lt;int&gt;, team_a_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_a_official_name &lt;chr&gt;, team_a_short_name &lt;chr&gt;, team_b_team_id &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b_organisation_id &lt;int&gt;, team_b_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b_official_name &lt;chr&gt;, team_b_short_name &lt;chr&gt;, team_a_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b_score &lt;int&gt;, is_live &lt;lgl&gt;, current_period &lt;chr&gt;, chrono &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   live_game_status &lt;int&gt;, current_period_status &lt;chr&gt;, host_city &lt;chr&gt;, …</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

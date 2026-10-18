@@ -116,6 +116,8 @@ tibble:
   (neither host answers 500 for an unknown id). Wrappers raise; they
   never warn and return empty.
 
+     vtb_infobasket_team_seasons(team_id = 2650)
+
 ## See also
 
 Other VTB Functions:
@@ -156,27 +158,3 @@ Other VTB Functions:
 [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md),
 [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md),
 [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(vtb_infobasket_team_seasons(team_id = 2650))
-#> ── VTB Infobasket Team Seasons from org.infobasket.su ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:05:09 UTC
-#> # A tibble: 24 × 4
-#>    team_id season comp_id season_name    
-#>      <int>  <int>   <int> <chr>          
-#>  1    2650   2027   56293 Сезон 2026/2027
-#>  2    2650   2026   50478 Сезон 2025/2026
-#>  3    2650   2025   46396 Сезон 2024/2025
-#>  4    2650   2024   42724 Сезон 2023/2024
-#>  5    2650   2023   39795 Сезон 2022/2023
-#>  6    2650   2022   37413 Сезон 2021/2022
-#>  7    2650   2021   34823 Сезон 2020/2021
-#>  8    2650   2020   32402 Сезон 2019/2020
-#>  9    2650   2019   30000 Сезон 2018/2019
-#> 10    2650   2018   17000 Сезон 2017/2018
-#> # ℹ 14 more rows
-# }
-```

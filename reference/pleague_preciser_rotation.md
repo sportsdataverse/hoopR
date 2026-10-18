@@ -94,6 +94,8 @@ with these columns, in this order (sdv-py `pleague_preciser_rotation`):
   redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried,
   up to three attempts.
 
+     pleague_preciser_rotation(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
+
 ## See also
 
 Other P. LEAGUE+ Functions:
@@ -115,29 +117,3 @@ Other P. LEAGUE+ Functions:
 [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
 [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
 [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(pleague_preciser_rotation(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#> ── P. LEAGUE+ Rotation from api.preciser.io ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:21 UTC
-#> # A tibble: 101 × 12
-#>    game_uuid      side  name_zh jersey started stint_no start_period start_clock
-#>    <chr>          <chr> <chr>    <int> <lgl>      <int> <chr>        <chr>      
-#>  1 e6f98675-3e5b… home  賴廷恩       0 TRUE           1 Q1           12:00      
-#>  2 e6f98675-3e5b… home  賴廷恩       0 TRUE           2 Q2           9:13       
-#>  3 e6f98675-3e5b… home  賴廷恩       0 TRUE           3 Q3           11:59      
-#>  4 e6f98675-3e5b… home  賴廷恩       0 TRUE           4 Q4           11:59      
-#>  5 e6f98675-3e5b… home  張宗憲       3 TRUE           1 Q1           12:00      
-#>  6 e6f98675-3e5b… home  張宗憲       3 TRUE           2 Q2           9:13       
-#>  7 e6f98675-3e5b… home  張宗憲       3 TRUE           3 Q3           12:00      
-#>  8 e6f98675-3e5b… home  張宗憲       3 TRUE           4 Q4           11:59      
-#>  9 e6f98675-3e5b… home  強森         5 TRUE           1 Q1           12:00      
-#> 10 e6f98675-3e5b… home  強森         5 TRUE           2 Q1           2:17       
-#> # ℹ 91 more rows
-#> # ℹ 4 more variables: start_seconds <int>, end_period <chr>, end_clock <chr>,
-#> #   end_seconds <int>
-# }
-```

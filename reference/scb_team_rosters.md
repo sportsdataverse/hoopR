@@ -79,6 +79,8 @@ are always these, in this order (sdv-py `scb_team_rosters`):
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_team_rosters()
+
 ## See also
 
 Other SCB Functions:
@@ -104,30 +106,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_team_rosters())
-#> ── BBL/DBBL Team Rosters from the SCB API ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:59 UTC
-#> # A tibble: 367 × 17
-#>    league team_id season season_id season_team_id season_player_id
-#>    <chr>  <chr>    <int>     <int> <chr>          <chr>           
-#>  1 bbl    527       2027      2026 527            2004013         
-#>  2 bbl    527       2027      2026 527            2000689         
-#>  3 bbl    527       2027      2026 527            2002089         
-#>  4 bbl    527       2027      2026 527            2004015         
-#>  5 bbl    527       2027      2026 527            2004073         
-#>  6 bbl    527       2027      2026 527            2004012         
-#>  7 bbl    527       2027      2026 527            6164            
-#>  8 bbl    527       2027      2026 527            2001727         
-#>  9 bbl    527       2027      2026 527            2004009         
-#> 10 bbl    527       2027      2026 527            2004032         
-#> # ℹ 357 more rows
-#> # ℹ 11 more variables: real_player_id <int>, first_name <chr>, last_name <chr>,
-#> #   birth_date <chr>, position <chr>, shirt_number <chr>, height <dbl>,
-#> #   weight <int>, nationalities <chr>, is_all_star <lgl>, is_young <lgl>
-# }
-```

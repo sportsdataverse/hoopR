@@ -104,6 +104,8 @@ frame is a zero-row tibble:
   answer to an unknown id and is not retried. Wrappers raise; they never
   warn and return empty.
 
+     kbl_playoff_series(season = 2025)
+
 ## See also
 
 Other KBL Functions:
@@ -128,27 +130,3 @@ Other KBL Functions:
 [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md),
 [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md),
 [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(kbl_playoff_series(season = 2025))
-#> ── KBL Playoff Series from api.kbl.or.kr ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:41:34 UTC
-#> # A tibble: 10 × 11
-#>    season season_code bracket_format round     series_no team_code opponent_code
-#>     <int>       <int> <chr>          <chr>         <int> <chr>     <chr>        
-#>  1   2025          45 new            quarterf…         1 06        64           
-#>  2   2025          45 new            quarterf…         1 64        06           
-#>  3   2025          45 new            quarterf…         2 10        70           
-#>  4   2025          45 new            quarterf…         2 70        10           
-#>  5   2025          45 new            semifinal         1 55        06           
-#>  6   2025          45 new            semifinal         1 06        55           
-#>  7   2025          45 new            semifinal         2 50        10           
-#>  8   2025          45 new            semifinal         2 10        50           
-#>  9   2025          45 new            final             1 55        50           
-#> 10   2025          45 new            final             1 50        55           
-#> # ℹ 4 more variables: seed <int>, wins <int>, losses <int>, game_date <date>
-# }
-```

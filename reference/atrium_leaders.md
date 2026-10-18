@@ -124,6 +124,10 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_leaders(
+       website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+     )
+
 ## See also
 
 Other Atrium:
@@ -155,31 +159,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_leaders(
-    website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
-  ))
-#> ── Atrium leaders from embed-api.eui.connect.sportradar.com ────────────────────
-#> ℹ Data updated: 2026-10-18 15:33:38 UTC
-#> # A tibble: 45 × 12
-#>    website_id season_id            stat_key stat_name stat_label  rank entity_id
-#>         <int> <chr>                <chr>    <chr>     <chr>      <int> <chr>    
-#>  1         12 df310a05-51ad-11f0-… points   PTS       Points         1 da0b634d…
-#>  2         12 df310a05-51ad-11f0-… points   PTS       Points         2 f43b1b0f…
-#>  3         12 df310a05-51ad-11f0-… points   PTS       Points         3 238ad480…
-#>  4         12 df310a05-51ad-11f0-… points   PTS       Points         4 88bff512…
-#>  5         12 df310a05-51ad-11f0-… points   PTS       Points         5 7e9f3d8d…
-#>  6         12 df310a05-51ad-11f0-… pointsP… PTS       Points pa…     1 f43b1b0f…
-#>  7         12 df310a05-51ad-11f0-… pointsP… PTS       Points pa…     2 da0b634d…
-#>  8         12 df310a05-51ad-11f0-… pointsP… PTS       Points pa…     3 88bff512…
-#>  9         12 df310a05-51ad-11f0-… pointsP… PTS       Points pa…     4 e796c4fa…
-#> 10         12 df310a05-51ad-11f0-… pointsP… PTS       Points pa…     5 736b73ae…
-#> # ℹ 35 more rows
-#> # ℹ 5 more variables: entity_name <chr>, person_id <chr>, person_name <chr>,
-#> #   value <dbl>, value_text <chr>
-# }
-```

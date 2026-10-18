@@ -93,6 +93,8 @@ are always these, in this order (sdv-py `acb_team_comparison`):
   player or match, a game that is not finished). Wrappers raise; they
   never warn and return empty.
 
+     acb_team_comparison(match_id = 105401)
+
 ## See also
 
 Other ACB Functions:
@@ -140,29 +142,3 @@ Other ACB Functions:
 [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md),
 [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md),
 [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(acb_team_comparison(match_id = 105401))
-#> ── ACB Team Comparison from api2.acb.com ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:33:16 UTC
-#> # A tibble: 85 × 11
-#>    match_id quarter stat          home_value away_value home_made home_attempted
-#>       <int>   <int> <chr>              <dbl>      <dbl>     <int>          <int>
-#>  1   105401       0 free_throws         79.2       68.4        19             24
-#>  2   105401       0 two_pointers        61.9       56.5        26             42
-#>  3   105401       0 three_pointe…       23.1       22.6         6             26
-#>  4   105401       0 field_goals         47.1       42.9        32             68
-#>  5   105401       0 defensive_re…       35         25          NA             NA
-#>  6   105401       0 offensive_re…       10         12          NA             NA
-#>  7   105401       0 rebounds            45         37          NA             NA
-#>  8   105401       0 assists             16         18          NA             NA
-#>  9   105401       0 steals               3          9          NA             NA
-#> 10   105401       0 turnovers           13          7          NA             NA
-#> # ℹ 75 more rows
-#> # ℹ 4 more variables: away_made <int>, away_attempted <int>,
-#> #   home_is_highlighted <lgl>, away_is_highlighted <lgl>
-# }
-```

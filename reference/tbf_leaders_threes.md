@@ -83,6 +83,8 @@ or team, an error envelope, a redirect, a partial page or a changed
 capped list). All inherit `hoopR_error`. Timestamps are Turkey local
 time (`Europe/Istanbul`).
 
+     tbf_leaders_threes(competition = "bsl", season = 2027)
+
 ## See also
 
 Other TBF:
@@ -117,28 +119,3 @@ Other TBF:
 [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
 [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
 [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(tbf_leaders_threes(competition = "bsl", season = 2027))
-#> ── TBF Leaders: Threes ───────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:03:53 UTC
-#> # A tibble: 40 × 11
-#>    season competition category kind   rank person_id player_name team_process_id
-#>     <int> <chr>       <chr>    <chr> <int>     <int> <chr>                 <int>
-#>  1   2027 bsl         threes   total     1    501076 Quentin Pe…          265993
-#>  2   2027 bsl         threes   total     2    778460 Brandon Ta…          266176
-#>  3   2027 bsl         threes   total     3    779071 Ishmael El…          266027
-#>  4   2027 bsl         threes   total     4    516236 Khyri Thom…          266048
-#>  5   2027 bsl         threes   total     5    734506 Malachi Fl…          265991
-#>  6   2027 bsl         threes   total     6    105532 Yiğit Arsl…          266029
-#>  7   2027 bsl         threes   total     7    590409 Brady Manek          266029
-#>  8   2027 bsl         threes   total     8    779255 Marcus Kee…          266029
-#>  9   2027 bsl         threes   total     9    606624 Mike Davis…          266024
-#> 10   2027 bsl         threes   total    10    778996 Brae Ivey            266028
-#> # ℹ 30 more rows
-#> # ℹ 3 more variables: team_name <chr>, games <int>, value <dbl>
-# }
-```

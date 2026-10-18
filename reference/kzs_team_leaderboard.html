@@ -187,7 +187,8 @@ competition without standings, a final game with no play-by-play or box score, H
 or empty body; an envelope whose status is not OK; a full list page; a game that is not final; a body for another
 competition, match, team, player or season than the one asked for) and <code>hoopR_bad_request</code> (a bad argument,
 before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch.</p></li>
-</ul></div>
+</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kzs_team_leaderboard.html">kzs_team_leaderboard</a></span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KZS Functions:
@@ -215,31 +216,6 @@ before any request). HTTP 500 is retried. Wrappers raise; they never return an e
 <code><a href="kzs_teams.html">kzs_teams()</a></code></p></div>
     </div>
 
-    <div class="section level2">
-    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kzs_team_leaderboard</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">579</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── KZS Team Leaderboard from api.kzs.si ──────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 15:42:17 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 11 × 12</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    competition_id stats_category club_id club_fullname  club_logo_uuid club_code</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>            579 PTS                 26 KOŠARKARSKI K… dbf53462-c87d… KRK      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>            579 PTS                254 KOŠARKARSKI K… 4586ff12-6ac5… COL      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>            579 PTS                 16 KOŠARKARSKI K… f90fe2e9-905d… ILI      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>            579 PTS                 55 KOŠARKARSKI K… 45b0ac2b-351a… ŠEN      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>            579 PTS                 49 KOŠARKARSKI K… 60e0340d-b00f… ROG      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>            579 PTS                 46 KOŠARKAŠKO DR… e9a0b578-8c96… HOP      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>            579 PTS                  9 KOŠARKARSKI K… ce68270c-327c… DOM      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>            579 PTS                 44 KOŠARKARSKI K… e2d136a7-5b41… ZLA      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>            579 PTS                 59 KOŠARKARSKI K… 2b5aa5eb-a360… TRI      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>            579 PTS                 56 KOŠARKARSKI K… 4a7a9327-1bf6… ŠEN      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>            579 PTS                 45 KOŠARKARSKI K… f667bf14-0dc0… POD      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: team_id &lt;int&gt;, team_name &lt;chr&gt;, games_played &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   sum &lt;dbl&gt;, average &lt;dbl&gt;, max &lt;dbl&gt;</span></span>
-<span class="r-in"><span><span class="co"># }</span></span></span>
-</code></pre></div>
-    </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
 

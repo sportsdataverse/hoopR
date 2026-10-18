@@ -101,6 +101,8 @@ position, club and previous clubs. An empty valid answer raises
   play), all inheriting `hoopR_error`. Wrappers raise; they never return
   an empty frame.
 
+     scb_season_player(season_player_id = "56414")
+
 ## See also
 
 Other SCB Functions:
@@ -126,22 +128,3 @@ Other SCB Functions:
 [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
 [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
 [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(scb_season_player(season_player_id = "56414"))
-#> ── BBL/DBBL Season Player Profile from the SCB API ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 16:01:52 UTC
-#> # A tibble: 1 × 20
-#>   league season_player_id real_player_id active_season_player_id first_name
-#>   <chr>  <chr>                     <int> <chr>                   <chr>     
-#> 1 bbl    56414                     37539 56414                   Jonas     
-#> # ℹ 15 more variables: last_name <chr>, birth_date <chr>, position <chr>,
-#> #   shirt_number <chr>, height <dbl>, weight <int>, nationalities <chr>,
-#> #   is_all_star <lgl>, is_young <lgl>, has_changed_teams <lgl>,
-#> #   bbl_games_played <int>, team_id <chr>, team_name <chr>,
-#> #   previous_teams <chr>, season_ids <chr>
-# }
-```

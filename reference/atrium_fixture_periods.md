@@ -97,6 +97,8 @@ mapped (an ambiguous END year, `season` with `season_id`);
 a body that belongs to another site, type, season, game, player or team
 than the one asked for.
 
+     atrium_fixture_periods(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d")
+
 ## See also
 
 Other Atrium:
@@ -128,23 +130,3 @@ Other Atrium:
 [`lnbp_competition`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md),
 [`lpb_competition`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md),
 [`nbl1_competition`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(atrium_fixture_periods(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
-#> ── Atrium fixture periods from embed-api.eui.connect.sportradar.com ────────────
-#> ℹ Data updated: 2026-10-18 15:33:31 UTC
-#> # A tibble: 4 × 15
-#>   website_id fixture_id        season_id period_id label is_overtime is_shootout
-#>        <int> <chr>             <chr>         <int> <chr> <lgl>       <lgl>      
-#> 1         14 0dc631bd-c34c-11… cc7d79f3…         1 P1    FALSE       FALSE      
-#> 2         14 0dc631bd-c34c-11… cc7d79f3…         2 P2    FALSE       FALSE      
-#> 3         14 0dc631bd-c34c-11… cc7d79f3…         3 P3    FALSE       FALSE      
-#> 4         14 0dc631bd-c34c-11… cc7d79f3…         4 P4    FALSE       FALSE      
-#> # ℹ 8 more variables: started <lgl>, ended <lgl>, duration_minutes <int>,
-#> #   elapsed_minutes_before_period <int>, home_entity_id <chr>,
-#> #   away_entity_id <chr>, home_points <int>, away_points <int>
-# }
-```

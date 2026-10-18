@@ -262,6 +262,8 @@ raises `hoopR_no_data`; the columns are always these, in this order
   body for another game, season, team or player than the one asked for).
   Wrappers raise; they never warn and return an empty frame.
 
+     easl_team_stats(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")
+
 ## See also
 
 Other EASL Functions:
@@ -282,24 +284,3 @@ Other EASL Functions:
 [`easl_team_leaders()`](https://hoopR.sportsdataverse.org/reference/easl_team_leaders.md),
 [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
 [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
-
-## Examples
-
-``` r
-# \donttest{
-  try(easl_team_stats(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
-#> ── EASL Team Stats from easl.joshricha.com ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 15:36:26 UTC
-#> # A tibble: 1 × 162
-#>   team_id        season season_id assists assists_against assists_against_per_…¹
-#>   <chr>           <int> <chr>       <int>           <int>                  <dbl>
-#> 1 865489e8-b0f5…   2026 77441bb3…     222             161                   17.9
-#> # ℹ abbreviated name: ¹​assists_against_per_game
-#> # ℹ 156 more variables: assists_defensive <int>, assists_per_game <dbl>,
-#> #   assists_turnover_ratio <dbl>, biggest_lead <int>,
-#> #   biggest_scoring_run <int>, blocks <int>, blocks_per_game <dbl>,
-#> #   blocks_received <int>, blocks_received_per_game <dbl>, draws <int>,
-#> #   dunks <int>, dunks_per_game <dbl>, efficiency <int>,
-#> #   efficiency_custom <int>, field_goals_against_percentage <dbl>, …
-# }
-```
