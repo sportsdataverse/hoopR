@@ -78,6 +78,13 @@
   invisible(slot - now)
 }
 
+#' Full-width digits (U+FF10..U+FF19) as ASCII, so `[0-9]` and `as.integer()` read them as sdv-py's `\d` and
+#' `int()` do; anything but a character vector comes back as it is.
+#' @noRd
+.intl_ascii_digits <- function(x) {
+  if (is.character(x)) chartr("\uff10\uff11\uff12\uff13\uff14\uff15\uff16\uff17\uff18\uff19", "0123456789", x) else x
+}
+
 #' `host/path` of a URL, never its query string (which may carry a key).
 #' @noRd
 .intl_where <- function(url) sub("^[a-z]+://([^@/]*@)?", "", sub("[?#].*$", "", url))

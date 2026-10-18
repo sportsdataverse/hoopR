@@ -531,3 +531,5 @@ test_that("live: a finished game, its box and the vendor summary (HOOPR_INTL_LIV
   expect_identical(nrow(pleague_box_teams(gid = 197)), 2L)
   expect_identical(nrow(pleague_preciser_summary_teams(uuid = PL_UUID)), 2L)
 })
+
+test_that("full-width digits read as ASCII", expect_identical(c(.pleague_i("\uff11\uff12"), .pleague_seconds("\uff11\uff12:\uff10\uff15")), c(12L, 725L)))

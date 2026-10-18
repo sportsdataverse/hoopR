@@ -292,3 +292,9 @@ test_that("the competition registry keeps this package's genders only", {
   }
   expect_identical(lengths(reg), c(fiba = 9L, genius = 6L, atrium = 5L))
 })
+
+test_that("full-width digits read as ASCII, as sdv-py's \\d and int() do", {
+  expect_identical(.intl_ascii_digits(c("\uff11\uff12", NA, "x")), c("12", NA, "x"))
+  expect_identical(c(.genius_int("\uff11\uff12"), .genius_seconds("\uff11\uff12:\uff10\uff15"), .tbf_i("\uff11\uff12"), .tbf_score("3-\uff11\uff12", 2L)),
+                   c(12L, 725L, 12L, 12L))
+})

@@ -158,6 +158,7 @@
 #' An integer from an int, an integral double or a digit string; NA otherwise (logicals too).
 #' @noRd
 .genius_int <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.genius_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.double(v)) return(if (v == trunc(v) && abs(v) <= .Machine$integer.max) as.integer(v) else NA_integer_)
@@ -166,6 +167,7 @@
 }
 
 .genius_num <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.genius_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v)) return(suppressWarnings(as.double(trimws(v))))
@@ -192,6 +194,7 @@
 #' "35:08" -> 2108; an integer or other text -> NA.
 #' @noRd
 .genius_seconds <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.genius_scalar(v) || !is.character(v)) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*(\\d+):(\\d{1,2})\\s*$", v, perl = TRUE))[[1]]
   if (!length(m)) return(NA_integer_)

@@ -364,3 +364,5 @@ test_that("B.LEAGUE live: standings and one finished game", {
   expect_identical(info$schedule_key, 504734L)
   expect_identical(info$feed, "v2")
 })
+
+test_that("full-width digits read as ASCII", expect_identical(c(.bleague_i("\uff11\uff12"), .bleague_mmss("\uff11\uff12:\uff10\uff15")), c(12L, 725L)))
