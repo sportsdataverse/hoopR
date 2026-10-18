@@ -1,0 +1,19 @@
+name: Star history
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  watch:
+    types: [started]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: star-history
+  cancel-in-progress: false
+
+jobs:
+  star-history:
+    uses: sportsdataverse/.github/.github/workflows/star-history.yml@main
