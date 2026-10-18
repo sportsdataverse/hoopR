@@ -32,7 +32,7 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    rpg \tab double \tab Rebounds per game. \cr
    apg \tab double \tab Assists per game. \cr
    stpg \tab double \tab Steals per game. \cr
-   blkpg \tab double \tab Blocks per game, or the integer 0). \cr
+   blkpg \tab double \tab Blocks per game. \cr
    info_uuid \tab character \tab Athlete uuid on player tables, team uuid on team tables (platform key space). \cr
    info_full_name \tab character \tab Full display name of the player. \cr
    info_first_name \tab character \tab Given (first) name(s) of the player. \cr
@@ -61,8 +61,8 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    b_avg \tab double \tab Blocks per game. \cr
    f_avg \tab double \tab Fouls per game. \cr
    2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
-   3_p_perc \tab double \tab Three-point percentage, 0-100 (the integer 0, or. \cr
-   ft_perc \tab double \tab Free-throw percentage, 0-100, or the integer 0). \cr
+   3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
+   ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
    info_name \tab character \tab Name of the team. \cr
    info_site_display_name \tab character \tab Team name as the league site displays it. \cr
    info_owner_instance_id \tab character \tab Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). \cr
@@ -158,7 +158,7 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    o_rat_avg \tab double \tab Offensive rating per game average. \cr
    ad \tab integer \tab Assists difference or assists allowed (0 in every row seen; unverified). \cr
    ad_avg \tab integer \tab Per-game average of AD (0 in every row seen; unverified). \cr
-   ec \tab double \tab Unverified in the hundreds, e.g. '509.0'; possibly an efficiency sum). \cr
+   ec \tab double \tab Unverified (in the hundreds, e.g. '509.0'; possibly an efficiency sum). \cr
    to \tab integer \tab Turnovers (total). \cr
    to_avg \tab double \tab Turnovers per game. \cr
    fbp_avg \tab double \tab Fast-break points per game. \cr

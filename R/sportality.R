@@ -22,7 +22,7 @@
 #' | g | integer | Games played in the ssgt. |
 #' | gps | integer | Games started (0 on every row seen). |
 #' | mpg | double | Minutes per game, 'M.m' string. |
-#' | ppg | double | Points per game (a number or. |
+#' | ppg | double | Points per game. |
 #' | drpg | double | Defensive rebounds per game. |
 #' | orpg | double | Offensive rebounds per game. |
 #' | rpg | double | Rebounds per game. |
@@ -1279,7 +1279,7 @@ sportality_standings <- function(ssgt_uuid) {
 #' | rpg | double | Rebounds per game. |
 #' | apg | double | Assists per game. |
 #' | stpg | double | Steals per game. |
-#' | blkpg | double | Blocks per game, or the integer 0). |
+#' | blkpg | double | Blocks per game. |
 #' | info_uuid | character | Athlete uuid on player tables, team uuid on team tables (platform key space). |
 #' | info_full_name | character | Full display name of the player. |
 #' | info_first_name | character | Given (first) name(s) of the player. |
@@ -1308,8 +1308,8 @@ sportality_standings <- function(ssgt_uuid) {
 #' | b_avg | double | Blocks per game. |
 #' | f_avg | double | Fouls per game. |
 #' | 2_p_perc | double | Two-point percentage, 0-100. |
-#' | 3_p_perc | double | Three-point percentage, 0-100 (the integer 0, or. |
-#' | ft_perc | double | Free-throw percentage, 0-100, or the integer 0). |
+#' | 3_p_perc | double | Three-point percentage, 0-100. |
+#' | ft_perc | double | Free-throw percentage, 0-100. |
 #' | info_name | character | Name of the team. |
 #' | info_site_display_name | character | Team name as the league site displays it. |
 #' | info_owner_instance_id | character | Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). |
@@ -1405,7 +1405,7 @@ sportality_standings <- function(ssgt_uuid) {
 #' | o_rat_avg | double | Offensive rating per game average. |
 #' | ad | integer | Assists difference or assists allowed (0 in every row seen; unverified). |
 #' | ad_avg | integer | Per-game average of AD (0 in every row seen; unverified). |
-#' | ec | double | Unverified in the hundreds, e.g. '509.0'; possibly an efficiency sum). |
+#' | ec | double | Unverified (in the hundreds, e.g. '509.0'; possibly an efficiency sum). |
 #' | to | integer | Turnovers (total). |
 #' | to_avg | double | Turnovers per game. |
 #' | fbp_avg | double | Fast-break points per game. |

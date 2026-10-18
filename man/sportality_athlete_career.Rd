@@ -19,7 +19,7 @@ API added later:\tabular{lll}{
    g \tab integer \tab Games played in the ssgt. \cr
    gps \tab integer \tab Games started (0 on every row seen). \cr
    mpg \tab double \tab Minutes per game, 'M.m' string. \cr
-   ppg \tab double \tab Points per game (a number or. \cr
+   ppg \tab double \tab Points per game. \cr
    drpg \tab double \tab Defensive rebounds per game. \cr
    orpg \tab double \tab Offensive rebounds per game. \cr
    rpg \tab double \tab Rebounds per game. \cr
