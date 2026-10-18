@@ -1,0 +1,79 @@
+{
+ "cebl_seasons": {
+  "url": "https://api.data.cebl.ca/seasons/",
+  "query": {}
+ },
+ "cebl_teams": {
+  "url": "https://api.data.cebl.ca/teams/",
+  "query": {}
+ },
+ "cebl_standings": {
+  "url": "https://api.data.cebl.ca/teams/2025/",
+  "query": {}
+ },
+ "cebl_roster": {
+  "url": "https://api.data.cebl.ca/teams/14/roster/2025/",
+  "query": {}
+ },
+ "cebl_team_stats": {
+  "url": "https://api.data.cebl.ca/teams/statistics/aggregated/",
+  "query": {
+   "season": "2025",
+   "mode": "TOTALS",
+   "competition": "REGULAR"
+  }
+ },
+ "cebl_games": {
+  "url": "https://api.data.cebl.ca/games/2025/",
+  "query": {}
+ },
+ "cebl_games__team20": {
+  "url": "https://api.data.cebl.ca/games/2025/",
+  "query": {
+   "team_id": "20"
+  }
+ },
+ "cebl_player_stats": {
+  "url": "https://api.data.cebl.ca/players/statistics/aggregated/",
+  "query": {
+   "season": "2025",
+   "mode": "PER_GAME"
+  }
+ },
+ "cebl_player_leaders": {
+  "url": "https://api.data.cebl.ca/players/statistics/leaders/",
+  "query": {
+   "season": "2025",
+   "mode": "PER_GAME",
+   "statistics": "POINTS,REBOUNDS,ASSISTS,TARGET_SCORES"
+  }
+ },
+ "cebl_player_seasons": {
+  "url": "https://api.data.cebl.ca/players/570965/statistics/",
+  "query": {
+   "mode": "PER_GAME",
+   "career_only": "false"
+  }
+ },
+ "cebl_player_seasons__career": {
+  "url": "https://api.data.cebl.ca/players/570965/statistics/",
+  "query": {
+   "mode": "TOTALS",
+   "career_only": "true"
+  }
+ },
+ "cebl_player": {
+  "url": "https://api.data.cebl.ca/players/570965/",
+  "query": {}
+ },
+ "cebl_player_gamelog": {
+  "url": "https://api.data.cebl.ca/players/570965/gamelog/",
+  "query": {
+   "season": "2025"
+  }
+ },
+ "cebl_news": {
+  "url": "https://api.data.cebl.ca/news/articles/en/",
+  "query": {}
+ }
+}

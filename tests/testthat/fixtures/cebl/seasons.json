@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "year": 2019,
+    "is_active": false,
+    "is_live": false
+  },
+  {
+    "id": 2,
+    "year": 2020,
+    "is_active": false,
+    "is_live": false
+  },
+  {
+    "id": 3,
+    "year": 2021,
+    "is_active": false,
+    "is_live": false
+  }
+]

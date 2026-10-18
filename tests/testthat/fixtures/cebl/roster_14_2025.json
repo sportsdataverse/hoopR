@@ -1,0 +1,29 @@
+[
+  {
+    "id": 64732,
+    "full_name": "Curtis Hollis",
+    "nationality": "UNITED STATES",
+    "birth_date": "1998-04-25",
+    "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/01c936dac6a1e7a5777fb56ae1a8e515M1.png",
+    "position": "F",
+    "jersey_number": "0"
+  },
+  {
+    "id": 150,
+    "full_name": "Kimbal Mackenzie",
+    "nationality": "CANADA",
+    "birth_date": "1996-09-16",
+    "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/3319a2d854c18ce8228c6d0af9b90fdbM1.png",
+    "position": "G",
+    "jersey_number": "1"
+  },
+  {
+    "id": 158,
+    "full_name": "Antonio Davis Jr.",
+    "nationality": "UNITED STATES",
+    "birth_date": "1995-03-15",
+    "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/36208ed2ed87bb0afddd6e4c7f7c69e2M1.png",
+    "position": "F",
+    "jersey_number": "3"
+  }
+]

@@ -1,0 +1,2 @@
+player_id,full_name,nationality,birth_date,age,position,jersey_number,team_id,team_name_en,team_short_name_en,team_name_fr,team_short_name_fr,team_icon_url,team_stats_url_en,team_stats_url_fr,photo_url
+570965,Javonte Smart,UNITED STATES,1999-06-03,27,G,1,20,Ottawa BlackJacks,Ottawa,BlackJacks d'Ottawa,Ottawa,https://storage.googleapis.com/cebl-project.appspot.com/icons/ottawa.png,https://cebl.ca/stats/ottawa,https://cebl.ca/fr-ca/stats/ottawa,https://images.statsengine.playbyplay.api.geniussports.com/e4e635fdd477bfcd31e2d4a00b0153f8M1.png

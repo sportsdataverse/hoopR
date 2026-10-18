@@ -1,0 +1,32 @@
+[
+  {
+    "name_en": "Vancouver Bandits",
+    "short_name_en": "Vancouver",
+    "id": 16,
+    "is_active": true,
+    "name_fr": "Les Bandits de Vancouver",
+    "short_name_fr": "Vancouver",
+    "logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/vancouver.png",
+    "icon_url": "https://storage.googleapis.com/cebl-project.appspot.com/icons/vancouver.png"
+  },
+  {
+    "name_en": "Scarborough Shooting Stars",
+    "short_name_en": "Scarborough",
+    "id": 22,
+    "is_active": true,
+    "name_fr": "Shooting Stars de Scarborough",
+    "short_name_fr": "Scarborough",
+    "logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/scarborough.png",
+    "icon_url": "https://storage.googleapis.com/cebl-project.appspot.com/icons/scarborough.png"
+  },
+  {
+    "name_en": "Newfoundland Growlers",
+    "short_name_en": "Newfoundland",
+    "id": 23,
+    "is_active": false,
+    "name_fr": "Growlers de Terre-Neuve",
+    "short_name_fr": "Terre-Neuve",
+    "logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/newfoundland.png",
+    "icon_url": "https://storage.googleapis.com/cebl-project.appspot.com/icons/growlers.png"
+  }
+]

@@ -1,0 +1,178 @@
+{
+  "POINTS": [
+    {
+      "id": 570965,
+      "full_name": "Javonte Smart",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/e4e635fdd477bfcd31e2d4a00b0153f8M1.png",
+      "team_id": 20,
+      "team_name_en": "Ottawa BlackJacks",
+      "team_short_name_en": "Ottawa",
+      "team_abbreviated_name": "OTT",
+      "team_name_fr": "BlackJacks d'Ottawa",
+      "team_short_name_fr": "Ottawa",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/ottawa.png",
+      "value": "25.9",
+      "ranking": 1
+    },
+    {
+      "id": 193258,
+      "full_name": "Mitch Creek",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/a32e02eb5a9653c6e306f3fd1cf6b244M1.png",
+      "team_id": 16,
+      "team_name_en": "Vancouver Bandits",
+      "team_short_name_en": "Vancouver",
+      "team_abbreviated_name": "VAN",
+      "team_name_fr": "Les Bandits de Vancouver",
+      "team_short_name_fr": "Vancouver",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/vancouver.png",
+      "value": "24.3",
+      "ranking": 2
+    },
+    {
+      "id": 16918,
+      "full_name": "Donovan Williams",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/a370de6e18433342413c73a8c28d4360M1.png",
+      "team_id": 22,
+      "team_name_en": "Scarborough Shooting Stars",
+      "team_short_name_en": "Scarborough",
+      "team_abbreviated_name": "SSS",
+      "team_name_fr": "Shooting Stars de Scarborough",
+      "team_short_name_fr": "Scarborough",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/scarborough.png",
+      "value": "23.4",
+      "ranking": 3
+    }
+  ],
+  "REBOUNDS": [
+    {
+      "id": 36982,
+      "full_name": "Isaih Moore",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/94506ba398c5329f8204b44e7e6e92cbM1.png",
+      "team_id": 20,
+      "team_name_en": "Ottawa BlackJacks",
+      "team_short_name_en": "Ottawa",
+      "team_abbreviated_name": "OTT",
+      "team_name_fr": "BlackJacks d'Ottawa",
+      "team_short_name_fr": "Ottawa",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/ottawa.png",
+      "value": "11.4",
+      "ranking": 1
+    },
+    {
+      "id": 111,
+      "full_name": "Simi Shittu",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/8fdf2f4a1ac7c54e68ef055919139eaaM1.png",
+      "team_id": 24,
+      "team_name_en": "Winnipeg Sea Bears",
+      "team_short_name_en": "Winnipeg",
+      "team_abbreviated_name": "WPG",
+      "team_name_fr": "Sea Bears de Winnipeg",
+      "team_short_name_fr": "Winnipeg",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/winnipeg.png",
+      "value": "11.0",
+      "ranking": 2
+    },
+    {
+      "id": 406695,
+      "full_name": "Tyrese Samuel",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/843763481267d837ff0798d1b5cc41e7M1.png",
+      "team_id": 16,
+      "team_name_en": "Vancouver Bandits",
+      "team_short_name_en": "Vancouver",
+      "team_abbreviated_name": "VAN",
+      "team_name_fr": "Les Bandits de Vancouver",
+      "team_short_name_fr": "Vancouver",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/vancouver.png",
+      "value": "10.9",
+      "ranking": 3
+    }
+  ],
+  "ASSISTS": [
+    {
+      "id": 404887,
+      "full_name": "Nate Pierre-Louis",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/09a69ce399b09d3c4f4da96c3aeda4c9M1.png",
+      "team_id": 15,
+      "team_name_en": "Saskatchewan Rattlers",
+      "team_short_name_en": "Saskatchewan",
+      "team_abbreviated_name": "SSK",
+      "team_name_fr": "Rattlers de la Saskatchewan",
+      "team_short_name_fr": "Saskatchewan",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/saskatchewan.png",
+      "value": "7.9",
+      "ranking": 1
+    },
+    {
+      "id": 16080,
+      "full_name": "Corey Davis Jr.",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/73366ff48db9399dd2f434fd786aae75M1.png",
+      "team_id": 16,
+      "team_name_en": "Vancouver Bandits",
+      "team_short_name_en": "Vancouver",
+      "team_abbreviated_name": "VAN",
+      "team_name_fr": "Les Bandits de Vancouver",
+      "team_short_name_fr": "Vancouver",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/vancouver.png",
+      "value": "7.8",
+      "ranking": 2
+    },
+    {
+      "id": 44,
+      "full_name": "Deng Adel",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/17f7f4401725b8abc24938b867a00ef6M1.png",
+      "team_id": 20,
+      "team_name_en": "Ottawa BlackJacks",
+      "team_short_name_en": "Ottawa",
+      "team_abbreviated_name": "OTT",
+      "team_name_fr": "BlackJacks d'Ottawa",
+      "team_short_name_fr": "Ottawa",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/ottawa.png",
+      "value": "6.3",
+      "ranking": 3
+    }
+  ],
+  "TARGET_SCORES": [
+    {
+      "id": 406695,
+      "full_name": "Tyrese Samuel",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/843763481267d837ff0798d1b5cc41e7M1.png",
+      "team_id": 16,
+      "team_name_en": "Vancouver Bandits",
+      "team_short_name_en": "Vancouver",
+      "team_abbreviated_name": "VAN",
+      "team_name_fr": "Les Bandits de Vancouver",
+      "team_short_name_fr": "Vancouver",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/vancouver.png",
+      "value": "0.4",
+      "ranking": 1
+    },
+    {
+      "id": 102,
+      "full_name": "Sean Miller-Moore",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/e4b1e6e4290b3380d32ec01e554887d7M1.png",
+      "team_id": 17,
+      "team_name_en": "Calgary Surge",
+      "team_short_name_en": "Calgary",
+      "team_abbreviated_name": "CGY",
+      "team_name_fr": "Surge de Calgary",
+      "team_short_name_fr": "Calgary",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/calgary.png",
+      "value": "0.3",
+      "ranking": 2
+    },
+    {
+      "id": 155,
+      "full_name": "Khalil Ahmad",
+      "photo_url": "https://images.statsengine.playbyplay.api.geniussports.com/0a78d01ace596cb08353f21afd7542a2M1.png",
+      "team_id": 14,
+      "team_name_en": "Niagara River Lions",
+      "team_short_name_en": "Niagara",
+      "team_abbreviated_name": "NRL",
+      "team_name_fr": "River Lions de Niagara",
+      "team_short_name_fr": "Niagara",
+      "team_logo_url": "https://storage.googleapis.com/cebl-project.appspot.com/logos/niagara.png",
+      "value": "0.3",
+      "ranking": 3
+    }
+  ]
+}

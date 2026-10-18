@@ -1,0 +1,4 @@
+team_id,name_en,short_name_en,name_fr,short_name_fr,is_active,logo_url,icon_url
+16,Vancouver Bandits,Vancouver,Les Bandits de Vancouver,Vancouver,true,https://storage.googleapis.com/cebl-project.appspot.com/logos/vancouver.png,https://storage.googleapis.com/cebl-project.appspot.com/icons/vancouver.png
+22,Scarborough Shooting Stars,Scarborough,Shooting Stars de Scarborough,Scarborough,true,https://storage.googleapis.com/cebl-project.appspot.com/logos/scarborough.png,https://storage.googleapis.com/cebl-project.appspot.com/icons/scarborough.png
+23,Newfoundland Growlers,Newfoundland,Growlers de Terre-Neuve,Terre-Neuve,false,https://storage.googleapis.com/cebl-project.appspot.com/logos/newfoundland.png,https://storage.googleapis.com/cebl-project.appspot.com/icons/growlers.png
