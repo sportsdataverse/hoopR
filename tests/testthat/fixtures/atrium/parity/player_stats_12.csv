@@ -1,0 +1,28 @@
+website_id,season_id,table_key,table_label,person_id,person_name,entity_id,entity_name,stat_key,stat_name,stat_label,value,value_text
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,minutesPerGame,MIN,Minutes par Match,,PT12M2S
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,assistsPerGame,PD,Passes Décisives par Match,0.2,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,blocksPerGame,CT,Contres par Match,0.5,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,minutesPerGame,MIN,Minutes par Match,,PT20M57S
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,assistsPerGame,PD,Passes Décisives par Match,1.21,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,blocksPerGame,CT,Contres par Match,0.46,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,minutesPerGame,MIN,Minutes par Match,,PT18M52S
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,assistsPerGame,PD,Passes Décisives par Match,1.61,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,averages,Moyennes,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,blocksPerGame,CT,Contres par Match,0.22,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,fieldGoalsAttempted,TT,Tirs Tentés,25.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,fieldGoalsMade,TR,Tirs Réussis,17.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,fieldGoalsEffectivePercentage,EFG%,Effective Field Goal %,68.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,fieldGoalsAttempted,TT,Tirs Tentés,152.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,fieldGoalsMade,TR,Tirs Réussis,69.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,fieldGoalsEffectivePercentage,EFG%,Effective Field Goal %,52.63,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,fieldGoalsAttempted,TT,Tirs Tentés,164.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,fieldGoalsMade,TR,Tirs Réussis,75.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,shootingstatistics,Stats Tirs,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,fieldGoalsEffectivePercentage,EFG%,Effective Field Goal %,55.79,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,assists,PD,Passe Décisive,2.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,blocks,CT,Contres,5.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,,Paris,dunks,Dk,Dunks,6.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,assists,PD,Passe Décisive,29.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,blocks,CT,Contres,11.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,,Monaco,dunks,Dk,Dunks,16.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,assists,PD,Passe Décisive,29.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,blocks,CT,Contres,4.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,totals,Totaux,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,Paris,dunks,Dk,Dunks,10.0,

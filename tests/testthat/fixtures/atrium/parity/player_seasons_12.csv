@@ -1,0 +1,4 @@
+website_id,person_id,season_name,season_year,season_end_year,team_id,team_name,minutes_per_game,points_per_game,rebounds_per_game,rebounds_offensive_per_game,rebounds_defensive_per_game,assists_per_game,steals_per_game,blocks_per_game,turnovers_per_game,fouls_personal_per_game,dunks_per_game,efficiency
+12,4458f165-f865-11f0-8ebf-539c931c1654,Betclic ÉLITE - Playoffs 2025,2025,2026,25bcb29d-55bc-11f0-8037-fb553c4eab1b,Lyon-Villeurbanne,,10.0,,0.67,1.33,,,,,,,
+12,4458f165-f865-11f0-8ebf-539c931c1654,Betclic ÉLITE 2025,2025,2026,25bcb29d-55bc-11f0-8037-fb553c4eab1b,Lyon-Villeurbanne,,12.43,,0.21,3.5,,,,,,,
+12,4458f165-f865-11f0-8ebf-539c931c1654,Leaders Cup 2025,2025,2026,25bcb29d-55bc-11f0-8037-fb553c4eab1b,Lyon-Villeurbanne,,0.0,,1.0,4.0,,,,,,,

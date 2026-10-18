@@ -1,0 +1,4 @@
+website_id,season_id,person_id,name,bib,entity_id,team_name,position_code,position_name,nationality,date_of_birth,age,height,status,image_url
+12,df310a05-51ad-11f0-bd89-c735508e1e09,01173036-f5c1-11eb-9523-523277e9c17f,Ismael Bako,21,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,Paris,C,Pivot,Belgique,1995-10-10,31,208,Actif,https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400
+12,df310a05-51ad-11f0-bd89-c735508e1e09,03e0ef50-f5c1-11eb-9523-523277e9c17f,Juhann Begarin,23,736b73ae-55bc-11f0-820e-2bf5ce89dac3,Monaco,GF,Arrière Ailier,France,2002-08-07,24,196,Actif,https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400
+12,df310a05-51ad-11f0-bd89-c735508e1e09,0602120f-c617-11f0-a9dd-810bdb91b6f0,Jared Rhoden,,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,Paris,,,États-Unis,1999-08-27,27,,Actif,https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400

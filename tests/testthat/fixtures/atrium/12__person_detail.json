@@ -1,0 +1,234 @@
+{
+  "data": {
+    "config": {
+      "bindToNavigation": "persons",
+      "currentPage": "person_detail",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJwVyzEOhDAMRNGrINdYmlGw4uwBOAA3CMSpKNBuibj7kvJJ_9_yk88krSeiwtRYm5IdujcveuRkBg8GisyTnCPuX123oWuIsXCpxbXbwXeNXd1T1hSZOUAHIM8fM7YZBA",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJwVyzEOhDAMRNGrINdYmlGw4uwBOAA3CMSpKNBuibj7kvJJ_9_yk88krSeiwtRYm5IdujcveuRkBg8GisyTnCPuX123oWuIsXCpxbXbwXeNXd1T1hSZOUAHIM8fM7YZBA",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJwVyzEOhDAMRNGrINdYmlGw4uwBOAA3CMSpKNBuibj7kvJJ_9_yk88krSeiwtRYm5IdujcveuRkBg8GisyTnCPuX123oWuIsXCpxbXbwXeNXd1T1hSZOUAHIM8fM7YZBA",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showPersonImage": true,
+      "sport": "basketball"
+    },
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "person": {
+      "averages": [
+        {
+          "code": "Points par Match",
+          "key": "pointsPerGame",
+          "name": "PTS",
+          "value": 12.43
+        },
+        {
+          "code": "Rebonds Défensifs par Match",
+          "key": "reboundsDefensivePerGame",
+          "name": "RD",
+          "value": 3.5
+        },
+        {
+          "code": "Rebonds Offensifs par Match",
+          "key": "reboundsOffensivePerGame",
+          "name": "RO",
+          "value": 0.21
+        }
+      ],
+      "bib": null,
+      "colors": {
+        "primary": "2D2D2D",
+        "secondary": "FFFFFF",
+        "tertiary": "1D1D1D"
+      },
+      "id": "4458f165-f865-11f0-8ebf-539c931c1654",
+      "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d4520113100e4dcf8534633e5a1e09f8?size=400",
+      "info": [
+        {
+          "key": "Date of birth",
+          "label": "Date de naissance",
+          "value": "1994-04-06"
+        },
+        {
+          "key": "age",
+          "label": "Âge",
+          "value": 32
+        },
+        {
+          "key": "nationality",
+          "label": "Nationalité",
+          "value": "Colombie"
+        }
+      ],
+      "name": "Braian Angola-Rodas",
+      "social": {},
+      "teamId": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+      "teamImage": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+      "teamLink": {
+        "fragment": null,
+        "openInNewTab": false,
+        "origin": null,
+        "path": null,
+        "queryParams": {
+          "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+        }
+      },
+      "teamName": "Lyon-Villeurbanne"
+    },
+    "statistics": {
+      "commonHeaders": [
+        {
+          "key": "seasonName",
+          "name": "Saison"
+        },
+        {
+          "key": "team",
+          "name": "Equipe"
+        }
+      ],
+      "filters": {
+        "fixtureType": {
+          "id": "fixture-type-select",
+          "options": [],
+          "selected": null
+        }
+      },
+      "headers": [
+        {
+          "code": "Points par Match",
+          "key": "pointsPerGame",
+          "name": "PTS"
+        },
+        {
+          "code": "Rebonds Offensifs par Match",
+          "key": "reboundsOffensivePerGame",
+          "name": "RO"
+        },
+        {
+          "code": "Rebonds Défensifs par Match",
+          "key": "reboundsDefensivePerGame",
+          "name": "RD"
+        }
+      ],
+      "rows": [
+        {
+          "seasonName": "Betclic ÉLITE - Playoffs 2025",
+          "seasonYear": 2025,
+          "statistics": [
+            10.0,
+            0.67,
+            1.33
+          ],
+          "team": {
+            "id": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+            "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+              }
+            },
+            "name": "Lyon-Villeurbanne"
+          }
+        },
+        {
+          "seasonName": "Betclic ÉLITE 2025",
+          "seasonYear": 2025,
+          "statistics": [
+            12.43,
+            0.21,
+            3.5
+          ],
+          "team": {
+            "id": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+            "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+              }
+            },
+            "name": "Lyon-Villeurbanne"
+          }
+        },
+        {
+          "seasonName": "Leaders Cup 2025",
+          "seasonYear": 2025,
+          "statistics": [
+            0.0,
+            1.0,
+            4.0
+          ],
+          "team": {
+            "id": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+            "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+              }
+            },
+            "name": "Lyon-Villeurbanne"
+          }
+        }
+      ]
+    },
+    "sub": "statistics",
+    "tabs": [
+      {
+        "label": "Stats Compétition",
+        "link": "&~w=p~eJwlysEJwzAMheFVgs4VSNhK5AzQAbqBY1sQyKHUPqV090bk8uDnfV94wzpBjKLGs6DpNcxGqG0zlJBKClyuK8Jjgu64WmDKJCic6423qgnLEkRIGzdKjg_H9sHny-v06iOPvY-9dPj9ASkeHxA",
+        "sub": "statistics"
+      },
+      {
+        "label": "Game Log",
+        "link": "&~w=p~eJwlykEKhDAMheGrSNYGEtpoOgfwAN6gto0bQdHdDHN3DW4e_LzvBwd8OohR1HgQNH2G2Qi1LYYSUkmBy3NF6Du4HFcLTJkEhXN98VI1YRmDCGnjRsnx5thOnGavr9e2r_C_AVa9HAc",
+        "sub": "log"
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/person_detail?personId=4458f165-f865-11f0-8ebf-539c931c1654&seasonId=df310a05-51ad-11f0-bd89-c735508e1e09"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 7,
+    "fromCache": false,
+    "generated": "2026-10-12T18:14:17.110663+00:00Z",
+    "generationTime": 0.32261,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:10.796277+00:00Z",
+    "version": 1
+  }
+}

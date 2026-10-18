@@ -1,0 +1,435 @@
+{
+  "data": {
+    "config": {
+      "currentPage": "leaders",
+      "labelPage": "",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showPersonImage": true,
+      "sport": "basketball"
+    },
+    "filters": {
+      "fixtureType": {
+        "id": "fixture-type-select",
+        "options": [],
+        "selected": null
+      }
+    },
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+    "seasons": {
+      "competitions": {
+        "0847055c-2fb3-11ef-9b30-3333ffdb8385": {
+          "name": "PROB"
+        },
+        "213e021f-19b5-11ee-9190-29c4f278bc32": {
+          "name": "PROB"
+        },
+        "27a79741-597b-11ef-9104-c9f30fad1f7e": {
+          "name": "Betclic ÉLITE - Play-In"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "2c58cdf2-51d1-11f0-b783-c5cbc0fbb14f",
+          "link": "&~w=l~eJyrVipWslJQMkm0MDdPNUzTNTVMMdQ1NEwz0E20sLTQtTBMNU81TzFMs7RMVNJRUMoBKU4r0nULUqoFALn7Dtw",
+          "nameLocal": "All Star Game 2025",
+          "seasonId": "4a877e1f-51d1-11f0-a898-81e7e7d1f99a",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "b98931f7-51d3-11f0-8483-9d47ff25959f",
+          "link": "&~w=l~eJyrVipWslJQSjE3SjE1S7TQNTVMMdY1NEwz0LU0SUnSNTK1NDEwMTMztzQ3U9JRUMoBKU4r0nULUqoFAKquDhc",
+          "nameLocal": "Betclic ÉLITE - Playoffs 2025",
+          "seasonId": "d72d56a8-51d3-11f0-94db-259404667976",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "3f4064bb-51ad-11f0-aaaf-2923c944b404",
+          "link": "&~w=l~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+          "nameLocal": "Betclic ÉLITE 2025",
+          "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+          "year": 2025
+        }
+      ]
+    },
+    "statistics": [
+      {
+        "data": [
+          {
+            "entity": {
+              "entityId": "da0b634d-55bc-11f0-99f8-2dd52d4792f3",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/14c94c0fe7b041209dc0934a0341eece?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwly7ENgDAMAMFVkGss2QkmMQMwABskOK6ooETsjgLlS383XLAMYB6ZCgkKF0NmJ6yWFfcURSg3bqQwDnD02U9ct17to4XqHCdDkbr_VNUzBjMJNiUNHuF5AUA1GcQ"
+                }
+              },
+              "name": "Nancy"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/2d8dae4c778b4325ae762cc9c6172d96?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly8ENgCAMQNFVSM82acEiOIADuEGhcPJg9Gjc3RCPL_n_gRtWB9YDk5KgsBoyd8JiKWNdggilxo0yTA6OEfcLt33oHPJSSyxZMHGu_6rkA0Zps1cpZtzg_QA3RBm9"
+                }
+              },
+              "name": "L.N. II",
+              "personId": "25cb6b95-819c-11f0-a023-65e42a5bdd1e"
+            },
+            "statistics": {
+              "points": 565
+            },
+            "value": 565
+          },
+          {
+            "entity": {
+              "entityId": "f43b1b0f-55bc-11f0-84d9-01499d2f0a07",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/8cc2654e9e61483395b1429f82d035d9?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwljLENgDAMwF6pMhMpoY1oOIAD-KAlzcQEI-J3KIyWbF9wwhzAPDIVEhQuhsxOWC0rblMUody4kcIQYO-yH7isndpHKVau5ChStz_NyRSJk6qN_m4nuB87sRmE"
+                }
+              },
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/9059e458c2b14174ab6ab2f22fac13de?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVy7sNgDAMANFVkGss2QkOnwEYgA1ibFcUCErE7pDySXcP3LB0YJGZKgkKV0PmIFSbZtzHLEKTs9MMfQdHi-PCdWs6mwbxKFULhuz8r66oKSlKssTCYV4GeD9HQhoc"
+                }
+              },
+              "name": "N. Hifi",
+              "personId": "45ef6ab6-f5c1-11eb-b22b-52d2151fde64"
+            },
+            "statistics": {
+              "points": 550
+            },
+            "value": 550
+          },
+          {
+            "entity": {
+              "entityId": "238ad480-55b8-11f0-ada9-1b2b39c0d600",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d75d46d8f9474798b55e76f0efd76c0e?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwly7ENhDAMRuFVkGss_Sbnw2EABmADJ06qq44SsTuKKD_pvYtO2iaKngQOZRUPFungEpa5rkkV1qQh0zzRb8T9z_sx1IaWZB4fA6sWe1cPzyxlKSlXxBeg-wE0Xhl6"
+                }
+              },
+              "name": "Dijon"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/9d3aa1f058f84ee593ea29b0873edb2d?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVy0EOQEAMRuGrSNea9B_KcAAHcAOj7cpCWIq7M8svee-hm-aGLDrIJsqKzRgI4WJ54n3sVCU7XCZqGzpqHBcva9VZ1Y-OLBg4dMe_euGSUmFNlqAI86Gn9wM0IBmJ"
+                }
+              },
+              "name": "G. Hrovat",
+              "personId": "47e18016-f5c1-11eb-b22b-52d2151fde64"
+            },
+            "statistics": {
+              "points": 510
+            },
+            "value": 510
+          }
+        ],
+        "header": {
+          "code": "Points",
+          "key": "points",
+          "name": "PTS"
+        }
+      },
+      {
+        "data": [
+          {
+            "entity": {
+              "entityId": "f43b1b0f-55bc-11f0-84d9-01499d2f0a07",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/8cc2654e9e61483395b1429f82d035d9?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwljLENgDAMwF6pMhMpoY1oOIAD-KAlzcQEI-J3KIyWbF9wwhzAPDIVEhQuhsxOWC0rblMUody4kcIQYO-yH7isndpHKVau5ChStz_NyRSJk6qN_m4nuB87sRmE"
+                }
+              },
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/9059e458c2b14174ab6ab2f22fac13de?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVy7sNgDAMANFVkGss2QkOnwEYgA1ibFcUCErE7pDySXcP3LB0YJGZKgkKV0PmIFSbZtzHLEKTs9MMfQdHi-PCdWs6mwbxKFULhuz8r66oKSlKssTCYV4GeD9HQhoc"
+                }
+              },
+              "name": "N. Hifi",
+              "personId": "45ef6ab6-f5c1-11eb-b22b-52d2151fde64"
+            },
+            "statistics": {
+              "pointsPerGame": 20.37
+            },
+            "value": 20.37
+          },
+          {
+            "entity": {
+              "entityId": "da0b634d-55bc-11f0-99f8-2dd52d4792f3",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/14c94c0fe7b041209dc0934a0341eece?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwly7ENgDAMAMFVkGss2QkmMQMwABskOK6ooETsjgLlS383XLAMYB6ZCgkKF0NmJ6yWFfcURSg3bqQwDnD02U9ct17to4XqHCdDkbr_VNUzBjMJNiUNHuF5AUA1GcQ"
+                }
+              },
+              "name": "Nancy"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/2d8dae4c778b4325ae762cc9c6172d96?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly8ENgCAMQNFVSM82acEiOIADuEGhcPJg9Gjc3RCPL_n_gRtWB9YDk5KgsBoyd8JiKWNdggilxo0yTA6OEfcLt33oHPJSSyxZMHGu_6rkA0Zps1cpZtzg_QA3RBm9"
+                }
+              },
+              "name": "L.N. II",
+              "personId": "25cb6b95-819c-11f0-a023-65e42a5bdd1e"
+            },
+            "statistics": {
+              "pointsPerGame": 19.48
+            },
+            "value": 19.48
+          },
+          {
+            "entity": {
+              "entityId": "88bff512-55bd-11f0-aa84-8366061a4b55",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/ecc26d2d005e4843adea267c6ae5951c?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwty7ENwzAMBdFVBNYhQEb-CuUBPIA3oCyxcpWUgXc3BLh8wN2ffrQm6pFVXMBQ76wawq1b5eOTAbGhQyq9Ep0zji9v-9SYMmsR0DcD7VndbWHLpUhRXxpA1w05Rhlc"
+                }
+              },
+              "name": "Strasbourg"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/568d8a9e60da4547ad421ff687c582f9?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly7ENgDAMBdFVkGss-Sc4GAZgADYIJK4oEJSI3VFE-aS7h26aOyoeIVmUFbkw4MJbsYn3MaqKVVSZqO_oaLFfvKxNZ1NwpGBIbNjsX7MhcHYtYbBo2JXeDyrwGQU"
+                }
+              },
+              "name": "M.D. Jr",
+              "personId": "2f162816-81b8-11f0-a812-af5d248381c5"
+            },
+            "statistics": {
+              "pointsPerGame": 19.08
+            },
+            "value": 19.08
+          }
+        ],
+        "header": {
+          "code": "Points par Match",
+          "key": "pointsPerGame",
+          "name": "PTS"
+        }
+      },
+      {
+        "data": [
+          {
+            "entity": {
+              "entityId": "88bff512-55bd-11f0-aa84-8366061a4b55",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/ecc26d2d005e4843adea267c6ae5951c?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwty7ENwzAMBdFVBNYhQEb-CuUBPIA3oCyxcpWUgXc3BLh8wN2ffrQm6pFVXMBQ76wawq1b5eOTAbGhQyq9Ep0zji9v-9SYMmsR0DcD7VndbWHLpUhRXxpA1w05Rhlc"
+                }
+              },
+              "name": "Strasbourg"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/000bd145a34c4ca6b008ce182885c940?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJw9y7sNgDAMANFVkGss2XIcHAZgADZwfhUFghKxO0pD-aS7B25YJ6hdmJwUlb0icyfM1RKWRVTJGjdKME9wjLhfuO1D51AQi8mtoP2rSQ7omYLGFgtrgvcDNT8ZbA"
+                }
+              },
+              "name": "N. Joseph",
+              "personId": "43869a8c-81ad-11f0-83b4-ab0456e6c159"
+            },
+            "statistics": {
+              "efficiency": 507
+            },
+            "value": 507
+          },
+          {
+            "entity": {
+              "entityId": "238ad480-55b8-11f0-ada9-1b2b39c0d600",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d75d46d8f9474798b55e76f0efd76c0e?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwly7ENhDAMRuFVkGss_Sbnw2EABmADJ06qq44SsTuKKD_pvYtO2iaKngQOZRUPFungEpa5rkkV1qQh0zzRb8T9z_sx1IaWZB4fA6sWe1cPzyxlKSlXxBeg-wE0Xhl6"
+                }
+              },
+              "name": "Dijon"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/9d3aa1f058f84ee593ea29b0873edb2d?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVy0EOQEAMRuGrSNea9B_KcAAHcAOj7cpCWIq7M8svee-hm-aGLDrIJsqKzRgI4WJ54n3sVCU7XCZqGzpqHBcva9VZ1Y-OLBg4dMe_euGSUmFNlqAI86Gn9wM0IBmJ"
+                }
+              },
+              "name": "G. Hrovat",
+              "personId": "47e18016-f5c1-11eb-b22b-52d2151fde64"
+            },
+            "statistics": {
+              "efficiency": 503
+            },
+            "value": 503
+          },
+          {
+            "entity": {
+              "entityId": "da0b634d-55bc-11f0-99f8-2dd52d4792f3",
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/14c94c0fe7b041209dc0934a0341eece?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwly7ENgDAMAMFVkGss2QkmMQMwABskOK6ooETsjgLlS383XLAMYB6ZCgkKF0NmJ6yWFfcURSg3bqQwDnD02U9ct17to4XqHCdDkbr_VNUzBjMJNiUNHuF5AUA1GcQ"
+                }
+              },
+              "name": "Nancy"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/2d8dae4c778b4325ae762cc9c6172d96?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly8ENgCAMQNFVSM82acEiOIADuEGhcPJg9Gjc3RCPL_n_gRtWB9YDk5KgsBoyd8JiKWNdggilxo0yTA6OEfcLt33oHPJSSyxZMHGu_6rkA0Zps1cpZtzg_QA3RBm9"
+                }
+              },
+              "name": "L.N. II",
+              "personId": "25cb6b95-819c-11f0-a023-65e42a5bdd1e"
+            },
+            "statistics": {
+              "efficiency": 475
+            },
+            "value": 475
+          }
+        ],
+        "header": {
+          "code": "Evaluation",
+          "key": "efficiency",
+          "name": "EVAL"
+        }
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/statistics_leaders?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 7,
+    "fromCache": false,
+    "generated": "2026-10-12T18:12:36.345810+00:00Z",
+    "generationTime": 0.278111,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:12.333499+00:00Z",
+    "version": 1
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "data": {
+    "config": {
+      "currentPage": "standings",
+      "navigation": {
+        "labels": {
+          "search": "Búsqueda",
+          "searchResults": "Resultados de la búsqueda"
+        },
+        "main": [
+          {
+            "label": "Calendario",
+            "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "fixtures"
+          },
+          {
+            "label": "Posiciones",
+            "link": "&~w=stn~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "sport": "basketball"
+    },
+    "filters": {},
+    "headers": [
+      {
+        "key": "position",
+        "name": "Pos"
+      },
+      {
+        "key": "name",
+        "name": "Nombre"
+      },
+      {
+        "code": "Jugado",
+        "key": "played",
+        "name": "PJ"
+      }
+    ],
+    "labels": {
+      "liveStandings": "Live Standings",
+      "toBeConfirmed": "Por confirmar",
+      "toBeConfirmedAbbreviation": "Pend."
+    },
+    "locale": "es-ES",
+    "matchResultLabels": {
+      "D": "D",
+      "L": "P",
+      "W": "G"
+    },
+    "promotionColors": {},
+    "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+    "seasons": {
+      "competitions": {
+        "16be8396-24fb-11ef-9ab7-df6be196e88f": {
+          "name": "LIGA CALIENTE.MX LNBP"
+        },
+        "889eb2bb-5c7c-11ee-aaba-89136e10ae17": {
+          "name": "COPA VALUE LNBP"
+        },
+        "cbd9ecf6-fa02-11ee-8ab9-4510b60996c2": {
+          "name": "LIGA CALIENTE.MX"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "889eb2bb-5c7c-11ee-aaba-89136e10ae17",
+          "link": "&~w=stn~eJyrVipWslJQMk4ySk1OTDTVTTQzMdA1NEwz1E00MjbRNU-zSDaxTEw1SUszUtJRUMoBKU4t1nUNVqoFAMv3D0o",
+          "nameLocal": "COPA VALUE LNBP 2026",
+          "seasonId": "3b2ecaa5-a640-11f1-a234-7f8c49ae4ff2",
+          "year": 2026
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "16be8396-24fb-11ef-9ab7-df6be196e88f",
+          "link": "&~w=stn~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+          "nameLocal": "LIGA CALIENTE.MX LNBP",
+          "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+          "year": 2026
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "cbd9ecf6-fa02-11ee-8ab9-4510b60996c2",
+          "link": "&~w=stn~eJyrVipWslJQSjKwME1KSzTTNUiytNA1NEwz1E20NEjSNbc0NUlJSjUyTzI2VtJRUMoBKU4t1nUNVqoFAMKBDvQ",
+          "nameLocal": "LNBP FEMENIL 2026",
+          "seasonId": "b085bfa6-0b98-11f1-a90b-7954dbe27b33",
+          "year": 2026
+        }
+      ]
+    },
+    "showLiveToggle": false,
+    "standings": [
+      {
+        "label": "",
+        "rows": [
+          {
+            "position": 1,
+            "results": {
+              "losses": 7,
+              "played": 28,
+              "standingPoints": 49,
+              "streak": 0,
+              "streakAway": 4,
+              "streakHome": 0,
+              "wins": 21
+            },
+            "team": {
+              "color": null,
+              "entityId": "64bd2500-6f49-11ec-b288-bf19323c0103",
+              "isCurrentTeam": false,
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwVzDEOwjAMQNGrVJ6xZMehjdl7Ak6AHWeiCxEDIO4OHp_09T8w4bKA-9Y3HYJVIpB5MFpTwaLiId2cC8FpgXvGMXG_pt6p-TyO2-OVjvRarZczEa6j6n8VjlZaQxusUsSJSeD7Azq2HkQ"
+                }
+              },
+              "logoURL": "https://images.dc.connect.sportradar.com/b1gf3/605ae6e3038b460283686fb2959e7bec?size=400",
+              "name": "SOLES DE MEXICALI"
+            }
+          },
+          {
+            "position": 2,
+            "results": {
+              "losses": 8,
+              "played": 28,
+              "standingPoints": 48,
+              "streak": 3,
+              "streakAway": 3,
+              "streakHome": 3,
+              "wins": 20
+            },
+            "team": {
+              "color": null,
+              "entityId": "66dc1b53-6f49-11ec-a47a-bf19323c0103",
+              "isCurrentTeam": false,
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwVzDEOwyAMQNGrRJ5rCWMKdfecoCcAY6ZmKcqQVrl76vFJX_8HE54LqJZeZDAmNkOiQdgewhiF1bg3pRjgtsDbY5u4vlxf19y3rX4Ot7lz7krtzphHkv_KFGsqFdsg4cgaKDCcF0RdHqQ"
+                }
+              },
+              "logoURL": "https://images.dc.connect.sportradar.com/b1gf3/2f704208a3ff4630a3f2055ffd3d722d?size=400",
+              "name": "ASTROS"
+            }
+          },
+          {
+            "position": 3,
+            "results": {
+              "losses": 9,
+              "played": 28,
+              "standingPoints": 47,
+              "streak": 1,
+              "streakAway": 1,
+              "streakHome": 3,
+              "wins": 19
+            },
+            "team": {
+              "color": null,
+              "entityId": "64623df9-6f49-11ec-865a-bf19323c0103",
+              "isCurrentTeam": false,
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwVzDEOwjAMQNGrVJ6xFMchrdl7Ak7QOPZEFyKGgrh76_FJX_8HAx4TqM59FmcsbIZETtgWYczCatybUk5wm-AVsQ1cn6FvaHz2fXsfYQvXUjN3F6xe5FqZ4lLvGzYn4cyaKDH8Tzs_HlU"
+                }
+              },
+              "logoURL": "https://images.dc.connect.sportradar.com/b1gf3/77405657a4884e58a58724e89624f121?size=400",
+              "name": "FUERZA REGIA"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/14/standings?seasonId=cc7d79f3-43ee-11f1-b893-293ce3dbc120"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 11,
+    "fromCache": false,
+    "generated": "2026-10-12T18:24:31.162428+00:00Z",
+    "generationTime": 2.028599,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:31.162446+00:00Z",
+    "version": 1
+  }
+}

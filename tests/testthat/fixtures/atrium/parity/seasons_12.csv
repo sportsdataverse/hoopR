@@ -1,0 +1,4 @@
+website_id,season_id,competition_id,competition_name,season_name,abbreviation_local,year,season_end_year,is_default_season
+12,4a877e1f-51d1-11f0-a898-81e7e7d1f99a,2c58cdf2-51d1-11f0-b783-c5cbc0fbb14f,,All Star Game 2025,,2025,2026,false
+12,d72d56a8-51d3-11f0-94db-259404667976,b98931f7-51d3-11f0-8483-9d47ff25959f,,Betclic ÉLITE - Playoffs 2025,,2025,2026,false
+12,df310a05-51ad-11f0-bd89-c735508e1e09,3f4064bb-51ad-11f0-aaaf-2923c944b404,,Betclic ÉLITE 2025,,2025,2026,true

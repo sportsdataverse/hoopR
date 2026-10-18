@@ -1,0 +1,378 @@
+{
+  "data": {
+    "broadcastsLabels": {
+      "allBroadcasters": "All Broadcasters",
+      "watch": "Watch"
+    },
+    "config": {
+      "currentPage": "fixtures",
+      "labelPage": "Calendario",
+      "navigation": {
+        "labels": {
+          "search": "Búsqueda",
+          "searchResults": "Resultados de la búsqueda"
+        },
+        "main": [
+          {
+            "label": "Calendario",
+            "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "fixtures"
+          },
+          {
+            "label": "Posiciones",
+            "link": "&~w=stn~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showEntityLogo": true,
+      "sport": "basketball"
+    },
+    "entities": null,
+    "fixtures": [
+      {
+        "attendance": null,
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "CHI",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "bf1222e2-fccc-11ea-acec-f6b9d0245c9c",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOwjAMRuGrVJ6xVNulJeycgBMkf-ypXYgYAHF38PhJT-9Dg64TAVvfShgv5s4iIdwuxViLwa03iM50mmjP2Aff7ql3ajyPoz5eaU-3EFV15QDwX3nlCgfH2kqfdTmjgL4_Wtcf8w"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/85cb67cf5bc3480c90e60d7e7968f2b4?size=100",
+            "name": "DORADOS DE CHIHUAHUA",
+            "resultPlace": null,
+            "resultStatus": "SCHEDULED",
+            "score": null,
+            "secondaryScore": null,
+            "shootOutAttempts": null
+          },
+          {
+            "code": "FRE",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "bf1485e6-fccc-11ea-acec-f6b9d0245c9c",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDsOAjEMRdGtjFxjaRxnPqFnBawgebErpiGiAMTeB5dHurpfGnSdCNj6Vlw5qxmLuHDbi3IqCtPeIGmmy0SPiG3w7R76hMbrOOrzHbZwc8n7Yis7gP_KKlcY2NdW-pzyggL6nVzIIAI"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/dbe0a08e0a93474f94e0626c44a3b148?size=100",
+            "name": "GAMBUSINOS DE FRESNILLO",
+            "resultPlace": null,
+            "resultStatus": "SCHEDULED",
+            "score": null,
+            "secondaryScore": null,
+            "shootOutAttempts": null
+          }
+        ],
+        "fixtureId": "0b8e1c84-c352-11f1-ad27-337a03c2be20",
+        "fixtureType": "PLAYOFF",
+        "link": "&~w=f~eJwlyzEOgCAMRuGrmM42of01gLsn8ARQyuTmaLy7Escvee-mi7aJzGKLuYMXuLNIF64pgzXDHK2aaKB5onPEfvF-DPWhUJOLpYUNq_5raRoZiCXAtPq3Pi9ZARni",
+        "name": null,
+        "pool": "",
+        "round": "Ronda: 30",
+        "roundCode": null,
+        "series": null,
+        "stageCode": null,
+        "startTimeLocal": "2026-10-12T20:00:00",
+        "startTimeUTC": "2026-10-13T02:00:00",
+        "status": {
+          "label": "Scheduled",
+          "value": "SCHEDULED"
+        },
+        "timesUnconfirmed": false,
+        "timezone": "Mexico/General",
+        "venue": null,
+        "venueId": "976c7c10-fccc-11ea-bcb1-26e77789d4ce"
+      },
+      {
+        "attendance": null,
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "LEO",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "befb6bb0-fccc-11ea-acec-f6b9d0245c9c",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDsOwkAMRdGtRK6xNJ98MH1WwArGb-wqaRhRAGLv4PJIV_dDg24TAVvfxCvP1Yxz9sx6lcpFKqx2RS6JLhMdEdvg_R56h8bzPNvjFbawmuuqmtgB_FfWuMHAvqr0VOYFAvr-AG7QIIY"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/968b6e5407d1460cba6cd0101a51122d?size=100",
+            "name": "ABEJAS DE LEON",
+            "resultPlace": null,
+            "resultStatus": "SCHEDULED",
+            "score": null,
+            "secondaryScore": null,
+            "shootOutAttempts": null
+          },
+          {
+            "code": "SLP",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "64c05a3e-6f49-11ec-9406-bf19323c0103",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOgzAMQNGrIM-1ZMch1N05AScgxplgacTQVty9eHzS1_9Bh9cAZtM2aRPM4o7MjbE-VTCpmMtWjRPBY4A9Yu84L6FvqJ_Hsb4_YQ-XbDSu4lha1nvlhpqpYG2sksSISeD6Az0MHkc"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/a60a3ce2fef34d43a7fb7be44acffcbd?size=100",
+            "name": "SANTOS DEL POTOSI",
+            "resultPlace": null,
+            "resultStatus": "SCHEDULED",
+            "score": null,
+            "secondaryScore": null,
+            "shootOutAttempts": null
+          }
+        ],
+        "fixtureId": "a811e087-c352-11f1-a3f4-75f06365076e",
+        "fixtureType": "PLAYOFF",
+        "link": "&~w=f~eJwlyzEOgCAMQNGrmM42oVQouHsCT4ClndwYjXc3xPEl_z8wYF9AVbpUZ9zYDImc8CqVMVZW434pxQDrAveMbeBxTvlUK0QWiqByiv_a2DeU5CFzTkGywfsBUJIZaw",
+        "name": null,
+        "pool": "",
+        "round": "Ronda: 30",
+        "roundCode": null,
+        "series": null,
+        "stageCode": null,
+        "startTimeLocal": "2026-10-12T20:00:00",
+        "startTimeUTC": "2026-10-13T02:00:00",
+        "status": {
+          "label": "Scheduled",
+          "value": "SCHEDULED"
+        },
+        "timesUnconfirmed": false,
+        "timezone": "Mexico/General",
+        "venue": null,
+        "venueId": "972c5914-fccc-11ea-bcb1-26e77789d4ce"
+      },
+      {
+        "attendance": null,
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "PUE",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "b044575b-2506-11ef-ae6f-cf38c7faa8e0",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOwyAMQNGrRJ5rCTAE6J4T5ATg2FOyFGVIq9498fikr_-DAe8JmPOWqxJGEkHv1WMvlTBUYqGtsw8OXhPsFsvAZTV9TeM8jva5zGLuLsaUU8eQ3PysRLHJrMhKhbO2VsTB_wZAtB9B"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/14628081b0c140efa67470df6e3ab85d?size=100",
+            "name": "LOBOS PUEBLA",
+            "resultPlace": null,
+            "resultStatus": "SCHEDULED",
+            "score": null,
+            "secondaryScore": null,
+            "shootOutAttempts": null
+          },
+          {
+            "code": "IRA",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "68d8d944-3970-11ee-96e3-f9e7f051bee1",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOwjAMRuGrVJ6xFNehidk5AScgyZ-JLkQdCurdW4-f9PT-NOgxUa2pJevKUQEW6cIlm_JsWqGtVJkD3Sb6eIzBz5fr5xrbur6_uxvuJbfcLEZWS-FaXT9boNwNqYe7FEDoOAE7zx7O"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/93a84e3b18e34c178b3f5a557505c531?size=100",
+            "name": "FRESEROS IRAPUATO",
+            "resultPlace": null,
+            "resultStatus": "SCHEDULED",
+            "score": null,
+            "secondaryScore": null,
+            "shootOutAttempts": null
+          }
+        ],
+        "fixtureId": "a9f654c4-c351-11f1-adf5-83c6576e6c11",
+        "fixtureType": "PLAYOFF",
+        "link": "&~w=f~eJwly7sNgDAMANFVItdYwnG-9EzABIljV3QpEbujiPJJdw9MOByI5JGrMQZWRSIj7KUy-sqiPLqQ32FzcK9YJ57Xki21aikGCSgc6V_bsIiFJcWcNAkRvB9dNRoB",
+        "name": null,
+        "pool": "",
+        "round": "Ronda: 30",
+        "roundCode": null,
+        "series": null,
+        "stageCode": null,
+        "startTimeLocal": "2026-10-12T20:00:00",
+        "startTimeUTC": "2026-10-13T02:00:00",
+        "status": {
+          "label": "Scheduled",
+          "value": "SCHEDULED"
+        },
+        "timesUnconfirmed": false,
+        "timezone": "Mexico/General",
+        "venue": null,
+        "venueId": "97372696-fccc-11ea-bcb1-26e77789d4ce"
+      }
+    ],
+    "labels": {
+      "toBeConfirmed": "Por confirmar",
+      "toBeConfirmedAbbreviation": "Pend."
+    },
+    "locale": "es-ES",
+    "noFixturesMessage": "No hay accesorios para mostrar",
+    "reverseTeamOrder": false,
+    "rounds": {
+      "id": "round-select",
+      "options": [
+        {
+          "label": "All Rounds",
+          "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+          "order": -1,
+          "value": "All"
+        },
+        {
+          "active": false,
+          "label": "Ronda: 30",
+          "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNBvGqQDw3z4iQ0CCIQFEeSMTYQKkWAOA8Fbs",
+          "order": 30,
+          "value": "30"
+        }
+      ],
+      "selected": "All"
+    },
+    "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+    "seasons": {
+      "competitions": {
+        "16be8396-24fb-11ef-9ab7-df6be196e88f": {
+          "name": "LIGA CALIENTE.MX LNBP"
+        },
+        "889eb2bb-5c7c-11ee-aaba-89136e10ae17": {
+          "name": "COPA VALUE LNBP"
+        },
+        "cbd9ecf6-fa02-11ee-8ab9-4510b60996c2": {
+          "name": "LIGA CALIENTE.MX"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "889eb2bb-5c7c-11ee-aaba-89136e10ae17",
+          "link": "&~w=fl~eJyrVipWslJQMk4ySk1OTDTVTTQzMdA1NEwz1E00MjbRNU-zSDaxTEw1SUszUtJRUMoBKU4t1nUNVqoFAMv3D0o",
+          "nameLocal": "COPA VALUE LNBP 2026",
+          "seasonId": "3b2ecaa5-a640-11f1-a234-7f8c49ae4ff2",
+          "year": 2026
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "16be8396-24fb-11ef-9ab7-df6be196e88f",
+          "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+          "nameLocal": "LIGA CALIENTE.MX LNBP",
+          "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+          "year": 2026
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "cbd9ecf6-fa02-11ee-8ab9-4510b60996c2",
+          "link": "&~w=fl~eJyrVipWslJQSjKwME1KSzTTNUiytNA1NEwz1E20NEjSNbc0NUlJSjUyTzI2VtJRUMoBKU4t1nUNVqoFAMKBDvQ",
+          "nameLocal": "LNBP FEMENIL 2026",
+          "seasonId": "b085bfa6-0b98-11f1-a90b-7954dbe27b33",
+          "year": 2026
+        }
+      ]
+    },
+    "series": null,
+    "showFixtureName": true,
+    "stageTabs": {
+      "id": "stages-select",
+      "options": [],
+      "selected": null
+    },
+    "sub": "FIXTURES",
+    "subPageTabs": [
+      {
+        "label": "Calendario",
+        "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNBvGqQDw3z4iQ0CCgQC0A610TSg",
+        "value": "FIXTURES"
+      },
+      {
+        "label": "Resultados",
+        "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNBvGqQLwg1-BQn5BgpVoA2EATAg",
+        "value": "RESULTS"
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixtures"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 16,
+    "fromCache": false,
+    "generated": "2026-10-12T18:34:48.261710+00:00Z",
+    "generationTime": 0.254302,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:34:48.261732+00:00Z",
+    "version": 1
+  }
+}
