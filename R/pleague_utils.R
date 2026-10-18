@@ -579,14 +579,22 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   "row has a player but no action text; in the corpus a shot with x/y followed by a rebound, i.e. a missed shot",
   "(inferred)"
 ))
-# code -> meaning, the LAST phrase per code winning (sdv-py builds a dict from ACTIONS, so every ft_made /
-# ft_missed row reads "free throw 1 of 3 awarded, ...": kept for parity)
+# code -> meaning, the LAST phrase per code winning. Only the fallback for a row without its phrase: action_en is
+# read per row from the phrase (`.pleague_action_en()`). Documented divergence: sdv-py e3d232e maps the code through
+# this dict, so every ft_made / ft_missed row reads "free throw 1 of 3 awarded, ..." (an sdv-py bug, not copied).
 .PLEAGUE_ACTION_EN <- local({
   code <- c(unname(.PLEAGUE_ACTIONS$code), .PLEAGUE_UNLABELLED[1])
   en <- c(unname(.PLEAGUE_ACTIONS$en), .PLEAGUE_UNLABELLED[2])
   keep <- !duplicated(code, fromLast = TRUE)
   stats::setNames(en[keep], code[keep])
 })
+
+# English meaning of one play: from its phrase when the phrase is in the vocabulary, else from its code
+.pleague_action_en <- function(code, phrase) {
+  if (is.na(code)) return(NA_character_)
+  i <- if (is.character(phrase) && length(phrase) == 1L) match(phrase, names(.PLEAGUE_ACTIONS$en)) else NA_integer_
+  if (!is.na(i)) unname(.PLEAGUE_ACTIONS$en[[i]]) else unname(.PLEAGUE_ACTION_EN[code])
+}
 
 #' The observed play-by-play phrase vocabulary (sdv-py's stray `action_table` export).
 #'
@@ -1678,7 +1686,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
          clock = .pleague_s(e$clock), seconds_left = .pleague_seconds(e$clock), side = .pleague_s(e$side),
          jersey = .pleague_s(e$jersey), player_zh = .pleague_s(e$player_zh), action = code,
          action_zh = if (.pleague_str1(e$action_zh)) e$action_zh else NA_character_,
-         action_en = if (is.na(code)) NA_character_ else unname(.PLEAGUE_ACTION_EN[code]),
+         action_en = .pleague_action_en(code, e$action_zh),
          text_zh = .pleague_s(e$text_zh), ft_number = .pleague_i(e$ft_number), ft_awarded = .pleague_i(e$ft_awarded),
          points = .pleague_i(e$points), score_away = .pleague_i(e$score_away), score_home = .pleague_i(e$score_home),
          x = .pleague_f(e$x), y = .pleague_f(e$y), nice_play = .pleague_lgl(e$nice_play),
