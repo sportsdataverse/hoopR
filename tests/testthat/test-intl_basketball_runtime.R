@@ -88,6 +88,22 @@ test_that("HTTP 500 is not retried by default, and is with retry_500 = TRUE", {
   expect_identical(m$n, 3L)
 })
 
+test_that("a raw 0xA0 byte in a header keeps every header and warns nothing", {
+  local_intl()
+  # basket.co.il: `SameSite=None;<0xA0>Secure`
+  raw_headers <- c(
+    charToRaw("HTTP/1.1 200 OK\r\nContent-Type: application/json; charset=utf-8\r\nSet-Cookie: a=b; SameSite=None;"),
+    as.raw(0xA0), charToRaw("Secure\r\n\r\n")
+  )
+  httr2::local_mocked_responses(function(req) httr2::response(200, headers = raw_headers, body = charToRaw('{"a":1}')))
+  resp <- expect_no_warning(.intl_response(url))
+  expect_identical(httr2::resp_header(resp, "content-type"), "application/json; charset=utf-8")
+  cookie <- httr2::resp_header(resp, "set-cookie")
+  expect_true(validUTF8(cookie))
+  expect_identical(cookie, "a=b; SameSite=None;\u00a0Secure")
+  expect_identical(expect_no_warning(.intl_get(url)), '{"a":1}')
+})
+
 test_that("Retry-After is honoured (capped at 120 s) and backoff grows", {
   sl <- local_intl()
   m <- seq_mock(c(429L, 200L), headers = list("Retry-After" = "7"))

@@ -189,7 +189,7 @@
   interval <- min_interval
   for (i in seq_len(max_tries)) {
     .intl_wait(req$url, interval)
-    resp <- tryCatch(httr2::req_perform(req), error = function(e) e)
+    resp <- tryCatch(.intl_req_perform(req), error = function(e) e)
     failed <- inherits(resp, "error")
     if (!failed && !httr2::resp_status(resp) %in% statuses) return(resp)
     if (i == max_tries) break
@@ -211,6 +211,21 @@
   msg <- conditionMessage(resp)
   .abort_asset_fetch("{where}: fetch failed after {max_tries} attempt{?s}: {msg}",
                      transient = TRUE, parent = resp, call = call)
+}
+
+#' `httr2::req_perform()` with the response headers parsed bytewise.
+#'
+#' httr2 splits the raw header block with `curl::parse_headers()`; one byte that
+#' is not valid UTF-8 (basket.co.il's 0xA0 in `Set-Cookie`) makes that warn in a
+#' UTF-8 session and leaves the response with NO headers. Parsing under the C
+#' character locale splits bytes; a header value that is still not valid UTF-8
+#' is then read as ISO-8859-1 (as `.intl_body_text()` does for a body).
+#' @noRd
+.intl_req_perform <- function(req) {
+  resp <- withr::with_locale(c(LC_CTYPE = "C"), httr2::req_perform(req))
+  bad <- vapply(resp$headers, function(v) is.character(v) && !all(validUTF8(v)), logical(1))
+  resp$headers[bad] <- lapply(resp$headers[bad], iconv, from = "latin1", to = "UTF-8")
+  resp
 }
 
 #' The response body as text, read as UTF-8 when the server names no charset.
