@@ -1,0 +1,4 @@
+game_id,play_num,period,clock,clock_seconds,team_side,team_id,player_id,license_id,action,text,score_home,score_away,x,y,log_param1,log_param2,log_param3,log_param4,log_param5,log_param6,log_param7,log_param8,log_param9,log_param10,log_time,log_time_utc
+2171130,344,4,02:00,120,home,,,,,"(CADI LA SEU) L. PEÑA JUBANY: Tiro en suspensión ANOTADO (2 Pts),",56,57,,,,,,,,,,,,,,
+2171130,347,4,01:30,90,home,,,,,"(CADI LA SEU) G. BAHI BLANQUERA: 3Pts Tiro ANOTADO (9 Pts), L. PEÑA JUBANY: Asistencias (1 As),",59,57,,,,,,,,,,,,,,
+2171130,356,4,00:31,31,home,,,,,"(CADI LA SEU) A. PUJOL LLUCH:Tiros libres 2 de 2 ANOTADO (15 Pts),",60,57,,,,,,,,,,,,,,
