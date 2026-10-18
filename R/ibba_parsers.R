@@ -151,9 +151,13 @@
 .ibba_unescape <- function(x) {
   amp <- !is.na(x) & grepl("&", x, fixed = TRUE)
   if (!any(amp)) return(x)
-  ps <- paste0("<p>", gsub("<", "&lt;", x[amp], fixed = TRUE), "</p>", collapse = "")
+  # libxml2 builds differ on whether the HTML parser turns CR / CRLF into LF; Python's
+  # html.unescape() never does, so CR rides through the parse as a private-use placeholder.
+  cr <- "\uE000"
+  ps <- gsub("\r", cr, gsub("<", "&lt;", x[amp], fixed = TRUE), fixed = TRUE)
+  ps <- paste0("<p>", ps, "</p>", collapse = "")
   doc <- rvest::read_html(paste0("<html><body>", ps, "</body></html>"), encoding = "UTF-8")
-  x[amp] <- rvest::html_text(rvest::html_elements(doc, "body > p"))
+  x[amp] <- gsub(cr, "\r", rvest::html_text(rvest::html_elements(doc, "body > p")), fixed = TRUE)
   x
 }
 

@@ -76,6 +76,21 @@ IBBA_MANIFEST <- jsonlite::read_json(ibba_fx("parity", "manifest.json"))
 
 # --- parity: every wrapper, end to end, against sdv-py's frame on the same fixture ------------
 
+# read.csv() turns CRLF inside a quoted field into LF, but sdv-py's CSV keeps the CR bytes
+# (Python's html.unescape() never touches them), so CR is swapped for a control byte before
+# parsing and put back after.
+ibba_read_oracle <- function(path) {
+  bytes <- readBin(path, "raw", file.size(path))
+  if (grepl("[.]gz$", path)) bytes <- memDecompress(bytes, "gzip")
+  bytes[bytes == as.raw(13L)] <- as.raw(1L)
+  txt <- rawToChar(bytes)
+  Encoding(txt) <- "UTF-8"
+  want <- utils::read.csv(text = txt, colClasses = "character", na.strings = "\\N", check.names = FALSE,
+                          encoding = "UTF-8")
+  want[] <- lapply(want, function(v) gsub("\001", "\r", v, fixed = TRUE))
+  want
+}
+
 test_that("every IBBA wrapper matches sdv-py's frame on the same fixture (columns, types, cells)", {
   exported <- grep("^ibba_", getNamespaceExports("hoopR"), value = TRUE)
   expect_setequal(setdiff(exported, "ibba_segev_game_crosswalk"), names(IBBA_MANIFEST$dtypes))
@@ -86,8 +101,7 @@ test_that("every IBBA wrapper matches sdv-py's frame on the same fixture (column
     got <- do.call(case$fn, case$args)
     path <- ibba_fx("parity", paste0(name, ".csv"))
     if (!file.exists(path)) path <- paste0(path, ".gz")
-    want <- utils::read.csv(path, colClasses = "character", na.strings = "\\N", check.names = FALSE,
-                            encoding = "UTF-8")
+    want <- ibba_read_oracle(path)
     expect_s3_class(got, "hoopR_data")
     expect_identical(names(got), names(want), label = name)
     expect_identical(nrow(got), as.integer(case$rows), label = name)
@@ -411,4 +425,9 @@ test_that("live: the ASMX boards and a Segev game header answer in the documente
   g <- ibba_segev_game_info(game_id = 50)
   expect_identical(g$game_id, 50L)
   expect_identical(g$competition, "Winner League")
+})
+
+test_that("HTML unescape keeps CR and CRLF exactly as Python's html.unescape() does", {
+  x <- c("a&amp;b\r\nc\rd", "plain\r\n", NA)
+  expect_identical(hoopR:::.ibba_unescape(x), c("a&b\r\nc\rd", "plain\r\n", NA))
 })
