@@ -204,16 +204,19 @@ test_that("the ASMX runtime refuses every wrong answer with the sdv-py vocabular
   }
 })
 
-test_that("a JSON body served as HTML is refused; a response whose headers httr2 could not parse is read", {
+test_that("a JSON body served as HTML (or untyped) is refused; a raw 0xA0 in Set-Cookie is read", {
   local_ibba(function(req) ibba_resp(ibba_text("cap/Boards_2026.json"), ctype = IBBA_HTML))
   ibba_expect_error(ibba_boards(season = 2026), "answered text/html; charset=utf-8, not JSON", "hoopR_asset_fetch")
-  # basket.co.il's Set-Cookie carries a raw 0xA0 byte: curl::parse_headers() then drops every header
-  local_ibba(function(req) {
-    r <- httr2::response(200L, body = charToRaw(enc2utf8(ibba_text("cap/Boards_2026.json"))))
-    r$headers <- structure(list(), class = "httr2_headers")
-    r
-  })
-  expect_identical(nrow(ibba_boards(season = 2026)), 3L)
+  body <- charToRaw(enc2utf8(ibba_text("cap/Boards_2026.json")))
+  local_ibba(function(req) httr2::response(200L, body = body))
+  ibba_expect_error(ibba_boards(season = 2026), "answered no content type, not JSON", "hoopR_asset_fetch")
+  # basket.co.il's Set-Cookie carries a raw 0xA0 byte; the shared runtime still parses every header
+  raw_headers <- c(
+    charToRaw("HTTP/1.1 200 OK\r\nContent-Type: application/json; charset=utf-8\r\nSet-Cookie: a=b; SameSite=None;"),
+    as.raw(0xA0), charToRaw("Secure\r\n\r\n")
+  )
+  local_ibba(function(req) httr2::response(200L, headers = raw_headers, body = body))
+  expect_identical(nrow(expect_no_warning(ibba_boards(season = 2026))), 3L)
 })
 
 test_that("a row for another game, season, board or team is a fetch error, never an empty frame", {

@@ -138,23 +138,6 @@
 # ASMX
 # ---------------------------------------------------------------------------
 
-#' The shared throttled request (no 500 retry), with the header-parse warnings muffled.
-#'
-#' basket.co.il answers with a raw 0xA0 byte in a `Set-Cookie` header (`SameSite=None;<0xA0>Secure`).
-#' `curl::parse_headers()` cannot split that text in a UTF-8 session: it warns twice and httr2
-#' keeps NO headers. Those two warnings are muffled here (wrappers never warn); the missing
-#' headers are handled by the callers.
-#' @noRd
-.ibba_response <- function(url, query, call) {
-  # ponytail: family-local mitigation; the shared runtime should parse response headers bytewise
-  withCallingHandlers(
-    .intl_response(url, query = query, retry_500 = FALSE, call = call),
-    warning = function(w) {
-      if (grepl("to a wide string|input string [0-9]+ is invalid", conditionMessage(w))) invokeRestart("muffleWarning")
-    }
-  )
-}
-
 #' Why a `Boxscore` body is not a finished two-team game, or `NULL` when it looks final.
 #'
 #' Neither `Boxscore` nor `Games` carries a status field, so this is the sdv-py heuristic:
@@ -225,7 +208,7 @@
   wire <- lapply(stats::setNames(spec[[1]], spec[[1]]), function(n) .ibba_wire(op, n, params[[n]], call))
   url <- paste0(.IBBA_HOST, "/", op)
   where <- .intl_where(url)
-  resp <- .ibba_response(url, wire, call)
+  resp <- .intl_response(url, query = wire, retry_500 = FALSE, call = call)
   .intl_check_status(resp, where = where, call = call)
   status <- httr2::resp_status(resp)
   if (status != 200L) .abort_asset_fetch("{where} answered HTTP {status}, not 200.", status = status, call = call)
@@ -234,9 +217,7 @@
     .abort_no_data("{where}: an empty 200 body (the host's answer for an unknown id).", call = call)
   }
   ctype <- tolower(httr2::resp_header(resp, "content-type", default = ""))
-  # no headers at all = httr2 could not parse them (see .ibba_response()): the body still has to be
-  # the op's JSON envelope below
-  if (length(resp$headers) && !grepl("json", ctype, fixed = TRUE)) {
+  if (!grepl("json", ctype, fixed = TRUE)) {
     shown <- if (nzchar(ctype)) ctype else "no content type"
     .abort_asset_fetch("{where} answered {shown}, not JSON.", call = call)
   }
@@ -315,7 +296,8 @@
 .ibba_segev_get <- function(method, game_id, call = rlang::caller_env()) {
   gid <- .ibba_segev_game_id(game_id, call)
   where <- .intl_where(.IBBA_SEGEV_URL)
-  resp <- .ibba_response(.IBBA_SEGEV_URL, list(method = method, game_id = gid), call)
+  resp <- .intl_response(.IBBA_SEGEV_URL, query = list(method = method, game_id = gid), retry_500 = FALSE,
+                         call = call)
   .intl_check_status(resp, where = where, call = call)
   status <- httr2::resp_status(resp)
   if (status != 200L) .abort_asset_fetch("{where} answered HTTP {status}, not 200.", status = status, call = call)
