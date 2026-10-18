@@ -28,7 +28,7 @@ Sibling repos in the family: `hoopR-data` (NBA + MBB build/aggregate/publish), `
 
 When this guide differs from current repository docs, treat `CONTRIBUTING.md` and current test helper implementations as authoritative.
 
-- **Version**: 3.1.0
+- **Version**: 3.2.0
 - **R Requirement**: >= 4.1.0
 - **License**: MIT (CRAN + r-universe; pkgdown site at https://hoopR.sportsdataverse.org)
 - **Branch**: `devel` for active development, `main` for releases
@@ -464,7 +464,7 @@ This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines
 
 Three files describe the same release at different audiences. Whenever you add a `NEWS.md` bullet, **think through all three before committing**:
 
-- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.1.0.9000 (development version)**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. When the next version ships to CRAN, rename that heading to the released version and open a new development heading above it.
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.2.0**`, not yet on CRAN). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. When the next version ships to CRAN, rename that heading to the released version and open a new development heading above it.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral or user-visible change you add to `NEWS.md` should also be reflected in `cran-comments.md` before submission. The two files are not duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md` is the short-form release summary. If a `NEWS.md` bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from `cran-comments.md`.
 

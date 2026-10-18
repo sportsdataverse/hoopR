@@ -902,6 +902,7 @@ NULL
 #' }
 mbb_player_crosswalk <- function(season = most_recent_mbb_season(),
                                   min_confidence = 0.92) {
+  rlang::check_installed("stringdist", reason = "to fuzzy-match player names")
   .args <- .capture_args()
   out <- data.frame()
   tryCatch(

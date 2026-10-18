@@ -70,6 +70,7 @@ NULL
 #'  nba_rapm(poss)
 #' ```
 nba_rapm <- function(possessions, ...) {
+  rlang::check_installed(c("glmnet", "Matrix"), reason = "to fit RAPM")
   # Build sparse design (handles empty / all-NA → 0-player sentinel)
   des <- .build_rapm_design(possessions)
 

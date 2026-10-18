@@ -1157,7 +1157,6 @@ espn_mbb_team_current_roster <- function(team_id) {
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest_wider unchop hoist
-#' @importFrom lubridate with_tz ymd_hm
 #' @import rvest
 #' @noRd
 parse_espn_mbb_scoreboard <- function(group, season_dates) {
@@ -1220,8 +1219,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 
       mbb_data <- mbb_data %>%
         dplyr::mutate(
-          game_date_time = lubridate::ymd_hm(substr(.data$game_date, 1, nchar(.data$game_date) - 1)) %>%
-            lubridate::with_tz(tzone = "America/New_York"),
+          game_date_time = .espn_utc_to_et(substr(.data$game_date, 1, nchar(.data$game_date) - 1)),
           game_date = as.Date(substr(.data$game_date_time, 1, 10))
         )
 
@@ -2712,7 +2710,6 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
 #'   when the game has no play-by-play. `home_score` / `away_score` are rebuilt from the
 #'   scoring plays when that reproduces the header's official final, otherwise they are
 #'   ESPN's per-play values; the last column, `score_source` (`"rebuilt"` / `"espn"`), says which.
-#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_pbp <- function(resp) {
   game_json <- resp %>%
@@ -2734,8 +2731,7 @@ helper_espn_mbb_pbp <- function(resp) {
       game_json[["header"]][["competitions"]][["date"]], 1,
       nchar(game_json[["header"]][["competitions"]][["date"]]) - 1
     ) %>%
-      lubridate::ymd_hm() %>%
-      lubridate::with_tz(tzone = "America/New_York")
+      .espn_utc_to_et()
 
     game_date <- as.Date(substr(game_date_time, 0, 10))
     id_vars <- data.frame()
@@ -3000,7 +2996,6 @@ helper_espn_mbb_pbp <- function(resp) {
 #' @rdname helper_espn_mbb_pbp
 #' @param resp Response object from the ESPN MBB game summary endpoint
 #' @return Returns a tibble
-#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_team_box <- function(resp) {
   game_json <- resp %>%
@@ -3011,8 +3006,7 @@ helper_espn_mbb_team_box <- function(resp) {
     game_json[["header"]][["competitions"]][["date"]], 1,
     nchar(game_json[["header"]][["competitions"]][["date"]]) - 1
   ) %>%
-    lubridate::ymd_hm() %>%
-    lubridate::with_tz(tzone = "America/New_York")
+    .espn_utc_to_et()
 
   game_date <- as.Date(substr(game_date_time, 0, 10))
   # ESPN's header `boxscoreAvailable` flag is unreliable for archival games
@@ -3226,7 +3220,6 @@ helper_espn_mbb_team_box <- function(resp) {
 #' @rdname helper_espn_mbb_pbp
 #' @param resp Response object from the ESPN MBB game summary endpoint
 #' @return Returns a tibble
-#' @importFrom lubridate with_tz ymd_hm
 #' @export
 helper_espn_mbb_player_box <- function(resp) {
   game_json <- resp %>%
@@ -3244,8 +3237,7 @@ helper_espn_mbb_player_box <- function(resp) {
     game_json[["header"]][["competitions"]][["date"]], 1,
     nchar(game_json[["header"]][["competitions"]][["date"]]) - 1
   ) %>%
-    lubridate::ymd_hm() %>%
-    lubridate::with_tz(tzone = "America/New_York")
+    .espn_utc_to_et()
 
   game_date <- as.Date(substr(game_date_time, 0, 10))
 

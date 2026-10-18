@@ -110,7 +110,7 @@ nbagl_schedule <- function(
             .data$season_type_id == 4 ~ "Playoffs",
             .data$season_type_id == 5 ~ "Play-In Game"
           ),
-          game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
+          game_date = .parse_mdy(substring(.data$game_date, 1, 10))
         )
     },
     error = function(e) .report_api_error(

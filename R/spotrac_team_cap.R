@@ -1,7 +1,7 @@
 #' @title
 #' **Spotrac NBA Team Salary Cap**
 #' @description
-#' **Get team salary-cap allocations from [Spotrac](https://www.spotrac.com).**
+#' **Get team salary-cap allocations from Spotrac (spotrac.com).**
 #'
 #' Returns one row per team with cap allocations, cap space, active-player
 #' counts and average age for a season. No API key is required.
