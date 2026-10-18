@@ -24,7 +24,8 @@
 #'   single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
 #'   release assets. Requests are spaced at least 1 s apart per host; keep use small.
 #' * Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;
-#'   the runtime decrypts it with `digest::AES()` and refuses anything that does not decrypt. The host blocks
+#'   the runtime decrypts it with `digest::AES()` (digest is a suggested package: install it to use these wrappers)
+#'   and refuses anything that does not decrypt. The host blocks
 #'   datacenter IPs at TCP: set the environment variable `CBA_PROXY` (or `options(hoopR.proxy = ...)`) to a
 #'   residential proxy URL; it is never printed or put in a condition. Without a proxy the request goes direct and,
 #'   from a datacenter, fails within seconds (a 5 s connect timeout, no retry of a refused or timed-out connect).
