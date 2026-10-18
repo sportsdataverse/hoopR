@@ -1,0 +1,147 @@
+{
+  "type": "standings",
+  "fetched": 1791833163,
+  "ttlRemaining": 1800,
+  "count": 10,
+  "source": "cb",
+  "data": [
+    {
+      "id": "49b90e1d-4806-4142-9e73-38427e212aed",
+      "position": 1,
+      "won": 24,
+      "lost": 9,
+      "played": 33,
+      "points_percentage": 1.1379,
+      "win_percentage": 0.7273,
+      "last_5": "LWLWLWLLWWWWLLWWWWWWLLWWWWWWWWWWW",
+      "streak": 11,
+      "points_for": 3276,
+      "points_against": 2879,
+      "away_losses": 5,
+      "away_wins": 11,
+      "home_losses": 4,
+      "home_wins": 13,
+      "team": {
+        "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+        "external_id": "bf06cec9-410c-11f0-8100-1b3c55488bbb",
+        "team_code": "SYD",
+        "name": "Sydney Kings",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SYD.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/1b57cdaa77d54a9ba47a30fd32243352?size=200&format=webp",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS27",
+        "team_nickname": "SYD",
+        "color_primary": "#5f259f",
+        "color_secondary": "#fec527",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:",
+        "team_logo_transparent_blurhash": "L5JP#C-V01}~?6r?=eNf00SuVk0;",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "469aff8e-afc6-4867-9d5b-39753ee49d36",
+      "position": 3,
+      "won": 22,
+      "lost": 11,
+      "played": 33,
+      "points_percentage": 1.0859,
+      "win_percentage": 0.6667,
+      "last_5": "WLWLWWWWWLWWLLWLWWWLWWWLWWWLWWLWL",
+      "streak": 0,
+      "points_for": 3324,
+      "points_against": 3061,
+      "away_losses": 6,
+      "away_wins": 11,
+      "home_losses": 5,
+      "home_wins": 11,
+      "team": {
+        "id": "3bdb8ad6-7cf0-464d-b62c-eaca9145d06e",
+        "external_id": "bf90ae8e-410c-11f0-adfd-1b3c55488bbb",
+        "team_code": "SEM",
+        "name": "South East Melbourne Phoenix",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SEM.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SEM.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/913068fd5d70460fb60dfb9c9c6d590f?size=200&format=webp",
+        "ticket_url": "https://www.axs.com/au/series/33674/s-e-melbourne-phoenix-2026-27-tickets-tickets",
+        "team_nickname": "SEM",
+        "color_primary": "#69be28",
+        "color_secondary": "#303030",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "LABY*iy8YtcBgxi}tMpDP$RBy6yP",
+        "team_logo_transparent_blurhash": "L78OnH*C4ZDCDCtO%@Rl06Mkt1y5",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "f3db1c02-d617-442b-b029-400bf95c6778",
+      "position": 4,
+      "won": 21,
+      "lost": 12,
+      "played": 33,
+      "points_percentage": 1.0549,
+      "win_percentage": 0.6364,
+      "last_5": "LWWWLLWLWLWWWLWLLWLWLWWWWWLWWWWLW",
+      "streak": 1,
+      "points_for": 2996,
+      "points_against": 2840,
+      "away_losses": 5,
+      "away_wins": 11,
+      "home_losses": 7,
+      "home_wins": 10,
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "team_code": "PER",
+        "name": "Perth Wildcats",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/3734277c6fc8484398d0e266b42d2f35?size=200&format=webp",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=WILDCATS27",
+        "team_nickname": "PER",
+        "color_primary": "#d8282f",
+        "color_secondary": "#000000",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    }
+  ]
+}

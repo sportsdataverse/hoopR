@@ -1,0 +1,171 @@
+{
+  "type": "standings",
+  "fetched": 1791833170,
+  "ttlRemaining": 300,
+  "count": 153,
+  "source": "redis",
+  "data": [
+    {
+      "id": "86f1d8de-2711-42f4-b861-8223029fb975",
+      "position": 1,
+      "won": 20,
+      "lost": 0,
+      "played": 20,
+      "points_percentage": 1.504,
+      "win_percentage": 1,
+      "last_5": "WWWWWWWWWWWWWWWWWWWW",
+      "streak": 20,
+      "points_for": 1988,
+      "points_against": 1322,
+      "away_losses": 0,
+      "away_wins": 10,
+      "home_losses": 0,
+      "home_wins": 10,
+      "team": {
+        "id": "f1cdc96e-fa1f-5c51-9161-0944bb21df1e",
+        "external_id": "deb2e2c8-7b55-11eb-9e56-8205bb8987e9",
+        "team_code": "COC",
+        "name": "Cockburn Cougars",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/062cb037ba084536a61b3efd6cc2a148?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/062cb037ba084536a61b3efd6cc2a148?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/062cb037ba084536a61b3efd6cc2a148?size=200&format=webp",
+        "ticket_url": null,
+        "team_nickname": "COC",
+        "color_primary": "#0076bb",
+        "color_secondary": "#ffce00",
+        "color_tertiary": "#000000",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          },
+          "division": [
+            {
+              "name": "West Women",
+              "gender": "female",
+              "conference": {
+                "name": "West"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "5f01aa44-a53a-4230-b0d4-253d6ba30991",
+      "position": 1,
+      "won": 22,
+      "lost": 0,
+      "played": 22,
+      "points_percentage": 1.379,
+      "win_percentage": 1,
+      "last_5": "WWWWWWWWWWWWWWWWWWWWWW",
+      "streak": 22,
+      "points_for": 1980,
+      "points_against": 1436,
+      "away_losses": 0,
+      "away_wins": 11,
+      "home_losses": 0,
+      "home_wins": 11,
+      "team": {
+        "id": "be5afd85-0cf0-57ac-898b-302f4b4fd117",
+        "external_id": "deca66fa-7b55-11eb-9e56-8205bb8987e9",
+        "team_code": "GEE",
+        "name": "Geelong United",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/8a956dd1a718473e8513174f900a2565?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/8a956dd1a718473e8513174f900a2565?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/8a956dd1a718473e8513174f900a2565?size=200&format=webp",
+        "ticket_url": null,
+        "team_nickname": "GEE",
+        "color_primary": "#f49821",
+        "color_secondary": "#0d2c42",
+        "color_tertiary": "#acdffa",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          },
+          "division": [
+            {
+              "name": "South Women",
+              "gender": "female",
+              "conference": {
+                "name": "South"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "df58c2ff-9ede-4aa5-8928-eab17547cf54",
+      "position": 2,
+      "won": 17,
+      "lost": 3,
+      "played": 20,
+      "points_percentage": 1.327,
+      "win_percentage": 0.85,
+      "last_5": "WWWWWWWWWWLWLWLWWWWW",
+      "streak": 5,
+      "points_for": 1805,
+      "points_against": 1360,
+      "away_losses": 2,
+      "away_wins": 8,
+      "home_losses": 1,
+      "home_wins": 9,
+      "team": {
+        "id": "7fca76ce-cf6b-57dd-9ec0-375dd976ca92",
+        "external_id": "2b717ce0-2ccd-11ec-8d2b-92fb8a9cf40e",
+        "team_code": "NOR",
+        "name": "Norths Bears",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/422301b4616b47d7aa3a7a410c039cd4?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/422301b4616b47d7aa3a7a410c039cd4?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/422301b4616b47d7aa3a7a410c039cd4?size=200&format=webp",
+        "ticket_url": null,
+        "team_nickname": "NOR",
+        "color_primary": "#141414",
+        "color_secondary": "#fe0c0b",
+        "color_tertiary": null,
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          },
+          "division": [
+            {
+              "name": "East Women",
+              "gender": "female",
+              "conference": {
+                "name": "East"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

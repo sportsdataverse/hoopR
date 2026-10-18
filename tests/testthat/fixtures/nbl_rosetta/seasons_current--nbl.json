@@ -1,0 +1,85 @@
+{
+  "type": "seasons",
+  "fetched": 1791832612,
+  "ttlRemaining": 1800,
+  "count": 1,
+  "source": "cb",
+  "data": [
+    {
+      "id": "67d4a190-40bc-4bfb-a9a2-11bd0b93f020",
+      "external_id": "1b041b7b-3dde-11f1-8b34-cf648fa5ccb5",
+      "name": "NBL27",
+      "year": "2026",
+      "season_type": "regular",
+      "start_date": "2026-09-19T00:00:00",
+      "end_date": "2027-02-28T00:00:00",
+      "competition": {
+        "name": "NBL",
+        "age_group": null
+      },
+      "matches": [
+        {
+          "id": "b5e8f132-77c1-4839-a86a-16c6274b9096",
+          "external_id": "36dbeb55-58ad-11f1-a69b-43a6b5595d3e",
+          "home_score": "95",
+          "away_score": "97",
+          "start_time_datetime": "2026-09-19T09:30:00",
+          "match_status": "complete",
+          "home_team": {
+            "id": "41c8f340-4d0a-4d68-a3c7-1b31f643f803",
+            "name": "Melbourne United"
+          },
+          "away_team": {
+            "id": "3164912c-7e74-463b-8fc3-5f7d45edfcc6",
+            "name": "Adelaide 36ers"
+          },
+          "venue": {
+            "id": "f9680982-769f-4d00-aa4b-7d6daa5501c3",
+            "name": "John Cain Arena"
+          }
+        },
+        {
+          "id": "40f7fa2c-ec7d-43a3-883d-254cc8441137",
+          "external_id": "36e0e11c-58ad-11f1-93d0-e78395b5c13c",
+          "home_score": "79",
+          "away_score": "100",
+          "start_time_datetime": "2026-09-19T11:30:00",
+          "match_status": "complete",
+          "home_team": {
+            "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+            "name": "Perth Wildcats"
+          },
+          "away_team": {
+            "id": "3bdb8ad6-7cf0-464d-b62c-eaca9145d06e",
+            "name": "South East Melbourne Phoenix"
+          },
+          "venue": {
+            "id": "f7642709-2823-41d5-81cf-716d8c75818d",
+            "name": "RAC Arena"
+          }
+        },
+        {
+          "id": "5c846b51-7fc1-4180-878c-6d13fd381922",
+          "external_id": "3700706c-58ad-11f1-ae9e-a93048d70593",
+          "home_score": "95",
+          "away_score": "81",
+          "start_time_datetime": "2026-09-20T05:00:00",
+          "match_status": "complete",
+          "home_team": {
+            "id": "bbae77db-317d-4c17-aa04-75d53d20ad15",
+            "name": "NZ Breakers"
+          },
+          "away_team": {
+            "id": "105249a3-251d-4a9d-94f4-f57b8e0854b3",
+            "name": "Illawarra Hawks"
+          },
+          "venue": {
+            "id": "60a904fe-6677-4b34-9f64-42c898ee6a66",
+            "name": "Spark Arena"
+          }
+        }
+      ],
+      "next_match_start_datetime": "2026-10-14T08:30:00.000Z"
+    }
+  ]
+}

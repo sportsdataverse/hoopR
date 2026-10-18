@@ -1,0 +1,111 @@
+{
+  "type": "seasons",
+  "fetched": 1791833133,
+  "ttlRemaining": 300,
+  "count": 72,
+  "source": "redis",
+  "data": [
+    {
+      "id": "62edd397-52e9-4f8b-aad4-307510a2df64",
+      "name": "2026 East Men",
+      "year": "2026",
+      "season_type": "regular",
+      "external_id": "216fef65-d623-11f0-89a6-4557bb795dac",
+      "start_date": "2026-03-01T00:00:00",
+      "end_date": "2026-08-31T00:00:00",
+      "competition": {
+        "league": {
+          "name": "NBL1 East",
+          "organisation": {
+            "shortcode": "nbl1"
+          }
+        },
+        "division": [
+          {
+            "id": "cacb5965-1978-41a3-8c5b-9d6469f3b0e4",
+            "abbreviation": "EM",
+            "name": "East Men",
+            "conference": {
+              "id": "db4f166d-af3a-4c69-a9d2-8079d09a9532",
+              "name": "East",
+              "abbreviation": null
+            }
+          }
+        ]
+      },
+      "matches": [
+        "021cd4ad-e456-4d66-8cc2-11aa4bb4ab63",
+        "05984807-1e44-452f-ad40-adafda796418",
+        "05a4b3f7-dc6e-4d2e-b9eb-cab657ac29fe"
+      ]
+    },
+    {
+      "id": "dcc31fd1-2199-48b3-a0ac-d8d8fd2038a5",
+      "name": "2026 South Men",
+      "year": "2026",
+      "season_type": "regular",
+      "external_id": "6d96d605-d3ce-11f0-9f91-afcc959930bb",
+      "start_date": "2026-03-27T00:00:00",
+      "end_date": "2026-08-15T00:00:00",
+      "competition": {
+        "league": {
+          "name": "NBL1 South",
+          "organisation": {
+            "shortcode": "nbl1"
+          }
+        },
+        "division": [
+          {
+            "id": "9690ed55-d557-46ef-a069-54831bff88a6",
+            "abbreviation": "SM",
+            "name": "South Men",
+            "conference": {
+              "id": "0daa8b7c-2f5a-412f-87bb-302a8d632ede",
+              "name": "South",
+              "abbreviation": null
+            }
+          }
+        ]
+      },
+      "matches": [
+        "0364d2a6-0d27-406a-a4ab-314d6450cf6e",
+        "03bd57b2-d1cd-494f-a80d-b7d9cbecc468",
+        "03dd8c81-e323-4ff5-bcf4-014fc1dae08b"
+      ]
+    },
+    {
+      "id": "7d166e45-6b5a-4d2e-bb20-2860177977b5",
+      "name": "2026 South Women",
+      "year": "2026",
+      "season_type": "regular",
+      "external_id": "9ee95531-d3ce-11f0-a331-63265e9a6d45",
+      "start_date": "2026-03-27T00:00:00",
+      "end_date": "2026-08-15T00:00:00",
+      "competition": {
+        "league": {
+          "name": "NBL1 South",
+          "organisation": {
+            "shortcode": "nbl1"
+          }
+        },
+        "division": [
+          {
+            "id": "1f9f10d3-ee8f-4190-9a95-79875ca574ca",
+            "abbreviation": "SW",
+            "name": "South Women",
+            "conference": {
+              "id": "0daa8b7c-2f5a-412f-87bb-302a8d632ede",
+              "name": "South",
+              "abbreviation": null
+            }
+          }
+        ]
+      },
+      "matches": [
+        "0093352e-96b9-4af8-ac11-239ebea859f4",
+        "0117419f-9235-429e-b934-c1fdd25ee64d",
+        "018b43f1-c899-4b01-a681-ebc85ac3c715"
+      ]
+    }
+  ]
+}

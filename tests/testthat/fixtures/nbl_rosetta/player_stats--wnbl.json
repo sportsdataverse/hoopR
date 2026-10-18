@@ -1,0 +1,303 @@
+{
+  "type": "player_season_statistics",
+  "fetched": 1791833203,
+  "ttlRemaining": 1800,
+  "count": 3,
+  "source": "cb",
+  "data": [
+    {
+      "assists_average": 0.34783,
+      "blocks_average": 0.08696,
+      "field_goals_attempted": 81,
+      "field_goals_made": 32,
+      "field_goals_attempted_average": 3.52174,
+      "field_goals_made_average": 1.3913,
+      "field_goals_percentage": 0.395062,
+      "fouls_average": 1.17391,
+      "free_throws_attempted": 34,
+      "free_throws_made": 23,
+      "free_throws_attempted_average": 1.47826,
+      "free_throws_made_average": 1,
+      "free_throws_percentage": 0.676471,
+      "games": 23,
+      "games_started": 0,
+      "offensive_rebounds": 9,
+      "fouls": 27,
+      "personal_fouls": 24,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 44,
+      "three_points_attempted_average": 1.91304,
+      "three_points_made": 15,
+      "three_points_made_average": 0.65217,
+      "three_points_percentage": 0.340909,
+      "turnovers_average": 1,
+      "turnovers": 23,
+      "two_points_attempted": 37,
+      "two_points_attempted_average": 1.6087,
+      "two_points_made": 17,
+      "two_points_made_average": 0.73913,
+      "two_points_percentage": 0.45946,
+      "minutes": 201.233337,
+      "minutes_average": 8.75,
+      "points": 102,
+      "rebounds": 29,
+      "assists": 8,
+      "blocks": 2,
+      "steals": 5,
+      "plus_minus": -57,
+      "plus_minus_average": -2.47826,
+      "efficiency": 63,
+      "efficiency_average": 2.73913,
+      "points_average": 4.43478,
+      "rebounds_average": 1.26087,
+      "steals_average": 0.21739,
+      "player": {
+        "id": "b4d458a6-cec5-4bfa-b6f1-46135743b558",
+        "external_id": "71fbc964-45e3-11f0-a82c-c5864f4b75a8",
+        "first_name": "Manuela",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/47d5509291ae4f3ca4178015a730affa?size=800&format=webp",
+        "jersey_number": "32",
+        "last_name": "Puoch",
+        "playing_position": "F",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/bcefec261d174b4ba37c203aabd0d08f?size=800&format=webp",
+        "color_primary": "#36bacb",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 127,
+        "totalScoreWithoutDDandTD": 122,
+        "breakdown": {
+          "points": {
+            "value": 102,
+            "points": 102
+          },
+          "rebounds": {
+            "value": 29,
+            "points": 29
+          },
+          "assists": {
+            "value": 8,
+            "points": 16
+          },
+          "blocks": {
+            "value": 2,
+            "points": 6
+          },
+          "steals": {
+            "value": 5,
+            "points": 15
+          },
+          "turnovers": {
+            "value": 23,
+            "points": -46
+          },
+          "double_double": {
+            "value": 2,
+            "points": 5
+          }
+        },
+        "doubleFigureCount": 2
+      }
+    },
+    {
+      "assists_average": 0.72727,
+      "blocks_average": 0.18182,
+      "field_goals_attempted": 43,
+      "field_goals_made": 19,
+      "field_goals_attempted_average": 3.90909,
+      "field_goals_made_average": 1.72727,
+      "field_goals_percentage": 0.44186,
+      "fouls_average": 1.36364,
+      "free_throws_attempted": 9,
+      "free_throws_made": 8,
+      "free_throws_attempted_average": 0.81818,
+      "free_throws_made_average": 0.72727,
+      "free_throws_percentage": 0.888889,
+      "games": 11,
+      "games_started": 2,
+      "offensive_rebounds": 6,
+      "fouls": 15,
+      "personal_fouls": 14,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 24,
+      "three_points_attempted_average": 2.18182,
+      "three_points_made": 8,
+      "three_points_made_average": 0.72727,
+      "three_points_percentage": 0.333333,
+      "turnovers_average": 0.63636,
+      "turnovers": 7,
+      "two_points_attempted": 19,
+      "two_points_attempted_average": 1.72727,
+      "two_points_made": 11,
+      "two_points_made_average": 1,
+      "two_points_percentage": 0.578947,
+      "minutes": 106.400002,
+      "minutes_average": 9.666667,
+      "points": 54,
+      "rebounds": 27,
+      "assists": 8,
+      "blocks": 2,
+      "steals": 5,
+      "plus_minus": -19,
+      "plus_minus_average": -1.72727,
+      "efficiency": 64,
+      "efficiency_average": 5.81818,
+      "points_average": 4.90909,
+      "rebounds_average": 2.45455,
+      "steals_average": 0.45455,
+      "player": {
+        "id": "b4d458a6-cec5-4bfa-b6f1-46135743b558",
+        "external_id": "71fbc964-45e3-11f0-a82c-c5864f4b75a8",
+        "first_name": "Manuela",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/47d5509291ae4f3ca4178015a730affa?size=800&format=webp",
+        "jersey_number": "32",
+        "last_name": "Puoch",
+        "playing_position": "F",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/bcefec261d174b4ba37c203aabd0d08f?size=800&format=webp",
+        "color_primary": "#36bacb",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "722f4d9b-8125-4479-ba4c-8ec4fc2e5272",
+        "external_id": "d39b31b3-45e4-11f0-9616-ed1f38eca530",
+        "year": "2024",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 109,
+        "totalScoreWithoutDDandTD": 104,
+        "breakdown": {
+          "points": {
+            "value": 54,
+            "points": 54
+          },
+          "rebounds": {
+            "value": 27,
+            "points": 27
+          },
+          "assists": {
+            "value": 8,
+            "points": 16
+          },
+          "blocks": {
+            "value": 2,
+            "points": 6
+          },
+          "steals": {
+            "value": 5,
+            "points": 15
+          },
+          "turnovers": {
+            "value": 7,
+            "points": -14
+          },
+          "double_double": {
+            "value": 2,
+            "points": 5
+          }
+        },
+        "doubleFigureCount": 2
+      }
+    },
+    {
+      "games": 0,
+      "period": "0",
+      "season": {
+        "id": "3145d6e5-36b0-4646-8bd1-0e422681ead0",
+        "external_id": "493920b1-2bfc-11f1-aa7e-93fdd049877c",
+        "year": "2026",
+        "season_type": "regular",
+        "start_date": "2026-10-16T00:00:00",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "player": {
+        "id": "b4d458a6-cec5-4bfa-b6f1-46135743b558",
+        "external_id": "71fbc964-45e3-11f0-a82c-c5864f4b75a8",
+        "first_name": "Manuela",
+        "last_name": "Puoch",
+        "full_name": "Manuela Puoch",
+        "jersey_number": "32",
+        "playing_position": "F",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/47d5509291ae4f3ca4178015a730affa?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "2006-10-05",
+        "nationality": null,
+        "height": 185,
+        "weight": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "e4ebf00c-6493-49c4-a347-ac341e2938b1",
+        "external_id": "e7cd9434-45e2-11f0-9c43-c5864f4b75a8",
+        "name": "UC Capitals",
+        "team_code": "UCC",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/00d59cea7abb4b5c913d73de206a85b5?size=800&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/00d59cea7abb4b5c913d73de206a85b5?size=800&format=webp",
+        "color_primary": "#000000",
+        "color_secondary": "#06c0f9",
+        "gender": "FEMALE",
+        "team_nickname": "UCC",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "_synthetic_from_roster": true,
+      "sc": {
+        "totalScore": 0,
+        "totalScoreWithoutDDandTD": 0,
+        "breakdown": {},
+        "doubleFigureCount": 0
+      }
+    }
+  ]
+}

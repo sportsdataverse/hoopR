@@ -1,0 +1,78 @@
+{
+  "type": "matches",
+  "fetched": 1791833225,
+  "ttlRemaining": 1800,
+  "count": 10,
+  "source": "cb",
+  "data": [
+    {
+      "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+      "name": "Sydney Kings",
+      "team_code": "SYD",
+      "division": null,
+      "conference": null,
+      "nextMatches": [
+        {
+          "id": "9c1e799a-bbab-47cb-8e31-2eb441f7e873",
+          "match_slug": "sydney-kings-v-nz-breakers-men-14-10-2026",
+          "match_title": "Sydney Kings v NZ Breakers men 14-10-2026",
+          "match_ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS27",
+          "external_id": "3706e834-58ad-11f1-8519-a362560fc147",
+          "start_time_datetime": "2026-10-14T08:30:00",
+          "is_home": true,
+          "opponent_id": "bbae77db-317d-4c17-aa04-75d53d20ad15",
+          "opponent_name": "NZ Breakers",
+          "opponent_logo": "https://images.dc.prod.cloud.atriumsports.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+          "venue": "AIS Arena",
+          "opponent_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      ]
+    },
+    {
+      "id": "bbae77db-317d-4c17-aa04-75d53d20ad15",
+      "name": "NZ Breakers",
+      "team_code": "NZL",
+      "division": null,
+      "conference": null,
+      "nextMatches": [
+        {
+          "id": "9c1e799a-bbab-47cb-8e31-2eb441f7e873",
+          "match_slug": "sydney-kings-v-nz-breakers-men-14-10-2026",
+          "match_title": "Sydney Kings v NZ Breakers men 14-10-2026",
+          "match_ticket_url": "https://fans.nzbreakers.basketball/schedule",
+          "external_id": "3706e834-58ad-11f1-8519-a362560fc147",
+          "start_time_datetime": "2026-10-14T08:30:00",
+          "is_home": false,
+          "opponent_id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+          "opponent_name": "Sydney Kings",
+          "opponent_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+          "venue": "AIS Arena",
+          "opponent_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:"
+        }
+      ]
+    },
+    {
+      "id": "f8185bc5-2674-4293-a2a7-aeb8c7549b30",
+      "name": "Brisbane Bullets",
+      "team_code": "BRI",
+      "division": null,
+      "conference": null,
+      "nextMatches": [
+        {
+          "id": "352d3deb-fb75-41a5-aafa-67db4db9b676",
+          "match_slug": "brisbane-bullets-v-south-east-melbourne-phoenix-men-15-10-2026",
+          "match_title": "Brisbane Bullets v South East Melbourne Phoenix men 15-10-2026",
+          "match_ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=BULLETS27",
+          "external_id": "36fd506c-58ad-11f1-a57f-6d6fb61b331b",
+          "start_time_datetime": "2026-10-15T08:30:00",
+          "is_home": true,
+          "opponent_id": "3bdb8ad6-7cf0-464d-b62c-eaca9145d06e",
+          "opponent_name": "South East Melbourne Phoenix",
+          "opponent_logo": "https://cdn.nbl.com.au/app_assets/SEM.png",
+          "venue": "Brisbane Entertainment Centre",
+          "opponent_logo_blurhash": "LABY*iy8YtcBgxi}tMpDP$RBy6yP"
+        }
+      ]
+    }
+  ]
+}

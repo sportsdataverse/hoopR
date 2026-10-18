@@ -1,0 +1,366 @@
+{
+  "type": "player_season_statistics",
+  "fetched": 1791833208,
+  "ttlRemaining": 300,
+  "count": 115,
+  "source": "redis",
+  "data": [
+    {
+      "assists_average": 4,
+      "blocks_average": 0.36,
+      "field_goals_attempted": 444,
+      "field_goals_made": 201,
+      "field_goals_attempted_average": 17.76,
+      "field_goals_made_average": 8.04,
+      "field_goals_percentage": 0.452703,
+      "fouls_average": 2.76,
+      "free_throws_attempted": 143,
+      "free_throws_made": 127,
+      "free_throws_attempted_average": 5.72,
+      "free_throws_made_average": 5.08,
+      "free_throws_percentage": 0.888112,
+      "games": 25,
+      "games_started": 25,
+      "offensive_rebounds": 37,
+      "fouls": 69,
+      "personal_fouls": 65,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 140,
+      "three_points_attempted_average": 5.6,
+      "three_points_made": 42,
+      "three_points_made_average": 1.68,
+      "three_points_percentage": 0.3,
+      "turnovers_average": 3.28,
+      "turnovers": 82,
+      "two_points_attempted": 304,
+      "two_points_attempted_average": 12.16,
+      "two_points_made": 159,
+      "two_points_made_average": 6.36,
+      "two_points_percentage": 0.523026,
+      "minutes": 840.133362,
+      "minutes_average": 33.616669,
+      "points": 571,
+      "rebounds": 167,
+      "assists": 100,
+      "blocks": 9,
+      "steals": 35,
+      "plus_minus": 105,
+      "plus_minus_average": 4.2,
+      "efficiency": 541,
+      "efficiency_average": 21.64,
+      "points_average": 22.84,
+      "rebounds_average": 6.68,
+      "steals_average": 1.4,
+      "player": {
+        "id": "f8e23e1f-7053-4f72-bcf9-e2c93ed07e37",
+        "external_id": "70d52d7e-45e3-11f0-9ebc-c5864f4b75a8",
+        "first_name": "Isobel",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/1709e26b48a3478da1f29008e8a34923?size=800&format=webp",
+        "jersey_number": "14",
+        "last_name": "Borlase",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "bd30706f-87e8-40cd-9a37-7cbe6c8fbad7",
+        "external_id": "e7e7e83d-45e2-11f0-9e55-c5864f4b75a8",
+        "name": "Bendigo Spirit",
+        "team_code": "BEN",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/fd49f5cfed5a42e6868dc1f96282afca?size=800&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/fd49f5cfed5a42e6868dc1f96282afca?size=800&format=webp",
+        "color_primary": "#4d41f7",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 916,
+        "totalScoreWithoutDDandTD": 906,
+        "breakdown": {
+          "points": {
+            "value": 571,
+            "points": 571
+          },
+          "rebounds": {
+            "value": 167,
+            "points": 167
+          },
+          "assists": {
+            "value": 100,
+            "points": 200
+          },
+          "blocks": {
+            "value": 9,
+            "points": 27
+          },
+          "steals": {
+            "value": 35,
+            "points": 105
+          },
+          "turnovers": {
+            "value": 82,
+            "points": -164
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    },
+    {
+      "assists_average": 1.47826,
+      "blocks_average": 1.08696,
+      "field_goals_attempted": 362,
+      "field_goals_made": 208,
+      "field_goals_attempted_average": 15.73913,
+      "field_goals_made_average": 9.04348,
+      "field_goals_percentage": 0.574586,
+      "fouls_average": 1.91304,
+      "free_throws_attempted": 102,
+      "free_throws_made": 77,
+      "free_throws_attempted_average": 4.43478,
+      "free_throws_made_average": 3.34783,
+      "free_throws_percentage": 0.754902,
+      "games": 23,
+      "games_started": 23,
+      "offensive_rebounds": 77,
+      "fouls": 44,
+      "personal_fouls": 34,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 34,
+      "three_points_attempted_average": 1.47826,
+      "three_points_made": 10,
+      "three_points_made_average": 0.43478,
+      "three_points_percentage": 0.294118,
+      "turnovers_average": 2.52174,
+      "turnovers": 58,
+      "two_points_attempted": 328,
+      "two_points_attempted_average": 14.26087,
+      "two_points_made": 198,
+      "two_points_made_average": 8.6087,
+      "two_points_percentage": 0.603658,
+      "minutes": 811.483337,
+      "minutes_average": 35.283333,
+      "points": 503,
+      "rebounds": 221,
+      "assists": 34,
+      "blocks": 25,
+      "steals": 28,
+      "plus_minus": -144,
+      "plus_minus_average": -6.26087,
+      "efficiency": 574,
+      "efficiency_average": 24.95652,
+      "points_average": 21.86957,
+      "rebounds_average": 9.6087,
+      "steals_average": 1.21739,
+      "player": {
+        "id": "7b6cd5eb-a671-47fb-8c1a-a9be69293e35",
+        "external_id": "1c739e48-69d9-11f0-9fcf-9f411dd0fb73",
+        "first_name": "Mackenzie",
+        "image": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/71c3a963b4fe46b59c9c2487d11273d1?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Holmes",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "8d986481-9b69-420e-bad0-b0761bdb2020",
+        "external_id": "e7f2ce4b-45e2-11f0-b6e3-c5864f4b75a8",
+        "name": "Geelong Venom",
+        "team_code": "GEE",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=800&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=800&format=webp",
+        "color_primary": "#3e66c5",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 845,
+        "totalScoreWithoutDDandTD": 835,
+        "breakdown": {
+          "points": {
+            "value": 503,
+            "points": 503
+          },
+          "rebounds": {
+            "value": 221,
+            "points": 221
+          },
+          "assists": {
+            "value": 34,
+            "points": 68
+          },
+          "blocks": {
+            "value": 25,
+            "points": 75
+          },
+          "steals": {
+            "value": 28,
+            "points": 84
+          },
+          "turnovers": {
+            "value": 58,
+            "points": -116
+          },
+          "triple_double": {
+            "value": 5,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 5
+      }
+    },
+    {
+      "assists_average": 2.03571,
+      "blocks_average": 0.03571,
+      "field_goals_attempted": 392,
+      "field_goals_made": 171,
+      "field_goals_attempted_average": 14,
+      "field_goals_made_average": 6.10714,
+      "field_goals_percentage": 0.436225,
+      "fouls_average": 2.07143,
+      "free_throws_attempted": 80,
+      "free_throws_made": 74,
+      "free_throws_attempted_average": 2.85714,
+      "free_throws_made_average": 2.64286,
+      "free_throws_percentage": 0.925,
+      "games": 28,
+      "games_started": 28,
+      "offensive_rebounds": 22,
+      "fouls": 58,
+      "personal_fouls": 55,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 203,
+      "three_points_attempted_average": 7.25,
+      "three_points_made": 83,
+      "three_points_made_average": 2.96429,
+      "three_points_percentage": 0.408867,
+      "turnovers_average": 1.64286,
+      "turnovers": 46,
+      "two_points_attempted": 189,
+      "two_points_attempted_average": 6.75,
+      "two_points_made": 88,
+      "two_points_made_average": 3.14286,
+      "two_points_percentage": 0.465609,
+      "minutes": 911.299988,
+      "minutes_average": 32.549999,
+      "points": 499,
+      "rebounds": 73,
+      "assists": 57,
+      "blocks": 1,
+      "steals": 26,
+      "plus_minus": 320,
+      "plus_minus_average": 11.42857,
+      "efficiency": 383,
+      "efficiency_average": 13.67857,
+      "points_average": 17.82143,
+      "rebounds_average": 2.60714,
+      "steals_average": 0.92857,
+      "player": {
+        "id": "3533515b-14f8-404a-b837-e78c9708542f",
+        "external_id": "63601774-45e3-11f0-8518-f11cbc5ce37c",
+        "first_name": "Miela",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/bebe48ed66a44c9ba1178145cb900af3?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Sowah",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "d4082ccf-a46c-4766-b41b-efa3143b8188",
+        "external_id": "e7d138b4-45e2-11f0-b18b-c5864f4b75a8",
+        "name": "Townsville Fire",
+        "team_code": "TSV",
+        "team_logo": "https://cdn.prod.website-files.com/686dc6510ed19bd7d682101b/6892da4eeef4bafcc120df16_tsv-logo-fire-sq.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=800&format=webp",
+        "color_primary": "#f97305",
+        "team_logo_blurhash": "LBE-HNwf06o[_CRm4wt41INJrdod",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 685,
+        "totalScoreWithoutDDandTD": 675,
+        "breakdown": {
+          "points": {
+            "value": 499,
+            "points": 499
+          },
+          "rebounds": {
+            "value": 73,
+            "points": 73
+          },
+          "assists": {
+            "value": 57,
+            "points": 114
+          },
+          "blocks": {
+            "value": 1,
+            "points": 3
+          },
+          "steals": {
+            "value": 26,
+            "points": 78
+          },
+          "turnovers": {
+            "value": 46,
+            "points": -92
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    }
+  ]
+}

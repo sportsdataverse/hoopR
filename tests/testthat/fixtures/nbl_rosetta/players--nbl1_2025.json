@@ -1,0 +1,224 @@
+{
+  "type": "rosters",
+  "fetched": 1791833182,
+  "ttlRemaining": 1800,
+  "count": 2448,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "23",
+      "playing_position": "F",
+      "player": {
+        "id": "628c7d6e-2879-49af-ba9d-35ca431db00f",
+        "sort": null,
+        "user_created": "e9c73e4f-cde1-4244-bcdd-498fc63a2aa6",
+        "date_created": "2024-11-07T22:11:14.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-06-09T03:08:38.000Z",
+        "first_name": "Ruby",
+        "last_name": "Vlahov",
+        "date_of_birth": "2004-03-05",
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "f40a1112-b39f-11ec-b1ed-050b30cad78c",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "2dd26c26-3596-41a9-9522-f130a6465748",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1n81/738cfd3930c24362844d976706277225?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "10",
+        "latest_playing_position": "F",
+        "full_name": "Ruby Vlahov",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "0d2abcb1-cff8-4c7c-8c05-92e7407264a2",
+          "40ecb81b-0b41-4dc0-a28c-96c2706aa13d",
+          "cb377cce-552c-45fa-9e90-7bf82c73ba69"
+        ],
+        "rosters": [
+          "7f6f25bb-10a2-4704-a4cf-9243001846d3",
+          "934acc7d-a1e2-490b-ac87-a236d7fae6e7"
+        ]
+      },
+      "team": {
+        "team_code": "PLH",
+        "name": "Perry Lakes Hawks",
+        "external_id": "df05ce7a-7b55-11eb-9e56-8205bb8987e9",
+        "id": "cc15f2ad-b740-51df-9297-49e8c725402d"
+      },
+      "season": {
+        "competition": {
+          "division": [
+            {
+              "conference": {
+                "name": "West",
+                "id": "418b9344-679e-43f7-a1ae-78830ec5eec7"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "jersey_number": "22",
+      "playing_position": "G",
+      "player": {
+        "id": "a1102861-54ed-4622-bd96-297484d90098",
+        "sort": null,
+        "user_created": "e9c73e4f-cde1-4244-bcdd-498fc63a2aa6",
+        "date_created": "2024-10-17T22:15:17.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-10-07T09:37:00.000Z",
+        "first_name": "Chloe",
+        "last_name": "Zorzi",
+        "date_of_birth": "2007-10-19",
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "a079bddc-b628-11ec-8439-b329cdd9a4d1",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "2dd26c26-3596-41a9-9522-f130a6465748",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/1bbdabcb584d4be49eab7ead404d13f4?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "22",
+        "latest_playing_position": "G",
+        "full_name": "Chloe Zorzi",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "30969d17-7290-4653-a57f-85d5ee60029b",
+          "7cb9084d-48d1-4144-9da1-f5b5a6f34955",
+          "b0bcc923-33f2-4798-97a0-b010347c40ed"
+        ],
+        "rosters": [
+          "468e10b7-8173-4a18-b309-eef20a53eea9",
+          "73c0cf32-507d-4690-8dc3-64f55f907227",
+          "8111d470-037e-4dbd-a9e6-0c731d72056e"
+        ]
+      },
+      "team": {
+        "team_code": "GOG",
+        "name": "Goldfields Giants",
+        "external_id": "0ae3407e-772b-11ec-b064-7f76430022f8",
+        "id": "97a38748-e4f2-593a-bdbd-6c3643678881"
+      },
+      "season": {
+        "competition": {
+          "division": [
+            {
+              "conference": {
+                "name": "West",
+                "id": "418b9344-679e-43f7-a1ae-78830ec5eec7"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "jersey_number": "11",
+      "playing_position": "G",
+      "player": {
+        "id": "b0d97441-6411-4737-8912-05bebbefbd89",
+        "sort": null,
+        "user_created": "e9c73e4f-cde1-4244-bcdd-498fc63a2aa6",
+        "date_created": "2024-10-17T22:15:17.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-04-06T23:55:32.000Z",
+        "first_name": "Casey",
+        "last_name": "Mihovilovich",
+        "date_of_birth": "1982-01-29",
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "ea43a0f4-9785-11eb-95cb-caaeb28d14ac",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "2dd26c26-3596-41a9-9522-f130a6465748",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1n81/0701facbfbc949e1bc153e244ea80b80?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "11",
+        "latest_playing_position": "G",
+        "full_name": "Casey Mihovilovich",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "0521e217-c4fa-4cc1-a052-228f4a12b308",
+          "13b1fbd9-a961-4e9d-b61c-0918e1bb7c26",
+          "4ac85adf-16bb-431e-b772-89dc8bf3e207"
+        ],
+        "rosters": [
+          "2c0c9c42-3edc-4edc-b1d5-247ee66cc30a",
+          "4913062c-8ac8-4835-bbcf-740134439e63",
+          "84be3a3e-0491-49f1-9672-c828ecadbc0f"
+        ]
+      },
+      "team": {
+        "team_code": "MAN",
+        "name": "Mandurah Magic",
+        "external_id": "deef9e5c-7b55-11eb-9e56-8205bb8987e9",
+        "id": "25c302a4-5deb-5542-8425-bdd3209cb25b"
+      },
+      "season": {
+        "competition": {
+          "division": [
+            {
+              "conference": {
+                "name": "West",
+                "id": "418b9344-679e-43f7-a1ae-78830ec5eec7"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

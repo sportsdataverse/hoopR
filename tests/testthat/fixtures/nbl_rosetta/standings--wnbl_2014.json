@@ -1,0 +1,138 @@
+{
+  "type": "standings",
+  "fetched": 1791833169,
+  "ttlRemaining": 1800,
+  "count": 8,
+  "source": "cb",
+  "data": [
+    {
+      "id": "4f809743-196f-424c-871b-130805b84fce",
+      "position": 1,
+      "won": 17,
+      "lost": 5,
+      "played": 22,
+      "points_percentage": 1.2331,
+      "win_percentage": 0.7727,
+      "last_5": "0",
+      "streak": 1,
+      "points_for": 1862,
+      "points_against": 1510,
+      "away_losses": 4,
+      "away_wins": 7,
+      "home_losses": 1,
+      "home_wins": 10,
+      "team": {
+        "id": "b80956bd-c504-4e9e-81c1-f54051a2c9d2",
+        "external_id": "e7ae83c1-45e2-11f0-832f-c5864f4b75a8",
+        "team_code": "TSV",
+        "name": "Townsville",
+        "team_logo": null,
+        "team_logo_transparent": null,
+        "external_team_logo": null,
+        "ticket_url": null,
+        "team_nickname": "TSV",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null
+      },
+      "season": {
+        "year": "2014",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "f5b6a5e4-7fed-4d8a-82e2-ca16055730c4",
+      "position": 2,
+      "won": 15,
+      "lost": 7,
+      "played": 22,
+      "points_percentage": 1.1184,
+      "win_percentage": 0.6818,
+      "last_5": "0",
+      "streak": -1,
+      "points_for": 1700,
+      "points_against": 1520,
+      "away_losses": 4,
+      "away_wins": 7,
+      "home_losses": 3,
+      "home_wins": 8,
+      "team": {
+        "id": "505e9765-4f3a-4af2-a42f-3e002ebf17e6",
+        "external_id": "e7c14222-45e2-11f0-b814-c5864f4b75a8",
+        "team_code": "BEN",
+        "name": "Bendigo",
+        "team_logo": null,
+        "team_logo_transparent": null,
+        "external_team_logo": null,
+        "ticket_url": null,
+        "team_nickname": "BEN",
+        "color_primary": "#000000",
+        "color_secondary": "#000000",
+        "color_tertiary": "#000000"
+      },
+      "season": {
+        "year": "2014",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "b1259a75-6de3-4af6-9219-967f90b11b80",
+      "position": 3,
+      "won": 12,
+      "lost": 10,
+      "played": 22,
+      "points_percentage": 1.0045,
+      "win_percentage": 0.5455,
+      "last_5": "0",
+      "streak": -3,
+      "points_for": 1784,
+      "points_against": 1776,
+      "away_losses": 7,
+      "away_wins": 4,
+      "home_losses": 3,
+      "home_wins": 8,
+      "team": {
+        "id": "be13c931-bdc4-48fc-bea7-0ca95aca8bb2",
+        "external_id": "e79df386-45e2-11f0-a38c-c5864f4b75a8",
+        "team_code": "DAN",
+        "name": "Dandenong",
+        "team_logo": null,
+        "team_logo_transparent": null,
+        "external_team_logo": null,
+        "ticket_url": null,
+        "team_nickname": "DAN",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null
+      },
+      "season": {
+        "year": "2014",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      }
+    }
+  ]
+}

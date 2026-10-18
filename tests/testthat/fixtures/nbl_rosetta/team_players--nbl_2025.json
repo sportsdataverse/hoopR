@@ -1,0 +1,171 @@
+{
+  "type": "rosters",
+  "fetched": 1791833185,
+  "ttlRemaining": 1800,
+  "count": 16,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "2",
+      "playing_position": "F",
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "color_primary": "#d8282f",
+        "color_secondary": "#000000",
+        "gender": null,
+        "team_nickname": "PER",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%"
+      },
+      "player": {
+        "id": "2337cf0e-9ee7-439d-8aec-770b3876368c",
+        "external_id": "506a8485-410d-11f0-8bae-9dbbf7342624",
+        "first_name": "Lat",
+        "last_name": "Mayen",
+        "full_name": "Lat Mayen",
+        "jersey_number": "2",
+        "playing_position": "F",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/2f12d35e52eb4b5487b1c6bc786ae771?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "1998-08-16",
+        "nationality": null,
+        "height": 206,
+        "weight": 92,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality_code": "AUS",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    },
+    {
+      "jersey_number": "12",
+      "playing_position": "G",
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "color_primary": "#d8282f",
+        "color_secondary": "#000000",
+        "gender": null,
+        "team_nickname": "PER",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%"
+      },
+      "player": {
+        "id": "4bd329eb-e26f-4377-8d9f-718634af1ee3",
+        "external_id": "c2782518-b3d6-11f0-b4a7-dbbbdd6e819b",
+        "first_name": "David",
+        "last_name": "Duke Jnr",
+        "full_name": "David Duke Jnr",
+        "jersey_number": "12",
+        "playing_position": "G",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/8f253d09169f490c9936be53ebb1ffe7?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "1999-10-13",
+        "nationality": null,
+        "height": 193,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality_code": "USA",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    },
+    {
+      "jersey_number": "1",
+      "playing_position": "G",
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "color_primary": "#d8282f",
+        "color_secondary": "#000000",
+        "gender": null,
+        "team_nickname": "PER",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%"
+      },
+      "player": {
+        "id": "8071714c-30c7-43be-bc15-7d68fdba3526",
+        "external_id": "6c4ae678-410d-11f0-9091-9dbbf7342624",
+        "first_name": "Dontae",
+        "last_name": "Russo-Nance",
+        "full_name": "Dontae Russo-Nance",
+        "jersey_number": "1",
+        "playing_position": "G",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/0e42e2e23e3e41f69d6b9fee479c21f6?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "2005-01-20",
+        "nationality": null,
+        "height": 190,
+        "weight": 90,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality_code": "NZL",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    }
+  ]
+}

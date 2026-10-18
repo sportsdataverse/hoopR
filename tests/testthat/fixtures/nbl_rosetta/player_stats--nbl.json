@@ -1,0 +1,366 @@
+{
+  "type": "player_season_statistics",
+  "fetched": 1791833201,
+  "ttlRemaining": 1800,
+  "count": 3,
+  "source": "cb",
+  "data": [
+    {
+      "assists_average": 1.56757,
+      "blocks_average": 0.24324,
+      "field_goals_attempted": 338,
+      "field_goals_made": 134,
+      "field_goals_attempted_average": 9.13514,
+      "field_goals_made_average": 3.62162,
+      "field_goals_percentage": 0.39645,
+      "fouls_average": 1.02703,
+      "free_throws_attempted": 59,
+      "free_throws_made": 52,
+      "free_throws_attempted_average": 1.59459,
+      "free_throws_made_average": 1.40541,
+      "free_throws_percentage": 0.881356,
+      "games": 37,
+      "games_started": 26,
+      "offensive_rebounds": 43,
+      "fouls": 38,
+      "personal_fouls": 37,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 212,
+      "three_points_attempted_average": 5.72973,
+      "three_points_made": 68,
+      "three_points_made_average": 1.83784,
+      "three_points_percentage": 0.320755,
+      "turnovers_average": 0.91892,
+      "turnovers": 34,
+      "two_points_attempted": 126,
+      "two_points_attempted_average": 3.40541,
+      "two_points_made": 66,
+      "two_points_made_average": 1.78378,
+      "two_points_percentage": 0.52381,
+      "minutes": 915.18335,
+      "minutes_average": 24.75,
+      "points": 388,
+      "rebounds": 125,
+      "assists": 58,
+      "blocks": 9,
+      "steals": 39,
+      "plus_minus": 44,
+      "plus_minus_average": 1.18919,
+      "efficiency": 374,
+      "efficiency_average": 10.10811,
+      "points_average": 10.48649,
+      "rebounds_average": 3.37838,
+      "steals_average": 1.05405,
+      "player": {
+        "id": "318cc011-ca3e-4a82-b1cf-fd805b05d6d4",
+        "external_id": "7619d3ea-410d-11f0-9235-2902fc2f936f",
+        "first_name": "Elijah",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/c2cc5ea484a241118485202810668e25?size=800&format=webp",
+        "jersey_number": "40",
+        "last_name": "Pepper",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "color_primary": "#d8282f",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 715,
+        "totalScoreWithoutDDandTD": 705,
+        "breakdown": {
+          "points": {
+            "value": 388,
+            "points": 388
+          },
+          "rebounds": {
+            "value": 125,
+            "points": 125
+          },
+          "assists": {
+            "value": 58,
+            "points": 116
+          },
+          "blocks": {
+            "value": 9,
+            "points": 27
+          },
+          "steals": {
+            "value": 39,
+            "points": 117
+          },
+          "turnovers": {
+            "value": 34,
+            "points": -68
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    },
+    {
+      "assists_average": 3.2,
+      "blocks_average": 0,
+      "field_goals_attempted": 86,
+      "field_goals_made": 43,
+      "field_goals_attempted_average": 17.2,
+      "field_goals_made_average": 8.6,
+      "field_goals_percentage": 0.5,
+      "fouls_average": 1.2,
+      "free_throws_attempted": 20,
+      "free_throws_made": 16,
+      "free_throws_attempted_average": 4,
+      "free_throws_made_average": 3.2,
+      "free_throws_percentage": 0.8,
+      "games": 5,
+      "games_started": 5,
+      "offensive_rebounds": 5,
+      "fouls": 6,
+      "personal_fouls": 6,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 46,
+      "three_points_attempted_average": 9.2,
+      "three_points_made": 17,
+      "three_points_made_average": 3.4,
+      "three_points_percentage": 0.369565,
+      "turnovers_average": 3,
+      "turnovers": 15,
+      "two_points_attempted": 40,
+      "two_points_attempted_average": 8,
+      "two_points_made": 26,
+      "two_points_made_average": 5.2,
+      "two_points_percentage": 0.65,
+      "minutes": 169.699997,
+      "minutes_average": 33.950001,
+      "points": 119,
+      "rebounds": 16,
+      "assists": 16,
+      "blocks": 0,
+      "steals": 6,
+      "plus_minus": 12,
+      "plus_minus_average": 2.4,
+      "efficiency": 95,
+      "efficiency_average": 19,
+      "points_average": 23.8,
+      "rebounds_average": 3.2,
+      "steals_average": 1.2,
+      "player": {
+        "id": "318cc011-ca3e-4a82-b1cf-fd805b05d6d4",
+        "external_id": "7619d3ea-410d-11f0-9235-2902fc2f936f",
+        "first_name": "Elijah",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/c2cc5ea484a241118485202810668e25?size=800&format=webp",
+        "jersey_number": "40",
+        "last_name": "Pepper",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "color_primary": "#d8282f",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%"
+      },
+      "season": {
+        "id": "67d4a190-40bc-4bfb-a9a2-11bd0b93f020",
+        "external_id": "1b041b7b-3dde-11f1-8b34-cf648fa5ccb5",
+        "year": "2026",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 165,
+        "totalScoreWithoutDDandTD": 155,
+        "breakdown": {
+          "points": {
+            "value": 119,
+            "points": 119
+          },
+          "rebounds": {
+            "value": 16,
+            "points": 16
+          },
+          "assists": {
+            "value": 16,
+            "points": 32
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 6,
+            "points": 18
+          },
+          "turnovers": {
+            "value": 15,
+            "points": -30
+          },
+          "triple_double": {
+            "value": 3,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 3
+      }
+    },
+    {
+      "assists_average": 1.22581,
+      "blocks_average": 0.06452,
+      "field_goals_attempted": 184,
+      "field_goals_made": 77,
+      "field_goals_attempted_average": 5.93548,
+      "field_goals_made_average": 2.48387,
+      "field_goals_percentage": 0.418478,
+      "fouls_average": 1.16129,
+      "free_throws_attempted": 33,
+      "free_throws_made": 25,
+      "free_throws_attempted_average": 1.06452,
+      "free_throws_made_average": 0.80645,
+      "free_throws_percentage": 0.757576,
+      "games": 31,
+      "games_started": 7,
+      "offensive_rebounds": 18,
+      "fouls": 36,
+      "personal_fouls": 35,
+      "technical_fouls": 1,
+      "period": "0",
+      "three_points_attempted": 116,
+      "three_points_attempted_average": 3.74194,
+      "three_points_made": 40,
+      "three_points_made_average": 1.29032,
+      "three_points_percentage": 0.344828,
+      "turnovers_average": 1.16129,
+      "turnovers": 36,
+      "two_points_attempted": 68,
+      "two_points_attempted_average": 2.19355,
+      "two_points_made": 37,
+      "two_points_made_average": 1.19355,
+      "two_points_percentage": 0.544118,
+      "minutes": 491.5,
+      "minutes_average": 15.866667,
+      "points": 219,
+      "rebounds": 69,
+      "assists": 38,
+      "blocks": 2,
+      "steals": 28,
+      "plus_minus": 11,
+      "plus_minus_average": 0.35484,
+      "efficiency": 205,
+      "efficiency_average": 6.6129,
+      "points_average": 7.06452,
+      "rebounds_average": 2.22581,
+      "steals_average": 0.90323,
+      "player": {
+        "id": "318cc011-ca3e-4a82-b1cf-fd805b05d6d4",
+        "external_id": "7619d3ea-410d-11f0-9235-2902fc2f936f",
+        "first_name": "Elijah",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/c2cc5ea484a241118485202810668e25?size=800&format=webp",
+        "jersey_number": "40",
+        "last_name": "Pepper",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "color_primary": "#d8282f",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%"
+      },
+      "season": {
+        "id": "450b0269-04d3-472b-8153-35ff02ac4278",
+        "external_id": "800cbe22-410d-11f0-b037-d128d096bb43",
+        "year": "2024",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 392,
+        "totalScoreWithoutDDandTD": 382,
+        "breakdown": {
+          "points": {
+            "value": 219,
+            "points": 219
+          },
+          "rebounds": {
+            "value": 69,
+            "points": 69
+          },
+          "assists": {
+            "value": 38,
+            "points": 76
+          },
+          "blocks": {
+            "value": 2,
+            "points": 6
+          },
+          "steals": {
+            "value": 28,
+            "points": 84
+          },
+          "turnovers": {
+            "value": 36,
+            "points": -72
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    }
+  ]
+}

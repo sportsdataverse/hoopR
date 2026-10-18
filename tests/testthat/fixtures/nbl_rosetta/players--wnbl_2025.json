@@ -1,0 +1,204 @@
+{
+  "type": "rosters",
+  "fetched": 1791833175,
+  "ttlRemaining": 1800,
+  "count": 115,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "4",
+      "playing_position": "G",
+      "player": {
+        "id": "3fd83c7c-8ee4-43b0-bce1-fd80835ef6d6",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-09-27T00:44:10.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-07-30T05:46:22.000Z",
+        "first_name": "Sharn",
+        "last_name": "Hayward",
+        "date_of_birth": "2002-01-30",
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "0a3ecf81-94ed-11f0-9faf-e3c9b7c60a22",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "69071d13-321b-4567-b013-953690ffb770",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/1366b0804f9749ceb41f836a7c07bc01?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "4",
+        "latest_playing_position": "G",
+        "full_name": "Sharn Hayward",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "5c4a4a5c-de6a-4128-8b1e-34ec94164a12"
+        ],
+        "rosters": [
+          "0118c33c-441a-4a97-b939-acff20276c58",
+          "11aeafdd-bff9-479e-8e9d-6a71b969ada8"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "UCC",
+        "name": "UC Capitals",
+        "external_id": "e7cd9434-45e2-11f0-9c43-c5864f4b75a8",
+        "id": "e4ebf00c-6493-49c4-a347-ac341e2938b1"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "12",
+      "playing_position": "F",
+      "player": {
+        "id": "e7267dfc-604d-47b1-be6b-123c634a4ae2",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-28T06:57:30.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-22T06:16:22.000Z",
+        "first_name": "Mackenzie",
+        "last_name": "Clinch Hoycard",
+        "date_of_birth": "1998-10-29",
+        "height": 191,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "70193476-45e3-11f0-8853-c5864f4b75a8",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "12",
+        "playing_position": "F",
+        "active": true,
+        "league": "69071d13-321b-4567-b013-953690ffb770",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/47a01fcdb64c4577935200785dfbdaed?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "12",
+        "latest_playing_position": "F",
+        "full_name": "Mackenzie Clinch Hoycard",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "1504fd46-06b9-4c88-bee7-e205020ccf92",
+          "24f6df95-8e20-470e-8cda-66700e483da8",
+          "4a14653f-6fd5-4db9-b8c6-66081c293189"
+        ],
+        "rosters": [
+          "02ac125c-4433-4785-bc70-3910917732ea",
+          "05fe114e-9dff-4f04-b2d6-3b0d3ed37b40",
+          "081bc23c-7a72-47a2-bcaf-a7b2a9cd92b7"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "GEE",
+        "name": "Geelong Venom",
+        "external_id": "e7f2ce4b-45e2-11f0-b6e3-c5864f4b75a8",
+        "id": "8d986481-9b69-420e-bad0-b0761bdb2020"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "13",
+      "playing_position": "F",
+      "player": {
+        "id": "47ff5947-00a2-4770-99dc-b072cc6b07c3",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-28T06:57:30.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-14T10:08:00.000Z",
+        "first_name": "Nyadiew",
+        "last_name": "Puoch",
+        "date_of_birth": "2004-06-23",
+        "height": 191,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "710123c1-45e3-11f0-b13a-c5864f4b75a8",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "13",
+        "playing_position": "G",
+        "active": true,
+        "league": "69071d13-321b-4567-b013-953690ffb770",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/735dd3f8cf1440a79e3b6ae993514d7a?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "13",
+        "latest_playing_position": "F",
+        "full_name": "Nyadiew Puoch",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "40076495-4acf-4090-b6b9-8a116b7c9b69",
+          "658e8f0f-d824-4a6e-ae58-d5a33df3473a",
+          "c2159839-51cb-4e12-aadd-2fc139b075e3"
+        ],
+        "rosters": [
+          "08ce5987-888d-4513-a1e7-71a81ba3a68d",
+          "0d64a7cb-0c67-4531-809c-a5c62dc28fba",
+          "62a63a78-6d5a-4d05-833c-340eb0345a06"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "UCC",
+        "name": "UC Capitals",
+        "external_id": "e7cd9434-45e2-11f0-9c43-c5864f4b75a8",
+        "id": "e4ebf00c-6493-49c4-a347-ac341e2938b1"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    }
+  ]
+}
