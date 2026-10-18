@@ -605,7 +605,7 @@ genius_competition_games <- function(comp_id, return_parsed = TRUE) {
 #' | comp_id | integer | Competition id from the hidden input #compId. Genius competition id (compId): one per org competition-season; the \{compId\} of hosted and data/competition paths. The way to map a data.json game to its competition and season |
 #' | competition_name | character | Competition label from #competitionName, free text ('Stoiximan GBL 2026-2027'); carries the season only when the org writes it in |
 #' | org_label | character | First item of og:description: the org's display code (ESAKE) |
-#' | og_description | character | The page's og:description: '<ORG> , <competition>, Check out the full statistics here' |
+#' | og_description | character | The page's og:description: `<ORG> , <competition>, Check out the full statistics here` |
 #' | org | character | ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). |
 #'
 #' @family Genius
@@ -735,7 +735,7 @@ genius_competitions <- function(org, return_parsed = TRUE) {
 #' | col_name | type | description |
 #' |:---|:---|:---|
 #' | match_id | integer | From the block id `extfix_<id>`. Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) |
-#' | link_match_id | integer | Match id of the block's /match/<id>/summary link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) |
+#' | link_match_id | integer | Match id of the block's `/match/<id>/summary` link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) |
 #' | comp_id | integer | CompId of the match link, or of the team links when the org hides match pages (FFBB); equals the \{compId\} asked for. A 'To be determined' slot (no team or match link) takes the \{compId\} the page's other blocks prove |
 #' | org | character | ORG code of the match link (or the team links, as comp_id) |
 #' | status | character | Status from the block class STATUS_*: COMPLETE, SCHEDULED, POSTPONED, ... |
@@ -812,7 +812,7 @@ genius_schedule <- function(org, comp_id, round_number = -1, return_parsed = TRU
 #' | col_name | type | description |
 #' |:---|:---|:---|
 #' | match_id | integer | From the block id `extfix_<id>`. Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) |
-#' | link_match_id | integer | Match id of the block's /match/<id>/summary link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) |
+#' | link_match_id | integer | Match id of the block's `/match/<id>/summary` link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) |
 #' | comp_id | integer | CompId of the match link, or of the team links when the org hides match pages (FFBB); equals the \{compId\} asked for. A 'To be determined' slot (no team or match link) takes the \{compId\} the page's other blocks prove |
 #' | org | character | ORG code of the match link (or the team links, as comp_id) |
 #' | status | character | Status from the block class STATUS_*: COMPLETE, SCHEDULED, POSTPONED, ... |

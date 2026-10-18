@@ -410,7 +410,7 @@ aba_box_teams <- function(game_no, season, league = "aba") {
 #'   | jersey | integer | Jersey number as printed; the play-by-play omits it on some rows (all starting-lineup rows and many home rows), so it is null there. |
 #'   | player_id | integer | ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. |
 #'   | player_name | character | Name as the play-by-play prints it: 'SURNAME I' upper case (the trailing '.' belongs to the event text on the page and is dropped). |
-#'   | text | character | Event text in English after the player's name: '<action> (<qualifier>)', 'in starting lineup', or the whole text of a team / game row ('(defensive)', 'Timeout', 'start of 1. quarter'). Null on bare-clock rows ('10:00' with nothing else, opening some periods). |
+#'   | text | character | Event text in English after the player's name: `<action> (<qualifier>)`, 'in starting lineup', or the whole text of a team / game row ('(defensive)', 'Timeout', 'start of 1. quarter'). Null on bare-clock rows ('10:00' with nothing else, opening some periods). |
 #'   | action | character | text without its parenthesised qualifier; see the action table below the route. Null on team rows (they print only '(qualifier)') and bare-clock rows. |
 #'   | qualifier | character | The parenthesised part of text (shot type, rebound side, free-throw 'n of m', foul or turnover type); see the qualifier table. Null when the text has none. |
 #'

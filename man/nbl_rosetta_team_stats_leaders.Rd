@@ -121,7 +121,10 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 \examples{
 \donttest{
-  try(nbl_rosetta_team_stats_leaders(org = "nbl", period = 0, season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd", sort = "-points", team_code = "PER"))
+  try(nbl_rosetta_team_stats_leaders(
+    org = "nbl", period = 0, season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+    sort = "-points", team_code = "PER"
+  ))
 }
 }
 \seealso{

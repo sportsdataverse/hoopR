@@ -929,7 +929,7 @@ tpbl_roster <- function(division_id, team_id) {
 #' | team_id | integer | TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the `{team_id}` of the division team routes. Not the GoHoops franchise id and not the squad id. |
 #' | rounds | character | The quarter filter asked for, comma-separated ('1' or '1,2'); null when all quarters were asked. |
 #' | is_made | logical | True when the shot went in. |
-#' | point_x | integer | Shot position in MILLIMETRES, 0-28000 along the court length (a 28 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. Verified on 2,971 shots of one team: the made rate within 1.2 m of the hoop is 62-71 \%. Which baseline is x = 0 is unverified. |
+#' | point_x | integer | Shot position in MILLIMETRES, 0-28000 along the court length (a 28 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. Verified on 2,971 shots of one team: the made rate within 1.2 m of the hoop is 62-71 %. Which baseline is x = 0 is unverified. |
 #' | point_y | integer | Shot position in MILLIMETRES, 0-15000 across the court (a 15 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. The direction of y is unverified. |
 #' | offense_basket | integer | Basket the team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425. |
 #' @inherit tpbl_seasons details
@@ -1012,7 +1012,7 @@ tpbl_player_shots <- function(division_id, player_id) {
 #' | team | character | Name of the team the player played for in that game. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
 #' | game_id | integer | TPBL game id (key space: TPBL games on api.tpbl.basketball): the `{game_id}` of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. |
 #' | gohoops_game_id | integer | GoHoops game id (key space: GoHoops games; 1242 for TPBL game 6). Not the TPBL game id. |
-#' | game_title | character | Game title: the division name and the game number counted from the end ('<division name> Game 124' = regular season, game 124). |
+#' | game_title | character | Game title: the division name and the game number counted from the end (`<division name> Game 124` = regular season, game 124). |
 #' | home_team_id | integer | TPBL team id of the home team of the game (franchise, 2-8). |
 #' | away_team_id | integer | TPBL team id of the away team of the game (franchise, 2-8). |
 #' | home_score | integer | Home team final score in the game. |

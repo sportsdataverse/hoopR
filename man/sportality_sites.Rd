@@ -16,7 +16,7 @@ the documented columns come first, in this order (sdv-py \code{sportality_sites}
 later:\tabular{lll}{
    col_name \tab type \tab description \cr
    id \tab character \tab Site instance id of the club (platform key space; the same as instanceId). \cr
-   instance_id \tab character \tab Site instance id of the club or league (platform key space, '\if{html}{\out{<code>}}\if{html}{\out{<n>}}_\if{html}{\out{<code>}}' such as hol2_hol; the league itself is dbl1_dbl). \cr
+   instance_id \tab character \tab Site instance id of the club or league (platform key space, \verb{<code><n>_<code>} such as hol2_hol; the league itself is dbl1_dbl). \cr
    public_url \tab character \tab The club's own website. \cr
    name \tab character \tab Display name of the club. \cr
    icon \tab character \tab Team logo URL (SVG on sportality.cdn.s8y.se). \cr

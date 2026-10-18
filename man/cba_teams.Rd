@@ -13,7 +13,7 @@ zero-row tibble with these columns, in this order (sdv-py \code{cba_teams}):\tab
    club \tab character \tab Empty string on every row; meaning unverified (a club-code slot the site leaves unused). \cr
    team_cn_alias \tab character \tab Current team name (Chinese short name, e.g. 'Beijing Holdings'). Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
    team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
-   team_logo \tab character \tab Protocol-relative URL of the 300x300 team logo ('//image.cbaleague.com/cbaleague/teamlogo/300x300/\if{html}{\out{<teamId>}}_300.png'). \cr
+   team_logo \tab character \tab Protocol-relative URL of the 300x300 team logo (\verb{//image.cbaleague.com/cbaleague/teamlogo/300x300/<teamId>_300.png}). \cr
 }
 }
 \description{

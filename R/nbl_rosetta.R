@@ -822,7 +822,9 @@ nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
 #' @examples
 #' \donttest{
-#'   try(nbl_rosetta_team_players(org = "nbl", season = 2026, team_id = "befee10a-410c-11f0-b3f4-1b3c55488bbb"))
+#'   try(nbl_rosetta_team_players(
+#'     org = "nbl", season = 2026, team_id = "befee10a-410c-11f0-b3f4-1b3c55488bbb"
+#'   ))
 #' }
 #' @family NBL Rosetta
 #' @export
@@ -957,7 +959,10 @@ nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
 #' @examples
 #' \donttest{
-#'   try(nbl_rosetta_player_game_log(org = "nbl", participated = 1, player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f", season = 2026))
+#'   try(nbl_rosetta_player_game_log(
+#'     org = "nbl", participated = 1, player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f",
+#'     season = 2026
+#'   ))
 #' }
 #' @family NBL Rosetta
 #' @export
@@ -1283,7 +1288,10 @@ nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
 #' @examples
 #' \donttest{
-#'   try(nbl_rosetta_team_stats_leaders(org = "nbl", period = 0, season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd", sort = "-points", team_code = "PER"))
+#'   try(nbl_rosetta_team_stats_leaders(
+#'     org = "nbl", period = 0, season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+#'     sort = "-points", team_code = "PER"
+#'   ))
 #' }
 #' @family NBL Rosetta
 #' @export

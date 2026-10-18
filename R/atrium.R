@@ -630,7 +630,9 @@ atrium_shots <- function(website_id, fixture_id, locale = NULL) {
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_standings(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_standings(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_standings <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                              round_number = NULL, locale = NULL) {
@@ -722,7 +724,9 @@ atrium_standings_summary <- function(website_id, season = NULL, season_id = NULL
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_teams(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_teams(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_teams <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -831,7 +835,9 @@ atrium_team <- function(website_id, entity_id, season = NULL, season_id = NULL, 
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_players(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_players(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_players <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                            entity_id = NULL, locale = NULL) {
@@ -1040,7 +1046,9 @@ atrium_player_game_log <- function(website_id, person_id, season = NULL, season_
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_leaders(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_leaders(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                            entity_id = NULL, locale = NULL) {
@@ -1086,7 +1094,9 @@ atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competit
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_player_stats(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_player_stats(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_player_stats <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1125,7 +1135,9 @@ atrium_player_stats <- function(website_id, season = NULL, season_id = NULL, com
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_team_stats(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_team_stats(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_team_stats <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1167,7 +1179,9 @@ atrium_team_stats <- function(website_id, season = NULL, season_id = NULL, compe
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_competition_player_stats(website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_competition_player_stats(
+#'     website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_competition_player_stats <- function(website_id, competition_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1205,7 +1219,9 @@ atrium_competition_player_stats <- function(website_id, competition_id, locale =
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_competition_team_stats(website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_competition_team_stats(
+#'     website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_competition_team_stats <- function(website_id, competition_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))

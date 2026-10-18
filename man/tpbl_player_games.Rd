@@ -30,7 +30,7 @@ line. An empty answer raises \code{hoopR_no_data}; the columns are always these,
    team \tab character \tab Name of the team the player played for in that game. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
    game_id \tab integer \tab TPBL game id (key space: TPBL games on api.tpbl.basketball): the \code{{game_id}} of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. \cr
    gohoops_game_id \tab integer \tab GoHoops game id (key space: GoHoops games; 1242 for TPBL game 6). Not the TPBL game id. \cr
-   game_title \tab character \tab Game title: the division name and the game number counted from the end ('\if{html}{\out{<division name>}} Game 124' = regular season, game 124). \cr
+   game_title \tab character \tab Game title: the division name and the game number counted from the end (\verb{<division name> Game 124} = regular season, game 124). \cr
    home_team_id \tab integer \tab TPBL team id of the home team of the game (franchise, 2-8). \cr
    away_team_id \tab integer \tab TPBL team id of the away team of the game (franchise, 2-8). \cr
    home_score \tab integer \tab Home team final score in the game. \cr

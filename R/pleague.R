@@ -11,8 +11,8 @@
 #'   away team first.
 #'
 #' Endpoint: `GET https://pleagueofficial.com/schedule-{stage}/{season slug}`
-#' @param season Required. Season END year (2025 = the site's slug '2024-25'). The slug is '<season - 1>-<the last
-#'   two digits of season>'. The first season is 2020-21 (`season=2021`); earlier slugs redirect.
+#' @param season Required. Season END year (2025 = the site's slug '2024-25'). The slug is `<season - 1>-<yy>` (yy: the last
+#'   two digits of season). The first season is 2020-21 (`season=2021`); earlier slugs redirect.
 #' @param stage Stage: pre-season ((Chinese text), exhibition games), regular-season ((Chinese text)), playoffs
 #'   ((Chinese text)) or finals ((Chinese text)). A stage a season does not have (2025-26 pre-season) answers
 #'   hoopR_no_data.
@@ -384,8 +384,8 @@ pleague_pbp <- function(gid) {
 #' Regular-season standings of one season: record, scoring averages, home / away and recent form.
 #'
 #' Endpoint: `GET https://pleagueofficial.com/standings/{season slug}`
-#' @param season Required. Season END year (2025 = the site's slug '2024-25'). The slug is '<season - 1>-<the last
-#'   two digits of season>'. The first season is 2020-21 (`season=2021`); earlier slugs redirect.
+#' @param season Required. Season END year (2025 = the site's slug '2024-25'). The slug is `<season - 1>-<yy>` (yy: the last
+#'   two digits of season). The first season is 2020-21 (`season=2021`); earlier slugs redirect.
 #' @return
 #' A `hoopR_data` tibble: Regular-season standings of one season: record, scoring averages, home / away and recent
 #'   form. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
@@ -431,8 +431,8 @@ pleague_standings <- function(season) {
 #' Player season averages and totals of one season and stage: shooting, rebounds, assists and fouls.
 #'
 #' Endpoint: `GET https://pleagueofficial.com/stat-player/{season slug}/{stage_sn}`
-#' @param season Required. Season END year (2025 = the site's slug '2024-25'). The slug is '<season - 1>-<the last
-#'   two digits of season>'. The first season is 2020-21 (`season=2021`); earlier slugs redirect.
+#' @param season Required. Season END year (2025 = the site's slug '2024-25'). The slug is `<season - 1>-<yy>` (yy: the last
+#'   two digits of season). The first season is 2020-21 (`season=2021`); earlier slugs redirect.
 #' @param stage_sn Required. Stage select value of the player table: 2 = regular season, 3 = playoffs, 4 = finals.
 #' @return
 #' A `hoopR_data` tibble: Player season averages and totals of one season and stage: shooting, rebounds, assists

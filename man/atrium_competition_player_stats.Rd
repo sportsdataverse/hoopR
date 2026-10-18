@@ -72,7 +72,9 @@ site, type, season, game, player or team than the one asked for.
 }
 \examples{
 \donttest{
-  try(atrium_competition_player_stats(website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+  try(atrium_competition_player_stats(
+    website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+  ))
 }
 }
 \seealso{

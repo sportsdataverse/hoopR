@@ -43,7 +43,7 @@ it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
    jersey \tab integer \tab Jersey number as printed; the play-by-play omits it on some rows (all starting-lineup rows and many home rows), so it is null there. \cr
    player_id \tab integer \tab ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. \cr
    player_name \tab character \tab Name as the play-by-play prints it: 'SURNAME I' upper case (the trailing '.' belongs to the event text on the page and is dropped). \cr
-   text \tab character \tab Event text in English after the player's name: '\if{html}{\out{<action>}} (\if{html}{\out{<qualifier>}})', 'in starting lineup', or the whole text of a team / game row ('(defensive)', 'Timeout', 'start of 1. quarter'). Null on bare-clock rows ('10:00' with nothing else, opening some periods). \cr
+   text \tab character \tab Event text in English after the player's name: \verb{<action> (<qualifier>)}, 'in starting lineup', or the whole text of a team / game row ('(defensive)', 'Timeout', 'start of 1. quarter'). Null on bare-clock rows ('10:00' with nothing else, opening some periods). \cr
    action \tab character \tab text without its parenthesised qualifier; see the action table below the route. Null on team rows (they print only '(qualifier)') and bare-clock rows. \cr
    qualifier \tab character \tab The parenthesised part of text (shot type, rebound side, free-throw 'n of m', foul or turnover type); see the qualifier table. Null when the text has none. \cr
 }
