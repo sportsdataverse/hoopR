@@ -1,0 +1,60 @@
+{
+  "id": 2026,
+  "isActive": true,
+  "nationalities": [
+    "AF",
+    "AR",
+    "AT"
+  ],
+  "teams": [
+    {
+      "name": "ALBA BERLIN",
+      "teamId": "413",
+      "seasonTeamId": "413",
+      "tlc": "BER",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413"
+    },
+    {
+      "name": "FC Bayern München Basketball",
+      "teamId": "486",
+      "seasonTeamId": "486",
+      "tlc": "FCB",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/486"
+    },
+    {
+      "name": "BMA365 Bamberg Baskets",
+      "teamId": "420",
+      "seasonTeamId": "420",
+      "tlc": "BAM",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/420"
+    }
+  ],
+  "players": [
+    {
+      "firstName": "Alex",
+      "lastName": "Herrera",
+      "playerId": "140178151",
+      "realPlayerId": 140178151,
+      "seasonPlayerId": "5595",
+      "seasonTeamId": "483"
+    },
+    {
+      "firstName": "Marco",
+      "lastName": "Hollersbacher",
+      "playerId": "140178148",
+      "realPlayerId": 140178148,
+      "seasonPlayerId": "6158",
+      "seasonTeamId": "414"
+    },
+    {
+      "firstName": "Lorenz",
+      "lastName": "Bank",
+      "playerId": "140178978",
+      "realPlayerId": 140178978,
+      "seasonPlayerId": "6606",
+      "seasonTeamId": "483"
+    }
+  ],
+  "championshipWinnerId": null,
+  "cupWinnerId": null
+}

@@ -1,0 +1,10 @@
+league,team_id,season,season_id,season_team_id,season_player_id,real_player_id,first_name,last_name,birth_date,position,shirt_number,height,weight,nationalities,is_all_star,is_young
+bbl,527,2027,2026,527,2004013,11422,Julius,Wolf,1993-01-26,CENTER,28,2.05,109,DE,false,false
+bbl,527,2027,2026,527,2000689,29217,Lucas,Mayer,1999-08-30,SHOOTING_GUARD,8,1.88,89,DE,false,false
+bbl,527,2027,2026,527,2002089,29364,Nicolas,Bretzel,1999-05-29,CENTER,21,2.12,110,DE,false,false
+bbl,446,2027,2026,446,2001472,19582,Gianni,Otto,1995-06-28,POINT_GUARD,10,1.86,79,DE,false,false
+bbl,446,2027,2026,446,2003107,28937,Till,Isemann,1996-10-21,CENTER,21,2.09,116,DE,false,false
+bbl,446,2027,2026,446,2003168,29217,Lucas,Mayer,1999-08-30,SHOOTING_GUARD,8,1.88,89,DE,false,false
+bbl,413,2027,2026,413,56377,42293,Malte,Delow,2001-04-22,SMALL_FORWARD,6,1.97,84,DE,false,false
+bbl,413,2027,2026,413,56414,37539,Jonas,Mattisseck,2000-01-16,SHOOTING_GUARD,9,1.92,84,DE,false,false
+bbl,413,2027,2026,413,57252,57252,Justin,Bean,1996-11-17,POWER_FORWARD,34,2.01,95,US,false,false

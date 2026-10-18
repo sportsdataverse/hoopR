@@ -1,0 +1,61 @@
+league,season,season_id,scope,stat,place,all_time_place,order_id,all_time_order_id,value,ratio,season_player_id,real_player_id,first_name,last_name,team_name,team_tlc,home_tlc,guest_tlc,game_id,scheduled_time
+bbl,2026,2025,season,assists,1,,1,,14.0,,2001642,140181412,Alonzo,Verge Jr.,RASTA Vechta,VEC,VEC,LUD,2004196,2026-03-14T19:00:00.000Z
+bbl,2026,2025,season,assists,1,,2,,14.0,,2003035,140181774,Nenad,Dimitrijevic,FC Bayern München Basketball,FCB,FCB,BON,2005762,2026-05-30T12:30:00.000Z
+bbl,2026,2025,season,assists,2,,3,,13.0,,2003027,140181769,Steven,Ashworth,VET-CONCEPT Gladiators Trier,TRI,MBC,TRI,2004133,2026-01-24T17:30:00.000Z
+bbl,2026,2025,season,blocks,1,,1,,6.0,,2001667,57124,Ejiofor,Onu,BMA365 Bamberg Baskets,BAM,HAM,BAM,2004035,2025-11-01T19:00:00.000Z
+bbl,2026,2025,season,blocks,1,,2,,6.0,,1000844,60070,Michael,Weathers,MLP Academics Heidelberg,HDB,HDB,TRI,2004048,2025-11-09T15:30:00.000Z
+bbl,2026,2025,season,blocks,2,,3,,5.0,,2001594,140181389,Charles,Thompson,Fitness First Würzburg Baskets,WUE,WUE,BON,2004194,2026-03-14T17:30:00.000Z
+bbl,2026,2025,season,efficiency,1,1,1,1,50.0,,2001687,140181424,Tevin,Brown,RASTA Vechta,VEC,VEC,HAM,2004061,2025-12-07T14:00:00.000Z
+bbl,2026,2025,season,efficiency,2,2,2,4,48.0,,2002018,140181613,Christopher,Clemons,EWE Baskets Oldenburg,OLD,OLD,TRI,2004022,2025-10-24T18:00:00.000Z
+bbl,2026,2025,season,efficiency,3,,3,,43.0,,2000825,140181048,D'Shawn,Schwartz,ROSTOCK SEAWOLVES,HRO,VEC,HRO,2004280,2026-05-08T16:30:00.000Z
+bbl,2026,2025,season,free_throws_made,1,1,1,1,19.0,,2001520,56766,TJ,Crockett Jr.,ROSTOCK SEAWOLVES,HRO,HRO,LUD,2004075,2025-12-15T19:00:00.000Z
+bbl,2026,2025,season,free_throws_made,2,,2,,16.0,,2001931,51576,Jack,Kayil,ALBA BERLIN,BER,BER,BAM,2004138,2026-01-25T15:30:00.000Z
+bbl,2026,2025,season,free_throws_made,2,,3,,16.0,,2001591,140181388,Marcus,Carr,Fitness First Würzburg Baskets,WUE,WUE,JEN,2004031,2025-10-31T19:00:00.000Z
+bbl,2026,2025,season,free_throws_success_percentage,1,1,1,1,100.0,,2001520,56766,TJ,Crockett Jr.,ROSTOCK SEAWOLVES,HRO,HRO,LUD,2004075,2025-12-15T19:00:00.000Z
+bbl,2026,2025,season,free_throws_success_percentage,1,1,2,5,100.0,,2003130,140183146,Bryant,Crawford,Basketball Löwen Braunschweig,BRA,VEC,BRA,2004263,2026-04-24T18:00:00.000Z
+bbl,2026,2025,season,free_throws_success_percentage,1,1,3,6,100.0,,2001625,140181360,Stefan,Smith,MHP RIESEN Ludwigsburg,LUD,VEC,LUD,2004196,2026-03-14T19:00:00.000Z
+bbl,2026,2025,season,points,1,1,1,1,52.0,,2002018,140181613,Christopher,Clemons,EWE Baskets Oldenburg,OLD,OLD,TRI,2004022,2025-10-24T18:00:00.000Z
+bbl,2026,2025,season,points,2,3,2,3,46.0,,2001687,140181424,Tevin,Brown,RASTA Vechta,VEC,VEC,HAM,2004061,2025-12-07T14:00:00.000Z
+bbl,2026,2025,season,points,3,,3,,41.0,,2001861,140181529,Isaiah,Swope,SKYLINERS,FRS,FRS,TRI,2004148,2026-02-11T19:00:00.000Z
+bbl,2026,2025,season,rebounds,1,,1,,21.0,,2001631,140181408,Jaedon,LeDee,SKYLINERS,FRS,BAM,FRS,2004041,2025-11-08T17:30:00.000Z
+bbl,2026,2025,season,rebounds,2,,2,,17.0,,2001874,140181533,Christopher,Ledlum,ratiopharm ulm,ULM,ULM,BRA,2004116,2026-01-10T19:00:00.000Z
+bbl,2026,2025,season,rebounds,3,,3,,15.0,,2001900,140181547,Joe,Wieskamp,Science City Jena,JEN,TRI,JEN,2004049,2025-11-19T19:00:00.000Z
+bbl,2026,2025,season,steals,1,,1,,7.0,,2001867,140181508,Xavier,Rathan-Mayes,FC Bayern München Basketball,FCB,FCB,HAM,2004007,2025-10-05T16:00:00.000Z
+bbl,2026,2025,season,steals,1,,2,,7.0,,2001530,140181364,Samuell,Williamson,MLP Academics Heidelberg,HDB,HDB,ULM,2004216,2026-03-29T16:00:00.000Z
+bbl,2026,2025,season,steals,2,,3,,6.0,,2001787,140179775,Grayson,Murphy,Telekom Baskets Bonn,BON,BON,LUD,2004211,2026-03-27T19:00:00.000Z
+bbl,2026,2025,season,three_point_shots_made,1,,1,,9.0,,2002018,140181613,Christopher,Clemons,EWE Baskets Oldenburg,OLD,OLD,TRI,2004022,2025-10-24T18:00:00.000Z
+bbl,2026,2025,season,three_point_shots_made,2,,2,,8.0,,2002018,140181613,Christopher,Clemons,EWE Baskets Oldenburg,OLD,ULM,OLD,2004152,2026-02-18T17:30:00.000Z
+bbl,2026,2025,season,three_point_shots_made,3,,3,,7.0,,2001633,52906,Mark,Smith,ratiopharm ulm,ULM,BAM,ULM,2004090,2025-12-27T17:30:00.000Z
+bbl,2026,2025,season,turnovers,1,1,1,1,11.0,,2001642,140181412,Alonzo,Verge Jr.,RASTA Vechta,VEC,ULM,VEC,2004068,2025-12-13T17:30:00.000Z
+bbl,2026,2025,season,turnovers,2,,2,,9.0,,2001899,52100,Eric,Washington,Science City Jena,JEN,OLD,JEN,2004015,2025-10-11T16:30:00.000Z
+bbl,2026,2025,season,turnovers,3,,3,,8.0,,2003035,140181774,Nenad,Dimitrijevic,FC Bayern München Basketball,FCB,LUD,FCB,2004275,2026-05-07T16:30:00.000Z
+bbl,2026,2025,all_time,assists,0,1,1,1,18.0,,21453,14671,Jared,Jordan,Telekom Baskets Bonn,BON,OLD,BON,11079,2012-02-15T19:00:00.000Z
+bbl,2026,2025,all_time,assists,0,1,2,2,18.0,,5649,3042,Austen,Rowland,ratiopharm Ulm,ULM,TRI,ULM,3813,2007-04-21T18:00:00.000Z
+bbl,2026,2025,all_time,assists,0,1,3,3,18.0,,35615,14671,Jared,Jordan,WALTER Tigers Tübingen,TUB,WUE,TUB,18504,2016-03-28T13:00:00.000Z
+bbl,2026,2025,all_time,blocks,0,1,1,1,9.0,,9386,9159,Ken,Johnson,Telekom Baskets Bonn,BON,BON,KÖL,5960,2008-10-26T16:00:00.000Z
+bbl,2026,2025,all_time,blocks,0,1,2,2,9.0,,518,1464,Dan,Earl,Brandt Hagen,HAG,BAM,HAG,272,1999-11-06T23:00:00.000Z
+bbl,2026,2025,all_time,blocks,0,1,3,3,9.0,,188,1297,Bernard,Thompson,HERZOGtel Trier,TRI,WÜR,TRI,403,2000-04-16T15:00:00.000Z
+bbl,2026,2025,all_time,efficiency,1,1,1,1,50.0,,2001687,140181424,Tevin,Brown,RASTA Vechta,VEC,VEC,HAM,2004061,2025-12-07T14:00:00.000Z
+bbl,2026,2025,all_time,efficiency,1,1,2,2,50.0,,50621,50621,Jaron,Blossomgame,ratiopharm ulm,ULM,LUD,ULM,27258,2022-05-14T18:30:00.000Z
+bbl,2026,2025,all_time,efficiency,2,2,3,3,48.0,,40672,18126,John,Bryant,GIESSEN 46ers,GIE,GIE,OLD,20991,2018-01-27T19:30:00.000Z
+bbl,2026,2025,all_time,free_throws_made,1,1,1,1,19.0,,2001520,56766,TJ,Crockett Jr.,ROSTOCK SEAWOLVES,HRO,HRO,LUD,2004075,2025-12-15T19:00:00.000Z
+bbl,2026,2025,all_time,free_throws_made,1,1,2,2,19.0,,26169,18210,David,Bell,Phoenix Hagen,HAG,HAG,FCB,13377,2012-12-22T18:00:00.000Z
+bbl,2026,2025,all_time,free_throws_made,1,1,3,3,19.0,,8266,8266,Caleb,Green,TBB Trier,TRI,TRI,TÜB,4830,2008-02-02T16:00:00.000Z
+bbl,2026,2025,all_time,free_throws_success_percentage,1,1,1,1,100.0,,2001520,56766,TJ,Crockett Jr.,ROSTOCK SEAWOLVES,HRO,HRO,LUD,2004075,2025-12-15T19:00:00.000Z
+bbl,2026,2025,all_time,free_throws_success_percentage,1,1,2,2,100.0,,56881,56881,Keandre,Cook,HAKRO Merlins Crailsheim,CRA,TUB,CRA,33345,2024-02-02T19:00:00.000Z
+bbl,2026,2025,all_time,free_throws_success_percentage,1,1,3,3,100.0,,58169,58169,Noa,Essengue,ratiopharm ulm,ULM,ULM,BER,2003212,2025-05-17T16:30:00.000Z
+bbl,2026,2025,all_time,points,1,1,1,1,52.0,,2002018,140181613,Christopher,Clemons,EWE Baskets Oldenburg,OLD,OLD,TRI,2004022,2025-10-24T18:00:00.000Z
+bbl,2026,2025,all_time,points,0,2,2,2,48.0,,476,1425,Donald,Williams,Brandt Hagen,HAG,TRI,HAG,173,1999-03-06T23:00:00.000Z
+bbl,2026,2025,all_time,points,2,3,3,3,46.0,,2001687,140181424,Tevin,Brown,RASTA Vechta,VEC,VEC,HAM,2004061,2025-12-07T14:00:00.000Z
+bbl,2026,2025,all_time,rebounds,0,1,1,1,26.0,,46614,1286,Walter,Palmer,TTL Universa Bamberg,,,,23622,1998-01-24T13:30:00.000Z
+bbl,2026,2025,all_time,rebounds,0,2,2,2,23.0,,478,1427,Olumide,Oyediji,DJK s.Oliver Würzburg,WÜR,WÜR,TRI,318,1999-12-29T23:00:00.000Z
+bbl,2026,2025,all_time,rebounds,0,2,3,3,23.0,,478,1427,Olumide,Oyediji,DJK s.Oliver Würzburg,WÜR,WÜR,HAG,383,2000-03-18T23:00:00.000Z
+bbl,2026,2025,all_time,steals,0,1,1,1,10.0,,5651,5651,John,Goldsberry,Bayer Giants Leverkusen,LEV,LEV,KAR,3565,2006-10-15T14:00:00.000Z
+bbl,2026,2025,all_time,steals,0,2,2,2,9.0,,1784,1917,Denis,Wucherer,Bayer Giants Leverkusen,LEV,LEV,WÜR,1178,2003-10-29T18:30:00.000Z
+bbl,2026,2025,all_time,steals,0,2,3,3,9.0,,19,1240,Christian,Mehrens,SG Braunschweig,BRA,BRA,MBC,287,2000-03-30T22:00:00.000Z
+bbl,2026,2025,all_time,three_point_shots_made,0,1,1,1,12.0,,2000771,59858,Darius,McGhee,Telekom Baskets Bonn,BON,CHE,BON,110491,2024-12-21T19:00:00.000Z
+bbl,2026,2025,all_time,three_point_shots_made,0,1,2,2,12.0,,209,1304,Hurl,Beechum,Telekom Baskets Bonn,BON,BON,TRI,69,1998-10-23T22:00:00.000Z
+bbl,2026,2025,all_time,three_point_shots_made,0,2,3,3,11.0,,2001203,58701,Justin,Jaworski,EWE Baskets Oldenburg,OLD,HDB,OLD,110574,2025-03-02T14:00:00.000Z
+bbl,2026,2025,all_time,turnovers,1,1,1,1,11.0,,2001642,140181412,Alonzo,Verge Jr.,RASTA Vechta,VEC,ULM,VEC,2004068,2025-12-13T17:30:00.000Z
+bbl,2026,2025,all_time,turnovers,1,1,2,2,11.0,,47552,43302,Trae,Bell-Haynes,HAKRO Merlins Crailsheim,CRA,CRA,FCB,25911,2021-05-23T16:00:00.000Z
+bbl,2026,2025,all_time,turnovers,0,2,3,3,10.0,,56594,54262,Aher,Uguak,NINERS Chemnitz,CHE,BON,CHE,33318,2024-01-12T19:00:00.000Z

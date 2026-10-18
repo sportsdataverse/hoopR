@@ -1,0 +1,58 @@
+{
+  "id": "413",
+  "sourceId": 413,
+  "tlc": "BER",
+  "nameFull": "ALBA BERLIN",
+  "nameShort": "Berlin",
+  "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413",
+  "mascot": "Albatros",
+  "address": "ALBA BERLIN\r\nCantianstraße 24\n10437 Berlin\r\nTelefon: REDACTED\r\nFax: REDACTED\r\nREDACTED",
+  "homepageUrl": "https://www.albaberlin.de",
+  "contactPhone": "REDACTED",
+  "email": "REDACTED",
+  "ticketUrl": "https://www.albaberlin.de/tickets",
+  "ticketPhone": "REDACTED",
+  "yearJoinedBBL": 1991,
+  "socialMediaLinks": [
+    "https://www.facebook.com/albaberlin",
+    "https://twitter.com/albaberlin",
+    "https://www.tiktok.com/discover/ALBA-BERLIN"
+  ],
+  "seasonIds": [
+    1975,
+    1976,
+    1977
+  ],
+  "seasonTeams": [
+    {
+      "id": "413",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1975/413",
+      "seasonId": 1975,
+      "name": "DTV Charlottenburg",
+      "isChampionshipWinner": false,
+      "isCupWinner": false,
+      "seasonVenues": []
+    },
+    {
+      "id": "413",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1976/413",
+      "seasonId": 1976,
+      "name": "DTV Charlottenburg",
+      "isChampionshipWinner": false,
+      "isCupWinner": false,
+      "seasonVenues": []
+    },
+    {
+      "id": "413",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1977/413",
+      "seasonId": 1977,
+      "name": "DTV Charlottenburg",
+      "isChampionshipWinner": false,
+      "isCupWinner": false,
+      "seasonVenues": []
+    }
+  ],
+  "rssFeedUrl": "TODO",
+  "orderId": 1,
+  "bestAchievements": "Korac-Cup-Sieger 1995 / Deutscher Meister 1997-2003, 2008, 2020, 2021, 2022, 2026 / Pokalsieger 1997, 1999, 2002, 2003, 2006, 2009, 2013, 2014, 2016, 2020, 2022"
+}

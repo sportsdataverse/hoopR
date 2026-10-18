@@ -1,0 +1,31 @@
+league,stat,season,season_id,place,order_id,value,ratio,season_player_id,real_player_id,first_name,last_name,team_name,team_tlc
+bbl,assist_average,2022,2021,1,1,9.67,,50133,50133,Jabril,Durham,Hamburg Towers,HAM
+bbl,assist_average,2020,2019,2,2,8.85,,44602,43823,Jovan,Novak,SYNTAINICS MBC,MBC
+bbl,assist_average,2016,2015,3,3,8.48,,35615,14671,Jared,Jordan,WALTER Tigers Tübingen,TUB
+bbl,block_average,2014,2013,1,1,2.57,,30458,5683,D'Or,Fischer,Brose Baskets,BAM
+bbl,block_average,2007,2006,2,2,2.56,,5683,5683,D'Or,Fischer,EWE Baskets Oldenburg,OLD
+bbl,block_average,2014,2013,3,3,2.44,,29312,29312,Andrea,Crosariol,EWE Baskets Oldenburg,OLD
+bbl,efficiency_average,2019,2018,1,1,25.67,,41464,18126,John,Bryant,GIESSEN 46ers,GIE
+bbl,efficiency_average,1999,1998,2,2,24.25,,424,1385,Dirk,Nowitzki,DJK s.Oliver Würzburg,WÜR
+bbl,efficiency_average,2018,2017,3,3,24.12,,40672,18126,John,Bryant,GIESSEN 46ers,GIE
+bbl,foul_average,2013,2012,1,1,5.0,,26467,5276,Joshua Ryan,Mueller,Telekom Baskets Bonn,BON
+bbl,foul_average,2023,2022,2,2,4.67,,52425,26972,Philipp,Hartwich,Würzburg Baskets,WUE
+bbl,foul_average,2002,2001,3,3,4.43,,717,1711,Pavel,Becka,EWE Baskets Oldenburg,OLD
+bbl,free_throws_success_percentage,2016,2015,1,1,100.0,,33770,31711,Khalid,El-Amin,BG Göttingen,GOT
+bbl,free_throws_success_percentage,2023,2022,1,2,100.0,,52356,5997,Karsten,Tadda,Telekom Baskets Bonn,BON
+bbl,free_throws_success_percentage,2019,2018,1,3,100.0,,41533,41173,Katin,Reinhardt,ratiopharm ulm,ULM
+bbl,points_average,2003,2002,1,1,16.0741,,1116,2020,Bjorn-Aubre,McKie,Avitos Gießen,GIE
+bbl,points_average,2002,2001,2,2,14.5806,,901,1829,DeJuan,Collins,WiredMinds Tübingen,LUD
+bbl,points_average,2001,2000,3,3,14.3,,811,1775,Duane,Woodward,BCJ Hamburg,HAM
+bbl,rebound_average,2000,1999,1,1,14.62,,478,1427,Olumide,Oyediji,DJK s.Oliver Würzburg,WÜR
+bbl,rebound_average,2003,2002,2,2,13.0,,1114,2018,Innocent,Kere,EnBW Ludwigsburg,LUD
+bbl,rebound_average,2003,2002,3,3,12.19,,604,1511,Christopher,Ensminger,TSK uniVersa Bamberg,BAM
+bbl,steal_average,2022,2021,1,1,3.67,,50133,50133,Jabril,Durham,Hamburg Towers,HAM
+bbl,steal_average,2027,2026,2,2,3.2,,2003964,51259,Justin,Simon,VET-CONCEPT Gladiators Trier,TRI
+bbl,steal_average,2000,1999,3,3,3.08,,516,1463,Frankie,King,Alba Berlin,BER
+bbl,three_point_shot_average,1999,1998,1,1,4.2368,,209,1304,Hurl,Beechum,Telekom Baskets Bonn,BON
+bbl,three_point_shot_average,2020,2019,2,2,4.0,,46708,46708,Donald,Sloan,Telekom Baskets Bonn,BON
+bbl,three_point_shot_average,2005,2004,3,3,3.9333,,2555,2231,Marko,Bulic,Artland Dragons,ART
+bbl,turnover_average,2004,2003,1,1,7.0,,2040,1269,Adrian,Autry,Brandt Hagen,
+bbl,turnover_average,2016,2015,2,2,5.5,,34520,19192,Johannes,Menzel,BG Göttingen,GOT
+bbl,turnover_average,2000,1999,3,3,5.33,,593,1506,Harold,Deane,BCJ Hamburg,HAM
