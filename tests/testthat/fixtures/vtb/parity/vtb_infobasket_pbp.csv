@@ -1,0 +1,4 @@
+game_id,play_id,parent_play_id,play_type_id,play_type,play_period,play_second,play_sort_order,play_flag,start_id,team_number,team_id,person_id,play_zone,play_x,play_y,video_from,video_to
+921391,20,\N,5,Miss 2 points,1,190,0,0,34,\N,\N,\N,6,-34,53,1759057307,1759057327
+921391,23,\N,3,3 points,1,400,0,0,13,\N,\N,\N,10,-28,67,1759057325,1759057345
+921391,4,3,8,In,1,0,1,0,8,\N,\N,\N,\N,\N,\N,0,0

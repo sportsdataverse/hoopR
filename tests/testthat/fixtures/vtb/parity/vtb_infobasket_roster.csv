@@ -1,0 +1,4 @@
+team_id,season,person_id,player_number,display_number,is_captain,birth_date,pos_id,position,nationality_code,country_code,country_code_ioc,country_name,rank,height,weight,is_active,active_status,person_last_name_ru,person_last_name_en,person_first_name_ru,person_first_name_en,person_full_name_ru,person_full_name_en,person_gender
+2650,2026,337028,0,0,false,2004-03-21,3,Small Forward,BY,BY,BLR,Belarus,\N,199,94,true,Accepted,Коско,Kasko,Даниил,Daniil,Коско Даниил Александрович,Kasko Daniil Alexandrovich,1
+2650,2026,423011,2,2,false,1992-05-22,1,Point Guard,US,US,USA,USA,\N,185,90,true,Accepted,Миллер,Miller,Патрик,Patrick,Миллер Патрик ,Miller Patrick ,1
+2650,2026,537998,4,4,false,1994-05-30,4,Power Forward,US,US,USA,USA,\N,203,95,true,Accepted,Мур,Moore,Майк,Mike,Мур Майк ,Moore Mike ,1
