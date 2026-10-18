@@ -1,0 +1,26 @@
+{
+  "selected_comp_id": 47827,
+  "competitions": [
+    {
+      "comp_id": 47827,
+      "label": "2026 Sal's National Basketball League",
+      "league_id": 149,
+      "year": 2026,
+      "org": "NZNBL"
+    },
+    {
+      "comp_id": 37524,
+      "label": "Rapid League",
+      "league_id": 149,
+      "year": 2024,
+      "org": "NZNBL"
+    },
+    {
+      "comp_id": 40144,
+      "label": "Rapid League",
+      "league_id": 149,
+      "year": 2025,
+      "org": "NZNBL"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "type": "seasons",
+  "fetched": 1791833132,
+  "ttlRemaining": 300,
+  "count": 49,
+  "source": "redis",
+  "data": [
+    {
+      "id": "dc96cb8c-867f-4d77-9383-aa8d6f580814",
+      "name": "Townsville Tip-Off 2026",
+      "year": "2026",
+      "season_type": "preseason",
+      "external_id": "57f2a397-7e56-11f1-bef1-393336fe5137",
+      "start_date": "2026-09-17T00:00:00",
+      "end_date": "2026-09-20T00:00:00",
+      "competition": {
+        "league": {
+          "name": "WNBL Synergy",
+          "organisation": {
+            "shortcode": "wnbl"
+          }
+        },
+        "division": []
+      },
+      "matches": [
+        "55e8f5b7-77fb-49e6-8907-105a7eff3432",
+        "71b3748d-b520-4c9b-a456-893d90a0a7a7",
+        "7465302e-8bf6-4f8c-866a-86b033849019"
+      ]
+    },
+    {
+      "id": "3145d6e5-36b0-4646-8bd1-0e422681ead0",
+      "name": "WNBL27",
+      "year": "2026",
+      "season_type": "regular",
+      "external_id": "493920b1-2bfc-11f1-aa7e-93fdd049877c",
+      "start_date": "2026-10-16T00:00:00",
+      "end_date": "2027-03-31T00:00:00",
+      "competition": {
+        "league": {
+          "name": "WNBL Synergy",
+          "organisation": {
+            "shortcode": "wnbl"
+          }
+        },
+        "division": []
+      },
+      "matches": [
+        "005c0eaa-e654-4b81-87c9-decfcd27cb2f",
+        "05140641-62a9-44fe-8ad6-d7922c9ee2c2",
+        "05d1755d-ea52-4076-8548-9d05fdcda557"
+      ]
+    },
+    {
+      "id": "8540f453-f49f-433a-b8d2-51254e0eb473",
+      "name": "WNBL Pre-Season 2025/26",
+      "year": "2025",
+      "season_type": "preseason",
+      "external_id": "1dd67ec4-8799-11f0-8a4d-d761eddd0ac6",
+      "start_date": "2025-09-06T00:00:00",
+      "end_date": "2025-10-17T00:00:00",
+      "competition": {
+        "league": {
+          "name": "WNBL Synergy",
+          "organisation": {
+            "shortcode": "wnbl"
+          }
+        },
+        "division": []
+      },
+      "matches": [
+        "19e05602-8eb0-4dd0-bf19-20825a33a024",
+        "28bd4bce-43c2-4831-a2b7-cf884b507b34",
+        "2b4873dc-36bd-4dc0-a2c2-8fc54be852e3"
+      ]
+    }
+  ]
+}

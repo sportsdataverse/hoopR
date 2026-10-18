@@ -1,0 +1,846 @@
+{
+  "data": {
+    "banner": {
+      "competition": {
+        "id": "16be8396-24fb-11ef-9ab7-df6be196e88f",
+        "name": "LIGA CALIENTE.MX LNBP"
+      },
+      "fixture": {
+        "attendance": null,
+        "attendanceLabel": "Asistencia",
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "ZAC",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOwjAMRuGrVJ6xFOdvE8zeE3AC4jgTXYgYAHF38PhJT-9Dky4LmdVedYBXuLPIEG5nBWeFOXozyYlOC90j9sn7NfQOzedx3B6vsIdLKdU2JC5j1f_KjXXr4DZEkWFJEuj7AzVSHiI"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/ab3382c53d52421d89b3ac9ce094249b?size=400",
+            "name": "ZAC",
+            "resultPlace": 2,
+            "resultStatus": "CONFIRMED",
+            "score": "92",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          },
+          {
+            "code": "DRM",
+            "colors": {
+              "primary": "000000",
+              "secondary": "000000",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDkOwkAMQNGrRK6x5GUSZ-g5ASeYxVORhhEFIO4eXD7p639hwnWB1qxbHopJ3ZF5MNY9K0rW5tprYyG4LPCI2Cfe7qFPaL6OozzfYQ-nIsasO8pK23_lA3NVQutpY1upUBf4nSwsHeE"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1gf3/8ae297b9792046a185aea40258f2542e?size=400",
+            "name": "DRM",
+            "resultPlace": 1,
+            "resultStatus": "CONFIRMED",
+            "score": "98",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          }
+        ],
+        "fixtureProfile": {
+          "efficiencyType": "EFFICIENCY",
+          "foulsAllowedTechnical": 2,
+          "foulsBeforeBonus": 4,
+          "foulsBeforeBonusOvertime": 0,
+          "halfTimeDuration": 15,
+          "maxFoulsPersonal": 5,
+          "maximumPlayersOnCourt": 5,
+          "maximumRosterSize": 16,
+          "midGameJumpBallAllowed": true,
+          "numberOfPeriods": 4,
+          "overtimeAllowed": true,
+          "overtimeLength": 5,
+          "periodBreakDuration": 2,
+          "periodLength": 10,
+          "periodLengthCustomized": {},
+          "resetFoulsAfterPeriods": [
+            2,
+            3,
+            1
+          ],
+          "resetTimeoutsAfterPeriods": [
+            3,
+            11,
+            12
+          ],
+          "shotClock": 24,
+          "switchPlayingDirection": [
+            1,
+            2,
+            3
+          ],
+          "usePeriodLengthCustomized": false
+        },
+        "id": "0dc631bd-c34c-11f1-8d16-4d5a21afb79d",
+        "labelShootout": null,
+        "leaderStats": {
+          "leaders": [
+            {
+              "data": [
+                {
+                  "entity": {
+                    "id": "6667c530-6f49-11ec-95d3-bf19323c0103"
+                  },
+                  "person": {
+                    "bib": "6",
+                    "id": "cc58457a-8530-11f1-8393-b77d712e5e1e",
+                    "imageURL": "https://images.dc.connect.sportradar.com/b1gf3/4958bd2e6d38469c972e1d53bc8bf28c?size=400",
+                    "link": {
+                      "fragment": null,
+                      "openInNewTab": false,
+                      "origin": null,
+                      "path": null,
+                      "queryParams": {
+                        "~w": "p~eJwlzDEOgCAMheGrkM42oRRScPcEnkCgTA4mjMa7C2F8yf-9FzrsBkqRKqkxelZFokaYY2J0iYtyzYWchc3APWPteJxzPYuG6INcGAPbRSMPmmVcktOgpPD9UswZsQ"
+                      }
+                    },
+                    "name": "ANYELO CISNEROS"
+                  },
+                  "value": 20
+                }
+              ],
+              "header": {
+                "code": "Puntos",
+                "key": "points",
+                "name": "PTS"
+              }
+            },
+            {
+              "data": [
+                {
+                  "entity": {
+                    "id": "4a271138-2506-11ef-9b30-7d461750a0d2"
+                  },
+                  "person": {
+                    "bib": "23",
+                    "id": "d1f62f2d-2b0f-11ed-96ed-359aacd8dec1",
+                    "imageURL": "https://images.dc.connect.sportradar.com/b1gf3/6bb21ef78bcc4ee2882d2f56db749d4a?size=400",
+                    "link": {
+                      "fragment": null,
+                      "openInNewTab": false,
+                      "origin": null,
+                      "path": null,
+                      "queryParams": {
+                        "~w": "p~eJwVizkKgEAMAL8iqQ2YxCv2vsAX7OaoLARL8e-6zcDAzAM3bB2YLb5oCo4SgURJWFcVZBUL8WrEA_QdnC2OG_ej2dXMKWdOduQ65L-Go84_ZNJSzFcPI3g_bjMbJQ"
+                      }
+                    },
+                    "name": "DEVON SCOTT"
+                  },
+                  "value": 28
+                }
+              ],
+              "header": {
+                "code": "Puntos",
+                "key": "points",
+                "name": "PTS"
+              }
+            },
+            {
+              "data": [
+                {
+                  "entity": {
+                    "id": "6667c530-6f49-11ec-95d3-bf19323c0103"
+                  },
+                  "person": {
+                    "bib": "6",
+                    "id": "cc58457a-8530-11f1-8393-b77d712e5e1e",
+                    "imageURL": "https://images.dc.connect.sportradar.com/b1gf3/4958bd2e6d38469c972e1d53bc8bf28c?size=400",
+                    "link": {
+                      "fragment": null,
+                      "openInNewTab": false,
+                      "origin": null,
+                      "path": null,
+                      "queryParams": {
+                        "~w": "p~eJwlzDEOgCAMheGrkM42oRRScPcEnkCgTA4mjMa7C2F8yf-9FzrsBkqRKqkxelZFokaYY2J0iYtyzYWchc3APWPteJxzPYuG6INcGAPbRSMPmmVcktOgpPD9UswZsQ"
+                      }
+                    },
+                    "name": "ANYELO CISNEROS"
+                  },
+                  "value": 9
+                }
+              ],
+              "header": {
+                "code": "Rebotes",
+                "key": "rebounds",
+                "name": "REB"
+              }
+            }
+          ]
+        },
+        "leaderStatsLabel": "Líderes estadísticos",
+        "name": null,
+        "pool": "",
+        "poolName": "",
+        "series": null,
+        "shootout": {},
+        "sport": "basketball",
+        "startDateTime": "2026-10-11T18:00:00",
+        "status": "CONFIRMED",
+        "timesUnconfirmed": false,
+        "venue": "GIMNASIO PROF MARCELINO GONZALEZ"
+      },
+      "isPeriodScoresVertical": false,
+      "season": {
+        "id": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+        "name": "LIGA CALIENTE.MX LNBP"
+      },
+      "showFixtureName": true
+    },
+    "broadcastsLabels": {
+      "allBroadcasters": "All Broadcasters",
+      "watch": "Watch"
+    },
+    "captainLabel": "C",
+    "config": {
+      "currentPage": "fixture_detail",
+      "navigation": {
+        "labels": {
+          "search": "Búsqueda",
+          "searchResults": "Resultados de la búsqueda"
+        },
+        "main": [
+          {
+            "label": "Calendario",
+            "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "fixtures"
+          },
+          {
+            "label": "Posiciones",
+            "link": "&~w=stn~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showEntityLogo": true,
+      "sport": "basketball"
+    },
+    "fixture": {
+      "ageGroup": "SENIOR",
+      "attendance": null,
+      "attendanceLabel": "Asistencia",
+      "captains": {
+        "4a271138-2506-11ef-9b30-7d461750a0d2": "d1f62f2d-2b0f-11ed-96ed-359aacd8dec1"
+      },
+      "competitionName": "LIGA CALIENTE.MX LNBP",
+      "competitors": [
+        {
+          "code": "ZAC",
+          "colors": {
+            "primary": "000000",
+            "secondary": "000000",
+            "tertiary": "000000"
+          },
+          "draw": false,
+          "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+          "isHome": true,
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwVzDEOwjAMRuGrVJ6xFOdvE8zeE3AC4jgTXYgYAHF38PhJT-9Dky4LmdVedYBXuLPIEG5nBWeFOXozyYlOC90j9sn7NfQOzedx3B6vsIdLKdU2JC5j1f_KjXXr4DZEkWFJEuj7AzVSHiI"
+            }
+          },
+          "logo": "https://images.dc.connect.sportradar.com/b1gf3/ab3382c53d52421d89b3ac9ce094249b?size=400",
+          "name": "ZAC",
+          "resultPlace": 2,
+          "resultStatus": "CONFIRMED",
+          "score": "92",
+          "secondaryScore": null,
+          "shootOutAttempts": ""
+        },
+        {
+          "code": "DRM",
+          "colors": {
+            "primary": "000000",
+            "secondary": "000000",
+            "tertiary": "000000"
+          },
+          "draw": false,
+          "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+          "isHome": false,
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwVzDkOwkAMQNGrRK6x5GUSZ-g5ASeYxVORhhEFIO4eXD7p639hwnWB1qxbHopJ3ZF5MNY9K0rW5tprYyG4LPCI2Cfe7qFPaL6OozzfYQ-nIsasO8pK23_lA3NVQutpY1upUBf4nSwsHeE"
+            }
+          },
+          "logo": "https://images.dc.connect.sportradar.com/b1gf3/8ae297b9792046a185aea40258f2542e?size=400",
+          "name": "DRM",
+          "resultPlace": 1,
+          "resultStatus": "CONFIRMED",
+          "score": "98",
+          "secondaryScore": null,
+          "shootOutAttempts": ""
+        }
+      ],
+      "discipline": null,
+      "externalId": null,
+      "fixtureId": "0dc631bd-c34c-11f1-8d16-4d5a21afb79d",
+      "fixtureType": "PLAYOFF",
+      "liveDataAvailable": false,
+      "liveVideoAvailable": false,
+      "name": null,
+      "profile": {
+        "efficiencyType": "EFFICIENCY",
+        "foulsAllowedTechnical": 2,
+        "foulsBeforeBonus": 4,
+        "foulsBeforeBonusOvertime": 0,
+        "halfTimeDuration": 15,
+        "maxFoulsPersonal": 5,
+        "maximumPlayersOnCourt": 5,
+        "maximumRosterSize": 16,
+        "midGameJumpBallAllowed": true,
+        "numberOfPeriods": 4,
+        "overtimeAllowed": true,
+        "overtimeLength": 5,
+        "periodBreakDuration": 2,
+        "periodLength": 10,
+        "periodLengthCustomized": {},
+        "resetFoulsAfterPeriods": [
+          2,
+          3,
+          1
+        ],
+        "resetTimeoutsAfterPeriods": [
+          3,
+          11,
+          12
+        ],
+        "shotClock": 24,
+        "switchPlayingDirection": [
+          1,
+          2,
+          3
+        ],
+        "usePeriodLengthCustomized": false
+      },
+      "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+      "series": null,
+      "startTimeLocal": "2026-10-11T18:00:00",
+      "startTimeUTC": "2026-10-12T00:00:00",
+      "status": "CONFIRMED",
+      "statusLabel": "Final",
+      "timesUnconfirmed": false,
+      "timezone": "Mexico/General",
+      "updated": "2026-10-12T02:40:09",
+      "venue": "GIMNASIO PROF MARCELINO GONZALEZ",
+      "venueId": "972a793c-fccc-11ea-bcb1-26e77789d4ce"
+    },
+    "fixtureDetailText": {
+      "ended": "Finalizado",
+      "live": "En vivo",
+      "matchEvents": "Match Events",
+      "startingSoon": "Empezará Pronto",
+      "timeUntilStart": "Tiempo para empezar",
+      "time_score": "Tiempo/Marcador"
+    },
+    "gameStageLabels": {
+      "all": "Todas",
+      "final": "Final"
+    },
+    "labels": {
+      "toBeConfirmed": "Por confirmar",
+      "toBeConfirmedAbbreviation": "Pend."
+    },
+    "locale": "es-ES",
+    "periodData": [
+      {
+        "bannerMatchEvents": [],
+        "bannerTimelineMatchEvents": [],
+        "durationMinutes": 10,
+        "elapsedMinutesBeforePeriod": 0,
+        "ended": true,
+        "isOvertime": false,
+        "isShootout": false,
+        "labels": {
+          "end": "Period 1: Fin",
+          "shortLabel": "P1",
+          "start": "Period 1: Comienzo"
+        },
+        "periodId": 1,
+        "shots": [
+          {
+            "bib": "4",
+            "clock": "PT9M46S",
+            "desc": "3pt Tiro en suspensión",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "e2480211-c5d2-11f1-a092-616e0397d073",
+            "eventSubType": "jumpShot",
+            "eventType": "3pt",
+            "name": "JOAQUIN VALINOTTI",
+            "periodId": 1,
+            "personId": "cd67e0e9-575d-11f0-bad2-55a2ea50a70f",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/ca62179e5a454657b96d00621956cbe7?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 0,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 3
+            },
+            "success": true,
+            "successString": "Hecho",
+            "x": 31,
+            "y": 32.82
+          },
+          {
+            "bib": "6",
+            "clock": "PT9M19S",
+            "desc": "3pt Tiro en suspensión",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "f27a4761-c5d2-11f1-a092-616e0397d073",
+            "eventSubType": "jumpShot",
+            "eventType": "3pt",
+            "name": "ANYELO CISNEROS",
+            "periodId": 1,
+            "personId": "cc58457a-8530-11f1-8393-b77d712e5e1e",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/4958bd2e6d38469c972e1d53bc8bf28c?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 0,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 3
+            },
+            "success": false,
+            "successString": "Fallado",
+            "x": 22.86,
+            "y": 89.06
+          },
+          {
+            "bib": "23",
+            "clock": "PT9M10S",
+            "desc": "3pt Tiro en suspensión",
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "eventId": "f7e2b571-c5d2-11f1-a092-616e0397d073",
+            "eventSubType": "jumpShot",
+            "eventType": "3pt",
+            "name": "DEVON SCOTT",
+            "periodId": 1,
+            "personId": "d1f62f2d-2b0f-11ed-96ed-359aacd8dec1",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/6bb21ef78bcc4ee2882d2f56db749d4a?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 3,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 3
+            },
+            "success": true,
+            "successString": "Hecho",
+            "x": 71.78,
+            "y": 19.19
+          }
+        ],
+        "started": true,
+        "teamScore": {
+          "4a271138-2506-11ef-9b30-7d461750a0d2": 24,
+          "6667c530-6f49-11ec-95d3-bf19323c0103": 28
+        }
+      },
+      {
+        "bannerMatchEvents": [],
+        "bannerTimelineMatchEvents": [],
+        "durationMinutes": 10,
+        "elapsedMinutesBeforePeriod": 10,
+        "ended": true,
+        "isOvertime": false,
+        "isShootout": false,
+        "labels": {
+          "end": "Period 2: Fin",
+          "shortLabel": "P2",
+          "start": "Period 2: Comienzo"
+        },
+        "periodId": 2,
+        "shots": [
+          {
+            "bib": "7",
+            "clock": "PT9M52S",
+            "desc": "2pt Bandeja",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "468aa2c1-c5d6-11f1-a092-616e0397d073",
+            "eventSubType": "layup",
+            "eventType": "2pt",
+            "name": "LUCAS DORIA",
+            "periodId": 2,
+            "personId": "680091e4-575c-11f0-9fb8-414730f47bb8",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/0150c23b15ed4b748b6e3daf4013d4e8?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 24,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 31
+            },
+            "success": true,
+            "successString": "Hecho",
+            "x": 14.11,
+            "y": 43.76
+          },
+          {
+            "bib": "3",
+            "clock": "PT9M24S",
+            "desc": "2pt Tiro en suspensión",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "9138d491-c5d6-11f1-a092-616e0397d073",
+            "eventSubType": "floatingJumpShot",
+            "eventType": "2pt",
+            "name": "ROMEAO FERGUSON",
+            "periodId": 2,
+            "personId": "9d8134a6-575d-11f0-ba4d-25464743a9dd",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/9c56a6c282994720b7e2d5b681224ac4?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 26,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 33
+            },
+            "success": true,
+            "successString": "Hecho",
+            "x": 12.26,
+            "y": 41.27
+          },
+          {
+            "bib": "4",
+            "clock": "PT9M3S",
+            "desc": "2pt Bandeja",
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "eventId": "9db1e271-c5d6-11f1-a092-616e0397d073",
+            "eventSubType": "layup",
+            "eventType": "2pt",
+            "name": "JUSTIN MOSS",
+            "periodId": 2,
+            "personId": "11a8f759-5784-11f0-91f0-5faf8f9e5bf1",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/9af7180a62ab4fb5b432c6292074fcb0?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 26,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 33
+            },
+            "success": false,
+            "successString": "Fallado",
+            "x": 85.89,
+            "y": 56.81
+          }
+        ],
+        "started": true,
+        "teamScore": {
+          "4a271138-2506-11ef-9b30-7d461750a0d2": 26,
+          "6667c530-6f49-11ec-95d3-bf19323c0103": 22
+        }
+      },
+      {
+        "bannerMatchEvents": [],
+        "bannerTimelineMatchEvents": [],
+        "durationMinutes": 10,
+        "elapsedMinutesBeforePeriod": 20,
+        "ended": true,
+        "isOvertime": false,
+        "isShootout": false,
+        "labels": {
+          "end": "Period 3: Fin",
+          "shortLabel": "P3",
+          "start": "Period 3: Comienzo"
+        },
+        "periodId": 3,
+        "shots": [
+          {
+            "bib": "6",
+            "clock": "PT9M44S",
+            "desc": "2pt Bandeja",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "df8a79a1-c5db-11f1-a092-616e0397d073",
+            "eventSubType": "layup",
+            "eventType": "2pt",
+            "name": "ANYELO CISNEROS",
+            "periodId": 3,
+            "personId": "cc58457a-8530-11f1-8393-b77d712e5e1e",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/4958bd2e6d38469c972e1d53bc8bf28c?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 50,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 50
+            },
+            "success": false,
+            "successString": "Fallado",
+            "x": 7.11,
+            "y": 44.34
+          },
+          {
+            "bib": "6",
+            "clock": "PT9M39S",
+            "desc": "2pt Palmeo",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "e212ab20-c5db-11f1-a092-616e0397d073",
+            "eventSubType": "tipIn",
+            "eventType": "2pt",
+            "name": "ANYELO CISNEROS",
+            "periodId": 3,
+            "personId": "cc58457a-8530-11f1-8393-b77d712e5e1e",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/4958bd2e6d38469c972e1d53bc8bf28c?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 50,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 50
+            },
+            "success": false,
+            "successString": "Fallado",
+            "x": 5,
+            "y": 50
+          },
+          {
+            "bib": "6",
+            "clock": "PT9M38S",
+            "desc": "2pt Palmeo",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "eventId": "e2fac130-c5db-11f1-a092-616e0397d073",
+            "eventSubType": "tipIn",
+            "eventType": "2pt",
+            "name": "ANYELO CISNEROS",
+            "periodId": 3,
+            "personId": "cc58457a-8530-11f1-8393-b77d712e5e1e",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/4958bd2e6d38469c972e1d53bc8bf28c?size=400",
+            "scores": {
+              "4a271138-2506-11ef-9b30-7d461750a0d2": 50,
+              "6667c530-6f49-11ec-95d3-bf19323c0103": 52
+            },
+            "success": true,
+            "successString": "Hecho",
+            "x": 5,
+            "y": 50
+          }
+        ],
+        "started": true,
+        "teamScore": {
+          "4a271138-2506-11ef-9b30-7d461750a0d2": 10,
+          "6667c530-6f49-11ec-95d3-bf19323c0103": 24
+        }
+      }
+    ],
+    "reverseTeamOrder": false,
+    "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+    "shotChart": {
+      "competitors": {
+        "4a271138-2506-11ef-9b30-7d461750a0d2": {
+          "code": "DRM",
+          "colors": {
+            "primary": "000000",
+            "secondary": "000000",
+            "tertiary": "000000"
+          },
+          "draw": false,
+          "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+          "isHome": false,
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwVzDkOwkAMQNGrRK6x5GUSZ-g5ASeYxVORhhEFIO4eXD7p639hwnWB1qxbHopJ3ZF5MNY9K0rW5tprYyG4LPCI2Cfe7qFPaL6OozzfYQ-nIsasO8pK23_lA3NVQutpY1upUBf4nSwsHeE"
+            }
+          },
+          "logo": "https://images.dc.connect.sportradar.com/b1gf3/8ae297b9792046a185aea40258f2542e?size=400",
+          "name": "DRM",
+          "resultPlace": 1,
+          "resultStatus": "CONFIRMED",
+          "score": "98",
+          "secondaryScore": null,
+          "shootOutAttempts": ""
+        },
+        "6667c530-6f49-11ec-95d3-bf19323c0103": {
+          "code": "ZAC",
+          "colors": {
+            "primary": "000000",
+            "secondary": "000000",
+            "tertiary": "000000"
+          },
+          "draw": false,
+          "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+          "isHome": true,
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwVzDEOwjAMRuGrVJ6xFOdvE8zeE3AC4jgTXYgYAHF38PhJT-9Dky4LmdVedYBXuLPIEG5nBWeFOXozyYlOC90j9sn7NfQOzedx3B6vsIdLKdU2JC5j1f_KjXXr4DZEkWFJEuj7AzVSHiI"
+            }
+          },
+          "logo": "https://images.dc.connect.sportradar.com/b1gf3/ab3382c53d52421d89b3ac9ce094249b?size=400",
+          "name": "ZAC",
+          "resultPlace": 2,
+          "resultStatus": "CONFIRMED",
+          "score": "92",
+          "secondaryScore": null,
+          "shootOutAttempts": ""
+        }
+      },
+      "isTrackingDataEnabled": false,
+      "persons": {
+        "4a271138-2506-11ef-9b30-7d461750a0d2": [
+          {
+            "active": false,
+            "bib": "4",
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "personId": "11a8f759-5784-11f0-91f0-5faf8f9e5bf1",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/9af7180a62ab4fb5b432c6292074fcb0?size=400",
+            "personLink": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "p~eJwVizsKgDAMQK9SMhtoTEsbd0_gCfpJJgeho3h3yfLgwXsvLDgCjFFmEWNMrIpERtirMO7CQ3n2QXuELcDtsS48L7fHjahVK1kwl5p8jSiObM2qieZuBN8PU94aHA"
+              }
+            },
+            "personName": "JUSTIN MOSS"
+          },
+          {
+            "active": false,
+            "bib": "3",
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "personId": "219b16e1-b936-11f1-96d5-cfb37aacb90a",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/f48617337504465f94b5c1faed805e43?size=400",
+            "personLink": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "p~eJwlyzEKgDAMQNGrSGYDTaOtcfcEnqBJ08lBcBTvrsXxwf83XLAOYJZrlsY4sTsSNUJdhDEKm3NVoxhgHODosV-47V1nVyRRSv4NwulfJdUZrSnnUkwlFHheWO0aYA"
+              }
+            },
+            "personName": "JUSTIN WRIGHT"
+          },
+          {
+            "active": false,
+            "bib": "6",
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "personId": "229dc1e8-3cdc-11ef-83a8-c350f42e1842",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/2f999c280fbd4b1282e0c62013e78846?size=400",
+            "personLink": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "p~eJwVyzEOgCAMQNGrkM42oS2G4u4JPIGUMjmYMBrvrowv-f-BAVsAs9xy6YJJ3JGoE1YtglzEXFo14ghLgGvGPnA_pu4p5tKMXFGs2b96R5VT0WSNPbGTJob3A2WEGjU"
+              }
+            },
+            "personName": "SANTIAGO SCALA"
+          }
+        ],
+        "6667c530-6f49-11ec-95d3-bf19323c0103": [
+          {
+            "active": false,
+            "bib": "5",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "personId": "14f9317e-3ce2-11ef-b3e2-85521bf9292b",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/dc234fd413bb4567b8279fc0d115cbf6?size=400",
+            "personLink": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "p~eJwVizEOgDAIAL_SMEsiUNPi7gv8AS1MDiaOxr_bbnfJ3QsP7AlaK71oCGZxR6IgtKqCrNJcujXiFZYE14z9weOcdk-jHCpUHEfJY_VAk0F125gslJUNvh9b8hoJ"
+              }
+            },
+            "personName": "JOSE REYES"
+          },
+          {
+            "active": false,
+            "bib": "33",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "personId": "2f2d54b0-8530-11f1-be18-67950d1d1559",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/cd4845c6994e41c9b371113d52afff29?size=400",
+            "personLink": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "p~eJwtyzEKgDAMQNGrSGYDTdPYxt0TeIM26eQgdBTvLgXHB_8_MGBfoLVsWTtjYnck6oS1KGNUbs5WG8UA6wLXjH3gcU7dU7FHk1QDFuHwr04Ft6wSjIxEFN4PUw4ZdA"
+              }
+            },
+            "personName": "KAYO GONCALVES"
+          },
+          {
+            "active": false,
+            "bib": "1",
+            "entityId": "6667c530-6f49-11ec-95d3-bf19323c0103",
+            "personId": "6474fd80-51df-11f0-ba28-73c6f96be5a1",
+            "personImage": "https://images.dc.connect.sportradar.com/b1gf3/247be3c7824842afaf5e379a88431d1b?size=400",
+            "personLink": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "p~eJwVyz0KgDAMQOGrSGYDTdNfd0_gCdo0mRyEjuLdpeMH770w4dhAJI9cjTGwKhIZYS-V0VcW5dGFvIN9g3vFOvG8lp6lFHKwURxGGrZWh735gpklWU1dYyP4flv2Gjw"
+              }
+            },
+            "personName": "DAISHON SMITH"
+          }
+        ]
+      }
+    },
+    "showCompetitionName": true,
+    "sub": "shot_chart",
+    "summary": {},
+    "tabs": [
+      {
+        "label": "Previa",
+        "link": "&~w=f~eJwlzEEKhDAMQNGrSNYTME21dvaewBPYJAXBxaCgoMzdJbh88Pk37PBtQCRpypUxshkSVcIyZMaQWYy1CIUWPg2sHtuO4-S6XL_NjsVOd3W3Kj1TURSO8q4GpR6jdnOguZaUFf4PRt8fKA",
+        "sub": "preview"
+      },
+      {
+        "label": "Box Score",
+        "link": "&~w=f~eJwljEEKhDAMAL8iORswTbXWuy_wBW3SguAtPe2yf1-CxxmG-YLBMYFI0pQ7Y-TWkKgT1j0zhszSWKtQWGCe4PG4GZ6X08fJRhm3jVvMVXe1qGxMVVE4ynvblTaMupZApdeUFX5_v48gcQ",
+        "sub": "statistics"
+      },
+      {
+        "label": "Play By Play",
+        "link": "&~w=f~eJwljDEKgDAMAL8imQ2YprbW3Rf4ApO0k0PBTfHvEtzu4LgHLlgHUM2WS2OMXCsSNUJZCmMorJVNlMIE4wCnx_XCbXe73bp05-Y8mSYmMVSO-m8Wo4TR5iPQ0SQXg_cDqkcdaA",
+        "sub": "pbp"
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixture_detail?fixtureId=0dc631bd-c34c-11f1-8d16-4d5a21afb79d&sub=shot_chart"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 17,
+    "fromCache": false,
+    "generated": "2026-10-12T18:17:08.201805+00:00Z",
+    "generationTime": 0.271165,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:27.808737+00:00Z",
+    "version": 1
+  }
+}

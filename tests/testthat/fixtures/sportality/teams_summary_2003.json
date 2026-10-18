@@ -1,0 +1,507 @@
+[
+  {
+    "dataColumns": [
+      {
+        "name": "Rank",
+        "type": "integer",
+        "highlighted": false,
+        "group": ""
+      },
+      {
+        "name": "Team",
+        "type": "string",
+        "highlighted": false,
+        "group": ""
+      },
+      {
+        "name": "GP",
+        "type": "integer",
+        "highlighted": false,
+        "group": ""
+      }
+    ],
+    "defaultSortKey": {
+      "name": "W",
+      "order": "DESC"
+    },
+    "stats": [
+      {
+        "Rank": null,
+        "Team": 0,
+        "GP": 22,
+        "W": 17,
+        "PAvg": "93.9",
+        "RAvg": "32.2",
+        "AAvg": "16.4",
+        "SAvg": "11.1",
+        "BAvg": "2.8",
+        "FAvg": "19.6",
+        "2PPerc": "59.51",
+        "3PPerc": "34.72",
+        "FTPerc": "72.17",
+        "info": {
+          "type": "team",
+          "id": 22248,
+          "name": "Bakken Bears",
+          "uuid": "ktcu9aaala",
+          "createdAt": "2026-06-17T11:18:29.000Z",
+          "createdBy": null,
+          "deleted": false,
+          "gender": "male",
+          "graphicsLibrary": null,
+          "lastModified": "2026-09-14T19:12:01.000Z",
+          "nationality": "DK",
+          "ownerInstanceId": "bak1_bak",
+          "ownersite": null,
+          "teamCode": "BAK",
+          "series": [],
+          "sport": [],
+          "teamMedia": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg",
+          "teamNames": {
+            "code": "BAK",
+            "short": "Bakken Bears",
+            "long": "Bakken Bears",
+            "full": "Bakken Bears",
+            "codeSite": "BAK",
+            "shortSite": "Bakken Bears",
+            "fullSite": "Bakken Bears",
+            "longSite": "Bakken Bears"
+          },
+          "clubName": {},
+          "teamInfo": {
+            "founded": "1954",
+            "facebook": "https://www.facebook.com/bakkenbears",
+            "instagram": "https://www.instagram.com/bakkenbears_official"
+          },
+          "teamExtIds": [
+            {
+              "id": 872,
+              "extId": "22248",
+              "locked": false,
+              "extIdType": {
+                "uuid": "552a-c2beuydsj",
+                "code": "genius-basketball",
+                "createdAt": null,
+                "createdBy": "dbl1_dbl",
+                "deleted": false,
+                "lastModified": null,
+                "visible": true,
+                "name": "Genius Sports Basketball"
+              }
+            }
+          ],
+          "extIds": [
+            {
+              "id": 872,
+              "extId": "22248",
+              "locked": false,
+              "extIdType": {
+                "uuid": "552a-c2beuydsj",
+                "code": "genius-basketball",
+                "createdAt": null,
+                "createdBy": "dbl1_dbl",
+                "deleted": false,
+                "lastModified": null,
+                "visible": true,
+                "name": "Genius Sports Basketball"
+              }
+            }
+          ],
+          "logo": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg",
+          "socialMedia": [],
+          "displayName": "",
+          "code": "BAK",
+          "siteDisplayName": "Bakken Bears"
+        }
+      },
+      {
+        "Rank": null,
+        "Team": 0,
+        "GP": 22,
+        "W": 8,
+        "PAvg": "85.1",
+        "RAvg": "26.1",
+        "AAvg": "9.1",
+        "SAvg": "6.9",
+        "BAvg": "3.4",
+        "FAvg": "18.6",
+        "2PPerc": "53.38",
+        "3PPerc": "39.35",
+        "FTPerc": "79.21",
+        "info": {
+          "type": "team",
+          "id": 22249,
+          "name": "Horsens IC",
+          "uuid": "hip2m60a45",
+          "createdAt": "2026-06-17T11:18:29.000Z",
+          "createdBy": null,
+          "deleted": false,
+          "gender": "male",
+          "graphicsLibrary": null,
+          "lastModified": "2026-08-18T06:44:27.000Z",
+          "nationality": "DK",
+          "ownerInstanceId": "hic1_hic",
+          "ownersite": null,
+          "teamCode": "HIC",
+          "series": [],
+          "sport": [],
+          "teamMedia": "https://sportality.cdn.s8y.se/team-logos/hic1_hic.svg",
+          "teamNames": {
+            "code": "HIC",
+            "short": "Horsens IC",
+            "long": "Horsens IC",
+            "full": "Horsens IC",
+            "codeSite": "HIC",
+            "shortSite": "Horsens IC",
+            "fullSite": "Horsens IC",
+            "longSite": "Horsens IC"
+          },
+          "clubName": {},
+          "teamInfo": {},
+          "teamExtIds": [
+            {
+              "id": 865,
+              "extId": "22249",
+              "locked": false,
+              "extIdType": {
+                "uuid": "552a-c2beuydsj",
+                "code": "genius-basketball",
+                "createdAt": null,
+                "createdBy": "dbl1_dbl",
+                "deleted": false,
+                "lastModified": null,
+                "visible": true,
+                "name": "Genius Sports Basketball"
+              }
+            }
+          ],
+          "extIds": [
+            {
+              "id": 865,
+              "extId": "22249",
+              "locked": false,
+              "extIdType": {
+                "uuid": "552a-c2beuydsj",
+                "code": "genius-basketball",
+                "createdAt": null,
+                "createdBy": "dbl1_dbl",
+                "deleted": false,
+                "lastModified": null,
+                "visible": true,
+                "name": "Genius Sports Basketball"
+              }
+            }
+          ],
+          "logo": "https://sportality.cdn.s8y.se/team-logos/hic1_hic.svg",
+          "socialMedia": [],
+          "displayName": "",
+          "code": "HIC",
+          "siteDisplayName": "Horsens IC"
+        }
+      },
+      {
+        "Rank": null,
+        "Team": 0,
+        "GP": 22,
+        "W": 1,
+        "PAvg": "78.9",
+        "RAvg": "27.4",
+        "AAvg": "8.6",
+        "SAvg": "9.5",
+        "BAvg": "1.6",
+        "FAvg": "19.1",
+        "2PPerc": "50.82",
+        "3PPerc": "31.55",
+        "FTPerc": "69.98",
+        "info": {
+          "type": "team",
+          "id": 22250,
+          "name": "Randers Cimbria",
+          "uuid": "gvvuxe9ysw",
+          "createdAt": "2026-06-17T11:18:29.000Z",
+          "createdBy": null,
+          "deleted": false,
+          "gender": "male",
+          "graphicsLibrary": null,
+          "lastModified": "2026-08-18T06:45:44.000Z",
+          "nationality": "DK",
+          "ownerInstanceId": "ran1_ran",
+          "ownersite": null,
+          "teamCode": "RAN",
+          "series": [],
+          "sport": [],
+          "teamMedia": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg",
+          "teamNames": {
+            "code": "RAN",
+            "short": "Randers Cimbria",
+            "long": "Randers Cimbria",
+            "full": "Randers Cimbria",
+            "codeSite": "RAN",
+            "shortSite": "Randers Cimbria",
+            "fullSite": "Randers Cimbria",
+            "longSite": "Randers Cimbria"
+          },
+          "clubName": {},
+          "teamInfo": {},
+          "teamExtIds": [
+            {
+              "id": 864,
+              "extId": "22250",
+              "locked": false,
+              "extIdType": {
+                "uuid": "552a-c2beuydsj",
+                "code": "genius-basketball",
+                "createdAt": null,
+                "createdBy": "dbl1_dbl",
+                "deleted": false,
+                "lastModified": null,
+                "visible": true,
+                "name": "Genius Sports Basketball"
+              }
+            }
+          ],
+          "extIds": [
+            {
+              "id": 864,
+              "extId": "22250",
+              "locked": false,
+              "extIdType": {
+                "uuid": "552a-c2beuydsj",
+                "code": "genius-basketball",
+                "createdAt": null,
+                "createdBy": "dbl1_dbl",
+                "deleted": false,
+                "lastModified": null,
+                "visible": true,
+                "name": "Genius Sports Basketball"
+              }
+            }
+          ],
+          "logo": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg",
+          "socialMedia": [],
+          "displayName": "",
+          "code": "RAN",
+          "siteDisplayName": "Randers Cimbria"
+        }
+      }
+    ],
+    "provider": "genius-basketball",
+    "teams": {
+      "22248": {
+        "type": "team",
+        "id": 22248,
+        "name": "Bakken Bears",
+        "uuid": "ktcu9aaala",
+        "createdAt": "2026-06-17T11:18:29.000Z",
+        "createdBy": null,
+        "deleted": false,
+        "gender": "male",
+        "graphicsLibrary": null,
+        "lastModified": "2026-09-14T19:12:01.000Z",
+        "nationality": "DK",
+        "ownerInstanceId": "bak1_bak",
+        "ownersite": null,
+        "teamCode": "BAK",
+        "series": [],
+        "sport": [],
+        "teamMedia": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg",
+        "teamNames": {
+          "code": "BAK",
+          "short": "Bakken Bears",
+          "long": "Bakken Bears",
+          "full": "Bakken Bears",
+          "codeSite": "BAK",
+          "shortSite": "Bakken Bears",
+          "fullSite": "Bakken Bears",
+          "longSite": "Bakken Bears"
+        },
+        "clubName": {},
+        "teamInfo": {
+          "founded": "1954",
+          "facebook": "https://www.facebook.com/bakkenbears",
+          "instagram": "https://www.instagram.com/bakkenbears_official"
+        },
+        "teamExtIds": [
+          {
+            "id": 872,
+            "extId": "22248",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "extIds": [
+          {
+            "id": 872,
+            "extId": "22248",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "logo": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg",
+        "socialMedia": [],
+        "displayName": "",
+        "siteDisplayName": "Bakken Bears"
+      },
+      "22249": {
+        "type": "team",
+        "id": 22249,
+        "name": "Horsens IC",
+        "uuid": "hip2m60a45",
+        "createdAt": "2026-06-17T11:18:29.000Z",
+        "createdBy": null,
+        "deleted": false,
+        "gender": "male",
+        "graphicsLibrary": null,
+        "lastModified": "2026-08-18T06:44:27.000Z",
+        "nationality": "DK",
+        "ownerInstanceId": "hic1_hic",
+        "ownersite": null,
+        "teamCode": "HIC",
+        "series": [],
+        "sport": [],
+        "teamMedia": "https://sportality.cdn.s8y.se/team-logos/hic1_hic.svg",
+        "teamNames": {
+          "code": "HIC",
+          "short": "Horsens IC",
+          "long": "Horsens IC",
+          "full": "Horsens IC",
+          "codeSite": "HIC",
+          "shortSite": "Horsens IC",
+          "fullSite": "Horsens IC",
+          "longSite": "Horsens IC"
+        },
+        "clubName": {},
+        "teamInfo": {},
+        "teamExtIds": [
+          {
+            "id": 865,
+            "extId": "22249",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "extIds": [
+          {
+            "id": 865,
+            "extId": "22249",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "logo": "https://sportality.cdn.s8y.se/team-logos/hic1_hic.svg",
+        "socialMedia": [],
+        "displayName": "",
+        "siteDisplayName": "Horsens IC"
+      },
+      "22250": {
+        "type": "team",
+        "id": 22250,
+        "name": "Randers Cimbria",
+        "uuid": "gvvuxe9ysw",
+        "createdAt": "2026-06-17T11:18:29.000Z",
+        "createdBy": null,
+        "deleted": false,
+        "gender": "male",
+        "graphicsLibrary": null,
+        "lastModified": "2026-08-18T06:45:44.000Z",
+        "nationality": "DK",
+        "ownerInstanceId": "ran1_ran",
+        "ownersite": null,
+        "teamCode": "RAN",
+        "series": [],
+        "sport": [],
+        "teamMedia": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg",
+        "teamNames": {
+          "code": "RAN",
+          "short": "Randers Cimbria",
+          "long": "Randers Cimbria",
+          "full": "Randers Cimbria",
+          "codeSite": "RAN",
+          "shortSite": "Randers Cimbria",
+          "fullSite": "Randers Cimbria",
+          "longSite": "Randers Cimbria"
+        },
+        "clubName": {},
+        "teamInfo": {},
+        "teamExtIds": [
+          {
+            "id": 864,
+            "extId": "22250",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "extIds": [
+          {
+            "id": 864,
+            "extId": "22250",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "logo": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg",
+        "socialMedia": [],
+        "displayName": "",
+        "siteDisplayName": "Randers Cimbria"
+      }
+    },
+    "games": {},
+    "seasonSeriesGameTypes": {},
+    "type": "team",
+    "totalCount": null
+  }
+]

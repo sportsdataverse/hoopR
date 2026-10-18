@@ -1,0 +1,412 @@
+{
+  "data": {
+    "commonHeaders": [
+      {
+        "key": "name",
+        "name": "Nom"
+      },
+      {
+        "key": "entityName",
+        "name": "Equipe"
+      }
+    ],
+    "config": {
+      "bindToNavigation": "statistics",
+      "currentPage": "stats_persons",
+      "labelPage": "Joueur Statistiques",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_leaders"
+          }
+        ],
+        "secondary": [
+          {
+            "label": "Joueur Statistiques",
+            "link": "&~w=stp~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_persons"
+          },
+          {
+            "label": "Equipe Statistiques",
+            "link": "&~w=ste~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_entities"
+          }
+        ]
+      },
+      "showPersonImage": true,
+      "sport": "basketball"
+    },
+    "filters": {
+      "fixtureType": {
+        "id": "fixture-type-select",
+        "options": [],
+        "selected": null
+      },
+      "stages": {
+        "id": "stages-select",
+        "options": [],
+        "selected": null
+      }
+    },
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+    "seasons": {
+      "competitions": {
+        "0847055c-2fb3-11ef-9b30-3333ffdb8385": {
+          "name": "PROB"
+        },
+        "213e021f-19b5-11ee-9190-29c4f278bc32": {
+          "name": "PROB"
+        },
+        "27a79741-597b-11ef-9104-c9f30fad1f7e": {
+          "name": "Betclic ÉLITE - Play-In"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "2c58cdf2-51d1-11f0-b783-c5cbc0fbb14f",
+          "link": "&~w=stp~eJyrVipWslJQMkm0MDdPNUzTNTVMMdQ1NEwz0E20sLTQtTBMNU81TzFMs7RMVNJRUMoBKU4r0nULUqoFALn7Dtw",
+          "nameLocal": "All Star Game 2025",
+          "seasonId": "4a877e1f-51d1-11f0-a898-81e7e7d1f99a",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "b98931f7-51d3-11f0-8483-9d47ff25959f",
+          "link": "&~w=stp~eJyrVipWslJQSjE3SjE1S7TQNTVMMdY1NEwz0LU0SUnSNTK1NDEwMTMztzQ3U9JRUMoBKU4r0nULUqoFAKquDhc",
+          "nameLocal": "Betclic ÉLITE - Playoffs 2025",
+          "seasonId": "d72d56a8-51d3-11f0-94db-259404667976",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "3f4064bb-51ad-11f0-aaaf-2923c944b404",
+          "link": "&~w=stp~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+          "nameLocal": "Betclic ÉLITE 2025",
+          "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+          "year": 2025
+        }
+      ]
+    },
+    "statistics": [
+      {
+        "headers": [
+          {
+            "code": "Minutes par Match",
+            "key": "minutesPerGame",
+            "name": "MIN"
+          },
+          {
+            "code": "Passes Décisives par Match",
+            "key": "assistsPerGame",
+            "name": "PD"
+          },
+          {
+            "code": "Contres par Match",
+            "key": "blocksPerGame",
+            "name": "CT"
+          }
+        ],
+        "label": {
+          "key": "averages",
+          "text": "Moyennes"
+        },
+        "statistics": [
+          {
+            "entity": {
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVi7ENgDAMBFdBrrHkxzImDMAAbABJXFEgKBG7Q4orTrp76Ka5oxIK2cTYsBUGQngvU-LsaiZTRZVEfUdHi-PiZW12NhPAVXTksIx_rTsnG5R_BveaMjzo_QAj9BjV"
+                }
+              },
+              "name": "Ismael Bako"
+            },
+            "statistics": [
+              "PT12M2S",
+              0.2,
+              0.5
+            ]
+          },
+          {
+            "entity": {
+              "name": "Monaco"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVi7kNgDAMAFeJXGPJxrKSMAADsEEeu6JAUCJ2JymuOOnuhQe2AN2FqZCicunI7IS1p4wtiiolY6MMS4Bzxn7jfky7ppEYmSuha-OxWsWsq-BgjdFy4-jw_Te5GWg"
+                }
+              },
+              "name": "Juhann Begarin"
+            },
+            "statistics": [
+              "PT20M57S",
+              1.21,
+              0.46
+            ]
+          },
+          {
+            "entity": {
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly8EJgDAQRNFWZM8uzCiJiQVYgB0krnvyIHoUe5fg8cH_j9wyd2I-EgVBA4sp6dBqKes2jSEg7dyRpe_kaLFfuqxNZxMiBg5w3SKnfy3ZTBNRrWbW6JD3Ay3kGYE"
+                }
+              },
+              "name": "Jared Rhoden"
+            },
+            "statistics": [
+              "PT18M52S",
+              1.61,
+              0.22
+            ]
+          }
+        ]
+      },
+      {
+        "headers": [
+          {
+            "code": "Tirs Tentés",
+            "key": "fieldGoalsAttempted",
+            "name": "TT"
+          },
+          {
+            "code": "Tirs Réussis",
+            "key": "fieldGoalsMade",
+            "name": "TR"
+          },
+          {
+            "code": "Effective Field Goal %",
+            "key": "fieldGoalsEffectivePercentage",
+            "name": "EFG%"
+          }
+        ],
+        "label": {
+          "key": "shootingstatistics",
+          "text": "Stats Tirs"
+        },
+        "statistics": [
+          {
+            "entity": {
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVi7ENgDAMBFdBrrHkxzImDMAAbABJXFEgKBG7Q4orTrp76Ka5oxIK2cTYsBUGQngvU-LsaiZTRZVEfUdHi-PiZW12NhPAVXTksIx_rTsnG5R_BveaMjzo_QAj9BjV"
+                }
+              },
+              "name": "Ismael Bako"
+            },
+            "statistics": [
+              25,
+              17,
+              68.0
+            ]
+          },
+          {
+            "entity": {
+              "name": "Monaco"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVi7kNgDAMAFeJXGPJxrKSMAADsEEeu6JAUCJ2JymuOOnuhQe2AN2FqZCicunI7IS1p4wtiiolY6MMS4Bzxn7jfky7ppEYmSuha-OxWsWsq-BgjdFy4-jw_Te5GWg"
+                }
+              },
+              "name": "Juhann Begarin"
+            },
+            "statistics": [
+              152,
+              69,
+              52.63
+            ]
+          },
+          {
+            "entity": {
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly8EJgDAQRNFWZM8uzCiJiQVYgB0krnvyIHoUe5fg8cH_j9wyd2I-EgVBA4sp6dBqKes2jSEg7dyRpe_kaLFfuqxNZxMiBg5w3SKnfy3ZTBNRrWbW6JD3Ay3kGYE"
+                }
+              },
+              "name": "Jared Rhoden"
+            },
+            "statistics": [
+              164,
+              75,
+              55.79
+            ]
+          }
+        ]
+      },
+      {
+        "headers": [
+          {
+            "code": "Passe Décisive",
+            "key": "assists",
+            "name": "PD"
+          },
+          {
+            "code": "Contres",
+            "key": "blocks",
+            "name": "CT"
+          },
+          {
+            "code": "Dunks",
+            "key": "dunks",
+            "name": "Dk"
+          }
+        ],
+        "label": {
+          "key": "totals",
+          "text": "Totaux"
+        },
+        "statistics": [
+          {
+            "entity": {
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVi7ENgDAMBFdBrrHkxzImDMAAbABJXFEgKBG7Q4orTrp76Ka5oxIK2cTYsBUGQngvU-LsaiZTRZVEfUdHi-PiZW12NhPAVXTksIx_rTsnG5R_BveaMjzo_QAj9BjV"
+                }
+              },
+              "name": "Ismael Bako"
+            },
+            "statistics": [
+              2,
+              5,
+              6
+            ]
+          },
+          {
+            "entity": {
+              "name": "Monaco"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwVi7kNgDAMAFeJXGPJxrKSMAADsEEeu6JAUCJ2JymuOOnuhQe2AN2FqZCicunI7IS1p4wtiiolY6MMS4Bzxn7jfky7ppEYmSuha-OxWsWsq-BgjdFy4-jw_Te5GWg"
+                }
+              },
+              "name": "Juhann Begarin"
+            },
+            "statistics": [
+              29,
+              11,
+              16
+            ]
+          },
+          {
+            "entity": {
+              "name": "Paris"
+            },
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "p~eJwly8EJgDAQRNFWZM8uzCiJiQVYgB0krnvyIHoUe5fg8cH_j9wyd2I-EgVBA4sp6dBqKes2jSEg7dyRpe_kaLFfuqxNZxMiBg5w3SKnfy3ZTBNRrWbW6JD3Ay3kGYE"
+                }
+              },
+              "name": "Jared Rhoden"
+            },
+            "statistics": [
+              29,
+              4,
+              10
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/statistics_persons?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 8,
+    "fromCache": false,
+    "generated": "2026-10-12T18:12:40.656446+00:00Z",
+    "generationTime": 0.25084,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:13.835642+00:00Z",
+    "version": 1
+  }
+}

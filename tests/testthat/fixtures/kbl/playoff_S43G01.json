@@ -1,0 +1,134 @@
+{
+  "defaultRank": [
+    {
+      "seasonCode": 43,
+      "gameCode": "01",
+      "teamCode": "16",
+      "teamName1": "원주 DB",
+      "teamName2": "원주 DB 프로미",
+      "teamLogoClass": "db",
+      "rank": "1"
+    },
+    {
+      "seasonCode": 43,
+      "gameCode": "01",
+      "teamCode": "50",
+      "teamName1": "창원 LG",
+      "teamName2": "창원 LG 세이커스",
+      "teamLogoClass": "lg",
+      "rank": "2"
+    },
+    {
+      "seasonCode": 43,
+      "gameCode": "01",
+      "teamCode": "06",
+      "teamName1": "수원 KT",
+      "teamName2": "수원 KT 소닉붐",
+      "teamLogoClass": "kt",
+      "rank": "3"
+    }
+  ],
+  "sixResult": [
+    {
+      "loss": 1,
+      "teamLogoClass": "kt",
+      "seasonCode": 43,
+      "teamName2": "수원 KT 소닉붐",
+      "gameDate": "20240405",
+      "gameHoi": "1",
+      "teamName1": "수원 KT",
+      "teamCode": "06",
+      "gameCode": "03",
+      "win": 3
+    },
+    {
+      "loss": 3,
+      "teamLogoClass": "hd",
+      "seasonCode": 43,
+      "teamName2": "울산 현대모비스 피버스",
+      "gameDate": "20240405",
+      "gameHoi": "1",
+      "teamName1": "울산 현대모비스",
+      "teamCode": "10",
+      "gameCode": "03",
+      "win": 1
+    },
+    {
+      "loss": 3,
+      "teamLogoClass": "sk",
+      "seasonCode": 43,
+      "teamName2": "서울 SK 나이츠",
+      "gameDate": "20240404",
+      "gameHoi": "1",
+      "teamName1": "서울 SK",
+      "teamCode": "55",
+      "gameCode": "03",
+      "win": 0
+    }
+  ],
+  "fourResult": [
+    {
+      "loss": 2,
+      "teamLogoClass": "kt",
+      "seasonCode": 43,
+      "teamName2": "수원 KT 소닉붐",
+      "gameDate": "20240416",
+      "gameHoi": "2",
+      "teamName1": "수원 KT",
+      "teamCode": "06",
+      "gameCode": "03",
+      "win": 3
+    },
+    {
+      "loss": 3,
+      "teamLogoClass": "db",
+      "seasonCode": 43,
+      "teamName2": "원주 DB 프로미",
+      "gameDate": "20240415",
+      "gameHoi": "2",
+      "teamName1": "원주 DB",
+      "teamCode": "16",
+      "gameCode": "03",
+      "win": 1
+    },
+    {
+      "loss": 3,
+      "teamLogoClass": "lg",
+      "seasonCode": 43,
+      "teamName2": "창원 LG 세이커스",
+      "gameDate": "20240416",
+      "gameHoi": "2",
+      "teamName1": "창원 LG",
+      "teamCode": "50",
+      "gameCode": "03",
+      "win": 2
+    }
+  ],
+  "finalResult": [
+    {
+      "loss": 4,
+      "teamLogoClass": "kt",
+      "seasonCode": 43,
+      "teamName2": "수원 KT 소닉붐",
+      "gameDate": "20240427",
+      "gameHoi": "1",
+      "teamName1": "수원 KT",
+      "teamCode": "06",
+      "gameCode": "04",
+      "win": 1
+    },
+    {
+      "loss": 1,
+      "teamLogoClass": "kcc",
+      "seasonCode": 43,
+      "teamName2": "부산 KCC 이지스",
+      "gameDate": "20240427",
+      "gameHoi": "1",
+      "teamName1": "부산 KCC",
+      "teamCode": "60",
+      "gameCode": "04",
+      "win": 4
+    }
+  ],
+  "poScheduleExist": true
+}

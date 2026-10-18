@@ -1,0 +1,2 @@
+league,season_player_id,real_player_id,active_season_player_id,first_name,last_name,birth_date,position,shirt_number,height,weight,nationalities,is_all_star,is_young,has_changed_teams,bbl_games_played,team_id,team_name,previous_teams,season_ids
+bbl,56414,37539,56414,Jonas,Mattisseck,2000-01-16,SHOOTING_GUARD,9,1.92,84,DE,false,false,false,289,413,ALBA BERLIN,"[""VfL Lichtenrade"",""TuS Lichterfelde"",""ALBA Berlin""]","[2017,2018,2019]"

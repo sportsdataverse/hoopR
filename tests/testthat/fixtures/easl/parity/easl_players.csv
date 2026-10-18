@@ -1,0 +1,4 @@
+season,season_id,player_row_id,player_id,name,name_latin,name_abbreviated,nationality,gender,dob,height_cm,height_feet,weight_kg,weight_lbs,status,jersey_number,position,organization_id,created_at,updated_at
+\N,\N,129,6ade17ec-9f50-11f0-a0fc-5118a3219f90,PARK Intae,PARK Intae,\N,KOR,MALE,1995-01-04,203,\N,98,\N,UNREGISTERED,\N,\N,b1e0z,2026-01-14 21:19:36,2026-10-01T03:58:00.751Z
+\N,\N,166,85eda30f-6f45-11ef-88c3-2d6d461aa145,Keve ALUMA,Keve ALUMA,\N,USA,MALE,1998-12-31,206,\N,107,\N,INACTIVE,\N,\N,b1e0z,2026-01-14 21:19:37,2026-10-01T03:58:01.344Z
+\N,\N,310,b41e950e-8594-11ef-b422-9df3ab73c916,LEUNG Shiu Wah,LEUNG Shiu Wah,\N,HKG,MALE,1994-03-25,192,\N,90,\N,ACTIVE,\N,\N,b1e0z,2026-01-14 21:19:38,2026-10-01T03:58:04.248Z

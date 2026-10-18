@@ -1,0 +1,371 @@
+[
+  {
+    "gameId": 100720,
+    "roundName": "Final",
+    "gameNumber": "A",
+    "status": "Validated",
+    "statusCode": "VALID",
+    "gameDay": 1,
+    "teamAFrom": "Winner of Game 87",
+    "teamBFrom": "Winner of Game 88",
+    "teamA": {
+      "teamId": 279569,
+      "organisationId": 64,
+      "code": "GER",
+      "officialName": "Germany",
+      "shortName": "Germany"
+    },
+    "teamB": {
+      "teamId": 279961,
+      "organisationId": 8323,
+      "code": "SRB",
+      "officialName": "Serbia",
+      "shortName": "Serbia"
+    },
+    "teamAScore": 83,
+    "teamBScore": 77,
+    "hostCity": "Manila",
+    "hostCountry": "PHI",
+    "hostCountryCode": null,
+    "venueId": 57322,
+    "venueName": "Mall of Asia Arena",
+    "gameDateTime": "2023-09-10T20:40:00",
+    "gameDateTimeUTC": "2023-09-10T12:40:00",
+    "hasTimeGameDateTime": true,
+    "ianaTimeZone": "Asia/Manila",
+    "utcOffset": 8,
+    "buyTicketsURL": "",
+    "watchURL": "",
+    "isPostponed": false,
+    "isPlayedBehindClosedDoors": false,
+    "venueCapacity": 15188,
+    "spectators": 12022,
+    "isLive": false,
+    "leaders": {
+      "teamAPointsLeader": {
+        "playerId": 189145,
+        "firstName": "Dennis",
+        "lastName": "Schroder",
+        "statisticsValue": 28,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamAReboundsLeader": {
+        "playerId": 188677,
+        "firstName": "Johannes",
+        "lastName": "Voigtmann",
+        "statisticsValue": 8,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamAAssistsLeader": {
+        "playerId": 188677,
+        "firstName": "Johannes",
+        "lastName": "Voigtmann",
+        "statisticsValue": 3,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamBPointsLeader": {
+        "playerId": 228005,
+        "firstName": "Aleksa",
+        "lastName": "Avramovic",
+        "statisticsValue": 21,
+        "nationality": "SRB",
+        "rank": 1
+      },
+      "teamBReboundsLeader": {
+        "playerId": 265234,
+        "firstName": "Nikola",
+        "lastName": "Jovic",
+        "statisticsValue": 8,
+        "nationality": "SRB",
+        "rank": 1
+      },
+      "teamBAssistsLeader": {
+        "playerId": 182399,
+        "firstName": "Bogdan",
+        "lastName": "Bogdanovic",
+        "statisticsValue": 5,
+        "nationality": null,
+        "rank": 1
+      }
+    },
+    "periods": [
+      {
+        "name": "Q1",
+        "number": 1,
+        "teamAScore": 23,
+        "teamBScore": 26,
+        "teamAFrom": null,
+        "teamBFrom": null
+      },
+      {
+        "name": "Q2",
+        "number": 2,
+        "teamAScore": 24,
+        "teamBScore": 21,
+        "teamAFrom": null,
+        "teamBFrom": null
+      },
+      {
+        "name": "Q3",
+        "number": 3,
+        "teamAScore": 22,
+        "teamBScore": 10,
+        "teamAFrom": null,
+        "teamBFrom": null
+      }
+    ],
+    "gameStatisticStatusCode": "VALID",
+    "gamePlayByPlayStatusCode": "VALID",
+    "gameResultStatusCode": "VALID",
+    "gameResultAdditionalInformation": "None"
+  },
+  {
+    "gameId": 100723,
+    "roundName": "Semi-Finals",
+    "gameNumber": "A",
+    "status": "Validated",
+    "statusCode": "VALID",
+    "gameDay": 1,
+    "teamAFrom": "Winner of Game 81",
+    "teamBFrom": "Winner of Game 83",
+    "teamA": {
+      "teamId": 279956,
+      "organisationId": 154,
+      "code": "USA",
+      "officialName": "USA",
+      "shortName": "USA"
+    },
+    "teamB": {
+      "teamId": 279569,
+      "organisationId": 64,
+      "code": "GER",
+      "officialName": "Germany",
+      "shortName": "Germany"
+    },
+    "teamAScore": 111,
+    "teamBScore": 113,
+    "hostCity": "Manila",
+    "hostCountry": "PHI",
+    "hostCountryCode": null,
+    "venueId": 57322,
+    "venueName": "Mall of Asia Arena",
+    "gameDateTime": "2023-09-08T20:40:00",
+    "gameDateTimeUTC": "2023-09-08T12:40:00",
+    "hasTimeGameDateTime": true,
+    "ianaTimeZone": "Asia/Manila",
+    "utcOffset": 8,
+    "buyTicketsURL": "",
+    "watchURL": "",
+    "isPostponed": false,
+    "isPlayedBehindClosedDoors": false,
+    "venueCapacity": 15188,
+    "spectators": 11011,
+    "isLive": false,
+    "leaders": {
+      "teamAPointsLeader": {
+        "playerId": 347171,
+        "firstName": "Anthony",
+        "lastName": "Edwards",
+        "statisticsValue": 23,
+        "nationality": "USA",
+        "rank": 1
+      },
+      "teamAReboundsLeader": {
+        "playerId": 347171,
+        "firstName": "Anthony",
+        "lastName": "Edwards",
+        "statisticsValue": 8,
+        "nationality": "USA",
+        "rank": 1
+      },
+      "teamAAssistsLeader": {
+        "playerId": 268845,
+        "firstName": "Tyrese",
+        "lastName": "Haliburton",
+        "statisticsValue": 8,
+        "nationality": "USA",
+        "rank": 1
+      },
+      "teamBPointsLeader": {
+        "playerId": 196287,
+        "firstName": "Andreas",
+        "lastName": "Obst",
+        "statisticsValue": 24,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamBReboundsLeader": {
+        "playerId": 181996,
+        "firstName": "Daniel",
+        "lastName": "Theis",
+        "statisticsValue": 7,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamBAssistsLeader": {
+        "playerId": 189145,
+        "firstName": "Dennis",
+        "lastName": "Schroder",
+        "statisticsValue": 9,
+        "nationality": "GER",
+        "rank": 1
+      }
+    },
+    "periods": [
+      {
+        "name": "Q1",
+        "number": 1,
+        "teamAScore": 31,
+        "teamBScore": 33,
+        "teamAFrom": null,
+        "teamBFrom": null
+      },
+      {
+        "name": "Q2",
+        "number": 2,
+        "teamAScore": 29,
+        "teamBScore": 26,
+        "teamAFrom": null,
+        "teamBFrom": null
+      },
+      {
+        "name": "Q3",
+        "number": 3,
+        "teamAScore": 24,
+        "teamBScore": 35,
+        "teamAFrom": null,
+        "teamBFrom": null
+      }
+    ],
+    "gameStatisticStatusCode": "VALID",
+    "gamePlayByPlayStatusCode": "VALID",
+    "gameResultStatusCode": "VALID",
+    "gameResultAdditionalInformation": "None"
+  },
+  {
+    "gameId": 100724,
+    "roundName": "Quarter-Finals",
+    "gameNumber": "A",
+    "status": "Validated",
+    "statusCode": "VALID",
+    "gameDay": 1,
+    "teamAFrom": "1st of group K",
+    "teamBFrom": "2nd of group L",
+    "teamA": {
+      "teamId": 279569,
+      "organisationId": 64,
+      "code": "GER",
+      "officialName": "Germany",
+      "shortName": "Germany"
+    },
+    "teamB": {
+      "teamId": 279572,
+      "organisationId": 610,
+      "code": "LAT",
+      "officialName": "Latvia",
+      "shortName": "Latvia"
+    },
+    "teamAScore": 81,
+    "teamBScore": 79,
+    "hostCity": "Manila",
+    "hostCountry": "PHI",
+    "hostCountryCode": null,
+    "venueId": 57322,
+    "venueName": "Mall of Asia Arena",
+    "gameDateTime": "2023-09-06T16:45:00",
+    "gameDateTimeUTC": "2023-09-06T08:45:00",
+    "hasTimeGameDateTime": true,
+    "ianaTimeZone": "Asia/Manila",
+    "utcOffset": 8,
+    "buyTicketsURL": "",
+    "watchURL": "",
+    "isPostponed": false,
+    "isPlayedBehindClosedDoors": false,
+    "venueCapacity": 15188,
+    "spectators": 7584,
+    "isLive": false,
+    "leaders": {
+      "teamAPointsLeader": {
+        "playerId": 227403,
+        "firstName": "Franz",
+        "lastName": "Wagner",
+        "statisticsValue": 16,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamAReboundsLeader": {
+        "playerId": 181996,
+        "firstName": "Daniel",
+        "lastName": "Theis",
+        "statisticsValue": 8,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamAAssistsLeader": {
+        "playerId": 189145,
+        "firstName": "Dennis",
+        "lastName": "Schroder",
+        "statisticsValue": 4,
+        "nationality": "GER",
+        "rank": 1
+      },
+      "teamBPointsLeader": {
+        "playerId": 218293,
+        "firstName": "Artūrs",
+        "lastName": "Žagars",
+        "statisticsValue": 24,
+        "nationality": "LAT",
+        "rank": 1
+      },
+      "teamBReboundsLeader": {
+        "playerId": 211930,
+        "firstName": "Rodions",
+        "lastName": "Kurucs",
+        "statisticsValue": 10,
+        "nationality": "LAT",
+        "rank": 1
+      },
+      "teamBAssistsLeader": {
+        "playerId": 218293,
+        "firstName": "Artūrs",
+        "lastName": "Žagars",
+        "statisticsValue": 8,
+        "nationality": "LAT",
+        "rank": 1
+      }
+    },
+    "periods": [
+      {
+        "name": "Q1",
+        "number": 1,
+        "teamAScore": 13,
+        "teamBScore": 16,
+        "teamAFrom": null,
+        "teamBFrom": null
+      },
+      {
+        "name": "Q2",
+        "number": 2,
+        "teamAScore": 23,
+        "teamBScore": 18,
+        "teamAFrom": null,
+        "teamBFrom": null
+      },
+      {
+        "name": "Q3",
+        "number": 3,
+        "teamAScore": 26,
+        "teamBScore": 25,
+        "teamAFrom": null,
+        "teamBFrom": null
+      }
+    ],
+    "gameStatisticStatusCode": "VALID",
+    "gamePlayByPlayStatusCode": "VALID",
+    "gameResultStatusCode": "VALID",
+    "gameResultAdditionalInformation": "None"
+  }
+]

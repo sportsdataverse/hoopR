@@ -1,0 +1,38 @@
+{
+  "id": "56414",
+  "realPlayerId": 37539,
+  "firstName": "Jonas",
+  "lastName": "Mattisseck",
+  "activeSeasonPlayerId": "56414",
+  "bblGamesPlayed": 289,
+  "birthDate": "2000-01-16",
+  "hasChangedTeams": false,
+  "height": 1.92,
+  "weight": 84,
+  "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/56414",
+  "isAllStar": false,
+  "isYoung": false,
+  "nationalities": [
+    "DE"
+  ],
+  "position": "SHOOTING_GUARD",
+  "previousTeams": [
+    "VfL Lichtenrade",
+    "TuS Lichterfelde",
+    "ALBA Berlin"
+  ],
+  "seasonIds": [
+    2017,
+    2018,
+    2019
+  ],
+  "shirtNumber": "9",
+  "socialMediaLinks": [],
+  "team": {
+    "name": "ALBA BERLIN",
+    "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413",
+    "homepageUrl": "https://www.albaberlin.de",
+    "id": "413"
+  },
+  "foreignLink": null
+}

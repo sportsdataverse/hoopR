@@ -1,0 +1,249 @@
+{
+  "type": "team_season_statistics",
+  "fetched": 1791833218,
+  "ttlRemaining": 1800,
+  "count": 853,
+  "source": "nxs",
+  "data": [
+    {
+      "assists": 77,
+      "assists_average": 4.05263,
+      "blocks": 17,
+      "blocks_average": 0.89474,
+      "defensive_rebounds": 167,
+      "field_goals_attempted": 298,
+      "field_goals_attempted_average": 15.68421,
+      "field_goals_made": 112,
+      "field_goals_made_average": 5.89474,
+      "field_goals_percentage": 0.375839,
+      "fouls": 89,
+      "fouls_average": 4.68421,
+      "free_throws_attempted": 66,
+      "free_throws_attempted_average": 3.47368,
+      "free_throws_made": 43,
+      "free_throws_made_average": 2.26316,
+      "free_throws_percentage": 0.651515,
+      "games": 19,
+      "minutes": 950,
+      "offensive_rebounds": 42,
+      "offensive_rebounds_average": 2.21053,
+      "period": "3",
+      "personal_fouls_average": 4.31579,
+      "points": 296,
+      "points_average": 15.57895,
+      "rebounds": 209,
+      "rebounds_average": 11,
+      "results_string": null,
+      "steals": 33,
+      "steals_average": 1.73684,
+      "three_points_attempted": 95,
+      "three_points_attempted_average": 5,
+      "three_points_made": 29,
+      "three_points_made_average": 1.52632,
+      "three_points_percentage": 0.305263,
+      "turnovers": 69,
+      "turnovers_average": 3.63158,
+      "two_points_attempted": 203,
+      "two_points_attempted_average": 10.68421,
+      "two_points_made": 83,
+      "two_points_made_average": 4.36842,
+      "two_points_percentage": 0.408867,
+      "team": {
+        "id": "dedce7b8-a369-5b15-8cdb-1ea2e6d4e17e",
+        "external_id": "def82cc0-7b55-11eb-9e56-8205bb8987e9",
+        "name": "North Adelaide Rockets",
+        "team_code": "NAR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b4b08e76a04441a284fe1422b99b96f5?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b4b08e76a04441a284fe1422b99b96f5?size=100&format=webp",
+        "color_primary": "#ed3237",
+        "color_secondary": "#bdbfc1",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/b4b08e76a04441a284fe1422b99b96f5?size=200&format=webp",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "0652bd10-3e4b-4671-9769-6f81b7e256a0",
+        "external_id": "b2e8d41c-bb5e-11ef-bcb6-6f92240a746c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "Central Women",
+              "gender": "female",
+              "conference": {
+                "name": "Central"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "assists": 323,
+      "assists_average": 15.38095,
+      "blocks": 73,
+      "blocks_average": 3.47619,
+      "defensive_rebounds": 616,
+      "field_goals_attempted": 1422,
+      "field_goals_attempted_average": 67.71429,
+      "field_goals_made": 540,
+      "field_goals_made_average": 25.71429,
+      "field_goals_percentage": 0.379747,
+      "fouls": 380,
+      "fouls_average": 18.09524,
+      "free_throws_attempted": 328,
+      "free_throws_attempted_average": 15.61905,
+      "free_throws_made": 213,
+      "free_throws_made_average": 10.14286,
+      "free_throws_percentage": 0.64939,
+      "games": 21,
+      "minutes": 4225,
+      "offensive_rebounds": 248,
+      "offensive_rebounds_average": 11.80952,
+      "period": "0",
+      "personal_fouls_average": 16.90476,
+      "points": 1473,
+      "points_average": 70.14286,
+      "rebounds": 864,
+      "rebounds_average": 41.14286,
+      "results_string": null,
+      "steals": 246,
+      "steals_average": 11.71429,
+      "three_points_attempted": 597,
+      "three_points_attempted_average": 28.42857,
+      "three_points_made": 180,
+      "three_points_made_average": 8.57143,
+      "three_points_percentage": 0.301507,
+      "turnovers": 307,
+      "turnovers_average": 14.61905,
+      "two_points_attempted": 825,
+      "two_points_attempted_average": 39.28571,
+      "two_points_made": 360,
+      "two_points_made_average": 17.14286,
+      "two_points_percentage": 0.436364,
+      "team": {
+        "id": "2af2ddfb-c9bb-5323-9d60-9e25d58ac83c",
+        "external_id": "df2d3276-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Sturt Sabres",
+        "team_code": "STS",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/874bd40ecf1d410090b4cd216c3cac11?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/874bd40ecf1d410090b4cd216c3cac11?size=100&format=webp",
+        "color_primary": "#48c2f1",
+        "color_secondary": "#1a4788",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/874bd40ecf1d410090b4cd216c3cac11?size=200&format=webp",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "0652bd10-3e4b-4671-9769-6f81b7e256a0",
+        "external_id": "b2e8d41c-bb5e-11ef-bcb6-6f92240a746c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "Central Women",
+              "gender": "female",
+              "conference": {
+                "name": "Central"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "assists": 267,
+      "assists_average": 14.83333,
+      "blocks": 46,
+      "blocks_average": 2.55556,
+      "defensive_rebounds": 554,
+      "field_goals_attempted": 1283,
+      "field_goals_attempted_average": 71.27778,
+      "field_goals_made": 454,
+      "field_goals_made_average": 25.22222,
+      "field_goals_percentage": 0.353858,
+      "fouls": 304,
+      "fouls_average": 16.88889,
+      "free_throws_attempted": 410,
+      "free_throws_attempted_average": 22.77778,
+      "free_throws_made": 261,
+      "free_throws_made_average": 14.5,
+      "free_throws_percentage": 0.636585,
+      "games": 18,
+      "minutes": 3602,
+      "offensive_rebounds": 296,
+      "offensive_rebounds_average": 16.44444,
+      "period": "0",
+      "personal_fouls_average": 15.5,
+      "points": 1278,
+      "points_average": 71,
+      "rebounds": 850,
+      "rebounds_average": 47.22222,
+      "results_string": null,
+      "steals": 204,
+      "steals_average": 11.33333,
+      "three_points_attempted": 475,
+      "three_points_attempted_average": 26.38889,
+      "three_points_made": 109,
+      "three_points_made_average": 6.05556,
+      "three_points_percentage": 0.229474,
+      "turnovers": 296,
+      "turnovers_average": 16.44444,
+      "two_points_attempted": 808,
+      "two_points_attempted_average": 44.88889,
+      "two_points_made": 345,
+      "two_points_made_average": 19.16667,
+      "two_points_percentage": 0.42698,
+      "team": {
+        "id": "93982639-ce42-53a9-ae65-8b81023dcc9f",
+        "external_id": "df1ab010-7b55-11eb-9e56-8205bb8987e9",
+        "name": "South Adelaide Panthers",
+        "team_code": "SAP",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/5326235b15f94354812edcee0c589243?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/5326235b15f94354812edcee0c589243?size=100&format=webp",
+        "color_primary": "#00245d",
+        "color_secondary": "#c1272d",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/5326235b15f94354812edcee0c589243?size=200&format=webp",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "0652bd10-3e4b-4671-9769-6f81b7e256a0",
+        "external_id": "b2e8d41c-bb5e-11ef-bcb6-6f92240a746c",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "Central Women",
+              "gender": "female",
+              "conference": {
+                "name": "Central"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

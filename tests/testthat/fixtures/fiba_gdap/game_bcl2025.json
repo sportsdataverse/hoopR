@@ -1,0 +1,120 @@
+{
+  "gameId": 122879,
+  "roundName": "Play-ins",
+  "technicalName": "29014-1-2",
+  "roundType": "Non Group Round",
+  "groupPairingCode": "1",
+  "gameNumber": "2",
+  "statusCode": "VALID",
+  "gameDay": 2,
+  "teamAFrom": "3rd of group B",
+  "teamBFrom": "2nd of group A",
+  "teamA": {
+    "teamId": 282183,
+    "organisationId": 396,
+    "code": "OOST",
+    "officialName": "Filou Oostende",
+    "shortName": "Filou Oostende"
+  },
+  "teamB": {
+    "teamId": 282193,
+    "organisationId": 9242,
+    "code": "NANT",
+    "officialName": "Nanterre 92",
+    "shortName": "Nanterre 92"
+  },
+  "teamAScore": 67,
+  "teamBScore": 76,
+  "teamAAggregatedScore": 226,
+  "teamBAggregatedScore": 230,
+  "hostCity": "Oostende",
+  "hostCountry": "Belgium",
+  "hostCountryCode": "BEL",
+  "venueId": 51908,
+  "venueName": "COREtec Dôme",
+  "gameDateTime": "2025-01-14T20:00:00",
+  "gameDateTimeUTC": "2025-01-14T19:00:00",
+  "hasTimeGameDateTime": true,
+  "ianaTimeZone": "Europe/Brussels",
+  "utcOffset": 1,
+  "isPostponed": false,
+  "isPlayedBehindClosedDoors": false,
+  "venueCapacity": 5000,
+  "spectators": 2478,
+  "nominations": [
+    {
+      "personId": 56,
+      "firstName": "Patrick",
+      "lastName": "Flament",
+      "dateOfBirth": "REDACTED",
+      "gender": "M",
+      "roleCode": "BCLTECHDEL",
+      "roleName": "BCL Technical delegate",
+      "roleOrder": null,
+      "defaultNationality": "BEL",
+      "licenseNationality": null
+    },
+    {
+      "personId": 18215,
+      "firstName": "Manuel",
+      "lastName": "Mazzoni",
+      "dateOfBirth": "REDACTED",
+      "gender": "M",
+      "roleCode": "CC",
+      "roleName": "Crew chief",
+      "roleOrder": null,
+      "defaultNationality": "ITA",
+      "licenseNationality": "ITA"
+    },
+    {
+      "personId": 212889,
+      "firstName": "Ariadna",
+      "lastName": "Chueca",
+      "dateOfBirth": "REDACTED",
+      "gender": "F",
+      "roleCode": "UMP",
+      "roleName": "Umpire",
+      "roleOrder": "1",
+      "defaultNationality": "ESP",
+      "licenseNationality": "ESP"
+    }
+  ],
+  "periods": [
+    {
+      "name": "Q1",
+      "number": 1,
+      "teamAScore": 19,
+      "teamBScore": 28,
+      "teamAFrom": "3rd of group B",
+      "teamBFrom": "2nd of group A"
+    },
+    {
+      "name": "Q2",
+      "number": 2,
+      "teamAScore": 17,
+      "teamBScore": 17,
+      "teamAFrom": "3rd of group B",
+      "teamBFrom": "2nd of group A"
+    },
+    {
+      "name": "Q3",
+      "number": 3,
+      "teamAScore": 15,
+      "teamBScore": 12,
+      "teamAFrom": "3rd of group B",
+      "teamBFrom": "2nd of group A"
+    }
+  ],
+  "isLive": false,
+  "currentPeriod": "Q4",
+  "chrono": "00:00",
+  "liveGameStatus": 999,
+  "currentPeriodStatus": "E",
+  "gameStatisticStatusCode": "VALID",
+  "gamePlayByPlayStatusCode": "VALID",
+  "gameResultStatusCode": "VALID",
+  "gameResultAdditionalInformation": "None",
+  "windowId": null,
+  "windowCode": null,
+  "windowName": null
+}

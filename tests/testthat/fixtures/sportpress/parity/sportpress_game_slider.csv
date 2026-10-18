@@ -1,0 +1,30 @@
+game_id,genius_id,game_time,status,competition_id,season,phase_id,phase_name,home_competition_team_id,home_team,home_team_short_name,home_score,away_competition_team_id,away_team,away_team_short_name,away_score
+11275,2873862,2026-10-02 20:30:00,finished,25,2027,183,Regular season 2026-27,545,Hubo Limburg United,LIM,100,563,Kangoeroes Basket Mechelen,MEC,109
+11277,2873608,2026-10-03 20:30:00,finished,25,2027,183,Regular season 2026-27,543,CityX Mons,MON,63,541,Windrose Giants Antwerp,ANT,100
+11279,2873607,2026-10-03 20:30:00,finished,25,2027,183,Regular season 2026-27,559,AB InBev Leuven Bears,LEU,69,537,Val-Dieu Spirou Basket,CHA,65
+11281,2873605,2026-10-03 20:30:00,finished,25,2027,183,Regular season 2026-27,557,Partena Professional Okapi Aalst,AAL,95,539,Coretec Oostende,OOS,87
+11283,2873611,2026-10-04 14:00:00,finished,25,2027,183,Regular season 2026-27,549,Landstede Hammers,ZWO,70,555,Heroes Den Bosch,DBO,59
+11285,2873615,2026-10-06 19:30:00,finished,25,2027,183,Regular season 2026-27,547,Donar Groningen,GRO,81,559,AB InBev Leuven Bears,LEU,78
+11287,2873612,2026-10-06 20:30:00,finished,25,2027,183,Regular season 2026-27,561,Brussels Basketball,BRU,94,567,CB Liège,LIE,70
+11289,2873619,2026-10-09 20:00:00,finished,25,2027,183,Regular season 2026-27,555,Heroes Den Bosch,DBO,79,551,Zeeuw & Zeeuw Rotterdam City,RCB,50
+11291,2873602,2026-10-09 20:30:00,finished,25,2027,183,Regular season 2026-27,567,CB Liège,LIE,73,545,Hubo Limburg United,LIM,101
+11293,2873617,2026-10-09 20:30:00,finished,25,2027,183,Regular season 2026-27,537,Val-Dieu Spirou Basket,CHA,98,543,CityX Mons,MON,60
+11297,2873606,2026-10-10 20:00:00,finished,25,2027,183,Regular season 2026-27,553,Zorg en Zekerheid Leiden,LEI,61,561,Brussels Basketball,BRU,77
+11295,2873604,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,541,Windrose Giants Antwerp,ANT,113,565,House of Talents Spurs Kortrijk,KOR,106
+11299,2873610,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,539,Coretec Oostende,OOS,98,549,Landstede Hammers,ZWO,70
+11301,2873609,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,563,Kangoeroes Basket Mechelen,MEC,79,557,Partena Professional Okapi Aalst,AAL,94
+11303,2873613,2026-10-14 19:30:00,ready,25,2027,183,Regular season 2026-27,547,Donar Groningen,GRO,0,537,Val-Dieu Spirou Basket,CHA,0
+11305,2873614,2026-10-16 20:30:00,ready,25,2027,183,Regular season 2026-27,561,Brussels Basketball,BRU,0,539,Coretec Oostende,OOS,0
+11307,2873616,2026-10-16 20:30:00,ready,25,2027,183,Regular season 2026-27,545,Hubo Limburg United,LIM,0,551,Zeeuw & Zeeuw Rotterdam City,RCB,0
+11309,2873620,2026-10-17 20:00:00,ready,25,2027,183,Regular season 2026-27,553,Zorg en Zekerheid Leiden,LEI,0,557,Partena Professional Okapi Aalst,AAL,0
+11311,2873618,2026-10-17 20:00:00,ready,25,2027,183,Regular season 2026-27,555,Heroes Den Bosch,DBO,0,541,Windrose Giants Antwerp,ANT,0
+11313,2873623,2026-10-17 20:30:00,ready,25,2027,183,Regular season 2026-27,559,AB InBev Leuven Bears,LEU,0,565,House of Talents Spurs Kortrijk,KOR,0
+11315,2873625,2026-10-17 20:30:00,ready,25,2027,183,Regular season 2026-27,543,CityX Mons,MON,0,549,Landstede Hammers,ZWO,0
+11317,2873624,2026-10-17 20:30:00,ready,25,2027,183,Regular season 2026-27,563,Kangoeroes Basket Mechelen,MEC,0,567,CB Liège,LIE,0
+11319,2873626,2026-10-23 20:00:00,ready,25,2027,183,Regular season 2026-27,565,House of Talents Spurs Kortrijk,KOR,0,545,Hubo Limburg United,LIM,0
+11321,2873628,2026-10-23 20:30:00,ready,25,2027,183,Regular season 2026-27,567,CB Liège,LIE,0,555,Heroes Den Bosch,DBO,0
+11323,2873627,2026-10-23 20:30:00,ready,25,2027,183,Regular season 2026-27,537,Val-Dieu Spirou Basket,CHA,0,539,Coretec Oostende,OOS,0
+11325,2873629,2026-10-24 20:00:00,ready,25,2027,183,Regular season 2026-27,541,Windrose Giants Antwerp,ANT,0,563,Kangoeroes Basket Mechelen,MEC,0
+11327,2873630,2026-10-24 20:30:00,ready,25,2027,183,Regular season 2026-27,559,AB InBev Leuven Bears,LEU,0,553,Zorg en Zekerheid Leiden,LEI,0
+11329,2873631,2026-10-25 14:00:00,ready,25,2027,183,Regular season 2026-27,551,Zeeuw & Zeeuw Rotterdam City,RCB,0,543,CityX Mons,MON,0
+11331,2873636,2026-10-25 15:00:00,ready,25,2027,183,Regular season 2026-27,557,Partena Professional Okapi Aalst,AAL,0,547,Donar Groningen,GRO,0

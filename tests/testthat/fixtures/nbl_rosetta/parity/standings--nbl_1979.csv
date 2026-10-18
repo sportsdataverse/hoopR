@@ -1,0 +1,4 @@
+org,rosetta_standing_id,position,won,lost,played,points_percentage,win_percentage,last_5,streak,points_for,points_against,away_losses,away_wins,home_losses,home_wins,team_id,rosetta_team_id,team_code,team_name,season_year,season_type,season_competition_division,season_end_year
+nbl,d6eae747-c22e-4212-a17f-599bc56a16d2,1,16,3,19,0.0,0.84,WWWWW,14,1770,1535,3,6,0,10,bf12d3e3-410c-11f0-8b95-1b3c55488bbb,095cf5ed-700f-404d-8d60-2233f5ef913b,NA,St. Kilda Saints,1979,regular,[],1979
+nbl,972e430b-9b88-478e-a98c-742802011de7,3,13,5,18,0.0,0.72,LLWWW,3,1439,1349,4,6,1,7,bf203568-410c-11f0-8ab2-1b3c55488bbb,e25725e9-700a-4b06-9d10-c86cd8e16c33,NA,Nunawading Spectres,1979,regular,[],1979
+nbl,2e6178d1-aaf1-428e-8301-676bc7f1fa3f,2,13,6,19,0.0,0.68,LWLWL,-1,1541,1492,4,6,2,7,bf5d8e75-410c-11f0-a386-1b3c55488bbb,c6896f8f-f5da-457e-9c15-e278b271110a,NA,Canberra Cannons,1979,regular,[],1979

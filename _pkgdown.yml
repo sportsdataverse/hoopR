@@ -469,6 +469,155 @@ reference:
       - '`euroleague_game_pbp`'
       - '`euroleague_game_boxscore`'
       - '`euroleague_game_header`'
+  - title: International Basketball
+  - subtitle: FIBA
+    desc: >
+      FIBA GDAP API and fiba.basketball game pages: national-team events and FIBA club competitions (`comp` picks the edition).
+    contents:
+      - starts_with("fiba_gdap_")
+      - starts_with("fiba_gamepage_")
+  - subtitle: FIBA competitions
+    desc: >
+      Per-competition FIBA aliases (one family per competition, season = edition).
+    contents:
+      - starts_with("fiba_wc_")
+      - starts_with("fiba_oly_")
+      - starts_with("fiba_bcl_")
+      - starts_with("fiba_afrobasket_")
+      - starts_with("fiba_eurobasket_")
+      - starts_with("fiba_americup_")
+      - starts_with("fiba_asiacup_")
+      - starts_with("fiba_icup_")
+      - starts_with("fiba_bcla_")
+  - subtitle: Genius Sports
+    desc: >
+      Genius Sports hosted, LiveStats and widget feeds (`org` picks the league).
+    contents:
+      - starts_with("genius_")
+  - subtitle: Genius competitions
+    desc: >
+      Per-league Genius aliases.
+    contents:
+      - starts_with("slb_")
+      - starts_with("bal_")
+      - starts_with("nznbl_")
+      - starts_with("esake_")
+      - starts_with("lnbm_")
+      - starts_with("lub_")
+  - subtitle: Atrium (Sportradar)
+    desc: >
+      Sportradar Atrium embed sites (`website_id` picks the site).
+    contents:
+      - starts_with("atrium_")
+  - subtitle: Atrium competitions
+    desc: >
+      Per-site Atrium aliases.
+    contents:
+      - starts_with("lnb_")
+      - starts_with("lnbp_")
+      - starts_with("nbl1_")
+      - starts_with("lmb_")
+      - starts_with("lpb_")
+  - subtitle: NBL (Rosetta)
+    desc: >
+      NBL, WNBL and NBL1 (Australia) on the Rosetta stats API (`org` picks the league).
+    contents:
+      - starts_with("nbl_rosetta_")
+  - subtitle: SCB (BBL)
+    desc: >
+      BBL and DBBL (Germany) over the SCB API.
+    contents:
+      - starts_with("scb_")
+  - subtitle: FEB
+    desc: >
+      Spanish FEB competitions: Primera FEB, Liga Femenina Endesa, Segunda FEB.
+    contents:
+      - starts_with("feb_")
+  - subtitle: TBF
+    desc: >
+      Turkish Basketball Federation app API: BSL and KBSL.
+    contents:
+      - starts_with("tbf_")
+  - subtitle: ABA League
+    desc: >
+      ABA League and ABA League 2 (Adriatic).
+    contents:
+      - starts_with("aba_")
+  - subtitle: ACB
+    desc: >
+      ACB, Liga Endesa (Spain): Liga Endesa, Copa del Rey, Supercopa, Minicopa.
+    contents:
+      - starts_with("acb_")
+  - subtitle: B.League
+    desc: >
+      B.LEAGUE (Japan: B1, B2, B3).
+    contents:
+      - starts_with("bleague_")
+  - subtitle: BNXT League (SportPress)
+    desc: >
+      BNXT League (Belgium / Netherlands) on SportPress.
+    contents:
+      - starts_with("sportpress_")
+  - subtitle: CBA
+    desc: >
+      Chinese Basketball Association (data-server.cbaleague.com).
+    contents:
+      - starts_with("cba_")
+  - subtitle: CEBL
+    desc: >
+      Canadian Elite Basketball League.
+    contents:
+      - starts_with("cebl_")
+  - subtitle: DBL (Sportality)
+    desc: >
+      Basketligaen (Denmark) on Sportality.
+    contents:
+      - starts_with("sportality_")
+  - subtitle: EASL
+    desc: >
+      East Asia Super League, read through an unofficial third-party proxy.
+    contents:
+      - starts_with("easl_")
+  - subtitle: IBBA
+    desc: >
+      Israeli Premier League (IBBA).
+    contents:
+      - starts_with("ibba_")
+  - subtitle: KBL
+    desc: >
+      Korean Basketball League.
+    contents:
+      - starts_with("kbl_")
+  - subtitle: KZS
+    desc: >
+      KZS leagues (Slovenia).
+    contents:
+      - starts_with("kzs_")
+  - subtitle: LBA
+    desc: >
+      Lega Basket Serie A (Italy).
+    contents:
+      - starts_with("lba_")
+  - subtitle: LKL
+    desc: >
+      Lietuvos krepsinio lyga (Lithuania).
+    contents:
+      - starts_with("lkl_")
+  - subtitle: P.LEAGUE+
+    desc: >
+      P. LEAGUE+ (Taiwan), served by a third-party host.
+    contents:
+      - starts_with("pleague_")
+  - subtitle: TPBL
+    desc: >
+      Taipei Professional Basketball League (Taiwan).
+    contents:
+      - starts_with("tpbl_")
+  - subtitle: VTB United League
+    desc: >
+      VTB United League (Russia).
+    contents:
+      - starts_with("vtb_")
   - title: Salary & Mock Draft Sources
   - subtitle: Salary & Draft Functions
     desc: Functions exported by hoopR to scrape Spotrac, HoopsHype, and NBADraft.net

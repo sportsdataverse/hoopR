@@ -1,0 +1,309 @@
+{
+  "type": "player_match_statistics",
+  "fetched": 1791833195,
+  "ttlRemaining": 30,
+  "count": 37,
+  "source": "cb",
+  "data": [
+    {
+      "period": "0",
+      "playing_position": "G",
+      "points": 12,
+      "rebounds": 9,
+      "assists": 0,
+      "blocks": 1,
+      "steals": 1,
+      "turnovers": 3,
+      "offensive_rebounds": 4,
+      "defensive_rebounds": 5,
+      "personal_fouls": 2,
+      "three_points_attempted": 9,
+      "three_points_made": 2,
+      "three_points_percentage": 0.222222,
+      "two_points_attempted": 5,
+      "two_points_made": 3,
+      "two_points_percentage": 0.6,
+      "field_goals_attempted": 14,
+      "field_goals_made": "5",
+      "field_goals_percentage": 0.357143,
+      "free_throws_attempted": 0,
+      "free_throws_made": 0,
+      "free_throws_percentage": 0,
+      "minutes": 38.433334,
+      "participated": true,
+      "match": {
+        "id": "1d79dfd3-7c03-44e9-9d7a-4e5b8020ff38",
+        "external_id": "2f781bb9-18fe-11f1-be21-03773903b9b5",
+        "start_time_datetime": "2026-03-14T09:00:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+          "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+          "name": "Perth Wildcats",
+          "team_code": "PER",
+          "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+          "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456"
+        },
+        "away_team": {
+          "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+          "name": "Sydney Kings",
+          "team_code": "SYD",
+          "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+          "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:"
+        }
+      },
+      "player": {
+        "id": "318cc011-ca3e-4a82-b1cf-fd805b05d6d4",
+        "external_id": "7619d3ea-410d-11f0-9235-2902fc2f936f",
+        "jersey_number": "40",
+        "first_name": "Elijah",
+        "last_name": "Pepper"
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456"
+      },
+      "sc": {
+        "totalScore": 21,
+        "totalScoreWithoutDDandTD": 21,
+        "breakdown": {
+          "points": {
+            "value": 12,
+            "points": 12
+          },
+          "rebounds": {
+            "value": 9,
+            "points": 9
+          },
+          "assists": {
+            "value": 0,
+            "points": 0
+          },
+          "blocks": {
+            "value": 1,
+            "points": 3
+          },
+          "steals": {
+            "value": 1,
+            "points": 3
+          },
+          "turnovers": {
+            "value": 3,
+            "points": -6
+          }
+        },
+        "doubleFigureCount": 1,
+        "seasonTotal": 710
+      }
+    },
+    {
+      "period": "0",
+      "playing_position": "G",
+      "points": 8,
+      "rebounds": 3,
+      "assists": 2,
+      "blocks": 0,
+      "steals": 0,
+      "turnovers": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 3,
+      "personal_fouls": 1,
+      "three_points_attempted": 4,
+      "three_points_made": 2,
+      "three_points_percentage": 0.5,
+      "two_points_attempted": 2,
+      "two_points_made": 1,
+      "two_points_percentage": 0.5,
+      "field_goals_attempted": 6,
+      "field_goals_made": "3",
+      "field_goals_percentage": 0.5,
+      "free_throws_attempted": 0,
+      "free_throws_made": 0,
+      "free_throws_percentage": 0,
+      "minutes": 21.583332,
+      "participated": true,
+      "match": {
+        "id": "caf73318-26ae-4a72-92e6-77533e870564",
+        "external_id": "b2208500-4bef-11f0-b419-1738d9104f5f",
+        "start_time_datetime": "2025-12-07T05:30:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+          "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+          "name": "Perth Wildcats",
+          "team_code": "PER",
+          "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+          "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456"
+        },
+        "away_team": {
+          "id": "3164912c-7e74-463b-8fc3-5f7d45edfcc6",
+          "name": "Adelaide 36ers",
+          "team_code": "ADL",
+          "team_logo": "https://cdn.nbl.com.au/app_assets/ADL.png",
+          "team_logo_blurhash": "L268Q{xv00NI%OfRoIt600Rj~qoe"
+        }
+      },
+      "player": {
+        "id": "318cc011-ca3e-4a82-b1cf-fd805b05d6d4",
+        "external_id": "7619d3ea-410d-11f0-9235-2902fc2f936f",
+        "jersey_number": "40",
+        "first_name": "Elijah",
+        "last_name": "Pepper"
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456"
+      },
+      "sc": {
+        "totalScore": 11,
+        "totalScoreWithoutDDandTD": 11,
+        "breakdown": {
+          "points": {
+            "value": 8,
+            "points": 8
+          },
+          "rebounds": {
+            "value": 3,
+            "points": 3
+          },
+          "assists": {
+            "value": 2,
+            "points": 4
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 0,
+            "points": 0
+          },
+          "turnovers": {
+            "value": 2,
+            "points": -4
+          }
+        },
+        "doubleFigureCount": 0,
+        "seasonTotal": 710
+      }
+    },
+    {
+      "period": "0",
+      "playing_position": "G",
+      "points": 3,
+      "rebounds": 1,
+      "assists": 1,
+      "blocks": 0,
+      "steals": 0,
+      "turnovers": 1,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "personal_fouls": 1,
+      "three_points_attempted": 7,
+      "three_points_made": 1,
+      "three_points_percentage": 0.142857,
+      "two_points_attempted": 0,
+      "two_points_made": 0,
+      "two_points_percentage": 0,
+      "field_goals_attempted": 7,
+      "field_goals_made": "1",
+      "field_goals_percentage": 0.142857,
+      "free_throws_attempted": 0,
+      "free_throws_made": 0,
+      "free_throws_percentage": 0,
+      "minutes": 11.783333,
+      "participated": true,
+      "match": {
+        "id": "a0aac042-7f92-4e11-98fc-3d78b11cb5cc",
+        "external_id": "b1af85d1-4bef-11f0-8087-abf05c51dbb7",
+        "start_time_datetime": "2025-09-27T07:30:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+          "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "bbae77db-317d-4c17-aa04-75d53d20ad15",
+          "name": "NZ Breakers",
+          "team_code": "NZL",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        },
+        "away_team": {
+          "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+          "name": "Perth Wildcats",
+          "team_code": "PER",
+          "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+          "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456"
+        }
+      },
+      "player": {
+        "id": "318cc011-ca3e-4a82-b1cf-fd805b05d6d4",
+        "external_id": "7619d3ea-410d-11f0-9235-2902fc2f936f",
+        "jersey_number": "40",
+        "first_name": "Elijah",
+        "last_name": "Pepper"
+      },
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "name": "Perth Wildcats",
+        "team_code": "PER",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456"
+      },
+      "sc": {
+        "totalScore": 4,
+        "totalScoreWithoutDDandTD": 4,
+        "breakdown": {
+          "points": {
+            "value": 3,
+            "points": 3
+          },
+          "rebounds": {
+            "value": 1,
+            "points": 1
+          },
+          "assists": {
+            "value": 1,
+            "points": 2
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 0,
+            "points": 0
+          },
+          "turnovers": {
+            "value": 1,
+            "points": -2
+          }
+        },
+        "doubleFigureCount": 0,
+        "seasonTotal": 710
+      }
+    }
+  ]
+}

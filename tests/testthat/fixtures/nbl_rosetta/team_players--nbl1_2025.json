@@ -1,0 +1,171 @@
+{
+  "type": "rosters",
+  "fetched": 1791833188,
+  "ttlRemaining": 1800,
+  "count": 19,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": null,
+      "playing_position": null,
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "color_primary": "#0039a6",
+        "color_secondary": "#007934",
+        "gender": "MALE",
+        "team_nickname": "GCR",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "player": {
+        "id": "cbd1d119-ab9a-4e38-b8cc-c2eb02a4b3ca",
+        "external_id": "eea6197a-cc60-11ec-aa9e-93fdbf5a197a",
+        "first_name": "Elijah",
+        "last_name": "Kamu",
+        "full_name": "Elijah Kamu",
+        "jersey_number": null,
+        "playing_position": null,
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/d5adab116343412c8562404f84eae972?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "2005-02-26",
+        "nationality": null,
+        "height": 199,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality_code": "AUS",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": "F",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    },
+    {
+      "jersey_number": null,
+      "playing_position": null,
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "color_primary": "#0039a6",
+        "color_secondary": "#007934",
+        "gender": "MALE",
+        "team_nickname": "GCR",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "player": {
+        "id": "bfd48190-1e99-4e4c-98e5-84ae1c7372aa",
+        "external_id": "ecd01b80-24a9-11f0-bc70-55c4b5fd26c5",
+        "first_name": "Charles",
+        "last_name": "Smith",
+        "full_name": "Charles Smith IV",
+        "jersey_number": null,
+        "playing_position": null,
+        "image": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1n81/f37647de211f47ee9bf415462cc9ef5e?size=800&format=webp",
+        "active": true,
+        "date_of_birth": null,
+        "nationality": null,
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality_code": "USA",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    },
+    {
+      "jersey_number": null,
+      "playing_position": null,
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "color_primary": "#0039a6",
+        "color_secondary": "#007934",
+        "gender": "MALE",
+        "team_nickname": "GCR",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "player": {
+        "id": "d8e65241-e6d1-4580-b44c-0d3a929e4ef9",
+        "external_id": "3eb77c44-c9f9-11ed-b923-e7d3358ea93f",
+        "first_name": "Joshua",
+        "last_name": "Wolff",
+        "full_name": "Joshua Wolff",
+        "jersey_number": null,
+        "playing_position": null,
+        "image": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1n81/ba3f6301e0b9481794a867f65fc8edcb?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "2004-05-19",
+        "nationality": null,
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality_code": "AUS",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    }
+  ]
+}

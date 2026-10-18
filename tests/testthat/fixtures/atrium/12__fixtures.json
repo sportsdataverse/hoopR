@@ -1,0 +1,381 @@
+{
+  "data": {
+    "broadcastsLabels": {
+      "allBroadcasters": "All Broadcasters",
+      "watch": "Watch"
+    },
+    "config": {
+      "currentPage": "fixtures",
+      "labelPage": "Calendrier",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showEntityLogo": true,
+      "sport": "basketball"
+    },
+    "entities": null,
+    "fixtures": [
+      {
+        "attendance": null,
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "PAB",
+            "colors": {
+              "primary": "141414",
+              "secondary": "3273B8",
+              "tertiary": "000000"
+            },
+            "draw": false,
+            "entityId": "f43b1b0f-55bc-11f0-84d9-01499d2f0a07",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzUEOgzAMBMCvIJ9ryW5iEfMAHsAPEhyfygXUQ0H8vQSOo13tHrDB0IF5YMokKJwNmZ2wWFKc-yBCqXIlhVcHn1b2FcepaW_avsuS119zvdMYChdyFCnzM5WiKRJHVXv7ddPD-Qca8R46"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1fgf/8cc2654e9e61483395b1429f82d035d9?size=100",
+            "name": "Paris",
+            "resultPlace": 1,
+            "resultStatus": "CONFIRMED",
+            "score": "87",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          },
+          {
+            "code": "VIL",
+            "colors": {
+              "primary": "2D2D2D",
+              "secondary": "FFFFFF",
+              "tertiary": "1D1D1D"
+            },
+            "draw": false,
+            "entityId": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=100",
+            "name": "Lyon-Villeurbanne",
+            "resultPlace": 2,
+            "resultStatus": "CONFIRMED",
+            "score": "76",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          }
+        ],
+        "fixtureId": "5423072b-6715-11f0-bd8b-9ffadebc148f",
+        "fixtureType": "REGULAR",
+        "link": "&~w=f~eJw9yzEOgCAMQNGrkM42aYEKeAAP4A0o0MlJR-PdDYvjS_5_4IbNQbfAVElQuHZkNkLtuWBLQYTy4EEFFgfnjO3C_ZiyKYk-UPKKa2L5V8ViVvvQxjEbvB8u7xnt",
+        "name": "Paris - Lyon-Villeurbanne",
+        "pool": "",
+        "round": "Journée: 30",
+        "roundCode": null,
+        "series": null,
+        "stageCode": null,
+        "startTimeLocal": "2026-05-16T19:00:00",
+        "startTimeUTC": "2026-05-16T17:00:00",
+        "status": {
+          "label": "Terminé",
+          "value": "CONFIRMED"
+        },
+        "timesUnconfirmed": false,
+        "timezone": "Europe/Paris",
+        "venue": "Adidas Arena",
+        "venueId": "8defa300-0ea6-11ee-b1e2-bb6d87253cfd"
+      },
+      {
+        "attendance": 6016,
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "LEM",
+            "colors": {
+              "primary": "FE5213",
+              "secondary": "101820",
+              "tertiary": "C04011"
+            },
+            "draw": false,
+            "entityId": "7e9f3d8d-55bb-11f0-ae66-df8c8ac8c329",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzMEJwzAMQNFVgs4VSDVK5A7QAbqBbFmn5JKQQ1u6exA9Pvj8LxzwmMCjMBkJCpsjcxA214p9KSKkgwdVuE2wZhw7Pl-pT-o4t832d3qkl1GjuDqKtPZf2Zhn9NCu1rWXe4XfBSjfHxc"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1fgf/9f11ef554beb4bf69790b7b3ba3a72b2?size=100",
+            "name": "Le Mans",
+            "resultPlace": 1,
+            "resultStatus": "CONFIRMED",
+            "score": "101",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          },
+          {
+            "code": "LIM",
+            "colors": {
+              "primary": "138A54",
+              "secondary": "FFB90F",
+              "tertiary": "0D663E"
+            },
+            "draw": false,
+            "entityId": "ca771ea2-55bb-11f0-a0bc-85c4b9894a07",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzDsKhUAMQNGtSGoDiRpmxgW4AHeQzKfSRrF4T9y7BMsDl3vDCXMHpY1MSoLCWpC5EVqJCXMYRShWrpSg72DzuB24rK6_67z2XY-fu7qzhsBVBxQx-1ZKljFKnizFNCkFeF4i0h6a"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1fgf/d32ae82445d24a2db6bc2194d1515b05?size=100",
+            "name": "Limoges",
+            "resultPlace": 2,
+            "resultStatus": "CONFIRMED",
+            "score": "84",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          }
+        ],
+        "fixtureId": "542b0576-6715-11f0-8a29-9ffadebc148f",
+        "fixtureType": "REGULAR",
+        "link": "&~w=f~eJwly7sNgDAMANFVkGss2UmcOAzAAGyQnysqKBG7o4jySXcP3LAt0M0zFRIULh2ZjbB2zdiSFyEdPCjDusA5Y7twP6ZsSoKrJCliTCz_qsVlzGalj9o4qMH7ASocGZc",
+        "name": "Le Mans - Limoges",
+        "pool": "",
+        "round": "Journée: 30",
+        "roundCode": null,
+        "series": null,
+        "stageCode": null,
+        "startTimeLocal": "2026-05-16T19:00:00",
+        "startTimeUTC": "2026-05-16T17:00:00",
+        "status": {
+          "label": "Terminé",
+          "value": "CONFIRMED"
+        },
+        "timesUnconfirmed": false,
+        "timezone": "Europe/Paris",
+        "venue": "Antares",
+        "venueId": "d40b7d32-f524-11eb-b66f-c2efbc2859b9"
+      },
+      {
+        "attendance": null,
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "LEP",
+            "colors": {
+              "primary": "2AA95B",
+              "secondary": "DC820C",
+              "tertiary": "178942"
+            },
+            "draw": false,
+            "entityId": "9ebf8651-55bb-11f0-b6ad-2f4a48ae850a",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwtzLENg0AMQNFVkOtYsgMmvgyQAbKBj7MraEAUEGV3Yinlk77-BzZ4dtCiZzISFLaGzEFYmxacHr0IqbNTgVsHc8ax4uudOlPbviy2HmlPF6-hozCK1Ppfjb_pPQYb1FyFDL4XIaYe0Q"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1fgf/0740b38ed33b4dbda799f3e19d3841c8?size=100",
+            "name": "Le Portel",
+            "resultPlace": 2,
+            "resultStatus": "CONFIRMED",
+            "score": "80",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          },
+          {
+            "code": "DIJ",
+            "colors": {
+              "primary": "892F5C",
+              "secondary": "1D2749",
+              "tertiary": "6C1D45"
+            },
+            "draw": false,
+            "entityId": "238ad480-55b8-11f0-ada9-1b2b39c0d600",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwlzLENwkAMRuFVItdY-p3D4GOADMAGvviuIk0iCkDsjizKT3p6HzroNlGMInAoq3iwyAC3sMrrtajCunRUOk30yHjsvNxT79Tx3DbfX-menot5nA2s2uy_8vDK0uZW6oq4APT9AROeHjA"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1fgf/d75d46d8f9474798b55e76f0efd76c0e?size=100",
+            "name": "Dijon",
+            "resultPlace": 1,
+            "resultStatus": "CONFIRMED",
+            "score": "126",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          }
+        ],
+        "fixtureId": "543306d1-6715-11f0-9313-9ffadebc148f",
+        "fixtureType": "REGULAR",
+        "link": "&~w=f~eJwly7ENgDAMBdFVkGss-csxJAzAAGwQcFxRQYnYHUWUT7p76KZlIA-FVDE2VGcghHfPhY9ZzSQ3NCk0DnT2OC5et67osqQqk4OnGfavRaFcIqq3_UDKQe8HJV8ZXg",
+        "name": "Le Portel - Dijon",
+        "pool": "",
+        "round": "Journée: 30",
+        "roundCode": null,
+        "series": null,
+        "stageCode": null,
+        "startTimeLocal": "2026-05-16T19:00:00",
+        "startTimeUTC": "2026-05-16T17:00:00",
+        "status": {
+          "label": "Terminé",
+          "value": "CONFIRMED"
+        },
+        "timesUnconfirmed": false,
+        "timezone": "Europe/Paris",
+        "venue": "Le Chaudron",
+        "venueId": "d460c382-f524-11eb-b66f-c2efbc2859b9"
+      }
+    ],
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "noFixturesMessage": "Aucun match à afficher",
+    "reverseTeamOrder": false,
+    "rounds": {
+      "id": "round-select",
+      "options": [
+        {
+          "label": "Toutes les journées",
+          "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+          "order": -1,
+          "value": "All"
+        },
+        {
+          "active": false,
+          "label": "Journée: 1",
+          "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULAvGqQLwg1-BQn5BgEL8oDyRgqFQLAJmdFNM",
+          "order": 1,
+          "value": "1"
+        },
+        {
+          "active": false,
+          "label": "Journée: 2",
+          "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULAvGqQLwg1-BQn5BgEL8oDyRgpFQLAJmgFNQ",
+          "order": 2,
+          "value": "2"
+        }
+      ],
+      "selected": "All"
+    },
+    "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+    "seasons": {
+      "competitions": {
+        "0847055c-2fb3-11ef-9b30-3333ffdb8385": {
+          "name": "PROB"
+        },
+        "213e021f-19b5-11ee-9190-29c4f278bc32": {
+          "name": "PROB"
+        },
+        "27a79741-597b-11ef-9104-c9f30fad1f7e": {
+          "name": "Betclic ÉLITE - Play-In"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "2c58cdf2-51d1-11f0-b783-c5cbc0fbb14f",
+          "link": "&~w=fl~eJyrVipWslJQMkm0MDdPNUzTNTVMMdQ1NEwz0E20sLTQtTBMNU81TzFMs7RMVNJRUMoBKU4r0nULUqoFALn7Dtw",
+          "nameLocal": "All Star Game 2025",
+          "seasonId": "4a877e1f-51d1-11f0-a898-81e7e7d1f99a",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "b98931f7-51d3-11f0-8483-9d47ff25959f",
+          "link": "&~w=fl~eJyrVipWslJQSjE3SjE1S7TQNTVMMdY1NEwz0LU0SUnSNTK1NDEwMTMztzQ3U9JRUMoBKU4r0nULUqoFAKquDhc",
+          "nameLocal": "Betclic ÉLITE - Playoffs 2025",
+          "seasonId": "d72d56a8-51d3-11f0-94db-259404667976",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "3f4064bb-51ad-11f0-aaaf-2923c944b404",
+          "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+          "nameLocal": "Betclic ÉLITE 2025",
+          "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+          "year": 2025
+        }
+      ]
+    },
+    "series": null,
+    "showFixtureName": true,
+    "stageTabs": {},
+    "sub": "RESULTS",
+    "subPageTabs": [
+      {
+        "label": "Calendrier",
+        "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULAvGqQDw3z4iQ0CDXYKVaANTBEtw",
+        "value": "FIXTURES"
+      },
+      {
+        "label": "Résultats",
+        "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULAvGqQLwg1-BQn5BgpVoAwhISlA",
+        "value": "RESULTS"
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/fixtures?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09&sub=RESULTS"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 16,
+    "fromCache": false,
+    "generated": "2026-10-12T18:23:52.561748+00:00Z",
+    "generationTime": 0.285853,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:23:54.298624+00:00Z",
+    "version": 1
+  }
+}

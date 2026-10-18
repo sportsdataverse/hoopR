@@ -1,0 +1,106 @@
+{
+  "data": {
+    "kazanilan": 1,
+    "kaybedilen": 2,
+    "kendiSahasiKazanilan": 1,
+    "kendiSahasiKaybedilen": 1,
+    "rakipSahasiKazanilan": 0,
+    "rakipSahasiKaybedilen": 1,
+    "karsilastirma_KSKazandigi": 1,
+    "karsilastirma_RSKazandigi": 0,
+    "maclar": [
+      {
+        "matchId": 346279,
+        "matchCode": "1EA4917",
+        "tarih": "2026-09-25T19:00:00",
+        "sehir": "BURSA",
+        "salon": "Tofaş Spor Salonu",
+        "takimA": "TOFAŞ",
+        "takimAId": 265995,
+        "takimB": "PİZZABULLS BORDO BANDIRMA",
+        "takimBId": 265993,
+        "skorA": "90",
+        "skorB": "89",
+        "formattedWeek": "1. Hafta",
+        "scoreFormatted": "90 - 89",
+        "isHome": true,
+        "isWin": true,
+        "isLose": false,
+        "isPlayed": true,
+        "durum": "Oynandı",
+        "durumId": 1,
+        "takimALogo": "https://tbf.org.tr/res/333679-13_120-91B27244-2D6D-4AFF-9910-BEDE52361FF8.gif",
+        "takimBLogo": "https://tbf.org.tr/res/ac7222b2-80ae-4e4b-bf72-cc226b01f3c8_bordo_pizzabullslogo_version.png",
+        "matchChannelBroadcast": "beINSports",
+        "hasUzatma": false
+      },
+      {
+        "matchId": 346287,
+        "matchCode": "1EA4925",
+        "tarih": "2026-10-03T13:00:00",
+        "sehir": "DENİZLİ",
+        "salon": "Pamukkale Üniversitesi Spor Salonu",
+        "takimA": "YUKATEL DENİZLİ BASKET",
+        "takimAId": 266028,
+        "takimB": "TOFAŞ",
+        "takimBId": 265995,
+        "skorA": "101",
+        "skorB": "87",
+        "formattedWeek": "2. Hafta",
+        "scoreFormatted": "101 - 87",
+        "isHome": false,
+        "isWin": false,
+        "isLose": true,
+        "isPlayed": true,
+        "durum": "Oynandı",
+        "durumId": 1,
+        "takimALogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "takimBLogo": "https://tbf.org.tr/res/333679-13_120-91B27244-2D6D-4AFF-9910-BEDE52361FF8.gif",
+        "matchChannelBroadcast": "beINSports",
+        "hasUzatma": false
+      },
+      {
+        "matchId": 346295,
+        "matchCode": "1EA4933",
+        "tarih": "2026-10-10T18:00:00",
+        "sehir": "BURSA",
+        "salon": "Tofaş Spor Salonu",
+        "takimA": "TOFAŞ",
+        "takimAId": 265995,
+        "takimB": "ESENLER EROKSPOR",
+        "takimBId": 266024,
+        "skorA": "79",
+        "skorB": "87",
+        "formattedWeek": "3. Hafta",
+        "scoreFormatted": "79 - 87",
+        "isHome": true,
+        "isWin": false,
+        "isLose": true,
+        "isPlayed": true,
+        "durum": "Oynandı",
+        "durumId": 1,
+        "takimALogo": "https://tbf.org.tr/res/333679-13_120-91B27244-2D6D-4AFF-9910-BEDE52361FF8.gif",
+        "takimBLogo": "https://tbf.org.tr/res/830be5fe-f014-4b0f-944a-ca81304b75c3_EsenlerEroksporcopy.png",
+        "matchChannelBroadcast": "beINSports",
+        "hasUzatma": false
+      }
+    ],
+    "rakipTakimlar": [
+      {
+        "takimIslemId": 266048,
+        "takimAdi": "ALİAĞA PETKİM SPOR"
+      },
+      {
+        "takimIslemId": 265990,
+        "takimAdi": "ANADOLU EFES"
+      },
+      {
+        "takimIslemId": 265991,
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

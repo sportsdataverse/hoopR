@@ -1,0 +1,5 @@
+website_id,fixture_id,season_id,period_id,label,is_overtime,is_shootout,started,ended,duration_minutes,elapsed_minutes_before_period,home_entity_id,away_entity_id,home_points,away_points
+12,5423072b-6715-11f0-bd8b-9ffadebc148f,df310a05-51ad-11f0-bd89-c735508e1e09,1,Q1,false,false,true,true,10,0,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,25bcb29d-55bc-11f0-8037-fb553c4eab1b,17,13
+12,5423072b-6715-11f0-bd8b-9ffadebc148f,df310a05-51ad-11f0-bd89-c735508e1e09,2,Q2,false,false,true,true,10,10,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,25bcb29d-55bc-11f0-8037-fb553c4eab1b,22,31
+12,5423072b-6715-11f0-bd8b-9ffadebc148f,df310a05-51ad-11f0-bd89-c735508e1e09,3,Q3,false,false,true,true,10,20,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,25bcb29d-55bc-11f0-8037-fb553c4eab1b,23,16
+12,5423072b-6715-11f0-bd8b-9ffadebc148f,df310a05-51ad-11f0-bd89-c735508e1e09,4,Q4,false,false,true,true,10,30,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,25bcb29d-55bc-11f0-8037-fb553c4eab1b,25,16

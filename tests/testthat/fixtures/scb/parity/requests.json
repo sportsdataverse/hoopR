@@ -1,0 +1,115 @@
+{
+ "scb_seasons": {
+  "url": "https://api.basketball-bundesliga.de/seasons",
+  "query": {}
+ },
+ "scb_season_players": {
+  "url": "https://api.basketball-bundesliga.de/seasons/2026",
+  "query": {}
+ },
+ "scb_season_teams": {
+  "url": "https://api.basketball-bundesliga.de/seasons/2026",
+  "query": {}
+ },
+ "scb_playoff_series": {
+  "url": "https://api.basketball-bundesliga.de/seasons/2025/playoff-tree",
+  "query": {}
+ },
+ "scb_playoff_games": {
+  "url": "https://api.basketball-bundesliga.de/seasons/2025/playoff-tree",
+  "query": {}
+ },
+ "scb_player_statistics": {
+  "url": "https://api-1.dbbl.scb.world/seasons/2025/player-statistics",
+  "query": {
+   "displayType": "MAIN_ROUND"
+  }
+ },
+ "scb_team_statistics": {
+  "url": "https://api-1.dbbl.scb.world/seasons/2025/team-statistics",
+  "query": {
+   "displayType": "MAIN_ROUND"
+  }
+ },
+ "scb_games": {
+  "url": "https://api-1.dbbl.scb.world/games",
+  "query": {
+   "currentPage": 1,
+   "seasonId": 2024,
+   "pageSize": 500
+  }
+ },
+ "scb_games_recent": {
+  "url": "https://api.basketball-bundesliga.de/games/recent",
+  "query": {}
+ },
+ "scb_game": {
+  "url": "https://api.basketball-bundesliga.de/games/2006920",
+  "query": {}
+ },
+ "scb_game_players": {
+  "url": "https://api.basketball-bundesliga.de/games/2006920/stats",
+  "query": {}
+ },
+ "scb_game_teams": {
+  "url": "https://api.basketball-bundesliga.de/games/2006920/stats",
+  "query": {}
+ },
+ "scb_game_actions": {
+  "url": "https://api.basketball-bundesliga.de/games/2006920/stats",
+  "query": {}
+ },
+ "scb_game_players__2005": {
+  "url": "https://api.basketball-bundesliga.de/games/2729/stats",
+  "query": {}
+ },
+ "scb_game_teams__2005": {
+  "url": "https://api.basketball-bundesliga.de/games/2729/stats",
+  "query": {}
+ },
+ "scb_standings": {
+  "url": "https://api-1.dbbl.scb.world/standings",
+  "query": {
+   "seasonId": 2024
+  }
+ },
+ "scb_season_player": {
+  "url": "https://api.basketball-bundesliga.de/season-players/56414",
+  "query": {}
+ },
+ "scb_team": {
+  "url": "https://api.basketball-bundesliga.de/teams/413",
+  "query": {}
+ },
+ "scb_team_seasons": {
+  "url": "https://api.basketball-bundesliga.de/teams/413",
+  "query": {}
+ },
+ "scb_referees": {
+  "url": "https://api.basketball-bundesliga.de/referees",
+  "query": {
+   "currentPage": 1,
+   "pageSize": 100
+  }
+ },
+ "scb_transfers": {
+  "url": "https://api.basketball-bundesliga.de/transfers",
+  "query": {}
+ },
+ "scb_transfers_teams": {
+  "url": "https://api.basketball-bundesliga.de/transfers/teams",
+  "query": {}
+ },
+ "scb_team_rosters": {
+  "url": "https://api.basketball-bundesliga.de/transfers/teams",
+  "query": {}
+ },
+ "scb_records_per_game": {
+  "url": "https://api.basketball-bundesliga.de/records/per-game/2025",
+  "query": {}
+ },
+ "scb_records_season_averages": {
+  "url": "https://api.basketball-bundesliga.de/records/season-averages",
+  "query": {}
+ }
+}

@@ -1,0 +1,4 @@
+season,competition,team_process_id,match_id,match_code,tipoff,week,city,venue,home_team_process_id,home_team,home_score,away_team_process_id,away_team,away_score,team_is_home,team_won,is_played,status,status_id,has_overtime
+2027,bsl,265995,346279,1EA4917,2026-09-25 19:00:00,1. Hafta,BURSA,Tofaş Spor Salonu,265995,TOFAŞ,90,265993,PİZZABULLS BORDO BANDIRMA,89,true,true,true,Oynandı,1,false
+2027,bsl,265995,346287,1EA4925,2026-10-03 13:00:00,2. Hafta,DENİZLİ,Pamukkale Üniversitesi Spor Salonu,266028,YUKATEL DENİZLİ BASKET,101,265995,TOFAŞ,87,false,false,true,Oynandı,1,false
+2027,bsl,265995,346295,1EA4933,2026-10-10 18:00:00,3. Hafta,BURSA,Tofaş Spor Salonu,265995,TOFAŞ,79,266024,ESENLER EROKSPOR,87,true,false,true,Oynandı,1,false

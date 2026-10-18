@@ -1,0 +1,444 @@
+{
+  "type": "matches",
+  "fetched": 1791833149,
+  "ttlRemaining": 30,
+  "count": 114,
+  "source": "cb",
+  "data": [
+    {
+      "id": "1b7bee1e-0fcb-11f1-b26e-b76e98ed2db8",
+      "external_id": "1b7bee1e-0fcb-11f1-b26e-b76e98ed2db8",
+      "external_media_id": "69183544",
+      "date_updated": "2026-03-03T14:01:04.000Z",
+      "start_time": "2026-03-01T05:00:00",
+      "start_time_datetime": "2026-03-01T05:00:00",
+      "round": "CHAMPIONSHIP",
+      "match_type": null,
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "105",
+      "away_score": "108",
+      "attendance": "3704",
+      "match_slug": "perth-lynx-v-townsville-fire-women-01-03-2026",
+      "match_title": "Perth Lynx v Townsville Fire women 01-03-2026",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "c451d4eb-4d67-42f5-a0f9-86095129e389",
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "33771c34-6092-4882-a528-584daadf5950",
+        "external_id": "b0bc2a26-45e4-11f0-b57d-d76608926233",
+        "name": "Perth High Performance Centre",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": null,
+        "capacity": null,
+        "timezone": "Australia/Perth",
+        "venue_code": "PHPC",
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "e359bd92-9acc-4a33-bbb0-fa252d4c3a4b",
+        "external_id": "e7d4f3a7-45e2-11f0-9ce6-c5864f4b75a8",
+        "name": "Perth Lynx",
+        "external_team_name": "Perth Lynx",
+        "team_nickname": "PER",
+        "team_code": "PER",
+        "ticket_url": "https://www.ticketmaster.com.au/perth-lynx-tickets/artist/2165336",
+        "team_logo": "https://cdn.prod.website-files.com/686b7413d55721115d6e0d55/689a7b6dc7d33f853eb1153c_lynx-icon-full-outline%402x.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/686b7413d55721115d6e0d55/689a7b6dc7d33f853eb1153c_lynx-icon-full-outline%402x.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/3933fe9d08704eb59c1bd14b4a29b5b2?size=200&format=webp",
+        "color_primary": "#fa0404",
+        "color_secondary": "#fccfcf",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LIJ72i%#*J#95+V[=eoz8IVZ-pcE",
+        "team_logo_transparent_blurhash": "LIJ72i%#*J#95+V[=eoz8IVZ-pcE",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "d4082ccf-a46c-4766-b41b-efa3143b8188",
+        "external_id": "e7d138b4-45e2-11f0-b18b-c5864f4b75a8",
+        "name": "Townsville Fire",
+        "external_team_name": "Townsville Fire",
+        "team_nickname": "TSV",
+        "team_code": "TSV",
+        "ticket_url": "https://www.ticketmaster.com.au/townsville-fire-tickets/artist/3034375?venueId=158183",
+        "team_logo": "https://cdn.prod.website-files.com/686dc6510ed19bd7d682101b/6892da4eeef4bafcc120df16_tsv-logo-fire-sq.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=200&format=webp",
+        "color_primary": "#f97305",
+        "color_secondary": "#000000",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LBE-HNwf06o[_CRm4wt41INJrdod",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "name": "WNBL26",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "FEMALE",
+        "competition": {
+          "id": "cbcbfcd0-1bae-47db-a3a7-1fe70ca2feaf",
+          "name": "WNBL",
+          "gender": "female",
+          "league": {
+            "name": "WNBL Synergy",
+            "league_primary_color": "#6204B2",
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "d029e3d4-249d-4703-bcf7-07d87a5aaa18",
+        "name": "9Now",
+        "url": "https://www.9now.com.au/live/channel-9",
+        "logo_url": "https://nxs.nbl.com.au/assets/214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png",
+        "light_screen_logo": {
+          "filename_disk": "214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png",
+        "logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "dark_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "light_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz"
+      },
+      "secondary_broadcaster": {
+        "id": "5c171e38-f694-4de8-a916-6a92322bd073",
+        "url": null,
+        "name": "ESPN - WNBL",
+        "logo_url": "https://nxs.nbl.com.au/assets/a2e04e48-b232-46a0-b990-3dc32be1a19c.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/c09419a7-16c2-42c8-a817-b1eb65a0619f.png",
+        "light_screen_logo": {
+          "filename_disk": "a2e04e48-b232-46a0-b990-3dc32be1a19c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "c09419a7-16c2-42c8-a817-b1eb65a0619f.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/a2e04e48-b232-46a0-b990-3dc32be1a19c.png",
+        "logo_url_blurhash": "LCJCtI,t1aEz|xJlE}$O2WbH#:S1",
+        "dark_screen_logo_url_blurhash": "LXPQ87-;D%of~qWBRjt700Rjt7fQ",
+        "light_screen_logo_url_blurhash": "LCJCtI,t1aEz|xJlE}$O2WbH#:S1"
+      },
+      "tertiary_broadcaster": {
+        "id": "937e9778-8524-4bcd-b582-8bcc3f7a9078",
+        "url": null,
+        "name": "9Go",
+        "logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/9GO.png?q=1",
+        "dark_screen_logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/9GO_DarkBG.png?q=1",
+        "light_screen_logo": null,
+        "dark_screen_logo": null,
+        "light_screen_logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/9GO.png?q=1",
+        "logo_url_blurhash": "L00000fQfQfQfQfQfQfQfQfQfQfQ",
+        "dark_screen_logo_url_blurhash": "LDM7u;xu00IU~qWBRjIU00Rj_3M{",
+        "light_screen_logo_url_blurhash": "L00000fQfQfQfQfQfQfQfQfQfQfQ"
+      },
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    },
+    {
+      "id": "ce105a2e-0fca-11f1-b500-197b10c8819e",
+      "external_id": "ce105a2e-0fca-11f1-b500-197b10c8819e",
+      "external_media_id": "69183454",
+      "date_updated": "2026-02-27T14:00:54.000Z",
+      "start_time": "2026-02-26T08:00:00",
+      "start_time_datetime": "2026-02-26T08:00:00",
+      "round": "CHAMPIONSHIP",
+      "match_type": null,
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "88",
+      "away_score": "79",
+      "attendance": "3891",
+      "match_slug": "townsville-fire-v-perth-lynx-women-26-02-2026",
+      "match_title": "Townsville Fire v Perth Lynx women 26-02-2026",
+      "match_ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=TOWNFIRE26",
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "91778cd8-7d4c-480b-a440-48a831105b93",
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "ad6ce592-9498-4e5f-af63-cf10c56abf98",
+        "external_id": "b12945fa-45e4-11f0-9a88-d76608926233",
+        "name": "Townsville Entertainment & Convention Centre",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": "AUS",
+        "capacity": null,
+        "timezone": "Australia/Queensland",
+        "venue_code": "TEC",
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "d4082ccf-a46c-4766-b41b-efa3143b8188",
+        "external_id": "e7d138b4-45e2-11f0-b18b-c5864f4b75a8",
+        "name": "Townsville Fire",
+        "external_team_name": "Townsville Fire",
+        "team_nickname": "TSV",
+        "team_code": "TSV",
+        "ticket_url": "https://www.ticketmaster.com.au/townsville-fire-tickets/artist/3034375?venueId=158183",
+        "team_logo": "https://cdn.prod.website-files.com/686dc6510ed19bd7d682101b/6892da4eeef4bafcc120df16_tsv-logo-fire-sq.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=200&format=webp",
+        "color_primary": "#f97305",
+        "color_secondary": "#000000",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LBE-HNwf06o[_CRm4wt41INJrdod",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "e359bd92-9acc-4a33-bbb0-fa252d4c3a4b",
+        "external_id": "e7d4f3a7-45e2-11f0-9ce6-c5864f4b75a8",
+        "name": "Perth Lynx",
+        "external_team_name": "Perth Lynx",
+        "team_nickname": "PER",
+        "team_code": "PER",
+        "ticket_url": "https://www.ticketmaster.com.au/perth-lynx-tickets/artist/2165336",
+        "team_logo": "https://cdn.prod.website-files.com/686b7413d55721115d6e0d55/689a7b6dc7d33f853eb1153c_lynx-icon-full-outline%402x.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/686b7413d55721115d6e0d55/689a7b6dc7d33f853eb1153c_lynx-icon-full-outline%402x.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/3933fe9d08704eb59c1bd14b4a29b5b2?size=200&format=webp",
+        "color_primary": "#fa0404",
+        "color_secondary": "#fccfcf",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LIJ72i%#*J#95+V[=eoz8IVZ-pcE",
+        "team_logo_transparent_blurhash": "LIJ72i%#*J#95+V[=eoz8IVZ-pcE",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "name": "WNBL26",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "FEMALE",
+        "competition": {
+          "id": "cbcbfcd0-1bae-47db-a3a7-1fe70ca2feaf",
+          "name": "WNBL",
+          "gender": "female",
+          "league": {
+            "name": "WNBL Synergy",
+            "league_primary_color": "#6204B2",
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "d029e3d4-249d-4703-bcf7-07d87a5aaa18",
+        "name": "9Now",
+        "url": "https://www.9now.com.au/live/channel-9",
+        "logo_url": "https://nxs.nbl.com.au/assets/214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png",
+        "light_screen_logo": {
+          "filename_disk": "214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png",
+        "logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "dark_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "light_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz"
+      },
+      "secondary_broadcaster": {
+        "id": "5c171e38-f694-4de8-a916-6a92322bd073",
+        "url": null,
+        "name": "ESPN - WNBL",
+        "logo_url": "https://nxs.nbl.com.au/assets/a2e04e48-b232-46a0-b990-3dc32be1a19c.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/c09419a7-16c2-42c8-a817-b1eb65a0619f.png",
+        "light_screen_logo": {
+          "filename_disk": "a2e04e48-b232-46a0-b990-3dc32be1a19c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "c09419a7-16c2-42c8-a817-b1eb65a0619f.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/a2e04e48-b232-46a0-b990-3dc32be1a19c.png",
+        "logo_url_blurhash": "LCJCtI,t1aEz|xJlE}$O2WbH#:S1",
+        "dark_screen_logo_url_blurhash": "LXPQ87-;D%of~qWBRjt700Rjt7fQ",
+        "light_screen_logo_url_blurhash": "LCJCtI,t1aEz|xJlE}$O2WbH#:S1"
+      },
+      "tertiary_broadcaster": {
+        "id": "937e9778-8524-4bcd-b582-8bcc3f7a9078",
+        "url": null,
+        "name": "9Go",
+        "logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/9GO.png?q=1",
+        "dark_screen_logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/9GO_DarkBG.png?q=1",
+        "light_screen_logo": null,
+        "dark_screen_logo": null,
+        "light_screen_logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/9GO.png?q=1",
+        "logo_url_blurhash": "L00000fQfQfQfQfQfQfQfQfQfQfQ",
+        "dark_screen_logo_url_blurhash": "LDM7u;xu00IU~qWBRjIU00Rj_3M{",
+        "light_screen_logo_url_blurhash": "L00000fQfQfQfQfQfQfQfQfQfQfQ"
+      },
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    },
+    {
+      "id": "086bb03d-04e0-11f1-9745-57460c360ed2",
+      "external_id": "086bb03d-04e0-11f1-9745-57460c360ed2",
+      "external_media_id": "69087078",
+      "date_updated": "2026-02-22T14:00:54.000Z",
+      "start_time": "2026-02-22T05:00:00",
+      "start_time_datetime": "2026-02-22T05:00:00",
+      "round": "SEMI FINAL SERIES 1",
+      "match_type": null,
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "84",
+      "away_score": "74",
+      "attendance": "3475",
+      "match_slug": "townsville-fire-v-southside-melbourne-flyers-women-22-02-2026",
+      "match_title": "Townsville Fire v Southside Melbourne Flyers women 22-02-2026",
+      "match_ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=TOWNFIRE26",
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "7d3bfffd-8c00-4560-9a61-3fbba515d5d5",
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "ad6ce592-9498-4e5f-af63-cf10c56abf98",
+        "external_id": "b12945fa-45e4-11f0-9a88-d76608926233",
+        "name": "Townsville Entertainment & Convention Centre",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": "AUS",
+        "capacity": null,
+        "timezone": "Australia/Queensland",
+        "venue_code": "TEC",
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "d4082ccf-a46c-4766-b41b-efa3143b8188",
+        "external_id": "e7d138b4-45e2-11f0-b18b-c5864f4b75a8",
+        "name": "Townsville Fire",
+        "external_team_name": "Townsville Fire",
+        "team_nickname": "TSV",
+        "team_code": "TSV",
+        "ticket_url": "https://www.ticketmaster.com.au/townsville-fire-tickets/artist/3034375?venueId=158183",
+        "team_logo": "https://cdn.prod.website-files.com/686dc6510ed19bd7d682101b/6892da4eeef4bafcc120df16_tsv-logo-fire-sq.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=200&format=webp",
+        "color_primary": "#f97305",
+        "color_secondary": "#000000",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LBE-HNwf06o[_CRm4wt41INJrdod",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "external_team_name": "Southside Melbourne Flyers",
+        "team_nickname": "SMF",
+        "team_code": "SMF",
+        "ticket_url": "https://www.intix.com.au/org/southside-flyers",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/bcefec261d174b4ba37c203aabd0d08f?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/46b9c9b764504c52a23dfbebde701cd0?size=200&format=webp",
+        "color_primary": "#36bacb",
+        "color_secondary": "#001652",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+        "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+        "name": "WNBL26",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "FEMALE",
+        "competition": {
+          "id": "cbcbfcd0-1bae-47db-a3a7-1fe70ca2feaf",
+          "name": "WNBL",
+          "gender": "female",
+          "league": {
+            "name": "WNBL Synergy",
+            "league_primary_color": "#6204B2",
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "d029e3d4-249d-4703-bcf7-07d87a5aaa18",
+        "name": "9Now",
+        "url": "https://www.9now.com.au/live/channel-9",
+        "logo_url": "https://nxs.nbl.com.au/assets/214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png",
+        "light_screen_logo": {
+          "filename_disk": "214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png",
+        "logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "dark_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "light_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz"
+      },
+      "secondary_broadcaster": {
+        "id": "5c171e38-f694-4de8-a916-6a92322bd073",
+        "url": null,
+        "name": "ESPN - WNBL",
+        "logo_url": "https://nxs.nbl.com.au/assets/a2e04e48-b232-46a0-b990-3dc32be1a19c.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/c09419a7-16c2-42c8-a817-b1eb65a0619f.png",
+        "light_screen_logo": {
+          "filename_disk": "a2e04e48-b232-46a0-b990-3dc32be1a19c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "c09419a7-16c2-42c8-a817-b1eb65a0619f.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/a2e04e48-b232-46a0-b990-3dc32be1a19c.png",
+        "logo_url_blurhash": "LCJCtI,t1aEz|xJlE}$O2WbH#:S1",
+        "dark_screen_logo_url_blurhash": "LXPQ87-;D%of~qWBRjt700Rjt7fQ",
+        "light_screen_logo_url_blurhash": "LCJCtI,t1aEz|xJlE}$O2WbH#:S1"
+      },
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    }
+  ]
+}

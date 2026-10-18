@@ -1,0 +1,83 @@
+{
+  "season": {
+    "sez": 25,
+    "lea": 2,
+    "label": "Season 2025/26"
+  },
+  "seasons": [
+    {
+      "sez": 26,
+      "lea": 2,
+      "label": "Season 2026/27"
+    },
+    {
+      "sez": 25,
+      "lea": 2,
+      "label": "Season 2025/26"
+    },
+    {
+      "sez": 24,
+      "lea": 2,
+      "label": "Season 2024/25"
+    }
+  ],
+  "games": [
+    {
+      "round": "ROUND 1",
+      "game_no": 1,
+      "sez": 25,
+      "lea": 2,
+      "home_team": "Podgorica Bemax",
+      "away_team": "Borac WWIN",
+      "home_abbr": "POD",
+      "away_abbr": "BBL",
+      "home_score": 73,
+      "away_score": 75,
+      "when": "Tuesday, 07.10.2025 18:00 Local time",
+      "date": "2025-10-07",
+      "date_to": null,
+      "time": "18:00",
+      "time_zone": "local",
+      "local_time": null,
+      "local_place": null
+    },
+    {
+      "round": "ROUND 2",
+      "game_no": 9,
+      "sez": 25,
+      "lea": 2,
+      "home_team": "Vršac Meridianbet",
+      "away_team": "HKK Široki TT Kabeli",
+      "home_abbr": "VRS",
+      "away_abbr": "SIR",
+      "home_score": 86,
+      "away_score": 112,
+      "when": "Tuesday, 21.10.2025 18:00 Local time",
+      "date": "2025-10-21",
+      "date_to": null,
+      "time": "18:00",
+      "time_zone": "local",
+      "local_time": null,
+      "local_place": null
+    },
+    {
+      "round": "ROUND 3",
+      "game_no": 17,
+      "sez": 25,
+      "lea": 2,
+      "home_team": "TFT Skopje",
+      "away_team": "Kansai Helios Domžale",
+      "home_abbr": "TFT",
+      "away_abbr": "HEL",
+      "home_score": 83,
+      "away_score": 84,
+      "when": "Tuesday, 04.11.2025 18:00 Local time",
+      "date": "2025-11-04",
+      "date_to": null,
+      "time": "18:00",
+      "time_zone": "local",
+      "local_time": null,
+      "local_place": null
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+game_no,season,league_id,league,side,team_id,jersey,player_id,player_name,starter,on_court_at_end,played,minutes,points,fg_pct,fg2_made,fg2_att,fg2_pct,fg3_made,fg3_att,fg3_pct,ft_made,ft_att,ft_pct,reb_def,reb_off,reb_tot,assists,steals,turnovers,blocks,blocks_against,fouls,fouls_drawn,pts_paint,pts_second_chance,pts_fast_break,plus_minus,valuation
+1,2026,2,aba2,home,75,2,4898,Krnić D.,true,true,true,28:57,11,66.7,4,5,80.0,0,1,0.0,3,5,60.0,6,0,6,3,3,3,0,0,3,4,8,0,4,3,17
+1,2026,2,aba2,home,75,4,4052,Minić P.,false,true,true,14:12,9,50.0,2,4,50.0,1,2,50.0,2,2,100.0,1,0,1,1,0,0,0,0,1,1,4,2,0,-12,8
+1,2026,2,aba2,home,75,6,4055,Brajović M.,false,false,true,06:34,2,50.0,1,2,50.0,0,0,0.0,0,2,0.0,0,1,1,0,0,1,0,0,2,1,2,0,0,1,-2

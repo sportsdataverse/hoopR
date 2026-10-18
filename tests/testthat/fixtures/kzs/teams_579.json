@@ -1,0 +1,101 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "id": 17548,
+        "teamApplication": {
+          "id": 45427,
+          "teamInternalRanking": "A",
+          "category": "ABSOLUTE",
+          "rank": "FIRST",
+          "gender": "MALE",
+          "sportHall": {
+            "id": 228,
+            "name": "Stožice"
+          },
+          "name": "Cedevita Olimpija",
+          "code": "COL",
+          "homeJerseyColor": "#00652E",
+          "guestJerseyColor": "#F58233",
+          "club": {
+            "id": 254,
+            "addresses": [],
+            "socialMedias": [],
+            "sportHalls": [],
+            "personnel": [],
+            "absoluteTeams": [],
+            "member": false
+          }
+        },
+        "logoUuid": "4586ff12-6ac5-45f9-b015-5344ddcc8320",
+        "homeTeamColor": "#00652E",
+        "guestTeamColor": "#F58233"
+      },
+      {
+        "id": 17549,
+        "teamApplication": {
+          "id": 45359,
+          "teamInternalRanking": "A",
+          "category": "ABSOLUTE",
+          "rank": "FIRST",
+          "gender": "MALE",
+          "sportHall": {
+            "id": 191,
+            "name": "ŠD Šenčur"
+          },
+          "name": "GGD Šenčur",
+          "code": "ŠEN",
+          "shortName": "",
+          "homeJerseyColor": "#FFE34F",
+          "guestJerseyColor": "#233178",
+          "club": {
+            "id": 55,
+            "addresses": [],
+            "socialMedias": [],
+            "sportHalls": [],
+            "personnel": [],
+            "absoluteTeams": [],
+            "member": false
+          }
+        },
+        "logoUuid": "45b0ac2b-351a-40ff-be09-f1ec6fca401d",
+        "homeTeamColor": "#FFE34F",
+        "guestTeamColor": "#233178"
+      },
+      {
+        "id": 17550,
+        "teamApplication": {
+          "id": 45131,
+          "teamInternalRanking": "A",
+          "category": "ABSOLUTE",
+          "rank": "FIRST",
+          "gender": "MALE",
+          "sportHall": {
+            "id": 187,
+            "name": "ŠD Polzela"
+          },
+          "name": "Hopsi Polzela",
+          "code": "HOP",
+          "homeJerseyColor": "#FCBE63",
+          "guestJerseyColor": "#066DC5",
+          "club": {
+            "id": 46,
+            "addresses": [],
+            "socialMedias": [],
+            "sportHalls": [],
+            "personnel": [],
+            "absoluteTeams": [],
+            "member": false
+          }
+        },
+        "logoUuid": "e9a0b578-8c96-4231-a1c9-977ba15166e0",
+        "homeTeamColor": "#FCBE63",
+        "guestTeamColor": "#066DC5"
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}

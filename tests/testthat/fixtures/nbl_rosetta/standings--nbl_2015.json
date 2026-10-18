@@ -1,0 +1,147 @@
+{
+  "type": "standings",
+  "fetched": 1791833164,
+  "ttlRemaining": 1800,
+  "count": 8,
+  "source": "cb",
+  "data": [
+    {
+      "id": "7d6a9f3f-833a-431a-a8f1-16d92016993c",
+      "position": 3,
+      "won": 17,
+      "lost": 11,
+      "played": 28,
+      "points_percentage": 1.0607,
+      "win_percentage": 0.6071,
+      "last_5": "WLLWW",
+      "streak": 2,
+      "points_for": 2637,
+      "points_against": 2486,
+      "away_losses": 8,
+      "away_wins": 6,
+      "home_losses": 3,
+      "home_wins": 11,
+      "team": {
+        "id": "105249a3-251d-4a9d-94f4-f57b8e0854b3",
+        "external_id": "bf59b516-410c-11f0-abf1-1b3c55488bbb",
+        "team_code": "ILL",
+        "name": "Illawarra Hawks",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/ILL.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/ILL.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/399bdbc217764cdc81a96652899def1a?size=200&format=webp",
+        "ticket_url": "https://www.ticketmaster.com.au/illawarra-hawks-tickets/artist/1055493",
+        "team_nickname": "ILL",
+        "color_primary": "#e11837",
+        "color_secondary": "#030303",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "L7QOWT@apv@t|MtmHrtl00pIH?o#",
+        "team_logo_transparent_blurhash": "LEKK==%Mj[9F~q-;00xu00M{9Ft7",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2015",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "9498060d-30c6-4f0f-b8ec-e4715a669a73",
+      "position": 2,
+      "won": 18,
+      "lost": 10,
+      "played": 28,
+      "points_percentage": 1.0552,
+      "win_percentage": 0.6429,
+      "last_5": "WLWLW",
+      "streak": 1,
+      "points_for": 2391,
+      "points_against": 2266,
+      "away_losses": 8,
+      "away_wins": 6,
+      "home_losses": 2,
+      "home_wins": 12,
+      "team": {
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "team_code": "PER",
+        "name": "Perth Wildcats",
+        "team_logo": "https://nxs.nbl.com.au/assets/b6393791-e4fa-4e34-a861-1c6096ab168e.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/64a50350adad23f0f1ef8f43/6848c6b2fd4727d1965018a8_Perth%20blk.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/3734277c6fc8484398d0e266b42d2f35?size=200&format=webp",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=WILDCATS27",
+        "team_nickname": "PER",
+        "color_primary": "#d8282f",
+        "color_secondary": "#000000",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "LDH_Pv_N1b?HHrkCTJD%1v?HD456",
+        "team_logo_transparent_blurhash": "L8FXME-;1H$*@ZIU~q%M3pIUDOD%",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2015",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "d191ca82-a222-4a68-9cca-13d3fe79d294",
+      "position": 4,
+      "won": 16,
+      "lost": 12,
+      "played": 28,
+      "points_percentage": 1.0329,
+      "win_percentage": 0.5714,
+      "last_5": "WWWWW",
+      "streak": 5,
+      "points_for": 2357,
+      "points_against": 2282,
+      "away_losses": 9,
+      "away_wins": 5,
+      "home_losses": 3,
+      "home_wins": 11,
+      "team": {
+        "id": "bbae77db-317d-4c17-aa04-75d53d20ad15",
+        "external_id": "bedd705b-410c-11f0-8d69-1b3c55488bbb",
+        "team_code": "NZL",
+        "name": "NZ Breakers",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+        "ticket_url": "https://fans.nzbreakers.basketball/schedule",
+        "team_nickname": "NZL",
+        "color_primary": "#000000",
+        "color_secondary": "#ffffff",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2015",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    }
+  ]
+}

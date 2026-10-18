@@ -1,0 +1,4 @@
+gmkey,glkey,season,season_code,season_name,season_grade,game_code,game_no,season_category,season_category_name,game_date,week_day,game_start,game_end,game_time,home_team_code,away_team_code,home_team_name,away_team_name,home_team_name_full,away_team_name_full,home_score,away_score,is_started,is_ended,playing_quarter,stadium_name,stadium_name_full,stadium_name_en,tv,tv_code,article_id,challenge_id
+S47G01N49,S47G01,2026,47,2025-2026,1,01,49,R,정규시즌,2025-11-01,토,1400,1542,142,66,50,고양 소노,창원 LG,고양 소노 스카이거너스,창원 LG 세이커스,74,64,1,1,X,고양소노아레나,고양소노아레나,GOYANG SONO ARENA,\N,\N,10047190,319
+S47G01N50,S47G01,2026,47,2025-2026,1,01,50,R,정규시즌,2025-11-01,토,1400,1554,154,35,60,서울 삼성,부산 KCC,서울 삼성 썬더스,부산 KCC 이지스,100,77,1,1,X,잠실실내,잠실실내체육관,Seoul Jamsil Gymnasium,IB SPORTS,T21,10047191,320
+S47G01N51,S47G01,2026,47,2025-2026,1,01,51,R,정규시즌,2025-11-01,토,1630,1833,203,16,10,원주 DB,울산 현대모비스,원주 DB 프로미,울산 현대모비스 피버스,86,81,1,1,X,원주DB프로미아레나,원주DB프로미아레나,Wonju Gymnasium,\N,\N,10047192,321

@@ -1,0 +1,384 @@
+{
+  "type": "matches",
+  "fetched": 1791833142,
+  "ttlRemaining": 30,
+  "count": 179,
+  "source": "cb",
+  "data": [
+    {
+      "id": "24d0eebf-20c2-11f1-91dc-039d1426885f",
+      "external_id": "24d0eebf-20c2-11f1-91dc-039d1426885f",
+      "external_media_id": "05042026",
+      "date_updated": "2026-09-22T02:15:18.000Z",
+      "start_time": "2026-04-05T04:30:00",
+      "start_time_datetime": "2026-04-05T04:30:00",
+      "round": "CHAMPIONSHIP",
+      "match_type": "final",
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "113",
+      "away_score": "101",
+      "attendance": "18589",
+      "match_slug": "sydney-kings-v-adelaide-36ers-men-05-04-2026",
+      "match_title": "Sydney Kings v Adelaide 36ers men 05-04-2026",
+      "match_ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS26",
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "bbc8aee5-c97c-43d7-a345-bb9c792e01c7",
+      "override_round": null,
+      "match_bg": {
+        "filename_disk": "bf9fbb42-7e87-4d36-a8c3-4d1f6cda7d6b.png"
+      },
+      "match_logo": {
+        "filename_disk": "42a058ae-8142-4f3e-b945-20d154e048fc.png"
+      },
+      "venue": {
+        "id": "467aedbe-0f6f-4092-8ffb-171020649980",
+        "external_id": "b41af700-410c-11f0-a587-236c30eb17ba",
+        "name": "Qudos Bank Arena",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": null,
+        "capacity": null,
+        "timezone": "Australia/Sydney",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+        "external_id": "bf06cec9-410c-11f0-8100-1b3c55488bbb",
+        "name": "Sydney Kings",
+        "external_team_name": "Sydney Kings",
+        "team_nickname": "SYD",
+        "team_code": "SYD",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SYD.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/1b57cdaa77d54a9ba47a30fd32243352?size=200&format=webp",
+        "color_primary": "#5f259f",
+        "color_secondary": "#fec527",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:",
+        "team_logo_transparent_blurhash": "L5JP#C-V01}~?6r?=eNf00SuVk0;",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "3164912c-7e74-463b-8fc3-5f7d45edfcc6",
+        "external_id": "bed4fbfb-410c-11f0-aaa8-1b3c55488bbb",
+        "name": "Adelaide 36ers",
+        "external_team_name": "Adelaide 36ers",
+        "team_nickname": "ADL",
+        "team_code": "ADL",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=ADL36ERS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/ADL.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/ADL.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/03d18cf388f94760bd85f84f6a5d0a18?size=200&format=webp",
+        "color_primary": "#182360",
+        "color_secondary": "#ffffff",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "L268Q{xv00NI%OfRoIt600Rj~qoe",
+        "team_logo_transparent_blurhash": "L39a8Fxu00nk_NoMoZoy00WBD=Rj",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "name": "NBL26",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "MALE",
+        "competition": {
+          "id": "a12f23ae-8b0d-44c8-8133-6f2810f2431b",
+          "name": "NBL",
+          "gender": null,
+          "league": {
+            "name": "NBL",
+            "league_primary_color": "#FF7900",
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "e853c657-fb0f-49b1-93db-911135380977",
+        "name": "ESPN on Disney",
+        "url": "https://www.disneyplus.com/",
+        "logo_url": "https://nxs.nbl.com.au/assets/c4014eab-af69-46cc-a9a3-40680f8b1277.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png",
+        "light_screen_logo": {
+          "filename_disk": "c4014eab-af69-46cc-a9a3-40680f8b1277.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/c4014eab-af69-46cc-a9a3-40680f8b1277.png",
+        "logo_url_blurhash": "L,FxGN|_,sa{sosooLfjSgW;bGjt",
+        "dark_screen_logo_url_blurhash": "LJMHJjRj00~q_3D%IUxu00D%WBWB",
+        "light_screen_logo_url_blurhash": "L,FxGN|_,sa{sosooLfjSgW;bGjt"
+      },
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    },
+    {
+      "id": "bd142077-20c1-11f1-95cc-79df6334c739",
+      "external_id": "bd142077-20c1-11f1-95cc-79df6334c739",
+      "external_media_id": "70344324",
+      "date_updated": "2026-09-22T02:16:20.000Z",
+      "start_time": "2026-04-01T08:30:00",
+      "start_time_datetime": "2026-04-01T08:30:00",
+      "round": "CHAMPIONSHIP",
+      "match_type": "final",
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "92",
+      "away_score": "91",
+      "attendance": "10068",
+      "match_slug": "adelaide-36ers-v-sydney-kings-men-01-04-2026",
+      "match_title": "Adelaide 36ers v Sydney Kings men 01-04-2026",
+      "match_ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=ADL36ERS26",
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "6cd6534c-2397-493a-8bed-c0052a829eaa",
+      "override_round": null,
+      "match_bg": {
+        "filename_disk": "bf9fbb42-7e87-4d36-a8c3-4d1f6cda7d6b.png"
+      },
+      "match_logo": {
+        "filename_disk": "42a058ae-8142-4f3e-b945-20d154e048fc.png"
+      },
+      "venue": {
+        "id": "076887de-36a9-4e8c-9ea9-744690409017",
+        "external_id": "b45b05d0-410c-11f0-97d9-236c30eb17ba",
+        "name": "Adelaide Entertainment Centre",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": null,
+        "capacity": null,
+        "timezone": "Australia/Adelaide",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "3164912c-7e74-463b-8fc3-5f7d45edfcc6",
+        "external_id": "bed4fbfb-410c-11f0-aaa8-1b3c55488bbb",
+        "name": "Adelaide 36ers",
+        "external_team_name": "Adelaide 36ers",
+        "team_nickname": "ADL",
+        "team_code": "ADL",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=ADL36ERS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/ADL.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/ADL.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/03d18cf388f94760bd85f84f6a5d0a18?size=200&format=webp",
+        "color_primary": "#182360",
+        "color_secondary": "#ffffff",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "L268Q{xv00NI%OfRoIt600Rj~qoe",
+        "team_logo_transparent_blurhash": "L39a8Fxu00nk_NoMoZoy00WBD=Rj",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+        "external_id": "bf06cec9-410c-11f0-8100-1b3c55488bbb",
+        "name": "Sydney Kings",
+        "external_team_name": "Sydney Kings",
+        "team_nickname": "SYD",
+        "team_code": "SYD",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SYD.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/1b57cdaa77d54a9ba47a30fd32243352?size=200&format=webp",
+        "color_primary": "#5f259f",
+        "color_secondary": "#fec527",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:",
+        "team_logo_transparent_blurhash": "L5JP#C-V01}~?6r?=eNf00SuVk0;",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "name": "NBL26",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "MALE",
+        "competition": {
+          "id": "a12f23ae-8b0d-44c8-8133-6f2810f2431b",
+          "name": "NBL",
+          "gender": null,
+          "league": {
+            "name": "NBL",
+            "league_primary_color": "#FF7900",
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "e853c657-fb0f-49b1-93db-911135380977",
+        "name": "ESPN on Disney",
+        "url": "https://www.disneyplus.com/",
+        "logo_url": "https://nxs.nbl.com.au/assets/c4014eab-af69-46cc-a9a3-40680f8b1277.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png",
+        "light_screen_logo": {
+          "filename_disk": "c4014eab-af69-46cc-a9a3-40680f8b1277.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/c4014eab-af69-46cc-a9a3-40680f8b1277.png",
+        "logo_url_blurhash": "L,FxGN|_,sa{sosooLfjSgW;bGjt",
+        "dark_screen_logo_url_blurhash": "LJMHJjRj00~q_3D%IUxu00D%WBWB",
+        "light_screen_logo_url_blurhash": "L,FxGN|_,sa{sosooLfjSgW;bGjt"
+      },
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    },
+    {
+      "id": "9c76716d-20c1-11f1-910d-d9b3c42477f2",
+      "external_id": "9c76716d-20c1-11f1-910d-d9b3c42477f2",
+      "external_media_id": "70006744",
+      "date_updated": "2026-09-22T02:15:18.000Z",
+      "start_time": "2026-03-29T03:30:00",
+      "start_time_datetime": "2026-03-29T03:30:00",
+      "round": "CHAMPIONSHIP",
+      "match_type": "final",
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "106",
+      "away_score": "93",
+      "attendance": "18373",
+      "match_slug": "sydney-kings-v-adelaide-36ers-men-29-03-2026",
+      "match_title": "Sydney Kings v Adelaide 36ers men 29-03-2026",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "072c2299-3484-4caa-9bb0-274a0c83bf1f",
+      "override_round": null,
+      "match_bg": {
+        "filename_disk": "bf9fbb42-7e87-4d36-a8c3-4d1f6cda7d6b.png"
+      },
+      "match_logo": {
+        "filename_disk": "42a058ae-8142-4f3e-b945-20d154e048fc.png"
+      },
+      "venue": {
+        "id": "467aedbe-0f6f-4092-8ffb-171020649980",
+        "external_id": "b41af700-410c-11f0-a587-236c30eb17ba",
+        "name": "Qudos Bank Arena",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": null,
+        "capacity": null,
+        "timezone": "Australia/Sydney",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+        "external_id": "bf06cec9-410c-11f0-8100-1b3c55488bbb",
+        "name": "Sydney Kings",
+        "external_team_name": "Sydney Kings",
+        "team_nickname": "SYD",
+        "team_code": "SYD",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SYD.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/1b57cdaa77d54a9ba47a30fd32243352?size=200&format=webp",
+        "color_primary": "#5f259f",
+        "color_secondary": "#fec527",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:",
+        "team_logo_transparent_blurhash": "L5JP#C-V01}~?6r?=eNf00SuVk0;",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "3164912c-7e74-463b-8fc3-5f7d45edfcc6",
+        "external_id": "bed4fbfb-410c-11f0-aaa8-1b3c55488bbb",
+        "name": "Adelaide 36ers",
+        "external_team_name": "Adelaide 36ers",
+        "team_nickname": "ADL",
+        "team_code": "ADL",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=ADL36ERS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/ADL.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/ADL.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/03d18cf388f94760bd85f84f6a5d0a18?size=200&format=webp",
+        "color_primary": "#182360",
+        "color_secondary": "#ffffff",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "L268Q{xv00NI%OfRoIt600Rj~qoe",
+        "team_logo_transparent_blurhash": "L39a8Fxu00nk_NoMoZoy00WBD=Rj",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "name": "NBL26",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "MALE",
+        "competition": {
+          "id": "a12f23ae-8b0d-44c8-8133-6f2810f2431b",
+          "name": "NBL",
+          "gender": null,
+          "league": {
+            "name": "NBL",
+            "league_primary_color": "#FF7900",
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "e853c657-fb0f-49b1-93db-911135380977",
+        "name": "ESPN on Disney",
+        "url": "https://www.disneyplus.com/",
+        "logo_url": "https://nxs.nbl.com.au/assets/c4014eab-af69-46cc-a9a3-40680f8b1277.png",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png",
+        "light_screen_logo": {
+          "filename_disk": "c4014eab-af69-46cc-a9a3-40680f8b1277.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png"
+        },
+        "light_screen_logo_url": "https://nxs.nbl.com.au/assets/c4014eab-af69-46cc-a9a3-40680f8b1277.png",
+        "logo_url_blurhash": "L,FxGN|_,sa{sosooLfjSgW;bGjt",
+        "dark_screen_logo_url_blurhash": "LJMHJjRj00~q_3D%IUxu00D%WBWB",
+        "light_screen_logo_url_blurhash": "L,FxGN|_,sa{sosooLfjSgW;bGjt"
+      },
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    }
+  ]
+}

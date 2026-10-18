@@ -1,0 +1,1544 @@
+{
+ "schedule_2023_regular-season": {
+  "csv": "schedule_2023_regular-season",
+  "fn": "pleague_schedule",
+  "args": {
+   "season": 2023,
+   "stage": "regular-season"
+  },
+  "rows": 3,
+  "dtypes": {
+   "season": "Int64",
+   "season_slug": "String",
+   "stage": "String",
+   "gid": "Int64",
+   "date": "Date",
+   "weekday_zh": "String",
+   "time": "String",
+   "starred": "Boolean",
+   "game_label": "String",
+   "venue_zh": "String",
+   "attendance": "Int64",
+   "capacity": "Int64",
+   "phase": "String",
+   "away_team_id": "Int64",
+   "away_name_zh": "String",
+   "away_name_en": "String",
+   "away_logo": "String",
+   "away_score": "Int64",
+   "home_team_id": "Int64",
+   "home_name_zh": "String",
+   "home_name_en": "String",
+   "home_logo": "String",
+   "home_score": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/schedule-regular-season/2022-23",
+    "query": {}
+   }
+  ]
+ },
+ "schedule_2023_finals": {
+  "csv": "schedule_2023_finals",
+  "fn": "pleague_schedule",
+  "args": {
+   "season": 2023,
+   "stage": "finals"
+  },
+  "rows": 6,
+  "dtypes": {
+   "season": "Int64",
+   "season_slug": "String",
+   "stage": "String",
+   "gid": "Int64",
+   "date": "Date",
+   "weekday_zh": "String",
+   "time": "String",
+   "starred": "Boolean",
+   "game_label": "String",
+   "venue_zh": "String",
+   "attendance": "Int64",
+   "capacity": "Int64",
+   "phase": "String",
+   "away_team_id": "Int64",
+   "away_name_zh": "String",
+   "away_name_en": "String",
+   "away_logo": "String",
+   "away_score": "Int64",
+   "home_team_id": "Int64",
+   "home_name_zh": "String",
+   "home_name_en": "String",
+   "home_logo": "String",
+   "home_score": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/schedule-finals/2022-23",
+    "query": {}
+   }
+  ]
+ },
+ "schedule_2021_regular-season": {
+  "csv": "schedule_2021_regular-season",
+  "fn": "pleague_schedule",
+  "args": {
+   "season": 2021,
+   "stage": "regular-season"
+  },
+  "rows": 3,
+  "dtypes": {
+   "season": "Int64",
+   "season_slug": "String",
+   "stage": "String",
+   "gid": "Int64",
+   "date": "Date",
+   "weekday_zh": "String",
+   "time": "String",
+   "starred": "Boolean",
+   "game_label": "String",
+   "venue_zh": "String",
+   "attendance": "Int64",
+   "capacity": "Int64",
+   "phase": "String",
+   "away_team_id": "Int64",
+   "away_name_zh": "String",
+   "away_name_en": "String",
+   "away_logo": "String",
+   "away_score": "Int64",
+   "home_team_id": "Int64",
+   "home_name_zh": "String",
+   "home_name_en": "String",
+   "home_logo": "String",
+   "home_score": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/schedule-regular-season/2020-21",
+    "query": {}
+   }
+  ]
+ },
+ "game_197": {
+  "csv": "game_197",
+  "fn": "pleague_game",
+  "args": {
+   "gid": 197
+  },
+  "rows": 1,
+  "dtypes": {
+   "gid": "Int64",
+   "uuid": "String",
+   "status_zh": "String",
+   "finished": "Boolean",
+   "date": "Date",
+   "time": "String",
+   "venue_zh": "String",
+   "game_label_zh": "String",
+   "away_name_zh": "String",
+   "away_name_en": "String",
+   "away_logo": "String",
+   "away_score": "Int64",
+   "home_name_zh": "String",
+   "home_name_en": "String",
+   "home_logo": "String",
+   "home_score": "Int64",
+   "overtimes": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   }
+  ]
+ },
+ "periods_197": {
+  "csv": "periods_197",
+  "fn": "pleague_periods",
+  "args": {
+   "gid": 197
+  },
+  "rows": 4,
+  "dtypes": {
+   "gid": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "home_points": "Int64",
+   "away_points": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   }
+  ]
+ },
+ "officials_197": {
+  "csv": "officials_197",
+  "fn": "pleague_officials",
+  "args": {
+   "gid": 197
+  },
+  "rows": 3,
+  "dtypes": {
+   "gid": "Int64",
+   "official_no": "Int64",
+   "role": "String",
+   "role_zh": "String",
+   "name_zh": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   }
+  ]
+ },
+ "box_players_197": {
+  "csv": "box_players_197",
+  "fn": "pleague_box_players",
+  "args": {
+   "gid": 197
+  },
+  "rows": 26,
+  "dtypes": {
+   "gid": "Int64",
+   "side": "String",
+   "player_id": "Int64",
+   "person_id": "String",
+   "random_id": "String",
+   "name_zh": "String",
+   "jersey": "String",
+   "starter": "Boolean",
+   "played": "Boolean",
+   "minutes": "String",
+   "seconds": "Int64",
+   "points": "Int64",
+   "reb_off": "Int64",
+   "reb_def": "Int64",
+   "reb": "Int64",
+   "ast": "Int64",
+   "stl": "Int64",
+   "blk": "Int64",
+   "tov": "Int64",
+   "pf": "Int64",
+   "plus_minus": "Int64",
+   "eff": "Int64",
+   "fg2_made": "Int64",
+   "fg2_att": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Int64",
+   "fg3_att": "Int64",
+   "fg3_pct": "Float64",
+   "ft_made": "Int64",
+   "ft_att": "Int64",
+   "ft_pct": "Float64",
+   "efg_pct": "Float64",
+   "ts_pct": "Float64",
+   "usage_pct": "Float64",
+   "position": "String",
+   "ortg": "Float64",
+   "drtg": "Float64",
+   "netrtg": "Float64",
+   "pace": "Float64",
+   "ast_ratio": "Float64",
+   "to_ratio": "Float64",
+   "off_possessions": "Int64",
+   "opp_off_possessions": "Int64",
+   "opp_pts_second_chance": "Int64",
+   "opp_pts_fast_break": "Int64",
+   "opp_pts_off_turnover": "Int64",
+   "opp_pts_paint": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   }
+  ]
+ },
+ "box_teams_197": {
+  "csv": "box_teams_197",
+  "fn": "pleague_box_teams",
+  "args": {
+   "gid": 197
+  },
+  "rows": 2,
+  "dtypes": {
+   "gid": "Int64",
+   "side": "String",
+   "minutes": "String",
+   "seconds": "Int64",
+   "points": "Int64",
+   "fg2_made": "Int64",
+   "fg2_att": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Int64",
+   "fg3_att": "Int64",
+   "fg3_pct": "Float64",
+   "ft_made": "Int64",
+   "ft_att": "Int64",
+   "ft_pct": "Float64",
+   "reb": "Int64",
+   "reb_off": "Int64",
+   "reb_def": "Int64",
+   "ast": "Int64",
+   "stl": "Int64",
+   "blk": "Int64",
+   "tov": "Int64",
+   "pf": "Int64",
+   "plus_minus": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   }
+  ]
+ },
+ "game_13": {
+  "csv": "game_13",
+  "fn": "pleague_game",
+  "args": {
+   "gid": 13
+  },
+  "rows": 1,
+  "dtypes": {
+   "gid": "Int64",
+   "uuid": "String",
+   "status_zh": "String",
+   "finished": "Boolean",
+   "date": "Date",
+   "time": "String",
+   "venue_zh": "String",
+   "game_label_zh": "String",
+   "away_name_zh": "String",
+   "away_name_en": "String",
+   "away_logo": "String",
+   "away_score": "Int64",
+   "home_name_zh": "String",
+   "home_name_en": "String",
+   "home_logo": "String",
+   "home_score": "Int64",
+   "overtimes": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/13",
+    "query": {}
+   }
+  ]
+ },
+ "periods_13": {
+  "csv": "periods_13",
+  "fn": "pleague_periods",
+  "args": {
+   "gid": 13
+  },
+  "rows": 4,
+  "dtypes": {
+   "gid": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "home_points": "Int64",
+   "away_points": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/13",
+    "query": {}
+   }
+  ]
+ },
+ "officials_13": {
+  "csv": "officials_13",
+  "fn": "pleague_officials",
+  "args": {
+   "gid": 13
+  },
+  "rows": 3,
+  "dtypes": {
+   "gid": "Int64",
+   "official_no": "Int64",
+   "role": "String",
+   "role_zh": "String",
+   "name_zh": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/13",
+    "query": {}
+   }
+  ]
+ },
+ "box_players_13": {
+  "csv": "box_players_13",
+  "fn": "pleague_box_players",
+  "args": {
+   "gid": 13
+  },
+  "rows": 24,
+  "dtypes": {
+   "gid": "Int64",
+   "side": "String",
+   "player_id": "Int64",
+   "person_id": "String",
+   "random_id": "String",
+   "name_zh": "String",
+   "jersey": "String",
+   "starter": "Boolean",
+   "played": "Boolean",
+   "minutes": "String",
+   "seconds": "Int64",
+   "points": "Int64",
+   "reb_off": "Int64",
+   "reb_def": "Int64",
+   "reb": "Int64",
+   "ast": "Int64",
+   "stl": "Int64",
+   "blk": "Int64",
+   "tov": "Int64",
+   "pf": "Int64",
+   "plus_minus": "Int64",
+   "eff": "Int64",
+   "fg2_made": "Int64",
+   "fg2_att": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Int64",
+   "fg3_att": "Int64",
+   "fg3_pct": "Float64",
+   "ft_made": "Int64",
+   "ft_att": "Int64",
+   "ft_pct": "Float64",
+   "efg_pct": "Float64",
+   "ts_pct": "Float64",
+   "usage_pct": "Float64",
+   "position": "String",
+   "ortg": "Float64",
+   "drtg": "Float64",
+   "netrtg": "Float64",
+   "pace": "Float64",
+   "ast_ratio": "Float64",
+   "to_ratio": "Float64",
+   "off_possessions": "Int64",
+   "opp_off_possessions": "Int64",
+   "opp_pts_second_chance": "Int64",
+   "opp_pts_fast_break": "Int64",
+   "opp_pts_off_turnover": "Int64",
+   "opp_pts_paint": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/13",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 13,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   }
+  ]
+ },
+ "box_teams_13": {
+  "csv": "box_teams_13",
+  "fn": "pleague_box_teams",
+  "args": {
+   "gid": 13
+  },
+  "rows": 2,
+  "dtypes": {
+   "gid": "Int64",
+   "side": "String",
+   "minutes": "String",
+   "seconds": "Int64",
+   "points": "Int64",
+   "fg2_made": "Int64",
+   "fg2_att": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Int64",
+   "fg3_att": "Int64",
+   "fg3_pct": "Float64",
+   "ft_made": "Int64",
+   "ft_att": "Int64",
+   "ft_pct": "Float64",
+   "reb": "Int64",
+   "reb_off": "Int64",
+   "reb_def": "Int64",
+   "ast": "Int64",
+   "stl": "Int64",
+   "blk": "Int64",
+   "tov": "Int64",
+   "pf": "Int64",
+   "plus_minus": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/13",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 13,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   }
+  ]
+ },
+ "game_206": {
+  "csv": "game_206",
+  "fn": "pleague_game",
+  "args": {
+   "gid": 206
+  },
+  "rows": 1,
+  "dtypes": {
+   "gid": "Int64",
+   "uuid": "String",
+   "status_zh": "String",
+   "finished": "Boolean",
+   "date": "Date",
+   "time": "String",
+   "venue_zh": "String",
+   "game_label_zh": "String",
+   "away_name_zh": "String",
+   "away_name_en": "String",
+   "away_logo": "String",
+   "away_score": "Int64",
+   "home_name_zh": "String",
+   "home_name_en": "String",
+   "home_logo": "String",
+   "home_score": "Int64",
+   "overtimes": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/206",
+    "query": {}
+   }
+  ]
+ },
+ "periods_206": {
+  "csv": "periods_206",
+  "fn": "pleague_periods",
+  "args": {
+   "gid": 206
+  },
+  "rows": 6,
+  "dtypes": {
+   "gid": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "home_points": "Int64",
+   "away_points": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/206",
+    "query": {}
+   }
+  ]
+ },
+ "officials_206": {
+  "csv": "officials_206",
+  "fn": "pleague_officials",
+  "args": {
+   "gid": 206
+  },
+  "rows": 3,
+  "dtypes": {
+   "gid": "Int64",
+   "official_no": "Int64",
+   "role": "String",
+   "role_zh": "String",
+   "name_zh": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/206",
+    "query": {}
+   }
+  ]
+ },
+ "box_players_206": {
+  "csv": "box_players_206",
+  "fn": "pleague_box_players",
+  "args": {
+   "gid": 206
+  },
+  "rows": 26,
+  "dtypes": {
+   "gid": "Int64",
+   "side": "String",
+   "player_id": "Int64",
+   "person_id": "String",
+   "random_id": "String",
+   "name_zh": "String",
+   "jersey": "String",
+   "starter": "Boolean",
+   "played": "Boolean",
+   "minutes": "String",
+   "seconds": "Int64",
+   "points": "Int64",
+   "reb_off": "Int64",
+   "reb_def": "Int64",
+   "reb": "Int64",
+   "ast": "Int64",
+   "stl": "Int64",
+   "blk": "Int64",
+   "tov": "Int64",
+   "pf": "Int64",
+   "plus_minus": "Int64",
+   "eff": "Int64",
+   "fg2_made": "Int64",
+   "fg2_att": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Int64",
+   "fg3_att": "Int64",
+   "fg3_pct": "Float64",
+   "ft_made": "Int64",
+   "ft_att": "Int64",
+   "ft_pct": "Float64",
+   "efg_pct": "Float64",
+   "ts_pct": "Float64",
+   "usage_pct": "Float64",
+   "position": "String",
+   "ortg": "Float64",
+   "drtg": "Float64",
+   "netrtg": "Float64",
+   "pace": "Float64",
+   "ast_ratio": "Float64",
+   "to_ratio": "Float64",
+   "off_possessions": "Int64",
+   "opp_off_possessions": "Int64",
+   "opp_pts_second_chance": "Int64",
+   "opp_pts_fast_break": "Int64",
+   "opp_pts_off_turnover": "Int64",
+   "opp_pts_paint": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/206",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 206,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   }
+  ]
+ },
+ "box_teams_206": {
+  "csv": "box_teams_206",
+  "fn": "pleague_box_teams",
+  "args": {
+   "gid": 206
+  },
+  "rows": 2,
+  "dtypes": {
+   "gid": "Int64",
+   "side": "String",
+   "minutes": "String",
+   "seconds": "Int64",
+   "points": "Int64",
+   "fg2_made": "Int64",
+   "fg2_att": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Int64",
+   "fg3_att": "Int64",
+   "fg3_pct": "Float64",
+   "ft_made": "Int64",
+   "ft_att": "Int64",
+   "ft_pct": "Float64",
+   "reb": "Int64",
+   "reb_off": "Int64",
+   "reb_def": "Int64",
+   "ast": "Int64",
+   "stl": "Int64",
+   "blk": "Int64",
+   "tov": "Int64",
+   "pf": "Int64",
+   "plus_minus": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/206",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 206,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   }
+  ]
+ },
+ "pbp_197": {
+  "csv": "pbp_197",
+  "fn": "pleague_pbp",
+  "args": {
+   "gid": 197
+  },
+  "rows": 19,
+  "dtypes": {
+   "gid": "Int64",
+   "seq": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "side": "String",
+   "jersey": "String",
+   "player_zh": "String",
+   "action": "String",
+   "action_zh": "String",
+   "action_en": "String",
+   "text_zh": "String",
+   "ft_number": "Int64",
+   "ft_awarded": "Int64",
+   "points": "Int64",
+   "score_away": "Int64",
+   "score_home": "Int64",
+   "x": "Float64",
+   "y": "Float64",
+   "nice_play": "Boolean",
+   "video_uuid": "String",
+   "synergy_play_id": "String",
+   "video_stat_category": "String",
+   "tryspot_player_id": "Int64",
+   "video_created_at": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/playbyplay.php",
+    "query": {
+     "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+    }
+   }
+  ]
+ },
+ "pbp_206": {
+  "csv": "pbp_206",
+  "fn": "pleague_pbp",
+  "args": {
+   "gid": 206
+  },
+  "rows": 16,
+  "dtypes": {
+   "gid": "Int64",
+   "seq": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "side": "String",
+   "jersey": "String",
+   "player_zh": "String",
+   "action": "String",
+   "action_zh": "String",
+   "action_en": "String",
+   "text_zh": "String",
+   "ft_number": "Int64",
+   "ft_awarded": "Int64",
+   "points": "Int64",
+   "score_away": "Int64",
+   "score_home": "Int64",
+   "x": "Float64",
+   "y": "Float64",
+   "nice_play": "Boolean",
+   "video_uuid": "String",
+   "synergy_play_id": "String",
+   "video_stat_category": "String",
+   "tryspot_player_id": "Int64",
+   "video_created_at": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/206",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/playbyplay.php",
+    "query": {
+     "uuid": "e74f5828-3e5b-11ed-899b-5d17350689cf"
+    }
+   }
+  ]
+ },
+ "standings_2023": {
+  "csv": "standings_2023",
+  "fn": "pleague_standings",
+  "args": {
+   "season": 2023
+  },
+  "rows": 3,
+  "dtypes": {
+   "season": "Int64",
+   "season_slug": "String",
+   "rank": "Int64",
+   "team_id": "Int64",
+   "team_zh": "String",
+   "team_uuid": "String",
+   "team_logo": "String",
+   "games_played": "Int64",
+   "wins": "Int64",
+   "losses": "Int64",
+   "win_pct": "Float64",
+   "games_behind": "Float64",
+   "points_for_avg": "Float64",
+   "points_against_avg": "Float64",
+   "point_diff_avg": "Float64",
+   "home_record": "String",
+   "away_record": "String",
+   "streak": "String",
+   "last_n": "Int64",
+   "last_n_record": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/standings/2022-23",
+    "query": {}
+   }
+  ]
+ },
+ "stat_player_2023_2": {
+  "csv": "stat_player_2023_2",
+  "fn": "pleague_stat_player",
+  "args": {
+   "season": 2023,
+   "stage_sn": 2
+  },
+  "rows": 3,
+  "dtypes": {
+   "season": "Int64",
+   "season_slug": "String",
+   "stage_sn": "Int64",
+   "stage": "String",
+   "player_page_id": "String",
+   "name_zh": "String",
+   "jersey": "String",
+   "team_zh": "String",
+   "games": "Int64",
+   "minutes_avg": "String",
+   "minutes_total": "String",
+   "fg2_made_avg": "Float64",
+   "fg2_made_total": "Int64",
+   "fg2_att_avg": "Float64",
+   "fg2_att_total": "Int64",
+   "fg3_made_avg": "Float64",
+   "fg3_made_total": "Int64",
+   "fg3_att_avg": "Float64",
+   "fg3_att_total": "Int64",
+   "ft_made_avg": "Float64",
+   "ft_made_total": "Int64",
+   "ft_att_avg": "Float64",
+   "ft_att_total": "Int64",
+   "points_avg": "Float64",
+   "points_total": "Int64",
+   "reb_off_avg": "Float64",
+   "reb_off_total": "Int64",
+   "reb_def_avg": "Float64",
+   "reb_def_total": "Int64",
+   "reb_avg": "Float64",
+   "reb_total": "Int64",
+   "ast_avg": "Float64",
+   "ast_total": "Int64",
+   "stl_avg": "Float64",
+   "stl_total": "Int64",
+   "blk_avg": "Float64",
+   "blk_total": "Int64",
+   "tov_avg": "Float64",
+   "tov_total": "Int64",
+   "pf_avg": "Float64",
+   "pf_total": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_pct": "Float64",
+   "ft_pct": "Float64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/stat-player/2022-23/2",
+    "query": {}
+   }
+  ]
+ },
+ "player_1JbPozLB": {
+  "csv": "player_1JbPozLB",
+  "fn": "pleague_player",
+  "args": {
+   "player_page_id": "1JbPozLB"
+  },
+  "rows": 1,
+  "dtypes": {
+   "player_page_id": "String",
+   "player_id": "Int64",
+   "name_zh": "String",
+   "name_en": "String",
+   "team_zh": "String",
+   "team_en": "String",
+   "jersey": "String",
+   "position": "String",
+   "nickname": "String",
+   "tenure": "String",
+   "height_cm": "Float64",
+   "weight_kg": "Float64",
+   "birthplace_zh": "String",
+   "status_zh": "String",
+   "education": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/player/1JbPozLB",
+    "query": {}
+   }
+  ]
+ },
+ "player_seasons_1JbPozLB": {
+  "csv": "player_seasons_1JbPozLB",
+  "fn": "pleague_player_seasons",
+  "args": {
+   "player_page_id": "1JbPozLB"
+  },
+  "rows": 24,
+  "dtypes": {
+   "player_page_id": "String",
+   "competition": "String",
+   "table": "String",
+   "season": "Int64",
+   "season_slug": "String",
+   "games": "Int64",
+   "minutes": "String",
+   "points": "Float64",
+   "reb": "Float64",
+   "ast": "Float64",
+   "stl": "Float64",
+   "blk": "Float64",
+   "tov": "Float64",
+   "pf": "Float64",
+   "fg2_made": "Float64",
+   "fg2_att": "Float64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Float64",
+   "fg3_att": "Float64",
+   "fg3_pct": "Float64",
+   "ft_made": "Float64",
+   "ft_att": "Float64",
+   "ft_pct": "Float64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/player/1JbPozLB",
+    "query": {}
+   }
+  ]
+ },
+ "player_1P42uoZg": {
+  "csv": "player_1P42uoZg",
+  "fn": "pleague_player",
+  "args": {
+   "player_page_id": "1P42uoZg"
+  },
+  "rows": 1,
+  "dtypes": {
+   "player_page_id": "String",
+   "player_id": "Int64",
+   "name_zh": "String",
+   "name_en": "String",
+   "team_zh": "String",
+   "team_en": "String",
+   "jersey": "String",
+   "position": "String",
+   "nickname": "String",
+   "tenure": "String",
+   "height_cm": "Float64",
+   "weight_kg": "Float64",
+   "birthplace_zh": "String",
+   "status_zh": "String",
+   "education": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/player/1P42uoZg",
+    "query": {}
+   }
+  ]
+ },
+ "player_seasons_1P42uoZg": {
+  "csv": "player_seasons_1P42uoZg",
+  "fn": "pleague_player_seasons",
+  "args": {
+   "player_page_id": "1P42uoZg"
+  },
+  "rows": 4,
+  "dtypes": {
+   "player_page_id": "String",
+   "competition": "String",
+   "table": "String",
+   "season": "Int64",
+   "season_slug": "String",
+   "games": "Int64",
+   "minutes": "String",
+   "points": "Float64",
+   "reb": "Float64",
+   "ast": "Float64",
+   "stl": "Float64",
+   "blk": "Float64",
+   "tov": "Float64",
+   "pf": "Float64",
+   "fg2_made": "Float64",
+   "fg2_att": "Float64",
+   "fg2_pct": "Float64",
+   "fg3_made": "Float64",
+   "fg3_att": "Float64",
+   "fg3_pct": "Float64",
+   "ft_made": "Float64",
+   "ft_att": "Float64",
+   "ft_pct": "Float64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/player/1P42uoZg",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_shots": {
+  "csv": "preciser_shots",
+  "fn": "pleague_preciser_shots",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 168,
+  "dtypes": {
+   "game_uuid": "String",
+   "shot_no": "Int64",
+   "period": "Int64",
+   "period_label": "String",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "side": "String",
+   "team_uuid": "String",
+   "person_id": "String",
+   "player_name": "String",
+   "type": "String",
+   "subtype": "String",
+   "area": "String",
+   "success": "Boolean",
+   "x": "Float64",
+   "y": "Float64",
+   "message_zh": "String",
+   "has_video": "Boolean",
+   "home_team_uuid": "String",
+   "away_team_uuid": "String"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/v1/chart-data/id/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_shots_verified": {
+  "csv": "preciser_shots",
+  "fn": "pleague_preciser_shots",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 168,
+  "dtypes": {
+   "game_uuid": "String",
+   "shot_no": "Int64",
+   "period": "Int64",
+   "period_label": "String",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "side": "String",
+   "team_uuid": "String",
+   "person_id": "String",
+   "player_name": "String",
+   "type": "String",
+   "subtype": "String",
+   "area": "String",
+   "success": "Boolean",
+   "x": "Float64",
+   "y": "Float64",
+   "message_zh": "String",
+   "has_video": "Boolean",
+   "home_team_uuid": "String",
+   "away_team_uuid": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   },
+   {
+    "url": "https://api.preciser.io/v1/chart-data/id/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_summary_teams": {
+  "csv": "preciser_summary_teams",
+  "fn": "pleague_preciser_summary_teams",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 2,
+  "dtypes": {
+   "game_uuid": "String",
+   "side": "String",
+   "team_uuid": "String",
+   "team_name_zh": "String",
+   "color": "String",
+   "logo_url": "String",
+   "points": "Int64",
+   "rebounds": "Int64",
+   "assists": "Int64",
+   "steals": "Int64",
+   "blocks": "Int64",
+   "turnovers": "Int64",
+   "fg_made": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_pct": "Float64",
+   "ft_pct": "Float64",
+   "fast_break_points": "Float64",
+   "paint_points": "Float64",
+   "second_chance_points": "Float64",
+   "biggest_lead": "Int64",
+   "biggest_scoring_run": "Int64",
+   "time_leading_seconds": "Int64",
+   "lead_changes": "Int64",
+   "top_player_name": "String",
+   "top_player_jersey": "String",
+   "top_player_points": "Int64",
+   "top_player_rebounds": "Int64",
+   "top_player_assists": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_summary_teams_verified": {
+  "csv": "preciser_summary_teams",
+  "fn": "pleague_preciser_summary_teams",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 2,
+  "dtypes": {
+   "game_uuid": "String",
+   "side": "String",
+   "team_uuid": "String",
+   "team_name_zh": "String",
+   "color": "String",
+   "logo_url": "String",
+   "points": "Int64",
+   "rebounds": "Int64",
+   "assists": "Int64",
+   "steals": "Int64",
+   "blocks": "Int64",
+   "turnovers": "Int64",
+   "fg_made": "Int64",
+   "fg2_pct": "Float64",
+   "fg3_pct": "Float64",
+   "ft_pct": "Float64",
+   "fast_break_points": "Float64",
+   "paint_points": "Float64",
+   "second_chance_points": "Float64",
+   "biggest_lead": "Int64",
+   "biggest_scoring_run": "Int64",
+   "time_leading_seconds": "Int64",
+   "lead_changes": "Int64",
+   "top_player_name": "String",
+   "top_player_jersey": "String",
+   "top_player_points": "Int64",
+   "top_player_rebounds": "Int64",
+   "top_player_assists": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_score_log": {
+  "csv": "preciser_score_log",
+  "fn": "pleague_preciser_score_log",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 204,
+  "dtypes": {
+   "game_uuid": "String",
+   "seq": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "home_score": "Int64",
+   "away_score": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_score_log_verified": {
+  "csv": "preciser_score_log",
+  "fn": "pleague_preciser_score_log",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 204,
+  "dtypes": {
+   "game_uuid": "String",
+   "seq": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "home_score": "Int64",
+   "away_score": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_lead_flow": {
+  "csv": "preciser_lead_flow",
+  "fn": "pleague_preciser_lead_flow",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 48,
+  "dtypes": {
+   "game_uuid": "String",
+   "seq": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "home_score": "Int64",
+   "away_score": "Int64",
+   "score_difference": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_lead_flow_verified": {
+  "csv": "preciser_lead_flow",
+  "fn": "pleague_preciser_lead_flow",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 48,
+  "dtypes": {
+   "game_uuid": "String",
+   "seq": "Int64",
+   "period": "String",
+   "period_no": "Int64",
+   "clock": "String",
+   "seconds_left": "Int64",
+   "home_score": "Int64",
+   "away_score": "Int64",
+   "score_difference": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_win_probability": {
+  "csv": "preciser_win_probability",
+  "fn": "pleague_preciser_win_probability",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 49,
+  "dtypes": {
+   "game_uuid": "String",
+   "minute": "Int64",
+   "home_win_pct": "Float64"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_win_probability_verified": {
+  "csv": "preciser_win_probability",
+  "fn": "pleague_preciser_win_probability",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 49,
+  "dtypes": {
+   "game_uuid": "String",
+   "minute": "Int64",
+   "home_win_pct": "Float64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_rotation": {
+  "csv": "preciser_rotation",
+  "fn": "pleague_preciser_rotation",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 101,
+  "dtypes": {
+   "game_uuid": "String",
+   "side": "String",
+   "name_zh": "String",
+   "jersey": "Int64",
+   "started": "Boolean",
+   "stint_no": "Int64",
+   "start_period": "String",
+   "start_clock": "String",
+   "start_seconds": "Int64",
+   "end_period": "String",
+   "end_clock": "String",
+   "end_seconds": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/game/rotation/chart/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_rotation_verified": {
+  "csv": "preciser_rotation",
+  "fn": "pleague_preciser_rotation",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 101,
+  "dtypes": {
+   "game_uuid": "String",
+   "side": "String",
+   "name_zh": "String",
+   "jersey": "Int64",
+   "started": "Boolean",
+   "stint_no": "Int64",
+   "start_period": "String",
+   "start_clock": "String",
+   "start_seconds": "Int64",
+   "end_period": "String",
+   "end_clock": "String",
+   "end_seconds": "Int64"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/game/rotation/chart/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_injury": {
+  "csv": "preciser_injury",
+  "fn": "pleague_preciser_injury",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf"
+  },
+  "rows": 2,
+  "dtypes": {
+   "game_uuid": "String",
+   "side": "String",
+   "team_uuid": "String",
+   "team_name_zh": "String",
+   "team_name_en": "String",
+   "color": "String",
+   "logo_url": "String",
+   "injury_report": "String"
+  },
+  "requests": [
+   {
+    "url": "https://api.preciser.io/game/injury/list/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "preciser_injury_verified": {
+  "csv": "preciser_injury",
+  "fn": "pleague_preciser_injury",
+  "args": {
+   "uuid": "e6f98675-3e5b-11ed-949e-5d17350689cf",
+   "gid": 197
+  },
+  "rows": 2,
+  "dtypes": {
+   "game_uuid": "String",
+   "side": "String",
+   "team_uuid": "String",
+   "team_name_zh": "String",
+   "team_name_en": "String",
+   "color": "String",
+   "logo_url": "String",
+   "injury_report": "String"
+  },
+  "requests": [
+   {
+    "url": "https://pleagueofficial.com/game/197",
+    "query": {}
+   },
+   {
+    "url": "https://pleagueofficial.com/api/boxscore.preciser.php",
+    "query": {
+     "id": 197,
+     "away_tab": "total",
+     "home_tab": "total"
+    }
+   },
+   {
+    "url": "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   },
+   {
+    "url": "https://api.preciser.io/game/injury/list/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf",
+    "query": {}
+   }
+  ]
+ },
+ "team_crosswalk": {
+  "csv": "team_crosswalk",
+  "fn": "pleague_team_crosswalk",
+  "args": {},
+  "rows": 8,
+  "dtypes": {
+   "team_id": "Int64",
+   "team_uuid": "String"
+  },
+  "requests": []
+ }
+}

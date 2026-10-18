@@ -1,0 +1,4 @@
+match_id,round_type,round_id,round_number,group_id,subphase_id,subphase_number,week_id,status,is_on_half_time,current_quarter,home_score,away_score,start,home_wins,home_losses,away_wins,away_losses,home_team_id,home_club_id,home_team,home_team_abbr,away_team_id,away_club_id,away_team,away_team_abbr,competition_id,edition_id,season,is_selected_local
+105377,LR,6015,1,,,,2987,FINALIZED,,,119,101,2026-09-26T19:00:00Z,,,,,4467,2,Barça,BAR,4480,657,Leyma Coruña,COR,1,91,2027,true
+105392,LR,6016,2,,,,2988,FINALIZED,,,100,94,2026-10-04T17:00:00Z,,,,,4468,12,UCAM Murcia,UCM,4467,2,Barça,BAR,1,91,2027,false
+105410,LR,6018,4,,,,2990,NOT_STARTED,,,,,2026-10-18T17:00:00Z,,,,,4473,8,Asisa Joventut,JOV,4467,2,Barça,BAR,1,91,2027,false

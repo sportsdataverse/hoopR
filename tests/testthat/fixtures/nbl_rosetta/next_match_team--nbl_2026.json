@@ -1,0 +1,132 @@
+{
+  "type": "matches",
+  "fetched": 1791833224,
+  "ttlRemaining": 1800,
+  "count": 1,
+  "source": "nxs",
+  "data": [
+    {
+      "id": "3706e834-58ad-11f1-8519-a362560fc147",
+      "external_id": "3706e834-58ad-11f1-8519-a362560fc147",
+      "external_media_id": "72016818",
+      "date_updated": "2026-10-09T17:02:46.000Z",
+      "start_time": "2026-10-14T08:30:00",
+      "start_time_datetime": "2026-10-14T08:30:00",
+      "round": "5",
+      "match_type": "regular",
+      "match_status": "scheduled",
+      "status": "SCHEDULED",
+      "home_score": null,
+      "away_score": null,
+      "attendance": null,
+      "match_slug": "sydney-kings-v-nz-breakers-men-14-10-2026",
+      "match_title": "Sydney Kings v NZ Breakers men 14-10-2026",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": null,
+      "override_round": null,
+      "match_bg": {
+        "filename_disk": "e1f59f97-e1a4-4b02-9eb5-69a6706e42fe.png"
+      },
+      "match_logo": {
+        "filename_disk": "a5b5a0fc-c32e-4018-8e08-86e427e07612.webp"
+      },
+      "venue": {
+        "id": "4748e46a-4177-47c3-ad0e-8abc259a4b18",
+        "external_id": "b3aa14a3-410c-11f0-91f1-236c30eb17ba",
+        "name": "AIS Arena",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": null,
+        "capacity": null,
+        "timezone": "Australia/Sydney",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+        "external_id": "bf06cec9-410c-11f0-8100-1b3c55488bbb",
+        "name": "Sydney Kings",
+        "external_team_name": "Sydney Kings",
+        "team_nickname": "SYD",
+        "team_code": "SYD",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=KINGS27",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SYD.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/1b57cdaa77d54a9ba47a30fd32243352?size=200&format=webp",
+        "color_primary": "#5f259f",
+        "color_secondary": "#fec527",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:",
+        "team_logo_transparent_blurhash": "L5JP#C-V01}~?6r?=eNf00SuVk0;",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "bbae77db-317d-4c17-aa04-75d53d20ad15",
+        "external_id": "bedd705b-410c-11f0-8d69-1b3c55488bbb",
+        "name": "NZ Breakers",
+        "external_team_name": "NZ Breakers",
+        "team_nickname": "NZL",
+        "team_code": "NZL",
+        "ticket_url": "https://fans.nzbreakers.basketball/schedule",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1sjj/9c43694837504a4d8ec00f739bcfff0d?size=200&format=webp",
+        "color_primary": "#000000",
+        "color_secondary": "#ffffff",
+        "color_tertiary": "#ffffff",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "67d4a190-40bc-4bfb-a9a2-11bd0b93f020",
+        "external_id": "1b041b7b-3dde-11f1-8b34-cf648fa5ccb5",
+        "name": "NBL27",
+        "year": "2026",
+        "season_type": "regular",
+        "gender": "MALE",
+        "competition": {
+          "id": "a12f23ae-8b0d-44c8-8133-6f2810f2431b",
+          "name": "NBL",
+          "gender": null,
+          "league": {
+            "name": "NBL",
+            "league_primary_color": "#FF7900",
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "e853c657-fb0f-49b1-93db-911135380977",
+        "name": "ESPN on Disney",
+        "url": "https://www.disneyplus.com/",
+        "logo_url": "https://nxs.nbl.com.au/assets/c26bd679-cfeb-4339-8e0f-3a499fefb089.png?q=2",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png?q=1",
+        "light_screen_logo": {
+          "filename_disk": "c4014eab-af69-46cc-a9a3-40680f8b1277.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png"
+        },
+        "logo_url_blurhash": "L03+Dt_3~q~q?b-;-;-;00Rjt7of",
+        "dark_screen_logo_url_blurhash": "LJMHJjRj00~q_3D%IUxu00D%WBWB"
+      },
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    }
+  ]
+}

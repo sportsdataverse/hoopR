@@ -1,0 +1,7 @@
+season,season_comp_id,level,comp_id,parent_comp_id,comp_type,comp_sort,comp_round,comp_short_name_ru,comp_short_name_en,comp_abc_name_ru,comp_abc_name_en,comp_gender,comp_state,is_public,note_ru,note_en
+2026,50714,1,55623,50714,0,1,0,Итоговая классификация,Final standing,ВТБ,VTB,0,0,true,\N,\N
+2026,50714,1,54281,50714,10,2,0,Плейофф,Playoff,ВТБ,VTB,0,0,true,\N,\N
+2026,50714,2,54282,54281,5,1,4,1/4 финала (1),1/4 finals (1),1/4-1,1/4-1,0,0,false,\N,\N
+2026,50714,2,54283,54281,5,2,4,1/4 финала (2),1/4 finals (2),1/4-2,1/4-2,0,0,false,\N,\N
+2026,50714,2,54284,54281,5,3,4,1/4 финала (3),1/4 finals (3),1/4-3,1/4-3,0,0,false,\N,\N
+2026,50714,1,50720,50714,0,10,0,Регулярный чемпионат,Regular Season,ВТБ,VTB,0,2,true,\N,\N

@@ -1,0 +1,7 @@
+schedule_key,season,feed,period_category,team_side,team_id,team_name_j,team_name_e,fg_made,fg_attempted,fg_pct,fg2_made,fg2_attempted,fg2_pct,fg3_made,fg3_attempted,fg3_pct,ft_made,ft_attempted,ft_pct,reb_off,reb_def,reb,assists,turnovers,steals,blocks,blocks_received,fouls,fouls_drawn,paint_points,points_off_turnover,second_chance_points,fast_break_points,max_lead,lead_last,lead_last_home,lead_last_away,lead_changes,ties
+505508,2026,v2,1,home,708,青森ワッツ,AOMORI WAT'S,7,18,38.9,6,13,46.2,1,5,20.0,0,0,0.0,2,5,7,5,3,4,3,1,2,4,10,2,5,4,2,4,9,7,4,2
+505508,2026,v2,1,away,709,岩手ビッグブルズ,IWATE BIG BULLS,6,13,46.2,4,10,40.0,2,3,66.7,2,2,100.0,2,8,10,5,6,3,1,3,4,2,8,2,5,2,5,7,9,14,4,2
+505508,2026,v2,2,home,708,青森ワッツ,AOMORI WAT'S,4,17,23.5,1,7,14.3,3,10,30.0,2,3,66.7,3,7,10,4,1,3,0,0,6,3,2,5,3,3,4,5,20,20,1,2
+505508,2026,v2,2,away,709,岩手ビッグブルズ,IWATE BIG BULLS,3,11,27.3,3,7,42.9,0,4,0.0,4,4,100.0,1,10,11,2,5,1,0,0,3,6,2,0,2,0,5,4,15,20,1,2
+505508,2026,v2,3,home,708,青森ワッツ,AOMORI WAT'S,8,17,47.1,6,13,46.2,2,4,50.0,6,8,75.0,4,9,13,8,3,1,2,1,4,5,10,0,2,6,10,13,52,42,4,4
+505508,2026,v2,3,away,709,岩手ビッグブルズ,IWATE BIG BULLS,6,16,37.5,5,11,45.5,1,5,20.0,3,3,100.0,1,5,6,4,3,1,1,2,5,4,8,2,0,6,3,5,35,37,4,4

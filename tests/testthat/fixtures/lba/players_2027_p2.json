@@ -1,0 +1,50 @@
+{
+  "players": [
+    {
+      "id": 45,
+      "name": "Nicola",
+      "surname": "Akele",
+      "code": "AKE-NIC-95",
+      "team_name": "Armani Olimpia Milano",
+      "year": 2026,
+      "player_picture_key": "sgwgsNL364vhCY9a838fmcKP"
+    },
+    {
+      "id": 75,
+      "name": "Amar",
+      "surname": "Alibegovic",
+      "code": "ALI-AMA-95",
+      "team_name": "Bertram Derthona Tortona",
+      "year": 2026,
+      "player_picture_key": "pZpWxP6Z5UPXzXW79y3aTAYn"
+    },
+    {
+      "id": 76,
+      "name": "Mirza",
+      "surname": "Alibegovic",
+      "code": "ALI-MIR-92",
+      "team_name": "Maxima Roma",
+      "year": 2026,
+      "player_picture_key": null
+    }
+  ],
+  "pagination": {
+    "first_url": "/api/v1/players?year=2026&items=50&page=1",
+    "prev_url": "/api/v1/players?year=2026&items=50&page=",
+    "page_url": "/api/v1/players?year=2026&items=50&page=1",
+    "next_url": "/api/v1/players?year=2026&items=50&page=2",
+    "last_url": "/api/v1/players?year=2026&items=50&page=5",
+    "count": 224,
+    "page": 1,
+    "items": 50,
+    "pages": 5,
+    "last": 5,
+    "in": 50,
+    "from": 1,
+    "to": 50,
+    "prev": null,
+    "next": 2
+  },
+  "cache_key": "pCK:1791816949_ptCK:1791821025_tCK:1790250236all_seasons:false|championships:[601, 602]|end_date:2026-10-12|full_data:|order:players.surname|role_id:|sort:asc|team_id:|country_id:|text:|today:2026-10-12|year:2026",
+  "cdn_url": "https://lba-media.s3.eu-south-1.amazonaws.com"
+}

@@ -1,0 +1,2 @@
+league_id,competition_id,match_id,match_status,match_time,match_time_utc,live,period,period_type,clock,home_team_id,home_name,home_name_international,home_code,home_score,away_team_id,away_name,away_name_international,away_code,away_score
+115,49915,2902702,COMPLETE,2026-10-11 13:00:00,2026-10-11 10:00:00,0,<NA>,<NA>,<NA>,23954,Olympiacos Piraeus,Olympiacos Piraeus,OLY,99,23952,Kolossos H Hotels Collection,Kolossos H Hotels Collection,KOL,83

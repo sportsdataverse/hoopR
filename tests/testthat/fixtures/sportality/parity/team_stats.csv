@@ -1,0 +1,11 @@
+team_side,game_source_id,game_id,team_id,team_name,team_code,team_number,instance_id,source,game_uuid,period,period_type,tp,fgm,a,reb,stl,blk,pf
+home,2868126,2868126,153747,Holbæk-Stenhus,Hol,1,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,0,,84,30,10,5,11,2,23
+home,2868126,2868126,153747,Holbæk-Stenhus,Hol,1,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,1,REGULAR,22,7,3,2,3,0,7
+home,2868126,2868126,153747,Holbæk-Stenhus,Hol,1,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,2,REGULAR,32,13,4,1,5,1,4
+home,2868126,2868126,153747,Holbæk-Stenhus,Hol,1,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,3,REGULAR,12,5,1,0,0,1,8
+home,2868126,2868126,153747,Holbæk-Stenhus,Hol,1,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,4,REGULAR,18,5,2,2,3,0,4
+away,2868126,2868126,22250,Randers Cimbria,RAN,2,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,0,,100,35,21,4,8,9,18
+away,2868126,2868126,22250,Randers Cimbria,RAN,2,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,1,REGULAR,21,7,5,2,1,4,6
+away,2868126,2868126,22250,Randers Cimbria,RAN,2,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,2,REGULAR,33,12,6,1,2,1,5
+away,2868126,2868126,22250,Randers Cimbria,RAN,2,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,3,REGULAR,26,7,5,1,2,2,3
+away,2868126,2868126,22250,Randers Cimbria,RAN,2,dbl1_dbl,genius-basketball-stream-reader,c4hh5nig6t,4,REGULAR,20,9,5,0,3,2,4

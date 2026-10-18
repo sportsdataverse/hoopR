@@ -1,0 +1,4 @@
+website_id,season_id,competition_id,competition_name,season_name,abbreviation_local,year,season_end_year,is_default_season
+14,3b2ecaa5-a640-11f1-a234-7f8c49ae4ff2,889eb2bb-5c7c-11ee-aaba-89136e10ae17,COPA VALUE LNBP,COPA VALUE LNBP 2026,,2026,2026,false
+14,cc7d79f3-43ee-11f1-b893-293ce3dbc120,16be8396-24fb-11ef-9ab7-df6be196e88f,LIGA CALIENTE.MX LNBP,LIGA CALIENTE.MX LNBP,,2026,2026,true
+14,b085bfa6-0b98-11f1-a90b-7954dbe27b33,cbd9ecf6-fa02-11ee-8ab9-4510b60996c2,LIGA CALIENTE.MX,LNBP FEMENIL 2026,,2026,2026,false

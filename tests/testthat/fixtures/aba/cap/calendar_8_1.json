@@ -1,0 +1,83 @@
+{
+  "season": {
+    "sez": 8,
+    "lea": 1,
+    "label": "Season 2008/09"
+  },
+  "seasons": [
+    {
+      "sez": 26,
+      "lea": 1,
+      "label": "Season 2026/27"
+    },
+    {
+      "sez": 25,
+      "lea": 1,
+      "label": "Season 2025/26"
+    },
+    {
+      "sez": 24,
+      "lea": 1,
+      "label": "Season 2024/25"
+    }
+  ],
+  "games": [
+    {
+      "round": "ROUND 1",
+      "game_no": 1,
+      "sez": 8,
+      "lea": 1,
+      "home_team": "Partizan Mozzart Bet",
+      "away_team": "Krka",
+      "home_abbr": "PAR",
+      "away_abbr": "KRK",
+      "home_score": 74,
+      "away_score": 67,
+      "when": "Saturday, 04.10.2008 20:00 CET",
+      "date": "2008-10-04",
+      "date_to": null,
+      "time": "20:00",
+      "time_zone": "CET",
+      "local_time": null,
+      "local_place": null
+    },
+    {
+      "round": "ROUND 2",
+      "game_no": 8,
+      "sez": 8,
+      "lea": 1,
+      "home_team": "Krka",
+      "away_team": "Crvena zvezda Meridianbet",
+      "home_abbr": "KRK",
+      "away_abbr": "CZV",
+      "home_score": 56,
+      "away_score": 83,
+      "when": "Tuesday, 07.10.2008 20:00 CET",
+      "date": "2008-10-07",
+      "date_to": null,
+      "time": "20:00",
+      "time_zone": "CET",
+      "local_time": null,
+      "local_place": null
+    },
+    {
+      "round": "ROUND 3",
+      "game_no": 15,
+      "sez": 8,
+      "lea": 1,
+      "home_team": "Kansai Helios Domžale",
+      "away_team": "Krka",
+      "home_abbr": "HEL",
+      "away_abbr": "KRK",
+      "home_score": 56,
+      "away_score": 75,
+      "when": "Saturday, 11.10.2008 19:00 CET",
+      "date": "2008-10-11",
+      "date_to": null,
+      "time": "19:00",
+      "time_zone": "CET",
+      "local_time": null,
+      "local_place": null
+    }
+  ]
+}

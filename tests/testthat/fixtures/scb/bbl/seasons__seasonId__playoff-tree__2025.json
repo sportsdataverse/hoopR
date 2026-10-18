@@ -1,0 +1,319 @@
+{
+  "seasonId": 2025,
+  "quarterFinals": [
+    {
+      "matchWinnerId": 486,
+      "isMatchFinished": true,
+      "games": [
+        {
+          "timestamp": 1779028200,
+          "scheduledTime": "2026-05-17T14:30:00Z",
+          "gameId": 2005742,
+          "gameWinnerId": 486,
+          "homeTeamId": 486,
+          "guestTeamId": 414,
+          "pointsTeamA": 101,
+          "pointsTeamB": 80
+        },
+        {
+          "timestamp": 1779215400,
+          "scheduledTime": "2026-05-19T18:30:00Z",
+          "gameId": 2005743,
+          "gameWinnerId": 486,
+          "homeTeamId": 486,
+          "guestTeamId": 414,
+          "pointsTeamA": 92,
+          "pointsTeamB": 65
+        },
+        {
+          "timestamp": 1779539400,
+          "scheduledTime": "2026-05-23T12:30:00Z",
+          "gameId": 2005744,
+          "gameWinnerId": 486,
+          "homeTeamId": 414,
+          "guestTeamId": 486,
+          "pointsTeamA": 99,
+          "pointsTeamB": 62
+        }
+      ],
+      "teamAVictories": 3,
+      "teamBVictories": 0,
+      "teamA": {
+        "seasonTeamId": 486,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/486",
+        "name": "FC Bayern München Basketball",
+        "rank": 1,
+        "tlc": "FCB"
+      },
+      "teamB": {
+        "seasonTeamId": 414,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/414",
+        "name": "VET-CONCEPT Gladiators Trier",
+        "rank": 8,
+        "tlc": "TRI"
+      }
+    },
+    {
+      "matchWinnerId": 415,
+      "isMatchFinished": true,
+      "games": [
+        {
+          "timestamp": 1778956200,
+          "scheduledTime": "2026-05-16T18:30:00Z",
+          "gameId": 2005747,
+          "gameWinnerId": 540,
+          "homeTeamId": 415,
+          "guestTeamId": 540,
+          "pointsTeamA": 54,
+          "pointsTeamB": 69
+        },
+        {
+          "timestamp": 1779121800,
+          "scheduledTime": "2026-05-18T16:30:00Z",
+          "gameId": 2005748,
+          "gameWinnerId": 415,
+          "homeTeamId": 415,
+          "guestTeamId": 540,
+          "pointsTeamA": 88,
+          "pointsTeamB": 81
+        },
+        {
+          "timestamp": 1779474600,
+          "scheduledTime": "2026-05-22T18:30:00Z",
+          "gameId": 2005749,
+          "gameWinnerId": 415,
+          "homeTeamId": 540,
+          "guestTeamId": 415,
+          "pointsTeamA": 80,
+          "pointsTeamB": 76
+        }
+      ],
+      "teamAVictories": 3,
+      "teamBVictories": 2,
+      "teamA": {
+        "seasonTeamId": 415,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/415",
+        "name": "Telekom Baskets Bonn",
+        "rank": 4,
+        "tlc": "BON"
+      },
+      "teamB": {
+        "seasonTeamId": 540,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/540",
+        "name": "Fitness First Würzburg Baskets",
+        "rank": 5,
+        "tlc": "WUE"
+      }
+    },
+    {
+      "matchWinnerId": 413,
+      "isMatchFinished": true,
+      "games": [
+        {
+          "timestamp": 1779035400,
+          "scheduledTime": "2026-05-17T16:30:00Z",
+          "gameId": 2005757,
+          "gameWinnerId": 541,
+          "homeTeamId": 413,
+          "guestTeamId": 541,
+          "pointsTeamA": 89,
+          "pointsTeamB": 103
+        },
+        {
+          "timestamp": 1779208200,
+          "scheduledTime": "2026-05-19T16:30:00Z",
+          "gameId": 2005758,
+          "gameWinnerId": 413,
+          "homeTeamId": 413,
+          "guestTeamId": 541,
+          "pointsTeamA": 90,
+          "pointsTeamB": 85
+        },
+        {
+          "timestamp": 1779467400,
+          "scheduledTime": "2026-05-22T16:30:00Z",
+          "gameId": 2005759,
+          "gameWinnerId": 541,
+          "homeTeamId": 541,
+          "guestTeamId": 413,
+          "pointsTeamA": 82,
+          "pointsTeamB": 91
+        }
+      ],
+      "teamAVictories": 3,
+      "teamBVictories": 2,
+      "teamA": {
+        "seasonTeamId": 413,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413",
+        "name": "ALBA BERLIN",
+        "rank": 2,
+        "tlc": "BER"
+      },
+      "teamB": {
+        "seasonTeamId": 541,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/541",
+        "name": "RASTA Vechta",
+        "rank": 7,
+        "tlc": "VEC"
+      }
+    }
+  ],
+  "semiFinals": [
+    {
+      "matchWinnerId": 486,
+      "isMatchFinished": true,
+      "games": [
+        {
+          "timestamp": 1780144200,
+          "scheduledTime": "2026-05-30T12:30:00Z",
+          "gameId": 2005762,
+          "gameWinnerId": 486,
+          "homeTeamId": 486,
+          "guestTeamId": 415,
+          "pointsTeamA": 83,
+          "pointsTeamB": 78
+        },
+        {
+          "timestamp": 1780338600,
+          "scheduledTime": "2026-06-01T18:30:00Z",
+          "gameId": 2005763,
+          "gameWinnerId": 486,
+          "homeTeamId": 486,
+          "guestTeamId": 415,
+          "pointsTeamA": 91,
+          "pointsTeamB": 69
+        },
+        {
+          "timestamp": 1780590600,
+          "scheduledTime": "2026-06-04T16:30:00Z",
+          "gameId": 2005764,
+          "gameWinnerId": 486,
+          "homeTeamId": 415,
+          "guestTeamId": 486,
+          "pointsTeamA": 77,
+          "pointsTeamB": 57
+        }
+      ],
+      "teamAVictories": 3,
+      "teamBVictories": 0,
+      "teamA": {
+        "seasonTeamId": 486,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/486",
+        "name": "FC Bayern München Basketball",
+        "rank": 1,
+        "tlc": "FCB"
+      },
+      "teamB": {
+        "seasonTeamId": 415,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/415",
+        "name": "Telekom Baskets Bonn",
+        "rank": 4,
+        "tlc": "BON"
+      }
+    },
+    {
+      "matchWinnerId": 413,
+      "isMatchFinished": true,
+      "games": [
+        {
+          "timestamp": 1780151400,
+          "scheduledTime": "2026-05-30T14:30:00Z",
+          "gameId": 2005767,
+          "gameWinnerId": 413,
+          "homeTeamId": 413,
+          "guestTeamId": 420,
+          "pointsTeamA": 105,
+          "pointsTeamB": 86
+        },
+        {
+          "timestamp": 1780331400,
+          "scheduledTime": "2026-06-01T16:30:00Z",
+          "gameId": 2005768,
+          "gameWinnerId": 413,
+          "homeTeamId": 413,
+          "guestTeamId": 420,
+          "pointsTeamA": 85,
+          "pointsTeamB": 71
+        },
+        {
+          "timestamp": 1780597800,
+          "scheduledTime": "2026-06-04T18:30:00Z",
+          "gameId": 2005769,
+          "gameWinnerId": 420,
+          "homeTeamId": 420,
+          "guestTeamId": 413,
+          "pointsTeamA": 73,
+          "pointsTeamB": 81
+        }
+      ],
+      "teamAVictories": 3,
+      "teamBVictories": 2,
+      "teamA": {
+        "seasonTeamId": 413,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413",
+        "name": "ALBA BERLIN",
+        "rank": 2,
+        "tlc": "BER"
+      },
+      "teamB": {
+        "seasonTeamId": 420,
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/420",
+        "name": "BMA365 Bamberg Baskets",
+        "rank": 3,
+        "tlc": "BAM"
+      }
+    }
+  ],
+  "finals": {
+    "matchWinnerId": 413,
+    "isMatchFinished": true,
+    "games": [
+      {
+        "timestamp": 1781289000,
+        "scheduledTime": "2026-06-12T18:30:00Z",
+        "gameId": 2005772,
+        "gameWinnerId": 486,
+        "homeTeamId": 486,
+        "guestTeamId": 413,
+        "pointsTeamA": 102,
+        "pointsTeamB": 94
+      },
+      {
+        "timestamp": 1781443800,
+        "scheduledTime": "2026-06-14T13:30:00Z",
+        "gameId": 2005773,
+        "gameWinnerId": 413,
+        "homeTeamId": 486,
+        "guestTeamId": 413,
+        "pointsTeamA": 79,
+        "pointsTeamB": 86
+      },
+      {
+        "timestamp": 1781721000,
+        "scheduledTime": "2026-06-17T18:30:00Z",
+        "gameId": 2005774,
+        "gameWinnerId": 486,
+        "homeTeamId": 413,
+        "guestTeamId": 486,
+        "pointsTeamA": 91,
+        "pointsTeamB": 83
+      }
+    ],
+    "teamAVictories": 2,
+    "teamBVictories": 3,
+    "teamA": {
+      "seasonTeamId": 486,
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/486",
+      "name": "FC Bayern München Basketball",
+      "rank": 1,
+      "tlc": "FCB"
+    },
+    "teamB": {
+      "seasonTeamId": 413,
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413",
+      "name": "ALBA BERLIN",
+      "rank": 2,
+      "tlc": "BER"
+    }
+  }
+}

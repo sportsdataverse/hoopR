@@ -1,0 +1,120 @@
+{
+  "gameId": 100720,
+  "roundName": "Final",
+  "technicalName": "25283-92-A",
+  "roundType": "Non Group Round",
+  "groupPairingCode": "92",
+  "gameNumber": "A",
+  "statusCode": "VALID",
+  "gameDay": 1,
+  "teamAFrom": "Winner of Game 87",
+  "teamBFrom": "Winner of Game 88",
+  "teamA": {
+    "teamId": 279569,
+    "organisationId": 64,
+    "code": "GER",
+    "officialName": "Germany",
+    "shortName": "Germany"
+  },
+  "teamB": {
+    "teamId": 279961,
+    "organisationId": 8323,
+    "code": "SRB",
+    "officialName": "Serbia",
+    "shortName": "Serbia"
+  },
+  "teamAScore": 83,
+  "teamBScore": 77,
+  "teamAAggregatedScore": 0,
+  "teamBAggregatedScore": 0,
+  "hostCity": "Manila",
+  "hostCountry": "Philippines",
+  "hostCountryCode": "PHI",
+  "venueId": 57322,
+  "venueName": "Mall of Asia Arena",
+  "gameDateTime": "2023-09-10T20:40:00",
+  "gameDateTimeUTC": "2023-09-10T12:40:00",
+  "hasTimeGameDateTime": true,
+  "ianaTimeZone": "Asia/Manila",
+  "utcOffset": 8,
+  "isPostponed": false,
+  "isPlayedBehindClosedDoors": false,
+  "venueCapacity": 15188,
+  "spectators": 12022,
+  "nominations": [
+    {
+      "personId": 9454,
+      "firstName": "Eleonora",
+      "lastName": "Rangelova",
+      "dateOfBirth": "REDACTED",
+      "gender": "F",
+      "roleCode": "FIBATD",
+      "roleName": "FIBA Technical delegate",
+      "roleOrder": null,
+      "defaultNationality": "BUL",
+      "licenseNationality": "GER"
+    },
+    {
+      "personId": 2044,
+      "firstName": "Michael",
+      "lastName": "Thomson",
+      "dateOfBirth": "REDACTED",
+      "gender": "M",
+      "roleCode": "FIBAREFINS",
+      "roleName": "FIBA Referee instructor",
+      "roleOrder": null,
+      "defaultNationality": null,
+      "licenseNationality": null
+    },
+    {
+      "personId": 15948,
+      "firstName": "Omar",
+      "lastName": "Bermudez",
+      "dateOfBirth": "REDACTED",
+      "gender": "M",
+      "roleCode": "UMP",
+      "roleName": "Umpire",
+      "roleOrder": "1",
+      "defaultNationality": "MEX",
+      "licenseNationality": "MEX"
+    }
+  ],
+  "periods": [
+    {
+      "name": "Q1",
+      "number": 1,
+      "teamAScore": 23,
+      "teamBScore": 26,
+      "teamAFrom": "Winner of Game 87",
+      "teamBFrom": "Winner of Game 88"
+    },
+    {
+      "name": "Q2",
+      "number": 2,
+      "teamAScore": 24,
+      "teamBScore": 21,
+      "teamAFrom": "Winner of Game 87",
+      "teamBFrom": "Winner of Game 88"
+    },
+    {
+      "name": "Q3",
+      "number": 3,
+      "teamAScore": 22,
+      "teamBScore": 10,
+      "teamAFrom": "Winner of Game 87",
+      "teamBFrom": "Winner of Game 88"
+    }
+  ],
+  "isLive": false,
+  "currentPeriod": "Q4",
+  "chrono": "00:00",
+  "liveGameStatus": 999,
+  "currentPeriodStatus": "E",
+  "gameStatisticStatusCode": "VALID",
+  "gamePlayByPlayStatusCode": "VALID",
+  "gameResultStatusCode": "VALID",
+  "gameResultAdditionalInformation": "None",
+  "windowId": null,
+  "windowCode": null,
+  "windowName": null
+}

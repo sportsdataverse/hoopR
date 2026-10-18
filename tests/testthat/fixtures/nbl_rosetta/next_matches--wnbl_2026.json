@@ -1,0 +1,78 @@
+{
+  "type": "matches",
+  "fetched": 1791833227,
+  "ttlRemaining": 1800,
+  "count": 9,
+  "source": "cb",
+  "data": [
+    {
+      "id": "50cb6ff2-445b-4501-9ec8-9cffd03b79c0",
+      "name": "Tasmania Jewels",
+      "team_code": "TAS",
+      "division": null,
+      "conference": null,
+      "nextMatches": [
+        {
+          "id": "712e7bc7-8e2f-41b3-a339-d70a219e7aea",
+          "match_slug": "tasmania-jewels-v-geelong-venom-women-15-10-2026",
+          "match_title": "Tasmania Jewels v Geelong Venom women 15-10-2026",
+          "match_ticket_url": "https://premier.ticketek.com.au/Shows/Show.aspx?sh=JEWELS27",
+          "external_id": "69ae8846-7351-11f1-a3ab-45abfc40cea9",
+          "start_time_datetime": "2026-10-15T08:00:00",
+          "is_home": true,
+          "opponent_id": "8d986481-9b69-420e-bad0-b0761bdb2020",
+          "opponent_name": "Geelong Venom",
+          "opponent_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=800&format=webp",
+          "venue": "MyState Bank Arena",
+          "opponent_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      ]
+    },
+    {
+      "id": "8d986481-9b69-420e-bad0-b0761bdb2020",
+      "name": "Geelong Venom",
+      "team_code": "GEE",
+      "division": null,
+      "conference": null,
+      "nextMatches": [
+        {
+          "id": "712e7bc7-8e2f-41b3-a339-d70a219e7aea",
+          "match_slug": "tasmania-jewels-v-geelong-venom-women-15-10-2026",
+          "match_title": "Tasmania Jewels v Geelong Venom women 15-10-2026",
+          "match_ticket_url": "https://www.intix.com.au/org/geelongvenom",
+          "external_id": "69ae8846-7351-11f1-a3ab-45abfc40cea9",
+          "start_time_datetime": "2026-10-15T08:00:00",
+          "is_home": false,
+          "opponent_id": "50cb6ff2-445b-4501-9ec8-9cffd03b79c0",
+          "opponent_name": "Tasmania Jewels",
+          "opponent_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/b9a00be9f9e445488f17705c4512c6c8?size=200&format=webp",
+          "venue": "MyState Bank Arena",
+          "opponent_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      ]
+    },
+    {
+      "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+      "name": "Southside Melbourne Flyers",
+      "team_code": "SMF",
+      "division": null,
+      "conference": null,
+      "nextMatches": [
+        {
+          "id": "135fab5b-2223-4ff8-93a3-afb01546d09f",
+          "match_slug": "southside-melbourne-flyers-v-sydney-flames-women-16-10-2026",
+          "match_title": "Southside Melbourne Flyers v Sydney Flames women 16-10-2026",
+          "match_ticket_url": "https://www.intix.com.au/org/southside-flyers",
+          "external_id": "69dafb66-7351-11f1-93fe-5dad69d5f080",
+          "start_time_datetime": "2026-10-16T08:00:00",
+          "is_home": true,
+          "opponent_id": "0daf342b-99a5-4728-95c3-fb26ab9ec7c2",
+          "opponent_name": "Sydney Flames",
+          "opponent_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/47c8e59a714141459ef67eb6802dd8ce?size=800&format=webp",
+          "venue": "VIC State Basketball Centre",
+          "opponent_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      ]
+    }
+  ]
+}

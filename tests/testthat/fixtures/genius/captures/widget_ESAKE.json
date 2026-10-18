@@ -1,0 +1,43 @@
+{
+  "matches": [
+    {
+      "match_id": 2902690,
+      "webcast_org": "ESAKE",
+      "competition_name": "Stoiximan GBL 2026-2027",
+      "status": "Final",
+      "date": "10/10/2026",
+      "home_team_id": 26335,
+      "home_team_code": "PER",
+      "home_score": 91,
+      "away_team_id": 26336,
+      "away_team_code": "IRA",
+      "away_score": 89
+    },
+    {
+      "match_id": 2902692,
+      "webcast_org": "ESAKE",
+      "competition_name": "Stoiximan GBL 2026-2027",
+      "status": "Final",
+      "date": "10/10/2026",
+      "home_team_id": 26344,
+      "home_team_code": "MAR",
+      "home_score": 79,
+      "away_team_id": 192421,
+      "away_team_code": "ΜΥΚ",
+      "away_score": 82
+    },
+    {
+      "match_id": 2902694,
+      "webcast_org": "ESAKE",
+      "competition_name": "Stoiximan GBL 2026-2027",
+      "status": "Final",
+      "date": "10/10/2026",
+      "home_team_id": 23957,
+      "home_team_code": "PBC",
+      "home_score": 86,
+      "away_team_id": 203424,
+      "away_team_code": "LEF",
+      "away_score": 73
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+game_system,game_system_code,parent_round_id,round_code,round_id,round_name,round_number,round_type,round_type_code,round_status_code,start_date,end_date,has_teams_assigned,round_kind,standing_header_code,standing_header_name,qualified_team_information,round_order
+Single,S,25274,FR,25276,First Round,1,Group Round,G,COMPL,2023-08-25T00:00:00,2023-08-30T23:59:59.9999999,false,Standard Round,FR,First Round,NA,2
+Single,S,25274,SR,25285,Second Round,2,Group Round,G,COMPL,2023-09-01T00:00:00,2023-09-03T23:59:59.9999999,false,Standard Round,SR,Second Round,NA,3
+Single,S,NA,CL17-32,25284,Classification Round 17-32,2,Group Round,G,COMPL,2023-08-31T00:00:00,2023-09-02T23:59:59.9999999,false,Standard Round,CL17-32,Class. Games 17-32 ,NA,4

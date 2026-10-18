@@ -1,0 +1,2 @@
+player_row_id,player_id,name,name_latin,name_abbreviated,nationality,gender,dob,height_cm,height_feet,weight_kg,weight_lbs,status,jersey_number,position,organization_id,created_at,updated_at
+164,85c99dab-9f67-11f0-8780-a731edb5aad5,D.J. NEWBILL,D.J. NEWBILL,\N,USA,MALE,1992-05-22,193,\N,96,\N,\N,\N,\N,b1e0z,2026-01-14 21:19:37,2026-10-01T03:58:01.312Z

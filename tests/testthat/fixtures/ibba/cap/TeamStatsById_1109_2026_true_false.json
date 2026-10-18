@@ -1,0 +1,35 @@
+{
+  "team-stats": [
+    {
+      "player_id": "0",
+      "jersy": "TOTAL",
+      "year_id": "2026",
+      "team_id": "1109",
+      "games": "26",
+      "minutes": "200.96",
+      "pts": "99.42",
+      "p21": "21.15",
+      "p22": "37.92",
+      "p31": "13.38",
+      "p32": "32.73",
+      "p11": "16.96",
+      "p12": "20.92",
+      "p2": "55.78",
+      "p3": "40.89",
+      "p1": "81.07",
+      "defensive_reb": "28.19",
+      "offensive_reb": "13.58",
+      "total_reb": "41.77",
+      "fouls_against": "20.81",
+      "fouls_for": "17.15",
+      "steals": "7.38",
+      "tournovers": "11.31",
+      "assists": "23.19",
+      "blocks_for": "3.38",
+      "block_against": "1.92",
+      "VAL": "125.50",
+      "plusminus": "0.00",
+      "dunk": "4.46"
+    }
+  ]
+}

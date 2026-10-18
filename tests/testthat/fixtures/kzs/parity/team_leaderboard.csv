@@ -1,0 +1,4 @@
+competition_id,stats_category,club_id,club_fullname,club_logo_uuid,club_code,team_id,team_name,games_played,sum,average,max
+579,PTS,26,KOŠARKARSKI KLUB KRKA,dbf53462-c87d-496b-a84d-8be542f337aa,KRK,17552,Krka,35,3241.0,92.6,116.0
+579,PTS,254,KOŠARKARSKI KLUB CEDEVITA OLIMPIJA,4586ff12-6ac5-45f9-b015-5344ddcc8320,COL,17548,Cedevita Olimpija,7,643.0,91.9,106.0
+579,PTS,16,KOŠARKARSKI KLUB ILIRIJA,f90fe2e9-905d-481c-a7fd-042c0b75530c,ILI,17551,Perspektiva Ilirija,33,2939.0,89.1,120.0

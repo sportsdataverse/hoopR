@@ -1,0 +1,207 @@
+{
+  "type": "rosters",
+  "fetched": 1791833171,
+  "ttlRemaining": 1800,
+  "count": 195,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "22",
+      "playing_position": "F",
+      "player": {
+        "id": "fc35a1fb-d6b9-40ce-a539-53f1116b6067",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-28T01:35:07.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-25T11:16:13.000Z",
+        "first_name": "Nicolas",
+        "last_name": "Tata",
+        "date_of_birth": "1998-09-26",
+        "height": 208,
+        "weight": 118,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality": null,
+        "external_id": "5c7bbb0f-410d-11f0-ab9a-9dbbf7342624",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "22",
+        "playing_position": "F",
+        "active": true,
+        "league": "6c484828-8104-4299-87bc-2ec3c5789da4",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/bca3eac4a6f94406b3b4930902318ff9?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "82",
+        "latest_playing_position": "C",
+        "full_name": "Nicolas Tata",
+        "biography": "<p>Having spent NBL25 with the team as a training player, Nic Tata has been elevated into the lineup as United's Nominated Replacement Player for NBL26.</p>\n<p>Melbourne born and raised, Tata has showcased his elite athleticism at the NBL1 level, regularly skying high for alley-oop slams.</p>\n<p>Leading into the season, Tata put together his best performance with Nunawading, tallying 17 points and 17 rebounds in a dominant victory.</p>",
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "6600e12a-1f40-4f43-96bf-05ecc72caeab",
+          "6f26efa5-3e4e-44f4-90a5-cf1237942d3a",
+          "7ff77ba2-8d9d-4268-998f-dddcd93db101"
+        ],
+        "rosters": [
+          "029dfb44-a2e3-48fc-b932-ee62c197edc5",
+          "07084cc1-4362-4aac-9142-cc744da0b456",
+          "07e937bd-7513-40c4-8e0e-d85821a1b3b4"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "MEL",
+        "name": "Melbourne United",
+        "external_id": "bf6cf4f0-410c-11f0-8107-1b3c55488bbb",
+        "id": "41c8f340-4d0a-4d68-a3c7-1b31f643f803"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "30",
+      "playing_position": "F",
+      "player": {
+        "id": "4afa66cc-d497-4320-bc6e-047af378b8c4",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-19T02:16:02.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-25T11:18:28.000Z",
+        "first_name": "Tom",
+        "last_name": "Koppens",
+        "date_of_birth": "2003-04-01",
+        "height": 201,
+        "weight": 84,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality": null,
+        "external_id": "75e19259-410d-11f0-b4a3-2902fc2f936f",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "30",
+        "playing_position": "F",
+        "active": true,
+        "league": "6c484828-8104-4299-87bc-2ec3c5789da4",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/c4f57403220e40fa9a46fc22b4cdc713?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "30",
+        "latest_playing_position": "F",
+        "full_name": "Tom Koppens",
+        "biography": "<p>Set for his third season with Melbourne United as a Development Player, Tom Koppens is looking to build on his contributions across the past two campaigns.</p>\n<p>A versatile defender and tenacious competitor, Koppens was thrown into big moments last season, including some crucial possessions of the Grand Final series.</p>\n<p>The young forward took the confidence from those experiences into the offseason, leading the Sandringham Sabres to an NBL1 South Championship, where he was named Finals MVP.</p>",
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "2ed24a29-9ef0-4cb9-b655-bf7f660aa3cf",
+          "32f2b9b6-9351-47ad-8ae9-5fab2b907e1e",
+          "3e078821-34b4-49e0-a76c-bc6c407c1d29"
+        ],
+        "rosters": [
+          "035997de-6d5b-4773-b1ae-95428c171a67",
+          "11e54ece-4bf1-4049-9800-a1221743dda3",
+          "45a78d8b-544a-463b-bd9b-406050afda4b"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "MEL",
+        "name": "Melbourne United",
+        "external_id": "bf6cf4f0-410c-11f0-8107-1b3c55488bbb",
+        "id": "41c8f340-4d0a-4d68-a3c7-1b31f643f803"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "13",
+      "playing_position": "G",
+      "player": {
+        "id": "a793b9cb-fb83-4554-8672-f35ccd77d6b1",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-19T02:16:01.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-25T12:01:07.000Z",
+        "first_name": "Tanner",
+        "last_name": "Krebs",
+        "date_of_birth": "1996-01-04",
+        "height": 198,
+        "weight": 95,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality": null,
+        "external_id": "5085c036-410d-11f0-8c88-9dbbf7342624",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "13",
+        "playing_position": "G",
+        "active": true,
+        "league": "6c484828-8104-4299-87bc-2ec3c5789da4",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/4133b1022edb4f78a01b69635dae7770?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "13",
+        "latest_playing_position": "G",
+        "full_name": "Tanner Krebs",
+        "biography": "<p>One of the league's most prolific shooters, Tanner Krebs has stretched the floor at an elite level across his first two seasons with Melbourne United while providing a level of intense defence at the other end of the court.</p>\n<p>The athletic wing is one of only two players that has appeared in all 73 of United's games across the past two seasons, showcasing his durability and toughness.</p>\n<p>This offseason, Krebs suited up for the Ringwood Hawks in the NBL1 South, where he averaged 20.1 points, 7.4 rebounds and 3.9 assists per game.</p>",
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "1e44f643-b169-47a8-aa10-498af2a8b0b1",
+          "2839858a-b85b-4d61-a17a-0066650969e8",
+          "3805cb36-2045-4e0e-991b-e9c6dbd97e63"
+        ],
+        "rosters": [
+          "0195c2d7-a0ae-488a-98a4-95418c13e134",
+          "01eec680-76eb-4277-a1ac-479ceaf7b4b5",
+          "021a7538-0dbf-435a-93ea-7ce9e455a03f"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "MEL",
+        "name": "Melbourne United",
+        "external_id": "bf6cf4f0-410c-11f0-8107-1b3c55488bbb",
+        "id": "41c8f340-4d0a-4d68-a3c7-1b31f643f803"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    }
+  ]
+}

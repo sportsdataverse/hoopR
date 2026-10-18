@@ -1,0 +1,5 @@
+schedule_key,season,feed,team_side,team_id,category,period_category,team_name_j,team_name_e,player_id,player_no,player_name_j,player_name_e,play_time,on_court,display_order,starter,seconds_played,points,fg3_made,fg3_attempted,fg2_made,fg2_attempted,ft_made,ft_attempted,fouls,fouls_drawn,reb_off,reb_def,reb,turnovers,assists,steals,blocks,blocks_received,ptfb,pt2in,pt2nd,ptpft,dunks,efficiency,plus_minus,ast_to,efg,ts,usg,off_rtg,def_rtg,net_rtg,poss
+500017,2023,v2,home,729,3,1,名古屋ダイヤモンドドルフィンズ,NAGOYA DIAMOND DOLPHINS,,,,,50:00,,,,3000,24,4,11,6,11,0,1,4,1,3,10,13,0,8,1,1,3,3,6,0,,,28,,0.0,0.5454545454545454,0.53475935828877,,0.0,0.0,0.0,0.0
+500017,2023,v2,home,729,2,18,名古屋ダイヤモンドドルフィンズ,NAGOYA DIAMOND DOLPHINS,,,,,,,,,,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,,,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+500017,2023,v2,away,728,3,1,シーホース三河,SEAHORSES MIKAWA,,,,,50:00,,,,3000,16,2,5,4,13,2,2,1,4,2,10,12,2,3,0,3,1,1,4,1,,,22,,1.5,0.3888888888888889,0.42372881355932207,,0.0,0.0,0.0,0.0
+500017,2023,v2,away,728,2,18,シーホース三河,SEAHORSES MIKAWA,,,,,,,,,,0,0,0,0,0,0,0,0,0,0,6,6,1,0,0,0,0,0,0,0,,,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,87 @@
+{
+  "stats": [
+    {
+      "category": "points",
+      "player_id": 6191,
+      "name": "JP",
+      "surname": "Macura",
+      "team_name": "Nutribullet Treviso Basket",
+      "tv_name": "Nutribullet Treviso",
+      "year": 2026,
+      "category_filter_total": 65,
+      "attempts": 0,
+      "presences": 3,
+      "minutes": "28.6666666666666667",
+      "score_40_min": 30.232558139534884,
+      "score": "21.6666666666666667",
+      "team_id": 1764,
+      "player_photo_key": "5nKdg3haXGqcT2YHseWm58rK"
+    },
+    {
+      "category": "points",
+      "player_id": 9328,
+      "name": "Quincy",
+      "surname": "Olivari",
+      "team_name": "Dolomiti Energia Trentino",
+      "tv_name": "Dolomiti Energia TN",
+      "year": 2026,
+      "category_filter_total": 64,
+      "attempts": 0,
+      "presences": 3,
+      "minutes": "28.3333333333333333",
+      "score_40_min": 30.11764705882353,
+      "score": "21.3333333333333333",
+      "team_id": 1763,
+      "player_photo_key": "M541NkCeXQSFq755sjdB8UQ4"
+    },
+    {
+      "category": "points",
+      "player_id": 4879,
+      "name": "DeWayne",
+      "surname": "Russell",
+      "team_name": "Nutribullet Treviso Basket",
+      "tv_name": "Nutribullet Treviso",
+      "year": 2026,
+      "category_filter_total": 61,
+      "attempts": 0,
+      "presences": 3,
+      "minutes": "28.3333333333333333",
+      "score_40_min": 28.705882352941178,
+      "score": "20.3333333333333333",
+      "team_id": 1764,
+      "player_photo_key": "n5PY2w7v73YWQHPNWUNYmuDV"
+    }
+  ],
+  "filters": {
+    "order_by": [
+      {
+        "code": "sum",
+        "description": "Totale"
+      },
+      {
+        "code": "avg",
+        "description": "Media"
+      },
+      {
+        "code": "40_perc",
+        "description": "40 min/%"
+      }
+    ],
+    "categories": [
+      {
+        "code": "points",
+        "description": "Punti"
+      },
+      {
+        "code": "rating_lega",
+        "description": "Valutazione"
+      },
+      {
+        "code": "total_rebound",
+        "description": "Rimbalzi"
+      }
+    ]
+  },
+  "cache_key": "_cmpCK:1791747819_season_range:off|year:2026|championship_series_id:1|category:points|advanced:true|order_by:avg",
+  "cdn_url": "https://lba-media.s3.eu-south-1.amazonaws.com"
+}

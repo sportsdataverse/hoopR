@@ -1,0 +1,154 @@
+{
+ "tpbl_seasons": [
+  {
+   "route": "/api/seasons",
+   "params": {}
+  }
+ ],
+ "tpbl_divisions": [
+  {
+   "route": "/api/seasons",
+   "params": {}
+  },
+  {
+   "route": "/api/events/3/divisions",
+   "params": {}
+  }
+ ],
+ "tpbl_teams": [
+  {
+   "route": "/api/seasons",
+   "params": {}
+  },
+  {
+   "route": "/api/events/2/teams",
+   "params": {}
+  }
+ ],
+ "tpbl_games": [
+  {
+   "route": "/api/seasons",
+   "params": {}
+  },
+  {
+   "route": "/api/seasons/3/games",
+   "params": {}
+  }
+ ],
+ "tpbl_games__team3": [
+  {
+   "route": "/api/seasons",
+   "params": {}
+  },
+  {
+   "route": "/api/seasons/3/games",
+   "params": {
+    "team_id": [
+     "3"
+    ]
+   }
+  }
+ ],
+ "tpbl_standings": [
+  {
+   "route": "/api/divisions/2/games/standings",
+   "params": {}
+  }
+ ],
+ "tpbl_standings_against": [
+  {
+   "route": "/api/divisions/2/games/standings",
+   "params": {}
+  }
+ ],
+ "tpbl_game": [
+  {
+   "route": "/api/games/6",
+   "params": {}
+  }
+ ],
+ "tpbl_referees": [
+  {
+   "route": "/api/games/6",
+   "params": {}
+  }
+ ],
+ "tpbl_box_players": [
+  {
+   "route": "/api/games/6",
+   "params": {}
+  },
+  {
+   "route": "/api/games/6/stats",
+   "params": {}
+  }
+ ],
+ "tpbl_box_player_periods": [
+  {
+   "route": "/api/games/6",
+   "params": {}
+  },
+  {
+   "route": "/api/games/6/stats",
+   "params": {}
+  }
+ ],
+ "tpbl_box_teams": [
+  {
+   "route": "/api/games/6",
+   "params": {}
+  },
+  {
+   "route": "/api/games/6/stats",
+   "params": {}
+  }
+ ],
+ "tpbl_box_team_periods": [
+  {
+   "route": "/api/games/6",
+   "params": {}
+  },
+  {
+   "route": "/api/games/6/stats",
+   "params": {}
+  }
+ ],
+ "tpbl_roster": [
+  {
+   "route": "/api/divisions/2/teams/4/players",
+   "params": {}
+  }
+ ],
+ "tpbl_team_shots": [
+  {
+   "route": "/api/divisions/2/teams/4/shooting-spots",
+   "params": {}
+  }
+ ],
+ "tpbl_team_shots__r1": [
+  {
+   "route": "/api/divisions/2/teams/4/shooting-spots",
+   "params": {
+    "rounds[]": [
+     "1"
+    ]
+   }
+  }
+ ],
+ "tpbl_player_shots": [
+  {
+   "route": "/api/divisions/2/players/75/shooting-spots",
+   "params": {}
+  }
+ ],
+ "tpbl_player_games": [
+  {
+   "route": "/api/players/75/games/stats",
+   "params": {
+    "division_id": [
+     "2"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+season,roster_id,competition_team_id,jersey,weight,height,active,position_id,position,player_id,first_name,last_name,nationality_code,birth_date
+2027,11047,561,"",\N,199,true,3,small_forward,380,Godwin,Tshimanga,BEL,2001-01-25
+2027,11049,561,"",85,196,true,2,shooting_guard,162,Yannick,Dammen,BEL,1999-04-26
+2027,11051,561,"",\N,211,true,5,center,564,Arne,Schrevens,BEL,2002-07-08
+2027,11053,561,"",100,210,true,5,center,5517,Patrick,Tape,USA,1998-06-08
+2027,11055,561,"",86,189,true,2,shooting_guard,5519,Wesley,Person Jr.,USA,1995-08-01
+2027,11057,561,"",104,203,true,5,center,5521,Jared,Kimbrough,USA,\N
+2027,11059,561,"",95,197,true,2,shooting_guard,5523,Tucker,Richardson,USA,\N
+2027,11061,561,"",86,199,true,2,shooting_guard,151,Louis,Hazard,BEL,1994-07-21
+2027,11063,561,"",\N,195,true,2,shooting_guard,123,Stan,Van Den Elzen,NED,2000-05-27
+2027,11065,561,"",86,188,true,1,point_guard,3692,Eric,Boone Jr.,USA,1999-07-04
+2027,11067,561,"",\N,188,true,2,shooting_guard,992,Junior,Bonsenge,BEL,2003-11-01
+2027,11069,561,"",\N,183,true,2,shooting_guard,2392,Douglas,Ntesa Bunzu,BEL,2003-08-02
+2027,11071,547,"",84,\N,true,2,shooting_guard,5449,Siem,Uijtendaal,NED,2001-05-05
+2027,11073,547,"",102,\N,true,3,small_forward,5457,Aleksandre,Merkviladze,GEO,2002-03-11
+2027,11075,547,"",84,196,true,2,shooting_guard,5359,Bryan,Antoine,USA,2000-04-26
+2027,11077,547,"",95,196,true,3,small_forward,5525,Michael,McCalister,USA,\N
+2027,11079,547,"",100,206,true,5,center,5527,Jalen,DeLoach,USA,\N
+2027,11081,547,"",95,203,true,5,center,5529,Dola,Abedayo,USA,\N
+2027,11083,547,"",\N,192,true,2,shooting_guard,502,Dele,Adetunji,NED,2003-10-05
+2027,11085,547,"",82,188,true,2,shooting_guard,5531,Kevon,Godwin,USA,\N
+2027,11087,547,"",\N,205,true,5,center,5345,Gido,Nanninga,NED,2006-08-11
+2027,11089,547,"",\N,190,true,2,shooting_guard,5349,Joost,Kobus,NED,2008-06-16
+2027,11091,547,"",\N,192,true,2,shooting_guard,5467,Lasse,Cnubben,NED,2007-05-26
+2027,11093,547,"",\N,\N,true,3,small_forward,5475,Brandon,Bergsma,NED,2001-09-25
+2027,11095,547,"",\N,183,true,1,point_guard,188,Oshean,Brathwaite,NED,2002-05-28
+2027,11097,559,"",109,208,true,5,center,5357,Jonas,Visser,NED,2001-02-06
+2027,11099,559,"",\N,200,true,3,small_forward,547,Bine,Prepelic,SLO,2001-08-05
+2027,11101,559,"",70,188,true,1,point_guard,3,Stef,Schauvlieger,BEL,2002-09-19
+2027,11103,559,"",\N,194,true,2,shooting_guard,205,Roel,Bucumi,BEL,2003-11-08
+2027,11105,559,"",79,185,true,1,point_guard,5533,Sebastian,Thomas,USA,2002-09-30

@@ -1,0 +1,58 @@
+{
+  "matches": [
+    {
+      "match_id": 2845983,
+      "link_match_id": 2845983,
+      "comp_id": 47852,
+      "org": "CEBL",
+      "status": "IN_PROGRESS",
+      "date_time": "May 7, 2026, 11:00 AM",
+      "venue_id": 21669,
+      "venue_name": "Envision Financial Court at Langley Events Centre",
+      "home_team_id": 112353,
+      "home_team_name": "Vancouver Bandits",
+      "home_team_code": "VAN",
+      "home_score": null,
+      "away_team_id": 198441,
+      "away_team_name": "Vancouver Bandits 2",
+      "away_team_code": "VA2",
+      "away_score": null
+    },
+    {
+      "match_id": 2798717,
+      "link_match_id": 2798717,
+      "comp_id": 47852,
+      "org": "CEBL",
+      "status": "COMPLETE",
+      "date_time": "May 9, 2026, 1:30 PM",
+      "venue_id": 34313,
+      "venue_name": "Edmonton EXPO Centre",
+      "home_team_id": 112352,
+      "home_team_name": "Edmonton Stingers",
+      "home_team_code": "EDM",
+      "home_score": 75,
+      "away_team_id": 159624,
+      "away_team_name": "Winnipeg Sea Bears",
+      "away_team_code": "WPG",
+      "away_score": 77
+    },
+    {
+      "match_id": 2845984,
+      "link_match_id": 2845984,
+      "comp_id": 47852,
+      "org": "CEBL",
+      "status": "COMPLETE",
+      "date_time": "May 9, 2026, 5:00 PM",
+      "venue_id": 21669,
+      "venue_name": "Envision Financial Court at Langley Events Centre",
+      "home_team_id": 112353,
+      "home_team_name": "Vancouver Bandits",
+      "home_team_code": "VAN",
+      "home_score": null,
+      "away_team_id": 185718,
+      "away_team_name": "Sikh Warriors",
+      "away_team_code": "SWR",
+      "away_score": null
+    }
+  ]
+}

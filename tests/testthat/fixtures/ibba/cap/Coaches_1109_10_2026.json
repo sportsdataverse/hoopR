@@ -1,0 +1,40 @@
+{
+  "coaches": [
+    {
+      "coach_id": "3707",
+      "cType": "1",
+      "year_id": "2026",
+      "team_id": "1109",
+      "name": "עודד קטש",
+      "name_eng": "Oded Katash",
+      "isReplaced": "False",
+      "pic": "/pics/2016/2025/Media_days/MaccabiTA/katash.jpg",
+      "mOrder": "1",
+      "birth_date": "REDACTED"
+    },
+    {
+      "coach_id": "5668",
+      "cType": "2",
+      "year_id": "2026",
+      "team_id": "1109",
+      "name": "גיא פניני",
+      "name_eng": "Guy Pnini",
+      "isReplaced": "False",
+      "pic": "/pics/2025-2026/pnini.jpg",
+      "mOrder": "1",
+      "birth_date": "REDACTED"
+    },
+    {
+      "coach_id": "5669",
+      "cType": "2",
+      "year_id": "2026",
+      "team_id": "1109",
+      "name": "נועם לוי",
+      "name_eng": "Noam Levy",
+      "isReplaced": "False",
+      "pic": "/pics/2025-2026/20250918%202614329%20copyam.jpg",
+      "mOrder": "1",
+      "birth_date": "REDACTED"
+    }
+  ]
+}

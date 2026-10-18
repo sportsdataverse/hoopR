@@ -1,0 +1,309 @@
+{
+  "type": "player_match_statistics",
+  "fetched": 1791833199,
+  "ttlRemaining": 30,
+  "count": 15,
+  "source": "cb",
+  "data": [
+    {
+      "period": "0",
+      "playing_position": null,
+      "points": 16,
+      "rebounds": 5,
+      "assists": 5,
+      "blocks": 0,
+      "steals": 3,
+      "turnovers": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 5,
+      "personal_fouls": 1,
+      "three_points_attempted": 7,
+      "three_points_made": 3,
+      "three_points_percentage": 0.428571,
+      "two_points_attempted": 2,
+      "two_points_made": 2,
+      "two_points_percentage": 1,
+      "field_goals_attempted": 9,
+      "field_goals_made": "5",
+      "field_goals_percentage": 0.555556,
+      "free_throws_attempted": 4,
+      "free_throws_made": 3,
+      "free_throws_percentage": 0.75,
+      "minutes": 38.283333,
+      "participated": true,
+      "match": {
+        "id": "e8b7f1e8-4d18-4f88-ad9e-4a6bbdb814ff",
+        "external_id": "8eabfe22-b64e-11ef-b662-7396a2026fc9",
+        "start_time_datetime": "2025-06-28T09:00:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "34e35a21-3976-4e62-9c23-86ec7dc67696",
+          "external_id": "98a7192a-b61c-11ef-914a-e1e3e61758d0",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+          "name": "Gold Coast Rollers",
+          "team_code": "GCR",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        },
+        "away_team": {
+          "id": "c46a1af2-b35b-5839-933d-4cad57e12f71",
+          "name": "Townsville Heat",
+          "team_code": "TSV",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/fabfac698bed4321b3a11d18b59cc446?size=100&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      },
+      "player": {
+        "id": "c48d5920-2f1e-4c96-b0f5-1b2b9ef25d6f",
+        "external_id": "cfb4f7ce-b305-11eb-9723-226cd10403de",
+        "jersey_number": null,
+        "first_name": "Boston",
+        "last_name": "Mazlin"
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "sc": {
+        "totalScore": 40,
+        "totalScoreWithoutDDandTD": 40,
+        "breakdown": {
+          "points": {
+            "value": 16,
+            "points": 16
+          },
+          "rebounds": {
+            "value": 5,
+            "points": 5
+          },
+          "assists": {
+            "value": 5,
+            "points": 10
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 3,
+            "points": 9
+          },
+          "turnovers": {
+            "value": 0,
+            "points": 0
+          }
+        },
+        "doubleFigureCount": 1,
+        "seasonTotal": 498
+      }
+    },
+    {
+      "period": "0",
+      "playing_position": null,
+      "points": 10,
+      "rebounds": 1,
+      "assists": 1,
+      "blocks": 1,
+      "steals": 0,
+      "turnovers": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 1,
+      "personal_fouls": 2,
+      "three_points_attempted": 8,
+      "three_points_made": 2,
+      "three_points_percentage": 0.25,
+      "two_points_attempted": 5,
+      "two_points_made": 2,
+      "two_points_percentage": 0.4,
+      "field_goals_attempted": 13,
+      "field_goals_made": "4",
+      "field_goals_percentage": 0.307692,
+      "free_throws_attempted": 0,
+      "free_throws_made": 0,
+      "free_throws_percentage": 0,
+      "minutes": 29.483334,
+      "participated": true,
+      "match": {
+        "id": "3f2a6481-4426-487c-8d06-a6727544248a",
+        "external_id": "8754bda2-b64d-11ef-af53-b9b4894148ee",
+        "start_time_datetime": "2025-05-23T10:30:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "34e35a21-3976-4e62-9c23-86ec7dc67696",
+          "external_id": "98a7192a-b61c-11ef-914a-e1e3e61758d0",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "fc67f5ec-2f10-5b56-a6ca-9b08350f3a4c",
+          "name": "Mackay Meteors",
+          "team_code": "MKY",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b132ba305c684e21ae21d3ec005a1d2f?size=100&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        },
+        "away_team": {
+          "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+          "name": "Gold Coast Rollers",
+          "team_code": "GCR",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      },
+      "player": {
+        "id": "c48d5920-2f1e-4c96-b0f5-1b2b9ef25d6f",
+        "external_id": "cfb4f7ce-b305-11eb-9723-226cd10403de",
+        "jersey_number": null,
+        "first_name": "Boston",
+        "last_name": "Mazlin"
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "sc": {
+        "totalScore": 12,
+        "totalScoreWithoutDDandTD": 12,
+        "breakdown": {
+          "points": {
+            "value": 10,
+            "points": 10
+          },
+          "rebounds": {
+            "value": 1,
+            "points": 1
+          },
+          "assists": {
+            "value": 1,
+            "points": 2
+          },
+          "blocks": {
+            "value": 1,
+            "points": 3
+          },
+          "steals": {
+            "value": 0,
+            "points": 0
+          },
+          "turnovers": {
+            "value": 2,
+            "points": -4
+          }
+        },
+        "doubleFigureCount": 1,
+        "seasonTotal": 498
+      }
+    },
+    {
+      "period": "0",
+      "playing_position": null,
+      "points": 15,
+      "rebounds": 6,
+      "assists": 5,
+      "blocks": 0,
+      "steals": 3,
+      "turnovers": 3,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 6,
+      "personal_fouls": 2,
+      "three_points_attempted": 9,
+      "three_points_made": 2,
+      "three_points_percentage": 0.222222,
+      "two_points_attempted": 4,
+      "two_points_made": 3,
+      "two_points_percentage": 0.75,
+      "field_goals_attempted": 13,
+      "field_goals_made": "5",
+      "field_goals_percentage": 0.384615,
+      "free_throws_attempted": 3,
+      "free_throws_made": 3,
+      "free_throws_percentage": 1,
+      "minutes": 35.833332,
+      "participated": true,
+      "match": {
+        "id": "3a1767a3-7f50-4227-b541-9008a92cc497",
+        "external_id": "8831ce45-b64d-11ef-951f-b9b4894148ee",
+        "start_time_datetime": "2025-06-07T10:00:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "34e35a21-3976-4e62-9c23-86ec7dc67696",
+          "external_id": "98a7192a-b61c-11ef-914a-e1e3e61758d0",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "89613642-2092-5bca-937d-b2944456d7ca",
+          "name": "Logan Thunder",
+          "team_code": "LOG",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/129cb42474d549d48139120d992163ab?size=100&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        },
+        "away_team": {
+          "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+          "name": "Gold Coast Rollers",
+          "team_code": "GCR",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      },
+      "player": {
+        "id": "c48d5920-2f1e-4c96-b0f5-1b2b9ef25d6f",
+        "external_id": "cfb4f7ce-b305-11eb-9723-226cd10403de",
+        "jersey_number": null,
+        "first_name": "Boston",
+        "last_name": "Mazlin"
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "sc": {
+        "totalScore": 34,
+        "totalScoreWithoutDDandTD": 34,
+        "breakdown": {
+          "points": {
+            "value": 15,
+            "points": 15
+          },
+          "rebounds": {
+            "value": 6,
+            "points": 6
+          },
+          "assists": {
+            "value": 5,
+            "points": 10
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 3,
+            "points": 9
+          },
+          "turnovers": {
+            "value": 3,
+            "points": -6
+          }
+        },
+        "doubleFigureCount": 1,
+        "seasonTotal": 498
+      }
+    }
+  ]
+}

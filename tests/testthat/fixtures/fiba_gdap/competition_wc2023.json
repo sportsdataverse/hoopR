@@ -1,0 +1,59 @@
+{
+  "hosts": [
+    {
+      "countryCode": "INA",
+      "countryName": "Indonesia",
+      "cities": [
+        "Jakarta"
+      ]
+    },
+    {
+      "countryCode": "JPN",
+      "countryName": "Japan",
+      "cities": [
+        "Okinawa"
+      ]
+    },
+    {
+      "countryCode": "PHI",
+      "countryName": "Philippines",
+      "cities": [
+        "Manila"
+      ]
+    }
+  ],
+  "competitionId": 208182,
+  "competitionCode": "WMM",
+  "season": 2023,
+  "officialName": "FIBA Basketball World Cup",
+  "start": "2023-08-25",
+  "end": "2023-09-10",
+  "status": "Completed",
+  "ageCategory": "Senior",
+  "gender": "Men",
+  "fibaZone": "World",
+  "zoneInformation": {
+    "zoneId": 1,
+    "zoneOfficialName": "World",
+    "zoneCode": "W",
+    "topZoneId": null,
+    "topZoneOfficialName": null,
+    "topZoneCode": null
+  },
+  "competitionType": "National Teams",
+  "competitionCategory": {
+    "isLeague": false,
+    "ageType": "S",
+    "code": "WC",
+    "name": "World Cup"
+  },
+  "officialFlagItemCode": "O",
+  "officialFlagItemName": "Official",
+  "official": "Official",
+  "discipline": "Basketball",
+  "competitionMarketingName": {
+    "competitionMarketingNameId": 201,
+    "marketingName": "FIBA Basketball World Cup",
+    "code": null
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "team": {
+    "id": 1764,
+    "name": "Nutribullet Treviso Basket",
+    "year": 2026,
+    "club_id": 107,
+    "club_code": "TVU",
+    "updated_at": "2026-09-24T13:42:01.847+02:00",
+    "logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N"
+  },
+  "ranking": [],
+  "rnk_sum": {
+    "cat": {
+      "points": {
+        "pos": 4,
+        "avg": 93
+      },
+      "total_rebound": {
+        "pos": 13,
+        "avg": 33.666666666666664
+      },
+      "assists": {
+        "pos": 15,
+        "avg": 15
+      }
+    },
+    "r_s": {
+      "pos": 5,
+      "points": 4,
+      "mw": 2,
+      "ml": 1
+    }
+  },
+  "players": [
+    {
+      "player_id": 6191,
+      "player_name": "JP",
+      "player_surname": "Macura",
+      "player_season": 2026,
+      "player_photo_key": "5nKdg3haXGqcT2YHseWm58rK",
+      "played_matches": 3,
+      "total_matches": 3,
+      "start_formation": 3,
+      "points_sum": 65,
+      "played_minutes_sum": 86,
+      "rating_lega_sum": 70,
+      "rating_oer_sum": 3.3367521,
+      "offensive_rebound_sum": 6,
+      "defensive_rebound_sum": 4,
+      "total_rebound_sum": 10,
+      "assists_sum": 3,
+      "regain_balls_sum": 10,
+      "lost_balls_sum": 4,
+      "ball_stop_given_sum": 1,
+      "ball_stop_received_sum": 0,
+      "done_fouls_sum": 5,
+      "suffered_fouls_sum": 14,
+      "plus_minus_sum": 8,
+      "aplus_dp_sum": 9,
+      "slam_dunk_sum": 1,
+      "shots_2p_realized_sum": 18,
+      "shots_2p_total_sum": 29,
+      "shots_2p_perc_sum": 62.06896551724138,
+      "shots_3p_realized_sum": 5,
+      "shots_3p_total_sum": 16,
+      "shots_3p_perc_sum": 31.25,
+      "free_throws_realized_sum": 14,
+      "free_throws_total_sum": 16,
+      "free_throws_perc_sum": 87.5
+    },
+    {
+      "player_id": 4879,
+      "player_name": "DeWayne",
+      "player_surname": "Russell",
+      "player_season": 2026,
+      "player_photo_key": "n5PY2w7v73YWQHPNWUNYmuDV",
+      "played_matches": 3,
+      "total_matches": 3,
+      "start_formation": 3,
+      "points_sum": 61,
+      "played_minutes_sum": 85,
+      "rating_lega_sum": 65,
+      "rating_oer_sum": 3.274552,
+      "offensive_rebound_sum": 3,
+      "defensive_rebound_sum": 8,
+      "total_rebound_sum": 11,
+      "assists_sum": 12,
+      "regain_balls_sum": 6,
+      "lost_balls_sum": 10,
+      "ball_stop_given_sum": 0,
+      "ball_stop_received_sum": 5,
+      "done_fouls_sum": 5,
+      "suffered_fouls_sum": 14,
+      "plus_minus_sum": -9,
+      "aplus_dp_sum": 8,
+      "slam_dunk_sum": 0,
+      "shots_2p_realized_sum": 18,
+      "shots_2p_total_sum": 30,
+      "shots_2p_perc_sum": 60,
+      "shots_3p_realized_sum": 6,
+      "shots_3p_total_sum": 12,
+      "shots_3p_perc_sum": 50,
+      "free_throws_realized_sum": 7,
+      "free_throws_total_sum": 8,
+      "free_throws_perc_sum": 87.5
+    },
+    {
+      "player_id": 969,
+      "player_name": "Alessandro",
+      "player_surname": "Cappelletti",
+      "player_season": 2026,
+      "player_photo_key": "gBKiHTMzKiQajAAfFGjxAssf",
+      "played_matches": 3,
+      "total_matches": 3,
+      "start_formation": 0,
+      "points_sum": 44,
+      "played_minutes_sum": 74,
+      "rating_lega_sum": 59,
+      "rating_oer_sum": 3.1252747999999997,
+      "offensive_rebound_sum": 1,
+      "defensive_rebound_sum": 13,
+      "total_rebound_sum": 14,
+      "assists_sum": 14,
+      "regain_balls_sum": 3,
+      "lost_balls_sum": 5,
+      "ball_stop_given_sum": 0,
+      "ball_stop_received_sum": 0,
+      "done_fouls_sum": 5,
+      "suffered_fouls_sum": 12,
+      "plus_minus_sum": -8,
+      "aplus_dp_sum": 12,
+      "slam_dunk_sum": 0,
+      "shots_2p_realized_sum": 9,
+      "shots_2p_total_sum": 22,
+      "shots_2p_perc_sum": 40.909090909090914,
+      "shots_3p_realized_sum": 3,
+      "shots_3p_total_sum": 6,
+      "shots_3p_perc_sum": 50,
+      "free_throws_realized_sum": 17,
+      "free_throws_total_sum": 19,
+      "free_throws_perc_sum": 89.47368421052632
+    }
+  ],
+  "filters": {
+    "seasons": [
+      2019,
+      2020,
+      2021
+    ],
+    "competitions": [
+      {
+        "id": 1,
+        "code": "A1",
+        "name": "Serie A"
+      }
+    ],
+    "stats_orby": [
+      {
+        "val": "",
+        "label": "Punti"
+      },
+      {
+        "val": "tm",
+        "label": "Presenze"
+      },
+      {
+        "val": "pm",
+        "label": "Partite giocate"
+      }
+    ],
+    "stats_types": [
+      {
+        "code": "sum",
+        "description": "Totali"
+      },
+      {
+        "code": "avg",
+        "description": "Medie"
+      },
+      {
+        "code": "max",
+        "description": "Highs"
+      }
+    ]
+  },
+  "cdn_url": "https://lba-media.s3.eu-south-1.amazonaws.com",
+  "cache_key": "tCK:_tCK:1790250236_mlCK:_mlCK:1791828530_ctmtsCK:1791747613_sCK:2026_cCK:602_stCK:sum"
+}

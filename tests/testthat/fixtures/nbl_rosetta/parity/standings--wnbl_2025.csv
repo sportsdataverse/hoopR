@@ -1,0 +1,4 @@
+org,rosetta_standing_id,position,won,lost,played,points_percentage,win_percentage,last_5,streak,points_for,points_against,away_losses,away_wins,home_losses,home_wins,team_id,rosetta_team_id,team_code,team_name,season_year,season_type,season_competition_division,season_end_year
+wnbl,53601bab-6add-4315-bb9f-2850cafdbab4,1,19,4,23,1.1825,0.8261,WWLWWWWWWWLWWLWLWWWWWWW,7,1950,1649,1,10,3,9,e7d138b4-45e2-11f0-b18b-c5864f4b75a8,d4082ccf-a46c-4766-b41b-efa3143b8188,TSV,Townsville Fire,2025,regular,[],2026
+wnbl,ad59c108-80f4-4550-916c-234a37804c74,2,18,5,23,1.132,0.7826,WWWLWLWLWWWWWWWLWWLWWWW,4,1947,1720,3,8,2,10,e7d4f3a7-45e2-11f0-9ce6-c5864f4b75a8,e359bd92-9acc-4a33-bbb0-fa252d4c3a4b,PER,Perth Lynx,2025,regular,[],2026
+wnbl,da6a7296-5e79-48a3-b57d-c8e8f4ab8d46,3,16,7,23,1.0627,0.6957,LWWWLWWWWWWWWWWLLWWWLLL,0,1762,1658,5,7,2,9,e7e7e83d-45e2-11f0-9e55-c5864f4b75a8,bd30706f-87e8-40cd-9a37-7cbe6c8fbad7,BEN,Bendigo Spirit,2025,regular,[],2026

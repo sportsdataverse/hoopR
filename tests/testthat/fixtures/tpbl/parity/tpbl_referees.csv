@@ -1,0 +1,4 @@
+game_id,sequence,referee_id,gohoops_referee_id,name,role
+6,1,5,122,葉俊宏,BASKETBALL_CHIEF_REFEREE
+6,2,6,123,楊士賢,BASKETBALL_FIRST_ASSISTANT_REFEREE
+6,3,4,121,黃少伯,BASKETBALL_SECOND_ASSISTANT_REFEREE

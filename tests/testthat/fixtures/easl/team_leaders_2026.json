@@ -1,0 +1,830 @@
+{
+  "assistsPerGame": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "assistsPerGame": 7.11111,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "D.J. NEWBILL",
+        "nameFullLocal": "D.J. NEWBILL",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/b491673def984790aa634ab4dca4ccb6?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "85c99dab-9f67-11f0-8780-a731edb5aad5",
+        "jerseyNumber": "25",
+        "position": "PG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "assistsPerGame": 4.44444,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "HIEJIMA Makoto",
+        "nameFullLocal": "HIEJIMA Makoto",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/11670dc605ea4846b8337e22011db1b4?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8983317f-b0f5-11ed-8b68-4d213e1c069d",
+        "jerseyNumber": "6",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "assistsPerGame": 4.33333,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Isaac FOTU",
+        "nameFullLocal": "Isaac FOTU",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/c7e182379c5440e5a50361397d3d7786?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a530bfe-b0f5-11ed-866e-4d213e1c069d",
+        "jerseyNumber": "42",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "blocksPerGame": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "blocksPerGame": 0.83333,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Grant JERRETT",
+        "nameFullLocal": "Grant JERRETT",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/fad99ab696cb461784f21bbf2453a1de?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a4f5e97-b0f5-11ed-9b00-4d213e1c069d",
+        "jerseyNumber": "34",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "blocksPerGame": 0.66667,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Gavin EDWARDS",
+        "nameFullLocal": "Gavin EDWARDS",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/422a70668fe14b758d0b2c9e58e1d15d?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "e670b5bc-9f67-11f0-8c57-d59a1fb46c12",
+        "jerseyNumber": "33",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "blocksPerGame": 0.33333,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "HIEJIMA Makoto",
+        "nameFullLocal": "HIEJIMA Makoto",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/11670dc605ea4846b8337e22011db1b4?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8983317f-b0f5-11ed-8b68-4d213e1c069d",
+        "jerseyNumber": "6",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "fieldGoalsPercentage": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "fieldGoalsPercentage": 71.42857,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Isaac FOTU",
+        "nameFullLocal": "Isaac FOTU",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/c7e182379c5440e5a50361397d3d7786?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a530bfe-b0f5-11ed-866e-4d213e1c069d",
+        "jerseyNumber": "42",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "fieldGoalsPercentage": 57.77778,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Grant JERRETT",
+        "nameFullLocal": "Grant JERRETT",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/fad99ab696cb461784f21bbf2453a1de?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a4f5e97-b0f5-11ed-9b00-4d213e1c069d",
+        "jerseyNumber": "34",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "fieldGoalsPercentage": 51.85185,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "ENDO Yusuke",
+        "nameFullLocal": "ENDO Yusuke",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/90ab52e0dc1d4a2dbe1b171d448c587d?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8986bf47-b0f5-11ed-9d1b-4d213e1c069d",
+        "jerseyNumber": "9",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "freeThrowsPercentage": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "freeThrowsPercentage": 100,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "ISHIKAWA Yudai",
+        "nameFullLocal": "ISHIKAWA Yudai",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/5ba975574798419788b2f713551caa73?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "2e016dfa-9f67-11f0-91d1-0fd7b648e6aa",
+        "jerseyNumber": "15",
+        "position": "PG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "freeThrowsPercentage": 100,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "TAKASHIMA Shinji",
+        "nameFullLocal": "TAKASHIMA Shinji",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/a2261fab34c244e4bd4a0f76d0fd86c0?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a4180f3-b0f5-11ed-b3a5-4d213e1c069d",
+        "jerseyNumber": "12",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "freeThrowsPercentage": 87.5,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Isaac FOTU",
+        "nameFullLocal": "Isaac FOTU",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/c7e182379c5440e5a50361397d3d7786?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a530bfe-b0f5-11ed-866e-4d213e1c069d",
+        "jerseyNumber": "42",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "pointsPerGame": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsPerGame": 28,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Isaac FOTU",
+        "nameFullLocal": "Isaac FOTU",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/c7e182379c5440e5a50361397d3d7786?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a530bfe-b0f5-11ed-866e-4d213e1c069d",
+        "jerseyNumber": "42",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsPerGame": 23.11111,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "D.J. NEWBILL",
+        "nameFullLocal": "D.J. NEWBILL",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/b491673def984790aa634ab4dca4ccb6?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "85c99dab-9f67-11f0-8780-a731edb5aad5",
+        "jerseyNumber": "25",
+        "position": "PG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsPerGame": 21.33333,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Grant JERRETT",
+        "nameFullLocal": "Grant JERRETT",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/fad99ab696cb461784f21bbf2453a1de?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a4f5e97-b0f5-11ed-9b00-4d213e1c069d",
+        "jerseyNumber": "34",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "pointsThreeMade": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsThreeMade": 41,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "D.J. NEWBILL",
+        "nameFullLocal": "D.J. NEWBILL",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/b491673def984790aa634ab4dca4ccb6?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "85c99dab-9f67-11f0-8780-a731edb5aad5",
+        "jerseyNumber": "25",
+        "position": "PG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsThreeMade": 24,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "HIEJIMA Makoto",
+        "nameFullLocal": "HIEJIMA Makoto",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/11670dc605ea4846b8337e22011db1b4?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8983317f-b0f5-11ed-8b68-4d213e1c069d",
+        "jerseyNumber": "6",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsThreeMade": 13,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "ENDO Yusuke",
+        "nameFullLocal": "ENDO Yusuke",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/90ab52e0dc1d4a2dbe1b171d448c587d?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8986bf47-b0f5-11ed-9d1b-4d213e1c069d",
+        "jerseyNumber": "9",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "pointsThreePercentage": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsThreePercentage": 58.33333,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Isaac FOTU",
+        "nameFullLocal": "Isaac FOTU",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/c7e182379c5440e5a50361397d3d7786?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a530bfe-b0f5-11ed-866e-4d213e1c069d",
+        "jerseyNumber": "42",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsThreePercentage": 52,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "ENDO Yusuke",
+        "nameFullLocal": "ENDO Yusuke",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/90ab52e0dc1d4a2dbe1b171d448c587d?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8986bf47-b0f5-11ed-9d1b-4d213e1c069d",
+        "jerseyNumber": "9",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "pointsThreePercentage": 50,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "WATANABE Hironori",
+        "nameFullLocal": "WATANABE Hironori",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/b3690a3f7ef94e71b40fa3e38dd58aeb?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a44d984-b0f5-11ed-a9d2-4d213e1c069d",
+        "jerseyNumber": "13",
+        "position": "PG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "reboundsPerGame": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "reboundsPerGame": 9.66667,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Isaac FOTU",
+        "nameFullLocal": "Isaac FOTU",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/c7e182379c5440e5a50361397d3d7786?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a530bfe-b0f5-11ed-866e-4d213e1c069d",
+        "jerseyNumber": "42",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "reboundsPerGame": 7.66667,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Grant JERRETT",
+        "nameFullLocal": "Grant JERRETT",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/fad99ab696cb461784f21bbf2453a1de?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a4f5e97-b0f5-11ed-9b00-4d213e1c069d",
+        "jerseyNumber": "34",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "reboundsPerGame": 6.88889,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "Gavin EDWARDS",
+        "nameFullLocal": "Gavin EDWARDS",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/422a70668fe14b758d0b2c9e58e1d15d?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "e670b5bc-9f67-11f0-8c57-d59a1fb46c12",
+        "jerseyNumber": "33",
+        "position": "PF",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ],
+  "stealsPerGame": [
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "stealsPerGame": 1.55556,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "D.J. NEWBILL",
+        "nameFullLocal": "D.J. NEWBILL",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/b491673def984790aa634ab4dca4ccb6?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "85c99dab-9f67-11f0-8780-a731edb5aad5",
+        "jerseyNumber": "25",
+        "position": "PG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "stealsPerGame": 0.77778,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "HIEJIMA Makoto",
+        "nameFullLocal": "HIEJIMA Makoto",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/11670dc605ea4846b8337e22011db1b4?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8983317f-b0f5-11ed-8b68-4d213e1c069d",
+        "jerseyNumber": "6",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    },
+    {
+      "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+      "stealsPerGame": 0.75,
+      "team": {
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      "player": {
+        "nameFullLatin": "TAKASHIMA Shinji",
+        "nameFullLocal": "TAKASHIMA Shinji",
+        "headshot": "https://images.dc.connect.sportradar.com/b1e0z/a2261fab34c244e4bd4a0f76d0fd86c0?size=800",
+        "nameAbbreviated": null,
+        "nameFamilyLatin": null,
+        "nameFamilyLocal": null,
+        "nameGivenLatin": null,
+        "nameGivenLocal": null,
+        "playerId": "8a4180f3-b0f5-11ed-b3a5-4d213e1c069d",
+        "jerseyNumber": "12",
+        "position": "SG",
+        "status": "ACTIVE",
+        "seasonId": 2
+      }
+    }
+  ]
+}

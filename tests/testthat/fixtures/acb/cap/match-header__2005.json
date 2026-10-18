@@ -1,0 +1,82 @@
+{
+  "matchId": 12559,
+  "competitionId": 1,
+  "start": "2006-06-21T18:15:00Z",
+  "matchStatus": "FINALIZED",
+  "isOnHalfTime": false,
+  "timeLeft": "00:00",
+  "currentQuarter": 0,
+  "currentHomeScore": 72,
+  "currentAwayScore": 76,
+  "currentHomeBonus": 0,
+  "currentAwayBonus": 0,
+  "teams": {
+    "home": {
+      "id": 1339,
+      "competitionId": 1,
+      "editionId": 70,
+      "clubId": 3,
+      "fullName": "TAU Cerámica",
+      "shortName": "TAU Cerámica",
+      "abbreviatedName": "TAU",
+      "primaryColorHex": "#c8102e",
+      "textColorHex": "#FFFFFF",
+      "logo": null,
+      "logoAlt": "TAU Cerámica logo",
+      "secondaryLogo": null,
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    "away": {
+      "id": 1352,
+      "competitionId": 1,
+      "editionId": 70,
+      "clubId": 14,
+      "fullName": "Unicaja",
+      "shortName": "Unicaja",
+      "abbreviatedName": "UNI",
+      "primaryColorHex": "#3d9c35",
+      "textColorHex": "#FFFFFF",
+      "logo": null,
+      "logoAlt": "Unicaja logo",
+      "secondaryLogo": null,
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    }
+  },
+  "quarterScores": [
+    {
+      "quarter": 1,
+      "homeScore": 20,
+      "awayScore": 24
+    },
+    {
+      "quarter": 2,
+      "homeScore": 24,
+      "awayScore": 20
+    },
+    {
+      "quarter": 3,
+      "homeScore": 21,
+      "awayScore": 10
+    }
+  ],
+  "broadcastChannels": [
+    {
+      "broadcaster": "La Dos",
+      "imageLink": null,
+      "link": null,
+      "primary": true,
+      "order": 1
+    }
+  ],
+  "availableContent": {
+    "overview": true,
+    "playbyplay": false,
+    "boxscore": true,
+    "advanced": false
+  },
+  "highLightsVideoURL": null
+}

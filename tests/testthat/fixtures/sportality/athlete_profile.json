@@ -1,0 +1,72 @@
+{
+  "uuid": "dpu0901c0t",
+  "fullName": "Luka Churchill",
+  "firstName": "Luka",
+  "lastName": "Churchill",
+  "birthDate": "<redacted>",
+  "nationality": "DK",
+  "gender": "male",
+  "age": {
+    "value": 19,
+    "format": "years"
+  },
+  "weight": {
+    "value": 90,
+    "format": "kg"
+  },
+  "height": {
+    "value": 197,
+    "format": "cm"
+  },
+  "jerseyNumber": 7,
+  "position": "Guard",
+  "positionCode": "G",
+  "shoots": "",
+  "team": {
+    "uuid": "swr1d65lew",
+    "instanceId": "bac1_bac",
+    "name": "Bears Academy",
+    "code": "BAC",
+    "media": "https://sportality.cdn.s8y.se/team-logos/bac1_bac.svg"
+  },
+  "seasonStats": [
+    {
+      "field": "GP",
+      "value": 5
+    },
+    {
+      "field": "PAvg",
+      "value": "16.8"
+    },
+    {
+      "field": "RAvg",
+      "value": "4.6"
+    }
+  ],
+  "careerStats": [
+    {
+      "field": "GP",
+      "value": 42
+    },
+    {
+      "field": "PAvg",
+      "value": "8.9"
+    },
+    {
+      "field": "RAvg",
+      "value": "3.0"
+    }
+  ],
+  "statisticsProvider": "genius-basketball",
+  "isInSquad": true,
+  "media": {
+    "url": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&s=bc44361bef732e36481eb57a35e02ec8",
+    "alt": "",
+    "srcset": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=160&s=c635b51c90dcd2bfc27b619755bee866 160w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=320&s=b2c7b8451524915e851a6dbfed9469b3 320w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=480&s=0eebec4df638de7d8a9b50d28882b53b 480w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=640&s=6d49688ed6ccfdcc0beb01d6fa69d5b9 640w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=960&s=1087883ec672a413b84641a570dd21d7 960w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=1280&s=5739777d99adcca7e30429758d6d1557 1280w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=1600&s=5c766a76986c5a4e9333f0204eb75328 1600w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=1920&s=b34e8c0089f74392d7ec794affa93ab5 1920w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=2560&s=728129253afb9c762b299a1eacb57f97 2560w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&w=2880&s=f780323d9e91b16818c46b7587f4e43a 2880w",
+    "urlImgOriginalProportion": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png?ixlib=js-3.8.0&s=bc44361bef732e36481eb57a35e02ec8",
+    "urlPlaceholderImage": "",
+    "videourl": "",
+    "photographer": "",
+    "focalPoint": {}
+  }
+}

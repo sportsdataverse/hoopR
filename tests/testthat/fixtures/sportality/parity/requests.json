@@ -1,0 +1,145 @@
+{
+ "athlete_career": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/athlete/playerProfile_gameLog",
+  "query": {
+   "playerUuid": "dpu0901c0t"
+  }
+ },
+ "athlete_details": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/athlete-details/dpu0901c0t",
+  "query": {}
+ },
+ "athlete_profile": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/athlete/profile-page",
+  "query": {
+   "playerUuid": "dpu0901c0t",
+   "masterSiteInstanceId": "dbl1_dbl"
+  }
+ },
+ "boxscore": {
+  "url": "https://www.basketligaen.dk/api/gameday/boxscore/c4hh5nig6t",
+  "query": {}
+ },
+ "game_header": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/game-info/c4hh5nig6t",
+  "query": {}
+ },
+ "game_overview": {
+  "url": "https://www.basketligaen.dk/api/gameday/game-overview/c4hh5nig6t",
+  "query": {}
+ },
+ "game_summary": {
+  "url": "https://www.basketligaen.dk/api/gameday/game-info/c4hh5nig6t",
+  "query": {}
+ },
+ "last_game_day": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/last-game-day",
+  "query": {
+   "seasonSeriesGameType": "xs07bd3fmp"
+  }
+ },
+ "layout_info": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/layout-info",
+  "query": {}
+ },
+ "next_game_day": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/next-game-day",
+  "query": {
+   "seasonSeriesGameType": "xs07bd3fmp"
+  }
+ },
+ "pbp": {
+  "url": "https://www.basketligaen.dk/api/gameday/play-by-play/c4hh5nig6t",
+  "query": {}
+ },
+ "player_box": {
+  "url": "https://www.basketligaen.dk/api/gameday/player-stats/c4hh5nig6t",
+  "query": {}
+ },
+ "player_h2h": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/player-h2h-v2/xs07bd3fmp/rfo82vr830/gvvuxe9ysw",
+  "query": {
+   "gameUuid": "c4hh5nig6t"
+  }
+ },
+ "post_game_team_stats": {
+  "url": "https://www.basketligaen.dk/api/gameday/post-game-data/team-stats/c4hh5nig6t",
+  "query": {
+   "ssgtUuid": "xs07bd3fmp",
+   "homeTeamUuid": "rfo82vr830",
+   "awayTeamUuid": "gvvuxe9ysw"
+  }
+ },
+ "roster": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/athletes/by-team-uuid/rfo82vr830",
+  "query": {}
+ },
+ "schedule": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/game-schedule",
+  "query": {
+   "seasonUuid": "ggp2aapun2",
+   "seriesUuid": "m1ay3mpa4t",
+   "gameTypeUuid": "aprlbjgxlp"
+  }
+ },
+ "season_filter": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/season-series-game-types-filter",
+  "query": {}
+ },
+ "sites": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/all-sites/xs07bd3fmp",
+  "query": {}
+ },
+ "ssgt_provider": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/ssgt/xs07bd3fmp/provider",
+  "query": {}
+ },
+ "standings": {
+  "url": "https://www.basketligaen.dk/api/gameday/team-standings/xs07bd3fmp",
+  "query": {}
+ },
+ "stats_info__players_summary": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/stats-info/players_summary",
+  "query": {
+   "count": "1000",
+   "ssgtUuid": "qzw34da6jg"
+  }
+ },
+ "stats_info__teams_summary": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/stats-info/teams_summary",
+  "query": {
+   "count": "1000",
+   "ssgtUuid": "rejluryl18"
+  }
+ },
+ "stats_info__games_games": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/stats-info/games_games",
+  "query": {
+   "count": "1000",
+   "ssgtUuid": "qzw34da6jg"
+  }
+ },
+ "team": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/teams/rfo82vr830",
+  "query": {}
+ },
+ "team_played_games": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/played-games/rfo82vr830",
+  "query": {}
+ },
+ "team_stats": {
+  "url": "https://www.basketligaen.dk/api/gameday/team-stats/c4hh5nig6t",
+  "query": {}
+ },
+ "team_upcoming_games": {
+  "url": "https://www.basketligaen.dk/api/sports-v2/upcoming-games/rfo82vr830",
+  "query": {}
+ },
+ "player_crosswalk": {
+  "url": "https://www.basketligaen.dk/api/statistics-v2/stats-info/players_summary",
+  "query": {
+   "ssgtUuid": "qzw34da6jg",
+   "count": "1000"
+  }
+ }
+}

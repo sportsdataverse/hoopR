@@ -1,0 +1,4 @@
+team_id,competition_id,roster_entry_id,player_id,identification_number,person_id,first_name,last_name,year_of_birth,nationality_id,nationality_alpha2_code,nationality_alpha3_code,nationality_name,nationality_eng_name,homegrown,photo_uuid,positions,jersey_number
+17551,579,241739,94385,145829,94387,Lian,Boisa,2007,203,SI,SVN,Slovenija,Slovenia,false,0d5dd0c9-fde7-4874-8eec-69d637298dce,[],55
+17551,579,245700,86209,138036,86211,Pavle,Đokić,2008,203,SI,SVN,Slovenija,Slovenia,false,78f3ef48-b88f-456f-a71f-d973654e0a24,[],<null>
+17551,579,241743,85445,137305,85447,Lovro,Faganel,2007,203,SI,SVN,Slovenija,Slovenia,false,5092f118-6bf4-4da6-a6ba-3a02b076bb1b,[],11

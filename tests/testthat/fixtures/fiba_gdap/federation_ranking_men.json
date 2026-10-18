@@ -1,0 +1,102 @@
+{
+  "asOfDate": "2025-09-15T00:00:00",
+  "zoneRankingCode": "W",
+  "zoneRankingOfficialName": "World",
+  "isDiscount": false,
+  "items": [
+    {
+      "worldRank": 1,
+      "countryName": "USA",
+      "zoneRank": 1,
+      "iocCode": "USA",
+      "fibaCode": "USA",
+      "currentPoints": 845.8,
+      "worldRankVariation": 0,
+      "comments": null
+    },
+    {
+      "worldRank": 2,
+      "countryName": "Germany",
+      "zoneRank": 1,
+      "iocCode": "GER",
+      "fibaCode": "GER",
+      "currentPoints": 765.9,
+      "worldRankVariation": 1,
+      "comments": null
+    },
+    {
+      "worldRank": 3,
+      "countryName": "Serbia",
+      "zoneRank": 2,
+      "iocCode": "SRB",
+      "fibaCode": "SRB",
+      "currentPoints": 761.8,
+      "worldRankVariation": -1,
+      "comments": null
+    }
+  ],
+  "climbers": [
+    {
+      "worldRank": 65,
+      "countryName": "Mali",
+      "zoneRank": 10,
+      "iocCode": "MLI",
+      "fibaCode": "MLI",
+      "currentPoints": 179.1,
+      "worldRankVariation": 18,
+      "comments": null
+    },
+    {
+      "worldRank": 110,
+      "countryName": "South Africa",
+      "zoneRank": 19,
+      "iocCode": "RSA",
+      "fibaCode": "RSA",
+      "currentPoints": 74.2,
+      "worldRankVariation": 17,
+      "comments": null
+    },
+    {
+      "worldRank": 12,
+      "countryName": "Türkiye",
+      "zoneRank": 7,
+      "iocCode": "TUR",
+      "fibaCode": "TUR",
+      "currentPoints": 686.2,
+      "worldRankVariation": 15,
+      "comments": null
+    }
+  ],
+  "fallers": [
+    {
+      "worldRank": 116,
+      "countryName": "Morocco",
+      "zoneRank": 21,
+      "iocCode": "MAR",
+      "fibaCode": "MAR",
+      "currentPoints": 72.1,
+      "worldRankVariation": -16,
+      "comments": null
+    },
+    {
+      "worldRank": 50,
+      "countryName": "Tunisia",
+      "zoneRank": 7,
+      "iocCode": "TUN",
+      "fibaCode": "TUN",
+      "currentPoints": 253.8,
+      "worldRankVariation": -14,
+      "comments": null
+    },
+    {
+      "worldRank": 53,
+      "countryName": "Nigeria",
+      "zoneRank": 8,
+      "iocCode": "NGR",
+      "fibaCode": "NGR",
+      "currentPoints": 248.7,
+      "worldRankVariation": -11,
+      "comments": null
+    }
+  ]
+}

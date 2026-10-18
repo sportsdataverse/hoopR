@@ -1,0 +1,2 @@
+player_id,identification_number,person_id,first_name,last_name,year_of_birth,nationality_id,nationality_alpha2_code,nationality_alpha3_code,nationality_name,nationality_eng_name,homegrown,photo_uuid,positions
+106285,915164,109521,Wendell Jerome,Green jr,2002,237,US,USA,Združene države,United States of America,false,0bcbce69-5db6-4b26-a7b4-467e5fcac7bb,[]

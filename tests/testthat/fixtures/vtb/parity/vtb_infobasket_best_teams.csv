@@ -1,0 +1,10 @@
+season,param_id,param_name,param_short_name,param_label,param_group,rank,team_id,team_short_name_ru,team_short_name_en,team_name_ru,team_name_en,team_region_name_ru,team_region_name_en,game_id,game_count,res,pre_res,is_same
+2026,1,Points,Points in a game,Points  in a game,0,1,15,ЦСКА,CSKA,ЦСКА,CSKA,Москва,Moscow,\N,52,93.21153846153847,4847,false
+2026,1,Points,Points in a game,Points  in a game,0,2,2994,Зенит,Zenit,Зенит,Zenit,Санкт-Петербург,Saint Petersburg,\N,56,85.33928571428571,4779,false
+2026,1,Points,Points in a game,Points  in a game,0,3,2650,Локомотив-К,Lokomotiv K,Локомотив-Кубань,Lokomotiv Kuban,Краснодар,Krasnodar,\N,53,85.30188679245283,4521,false
+2026,2,Assists,Assists in a game,Assists in a game,0,1,697,УНИКС,UNICS,УНИКС,UNICS,Казань,Kazan,\N,54,20.944444444444443,1131,false
+2026,2,Assists,Assists in a game,Assists in a game,0,2,15,ЦСКА,CSKA,ЦСКА,CSKA,Москва,Moscow,\N,52,20.576923076923077,1070,false
+2026,2,Assists,Assists in a game,Assists in a game,0,3,2650,Локомотив-К,Lokomotiv K,Локомотив-Кубань,Lokomotiv Kuban,Краснодар,Krasnodar,\N,53,20.566037735849058,1090,false
+2026,3,Rebounds,Rebounds in a game,Rebounds in a game,0,1,15,ЦСКА,CSKA,ЦСКА,CSKA,Москва,Moscow,\N,52,38.28846153846154,1991,false
+2026,3,Rebounds,Rebounds in a game,Rebounds in a game,0,2,3059,БЕТСИТИ ПАРМА,BETCITY PARMA,БЕТСИТИ ПАРМА,BETCITY PARMA,Пермский край,Perm region,\N,43,38.2093023255814,1643,false
+2026,3,Rebounds,Rebounds in a game,Rebounds in a game,0,3,697,УНИКС,UNICS,УНИКС,UNICS,Казань,Kazan,\N,54,37.370370370370374,2018,false

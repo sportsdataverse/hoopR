@@ -1,0 +1,4 @@
+schedule_key,season,feed,period_category,category,category_name,rank,tie_order,team_side,team_id,team_name_j,player_id,player_no,player_name_j,count,reb_off_count,reb_def_count
+1,2017,v1,1,1,points,1,1,home,706,アルバルク東京,9028,2,ディアンテ　ギャレット,5,0,0
+1,2017,v1,1,2,assists,1,1,home,706,アルバルク東京,9028,2,ディアンテ　ギャレット,2,0,0
+1,2017,v1,1,3,steals,1,1,home,706,アルバルク東京,9037,24,田中　大貴,2,0,0

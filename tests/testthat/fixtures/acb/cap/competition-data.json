@@ -1,0 +1,198 @@
+{
+  "currentCompetitionId": 1,
+  "currentEditionId": 91,
+  "currentWeekId": 2989,
+  "currentRoundId": 6017,
+  "currentMatchGrouping": "round",
+  "currentMatch": {
+    "id": 105401,
+    "roundType": null,
+    "roundId": null,
+    "roundNumber": null,
+    "groupId": null,
+    "subphaseId": null,
+    "subphaseNumber": null,
+    "homeClubId": null,
+    "weekId": null,
+    "awayClubId": null,
+    "matchStatus": "FINALIZED",
+    "isOnHalfTime": false,
+    "currentQuarter": 0,
+    "homeScore": null,
+    "awayScore": null,
+    "startDateTime": "2026-10-11T17:00:00Z",
+    "homeCurrentWins": null,
+    "homeCurrentLosses": null,
+    "awayCurrentWins": null,
+    "awayCurrentLosses": null,
+    "homeTeam": {
+      "id": 4467,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 2,
+      "fullName": "Barça",
+      "shortName": "Barça",
+      "abbreviatedName": "BAR",
+      "primaryColorHex": "#154284",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+      "logoAlt": "Barça logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    "awayTeam": {
+      "id": 4472,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 13,
+      "fullName": "Valencia Basket",
+      "shortName": "Valencia Basket",
+      "abbreviatedName": "VBC",
+      "primaryColorHex": "#fc6c0f",
+      "textColorHex": "#000000",
+      "logo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+      "logoAlt": "Valencia Basket logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    "serieData": null
+  },
+  "competitions": [
+    {
+      "id": 1,
+      "name": "Liga Nacional",
+      "editions": [
+        {
+          "id": 48,
+          "seasonStartYear": 1983,
+          "seasonEndYear": 1984,
+          "rounds": [
+            {
+              "id": 914,
+              "roundNumber": 1,
+              "subphaseId": null,
+              "subphaseNumber": null
+            },
+            {
+              "id": 915,
+              "roundNumber": 2,
+              "subphaseId": null,
+              "subphaseNumber": null
+            },
+            {
+              "id": 916,
+              "roundNumber": 3,
+              "subphaseId": null,
+              "subphaseNumber": null
+            }
+          ],
+          "weeks": [
+            {
+              "id": 1968,
+              "description": "Semana 1",
+              "startDate": "1983-09-05"
+            },
+            {
+              "id": 1967,
+              "description": "Semana 2",
+              "startDate": "1983-09-12"
+            },
+            {
+              "id": 1938,
+              "description": "Semana 3",
+              "startDate": "1983-09-19"
+            }
+          ]
+        },
+        {
+          "id": 49,
+          "seasonStartYear": 1984,
+          "seasonEndYear": 1985,
+          "rounds": [
+            {
+              "id": 954,
+              "roundNumber": 1,
+              "subphaseId": null,
+              "subphaseNumber": null
+            },
+            {
+              "id": 955,
+              "roundNumber": 2,
+              "subphaseId": null,
+              "subphaseNumber": null
+            },
+            {
+              "id": 956,
+              "roundNumber": 3,
+              "subphaseId": null,
+              "subphaseNumber": null
+            }
+          ],
+          "weeks": [
+            {
+              "id": 1934,
+              "description": "Semana 1",
+              "startDate": "1984-09-24"
+            },
+            {
+              "id": 1933,
+              "description": "Semana 2",
+              "startDate": "1984-10-01"
+            },
+            {
+              "id": 1904,
+              "description": "Semana 3",
+              "startDate": "1984-10-08"
+            }
+          ]
+        },
+        {
+          "id": 84,
+          "seasonStartYear": 2019,
+          "seasonEndYear": 2020,
+          "rounds": [
+            {
+              "id": 2903,
+              "roundNumber": 1,
+              "subphaseId": null,
+              "subphaseNumber": null
+            },
+            {
+              "id": 2904,
+              "roundNumber": 2,
+              "subphaseId": null,
+              "subphaseNumber": null
+            },
+            {
+              "id": 5007,
+              "roundNumber": 29,
+              "subphaseId": 292,
+              "subphaseNumber": 1
+            }
+          ],
+          "weeks": [
+            {
+              "id": 364,
+              "description": "Semana 1",
+              "startDate": "2019-09-23"
+            },
+            {
+              "id": 386,
+              "description": "Semana 2",
+              "startDate": "2019-09-30"
+            },
+            {
+              "id": 387,
+              "description": "Semana 3",
+              "startDate": "2019-10-07"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

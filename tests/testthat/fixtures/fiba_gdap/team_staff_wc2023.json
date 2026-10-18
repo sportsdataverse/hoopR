@@ -1,0 +1,233 @@
+[
+  {
+    "teamId": 279561,
+    "teamName": "Japan",
+    "teamCode": "JPN",
+    "coaches": [
+      {
+        "personId": 106909,
+        "firstName": "Thomas Wayne",
+        "lastName": "Hovasse",
+        "gender": "M",
+        "function": "Head Coach",
+        "isHeadCoach": 1,
+        "isAssistantCoach": null,
+        "isAccompanyingCoach": null,
+        "coachDisplayOrder": null,
+        "isOnFinalRoster": true,
+        "dateOfBirth": "REDACTED",
+        "nationalities": [
+          {
+            "countryId": 256,
+            "countryCode": "USA",
+            "countryName": "USA",
+            "isDefault": true,
+            "isActive": true,
+            "officialName": "USA",
+            "shortName": "USA",
+            "iocCode": "USA",
+            "iso2Code": "US",
+            "fibaCode": "USA",
+            "isTerritory": false,
+            "logoUrl": "https://map-resources.fiba.basketball/flags/USA.png",
+            "zones": []
+          }
+        ],
+        "coachLicense": {
+          "organisationName": "Japan Basketball Association",
+          "countryCode": "JPN"
+        },
+        "finalRosterMemberStatusCode": null
+      },
+      {
+        "personId": 119395,
+        "firstName": "Corey Yasuto",
+        "lastName": "Gaines",
+        "gender": "M",
+        "function": "Assistant Coach",
+        "isHeadCoach": null,
+        "isAssistantCoach": 1,
+        "isAccompanyingCoach": null,
+        "coachDisplayOrder": 1,
+        "isOnFinalRoster": true,
+        "dateOfBirth": "REDACTED",
+        "nationalities": [
+          {
+            "countryId": 256,
+            "countryCode": "USA",
+            "countryName": "USA",
+            "isDefault": true,
+            "isActive": true,
+            "officialName": "USA",
+            "shortName": "USA",
+            "iocCode": "USA",
+            "iso2Code": "US",
+            "fibaCode": "USA",
+            "isTerritory": false,
+            "logoUrl": "https://map-resources.fiba.basketball/flags/USA.png",
+            "zones": []
+          }
+        ],
+        "coachLicense": {
+          "organisationName": "USA Basketball",
+          "countryCode": "USA"
+        },
+        "finalRosterMemberStatusCode": null
+      }
+    ]
+  },
+  {
+    "teamId": 279562,
+    "teamName": "Philippines",
+    "teamCode": "PHI",
+    "coaches": [
+      {
+        "personId": 17260,
+        "firstName": "Vincent",
+        "lastName": "Reyes",
+        "gender": "M",
+        "function": "Head Coach",
+        "isHeadCoach": 1,
+        "isAssistantCoach": null,
+        "isAccompanyingCoach": null,
+        "coachDisplayOrder": null,
+        "isOnFinalRoster": true,
+        "dateOfBirth": "REDACTED",
+        "nationalities": [
+          {
+            "countryId": 192,
+            "countryCode": "PHI",
+            "countryName": "Philippines",
+            "isDefault": true,
+            "isActive": true,
+            "officialName": "Philippines",
+            "shortName": "Philippines",
+            "iocCode": "PHI",
+            "iso2Code": "PH",
+            "fibaCode": "PHI",
+            "isTerritory": false,
+            "logoUrl": "https://map-resources.fiba.basketball/flags/PHI.png",
+            "zones": []
+          }
+        ],
+        "coachLicense": {
+          "organisationName": "Samahang Basketbol ng Pilipinas, Inc",
+          "countryCode": "PHI"
+        },
+        "finalRosterMemberStatusCode": null
+      },
+      {
+        "personId": 319745,
+        "firstName": "Earl Timothy",
+        "lastName": "Cone",
+        "gender": "M",
+        "function": "Assistant Coach",
+        "isHeadCoach": null,
+        "isAssistantCoach": 1,
+        "isAccompanyingCoach": null,
+        "coachDisplayOrder": 1,
+        "isOnFinalRoster": true,
+        "dateOfBirth": "REDACTED",
+        "nationalities": [
+          {
+            "countryId": 256,
+            "countryCode": "USA",
+            "countryName": "USA",
+            "isDefault": true,
+            "isActive": true,
+            "officialName": "USA",
+            "shortName": "USA",
+            "iocCode": "USA",
+            "iso2Code": "US",
+            "fibaCode": "USA",
+            "isTerritory": false,
+            "logoUrl": "https://map-resources.fiba.basketball/flags/USA.png",
+            "zones": []
+          }
+        ],
+        "coachLicense": {
+          "organisationName": "Samahang Basketbol ng Pilipinas, Inc",
+          "countryCode": "PHI"
+        },
+        "finalRosterMemberStatusCode": null
+      }
+    ]
+  },
+  {
+    "teamId": 279563,
+    "teamName": "Australia",
+    "teamCode": "AUS",
+    "coaches": [
+      {
+        "personId": 127880,
+        "firstName": "Matthew Peter",
+        "lastName": "Nielsen",
+        "gender": "M",
+        "function": "Assistant Coach",
+        "isHeadCoach": 0,
+        "isAssistantCoach": 1,
+        "isAccompanyingCoach": null,
+        "coachDisplayOrder": 1,
+        "isOnFinalRoster": true,
+        "dateOfBirth": "REDACTED",
+        "nationalities": [
+          {
+            "countryId": 14,
+            "countryCode": "AUS",
+            "countryName": "Australia",
+            "isDefault": true,
+            "isActive": true,
+            "officialName": "Australia",
+            "shortName": "Australia",
+            "iocCode": "AUS",
+            "iso2Code": "AU",
+            "fibaCode": "AUS",
+            "isTerritory": false,
+            "logoUrl": "https://map-resources.fiba.basketball/flags/AUS.png",
+            "zones": []
+          }
+        ],
+        "coachLicense": {
+          "organisationName": "Basketball Australia",
+          "countryCode": "AUS"
+        },
+        "finalRosterMemberStatusCode": null
+      },
+      {
+        "personId": 13046,
+        "firstName": "Brian Warwick",
+        "lastName": "Goorjian",
+        "gender": "M",
+        "function": "Head Coach",
+        "isHeadCoach": 1,
+        "isAssistantCoach": null,
+        "isAccompanyingCoach": null,
+        "coachDisplayOrder": null,
+        "isOnFinalRoster": true,
+        "dateOfBirth": "REDACTED",
+        "nationalities": [
+          {
+            "countryId": 14,
+            "countryCode": "AUS",
+            "countryName": "Australia",
+            "isDefault": true,
+            "isActive": true,
+            "officialName": "Australia",
+            "shortName": "Australia",
+            "iocCode": "AUS",
+            "iso2Code": "AU",
+            "fibaCode": "AUS",
+            "isTerritory": false,
+            "logoUrl": "https://map-resources.fiba.basketball/flags/AUS.png",
+            "zones": []
+          }
+        ],
+        "coachLicense": {
+          "organisationName": "Basketball Australia",
+          "countryCode": "AUS"
+        },
+        "finalRosterMemberStatusCode": null
+      }
+    ]
+  }
+]

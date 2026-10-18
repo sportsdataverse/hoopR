@@ -1,0 +1,153 @@
+game_no,season,league_id,league,side,x,y,made,player_id,player_name
+6,2026,1,aba,home,8.92,26.1,false,4781,Juwan Morgan
+6,2026,1,aba,home,7.99,37.68,true,4781,Juwan Morgan
+6,2026,1,aba,away,91.14,35.14,true,5110,Keondre Kennedy
+6,2026,1,aba,home,14.7,64.52,true,5072,Oleksandr Kovliar
+6,2026,1,aba,away,91.92,57.74,true,5110,Keondre Kennedy
+6,2026,1,aba,home,13.14,39.66,true,5053,Jerry Franck Boutsiele
+6,2026,1,aba,away,90.67,53.22,true,2112,Danilo Nikolić
+6,2026,1,aba,home,8.3,44.18,false,4769,Rasheed Sulaimon
+6,2026,1,aba,home,11.42,33.16,true,4769,Rasheed Sulaimon
+6,2026,1,aba,away,93.48,56.05,false,2312,Nikola Rebić
+6,2026,1,aba,away,89.58,65.65,false,5111,Shevon Thompson
+6,2026,1,aba,home,10.02,43.33,true,4769,Rasheed Sulaimon
+6,2026,1,aba,away,89.58,63.95,false,2112,Danilo Nikolić
+6,2026,1,aba,home,31.39,19.04,false,5073,Axel Bouteille
+6,2026,1,aba,home,32.95,65.65,true,4769,Rasheed Sulaimon
+6,2026,1,aba,away,90.05,77.51,false,2982,Luka Cerovina
+6,2026,1,aba,home,32.17,27.23,false,5073,Axel Bouteille
+6,2026,1,aba,home,12.51,62.26,true,5072,Oleksandr Kovliar
+6,2026,1,aba,away,74.29,87.12,false,2112,Danilo Nikolić
+6,2026,1,aba,home,32.95,54.35,false,4781,Juwan Morgan
+6,2026,1,aba,home,11.89,41.64,false,5073,Axel Bouteille
+6,2026,1,aba,home,34.04,45.59,true,4769,Rasheed Sulaimon
+6,2026,1,aba,home,32.32,71.02,false,4769,Rasheed Sulaimon
+6,2026,1,aba,home,6.0,50.0,true,5053,Jerry Franck Boutsiele
+6,2026,1,aba,away,75.38,86.55,false,5122,Olivier Hanlan
+6,2026,1,aba,home,11.89,50.4,true,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,away,91.92,62.26,true,2112,Danilo Nikolić
+6,2026,1,aba,home,12.67,64.52,false,5117,Skylar Mays
+6,2026,1,aba,away,89.42,65.08,false,2983,Igor Drobnjak
+6,2026,1,aba,away,63.84,56.61,false,2983,Igor Drobnjak
+6,2026,1,aba,away,72.26,26.38,false,2667,Stefan Momirov
+6,2026,1,aba,away,94.0,50.0,false,2640,Dalibor Ilić
+6,2026,1,aba,home,20.62,36.27,false,5140,James Thompson
+6,2026,1,aba,home,12.36,49.27,true,5140,James Thompson
+6,2026,1,aba,home,22.81,5.76,false,2627,Nikola Tanasković
+6,2026,1,aba,away,90.36,47.01,true,4520,Vojin Medarević
+6,2026,1,aba,home,28.27,81.19,true,5117,Skylar Mays
+6,2026,1,aba,away,92.54,44.75,false,5111,Shevon Thompson
+6,2026,1,aba,home,33.26,30.06,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,20.16,30.62,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,11.58,44.18,true,2627,Nikola Tanasković
+6,2026,1,aba,away,66.33,62.54,true,5122,Olivier Hanlan
+6,2026,1,aba,away,83.34,24.69,true,5122,Olivier Hanlan
+6,2026,1,aba,home,22.5,35.14,false,5140,James Thompson
+6,2026,1,aba,home,30.76,24.12,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,away,74.6,92.2,true,2667,Stefan Momirov
+6,2026,1,aba,home,18.91,29.77,false,3750,Đorđije Jovanović
+6,2026,1,aba,away,71.01,22.71,true,4520,Vojin Medarević
+6,2026,1,aba,home,8.61,70.17,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,away,90.05,49.83,false,5111,Shevon Thompson
+6,2026,1,aba,away,86.93,62.26,false,5111,Shevon Thompson
+6,2026,1,aba,home,12.2,66.78,true,5117,Skylar Mays
+6,2026,1,aba,away,78.19,29.21,false,5122,Olivier Hanlan
+6,2026,1,aba,home,7.68,39.38,false,4769,Rasheed Sulaimon
+6,2026,1,aba,away,71.33,25.25,false,5122,Olivier Hanlan
+6,2026,1,aba,home,12.98,31.75,true,4781,Juwan Morgan
+6,2026,1,aba,away,68.05,29.77,false,2667,Stefan Momirov
+6,2026,1,aba,away,69.45,32.6,true,2667,Stefan Momirov
+6,2026,1,aba,home,10.8,36.27,false,5053,Jerry Franck Boutsiele
+6,2026,1,aba,home,6.0,50.0,false,4781,Juwan Morgan
+6,2026,1,aba,away,87.86,42.2,true,2112,Danilo Nikolić
+6,2026,1,aba,home,30.3,72.43,false,5072,Oleksandr Kovliar
+6,2026,1,aba,home,14.23,39.1,false,4781,Juwan Morgan
+6,2026,1,aba,away,85.05,41.64,false,2112,Danilo Nikolić
+6,2026,1,aba,home,15.48,41.07,false,4769,Rasheed Sulaimon
+6,2026,1,aba,away,83.18,63.39,true,5111,Shevon Thompson
+6,2026,1,aba,away,88.49,67.63,true,5111,Shevon Thompson
+6,2026,1,aba,home,33.88,52.09,false,5072,Oleksandr Kovliar
+6,2026,1,aba,home,10.02,39.66,true,5072,Oleksandr Kovliar
+6,2026,1,aba,away,68.99,32.88,false,2667,Stefan Momirov
+6,2026,1,aba,away,88.95,43.05,true,4520,Vojin Medarević
+6,2026,1,aba,home,33.26,52.94,true,4769,Rasheed Sulaimon
+6,2026,1,aba,away,89.58,75.54,true,5111,Shevon Thompson
+6,2026,1,aba,home,27.49,22.71,false,5073,Axel Bouteille
+6,2026,1,aba,away,91.29,63.39,true,2312,Nikola Rebić
+6,2026,1,aba,home,16.72,28.64,false,4769,Rasheed Sulaimon
+6,2026,1,aba,home,8.77,62.82,true,4781,Juwan Morgan
+6,2026,1,aba,away,71.95,28.08,false,2312,Nikola Rebić
+6,2026,1,aba,away,89.11,62.26,true,5111,Shevon Thompson
+6,2026,1,aba,away,73.2,20.17,false,4520,Vojin Medarević
+6,2026,1,aba,home,25.62,12.26,false,4769,Rasheed Sulaimon
+6,2026,1,aba,home,6.12,45.31,true,4769,Rasheed Sulaimon
+6,2026,1,aba,home,29.67,76.1,false,4781,Juwan Morgan
+6,2026,1,aba,away,91.76,64.8,false,5111,Shevon Thompson
+6,2026,1,aba,home,9.55,41.36,true,5053,Jerry Franck Boutsiele
+6,2026,1,aba,away,71.33,21.02,true,2312,Nikola Rebić
+6,2026,1,aba,home,29.98,79.21,true,5072,Oleksandr Kovliar
+6,2026,1,aba,home,16.72,31.75,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,away,84.27,96.16,false,2112,Danilo Nikolić
+6,2026,1,aba,home,5.8,72.99,true,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,15.16,33.73,false,5117,Skylar Mays
+6,2026,1,aba,away,72.57,89.1,true,5122,Olivier Hanlan
+6,2026,1,aba,home,20.16,41.36,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,22.03,91.64,false,5117,Skylar Mays
+6,2026,1,aba,away,88.64,58.31,true,5111,Shevon Thompson
+6,2026,1,aba,away,91.61,40.51,true,2667,Stefan Momirov
+6,2026,1,aba,home,11.89,33.45,false,3737,Fletcher Magee
+6,2026,1,aba,away,84.43,52.37,true,2983,Igor Drobnjak
+6,2026,1,aba,home,9.7,63.39,true,5117,Skylar Mays
+6,2026,1,aba,away,68.21,35.14,false,2983,Igor Drobnjak
+6,2026,1,aba,home,15.94,96.16,true,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,12.67,35.14,false,5053,Jerry Franck Boutsiele
+6,2026,1,aba,away,67.27,48.7,false,2112,Danilo Nikolić
+6,2026,1,aba,away,71.64,84.58,false,2667,Stefan Momirov
+6,2026,1,aba,home,21.4,69.6,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,away,88.8,28.64,true,2112,Danilo Nikolić
+6,2026,1,aba,home,9.08,38.53,false,4769,Rasheed Sulaimon
+6,2026,1,aba,away,89.58,61.98,false,5111,Shevon Thompson
+6,2026,1,aba,away,82.4,6.33,true,5110,Keondre Kennedy
+6,2026,1,aba,home,26.86,82.6,true,5117,Skylar Mays
+6,2026,1,aba,home,13.29,56.61,true,5053,Jerry Franck Boutsiele
+6,2026,1,aba,away,91.45,41.92,true,2640,Dalibor Ilić
+6,2026,1,aba,away,91.92,38.53,true,2640,Dalibor Ilić
+6,2026,1,aba,home,10.95,38.25,true,5053,Jerry Franck Boutsiele
+6,2026,1,aba,home,33.57,51.81,true,3737,Fletcher Magee
+6,2026,1,aba,away,92.54,37.68,false,5122,Olivier Hanlan
+6,2026,1,aba,away,76.94,94.75,true,2312,Nikola Rebić
+6,2026,1,aba,home,29.98,78.36,true,5072,Oleksandr Kovliar
+6,2026,1,aba,away,69.92,26.1,true,2312,Nikola Rebić
+6,2026,1,aba,away,66.33,77.51,false,2667,Stefan Momirov
+6,2026,1,aba,away,86.3,50.96,false,5111,Shevon Thompson
+6,2026,1,aba,away,64.93,78.93,true,5122,Olivier Hanlan
+6,2026,1,aba,home,12.67,37.68,false,5072,Oleksandr Kovliar
+6,2026,1,aba,home,10.64,53.22,false,5140,James Thompson
+6,2026,1,aba,home,9.39,58.87,true,5140,James Thompson
+6,2026,1,aba,away,80.53,49.55,false,5122,Olivier Hanlan
+6,2026,1,aba,home,32.95,53.22,false,5072,Oleksandr Kovliar
+6,2026,1,aba,away,91.92,56.61,true,2112,Danilo Nikolić
+6,2026,1,aba,away,71.33,83.73,true,5110,Keondre Kennedy
+6,2026,1,aba,home,34.51,45.88,false,4769,Rasheed Sulaimon
+6,2026,1,aba,home,10.8,57.74,true,5117,Skylar Mays
+6,2026,1,aba,away,88.33,64.8,false,,
+6,2026,1,aba,away,88.8,62.26,false,2112,Danilo Nikolić
+6,2026,1,aba,away,90.67,67.06,true,2112,Danilo Nikolić
+6,2026,1,aba,home,13.6,43.05,false,4781,Juwan Morgan
+6,2026,1,aba,home,28.74,76.95,false,4781,Juwan Morgan
+6,2026,1,aba,away,85.52,36.84,false,2312,Nikola Rebić
+6,2026,1,aba,home,15.79,37.4,false,4769,Rasheed Sulaimon
+6,2026,1,aba,home,22.81,26.1,false,5117,Skylar Mays
+6,2026,1,aba,away,88.8,46.44,false,2112,Danilo Nikolić
+6,2026,1,aba,away,87.08,38.81,false,5111,Shevon Thompson
+6,2026,1,aba,away,88.95,57.18,true,5111,Shevon Thompson
+6,2026,1,aba,away,91.29,35.71,false,2312,Nikola Rebić
+6,2026,1,aba,away,89.27,31.75,false,2112,Danilo Nikolić
+6,2026,1,aba,home,27.49,80.62,true,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,away,73.04,18.19,false,2312,Nikola Rebić
+6,2026,1,aba,home,19.69,93.05,false,3737,Fletcher Magee
+6,2026,1,aba,away,78.81,93.33,true,2112,Danilo Nikolić
+6,2026,1,aba,home,29.36,24.97,true,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,5.65,77.51,false,4104,Kevin Duane Ferrell Jr
+6,2026,1,aba,home,22.18,93.05,true,3737,Fletcher Magee
+6,2026,1,aba,home,32.79,34.29,false,2627,Nikola Tanasković

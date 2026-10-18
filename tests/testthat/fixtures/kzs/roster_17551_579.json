@@ -1,0 +1,81 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "id": 241739,
+        "player": {
+          "id": 94385,
+          "identificationNumber": 145829,
+          "person": {
+            "id": 94387,
+            "firstName": "Lian",
+            "lastName": "Boisa",
+            "yearOfBirth": 2007
+          },
+          "nationality": {
+            "id": 203,
+            "alpha2Code": "SI",
+            "alpha3Code": "SVN",
+            "name": "Slovenija",
+            "engName": "Slovenia"
+          },
+          "homegrown": false,
+          "photoUuid": "0d5dd0c9-fde7-4874-8eec-69d637298dce",
+          "positions": []
+        },
+        "jerseyNumber": "55"
+      },
+      {
+        "id": 245700,
+        "player": {
+          "id": 86209,
+          "identificationNumber": 138036,
+          "person": {
+            "id": 86211,
+            "firstName": "Pavle",
+            "lastName": "Đokić",
+            "yearOfBirth": 2008
+          },
+          "nationality": {
+            "id": 203,
+            "alpha2Code": "SI",
+            "alpha3Code": "SVN",
+            "name": "Slovenija",
+            "engName": "Slovenia"
+          },
+          "homegrown": false,
+          "photoUuid": "78f3ef48-b88f-456f-a71f-d973654e0a24",
+          "positions": []
+        }
+      },
+      {
+        "id": 241743,
+        "player": {
+          "id": 85445,
+          "identificationNumber": 137305,
+          "person": {
+            "id": 85447,
+            "firstName": "Lovro",
+            "lastName": "Faganel",
+            "yearOfBirth": 2007
+          },
+          "nationality": {
+            "id": 203,
+            "alpha2Code": "SI",
+            "alpha3Code": "SVN",
+            "name": "Slovenija",
+            "engName": "Slovenia"
+          },
+          "homegrown": false,
+          "photoUuid": "5092f118-6bf4-4da6-a6ba-3a02b076bb1b",
+          "positions": []
+        },
+        "jerseyNumber": "11"
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}

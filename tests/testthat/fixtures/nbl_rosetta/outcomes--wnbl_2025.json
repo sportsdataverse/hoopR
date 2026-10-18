@@ -1,0 +1,30 @@
+{
+  "type": "matches",
+  "fetched": 1791833191,
+  "ttlRemaining": 1800,
+  "count": "object",
+  "source": "cb",
+  "data": {
+    "Adelaide Lightning": {
+      "wins": 6,
+      "losses": 17,
+      "last10": "LLLLWLLWLL",
+      "last5": "LLWLL",
+      "last3": "WLL"
+    },
+    "Bendigo Spirit": {
+      "wins": 16,
+      "losses": 9,
+      "last10": "LLWWWLLLLL",
+      "last5": "LLLLL",
+      "last3": "LLL"
+    },
+    "Geelong Venom": {
+      "wins": 7,
+      "losses": 16,
+      "last10": "LLLWLWLWWL",
+      "last5": "WLWWL",
+      "last3": "WWL"
+    }
+  }
+}

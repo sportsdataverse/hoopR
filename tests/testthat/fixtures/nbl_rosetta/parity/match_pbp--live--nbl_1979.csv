@@ -1,0 +1,1 @@
+match_id,rosetta_match_id,match_status,action_id,period,period_type,clock,clock_seconds,shot_clock,shot_clock_seconds,score_home,score_away,action_type,sub_type,sub_type_key,success,team_id,team_code,team_name,is_home,player_id,player_name,jersey_number,x,y,readable_action_type,system_action_type,timestamp,feed

@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "code": 221970.0,
+      "firstName": "MEVLÜT TULGA",
+      "lastName": "ÖNGÖREN",
+      "job": "Genel Menajer",
+      "subRolesCode": 239.0,
+      "resim": "https://tbf.org.tr/res/7ff608f5-78ea-40d3-8ca9-2536a7cba92a_10750076804.jpg"
+    },
+    {
+      "code": 776826.0,
+      "firstName": "MASSIMO",
+      "lastName": "CANCELLIERI",
+      "job": "Antrenör",
+      "subRolesCode": 254.0,
+      "resim": "https://tbf.org.tr/res/3167fd6d-9de5-48d8-b273-346b334b206d_6681.jpg"
+    },
+    {
+      "code": 221713.0,
+      "firstName": "CANER",
+      "lastName": "TOPALOĞLU",
+      "job": "Yardımcı Antrenör",
+      "subRolesCode": 255.0,
+      "resim": "https://tbf.org.tr/res/c9d41380-60b1-4680-b897-ddf5050c5f19_Image0004.JPG"
+    }
+  ],
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

@@ -1,0 +1,10 @@
+player_id,stat_type,season,championship_year,championship_position,championship_name,team_name,quintet,points,played_minutes,played_matches,total_matches,done_fouls,suffered_fouls,shots_2p_realized,shots_2p_total,slam_dunk,shots_3p_realized,shots_3p_total,free_throws_realized,free_throws_total,offensive_rebound,defensive_rebound,total_rebound,ball_stop_given,ball_stop_received,lost_balls,regain_balls,assists,rating_lega,rating_oer,avg_points,aplus_dp
+969,avg,2013,2012,1,Regular Season,Montepaschi Siena,0,0.0,0.0,0,1,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0
+969,avg,2014,2013,1,Regular Season,Montepaschi Siena,0,1.3333333333333333,1.3333333333333333,3,21,0,0,0.6666666666666666,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0.031746031746031744,-1.6666666666666667,0
+969,avg,2014,2013,3,Coppa Italia,Montepaschi Siena,0,0.0,0.0,0,3,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0
+969,max,2013,2012,1,Regular Season,Montepaschi Siena,0,0.0,0.0,0,1,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0
+969,max,2014,2013,1,Regular Season,Montepaschi Siena,0,4.0,2.0,3,21,0,0,2.0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2.0,2.0,0
+969,max,2014,2013,3,Coppa Italia,Montepaschi Siena,0,0.0,0.0,0,3,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0
+969,sum,2013,2012,1,Regular Season,Montepaschi Siena,0,0.0,0.0,0,1,0,0,0.0,0,0,0,0,0,0,0,0,<NA>,0,0,0,0,0,0,0.0,0.0,<NA>
+969,sum,2014,2013,1,Regular Season,Montepaschi Siena,0,4.0,4.0,3,21,0,0,2.0,3,0,0,0,0,0,0,0,<NA>,0,0,0,0,0,3,0.09523809523809523,-5.0,<NA>
+969,sum,2014,2013,3,Coppa Italia,Montepaschi Siena,0,0.0,0.0,0,3,0,0,0.0,0,0,0,0,0,0,0,0,<NA>,0,0,0,0,0,0,0.0,0.0,<NA>

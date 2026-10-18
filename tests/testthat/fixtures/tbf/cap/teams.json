@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "teamProcessId": 266048.0,
+      "teamId": 2195.0,
+      "teamName": "ALİAĞA PETKİM SPOR",
+      "teamCityName": "İZMİR",
+      "teamLogoUrl": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png",
+      "teamCode": "PTK",
+      "season": "2026-2027",
+      "seasonId": 174.0,
+      "hexRenkKodu1": "#b4b1b1",
+      "hexRenkKodu2": "#f20707"
+    },
+    {
+      "teamProcessId": 265990.0,
+      "teamId": 2.0,
+      "teamName": "ANADOLU EFES",
+      "teamCityName": "İSTANBUL",
+      "teamLogoUrl": "https://tbf.org.tr/res/613182-anadoluefes-6032D6C7-0F79-4EDF-B6DD-F893B3445426.png",
+      "teamCode": "EFS",
+      "season": "2026-2027",
+      "seasonId": 174.0,
+      "hexRenkKodu1": "#cecece",
+      "hexRenkKodu2": "#071088"
+    },
+    {
+      "teamProcessId": 265991.0,
+      "teamId": 55636.0,
+      "teamName": "BAHÇEŞEHİR KOLEJİ",
+      "teamCityName": "İSTANBUL",
+      "teamLogoUrl": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+      "teamCode": "BSK",
+      "season": "2026-2027",
+      "seasonId": 174.0,
+      "hexRenkKodu1": "#e20303",
+      "hexRenkKodu2": "#010760"
+    }
+  ],
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

@@ -1,0 +1,4 @@
+player_id,season,league_id,league,round_no,game_no,game,minutes,points,fg_pct,fg2_made,fg2_att,fg2_pct,fg3_made,fg3_att,fg3_pct,ft_made,ft_att,ft_pct,reb_def,reb_off,reb_tot,assists,steals,turnovers,blocks,blocks_against,fouls,fouls_drawn,pts_paint,pts_second_chance,pts_fast_break,plus_minus,valuation
+4807,2026,1,aba,1,1,Partizan-Krka,14:24,10,57.1,2,4,50.0,2,3,66.7,0,0,0.0,2,0,2,4,1,1,0,0,1,2,,,,-3,14
+4807,2026,1,aba,2,9,Split-Partizan,18:56,14,42.9,2,4,50.0,1,3,33.3,7,8,87.5,0,0,0,3,0,2,0,1,3,6,,,,-14,12
+4807,2026,1,aba,3,17,Partizan-FMP,21:20,9,44.4,4,7,57.1,0,2,0.0,1,1,100.0,3,1,4,6,0,4,0,0,1,2,,,,9,11

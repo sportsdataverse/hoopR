@@ -1,0 +1,4 @@
+roster_id,competition_team_id,jersey,weight,height,active,position_id,position,player_id,first_name,last_name,nationality_code,birth_date
+10759,506,9,80,193,true,2,shooting_guard,3952,Elias,Lasisi,BEL,1992-01-09
+10761,506,24,103,206,true,5,center,513,Kevin,Tumba,BEL,1991-02-23
+10763,506,13,98,203,true,3,small_forward,363,Yoeri,Schoepen,BEL,1994-03-30

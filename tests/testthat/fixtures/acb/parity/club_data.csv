@@ -1,0 +1,2 @@
+team_id,club_id,team,team_abbr,competition_id,edition_id,season,stadium_name,stadium_address,stadium_capacity,president,foundation_year,web_url,ticketing_url,merchandising_url,instagram_url,twitter_url,facebook_url,youtube_url,tiktok_url,validated,temporary_roster
+4467,2,Barça,BAR,1,91,2027,Palau Blaugrana,"C/ Arístides Maillol, s/n",7786,,1899,https://www.fcbarcelona.es/es/baloncesto,https://www.fcbarcelona.es/es/entradas/baloncesto,https://store.fcbarcelona.com,FCBbasket,FCBbasket,FCBbasket,,,true,false

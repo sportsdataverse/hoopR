@@ -1,0 +1,215 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 17551,
+    "teamApplication": {
+      "id": 45242,
+      "club": {
+        "id": 16,
+        "email": "<redacted>",
+        "fullName": "KOŠARKARSKI KLUB ILIRIJA",
+        "shortName": "ILIRIJA",
+        "addresses": [
+          {
+            "id": 20910,
+            "postOffice": {
+              "id": 1,
+              "zipCode": "<redacted>",
+              "name": "Ljubljana",
+              "municipality": "LJUBLJANA",
+              "country": "SI"
+            },
+            "street": "<redacted>",
+            "houseNumber": "<redacted>",
+            "type": "PRIMARY"
+          }
+        ],
+        "socialMedias": [],
+        "sportHalls": [],
+        "personnel": [],
+        "absoluteTeams": [],
+        "member": true,
+        "type": "CLUB"
+      },
+      "category": "ABSOLUTE",
+      "rank": "FIRST",
+      "gender": "MALE",
+      "sportHall": {
+        "id": 18,
+        "name": "Hala Tivoli",
+        "address": {
+          "id": 18,
+          "postOffice": {
+            "id": 1,
+            "zipCode": "1000",
+            "name": "Ljubljana",
+            "municipality": "LJUBLJANA",
+            "country": "SI"
+          },
+          "street": "Celovška",
+          "houseNumber": "25"
+        }
+      },
+      "name": "Perspektiva Ilirija",
+      "code": "ILI",
+      "season": {
+        "id": 26,
+        "name": "2025/2026",
+        "isActive": false,
+        "active": false
+      },
+      "shortName": "",
+      "homeJerseyColor": "#909090",
+      "guestJerseyColor": "#000000"
+    },
+    "logoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+    "competitions": [
+      {
+        "id": 584,
+        "name": "Pokal Spar",
+        "rule": {
+          "id": 7,
+          "liveStats": false,
+          "withoutStats": false
+        },
+        "phases": [
+          {
+            "id": 5846,
+            "name": "Četrtfinale",
+            "type": "BRACKET_HOME_AWAY"
+          },
+          {
+            "id": 5847,
+            "name": "Polfinale",
+            "type": "BRACKET_BEST_OF",
+            "winsNeeded": 1
+          },
+          {
+            "id": 5848,
+            "name": "Finale",
+            "type": "BRACKET_BEST_OF",
+            "winsNeeded": 1
+          }
+        ],
+        "type": "CUP"
+      },
+      {
+        "id": 579,
+        "name": "Liga OTP banka",
+        "rule": {
+          "id": 11,
+          "liveStats": true,
+          "withoutStats": false
+        },
+        "phases": [
+          {
+            "id": 5811,
+            "name": "Redni del",
+            "type": "GROUP"
+          },
+          {
+            "id": 5889,
+            "name": "Četrtfinale",
+            "type": "BRACKET_BEST_OF",
+            "winsNeeded": 2
+          },
+          {
+            "id": 5890,
+            "name": "Polfinale",
+            "type": "BRACKET_BEST_OF",
+            "winsNeeded": 2
+          }
+        ],
+        "type": "LEAGUE"
+      }
+    ],
+    "personnel": [
+      {
+        "id": 29138,
+        "person": {
+          "id": 48029,
+          "firstName": "Stipe",
+          "lastName": "Modrić",
+          "email": "<redacted>",
+          "phone": "<redacted>",
+          "addressesPostOfficeName": [],
+          "gender": "MALE"
+        },
+        "type": "HEAD_COACH",
+        "team": {
+          "id": 17551,
+          "teamApplication": {
+            "id": 45242,
+            "teamInternalRanking": "A",
+            "category": "ABSOLUTE",
+            "rank": "FIRST",
+            "gender": "MALE",
+            "sportHall": {
+              "id": 18
+            },
+            "name": "Perspektiva Ilirija",
+            "code": "ILI",
+            "shortName": "",
+            "homeJerseyColor": "#909090",
+            "guestJerseyColor": "#000000",
+            "club": {
+              "id": 16,
+              "addresses": [],
+              "socialMedias": [],
+              "sportHalls": [],
+              "personnel": [],
+              "absoluteTeams": [],
+              "member": false
+            }
+          },
+          "logoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+          "homeTeamColor": "#909090",
+          "guestTeamColor": "#000000"
+        }
+      },
+      {
+        "id": 29149,
+        "person": {
+          "id": 48029,
+          "firstName": "Stipe",
+          "lastName": "Modrić",
+          "email": "<redacted>",
+          "phone": "<redacted>",
+          "addressesPostOfficeName": [],
+          "gender": "MALE"
+        },
+        "type": "HEAD_COACH",
+        "team": {
+          "id": 17551,
+          "teamApplication": {
+            "id": 45242,
+            "teamInternalRanking": "A",
+            "category": "ABSOLUTE",
+            "rank": "FIRST",
+            "gender": "MALE",
+            "sportHall": {
+              "id": 18
+            },
+            "name": "Perspektiva Ilirija",
+            "code": "ILI",
+            "shortName": "",
+            "homeJerseyColor": "#909090",
+            "guestJerseyColor": "#000000",
+            "club": {
+              "id": 16,
+              "addresses": [],
+              "socialMedias": [],
+              "sportHalls": [],
+              "personnel": [],
+              "absoluteTeams": [],
+              "member": false
+            }
+          },
+          "logoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+          "homeTeamColor": "#909090",
+          "guestTeamColor": "#000000"
+        }
+      }
+    ]
+  }
+}

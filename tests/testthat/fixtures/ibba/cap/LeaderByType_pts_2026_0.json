@@ -1,0 +1,34 @@
+{
+  "leaders": [
+    {
+      "DATA": "22.33",
+      "GP": "6",
+      "Year": "2026",
+      "team_id": "1118",
+      "player_number": "03",
+      "player_year_id": "25928",
+      "player_name": "זאק בראיינט",
+      "pic": "/pics/2025-2026/%D7%AA%D7%9E%D7%95%D7%A0%D7%95%D7%AA%20%D7%A4%D7%A8%D7%95%D7%A4%D7%99%D7%9C%20%D7%A9%D7%97%D7%A7%D7%A0%D7%99%D7%9D%20%D7%97%D7%93%D7%A9%D7%99%D7%9D/zack.jpg"
+    },
+    {
+      "DATA": "21.83",
+      "GP": "6",
+      "Year": "2026",
+      "team_id": "1114",
+      "player_number": "03",
+      "player_year_id": "25946",
+      "player_name": "רוב אדוארדס",
+      "pic": ""
+    },
+    {
+      "DATA": "20.67",
+      "GP": "3",
+      "Year": "2026",
+      "team_id": "1118",
+      "player_number": "12",
+      "player_year_id": "25949",
+      "player_name": "ג&#39;סטין אדלר-דייויס",
+      "pic": "/pics/2025-2026/%D7%A9%D7%95%D7%A0%D7%95%D7%AA/adler.png"
+    }
+  ]
+}

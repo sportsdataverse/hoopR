@@ -1,0 +1,4 @@
+game_no,season,league_id,league,season_label,round,group,home_team,away_team,home_abbr,away_abbr,home_score,away_score,when,date,date_to,time,time_zone,local_time,local_place
+1,2009,1,aba,Season 2008/09,ROUND 1,,Partizan Mozzart Bet,Krka,PAR,KRK,74,67,"Saturday, 04.10.2008 20:00 CET",2008-10-04,,20:00,CET,,
+8,2009,1,aba,Season 2008/09,ROUND 2,,Krka,Crvena zvezda Meridianbet,KRK,CZV,56,83,"Tuesday, 07.10.2008 20:00 CET",2008-10-07,,20:00,CET,,
+15,2009,1,aba,Season 2008/09,ROUND 3,,Kansai Helios Domžale,Krka,HEL,KRK,56,75,"Saturday, 11.10.2008 19:00 CET",2008-10-11,,19:00,CET,,

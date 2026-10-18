@@ -1,0 +1,150 @@
+{
+  "temporaryRoster": false,
+  "players": [
+    {
+      "player": {
+        "id": 30003361,
+        "firstInitialAndLastName": "K. Punter",
+        "firstName": "Kevin",
+        "lastName": "Punter",
+        "nickname": "Kevin Punter",
+        "shirtNumber": "0",
+        "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+        "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+        "headshotImageAlt": "K. Punter photo",
+        "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_lpr.jpg",
+        "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_lpr_transparent.webp",
+        "gameRole": "Escolta",
+        "isLicenseActive": true,
+        "editionId": 91,
+        "nicknameFirstName": "Kevin",
+        "nicknameLastName": "Punter"
+      },
+      "licensing": "EUR",
+      "age": 33,
+      "nationalityCountry": "Serbia",
+      "height": 193,
+      "isLicenseActive": true
+    },
+    {
+      "player": {
+        "id": 30005355,
+        "firstInitialAndLastName": "U. Gibson",
+        "firstName": "Umoja",
+        "lastName": "Gibson",
+        "nickname": "Umoja Gibson",
+        "shirtNumber": "1",
+        "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01.jpg",
+        "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01_transparent.webp",
+        "headshotImageAlt": "U. Gibson photo",
+        "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_lpr.jpg",
+        "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_lpr_transparent.webp",
+        "gameRole": "Base",
+        "isLicenseActive": true,
+        "editionId": 91,
+        "nicknameFirstName": "Umoja",
+        "nicknameLastName": "Gibson"
+      },
+      "licensing": "EUR",
+      "age": 28,
+      "nationalityCountry": "Bulgaria",
+      "height": 185,
+      "isLicenseActive": true
+    },
+    {
+      "player": {
+        "id": 30005378,
+        "firstInitialAndLastName": "T. Martin",
+        "firstName": "Tyrese",
+        "lastName": "Martin",
+        "nickname": "Tyrese Martin",
+        "shirtNumber": "2",
+        "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+        "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+        "headshotImageAlt": "T. Martin photo",
+        "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_lpr.jpg",
+        "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_lpr_transparent.webp",
+        "gameRole": "Alero",
+        "isLicenseActive": true,
+        "editionId": 91,
+        "nicknameFirstName": "Tyrese",
+        "nicknameLastName": "Martin"
+      },
+      "licensing": "EXT",
+      "age": 27,
+      "nationalityCountry": "EE.UU.",
+      "height": 198,
+      "isLicenseActive": true
+    }
+  ],
+  "staff": [
+    {
+      "coach": {
+        "id": 30005390,
+        "firstInitialAndLastName": "A. Sekulic",
+        "firstName": "Aleksander",
+        "lastName": "Sekulic",
+        "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/56/0000929956_5-6_01.jpg",
+        "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/56/0000929956_5-6_01_transparent.webp",
+        "headshotImageAlt": "A. Sekulic photo",
+        "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/56/0000929956_lpr.jpg",
+        "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/56/0000929956_lpr_transparent.webp",
+        "gameRole": "Entrenador",
+        "shirtNumber": "1",
+        "nickname": "Aleksander Sekulic",
+        "nicknameFirstName": "Aleksander",
+        "nicknameLastName": "Sekulic"
+      },
+      "licensing": "CRE",
+      "age": 48,
+      "nationalityCountry": "Eslovenia",
+      "isLicenseActive": true
+    },
+    {
+      "coach": {
+        "id": 30005459,
+        "firstInitialAndLastName": "J. Zuza",
+        "firstName": "Jurica",
+        "lastName": "Zuza",
+        "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/44/0000930044_5-6_01.jpg",
+        "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/44/0000930044_5-6_01_transparent.webp",
+        "headshotImageAlt": "J. Zuza photo",
+        "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/44/0000930044_lpr.jpg",
+        "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/44/0000930044_lpr_transparent.webp",
+        "gameRole": "Entrenador Ayudante",
+        "shirtNumber": "2",
+        "nickname": "Jurica Zuza",
+        "nicknameFirstName": "Jurica",
+        "nicknameLastName": "Zuza"
+      },
+      "licensing": "CRE",
+      "age": 48,
+      "nationalityCountry": "Croacia",
+      "isLicenseActive": true
+    },
+    {
+      "coach": {
+        "id": 30005460,
+        "firstInitialAndLastName": "J. Valentincic",
+        "firstName": "Jernej",
+        "lastName": "Valentincic",
+        "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/74/0000929974_5-6_01.jpg",
+        "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/74/0000929974_5-6_01_transparent.webp",
+        "headshotImageAlt": "J. Valentincic photo",
+        "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/74/0000929974_lpr.jpg",
+        "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/74/0000929974_lpr_transparent.webp",
+        "gameRole": "Entrenador Ayudante",
+        "shirtNumber": "3",
+        "nickname": "Jernej Valentincic",
+        "nicknameFirstName": "Jernej",
+        "nicknameLastName": "Valentincic"
+      },
+      "licensing": "CRE",
+      "age": 47,
+      "nationalityCountry": "Eslovenia",
+      "isLicenseActive": true
+    }
+  ],
+  "playerAbsences": [],
+  "staffAbsences": []
+}

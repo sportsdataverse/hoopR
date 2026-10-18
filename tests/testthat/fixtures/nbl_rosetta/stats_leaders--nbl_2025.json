@@ -1,0 +1,366 @@
+{
+  "type": "player_season_statistics",
+  "fetched": 1791833206,
+  "ttlRemaining": 300,
+  "count": 165,
+  "source": "redis",
+  "data": [
+    {
+      "assists_average": 7.625,
+      "blocks_average": 0.25,
+      "field_goals_attempted": 757,
+      "field_goals_made": 334,
+      "field_goals_attempted_average": 18.925,
+      "field_goals_made_average": 8.35,
+      "field_goals_percentage": 0.441215,
+      "fouls_average": 1.55,
+      "free_throws_attempted": 264,
+      "free_throws_made": 238,
+      "free_throws_attempted_average": 6.6,
+      "free_throws_made_average": 5.95,
+      "free_throws_percentage": 0.901515,
+      "games": 40,
+      "games_started": 40,
+      "offensive_rebounds": 24,
+      "fouls": 62,
+      "personal_fouls": 59,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 342,
+      "three_points_attempted_average": 8.55,
+      "three_points_made": 131,
+      "three_points_made_average": 3.275,
+      "three_points_percentage": 0.383041,
+      "turnovers_average": 3.025,
+      "turnovers": 121,
+      "two_points_attempted": 415,
+      "two_points_attempted_average": 10.375,
+      "two_points_made": 203,
+      "two_points_made_average": 5.075,
+      "two_points_percentage": 0.489157,
+      "minutes": 1525.800049,
+      "minutes_average": 38.150002,
+      "points": 1037,
+      "rebounds": 150,
+      "assists": 305,
+      "blocks": 10,
+      "steals": 66,
+      "plus_minus": 136,
+      "plus_minus_average": 3.4,
+      "efficiency": 998,
+      "efficiency_average": 24.95,
+      "points_average": 25.925,
+      "rebounds_average": 3.75,
+      "steals_average": 1.65,
+      "player": {
+        "id": "41a2b121-3fe0-4e82-b3d3-d6079ed33b8b",
+        "external_id": "5000dcdc-410d-11f0-87be-9dbbf7342624",
+        "first_name": "Bryce",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/a6f07d6358b2486da335f792692cecf0?size=800&format=webp",
+        "jersey_number": "11",
+        "last_name": "Cotton",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "3164912c-7e74-463b-8fc3-5f7d45edfcc6",
+        "external_id": "bed4fbfb-410c-11f0-aaa8-1b3c55488bbb",
+        "name": "Adelaide 36ers",
+        "team_code": "ADL",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/ADL.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/ADL.png",
+        "color_primary": "#182360",
+        "team_logo_blurhash": "L268Q{xv00NI%OfRoIt600Rj~qoe",
+        "team_logo_transparent_blurhash": "L39a8Fxu00nk_NoMoZoy00WBD=Rj"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 1793,
+        "totalScoreWithoutDDandTD": 1783,
+        "breakdown": {
+          "points": {
+            "value": 1037,
+            "points": 1037
+          },
+          "rebounds": {
+            "value": 150,
+            "points": 150
+          },
+          "assists": {
+            "value": 305,
+            "points": 610
+          },
+          "blocks": {
+            "value": 10,
+            "points": 30
+          },
+          "steals": {
+            "value": 66,
+            "points": 198
+          },
+          "turnovers": {
+            "value": 121,
+            "points": -242
+          },
+          "triple_double": {
+            "value": 5,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 5
+      }
+    },
+    {
+      "assists_average": 7.125,
+      "blocks_average": 0,
+      "field_goals_attempted": 724,
+      "field_goals_made": 341,
+      "field_goals_attempted_average": 18.1,
+      "field_goals_made_average": 8.525,
+      "field_goals_percentage": 0.470994,
+      "fouls_average": 2.4,
+      "free_throws_attempted": 270,
+      "free_throws_made": 220,
+      "free_throws_attempted_average": 6.75,
+      "free_throws_made_average": 5.5,
+      "free_throws_percentage": 0.814815,
+      "games": 40,
+      "games_started": 40,
+      "offensive_rebounds": 14,
+      "fouls": 96,
+      "personal_fouls": 83,
+      "technical_fouls": 2,
+      "period": "0",
+      "three_points_attempted": 283,
+      "three_points_attempted_average": 7.075,
+      "three_points_made": 102,
+      "three_points_made_average": 2.55,
+      "three_points_percentage": 0.360424,
+      "turnovers_average": 1.85,
+      "turnovers": 74,
+      "two_points_attempted": 441,
+      "two_points_attempted_average": 11.025,
+      "two_points_made": 239,
+      "two_points_made_average": 5.975,
+      "two_points_percentage": 0.54195,
+      "minutes": 1309.93335,
+      "minutes_average": 32.75,
+      "points": 1004,
+      "rebounds": 148,
+      "assists": 285,
+      "blocks": 0,
+      "steals": 42,
+      "plus_minus": 407,
+      "plus_minus_average": 10.175,
+      "efficiency": 972,
+      "efficiency_average": 24.3,
+      "points_average": 25.1,
+      "rebounds_average": 3.7,
+      "steals_average": 1.05,
+      "player": {
+        "id": "be4c5c96-8667-40f8-98d0-4c1d99641bc5",
+        "external_id": "7655efe3-410d-11f0-aed6-2902fc2f936f",
+        "first_name": "Kendric",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/d5e563db6e6145d4bbfea3ce7041ac2d?size=800&format=webp",
+        "jersey_number": "1",
+        "last_name": "Davis",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "39fc4268-0cdf-455f-9ca1-12e344064000",
+        "external_id": "bf06cec9-410c-11f0-8100-1b3c55488bbb",
+        "name": "Sydney Kings",
+        "team_code": "SYD",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/SYD.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/SYD.png",
+        "color_primary": "#5f259f",
+        "team_logo_blurhash": "LUI:9xoN9+xZoOj@obWX0ufR$wR:",
+        "team_logo_transparent_blurhash": "L5JP#C-V01}~?6r?=eNf00SuVk0;"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 1710,
+        "totalScoreWithoutDDandTD": 1700,
+        "breakdown": {
+          "points": {
+            "value": 1004,
+            "points": 1004
+          },
+          "rebounds": {
+            "value": 148,
+            "points": 148
+          },
+          "assists": {
+            "value": 285,
+            "points": 570
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 42,
+            "points": 126
+          },
+          "turnovers": {
+            "value": 74,
+            "points": -148
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    },
+    {
+      "assists_average": 2.66667,
+      "blocks_average": 0.5,
+      "field_goals_attempted": 221,
+      "field_goals_made": 109,
+      "field_goals_attempted_average": 18.41667,
+      "field_goals_made_average": 9.08333,
+      "field_goals_percentage": 0.493213,
+      "fouls_average": 2.25,
+      "free_throws_attempted": 71,
+      "free_throws_made": 53,
+      "free_throws_attempted_average": 5.91667,
+      "free_throws_made_average": 4.41667,
+      "free_throws_percentage": 0.746479,
+      "games": 12,
+      "games_started": 12,
+      "offensive_rebounds": 14,
+      "fouls": 27,
+      "personal_fouls": 24,
+      "technical_fouls": 1,
+      "period": "0",
+      "three_points_attempted": 72,
+      "three_points_attempted_average": 6,
+      "three_points_made": 22,
+      "three_points_made_average": 1.83333,
+      "three_points_percentage": 0.305556,
+      "turnovers_average": 2.33333,
+      "turnovers": 28,
+      "two_points_attempted": 149,
+      "two_points_attempted_average": 12.41667,
+      "two_points_made": 87,
+      "two_points_made_average": 7.25,
+      "two_points_percentage": 0.583893,
+      "minutes": 376.083344,
+      "minutes_average": 31.35,
+      "points": 293,
+      "rebounds": 85,
+      "assists": 32,
+      "blocks": 6,
+      "steals": 24,
+      "plus_minus": -28,
+      "plus_minus_average": -2.33333,
+      "efficiency": 282,
+      "efficiency_average": 23.5,
+      "points_average": 24.41667,
+      "rebounds_average": 7.08333,
+      "steals_average": 2,
+      "player": {
+        "id": "a8400498-6a7b-49d5-a46c-b2a427580eff",
+        "external_id": "2c36440c-410d-11f0-a980-975350631782",
+        "first_name": "Casey",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/57bf5bbfa3c448c994cb0d038eb6e77a?size=800&format=webp",
+        "jersey_number": "23",
+        "last_name": "Prather",
+        "playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "f8185bc5-2674-4293-a2a7-aeb8c7549b30",
+        "external_id": "bf3d7137-410c-11f0-8229-1b3c55488bbb",
+        "name": "Brisbane Bullets",
+        "team_code": "BRI",
+        "team_logo": "https://cdn.nbl.com.au/app_assets/BNE.png",
+        "team_logo_transparent": "https://cdn.nbl.com.au/app_assets/transparent_logos/BNE.png",
+        "color_primary": "#164ca8",
+        "team_logo_blurhash": "LAD9iCxu0s5dS+s*s+xU0aIwoI}$",
+        "team_logo_transparent_blurhash": "LCLot{V_08tMxq^f=v-R07NIE6}:"
+      },
+      "season": {
+        "id": "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd",
+        "external_id": "9a761374-41a9-11f0-a689-c94a032ca4e8",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 486,
+        "totalScoreWithoutDDandTD": 476,
+        "breakdown": {
+          "points": {
+            "value": 293,
+            "points": 293
+          },
+          "rebounds": {
+            "value": 85,
+            "points": 85
+          },
+          "assists": {
+            "value": 32,
+            "points": 64
+          },
+          "blocks": {
+            "value": 6,
+            "points": 18
+          },
+          "steals": {
+            "value": 24,
+            "points": 72
+          },
+          "turnovers": {
+            "value": 28,
+            "points": -56
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+competition_id,edition_id,season,week_id,round_id,match_grouping,match_id,status,start,home_team_id,home_club_id,home_team,home_team_abbr,away_team_id,away_club_id,away_team,away_team_abbr
+1,91,2027,2989,6017,round,105401,FINALIZED,2026-10-11T17:00:00Z,4467,2,Barça,BAR,4472,13,Valencia Basket,VBC

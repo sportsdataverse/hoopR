@@ -1,0 +1,7 @@
+schedule_key,season,feed,period_category,team_side,team_id,team_name_j,team_name_e,fg_made,fg_attempted,fg_pct,fg2_made,fg2_attempted,fg2_pct,fg3_made,fg3_attempted,fg3_pct,ft_made,ft_attempted,ft_pct,reb_off,reb_def,reb,assists,turnovers,steals,blocks,blocks_received,fouls,fouls_drawn,paint_points,points_off_turnover,second_chance_points,fast_break_points,max_lead,lead_last,lead_last_home,lead_last_away,lead_changes,ties
+5856,2021,v2,1,home,706,アルバルク東京,ALVARK TOKYO,6,19,31.6,4,13,30.8,2,6,33.3,2,2,100.0,4,7,11,4,3,1,0,4,4,5,6,0,2,3,4,3,5,2,2,2
+5856,2021,v2,1,away,727,川崎ブレイブサンダース,KAWASAKI BRAVE THUNDERS,7,16,43.8,5,10,50.0,2,6,33.3,0,0,0.0,2,8,10,3,3,0,4,0,5,4,10,5,4,0,1,5,13,14,2,2
+5856,2021,v2,2,home,706,アルバルク東京,ALVARK TOKYO,4,11,36.4,3,7,42.9,1,4,25.0,6,8,75.0,0,10,10,5,3,3,1,1,4,6,4,6,0,2,11,6,22,16,0,0
+5856,2021,v2,2,away,727,川崎ブレイブサンダース,KAWASAKI BRAVE THUNDERS,1,13,7.7,1,6,16.7,0,7,0.0,4,5,80.0,2,7,9,0,5,2,1,1,6,4,2,2,2,0,0,3,22,19,0,0
+5856,2021,v2,3,home,706,アルバルク東京,ALVARK TOKYO,9,15,60.0,7,11,63.6,2,4,50.0,7,9,77.8,3,3,6,9,1,1,1,1,5,5,4,8,4,3,17,7,42,30,0,0
+5856,2021,v2,3,away,727,川崎ブレイブサンダース,KAWASAKI BRAVE THUNDERS,8,13,61.5,5,6,83.3,3,7,42.9,3,4,75.0,1,5,6,7,3,0,1,1,5,5,10,1,1,0,0,6,35,30,0,0

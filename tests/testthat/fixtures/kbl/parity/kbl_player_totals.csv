@@ -1,0 +1,4 @@
+season,season_code,game_code,glkey,pcode,player_name,player_name_en,team_code,team_name,back_num,pos,player_flag,game_count,start_count,score,fg,fg_a,fgt,fgt_a,threep,threep_a,ft,ft_a,dk,dk_a,rb,offr,defr,ast,stl,bs,to,foul,wft,woft,pp,pp_a,pscore,sast,dfl,gd,idf,fb,ef,tf,inout,inout1,play_min,play_sec,foulout,minutes_played
+2025,45,01,S45G01,291001,강상재,\N,16,원주 DB,26,FD,0,40,153,325,109,195,136,281,27,86,26,37,0,0,294,84,210,76,22,23,49,74,29,45,91,142,182,0,0,2,0,0,0,0,58,75,1205,49,70,1205.8167
+2025,45,01,S45G01,291579,게이지 프림,\N,10,울산 현대모비스,44,C,1,54,141,918,361,695,376,749,15,54,151,180,12,13,357,121,236,108,50,28,87,108,59,49,262,456,524,0,0,2,0,0,14,10,88,106,1110,1,204,1110.0167
+2025,45,01,S45G01,291677,고메즈 델 리아노,\N,55,서울 SK,9,GD,2,31,0,95,32,64,39,85,7,21,10,18,0,1,47,16,31,36,12,0,21,29,15,14,28,53,56,0,0,0,0,0,0,0,52,41,251,22,26,251.3667

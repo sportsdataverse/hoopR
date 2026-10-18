@@ -1,0 +1,296 @@
+{
+  "data": {
+    "commonHeaders": [
+      {
+        "key": "name",
+        "name": "Nom"
+      }
+    ],
+    "config": {
+      "bindToNavigation": "statistics",
+      "currentPage": "stats_entities",
+      "labelPage": "Equipe Statistiques",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_leaders"
+          }
+        ],
+        "secondary": [
+          {
+            "label": "Joueur Statistiques",
+            "link": "&~w=stp~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_persons"
+          },
+          {
+            "label": "Equipe Statistiques",
+            "link": "&~w=ste~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_entities"
+          }
+        ]
+      },
+      "showEntityLogo": true,
+      "sport": "basketball"
+    },
+    "filters": {
+      "fixtureType": {
+        "id": "fixture-type-select",
+        "options": [],
+        "selected": null
+      },
+      "stages": {
+        "id": "stages-select",
+        "options": [],
+        "selected": null
+      }
+    },
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+    "seasons": {
+      "competitions": {
+        "0847055c-2fb3-11ef-9b30-3333ffdb8385": {
+          "name": "PROB"
+        },
+        "213e021f-19b5-11ee-9190-29c4f278bc32": {
+          "name": "PROB"
+        },
+        "27a79741-597b-11ef-9104-c9f30fad1f7e": {
+          "name": "Betclic ÉLITE - Play-In"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "2c58cdf2-51d1-11f0-b783-c5cbc0fbb14f",
+          "link": "&~w=ste~eJyrVipWslJQMkm0MDdPNUzTNTVMMdQ1NEwz0E20sLTQtTBMNU81TzFMs7RMVNJRUMoBKU4r0nULUqoFALn7Dtw",
+          "nameLocal": "All Star Game 2025",
+          "seasonId": "4a877e1f-51d1-11f0-a898-81e7e7d1f99a",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "b98931f7-51d3-11f0-8483-9d47ff25959f",
+          "link": "&~w=ste~eJyrVipWslJQSjE3SjE1S7TQNTVMMdY1NEwz0LU0SUnSNTK1NDEwMTMztzQ3U9JRUMoBKU4r0nULUqoFAKquDhc",
+          "nameLocal": "Betclic ÉLITE - Playoffs 2025",
+          "seasonId": "d72d56a8-51d3-11f0-94db-259404667976",
+          "year": 2025
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "3f4064bb-51ad-11f0-aaaf-2923c944b404",
+          "link": "&~w=ste~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+          "nameLocal": "Betclic ÉLITE 2025",
+          "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+          "year": 2025
+        }
+      ]
+    },
+    "statistics": [
+      {
+        "headers": [
+          {
+            "code": "Points par Match",
+            "key": "pointsPerGame",
+            "name": "PTS"
+          },
+          {
+            "code": "Offensive Rating",
+            "key": "offensiveRating",
+            "name": "ORtg"
+          },
+          {
+            "code": "Rebonds Offensifs par Match",
+            "key": "reboundsOffensivePerGame",
+            "name": "RO"
+          }
+        ],
+        "label": {
+          "key": "averages",
+          "text": "Moyennes"
+        },
+        "statistics": [
+          {
+            "entity": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d75d46d8f9474798b55e76f0efd76c0e?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwlzLENwkAMRuFVItdY-p3D4GOADMAGvviuIk0iCkDsjizKT3p6HzroNlGMInAoq3iwyAC3sMrrtajCunRUOk30yHjsvNxT79Tx3DbfX-menot5nA2s2uy_8vDK0uZW6oq4APT9AROeHjA"
+                }
+              },
+              "name": "Dijon"
+            },
+            "statistics": [
+              90.13,
+              null,
+              8.47
+            ]
+          },
+          {
+            "entity": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+                }
+              },
+              "name": "Lyon-Villeurbanne"
+            },
+            "statistics": [
+              87.5,
+              null,
+              11.27
+            ]
+          },
+          {
+            "entity": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/b49f48b1199e43618e2210a54fdbc3b3?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwtzEEKg0AMRuGrSNYNJJVfxx6gB-gNJpPJSjeKi7b07hLo8oPH-9JBj4E8RpUqYGh1Vg1h87Jwm0dAStcuC90GWjOOnZ-v1Cd1nNtW93e6pyFTu_usDJj9VyHGxeAyRYe2oN8FGR0exg"
+                }
+              },
+              "name": "Gravelines-Dunkerque"
+            },
+            "statistics": [
+              82.6,
+              null,
+              9.2
+            ]
+          }
+        ]
+      },
+      {
+        "headers": [
+          {
+            "code": "Effective Field Goal %",
+            "key": "fieldGoalsEffectivePercentage",
+            "name": "EFG%"
+          },
+          {
+            "code": "% aux Tirs",
+            "key": "fieldGoalsPercentage",
+            "name": "T%"
+          },
+          {
+            "code": "Tirs Tentés",
+            "key": "fieldGoalsAttempted",
+            "name": "TT"
+          }
+        ],
+        "label": {
+          "key": "shootingstatistics",
+          "text": "Stats Tirs"
+        },
+        "statistics": [
+          {
+            "entity": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d75d46d8f9474798b55e76f0efd76c0e?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwlzLENwkAMRuFVItdY-p3D4GOADMAGvviuIk0iCkDsjizKT3p6HzroNlGMInAoq3iwyAC3sMrrtajCunRUOk30yHjsvNxT79Tx3DbfX-menot5nA2s2uy_8vDK0uZW6oq4APT9AROeHjA"
+                }
+              },
+              "name": "Dijon"
+            },
+            "statistics": [
+              57.43,
+              48.81,
+              1883
+            ]
+          },
+          {
+            "entity": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+                }
+              },
+              "name": "Lyon-Villeurbanne"
+            },
+            "statistics": [
+              54.69,
+              47.5,
+              1878
+            ]
+          },
+          {
+            "entity": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/b49f48b1199e43618e2210a54fdbc3b3?size=400",
+              "link": {
+                "fragment": null,
+                "openInNewTab": false,
+                "origin": null,
+                "path": null,
+                "queryParams": {
+                  "~w": "e~eJwtzEEKg0AMRuGrSNYNJJVfxx6gB-gNJpPJSjeKi7b07hLo8oPH-9JBj4E8RpUqYGh1Vg1h87Jwm0dAStcuC90GWjOOnZ-v1Cd1nNtW93e6pyFTu_usDJj9VyHGxeAyRYe2oN8FGR0exg"
+                }
+              },
+              "name": "Gravelines-Dunkerque"
+            },
+            "statistics": [
+              53.24,
+              44.92,
+              1850
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/statistics_entities?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 8,
+    "fromCache": false,
+    "generated": "2026-10-12T18:12:43.451253+00:00Z",
+    "generationTime": 0.245935,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:15.465343+00:00Z",
+    "version": 1
+  }
+}

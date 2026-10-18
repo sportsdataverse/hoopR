@@ -1,0 +1,13 @@
+team_id,direction,league,transfer_date,season_player_id,real_player_id,first_name,last_name,position,source_team_id,source_team_name,destination_team_id,destination_team_name
+527,joining,bbl,2026-08-13,1400009,36443,Johannes,Patrick,POINT_GUARD,433,MHP RIESEN Ludwigsburg,527,Kreisbau Kirchheim Knights
+527,joining,bbl,2026-08-13,2004073,140179040,Adrian,Worthy,POINT_GUARD,422,Basketball Löwen Braunschweig,527,Kreisbau Kirchheim Knights
+527,joining,bbl,2026-09-09,2005083,34096,Christoph,Philipps,SMALL_FORWARD,540,Fitness First Würzburg Baskets,527,Kreisbau Kirchheim Knights
+446,joining,bbl,2026-08-01,2004275,140180998,Mathéo,Hermann,SHOOTING_GUARD,413,ALBA BERLIN,446,HAKRO Merlins Crailsheim
+446,joining,bbl,2026-08-01,2003864,59997,Booker,Coplin,SHOOTING_GUARD,433,MHP RIESEN Ludwigsburg,446,HAKRO Merlins Crailsheim
+446,joining,bbl,2026-08-01,2003169,30456,Hendrik Helge,Drescher,POWER_FORWARD,477,BG Göttingen,446,HAKRO Merlins Crailsheim
+413,joining,bbl,2026-08-05,2004358,51576,Jack,Kayil,POINT_GUARD,413,ALBA BERLIN,413,ALBA BERLIN
+413,joining,bbl,2026-07-20,2004102,140181547,Joe,Wieskamp,SMALL_FORWARD,483,Science City Jena,413,ALBA BERLIN
+413,joining,bbl,2026-07-06,2004104,45523,Julius,Böhmer,SHOOTING_GUARD,477,BG Göttingen,413,ALBA BERLIN
+413,leaving,bbl,2026-06-30,601357,140181559,Moses,Wood,POWER_FORWARD,413,ALBA BERLIN,,
+413,leaving,bbl,2026-06-30,614739,140181617,J'wan,Roberts,CENTER,413,ALBA BERLIN,,
+413,leaving,bbl,2026-06-30,622427,140180998,Mathéo,Hermann,POINT_GUARD,413,ALBA BERLIN,,

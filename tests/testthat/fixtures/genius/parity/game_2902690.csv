@@ -1,0 +1,2 @@
+match_id,period,period_type,in_ot,clock,periods_max,period_length_regular,period_length_overtime,attendance,disable_match,total_time_added,team1_name,team1_code,team1_score,team2_name,team2_code,team2_score,referee1,referee2,referee3,commissioner
+2902690,1,OVERTIME,1,00:00,4,10,5,0,0,0,Peristeri Betsson,PER,91,Iraklis BC,IRA,89,Vasiliki TSAROUCHA,Giannis TSIMPOURIS,Nikos MILAPIDIS,Eftsathios MOISIADIS

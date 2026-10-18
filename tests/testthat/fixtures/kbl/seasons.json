@@ -1,0 +1,35 @@
+[
+  {
+    "glkey": "S49G01",
+    "seasonCode": 49,
+    "seasonName": "2026-2027",
+    "seasonNameFull": "1군시즌",
+    "seasonGrade": 1,
+    "seasonCategory": "R",
+    "gameCode": "01",
+    "gamedateStart": "20261003",
+    "gamedateEnd": "20270411"
+  },
+  {
+    "glkey": "S47G01",
+    "seasonCode": 47,
+    "seasonName": "2025-2026",
+    "seasonNameFull": "1군시즌",
+    "seasonGrade": 1,
+    "seasonCategory": "R",
+    "gameCode": "01",
+    "gamedateStart": "20251003",
+    "gamedateEnd": "20260408"
+  },
+  {
+    "glkey": "S45G01",
+    "seasonCode": 45,
+    "seasonName": "2024-2025",
+    "seasonNameFull": "1군시즌",
+    "seasonGrade": 1,
+    "seasonCategory": "R",
+    "gameCode": "01",
+    "gamedateStart": "20241019",
+    "gamedateEnd": "20250408"
+  }
+]

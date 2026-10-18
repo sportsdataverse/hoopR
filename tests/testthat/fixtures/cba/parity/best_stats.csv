@@ -1,0 +1,11 @@
+schedule_id,side,ctype,cvalue,player_id,player_name,player_no,seconds,team_id,type
+100105799,home,assists,4,100005271,朱俊龙,10,1692,<null>,0
+100105799,home,points,16,100107411,<null>,<null>,913,<null>,0
+100105799,home,steals,3,100024772,<null>,<null>,1279,<null>,0
+100105799,home,rebounds,10,100016690,<null>,<null>,1205,<null>,0
+100105799,home,blocked,2,100005271,朱俊龙,10,1692,<null>,0
+100105799,away,assists,3,100098648,<null>,<null>,554,<null>,2
+100105799,away,points,17,100098032,迪亚洛,11,1571,<null>,2
+100105799,away,steals,2,100012158,陈彭宇迪,1,635,<null>,2
+100105799,away,rebounds,9,100013553,刘传兴,21,1209,<null>,2
+100105799,away,blocked,2,100013553,刘传兴,21,1209,<null>,2

@@ -1,0 +1,25 @@
+match_id,edition_id,season,team_side,team_id,club_id,team,team_abbr,lineup_order,player_id,player_name,short_name,shirt_number,play_time,seconds_played,is_playing,points,rebounds,assists,fouls,differential,rating
+105401,91,2027,home,4467,2,Barça,BAR,1,30005378,Tyrese Martin,T. Martin,2,26:00,1560,false,10,13,2,3,12,14
+105401,91,2027,home,4467,2,Barça,BAR,2,30003361,Kevin Punter,K. Punter,0,23:42,1422,false,13,2,4,2,17,13
+105401,91,2027,home,4467,2,Barça,BAR,3,20212265,Joel Parra,J. Parra,44,20:36,1236,false,8,5,1,1,8,12
+105401,91,2027,home,4467,2,Barça,BAR,4,30005356,Josh Nebo,J. Nebo,32,17:05,1025,false,12,4,1,2,-3,17
+105401,91,2027,home,4467,2,Barça,BAR,5,30005355,Umoja Gibson,U. Gibson,1,14:53,893,false,1,0,0,4,-8,-10
+105401,91,2027,home,4467,2,Barça,BAR,6,30003340,Justin Robinson,J. Robinson,5,22:31,1351,false,12,2,6,2,12,14
+105401,91,2027,home,4467,2,Barça,BAR,7,30005377,Tosan Evbuomwan,T. Evbuomwan,20,19:24,1164,false,7,8,0,0,-5,12
+105401,91,2027,home,4467,2,Barça,BAR,8,20209919,Darío Brizuela,D. Brizuela,8,15:11,911,false,4,1,1,4,-7,0
+105401,91,2027,home,4467,2,Barça,BAR,9,30001332,Agustín Ubal,A. Ubal,10,14:53,893,false,7,4,0,0,-13,11
+105401,91,2027,home,4467,2,Barça,BAR,10,20212243,Olek Balcerowski,O. Balcerowski,22,14:25,865,false,9,3,1,4,11,12
+105401,91,2027,home,4467,2,Barça,BAR,11,30005357,Olivier Nkamhoua,O. Nkamhoua,13,08:44,524,false,6,1,0,1,-8,6
+105401,91,2027,home,4467,2,Barça,BAR,12,30000093,Juan Núñez,J. Núñez,17,02:36,156,false,0,1,0,0,-1,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30001981,Kameron Taylor,K. Taylor,1,23:56,1436,false,4,6,5,3,-12,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30005376,TJ Shorts,TJ Shorts,0,22:59,1379,false,19,1,4,4,-10,22
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30005406,Armoni Brooks,A. Brooks,12,21:53,1313,false,11,4,1,1,-15,13
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30001979,Dylan Osetkowski,D. Osetkowski,8,21:43,1303,false,3,4,1,4,-6,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,5,20202101,Nikola Mirotic,N. Mirotic,33,19:41,1181,false,10,2,1,2,1,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,6,30003991,Omari Moore,O. Moore,10,16:29,989,false,9,3,0,2,9,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,7,20210392,Josep Puerto,J. Puerto,2,16:04,964,false,5,7,3,1,9,15
+105401,91,2027,away,4472,13,Valencia Basket,VBC,8,30005335,Álvaro Cárdenas,A. Cárdenas,7,15:33,933,false,4,2,1,1,12,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,9,30000076,Jasiel Rivero,J. Rivero,41,13:04,784,false,7,1,1,3,6,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,10,30003973,Neal Sako,N. Sako,13,12:56,776,false,6,4,0,2,-7,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,11,30002724,Nate Reuvers,N. Reuvers,3,12:36,756,false,8,3,0,1,0,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,12,20213210,Mario Saint-Supery,M. Saint-Supery,5,03:06,186,false,0,0,1,0,-2,1

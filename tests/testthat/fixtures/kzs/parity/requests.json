@@ -1,0 +1,466 @@
+{
+ "seasons": {
+  "fn": "kzs_seasons",
+  "args": {},
+  "routes": {
+   "/seasons/": "seasons.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/seasons/",
+    "query": {
+     "limit": 1000
+    }
+   }
+  ]
+ },
+ "competitions": {
+  "fn": "kzs_competitions",
+  "args": {},
+  "routes": {
+   "/competitions/": "competitions.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/",
+    "query": {
+     "limit": 10000
+    }
+   }
+  ]
+ },
+ "competitions__2026": {
+  "fn": "kzs_competitions",
+  "args": {
+   "season": 2026
+  },
+  "routes": {
+   "/competitions/": "competitions_s26.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/",
+    "query": {
+     "limit": 10000,
+     "seasonId": 26
+    }
+   }
+  ]
+ },
+ "competition": {
+  "fn": "kzs_competition",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/competitions/579": "competition_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579",
+    "query": {}
+   }
+  ]
+ },
+ "phases": {
+  "fn": "kzs_phases",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/competitions/579": "competition_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579",
+    "query": {}
+   }
+  ]
+ },
+ "rounds": {
+  "fn": "kzs_rounds",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/competitions/579/rounds": "rounds_579.json",
+   "/competitions/579": "competition_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579/rounds",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579",
+    "query": {}
+   }
+  ]
+ },
+ "player_leaderboard": {
+  "fn": "kzs_player_leaderboard",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/competitions/579/playerStats": "player_board_579.json",
+   "/matches/standings": "standings_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579/playerStats",
+    "query": {
+     "limit": 1000,
+     "statsCategory": "PTS",
+     "orderType": "AVERAGE",
+     "sortBy": "avg",
+     "sort": "DESC",
+     "competitionId": 579
+    }
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/standings",
+    "query": {
+     "competitionId": 579
+    }
+   }
+  ]
+ },
+ "team_leaderboard": {
+  "fn": "kzs_team_leaderboard",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/competitions/579/teamStats": "team_board_579.json",
+   "/matches/standings": "standings_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579/teamStats",
+    "query": {
+     "limit": 1000,
+     "statsCategory": "PTS",
+     "orderType": "AVERAGE",
+     "sortBy": "avg",
+     "sort": "DESC",
+     "competitionId": 579
+    }
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/standings",
+    "query": {
+     "competitionId": 579
+    }
+   }
+  ]
+ },
+ "matches": {
+  "fn": "kzs_matches",
+  "args": {
+   "competition_id": 579,
+   "date_from": "2025-10-01T00:00:00.000Z",
+   "date_to": "2025-10-31T23:59:59.000Z"
+  },
+  "routes": {
+   "/matches/": "matches_579_2025-10.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/",
+    "query": {
+     "limit": 1000,
+     "competitionId": 579,
+     "from": "2025-10-01T00:00:00.000Z",
+     "to": "2025-10-31T23:59:59.000Z"
+    }
+   }
+  ]
+ },
+ "match": {
+  "fn": "kzs_match",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "period_scores": {
+  "fn": "kzs_period_scores",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "pbp": {
+  "fn": "kzs_pbp",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839/playByPlay": "pbp_101839.json.gz",
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839/playByPlay",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "pbp_players": {
+  "fn": "kzs_pbp_players",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839/playByPlay": "pbp_101839.json.gz",
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839/playByPlay",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "box_score": {
+  "fn": "kzs_box_score",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839/stats": "stats_101839.json",
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839/stats",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "team_box_score": {
+  "fn": "kzs_team_box_score",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839/stats": "stats_101839.json",
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839/stats",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "score_changes": {
+  "fn": "kzs_score_changes",
+  "args": {
+   "match_id": 101839
+  },
+  "routes": {
+   "/matches/101839/stats": "stats_101839.json",
+   "/matches/101839": "match_101839.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839/stats",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/101839",
+    "query": {}
+   }
+  ]
+ },
+ "standings": {
+  "fn": "kzs_standings",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/matches/standings": "standings_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/standings",
+    "query": {
+     "competitionId": 579
+    }
+   }
+  ]
+ },
+ "playing_days": {
+  "fn": "kzs_playing_days",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/matches/579/playingDays": "days_579.json",
+   "/competitions/579": "competition_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/579/playingDays",
+    "query": {}
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/579",
+    "query": {}
+   }
+  ]
+ },
+ "teams": {
+  "fn": "kzs_teams",
+  "args": {
+   "competition_id": 579
+  },
+  "routes": {
+   "/teams/": "teams_579.json",
+   "/matches/standings": "standings_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/teams/",
+    "query": {
+     "limit": 1000,
+     "competitionId": 579
+    }
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/matches/standings",
+    "query": {
+     "competitionId": 579
+    }
+   }
+  ]
+ },
+ "team": {
+  "fn": "kzs_team",
+  "args": {
+   "team_id": 17551
+  },
+  "routes": {
+   "/teams/17551": "team_17551.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/teams/17551",
+    "query": {}
+   }
+  ]
+ },
+ "team_general": {
+  "fn": "kzs_team_general",
+  "args": {
+   "team_id": 17551,
+   "competition_id": 579
+  },
+  "routes": {
+   "/teams/17551/general": "team_general_17551_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/teams/17551/general",
+    "query": {
+     "competitionId": 579
+    }
+   }
+  ]
+ },
+ "roster": {
+  "fn": "kzs_roster",
+  "args": {
+   "team_id": 17551,
+   "competition_id": 579
+  },
+  "routes": {
+   "/teamPlayers/": "roster_17551_579.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/teamPlayers/",
+    "query": {
+     "limit": 1000,
+     "teamId": 17551,
+     "competitionId": 579
+    }
+   }
+  ]
+ },
+ "player": {
+  "fn": "kzs_player",
+  "args": {
+   "player_id": 106285
+  },
+  "routes": {
+   "/players/106285": "player_106285.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/players/106285",
+    "query": {}
+   }
+  ]
+ },
+ "player_stats": {
+  "fn": "kzs_player_stats",
+  "args": {
+   "player_id": 106285,
+   "season": 2026
+  },
+  "routes": {
+   "/players/106285/stats": "player_stats_106285_26.json",
+   "/competitions/": "competitions_s26.json"
+  },
+  "requests": [
+   {
+    "url": "https://api.kzs.si/api/v1/public/players/106285/stats",
+    "query": {
+     "seasonId": 26
+    }
+   },
+   {
+    "url": "https://api.kzs.si/api/v1/public/competitions/",
+    "query": {
+     "seasonId": 26,
+     "limit": 10000
+    }
+   }
+  ]
+ }
+}

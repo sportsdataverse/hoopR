@@ -1,0 +1,697 @@
+[
+  {
+    "team": {
+      "id": "527",
+      "sourceId": 527,
+      "tlc": "KIR",
+      "nameFull": "Kreisbau Kirchheim Knights",
+      "nameShort": "Kirchheim",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/527",
+      "mascot": null,
+      "address": "VfL Kirchheim Knights GmbH\r\nKirchheimer Straße 28\n73230 Kirchheim unter Teck\r\nTelefon: REDACTED\r\nFax:REDACTED\r\nREDACTED",
+      "homepageUrl": "www.kirchheim-knights.de",
+      "contactPhone": "REDACTED",
+      "email": "REDACTED",
+      "ticketUrl": null,
+      "ticketPhone": "REDACTED",
+      "yearJoinedBBL": null,
+      "socialMediaLinks": [],
+      "seasonIds": [
+        1986,
+        1989,
+        2008
+      ],
+      "seasonTeams": [
+        {
+          "id": "527",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1986/527",
+          "seasonId": 1986,
+          "name": "VfL Kirchheim/Teck",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        },
+        {
+          "id": "527",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1989/527",
+          "seasonId": 1989,
+          "name": "VfL Kirchheim/Teck",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        },
+        {
+          "id": "527",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2008/527",
+          "seasonId": 2008,
+          "name": "VfL Kirchheim Knights",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        }
+      ],
+      "rssFeedUrl": "TODO",
+      "orderId": null,
+      "bestAchievements": null
+    },
+    "joining": [
+      {
+        "sortingDate": "2026-08-13",
+        "sourceTeam": {
+          "nameShort": "MHP RIESEN Ludwigsburg",
+          "id": "433",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2023/433"
+        },
+        "sourceTeamFreeText": "MHP RIESEN Ludwigsburg",
+        "destinationTeam": {
+          "nameShort": "Kreisbau Kirchheim Knights",
+          "id": "527",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/527"
+        },
+        "destinationTeamFreeText": "Kreisbau Kirchheim Knights",
+        "player": {
+          "firstName": "Johannes",
+          "lastName": "Patrick",
+          "position": "POINT_GUARD",
+          "id": "1400009",
+          "playerId": "36443"
+        }
+      },
+      {
+        "sortingDate": "2026-08-13",
+        "sourceTeam": {
+          "nameShort": "Basketball Löwen Braunschweig",
+          "id": "422",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/422"
+        },
+        "sourceTeamFreeText": "Basketball Löwen Braunschweig",
+        "destinationTeam": {
+          "nameShort": "Kreisbau Kirchheim Knights",
+          "id": "527",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/527"
+        },
+        "destinationTeamFreeText": "Kreisbau Kirchheim Knights",
+        "player": {
+          "firstName": "Adrian",
+          "lastName": "Worthy",
+          "position": "POINT_GUARD",
+          "id": "2004073",
+          "playerId": "140179040"
+        }
+      },
+      {
+        "sortingDate": "2026-09-09",
+        "sourceTeam": {
+          "nameShort": "Fitness First Würzburg Baskets",
+          "id": "540",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/540"
+        },
+        "sourceTeamFreeText": "Fitness First Würzburg Baskets",
+        "destinationTeam": {
+          "nameShort": "Kreisbau Kirchheim Knights",
+          "id": "527",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/527"
+        },
+        "destinationTeamFreeText": "Kreisbau Kirchheim Knights",
+        "player": {
+          "firstName": "Christoph",
+          "lastName": "Philipps",
+          "position": "SMALL_FORWARD",
+          "id": "2005083",
+          "playerId": "34096"
+        }
+      }
+    ],
+    "leaving": [],
+    "roster": [
+      {
+        "id": "2004013",
+        "firstName": "Julius",
+        "lastName": "Wolf",
+        "playerId": "2004013",
+        "realPlayerId": 11422,
+        "playerSourceId": 2004013,
+        "shirtNumber": "28",
+        "height": 2.05,
+        "weight": 109,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2004013",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "CENTER",
+        "seasonId": 2026,
+        "seasonTeamId": "527",
+        "birthDate": "1993-01-26",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "FC Bayern München",
+          "Science City Jena",
+          "Kreisbau Kirchheim Knights"
+        ]
+      },
+      {
+        "id": "2000689",
+        "firstName": "Lucas",
+        "lastName": "Mayer",
+        "playerId": "2000689",
+        "realPlayerId": 29217,
+        "playerSourceId": 2000689,
+        "shirtNumber": "8",
+        "height": 1.88,
+        "weight": 89,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2000689",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "SHOOTING_GUARD",
+        "seasonId": 2026,
+        "seasonTeamId": "527",
+        "birthDate": "1999-08-30",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "Kreisbau Kirchheim Knights",
+          "HAKRO Merlins Crailsheim"
+        ]
+      },
+      {
+        "id": "2002089",
+        "firstName": "Nicolas",
+        "lastName": "Bretzel",
+        "playerId": "2002089",
+        "realPlayerId": 29364,
+        "playerSourceId": 2002089,
+        "shirtNumber": "21",
+        "height": 2.12,
+        "weight": 110,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2002089",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "CENTER",
+        "seasonId": 2026,
+        "seasonTeamId": "527",
+        "birthDate": "1999-05-29",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "ratiopharm ulm",
+          "Kreisbau Kirchheim Knights"
+        ]
+      }
+    ]
+  },
+  {
+    "team": {
+      "id": "446",
+      "sourceId": 446,
+      "tlc": "CRA",
+      "nameFull": "HAKRO Merlins Crailsheim",
+      "nameShort": "Crailsheim",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/446",
+      "mascot": null,
+      "address": "Crailsheim Merlins GmbH\r\nIm Wasserstall 4\n74564 Crailsheim\r\nTelefon: REDACTED\r\nFax: REDACTED\r\nREDACTED",
+      "homepageUrl": "https://www.hakro-merlins.com",
+      "contactPhone": "REDACTED",
+      "email": "REDACTED",
+      "ticketUrl": null,
+      "ticketPhone": "REDACTED",
+      "yearJoinedBBL": null,
+      "socialMediaLinks": [],
+      "seasonIds": [
+        2003,
+        2009,
+        2010
+      ],
+      "seasonTeams": [
+        {
+          "id": "446",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2003/446",
+          "seasonId": 2003,
+          "name": "Crailsheim Merlins",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        },
+        {
+          "id": "446",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2009/446",
+          "seasonId": 2009,
+          "name": "Crailsheim Merlins",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        },
+        {
+          "id": "446",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2010/446",
+          "seasonId": 2010,
+          "name": "Crailsheim Merlins",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        }
+      ],
+      "rssFeedUrl": "TODO",
+      "orderId": null,
+      "bestAchievements": null
+    },
+    "joining": [
+      {
+        "sortingDate": "2026-08-01",
+        "sourceTeam": {
+          "nameShort": "ALBA BERLIN",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413"
+        },
+        "sourceTeamFreeText": "ALBA BERLIN",
+        "destinationTeam": {
+          "nameShort": "HAKRO Merlins Crailsheim",
+          "id": "446",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/446"
+        },
+        "destinationTeamFreeText": "HAKRO Merlins Crailsheim",
+        "player": {
+          "firstName": "Mathéo",
+          "lastName": "Hermann",
+          "position": "SHOOTING_GUARD",
+          "id": "2004275",
+          "playerId": "140180998"
+        }
+      },
+      {
+        "sortingDate": "2026-08-01",
+        "sourceTeam": {
+          "nameShort": "MHP RIESEN Ludwigsburg",
+          "id": "433",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/433"
+        },
+        "sourceTeamFreeText": "MHP RIESEN Ludwigsburg",
+        "destinationTeam": {
+          "nameShort": "HAKRO Merlins Crailsheim",
+          "id": "446",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/446"
+        },
+        "destinationTeamFreeText": "HAKRO Merlins Crailsheim",
+        "player": {
+          "firstName": "Booker",
+          "lastName": "Coplin",
+          "position": "SHOOTING_GUARD",
+          "id": "2003864",
+          "playerId": "59997"
+        }
+      },
+      {
+        "sortingDate": "2026-08-01",
+        "sourceTeam": {
+          "nameShort": "BG Göttingen",
+          "id": "477",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/477"
+        },
+        "sourceTeamFreeText": "BG Göttingen",
+        "destinationTeam": {
+          "nameShort": "HAKRO Merlins Crailsheim",
+          "id": "446",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/446"
+        },
+        "destinationTeamFreeText": "HAKRO Merlins Crailsheim",
+        "player": {
+          "firstName": "Hendrik Helge",
+          "lastName": "Drescher",
+          "position": "POWER_FORWARD",
+          "id": "2003169",
+          "playerId": "30456"
+        }
+      }
+    ],
+    "leaving": [],
+    "roster": [
+      {
+        "id": "2001472",
+        "firstName": "Gianni",
+        "lastName": "Otto",
+        "playerId": "2001472",
+        "realPlayerId": 19582,
+        "playerSourceId": 2001472,
+        "shirtNumber": "10",
+        "height": 1.86,
+        "weight": 79,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2001472",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "POINT_GUARD",
+        "seasonId": 2026,
+        "seasonTeamId": "446",
+        "birthDate": "1995-06-28",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "Tigers Tübingen",
+          "SYNTAINICS MBC",
+          "HAKRO Merlins Crailsheim"
+        ]
+      },
+      {
+        "id": "2003107",
+        "firstName": "Till",
+        "lastName": "Isemann",
+        "playerId": "2003107",
+        "realPlayerId": 28937,
+        "playerSourceId": 2003107,
+        "shirtNumber": "21",
+        "height": 2.09,
+        "weight": 116,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003107",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "CENTER",
+        "seasonId": 2026,
+        "seasonTeamId": "446",
+        "birthDate": "1996-10-21",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "EWE Baskets Oldenburg",
+          "Eisbären Bremerhaven",
+          "HAKRO Merlins Crailsheim"
+        ]
+      },
+      {
+        "id": "2003168",
+        "firstName": "Lucas",
+        "lastName": "Mayer",
+        "playerId": "2003168",
+        "realPlayerId": 29217,
+        "playerSourceId": 2003168,
+        "shirtNumber": "8",
+        "height": 1.88,
+        "weight": 89,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003168",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "SHOOTING_GUARD",
+        "seasonId": 2026,
+        "seasonTeamId": "446",
+        "birthDate": "1999-08-30",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "Kreisbau Kirchheim Knights",
+          "HAKRO Merlins Crailsheim"
+        ]
+      }
+    ]
+  },
+  {
+    "team": {
+      "id": "413",
+      "sourceId": 413,
+      "tlc": "BER",
+      "nameFull": "ALBA BERLIN",
+      "nameShort": "Berlin",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413",
+      "mascot": "Albatros",
+      "address": "ALBA BERLIN\r\nCantianstraße 24\n10437 Berlin\r\nTelefon: REDACTED\r\nFax: REDACTED\r\nREDACTED",
+      "homepageUrl": "https://www.albaberlin.de",
+      "contactPhone": "REDACTED",
+      "email": "REDACTED",
+      "ticketUrl": "https://www.albaberlin.de/tickets",
+      "ticketPhone": "REDACTED",
+      "yearJoinedBBL": 1991,
+      "socialMediaLinks": [
+        "https://www.facebook.com/albaberlin",
+        "https://twitter.com/albaberlin",
+        "https://www.tiktok.com/discover/ALBA-BERLIN"
+      ],
+      "seasonIds": [
+        1975,
+        1976,
+        1977
+      ],
+      "seasonTeams": [
+        {
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1975/413",
+          "seasonId": 1975,
+          "name": "DTV Charlottenburg",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        },
+        {
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1976/413",
+          "seasonId": 1976,
+          "name": "DTV Charlottenburg",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        },
+        {
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/1977/413",
+          "seasonId": 1977,
+          "name": "DTV Charlottenburg",
+          "isChampionshipWinner": false,
+          "isCupWinner": false,
+          "seasonVenues": []
+        }
+      ],
+      "rssFeedUrl": "TODO",
+      "orderId": 1,
+      "bestAchievements": "Korac-Cup-Sieger 1995 / Deutscher Meister 1997-2003, 2008, 2020, 2021, 2022, 2026 / Pokalsieger 1997, 1999, 2002, 2003, 2006, 2009, 2013, 2014, 2016, 2020, 2022"
+    },
+    "joining": [
+      {
+        "sortingDate": "2026-08-05",
+        "sourceTeam": {
+          "nameShort": "ALBA BERLIN",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413"
+        },
+        "sourceTeamFreeText": "ALBA BERLIN",
+        "destinationTeam": {
+          "nameShort": "ALBA BERLIN",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413"
+        },
+        "destinationTeamFreeText": "ALBA BERLIN",
+        "player": {
+          "firstName": "Jack",
+          "lastName": "Kayil",
+          "position": "POINT_GUARD",
+          "id": "2004358",
+          "playerId": "51576"
+        }
+      },
+      {
+        "sortingDate": "2026-07-20",
+        "sourceTeam": {
+          "nameShort": "Science City Jena",
+          "id": "483",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/483"
+        },
+        "sourceTeamFreeText": "Science City Jena",
+        "destinationTeam": {
+          "nameShort": "ALBA BERLIN",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413"
+        },
+        "destinationTeamFreeText": "ALBA BERLIN",
+        "player": {
+          "firstName": "Joe",
+          "lastName": "Wieskamp",
+          "position": "SMALL_FORWARD",
+          "id": "2004102",
+          "playerId": "140181547"
+        }
+      },
+      {
+        "sortingDate": "2026-07-06",
+        "sourceTeam": {
+          "nameShort": "BG Göttingen",
+          "id": "477",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/477"
+        },
+        "sourceTeamFreeText": "BG Göttingen",
+        "destinationTeam": {
+          "nameShort": "ALBA BERLIN",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413"
+        },
+        "destinationTeamFreeText": "ALBA BERLIN",
+        "player": {
+          "firstName": "Julius",
+          "lastName": "Böhmer",
+          "position": "SHOOTING_GUARD",
+          "id": "2004104",
+          "playerId": "45523"
+        }
+      }
+    ],
+    "leaving": [
+      {
+        "sortingDate": "2026-06-30",
+        "sourceTeam": {
+          "nameShort": "Berlin",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413"
+        },
+        "sourceTeamFreeText": "ALBA BERLIN",
+        "destinationTeam": {
+          "nameShort": null,
+          "id": null,
+          "logoUrl": null
+        },
+        "destinationTeamFreeText": null,
+        "player": {
+          "id": "601357",
+          "playerId": "140181559",
+          "firstName": "Moses",
+          "lastName": "Wood",
+          "position": "POWER_FORWARD"
+        }
+      },
+      {
+        "sortingDate": "2026-06-30",
+        "sourceTeam": {
+          "nameShort": "Berlin",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413"
+        },
+        "sourceTeamFreeText": "ALBA BERLIN",
+        "destinationTeam": {
+          "nameShort": null,
+          "id": null,
+          "logoUrl": null
+        },
+        "destinationTeamFreeText": null,
+        "player": {
+          "id": "614739",
+          "playerId": "140181617",
+          "firstName": "J'wan",
+          "lastName": "Roberts",
+          "position": "CENTER"
+        }
+      },
+      {
+        "sortingDate": "2026-06-30",
+        "sourceTeam": {
+          "nameShort": "Berlin",
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2025/413"
+        },
+        "sourceTeamFreeText": "ALBA BERLIN",
+        "destinationTeam": {
+          "nameShort": null,
+          "id": null,
+          "logoUrl": null
+        },
+        "destinationTeamFreeText": null,
+        "player": {
+          "id": "622427",
+          "playerId": "140180998",
+          "firstName": "Mathéo",
+          "lastName": "Hermann",
+          "position": "POINT_GUARD"
+        }
+      }
+    ],
+    "roster": [
+      {
+        "id": "56377",
+        "firstName": "Malte",
+        "lastName": "Delow",
+        "playerId": "56377",
+        "realPlayerId": 42293,
+        "playerSourceId": 56377,
+        "shirtNumber": "6",
+        "height": 1.97,
+        "weight": 84,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/56377",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "SMALL_FORWARD",
+        "seasonId": 2026,
+        "seasonTeamId": "413",
+        "birthDate": "2001-04-22",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "ALBA BERLIN"
+        ]
+      },
+      {
+        "id": "56414",
+        "firstName": "Jonas",
+        "lastName": "Mattisseck",
+        "playerId": "56414",
+        "realPlayerId": 37539,
+        "playerSourceId": 56414,
+        "shirtNumber": "9",
+        "height": 1.92,
+        "weight": 84,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/56414",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "SHOOTING_GUARD",
+        "seasonId": 2026,
+        "seasonTeamId": "413",
+        "birthDate": "2000-01-16",
+        "nationalities": [
+          "DE"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "ALBA BERLIN"
+        ]
+      },
+      {
+        "id": "57252",
+        "firstName": "Justin",
+        "lastName": "Bean",
+        "playerId": "57252",
+        "realPlayerId": 57252,
+        "playerSourceId": 57252,
+        "shirtNumber": "34",
+        "height": 2.01,
+        "weight": 95,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/57252",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": 1,
+        "position": "POWER_FORWARD",
+        "seasonId": 2026,
+        "seasonTeamId": "413",
+        "birthDate": "1996-11-17",
+        "nationalities": [
+          "US"
+        ],
+        "socialMediaLinks": [],
+        "previousTeams": [
+          "ALBA BERLIN"
+        ]
+      }
+    ]
+  }
+]

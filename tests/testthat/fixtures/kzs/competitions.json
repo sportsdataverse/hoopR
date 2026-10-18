@@ -1,0 +1,52 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "id": 450,
+        "name": "3x3 DP Člani",
+        "gender": "MALE",
+        "category": "ABSOLUTE",
+        "rank": "FIRST",
+        "season": {
+          "id": 14,
+          "name": "2013/2014",
+          "isActive": false,
+          "active": false
+        },
+        "type": "LEAGUE3X3"
+      },
+      {
+        "id": 448,
+        "name": "3x3 DP Člani",
+        "gender": "MALE",
+        "category": "ABSOLUTE",
+        "rank": "FIRST",
+        "season": {
+          "id": 12,
+          "name": "2011/2012",
+          "isActive": false,
+          "active": false
+        },
+        "type": "LEAGUE3X3"
+      },
+      {
+        "id": 452,
+        "name": "3x3 DP Člani",
+        "gender": "MALE",
+        "category": "ABSOLUTE",
+        "rank": "FIRST",
+        "season": {
+          "id": 16,
+          "name": "2015/2016",
+          "isActive": false,
+          "active": false
+        },
+        "type": "LEAGUE3X3"
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}

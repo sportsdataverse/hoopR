@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "personId": 778401,
+      "firstName": "Bryce",
+      "lastName": "Jones",
+      "age": 32,
+      "height": null,
+      "country": "ABD",
+      "birthDay": "1994-10-12T00:00:00",
+      "jerseyNo": "32",
+      "playerPhoto": "https://tbf.org.tr/res/45493984-b693-4d12-a67b-8b96e9d85fa5_32.webp",
+      "macSayisi": 3,
+      "sure": "24:59",
+      "sayi": 9.67,
+      "verimlilikPuani": 8.33
+    },
+    {
+      "personId": 389934,
+      "firstName": "Efe",
+      "lastName": "Postel",
+      "age": 20,
+      "height": null,
+      "country": "TÜRKİYE",
+      "birthDay": "2006-06-03T00:00:00",
+      "jerseyNo": "22",
+      "playerPhoto": "https://tbf.org.tr/res/3232e0dc-2db4-4400-8875-29ab7e66bf10_22.webp",
+      "macSayisi": 3,
+      "sure": "11:34",
+      "sayi": 3.67,
+      "verimlilikPuani": 4
+    },
+    {
+      "personId": 196413,
+      "firstName": "Yiğitcan",
+      "lastName": "Saybir",
+      "age": 27,
+      "height": 201,
+      "country": "TÜRKİYE",
+      "birthDay": "1999-02-27T00:00:00",
+      "jerseyNo": "3",
+      "playerPhoto": "https://tbf.org.tr/res/2fe9bd94-819b-4267-931a-eb23274fbc9e_3.webp",
+      "macSayisi": 3,
+      "sure": "28:26",
+      "sayi": 18.67,
+      "verimlilikPuani": 15.33
+    }
+  ],
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

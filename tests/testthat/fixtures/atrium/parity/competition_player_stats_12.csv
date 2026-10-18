@@ -1,0 +1,28 @@
+website_id,season_id,table_key,table_label,person_id,person_name,entity_id,entity_name,stat_key,stat_name,stat_label,value,value_text
+12,,averages,Moyennes,,Ismael Bako,,,pointsPerGame,PTS,Points par Match,4.8,
+12,,averages,Moyennes,,Ismael Bako,,,games,MJ,Matchs joués,10.0,
+12,,averages,Moyennes,,Ismael Bako,,,minutesPerGame,MIN,Minutes par Match,,PT12M2S
+12,,averages,Moyennes,,Juhann Begarin,,,pointsPerGame,PTS,Points par Match,7.5,
+12,,averages,Moyennes,,Juhann Begarin,,,games,MJ,Matchs joués,24.0,
+12,,averages,Moyennes,,Juhann Begarin,,,minutesPerGame,MIN,Minutes par Match,,PT20M57S
+12,,averages,Moyennes,,Jared Rhoden,,,pointsPerGame,PTS,Points par Match,12.44,
+12,,averages,Moyennes,,Jared Rhoden,,,games,MJ,Matchs joués,18.0,
+12,,averages,Moyennes,,Jared Rhoden,,,minutesPerGame,MIN,Minutes par Match,,PT18M52S
+12,,shootingstatistics,Stats Tirs,,Ismael Bako,,,points,PTS,Points,48.0,
+12,,shootingstatistics,Stats Tirs,,Ismael Bako,,,fieldGoalsMade,TR,Tirs Réussis,17.0,
+12,,shootingstatistics,Stats Tirs,,Ismael Bako,,,fieldGoalsAttempted,TT,Tirs Tentés,25.0,
+12,,shootingstatistics,Stats Tirs,,Juhann Begarin,,,points,PTS,Points,180.0,
+12,,shootingstatistics,Stats Tirs,,Juhann Begarin,,,fieldGoalsMade,TR,Tirs Réussis,69.0,
+12,,shootingstatistics,Stats Tirs,,Juhann Begarin,,,fieldGoalsAttempted,TT,Tirs Tentés,152.0,
+12,,shootingstatistics,Stats Tirs,,Jared Rhoden,,,points,PTS,Points,224.0,
+12,,shootingstatistics,Stats Tirs,,Jared Rhoden,,,fieldGoalsMade,TR,Tirs Réussis,75.0,
+12,,shootingstatistics,Stats Tirs,,Jared Rhoden,,,fieldGoalsAttempted,TT,Tirs Tentés,164.0,
+12,,totals,Totaux,,Ismael Bako,,,points,PTS,Points,48.0,
+12,,totals,Totaux,,Ismael Bako,,,minutes,MIN,Minutes,,PT120M14S
+12,,totals,Totaux,,Ismael Bako,,,reboundsOffensive,RO,Rebond Offensif,18.0,
+12,,totals,Totaux,,Juhann Begarin,,,points,PTS,Points,180.0,
+12,,totals,Totaux,,Juhann Begarin,,,minutes,MIN,Minutes,,PT502M34S
+12,,totals,Totaux,,Juhann Begarin,,,reboundsOffensive,RO,Rebond Offensif,20.0,
+12,,totals,Totaux,,Jared Rhoden,,,points,PTS,Points,224.0,
+12,,totals,Totaux,,Jared Rhoden,,,minutes,MIN,Minutes,,PT339M34S
+12,,totals,Totaux,,Jared Rhoden,,,reboundsOffensive,RO,Rebond Offensif,16.0,

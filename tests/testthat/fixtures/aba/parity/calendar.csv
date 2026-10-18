@@ -1,0 +1,6 @@
+game_no,season,league_id,league,season_label,round,group,home_team,away_team,home_abbr,away_abbr,home_score,away_score,when,date,date_to,time,time_zone,local_time,local_place
+3,2026,1,aba,Season 2025/26,ROUND 1,A,Igokea m:tel,FMP,IGO,FMP,92,88,"Friday, 03.10.2025 18:30 CET",2025-10-03,,18:30,CET,,
+8,2026,1,aba,Season 2025/26,ROUND 1,B,BC Vienna,Perspektiva Ilirija,VIE,ILI,85,84,"Friday, 03.10.2025 20:30 CET",2025-10-03,,20:30,CET,,
+146,2026,1,aba,Season 2025/26,Top8 - R1,,Crvena zvezda Meridianbet,Igokea m:tel,CZV,IGO,94,84,"Sunday, 15.02.2026 17:00 CET",2026-02-15,,17:00,CET,,
+147,2026,1,aba,Season 2025/26,Top8 - R1,,Partizan Mozzart Bet,Budućnost VOLI,PAR,BUD,98,82,"Sunday, 15.02.2026 21:00 CET",2026-02-15,,21:00,CET,,
+251,2026,1,aba,Season 2025/26,"Finals, Round 4",,Partizan Mozzart Bet,Dubai Basketball,PAR,DUB,81,83,"Friday, 12.06.2026 20:00 CET",2026-06-12,,20:00,CET,,

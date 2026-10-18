@@ -1,0 +1,61 @@
+game_id,category,category_label,team_side,team_id,rank,player,player_slug,player_id,value
+11446,points,Pelnomi taškai,home,11,1,Selton Miguel,selton-miguel,2039,22
+11446,points,Pelnomi taškai,home,11,2,Trent McLaughlin,trent-mclaughlin,2019,17
+11446,points,Pelnomi taškai,home,11,3,JD Muila,jd-muila,2017,16
+11446,points,Pelnomi taškai,home,11,4,Tyler Peterson,tyler-peterson,2021,13
+11446,points,Pelnomi taškai,home,11,5,Justinas Marcinkevičius,justinas-marcinkevicius,1762,9
+11446,points,Pelnomi taškai,away,41,1,Lukas Kreišmontas,lukas-kreismontas,747,20
+11446,points,Pelnomi taškai,away,41,2,Benjamin Krikke,benjamin-krikke,2027,19
+11446,points,Pelnomi taškai,away,41,3,Mihkel Kirves,mihkel-kirves,1911,11
+11446,points,Pelnomi taškai,away,41,4,Olin Carter,olin-carter,2033,9
+11446,points,Pelnomi taškai,away,41,5,Makai Ashton,makai-ashton,2005,8
+11446,total_rebounds,Atkovoti kamuoliai,home,11,1,JD Muila,jd-muila,2017,14
+11446,total_rebounds,Atkovoti kamuoliai,home,11,2,Justinas Marcinkevičius,justinas-marcinkevicius,1762,9
+11446,total_rebounds,Atkovoti kamuoliai,home,11,3,Trent McLaughlin,trent-mclaughlin,2019,6
+11446,total_rebounds,Atkovoti kamuoliai,home,11,4,Tyler Peterson,tyler-peterson,2021,6
+11446,total_rebounds,Atkovoti kamuoliai,home,11,5,Selton Miguel,selton-miguel,2039,5
+11446,total_rebounds,Atkovoti kamuoliai,away,41,1,Matas Repšys,matas-repsys,1530,8
+11446,total_rebounds,Atkovoti kamuoliai,away,41,2,Lukas Kreišmontas,lukas-kreismontas,747,7
+11446,total_rebounds,Atkovoti kamuoliai,away,41,3,Mihkel Kirves,mihkel-kirves,1911,7
+11446,total_rebounds,Atkovoti kamuoliai,away,41,4,Makai Ashton,makai-ashton,2005,5
+11446,total_rebounds,Atkovoti kamuoliai,away,41,5,Benjamin Krikke,benjamin-krikke,2027,3
+11446,assists,Rezultatyvūs perdavimai,home,11,1,Justinas Marcinkevičius,justinas-marcinkevicius,1762,3
+11446,assists,Rezultatyvūs perdavimai,home,11,2,Tyler Peterson,tyler-peterson,2021,3
+11446,assists,Rezultatyvūs perdavimai,home,11,3,Justinas Ramanauskas,justinas-ramanauskas,1527,2
+11446,assists,Rezultatyvūs perdavimai,home,11,4,Ignas Vaitkus,ignas-vaitkus,116,1
+11446,assists,Rezultatyvūs perdavimai,home,11,5,JD Muila,jd-muila,2017,1
+11446,assists,Rezultatyvūs perdavimai,away,41,1,Makai Ashton,makai-ashton,2005,9
+11446,assists,Rezultatyvūs perdavimai,away,41,2,Adomas Sidarevičius,adomas-sidarevicius,1514,5
+11446,assists,Rezultatyvūs perdavimai,away,41,3,Lesley Varner,lesley-varner,2045,4
+11446,assists,Rezultatyvūs perdavimai,away,41,4,Lukas Kreišmontas,lukas-kreismontas,747,1
+11446,assists,Rezultatyvūs perdavimai,away,41,5,Mihkel Kirves,mihkel-kirves,1911,1
+11446,efficiency,Naudingumas,home,11,1,JD Muila,jd-muila,2017,24
+11446,efficiency,Naudingumas,home,11,2,Trent McLaughlin,trent-mclaughlin,2019,17
+11446,efficiency,Naudingumas,home,11,3,Justinas Marcinkevičius,justinas-marcinkevicius,1762,16
+11446,efficiency,Naudingumas,home,11,4,Tyler Peterson,tyler-peterson,2021,14
+11446,efficiency,Naudingumas,home,11,5,Selton Miguel,selton-miguel,2039,11
+11446,efficiency,Naudingumas,away,41,1,Lukas Kreišmontas,lukas-kreismontas,747,27
+11446,efficiency,Naudingumas,away,41,2,Makai Ashton,makai-ashton,2005,15
+11446,efficiency,Naudingumas,away,41,3,Benjamin Krikke,benjamin-krikke,2027,12
+11446,efficiency,Naudingumas,away,41,4,Mihkel Kirves,mihkel-kirves,1911,11
+11446,efficiency,Naudingumas,away,41,5,Adomas Sidarevičius,adomas-sidarevicius,1514,9
+11446,steals,Perimti kamuoliai,home,11,1,Trent McLaughlin,trent-mclaughlin,2019,4
+11446,steals,Perimti kamuoliai,home,11,2,Justinas Marcinkevičius,justinas-marcinkevicius,1762,1
+11446,steals,Perimti kamuoliai,home,11,3,Ignas Vaitkus,ignas-vaitkus,116,0
+11446,steals,Perimti kamuoliai,home,11,4,Nedas Montvila,nedas-montvila,1859,0
+11446,steals,Perimti kamuoliai,home,11,5,Jonas Zakas,jonas-zakas,28,0
+11446,steals,Perimti kamuoliai,away,41,1,Makai Ashton,makai-ashton,2005,3
+11446,steals,Perimti kamuoliai,away,41,2,Lesley Varner,lesley-varner,2045,3
+11446,steals,Perimti kamuoliai,away,41,3,Lukas Kreišmontas,lukas-kreismontas,747,2
+11446,steals,Perimti kamuoliai,away,41,4,Matas Repšys,matas-repsys,1530,1
+11446,steals,Perimti kamuoliai,away,41,5,Adomas Sidarevičius,adomas-sidarevicius,1514,1
+11446,blocks,Blokai,home,11,1,Justinas Marcinkevičius,justinas-marcinkevicius,1762,1
+11446,blocks,Blokai,home,11,2,Tyler Peterson,tyler-peterson,2021,1
+11446,blocks,Blokai,home,11,3,Ignas Vaitkus,ignas-vaitkus,116,0
+11446,blocks,Blokai,home,11,4,Nedas Montvila,nedas-montvila,1859,0
+11446,blocks,Blokai,home,11,5,Jonas Zakas,jonas-zakas,28,0
+11446,blocks,Blokai,away,41,1,Džiugas Slavinskas,dziugas-slavinskas,333,0
+11446,blocks,Blokai,away,41,2,Lukas Kreišmontas,lukas-kreismontas,747,0
+11446,blocks,Blokai,away,41,3,Matas Repšys,matas-repsys,1530,0
+11446,blocks,Blokai,away,41,4,Adomas Sidarevičius,adomas-sidarevicius,1514,0
+11446,blocks,Blokai,away,41,5,Modestas Babraitis,modestas-babraitis,1764,0

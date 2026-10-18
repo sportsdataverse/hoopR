@@ -1,0 +1,92 @@
+{
+  "tab": 2,
+  "year": 2025,
+  "event": 7,
+  "mon": 10,
+  "day": 4,
+  "season_label": "2025-26",
+  "event_label": "B2リーグ",
+  "events": [
+    {
+      "event": 7,
+      "label": "B2リーグ"
+    },
+    {
+      "event": 5,
+      "label": "オールスターゲーム"
+    },
+    {
+      "event": 8,
+      "label": "B2プレーオフ"
+    }
+  ],
+  "game_days": [
+    2,
+    3,
+    4
+  ],
+  "clubs": [
+    {
+      "team_id": "708",
+      "name": "青森"
+    },
+    {
+      "team_id": "709",
+      "name": "岩手"
+    },
+    {
+      "team_id": "710",
+      "name": "山形"
+    }
+  ],
+  "games": [
+    {
+      "schedule_key": 505508,
+      "date": "2025-10-04",
+      "round_label": "第1節",
+      "round": 1,
+      "home_team_id": "708",
+      "home_team": "青森",
+      "home_score": 64,
+      "away_team_id": "709",
+      "away_team": "岩手",
+      "away_score": 59,
+      "prefecture": "青森県",
+      "venue": "マエダ",
+      "tip_time": "15:05",
+      "state": "FINAL"
+    },
+    {
+      "schedule_key": 505510,
+      "date": "2025-10-04",
+      "round_label": "第1節",
+      "round": 1,
+      "home_team_id": "711",
+      "home_team": "福島",
+      "home_score": 86,
+      "away_team_id": "714",
+      "away_team": "横浜EX",
+      "away_score": 78,
+      "prefecture": "福島県",
+      "venue": "ボンズA",
+      "tip_time": "15:05",
+      "state": "FINAL"
+    },
+    {
+      "schedule_key": 505520,
+      "date": "2025-10-04",
+      "round_label": "第1節",
+      "round": 1,
+      "home_team_id": "725",
+      "home_team": "鹿児島",
+      "home_score": 85,
+      "away_team_id": "723",
+      "away_team": "愛媛",
+      "away_score": 74,
+      "prefecture": "鹿児島県",
+      "venue": "西原商会",
+      "tip_time": "15:05",
+      "state": "FINAL"
+    }
+  ]
+}

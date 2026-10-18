@@ -1,0 +1,4 @@
+requested_match_id,phase_id,subphase_id,series_home_team_id,series_home_club_id,series_away_team_id,series_away_club_id,series_home_wins,series_away_wins,series_finished,best_of,edition_id,season,match_id,home_team_id,away_team_id,home_score,away_score,start,status,is_on_half_time,current_quarter
+17718,111,291,3070,9,3074,13,1,3,true,0,81,2017,17715,3070,3074,87,81,2017-06-09T18:30:00Z,FINALIZED,false,1
+17718,111,291,3070,9,3074,13,1,3,true,0,81,2017,17716,3070,3074,79,86,2017-06-11T16:30:00Z,FINALIZED,false,1
+17718,111,291,3070,9,3074,13,1,3,true,0,81,2017,17717,3074,3070,81,64,2017-06-14T18:30:00Z,FINALIZED,false,1

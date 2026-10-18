@@ -1,0 +1,44 @@
+{
+  "playerId": 211501,
+  "competitionId": 208182,
+  "competitionTeamId": 279569,
+  "organisationId": 64,
+  "firstName": "Isaac",
+  "lastName": "Bonga",
+  "heightCm": 203,
+  "heightFtIn": "6'7\"",
+  "clubName": "FC Bayern München Basketball GmbH",
+  "clubCode": null,
+  "isPlayerFreeAgent": false,
+  "pointsPerGame": 7.8,
+  "rankPointsPerGame": 160,
+  "reboundsPerGame": 2.3,
+  "rankReboundsPerGame": 197,
+  "assistsPerGame": 1.4,
+  "rankAssistsPerGame": 161,
+  "pointsPerGamePerCompetitionCategory": 7.6,
+  "reboundsPerGamePerCompetitionCategory": 3.6,
+  "assistsPerGamePerCompetitionCategory": 1.6,
+  "birthDate": "1999-11-08",
+  "nationalities": [
+    "GER",
+    "COD"
+  ],
+  "socialMedia": {
+    "website": null,
+    "twitter": null,
+    "facebook": null,
+    "instagram": null,
+    "youtube": null
+  },
+  "socialNetworks": [
+    {
+      "name": "Twitter",
+      "value": "isaacbonga"
+    },
+    {
+      "name": "Instagram",
+      "value": "izzy_b99"
+    }
+  ]
+}

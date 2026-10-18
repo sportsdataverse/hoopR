@@ -1,0 +1,4 @@
+game_no,season,league_id,league,seq,period,clock,seconds_left,home_score,away_score,side,team_id,jersey,player_id,player_name,text,action,qualifier
+1,2026,2,aba2,20,1,09:40,580,2,0,home,75,2,4898,KRNIĆ D,made 2 points (drivinglayup),made 2 points,drivinglayup
+1,2026,2,aba2,26,1,08:50,530,4,3,away,76,6,4859,HARRIS T,made 3 points (jump shot),made 3 points,jump shot
+1,2026,2,aba2,39,1,07:46,466,5,6,home,75,2,4898,KRNIĆ D,made free throw (1 of 2),made free throw,1 of 2

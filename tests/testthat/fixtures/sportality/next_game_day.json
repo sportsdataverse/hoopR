@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-15",
+  "games": [
+    {
+      "uuid": "c2somb9eh0",
+      "startDateTime": "2026-10-15T16:30:00.000Z",
+      "state": "pre-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "N/A",
+        "uuid": "hip2m60a45",
+        "ownerInstanceId": "hic1_hic",
+        "code": "HIC",
+        "names": {
+          "code": "HIC",
+          "short": "Horsens IC",
+          "long": "Horsens IC",
+          "full": "Horsens IC",
+          "codeSite": "HIC",
+          "shortSite": "Horsens IC",
+          "fullSite": "Horsens IC",
+          "longSite": "Horsens IC"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hic1_hic.svg"
+      },
+      "awayTeamInfo": {
+        "status": "N/A",
+        "uuid": "rfo82vr830",
+        "ownerInstanceId": "hol2_hol",
+        "code": "HOL",
+        "names": {
+          "code": "HOL",
+          "short": "Holbæk-Stenhus",
+          "long": "Holbæk-Stenhus",
+          "full": "Holbæk-Stenhus",
+          "codeSite": "HOL",
+          "shortSite": "Holbæk-Stenhus",
+          "fullSite": "Holbæk-Stenhus",
+          "longSite": "Holbæk-Stenhus"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "venueInfo": {
+        "uuid": "d3mxpsbamb",
+        "name": "Forum Horsens"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    },
+    {
+      "uuid": "lpavqngykp",
+      "startDateTime": "2026-10-15T17:00:00.000Z",
+      "state": "pre-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "N/A",
+        "uuid": "iutrlqp3ef",
+        "ownerInstanceId": "tfn1_tfn",
+        "code": "TFN",
+        "names": {
+          "code": "TFN",
+          "short": "Team FOG Næstved",
+          "long": "Team FOG Næstved",
+          "full": "Team FOG Næstved",
+          "codeSite": "TFN",
+          "shortSite": "Team FOG Næstved",
+          "fullSite": "Team FOG Næstved",
+          "longSite": "Team FOG Næstved"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/tfn1_tfn.svg"
+      },
+      "awayTeamInfo": {
+        "status": "N/A",
+        "uuid": "kgmhwo9l5d",
+        "ownerInstanceId": "sve1_sve",
+        "code": "SVE",
+        "names": {
+          "code": "SVE",
+          "short": "Svendborg Rabbits",
+          "long": "Svendborg Rabbits",
+          "full": "Svendborg Rabbits",
+          "codeSite": "SVE",
+          "shortSite": "Svendborg Rabbits",
+          "fullSite": "Svendborg Rabbits",
+          "longSite": "Svendborg Rabbits"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/sve1_sve.svg"
+      },
+      "venueInfo": {
+        "uuid": "id1w09p40r",
+        "name": "Arena Næstved"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    }
+  ]
+}

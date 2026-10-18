@@ -1,0 +1,60 @@
+code,label
+1,Tiro in sospensione
+2,Tiro in corsa
+3,Tiro in fadeaway
+4,Giro e Tiro
+5,Tiro in Step Back
+6,Arresto e tiro
+7,Appoggio a canestro
+8,Da penetrazione
+9,Schiacciata
+10,Alley-oop
+11,Gancio
+20,Normale
+21,And1
+50,Passaggio sbagliato
+51,Palleggio
+52,Doppio Palleggio
+53,Passi
+54,Fuori dal campo
+55,Infrazione di campo
+56,3 secondi
+57,5 secondi
+58,Interferenza a canestro in attacco
+59,Altro
+100,personale
+101,tecnico
+102,antisportivo
+103,tiro
+104,doppio
+105,antisportivo su tiro
+106,offensivo
+107,espulsione
+108,espulsione su tiro
+109,compensazione
+121,tecnico categoria 1
+122,tecnico categoria 2
+123,tattico
+124,flagrant
+201,tecnico allenatore
+207,espulsione allenatore
+209,compensazione allenatore
+301,tecnico squadra
+309,compensazione squadra
+500,contropiede
+600,5 Secondi
+601,8 Secondi
+602,24 Secondi
+603,Altro
+1001,tip-in schiacciata made
+1002,tip-in schiacciata miss
+1003,tip-in appoggio canestro made
+1004,tip-in appoggio canestro miss
+1005,stoppata
+1006,violazione 24sec
+1007,nessun rimbalzo
+2001,Vinta
+2002,Persa
+2100,tecnico
+2101,arbitro
+3001,Starters

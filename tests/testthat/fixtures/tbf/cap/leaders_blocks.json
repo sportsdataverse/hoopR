@@ -1,0 +1,89 @@
+{
+  "data": {
+    "sum": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "5",
+        "oyuncuAdi": "Furkan Haltalı",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "283725",
+        "fotograf": "https://tbf.org.tr/res/0ac590d6-8099-4836-884e-2e2422b63087_14.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "4",
+        "oyuncuAdi": "Alen Smailagic",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779278",
+        "fotograf": "https://tbf.org.tr/res/4a533d8c-65f5-4a5c-821d-d1cf852142c2_galatasaray_0015_9.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "4",
+        "oyuncuAdi": "Oumar Ballo",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779274",
+        "fotograf": "https://tbf.org.tr/res/fd0a3198-3ddc-4e99-830e-565f367bcdf3_galatasaray_0013_11.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      }
+    ],
+    "avg": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "1.666668",
+        "oyuncuAdi": "Furkan Haltalı",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "283725",
+        "fotograf": "https://tbf.org.tr/res/0ac590d6-8099-4836-884e-2e2422b63087_14.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "1.333334",
+        "oyuncuAdi": "Alen Smailagic",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779278",
+        "fotograf": "https://tbf.org.tr/res/4a533d8c-65f5-4a5c-821d-d1cf852142c2_galatasaray_0015_9.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "1.333334",
+        "oyuncuAdi": "Oumar Ballo",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779274",
+        "fotograf": "https://tbf.org.tr/res/fd0a3198-3ddc-4e99-830e-565f367bcdf3_galatasaray_0013_11.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

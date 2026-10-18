@@ -1,0 +1,35 @@
+{
+  "player": [
+    {
+      "player_id": "21912",
+      "jersy": "01",
+      "year_id": "2026",
+      "team_id": "1109",
+      "games": "20",
+      "minutes": "454",
+      "pts": "195",
+      "p21": "64",
+      "p22": "118",
+      "p31": "5",
+      "p32": "12",
+      "p11": "52",
+      "p12": "63",
+      "p2": "",
+      "p3": "",
+      "p1": "",
+      "defensive_reb": "84",
+      "offensive_reb": "46",
+      "total_reb": "130",
+      "fouls_against": "47",
+      "fouls_for": "25",
+      "steals": "13",
+      "tournovers": "15",
+      "assists": "38",
+      "blocks_for": "9",
+      "block_against": "8",
+      "VAL": "312",
+      "plusminus": "194",
+      "dunk": "25"
+    }
+  ]
+}

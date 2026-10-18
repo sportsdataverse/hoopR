@@ -1,0 +1,23 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 106285,
+    "identificationNumber": 915164,
+    "person": {
+      "id": 109521,
+      "firstName": "Wendell Jerome",
+      "lastName": "Green jr",
+      "yearOfBirth": 2002
+    },
+    "nationality": {
+      "id": 237,
+      "alpha2Code": "US",
+      "alpha3Code": "USA",
+      "name": "Združene države",
+      "engName": "United States of America"
+    },
+    "homegrown": false,
+    "photoUuid": "0bcbce69-5db6-4b26-a7b4-467e5fcac7bb",
+    "positions": []
+  }
+}

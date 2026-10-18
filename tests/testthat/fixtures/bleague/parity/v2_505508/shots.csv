@@ -1,0 +1,3 @@
+schedule_key,season,feed,period,event_no,team_side,team_id,player_id,player_no,player_name_j,shot_type,in_paint,made,qualifier2,qualifier3,x,y,area_code,area,side,rest_time,clock_seconds,score
+505508,2026,v2,1,22000,home,708,15855,75,神里 和,3pt,,TRUE,jump_shot,second_chance,76.79000091552734,84.86000061035156,11,wing_3,right,8:16,496,5-4
+505508,2026,v2,1,46000,away,709,46257,61,クレイ・マウンス,2pt,TRUE,TRUE,jump_shot,,7.679999828338623,43.900001525878906,1,restricted_area,left,5:01,301,9-14

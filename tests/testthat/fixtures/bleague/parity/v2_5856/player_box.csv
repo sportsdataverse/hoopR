@@ -1,0 +1,3 @@
+schedule_key,season,feed,team_side,team_id,category,period_category,team_name_j,team_name_e,player_id,player_no,player_name_j,player_name_e,play_time,on_court,display_order,starter,seconds_played,points,fg3_made,fg3_attempted,fg2_made,fg2_attempted,ft_made,ft_attempted,fouls,fouls_drawn,reb_off,reb_def,reb,turnovers,assists,steals,blocks,blocks_received,ptfb,pt2in,pt2nd,ptpft,dunks,efficiency,plus_minus,ast_to,efg,ts,usg,off_rtg,def_rtg,net_rtg,poss
+5856,2021,v2,home,706,1,1,アルバルク東京,ALVARK TOKYO,8467,3,安藤 誓哉,Seiya Ando,07:31,TRUE,,TRUE,451,6,1,2,1,4,1,1,0,3,0,2,2,0,1,0,0,1,0,1,0,,,7,,,,,,,,,
+5856,2021,v2,away,727,1,1,川崎ブレイブサンダース,KAWASAKI BRAVE THUNDERS,8484,7,篠山 竜青,Ryusei Shinoyama,05:38,TRUE,,TRUE,338,0,0,0,0,1,0,0,1,0,0,0,0,1,2,0,0,0,0,0,0,,,-1,,,,,,,,,

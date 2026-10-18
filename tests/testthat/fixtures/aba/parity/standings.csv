@@ -1,0 +1,37 @@
+season,league_id,league,season_label,table,group,rank,team_id,team_name,games,wins,losses,points_for,points_against,point_diff,standing_points
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,1,95,Dubai Basketball,24,21,3,2150,1849,301,45
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,2,22,Partizan Mozzart Bet,24,21,3,2186,1919,267,45
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,3,18,Crvena zvezda MeridianBet,24,18,6,2192,2019,173,42
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,4,12,Budućnost VOLI,24,18,6,2153,1943,210,42
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,5,100,U-BT Cluj-Napoca,24,13,11,2175,2145,30,37
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,6,66,Cedevita Olimpija,24,13,11,2104,2002,102,37
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,7,1,Bosna BH Telecom,24,10,14,1949,2077,-128,34
+2026,1,aba,Season 2025/26,Top 8 Season 2025/26,,8,30,Igokea m:tel,24,10,14,1986,2150,-164,34
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,1,91,Spartak Office Shoes,26,14,12,2112,2084,28,40
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,2,3,Zadar,26,12,14,2036,2043,-7,38
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,3,33,Mega Superbet,26,12,14,2258,2346,-88,38
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,4,17,FMP,26,11,15,2168,2183,-15,37
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,5,10,Krka,26,10,16,2046,2097,-51,36
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,6,92,Perspektiva Ilirija,26,10,16,2177,2256,-79,36
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,7,101,Vienna,26,9,17,2186,2319,-133,35
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,8,74,SC Derby,26,9,17,2025,2102,-77,35
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,9,43,Borac Mozzart,26,8,18,2071,2213,-142,34
+2026,1,aba,Season 2025/26,Play-out Season 2025/26,,10,7,Split,26,7,19,2162,2389,-227,33
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,1,95,Dubai Basketball,16,15,1,1409,1195,214,31
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,2,22,Partizan Mozzart Bet,16,15,1,1473,1297,176,31
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,3,100,U-BT Cluj-Napoca,16,10,6,1488,1403,85,26
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,4,30,Igokea m:tel,16,8,8,1363,1433,-70,24
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,5,17,FMP,16,6,10,1325,1385,-60,22
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,6,43,Borac Mozzart,16,6,10,1274,1341,-67,22
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,7,10,Krka,16,5,11,1271,1321,-50,21
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,8,7,Split,16,4,12,1328,1479,-151,20
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group A,9,74,SC Derby,16,3,13,1258,1335,-77,19
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,1,12,Budućnost VOLI,16,13,3,1417,1269,148,29
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,2,18,Crvena zvezda MeridianBet,16,12,4,1480,1328,152,28
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,3,66,Cedevita Olimpija,16,11,5,1432,1311,121,27
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,4,1,Bosna BH Telecom,16,8,8,1334,1369,-35,24
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,5,91,Spartak Office Shoes,16,8,8,1329,1334,-5,24
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,6,33,Mega Superbet,16,6,10,1370,1485,-115,22
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,7,3,Zadar,16,5,11,1303,1357,-54,21
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,8,92,Perspektiva Ilirija,16,5,11,1298,1395,-97,21
+2026,1,aba,Season 2025/26,Regular Season 2025/26,Group B,9,101,Vienna,16,4,12,1346,1461,-115,20

@@ -1,0 +1,114 @@
+{
+  "team": {
+    "id": 1764,
+    "name": "Nutribullet Treviso Basket",
+    "year": 2026,
+    "club_id": 107,
+    "club_code": "TVU",
+    "updated_at": "2026-09-24T13:42:01.847+02:00",
+    "logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N"
+  },
+  "ranking": [],
+  "rnk_sum": {
+    "cat": {
+      "points": {
+        "pos": 4,
+        "avg": 93
+      },
+      "total_rebound": {
+        "pos": 13,
+        "avg": 33.666666666666664
+      },
+      "assists": {
+        "pos": 15,
+        "avg": 15
+      }
+    },
+    "r_s": {
+      "pos": 5,
+      "points": 4,
+      "mw": 2,
+      "ml": 1
+    }
+  },
+  "coach": {
+    "id": 339,
+    "name": "Marcelo",
+    "surname": "Nicola",
+    "birth_date": "1971-05-12",
+    "place_of_birth": "Rafaela (ARG)",
+    "coach_type_id": 1,
+    "coach_type_description": "Allenatore",
+    "coach_type_code": "1",
+    "team_name": "Nutribullet Treviso",
+    "coach_picture_key": "sZDy4Nori7spAiCaqmjpfuUM",
+    "team_logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N"
+  },
+  "players": [
+    {
+      "id": 969,
+      "name": "Alessandro",
+      "surname": "Cappelletti",
+      "code": "CAP-ALE-95",
+      "place_of_birth": "Assisi",
+      "birth_date": "1995-10-22",
+      "player_number": "0",
+      "country": "ITA",
+      "uefa_ratio": "I",
+      "height": 186,
+      "weight": 82,
+      "year": 2026,
+      "start_date": "2026-07-01",
+      "end_date": "2027-06-30",
+      "player_role_id": 6,
+      "player_role": "Playmaker",
+      "team_name": "Nutribullet Treviso",
+      "player_picture_key": "gBKiHTMzKiQajAAfFGjxAssf",
+      "team_logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N"
+    },
+    {
+      "id": 9331,
+      "name": "Chico",
+      "surname": "Carter",
+      "code": "CAR-CHI-00",
+      "place_of_birth": "Columbia",
+      "birth_date": "2000-11-03",
+      "player_number": "2",
+      "country": "USA",
+      "uefa_ratio": "E",
+      "height": 191,
+      "weight": 87,
+      "year": 2026,
+      "start_date": "2026-07-01",
+      "end_date": "2027-06-30",
+      "player_role_id": 4,
+      "player_role": "Guardia",
+      "team_name": "Nutribullet Treviso",
+      "player_picture_key": "mpQjC9hV7L5inFXjehStGVCL",
+      "team_logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N"
+    },
+    {
+      "id": 9041,
+      "name": "Brekkott",
+      "surname": "Chapman",
+      "code": "CHA-BRE-96",
+      "place_of_birth": "Roy",
+      "birth_date": "1996-04-07",
+      "player_number": "3",
+      "country": "USA",
+      "uefa_ratio": "E",
+      "height": 206,
+      "weight": 97,
+      "year": 2026,
+      "start_date": "2026-07-01",
+      "end_date": "2027-06-30",
+      "player_role_id": 1,
+      "player_role": "Ala",
+      "team_name": "Nutribullet Treviso",
+      "player_picture_key": "S1uWwNcEGSshYtUYapiymE7M",
+      "team_logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N"
+    }
+  ],
+  "cdn_url": "https://lba-media.s3.eu-south-1.amazonaws.com",
+  "cache_key": "tCK:_tCK:1790250236_mlCK:_mlCK:1791828530"
+}
