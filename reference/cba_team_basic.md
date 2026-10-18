@@ -47,36 +47,36 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
 |  |  |  |
 |----|----|----|
 | col_name | type | description |
-| assists | numeric | Assists, formatted by statisticalDimension. A number (the API sends it as display text). |
-| blocked | numeric | Blocks, formatted by statisticalDimension. A number (the API sends it as display text). |
+| assists | double | Assists, formatted by statisticalDimension. A number (the API sends it as display text). |
+| blocked | double | Blocks, formatted by statisticalDimension. A number (the API sends it as display text). |
 | cba_rank | character | Unobserved: null in every sample (a league-rank slot). |
-| field_goals | numeric | Field goals made, formatted by statisticalDimension. A number (the API sends it as display text). |
-| field_goals_attempted | numeric | Field goals attempted, formatted by statisticalDimension. A number (the API sends it as display text). |
-| field_goals_percentage_rate | numeric | Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
-| fouls | numeric | Personal fouls, formatted by statisticalDimension. A number (the API sends it as display text). |
-| free_throws | numeric | Free throws made, formatted by statisticalDimension. A number (the API sends it as display text). |
-| free_throws_attempted | numeric | Free throws attempted, formatted by statisticalDimension. A number (the API sends it as display text). |
-| free_throws_percentage_rate | numeric | Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+| field_goals | double | Field goals made, formatted by statisticalDimension. A number (the API sends it as display text). |
+| field_goals_attempted | double | Field goals attempted, formatted by statisticalDimension. A number (the API sends it as display text). |
+| field_goals_percentage_rate | double | Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+| fouls | double | Personal fouls, formatted by statisticalDimension. A number (the API sends it as display text). |
+| free_throws | double | Free throws made, formatted by statisticalDimension. A number (the API sends it as display text). |
+| free_throws_attempted | double | Free throws attempted, formatted by statisticalDimension. A number (the API sends it as display text). |
+| free_throws_percentage_rate | double | Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
 | losses_number | integer | Losses (Chinese text). (as the API names it) |
-| points | numeric | Points, formatted by statisticalDimension (1 per-game average, 2 season total, 3 and 4 per 100 possessions: both give the same values, 120.1 = boutPoints). A number (the API sends it as display text). |
+| points | double | Points, formatted by statisticalDimension (1 per-game average, 2 season total, 3 and 4 per 100 possessions: both give the same values, 120.1 = boutPoints). A number (the API sends it as display text). |
 | real_player_times | integer | Games counted for the averages ((Chinese text) by its name); equals scheduleNumber in the sample except in short seasons (unverified). |
-| rebounds | numeric | Total rebounds, formatted by statisticalDimension. A number (the API sends it as display text). |
-| rebounds_defensive | numeric | Defensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). |
-| rebounds_offensive | numeric | Offensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). |
-| round | numeric | Possessions in the season (Chinese text) as a float (4074.09); identical for statisticalDimension 1-4. |
+| rebounds | double | Total rebounds, formatted by statisticalDimension. A number (the API sends it as display text). |
+| rebounds_defensive | double | Defensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). |
+| rebounds_offensive | double | Offensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). |
+| round | double | Possessions in the season (Chinese text) as a float (4074.09); identical for statisticalDimension 1-4. |
 | schedule_number | integer | Games played in that season and match type (Chinese text). |
 | schedule_season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. One row per season of the team. |
 | season | character | Season label 'YYYY-YYYY' as a string ('2024-2025' = start year - end year; the sdv END year is the second one); scheduleSeason is the numeric START year. |
-| steals | numeric | Steals, formatted by statisticalDimension. A number (the API sends it as display text). |
+| steals | double | Steals, formatted by statisticalDimension. A number (the API sends it as display text). |
 | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 | team_name | character | Team name (Chinese) in that season; changes with the sponsor (the sampled team 29128 has 9 different names across 20 seasons). Names change with the sponsor, the id does not; teamId -\> English glossary in cba_glossary.yaml. |
-| three_point_attempted | numeric | Three-pointers attempted, formatted by statisticalDimension. A number (the API sends it as display text). |
-| three_point_goals | numeric | Three-pointers made, formatted by statisticalDimension. A number (the API sends it as display text). |
-| three_point_percentage_rate | numeric | Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
-| time | numeric | Team minutes per game (statisticalDimension 1) or in total (2). A number (the API sends it as display text). |
-| turnovers | numeric | Turnovers, formatted by statisticalDimension. A number (the API sends it as display text). |
+| three_point_attempted | double | Three-pointers attempted, formatted by statisticalDimension. A number (the API sends it as display text). |
+| three_point_goals | double | Three-pointers made, formatted by statisticalDimension. A number (the API sends it as display text). |
+| three_point_percentage_rate | double | Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+| time | double | Team minutes per game (statisticalDimension 1) or in total (2). A number (the API sends it as display text). |
+| turnovers | double | Turnovers, formatted by statisticalDimension. A number (the API sends it as display text). |
 | win_number | integer | Wins (Chinese text). (as the API names it) |
-| win_rate | numeric | Win rate (Chinese text). A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+| win_rate | double | Win rate (Chinese text). A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
 
 ## Details
 
@@ -205,7 +205,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_team_basic(team_id = 29128))
 #> ── CBA Team Basic from data-server.cbaleague.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:24:39 UTC
+#> ℹ Data updated: 2026-10-18 20:27:38 UTC
 #> # A tibble: 21 × 30
 #>    assists blocked cba_rank field_goals field_goals_attempted
 #>      <dbl>   <dbl> <chr>          <dbl>                 <dbl>

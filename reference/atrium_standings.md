@@ -140,7 +140,7 @@ than the one asked for.
 
 ## See also
 
-Other Atrium:
+Other Atrium Functions:
 [`atrium_box_score()`](https://hoopR.sportsdataverse.org/reference/atrium_box_score.md),
 [`atrium_competition_player_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_player_stats.md),
 [`atrium_competition_team_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_team_stats.md),
@@ -178,7 +178,7 @@ Other Atrium:
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
 #> ── Atrium standings from embed-api.eui.connect.sportradar.com ─── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:48 UTC
+#> ℹ Data updated: 2026-10-18 20:26:44 UTC
 #> # A tibble: 16 × 28
 #>    website_id season_id       season_end_year group position entity_id team_name
 #>         <int> <chr>                     <int> <chr>    <int> <chr>     <chr>    

@@ -42,7 +42,7 @@ are always these, in this order (sdv-py `acb_season_leaders`):
 | team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
 | metric | character | Leader category in snake_case (the API's key, e.g. rating, points, rebounds, assists). |
 | rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-| value | numeric | The player's season value in the category before this game (a total or an average depending on the category). |
+| value | double | The player's season value in the category before this game (a total or an average depending on the category). |
 | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
 | player_name | character | Display (sporting) name ('Edy Tavares') |
 | first_name | character | Legal first name(s) |
@@ -150,7 +150,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_season_leaders(match_id = 105401))
 #> ── ACB Season Leaders from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:31 UTC
+#> ℹ Data updated: 2026-10-18 20:26:16 UTC
 #> # A tibble: 40 × 17
 #>    match_id edition_id season team_side team_id club_id team  team_abbr metric
 #>       <int>      <int>  <int> <chr>       <int>   <int> <chr> <chr>     <chr> 

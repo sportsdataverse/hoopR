@@ -38,7 +38,7 @@ are always these, in this order (sdv-py `acb_lead_stats`):
 | stat | character | Statistic: best_score_run, max_difference, time_ahead or lead_changes. |
 | side | character | Side the value belongs to: home or away. |
 | value | character | Display value as sent: a count, or 'mm:ss' for time_ahead. |
-| bar_progress | numeric | Length of the site's comparison bar (a drawing value, not a statistic). |
+| bar_progress | double | Length of the site's comparison bar (a drawing value, not a statistic). |
 | is_highlighted | logical | True for the side whose bar the site highlights as the better value. |
 
 ## Details

@@ -52,8 +52,8 @@ answers an empty valid page), or the raw list when
 | action_type | character | Shot value: 2pt or 3pt |
 | sub_type | character | Shot type (layup, drivinglayup, jumpshot, pullupjumpshot, dunk, ...) |
 | result | integer | Shot result: 1 = made, 0 = missed. |
-| x | numeric | Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified |
-| y | numeric | Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified |
+| x | double | Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified |
+| y | double | Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified |
 | player | character | Shooter's display name as the org enters it, in the local script when it uses one. |
 | shirt_number | character | Shooter's shirt number (string) |
 
@@ -96,7 +96,7 @@ competition or ORG.
 
 ## See also
 
-Other Genius:
+Other Genius Functions:
 [`bal_competition`](https://hoopR.sportsdataverse.org/reference/bal_competition.md),
 [`esake_competition`](https://hoopR.sportsdataverse.org/reference/esake_competition.md),
 [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md),

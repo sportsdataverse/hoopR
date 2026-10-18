@@ -49,7 +49,7 @@ with the following columns:
 | order | integer | Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. |
 | clock | character | Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). |
 | clock_seconds | integer | Seconds remaining in the period, derived from clock. |
-| wall_time_ms | numeric | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) |
+| wall_time_ms | double | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) |
 | score_a | integer | Team A score after the action. |
 | score_b | integer | Team B score after the action. |
 | action_code | character | Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). |
@@ -165,7 +165,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gamepage_pbp(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_pbp from fiba.basketball ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:00 UTC
+#> ℹ Data updated: 2026-10-18 20:30:09 UTC
 #> # A tibble: 497 × 26
 #>    game_id competition_id statistic_system period period_number action_id order
 #>      <int>          <int> <chr>            <chr>          <int> <chr>     <int>

@@ -104,7 +104,7 @@ inherit `hoopR_error`.
 
 ## See also
 
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 [`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md),
 [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
 [`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md),

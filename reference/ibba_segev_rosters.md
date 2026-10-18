@@ -86,7 +86,7 @@ All inherit `hoopR_error`.
 
 ## See also
 
-Other IBBA Segev:
+Other IBBA Segev Functions:
 [`ibba_segev_game_info()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_info.md),
 [`ibba_segev_pbp()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_pbp.md),
 [`ibba_segev_period_scores()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_period_scores.md),

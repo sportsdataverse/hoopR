@@ -56,16 +56,16 @@ line of both teams (2002-03 on). An empty valid answer raises
 | points | integer | The player's points in the game. |
 | two_point_shots_made | integer | The player's 2-point field goals made in the game. |
 | two_point_shots_attempted | integer | The player's 2-point field goals attempted in the game. |
-| two_point_shot_success_percent | numeric | The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+| two_point_shot_success_percent | double | The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 | three_point_shots_made | integer | The player's 3-point field goals made in the game. |
 | three_point_shots_attempted | integer | The player's 3-point field goals attempted in the game. |
-| three_point_shot_success_percent | numeric | The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+| three_point_shot_success_percent | double | The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 | field_goals_made | integer | The player's field goals made in the game. |
 | field_goals_attempted | integer | The player's field goals attempted in the game. |
-| field_goals_success_percent | numeric | The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+| field_goals_success_percent | double | The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 | free_throws_made | integer | The player's free throws made in the game. |
 | free_throws_attempted | integer | The player's free throws attempted in the game. |
-| free_throws_success_percent | numeric | The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+| free_throws_success_percent | double | The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 | offensive_rebounds | integer | The player's offensive rebounds in the game. |
 | defensive_rebounds | integer | The player's defensive rebounds in the game. |
 | total_rebounds | integer | The player's rebounds (offensive + defensive) in the game. |
@@ -157,7 +157,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_game_players(game_id = "2006920"))
 #> ── BBL/DBBL Game Player Box Score from the SCB API ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:29 UTC
+#> ℹ Data updated: 2026-10-18 20:49:04 UTC
 #> # A tibble: 23 × 45
 #>    league game_id season side  team_id season_player_id real_player_id
 #>    <chr>  <chr>    <int> <chr> <chr>   <chr>                     <int>

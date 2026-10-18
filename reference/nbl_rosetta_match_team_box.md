@@ -36,12 +36,12 @@ A `hoopR_data` tibble (one row per team and period):
 | defensive_rebounds | integer | Defensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | field_goals_attempted | integer | Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | field_goals_made | integer | Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+| field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 | fouls | integer | Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | free_throws_attempted | integer | Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | free_throws_made | integer | Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
-| minutes | numeric | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
+| free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
+| minutes | double | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
 | offensive_rebounds | integer | Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
 | period_type | character | Period type: regular (overtime unobserved) |
@@ -52,11 +52,11 @@ A `hoopR_data` tibble (one row per team and period):
 | technical_fouls | integer | Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | three_points_attempted | integer | Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | three_points_made | integer | Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+| three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 | turnovers | integer | Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | two_points_attempted | integer | Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | two_points_made | integer | Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+| two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 | rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
 | team_id | character | DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. |
 | team_code | character | Team code, e.g. PER (the `{team_code}` path value) |
@@ -110,7 +110,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
@@ -139,7 +139,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_match_team_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match_team_box from prod.rosetta.nbl.com.au ────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:44:59 UTC
+#> ℹ Data updated: 2026-10-18 20:48:33 UTC
 #> # A tibble: 10 × 35
 #>    match_id        match_status stat_line_id rosetta_stat_line_id assists blocks
 #>    <chr>           <chr>        <chr>        <chr>                  <int>  <int>

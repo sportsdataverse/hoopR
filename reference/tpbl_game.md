@@ -140,7 +140,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_game(game_id = 6))
 #> ── TPBL Game from api.tpbl.basketball ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:49 UTC
+#> ℹ Data updated: 2026-10-18 20:50:28 UTC
 #> # A tibble: 1 × 34
 #>   season season_id game_id gohoops_game_id division_id gohoops_division_id
 #>    <int>     <int>   <int>           <int>       <int>               <int>

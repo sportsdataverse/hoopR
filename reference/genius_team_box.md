@@ -63,16 +63,16 @@ answers an empty valid page), or the raw list when
 | seconds_played | integer | Seconds played parsed from the printed mm:ss text as minutes \* 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. |
 | field_goals_made | integer | Team total: field goals made |
 | field_goals_attempted | integer | Team total: field goals attempted |
-| field_goals_percentage | numeric | Team total: field-goal percentage, 0-100, rounded to an integer by the feed |
+| field_goals_percentage | double | Team total: field-goal percentage, 0-100, rounded to an integer by the feed |
 | three_pointers_made | integer | Team total: three-pointers made |
 | three_pointers_attempted | integer | Team total: three-pointers attempted |
-| three_pointers_percentage | numeric | Team total: three-point percentage, 0-100, rounded to an integer |
+| three_pointers_percentage | double | Team total: three-point percentage, 0-100, rounded to an integer |
 | two_pointers_made | integer | Team total: two-pointers made |
 | two_pointers_attempted | integer | Team total: two-pointers attempted |
-| two_pointers_percentage | numeric | Team total: two-point percentage, 0-100, rounded to an integer |
+| two_pointers_percentage | double | Team total: two-point percentage, 0-100, rounded to an integer |
 | free_throws_made | integer | Team total: free throws made |
 | free_throws_attempted | integer | Team total: free throws attempted |
-| free_throws_percentage | numeric | Team total: free-throw percentage, 0-100, rounded to an integer |
+| free_throws_percentage | double | Team total: free-throw percentage, 0-100, rounded to an integer |
 | rebounds_defensive | integer | Team total: defensive rebounds |
 | rebounds_offensive | integer | Team total: offensive rebounds |
 | rebounds_total | integer | Team total: total rebounds |
@@ -90,8 +90,8 @@ answers an empty valid page), or the raw list when
 | points_in_the_paint | integer | Team total: points in the paint |
 | eff_1 | integer | Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
 | eff_2 | integer | Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Team tot_eff_2 is 2 in every 2016+ sample (a constant, not a stat). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_3 | numeric | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_4 | numeric | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
+| eff_3 | double | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
+| eff_4 | double | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
 | eff_5 | integer | Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
 | eff_6 | integer | Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
 | eff_7 | integer | Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
@@ -100,7 +100,7 @@ answers an empty valid page), or the raw list when
 | biggest_scoring_run | integer | Team total: biggest unanswered scoring run, points |
 | lead_changes | integer | Team total: lead changes in the game (same value on both teams) |
 | times_scores_level | integer | Team total: times the score was tied (same value on both teams) |
-| time_leading | numeric | Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) |
+| time_leading | double | Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) |
 | fouls_team | integer | Team total: team (bench) fouls |
 | fouls_total | integer | Team total: all fouls committed (personal + technical + team bench) |
 | rebounds_team | integer | Team total: team rebounds (credited to no player) |
@@ -147,7 +147,7 @@ competition or ORG.
 
 ## See also
 
-Other Genius:
+Other Genius Functions:
 [`bal_competition`](https://hoopR.sportsdataverse.org/reference/bal_competition.md),
 [`esake_competition`](https://hoopR.sportsdataverse.org/reference/esake_competition.md),
 [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md),

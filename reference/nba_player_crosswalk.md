@@ -38,13 +38,13 @@ Other NBA Crosswalk Functions:
 ``` r
 # \donttest{
   try(nba_player_crosswalk())
-#> ✖ 2026-10-18 19:30:47.836945: Invalid arguments or no league standings v3 data available for 2026-27!
+#> ✖ 2026-10-18 20:34:20.066244: Invalid arguments or no league standings v3 data available for 2026-27!
 #> ✖ Args: league_id = "00", season = "2026-27", season_type = "Regular Season", season_year = ""
 #> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60001 milliseconds with 0 bytes received
-#> ✖ 2026-10-18 19:31:47.875763: Invalid arguments or no league game log data for 2026-27 available!
+#> ✖ 2026-10-18 20:35:20.108666: Invalid arguments or no league game log data for 2026-27 available!
 #> ✖ Args: counter = 0, date_from = "", date_to = "", direction = "ASC", league_id = "00", player_or_team = "T", season = "2026-27", season_type = "Regular Season", sorter = "DATE"
-#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60000 milliseconds with 0 bytes received
-#> ✖ 2026-10-18 19:31:47.887994: Invalid arguments or no team details data available!
+#> ✖ Error: Failed to perform HTTP request. Caused by error in `curl::curl_fetch_memory()`: ! Timeout was reached [stats.nba.com]: Operation timed out after 60002 milliseconds with 0 bytes received
+#> ✖ 2026-10-18 20:35:20.121047: Invalid arguments or no team details data available!
 #> ✖ Error: argument is of length zero
 #> Error in !nrow(nt) : invalid argument type
 # }

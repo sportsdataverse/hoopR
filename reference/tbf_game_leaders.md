@@ -78,7 +78,7 @@ time (`Europe/Istanbul`).
 
 ## See also
 
-Other TBF:
+Other TBF Functions:
 [`tbf_daily_matches()`](https://hoopR.sportsdataverse.org/reference/tbf_daily_matches.md),
 [`tbf_game_header()`](https://hoopR.sportsdataverse.org/reference/tbf_game_header.md),
 [`tbf_game_players()`](https://hoopR.sportsdataverse.org/reference/tbf_game_players.md),

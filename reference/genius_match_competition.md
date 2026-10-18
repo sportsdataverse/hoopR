@@ -93,7 +93,7 @@ competition or ORG.
 
 ## See also
 
-Other Genius:
+Other Genius Functions:
 [`bal_competition`](https://hoopR.sportsdataverse.org/reference/bal_competition.md),
 [`esake_competition`](https://hoopR.sportsdataverse.org/reference/esake_competition.md),
 [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md),

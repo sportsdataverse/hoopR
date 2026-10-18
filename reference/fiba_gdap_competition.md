@@ -145,7 +145,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_competition(comp = 208182))
 #> ── FIBA gdap_competition from fiba.basketball ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:03 UTC
+#> ℹ Data updated: 2026-10-18 20:30:13 UTC
 #> # A tibble: 1 × 29
 #>   hosts  competition_id competition_code season official_name start end   status
 #>   <chr>           <int> <chr>             <int> <chr>         <chr> <chr> <chr> 

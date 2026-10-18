@@ -79,13 +79,13 @@ documented columns come first, in this order (sdv-py
 | match_stats_mins | character | Minutes played 'MM:SS'. |
 | match_stats_pts | integer | Number of points scored. |
 | match_stats_fg | character | Field goals 'made-attempted'. |
-| match_stats_fg_perc | numeric | Field-goal percentage, 0-100. |
+| match_stats_fg_perc | double | Field-goal percentage, 0-100. |
 | match_stats_2_p | character | Two-pointers 'made-attempted'. |
-| match_stats_2_p_perc | numeric | Two-point percentage, 0-100. |
+| match_stats_2_p_perc | double | Two-point percentage, 0-100. |
 | match_stats_3_p | character | Three-pointers 'made-attempted'. |
-| match_stats_3_p_perc | numeric | Three-point percentage, 0-100. |
+| match_stats_3_p_perc | double | Three-point percentage, 0-100. |
 | match_stats_ft | character | Free throws 'made-attempted'. |
-| match_stats_ft_perc | numeric | Free-throw percentage, 0-100. |
+| match_stats_ft_perc | double | Free-throw percentage, 0-100. |
 | match_stats_off | integer | Offensive rebounds. |
 | match_stats_def | integer | Defensive rebounds. |
 | match_stats_reb | integer | Total rebounds. |

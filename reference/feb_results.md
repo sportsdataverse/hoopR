@@ -99,7 +99,7 @@ game, a page for another group or season, or layout drift). All inherit
 
 ## See also
 
-Other FEB:
+Other FEB Functions:
 [`feb_game_info()`](https://hoopR.sportsdataverse.org/reference/feb_game_info.md),
 [`feb_leaders()`](https://hoopR.sportsdataverse.org/reference/feb_leaders.md),
 [`feb_overview()`](https://hoopR.sportsdataverse.org/reference/feb_overview.md),
@@ -117,7 +117,7 @@ Other FEB:
 # \donttest{
   try(feb_results(group = 1, season = 2027))
 #> ── FEB results from baloncestoenvivo.feb.es ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:26:50 UTC
+#> ℹ Data updated: 2026-10-18 20:29:58 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id section    round_title  game_id home_team_id
 #>    <int>  <int> <chr>         <int> <chr>      <chr>          <int>        <int>

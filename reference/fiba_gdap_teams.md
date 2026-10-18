@@ -50,12 +50,12 @@ with the following columns:
 | profile_website | character | The team's website address. |
 | profile_you_tube | character | YouTube handle; always null in the samples, values unverified. |
 | profile_final_ranking | integer | Final rank in the competition. |
-| profile_points_per_game | numeric | The team's average points per game played. |
-| profile_rebounds_per_game | numeric | The team's average rebounds per game played. |
-| profile_assists_per_game | numeric | The team's average assists per game played. |
-| profile_rank_points_per_game | numeric | Rank in the competition by points per game (1 = highest). |
-| profile_rank_rebounds_per_game | numeric | Rank in the competition by rebounds per game (1 = highest). |
-| profile_rank_assists_per_game | numeric | Rank in the competition by assists per game (1 = highest). |
+| profile_points_per_game | double | The team's average points per game played. |
+| profile_rebounds_per_game | double | The team's average rebounds per game played. |
+| profile_assists_per_game | double | The team's average assists per game played. |
+| profile_rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
+| profile_rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
+| profile_rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
 | profile_total_games_won | integer | The team's total games won over the games played. |
 | profile_total_games_lost | integer | The team's total games lost over the games played. |
 | profile_social_networks | character | Social-network handles. Stored as a JSON string. |
@@ -145,7 +145,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_teams(comp = 208182))
 #> ── FIBA gdap_teams from fiba.basketball ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:16 UTC
+#> ℹ Data updated: 2026-10-18 20:30:26 UTC
 #> # A tibble: 32 × 29
 #>    team_id team_code short_name    profile_team_id profile_organisation_id
 #>      <int> <chr>     <chr>                   <int>                   <int>

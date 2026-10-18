@@ -45,7 +45,7 @@ key that maps to two ids raises `hoopR_bad_request`.
 
 ## See also
 
-Other Genius:
+Other Genius Functions:
 [`bal_competition`](https://hoopR.sportsdataverse.org/reference/bal_competition.md),
 [`esake_competition`](https://hoopR.sportsdataverse.org/reference/esake_competition.md),
 [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md),
@@ -72,7 +72,7 @@ Other Genius:
   slider <- data.frame(game_id = c(1L, 2L), genius_id = c(2902690L, NA))
   genius_game_crosswalk(slider, "sportpress")
 #> ── Genius LiveStats game crosswalk ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:58 UTC
+#> ℹ Data updated: 2026-10-18 20:31:04 UTC
 #> # A tibble: 1 × 2
 #>   game_key genius_match_id
 #>      <int>           <int>

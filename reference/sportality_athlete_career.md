@@ -34,22 +34,22 @@ API added later:
 | col_name | type | description |
 | g | integer | Games played in the ssgt. |
 | gps | integer | Games started (0 on every row seen). |
-| mpg | numeric | Minutes per game, 'M.m' string. |
-| ppg | numeric | Points per game (a number or. |
-| drpg | numeric | Defensive rebounds per game. |
-| orpg | numeric | Offensive rebounds per game. |
-| rpg | numeric | Rebounds per game. |
-| apg | numeric | Assists per game. |
-| stpg | numeric | Steals per game. |
-| blkpg | numeric | Blocks per game. |
-| pfpg | numeric | Personal fouls per game. |
-| 2_p_perc | numeric | Two-point percentage, 0-100. |
+| mpg | double | Minutes per game, 'M.m' string. |
+| ppg | double | Points per game. |
+| drpg | double | Defensive rebounds per game. |
+| orpg | double | Offensive rebounds per game. |
+| rpg | double | Rebounds per game. |
+| apg | double | Assists per game. |
+| stpg | double | Steals per game. |
+| blkpg | double | Blocks per game. |
+| pfpg | double | Personal fouls per game. |
+| 2_p_perc | double | Two-point percentage, 0-100. |
 | 3_pm | integer | Three-pointers made (total). |
-| 3_pa | numeric | Three-pointers attempted (total, or a percentage string in the checked rows; unverified). |
-| 3_p_perc | numeric | Three-point percentage, 0-100. |
-| ft_perc | numeric | Free-throw percentage, 0-100. |
-| topg | numeric | Turnovers per game. |
-| plus_minus_pg | numeric | Plus/minus per game. |
+| 3_pa | double | Three-pointers attempted (total, or a percentage string in the checked rows; unverified). |
+| 3_p_perc | double | Three-point percentage, 0-100. |
+| ft_perc | double | Free-throw percentage, 0-100. |
+| topg | double | Turnovers per game. |
+| plus_minus_pg | double | Plus/minus per game. |
 | info_uuid | character | Athlete uuid on player tables, team uuid on team tables (platform key space). |
 | info_full_name | character | Full display name of the player. |
 | info_first_name | character | Given (first) name(s) of the player. |

@@ -52,9 +52,9 @@ raises `hoopR_no_data`; the columns are always these, in this order
 | score | integer | Points scored in the phase. |
 | against | integer | Points conceded in the phase. |
 | score_difference | integer | score - against. |
-| percent | numeric | Win percentage 0-100, rounded to 1 decimal. |
+| percent | double | Win percentage 0-100, rounded to 1 decimal. |
 | point | integer | League points: 2 per win plus 1 per loss. |
-| point_percent | numeric | Share of the possible league points won, 0-1 rounded to 2 decimals. |
+| point_percent | double | Share of the possible league points won, 0-1 rounded to 2 decimals. |
 | home_win | integer | Wins in home games. |
 | home_loss | integer | Losses in home games. |
 | away_win | integer | Wins in away games. |
@@ -149,7 +149,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_standings(competition_id = 24, phase_id = 169))
 #> ── BNXT League Standings from Sportpress ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:24 UTC
+#> ℹ Data updated: 2026-10-18 20:50:02 UTC
 #> # A tibble: 18 × 27
 #>    competition_id phase_id competition_team_id team      team_short_name club_id
 #>             <int>    <int>               <int> <chr>     <chr>             <int>

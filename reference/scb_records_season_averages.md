@@ -38,8 +38,8 @@ raises `hoopR_no_data`; the columns are always these, in this order
 | season_id | integer | Season, START year (2026 = 2026-27). |
 | place | integer | Rank within the list (1 = best); 0 on some rows. |
 | order_id | integer | Sort order within the list. |
-| value | numeric | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
-| ratio | numeric | \[made, attempted\] as strings, on percentage records only; null otherwise. |
+| value | double | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
+| ratio | double | \[made, attempted\] as strings, on percentage records only; null otherwise. |
 | season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
 | real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 | first_name | character | Player's given name. |

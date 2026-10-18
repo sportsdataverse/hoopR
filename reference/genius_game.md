@@ -101,7 +101,7 @@ competition or ORG.
 
 ## See also
 
-Other Genius:
+Other Genius Functions:
 [`bal_competition`](https://hoopR.sportsdataverse.org/reference/bal_competition.md),
 [`esake_competition`](https://hoopR.sportsdataverse.org/reference/esake_competition.md),
 [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md),
@@ -127,7 +127,7 @@ Other Genius:
 # \donttest{
   try(genius_game(match_id = 2902690))
 #> ── Genius LiveStats game ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:58 UTC
+#> ℹ Data updated: 2026-10-18 20:31:04 UTC
 #> # A tibble: 1 × 21
 #>   match_id period period_type in_ot clock periods_max period_length_regular
 #>      <int>  <int> <chr>       <int> <chr>       <int>                 <int>

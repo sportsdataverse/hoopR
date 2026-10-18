@@ -57,16 +57,16 @@ with the following columns:
 | points | integer | Points in the game. |
 | field_goals_made | integer | Field goals made in the game. |
 | field_goals_attempted | integer | Field goals attempted in the game. |
-| field_goals_percentage | numeric | Field-goal percentage, 0-100 (in the game; full float precision in averages). |
+| field_goals_percentage | double | Field-goal percentage, 0-100 (in the game; full float precision in averages). |
 | two_points_made | integer | Two-point field goals made in the game. |
 | two_points_attempted | integer | Two-point field goals attempted in the game. |
-| two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
+| two_points_percentage | double | Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
 | three_points_made | integer | Three-point field goals made in the game. |
 | three_points_attempted | integer | Three-point field goals attempted in the game. |
-| three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
+| three_points_percentage | double | Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
 | free_throws_made | integer | Free throws made in the game. |
 | free_throws_attempted | integer | Free throws attempted in the game. |
-| free_throws_percentage | numeric | Free-throw percentage, 0-100 (in the game; full float precision in averages). |
+| free_throws_percentage | double | Free-throw percentage, 0-100 (in the game; full float precision in averages). |
 | offensive_rebounds | integer | Offensive rebounds in the game. |
 | defensive_rebounds | integer | Defensive rebounds in the game. |
 | rebounds | integer | Rebounds in the game. |
@@ -159,7 +159,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_player_game_stats(player_id = 211501, comp = 208182))
 #> ── FIBA gdap_player_game_stats from fiba.basketball ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:08 UTC
+#> ℹ Data updated: 2026-10-18 20:30:18 UTC
 #> # A tibble: 8 × 39
 #>   player_id competition_id game_id game_day round_id round_code round_name    
 #>       <int>          <int>   <int>    <int>    <int> <chr>      <chr>         

@@ -37,9 +37,9 @@ always these, in this order (sdv-py `sportpress_team_find`):
 | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
 | club_id | integer | Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. |
 | club_name | character | Country name in English, Belgium or Netherlands. |
-| average_score_for | numeric | Points scored per game by the team over the season; null for a team with no statistics. |
-| average_score_against | numeric | Points conceded per game; null for a team with no statistics. |
-| field_goal_percent | numeric | Team field-goal percentage 0-100; null for a team with no statistics. |
+| average_score_for | double | Points scored per game by the team over the season; null for a team with no statistics. |
+| average_score_against | double | Points conceded per game; null for a team with no statistics. |
+| field_goal_percent | double | Team field-goal percentage 0-100; null for a team with no statistics. |
 
 ## Details
 

@@ -109,7 +109,7 @@ game, layout drift). All inherit `hoopR_error`.
 
 ## See also
 
-Other ABA:
+Other ABA Functions:
 [`aba_box_players()`](https://hoopR.sportsdataverse.org/reference/aba_box_players.md),
 [`aba_box_teams()`](https://hoopR.sportsdataverse.org/reference/aba_box_teams.md),
 [`aba_calendar()`](https://hoopR.sportsdataverse.org/reference/aba_calendar.md),

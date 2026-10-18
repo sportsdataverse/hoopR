@@ -46,19 +46,19 @@ are always these, in this order (sdv-py `sportpress_game_team_box`):
 | defensive_foul | integer | The team's total: fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 | dunk_made | integer | The team's total: dunks made (a subset of the two-point field goals). |
 | dunk_all | integer | The team's total: dunks attempted. |
-| dunk_percent | numeric | The team's total: dunk percentage 0-100; 0 when none were attempted. |
+| dunk_percent | double | The team's total: dunk percentage 0-100; 0 when none were attempted. |
 | two_point_made | integer | The team's total: two-point field goals made. |
 | two_point_all | integer | The team's total: two-point field goals attempted. |
-| two_point_percent | numeric | The team's total: two-point percentage 0-100. |
+| two_point_percent | double | The team's total: two-point percentage 0-100. |
 | three_point_made | integer | The team's total: three-point field goals made. |
 | three_point_all | integer | The team's total: three-point field goals attempted. |
-| three_point_percent | numeric | The team's total: three-point percentage 0-100. |
+| three_point_percent | double | The team's total: three-point percentage 0-100. |
 | throw_made | integer | The team's total: all field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 | throw_all | integer | The team's total: all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-| throw_percent | numeric | The team's total: field-goal percentage 0-100. |
+| throw_percent | double | The team's total: field-goal percentage 0-100. |
 | free_throw_made | integer | The team's total: free throws made. |
 | free_throw_all | integer | The team's total: free throws attempted. |
-| free_throw_percent | numeric | The team's total: free-throw percentage 0-100. |
+| free_throw_percent | double | The team's total: free-throw percentage 0-100. |
 | offensive_rebound | integer | The team's total: offensive rebounds. |
 | defensive_rebound | integer | The team's total: defensive rebounds. |
 | total_rebound | integer | The team's total: total rebounds (offensive plus defensive). |
@@ -155,7 +155,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_team_box(competition_id = 25, game_id = 11295))
 #> ── BNXT League Game Team Box Score from Sportpress ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:06 UTC
+#> ℹ Data updated: 2026-10-18 20:49:43 UTC
 #> # A tibble: 2 × 35
 #>   game_id competition_id team_side competition_team_id team      team_short_name
 #>     <int>          <int> <chr>                   <int> <chr>     <chr>          

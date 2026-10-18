@@ -44,13 +44,13 @@ are always these, in this order (sdv-py `acb_player_advanced_stats`):
 | player_id | integer | ACB licence number: the person id everywhere (box score, play-by-play, shots, rosters, the player routes). Taken from the request when the body does not name the player. |
 | group | character | Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). |
 | stat | character | Statistic in snake_case (efg_pct, ts_pct, ast_pct, usage-style ratios, pace ...). |
-| match_value | numeric | The statistic in this game (the API's partido). |
-| season_value | numeric | The player's value over the season (temporada). |
-| win_value | numeric | The player's value in his team's wins. |
-| loss_value | numeric | The player's value in his team's losses. |
-| season_diff | numeric | Game value minus season value (temporadaDiff). |
-| win_diff | numeric | Game value minus the wins value (winDiff). |
-| loss_diff | numeric | Game value minus the losses value (lossDiff). |
+| match_value | double | The statistic in this game (the API's partido). |
+| season_value | double | The player's value over the season (temporada). |
+| win_value | double | The player's value in his team's wins. |
+| loss_value | double | The player's value in his team's losses. |
+| season_diff | double | Game value minus season value (temporadaDiff). |
+| win_diff | double | Game value minus the wins value (winDiff). |
+| loss_diff | double | Game value minus the losses value (lossDiff). |
 
 ## Details
 

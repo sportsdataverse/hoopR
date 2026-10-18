@@ -46,7 +46,7 @@ column, has an id column of the wrong type, or maps one id to two.
 
 ## See also
 
-Other IBBA:
+Other IBBA Functions:
 [`ibba_boards()`](https://hoopR.sportsdataverse.org/reference/ibba_boards.md),
 [`ibba_boards_ex()`](https://hoopR.sportsdataverse.org/reference/ibba_boards_ex.md),
 [`ibba_box_score()`](https://hoopR.sportsdataverse.org/reference/ibba_box_score.md),

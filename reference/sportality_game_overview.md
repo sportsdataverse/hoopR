@@ -139,7 +139,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_game_overview(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Game Overview from basketligaen.dk ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:44 UTC
+#> ℹ Data updated: 2026-10-18 20:49:19 UTC
 #> # A tibble: 1 × 29
 #>   game_uuid  home_team_game_source_id home_team_game_id home_team_team_id
 #>   <chr>                         <int>             <int>             <int>

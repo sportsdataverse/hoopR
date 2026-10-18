@@ -64,7 +64,7 @@ are always these, in this order (sdv-py `acb_team_leaders`):
 | scope | character | all_time = club record holders (the API's leaders); edition = the selected season (seasonLeaders). The assignment is inferred from the values (689 games for J.C. Navarro is a career figure). |
 | metric | character | Category in snake_case; avg\_\* are per-game averages, the rest totals. |
 | rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-| value | numeric | The player's value in the category (a total or an average depending on the metric). |
+| value | double | The player's value in the category (a total or an average depending on the metric). |
 | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
 | player_name | character | Display (sporting) name ('Edy Tavares') |
 | first_name | character | Legal first name(s) |

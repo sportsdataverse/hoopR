@@ -64,49 +64,49 @@ order (sdv-py `cba_player_base`):
 |----|----|----|
 | col_name | type | description |
 | age | integer | Age in years in that season. |
-| assists | numeric | Assists per game when countRanger is 1. A number (the API sends it as display text). |
+| assists | double | Assists per game when countRanger is 1. A number (the API sends it as display text). |
 | birth_date | character | Date of birth 'YYYY-MM-DD' (a public player bio field; midnight-suffixed 'YYYY-MM-DD 00:00:00' on player-base-list). |
-| blocked | numeric | Blocks per game when countRanger is 1. A number (the API sends it as display text). |
+| blocked | double | Blocks per game when countRanger is 1. A number (the API sends it as display text). |
 | cn_alias | character | Player name (Chinese). Names change with the sponsor, the id does not; teamId -\> English glossary in cba_glossary.yaml. |
-| field_goals | numeric | Field goals made per game when countRanger is 1. A number (the API sends it as display text). |
-| field_goals_at_rim_attempted | numeric | At-the-rim (inside the restricted area) field goals attempted in the season (total), a float. |
-| field_goals_at_rim_made | numeric | At-the-rim field goals made in the season (total), a float. |
-| field_goals_attempted | numeric | Field goals attempted per game when countRanger is 1. A number (the API sends it as display text). |
-| field_goals_mid_range_attempted | numeric | Mid-range (two-point shots outside the restricted area) field goals attempted in the season (total), a float. |
-| field_goals_mid_range_made | numeric | Mid-range field goals made in the season (total), a float. |
-| field_goals_percentage | numeric | Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the \_sort column holds the same fraction). |
-| field_goals_percentage_sort | numeric | Field-goal percentage as a FRACTION 0-1 for sorting. |
-| fouls | numeric | Personal fouls per game when countRanger is 1. A number (the API sends it as display text). |
-| fouls_defensive | numeric | Defensive personal fouls in the season (total), a float. |
-| free_throws | numeric | Free throws made per game when countRanger is 1. A number (the API sends it as display text). |
-| free_throws_attempted | numeric | Free throws attempted per game when countRanger is 1. A number (the API sends it as display text). |
-| free_throws_percentage | numeric | Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the \_sort column holds the same fraction). |
-| free_throws_percentage_sort | numeric | Free-throw percentage as a FRACTION 0-1 for sorting. |
+| field_goals | double | Field goals made per game when countRanger is 1. A number (the API sends it as display text). |
+| field_goals_at_rim_attempted | double | At-the-rim (inside the restricted area) field goals attempted in the season (total), a float. |
+| field_goals_at_rim_made | double | At-the-rim field goals made in the season (total), a float. |
+| field_goals_attempted | double | Field goals attempted per game when countRanger is 1. A number (the API sends it as display text). |
+| field_goals_mid_range_attempted | double | Mid-range (two-point shots outside the restricted area) field goals attempted in the season (total), a float. |
+| field_goals_mid_range_made | double | Mid-range field goals made in the season (total), a float. |
+| field_goals_percentage | double | Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the \_sort column holds the same fraction). |
+| field_goals_percentage_sort | double | Field-goal percentage as a FRACTION 0-1 for sorting. |
+| fouls | double | Personal fouls per game when countRanger is 1. A number (the API sends it as display text). |
+| fouls_defensive | double | Defensive personal fouls in the season (total), a float. |
+| free_throws | double | Free throws made per game when countRanger is 1. A number (the API sends it as display text). |
+| free_throws_attempted | double | Free throws attempted per game when countRanger is 1. A number (the API sends it as display text). |
+| free_throws_percentage | double | Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the \_sort column holds the same fraction). |
+| free_throws_percentage_sort | double | Free-throw percentage as a FRACTION 0-1 for sorting. |
 | game_start_num | integer | Games started (Chinese text). |
-| minutes | numeric | Minutes: per game; a whole-season total integer on the offensive/defensive/shot lists (827). A number (the API sends it as display text). |
+| minutes | double | Minutes: per game; a whole-season total integer on the offensive/defensive/shot lists (827). A number (the API sends it as display text). |
 | nationality | character | Nationality (Chinese country name; see the nationality code table for every value seen and its English name). Chinese country names seen: China; United States; Canada; France; Chinese Taipei; Iran; Nigeria; Jordan. |
 | number | character | Jersey number as a string. |
 | player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. |
-| player_times | numeric | Games played (Chinese text), a float (39.0). |
+| player_times | double | Games played (Chinese text), a float (39.0). |
 | player_times2 | character | Unobserved: null in every sample. |
-| points | numeric | Points per game when countRanger is 1 (the request value); other countRanger values change the unit (2 total, 3 per 36 minutes, 4 per 100 possessions). A number (the API sends it as display text). |
+| points | double | Points per game when countRanger is 1 (the request value); other countRanger values change the unit (2 total, 3 per 36 minutes, 4 per 100 possessions). A number (the API sends it as display text). |
 | position | character | Position label (Chinese). Eras differ: coarse (Chinese text) (guard) / (Chinese text) (forward) / (Chinese text) (center) in older seasons, five-way (Chinese text) (point guard) / (Chinese text) (shooting guard) / (Chinese text) (small forward) / (Chinese text) (power forward) / (Chinese text) (center) in newer ones; dual positions are joined with '/' (e.g. (Chinese text)). Label glosses: C = (Chinese text); C/PF = (Chinese text); F = (Chinese text); G = (Chinese text); PF = (Chinese text); PF/C = (Chinese text); PF/SF = (Chinese text); PG = (Chinese text); PG/SG = (Chinese text); SF = (Chinese text); SF/PF = (Chinese text); SF/SG = (Chinese text); SG = (Chinese text); SG/PG = (Chinese text); SG/SF = (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text). |
-| position_num | numeric | Position as a number 1-5 (1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 center); a fraction such as 4.5 averages a dual position; typed as float. |
+| position_num | double | Position as a number 1-5 (1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 center); a fraction such as 4.5 averages a dual position; typed as float. |
 | rank_sort | character | Unobserved: null in every sample. |
-| rebounds | numeric | Total rebounds per game when countRanger is 1. A number (the API sends it as display text). |
-| rebounds_defensive | numeric | Defensive rebounds per game when countRanger is 1. A number (the API sends it as display text). |
-| rebounds_offensive | numeric | Offensive rebounds per game when countRanger is 1. A number (the API sends it as display text). |
+| rebounds | double | Total rebounds per game when countRanger is 1. A number (the API sends it as display text). |
+| rebounds_defensive | double | Defensive rebounds per game when countRanger is 1. A number (the API sends it as display text). |
+| rebounds_offensive | double | Offensive rebounds per game when countRanger is 1. A number (the API sends it as display text). |
 | schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
 | season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. |
-| seconds | numeric | Seconds: per-game average; a whole-season total integer elsewhere. A number (the API sends it as display text). |
-| steals | numeric | Steals per game when countRanger is 1. A number (the API sends it as display text). |
+| seconds | double | Seconds: per-game average; a whole-season total integer elsewhere. A number (the API sends it as display text). |
+| steals | double | Steals per game when countRanger is 1. A number (the API sends it as display text). |
 | team_cn_alias | character | Team short name (Chinese) in that season. Names change with the sponsor, the id does not; teamId -\> English glossary in cba_glossary.yaml. |
 | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
-| three_point_attempted | numeric | Three-pointers attempted per game when countRanger is 1. A number (the API sends it as display text). |
-| three_point_goals | numeric | Three-pointers made per game when countRanger is 1. A number (the API sends it as display text). |
-| three_point_percentage | numeric | Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the \_sort column holds the same fraction). |
-| three_point_percentage_sort | numeric | Three-point percentage as a FRACTION 0-1 for sorting. |
-| turnovers | numeric | Turnovers per game when countRanger is 1. A number (the API sends it as display text). |
+| three_point_attempted | double | Three-pointers attempted per game when countRanger is 1. A number (the API sends it as display text). |
+| three_point_goals | double | Three-pointers made per game when countRanger is 1. A number (the API sends it as display text). |
+| three_point_percentage | double | Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the \_sort column holds the same fraction). |
+| three_point_percentage_sort | double | Three-point percentage as a FRACTION 0-1 for sorting. |
+| turnovers | double | Turnovers per game when countRanger is 1. A number (the API sends it as display text). |
 
 ## Details
 
@@ -235,7 +235,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_player_base(season = 2026, team_id = 29128))
 #> ── CBA Player Base from data-server.cbaleague.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:24:32 UTC
+#> ℹ Data updated: 2026-10-18 20:27:32 UTC
 #> # A tibble: 20 × 44
 #>      age assists birth_date  blocked cn_alias field_goals field_goals_at_rim_a…¹
 #>    <int>   <dbl> <chr>         <dbl> <chr>          <dbl>                  <dbl>

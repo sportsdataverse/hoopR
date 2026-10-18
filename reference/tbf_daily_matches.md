@@ -108,7 +108,7 @@ time (`Europe/Istanbul`).
 
 ## See also
 
-Other TBF:
+Other TBF Functions:
 [`tbf_game_header()`](https://hoopR.sportsdataverse.org/reference/tbf_game_header.md),
 [`tbf_game_leaders()`](https://hoopR.sportsdataverse.org/reference/tbf_game_leaders.md),
 [`tbf_game_players()`](https://hoopR.sportsdataverse.org/reference/tbf_game_players.md),
@@ -147,7 +147,7 @@ Other TBF:
 # \donttest{
   try(tbf_daily_matches(match_date = "2026-10-11"))
 #> ── TBF Daily Matches ──────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:27 UTC
+#> ℹ Data updated: 2026-10-18 20:50:06 UTC
 #> # A tibble: 11 × 27
 #>    group_name  match_id match_code genius_id activity_id activity_name 
 #>    <chr>          <int> <chr>          <int>       <int> <chr>         

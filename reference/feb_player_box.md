@@ -50,16 +50,16 @@ A `hoopR_data` tibble with these columns:
 | pts | integer | Points scored (the team's points on team rows; the final score when the clock is FINAL, else live). |
 | p1m | integer | Free throws made (tiros libres; integer as a string). |
 | p1a | integer | Free throws attempted (integer as a string). |
-| p1p | numeric | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
+| p1p | double | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
 | p2m | integer | Two-point field goals made (integer as a string). |
 | p2a | integer | Two-point field goals attempted (integer as a string). |
-| p2p | numeric | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
+| p2p | double | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
 | p3m | integer | Three-point field goals made (integer as a string). |
 | p3a | integer | Three-point field goals attempted (integer as a string). |
-| p3p | numeric | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
+| p3p | double | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
 | fgm | integer | Field goals made, 2PT + 3PT (tiros de campo; integer as a string). |
 | fga | integer | Field goals attempted, 2PT + 3PT (integer as a string). |
-| fgp | numeric | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
+| fgp | double | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
 | ro | integer | Offensive rebounds (rebotes ofensivos; integer as a string). |
 | rd | integer | Defensive rebounds (rebotes defensivos; integer as a string). |
 | rt | integer | Total rebounds (rebotes totales; integer as a string). |
@@ -119,7 +119,7 @@ game, a page for another group or season, or layout drift). All inherit
 
 ## See also
 
-Other FEB:
+Other FEB Functions:
 [`feb_game_info()`](https://hoopR.sportsdataverse.org/reference/feb_game_info.md),
 [`feb_leaders()`](https://hoopR.sportsdataverse.org/reference/feb_leaders.md),
 [`feb_overview()`](https://hoopR.sportsdataverse.org/reference/feb_overview.md),
@@ -137,7 +137,7 @@ Other FEB:
 # \donttest{
   try(feb_player_box(game_id = 2535725))
 #> ── FEB player box from intrafeb.feb.es ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:26:50 UTC
+#> ℹ Data updated: 2026-10-18 20:29:57 UTC
 #> # A tibble: 24 × 38
 #>    game_id team_side team_id team  player_id shirt_number player starter captain
 #>      <int> <chr>       <int> <chr>     <int> <chr>        <chr>  <lgl>   <lgl>  

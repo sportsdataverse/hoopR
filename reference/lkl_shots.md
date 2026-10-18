@@ -90,7 +90,7 @@ them.
 
 ## See also
 
-Other LKL:
+Other LKL Functions:
 [`lkl_game_info()`](https://hoopR.sportsdataverse.org/reference/lkl_game_info.md),
 [`lkl_game_players()`](https://hoopR.sportsdataverse.org/reference/lkl_game_players.md),
 [`lkl_game_score()`](https://hoopR.sportsdataverse.org/reference/lkl_game_score.md),

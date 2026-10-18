@@ -132,7 +132,7 @@ game, layout drift). All inherit `hoopR_error`.
 
 ## See also
 
-Other ABA:
+Other ABA Functions:
 [`aba_box_teams()`](https://hoopR.sportsdataverse.org/reference/aba_box_teams.md),
 [`aba_calendar()`](https://hoopR.sportsdataverse.org/reference/aba_calendar.md),
 [`aba_game()`](https://hoopR.sportsdataverse.org/reference/aba_game.md),
@@ -151,7 +151,7 @@ Other ABA:
 # \donttest{
   try(aba_box_players(game_no = 6, season = 2026))
 #> ── ABA League Player Box ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:07 UTC
+#> ℹ Data updated: 2026-10-18 20:25:51 UTC
 #> # A tibble: 24 × 39
 #>    game_no season league_id league side  team_id jersey player_id player_name  
 #>      <int>  <int>     <int> <chr>  <chr>   <int>  <int>     <int> <chr>        

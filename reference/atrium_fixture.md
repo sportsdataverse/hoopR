@@ -127,7 +127,7 @@ than the one asked for.
 
 ## See also
 
-Other Atrium:
+Other Atrium Functions:
 [`atrium_box_score()`](https://hoopR.sportsdataverse.org/reference/atrium_box_score.md),
 [`atrium_competition_player_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_player_stats.md),
 [`atrium_competition_team_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_team_stats.md),
@@ -163,7 +163,7 @@ Other Atrium:
 # \donttest{
   try(atrium_fixture(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
 #> ── Atrium fixture from embed-api.eui.connect.sportradar.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:39 UTC
+#> ℹ Data updated: 2026-10-18 20:26:27 UTC
 #> # A tibble: 1 × 42
 #>   website_id fixture_id  season_id competition_name name  fixture_type age_group
 #>        <int> <chr>       <chr>     <chr>            <chr> <chr>        <chr>    

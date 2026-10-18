@@ -40,30 +40,30 @@ with the following columns:
 | col_name | type | description |
 | player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
 | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-| points_per_game | numeric | The player's average points per game played. |
-| rebounds_per_game | numeric | The player's average rebounds per game played. |
-| rebounds_offensive_per_game | numeric | The player's average offensive rebounds per game played. |
-| rebounds_defensive_per_game | numeric | The player's average defensive rebounds per game played. |
-| assists_per_game | numeric | The player's average assists per game played. |
-| blocks_per_game | numeric | The player's average blocked shots per game played. |
-| turnovers_per_game | numeric | The player's average turnovers per game played. |
-| fouls_per_game | numeric | The player's average personal fouls per game played. |
-| plus_minus_per_game | numeric | The player's average plus/minus (point differential while on court) per game played. |
-| efficiency_per_game | numeric | The player's average efficiency (FIBA EFF) per game played. |
-| play_time_in_seconds_per_game | numeric | The player's average playing time in seconds per game played. |
-| field_goals_made_per_game | numeric | The player's average field goals made per game played. |
-| field_goals_attempted_per_game | numeric | The player's average field goals attempted per game played. |
-| two_points_made_per_game | numeric | The player's average two-point field goals made per game played. |
-| two_points_attempted_per_game | numeric | The player's average two-point field goals attempted per game played. |
-| three_points_made_per_game | numeric | The player's average three-point field goals made per game played. |
-| three_points_attempted_per_game | numeric | The player's average three-point field goals attempted per game played. |
-| free_throws_made_per_game | numeric | The player's average free throws made per game played. |
-| free_throws_attempted_per_game | numeric | The player's average free throws attempted per game played. |
-| points_from_turnovers_per_game | numeric | The player's average points from turnovers per game played. |
-| fast_break_points_per_game | numeric | The player's average fast-break points per game played. |
-| second_chance_points_per_game | numeric | The player's average second-chance points per game played. |
-| points_in_the_paint_per_game | numeric | The player's average points in the paint per game played. |
-| steals_per_game | numeric | The player's average steals per game played. |
+| points_per_game | double | The player's average points per game played. |
+| rebounds_per_game | double | The player's average rebounds per game played. |
+| rebounds_offensive_per_game | double | The player's average offensive rebounds per game played. |
+| rebounds_defensive_per_game | double | The player's average defensive rebounds per game played. |
+| assists_per_game | double | The player's average assists per game played. |
+| blocks_per_game | double | The player's average blocked shots per game played. |
+| turnovers_per_game | double | The player's average turnovers per game played. |
+| fouls_per_game | double | The player's average personal fouls per game played. |
+| plus_minus_per_game | double | The player's average plus/minus (point differential while on court) per game played. |
+| efficiency_per_game | double | The player's average efficiency (FIBA EFF) per game played. |
+| play_time_in_seconds_per_game | double | The player's average playing time in seconds per game played. |
+| field_goals_made_per_game | double | The player's average field goals made per game played. |
+| field_goals_attempted_per_game | double | The player's average field goals attempted per game played. |
+| two_points_made_per_game | double | The player's average two-point field goals made per game played. |
+| two_points_attempted_per_game | double | The player's average two-point field goals attempted per game played. |
+| three_points_made_per_game | double | The player's average three-point field goals made per game played. |
+| three_points_attempted_per_game | double | The player's average three-point field goals attempted per game played. |
+| free_throws_made_per_game | double | The player's average free throws made per game played. |
+| free_throws_attempted_per_game | double | The player's average free throws attempted per game played. |
+| points_from_turnovers_per_game | double | The player's average points from turnovers per game played. |
+| fast_break_points_per_game | double | The player's average fast-break points per game played. |
+| second_chance_points_per_game | double | The player's average second-chance points per game played. |
+| points_in_the_paint_per_game | double | The player's average points in the paint per game played. |
+| steals_per_game | double | The player's average steals per game played. |
 | total_games_played | integer | The player's total games played over the games played. |
 | total_games_won | integer | The player's total games won over the games played. |
 | total_games_lost | integer | The player's total games lost over the games played. |
@@ -80,16 +80,16 @@ with the following columns:
 | total_points | integer | The player's total points over the games played. |
 | total_field_goals_made | integer | The player's total field goals made over the games played. |
 | total_field_goals_attempted | integer | The player's total field goals attempted over the games played. |
-| field_goals_percentage | numeric | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+| field_goals_percentage | double | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 | total_two_points_made | integer | The player's total two-point field goals made over the games played. |
 | total_two_points_attempted | integer | The player's total two-point field goals attempted over the games played. |
-| two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+| two_points_percentage | double | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 | total_three_points_made | integer | The player's total three-point field goals made over the games played. |
 | total_three_points_attempted | integer | The player's total three-point field goals attempted over the games played. |
-| three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+| three_points_percentage | double | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 | total_free_throws_made | integer | The player's total free throws made over the games played. |
 | total_free_throws_attempted | integer | The player's total free throws attempted over the games played. |
-| free_throws_percentage | numeric | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
+| free_throws_percentage | double | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
 | total_double_doubles | integer | The player's total double-doubles over the games played. |
 | total_triple_doubles | integer | The player's total triple-doubles over the games played. |
 | total_quadruple_doubles | integer | The player's total quadruple-doubles over the games played. |
@@ -99,9 +99,9 @@ with the following columns:
 | total_second_chance_points | integer | The player's total second-chance points over the games played. |
 | total_points_in_the_paint | integer | The player's total points in the paint over the games played. |
 | total_steals | integer | The player's total steals over the games played. |
-| rank_points_per_game | numeric | Rank in the competition by points per game (1 = highest). |
-| rank_rebounds_per_game | numeric | Rank in the competition by rebounds per game (1 = highest). |
-| rank_assists_per_game | numeric | Rank in the competition by assists per game (1 = highest). |
+| rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
+| rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
+| rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
 
 ## Details
 
@@ -184,7 +184,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_player_stats(player_id = 211501, comp = 208182))
 #> ── FIBA gdap_player_stats from fiba.basketball ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:09 UTC
+#> ℹ Data updated: 2026-10-18 20:30:19 UTC
 #> # A tibble: 1 × 64
 #>   player_id competition_id points_per_game rebounds_per_game
 #>       <int>          <int>           <dbl>             <dbl>

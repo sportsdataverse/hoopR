@@ -76,8 +76,8 @@ A `hoopR_data` tibble with these columns:
 | away_score | integer | Away running score after the event, split from score. |
 | period_end | logical | True on the closing row of a period (ActionCD1 83). |
 | game_end | logical | True on the game-end row on v1 and the embed; false on EVERY v2 row, the game-end row (81) included, so use action instead. |
-| x | numeric | Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. |
-| y | numeric | Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. |
+| x | double | Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. |
+| y | double | Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. |
 | area_code | integer | Shot-zone code 1-13 read from the site's shot-chart SVG: 1 restricted area, 2 rest of the paint, 3 / 7 baseline mid-range, 4 / 6 wing mid-range, 5 top-of-the-key mid-range, 8 / 12 corner 3, 9 / 11 wing 3, 10 top 3, 13 deep band. Of each pair the first is the side far along the baseline. Also set on turnover and foul rows; 2022-23 onward. |
 | area | character | English zone slug for area_code (restricted_area, paint, baseline_mid_range, wing_mid_range, top_of_key_mid_range, corner_3, wing_3, top_3, deep_3); mirrored codes share a slug. |
 | success | logical | Outcome flag: true = made / successful, false = missed; true on non-shot rows. v2 from 2022-23 only. |
@@ -133,7 +133,7 @@ inherit `hoopR_error`.
 
 ## See also
 
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 [`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md),
 [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
 [`bleague_period_scores()`](https://hoopR.sportsdataverse.org/reference/bleague_period_scores.md),
@@ -154,7 +154,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_pbp(schedule_key = 504734))
 #> ── B.LEAGUE pbp from b-league.s3.amazonaws.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:55 UTC
+#> ℹ Data updated: 2026-10-18 20:26:55 UTC
 #> # A tibble: 809 × 37
 #>    schedule_key season feed  period event_no action_code action  qualifier_code2
 #>           <int>  <int> <chr>  <int>    <int>       <int> <chr>             <int>

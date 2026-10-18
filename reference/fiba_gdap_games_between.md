@@ -67,7 +67,7 @@ with the following columns:
 | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 | iana_time_zone | character | IANA time zone of the venue. |
-| utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+| utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 | is_postponed | logical | True when the game was postponed. |
 | is_played_behind_closed_doors | logical | True when played without spectators. |
 | venue_capacity | integer | Venue capacity (0 = unknown). |

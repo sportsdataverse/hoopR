@@ -57,19 +57,19 @@ A `hoopR_data` tibble: Game-by-game box lines of a roster entry
 | defensive_foul | integer | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 | dunk_made | integer | Dunks made (a subset of the two-point field goals). |
 | dunk_all | integer | Dunks attempted. |
-| dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. |
+| dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. |
 | two_point_made | integer | Two-point field goals made. |
 | two_point_all | integer | Two-point field goals attempted. |
-| two_point_percent | numeric | Two-point percentage 0-100. |
+| two_point_percent | double | Two-point percentage 0-100. |
 | three_point_made | integer | Three-point field goals made. |
 | three_point_all | integer | Three-point field goals attempted. |
-| three_point_percent | numeric | Three-point percentage 0-100. |
+| three_point_percent | double | Three-point percentage 0-100. |
 | throw_made | integer | All field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 | throw_all | integer | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-| throw_percent | numeric | Field-goal percentage 0-100. |
+| throw_percent | double | Field-goal percentage 0-100. |
 | free_throw_made | integer | Free throws made. |
 | free_throw_all | integer | Free throws attempted. |
-| free_throw_percent | numeric | Free-throw percentage 0-100. |
+| free_throw_percent | double | Free-throw percentage 0-100. |
 | offensive_rebound | integer | Offensive rebounds. |
 | defensive_rebound | integer | Defensive rebounds. |
 | total_rebound | integer | Total rebounds (offensive plus defensive). |

@@ -47,8 +47,8 @@ A `hoopR_data` tibble (one row per ladder entry):
 | won | integer | Wins in the season. |
 | lost | integer | Losses in the season. |
 | played | integer | Games played in the season (wins plus losses). |
-| points_percentage | numeric | points_for / points_against, a RATIO (1.1379 = 113.79 %) |
-| win_percentage | numeric | Won / played, a 0-1 FRACTION. |
+| points_percentage | double | points_for / points_against, a RATIO (1.1379 = 113.79 %) |
+| win_percentage | double | Won / played, a 0-1 FRACTION. |
 | last_5 | character | Results string, W/L oldest first. Despite the name it can hold the whole season (33 characters in NBL 2025-26) |
 | streak | integer | Current streak length (the type is the last letter of last_5) |
 | points_for | integer | Points scored by the team in the season. |
@@ -113,7 +113,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
@@ -142,7 +142,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_standings(org = "nbl", season = 2026))
 #> ── NBL Rosetta standings from prod.rosetta.nbl.com.au ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:08 UTC
+#> ℹ Data updated: 2026-10-18 20:48:43 UTC
 #> # A tibble: 10 × 24
 #>    org   rosetta_standing_id       position   won  lost played points_percentage
 #>    <chr> <chr>                        <int> <int> <int>  <int>             <dbl>

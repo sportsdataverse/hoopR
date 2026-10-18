@@ -65,17 +65,17 @@ A `hoopR_data` tibble (one row per game):
 | personal_fouls | integer | Personal fouls in the game. |
 | three_points_attempted | integer | Three-point field goals attempted in the game. |
 | three_points_made | integer | Three-point field goals made in the game. |
-| three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+| three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 | two_points_attempted | integer | Two-point field goals attempted in the game. |
 | two_points_made | integer | Two-point field goals made in the game. |
-| two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+| two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 | field_goals_attempted | integer | Field goals attempted in the game. |
 | field_goals_made | integer | Field goals made in the game. |
-| field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+| field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 | free_throws_attempted | integer | Free throws attempted in the game. |
 | free_throws_made | integer | Free throws made in the game. |
-| free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
-| minutes | numeric | Minutes played, decimal minutes. |
+| free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
+| minutes | double | Minutes played, decimal minutes. |
 | participated | logical | Player took part in the game. |
 | match_id | character | DataCore fixture id of the match (UUID v1): the `{match_id}` route key and fixtureId in play-by-play. Join on it. |
 | rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
@@ -170,7 +170,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),

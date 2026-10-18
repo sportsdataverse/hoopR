@@ -49,15 +49,15 @@ with the following columns:
 | club_name | character | Club at the time of the competition. |
 | club_code | character | Club abbreviation; always null in the samples, values unverified. |
 | is_player_free_agent | logical | True when the player had no club. |
-| points_per_game | numeric | The player's average points per game played. |
-| rank_points_per_game | numeric | Rank in the competition by points per game (1 = highest). |
-| rebounds_per_game | numeric | The player's average rebounds per game played. |
-| rank_rebounds_per_game | numeric | Rank in the competition by rebounds per game (1 = highest). |
-| assists_per_game | numeric | The player's average assists per game played. |
-| rank_assists_per_game | numeric | Rank in the competition by assists per game (1 = highest). |
-| points_per_game_per_competition_category | numeric | Average points per game across the competition category, the comparison baseline (unverified). |
-| rebounds_per_game_per_competition_category | numeric | Average rebounds per game across the competition category, the comparison baseline (unverified). |
-| assists_per_game_per_competition_category | numeric | Average assists per game across the competition category, the comparison baseline (unverified). |
+| points_per_game | double | The player's average points per game played. |
+| rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
+| rebounds_per_game | double | The player's average rebounds per game played. |
+| rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
+| assists_per_game | double | The player's average assists per game played. |
+| rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
+| points_per_game_per_competition_category | double | Average points per game across the competition category, the comparison baseline (unverified). |
+| rebounds_per_game_per_competition_category | double | Average rebounds per game across the competition category, the comparison baseline (unverified). |
+| assists_per_game_per_competition_category | double | Average assists per game across the competition category, the comparison baseline (unverified). |
 | birth_date | character | Date of birth, YYYY-MM-DD. |
 | nationalities | character | Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. |
 | social_media_website | character | Website URL; always null in the samples, values unverified. |

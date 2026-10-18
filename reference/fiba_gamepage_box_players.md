@@ -56,16 +56,16 @@ with the following columns:
 | points | integer | Points scored in the game. |
 | fg_made | integer | Field goals made (2 + 3 points). |
 | fg_attempted | integer | Field goals attempted (2 + 3 points). |
-| fg_pct | numeric | Field-goal percentage, 0-100. |
+| fg_pct | double | Field-goal percentage, 0-100. |
 | fg2_made | integer | Two-point field goals made. |
 | fg2_attempted | integer | Two-point field goals attempted. |
-| fg2_pct | numeric | Two-point field-goal percentage, 0-100. |
+| fg2_pct | double | Two-point field-goal percentage, 0-100. |
 | fg3_made | integer | Three-point field goals made. |
 | fg3_attempted | integer | Three-point field goals attempted. |
-| fg3_pct | numeric | Three-point field-goal percentage, 0-100. |
+| fg3_pct | double | Three-point field-goal percentage, 0-100. |
 | ft_made | integer | Free throws made. |
 | ft_attempted | integer | Free throws attempted. |
-| ft_pct | numeric | Free-throw percentage, 0-100. |
+| ft_pct | double | Free-throw percentage, 0-100. |
 | reb_offensive | integer | Offensive rebounds. |
 | reb_defensive | integer | Defensive rebounds. |
 | reb_total | integer | Total rebounds (a team row includes the team rebounds team_reb_total). |
@@ -78,7 +78,7 @@ with the following columns:
 | fouls_drawn | integer | Fouls drawn in the game. |
 | paint_fg_made | integer | Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). |
 | paint_fg_attempted | integer | Field goals attempted in the paint. |
-| paint_fg_pct | numeric | Field-goal percentage in the paint, 0-100. |
+| paint_fg_pct | double | Field-goal percentage in the paint, 0-100. |
 | efficiency | integer | Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). |
 | plus_minus | integer | Plus/minus: the team's point differential while the player was on the court. |
 | cb | logical | Boolean flag, false on every sampled player; meaning unverified. |
@@ -181,7 +181,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gamepage_box_players(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_box_players from fiba.basketball ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:26:59 UTC
+#> ℹ Data updated: 2026-10-18 20:30:07 UTC
 #> # A tibble: 24 × 43
 #>    game_id competition_id team_side organisation_id player_id first_name
 #>      <int>          <int> <chr>               <int>     <int> <chr>     

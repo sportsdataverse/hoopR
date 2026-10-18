@@ -77,8 +77,8 @@ A `hoopR_data` tibble with these columns:
 | referee_id | character | Crew-chief referee RefereeID as text (key space: officials; stability unverified). |
 | sub_referee_id1 | character | Second referee RefereeID as text. |
 | sub_referee_id2 | character | Third referee RefereeID as text. |
-| temperature | numeric | Temperature; null in every observed body, so its dtype is an assumption. |
-| humidity | numeric | Humidity; null in every observed body, so its dtype is an assumption. |
+| temperature | double | Temperature; null in every observed body, so its dtype is an assumption. |
+| humidity | double | Humidity; null in every observed body, so its dtype is an assumption. |
 | convention_name_j | character | Competition name in Japanese (e.g. the Resona Group B.LEAGUE 2025-26 B1 regular season). |
 | convention_name_e | character | Competition name in English; empty (null) on early v1 bodies. |
 | convention_title_j | character | Competition title in Japanese (v1 header only). |
@@ -195,7 +195,7 @@ inherit `hoopR_error`.
 
 ## See also
 
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
 [`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md),
 [`bleague_period_scores()`](https://hoopR.sportsdataverse.org/reference/bleague_period_scores.md),
@@ -216,7 +216,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_game_info(schedule_key = 504734))
 #> ── B.LEAGUE game info from b-league.s3.amazonaws.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:53 UTC
+#> ℹ Data updated: 2026-10-18 20:26:53 UTC
 #> # A tibble: 1 × 103
 #>   schedule_key season feed   year  code event convention_key convention_class
 #>          <int>  <int> <chr> <int> <int> <int> <chr>                     <int>

@@ -63,16 +63,16 @@ values, one row per player and stat block. An empty valid answer raises
 | points | integer | The player's season total points over displayType. |
 | two_point_shots_made | integer | The player's season total 2-point field goals made over displayType. |
 | two_point_shots_attempted | integer | The player's season total 2-point field goals attempted over displayType. |
-| two_point_shot_success_percent | numeric | The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+| two_point_shot_success_percent | double | The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 | three_point_shots_made | integer | The player's season total 3-point field goals made over displayType. |
 | three_point_shots_attempted | integer | The player's season total 3-point field goals attempted over displayType. |
-| three_point_shot_success_percent | numeric | The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+| three_point_shot_success_percent | double | The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 | field_goals_made | integer | The player's season total field goals made over displayType. |
 | field_goals_attempted | integer | The player's season total field goals attempted over displayType. |
-| field_goals_success_percent | numeric | The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+| field_goals_success_percent | double | The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 | free_throws_made | integer | The player's season total free throws made over displayType. |
 | free_throws_attempted | integer | The player's season total free throws attempted over displayType. |
-| free_throws_success_percent | numeric | The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+| free_throws_success_percent | double | The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 | offensive_rebounds | integer | The player's season total offensive rebounds over displayType. |
 | defensive_rebounds | integer | The player's season total defensive rebounds over displayType. |
 | total_rebounds | integer | The player's season total rebounds (offensive + defensive) over displayType. |
@@ -84,34 +84,34 @@ values, one row per player and stat block. An empty valid answer raises
 | efficiency | integer | The player's season total efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) over displayType. |
 | plus_minus | integer | The player's season total plus-minus over displaytype. |
 | games_played | integer | The player's season total games played over displayType. |
-| seconds_per_game | numeric | Per-game average of seconds, seconds. |
-| points_per_game | numeric | Per-game average of points. |
-| two_point_shots_made_per_game | numeric | Per-game average of 2-point field goals made. |
-| two_point_shots_attempted_per_game | numeric | Per-game average of 2-point field goals attempted. |
-| three_point_shots_made_per_game | numeric | Per-game average of 3-point field goals made. |
-| three_point_shots_attempted_per_game | numeric | Per-game average of 3-point field goals attempted. |
-| field_goals_made_per_game | numeric | Per-game average of field goals made. |
-| field_goals_attempted_per_game | numeric | Per-game average of field goals attempted. |
-| field_goals_success_percent_per_game | numeric | Per-game average of field-goal percentage (0 in every sample: unusable). |
-| free_throws_made_per_game | numeric | Per-game average of free throws made. |
-| free_throws_attempted_per_game | numeric | Per-game average of free throws attempted. |
-| defensive_rebounds_per_game | numeric | Per-game average of defensive rebounds. |
-| offensive_rebounds_per_game | numeric | Per-game average of offensive rebounds. |
-| total_rebounds_per_game | numeric | Per-game average of rebounds (offensive + defensive). |
-| assists_per_game | numeric | Per-game average of assists. |
-| steals_per_game | numeric | Per-game average of steals. |
-| turnovers_per_game | numeric | Per-game average of turnovers. |
-| blocks_per_game | numeric | Per-game average of blocked shots. |
-| fouls_committed_per_game | numeric | Per-game average of fouls committed. |
-| efficiency_per_game | numeric | Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). |
-| plus_minus_per_game | numeric | Per-game average of plus-minus (point margin while on court). |
+| seconds_per_game | double | Per-game average of seconds, seconds. |
+| points_per_game | double | Per-game average of points. |
+| two_point_shots_made_per_game | double | Per-game average of 2-point field goals made. |
+| two_point_shots_attempted_per_game | double | Per-game average of 2-point field goals attempted. |
+| three_point_shots_made_per_game | double | Per-game average of 3-point field goals made. |
+| three_point_shots_attempted_per_game | double | Per-game average of 3-point field goals attempted. |
+| field_goals_made_per_game | double | Per-game average of field goals made. |
+| field_goals_attempted_per_game | double | Per-game average of field goals attempted. |
+| field_goals_success_percent_per_game | double | Per-game average of field-goal percentage (0 in every sample: unusable). |
+| free_throws_made_per_game | double | Per-game average of free throws made. |
+| free_throws_attempted_per_game | double | Per-game average of free throws attempted. |
+| defensive_rebounds_per_game | double | Per-game average of defensive rebounds. |
+| offensive_rebounds_per_game | double | Per-game average of offensive rebounds. |
+| total_rebounds_per_game | double | Per-game average of rebounds (offensive + defensive). |
+| assists_per_game | double | Per-game average of assists. |
+| steals_per_game | double | Per-game average of steals. |
+| turnovers_per_game | double | Per-game average of turnovers. |
+| blocks_per_game | double | Per-game average of blocked shots. |
+| fouls_committed_per_game | double | Per-game average of fouls committed. |
+| efficiency_per_game | double | Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). |
+| plus_minus_per_game | double | Per-game average of plus-minus (point margin while on court). |
 | double_double | integer | The player's season total double-doubles over displayType. |
-| double_double_per_game | numeric | Per-game average of double-doubles. |
+| double_double_per_game | double | Per-game average of double-doubles. |
 | games_started | integer | The player's season total games started over displayType. |
 | triple_double | integer | The player's season total triple-doubles over displayType. |
-| triple_double_per_game | numeric | Per-game average of triple-doubles. |
+| triple_double_per_game | double | Per-game average of triple-doubles. |
 | fouls_received | integer | The player's season total fouls drawn over displayType. |
-| fouls_received_per_game | numeric | Per-game average of fouls drawn. |
+| fouls_received_per_game | double | Per-game average of fouls drawn. |
 | overall | logical | False in every sample (meaning unverified). |
 | stage | character | Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. |
 | aggregation | character | Aggregation label as sent: STAGE in player tables, MAIN_ROUND in team tables. |
@@ -190,7 +190,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_player_statistics(season = 2026))
 #> ── BBL/DBBL Season Player Statistics from the SCB API ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:34 UTC
+#> ℹ Data updated: 2026-10-18 20:49:09 UTC
 #> # A tibble: 316 × 72
 #>    league season display_type season_player_id real_player_id first_name 
 #>    <chr>   <int> <chr>        <chr>                     <int> <chr>      

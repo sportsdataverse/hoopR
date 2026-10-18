@@ -48,8 +48,8 @@ A `hoopR_data` tibble with these columns:
 | text | character | Play description in Spanish: '(TEAM) I. SURNAME: ACTION (running count)'; 2020-21 games use older wording and are text only. |
 | score_home | integer | Home score AFTER the play; filled on scoring plays only. |
 | score_away | integer | Away score AFTER the play; filled on scoring plays only. |
-| x | numeric | Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
-| y | numeric | Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
+| x | double | Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
+| y | double | Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
 | log_param1 | character | Action parameter 1 (string). Team and player actions: a pseudo-GUID '00000000-0000-000{side}-0000-{game id, 12 digits}' (side 1 home, 2 away); period lines: the period number. |
 | log_param2 | character | Action parameter 2 (string). The actor's licence id on shoot, fthrow, foul, rebound, assist, recovery and blockshot lines; period lines: '0' start, '1' end; lose: '0' or '1' (meaning unverified). |
 | log_param3 | character | Action parameter 3 (string). fthrow: '1' made, '0' missed; subst: the outgoing player's licence; foul: a foul-type code. Others unverified. |
@@ -107,7 +107,7 @@ game, a page for another group or season, or layout drift). All inherit
 
 ## See also
 
-Other FEB:
+Other FEB Functions:
 [`feb_game_info()`](https://hoopR.sportsdataverse.org/reference/feb_game_info.md),
 [`feb_leaders()`](https://hoopR.sportsdataverse.org/reference/feb_leaders.md),
 [`feb_overview()`](https://hoopR.sportsdataverse.org/reference/feb_overview.md),
@@ -125,7 +125,7 @@ Other FEB:
 # \donttest{
   try(feb_pbp(game_id = 2535725))
 #> ── FEB pbp from intrafeb.feb.es ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:26:49 UTC
+#> ℹ Data updated: 2026-10-18 20:29:56 UTC
 #> # A tibble: 570 × 27
 #>    game_id play_num period clock clock_seconds team_side team_id player_id
 #>      <int>    <int>  <int> <chr>         <int> <chr>       <int>     <int>

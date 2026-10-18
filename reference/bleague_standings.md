@@ -47,8 +47,8 @@ A `hoopR_data` tibble with these columns:
 | team_short | character | Club short name in Japanese (e.g. Chiba J). |
 | wins | integer | Games won so far this season in the table. |
 | losses | integer | Games lost so far this season in the table. |
-| win_pct | numeric | Win percentage as a 0-1 fraction. |
-| games_behind | numeric | Games behind the table leader. |
+| win_pct | double | Win percentage as a 0-1 fraction. |
+| games_behind | double | Games behind the table leader. |
 | points_for | integer | Points scored over the season to date. |
 | points_against | integer | Points allowed over the season to date. |
 | point_diff | integer | Point differential. |
@@ -105,7 +105,7 @@ inherit `hoopR_error`.
 
 ## See also
 
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 [`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md),
 [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
 [`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md),
@@ -126,7 +126,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_standings(season = 2026, tab = 1))
 #> ── B.LEAGUE standings from www.bleague.jp ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:24:02 UTC
+#> ℹ Data updated: 2026-10-18 20:27:02 UTC
 #> # A tibble: 48 × 22
 #>    season   tab season_label section section_en  rank team_id team    team_short
 #>     <int> <int> <chr>        <chr>   <chr>      <int> <chr>   <chr>   <chr>     

@@ -46,8 +46,8 @@ all-time ones, one row per record. An empty valid answer raises
 | all_time_place | integer | Rank on the all-time list; null when not on it. |
 | order_id | integer | Sort order within the list. |
 | all_time_order_id | integer | Sort order on the all-time list; null when not on it. |
-| value | numeric | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
-| ratio | numeric | \[made, attempted\] as strings, on percentage records only; null otherwise. |
+| value | double | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
+| ratio | double | \[made, attempted\] as strings, on percentage records only; null otherwise. |
 | season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
 | real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 | first_name | character | Player's given name. |

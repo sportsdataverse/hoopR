@@ -43,7 +43,7 @@ raises `hoopR_bad_request`.
 
 ## See also
 
-Other Genius:
+Other Genius Functions:
 [`bal_competition`](https://hoopR.sportsdataverse.org/reference/bal_competition.md),
 [`esake_competition`](https://hoopR.sportsdataverse.org/reference/esake_competition.md),
 [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md),
@@ -70,7 +70,7 @@ Other Genius:
   standings <- data.frame(team_uuid = c("a1", "b2"), team_id = c(101L, 102L))
   genius_team_crosswalk(standings, "sportality_standings")
 #> ── Genius LiveStats team crosswalk ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:28:02 UTC
+#> ℹ Data updated: 2026-10-18 20:31:08 UTC
 #> # A tibble: 2 × 2
 #>   team_uuid genius_team_id
 #>   <chr>              <int>

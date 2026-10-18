@@ -47,7 +47,7 @@ position, club and previous clubs. An empty valid answer raises
 | birth_date | character | Date of birth, YYYY-MM-DD. |
 | position | character | Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. |
 | shirt_number | character | Jersey number. A number or a numeric string across rows. |
-| height | numeric | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
+| height | double | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
 | weight | integer | Weight in kg; 0 when unknown. |
 | nationalities | character | Nationalities, ISO 3166-1 alpha-2 codes. |
 | is_all_star | logical | All-Star selection flag. |

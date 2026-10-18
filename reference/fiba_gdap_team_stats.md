@@ -35,31 +35,31 @@ with the following columns:
 | col_name | type | description |
 | team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
 | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-| points_per_game | numeric | The team's average points per game played. |
-| rebounds_per_game | numeric | The bench players' average rebounds per game played. |
-| rebounds_offensive_per_game | numeric | The bench players' average offensive rebounds per game played. |
-| rebounds_defensive_per_game | numeric | The bench players' average defensive rebounds per game played. |
-| assists_per_game | numeric | The team's average assists per game played. |
-| blocks_per_game | numeric | The team's average blocked shots per game played. |
-| turnovers_per_game | numeric | The bench players' average turnovers per game played. |
-| fouls_per_game | numeric | The bench players' average personal fouls per game played. |
-| plus_minus_per_game | numeric | The team's average plus/minus (point differential while on court) per game played. |
-| efficiency_per_game | numeric | The team's average efficiency (FIBA EFF) per game played. |
-| play_time_in_seconds_per_game | numeric | The team's average playing time in seconds per game played. |
-| field_goals_made_per_game | numeric | The team's average field goals made per game played. |
-| field_goals_attempted_per_game | numeric | The team's average field goals attempted per game played. |
-| two_points_made_per_game | numeric | The team's average two-point field goals made per game played. |
-| two_points_attempted_per_game | numeric | The team's average two-point field goals attempted per game played. |
-| three_points_made_per_game | numeric | The team's average three-point field goals made per game played. |
-| three_points_attempted_per_game | numeric | The team's average three-point field goals attempted per game played. |
-| free_throws_made_per_game | numeric | The team's average free throws made per game played. |
-| free_throws_attempted_per_game | numeric | The team's average free throws attempted per game played. |
-| points_from_turnovers_per_game | numeric | The team's average points from turnovers per game played. |
-| fast_break_points_per_game | numeric | The team's average fast-break points per game played. |
-| second_chance_points_per_game | numeric | The team's average second-chance points per game played. |
-| points_in_the_paint_per_game | numeric | The team's average points in the paint per game played. |
-| from_bench_points_per_game | numeric | The team's average points by bench players per game played. |
-| steals_per_game | numeric | The team's average steals per game played. |
+| points_per_game | double | The team's average points per game played. |
+| rebounds_per_game | double | The bench players' average rebounds per game played. |
+| rebounds_offensive_per_game | double | The bench players' average offensive rebounds per game played. |
+| rebounds_defensive_per_game | double | The bench players' average defensive rebounds per game played. |
+| assists_per_game | double | The team's average assists per game played. |
+| blocks_per_game | double | The team's average blocked shots per game played. |
+| turnovers_per_game | double | The bench players' average turnovers per game played. |
+| fouls_per_game | double | The bench players' average personal fouls per game played. |
+| plus_minus_per_game | double | The team's average plus/minus (point differential while on court) per game played. |
+| efficiency_per_game | double | The team's average efficiency (FIBA EFF) per game played. |
+| play_time_in_seconds_per_game | double | The team's average playing time in seconds per game played. |
+| field_goals_made_per_game | double | The team's average field goals made per game played. |
+| field_goals_attempted_per_game | double | The team's average field goals attempted per game played. |
+| two_points_made_per_game | double | The team's average two-point field goals made per game played. |
+| two_points_attempted_per_game | double | The team's average two-point field goals attempted per game played. |
+| three_points_made_per_game | double | The team's average three-point field goals made per game played. |
+| three_points_attempted_per_game | double | The team's average three-point field goals attempted per game played. |
+| free_throws_made_per_game | double | The team's average free throws made per game played. |
+| free_throws_attempted_per_game | double | The team's average free throws attempted per game played. |
+| points_from_turnovers_per_game | double | The team's average points from turnovers per game played. |
+| fast_break_points_per_game | double | The team's average fast-break points per game played. |
+| second_chance_points_per_game | double | The team's average second-chance points per game played. |
+| points_in_the_paint_per_game | double | The team's average points in the paint per game played. |
+| from_bench_points_per_game | double | The team's average points by bench players per game played. |
+| steals_per_game | double | The team's average steals per game played. |
 | total_games_played | integer | The bench players' total games played over the games played. |
 | total_games_won | integer | The team's total games won over the games played. |
 | total_games_lost | integer | The team's total games lost over the games played. |
@@ -76,16 +76,16 @@ with the following columns:
 | total_points | integer | The team's total points over the games played. |
 | total_field_goals_made | integer | The team's total field goals made over the games played. |
 | total_field_goals_attempted | integer | The team's total field goals attempted over the games played. |
-| field_goals_percentage | numeric | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+| field_goals_percentage | double | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 | total_two_points_made | integer | The team's total two-point field goals made over the games played. |
 | total_two_points_attempted | integer | The team's total two-point field goals attempted over the games played. |
-| two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+| two_points_percentage | double | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 | total_three_points_made | integer | The team's total three-point field goals made over the games played. |
 | total_three_points_attempted | integer | The team's total three-point field goals attempted over the games played. |
-| three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+| three_points_percentage | double | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 | total_free_throws_made | integer | The team's total free throws made over the games played. |
 | total_free_throws_attempted | integer | The team's total free throws attempted over the games played. |
-| free_throws_percentage | numeric | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
+| free_throws_percentage | double | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
 | total_double_doubles | integer | The team's total double-doubles over the games played. |
 | total_triple_doubles | integer | The team's total triple-doubles over the games played. |
 | total_quadruple_doubles | integer | The team's total quadruple-doubles over the games played. |
@@ -98,11 +98,11 @@ with the following columns:
 | total_steals | integer | The team's total steals over the games played. |
 | biggest_lead | integer | Team's biggest lead in any game of the competition, points. |
 | bench_total_games_played | integer | The bench players' total games played over the games played. |
-| bench_rebounds_per_game | numeric | The bench players' average rebounds per game played. |
-| bench_rebounds_offensive_per_game | numeric | The bench players' average offensive rebounds per game played. |
-| bench_rebounds_defensive_per_game | numeric | The bench players' average defensive rebounds per game played. |
-| bench_turnovers_per_game | numeric | The bench players' average turnovers per game played. |
-| bench_fouls_per_game | numeric | The bench players' average personal fouls per game played. |
+| bench_rebounds_per_game | double | The bench players' average rebounds per game played. |
+| bench_rebounds_offensive_per_game | double | The bench players' average offensive rebounds per game played. |
+| bench_rebounds_defensive_per_game | double | The bench players' average defensive rebounds per game played. |
+| bench_turnovers_per_game | double | The bench players' average turnovers per game played. |
+| bench_fouls_per_game | double | The bench players' average personal fouls per game played. |
 | bench_total_rebounds | integer | The bench players' total rebounds over the games played. |
 | bench_total_rebounds_offensive | integer | The bench players' total offensive rebounds over the games played. |
 | bench_total_rebounds_defensive | integer | The bench players' total defensive rebounds over the games played. |
@@ -190,7 +190,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_team_stats(team_id = 279569))
 #> ── FIBA gdap_team_stats from fiba.basketball ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:15 UTC
+#> ℹ Data updated: 2026-10-18 20:30:25 UTC
 #> # A tibble: 1 × 75
 #>   team_id competition_id points_per_game rebounds_per_game
 #>     <int>          <int>           <dbl>             <dbl>

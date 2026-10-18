@@ -81,7 +81,7 @@ time (`Europe/Istanbul`).
 
 ## See also
 
-Other TBF:
+Other TBF Functions:
 [`tbf_daily_matches()`](https://hoopR.sportsdataverse.org/reference/tbf_daily_matches.md),
 [`tbf_game_header()`](https://hoopR.sportsdataverse.org/reference/tbf_game_header.md),
 [`tbf_game_leaders()`](https://hoopR.sportsdataverse.org/reference/tbf_game_leaders.md),
@@ -120,7 +120,7 @@ Other TBF:
 # \donttest{
   try(tbf_pbp(match_id = 346279))
 #> ── TBF Play-by-Play ───────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:33 UTC
+#> ℹ Data updated: 2026-10-18 20:50:12 UTC
 #> # A tibble: 639 × 13
 #>    match_id action_number period period_type clock seconds_remaining home_score
 #>       <int>         <int>  <int>       <int> <chr>             <int>      <int>

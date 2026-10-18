@@ -51,7 +51,7 @@ A `hoopR_data` tibble with these columns:
 | points_for | integer | Points scored (PF); null in the final classification. |
 | points_against | integer | Points conceded (PC); null in the final classification. |
 | point_diff | integer | Point difference (DIF), signed; null in the final classification. |
-| win_pct | numeric | Win percentage, 0-100 (the page's '100,0%', decimal comma converted). |
+| win_pct | double | Win percentage, 0-100 (the page's '100,0%', decimal comma converted). |
 | streak | integer | Current streak as a signed integer: +3 = three wins in a row, -2 = two losses. |
 | streak_text | character | The streak cell verbatim ('+3'). |
 
@@ -99,7 +99,7 @@ game, a page for another group or season, or layout drift). All inherit
 
 ## See also
 
-Other FEB:
+Other FEB Functions:
 [`feb_game_info()`](https://hoopR.sportsdataverse.org/reference/feb_game_info.md),
 [`feb_leaders()`](https://hoopR.sportsdataverse.org/reference/feb_leaders.md),
 [`feb_overview()`](https://hoopR.sportsdataverse.org/reference/feb_overview.md),
@@ -117,7 +117,7 @@ Other FEB:
 # \donttest{
   try(feb_standings(group = 1, season = 2027))
 #> ── FEB standings from baloncestoenvivo.feb.es ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:26:53 UTC
+#> ℹ Data updated: 2026-10-18 20:30:01 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id table position team_id team     played   won
 #>    <int>  <int> <chr>         <int> <chr>    <int>   <int> <chr>     <int> <int>

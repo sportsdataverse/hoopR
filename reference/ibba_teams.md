@@ -105,7 +105,7 @@ or a box score of a game that is not final). All inherit `hoopR_error`.
 
 ## See also
 
-Other IBBA:
+Other IBBA Functions:
 [`ibba_boards()`](https://hoopR.sportsdataverse.org/reference/ibba_boards.md),
 [`ibba_boards_ex()`](https://hoopR.sportsdataverse.org/reference/ibba_boards_ex.md),
 [`ibba_box_score()`](https://hoopR.sportsdataverse.org/reference/ibba_box_score.md),
@@ -129,7 +129,7 @@ Other IBBA:
 # \donttest{
   try(ibba_teams(season = 2026))
 #> ── IBBA teams ─────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:28:13 UTC
+#> ℹ Data updated: 2026-10-18 20:31:21 UTC
 #> # A tibble: 14 × 26
 #>    team_uid team_id season team_name_he             team_short_name_he team_name
 #>       <int>   <int>  <int> <chr>                    <chr>              <chr>    

@@ -40,11 +40,11 @@ order (sdv-py `cba_best_player`):
 | player_name | character | Full player name (Chinese, may include the first name: (Chinese text)). Null on some rows (the short name is in playerNameStr). |
 | player_name_str | character | Short display name (Chinese surname form: (Chinese text)). |
 | points | integer | Points scored by the player in this game. |
-| real_point_rate | numeric | true-shooting percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+| real_point_rate | double | true-shooting percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
 | rebounds | integer | Total rebounds by the player in this game. |
 | steals | integer | Steals by the player in this game. |
 | three_points_str | character | Three-point field goals as the string 'made/attempted'. |
-| turn_share | numeric | possession share (see advance-count turnShare). A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+| turn_share | double | possession share (see advance-count turnShare). A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
 | turnovers | integer | Turnovers by the player in this game. |
 | two_points_str | character | Two-point field goals as the string 'made/attempted' ('3/5'). |
 

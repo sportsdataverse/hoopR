@@ -49,8 +49,8 @@ A `hoopR_data` tibble (one row per team record):
 | venue_state | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 | venue_country | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 | venue_timezone | character | IANA time zone of the venue, e.g. Australia/Sydney. |
-| venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+| venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+| venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 | venue_capacity | integer | Unobserved in samples (null in every capture); type and meaning unverified. |
 | conference_name | character | Name of the NBL1 conference the team plays in (e.g. North, South); null outside NBL1. |
 | division_name | character | Division name (NBL1 conference + gender) |
@@ -102,7 +102,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
@@ -131,7 +131,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_teams(org = "nbl"))
 #> ── NBL Rosetta teams from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:10 UTC
+#> ℹ Data updated: 2026-10-18 20:48:45 UTC
 #> # A tibble: 86 × 22
 #>    org   team_id          rosetta_team_id name  team_code established head_coach
 #>    <chr> <chr>            <chr>           <chr> <chr>     <chr>       <chr>     

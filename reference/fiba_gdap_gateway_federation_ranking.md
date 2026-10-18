@@ -56,7 +56,7 @@ with the following columns:
 | zone_rank | integer | Rank within the zone. |
 | ioc_code | character | IOC country code. |
 | fiba_code | character | FIBA three-letter country code (GER, USA; historic URS, YUG). |
-| current_points | numeric | Ranking points (one decimal). |
+| current_points | double | Ranking points (one decimal). |
 | world_rank_variation | integer | Change in world rank since the previous release (positive = up). |
 | comments | character | Ranking note; null in every sample. |
 | organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |

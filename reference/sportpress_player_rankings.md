@@ -64,9 +64,9 @@ raises `hoopR_no_data`; the columns are always these, in this order
 | competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
 | team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
 | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-| value | numeric | The player's per-game mean (or percentage 0-100) in the row's category. |
-| throw_made | numeric | Field goals made per game; filled in the three percentage categories only. |
-| throw_attempted | numeric | Field goals attempted per game; filled in the three percentage categories only. |
+| value | double | The player's per-game mean (or percentage 0-100) in the row's category. |
+| throw_made | double | Field goals made per game; filled in the three percentage categories only. |
+| throw_attempted | double | Field goals attempted per game; filled in the three percentage categories only. |
 
 ## Details
 
@@ -152,7 +152,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_player_rankings(competition_id = 24))
 #> ── BNXT League Player Rankings from Sportpress ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:20 UTC
+#> ℹ Data updated: 2026-10-18 20:49:58 UTC
 #> # A tibble: 1,414 × 15
 #>    competition_id category    rank roster_id player_id first_name last_name    
 #>             <int> <chr>      <int>     <int>     <int> <chr>      <chr>        

@@ -49,8 +49,8 @@ are always these, in this order (sdv-py `acb_shots`):
 | pos_x | integer | Court x as sent. mm system: millimetres from the attacked basket towards midcourt (never negative; 0 for free throws and dunks); grid system: 0-100 percent of the court length, not mirrored. |
 | pos_y | integer | Court y as sent. mm system: millimetres across the court (sidelines at -7500 and +7500, negative = the shooter's left); grid system: 0-100 percent of the width (which sideline is 0 is unverified). Free throws are (0, 0). |
 | coord_system | character | Shot coordinate system, told by the match id: mm = millimetres from the attacked basket (match ids from 2020-21), grid = 0-100 percent of the full court (up to 2019-20). Null when the match id is unknown. |
-| x_basket_m | numeric | Shot x in metres from the centre of the attacked basket towards midcourt, when coord_system is mm and the attempt is a field goal; null otherwise. Units and origin are inferred by the refs (arc and sideline fit), not documented by ACB. |
-| y_basket_m | numeric | Shot y in metres across the court from the basket line, negative = the shooter's left, when coord_system is mm and the attempt is a field goal; null otherwise (inferred by the refs, not documented by ACB). |
+| x_basket_m | double | Shot x in metres from the centre of the attacked basket towards midcourt, when coord_system is mm and the attempt is a field goal; null otherwise. Units and origin are inferred by the refs (arc and sideline fit), not documented by ACB. |
+| y_basket_m | double | Shot y in metres across the court from the basket line, negative = the shooter's left, when coord_system is mm and the attempt is a field goal; null otherwise (inferred by the refs, not documented by ACB). |
 | quarter | integer | Period of the attempt: 1-4 quarters, 5+ overtimes. |
 | minute | integer | Game clock left in the period, minutes |
 | second | integer | Game clock left in the period, seconds part |
@@ -167,7 +167,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_shots(match_id = 105401))
 #> ── ACB Shots from api2.acb.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:32 UTC
+#> ℹ Data updated: 2026-10-18 20:26:17 UTC
 #> # A tibble: 188 × 24
 #>    match_id edition_id season shot_id pos_x pos_y coord_system x_basket_m
 #>       <int>      <int>  <int>   <int> <int> <int> <chr>             <dbl>

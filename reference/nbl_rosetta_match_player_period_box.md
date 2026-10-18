@@ -45,12 +45,12 @@ A `hoopR_data` tibble (one row per player and period):
 | defensive_rebounds | integer | Defensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | field_goals_attempted | integer | Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | field_goals_made | integer | Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+| field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 | fouls | integer | Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | free_throws_attempted | integer | Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | free_throws_made | integer | Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
-| minutes | numeric | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
+| free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
+| minutes | double | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
 | offensive_rebounds | integer | Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | personal_fouls | integer | Personal fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | points | integer | Points in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
@@ -59,11 +59,11 @@ A `hoopR_data` tibble (one row per player and period):
 | technical_fouls | integer | Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | three_points_attempted | integer | Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | three_points_made | integer | Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+| three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 | turnovers | integer | Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | two_points_attempted | integer | Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 | two_points_made | integer | Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-| two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+| two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 | jersey_number | character | Jersey number, a STRING. |
 
 Columns the body adds beyond these follow, in body order (sdv-py keeps
@@ -115,7 +115,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),

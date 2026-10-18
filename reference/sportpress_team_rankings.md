@@ -48,7 +48,7 @@ the columns are always these, in this order (sdv-py
 | competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
 | team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
 | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-| value | numeric | The team's per-game mean (or percentage 0-100) in the row's category. |
+| value | double | The team's per-game mean (or percentage 0-100) in the row's category. |
 
 ## Details
 
@@ -134,7 +134,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_team_rankings(competition_id = 24))
 #> ── BNXT League Team Rankings from Sportpress ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:26 UTC
+#> ℹ Data updated: 2026-10-18 20:50:04 UTC
 #> # A tibble: 162 × 7
 #>    competition_id category  rank competition_team_id team  team_short_name value
 #>             <int> <chr>    <int>               <int> <chr> <chr>           <dbl>

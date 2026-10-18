@@ -34,7 +34,7 @@ are always these, in this order (sdv-py `acb_team_records`):
 | col_name | type | description |
 | club_id | integer | Stable club id asked for. |
 | stat | character | Record category in snake_case (rating, points, rebounds, assists, steals, ...). |
-| value | numeric | The record value (a count; Float64 so every category fits). |
+| value | double | The record value (a count; Float64 so every category fits). |
 | game_id | integer | Match id of the record game (legacy sequence for old games). |
 | game_date | POSIXct | Date of the record game (UTC midnight). |
 | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |

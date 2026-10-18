@@ -55,7 +55,7 @@ with the following columns:
 | zone_rank | integer | Rank within the zone. |
 | ioc_code | character | IOC country code. |
 | fiba_code | character | FIBA three-letter country code (GER, USA; historic URS, YUG). |
-| current_points | numeric | Ranking points (one decimal). |
+| current_points | double | Ranking points (one decimal). |
 | world_rank_variation | integer | Change in world rank since the previous release (positive = up). |
 | comments | character | Ranking note; null in every sample. |
 

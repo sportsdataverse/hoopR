@@ -53,16 +53,16 @@ A `hoopR_data` tibble with these columns:
 | team_name_e | character | Team name in English, uppercase. |
 | fg_made | integer | Field goals made (PTM). |
 | fg_attempted | integer | Field goals attempted (PTA). |
-| fg_pct | numeric | Field-goal percentage 0-100, one decimal. |
+| fg_pct | double | Field-goal percentage 0-100, one decimal. |
 | fg2_made | integer | Two-point field goals made. |
 | fg2_attempted | integer | Two-point field goals attempted. |
-| fg2_pct | numeric | Two-point percentage 0-100. |
+| fg2_pct | double | Two-point percentage 0-100. |
 | fg3_made | integer | Three-point field goals made. |
 | fg3_attempted | integer | Three-point field goals attempted. |
-| fg3_pct | numeric | Three-point percentage 0-100. |
+| fg3_pct | double | Three-point percentage 0-100. |
 | ft_made | integer | Free throws made. |
 | ft_attempted | integer | Free throws attempted. |
-| ft_pct | numeric | Free-throw percentage 0-100. |
+| ft_pct | double | Free-throw percentage 0-100. |
 | reb_off | integer | Offensive rebounds. |
 | reb_def | integer | Defensive rebounds. |
 | reb | integer | Total rebounds. |
@@ -132,7 +132,7 @@ inherit `hoopR_error`.
 
 ## See also
 
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 [`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md),
 [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
 [`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md),

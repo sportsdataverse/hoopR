@@ -41,7 +41,7 @@ A `hoopR_data` tibble: The game leader of each side in every statistic
 | last_name | character | Family name of the player as entered in the CMS. |
 | nationality_code | character | Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. |
 | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
-| value | numeric | The leader's count (or percentage) in that statistic in this game. |
+| value | double | The leader's count (or percentage) in that statistic in this game. |
 
 ## Details
 
@@ -127,7 +127,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_leaders(game_id = 11295))
 #> ── BNXT League Game Leaders from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:46:03 UTC
+#> ℹ Data updated: 2026-10-18 20:49:40 UTC
 #> # A tibble: 56 × 12
 #>    game_id team_side competition_team_id team    team_short_name stat  player_id
 #>      <int> <chr>                   <int> <chr>   <chr>           <chr>     <int>

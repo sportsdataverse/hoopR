@@ -205,7 +205,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_team_games(season = 2026, team_id = 2650))
 #> ── VTB Infobasket Team Games from org.infobasket.su ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:47:15 UTC
+#> ℹ Data updated: 2026-10-18 20:50:54 UTC
 #> # A tibble: 53 × 47
 #>    team_id season comp_id game_id game_number game_date  has_time game_time
 #>      <int>  <int>   <int>   <int> <chr>       <chr>      <lgl>    <chr>    

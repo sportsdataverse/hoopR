@@ -86,7 +86,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
@@ -115,7 +115,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_seasons_current(org = "nbl"))
 #> ── NBL Rosetta seasons_current from prod.rosetta.nbl.com.au ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:07 UTC
+#> ℹ Data updated: 2026-10-18 20:48:41 UTC
 #> # A tibble: 1 × 12
 #>   org   season_id     rosetta_season_id name  season_year season_type start_date
 #>   <chr> <chr>         <chr>             <chr>       <int> <chr>       <chr>     

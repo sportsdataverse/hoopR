@@ -37,34 +37,34 @@ always these, in this order (sdv-py `sportpress_team_player_averages`):
 | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
 | played_games | integer | Games the player played in the season. |
 | games_started | integer | Games started (a count, not a mean). |
-| minute | numeric | Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). |
-| foul | numeric | Personal fouls committed. Per-game mean over the games played (fractional). |
-| defensive_foul | numeric | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). |
-| dunk_made | numeric | Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). |
-| dunk_all | numeric | Dunks attempted. Per-game mean over the games played (fractional). |
-| dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). |
-| two_point_made | numeric | Two-point field goals made. Per-game mean over the games played (fractional). |
-| two_point_all | numeric | Two-point field goals attempted. Per-game mean over the games played (fractional). |
-| two_point_percent | numeric | Two-point percentage 0-100. Per-game mean over the games played (fractional). |
-| three_point_made | numeric | Three-point field goals made. Per-game mean over the games played (fractional). |
-| three_point_all | numeric | Three-point field goals attempted. Per-game mean over the games played (fractional). |
-| three_point_percent | numeric | Three-point percentage 0-100. Per-game mean over the games played (fractional). |
-| throw_made | numeric | All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
-| throw_all | numeric | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
-| throw_percent | numeric | Field-goal percentage 0-100. Per-game mean over the games played (fractional). |
-| free_throw_made | numeric | Free throws made. Per-game mean over the games played (fractional). |
-| free_throw_all | numeric | Free throws attempted. Per-game mean over the games played (fractional). |
-| free_throw_percent | numeric | Free-throw percentage 0-100. Per-game mean over the games played (fractional). |
-| offensive_rebound | numeric | Offensive rebounds. Per-game mean over the games played (fractional). |
-| defensive_rebound | numeric | Defensive rebounds. Per-game mean over the games played (fractional). |
-| total_rebound | numeric | Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). |
-| block | numeric | Shots blocked by the player. Per-game mean over the games played (fractional). |
-| block_against | numeric | Own shots blocked by an opponent. Per-game mean over the games played (fractional). |
-| turnover | numeric | Turnovers committed. Per-game mean over the games played (fractional). |
-| steal | numeric | Steals (balls taken from an opponent). Per-game mean over the games played (fractional). |
-| assist | numeric | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
-| points | numeric | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
-| value | numeric | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
+| minute | double | Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). |
+| foul | double | Personal fouls committed. Per-game mean over the games played (fractional). |
+| defensive_foul | double | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). |
+| dunk_made | double | Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). |
+| dunk_all | double | Dunks attempted. Per-game mean over the games played (fractional). |
+| dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). |
+| two_point_made | double | Two-point field goals made. Per-game mean over the games played (fractional). |
+| two_point_all | double | Two-point field goals attempted. Per-game mean over the games played (fractional). |
+| two_point_percent | double | Two-point percentage 0-100. Per-game mean over the games played (fractional). |
+| three_point_made | double | Three-point field goals made. Per-game mean over the games played (fractional). |
+| three_point_all | double | Three-point field goals attempted. Per-game mean over the games played (fractional). |
+| three_point_percent | double | Three-point percentage 0-100. Per-game mean over the games played (fractional). |
+| throw_made | double | All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
+| throw_all | double | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
+| throw_percent | double | Field-goal percentage 0-100. Per-game mean over the games played (fractional). |
+| free_throw_made | double | Free throws made. Per-game mean over the games played (fractional). |
+| free_throw_all | double | Free throws attempted. Per-game mean over the games played (fractional). |
+| free_throw_percent | double | Free-throw percentage 0-100. Per-game mean over the games played (fractional). |
+| offensive_rebound | double | Offensive rebounds. Per-game mean over the games played (fractional). |
+| defensive_rebound | double | Defensive rebounds. Per-game mean over the games played (fractional). |
+| total_rebound | double | Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). |
+| block | double | Shots blocked by the player. Per-game mean over the games played (fractional). |
+| block_against | double | Own shots blocked by an opponent. Per-game mean over the games played (fractional). |
+| turnover | double | Turnovers committed. Per-game mean over the games played (fractional). |
+| steal | double | Steals (balls taken from an opponent). Per-game mean over the games played (fractional). |
+| assist | double | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
+| points | double | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
+| value | double | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
 
 ## Details
 

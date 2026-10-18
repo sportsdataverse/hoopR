@@ -37,11 +37,11 @@ tibble with these columns, in this order (sdv-py `cba_player_box`):
 | cn_alias | character | Player name (Chinese). The team row reads 'team rebounds / turnovers' (rebounds and turnovers not credited to a player; that row does not exist in the 2009-10 sample). |
 | field_goals | integer | Field goals made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
 | field_goals_attempted | integer | Field goals attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| field_goals_percentage | numeric | Field-goal percentage as a FRACTION 0-1 (0.308), null when no attempt (0/0) as well as on the team row. |
+| field_goals_percentage | double | Field-goal percentage as a FRACTION 0-1 (0.308), null when no attempt (0/0) as well as on the team row. |
 | fouls | integer | Personal fouls in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
 | free_throws | integer | Free throws made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
 | free_throws_attempted | integer | Free throws attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| free_throws_percentage | numeric | Free-throw percentage as a FRACTION 0-1, null on the team row. |
+| free_throws_percentage | double | Free-throw percentage as a FRACTION 0-1, null on the team row. |
 | game_start | integer | Starter flag: 1 = started the game. Null on the team row. |
 | number | character | Jersey number as a string. Null on the team row. |
 | player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. Null on the team row. |
@@ -53,7 +53,7 @@ tibble with these columns, in this order (sdv-py `cba_player_box`):
 | steals | integer | Steals in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
 | three_point_attempted | integer | Three-pointers attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
 | three_point_goals | integer | Three-pointers made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| three_point_percentage | numeric | Three-point percentage as a FRACTION 0-1, null on the team row. |
+| three_point_percentage | double | Three-point percentage as a FRACTION 0-1, null on the team row. |
 | turnovers | integer | Turnovers in this game (integer). The team row carries the team's own total here. |
 | up_time | integer | Time on court in SECONDS (1692 = 28:12). Null on the team row. |
 
@@ -184,7 +184,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_player_box(schedule_id = 100105799))
 #> ── CBA Player Box from data-server.cbaleague.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:24:33 UTC
+#> ℹ Data updated: 2026-10-18 20:27:33 UTC
 #> # A tibble: 26 × 26
 #>    schedule_id side  assists blocked cn_alias field_goals field_goals_attempted
 #>          <int> <chr>   <int>   <int> <chr>          <int>                 <int>

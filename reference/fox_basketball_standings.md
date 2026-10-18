@@ -46,7 +46,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:22 UTC
+#> ℹ Data updated: 2026-10-18 20:30:34 UTC
 #> # A tibble: 30 × 11
 #>    team_id section   eastern_conference v2      w_l   pct   pf    pa    strk 
 #>    <chr>   <chr>     <chr>              <chr>   <chr> <chr> <chr> <chr> <chr>

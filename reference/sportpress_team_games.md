@@ -54,19 +54,19 @@ columns are always these, in this order (sdv-py
 | defensive_foul | integer | The team's own fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 | dunk_made | integer | The team's own dunks made (a subset of the two-point field goals). |
 | dunk_all | integer | The team's own dunks attempted. |
-| dunk_percent | numeric | The team's own dunk percentage 0-100; 0 when none were attempted. |
+| dunk_percent | double | The team's own dunk percentage 0-100; 0 when none were attempted. |
 | two_point_made | integer | The team's own two-point field goals made. |
 | two_point_all | integer | The team's own two-point field goals attempted. |
-| two_point_percent | numeric | The team's own two-point percentage 0-100. |
+| two_point_percent | double | The team's own two-point percentage 0-100. |
 | three_point_made | integer | The team's own three-point field goals made. |
 | three_point_all | integer | The team's own three-point field goals attempted. |
-| three_point_percent | numeric | The team's own three-point percentage 0-100. |
+| three_point_percent | double | The team's own three-point percentage 0-100. |
 | throw_made | integer | The team's own all field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 | throw_all | integer | The team's own all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-| throw_percent | numeric | The team's own field-goal percentage 0-100. |
+| throw_percent | double | The team's own field-goal percentage 0-100. |
 | free_throw_made | integer | The team's own free throws made. |
 | free_throw_all | integer | The team's own free throws attempted. |
-| free_throw_percent | numeric | The team's own free-throw percentage 0-100. |
+| free_throw_percent | double | The team's own free-throw percentage 0-100. |
 | offensive_rebound | integer | The team's own offensive rebounds. |
 | defensive_rebound | integer | The team's own defensive rebounds. |
 | total_rebound | integer | The team's own total rebounds (offensive plus defensive). |

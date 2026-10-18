@@ -34,9 +34,9 @@ A `hoopR_data` tibble (one row per event, sorted on action_id):
 | period | integer | Period number, an INTEGER here (1-4 = quarters) |
 | period_type | character | Period type: regular (overtime unobserved) |
 | clock | character | Game clock at the event, MM:SS remaining in the period; null on some feed-control events. |
-| clock_seconds | numeric | Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. |
+| clock_seconds | double | Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. |
 | shot_clock | character | Shot clock at the event, MM:SS; in Genius-era matches it repeats the game clock (no shot-clock data) |
-| shot_clock_seconds | numeric | Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. |
+| shot_clock_seconds | double | Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. |
 | score_home | integer | Home team's running score after the event (score_1 in the body). |
 | score_away | integer | Away team's running score after the event (score_2 in the body). |
 | action_type | character | Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, possession, possessionArrow, period, fixture, main (clock start/stop) |
@@ -50,8 +50,8 @@ A `hoopR_data` tibble (one row per event, sorted on action_id):
 | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 | player_name | character | Full name of the player the event belongs to; null for events no player owns (team rebounds, period starts). |
 | jersey_number | character | Jersey number of the player at the event, as text (a WNBL backfill writes 6.0). |
-| x | numeric | Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x \> 50 for two periods and x \< 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. |
-| y | numeric | Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. |
+| x | double | Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x \> 50 for two periods and x \< 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. |
+| y | double | Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. |
 | readable_action_type | character | Human-readable event label, e.g. "Game - Game completed". |
 | system_action_type | character | Machine event label, e.g. game_game_completed. |
 | timestamp | character | Wall-clock time of the event, ISO 8601 without offset (UTC) |
@@ -104,7 +104,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_player_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_player_box.md),
@@ -133,7 +133,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_match_pbp(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match_pbp from prod.rosetta.nbl.com.au ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:44:58 UTC
+#> ℹ Data updated: 2026-10-18 20:48:31 UTC
 #> # A tibble: 982 × 29
 #>    match_id     rosetta_match_id match_status action_id period period_type clock
 #>    <chr>        <chr>            <chr>            <int>  <int> <chr>       <chr>

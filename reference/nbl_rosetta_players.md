@@ -55,8 +55,8 @@ A `hoopR_data` tibble (one row per roster entry):
 | player_first_name | character | The player's given name, e.g. Elijah. |
 | player_last_name | character | The player's family name, e.g. Pepper. |
 | player_date_of_birth | character | Date of birth, ISO date. |
-| player_height | numeric | Height in centimetres. |
-| player_weight | numeric | Weight in kilograms. |
+| player_height | double | Height in centimetres. |
+| player_weight | double | Weight in kilograms. |
 | player_dominant_hand | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 | player_gender | character | Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) |
 | player_nationality | character | Unobserved in samples (null in every capture); type and meaning unverified. |
@@ -127,7 +127,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
@@ -156,7 +156,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_players(org = "nbl", season = 2026))
 #> ── NBL Rosetta players from prod.rosetta.nbl.com.au ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:05 UTC
+#> ℹ Data updated: 2026-10-18 20:48:39 UTC
 #> # A tibble: 195 × 33
 #>    org   jersey_number playing_position player_id              rosetta_player_id
 #>    <chr> <chr>         <chr>            <chr>                  <chr>            

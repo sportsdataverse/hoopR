@@ -30,7 +30,7 @@ An integer vector: `year + 1` on site 12 (2025 -\> 2026 = 2025-26),
 
 ## See also
 
-Other Atrium:
+Other Atrium Functions:
 [`atrium_box_score()`](https://hoopR.sportsdataverse.org/reference/atrium_box_score.md),
 [`atrium_competition_player_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_player_stats.md),
 [`atrium_competition_team_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_team_stats.md),

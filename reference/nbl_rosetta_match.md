@@ -64,8 +64,8 @@ A `hoopR_data` tibble (one row):
 | venue_code | character | Venue code; often null. |
 | venue_state | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 | venue_suburb | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+| venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+| venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 | venue_country | character | Country; often null. |
 | home_team_id | character | DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. |
 | home_team_name | character | Display name of the team. |
@@ -127,7 +127,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
 [`nbl_rosetta_match_player_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_player_box.md),
@@ -156,7 +156,7 @@ Other NBL Rosetta:
 # \donttest{
   try(nbl_rosetta_match(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:44:57 UTC
+#> ℹ Data updated: 2026-10-18 20:48:30 UTC
 #> # A tibble: 1 × 52
 #>   org   match_id    match_status start_time_datetime match_type attendance clock
 #>   <chr> <chr>       <chr>        <chr>               <chr>           <int> <chr>

@@ -83,7 +83,7 @@ or a box score of a game that is not final). All inherit `hoopR_error`.
 
 ## See also
 
-Other IBBA:
+Other IBBA Functions:
 [`ibba_boards()`](https://hoopR.sportsdataverse.org/reference/ibba_boards.md),
 [`ibba_box_score()`](https://hoopR.sportsdataverse.org/reference/ibba_box_score.md),
 [`ibba_coaches()`](https://hoopR.sportsdataverse.org/reference/ibba_coaches.md),

@@ -45,8 +45,8 @@ A `hoopR_data` tibble with these columns:
 | shirt_number | character | Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. |
 | player_id | integer | FEB person id of the shooter, resolved from side + shirt number in the game's roster; null when that pair is not unique. The feed itself carries no player id. |
 | made | logical | True when the shot was made, false when missed. Free throws are not in the feed. |
-| x | numeric | Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. |
-| y | numeric | Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. |
+| x | double | Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. |
+| y | double | Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. |
 
 ## Details
 
@@ -94,7 +94,7 @@ game, a page for another group or season, or layout drift). All inherit
 
 ## See also
 
-Other FEB:
+Other FEB Functions:
 [`feb_game_info()`](https://hoopR.sportsdataverse.org/reference/feb_game_info.md),
 [`feb_leaders()`](https://hoopR.sportsdataverse.org/reference/feb_leaders.md),
 [`feb_overview()`](https://hoopR.sportsdataverse.org/reference/feb_overview.md),

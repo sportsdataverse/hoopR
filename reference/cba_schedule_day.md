@@ -47,7 +47,7 @@ with these columns, in this order (sdv-py `cba_schedule_day`):
 | schedule_time | character | Tip-off as 'YYYY-MM-DD HH:MM:SS' (China local time, no zone). |
 | schedule_type_name | character | Round label (Chinese), e.g. (Chinese text)1regular season, round 1. |
 | season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. |
-| seconds | numeric | Unobserved: null in every sample (the clock seconds of a live game, by its name). Typed Float64 like the family's other routes. |
+| seconds | double | Unobserved: null in every sample (the clock seconds of a live game, by its name). Typed Float64 like the family's other routes. |
 | status | integer | Game status: 4 = finished (every sampled game). 1 = not started and 2 = in progress are inferred from the site's polling logic; 3 is unobserved. See the code table. |
 | visiting_team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 | visiting_team_logo | character | Absolute URL of the visiting team logo (300x300 png). |
@@ -183,7 +183,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_schedule_day(day = "2025-12-12"))
 #> ── CBA Schedule Day from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:24:35 UTC
+#> ℹ Data updated: 2026-10-18 20:27:35 UTC
 #> # A tibble: 1 × 27
 #>   home_team_id home_team_logo      home_team_lose home_team_name home_team_score
 #>          <int> <chr>                        <int> <chr>                    <int>

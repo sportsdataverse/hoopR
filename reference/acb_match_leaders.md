@@ -43,7 +43,7 @@ are always these, in this order (sdv-py `acb_match_leaders`):
 | team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
 | metric | character | Leader category in snake_case (the API's key, e.g. rating, points, rebounds, assists). |
 | rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-| value | numeric | The player's count in the category (points, rebounds, assists, rating). |
+| value | double | The player's count in the category (points, rebounds, assists, rating). |
 | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
 | player_name | character | Display (sporting) name ('Edy Tavares') |
 | first_name | character | Legal first name(s) |

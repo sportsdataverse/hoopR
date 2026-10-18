@@ -85,14 +85,14 @@ A `hoopR_data` tibble with these columns:
 | dunks | integer | Dunks made (PT2DUNK); v1 box rows only, null on v2. |
 | efficiency | integer | Efficiency rating (kokendo), era-dependent: v2 = points + rebounds + assists + steals + blocks + fouls drawn - missed FG - missed FT - turnovers - fouls - shots blocked (PIR); v1 omits fouls drawn, fouls and shots blocked. |
 | plus_minus | integer | Plus/minus: team point difference while on court. v2 from 2022-23 only; null on totals and half rows. |
-| ast_to | numeric | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
-| efg | numeric | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
-| ts | numeric | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
-| usg | numeric | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
-| off_rtg | numeric | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-| def_rtg | numeric | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-| net_rtg | numeric | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-| poss | numeric | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+| ast_to | double | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
+| efg | double | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
+| ts | double | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
+| usg | double | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
+| off_rtg | double | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+| def_rtg | double | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+| net_rtg | double | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+| poss | double | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
 
 ## Details
 
@@ -140,7 +140,7 @@ inherit `hoopR_error`.
 
 ## See also
 
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 [`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md),
 [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
 [`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md),
@@ -161,7 +161,7 @@ Other B.LEAGUE:
 # \donttest{
   try(bleague_player_box(schedule_key = 504734))
 #> ── B.LEAGUE player box from b-league.s3.amazonaws.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:57 UTC
+#> ℹ Data updated: 2026-10-18 20:26:57 UTC
 #> # A tibble: 175 × 50
 #>    schedule_key season feed  team_side team_id category period_category
 #>           <int>  <int> <chr> <chr>     <chr>      <int>           <int>

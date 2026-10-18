@@ -43,13 +43,13 @@ documented columns come first, in this order (sdv-py
 | mins | character | Minutes played as 'MM:SS' (null on the bench and totals rows). |
 | pts | integer | Number of points scored. |
 | fg | character | Field goals as 'made-attempted'. |
-| fg_perc | numeric | Field-goal percentage, 0-100. |
+| fg_perc | double | Field-goal percentage, 0-100. |
 | 2_p | character | Two-pointers as 'made-attempted'. |
-| 2_p_perc | numeric | Two-point percentage, 0-100. |
+| 2_p_perc | double | Two-point percentage, 0-100. |
 | 3_p | character | Three-pointers as 'made-attempted'. |
-| 3_p_perc | numeric | Three-point percentage, 0-100. |
+| 3_p_perc | double | Three-point percentage, 0-100. |
 | ft | character | Free throws as 'made-attempted'. |
-| ft_perc | numeric | Free-throw percentage, 0-100. |
+| ft_perc | double | Free-throw percentage, 0-100. |
 | off | integer | Offensive rebounds. |
 | def | integer | Defensive rebounds. |
 | reb | integer | Total rebounds. |
@@ -144,7 +144,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_player_box(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Player Box Score from basketligaen.dk ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:49 UTC
+#> ℹ Data updated: 2026-10-18 20:49:25 UTC
 #> # A tibble: 28 × 34
 #>    team_side row_type player_id team_id team_name    period full_name first_name
 #>    <chr>     <chr>        <int>   <int> <chr>         <int> <chr>     <chr>     

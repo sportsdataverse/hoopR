@@ -61,7 +61,7 @@ with the following columns:
 | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 | iana_time_zone | character | IANA time zone of the venue. |
-| utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+| utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 | buy_tickets_url | character | Ticket link; always ” in the samples. |
 | watch_url | character | Stream link; always ” in the samples. |
 | is_postponed | logical | True when the game was postponed. |
@@ -192,7 +192,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_team_games(team_id = 279569))
 #> ── FIBA gdap_team_games from fiba.basketball ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:27:14 UTC
+#> ℹ Data updated: 2026-10-18 20:30:24 UTC
 #> # A tibble: 8 × 78
 #>   game_id round_name     game_number status    status_code game_day team_a_from 
 #>     <int> <chr>          <chr>       <chr>     <chr>          <int> <chr>       

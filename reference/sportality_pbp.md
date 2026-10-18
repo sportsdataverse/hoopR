@@ -76,8 +76,8 @@ the documented columns come first, in this order (sdv-py
 | player_team_number | integer | Team number in the game (1 home, 2 away). |
 | player_first_name | character | Given (first) name(s) of the player. |
 | player_family_name | character | Family name (this route says familyName; the others lastName). |
-| coordinates_x | numeric | Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. |
-| coordinates_y | numeric | Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. |
+| coordinates_x | double | Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. |
+| coordinates_y | double | Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. |
 | period_time | integer | Marker lines only: 0 (an integer), the start of the period. |
 
 ## Details
@@ -160,7 +160,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Play-by-Play from basketligaen.dk ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:49 UTC
+#> ℹ Data updated: 2026-10-18 20:49:24 UTC
 #> # A tibble: 804 × 49
 #>    game_source_id game_id event_id type     event_uuid  period period_type time 
 #>             <int>   <int>    <int> <chr>    <chr>        <int> <chr>       <chr>

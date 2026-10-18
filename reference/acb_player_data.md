@@ -49,7 +49,7 @@ are always these, in this order (sdv-py `acb_player_data`):
 | birth_country_iso | character | ISO 3166-1 alpha-2 code of the birth country; null for an unseen name. |
 | nationality | character | Nationality as sent, a Spanish country name. |
 | nationality_iso | character | ISO 3166-1 alpha-2 code of nationality; null for an unseen name. |
-| height_m | numeric | Height in metres (the API sends '2,20', a decimal comma). |
+| height_m | double | Height in metres (the API sends '2,20', a decimal comma). |
 | player_number | integer | Current shirt number (integer). |
 | team_id | integer | Current team's season-team entry id. |
 | club_id | integer | Current team's stable club id. |
@@ -164,7 +164,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_data(player_id = 20209407))
 #> ── ACB Player Data from api2.acb.com ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:27 UTC
+#> ℹ Data updated: 2026-10-18 20:26:12 UTC
 #> # A tibble: 1 × 28
 #>   player_id player_name first_name last_name shirt_number game_role
 #>       <int> <chr>       <chr>      <chr>     <chr>        <chr>    

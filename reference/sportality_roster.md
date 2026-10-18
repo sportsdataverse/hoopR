@@ -121,7 +121,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_roster(team_uuid = "rfo82vr830"))
 #> ── Basketligaen Team Roster from basketligaen.dk ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:50 UTC
+#> ℹ Data updated: 2026-10-18 20:49:26 UTC
 #> # A tibble: 13 × 11
 #>    position position_code player_type gender uuid       first_name    last_name 
 #>    <chr>    <chr>         <chr>       <chr>  <chr>      <chr>         <chr>     

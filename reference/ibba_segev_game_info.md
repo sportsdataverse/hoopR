@@ -88,7 +88,7 @@ All inherit `hoopR_error`.
 
 ## See also
 
-Other IBBA Segev:
+Other IBBA Segev Functions:
 [`ibba_segev_pbp()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_pbp.md),
 [`ibba_segev_period_scores()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_period_scores.md),
 [`ibba_segev_player_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_player_box.md),
@@ -101,7 +101,7 @@ Other IBBA Segev:
 # \donttest{
   try(ibba_segev_game_info(game_id = 50))
 #> ── IBBA Segev game info ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:28:08 UTC
+#> ℹ Data updated: 2026-10-18 20:31:16 UTC
 #> # A tibble: 1 × 15
 #>   game_id start_time          competition home_team_id home_team home_team_local
 #>     <int> <dttm>              <chr>              <int> <chr>     <chr>          

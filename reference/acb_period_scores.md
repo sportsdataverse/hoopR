@@ -138,7 +138,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_period_scores(match_id = 105401))
 #> ── ACB Period Scores from api2.acb.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:25 UTC
+#> ℹ Data updated: 2026-10-18 20:26:10 UTC
 #> # A tibble: 4 × 4
 #>   match_id quarter home_score away_score
 #>      <int>   <int>      <int>      <int>

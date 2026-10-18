@@ -57,8 +57,8 @@ A `hoopR_data` tibble (one row per roster entry):
 | player_active | logical | Player record is active. |
 | player_date_of_birth | character | Date of birth, ISO date. |
 | player_nationality | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| player_height | numeric | Height in centimetres. |
-| player_weight | numeric | Weight in kilograms. |
+| player_height | double | Height in centimetres. |
+| player_weight | double | Weight in kilograms. |
 | player_dominant_hand | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 | player_gender | character | Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) |
 | player_nationality_code | character | Nationality, ISO 3166-1 alpha-3 code. |
@@ -117,7 +117,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),

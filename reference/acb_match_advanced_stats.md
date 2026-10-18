@@ -48,13 +48,13 @@ are always these, in this order (sdv-py `acb_match_advanced_stats`):
 | team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
 | group | character | Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). |
 | stat | character | Statistic in snake_case (efg_pct, orb_pct, tov_pct, f_tr = free-throw rate, possessions, pace, points_per_possession, ast_ratio, ..., net_rating, oer, der, trb_pct). |
-| match_value | numeric | The statistic in this game (the API's partido). |
-| season_value | numeric | The team's value over the season (the API's temporada). |
-| win_value | numeric | The team's value in its wins (the API's win). |
-| loss_value | numeric | The team's value in its losses (the API's loss). |
-| season_diff | numeric | Game value minus season value (temporadaDiff). |
-| win_diff | numeric | Game value minus the wins value (winDiff). |
-| loss_diff | numeric | Game value minus the losses value (lossDiff). |
+| match_value | double | The statistic in this game (the API's partido). |
+| season_value | double | The team's value over the season (the API's temporada). |
+| win_value | double | The team's value in its wins (the API's win). |
+| loss_value | double | The team's value in its losses (the API's loss). |
+| season_diff | double | Game value minus season value (temporadaDiff). |
+| win_diff | double | Game value minus the wins value (winDiff). |
+| loss_diff | double | Game value minus the losses value (lossDiff). |
 
 ## Details
 

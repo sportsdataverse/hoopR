@@ -40,19 +40,19 @@ A `hoopR_data` tibble (one row per player and period):
 |----|----|----|
 | col_name | type | description |
 | org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-| assists_average | numeric | Assists per game. |
-| blocks_average | numeric | Blocks per game. |
+| assists_average | double | Assists per game. |
+| blocks_average | double | Blocks per game. |
 | field_goals_attempted | integer | Field goals attempted, season total. |
 | field_goals_made | integer | Field goals made, season total. |
-| field_goals_attempted_average | numeric | Field goals attempted per game. |
-| field_goals_made_average | numeric | Field goals made per game. |
-| field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
-| fouls_average | numeric | Fouls committed (personal + technical + others) per game. |
+| field_goals_attempted_average | double | Field goals attempted per game. |
+| field_goals_made_average | double | Field goals made per game. |
+| field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
+| fouls_average | double | Fouls committed (personal + technical + others) per game. |
 | free_throws_attempted | integer | Free throws attempted, season total. |
 | free_throws_made | integer | Free throws made, season total. |
-| free_throws_attempted_average | numeric | Free throws attempted per game. |
-| free_throws_made_average | numeric | Free throws made per game. |
-| free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+| free_throws_attempted_average | double | Free throws attempted per game. |
+| free_throws_made_average | double | Free throws made per game. |
+| free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 | games | integer | Games played in the season (in the period rows, by the player or team). |
 | games_started | integer | Games in the starting five. |
 | offensive_rebounds | integer | Offensive rebounds, season total. |
@@ -61,31 +61,31 @@ A `hoopR_data` tibble (one row per player and period):
 | technical_fouls | integer | Technical fouls, season total. |
 | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
 | three_points_attempted | integer | Three-point field goals attempted, season total. |
-| three_points_attempted_average | numeric | Three-point field goals attempted per game. |
+| three_points_attempted_average | double | Three-point field goals attempted per game. |
 | three_points_made | integer | Three-point field goals made, season total. |
-| three_points_made_average | numeric | Three-point field goals made per game. |
-| three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
-| turnovers_average | numeric | Turnovers per game. |
+| three_points_made_average | double | Three-point field goals made per game. |
+| three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
+| turnovers_average | double | Turnovers per game. |
 | turnovers | integer | Turnovers, season total. |
 | two_points_attempted | integer | Two-point field goals attempted, season total. |
-| two_points_attempted_average | numeric | Two-point field goals attempted per game. |
+| two_points_attempted_average | double | Two-point field goals attempted per game. |
 | two_points_made | integer | Two-point field goals made, season total. |
-| two_points_made_average | numeric | Two-point field goals made per game. |
-| two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
-| minutes | numeric | Minutes played, decimal minutes. |
-| minutes_average | numeric | Minutes per game, decimal minutes. |
+| two_points_made_average | double | Two-point field goals made per game. |
+| two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
+| minutes | double | Minutes played, decimal minutes. |
+| minutes_average | double | Minutes per game, decimal minutes. |
 | points | integer | Points, season total. |
 | rebounds | integer | Total rebounds, season total. |
 | assists | integer | Assists, season total. |
 | blocks | integer | Blocks, season total. |
 | steals | integer | Steals, season total. |
 | plus_minus | integer | Point differential while on court, season total. |
-| plus_minus_average | numeric | Point differential while on court per game. |
+| plus_minus_average | double | Point differential while on court per game. |
 | efficiency | integer | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV), season total. |
-| efficiency_average | numeric | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
-| points_average | numeric | Points per game. |
-| rebounds_average | numeric | Total rebounds per game. |
-| steals_average | numeric | Steals per game. |
+| efficiency_average | double | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
+| points_average | double | Points per game. |
+| rebounds_average | double | Total rebounds per game. |
+| steals_average | double | Steals per game. |
 | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 | rosetta_player_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. |
 | player_first_name | character | The player's given name, e.g. Elijah. |
@@ -169,7 +169,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),

@@ -43,47 +43,47 @@ A `hoopR_data` tibble (one row per team and period):
 | col_name | type | description |
 | org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
 | assists | integer | Assists, team season total (in that period on period rows) |
-| assists_average | numeric | Assists per game. |
+| assists_average | double | Assists per game. |
 | blocks | integer | Blocks, team season total (in that period on period rows) |
-| blocks_average | numeric | Blocks per game. |
+| blocks_average | double | Blocks per game. |
 | defensive_rebounds | integer | Defensive rebounds, team season total (in that period on period rows) |
 | field_goals_attempted | integer | Field goals attempted, team season total (in that period on period rows) |
-| field_goals_attempted_average | numeric | Field goals attempted per game. |
+| field_goals_attempted_average | double | Field goals attempted per game. |
 | field_goals_made | integer | Field goals made, team season total (in that period on period rows) |
-| field_goals_made_average | numeric | Field goals made per game. |
-| field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+| field_goals_made_average | double | Field goals made per game. |
+| field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 | fouls | integer | Fouls committed (personal + technical + others), team season total (in that period on period rows) |
-| fouls_average | numeric | Fouls committed (personal + technical + others) per game. |
+| fouls_average | double | Fouls committed (personal + technical + others) per game. |
 | free_throws_attempted | integer | Free throws attempted, team season total (in that period on period rows) |
-| free_throws_attempted_average | numeric | Free throws attempted per game. |
+| free_throws_attempted_average | double | Free throws attempted per game. |
 | free_throws_made | integer | Free throws made, team season total (in that period on period rows) |
-| free_throws_made_average | numeric | Free throws made per game. |
-| free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+| free_throws_made_average | double | Free throws made per game. |
+| free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 | games | integer | Games played in the season (in the period rows, by the player or team). |
-| minutes | numeric | Player-minutes played (5 x game minutes) |
+| minutes | double | Player-minutes played (5 x game minutes) |
 | offensive_rebounds | integer | Offensive rebounds, team season total (in that period on period rows) |
-| offensive_rebounds_average | numeric | Offensive rebounds per game. |
+| offensive_rebounds_average | double | Offensive rebounds per game. |
 | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
-| personal_fouls_average | numeric | Personal fouls per game. |
+| personal_fouls_average | double | Personal fouls per game. |
 | points | integer | Points, team season total (in that period on period rows) |
-| points_average | numeric | Points per game. |
+| points_average | double | Points per game. |
 | rebounds | integer | Total rebounds, team season total (in that period on period rows) |
-| rebounds_average | numeric | Total rebounds per game. |
+| rebounds_average | double | Total rebounds per game. |
 | results_string | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 | steals | integer | Steals, team season total (in that period on period rows) |
-| steals_average | numeric | Steals per game. |
+| steals_average | double | Steals per game. |
 | three_points_attempted | integer | Three-point field goals attempted, team season total (in that period on period rows) |
-| three_points_attempted_average | numeric | Three-point field goals attempted per game. |
+| three_points_attempted_average | double | Three-point field goals attempted per game. |
 | three_points_made | integer | Three-point field goals made, team season total (in that period on period rows) |
-| three_points_made_average | numeric | Three-point field goals made per game. |
-| three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+| three_points_made_average | double | Three-point field goals made per game. |
+| three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 | turnovers | integer | Turnovers, team season total (in that period on period rows) |
-| turnovers_average | numeric | Turnovers per game. |
+| turnovers_average | double | Turnovers per game. |
 | two_points_attempted | integer | Two-point field goals attempted, team season total (in that period on period rows) |
-| two_points_attempted_average | numeric | Two-point field goals attempted per game. |
+| two_points_attempted_average | double | Two-point field goals attempted per game. |
 | two_points_made | integer | Two-point field goals made, team season total (in that period on period rows) |
-| two_points_made_average | numeric | Two-point field goals made per game. |
-| two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+| two_points_made_average | double | Two-point field goals made per game. |
+| two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 | team_id | character | DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. |
 | rosetta_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. |
 | team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
@@ -144,7 +144,7 @@ a malformed id, or HTTP 400 / 422.
 
 ## See also
 
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
 [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
 [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),

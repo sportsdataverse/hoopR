@@ -63,28 +63,28 @@ raises `hoopR_no_data`; the columns are always these, in this order
 | point_corrections | character | Table-point deductions; \[\] in every sample. |
 | home_victories | integer | Home games: wins. |
 | home_losses | integer | Home games: number of losses in the table. |
-| home_victory_percentage | numeric | Home games: win percentage, 0-100. |
+| home_victory_percentage | double | Home games: win percentage, 0-100. |
 | away_victories | integer | Away games: wins. |
 | away_losses | integer | Away games: number of losses in the table. |
-| away_victory_percentage | numeric | Away games: win percentage, 0-100. |
+| away_victory_percentage | double | Away games: win percentage, 0-100. |
 | table_points | integer | Table points scored (2 per win), from the API's `totalPointsMade`; the provider's notes call its 'Points' fields table points. |
 | table_points_against | integer | Table points conceded (2 per loss), from the API's `totalPointsAgainst`; per the provider's notes, table points. |
-| total_victory_percentage | numeric | All games: win percentage, 0-100. |
+| total_victory_percentage | double | All games: win percentage, 0-100. |
 | total_games | integer | Games played in the table (home and away together). |
 | total_victories | integer | All games: wins. |
 | total_losses | integer | Losses in the table over all games. |
 | last10_victories | integer | Wins in the last 10 games. |
 | last10_losses | integer | Losses in the last 10 games. |
-| last10_percentage | numeric | Win percentage over the last 10 games, 0-100. |
+| last10_percentage | double | Win percentage over the last 10 games, 0-100. |
 | last10_outcomes | character | Results of the last games, newest first: W or L. |
 | home_last10_victories | integer | Home games: last 10 games, wins. |
 | home_last10_losses | integer | Home games: last 10 games, losses. |
-| home_last10_victory_percentage | numeric | Home games: last 10 games, win percentage, 0-100. |
+| home_last10_victory_percentage | double | Home games: last 10 games, win percentage, 0-100. |
 | home_streak | character | Home games: current streak, W or L. |
 | home_streak_count | integer | Home games: length of the current streak. |
 | away_last10_victories | integer | Away games: last 10 games, wins. |
 | away_last10_losses | integer | Away games: last 10 games, losses. |
-| away_last10_victory_percentage | numeric | Away games: last 10 games, win percentage, 0-100. |
+| away_last10_victory_percentage | double | Away games: last 10 games, win percentage, 0-100. |
 | away_streak | character | Away games: current streak, W or L. |
 | away_streak_count | integer | Away games: length of the current streak. |
 | updated_date | character | Last update of the row, ISO 8601 UTC. |
@@ -173,7 +173,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:45:39 UTC
+#> ℹ Data updated: 2026-10-18 20:49:14 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   

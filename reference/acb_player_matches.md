@@ -62,13 +62,13 @@ are always these, in this order (sdv-py `acb_player_matches`):
 | points | integer | Points (player game-log row) |
 | three_pointers_made | integer | Three-point field goals made |
 | three_pointers_attempted | integer | Three-point field goals attempted |
-| three_pointers_percentage | numeric | Three-point percentage, 0-100 with one decimal; 0 when there was no attempt |
+| three_pointers_percentage | double | Three-point percentage, 0-100 with one decimal; 0 when there was no attempt |
 | two_pointers_made | integer | Two-point field goals made |
 | two_pointers_attempted | integer | Two-point field goals attempted |
-| two_pointers_percentage | numeric | Two-point percentage, 0-100 with one decimal; 0 when there was no attempt |
+| two_pointers_percentage | double | Two-point percentage, 0-100 with one decimal; 0 when there was no attempt |
 | free_throws_made | integer | Free throws the player made in that match (a count, not a season total). |
 | free_throws_attempted | integer | Free throws the player attempted in that match (a count, not a season total). |
-| free_throws_percentage | numeric | Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt |
+| free_throws_percentage | double | Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt |
 | rebounds | integer | Total rebounds in the game. |
 | offensive_rebounds | integer | Offensive rebounds the player took in that match (a count; part of the total rebounds). |
 | defensive_rebounds | integer | Defensive rebounds the player took in that match (a count; part of the total rebounds). |
@@ -183,7 +183,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_matches(player_id = 20209407, season = 2027))
 #> ── ACB Player Matches from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:28 UTC
+#> ℹ Data updated: 2026-10-18 20:26:13 UTC
 #> # A tibble: 4 × 42
 #>   player_id match_id round_type round_number date                home_team_id
 #>       <int>    <int> <chr>             <int> <dttm>                     <int>

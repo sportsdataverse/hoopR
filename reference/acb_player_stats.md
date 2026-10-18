@@ -59,13 +59,13 @@ are always these, in this order (sdv-py `acb_player_stats`):
 | total_max_points | integer | Season total of most points in a single game. |
 | total_three_pointers_made | integer | Season total of three-point field goals made. |
 | total_three_pointers_attempted | integer | Season total of three-point field goals attempted. |
-| total_three_pointers_percentage | numeric | Season total of three-point percentage (0-100). |
+| total_three_pointers_percentage | double | Season total of three-point percentage (0-100). |
 | total_two_pointers_made | integer | Season total of two-point field goals made. |
 | total_two_pointers_attempted | integer | Season total of two-point field goals attempted. |
-| total_two_pointers_percentage | numeric | Season total of two-point percentage (0-100). |
+| total_two_pointers_percentage | double | Season total of two-point percentage (0-100). |
 | total_free_throws_made | integer | Season total of free throws made. |
 | total_free_throws_attempted | integer | Season total of free throws attempted. |
-| total_free_throws_percentage | numeric | Season total of free-throw percentage (0-100). |
+| total_free_throws_percentage | double | Season total of free-throw percentage (0-100). |
 | total_rebounds | integer | Season total of total rebounds. |
 | total_offensive_rebounds | integer | Season total of offensive rebounds. |
 | total_defensive_rebounds | integer | Season total of defensive rebounds. |
@@ -81,64 +81,64 @@ are always these, in this order (sdv-py `acb_player_stats`):
 | total_plus_minus | integer | Season total of plus/minus. |
 | total_wins | integer | Season total of team wins in the counted games (meaning unverified). |
 | total_losses | integer | Season total of team losses in the counted games (meaning unverified). |
-| avg_num_games | numeric | Per-game average of games played. |
-| avg_time_played | numeric | Per-game average of time on court in seconds. |
-| avg_starter | numeric | Per-game average of games started. |
-| avg_points | numeric | Per-game average of points. |
-| avg_max_points | numeric | Per-game average of most points in a single game. |
-| avg_three_pointers_made | numeric | Per-game average of three-point field goals made. |
-| avg_three_pointers_attempted | numeric | Per-game average of three-point field goals attempted. |
-| avg_three_pointers_percentage | numeric | Per-game average of three-point percentage (0-100). |
-| avg_two_pointers_made | numeric | Per-game average of two-point field goals made. |
-| avg_two_pointers_attempted | numeric | Per-game average of two-point field goals attempted. |
-| avg_two_pointers_percentage | numeric | Per-game average of two-point percentage (0-100). |
-| avg_free_throws_made | numeric | Per-game average of free throws made. |
-| avg_free_throws_attempted | numeric | Per-game average of free throws attempted. |
-| avg_free_throws_percentage | numeric | Per-game average of free-throw percentage (0-100). |
-| avg_rebounds | numeric | Per-game average of total rebounds. |
-| avg_offensive_rebounds | numeric | Per-game average of offensive rebounds. |
-| avg_defensive_rebounds | numeric | Per-game average of defensive rebounds. |
-| avg_assists | numeric | Per-game average of assists. |
-| avg_steals | numeric | Per-game average of steals. |
-| avg_turnovers | numeric | Per-game average of turnovers. |
-| avg_blocks | numeric | Per-game average of blocks made. |
-| avg_shots_rejected | numeric | Per-game average of own shots blocked. |
-| avg_dunks | numeric | Per-game average of dunks. |
-| avg_personal_fouls | numeric | Per-game average of personal fouls committed. |
-| avg_fouls_received | numeric | Per-game average of fouls drawn. |
-| avg_rating | numeric | Per-game average of ACB rating (valoracion). |
-| avg_plus_minus | numeric | Per-game average of plus/minus. |
-| avg_wins | numeric | Per-game average of team wins in the counted games (meaning unverified). |
-| avg_losses | numeric | Per-game average of team losses in the counted games (meaning unverified). |
-| per40_num_games | numeric | Per-40-minute rate of games played. |
-| per40_time_played | numeric | Always null: the per-40 block carries no time played. |
-| per40_starter | numeric | Per-40-minute rate of games started. |
-| per40_points | numeric | Per-40-minute rate of points. |
-| per40_max_points | numeric | Per-40-minute rate of most points in a single game. |
-| per40_three_pointers_made | numeric | Per-40-minute rate of three-point field goals made. |
-| per40_three_pointers_attempted | numeric | Per-40-minute rate of three-point field goals attempted. |
-| per40_three_pointers_percentage | numeric | Per-40-minute rate of three-point percentage (0-100). |
-| per40_two_pointers_made | numeric | Per-40-minute rate of two-point field goals made. |
-| per40_two_pointers_attempted | numeric | Per-40-minute rate of two-point field goals attempted. |
-| per40_two_pointers_percentage | numeric | Per-40-minute rate of two-point percentage (0-100). |
-| per40_free_throws_made | numeric | Per-40-minute rate of free throws made. |
-| per40_free_throws_attempted | numeric | Per-40-minute rate of free throws attempted. |
-| per40_free_throws_percentage | numeric | Per-40-minute rate of free-throw percentage (0-100). |
-| per40_rebounds | numeric | Per-40-minute rate of total rebounds. |
-| per40_offensive_rebounds | numeric | Per-40-minute rate of offensive rebounds. |
-| per40_defensive_rebounds | numeric | Per-40-minute rate of defensive rebounds. |
-| per40_assists | numeric | Per-40-minute rate of assists. |
-| per40_steals | numeric | Per-40-minute rate of steals. |
-| per40_turnovers | numeric | Per-40-minute rate of turnovers. |
-| per40_blocks | numeric | Per-40-minute rate of blocks made. |
-| per40_shots_rejected | numeric | Per-40-minute rate of own shots blocked. |
-| per40_dunks | numeric | Per-40-minute rate of dunks. |
-| per40_personal_fouls | numeric | Per-40-minute rate of personal fouls committed. |
-| per40_fouls_received | numeric | Per-40-minute rate of fouls drawn. |
-| per40_rating | numeric | Per-40-minute rate of ACB rating (valoracion). |
-| per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
-| per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
-| per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
+| avg_num_games | double | Per-game average of games played. |
+| avg_time_played | double | Per-game average of time on court in seconds. |
+| avg_starter | double | Per-game average of games started. |
+| avg_points | double | Per-game average of points. |
+| avg_max_points | double | Per-game average of most points in a single game. |
+| avg_three_pointers_made | double | Per-game average of three-point field goals made. |
+| avg_three_pointers_attempted | double | Per-game average of three-point field goals attempted. |
+| avg_three_pointers_percentage | double | Per-game average of three-point percentage (0-100). |
+| avg_two_pointers_made | double | Per-game average of two-point field goals made. |
+| avg_two_pointers_attempted | double | Per-game average of two-point field goals attempted. |
+| avg_two_pointers_percentage | double | Per-game average of two-point percentage (0-100). |
+| avg_free_throws_made | double | Per-game average of free throws made. |
+| avg_free_throws_attempted | double | Per-game average of free throws attempted. |
+| avg_free_throws_percentage | double | Per-game average of free-throw percentage (0-100). |
+| avg_rebounds | double | Per-game average of total rebounds. |
+| avg_offensive_rebounds | double | Per-game average of offensive rebounds. |
+| avg_defensive_rebounds | double | Per-game average of defensive rebounds. |
+| avg_assists | double | Per-game average of assists. |
+| avg_steals | double | Per-game average of steals. |
+| avg_turnovers | double | Per-game average of turnovers. |
+| avg_blocks | double | Per-game average of blocks made. |
+| avg_shots_rejected | double | Per-game average of own shots blocked. |
+| avg_dunks | double | Per-game average of dunks. |
+| avg_personal_fouls | double | Per-game average of personal fouls committed. |
+| avg_fouls_received | double | Per-game average of fouls drawn. |
+| avg_rating | double | Per-game average of ACB rating (valoracion). |
+| avg_plus_minus | double | Per-game average of plus/minus. |
+| avg_wins | double | Per-game average of team wins in the counted games (meaning unverified). |
+| avg_losses | double | Per-game average of team losses in the counted games (meaning unverified). |
+| per40_num_games | double | Per-40-minute rate of games played. |
+| per40_time_played | double | Always null: the per-40 block carries no time played. |
+| per40_starter | double | Per-40-minute rate of games started. |
+| per40_points | double | Per-40-minute rate of points. |
+| per40_max_points | double | Per-40-minute rate of most points in a single game. |
+| per40_three_pointers_made | double | Per-40-minute rate of three-point field goals made. |
+| per40_three_pointers_attempted | double | Per-40-minute rate of three-point field goals attempted. |
+| per40_three_pointers_percentage | double | Per-40-minute rate of three-point percentage (0-100). |
+| per40_two_pointers_made | double | Per-40-minute rate of two-point field goals made. |
+| per40_two_pointers_attempted | double | Per-40-minute rate of two-point field goals attempted. |
+| per40_two_pointers_percentage | double | Per-40-minute rate of two-point percentage (0-100). |
+| per40_free_throws_made | double | Per-40-minute rate of free throws made. |
+| per40_free_throws_attempted | double | Per-40-minute rate of free throws attempted. |
+| per40_free_throws_percentage | double | Per-40-minute rate of free-throw percentage (0-100). |
+| per40_rebounds | double | Per-40-minute rate of total rebounds. |
+| per40_offensive_rebounds | double | Per-40-minute rate of offensive rebounds. |
+| per40_defensive_rebounds | double | Per-40-minute rate of defensive rebounds. |
+| per40_assists | double | Per-40-minute rate of assists. |
+| per40_steals | double | Per-40-minute rate of steals. |
+| per40_turnovers | double | Per-40-minute rate of turnovers. |
+| per40_blocks | double | Per-40-minute rate of blocks made. |
+| per40_shots_rejected | double | Per-40-minute rate of own shots blocked. |
+| per40_dunks | double | Per-40-minute rate of dunks. |
+| per40_personal_fouls | double | Per-40-minute rate of personal fouls committed. |
+| per40_fouls_received | double | Per-40-minute rate of fouls drawn. |
+| per40_rating | double | Per-40-minute rate of ACB rating (valoracion). |
+| per40_plus_minus | double | Per-40-minute rate of plus/minus. |
+| per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
+| per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 
 ## Details
 
@@ -240,7 +240,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_stats(player_id = 20209407))
 #> ── ACB Player Stats from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 19:23:29 UTC
+#> ℹ Data updated: 2026-10-18 20:26:14 UTC
 #> # A tibble: 13 × 96
 #>    player_id team_id competition_id edition_id season edition_year club_id team 
 #>        <int>   <int>          <int>      <int>  <int> <chr>          <int> <chr>

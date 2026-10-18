@@ -30,49 +30,49 @@ tibble with these columns, in this order (sdv-py `cba_game_team_four`):
 |  |  |  |
 |----|----|----|
 | col_name | type | description |
-| effective_hit_rate | numeric | effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
+| effective_hit_rate | double | effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
 | effective_hit_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
-| effective_hit_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
-| free_throw_rate | numeric | free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
+| effective_hit_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
+| free_throw_rate | double | free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
 | free_throw_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
-| free_throw_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
-| loss_average | numeric | League-average losses; 0.0 in every sample. |
+| free_throw_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
+| loss_average | double | League-average losses; 0.0 in every sample. |
 | loss_num | integer | Losses of the team in the table's season. |
-| offensive_rebound_rate | numeric | offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
+| offensive_rebound_rate | double | offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
 | offensive_rebound_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
-| offensive_rebound_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
-| other_effective_hit_rate | numeric | The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
+| offensive_rebound_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
+| other_effective_hit_rate | double | The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
 | other_effective_hit_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
-| other_effective_hit_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
-| other_free_throw_rate | numeric | The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
+| other_effective_hit_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6%). |
+| other_free_throw_rate | double | The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
 | other_free_throw_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
-| other_free_throw_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
-| other_offensive_rebound_rate | numeric | The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
+| other_free_throw_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. |
+| other_offensive_rebound_rate | double | The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
 | other_offensive_rebound_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
-| other_offensive_rebound_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
-| other_points_hundred_round | numeric | points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. |
-| other_points_hundred_round_average | numeric | League average of the metric. Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. |
-| other_points_hundred_round_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. |
-| other_turnovers_rate | numeric | The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
+| other_offensive_rebound_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). |
+| other_points_hundred_round | double | points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. |
+| other_points_hundred_round_average | double | League average of the metric. Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. |
+| other_points_hundred_round_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. |
+| other_turnovers_rate | double | The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
 | other_turnovers_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
-| other_turnovers_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
-| points_hundred_round | numeric | points scored per 100 possessions (offensive rating). |
-| points_hundred_round_average | numeric | League average of the metric. Metric: points scored per 100 possessions (offensive rating). |
-| points_hundred_round_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points scored per 100 possessions (offensive rating). |
-| rhythm | numeric | pace: possessions per 48 minutes. |
-| rhythm_num | numeric | Pace; same value as rhythm. A number (the API sends it as display text). |
-| rhythm_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: pace: possessions per 48 minutes. |
+| other_turnovers_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
+| points_hundred_round | double | points scored per 100 possessions (offensive rating). |
+| points_hundred_round_average | double | League average of the metric. Metric: points scored per 100 possessions (offensive rating). |
+| points_hundred_round_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points scored per 100 possessions (offensive rating). |
+| rhythm | double | pace: possessions per 48 minutes. |
+| rhythm_num | double | Pace; same value as rhythm. A number (the API sends it as display text). |
+| rhythm_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: pace: possessions per 48 minutes. |
 | schedule_season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. The season of this table: one before the game's season (2025 game -\> 2024). |
 | season | integer | Season of the table ('2024' = the START year of 2024-25; sdv END year = value + 1); equals scheduleSeason. NOT the season of the game: the table is the PREVIOUS season's. An integer (the API sends it as digit text). |
 | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 | team_name | character | Team name (Chinese) in the table's season (can differ from the game's: in the 2016 table of a 2017 Sichuan game). |
-| turnovers_rate | numeric | turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
+| turnovers_rate | double | turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
 | turnovers_rate_average | character | Unobserved: null in every sample. When filled: league average of the metric. Metric: turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
-| turnovers_rate_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
+| turnovers_rate_rank | double | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). |
 | win_num | integer | Wins of the team in the table's season (regular season). |
-| win_points_hundred_round | numeric | net points per 100 possessions. |
-| win_points_hundred_round_average | numeric | League average of the metric. Metric: net points per 100 possessions. |
-| wine_average | numeric | League-average wins (field name sic); 0.0 in every sample. |
+| win_points_hundred_round | double | net points per 100 possessions. |
+| win_points_hundred_round_average | double | League average of the metric. Metric: net points per 100 possessions. |
+| wine_average | double | League-average wins (field name sic); 0.0 in every sample. |
 
 ## Details
 
