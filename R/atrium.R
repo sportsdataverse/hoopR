@@ -956,7 +956,7 @@ atrium_player_seasons <- function(website_id, person_id, season = NULL, season_i
 #' | website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
 #' | person_id | character | Player UUID (person), shared across seasons and sites. |
 #' | season_id | character | Season UUID the log is for (the season asked, else the site's default). |
-#' | date | POSIXct | Local start of the game, naive datetime (no offset; zone not given). |
+#' | date | character | Local start of the game as the API sends it (`YYYY-MM-DDTHH:MM:SS`, no offset; the zone is not given): the field the ribbon's start_time_local reads. |
 #' | opponent_entity_id | character | Team UUID of the opponent. |
 #' | opponent_name | character | Name of the opponent. |
 #' | result | character | Result for the player's team: W or L. |

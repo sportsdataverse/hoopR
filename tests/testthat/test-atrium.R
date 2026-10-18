@@ -53,8 +53,9 @@ atrium_cases <- list(
 
 atrium_dtypes <- utils::read.csv(testthat::test_path("fixtures", "atrium", "parity", "dtypes.csv"), colClasses = "character")
 
-# venue-local wall-clock columns: naive Datetime in sdv-py, the API's string in R (the zone varies per row)
-atrium_local_col <- function(col) grepl("start_time_local$", col)
+# venue-local wall-clock columns: naive Datetime in sdv-py, the API's string in R (the zone varies per row);
+# the player game log's `date` is the same API field
+atrium_local_col <- function(col) grepl("start_time_local$", col) || identical(col, "date")
 
 # polars dtype -> the R class that carries it
 atrium_r_class <- function(dtype, col = "") {
@@ -95,6 +96,13 @@ test_that("venue-local start times stay the API's strings; UTC instants are POSI
   expect_s3_class(r$start_time_utc, "POSIXct")
   expect_identical(attr(r$start_time_utc, "tzone"), "UTC")
   expect_identical(format(r$start_time_utc[[1]], "%Y-%m-%d %H:%M:%S", tz = "UTC"), "2026-05-16 17:00:00")
+  atrium_clear_cache()
+  log <- atrium_cases$player_game_log_12
+  body <- atrium_fx(log[[2]])
+  local_mocked_bindings(.intl_get = function(url, query = list(), ...) body)
+  g <- do.call(log[[1]], log[[3]])
+  expect_type(g$date, "character")
+  expect_true(all(grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}", stats::na.omit(g$date))))
 })
 
 test_that("every wrapper matches sdv-py's frame on the same fixture (columns, types, cells)", {
