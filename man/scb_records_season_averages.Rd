@@ -23,7 +23,7 @@ record. An empty valid answer raises \code{hoopR_no_data}; the columns are alway
    place \tab integer \tab Rank within the list (1 = best); 0 on some rows. \cr
    order_id \tab integer \tab Sort order within the list. \cr
    value \tab numeric \tab The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. \cr
-   ratio \tab numeric \tab \link{made, attempted} as strings, on percentage records only; null otherwise. \cr
+   ratio \tab numeric \tab [made, attempted] as strings, on percentage records only; null otherwise. \cr
    season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score \code{seasonPlayer.id}, action \code{seasonPlayerId} and \verb{/season-players/\{seasonPlayerId\}}. \cr
    real_player_id \tab integer \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
    first_name \tab character \tab Player's given name. \cr
