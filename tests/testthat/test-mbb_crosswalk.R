@@ -435,6 +435,7 @@ test_that("mbb_schedule_crosswalk include_kenpom=FALSE does not error without KP
 }
 
 test_that("player assembler: exact name match", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   espn <- .make_mbb_espn_players(
     team_id = 150L, abbr = "DUK",
@@ -461,6 +462,7 @@ test_that("player assembler: exact name match", {
 })
 
 test_that("player assembler: fuzzy name match (minor spelling diff)", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   espn <- .make_mbb_espn_players(
     150L, "DUK",

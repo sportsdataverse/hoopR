@@ -55,11 +55,15 @@
 
 #' Reduce a timestamp (UTC datetime, ISO string, or Date) to the local ET date
 #' @keywords internal
-#' @importFrom lubridate as_datetime with_tz date
 .bb_to_eastern <- function(x) {
   if (inherits(x, "Date")) return(x)
-  t <- lubridate::as_datetime(x, tz = "UTC")
-  lubridate::date(lubridate::with_tz(t, tzone = "America/New_York"))
+  if (!inherits(x, "POSIXt")) {
+    x <- as.POSIXct(sub("Z$", "", as.character(x)), tz = "UTC", optional = TRUE,
+                    tryFormats = c("%Y-%m-%dT%H:%M:%OS", "%Y-%m-%dT%H:%M",
+                                   "%Y-%m-%d %H:%M:%OS", "%Y-%m-%d %H:%M",
+                                   "%Y-%m-%d"))
+  }
+  as.Date(x, tz = "America/New_York")
 }
 
 #' Deterministic blocked fuzzy matcher (greedy within block)
@@ -70,7 +74,6 @@
 #' @return data.frame: `.block`, `left_id`, `right_id`, `match_method`
 #'   (`exact_name` / `fuzzy_jw` / `unmatched`), `match_confidence`.
 #' @keywords internal
-#' @importFrom stringdist stringsim
 #' @importFrom dplyr bind_rows
 .bb_fuzzy_match <- function(left, right, min_confidence = 0.92) {
   req <- c(".block", ".id", ".name_key")

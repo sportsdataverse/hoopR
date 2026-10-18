@@ -1383,13 +1383,6 @@ importFrom(jsonlite,
   fromJSON,
   toJSON
 )
-importFrom(lubridate,
-  as_datetime,
-  date,
-  with_tz,
-  ymd_hm
-)
-importFrom(magrittr,"%>%")
 importFrom(purrr,
   list_rbind,
   map,
@@ -1416,7 +1409,6 @@ importFrom(rvest,
   html_text2,
   read_html
 )
-importFrom(stringdist,stringsim)
 importFrom(stringi,stri_trans_general)
 importFrom(stringr,
   regex,

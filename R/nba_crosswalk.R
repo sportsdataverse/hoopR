@@ -322,6 +322,7 @@ NULL
 #'   try(nba_player_crosswalk())
 #' }
 nba_player_crosswalk <- function(season = most_recent_nba_season(), min_confidence = 0.92) {
+  rlang::check_installed("stringdist", reason = "to fuzzy-match player names")
   team_xwalk <- nba_team_crosswalk(season = season)
   stats_season <- year_to_season(season - 1)
 

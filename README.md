@@ -147,7 +147,7 @@ Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%
 [![GitHub
 stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR)
 
-<a href="https://github.com/sportsdataverse/hoopR/stargazers">
+<a href="https://github.com/sportsdataverse/hoopR">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history-dark.svg">
     <img alt="Star history of sportsdataverse/hoopR" src="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history.png" width="600">

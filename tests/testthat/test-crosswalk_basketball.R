@@ -34,6 +34,7 @@ test_that(".bb_to_eastern returns the correct local ET game date", {
 })
 
 test_that(".bb_fuzzy_match returns typed empty frame when left has zero rows", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   left  <- data.frame(.block    = character(),
                       .id       = character(),
@@ -51,6 +52,7 @@ test_that(".bb_fuzzy_match returns typed empty frame when left has zero rows", {
 })
 
 test_that(".bb_fuzzy_match does not match empty name keys", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   left <- data.frame(
     .block    = c("A", "A"),
@@ -71,6 +73,7 @@ test_that(".bb_fuzzy_match does not match empty name keys", {
 })
 
 test_that(".bb_fuzzy_match does exact, fuzzy, tiebreak, and unmatched", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   left <- data.frame(
     .block = c("A", "A", "A", "B"),

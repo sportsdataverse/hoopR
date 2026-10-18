@@ -1,7 +1,7 @@
 #' @title
 #' **HoopsHype Player Salaries**
 #' @description
-#' **Get NBA player salaries from [HoopsHype](https://www.hoopshype.com/).**
+#' **Get NBA player salaries from HoopsHype (hoopshype.com).**
 #'
 #' Returns the full league's player salaries, one row per player per contract
 #' season (current plus future seasons HoopsHype lists). No API key is required;

@@ -1,6 +1,6 @@
 Package: hoopR
 Title: Access Men's Basketball Play by Play Data
-Version: 3.1.0.9000
+Version: 3.2.0
 Authors@R: c(
     person("Saiem", "Gilani", , "saiem.gilani@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7194-9067")),
@@ -11,7 +11,7 @@ Authors@R: c(
   )
 Description: A utility to quickly obtain clean and tidy men's basketball
     play by play data. Provides functions to access live play by play and
-    box score data from ESPN<https://www.espn.com> with shot locations
+    box score data from ESPN with shot locations
     when available. It is also a full NBA Stats
     API<https://www.nba.com/stats/> wrapper.  It is also a scraping and
     aggregating interface for Ken Pomeroy's men's college basketball
@@ -28,21 +28,16 @@ Imports:
     cli (>= 3.0.0),
     data.table (>= 1.14.0),
     dplyr,
-    glmnet,
     httr2 (>= 1.0.4),
     janitor,
     jsonlite (>= 1.6),
     lifecycle,
-    lubridate,
-    magrittr,
-    Matrix,
     progressr (>= 0.6.0),
     purrr (>= 1.0.0),
     Rcpp (>= 1.0.7),
     RcppParallel (>= 5.1.4),
     rlang (>= 1.0.0),
     rvest (>= 1.0.0),
-    stringdist (>= 0.9.0),
     stringi (>= 1.7.0),
     stringr (>= 1.3.0),
     tidyr (>= 1.0.0),
@@ -59,10 +54,13 @@ Suggests:
     future (>= 1.24.0),
     ggplot2,
     ggrepel,
+    glmnet,
     glue,
+    Matrix,
     rmarkdown,
     RSQLite,
     stats,
+    stringdist (>= 0.9.0),
     testthat (>= 3.1.9),
     tibble (>= 3.0),
     usethis (>= 1.6.0),

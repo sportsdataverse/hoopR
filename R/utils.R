@@ -225,6 +225,17 @@ user_message <- function(x, type) {
 # check if a package is installed
 is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
 
+# Parse an ESPN UTC timestamp whose trailing "Z" is already stripped
+# ("2024-10-22T23:30") to a POSIXct shown in America/New_York.
+.espn_utc_to_et <- function(x) {
+  t <- as.POSIXct(x, format = "%Y-%m-%dT%H:%M", tz = "UTC")
+  attr(t, "tzone") <- "America/New_York"
+  t
+}
+
+# Parse an "MM/DD/YYYY" string (stats.nba.com / stats.wnba.com) to a Date.
+.parse_mdy <- function(x) as.Date(x, format = "%m/%d/%Y")
+
 # custom mode function from https://stackoverflow.com/questions/2547402/is-there-a-built-in-function-for-finding-the-mode/8189441
 custom_mode <- function(x, na.rm = TRUE) {
   if (na.rm) {
@@ -621,10 +632,6 @@ check_status <- function(res) {
   if (length(nms) == 0L) return(list())
   mget(nms, envir = parent.frame(), ifnotfound = list(NULL))
 }
-
-#' @importFrom magrittr %>%
-#' @usage lhs \%>\% rhs
-NULL
 
 #' @import utils
 utils::globalVariables(c("where"))

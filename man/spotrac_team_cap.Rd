@@ -28,7 +28,7 @@ table; dollar figures are returned as numeric):
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
-\strong{Get team salary-cap allocations from \href{https://www.spotrac.com}{Spotrac}.}
+\strong{Get team salary-cap allocations from Spotrac (spotrac.com).}
 
 Returns one row per team with cap allocations, cap space, active-player
 counts and average age for a season. No API key is required.

@@ -50,6 +50,7 @@ test_that(".bb_assemble_schedule_crosswalk_nba full-outer joins on ET date + tea
 })
 
 test_that(".bb_assemble_player_crosswalk_nba matches ESPN/Stats within team blocks", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   espn <- data.frame(
     espn_team_id = c(13L, 13L), team_abbreviation = c("LAL", "LAL"),
@@ -100,6 +101,7 @@ test_that("nba_schedule_crosswalk() returns a live hoopR_data tibble", {
 })
 
 test_that("nba_player_crosswalk() returns a live hoopR_data tibble", {
+  skip_if_not_installed("stringdist")
   skip_on_cran()
   skip_on_ci()
   if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")

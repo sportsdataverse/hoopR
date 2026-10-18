@@ -181,7 +181,7 @@ nba_schedule <- function(
             # block before the regular season, so it stays NA there.
             .data$season_type_id == 5 & .data$league_id == "00" ~ "Play-In Game"
           ),
-          game_date = lubridate::mdy(substring(.data$game_date, 1, 10))
+          game_date = .parse_mdy(substring(.data$game_date, 1, 10))
         )
     },
     error = function(e) .report_api_error(
