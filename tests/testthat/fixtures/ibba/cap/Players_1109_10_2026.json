@@ -1,0 +1,49 @@
+{
+  "players": [
+    {
+      "player_id": "24865",
+      "jersy": "00",
+      "year_id": "2026",
+      "team_id": "1109",
+      "name": "גבריאל &quot;איפה&quot; לונדברג",
+      "name_eng": "Gabriel &quot;Iffe&quot; Lundberg",
+      "isReplaced": "False",
+      "isLocal": "False",
+      "pic": "/pics/2025-2026/lund.jpg",
+      "Height": "1.93",
+      "position": "גארד",
+      "position_eng": "G",
+      "birth_date": "04/12/1994"
+    },
+    {
+      "player_id": "21912",
+      "jersy": "01",
+      "year_id": "2026",
+      "team_id": "1109",
+      "name": "ג&#39;יילן הורד",
+      "name_eng": "Jaylen Hoard",
+      "isReplaced": "False",
+      "isLocal": "False",
+      "pic": "/pics/2025-2026/hord.jpg",
+      "Height": "2.03",
+      "position": "פורוורד",
+      "position_eng": "F",
+      "birth_date": "30/03/1999"
+    },
+    {
+      "player_id": "21917",
+      "jersy": "02",
+      "year_id": "2026",
+      "team_id": "1109",
+      "name": "ג&#39;ימי קלארק",
+      "name_eng": "Jimmy Clark III",
+      "isReplaced": "False",
+      "isLocal": "False",
+      "pic": "/pics/2025-2026/clark.jpg",
+      "Height": "1.91",
+      "position": "גארד",
+      "position_eng": "G",
+      "birth_date": "04/04/2001"
+    }
+  ]
+}

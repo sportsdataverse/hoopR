@@ -1,0 +1,25 @@
+{
+  "boards": [
+    {
+      "BOARD_ID": "5",
+      "year_id": "2026",
+      "h_type": "ליגת העל",
+      "type": "ליגת Winner סל",
+      "category_name": "טבלה"
+    },
+    {
+      "BOARD_ID": "10",
+      "year_id": "2026",
+      "h_type": "גביע הליגה",
+      "type": "גביע ווינר סל",
+      "category_name": "נוק אאוט"
+    },
+    {
+      "BOARD_ID": "16",
+      "year_id": "2026",
+      "h_type": "ליגת העל - רבע גמר",
+      "type": "ליגת Winner סל - רבע הגמר",
+      "category_name": "סדרה"
+    }
+  ]
+}

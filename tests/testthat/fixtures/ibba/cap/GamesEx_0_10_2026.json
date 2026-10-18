@@ -1,0 +1,58 @@
+{
+  "games_ex": [
+    {
+      "game_id": "8888",
+      "ig_date": "07/09/2025",
+      "year_id": "2026",
+      "ig_team_1": "120",
+      "ig_team_2": "119",
+      "team1_name": "מכבי ת&quot;א",
+      "team2_name": "בני הרצליה",
+      "team1_logo": "https://basket.co.il/pics/2007/logos/bigMaccabi.png",
+      "team2_logo": "https://basket.co.il/pics/2019/%D7%91%D7%A0%D7%99%20%D7%94%D7%A8%D7%A6%D7%9C%D7%99%D7%94.png",
+      "ig_score_team_1": "87",
+      "ig_score_team_2": "100",
+      "BOARD_ID": "1005",
+      "board_name": "משחקי הכנה",
+      "ig_gn": "",
+      "ig_time": "19:00",
+      "ig_place": "הדר יוסף"
+    },
+    {
+      "game_id": "9895",
+      "ig_date": "12/09/2025",
+      "year_id": "2026",
+      "ig_team_1": "120",
+      "ig_team_2": "252",
+      "team1_name": "מכבי ת&quot;א",
+      "team2_name": "זניט",
+      "team1_logo": "https://basket.co.il/pics/2007/logos/bigMaccabi.png",
+      "team2_logo": "http://basket.co.il/pics/2025-2026/BC_Zenit_Saint_Petersburg_logo_svg%20copy.png",
+      "ig_score_team_1": "102",
+      "ig_score_team_2": "77",
+      "BOARD_ID": "1005",
+      "board_name": "משחקי הכנה",
+      "ig_gn": "",
+      "ig_time": "17:00",
+      "ig_place": "בלגרד"
+    },
+    {
+      "game_id": "9896",
+      "ig_date": "13/09/2025",
+      "year_id": "2026",
+      "ig_team_1": "120",
+      "ig_team_2": "240",
+      "team1_name": "מכבי ת&quot;א",
+      "team2_name": "פרטיזן בלגרד",
+      "team1_logo": "https://basket.co.il/pics/2007/logos/bigMaccabi.png",
+      "team2_logo": "https://basket.co.il/pics/2024-2025/2025-2026/KK_Partizan_logo_svg%20copy.png",
+      "ig_score_team_1": "103",
+      "ig_score_team_2": "96",
+      "BOARD_ID": "1005",
+      "board_name": "משחקי הכנה",
+      "ig_gn": "",
+      "ig_time": "20:00",
+      "ig_place": "בלגרד"
+    }
+  ]
+}

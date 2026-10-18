@@ -1,0 +1,2 @@
+player_id,jersey,season,team_id,games,minutes,pts,fg2m,fg2a,fg2_pct,fg3m,fg3a,fg3_pct,ftm,fta,ft_pct,dreb,oreb,reb,fouls_drawn,fouls,steals,turnovers,assists,blocks,blocks_against,val,plus_minus,dunks
+21912,01,2026,1109,20,454.0,195.0,64.0,118.0,\N,5.0,12.0,\N,52.0,63.0,\N,84.0,46.0,130.0,47.0,25.0,13.0,15.0,38.0,9.0,8.0,312.0,194.0,25.0

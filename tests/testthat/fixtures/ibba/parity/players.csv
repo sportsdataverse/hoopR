@@ -1,0 +1,4 @@
+player_id,jersey,season,team_id,player_name_he,player_name,is_replaced,is_local,photo_path,height_m,position_he,position,birth_date
+24865,00,2026,1109,"גבריאל ""איפה"" לונדברג","Gabriel ""Iffe"" Lundberg",false,false,/pics/2025-2026/lund.jpg,1.93,גארד,G,1994-12-04
+21912,01,2026,1109,ג'יילן הורד,Jaylen Hoard,false,false,/pics/2025-2026/hord.jpg,2.03,פורוורד,F,1999-03-30
+21917,02,2026,1109,ג'ימי קלארק,Jimmy Clark III,false,false,/pics/2025-2026/clark.jpg,1.91,גארד,G,2001-04-04
