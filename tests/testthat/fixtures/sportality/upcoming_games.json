@@ -1,0 +1,169 @@
+{
+  "upcomingGames": [
+    {
+      "date": "15 oct",
+      "time": "16:30",
+      "uuid": "c2somb9eh0",
+      "startDateTime": "2026-10-15T16:30:00.000Z",
+      "state": "pre-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "N/A",
+        "uuid": "hip2m60a45",
+        "ownerInstanceId": "hic1_hic",
+        "code": "HIC",
+        "names": {
+          "code": "HIC",
+          "short": "Horsens IC",
+          "long": "Horsens IC",
+          "full": "Horsens IC",
+          "codeSite": "HIC",
+          "shortSite": "Horsens IC",
+          "fullSite": "Horsens IC",
+          "longSite": "Horsens IC"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hic1_hic.svg"
+      },
+      "awayTeamInfo": {
+        "status": "N/A",
+        "uuid": "rfo82vr830",
+        "ownerInstanceId": "hol2_hol",
+        "code": "HOL",
+        "names": {
+          "code": "HOL",
+          "short": "Holbæk-Stenhus",
+          "long": "Holbæk-Stenhus",
+          "full": "Holbæk-Stenhus",
+          "codeSite": "HOL",
+          "shortSite": "Holbæk-Stenhus",
+          "fullSite": "Holbæk-Stenhus",
+          "longSite": "Holbæk-Stenhus"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "venueInfo": {
+        "uuid": "d3mxpsbamb",
+        "name": "Forum Horsens"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    },
+    {
+      "date": "24 oct",
+      "time": "15:00",
+      "uuid": "oj01tktwv7",
+      "startDateTime": "2026-10-24T15:00:00.000Z",
+      "state": "pre-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "N/A",
+        "uuid": "ozojzoejir",
+        "ownerInstanceId": "vbh1_vbh",
+        "code": "VBH",
+        "names": {
+          "code": "VBH",
+          "short": "Værløse Blue Hawks",
+          "long": "Værløse Blue Hawks",
+          "full": "Værløse Blue Hawks",
+          "codeSite": "VBH",
+          "shortSite": "Værløse Blue Hawks",
+          "fullSite": "Værløse Blue Hawks",
+          "longSite": "Værløse Blue Hawks"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/vbh1_vbh.svg"
+      },
+      "awayTeamInfo": {
+        "status": "N/A",
+        "uuid": "rfo82vr830",
+        "ownerInstanceId": "hol2_hol",
+        "code": "HOL",
+        "names": {
+          "code": "HOL",
+          "short": "Holbæk-Stenhus",
+          "long": "Holbæk-Stenhus",
+          "full": "Holbæk-Stenhus",
+          "codeSite": "HOL",
+          "shortSite": "Holbæk-Stenhus",
+          "fullSite": "Holbæk-Stenhus",
+          "longSite": "Holbæk-Stenhus"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "venueInfo": {
+        "uuid": "t54gs7luft",
+        "name": "Søndersøhallen"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    },
+    {
+      "date": "30 oct",
+      "time": "18:00",
+      "uuid": "yt52r1gr0n",
+      "startDateTime": "2026-10-30T18:00:00.000Z",
+      "state": "pre-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "N/A",
+        "uuid": "rfo82vr830",
+        "ownerInstanceId": "hol2_hol",
+        "code": "HOL",
+        "names": {
+          "code": "HOL",
+          "short": "Holbæk-Stenhus",
+          "long": "Holbæk-Stenhus",
+          "full": "Holbæk-Stenhus",
+          "codeSite": "HOL",
+          "shortSite": "Holbæk-Stenhus",
+          "fullSite": "Holbæk-Stenhus",
+          "longSite": "Holbæk-Stenhus"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "awayTeamInfo": {
+        "status": "N/A",
+        "uuid": "ktcu9aaala",
+        "ownerInstanceId": "bak1_bak",
+        "code": "BAK",
+        "names": {
+          "code": "BAK",
+          "short": "Bakken Bears",
+          "long": "Bakken Bears",
+          "full": "Bakken Bears",
+          "codeSite": "BAK",
+          "shortSite": "Bakken Bears",
+          "fullSite": "Bakken Bears",
+          "longSite": "Bakken Bears"
+        },
+        "score": "N/A",
+        "icon": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg"
+      },
+      "venueInfo": {
+        "uuid": "p9omaxwksu",
+        "name": "Holbæk Sportsby"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    }
+  ]
+}

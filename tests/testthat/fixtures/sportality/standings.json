@@ -1,0 +1,151 @@
+{
+  "leagueStandings": [
+    {
+      "Rank": 1,
+      "Team": 0,
+      "GP": 4,
+      "W": 4,
+      "L": 0,
+      "TP": 8,
+      "For": 425,
+      "GA": 250,
+      "PlusMinus": 175,
+      "Strk": "4",
+      "info": {
+        "code": "Team FOG Næstved",
+        "teamId": 22255,
+        "teamInfo": {
+          "teamId": 22255,
+          "teamOwnerInstanceId": "tfn1_tfn",
+          "teamUuid": "iutrlqp3ef",
+          "teamMedia": "https://sportality.cdn.s8y.se/team-logos/tfn1_tfn.svg",
+          "teamNames": {
+            "code": "TFN",
+            "short": "Team FOG Næstved",
+            "long": "Team FOG Næstved",
+            "full": "Team FOG Næstved",
+            "codeSite": "TFN",
+            "shortSite": "Team FOG Næstved",
+            "fullSite": "Team FOG Næstved",
+            "longSite": "Team FOG Næstved"
+          },
+          "siteTeamDisplayName": "Team FOG Næstved",
+          "siteTeamDisplayCode": "Team FOG Næstved",
+          "clubPageLink": "http://teamfog.dk/forside/"
+        }
+      }
+    },
+    {
+      "Rank": 2,
+      "Team": 0,
+      "GP": 4,
+      "W": 4,
+      "L": 0,
+      "TP": 8,
+      "For": 406,
+      "GA": 309,
+      "PlusMinus": 97,
+      "Strk": "4",
+      "info": {
+        "code": "Bakken Bears",
+        "teamId": 22248,
+        "teamInfo": {
+          "teamId": 22248,
+          "teamOwnerInstanceId": "bak1_bak",
+          "teamUuid": "ktcu9aaala",
+          "teamMedia": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg",
+          "teamNames": {
+            "code": "BAK",
+            "short": "Bakken Bears",
+            "long": "Bakken Bears",
+            "full": "Bakken Bears",
+            "codeSite": "BAK",
+            "shortSite": "Bakken Bears",
+            "fullSite": "Bakken Bears",
+            "longSite": "Bakken Bears"
+          },
+          "siteTeamDisplayName": "Bakken Bears",
+          "siteTeamDisplayCode": "Bakken Bears",
+          "clubPageLink": "http://www.bakkenbears.com"
+        }
+      }
+    },
+    {
+      "Rank": 3,
+      "Team": 0,
+      "GP": 5,
+      "W": 4,
+      "L": 1,
+      "TP": 8,
+      "For": 446,
+      "GA": 394,
+      "PlusMinus": 52,
+      "Strk": "4",
+      "info": {
+        "code": "Svendborg Rabbits",
+        "teamId": 22256,
+        "teamInfo": {
+          "teamId": 22256,
+          "teamOwnerInstanceId": "sve1_sve",
+          "teamUuid": "kgmhwo9l5d",
+          "teamMedia": "https://sportality.cdn.s8y.se/team-logos/sve1_sve.svg",
+          "teamNames": {
+            "code": "SVE",
+            "short": "Svendborg Rabbits",
+            "long": "Svendborg Rabbits",
+            "full": "Svendborg Rabbits",
+            "codeSite": "SVE",
+            "shortSite": "Svendborg Rabbits",
+            "fullSite": "Svendborg Rabbits",
+            "longSite": "Svendborg Rabbits"
+          },
+          "siteTeamDisplayName": "Svendborg Rabbits",
+          "siteTeamDisplayCode": "Svendborg Rabbits",
+          "clubPageLink": "http://www.rabbits.dk"
+        }
+      }
+    }
+  ],
+  "dataColumn": [
+    {
+      "key": "position",
+      "shortKey": "Rank",
+      "sortKey": "Rank",
+      "format": "integer",
+      "highlighted": false,
+      "group": "",
+      "homeTeamOnly": false
+    },
+    {
+      "key": "teamCode",
+      "shortKey": "Team",
+      "sortKey": "Team",
+      "format": "string",
+      "highlighted": false,
+      "group": "",
+      "homeTeamOnly": false
+    },
+    {
+      "key": "played",
+      "shortKey": "GP",
+      "sortKey": "GP",
+      "format": "integer",
+      "highlighted": false,
+      "group": "",
+      "homeTeamOnly": false
+    }
+  ],
+  "groupings": [
+    {
+      "description": "Playoff",
+      "first": 1,
+      "last": 6
+    },
+    {
+      "description": "MissedPlayoff",
+      "first": 7,
+      "last": 12
+    }
+  ],
+  "provider": "genius-basketball"
+}

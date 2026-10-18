@@ -1,0 +1,109 @@
+{
+  "homeTeam": {
+    "name": "Holbæk-Stenhus",
+    "logo": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+  },
+  "awayTeam": {
+    "name": "Randers Cimbria",
+    "logo": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg"
+  },
+  "stats": [
+    {
+      "homeTeam": {
+        "sideTranslateKey": "s_2P",
+        "left": {
+          "type": "2PM",
+          "value": 25
+        },
+        "right": {
+          "type": "2PA",
+          "value": 54
+        },
+        "center": {
+          "type": "2PPerc",
+          "value": 46
+        }
+      },
+      "awayTeam": {
+        "sideTranslateKey": "s_2P",
+        "left": {
+          "type": "2PM",
+          "value": 25
+        },
+        "right": {
+          "type": "2PA",
+          "value": 40
+        },
+        "center": {
+          "type": "2PPerc",
+          "value": 63
+        }
+      }
+    },
+    {
+      "homeTeam": {
+        "sideTranslateKey": "s_3P",
+        "left": {
+          "type": "3PM",
+          "value": 5
+        },
+        "right": {
+          "type": "3PA",
+          "value": 22
+        },
+        "center": {
+          "type": "3PPerc",
+          "value": 23
+        }
+      },
+      "awayTeam": {
+        "sideTranslateKey": "s_3P",
+        "left": {
+          "type": "3PM",
+          "value": 10
+        },
+        "right": {
+          "type": "3PA",
+          "value": 24
+        },
+        "center": {
+          "type": "3PPerc",
+          "value": 42
+        }
+      }
+    },
+    {
+      "homeTeam": {
+        "sideTranslateKey": "s_FT",
+        "left": {
+          "type": "FTM",
+          "value": 19
+        },
+        "right": {
+          "type": "FTA",
+          "value": 23
+        },
+        "center": {
+          "type": "FTPerc",
+          "value": 83
+        }
+      },
+      "awayTeam": {
+        "sideTranslateKey": "s_FT",
+        "left": {
+          "type": "FTM",
+          "value": 20
+        },
+        "right": {
+          "type": "FTA",
+          "value": 26
+        },
+        "center": {
+          "type": "FTPerc",
+          "value": 77
+        }
+      }
+    }
+  ],
+  "provider": "genius-basketball"
+}

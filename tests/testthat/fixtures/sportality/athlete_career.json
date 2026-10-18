@@ -1,0 +1,748 @@
+[
+  {
+    "dataColumns": [
+      {
+        "name": "GameType",
+        "type": "integer",
+        "highlighted": false,
+        "group": ""
+      },
+      {
+        "name": "Season",
+        "type": "integer",
+        "highlighted": false,
+        "group": ""
+      },
+      {
+        "name": "Series",
+        "type": "integer",
+        "highlighted": false,
+        "group": ""
+      }
+    ],
+    "defaultSortKey": {
+      "name": "TP",
+      "order": "DESC"
+    },
+    "players": {
+      "1917467": {
+        "type": "athlete",
+        "id": 1917467,
+        "firstName": "Luka",
+        "lastName": "Churchill",
+        "jerseyNumber": 7,
+        "position": "G",
+        "shoots": null,
+        "epUrl": "",
+        "uuid": "dpu0901c0t",
+        "fullName": "Luka Churchill",
+        "dateOfBirth": "<redacted>",
+        "nationality": "DK",
+        "gender": "male",
+        "weight": 90,
+        "height": 197,
+        "playerMedia": {
+          "id": 2473,
+          "mediaString": "image|ramses_sports|player_portrait_184aec4e-1fd7-4f56-8aa7-19be350175f77LukaChurchillPortrt.png",
+          "type": "portrait",
+          "sortOrder": 0
+        },
+        "teamPlayers": {
+          "id": 15496,
+          "active": true,
+          "assistant": false,
+          "captain": false,
+          "defaultJersey": 7,
+          "primaryTeam": true,
+          "sortOrder": null,
+          "loanedFromInstanceId": null,
+          "loanedAt": null,
+          "team": {
+            "uuid": "swr1d65lew",
+            "createdAt": "2026-06-17T11:18:29.000Z",
+            "createdBy": null,
+            "deleted": false,
+            "gender": "male",
+            "graphicsLibrary": null,
+            "lastModified": "2026-08-18T06:41:05.000Z",
+            "nationality": "DK",
+            "ownerInstanceId": "bac1_bac",
+            "ownersite": null,
+            "teamCode": "BAC",
+            "teamInfo": {},
+            "teamNames": {
+              "code": "BAC",
+              "short": "Bears Academy",
+              "long": "Bears Academy",
+              "full": "Bears Academy",
+              "codeSite": "BAC",
+              "shortSite": "Bears Academy",
+              "fullSite": "Bears Academy",
+              "longSite": "Bears Academy"
+            },
+            "sport": [],
+            "teamExtIds": [
+              {
+                "id": 867,
+                "extId": "130088",
+                "locked": false
+              }
+            ],
+            "teamMedia": [],
+            "series": []
+          },
+          "player": {
+            "uuid": "dpu0901c0t",
+            "contactInfo": null,
+            "createdAt": "2026-06-17T12:12:19.000Z",
+            "createdBy": "dbl1_dbl",
+            "creatorSite": null,
+            "height": 197,
+            "dateOfBirth": "<redacted>",
+            "deleted": false,
+            "firstName": "Luka",
+            "gender": "male",
+            "lastModified": "2026-09-21T10:30:05.000Z",
+            "lastName": "Churchill",
+            "longDescription": null,
+            "metadata": [],
+            "nationality": "DK",
+            "shortDescription": null,
+            "shoots": "",
+            "weight": 90,
+            "playerExtIds": [
+              {
+                "id": 82545,
+                "extId": "1917467",
+                "locked": false,
+                "extIdType": {
+                  "uuid": "552a-c2beuydsj",
+                  "code": "genius-basketball",
+                  "createdAt": null,
+                  "createdBy": "dbl1_dbl",
+                  "deleted": false,
+                  "lastModified": null,
+                  "names": [
+                    {
+                      "language": "sv",
+                      "translation": "Genius Sports Basketball"
+                    },
+                    {
+                      "language": "en",
+                      "translation": "Genius Sports Basketball"
+                    }
+                  ],
+                  "visible": true
+                }
+              }
+            ]
+          },
+          "sportPosition": {
+            "uuid": "qbJ-3KChgXSGL",
+            "createdAt": "2022-01-10T04:10:51.000Z",
+            "createdBy": "sbl1_sbl",
+            "deleted": false,
+            "lastModified": "2022-08-18T04:10:51.000Z",
+            "positionCode": "G",
+            "positionNames": [
+              {
+                "language": "sv",
+                "translation": "Guard",
+                "translationPlural": "Guards"
+              }
+            ],
+            "teamPartCode": "G",
+            "teamPartNames": [
+              {
+                "language": "sv",
+                "translation": "Guard",
+                "translationPlural": "Guards"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "provider": "genius-basketball",
+    "seasonSeriesGameTypes": {
+      "iwzc0z7d7f": {
+        "type": "seasonSeriesGameType",
+        "id": "34050_regular",
+        "name": "2022_Basketligaen 2022-23_Regular",
+        "seasonName": "2022/2023",
+        "seriesName": "Basketligaen 2022-23",
+        "gameTypeName": "Regular",
+        "uuid": "iwzc0z7d7f",
+        "active": false,
+        "createdAt": "2026-06-17T12:27:57.000Z",
+        "createdBy": "dbl1_dbl",
+        "defaultForSeries": false,
+        "deleted": false,
+        "lastModified": "2026-09-25T09:56:00.000Z",
+        "names": [
+          {
+            "language": "da",
+            "translation": "Grundspil 2022/23"
+          },
+          {
+            "language": "sv",
+            "translation": "Grundserie 2022/23"
+          }
+        ],
+        "state": "closed",
+        "seasonSeriesGameTypeExtIds": [
+          {
+            "id": 276,
+            "extId": "34050_regular",
+            "locked": true,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "names": [
+                {
+                  "language": "sv",
+                  "translation": "Genius Sports Basketball"
+                },
+                {
+                  "language": "en",
+                  "translation": "Genius Sports Basketball"
+                }
+              ],
+              "visible": true
+            }
+          }
+        ],
+        "gameType": {
+          "uuid": "aprlbjgxlp",
+          "code": "regular",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "da",
+              "translation": "Grundspil"
+            },
+            {
+              "language": "sv",
+              "translation": "Seriematch"
+            }
+          ]
+        },
+        "season": {
+          "uuid": "lbi799ptgn",
+          "code": "2022",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "sv",
+              "translation": "2022/2023"
+            }
+          ]
+        },
+        "series": {
+          "uuid": "m1ay3mpa4t",
+          "code": "DBL",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": "2026-07-01T07:38:11.000Z",
+          "names": [
+            {
+              "language": "da",
+              "translation": "Basketligaen"
+            },
+            {
+              "language": "sv",
+              "translation": "Basketligaen"
+            },
+            {
+              "language": "display",
+              "translation": "Basketligaen"
+            }
+          ]
+        }
+      },
+      "xb0jh5c4s9": {
+        "type": "seasonSeriesGameType",
+        "id": "36439_regular",
+        "name": "2023_Basketligaen 2023-2024_Regular",
+        "seasonName": "2023/2024",
+        "seriesName": "Basketligaen 2023-2024",
+        "gameTypeName": "Regular",
+        "uuid": "xb0jh5c4s9",
+        "active": false,
+        "createdAt": "2026-06-17T12:22:51.000Z",
+        "createdBy": "dbl1_dbl",
+        "defaultForSeries": false,
+        "deleted": false,
+        "lastModified": "2026-09-25T09:55:51.000Z",
+        "names": [
+          {
+            "language": "da",
+            "translation": "Grundspil 2023/24"
+          },
+          {
+            "language": "sv",
+            "translation": "Grundserie 2023/24"
+          }
+        ],
+        "state": "closed",
+        "seasonSeriesGameTypeExtIds": [
+          {
+            "id": 274,
+            "extId": "36439_regular",
+            "locked": true,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "names": [
+                {
+                  "language": "sv",
+                  "translation": "Genius Sports Basketball"
+                },
+                {
+                  "language": "en",
+                  "translation": "Genius Sports Basketball"
+                }
+              ],
+              "visible": true
+            }
+          }
+        ],
+        "gameType": {
+          "uuid": "aprlbjgxlp",
+          "code": "regular",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "da",
+              "translation": "Grundspil"
+            },
+            {
+              "language": "sv",
+              "translation": "Seriematch"
+            }
+          ]
+        },
+        "season": {
+          "uuid": "kh3bu2clwh",
+          "code": "2023",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "sv",
+              "translation": "2023/2024"
+            }
+          ]
+        },
+        "series": {
+          "uuid": "m1ay3mpa4t",
+          "code": "DBL",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": "2026-07-01T07:38:11.000Z",
+          "names": [
+            {
+              "language": "da",
+              "translation": "Basketligaen"
+            },
+            {
+              "language": "sv",
+              "translation": "Basketligaen"
+            },
+            {
+              "language": "display",
+              "translation": "Basketligaen"
+            }
+          ]
+        }
+      },
+      "m8izm7whkk": {
+        "type": "seasonSeriesGameType",
+        "id": "39080_regular",
+        "name": "2024_Basketligaen 2024-25_Regular",
+        "seasonName": "2024/2025",
+        "seriesName": "Basketligaen 2024-25",
+        "gameTypeName": "Regular",
+        "uuid": "m8izm7whkk",
+        "active": false,
+        "createdAt": "2026-06-17T12:20:11.000Z",
+        "createdBy": "dbl1_dbl",
+        "defaultForSeries": false,
+        "deleted": false,
+        "lastModified": "2026-09-25T09:56:16.000Z",
+        "names": [
+          {
+            "language": "da",
+            "translation": "Grundspil 2024/25"
+          },
+          {
+            "language": "sv",
+            "translation": "Grundserie 2024/25"
+          }
+        ],
+        "state": "closed",
+        "seasonSeriesGameTypeExtIds": [
+          {
+            "id": 272,
+            "extId": "39080_regular",
+            "locked": true,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "names": [
+                {
+                  "language": "sv",
+                  "translation": "Genius Sports Basketball"
+                },
+                {
+                  "language": "en",
+                  "translation": "Genius Sports Basketball"
+                }
+              ],
+              "visible": true
+            }
+          }
+        ],
+        "gameType": {
+          "uuid": "aprlbjgxlp",
+          "code": "regular",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "da",
+              "translation": "Grundspil"
+            },
+            {
+              "language": "sv",
+              "translation": "Seriematch"
+            }
+          ]
+        },
+        "season": {
+          "uuid": "df8tvo9vtv",
+          "code": "2024",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "sv",
+              "translation": "2024/2025"
+            }
+          ]
+        },
+        "series": {
+          "uuid": "m1ay3mpa4t",
+          "code": "DBL",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": "2026-07-01T07:38:11.000Z",
+          "names": [
+            {
+              "language": "da",
+              "translation": "Basketligaen"
+            },
+            {
+              "language": "sv",
+              "translation": "Basketligaen"
+            },
+            {
+              "language": "display",
+              "translation": "Basketligaen"
+            }
+          ]
+        }
+      }
+    },
+    "stats": [
+      {
+        "GameType": 0,
+        "Season": 0,
+        "Series": 0,
+        "Team": 0,
+        "G": 1,
+        "GPS": 0,
+        "MPG": "2.0",
+        "PPG": 0,
+        "DRPG": 0,
+        "ORPG": 0,
+        "RPG": 0,
+        "APG": 0,
+        "STPG": 0,
+        "BLKPG": 0,
+        "PFPG": 0,
+        "2PPerc": 0,
+        "3PM": 0,
+        "3PA": "100.00",
+        "3PPerc": 0,
+        "FTPerc": 0,
+        "TOPG": "1.0",
+        "+/-PG": -2,
+        "info": {
+          "uuid": "dpu0901c0t",
+          "fullName": "Luka Churchill",
+          "firstName": "Luka",
+          "lastName": "Churchill",
+          "birthDate": "<redacted>",
+          "nationality": "DK",
+          "gender": "male",
+          "age": {
+            "value": 19,
+            "format": "years"
+          },
+          "weight": {
+            "value": 90,
+            "format": "kg"
+          },
+          "height": {
+            "value": 197,
+            "format": "cm"
+          },
+          "jerseyNumber": "N/A",
+          "position": "N/A",
+          "positionCode": "N/A",
+          "shoots": "-",
+          "team": {
+            "uuid": "swr1d65lew",
+            "instanceId": "bac1_bac",
+            "name": "Bears Academy",
+            "code": "BAC"
+          },
+          "seasonStats": [],
+          "careerStats": [],
+          "statisticsProvider": "genius-basketball",
+          "isInSquad": true,
+          "playerId": 1917467,
+          "ssgtUuid": "iwzc0z7d7f",
+          "teamId": "BAC"
+        }
+      },
+      {
+        "GameType": 0,
+        "Season": 0,
+        "Series": 0,
+        "Team": 0,
+        "G": 1,
+        "GPS": 0,
+        "MPG": "9.3",
+        "PPG": "4.0",
+        "DRPG": 0,
+        "ORPG": 0,
+        "RPG": 0,
+        "APG": 0,
+        "STPG": "1.0",
+        "BLKPG": 0,
+        "PFPG": "1.0",
+        "2PPerc": "50.00",
+        "3PM": 0,
+        "3PA": 0,
+        "3PPerc": 0,
+        "FTPerc": "100.00",
+        "TOPG": 0,
+        "+/-PG": 0,
+        "info": {
+          "uuid": "dpu0901c0t",
+          "fullName": "Luka Churchill",
+          "firstName": "Luka",
+          "lastName": "Churchill",
+          "birthDate": "<redacted>",
+          "nationality": "DK",
+          "gender": "male",
+          "age": {
+            "value": 19,
+            "format": "years"
+          },
+          "weight": {
+            "value": 90,
+            "format": "kg"
+          },
+          "height": {
+            "value": 197,
+            "format": "cm"
+          },
+          "jerseyNumber": "N/A",
+          "position": "N/A",
+          "positionCode": "N/A",
+          "shoots": "-",
+          "team": {
+            "uuid": "swr1d65lew",
+            "instanceId": "bac1_bac",
+            "name": "Bears Academy",
+            "code": "BAC"
+          },
+          "seasonStats": [],
+          "careerStats": [],
+          "statisticsProvider": "genius-basketball",
+          "isInSquad": true,
+          "playerId": 1917467,
+          "ssgtUuid": "xb0jh5c4s9",
+          "teamId": "BAC"
+        }
+      },
+      {
+        "GameType": 0,
+        "Season": 0,
+        "Series": 0,
+        "Team": 0,
+        "G": 2,
+        "GPS": 0,
+        "MPG": "8.6",
+        "PPG": "3.0",
+        "DRPG": "1.0",
+        "ORPG": 0,
+        "RPG": "1.0",
+        "APG": "1.0",
+        "STPG": 0,
+        "BLKPG": 0,
+        "PFPG": 0,
+        "2PPerc": "42.86",
+        "3PM": 0,
+        "3PA": "3.00",
+        "3PPerc": 0,
+        "FTPerc": 0,
+        "TOPG": "0.5",
+        "+/-PG": -9,
+        "info": {
+          "uuid": "dpu0901c0t",
+          "fullName": "Luka Churchill",
+          "firstName": "Luka",
+          "lastName": "Churchill",
+          "birthDate": "<redacted>",
+          "nationality": "DK",
+          "gender": "male",
+          "age": {
+            "value": 19,
+            "format": "years"
+          },
+          "weight": {
+            "value": 90,
+            "format": "kg"
+          },
+          "height": {
+            "value": 197,
+            "format": "cm"
+          },
+          "jerseyNumber": "N/A",
+          "position": "N/A",
+          "positionCode": "N/A",
+          "shoots": "-",
+          "team": {
+            "uuid": "swr1d65lew",
+            "instanceId": "bac1_bac",
+            "name": "Bears Academy",
+            "code": "BAC"
+          },
+          "seasonStats": [],
+          "careerStats": [],
+          "statisticsProvider": "genius-basketball",
+          "isInSquad": true,
+          "playerId": 1917467,
+          "ssgtUuid": "m8izm7whkk",
+          "teamId": "BAC"
+        }
+      }
+    ],
+    "teams": {
+      "BAC": {
+        "type": "team",
+        "id": "130088",
+        "name": "Bears Academy",
+        "uuid": "swr1d65lew",
+        "createdAt": "2026-06-17T11:18:29.000Z",
+        "createdBy": null,
+        "deleted": false,
+        "gender": "male",
+        "graphicsLibrary": null,
+        "lastModified": "2026-08-18T06:41:05.000Z",
+        "nationality": "DK",
+        "ownerInstanceId": "bac1_bac",
+        "ownersite": null,
+        "teamCode": "BAC",
+        "series": [],
+        "sport": [],
+        "teamMedia": "https://sportality.cdn.s8y.se/team-logos/bac1_bac.svg",
+        "teamNames": {
+          "code": "BAC",
+          "short": "Bears Academy",
+          "long": "Bears Academy",
+          "full": "Bears Academy",
+          "codeSite": "BAC",
+          "shortSite": "Bears Academy",
+          "fullSite": "Bears Academy",
+          "longSite": "Bears Academy"
+        },
+        "clubName": {},
+        "teamInfo": {},
+        "teamExtIds": [
+          {
+            "id": 867,
+            "extId": "130088",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "extIds": [
+          {
+            "id": 867,
+            "extId": "130088",
+            "locked": false,
+            "extIdType": {
+              "uuid": "552a-c2beuydsj",
+              "code": "genius-basketball",
+              "createdAt": null,
+              "createdBy": "dbl1_dbl",
+              "deleted": false,
+              "lastModified": null,
+              "visible": true,
+              "name": "Genius Sports Basketball"
+            }
+          }
+        ],
+        "logo": "https://sportality.cdn.s8y.se/team-logos/bac1_bac.svg",
+        "socialMedia": [],
+        "displayName": ""
+      }
+    },
+    "totalCount": 6,
+    "type": "athlete_single"
+  }
+]
