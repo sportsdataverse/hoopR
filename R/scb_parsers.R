@@ -128,7 +128,8 @@
 }
 
 #' A list of strings as "a,b"; a string as it is. A list of objects (the `tvChannel` objects of
-#' /games/recent and /games/{gameId}) joins their `name`s.
+#' /games/recent and /games/{gameId}) joins their `name`s. A null entry (or a null `name`) is skipped,
+#' where sdv-py joins it as "None"; nothing left is NULL.
 #'
 #' Deliberate divergence: sdv-py e3d232e joins Python `str(dict)` reprs there
 #' ("{'channelId': 4, 'name': 'DYN', ...}"), against its own column description
@@ -138,9 +139,10 @@
   if (.scb_is_array(v)) {
     one <- function(x) {
       if (.scb_is_dict(x)) x <- x[["name"]]
-      if (is.null(x)) "None" else as.character(x)[[1]]
+      if (is.null(x)) NA_character_ else as.character(x)[[1]]
     }
-    out <- paste(vapply(v, one, character(1)), collapse = ",")
+    parts <- vapply(v, one, character(1))
+    out <- paste(parts[!is.na(parts)], collapse = ",")
     return(if (nzchar(out)) out else NULL)
   }
   .scb_s(v)

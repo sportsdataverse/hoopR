@@ -4,6 +4,15 @@ Copied from sdv-py `tests/fixtures/feb/` at sdv-py `origin/main`
 `e3d232ebc9bf9e9f98225666a67707b8e554f9b7` (provenance of the bodies themselves:
 that directory's README).
 
+Captured: the game bodies (game 2535725 and the overview of its day) were fetched 2026-10-12 with the public site
+token; `KeyFacts_2171130.json` (and, in wehoop, `lf/`) are sdv-internal-refs captures of 2026-10-12 (refs commit
+`38e5cf0`); the cut-down schedule pages carry no fetch stamp and were committed to sdv-py on 2026-10-13
+(`4636718a57`).
+
+`parity/dtypes.json` is sdv-py's polars dtype per column of each parity frame, from the same fixtures:
+sdv-py e3d232ebc9 (`PYTHONPATH` set to a detached worktree of it) run with `/mnt/sdv_repos/sdv-py/.venv/bin/python`
+by a generator kept outside the repo (the parsers on the stamped bodies, as below). The test asserts each R column's class against it.
+
 | File here | sdv-py source | What |
 |---|---|---|
 | `BoxScore.json`, `KeyFacts.json.gz`, `Ranking.json`, `ShotChart.json`, `TeamStats.json`, `overview.json` | `full/` | Full bodies of game 2535725 (Primera FEB 2026-27) and that day's `/overview` |

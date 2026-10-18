@@ -29,3 +29,27 @@ skip_if_no_intl_fixtures <- function(dir) {
   testthat::skip_if_not(dir.exists(testthat::test_path("fixtures", dir)),
                         paste0("tests/testthat/fixtures/", dir, " is not in the built tarball (.Rbuildignore)"))
 }
+
+# polars write_csv writes a null as an empty field and "" as a quoted empty field: read a parity CSV (every
+# column character) keeping the two apart. A writer that never quotes "" (feb, bleague) cannot tell them apart.
+intl_read_oracle <- function(path) {
+  con <- if (grepl("\\.gz$", path)) gzfile(path, "rb") else file(path, "rb")
+  on.exit(close(con))
+  lines <- readLines(con, encoding = "UTF-8", warn = FALSE)
+  marked <- gsub('(^|,)""(?=,|$)', "\\1\"\001\"", lines, perl = TRUE)
+  want <- utils::read.csv(text = marked, colClasses = "character", na.strings = "", check.names = FALSE,
+                          encoding = "UTF-8")
+  want[] <- lapply(want, function(x) ifelse(!is.na(x) & x == "\001", "", x))
+  want
+}
+
+# Each column's R class against sdv-py's polars dtypes (one frame of a parity dtypes.json, read with
+# jsonlite::read_json): Int64 integer, Float64 numeric, String character, Boolean logical, Date Date,
+# Datetime POSIXct. An unmapped dtype is an error.
+intl_oracle_types <- function(dtypes) {
+  map <- c(Int64 = "integer", Float64 = "numeric", String = "character", Boolean = "logical", Date = "Date")
+  vapply(dtypes, function(t) if (startsWith(t, "Datetime")) "POSIXct" else map[[t]], "")
+}
+intl_r_types <- function(df) {
+  vapply(df, function(x) if (is.double(x) && !inherits(x, c("Date", "POSIXct"))) "numeric" else class(x)[[1]], "")
+}

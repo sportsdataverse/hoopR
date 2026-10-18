@@ -158,6 +158,7 @@
 #' An integer from an int, an integral double or a digit string; NA otherwise (logicals too).
 #' @noRd
 .genius_int <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.genius_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.double(v)) return(if (v == trunc(v) && abs(v) <= .Machine$integer.max) as.integer(v) else NA_integer_)
@@ -166,6 +167,7 @@
 }
 
 .genius_num <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.genius_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v)) return(suppressWarnings(as.double(trimws(v))))
@@ -177,6 +179,8 @@
 .genius_str <- function(v) {
   if (!.genius_scalar(v)) return(NA_character_)
   if (is.logical(v)) return(if (v) "True" else "False")
+  # jsonlite reads a JSON integer past 2^31 as a double: Python str() of that int has no ".0"
+  if (is.double(v) && v == trunc(v) && abs(v) >= 2^31 && abs(v) < 1e16) return(format(v, scientific = FALSE))
   if (is.double(v) && v == trunc(v) && abs(v) < 1e16) return(paste0(format(v, scientific = FALSE), ".0"))
   as.character(v)
 }
@@ -190,6 +194,7 @@
 #' "35:08" -> 2108; an integer or other text -> NA.
 #' @noRd
 .genius_seconds <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.genius_scalar(v) || !is.character(v)) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*(\\d+):(\\d{1,2})\\s*$", v, perl = TRUE))[[1]]
   if (!length(m)) return(NA_integer_)
@@ -232,12 +237,15 @@
   if (!.genius_game_ok(raw)) return(.genius_frame(list(), "game"))
   tm <- raw[["tm"]]
   off <- if (.genius_is_dict(raw[["officials"]])) raw[["officials"]] else list()
-  py_str <- function(v) if (is.null(v)) "None" else .genius_str(v)
   person <- function(role, flat) {
     node <- off[[role]]
     if (!.genius_is_dict(node)) return(.genius_str(raw[[flat]]))
     first <- node[["internationalFirstName"]]
-    if (.genius_truthy(first)) return(paste(py_str(first), py_str(node[["internationalFamilyName"]])))
+    if (.genius_truthy(first)) {
+      # sdv-py's f-string writes a null family name as "None"; a null part is skipped here
+      parts <- vapply(list(first, node[["internationalFamilyName"]]), .genius_str, "")
+      return(paste(parts[!is.na(parts)], collapse = " "))
+    }
     s <- .genius_str(first)
     if (.genius_truthy(s)) s else .genius_str(node[["name"]])
   }
@@ -319,7 +327,9 @@
     if (!.genius_is_dict(r)) next
     q <- r[["qualifier"]]
     qual <- if (.genius_is_array(q)) {
-      paste(vapply(q, function(x) if (is.null(x)) "None" else .genius_str(x), ""), collapse = ",")
+      # a null code is skipped (sdv-py joins it as "None"); an empty list joins to "" as in sdv-py
+      codes <- vapply(q, .genius_str, "")
+      paste(codes[!is.na(codes)], collapse = ",")
     } else if (.genius_truthy(q)) q else NULL
     rows[[length(rows) + 1L]] <- list(
       match_id = mid, row_index = i - 1L, action_number = r[["actionNumber"]],

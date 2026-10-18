@@ -67,6 +67,8 @@
   }
   if (is.logical(v)) return(if (isTRUE(v)) "True" else "False")
   if (is.double(v)) {
+    # jsonlite reads a JSON integer past 2^31 as a double: Python str() of that int has no ".0"
+    if (is.finite(v) && v == trunc(v) && abs(v) >= 2^31 && abs(v) < 1e16) return(.cba_num_text(v))
     if (is.finite(v) && v == trunc(v) && abs(v) < 1e16) return(paste0(.cba_num_text(v), ".0"))
     for (d in 15:17) {
       s <- sprintf("%.*g", d, v)

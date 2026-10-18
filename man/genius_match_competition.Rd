@@ -24,7 +24,7 @@ an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular
    comp_id \tab integer \tab Competition id from the hidden input #compId. Genius competition id (compId): one per org competition-season; the \{compId\} of hosted and data/competition paths. The way to map a data.json game to its competition and season \cr
    competition_name \tab character \tab Competition label from #competitionName, free text ('Stoiximan GBL 2026-2027'); carries the season only when the org writes it in \cr
    org_label \tab character \tab First item of og:description: the org's display code (ESAKE) \cr
-   og_description \tab character \tab The page's og:description: '\if{html}{\out{<ORG>}} , \if{html}{\out{<competition>}}, Check out the full statistics here' \cr
+   og_description \tab character \tab The page's og:description: \verb{<ORG> , <competition>, Check out the full statistics here} \cr
    org \tab character \tab ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). \cr
 }
 }

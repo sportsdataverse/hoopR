@@ -21,3 +21,8 @@ directories' READMEs). Files over 8 KB are gzipped (`gzip -n -9`), otherwise byt
   arguments, the row count, the polars dtypes and every request it sent (URL and query); the `_verified` cases
   (`gid` passed to a vendor wrapper) share the unverified case's CSV. Generated with
   `/mnt/sdv_repos/sdv-py/.venv/bin/python` over a worktree of sdv-py e3d232e; the generator lives outside the repo.
+
+Known divergence: `action_en` of `pleague_pbp` free-throw rows. sdv-py e3d232e maps the action code through a
+dict that keeps the last phrase per code, so every free throw reads "free throw 1 of 3 awarded, ..." (an sdv-py
+bug); hoopR reads each row's own phrase (see `.pleague_action_en()` in `R/pleague_utils.R`). The parity test
+checks those rows against the text derived from `ft_number` / `ft_awarded`.

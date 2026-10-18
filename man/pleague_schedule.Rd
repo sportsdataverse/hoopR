@@ -7,8 +7,8 @@
 pleague_schedule(season, stage = "regular-season")
 }
 \arguments{
-\item{season}{Required. Season END year (2025 = the site's slug '2024-25'). The slug is '<season - 1>-\if{html}{\out{<the last
-two digits of season>}}'. The first season is 2020-21 (\code{season=2021}); earlier slugs redirect.}
+\item{season}{Required. Season END year (2025 = the site's slug '2024-25'). The slug is \verb{<season - 1>-<yy>} (yy: the last
+two digits of season). The first season is 2020-21 (\code{season=2021}); earlier slugs redirect.}
 
 \item{stage}{Stage: pre-season ((Chinese text), exhibition games), regular-season ((Chinese text)), playoffs
 ((Chinese text)) or finals ((Chinese text)). A stage a season does not have (2025-26 pre-season) answers

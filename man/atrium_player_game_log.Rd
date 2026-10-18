@@ -43,7 +43,7 @@ A \code{hoopR_data} tibble, one row per game:\tabular{lll}{
    website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
    person_id \tab character \tab Player UUID (person), shared across seasons and sites. \cr
    season_id \tab character \tab Season UUID the log is for (the season asked, else the site's default). \cr
-   date \tab POSIXct \tab Local start of the game, naive datetime (no offset; zone not given). \cr
+   date \tab character \tab Local start of the game as the API sends it (\code{YYYY-MM-DDTHH:MM:SS}, no offset; the zone is not given): the field the ribbon's start_time_local reads. \cr
    opponent_entity_id \tab character \tab Team UUID of the opponent. \cr
    opponent_name \tab character \tab Name of the opponent. \cr
    result \tab character \tab Result for the player's team: W or L. \cr

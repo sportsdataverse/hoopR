@@ -76,7 +76,10 @@ never return an empty frame.
 }
 \examples{
 \donttest{
-  try(sportality_post_game_team_stats(away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830", ssgt_uuid = "xs07bd3fmp"))
+  try(sportality_post_game_team_stats(
+    away_team_uuid = "gvvuxe9ysw", game_uuid = "c4hh5nig6t", home_team_uuid = "rfo82vr830",
+    ssgt_uuid = "xs07bd3fmp"
+  ))
 }
 }
 \seealso{

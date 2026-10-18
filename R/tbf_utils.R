@@ -622,6 +622,7 @@
 
 # an id / count from an integer, an integral double or a digit string (never via a float string)
 .tbf_i <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.tbf_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.double(v)) return(if (is.finite(v) && v == trunc(v)) as.integer(v) else NA_integer_)
@@ -631,6 +632,7 @@
 
 # a number from a number or a decimal string ("47.62", "71.4%", "3,5")
 .tbf_f <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.tbf_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v) && grepl("^\\s*[+-]?[0-9]+(?:[.,][0-9]+)?%?\\s*$", v, perl = TRUE)) {
@@ -670,6 +672,7 @@
 
 # "25:19" -> 1519 s; "01:25:20" -> 5120 s
 .tbf_clock <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!(is.character(v) && .tbf_scalar(v))) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*(?:([0-9]+):)?([0-9]+):([0-9]{2})\\s*$", v, perl = TRUE))[[1]]
   if (!length(m)) return(NA_integer_)
@@ -679,6 +682,7 @@
 
 # season label "2026-2027" -> its END year 2027
 .tbf_end_year <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!(is.character(v) && .tbf_scalar(v))) return(NA_integer_)
   m <- regmatches(v, regexec("([0-9]{4})\\s*-\\s*([0-9]{4})\\s*$", v, perl = TRUE))[[1]]
   if (length(m)) as.integer(m[3]) else NA_integer_
@@ -688,6 +692,7 @@
 
 # the home (1) or away (2) half of a running score "34-30"
 .tbf_score <- function(v, idx) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!(is.character(v) && .tbf_scalar(v))) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*([0-9]+)\\s*-\\s*([0-9]+)\\s*$", v, perl = TRUE))[[1]]
   if (length(m)) as.integer(m[idx + 1L]) else NA_integer_

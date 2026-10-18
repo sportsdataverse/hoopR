@@ -82,7 +82,7 @@ v2_site <- function(text = V2_TEXT) bleague_handler(list(`v2_genius_contexts/504
 bleague_mismatches <- function(df, set, short) {
   path <- bleague_fx("parity", set, paste0(short, ".csv"))
   if (!file.exists(path)) path <- paste0(path, ".gz") # read.csv reads gzip transparently
-  csv <- utils::read.csv(path, colClasses = "character", na.strings = "", encoding = "UTF-8", check.names = FALSE)
+  csv <- intl_read_oracle(path)
   expect_identical(names(df), names(csv))
   expect_identical(nrow(df), nrow(csv))
   sum(vapply(names(csv), function(col) {
@@ -364,3 +364,5 @@ test_that("B.LEAGUE live: standings and one finished game", {
   expect_identical(info$schedule_key, 504734L)
   expect_identical(info$feed, "v2")
 })
+
+test_that("full-width digits read as ASCII", expect_identical(c(.bleague_i("\uff11\uff12"), .bleague_mmss("\uff11\uff12:\uff10\uff15")), c(12L, 725L)))

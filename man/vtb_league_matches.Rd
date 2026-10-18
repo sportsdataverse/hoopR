@@ -64,7 +64,7 @@ The columns are always these, in this order (sdv-py \code{vtb_league_matches}); 
    subtitle_ru \tab character \tab The site subtitle of the match in Russian. \cr
    necessary_label_en \tab character \tab The site label of the match in English. \cr
    necessary_label_ru \tab character \tab The site label of the match in Russian. \cr
-   points_by_quarters \tab character \tab Points per period as \link{home, away} pairs; null before the game. The home team (isHomeCompetitor true) is listed first in \code{competitors} on every probed row (vtb seasons 2025 and 2026, wbc 2026: 620 of 620), and the first value of each pair summed to that team's score on every finished one. \cr
+   points_by_quarters \tab character \tab Points per period as \verb{[home, away]} pairs; null before the game. The home team (isHomeCompetitor true) is listed first in \code{competitors} on every probed row (vtb seasons 2025 and 2026, wbc 2026: 620 of 620), and the first value of each pair summed to that team's score on every finished one. \cr
    home_q1 \tab integer \tab Points of the home team in period 1. \cr
    away_q1 \tab integer \tab Points of the away team in period 1. \cr
    home_q2 \tab integer \tab Points of the home team in period 2. \cr

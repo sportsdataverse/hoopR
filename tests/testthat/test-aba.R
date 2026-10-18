@@ -88,8 +88,7 @@ test_that("every route matches the sdv-py frame on the same fixture (parity)", {
   for (name in names(aba_manifest)) {
     c <- aba_manifest[[name]]
     got <- hoopR:::.aba_parse(c$short, aba_case_raw(c))
-    want <- utils::read.csv(aba_fx("parity", paste0(name, ".csv")), colClasses = "character", na.strings = "",
-                            encoding = "UTF-8", check.names = FALSE)
+    want <- intl_read_oracle(aba_fx("parity", paste0(name, ".csv")))
     expect_identical(names(got), names(want), info = name)
     expect_identical(nrow(got), nrow(want), info = name)
     expect_identical(nrow(got), as.integer(c$rows), info = name)

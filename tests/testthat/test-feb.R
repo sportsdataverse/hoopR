@@ -3,6 +3,7 @@
 # wrapper runs end to end: token fetch, envelope validation, HTML parsing, casts.
 
 feb_fx <- function(...) testthat::test_path("fixtures", "feb", ...)
+feb_dtypes <- jsonlite::read_json(feb_fx("parity", "dtypes.json"))
 
 feb_read <- function(name) {
   path <- feb_fx(name)
@@ -81,9 +82,9 @@ feb_page_handler <- function(page, final) {
 feb_mismatches <- function(df, name) {
   path <- feb_fx("parity", paste0(name, ".csv"))
   if (!file.exists(path)) path <- paste0(path, ".gz") # read.csv reads gzip transparently
-  csv <- utils::read.csv(path, colClasses = "character", na.strings = "",
-                         encoding = "UTF-8", check.names = FALSE)
+  csv <- intl_read_oracle(path)
   expect_identical(names(df), names(csv))
+  expect_identical(intl_r_types(df), intl_oracle_types(feb_dtypes[[name]]), label = name) # sdv-py's dtypes
   expect_identical(nrow(df), nrow(csv))
   sum(vapply(names(csv), function(col) {
     r <- df[[col]]
@@ -172,6 +173,14 @@ test_that("FEB schedule pages match sdv-py and map the END-year season to the si
 })
 
 # --- empty payloads ---------------------------------------------------------------------------
+
+test_that("FEB overview skips a quarter without both scores, never writing Python's \"None-None\"", {
+  q <- list(list(scoreA = 16L, scoreB = 14L), list(scoreA = 3L, scoreB = NULL), list(scoreA = NULL, scoreB = NULL))
+  raw <- list(OVERVIEW = list(COMPETITIONS = list(list(GAMES = list(list(ID = 1L, Quarters = q))))))
+  expect_identical(.feb_parse_overview(raw)$period_scores, "16-14")
+  raw$OVERVIEW$COMPETITIONS[[1]]$GAMES[[1]]$Quarters <- q[3]
+  expect_true(is.na(.feb_parse_overview(raw)$period_scores))
+})
 
 test_that("FEB parsers give a typed zero-row frame on an empty or malformed payload", {
   parsers <- list(

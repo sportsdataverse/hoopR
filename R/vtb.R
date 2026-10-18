@@ -2469,7 +2469,7 @@ vtb_league_seasons <- function(league_slug) {
 #' | subtitle_ru | character | The site subtitle of the match in Russian. |
 #' | necessary_label_en | character | The site label of the match in English. |
 #' | necessary_label_ru | character | The site label of the match in Russian. |
-#' | points_by_quarters | character | Points per period as [home, away] pairs; null before the game. The home team (isHomeCompetitor true) is listed first in `competitors` on every probed row (vtb seasons 2025 and 2026, wbc 2026: 620 of 620), and the first value of each pair summed to that team's score on every finished one. |
+#' | points_by_quarters | character | Points per period as `[home, away]` pairs; null before the game. The home team (isHomeCompetitor true) is listed first in `competitors` on every probed row (vtb seasons 2025 and 2026, wbc 2026: 620 of 620), and the first value of each pair summed to that team's score on every finished one. |
 #' | home_q1 | integer | Points of the home team in period 1. |
 #' | away_q1 | integer | Points of the away team in period 1. |
 #' | home_q2 | integer | Points of the home team in period 2. |

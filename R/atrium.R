@@ -630,7 +630,9 @@ atrium_shots <- function(website_id, fixture_id, locale = NULL) {
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_standings(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_standings(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_standings <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                              round_number = NULL, locale = NULL) {
@@ -722,7 +724,9 @@ atrium_standings_summary <- function(website_id, season = NULL, season_id = NULL
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_teams(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_teams(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_teams <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -831,7 +835,9 @@ atrium_team <- function(website_id, entity_id, season = NULL, season_id = NULL, 
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_players(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_players(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_players <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                            entity_id = NULL, locale = NULL) {
@@ -956,7 +962,7 @@ atrium_player_seasons <- function(website_id, person_id, season = NULL, season_i
 #' | website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
 #' | person_id | character | Player UUID (person), shared across seasons and sites. |
 #' | season_id | character | Season UUID the log is for (the season asked, else the site's default). |
-#' | date | POSIXct | Local start of the game, naive datetime (no offset; zone not given). |
+#' | date | character | Local start of the game as the API sends it (`YYYY-MM-DDTHH:MM:SS`, no offset; the zone is not given): the field the ribbon's start_time_local reads. |
 #' | opponent_entity_id | character | Team UUID of the opponent. |
 #' | opponent_name | character | Name of the opponent. |
 #' | result | character | Result for the player's team: W or L. |
@@ -1040,7 +1046,9 @@ atrium_player_game_log <- function(website_id, person_id, season = NULL, season_
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_leaders(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_leaders(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                            entity_id = NULL, locale = NULL) {
@@ -1086,7 +1094,9 @@ atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competit
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_player_stats(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_player_stats(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_player_stats <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1125,7 +1135,9 @@ atrium_player_stats <- function(website_id, season = NULL, season_id = NULL, com
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_team_stats(website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_team_stats(
+#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_team_stats <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1167,7 +1179,9 @@ atrium_team_stats <- function(website_id, season = NULL, season_id = NULL, compe
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_competition_player_stats(website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_competition_player_stats(
+#'     website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_competition_player_stats <- function(website_id, competition_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1205,7 +1219,9 @@ atrium_competition_player_stats <- function(website_id, competition_id, locale =
 #' @export
 #' @examples
 #' \donttest{
-#'   try(atrium_competition_team_stats(website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
+#'   try(atrium_competition_team_stats(
+#'     website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+#'   ))
 #' }
 atrium_competition_team_stats <- function(website_id, competition_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))

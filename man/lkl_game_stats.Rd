@@ -23,11 +23,11 @@ with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
    stat \tab character \tab English code for the site's Lithuanian label (field_goals, two_pointers, three_pointers, free_throws, rebounds, assists, steals, blocks, turnovers, fouls, points, ...); null for a label this package does not know. \cr
    label \tab character \tab Row label in LITHUANIAN: 'Metimai is zaidimo' = field goals, 'Dvitaskiai metimai' = 2PT, 'Tritaskiai metimai' = 3PT, 'Baudu metimai' = free throws, 'Atkovoti kamuoliai' = rebounds, 'Atkovoti kamuoliai gynyboje' = defensive rebounds, 'Atkovoti kamuoliai puolime' = offensive rebounds, 'Rezultatyvus perdavimai' = assists, 'Perimti kamuoliai' = steals, 'Blokai' = blocks, 'Klaidos' = turnovers, 'Prazangos' = fouls, 'Taskai' = points, 'Taskai po klaidu' = points off turnovers, 'Taskai greitose atakose' = fast-break points, 'Taskai antru bandymu' = second-chance points, 'Atsarginiu zaideju taskai' = bench points. \cr
    home_value \tab character \tab Shooting rows: 'made/attempted' string ('25/35'); counting rows: integer. \cr
-   home_percentage \tab double \tab Shooting rows only (absent on counting rows): percentage with ONE decimal and a \\% sign ('71.4\\%'). \cr
+   home_percentage \tab double \tab Shooting rows only (absent on counting rows): percentage with ONE decimal and a \% sign ('71.4\%'). \cr
    home_graph_length \tab double \tab Bar length in percent: shooting rows = the percentage as a string ('71.4'); counting rows = this side's share of the two values, 0-100, a number (43 vs 37 -> 53.75). \cr
    home_winning \tab logical \tab True when this side's bar is highlighted as the better one (both false on a tie). \cr
    away_value \tab character \tab Shooting rows: 'made/attempted' string ('25/35'); counting rows: integer. \cr
-   away_percentage \tab double \tab Shooting rows only (absent on counting rows): percentage with ONE decimal and a \\% sign ('71.4\\%'). \cr
+   away_percentage \tab double \tab Shooting rows only (absent on counting rows): percentage with ONE decimal and a \% sign ('71.4\%'). \cr
    away_graph_length \tab double \tab Bar length in percent: shooting rows = the percentage as a string ('71.4'); counting rows = this side's share of the two values, 0-100, a number (43 vs 37 -> 53.75). \cr
    away_winning \tab logical \tab True when this side's bar is highlighted as the better one (both false on a tie). \cr
 }

@@ -31,7 +31,7 @@ with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
    played \tab integer \tab Games played (Rng., rungtynes); null in the final table. \cr
    won \tab integer \tab Wins (Per., pergales); null in the final table. \cr
    lost \tab integer \tab Losses (Pr., pralaimejimai); null in the final table. \cr
-   win_pct \tab double \tab Win percentage 0-100 (Laim.\\%); null in the home, away and final tables and when the site prints '-' (2007-08). \cr
+   win_pct \tab double \tab Win percentage 0-100 (Laim.\%); null in the home, away and final tables and when the site prints '-' (2007-08). \cr
    streak \tab integer \tab Current streak (Serija) as a signed integer: 27 = 27 wins in a row, -1 = one loss. Null outside the full table. \cr
    points_for_avg \tab double \tab Points scored per game (first number of Tsk. vid.); null in the final table. \cr
    points_against_avg \tab double \tab Points allowed per game (second number of Tsk. vid.); null in the final table. \cr

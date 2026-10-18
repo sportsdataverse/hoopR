@@ -112,8 +112,7 @@ test_that("every wrapper matches sdv-py's frame on the same fixture (columns, or
   for (case in names(SCB_CASES)) {
     res <- run_case(case)
     got <- res$out
-    want <- utils::read.csv(scb_fixture("parity", paste0(case, ".csv")), colClasses = "character",
-                            na.strings = "", check.names = FALSE, encoding = "UTF-8")
+    want <- intl_read_oracle(scb_fixture("parity", paste0(case, ".csv")))
     expect_s3_class(got, "hoopR_data")
     expect_identical(names(got), names(want), label = case)
     expect_identical(nrow(got), nrow(want), label = case)
@@ -304,6 +303,11 @@ test_that("a connection failure is a transient failed fetch, never empty", {
   local_scb(function(req) stop("connection reset"))
   err <- expect_error(scb_seasons(), class = "hoopR_asset_fetch")
   expect_true(err$transient)
+})
+
+test_that("a null list entry or name is skipped, never joined as Python's \"None\"", {
+  expect_identical(.scb_join(list(list(name = "DYN"), list(name = NULL), NULL, "x")), "DYN,x")
+  expect_null(.scb_join(list(NULL)))
 })
 
 test_that("an empty or malformed payload parses to a zero-row frame with the documented columns", {

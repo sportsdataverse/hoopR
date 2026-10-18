@@ -4,6 +4,8 @@
 # recorded, never slept. Parity: tests/testthat/fixtures/cba/parity/<wrapper>.csv is sdv-py's frame
 # of the same wrapper on the same bodies (see fixtures/cba/README.md).
 
+skip_if_not_installed("digest") # Suggests: decrypts every CBA body
+
 cba_fixture <- function(...) test_path("fixtures", "cba", ...)
 cba_read <- function(name) {
   con <- if (endsWith(name, ".gz")) gzfile(cba_fixture(name), encoding = "UTF-8") else file(cba_fixture(name), encoding = "UTF-8")

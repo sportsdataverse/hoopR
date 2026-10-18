@@ -127,7 +127,10 @@ before any request). HTTP 500 is retried. Wrappers raise; they never return an e
 }
 \examples{
 \donttest{
-  try(kzs_matches(competition_id = 579, date_from = "2025-10-01T00:00:00.000Z", date_to = "2025-10-31T23:59:59.000Z"))
+  try(kzs_matches(
+    competition_id = 579, date_from = "2025-10-01T00:00:00.000Z",
+    date_to = "2025-10-31T23:59:59.000Z"
+  ))
 }
 }
 \seealso{

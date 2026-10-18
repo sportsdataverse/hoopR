@@ -501,6 +501,7 @@
                                      c("\u6771\u5730\u533a", "\u4e2d\u5730\u533a", "\u897f\u5730\u533a", "\u30ef\u30a4\u30eb\u30c9\u30ab\u30fc\u30c9"))
 
 .bleague_num <- function(s) {
+  s <- .intl_ascii_digits(s) # full-width digits, as sdv-py's \d / int() read them
   s <- .bleague_strip(.bleague_or(s, ""))
   if (grepl("^([0-9]*\\.[0-9]+|[0-9]+)$", s)) as.double(s) else NA_real_
 }
@@ -563,6 +564,7 @@
 #' A count / key from an integer or an integer string, else `NA` (never via a double).
 #' @noRd
 .bleague_i <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.bleague_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.character(v) && grepl("^\\s*[+-]?[0-9]+\\s*$", v, perl = TRUE)) return(suppressWarnings(as.integer(v)))
@@ -572,6 +574,7 @@
 #' A number from a number or a decimal string, else `NA`.
 #' @noRd
 .bleague_f <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.bleague_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v) && grepl("^\\s*[+-]?[0-9]+(?:\\.[0-9]+)?\\s*$", v, perl = TRUE)) return(as.double(v))
@@ -599,6 +602,7 @@
 #' as a string (the 2016-17 embed) and `YYYY-MM-DD HH:MM:SS` (already UTC); else `NA`.
 #' @noRd
 .bleague_dt <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.bleague_scalar(v) || !is.character(v)) return(NA_real_)
   t <- .bleague_strip(v)
   m <- regmatches(t, regexec("^/Date\\((-?[0-9]+)(?:[+-][0-9]{4})?\\)/$", t, perl = TRUE))[[1]]
@@ -615,6 +619,7 @@
 #' Seconds in an `mm:ss` clock (`"8:50"` = 530); `"DNP"` and `""` give `NA`.
 #' @noRd
 .bleague_mmss <- function(v) {
+  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
   if (!.bleague_scalar(v) || !is.character(v)) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*([0-9]{1,3}):([0-9]{2})\\s*$", v, perl = TRUE))[[1]]
   if (length(m) == 3L) as.integer(m[[2]]) * 60L + as.integer(m[[3]]) else NA_integer_
@@ -961,7 +966,8 @@
     area <- .bleague_i(r$AreaCD)
     ha <- .bleague_i(r$HomeAway)
     score <- .bleague_s(r$Score)
-    m <- regmatches(.bleague_or(score, ""), regexec("^([0-9]+)-([0-9]+)$", .bleague_or(score, "")))[[1]]
+    sc <- .intl_ascii_digits(.bleague_or(score, ""))
+    m <- regmatches(sc, regexec("^([0-9]+)-([0-9]+)$", sc))[[1]]
     c(base, list(
       period = .bleague_i(r$Period), event_no = .bleague_i(r$No), action_code = a1,
       action = .bleague_action_name(a1, feed), qualifier_code2 = a2,

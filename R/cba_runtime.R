@@ -157,6 +157,7 @@
   cipher <- jsonlite::base64_dec(t)
   n <- length(cipher)
   if (n == 0L || n %% 16L != 0L) .cba_undecryptable(paste0("ciphertext length ", n, " is not a positive multiple of 16"))
+  rlang::check_installed("digest", "to decrypt CBA responses")
   plain <- digest::AES(charToRaw(key), mode = "ECB")$decrypt(cipher, raw = TRUE)
   pad <- as.integer(plain[[n]])
   if (pad < 1L || pad > 16L || !all(plain[(n - pad + 1L):n] == as.raw(pad))) {

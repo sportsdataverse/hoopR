@@ -36,5 +36,8 @@ for the capture details. The bodies carry no e-mail address or phone number.
 * `parity/<short>.csv` -- the sdv-py frame of each of the 32 wrappers, written by sdv-py's own parser
   (`tbf_parsers.parse`) over the SAME fixture stamped with the SAME `_request` as sdv-py's
   `tools/codegen/gen_tbf.py` `ENDPOINTS` (recorded in `parity/manifest.json`), run with sdv-py e3d232ebc9.
+  `parity/dtypes.json` is sdv-py's polars dtype per column of each parity frame, from the same fixtures:
+  sdv-py e3d232ebc9 (`PYTHONPATH` set to a detached worktree of it) run with `/mnt/sdv_repos/sdv-py/.venv/bin/python`
+  by a generator kept outside the repo (the same `tbf_parsers.parse` on the manifest bodies). The test asserts each R column's class against it.
   Datetimes are written `%Y-%m-%d %H:%M:%S` (Turkey local time), dates ISO, nulls empty, booleans `true`/`false`.
   `test-tbf.R` compares every cell; NA-vs-value counts as a mismatch.

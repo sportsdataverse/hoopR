@@ -88,6 +88,10 @@ g_mismatches <- function(r, py) {
   }, numeric(1)))
 }
 
+g_dtypes <- jsonlite::read_json(g_path("parity", "dtypes.json"))
+
+test_that("the parity cases are the oracle's frames", expect_setequal(names(parity_cases), names(g_dtypes)))
+
 for (case in names(parity_cases)) {
   test_that(paste("parity with sdv-py:", case), {
     cs <- parity_cases[[case]]
@@ -101,6 +105,7 @@ for (case in names(parity_cases)) {
     expect_identical(names(df), names(schema))
     expect_identical(unname(vapply(df, function(x) class(x)[1], "")), unname(c(schema)) |>
                        sub(pattern = "^double$", replacement = "numeric"))
+    expect_identical(intl_r_types(df), intl_oracle_types(g_dtypes[[case]]), label = case) # sdv-py's dtypes
     expect_equal(nrow(df), nrow(py))
     expect_equal(g_mismatches(df, py), 0)
   })
@@ -174,6 +179,25 @@ test_that("integer pbp scores parse, and seconds read mm:ss only", {
   expect_identical(.genius_seconds("224:60"), 13500L)
   expect_identical(.genius_seconds(0L), NA_integer_)
   expect_identical(.genius_seconds("n/a"), NA_integer_)
+})
+
+test_that("a null name part or qualifier code is skipped, never written as Python's \"None\"", {
+  body <- jsonlite::parse_json(g_text("full/data_2902690.json.gz"), simplifyVector = FALSE)
+  body$officials$referee1["internationalFamilyName"] <- list(NULL)
+  pbp_row <- which(vapply(body$pbp, function(r) is.list(r), TRUE))[[1]]
+  body$pbp[[pbp_row]]["qualifier"] <- list(list(NULL, "fastbreak"))
+  body$pbp[[pbp_row + 1L]]["qualifier"] <- list(list(NULL))
+  game <- .genius_parse_game(body)
+  expect_identical(game$referee1, "Vasiliki")
+  pbp <- .genius_parse_pbp(body)
+  expect_identical(pbp$qualifier[pbp_row], "fastbreak")
+  expect_identical(pbp$qualifier[pbp_row + 1L], "")
+  expect_false(any(grepl("None", c(unlist(game), pbp$qualifier), fixed = TRUE)))
+})
+
+test_that("a whole double past 2^31 is an integer's text; below it keeps Python's \".0\"", {
+  expect_identical(.genius_str(3000000000), "3000000000")
+  expect_identical(.genius_str(25), "25.0")
 })
 
 # ------------------------------------------------------------------------------ season mapping

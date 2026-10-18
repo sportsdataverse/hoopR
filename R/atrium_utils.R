@@ -557,7 +557,7 @@
     dunks_per_game = "double", efficiency = "integer"
   ),
   player_game_log = c(
-    website_id = "integer", person_id = "character", season_id = "character", date = "POSIXct",
+    website_id = "integer", person_id = "character", season_id = "character", date = "character",
     opponent_entity_id = "character", opponent_name = "character", result = "character", result_label = "character",
     score = "character", minutes = "character", seconds_played = "integer", points = "integer", rebounds = "integer",
     rebounds_offensive = "integer", rebounds_defensive = "integer", assists = "integer", steals = "integer",
@@ -1024,7 +1024,7 @@
     res <- .ad(r[["result"]])
     c(
       list(website_id = site, person_id = .atrium_id(.ad(data[["person"]])[["id"]]),
-           season_id = .atrium_id(log[["activeSeason"]]), date = .atrium_dt(r[["date"]]),
+           season_id = .atrium_id(log[["activeSeason"]]), date = .atrium_text(r[["date"]]),
            opponent_entity_id = .atrium_id(r[["entityId"]]), opponent_name = .atrium_text(r[["name"]]),
            result = .atrium_text(res[["value"]]), result_label = .atrium_text(res[["label"]]),
            score = .atrium_text(r[["score"]])),

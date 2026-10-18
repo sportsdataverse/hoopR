@@ -799,7 +799,6 @@
   .feb_frame(rows, .feb_specs$leaders, "leaders")
 }
 
-.feb_py_str <- function(v) if (is.null(v)) "None" else as.character(v) # f-string of a JSON scalar
 
 .feb_parse_overview <- function(raw) {
   block <- raw[["OVERVIEW"]]
@@ -808,8 +807,10 @@
   for (cmp in comps) {
     games <- if (.feb_is_obj(cmp)) .feb_arr(cmp[["GAMES"]]) else list()
     for (g in Filter(.feb_is_obj, games)) {
-      qs <- Filter(.feb_is_obj, .feb_arr(g[["Quarters"]]))
-      ps <- paste(vapply(qs, function(q) paste0(.feb_py_str(q[["scoreA"]]), "-", .feb_py_str(q[["scoreB"]])),
+      # a quarter without both scores is skipped (sdv-py's f-string writes "None-None")
+      qs <- Filter(function(q) .feb_is_obj(q) && !is.null(q[["scoreA"]]) && !is.null(q[["scoreB"]]),
+                   .feb_arr(g[["Quarters"]]))
+      ps <- paste(vapply(qs, function(q) paste0(as.character(q[["scoreA"]]), "-", as.character(q[["scoreB"]])),
                          character(1)), collapse = ";")
       rows[[length(rows) + 1L]] <- list(
         comp_id = .feb_i(g[["CompID"]]), comp_code = .feb_i(g[["CompCode"]]), competition = .feb_s(g[["Competition"]]),
