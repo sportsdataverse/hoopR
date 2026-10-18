@@ -394,7 +394,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:36 UTC
+#> ℹ Data updated: 2026-10-18 11:25:01 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -404,7 +404,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:36 UTC
+#> ℹ Data updated: 2026-10-18 11:25:01 UTC
 #> # A tibble: 1 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
@@ -415,7 +415,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-10-13 01:16:36 UTC
+#> ℹ Data updated: 2026-10-18 11:25:01 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -428,7 +428,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com player box scores ────
-#> ℹ Data updated: 2026-10-13 01:16:39 UTC
+#> ℹ Data updated: 2026-10-18 11:25:03 UTC
 #> # A tibble: 15 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -457,7 +457,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-10-13 01:16:39 UTC
+#> ℹ Data updated: 2026-10-18 11:25:03 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -474,7 +474,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:40 UTC
+#> ℹ Data updated: 2026-10-18 11:25:04 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -484,18 +484,20 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:40 UTC
-#> # A tibble: 1 × 4
+#> ℹ Data updated: 2026-10-18 11:25:04 UTC
+#> # A tibble: 3 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
-#> 1 Overall Record <df [31 × 2]> 50-32   total
+#> 1 Overall Record <df [20 × 2]> 50-32   total
+#> 2 Home Record    <df [5 × 2]>  31-10   home 
+#> 3 Away Record    <df [5 × 2]>  19-22   road 
 #> 
 #> $NextEvent
 #> data frame with 0 columns and 0 rows
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:40 UTC
+#> ℹ Data updated: 2026-10-18 11:25:04 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -508,7 +510,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com player box scores ──── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:41 UTC
+#> ℹ Data updated: 2026-10-18 11:25:04 UTC
 #> # A tibble: 26 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -533,7 +535,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:41 UTC
+#> ℹ Data updated: 2026-10-18 11:25:05 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

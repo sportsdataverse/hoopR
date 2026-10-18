@@ -208,27 +208,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-10-13 01:16:43 UTC
+#> ℹ Data updated: 2026-10-18 11:25:06 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 2  5.01e7 Story Vitale'… The presea… 2026-10-… FALSE   Dick … https:/… 41       
-#> 3  5.01e7 Story Men's c… Florida re… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 4  3.03e7 Etic… NCAA Br… Denzel Abe… 2026-10-… FALSE   Joe L… https:/… 41       
-#> 5  5.01e7 Head… Aussie … 17-year-ol… 2026-10-… FALSE   Olgun… https:/… 55       
+#> 1  5.02e7 Story Best (a… The best p… 2026-10-… FALSE   Myron… https:/… 41       
+#> 2  5.02e7 Story 10 key … A game for… 2026-10-… FALSE   Joe L… https:/… 41       
+#> 3  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 4  5.01e7 Story Vitale'… The presea… 2026-10-… FALSE   Dick … https:/… 41       
+#> 5  5.01e7 Story Men's c… Florida re… 2026-10-… FALSE   Jeff … https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:43 UTC
+#> ℹ Data updated: 2026-10-18 11:25:06 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Head… Lakers … Walker Kes… 2026-10-… FALSE   Dave … https:/… 46       
-#> 2  4.90e7 Story 2026 NB… We're grad… 2026-10-… FALSE   Zach … https:/… 46       
-#> 3  5.01e7 Media Sacrame… Sacramento… 2026-10-… FALSE   NA     https:/… 46       
-#> 4  5.01e7 Story What do… Every NBA … 2026-10-… FALSE   Ben G… https:/… 46       
-#> 5  5.01e7 Head… Buss si… The five B… 2026-10-… FALSE   Dave … https:/… 46       
+#> 1  5.02e7 Media Denver … Denver Nug… 2026-10-… FALSE   NA     https:/… 46       
+#> 2  5.02e7 Head… Buss si… The legal … 2026-10-… FALSE   Dave … https:/… 46       
+#> 3  5.02e7 Story NBA bet… Don't go i… 2026-10-… FALSE   Andre… https:/… 46       
+#> 4  5.02e7 Story What NB… With 2026-… 2026-10-… FALSE   Ben G… https:/… 46       
+#> 5  5.02e7 Story NBA Now… Which team… 2026-10-… FALSE   Zach … https:/… 46       
 # }
 ```

@@ -64,7 +64,10 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> #   logo <chr>, logo_dark <chr>
 #> 
 #> $Record
-#> data frame with 0 columns and 0 rows
+#> # A tibble: 1 × 4
+#>   description    stats         summary type 
+#>   <chr>          <list>        <chr>   <chr>
+#> 1 Overall Record <df [30 × 2]> 0-0     total
 #> 
 #> $NextEvent
 #> # A tibble: 1 × 4
@@ -446,7 +449,26 @@ season <- most_recent_mbb_season()
 # `year` -- when an argument name surprises you, ?function is the
 # two-second fix.
 espn_mbb_standings(year = season)
-#> # A tibble: 0 × 0
+#> # A tibble: 365 × 87
+#>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
+#>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
+#>  1    2066 Binghamton Bear… America E…                0            0           0
+#>  2    2803 Bryant Bulldogs  America E…                0            0           0
+#>  3     311 Maine Black Bea… America E…                0            0           0
+#>  4     160 New Hampshire W… America E…                0            0           0
+#>  5    2885 NJIT Highlanders America E…                0            0           0
+#>  6     399 UAlbany Great D… America E…                0            0           0
+#>  7    2349 UMass Lowell Ri… America E…                0            0           0
+#>  8    2378 UMBC Retrievers  America E…                0            0           0
+#>  9     261 Vermont Catamou… America E…                0            0           0
+#> 10    2429 Charlotte 49ers  American …                0            0           0
+#> # ℹ 355 more rows
+#> # ℹ 81 more variables: leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
+#> #   pointdifferential <chr>, pointsagainst <dbl>, pointsfor <dbl>,
+#> #   streak <dbl>, winpercent <dbl>, wins <dbl>, gamesahead <chr>, total <chr>,
+#> #   home_avgpointsagainst <dbl>, home_avgpointsfor <dbl>,
+#> #   home_gamesbehind <dbl>, home_leaguewinpercent <dbl>, home_losses <dbl>,
+#> #   home_playoffseed <dbl>, home_pointdifferential <chr>, …
 
 # The group tree: groups -> one group -> its teams.
 espn_mbb_season_groups(season = season, season_type = 2)

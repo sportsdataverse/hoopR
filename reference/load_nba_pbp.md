@@ -418,7 +418,7 @@ load_nba_player_box(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
 #> ── ESPN NBA schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-11 11:56:50 UTC
+#> ℹ Data updated: 2026-10-17 11:31:16 UTC
 #> # A tibble: 1,206 × 79
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 

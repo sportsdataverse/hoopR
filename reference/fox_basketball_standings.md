@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ──────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:17:11 UTC
+#> ℹ Data updated: 2026-10-18 11:25:33 UTC
 #> # A tibble: 30 × 11
-#>    team_id section   eastern_conference v2        w_l   pct   pf    pa    strk 
-#>    <chr>   <chr>     <chr>              <chr>     <chr> <chr> <chr> <chr> <chr>
-#>  1 1       PRESEASON 1                  Celtics   2-0   1.000 134.0 109.5 W2   
-#>  2 1       PRESEASON 2                  Wizards   2-0   1.000 112.5 108.5 W2   
-#>  3 1       PRESEASON 3                  Nets      2-0   1.000 119.0 99.0  W2   
-#>  4 1       PRESEASON 4                  Heat      2-1   .667  127.0 116.0 L1   
-#>  5 1       PRESEASON 5                  Hawks     2-1   .667  121.7 121.7 W2   
-#>  6 1       PRESEASON 6                  Pacers    1-1   .500  120.0 115.5 L1   
-#>  7 1       PRESEASON 7                  Magic     1-1   .500  113.5 118.5 L1   
-#>  8 1       PRESEASON 8                  Pistons   1-1   .500  108.5 110.5 L1   
-#>  9 1       PRESEASON 9                  Raptors   1-1   .500  109.5 117.5 W1   
-#> 10 1       PRESEASON 10                 Cavaliers 1-1   .500  116.0 114.5 W1   
+#>    team_id section   eastern_conference v2      w_l   pct   pf    pa    strk 
+#>    <chr>   <chr>     <chr>              <chr>   <chr> <chr> <chr> <chr> <chr>
+#>  1 1       PRESEASON 1                  Celtics 4-0   1.000 126.8 108.0 W4   
+#>  2 1       PRESEASON 2                  Hawks   4-1   .800  122.6 117.2 W4   
+#>  3 1       PRESEASON 3                  Pistons 3-1   .750  118.5 113.0 W2   
+#>  4 1       PRESEASON 4                  Nets    3-1   .750  124.2 116.0 L1   
+#>  5 1       PRESEASON 5                  Magic   3-1   .750  123.8 117.0 W2   
+#>  6 1       PRESEASON 6                  Bulls   3-2   .600  122.0 114.8 W2   
+#>  7 1       PRESEASON 7                  Heat    3-2   .600  128.0 122.4 L1   
+#>  8 1       PRESEASON 8                  Wizards 2-2   .500  113.2 113.8 L2   
+#>  9 1       PRESEASON 9                  Bucks   2-3   .400  109.4 119.8 W1   
+#> 10 1       PRESEASON 10                 Raptors 2-3   .400  122.4 116.8 L2   
 #> # ℹ 20 more rows
 #> # ℹ 2 more variables: entity_id <chr>, western_conference <chr>
 # }

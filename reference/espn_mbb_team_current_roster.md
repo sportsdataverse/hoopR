@@ -180,8 +180,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:42 UTC
-#> # A tibble: 15 × 45
+#> ℹ Data updated: 2026-10-18 11:25:05 UTC
+#> # A tibble: 15 × 46
 #>    team_abbreviation team_alternate_color team_color team_display_name team_id
 #>    <chr>             <chr>                <chr>      <chr>               <int>
 #>  1 DUKE              ffffff               00539b     Duke Blue Devils      150
@@ -199,7 +199,7 @@ try(espn_mbb_team_current_roster(team_id = 150))
 #> 13 DUKE              ffffff               00539b     Duke Blue Devils      150
 #> 14 DUKE              ffffff               00539b     Duke Blue Devils      150
 #> 15 DUKE              ffffff               00539b     Duke Blue Devils      150
-#> # ℹ 40 more variables: team_is_active <lgl>, team_location <chr>,
+#> # ℹ 41 more variables: team_is_active <lgl>, team_location <chr>,
 #> #   team_name <chr>, team_nickname <chr>, team_short_name <chr>,
 #> #   team_slug <chr>, team_uid <chr>, logo <chr>, logo_dark <chr>,
 #> #   group_id <int>, group_is_conference <lgl>, parent_group_id <int>,
@@ -210,7 +210,7 @@ try(espn_mbb_team_current_roster(team_id = 150))
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:42 UTC
+#> ℹ Data updated: 2026-10-18 11:25:05 UTC
 #> # A tibble: 0 × 0
 # }
 ```

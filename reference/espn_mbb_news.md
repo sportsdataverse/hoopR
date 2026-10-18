@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:10 UTC
+#> ℹ Data updated: 2026-10-18 11:24:35 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Head… James M… James Madi… 2026-10-… FALSE   Mark … https:/… 3170     
-#> 2  4.83e7 Story Men's c… We're trac… 2026-10-… FALSE   ESPN   https:/… 41       
-#> 3  4.87e7 Story Transfe… With one m… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 4  5.01e7 Head… Ahmed N… Top-20 sen… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 5  5.01e7 Head… Reports… The Colleg… 2026-10-… FALSE   NA     https:/… 23       
+#> 1  5.02e7 Head… Hagan, … Hall of Fa… 2026-10-… FALSE   NA     https:/… 46       
+#> 2  5.02e7 Head… NCAA su… The NCAA h… 2026-10-… FALSE   NA     https:/… 3170     
+#> 3  5.02e7 Head… Las Veg… A bettor i… 2026-10-… FALSE   David… https:/… 46       
+#> 4  5.02e7 Story Men's N… Will Pope … 2026-10-… FALSE   Jeff … https:/… 41       
+#> 5  5.02e7 Media John Ca… Calipari t… 2026-10-… FALSE   NA     https:/… 23       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:10 UTC
+#> ℹ Data updated: 2026-10-18 11:24:36 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Head… Carmelo… "Former Kn… 2026-10-… FALSE   NA     https:/… 46       
-#> 2  5.02e7 Media Ja Mora… "Ja Morant… 2026-10-… FALSE   NA     https:/… 46       
-#> 3  5.02e7 Head… Kristap… "Veteran c… 2026-10-… FALSE   Antho… https:/… 46       
-#> 4  5.02e7 Head… Kentavi… "Kentaviou… 2026-10-… FALSE   Kris … https:/… 46       
-#> 5  5.02e7 Story Pacers,… "The four … 2026-10-… FALSE   Kalan… https:/… 46       
+#> 1  5.02e7 Head… Knicks … The Knicks… 2026-10-… FALSE   NA     https:/… 46       
+#> 2  5.02e7 Head… 76ers, … The 76ers,… 2026-10-… FALSE   Kris … https:/… 46       
+#> 3  5.02e7 Head… No. 1 p… First over… 2026-10-… FALSE   NA     https:/… 46       
+#> 4  5.02e7 Media Denver … Denver Nug… 2026-10-… FALSE   NA     https:/… 46       
+#> 5  5.02e7 Media Portlan… Portland T… 2026-10-… FALSE   NA     https:/… 46       
 # }
 ```

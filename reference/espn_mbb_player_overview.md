@@ -389,12 +389,12 @@ Saiem Gilani
   espn_mbb_player_overview(athlete_id = "4593919", season = 2025)
 #> $Statistics
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Statistics from ESPN.com ──────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview NextGame from ESPN.com ────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -402,32 +402,32 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Last5Games from ESPN.com ──────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Headlines from ESPN.com ───────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 James Madison to exit Sun Belt, join Amer… "James Mad… 2026-10-… Mark … Head…
-#>  2 Men's college basketball coaching changes… "We're tra… 2026-10-… ESPN   Story
-#>  3 Transfers, recruits and roster moves for … "With one … 2026-10-… Jeff … Story
-#>  4 Ahmed Nur commits to Ole Miss for school'… "Top-20 se… 2026-10-… Jeff … Head…
-#>  5 Reports - Watchdog eyes NIL violations at… "The Colle… 2026-10-… NA     Head…
-#>  6 Mississippi Valley St. basketball player … "Mississip… 2026-10-… NA     Head…
-#>  7 Vitale's 2026-27 preseason All-Rolls-Royc… "The prese… 2026-10-… Dick … Story
-#>  8 Men's March Madness 2027 schedule, sites,… "Everythin… 2026-10-… ESPN   Story
-#>  9 Alabama's Aden Holloway begins 5-game ban… "Alabama g… 2026-10-… NA     Head…
-#> 10 Oregon players say Dana Altman's retireme… "Oregon se… 2026-10-… Jeff … Head…
-#> 11 Izzo calls his roster-building strategy '… "Longtime … 2026-10-… Adam … Head…
-#> 12 Big Ten has '18 strong members,' no expan… "Big Ten c… 2026-10-… Adam … Head…
-#> 13 Gerry McNamara vows to restore Syracuse b… "New Syrac… 2026-10-… NA     Head…
+#>  1 Hagan, Basketball Hall of Famer and Kentu… Hall of Fa… 2026-10-… NA     Head…
+#>  2 NCAA sues Ohio gov. over order allowing s… The NCAA h… 2026-10-… NA     Head…
+#>  3 Las Vegas bettor Shane Hennen pleads guil… A bettor i… 2026-10-… David… Head…
+#>  4 Men's NCAA basketball 2026-27 coaching ho… Will Pope … 2026-10-… Jeff … Story
+#>  5 Mark Pope embracing championship expectat… Kentucky m… 2026-10-… Alex … Head…
+#>  6 Florida's Todd Golden: NCAA eligibility c… Florida co… 2026-10-… Myron… Head…
+#>  7 SEC in filing: LSU dispute remains 'live,… The SEC is… 2026-10-… Mark … Head…
+#>  8 Best (and worst) men's college basketball… The best p… 2026-10-… Myron… Story
+#>  9 Jalen Smith, fixer in NCAA hoops betting … Jalen Smit… 2026-10-… NA     Head…
+#> 10 Ohio Gov. Mike DeWine signs order letting… Ohio Gov. … 2026-10-… NA     Head…
+#> 11 Penny Hardaway offers to repay $2.6M loan… Memphis me… 2026-10-… NA     Head…
+#> 12 RJ Luis Jr. one of several not on LSU's r… Amid eligi… 2026-10-… Myron… Head…
+#> 13 Missouri coach to attend Mark Mitchell el… Missouri b… 2026-10-… Alex … Head…
 #> 
 #> $FantasyOutlook
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview FantasyOutlook from ESPN.com ──
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
@@ -435,7 +435,7 @@ Saiem Gilani
   espn_mbb_player_stats_v3(athlete_id = "4593919", season = 2025)
 #> $`Season Averages`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -445,7 +445,7 @@ Saiem Gilani
 #> 
 #> $`Season Totals`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -455,7 +455,7 @@ Saiem Gilani
 #> 
 #> $`Season Misc Totals`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -465,32 +465,32 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ────────────────────
-#> ℹ Data updated: 2026-10-13 01:16:13 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
@@ -501,7 +501,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_splits(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Splits from ESPN.com ───────────────────
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 1 × 2
 #>   name  display_name
 #>   <chr> <chr>       
@@ -514,7 +514,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_statisticslog(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Statisticslog from ESPN.com ────────────
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 3 × 2
 #>   season$`$ref`                                                       statistics
 #>   <chr>                                                               <list>    
@@ -526,12 +526,12 @@ Saiem Gilani
   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -539,32 +539,32 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 LeBron James scores 10 points in 18 minut… "LeBron Ja… 2026-10-… Dave … Head…
-#>  2 LeBron James banks in his first bucket as… "LeBron Ja… 2026-10-… NA     Media
-#>  3 Tyrese Maxey, Jaylen Brown, VJ Edgecombe … "\"Abbott … 2026-10-… Brian… Story
-#>  4 Shai Gilgeous-Alexander joins athletes wh… "The Oklah… 2026-10-… ESPN   Story
-#>  5 Sources: 76ers plan to play starters in p… "The 76ers… 2026-10-… Dave … Head…
-#>  6 Mike Breen apologizes after LeBron James … "Broadcast… 2026-10-… Dave … Head…
-#>  7 Why Stephen A. trusts LeBron to be playof… "Why Steph… 2026-10-… NA     Media
-#>  8 James, Embiid, Maxey sit out 76ers' prese… "LeBron Ja… 2026-10-… NA     Head…
-#>  9 Behind the scenes inside LeBron's first 7… "From on-c… 2026-10-… Dave … Story
-#> 10 LeBron James reacts to Jeremiah Smith's r… "Chris Ola… 2026-10-… J.J. … Story
-#> 11 LeBron James calls scrimmage 'great first… "Throngs o… 2026-10-… Dave … Head…
-#> 12 76ers envision LeBron James' role being '… "Sixers co… 2026-10-… Dave … Head…
-#> 13 'I need to win': Embiid talks 76ers' upco… "'I need t… 2026-10-… NA     Media
+#>  1 James, Embiid play 76ers' preseason final… "Without V… 2026-10-… Kris … Head…
+#>  2 LeBron fires up crowd with monster slam i… "LeBron Ja… 2026-10-… NA     Head…
+#>  3 Maxey finds LeBron for a massive alley-oo… "Maxey fin… 2026-10-… NA     Media
+#>  4 Steve Lacy delights crowd with 'LeBron, L… "Lacy sang… 2026-10-… ESPN   Story
+#>  5 Victor Wembanyama, Spurs dominate annual … "An annual… 2026-10-… Ben G… Head…
+#>  6 LeBron James scores 10 points in 18 minut… "LeBron Ja… 2026-10-… Dave … Head…
+#>  7 LeBron James banks in his first bucket as… "LeBron Ja… 2026-10-… NA     Media
+#>  8 Tyrese Maxey, Jaylen Brown, VJ Edgecombe … "\"Abbott … 2026-10-… Brian… Story
+#>  9 Shai Gilgeous-Alexander joins athletes wh… "The Oklah… 2026-10-… ESPN   Story
+#> 10 Sources: 76ers plan to play starters in p… "The 76ers… 2026-10-… Dave … Head…
+#> 11 Mike Breen apologizes after LeBron James … "Broadcast… 2026-10-… Dave … Head…
+#> 12 Why Stephen A. trusts LeBron to be playof… "Why Steph… 2026-10-… NA     Media
+#> 13 James, Embiid, Maxey sit out 76ers' prese… "LeBron Ja… 2026-10-… NA     Head…
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 1 × 1
 #>   outlook
 #>   <chr>  
@@ -575,7 +575,7 @@ Saiem Gilani
   espn_nba_player_stats_v3(athlete_id = "1966", season = 2024)
 #> $`Regular Season Averages`
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -593,7 +593,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -611,7 +611,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Misc Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 23 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -629,39 +629,39 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN NBA Athlete Stats from ESPN.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:14 UTC
+#> ℹ Data updated: 2026-10-18 11:24:39 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
 # \donttest{
   espn_nba_player_gamelog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Gamelog from ESPN.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:40 UTC
 #> # A tibble: 82 × 24
 #>    id        at_vs game_date     score home_team_id away_team_id home_team_score
 #>    <chr>     <chr> <chr>         <chr> <chr>        <chr>        <chr>          
@@ -686,7 +686,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_splits(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Splits from ESPN.com ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:40 UTC
 #> # A tibble: 6 × 3
 #>   name       display_name splits       
 #>   <chr>      <chr>        <list>       
@@ -700,7 +700,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_eventlog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Eventlog from ESPN.com ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:40 UTC
 #> # A tibble: 25 × 6
 #>    event_ref              competition_ref team_ref statistics_ref team_id played
 #>    <chr>                  <chr>           <chr>    <chr>          <chr>   <lgl> 
@@ -719,7 +719,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_statisticslog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Statisticslog from ESPN.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-13 01:16:15 UTC
+#> ℹ Data updated: 2026-10-18 11:24:40 UTC
 #> # A tibble: 23 × 2
 #>    season$`$ref`                                                      statistics
 #>    <chr>                                                              <list>    
