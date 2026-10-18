@@ -1,0 +1,62 @@
+{
+  "data": [
+    {
+      "fotograf": "https://tbf.org.tr/res/b90137fe-de85-4a6b-b127-f491fbb1e6db_8.webp",
+      "adiSoyadi": "Ahmet Aldin Türkoğlu",
+      "tabiyet": "TÜRKİYE",
+      "tabiyetKısa": "TUR",
+      "takimAdi": "BURSASPOR BASKETBOL",
+      "takimLogo": "https://tbf.org.tr/res/848c7f08-8653-4f31-8508-e20b9d969edc_Bursaspor.png",
+      "takimHexRenkKod1": "#c7c7c7",
+      "takimHexRenkKod2": "#04af0e",
+      "dogumTarihi": "2007-11-05T00:00:00",
+      "kisiID": 443749,
+      "takimID": 246239,
+      "formaNo": "8",
+      "prefix": "bsl",
+      "isFavorite": false,
+      "seasonId": 174
+    },
+    {
+      "fotograf": "https://tbf.org.tr/res/47c69b15-e971-463a-81ae-21e0149eb0c0_15.webp",
+      "adiSoyadi": "Akwasi Yeboah",
+      "tabiyet": "BÜYÜK BRİTANYA VE KUZEY İRLANDA BİRLEŞİK KRALLIĞI",
+      "tabiyetKısa": "GB",
+      "takimAdi": "TRABZONSPOR",
+      "takimLogo": "https://tbf.org.tr/res/eaf110a2-ee82-4b8a-9b70-e6aede619b70_TRABZONSPORanalogo.png",
+      "takimHexRenkKod1": "#028de3",
+      "takimHexRenkKod2": "#640202",
+      "dogumTarihi": "1997-06-15T00:00:00",
+      "kisiID": 512899,
+      "takimID": 47153,
+      "formaNo": "15",
+      "prefix": "bsl",
+      "isFavorite": false,
+      "seasonId": 174
+    },
+    {
+      "fotograf": "https://tbf.org.tr/res/2d7ae16f-55bf-496c-b17c-d74a7f9acfaf_4.webp",
+      "adiSoyadi": "Aleksa Avramovic",
+      "tabiyet": "SIRBİSTAN",
+      "tabiyetKısa": "SRB",
+      "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+      "takimLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+      "takimHexRenkKod1": "#e20303",
+      "takimHexRenkKod2": "#010760",
+      "dogumTarihi": "1994-10-25T00:00:00",
+      "kisiID": 776935,
+      "takimID": 55636,
+      "formaNo": "4",
+      "prefix": "bsl",
+      "isFavorite": false,
+      "seasonId": 174
+    }
+  ],
+  "count": 254,
+  "pageNumber": 1,
+  "pageCount": 1,
+  "hasPreviousPage": false,
+  "hasNextPage": false,
+  "isSuccess": true,
+  "problemDetails": null
+}

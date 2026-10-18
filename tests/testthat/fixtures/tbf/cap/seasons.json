@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "seasonId": 175,
+      "code": "UA-2026-2027",
+      "startDate": "2026-10-01T00:00:00",
+      "endDate": "2027-09-30T00:00:00",
+      "international": true
+    },
+    {
+      "seasonId": 173,
+      "code": "UA-2025-2026",
+      "startDate": "2025-10-01T00:00:00",
+      "endDate": "2026-09-30T00:00:00",
+      "international": true
+    },
+    {
+      "seasonId": 171,
+      "code": "UA-2024-2025",
+      "startDate": "2024-10-01T00:00:00",
+      "endDate": "2025-09-30T00:00:00",
+      "international": true
+    }
+  ],
+  "count": 20,
+  "pageNumber": 1,
+  "pageCount": 1,
+  "hasPreviousPage": false,
+  "hasNextPage": false,
+  "isSuccess": true,
+  "problemDetails": null
+}

@@ -1,0 +1,241 @@
+{
+ "daily_matches": {
+  "fixture": "cap/daily_matches.json",
+  "request": {}
+ },
+ "game_header": {
+  "fixture": "full/header.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "game_leaders": {
+  "fixture": "full/leaders_game.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "game_players": {
+  "fixture": "full/header.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "highlights": {
+  "fixture": "full/summary.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "leaders_assists": {
+  "fixture": "cap/leaders_assists.json",
+  "request": {
+   "category": "assists",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_blocks": {
+  "fixture": "cap/leaders_blocks.json",
+  "request": {
+   "category": "blocks",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_efficiency": {
+  "fixture": "cap/leaders_efficiency.json",
+  "request": {
+   "category": "efficiency",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_minutes": {
+  "fixture": "cap/leaders_minutes.json",
+  "request": {
+   "category": "minutes",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_points": {
+  "fixture": "full/leaders_points.json",
+  "request": {
+   "category": "points",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_rebounds": {
+  "fixture": "cap/leaders_rebounds.json",
+  "request": {
+   "category": "rebounds",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_steals": {
+  "fixture": "cap/leaders_steals.json",
+  "request": {
+   "category": "steals",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_threes": {
+  "fixture": "cap/leaders_threes.json",
+  "request": {
+   "category": "threes",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "leaders_turnovers": {
+  "fixture": "cap/leaders_turnovers.json",
+  "request": {
+   "category": "turnovers",
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "league_seasons": {
+  "fixture": "cap/league_seasons.json",
+  "request": {
+   "competition": "bsl"
+  }
+ },
+ "leagues": {
+  "fixture": "cap/leagues.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "pbp": {
+  "fixture": "full/flow.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "period_scores": {
+  "fixture": "full/summary.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "player_box": {
+  "fixture": "full/stats.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "player_career": {
+  "fixture": "cap/player_career.json",
+  "request": {
+   "player_id": 196413
+  }
+ },
+ "players": {
+  "fixture": "cap/players.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "schedule": {
+  "fixture": "cap/schedule.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "seasons": {
+  "fixture": "cap/seasons.json",
+  "request": {}
+ },
+ "shots": {
+  "fixture": "full/shots.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "standings": {
+  "fixture": "full/standings.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "team_box": {
+  "fixture": "full/stats.json",
+  "request": {
+   "away_team_process_id": 265993,
+   "home_team_process_id": 265995,
+   "match_id": 346279
+  }
+ },
+ "team_games": {
+  "fixture": "cap/team_games.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027,
+   "team_process_id": 265995
+  }
+ },
+ "team_player_stats": {
+  "fixture": "full/team_stats.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027,
+   "team_process_id": 265995
+  }
+ },
+ "team_roster": {
+  "fixture": "cap/team_roster.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027,
+   "team_process_id": 265995
+  }
+ },
+ "team_staff": {
+  "fixture": "cap/team_staff.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027,
+   "team_process_id": 265995
+  }
+ },
+ "teams": {
+  "fixture": "cap/teams.json",
+  "request": {
+   "competition": "bsl",
+   "season": 2027
+  }
+ },
+ "weeks": {
+  "fixture": "cap/weeks.json",
+  "request": {
+   "activity_id": 22214,
+   "competition": "bsl",
+   "season": 2027
+  }
+ }
+}

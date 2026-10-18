@@ -1,0 +1,4 @@
+person_id,player_name,nationality,height_cm,season_label,season,team_name,activity_name,activity_type_id,activity_id,games,seconds_played,points,assists,fg_made,fg_attempted,fg3_made,fg3_attempted,ft_made,ft_attempted,off_rebounds,def_rebounds,rebounds,steals,turnovers,blocks,fouls,efficiency,fouls_drawn,blocks_received
+196413,Yiğitcan Saybir,TÜRKİYE,201,2026-2027,2027,TOFAŞ,BSL,1,1,3,5120,56,2,17,28,3,14,13,15,7,6,13,2,5,2,5,46,15,2
+196413,Yiğitcan Saybir,TÜRKİYE,201,2025-2026,2026,TOFAŞ,BSL,1,1,27,45575,298,50,89,143,23,64,51,80,49,80,129,32,40,5,49,350,81,15
+196413,Yiğitcan Saybir,TÜRKİYE,201,2024-2025,2025,TOFAŞ,BSL,1,1,33,50691,370,52,120,188,27,84,49,84,46,122,168,36,38,6,84,434,0,0

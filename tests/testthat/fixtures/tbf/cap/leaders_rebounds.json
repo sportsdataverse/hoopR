@@ -1,0 +1,89 @@
+{
+  "data": {
+    "sum": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "31",
+        "oyuncuAdi": "Trevion Williams",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "734505",
+        "fotograf": "https://tbf.org.tr/res/5ffb1128-028b-4854-ac30-a318a639f186_50.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "22",
+        "oyuncuAdi": "Oumar Ballo",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779274",
+        "fotograf": "https://tbf.org.tr/res/fd0a3198-3ddc-4e99-830e-565f367bcdf3_galatasaray_0013_11.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "20",
+        "oyuncuAdi": "Mahir Ağva",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "470765",
+        "fotograf": "https://tbf.org.tr/res/9af9d00c-c3a2-40d8-8d90-0eec26957b88_denizlibasket_0010_46.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      }
+    ],
+    "avg": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "10.333343",
+        "oyuncuAdi": "Trevion Williams",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "734505",
+        "fotograf": "https://tbf.org.tr/res/5ffb1128-028b-4854-ac30-a318a639f186_50.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "7.333340",
+        "oyuncuAdi": "Oumar Ballo",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779274",
+        "fotograf": "https://tbf.org.tr/res/fd0a3198-3ddc-4e99-830e-565f367bcdf3_galatasaray_0013_11.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "6.666673",
+        "oyuncuAdi": "Mahir Ağva",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "470765",
+        "fotograf": "https://tbf.org.tr/res/9af9d00c-c3a2-40d8-8d90-0eec26957b88_denizlibasket_0010_46.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

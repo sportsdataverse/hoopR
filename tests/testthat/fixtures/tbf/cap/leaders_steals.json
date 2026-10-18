@@ -1,0 +1,89 @@
+{
+  "data": {
+    "sum": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "8",
+        "oyuncuAdi": "Brae Ivey",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "778996",
+        "fotograf": "https://tbf.org.tr/res/b11aa28b-d93b-46b7-b629-d26d1fed3199_denizlibasket_0009_1.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "5",
+        "oyuncuAdi": "Şehmus Hazer",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "250129",
+        "fotograf": "https://tbf.org.tr/res/ddca2f66-04a7-4575-9348-7baaed59ad4d_galatasaray_0004_2.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/01204daa-24ab-4246-aac3-715750729b41_FenerbaheTarfinLogo1.png",
+        "grup": "5",
+        "oyuncuAdi": "Braxton Key",
+        "takimAdi": "FENERBAHÇE TARFİN",
+        "oyuncuKodu": "777675",
+        "fotograf": "https://tbf.org.tr/res/e11f2ac4-05b7-4297-abc7-2fa11af309a7_12web.webp",
+        "takimKodu": "266025",
+        "macSayisi": "2",
+        "takimLogo": "https://tbf.org.tr/res/93e640b8-d718-49f1-806b-eaacb0146aa1_Fenerbahçe Beko 600x600 px.png",
+        "tuzelLogo": "https://tbf.org.tr/res/b42a6ad2-747c-4ab0-9bfb-8048a16282e1_fenerbahce_logo.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/01204daa-24ab-4246-aac3-715750729b41_FenerbaheTarfinLogo1.png"
+      }
+    ],
+    "avg": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "2.666669",
+        "oyuncuAdi": "Brae Ivey",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "778996",
+        "fotograf": "https://tbf.org.tr/res/b11aa28b-d93b-46b7-b629-d26d1fed3199_denizlibasket_0009_1.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/01204daa-24ab-4246-aac3-715750729b41_FenerbaheTarfinLogo1.png",
+        "grup": "2.500002",
+        "oyuncuAdi": "Braxton Key",
+        "takimAdi": "FENERBAHÇE TARFİN",
+        "oyuncuKodu": "777675",
+        "fotograf": "https://tbf.org.tr/res/e11f2ac4-05b7-4297-abc7-2fa11af309a7_12web.webp",
+        "takimKodu": "266025",
+        "macSayisi": "2",
+        "takimLogo": "https://tbf.org.tr/res/93e640b8-d718-49f1-806b-eaacb0146aa1_Fenerbahçe Beko 600x600 px.png",
+        "tuzelLogo": "https://tbf.org.tr/res/b42a6ad2-747c-4ab0-9bfb-8048a16282e1_fenerbahce_logo.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/01204daa-24ab-4246-aac3-715750729b41_FenerbaheTarfinLogo1.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "1.666668",
+        "oyuncuAdi": "Şehmus Hazer",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "250129",
+        "fotograf": "https://tbf.org.tr/res/ddca2f66-04a7-4575-9348-7baaed59ad4d_galatasaray_0004_2.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

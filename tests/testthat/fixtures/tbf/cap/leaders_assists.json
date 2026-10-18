@@ -1,0 +1,89 @@
+{
+  "data": {
+    "sum": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "16",
+        "oyuncuAdi": "Brae Ivey",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "778996",
+        "fotograf": "https://tbf.org.tr/res/b11aa28b-d93b-46b7-b629-d26d1fed3199_denizlibasket_0009_1.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "16",
+        "oyuncuAdi": "Malachi Flynn",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "734506",
+        "fotograf": "https://tbf.org.tr/res/43d48548-e32d-4d21-8deb-cc28877bfdea_22.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png",
+        "grup": "15",
+        "oyuncuAdi": "Max Abmas",
+        "takimAdi": "ALİAĞA PETKİM SPOR",
+        "oyuncuKodu": "778246",
+        "fotograf": "https://tbf.org.tr/res/c139f796-57f6-4d3f-9230-96692fda1dce_MaxAbmas.webp",
+        "takimKodu": "266048",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/43975687-a185-4e73-81d7-d6ac8cb41c65_PETKMyeni.png",
+        "tuzelLogo": "https://tbf.org.tr/res/447233f1-ccbe-45e3-9e01-d3e844020f6c_c23ea153d118406e9d0ce4413475fb36.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png"
+      }
+    ],
+    "avg": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "5.333338",
+        "oyuncuAdi": "Brae Ivey",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "778996",
+        "fotograf": "https://tbf.org.tr/res/b11aa28b-d93b-46b7-b629-d26d1fed3199_denizlibasket_0009_1.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "5.333338",
+        "oyuncuAdi": "Malachi Flynn",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "734506",
+        "fotograf": "https://tbf.org.tr/res/43d48548-e32d-4d21-8deb-cc28877bfdea_22.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png",
+        "grup": "5.000005",
+        "oyuncuAdi": "Max Abmas",
+        "takimAdi": "ALİAĞA PETKİM SPOR",
+        "oyuncuKodu": "778246",
+        "fotograf": "https://tbf.org.tr/res/c139f796-57f6-4d3f-9230-96692fda1dce_MaxAbmas.webp",
+        "takimKodu": "266048",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/43975687-a185-4e73-81d7-d6ac8cb41c65_PETKMyeni.png",
+        "tuzelLogo": "https://tbf.org.tr/res/447233f1-ccbe-45e3-9e01-d3e844020f6c_c23ea153d118406e9d0ce4413475fb36.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

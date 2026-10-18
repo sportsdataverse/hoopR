@@ -1,0 +1,640 @@
+match_id,action_number,period,period_type,clock,seconds_remaining,home_score,away_score,side,player_name,jersey_number,action,action_en
+346279,1,1,1,10:00,600,0,0,,,,Maç Başladı,game started
+346279,2,1,1,10:00,600,0,0,,,,Çeyrek Başladı,period started
+346279,5,1,1,09:59,599,0,0,home,Terrell Carter II,5,Hava Atışı - Kazandı,jump ball - won
+346279,6,1,1,09:59,599,0,0,away,Boubacar Toure,21,Hava Atışı - Kaybetti,jump ball - lost
+346279,7,1,1,09:43,583,0,0,home,Bryce Jones,32,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,8,1,1,09:43,583,0,0,away,Damien Jefferson,23,Top Çalma,steal
+346279,9,1,1,09:32,572,0,0,away,Quentin Peterson,77,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,10,1,1,09:29,569,0,0,home,Gabe Brown,44,Savunma Ribaundu,defensive rebound
+346279,11,1,1,09:21,561,2,0,home,Terrell Carter II,5,2 Sayı Turnike Başarılı,2PT layup made
+346279,13,1,1,08:54,534,2,0,home,Terrell Carter II,5,Kişisel Faul,personal foul
+346279,14,1,1,08:54,534,2,0,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,16,1,1,08:46,526,2,3,away,Quentin Peterson,77,3 Sayı Aniden Durarak Sıçrayarak Atış Başarılı,3PT pull-up jump shot made
+346279,18,1,1,08:31,511,2,3,away,Ty Gordon,0,Kişisel Faul,personal foul
+346279,19,1,1,08:31,511,2,3,home,Efe Postel,22,Faul Yapılan,foul drawn
+346279,20,1,1,08:31,511,3,3,home,Efe Postel,22,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,21,1,1,08:31,511,3,3,home,Yiğitcan Saybir,3,Asist,assist
+346279,22,1,1,08:31,511,4,3,home,Efe Postel,22,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,26,1,1,08:14,494,4,5,away,Damien Jefferson,23,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,27,1,1,08:14,494,4,5,away,Quentin Peterson,77,Asist,assist
+346279,31,1,1,08:05,485,4,5,away,Boubacar Toure,21,Kişisel Faul,personal foul
+346279,32,1,1,08:05,485,4,5,home,Terrell Carter II,5,Faul Yapılan,foul drawn
+346279,33,1,1,08:05,485,5,5,home,Terrell Carter II,5,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,34,1,1,08:05,485,5,5,home,Bryce Jones,32,Asist,assist
+346279,35,1,1,08:05,485,6,5,home,Terrell Carter II,5,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,37,1,1,07:56,476,6,5,away,Boubacar Toure,21,2 Sayı Turnike Başarısız,2PT layup missed
+346279,38,1,1,07:56,476,6,5,home,Terrell Carter II,5,Blok,block
+346279,39,1,1,07:51,471,6,5,away,Boubacar Toure,21,Hücum Ribaundu,offensive rebound
+346279,40,1,1,07:51,471,6,7,away,Boubacar Toure,21,2 Sayı Tip-In Başarılı,2PT tip-in made
+346279,41,1,1,07:42,462,6,7,home,Yiğitcan Saybir,3,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,42,1,1,07:40,460,6,7,home,Gabe Brown,44,Hücum Ribaundu,offensive rebound
+346279,43,1,1,07:33,453,6,7,home,Yiğitcan Saybir,3,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,44,1,1,07:30,450,6,7,away,Berk Demir,11,Savunma Ribaundu,defensive rebound
+346279,47,1,1,07:22,442,6,7,away,,,Top Kaybı - 8 Saniye,turnover - 8-second violation
+346279,48,1,1,07:22,442,6,7,home,Efe Postel,22,Değişiklik Çıkan,substitution - player out
+346279,49,1,1,07:22,442,6,7,home,Zach Nutall,10,Değişiklik Giren,substitution - player in
+346279,54,1,1,07:07,427,6,7,home,Gabe Brown,44,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,55,1,1,07:07,427,6,7,away,,,Sıkışmış Top,held ball
+346279,56,1,1,07:07,427,6,7,away,,,Takım Savunma Ribaundu,team defensive rebound
+346279,58,1,1,06:55,415,6,7,away,Ty Gordon,0,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,59,1,1,06:55,415,6,7,home,Zach Nutall,10,Top Çalma,steal
+346279,60,1,1,06:39,399,6,7,home,Bryce Jones,32,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,61,1,1,06:36,396,6,7,away,Boubacar Toure,21,Savunma Ribaundu,defensive rebound
+346279,63,1,1,06:34,394,6,7,away,Damien Jefferson,23,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,68,1,1,06:21,381,8,7,home,Yiğitcan Saybir,3,2 Sayı Turnike Başarılı,2PT layup made
+346279,69,1,1,06:21,381,8,7,home,Bryce Jones,32,Asist,assist
+346279,70,1,1,06:21,381,8,7,away,Berk Demir,11,Kişisel Faul,personal foul
+346279,71,1,1,06:21,381,8,7,home,Yiğitcan Saybir,3,Faul Yapılan,foul drawn
+346279,72,1,1,06:21,381,8,7,away,Berk Demir,11,Değişiklik Çıkan,substitution - player out
+346279,73,1,1,06:21,381,8,7,away,Okben Ulubay,4,Değişiklik Giren,substitution - player in
+346279,74,1,1,06:21,381,9,7,home,Yiğitcan Saybir,3,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,76,1,1,06:00,360,9,7,away,Okben Ulubay,4,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,77,1,1,05:58,358,9,7,home,Terrell Carter II,5,Savunma Ribaundu,defensive rebound
+346279,78,1,1,05:52,352,9,7,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,79,1,1,05:49,349,9,7,home,Yiğitcan Saybir,3,Hücum Ribaundu,offensive rebound
+346279,80,1,1,05:49,349,11,7,home,Yiğitcan Saybir,3,2 Sayı Tip-In Başarılı,2PT tip-in made
+346279,81,1,1,05:35,335,11,7,away,Quentin Peterson,77,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,82,1,1,05:35,335,11,7,home,Terrell Carter II,5,Top Çalma,steal
+346279,86,1,1,05:30,330,11,7,home,Yiğitcan Saybir,3,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,87,1,1,05:30,330,11,7,home,Yiğitcan Saybir,3,Değişiklik Çıkan,substitution - player out
+346279,88,1,1,05:30,330,11,7,home,Terrell Carter II,5,Değişiklik Çıkan,substitution - player out
+346279,89,1,1,05:30,330,11,7,home,Bryce Jones,32,Değişiklik Çıkan,substitution - player out
+346279,90,1,1,05:30,330,11,7,home,Gabe Brown,44,Değişiklik Çıkan,substitution - player out
+346279,91,1,1,05:30,330,11,7,home,Sadık Kabaca,6,Değişiklik Giren,substitution - player in
+346279,92,1,1,05:30,330,11,7,home,Jamuni McNeace,8,Değişiklik Giren,substitution - player in
+346279,93,1,1,05:30,330,11,7,home,Shavar Reynolds Jr.,33,Değişiklik Giren,substitution - player in
+346279,94,1,1,05:30,330,11,7,home,Leon Apaydın,55,Değişiklik Giren,substitution - player in
+346279,95,1,1,05:30,330,11,7,away,Boubacar Toure,21,Değişiklik Çıkan,substitution - player out
+346279,96,1,1,05:30,330,11,7,away,Damien Jefferson,23,Değişiklik Çıkan,substitution - player out
+346279,97,1,1,05:30,330,11,7,away,Peyton Aldridge,22,Değişiklik Giren,substitution - player in
+346279,98,1,1,05:30,330,11,7,away,Zach Hankins,35,Değişiklik Giren,substitution - player in
+346279,101,1,1,05:17,317,11,7,away,Peyton Aldridge,22,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,105,1,1,05:13,313,11,7,home,Sadık Kabaca,6,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,106,1,1,05:08,308,11,7,away,Zach Hankins,35,Savunma Ribaundu,defensive rebound
+346279,108,1,1,05:02,302,11,7,home,Jamuni McNeace,8,Kişisel Faul,personal foul
+346279,109,1,1,05:02,302,11,7,away,Ty Gordon,0,Faul Yapılan,foul drawn
+346279,111,1,1,04:53,293,11,9,away,Quentin Peterson,77,2 Sayı Havada Kayarak Sıçrayarak Atış Başarılı,2PT floater made
+346279,112,1,1,04:37,277,13,9,home,Jamuni McNeace,8,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,113,1,1,04:37,277,13,9,home,Sadık Kabaca,6,Asist,assist
+346279,115,1,1,04:23,263,13,9,home,Leon Apaydın,55,Kişisel Faul,personal foul
+346279,116,1,1,04:23,263,13,9,away,Zach Hankins,35,Faul Yapılan,foul drawn
+346279,117,1,1,04:23,263,13,9,,,,Mola,timeout
+346279,118,1,1,04:23,263,13,9,away,,,Top Kaybı - 5 Saniye,turnover - 5-second violation
+346279,120,1,1,04:06,246,15,9,home,Shavar Reynolds Jr.,33,2 Sayı Aniden Durarak Sıçrayarak Atış Başarılı,2PT pull-up jump shot made
+346279,122,1,1,03:48,228,15,9,home,Leon Apaydın,55,Kişisel Faul,personal foul
+346279,123,1,1,03:48,228,15,9,away,Okben Ulubay,4,Faul Yapılan,foul drawn
+346279,124,1,1,03:48,228,15,9,home,Leon Apaydın,55,Değişiklik Çıkan,substitution - player out
+346279,125,1,1,03:48,228,15,9,home,Efe Postel,22,Değişiklik Giren,substitution - player in
+346279,126,1,1,03:48,228,15,9,away,Ty Gordon,0,Değişiklik Çıkan,substitution - player out
+346279,127,1,1,03:48,228,15,9,away,Kadir Bayram,8,Değişiklik Giren,substitution - player in
+346279,129,1,1,03:45,225,15,11,away,Quentin Peterson,77,2 Sayı Turnike Başarılı,2PT layup made
+346279,130,1,1,03:45,225,15,11,away,Okben Ulubay,4,Asist,assist
+346279,131,1,1,03:33,213,15,11,home,Efe Postel,22,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,132,1,1,03:31,211,15,11,away,Okben Ulubay,4,Savunma Ribaundu,defensive rebound
+346279,134,1,1,03:25,205,15,11,home,Shavar Reynolds Jr.,33,Kişisel Faul,personal foul
+346279,135,1,1,03:25,205,15,11,away,Kadir Bayram,8,Faul Yapılan,foul drawn
+346279,136,1,1,03:25,205,15,11,away,Quentin Peterson,77,Değişiklik Çıkan,substitution - player out
+346279,137,1,1,03:25,205,15,11,away,Damien Jefferson,23,Değişiklik Giren,substitution - player in
+346279,138,1,1,03:25,205,15,12,away,Kadir Bayram,8,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,139,1,1,03:25,205,15,12,away,Kadir Bayram,8,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,141,1,1,03:25,205,15,12,home,Sadık Kabaca,6,Savunma Ribaundu,defensive rebound
+346279,142,1,1,03:15,195,18,12,home,Sadık Kabaca,6,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,143,1,1,03:15,195,18,12,home,Shavar Reynolds Jr.,33,Asist,assist
+346279,144,1,1,02:54,174,18,12,away,Damien Jefferson,23,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,145,1,1,02:50,170,18,12,home,Jamuni McNeace,8,Savunma Ribaundu,defensive rebound
+346279,146,1,1,02:38,158,18,12,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,147,1,1,02:36,156,18,12,home,Zach Nutall,10,Hücum Ribaundu,offensive rebound
+346279,151,1,1,02:32,152,18,12,home,Zach Nutall,10,Top Kaybı - Oyun Sahası Dışı,turnover - out of bounds
+346279,152,1,1,02:32,152,18,12,home,Zach Nutall,10,Değişiklik Çıkan,substitution - player out
+346279,153,1,1,02:32,152,18,12,home,Gabe Brown,44,Değişiklik Giren,substitution - player in
+346279,158,1,1,02:15,135,18,12,away,Zach Hankins,35,Top Kaybı - Hatalı Yürüme,turnover - travelling
+346279,160,1,1,01:59,119,20,12,home,Jamuni McNeace,8,2 Sayı Ters Turnike Başarılı,2PT reverse layup made
+346279,161,1,1,01:59,119,20,12,home,Sadık Kabaca,6,Asist,assist
+346279,163,1,1,01:53,113,20,12,home,Shavar Reynolds Jr.,33,Kişisel Faul,personal foul
+346279,164,1,1,01:53,113,20,12,away,Kadir Bayram,8,Faul Yapılan,foul drawn
+346279,165,1,1,01:53,113,20,12,home,Sadık Kabaca,6,Değişiklik Çıkan,substitution - player out
+346279,166,1,1,01:53,113,20,12,home,Shavar Reynolds Jr.,33,Değişiklik Çıkan,substitution - player out
+346279,167,1,1,01:53,113,20,12,home,Yiğitcan Saybir,3,Değişiklik Giren,substitution - player in
+346279,168,1,1,01:53,113,20,12,home,Bryce Jones,32,Değişiklik Giren,substitution - player in
+346279,169,1,1,01:53,113,20,12,away,Zach Hankins,35,Değişiklik Çıkan,substitution - player out
+346279,170,1,1,01:53,113,20,12,away,Boubacar Toure,21,Değişiklik Giren,substitution - player in
+346279,171,1,1,01:53,113,20,13,away,Kadir Bayram,8,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,172,1,1,01:53,113,20,14,away,Kadir Bayram,8,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,175,1,1,01:30,90,20,14,away,Kadir Bayram,8,Kişisel Faul,personal foul
+346279,176,1,1,01:30,90,20,14,home,Bryce Jones,32,Faul Yapılan,foul drawn
+346279,177,1,1,01:30,90,21,14,home,Bryce Jones,32,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,178,1,1,01:30,90,22,14,home,Bryce Jones,32,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,181,1,1,01:14,74,22,14,away,Damien Jefferson,23,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,182,1,1,01:14,74,22,14,home,Efe Postel,22,Değişiklik Çıkan,substitution - player out
+346279,183,1,1,01:14,74,22,14,home,Zach Nutall,10,Değişiklik Giren,substitution - player in
+346279,184,1,1,01:14,74,22,14,away,Kadir Bayram,8,Değişiklik Çıkan,substitution - player out
+346279,185,1,1,01:14,74,22,14,away,Boubacar Toure,21,Değişiklik Çıkan,substitution - player out
+346279,186,1,1,01:14,74,22,14,away,Zach Hankins,35,Değişiklik Giren,substitution - player in
+346279,187,1,1,01:14,74,22,14,away,Quentin Peterson,77,Değişiklik Giren,substitution - player in
+346279,192,1,1,01:03,63,22,14,away,Quentin Peterson,77,Kişisel Faul,personal foul
+346279,193,1,1,01:03,63,22,14,home,Bryce Jones,32,Faul Yapılan,foul drawn
+346279,194,1,1,01:03,63,23,14,home,Bryce Jones,32,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,195,1,1,01:03,63,24,14,home,Bryce Jones,32,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,198,1,1,00:52,52,24,14,away,Quentin Peterson,77,Hücum Faul,offensive foul
+346279,199,1,1,00:52,52,24,14,away,Quentin Peterson,77,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,200,1,1,00:52,52,24,14,home,Bryce Jones,32,Faul Yapılan,foul drawn
+346279,201,1,1,00:52,52,24,14,away,Quentin Peterson,77,Değişiklik Çıkan,substitution - player out
+346279,202,1,1,00:52,52,24,14,away,Ty Gordon,0,Değişiklik Giren,substitution - player in
+346279,205,1,1,00:38,38,24,14,home,,,Jump Ball - Tutulmuş Top,jump ball - held ball
+346279,208,1,1,00:30,30,26,14,home,Zach Nutall,10,2 Sayı Turnike Başarılı,2PT layup made
+346279,209,1,1,00:30,30,26,14,away,Zach Hankins,35,Kişisel Faul,personal foul
+346279,210,1,1,00:30,30,26,14,home,Zach Nutall,10,Faul Yapılan,foul drawn
+346279,211,1,1,00:30,30,27,14,home,Zach Nutall,10,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,213,1,1,00:20,20,27,16,away,Zach Hankins,35,2 Sayı Smaç Başarılı,2PT dunk made
+346279,214,1,1,00:20,20,27,16,away,Okben Ulubay,4,Asist,assist
+346279,216,1,1,00:04,4,27,16,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,218,1,1,00:02,2,27,16,away,Damien Jefferson,23,Savunma Ribaundu,defensive rebound
+346279,222,1,1,00:00,0,27,16,,,,Çeyrek Sonu,period end
+346279,223,2,1,10:00,600,27,16,home,Jamuni McNeace,8,Değişiklik Çıkan,substitution - player out
+346279,224,2,1,10:00,600,27,16,home,Gabe Brown,44,Değişiklik Çıkan,substitution - player out
+346279,225,2,1,10:00,600,27,16,home,Terrell Carter II,5,Değişiklik Giren,substitution - player in
+346279,226,2,1,10:00,600,27,16,home,Sadık Kabaca,6,Değişiklik Giren,substitution - player in
+346279,227,2,1,10:00,600,27,16,away,Peyton Aldridge,22,Değişiklik Çıkan,substitution - player out
+346279,228,2,1,10:00,600,27,16,away,Edon Maxhuni,5,Değişiklik Giren,substitution - player in
+346279,229,2,1,10:00,600,27,16,,,,Çeyrek Başladı,period started
+346279,231,2,1,09:45,585,27,16,away,Damien Jefferson,23,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,232,2,1,09:42,582,27,16,home,Bryce Jones,32,Savunma Ribaundu,defensive rebound
+346279,233,2,1,09:40,580,29,16,home,Yiğitcan Saybir,3,2 Sayı Turnike Başarılı,2PT layup made
+346279,234,2,1,09:40,580,29,16,home,Bryce Jones,32,Asist,assist
+346279,236,2,1,09:24,564,29,18,away,Ty Gordon,0,2 Sayı Top Sürerek Turnike Başarılı,2PT driving layup made
+346279,237,2,1,09:24,564,29,18,home,Sadık Kabaca,6,Kişisel Faul,personal foul
+346279,238,2,1,09:24,564,29,18,away,Ty Gordon,0,Faul Yapılan,foul drawn
+346279,239,2,1,09:24,564,29,19,away,Ty Gordon,0,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,243,2,1,09:05,545,29,19,home,Bryce Jones,32,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,244,2,1,09:05,545,29,19,away,Damien Jefferson,23,Top Çalma,steal
+346279,245,2,1,08:47,527,29,19,away,Okben Ulubay,4,2 Sayı Turnike Başarısız,2PT layup missed
+346279,247,2,1,08:46,526,29,19,away,Zach Hankins,35,Hücum Ribaundu,offensive rebound
+346279,248,2,1,08:46,526,29,19,home,Sadık Kabaca,6,Kişisel Faul,personal foul
+346279,249,2,1,08:46,526,29,19,away,Zach Hankins,35,Faul Yapılan,foul drawn
+346279,250,2,1,08:46,526,29,19,home,Zach Nutall,10,Değişiklik Çıkan,substitution - player out
+346279,251,2,1,08:46,526,29,19,home,Shavar Reynolds Jr.,33,Değişiklik Giren,substitution - player in
+346279,252,2,1,08:46,526,29,20,away,Zach Hankins,35,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,253,2,1,08:46,526,29,21,away,Zach Hankins,35,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,255,2,1,08:27,507,29,21,home,Yiğitcan Saybir,3,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,256,2,1,08:25,505,29,21,home,Shavar Reynolds Jr.,33,Hücum Ribaundu,offensive rebound
+346279,257,2,1,08:20,500,29,21,home,Shavar Reynolds Jr.,33,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,258,2,1,08:20,500,29,21,away,Ty Gordon,0,Top Çalma,steal
+346279,259,2,1,08:06,486,29,24,away,Edon Maxhuni,5,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,260,2,1,08:06,486,29,24,away,Ty Gordon,0,Asist,assist
+346279,262,2,1,07:57,477,29,24,away,Zach Hankins,35,Kişisel Faul,personal foul
+346279,263,2,1,07:57,477,29,24,home,Yiğitcan Saybir,3,Faul Yapılan,foul drawn
+346279,264,2,1,07:57,477,29,24,away,Zach Hankins,35,Değişiklik Çıkan,substitution - player out
+346279,265,2,1,07:57,477,29,24,away,Boubacar Toure,21,Değişiklik Giren,substitution - player in
+346279,266,2,1,07:57,477,29,24,home,Sadık Kabaca,6,Değişiklik Çıkan,substitution - player out
+346279,267,2,1,07:57,477,29,24,home,Gabe Brown,44,Değişiklik Giren,substitution - player in
+346279,269,2,1,07:45,465,29,24,home,Shavar Reynolds Jr.,33,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,270,2,1,07:42,462,29,24,away,Okben Ulubay,4,Savunma Ribaundu,defensive rebound
+346279,271,2,1,07:33,453,29,24,away,Edon Maxhuni,5,2 Sayı Turnike Başarısız,2PT layup missed
+346279,273,2,1,07:33,453,29,24,home,Terrell Carter II,5,Blok,block
+346279,274,2,1,07:31,451,29,24,away,Boubacar Toure,21,Hücum Ribaundu,offensive rebound
+346279,275,2,1,07:31,451,29,26,away,Boubacar Toure,21,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,276,2,1,07:31,451,29,26,home,Shavar Reynolds Jr.,33,Kişisel Faul,personal foul
+346279,277,2,1,07:31,451,29,26,away,Boubacar Toure,21,Faul Yapılan,foul drawn
+346279,278,2,1,07:31,451,29,26,home,,,Mola,timeout
+346279,279,2,1,07:31,451,29,27,away,Boubacar Toure,21,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,281,2,1,07:16,436,31,27,home,Yiğitcan Saybir,3,2 Sayı Ters Turnike Başarılı,2PT reverse layup made
+346279,282,2,1,07:16,436,31,27,home,Shavar Reynolds Jr.,33,Asist,assist
+346279,283,2,1,06:54,414,31,27,away,Okben Ulubay,4,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,284,2,1,06:52,412,31,27,home,Shavar Reynolds Jr.,33,Savunma Ribaundu,defensive rebound
+346279,286,2,1,06:46,406,31,27,away,Boubacar Toure,21,Kişisel Faul,personal foul
+346279,287,2,1,06:46,406,31,27,home,Terrell Carter II,5,Faul Yapılan,foul drawn
+346279,288,2,1,06:46,406,31,27,home,Shavar Reynolds Jr.,33,Değişiklik Çıkan,substitution - player out
+346279,289,2,1,06:46,406,31,27,home,Zach Nutall,10,Değişiklik Giren,substitution - player in
+346279,291,2,1,06:33,393,34,27,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,293,2,1,06:32,392,34,27,away,,,Mola,timeout
+346279,296,2,1,06:32,392,34,27,away,Ty Gordon,0,Değişiklik Çıkan,substitution - player out
+346279,297,2,1,06:32,392,34,27,away,Quentin Peterson,77,Değişiklik Giren,substitution - player in
+346279,301,2,1,06:16,376,34,27,home,Terrell Carter II,5,Kişisel Faul,personal foul
+346279,302,2,1,06:16,376,34,27,away,Edon Maxhuni,5,Faul Yapılan,foul drawn
+346279,303,2,1,06:16,376,34,28,away,Edon Maxhuni,5,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,304,2,1,06:16,376,34,29,away,Edon Maxhuni,5,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,308,2,1,06:08,368,34,29,home,Terrell Carter II,5,2 Sayı Turnike Başarısız,2PT layup missed
+346279,309,2,1,06:06,366,34,29,away,Boubacar Toure,21,Savunma Ribaundu,defensive rebound
+346279,310,2,1,06:01,361,34,29,away,Edon Maxhuni,5,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,312,2,1,06:00,360,34,29,home,,,Takım Savunma Ribaundu,team defensive rebound
+346279,315,2,1,05:58,358,34,29,home,Terrell Carter II,5,Değişiklik Çıkan,substitution - player out
+346279,316,2,1,05:58,358,34,29,home,Bryce Jones,32,Değişiklik Çıkan,substitution - player out
+346279,317,2,1,05:58,358,34,29,home,Jamuni McNeace,8,Değişiklik Giren,substitution - player in
+346279,318,2,1,05:58,358,34,29,home,Efe Postel,22,Değişiklik Giren,substitution - player in
+346279,320,2,1,05:49,349,36,29,home,Yiğitcan Saybir,3,2 Sayı Top Sürerek Turnike Başarılı,2PT driving layup made
+346279,322,2,1,05:34,334,36,29,away,Damien Jefferson,23,Top Kaybı - Oyun Sahası Dışı,turnover - out of bounds
+346279,323,2,1,05:34,334,36,29,away,Boubacar Toure,21,Değişiklik Çıkan,substitution - player out
+346279,324,2,1,05:34,334,36,29,away,Zach Hankins,35,Değişiklik Giren,substitution - player in
+346279,325,2,1,05:34,334,36,29,away,Damien Jefferson,23,Değişiklik Çıkan,substitution - player out
+346279,326,2,1,05:34,334,36,29,away,Peyton Aldridge,22,Değişiklik Giren,substitution - player in
+346279,328,2,1,05:23,323,36,29,home,Yiğitcan Saybir,3,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,329,2,1,05:23,323,36,29,away,Peyton Aldridge,22,Top Çalma,steal
+346279,330,2,1,05:19,319,36,29,away,Edon Maxhuni,5,2 Sayı Turnike Başarısız,2PT layup missed
+346279,331,2,1,05:19,319,36,29,home,Gabe Brown,44,Blok,block
+346279,332,2,1,05:12,312,36,29,away,Zach Hankins,35,Hücum Ribaundu,offensive rebound
+346279,333,2,1,05:12,312,36,31,away,Zach Hankins,35,2 Sayı Tip-In Başarılı,2PT tip-in made
+346279,334,2,1,05:03,303,36,31,home,Yiğitcan Saybir,3,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,335,2,1,05:01,301,36,31,away,Edon Maxhuni,5,Savunma Ribaundu,defensive rebound
+346279,336,2,1,04:54,294,36,31,away,Edon Maxhuni,5,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,337,2,1,04:54,294,36,31,home,Gabe Brown,44,Top Çalma,steal
+346279,338,2,1,04:51,291,38,31,home,Gabe Brown,44,2 Sayı Smaç Başarılı,2PT dunk made
+346279,341,2,1,04:30,270,38,34,away,Quentin Peterson,77,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,342,2,1,04:30,270,38,34,away,Okben Ulubay,4,Asist,assist
+346279,345,2,1,04:12,252,38,34,away,Peyton Aldridge,22,Kişisel Faul,personal foul
+346279,346,2,1,04:12,252,38,34,home,Yiğitcan Saybir,3,Faul Yapılan,foul drawn
+346279,347,2,1,04:12,252,38,34,away,Edon Maxhuni,5,Değişiklik Çıkan,substitution - player out
+346279,348,2,1,04:12,252,38,34,away,Ty Gordon,0,Değişiklik Giren,substitution - player in
+346279,349,2,1,04:12,252,39,34,home,Yiğitcan Saybir,3,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,350,2,1,04:12,252,39,34,home,Yiğitcan Saybir,3,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,352,2,1,04:12,252,39,34,away,Okben Ulubay,4,Savunma Ribaundu,defensive rebound
+346279,353,2,1,03:54,234,39,37,away,Quentin Peterson,77,3 Sayı Aniden Durarak Sıçrayarak Atış Başarılı,3PT pull-up jump shot made
+346279,354,2,1,03:54,234,39,37,away,Okben Ulubay,4,Asist,assist
+346279,355,2,1,03:46,226,39,37,home,Gabe Brown,44,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,357,2,1,03:45,225,39,37,away,,,Takım Savunma Ribaundu,team defensive rebound
+346279,359,2,1,03:44,224,39,37,home,Yiğitcan Saybir,3,Değişiklik Çıkan,substitution - player out
+346279,360,2,1,03:44,224,39,37,home,Efe Postel,22,Değişiklik Çıkan,substitution - player out
+346279,361,2,1,03:44,224,39,37,home,Sadık Kabaca,6,Değişiklik Giren,substitution - player in
+346279,362,2,1,03:44,224,39,37,home,Leon Apaydın,55,Değişiklik Giren,substitution - player in
+346279,365,2,1,03:32,212,39,37,home,Leon Apaydın,55,Kişisel Faul,personal foul
+346279,366,2,1,03:32,212,39,37,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,367,2,1,03:32,212,39,37,away,Okben Ulubay,4,Değişiklik Çıkan,substitution - player out
+346279,368,2,1,03:32,212,39,37,away,Kadir Bayram,8,Değişiklik Giren,substitution - player in
+346279,369,2,1,03:32,212,39,38,away,Quentin Peterson,77,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,370,2,1,03:32,212,39,38,away,Ty Gordon,0,Asist,assist
+346279,371,2,1,03:32,212,39,39,away,Quentin Peterson,77,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,373,2,1,03:15,195,41,39,home,Jamuni McNeace,8,2 Sayı Çengel Atış Başarılı,2PT hook shot made
+346279,374,2,1,03:15,195,41,39,home,Gabe Brown,44,Asist,assist
+346279,375,2,1,02:52,172,41,39,away,Peyton Aldridge,22,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,376,2,1,02:49,169,41,39,away,Zach Hankins,35,Hücum Ribaundu,offensive rebound
+346279,377,2,1,02:48,168,41,39,away,Ty Gordon,0,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,378,2,1,02:45,165,41,39,home,Sadık Kabaca,6,Savunma Ribaundu,defensive rebound
+346279,380,2,1,02:39,159,41,39,home,Zach Nutall,10,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,381,2,1,02:39,159,41,39,home,Zach Nutall,10,Değişiklik Çıkan,substitution - player out
+346279,382,2,1,02:39,159,41,39,home,Bryce Jones,32,Değişiklik Giren,substitution - player in
+346279,383,2,1,02:39,159,41,39,home,Jamuni McNeace,8,Değişiklik Çıkan,substitution - player out
+346279,384,2,1,02:39,159,41,39,home,Terrell Carter II,5,Değişiklik Giren,substitution - player in
+346279,391,2,1,02:26,146,41,42,away,Quentin Peterson,77,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,392,2,1,02:26,146,41,42,away,Ty Gordon,0,Asist,assist
+346279,393,2,1,02:26,146,41,42,home,,,Mola,timeout
+346279,395,2,1,02:12,132,43,42,home,Gabe Brown,44,2 Sayı Turnike Başarılı,2PT layup made
+346279,396,2,1,02:12,132,43,42,home,Sadık Kabaca,6,Asist,assist
+346279,397,2,1,01:48,108,43,42,away,Quentin Peterson,77,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,398,2,1,01:48,108,43,42,home,Gabe Brown,44,Top Çalma,steal
+346279,399,2,1,01:43,103,43,42,home,Gabe Brown,44,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,400,2,1,01:40,100,43,42,home,Sadık Kabaca,6,Hücum Ribaundu,offensive rebound
+346279,404,2,1,01:33,93,43,42,away,Peyton Aldridge,22,Kişisel Faul,personal foul
+346279,405,2,1,01:33,93,43,42,home,Bryce Jones,32,Faul Yapılan,foul drawn
+346279,406,2,1,01:33,93,43,42,home,Gabe Brown,44,Değişiklik Çıkan,substitution - player out
+346279,407,2,1,01:33,93,43,42,home,Leon Apaydın,55,Değişiklik Çıkan,substitution - player out
+346279,408,2,1,01:33,93,43,42,home,Yiğitcan Saybir,3,Değişiklik Giren,substitution - player in
+346279,409,2,1,01:33,93,43,42,home,Efe Postel,22,Değişiklik Giren,substitution - player in
+346279,410,2,1,01:33,93,43,42,away,Peyton Aldridge,22,Değişiklik Çıkan,substitution - player out
+346279,411,2,1,01:33,93,43,42,away,Quentin Peterson,77,Değişiklik Çıkan,substitution - player out
+346279,412,2,1,01:33,93,43,42,away,Okben Ulubay,4,Değişiklik Giren,substitution - player in
+346279,413,2,1,01:33,93,43,42,away,Damien Jefferson,23,Değişiklik Giren,substitution - player in
+346279,414,2,1,01:33,93,44,42,home,Bryce Jones,32,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,415,2,1,01:33,93,45,42,home,Bryce Jones,32,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,417,2,1,01:11,71,45,44,away,Zach Hankins,35,2 Sayı Smaç Başarılı,2PT dunk made
+346279,418,2,1,01:11,71,45,44,away,Ty Gordon,0,Asist,assist
+346279,419,2,1,00:50,50,48,44,home,Efe Postel,22,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,420,2,1,00:20,20,48,47,away,Damien Jefferson,23,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,421,2,1,00:20,20,48,47,away,Kadir Bayram,8,Asist,assist
+346279,425,2,1,00:03,3,48,47,away,Zach Hankins,35,Değişiklik Çıkan,substitution - player out
+346279,426,2,1,00:03,3,48,47,away,Berk Demir,11,Değişiklik Giren,substitution - player in
+346279,428,2,1,00:02,2,48,47,home,Sadık Kabaca,6,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,430,2,1,00:00,0,48,47,,,,Çeyrek Sonu,period end
+346279,431,3,1,10:00,600,48,47,home,Sadık Kabaca,6,Değişiklik Çıkan,substitution - player out
+346279,432,3,1,10:00,600,48,47,home,Efe Postel,22,Değişiklik Çıkan,substitution - player out
+346279,433,3,1,10:00,600,48,47,home,Shavar Reynolds Jr.,33,Değişiklik Giren,substitution - player in
+346279,434,3,1,10:00,600,48,47,home,Gabe Brown,44,Değişiklik Giren,substitution - player in
+346279,435,3,1,10:00,600,48,47,away,Okben Ulubay,4,Değişiklik Çıkan,substitution - player out
+346279,436,3,1,10:00,600,48,47,away,Kadir Bayram,8,Değişiklik Çıkan,substitution - player out
+346279,437,3,1,10:00,600,48,47,away,Zach Hankins,35,Değişiklik Giren,substitution - player in
+346279,438,3,1,10:00,600,48,47,away,Quentin Peterson,77,Değişiklik Giren,substitution - player in
+346279,439,3,1,10:00,600,48,47,,,,Çeyrek Başladı,period started
+346279,441,3,1,09:52,592,51,47,home,Gabe Brown,44,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,442,3,1,09:52,592,51,47,home,Bryce Jones,32,Asist,assist
+346279,444,3,1,09:35,575,51,47,home,Shavar Reynolds Jr.,33,Kişisel Faul,personal foul
+346279,445,3,1,09:35,575,51,47,away,Damien Jefferson,23,Faul Yapılan,foul drawn
+346279,446,3,1,09:35,575,51,47,home,Shavar Reynolds Jr.,33,Değişiklik Çıkan,substitution - player out
+346279,447,3,1,09:35,575,51,47,home,Zach Nutall,10,Değişiklik Giren,substitution - player in
+346279,449,3,1,09:27,567,51,47,away,Quentin Peterson,77,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,450,3,1,09:27,567,51,47,home,Zach Nutall,10,Top Çalma,steal
+346279,452,3,1,09:08,548,51,47,home,Yiğitcan Saybir,3,Hücum Faul,offensive foul
+346279,453,3,1,09:08,548,51,47,home,Yiğitcan Saybir,3,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,454,3,1,09:08,548,51,47,away,Zach Hankins,35,Faul Yapılan,foul drawn
+346279,456,3,1,08:56,536,51,49,away,Zach Hankins,35,2 Sayı Dönerek Sıçrayarak Atış Başarılı,2PT turnaround jump shot made
+346279,457,3,1,08:56,536,51,49,away,Damien Jefferson,23,Asist,assist
+346279,459,3,1,08:46,526,53,49,home,Bryce Jones,32,2 Sayı Aniden Durarak Sıçrayarak Atış Başarılı,2PT pull-up jump shot made
+346279,460,3,1,08:46,526,53,49,away,Zach Hankins,35,Kişisel Faul,personal foul
+346279,461,3,1,08:46,526,53,49,home,Bryce Jones,32,Faul Yapılan,foul drawn
+346279,462,3,1,08:46,526,54,49,home,Bryce Jones,32,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,463,3,1,08:46,526,54,49,away,Zach Hankins,35,Değişiklik Çıkan,substitution - player out
+346279,464,3,1,08:46,526,54,49,away,Boubacar Toure,21,Değişiklik Giren,substitution - player in
+346279,466,3,1,08:43,523,54,49,away,Ty Gordon,0,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,467,3,1,08:43,523,54,49,home,Bryce Jones,32,Top Çalma,steal
+346279,468,3,1,08:40,520,56,49,home,Bryce Jones,32,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,470,3,1,08:26,506,56,49,away,Ty Gordon,0,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,471,3,1,08:26,506,56,49,home,Bryce Jones,32,Top Çalma,steal
+346279,472,3,1,08:26,506,56,49,away,Ty Gordon,0,Faul,foul
+346279,473,3,1,08:26,506,56,49,home,Zach Nutall,10,Faul Yapılan,foul drawn
+346279,474,3,1,08:26,506,57,49,home,Zach Nutall,10,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,475,3,1,08:26,506,58,49,home,Zach Nutall,10,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,477,3,1,08:14,494,58,49,home,Zach Nutall,10,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,478,3,1,08:14,494,58,49,away,Quentin Peterson,77,Top Çalma,steal
+346279,479,3,1,08:11,491,58,51,away,Ty Gordon,0,2 Sayı Turnike Başarılı,2PT layup made
+346279,480,3,1,08:11,491,58,51,away,Quentin Peterson,77,Asist,assist
+346279,481,3,1,07:58,478,58,51,home,Yiğitcan Saybir,3,2 Sayı Sıçrayarak Atış Başarısız,2PT jump shot missed
+346279,482,3,1,07:56,476,58,51,home,Terrell Carter II,5,Hücum Ribaundu,offensive rebound
+346279,483,3,1,07:54,474,60,51,home,Terrell Carter II,5,2 Sayı Smaç Başarılı,2PT dunk made
+346279,484,3,1,07:34,454,60,51,away,Quentin Peterson,77,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,486,3,1,07:34,454,60,51,home,Yiğitcan Saybir,3,Top Çalma,steal
+346279,487,3,1,07:33,453,62,51,home,Yiğitcan Saybir,3,2 Sayı Turnike Başarılı,2PT layup made
+346279,488,3,1,07:33,453,62,51,away,Berk Demir,11,Kişisel Faul,personal foul
+346279,489,3,1,07:33,453,62,51,home,Yiğitcan Saybir,3,Faul Yapılan,foul drawn
+346279,490,3,1,07:33,453,63,51,home,Yiğitcan Saybir,3,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,493,3,1,07:11,431,63,51,away,Quentin Peterson,77,2 Sayı Turnike Başarısız,2PT layup missed
+346279,494,3,1,07:11,431,63,51,away,Boubacar Toure,21,Hücum Ribaundu,offensive rebound
+346279,495,3,1,07:11,431,63,51,home,Terrell Carter II,5,Kişisel Faul,personal foul
+346279,496,3,1,07:11,431,63,51,away,Boubacar Toure,21,Faul Yapılan,foul drawn
+346279,497,3,1,07:11,431,63,51,away,Ty Gordon,0,Değişiklik Çıkan,substitution - player out
+346279,498,3,1,07:11,431,63,51,away,Berk Demir,11,Değişiklik Çıkan,substitution - player out
+346279,499,3,1,07:11,431,63,51,away,Okben Ulubay,4,Değişiklik Giren,substitution - player in
+346279,500,3,1,07:11,431,63,51,away,Edon Maxhuni,5,Değişiklik Giren,substitution - player in
+346279,501,3,1,07:11,431,63,52,away,Boubacar Toure,21,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,502,3,1,07:11,431,63,52,away,Boubacar Toure,21,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,506,3,1,07:09,429,63,52,home,Gabe Brown,44,Savunma Ribaundu,defensive rebound
+346279,508,3,1,07:09,429,63,52,away,Okben Ulubay,4,Kişisel Faul,personal foul
+346279,509,3,1,07:09,429,63,52,home,Gabe Brown,44,Faul Yapılan,foul drawn
+346279,510,3,1,07:09,429,63,52,home,Yiğitcan Saybir,3,Değişiklik Çıkan,substitution - player out
+346279,511,3,1,07:09,429,63,52,home,Sadık Kabaca,6,Değişiklik Giren,substitution - player in
+346279,513,3,1,06:59,419,66,52,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,517,3,1,06:57,417,66,52,away,,,Mola,timeout
+346279,518,3,1,06:57,417,66,52,home,Terrell Carter II,5,Değişiklik Çıkan,substitution - player out
+346279,519,3,1,06:57,417,66,52,home,Jamuni McNeace,8,Değişiklik Giren,substitution - player in
+346279,521,3,1,06:37,397,66,55,away,Damien Jefferson,23,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,522,3,1,06:37,397,66,55,away,Quentin Peterson,77,Asist,assist
+346279,523,3,1,06:20,380,66,55,home,Sadık Kabaca,6,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,524,3,1,06:20,380,66,55,away,Edon Maxhuni,5,Top Çalma,steal
+346279,525,3,1,06:17,377,66,57,away,Quentin Peterson,77,2 Sayı Turnike Başarılı,2PT layup made
+346279,526,3,1,06:17,377,66,57,away,Okben Ulubay,4,Asist,assist
+346279,528,3,1,06:08,368,66,57,home,Sadık Kabaca,6,Hücum Faul,offensive foul
+346279,529,3,1,06:08,368,66,57,home,Sadık Kabaca,6,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,530,3,1,06:08,368,66,57,away,Okben Ulubay,4,Faul Yapılan,foul drawn
+346279,531,3,1,06:08,368,66,57,home,Sadık Kabaca,6,Değişiklik Çıkan,substitution - player out
+346279,532,3,1,06:08,368,66,57,home,Bryce Jones,32,Değişiklik Çıkan,substitution - player out
+346279,533,3,1,06:08,368,66,57,home,Yiğitcan Saybir,3,Değişiklik Giren,substitution - player in
+346279,534,3,1,06:08,368,66,57,home,Shavar Reynolds Jr.,33,Değişiklik Giren,substitution - player in
+346279,536,3,1,05:54,354,66,57,away,Edon Maxhuni,5,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,537,3,1,05:50,350,66,57,away,Damien Jefferson,23,Hücum Ribaundu,offensive rebound
+346279,539,3,1,05:46,346,66,57,home,Yiğitcan Saybir,3,Kişisel Faul,personal foul
+346279,540,3,1,05:46,346,66,57,away,Boubacar Toure,21,Faul Yapılan,foul drawn
+346279,541,3,1,05:46,346,66,58,away,Boubacar Toure,21,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,542,3,1,05:46,346,66,58,away,Quentin Peterson,77,Asist,assist
+346279,543,3,1,05:46,346,66,59,away,Boubacar Toure,21,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,545,3,1,05:32,332,66,59,home,Gabe Brown,44,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,546,3,1,05:30,330,66,59,away,Boubacar Toure,21,Savunma Ribaundu,defensive rebound
+346279,547,3,1,05:23,323,66,61,away,Quentin Peterson,77,2 Sayı Turnike Başarılı,2PT layup made
+346279,551,3,1,05:21,321,66,61,home,,,Mola,timeout
+346279,552,3,1,05:21,321,66,61,home,Gabe Brown,44,Değişiklik Çıkan,substitution - player out
+346279,553,3,1,05:21,321,66,61,home,Efe Postel,22,Değişiklik Giren,substitution - player in
+346279,555,3,1,05:10,310,66,61,home,Shavar Reynolds Jr.,33,2 Sayı Sıçrayarak Atış Başarısız,2PT jump shot missed
+346279,556,3,1,05:06,306,66,61,home,Jamuni McNeace,8,Hücum Ribaundu,offensive rebound
+346279,557,3,1,05:06,306,66,61,home,Jamuni McNeace,8,2 Sayı Tip-In Başarısız,2PT tip-in missed
+346279,558,3,1,05:05,305,66,61,away,Edon Maxhuni,5,Savunma Ribaundu,defensive rebound
+346279,560,3,1,04:53,293,66,61,home,Jamuni McNeace,8,Kişisel Faul,personal foul
+346279,561,3,1,04:53,293,66,61,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,562,3,1,04:53,293,66,62,away,Quentin Peterson,77,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,563,3,1,04:53,293,66,63,away,Quentin Peterson,77,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,565,3,1,04:37,277,66,63,home,Yiğitcan Saybir,3,2 Sayı Çengel Atış Başarısız,2PT hook shot missed
+346279,566,3,1,04:34,274,66,63,away,Edon Maxhuni,5,Savunma Ribaundu,defensive rebound
+346279,568,3,1,04:30,270,66,63,away,Quentin Peterson,77,2 Sayı Turnike Başarısız,2PT layup missed
+346279,569,3,1,04:30,270,66,63,home,Yiğitcan Saybir,3,Blok,block
+346279,570,3,1,04:30,270,66,63,away,,,Takım Hücum Ribaundu,team offensive rebound
+346279,573,3,1,04:14,254,66,63,away,Okben Ulubay,4,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,574,3,1,04:14,254,66,63,home,,,Takım Savunma Ribaundu,team defensive rebound
+346279,576,3,1,03:58,238,66,63,home,Yiğitcan Saybir,3,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,577,3,1,03:56,236,66,63,home,Jamuni McNeace,8,Hücum Ribaundu,offensive rebound
+346279,578,3,1,03:54,234,68,63,home,Jamuni McNeace,8,2 Sayı Çengel Atış Başarılı,2PT hook shot made
+346279,579,3,1,03:35,215,68,63,away,Okben Ulubay,4,2 Sayı Sıçrayarak Atış Başarısız,2PT jump shot missed
+346279,580,3,1,03:32,212,68,63,away,Boubacar Toure,21,Hücum Ribaundu,offensive rebound
+346279,582,3,1,03:29,209,68,63,away,Boubacar Toure,21,Top Kaybı - 3 Saniye,turnover - 3-second violation
+346279,583,3,1,03:29,209,68,63,home,Yiğitcan Saybir,3,Değişiklik Çıkan,substitution - player out
+346279,584,3,1,03:29,209,68,63,home,Sadık Kabaca,6,Değişiklik Giren,substitution - player in
+346279,586,3,1,03:21,201,68,63,home,Shavar Reynolds Jr.,33,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,587,3,1,03:19,199,68,63,away,Okben Ulubay,4,Savunma Ribaundu,defensive rebound
+346279,589,3,1,03:18,198,68,63,home,Zach Nutall,10,Teknik Faul,technical foul (player)
+346279,590,3,1,03:18,198,68,64,away,Quentin Peterson,77,Serbest Atış 1/1 Başarılı,free throw 1 of 1 made
+346279,592,3,1,03:06,186,68,64,away,Damien Jefferson,23,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,593,3,1,03:04,184,68,64,home,Efe Postel,22,Savunma Ribaundu,defensive rebound
+346279,594,3,1,02:48,168,68,64,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,595,3,1,02:46,166,68,64,home,Sadık Kabaca,6,Hücum Ribaundu,offensive rebound
+346279,598,3,1,02:38,158,68,64,home,Shavar Reynolds Jr.,33,2 Sayı Geriye Adım Atarak Sıçrayarak Atış Başarısız,2PT step-back jump shot missed
+346279,599,3,1,02:36,156,68,64,away,Boubacar Toure,21,Savunma Ribaundu,defensive rebound
+346279,601,3,1,02:26,146,68,64,home,Jamuni McNeace,8,Kişisel Faul,personal foul
+346279,602,3,1,02:26,146,68,64,away,Boubacar Toure,21,Faul Yapılan,foul drawn
+346279,603,3,1,02:26,146,68,64,home,Shavar Reynolds Jr.,33,Değişiklik Çıkan,substitution - player out
+346279,604,3,1,02:26,146,68,64,home,Bryce Jones,32,Değişiklik Giren,substitution - player in
+346279,605,3,1,02:26,146,68,64,away,Boubacar Toure,21,Serbest Atış 1/2 Başarısız,free throw 1 of 2 missed
+346279,606,3,1,02:26,146,68,64,away,,,Ribaund,rebound
+346279,607,3,1,02:26,146,68,64,away,Boubacar Toure,21,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,609,3,1,02:26,146,68,64,home,Jamuni McNeace,8,Savunma Ribaundu,defensive rebound
+346279,610,3,1,02:09,129,70,64,home,Bryce Jones,32,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,611,3,1,01:40,100,70,64,away,Okben Ulubay,4,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,612,3,1,01:37,97,70,64,home,Efe Postel,22,Savunma Ribaundu,defensive rebound
+346279,613,3,1,01:32,92,72,64,home,Jamuni McNeace,8,2 Sayı Smaç Başarılı,2PT dunk made
+346279,614,3,1,01:32,92,72,64,home,Bryce Jones,32,Asist,assist
+346279,617,3,1,01:19,79,72,64,away,Quentin Peterson,77,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,618,3,1,01:19,79,72,64,home,Zach Nutall,10,Değişiklik Çıkan,substitution - player out
+346279,619,3,1,01:19,79,72,64,home,Gabe Brown,44,Değişiklik Giren,substitution - player in
+346279,620,3,1,01:19,79,72,64,away,Okben Ulubay,4,Değişiklik Çıkan,substitution - player out
+346279,621,3,1,01:19,79,72,64,away,Boubacar Toure,21,Değişiklik Çıkan,substitution - player out
+346279,622,3,1,01:19,79,72,64,away,Berk Demir,11,Değişiklik Giren,substitution - player in
+346279,623,3,1,01:19,79,72,64,away,Peyton Aldridge,22,Değişiklik Giren,substitution - player in
+346279,628,3,1,01:04,64,72,64,away,Berk Demir,11,Kişisel Faul,personal foul
+346279,629,3,1,01:04,64,72,64,home,Jamuni McNeace,8,Faul Yapılan,foul drawn
+346279,630,3,1,01:04,64,73,64,home,Jamuni McNeace,8,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,631,3,1,01:04,64,73,64,home,Jamuni McNeace,8,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,633,3,1,01:04,64,73,64,away,Berk Demir,11,Savunma Ribaundu,defensive rebound
+346279,634,3,1,00:48,48,73,64,away,Quentin Peterson,77,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,635,3,1,00:46,46,73,64,home,Bryce Jones,32,Savunma Ribaundu,defensive rebound
+346279,636,3,1,00:41,41,73,64,home,Sadık Kabaca,6,Top Kaybı - Top Hakimiyeti,turnover - ball handling
+346279,637,3,1,00:41,41,73,64,away,Damien Jefferson,23,Top Çalma,steal
+346279,639,3,1,00:36,36,73,66,away,Berk Demir,11,2 Sayı Turnike Başarılı,2PT layup made
+346279,640,3,1,00:36,36,73,66,away,Edon Maxhuni,5,Asist,assist
+346279,643,3,1,00:34,34,73,66,away,Damien Jefferson,23,Kişisel Faul,personal foul
+346279,644,3,1,00:34,34,73,66,home,Bryce Jones,32,Faul Yapılan,foul drawn
+346279,645,3,1,00:34,34,74,66,home,Bryce Jones,32,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,646,3,1,00:34,34,75,66,home,Bryce Jones,32,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,647,3,1,00:34,34,75,66,home,Jamuni McNeace,8,Değişiklik Çıkan,substitution - player out
+346279,648,3,1,00:34,34,75,66,home,Zach Nutall,10,Değişiklik Giren,substitution - player in
+346279,650,3,1,00:24,24,75,68,away,Edon Maxhuni,5,2 Sayı Turnike Başarılı,2PT layup made
+346279,651,3,1,00:04,4,75,68,home,Zach Nutall,10,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,653,3,1,00:02,2,75,68,away,Peyton Aldridge,22,Savunma Ribaundu,defensive rebound
+346279,654,3,1,00:02,2,75,68,away,Edon Maxhuni,5,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,656,3,1,00:02,2,75,68,home,Zach Nutall,10,Blok,block
+346279,658,3,1,00:00,0,75,68,,,,Çeyrek Sonu,period end
+346279,659,4,1,10:00,600,75,68,home,Efe Postel,22,Değişiklik Çıkan,substitution - player out
+346279,660,4,1,10:00,600,75,68,home,Shavar Reynolds Jr.,33,Değişiklik Giren,substitution - player in
+346279,661,4,1,10:00,600,75,68,away,Berk Demir,11,Değişiklik Çıkan,substitution - player out
+346279,662,4,1,10:00,600,75,68,away,Damien Jefferson,23,Değişiklik Çıkan,substitution - player out
+346279,663,4,1,10:00,600,75,68,away,Okben Ulubay,4,Değişiklik Giren,substitution - player in
+346279,664,4,1,10:00,600,75,68,away,Zach Hankins,35,Değişiklik Giren,substitution - player in
+346279,665,4,1,10:00,600,75,68,home,Bryce Jones,32,Değişiklik Çıkan,substitution - player out
+346279,666,4,1,10:00,600,75,68,home,Terrell Carter II,5,Değişiklik Giren,substitution - player in
+346279,667,4,1,10:00,600,75,68,,,,Çeyrek Başladı,period started
+346279,669,4,1,09:47,587,75,71,away,Edon Maxhuni,5,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,670,4,1,09:30,570,77,71,home,Shavar Reynolds Jr.,33,2 Sayı Aniden Durarak Sıçrayarak Atış Başarılı,2PT pull-up jump shot made
+346279,671,4,1,09:15,555,77,73,away,Quentin Peterson,77,2 Sayı Top Sürerek Turnike Başarılı,2PT driving layup made
+346279,676,4,1,08:57,537,77,73,away,Okben Ulubay,4,Kişisel Faul,personal foul
+346279,677,4,1,08:57,537,77,73,home,Terrell Carter II,5,Faul Yapılan,foul drawn
+346279,678,4,1,08:57,537,77,73,home,Zach Nutall,10,Değişiklik Çıkan,substitution - player out
+346279,679,4,1,08:57,537,77,73,home,Efe Postel,22,Değişiklik Giren,substitution - player in
+346279,681,4,1,08:51,531,77,73,home,Terrell Carter II,5,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,682,4,1,08:51,531,77,73,away,Zach Hankins,35,Top Çalma,steal
+346279,683,4,1,08:43,523,77,75,away,Zach Hankins,35,2 Sayı Turnike Başarılı,2PT layup made
+346279,684,4,1,08:43,523,77,75,away,Peyton Aldridge,22,Asist,assist
+346279,685,4,1,08:27,507,77,75,home,Sadık Kabaca,6,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,686,4,1,08:24,504,77,75,away,Peyton Aldridge,22,Savunma Ribaundu,defensive rebound
+346279,690,4,1,08:19,499,77,75,home,Terrell Carter II,5,Kişisel Faul,personal foul
+346279,691,4,1,08:19,499,77,75,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,692,4,1,08:19,499,77,75,home,Terrell Carter II,5,Değişiklik Çıkan,substitution - player out
+346279,693,4,1,08:19,499,77,75,home,Jamuni McNeace,8,Değişiklik Giren,substitution - player in
+346279,694,4,1,08:19,499,77,76,away,Quentin Peterson,77,Serbest Atış 1/3 Başarılı,free throw 1 of 3 made
+346279,695,4,1,08:19,499,77,77,away,Quentin Peterson,77,Serbest Atış 2/3 Başarılı,free throw 2 of 3 made
+346279,696,4,1,08:19,499,77,77,away,Quentin Peterson,77,Serbest Atış 3/3 Başarısız,free throw 3 of 3 missed
+346279,698,4,1,08:19,499,77,77,home,Gabe Brown,44,Savunma Ribaundu,defensive rebound
+346279,699,4,1,08:01,481,77,77,home,Efe Postel,22,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,700,4,1,07:59,479,77,77,away,Quentin Peterson,77,Savunma Ribaundu,defensive rebound
+346279,702,4,1,07:52,472,77,77,home,Gabe Brown,44,Kişisel Faul,personal foul
+346279,703,4,1,07:52,472,77,77,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,708,4,1,07:37,457,77,77,away,Okben Ulubay,4,2 Sayı Dönerek Sıçrayarak Atış Başarısız,2PT turnaround jump shot missed
+346279,709,4,1,07:34,454,77,77,home,Sadık Kabaca,6,Savunma Ribaundu,defensive rebound
+346279,711,4,1,07:28,448,77,77,away,Quentin Peterson,77,Kişisel Faul,personal foul
+346279,712,4,1,07:28,448,77,77,home,Shavar Reynolds Jr.,33,Faul Yapılan,foul drawn
+346279,713,4,1,07:28,448,77,77,away,Okben Ulubay,4,Değişiklik Çıkan,substitution - player out
+346279,714,4,1,07:28,448,77,77,away,Berk Demir,11,Değişiklik Giren,substitution - player in
+346279,716,4,1,07:19,439,77,77,home,Jamuni McNeace,8,2 Sayı Çengel Atış Başarısız,2PT hook shot missed
+346279,717,4,1,07:17,437,77,77,away,Berk Demir,11,Savunma Ribaundu,defensive rebound
+346279,718,4,1,07:05,425,77,77,away,Edon Maxhuni,5,2 Sayı Aniden Durarak Sıçrayarak Atış Başarısız,2PT pull-up jump shot missed
+346279,719,4,1,07:02,422,77,77,away,Zach Hankins,35,Hücum Ribaundu,offensive rebound
+346279,720,4,1,06:56,416,77,77,away,Quentin Peterson,77,2 Sayı Turnike Başarısız,2PT layup missed
+346279,721,4,1,06:53,413,77,77,home,Jamuni McNeace,8,Savunma Ribaundu,defensive rebound
+346279,722,4,1,06:41,401,77,77,home,Efe Postel,22,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,723,4,1,06:38,398,77,77,away,Edon Maxhuni,5,Savunma Ribaundu,defensive rebound
+346279,724,4,1,06:26,386,77,79,away,Edon Maxhuni,5,2 Sayı Top Sürerek Turnike Başarılı,2PT driving layup made
+346279,725,4,1,05:58,358,77,79,home,Sadık Kabaca,6,3 Sayı Geriye Adım Atarak Sıçrayarak Atış Başarısız,3PT step-back jump shot missed
+346279,726,4,1,05:56,356,77,79,away,Quentin Peterson,77,Savunma Ribaundu,defensive rebound
+346279,730,4,1,05:37,337,77,79,home,Efe Postel,22,Kişisel Faul,personal foul
+346279,731,4,1,05:37,337,77,79,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,732,4,1,05:37,337,77,79,home,,,Mola,timeout
+346279,733,4,1,05:37,337,77,79,home,Sadık Kabaca,6,Değişiklik Çıkan,substitution - player out
+346279,734,4,1,05:37,337,77,79,home,Efe Postel,22,Değişiklik Çıkan,substitution - player out
+346279,735,4,1,05:37,337,77,79,home,Yiğitcan Saybir,3,Değişiklik Giren,substitution - player in
+346279,736,4,1,05:37,337,77,79,home,Bryce Jones,32,Değişiklik Giren,substitution - player in
+346279,737,4,1,05:37,337,77,79,away,Quentin Peterson,77,Serbest Atış 1/2 Başarısız,free throw 1 of 2 missed
+346279,738,4,1,05:37,337,77,79,away,,,Ribaund,rebound
+346279,739,4,1,05:37,337,77,79,away,Quentin Peterson,77,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,741,4,1,05:37,337,77,79,home,Jamuni McNeace,8,Savunma Ribaundu,defensive rebound
+346279,742,4,1,05:22,322,77,79,home,Bryce Jones,32,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,743,4,1,05:22,322,77,79,away,Zach Hankins,35,Top Çalma,steal
+346279,744,4,1,05:11,311,77,79,away,Edon Maxhuni,5,2 Sayı Turnike Başarısız,2PT layup missed
+346279,746,4,1,05:10,310,77,79,away,,,Takım Hücum Ribaundu,team offensive rebound
+346279,748,4,1,05:00,300,77,79,away,Quentin Peterson,77,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,749,4,1,04:58,298,77,79,away,Edon Maxhuni,5,Hücum Ribaundu,offensive rebound
+346279,750,4,1,04:58,298,77,79,away,Edon Maxhuni,5,2 Sayı Turnike Başarısız,2PT layup missed
+346279,751,4,1,04:55,295,77,79,away,Zach Hankins,35,Hücum Ribaundu,offensive rebound
+346279,752,4,1,04:55,295,77,81,away,Zach Hankins,35,2 Sayı Tip-In Başarılı,2PT tip-in made
+346279,753,4,1,04:44,284,77,81,home,Shavar Reynolds Jr.,33,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,754,4,1,04:41,281,77,81,away,Zach Hankins,35,Savunma Ribaundu,defensive rebound
+346279,755,4,1,04:28,268,77,81,away,Quentin Peterson,77,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,756,4,1,04:28,268,77,81,home,Bryce Jones,32,Top Çalma,steal
+346279,758,4,1,04:26,266,77,81,home,Bryce Jones,32,Top Kaybı - Hatalı Yürüme,turnover - travelling
+346279,759,4,1,04:26,266,77,81,home,Jamuni McNeace,8,Değişiklik Çıkan,substitution - player out
+346279,760,4,1,04:26,266,77,81,home,Shavar Reynolds Jr.,33,Değişiklik Çıkan,substitution - player out
+346279,761,4,1,04:26,266,77,81,home,Gabe Brown,44,Değişiklik Çıkan,substitution - player out
+346279,762,4,1,04:26,266,77,81,home,Terrell Carter II,5,Değişiklik Giren,substitution - player in
+346279,763,4,1,04:26,266,77,81,home,Zach Nutall,10,Değişiklik Giren,substitution - player in
+346279,764,4,1,04:26,266,77,81,home,Leon Apaydın,55,Değişiklik Giren,substitution - player in
+346279,765,4,1,04:26,266,77,81,away,Berk Demir,11,Değişiklik Çıkan,substitution - player out
+346279,766,4,1,04:26,266,77,81,away,Quentin Peterson,77,Değişiklik Çıkan,substitution - player out
+346279,767,4,1,04:26,266,77,81,away,Ty Gordon,0,Değişiklik Giren,substitution - player in
+346279,768,4,1,04:26,266,77,81,away,Okben Ulubay,4,Değişiklik Giren,substitution - player in
+346279,770,4,1,04:09,249,77,81,away,Ty Gordon,0,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,771,4,1,04:07,247,77,81,home,Leon Apaydın,55,Savunma Ribaundu,defensive rebound
+346279,773,4,1,04:00,240,77,81,away,Zach Hankins,35,Kişisel Faul,personal foul
+346279,774,4,1,04:00,240,77,81,home,Zach Nutall,10,Faul Yapılan,foul drawn
+346279,775,4,1,04:00,240,77,81,home,Zach Nutall,10,Serbest Atış 1/2 Başarısız,free throw 1 of 2 missed
+346279,776,4,1,04:00,240,77,81,home,,,Ribaund,rebound
+346279,777,4,1,04:00,240,78,81,home,Zach Nutall,10,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,780,4,1,03:51,231,78,81,away,Okben Ulubay,4,Hücum Faul,offensive foul
+346279,781,4,1,03:51,231,78,81,away,Okben Ulubay,4,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,782,4,1,03:51,231,78,81,home,Yiğitcan Saybir,3,Faul Yapılan,foul drawn
+346279,784,4,1,03:50,230,78,81,away,Ty Gordon,0,Değişiklik Çıkan,substitution - player out
+346279,785,4,1,03:50,230,78,81,away,Quentin Peterson,77,Değişiklik Giren,substitution - player in
+346279,787,4,1,03:32,212,80,81,home,Zach Nutall,10,2 Sayı Top Sürerek Turnike Başarılı,2PT driving layup made
+346279,788,4,1,03:12,192,80,84,away,Okben Ulubay,4,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,789,4,1,03:12,192,80,84,away,Peyton Aldridge,22,Asist,assist
+346279,791,4,1,03:01,181,80,84,home,Zach Nutall,10,Hücum Faul,offensive foul
+346279,792,4,1,03:01,181,80,84,home,Zach Nutall,10,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,793,4,1,03:01,181,80,84,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,795,4,1,02:43,163,80,84,away,Edon Maxhuni,5,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,796,4,1,02:41,161,80,84,home,Terrell Carter II,5,Savunma Ribaundu,defensive rebound
+346279,798,4,1,02:34,154,80,84,away,Peyton Aldridge,22,Kişisel Faul,personal foul
+346279,799,4,1,02:34,154,80,84,home,Zach Nutall,10,Faul Yapılan,foul drawn
+346279,800,4,1,02:34,154,80,84,home,Leon Apaydın,55,Değişiklik Çıkan,substitution - player out
+346279,801,4,1,02:34,154,80,84,home,Gabe Brown,44,Değişiklik Giren,substitution - player in
+346279,802,4,1,02:34,154,81,84,home,Zach Nutall,10,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,803,4,1,02:34,154,81,84,home,Zach Nutall,10,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,805,4,1,02:34,154,81,84,away,Quentin Peterson,77,Savunma Ribaundu,defensive rebound
+346279,810,4,1,02:14,134,81,84,home,Terrell Carter II,5,Kişisel Faul,personal foul
+346279,811,4,1,02:14,134,81,84,away,Okben Ulubay,4,Faul Yapılan,foul drawn
+346279,812,4,1,02:14,134,81,84,home,Terrell Carter II,5,Değişiklik Çıkan,substitution - player out
+346279,813,4,1,02:14,134,81,84,home,Shavar Reynolds Jr.,33,Değişiklik Giren,substitution - player in
+346279,814,4,1,02:14,134,81,84,away,Okben Ulubay,4,Faul,foul
+346279,815,4,1,02:14,134,81,84,away,Okben Ulubay,4,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,816,4,1,02:14,134,81,84,home,Shavar Reynolds Jr.,33,Faul Yapılan,foul drawn
+346279,817,4,1,02:14,134,81,84,away,Okben Ulubay,4,Serbest Atış 1/2 Başarısız,free throw 1 of 2 missed
+346279,818,4,1,02:14,134,81,84,away,,,Ribaund,rebound
+346279,819,4,1,02:14,134,81,84,away,Okben Ulubay,4,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,820,4,1,02:14,134,81,84,home,,,Takım Savunma Ribaundu,team defensive rebound
+346279,821,4,1,02:14,134,82,84,home,Shavar Reynolds Jr.,33,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,822,4,1,02:14,134,83,84,home,Shavar Reynolds Jr.,33,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,824,4,1,02:04,124,83,84,home,Zach Nutall,10,Top Kaybı - Kötü Pas,turnover - bad pass
+346279,825,4,1,02:04,124,83,84,away,Peyton Aldridge,22,Top Çalma,steal
+346279,826,4,1,02:00,120,83,84,away,Peyton Aldridge,22,2 Sayı Turnike Başarısız,2PT layup missed
+346279,827,4,1,01:58,118,83,84,away,Peyton Aldridge,22,Hücum Ribaundu,offensive rebound
+346279,833,4,1,01:53,113,83,84,home,Yiğitcan Saybir,3,Kişisel Faul,personal foul
+346279,834,4,1,01:53,113,83,84,away,Zach Hankins,35,Faul Yapılan,foul drawn
+346279,835,4,1,01:53,113,83,85,away,Zach Hankins,35,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,836,4,1,01:53,113,83,85,away,Zach Hankins,35,Serbest Atış 2/2 Başarısız,free throw 2 of 2 missed
+346279,838,4,1,01:53,113,83,85,home,Zach Nutall,10,Savunma Ribaundu,defensive rebound
+346279,839,4,1,01:32,92,83,85,home,Bryce Jones,32,2 Sayı Sıçrayarak Atış Başarısız,2PT jump shot missed
+346279,840,4,1,01:30,90,83,85,away,Okben Ulubay,4,Savunma Ribaundu,defensive rebound
+346279,845,4,1,01:09,69,83,85,home,Gabe Brown,44,Kişisel Faul,personal foul
+346279,846,4,1,01:09,69,83,85,away,Zach Hankins,35,Faul Yapılan,foul drawn
+346279,847,4,1,01:09,69,83,86,away,Zach Hankins,35,Serbest Atış 1/2 Başarılı,free throw 1 of 2 made
+346279,848,4,1,01:09,69,83,87,away,Zach Hankins,35,Serbest Atış 2/2 Başarılı,free throw 2 of 2 made
+346279,851,4,1,00:52,52,85,87,home,Shavar Reynolds Jr.,33,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,852,4,1,00:52,52,85,87,away,,,Mola,timeout
+346279,857,4,1,00:36,36,85,87,away,Quentin Peterson,77,Hücum Faul,offensive foul
+346279,858,4,1,00:36,36,85,87,away,Quentin Peterson,77,Top Kaybı - Hücum Faul,turnover - offensive foul
+346279,859,4,1,00:36,36,85,87,home,Shavar Reynolds Jr.,33,Faul Yapılan,foul drawn
+346279,861,4,1,00:27,27,85,87,home,Gabe Brown,44,3 Sayı Sıçrayarak Atış Başarısız,3PT jump shot missed
+346279,862,4,1,00:25,25,85,87,home,Bryce Jones,32,Hücum Ribaundu,offensive rebound
+346279,864,4,1,00:15,15,87,87,home,Gabe Brown,44,2 Sayı Turnike Başarılı,2PT layup made
+346279,865,4,1,00:15,15,87,87,home,Bryce Jones,32,Asist,assist
+346279,866,4,1,00:15,15,87,87,away,,,Mola,timeout
+346279,869,4,1,00:14,14,87,87,away,Zach Hankins,35,Değişiklik Çıkan,substitution - player out
+346279,870,4,1,00:14,14,87,87,away,Damien Jefferson,23,Değişiklik Giren,substitution - player in
+346279,875,4,1,00:01,1,87,89,away,Quentin Peterson,77,2 Sayı Sıçrayarak Atış Başarılı,2PT jump shot made
+346279,876,4,1,00:01,1,87,89,home,Zach Nutall,10,Kişisel Faul,personal foul
+346279,877,4,1,00:01,1,87,89,away,Quentin Peterson,77,Faul Yapılan,foul drawn
+346279,878,4,1,00:01,1,87,89,away,Damien Jefferson,23,Değişiklik Çıkan,substitution - player out
+346279,879,4,1,00:01,1,87,89,away,Zach Hankins,35,Değişiklik Giren,substitution - player in
+346279,880,4,1,00:01,1,87,89,away,Quentin Peterson,77,Serbest Atış 1/1 Başarısız,free throw 1 of 1 missed
+346279,882,4,1,00:01,1,87,89,home,Yiğitcan Saybir,3,Savunma Ribaundu,defensive rebound
+346279,885,4,1,00:01,1,90,89,home,Yiğitcan Saybir,3,3 Sayı Sıçrayarak Atış Başarılı,3PT jump shot made
+346279,884,4,1,00:00,0,90,89,,,,Çeyrek Sonu,period end
+346279,886,4,1,00:00,0,90,89,,,,Maç Sonu,game end

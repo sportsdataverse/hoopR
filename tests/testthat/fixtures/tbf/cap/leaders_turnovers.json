@@ -1,0 +1,89 @@
+{
+  "data": {
+    "sum": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/ac7222b2-80ae-4e4b-bf72-cc226b01f3c8_bordo_pizzabullslogo_version.png",
+        "grup": "15",
+        "oyuncuAdi": "Quentin Peterson",
+        "takimAdi": "PİZZABULLS BORDO BANDIRMA",
+        "oyuncuKodu": "501076",
+        "fotograf": "https://tbf.org.tr/res/6862370f-4ec3-4ae1-ba0f-2da7247ab479_77.webp",
+        "takimKodu": "265993",
+        "macSayisi": "3",
+        "takimLogo": "",
+        "tuzelLogo": "https://tbf.org.tr/res/cbe55919-c2a8-425b-b311-6087ccfdcc55_BordoSportif.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/ac7222b2-80ae-4e4b-bf72-cc226b01f3c8_bordo_pizzabullslogo_version.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png",
+        "grup": "11",
+        "oyuncuAdi": "Max Abmas",
+        "takimAdi": "ALİAĞA PETKİM SPOR",
+        "oyuncuKodu": "778246",
+        "fotograf": "https://tbf.org.tr/res/c139f796-57f6-4d3f-9230-96692fda1dce_MaxAbmas.webp",
+        "takimKodu": "266048",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/43975687-a185-4e73-81d7-d6ac8cb41c65_PETKMyeni.png",
+        "tuzelLogo": "https://tbf.org.tr/res/447233f1-ccbe-45e3-9e01-d3e844020f6c_c23ea153d118406e9d0ce4413475fb36.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "6",
+        "oyuncuAdi": "Alen Smailagic",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779278",
+        "fotograf": "https://tbf.org.tr/res/4a533d8c-65f5-4a5c-821d-d1cf852142c2_galatasaray_0015_9.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      }
+    ],
+    "avg": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/ac7222b2-80ae-4e4b-bf72-cc226b01f3c8_bordo_pizzabullslogo_version.png",
+        "grup": "5.000005",
+        "oyuncuAdi": "Quentin Peterson",
+        "takimAdi": "PİZZABULLS BORDO BANDIRMA",
+        "oyuncuKodu": "501076",
+        "fotograf": "https://tbf.org.tr/res/6862370f-4ec3-4ae1-ba0f-2da7247ab479_77.webp",
+        "takimKodu": "265993",
+        "macSayisi": "3",
+        "takimLogo": "",
+        "tuzelLogo": "https://tbf.org.tr/res/cbe55919-c2a8-425b-b311-6087ccfdcc55_BordoSportif.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/ac7222b2-80ae-4e4b-bf72-cc226b01f3c8_bordo_pizzabullslogo_version.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png",
+        "grup": "3.666670",
+        "oyuncuAdi": "Max Abmas",
+        "takimAdi": "ALİAĞA PETKİM SPOR",
+        "oyuncuKodu": "778246",
+        "fotograf": "https://tbf.org.tr/res/c139f796-57f6-4d3f-9230-96692fda1dce_MaxAbmas.webp",
+        "takimKodu": "266048",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/43975687-a185-4e73-81d7-d6ac8cb41c65_PETKMyeni.png",
+        "tuzelLogo": "https://tbf.org.tr/res/447233f1-ccbe-45e3-9e01-d3e844020f6c_c23ea153d118406e9d0ce4413475fb36.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png",
+        "grup": "2.000002",
+        "oyuncuAdi": "Alen Smailagic",
+        "takimAdi": "GALATASARAY MCT TECHNIC",
+        "oyuncuKodu": "779278",
+        "fotograf": "https://tbf.org.tr/res/4a533d8c-65f5-4a5c-821d-d1cf852142c2_galatasaray_0015_9.webp",
+        "takimKodu": "266026",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/329202-gs120-b2632ded-72b5-40ef-93bd-fd8e786e3021.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a24c5eae-39e4-4463-9b7a-2e9162264236_Galatasaray SK.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/27c5991a-e2b8-4699-977f-94ff7a3db973_GalatasarayMCTTechnic.png"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

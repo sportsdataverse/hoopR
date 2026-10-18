@@ -1,0 +1,4 @@
+activity_id,season,competition,week,phase,phase_name,label,is_current
+22214,2027,bsl,1,1,,Hafta 1,false
+22214,2027,bsl,2,1,,Hafta 2,false
+22214,2027,bsl,3,1,,Hafta 3,true

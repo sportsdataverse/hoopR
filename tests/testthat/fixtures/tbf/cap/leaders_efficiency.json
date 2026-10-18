@@ -1,0 +1,89 @@
+{
+  "data": {
+    "sum": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "68",
+        "oyuncuAdi": "Trevion Williams",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "734505",
+        "fotograf": "https://tbf.org.tr/res/5ffb1128-028b-4854-ac30-a318a639f186_50.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "65",
+        "oyuncuAdi": "John Meeks",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "736366",
+        "fotograf": "https://tbf.org.tr/res/8f171f1d-4fdf-4e1a-986e-ac1dc0681f0b_denizlibasket_0003_12.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png",
+        "grup": "58",
+        "oyuncuAdi": "Khyri Thomas",
+        "takimAdi": "ALİAĞA PETKİM SPOR",
+        "oyuncuKodu": "516236",
+        "fotograf": "https://tbf.org.tr/res/70a79129-e7f4-4906-8781-e45efaef3e3d_khyrithomas.webp",
+        "takimKodu": "266048",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/43975687-a185-4e73-81d7-d6ac8cb41c65_PETKMyeni.png",
+        "tuzelLogo": "https://tbf.org.tr/res/447233f1-ccbe-45e3-9e01-d3e844020f6c_c23ea153d118406e9d0ce4413475fb36.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/487b2677-e8f8-483d-acc1-368616d47b1a_petkim600x600.png"
+      }
+    ],
+    "avg": [
+      {
+        "orjinalResim": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png",
+        "grup": "22.6667",
+        "oyuncuAdi": "Trevion Williams",
+        "takimAdi": "BAHÇEŞEHİR KOLEJİ",
+        "oyuncuKodu": "734505",
+        "fotograf": "https://tbf.org.tr/res/5ffb1128-028b-4854-ac30-a318a639f186_50.webp",
+        "takimKodu": "265991",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/30640fd7-f940-487f-a254-dbe6cc383f8f_BaheehirKoleji.png",
+        "tuzelLogo": "https://tbf.org.tr/res/a4dbdc26-efa6-466e-b9a3-ac32678f8c20_Bahcesehir Koleji 600px.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/53344392-b4e7-4ad5-a6f3-84a49b083a7c_BaheehirKoleji.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/01204daa-24ab-4246-aac3-715750729b41_FenerbaheTarfinLogo1.png",
+        "grup": "22",
+        "oyuncuAdi": "Talen Horton-Tucker",
+        "takimAdi": "FENERBAHÇE TARFİN",
+        "oyuncuKodu": "735811",
+        "fotograf": "https://tbf.org.tr/res/83901d08-556e-470e-9bce-37f70a75d4ac_8web.webp",
+        "takimKodu": "266025",
+        "macSayisi": "2",
+        "takimLogo": "https://tbf.org.tr/res/93e640b8-d718-49f1-806b-eaacb0146aa1_Fenerbahçe Beko 600x600 px.png",
+        "tuzelLogo": "https://tbf.org.tr/res/b42a6ad2-747c-4ab0-9bfb-8048a16282e1_fenerbahce_logo.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/01204daa-24ab-4246-aac3-715750729b41_FenerbaheTarfinLogo1.png"
+      },
+      {
+        "orjinalResim": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png",
+        "grup": "21.6667",
+        "oyuncuAdi": "John Meeks",
+        "takimAdi": "YUKATEL DENİZLİ BASKET",
+        "oyuncuKodu": "736366",
+        "fotograf": "https://tbf.org.tr/res/8f171f1d-4fdf-4e1a-986e-ac1dc0681f0b_denizlibasket_0003_12.webp",
+        "takimKodu": "266028",
+        "macSayisi": "3",
+        "takimLogo": "https://tbf.org.tr/res/0952c640-2341-42c6-9341-af3ce77a7987_modul_tuzel_kisilik_4c2bebdb906d4f02963e73c9349482b5_merkezefendibelediyesk.png",
+        "tuzelLogo": "https://tbf.org.tr/res/6cf27eeb-79ed-4c03-9833-17027e30277e_9f4300c55df24cf8ac880f1f034e450f.png",
+        "takimIslemLogo": "https://tbf.org.tr/res/be447bdd-b2e6-496c-892b-be016c5c24c0_yukateldenizlibasket.png"
+      }
+    ]
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

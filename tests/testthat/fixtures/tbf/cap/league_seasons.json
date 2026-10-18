@@ -1,0 +1,37 @@
+{
+  "data": [
+    {
+      "faaliyet": "BSL 2026-2027",
+      "url": "bsl-2026-2027",
+      "faaliyet_ID": 22214,
+      "sezon_ID": 174,
+      "logo": "https://tbf.org.tr/assets/images/sites-logo/bslrenkli.svg",
+      "sezon": "2026-2027",
+      "sezonGorunenAdi": null,
+      "logoGray": "https://tbf.org.tr/assets/images/sites-logo/bslgri.svg"
+    },
+    {
+      "faaliyet": "BSL 2025-2026",
+      "url": "bsl-2025-2026",
+      "faaliyet_ID": 20728,
+      "sezon_ID": 172,
+      "logo": "https://tbf.org.tr/assets/images/sites-logo/bsl-renkli.svg",
+      "sezon": "2025-2026",
+      "sezonGorunenAdi": null,
+      "logoGray": "https://tbf.org.tr/assets/images/sites-logo/bsl-gri.svg"
+    },
+    {
+      "faaliyet": "BSL 2024-2025",
+      "url": "bsl-2024-2025",
+      "faaliyet_ID": 19284,
+      "sezon_ID": 170,
+      "logo": "https://tbf.org.tr/assets/images/sites-logo/bsl-landscape-light.png",
+      "sezon": "2024-2025",
+      "sezonGorunenAdi": "2024-2025 Asım Pars Sezonu",
+      "logoGray": ""
+    }
+  ],
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}

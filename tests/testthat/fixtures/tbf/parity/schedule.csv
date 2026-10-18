@@ -1,0 +1,4 @@
+match_id,match_code,genius_id,activity_id,activity_name,competition,season_id,season_label,season,tipoff,match_date,week,phase,status_id,home_team_process_id,home_team,home_score,away_team_process_id,away_team,away_score,venue,province,gender,broadcast_channel,has_overtime
+346279,1EA4917,2913588,22214,BSL 2026-2027,bsl,174,2026-2027,2027,2026-09-25 19:00:00,2026-09-25,1. Hafta,1,1,265995,TOFAŞ,90,265993,PİZZABULLS BORDO BANDIRMA,89,Tofaş Spor Salonu,BURSA,Erkek,beINSports,false
+346276,1EA4914,2913589,22214,BSL 2026-2027,bsl,174,2026-2027,2027,2026-09-26 13:00:00,2026-09-26,1. Hafta,1,1,266030,TÜRK TELEKOM,73,266027,KARŞIYAKA,72,Ankara Spor Salonu,ANKARA,Erkek,beINSports,false
+346280,1EA4918,2913590,22214,BSL 2026-2027,bsl,174,2026-2027,2027,2026-09-26 15:30:00,2026-09-26,1. Hafta,1,1,266048,ALİAĞA PETKİM SPOR,85,266028,YUKATEL DENİZLİ BASKET,81,Enka Spor Salonu,İZMİR,Erkek,beINSports,false

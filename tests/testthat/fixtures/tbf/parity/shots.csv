@@ -1,0 +1,124 @@
+match_id,period,period_type,side,shot_player_id,player_name,jersey_number,x,y,made
+346279,1,1,away,2814324,Quentin Peterson,77,80,8,false
+346279,1,1,home,2814314,Terrell Carter II,5,10,59,true
+346279,1,1,away,2814324,Quentin Peterson,77,66,49,true
+346279,1,1,away,2814322,Damien Jefferson,23,93,58,true
+346279,1,1,away,2814320,Boubacar Toure,21,93,41,false
+346279,1,1,away,2814320,Boubacar Toure,21,94,50,true
+346279,1,1,home,2511112,Yiğitcan Saybir,3,32,26,false
+346279,1,1,home,2511112,Yiğitcan Saybir,3,7,4,false
+346279,1,1,home,2814319,Gabe Brown,44,24,15,false
+346279,1,1,home,2814317,Bryce Jones,32,33,44,false
+346279,1,1,home,2511112,Yiğitcan Saybir,3,9,55,true
+346279,1,1,away,2511185,Okben Ulubay,4,80,10,false
+346279,1,1,home,2814316,Zach Nutall,10,28,18,false
+346279,1,1,home,2511112,Yiğitcan Saybir,3,6,50,true
+346279,1,1,home,2699443,Sadık Kabaca,6,25,88,false
+346279,1,1,away,2814324,Quentin Peterson,77,88,55,true
+346279,1,1,home,2814315,Jamuni McNeace,8,15,56,true
+346279,1,1,home,2814318,Shavar Reynolds Jr.,33,12,66,true
+346279,1,1,away,2814324,Quentin Peterson,77,90,61,true
+346279,1,1,home,2498401,Efe Postel,22,22,91,false
+346279,1,1,home,2699443,Sadık Kabaca,6,32,25,true
+346279,1,1,away,2814322,Damien Jefferson,23,85,96,false
+346279,1,1,home,2814316,Zach Nutall,10,31,69,false
+346279,1,1,home,2814315,Jamuni McNeace,8,5,60,true
+346279,1,1,home,2814316,Zach Nutall,10,9,63,true
+346279,1,1,away,2814321,Zach Hankins,35,93,40,true
+346279,1,1,home,2814316,Zach Nutall,10,13,5,false
+346279,2,1,away,2814322,Damien Jefferson,23,96,3,false
+346279,2,1,home,2511112,Yiğitcan Saybir,3,8,60,true
+346279,2,1,away,2511187,Ty Gordon,0,95,62,true
+346279,2,1,away,2511185,Okben Ulubay,4,91,53,false
+346279,2,1,home,2511112,Yiğitcan Saybir,3,30,25,false
+346279,2,1,away,2816110,Edon Maxhuni,5,68,63,true
+346279,2,1,home,2814318,Shavar Reynolds Jr.,33,34,48,false
+346279,2,1,away,2816110,Edon Maxhuni,5,94,37,false
+346279,2,1,away,2814320,Boubacar Toure,21,92,48,true
+346279,2,1,home,2511112,Yiğitcan Saybir,3,10,62,true
+346279,2,1,away,2511185,Okben Ulubay,4,72,88,false
+346279,2,1,home,2814316,Zach Nutall,10,29,76,true
+346279,2,1,home,2814314,Terrell Carter II,5,7,63,false
+346279,2,1,away,2816110,Edon Maxhuni,5,70,82,false
+346279,2,1,home,2511112,Yiğitcan Saybir,3,9,57,true
+346279,2,1,away,2816110,Edon Maxhuni,5,94,61,false
+346279,2,1,away,2814321,Zach Hankins,35,94,50,true
+346279,2,1,home,2511112,Yiğitcan Saybir,3,33,46,false
+346279,2,1,home,2814319,Gabe Brown,44,11,50,true
+346279,2,1,away,2814324,Quentin Peterson,77,71,20,true
+346279,2,1,away,2814324,Quentin Peterson,77,71,26,true
+346279,2,1,home,2814319,Gabe Brown,44,24,87,false
+346279,2,1,home,2814315,Jamuni McNeace,8,10,46,true
+346279,2,1,away,2814323,Peyton Aldridge,22,94,4,false
+346279,2,1,away,2511187,Ty Gordon,0,72,24,false
+346279,2,1,away,2814324,Quentin Peterson,77,69,73,true
+346279,2,1,home,2814319,Gabe Brown,44,10,42,true
+346279,2,1,home,2814319,Gabe Brown,44,29,17,false
+346279,2,1,away,2814321,Zach Hankins,35,90,59,true
+346279,2,1,home,2498401,Efe Postel,22,30,24,true
+346279,2,1,away,2814322,Damien Jefferson,23,80,91,true
+346279,2,1,home,2699443,Sadık Kabaca,6,29,82,false
+346279,3,1,home,2814319,Gabe Brown,44,76,10,true
+346279,3,1,away,2814321,Zach Hankins,35,12,45,true
+346279,3,1,home,2814317,Bryce Jones,32,83,53,true
+346279,3,1,home,2814317,Bryce Jones,32,94,62,true
+346279,3,1,away,2511187,Ty Gordon,0,10,62,true
+346279,3,1,home,2511112,Yiğitcan Saybir,3,92,64,false
+346279,3,1,home,2814314,Terrell Carter II,5,91,60,true
+346279,3,1,home,2511112,Yiğitcan Saybir,3,92,61,true
+346279,3,1,away,2814324,Quentin Peterson,77,12,41,false
+346279,3,1,home,2814316,Zach Nutall,10,74,15,true
+346279,3,1,away,2814322,Damien Jefferson,23,18,5,true
+346279,3,1,away,2814324,Quentin Peterson,77,10,61,true
+346279,3,1,away,2816110,Edon Maxhuni,5,34,65,false
+346279,3,1,home,2814319,Gabe Brown,44,75,83,false
+346279,3,1,away,2814324,Quentin Peterson,77,9,62,true
+346279,3,1,home,2814318,Shavar Reynolds Jr.,33,92,82,false
+346279,3,1,home,2814315,Jamuni McNeace,8,94,50,false
+346279,3,1,home,2511112,Yiğitcan Saybir,3,91,58,false
+346279,3,1,away,2814324,Quentin Peterson,77,9,61,false
+346279,3,1,away,2511185,Okben Ulubay,4,29,86,false
+346279,3,1,home,2511112,Yiğitcan Saybir,3,74,15,false
+346279,3,1,home,2814315,Jamuni McNeace,8,87,57,true
+346279,3,1,away,2511185,Okben Ulubay,4,9,75,false
+346279,3,1,home,2814318,Shavar Reynolds Jr.,33,68,39,false
+346279,3,1,away,2814322,Damien Jefferson,23,17,94,false
+346279,3,1,home,2814316,Zach Nutall,10,76,86,false
+346279,3,1,home,2814318,Shavar Reynolds Jr.,33,83,60,false
+346279,3,1,home,2814317,Bryce Jones,32,79,30,true
+346279,3,1,away,2511185,Okben Ulubay,4,33,35,false
+346279,3,1,home,2814315,Jamuni McNeace,8,94,58,true
+346279,3,1,away,2814324,Quentin Peterson,77,27,15,false
+346279,3,1,away,2511183,Berk Demir,11,10,57,true
+346279,3,1,away,2816110,Edon Maxhuni,5,11,57,true
+346279,3,1,home,2814316,Zach Nutall,10,67,54,false
+346279,3,1,away,2816110,Edon Maxhuni,5,32,30,false
+346279,4,1,away,2816110,Edon Maxhuni,5,27,17,true
+346279,4,1,home,2814318,Shavar Reynolds Jr.,33,80,69,true
+346279,4,1,away,2814324,Quentin Peterson,77,9,61,true
+346279,4,1,away,2814321,Zach Hankins,35,10,41,true
+346279,4,1,home,2699443,Sadık Kabaca,6,93,97,false
+346279,4,1,home,2498401,Efe Postel,22,66,58,false
+346279,4,1,away,2511185,Okben Ulubay,4,8,39,false
+346279,4,1,home,2814315,Jamuni McNeace,8,87,53,false
+346279,4,1,away,2816110,Edon Maxhuni,5,20,72,false
+346279,4,1,away,2814324,Quentin Peterson,77,11,40,false
+346279,4,1,home,2498401,Efe Postel,22,70,33,false
+346279,4,1,away,2816110,Edon Maxhuni,5,11,62,true
+346279,4,1,home,2699443,Sadık Kabaca,6,67,42,false
+346279,4,1,away,2816110,Edon Maxhuni,5,12,60,false
+346279,4,1,away,2814324,Quentin Peterson,77,33,45,false
+346279,4,1,away,2816110,Edon Maxhuni,5,12,42,false
+346279,4,1,away,2814321,Zach Hankins,35,6,50,true
+346279,4,1,home,2814318,Shavar Reynolds Jr.,33,80,9,false
+346279,4,1,away,2511187,Ty Gordon,0,5,3,false
+346279,4,1,home,2814316,Zach Nutall,10,95,37,true
+346279,4,1,away,2511185,Okben Ulubay,4,12,95,true
+346279,4,1,away,2816110,Edon Maxhuni,5,31,31,false
+346279,4,1,away,2814323,Peyton Aldridge,22,13,62,false
+346279,4,1,home,2814317,Bryce Jones,32,77,62,false
+346279,4,1,home,2814318,Shavar Reynolds Jr.,33,78,65,true
+346279,4,1,home,2814319,Gabe Brown,44,78,88,false
+346279,4,1,home,2814319,Gabe Brown,44,90,61,true
+346279,4,1,away,2814324,Quentin Peterson,77,11,64,true
+346279,4,1,home,2511112,Yiğitcan Saybir,3,71,77,true

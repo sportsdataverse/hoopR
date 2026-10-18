@@ -1,0 +1,142 @@
+{
+  "data": [
+    {
+      "groupName": "Lig Maçları",
+      "totalCount": 11,
+      "matches": [
+        {
+          "genuisId": "2934717",
+          "matchId": 345705.0,
+          "activityName": "KBSL 2026-2027",
+          "activityId": 22209.0,
+          "activityDisplayName": "Halkbank Kadınlar Basketbol Süper Ligi",
+          "activityCode": "kbsl",
+          "seasonId": 174.0,
+          "season": "2026-2027",
+          "matchDate": "2026-10-11T14:00:00",
+          "matchDateOnly": "2026-10-11",
+          "matchTime": "14:00",
+          "week": "3. Hafta",
+          "halfValue": "1",
+          "venueName": "Sinan Erdem Spor Salonu",
+          "homeTeam": {
+            "id": 265263.0,
+            "name": "GALATASARAY ÇAĞDAŞ FAKTORING",
+            "logoUrl": "https://tbf.org.tr/res/96b4f6cf-74b3-44a7-8929-f61270390bf2_d8238a4329194e1986179373cd9cf1a7_7929d348613d48999b1bdffab88ac779_33513565ac30481681b83be6523a3eca_GALATASARAYADAFAKTORINGPNG600x600px.png",
+            "score": "85",
+            "isHome": true,
+            "hexCode1": "#fbba00",
+            "hexCode2": "#a90a2e"
+          },
+          "awayTeam": {
+            "id": 265757.0,
+            "name": "ÇİMSA ÇBK MERSİN",
+            "logoUrl": "https://tbf.org.tr/res/7d642524-53fd-49f2-a57b-8d9ca8541a8b_731af5f871df4fbf886b70b3260e9f8d_cimsacbkmersin2.png",
+            "score": "62",
+            "isHome": false,
+            "hexCode1": "#ea601e",
+            "hexCode2": "#000000"
+          },
+          "matchStatusId": 1.0,
+          "matchStatus": "Oynandı",
+          "youtubeLink": "https://www.youtube.com/watch?v=z6L_h6SOyh8",
+          "broadcastChannel": "HT SPOR",
+          "isFavorite": false,
+          "cinsiyet": "",
+          "matchCode": "1BA3543",
+          "hasUzatma": false,
+          "isDirectActivityId": false
+        },
+        {
+          "genuisId": "2934688",
+          "matchId": 345955.0,
+          "activityName": "TBL 2026-2027",
+          "activityId": 22215.0,
+          "activityDisplayName": "Türkiye Sigorta Türkiye Basketbol Ligi",
+          "activityCode": "tbl",
+          "seasonId": 174.0,
+          "season": "2026-2027",
+          "matchDate": "2026-10-11T15:00:00",
+          "matchDateOnly": "2026-10-11",
+          "matchTime": "15:00",
+          "week": "6. Hafta",
+          "halfValue": "1",
+          "venueName": "Kamil Ocak Spor Salonu",
+          "homeTeam": {
+            "id": 266054.0,
+            "name": "GAZİANTEP BASKETBOL",
+            "logoUrl": "https://tbf.org.tr/res/25dc4980-d0f2-47b0-a0e5-80a3afc89cb2_GaziantepBasketbolAkademi.png",
+            "score": "90",
+            "isHome": true,
+            "hexCode1": "#fb0404",
+            "hexCode2": "#050505"
+          },
+          "awayTeam": {
+            "id": 266051.0,
+            "name": "BÜYÜKÇEKMECE BASKETBOL",
+            "logoUrl": "https://tbf.org.tr/res/99a897e3-57ad-4fdb-a6df-ba06340df862_BuyukcekmeceBasketbol.png",
+            "score": "70",
+            "isHome": false,
+            "hexCode1": "#fb0909",
+            "hexCode2": "#2910e5"
+          },
+          "matchStatusId": 1.0,
+          "matchStatus": "Oynandı",
+          "youtubeLink": "https://www.youtube.com/watch?v=eA6BBVrXSiw",
+          "broadcastChannel": "Youtube / TBF TV",
+          "isFavorite": false,
+          "cinsiyet": "",
+          "matchCode": "2EA5768",
+          "hasUzatma": false,
+          "isDirectActivityId": false
+        },
+        {
+          "genuisId": "2935642",
+          "matchId": 345804.0,
+          "activityName": "TKBL 2026-2027",
+          "activityId": 22210.0,
+          "activityDisplayName": "Halkbank Türkiye Kadınlar Basketbol Ligi",
+          "activityCode": "tkbl",
+          "seasonId": 174.0,
+          "season": "2026-2027",
+          "matchDate": "2026-10-11T16:00:00",
+          "matchDateOnly": "2026-10-11",
+          "matchTime": "16:00",
+          "week": "1. Hafta",
+          "halfValue": "1",
+          "venueName": "Başakşehir Spor Kompleksi",
+          "homeTeam": {
+            "id": 265768.0,
+            "name": "EMLAK KONUT GELİŞİM",
+            "logoUrl": "https://tbf.org.tr/res/0c472249-8daf-44d9-8587-db9a35864726_0cd1f7a649a5401482be9e7ae432a8f8_EMLAKKONUTGELM.png",
+            "score": "63",
+            "isHome": true,
+            "hexCode1": "#bababa",
+            "hexCode2": "#005aab"
+          },
+          "awayTeam": {
+            "id": 265778.0,
+            "name": "MEDEX TED ANKARA KOLEJLİLER",
+            "logoUrl": "https://tbf.org.tr/res/7ac4fdfe-a31a-40b4-9319-4826208af418_KkTedxMedex11.png",
+            "score": "83",
+            "isHome": false,
+            "hexCode1": "#bababa",
+            "hexCode2": "#0d4b82"
+          },
+          "matchStatusId": 1.0,
+          "matchStatus": "Oynandı",
+          "youtubeLink": "https://www.youtube.com/watch?v=bSPhDQ6aFrM&list=PLVCyM8Xiq64Q&index=2",
+          "broadcastChannel": "Youtube / TBF TV",
+          "isFavorite": false,
+          "cinsiyet": "",
+          "matchCode": "2BA5083",
+          "hasUzatma": false,
+          "isDirectActivityId": false
+        }
+      ]
+    }
+  ],
+  "isSuccess": true,
+  "message": "Success",
+  "problemDetails": null
+}
