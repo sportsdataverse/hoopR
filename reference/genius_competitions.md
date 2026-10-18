@@ -111,8 +111,8 @@ Other Genius:
 ``` r
 # \donttest{
   try(genius_competitions(org = "ESAKE"))
-#> ── Genius LiveStats competitions ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:03 UTC
+#> ── Genius LiveStats competitions ──────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:57 UTC
 #> # A tibble: 47 × 8
 #>    org   comp_id label               league_id  year season season_rule selected
 #>    <chr>   <int> <chr>                   <int> <int>  <int> <chr>       <lgl>   

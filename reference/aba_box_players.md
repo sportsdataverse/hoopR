@@ -150,8 +150,8 @@ Other ABA:
 ``` r
 # \donttest{
   try(aba_box_players(game_no = 6, season = 2026))
-#> ── ABA League Player Box ─────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:19:57 UTC
+#> ── ABA League Player Box ──────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:23:07 UTC
 #> # A tibble: 24 × 39
 #>    game_no season league_id league side  team_id jersey player_id player_name  
 #>      <int>  <int>     <int> <chr>  <chr>   <int>  <int>     <int> <chr>        

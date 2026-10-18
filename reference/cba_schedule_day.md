@@ -182,8 +182,8 @@ Other CBA Functions:
 ``` r
 # \donttest{
   try(cba_schedule_day(day = "2025-12-12"))
-#> ── CBA Schedule Day from data-server.cbaleague.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:21 UTC
+#> ── CBA Schedule Day from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:35 UTC
 #> # A tibble: 1 × 27
 #>   home_team_id home_team_logo      home_team_lose home_team_name home_team_score
 #>          <int> <chr>                        <int> <chr>                    <int>

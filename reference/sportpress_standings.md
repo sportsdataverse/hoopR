@@ -148,8 +148,8 @@ Other BNXT League Functions:
 ``` r
 # \donttest{
   try(sportpress_standings(competition_id = 24, phase_id = 169))
-#> ── BNXT League Standings from Sportpress ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:40 UTC
+#> ── BNXT League Standings from Sportpress ──────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:24 UTC
 #> # A tibble: 18 × 27
 #>    competition_id phase_id competition_team_id team      team_short_name club_id
 #>             <int>    <int>               <int> <chr>     <chr>             <int>

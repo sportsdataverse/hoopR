@@ -123,8 +123,8 @@ Other FIBA Functions:
 ``` r
 # \donttest{
   try(fiba_gdap_final_standings(comp = 208182))
-#> ── FIBA gdap_final_standings from fiba.basketball ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:17 UTC
+#> ── FIBA gdap_final_standings from fiba.basketball ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:05 UTC
 #> # A tibble: 32 × 9
 #>    competition_id final_rank team_team_id team_team_code team_short_name
 #>             <int>      <int>        <int> <chr>          <chr>          

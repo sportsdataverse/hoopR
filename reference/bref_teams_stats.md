@@ -61,8 +61,8 @@ Other Basketball-Reference Functions:
 ``` r
 # \donttest{
   try(bref_teams_stats(season = 2024, table = "per_game"))
-#> ── Team season stats from basketball-reference.com ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:07 UTC
+#> ── Team season stats from basketball-reference.com ────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:20 UTC
 #> # A tibble: 30 × 26
 #>    ranker team        g    mp    fg   fga fg_pct   fg3  fg3a fg3_pct   fg2  fg2a
 #>     <dbl> <chr>   <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>

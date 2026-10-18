@@ -426,26 +426,26 @@ Other hoopR Loader Functions:
 load_mbb_pbp(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_mbb_player_box(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
-#> ── ESPN MBB schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
+#> ── ESPN MBB schedules from hoopR data repository ──────────────── hoopR 3.2.0 ──
 #> ℹ Data updated: 2026-10-18 12:35:18 UTC
 #> # A tibble: 1,629 × 83
 #>         id uid   date  attendance time_valid neutral_site conference_competition
@@ -472,7 +472,7 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 load_mbb_shots(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_shots/shots_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_shots/shots_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 ```

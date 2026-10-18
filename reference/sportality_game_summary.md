@@ -116,8 +116,8 @@ Other Basketligaen Functions:
 ``` r
 # \donttest{
   try(sportality_game_summary(game_uuid = "c4hh5nig6t"))
-#> ── Basketligaen Game Summary from basketligaen.dk ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:58 UTC
+#> ── Basketligaen Game Summary from basketligaen.dk ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:45 UTC
 #> # A tibble: 1 × 7
 #>   team_head2_head  team_period_caption team_period_overtime team_period_shootout
 #>   <chr>            <chr>               <lgl>                <lgl>               

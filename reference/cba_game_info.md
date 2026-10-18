@@ -168,8 +168,8 @@ Other CBA Functions:
 ``` r
 # \donttest{
   try(cba_game_info(schedule_id = 100105799))
-#> ── CBA Game Info from data-server.cbaleague.com ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:09 UTC
+#> ── CBA Game Info from data-server.cbaleague.com ───────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:23 UTC
 #> # A tibble: 1 × 13
 #>   schedule_id count guest_color guest_score guest_team_id guest_team_logo       
 #>         <int> <int> <chr>             <int>         <int> <chr>                 

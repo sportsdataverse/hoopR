@@ -1,7 +1,6 @@
 # **HoopsHype Player Salaries**
 
-**Get NBA player salaries from
-[HoopsHype](https://www.hoopshype.com/).**
+**Get NBA player salaries from HoopsHype (hoopshype.com).**
 
 Returns the full league's player salaries, one row per player per
 contract season (current plus future seasons HoopsHype lists). No API
@@ -51,8 +50,8 @@ Other Salary & Draft Functions:
 ``` r
 # \donttest{
   try(hoopshype_salaries())
-#> ── Player salaries from hoopshype.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:15 UTC
+#> ── Player salaries from hoopshype.com ─────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:03 UTC
 #> # A tibble: 0 × 0
 # }
 ```

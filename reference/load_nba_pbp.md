@@ -398,26 +398,26 @@ Other hoopR Loader Functions:
 load_nba_pbp(seasons = most_recent_nba_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
-#> ── ESPN NBA schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
+#> ── ESPN NBA schedules from hoopR data repository ──────────────── hoopR 3.2.0 ──
 #> ℹ Data updated: 2026-10-17 11:31:16 UTC
 #> # A tibble: 1,206 × 79
 #>         id uid   date  attendance time_valid neutral_site conference_competition
@@ -444,7 +444,7 @@ load_nba_schedule(seasons = most_recent_nba_season())
 load_nba_shots(seasons = most_recent_nba_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 ```

@@ -162,8 +162,8 @@ Other FIBA Functions:
 ``` r
 # \donttest{
   try(fiba_gdap_game(game_id = 100720))
-#> ── FIBA gdap_game from fiba.basketball ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:18 UTC
+#> ── FIBA gdap_game from fiba.basketball ────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:06 UTC
 #> # A tibble: 1 × 50
 #>   game_id round_name technical_name round_type    group_pairing_code game_number
 #>     <int> <chr>      <chr>          <chr>         <chr>              <chr>      

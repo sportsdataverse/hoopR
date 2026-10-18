@@ -134,8 +134,8 @@ Other TBF:
 ``` r
 # \donttest{
   try(tbf_team_roster(season = 2027, team_process_id = 265995))
-#> ── TBF Team Roster ───────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:58 UTC
+#> ── TBF Team Roster ────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:41 UTC
 #> # A tibble: 17 × 13
 #>    season competition team_process_id person_id first_name last_name nationality
 #>     <int> <chr>                 <int>     <int> <chr>      <chr>     <chr>      

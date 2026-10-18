@@ -117,8 +117,8 @@ Other FEB:
 ``` r
 # \donttest{
   try(feb_game_info(game_id = 2535725))
-#> ── FEB game info from intrafeb.feb.es ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:02 UTC
+#> ── FEB game info from intrafeb.feb.es ─────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:48 UTC
 #> # A tibble: 1 × 24
 #>   game_id comp_id competition group_label period clock start_time          venue
 #>     <int>   <int> <chr>       <chr>        <int> <chr> <dttm>              <chr>

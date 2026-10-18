@@ -140,7 +140,7 @@ Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%
 stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR)
 
 [![Star history of
-sportsdataverse/hoopR](https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history.png)](https://github.com/sportsdataverse/hoopR/stargazers)
+sportsdataverse/hoopR](https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history.png)](https://github.com/sportsdataverse/hoopR)
 
 ## **Our Authors**
 

@@ -145,8 +145,8 @@ Other TBF:
 ``` r
 # \donttest{
   try(tbf_schedule(competition = "bsl", season = 2027, week = 1))
-#> ── TBF Schedule ──────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:53 UTC
+#> ── TBF Schedule ───────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:36 UTC
 #> # A tibble: 8 × 25
 #>   match_id match_code genius_id activity_id activity_name competition season_id
 #>      <int> <chr>          <int>       <int> <chr>         <chr>           <int>

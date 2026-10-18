@@ -26,7 +26,7 @@ Get Lineups Last 5 Games from Team Page"><meta property="og:image" content="http
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -193,28 +193,28 @@ Get Lineups Last 5 Games from Team Page"><meta property="og:image" content="http
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_schedule</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2022</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.491666: 2026-10-18 - No team schedule tables available for Florida St. - 2022</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.283762: 2026-10-18 - No team schedule tables available for Florida St. - 2022</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2022</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>   <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_gameplan</span><span class="op">(</span>team<span class="op">=</span><span class="st">'Florida St.'</span>, year<span class="op">=</span><span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.582996: 2026-10-18 - No Game Plan Points distribution tables available for Florida St. - 2021</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.330119: 2026-10-18 - No Game Plan Points distribution tables available for Florida St. - 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_opptracker</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.643481: 2026-10-18 17:24:42.643232 - Florida St. - 2021 Team opponent tracker data is missing</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.40224: 2026-10-18 19:28:29.401921 - Florida St. - 2021 Team opponent tracker data is missing</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_players</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.724487: 2026-10-18 17:24:42.724259 - No Player Data available for Florida St. in 2024</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.445812: 2026-10-18 19:28:29.445526 - No Player Data available for Florida St. in 2024</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2024</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
@@ -222,7 +222,7 @@ Get Lineups Last 5 Games from Team Page"><meta property="og:image" content="http
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_player_career</span><span class="op">(</span>player_id <span class="op">=</span> <span class="st">'41180'</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.77264: 2026-10-18 17:24:42.772414 - No Player Career Data available for 41180</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.50548: 2026-10-18 19:28:29.505212 - No Player Career Data available for 41180</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: player_id = "41180"</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
@@ -230,7 +230,7 @@ Get Lineups Last 5 Games from Team Page"><meta property="og:image" content="http
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_minutes_matrix</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.823143: 2026-10-18 17:24:42.822893 - Florida St. - 2021 minutes matrix is missing</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.558496: 2026-10-18 19:28:29.558205 - Florida St. - 2021 minutes matrix is missing</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
@@ -239,14 +239,14 @@ Get Lineups Last 5 Games from Team Page"><meta property="og:image" content="http
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_player_stats</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.874225: 2026-10-18 17:24:42.873986 - Florida St. - 2021 team player stats are missing</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.600789: 2026-10-18 19:28:29.600504 - Florida St. - 2021 team player stats are missing</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span>  <span class="co"># }</span></span></span>
 <span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_depth_chart</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year<span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.920632: 2026-10-18 17:24:42.920391 - Florida St. - 2021 Team Depth Chart is missing</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.640584: 2026-10-18 19:28:29.640303 - Florida St. - 2021 Team Depth Chart is missing</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
@@ -255,7 +255,7 @@ Get Lineups Last 5 Games from Team Page"><meta property="og:image" content="http
 <span class="r-in"><span></span></span>
 <span class="r-in"><span>  <span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kp_team_lineups</span><span class="op">(</span>team <span class="op">=</span> <span class="st">'Florida St.'</span>, year <span class="op">=</span> <span class="fl">2021</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 17:24:42.980515: 2026-10-18 17:24:42.980256 - Florida St. - 2021 Team Lineups are missing</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-10-18 19:28:29.685589: 2026-10-18 19:28:29.685301 - Florida St. - 2021 Team Lineups are missing</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: team = "Florida St.", year = 2021</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: HTTP 429 Too Many Requests.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>

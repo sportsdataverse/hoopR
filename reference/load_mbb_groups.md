@@ -69,7 +69,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(load_mbb_groups())
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 64 × 6
 #>    league group_id             level      first_season last_season notes        
 #>    <chr>  <chr>                <chr>             <int>       <int> <chr>        
@@ -87,7 +87,7 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_nba_groups())
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 10 × 6
 #>    league group_id      level      first_season last_season notes               
 #>    <chr>  <chr>         <chr>             <int>       <int> <chr>               

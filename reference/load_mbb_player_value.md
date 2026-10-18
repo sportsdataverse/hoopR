@@ -149,7 +149,7 @@ Saiem Gilani
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_player_impact/nba_player_impact_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_player_impact/nba_player_impact_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
@@ -157,7 +157,7 @@ Saiem Gilani
 #> Warning: downloaded length 0 != reported length 9
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_player_value/mbb_player_value_2027.parquet': HTTP status was '404 Not Found'
 #> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_player_value/mbb_player_value_2027.parquet>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
@@ -165,7 +165,7 @@ Saiem Gilani
 #> Warning: downloaded length 0 != reported length 9
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_ratings/mbb_ratings_2027.parquet': HTTP status was '404 Not Found'
 #> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_ratings/mbb_ratings_2027.parquet>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 ```

@@ -662,12 +662,12 @@ Other NBA Stats loader functions:
   try(load_nba_stats_coaches(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_coaches/coaches_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_coaches/coaches_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_draft(seasons = most_recent_nba_stats_season()))
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 60 × 14
 #>    person_id player_name  season round_number round_pick overall_pick draft_type
 #>        <int> <chr>         <int>        <int>      <int>        <int> <chr>     
@@ -690,105 +690,105 @@ Other NBA Stats loader functions:
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_lineups/nba_lineups_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_lineups/nba_lineups_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_rosters/game_rosters_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_rosters/game_rosters_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_lineups/lineups_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_lineups/lineups_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_officials/officials_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_officials/officials_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_pbp/nba_play_by_play_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_pbp/nba_play_by_play_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_boxscores/player_boxscores_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_boxscores/player_boxscores_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_game_logs/player_game_logs_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_game_logs/player_game_logs_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_season_stats/player_season_stats_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_player_season_stats/player_season_stats_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_possessions/nba_possessions_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_possessions/nba_possessions_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_rosters/rosters_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_rosters/rosters_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_schedules/nba_schedule_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_schedules/nba_schedule_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_shots/shots_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_shots/shots_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_standings/standings_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_standings/standings_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_boxscores/team_boxscores_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_boxscores/team_boxscores_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_season_stats/team_season_stats_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_team_season_stats/team_season_stats_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 ```

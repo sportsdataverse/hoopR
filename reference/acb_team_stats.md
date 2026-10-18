@@ -243,25 +243,25 @@ Other ACB Functions:
 ``` r
 # \donttest{
   try(acb_team_stats(club_id = 2, season = 2027))
-#> ── ACB Team Stats from api2.acb.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:20:24 UTC
+#> ── ACB Team Stats from api2.acb.com ───────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:23:36 UTC
 #> # A tibble: 14 × 97
 #>    club_id team_id edition_id season player_id player_name  first_name last_name
 #>      <int>   <int>      <int>  <int>     <int> <chr>        <chr>      <chr>    
-#>  1       2    4467         91   2027  30005476 Justin Mina… Justin     Minaya   
-#>  2       2    4467         91   2027  30005361 Stanley Umu… Stanley    Umude    
-#>  3       2    4467         91   2027  30005357 Olivier Nka… Olivier    Nkamhoua 
+#>  1       2    4467         91   2027  30005377 Tosan Evbuo… Torisesan  Evbuomwan
+#>  2       2    4467         91   2027  30001332 Agustín Ubal Agustín    Ubal     
+#>  3       2    4467         91   2027  30005378 Tyrese Mart… Tyrese     Martin   
 #>  4       2    4467         91   2027  30005356 Josh Nebo    Joshua     Nebo     
-#>  5       2    4467         91   2027  30005377 Tosan Evbuo… Torisesan  Evbuomwan
-#>  6       2    4467         91   2027  20212243 Olek Balcer… Aleksander Balcerow…
-#>  7       2    4467         91   2027  20209919 Darío Brizu… Darío      Brizuela 
+#>  5       2    4467         91   2027  20212265 Joel Parra   Joel       Parra    
+#>  6       2    4467         91   2027  30003340 Justin Robi… Justin     Robinson 
+#>  7       2    4467         91   2027  30005355 Umoja Gibson Umoja      Gibson   
 #>  8       2    4467         91   2027  30000093 Juan Núñez   Juan       Núñez    
-#>  9       2    4467         91   2027  20212265 Joel Parra   Joel       Parra    
-#> 10       2    4467         91   2027  30001332 Agustín Ubal Agustín    Ubal     
-#> 11       2    4467         91   2027  30005378 Tyrese Mart… Tyrese     Martin   
-#> 12       2    4467         91   2027  30003340 Justin Robi… Justin     Robinson 
-#> 13       2    4467         91   2027  30005355 Umoja Gibson Umoja      Gibson   
-#> 14       2    4467         91   2027  30003361 Kevin Punter Kevin      Punter   
+#>  9       2    4467         91   2027  30003361 Kevin Punter Kevin      Punter   
+#> 10       2    4467         91   2027  30005361 Stanley Umu… Stanley    Umude    
+#> 11       2    4467         91   2027  20209919 Darío Brizu… Darío      Brizuela 
+#> 12       2    4467         91   2027  20212243 Olek Balcer… Aleksander Balcerow…
+#> 13       2    4467         91   2027  30005476 Justin Mina… Justin     Minaya   
+#> 14       2    4467         91   2027  30005357 Olivier Nka… Olivier    Nkamhoua 
 #> # ℹ 89 more variables: shirt_number <chr>, game_role <chr>,
 #> #   total_num_games <int>, total_time_played <int>, total_starter <int>,
 #> #   total_points <int>, total_max_points <int>,

@@ -146,8 +146,8 @@ Other TBF:
 ``` r
 # \donttest{
   try(tbf_daily_matches(match_date = "2026-10-11"))
-#> ── TBF Daily Matches ─────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:44 UTC
+#> ── TBF Daily Matches ──────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:27 UTC
 #> # A tibble: 11 × 27
 #>    group_name  match_id match_code genius_id activity_id activity_name 
 #>    <chr>          <int> <chr>          <int>       <int> <chr>         

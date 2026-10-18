@@ -62,7 +62,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(load_mbb_group_aliases())
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 467 × 8
 #>    league group_id         source source_id name_kind  value valid_from valid_to
 #>    <chr>  <chr>            <chr>  <chr>     <chr>      <chr>      <int>    <int>
@@ -80,7 +80,7 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_nba_group_aliases())
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 66 × 8
 #>    league group_id     source    source_id name_kind   value valid_from valid_to
 #>    <chr>  <chr>        <chr>     <chr>     <chr>       <chr>      <int>    <int>

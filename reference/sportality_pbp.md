@@ -159,8 +159,8 @@ Other Basketligaen Functions:
 ``` r
 # \donttest{
   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
-#> ── Basketligaen Play-by-Play from basketligaen.dk ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:01 UTC
+#> ── Basketligaen Play-by-Play from basketligaen.dk ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:49 UTC
 #> # A tibble: 804 × 49
 #>    game_source_id game_id event_id type     event_uuid  period period_type time 
 #>             <int>   <int>    <int> <chr>    <chr>        <int> <chr>       <chr>

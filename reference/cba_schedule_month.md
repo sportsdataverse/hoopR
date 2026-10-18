@@ -158,8 +158,8 @@ Other CBA Functions:
 ``` r
 # \donttest{
   try(cba_schedule_month(month = 12, year = 2025))
-#> ── CBA Schedule Month from data-server.cbaleague.com ─────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:22 UTC
+#> ── CBA Schedule Month from data-server.cbaleague.com ──────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:36 UTC
 #> # A tibble: 31 × 2
 #>    schedule_num schedule_time      
 #>           <int> <chr>              

@@ -116,16 +116,16 @@ Other FEB:
 ``` r
 # \donttest{
   try(feb_standings(group = 1, season = 2027))
-#> ── FEB standings from baloncestoenvivo.feb.es ────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:06 UTC
+#> ── FEB standings from baloncestoenvivo.feb.es ─────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:53 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id table position team_id team     played   won
 #>    <int>  <int> <chr>         <int> <chr>    <int>   <int> <chr>     <int> <int>
-#>  1     1   2027 PRIMERA FEB     115 live         1 1008687 HLA ALI…      4     4
-#>  2     1   2027 PRIMERA FEB     115 live         2 1009584 GRUPO A…      4     4
-#>  3     1   2027 PRIMERA FEB     115 live         3 1010493 MOVISTA…      3     3
-#>  4     1   2027 PRIMERA FEB     115 live         4 1010207 IBEROLE…      3     3
-#>  5     1   2027 PRIMERA FEB     115 live         5 1008797 CAJASIE…      4     3
+#>  1     1   2027 PRIMERA FEB     115 live         1 1010493 MOVISTA…      4     4
+#>  2     1   2027 PRIMERA FEB     115 live         2 1008687 HLA ALI…      4     4
+#>  3     1   2027 PRIMERA FEB     115 live         3 1009584 GRUPO A…      4     4
+#>  4     1   2027 PRIMERA FEB     115 live         4 1008797 CAJASIE…      4     3
+#>  5     1   2027 PRIMERA FEB     115 live         5 1010207 IBEROLE…      4     3
 #>  6     1   2027 PRIMERA FEB     115 live         6 1009713 PALMER …      4     3
 #>  7     1   2027 PRIMERA FEB     115 live         7 1009095 CLUB OU…      4     2
 #>  8     1   2027 PRIMERA FEB     115 live         8 1009110 CAJASOL…      4     2

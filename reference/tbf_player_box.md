@@ -140,8 +140,8 @@ Other TBF:
 ``` r
 # \donttest{
   try(tbf_player_box(match_id = 346279))
-#> ── TBF Player Box Score ──────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:51 UTC
+#> ── TBF Player Box Score ───────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:34 UTC
 #> # A tibble: 24 × 33
 #>    match_id side  team_process_id player_id player_name jersey_number is_starter
 #>       <int> <chr>           <int>     <int> <chr>       <chr>         <lgl>     

@@ -133,8 +133,8 @@ Other Genius:
 ``` r
 # \donttest{
   try(genius_pbp(match_id = 2902690))
-#> ── Genius LiveStats play-by-play ─────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:04 UTC
+#> ── Genius LiveStats play-by-play ──────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:59 UTC
 #> # A tibble: 663 × 25
 #>    match_id row_index action_number previous_action period period_type gt   
 #>       <int>     <int>         <int>           <int>  <int> <chr>       <chr>

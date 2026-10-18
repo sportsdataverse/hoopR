@@ -174,8 +174,8 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_game_teams(game_id = "2006920"))
-#> ── BBL/DBBL Game Team Box Score from the SCB API ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:45 UTC
+#> ── BBL/DBBL Game Team Box Score from the SCB API ──────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:30 UTC
 #> # A tibble: 2 × 63
 #>   league game_id season side  team_id head_coach_name status   scheduled_time   
 #>   <chr>  <chr>    <int> <chr> <chr>   <chr>           <chr>    <chr>            

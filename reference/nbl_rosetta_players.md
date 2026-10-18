@@ -155,8 +155,8 @@ Other NBL Rosetta:
 ``` r
 # \donttest{
   try(nbl_rosetta_players(org = "nbl", season = 2026))
-#> ── NBL Rosetta players from prod.rosetta.nbl.com.au ──────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:23 UTC
+#> ── NBL Rosetta players from prod.rosetta.nbl.com.au ───────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:05 UTC
 #> # A tibble: 195 × 33
 #>    org   jersey_number playing_position player_id              rosetta_player_id
 #>    <chr> <chr>         <chr>            <chr>                  <chr>            

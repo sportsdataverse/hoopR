@@ -164,8 +164,8 @@ Other VTB Functions:
 ``` r
 # \donttest{
   try(vtb_infobasket_playoff_games(comp_id = 54281))
-#> ── VTB Infobasket Playoff Games from org.infobasket.su ───── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:44:21 UTC
+#> ── VTB Infobasket Playoff Games from org.infobasket.su ────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:47:09 UTC
 #> # A tibble: 34 × 17
 #>    comp_id  tree round  sort game_id game_status score  plus_minus game_date 
 #>      <int> <int> <int> <int>   <int>       <int> <chr>       <int> <chr>     

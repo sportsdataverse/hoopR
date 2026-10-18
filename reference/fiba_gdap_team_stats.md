@@ -189,8 +189,8 @@ Other FIBA Functions:
 ``` r
 # \donttest{
   try(fiba_gdap_team_stats(team_id = 279569))
-#> ── FIBA gdap_team_stats from fiba.basketball ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:27 UTC
+#> ── FIBA gdap_team_stats from fiba.basketball ──────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:15 UTC
 #> # A tibble: 1 × 75
 #>   team_id competition_id points_per_game rebounds_per_game
 #>     <int>          <int>           <dbl>             <dbl>

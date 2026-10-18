@@ -125,8 +125,8 @@ Other KBL Functions:
 ``` r
 # \donttest{
   try(kbl_players())
-#> ── KBL Players from api.kbl.or.kr ────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:33 UTC
+#> ── KBL Players from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:18 UTC
 #> # A tibble: 1,496 × 10
 #>    pcode  player_name player_name_en   team_code team_name team_name_en back_num
 #>    <chr>  <chr>       <chr>            <chr>     <chr>     <chr>        <chr>   

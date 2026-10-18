@@ -159,8 +159,8 @@ Saiem Gilani
 # \donttest{
   # LeBron James — athlete id 1966
   espn_nba_player_contracts(athlete_id = 1966)
-#> ── ESPN NBA Athlete Contracts Index ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:22:56 UTC
+#> ── ESPN NBA Athlete Contracts Index ───────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:31 UTC
 #> # A tibble: 20 × 4
 #>    athlete_id season ref                                                  league
 #>    <chr>       <int> <chr>                                                <chr> 
@@ -188,8 +188,8 @@ Saiem Gilani
 # \donttest{
   # LeBron James 2025 contract
   espn_nba_player_contract(athlete_id = 1966, season = 2025)
-#> ── ESPN NBA Athlete Contract from ESPN.com ───────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:22:56 UTC
+#> ── ESPN NBA Athlete Contract from ESPN.com ────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:31 UTC
 #> # A tibble: 1 × 23
 #>   athlete_id season bird_status   salary salary_remaining years_remaining
 #>   <chr>       <int>       <int>    <int>            <int>           <int>

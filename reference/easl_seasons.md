@@ -131,8 +131,8 @@ Other EASL Functions:
 ``` r
 # \donttest{
   try(easl_seasons())
-#> ── EASL Seasons from easl.joshricha.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:50 UTC
+#> ── EASL Seasons from easl.joshricha.com ───────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:25:10 UTC
 #> # A tibble: 4 × 20
 #>   season season_id        season_row_id  year name  name_latin status start_date
 #>    <int> <chr>                    <int> <int> <chr> <chr>      <chr>  <date>    

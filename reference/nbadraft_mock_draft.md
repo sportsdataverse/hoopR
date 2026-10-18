@@ -47,8 +47,8 @@ Other Salary & Draft Functions:
 ``` r
 # \donttest{
   try(nbadraft_mock_draft())
-#> ── Mock draft from nbadraft.net ──────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:14 UTC
+#> ── Mock draft from nbadraft.net ───────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:44:55 UTC
 #> # A tibble: 0 × 0
 # }
 ```

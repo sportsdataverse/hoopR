@@ -95,7 +95,7 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
-#> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── hoopR 3.1.0.9000 ──
+#> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
 #> ℹ Data updated: 2026-10-10 11:50:23 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
@@ -120,7 +120,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
-#> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── hoopR 3.1.0.9000 ──
+#> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
 #> ℹ Data updated: 2026-10-10 11:50:54 UTC
 #> # A tibble: 1,281 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
@@ -143,7 +143,7 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
-#> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── hoopR 3.1.0.9000 ──
+#> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
 #> ℹ Data updated: 2026-10-10 11:51:19 UTC
 #> # A tibble: 610 × 21
 #>    season espn_team_id team_abbreviation player_name             espn_athlete_id
@@ -170,21 +170,21 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds': HTTP status was '404 Not Found'
 #> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 ```

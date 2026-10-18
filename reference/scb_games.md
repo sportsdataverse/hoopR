@@ -228,8 +228,8 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_games())
-#> ── BBL/DBBL Games from the SCB API ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:47 UTC
+#> ── BBL/DBBL Games from the SCB API ────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:32 UTC
 #> # A tibble: 321 × 89
 #>    league season season_id game_id competition stage       status scheduled_time
 #>    <chr>   <int>     <int> <chr>   <chr>       <chr>       <chr>  <chr>         

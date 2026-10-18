@@ -125,8 +125,8 @@ Other KBL Functions:
 ``` r
 # \donttest{
   try(kbl_seasons())
-#> ── KBL Seasons from api.kbl.or.kr ────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:34 UTC
+#> ── KBL Seasons from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:21 UTC
 #> # A tibble: 31 × 10
 #>    season season_code glkey  season_name season_name_full season_grade
 #>     <int>       <int> <chr>  <chr>       <chr>                   <int>

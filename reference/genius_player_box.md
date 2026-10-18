@@ -157,8 +157,8 @@ Other Genius:
 ``` r
 # \donttest{
   try(genius_player_box(match_id = 2902690))
-#> ── Genius LiveStats player box score ─────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:05 UTC
+#> ── Genius LiveStats player box score ──────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:00 UTC
 #> # A tibble: 24 × 51
 #>    match_id   tno   pno name       first_name family_name international_first_…¹
 #>       <int> <int> <int> <chr>      <chr>      <chr>       <chr>                 

@@ -151,8 +151,8 @@ Other CBA Functions:
 ``` r
 # \donttest{
   try(cba_match_types())
-#> ── CBA Match Types from data-server.cbaleague.com ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:11 UTC
+#> ── CBA Match Types from data-server.cbaleague.com ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:25 UTC
 #> # A tibble: 5 × 3
 #>   is_default key    value
 #>        <int> <chr>  <chr>

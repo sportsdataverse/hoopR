@@ -1,6 +1,6 @@
 # Changelog
 
-## **hoopR 3.1.0.9000 (development version)**
+## **hoopR 3.2.0**
 
 #### **International basketball**
 
@@ -283,6 +283,21 @@ report) raise classed conditions (`hoopR_no_data` / `hoopR_fetch_error`,
 both inheriting `hoopR_error`) instead of returning an empty result,
 mirroring sdv-py’s `NoDataError`/`AssetFetchError` vocabulary.
 
+#### **Dependencies**
+
+- Imports trimmed so `R CMD check` no longer notes too many non-default
+  packages. glmnet and Matrix moved to Suggests:
+  [`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md)
+  now needs them installed (it says so with an install prompt if they
+  are missing). stringdist moved to Suggests: the live player-crosswalk
+  builders
+  [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md)
+  and
+  [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+  now need it; the cached `load_*_crosswalk()` loaders do not. magrittr
+  and lubridate are no longer dependencies (`%>%` still comes from
+  dplyr; date parsing now uses base R with the same results).
+
 ## **hoopR 3.1.0**
 
 CRAN release: 2026-08-25
@@ -514,16 +529,15 @@ HTML, no key required:
 
 - **[`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)**
   — team salary-cap allocations, cap space, active players and average
-  age from [Spotrac](https://www.spotrac.com).
+  age from Spotrac (spotrac.com).
 
 - **[`hoopshype_salaries()`](https://hoopR.sportsdataverse.org/reference/hoopshype_salaries.md)**
   — the **full league’s** player salaries (one row per player-season,
-  current + future contract years) from
-  [HoopsHype](https://www.hoopshype.com/). HoopsHype is now a Next.js
-  app whose single salaries page paginates client-side, but each team
-  page embeds that team’s complete roster in its `__NEXT_DATA__` payload
-  — so this iterates the 30 team pages and stitches them together (~600
-  players) via a team-by-team approach.
+  current + future contract years) from HoopsHype (hoopshype.com).
+  HoopsHype is now a Next.js app whose single salaries page paginates
+  client-side, but each team page embeds that team’s complete roster in
+  its `__NEXT_DATA__` payload — so this iterates the 30 team pages and
+  stitches them together (~600 players) via a team-by-team approach.
 
 - **[`nbadraft_mock_draft()`](https://hoopR.sportsdataverse.org/reference/nbadraft_mock_draft.md)**
   — the current consensus mock draft (both rounds) from

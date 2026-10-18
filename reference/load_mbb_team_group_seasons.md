@@ -83,7 +83,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   try(load_mbb_team_group_seasons(seasons = most_recent_mbb_season()))
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 365 × 11
 #>    league season team_id team_id_source team_name   subdivision_id conference_id
 #>    <chr>   <int> <chr>   <chr>          <chr>       <chr>          <chr>        
@@ -103,7 +103,7 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_nba_team_group_seasons(seasons = most_recent_nba_season()))
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 30 × 11
 #>    league season team_id team_id_source team_name   subdivision_id conference_id
 #>    <chr>   <int> <chr>   <chr>          <chr>       <chr>          <chr>        

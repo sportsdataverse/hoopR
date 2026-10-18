@@ -192,8 +192,8 @@ Other KZS Functions:
     competition_id = 579, date_from = "2025-10-01T00:00:00.000Z",
     date_to = "2025-10-31T23:59:59.000Z"
   ))
-#> ── KZS Matches from api.kzs.si ───────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:49 UTC
+#> ── KZS Matches from api.kzs.si ────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:36 UTC
 #> # A tibble: 21 × 69
 #>    match_id competition_id competition_name competition_type
 #>       <int>          <int> <chr>            <chr>           

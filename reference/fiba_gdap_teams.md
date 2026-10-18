@@ -144,8 +144,8 @@ Other FIBA Functions:
 ``` r
 # \donttest{
   try(fiba_gdap_teams(comp = 208182))
-#> ── FIBA gdap_teams from fiba.basketball ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:28 UTC
+#> ── FIBA gdap_teams from fiba.basketball ───────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:16 UTC
 #> # A tibble: 32 × 29
 #>    team_id team_code short_name    profile_team_id profile_organisation_id
 #>      <int> <chr>     <chr>                   <int>                   <int>

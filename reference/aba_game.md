@@ -137,8 +137,8 @@ Other ABA:
 ``` r
 # \donttest{
   try(aba_game(game_no = 6, season = 2026))
-#> ── ABA League Game ───────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:20:00 UTC
+#> ── ABA League Game ────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:23:11 UTC
 #> # A tibble: 1 × 27
 #>   game_no season league_id league season_label round   competition   group when 
 #>     <int>  <int>     <int> <chr>  <chr>        <chr>   <chr>         <chr> <chr>

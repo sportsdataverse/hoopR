@@ -122,8 +122,8 @@ Other Basketligaen Functions:
 ``` r
 # \donttest{
   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
-#> ── Basketligaen Standings from basketligaen.dk ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:07 UTC
+#> ── Basketligaen Standings from basketligaen.dk ────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:54 UTC
 #> # A tibble: 12 × 13
 #>    team_id team_uuid  team_code team_name     rank    gp     w     l    tp `for`
 #>      <int> <chr>      <chr>     <chr>        <int> <int> <int> <int> <int> <int>

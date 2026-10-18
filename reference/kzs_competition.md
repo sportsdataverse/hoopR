@@ -123,8 +123,8 @@ Other KZS Functions:
 ``` r
 # \donttest{
   try(kzs_competition(competition_id = 579))
-#> ── KZS Competition from api.kzs.si ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:45 UTC
+#> ── KZS Competition from api.kzs.si ────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:32 UTC
 #> # A tibble: 1 × 12
 #>   competition_id name       season_id season_name season_is_active season_active
 #>            <int> <chr>          <int> <chr>       <lgl>            <lgl>        

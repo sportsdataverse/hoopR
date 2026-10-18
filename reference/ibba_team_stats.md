@@ -138,8 +138,8 @@ Other IBBA:
 ``` r
 # \donttest{
   try(ibba_team_stats(season = 2026, team_id = 1109))
-#> ── IBBA team stats ───────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:24:24 UTC
+#> ── IBBA team stats ────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:28:12 UTC
 #> # A tibble: 1 × 27
 #>   season team_id games minutes   pts  fg2m  fg2a fg2_pct  fg3m  fg3a fg3_pct
 #>    <int>   <int> <int>   <dbl> <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>   <dbl>

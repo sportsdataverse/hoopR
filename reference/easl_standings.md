@@ -155,8 +155,8 @@ Other EASL Functions:
 ``` r
 # \donttest{
   try(easl_standings(season = 2026))
-#> ── EASL Standings from easl.joshricha.com ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:51 UTC
+#> ── EASL Standings from easl.joshricha.com ─────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:25:12 UTC
 #> # A tibble: 12 × 36
 #>    season season_id     standing_id position team_id team_name team_code pool_id
 #>     <int> <chr>         <chr>          <int> <chr>   <chr>     <chr>     <chr>  

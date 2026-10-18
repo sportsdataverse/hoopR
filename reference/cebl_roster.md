@@ -113,8 +113,8 @@ Other CEBL Functions:
 ``` r
 # \donttest{
   try(cebl_roster(team_id = 14, season = 2025))
-#> ── CEBL Team Roster from the CEBL Stats API ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:32 UTC
+#> ── CEBL Team Roster from the CEBL Stats API ───────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:48 UTC
 #> # A tibble: 14 × 9
 #>    season team_id player_id full_name         nationality   birth_date position
 #>     <int>   <int>     <int> <chr>             <chr>         <date>     <chr>   

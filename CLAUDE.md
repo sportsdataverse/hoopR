@@ -41,7 +41,7 @@ When this guide differs from current repository docs, treat
 `CONTRIBUTING.md` and current test helper implementations as
 authoritative.
 
-- **Version**: 3.1.0
+- **Version**: 3.2.0
 - **R Requirement**: \>= 4.1.0
 - **License**: MIT (CRAN + r-universe; pkgdown site at
   <https://hoopR.sportsdataverse.org>)
@@ -651,10 +651,9 @@ committing**:
 
 - **`NEWS.md`** — authoritative changelog for downstream users; rendered
   into the pkgdown changelog. **All new bullets go under the most recent
-  unreleased version heading** (currently
-  `# **hoopR 3.1.0.9000 (development version)**`). Do NOT create a new
-  version section ahead of release. Add to or extend an existing
-  subsection (`### Bug Fixes`, `### Deprecations`,
+  unreleased version heading** (currently `# **hoopR 3.2.0**`, not yet
+  on CRAN). Do NOT create a new version section ahead of release. Add to
+  or extend an existing subsection (`### Bug Fixes`, `### Deprecations`,
   `### Stability and Test Robustness`, etc.) instead of starting a new
   one when the change is incremental. When the next version ships to
   CRAN, rename that heading to the released version and open a new

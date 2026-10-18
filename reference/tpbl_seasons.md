@@ -104,8 +104,8 @@ Other TPBL Functions:
 ``` r
 # \donttest{
   try(tpbl_seasons())
-#> ── TPBL Seasons from api.tpbl.basketball ─────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:44:08 UTC
+#> ── TPBL Seasons from api.tpbl.basketball ──────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:53 UTC
 #> # A tibble: 3 × 7
 #>   season season_id gohoops_season_id name           status   started_at ended_at
 #>    <int>     <int>             <int> <chr>          <chr>    <chr>      <chr>   

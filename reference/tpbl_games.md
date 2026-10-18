@@ -156,8 +156,8 @@ Other TPBL Functions:
 ``` r
 # \donttest{
   try(tpbl_games(season = 2026))
-#> ── TPBL Games from api.tpbl.basketball ───────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:44:06 UTC
+#> ── TPBL Games from api.tpbl.basketball ────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:51 UTC
 #> # A tibble: 150 × 34
 #>    season season_id game_id gohoops_game_id division_id gohoops_division_id
 #>     <int>     <int>   <int>           <int>       <int>               <int>

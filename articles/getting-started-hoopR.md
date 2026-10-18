@@ -63,7 +63,7 @@ accessed from this package:
   Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=x&style=for-the-badge)](https://x.com/sportsdataverse)
 - [NBA Stats and Data API](https://stats.nba.com)
 - [NBA G-League Stats and Data API](https://stats.nba.com)
-- [ESPN](https://espn.com)
+- ESPN
 - [KenPom](https://kenpom.com) (Requires subscription access)
 - [NCAA](https://ncaa.com)
 
@@ -76,32 +76,30 @@ accessed from this package:
   scores, and player box scores.
 
 - Functions that use the NBA Stats API start with `nba_` by convention
-  and should be assumed as `get` functions. As of `hoopR` version
-  3.1.0.9000, the package exports 127 functions covering the NBA Stats
-  API
+  and should be assumed as `get` functions. As of `hoopR` version 3.2.0,
+  the package exports 127 functions covering the NBA Stats API
 
 - Functions that use the NBA G-League Stats API start with `nbagl_` by
   convention and should be assumed as `get` functions. As of `hoopR`
-  version 3.1.0.9000, the package exports 4 functions covering the NBA
+  version 3.2.0, the package exports 4 functions covering the NBA
   G-League Stats API
 
 - Functions that use one of ESPN’s APIs start with `espn_` by convention
   and should be assumed as `get` functions. These functions allow for
   live access to game data for both men’s college basketball and the
-  NBA. As of `hoopR` version 3.1.0.9000, the package exports 10
-  functions covering the men’s college basketball endpoints and 10 for
-  the NBA.
+  NBA. As of `hoopR` version 3.2.0, the package exports 10 functions
+  covering the men’s college basketball endpoints and 10 for the NBA.
 
 - Functions that use Ken Pomeroy’s college basketball website start with
   `kp_` by convention and should be assumed as `get` functions. These
   functions allow users with an active subscription to get access to the
-  data in a tidy format. As of `hoopR` version 3.1.0.9000, the package
+  data in a tidy format. As of `hoopR` version 3.2.0, the package
   exports 36 functions covering the [KenPom.com](https://kenpom.com).
 
 - Functions that use the NCAA website start with `ncaa_` by convention
-  and should be assumed as `get` functions. As of `hoopR` version
-  3.1.0.9000, the package exports 1 function(s) covering the NCAA
-  website, namely the function to access current NET rankings.
+  and should be assumed as `get` functions. As of `hoopR` version 3.2.0,
+  the package exports 1 function(s) covering the NCAA website, namely
+  the function to access current NET rankings.
 
 ### **Quick Start**
 
@@ -120,7 +118,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 26.368 sec elapsed
+    ## 34.595 sec elapsed
 
 ``` r
 
@@ -217,7 +215,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.989 sec elapsed
+    ## 2.736 sec elapsed
 
 ``` r
 
@@ -304,7 +302,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.838 sec elapsed
+    ## 3.813 sec elapsed
 
 ``` r
 
@@ -389,7 +387,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 52.548 sec elapsed
+    ## 76.96 sec elapsed
 
 ``` r
 
@@ -492,7 +490,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.464 sec elapsed
+    ## 3.296 sec elapsed
 
 ``` r
 
@@ -579,7 +577,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 7.263 sec elapsed
+    ## 9.217 sec elapsed
 
 ``` r
 

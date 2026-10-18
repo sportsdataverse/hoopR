@@ -128,8 +128,8 @@ Other Basketligaen Functions:
 ``` r
 # \donttest{
   try(sportality_team_stats(game_uuid = "c4hh5nig6t"))
-#> ── Basketligaen Team Stats from basketligaen.dk ──────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:09 UTC
+#> ── Basketligaen Team Stats from basketligaen.dk ───────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:56 UTC
 #> # A tibble: 10 × 19
 #>    team_side game_source_id game_id team_id team_name      team_code team_number
 #>    <chr>              <int>   <int>   <int> <chr>          <chr>           <int>

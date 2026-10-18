@@ -201,8 +201,8 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_games_recent())
-#> ── BBL/DBBL Recent Games from the SCB API ────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:47 UTC
+#> ── BBL/DBBL Recent Games from the SCB API ─────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:45:32 UTC
 #> # A tibble: 27 × 91
 #>    league season season_id game_id competition stage status bucket game_progress
 #>    <chr>   <int>     <int> <chr>   <chr>       <chr> <chr>  <chr>  <chr>        
@@ -211,11 +211,11 @@ Other SCB Functions:
 #>  3 bbl      2027      2026 2006878 BBL         MAIN… OFFIC… past   E            
 #>  4 bbl      2027      2026 2006876 BBL         MAIN… OFFIC… past   E            
 #>  5 bbl      2027      2026 2006877 BBL         MAIN… OFFIC… past   E            
-#>  6 bbl      2027      2026 2006879 BBL         MAIN… OFFIC… past   E            
-#>  7 bbl      2027      2026 2006880 BBL         MAIN… OFFIC… past   E            
-#>  8 bbl      2027      2026 2006881 BBL         MAIN… OFFIC… past   E            
-#>  9 bbl      2027      2026 2007040 BBL_CUP     ROUN… OFFIC… past   E            
-#> 10 bbl      2027      2026 2007038 BBL_CUP     ROUN… OFFIC… prese… E            
+#>  6 bbl      2027      2026 2006880 BBL         MAIN… OFFIC… past   E            
+#>  7 bbl      2027      2026 2006881 BBL         MAIN… OFFIC… past   E            
+#>  8 bbl      2027      2026 2007040 BBL_CUP     ROUN… OFFIC… past   E            
+#>  9 bbl      2027      2026 2007038 BBL_CUP     ROUN… OFFIC… past   E            
+#> 10 bbl      2027      2026 2007042 BBL_CUP     ROUN… OFFIC… prese… E            
 #> # ℹ 17 more rows
 #> # ℹ 82 more variables: scheduled_time <chr>, match_day <int>, is_tbd <lgl>,
 #> #   is_hidden <lgl>, home_team_id <chr>, home_season_team_id <chr>,

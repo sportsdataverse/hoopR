@@ -202,8 +202,8 @@ Other Atrium:
 ``` r
 # \donttest{
   try(atrium_fixtures(website_id = 14))
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ───────────────────
-#> ℹ Data updated: 2026-10-18 17:20:27 UTC
+#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ──── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:23:40 UTC
 #> # A tibble: 8 × 40
 #>   website_id season_id           competition_id competition_name season_end_year
 #>        <int> <chr>               <chr>          <chr>                      <int>

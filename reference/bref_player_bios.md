@@ -62,8 +62,8 @@ Other Basketball-Reference Functions:
 ``` r
 # \donttest{
   try(bref_player_bios(letter = "a"))
-#> ── Player bios from basketball-reference.com ─────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:21:00 UTC
+#> ── Player bios from basketball-reference.com ──────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:24:07 UTC
 #> # A tibble: 179 × 10
 #>    player    player_id year_min year_max pos   height weight birth_date colleges
 #>    <chr>     <chr>        <dbl>    <dbl> <chr> <chr>   <dbl> <chr>      <chr>   

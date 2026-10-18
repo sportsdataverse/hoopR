@@ -182,8 +182,8 @@ Other ACB Functions:
 ``` r
 # \donttest{
   try(acb_player_matches(player_id = 20209407, season = 2027))
-#> ── ACB Player Matches from api2.acb.com ──────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:20:16 UTC
+#> ── ACB Player Matches from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:23:28 UTC
 #> # A tibble: 4 × 42
 #>   player_id match_id round_type round_number date                home_team_id
 #>       <int>    <int> <chr>             <int> <dttm>                     <int>

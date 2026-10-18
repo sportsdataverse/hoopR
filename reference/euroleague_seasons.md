@@ -80,8 +80,8 @@ Other Euroleague:
   try({
     euroleague_seasons(competition_code = "E")
   })
-#> ── EuroLeague seasons from api-live.euroleague.net ───────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:00 UTC
+#> ── EuroLeague seasons from api-live.euroleague.net ────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:45 UTC
 #> # A tibble: 27 × 16
 #>    name   code  alias competition_code  year start_date activation_date end_date
 #>    <chr>  <chr> <chr> <chr>            <int> <chr>      <chr>           <chr>   

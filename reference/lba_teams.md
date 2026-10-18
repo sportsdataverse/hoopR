@@ -103,8 +103,8 @@ Other LBA Functions:
 ``` r
 # \donttest{
   try(lba_teams(season = 2027))
-#> ── LBA Teams from legabasket.it ──────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:26:27 UTC
+#> ── LBA Teams from legabasket.it ───────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:29:03 UTC
 #> # A tibble: 16 × 8
 #>    season team_id name                year club_id club_code updated_at logo_key
 #>     <int>   <int> <chr>              <int>   <int> <chr>     <chr>      <chr>   

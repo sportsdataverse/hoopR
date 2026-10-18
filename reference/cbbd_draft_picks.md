@@ -89,19 +89,19 @@ A `hoopR_data` tibble with one row per draft pick:
 ``` r
 # \donttest{
   try(cbbd_draft_teams())
-#> ✖ 2026-10-18 17:21:26.655351: Invalid arguments or no draft teams available!
+#> ✖ 2026-10-18 19:24:41.396947: Invalid arguments or no draft teams available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_draft_positions())
-#> ✖ 2026-10-18 17:21:26.659987: Invalid arguments or no draft positions available!
+#> ✖ 2026-10-18 19:24:41.404221: Invalid arguments or no draft positions available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_draft_picks(year = 2024))
-#> ✖ 2026-10-18 17:21:26.664418: Invalid arguments or no draft picks available!
+#> ✖ 2026-10-18 19:24:41.411143: Invalid arguments or no draft picks available!
 #> ✖ Args: year = 2024, draft_team = NULL, source_team = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

@@ -121,8 +121,8 @@ Other Euroleague:
     box <- euroleague_game_boxscore(game_code = 1, season_code = "E2025")
     box[box$row_type == "player", c("team", "player", "minutes", "points", "valuation")]
   })
-#> ── EuroLeague game box score from live.euroleague.net ────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:22:57 UTC
+#> ── EuroLeague game box score from live.euroleague.net ─────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:34 UTC
 #> # A tibble: 24 × 5
 #>    team  player                minutes points valuation
 #>    <chr> <chr>                 <chr>    <int>     <int>

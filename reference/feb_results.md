@@ -116,8 +116,8 @@ Other FEB:
 ``` r
 # \donttest{
   try(feb_results(group = 1, season = 2027))
-#> ── FEB results from baloncestoenvivo.feb.es ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:04 UTC
+#> ── FEB results from baloncestoenvivo.feb.es ───────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:50 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id section    round_title  game_id home_team_id
 #>    <int>  <int> <chr>         <int> <chr>      <chr>          <int>        <int>

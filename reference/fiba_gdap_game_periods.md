@@ -118,8 +118,8 @@ Other FIBA Functions:
 ``` r
 # \donttest{
   try(fiba_gdap_game_periods(game_id = 100720))
-#> ── FIBA gdap_game_periods from fiba.basketball ───────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:23:19 UTC
+#> ── FIBA gdap_game_periods from fiba.basketball ────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:27:07 UTC
 #> # A tibble: 4 × 7
 #>   game_id name  number team_a_score team_b_score team_a_from       team_b_from  
 #>     <int> <chr>  <int>        <int>        <int> <chr>             <chr>        

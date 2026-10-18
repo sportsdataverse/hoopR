@@ -1,7 +1,6 @@
 # **Spotrac NBA Team Salary Cap**
 
-**Get team salary-cap allocations from
-[Spotrac](https://www.spotrac.com).**
+**Get team salary-cap allocations from Spotrac (spotrac.com).**
 
 Returns one row per team with cap allocations, cap space, active-player
 counts and average age for a season. No API key is required.
@@ -48,8 +47,8 @@ Other Salary & Draft Functions:
 ``` r
 # \donttest{
   try(spotrac_team_cap(season = 2024))
-#> ── Team salary cap from spotrac.com ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:43 UTC
+#> ── Team salary cap from spotrac.com ───────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:26 UTC
 #> # A tibble: 31 × 11
 #>    rank  team  record players_active avg_age_team total_cap_allocations
 #>    <chr> <chr> <chr>           <dbl>        <dbl>                 <dbl>

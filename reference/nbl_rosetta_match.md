@@ -155,8 +155,8 @@ Other NBL Rosetta:
 ``` r
 # \donttest{
   try(nbl_rosetta_match(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
-#> ── NBL Rosetta match from prod.rosetta.nbl.com.au ────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:42:16 UTC
+#> ── NBL Rosetta match from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:44:57 UTC
 #> # A tibble: 1 × 52
 #>   org   match_id    match_status start_time_datetime match_type attendance clock
 #>   <chr> <chr>       <chr>        <chr>               <chr>           <int> <chr>

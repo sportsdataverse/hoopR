@@ -93,7 +93,7 @@ Other NBA Stats loader functions:
 #> Warning: downloaded length 0 != reported length 9
 #> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_leaguedash/player_bio_2027.parquet': HTTP status was '404 Not Found'
 #> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_leaguedash/player_bio_2027.parquet>
-#> ──────────────────────────────────────────────────────────── hoopR 3.1.0.9000 ──
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 ```

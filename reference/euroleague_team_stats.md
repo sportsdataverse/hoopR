@@ -161,8 +161,8 @@ Other Euroleague:
     euroleague_team_stats(competition_code = "E", season_code = "E2025")
     euroleague_team_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
-#> ── EuroLeague advanced team stats from api-live.euroleague.net ─────────────────
-#> ℹ Data updated: 2026-10-18 17:23:00 UTC
+#> ── EuroLeague advanced team stats from api-live.euroleague.net ── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:26:46 UTC
 #> # A tibble: 20 × 20
 #>    team_ranking games_played effective_field_goal_perce…¹ true_shooting_percen…²
 #>           <int>        <dbl> <chr>                        <chr>                 

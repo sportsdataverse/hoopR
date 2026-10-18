@@ -168,8 +168,8 @@ Other ACB Functions:
 ``` r
 # \donttest{
   try(acb_standings(season = 2027))
-#> ── ACB Standings from api2.acb.com ───────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:20:21 UTC
+#> ── ACB Standings from api2.acb.com ────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:23:33 UTC
 #> # A tibble: 18 × 22
 #>    competition_id edition_id season round_id total_rounds team_id club_id team  
 #>             <int>      <int>  <int>    <int>        <int>   <int>   <int> <chr> 

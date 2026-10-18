@@ -104,8 +104,8 @@ Other TBF:
 ``` r
 # \donttest{
   try(tbf_seasons())
-#> ── TBF Seasons ───────────────────────────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:43:54 UTC
+#> ── TBF Seasons ────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:46:37 UTC
 #> # A tibble: 20 × 6
 #>    season_id season_label season start_date end_date   international
 #>        <int> <chr>         <int> <date>     <date>     <lgl>        

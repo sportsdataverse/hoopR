@@ -56,7 +56,7 @@ sportsdataverse-data repository."><meta property="og:image" content="https://raw
 
     <a class="navbar-brand me-2" href="../index.html">hoopR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -237,7 +237,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_team_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ───────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-10 11:50:23 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name</span>
@@ -262,7 +262,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_schedule_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA schedule crosswalk (ESPN / NBA Stats) ─────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-10 11:50:54 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,281 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_type game_date  home_espn_team_id away_espn_team_id</span>
@@ -285,7 +285,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_player_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ─────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-10 11:51:19 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 610 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id team_abbreviation player_name             espn_athlete_id</span>
@@ -312,21 +312,21 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="fu">load_mbb_team_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2027.rds': HTTP status was '404 Not Found'</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Failed to readRDS from &lt;https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2027.rds&gt;</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ──────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ───────────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_schedule_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds': HTTP status was '404 Not Found'</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Failed to readRDS from &lt;https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds&gt;</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ──────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ───────────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_player_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds': HTTP status was '404 Not Found'</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Failed to readRDS from &lt;https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds&gt;</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ──────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.1.0.9000</span> ──</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> ───────────────────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

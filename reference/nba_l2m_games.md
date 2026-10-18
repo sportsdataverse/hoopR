@@ -76,8 +76,8 @@ Saiem Gilani
     games <- nba_l2m_games(season = 2026)
     head(games)
   })
-#> ── NBA L2M games listing (official.nba.com) ──────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 17:27:05 UTC
+#> ── NBA L2M games listing (official.nba.com) ───────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-18 19:29:43 UTC
 #> # A tibble: 6 × 4
 #>   game_id    season season_type label                         
 #>   <chr>       <int> <chr>       <chr>                         
