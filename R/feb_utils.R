@@ -355,8 +355,11 @@
   list(id = .feb_qint(.feb_attr(a, "href"), key), text = .feb_text(a))
 }
 
-.feb_weekdays <- c(LUNES = "Monday", MARTES = "Tuesday", "MI\u00c9RCOLES" = "Wednesday", JUEVES = "Thursday",
-                   VIERNES = "Friday", "S\u00c1BADO" = "Saturday", DOMINGO = "Sunday")
+# named with setNames() (a non-ASCII name in source is lost in a C locale); read with match()
+.feb_weekdays <- stats::setNames(
+  c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"),
+  c("LUNES", "MARTES", "MI\u00c9RCOLES", "JUEVES", "VIERNES", "S\u00c1BADO", "DOMINGO")
+)
 
 #' A scheduled calendar cell (`SABADO 17/10/2026 19:30`) -> English weekday, ISO date, time.
 #' @noRd
@@ -364,8 +367,9 @@
   m <- regmatches(text, regexec("^(\\S+)\\s+(\\d{2}/\\d{2}/\\d{4})(?:\\s+(\\d{1,2}:\\d{2}))?$", .feb_strip(text),
                                 perl = TRUE))[[1]]
   day <- if (length(m)) stringi::stri_trans_toupper(m[[2]]) else ""
-  if (!length(m) || !day %in% names(.feb_weekdays)) return(list(weekday = NA_character_, date = NA_character_, time = NA_character_))
-  list(weekday = .feb_weekdays[[day]], date = .feb_iso(m[[3]]), time = if (nzchar(m[[4]])) m[[4]] else NA_character_)
+  hit <- match(day, names(.feb_weekdays))
+  if (!length(m) || is.na(hit)) return(list(weekday = NA_character_, date = NA_character_, time = NA_character_))
+  list(weekday = .feb_weekdays[[hit]], date = .feb_iso(m[[3]]), time = if (nzchar(m[[4]])) m[[4]] else NA_character_)
 }
 
 .feb_score <- function(text) {
