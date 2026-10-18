@@ -1,0 +1,45 @@
+# R-CMD-check tests the built tarball, which leaves out the .Rbuildignore'd intl fixture dirs
+# (acb, bleague, genius, nbl_rosetta, scb), so their parity tests skip there. This job runs the
+# whole intl test filter from the git checkout, where every fixture is present.
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - master
+name: intl-parity
+permissions:
+  contents: read
+concurrency:
+  group: intl-parity-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  intl-parity:
+    runs-on: ubuntu-latest
+    name: intl parity (ubuntu-latest, release)
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+    steps:
+      - uses: actions/checkout@v5
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: release
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::devtools
+      - name: Run the intl tests from the checkout
+        shell: Rscript {0}
+        run: |
+          intl <- paste0("^(aba|acb|atrium|atrium_fiba_genius_alias_rd|atrium_runtime|bleague|cba|cebl|easl|feb|",
+                         "fiba_gamepage|fiba_gdap|genius|genius_competitions|ibba|intl_basketball_runtime|kbl|kzs|",
+                         "lba|lkl|nbl_rosetta|pleague|scb|sportality|sportpress|tbf|tpbl|vtb)$")
+          for (d in c("acb", "bleague", "genius", "nbl_rosetta", "scb")) {
+            stopifnot(dir.exists(file.path("tests", "testthat", "fixtures", d)))
+          }
+          devtools::test(filter = intl, stop_on_failure = TRUE)
