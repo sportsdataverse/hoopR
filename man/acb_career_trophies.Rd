@@ -56,11 +56,9 @@ rejects after one re-read of the bundle, any other non-200 after three attempts,
 \code{problem+json} body, an error envelope or empty stub, a body for another season, round, club, player or
 match, a game that is not finished). Wrappers raise; they never warn and return empty.
 }
-}
-\examples{
-\donttest{
-  try(acb_career_trophies(player_id = 20209407))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ acb_career_trophies(player_id = 20209407)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other ACB Functions:

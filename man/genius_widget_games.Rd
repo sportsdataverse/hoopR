@@ -65,11 +65,9 @@ matches); \code{hoopR_bad_request} for HTTP 400 / 422 or a URL that is not a Gen
 has occurred" page (\code{transient = TRUE}: retry later), a dead connection, an error
 envelope, a cut-off page, an unfinished game, or a body for another match, competition
 or ORG.
-}
-\examples{
-\donttest{
-  try(genius_widget_games(widget_key = "RFJIN037I07QV520B7WEXKV1GYNA31"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ genius_widget_games(widget_key = "RFJIN037I07QV520B7WEXKV1GYNA31")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Genius:

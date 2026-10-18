@@ -88,11 +88,9 @@ or empty body; an envelope whose status is not OK; a full list page; a game that
 competition, match, team, player or season than the one asked for) and \code{hoopR_bad_request} (a bad argument,
 before any request). HTTP 500 is retried. Wrappers raise; they never return an empty frame for a failed fetch.
 }
-}
-\examples{
-\donttest{
-  try(kzs_player_leaderboard(competition_id = 579))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ kzs_player_leaderboard(competition_id = 579)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other KZS Functions:

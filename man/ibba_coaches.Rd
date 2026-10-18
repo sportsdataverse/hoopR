@@ -71,11 +71,9 @@ a boolean or a non-empty string as the op needs) and \code{hoopR_asset_fetch} (a
 failure: another status, a transport error, a body that is not JSON, an error or changed
 envelope, a row for another season, team, player, board or game, or a box score of a game
 that is not final). All inherit \code{hoopR_error}.
-}
-\examples{
-\donttest{
-  try(ibba_coaches(season = 2026, team_id = 1109, team_uid = 10))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ ibba_coaches(season = 2026, team_id = 1109, team_uid = 10)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other IBBA:

@@ -275,12 +275,10 @@ The season's competition is picked from the \code{ESAKE} chooser by the label ru
 Genius match ids are one global sequence shared by every customer and \code{data.json} names no competition, so each game alias checks the id on the game's LiveStats shell (\verb{/u/ESAKE/<match_id>/}: one extra request per game, cached per process for an hour): its competition name must pass the label rule. Another org's game, a cup or play-off game of \code{ESAKE}, or a shell request that fails twice (or names no competition) raises \code{hoopR_asset_fetch}. The base \verb{genius_*()} function reads any game unchecked.
 
 Access, proxy and error notes: see \code{\link[=genius_game]{genius_game()}}.
-}
-\examples{
-\donttest{
-  try(esake_competitions())
-  try(esake_schedule())
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ esake_competitions()
+ esake_schedule()
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Genius:

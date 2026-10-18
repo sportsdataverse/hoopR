@@ -74,11 +74,9 @@ an empty overview window), \code{hoopR_bad_request} (HTTP 400 / 422, or a
 a token the API still rejects after one renewal, a non-JSON or non-HTML
 body, an error or changed envelope, a play-by-play of another game, a page
 for another group or season, or layout drift). All inherit \code{hoopR_error}.
-}
-\examples{
-\donttest{
-  try(feb_leaders(game_id = 2535725))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ feb_leaders(game_id = 2535725)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other FEB:

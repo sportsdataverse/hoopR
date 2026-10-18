@@ -87,11 +87,9 @@ this API answers for a body it dislikes and which is not retried; a dead connect
 body; an unfinished game; a body for another game, team, season or day), all inheriting \code{hoopR_error}. HTTP 429
 / 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty.
 }
-}
-\examples{
-\donttest{
-  try(cba_best_player(schedule_id = 100105799))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ cba_best_player(schedule_id = 100105799)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other CBA Functions:

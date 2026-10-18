@@ -4,6 +4,54 @@
 # R/cba_runtime.R; frames: R/cba_parsers.R. Generated from tools/codegen/endpoints/cba.yaml and
 # manual_column_descriptions.yaml of that sdv-py commit (ASCII only: Chinese text is glossed or elided).
 
+# The @details of every cba topic that shares the cba_seasons() notes (roxygen @eval .intl_details()).
+.cba_seasons_details <- c(
+  "* Unofficial and unsupported: these wrappers read the routes that cbaleague.com's own data site (a Vue",
+  "  single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as",
+  "  release assets. Requests are spaced at least 1 s apart per host; keep use small.",
+  "* Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;",
+  "  the runtime decrypts it with `digest::AES()` (digest is a suggested package: install it to use these wrappers)",
+  "  and refuses anything that does not decrypt. The host blocks",
+  "  datacenter IPs at TCP: set the environment variable `CBA_PROXY` (or `options(hoopR.proxy = ...)`) to a",
+  "  residential proxy URL; it is never printed or put in a condition. Without a proxy the request goes direct and,",
+  "  from a datacenter, fails within seconds (a 5 s connect timeout, no retry of a refused or timed-out connect).",
+  "  Where direct access works (a residential IP), set `CBA_DIRECT=1` for the full 60 s timeout and retries.",
+  "* Seasons: the API's season is the START year; every `season` argument here is the END year (2026 = 2025-26) and",
+  "  is sent as `season - 1`. Columns named `season` keep the wire value (the START year, so the sdv END year is",
+  "  `season + 1`). The season list reaches 1995-96; box data before 2009-10 is unverified.",
+  "* Coverage: game wrappers serve FINISHED games only. Each first reads the game report header (cached per",
+  "  session), and an unfinished game raises `hoopR_asset_fetch`. Box, period, roster and best-player bodies are",
+  "  checked against that header (points sum to the score, team ids match, advanced rows are box players).",
+  "  Play-by-play is served one period per request: every period is fetched, and a partial set, an unordered clock",
+  "  or a final score the plays do not reach is refused. Play-by-play is verified on 2017-18 and 2025-26 only and is",
+  "  absent for 2009-10 (`hoopR_no_data`). There are NO shot x/y coordinates in this API (shot location exists only",
+  "  as team and player zone splits), and play-by-play has no player or team ids (Chinese sentence text plus",
+  "  surnames). Box data has 12-minute quarters in 2009-10 and 2017-18 and 10-minute quarters in 2025-26. The",
+  "  women's CBA is not covered (no official source).",
+  "* Not game data: `cba_game_team_shots()` and `cba_game_team_four()` answer the two teams' SEASON tables (the shot",
+  "  zones are the teams' current profile; the four factors are the previous season), whichever game is asked for.",
+  "  The reference lists (`cba_team_options()`, `cba_team_counts()`) and `cba_report_status()` are not echoed by the",
+  "  API, so their scope is unchecked.",
+  "* Duplicate rows: in some games (2025-26 game 100105799) the advanced-box and extras routes repeat player rows",
+  "  (26 rows for 12 players), and the repeats are not always copies. `cba_player_advanced()` and",
+  "  `cba_player_extras()` keep the FIRST row per `player_id`.",
+  "* Text fields are Chinese (names, play-by-play sentences, position and nationality labels). The column",
+  "  descriptions here are ASCII; sdv-py's `tools/codegen/notes/cba_glossary.yaml` holds the full English",
+  "  glossaries.",
+  "* Personal data: the operator ids (`createdBy` / `lastModifiedBy`, one holds a mobile number) and any bare",
+  "  mobile-number string are removed from every body. Players' public bio fields (birth date, height, weight) are",
+  "  kept.",
+  "* Ids: `schedule_id` (games, one global 9-digit sequence 100xxxxxx), `team_id` (clubs, stable across sponsor",
+  "  renames), `player_id` (persons) and `match_type_id` are integers. The roster registration `id` of",
+  "  `cba_rosters()` is a 19-digit integer that an R integer or double cannot hold exactly, so it is kept as its",
+  "  exact digits (character).",
+  "* Errors are classed conditions: `hoopR_no_data` (HTTP 404, a game without play-by-play), `hoopR_bad_request` (a",
+  "  non-integer id or season, HTTP 400 / 422) and `hoopR_asset_fetch` (any other non-200, including HTTP 500, which",
+  "  this API answers for a body it dislikes and which is not retried; a dead connection; an empty or undecryptable",
+  "  body; an unfinished game; a body for another game, team, season or day), all inheriting `hoopR_error`. HTTP 429",
+  "  / 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty."
+)
+
 #' @title
 #' **Get CBA Seasons**
 #' @description
@@ -19,51 +67,7 @@
 #' | is_default | integer | Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default. |
 #' | key | character | Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap. |
 #' | value | character | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. String of digits ('2025'); the value every season parameter takes. |
-#' @details
-#' * Unofficial and unsupported: these wrappers read the routes that cbaleague.com's own data site (a Vue
-#'   single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#'   release assets. Requests are spaced at least 1 s apart per host; keep use small.
-#' * Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;
-#'   the runtime decrypts it with `digest::AES()` (digest is a suggested package: install it to use these wrappers)
-#'   and refuses anything that does not decrypt. The host blocks
-#'   datacenter IPs at TCP: set the environment variable `CBA_PROXY` (or `options(hoopR.proxy = ...)`) to a
-#'   residential proxy URL; it is never printed or put in a condition. Without a proxy the request goes direct and,
-#'   from a datacenter, fails within seconds (a 5 s connect timeout, no retry of a refused or timed-out connect).
-#'   Where direct access works (a residential IP), set `CBA_DIRECT=1` for the full 60 s timeout and retries.
-#' * Seasons: the API's season is the START year; every `season` argument here is the END year (2026 = 2025-26) and
-#'   is sent as `season - 1`. Columns named `season` keep the wire value (the START year, so the sdv END year is
-#'   `season + 1`). The season list reaches 1995-96; box data before 2009-10 is unverified.
-#' * Coverage: game wrappers serve FINISHED games only. Each first reads the game report header (cached per
-#'   session), and an unfinished game raises `hoopR_asset_fetch`. Box, period, roster and best-player bodies are
-#'   checked against that header (points sum to the score, team ids match, advanced rows are box players).
-#'   Play-by-play is served one period per request: every period is fetched, and a partial set, an unordered clock
-#'   or a final score the plays do not reach is refused. Play-by-play is verified on 2017-18 and 2025-26 only and is
-#'   absent for 2009-10 (`hoopR_no_data`). There are NO shot x/y coordinates in this API (shot location exists only
-#'   as team and player zone splits), and play-by-play has no player or team ids (Chinese sentence text plus
-#'   surnames). Box data has 12-minute quarters in 2009-10 and 2017-18 and 10-minute quarters in 2025-26. The
-#'   women's CBA is not covered (no official source).
-#' * Not game data: `cba_game_team_shots()` and `cba_game_team_four()` answer the two teams' SEASON tables (the shot
-#'   zones are the teams' current profile; the four factors are the previous season), whichever game is asked for.
-#'   The reference lists (`cba_team_options()`, `cba_team_counts()`) and `cba_report_status()` are not echoed by the
-#'   API, so their scope is unchecked.
-#' * Duplicate rows: in some games (2025-26 game 100105799) the advanced-box and extras routes repeat player rows
-#'   (26 rows for 12 players), and the repeats are not always copies. `cba_player_advanced()` and
-#'   `cba_player_extras()` keep the FIRST row per `player_id`.
-#' * Text fields are Chinese (names, play-by-play sentences, position and nationality labels). The column
-#'   descriptions here are ASCII; sdv-py's `tools/codegen/notes/cba_glossary.yaml` holds the full English
-#'   glossaries.
-#' * Personal data: the operator ids (`createdBy` / `lastModifiedBy`, one holds a mobile number) and any bare
-#'   mobile-number string are removed from every body. Players' public bio fields (birth date, height, weight) are
-#'   kept.
-#' * Ids: `schedule_id` (games, one global 9-digit sequence 100xxxxxx), `team_id` (clubs, stable across sponsor
-#'   renames), `player_id` (persons) and `match_type_id` are integers. The roster registration `id` of
-#'   `cba_rosters()` is a 19-digit integer that an R integer or double cannot hold exactly, so it is kept as its
-#'   exact digits (character).
-#' * Errors are classed conditions: `hoopR_no_data` (HTTP 404, a game without play-by-play), `hoopR_bad_request` (a
-#'   non-integer id or season, HTTP 400 / 422) and `hoopR_asset_fetch` (any other non-200, including HTTP 500, which
-#'   this API answers for a body it dislikes and which is not retried; a dead connection; an empty or undecryptable
-#'   body; an unfinished game; a body for another game, team, season or day), all inheriting `hoopR_error`. HTTP 429
-#'   / 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty.
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_seasons())
@@ -541,11 +545,7 @@ cba_game_team_shots <- function(schedule_id) {
 #' | turnovers_percentage_sort | numeric | Unformatted numeric value behind the formatted string of the same metric (a fraction 0-1 for percentages), used by the site to sort the table. Metric: turnover rate: the share of the player's possession-ending plays that are turnovers. |
 #' | type | integer | Side flag: 0 on every home row, 1 on every visiting row (differs from best_quota, where the visiting side is 2). |
 #' | up_time | integer | Time on court in SECONDS (1692 = 28:12). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_player_advanced(schedule_id = 100105799))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_player_advanced(schedule_id = 100105799)")
 #' @export
 #' @family CBA Functions
 cba_player_advanced <- function(schedule_id) {
@@ -582,11 +582,7 @@ cba_player_advanced <- function(schedule_id) {
 #' | number | character | Jersey number as a string. |
 #' | player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. |
 #' | up_time | integer | Time on court in SECONDS. |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_player_extras(schedule_id = 100105799))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_player_extras(schedule_id = 100105799)")
 #' @export
 #' @family CBA Functions
 cba_player_extras <- function(schedule_id) {
@@ -656,11 +652,7 @@ cba_player_extras <- function(schedule_id) {
 #' | win_points_hundred_round | numeric | net points per 100 possessions. |
 #' | win_points_hundred_round_average | numeric | League average of the metric. Metric: net points per 100 possessions. |
 #' | wine_average | numeric | League-average wins (field name sic); 0.0 in every sample. |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_game_team_four(schedule_id = 100105799))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_game_team_four(schedule_id = 100105799)")
 #' @export
 #' @family CBA Functions
 cba_game_team_four <- function(schedule_id) {
@@ -706,11 +698,7 @@ cba_game_team_four <- function(schedule_id) {
 #' | turn_share | numeric | possession share (see advance-count turnShare). A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
 #' | turnovers | integer | Turnovers by the player in this game. |
 #' | two_points_str | character | Two-point field goals as the string 'made/attempted' ('3/5'). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_best_player(schedule_id = 100105799))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_best_player(schedule_id = 100105799)")
 #' @export
 #' @family CBA Functions
 cba_best_player <- function(schedule_id) {
@@ -747,11 +735,7 @@ cba_best_player <- function(schedule_id) {
 #' | seconds | integer | The leader's time on court in SECONDS. |
 #' | team_id | integer | Unobserved: null in every sample (the side is the enclosing list). |
 #' | type | integer | Side flag: 0 on home rows, 2 on visiting rows (differs from advance-count, where the visiting side is 1). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_best_stats(schedule_id = 100105799))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_best_stats(schedule_id = 100105799)")
 #' @export
 #' @family CBA Functions
 cba_best_stats <- function(schedule_id) {
@@ -849,11 +833,7 @@ cba_rosters <- function(schedule_id) {
 #' |:---|:---|:---|
 #' | schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
 #' | is_report | logical | True when the game report page exists (equals schedules/day isReport == 1 in every sample). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_report_status(schedule_id = 100105799))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_report_status(schedule_id = 100105799)")
 #' @export
 #' @family CBA Functions
 cba_report_status <- function(schedule_id) {
@@ -935,11 +915,7 @@ cba_pbp <- function(schedule_id, quarter_num = NULL) {
 #' |:---|:---|:---|
 #' | key | character | Match type id as a string ('1' regular season, '2' playoffs); see getMatchType. |
 #' | value | integer | Number of teams in that match type in the requested season (inferred: 20 for key '1' in 2025, equal to the 2025 getTeam list length; the playoff count is smaller). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_team_counts(season = 2026))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_team_counts(season = 2026)")
 #' @export
 #' @family CBA Functions
 cba_team_counts <- function(season) {
@@ -1109,11 +1085,7 @@ cba_team_basic <- function(team_id, match_type_id = 1, statistical_dimension = 1
 #' | win_points_hundred_round_average | numeric | League average of the metric. Metric: net points per 100 possessions. |
 #' | win_points_hundred_round_rank | numeric | Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: net points per 100 possessions. |
 #' | wine_average | numeric | League-average wins (field name sic); 0.0 in every sample. |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_team_four(team_id = 29128))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_team_four(team_id = 29128)")
 #' @export
 #' @family CBA Functions
 cba_team_four <- function(team_id, match_type_id = 1) {
@@ -1162,11 +1134,7 @@ cba_team_four <- function(team_id, match_type_id = 1) {
 #' | team_name | character | Team name (Chinese) in that season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. |
 #' | win_num | numeric | Wins in that season (match type of the request), a number typed as float (33.0). |
 #' | win_rate | numeric | Win rate. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_team_overview(team_id = 29128))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_team_overview(team_id = 29128)")
 #' @export
 #' @family CBA Functions
 cba_team_overview <- function(team_id, match_type_id = 1, page_number = 1, page_size = 100) {
@@ -1247,11 +1215,7 @@ cba_team_overview <- function(team_id, match_type_id = 1, page_number = 1, page_
 #' | season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. |
 #' | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 #' | team_name | character | Team name (Chinese) in that season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_team_shots(team_id = 29128))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_team_shots(team_id = 29128)")
 #' @export
 #' @family CBA Functions
 cba_team_shots <- function(team_id, match_type_id = 1, page_number = 1, page_size = 100) {
@@ -1420,11 +1384,7 @@ cba_player_base <- function(season, match_type_id = 1, count_ranger = 1, player_
 #' | turnovers_rate | numeric | turnover rate: for a player, the share of his possession-ending plays that are turnovers; for a team, the share of the team's possessions ending in a turnover (site definitions). A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the _sort column holds the same fraction). |
 #' | turnovers_rate_rank | numeric | Colour rank for the metric, a fraction 0-1 (1 = best, inverted for 'bad' statistics such as turnovers) that the site uses to colour the cell (inferred from the sample values; the base population is not documented). Metric: turnover rate: for a player, the share of his possession-ending plays that are turnovers; for a team, the share of the team's possessions ending in a turnover (site definitions). |
 #' | turnovers_rate_sort | numeric | Unformatted numeric value behind the formatted string of the same metric (a fraction 0-1 for percentages), used by the site to sort the table. Metric: turnover rate: for a player, the share of his possession-ending plays that are turnovers; for a team, the share of the team's possessions ending in a turnover (site definitions). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_player_offensive(season = 2026, team_id = 29128))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_player_offensive(season = 2026, team_id = 29128)")
 #' @export
 #' @family CBA Functions
 cba_player_offensive <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id =
@@ -1505,11 +1465,7 @@ cba_player_offensive <- function(season, match_type_id = 1, count_ranger = 1, pl
 #' | steals_rate_sort | numeric | Unformatted numeric value behind the formatted string of the same metric (a fraction 0-1 for percentages), used by the site to sort the table. Metric: steal rate (site definition, as stealsPercentage). |
 #' | team_cn_alias | character | Team short name (Chinese) in that season. |
 #' | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_player_defensive(season = 2026, team_id = 29128))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_player_defensive(season = 2026, team_id = 29128)")
 #' @export
 #' @family CBA Functions
 cba_player_defensive <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id =
@@ -1602,11 +1558,7 @@ cba_player_defensive <- function(season, match_type_id = 1, count_ranger = 1, pl
 #' | three_rate | numeric | three-point frequency: three-point attempts per 100 possessions (site definition). A number (the API sends it as display text). |
 #' | three_rate_rank | numeric | Colour rank for the metric, a fraction 0-1 (1 = best, inverted for 'bad' statistics such as turnovers) that the site uses to colour the cell (inferred from the sample values; the base population is not documented). Metric: three-point frequency: three-point attempts per 100 possessions (site definition). |
 #' | three_rate_sort | numeric | Unformatted numeric value behind the formatted string of the same metric (a fraction 0-1 for percentages), used by the site to sort the table. Metric: three-point frequency: three-point attempts per 100 possessions (site definition). |
-#' @inherit cba_seasons details
-#' @examples
-#' \donttest{
-#'   try(cba_player_shots(season = 2026, team_id = 29128))
-#' }
+#' @eval .intl_details(.cba_seasons_details, "cba_player_shots(season = 2026, team_id = 29128)")
 #' @export
 #' @family CBA Functions
 cba_player_shots <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id = NULL,

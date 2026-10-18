@@ -230,11 +230,9 @@ ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other
 site's answer for an unknown uuid and is not retried), all inheriting \code{hoopR_error}. Wrappers raise; they
 never return an empty frame.
 }
-}
-\examples{
-\donttest{
-  try(sportality_stats_info(module = "players_summary", season = 2026))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ sportality_stats_info(module = "players_summary", season = 2026)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Basketligaen Functions:

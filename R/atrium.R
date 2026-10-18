@@ -2,6 +2,36 @@
 # Internals (transport checks, season mapping, parsers) live in atrium_utils.R;
 # the per-site aliases (lnb_*, lnbp_*, ...) in atrium_competitions.R.
 
+# The @details of every atrium topic that shares the atrium_fixtures() notes (roxygen @eval .intl_details()).
+.atrium_fixtures_details <- c(
+  "**Unofficial.** This is the public endpoint the Sportradar Atrium / Synergy",
+  "\"Connect\" widget calls from every visitor's browser (keyless; the host has no",
+  "robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the",
+  "caller's behalf, one request at least 1 s after the last to the host, and it is not",
+  "republished as release assets. Keep crawls small and incremental.",
+  "",
+  "**Sites and seasons.** `website_id` picks the league site; one site carries many",
+  "competitions. Seasons are END years (`season = 2026`): the site's own year is the",
+  "START year on LNB and the calendar year elsewhere, and a year can hold several",
+  "competitions, so pair `season` with `competition_id` (see [atrium_seasons()]) or",
+  "pass `season_id`. [atrium_end_year()] maps a site's own year to that END year, and",
+  "[atrium_season_id()] finds the season UUID.",
+  "",
+  "**Columns** are configured per site: a statistic one site omits is `NA`. A key the",
+  "documented columns do not list is appended with an inferred type. Player and team",
+  "ids (UUIDs, character) are shared across sites; the player stat tables carry names",
+  "only, so `person_id` there is decoded from the widget link beside each name.",
+  "",
+  "**Errors** (classed conditions, all inheriting `hoopR_error`): `hoopR_no_data` when",
+  "the site has nothing for the request (HTTP 404, no such season, an empty fixture",
+  "list, a game with no play-by-play yet, or a fixture id the site does not serve: an",
+  "unknown id or a game of another site, which the API answers alike with an empty",
+  "fixture); `hoopR_bad_request` for HTTP 400 / 422 or an argument that cannot be",
+  "mapped (an ambiguous END year, `season` with `season_id`); `hoopR_asset_fetch` for",
+  "any other failed fetch, an error / stub body, or a body that belongs to another",
+  "site, type, season, game, player or team than the one asked for."
+)
+
 #' @title
 #' **Atrium Fixtures (schedule and results)**
 #' @description
@@ -77,33 +107,7 @@
 #' | away_draw | logical | True when the game ended level for the away team. |
 #' | away_shootout_attempts | character | Shootout attempts of the away team as sent (an empty string becomes null). |
 #' | away_secondary_score | character | Secondary score of the away team (unused in the samples; shown as text). |
-#' @details
-#' **Unofficial.** This is the public endpoint the Sportradar Atrium / Synergy
-#' "Connect" widget calls from every visitor's browser (keyless; the host has no
-#' robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-#' caller's behalf, one request at least 1 s after the last to the host, and it is not
-#' republished as release assets. Keep crawls small and incremental.
-#'
-#' **Sites and seasons.** `website_id` picks the league site; one site carries many
-#' competitions. Seasons are END years (`season = 2026`): the site's own year is the
-#' START year on LNB and the calendar year elsewhere, and a year can hold several
-#' competitions, so pair `season` with `competition_id` (see [atrium_seasons()]) or
-#' pass `season_id`. [atrium_end_year()] maps a site's own year to that END year, and
-#' [atrium_season_id()] finds the season UUID.
-#'
-#' **Columns** are configured per site: a statistic one site omits is `NA`. A key the
-#' documented columns do not list is appended with an inferred type. Player and team
-#' ids (UUIDs, character) are shared across sites; the player stat tables carry names
-#' only, so `person_id` there is decoded from the widget link beside each name.
-#'
-#' **Errors** (classed conditions, all inheriting `hoopR_error`): `hoopR_no_data` when
-#' the site has nothing for the request (HTTP 404, no such season, an empty fixture
-#' list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-#' unknown id or a game of another site, which the API answers alike with an empty
-#' fixture); `hoopR_bad_request` for HTTP 400 / 422 or an argument that cannot be
-#' mapped (an ambiguous END year, `season` with `season_id`); `hoopR_asset_fetch` for
-#' any other failed fetch, an error / stub body, or a body that belongs to another
-#' site, type, season, game, player or team than the one asked for.
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium
 #' @export
 #' @examples
@@ -196,13 +200,9 @@ atrium_seasons <- function(website_id, locale = NULL) {
 #' | away_score | integer | Points scored by the away team (the API sends a string; Int64 here). |
 #' | away_result_status | character | Result status of the away team's score, e.g. CONFIRMED. |
 #' | away_is_leading | logical | True while the away team leads (ribbon rows). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, "atrium_fixtures_ribbon(website_id = 14)")
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_fixtures_ribbon(website_id = 14))
-#' }
 atrium_fixtures_ribbon <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                                    entity_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -315,13 +315,9 @@ atrium_fixture <- function(website_id, fixture_id, locale = NULL) {
 #' | away_entity_id | character | Team UUID of the away team, from the fixture's isHome flag. |
 #' | home_points | integer | Points the home team scored in this period (not the running score). |
 #' | away_points | integer | Points the away team scored in this period (not the running score). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, 'atrium_fixture_periods(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d")')
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_fixture_periods(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
-#' }
 atrium_fixture_periods <- function(website_id, fixture_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .atrium_get(website_id, "fixture_detail", list(sub = "statistics", fixtureId = fixture_id, locale = locale))
@@ -685,14 +681,12 @@ atrium_standings <- function(website_id, season = NULL, season_id = NULL, compet
 #' | streak | integer | Length of the current run of results (the win / loss sign convention is unverified) (team, this table). |
 #' | streak_home | integer | Length of the current run of home results (sign convention unverified) (team, this table). |
 #' | streak_away | integer | Length of the current run of away results (sign convention unverified) (team, this table). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, c(
+#'   'atrium_standings_summary(website_id = 12, season = 2026,',
+#'   '                         competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404")'
+#' ))
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_standings_summary(website_id = 12, season = 2026,
-#'                                competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"))
-#' }
 atrium_standings_summary <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                                      locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -784,13 +778,9 @@ atrium_teams <- function(website_id, season = NULL, season_id = NULL, competitio
 #' | next_away_entity_id | character | Team UUID of the next scheduled game's away team. |
 #' | next_away_name | character | Name of the next scheduled game's away team. |
 #' | next_away_score | integer | Away team's points in the next scheduled game. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, 'atrium_team(website_id = 12, entity_id = "f43b1b0f-55bc-11f0-84d9-01499d2f0a07")')
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_team(website_id = 12, entity_id = "f43b1b0f-55bc-11f0-84d9-01499d2f0a07"))
-#' }
 atrium_team <- function(website_id, entity_id, season = NULL, season_id = NULL, competition_id = NULL,
                         locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -877,13 +867,9 @@ atrium_players <- function(website_id, season = NULL, season_id = NULL, competit
 #' | points_per_game | double | Points per game over the season shown on the card. |
 #' | rebounds_offensive_per_game | double | Offensive rebounds per game over the season shown on the card. |
 #' | rebounds_defensive_per_game | double | Defensive rebounds per game over the season shown on the card. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, 'atrium_player(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654")')
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_player(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654"))
-#' }
 atrium_player <- function(website_id, person_id, season = NULL, season_id = NULL, competition_id = NULL,
                           locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -927,13 +913,9 @@ atrium_player <- function(website_id, person_id, season = NULL, season_id = NULL
 #' | fouls_personal_per_game | double | Personal fouls per game (player, that competition-season). |
 #' | dunks_per_game | double | Dunks per game (player, that competition-season). |
 #' | efficiency | integer | Efficiency rating, from the site's own formula (player, that competition-season). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, 'atrium_player_seasons(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654")')
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_player_seasons(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654"))
-#' }
 atrium_player_seasons <- function(website_id, person_id, season = NULL, season_id = NULL,
                                   competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -998,13 +980,9 @@ atrium_player_seasons <- function(website_id, person_id, season = NULL, season_i
 #' | points_fast_break | integer | Fast-break points (LNBP only) (player, that game). |
 #' | dunks | integer | Dunks (player, that game). |
 #' | fouls_personal | integer | Personal fouls (player, that game). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, 'atrium_player_game_log(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654")')
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_player_game_log(website_id = 12, person_id = "4458f165-f865-11f0-8ebf-539c931c1654"))
-#' }
 atrium_player_game_log <- function(website_id, person_id, season = NULL, season_id = NULL,
                                    competition_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1041,15 +1019,13 @@ atrium_player_game_log <- function(website_id, person_id, season = NULL, season_
 #' | person_name | character | Name of the leader. |
 #' | value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
 #' | value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, c(
+#'   'atrium_leaders(',
+#'   '  website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"',
+#'   ')'
+#' ))
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_leaders(
-#'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
-#'   ))
-#' }
 atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competition_id = NULL,
                            entity_id = NULL, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1174,15 +1150,13 @@ atrium_team_stats <- function(website_id, season = NULL, season_id = NULL, compe
 #' | stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
 #' | value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
 #' | value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, c(
+#'   'atrium_competition_player_stats(',
+#'   '  website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"',
+#'   ')'
+#' ))
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_competition_player_stats(
-#'     website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
-#'   ))
-#' }
 atrium_competition_player_stats <- function(website_id, competition_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .atrium_get(website_id, "statistics_competition_persons", list(competitionId = competition_id, locale = locale))
@@ -1214,15 +1188,13 @@ atrium_competition_player_stats <- function(website_id, competition_id, locale =
 #' | stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
 #' | value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
 #' | value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details, c(
+#'   'atrium_competition_team_stats(',
+#'   '  website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"',
+#'   ')'
+#' ))
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_competition_team_stats(
-#'     website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
-#'   ))
-#' }
 atrium_competition_team_stats <- function(website_id, competition_id, locale = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .atrium_get(website_id, "statistics_competition_entities", list(competitionId = competition_id, locale = locale))
@@ -1252,12 +1224,12 @@ atrium_competition_team_stats <- function(website_id, competition_id, locale = N
 #' competitions and `competition_id` is missing; `hoopR_no_data` when the site lists no
 #' such season; `hoopR_asset_fetch` when the season list could not be fetched or is
 #' not the site's.
+#'
+#' ```r
+#'  atrium_season_id(14, 2026, competition_id = "16be8396-24fb-11ef-9ab7-df6be196e88f")
+#' ```
 #' @family Atrium
 #' @export
-#' @examples
-#' \donttest{
-#'   try(atrium_season_id(14, 2026, competition_id = "16be8396-24fb-11ef-9ab7-df6be196e88f"))
-#' }
 atrium_season_id <- function(website_id, season, competition_id = NULL) {
   .atrium_season_id(website_id, season, competition_id)
 }

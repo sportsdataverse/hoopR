@@ -170,17 +170,17 @@
     paste0("A `comp` of another competition family, or one GDAP gives no family, is `hoopR_asset_fetch`; a ",
            "season with no edition is `hoopR_no_data`; a season listing several editions, or a game function ",
            "called with neither `season` nor `comp`, is `hoopR_bad_request`."),
+    "",
+    "```r",
+    paste0(" ", prefix, "_editions(season = ", ex, ")"),
+    paste0(" ", prefix, "_schedule(season = ", ex, ")"),
+    "```",
     paste0("@return A `hoopR_data` tibble with the columns of the base wrapper (the raw JSON list when ",
            "`return_parsed = FALSE`), one table per function:"),
     unlist(lapply(.FIBA_ALIASES, function(s) {
       .intl_alias_returns(paste0(prefix, "_", s[["suffix"]]), s[["base"]])
     })),
-    "@family FIBA Competition Functions",
-    "@examples",
-    "\\donttest{",
-    paste0("  try(", prefix, "_editions(season = ", ex, "))"),
-    paste0("  try(", prefix, "_schedule(season = ", ex, "))"),
-    "}"
+    "@family FIBA Competition Functions"
   )
 }
 

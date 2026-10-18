@@ -323,12 +323,10 @@ Thin bindings of the parameterised \verb{atrium_*()} wrappers to this site, mint
 Season rule: calendar year.
 
 Errors and terms of use are those of \code{\link[=atrium_fixtures]{atrium_fixtures()}}: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets. The site also serves women's competitions (pass their \code{competition_id}).
-}
-\examples{
-\donttest{
-  try(lpb_seasons())
-  try(lpb_schedule())
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ lpb_seasons()
+ lpb_schedule()
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Atrium:

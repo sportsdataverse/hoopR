@@ -2,6 +2,36 @@
 # the CEBL Stats Hub), at parity with sdv-py sportsdataverse/basketball/cebl (origin/main e3d232ebc9).
 # Transport, key and refusals: R/cebl_runtime.R; frames: R/cebl_parsers.R; columns: R/cebl_schema.R.
 
+# The @details of every cebl topic that shares the cebl_seasons() notes (roxygen @eval .intl_details()).
+.cebl_seasons_details <- c(
+  "* CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,",
+  "  the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.",
+  "  The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not",
+  "  reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never",
+  "  prints it, and raises `hoopR_asset_fetch` with a 'key rotated?' hint on a persistent 401.",
+  "  www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced",
+  "  at least 1 s apart.",
+  "* Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An",
+  "  unknown season, team or player answers an empty list, which the runtime raises as `hoopR_no_data`. Ids are",
+  "  CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).",
+  "* This API has no box-score, play-by-play or shot route. They live in Genius LiveStats (organisation CEBL, see",
+  "  the genius family): cebl_games and cebl_player_gamelog carry the Genius match id as genius_match_id, parsed",
+  "  from the stats URLs (derived, not fetched; the match of a cancelled game may have no data). home_team_id is",
+  "  Genius team 1 and away_team_id team 2 (checked on match 2600563).",
+  "* Some completed schedule rows have null scores (2026), and a cancelled game has status CANELLED (the API's",
+  "  spelling) with null or zero scores. The schedule lists unplayed games too, so no wrapper refuses an unfinished",
+  "  game. Aggregates are decimal strings upstream and double here. Players' names, nationality and birth date are",
+  "  the public bio; no contact data is served.",
+  "* Errors are classed conditions: `hoopR_no_data` (HTTP 404, an empty list, an all-null profile: an unknown",
+  "  season, team or player), `hoopR_bad_request` (a bad argument, HTTP 400 / 422) and `hoopR_asset_fetch` (a key",
+  "  the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for",
+  "  another season, team or player), all inheriting `hoopR_error`. HTTP 500 is the API's answer to a bad id and is",
+  "  not retried. Wrappers raise; they never return an empty frame.",
+  "* Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact",
+  "  JSON here (`{\"name\":\"TSN\"}`), where sdv-py's String cast writes Python's `str(dict)` repr (`{'name': 'TSN'}`).",
+  "  No string column of the committed fixtures carries an object."
+)
+
 #' @title
 #' **Get CEBL Seasons**
 #' @description
@@ -18,33 +48,7 @@
 #' | season | integer | Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's `season` param takes. |
 #' | is_active | logical | True for the current season (one row: 2026 on 2026-10-12). |
 #' | is_live | logical | True while the current season is in progress or open for live data (true for 2026 on 2026-10-12, after its last game: the exact meaning is unverified). |
-#' @details
-#' * CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
-#'   the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.
-#'   The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not
-#'   reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never
-#'   prints it, and raises `hoopR_asset_fetch` with a 'key rotated?' hint on a persistent 401.
-#'   www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced
-#'   at least 1 s apart.
-#' * Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An
-#'   unknown season, team or player answers an empty list, which the runtime raises as `hoopR_no_data`. Ids are
-#'   CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).
-#' * This API has no box-score, play-by-play or shot route. They live in Genius LiveStats (organisation CEBL, see
-#'   the genius family): cebl_games and cebl_player_gamelog carry the Genius match id as genius_match_id, parsed
-#'   from the stats URLs (derived, not fetched; the match of a cancelled game may have no data). home_team_id is
-#'   Genius team 1 and away_team_id team 2 (checked on match 2600563).
-#' * Some completed schedule rows have null scores (2026), and a cancelled game has status CANELLED (the API's
-#'   spelling) with null or zero scores. The schedule lists unplayed games too, so no wrapper refuses an unfinished
-#'   game. Aggregates are decimal strings upstream and double here. Players' names, nationality and birth date are
-#'   the public bio; no contact data is served.
-#' * Errors are classed conditions: `hoopR_no_data` (HTTP 404, an empty list, an all-null profile: an unknown
-#'   season, team or player), `hoopR_bad_request` (a bad argument, HTTP 400 / 422) and `hoopR_asset_fetch` (a key
-#'   the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for
-#'   another season, team or player), all inheriting `hoopR_error`. HTTP 500 is the API's answer to a bad id and is
-#'   not retried. Wrappers raise; they never return an empty frame.
-#' * Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
-#'   JSON here (`{"name":"TSN"}`), where sdv-py's String cast writes Python's `str(dict)` repr (`{'name': 'TSN'}`).
-#'   No string column of the committed fixtures carries an object.
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_seasons())
@@ -252,11 +256,7 @@ cebl_roster <- function(team_id, season) {
 #' | icon_url | character | Team icon URL (without the team name) on Google Cloud Storage. Null on the league row. |
 #' | stats_url_en | character | The team's stats page on cebl.ca (`https://cebl.ca/stats/{slug}`). Null on the league row. |
 #' | stats_url_fr | character | The team's stats page on the French cebl.ca (`https://cebl.ca/fr-ca/stats/{slug}`). Null on the league row. |
-#' @inherit cebl_seasons details
-#' @examples
-#' \donttest{
-#'   try(cebl_team_stats(mode = "TOTALS", season = 2025, competition = "REGULAR"))
-#' }
+#' @eval .intl_details(.cebl_seasons_details, 'cebl_team_stats(mode = "TOTALS", season = 2025, competition = "REGULAR")')
 #' @export
 #' @family CEBL Functions
 cebl_team_stats <- function(
@@ -448,11 +448,7 @@ cebl_player_stats <- function(
 #' | team_logo_url | character | Logo URL (icon with the name) of the player's team. |
 #' | value | double | The player's figure for the statistic this list is keyed by, in the requested mode (TOTALS sum or PER_GAME average; percentages 0-100). A decimal string ('25.9'). |
 #' | photo_url | character | Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). |
-#' @inherit cebl_seasons details
-#' @examples
-#' \donttest{
-#'   try(cebl_player_leaders(mode = "PER_GAME", season = 2025))
-#' }
+#' @eval .intl_details(.cebl_seasons_details, 'cebl_player_leaders(mode = "PER_GAME", season = 2025)')
 #' @export
 #' @family CEBL Functions
 cebl_player_leaders <- function(
@@ -521,11 +517,7 @@ cebl_player_leaders <- function(
 #' | double_doubles | double | Double-doubles: games with 10 or more in two of points, rebounds, assists, steals, blocks. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
 #' | triple_doubles | double | Triple-doubles: games with 10 or more in three of those. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
 #' | target_scores | double | Target-score baskets: games in which the player made the basket that reached the Elam Ending target score and ended the game (CEBL has used the Elam Ending since 2020, so 2019 is 0). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
-#' @inherit cebl_seasons details
-#' @examples
-#' \donttest{
-#'   try(cebl_player_seasons(player_id = 570965, mode = "PER_GAME"))
-#' }
+#' @eval .intl_details(.cebl_seasons_details, 'cebl_player_seasons(player_id = 570965, mode = "PER_GAME")')
 #' @export
 #' @family CEBL Functions
 cebl_player_seasons <- function(player_id, mode = "PER_GAME", career_only = FALSE, competition = NULL) {
@@ -565,11 +557,7 @@ cebl_player_seasons <- function(player_id, mode = "PER_GAME", career_only = FALS
 #' | team_stats_url_en | character | cebl.ca stats page of the player's team (English). |
 #' | team_stats_url_fr | character | cebl.ca stats page of the player's team (French). |
 #' | photo_url | character | Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). |
-#' @inherit cebl_seasons details
-#' @examples
-#' \donttest{
-#'   try(cebl_player(player_id = 570965))
-#' }
+#' @eval .intl_details(.cebl_seasons_details, "cebl_player(player_id = 570965)")
 #' @export
 #' @family CEBL Functions
 cebl_player <- function(player_id) {
@@ -626,11 +614,7 @@ cebl_player <- function(player_id) {
 #' | game_stats_url_fr | character | French cebl.ca game page (`https://www.cebl.ca/fr-ca/game?id={matchId}`). |
 #' | team_stats_url_en | character | cebl.ca stats page of the player's team in that game (English). |
 #' | team_stats_url_fr | character | cebl.ca stats page of the player's team in that game (French). |
-#' @inherit cebl_seasons details
-#' @examples
-#' \donttest{
-#'   try(cebl_player_gamelog(player_id = 570965, season = 2025))
-#' }
+#' @eval .intl_details(.cebl_seasons_details, "cebl_player_gamelog(player_id = 570965, season = 2025)")
 #' @export
 #' @family CEBL Functions
 cebl_player_gamelog <- function(player_id, season = NULL, competition = NULL) {
@@ -661,11 +645,7 @@ cebl_player_gamelog <- function(player_id, season = NULL, competition = NULL) {
 #' | published_at_utc | POSIXct | Publication time in UTC (upstream schema; unobserved, no article was ever served). |
 #' | image_url | character | Article image URL (upstream schema; unobserved, no article was ever served). |
 #' | html_content | character | Article body as HTML (upstream schema; unobserved, no article was ever served). |
-#' @inherit cebl_seasons details
-#' @examples
-#' \donttest{
-#'   try(cebl_news(language = "en"))
-#' }
+#' @eval .intl_details(.cebl_seasons_details, 'cebl_news(language = "en")')
 #' @export
 #' @family CEBL Functions
 cebl_news <- function(language, team_source_id = NULL) {

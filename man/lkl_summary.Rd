@@ -59,11 +59,9 @@ play-by-play or shots); \code{hoopR_bad_request} for a game id or season that is
 \code{hoopR_asset_fetch} when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 for another game or season, an error or changed body, a truncated results list). All inherit \code{hoopR_error}. Dates
 and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-}
-\examples{
-\donttest{
-  try(lkl_summary(game_id = 11446))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ lkl_summary(game_id = 11446)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other LKL:

@@ -72,11 +72,9 @@ key refresh, HTTP 500, a body for another game, competition, team, player, feder
 game of another competition than \code{comp}, the HTTP 200 not-found shell of a wrong game page, a live game).
 Seasons are FIBA's own key, which equals the sdv key: the END year for club competitions, the event year for
 national-team events, the target tournament year for qualifiers.
-}
-\examples{
-\donttest{
-  try(fiba_gamepage_lineup(game_id = 100720, comp = 208182))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ fiba_gamepage_lineup(game_id = 100720, comp = 208182)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other FIBA Functions:

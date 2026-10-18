@@ -581,12 +581,12 @@ tbf_game_header <- function(match_id) {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_game_players(match_id = 346279)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_game_players(match_id = 346279))
-#' }
 tbf_game_players <- function(match_id) {
   .tbf_wrap("game_players", list(match_id = match_id),
             type = "TBF Game Players", call = rlang::current_env())
@@ -971,12 +971,12 @@ tbf_period_scores <- function(match_id) {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_highlights(match_id = 346279)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_highlights(match_id = 346279))
-#' }
 tbf_highlights <- function(match_id) {
   .tbf_wrap("highlights", list(match_id = match_id),
             type = "TBF Highlights", call = rlang::current_env())
@@ -1028,12 +1028,12 @@ tbf_highlights <- function(match_id) {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_game_leaders(match_id = 346279)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_game_leaders(match_id = 346279))
-#' }
 tbf_game_leaders <- function(match_id) {
   .tbf_wrap("game_leaders", list(match_id = match_id),
             type = "TBF Game Leaders", call = rlang::current_env())
@@ -1168,12 +1168,12 @@ tbf_players <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_player_career(player_id = 196413)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_player_career(player_id = 196413))
-#' }
 tbf_player_career <- function(player_id) {
   .tbf_wrap("player_career", list(player_id = player_id),
             type = "TBF Player Career", call = rlang::current_env())
@@ -1323,12 +1323,12 @@ tbf_teams <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_team_player_stats(season = 2027, team_process_id = 265995)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_team_player_stats(season = 2027, team_process_id = 265995))
-#' }
 tbf_team_player_stats <- function(season, team_process_id, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("team_player_stats", list(season = season, team_process_id = team_process_id, competition = competition),
@@ -1399,12 +1399,12 @@ tbf_team_player_stats <- function(season, team_process_id, competition = "bsl") 
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_team_games(season = 2027, team_process_id = 265995)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_team_games(season = 2027, team_process_id = 265995))
-#' }
 tbf_team_games <- function(season, team_process_id, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("team_games", list(season = season, team_process_id = team_process_id, competition = competition),
@@ -1530,12 +1530,12 @@ tbf_team_roster <- function(season, team_process_id, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_team_staff(season = 2027, team_process_id = 265995)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_team_staff(season = 2027, team_process_id = 265995))
-#' }
 tbf_team_staff <- function(season, team_process_id, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("team_staff", list(season = season, team_process_id = team_process_id, competition = competition),
@@ -1593,12 +1593,12 @@ tbf_team_staff <- function(season, team_process_id, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_points(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_points(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_points <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_points", list(season = season, competition = competition),
@@ -1656,12 +1656,12 @@ tbf_leaders_points <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_assists(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_assists(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_assists <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_assists", list(season = season, competition = competition),
@@ -1719,12 +1719,12 @@ tbf_leaders_assists <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_blocks(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_blocks(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_blocks <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_blocks", list(season = season, competition = competition),
@@ -1782,12 +1782,12 @@ tbf_leaders_blocks <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_rebounds(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_rebounds(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_rebounds <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_rebounds", list(season = season, competition = competition),
@@ -1845,12 +1845,12 @@ tbf_leaders_rebounds <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_steals(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_steals(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_steals <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_steals", list(season = season, competition = competition),
@@ -1908,12 +1908,12 @@ tbf_leaders_steals <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_minutes(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_minutes(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_minutes <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_minutes", list(season = season, competition = competition),
@@ -1972,12 +1972,12 @@ tbf_leaders_minutes <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_threes(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_threes(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_threes <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_threes", list(season = season, competition = competition),
@@ -2035,12 +2035,12 @@ tbf_leaders_threes <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_turnovers(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_turnovers(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_turnovers <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_turnovers", list(season = season, competition = competition),
@@ -2098,12 +2098,12 @@ tbf_leaders_turnovers <- function(season, competition = "bsl") {
 #' the answer is not the one asked for (an unfinished game, a body for another game, season, league or team,
 #' an error envelope, a redirect, a partial page or a changed capped list). All inherit `hoopR_error`.
 #' Timestamps are Turkey local time (`Europe/Istanbul`).
+#'
+#' ```r
+#'  tbf_leaders_efficiency(competition = "bsl", season = 2027)
+#' ```
 #' @family TBF
 #' @export
-#' @examples
-#' \donttest{
-#'   try(tbf_leaders_efficiency(competition = "bsl", season = 2027))
-#' }
 tbf_leaders_efficiency <- function(season, competition = "bsl") {
   .tbf_check_competition(competition, call = rlang::current_env())
   .tbf_wrap("leaders_efficiency", list(season = season, competition = competition),

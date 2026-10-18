@@ -69,11 +69,9 @@ unfinished game, a body that disagrees with the object asked for). HTTP 500 is r
 the player game log, where an unknown division_id answers 500 deterministically: it fails after one request.
 Wrappers raise; they never warn and return an empty frame.
 }
-}
-\examples{
-\donttest{
-  try(tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other TPBL Functions:

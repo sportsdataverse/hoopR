@@ -122,11 +122,9 @@ season id, an org or season type with nothing, or no season in progress); \code{
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 \code{hoopR_bad_request} for an unknown \code{org} / \code{season_type}, a malformed id, or HTTP 400 / 422.
-}
-\examples{
-\donttest{
-  try(nbl_rosetta_stats_leaders(org = "nbl", season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbl_rosetta_stats_leaders(org = "nbl", season_id = "1f8e4a79-e98b-457b-85a5-e4b898c6c0bd")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBL Rosetta:

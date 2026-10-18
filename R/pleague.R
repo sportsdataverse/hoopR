@@ -4,6 +4,40 @@
 # Generated from tools/codegen/endpoints/pleague{,_preciser}.yaml and manual_column_descriptions.yaml of
 # that sdv-py commit (ASCII only: Chinese text is glossed as '(Chinese text)').
 
+# The @details of every pleague topic that shares the pleague_schedule() notes (roxygen @eval .intl_details()).
+.pleague_schedule_details <- c(
+  "* Unofficial use of a public source: these wrappers read pleagueofficial.com (P. LEAGUE+, Taiwan's men's",
+  "  league), keyless. The site's /user-policy (members' terms, section 11) reserves all content on the site to the",
+  "  service and its rights holders and forbids use, copying, adaptation or distribution without authorisation (it",
+  "  says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no",
+  "  Allow, Disallow or Crawl-delay rule. Use for reference only; payloads are not redistributed as release assets,",
+  "  and a data release needs owner sign-off. Requests are spaced at least 1 s apart per host, retries included.",
+  "* Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a",
+  "  browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer",
+  "  a request with an HTTP 403 challenge page (`hoopR_asset_fetch`). Redirects are not followed: the site answers",
+  "  an unknown `gid` or a season before 2020-21 with a 302 to the home page (`hoopR_no_data`).",
+  "* Coverage: schedules, standings and player tables from 2020-21 (`season = 2021`); box scores for every finished",
+  "  game from 2020-21; play-by-play (with shot x / y) from 2022-23 (gid 191 on). 2020-21 and 2021-22 pages embed",
+  "  an empty game uuid, so they have no play-by-play and no Preciser data (`hoopR_no_data`). A game is keyed by",
+  "  `gid`: ONE global integer sequence over every stage and season. Only finished games are served: an unplayed",
+  "  game, or a box or play-by-play that does not match its game page (the routes echo no id, so the game page is",
+  "  fetched first, cached for the session, and the body's scores, quarters and points are checked against it),",
+  "  raises `hoopR_asset_fetch`.",
+  "* Seasons are END years (2025 = the site's slug '2024-25'). Text is Traditional Chinese as printed (names,",
+  "  venues, play-by-play phrases); the column descriptions gloss it in English. Ids: `team_id` (1-8) is stable",
+  "  across renames; the box `player_id` is the player-team membership. The box `random_id` is UNRELIABLE before",
+  "  2022-23 (gid 13 gives one player another player's page id): join box rows on `player_id`, and box rows to",
+  "  Preciser shots on `person_id`, never on `random_id`. The date of birth is dropped from the player frame;",
+  "  officials appear by name only.",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, a redirect, a stage",
+  "  the season does not have, a game with no play-by-play, a season before 2020-21), `hoopR_bad_request` (an",
+  "  invalid argument, HTTP 400 / 422) and `hoopR_asset_fetch` (any other non-200, a dead connection, an empty or",
+  "  unreadable body, a page for another game, season, stage or player, an unfinished game, layout drift, a",
+  "  play-by-play phrase outside the observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to three",
+  "  attempts; HTTP 500 is NOT retried (the site answers 500 for an unknown id). Wrappers raise; they never warn",
+  "  and return empty."
+)
+
 #' @title
 #' **Get P. LEAGUE+ Schedule**
 #' @description
@@ -46,37 +80,7 @@
 #' | home_name_en | character | Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
 #' | home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
 #' | home_score | integer | Home team's final points (0 on a future game). |
-#' @details
-#' * Unofficial use of a public source: these wrappers read pleagueofficial.com (P. LEAGUE+, Taiwan's men's
-#'   league), keyless. The site's /user-policy (members' terms, section 11) reserves all content on the site to the
-#'   service and its rights holders and forbids use, copying, adaptation or distribution without authorisation (it
-#'   says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no
-#'   Allow, Disallow or Crawl-delay rule. Use for reference only; payloads are not redistributed as release assets,
-#'   and a data release needs owner sign-off. Requests are spaced at least 1 s apart per host, retries included.
-#' * Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a
-#'   browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer
-#'   a request with an HTTP 403 challenge page (`hoopR_asset_fetch`). Redirects are not followed: the site answers
-#'   an unknown `gid` or a season before 2020-21 with a 302 to the home page (`hoopR_no_data`).
-#' * Coverage: schedules, standings and player tables from 2020-21 (`season = 2021`); box scores for every finished
-#'   game from 2020-21; play-by-play (with shot x / y) from 2022-23 (gid 191 on). 2020-21 and 2021-22 pages embed
-#'   an empty game uuid, so they have no play-by-play and no Preciser data (`hoopR_no_data`). A game is keyed by
-#'   `gid`: ONE global integer sequence over every stage and season. Only finished games are served: an unplayed
-#'   game, or a box or play-by-play that does not match its game page (the routes echo no id, so the game page is
-#'   fetched first, cached for the session, and the body's scores, quarters and points are checked against it),
-#'   raises `hoopR_asset_fetch`.
-#' * Seasons are END years (2025 = the site's slug '2024-25'). Text is Traditional Chinese as printed (names,
-#'   venues, play-by-play phrases); the column descriptions gloss it in English. Ids: `team_id` (1-8) is stable
-#'   across renames; the box `player_id` is the player-team membership. The box `random_id` is UNRELIABLE before
-#'   2022-23 (gid 13 gives one player another player's page id): join box rows on `player_id`, and box rows to
-#'   Preciser shots on `person_id`, never on `random_id`. The date of birth is dropped from the player frame;
-#'   officials appear by name only.
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, a redirect, a stage
-#'   the season does not have, a game with no play-by-play, a season before 2020-21), `hoopR_bad_request` (an
-#'   invalid argument, HTTP 400 / 422) and `hoopR_asset_fetch` (any other non-200, a dead connection, an empty or
-#'   unreadable body, a page for another game, season, stage or player, an unfinished game, layout drift, a
-#'   play-by-play phrase outside the observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to three
-#'   attempts; HTTP 500 is NOT retried (the site answers 500 for an unknown id). Wrappers raise; they never warn
-#'   and return empty.
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_schedule(season = 2025))
@@ -186,11 +190,7 @@ pleague_periods <- function(gid) {
 #' | role | character | Role translated: referee ((Chinese text), the crew chief), first_umpire ((Chinese text), literally 'first inspector'), second_umpire ((Chinese text)). Null for a role this table does not know. |
 #' | role_zh | character | Official's role as printed: (Chinese text) = referee, (Chinese text) = first umpire, (Chinese text) = second umpire. |
 #' | name_zh | character | Official's name in Traditional Chinese. Names only: the page carries no ids or contact data. |
-#' @inherit pleague_schedule details
-#' @examples
-#' \donttest{
-#'   try(pleague_officials(gid = 197))
-#' }
+#' @eval .intl_details(.pleague_schedule_details, "pleague_officials(gid = 197)")
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_officials <- function(gid) {
@@ -526,11 +526,7 @@ pleague_stat_player <- function(season, stage_sn) {
 #' | birthplace_zh | character | Birthplace in Traditional Chinese ((Chinese text); a country for foreign players). The date of birth is dropped on purpose. |
 #' | status_zh | character | Player status ((Chinese text)): (Chinese text) = import (foreign player), (Chinese text) = local (Taiwanese) player. |
 #' | education | character | Education lines ((Chinese text)) as printed, joined with '; '. |
-#' @inherit pleague_schedule details
-#' @examples
-#' \donttest{
-#'   try(pleague_player(player_page_id = "1JbPozLB"))
-#' }
+#' @eval .intl_details(.pleague_schedule_details, 'pleague_player(player_page_id = "1JbPozLB")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_player <- function(player_page_id) {
@@ -576,17 +572,39 @@ pleague_player <- function(player_page_id) {
 #' | ft_made | double | Free-throw makes (total / per game). |
 #' | ft_att | double | Free-throw attempts (total / per game). |
 #' | ft_pct | double | Free-throw percentage 0-100. |
-#' @inherit pleague_schedule details
-#' @examples
-#' \donttest{
-#'   try(pleague_player_seasons(player_page_id = "1JbPozLB"))
-#' }
+#' @eval .intl_details(.pleague_schedule_details, 'pleague_player_seasons(player_page_id = "1JbPozLB")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_player_seasons <- function(player_page_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("player_seasons", list(player_page_id = player_page_id), call = rlang::current_env())
 }
+
+# The @details of every pleague topic that shares the pleague_preciser_shots() notes (roxygen @eval .intl_details()).
+.pleague_preciser_shots_details <- c(
+  "* Unofficial use of a THIRD-PARTY host: api.preciser.io is the analytics vendor behind the P. LEAGUE+ game page,",
+  "  not the league's own API. It is keyless, CORS-open, has no robots.txt (404) and no terms were found; it serves",
+  "  the data the league's own game page displays. The league's /user-policy reserves its content, so payloads are",
+  "  not redistributed as release assets and a data release needs owner sign-off. Requests are spaced at least 1 s",
+  "  apart per host, retries included.",
+  "* Wrappers take the Preciser game uuid (the `uuid` column of [pleague_game()]; empty before 2022-23, which have",
+  "  no vendor data). Pass the optional `gid` to verify the body against the site's game page and box: the shot",
+  "  list and the rotation echo nothing about the game, so only then are the uuid, the final score, the made-shot",
+  "  counts, the roster and the court time (rotation minutes within 30 s of the box) checked. An unknown uuid",
+  "  answers 200 `[]` (`hoopR_no_data`) or HTTP 500 (`hoopR_asset_fetch`, not retried).",
+  "* Id key spaces: the vendor names teams by uuid (`team_uuid` / `home_team_uuid` / `away_team_uuid`) and persons",
+  "  by `person_id` (the same value as the site box row's `person_id`); the site's `team_id` (1-8) joins to a team",
+  "  uuid through [pleague_team_crosswalk()] (the standings logo file name).",
+  "* Shot x / y are in the VENDOR frame (percent of the court, the home team always attacks x = 95) while the",
+  "  site's play-by-play x / y are in the physical court frame (teams swap ends at half-time): x_vendor = 100 -",
+  "  x_pbp and y_vendor = 100 - y_pbp in the halves where the home team attacks x < 50. The court is 28.75 x 15.25",
+  "  m. Clip urls carry a vendor access key (?key=): it is scrubbed from every body, a body that still holds one is",
+  "  refused, and no frame keeps a url.",
+  "* Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, a body of `[]`, empty",
+  "  rotation lists), `hoopR_bad_request` (a uuid that is not a uuid, a `gid` that is not an integer, HTTP 400 /",
+  "  422) and `hoopR_asset_fetch` (any other failed or wrong answer, including a `gid` whose game has another uuid",
+  "  and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up to three attempts."
+)
 
 #' @title
 #' **Get P. LEAGUE+ Preciser Shots**
@@ -626,29 +644,7 @@ pleague_player_seasons <- function(player_page_id) {
 #' | has_video | logical | True when the shot has a clip. The clip url is never kept: it carries a vendor access key. |
 #' | home_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
 #' | away_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
-#' @details
-#' * Unofficial use of a THIRD-PARTY host: api.preciser.io is the analytics vendor behind the P. LEAGUE+ game page,
-#'   not the league's own API. It is keyless, CORS-open, has no robots.txt (404) and no terms were found; it serves
-#'   the data the league's own game page displays. The league's /user-policy reserves its content, so payloads are
-#'   not redistributed as release assets and a data release needs owner sign-off. Requests are spaced at least 1 s
-#'   apart per host, retries included.
-#' * Wrappers take the Preciser game uuid (the `uuid` column of [pleague_game()]; empty before 2022-23, which have
-#'   no vendor data). Pass the optional `gid` to verify the body against the site's game page and box: the shot
-#'   list and the rotation echo nothing about the game, so only then are the uuid, the final score, the made-shot
-#'   counts, the roster and the court time (rotation minutes within 30 s of the box) checked. An unknown uuid
-#'   answers 200 `[]` (`hoopR_no_data`) or HTTP 500 (`hoopR_asset_fetch`, not retried).
-#' * Id key spaces: the vendor names teams by uuid (`team_uuid` / `home_team_uuid` / `away_team_uuid`) and persons
-#'   by `person_id` (the same value as the site box row's `person_id`); the site's `team_id` (1-8) joins to a team
-#'   uuid through [pleague_team_crosswalk()] (the standings logo file name).
-#' * Shot x / y are in the VENDOR frame (percent of the court, the home team always attacks x = 95) while the
-#'   site's play-by-play x / y are in the physical court frame (teams swap ends at half-time): x_vendor = 100 -
-#'   x_pbp and y_vendor = 100 - y_pbp in the halves where the home team attacks x < 50. The court is 28.75 x 15.25
-#'   m. Clip urls carry a vendor access key (?key=): it is scrubbed from every body, a body that still holds one is
-#'   refused, and no frame keeps a url.
-#' * Errors are classed conditions, all inheriting `hoopR_error`: `hoopR_no_data` (HTTP 404, a body of `[]`, empty
-#'   rotation lists), `hoopR_bad_request` (a uuid that is not a uuid, a `gid` that is not an integer, HTTP 400 /
-#'   422) and `hoopR_asset_fetch` (any other failed or wrong answer, including a `gid` whose game has another uuid
-#'   and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up to three attempts.
+#' @eval .intl_details(.pleague_preciser_shots_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
@@ -706,11 +702,7 @@ pleague_preciser_shots <- function(uuid, gid = NULL) {
 #' | top_player_points | integer | Points of the top performer in the game. |
 #' | top_player_rebounds | integer | Total rebounds of the top performer in the game. |
 #' | top_player_assists | integer | Assists of the top performer in the game. |
-#' @inherit pleague_preciser_shots details
-#' @examples
-#' \donttest{
-#'   try(pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#' }
+#' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_preciser_summary_teams <- function(uuid, gid = NULL) {
@@ -743,11 +735,7 @@ pleague_preciser_summary_teams <- function(uuid, gid = NULL) {
 #' | seconds_left | integer | The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. |
 #' | home_score | integer | Home score after the event. |
 #' | away_score | integer | Away score after the event. |
-#' @inherit pleague_preciser_shots details
-#' @examples
-#' \donttest{
-#'   try(pleague_preciser_score_log(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#' }
+#' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_score_log(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_preciser_score_log <- function(uuid, gid = NULL) {
@@ -782,11 +770,7 @@ pleague_preciser_score_log <- function(uuid, gid = NULL) {
 #' | home_score | integer | Home score after the event. |
 #' | away_score | integer | Away score after the event. |
 #' | score_difference | integer | home_score minus away_score (positive = home leads). |
-#' @inherit pleague_preciser_shots details
-#' @examples
-#' \donttest{
-#'   try(pleague_preciser_lead_flow(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#' }
+#' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_lead_flow(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_preciser_lead_flow <- function(uuid, gid = NULL) {
@@ -814,11 +798,7 @@ pleague_preciser_lead_flow <- function(uuid, gid = NULL) {
 #' | game_uuid | character | Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; `uuid` of pleague_game. |
 #' | minute | integer | Minute mark: 0 is the tip-off (50 percent); 49 entries for a 48-minute game. |
 #' | home_win_pct | double | The home team's win probability in percent (0-100) at that minute; the vendor documents no method. |
-#' @inherit pleague_preciser_shots details
-#' @examples
-#' \donttest{
-#'   try(pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#' }
+#' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_preciser_win_probability <- function(uuid, gid = NULL) {
@@ -855,11 +835,7 @@ pleague_preciser_win_probability <- function(uuid, gid = NULL) {
 #' | end_period | character | Period in which the stint ends. |
 #' | end_clock | character | Clock REMAINING in end_period when the stint ends, 'm:ss'. |
 #' | end_seconds | integer | Seconds elapsed on the game clock when the stint ends (cumulative across periods). |
-#' @inherit pleague_preciser_shots details
-#' @examples
-#' \donttest{
-#'   try(pleague_preciser_rotation(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#' }
+#' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_rotation(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_preciser_rotation <- function(uuid, gid = NULL) {
@@ -892,11 +868,7 @@ pleague_preciser_rotation <- function(uuid, gid = NULL) {
 #' | color | character | Team colour as a CSS hex string. |
 #' | logo_url | character | Team logo url (photonew.preciser.io/plg/teams/\{team uuid\}.png). |
 #' | injury_report | character | The team's injury report as a JSON string; null when the vendor sent null. It was null on all 16 sampled games, so its shape is unverified. |
-#' @inherit pleague_preciser_shots details
-#' @examples
-#' \donttest{
-#'   try(pleague_preciser_injury(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
-#' }
+#' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_injury(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
 #' @family P. LEAGUE+ Functions
 pleague_preciser_injury <- function(uuid, gid = NULL) {

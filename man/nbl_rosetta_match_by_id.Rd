@@ -90,11 +90,9 @@ season id, an org or season type with nothing, or no season in progress); \code{
 for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
 another org, season or entity than the one asked for, or any other failed fetch;
 \code{hoopR_bad_request} for an unknown \code{org} / \code{season_type}, a malformed id, or HTTP 400 / 422.
-}
-\examples{
-\donttest{
-  try(nbl_rosetta_match_by_id(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbl_rosetta_match_by_id(match_id = "b217a699-4bef-11f0-bc08-933162362355")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other NBL Rosetta:

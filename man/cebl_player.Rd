@@ -66,11 +66,9 @@ not retried. Wrappers raise; they never return an empty frame.
 JSON here (\code{{"name":"TSN"}}), where sdv-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
 No string column of the committed fixtures carries an object.
 }
-}
-\examples{
-\donttest{
-  try(cebl_player(player_id = 570965))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ cebl_player(player_id = 570965)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other CEBL Functions:

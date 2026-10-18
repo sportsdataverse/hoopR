@@ -241,6 +241,11 @@
            "`genius_*()` function reads any game unchecked."),
     "",
     "Access, proxy and error notes: see [genius_game()].",
+    "",
+    "```r",
+    paste0(" ", p, "_competitions()"),
+    paste0(" ", p, "_schedule()"),
+    "```",
     "@usage",
     paste0(p, "_competitions(return_parsed = TRUE)"),
     "",
@@ -261,12 +266,7 @@
     })),
     paste0("@name ", p, "_competition"),
     paste("@aliases", paste(.genius_alias_names_of(e), collapse = " ")),
-    "@family Genius",
-    "@examples",
-    "\\donttest{",
-    paste0("  try(", p, "_competitions())"),
-    paste0("  try(", p, "_schedule())"),
-    "}"
+    "@family Genius"
   )
 }
 

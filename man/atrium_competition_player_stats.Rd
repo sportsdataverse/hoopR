@@ -69,13 +69,11 @@ fixture); \code{hoopR_bad_request} for HTTP 400 / 422 or an argument that cannot
 mapped (an ambiguous END year, \code{season} with \code{season_id}); \code{hoopR_asset_fetch} for
 any other failed fetch, an error / stub body, or a body that belongs to another
 site, type, season, game, player or team than the one asked for.
-}
-\examples{
-\donttest{
-  try(atrium_competition_player_stats(
-    website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
-  ))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ atrium_competition_player_stats(
+   website_id = 12, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
+ )
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Atrium:

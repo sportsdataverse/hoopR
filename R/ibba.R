@@ -1,6 +1,44 @@
 # ibba.R -- the exported IBBA ASMX wrappers (basket.co.il web service). Generated from
 # the sdv-py endpoint YAML and manual_column_descriptions.yaml, then kept by hand.
 
+# The @details of every ibba topic that shares the ibba_configuration() notes (roxygen @eval .intl_details()).
+.ibba_configuration_details <- c(
+  "The IBBA wrappers read the Israel Basketball Association's ASP.NET web service at",
+  "`basket.co.il/ws/ws.asmx` (the ops its own site calls): seasons, boards, teams, rosters,",
+  "coaches, schedules and results, box scores from 2004-05, season stats and leaders of the",
+  "Winner League (Israeli Premier League). They mirror sdv-py's",
+  "`sportsdataverse.basketball.ibba` wrappers of the same names: same arguments, the same",
+  "snake_case columns and types, one row per sdv-py row. The live box score, play-by-play and",
+  "shot coordinates of a game are in the [ibba_segev_game_info()] family (Segev Stats).",
+  "",
+  "**Unofficial and unsupported.** The web service is keyless, unofficial and reverse",
+  "engineered. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504",
+  "are retried three times; an HTTP 500 is the host's deterministic error page, a stack",
+  "trace, and is not retried); keep crawls slow and incremental. Contact details (e-mail,",
+  "phone, fax) and coaches' dates of birth are dropped.",
+  "",
+  "**Seasons and ids.** `season` is the END year and the host's own `cYear` (2026 = 2025-26):",
+  "it is sent unchanged. `team_id` and `player_id` are per-SEASON registrations (Maccabi Tel",
+  "Aviv = team 1109 in 2025-26, 2111 in 2026-27); the host has no cross-season person id (the",
+  "stable player key is the Segev player id of the `ibba_segev_*()` family). `team_uid` is the",
+  'stable club id (Maccabi = 10). A `0` means "all" where an argument says so; every parameter',
+  "of an op is always sent.",
+  "",
+  "**Coverage.** League box scores from 2004-05 (`season = 2005`). `external_id` and",
+  "`segev_game_id` exist only from 2025-26 (earlier games carry no Segev id, so",
+  "`segev_game_id` is `NA`). The women's league and Liga Leumit are NOT on this host. Every",
+  "value on the wire is a string and Hebrew text is HTML-entity encoded: ids, counts and dates",
+  "are cast and text is unescaped.",
+  "",
+  "**Errors** are classed conditions, never a warning plus an empty frame: `hoopR_no_data`",
+  "(HTTP 404, an empty body, which is what an unknown id answers, or an empty row list),",
+  "`hoopR_bad_request` (HTTP 400 / 422, or an argument that is not a non-negative integer,",
+  "a boolean or a non-empty string as the op needs) and `hoopR_asset_fetch` (any other",
+  "failure: another status, a transport error, a body that is not JSON, an error or changed",
+  "envelope, a row for another season, team, player, board or game, or a box score of a game",
+  "that is not final). All inherit `hoopR_error`."
+)
+
 #' @title
 #' **IBBA Configuration**
 #' @description
@@ -9,41 +47,7 @@
 #' Endpoint: `GET https://basket.co.il/ws/ws.asmx/Configuration`
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @details
-#' The IBBA wrappers read the Israel Basketball Association's ASP.NET web service at
-#' `basket.co.il/ws/ws.asmx` (the ops its own site calls): seasons, boards, teams, rosters,
-#' coaches, schedules and results, box scores from 2004-05, season stats and leaders of the
-#' Winner League (Israeli Premier League). They mirror sdv-py's
-#' `sportsdataverse.basketball.ibba` wrappers of the same names: same arguments, the same
-#' snake_case columns and types, one row per sdv-py row. The live box score, play-by-play and
-#' shot coordinates of a game are in the [ibba_segev_game_info()] family (Segev Stats).
-#'
-#' **Unofficial and unsupported.** The web service is keyless, unofficial and reverse
-#' engineered. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504
-#' are retried three times; an HTTP 500 is the host's deterministic error page, a stack
-#' trace, and is not retried); keep crawls slow and incremental. Contact details (e-mail,
-#' phone, fax) and coaches' dates of birth are dropped.
-#'
-#' **Seasons and ids.** `season` is the END year and the host's own `cYear` (2026 = 2025-26):
-#' it is sent unchanged. `team_id` and `player_id` are per-SEASON registrations (Maccabi Tel
-#' Aviv = team 1109 in 2025-26, 2111 in 2026-27); the host has no cross-season person id (the
-#' stable player key is the Segev player id of the `ibba_segev_*()` family). `team_uid` is the
-#' stable club id (Maccabi = 10). A `0` means "all" where an argument says so; every parameter
-#' of an op is always sent.
-#'
-#' **Coverage.** League box scores from 2004-05 (`season = 2005`). `external_id` and
-#' `segev_game_id` exist only from 2025-26 (earlier games carry no Segev id, so
-#' `segev_game_id` is `NA`). The women's league and Liga Leumit are NOT on this host. Every
-#' value on the wire is a string and Hebrew text is HTML-entity encoded: ids, counts and dates
-#' are cast and text is unescaped.
-#'
-#' **Errors** are classed conditions, never a warning plus an empty frame: `hoopR_no_data`
-#' (HTTP 404, an empty body, which is what an unknown id answers, or an empty row list),
-#' `hoopR_bad_request` (HTTP 400 / 422, or an argument that is not a non-negative integer,
-#' a boolean or a non-empty string as the op needs) and `hoopR_asset_fetch` (any other
-#' failure: another status, a transport error, a body that is not JSON, an error or changed
-#' envelope, a row for another season, team, player, board or game, or a box score of a game
-#' that is not final). All inherit `hoopR_error`.
+#' @eval .intl_details(.ibba_configuration_details, "ibba_configuration(season = 2026)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -56,10 +60,6 @@
 #' | total_rounds | integer | Rounds in the regular season (32 in 2025-26, 22 in 2004-05); meaning inferred. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_configuration(season = 2026))
-#' }
 ibba_configuration <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("Configuration", list(cYear = season), call = rlang::current_env())
@@ -74,7 +74,7 @@ ibba_configuration <- function(season) {
 #' Endpoint: `GET https://basket.co.il/ws/ws.asmx/Boards`
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -107,7 +107,7 @@ ibba_boards <- function(season) {
 #'   `team_uid` in ibba_teams). Use 0 for all clubs only where the route says so.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_boards_ex(season = 2026, team_uid = 10)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -116,10 +116,6 @@ ibba_boards <- function(season) {
 #' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_boards_ex(season = 2026, team_uid = 10))
-#' }
 ibba_boards_ex <- function(team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("BoardsEx", list(team_uid = team_uid, cYear = season), call = rlang::current_env())
@@ -136,7 +132,7 @@ ibba_boards_ex <- function(team_uid, season) {
 #'   unchanged.
 #' @param board_id (*integer*, default `5`): Competition (board) id: 5 league, 10 cup, 16 / 26 / 17
 #'   playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup. Default 5.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -192,7 +188,7 @@ ibba_teams <- function(season, board_id = 5) {
 #'   `team_uid` in ibba_teams). Use 0 for all clubs only where the route says so.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_team(season = 2026, team_id = 1109, team_uid = 10)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -232,10 +228,6 @@ ibba_teams <- function(season, board_id = 5) {
 #' | diary_url | character | Calendar-subscription (add-to-diary) URL of the club's fixtures. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_team(season = 2026, team_id = 1109, team_uid = 10))
-#' }
 ibba_team <- function(team_id, team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("TeamById", list(team_id = team_id, team_uid = team_uid, cYear = season), call = rlang::current_env())
@@ -255,7 +247,7 @@ ibba_team <- function(team_id, team_uid, season) {
 #'   `team_uid` in ibba_teams). Use 0 for all clubs only where the route says so.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -295,7 +287,7 @@ ibba_players <- function(team_id, team_uid, season) {
 #'   in 2025-26): `player_id` in ibba_players.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_player(player_id = 21912, season = 2026)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -311,10 +303,6 @@ ibba_players <- function(team_id, team_uid, season) {
 #' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_player(player_id = 21912, season = 2026))
-#' }
 ibba_player <- function(player_id, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("PlayerById", list(player_id = player_id, cYear = season), call = rlang::current_env())
@@ -334,7 +322,7 @@ ibba_player <- function(player_id, season) {
 #'   `team_uid` in ibba_teams). Use 0 for all clubs only where the route says so.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_coaches(season = 2026, team_id = 1109, team_uid = 10)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -350,10 +338,6 @@ ibba_player <- function(player_id, season) {
 #' | sort_order | integer | Display order of the coach within the staff list (mOrder). |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_coaches(season = 2026, team_id = 1109, team_uid = 10))
-#' }
 ibba_coaches <- function(team_id, team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("Coaches", list(team_id = team_id, team_uid = team_uid, cYear = season), call = rlang::current_env())
@@ -370,7 +354,7 @@ ibba_coaches <- function(team_id, team_uid, season) {
 #' @param game_id (*integer* required): IBBA game id (e.g. 26392): `game_id` in ibba_games.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -434,7 +418,7 @@ ibba_box_score <- function(game_id, season) {
 #'   (default) the season totals.
 #' @param is_playoff (*logical*, default `FALSE`): True returns the playoff games only; False
 #'   (default) the regular season.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -486,7 +470,7 @@ ibba_player_stats <- function(player_id, season, is_averages = FALSE, is_playoff
 #' **The stat categories ibba_leaders accepts (the stat_type codes) with their Hebrew names.**
 #'
 #' Endpoint: `GET https://basket.co.il/ws/ws.asmx/StatsTypes`
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_stats_types()")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -495,10 +479,6 @@ ibba_player_stats <- function(player_id, season, is_averages = FALSE, is_playoff
 #' | stat_name_he | character | Stat category name in Hebrew. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_stats_types())
-#' }
 ibba_stats_types <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("StatsTypes", list(), call = rlang::current_env())
@@ -518,7 +498,7 @@ ibba_stats_types <- function() {
 #'   unchanged.
 #' @param team_id (*integer*, default `0`): Team-season id to restrict the list to one team; 0
 #'   (default) for all teams.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -558,7 +538,7 @@ ibba_leaders <- function(stat_type, season, team_id = 0) {
 #'   (default) the season totals.
 #' @param is_playoff (*logical*, default `FALSE`): True returns the playoff games only; False
 #'   (default) the regular season.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -619,7 +599,7 @@ ibba_team_stats <- function(team_id, season, is_averages = FALSE, is_playoff = F
 #' @param team_id (*integer*, default `0`): Team-season id; 0 (default) for every team.
 #' @param team_uid (*integer*, default `0`): IBBA club id; 0 (default) for every club.
 #' @param game_id (*integer*, default `0`): IBBA game id; 0 (default) for every game.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -679,7 +659,7 @@ ibba_games <- function(season, board_id = 0, board_round = 0, team_id = 0, team_
 #'   unchanged.
 #' @param board_id (*integer*, default `0`): External board id from ibba_boards_ex (1001 EuroLeague,
 #'   1003 Champions League, ...); 0 (default) for all.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_games_ex(season = 2026, team_uid = 10)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -702,10 +682,6 @@ ibba_games <- function(season, board_id = 0, board_round = 0, team_id = 0, team_
 #' | venue_he | character | Venue in Hebrew, HTML-unescaped; null in 2004-05. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_games_ex(season = 2026, team_uid = 10))
-#' }
 ibba_games_ex <- function(team_uid, season, board_id = 0) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("GamesEx", list(team_uid = team_uid, cYear = season, board_id = board_id), call = rlang::current_env())
@@ -722,7 +698,7 @@ ibba_games_ex <- function(team_uid, season, board_id = 0) {
 #'   `team_uid` in ibba_teams). Use 0 for all clubs only where the route says so.
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @inherit ibba_configuration details
+#' @eval .intl_details(.ibba_configuration_details, "ibba_games_by_team(season = 2026, team_uid = 10)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -759,10 +735,6 @@ ibba_games_ex <- function(team_uid, season, board_id = 0) {
 #' | is_external | logical | True when board_id >= 1001 (an external competition, whose team ids are not team-seasons). Derived by the parser. |
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_games_by_team(season = 2026, team_uid = 10))
-#' }
 ibba_games_by_team <- function(team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   rows <- .ibba_get("GamesByTeam", list(team_uid = team_uid, cYear = season), call = rlang::current_env())
@@ -789,12 +761,12 @@ ibba_games_by_team <- function(team_uid, season) {
 #' @details
 #' Raises `hoopR_bad_request` when `df` is not a data frame, lacks a column, has an id
 #' column of the wrong type, or maps one id to two.
+#'
+#' ```r
+#'  ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1))
+#' ```
 #' @family IBBA
 #' @export
-#' @examples
-#' \donttest{
-#'   try(ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1)))
-#' }
 ibba_segev_game_crosswalk <- function(df) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   label <- "ibba_segev_game_crosswalk"

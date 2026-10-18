@@ -109,11 +109,9 @@ fixture); \code{hoopR_bad_request} for HTTP 400 / 422 or an argument that cannot
 mapped (an ambiguous END year, \code{season} with \code{season_id}); \code{hoopR_asset_fetch} for
 any other failed fetch, an error / stub body, or a body that belongs to another
 site, type, season, game, player or team than the one asked for.
-}
-\examples{
-\donttest{
-  try(atrium_team(website_id = 12, entity_id = "f43b1b0f-55bc-11f0-84d9-01499d2f0a07"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ atrium_team(website_id = 12, entity_id = "f43b1b0f-55bc-11f0-84d9-01499d2f0a07")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other Atrium:

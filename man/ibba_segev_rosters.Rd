@@ -62,11 +62,9 @@ Asia/Jerusalem; the feed carries no offset).
 other failure: another status, a transport error, an empty or non-JSON body, an error or
 changed envelope, a body for another game, a game that is not final). All inherit
 \code{hoopR_error}.
-}
-\examples{
-\donttest{
-  try(ibba_segev_rosters(game_id = 50))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ ibba_segev_rosters(game_id = 50)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other IBBA Segev:

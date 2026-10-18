@@ -71,11 +71,9 @@ error envelope, an empty or non-JSON body, a game that is not final, or a body f
 than the one asked for). HTTP 500 is the API's deterministic answer to an unknown id and is not retried. Wrappers
 raise; they never warn and return empty.
 }
-}
-\examples{
-\donttest{
-  try(kbl_score_track(gmkey = "S47G01N49"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ kbl_score_track(gmkey = "S47G01N49")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other KBL Functions:

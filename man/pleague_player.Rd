@@ -69,11 +69,9 @@ play-by-play phrase outside the observed vocabulary). HTTP 429 / 502 / 503 / 504
 attempts; HTTP 500 is NOT retried (the site answers 500 for an unknown id). Wrappers raise; they never warn
 and return empty.
 }
-}
-\examples{
-\donttest{
-  try(pleague_player(player_page_id = "1JbPozLB"))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ pleague_player(player_page_id = "1JbPozLB")
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other P. LEAGUE+ Functions:

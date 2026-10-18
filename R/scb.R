@@ -3,6 +3,32 @@
 # api.basketball-bundesliga.de (BBL, men) and api-1.dbbl.scb.world (DBBL, women); `league`
 # picks the host. Transport and refusals: R/scb_runtime.R; frames: R/scb_parsers.R.
 
+# The @details of every scb topic that shares the scb_seasons() notes (roxygen @eval .intl_details()).
+.scb_seasons_details <- c(
+  "* Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites",
+  "  (easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.",
+  "* Legal notice: the BBL Impressum forbids storing BBL content (`Inhalte`) in an information system without",
+  "  BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).",
+  "  The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits",
+  "  at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same",
+  "  operator and API; its site notice was not separately reviewed.",
+  "* Both hosts need two headers: a constant `x-api-key` and an `x-api-secret` that rotates. The runtime",
+  "  derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, `:` turned",
+  "  into `-`) and never logs or returns it. The derivation was reverse-engineered from observed requests and",
+  "  responses and has not been checked against the site's own front-end code; if the site changes how it",
+  "  signs requests, every call fails with `hoopR_asset_fetch`.",
+  "* Id key spaces: seasonId is the START year (2025 = 2025-26), so a wrapper's END-year `season` is sent as",
+  "  `season - 1`. Teams are keyed by teamId (seasonTeamId equals it in every sample). seasonPlayerId is per",
+  "  player per season and per club (a player traded mid-season has two); realPlayerId is the person. playerId",
+  "  is ambiguous (the seasonPlayerId in box scores, records and /season-players; the person in /transfers).",
+  "  Game ids are strings.",
+  '* Errors are classed conditions: `hoopR_no_data` (404, 204, a 400 "not a valid" id, no rows, a box score of',
+  "  a game not yet started), `hoopR_bad_request` (a bad argument, another 400 / 422) and `hoopR_asset_fetch`",
+  "  (a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a",
+  "  truncated page, a body for another game, season, club or league, a box score still in play), all",
+  "  inheriting `hoopR_error`. Wrappers raise; they never return an empty frame."
+)
+
 #' @title
 #' **Get BBL / DBBL Seasons**
 #' @description
@@ -24,29 +50,7 @@
 #' | season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
 #' | season_id | integer | The API's own season key, the START year (2025 = 2025-26); `season` minus one. |
 #' | is_active | logical | True for the season in progress. |
-#' @details
-#' * Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites
-#'   (easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.
-#' * Legal notice: the BBL Impressum forbids storing BBL content (`Inhalte`) in an information system without
-#'   BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).
-#'   The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits
-#'   at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same
-#'   operator and API; its site notice was not separately reviewed.
-#' * Both hosts need two headers: a constant `x-api-key` and an `x-api-secret` that rotates. The runtime
-#'   derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, `:` turned
-#'   into `-`) and never logs or returns it. The derivation was reverse-engineered from observed requests and
-#'   responses and has not been checked against the site's own front-end code; if the site changes how it
-#'   signs requests, every call fails with `hoopR_asset_fetch`.
-#' * Id key spaces: seasonId is the START year (2025 = 2025-26), so a wrapper's END-year `season` is sent as
-#'   `season - 1`. Teams are keyed by teamId (seasonTeamId equals it in every sample). seasonPlayerId is per
-#'   player per season and per club (a player traded mid-season has two); realPlayerId is the person. playerId
-#'   is ambiguous (the seasonPlayerId in box scores, records and /season-players; the person in /transfers).
-#'   Game ids are strings.
-#' * Errors are classed conditions: `hoopR_no_data` (404, 204, a 400 "not a valid" id, no rows, a box score of
-#'   a game not yet started), `hoopR_bad_request` (a bad argument, another 400 / 422) and `hoopR_asset_fetch`
-#'   (a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a
-#'   truncated page, a body for another game, season, club or league, a box score still in play), all
-#'   inheriting `hoopR_error`. Wrappers raise; they never return an empty frame.
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_seasons())
@@ -191,11 +195,7 @@ scb_season_teams <- function(season, league = "bbl") {
 #' | team_b_rank | integer | Regular-season table position (the seed) of series team B (the higher seed is A). |
 #' | team_b_victories | integer | Series wins of team B. |
 #' | games | integer | Games of the series. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_playoff_series(season = 2026))
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_playoff_series(season = 2026)")
 #' @export
 #' @family SCB Functions
 scb_playoff_series <- function(season, league = "bbl") {
@@ -243,11 +243,7 @@ scb_playoff_series <- function(season, league = "bbl") {
 #' | team_b_id | character | Season-team id of the series' team B; `points_team_b` is its score, whichever side hosted. |
 #' | points_team_a | integer | Team A's points in the game. |
 #' | points_team_b | integer | Team B's points in the game. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_playoff_games(season = 2026))
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_playoff_games(season = 2026)")
 #' @export
 #' @family SCB Functions
 scb_playoff_games <- function(season, league = "bbl") {
@@ -1238,11 +1234,7 @@ scb_standings <- function(league = "bbl", season = NULL, competition = NULL) {
 #' | team_name | character | Team name as listed that season (sponsor names included). |
 #' | previous_teams | character | Former clubs, free text (German names). |
 #' | season_ids | character | Seasons (start years) with this player or club. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_season_player(season_player_id = "56414"))
-#' }
+#' @eval .intl_details(.scb_seasons_details, 'scb_season_player(season_player_id = "56414")')
 #' @export
 #' @family SCB Functions
 scb_season_player <- function(season_player_id, league = "bbl") {
@@ -1284,11 +1276,7 @@ scb_season_player <- function(season_player_id, league = "bbl") {
 #' | year_joined_bbl | integer | Year the club joined the league. |
 #' | order_id | integer | Display order of the club on the site; null on some clubs. |
 #' | best_achievements | character | Honours, German free text (Deutscher Meister = German champion, Pokalsieger = cup winner, Vizepokalsieger = cup runner-up). |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_team(team_id = "413"))
-#' }
+#' @eval .intl_details(.scb_seasons_details, 'scb_team(team_id = "413")')
 #' @export
 #' @family SCB Functions
 scb_team <- function(team_id, league = "bbl") {
@@ -1328,11 +1316,7 @@ scb_team <- function(team_id, league = "bbl") {
 #' | team_name | character | Team name as listed that season (sponsor names included). |
 #' | is_championship_winner | logical | Won the championship that season. |
 #' | is_cup_winner | logical | Won the cup that season. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_team_seasons(team_id = "413"))
-#' }
+#' @eval .intl_details(.scb_seasons_details, 'scb_team_seasons(team_id = "413")')
 #' @export
 #' @family SCB Functions
 scb_team_seasons <- function(team_id, league = "bbl") {
@@ -1367,11 +1351,7 @@ scb_team_seasons <- function(team_id, league = "bbl") {
 #' | official_function | character | REFEREE or COMMISSIONER. |
 #' | participations | integer | League games officiated. |
 #' | year_joined_bbl | integer | Year the official joined the league. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_referees())
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_referees()")
 #' @export
 #' @family SCB Functions
 scb_referees <- function(page_size = 100) {
@@ -1407,11 +1387,7 @@ scb_referees <- function(page_size = 100) {
 #' | source_team_name | character | Name of the club the player left (the free-text field, else the short club name). |
 #' | destination_team_id | character | Club id the player joined; null when the destination is not a league club. |
 #' | destination_team_name | character | Name of the club the player joined (the free-text field, else the short club name). |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_transfers())
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_transfers()")
 #' @export
 #' @family SCB Functions
 scb_transfers <- function() {
@@ -1450,11 +1426,7 @@ scb_transfers <- function() {
 #' | source_team_name | character | Name of the club the player left (the free-text field, else the short club name). |
 #' | destination_team_id | character | Club id the player joined; null when the destination is not a league club. |
 #' | destination_team_name | character | Name of the club the player joined (the free-text field, else the short club name). |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_transfers_teams())
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_transfers_teams()")
 #' @export
 #' @family SCB Functions
 scb_transfers_teams <- function() {
@@ -1496,11 +1468,7 @@ scb_transfers_teams <- function() {
 #' | nationalities | character | Nationalities, ISO 3166-1 alpha-2 codes. |
 #' | is_all_star | logical | All-Star selection flag. |
 #' | is_young | logical | Young-player flag (German-trained youth rule; inferred). |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_team_rosters())
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_team_rosters()")
 #' @export
 #' @family SCB Functions
 scb_team_rosters <- function() {
@@ -1553,11 +1521,7 @@ scb_team_rosters <- function() {
 #' | guest_tlc | character | Three-letter code of the guest team of the record game. |
 #' | game_id | character | Game id, a string. Joins to `/games/{gameId}`. |
 #' | scheduled_time | character | Scheduled tip-off, ISO 8601 UTC. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_records_per_game(season = 2026))
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_records_per_game(season = 2026)")
 #' @export
 #' @family SCB Functions
 scb_records_per_game <- function(season, league = "bbl") {
@@ -1602,11 +1566,7 @@ scb_records_per_game <- function(season, league = "bbl") {
 #' | last_name | character | Player's family name. |
 #' | team_name | character | Team name as listed that season (sponsor names included). |
 #' | team_tlc | character | The player's team code. |
-#' @inherit scb_seasons details
-#' @examples
-#' \donttest{
-#'   try(scb_records_season_averages())
-#' }
+#' @eval .intl_details(.scb_seasons_details, "scb_records_season_averages()")
 #' @export
 #' @family SCB Functions
 scb_records_season_averages <- function(league = "bbl") {

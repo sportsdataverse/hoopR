@@ -70,11 +70,9 @@ season or date; \code{hoopR_asset_fetch} for any other failed fetch or an answer
 error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
 federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
 competitions, the event year for national-team events, the target tournament year for qualifiers.
-}
-\examples{
-\donttest{
-  try(fiba_gdap_roster_latest(team_id = 282183))
-}
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{ fiba_gdap_roster_latest(team_id = 282183)
+}\if{html}{\out{</div>}}
 }
 \seealso{
 Other FIBA Functions:
