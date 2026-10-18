@@ -1,0 +1,151 @@
+{
+  "playerData": {
+    "player": {
+      "id": 20209407,
+      "firstInitialAndLastName": "W. Tavares",
+      "firstName": "Walter",
+      "lastName": "Tavares",
+      "nickname": "Edy Tavares",
+      "shirtNumber": "22",
+      "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/57/30/0000935730_5-6_01.jpg",
+      "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/57/30/0000935730_5-6_01_transparent.webp",
+      "headshotImageAlt": "W. Tavares photo",
+      "fullBodyImageUrl": "https://static.acb.com/media/PRO/00/00/93/57/30/0000935730_lpr.jpg",
+      "fullBodyImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/57/30/0000935730_lpr_transparent.webp",
+      "gameRole": "Pívot",
+      "isLicenseActive": true,
+      "editionId": 91,
+      "nicknameFirstName": "Edy",
+      "nicknameLastName": "Tavares"
+    },
+    "birthDate": "22-03-1992",
+    "birthPlace": "Maio",
+    "birthCountry": "Cabo Verde",
+    "nationality": "Cabo Verde",
+    "height": "2,20",
+    "currentTeam": {
+      "id": 4476,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 9,
+      "fullName": "Real Madrid",
+      "shortName": "Real Madrid",
+      "abbreviatedName": "RMB",
+      "primaryColorHex": "#ffffff",
+      "textColorHex": "#000000",
+      "logo": "https://static.acb.com/img/www/clubes2024/2324RealMadrid_Logoweb.png",
+      "logoAlt": "Real Madrid logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2023/RealMadridLogo202223.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    "playerNumber": 22,
+    "youtube": null,
+    "instagram": "22edy22",
+    "twitter": "waltertavares22",
+    "facebook": null,
+    "tiktok": null,
+    "pronunciationUrl": "https://static.acb.com/media/PRO/00/00/16/35/76/0000163576.mp3",
+    "isLicenseActive": true,
+    "licensing": "JFL"
+  },
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": [
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": [
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      }
+    ],
+    "seasons": [],
+    "rounds": [],
+    "weeks": [],
+    "phases": null
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 91
+  },
+  "availableLicenses": {
+    "playerLicenseData": null,
+    "coachLicenseData": null,
+    "secondCoachLicenseData": null
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": []
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": []
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": []
+      }
+    ],
+    "seasons": [
+      {
+        "id": 48,
+        "seasonStartYear": 1983,
+        "seasonEndYear": 1984,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 49,
+        "seasonStartYear": 1984,
+        "seasonEndYear": 1985,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 50,
+        "seasonStartYear": 1985,
+        "seasonEndYear": 1986,
+        "rounds": [],
+        "weeks": []
+      }
+    ],
+    "rounds": [],
+    "weeks": [],
+    "phases": [
+      {
+        "id": 107,
+        "abreviation": "LR",
+        "description": "Liga Regular"
+      },
+      {
+        "id": 111,
+        "abreviation": "PO",
+        "description": "Play Off Título"
+      }
+    ]
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 91
+  },
+  "teams": [
+    {
+      "latest": {
+        "id": 4473,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 8,
+        "fullName": "Asisa Joventut",
+        "shortName": "Asisa Joventut",
+        "abbreviatedName": "JOV",
+        "primaryColorHex": "#2f8e62",
+        "textColorHex": "#FFFFFF",
+        "logo": "https://static.acb.com/img/www/clubes2026/202526AsisaJoventutLogoPosisitvo.png",
+        "logoAlt": "Asisa Joventut logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202526AsisaJoventutLogoNegativo.png",
+        "contrastRequired": true,
+        "shirtColor": null,
+        "shirtTextColor": null
+      },
+      "selected": {
+        "id": 4473,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 8,
+        "fullName": "Asisa Joventut",
+        "shortName": "Asisa Joventut",
+        "abbreviatedName": "JOV",
+        "primaryColorHex": "#2f8e62",
+        "textColorHex": "#FFFFFF",
+        "logo": "https://static.acb.com/img/www/clubes2026/202526AsisaJoventutLogoPosisitvo.png",
+        "logoAlt": "Asisa Joventut logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202526AsisaJoventutLogoNegativo.png",
+        "contrastRequired": true,
+        "shirtColor": null,
+        "shirtTextColor": null
+      }
+    },
+    {
+      "latest": {
+        "id": 4467,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 2,
+        "fullName": "Barça",
+        "shortName": "Barça",
+        "abbreviatedName": "BAR",
+        "primaryColorHex": "#154284",
+        "textColorHex": "#FFFFFF",
+        "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+        "logoAlt": "Barça logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+        "contrastRequired": false,
+        "shirtColor": null,
+        "shirtTextColor": null
+      },
+      "selected": {
+        "id": 4467,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 2,
+        "fullName": "Barça",
+        "shortName": "Barça",
+        "abbreviatedName": "BAR",
+        "primaryColorHex": "#154284",
+        "textColorHex": "#FFFFFF",
+        "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+        "logoAlt": "Barça logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+        "contrastRequired": false,
+        "shirtColor": null,
+        "shirtTextColor": null
+      }
+    },
+    {
+      "latest": {
+        "id": 4474,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 16,
+        "fullName": "Casademont Zaragoza",
+        "shortName": "Casademont Zgz",
+        "abbreviatedName": "CAZ",
+        "primaryColorHex": "#C8102E",
+        "textColorHex": "#FFFFFF",
+        "logo": "https://static.acb.com/img/www/clubes2024/2425CasademontZaragoza.png",
+        "logoAlt": "Casademont Zaragoza logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2425CasademontZaragoza.png",
+        "contrastRequired": false,
+        "shirtColor": null,
+        "shirtTextColor": null
+      },
+      "selected": {
+        "id": 4474,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 16,
+        "fullName": "Casademont Zaragoza",
+        "shortName": "Casademont Zgz",
+        "abbreviatedName": "CAZ",
+        "primaryColorHex": "#C8102E",
+        "textColorHex": "#FFFFFF",
+        "logo": "https://static.acb.com/img/www/clubes2024/2425CasademontZaragoza.png",
+        "logoAlt": "Casademont Zaragoza logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2425CasademontZaragoza.png",
+        "contrastRequired": false,
+        "shirtColor": null,
+        "shirtTextColor": null
+      }
+    }
+  ]
+}

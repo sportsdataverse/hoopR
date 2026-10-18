@@ -1,0 +1,4 @@
+match_id,edition_id,season,shot_id,pos_x,pos_y,coord_system,x_basket_m,y_basket_m,quarter,minute,second,clock_seconds,play_type,play_name,is_home,score_home,score_away,player_id,player_name,shirt_number,zone,made,points
+17718,81,2017,16,93,45,grid,,,1,9,42,582,97,TWO_POINTER_MISSED,false,0,0,20201774,,,restricted_area,false,2
+17718,81,2017,18,16,51,grid,,,1,9,30,570,93,TWO_POINTER_MADE,true,2,0,20200613,,,restricted_area,true,2
+17718,81,2017,31,0,0,grid,,,1,8,5,485,92,FREE_THROW_MADE,true,5,3,20210656,L. Sikma,43,,,

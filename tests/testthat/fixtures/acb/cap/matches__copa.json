@@ -1,0 +1,131 @@
+{
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": []
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": []
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": []
+      }
+    ],
+    "seasons": [
+      {
+        "id": 48,
+        "seasonStartYear": 1983,
+        "seasonEndYear": 1984,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 49,
+        "seasonStartYear": 1984,
+        "seasonEndYear": 1985,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 50,
+        "seasonStartYear": 1985,
+        "seasonEndYear": 1986,
+        "rounds": [],
+        "weeks": []
+      }
+    ],
+    "rounds": [
+      {
+        "id": 5993,
+        "roundNumber": 1,
+        "subphaseId": 293,
+        "subphaseNumber": null
+      },
+      {
+        "id": 5994,
+        "roundNumber": 2,
+        "subphaseId": 292,
+        "subphaseNumber": null
+      },
+      {
+        "id": 5995,
+        "roundNumber": 3,
+        "subphaseId": 291,
+        "subphaseNumber": null
+      }
+    ],
+    "weeks": [
+      {
+        "id": 2982,
+        "description": "Semana Copa del Rey 2026",
+        "startDate": "2026-02-16"
+      }
+    ],
+    "phases": []
+  },
+  "selectedFilters": {
+    "competition": 2,
+    "season": 90,
+    "round": 5995,
+    "week": 2982,
+    "isRoundSelected": true
+  },
+  "teams": [
+    {
+      "id": 4462,
+      "competitionId": 2,
+      "editionId": 90,
+      "clubId": 3,
+      "fullName": "Kosner Baskonia",
+      "shortName": "Kosner Baskonia",
+      "abbreviatedName": "BKN",
+      "primaryColorHex": "#c8102e",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes2025/2526KosnerBaskoniaLogo.png",
+      "logoAlt": "Kosner Baskonia logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2025/2526KosnerBaskoniaLogoNegativo.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    {
+      "id": 4457,
+      "competitionId": 2,
+      "editionId": 90,
+      "clubId": 9,
+      "fullName": "Real Madrid",
+      "shortName": "Real Madrid",
+      "abbreviatedName": "RMB",
+      "primaryColorHex": "#ffffff",
+      "textColorHex": "#000000",
+      "logo": "https://static.acb.com/img/www/clubes2024/2324RealMadrid_Logoweb.png",
+      "logoAlt": "Real Madrid logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2023/RealMadridLogo202223.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    }
+  ],
+  "matches": [
+    {
+      "id": 105318,
+      "homeTeamId": 4457,
+      "awayTeamId": 4462,
+      "homeScore": 89,
+      "awayScore": 100,
+      "startDateTime": "2026-02-22T18:00:00Z",
+      "matchStatus": "FINALIZED",
+      "isOnHalfTime": false,
+      "currentQuarter": 4,
+      "ticketingLink": "https://www.realmadrid.com/entradas/baloncesto",
+      "broadcastChannels": [],
+      "serieData": null
+    }
+  ]
+}

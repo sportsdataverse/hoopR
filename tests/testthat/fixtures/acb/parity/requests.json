@@ -1,0 +1,530 @@
+{
+ "match_header": {
+  "fixture": "full/match-header.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/MatchHeader/match-header",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "match_header__2005": {
+  "fixture": "cap/match-header__2005.json",
+  "kwargs": {
+   "match_id": 12559
+  },
+  "url": "https://api2.acb.com/api/matchdata/MatchHeader/match-header",
+  "query": {
+   "matchId": 12559
+  }
+ },
+ "period_scores": {
+  "fixture": "full/match-header.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/MatchHeader/match-header",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "player_box": {
+  "fixture": "full/boxscores.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Result/boxscores",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "player_box__2005": {
+  "fixture": "cap/boxscores__2005.json",
+  "kwargs": {
+   "match_id": 12559
+  },
+  "url": "https://api2.acb.com/api/matchdata/Result/boxscores",
+  "query": {
+   "matchId": 12559
+  }
+ },
+ "team_box": {
+  "fixture": "full/boxscores.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Result/boxscores",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "box_info": {
+  "fixture": "full/boxscores.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Result/boxscores",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "pbp": {
+  "fixture": "full/play-by-play.json.gz",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/PlayByPlay/play-by-play",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "pbp__2016": {
+  "fixture": "cap/play-by-play__2016.json",
+  "kwargs": {
+   "match_id": 17718
+  },
+  "url": "https://api2.acb.com/api/matchdata/PlayByPlay/play-by-play",
+  "query": {
+   "matchId": 17718
+  }
+ },
+ "shots": {
+  "fixture": "full/match-shots.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/MatchShots/match-shots",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "shots__2016": {
+  "fixture": "cap/match-shots__2016.json",
+  "kwargs": {
+   "match_id": 17718
+  },
+  "url": "https://api2.acb.com/api/matchdata/MatchShots/match-shots",
+  "query": {
+   "matchId": 17718
+  }
+ },
+ "lead_tracker": {
+  "fixture": "full/lead-tracker.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Overview/lead-tracker",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "lead_stats": {
+  "fixture": "full/lead-tracker.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Overview/lead-tracker",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "lineup": {
+  "fixture": "full/lineup.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Overview/lineup",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "match_leaders": {
+  "fixture": "full/match-leaders.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Overview/match-leaders",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "team_comparison": {
+  "fixture": "cap/match-team-comparison.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Overview/match-team-comparison",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "serie": {
+  "fixture": "cap/serie.json",
+  "kwargs": {
+   "match_id": 17718
+  },
+  "url": "https://api2.acb.com/api/matchdata/Overview/serie",
+  "query": {
+   "matchId": 17718
+  }
+ },
+ "quickfacts": {
+  "fixture": "cap/quickfacts.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Preview/quickfacts",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "season_leaders": {
+  "fixture": "cap/season-leaders.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Preview/season-leaders",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "match_advanced_stats": {
+  "fixture": "cap/match-advanced-stats.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/AdvancedStats/match-advanced-stats",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "player_advanced_stats": {
+  "fixture": "cap/player-advanced-stats.json",
+  "kwargs": {
+   "match_id": 105401,
+   "player_id": 20212243
+  },
+  "url": "https://api2.acb.com/api/matchdata/AdvancedStats/player-advanced-stats",
+  "query": {
+   "matchId": 105401,
+   "playerLicense": 20212243
+  }
+ },
+ "matchlist": {
+  "fixture": "cap/matchlist.json",
+  "kwargs": {
+   "match_id": 105401
+  },
+  "url": "https://api2.acb.com/api/matchdata/Menu/matchlist",
+  "query": {
+   "matchId": 105401
+  }
+ },
+ "competition_editions": {
+  "fixture": "cap/competition-data.json",
+  "kwargs": {},
+  "url": "https://api2.acb.com/api/matchdata/Menu/competition-data",
+  "query": {}
+ },
+ "competition_rounds": {
+  "fixture": "cap/competition-data.json",
+  "kwargs": {
+   "competition_ids": 1
+  },
+  "url": "https://api2.acb.com/api/matchdata/Menu/competition-data",
+  "query": {
+   "competitionIds": [
+    1
+   ]
+  }
+ },
+ "competition_weeks": {
+  "fixture": "cap/competition-data.json",
+  "kwargs": {},
+  "url": "https://api2.acb.com/api/matchdata/Menu/competition-data",
+  "query": {}
+ },
+ "competition_current": {
+  "fixture": "cap/competition-data.json",
+  "kwargs": {},
+  "url": "https://api2.acb.com/api/matchdata/Menu/competition-data",
+  "query": {}
+ },
+ "round_matches": {
+  "fixture": "full/matches.json",
+  "kwargs": {
+   "competition_id": 1,
+   "season": 2027,
+   "round_id": 6017,
+   "is_round_selected": true
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/matches",
+  "query": {
+   "competitionId": 1,
+   "editionId": 91,
+   "roundId": 6017,
+   "isRoundSelected": "true"
+  }
+ },
+ "round_matches__copa": {
+  "fixture": "cap/matches__copa.json",
+  "kwargs": {
+   "competition_id": 2,
+   "season": 2026
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/matches",
+  "query": {
+   "competitionId": 2,
+   "editionId": 90
+  }
+ },
+ "round_matches__2016": {
+  "fixture": "cap/matches__2016.json",
+  "kwargs": {
+   "season": 2017,
+   "week_id": 526
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/matches",
+  "query": {
+   "editionId": 81,
+   "weekId": 526
+  }
+ },
+ "standings": {
+  "fixture": "full/standings.json",
+  "kwargs": {
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/standings",
+  "query": {
+   "editionId": 91
+  }
+ },
+ "standings_rounds": {
+  "fixture": "full/standings.json",
+  "kwargs": {
+   "season": 2027,
+   "round_id": 6017
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/standings",
+  "query": {
+   "editionId": 91,
+   "roundId": 6017
+  }
+ },
+ "bracket": {
+  "fixture": "cap/bracket.json",
+  "kwargs": {
+   "season": 2026
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/bracket",
+  "query": {
+   "editionId": 90
+  }
+ },
+ "bracket_games": {
+  "fixture": "cap/bracket.json",
+  "kwargs": {
+   "competition_id": 1
+  },
+  "url": "https://api2.acb.com/api/seasondata/Competition/bracket",
+  "query": {
+   "competitionId": 1
+  }
+ },
+ "calendar": {
+  "fixture": "cap/season-calendar.json",
+  "kwargs": {
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/Calendar/season-calendar",
+  "query": {
+   "editionId": 91
+  }
+ },
+ "league_zones": {
+  "fixture": "cap/league-zones.json",
+  "kwargs": {
+   "competition_id": 1,
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/ShotChart/league-zones",
+  "query": {
+   "competitionId": 1,
+   "editionId": 91
+  }
+ },
+ "teams": {
+  "fixture": "cap/teams.json",
+  "kwargs": {
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/teams",
+  "query": {
+   "editionId": 91
+  }
+ },
+ "team_matches": {
+  "fixture": "cap/team-matches.json",
+  "kwargs": {
+   "club_id": 2,
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/team-matches",
+  "query": {
+   "clubId": 2,
+   "editionId": 91
+  }
+ },
+ "next_matches": {
+  "fixture": "cap/next-matches.json",
+  "kwargs": {
+   "club_id": 2,
+   "number_of_matches": 3
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/next-matches",
+  "query": {
+   "clubId": 2,
+   "numberOfMatches": 3
+  }
+ },
+ "club_data": {
+  "fixture": "cap/club-data.json",
+  "kwargs": {
+   "club_id": 2
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/club-data",
+  "query": {
+   "clubId": 2
+  }
+ },
+ "current_roster": {
+  "fixture": "cap/current-roster.json",
+  "kwargs": {
+   "club_id": 2
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/current-roster",
+  "query": {
+   "clubId": 2
+  }
+ },
+ "team_leaders": {
+  "fixture": "cap/team-leaders.json",
+  "kwargs": {
+   "club_id": 2,
+   "number_of_players": 3,
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/team-leaders",
+  "query": {
+   "clubId": 2,
+   "numberOfPlayers": 3,
+   "editionId": 91
+  }
+ },
+ "team_stats": {
+  "fixture": "full/team-stats.json",
+  "kwargs": {
+   "club_id": 2,
+   "season": 2027
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/team-stats",
+  "query": {
+   "clubId": 2,
+   "editionId": 91
+  }
+ },
+ "team_totals": {
+  "fixture": "full/team-stats.json",
+  "kwargs": {
+   "club_id": 2
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/team-stats",
+  "query": {
+   "clubId": 2
+  }
+ },
+ "team_records": {
+  "fixture": "cap/team-records.json",
+  "kwargs": {
+   "club_id": 2
+  },
+  "url": "https://api2.acb.com/api/seasondata/TeamProfile/team-records",
+  "query": {
+   "clubId": 2
+  }
+ },
+ "player_data": {
+  "fixture": "cap/player-data.json",
+  "kwargs": {
+   "player_id": 20209407
+  },
+  "url": "https://api2.acb.com/api/seasondata/PlayerProfile/player-data",
+  "query": {
+   "playerLicenceId": 20209407
+  }
+ },
+ "player_stats": {
+  "fixture": "cap/player-stats.json",
+  "kwargs": {
+   "player_id": 20209407
+  },
+  "url": "https://api2.acb.com/api/seasondata/PlayerProfile/player-stats",
+  "query": {
+   "playerLicenceId": 20209407
+  }
+ },
+ "player_totals": {
+  "fixture": "cap/player-stats.json",
+  "kwargs": {
+   "player_id": 20209407
+  },
+  "url": "https://api2.acb.com/api/seasondata/PlayerProfile/player-stats",
+  "query": {
+   "playerLicenceId": 20209407
+  }
+ },
+ "career_stints": {
+  "fixture": "cap/career.json",
+  "kwargs": {
+   "player_id": 20209407
+  },
+  "url": "https://api2.acb.com/api/seasondata/PlayerProfile/career",
+  "query": {
+   "playerLicenceId": 20209407
+  }
+ },
+ "career_trophies": {
+  "fixture": "cap/career.json",
+  "kwargs": {
+   "player_id": 20209407
+  },
+  "url": "https://api2.acb.com/api/seasondata/PlayerProfile/career",
+  "query": {
+   "playerLicenceId": 20209407
+  }
+ },
+ "player_matches": {
+  "fixture": "cap/player-matches.json",
+  "kwargs": {
+   "player_id": 20209407
+  },
+  "url": "https://api2.acb.com/api/seasondata/PlayerProfile/matches",
+  "query": {
+   "playerLicenceId": 20209407
+  }
+ },
+ "search": {
+  "fixture": "cap/search.json",
+  "kwargs": {
+   "search_term": "tavares",
+   "limit": 5
+  },
+  "url": "https://api2.acb.com/api/seasondata/Search/search",
+  "query": {
+   "searchTerm": "tavares",
+   "limit": 5
+  }
+ }
+}

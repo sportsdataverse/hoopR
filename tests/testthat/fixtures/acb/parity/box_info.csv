@@ -1,0 +1,3 @@
+match_id,edition_id,season,team_side,team_id,club_id,team,team_abbr,head_coach,assistant_coaches,arena,attendance,referees
+105401,91,2027,home,4467,2,Barça,BAR,Aleksander Sekulic,Jurica Zuza; Jernej Valentincic,Palau Blaugrana,5342,Carlos Peruga; Alberto Baena; Andrés Fernández
+105401,91,2027,away,4472,13,Valencia Basket,VBC,Xavier Albert,Israel González; Vicent Revert; Juan Maroto,Palau Blaugrana,5342,Carlos Peruga; Alberto Baena; Andrés Fernández

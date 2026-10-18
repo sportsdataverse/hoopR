@@ -1,0 +1,3 @@
+match_id,team_side,team_id,club_id,team,team_abbr,edition_id,season,standing,wins,losses,last_results
+105401,home,4467,2,Barça,BAR,91,2027,6,2,1,WIN; LOSE; WIN
+105401,away,4472,13,Valencia Basket,VBC,91,2027,9,1,2,LOSE; WIN; LOSE

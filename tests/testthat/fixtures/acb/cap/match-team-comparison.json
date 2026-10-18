@@ -1,0 +1,736 @@
+{
+  "homeTeamColor": "#083C8E",
+  "awayTeamColor": "#fb6016",
+  "statsPerQuarters": [
+    {
+      "quarter": 0,
+      "statsPerQuarters": {
+        "freeThrows": {
+          "home": {
+            "title": "79,17%",
+            "subtitle": "19/24",
+            "progress": 79.17,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "68,42%",
+            "subtitle": "13/19",
+            "progress": 68.42,
+            "isBarHighLighted": false
+          }
+        },
+        "twoPointers": {
+          "home": {
+            "title": "61,90%",
+            "subtitle": "26/42",
+            "progress": 61.9,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "56,52%",
+            "subtitle": "26/46",
+            "progress": 56.52,
+            "isBarHighLighted": false
+          }
+        },
+        "threePointers": {
+          "home": {
+            "title": "23,08%",
+            "subtitle": "6/26",
+            "progress": 23.08,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "22,58%",
+            "subtitle": "7/31",
+            "progress": 22.58,
+            "isBarHighLighted": false
+          }
+        },
+        "fieldGoals": {
+          "home": {
+            "title": "47,06%",
+            "subtitle": "32/68",
+            "progress": 47.06,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "42,86%",
+            "subtitle": "33/77",
+            "progress": 42.86,
+            "isBarHighLighted": false
+          }
+        },
+        "defensiveRebounds": {
+          "home": {
+            "title": "35",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "25",
+            "subtitle": null,
+            "progress": 64.29,
+            "isBarHighLighted": false
+          }
+        },
+        "offensiveRebounds": {
+          "home": {
+            "title": "10",
+            "subtitle": null,
+            "progress": 75,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "12",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "rebounds": {
+          "home": {
+            "title": "45",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "37",
+            "subtitle": null,
+            "progress": 74,
+            "isBarHighLighted": false
+          }
+        },
+        "assists": {
+          "home": {
+            "title": "16",
+            "subtitle": null,
+            "progress": 80,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "18",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "steals": {
+          "home": {
+            "title": "3",
+            "subtitle": null,
+            "progress": 30,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "9",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "turnovers": {
+          "home": {
+            "title": "13",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "7",
+            "subtitle": null,
+            "progress": 48.46,
+            "isBarHighLighted": true
+          }
+        },
+        "personalFouls": {
+          "home": {
+            "title": "23",
+            "subtitle": null,
+            "progress": 86.25,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "24",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "timeOuts": {
+          "home": {
+            "title": "3",
+            "subtitle": null,
+            "progress": 54,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "5",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "pointsOffTurnover": {
+          "home": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 0,
+            "isBarHighLighted": false
+          }
+        },
+        "paintPoints": {
+          "home": {
+            "title": "46",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "40",
+            "subtitle": null,
+            "progress": 78.26,
+            "isBarHighLighted": false
+          }
+        },
+        "secondChancePoints": {
+          "home": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 40,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "9",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "fastBreakPoints": {
+          "home": {
+            "title": "14",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "7",
+            "subtitle": null,
+            "progress": 45,
+            "isBarHighLighted": false
+          }
+        },
+        "benchPoints": {
+          "home": {
+            "title": "37",
+            "subtitle": null,
+            "progress": 77.44,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "43",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        }
+      }
+    },
+    {
+      "quarter": 1,
+      "statsPerQuarters": {
+        "freeThrows": {
+          "home": {
+            "title": "100,00%",
+            "subtitle": "2/2",
+            "progress": 100,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "100,00%",
+            "subtitle": "1/1",
+            "progress": 100,
+            "isBarHighLighted": false
+          }
+        },
+        "twoPointers": {
+          "home": {
+            "title": "50,00%",
+            "subtitle": "7/14",
+            "progress": 50,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "73,33%",
+            "subtitle": "11/15",
+            "progress": 73.33,
+            "isBarHighLighted": true
+          }
+        },
+        "threePointers": {
+          "home": {
+            "title": "33,33%",
+            "subtitle": "1/3",
+            "progress": 33.33,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "14,29%",
+            "subtitle": "1/7",
+            "progress": 14.29,
+            "isBarHighLighted": false
+          }
+        },
+        "fieldGoals": {
+          "home": {
+            "title": "47,06%",
+            "subtitle": "8/17",
+            "progress": 47.06,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "54,55%",
+            "subtitle": "12/22",
+            "progress": 54.55,
+            "isBarHighLighted": true
+          }
+        },
+        "defensiveRebounds": {
+          "home": {
+            "title": "7",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "7",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "offensiveRebounds": {
+          "home": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 60,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "3",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "rebounds": {
+          "home": {
+            "title": "9",
+            "subtitle": null,
+            "progress": 81,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "10",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "assists": {
+          "home": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 45,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "steals": {
+          "home": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 0,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "3",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "turnovers": {
+          "home": {
+            "title": "3",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 0,
+            "isBarHighLighted": true
+          }
+        },
+        "personalFouls": {
+          "home": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "timeOuts": {
+          "home": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 50,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 50,
+            "isBarHighLighted": false
+          }
+        },
+        "pointsOffTurnover": {
+          "home": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 50,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 50,
+            "isBarHighLighted": false
+          }
+        },
+        "paintPoints": {
+          "home": {
+            "title": "14",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "14",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "secondChancePoints": {
+          "home": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "fastBreakPoints": {
+          "home": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 45,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "benchPoints": {
+          "home": {
+            "title": "10",
+            "subtitle": null,
+            "progress": 64.29,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "14",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        }
+      }
+    },
+    {
+      "quarter": 2,
+      "statsPerQuarters": {
+        "freeThrows": {
+          "home": {
+            "title": "50,00%",
+            "subtitle": "1/2",
+            "progress": 50,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "50,00%",
+            "subtitle": "3/6",
+            "progress": 50,
+            "isBarHighLighted": false
+          }
+        },
+        "twoPointers": {
+          "home": {
+            "title": "71,43%",
+            "subtitle": "5/7",
+            "progress": 71.43,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "33,33%",
+            "subtitle": "4/12",
+            "progress": 33.33,
+            "isBarHighLighted": false
+          }
+        },
+        "threePointers": {
+          "home": {
+            "title": "30,00%",
+            "subtitle": "3/10",
+            "progress": 30,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "16,67%",
+            "subtitle": "1/6",
+            "progress": 16.67,
+            "isBarHighLighted": false
+          }
+        },
+        "fieldGoals": {
+          "home": {
+            "title": "47,06%",
+            "subtitle": "8/17",
+            "progress": 47.06,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "27,78%",
+            "subtitle": "5/18",
+            "progress": 27.78,
+            "isBarHighLighted": false
+          }
+        },
+        "defensiveRebounds": {
+          "home": {
+            "title": "10",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "6",
+            "subtitle": null,
+            "progress": 54,
+            "isBarHighLighted": false
+          }
+        },
+        "offensiveRebounds": {
+          "home": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 45,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "rebounds": {
+          "home": {
+            "title": "12",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "10",
+            "subtitle": null,
+            "progress": 75,
+            "isBarHighLighted": false
+          }
+        },
+        "assists": {
+          "home": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "steals": {
+          "home": {
+            "title": "1",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "1",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          }
+        },
+        "turnovers": {
+          "home": {
+            "title": "3",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 60,
+            "isBarHighLighted": true
+          }
+        },
+        "personalFouls": {
+          "home": {
+            "title": "6",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 60,
+            "isBarHighLighted": true
+          }
+        },
+        "timeOuts": {
+          "home": {
+            "title": "1",
+            "subtitle": null,
+            "progress": 45,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "2",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "pointsOffTurnover": {
+          "home": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 50,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 50,
+            "isBarHighLighted": false
+          }
+        },
+        "paintPoints": {
+          "home": {
+            "title": "10",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "6",
+            "subtitle": null,
+            "progress": 54,
+            "isBarHighLighted": false
+          }
+        },
+        "secondChancePoints": {
+          "home": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 0,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "4",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        },
+        "fastBreakPoints": {
+          "home": {
+            "title": "6",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          },
+          "away": {
+            "title": "0",
+            "subtitle": null,
+            "progress": 0,
+            "isBarHighLighted": false
+          }
+        },
+        "benchPoints": {
+          "home": {
+            "title": "7",
+            "subtitle": null,
+            "progress": 78.75,
+            "isBarHighLighted": false
+          },
+          "away": {
+            "title": "8",
+            "subtitle": null,
+            "progress": 90,
+            "isBarHighLighted": true
+          }
+        }
+      }
+    }
+  ],
+  "matchFinished": true
+}

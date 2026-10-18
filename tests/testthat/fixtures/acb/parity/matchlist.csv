@@ -1,0 +1,4 @@
+match_id,round_type,round_id,round_number,group_id,subphase_id,subphase_number,week_id,status,is_on_half_time,current_quarter,home_score,away_score,start,home_wins,home_losses,away_wins,away_losses,home_team_id,home_club_id,home_team,home_team_abbr,away_team_id,away_club_id,away_team,away_team_abbr,competition_id,edition_id,season,is_selected_local,match_grouping
+105393,LR,6017,3,,,0,2989,FINALIZED,false,4,71,92,2026-10-10T16:00:00Z,1,2,2,1,4480,657,Leyma Coruña,COR,4474,16,Casademont Zaragoza,CAZ,1,91,2027,,round
+105394,LR,6017,3,,,0,2989,FINALIZED,false,4,92,84,2026-10-10T17:30:00Z,1,2,0,2,4477,14,Unicaja,UNI,4466,22,MoraBanc Andorra,MBA,1,91,2027,,round
+105395,LR,6017,3,,,0,2989,FINALIZED,false,4,115,92,2026-10-10T19:00:00Z,3,0,1,2,4464,25,Río Breogán,BRE,4470,591,FIATC Girona,GIR,1,91,2027,,round

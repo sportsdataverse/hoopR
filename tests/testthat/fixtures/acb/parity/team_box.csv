@@ -1,0 +1,21 @@
+match_id,edition_id,season,team_side,team_id,club_id,team,team_abbr,quarter,scope,points,free_throws_made,free_throws_attempted,two_pointers_made,two_pointers_attempted,three_pointers_made,three_pointers_attempted,assists,off_rebounds,def_rebounds,total_rebounds,steals,turnovers,blocks,received_blocks,dunks,personal_fouls,fouls_drawn,plus_minus,rating
+105401,91,2027,home,4467,2,Barça,BAR,0,total,89,19,24,26,42,6,26,16,10,35,45,3,13,4,3,3,23,24,15,101
+105401,91,2027,home,4467,2,Barça,BAR,0,team,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,1,total,19,2,2,7,14,1,3,2,2,7,9,0,3,2,0,1,4,4,-35,20
+105401,91,2027,home,4467,2,Barça,BAR,1,team,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,2,total,20,1,2,5,7,3,10,4,2,10,12,1,3,1,0,1,6,4,30,23
+105401,91,2027,home,4467,2,Barça,BAR,2,team,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,3,total,29,11,13,9,13,0,5,6,3,10,13,1,2,0,1,0,7,8,45,36
+105401,91,2027,home,4467,2,Barça,BAR,3,team,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,4,total,21,5,7,5,8,2,8,4,3,8,11,1,5,1,2,1,6,8,-25,22
+105401,91,2027,home,4467,2,Barça,BAR,4,team,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,total,86,13,19,26,46,7,31,18,12,25,37,9,7,3,4,2,24,23,-15,91
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,team,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,total,26,1,1,11,15,1,7,4,3,7,10,3,0,0,2,1,4,4,35,31
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,team,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,total,14,3,6,4,12,1,6,4,4,6,10,1,2,0,1,0,4,6,-30,12
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,team,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,total,20,6,8,4,10,2,8,3,3,7,10,1,3,1,0,0,8,7,-45,17
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,team,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,total,26,3,4,7,9,3,10,7,2,5,7,4,2,2,1,1,8,6,25,31
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,team,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

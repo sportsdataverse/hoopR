@@ -1,0 +1,7 @@
+stage,phase_id,subphase_id,home_team_id,home_club_id,home_team,home_team_abbr,away_team_id,away_club_id,away_team,away_team_abbr,home_wins,away_wins,finished,best_of,n_games,edition_id,season
+quarter_finals,111,293,4388,9,Real Madrid,RMB,4391,28,La Laguna Tenerife,LLT,1,2,true,3,3,90,2026
+quarter_finals,111,293,4393,12,UCAM Murcia,UCM,4386,2,Barça,BAR,1,2,true,3,3,90,2026
+quarter_finals,111,293,4397,13,Valencia Basket,VBC,4389,4,Surne Bilbao,SBB,2,0,true,3,2,90,2026
+semifinals,111,292,4386,2,Barça,BAR,4391,28,La Laguna Tenerife,LLT,3,0,true,5,3,90,2026
+semifinals,111,292,4397,13,Valencia Basket,VBC,4394,8,Asisa Joventut,JOV,3,0,true,5,3,90,2026
+final,111,291,4397,13,Valencia Basket,VBC,4386,2,Barça,BAR,3,1,true,5,3,90,2026

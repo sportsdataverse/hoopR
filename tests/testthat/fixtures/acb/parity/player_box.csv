@@ -1,0 +1,121 @@
+match_id,edition_id,season,team_side,team_id,club_id,team,team_abbr,quarter,player_id,player_name,first_name,last_name,shirt_number,game_role,on_court,play_time,seconds_played,is_starter,points,free_throws_made,free_throws_attempted,two_pointers_made,two_pointers_attempted,three_pointers_made,three_pointers_attempted,assists,off_rebounds,def_rebounds,total_rebounds,steals,turnovers,blocks,received_blocks,dunks,personal_fouls,fouls_drawn,plus_minus,rating
+105401,91,2027,home,4467,2,Barça,BAR,0,30003361,Kevin Punter,Kevin,Punter,0,Escolta,false,23:42,1422,true,13,1,2,3,3,2,2,4,1,1,2,0,4,0,0,0,2,1,17,13
+105401,91,2027,home,4467,2,Barça,BAR,0,30005378,Tyrese Martin,Tyrese,Martin,2,Alero,false,26:00,1560,true,10,0,0,2,6,2,6,2,3,10,13,1,1,0,1,0,3,1,12,14
+105401,91,2027,home,4467,2,Barça,BAR,0,30003340,Justin Robinson,Justin,Robinson,5,Base,false,22:31,1351,true,12,4,4,4,5,0,6,6,0,2,2,1,1,0,0,0,2,3,12,14
+105401,91,2027,home,4467,2,Barça,BAR,0,20212243,Olek Balcerowski,Aleksander,Balcerowski,22,Pívot,false,14:25,865,true,9,1,1,4,4,0,0,1,1,2,3,0,1,0,0,0,4,4,11,12
+105401,91,2027,home,4467,2,Barça,BAR,0,20212265,Joel Parra,Joel,Parra,44,Alero,false,20:36,1236,true,8,0,0,1,4,2,3,1,1,4,5,0,0,1,0,0,1,2,8,12
+105401,91,2027,home,4467,2,Barça,BAR,0,30005355,Umoja Gibson,Umoja,Gibson,1,Base,false,14:53,893,false,1,1,2,0,3,0,4,0,0,0,0,0,0,0,0,0,4,1,-8,-10
+105401,91,2027,home,4467,2,Barça,BAR,0,20209919,Darío Brizuela,Darío,Brizuela,8,Escolta,false,15:11,911,false,4,2,2,1,2,0,3,1,1,0,1,1,1,0,0,0,4,2,-7,0
+105401,91,2027,home,4467,2,Barça,BAR,0,30001332,Agustín Ubal,Agustín,Ubal,10,Escolta,false,14:53,893,false,7,1,2,3,3,0,0,0,0,4,4,0,0,0,0,1,0,1,-13,11
+105401,91,2027,home,4467,2,Barça,BAR,0,30005357,Olivier Nkamhoua,Olivier,Nkamhoua,13,Ala-pívot,false,08:44,524,false,6,2,2,2,2,0,0,0,0,1,1,0,1,0,0,1,1,1,-8,6
+105401,91,2027,home,4467,2,Barça,BAR,0,30000093,Juan Núñez,Juan,Núñez,17,Base,false,02:36,156,false,0,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,1,-1,0
+105401,91,2027,home,4467,2,Barça,BAR,0,30005377,Tosan Evbuomwan,Torisesan,Evbuomwan,20,Ala-pívot,false,19:24,1164,false,7,1,2,3,5,0,1,0,2,6,8,0,1,2,2,0,0,2,-5,12
+105401,91,2027,home,4467,2,Barça,BAR,0,30005356,Josh Nebo,Joshua,Nebo,32,Pívot,false,17:05,1025,false,12,6,7,3,4,0,0,1,1,3,4,0,2,1,0,1,2,5,-3,17
+105401,91,2027,home,4467,2,Barça,BAR,1,30003361,Kevin Punter,Kevin,Punter,0,Escolta,false,04:54,294,true,3,0,0,0,0,1,1,1,0,0,0,0,1,0,0,0,0,0,-3,3
+105401,91,2027,home,4467,2,Barça,BAR,1,30005378,Tyrese Martin,Tyrese,Martin,2,Alero,false,04:29,269,true,2,0,0,1,3,0,0,0,0,1,1,0,0,0,0,0,1,0,-1,0
+105401,91,2027,home,4467,2,Barça,BAR,1,30003340,Justin Robinson,Justin,Robinson,5,Base,false,04:29,269,true,0,0,0,0,1,0,0,0,0,1,1,0,1,0,0,0,0,1,-1,0
+105401,91,2027,home,4467,2,Barça,BAR,1,20212243,Olek Balcerowski,Aleksander,Balcerowski,22,Pívot,false,04:29,269,true,4,0,0,2,2,0,0,0,1,0,1,0,0,0,0,0,0,1,-1,6
+105401,91,2027,home,4467,2,Barça,BAR,1,20212265,Joel Parra,Joel,Parra,44,Alero,false,04:54,294,true,0,0,0,0,1,0,0,0,0,2,2,0,0,1,0,0,0,0,-3,2
+105401,91,2027,home,4467,2,Barça,BAR,1,30005355,Umoja Gibson,Umoja,Gibson,1,Base,false,02:55,175,false,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,-5,-2
+105401,91,2027,home,4467,2,Barça,BAR,1,20209919,Darío Brizuela,Darío,Brizuela,8,Escolta,false,05:06,306,false,2,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,2,0,-4,-1
+105401,91,2027,home,4467,2,Barça,BAR,1,30001332,Agustín Ubal,Agustín,Ubal,10,Escolta,false,05:31,331,false,2,0,0,1,1,0,0,0,0,2,2,0,0,0,0,1,0,0,-6,4
+105401,91,2027,home,4467,2,Barça,BAR,1,30005357,Olivier Nkamhoua,Olivier,Nkamhoua,13,Ala-pívot,false,02:36,156,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1,0
+105401,91,2027,home,4467,2,Barça,BAR,1,30000093,Juan Núñez,Juan,Núñez,17,Base,false,02:36,156,false,0,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,1,-1,0
+105401,91,2027,home,4467,2,Barça,BAR,1,30005377,Tosan Evbuomwan,Torisesan,Evbuomwan,20,Ala-pívot,false,05:06,306,false,4,0,0,2,2,0,0,0,0,0,0,0,0,1,0,0,0,0,-4,5
+105401,91,2027,home,4467,2,Barça,BAR,1,30005356,Josh Nebo,Joshua,Nebo,32,Pívot,false,02:55,175,false,2,2,2,0,0,0,0,1,1,0,1,0,1,0,0,0,1,1,-5,3
+105401,91,2027,home,4467,2,Barça,BAR,2,30003361,Kevin Punter,Kevin,Punter,0,Escolta,false,07:32,452,true,5,0,0,1,1,1,1,2,1,1,2,0,2,0,0,0,1,0,11,6
+105401,91,2027,home,4467,2,Barça,BAR,2,30005378,Tyrese Martin,Tyrese,Martin,2,Alero,false,07:21,441,true,3,0,0,0,1,1,3,1,1,3,4,0,0,0,0,0,0,1,9,6
+105401,91,2027,home,4467,2,Barça,BAR,2,30003340,Justin Robinson,Justin,Robinson,5,Base,false,05:18,318,true,2,0,0,1,1,0,2,0,0,1,1,1,0,0,0,0,1,0,9,1
+105401,91,2027,home,4467,2,Barça,BAR,2,20212243,Olek Balcerowski,Aleksander,Balcerowski,22,Pívot,false,03:50,230,true,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,1,1,9,2
+105401,91,2027,home,4467,2,Barça,BAR,2,20212265,Joel Parra,Joel,Parra,44,Alero,false,04:43,283,true,3,0,0,0,1,1,1,0,0,2,2,0,0,0,0,0,1,0,9,3
+105401,91,2027,home,4467,2,Barça,BAR,2,30005355,Umoja Gibson,Umoja,Gibson,1,Base,false,04:42,282,false,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,2,0,-3,-5
+105401,91,2027,home,4467,2,Barça,BAR,2,20209919,Darío Brizuela,Darío,Brizuela,8,Escolta,false,02:32,152,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+105401,91,2027,home,4467,2,Barça,BAR,2,30001332,Agustín Ubal,Agustín,Ubal,10,Escolta,false,02:21,141,false,2,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,-5,3
+105401,91,2027,home,4467,2,Barça,BAR,2,30005357,Olivier Nkamhoua,Olivier,Nkamhoua,13,Ala-pívot,false,02:46,166,false,2,0,0,1,1,0,0,0,0,1,1,0,1,0,0,1,0,0,-3,2
+105401,91,2027,home,4467,2,Barça,BAR,2,30000093,Juan Núñez,Juan,Núñez,17,Base,false,00:00,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,2,30005377,Tosan Evbuomwan,Torisesan,Evbuomwan,20,Ala-pívot,false,05:17,317,false,3,1,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,-3,3
+105401,91,2027,home,4467,2,Barça,BAR,2,30005356,Josh Nebo,Joshua,Nebo,32,Pívot,false,03:38,218,false,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,-3,1
+105401,91,2027,home,4467,2,Barça,BAR,3,30003361,Kevin Punter,Kevin,Punter,0,Escolta,false,04:30,270,true,2,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,10,1
+105401,91,2027,home,4467,2,Barça,BAR,3,30005378,Tyrese Martin,Tyrese,Martin,2,Alero,false,06:13,373,true,2,0,0,1,1,0,0,0,0,2,2,1,0,0,0,0,0,0,7,5
+105401,91,2027,home,4467,2,Barça,BAR,3,30003340,Justin Robinson,Justin,Robinson,5,Base,false,06:27,387,true,6,4,4,1,1,0,1,4,0,0,0,0,0,0,0,0,1,2,7,10
+105401,91,2027,home,4467,2,Barça,BAR,3,20212243,Olek Balcerowski,Aleksander,Balcerowski,22,Pívot,false,01:58,118,true,2,0,0,1,1,0,0,0,0,1,1,0,1,0,0,0,2,0,5,0
+105401,91,2027,home,4467,2,Barça,BAR,3,20212265,Joel Parra,Joel,Parra,44,Alero,false,06:02,362,true,2,0,0,1,2,0,0,1,0,0,0,0,0,0,0,0,0,1,3,3
+105401,91,2027,home,4467,2,Barça,BAR,3,30005355,Umoja Gibson,Umoja,Gibson,1,Base,false,03:33,213,false,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,2,-3
+105401,91,2027,home,4467,2,Barça,BAR,3,20209919,Darío Brizuela,Darío,Brizuela,8,Escolta,false,05:30,330,false,2,2,2,0,1,0,2,1,1,0,1,0,0,0,0,0,1,1,-1,1
+105401,91,2027,home,4467,2,Barça,BAR,3,30001332,Agustín Ubal,Agustín,Ubal,10,Escolta,false,03:47,227,false,3,1,2,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,2,4
+105401,91,2027,home,4467,2,Barça,BAR,3,30005357,Olivier Nkamhoua,Olivier,Nkamhoua,13,Ala-pívot,false,03:22,202,false,4,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,-4,4
+105401,91,2027,home,4467,2,Barça,BAR,3,30000093,Juan Núñez,Juan,Núñez,17,Base,false,00:00,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,3,30005377,Tosan Evbuomwan,Torisesan,Evbuomwan,20,Ala-pívot,false,03:58,238,false,0,0,0,0,1,0,1,0,2,3,5,0,0,0,1,0,0,0,6,2
+105401,91,2027,home,4467,2,Barça,BAR,3,30005356,Josh Nebo,Joshua,Nebo,32,Pívot,false,04:40,280,false,6,2,3,2,2,0,0,0,0,2,2,0,0,0,0,0,0,2,8,9
+105401,91,2027,home,4467,2,Barça,BAR,4,30003361,Kevin Punter,Kevin,Punter,0,Escolta,false,06:46,406,true,3,1,2,1,1,0,0,1,0,0,0,0,1,0,0,0,0,1,-1,3
+105401,91,2027,home,4467,2,Barça,BAR,4,30005378,Tyrese Martin,Tyrese,Martin,2,Alero,false,07:57,477,true,3,0,0,0,1,1,3,1,2,4,6,0,1,0,1,0,2,0,-3,3
+105401,91,2027,home,4467,2,Barça,BAR,4,30003340,Justin Robinson,Justin,Robinson,5,Base,false,06:17,377,true,4,0,0,2,2,0,3,2,0,0,0,0,0,0,0,0,0,0,-3,3
+105401,91,2027,home,4467,2,Barça,BAR,4,20212243,Olek Balcerowski,Aleksander,Balcerowski,22,Pívot,false,04:08,248,true,3,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,2,-2,4
+105401,91,2027,home,4467,2,Barça,BAR,4,20212265,Joel Parra,Joel,Parra,44,Alero,false,04:57,297,true,3,0,0,0,0,1,2,0,1,0,1,0,0,0,0,0,0,1,-1,4
+105401,91,2027,home,4467,2,Barça,BAR,4,30005355,Umoja Gibson,Umoja,Gibson,1,Base,false,03:43,223,false,1,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,-2,0
+105401,91,2027,home,4467,2,Barça,BAR,4,20209919,Darío Brizuela,Darío,Brizuela,8,Escolta,false,02:03,123,false,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,-2,-1
+105401,91,2027,home,4467,2,Barça,BAR,4,30001332,Agustín Ubal,Agustín,Ubal,10,Escolta,false,03:14,194,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-4,0
+105401,91,2027,home,4467,2,Barça,BAR,4,30005357,Olivier Nkamhoua,Olivier,Nkamhoua,13,Ala-pívot,false,00:00,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,4,30000093,Juan Núñez,Juan,Núñez,17,Base,false,00:00,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,home,4467,2,Barça,BAR,4,30005377,Tosan Evbuomwan,Torisesan,Evbuomwan,20,Ala-pívot,false,05:03,303,false,0,0,0,0,1,0,0,0,0,3,3,0,1,1,1,0,0,1,-4,2
+105401,91,2027,home,4467,2,Barça,BAR,4,30005356,Josh Nebo,Joshua,Nebo,32,Pívot,false,05:52,352,false,4,2,2,1,2,0,0,0,0,1,1,0,1,0,0,1,1,2,-3,4
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30005376,TJ Shorts,Timoti,Shorts,0,Base,false,22:59,1379,true,19,7,8,6,9,0,2,4,0,1,1,0,0,0,0,0,4,8,-10,22
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30001981,Kameron Taylor,Kameron,Taylor,1,Alero,false,23:56,1436,true,4,0,0,2,4,0,4,5,2,4,6,1,2,0,0,0,3,1,-12,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30001979,Dylan Osetkowski,Dylan,Osetkowski,8,Ala-pívot,false,21:43,1303,true,3,0,0,0,2,1,3,1,1,3,4,1,1,1,1,0,4,0,-6,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30005406,Armoni Brooks,Armoni,Brooks,12,Escolta,false,21:53,1313,true,11,0,0,1,2,3,7,1,1,3,4,2,1,0,1,0,1,3,-15,13
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30003973,Neal Sako,Neal,Sako,13,Pívot,false,12:56,776,true,6,0,2,3,5,0,0,0,1,3,4,1,2,1,0,1,2,2,-7,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,20210392,Josep Puerto,Josep,Puerto,2,Escolta,false,16:04,964,false,5,0,0,1,1,1,2,3,1,6,7,1,0,0,0,0,1,1,9,15
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30002724,Nate Reuvers,Nathan,Reuvers,3,Ala-pívot,false,12:36,756,false,8,1,2,2,3,1,3,0,1,2,3,0,0,0,1,1,1,2,0,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,20213210,Mario Saint-Supery,Mario,Saint-Supery,5,Base,false,03:06,186,false,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,-2,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30005335,Álvaro Cárdenas,Álvaro,Cárdenas,7,Base,false,15:33,933,false,4,0,0,2,3,0,1,1,2,0,2,1,0,0,0,0,1,2,12,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30003991,Omari Moore,Omari,Moore,10,Base,false,16:29,989,false,9,1,1,4,7,0,2,0,1,2,3,0,1,0,0,0,2,1,9,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,20202101,Nikola Mirotic,Nikola,Mirotic,33,Ala-pívot,false,19:41,1181,false,10,1,2,3,6,1,7,1,1,1,2,0,0,0,1,0,2,1,1,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,0,30000076,Jasiel Rivero,Jasiel,Rivero,41,Ala-pívot,false,13:04,784,false,7,3,4,2,4,0,0,1,1,0,1,1,0,1,0,0,3,2,6,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30005376,TJ Shorts,Timoti,Shorts,0,Base,false,04:54,294,true,6,0,0,3,3,0,1,1,0,0,0,0,0,0,0,0,1,0,3,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30001981,Kameron Taylor,Kameron,Taylor,1,Alero,false,05:31,331,true,2,0,0,1,1,0,2,1,0,0,0,0,0,0,0,0,0,1,3,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30001979,Dylan Osetkowski,Dylan,Osetkowski,8,Ala-pívot,false,04:54,294,true,0,0,0,0,0,0,0,0,0,2,2,1,0,0,0,0,0,0,3,3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30005406,Armoni Brooks,Armoni,Brooks,12,Escolta,false,04:29,269,true,0,0,0,0,1,0,0,0,0,2,2,1,0,0,1,0,0,1,1,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30003973,Neal Sako,Neal,Sako,13,Pívot,false,04:29,269,true,4,0,0,2,3,0,0,0,0,0,0,0,0,0,0,1,1,0,1,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,20210392,Josep Puerto,Josep,Puerto,2,Escolta,false,04:29,269,false,2,0,0,1,1,0,0,1,0,2,2,1,0,0,0,0,1,1,4,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30002724,Nate Reuvers,Nathan,Reuvers,3,Ala-pívot,false,02:39,159,false,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,0,0,3,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,20213210,Mario Saint-Supery,Mario,Saint-Supery,5,Base,false,02:36,156,false,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30005335,Álvaro Cárdenas,Álvaro,Cárdenas,7,Base,false,05:06,306,false,4,0,0,2,2,0,0,0,2,0,2,0,0,0,0,0,0,0,4,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30003991,Omari Moore,Omari,Moore,10,Base,false,02:55,175,false,3,1,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,1,6,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,20202101,Nikola Mirotic,Nikola,Mirotic,33,Ala-pívot,false,05:06,306,false,5,0,0,1,3,1,3,0,0,0,0,0,0,0,1,0,0,0,4,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,1,30000076,Jasiel Rivero,Jasiel,Rivero,41,Ala-pívot,false,02:52,172,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,3,-1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30005376,TJ Shorts,Timoti,Shorts,0,Base,false,06:28,388,true,3,1,2,1,3,0,0,1,0,1,1,0,0,0,0,0,0,1,-8,3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30001981,Kameron Taylor,Kameron,Taylor,1,Alero,false,05:15,315,true,0,0,0,0,0,0,1,1,1,2,3,0,0,0,0,0,1,0,-8,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30001979,Dylan Osetkowski,Dylan,Osetkowski,8,Ala-pívot,false,06:28,388,true,0,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0,1,0,-8,-1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30005406,Armoni Brooks,Armoni,Brooks,12,Escolta,false,05:40,340,true,3,0,0,0,0,1,2,0,0,0,0,0,1,0,0,0,1,0,-6,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30003973,Neal Sako,Neal,Sako,13,Pívot,false,03:50,230,true,0,0,2,0,1,0,0,0,0,0,0,0,1,0,0,0,1,2,-9,-3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,20210392,Josep Puerto,Josep,Puerto,2,Escolta,false,04:45,285,false,0,0,0,0,0,0,0,1,1,1,2,0,0,0,0,0,0,0,2,3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30002724,Nate Reuvers,Nathan,Reuvers,3,Ala-pívot,false,03:38,218,false,2,0,0,1,2,0,0,0,1,0,1,0,0,0,1,0,0,1,3,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,20213210,Mario Saint-Supery,Mario,Saint-Supery,5,Base,false,00:18,18,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-2,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30005335,Álvaro Cárdenas,Álvaro,Cárdenas,7,Base,false,03:32,212,false,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,2,3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30003991,Omari Moore,Omari,Moore,10,Base,false,04:02,242,false,0,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,2,-3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,20202101,Nikola Mirotic,Nikola,Mirotic,33,Ala-pívot,false,03:32,212,false,2,0,0,1,2,0,1,0,0,1,1,0,0,0,0,0,0,0,2,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,2,30000076,Jasiel Rivero,Jasiel,Rivero,41,Ala-pívot,false,02:32,152,false,4,2,2,1,2,0,0,0,1,0,1,0,0,0,0,0,0,1,0,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30005376,TJ Shorts,Timoti,Shorts,0,Base,false,04:55,295,true,4,4,4,0,1,0,0,1,0,0,0,0,0,0,0,0,1,4,-6,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30001981,Kameron Taylor,Kameron,Taylor,1,Alero,false,05:46,346,true,0,0,0,0,1,0,0,0,1,2,3,0,1,0,0,0,1,0,-8,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30002724,Nate Reuvers,Nathan,Reuvers,3,Ala-pívot,false,03:02,182,true,1,1,2,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,-7,-1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30005406,Armoni Brooks,Armoni,Brooks,12,Escolta,false,06:23,383,true,5,0,0,1,1,1,3,0,1,1,2,0,0,0,0,0,0,1,-11,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,20202101,Nikola Mirotic,Nikola,Mirotic,33,Ala-pívot,false,06:13,373,true,0,0,0,0,0,0,2,1,1,0,1,0,0,0,0,0,1,0,-9,-1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,20210392,Josep Puerto,Josep,Puerto,2,Escolta,false,04:14,254,false,3,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,0,-1,4
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,20213210,Mario Saint-Supery,Mario,Saint-Supery,5,Base,false,00:12,12,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30005335,Álvaro Cárdenas,Álvaro,Cárdenas,7,Base,false,03:37,217,false,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,-1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30001979,Dylan Osetkowski,Dylan,Osetkowski,8,Ala-pívot,false,03:35,215,false,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,2,0,-2,-4
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30003991,Omari Moore,Omari,Moore,10,Base,false,04:53,293,false,4,0,0,2,3,0,1,0,0,1,1,0,1,0,0,0,1,0,-3,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30003973,Neal Sako,Neal,Sako,13,Pívot,false,02:44,164,false,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,-1,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,3,30000076,Jasiel Rivero,Jasiel,Rivero,41,Ala-pívot,false,04:26,266,false,3,1,2,1,2,0,0,1,0,0,0,0,0,1,0,0,1,1,1,3
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30005376,TJ Shorts,Timoti,Shorts,0,Base,false,06:42,402,true,6,2,2,2,2,0,1,1,0,0,0,0,0,0,0,0,2,3,1,7
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30001981,Kameron Taylor,Kameron,Taylor,1,Alero,false,07:24,444,true,2,0,0,1,2,0,1,3,0,0,0,1,1,0,0,0,1,0,1,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30002724,Nate Reuvers,Nathan,Reuvers,3,Ala-pívot,false,03:17,197,true,5,0,0,1,1,1,1,0,0,1,1,0,0,0,0,1,0,0,1,6
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30001979,Dylan Osetkowski,Dylan,Osetkowski,8,Ala-pívot,false,06:46,406,true,3,0,0,0,1,1,2,1,1,0,1,0,0,1,1,0,1,0,1,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30005406,Armoni Brooks,Armoni,Brooks,12,Escolta,false,05:21,321,true,3,0,0,0,0,1,2,1,0,0,0,1,0,0,0,0,0,1,1,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,20210392,Josep Puerto,Josep,Puerto,2,Escolta,false,02:36,156,false,0,0,0,0,0,0,1,1,0,2,2,0,0,0,0,0,0,0,4,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,20213210,Mario Saint-Supery,Mario,Saint-Supery,5,Base,false,00:00,0,false,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30005335,Álvaro Cárdenas,Álvaro,Cárdenas,7,Base,false,03:18,198,false,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,4,-1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30003991,Omari Moore,Omari,Moore,10,Base,false,04:39,279,false,2,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,1,0,4,2
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30003973,Neal Sako,Neal,Sako,13,Pívot,false,01:53,113,false,2,0,0,1,1,0,0,0,1,1,2,1,1,1,0,0,0,0,2,5
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,20202101,Nikola Mirotic,Nikola,Mirotic,33,Ala-pívot,false,04:50,290,false,3,1,2,1,1,0,1,0,0,0,0,0,0,0,0,0,1,1,4,1
+105401,91,2027,away,4472,13,Valencia Basket,VBC,4,30000076,Jasiel Rivero,Jasiel,Rivero,41,Ala-pívot,false,03:14,194,false,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,2,0

@@ -1,0 +1,133 @@
+{
+  "clubData": {
+    "team": {
+      "id": 4467,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 2,
+      "fullName": "Barça",
+      "shortName": "Barça",
+      "abbreviatedName": "BAR",
+      "primaryColorHex": "#154284",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+      "logoAlt": "Barça logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    "stadiumPhotoUrl": "https://static.acb.com/media/PRO/00/00/45/98/26/0000459826_03.jpg",
+    "stadiumName": "Palau Blaugrana",
+    "stadiumAddress": "C/ Arístides Maillol, s/n",
+    "stadiumCapacity": 7786,
+    "presidentName": null,
+    "foundationYear": 1899,
+    "contactPhone": "REDACTED",
+    "contactEmail": "REDACTED",
+    "rosterPhotoUrl": null,
+    "webUrl": "https://www.fcbarcelona.es/es/baloncesto",
+    "ticketingUrl": "https://www.fcbarcelona.es/es/entradas/baloncesto",
+    "merchanUrl": "https://store.fcbarcelona.com",
+    "instagramUrl": "FCBbasket",
+    "twitterUrl": "FCBbasket",
+    "facebookUrl": "FCBbasket",
+    "youtubeUrl": null,
+    "tikTokUrl": null,
+    "validated": true,
+    "temporaryRoster": false
+  },
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": [
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      }
+    ],
+    "seasons": [],
+    "rounds": [],
+    "weeks": [],
+    "phases": null
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 91
+  }
+}

@@ -1,0 +1,2 @@
+competition_id,edition_id,season,round_id,round_number,subphase_id,subphase_number,week_id,match_id,home_team_id,away_team_id,home_score,away_score,start,status,is_on_half_time,current_quarter,home_club_id,home_team,home_team_abbr,away_club_id,away_team,away_team_abbr,ticketing_link,broadcasters
+2,90,2026,5995,3,291,,2982,105318,4457,4462,89,100,2026-02-22T18:00:00Z,FINALIZED,false,4,9,Real Madrid,RMB,3,Kosner Baskonia,BKN,https://www.realmadrid.com/entradas/baloncesto,

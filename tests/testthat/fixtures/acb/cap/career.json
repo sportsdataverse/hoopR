@@ -1,0 +1,138 @@
+{
+  "trophies": [
+    {
+      "competitionId": 3,
+      "timesChampion": 6,
+      "timesRunnerUp": 2
+    },
+    {
+      "competitionId": 2,
+      "timesChampion": 2,
+      "timesRunnerUp": 6
+    },
+    {
+      "competitionId": 1,
+      "timesChampion": 5,
+      "timesRunnerUp": 2
+    }
+  ],
+  "stints": [
+    {
+      "initialYear": 2017,
+      "endYear": 2027,
+      "team": {
+        "id": 4476,
+        "competitionId": 1,
+        "editionId": 91,
+        "clubId": 9,
+        "fullName": "Real Madrid",
+        "shortName": "Real Madrid",
+        "abbreviatedName": "RMB",
+        "primaryColorHex": "#ffffff",
+        "textColorHex": "#000000",
+        "logo": "https://static.acb.com/img/www/clubes2024/2324RealMadrid_Logoweb.png",
+        "logoAlt": "Real Madrid logo",
+        "secondaryLogo": "https://static.acb.com/img/www/clubes2023/RealMadridLogo202223.png",
+        "contrastRequired": false,
+        "shirtColor": null,
+        "shirtTextColor": null
+      },
+      "editions": [
+        {
+          "editionId": 90,
+          "initialYear": 2025,
+          "endYear": 2026,
+          "trophies": [
+            {
+              "competitionId": 3,
+              "editionId": 90,
+              "isChampion": false,
+              "isRunnerUp": true
+            },
+            {
+              "competitionId": 2,
+              "editionId": 90,
+              "isChampion": false,
+              "isRunnerUp": true
+            }
+          ]
+        },
+        {
+          "editionId": 89,
+          "initialYear": 2024,
+          "endYear": 2025,
+          "trophies": [
+            {
+              "competitionId": 3,
+              "editionId": 89,
+              "isChampion": false,
+              "isRunnerUp": true
+            },
+            {
+              "competitionId": 1,
+              "editionId": 89,
+              "isChampion": true,
+              "isRunnerUp": false
+            },
+            {
+              "competitionId": 2,
+              "editionId": 89,
+              "isChampion": false,
+              "isRunnerUp": true
+            }
+          ]
+        },
+        {
+          "editionId": 88,
+          "initialYear": 2023,
+          "endYear": 2024,
+          "trophies": [
+            {
+              "competitionId": 3,
+              "editionId": 88,
+              "isChampion": true,
+              "isRunnerUp": false
+            },
+            {
+              "competitionId": 2,
+              "editionId": 88,
+              "isChampion": true,
+              "isRunnerUp": false
+            },
+            {
+              "competitionId": 1,
+              "editionId": 88,
+              "isChampion": true,
+              "isRunnerUp": false
+            }
+          ]
+        }
+      ],
+      "hasNoValidatedData": false
+    },
+    {
+      "initialYear": 2013,
+      "endYear": 2015,
+      "team": {
+        "id": 2997,
+        "competitionId": 2,
+        "editionId": 79,
+        "clubId": 5,
+        "fullName": "Herbalife Gran Canaria",
+        "shortName": "Herbalife GC",
+        "abbreviatedName": "HGC",
+        "primaryColorHex": "#ffb718",
+        "textColorHex": "#000000",
+        "logo": "https://static.acb.com/logos/1718/gran_canaria_00.png",
+        "logoAlt": "Herbalife Gran Canaria logo",
+        "secondaryLogo": null,
+        "contrastRequired": false,
+        "shirtColor": null,
+        "shirtTextColor": null
+      },
+      "editions": [],
+      "hasNoValidatedData": false
+    }
+  ],
+  "hasNoValidatedData": false
+}

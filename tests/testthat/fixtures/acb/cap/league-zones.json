@@ -1,0 +1,25 @@
+{
+  "competitionId": 1,
+  "editionId": 91,
+  "phaseId": null,
+  "zones": [
+    {
+      "zone": "corner_three_left",
+      "attempts": 161,
+      "made": 58,
+      "pointsScored": 174
+    },
+    {
+      "zone": "corner_three_right",
+      "attempts": 138,
+      "made": 56,
+      "pointsScored": 168
+    },
+    {
+      "zone": "mid_range_center",
+      "attempts": 66,
+      "made": 32,
+      "pointsScored": 64
+    }
+  ]
+}

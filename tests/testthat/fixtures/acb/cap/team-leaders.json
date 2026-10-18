@@ -1,0 +1,4587 @@
+{
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": [
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      }
+    ],
+    "seasons": [],
+    "rounds": [],
+    "weeks": [],
+    "phases": null
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 91
+  },
+  "leaders": {
+    "playedMatches": [
+      {
+        "value": 689,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 422,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 376,
+        "player": {
+          "id": 20200738,
+          "firstInitialAndLastName": "A. Jiménez",
+          "firstName": "Andrés",
+          "lastName": "Jiménez",
+          "nickname": "Andrés Jiménez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/9798AndresJimenez.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Jiménez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 62,
+          "nicknameFirstName": "Andrés",
+          "nicknameLastName": "Jiménez"
+        },
+        "team": null
+      }
+    ],
+    "rating": [
+      {
+        "value": 7842,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 5571,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 4843,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      }
+    ],
+    "points": [
+      {
+        "value": 8318,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 7029,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 4516,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      }
+    ],
+    "rebounds": [
+      {
+        "value": 2113,
+        "player": {
+          "id": 20201436,
+          "firstInitialAndLastName": "R. Dueñas",
+          "firstName": "Roberto",
+          "lastName": "Dueñas",
+          "nickname": "Roberto Dueñas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2022/DuenasCara.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "R. Dueñas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Roberto",
+          "nicknameLastName": "Dueñas"
+        },
+        "team": null
+      },
+      {
+        "value": 1967,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      },
+      {
+        "value": 1394,
+        "player": {
+          "id": 20200742,
+          "firstInitialAndLastName": "A. Norris",
+          "firstName": "Audie",
+          "lastName": "Norris",
+          "nickname": "Audie Norris",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/7/5b/27/228609pre27105.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Norris photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 57,
+          "nicknameFirstName": "Audie",
+          "nicknameLastName": "Norris"
+        },
+        "team": null
+      }
+    ],
+    "assists": [
+      {
+        "value": 1637,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 925,
+        "player": {
+          "id": 20202163,
+          "firstInitialAndLastName": "T. Satoransky",
+          "firstName": "Tomas",
+          "lastName": "Satoransky",
+          "nickname": "Tomas Satoransky",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/82/97/79/0000829779_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/82/97/79/0000829779_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Satoransky photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 90,
+          "nicknameFirstName": "Tomas",
+          "nicknameLastName": "Satoransky"
+        },
+        "team": null
+      },
+      {
+        "value": 774,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      }
+    ],
+    "steals": [
+      {
+        "value": 618,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      },
+      {
+        "value": 592,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 550,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      }
+    ],
+    "blocks": [
+      {
+        "value": 350,
+        "player": {
+          "id": 20200648,
+          "firstInitialAndLastName": "F. Vázquez",
+          "firstName": "Francisco",
+          "lastName": "Vázquez",
+          "nickname": "Fran Vázquez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://www.acb.com/fotos_cara/jugadores/JA9SLACB56.jpg",
+          "headshotImageNoBackgroundUrl": "https://www.acb.com/fotos_cara/jugadores/JA9SLACB56_transparent.webp",
+          "headshotImageAlt": "F. Vázquez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 76,
+          "nicknameFirstName": "Fran",
+          "nicknameLastName": "Vázquez"
+        },
+        "team": null
+      },
+      {
+        "value": 266,
+        "player": {
+          "id": 20201436,
+          "firstInitialAndLastName": "R. Dueñas",
+          "firstName": "Roberto",
+          "lastName": "Dueñas",
+          "nickname": "Roberto Dueñas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2022/DuenasCara.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "R. Dueñas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Roberto",
+          "nicknameLastName": "Dueñas"
+        },
+        "team": null
+      },
+      {
+        "value": 148,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      }
+    ],
+    "timePlayed": [
+      {
+        "value": 16031.35,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 11772.67,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 10513.8,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      }
+    ],
+    "threePointer": [
+      {
+        "value": 1179,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 627,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 474,
+        "player": {
+          "id": 20209223,
+          "firstInitialAndLastName": "A. Abrines",
+          "firstName": "Alejandro",
+          "lastName": "Abrines",
+          "nickname": "Álex Abrines",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/56/54/32/0000565432_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/56/54/32/0000565432_5-6_01_transparent.webp",
+          "headshotImageAlt": "A. Abrines photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 89,
+          "nicknameFirstName": "Álex",
+          "nicknameLastName": "Abrines"
+        },
+        "team": null
+      }
+    ],
+    "twoPointer": [
+      {
+        "value": 1938,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 1594,
+        "player": {
+          "id": 20200738,
+          "firstInitialAndLastName": "A. Jiménez",
+          "firstName": "Andrés",
+          "lastName": "Jiménez",
+          "nickname": "Andrés Jiménez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/9798AndresJimenez.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Jiménez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 62,
+          "nicknameFirstName": "Andrés",
+          "nicknameLastName": "Jiménez"
+        },
+        "team": null
+      },
+      {
+        "value": 1522,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      }
+    ],
+    "freeThrows": [
+      {
+        "value": 1737,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 1272,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      },
+      {
+        "value": 825,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      }
+    ],
+    "defensiveRebounds": [
+      {
+        "value": 1389,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      },
+      {
+        "value": 1293,
+        "player": {
+          "id": 20201436,
+          "firstInitialAndLastName": "R. Dueñas",
+          "firstName": "Roberto",
+          "lastName": "Dueñas",
+          "nickname": "Roberto Dueñas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2022/DuenasCara.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "R. Dueñas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Roberto",
+          "nicknameLastName": "Dueñas"
+        },
+        "team": null
+      },
+      {
+        "value": 997,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      }
+    ],
+    "offensiveRebounds": [
+      {
+        "value": 820,
+        "player": {
+          "id": 20201436,
+          "firstInitialAndLastName": "R. Dueñas",
+          "firstName": "Roberto",
+          "lastName": "Dueñas",
+          "nickname": "Roberto Dueñas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2022/DuenasCara.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "R. Dueñas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Roberto",
+          "nicknameLastName": "Dueñas"
+        },
+        "team": null
+      },
+      {
+        "value": 578,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      },
+      {
+        "value": 493,
+        "player": {
+          "id": 20200738,
+          "firstInitialAndLastName": "A. Jiménez",
+          "firstName": "Andrés",
+          "lastName": "Jiménez",
+          "nickname": "Andrés Jiménez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/9798AndresJimenez.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Jiménez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 62,
+          "nicknameFirstName": "Andrés",
+          "nicknameLastName": "Jiménez"
+        },
+        "team": null
+      }
+    ],
+    "receivedFouls": [
+      {
+        "value": 2267,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 1069,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      },
+      {
+        "value": 707,
+        "player": {
+          "id": 20201382,
+          "firstInitialAndLastName": "A. Karnisovas",
+          "firstName": "Arturas",
+          "lastName": "Karnisovas",
+          "nickname": "Arturas Karnisovas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/0102ArturasKarnisovas.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Karnisovas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 66,
+          "nicknameFirstName": "Arturas",
+          "nicknameLastName": "Karnisovas"
+        },
+        "team": null
+      }
+    ],
+    "committedFouls": [
+      {
+        "value": 1097,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      },
+      {
+        "value": 1046,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 986,
+        "player": {
+          "id": 20200738,
+          "firstInitialAndLastName": "A. Jiménez",
+          "firstName": "Andrés",
+          "lastName": "Jiménez",
+          "nickname": "Andrés Jiménez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/9798AndresJimenez.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Jiménez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 62,
+          "nicknameFirstName": "Andrés",
+          "nicknameLastName": "Jiménez"
+        },
+        "team": null
+      }
+    ],
+    "dunks": [
+      {
+        "value": 333,
+        "player": {
+          "id": 20200648,
+          "firstInitialAndLastName": "F. Vázquez",
+          "firstName": "Francisco",
+          "lastName": "Vázquez",
+          "nickname": "Fran Vázquez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://www.acb.com/fotos_cara/jugadores/JA9SLACB56.jpg",
+          "headshotImageNoBackgroundUrl": "https://www.acb.com/fotos_cara/jugadores/JA9SLACB56_transparent.webp",
+          "headshotImageAlt": "F. Vázquez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 76,
+          "nicknameFirstName": "Fran",
+          "nicknameLastName": "Vázquez"
+        },
+        "team": null
+      },
+      {
+        "value": 226,
+        "player": {
+          "id": 20201436,
+          "firstInitialAndLastName": "R. Dueñas",
+          "firstName": "Roberto",
+          "lastName": "Dueñas",
+          "nickname": "Roberto Dueñas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2022/DuenasCara.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "R. Dueñas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Roberto",
+          "nicknameLastName": "Dueñas"
+        },
+        "team": null
+      },
+      {
+        "value": 189,
+        "player": {
+          "id": 20202172,
+          "firstInitialAndLastName": "A. Tomic",
+          "firstName": "Ante",
+          "lastName": "Tomic",
+          "nickname": "Ante Tomic",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/28/2b/33/156013pre7389.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/28/2b/33/156013pre7389_transparent.webp",
+          "headshotImageAlt": "A. Tomic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 84,
+          "nicknameFirstName": "Ante",
+          "nicknameLastName": "Tomic"
+        },
+        "team": null
+      }
+    ],
+    "turnovers": [
+      {
+        "value": 1065,
+        "player": {
+          "id": 20200515,
+          "firstInitialAndLastName": "J.C. Navarro",
+          "firstName": "Juan Carlos",
+          "lastName": "Navarro",
+          "nickname": "Juan Carlos Navarro",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/02/46/20/0000024620_5-6_01_transparent.webp",
+          "headshotImageAlt": "J.C. Navarro photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 82,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Carlos Navarro"
+        },
+        "team": null
+      },
+      {
+        "value": 556,
+        "player": {
+          "id": 20200738,
+          "firstInitialAndLastName": "A. Jiménez",
+          "firstName": "Andrés",
+          "lastName": "Jiménez",
+          "nickname": "Andrés Jiménez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/9798AndresJimenez.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Jiménez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 62,
+          "nicknameFirstName": "Andrés",
+          "nicknameLastName": "Jiménez"
+        },
+        "team": null
+      },
+      {
+        "value": 555,
+        "player": {
+          "id": 20200741,
+          "firstInitialAndLastName": "Epi",
+          "firstName": "Juan",
+          "lastName": "San Epifanio",
+          "nickname": "Epi",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9495Epi_transparent.webp",
+          "headshotImageAlt": "Epi photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 59,
+          "nicknameFirstName": "Epi",
+          "nicknameLastName": null
+        },
+        "team": null
+      }
+    ],
+    "avgRating": [
+      {
+        "value": 19.33,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 19.03,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      },
+      {
+        "value": 18.97,
+        "player": {
+          "id": 20201157,
+          "firstInitialAndLastName": "T. Massenburg",
+          "firstName": "Tony",
+          "lastName": "Massenburg",
+          "nickname": "Tony Massenburg",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "T. Massenburg photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 58,
+          "nicknameFirstName": "Tony",
+          "nicknameLastName": "Massenburg"
+        },
+        "team": null
+      }
+    ],
+    "avgPoints": [
+      {
+        "value": 18.86,
+        "player": {
+          "id": 20200846,
+          "firstInitialAndLastName": "C. Sibilio",
+          "firstName": "Cándido",
+          "lastName": "Sibilio",
+          "nickname": "Chicho Sibilio",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/8889ChichoSibilio.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "C. Sibilio photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 53,
+          "nicknameFirstName": "Chicho",
+          "nicknameLastName": "Sibilio"
+        },
+        "team": null
+      },
+      {
+        "value": 18.36,
+        "player": {
+          "id": 20202338,
+          "firstInitialAndLastName": "P. Thompson",
+          "firstName": "Paul Stanford",
+          "lastName": "Thompson",
+          "nickname": "Paul Thompson",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "P. Thompson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 54,
+          "nicknameFirstName": "Paul",
+          "nicknameLastName": "Thompson"
+        },
+        "team": null
+      },
+      {
+        "value": 17.52,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      }
+    ],
+    "avgRebounds": [
+      {
+        "value": 10.48,
+        "player": {
+          "id": 20201184,
+          "firstInitialAndLastName": "G. Wiltjer",
+          "firstName": "Gregory",
+          "lastName": "Wiltjer",
+          "nickname": "Greg Wiltjer",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "G. Wiltjer photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 50,
+          "nicknameFirstName": "Greg",
+          "nicknameLastName": "Wiltjer"
+        },
+        "team": null
+      },
+      {
+        "value": 9.45,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      },
+      {
+        "value": 9.38,
+        "player": {
+          "id": 20200961,
+          "firstInitialAndLastName": "B. Coleman",
+          "firstName": "Benjamin",
+          "lastName": "Coleman III",
+          "nickname": "Ben Coleman",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "B. Coleman photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Ben",
+          "nicknameLastName": "Coleman"
+        },
+        "team": null
+      }
+    ],
+    "avgAssists": [
+      {
+        "value": 5.84,
+        "player": {
+          "id": 20204097,
+          "firstInitialAndLastName": "T. Heurtel",
+          "firstName": "Thomas",
+          "lastName": "Heurtel",
+          "nickname": "Thomas Heurtel",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/5/5c/15/279313pre34180.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "T. Heurtel photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 83,
+          "nicknameFirstName": "Thomas",
+          "nicknameLastName": "Heurtel"
+        },
+        "team": null
+      },
+      {
+        "value": 5.27,
+        "player": {
+          "id": 30000268,
+          "firstInitialAndLastName": "N. Calathes",
+          "firstName": "Nicholas",
+          "lastName": "Calathes",
+          "nickname": "Nick Calathes",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2022/CalathesCara.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "N. Calathes photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 86,
+          "nicknameFirstName": "Nick",
+          "nicknameLastName": "Calathes"
+        },
+        "team": null
+      },
+      {
+        "value": 5.24,
+        "player": {
+          "id": 20201792,
+          "firstInitialAndLastName": "S. Williams",
+          "firstName": "Shammond Omar",
+          "lastName": "Williams",
+          "nickname": "Shammond Williams",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "S. Williams photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 70,
+          "nicknameFirstName": "Shammond",
+          "nicknameLastName": "Williams"
+        },
+        "team": null
+      }
+    ],
+    "avgSteals": [
+      {
+        "value": 2.09,
+        "player": {
+          "id": 20201251,
+          "firstInitialAndLastName": "D. Williams",
+          "firstName": "Dennis",
+          "lastName": "Williams",
+          "nickname": "Dennis Williams",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "D. Williams photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 58,
+          "nicknameFirstName": "Dennis",
+          "nicknameLastName": "Williams"
+        },
+        "team": null
+      },
+      {
+        "value": 1.81,
+        "player": {
+          "id": 20202411,
+          "firstInitialAndLastName": "K. Simpson",
+          "firstName": "Kenneth Bernard",
+          "lastName": "Simpson",
+          "nickname": "Kenny Simpson",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "K. Simpson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 51,
+          "nicknameFirstName": "Kenny",
+          "nicknameLastName": "Simpson"
+        },
+        "team": null
+      },
+      {
+        "value": 1.77,
+        "player": {
+          "id": 20200739,
+          "firstInitialAndLastName": "N. Solozábal",
+          "firstName": "Ignacio",
+          "lastName": "Solozábal",
+          "nickname": "Nacho Solozábal",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/img/www/Jugadores2025/9192Solozabal_transparent.webp",
+          "headshotImageAlt": "N. Solozábal photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Nacho",
+          "nicknameLastName": "Solozábal"
+        },
+        "team": null
+      }
+    ],
+    "avgBlocks": [
+      {
+        "value": 2.29,
+        "player": {
+          "id": 20201242,
+          "firstInitialAndLastName": "A. Fetissov",
+          "firstName": "Andrei",
+          "lastName": "Fetissov",
+          "nickname": "Andrei Fetissov",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Fetissov photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 61,
+          "nicknameFirstName": "Andrei",
+          "nicknameLastName": "Fetissov"
+        },
+        "team": null
+      },
+      {
+        "value": 1.37,
+        "player": {
+          "id": 20200648,
+          "firstInitialAndLastName": "F. Vázquez",
+          "firstName": "Francisco",
+          "lastName": "Vázquez",
+          "nickname": "Fran Vázquez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://www.acb.com/fotos_cara/jugadores/JA9SLACB56.jpg",
+          "headshotImageNoBackgroundUrl": "https://www.acb.com/fotos_cara/jugadores/JA9SLACB56_transparent.webp",
+          "headshotImageAlt": "F. Vázquez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 76,
+          "nicknameFirstName": "Fran",
+          "nicknameLastName": "Vázquez"
+        },
+        "team": null
+      },
+      {
+        "value": 1.36,
+        "player": {
+          "id": 20200814,
+          "firstInitialAndLastName": "M. Davis",
+          "firstName": "Michael",
+          "lastName": "Davis",
+          "nickname": "Mike Davis",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Davis photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 49,
+          "nicknameFirstName": "Mike",
+          "nicknameLastName": "Davis"
+        },
+        "team": null
+      }
+    ],
+    "avgTimePlayed": [
+      {
+        "value": 34.42,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      },
+      {
+        "value": 33.67,
+        "player": {
+          "id": 20202387,
+          "firstInitialAndLastName": "O. Howard",
+          "firstName": "Otis",
+          "lastName": "Howard",
+          "nickname": "Otis Howard",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "O. Howard photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 49,
+          "nicknameFirstName": "Otis",
+          "nicknameLastName": "Howard"
+        },
+        "team": null
+      },
+      {
+        "value": 31.75,
+        "player": {
+          "id": 20201250,
+          "firstInitialAndLastName": "F. Roberts",
+          "firstName": "Frederick",
+          "lastName": "Roberts",
+          "nickname": "Fred Roberts",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "F. Roberts photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 58,
+          "nicknameFirstName": "Fred",
+          "nicknameLastName": "Roberts"
+        },
+        "team": null
+      }
+    ],
+    "avgThreePointer": [
+      {
+        "value": 2.21,
+        "player": {
+          "id": 20202338,
+          "firstInitialAndLastName": "P. Thompson",
+          "firstName": "Paul Stanford",
+          "lastName": "Thompson",
+          "nickname": "Paul Thompson",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "P. Thompson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 54,
+          "nicknameFirstName": "Paul",
+          "nicknameLastName": "Thompson"
+        },
+        "team": null
+      },
+      {
+        "value": 2.14,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 2.01,
+        "player": {
+          "id": 20200846,
+          "firstInitialAndLastName": "C. Sibilio",
+          "firstName": "Cándido",
+          "lastName": "Sibilio",
+          "nickname": "Chicho Sibilio",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/8889ChichoSibilio.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "C. Sibilio photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 53,
+          "nicknameFirstName": "Chicho",
+          "nicknameLastName": "Sibilio"
+        },
+        "team": null
+      }
+    ],
+    "avgTwoPointer": [
+      {
+        "value": 7.18,
+        "player": {
+          "id": 20202387,
+          "firstInitialAndLastName": "O. Howard",
+          "firstName": "Otis",
+          "lastName": "Howard",
+          "nickname": "Otis Howard",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "O. Howard photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 49,
+          "nicknameFirstName": "Otis",
+          "nicknameLastName": "Howard"
+        },
+        "team": null
+      },
+      {
+        "value": 7.06,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      },
+      {
+        "value": 7,
+        "player": {
+          "id": 20200512,
+          "firstInitialAndLastName": "R. Seikaly",
+          "firstName": "Ronald",
+          "lastName": "Seikaly",
+          "nickname": "Rony Seikaly",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "R. Seikaly photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 65,
+          "nicknameFirstName": "Rony",
+          "nicknameLastName": "Seikaly"
+        },
+        "team": null
+      }
+    ],
+    "avgFreeThrows": [
+      {
+        "value": 4.28,
+        "player": {
+          "id": 20201505,
+          "firstInitialAndLastName": "A. Djordjevic",
+          "firstName": "Aleksandar",
+          "lastName": "Djordjevic",
+          "nickname": "Sasha Djordjevic",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Djordjevic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 63,
+          "nicknameFirstName": "Sasha",
+          "nicknameLastName": "Djordjevic"
+        },
+        "team": null
+      },
+      {
+        "value": 4.17,
+        "player": {
+          "id": 20201455,
+          "firstInitialAndLastName": "D. Bodiroga",
+          "firstName": "Dejan",
+          "lastName": "Bodiroga",
+          "nickname": "Dejan Bodiroga",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://www.acb.com/fotos_cara/jugadores/JAYGLACB48.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "D. Bodiroga photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Dejan",
+          "nicknameLastName": "Bodiroga"
+        },
+        "team": null
+      },
+      {
+        "value": 3.79,
+        "player": {
+          "id": 20201382,
+          "firstInitialAndLastName": "A. Karnisovas",
+          "firstName": "Arturas",
+          "lastName": "Karnisovas",
+          "nickname": "Arturas Karnisovas",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/img/www/jugadores2026/0102ArturasKarnisovas.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Karnisovas photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 66,
+          "nicknameFirstName": "Arturas",
+          "nicknameLastName": "Karnisovas"
+        },
+        "team": null
+      }
+    ],
+    "avgDefensiveRebounds": [
+      {
+        "value": 7.57,
+        "player": {
+          "id": 20201184,
+          "firstInitialAndLastName": "G. Wiltjer",
+          "firstName": "Gregory",
+          "lastName": "Wiltjer",
+          "nickname": "Greg Wiltjer",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "G. Wiltjer photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 50,
+          "nicknameFirstName": "Greg",
+          "nicknameLastName": "Wiltjer"
+        },
+        "team": null
+      },
+      {
+        "value": 7.25,
+        "player": {
+          "id": 20200961,
+          "firstInitialAndLastName": "B. Coleman",
+          "firstName": "Benjamin",
+          "lastName": "Coleman III",
+          "nickname": "Ben Coleman",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "B. Coleman photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Ben",
+          "nicknameLastName": "Coleman"
+        },
+        "team": null
+      },
+      {
+        "value": 6.18,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      }
+    ],
+    "avgOffensiveRebounds": [
+      {
+        "value": 3.27,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      },
+      {
+        "value": 2.94,
+        "player": {
+          "id": 20201157,
+          "firstInitialAndLastName": "T. Massenburg",
+          "firstName": "Tony",
+          "lastName": "Massenburg",
+          "nickname": "Tony Massenburg",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "T. Massenburg photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 58,
+          "nicknameFirstName": "Tony",
+          "nicknameLastName": "Massenburg"
+        },
+        "team": null
+      },
+      {
+        "value": 2.91,
+        "player": {
+          "id": 20201184,
+          "firstInitialAndLastName": "G. Wiltjer",
+          "firstName": "Gregory",
+          "lastName": "Wiltjer",
+          "nickname": "Greg Wiltjer",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "G. Wiltjer photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 50,
+          "nicknameFirstName": "Greg",
+          "nicknameLastName": "Wiltjer"
+        },
+        "team": null
+      }
+    ],
+    "avgReceivedFouls": [
+      {
+        "value": 4.49,
+        "player": {
+          "id": 20200547,
+          "firstInitialAndLastName": "A. Okulaja",
+          "firstName": "Ademola",
+          "lastName": "Okulaja",
+          "nickname": "Ademola Okulaja",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Okulaja photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 66,
+          "nicknameFirstName": "Ademola",
+          "nicknameLastName": "Okulaja"
+        },
+        "team": null
+      },
+      {
+        "value": 4.42,
+        "player": {
+          "id": 20201455,
+          "firstInitialAndLastName": "D. Bodiroga",
+          "firstName": "Dejan",
+          "lastName": "Bodiroga",
+          "nickname": "Dejan Bodiroga",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://www.acb.com/fotos_cara/jugadores/JAYGLACB48.jpg",
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "D. Bodiroga photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 69,
+          "nicknameFirstName": "Dejan",
+          "nicknameLastName": "Bodiroga"
+        },
+        "team": null
+      },
+      {
+        "value": 4.32,
+        "player": {
+          "id": 20201505,
+          "firstInitialAndLastName": "A. Djordjevic",
+          "firstName": "Aleksandar",
+          "lastName": "Djordjevic",
+          "nickname": "Sasha Djordjevic",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. Djordjevic photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 63,
+          "nicknameFirstName": "Sasha",
+          "nicknameLastName": "Djordjevic"
+        },
+        "team": null
+      }
+    ],
+    "avgCommittedFouls": [
+      {
+        "value": 4,
+        "player": {
+          "id": 20200961,
+          "firstInitialAndLastName": "B. Coleman",
+          "firstName": "Benjamin",
+          "lastName": "Coleman III",
+          "nickname": "Ben Coleman",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "B. Coleman photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 56,
+          "nicknameFirstName": "Ben",
+          "nicknameLastName": "Coleman"
+        },
+        "team": null
+      },
+      {
+        "value": 4,
+        "player": {
+          "id": 30005355,
+          "firstInitialAndLastName": "U. Gibson",
+          "firstName": "Umoja",
+          "lastName": "Gibson",
+          "nickname": "Umoja Gibson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01_transparent.webp",
+          "headshotImageAlt": "U. Gibson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Umoja",
+          "nicknameLastName": "Gibson"
+        },
+        "team": null
+      },
+      {
+        "value": 3.95,
+        "player": {
+          "id": 20200814,
+          "firstInitialAndLastName": "M. Davis",
+          "firstName": "Michael",
+          "lastName": "Davis",
+          "nickname": "Mike Davis",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Davis photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 49,
+          "nicknameFirstName": "Mike",
+          "nicknameLastName": "Davis"
+        },
+        "team": null
+      }
+    ],
+    "avgDunks": [
+      {
+        "value": 1.67,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 1.47,
+        "player": {
+          "id": 20201157,
+          "firstInitialAndLastName": "T. Massenburg",
+          "firstName": "Tony",
+          "lastName": "Massenburg",
+          "nickname": "Tony Massenburg",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "T. Massenburg photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 58,
+          "nicknameFirstName": "Tony",
+          "nicknameLastName": "Massenburg"
+        },
+        "team": null
+      },
+      {
+        "value": 1.37,
+        "player": {
+          "id": 20200557,
+          "firstInitialAndLastName": "A. McCaskill",
+          "firstName": "Amal",
+          "lastName": "McCaskill",
+          "nickname": "Amal McCaskill",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "A. McCaskill photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 62,
+          "nicknameFirstName": "Amal",
+          "nicknameLastName": "McCaskill"
+        },
+        "team": null
+      }
+    ],
+    "avgTurnovers": [
+      {
+        "value": 3.15,
+        "player": {
+          "id": 20202414,
+          "firstInitialAndLastName": "M. Starks",
+          "firstName": "Marcelous",
+          "lastName": "Starks",
+          "nickname": "Marcelous Starks",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Starks photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 48,
+          "nicknameFirstName": "Marcelous",
+          "nicknameLastName": "Starks"
+        },
+        "team": null
+      },
+      {
+        "value": 3.12,
+        "player": {
+          "id": 20202387,
+          "firstInitialAndLastName": "O. Howard",
+          "firstName": "Otis",
+          "lastName": "Howard",
+          "nickname": "Otis Howard",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "O. Howard photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 49,
+          "nicknameFirstName": "Otis",
+          "nicknameLastName": "Howard"
+        },
+        "team": null
+      },
+      {
+        "value": 3.02,
+        "player": {
+          "id": 20200814,
+          "firstInitialAndLastName": "M. Davis",
+          "firstName": "Michael",
+          "lastName": "Davis",
+          "nickname": "Mike Davis",
+          "shirtNumber": null,
+          "headshotImageUrl": null,
+          "headshotImageNoBackgroundUrl": null,
+          "headshotImageAlt": "M. Davis photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 49,
+          "nicknameFirstName": "Mike",
+          "nicknameLastName": "Davis"
+        },
+        "team": null
+      }
+    ]
+  },
+  "seasonLeaders": {
+    "playedMatches": [
+      {
+        "value": 3,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "rating": [
+      {
+        "value": 58,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 42,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 38,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      }
+    ],
+    "points": [
+      {
+        "value": 42,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 41,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 39,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "rebounds": [
+      {
+        "value": 22,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 15,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 12,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "assists": [
+      {
+        "value": 11,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      },
+      {
+        "value": 9,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 6,
+        "player": {
+          "id": 30000093,
+          "firstInitialAndLastName": "J. Núñez",
+          "firstName": "Juan",
+          "lastName": "Núñez",
+          "nickname": "Juan Núñez",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/20/0000930020_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/20/0000930020_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Núñez photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Juan",
+          "nicknameLastName": "Núñez"
+        },
+        "team": null
+      }
+    ],
+    "steals": [
+      {
+        "value": 4,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30005476,
+          "firstInitialAndLastName": "J. Minaya",
+          "firstName": "Justin",
+          "lastName": "Minaya",
+          "nickname": "Justin Minaya",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/46/0000930046_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/46/0000930046_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Minaya photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Minaya"
+        },
+        "team": null
+      },
+      {
+        "value": 2,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      }
+    ],
+    "blocks": [
+      {
+        "value": 2,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 2,
+        "player": {
+          "id": 30005377,
+          "firstInitialAndLastName": "T. Evbuomwan",
+          "firstName": "Torisesan",
+          "lastName": "Evbuomwan",
+          "nickname": "Tosan Evbuomwan",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/95/0000930195_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/95/0000930195_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Evbuomwan photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tosan",
+          "nicknameLastName": "Evbuomwan"
+        },
+        "team": null
+      },
+      {
+        "value": 1,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "timePlayed": [
+      {
+        "value": 69.05,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 66.48,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      },
+      {
+        "value": 65.58,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      }
+    ],
+    "threePointer": [
+      {
+        "value": 7,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 6,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 5,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "twoPointer": [
+      {
+        "value": 16,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 9,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      },
+      {
+        "value": 9,
+        "player": {
+          "id": 30005357,
+          "firstInitialAndLastName": "O. Nkamhoua",
+          "firstName": "Olivier",
+          "lastName": "Nkamhoua",
+          "nickname": "Olivier Nkamhoua",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Nkamhoua photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olivier",
+          "nicknameLastName": "Nkamhoua"
+        },
+        "team": null
+      }
+    ],
+    "freeThrows": [
+      {
+        "value": 10,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 9,
+        "player": {
+          "id": 30005357,
+          "firstInitialAndLastName": "O. Nkamhoua",
+          "firstName": "Olivier",
+          "lastName": "Nkamhoua",
+          "nickname": "Olivier Nkamhoua",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Nkamhoua photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olivier",
+          "nicknameLastName": "Nkamhoua"
+        },
+        "team": null
+      },
+      {
+        "value": 6,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      }
+    ],
+    "defensiveRebounds": [
+      {
+        "value": 15,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 8,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 8,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "offensiveRebounds": [
+      {
+        "value": 7,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 7,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 4,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "receivedFouls": [
+      {
+        "value": 10,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 9,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      },
+      {
+        "value": 9,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "committedFouls": [
+      {
+        "value": 12,
+        "player": {
+          "id": 30005355,
+          "firstInitialAndLastName": "U. Gibson",
+          "firstName": "Umoja",
+          "lastName": "Gibson",
+          "nickname": "Umoja Gibson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01_transparent.webp",
+          "headshotImageAlt": "U. Gibson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Umoja",
+          "nicknameLastName": "Gibson"
+        },
+        "team": null
+      },
+      {
+        "value": 11,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 10,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "dunks": [
+      {
+        "value": 5,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30005357,
+          "firstInitialAndLastName": "O. Nkamhoua",
+          "firstName": "Olivier",
+          "lastName": "Nkamhoua",
+          "nickname": "Olivier Nkamhoua",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Nkamhoua photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olivier",
+          "nicknameLastName": "Nkamhoua"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30005361,
+          "firstInitialAndLastName": "S. Umude",
+          "firstName": "Stanley",
+          "lastName": "Umude",
+          "nickname": "Stanley Umude",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/72/0000930172_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/72/0000930172_5-6_01_transparent.webp",
+          "headshotImageAlt": "S. Umude photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Stanley",
+          "nicknameLastName": "Umude"
+        },
+        "team": null
+      }
+    ],
+    "turnovers": [
+      {
+        "value": 7,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 7,
+        "player": {
+          "id": 30005355,
+          "firstInitialAndLastName": "U. Gibson",
+          "firstName": "Umoja",
+          "lastName": "Gibson",
+          "nickname": "Umoja Gibson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01_transparent.webp",
+          "headshotImageAlt": "U. Gibson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Umoja",
+          "nicknameLastName": "Gibson"
+        },
+        "team": null
+      },
+      {
+        "value": 4,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "avgRating": [
+      {
+        "value": 19.33,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 14,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 12.67,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      }
+    ],
+    "avgPoints": [
+      {
+        "value": 14,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 13.67,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 13,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "avgRebounds": [
+      {
+        "value": 7.33,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 5,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 4,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "avgAssists": [
+      {
+        "value": 3.67,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 1.33,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      }
+    ],
+    "avgSteals": [
+      {
+        "value": 1.33,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 0.67,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      },
+      {
+        "value": 0.67,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "avgBlocks": [
+      {
+        "value": 0.67,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 0.33,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      },
+      {
+        "value": 0,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      }
+    ],
+    "avgTimePlayed": [
+      {
+        "value": 23.02,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 22.16,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      },
+      {
+        "value": 21.86,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      }
+    ],
+    "avgThreePointer": [
+      {
+        "value": 2.33,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 2,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 1.67,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "avgTwoPointer": [
+      {
+        "value": 5.33,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30005357,
+          "firstInitialAndLastName": "O. Nkamhoua",
+          "firstName": "Olivier",
+          "lastName": "Nkamhoua",
+          "nickname": "Olivier Nkamhoua",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Nkamhoua photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olivier",
+          "nicknameLastName": "Nkamhoua"
+        },
+        "team": null
+      }
+    ],
+    "avgFreeThrows": [
+      {
+        "value": 3.33,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30005357,
+          "firstInitialAndLastName": "O. Nkamhoua",
+          "firstName": "Olivier",
+          "lastName": "Nkamhoua",
+          "nickname": "Olivier Nkamhoua",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Nkamhoua photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olivier",
+          "nicknameLastName": "Nkamhoua"
+        },
+        "team": null
+      },
+      {
+        "value": 2,
+        "player": {
+          "id": 20209919,
+          "firstInitialAndLastName": "D. Brizuela",
+          "firstName": "Darío",
+          "lastName": "Brizuela",
+          "nickname": "Darío Brizuela",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/94/12/30/0000941230_5-6_01_transparent.webp",
+          "headshotImageAlt": "D. Brizuela photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Darío",
+          "nicknameLastName": "Brizuela"
+        },
+        "team": null
+      }
+    ],
+    "avgDefensiveRebounds": [
+      {
+        "value": 5,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 2.67,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 2.67,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "avgOffensiveRebounds": [
+      {
+        "value": 2.33,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 2.33,
+        "player": {
+          "id": 30005378,
+          "firstInitialAndLastName": "T. Martin",
+          "firstName": "Tyrese",
+          "lastName": "Martin",
+          "nickname": "Tyrese Martin",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/15/0000930215_5-6_01_transparent.webp",
+          "headshotImageAlt": "T. Martin photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Tyrese",
+          "nicknameLastName": "Martin"
+        },
+        "team": null
+      },
+      {
+        "value": 1.33,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "avgReceivedFouls": [
+      {
+        "value": 3.33,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      },
+      {
+        "value": 3,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "avgCommittedFouls": [
+      {
+        "value": 4,
+        "player": {
+          "id": 30005355,
+          "firstInitialAndLastName": "U. Gibson",
+          "firstName": "Umoja",
+          "lastName": "Gibson",
+          "nickname": "Umoja Gibson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01_transparent.webp",
+          "headshotImageAlt": "U. Gibson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Umoja",
+          "nicknameLastName": "Gibson"
+        },
+        "team": null
+      },
+      {
+        "value": 3.67,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 3.33,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ],
+    "avgDunks": [
+      {
+        "value": 1.67,
+        "player": {
+          "id": 20212243,
+          "firstInitialAndLastName": "O. Balcerowski",
+          "firstName": "Aleksander",
+          "lastName": "Balcerowski",
+          "nickname": "Olek Balcerowski",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/22/0000930122_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Balcerowski photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olek",
+          "nicknameLastName": "Balcerowski"
+        },
+        "team": null
+      },
+      {
+        "value": 1,
+        "player": {
+          "id": 30005357,
+          "firstInitialAndLastName": "O. Nkamhoua",
+          "firstName": "Olivier",
+          "lastName": "Nkamhoua",
+          "nickname": "Olivier Nkamhoua",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/01/44/0000930144_5-6_01_transparent.webp",
+          "headshotImageAlt": "O. Nkamhoua photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Olivier",
+          "nicknameLastName": "Nkamhoua"
+        },
+        "team": null
+      },
+      {
+        "value": 0.67,
+        "player": {
+          "id": 20212265,
+          "firstInitialAndLastName": "J. Parra",
+          "firstName": "Joel",
+          "lastName": "Parra",
+          "nickname": "Joel Parra",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/92/99/77/0000929977_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Parra photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Joel",
+          "nicknameLastName": "Parra"
+        },
+        "team": null
+      }
+    ],
+    "avgTurnovers": [
+      {
+        "value": 2.33,
+        "player": {
+          "id": 30003361,
+          "firstInitialAndLastName": "K. Punter",
+          "firstName": "Kevin",
+          "lastName": "Punter",
+          "nickname": "Kevin Punter",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/93/0000930093_5-6_01_transparent.webp",
+          "headshotImageAlt": "K. Punter photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Kevin",
+          "nicknameLastName": "Punter"
+        },
+        "team": null
+      },
+      {
+        "value": 2.33,
+        "player": {
+          "id": 30005355,
+          "firstInitialAndLastName": "U. Gibson",
+          "firstName": "Umoja",
+          "lastName": "Gibson",
+          "nickname": "Umoja Gibson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/02/38/0000930238_5-6_01_transparent.webp",
+          "headshotImageAlt": "U. Gibson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Umoja",
+          "nicknameLastName": "Gibson"
+        },
+        "team": null
+      },
+      {
+        "value": 1.33,
+        "player": {
+          "id": 30003340,
+          "firstInitialAndLastName": "J. Robinson",
+          "firstName": "Justin",
+          "lastName": "Robinson",
+          "nickname": "Justin Robinson",
+          "shirtNumber": null,
+          "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01.jpg",
+          "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/00/67/0000930067_5-6_01_transparent.webp",
+          "headshotImageAlt": "J. Robinson photo",
+          "fullBodyImageUrl": null,
+          "fullBodyImageNoBackgroundUrl": null,
+          "gameRole": null,
+          "isLicenseActive": false,
+          "editionId": 91,
+          "nicknameFirstName": "Justin",
+          "nicknameLastName": "Robinson"
+        },
+        "team": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": []
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": []
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": []
+      }
+    ],
+    "seasons": [
+      {
+        "id": 48,
+        "seasonStartYear": 1983,
+        "seasonEndYear": 1984,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 49,
+        "seasonStartYear": 1984,
+        "seasonEndYear": 1985,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 50,
+        "seasonStartYear": 1985,
+        "seasonEndYear": 1986,
+        "rounds": [],
+        "weeks": []
+      }
+    ],
+    "rounds": [
+      {
+        "id": 6015,
+        "roundNumber": 1,
+        "subphaseId": null,
+        "subphaseNumber": null
+      },
+      {
+        "id": 6016,
+        "roundNumber": 2,
+        "subphaseId": null,
+        "subphaseNumber": null
+      },
+      {
+        "id": 6017,
+        "roundNumber": 3,
+        "subphaseId": null,
+        "subphaseNumber": null
+      }
+    ],
+    "weeks": [
+      {
+        "id": 2987,
+        "description": "Semana 1",
+        "startDate": "2026-09-21"
+      },
+      {
+        "id": 2988,
+        "description": "Semana 2",
+        "startDate": "2026-09-28"
+      },
+      {
+        "id": 2989,
+        "description": "Semana 3",
+        "startDate": "2026-10-05"
+      }
+    ],
+    "phases": [
+      {
+        "id": 107,
+        "abreviation": "LR",
+        "description": "Liga Regular"
+      },
+      {
+        "id": 111,
+        "abreviation": "PO",
+        "description": "Play Off Título"
+      }
+    ]
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 91
+  },
+  "teams": [
+    {
+      "id": 4475,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 4,
+      "fullName": "Surne Bilbao",
+      "shortName": "Surne Bilbao",
+      "abbreviatedName": "SBB",
+      "primaryColorHex": "#000000",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes2022/logo_surnebb_pos.png",
+      "logoAlt": "Surne Bilbao logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2022/logo_surnebb_neg.png",
+      "contrastRequired": true,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    {
+      "id": 4471,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 10,
+      "fullName": "Kids&Us Manresa",
+      "shortName": "Kids&Us Manresa",
+      "abbreviatedName": "K&U",
+      "primaryColorHex": "#d5001e",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes2026/202526KidsUsManresa.png",
+      "logoAlt": "Kids&Us Manresa logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202627KidsUsManresaLogoNegativo.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    {
+      "id": 4466,
+      "competitionId": 1,
+      "editionId": 91,
+      "clubId": 22,
+      "fullName": "MoraBanc Andorra",
+      "shortName": "MoraBanc And",
+      "abbreviatedName": "MBA",
+      "primaryColorHex": "#0165ba",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes2026/20252026MorabancAndorraLogoPositivoOK.png",
+      "logoAlt": "MoraBanc Andorra logo",
+      "secondaryLogo": "https://static.acb.com/img/www/clubes2026/20252026MorabancAndorraLogoNegativo.png",
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    }
+  ],
+  "rounds": [
+    {
+      "matches": [
+        {
+          "id": 105375,
+          "homeTeamId": 4475,
+          "awayTeamId": 4471,
+          "homeScore": 107,
+          "awayScore": 92,
+          "startDateTime": "2026-09-26T16:00:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://bacantix.com/Entradas/?id=BilbaoBasket",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": false,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        },
+        {
+          "id": 105376,
+          "homeTeamId": 4466,
+          "awayTeamId": 4479,
+          "homeScore": 85,
+          "awayScore": 90,
+          "startDateTime": "2026-09-26T17:30:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://bca.koobin.com",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": true,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        },
+        {
+          "id": 105377,
+          "homeTeamId": 4467,
+          "awayTeamId": 4480,
+          "homeScore": 119,
+          "awayScore": 101,
+          "startDateTime": "2026-09-26T19:00:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://www.fcbarcelona.es/es/entradas/baloncesto",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": true,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        }
+      ],
+      "id": 6015,
+      "roundNumber": 1,
+      "subphaseId": null,
+      "subphaseNumber": null
+    },
+    {
+      "matches": [
+        {
+          "id": 105385,
+          "homeTeamId": 4477,
+          "awayTeamId": 4478,
+          "homeScore": 75,
+          "awayScore": 80,
+          "startDateTime": "2026-10-03T17:30:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://venta.unicajabaloncesto.com",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN en abierto",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/LogoDAZNENABIERTO.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": false,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        },
+        {
+          "id": 105386,
+          "homeTeamId": 4471,
+          "awayTeamId": 4464,
+          "homeScore": 95,
+          "awayScore": 101,
+          "startDateTime": "2026-10-03T19:00:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://www.basquetmanresa.com/tickets-abonaments/",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": true,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        },
+        {
+          "id": 105387,
+          "homeTeamId": 4465,
+          "awayTeamId": 4469,
+          "homeScore": 81,
+          "awayScore": 94,
+          "startDateTime": "2026-10-04T10:00:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://venta.flleida.cat/ca/abonos/alta",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": true,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        }
+      ],
+      "id": 6016,
+      "roundNumber": 2,
+      "subphaseId": null,
+      "subphaseNumber": null
+    },
+    {
+      "matches": [
+        {
+          "id": 105393,
+          "homeTeamId": 4480,
+          "awayTeamId": 4474,
+          "homeScore": 71,
+          "awayScore": 92,
+          "startDateTime": "2026-10-10T16:00:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://venta.basquetcoruna.t2v.com/",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": false,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        },
+        {
+          "id": 105394,
+          "homeTeamId": 4477,
+          "awayTeamId": 4466,
+          "homeScore": 92,
+          "awayScore": 84,
+          "startDateTime": "2026-10-10T17:30:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://venta.unicajabaloncesto.com",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": true,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        },
+        {
+          "id": 105395,
+          "homeTeamId": 4464,
+          "awayTeamId": 4470,
+          "homeScore": 115,
+          "awayScore": 92,
+          "startDateTime": "2026-10-10T19:00:00Z",
+          "matchStatus": "FINALIZED",
+          "isOnHalfTime": false,
+          "currentQuarter": 4,
+          "ticketingLink": "https://entradas.breogan.es/entradasliga/index.php",
+          "broadcastChannels": [
+            {
+              "broadcaster": "DAZN",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/DAZN_Black.png",
+              "link": "https://www.dazn.com/es-ES",
+              "primary": true,
+              "order": 1
+            },
+            {
+              "broadcaster": "Movistar Plus +",
+              "imageLink": "https://static.acb.com/img/www/recursos2023/MPlus_ColorPositivo_RGB_RGB.png",
+              "link": "https://ver.movistarplus.es/",
+              "primary": true,
+              "order": 5
+            },
+            {
+              "broadcaster": "Orange",
+              "imageLink": "https://static.acb.com/img/www/recursos2026/logo_orange.png",
+              "link": "https://orangetv.orange.es/",
+              "primary": true,
+              "order": 6
+            }
+          ],
+          "serieData": null
+        }
+      ],
+      "id": 6017,
+      "roundNumber": 3,
+      "subphaseId": null,
+      "subphaseNumber": null
+    }
+  ]
+}

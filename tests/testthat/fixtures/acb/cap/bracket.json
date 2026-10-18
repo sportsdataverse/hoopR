@@ -1,0 +1,612 @@
+{
+  "data": {
+    "quarterFinals": {
+      "series": [
+        {
+          "phaseId": 111,
+          "subphaseId": 293,
+          "homeTeam": {
+            "id": 4388,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 9,
+            "fullName": "Real Madrid",
+            "shortName": "Real Madrid",
+            "abbreviatedName": "RMB",
+            "primaryColorHex": "#ffffff",
+            "textColorHex": "#000000",
+            "logo": "https://static.acb.com/img/www/clubes2024/2324RealMadrid_Logoweb.png",
+            "logoAlt": "Real Madrid logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2023/RealMadridLogo202223.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "awayTeam": {
+            "id": 4391,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 28,
+            "fullName": "La Laguna Tenerife",
+            "shortName": "La Laguna TFE",
+            "abbreviatedName": "LLT",
+            "primaryColorHex": "#e9cd5f",
+            "textColorHex": "#000000",
+            "logo": "https://static.acb.com/img/www/clubes2024/2425LaLagunaTenerifeLogo.png",
+            "logoAlt": "La Laguna Tenerife logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2425LaLagunaTenerifeLogoneg.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "homeScore": 1,
+          "awayScore": 2,
+          "matches": [
+            {
+              "id": 105347,
+              "homeTeamId": 4388,
+              "awayTeamId": 4391,
+              "homeScore": 97,
+              "awayScore": 98,
+              "startDateTime": "2026-06-02T19:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105351,
+              "homeTeamId": 4391,
+              "awayTeamId": 4388,
+              "homeScore": 83,
+              "awayScore": 118,
+              "startDateTime": "2026-06-04T19:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105355,
+              "homeTeamId": 4388,
+              "awayTeamId": 4391,
+              "homeScore": 95,
+              "awayScore": 107,
+              "startDateTime": "2026-06-06T16:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            }
+          ],
+          "finished": true,
+          "bestOf": 3
+        },
+        {
+          "phaseId": 111,
+          "subphaseId": 293,
+          "homeTeam": {
+            "id": 4393,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 12,
+            "fullName": "UCAM Murcia",
+            "shortName": "UCAM Murcia",
+            "abbreviatedName": "UCM",
+            "primaryColorHex": "#a51a14",
+            "textColorHex": "#FFFFFF",
+            "logo": "https://static.acb.com/img/www/clubes2024/2425UCAMMurciapositivo.png",
+            "logoAlt": "UCAM Murcia logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2425UCAMMurcianegativo.png",
+            "contrastRequired": true,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "awayTeam": {
+            "id": 4386,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 2,
+            "fullName": "Barça",
+            "shortName": "Barça",
+            "abbreviatedName": "BAR",
+            "primaryColorHex": "#154284",
+            "textColorHex": "#FFFFFF",
+            "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+            "logoAlt": "Barça logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "homeScore": 1,
+          "awayScore": 2,
+          "matches": [
+            {
+              "id": 105350,
+              "homeTeamId": 4393,
+              "awayTeamId": 4386,
+              "homeScore": 68,
+              "awayScore": 91,
+              "startDateTime": "2026-06-02T17:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105354,
+              "homeTeamId": 4386,
+              "awayTeamId": 4393,
+              "homeScore": 87,
+              "awayScore": 90,
+              "startDateTime": "2026-06-04T17:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105358,
+              "homeTeamId": 4393,
+              "awayTeamId": 4386,
+              "homeScore": 76,
+              "awayScore": 100,
+              "startDateTime": "2026-06-06T19:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            }
+          ],
+          "finished": true,
+          "bestOf": 3
+        },
+        {
+          "phaseId": 111,
+          "subphaseId": 293,
+          "homeTeam": {
+            "id": 4397,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 13,
+            "fullName": "Valencia Basket",
+            "shortName": "Valencia Basket",
+            "abbreviatedName": "VBC",
+            "primaryColorHex": "#fc6c0f",
+            "textColorHex": "#000000",
+            "logo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+            "logoAlt": "Valencia Basket logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "awayTeam": {
+            "id": 4389,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 4,
+            "fullName": "Surne Bilbao",
+            "shortName": "Surne Bilbao",
+            "abbreviatedName": "SBB",
+            "primaryColorHex": "#000000",
+            "textColorHex": "#FFFFFF",
+            "logo": "https://static.acb.com/img/www/clubes2022/logo_surnebb_pos.png",
+            "logoAlt": "Surne Bilbao logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2022/logo_surnebb_neg.png",
+            "contrastRequired": true,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "homeScore": 2,
+          "awayScore": 0,
+          "matches": [
+            {
+              "id": 105348,
+              "homeTeamId": 4397,
+              "awayTeamId": 4389,
+              "homeScore": 83,
+              "awayScore": 80,
+              "startDateTime": "2026-06-03T17:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105352,
+              "homeTeamId": 4389,
+              "awayTeamId": 4397,
+              "homeScore": 71,
+              "awayScore": 88,
+              "startDateTime": "2026-06-05T17:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            }
+          ],
+          "finished": true,
+          "bestOf": 3
+        }
+      ]
+    },
+    "semifinals": {
+      "series": [
+        {
+          "phaseId": 111,
+          "subphaseId": 292,
+          "homeTeam": {
+            "id": 4386,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 2,
+            "fullName": "Barça",
+            "shortName": "Barça",
+            "abbreviatedName": "BAR",
+            "primaryColorHex": "#154284",
+            "textColorHex": "#FFFFFF",
+            "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+            "logoAlt": "Barça logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "awayTeam": {
+            "id": 4391,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 28,
+            "fullName": "La Laguna Tenerife",
+            "shortName": "La Laguna TFE",
+            "abbreviatedName": "LLT",
+            "primaryColorHex": "#e9cd5f",
+            "textColorHex": "#000000",
+            "logo": "https://static.acb.com/img/www/clubes2024/2425LaLagunaTenerifeLogo.png",
+            "logoAlt": "La Laguna Tenerife logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2425LaLagunaTenerifeLogoneg.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "homeScore": 3,
+          "awayScore": 0,
+          "matches": [
+            {
+              "id": 105360,
+              "homeTeamId": 4386,
+              "awayTeamId": 4391,
+              "homeScore": 100,
+              "awayScore": 67,
+              "startDateTime": "2026-06-09T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105361,
+              "homeTeamId": 4386,
+              "awayTeamId": 4391,
+              "homeScore": 97,
+              "awayScore": 89,
+              "startDateTime": "2026-06-11T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105362,
+              "homeTeamId": 4391,
+              "awayTeamId": 4386,
+              "homeScore": 76,
+              "awayScore": 85,
+              "startDateTime": "2026-06-13T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            }
+          ],
+          "finished": true,
+          "bestOf": 5
+        },
+        {
+          "phaseId": 111,
+          "subphaseId": 292,
+          "homeTeam": {
+            "id": 4397,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 13,
+            "fullName": "Valencia Basket",
+            "shortName": "Valencia Basket",
+            "abbreviatedName": "VBC",
+            "primaryColorHex": "#fc6c0f",
+            "textColorHex": "#000000",
+            "logo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+            "logoAlt": "Valencia Basket logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "awayTeam": {
+            "id": 4394,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 8,
+            "fullName": "Asisa Joventut",
+            "shortName": "Asisa Joventut",
+            "abbreviatedName": "JOV",
+            "primaryColorHex": "#2f8e62",
+            "textColorHex": "#FFFFFF",
+            "logo": "https://static.acb.com/img/www/clubes2026/202526AsisaJoventutLogoPosisitvo.png",
+            "logoAlt": "Asisa Joventut logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202526AsisaJoventutLogoNegativo.png",
+            "contrastRequired": true,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "homeScore": 3,
+          "awayScore": 0,
+          "matches": [
+            {
+              "id": 105365,
+              "homeTeamId": 4397,
+              "awayTeamId": 4394,
+              "homeScore": 118,
+              "awayScore": 117,
+              "startDateTime": "2026-06-10T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 5,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105366,
+              "homeTeamId": 4397,
+              "awayTeamId": 4394,
+              "homeScore": 90,
+              "awayScore": 76,
+              "startDateTime": "2026-06-12T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105367,
+              "homeTeamId": 4394,
+              "awayTeamId": 4397,
+              "homeScore": 75,
+              "awayScore": 87,
+              "startDateTime": "2026-06-14T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            }
+          ],
+          "finished": true,
+          "bestOf": 5
+        }
+      ]
+    },
+    "final": {
+      "series": [
+        {
+          "phaseId": 111,
+          "subphaseId": 291,
+          "homeTeam": {
+            "id": 4397,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 13,
+            "fullName": "Valencia Basket",
+            "shortName": "Valencia Basket",
+            "abbreviatedName": "VBC",
+            "primaryColorHex": "#fc6c0f",
+            "textColorHex": "#000000",
+            "logo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+            "logoAlt": "Valencia Basket logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2026/202627ValenciaBasket40Anys.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "awayTeam": {
+            "id": 4386,
+            "competitionId": 1,
+            "editionId": 90,
+            "clubId": 2,
+            "fullName": "Barça",
+            "shortName": "Barça",
+            "abbreviatedName": "BAR",
+            "primaryColorHex": "#154284",
+            "textColorHex": "#FFFFFF",
+            "logo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+            "logoAlt": "Barça logo",
+            "secondaryLogo": "https://static.acb.com/img/www/clubes2024/2324BarcaLogoweb.png",
+            "contrastRequired": false,
+            "shirtColor": null,
+            "shirtTextColor": null
+          },
+          "homeScore": 3,
+          "awayScore": 1,
+          "matches": [
+            {
+              "id": 105370,
+              "homeTeamId": 4397,
+              "awayTeamId": 4386,
+              "homeScore": 112,
+              "awayScore": 113,
+              "startDateTime": "2026-06-18T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 5,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105371,
+              "homeTeamId": 4397,
+              "awayTeamId": 4386,
+              "homeScore": 102,
+              "awayScore": 75,
+              "startDateTime": "2026-06-20T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            },
+            {
+              "id": 105372,
+              "homeTeamId": 4386,
+              "awayTeamId": 4397,
+              "homeScore": 80,
+              "awayScore": 88,
+              "startDateTime": "2026-06-22T18:00:00Z",
+              "matchStatus": "FINALIZED",
+              "isOnHalfTime": false,
+              "currentQuarter": 4,
+              "ticketingLink": null,
+              "broadcastChannels": null,
+              "serieData": null
+            }
+          ],
+          "finished": true,
+          "bestOf": 5
+        }
+      ]
+    },
+    "otherPositions": {}
+  },
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": [
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 88,
+            "seasonStartYear": 2023,
+            "seasonEndYear": 2024,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": [
+          {
+            "id": 91,
+            "seasonStartYear": 2026,
+            "seasonEndYear": 2027,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 90,
+            "seasonStartYear": 2025,
+            "seasonEndYear": 2026,
+            "rounds": [],
+            "weeks": []
+          },
+          {
+            "id": 89,
+            "seasonStartYear": 2024,
+            "seasonEndYear": 2025,
+            "rounds": [],
+            "weeks": []
+          }
+        ]
+      }
+    ],
+    "seasons": [],
+    "rounds": [],
+    "weeks": [],
+    "phases": null
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 90
+  }
+}

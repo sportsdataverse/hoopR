@@ -1,0 +1,2 @@
+match_id,competition_id,start,status,is_on_half_time,time_left,current_quarter,home_score,away_score,home_bonus,away_bonus,home_team_id,home_club_id,home_team,home_team_abbr,away_team_id,away_club_id,away_team,away_team_abbr,edition_id,season,has_overview,has_play_by_play,has_boxscore,has_advanced,highlights_url
+12559,1,2006-06-21T18:15:00Z,FINALIZED,false,00:00,0,72,76,0,0,1339,3,TAU Cerámica,TAU,1352,14,Unicaja,UNI,70,2006,true,false,true,false,
