@@ -26,7 +26,8 @@ tbf_mock <- function(routes, env = parent.frame()) {
   log <- new.env()
   log$calls <- list()
   fake <- function(url, query = list(), body = NULL, body_type = "none", headers = NULL, proxy_env = NULL,
-                   retry_500 = FALSE, timeout = 60, proxy = NULL, follow_redirects = TRUE, call = NULL) {
+                   retry_500 = FALSE, timeout = 60, proxy = NULL, follow_redirects = TRUE, statuses = NULL,
+                   call = NULL) {
     path <- sub("^https://miniappapi\\.tbf\\.org\\.tr/webapi-service/api", "", url)
     query <- Filter(Negate(is.null), query)
     log$calls[[length(log$calls) + 1L]] <- list(path = path, query = query, follow_redirects = follow_redirects,
