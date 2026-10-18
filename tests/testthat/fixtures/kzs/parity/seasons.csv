@@ -1,0 +1,4 @@
+season_id,name,is_active,active,season
+1,2000/2001,false,false,2001
+2,2001/2002,false,false,2002
+3,2002/2003,false,false,2003

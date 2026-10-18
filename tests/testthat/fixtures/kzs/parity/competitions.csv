@@ -1,0 +1,4 @@
+competition_id,name,gender,category,rank,season_id,season_name,season_is_active,season_active,type,season
+450,3x3 DP Člani,MALE,ABSOLUTE,FIRST,14,2013/2014,false,false,LEAGUE3X3,2014
+448,3x3 DP Člani,MALE,ABSOLUTE,FIRST,12,2011/2012,false,false,LEAGUE3X3,2012
+452,3x3 DP Člani,MALE,ABSOLUTE,FIRST,16,2015/2016,false,false,LEAGUE3X3,2016

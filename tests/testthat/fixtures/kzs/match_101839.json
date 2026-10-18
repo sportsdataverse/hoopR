@@ -1,0 +1,445 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 101839,
+    "round": 1,
+    "fibaLiveStatsUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/KZS/2698579/",
+    "gameIndex": 3,
+    "dateTime": "2025-09-26T15:00:00Z",
+    "attendance": 100,
+    "organiserTeam": {
+      "id": 17551,
+      "teamApplication": {
+        "id": 45242,
+        "teamInternalRanking": "A",
+        "category": "ABSOLUTE",
+        "rank": "FIRST",
+        "gender": "MALE",
+        "sportHall": {
+          "id": 18,
+          "name": "Hala Tivoli"
+        },
+        "name": "Perspektiva Ilirija",
+        "code": "ILI",
+        "shortName": "",
+        "homeJerseyColor": "#909090",
+        "guestJerseyColor": "#000000",
+        "club": {
+          "id": 16,
+          "addresses": [],
+          "socialMedias": [],
+          "sportHalls": [],
+          "personnel": [],
+          "absoluteTeams": [],
+          "member": false
+        }
+      },
+      "logoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+      "homeTeamColor": "#909090",
+      "guestTeamColor": "#000000"
+    },
+    "firstTeam": {
+      "id": 203665,
+      "teamId": 17551,
+      "name": "Perspektiva Ilirija",
+      "homeJerseyColor": "#909090",
+      "guestJerseyColor": "#000000",
+      "logoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+      "code": "ILI",
+      "forfeited": false,
+      "isPlaceholder": false,
+      "bestPerformer": {
+        "playerId": 78946,
+        "playerFirstName": "Robert",
+        "playerLastName": "Jurković",
+        "playerPhotoUuid": "8026e221-20c4-4579-80ac-47aed917613e",
+        "efficiency": 33,
+        "points": 20,
+        "rebounds": 9,
+        "assists": 0,
+        "steals": 0,
+        "blocks": 4
+      }
+    },
+    "secondTeam": {
+      "id": 203666,
+      "teamId": 17555,
+      "name": "Terme Olimia Podčetrtek",
+      "homeJerseyColor": "#FFFFFF",
+      "guestJerseyColor": "#0F8DF3",
+      "logoUuid": "f667bf14-0dc0-4c9e-baa2-9491e78b6705",
+      "code": "POD",
+      "forfeited": false,
+      "isPlaceholder": false,
+      "bestPerformer": {
+        "playerId": 55153,
+        "playerFirstName": "Jan",
+        "playerLastName": "Copot",
+        "playerPhotoUuid": "71d3c8d4-4665-4b76-8dfb-ff4498ed6cc6",
+        "efficiency": 30,
+        "points": 18,
+        "rebounds": 11,
+        "assists": 9,
+        "steals": 1,
+        "blocks": 2
+      }
+    },
+    "sportHall": {
+      "id": 18,
+      "name": "Hala Tivoli"
+    },
+    "firstTeamScore": 95,
+    "secondTeamScore": 93,
+    "scoreInsertedManually": false,
+    "status": "FINISHED",
+    "scores": [
+      {
+        "id": 370873,
+        "matchPart": "QUARTER1",
+        "firstTeamScore": 25,
+        "secondTeamScore": 24
+      },
+      {
+        "id": 370874,
+        "matchPart": "QUARTER2",
+        "firstTeamScore": 24,
+        "secondTeamScore": 22
+      },
+      {
+        "id": 370875,
+        "matchPart": "QUARTER3",
+        "firstTeamScore": 18,
+        "secondTeamScore": 18
+      }
+    ],
+    "referee1": {
+      "id": 534,
+      "person": {
+        "id": 96249,
+        "firstName": "Nace",
+        "lastName": "Mohorič",
+        "addressesPostOfficeName": [
+          "<redacted>"
+        ],
+        "gender": "MALE"
+      },
+      "ranks": []
+    },
+    "referee2": {
+      "id": 99,
+      "person": {
+        "id": 95938,
+        "firstName": "Blaž",
+        "lastName": "Smrekar",
+        "addressesPostOfficeName": [
+          "<redacted>"
+        ],
+        "gender": "MALE"
+      },
+      "ranks": []
+    },
+    "referee3": {
+      "id": 508,
+      "person": {
+        "id": 48418,
+        "firstName": "Miha",
+        "lastName": "Žohar",
+        "addressesPostOfficeName": [
+          "<redacted>"
+        ],
+        "gender": "MALE"
+      },
+      "ranks": []
+    },
+    "commissioner": {
+      "id": 102,
+      "person": {
+        "id": 95867,
+        "firstName": "Žarko",
+        "lastName": "Tomšič",
+        "addressesPostOfficeName": [
+          "<redacted>"
+        ],
+        "gender": "MALE"
+      },
+      "ranks": []
+    },
+    "refereeController": {
+      "id": 102,
+      "person": {
+        "id": 95867,
+        "firstName": "Žarko",
+        "lastName": "Tomšič",
+        "addressesPostOfficeName": [
+          "<redacted>"
+        ],
+        "gender": "MALE"
+      },
+      "ranks": []
+    },
+    "competitions": [
+      {
+        "competitionId": 579,
+        "competitionName": "Liga OTP banka",
+        "competitionType": "LEAGUE",
+        "competitionPhase": {
+          "id": 5811,
+          "name": "Redni del",
+          "rule": {
+            "id": 11,
+            "numberOfQuarters": 4,
+            "liveStats": true,
+            "withoutStats": false,
+            "techicalDelegate": true,
+            "refereeController": true,
+            "numberOfReferees": 3
+          },
+          "type": "GROUP"
+        },
+        "transferred": false
+      }
+    ],
+    "liveStreams": [],
+    "streams": [
+      {
+        "id": 3158,
+        "type": "SPORT_TV",
+        "url": "",
+        "label": ""
+      },
+      {
+        "id": 3159,
+        "type": "YOUTUBE",
+        "url": "N3umsMMrXaM",
+        "label": ""
+      }
+    ],
+    "gender": "MALE",
+    "liveStats": true,
+    "withoutStats": false,
+    "commissionerReportHtml": "<p>Na tablah ni nalepk sponzorja lige.</p><p>Zelo dobro delo pomožnih sodnikov.</p><p>Uradna predstavnika obeh ekip v poročilu o tekmi nista podala pripomb glede organizacije in izvedbe tekme ter opravljenega dela uradnih oseb.</p><p>Športna tekma odločena v zadnjih sekundah podaljška.</p>",
+    "conclusions": [
+      {
+        "id": 7397,
+        "club": {
+          "id": 16,
+          "code": "ILI",
+          "email": "<redacted>",
+          "fullName": "KOŠARKARSKI KLUB ILIRIJA",
+          "identificationNumber": "5012449000",
+          "phone": "",
+          "shortName": "ILIRIJA",
+          "status": "ACTIVE",
+          "taxLiable": true,
+          "taxNumber": "<redacted>",
+          "addresses": [
+            {
+              "id": 20910,
+              "postOffice": {
+                "id": 1,
+                "zipCode": "<redacted>",
+                "name": "Ljubljana",
+                "municipality": "LJUBLJANA",
+                "country": "SI"
+              },
+              "street": "<redacted>",
+              "houseNumber": "<redacted>",
+              "type": "PRIMARY"
+            }
+          ],
+          "socialMedias": [],
+          "bankAccounts": [
+            {
+              "id": 18,
+              "iban": "<redacted>",
+              "isSepa": true,
+              "bankName": "<redacted>",
+              "swiftCode": "<redacted>",
+              "type": "PRIMARY"
+            }
+          ],
+          "sportHalls": [],
+          "personnel": [],
+          "logoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+          "absoluteTeams": [],
+          "homeJerseyColor": "#909090",
+          "guestJerseyColor": "#000000",
+          "member": true,
+          "type": "CLUB",
+          "scoresheetEmail": "<redacted>"
+        },
+        "penaltyAmountEur": 0.0,
+        "text": "<p><strong>1. ILIRIJA </strong>se zadolži, da do tekme 3. kola na table poleg nalepk KZS namesti tudi nalepke sponzorja lige. </p>",
+        "originalText": "<p><strong>1. $club </strong>se zadolži, da do tekme 3. kola na table poleg nalepk KZS namesti tudi nalepke sponzorja lige. </p>",
+        "type": "WARNING",
+        "index": 0
+      }
+    ],
+    "delegated": true,
+    "delegationChanges": [
+      {
+        "id": 39802,
+        "timestamp": "2025-09-16T15:44:59.088563Z",
+        "type": "REFEREE1",
+        "reason": "INITIAL",
+        "newOfficial": {
+          "id": 514,
+          "person": {
+            "id": 96234,
+            "firstName": "Milan",
+            "lastName": "Nedović",
+            "gender": "MALE",
+            "addressesPostOfficeName": [],
+            "anonymized": false,
+            "fullName": "Milan Nedović"
+          }
+        }
+      },
+      {
+        "id": 39803,
+        "timestamp": "2025-09-16T15:44:59.088563Z",
+        "type": "REFEREE2",
+        "reason": "INITIAL",
+        "newOfficial": {
+          "id": 99,
+          "person": {
+            "id": 95938,
+            "firstName": "Blaž",
+            "lastName": "Smrekar",
+            "gender": "MALE",
+            "addressesPostOfficeName": [],
+            "anonymized": false,
+            "fullName": "Blaž Smrekar"
+          }
+        }
+      },
+      {
+        "id": 39804,
+        "timestamp": "2025-09-16T15:44:59.088563Z",
+        "type": "REFEREE3",
+        "reason": "INITIAL",
+        "newOfficial": {
+          "id": 508,
+          "person": {
+            "id": 48418,
+            "firstName": "Miha",
+            "lastName": "Žohar",
+            "gender": "MALE",
+            "addressesPostOfficeName": [],
+            "anonymized": false,
+            "fullName": "Miha Žohar"
+          }
+        }
+      }
+    ],
+    "moveRequests": [
+      {
+        "id": 20656,
+        "dateTime": "2025-09-26T15:00:00Z",
+        "moveReason": "OTHER",
+        "opposingTeamMustConfirm": false,
+        "sportHall": {
+          "id": 18,
+          "name": "Hala Tivoli",
+          "capacity": 4500,
+          "validTo": "2023-09-01T01:59:59Z",
+          "address": {
+            "id": 18,
+            "postOffice": {
+              "id": 1,
+              "zipCode": "1000",
+              "name": "Ljubljana",
+              "municipality": "LJUBLJANA",
+              "country": "SI"
+            },
+            "street": "Celovška",
+            "houseNumber": "25"
+          },
+          "ranks": [
+            {
+              "id": 1,
+              "gender": "MALE",
+              "rank": "FIRST",
+              "category": "ABSOLUTE"
+            },
+            {
+              "id": 2,
+              "gender": "MALE",
+              "rank": "SECOND",
+              "category": "ABSOLUTE"
+            },
+            {
+              "id": 3,
+              "gender": "MALE",
+              "rank": "THIRD",
+              "category": "ABSOLUTE"
+            }
+          ]
+        },
+        "statuses": [
+          {
+            "id": 30164,
+            "newStatus": "CONFIRMED",
+            "timestamp": "2025-09-12T06:15:02.953058Z"
+          }
+        ]
+      }
+    ],
+    "homeJerseyColor": "#909090",
+    "guestJerseyColor": "#0F8DF3",
+    "bests": [
+      {
+        "statCategory": "POINTS",
+        "firstTeamPlayer": {
+          "playerId": 48170,
+          "playerFirstName": "Edo",
+          "playerLastName": "Murić",
+          "playerPhotoUuid": "a0a9648e-d9dc-48dd-bf1a-21cf8be5dc99",
+          "value": 26
+        },
+        "secondTeamPlayer": {
+          "playerId": 55153,
+          "playerFirstName": "Jan",
+          "playerLastName": "Copot",
+          "playerPhotoUuid": "71d3c8d4-4665-4b76-8dfb-ff4498ed6cc6",
+          "value": 18
+        }
+      },
+      {
+        "statCategory": "REBOUNDS",
+        "firstTeamPlayer": {
+          "playerId": 78946,
+          "playerFirstName": "Robert",
+          "playerLastName": "Jurković",
+          "playerPhotoUuid": "8026e221-20c4-4579-80ac-47aed917613e",
+          "value": 9
+        },
+        "secondTeamPlayer": {
+          "playerId": 55153,
+          "playerFirstName": "Jan",
+          "playerLastName": "Copot",
+          "playerPhotoUuid": "71d3c8d4-4665-4b76-8dfb-ff4498ed6cc6",
+          "value": 11
+        }
+      },
+      {
+        "statCategory": "ASSISTS",
+        "firstTeamPlayer": {
+          "playerId": 106285,
+          "playerFirstName": "Wendell Jerome",
+          "playerLastName": "Green jr",
+          "playerPhotoUuid": "0bcbce69-5db6-4b26-a7b4-467e5fcac7bb",
+          "value": 10
+        },
+        "secondTeamPlayer": {
+          "playerId": 55153,
+          "playerFirstName": "Jan",
+          "playerLastName": "Copot",
+          "playerPhotoUuid": "71d3c8d4-4665-4b76-8dfb-ff4498ed6cc6",
+          "value": 9
+        }
+      }
+    ],
+    "matchEvaluationId": 697
+  }
+}

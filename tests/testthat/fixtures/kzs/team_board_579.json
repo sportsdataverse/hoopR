@@ -1,0 +1,46 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "clubId": 26,
+        "clubFullname": "KOŠARKARSKI KLUB KRKA",
+        "clubLogoUuid": "dbf53462-c87d-496b-a84d-8be542f337aa",
+        "clubCode": "KRK",
+        "teamId": 17552,
+        "teamName": "Krka",
+        "gamesPlayed": 35,
+        "sum": 3241.0,
+        "average": 92.6,
+        "max": 116.0
+      },
+      {
+        "clubId": 254,
+        "clubFullname": "KOŠARKARSKI KLUB CEDEVITA OLIMPIJA",
+        "clubLogoUuid": "4586ff12-6ac5-45f9-b015-5344ddcc8320",
+        "clubCode": "COL",
+        "teamId": 17548,
+        "teamName": "Cedevita Olimpija",
+        "gamesPlayed": 7,
+        "sum": 643.0,
+        "average": 91.9,
+        "max": 106.0
+      },
+      {
+        "clubId": 16,
+        "clubFullname": "KOŠARKARSKI KLUB ILIRIJA",
+        "clubLogoUuid": "f90fe2e9-905d-481c-a7fd-042c0b75530c",
+        "clubCode": "ILI",
+        "teamId": 17551,
+        "teamName": "Perspektiva Ilirija",
+        "gamesPlayed": 33,
+        "sum": 2939.0,
+        "average": 89.1,
+        "max": 120.0
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}
