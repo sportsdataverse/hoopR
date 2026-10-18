@@ -1,0 +1,7 @@
+club_id,role,person_id,person_name,first_name,last_name,shirt_number,game_role,licensing,age,nationality,nationality_iso,height_cm,is_license_active,edition_id,season,temporary_roster
+2,player,30003361,Kevin Punter,Kevin,Punter,0,Escolta,EUR,33,Serbia,RS,193,true,91,2027,false
+2,player,30005355,Umoja Gibson,Umoja,Gibson,1,Base,EUR,28,Bulgaria,BG,185,true,91,2027,false
+2,player,30005378,Tyrese Martin,Tyrese,Martin,2,Alero,EXT,27,EE.UU.,US,198,true,91,2027,false
+2,staff,30005390,Aleksander Sekulic,Aleksander,Sekulic,1,Entrenador,CRE,48,Eslovenia,SI,,true,,,false
+2,staff,30005459,Jurica Zuza,Jurica,Zuza,2,Entrenador Ayudante,CRE,48,Croacia,HR,,true,,,false
+2,staff,30005460,Jernej Valentincic,Jernej,Valentincic,3,Entrenador Ayudante,CRE,47,Eslovenia,SI,,true,,,false

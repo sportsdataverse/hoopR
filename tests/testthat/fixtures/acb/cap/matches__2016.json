@@ -1,0 +1,197 @@
+{
+  "availableFilters": {
+    "competitions": [
+      {
+        "id": 1,
+        "name": "Liga Endesa",
+        "editions": []
+      },
+      {
+        "id": 2,
+        "name": "Copa del Rey",
+        "editions": []
+      },
+      {
+        "id": 3,
+        "name": "Supercopa Endesa",
+        "editions": []
+      }
+    ],
+    "seasons": [
+      {
+        "id": 48,
+        "seasonStartYear": 1983,
+        "seasonEndYear": 1984,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 49,
+        "seasonStartYear": 1984,
+        "seasonEndYear": 1985,
+        "rounds": [],
+        "weeks": []
+      },
+      {
+        "id": 50,
+        "seasonStartYear": 1985,
+        "seasonEndYear": 1986,
+        "rounds": [],
+        "weeks": []
+      }
+    ],
+    "rounds": [
+      {
+        "id": 2600,
+        "roundNumber": 1,
+        "subphaseId": null,
+        "subphaseNumber": null
+      },
+      {
+        "id": 2601,
+        "roundNumber": 2,
+        "subphaseId": null,
+        "subphaseNumber": null
+      },
+      {
+        "id": 2650,
+        "roundNumber": 35,
+        "subphaseId": 293,
+        "subphaseNumber": 1
+      }
+    ],
+    "weeks": [
+      {
+        "id": 526,
+        "description": "Semana 1",
+        "startDate": "2016-09-26"
+      },
+      {
+        "id": 516,
+        "description": "Semana 2",
+        "startDate": "2016-10-03"
+      },
+      {
+        "id": 504,
+        "description": "Semana 3",
+        "startDate": "2016-10-10"
+      }
+    ],
+    "phases": [
+      {
+        "id": 107,
+        "abreviation": "LR",
+        "description": "Liga Regular"
+      },
+      {
+        "id": 111,
+        "abreviation": "PO",
+        "description": "Play Off Título"
+      }
+    ]
+  },
+  "selectedFilters": {
+    "competition": 1,
+    "season": 81,
+    "round": 2600,
+    "week": 526,
+    "isRoundSelected": true
+  },
+  "teams": [
+    {
+      "id": 3062,
+      "competitionId": 1,
+      "editionId": 81,
+      "clubId": 2,
+      "fullName": "Barcelona Lassa",
+      "shortName": "Barcelona Lassa",
+      "abbreviatedName": "BAR",
+      "primaryColorHex": "#154284",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/img/www/clubes20102019/201617FCBarcelonaLassa.png",
+      "logoAlt": "Barcelona Lassa logo",
+      "secondaryLogo": null,
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    {
+      "id": 3063,
+      "competitionId": 1,
+      "editionId": 81,
+      "clubId": 3,
+      "fullName": "Baskonia",
+      "shortName": "Baskonia",
+      "abbreviatedName": "BAS",
+      "primaryColorHex": "#c8102e",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/media/PRO/00/00/51/39/65/0000513965_03.jpg",
+      "logoAlt": "Baskonia logo",
+      "secondaryLogo": null,
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    },
+    {
+      "id": 3064,
+      "competitionId": 1,
+      "editionId": 81,
+      "clubId": 4,
+      "fullName": "RETAbet Bilbao Basket",
+      "shortName": "RETAbet Bilbao",
+      "abbreviatedName": "RBB",
+      "primaryColorHex": "#000000",
+      "textColorHex": "#FFFFFF",
+      "logo": "https://static.acb.com/media/PRO/00/00/51/39/66/0000513966_03.jpg",
+      "logoAlt": "RETAbet Bilbao Basket logo",
+      "secondaryLogo": null,
+      "contrastRequired": false,
+      "shirtColor": null,
+      "shirtTextColor": null
+    }
+  ],
+  "matches": [
+    {
+      "id": 16673,
+      "homeTeamId": 3070,
+      "awayTeamId": 3075,
+      "homeScore": 101,
+      "awayScore": 90,
+      "startDateTime": "2016-09-30T18:00:00Z",
+      "matchStatus": "FINALIZED",
+      "isOnHalfTime": false,
+      "currentQuarter": 1,
+      "ticketingLink": "https://www.realmadrid.com/entradas/baloncesto",
+      "broadcastChannels": [],
+      "serieData": null
+    },
+    {
+      "id": 16672,
+      "homeTeamId": 3067,
+      "awayTeamId": 3076,
+      "homeScore": 82,
+      "awayScore": 95,
+      "startDateTime": "2016-10-01T17:00:00Z",
+      "matchStatus": "FINALIZED",
+      "isOnHalfTime": false,
+      "currentQuarter": 1,
+      "ticketingLink": "bacantix.com/Entradas/Default.aspx?id=Estudiantes",
+      "broadcastChannels": [],
+      "serieData": null
+    },
+    {
+      "id": 16675,
+      "homeTeamId": 3073,
+      "awayTeamId": 3063,
+      "homeScore": 76,
+      "awayScore": 92,
+      "startDateTime": "2016-10-01T18:00:00Z",
+      "matchStatus": "FINALIZED",
+      "isOnHalfTime": false,
+      "currentQuarter": 1,
+      "ticketingLink": "https://www.obradoirocab.gal",
+      "broadcastChannels": [],
+      "serieData": null
+    }
+  ]
+}

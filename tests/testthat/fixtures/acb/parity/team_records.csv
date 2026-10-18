@@ -1,0 +1,16 @@
+club_id,stat,value,game_id,game_date,player_id,player_name,first_name,last_name,shirt_number,game_role,local_team_id,local_club_id,local_team,local_team_abbr,visitor_team_id,visitor_club_id,visitor_team,visitor_team_abbr
+2,rating,46.0,5573,1988-01-30T00:00:00Z,20200740,Steve Trumbo,Esteban,Trumbo,,,984,28,Cajacanarias,CAN,981,2,FC Barcelona,FCB
+2,points,54.0,4606,1984-02-18T00:00:00Z,20200741,Epi,Juan,San Epifanio,,,917,2,FC Barcelona,FCB,926,8,Joventut Massana,JOV
+2,rebounds,19.0,5092,1986-02-22T00:00:00Z,20200740,Steve Trumbo,Esteban,Trumbo,,,949,2,FC Barcelona,FCB,957,33,Cacaolat Granollers,GRN
+2,assists,14.0,18227,2018-12-16T00:00:00Z,20204097,Thomas Heurtel,Thomas,Heurtel,,,3216,14,Unicaja,UNI,3202,2,Barça Lassa,BAR
+2,steals,8.0,5525,1987-12-06T00:00:00Z,20200739,Nacho Solozábal,Ignacio,Solozábal,,,981,2,FC Barcelona,FCB,987,33,Cacaolat Granollers,GRN
+2,blocks,12.0,12701,2007-01-07T00:00:00Z,20200648,Fran Vázquez,Francisco,Vázquez,,,1372,71,Grupo Capitol Valladolid,GCV,1356,2,Winterthur FC Barcelona,FCB
+2,three_pointer,12.0,15578,2014-03-08T00:00:00Z,20210662,Jacob Pullen,Jacob,Pullen,,,2952,71,CB Valladolid,VAL,2936,2,FC Barcelona,FCB
+2,two_pointer,24.0,4606,1984-02-18T00:00:00Z,20200741,Epi,Juan,San Epifanio,,,917,2,FC Barcelona,FCB,926,8,Joventut Massana,JOV
+2,free_throws,20.0,12280,2005-11-05T00:00:00Z,20200515,Juan Carlos Navarro,Juan Carlos,Navarro,,,1341,25,Leche Río Breogán,BRE,1338,2,Winterthur FC Barcelona,FCB
+2,defensive_rebounds,15.0,102920,2021-09-22T00:00:00Z,20202101,Nikola Mirotic,Nikola,Mirotic,,,3678,5,Gran Canaria,GCA,3676,2,Barça,BAR
+2,offensive_rebounds,10.0,8729,1995-03-24T00:00:00Z,20201030,Darryl Middleton,Darryl,Middleton,,,1136,2,FC Barcelona Banca Catalana,FCB,1153,71,Fórum Valladolid,FOR
+2,received_fouls,13.0,12280,2005-11-05T00:00:00Z,20200515,Juan Carlos Navarro,Juan Carlos,Navarro,,,1341,25,Leche Río Breogán,BRE,1338,2,Winterthur FC Barcelona,FCB
+2,committed_fouls,5.0,105392,2026-10-04T00:00:00Z,30005355,Umoja Gibson,Umoja,Gibson,,,4468,12,UCAM Murcia,UCM,4467,2,Barça,BAR
+2,dunks,6.0,15848,2014-06-10T00:00:00Z,20209874,Joey Dorsey,Richard,Dorsey Jr,,,2936,2,FC Barcelona,FCB,2949,13,Valencia Basket Club,VBC
+2,turnovers,13.0,10659,2000-12-16T00:00:00Z,20200511,Saras Jasikevicius,Sarunas,Jasikevicius,,,1262,15,Caja San Fernando,CSF,1248,2,FC Barcelona,FCB

@@ -1,0 +1,162 @@
+{
+  "competitionId": 1,
+  "homeTeam": {
+    "id": 3074,
+    "competitionId": 1,
+    "editionId": 81,
+    "clubId": 13,
+    "fullName": "Valencia Basket Club",
+    "shortName": "Valencia Basket",
+    "abbreviatedName": "VBC",
+    "primaryColorHex": "#fc6c0f",
+    "textColorHex": "#000000",
+    "logo": "https://static.acb.com/img/www/clubes20102019/201213ValenciaBasketClub.png",
+    "logoAlt": "Valencia Basket Club logo",
+    "secondaryLogo": null,
+    "contrastRequired": false,
+    "shirtColor": null,
+    "shirtTextColor": null
+  },
+  "awayTeam": {
+    "id": 3070,
+    "competitionId": 1,
+    "editionId": 81,
+    "clubId": 9,
+    "fullName": "Real Madrid",
+    "shortName": "Real Madrid",
+    "abbreviatedName": "RMB",
+    "primaryColorHex": "#ffffff",
+    "textColorHex": "#000000",
+    "logo": " https://static.acb.com/logos/1718/real_madrid_00.png",
+    "logoAlt": "Real Madrid logo",
+    "secondaryLogo": null,
+    "contrastRequired": false,
+    "shirtColor": null,
+    "shirtTextColor": null
+  },
+  "homeTeamShotStats": {
+    "fieldGoals": {
+      "made": 30,
+      "attempted": 67
+    },
+    "twoPointers": {
+      "made": 19,
+      "attempted": 36
+    },
+    "threePointers": {
+      "made": 11,
+      "attempted": 31
+    }
+  },
+  "awayTeamShotStats": {
+    "fieldGoals": {
+      "made": 30,
+      "attempted": 66
+    },
+    "twoPointers": {
+      "made": 23,
+      "attempted": 37
+    },
+    "threePointers": {
+      "made": 7,
+      "attempted": 29
+    }
+  },
+  "homePlayerStats": [
+    {
+      "playerLicenseId": 20211316,
+      "points": 12,
+      "playerName": "W. Thomas",
+      "playerNumber": "0",
+      "playerImage": null
+    },
+    {
+      "playerLicenseId": 20211945,
+      "points": 0,
+      "playerName": "V. Kravtsov",
+      "playerNumber": "55",
+      "playerImage": "https://www.acb.com/fotos_cara/jugadores/JD04LACB61.jpg"
+    },
+    {
+      "playerLicenseId": 20210656,
+      "points": 8,
+      "playerName": "L. Sikma",
+      "playerNumber": "43",
+      "playerImage": "https://www.acb.com/fotos_cara/jugadores/JH14LACB61.jpg"
+    }
+  ],
+  "awayPlayerStats": [
+    {
+      "playerLicenseId": 20211614,
+      "points": 7,
+      "playerName": "J. Taylor",
+      "playerNumber": "44",
+      "playerImage": "https://www.acb.com/fotos_cara/jugadores/JFQ3LACB61.jpg"
+    },
+    {
+      "playerLicenseId": 20211310,
+      "points": 2,
+      "playerName": "J. Maciulis",
+      "playerNumber": "8",
+      "playerImage": "https://www.acb.com/fotos_cara/jugadores/J1L9LACB61.jpg"
+    },
+    {
+      "playerLicenseId": 20210121,
+      "points": 2,
+      "playerName": "L. Doncic",
+      "playerNumber": "7",
+      "playerImage": null
+    }
+  ],
+  "shotPoints": [
+    {
+      "id": 16,
+      "posX": 93,
+      "posY": 45,
+      "playType": 97,
+      "quarter": 1,
+      "minute": 9,
+      "second": 42,
+      "local": false,
+      "scoreHome": 0,
+      "scoreAway": 0,
+      "playerLicenseId": 20201774,
+      "zone": "restricted_area",
+      "made": false,
+      "points": 2
+    },
+    {
+      "id": 18,
+      "posX": 16,
+      "posY": 51,
+      "playType": 93,
+      "quarter": 1,
+      "minute": 9,
+      "second": 30,
+      "local": true,
+      "scoreHome": 2,
+      "scoreAway": 0,
+      "playerLicenseId": 20200613,
+      "zone": "restricted_area",
+      "made": true,
+      "points": 2
+    },
+    {
+      "id": 31,
+      "posX": 0,
+      "posY": 0,
+      "playType": 92,
+      "quarter": 1,
+      "minute": 8,
+      "second": 5,
+      "local": true,
+      "scoreHome": 5,
+      "scoreAway": 3,
+      "playerLicenseId": 20210656,
+      "zone": null,
+      "made": null,
+      "points": null
+    }
+  ],
+  "matchFinished": true
+}

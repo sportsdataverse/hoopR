@@ -1,0 +1,4 @@
+match_id,edition_id,season,play_index,order,quarter,minute,second,clock_seconds,play_type,play_name,play_tag,turnover_type,is_home,score_home,score_away,license_type,player_id,player_name,shirt_number,run_points,run_free_throws_made,run_free_throws_attempted,run_two_pointers_made,run_two_pointers_attempted,run_three_pointers_made,run_three_pointers_attempted,run_assists,run_off_rebounds,run_def_rebounds,run_total_rebounds,run_steals,run_turnovers,run_blocks,run_personal_fouls,run_fouls_drawn,series_wins,series_losses
+17718,81,2017,1,1,1,10,0,600,599,STARTING_LINEUP,,,true,0,0,202,20211940,Antoine Diot,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,
+17718,81,2017,2,2,1,10,0,600,599,STARTING_LINEUP,,,true,0,0,202,20210254,Bojan Dubljevic,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,
+17718,81,2017,3,11,1,10,0,600,122,START_OF_GAME,,,false,0,0,,,,,,,,,,,,,,,,,,,,,,

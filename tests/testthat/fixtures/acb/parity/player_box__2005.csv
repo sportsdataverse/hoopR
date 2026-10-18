@@ -1,0 +1,7 @@
+match_id,edition_id,season,team_side,team_id,club_id,team,team_abbr,quarter,player_id,player_name,first_name,last_name,shirt_number,game_role,on_court,play_time,seconds_played,is_starter,points,free_throws_made,free_throws_attempted,two_pointers_made,two_pointers_attempted,three_pointers_made,three_pointers_attempted,assists,off_rebounds,def_rebounds,total_rebounds,steals,turnovers,blocks,received_blocks,dunks,personal_fouls,fouls_drawn,plus_minus,rating
+12559,70,2006,home,1339,3,TAU Cerámica,TAU,0,20200417,Luis Scola,Luis,Scola,4,Ala-pívot,false,21:10,1270,true,11,5,8,3,6,0,0,1,2,4,6,0,2,0,0,0,5,6,0,11
+12559,70,2006,home,1339,3,TAU Cerámica,TAU,0,20200395,Pablo Prigioni,Pablo,Prigioni,5,Base,false,23:55,1435,true,5,0,0,1,2,1,2,2,0,2,2,1,0,0,0,0,2,1,0,7
+12559,70,2006,home,1339,3,TAU Cerámica,TAU,0,20201731,Travis Hansen,Travis Mitchell,Hansen,6,Alero,false,17:16,1036,true,13,0,0,2,6,3,4,0,0,0,0,0,2,0,0,0,5,0,0,1
+12559,70,2006,away,1352,14,Unicaja,UNI,0,20201557,Pepe Sánchez,Juan,Sánchez,4,Base,false,25:35,1535,true,3,0,0,0,3,1,3,5,3,1,4,0,2,0,0,0,2,0,0,3
+12559,70,2006,away,1352,14,Unicaja,UNI,0,20201581,Walter Herrmann,Walter,Herrmann,12,Alero,false,20:54,1254,true,0,0,0,0,2,0,1,0,0,3,3,0,0,0,0,0,1,0,0,-1
+12559,70,2006,away,1352,14,Unicaja,UNI,0,20200999,Jorge Garbajosa,Jorge,Garbajosa,15,Pívot,false,30:59,1859,true,22,5,8,1,6,5,9,0,1,7,8,1,1,0,0,0,2,8,0,24

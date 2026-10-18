@@ -1,0 +1,9 @@
+match_id,stat,side,value,bar_progress,is_highlighted
+105401,best_score_run,home,11,90.0,true
+105401,best_score_run,away,5,40.91,false
+105401,max_difference,home,13,90.0,true
+105401,max_difference,away,9,62.31,false
+105401,time_ahead,home,25:37,90.0,true
+105401,time_ahead,away,10:56,38.41,false
+105401,lead_changes,home,5,90.0,true
+105401,lead_changes,away,5,90.0,false

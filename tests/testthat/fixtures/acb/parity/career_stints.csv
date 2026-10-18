@@ -1,0 +1,3 @@
+player_id,initial_year,end_year,team_id,club_id,team,team_abbr,edition_id,n_editions,has_no_validated_data
+20209407,2017,2027,4476,9,Real Madrid,RMB,91,3,false
+20209407,2013,2015,2997,5,Herbalife Gran Canaria,HGC,79,0,false

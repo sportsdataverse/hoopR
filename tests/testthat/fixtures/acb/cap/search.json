@@ -1,0 +1,24 @@
+{
+  "players": [
+    {
+      "id": 20209407,
+      "firstInitialAndLastName": "W. Tavares",
+      "firstName": "Walter",
+      "lastName": "Tavares",
+      "nickname": "Edy Tavares",
+      "shirtNumber": null,
+      "headshotImageUrl": "https://static.acb.com/media/PRO/00/00/93/57/30/0000935730_5-6_01.jpg",
+      "headshotImageNoBackgroundUrl": "https://static.acb.com/media/PRO/00/00/93/57/30/0000935730_5-6_01_transparent.webp",
+      "headshotImageAlt": "W. Tavares photo",
+      "fullBodyImageUrl": null,
+      "fullBodyImageNoBackgroundUrl": null,
+      "gameRole": null,
+      "isLicenseActive": false,
+      "editionId": null,
+      "nicknameFirstName": "Edy",
+      "nicknameLastName": "Tavares"
+    }
+  ],
+  "teams": [],
+  "coaches": []
+}

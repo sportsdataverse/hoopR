@@ -1,0 +1,10 @@
+competition_id,edition_id,season,round_id,round_number,subphase_id,subphase_number,week_id,match_id,home_team_id,away_team_id,home_score,away_score,start,status,is_on_half_time,current_quarter,home_club_id,home_team,home_team_abbr,away_club_id,away_team,away_team_abbr,ticketing_link,broadcasters
+1,91,2027,6015,1,,,,105375,4475,4471,107,92,2026-09-26T16:00:00Z,FINALIZED,false,4,4,Surne Bilbao,SBB,10,Kids&Us Manresa,K&U,https://bacantix.com/Entradas/?id=BilbaoBasket,DAZN; Movistar Plus +; Orange
+1,91,2027,6015,1,,,,105376,4466,4479,85,90,2026-09-26T17:30:00Z,FINALIZED,false,4,22,MoraBanc Andorra,MBA,,,,https://bca.koobin.com,DAZN; Movistar Plus +; Orange
+1,91,2027,6015,1,,,,105377,4467,4480,119,101,2026-09-26T19:00:00Z,FINALIZED,false,4,,,,,,,https://www.fcbarcelona.es/es/entradas/baloncesto,DAZN; Movistar Plus +; Orange
+1,91,2027,6016,2,,,,105385,4477,4478,75,80,2026-10-03T17:30:00Z,FINALIZED,false,4,,,,,,,https://venta.unicajabaloncesto.com,DAZN en abierto; Movistar Plus +; Orange
+1,91,2027,6016,2,,,,105386,4471,4464,95,101,2026-10-03T19:00:00Z,FINALIZED,false,4,10,Kids&Us Manresa,K&U,,,,https://www.basquetmanresa.com/tickets-abonaments/,DAZN; Movistar Plus +; Orange
+1,91,2027,6016,2,,,,105387,4465,4469,81,94,2026-10-04T10:00:00Z,FINALIZED,false,4,,,,,,,https://venta.flleida.cat/ca/abonos/alta,DAZN; Movistar Plus +; Orange
+1,91,2027,6017,3,,,,105393,4480,4474,71,92,2026-10-10T16:00:00Z,FINALIZED,false,4,,,,,,,https://venta.basquetcoruna.t2v.com/,DAZN; Movistar Plus +; Orange
+1,91,2027,6017,3,,,,105394,4477,4466,92,84,2026-10-10T17:30:00Z,FINALIZED,false,4,,,,22,MoraBanc Andorra,MBA,https://venta.unicajabaloncesto.com,DAZN; Movistar Plus +; Orange
+1,91,2027,6017,3,,,,105395,4464,4470,115,92,2026-10-10T19:00:00Z,FINALIZED,false,4,,,,,,,https://entradas.breogan.es/entradasliga/index.php,DAZN; Movistar Plus +; Orange

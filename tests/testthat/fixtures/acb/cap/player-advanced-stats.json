@@ -1,0 +1,230 @@
+{
+  "fourFactors": {
+    "efgPct": {
+      "partido": 100,
+      "temporada": 94.1,
+      "win": 100,
+      "loss": 75,
+      "temporadaDiff": 5.9,
+      "winDiff": 0,
+      "lossDiff": 25
+    },
+    "orbPct": {
+      "partido": 3.8,
+      "temporada": 9.6,
+      "win": 6.7,
+      "loss": 14.3,
+      "temporadaDiff": -5.8,
+      "winDiff": -2.9,
+      "lossDiff": -10.5
+    },
+    "tovPct": {
+      "partido": 18.4,
+      "temporada": 4.3,
+      "win": 6.3,
+      "loss": 0,
+      "temporadaDiff": -14.1,
+      "winDiff": -12.1,
+      "lossDiff": -18.4
+    },
+    "fTr": {
+      "partido": 25,
+      "temporada": 70.6,
+      "win": 30.8,
+      "loss": 200,
+      "temporadaDiff": -45.6,
+      "winDiff": -5.8,
+      "lossDiff": -175
+    }
+  },
+  "gameRhythm": {
+    "possessions": {
+      "partido": 4.3,
+      "temporada": 4.6,
+      "win": 5.6,
+      "loss": 3.4,
+      "temporadaDiff": -0.3,
+      "winDiff": -1.3,
+      "lossDiff": 0.9
+    },
+    "pace": {
+      "partido": 581.5,
+      "temporada": 467.4,
+      "win": 485.6,
+      "loss": 453.3,
+      "temporadaDiff": 114.1,
+      "winDiff": 95.9,
+      "lossDiff": 128.2
+    },
+    "pointsPerPossession": {
+      "partido": 2.1,
+      "temporada": 3.1,
+      "win": 2.7,
+      "loss": 3.6,
+      "temporadaDiff": -1,
+      "winDiff": -0.6,
+      "lossDiff": -1.5
+    }
+  },
+  "ballHandling": {
+    "astRatio": {
+      "partido": 15.5,
+      "temporada": 11.4,
+      "win": 11.3,
+      "loss": 11.7,
+      "temporadaDiff": 4.1,
+      "winDiff": 4.2,
+      "lossDiff": 3.8
+    },
+    "astPct": {
+      "partido": 13.3,
+      "temporada": 9.2,
+      "win": 9.2,
+      "loss": 9.1,
+      "temporadaDiff": 4.1,
+      "winDiff": 4.1,
+      "lossDiff": 4.2
+    },
+    "stlRatio": {
+      "partido": 0,
+      "temporada": 4.1,
+      "win": 6,
+      "loss": 0,
+      "temporadaDiff": -4.1,
+      "winDiff": -6,
+      "lossDiff": 0
+    },
+    "stlPct": {
+      "partido": 0,
+      "temporada": 1,
+      "win": 1.5,
+      "loss": 0,
+      "temporadaDiff": -1,
+      "winDiff": -1.5,
+      "lossDiff": 0
+    },
+    "blkPct": {
+      "partido": 0,
+      "temporada": 1.6,
+      "win": 2.4,
+      "loss": 0,
+      "temporadaDiff": -1.6,
+      "winDiff": -2.4,
+      "lossDiff": 0
+    },
+    "tovPct": {
+      "partido": 18.4,
+      "temporada": 4.3,
+      "win": 6.3,
+      "loss": 0,
+      "temporadaDiff": -14.1,
+      "winDiff": -12.1,
+      "lossDiff": -18.4
+    }
+  },
+  "shooting": {
+    "tsPct": {
+      "partido": 101.4,
+      "temporada": 94.3,
+      "win": 101.6,
+      "loss": 79.8,
+      "temporadaDiff": 7.1,
+      "winDiff": -0.2,
+      "lossDiff": 21.6
+    },
+    "efgPct": {
+      "partido": 100,
+      "temporada": 94.1,
+      "win": 100,
+      "loss": 75,
+      "temporadaDiff": 5.9,
+      "winDiff": 0,
+      "lossDiff": 25
+    },
+    "threePAr": {
+      "partido": 0,
+      "temporada": 0,
+      "win": 0,
+      "loss": 0,
+      "temporadaDiff": 0,
+      "winDiff": 0,
+      "lossDiff": 0
+    },
+    "ppt": {
+      "partido": 2.2,
+      "temporada": 2.5,
+      "win": 2.3,
+      "loss": 3,
+      "temporadaDiff": -0.3,
+      "winDiff": -0.1,
+      "lossDiff": -0.8
+    }
+  },
+  "points": {
+    "ppft": {
+      "partido": 1,
+      "temporada": 0.8,
+      "win": 1,
+      "loss": 0.8,
+      "temporadaDiff": 0.2,
+      "winDiff": 0,
+      "lossDiff": 0.2
+    },
+    "pp2ps": {
+      "partido": 2,
+      "temporada": 1.9,
+      "win": 2,
+      "loss": 1.5,
+      "temporadaDiff": 0.1,
+      "winDiff": 0,
+      "lossDiff": 0.5
+    },
+    "pp3ps": {
+      "partido": 0,
+      "temporada": 0,
+      "win": 0,
+      "loss": 0,
+      "temporadaDiff": 0,
+      "winDiff": 0,
+      "lossDiff": 0
+    },
+    "pointsPerHundredPossessions": {
+      "partido": 211.1,
+      "temporada": 306.4,
+      "win": 265.7,
+      "loss": 355.1,
+      "temporadaDiff": -95.3,
+      "winDiff": -54.6,
+      "lossDiff": -144
+    }
+  },
+  "rebounds": {
+    "orbPct": {
+      "partido": 3.8,
+      "temporada": 9.6,
+      "win": 6.7,
+      "loss": 14.3,
+      "temporadaDiff": -5.8,
+      "winDiff": -2.9,
+      "lossDiff": -10.5
+    },
+    "drbPct": {
+      "partido": 14.3,
+      "temporada": 17,
+      "win": 20.7,
+      "loss": 11.1,
+      "temporadaDiff": -2.7,
+      "winDiff": -6.4,
+      "lossDiff": 3.2
+    },
+    "trbPct": {
+      "partido": 7.5,
+      "temporada": 12.5,
+      "win": 12.2,
+      "loss": 13,
+      "temporadaDiff": -5,
+      "winDiff": -4.7,
+      "lossDiff": -5.5
+    }
+  }
+}
