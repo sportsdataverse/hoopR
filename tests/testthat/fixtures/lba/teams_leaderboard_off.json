@@ -1,0 +1,84 @@
+{
+  "stats": [
+    {
+      "category": "points",
+      "name": "BC Roma",
+      "sponsor_name": "",
+      "short_name": "BC Roma",
+      "tv_name": "BC Roma",
+      "year": 2026,
+      "logo_key": "gxrVRq4XLCRXYwdsbCQeFSS8",
+      "attempts": 0,
+      "total_played_matches": 3,
+      "total_points": 297,
+      "minutes": 600,
+      "score_40_min": 99,
+      "score": 99,
+      "team_id": 1761
+    },
+    {
+      "category": "points",
+      "name": "Napoli Basketball",
+      "sponsor_name": "",
+      "short_name": "Napoli Basketball",
+      "tv_name": "Napoli Basketball",
+      "year": 2026,
+      "logo_key": "48PaXiFhMot5c6vnRxHpwVoC",
+      "attempts": 0,
+      "total_played_matches": 3,
+      "total_points": 292,
+      "minutes": 600,
+      "score_40_min": 97.33333333333334,
+      "score": 97.33333333333333,
+      "team_id": 1772
+    },
+    {
+      "category": "points",
+      "name": "Virtus Costa Bologna",
+      "sponsor_name": "",
+      "short_name": "Virtus Costa Bologna",
+      "tv_name": "Virtus Costa Bologna",
+      "year": 2026,
+      "logo_key": "tcKLhHtaP14WoCiDWnUN88v9",
+      "attempts": 0,
+      "total_played_matches": 3,
+      "total_points": 281,
+      "minutes": 600,
+      "score_40_min": 93.66666666666667,
+      "score": 93.66666666666667,
+      "team_id": 1750
+    }
+  ],
+  "filters": {
+    "order_by": [
+      {
+        "code": "sum",
+        "description": "Totale"
+      },
+      {
+        "code": "avg",
+        "description": "Media"
+      },
+      {
+        "code": "40_perc",
+        "description": "40 min/%"
+      }
+    ],
+    "categories": [
+      {
+        "code": "points",
+        "description": "Punti"
+      },
+      {
+        "code": "rating_lega",
+        "description": "Valutazione"
+      },
+      {
+        "code": "total_rebound",
+        "description": "Rimbalzi"
+      }
+    ]
+  },
+  "cache_key": "_cmtCK:1791747613_season_range:off|year:2026|championship_series_id:1|advanced:false|order_by:avg",
+  "cdn_url": "https://lba-media.s3.eu-south-1.amazonaws.com"
+}

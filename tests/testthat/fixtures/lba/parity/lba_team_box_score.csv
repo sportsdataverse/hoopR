@@ -1,0 +1,5 @@
+game_id,season,side,team_id,row_type,pun,falli_c,falli_sf,falli_tc1,falli_fla,rimbalzi_o,rimbalzi_d,rimbalzi_t,palle_p,palle_r,val_lega,min,sec,t2_r,t2_t,t2_perc,sc,t3_r,t3_t,t3_perc,tl_r,tl_t,tl_perc,stoppate_dat,stoppate_sub,ass,val_oer
+25602,2027,home,1764,team,0,0,0,0,0,5,2,7,0,0,7,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>
+25602,2027,home,1764,totals,109,21,27,0,0,12,21,33,7,9,132,200,12000,30,46,65.21739130434783,3,8,23,34.78260869565217,25,35,71.42857142857143,2,2,23,1.2669447625
+25602,2027,visitor,1761,team,0,0,0,0,0,4,2,6,0,0,6,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>,<NA>
+25602,2027,visitor,1761,totals,94,27,21,0,1,16,23,39,12,6,99,200,12000,22,35,62.857142857142854,1,12,36,33.33333333333333,14,21,66.66666666666666,2,2,22,1.0179807625000001
