@@ -1,0 +1,3 @@
+gid,side,minutes,seconds,points,fg2_made,fg2_att,fg2_pct,fg3_made,fg3_att,fg3_pct,ft_made,ft_att,ft_pct,reb,reb_off,reb_def,ast,stl,blk,tov,pf,plus_minus
+206,home,290:00,17400,108,37,68,54.41,8,33,24.24,10,21,47.62,65,18,47,22,12,7,13,22,<null>
+206,away,290:00,17400,104,36,68,52.94,7,36,19.44,11,19,57.89,61,18,43,24,8,3,15,22,<null>

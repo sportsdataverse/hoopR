@@ -1,0 +1,20 @@
+gid,seq,period,period_no,clock,seconds_left,side,jersey,player_zh,action,action_zh,action_en,text_zh,ft_number,ft_awarded,points,score_away,score_home,x,y,nice_play,video_uuid,synergy_play_id,video_stat_category,tryspot_player_id,video_created_at
+197,1,Q1,1,12:00,720,away,35,辛巴,jump_ball_won,跳球 贏,jump ball won,#35 辛巴 跳球 贏,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,2,Q1,1,12:00,720,home,5,強森,jump_ball_lost,跳球 輸,jump ball lost,#5 強森 跳球 輸,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,3,Q1,1,11:41,701,away,35,辛巴,fg2_dunk_made,灌籃得分,"2-point dunk, made",#35 辛巴 灌籃得分,<null>,<null>,2,2,0,91.59,47.39,false,5d17e839-107a-41f4-abc4-0b5a0e67a301,042db380-5cea-11ed-8425-e528fba9f5b7,two_made,59476,2022-11-05T09:12:48.556Z
+197,4,Q1,1,11:41,701,away,31,阿提諾,ast,助攻,assist,#31 阿提諾 助攻,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,5d17e839-107a-41f4-abc4-0b5a0e67a301,042db380-5cea-11ed-8425-e528fba9f5b7,two_made,59476,2022-11-05T09:12:48.556Z
+197,5,Q1,1,11:20,680,home,5,強森,fg3_made,三分球得分,"3-point shot, style not recorded, made",#5 強森 三分球得分,<null>,<null>,3,2,3,29.74,24.1,false,732a08d7-9128-4e58-8463-592d4f098c55,1099f020-5cea-11ed-8425-e528fba9f5b7,three_made,150672,2022-11-05T09:13:09.534Z
+197,6,Q1,1,10:53,653,away,8,朱雲豪,tov_ball_handling,控球失誤,turnover: ball-handling,#8 朱雲豪 控球失誤,<null>,<null>,<null>,<null>,<null>,74.35,15.66,false,74a4b5d3-b099-4c9c-969f-414246972abf,20963150-5cea-11ed-8425-e528fba9f5b7,turnover,59466,2022-11-05T09:13:37.860Z
+197,7,Q1,1,10:53,653,home,5,強森,stl,抄截,steal,#5 強森 抄截,<null>,<null>,<null>,<null>,<null>,74.35,15.66,false,74a4b5d3-b099-4c9c-969f-414246972abf,20963150-5cea-11ed-8425-e528fba9f5b7,turnover,59466,2022-11-05T09:13:37.860Z
+197,8,Q1,1,10:49,649,home,<null>,賴廷恩,fg3_made,三分球得分,"3-point shot, style not recorded, made",賴廷恩 三分球得分,<null>,<null>,3,2,6,17.67,6.02,false,deb3d9d1-602f-435b-b8b5-542e3ff44a6d,236a38e0-5cea-11ed-8425-e528fba9f5b7,three_made,57225,2022-11-05T09:13:40.906Z
+197,9,Q1,1,10:42,642,away,35,辛巴,fg2_layup_made,上籃得分,"2-point layup, made",#35 辛巴 上籃得分,<null>,<null>,2,4,6,93.75,51.2,false,d0db5bd9-cef3-43d0-b336-e16332705cfc,2792d3f0-5cea-11ed-8425-e528fba9f5b7,ast,57266,2022-11-05T09:13:51.760Z
+197,10,Q1,1,10:42,642,away,9,田浩,ast,助攻,assist,#9 田浩 助攻,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,d0db5bd9-cef3-43d0-b336-e16332705cfc,2792d3f0-5cea-11ed-8425-e528fba9f5b7,ast,57266,2022-11-05T09:13:51.760Z
+197,11,Q2,2,12:00,720,home,2,瓊斯,sub_in,替換上場,substitution: enters the game,#2 瓊斯 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,12,Q2,2,12:00,720,home,14,蔡文誠,sub_out,下場休息,substitution: leaves the game,#14 蔡文誠 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,13,Q3,3,12:00,720,away,4,高國豪,sub_in,替換上場,substitution: enters the game,#4 高國豪 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,14,Q3,3,12:00,720,away,24,郭少傑,sub_out,下場休息,substitution: leaves the game,#24 郭少傑 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,15,Q4,4,12:00,720,away,36,林宜輝,sub_in,替換上場,substitution: enters the game,#36 林宜輝 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,16,Q4,4,12:00,720,away,31,阿提諾,sub_out,下場休息,substitution: leaves the game,#31 阿提諾 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,17,Q4,4,00:22,22,home,88,曾祥鈞,reb_off,搶到進攻籃板,offensive rebound (a team rebound has no player),#88 曾祥鈞 搶到進攻籃板,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+197,18,Q4,4,00:19,19,home,88,曾祥鈞,fg2_putback_made,補籃得分,"2-point putback / tip-in, made",#88 曾祥鈞 補籃得分,<null>,<null>,2,92,102,95.0,50.0,false,<null>,<null>,<null>,<null>,<null>
+197,19,Q4,4,00:05,5,away,36,林宜輝,fg2_layup_made,上籃得分,"2-point layup, made",#36 林宜輝 上籃得分,<null>,<null>,2,94,102,7.87,46.18,false,<null>,<null>,<null>,<null>,<null>

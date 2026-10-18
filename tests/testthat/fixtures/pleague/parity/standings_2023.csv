@@ -1,0 +1,4 @@
+season,season_slug,rank,team_id,team_zh,team_uuid,team_logo,games_played,wins,losses,win_pct,games_behind,points_for_avg,points_against_avg,point_diff_avg,home_record,away_record,streak,last_n,last_n_record
+2023,2022-23,1,6,國王,e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1,https://photonew.preciser.io/plg/teams/e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1.png,40,27,13,68.0,0.0,97.2,93.7,3.5,14-6,13-7,L1,10,4-6
+2023,2022-23,2,1,勇士,e86394aa-3d88-11ed-8ba8-7f44ba46b0b1,https://photonew.preciser.io/plg/teams/e86394aa-3d88-11ed-8ba8-7f44ba46b0b1.png,40,25,15,63.0,2.0,98.6,93.9,4.7,14-6,11-9,W2,10,6-4
+2023,2022-23,3,2,領航猿,e865bb20-3d88-11ed-a956-7f44ba46b0b1,https://photonew.preciser.io/plg/teams/e865bb20-3d88-11ed-a956-7f44ba46b0b1.png,40,19,21,48.0,8.0,88.0,85.4,2.7,11-9,8-12,L2,10,4-6
