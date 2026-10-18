@@ -1,0 +1,9 @@
+schedule_key,season,feed,period,team_side,team_id,points
+1,2017,v1,1,home,706,26
+1,2017,v1,1,away,701,19
+1,2017,v1,2,home,706,17
+1,2017,v1,2,away,701,17
+1,2017,v1,3,home,706,21
+1,2017,v1,3,away,701,15
+1,2017,v1,4,home,706,16
+1,2017,v1,4,away,701,24
