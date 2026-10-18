@@ -1,0 +1,74 @@
+[
+  {
+    "rank": 1,
+    "tcode": "35",
+    "win": 3,
+    "loss": 0,
+    "draw": 0,
+    "contiWin": 3,
+    "contiLoss": 0,
+    "winDiff": 0.0,
+    "maxWin": 3,
+    "maxLoss": 0,
+    "tname": "서울 삼성",
+    "tnameF": "서울 삼성 썬더스",
+    "teamLogoClass": "ss",
+    "hwin": 2,
+    "hloss": 0,
+    "awin": 1,
+    "aloss": 0,
+    "lastRecord": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "rank": 2,
+    "tcode": "70",
+    "win": 3,
+    "loss": 1,
+    "draw": 0,
+    "contiWin": 1,
+    "contiLoss": 0,
+    "winDiff": 0.5,
+    "maxWin": 2,
+    "maxLoss": 1,
+    "tname": "안양 정관장",
+    "tnameF": "안양 정관장 레드부스터스",
+    "teamLogoClass": "kgc",
+    "hwin": 2,
+    "hloss": 0,
+    "awin": 1,
+    "aloss": 1,
+    "lastRecord": [
+      1,
+      0,
+      1
+    ]
+  },
+  {
+    "rank": 2,
+    "tcode": "06",
+    "win": 3,
+    "loss": 1,
+    "draw": 0,
+    "contiWin": 3,
+    "contiLoss": 0,
+    "winDiff": 0.5,
+    "maxWin": 3,
+    "maxLoss": 1,
+    "tname": "수원 KT",
+    "tnameF": "수원 KT 소닉붐",
+    "teamLogoClass": "kt",
+    "hwin": 2,
+    "hloss": 1,
+    "awin": 1,
+    "aloss": 0,
+    "lastRecord": [
+      1,
+      1,
+      1
+    ]
+  }
+]

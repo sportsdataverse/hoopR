@@ -1,0 +1,10 @@
+part,part_label,rank,value,game_count,pcode,player_name,player_name_en,team_code,team_name,back_num,pos,player_flag
+score,Points per game,1,29.5,4,291579,게이지 프림,Gaige Colburn Prim,10,울산 현대모비스,44,C,1
+score,Points per game,2,28.5,4,291671,패리스 배스,Paris Nickolas Bass,06,수원 KT,35,FD,1
+score,Points per game,3,24.0,4,291785,헨리 엘런슨,Henry Ellenson,16,원주 DB,8,FD,1
+rb,Rebounds per game,1,13.4,5,291342,숀 롱,Shawn Long,60,부산 KCC,36,C,1
+rb,Rebounds per game,2,12.75,4,291883,존 무니,John Mooney,70,안양 정관장,33,C,1
+rb,Rebounds per game,3,11.75,4,291432,아셈 마레이,Assem Marei,50,창원 LG,50,C,1
+ast,Assists per game,1,9.6,5,291085,허훈,HEO HOON,60,부산 KCC,7,GD,0
+ast,Assists per game,2,7.25,4,291511,이선 알바노,Ethan Alvano,16,원주 DB,17,GD,2
+ast,Assists per game,3,6.5,4,291432,아셈 마레이,Assem Marei,50,창원 LG,50,C,1

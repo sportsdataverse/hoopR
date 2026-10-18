@@ -1,0 +1,23 @@
+season,season_code,gmkey,game_code,game_no,round,series_no,game_date,home_team_code,away_team_code,home_team_name,away_team_name,home_score,away_score,home_win
+2025,45,S45G03N1,03,1,quarterfinal,1,2025-04-12,06,64,수원 KT,대구 한국가스공사,64,67,false
+2025,45,S45G03N3,03,3,quarterfinal,1,2025-04-14,06,64,수원 KT,대구 한국가스공사,75,71,true
+2025,45,S45G03N5,03,5,quarterfinal,1,2025-04-16,64,06,대구 한국가스공사,수원 KT,57,63,false
+2025,45,S45G03N7,03,7,quarterfinal,1,2025-04-18,64,06,대구 한국가스공사,수원 KT,79,75,true
+2025,45,S45G03N9,03,9,quarterfinal,1,2025-04-20,06,64,수원 KT,대구 한국가스공사,78,76,true
+2025,45,S45G03N2,03,2,quarterfinal,2,2025-04-13,10,70,울산 현대모비스,안양 정관장,87,84,true
+2025,45,S45G03N4,03,4,quarterfinal,2,2025-04-15,10,70,울산 현대모비스,안양 정관장,90,72,true
+2025,45,S45G03N6,03,6,quarterfinal,2,2025-04-17,70,10,안양 정관장,울산 현대모비스,92,99,false
+2025,45,S45G03N11,03,11,semifinal,1,2025-04-23,55,06,서울 SK,수원 KT,65,61,true
+2025,45,S45G03N13,03,13,semifinal,1,2025-04-25,55,06,서울 SK,수원 KT,86,70,true
+2025,45,S45G03N15,03,15,semifinal,1,2025-04-27,06,55,수원 KT,서울 SK,77,64,true
+2025,45,S45G03N17,03,17,semifinal,1,2025-04-29,06,55,수원 KT,서울 SK,57,69,false
+2025,45,S45G03N12,03,12,semifinal,2,2025-04-24,50,10,창원 LG,울산 현대모비스,67,64,true
+2025,45,S45G03N14,03,14,semifinal,2,2025-04-26,50,10,창원 LG,울산 현대모비스,84,75,true
+2025,45,S45G03N16,03,16,semifinal,2,2025-04-28,10,50,울산 현대모비스,창원 LG,74,76,false
+2025,45,S45G04N1,04,1,final,1,2025-05-05,55,50,서울 SK,창원 LG,66,75,false
+2025,45,S45G04N2,04,2,final,1,2025-05-07,55,50,서울 SK,창원 LG,71,76,false
+2025,45,S45G04N3,04,3,final,1,2025-05-09,50,55,창원 LG,서울 SK,80,63,true
+2025,45,S45G04N4,04,4,final,1,2025-05-11,50,55,창원 LG,서울 SK,48,73,false
+2025,45,S45G04N5,04,5,final,1,2025-05-13,55,50,서울 SK,창원 LG,86,56,true
+2025,45,S45G04N6,04,6,final,1,2025-05-15,50,55,창원 LG,서울 SK,51,54,false
+2025,45,S45G04N7,04,7,final,1,2025-05-17,55,50,서울 SK,창원 LG,58,62,false
