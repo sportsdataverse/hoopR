@@ -383,7 +383,7 @@
   }
 }
 
-.bleague_more_label <- "もっと見る" # "see more"
+.bleague_more_label <- "\u3082\u3063\u3068\u898b\u308b" # "see more"
 
 #' A 'more' pager: its element id, its `schedule_bN_more()` link, or its label.
 #' @noRd
@@ -401,7 +401,7 @@
   as.Date(sprintf("%04d-%02d-%02d", if (mon >= 7L) year else year + 1L, mon, day), format = "%Y-%m-%d")
 }
 
-.bleague_round_re <- "^第([0-9]+)節$" # "dai N setsu" = round N
+.bleague_round_re <- "^\u7b2c([0-9]+)\u7bc0$" # "dai N setsu" = round N
 
 #' One game day of one competition and division (sdv-py `_schedule_record`). Fails closed.
 #' @noRd
@@ -490,14 +490,15 @@
 }
 
 .bleague_standings_header <- c(
-  "順位", "クラブ", "勝", "負", "勝率", "差", "得点",
-  "失点", "得失点差", "ホーム（W-L）",
-  "アウェー（W-L）", NA, "連勝/連敗", "地区優勝",
-  "対戦成績"
+  "\u9806\u4f4d", "\u30af\u30e9\u30d6", "\u52dd", "\u8ca0", "\u52dd\u7387", "\u5dee", "\u5f97\u70b9",
+  "\u5931\u70b9", "\u5f97\u5931\u70b9\u5dee", "\u30db\u30fc\u30e0\uff08W-L\uff09",
+  "\u30a2\u30a6\u30a7\u30fc\uff08W-L\uff09", NA, "\u9023\u52dd/\u9023\u6557", "\u5730\u533a\u512a\u52dd",
+  "\u5bfe\u6226\u6210\u7e3e"
 )
-.bleague_last_n <- c(`過去5試合` = 5L, `過去10試合` = 10L)
-.bleague_sections <- c(`東地区` = "East", `中地区` = "Central",
-                       `西地区` = "West", `ワイルドカード` = "Wild card")
+# names built from \u escapes (a non-ASCII name in source breaks in a C locale); look up with match()
+.bleague_last_n <- stats::setNames(c(5L, 10L), c("\u904e\u53bb5\u8a66\u5408", "\u904e\u53bb10\u8a66\u5408"))
+.bleague_sections <- stats::setNames(c("East", "Central", "West", "Wild card"),
+                                     c("\u6771\u5730\u533a", "\u4e2d\u5730\u533a", "\u897f\u5730\u533a", "\u30ef\u30a4\u30eb\u30c9\u30ab\u30fc\u30c9"))
 
 .bleague_num <- function(s) {
   s <- .bleague_strip(.bleague_or(s, ""))
@@ -538,14 +539,14 @@
       if (length(m) != 2L) .bleague_not_parsed("standings row without a club_detail TeamID link")
       t <- vapply(cells, .bleague_text, character(1))
       rows[[length(rows) + 1L]] <- list(
-        section = section, section_en = if (is.na(section)) NA_character_ else unname(.bleague_sections[section]),
+        section = section, section_en = if (is.na(section)) NA_character_ else unname(.bleague_sections[match(section, names(.bleague_sections))]),
         rank = .bleague_i(t[[1]]), team_id = m[[2]],
         team = .bleague_text(rvest::html_element(team, "span.sp-dn")),
         team_short = .bleague_text(rvest::html_element(team, "span.pc-tab-dn")),
         wins = .bleague_i(t[[3]]), losses = .bleague_i(t[[4]]), win_pct = .bleague_num(t[[5]]),
         games_behind = .bleague_num(t[[6]]), points_for = .bleague_i(t[[7]]), points_against = .bleague_i(t[[8]]),
         point_diff = .bleague_i(t[[9]]), home_record = t[[10]], away_record = t[[11]],
-        last_n = unname(.bleague_last_n[head[[12]]]), last_n_record = t[[12]], streak = t[[13]],
+        last_n = unname(.bleague_last_n[match(head[[12]], names(.bleague_last_n))]), last_n_record = t[[12]], streak = t[[13]],
         division_title = if (t[[14]] %in% c("--", "")) NA_character_ else t[[14]]
       )
     }
