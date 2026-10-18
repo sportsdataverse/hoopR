@@ -1,0 +1,16 @@
+{
+  "boards-ex": [
+    {
+      "ig_board": "1001",
+      "o_comp_name": "יורוליג"
+    },
+    {
+      "ig_board": "1005",
+      "o_comp_name": "משחקי הכנה"
+    },
+    {
+      "ig_board": "1013",
+      "o_comp_name": "גביע המדינה"
+    }
+  ]
+}

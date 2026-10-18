@@ -1,0 +1,16 @@
+{
+  "statsTypes": [
+    {
+      "stat_type_name": "יעילות",
+      "stat_type_field": "VAL"
+    },
+    {
+      "stat_type_name": "נקודות",
+      "stat_type_field": "pts"
+    },
+    {
+      "stat_type_name": "המלך הישראלי",
+      "stat_type_field": "isr_pts"
+    }
+  ]
+}

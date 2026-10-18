@@ -1,0 +1,4 @@
+player_id,jersey,team_id,game_id,board_id,season,round,starter,minutes,pts,fg2m,fg2a,fg2_pct,fg3m,fg3a,fg3_pct,ftm,fta,ft_pct,dreb,oreb,reb,fouls_drawn,fouls,steals,turnovers,assists,blocks,blocks_against,val,plus_minus,dunks,row_type
+562,05,19,1944,5,2005,1,true,31,5,2,8,25.0,0,2,0.0,1,2,50.0,0,3,3,4,4,3,2,5,0,1,4,0,0,player
+\N,TOTAL,19,1944,5,2005,1,false,200,83,28,60,47.0,3,14,21.0,18,24,75.0,16,21,37,25,31,10,20,16,6,2,75,0,0,total
+\N,TOTAL,21,1944,5,2005,1,false,200,91,25,42,60.0,3,15,20.0,32,42,76.0,23,8,31,30,25,15,15,18,2,6,102,0,0,total

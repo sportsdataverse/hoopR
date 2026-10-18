@@ -1,0 +1,32 @@
+game_id,team_side,team_id,player_id,jersey_number,first_name,last_name,first_name_local,last_name_local,in_roster,api_id
+50,home,11,1120,93,CODY,DEMPS,קודי,דמפס,2,\N
+50,home,11,1111,0,NAVE,BEN SHEMEN,נווה,בן שמן,2,\N
+50,home,11,1215,55,MATAN,FOGEL,מתן,פוגל,2,\N
+50,home,11,1117,22,SAM,IORIO,סם,איוריו,2,\N
+50,home,11,1114,14,NETA,SEGAL,נטע,סגל,2,\N
+50,home,11,1266,6,TARYN,TODD,טארין,טוד,2,\N
+50,home,11,1249,17,AMIT,GERSHON,עמית,גרשון,2,\N
+50,home,11,1115,16,C.J.,ELLEBY,סי ג'יי,אלבי,2,\N
+50,home,11,1112,4,AKILI,VINING,אקילי,וינינג,0,1112
+50,home,11,1118,24,YOAV,VITLEM,יואב,ויטלם,2,\N
+50,home,11,1181,2,BENJAMIN,ZEBINSKY,בנימין,זבינסקי,0,\N
+50,home,11,1116,21,BRANDON,ANGEL,ברנדון,אנג'ל,2,\N
+50,home,11,1113,11,ARIEL,AIZIK,אריאל,איזיק,0,\N
+50,home,11,1119,35,MICHAEL,FOSTER JR.,מייקל,פוסטר ג'וניור,2,1119
+50,home,11,1179,5,OFRI,SHITRIT,עופרי,שטרית,2,\N
+50,away,2,1017,6,UROS,TRIFUNOVIC,אורוש,טריפונוביץ',0,\N
+50,away,2,1025,45,TAMIR,BLATT,תמיר,בלאט,2,1025
+50,away,2,1200,7,OREN,SAHAR,אורן,סהר,2,1200
+50,away,2,1163,14,CLIFFORD,OMORUYI,קליפורד,אומורי,0,\N
+50,away,2,1014,2,JIMMY,CLARK III,ג'ימי,קלארק,2,\N
+50,away,2,1020,10,OSHAE,BRISSETT,אושיי,בריסט,2,1020
+50,away,2,1209,13,TAMIR,GOLD,תמיר,גולד,0,\N
+50,away,2,1023,21,JEFF,DOWTIN JR.,ג'ף,דאוטין ג'וניור,2,1023
+50,away,2,1000,1,JAYLEN,HOARD,ג'יילן,הורד,0,\N
+50,away,2,1024,22,TJ,LEAF,טי ג'יי,ליף,2,1024
+50,away,2,1015,3,MARCIO,SANTOS,מרסיו,סנטוס,2,\N
+50,away,2,1021,11,WILL,RAYMAN,וויל,ריימן,2,1021
+50,away,2,1018,8,LONNIE,WALKER IV,לוני,ווקר,2,1018
+50,away,2,1022,12,JOHN,DIBARTOLOMEO,ג'ון,דיברתולומאו,2,1022
+50,away,2,1019,9,ROMAN,SORKIN,רומן,סורקין,2,1019
+50,away,2,1016,4,GUR,LAVY,גור,לביא,2,\N

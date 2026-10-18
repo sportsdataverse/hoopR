@@ -1,0 +1,741 @@
+{
+ "cases": {
+  "configuration": {
+   "fn": "ibba_configuration",
+   "args": {
+    "season": 2026
+   },
+   "fixture": "cap/Configuration_2026.json",
+   "rows": 1
+  },
+  "configuration_2005": {
+   "fn": "ibba_configuration",
+   "args": {
+    "season": 2005
+   },
+   "fixture": "cap/Configuration_2005.json",
+   "rows": 1
+  },
+  "boards": {
+   "fn": "ibba_boards",
+   "args": {
+    "season": 2026
+   },
+   "fixture": "cap/Boards_2026.json",
+   "rows": 3
+  },
+  "boards_2005": {
+   "fn": "ibba_boards",
+   "args": {
+    "season": 2005
+   },
+   "fixture": "cap/Boards_2005.json",
+   "rows": 3
+  },
+  "boards_ex": {
+   "fn": "ibba_boards_ex",
+   "args": {
+    "team_uid": 10,
+    "season": 2026
+   },
+   "fixture": "cap/BoardsEx_10_2026.json",
+   "rows": 3
+  },
+  "teams": {
+   "fn": "ibba_teams",
+   "args": {
+    "season": 2026,
+    "board_id": 5
+   },
+   "fixture": "cap/Teams_5_2026.json",
+   "rows": 3
+  },
+  "teams_2005": {
+   "fn": "ibba_teams",
+   "args": {
+    "season": 2005
+   },
+   "fixture": "cap/Teams_5_2005.json",
+   "rows": 3
+  },
+  "team": {
+   "fn": "ibba_team",
+   "args": {
+    "team_id": 1109,
+    "team_uid": 10,
+    "season": 2026
+   },
+   "fixture": "cap/TeamById_1109_10_2026.json",
+   "rows": 1
+  },
+  "players": {
+   "fn": "ibba_players",
+   "args": {
+    "team_id": 1109,
+    "team_uid": 10,
+    "season": 2026
+   },
+   "fixture": "cap/Players_1109_10_2026.json",
+   "rows": 3
+  },
+  "player": {
+   "fn": "ibba_player",
+   "args": {
+    "player_id": 21912,
+    "season": 2026
+   },
+   "fixture": "cap/PlayerById_21912_2026.json",
+   "rows": 1
+  },
+  "coaches": {
+   "fn": "ibba_coaches",
+   "args": {
+    "team_id": 1109,
+    "team_uid": 10,
+    "season": 2026
+   },
+   "fixture": "cap/Coaches_1109_10_2026.json",
+   "rows": 3
+  },
+  "box_score": {
+   "fn": "ibba_box_score",
+   "args": {
+    "game_id": 26392,
+    "season": 2026
+   },
+   "fixture": "full/Boxscore.json.gz",
+   "rows": 27
+  },
+  "box_score_2005": {
+   "fn": "ibba_box_score",
+   "args": {
+    "game_id": 1944,
+    "season": 2005
+   },
+   "fixture": "cap/Boxscore_1944_2005.json",
+   "rows": 3
+  },
+  "player_stats": {
+   "fn": "ibba_player_stats",
+   "args": {
+    "player_id": 21912,
+    "season": 2026
+   },
+   "fixture": "cap/PlayerStatsById_21912_2026_false_false.json",
+   "rows": 1
+  },
+  "player_stats_avg": {
+   "fn": "ibba_player_stats",
+   "args": {
+    "player_id": 21912,
+    "season": 2026,
+    "is_averages": true
+   },
+   "fixture": "cap/PlayerStatsById_21912_2026_true_false.json",
+   "rows": 1
+  },
+  "stats_types": {
+   "fn": "ibba_stats_types",
+   "args": {},
+   "fixture": "cap/StatsTypes.json",
+   "rows": 3
+  },
+  "leaders": {
+   "fn": "ibba_leaders",
+   "args": {
+    "stat_type": "pts",
+    "season": 2026
+   },
+   "fixture": "cap/LeaderByType_pts_2026_0.json",
+   "rows": 3
+  },
+  "team_stats": {
+   "fn": "ibba_team_stats",
+   "args": {
+    "team_id": 1109,
+    "season": 2026,
+    "is_averages": true
+   },
+   "fixture": "cap/TeamStatsById_1109_2026_true_false.json",
+   "rows": 1
+  },
+  "games": {
+   "fn": "ibba_games",
+   "args": {
+    "season": 2026,
+    "board_id": 5,
+    "board_round": 1
+   },
+   "fixture": "full/Games.json.gz",
+   "rows": 7
+  },
+  "games_2005": {
+   "fn": "ibba_games",
+   "args": {
+    "season": 2005,
+    "board_id": 5
+   },
+   "fixture": "cap/Games_5_0_0_0_0_2005.json",
+   "rows": 3
+  },
+  "games_ex": {
+   "fn": "ibba_games_ex",
+   "args": {
+    "team_uid": 10,
+    "season": 2026
+   },
+   "fixture": "cap/GamesEx_0_10_2026.json",
+   "rows": 3
+  },
+  "games_by_team": {
+   "fn": "ibba_games_by_team",
+   "args": {
+    "team_uid": 10,
+    "season": 2026
+   },
+   "fixture": "cap/GamesByTeam_10_2026.json",
+   "rows": 3
+  },
+  "segev_game_info": {
+   "fn": "ibba_segev_game_info",
+   "args": {
+    "game_id": 50
+   },
+   "fixture": "full/getGameInfo.json.gz",
+   "rows": 1
+  },
+  "segev_game_info_300": {
+   "fn": "ibba_segev_game_info",
+   "args": {
+    "game_id": 300
+   },
+   "fixture": "cap/getGameInfo_300.json",
+   "rows": 1
+  },
+  "segev_rosters": {
+   "fn": "ibba_segev_rosters",
+   "args": {
+    "game_id": 50
+   },
+   "fixture": "full/getGameInfo.json.gz",
+   "rows": 31
+  },
+  "segev_player_box": {
+   "fn": "ibba_segev_player_box",
+   "args": {
+    "game_id": 50
+   },
+   "fixture": "full/getBoxScore.json.gz",
+   "rows": 26
+  },
+  "segev_player_box_419": {
+   "fn": "ibba_segev_player_box",
+   "args": {
+    "game_id": 419
+   },
+   "fixture": "full/getBoxScore_419.json.gz",
+   "rows": 26
+  },
+  "segev_team_box": {
+   "fn": "ibba_segev_team_box",
+   "args": {
+    "game_id": 50
+   },
+   "fixture": "full/getBoxScore.json.gz",
+   "rows": 2
+  },
+  "segev_team_box_419": {
+   "fn": "ibba_segev_team_box",
+   "args": {
+    "game_id": 419
+   },
+   "fixture": "full/getBoxScore_419.json.gz",
+   "rows": 2
+  },
+  "segev_period_scores": {
+   "fn": "ibba_segev_period_scores",
+   "args": {
+    "game_id": 50
+   },
+   "fixture": "full/getBoxScore.json.gz",
+   "rows": 4
+  },
+  "segev_pbp": {
+   "fn": "ibba_segev_pbp",
+   "args": {
+    "game_id": 50
+   },
+   "fixture": "full/getActions.json.gz",
+   "rows": 768
+  }
+ },
+ "dtypes": {
+  "ibba_configuration": {
+   "season": "Int64",
+   "season_label": "String",
+   "red_line": "Int64",
+   "active_board_id": "Int64",
+   "next_round": "Int64",
+   "total_rounds": "Int64"
+  },
+  "ibba_boards": {
+   "board_id": "Int64",
+   "season": "Int64",
+   "board_name_he": "String",
+   "board_title_he": "String",
+   "category_he": "String"
+  },
+  "ibba_boards_ex": {
+   "board_id": "Int64",
+   "board_name_he": "String"
+  },
+  "ibba_teams": {
+   "team_uid": "Int64",
+   "team_id": "Int64",
+   "season": "Int64",
+   "team_name_he": "String",
+   "team_short_name_he": "String",
+   "team_name": "String",
+   "team_short_name": "String",
+   "board_id": "Int64",
+   "place": "Int64",
+   "games": "Int64",
+   "wins": "Int64",
+   "losses": "Int64",
+   "points_for": "Int64",
+   "points_against": "Int64",
+   "table_points": "Int64",
+   "logo_url": "String",
+   "photo_path": "String",
+   "address_he": "String",
+   "sponsors_he": "String",
+   "facebook_url": "String",
+   "twitter_url": "String",
+   "instagram_url": "String",
+   "youtube_url": "String",
+   "ticket_url": "String",
+   "subscribe_url": "String",
+   "coaches_he": "String"
+  },
+  "ibba_team": {
+   "team_uid": "Int64",
+   "team_id": "Int64",
+   "season": "Int64",
+   "team_name_he": "String",
+   "team_short_name_he": "String",
+   "team_name": "String",
+   "team_short_name": "String",
+   "wins": "Int64",
+   "losses": "Int64",
+   "points_for": "Int64",
+   "points_against": "Int64",
+   "table_points": "Int64",
+   "place": "Int64",
+   "website_url": "String",
+   "photo_path": "String",
+   "icon_path": "String",
+   "logo_url": "String",
+   "icon3_path": "String",
+   "arena_id": "Int64",
+   "address_he": "String",
+   "address": "String",
+   "colors_he": "String",
+   "colors": "String",
+   "sponsors_he": "String",
+   "sponsors": "String",
+   "about_he": "String",
+   "about": "String",
+   "facebook_url": "String",
+   "twitter_url": "String",
+   "instagram_url": "String",
+   "youtube_url": "String",
+   "subscribe_url": "String",
+   "diary_url": "String"
+  },
+  "ibba_players": {
+   "player_id": "Int64",
+   "jersey": "String",
+   "season": "Int64",
+   "team_id": "Int64",
+   "player_name_he": "String",
+   "player_name": "String",
+   "is_replaced": "Boolean",
+   "is_local": "Boolean",
+   "photo_path": "String",
+   "height_m": "Float64",
+   "position_he": "String",
+   "position": "String",
+   "birth_date": "Date"
+  },
+  "ibba_player": {
+   "player_id": "Int64",
+   "jersey": "String",
+   "season": "Int64",
+   "team_id": "Int64",
+   "player_name_he": "String",
+   "player_name": "String",
+   "is_replaced": "Boolean",
+   "is_local": "Boolean",
+   "photo_path": "String"
+  },
+  "ibba_coaches": {
+   "coach_id": "Int64",
+   "coach_type": "Int64",
+   "season": "Int64",
+   "team_id": "Int64",
+   "coach_name_he": "String",
+   "coach_name": "String",
+   "is_replaced": "Boolean",
+   "photo_path": "String",
+   "sort_order": "Int64"
+  },
+  "ibba_box_score": {
+   "player_id": "Int64",
+   "jersey": "String",
+   "team_id": "Int64",
+   "game_id": "Int64",
+   "board_id": "Int64",
+   "season": "Int64",
+   "round": "Int64",
+   "starter": "Boolean",
+   "minutes": "Int64",
+   "pts": "Int64",
+   "fg2m": "Int64",
+   "fg2a": "Int64",
+   "fg2_pct": "Float64",
+   "fg3m": "Int64",
+   "fg3a": "Int64",
+   "fg3_pct": "Float64",
+   "ftm": "Int64",
+   "fta": "Int64",
+   "ft_pct": "Float64",
+   "dreb": "Int64",
+   "oreb": "Int64",
+   "reb": "Int64",
+   "fouls_drawn": "Int64",
+   "fouls": "Int64",
+   "steals": "Int64",
+   "turnovers": "Int64",
+   "assists": "Int64",
+   "blocks": "Int64",
+   "blocks_against": "Int64",
+   "val": "Int64",
+   "plus_minus": "Int64",
+   "dunks": "Int64",
+   "row_type": "String"
+  },
+  "ibba_player_stats": {
+   "player_id": "Int64",
+   "jersey": "String",
+   "season": "Int64",
+   "team_id": "Int64",
+   "games": "Int64",
+   "minutes": "Float64",
+   "pts": "Float64",
+   "fg2m": "Float64",
+   "fg2a": "Float64",
+   "fg2_pct": "Float64",
+   "fg3m": "Float64",
+   "fg3a": "Float64",
+   "fg3_pct": "Float64",
+   "ftm": "Float64",
+   "fta": "Float64",
+   "ft_pct": "Float64",
+   "dreb": "Float64",
+   "oreb": "Float64",
+   "reb": "Float64",
+   "fouls_drawn": "Float64",
+   "fouls": "Float64",
+   "steals": "Float64",
+   "turnovers": "Float64",
+   "assists": "Float64",
+   "blocks": "Float64",
+   "blocks_against": "Float64",
+   "val": "Float64",
+   "plus_minus": "Float64",
+   "dunks": "Float64"
+  },
+  "ibba_stats_types": {
+   "stat_type": "String",
+   "stat_name_he": "String"
+  },
+  "ibba_leaders": {
+   "value": "Float64",
+   "games": "Int64",
+   "season": "Int64",
+   "team_id": "Int64",
+   "jersey": "String",
+   "player_id": "Int64",
+   "player_name_he": "String",
+   "photo_path": "String"
+  },
+  "ibba_team_stats": {
+   "season": "Int64",
+   "team_id": "Int64",
+   "games": "Int64",
+   "minutes": "Float64",
+   "pts": "Float64",
+   "fg2m": "Float64",
+   "fg2a": "Float64",
+   "fg2_pct": "Float64",
+   "fg3m": "Float64",
+   "fg3a": "Float64",
+   "fg3_pct": "Float64",
+   "ftm": "Float64",
+   "fta": "Float64",
+   "ft_pct": "Float64",
+   "dreb": "Float64",
+   "oreb": "Float64",
+   "reb": "Float64",
+   "fouls_drawn": "Float64",
+   "fouls": "Float64",
+   "steals": "Float64",
+   "turnovers": "Float64",
+   "assists": "Float64",
+   "blocks": "Float64",
+   "blocks_against": "Float64",
+   "val": "Float64",
+   "plus_minus": "Float64",
+   "dunks": "Float64"
+  },
+  "ibba_games": {
+   "game_id": "Int64",
+   "game_date": "Date",
+   "season": "Int64",
+   "home_team_id": "Int64",
+   "away_team_id": "Int64",
+   "home_team_he": "String",
+   "away_team_he": "String",
+   "home_team": "String",
+   "away_team": "String",
+   "home_logo_url": "String",
+   "away_logo_url": "String",
+   "home_score": "Int64",
+   "away_score": "Int64",
+   "board_id": "Int64",
+   "board_name_he": "String",
+   "board_name": "String",
+   "round": "Int64",
+   "tip_off": "String",
+   "venue_he": "String",
+   "venue": "String",
+   "referees_he": "String",
+   "attendance": "Int64",
+   "overtime": "Boolean",
+   "overtimes": "Int64",
+   "home_score_by_period": "String",
+   "away_score_by_period": "String",
+   "tickets_url": "String",
+   "external_id": "String",
+   "segev_game_id": "Int64",
+   "is_external": "Boolean"
+  },
+  "ibba_games_ex": {
+   "game_id": "Int64",
+   "game_date": "Date",
+   "season": "Int64",
+   "home_team_id": "Int64",
+   "away_team_id": "Int64",
+   "home_team_he": "String",
+   "away_team_he": "String",
+   "home_logo_url": "String",
+   "away_logo_url": "String",
+   "home_score": "Int64",
+   "away_score": "Int64",
+   "board_id": "Int64",
+   "board_name_he": "String",
+   "round": "Int64",
+   "tip_off": "String",
+   "venue_he": "String"
+  },
+  "ibba_games_by_team": {
+   "game_id": "Int64",
+   "game_date": "Date",
+   "season": "Int64",
+   "home_team_id": "Int64",
+   "away_team_id": "Int64",
+   "home_team_he": "String",
+   "away_team_he": "String",
+   "home_team": "String",
+   "away_team": "String",
+   "home_logo_url": "String",
+   "away_logo_url": "String",
+   "home_score": "Int64",
+   "away_score": "Int64",
+   "board_id": "Int64",
+   "board_name_he": "String",
+   "board_name": "String",
+   "round": "Int64",
+   "tip_off": "String",
+   "venue_he": "String",
+   "venue": "String",
+   "referees_he": "String",
+   "attendance": "Int64",
+   "overtime": "Boolean",
+   "overtimes": "Int64",
+   "home_score_by_period": "String",
+   "away_score_by_period": "String",
+   "tickets_url": "String",
+   "external_id": "String",
+   "segev_game_id": "Int64",
+   "is_external": "Boolean"
+  },
+  "ibba_segev_game_info": {
+   "game_id": "Int64",
+   "start_time": "Datetime(time_unit='us', time_zone=None)",
+   "competition": "String",
+   "home_team_id": "Int64",
+   "home_team": "String",
+   "home_team_local": "String",
+   "home_short_name": "String",
+   "away_team_id": "Int64",
+   "away_team": "String",
+   "away_team_local": "String",
+   "away_short_name": "String",
+   "periods": "Int64",
+   "finished": "Boolean",
+   "current_period": "Int64",
+   "clock": "String"
+  },
+  "ibba_segev_rosters": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "team_id": "Int64",
+   "player_id": "Int64",
+   "jersey_number": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "first_name_local": "String",
+   "last_name_local": "String",
+   "in_roster": "Int64",
+   "api_id": "Int64"
+  },
+  "ibba_segev_player_box": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "team_id": "Int64",
+   "row_type": "String",
+   "player_id": "Int64",
+   "jersey_number": "Int64",
+   "starter": "Boolean",
+   "on_court": "Boolean",
+   "minutes": "String",
+   "seconds_played": "Int64",
+   "plus_minus": "Int64",
+   "fg2m": "Int64",
+   "fg2_missed": "Int64",
+   "fg3m": "Int64",
+   "fg3_missed": "Int64",
+   "ftm": "Int64",
+   "ft_missed": "Int64",
+   "dreb": "Int64",
+   "oreb": "Int64",
+   "fouls": "Int64",
+   "fouls_drawn": "Int64",
+   "steals": "Int64",
+   "turnovers": "Int64",
+   "assists": "Int64",
+   "blocks": "Int64",
+   "blocks_against": "Int64",
+   "fast_break_pts": "Int64",
+   "second_chance_pts": "Int64",
+   "pts": "Int64",
+   "val": "Int64",
+   "deflections": "Int64",
+   "recoveries": "Int64",
+   "dunks": "Int64",
+   "offensive_fouls_drawn": "Int64",
+   "and_ones": "Int64",
+   "vps": "Float64",
+   "fg2a": "Int64",
+   "fg3a": "Int64",
+   "fta": "Int64"
+  },
+  "ibba_segev_team_box": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "team_id": "Int64",
+   "score": "Int64",
+   "timeouts": "Int64",
+   "time_leading": "String",
+   "biggest_lead": "Int64",
+   "times_tied": "Int64",
+   "lead_changes": "Int64",
+   "fg2m": "Int64",
+   "fg2_missed": "Int64",
+   "fg3m": "Int64",
+   "fg3_missed": "Int64",
+   "ftm": "Int64",
+   "ft_missed": "Int64",
+   "dreb": "Int64",
+   "oreb": "Int64",
+   "fouls": "Int64",
+   "fouls_drawn": "Int64",
+   "steals": "Int64",
+   "turnovers": "Int64",
+   "assists": "Int64",
+   "blocks": "Int64",
+   "blocks_against": "Int64",
+   "fast_break_pts": "Int64",
+   "second_chance_pts": "Int64",
+   "pts": "Int64",
+   "val": "Int64",
+   "deflections": "Int64",
+   "recoveries": "Int64",
+   "dunks": "Int64",
+   "offensive_fouls_drawn": "Int64",
+   "and_ones": "Int64",
+   "vps": "Float64",
+   "fg2a": "Int64",
+   "fg3a": "Int64",
+   "fta": "Int64",
+   "pts_from_turnovers": "Int64",
+   "pts_in_paint": "Int64",
+   "starting_points": "Int64",
+   "bench_points": "Int64",
+   "fast_break_possessions": "Int64",
+   "defensive_stops": "Int64",
+   "biggest_scoring_run": "String"
+  },
+  "ibba_segev_period_scores": {
+   "game_id": "Int64",
+   "period": "Int64",
+   "home_points": "Int64",
+   "away_points": "Int64",
+   "home_fouls": "Int64",
+   "away_fouls": "Int64"
+  },
+  "ibba_segev_pbp": {
+   "game_id": "Int64",
+   "action_id": "Int64",
+   "parent_action_id": "Int64",
+   "period": "Int64",
+   "clock": "String",
+   "user_time_utc": "String",
+   "type": "String",
+   "subtype": "String",
+   "team_id": "Int64",
+   "player_id": "Int64",
+   "team_side": "String",
+   "jersey": "String",
+   "score_away": "Int64",
+   "score_home": "Int64",
+   "player_points": "Int64",
+   "points": "Int64",
+   "made": "String",
+   "x": "Float64",
+   "y": "Float64",
+   "fast_break": "Boolean",
+   "second_chance": "Boolean",
+   "points_from_turnover": "Boolean",
+   "free_throw_number": "Int64",
+   "free_throws_awarded": "Int64",
+   "foul_kind": "String",
+   "fouled_on_jersey": "String",
+   "foul_free_throws": "Int64",
+   "is_coach_foul": "Boolean",
+   "player_in_jersey": "String",
+   "player_out_jersey": "String"
+  }
+ }
+}
