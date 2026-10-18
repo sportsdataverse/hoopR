@@ -1,0 +1,234 @@
+{
+  "data": {
+    "commonHeaders": [
+      {
+        "key": "name",
+        "name": "Nom"
+      }
+    ],
+    "config": {
+      "currentPage": "statistics_competition_persons",
+      "navigation": {
+        "labels": {},
+        "main": [],
+        "secondary": [
+          {
+            "label": "Joueur Statistiques",
+            "link": "&~w=cps~eJxNyrkNgDAMAMBVkGss2bEDCQMwABs4jysqKBG7o3RcfQ9U2CYQV1q0FIxsDZmd0MwcQw5Ss2pRUpgnuEduLkxG8ZdLSxnrKjFS6twpj3yO7BfuB7wfSBYZpA",
+            "value": "statistics_competition_persons"
+          },
+          {
+            "label": "Equipe Statistiques",
+            "link": "&~w=cse~eJxNyrkNgDAMAMBVkGss2bEDCQMwABs4jysqKBG7o3RcfQ9U2CYQV1q0FIxsDZmd0MwcQw5Ss2pRUpgnuEduLkxG8ZdLSxnrKjFS6twpj3yO7BfuB7wfSBYZpA",
+            "value": "statistics_competition_entities"
+          }
+        ]
+      },
+      "showPersonImage": true,
+      "sport": "basketball"
+    },
+    "filters": {
+      "fixtureType": {
+        "id": "fixture-type-select",
+        "options": [],
+        "selected": null
+      }
+    },
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "statistics": [
+      {
+        "headers": [
+          {
+            "code": "Points par Match",
+            "key": "pointsPerGame",
+            "name": "PTS"
+          },
+          {
+            "code": "Matchs joués",
+            "key": "games",
+            "name": "MJ"
+          },
+          {
+            "code": "Minutes par Match",
+            "key": "minutesPerGame",
+            "name": "MIN"
+          }
+        ],
+        "label": {
+          "key": "averages",
+          "text": "Moyennes"
+        },
+        "statistics": [
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400",
+              "name": "Ismael Bako"
+            },
+            "statistics": [
+              4.8,
+              10,
+              "PT12M2S"
+            ]
+          },
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400",
+              "name": "Juhann Begarin"
+            },
+            "statistics": [
+              7.5,
+              24,
+              "PT20M57S"
+            ]
+          },
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400",
+              "name": "Jared Rhoden"
+            },
+            "statistics": [
+              12.44,
+              18,
+              "PT18M52S"
+            ]
+          }
+        ]
+      },
+      {
+        "headers": [
+          {
+            "code": "Points",
+            "key": "points",
+            "name": "PTS"
+          },
+          {
+            "code": "Tirs Réussis",
+            "key": "fieldGoalsMade",
+            "name": "TR"
+          },
+          {
+            "code": "Tirs Tentés",
+            "key": "fieldGoalsAttempted",
+            "name": "TT"
+          }
+        ],
+        "label": {
+          "key": "shootingstatistics",
+          "text": "Stats Tirs"
+        },
+        "statistics": [
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400",
+              "name": "Ismael Bako"
+            },
+            "statistics": [
+              48,
+              17,
+              25
+            ]
+          },
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400",
+              "name": "Juhann Begarin"
+            },
+            "statistics": [
+              180,
+              69,
+              152
+            ]
+          },
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400",
+              "name": "Jared Rhoden"
+            },
+            "statistics": [
+              224,
+              75,
+              164
+            ]
+          }
+        ]
+      },
+      {
+        "headers": [
+          {
+            "code": "Points",
+            "key": "points",
+            "name": "PTS"
+          },
+          {
+            "code": "Minutes",
+            "key": "minutes",
+            "name": "MIN"
+          },
+          {
+            "code": "Rebond Offensif",
+            "key": "reboundsOffensive",
+            "name": "RO"
+          }
+        ],
+        "label": {
+          "key": "totals",
+          "text": "Totaux"
+        },
+        "statistics": [
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/4e128df40fe9460c9c683b8ed18eeb15?size=400",
+              "name": "Ismael Bako"
+            },
+            "statistics": [
+              48,
+              "PT120M14S",
+              18
+            ]
+          },
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/a615e949d9484684b1ea171e7b57a9c3?size=400",
+              "name": "Juhann Begarin"
+            },
+            "statistics": [
+              180,
+              "PT502M34S",
+              20
+            ]
+          },
+          {
+            "person": {
+              "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/c4a5228e63c64b19b95a206c6cb83e23?size=400",
+              "name": "Jared Rhoden"
+            },
+            "statistics": [
+              224,
+              "PT339M34S",
+              16
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/statistics_competition_persons?competitionId=3f4064bb-51ad-11f0-aaaf-2923c944b404"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 6,
+    "fromCache": false,
+    "generated": "2026-10-12T18:12:49.896119+00:00Z",
+    "generationTime": 0.242618,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:16.958980+00:00Z",
+    "version": 1
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "data": {
+    "allSeasons": false,
+    "allSeasonsOption": {
+      "label": "All seasons",
+      "link": "&~w=fr~eJyrVipWslJQcvTxUdJRUMoBsVOLdV2DlWoBU4cGXg",
+      "value": "ALL"
+    },
+    "config": {
+      "currentPage": "fixtures_fragment",
+      "navigation": {
+        "labels": {
+          "search": "Búsqueda",
+          "searchResults": "Resultados de la búsqueda"
+        },
+        "main": [
+          {
+            "label": "Calendario",
+            "link": "&~w=fl~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "fixtures"
+          },
+          {
+            "label": "Posiciones",
+            "link": "&~w=stn~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "sport": "basketball"
+    },
+    "fixtures": [
+      {
+        "competitors": [
+          {
+            "entityId": "4a271138-2506-11ef-9b30-7d461750a0d2",
+            "isHome": false,
+            "isLeading": false,
+            "logoUrl": "https://images.dc.connect.sportradar.com/b1gf3/8ae297b9792046a185aea40258f2542e?size=100",
+            "name": "DIABLOS ROJOS DEL MÉXICO",
+            "resultStatus": "CONFIRMED",
+            "score": 92
+          },
+          {
+            "entityId": "64cfd2a5-6f49-11ec-bf03-bf19323c0103",
+            "isHome": true,
+            "isLeading": true,
+            "logoUrl": "https://images.dc.connect.sportradar.com/b1gf3/417578bce2a94e5ba7842e57b8bc5bcd?size=100",
+            "name": "PANTERAS DE AGUASCALIENTES",
+            "resultStatus": "CONFIRMED",
+            "score": 93
+          }
+        ],
+        "fixture": {
+          "broadcasts": [],
+          "date": "2026-10-07T20:00:00",
+          "fixtureId": "8d379c2e-74bf-11f1-84ae-0bc1b0721cd9",
+          "isFinal": true,
+          "isLive": false,
+          "link": {
+            "fragment": null,
+            "openInNewTab": true,
+            "origin": null,
+            "path": "statistics.html",
+            "queryParams": {
+              "~w": "f~eJwlyzEKwzAMQNGrBM0V2JZBVveeoCeIZRkC2eQppXdvRcYP73_A4bmBKg-WSVjJDHOeGXsTwiKkRqNrLgkeG5yBzfH1jppRbRCLFkOufd5rq7th-k89cck6JPAV2Ne-Dl-HOnx_hjUgTA"
+            }
+          },
+          "season": "LIGA CALIENTE.MX LNBP",
+          "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+          "series": null,
+          "stageName": null,
+          "startTimeUTC": "2026-10-08T02:00:00",
+          "status": {
+            "label": "Final",
+            "value": "CONFIRMED"
+          },
+          "timesUnconfirmed": false
+        }
+      },
+      {
+        "competitors": [
+          {
+            "entityId": "64623df9-6f49-11ec-865a-bf19323c0103",
+            "isHome": false,
+            "isLeading": true,
+            "logoUrl": "https://images.dc.connect.sportradar.com/b1gf3/77405657a4884e58a58724e89624f121?size=100",
+            "name": "FUERZA REGIA",
+            "resultStatus": "CONFIRMED",
+            "score": 92
+          },
+          {
+            "entityId": "64bd2500-6f49-11ec-b288-bf19323c0103",
+            "isHome": true,
+            "isLeading": false,
+            "logoUrl": "https://images.dc.connect.sportradar.com/b1gf3/605ae6e3038b460283686fb2959e7bec?size=100",
+            "name": "SOLES DE MEXICALI",
+            "resultStatus": "CONFIRMED",
+            "score": 75
+          }
+        ],
+        "fixture": {
+          "broadcasts": [],
+          "date": "2026-10-07T19:00:00",
+          "fixtureId": "6d9f1684-74bf-11f1-975b-9b1a606e7cc3",
+          "isFinal": true,
+          "isLive": false,
+          "link": {
+            "fragment": null,
+            "openInNewTab": true,
+            "origin": null,
+            "path": "statistics.html",
+            "queryParams": {
+              "~w": "f~eJwlyzEKwzAMQNGrBM0VRJFrR917gp4gkiUIdJOnlt69mIwf3v9CwmMBs9abBGNhdyQKQt2FcRM2565G2wq3Bd4Te-LzNStm1S5BdS_Yisa1SrsritJR1-rNjCf-TJzjGGeO0xJ-f3iUIAA"
+            }
+          },
+          "season": "LIGA CALIENTE.MX LNBP",
+          "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+          "series": null,
+          "stageName": null,
+          "startTimeUTC": "2026-10-08T02:00:00",
+          "status": {
+            "label": "Final",
+            "value": "CONFIRMED"
+          },
+          "timesUnconfirmed": false
+        }
+      },
+      {
+        "competitors": [
+          {
+            "entityId": "66dc1b53-6f49-11ec-a47a-bf19323c0103",
+            "isHome": true,
+            "isLeading": true,
+            "logoUrl": "https://images.dc.connect.sportradar.com/b1gf3/2f704208a3ff4630a3f2055ffd3d722d?size=100",
+            "name": "ASTROS",
+            "resultStatus": "CONFIRMED",
+            "score": 86
+          },
+          {
+            "entityId": "bf1485e6-fccc-11ea-acec-f6b9d0245c9c",
+            "isHome": false,
+            "isLeading": false,
+            "logoUrl": "https://images.dc.connect.sportradar.com/b1gf3/dbe0a08e0a93474f94e0626c44a3b148?size=100",
+            "name": "GAMBUSINOS DE FRESNILLO",
+            "resultStatus": "CONFIRMED",
+            "score": 71
+          }
+        ],
+        "fixture": {
+          "broadcasts": [],
+          "date": "2026-10-07T20:00:00",
+          "fixtureId": "3e0fff8f-74bf-11f1-83e0-fd75a21c743c",
+          "isFinal": true,
+          "isLive": false,
+          "link": {
+            "fragment": null,
+            "openInNewTab": true,
+            "origin": null,
+            "path": "statistics.html",
+            "queryParams": {
+              "~w": "f~eJwly0EKAjEMheGrDFkbmDSVtO49gSeYpgkMuEtXinfX4PJ_fO8NAbcNVGVKd8bKZkjkhKN1xtJZjedQKjtcNngmtsD7I8uz2HZ3b45Sh_-v7behT7kehVQqa-JX4ljHOmOdGvD5ApVCIIU"
+            }
+          },
+          "season": "LIGA CALIENTE.MX LNBP",
+          "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+          "series": null,
+          "stageName": null,
+          "startTimeUTC": "2026-10-08T02:00:00",
+          "status": {
+            "label": "Final",
+            "value": "CONFIRMED"
+          },
+          "timesUnconfirmed": false
+        }
+      }
+    ],
+    "labels": {
+      "allBroadcasters": "All Broadcasters",
+      "allSeasons": "All seasons",
+      "noFixturesMessage": "No hay accesorios para mostrar",
+      "toBeConfirmed": "Por confirmar",
+      "toBeConfirmedAbbreviation": "Pend.",
+      "watch": "Watch"
+    },
+    "locale": "es-ES",
+    "reverseTeamOrder": false,
+    "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+    "seasons": {
+      "competitions": {
+        "16be8396-24fb-11ef-9ab7-df6be196e88f": {
+          "name": "LIGA CALIENTE.MX LNBP"
+        },
+        "889eb2bb-5c7c-11ee-aaba-89136e10ae17": {
+          "name": "COPA VALUE LNBP"
+        }
+      },
+      "seasons": [
+        {
+          "abbreviationLocal": null,
+          "competitionId": "889eb2bb-5c7c-11ee-aaba-89136e10ae17",
+          "link": "&~w=fr~eJyrVipWslJQMk4ySk1OTDTVTTQzMdA1NEwz1E00MjbRNU-zSDaxTEw1SUszUtJRUMoBKU4t1nUNVqoFAMv3D0o",
+          "nameLocal": "COPA VALUE LNBP 2026",
+          "seasonId": "3b2ecaa5-a640-11f1-a234-7f8c49ae4ff2",
+          "year": 2026
+        },
+        {
+          "abbreviationLocal": null,
+          "competitionId": "16be8396-24fb-11ef-9ab7-df6be196e88f",
+          "link": "&~w=fr~eJyrVipWslJQSk42TzG3TDPWNTFOTdU1NEwz1E2ysDTWNbI0Tk41TklKNjQyUNJRUMoBKU4t1nUNVqoFAMtvDyg",
+          "nameLocal": "LIGA CALIENTE.MX LNBP",
+          "seasonId": "cc7d79f3-43ee-11f1-b893-293ce3dbc120",
+          "year": 2026
+        }
+      ]
+    }
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixtures_ribbon"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 9,
+    "fromCache": false,
+    "generated": "2026-10-12T18:24:26.519673+00:00Z",
+    "generationTime": 1.588723,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:26.519691+00:00Z",
+    "version": 1
+  }
+}

@@ -1,0 +1,10 @@
+website_id,season_id,stat_key,stat_name,stat_label,rank,entity_id,entity_name,person_id,person_name,value,value_text
+12,df310a05-51ad-11f0-bd89-c735508e1e09,points,PTS,Points,1,da0b634d-55bc-11f0-99f8-2dd52d4792f3,Nancy,25cb6b95-819c-11f0-a023-65e42a5bdd1e,L.N. II,565.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,points,PTS,Points,2,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,Paris,45ef6ab6-f5c1-11eb-b22b-52d2151fde64,N. Hifi,550.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,points,PTS,Points,3,238ad480-55b8-11f0-ada9-1b2b39c0d600,Dijon,47e18016-f5c1-11eb-b22b-52d2151fde64,G. Hrovat,510.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,pointsPerGame,PTS,Points par Match,1,f43b1b0f-55bc-11f0-84d9-01499d2f0a07,Paris,45ef6ab6-f5c1-11eb-b22b-52d2151fde64,N. Hifi,20.37,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,pointsPerGame,PTS,Points par Match,2,da0b634d-55bc-11f0-99f8-2dd52d4792f3,Nancy,25cb6b95-819c-11f0-a023-65e42a5bdd1e,L.N. II,19.48,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,pointsPerGame,PTS,Points par Match,3,88bff512-55bd-11f0-aa84-8366061a4b55,Strasbourg,2f162816-81b8-11f0-a812-af5d248381c5,M.D. Jr,19.08,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,efficiency,EVAL,Evaluation,1,88bff512-55bd-11f0-aa84-8366061a4b55,Strasbourg,43869a8c-81ad-11f0-83b4-ab0456e6c159,N. Joseph,507.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,efficiency,EVAL,Evaluation,2,238ad480-55b8-11f0-ada9-1b2b39c0d600,Dijon,47e18016-f5c1-11eb-b22b-52d2151fde64,G. Hrovat,503.0,
+12,df310a05-51ad-11f0-bd89-c735508e1e09,efficiency,EVAL,Evaluation,3,da0b634d-55bc-11f0-99f8-2dd52d4792f3,Nancy,25cb6b95-819c-11f0-a023-65e42a5bdd1e,L.N. II,475.0,

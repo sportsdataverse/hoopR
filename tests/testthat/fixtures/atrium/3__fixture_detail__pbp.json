@@ -1,0 +1,561 @@
+{
+  "data": {
+    "banner": {
+      "competition": {
+        "id": "2585800c-c980-11eb-9685-12422656af2b",
+        "name": "NBL1 Finals Men"
+      },
+      "fixture": {
+        "attendance": null,
+        "attendanceLabel": "Attendance",
+        "broadcasts": [],
+        "competitors": [
+          {
+            "code": "FOR",
+            "colors": {
+              "primary": "2e2d75",
+              "secondary": "f4d42d",
+              "tertiary": "ffffff"
+            },
+            "draw": false,
+            "entityId": "dec6333c-7b55-11eb-9e56-8205bb8987e9",
+            "isHome": true,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOwjAMQNGrVJ6xhOs4dthZuUOdmqllaNUBKu4OHp_09U_Y4TaASomuNqNxMBI9CV07Y2lTUSFjGitcBlgyjhfeH6lPaj_Wddre6UjP0Sszd1QX-a_CsYVUtPEq7tZMo8H3B_IcHdk"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1n81/5b92a3c780454241a92e8938972af588?size=400",
+            "name": "Forestville",
+            "resultPlace": 2,
+            "resultStatus": "CONFIRMED",
+            "score": "67",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          },
+          {
+            "code": "GCR",
+            "colors": {
+              "primary": "0039a6",
+              "secondary": "007934",
+              "tertiary": "ffffff"
+            },
+            "draw": false,
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "isHome": false,
+            "link": {
+              "fragment": null,
+              "openInNewTab": false,
+              "origin": null,
+              "path": null,
+              "queryParams": {
+                "~w": "e~eJwVzDEOgzAMQNGrIM9YqkmMHXbW3iEmZioMRR2g4u6txyd9_S8cMHUgnH0RbajJExKthCZLwlxqFiZNNIzQd_CK2Hecn6ErdHy2rb7PsIebNyJeM4ox_1duWJxH1OHBZlpUvMD9A_I-Hdk"
+              }
+            },
+            "logo": "https://images.dc.connect.sportradar.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=400",
+            "name": "Gold Coast",
+            "resultPlace": 1,
+            "resultStatus": "CONFIRMED",
+            "score": "70",
+            "secondaryScore": null,
+            "shootOutAttempts": ""
+          }
+        ],
+        "fixtureProfile": {
+          "efficiencyType": "EFFICIENCY",
+          "foulsAllowedTechnical": 2,
+          "foulsBeforeBonus": 4,
+          "halfTimeDuration": 10,
+          "maxFoulsPersonal": 5,
+          "maximumPlayersOnCourt": 5,
+          "maximumRosterSize": 12,
+          "midGameJumpBallAllowed": false,
+          "numberOfPeriods": 4,
+          "overtimeAllowed": false,
+          "overtimeLength": 5,
+          "periodBreakDuration": 2,
+          "periodLength": 10,
+          "periodLengthCustomized": {},
+          "pointsFourAllowed": false,
+          "resetFoulsAfterPeriods": [
+            1,
+            2,
+            3
+          ],
+          "resetTimeoutsAfterPeriods": [
+            2,
+            4,
+            11
+          ],
+          "shotClock": 24,
+          "simpleTargetScoreEndingAllowed": false,
+          "switchPlayingDirection": [
+            2
+          ],
+          "usePeriodLengthCustomized": false
+        },
+        "id": "a541adc5-83e7-11f1-9127-15b828f83402",
+        "labelShootout": null,
+        "leaderStats": {
+          "leaders": []
+        },
+        "leaderStatsLabel": "Statistical Leaders",
+        "name": "CHAMPIONSHIP",
+        "pool": "",
+        "poolName": "",
+        "series": null,
+        "shootout": {},
+        "sport": "basketball",
+        "startDateTime": "2026-08-23T13:30:00",
+        "status": "CONFIRMED",
+        "timesUnconfirmed": false,
+        "venue": "State Basketball Centre (Wayville)"
+      },
+      "isPeriodScoresVertical": false,
+      "season": {
+        "id": "754ec78d-83e3-11f1-b7c3-49a475183126",
+        "name": "2026 Men's National Finals"
+      },
+      "showFixtureName": true
+    },
+    "broadcastsLabels": {
+      "allBroadcasters": "All Broadcasters",
+      "watch": "Watch"
+    },
+    "captainLabel": "C",
+    "config": {
+      "currentPage": "fixture_detail",
+      "navigation": {
+        "main": []
+      },
+      "showEntityLogo": true,
+      "sport": "basketball"
+    },
+    "fixture": {
+      "ageGroup": "SENIOR",
+      "attendance": null,
+      "attendanceLabel": "Attendance",
+      "captains": {
+        "dec6333c-7b55-11eb-9e56-8205bb8987e9": "7f91a156-9b8c-11eb-a30c-6efaa2ba8736",
+        "ded115f4-7b55-11eb-9e56-8205bb8987e9": "cf522130-b305-11eb-9723-226cd10403de"
+      },
+      "competitionName": "NBL1 Finals Men",
+      "competitors": [
+        {
+          "code": "FOR",
+          "colors": {
+            "primary": "2e2d75",
+            "secondary": "f4d42d",
+            "tertiary": "ffffff"
+          },
+          "draw": false,
+          "entityId": "dec6333c-7b55-11eb-9e56-8205bb8987e9",
+          "isHome": true,
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwVzDEOwjAMQNGrVJ6xhOs4dthZuUOdmqllaNUBKu4OHp_09U_Y4TaASomuNqNxMBI9CV07Y2lTUSFjGitcBlgyjhfeH6lPaj_Wddre6UjP0Sszd1QX-a_CsYVUtPEq7tZMo8H3B_IcHdk"
+            }
+          },
+          "logo": "https://images.dc.connect.sportradar.com/b1n81/5b92a3c780454241a92e8938972af588?size=400",
+          "name": "Forestville",
+          "resultPlace": 2,
+          "resultStatus": "CONFIRMED",
+          "score": "67",
+          "secondaryScore": null,
+          "shootOutAttempts": ""
+        },
+        {
+          "code": "GCR",
+          "colors": {
+            "primary": "0039a6",
+            "secondary": "007934",
+            "tertiary": "ffffff"
+          },
+          "draw": false,
+          "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+          "isHome": false,
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwVzDEOgzAMQNGrIM9YqkmMHXbW3iEmZioMRR2g4u6txyd9_S8cMHUgnH0RbajJExKthCZLwlxqFiZNNIzQd_CK2Hecn6ErdHy2rb7PsIebNyJeM4ox_1duWJxH1OHBZlpUvMD9A_I-Hdk"
+            }
+          },
+          "logo": "https://images.dc.connect.sportradar.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=400",
+          "name": "Gold Coast",
+          "resultPlace": 1,
+          "resultStatus": "CONFIRMED",
+          "score": "70",
+          "secondaryScore": null,
+          "shootOutAttempts": ""
+        }
+      ],
+      "discipline": null,
+      "externalId": null,
+      "fixtureId": "a541adc5-83e7-11f1-9127-15b828f83402",
+      "fixtureType": "FINAL",
+      "liveDataAvailable": false,
+      "liveVideoAvailable": false,
+      "name": "CHAMPIONSHIP",
+      "profile": {
+        "efficiencyType": "EFFICIENCY",
+        "foulsAllowedTechnical": 2,
+        "foulsBeforeBonus": 4,
+        "halfTimeDuration": 10,
+        "maxFoulsPersonal": 5,
+        "maximumPlayersOnCourt": 5,
+        "maximumRosterSize": 12,
+        "midGameJumpBallAllowed": false,
+        "numberOfPeriods": 4,
+        "overtimeAllowed": false,
+        "overtimeLength": 5,
+        "periodBreakDuration": 2,
+        "periodLength": 10,
+        "periodLengthCustomized": {},
+        "pointsFourAllowed": false,
+        "resetFoulsAfterPeriods": [
+          1,
+          2,
+          3
+        ],
+        "resetTimeoutsAfterPeriods": [
+          2,
+          4,
+          11
+        ],
+        "shotClock": 24,
+        "simpleTargetScoreEndingAllowed": false,
+        "switchPlayingDirection": [
+          2
+        ],
+        "usePeriodLengthCustomized": false
+      },
+      "seasonId": "754ec78d-83e3-11f1-b7c3-49a475183126",
+      "series": null,
+      "startTimeLocal": "2026-08-23T13:30:00",
+      "startTimeUTC": "2026-08-23T04:00:00",
+      "status": "CONFIRMED",
+      "statusLabel": "Final",
+      "timesUnconfirmed": false,
+      "timezone": "Australia/Adelaide",
+      "updated": "2026-08-23T06:32:14",
+      "venue": "State Basketball Centre (Wayville)",
+      "venueId": "db597344-7b55-11eb-815c-de81c44d5767"
+    },
+    "fixtureDetailText": {
+      "ended": "Ended",
+      "live": "Live",
+      "matchEvents": "Match Events",
+      "startingSoon": "Starting soon",
+      "timeUntilStart": "Time until start",
+      "time_score": "Time/Score"
+    },
+    "gameStageLabels": {
+      "all": "All",
+      "final": "Final"
+    },
+    "labels": {
+      "toBeConfirmed": "To Be Confirmed",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "en-EN",
+    "periodData": [
+      {
+        "bannerMatchEvents": [],
+        "bannerTimelineMatchEvents": [],
+        "durationMinutes": 10,
+        "elapsedMinutesBeforePeriod": 0,
+        "ended": true,
+        "events": [
+          {
+            "bib": "15",
+            "clock": "PT10M0S",
+            "desc": "Jumpball Lost",
+            "entityId": "dec6333c-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "2730b081-9ea9-11f1-840f-eff23985b44a",
+            "eventSubType": "lost",
+            "eventType": "jumpBall",
+            "name": "Greg Mays",
+            "periodId": 1,
+            "personId": "5c4b92d0-97f7-11eb-8373-6eda0c893864",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/8aa4db37d2fa474ba2fc168b5a691b61?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 0,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 0
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          },
+          {
+            "bib": "7",
+            "clock": "PT10M0S",
+            "desc": "Jumpball Won",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "2730fea0-9ea9-11f1-840f-eff23985b44a",
+            "eventSubType": "won",
+            "eventType": "jumpBall",
+            "name": "Cooper Urquhart",
+            "periodId": 1,
+            "personId": "d168aaa2-b305-11eb-9723-226cd10403de",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/92139a1ca1944599ac0ba2a7ed04f473?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 0,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 0
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          },
+          {
+            "bib": "2",
+            "clock": "PT9M37S",
+            "desc": "3pt Jump Shot",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "34094381-9ea9-11f1-840f-eff23985b44a",
+            "eventSubType": "jumpShot",
+            "eventType": "3pt",
+            "name": "Brodie Mcgregor",
+            "periodId": 1,
+            "personId": "e955275b-fec0-11ee-9420-b12567869541",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/ac3d1eaff0e44487b54ea1eda863ae3f?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 0,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 0
+            },
+            "success": false,
+            "successString": "missed",
+            "x": 92.63,
+            "y": 96.83
+          }
+        ],
+        "isOvertime": false,
+        "isShootout": false,
+        "labels": {
+          "end": "Period 1: End",
+          "shortLabel": "P1",
+          "start": "Period 1: Start"
+        },
+        "periodId": 1,
+        "started": true,
+        "teamScore": {
+          "dec6333c-7b55-11eb-9e56-8205bb8987e9": 17,
+          "ded115f4-7b55-11eb-9e56-8205bb8987e9": 18
+        }
+      },
+      {
+        "bannerMatchEvents": [],
+        "bannerTimelineMatchEvents": [],
+        "durationMinutes": 10,
+        "elapsedMinutesBeforePeriod": 10,
+        "ended": true,
+        "events": [
+          {
+            "bib": "2",
+            "clock": "PT10M0S",
+            "desc": "Substitution In",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "70870892-9eab-11f1-840f-eff23985b44a",
+            "eventSubType": "in",
+            "eventType": "substitution",
+            "name": "Brodie Mcgregor",
+            "periodId": 2,
+            "personId": "e955275b-fec0-11ee-9420-b12567869541",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/ac3d1eaff0e44487b54ea1eda863ae3f?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 17,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 18
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          },
+          {
+            "bib": "8",
+            "clock": "PT10M0S",
+            "desc": "Substitution Out",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "70870893-9eab-11f1-840f-eff23985b44a",
+            "eventSubType": "out",
+            "eventType": "substitution",
+            "name": "Ashley McGrath",
+            "periodId": 2,
+            "personId": "47f8611b-f7ac-11ee-aa9f-9f7ef43907ca",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/0e691f31d94941b2be84b63973aadd7d?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 17,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 18
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          },
+          {
+            "bib": "1",
+            "clock": "PT9M45S",
+            "desc": "3pt Jump Shot",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "88d6f0e1-9eab-11f1-840f-eff23985b44a",
+            "eventSubType": "jumpShot",
+            "eventType": "3pt",
+            "name": "Matthew Mckewin",
+            "periodId": 2,
+            "personId": "caa5a2e4-c250-11ed-99be-559a168f95ed",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/72929b80e6d94a258006f11fea572f47?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 17,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 18
+            },
+            "success": false,
+            "successString": "missed",
+            "x": 71.66,
+            "y": 27.6
+          }
+        ],
+        "isOvertime": false,
+        "isShootout": false,
+        "labels": {
+          "end": "Period 2: End",
+          "shortLabel": "P2",
+          "start": "Period 2: Start"
+        },
+        "periodId": 2,
+        "started": true,
+        "teamScore": {
+          "dec6333c-7b55-11eb-9e56-8205bb8987e9": 22,
+          "ded115f4-7b55-11eb-9e56-8205bb8987e9": 21
+        }
+      },
+      {
+        "bannerMatchEvents": [],
+        "bannerTimelineMatchEvents": [],
+        "durationMinutes": 10,
+        "elapsedMinutesBeforePeriod": 20,
+        "ended": true,
+        "events": [
+          {
+            "bib": "55",
+            "clock": "PT10M0S",
+            "desc": "Substitution Out",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "c68d4b10-9eaf-11f1-840f-eff23985b44a",
+            "eventSubType": "out",
+            "eventType": "substitution",
+            "name": "Riley Oberman",
+            "periodId": 3,
+            "personId": "d7d7794f-3635-11f1-a42f-c9d1e8ca6fce",
+            "personImage": null,
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 39,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 39
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          },
+          {
+            "bib": "7",
+            "clock": "PT10M0S",
+            "desc": "Substitution In",
+            "entityId": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "c68d2401-9eaf-11f1-840f-eff23985b44a",
+            "eventSubType": "in",
+            "eventType": "substitution",
+            "name": "Cooper Urquhart",
+            "periodId": 3,
+            "personId": "d168aaa2-b305-11eb-9723-226cd10403de",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/92139a1ca1944599ac0ba2a7ed04f473?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 39,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 39
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          },
+          {
+            "bib": "25",
+            "clock": "PT10M0S",
+            "desc": "Substitution In",
+            "entityId": "dec6333c-7b55-11eb-9e56-8205bb8987e9",
+            "eventId": "c68de750-9eaf-11f1-840f-eff23985b44a",
+            "eventSubType": "in",
+            "eventType": "substitution",
+            "name": "Fiston Ipassou",
+            "periodId": 3,
+            "personId": "430eeb21-b543-11ec-b497-85e18cd0bf8b",
+            "personImage": "https://images.dc.connect.sportradar.com/b1n81/cac22ea7c2574bb581ab4fd2b2167849?size=400",
+            "scores": {
+              "dec6333c-7b55-11eb-9e56-8205bb8987e9": 39,
+              "ded115f4-7b55-11eb-9e56-8205bb8987e9": 39
+            },
+            "success": null,
+            "x": null,
+            "y": null
+          }
+        ],
+        "isOvertime": false,
+        "isShootout": false,
+        "labels": {
+          "end": "Period 3: End",
+          "shortLabel": "P3",
+          "start": "Period 3: Start"
+        },
+        "periodId": 3,
+        "started": true,
+        "teamScore": {
+          "dec6333c-7b55-11eb-9e56-8205bb8987e9": 14,
+          "ded115f4-7b55-11eb-9e56-8205bb8987e9": 10
+        }
+      }
+    ],
+    "reverseTeamOrder": false,
+    "seasonId": "754ec78d-83e3-11f1-b7c3-49a475183126",
+    "showCompetitionName": true,
+    "sub": "pbp",
+    "summary": {},
+    "tabs": [
+      {
+        "label": "Box Score",
+        "link": "&~w=f~eJwljDEKwzAMRa8SNEdQWVKlZO_aOziODYHSxZ4acvdWdPvv8XkndFgnMJVazHd0roxEjXCzwihLFlNypnSHeYJXnOsbH8-gT1AfeRx9HKWHaqGyCuW9aNTsX1so_ZZunrw5yy3B9QVbux5v",
+        "sub": "statistics"
+      },
+      {
+        "active": true,
+        "label": "Play By Play",
+        "link": "&~w=f~eJwljDsKw1AMwK4SPMdQP9u1kz1r7_C-UymBbCm5e2q6SSD0hQPWCUylV_OGzp2RaBAWq4yyZDElZ0pPmCd4R9w_uL3CzrC97MEjOKtQblVjY__NQulHWjz5cJZHgusGTQMbZg",
+        "sub": "pbp"
+      },
+      {
+        "label": "Shot Chart",
+        "link": "&~w=f~eJwljEEOgkAMRa9CuraJnba2uGfrFcwwzIQFwURYYbw7Nu7-e_l5H9jg3oGp1GI-oXNlJGqEoxVG6bOYkjOlG1w6WOJcVxweQUfQNr_2Z5nzew_VQmUVylPRqNm_1lP6LR09eXOWa4LvCVXmHlM",
+        "sub": "shot_chart"
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/3/fixture_detail?fixtureId=a541adc5-83e7-11f1-9127-15b828f83402&sub=pbp"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 16,
+    "fromCache": false,
+    "generated": "2026-10-12T18:17:22.351112+00:00Z",
+    "generationTime": 0.249857,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:35.896918+00:00Z",
+    "version": 1
+  }
+}

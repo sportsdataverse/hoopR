@@ -1,0 +1,132 @@
+{
+  "data": {
+    "config": {
+      "currentPage": "standings_fragment",
+      "labelPage": "Classement",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJyrVipWslJQSkkzNjRINDDVNTVMTNE1NEwz0E1KsbDUTTY3NjU1sEg1TDWwVNJRUMoBKU4r0nULUqoFALwhDro",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showEntityLogo": true,
+      "sport": "basketball"
+    },
+    "filters": {},
+    "headers": [
+      {
+        "key": "position",
+        "name": "Pos"
+      },
+      {
+        "key": "name",
+        "name": "Nom"
+      },
+      {
+        "code": "Match joué",
+        "key": "played",
+        "name": "MJ"
+      }
+    ],
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "matchResultLabels": {
+      "D": "RKG",
+      "L": "D",
+      "W": "V"
+    },
+    "promotionColors": {},
+    "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+    "seasonName": "",
+    "standings": [
+      {
+        "label": "",
+        "rows": [
+          {
+            "position": 1,
+            "results": {
+              "losses": 8,
+              "played": 30,
+              "wins": 22
+            },
+            "team": {
+              "color": null,
+              "entityId": "f43b1b0f-55bc-11f0-84d9-01499d2f0a07",
+              "isCurrentTeam": false,
+              "link": null,
+              "logoURL": "https://images.dc.connect.sportradar.com/b1fgf/8cc2654e9e61483395b1429f82d035d9?size=400",
+              "name": "Paris"
+            }
+          },
+          {
+            "position": 2,
+            "results": {
+              "losses": 9,
+              "played": 30,
+              "wins": 21
+            },
+            "team": {
+              "color": null,
+              "entityId": "e796c4fa-55bc-11f0-a2f1-8f0878f0f894",
+              "isCurrentTeam": false,
+              "link": null,
+              "logoURL": "https://images.dc.connect.sportradar.com/b1fgf/cf518e16e4654b59a976e0cd6561107a?size=400",
+              "name": "Nanterre"
+            }
+          },
+          {
+            "position": 3,
+            "results": {
+              "losses": 10,
+              "played": 30,
+              "wins": 20
+            },
+            "team": {
+              "color": null,
+              "entityId": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+              "isCurrentTeam": false,
+              "link": null,
+              "logoURL": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+              "name": "Lyon-Villeurbanne"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/standings_fragment?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 10,
+    "fromCache": false,
+    "generated": "2026-10-12T18:12:54.088040+00:00Z",
+    "generationTime": 0.28234,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:24:04.524678+00:00Z",
+    "version": 1
+  }
+}

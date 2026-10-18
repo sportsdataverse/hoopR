@@ -1,0 +1,278 @@
+{
+  "data": {
+    "config": {
+      "bindToNavigation": "persons",
+      "currentPage": "person_detail",
+      "navigation": {
+        "labels": {
+          "search": "Rechercher",
+          "searchResults": "Résultats de recherche"
+        },
+        "main": [
+          {
+            "label": "Calendrier",
+            "link": "&~w=fl~eJwVy7sNgDAMANFVItdYshMsbAZgADbIzxUFghKxO6R80t0DN6wBmiemTILCuSGzE5amhnVJIqSdOxlMAY4R-4XbPnQOxdnURTO6VP7XXtAiGS5ZZjW12rTA-wE1khmH",
+            "value": "fixtures"
+          },
+          {
+            "label": "Classement",
+            "link": "&~w=stn~eJwVy7sNgDAMANFVItdYshMsbAZgADbIzxUFghKxO6R80t0DN6wBmiemTILCuSGzE5amhnVJIqSdOxlMAY4R-4XbPnQOxdnURTO6VP7XXtAiGS5ZZjW12rTA-wE1khmH",
+            "value": "standings"
+          },
+          {
+            "label": "Season Leaders",
+            "link": "&~w=l~eJwVy7sNgDAMANFVItdYshMsbAZgADbIzxUFghKxO6R80t0DN6wBmiemTILCuSGzE5amhnVJIqSdOxlMAY4R-4XbPnQOxdnURTO6VP7XXtAiGS5ZZjW12rTA-wE1khmH",
+            "value": "statistics_leaders"
+          }
+        ]
+      },
+      "showPersonImage": true,
+      "sport": "basketball"
+    },
+    "labels": {
+      "toBeConfirmed": "A confirmer",
+      "toBeConfirmedAbbreviation": "TBC"
+    },
+    "locale": "fr-FR",
+    "log": {
+      "activeSeason": "df310a05-51ad-11f0-bd89-c735508e1e09",
+      "commonHeaders": [
+        {
+          "key": "date",
+          "name": "Date"
+        },
+        {
+          "key": "name",
+          "name": "Opposition"
+        },
+        {
+          "key": "result",
+          "name": "Résultat"
+        }
+      ],
+      "competitions": {
+        "3f4064bb-51ad-11f0-aaaf-2923c944b404": {
+          "name": "Betclic ÉLITE",
+          "seasons": [
+            {
+              "link": "&~w=p~eJyrVqpSslJQyslPV9JRUCoAsU1MTC3SDM1MddMsgIShYZqBrkVqUpquqbFlsqWxYTJQygSkuBikOCXN2NAg0cBU19QwMQWiOCnFwlI32dzY1NTAItUw1cASpDgHpDitSNctCMwjXm8tAGX9J0k",
+              "nameLocal": "Betclic ÉLITE 2025",
+              "seasonId": "df310a05-51ad-11f0-bd89-c735508e1e09",
+              "year": 2025
+            }
+          ]
+        },
+        "b98931f7-51d3-11f0-8483-9d47ff25959f": {
+          "name": "Betclic ÉLITE - Playoffs",
+          "seasons": [
+            {
+              "link": "&~w=p~eJwly0sOAjEIgOGrTFhLUqbQFg_gAbxBX7iZRKM7jXe3tRsC4fs_8IbzBsf9BqcNHnNnlmQUBC2NQWQOUy-G4rWqpzpePPFr4maeXHaCQrktXFpSrNGLuNSpO534mNieeLn-r9XGvUnIabTNr1a5FdxF2XEIUWOA7w9ddCam",
+              "nameLocal": "Betclic ÉLITE - Playoffs 2025",
+              "seasonId": "d72d56a8-51d3-11f0-94db-259404667976",
+              "year": 2025
+            }
+          ]
+        }
+      },
+      "filters": {
+        "fixtureType": {
+          "id": "fixture-type-select",
+          "options": [],
+          "selected": null
+        }
+      },
+      "headers": [
+        {
+          "code": "Points",
+          "key": "points",
+          "name": "PTS"
+        },
+        {
+          "code": "Rebond Défensif",
+          "key": "reboundsDefensive",
+          "name": "RD"
+        },
+        {
+          "code": "Rebond Offensif",
+          "key": "reboundsOffensive",
+          "name": "RO"
+        }
+      ],
+      "labels": {
+        "didNotParticipate": "Player did not participate in selected season/competition",
+        "matchResultLabels": {
+          "D": "RKG",
+          "L": "D",
+          "W": "V"
+        },
+        "noData": "No data to display"
+      },
+      "rows": [
+        {
+          "date": "2026-01-25T19:10:00",
+          "entityId": "7e9f3d8d-55bb-11f0-ae66-df8c8ac8c329",
+          "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/9f11ef554beb4bf69790b7b3ba3a72b2?size=100",
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwlzMEJwzAMQNFVgs4VSDVK5A7QAbqBbFmn5JKQQ1u6exA9Pvj8LxzwmMCjMBkJCpsjcxA214p9KSKkgwdVuE2wZhw7Pl-pT-o4t832d3qkl1GjuDqKtPZf2Zhn9NCu1rWXe4XfBSjfHxc"
+            }
+          },
+          "name": "Le Mans",
+          "result": {
+            "label": "V",
+            "value": "W"
+          },
+          "score": "88 - 91",
+          "statistics": [
+            19,
+            4,
+            0
+          ]
+        },
+        {
+          "date": "2026-02-01T19:00:00",
+          "entityId": "238ad480-55b8-11f0-ada9-1b2b39c0d600",
+          "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d75d46d8f9474798b55e76f0efd76c0e?size=100",
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwlzLENwkAMRuFVItdY-p3D4GOADMAGvviuIk0iCkDsjizKT3p6HzroNlGMInAoq3iwyAC3sMrrtajCunRUOk30yHjsvNxT79Tx3DbfX-menot5nA2s2uy_8vDK0uZW6oq4APT9AROeHjA"
+            }
+          },
+          "name": "Dijon",
+          "result": {
+            "label": "D",
+            "value": "L"
+          },
+          "score": "99 - 90",
+          "statistics": [
+            23,
+            1,
+            0
+          ]
+        },
+        {
+          "date": "2026-02-08T16:30:00",
+          "entityId": "e796c4fa-55bc-11f0-a2f1-8f0878f0f894",
+          "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/cf518e16e4654b59a976e0cd6561107a?size=100",
+          "link": {
+            "fragment": null,
+            "openInNewTab": false,
+            "origin": null,
+            "path": null,
+            "queryParams": {
+              "~w": "e~eJwlzEEKg0AMheGrSNYGEjWdTA_gAbxBnJms6kbpQkvvXkM3Dz54_B844NlB9ZHJSFDYKjI74Vo1Y0mjCGnjRhn6Dl5x9h3nJXSFjve22X6GW7il_CiTG4qs5Z-ywRnVSdM9rnmC7w8hcB6H"
+            }
+          },
+          "name": "Nanterre",
+          "result": {
+            "label": "D",
+            "value": "L"
+          },
+          "score": "64 - 77",
+          "statistics": [
+            15,
+            4,
+            0
+          ]
+        }
+      ]
+    },
+    "person": {
+      "averages": [
+        {
+          "code": "Points par Match",
+          "key": "pointsPerGame",
+          "name": "PTS",
+          "value": 12.43
+        },
+        {
+          "code": "Rebonds Défensifs par Match",
+          "key": "reboundsDefensivePerGame",
+          "name": "RD",
+          "value": 3.5
+        },
+        {
+          "code": "Rebonds Offensifs par Match",
+          "key": "reboundsOffensivePerGame",
+          "name": "RO",
+          "value": 0.21
+        }
+      ],
+      "bib": null,
+      "colors": {
+        "primary": "2D2D2D",
+        "secondary": "FFFFFF",
+        "tertiary": "1D1D1D"
+      },
+      "id": "4458f165-f865-11f0-8ebf-539c931c1654",
+      "imageURL": "https://images.dc.connect.sportradar.com/b1fgf/d4520113100e4dcf8534633e5a1e09f8?size=400",
+      "info": [
+        {
+          "key": "Date of birth",
+          "label": "Date de naissance",
+          "value": "1994-04-06"
+        },
+        {
+          "key": "age",
+          "label": "Âge",
+          "value": 32
+        },
+        {
+          "key": "nationality",
+          "label": "Nationalité",
+          "value": "Colombie"
+        }
+      ],
+      "name": "Braian Angola-Rodas",
+      "social": {},
+      "teamId": "25bcb29d-55bc-11f0-8037-fb553c4eab1b",
+      "teamImage": "https://images.dc.connect.sportradar.com/b1fgf/0c4c8935350e4b67ab2a027b9bf4e55d?size=400",
+      "teamLink": {
+        "fragment": null,
+        "openInNewTab": false,
+        "origin": null,
+        "path": null,
+        "queryParams": {
+          "~w": "e~eJwlzLsNgDAMRdFVkGss2QSLhAEYgA3ifCpoQBSA2B0sunekp3vDDmMDuTqmSILCMSNzJdTsA6bBiZAvXChA28Bi57rhNJsu036sa9xOczF3okm7kFG-8ac8uQGrirjUl6is8LwebR7E"
+        }
+      },
+      "teamName": "Lyon-Villeurbanne"
+    },
+    "sub": "log",
+    "tabs": [
+      {
+        "label": "Stats Compétition",
+        "link": "&~w=p~eJwlyjEKwzAMheGrBM0VSNhK5BygB-gNHNuCQIZSe0rp3RuR5Q3_-75wwjpBH3nsfeylw2OCt6cYRY1nQdNrmI1Q22YoIZUUuFxXdNwdVwtMmQSFc73xVjVhWYIIaeNGyfHh2D74fMHvD8OGHxA",
+        "sub": "statistics"
+      },
+      {
+        "label": "Game Log",
+        "link": "&~w=p~eJwlykEKhDAMheGrSNYGEtpoOgfwAN6gto0bQdHdDHN3DW4eP7zvB1_4dLDtK_QdHN4xihoPgqbPMBuhtsVQQiopcHmu6PhyXC0wZRIUzvXFS9WEZQwipI0bJcebYztxmuF_A2CNHAc",
+        "sub": "log"
+      }
+    ]
+  },
+  "links": {
+    "self": "https://embed-api.eui.connect.sportradar.com/v1/embed/12/person_detail?personId=4458f165-f865-11f0-8ebf-539c931c1654&seasonId=df310a05-51ad-11f0-bd89-c735508e1e09&sub=log"
+  },
+  "meta": {
+    "code": 200,
+    "codeVersion": "d6cd1e2bd19e03a81132a23b2025920577f84e37",
+    "count": 7,
+    "fromCache": false,
+    "generated": "2026-10-12T18:25:39.303226+00:00Z",
+    "generationTime": 0.265502,
+    "limit": 0,
+    "offset": 0,
+    "time": "2026-10-12T18:26:33.746778+00:00Z",
+    "version": 1
+  }
+}
