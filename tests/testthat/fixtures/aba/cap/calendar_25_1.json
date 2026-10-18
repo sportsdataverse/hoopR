@@ -1,0 +1,86 @@
+{
+  "season": {
+    "sez": 25,
+    "lea": 1,
+    "label": "Season 2025/26"
+  },
+  "seasons": [
+    {
+      "sez": 26,
+      "lea": 1,
+      "label": "Season 2026/27"
+    },
+    {
+      "sez": 25,
+      "lea": 1,
+      "label": "Season 2025/26"
+    },
+    {
+      "sez": 24,
+      "lea": 1,
+      "label": "Season 2024/25"
+    }
+  ],
+  "games": [
+    {
+      "round": "ROUND 1",
+      "game_no": 2,
+      "sez": 25,
+      "lea": 1,
+      "home_team": "Dubai Basketball",
+      "away_team": "Split",
+      "home_abbr": "DUB",
+      "away_abbr": "SPL",
+      "home_score": 92,
+      "away_score": 58,
+      "when": "Monday, 06.10.2025 17:00 CET (19:00 Dubai local time)",
+      "date": "2025-10-06",
+      "date_to": null,
+      "time": "17:00",
+      "time_zone": "CET",
+      "local_time": "19:00",
+      "local_place": "Dubai",
+      "group": "A"
+    },
+    {
+      "round": "ROUND 3",
+      "game_no": 18,
+      "sez": 25,
+      "lea": 1,
+      "home_team": "Dubai Basketball",
+      "away_team": "U-BT Cluj-Napoca",
+      "home_abbr": "DUB",
+      "away_abbr": "CLU",
+      "home_score": 81,
+      "away_score": 77,
+      "when": "Sunday, 19.10.2025 16:00 CET (18:00 Dubai local time)",
+      "date": "2025-10-19",
+      "date_to": null,
+      "time": "16:00",
+      "time_zone": "CET",
+      "local_time": "18:00",
+      "local_place": "Dubai",
+      "group": "A"
+    },
+    {
+      "round": "ROUND 5",
+      "game_no": 35,
+      "sez": 25,
+      "lea": 1,
+      "home_team": "U-BT Cluj-Napoca",
+      "away_team": "Igokea m:tel",
+      "home_abbr": "CLU",
+      "away_abbr": "IGO",
+      "home_score": 106,
+      "away_score": 84,
+      "when": "Saturday, 01.11.2025 17:30 CET (18:30 Cluj-Napoca local time)",
+      "date": "2025-11-01",
+      "date_to": null,
+      "time": "17:30",
+      "time_zone": "CET",
+      "local_time": "18:30",
+      "local_place": "Cluj-Napoca",
+      "group": "A"
+    }
+  ]
+}

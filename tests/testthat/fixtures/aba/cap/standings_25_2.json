@@ -1,0 +1,51 @@
+{
+  "season": {
+    "sez": 25,
+    "lea": 2,
+    "label": "Season 2025/26"
+  },
+  "rows": [
+    {
+      "table": "Regular Season 2025/26",
+      "group": null,
+      "rank": 1,
+      "team_id": 6,
+      "team_name": "HKK Široki TT Kabeli",
+      "games": 8,
+      "wins": 7,
+      "losses": 1,
+      "points_for": 759,
+      "points_against": 649,
+      "point_diff": 110,
+      "standing_points": 15
+    },
+    {
+      "table": "Regular Season 2025/26",
+      "group": null,
+      "rank": 2,
+      "team_id": 70,
+      "team_name": "Zlatibor Mozzart",
+      "games": 8,
+      "wins": 6,
+      "losses": 2,
+      "points_for": 753,
+      "points_against": 656,
+      "point_diff": 97,
+      "standing_points": 14
+    },
+    {
+      "table": "Regular Season 2025/26",
+      "group": null,
+      "rank": 3,
+      "team_id": 37,
+      "team_name": "Sutjeska Elektroprivreda Nikšić",
+      "games": 8,
+      "wins": 6,
+      "losses": 2,
+      "points_for": 713,
+      "points_against": 616,
+      "point_diff": 97,
+      "standing_points": 14
+    }
+  ]
+}

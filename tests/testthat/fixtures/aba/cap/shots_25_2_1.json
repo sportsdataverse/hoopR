@@ -1,0 +1,26 @@
+[
+  {
+    "ekipa": "1",
+    "koordinata_x": "5.8",
+    "koordinata_y": "46.72",
+    "koordinata_uspeh": "1",
+    "player_id": "4898",
+    "player_name": "Denil Krnić"
+  },
+  {
+    "ekipa": "2",
+    "koordinata_x": "86.3",
+    "koordinata_y": "65.08",
+    "koordinata_uspeh": "0",
+    "player_id": "3995",
+    "player_name": "Dušan Makitan"
+  },
+  {
+    "ekipa": "2",
+    "koordinata_x": "94",
+    "koordinata_y": "50",
+    "koordinata_uspeh": "0",
+    "player_id": "3074",
+    "player_name": "Dušan Tanasković"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "season": {
+    "sez": 8,
+    "lea": 1,
+    "label": "Season 2008/09"
+  },
+  "rows": [
+    {
+      "table": "Regular Season 2008/09",
+      "group": null,
+      "rank": 1,
+      "team_id": 22,
+      "team_name": "Partizan",
+      "games": 26,
+      "wins": 23,
+      "losses": 3,
+      "points_for": 1966,
+      "points_against": 1771,
+      "point_diff": 195,
+      "standing_points": 49
+    },
+    {
+      "table": "Regular Season 2008/09",
+      "group": null,
+      "rank": 2,
+      "team_id": 2,
+      "team_name": "Cibona",
+      "games": 26,
+      "wins": 19,
+      "losses": 7,
+      "points_for": 2088,
+      "points_against": 1945,
+      "point_diff": 143,
+      "standing_points": 45
+    },
+    {
+      "table": "Regular Season 2008/09",
+      "group": null,
+      "rank": 3,
+      "team_id": 21,
+      "team_name": "Hemofarm STADA",
+      "games": 26,
+      "wins": 19,
+      "losses": 7,
+      "points_for": 2082,
+      "points_against": 1987,
+      "point_diff": 95,
+      "standing_points": 45
+    }
+  ]
+}

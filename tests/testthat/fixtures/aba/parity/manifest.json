@@ -1,0 +1,360 @@
+{
+ "game": {
+  "short": "game",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_6_25_1.html",
+  "want": {
+   "game_no": 6,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 1
+ },
+ "game_full": {
+  "short": "game",
+  "source": "record",
+  "fixture": "full/match_6_25_1.json",
+  "rows": 1
+ },
+ "game_8_1": {
+  "short": "game",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_1_8_1.html",
+  "want": {
+   "game_no": 1,
+   "sez": 8,
+   "lea": 1
+  },
+  "rows": 1
+ },
+ "game_25_2": {
+  "short": "game",
+  "source": "record",
+  "fixture": "cap/match_25_2_1.json",
+  "rows": 1
+ },
+ "periods": {
+  "short": "periods",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_6_25_1.html",
+  "want": {
+   "game_no": 6,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 5
+ },
+ "periods_full": {
+  "short": "periods",
+  "source": "record",
+  "fixture": "full/match_6_25_1.json",
+  "rows": 5
+ },
+ "periods_8_1": {
+  "short": "periods",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_1_8_1.html",
+  "want": {
+   "game_no": 1,
+   "sez": 8,
+   "lea": 1
+  },
+  "rows": 4
+ },
+ "periods_25_2": {
+  "short": "periods",
+  "source": "record",
+  "fixture": "cap/match_25_2_1.json",
+  "rows": 3
+ },
+ "box_players": {
+  "short": "box_players",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_6_25_1.html",
+  "want": {
+   "game_no": 6,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 24
+ },
+ "box_players_full": {
+  "short": "box_players",
+  "source": "record",
+  "fixture": "full/match_6_25_1.json",
+  "rows": 24
+ },
+ "box_players_8_1": {
+  "short": "box_players",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_1_8_1.html",
+  "want": {
+   "game_no": 1,
+   "sez": 8,
+   "lea": 1
+  },
+  "rows": 22
+ },
+ "box_players_25_2": {
+  "short": "box_players",
+  "source": "record",
+  "fixture": "cap/match_25_2_1.json",
+  "rows": 3
+ },
+ "box_teams": {
+  "short": "box_teams",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_6_25_1.html",
+  "want": {
+   "game_no": 6,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 2
+ },
+ "box_teams_full": {
+  "short": "box_teams",
+  "source": "record",
+  "fixture": "full/match_6_25_1.json",
+  "rows": 2
+ },
+ "box_teams_8_1": {
+  "short": "box_teams",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_1_8_1.html",
+  "want": {
+   "game_no": 1,
+   "sez": 8,
+   "lea": 1
+  },
+  "rows": 2
+ },
+ "box_teams_25_2": {
+  "short": "box_teams",
+  "source": "record",
+  "fixture": "cap/match_25_2_1.json",
+  "rows": 2
+ },
+ "pbp": {
+  "short": "pbp",
+  "source": "html",
+  "kind": "match",
+  "fixture": "match_6_25_1.html",
+  "want": {
+   "game_no": 6,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 95
+ },
+ "pbp_full": {
+  "short": "pbp",
+  "source": "record",
+  "fixture": "full/match_6_25_1.json",
+  "rows": 659
+ },
+ "pbp_25_2": {
+  "short": "pbp",
+  "source": "record",
+  "fixture": "cap/match_25_2_1.json",
+  "rows": 3
+ },
+ "shots": {
+  "short": "shots",
+  "source": "helper",
+  "fixture": "create_shooting_chart_6_25_1.json",
+  "request": {
+   "game_no": 6,
+   "season": 2026,
+   "league_id": 1,
+   "league": "aba"
+  },
+  "rows": 152
+ },
+ "shots_17_1": {
+  "short": "shots",
+  "source": "helper",
+  "fixture": "cap/shots_17_1_1.json",
+  "request": {
+   "game_no": 1,
+   "season": 2018,
+   "league_id": 1,
+   "league": "aba"
+  },
+  "rows": 3
+ },
+ "shots_25_2": {
+  "short": "shots",
+  "source": "helper",
+  "fixture": "cap/shots_25_2_1.json",
+  "request": {
+   "game_no": 1,
+   "season": 2026,
+   "league_id": 2,
+   "league": "aba2"
+  },
+  "rows": 3
+ },
+ "score_flow": {
+  "short": "score_flow",
+  "source": "helper",
+  "fixture": "create_json_6_25_1.json",
+  "request": {
+   "game_no": 6,
+   "season": 2026,
+   "league_id": 1,
+   "league": "aba"
+  },
+  "rows": 46
+ },
+ "score_flow_17_1": {
+  "short": "score_flow",
+  "source": "helper",
+  "fixture": "cap/flow_17_1_1.json",
+  "request": {
+   "game_no": 1,
+   "season": 2018,
+   "league_id": 1,
+   "league": "aba"
+  },
+  "rows": 3
+ },
+ "score_flow_25_2": {
+  "short": "score_flow",
+  "source": "helper",
+  "fixture": "cap/flow_25_2_1.json",
+  "request": {
+   "game_no": 1,
+   "season": 2026,
+   "league_id": 2,
+   "league": "aba2"
+  },
+  "rows": 3
+ },
+ "score_difference": {
+  "short": "score_difference",
+  "source": "helper",
+  "fixture": "create_json_6_25_1.json",
+  "request": {
+   "game_no": 6,
+   "season": 2026,
+   "league_id": 1,
+   "league": "aba"
+  },
+  "rows": 46
+ },
+ "score_difference_17_1": {
+  "short": "score_difference",
+  "source": "helper",
+  "fixture": "cap/scorediff_17_1_1.json",
+  "request": {
+   "game_no": 1,
+   "season": 2018,
+   "league_id": 1,
+   "league": "aba"
+  },
+  "rows": 3
+ },
+ "score_difference_25_2": {
+  "short": "score_difference",
+  "source": "helper",
+  "fixture": "cap/scorediff_25_2_1.json",
+  "request": {
+   "game_no": 1,
+   "season": 2026,
+   "league_id": 2,
+   "league": "aba2"
+  },
+  "rows": 3
+ },
+ "calendar": {
+  "short": "calendar",
+  "source": "html",
+  "kind": "calendar",
+  "fixture": "calendar_25_1.html",
+  "want": {
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 5
+ },
+ "calendar_8_1": {
+  "short": "calendar",
+  "source": "record",
+  "fixture": "cap/calendar_8_1.json",
+  "rows": 3
+ },
+ "calendar_25_2": {
+  "short": "calendar",
+  "source": "record",
+  "fixture": "cap/calendar_25_2.json",
+  "rows": 3
+ },
+ "standings": {
+  "short": "standings",
+  "source": "html",
+  "kind": "standings",
+  "fixture": "standings_25_1.html",
+  "want": {
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 36
+ },
+ "standings_8_1": {
+  "short": "standings",
+  "source": "record",
+  "fixture": "cap/standings_8_1.json",
+  "rows": 3
+ },
+ "standings_25_2": {
+  "short": "standings",
+  "source": "record",
+  "fixture": "cap/standings_25_2.json",
+  "rows": 3
+ },
+ "player": {
+  "short": "player",
+  "source": "html",
+  "kind": "player",
+  "fixture": "player_4807_25_1.html",
+  "want": {
+   "player_id": 4807,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 1
+ },
+ "player_cap": {
+  "short": "player",
+  "source": "record",
+  "fixture": "cap/player_4807_25_1.json",
+  "rows": 1
+ },
+ "player_games": {
+  "short": "player_games",
+  "source": "html",
+  "kind": "player",
+  "fixture": "player_4807_25_1.html",
+  "want": {
+   "player_id": 4807,
+   "sez": 25,
+   "lea": 1
+  },
+  "rows": 2
+ },
+ "player_games_cap": {
+  "short": "player_games",
+  "source": "record",
+  "fixture": "cap/player_4807_25_1.json",
+  "rows": 3
+ }
+}

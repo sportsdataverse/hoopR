@@ -1,0 +1,4 @@
+game_no,season,league_id,league,season_label,round,group,home_team,away_team,home_abbr,away_abbr,home_score,away_score,when,date,date_to,time,time_zone,local_time,local_place
+1,2026,2,aba2,Season 2025/26,ROUND 1,,Podgorica Bemax,Borac WWIN,POD,BBL,73,75,"Tuesday, 07.10.2025 18:00 Local time",2025-10-07,,18:00,local,,
+9,2026,2,aba2,Season 2025/26,ROUND 2,,Vršac Meridianbet,HKK Široki TT Kabeli,VRS,SIR,86,112,"Tuesday, 21.10.2025 18:00 Local time",2025-10-21,,18:00,local,,
+17,2026,2,aba2,Season 2025/26,ROUND 3,,TFT Skopje,Kansai Helios Domžale,TFT,HEL,83,84,"Tuesday, 04.11.2025 18:00 Local time",2025-11-04,,18:00,local,,

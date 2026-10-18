@@ -1,0 +1,96 @@
+game_no,season,league_id,league,seq,period,clock,seconds_left,home_score,away_score,side,team_id,jersey,player_id,player_name,text,action,qualifier
+6,2026,1,aba,1,1,,,,,away,91,,5110,KENNEDY K,in starting lineup,in starting lineup,
+6,2026,1,aba,2,1,,,,,away,91,,5111,THOMPSON S,in starting lineup,in starting lineup,
+6,2026,1,aba,3,1,,,,,away,91,,2982,CEROVINA L,in starting lineup,in starting lineup,
+6,2026,1,aba,4,1,,,,,away,91,,2312,REBIĆ N,in starting lineup,in starting lineup,
+6,2026,1,aba,5,1,,,,,away,91,,2112,NIKOLIĆ D,in starting lineup,in starting lineup,
+6,2026,1,aba,6,1,,,,,home,12,,5072,KOVLIAR O,in starting lineup,in starting lineup,
+6,2026,1,aba,7,1,,,,,home,12,,5073,BOUTEILLE A,in starting lineup,in starting lineup,
+6,2026,1,aba,8,1,,,,,home,12,,5053,BOUTSIELE J,in starting lineup,in starting lineup,
+6,2026,1,aba,9,1,,,,,home,12,,4781,MORGAN J,in starting lineup,in starting lineup,
+6,2026,1,aba,10,1,,,,,home,12,,4769,SULAIMON R,in starting lineup,in starting lineup,
+6,2026,1,aba,11,1,,,,,,,,,,game started,game started,
+6,2026,1,aba,12,1,,,,,,,,,,start of 1. quarter,start of 1. quarter,
+6,2026,1,aba,13,1,10:00,600,,,,,,,,,,
+6,2026,1,aba,14,1,07:42,462,,,away,,,,,(offensive),,offensive
+6,2026,1,aba,15,1,03:47,227,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,16,1,00:24,24,,,home,12,10,2627,TANASKOVIĆ N,rebound (offensive),rebound,offensive
+6,2026,1,aba,17,1,00:23,23,31,18,home,12,10,2627,TANASKOVIĆ N,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,18,1,00:03,3,31,21,away,91,,5122,HANLAN O,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,19,1,,,,,,,,,,end of 1. quarter,end of 1. quarter,
+6,2026,1,aba,20,2,10:00,600,,,away,91,4,2983,DROBNJAK I,substitution (out),substitution,out
+6,2026,1,aba,21,2,10:00,600,,,away,91,44,2312,REBIĆ N,substitution (in),substitution,in
+6,2026,1,aba,22,2,,,,,,,,,,start of 2. quarter,start of 2. quarter,
+6,2026,1,aba,23,2,09:42,582,,,away,91,,5122,HANLAN O,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,24,2,09:42,582,,,home,12,11,4104,FERRELL JR K,steal,steal,
+6,2026,1,aba,25,2,09:18,558,,,home,,,,,(24sec),,24sec
+6,2026,1,aba,26,2,08:59,539,31,23,away,91,,5122,HANLAN O,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,27,2,08:59,539,,,away,91,,2667,MOMIROV S,assist,assist,
+6,2026,1,aba,28,2,08:36,516,,,home,12,,5140,THOMPSON J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,29,2,08:34,514,,,home,,,,,(offensive),,offensive
+6,2026,1,aba,30,2,08:34,514,,,home,12,11,4104,FERRELL JR K,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,31,2,08:34,514,,,home,12,10,2627,TANASKOVIĆ N,rebound (offensive),rebound,offensive
+6,2026,1,aba,32,2,08:34,514,,,away,91,25,4520,MEDAREVIĆ V,foul (personal),foul,personal
+6,2026,1,aba,33,2,01:54,114,,,away,,,,,(defensive),,defensive
+6,2026,1,aba,34,2,00:31,31,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,35,2,00:31,31,42,38,home,12,,5140,THOMPSON J,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,36,2,00:10,10,42,40,away,91,25,4520,MEDAREVIĆ V,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,37,2,00:00,0,45,40,home,12,,4769,SULAIMON R,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,38,2,,,,,,,,,,end of 2. quarter,end of 2. quarter,
+6,2026,1,aba,39,3,10:00,600,,,home,12,7,2482,SLAVKOVIĆ A,substitution (out),substitution,out
+6,2026,1,aba,40,3,10:00,600,,,home,12,83,5073,BOUTEILLE A,substitution (in),substitution,in
+6,2026,1,aba,41,3,10:00,600,,,away,91,4,2983,DROBNJAK I,substitution (out),substitution,out
+6,2026,1,aba,42,3,10:00,600,,,away,91,11,5110,KENNEDY K,substitution (out),substitution,out
+6,2026,1,aba,43,3,10:00,600,,,away,91,34,2112,NIKOLIĆ D,substitution (out),substitution,out
+6,2026,1,aba,44,3,10:00,600,,,away,91,13,2982,CEROVINA L,substitution (in),substitution,in
+6,2026,1,aba,45,3,10:00,600,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,46,3,10:00,600,,,away,91,44,2312,REBIĆ N,substitution (in),substitution,in
+6,2026,1,aba,47,3,,,,,,,,,,start of 3. quarter,start of 3. quarter,
+6,2026,1,aba,48,3,09:38,578,45,42,away,91,,5111,THOMPSON S,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,49,3,09:38,578,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,50,3,09:12,552,,,home,12,83,5073,BOUTEILLE A,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,51,3,09:08,548,,,away,91,25,4520,MEDAREVIĆ V,rebound (defensive),rebound,defensive
+6,2026,1,aba,52,3,04:55,295,,,home,,,,,(heldball),,heldball
+6,2026,1,aba,53,3,00:33,33,,,home,12,,5117,MAYS S,rebound (defensive),rebound,defensive
+6,2026,1,aba,54,3,00:09,9,63,59,home,12,11,4104,FERRELL JR K,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,55,3,00:09,9,,,home,12,,5117,MAYS S,assist,assist,
+6,2026,1,aba,56,3,,,,,,,,,,end of 3. quarter,end of 3. quarter,
+6,2026,1,aba,57,4,,,,,,,,,,start of 4. quarter,start of 4. quarter,
+6,2026,1,aba,58,4,09:33,573,,,home,12,16,5053,BOUTSIELE J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,59,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,rebound (offensive),rebound,offensive
+6,2026,1,aba,60,4,09:32,572,,,away,91,4,2983,DROBNJAK I,foul (personal),foul,personal
+6,2026,1,aba,61,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,foul on,foul on,
+6,2026,1,aba,62,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,63,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,64,4,09:32,572,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,65,4,09:21,561,,,away,91,11,5110,KENNEDY K,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,66,4,09:21,561,,,home,12,,5117,MAYS S,steal,steal,
+6,2026,1,aba,67,4,09:16,556,,,away,91,11,5110,KENNEDY K,foul (personal),foul,personal
+6,2026,1,aba,68,4,09:16,556,,,home,12,11,4104,FERRELL JR K,foul on,foul on,
+6,2026,1,aba,69,4,09:09,549,,,home,12,,4769,SULAIMON R,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,70,4,04:41,281,,,away,,,,,(offensive),,offensive
+6,2026,1,aba,71,4,00:23,23,83,83,home,12,,5117,MAYS S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,72,4,00:21,21,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,73,4,00:21,21,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,74,4,00:21,21,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,75,4,00:01,1,,,away,91,34,2112,NIKOLIĆ D,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,76,4,,,,,,,,,,end of 4. quarter,end of 4. quarter,
+6,2026,1,aba,77,5,,,,,,,,,,start of OT1,start of OT1,
+6,2026,1,aba,78,5,04:39,279,,,away,91,,2667,MOMIROV S,foul (personal),foul,personal
+6,2026,1,aba,79,5,04:39,279,,,home,12,50,5072,KOVLIAR O,foul on,foul on,
+6,2026,1,aba,80,5,04:39,279,,,home,12,50,5072,KOVLIAR O,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,81,5,04:39,279,,,home,12,50,5072,KOVLIAR O,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,82,5,04:39,279,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,83,5,04:28,268,83,85,away,91,34,2112,NIKOLIĆ D,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,84,5,04:28,268,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,85,5,04:09,249,,,home,12,15,4781,MORGAN J,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,86,5,04:05,245,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,87,5,04:05,245,,,home,12,13,3750,JOVANOVIĆ Đ,foul (personal),foul,personal
+6,2026,1,aba,88,5,04:05,245,,,away,91,,5122,HANLAN O,foul on,foul on,
+6,2026,1,aba,89,5,04:05,245,,,away,,,,,(freethrow),,freethrow
+6,2026,1,aba,90,5,01:13,73,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,91,5,00:08,8,,,home,,,,,(offensive),,offensive
+6,2026,1,aba,92,5,00:05,5,93,97,away,91,11,5110,KENNEDY K,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,93,5,00:01,1,,,home,12,10,2627,TANASKOVIĆ N,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,94,5,,,,,,,,,,end of OT1,end of OT1,
+6,2026,1,aba,95,5,,,,,,,,,,game finished,game finished,
