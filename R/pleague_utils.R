@@ -587,8 +587,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   "(inferred)"
 ))
 # code -> meaning, the LAST phrase per code winning. Only the fallback for a row without its phrase: action_en is
-# read per row from the phrase (`.pleague_action_en()`). Documented divergence: sdv-py e3d232e maps the code through
-# this dict, so every ft_made / ft_missed row reads "free throw 1 of 3 awarded, ..." (an sdv-py bug, not copied).
+# read per row from the phrase (`.pleague_action_en()`, sdv-py `_action_en`).
 .PLEAGUE_ACTION_EN <- local({
   code <- c(unname(.PLEAGUE_ACTIONS$code), .PLEAGUE_UNLABELLED[1])
   en <- c(unname(.PLEAGUE_ACTIONS$en), .PLEAGUE_UNLABELLED[2])

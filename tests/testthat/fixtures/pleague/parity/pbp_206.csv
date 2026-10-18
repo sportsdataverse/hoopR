@@ -13,5 +13,5 @@ gid,seq,period,period_no,clock,seconds_left,side,jersey,player_zh,action,action_
 206,12,OT2,6,05:00,300,away,88,曾祥鈞,sub_in,替換上場,substitution: enters the game,#88 曾祥鈞 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
 206,13,OT2,6,05:00,300,away,23,石博恩,sub_out,下場休息,substitution: leaves the game,#23 石博恩 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
 206,14,OT2,6,00:07,7,home,11,蕭順議,foul_personal,個人犯規,personal foul committed,#11 蕭順議 個人犯規,<null>,<null>,<null>,<null>,<null>,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
-206,15,OT2,6,00:07,7,away,24,簡廷兆,ft_made,得到兩次罰球 第一罰 罰進,"free throw 1 of 3 awarded, made",#24 簡廷兆 得到兩次罰球 第一罰 罰進,1,2,1,103,108,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
-206,16,OT2,6,00:07,7,away,24,簡廷兆,ft_made,第二罰 罰進,"free throw 1 of 3 awarded, made",#24 簡廷兆 第二罰 罰進,2,<null>,1,104,108,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
+206,15,OT2,6,00:07,7,away,24,簡廷兆,ft_made,得到兩次罰球 第一罰 罰進,"free throw 1 of 2 awarded, made",#24 簡廷兆 得到兩次罰球 第一罰 罰進,1,2,1,103,108,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
+206,16,OT2,6,00:07,7,away,24,簡廷兆,ft_made,第二罰 罰進,"free throw 2, made",#24 簡廷兆 第二罰 罰進,2,<null>,1,104,108,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
