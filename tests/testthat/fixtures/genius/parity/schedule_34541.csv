@@ -1,0 +1,4 @@
+match_id,link_match_id,comp_id,org,status,date_time,venue_id,venue_name,home_team_id,home_team_name,home_team_code,home_score,away_team_id,away_team_name,away_team_code,away_score
+2147860,2147860,34541,ESAKE,COMPLETE,"Oct 8, 2022, 4:00 PM",5127,Lavrio arena,23978,ΛΑΥΡΙΟ DHI,LAV,80,42116,Promitheas Patras VIKOS COLA,PRO,90
+2147858,2147858,34541,ESAKE,COMPLETE,"Oct 8, 2022, 5:00 PM",28339,"Κ.Γ. ΝΙΚΑΙΑΣ ""Πλάτων""",121376,ΙΩΝΙΚΟΣ BASKET,ION,89,23952,Kolossos H Hotels Collection,KOL,84
+2147854,2147854,34541,ESAKE,COMPLETE,"Oct 8, 2022, 7:15 PM",19822,"Κ.Γ. ""ΑΝΔΡΕΑΣ ΠΑΠΑΝΔΡΕΟΥ""",26335,Peristeri Betsson,PER,85,23957,PAOK BC,PBC,77

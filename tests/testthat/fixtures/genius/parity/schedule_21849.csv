@@ -1,0 +1,4 @@
+match_id,link_match_id,comp_id,org,status,date_time,venue_id,venue_name,home_team_id,home_team_name,home_team_code,home_score,away_team_id,away_team_name,away_team_code,away_score
+1145701,<NA>,21849,FFBB,SCHEDULED,<NA>,<NA>,"",<NA>,To be determined,<NA>,<NA>,<NA>,To be determined,"",<NA>
+909156,<NA>,21849,FFBB,COMPLETE,"Oct 13, 2018, 3:45 PM",<NA>,SALLE PIERRE DE COUBERTIN (1),21271,"","",40,17029,LYON,LYO,68
+909159,<NA>,21849,FFBB,COMPLETE,"Oct 13, 2018, 6:00 PM",<NA>,SALLE PIERRE DE COUBERTIN (1),17039,VILLENEUVE D'ASCQ,VIL,86,17027,"","",58

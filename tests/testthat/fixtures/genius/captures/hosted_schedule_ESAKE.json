@@ -1,0 +1,26 @@
+{
+  "selected_comp_id": 34541,
+  "competitions": [
+    {
+      "comp_id": 28572,
+      "label": "1o SUPER CUP",
+      "league_id": 115,
+      "year": 2020,
+      "org": "ESAKE"
+    },
+    {
+      "comp_id": 30872,
+      "label": "2o HNC COIN SUPER CUP",
+      "league_id": 115,
+      "year": 2021,
+      "org": "ESAKE"
+    },
+    {
+      "comp_id": 27218,
+      "label": "ALL STAR",
+      "league_id": 115,
+      "year": 2019,
+      "org": "ESAKE"
+    }
+  ]
+}

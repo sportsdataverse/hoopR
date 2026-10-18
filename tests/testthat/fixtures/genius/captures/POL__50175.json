@@ -1,0 +1,26 @@
+[
+  {
+    "leagueId": 271,
+    "competitionId": 50175,
+    "matchId": 2937721,
+    "matchStatus": "IN_PROGRESS",
+    "matchTime": "2026-10-12 19:00:00",
+    "matchTimeUTC": "2026-10-12 17:00:00",
+    "live": 1,
+    "awayname": "Górnik Zamek Książ Wałbrzych",
+    "awaycode": "WAL",
+    "awaynameInternational": "",
+    "awayteamId": 179636,
+    "awayscore": 47,
+    "awaylogo": "https://images.statsengine.playbyplay.api.geniussports.com/98e59369261663ea6af0eea92d565d29T1.png",
+    "homename": "Tasomix Rosiek Stal Ostrów Wielkopolski",
+    "homecode": "OST",
+    "homenameInternational": "",
+    "hometeamId": 179714,
+    "homescore": 49,
+    "homelogo": "https://images.statsengine.playbyplay.api.geniussports.com/2ed657465e5bf93b3403158ce78575aeT1.png",
+    "clock": "04:06:00",
+    "period": 3,
+    "periodType": "REGULAR"
+  }
+]

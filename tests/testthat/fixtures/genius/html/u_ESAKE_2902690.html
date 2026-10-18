@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6 ltr page_comp_id_49915 page_comp_age_SENIOR page_comp_standard_ELITE page_venue_id_19488 no_social" lang="" dir = "ltr"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 ltr page_comp_id_49915 page_comp_age_SENIOR page_comp_standard_ELITE page_venue_id_19488 no_social" lang="" dir = "ltr"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 ltr page_comp_id_49915 page_comp_age_SENIOR page_comp_standard_ELITE page_venue_id_19488 no_social" lang="" dir = "ltr"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="ie ltr page_comp_id_49915 page_comp_age_SENIOR page_comp_standard_ELITE page_venue_id_19488 no_social " lang="" dir = "ltr"> <!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>FIBA LiveStats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name = "title" property = "og:title" content = "FIBA LiveStats">
+  <meta name = "description" property = "og:description" content = "ESAKE ,  Stoiximan GBL 2026-2027,  Check out the full statistics here ">
+  <meta property="og:image" content="https://images.statsengine.playbyplay.api.geniussports.com/9356b5d25fb9aa9c80b9d3cc11aa5aa2T1.png">
+  <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="/resources/js/jqplot/excanvas.min.js"></script><![endif]-->
+  <meta name="twitter:card" content="summary_large_image">
+    
+  <meta name="twitter:site" content="@fibalivestats">
+    <meta name="twitter:creator" content="@GeniusSports">
+  <meta name="twitter:title" content="Peristeri Betsson v Iraklis BC">
+  <meta name="twitter:description" content="ESAKE ,  Stoiximan GBL 2026-2027,  Check out the full statistics here ">
+  <meta name="twitter:image" content="https://webcast.wh.sportingpulseinternational.com/share/twitter.php?matchId=2902690&sport=basketball">
+
+  <link rel="SHORTCUT ICON" href="/resources/images/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/resources/images/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/resources/images/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/resources/images/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/resources/images/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/resources/images/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/resources/images/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/resources/images/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/resources/images/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/resources/images/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/resources/images/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/images/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/resources/images/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/resources/images/icons/favicon-16x16.png">
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/resources/js/toggleclasses_aj.js"></script>
+  <script language="javascript" type="text/javascript" src="/resources/js/textfill.js"></script>
+  <script language="javascript" type="text/javascript" src="/resources/js/ajload_2.js?v=1.5.1"></script>
+  <script language="javascript" type="text/javascript" src="/resources/js/playerPopup.js?v=1.0.0"></script>
+
+  <script language="javascript" type="text/javascript" src="/resources/js/flot/jquery.flot.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/resources/js/flot/jquery.flot.pie.min.js"></script>
+  <script language="javascript" type="text/javascript" src="/resources/js/flot/jquery.flot.threshold.min.js"></script>
+
+  <script language="javascript" type="text/javascript" src="/resources/js/aj_graphs.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:300i,400,700&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/resources/css/5reset.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/jquery.jqplot.min.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/v5_layout.css?v=1.2.0">
+  <link rel="stylesheet" type="text/css" href="/resources/css/v5_style.css?v=1.5.2">
+  <link rel="stylesheet" type="text/css" href="/resources/css/video-player.css">
+
+
+  <script src="https://zz.connextra.com/dcs/tagController/tag/95fb932184bd/fibalivestats_basketball" async defer></script>
+  
+  <script type="text/javascript">
+    jQuery(function() {
+      jQuery('.page').on('click','.playerpopup',function(event) {
+        event.preventDefault();
+        showPlayerDetails(jQuery(this).attr('tno'), jQuery(this).attr('pno'));
+      });
+    });
+
+  jQuery(function() {
+
+    var path = window.location.pathname;
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    var url = window.location.pathname;
+    var urlsplit = url.split("/").slice(-1)[0];
+
+    jQuery("nav.menu ul li a").each(function() {
+        var href = $(this).attr('href');
+        if (urlsplit === href) {
+            $(this).closest('li').addClass('active');
+            $("nav .activeItem").text($(this).text());
+        }
+    });
+  });
+</script> 
+
+<script>
+  var videoHtml = ''
+  var videoTag = document.createElement('script')
+
+  document.addEventListener('DOMContentLoaded', ()=> {
+    videoHtml = '<div id="video-container"></div>'
+    videoTag.src = '/resources/js/video-player.js'
+    videoTag.type = 'module'
+    const videoPlayer = document.getElementById('video-player')
+    if (videoPlayer){
+      videoPlayer.innerHTML = videoHtml
+      document.getElementsByTagName('head')[0].appendChild(videoTag)
+    }
+  })
+</script>
+
+
+<script type="text/javascript">
+  var mobileScreen = 0;
+  if(jQuery(window).width() < 991)  {
+    mobileScreen = 1;
+  }
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42351184-1','fibalivestats.com');
+  ga('set', 'dimension1', "GR");
+  ga('set', 'dimension2', "137");
+  ga('set', 'dimension3', "Europe");
+  ga('set', 'dimension4', "ESAKE");
+  ga('set', 'dimension5', "Stoiximan GBL 2026-2027");
+  ga('set', 'dimension6', "PER v IRA");
+  ga('send', 'pageview');
+  
+</script>
+		<style>
+div.team.team-0 > div.team-color,
+.team-0 span.team-color,
+.team-0-summary-leaders span.team-color,
+.team-0-ts .team-stats-title ,
+.team-leaders-0 .cat-name-left h6,
+.team-leaders-0 .cat-lead-rest .positionNumber,
+.team-0-bs .boxscore .aj_1 .playernum span,
+.mini-bs-1 .boxscore .playernum span,
+.team-0-person-container .aj_1 .playernum span,
+.sc-team-1 .aj_1 td,
+.sc-team-1 .aj_1 td.sc-p-no span,
+.teamcolorbox.team1color,
+.team1Lead .team1Stat,
+.chart-legend .team-1-color,
+.comparisongraph_color1,
+.team-0 .csspie:nth-of-type(1):BEFORE, 
+.team-0 .csspie:nth-of-type(1):AFTER,
+.team-0.reverseChart .csspie:nth-of-type(2):BEFORE, 
+.team-0.reverseChart .csspie:nth-of-type(2):AFTER,
+.summarystat-team-0
+{
+	background: #264FA7;
+}
+div.team.team-1 > div.team-color,
+.team-1 span.team-color,
+.team-1-summary-leaders span.team-color,
+.team-1-ts .team-stats-title ,
+.team-leaders-1 .cat-name-left h6,
+.team-leaders-1 .cat-lead-rest .positionNumber,
+.team-1-bs .boxscore .aj_1 .playernum span,
+.mini-bs-2 .boxscore .playernum span,
+.team-1-person-container .aj_1 .playernum span,
+.sc-team-2 .aj_1 td,
+.sc-team-2 .aj_1 td.sc-p-no span,
+.teamcolorbox.team2color,
+.team2Lead .team2Stat,
+.chart-legend .team-2-color,
+.comparisongraph_color2,
+.team-1 .csspie:nth-of-type(1):BEFORE, 
+.team-1 .csspie:nth-of-type(1):AFTER,
+.team-1.reverseChart .csspie:nth-of-type(2):BEFORE, 
+.team-1.reverseChart .csspie:nth-of-type(2):AFTER,
+.summarystat-team-1
+{
+	background: #C10003;
+}
+.white_missed, .white_made, .white_dunk, .white_goal, .white_goal_own
+{
+	color: #264FA7;
+}
+.black_missed, .black_made, .black_dunk, .black_goal, .black_goal_own
+{
+	color: #C10003;
+}
+</style>
+<script type="text/javascript">
+	var team_color1 = "#264FA7";
+	var team_color2 = "#C10003";
+</script>      
+    <script type="text/javascript">
+      const runMode = "production"
+    </script>
+
+    <link rel="canonical" href="https://geniussports.com"/>
+    <meta name="robots" content="noindex" />
+</head>
+<body class = "page_comp_id_49915 page_comp_age_SENIOR page_comp_standard_ELITE page_venue_id_19488" >
+  <div class="topBar">
+    <div class="other-games-list-outer">
+      <div class="other-games-list-back">l</div>
+      <div id="other-games-list"></div>
+      <div class="other-games-list-forward">r</div>
+    </div>
+    <div class="other-games-bar">
+      <span id = "aj_league_logo"><a href = "http://www.esake.gr/ " target = "_blank"><img src = "https://images.statsengine.playbyplay.api.geniussports.com/9356b5d25fb9aa9c80b9d3cc11aa5aa2T1.png"></a></span>
+      <div id="leagueName">
+                                        <span>ESAKE </span>
+                                                                <span id="competitionName" class="desktop-only">Stoiximan GBL 2026-2027</span>
+                              </div>
+          <a class="other-matches-control collapsed">
+        <span class="expand-matches">Show Other Games</span>
+        <span class="hide-matches">Hide Other Games</span>
+      </a>
+        </div>
+  </div>
+  <header>
+    <!-- League Logo / Match Center -->
+    <div class="row matchCenter">
+      <div id="leagueLogo">
+        <span id = "aj_league_logo"><a href = "http://www.esake.gr/ " target = "_blank"><img src = "https://images.statsengine.playbyplay.api.geniussports.com/9356b5d25fb9aa9c80b9d3cc11aa5aa2T1.png"></a></span>
+      </div>
+      <div id="matchCenterWidget">
+          <div id = "other-games-dummy" class="og-match-block" style = "display:none;">
+            <div class="og-team og-home-team">
+              <div class="og-home-logo og-team-logo"></div>
+              <div class="og-home-name og-team-name"></div>
+              <div class="og-home-score og-team-score"></div>
+            </div>  
+            <div class="og-divide-row">
+              <div class="og-live">LIVE</div>
+              <div class="og-date"></div>
+              <div class="og-time"></div>
+              <div class="og-final">FINAL</div>
+            </div>
+            <div class="og-team og-away-team">
+              <div class="og-away-logo og-team-logo"></div>
+              <div class="og-away-name og-team-name"></div>
+              <div class="og-away-score og-team-score"></div>
+            </div>
+            <a href="" class="og-link"></a>
+            <div class="og-live-row">
+              <div class="og-periodtype"></div>
+              <div class="og-period"></div>
+              <div class="og-clock"></div>
+            </div>
+          </div>
+      </div>
+      <div id="leagueName">
+          ESAKE       </div>
+  </div>
+  <!-- Scoreboard  -->
+    <div class="row scoreboard">
+      <div class="hr"></div>
+      <div class="team team-0">
+          <div class="team-color">
+              
+          </div>
+          <div class="team-logo">
+            <span class = "id_aj_1_logoT"></span>                        
+          </div>
+          <div class="team-name">
+            <span id ="aj_1_shortName"></span>
+          </div>
+          <div class="team-code">
+            <span class="id_aj_1_code"></span>
+          </div>
+          <div class="team-score">
+              <span id="aj_1_score">0</span>
+                        </div>
+          <div id="aj_1_foulmarker" class="team-fouls fouls-0">
+              <div class="foul-marker-6"></div>
+              <div class="foul-marker-5"></div>
+              <div class="foul-marker-4"></div>
+              <div class="foul-marker-3"></div>
+              <div class="foul-marker-2"></div>
+              <div class="foul-marker-1"></div>
+          </div>
+      </div>
+      <div class="clock-summary">
+          <div class="period"><span class = "inRegular">PERIOD</span><span class = "inOvertime" style="display: none">OVERTIME</span>&nbsp;<span id="aj_period">&nbsp;</span></div>
+          <div class="period-half"><span class = "inRegular"><span class = "inRegular-1">1ST HALF</span><span class = "inRegular-2">2ND HALF</span></span><span class = "inOvertime" style="display: none">OVERTIME&nbsp;<span class="id_aj_period">&nbsp;</span></span></div>          
+          <div class="clock">
+            <span id="aj_clock"></span>
+          </div>
+<div class="qtr-by-qtr">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <th class="score-team-code"><span id="aj_1_code"></span></th>
+                  <td class="period-cell"><span id="aj_1_p1_score">&nbsp;</span></td>
+                  <td class="period-cell"><span id="aj_1_p2_score">&nbsp;</span></td>
+                  <td class="period-cell"><span id="aj_1_p3_score">&nbsp;</span></td>
+                  <td class="period-cell"><span id="aj_1_p4_score">&nbsp;</span></td>
+                  <td class="period-cell inOvertime"><span id="aj_1_ot_score">&nbsp;</span></td>
+                  <th class="period-cell"><span id="aj_1_full_score">0</span></th>
+                </tr>
+                <tr>
+                  <th class="score-team-code"><span id="aj_2_code"></span></th>
+                  <td class="period-cell"><span id="aj_2_p1_score">&nbsp;</span></td>
+                  <td class="period-cell"><span id="aj_2_p2_score">&nbsp;</span></td>
+                  <td class="period-cell"><span id="aj_2_p3_score">&nbsp;</span></td>
+                  <td class="period-cell"><span id="aj_2_p4_score">&nbsp;</span></td>
+                  <td class="period-cell inOvertime"><span id="aj_2_ot_score">&nbsp;</span></td>
+                  <th class="period-cell"><span id="aj_2_full_score">0</span></th>
+                </tr>
+              </table>
+            </div>
+      </div>
+      <div class="team team-1">
+          <div class="team-color">
+              
+          </div>
+          <div class="team-logo">
+            <span class = "id_aj_2_logoT"></span>                        
+          </div>
+          <div class="team-name">
+            <span id ="aj_2_shortName"></span>
+          </div>
+          <div class="team-code">
+            <span class="id_aj_2_code"></span>
+          </div>
+          <div class="team-score">
+              <span id="aj_2_score">0</span>
+                        </div>
+          <div id="aj_2_foulmarker" class="team-fouls fouls-0">
+              <div class="foul-marker-6"></div>
+              <div class="foul-marker-5"></div>
+              <div class="foul-marker-4"></div>
+              <div class="foul-marker-3"></div>
+              <div class="foul-marker-2"></div>
+              <div class="foul-marker-1"></div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="matchDetails col col-12 align-center">
+                    <div class="matchDetail">
+              <h6>Competition</h6>
+                                <p>Stoiximan GBL 2026-2027</p>
+                        </div>
+                              <div class="matchDetail">
+              <h6>
+                              Venue                  
+              </h6>
+                            <p>&quot;A. Papandreou&quot; Sports Indoor Hall - Peristeri</p>
+                        </div>
+                                      <div class="matchDetail">
+              <h6>Game Details</h6>
+              <p>Tip off: 3:00 pm GMT 
+                10/10/26</p>
+          </div>
+                                    <div class="matchDetail" id = "attendance-block" style = "display:none;">
+              <h6>Attendance</h6>
+              <p><span id = "aj_attendance"></span></p>
+          </div>
+                </div>
+    </div>
+
+      
+  <!-- Nav Menu -->
+    <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox">
+    <nav class="menu ">
+        <label for="navbar-checkbox" class="navbar-handle"></label>                
+        <div class="activeItem"></div>
+        <ul>
+                <li><a href="index.html" class=""><span>Summary</span></a></li>
+            <li><a href="bs.html" class=""><span>Box Score</span></a></li>
+                      <li><a href="lds.html" class=""><span>Leaders</span></a></li>
+                      <li><a href="pbp.html" class=""><span>Play by Play</span></a></li>
+            <li><a href="sc.html" class=""><span>Shot Chart</span></a></li>
+                      <li><a href="st.html" class=""><span>Statistics</span></a></li>
+                                                                  
+            <li><a href="p.html" class=""><span>Preview</span></a></li>
+                      
+            </ul>
+        <div class="navigation-extras">
+                    <div class="select-container langchoosewrap">
+                <select id="lang-pick">
+                    <option value = "">Change Language</option>
+                                            <option value = "index.html">English (English)</option>
+                                            <option value = "index_el_GR.html">Greek (ελληνικά)</option>
+                                    </select>                    
+            </div>
+                           
+        </div>
+   </nav>
+  </header> 
+  <div class="page">
+        <div class="row">
+          
+      
+      <div class="mini-box-scores col       
+col-9 row">
+        <div class="mini-bs mini-bs-1 col col-6">
+            <div class="boxscore-top">
+              <span class = "id_aj_1_logoT"></span>
+              <span class = "id_aj_1_name"></span>
+            </div>
+            <table class="boxscore">
+                <thead class="">
+                  <tr class="bsheader bsheader-1">
+                    <th class="playernum">No.</th>
+                    <th colspan="2">Player</th>
+                    <th class="bs-min num">Mins</th>
+                    <th class="bs-pts num">Pts</th>
+                    <th class="bs-reb bs-hdr num">REB</th>
+                    <th class="bs-ast num">AST</th>
+                    <th class="bs-fouls num">PF</th>
+                        <th class="bs_eff num">Index</th>
+                        
+                  </tr>
+                  <tr class="bsheader_type" style="">
+                      <th class=""></th>
+                      <th colspan="999" class="onCourt"><span>ON COURT</span></th>
+                      <th colspan="999" class="starters-only" style="display: none"><span>STARTERS</span></th>
+                  </tr>
+                </thead>
+                <tbody class = "team-0-person-container">
+                              <tr class="player-row row-not-used"  id="aj_1_0_row">
+                      <td class="center num playernum"><span id = "aj_1_0_shirtNumber"></span></td>
+                      <td class="center num playerphoto"><span id = "aj_1_0_photoT"></span></td>
+                      <td class="left playerinfo" oid="">
+                        <a href="#" id="pop-action_1_0" class = "playerpopup" tno = "1" pno = "0"><span id = "aj_1_0_name"></span></a>
+                    </td>
+                      <td class="medium bs-min num"><span id ="aj_1_0_sMinutes"></span></td>
+                      <td class="small bs-pts num"><span id ="aj_1_0_sPoints" ></span></td>
+                      <td class="small bs-reb bs-reb-3 num"><span id ="aj_1_0_sReboundsTotal" ></span></td>
+                      <td class="small bs-ast num"><span id ="aj_1_0_sAssists" ></span></td>
+                      <td class="small bs-fouls bs-fouls-1 num"><span id ="aj_1_0_sFoulsPersonal" ></span></td>
+                                            <td class="center bs_eff tablet"><span id ="aj_1_0_eff_7" ></span></td>
+                                            
+                    </tr>
+                          </tbody>
+            </table>
+        </div>
+        <div class="mini-bs mini-bs-2 col col-6">
+            <div class="boxscore-top">
+              <span class = "id_aj_2_logoT"></span>
+              <span class = "id_aj_2_name"></span>
+            </div>
+            <table class="boxscore">
+              <thead class="">
+                <tr class="bsheader bsheader-1">
+                  <th class="playernum">No.</th>
+                  <th colspan="2">Player</th>
+                  <th class="bs-min num">Mins</th>
+                  <th class="bs-pts num">Pts</th>
+                  <th class="bs-reb bs-hdr num">REB</th>
+                  <th class="bs-ast num">AST</th>
+                  <th class="bs-fouls num">PF</th>
+                        <th class="bs_eff num">Index</th>
+                        
+                </tr>
+                  <tr class="bsheader_type" style="">
+                      <th class=""></th>
+                      <th colspan="999" class="onCourt"><span>ON COURT</span></th>
+                      <th colspan="999" class="starters-only" style="display: none"><span>STARTERS</span></th>
+                  </tr>
+              </thead>
+              <tbody class = "team-1-person-container">
+                              <tr class="player-row row-not-used"  id="aj_2_0_row">
+                      <td class="center num playernum"><span id="aj_2_0_shirtNumber"></span></td>
+                      <td class="center num playerphoto"><span id="aj_2_0_photoT"></span></td>
+                      <td class="left playerinfo" oid="">
+                        <a href="#" id="pop-action_2_0" class = "playerpopup" tno = "2" pno = "0"><span id = "aj_2_0_name"></span></a>
+                    </td>
+                      <td class="medium bs-min num"><span id ="aj_2_0_sMinutes"></span></td>
+                      <td class="small bs-pts num"><span id ="aj_2_0_sPoints" ></span></td>
+                      <td class="small bs-reb bs-reb-3 num"><span id ="aj_2_0_sReboundsTotal" ></span></td>
+                      <td class="small bs-ast num"><span id ="aj_2_0_sAssists" ></span></td>
+                      <td class="small bs-fouls bs-fouls-2 num"><span id ="aj_2_0_sFoulsPersonal" ></span></td>
+                                            <td class="center bs_eff tablet"><span id ="aj_2_0_eff_7" ></span></td>
+                                            
+                    </tr>
+                          </tbody>
+            </table>
+        </div>
+          <a href="bs.html" class="summaryButton">View Full Box Score</a>
+        </div>
+      
+    <div class="summary-pbp tablet col col-3">
+      <div class="mini-pbp-header">
+        <div class="statHeader team-0">
+          <span class="team-color"></span>
+          <span class="id_aj_1_logoT"></span>
+          <span class="id_aj_1_code"></span>
+        </div>
+        <div class="statHeader team-1">
+          <span class="id_aj_2_code"></span>
+          <span class="team-color"></span>
+          <span class="id_aj_2_logoT"></span>
+        </div>
+      </div>
+      <div id = "aj_minipbp"></div>
+        <a href="pbp.html" class="summaryButton">View Full Play By Play</a>            
+      </div>
+  </div>
+                      
+  <div class="row summaryBottom">
+    <div class="summary-stats col  col-5  ">
+        
+        <table class="gamesumtable">
+          <thead>
+            <tr class="summary-team-names">
+              <th class="team-0"><div class="statHeader"><span class="team-color"></span><span class = "id_aj_1_logoT"></span><span class = "id_aj_1_code"></span></div></th>
+              <th></th>
+              <th class="statLabel">
+              </th>
+              <th></th>
+              <th class="team-1">
+                <div class="statHeader">
+                  <span class = "id_aj_2_code"></span>
+                  <span class="team-color"></span>
+                  <span class = "id_aj_2_logoT"></span>
+                </div>
+              </th>
+              <th class="team1Compare hidden"></th>
+              <th class="team2Compare hidden"></th>
+            </tr>  
+          </thead>
+          <tbody>
+            <tr>
+              <td><span id ="aj_1_tot_sFieldGoalsMade"></span>/<span id ="aj_1_tot_sFieldGoalsAttempted"></span> (<span id ="aj_1_tot_sFieldGoalsPercentage"></span>%)</td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">FG
+                <span class="tooltiptext">Field Goals</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sFieldGoalsMade"></span>/<span id ="aj_2_tot_sFieldGoalsAttempted"></span> (<span id ="aj_2_tot_sFieldGoalsPercentage"></span>%)</td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sFieldGoalsPercentage"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sFieldGoalsPercentage"></span>            
+              </td>
+            </tr>
+                        <tr>
+              <td><span id ="aj_1_tot_sTwoPointersMade"></span>/<span id ="aj_1_tot_sTwoPointersAttempted"></span> (<span id ="aj_1_tot_sTwoPointersPercentage"></span>%)</td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">2P
+                <span class="tooltiptext">2 Points Made</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sTwoPointersMade"></span>/<span id ="aj_2_tot_sTwoPointersAttempted"></span> (<span id ="aj_2_tot_sTwoPointersPercentage"></span>%)</td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sTwoPointersPercentage"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sTwoPointersPercentage"></span>
+              </td>
+            </tr>
+                        <tr>
+              <td><span id ="aj_1_tot_sThreePointersMade"></span>/<span id ="aj_1_tot_sThreePointersAttempted"></span> (<span id ="aj_1_tot_sThreePointersPercentage"></span>%)</td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">3P
+                <span class="tooltiptext">3 Point Field Goals</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sThreePointersMade"></span>/<span id ="aj_2_tot_sThreePointersAttempted"></span> (<span id ="aj_2_tot_sThreePointersPercentage"></span>%)</td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sThreePointersPercentage"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sThreePointersPercentage"></span>            
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sFreeThrowsMade"></span>/<span id ="aj_1_tot_sFreeThrowsAttempted"></span> (<span id ="aj_1_tot_sFreeThrowsPercentage"></span>%)</td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">FT
+                <span class="tooltiptext">Free Throws</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sFreeThrowsMade"></span>/<span id ="aj_2_tot_sFreeThrowsAttempted"></span> (<span id ="aj_2_tot_sFreeThrowsPercentage"></span>%)</td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sFreeThrowsPercentage"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sFreeThrowsPercentage"></span>            
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sReboundsTotal"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">REB
+                <span class="tooltiptext">Total Rebounds</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sReboundsTotal"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sReboundsTotal"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sReboundsTotal"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sAssists"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">AST
+                <span class="tooltiptext">Assists</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sAssists"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sAssists"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sAssists"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sSteals"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">STL
+                <span class="tooltiptext">Steals</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sSteals"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sSteals"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sSteals"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sBlocks"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">BLK
+                <span class="tooltiptext">Blocks</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sBlocks"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sBlocks"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sBlocks"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sTurnovers"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">TO
+                <span class="tooltiptext">Turnovers</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sTurnovers"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sTurnovers"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sTurnovers"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sFoulsPersonal"></span> (<span id ="aj_1_tot_sFoulsOn"></span>)</td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">PF
+                <span class="tooltiptext">Personal Foul</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sFoulsPersonal"></span> (<span id ="aj_2_tot_sFoulsOn"></span>)</td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sFoulsPersonal"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sFoulsPersonal"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id ="aj_1_tot_sPointsInThePaint"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">PIP
+                <span class="tooltiptext">Points in the paint</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id ="aj_2_tot_sPointsInThePaint"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sPointsInThePaint"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sPointsInThePaint"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id="aj_1_tot_sPointsSecondChance"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">2CP
+                <span class="tooltiptext">Second chance points</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id="aj_2_tot_sPointsSecondChance"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sPointsSecondChance"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sPointsSecondChance"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id="aj_1_tot_sPointsFromTurnovers"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">PFT
+                <span class="tooltiptext">Points from turnovers</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id="aj_2_tot_sPointsFromTurnovers"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sPointsFromTurnovers"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sPointsFromTurnovers"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id="aj_1_tot_sBenchPoints"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">BP
+                <span class="tooltiptext">Bench points</span></td></td>
+              <td class="team2Stat"></td>
+              <td><span id="aj_2_tot_sBenchPoints"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sBenchPoints"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sBenchPoints"></span>
+              </td>
+            </tr>
+            <tr>
+              <td><span id="aj_1_tot_sPointsFastBreak"></span></td>
+              <td class="team1Stat"></td>
+              <td class="statLabel">FBP
+                <span class="tooltiptext">Fast break points</span></td>
+              </td>
+              <td class="team2Stat"></td>
+              <td><span id="aj_2_tot_sPointsFastBreak"></span></td>
+              <td class="team1Compare hidden">
+                <span class="id_aj_1_tot_sPointsFastBreak"></span>
+              </td>
+              <td class="team2Compare hidden">
+                <span class="id_aj_2_tot_sPointsFastBreak"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+            <a href="st.html" class="summaryButton">View All Statistics</a>  
+              
+    </div>
+    <div class="summary-leaders col  col-7  ">
+                        <table class="summary-leaders-table">
+          <thead>
+            <tr>
+              <th class="team-0-summary-leaders">
+                <span class="team-color"></span>
+                <span class = "id_aj_1_logoT"></span>
+              </th>
+              <th class="summary-leader-header" colspan=2>
+                Points
+              </th>
+              <th class="team-1-summary-leaders">
+                <span class = "id_aj_2_logoT"></span>
+                <span class="team-color"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="first-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sPoints_1_photoT" class="player-image"></span><span class="id_aj_1_sPoints_1_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sPoints_1_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sPoints_1_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sPoints_1_name"></span><span class="id_aj_2_sPoints_1_photoT" class="player-image"></span></td>
+            </tr>
+            <tr class="rest-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sPoints_2_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sPoints_2_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sPoints_2_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sPoints_2_name"></span></td>
+            </tr>
+            <tr class="rest-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sPoints_3_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sPoints_3_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sPoints_3_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sPoints_3_name"></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="summary-leaders-table">
+          <thead>
+            <tr>
+              <th class="team-0-summary-leaders">
+                <span class="team-color"></span>
+                <span class = "id_aj_1_logoT"></span>
+              </th>
+              <th class="summary-leader-header" colspan=2>
+                Total Rebounds
+              </th>
+              <th class="team-1-summary-leaders">
+                <span class = "id_aj_2_logoT"></span>
+                <span class="team-color"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="first-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sReboundsTotal_1_photoT" class="player-image"></span><span class="id_aj_1_sReboundsTotal_1_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sReboundsTotal_1_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sReboundsTotal_1_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sReboundsTotal_1_name"></span><span class="id_aj_2_sReboundsTotal_1_photoT" class="player-image"></span></td>
+            </tr>
+            <tr class="rest-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sReboundsTotal_2_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sReboundsTotal_2_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sReboundsTotal_2_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sReboundsTotal_2_name"></span></td>
+            </tr>
+            <tr class="rest-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sReboundsTotal_3_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sReboundsTotal_3_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sReboundsTotal_3_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sReboundsTotal_3_name"></span></td>
+            </tr>
+          </tbody>
+        </table>        
+        <table class="summary-leaders-table">
+          <thead>
+            <tr>
+              <th class="team-0-summary-leaders">
+                <span class="team-color"></span>
+                <span class = "id_aj_1_logoT"></span>
+              </th>
+              <th class="summary-leader-header" colspan=2>
+                Assists
+              </th>
+              <th class="team-1-summary-leaders">
+                <span class = "id_aj_2_logoT"></span>
+                <span class="team-color"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="first-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sAssists_1_photoT" class="player-image"></span><span class="id_aj_1_sAssists_1_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sAssists_1_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sAssists_1_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sAssists_1_name"></span><span class="id_aj_2_sAssists_1_photoT" class="player-image"></span></td>
+            </tr>
+            <tr class="rest-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sAssists_2_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sAssists_2_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sAssists_2_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sAssists_2_name"></span></td>
+            </tr>
+            <tr class="rest-row">
+              <td class="player-name team-0-summary-leaders"><span class="id_aj_1_sAssists_3_name"></span></td>
+              <td class="player-points team-0-summary-leaders"><span class="id_aj_1_sAssists_3_tot" ></span></td>
+              <td class="player-points team-1-summary-leaders"><span class="id_aj_2_sAssists_3_tot" ></span></td>
+              <td class="player-name team-1-summary-leaders"><span class="id_aj_2_sAssists_3_name"></span></td>
+            </tr>
+          </tbody>
+        </table>                <a href="lds.html" class="summaryButton">View All Leaders</a>
+        </div>
+
+    
+    
+<input type = "hidden" id = "loadPlayerRows" value = "1">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<footer>
+    <div class="row">
+                <div class="footer-logos col col-3">
+            <h4>Brought To You By</h4>
+            <a target="_blank" href="https://www.fiba.com/" class="fiba-logo">FIBA</a>
+            <a target="_blank" href="https://www.geniussports.com/sports" class="gsg-logo">Genius Sports Group</a>
+        </div>
+        
+        
+        <div class="copyright col-12">
+            &copy; Genius Sports Group 2026. <a target="_blank"
+                                                                 href="https://www.geniussports.com/contact-us">Content responsibility of website administrators. For advertising or data feed enquiries, please click
+            here</a>
+        </div>
+    </div>
+</footer>
+    </div>
+  </div>
+<div id="disable-match">
+    <div id="disable-match-message">We are sorry<p>Genius Sports apologises that due to technical difficulties the webcast for this match is not available.</p></div>
+</div>
+<div id="overlay"></div>
+<div id="pop-player">
+  <div class="pop-header">Individual Statistics</div>
+  <div class="pop-top-wrap">
+    <div class="pop-top">
+      <div id="pop-player-name"></div>
+    </div>
+    <div id="pop-player-image"></div>
+    <div class="pop-logo-wrap"><div id="pop-player-logo"></div></div>
+    <div id="pop-player-teamname"></div>
+  </div>
+  <div class="pop-divide">Game Statistics</div>
+  <div id="pop-game-stats">  
+    <div class="pop-stat-wrap" id="pop-player-mins"><span class='pop-stat'></span><span class='pop-stat-name'>Mins</span></div>
+    <div class="pop-stat-wrap" id="pop-player-pts"><span class='pop-stat'></span><span class='pop-stat-name'>Pts</span></div>
+    <div class="pop-stat-wrap" id="pop-player-reb"><span class='pop-stat'></span><span class='pop-stat-name'>REB</span></div>
+    <div class="pop-stat-wrap" id="pop-player-ast"><span class='pop-stat'></span><span class='pop-stat-name'>AST</span></div>
+
+  </div>
+  <div class="pop-divide">Competition Statistics</div>
+  <div id="pop-averages">
+    <div class="pop-stat-wrap" id="pop-player-avg-mins"><span class='pop-stat'></span><span class='pop-stat-name'>Min</span></div>
+    <div class="pop-stat-wrap" id="pop-player-avg-pts"><span class='pop-stat'></span><span class='pop-stat-name'>PTS</span></div>
+    <div class="pop-stat-wrap" id="pop-player-avg-reb"><span class='pop-stat'></span><span class='pop-stat-name'>REB</span></div>
+    <div class="pop-stat-wrap" id="pop-player-avg-ast"><span class='pop-stat'></span><span class='pop-stat-name'>AST</span></div>
+  </div>
+  <div id="pop-player-url"><a href='' target='_blank'>View Full Profile</a></div>
+  <a href="#ASFSK" id="close">x</a>
+</div>
+<script>
+    jQuery("#close").click(function() {
+      jQuery("#pop-player").fadeOut(500);
+       jQuery("#overlay").fadeOut(500);
+    });
+    jQuery("#overlay").click(function() {
+      jQuery("#pop-player").fadeOut(500);
+      jQuery("#overlay").fadeOut(500);
+    });
+    jQuery("div.langchoosewrap select").change(function() {
+      window.location = jQuery(this).find("option:selected").val();
+    });
+
+    var lexicon = {
+        "game.start" : "Game start",
+        "game.end" : "Game end",
+        "period.start" : "Period start",
+        "period.end" : "Period end",
+        "2pt" : "2pt",
+        "2pt.dunk" : "2pt dunk",
+        "2pt.layup" : "2pt lay up",
+        "2pt.fadeaway" : "2pt fade away",
+        "2pt.tipin" : "2pt tip in",
+        "2pt.jumpshot" : "2pt jump shot",
+        "2pt.alleyoop" : "2pt alley oop",
+        "2pt.drivinglayup" : "2pt driving layup",
+        "2pt.hookshot" : "2pt hookshot",
+        "2pt.floatingjumpshot" : "2pt floating jump shot",
+        "2pt.stepbackjumpshot" : "2pt step back jump shot",
+        "2pt.pullupjumpshot" : "2pt pull up jump shot",
+        "2pt.turnaroundjumpshot" : "2pt turn around jump shot",
+        "2pt.wrongbasket" : "BASKETBALL_ACTION_2PT_WRONGBASKET",
+        "3pt" : "3pt jump shot",
+        "3pt.fadeaway" : "3pt fade away",
+        "3pt.jumpshot" : "3pt jump shot",
+        "3pt.drivinglayup" : "3pt driving layup",
+        "3pt.hookshot" : "3pt hook shot",
+        "3pt.floatingjumpshot" : "3pt floating jump shot",
+        "3pt.stepbackjumpshot" : "3pt step back jump shot",
+        "3pt.pullupjumpshot" : "3pt pull up jump shot",
+        "3pt.turnaroundjumpshot" : "3pt turn around jump shot",
+        "freethrow.1of1" : "Free throw 1 of 1",
+        "freethrow.1of2" : "Free throw 1 of 2",
+        "freethrow.1of3" : "Free throw 1 of 3",
+        "freethrow.2of2" : "Free throw 2 of 2",
+        "freethrow.2of3" : "Free throw 2 of 3",
+        "freethrow.3of3" : "Free throw 3 of 3",
+        "jumpball" : "Jumpball",
+        "jumpball.won" : "jump ball - won",
+        "jumpball.lost" : "jump ball - lost",
+        "jumpball.startperiod" : "Possession arrow - start period",
+        "jumpball.unclearpass" : "Jump ball - unclear pass",
+        "jumpball.lodgedball" : "Jump ball - lodged ball",
+        "jumpball.heldball" : "Jump ball - held ball",
+        "jumpball.blocktieup" : "Block Tie-Up",
+        "jumpball.outofboundsrebound" : "Out of Bounds Rebound",
+        "jumpball.outofbounds" : "Out of Bounds",
+        "jumpball.doubleviolation" : "Jumpball - double violation",
+        "assist" : "Assist",
+        "block" : "Block",
+        "rebound.defensive" : "Defensive rebound",
+        "rebound.offensive" : "Offensive rebound",
+        "rebound.defensivedeadball" : "Dead Ball Rebound - Defensive",
+        "rebound.offensivedeadball" : "Offensive Dead Ball Rebound",
+        "rebound.deadball" : "Dead Ball Rebound",
+        "foul.offensive" : "Offensive foul",
+        "foul.personal" : "Personal foul",
+        "foul.technical" : "Technical foul",
+        "foul.technical.category1" : "Technical cat 1",
+        "foul.technical.category2" : "Technical cat 2",
+        "foul.unsportsmanlike" : "Unsportsmanlike foul",
+        "foul.disqualifying" : "Disqualifying foul",
+        "foul.disruptive" : "Disruptive foul",
+        "foul.flagrant" : "Flagrant foul",
+        "foul.benchTechnical" : "Bench technical",
+        "foul.benchTechnical.category1" : "Bench technical cat 1",
+        "foul.adminTechnical" : "Admin Technical",
+        "foul.benchDisqualifying" : "Bench disqualifying foul",
+        "foul.coachTechnical" : "Coach technical",
+        "foul.coachTechnical.category1" : "Coach technical cat 1",
+        "foul.coachDisqualifying" : "Coach disqualifying",
+        "foul.throwIn" : "Throw-in foul",
+        "foulon" : "Foul on",
+        "timeout" : "Timeout",
+        "timeout.full" : "Timeout - full",
+        "timeout.short" : "Timeout - short",
+        "timeout.officials" : "Timeout - official",
+        "timeout.commercial" : "Timeout - commercial",
+        "steal" : "Steal",
+        "turnover" : "Turnover",
+        "turnover.offensive" : "Turnover - offensive",
+        "turnover.offensivegoaltending" : "Turnover - goaltending",
+        "turnover.ballhandling" : "Turnover - ball handling",
+        "turnover.badpass" : "Turnover - bad pass",
+        "turnover.overandback" : "Turnover - cross court",
+        "turnover.backcourt" : "Turnover - backcourt",
+        "turnover.outofbounds" : "Turnover - out of bounds",
+        "turnover.travel" : "Turnover - travel",
+        "turnover.shotclock" : "Turnover - Shot Clock Violation",
+        "turnover.3sec" : "Turnover - 3 seconds",
+        "turnover.5sec" : "Turnover - 5 seconds",
+        "turnover.8sec" : "Turnover - 8 seconds",
+        "turnover.10sec" : "Turnover - 10 seconds",
+        "turnover.24sec" : "Turnover - 24 seconds",
+        "turnover.doubledribble" : "Turnover - double dribble",
+        "turnover.offensivekickedball" : "Turnover - Offensive kicked ball",
+        "turnover.laneviolation" : "Turnover - Lane Violation",
+        "turnover.dribbling" : "Turnover - Dribbling",
+        "turnover.lostball" : "Turnover - Lost ball",
+        "turnover.inbound" : "Turnover - Inbound",
+        "turnover.playeroutofbounds" : "Turnover - Player out of bounds",
+        "turnover.other" : "Turnover - Other",
+        "substitution.in" : "Substitution in",
+        "substitution.out" : "Substitution out",
+        "shotclock.adjustment" : "Shot clock adjustment",
+        "clock.start" : "Clock start",
+        "clock.stop" : "Clock stop",
+        "clock.adjustment" : "Clock adjustment",
+        "possessionChange" : "Possession change",
+        "possessionArrowChange" : "Possession arrow change",
+        "made" : "made",
+        "missed" : "missed",
+        "REGULAR" : "PERIOD",
+        "OVERTIME" : "OVERTIME",
+        "P" : "P",
+        "OT" : "OT",
+        "CAPTAIN_ABBREV" : "(C)",
+        "tie" : "tie",
+        "made" : "made",
+        "lead by %1" : "lead by %1",
+        "trail by %1" : "trail by %1"
+    };
+</script>
+    <input type = "hidden" id = "datapath" value = "/data/2902690/">
+    <input type = "hidden" id = "userBase" value = "https://fibalivestats.dcd.shared.geniussports.com/webcast/ESAKE">
+    <input type = "hidden" id = "namel" value = "international">
+    <input type = "hidden" id = "namef" value = "nameFiIFa">
+    <input type = "hidden" id = "defaultLocale" value = "en_AU">
+    <input type = "hidden" id = "langPrefix" value = "">
+    <input type = "hidden" id = "matchId" value = "2902690">
+    <input type = "hidden" id = "compId" value = "49915">
+
+</body>
+</html>
