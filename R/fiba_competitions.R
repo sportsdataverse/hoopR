@@ -143,10 +143,6 @@
     )
     paste0(prefix, "_", s[["suffix"]], "(", args, ")")
   }, "")
-  returns <- vapply(.FIBA_ALIASES, function(s) {
-    paste0("* `", prefix, "_", s[["suffix"]], "()`: ", s[["what"]], " the competition; the columns of [",
-           s[["base"]], "()].")
-  }, "")
   c(
     paste0("@name ", prefix, "_competition"),
     paste0("@title **FIBA competition: ", e[["label"]], "**"),
@@ -174,9 +170,11 @@
     paste0("A `comp` of another competition family, or one GDAP gives no family, is `hoopR_asset_fetch`; a ",
            "season with no edition is `hoopR_no_data`; a season listing several editions, or a game function ",
            "called with neither `season` nor `comp`, is `hoopR_bad_request`."),
-    "@return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`):",
-    "",
-    returns,
+    paste0("@return A `hoopR_data` tibble with the columns of the base wrapper (the raw JSON list when ",
+           "`return_parsed = FALSE`), one table per function:"),
+    unlist(lapply(.FIBA_ALIASES, function(s) {
+      .intl_alias_returns(paste0(prefix, "_", s[["suffix"]]), s[["base"]])
+    })),
     "@family FIBA Competition Functions",
     "@examples",
     "\\donttest{",

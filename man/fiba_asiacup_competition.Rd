@@ -40,16 +40,367 @@ fiba_asiacup_shots(game_id, season = NULL, comp = NULL, return_parsed = TRUE)
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}):
-\itemize{
-\item \code{fiba_asiacup_editions()}: Every edition of the competition; the columns of \code{\link[=fiba_gdap_editions]{fiba_gdap_editions()}}.
-\item \code{fiba_asiacup_schedule()}: Schedule and results of one edition of the competition; the columns of \code{\link[=fiba_gdap_schedule]{fiba_gdap_schedule()}}.
-\item \code{fiba_asiacup_standings()}: Final standings of one edition of the competition; the columns of \code{\link[=fiba_gdap_final_standings]{fiba_gdap_final_standings()}}.
-\item \code{fiba_asiacup_teams()}: Teams of one edition of the competition; the columns of \code{\link[=fiba_gdap_teams]{fiba_gdap_teams()}}.
-\item \code{fiba_asiacup_player_box()}: Player box score of one game of the competition; the columns of \code{\link[=fiba_gamepage_box_players]{fiba_gamepage_box_players()}}.
-\item \code{fiba_asiacup_team_box()}: Team box score of one game of the competition; the columns of \code{\link[=fiba_gamepage_box_teams]{fiba_gamepage_box_teams()}}.
-\item \code{fiba_asiacup_pbp()}: Play-by-play of one game of the competition; the columns of \code{\link[=fiba_gamepage_pbp]{fiba_gamepage_pbp()}}.
-\item \code{fiba_asiacup_shots()}: Shot chart of one game of the competition; the columns of \code{\link[=fiba_gamepage_shots]{fiba_gamepage_shots()}}.
+A \code{hoopR_data} tibble with the columns of the base wrapper (the raw JSON list when \code{return_parsed = FALSE}), one table per function:
+\subsection{\code{fiba_asiacup_editions()}}{
+
+The columns of \code{\link[=fiba_gdap_editions]{fiba_gdap_editions()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   hosts \tab character \tab Host countries with their cities. Stored as a JSON string. \cr
+   competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
+   competition_code \tab character \tab Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). \cr
+   season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. \cr
+   official_name \tab character \tab Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). \cr
+   start \tab character \tab First day, YYYY-MM-DD. \cr
+   end \tab character \tab Last day, YYYY-MM-DD. \cr
+   status \tab character \tab Competition status: In Progress, Completed, Closed. \cr
+   age_category \tab character \tab Age category (Senior, Under 16...). \cr
+   gender \tab character \tab Men or Women: the gender of the competition. \cr
+   fiba_zone \tab character \tab FIBA zone the competition belongs to (World, Europe, Americas...). \cr
+   zone_information_zone_id \tab integer \tab FIBA zone id (1 = World, 23 = Europe; zone table key space). \cr
+   zone_information_zone_official_name \tab character \tab Official name of the competition's FIBA zone (FIBA Europe, FIBA Americas, World). \cr
+   zone_information_zone_code \tab character \tab Zone code (W, E, AF, AM, AS, OC). \cr
+   zone_information_top_zone_id \tab integer \tab Parent zone id; null for top zones. \cr
+   zone_information_top_zone_official_name \tab character \tab Parent zone name; always null in the samples, values unverified. \cr
+   zone_information_top_zone_code \tab character \tab Parent zone code; always null in the samples, values unverified. \cr
+   competition_type \tab character \tab National Teams or Clubs. \cr
+   competition_category_is_league \tab logical \tab True for league-format club competitions. \cr
+   competition_category_age_type \tab character \tab Age type code: S senior, U16. \cr
+   competition_category_code \tab character \tab Category code (WC World Cup, OLY Olympic Tournament, CCC-1 continental club tier 1). \cr
+   competition_category_name \tab character \tab Name of the competition's category (FIBA Basketball World Cup, Olympic Basketball Tournament...). \cr
+   official_flag_item_code \tab character \tab Official-status code: O = official. \cr
+   official_flag_item_name \tab character \tab Official-status label. \cr
+   official \tab character \tab Official-status label. \cr
+   discipline \tab character \tab Discipline (Basketball; 3x3 is a separate platform). \cr
+   competition_marketing_name_competition_marketing_name_id \tab integer \tab Competition family id (201 = World Cup, 112 = BCL tier 1, 211 = EuroLeague Women); the \verb{<histId>} of /en/history/ pages. \cr
+   competition_marketing_name_marketing_name \tab character \tab Competition family name; slugified it is the \verb{<histSlug>} of /en/history/ pages. \cr
+   competition_marketing_name_code \tab character \tab Family code; null in every sample. \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_schedule()}}{
+
+The columns of \code{\link[=fiba_gdap_schedule]{fiba_gdap_schedule()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   game_id \tab integer \tab FIBA game id, global across competitions (GDAP key space): gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
+   game_name \tab character \tab Technical game name '\verb{<roundId>}-\verb{<groupPairingCode>}-\verb{<gameNumber>}'. \cr
+   game_number \tab character \tab Game number within the round or pairing (a string: '1', 'A'). \cr
+   status_code \tab character \tab Game status code: VALID (validated result), CLOS (closed, pre-2000 rows). \cr
+   team_a_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
+   team_a_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
+   team_a_code \tab character \tab Team code (national: FIBA country code; club: a club abbreviation such as OOST). \cr
+   team_a_official_name \tab character \tab Official name of team A: the country for a national team, the club for a club team. \cr
+   team_a_short_name \tab character \tab Short name of team A: the country code for a national team, the club's short name for a club. \cr
+   team_b_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
+   team_b_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
+   team_b_code \tab character \tab Team code (national: FIBA country code; club: a club abbreviation such as NANT). \cr
+   team_b_official_name \tab character \tab Official name of team B: the country for a national team, the club for a club team. \cr
+   team_b_short_name \tab character \tab Short name of team B: the country code for a national team, the club's short name for a club. \cr
+   team_a_score \tab integer \tab Final score of team A. \cr
+   team_b_score \tab integer \tab Final score of team B. \cr
+   is_live \tab logical \tab True while the game is being played. \cr
+   current_period \tab character \tab Last period reached ('Q4', 'OT1'). \cr
+   chrono \tab character \tab Game clock of the current period, 'mm:ss' ('00:00' when finished). \cr
+   live_game_status \tab integer \tab Live state code: 999 on every finished game; 5 seen on a finished 2024 youth game; mapping unverified. \cr
+   current_period_status \tab character \tab State of the current period: E = ended (the only value sampled). \cr
+   host_city \tab character \tab City of the venue. \cr
+   host_country \tab character \tab Country of the venue (name; a FIBA code in getgdapgameswithleaderdetailsbyteamid). \cr
+   host_country_code \tab character \tab FIBA code of the venue's country. \cr
+   venue_id \tab integer \tab Venue id (GDAP key space; 0 = unknown). \cr
+   venue_name \tab character \tab Name of the arena the game is played in. \cr
+   game_date_time \tab character \tab Tip-off in venue-local wall-clock time, ISO 8601 without offset (T00:00:00 when hasTimeGameDateTime is false). \cr
+   game_date_time_utc \tab character \tab Tip-off in UTC, ISO 8601 without the Z. \cr
+   has_time_game_date_time \tab logical \tab False when only the date is known (the time part is then 00:00:00). \cr
+   iana_time_zone \tab character \tab IANA time zone of the venue. \cr
+   utc_offset \tab numeric \tab Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). \cr
+   is_postponed \tab logical \tab True when the game was postponed. \cr
+   is_played_behind_closed_doors \tab logical \tab True when played without spectators. \cr
+   venue_capacity \tab integer \tab Venue capacity (0 = unknown). \cr
+   spectators \tab integer \tab Attendance at the game, as recorded by FIBA. \cr
+   statistic_system \tab character \tab Live-stats system that scored the game: OVR (FIBA's Olympic/World Cup system), FLS (FIBA LiveStats), null before about 2006. \cr
+   group_id \tab character \tab Group id (GDAP key space). \cr
+   group_pairing_code \tab character \tab Group letter (group play) or pairing number (knockout bracket slot). \cr
+   round_round_id \tab integer \tab Round id (GDAP key space, unique across competitions); the first segment of gameName. \cr
+   round_round_code \tab character \tab Round code (GP group phase, QF, SF, F final, RS regular season, CL17-32 classification...). \cr
+   round_round_name \tab character \tab Round label (Group Phase, Quarter-Finals, Final...). \cr
+   round_round_number \tab integer \tab Round number within the competition (1-based). \cr
+   round_round_type \tab character \tab Round type label: Group Round, Non Group Round, Super Round (getgdapgamesbycompetitionid uses the code G/NG here). \cr
+   round_round_status_code \tab character \tab Round status: COMPL completed, PROGR in progress, CLOS closed. \cr
+   round_game_system \tab character \tab Pairing system label (Single, Home and Away, Best of 3). \cr
+   round_game_system_code \tab character \tab Pairing system code: S single game, HA home and away, BOF3 best of three. \cr
+   round_start_date \tab character \tab Round start, local date-time. \cr
+   round_end_date \tab character \tab Round end, local date-time (23:59:59.9999999 on the last day). \cr
+   round_round_kind \tab character \tab Standard Round or Qualifiers. \cr
+   round_round_order \tab integer \tab Display order of the round. \cr
+   competition_competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
+   competition_competition_code \tab character \tab Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). \cr
+   competition_season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. \cr
+   competition_official_name \tab character \tab Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). \cr
+   competition_start \tab character \tab First day, YYYY-MM-DD. \cr
+   competition_end \tab character \tab Last day, YYYY-MM-DD. \cr
+   competition_status \tab character \tab Competition status: In Progress, Completed, Closed. \cr
+   competition_age_category \tab character \tab Age category (Senior, Under 16...). \cr
+   competition_gender \tab character \tab Men or Women: the gender of the competition. \cr
+   competition_fiba_zone \tab character \tab FIBA zone the competition belongs to (World, Europe, Americas...). \cr
+   competition_zone_information_zone_id \tab integer \tab FIBA zone id (1 = World, 23 = Europe; zone table key space). \cr
+   competition_zone_information_zone_official_name \tab character \tab Official name of the competition's FIBA zone (FIBA Europe, FIBA Americas, World). \cr
+   competition_zone_information_zone_code \tab character \tab Zone code (W, E, AF, AM, AS, OC). \cr
+   competition_zone_information_top_zone_id \tab integer \tab Parent zone id; null for top zones. \cr
+   competition_zone_information_top_zone_official_name \tab character \tab Parent zone name; always null in the samples, values unverified. \cr
+   competition_zone_information_top_zone_code \tab character \tab Parent zone code; always null in the samples, values unverified. \cr
+   competition_competition_type \tab character \tab National Teams or Clubs. \cr
+   competition_competition_category_is_league \tab logical \tab True for league-format club competitions. \cr
+   competition_competition_category_age_type \tab character \tab Age type code: S senior, U16. \cr
+   competition_competition_category_code \tab character \tab Category code (WC World Cup, OLY Olympic Tournament, CCC-1 continental club tier 1). \cr
+   competition_competition_category_name \tab character \tab Name of the competition's category (FIBA Basketball World Cup, Olympic Basketball Tournament...). \cr
+   competition_official_flag_item_code \tab character \tab Official-status code: O = official. \cr
+   competition_official_flag_item_name \tab character \tab Official-status label. \cr
+   competition_official \tab character \tab Official-status label. \cr
+   competition_discipline \tab character \tab Discipline (Basketball; 3x3 is a separate platform). \cr
+   competition_competition_marketing_name_competition_marketing_name_id \tab integer \tab Competition family id (201 = World Cup, 112 = BCL tier 1, 211 = EuroLeague Women); the \verb{<histId>} of /en/history/ pages. \cr
+   competition_competition_marketing_name_marketing_name \tab character \tab Competition family name; slugified it is the \verb{<histSlug>} of /en/history/ pages. \cr
+   competition_competition_marketing_name_code \tab character \tab Family code; null in every sample. \cr
+   game_statistic_status_code \tab character \tab Box-score validation status: VALID. \cr
+   game_play_by_play_status_code \tab character \tab Play-by-play availability flag: VALID or EMPTY. UNRELIABLE: World Cup 2014 and EuroBasket 2017 say EMPTY but their game pages carry full play-by-play; always check the page. \cr
+   game_result_status_code \tab character \tab Result validation status: VALID. \cr
+   game_result_additional_information \tab character \tab Free-text result note (forfeit, overtime remark); null when none. \cr
+   window_code \tab character \tab Qualifier window code; null otherwise. \cr
+   window_name \tab character \tab Qualifier window name; null otherwise. \cr
+   team_a_from \tab character \tab How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. \cr
+   team_b_from \tab character \tab How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_standings()}}{
+
+The columns of \code{\link[=fiba_gdap_final_standings]{fiba_gdap_final_standings()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   competition_id \tab integer \tab FIBA competition id (Int64) the final ranking belongs to; the comp argument. \cr
+   final_rank \tab integer \tab Final rank in the competition. \cr
+   team_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
+   team_team_code \tab character \tab Team abbreviation (FIBA country code or club abbreviation). \cr
+   team_short_name \tab character \tab Short team name: the country code for a national team, the club's short name for a club. \cr
+   team_profile \tab character \tab Team profile; null in this route. \cr
+   team_status_code \tab character \tab Team entry status; always null in the samples, values unverified. \cr
+   team_status_name \tab character \tab Team entry status label; always null in the samples, values unverified. \cr
+   team_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_teams()}}{
+
+The columns of \code{\link[=fiba_gdap_teams]{fiba_gdap_teams()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
+   team_code \tab character \tab Team abbreviation (FIBA country code or club abbreviation). \cr
+   short_name \tab character \tab Short team name: the country code for a national team, the club's short name for a club. \cr
+   profile_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
+   profile_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
+   profile_name \tab character \tab Team name as registered for the competition. \cr
+   profile_code \tab character \tab Team code (FIBA country code or club abbreviation). \cr
+   profile_country_name \tab character \tab Country of the team, in English. \cr
+   profile_country_code \tab character \tab Country FIBA code. \cr
+   profile_gender \tab character \tab Men or Women: the gender of the team's competition. \cr
+   profile_facebook \tab character \tab Facebook handle or URL; always null in the samples, values unverified. \cr
+   profile_twitter \tab character \tab X/Twitter handle; always null in the samples, values unverified. \cr
+   profile_instagram \tab character \tab Instagram handle; always null in the samples, values unverified. \cr
+   profile_website \tab character \tab The team's website address. \cr
+   profile_you_tube \tab character \tab YouTube handle; always null in the samples, values unverified. \cr
+   profile_final_ranking \tab integer \tab Final rank in the competition. \cr
+   profile_points_per_game \tab numeric \tab The team's average points per game played. \cr
+   profile_rebounds_per_game \tab numeric \tab The team's average rebounds per game played. \cr
+   profile_assists_per_game \tab numeric \tab The team's average assists per game played. \cr
+   profile_rank_points_per_game \tab numeric \tab Rank in the competition by points per game (1 = highest). \cr
+   profile_rank_rebounds_per_game \tab numeric \tab Rank in the competition by rebounds per game (1 = highest). \cr
+   profile_rank_assists_per_game \tab numeric \tab Rank in the competition by assists per game (1 = highest). \cr
+   profile_total_games_won \tab integer \tab The team's total games won over the games played. \cr
+   profile_total_games_lost \tab integer \tab The team's total games lost over the games played. \cr
+   profile_social_networks \tab character \tab Social-network handles. Stored as a JSON string. \cr
+   profile_competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
+   status_code \tab character \tab Team entry status: APPR approved. \cr
+   status_name \tab character \tab Team entry status label (Approved). \cr
+   organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_player_box()}}{
+
+The columns of \code{\link[=fiba_gamepage_box_players]{fiba_gamepage_box_players()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
+   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
+   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
+   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
+   player_id \tab integer \tab FIBA person id (Int64), global across competitions and roles: the page's P_\verb{<id>}, play-by-play pId, roster personId and fiba_gdap_roster.player_id. \cr
+   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
+   last_name \tab character \tab Last name as registered with FIBA. \cr
+   jersey \tab character \tab Jersey number as a string. \cr
+   position \tab character \tab Playing position code from the lineup card (PG, SG, SF, PF, C). \cr
+   is_captain \tab logical \tab True for the team captain. \cr
+   is_starter \tab logical \tab True for the starting five. \cr
+   has_played \tab logical \tab True when the player got on the court. \cr
+   minutes \tab character \tab Minutes played as an 'm:ss' string ('0:0' = did not play). \cr
+   seconds_played \tab integer \tab Seconds played, derived from minutes. \cr
+   points \tab integer \tab Points scored in the game. \cr
+   fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
+   fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
+   fg_pct \tab numeric \tab Field-goal percentage, 0-100. \cr
+   fg2_made \tab integer \tab Two-point field goals made. \cr
+   fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
+   fg2_pct \tab numeric \tab Two-point field-goal percentage, 0-100. \cr
+   fg3_made \tab integer \tab Three-point field goals made. \cr
+   fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
+   fg3_pct \tab numeric \tab Three-point field-goal percentage, 0-100. \cr
+   ft_made \tab integer \tab Free throws made. \cr
+   ft_attempted \tab integer \tab Free throws attempted. \cr
+   ft_pct \tab numeric \tab Free-throw percentage, 0-100. \cr
+   reb_offensive \tab integer \tab Offensive rebounds. \cr
+   reb_defensive \tab integer \tab Defensive rebounds. \cr
+   reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
+   assists \tab integer \tab Assists credited in the game. \cr
+   steals \tab integer \tab Steals credited in the game. \cr
+   blocks \tab integer \tab Blocked shots (blocks made). \cr
+   blocks_received \tab integer \tab Own shots blocked by the opponent (blocks received). \cr
+   turnovers \tab integer \tab Turnovers (a team row includes the team turnovers team_turnovers). \cr
+   fouls \tab integer \tab Personal fouls (a team row includes the team fouls team_fouls). \cr
+   fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
+   paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
+   paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
+   paint_fg_pct \tab numeric \tab Field-goal percentage in the paint, 0-100. \cr
+   efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
+   plus_minus \tab integer \tab Plus/minus: the team's point differential while the player was on the court. \cr
+   cb \tab logical \tab Boolean flag, false on every sampled player; meaning unverified. \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_team_box()}}{
+
+The columns of \code{\link[=fiba_gamepage_box_teams]{fiba_gamepage_box_teams()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
+   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
+   statistic_system \tab character \tab Live-stats system of the game: OVR (World Cup, Olympics) or FLS (club competitions, most qualifiers); they differ in the play-by-play action ids, order and text. \cr
+   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
+   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
+   score \tab integer \tab Team final score. \cr
+   points \tab integer \tab Points scored in the game. \cr
+   fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
+   fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
+   fg_pct \tab numeric \tab Field-goal percentage, 0-100. \cr
+   fg2_made \tab integer \tab Two-point field goals made. \cr
+   fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
+   fg2_pct \tab numeric \tab Two-point field-goal percentage, 0-100. \cr
+   fg3_made \tab integer \tab Three-point field goals made. \cr
+   fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
+   fg3_pct \tab numeric \tab Three-point field-goal percentage, 0-100. \cr
+   ft_made \tab integer \tab Free throws made. \cr
+   ft_attempted \tab integer \tab Free throws attempted. \cr
+   ft_pct \tab numeric \tab Free-throw percentage, 0-100. \cr
+   reb_offensive \tab integer \tab Offensive rebounds. \cr
+   reb_defensive \tab integer \tab Defensive rebounds. \cr
+   reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
+   assists \tab integer \tab Assists credited in the game. \cr
+   steals \tab integer \tab Steals credited in the game. \cr
+   blocks \tab integer \tab Blocked shots (blocks made). \cr
+   blocks_received \tab integer \tab Own shots blocked by the opponent (blocks received). \cr
+   turnovers \tab integer \tab Turnovers (a team row includes the team turnovers team_turnovers). \cr
+   fouls \tab integer \tab Personal fouls (a team row includes the team fouls team_fouls). \cr
+   fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
+   paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
+   paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
+   paint_fg_pct \tab numeric \tab Field-goal percentage in the paint, 0-100. \cr
+   efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
+   biggest_lead \tab integer \tab Biggest lead, points. \cr
+   biggest_lead_score \tab character \tab Score when the biggest lead was reached, 'A-B' string (spacing varies; empty when the team never led). \cr
+   biggest_run \tab integer \tab Biggest scoring run, points. \cr
+   biggest_run_score \tab character \tab Score of the biggest scoring run, 'x-y' string; exact meaning unverified. \cr
+   fast_break_points \tab integer \tab Fast-break points. \cr
+   points_off_turnovers \tab integer \tab Points scored after turnovers. \cr
+   bench_points \tab integer \tab Points from the bench (the sum of the non-starters' points). \cr
+   points_in_paint \tab integer \tab Points in the paint (2 x paint_fg_made). \cr
+   second_chance_points \tab integer \tab Second-chance points. \cr
+   a_act \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_ACT). \cr
+   a_foul \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_FOUL). \cr
+   a_tod \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_TOD). \cr
+   a_tot \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_TOT). \cr
+   team_reb_offensive \tab integer \tab Team offensive rebounds, credited to no player. \cr
+   team_reb_defensive \tab integer \tab Team defensive rebounds, credited to no player. \cr
+   team_reb_total \tab integer \tab Team rebounds (total rebounds minus the players' sum). \cr
+   team_fouls \tab integer \tab Team (bench/coach) fouls (personal fouls minus the players' sum). \cr
+   team_turnovers \tab integer \tab Team turnovers (turnovers minus the players' sum). \cr
+   team_bench_points_flag \tab integer \tab Bench points in FLS games (equal to bench_points); 0 in OVR games (FIBA stat code T_PFB). \cr
+   time_led \tab character \tab Time the team led, 'mm:ss' string. \cr
+   lead_changes \tab integer \tab Lead changes in the game (game-level; repeats on both team rows). \cr
+   times_tied \tab integer \tab Times the score was tied (game-level; repeats on both team rows). \cr
+   duration \tab character \tab Game duration as an 'h:mm' string (game-level; repeats on both team rows). \cr
+   attendance \tab integer \tab Attendance (game-level; repeats on both team rows). \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_pbp()}}{
+
+The columns of \code{\link[=fiba_gamepage_pbp]{fiba_gamepage_pbp()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
+   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
+   statistic_system \tab character \tab Live-stats system of the game: OVR (World Cup, Olympics) or FLS (club competitions, most qualifiers); they differ in the play-by-play action ids, order and text. \cr
+   period \tab character \tab Period name: Q1..Q4, then OT1, OT2... \cr
+   period_number \tab integer \tab 1-based position of the period in the game. \cr
+   action_id \tab character \tab Action id (String): '\verb{<n>}:\verb{<seq>}' in OVR games (3:0015), a sequence number in FLS games; unique within the game. \cr
+   order \tab integer \tab Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. \cr
+   clock \tab character \tab Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). \cr
+   clock_seconds \tab integer \tab Seconds remaining in the period, derived from clock. \cr
+   wall_time_ms \tab numeric \tab Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) \cr
+   score_a \tab integer \tab Team A score after the action. \cr
+   score_b \tab integer \tab Team B score after the action. \cr
+   action_code \tab character \tab Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). \cr
+   action_family \tab character \tab Action family: shot, subst, timeout, periods, and 'unknwown' (FIBA's spelling) for every other action. \cr
+   description \tab character \tab English action text ('3pt jump shot missed', 'defensive rebound'); null on most OVR actions. \cr
+   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
+   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
+   player_id \tab integer \tab FIBA person id (Int64), global across competitions and roles: the page's P_\verb{<id>}, play-by-play pId, roster personId and fiba_gdap_roster.player_id. \cr
+   player2_id \tab integer \tab FIBA person id (Int64) of the second player on a substitution; null when the game does not record it (the refs note FLS only, but the Paris 2024 final, an OVR game, carries it and the FLS games sampled leave it null). \cr
+   sub_direction \tab character \tab Substitution direction: IN or OUT; null on other actions. \cr
+   made \tab logical \tab True when the shot went in (two-pointers, three-pointers and free throws only; null otherwise). \cr
+   points_attempted \tab integer \tab Points the attempt was worth (2, 3 or 1), made or not; null on other actions. \cr
+   shot_type \tab character \tab Shot type derived from action_code: 2PT, 3PT or FT; null on other actions. \cr
+   shot_x \tab integer \tab Shot x, integer pixels on a half-court image across the court width (observed 0-278, basket near x = 139). Present only on shots; free throws are 0. Which sideline is x = 0 and the scale are UNVERIFIED. \cr
+   shot_y \tab integer \tab Shot y, integer pixels from the baseline (y = 0) towards midcourt (observed 0-224, basket near y = 25); both teams' shots are drawn on one basket. Free throws are 0. Scale UNVERIFIED. \cr
+   has_location \tab logical \tab True when shot_x / shot_y locate the shot (two- and three-pointers); False for free throws (always 0, 0); null on other actions. \cr
+}
+
+}
+
+\subsection{\code{fiba_asiacup_shots()}}{
+
+The columns of \code{\link[=fiba_gamepage_shots]{fiba_gamepage_shots()}}:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
+   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
+   statistic_system \tab character \tab Live-stats system of the game: OVR (World Cup, Olympics) or FLS (club competitions, most qualifiers); they differ in the play-by-play action ids, order and text. \cr
+   period \tab character \tab Period name: Q1..Q4, then OT1, OT2... \cr
+   period_number \tab integer \tab 1-based position of the period in the game. \cr
+   action_id \tab character \tab Action id (String): '\verb{<n>}:\verb{<seq>}' in OVR games (3:0015), a sequence number in FLS games; unique within the game. \cr
+   order \tab integer \tab Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. \cr
+   clock \tab character \tab Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). \cr
+   clock_seconds \tab integer \tab Seconds remaining in the period, derived from clock. \cr
+   action_code \tab character \tab Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). \cr
+   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
+   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
+   player_id \tab integer \tab FIBA person id (Int64), global across competitions and roles: the page's P_\verb{<id>}, play-by-play pId, roster personId and fiba_gdap_roster.player_id. \cr
+   shot_type \tab character \tab Shot type derived from action_code: 2PT, 3PT or FT; null on other actions. \cr
+   points_attempted \tab integer \tab Points the attempt was worth (2, 3 or 1), made or not; null on other actions. \cr
+   made \tab logical \tab True when the shot went in (two-pointers, three-pointers and free throws only; null otherwise). \cr
+   shot_x \tab integer \tab Shot x, integer pixels on a half-court image across the court width (observed 0-278, basket near x = 139). Present only on shots; free throws are 0. Which sideline is x = 0 and the scale are UNVERIFIED. \cr
+   shot_y \tab integer \tab Shot y, integer pixels from the baseline (y = 0) towards midcourt (observed 0-224, basket near y = 25); both teams' shots are drawn on one basket. Free throws are 0. Scale UNVERIFIED. \cr
+   has_location \tab logical \tab True when shot_x / shot_y locate the shot (two- and three-pointers); False for free throws (always 0, 0); null on other actions. \cr
+}
+
 }
 }
 \description{

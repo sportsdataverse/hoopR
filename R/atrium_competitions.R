@@ -27,6 +27,47 @@
   shots = list(base = "atrium_shots", args = c("fixture_id", "locale"), what = "Shot chart of a game")
 )
 
+#' Source lines of the package's R/ files, read once per session (roxygen `@eval` helpers only).
+#' @noRd
+.intl_rd_src <- new.env(parent = emptyenv())
+
+#' The returns table (the `| col_name | type | description |` lines) of base wrapper `fn`'s
+#' `@return`, read from its roxygen source at document time, so an alias topic carries the base's
+#' table verbatim and is regenerated with it by the same `devtools::document()` run. Used by the
+#' `@eval` Rd generators of the atrium, fiba and genius aliases; it aborts (failing `document()`)
+#' when the base has no such table.
+#' @noRd
+.intl_base_returns_table <- function(fn) {
+  dir <- file.path(getNamespaceInfo(topenv(), "path"), "R")
+  if (is.null(.intl_rd_src[[dir]])) {
+    files <- list.files(dir, pattern = "[.][Rr]$", full.names = TRUE)
+    .intl_rd_src[[dir]] <- lapply(stats::setNames(files, files), readLines, warn = FALSE, encoding = "UTF-8")
+  }
+  for (lines in .intl_rd_src[[dir]]) {
+    def <- grep(paste0("^", fn, " <- function"), lines)
+    if (length(def) != 1L) next
+    top <- def
+    while (top > 1L && startsWith(lines[[top - 1L]], "#'")) top <- top - 1L
+    block <- sub("^#' ?", "", lines[seq_len(def - top) + top - 1L])
+    ret <- grep("^@return", block)
+    if (length(ret) != 1L) break
+    end <- c(grep("^@[A-Za-z]", block), length(block) + 1L)
+    end <- min(end[end > ret])
+    table <- grep("^[|]", block[seq_len(end - ret - 1L) + ret], value = TRUE)
+    if (length(table) >= 3L && grepl("^[|] *col_name *[|] *type *[|] *description *[|]", table[[1]])) return(table)
+    break
+  }
+  cli::cli_abort("{.fn {fn}}: no {.code | col_name | type | description |} table in its {.code @return} roxygen.",
+                 .internal = TRUE)
+}
+
+#' One alias route's returns subsection: `## <alias>()`, the base it mirrors, and the base's table.
+#' @noRd
+.intl_alias_returns <- function(alias, base) {
+  c("", paste0("## `", alias, "()`"), "", paste0("The columns of [", base, "()]:"), "",
+    .intl_base_returns_table(base))
+}
+
 #' The atrium registry entry with `prefix`, or NULL when this package does not carry it.
 #' @noRd
 .atrium_competition <- function(prefix) {
@@ -73,10 +114,6 @@
     args <- .atrium_alias_specs[[s]]$args
     paste0(prefix, "_", s, "(", paste(ifelse(args == "fixture_id", args, paste(args, "= NULL")), collapse = ", "), ")")
   }, character(1))
-  returns <- vapply(names(.atrium_alias_specs), function(s) {
-    sp <- .atrium_alias_specs[[s]]
-    paste0("#'   * `", prefix, "_", s, "()`: ", sp$what, "; the columns of [", sp$base, "()].")
-  }, character(1))
   c(
     paste0("@name ", prefix, "_competition"),
     paste0("@aliases ", paste(fns, collapse = " ")),
@@ -95,9 +132,10 @@
     "@param competition_id (*character* optional): Competition UUID (a site carries many: conferences, cups); needed when several share the season.",
     "@param locale (*character* optional): Label locale, e.g. `\"en-EN\"`; omitted = the site's own language.",
     "@param fixture_id (*character* required): Fixture UUID (`fixture_id` in the schedule).",
-    "@return A `hoopR_data` tibble, with the columns (and the returns table) of the base wrapper:",
-    "",
-    sub("^#' ", "", returns),
+    "@return A `hoopR_data` tibble with the columns of the base wrapper, one table per function:",
+    unlist(lapply(names(.atrium_alias_specs), function(s) {
+      .intl_alias_returns(paste0(prefix, "_", s), .atrium_alias_specs[[s]]$base)
+    })),
     "@details",
     paste0("Season rule: ", e$season_rule, "."),
     "",

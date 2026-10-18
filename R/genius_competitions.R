@@ -166,18 +166,19 @@
   fns <- list()
   fns[[paste0(p, "_competitions")]] <- rlang::new_function(
     rlang::pairlist2(return_parsed = TRUE),
-    rlang::expr(.genius_alias_competitions(!!key, return_parsed = return_parsed)), env
+    rlang::call2(".genius_alias_competitions", key, return_parsed = rlang::sym("return_parsed")), env
   )
   fns[[paste0(p, "_schedule")]] <- rlang::new_function(
     rlang::pairlist2(season = NULL, comp_id = NULL, round_number = -1, return_parsed = TRUE),
-    rlang::expr(.genius_alias_schedule(!!key, season = season, comp_id = comp_id, round_number = round_number,
-                                       return_parsed = return_parsed)), env
+    rlang::call2(".genius_alias_schedule", key, season = rlang::sym("season"), comp_id = rlang::sym("comp_id"),
+                 round_number = rlang::sym("round_number"), return_parsed = rlang::sym("return_parsed")), env
   )
   for (suffix in names(.GENIUS_ALIAS_GAMES)) {
     base <- .GENIUS_ALIAS_GAMES[[suffix]]
     fns[[paste0(p, "_", suffix)]] <- rlang::new_function(
       rlang::pairlist2(match_id = , return_parsed = TRUE),
-      rlang::expr(.genius_alias_game(!!key, !!base, match_id, return_parsed = return_parsed)), env
+      rlang::call2(".genius_alias_game", key, base, rlang::sym("match_id"),
+                   return_parsed = rlang::sym("return_parsed")), env
     )
   }
   fns
@@ -251,10 +252,13 @@
     "@param round_number Round to list; -1 (default) lists every round.",
     paste0("@param match_id Genius match id (`match_id` of `", p, "_schedule()`) of a game of this competition."),
     "@param return_parsed Parse into a tibble (default `TRUE`); `FALSE` returns the raw list.",
-    paste0("@return The base function's `hoopR_data` tibble, same columns and types (see its returns ",
-           "table): `", p, "_competitions()` as [genius_competitions()], `", p, "_schedule()` as ",
-           "[genius_schedule()], and ", paste0("`", games, "()` as [", .GENIUS_ALIAS_GAMES, "()]",
-                                               collapse = ", "), "."),
+    paste0("@return The base function's `hoopR_data` tibble, same columns and types (the raw list when ",
+           "`return_parsed = FALSE`), one table per function:"),
+    .intl_alias_returns(paste0(p, "_competitions"), "genius_competitions"),
+    .intl_alias_returns(paste0(p, "_schedule"), "genius_schedule"),
+    unlist(lapply(names(.GENIUS_ALIAS_GAMES), function(s) {
+      .intl_alias_returns(paste0(p, "_", s), .GENIUS_ALIAS_GAMES[[s]])
+    })),
     paste0("@name ", p, "_competition"),
     paste("@aliases", paste(.genius_alias_names_of(e), collapse = " ")),
     "@family Genius",
