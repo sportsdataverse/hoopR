@@ -102,16 +102,8 @@ dbl_mismatches <- function(got, want_chr) {
   sum(na_diff) + sum(val_diff)
 }
 
-# polars writes null as an empty field and "" as a quoted empty field: keep the two apart
-read_oracle <- function(case) {
-  path <- dbl_fixture("parity", paste0(case, ".csv"))
-  lines <- readLines(path, encoding = "UTF-8", warn = FALSE)
-  marked <- gsub('(^|,)""(?=,|$)', "\\1\"\001\"", lines, perl = TRUE)
-  want <- utils::read.csv(text = marked, colClasses = "character", na.strings = "", check.names = FALSE,
-                          encoding = "UTF-8")
-  want[] <- lapply(want, function(x) ifelse(!is.na(x) & x == "\001", "", x))
-  want
-}
+# polars writes null as an empty field and "" as a quoted empty field: keep the two apart (helper-intl.R)
+read_oracle <- function(case) intl_read_oracle(dbl_fixture("parity", paste0(case, ".csv")))
 
 test_that("every wrapper matches sdv-py's frame on the same fixture (columns, order, types, cells, request)", {
   dtypes <- jsonlite::read_json(dbl_fixture("parity", "dtypes.json"))

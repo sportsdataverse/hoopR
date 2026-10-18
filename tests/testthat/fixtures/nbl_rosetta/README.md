@@ -2,6 +2,9 @@
 
 Provenance: sdv-py `origin/main` at `e3d232ebc9bf9e9f98225666a67707b8e554f9b7`.
 
+Captured 2026-10-12 from `prod.rosetta.nbl.com.au` (the `fetched` stamp of every body), except
+`live_full--nbl_2025.json`, fetched 2026-10-13.
+
 * `*.json`: the sdv-py captures of `prod.rosetta.nbl.com.au/get` (sdv-internal-refs `nbl-rosetta/`),
   copied byte for byte and renamed short (`<endpoint>--<org>[_<Rosetta year>].json`) so paths stay
   under R CMD check's 100-character limit. Source paths, under `tests/fixtures/nbl_rosetta/`:

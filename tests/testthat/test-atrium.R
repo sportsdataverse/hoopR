@@ -104,8 +104,7 @@ test_that("every wrapper matches sdv-py's frame on the same fixture (columns, ty
     body <- atrium_fx(spec[[2]])
     local_mocked_bindings(.intl_get = function(url, query = list(), ...) body)
     r <- do.call(spec[[1]], spec[[3]])
-    py <- utils::read.csv(testthat::test_path("fixtures", "atrium", "parity", paste0(case, ".csv")),
-                          colClasses = "character", na.strings = "", check.names = FALSE, encoding = "UTF-8")
+    py <- intl_read_oracle(testthat::test_path("fixtures", "atrium", "parity", paste0(case, ".csv")))
     types <- atrium_dtypes[atrium_dtypes$case == case, ]
     expect_s3_class(r, "hoopR_data")
     expect_identical(names(r), types$column, label = paste(case, "columns"))

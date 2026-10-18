@@ -11,6 +11,7 @@ tbf_read <- function(rel) jsonlite::read_json(tbf_fx(rel), simplifyVector = FALS
 tbf_text <- function(rel) paste(readLines(tbf_fx(rel), encoding = "UTF-8", warn = FALSE), collapse = "\n")
 tbf_json <- function(x) as.character(jsonlite::toJSON(x, auto_unbox = TRUE, null = "null", digits = NA))
 tbf_manifest <- jsonlite::read_json(tbf_fx("parity", "manifest.json"), simplifyVector = FALSE)
+tbf_dtypes <- jsonlite::read_json(tbf_fx("parity", "dtypes.json"))
 tbf_table <- function(short) if (startsWith(short, "leaders_")) "leaders" else short
 
 tbf_stamped <- function(short) {
@@ -69,8 +70,8 @@ test_that("every route matches the sdv-py frame on the same fixture (parity)", {
   expect_length(tbf_manifest, 32L)
   for (short in names(tbf_manifest)) {
     got <- hoopR:::.tbf_parse(tbf_table(short), tbf_stamped(short))
-    want <- utils::read.csv(tbf_fx("parity", paste0(short, ".csv")), colClasses = "character", na.strings = "",
-                            encoding = "UTF-8", check.names = FALSE)
+    want <- intl_read_oracle(tbf_fx("parity", paste0(short, ".csv")))
+    expect_identical(intl_r_types(got), intl_oracle_types(tbf_dtypes[[short]]), label = short) # sdv-py's dtypes
     expect_identical(names(got), names(want), info = short)
     expect_identical(nrow(got), nrow(want), info = short)
     expect_gt(nrow(got), 0L)

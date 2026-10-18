@@ -88,6 +88,10 @@ g_mismatches <- function(r, py) {
   }, numeric(1)))
 }
 
+g_dtypes <- jsonlite::read_json(g_path("parity", "dtypes.json"))
+
+test_that("the parity cases are the oracle's frames", expect_setequal(names(parity_cases), names(g_dtypes)))
+
 for (case in names(parity_cases)) {
   test_that(paste("parity with sdv-py:", case), {
     cs <- parity_cases[[case]]
@@ -101,6 +105,7 @@ for (case in names(parity_cases)) {
     expect_identical(names(df), names(schema))
     expect_identical(unname(vapply(df, function(x) class(x)[1], "")), unname(c(schema)) |>
                        sub(pattern = "^double$", replacement = "numeric"))
+    expect_identical(intl_r_types(df), intl_oracle_types(g_dtypes[[case]]), label = case) # sdv-py's dtypes
     expect_equal(nrow(df), nrow(py))
     expect_equal(g_mismatches(df, py), 0)
   })

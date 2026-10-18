@@ -124,8 +124,7 @@ test_that("every wrapper matches sdv-py's frame on the same fixture (columns, or
   for (case in names(CEBL_CASES)) {
     res <- cebl_run_case(case)
     got <- res$out
-    want <- utils::read.csv(cebl_fixture("parity", paste0(case, ".csv")), colClasses = "character",
-                            na.strings = "", check.names = FALSE, encoding = "UTF-8")
+    want <- intl_read_oracle(cebl_fixture("parity", paste0(case, ".csv")))
     expect_s3_class(got, "hoopR_data")
     expect_identical(names(got), names(want), label = case)
     expect_identical(nrow(got), nrow(want), label = case)

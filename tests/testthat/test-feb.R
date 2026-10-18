@@ -3,6 +3,7 @@
 # wrapper runs end to end: token fetch, envelope validation, HTML parsing, casts.
 
 feb_fx <- function(...) testthat::test_path("fixtures", "feb", ...)
+feb_dtypes <- jsonlite::read_json(feb_fx("parity", "dtypes.json"))
 
 feb_read <- function(name) {
   path <- feb_fx(name)
@@ -81,9 +82,9 @@ feb_page_handler <- function(page, final) {
 feb_mismatches <- function(df, name) {
   path <- feb_fx("parity", paste0(name, ".csv"))
   if (!file.exists(path)) path <- paste0(path, ".gz") # read.csv reads gzip transparently
-  csv <- utils::read.csv(path, colClasses = "character", na.strings = "",
-                         encoding = "UTF-8", check.names = FALSE)
+  csv <- intl_read_oracle(path)
   expect_identical(names(df), names(csv))
+  expect_identical(intl_r_types(df), intl_oracle_types(feb_dtypes[[name]]), label = name) # sdv-py's dtypes
   expect_identical(nrow(df), nrow(csv))
   sum(vapply(names(csv), function(col) {
     r <- df[[col]]

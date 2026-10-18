@@ -9,6 +9,10 @@ empty string is `""`, a null is `<NA>`). `test-genius.R` compares the R tibble t
 NA-vs-value as a mismatch. Regenerate by running the same wrappers on these files from a sdv-py checkout; never edit
 them by hand.
 
+`parity/dtypes.json` is sdv-py's polars dtype per column of each parity frame, from the same fixtures:
+sdv-py e3d232ebc9 (`PYTHONPATH` set to a detached worktree of it) run with `/mnt/sdv_repos/sdv-py/.venv/bin/python`
+by a generator kept outside the repo (the same wrappers, `genius_runtime._fetch` stubbed). The test asserts each R column's class against it.
+
 ---
 
 Genius Sports / FIBA LiveStats (`fibalivestats.dcd.shared.geniussports.com`, `hosted.dcd.shared.geniussports.com`,

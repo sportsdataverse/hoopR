@@ -82,7 +82,7 @@ v2_site <- function(text = V2_TEXT) bleague_handler(list(`v2_genius_contexts/504
 bleague_mismatches <- function(df, set, short) {
   path <- bleague_fx("parity", set, paste0(short, ".csv"))
   if (!file.exists(path)) path <- paste0(path, ".gz") # read.csv reads gzip transparently
-  csv <- utils::read.csv(path, colClasses = "character", na.strings = "", encoding = "UTF-8", check.names = FALSE)
+  csv <- intl_read_oracle(path)
   expect_identical(names(df), names(csv))
   expect_identical(nrow(df), nrow(csv))
   sum(vapply(names(csv), function(col) {
