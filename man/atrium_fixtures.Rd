@@ -64,7 +64,7 @@ A \code{hoopR_data} tibble, one row per \code{fixture_id}:\tabular{lll}{
    status \tab character \tab Status code of the game, e.g. CONFIRMED (final), as sent. \cr
    status_label \tab character \tab Status of the game as the site words it in its own language (e.g. Termine, Final). \cr
    start_time_utc \tab POSIXct \tab Scheduled start, naive datetime in UTC (the API sends no offset). \cr
-   start_time_local \tab POSIXct \tab Scheduled start, naive datetime in the venue's local time (timezone gives the zone; no offset sent). \cr
+   start_time_local \tab character \tab Scheduled start in the venue's local time, as the API sends it (\code{YYYY-MM-DDTHH:MM:SS}, no offset; timezone gives the zone, which varies per row). \cr
    timezone \tab character \tab IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. \cr
    times_unconfirmed \tab logical \tab True while the start time is not final. \cr
    venue \tab character \tab Name of the arena where the game is played. \cr
@@ -95,8 +95,9 @@ A \code{hoopR_data} tibble, one row per \code{fixture_id}:\tabular{lll}{
 
 Endpoint: \verb{GET https://embed-api.eui.connect.sportradar.com/v1/embed/\{website_id\}/fixtures}
 
-Scores are integers (the API sends strings); \code{start_time_utc} / \code{start_time_local}
-are naive times (UTC and the venue's \code{timezone}), held as UTC-tagged \code{POSIXct}.
+Scores are integers (the API sends strings); \code{start_time_utc} is a UTC \code{POSIXct};
+\code{start_time_local} is the venue's wall-clock time as the API sends it (character: its
+zone, \code{timezone}, varies per row, so no single \code{POSIXct} zone fits). sdv-py keeps both naive.
 }
 \details{
 \strong{Unofficial.} This is the public endpoint the Sportradar Atrium / Synergy

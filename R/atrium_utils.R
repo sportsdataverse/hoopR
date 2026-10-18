@@ -429,7 +429,7 @@
     website_id = "integer", season_id = "character", competition_id = "character", competition_name = "character",
     season_end_year = "integer", fixture_id = "character", fixture_type = "character", name = "character",
     round = "character", round_code = "character", pool = "character", series = "character", stage_code = "character",
-    status = "character", status_label = "character", start_time_utc = "POSIXct", start_time_local = "POSIXct",
+    status = "character", status_label = "character", start_time_utc = "POSIXct", start_time_local = "character",
     timezone = "character", times_unconfirmed = "logical", venue = "character", venue_id = "character",
     attendance = "integer", home_entity_id = "character", home_code = "character", home_name = "character",
     home_score = "integer", home_result_place = "integer", home_result_status = "character", home_draw = "logical",
@@ -442,14 +442,14 @@
     website_id = "integer", season_id = "character", season_name = "character", fixture_id = "character",
     series = "character", stage_name = "character", status = "character", status_label = "character",
     is_final = "logical", is_live = "logical", times_unconfirmed = "logical", start_time_utc = "POSIXct",
-    start_time_local = "POSIXct", home_entity_id = "character", home_name = "character", home_score = "integer",
+    start_time_local = "character", home_entity_id = "character", home_name = "character", home_score = "integer",
     home_result_status = "character", home_is_leading = "logical", away_entity_id = "character",
     away_name = "character", away_score = "integer", away_result_status = "character", away_is_leading = "logical"
   ),
   fixture = c(
     website_id = "integer", fixture_id = "character", season_id = "character", competition_name = "character",
     name = "character", fixture_type = "character", age_group = "character", status = "character",
-    status_label = "character", start_time_utc = "POSIXct", start_time_local = "POSIXct", timezone = "character",
+    status_label = "character", start_time_utc = "POSIXct", start_time_local = "character", timezone = "character",
     venue = "character", venue_id = "character", attendance = "integer", external_id = "character", updated = "POSIXct",
     live_data_available = "logical", live_video_available = "logical", discipline = "character", series = "character",
     number_of_periods = "integer", period_length = "integer", overtime_allowed = "logical",
@@ -527,11 +527,11 @@
   team = c(
     website_id = "integer", entity_id = "character", name = "character", color = "character", logo_url = "character",
     previous_fixture_id = "character", previous_round = "character", previous_status = "character",
-    previous_start_time_utc = "POSIXct", previous_start_time_local = "POSIXct", previous_venue = "character",
+    previous_start_time_utc = "POSIXct", previous_start_time_local = "character", previous_venue = "character",
     previous_attendance = "integer", previous_home_entity_id = "character", previous_home_name = "character",
     previous_home_score = "integer", previous_away_entity_id = "character", previous_away_name = "character",
     previous_away_score = "integer", next_fixture_id = "character", next_round = "character",
-    next_status = "character", next_start_time_utc = "POSIXct", next_start_time_local = "POSIXct",
+    next_status = "character", next_start_time_utc = "POSIXct", next_start_time_local = "character",
     next_venue = "character", next_attendance = "integer", next_home_entity_id = "character",
     next_home_name = "character", next_home_score = "integer", next_away_entity_id = "character",
     next_away_name = "character", next_away_score = "integer"
@@ -689,7 +689,7 @@
       round = .atrium_text(f[["round"]]), round_code = .atrium_text(f[["roundCode"]]), pool = .atrium_text(f[["pool"]]),
       series = .atrium_text(f[["series"]]), stage_code = .atrium_text(f[["stageCode"]]),
       status = .atrium_text(st[["value"]]), status_label = .atrium_text(st[["label"]]),
-      start_time_utc = .atrium_dt(f[["startTimeUTC"]]), start_time_local = .atrium_dt(f[["startTimeLocal"]]),
+      start_time_utc = .atrium_dt(f[["startTimeUTC"]]), start_time_local = .atrium_text(f[["startTimeLocal"]]),
       timezone = .atrium_text(f[["timezone"]]), times_unconfirmed = f[["timesUnconfirmed"]],
       venue = .atrium_text(f[["venue"]]), venue_id = .atrium_id(f[["venueId"]]), attendance = .atrium_int(f[["attendance"]])
     )
@@ -720,7 +720,7 @@
       stage_name = .atrium_text(f[["stageName"]]), status = .atrium_text(st[["value"]]),
       status_label = .atrium_text(st[["label"]]), is_final = f[["isFinal"]], is_live = f[["isLive"]],
       times_unconfirmed = f[["timesUnconfirmed"]], start_time_utc = .atrium_dt(f[["startTimeUTC"]]),
-      start_time_local = .atrium_dt(f[["date"]])
+      start_time_local = .atrium_text(f[["date"]])
     )
     for (p in c("home", "away")) {
       c <- sides[[p]]
@@ -748,7 +748,7 @@
       competition_name = .atrium_text(f[["competitionName"]]), name = .atrium_text(f[["name"]]),
       fixture_type = .atrium_text(f[["fixtureType"]]), age_group = .atrium_text(f[["ageGroup"]]),
       status = .atrium_text(f[["status"]]), status_label = .atrium_text(f[["statusLabel"]]),
-      start_time_utc = .atrium_dt(f[["startTimeUTC"]]), start_time_local = .atrium_dt(f[["startTimeLocal"]]),
+      start_time_utc = .atrium_dt(f[["startTimeUTC"]]), start_time_local = .atrium_text(f[["startTimeLocal"]]),
       timezone = .atrium_text(f[["timezone"]]), venue = .atrium_text(f[["venue"]]), venue_id = .atrium_id(f[["venueId"]]),
       attendance = .atrium_int(f[["attendance"]]), external_id = .atrium_text(f[["externalId"]]),
       updated = .atrium_dt(f[["updated"]]), live_data_available = f[["liveDataAvailable"]],
@@ -944,7 +944,7 @@
     a <- .ad(comp[["away"]])
     part <- list(
       .atrium_id(f[["fixtureId"]]), .atrium_text(f[["round"]]), .atrium_text(f[["status"]]),
-      .atrium_dt(f[["startTimeUTC"]]), .atrium_dt(f[["startTimeLocal"]]), .atrium_text(.ad(f[["venue"]])[["name"]]),
+      .atrium_dt(f[["startTimeUTC"]]), .atrium_text(f[["startTimeLocal"]]), .atrium_text(.ad(f[["venue"]])[["name"]]),
       .atrium_int(f[["attendance"]]), .atrium_id(h[["entityId"]]), .atrium_text(h[["name"]]), .atrium_int(h[["score"]]),
       .atrium_id(a[["entityId"]]), .atrium_text(a[["name"]]), .atrium_int(a[["score"]])
     )

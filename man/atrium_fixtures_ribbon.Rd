@@ -52,7 +52,7 @@ A \code{hoopR_data} tibble, one row per \code{fixture_id}:\tabular{lll}{
    is_live \tab logical \tab True while the game is being played. \cr
    times_unconfirmed \tab logical \tab True while the start time is not final. \cr
    start_time_utc \tab POSIXct \tab Scheduled start, naive datetime in UTC (the API sends no offset). \cr
-   start_time_local \tab POSIXct \tab The ribbon's fixture date: a naive local datetime (no offset; the zone is not given). \cr
+   start_time_local \tab character \tab The ribbon's fixture date as the API sends it: a local wall-clock time (no offset; the zone is not given). \cr
    home_entity_id \tab character \tab Team UUID of the home team. \cr
    home_name \tab character \tab Name of the home team. \cr
    home_score \tab integer \tab Points scored by the home team (the API sends a string; Int64 here). \cr

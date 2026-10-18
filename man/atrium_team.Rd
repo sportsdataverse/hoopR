@@ -49,7 +49,7 @@ A \code{hoopR_data} tibble, one row for the team:\tabular{lll}{
    previous_round \tab character \tab Round of the last played game as the site words it (e.g. 30). \cr
    previous_status \tab character \tab Status code of the last played game, e.g. CONFIRMED. \cr
    previous_start_time_utc \tab POSIXct \tab Start of the last played game, naive UTC datetime. \cr
-   previous_start_time_local \tab POSIXct \tab Start of the last played game, naive venue-local datetime. \cr
+   previous_start_time_local \tab character \tab Start of the last played game in venue-local time, as the API sends it (no offset). \cr
    previous_venue \tab character \tab Arena of the last played game. \cr
    previous_attendance \tab integer \tab Spectators at the last played game; null when not reported. \cr
    previous_home_entity_id \tab character \tab Team UUID of the last played game's home team. \cr
@@ -62,7 +62,7 @@ A \code{hoopR_data} tibble, one row for the team:\tabular{lll}{
    next_round \tab character \tab Round of the next scheduled game as the site words it (e.g. 30). \cr
    next_status \tab character \tab Status code of the next scheduled game, e.g. CONFIRMED. \cr
    next_start_time_utc \tab POSIXct \tab Start of the next scheduled game, naive UTC datetime. \cr
-   next_start_time_local \tab POSIXct \tab Start of the next scheduled game, naive venue-local datetime. \cr
+   next_start_time_local \tab character \tab Start of the next scheduled game in venue-local time, as the API sends it (no offset). \cr
    next_venue \tab character \tab Arena of the next scheduled game. \cr
    next_attendance \tab integer \tab Spectators at the next scheduled game; null when not reported. \cr
    next_home_entity_id \tab character \tab Team UUID of the next scheduled game's home team. \cr

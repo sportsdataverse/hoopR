@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble, one row for the game:\tabular{lll}{
    status \tab character \tab Status code of the game, e.g. CONFIRMED (final), as sent. \cr
    status_label \tab character \tab Status of the game as the site words it in its own language (e.g. Termine, Final). \cr
    start_time_utc \tab POSIXct \tab Scheduled start, naive datetime in UTC (the API sends no offset). \cr
-   start_time_local \tab POSIXct \tab Scheduled start, naive datetime in the venue's local time (timezone gives the zone; no offset sent). \cr
+   start_time_local \tab character \tab Scheduled start in the venue's local time, as the API sends it (\code{YYYY-MM-DDTHH:MM:SS}, no offset; timezone gives the zone, which varies per row). \cr
    timezone \tab character \tab IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. \cr
    venue \tab character \tab Name of the arena where the game is played. \cr
    venue_id \tab character \tab Venue UUID; joins no other route. \cr

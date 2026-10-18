@@ -9,8 +9,9 @@
 #'
 #' Endpoint: `GET https://embed-api.eui.connect.sportradar.com/v1/embed/{website_id}/fixtures`
 #'
-#' Scores are integers (the API sends strings); `start_time_utc` / `start_time_local`
-#' are naive times (UTC and the venue's `timezone`), held as UTC-tagged `POSIXct`.
+#' Scores are integers (the API sends strings); `start_time_utc` is a UTC `POSIXct`;
+#' `start_time_local` is the venue's wall-clock time as the API sends it (character: its
+#' zone, `timezone`, varies per row, so no single `POSIXct` zone fits). sdv-py keeps both naive.
 #' @param website_id (*integer* required): Site config id: which league site's widget
 #'   this is (12 LNB France, 14 LNBP Mexico, 3 NBL1 Australia, 13 El Salvador, 22
 #'   Panama, 236 Austria, 326 Montenegro). Not a league id: one site serves several
@@ -52,7 +53,7 @@
 #' | status | character | Status code of the game, e.g. CONFIRMED (final), as sent. |
 #' | status_label | character | Status of the game as the site words it in its own language (e.g. Termine, Final). |
 #' | start_time_utc | POSIXct | Scheduled start, naive datetime in UTC (the API sends no offset). |
-#' | start_time_local | POSIXct | Scheduled start, naive datetime in the venue's local time (timezone gives the zone; no offset sent). |
+#' | start_time_local | character | Scheduled start in the venue's local time, as the API sends it (`YYYY-MM-DDTHH:MM:SS`, no offset; timezone gives the zone, which varies per row). |
 #' | timezone | character | IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. |
 #' | times_unconfirmed | logical | True while the start time is not final. |
 #' | venue | character | Name of the arena where the game is played. |
@@ -184,7 +185,7 @@ atrium_seasons <- function(website_id, locale = NULL) {
 #' | is_live | logical | True while the game is being played. |
 #' | times_unconfirmed | logical | True while the start time is not final. |
 #' | start_time_utc | POSIXct | Scheduled start, naive datetime in UTC (the API sends no offset). |
-#' | start_time_local | POSIXct | The ribbon's fixture date: a naive local datetime (no offset; the zone is not given). |
+#' | start_time_local | character | The ribbon's fixture date as the API sends it: a local wall-clock time (no offset; the zone is not given). |
 #' | home_entity_id | character | Team UUID of the home team. |
 #' | home_name | character | Name of the home team. |
 #' | home_score | integer | Points scored by the home team (the API sends a string; Int64 here). |
@@ -239,7 +240,7 @@ atrium_fixtures_ribbon <- function(website_id, season = NULL, season_id = NULL, 
 #' | status | character | Status code of the game, e.g. CONFIRMED (final), as sent. |
 #' | status_label | character | Status of the game as the site words it in its own language (e.g. Termine, Final). |
 #' | start_time_utc | POSIXct | Scheduled start, naive datetime in UTC (the API sends no offset). |
-#' | start_time_local | POSIXct | Scheduled start, naive datetime in the venue's local time (timezone gives the zone; no offset sent). |
+#' | start_time_local | character | Scheduled start in the venue's local time, as the API sends it (`YYYY-MM-DDTHH:MM:SS`, no offset; timezone gives the zone, which varies per row). |
 #' | timezone | character | IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. |
 #' | venue | character | Name of the arena where the game is played. |
 #' | venue_id | character | Venue UUID; joins no other route. |
@@ -757,7 +758,7 @@ atrium_teams <- function(website_id, season = NULL, season_id = NULL, competitio
 #' | previous_round | character | Round of the last played game as the site words it (e.g. 30). |
 #' | previous_status | character | Status code of the last played game, e.g. CONFIRMED. |
 #' | previous_start_time_utc | POSIXct | Start of the last played game, naive UTC datetime. |
-#' | previous_start_time_local | POSIXct | Start of the last played game, naive venue-local datetime. |
+#' | previous_start_time_local | character | Start of the last played game in venue-local time, as the API sends it (no offset). |
 #' | previous_venue | character | Arena of the last played game. |
 #' | previous_attendance | integer | Spectators at the last played game; null when not reported. |
 #' | previous_home_entity_id | character | Team UUID of the last played game's home team. |
@@ -770,7 +771,7 @@ atrium_teams <- function(website_id, season = NULL, season_id = NULL, competitio
 #' | next_round | character | Round of the next scheduled game as the site words it (e.g. 30). |
 #' | next_status | character | Status code of the next scheduled game, e.g. CONFIRMED. |
 #' | next_start_time_utc | POSIXct | Start of the next scheduled game, naive UTC datetime. |
-#' | next_start_time_local | POSIXct | Start of the next scheduled game, naive venue-local datetime. |
+#' | next_start_time_local | character | Start of the next scheduled game in venue-local time, as the API sends it (no offset). |
 #' | next_venue | character | Arena of the next scheduled game. |
 #' | next_attendance | integer | Spectators at the next scheduled game; null when not reported. |
 #' | next_home_entity_id | character | Team UUID of the next scheduled game's home team. |

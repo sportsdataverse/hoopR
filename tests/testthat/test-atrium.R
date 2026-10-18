@@ -53,8 +53,12 @@ atrium_cases <- list(
 
 atrium_dtypes <- utils::read.csv(testthat::test_path("fixtures", "atrium", "parity", "dtypes.csv"), colClasses = "character")
 
+# venue-local wall-clock columns: naive Datetime in sdv-py, the API's string in R (the zone varies per row)
+atrium_local_col <- function(col) grepl("start_time_local$", col)
+
 # polars dtype -> the R class that carries it
-atrium_r_class <- function(dtype) {
+atrium_r_class <- function(dtype, col = "") {
+  if (atrium_local_col(col)) return("character")
   if (startsWith(dtype, "Datetime")) return("POSIXct")
   c(Int64 = "integer", Float64 = "numeric", String = "character", Boolean = "logical", Date = "Date",
     Null = "logical")[[dtype]]
@@ -73,12 +77,25 @@ atrium_mismatches <- function(r, py) {
       a <- if (inherits(x, "POSIXct")) format(x, "%Y-%m-%d %H:%M:%S", tz = "UTC") else if (is.logical(x)) {
         tolower(as.character(x))
       } else as.character(x)
+      if (atrium_local_col(col)) a <- sub("T", " ", a, fixed = TRUE) # the API's ISO 'T' vs polars' CSV space
       bad <- xor(is.na(a), is.na(b)) | (!is.na(a) & !is.na(b) & a != b)
     }
     if (any(bad)) out[[col]] <- sum(bad)
   }
   out
 }
+
+test_that("venue-local start times stay the API's strings; UTC instants are POSIXct UTC", {
+  atrium_clear_cache()
+  body <- atrium_fx(atrium_cases$fixtures_12[[2]])
+  local_mocked_bindings(.intl_get = function(url, query = list(), ...) body)
+  r <- do.call(atrium_cases$fixtures_12[[1]], atrium_cases$fixtures_12[[3]])
+  expect_type(r$start_time_local, "character")
+  expect_identical(r$start_time_local[[1]], "2026-05-16T19:00:00")
+  expect_s3_class(r$start_time_utc, "POSIXct")
+  expect_identical(attr(r$start_time_utc, "tzone"), "UTC")
+  expect_identical(format(r$start_time_utc[[1]], "%Y-%m-%d %H:%M:%S", tz = "UTC"), "2026-05-16 17:00:00")
+})
 
 test_that("every wrapper matches sdv-py's frame on the same fixture (columns, types, cells)", {
   for (case in names(atrium_cases)) {
@@ -94,7 +111,7 @@ test_that("every wrapper matches sdv-py's frame on the same fixture (columns, ty
     expect_identical(names(r), types$column, label = paste(case, "columns"))
     expect_identical(nrow(r), nrow(py), label = paste(case, "rows"))
     for (i in seq_len(nrow(types))) {
-      expect_true(inherits(r[[types$column[[i]]]], atrium_r_class(types$dtype[[i]])),
+      expect_true(inherits(r[[types$column[[i]]]], atrium_r_class(types$dtype[[i]], types$column[[i]])),
                   label = paste(case, types$column[[i]], "is", types$dtype[[i]]))
     }
     expect_identical(atrium_mismatches(r, py), integer(), label = paste(case, "mismatched cells"))
