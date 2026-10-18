@@ -28,7 +28,7 @@ local_acb <- function(api, site = function(req) acb_resp("<html></html>", ctype 
   seen$site <- 0L
   seen$slept <- numeric()
   withr::local_options(cli.width = 10000, .local_envir = env) # condition messages unwrapped for regexp
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   rm(list = ls(.acb_key), envir = .acb_key)
   withr::defer(rm(list = ls(.acb_key), envir = .acb_key), envir = env)
   withr::local_envvar(ACB_API_KEY = NA, .local_envir = env)

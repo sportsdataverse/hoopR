@@ -30,7 +30,7 @@ local_ibba <- function(handler, env = parent.frame()) {
   seen <- new.env()
   seen$reqs <- list()
   withr::local_options(cli.width = 10000, .local_envir = env) # one-line messages for the matches
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   local_mocked_bindings(.intl_sleep = function(seconds) NULL, .intl_now = function() 0,
                         .package = "hoopR", .env = env)
   httr2::local_mocked_responses(function(req) {

@@ -73,6 +73,7 @@ test_that("the season list is fetched once per site, and again after its hour", 
   lnb <- atrium_body("12__fixtures.json")
   calls <- wire(serve(lnb))
   clock <- 1000
+  local_intl_clock()
   local_mocked_bindings(.intl_now = function() clock)
   row <- .atrium_parse_seasons(lnb)[1, ]
   for (i in 1:3) atrium_season_id(12, row$season_end_year, row$competition_id)

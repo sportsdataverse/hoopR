@@ -30,7 +30,7 @@ local_sportpress <- function(routes = list(), home = SP_HOME, js = SP_JS, env = 
   seen$api <- list()
   seen$site <- 0L
   withr::local_options(cli.width = 10000, .local_envir = env) # one-line messages for the regex matches
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   rm(list = ls(.sportpress_state), envir = .sportpress_state)
   withr::defer(rm(list = ls(.sportpress_state), envir = .sportpress_state), envir = env)
   local_mocked_bindings(.intl_sleep = function(seconds) NULL, .intl_now = function() 0, .package = "hoopR", .env = env)

@@ -19,7 +19,7 @@ local_scb <- function(api, page = SCB_PAGE, env = parent.frame()) {
   seen <- new.env()
   seen$reqs <- list()
   seen$pages <- 0L
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   rm(list = ls(.scb_auth), envir = .scb_auth)
   withr::defer(rm(list = ls(.scb_auth), envir = .scb_auth), envir = env)
   local_mocked_bindings(.intl_sleep = function(seconds) NULL, .intl_now = function() 0, .env = env)

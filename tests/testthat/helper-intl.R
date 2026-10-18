@@ -13,3 +13,12 @@ skip_intl_live <- function(proxy_env = NULL) {
   }
   invisible()
 }
+
+# A fake .intl_now() leaves throttle slots in the runtime's `.intl_clock` that are far in the
+# future of the real clock; a later REAL request would sleep until them. Every test that mocks
+# the clock clears it now and again when `env` ends.
+local_intl_clock <- function(env = parent.frame()) {
+  rm(list = ls(.intl_clock), envir = .intl_clock)
+  withr::defer(rm(list = ls(.intl_clock), envir = .intl_clock), envir = env)
+  invisible()
+}

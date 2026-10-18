@@ -7,7 +7,7 @@ local_intl <- function(env = parent.frame()) {
   sleeps <- new.env()
   sleeps$s <- numeric()
   sleeps$now <- 1000
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   local_mocked_bindings(
     .intl_sleep = function(seconds) {
       sleeps$s <- c(sleeps$s, seconds)

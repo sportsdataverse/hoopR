@@ -36,7 +36,7 @@ local_kzs <- function(routes = list(), env = parent.frame()) {
   seen <- new.env()
   seen$reqs <- list()
   seen$sleeps <- numeric()
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   .kzs_clear_cache()
   withr::defer(.kzs_clear_cache(), envir = env)
   withr::local_options(list(hoopR.proxy = NULL), .local_envir = env)

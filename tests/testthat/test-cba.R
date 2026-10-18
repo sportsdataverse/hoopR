@@ -49,7 +49,7 @@ local_cba <- function(api = cba_server(), env = parent.frame()) {
   seen <- new.env()
   seen$reqs <- list()
   seen$sleeps <- numeric()
-  rm(list = ls(.intl_clock), envir = .intl_clock)
+  local_intl_clock(env)
   rm(list = ls(.cba_cache), envir = .cba_cache)
   withr::defer(rm(list = ls(.cba_cache), envir = .cba_cache), envir = env)
   withr::local_envvar(c(CBA_PROXY = NA, CBA_DIRECT = NA), .local_envir = env)

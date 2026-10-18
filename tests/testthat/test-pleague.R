@@ -69,8 +69,7 @@ local_pleague <- function(overrides = list(), env = parent.frame()) {
   log$sleeps <- numeric()
   log$now <- 1000
   # the fake clock's slots must not outlive the mock: the real clock would sleep until them
-  rm(list = ls(.intl_clock), envir = .intl_clock)
-  withr::defer(rm(list = ls(.intl_clock), envir = .intl_clock), envir = env)
+  local_intl_clock(env)
   testthat::local_mocked_bindings(
     .intl_sleep = function(seconds) {
       log$sleeps <- c(log$sleeps, seconds)
