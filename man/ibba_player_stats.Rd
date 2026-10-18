@@ -100,7 +100,7 @@ that is not final). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other IBBA:
+Other IBBA Functions:
 \code{\link[=ibba_boards]{ibba_boards()}},
 \code{\link[=ibba_boards_ex]{ibba_boards_ex()}},
 \code{\link[=ibba_box_score]{ibba_box_score()}},
@@ -118,4 +118,4 @@ Other IBBA:
 \code{\link[=ibba_team_stats]{ibba_team_stats()}},
 \code{\link[=ibba_teams]{ibba_teams()}}
 }
-\concept{IBBA}
+\concept{IBBA Functions}

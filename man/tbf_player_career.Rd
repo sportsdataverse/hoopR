@@ -78,7 +78,7 @@ Timestamps are Turkey local time (\code{Europe/Istanbul}).
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other TBF:
+Other TBF Functions:
 \code{\link[=tbf_daily_matches]{tbf_daily_matches()}},
 \code{\link[=tbf_game_header]{tbf_game_header()}},
 \code{\link[=tbf_game_leaders]{tbf_game_leaders()}},
@@ -111,4 +111,4 @@ Other TBF:
 \code{\link[=tbf_teams]{tbf_teams()}},
 \code{\link[=tbf_weeks]{tbf_weeks()}}
 }
-\concept{TBF}
+\concept{TBF Functions}

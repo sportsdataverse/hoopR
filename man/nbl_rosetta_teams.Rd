@@ -31,8 +31,8 @@ A \code{hoopR_data} tibble (one row per team record):\tabular{lll}{
    venue_state \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    venue_country \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    venue_timezone \tab character \tab IANA time zone of the venue, e.g. Australia/Sydney. \cr
-   venue_latitude \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_longitude \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   venue_latitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   venue_longitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    venue_capacity \tab integer \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    conference_name \tab character \tab Name of the NBL1 conference the team plays in (e.g. North, South); null outside NBL1. \cr
    division_name \tab character \tab Division name (NBL1 conference + gender) \cr
@@ -69,7 +69,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -92,4 +92,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats]{nbl_rosetta_team_stats()}},
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

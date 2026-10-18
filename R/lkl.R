@@ -67,7 +67,7 @@
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -124,7 +124,7 @@ lkl_game_info <- function(game_id) {
 #' ```r
 #'  lkl_game_players(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_game_players <- function(game_id) {
   .lkl_wrap("game_players", game_id, type = "LKL Game Players", call = rlang::current_env())
@@ -205,7 +205,7 @@ lkl_game_players <- function(game_id) {
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -291,7 +291,7 @@ lkl_player_box <- function(game_id) {
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -343,7 +343,7 @@ lkl_team_box <- function(game_id) {
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -409,7 +409,7 @@ lkl_period_scores <- function(game_id) {
 #' ```r
 #'  lkl_summary(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_summary <- function(game_id) {
   .lkl_wrap("summary", game_id, type = "LKL Summary", call = rlang::current_env())
@@ -459,7 +459,7 @@ lkl_summary <- function(game_id) {
 #' ```r
 #'  lkl_game_score(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_game_score <- function(game_id) {
   .lkl_wrap("game_score", game_id, type = "LKL Game Score", call = rlang::current_env())
@@ -518,7 +518,7 @@ lkl_game_score <- function(game_id) {
 #' ```r
 #'  lkl_game_stats(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_game_stats <- function(game_id) {
   .lkl_wrap("game_stats", game_id, type = "LKL Game Stats", call = rlang::current_env())
@@ -573,7 +573,7 @@ lkl_game_stats <- function(game_id) {
 #' ```r
 #'  lkl_lead_chart(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_lead_chart <- function(game_id) {
   .lkl_wrap("lead_chart", game_id, type = "LKL Lead Chart", call = rlang::current_env())
@@ -631,7 +631,7 @@ lkl_lead_chart <- function(game_id) {
 #' ```r
 #'  lkl_leaders(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_leaders <- function(game_id) {
   .lkl_wrap("leaders", game_id, type = "LKL Leaders", call = rlang::current_env())
@@ -697,7 +697,7 @@ lkl_leaders <- function(game_id) {
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -766,7 +766,7 @@ lkl_pbp <- function(game_id) {
 #' ```r
 #'  lkl_shots(game_id = 11446)
 #' ```
-#' @family LKL
+#' @family LKL Functions
 #' @export
 lkl_shots <- function(game_id) {
   .lkl_wrap("shots", game_id, type = "LKL Shots", call = rlang::current_env())
@@ -829,7 +829,7 @@ lkl_shots <- function(game_id) {
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -894,7 +894,7 @@ lkl_results <- function(season) {
 #' `hoopR_asset_fetch` when the fetch failed or the answer is not the one asked for (an unfinished game, a body or page
 #' for another game or season, an error or changed body, a truncated results list). All inherit `hoopR_error`. Dates
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
-#' @family LKL
+#' @family LKL Functions
 #' @export
 #' @examples
 #' \donttest{

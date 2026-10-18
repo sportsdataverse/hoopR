@@ -38,16 +38,16 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    points \tab integer \tab Points in the game. \cr
    field_goals_made \tab integer \tab Field goals made in the game. \cr
    field_goals_attempted \tab integer \tab Field goals attempted in the game. \cr
-   field_goals_percentage \tab numeric \tab Field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
+   field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
    two_points_made \tab integer \tab Two-point field goals made in the game. \cr
    two_points_attempted \tab integer \tab Two-point field goals attempted in the game. \cr
-   two_points_percentage \tab numeric \tab Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
+   two_points_percentage \tab double \tab Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
    three_points_made \tab integer \tab Three-point field goals made in the game. \cr
    three_points_attempted \tab integer \tab Three-point field goals attempted in the game. \cr
-   three_points_percentage \tab numeric \tab Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
+   three_points_percentage \tab double \tab Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
    free_throws_made \tab integer \tab Free throws made in the game. \cr
    free_throws_attempted \tab integer \tab Free throws attempted in the game. \cr
-   free_throws_percentage \tab numeric \tab Free-throw percentage, 0-100 (in the game; full float precision in averages). \cr
+   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (in the game; full float precision in averages). \cr
    offensive_rebounds \tab integer \tab Offensive rebounds in the game. \cr
    defensive_rebounds \tab integer \tab Defensive rebounds in the game. \cr
    rebounds \tab integer \tab Rebounds in the game. \cr

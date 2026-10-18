@@ -14,49 +14,49 @@ cba_game_team_four(schedule_id)
 A \code{hoopR_data} tibble: One row per team; a team-season table of the previous season, not game data. An empty
 valid answer is a zero-row tibble with these columns, in this order (sdv-py \code{cba_game_team_four}):\tabular{lll}{
    col_name \tab type \tab description \cr
-   effective_hit_rate \tab numeric \tab effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
+   effective_hit_rate \tab double \tab effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
    effective_hit_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
-   effective_hit_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
-   free_throw_rate \tab numeric \tab free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
+   effective_hit_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
+   free_throw_rate \tab double \tab free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
    free_throw_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
-   free_throw_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
-   loss_average \tab numeric \tab League-average losses; 0.0 in every sample. \cr
+   free_throw_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
+   loss_average \tab double \tab League-average losses; 0.0 in every sample. \cr
    loss_num \tab integer \tab Losses of the team in the table's season. \cr
-   offensive_rebound_rate \tab numeric \tab offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
+   offensive_rebound_rate \tab double \tab offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
    offensive_rebound_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
-   offensive_rebound_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
-   other_effective_hit_rate \tab numeric \tab The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
+   offensive_rebound_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
+   other_effective_hit_rate \tab double \tab The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
    other_effective_hit_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
-   other_effective_hit_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
-   other_free_throw_rate \tab numeric \tab The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
+   other_effective_hit_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
+   other_free_throw_rate \tab double \tab The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
    other_free_throw_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
-   other_free_throw_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
-   other_offensive_rebound_rate \tab numeric \tab The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
+   other_free_throw_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): free-throw rate: free throws made relative to field-goal attempts, in percent as a number. \cr
+   other_offensive_rebound_rate \tab double \tab The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
    other_offensive_rebound_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
-   other_offensive_rebound_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
-   other_points_hundred_round \tab numeric \tab points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. \cr
-   other_points_hundred_round_average \tab numeric \tab League average of the metric. Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. \cr
-   other_points_hundred_round_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. \cr
-   other_turnovers_rate \tab numeric \tab The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
+   other_offensive_rebound_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): offensive-rebound rate: the team's offensive rebounds as a share of all offensive-rebound chances, in percent as a number (site definition). \cr
+   other_points_hundred_round \tab double \tab points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. \cr
+   other_points_hundred_round_average \tab double \tab League average of the metric. Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. \cr
+   other_points_hundred_round_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points allowed per 100 possessions (defensive rating): the opponents' points per 100 possessions. \cr
+   other_turnovers_rate \tab double \tab The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
    other_turnovers_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
-   other_turnovers_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
-   points_hundred_round \tab numeric \tab points scored per 100 possessions (offensive rating). \cr
-   points_hundred_round_average \tab numeric \tab League average of the metric. Metric: points scored per 100 possessions (offensive rating). \cr
-   points_hundred_round_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points scored per 100 possessions (offensive rating). \cr
-   rhythm \tab numeric \tab pace: possessions per 48 minutes. \cr
-   rhythm_num \tab numeric \tab Pace; same value as rhythm. A number (the API sends it as display text). \cr
-   rhythm_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: pace: possessions per 48 minutes. \cr
+   other_turnovers_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: The same measure for the team's OPPONENTS (the site's 'other' block): turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
+   points_hundred_round \tab double \tab points scored per 100 possessions (offensive rating). \cr
+   points_hundred_round_average \tab double \tab League average of the metric. Metric: points scored per 100 possessions (offensive rating). \cr
+   points_hundred_round_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: points scored per 100 possessions (offensive rating). \cr
+   rhythm \tab double \tab pace: possessions per 48 minutes. \cr
+   rhythm_num \tab double \tab Pace; same value as rhythm. A number (the API sends it as display text). \cr
+   rhythm_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: pace: possessions per 48 minutes. \cr
    schedule_season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. The season of this table: one before the game's season (2025 game -> 2024). \cr
    season \tab integer \tab Season of the table ('2024' = the START year of 2024-25; sdv END year = value + 1); equals scheduleSeason. NOT the season of the game: the table is the PREVIOUS season's. An integer (the API sends it as digit text). \cr
    team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
    team_name \tab character \tab Team name (Chinese) in the table's season (can differ from the game's: in the 2016 table of a 2017 Sichuan game). \cr
-   turnovers_rate \tab numeric \tab turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
+   turnovers_rate \tab double \tab turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
    turnovers_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
-   turnovers_rate_rank \tab numeric \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
+   turnovers_rate_rank \tab double \tab Rank among the teams of that season (integer-valued number; direction per metric undocumented). Metric: turnover rate: the share of the team's possessions ending in a turnover, in percent as a number (site definition). \cr
    win_num \tab integer \tab Wins of the team in the table's season (regular season). \cr
-   win_points_hundred_round \tab numeric \tab net points per 100 possessions. \cr
-   win_points_hundred_round_average \tab numeric \tab League average of the metric. Metric: net points per 100 possessions. \cr
-   wine_average \tab numeric \tab League-average wins (field name sic); 0.0 in every sample. \cr
+   win_points_hundred_round \tab double \tab net points per 100 possessions. \cr
+   win_points_hundred_round_average \tab double \tab League average of the metric. Metric: net points per 100 possessions. \cr
+   wine_average \tab double \tab League-average wins (field name sic); 0.0 in every sample. \cr
 }
 }
 \description{

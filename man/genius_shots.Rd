@@ -27,8 +27,8 @@ an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular
    action_type \tab character \tab Shot value: 2pt or 3pt \cr
    sub_type \tab character \tab Shot type (layup, drivinglayup, jumpshot, pullupjumpshot, dunk, ...) \cr
    result \tab integer \tab Shot result: 1 = made, 0 = missed. \cr
-   x \tab numeric \tab Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified \cr
-   y \tab numeric \tab Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified \cr
+   x \tab double \tab Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified \cr
+   y \tab double \tab Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified \cr
    player \tab character \tab Shooter's display name as the org enters it, in the local script when it uses one. \cr
    shirt_number \tab character \tab Shooter's shirt number (string) \cr
 }
@@ -72,7 +72,7 @@ or ORG.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other Genius:
+Other Genius Functions:
 \code{\link{bal_competition}},
 \code{\link{esake_competition}},
 \code{\link[=genius_competition_games]{genius_competition_games()}},
@@ -92,4 +92,4 @@ Other Genius:
 \code{\link{nznbl_competition}},
 \code{\link{slb_competition}}
 }
-\concept{Genius}
+\concept{Genius Functions}

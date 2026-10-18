@@ -37,17 +37,17 @@ A \code{hoopR_data} tibble (one row per game):\tabular{lll}{
    personal_fouls \tab integer \tab Personal fouls in the game. \cr
    three_points_attempted \tab integer \tab Three-point field goals attempted in the game. \cr
    three_points_made \tab integer \tab Three-point field goals made in the game. \cr
-   three_points_percentage \tab numeric \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
+   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
    two_points_attempted \tab integer \tab Two-point field goals attempted in the game. \cr
    two_points_made \tab integer \tab Two-point field goals made in the game. \cr
-   two_points_percentage \tab numeric \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
+   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
    field_goals_attempted \tab integer \tab Field goals attempted in the game. \cr
    field_goals_made \tab integer \tab Field goals made in the game. \cr
-   field_goals_percentage \tab numeric \tab Field goals made / attempted, a 0-1 FRACTION. \cr
+   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
    free_throws_attempted \tab integer \tab Free throws attempted in the game. \cr
    free_throws_made \tab integer \tab Free throws made in the game. \cr
-   free_throws_percentage \tab numeric \tab Free throws made / attempted, a 0-1 FRACTION. \cr
-   minutes \tab numeric \tab Minutes played, decimal minutes. \cr
+   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
+   minutes \tab double \tab Minutes played, decimal minutes. \cr
    participated \tab logical \tab Player took part in the game. \cr
    match_id \tab character \tab DataCore fixture id of the match (UUID v1): the \code{{match_id}} route key and fixtureId in play-by-play. Join on it. \cr
    rosetta_match_id \tab character \tab Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. \cr
@@ -123,7 +123,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -146,4 +146,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

@@ -33,7 +33,7 @@ answer is a zero-row tibble with these columns, in this order (sdv-py \code{cba_
    schedule_time \tab character \tab Tip-off as 'YYYY-MM-DD HH:MM:SS' (China local time, no zone). \cr
    schedule_type_name \tab character \tab Round label (Chinese), e.g. (Chinese text)1regular season, round 1. \cr
    season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. \cr
-   seconds \tab numeric \tab Unobserved: null in every sample (the clock seconds of a live game, by its name). Typed Float64 like the family's other routes. \cr
+   seconds \tab double \tab Unobserved: null in every sample (the clock seconds of a live game, by its name). Typed Float64 like the family's other routes. \cr
    status \tab integer \tab Game status: 4 = finished (every sampled game). 1 = not started and 2 = in progress are inferred from the site's polling logic; 3 is unobserved. See the code table. \cr
    visiting_team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
    visiting_team_logo \tab character \tab Absolute URL of the visiting team logo (300x300 png). \cr

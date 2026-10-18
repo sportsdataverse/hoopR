@@ -73,7 +73,7 @@
 #' | referee3 | character | Third referee's name when the feed lists one; null otherwise. |
 #' | commissioner | character | Commissioner (game supervisor) name when the feed lists one; null otherwise. |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -156,16 +156,16 @@ genius_game <- function(match_id, return_parsed = TRUE) {
 #' | seconds_played | integer | Seconds played parsed from the printed mm:ss text as minutes * 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. |
 #' | field_goals_made | integer | Team total: field goals made |
 #' | field_goals_attempted | integer | Team total: field goals attempted |
-#' | field_goals_percentage | numeric | Team total: field-goal percentage, 0-100, rounded to an integer by the feed |
+#' | field_goals_percentage | double | Team total: field-goal percentage, 0-100, rounded to an integer by the feed |
 #' | three_pointers_made | integer | Team total: three-pointers made |
 #' | three_pointers_attempted | integer | Team total: three-pointers attempted |
-#' | three_pointers_percentage | numeric | Team total: three-point percentage, 0-100, rounded to an integer |
+#' | three_pointers_percentage | double | Team total: three-point percentage, 0-100, rounded to an integer |
 #' | two_pointers_made | integer | Team total: two-pointers made |
 #' | two_pointers_attempted | integer | Team total: two-pointers attempted |
-#' | two_pointers_percentage | numeric | Team total: two-point percentage, 0-100, rounded to an integer |
+#' | two_pointers_percentage | double | Team total: two-point percentage, 0-100, rounded to an integer |
 #' | free_throws_made | integer | Team total: free throws made |
 #' | free_throws_attempted | integer | Team total: free throws attempted |
-#' | free_throws_percentage | numeric | Team total: free-throw percentage, 0-100, rounded to an integer |
+#' | free_throws_percentage | double | Team total: free-throw percentage, 0-100, rounded to an integer |
 #' | rebounds_defensive | integer | Team total: defensive rebounds |
 #' | rebounds_offensive | integer | Team total: offensive rebounds |
 #' | rebounds_total | integer | Team total: total rebounds |
@@ -183,8 +183,8 @@ genius_game <- function(match_id, return_parsed = TRUE) {
 #' | points_in_the_paint | integer | Team total: points in the paint |
 #' | eff_1 | integer | Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
 #' | eff_2 | integer | Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Team tot_eff_2 is 2 in every 2016+ sample (a constant, not a stat). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
-#' | eff_3 | numeric | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
-#' | eff_4 | numeric | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
+#' | eff_3 | double | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
+#' | eff_4 | double | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
 #' | eff_5 | integer | Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
 #' | eff_6 | integer | Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
 #' | eff_7 | integer | Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
@@ -193,7 +193,7 @@ genius_game <- function(match_id, return_parsed = TRUE) {
 #' | biggest_scoring_run | integer | Team total: biggest unanswered scoring run, points |
 #' | lead_changes | integer | Team total: lead changes in the game (same value on both teams) |
 #' | times_scores_level | integer | Team total: times the score was tied (same value on both teams) |
-#' | time_leading | numeric | Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) |
+#' | time_leading | double | Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) |
 #' | fouls_team | integer | Team total: team (bench) fouls |
 #' | fouls_total | integer | Team total: all fouls committed (personal + technical + team bench) |
 #' | rebounds_team | integer | Team total: team rebounds (credited to no player) |
@@ -201,7 +201,7 @@ genius_game <- function(match_id, return_parsed = TRUE) {
 #' | rebounds_team_offensive | integer | Team total: team offensive rebounds |
 #' | turnovers_team | integer | Team total: team turnovers (credited to no player, e.g. shot clock) |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 genius_team_box <- function(match_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -273,16 +273,16 @@ genius_team_box <- function(match_id, return_parsed = TRUE) {
 #' | seconds_played | integer | Seconds played parsed from the printed mm:ss text as minutes * 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. |
 #' | field_goals_made | integer | Field goals the player made in the game (two- and three-pointers together; a count). |
 #' | field_goals_attempted | integer | Field goals the player attempted in the game (two- and three-pointers together; a count). |
-#' | field_goals_percentage | numeric | Field-goal percentage, 0-100, rounded to an integer by the feed |
+#' | field_goals_percentage | double | Field-goal percentage, 0-100, rounded to an integer by the feed |
 #' | three_pointers_made | integer | Three-pointers made |
 #' | three_pointers_attempted | integer | Three-pointers attempted |
-#' | three_pointers_percentage | numeric | Three-point percentage, 0-100, rounded to an integer |
+#' | three_pointers_percentage | double | Three-point percentage, 0-100, rounded to an integer |
 #' | two_pointers_made | integer | Two-pointers made |
 #' | two_pointers_attempted | integer | Two-pointers attempted |
-#' | two_pointers_percentage | numeric | Two-point percentage, 0-100, rounded to an integer |
+#' | two_pointers_percentage | double | Two-point percentage, 0-100, rounded to an integer |
 #' | free_throws_made | integer | Free throws the player made in the game (a count). |
 #' | free_throws_attempted | integer | Free throws the player attempted in the game (a count). |
-#' | free_throws_percentage | numeric | Free-throw percentage, 0-100, rounded to an integer |
+#' | free_throws_percentage | double | Free-throw percentage, 0-100, rounded to an integer |
 #' | rebounds_defensive | integer | Defensive rebounds |
 #' | rebounds_offensive | integer | Offensive rebounds |
 #' | rebounds_total | integer | Total rebounds (offensive plus defensive) the player collected in the game. |
@@ -301,13 +301,13 @@ genius_team_box <- function(match_id, return_parsed = TRUE) {
 #' | plus_minus_points | integer | Plus/minus: team point margin while the player was on court |
 #' | eff_1 | integer | Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
 #' | eff_2 | integer | Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-#' | eff_3 | numeric | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-#' | eff_4 | numeric | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
+#' | eff_3 | double | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
+#' | eff_4 | double | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
 #' | eff_5 | integer | Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
 #' | eff_6 | integer | Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
 #' | eff_7 | integer | Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site. Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -391,7 +391,7 @@ genius_player_box <- function(match_id, return_parsed = TRUE) {
 #' | score_2 | integer | Team 2 score after the action, always an integer (the feed sends a string in most games). |
 #' | lead | integer | Score margin after the action, team 1 minus team 2 (negative when team 2 leads) |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -462,12 +462,12 @@ genius_pbp <- function(match_id, return_parsed = TRUE) {
 #' | action_type | character | Shot value: 2pt or 3pt |
 #' | sub_type | character | Shot type (layup, drivinglayup, jumpshot, pullupjumpshot, dunk, ...) |
 #' | result | integer | Shot result: 1 = made, 0 = missed. |
-#' | x | numeric | Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified |
-#' | y | numeric | Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified |
+#' | x | double | Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified |
+#' | y | double | Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified |
 #' | player | character | Shooter's display name as the org enters it, in the local script when it uses one. |
 #' | shirt_number | character | Shooter's shirt number (string) |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 genius_shots <- function(match_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -542,7 +542,7 @@ genius_shots <- function(match_id, return_parsed = TRUE) {
 #' | away_code | character | Away team short code, in the competition's own script when the org enters one. |
 #' | away_score | integer | Away points: a string on most rows, an integer on some ('' before tip-off); cast it |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -612,7 +612,7 @@ genius_competition_games <- function(comp_id, return_parsed = TRUE) {
 #' | og_description | character | The page's og:description: `<ORG> , <competition>, Check out the full statistics here` |
 #' | org | character | ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 genius_match_competition <- function(org, match_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -674,7 +674,7 @@ genius_match_competition <- function(org, match_id, return_parsed = TRUE) {
 #' | season_rule | character | Which rule produced season: 'label span', 'genius year + 1 (split)', 'genius year (calendar)', 'label year (calendar)' or 'unknown'. |
 #' | selected | logical | True for the competition the hosted chooser pre-selects (the org's default, not always the newest). |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -751,7 +751,7 @@ genius_competitions <- function(org, return_parsed = TRUE) {
 #' | away_team_code | character | Away team code (local script possible) |
 #' | away_score | integer | Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -832,7 +832,7 @@ genius_schedule <- function(org, comp_id, round_number = -1, return_parsed = TRU
 #' | away_team_code | character | Away team code (local script possible) |
 #' | away_score | integer | Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 genius_schedule_embed <- function(org, comp_id, round_number = -1, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -902,7 +902,7 @@ genius_schedule_embed <- function(org, comp_id, round_number = -1, return_parsed
 #' | away_team_code | character | Away team short code from the widget, in the local script when the org enters one. |
 #' | away_score | integer | Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 genius_widget_games <- function(widget_key, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -935,7 +935,7 @@ genius_widget_games <- function(widget_key, return_parsed = TRUE) {
 #' | game_key | integer or character | Provider's own game key: the BNXT, CEBL, TBF or KZS integer game id, or the Sportality platform game uuid (a string) for source sportality. |
 #' | genius_match_id | integer | Genius Sports LiveStats match id of the same game (the match_id every genius_* wrapper takes). |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -974,7 +974,7 @@ genius_game_crosswalk <- function(df, source) {
 #' | team_uuid | character | Sportality platform team uuid. |
 #' | genius_team_id | integer | Genius team id of the same team (home_team_id / away_team_id of the genius schedule frames). |
 #'
-#' @family Genius
+#' @family Genius Functions
 #' @export
 #' @examples
 #' \donttest{

@@ -100,7 +100,7 @@ game, season or league, an unfinished game, a helper that does not belong to the
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other ABA:
+Other ABA Functions:
 \code{\link[=aba_box_players]{aba_box_players()}},
 \code{\link[=aba_box_teams]{aba_box_teams()}},
 \code{\link[=aba_calendar]{aba_calendar()}},
@@ -113,4 +113,4 @@ Other ABA:
 \code{\link[=aba_shots]{aba_shots()}},
 \code{\link[=aba_standings]{aba_standings()}}
 }
-\concept{ABA}
+\concept{ABA Functions}

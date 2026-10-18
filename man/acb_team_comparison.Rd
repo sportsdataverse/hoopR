@@ -19,8 +19,8 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
    quarter \tab integer \tab Period of the bar: 0 = the whole game, 1-4 quarters. \cr
    stat \tab character \tab Compared statistic (free_throws, two_pointers, three_pointers, field_goals, rebounds, assists, steals, turnovers, personal_fouls, time_outs, points_off_turnover, paint_points, second_chance_points, fast_break_points, bench_points ...). \cr
-   home_value \tab numeric \tab Home value of the bar: a percentage 0-100 for the shooting statistics (the API's \code{'79,17\%'} decimal comma parsed), a count otherwise. \cr
-   away_value \tab numeric \tab Away value of the bar, same units as home_value. \cr
+   home_value \tab double \tab Home value of the bar: a percentage 0-100 for the shooting statistics (the API's \code{'79,17\%'} decimal comma parsed), a count otherwise. \cr
+   away_value \tab double \tab Away value of the bar, same units as home_value. \cr
    home_made \tab integer \tab Home shots made, from the 'made/attempted' subtitle; null for the non-shooting statistics. \cr
    home_attempted \tab integer \tab Home shots attempted, from the subtitle; null for the non-shooting statistics. \cr
    away_made \tab integer \tab Away shots made, from the subtitle; null for the non-shooting statistics. \cr

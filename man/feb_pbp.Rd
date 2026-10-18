@@ -26,8 +26,8 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    text \tab character \tab Play description in Spanish: '(TEAM) I. SURNAME: ACTION (running count)'; 2020-21 games use older wording and are text only. \cr
    score_home \tab integer \tab Home score AFTER the play; filled on scoring plays only. \cr
    score_away \tab integer \tab Away score AFTER the play; filled on scoring plays only. \cr
-   x \tab numeric \tab Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. \cr
-   y \tab numeric \tab Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. \cr
+   x \tab double \tab Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. \cr
+   y \tab double \tab Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. \cr
    log_param1 \tab character \tab Action parameter 1 (string). Team and player actions: a pseudo-GUID '00000000-0000-000\{side\}-0000-\{game id, 12 digits\}' (side 1 home, 2 away); period lines: the period number. \cr
    log_param2 \tab character \tab Action parameter 2 (string). The actor's licence id on shoot, fthrow, foul, rebound, assist, recovery and blockshot lines; period lines: '0' start, '1' end; lose: '0' or '1' (meaning unverified). \cr
    log_param3 \tab character \tab Action parameter 3 (string). fthrow: '1' made, '0' missed; subst: the outgoing player's licence; foul: a foul-type code. Others unverified. \cr
@@ -98,7 +98,7 @@ for another group or season, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other FEB:
+Other FEB Functions:
 \code{\link[=feb_game_info]{feb_game_info()}},
 \code{\link[=feb_leaders]{feb_leaders()}},
 \code{\link[=feb_overview]{feb_overview()}},
@@ -110,4 +110,4 @@ Other FEB:
 \code{\link[=feb_standings]{feb_standings()}},
 \code{\link[=feb_team_stats]{feb_team_stats()}}
 }
-\concept{FEB}
+\concept{FEB Functions}

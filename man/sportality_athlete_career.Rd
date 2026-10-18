@@ -18,22 +18,22 @@ API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    g \tab integer \tab Games played in the ssgt. \cr
    gps \tab integer \tab Games started (0 on every row seen). \cr
-   mpg \tab numeric \tab Minutes per game, 'M.m' string. \cr
-   ppg \tab numeric \tab Points per game (a number or. \cr
-   drpg \tab numeric \tab Defensive rebounds per game. \cr
-   orpg \tab numeric \tab Offensive rebounds per game. \cr
-   rpg \tab numeric \tab Rebounds per game. \cr
-   apg \tab numeric \tab Assists per game. \cr
-   stpg \tab numeric \tab Steals per game. \cr
-   blkpg \tab numeric \tab Blocks per game. \cr
-   pfpg \tab numeric \tab Personal fouls per game. \cr
-   2_p_perc \tab numeric \tab Two-point percentage, 0-100. \cr
+   mpg \tab double \tab Minutes per game, 'M.m' string. \cr
+   ppg \tab double \tab Points per game (a number or. \cr
+   drpg \tab double \tab Defensive rebounds per game. \cr
+   orpg \tab double \tab Offensive rebounds per game. \cr
+   rpg \tab double \tab Rebounds per game. \cr
+   apg \tab double \tab Assists per game. \cr
+   stpg \tab double \tab Steals per game. \cr
+   blkpg \tab double \tab Blocks per game. \cr
+   pfpg \tab double \tab Personal fouls per game. \cr
+   2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
    3_pm \tab integer \tab Three-pointers made (total). \cr
-   3_pa \tab numeric \tab Three-pointers attempted (total, or a percentage string in the checked rows; unverified). \cr
-   3_p_perc \tab numeric \tab Three-point percentage, 0-100. \cr
-   ft_perc \tab numeric \tab Free-throw percentage, 0-100. \cr
-   topg \tab numeric \tab Turnovers per game. \cr
-   plus_minus_pg \tab numeric \tab Plus/minus per game. \cr
+   3_pa \tab double \tab Three-pointers attempted (total, or a percentage string in the checked rows; unverified). \cr
+   3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
+   ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
+   topg \tab double \tab Turnovers per game. \cr
+   plus_minus_pg \tab double \tab Plus/minus per game. \cr
    info_uuid \tab character \tab Athlete uuid on player tables, team uuid on team tables (platform key space). \cr
    info_full_name \tab character \tab Full display name of the player. \cr
    info_first_name \tab character \tab Given (first) name(s) of the player. \cr

@@ -147,7 +147,7 @@
     paste0(" ", prefix, "_seasons()"),
     paste0(" ", prefix, "_schedule()"),
     "```",
-    "@family Atrium"
+    "@family Atrium Functions"
   )
 }
 

@@ -37,7 +37,7 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    played \tab integer \tab Games played (standings row) \cr
    wins \tab integer \tab Wins (standings row) \cr
    losses \tab integer \tab Losses (the key is misspelt by the API) \cr
-   win_pct \tab numeric \tab Win percentage, 0-100. \cr
+   win_pct \tab double \tab Win percentage, 0-100. \cr
    points_for \tab integer \tab Points scored (standings row) \cr
    points_against \tab integer \tab Points allowed (standings row) \cr
    plus_minus \tab integer \tab Point differential (points for minus points against). \cr

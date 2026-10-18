@@ -45,8 +45,8 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    away_score \tab integer \tab Away running score after the event, split from score. \cr
    period_end \tab logical \tab True on the closing row of a period (ActionCD1 83). \cr
    game_end \tab logical \tab True on the game-end row on v1 and the embed; false on EVERY v2 row, the game-end row (81) included, so use action instead. \cr
-   x \tab numeric \tab Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. \cr
-   y \tab numeric \tab Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. \cr
+   x \tab double \tab Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. \cr
+   y \tab double \tab Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. \cr
    area_code \tab integer \tab Shot-zone code 1-13 read from the site's shot-chart SVG: 1 restricted area, 2 rest of the paint, 3 / 7 baseline mid-range, 4 / 6 wing mid-range, 5 top-of-the-key mid-range, 8 / 12 corner 3, 9 / 11 wing 3, 10 top 3, 13 deep band. Of each pair the first is the side far along the baseline. Also set on turnover and foul rows; 2022-23 onward. \cr
    area \tab character \tab English zone slug for area_code (restricted_area, paint, baseline_mid_range, wing_mid_range, top_of_key_mid_range, corner_3, wing_3, top_3, deep_3); mirrored codes share a slug. \cr
    success \tab logical \tab Outcome flag: true = made / successful, false = missed; true on non-shot rows. v2 from 2022-23 only. \cr
@@ -120,7 +120,7 @@ schedule list, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 \code{\link[=bleague_game_info]{bleague_game_info()}},
 \code{\link[=bleague_leaders]{bleague_leaders()}},
 \code{\link[=bleague_period_scores]{bleague_period_scores()}},
@@ -135,4 +135,4 @@ Other B.LEAGUE:
 \code{\link[=bleague_team_box]{bleague_team_box()}},
 \code{\link[=bleague_team_summary]{bleague_team_summary()}}
 }
-\concept{B.LEAGUE}
+\concept{B.LEAGUE Functions}

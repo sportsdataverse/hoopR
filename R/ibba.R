@@ -58,7 +58,7 @@
 #' | active_board_id | integer | Board id the site treats as the active competition (17 = final series in 2025-26, 5 = league in 2004-05); meaning inferred. |
 #' | next_round | integer | Next round (game number) to be played; meaning inferred. |
 #' | total_rounds | integer | Rounds in the regular season (32 in 2025-26, 22 in 2004-05); meaning inferred. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_configuration <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -84,7 +84,7 @@ ibba_configuration <- function(season) {
 #' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
 #' | board_title_he | character | Sponsor-branded competition name in Hebrew (the Hebrew for 'Winner League'). |
 #' | category_he | character | Competition format in Hebrew: the Hebrew words for table, knockout or series. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -114,7 +114,7 @@ ibba_boards <- function(season) {
 #' |:---|:---|:---|
 #' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
 #' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_boards_ex <- function(team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -163,7 +163,7 @@ ibba_boards_ex <- function(team_uid, season) {
 #' | ticket_url | character | Ticket-sales URL; null when none. |
 #' | subscribe_url | character | Season-ticket subscription URL; null when none. |
 #' | coaches_he | character | Coaching staff as one Hebrew text ('head coach: ..., assistant coach: ...', in Hebrew). |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -226,7 +226,7 @@ ibba_teams <- function(season, board_id = 5) {
 #' | youtube_url | character | Club YouTube channel URL; null when none. |
 #' | subscribe_url | character | Season-ticket subscription URL; null when none. |
 #' | diary_url | character | Calendar-subscription (add-to-diary) URL of the club's fixtures. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_team <- function(team_id, team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -265,7 +265,7 @@ ibba_team <- function(team_id, team_uid, season) {
 #' | position_he | character | Position in Hebrew. |
 #' | position | character | Position code: PG, G, G-F, F, F-C or C. |
 #' | birth_date | Date | Date of birth (public player bio); null when not published. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -301,7 +301,7 @@ ibba_players <- function(team_id, team_uid, season) {
 #' | is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
 #' | is_local | logical | True for an Israeli (local) player; the isr_ leader categories count only these. |
 #' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_player <- function(player_id, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -336,7 +336,7 @@ ibba_player <- function(player_id, season) {
 #' | is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
 #' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
 #' | sort_order | integer | Display order of the coach within the staff list (mOrder). |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_coaches <- function(team_id, team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -392,7 +392,7 @@ ibba_coaches <- function(team_id, team_uid, season) {
 #' | plus_minus | integer | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). |
 #' | dunks | integer | Dunks made by the player or team. |
 #' | row_type | character | Kind of box line: player, team (actions credited to the team: team rebounds and turnovers) or total (the team's TOTAL line, equal to players plus team lines). |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -452,7 +452,7 @@ ibba_box_score <- function(game_id, season) {
 #' | val | double | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. Season total, or the per-game average when is_averages is true. |
 #' | plus_minus | double | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). Season total, or the per-game average when is_averages is true. |
 #' | dunks | double | Dunks made by the player or team. Season total, or the per-game average when is_averages is true. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -477,7 +477,7 @@ ibba_player_stats <- function(player_id, season, is_averages = FALSE, is_playoff
 #' |:---|:---|:---|
 #' | stat_type | character | Stat category code to pass to ibba_leaders as stat_type (bracketed codes such as '\[OR\]' are literal). |
 #' | stat_name_he | character | Stat category name in Hebrew. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_stats_types <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -511,7 +511,7 @@ ibba_stats_types <- function() {
 #' | player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
 #' | player_name_he | character | Player name in Hebrew, HTML-unescaped. |
 #' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -570,7 +570,7 @@ ibba_leaders <- function(stat_type, season, team_id = 0) {
 #' | val | double | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. Season total, or the per-game average when is_averages is true. |
 #' | plus_minus | double | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). Season total, or the per-game average when is_averages is true. |
 #' | dunks | double | Dunks made by the player or team. Season total, or the per-game average when is_averages is true. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -634,7 +634,7 @@ ibba_team_stats <- function(team_id, season, is_averages = FALSE, is_playoff = F
 #' | external_id | character | The wire's ExternalID: the Segev game id (a string) for league games from 2025-26, a news URL for pre-season games, null before 2025-26. |
 #' | segev_game_id | integer | external_id read as an integer Segev game id (digits only), else null; joins ibba_segev_* game_id. Derived by the parser. |
 #' | is_external | logical | True when board_id >= 1001 (an external competition, whose team ids are not team-seasons). Derived by the parser. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -680,7 +680,7 @@ ibba_games <- function(season, board_id = 0, board_round = 0, team_id = 0, team_
 #' | round | integer | Round (game number) within the board; null for external games. |
 #' | tip_off | character | Tip-off 'HH:MM', local Israel time, as text; null in 2004-05. It can disagree with Segev (game 26646: 20:15 here, 19:30 in Segev). |
 #' | venue_he | character | Venue in Hebrew, HTML-unescaped; null in 2004-05. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_games_ex <- function(team_uid, season, board_id = 0) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -733,7 +733,7 @@ ibba_games_ex <- function(team_uid, season, board_id = 0) {
 #' | external_id | character | The wire's ExternalID: the Segev game id (a string) for league games from 2025-26, a news URL for pre-season games, null before 2025-26. |
 #' | segev_game_id | integer | external_id read as an integer Segev game id (digits only), else null; joins ibba_segev_* game_id. Derived by the parser. |
 #' | is_external | logical | True when board_id >= 1001 (an external competition, whose team ids are not team-seasons). Derived by the parser. |
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_games_by_team <- function(team_uid, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -765,7 +765,7 @@ ibba_games_by_team <- function(team_uid, season) {
 #' ```r
 #'  ibba_segev_game_crosswalk(ibba_games(season = 2026, board_id = 5, board_round = 1))
 #' ```
-#' @family IBBA
+#' @family IBBA Functions
 #' @export
 ibba_segev_game_crosswalk <- function(df) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))

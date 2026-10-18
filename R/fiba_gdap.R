@@ -238,7 +238,7 @@ fiba_gdap_editions <- function(family_id, season = NULL, to_season = NULL, retur
 #' | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 #' | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 #' | iana_time_zone | character | IANA time zone of the venue. |
-#' | utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+#' | utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 #' | is_postponed | logical | True when the game was postponed. |
 #' | is_played_behind_closed_doors | logical | True when played without spectators. |
 #' | venue_capacity | integer | Venue capacity (0 = unknown). |
@@ -327,7 +327,7 @@ fiba_gdap_federation_games <- function(federation_id, return_parsed = TRUE) {
 #' | zone_rank | integer | Rank within the zone. |
 #' | ioc_code | character | IOC country code. |
 #' | fiba_code | character | FIBA three-letter country code (GER, USA; historic URS, YUG). |
-#' | current_points | numeric | Ranking points (one decimal). |
+#' | current_points | double | Ranking points (one decimal). |
 #' | world_rank_variation | integer | Change in world rank since the previous release (positive = up). |
 #' | comments | character | Ranking note; null in every sample. |
 #'
@@ -429,7 +429,7 @@ fiba_gdap_final_standings <- function(comp, return_parsed = TRUE) {
 #' | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 #' | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 #' | iana_time_zone | character | IANA time zone of the venue. |
-#' | utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+#' | utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 #' | is_postponed | logical | True when the game was postponed. |
 #' | is_played_behind_closed_doors | logical | True when played without spectators. |
 #' | venue_capacity | integer | Venue capacity (0 = unknown). |
@@ -575,7 +575,7 @@ fiba_gdap_game_periods <- function(game_id, return_parsed = TRUE) {
 #' | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 #' | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 #' | iana_time_zone | character | IANA time zone of the venue. |
-#' | utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+#' | utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 #' | is_postponed | logical | True when the game was postponed. |
 #' | is_played_behind_closed_doors | logical | True when played without spectators. |
 #' | venue_capacity | integer | Venue capacity (0 = unknown). |
@@ -691,7 +691,7 @@ fiba_gdap_gateway_competition_ids <- function(start_date, end_date, return_parse
 #' | zone_rank | integer | Rank within the zone. |
 #' | ioc_code | character | IOC country code. |
 #' | fiba_code | character | FIBA three-letter country code (GER, USA; historic URS, YUG). |
-#' | current_points | numeric | Ranking points (one decimal). |
+#' | current_points | double | Ranking points (one decimal). |
 #' | world_rank_variation | integer | Change in world rank since the previous release (positive = up). |
 #' | comments | character | Ranking note; null in every sample. |
 #' | organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_`<id>`. |
@@ -853,16 +853,16 @@ fiba_gdap_nominations <- function(comp, level = "competition", return_parsed = T
 #' | points | integer | Points in the game. |
 #' | field_goals_made | integer | Field goals made in the game. |
 #' | field_goals_attempted | integer | Field goals attempted in the game. |
-#' | field_goals_percentage | numeric | Field-goal percentage, 0-100 (in the game; full float precision in averages). |
+#' | field_goals_percentage | double | Field-goal percentage, 0-100 (in the game; full float precision in averages). |
 #' | two_points_made | integer | Two-point field goals made in the game. |
 #' | two_points_attempted | integer | Two-point field goals attempted in the game. |
-#' | two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
+#' | two_points_percentage | double | Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
 #' | three_points_made | integer | Three-point field goals made in the game. |
 #' | three_points_attempted | integer | Three-point field goals attempted in the game. |
-#' | three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
+#' | three_points_percentage | double | Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). |
 #' | free_throws_made | integer | Free throws made in the game. |
 #' | free_throws_attempted | integer | Free throws attempted in the game. |
-#' | free_throws_percentage | numeric | Free-throw percentage, 0-100 (in the game; full float precision in averages). |
+#' | free_throws_percentage | double | Free-throw percentage, 0-100 (in the game; full float precision in averages). |
 #' | offensive_rebounds | integer | Offensive rebounds in the game. |
 #' | defensive_rebounds | integer | Defensive rebounds in the game. |
 #' | rebounds | integer | Rebounds in the game. |
@@ -916,15 +916,15 @@ fiba_gdap_player_game_stats <- function(player_id, comp, return_parsed = TRUE) {
 #' | club_name | character | Club at the time of the competition. |
 #' | club_code | character | Club abbreviation; always null in the samples, values unverified. |
 #' | is_player_free_agent | logical | True when the player had no club. |
-#' | points_per_game | numeric | The player's average points per game played. |
-#' | rank_points_per_game | numeric | Rank in the competition by points per game (1 = highest). |
-#' | rebounds_per_game | numeric | The player's average rebounds per game played. |
-#' | rank_rebounds_per_game | numeric | Rank in the competition by rebounds per game (1 = highest). |
-#' | assists_per_game | numeric | The player's average assists per game played. |
-#' | rank_assists_per_game | numeric | Rank in the competition by assists per game (1 = highest). |
-#' | points_per_game_per_competition_category | numeric | Average points per game across the competition category, the comparison baseline (unverified). |
-#' | rebounds_per_game_per_competition_category | numeric | Average rebounds per game across the competition category, the comparison baseline (unverified). |
-#' | assists_per_game_per_competition_category | numeric | Average assists per game across the competition category, the comparison baseline (unverified). |
+#' | points_per_game | double | The player's average points per game played. |
+#' | rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
+#' | rebounds_per_game | double | The player's average rebounds per game played. |
+#' | rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
+#' | assists_per_game | double | The player's average assists per game played. |
+#' | rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
+#' | points_per_game_per_competition_category | double | Average points per game across the competition category, the comparison baseline (unverified). |
+#' | rebounds_per_game_per_competition_category | double | Average rebounds per game across the competition category, the comparison baseline (unverified). |
+#' | assists_per_game_per_competition_category | double | Average assists per game across the competition category, the comparison baseline (unverified). |
 #' | birth_date | character | Date of birth, YYYY-MM-DD. |
 #' | nationalities | character | Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. |
 #' | social_media_website | character | Website URL; always null in the samples, values unverified. |
@@ -963,30 +963,30 @@ fiba_gdap_player_info <- function(player_id, comp, return_parsed = TRUE) {
 #' |:---|:---|:---|
 #' | player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_`<id>` = gdapPlayerId. |
 #' | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-#' | points_per_game | numeric | The player's average points per game played. |
-#' | rebounds_per_game | numeric | The player's average rebounds per game played. |
-#' | rebounds_offensive_per_game | numeric | The player's average offensive rebounds per game played. |
-#' | rebounds_defensive_per_game | numeric | The player's average defensive rebounds per game played. |
-#' | assists_per_game | numeric | The player's average assists per game played. |
-#' | blocks_per_game | numeric | The player's average blocked shots per game played. |
-#' | turnovers_per_game | numeric | The player's average turnovers per game played. |
-#' | fouls_per_game | numeric | The player's average personal fouls per game played. |
-#' | plus_minus_per_game | numeric | The player's average plus/minus (point differential while on court) per game played. |
-#' | efficiency_per_game | numeric | The player's average efficiency (FIBA EFF) per game played. |
-#' | play_time_in_seconds_per_game | numeric | The player's average playing time in seconds per game played. |
-#' | field_goals_made_per_game | numeric | The player's average field goals made per game played. |
-#' | field_goals_attempted_per_game | numeric | The player's average field goals attempted per game played. |
-#' | two_points_made_per_game | numeric | The player's average two-point field goals made per game played. |
-#' | two_points_attempted_per_game | numeric | The player's average two-point field goals attempted per game played. |
-#' | three_points_made_per_game | numeric | The player's average three-point field goals made per game played. |
-#' | three_points_attempted_per_game | numeric | The player's average three-point field goals attempted per game played. |
-#' | free_throws_made_per_game | numeric | The player's average free throws made per game played. |
-#' | free_throws_attempted_per_game | numeric | The player's average free throws attempted per game played. |
-#' | points_from_turnovers_per_game | numeric | The player's average points from turnovers per game played. |
-#' | fast_break_points_per_game | numeric | The player's average fast-break points per game played. |
-#' | second_chance_points_per_game | numeric | The player's average second-chance points per game played. |
-#' | points_in_the_paint_per_game | numeric | The player's average points in the paint per game played. |
-#' | steals_per_game | numeric | The player's average steals per game played. |
+#' | points_per_game | double | The player's average points per game played. |
+#' | rebounds_per_game | double | The player's average rebounds per game played. |
+#' | rebounds_offensive_per_game | double | The player's average offensive rebounds per game played. |
+#' | rebounds_defensive_per_game | double | The player's average defensive rebounds per game played. |
+#' | assists_per_game | double | The player's average assists per game played. |
+#' | blocks_per_game | double | The player's average blocked shots per game played. |
+#' | turnovers_per_game | double | The player's average turnovers per game played. |
+#' | fouls_per_game | double | The player's average personal fouls per game played. |
+#' | plus_minus_per_game | double | The player's average plus/minus (point differential while on court) per game played. |
+#' | efficiency_per_game | double | The player's average efficiency (FIBA EFF) per game played. |
+#' | play_time_in_seconds_per_game | double | The player's average playing time in seconds per game played. |
+#' | field_goals_made_per_game | double | The player's average field goals made per game played. |
+#' | field_goals_attempted_per_game | double | The player's average field goals attempted per game played. |
+#' | two_points_made_per_game | double | The player's average two-point field goals made per game played. |
+#' | two_points_attempted_per_game | double | The player's average two-point field goals attempted per game played. |
+#' | three_points_made_per_game | double | The player's average three-point field goals made per game played. |
+#' | three_points_attempted_per_game | double | The player's average three-point field goals attempted per game played. |
+#' | free_throws_made_per_game | double | The player's average free throws made per game played. |
+#' | free_throws_attempted_per_game | double | The player's average free throws attempted per game played. |
+#' | points_from_turnovers_per_game | double | The player's average points from turnovers per game played. |
+#' | fast_break_points_per_game | double | The player's average fast-break points per game played. |
+#' | second_chance_points_per_game | double | The player's average second-chance points per game played. |
+#' | points_in_the_paint_per_game | double | The player's average points in the paint per game played. |
+#' | steals_per_game | double | The player's average steals per game played. |
 #' | total_games_played | integer | The player's total games played over the games played. |
 #' | total_games_won | integer | The player's total games won over the games played. |
 #' | total_games_lost | integer | The player's total games lost over the games played. |
@@ -1003,16 +1003,16 @@ fiba_gdap_player_info <- function(player_id, comp, return_parsed = TRUE) {
 #' | total_points | integer | The player's total points over the games played. |
 #' | total_field_goals_made | integer | The player's total field goals made over the games played. |
 #' | total_field_goals_attempted | integer | The player's total field goals attempted over the games played. |
-#' | field_goals_percentage | numeric | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | field_goals_percentage | double | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_two_points_made | integer | The player's total two-point field goals made over the games played. |
 #' | total_two_points_attempted | integer | The player's total two-point field goals attempted over the games played. |
-#' | two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | two_points_percentage | double | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_three_points_made | integer | The player's total three-point field goals made over the games played. |
 #' | total_three_points_attempted | integer | The player's total three-point field goals attempted over the games played. |
-#' | three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | three_points_percentage | double | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_free_throws_made | integer | The player's total free throws made over the games played. |
 #' | total_free_throws_attempted | integer | The player's total free throws attempted over the games played. |
-#' | free_throws_percentage | numeric | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
+#' | free_throws_percentage | double | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_double_doubles | integer | The player's total double-doubles over the games played. |
 #' | total_triple_doubles | integer | The player's total triple-doubles over the games played. |
 #' | total_quadruple_doubles | integer | The player's total quadruple-doubles over the games played. |
@@ -1022,9 +1022,9 @@ fiba_gdap_player_info <- function(player_id, comp, return_parsed = TRUE) {
 #' | total_second_chance_points | integer | The player's total second-chance points over the games played. |
 #' | total_points_in_the_paint | integer | The player's total points in the paint over the games played. |
 #' | total_steals | integer | The player's total steals over the games played. |
-#' | rank_points_per_game | numeric | Rank in the competition by points per game (1 = highest). |
-#' | rank_rebounds_per_game | numeric | Rank in the competition by rebounds per game (1 = highest). |
-#' | rank_assists_per_game | numeric | Rank in the competition by assists per game (1 = highest). |
+#' | rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
+#' | rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
+#' | rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
 #'
 #' @family FIBA Functions
 #' @export
@@ -1406,7 +1406,7 @@ fiba_gdap_rounds <- function(comp, return_parsed = TRUE) {
 #' | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 #' | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 #' | iana_time_zone | character | IANA time zone of the venue. |
-#' | utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+#' | utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 #' | is_postponed | logical | True when the game was postponed. |
 #' | is_played_behind_closed_doors | logical | True when played without spectators. |
 #' | venue_capacity | integer | Venue capacity (0 = unknown). |
@@ -1520,7 +1520,7 @@ fiba_gdap_schedule <- function(comp, return_parsed = TRUE) {
 #' | game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
 #' | has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
 #' | iana_time_zone | character | IANA time zone of the venue. |
-#' | utc_offset | numeric | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
+#' | utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
 #' | buy_tickets_url | character | Ticket link; always '' in the samples. |
 #' | watch_url | character | Stream link; always '' in the samples. |
 #' | is_postponed | logical | True when the game was postponed. |
@@ -1604,30 +1604,30 @@ fiba_gdap_team_games <- function(team_id, return_parsed = TRUE) {
 #' | last_name | character | Last name (officials: upper case). |
 #' | uniform_number | character | Jersey number (a string). |
 #' | team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-#' | points_per_game | numeric | The player's average points per game played. |
-#' | rebounds_per_game | numeric | The player's average rebounds per game played. |
-#' | rebounds_offensive_per_game | numeric | The player's average offensive rebounds per game played. |
-#' | rebounds_defensive_per_game | numeric | The player's average defensive rebounds per game played. |
-#' | assists_per_game | numeric | The player's average assists per game played. |
-#' | blocks_per_game | numeric | The player's average blocked shots per game played. |
-#' | turnovers_per_game | numeric | The player's average turnovers per game played. |
-#' | fouls_per_game | numeric | The player's average personal fouls per game played. |
-#' | plus_minus_per_game | numeric | The player's average plus/minus (point differential while on court) per game played. |
-#' | efficiency_per_game | numeric | The player's average efficiency (FIBA EFF) per game played. |
-#' | play_time_in_seconds_per_game | numeric | The player's average playing time in seconds per game played. |
-#' | field_goals_made_per_game | numeric | The player's average field goals made per game played. |
-#' | field_goals_attempted_per_game | numeric | The player's average field goals attempted per game played. |
-#' | two_points_made_per_game | numeric | The player's average two-point field goals made per game played. |
-#' | two_points_attempted_per_game | numeric | The player's average two-point field goals attempted per game played. |
-#' | three_points_made_per_game | numeric | The player's average three-point field goals made per game played. |
-#' | three_points_attempted_per_game | numeric | The player's average three-point field goals attempted per game played. |
-#' | free_throws_made_per_game | numeric | The player's average free throws made per game played. |
-#' | free_throws_attempted_per_game | numeric | The player's average free throws attempted per game played. |
-#' | points_from_turnovers_per_game | numeric | The player's average points from turnovers per game played. |
-#' | fast_break_points_per_game | numeric | The player's average fast-break points per game played. |
-#' | second_chance_points_per_game | numeric | The player's average second-chance points per game played. |
-#' | points_in_the_paint_per_game | numeric | The player's average points in the paint per game played. |
-#' | steals_per_game | numeric | The player's average steals per game played. |
+#' | points_per_game | double | The player's average points per game played. |
+#' | rebounds_per_game | double | The player's average rebounds per game played. |
+#' | rebounds_offensive_per_game | double | The player's average offensive rebounds per game played. |
+#' | rebounds_defensive_per_game | double | The player's average defensive rebounds per game played. |
+#' | assists_per_game | double | The player's average assists per game played. |
+#' | blocks_per_game | double | The player's average blocked shots per game played. |
+#' | turnovers_per_game | double | The player's average turnovers per game played. |
+#' | fouls_per_game | double | The player's average personal fouls per game played. |
+#' | plus_minus_per_game | double | The player's average plus/minus (point differential while on court) per game played. |
+#' | efficiency_per_game | double | The player's average efficiency (FIBA EFF) per game played. |
+#' | play_time_in_seconds_per_game | double | The player's average playing time in seconds per game played. |
+#' | field_goals_made_per_game | double | The player's average field goals made per game played. |
+#' | field_goals_attempted_per_game | double | The player's average field goals attempted per game played. |
+#' | two_points_made_per_game | double | The player's average two-point field goals made per game played. |
+#' | two_points_attempted_per_game | double | The player's average two-point field goals attempted per game played. |
+#' | three_points_made_per_game | double | The player's average three-point field goals made per game played. |
+#' | three_points_attempted_per_game | double | The player's average three-point field goals attempted per game played. |
+#' | free_throws_made_per_game | double | The player's average free throws made per game played. |
+#' | free_throws_attempted_per_game | double | The player's average free throws attempted per game played. |
+#' | points_from_turnovers_per_game | double | The player's average points from turnovers per game played. |
+#' | fast_break_points_per_game | double | The player's average fast-break points per game played. |
+#' | second_chance_points_per_game | double | The player's average second-chance points per game played. |
+#' | points_in_the_paint_per_game | double | The player's average points in the paint per game played. |
+#' | steals_per_game | double | The player's average steals per game played. |
 #' | total_games_played | integer | The player's total games played over the games played. |
 #' | total_games_won | integer | The player's total games won over the games played. |
 #' | total_games_lost | integer | The player's total games lost over the games played. |
@@ -1644,16 +1644,16 @@ fiba_gdap_team_games <- function(team_id, return_parsed = TRUE) {
 #' | total_points | integer | The player's total points over the games played. |
 #' | total_field_goals_made | integer | The player's total field goals made over the games played. |
 #' | total_field_goals_attempted | integer | The player's total field goals attempted over the games played. |
-#' | field_goals_percentage | numeric | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | field_goals_percentage | double | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_two_points_made | integer | The player's total two-point field goals made over the games played. |
 #' | total_two_points_attempted | integer | The player's total two-point field goals attempted over the games played. |
-#' | two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | two_points_percentage | double | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_three_points_made | integer | The player's total three-point field goals made over the games played. |
 #' | total_three_points_attempted | integer | The player's total three-point field goals attempted over the games played. |
-#' | three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | three_points_percentage | double | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_free_throws_made | integer | The player's total free throws made over the games played. |
 #' | total_free_throws_attempted | integer | The player's total free throws attempted over the games played. |
-#' | free_throws_percentage | numeric | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
+#' | free_throws_percentage | double | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_double_doubles | integer | The player's total double-doubles over the games played. |
 #' | total_triple_doubles | integer | The player's total triple-doubles over the games played. |
 #' | total_quadruple_doubles | integer | The player's total quadruple-doubles over the games played. |
@@ -1733,31 +1733,31 @@ fiba_gdap_team_staff <- function(comp, return_parsed = TRUE) {
 #' |:---|:---|:---|
 #' | team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
 #' | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-#' | points_per_game | numeric | The team's average points per game played. |
-#' | rebounds_per_game | numeric | The bench players' average rebounds per game played. |
-#' | rebounds_offensive_per_game | numeric | The bench players' average offensive rebounds per game played. |
-#' | rebounds_defensive_per_game | numeric | The bench players' average defensive rebounds per game played. |
-#' | assists_per_game | numeric | The team's average assists per game played. |
-#' | blocks_per_game | numeric | The team's average blocked shots per game played. |
-#' | turnovers_per_game | numeric | The bench players' average turnovers per game played. |
-#' | fouls_per_game | numeric | The bench players' average personal fouls per game played. |
-#' | plus_minus_per_game | numeric | The team's average plus/minus (point differential while on court) per game played. |
-#' | efficiency_per_game | numeric | The team's average efficiency (FIBA EFF) per game played. |
-#' | play_time_in_seconds_per_game | numeric | The team's average playing time in seconds per game played. |
-#' | field_goals_made_per_game | numeric | The team's average field goals made per game played. |
-#' | field_goals_attempted_per_game | numeric | The team's average field goals attempted per game played. |
-#' | two_points_made_per_game | numeric | The team's average two-point field goals made per game played. |
-#' | two_points_attempted_per_game | numeric | The team's average two-point field goals attempted per game played. |
-#' | three_points_made_per_game | numeric | The team's average three-point field goals made per game played. |
-#' | three_points_attempted_per_game | numeric | The team's average three-point field goals attempted per game played. |
-#' | free_throws_made_per_game | numeric | The team's average free throws made per game played. |
-#' | free_throws_attempted_per_game | numeric | The team's average free throws attempted per game played. |
-#' | points_from_turnovers_per_game | numeric | The team's average points from turnovers per game played. |
-#' | fast_break_points_per_game | numeric | The team's average fast-break points per game played. |
-#' | second_chance_points_per_game | numeric | The team's average second-chance points per game played. |
-#' | points_in_the_paint_per_game | numeric | The team's average points in the paint per game played. |
-#' | from_bench_points_per_game | numeric | The team's average points by bench players per game played. |
-#' | steals_per_game | numeric | The team's average steals per game played. |
+#' | points_per_game | double | The team's average points per game played. |
+#' | rebounds_per_game | double | The bench players' average rebounds per game played. |
+#' | rebounds_offensive_per_game | double | The bench players' average offensive rebounds per game played. |
+#' | rebounds_defensive_per_game | double | The bench players' average defensive rebounds per game played. |
+#' | assists_per_game | double | The team's average assists per game played. |
+#' | blocks_per_game | double | The team's average blocked shots per game played. |
+#' | turnovers_per_game | double | The bench players' average turnovers per game played. |
+#' | fouls_per_game | double | The bench players' average personal fouls per game played. |
+#' | plus_minus_per_game | double | The team's average plus/minus (point differential while on court) per game played. |
+#' | efficiency_per_game | double | The team's average efficiency (FIBA EFF) per game played. |
+#' | play_time_in_seconds_per_game | double | The team's average playing time in seconds per game played. |
+#' | field_goals_made_per_game | double | The team's average field goals made per game played. |
+#' | field_goals_attempted_per_game | double | The team's average field goals attempted per game played. |
+#' | two_points_made_per_game | double | The team's average two-point field goals made per game played. |
+#' | two_points_attempted_per_game | double | The team's average two-point field goals attempted per game played. |
+#' | three_points_made_per_game | double | The team's average three-point field goals made per game played. |
+#' | three_points_attempted_per_game | double | The team's average three-point field goals attempted per game played. |
+#' | free_throws_made_per_game | double | The team's average free throws made per game played. |
+#' | free_throws_attempted_per_game | double | The team's average free throws attempted per game played. |
+#' | points_from_turnovers_per_game | double | The team's average points from turnovers per game played. |
+#' | fast_break_points_per_game | double | The team's average fast-break points per game played. |
+#' | second_chance_points_per_game | double | The team's average second-chance points per game played. |
+#' | points_in_the_paint_per_game | double | The team's average points in the paint per game played. |
+#' | from_bench_points_per_game | double | The team's average points by bench players per game played. |
+#' | steals_per_game | double | The team's average steals per game played. |
 #' | total_games_played | integer | The bench players' total games played over the games played. |
 #' | total_games_won | integer | The team's total games won over the games played. |
 #' | total_games_lost | integer | The team's total games lost over the games played. |
@@ -1774,16 +1774,16 @@ fiba_gdap_team_staff <- function(comp, return_parsed = TRUE) {
 #' | total_points | integer | The team's total points over the games played. |
 #' | total_field_goals_made | integer | The team's total field goals made over the games played. |
 #' | total_field_goals_attempted | integer | The team's total field goals attempted over the games played. |
-#' | field_goals_percentage | numeric | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | field_goals_percentage | double | Field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_two_points_made | integer | The team's total two-point field goals made over the games played. |
 #' | total_two_points_attempted | integer | The team's total two-point field goals attempted over the games played. |
-#' | two_points_percentage | numeric | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | two_points_percentage | double | Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_three_points_made | integer | The team's total three-point field goals made over the games played. |
 #' | total_three_points_attempted | integer | The team's total three-point field goals attempted over the games played. |
-#' | three_points_percentage | numeric | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
+#' | three_points_percentage | double | Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_free_throws_made | integer | The team's total free throws made over the games played. |
 #' | total_free_throws_attempted | integer | The team's total free throws attempted over the games played. |
-#' | free_throws_percentage | numeric | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
+#' | free_throws_percentage | double | Free-throw percentage, 0-100 (over the competition; full float precision in averages). |
 #' | total_double_doubles | integer | The team's total double-doubles over the games played. |
 #' | total_triple_doubles | integer | The team's total triple-doubles over the games played. |
 #' | total_quadruple_doubles | integer | The team's total quadruple-doubles over the games played. |
@@ -1796,11 +1796,11 @@ fiba_gdap_team_staff <- function(comp, return_parsed = TRUE) {
 #' | total_steals | integer | The team's total steals over the games played. |
 #' | biggest_lead | integer | Team's biggest lead in any game of the competition, points. |
 #' | bench_total_games_played | integer | The bench players' total games played over the games played. |
-#' | bench_rebounds_per_game | numeric | The bench players' average rebounds per game played. |
-#' | bench_rebounds_offensive_per_game | numeric | The bench players' average offensive rebounds per game played. |
-#' | bench_rebounds_defensive_per_game | numeric | The bench players' average defensive rebounds per game played. |
-#' | bench_turnovers_per_game | numeric | The bench players' average turnovers per game played. |
-#' | bench_fouls_per_game | numeric | The bench players' average personal fouls per game played. |
+#' | bench_rebounds_per_game | double | The bench players' average rebounds per game played. |
+#' | bench_rebounds_offensive_per_game | double | The bench players' average offensive rebounds per game played. |
+#' | bench_rebounds_defensive_per_game | double | The bench players' average defensive rebounds per game played. |
+#' | bench_turnovers_per_game | double | The bench players' average turnovers per game played. |
+#' | bench_fouls_per_game | double | The bench players' average personal fouls per game played. |
 #' | bench_total_rebounds | integer | The bench players' total rebounds over the games played. |
 #' | bench_total_rebounds_offensive | integer | The bench players' total offensive rebounds over the games played. |
 #' | bench_total_rebounds_defensive | integer | The bench players' total defensive rebounds over the games played. |
@@ -1851,12 +1851,12 @@ fiba_gdap_team_stats <- function(team_id, return_parsed = TRUE) {
 #' | profile_website | character | The team's website address. |
 #' | profile_you_tube | character | YouTube handle; always null in the samples, values unverified. |
 #' | profile_final_ranking | integer | Final rank in the competition. |
-#' | profile_points_per_game | numeric | The team's average points per game played. |
-#' | profile_rebounds_per_game | numeric | The team's average rebounds per game played. |
-#' | profile_assists_per_game | numeric | The team's average assists per game played. |
-#' | profile_rank_points_per_game | numeric | Rank in the competition by points per game (1 = highest). |
-#' | profile_rank_rebounds_per_game | numeric | Rank in the competition by rebounds per game (1 = highest). |
-#' | profile_rank_assists_per_game | numeric | Rank in the competition by assists per game (1 = highest). |
+#' | profile_points_per_game | double | The team's average points per game played. |
+#' | profile_rebounds_per_game | double | The team's average rebounds per game played. |
+#' | profile_assists_per_game | double | The team's average assists per game played. |
+#' | profile_rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
+#' | profile_rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
+#' | profile_rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
 #' | profile_total_games_won | integer | The team's total games won over the games played. |
 #' | profile_total_games_lost | integer | The team's total games lost over the games played. |
 #' | profile_social_networks | character | Social-network handles. Stored as a JSON string. |

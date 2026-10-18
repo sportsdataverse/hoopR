@@ -22,8 +22,8 @@ A \code{hoopR_data} tibble (one row per ladder entry):\tabular{lll}{
    won \tab integer \tab Wins in the season. \cr
    lost \tab integer \tab Losses in the season. \cr
    played \tab integer \tab Games played in the season (wins plus losses). \cr
-   points_percentage \tab numeric \tab points_for / points_against, a RATIO (1.1379 = 113.79 \%) \cr
-   win_percentage \tab numeric \tab Won / played, a 0-1 FRACTION. \cr
+   points_percentage \tab double \tab points_for / points_against, a RATIO (1.1379 = 113.79 \%) \cr
+   win_percentage \tab double \tab Won / played, a 0-1 FRACTION. \cr
    last_5 \tab character \tab Results string, W/L oldest first. Despite the name it can hold the whole season (33 characters in NBL 2025-26) \cr
    streak \tab integer \tab Current streak length (the type is the last letter of last_5) \cr
    points_for \tab integer \tab Points scored by the team in the season. \cr
@@ -73,7 +73,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -96,4 +96,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

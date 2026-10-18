@@ -259,9 +259,9 @@ sportpress_competition_staff <- function(competition_id) {
 #' | score | integer | Points scored in the phase. |
 #' | against | integer | Points conceded in the phase. |
 #' | score_difference | integer | score - against. |
-#' | percent | numeric | Win percentage 0-100, rounded to 1 decimal. |
+#' | percent | double | Win percentage 0-100, rounded to 1 decimal. |
 #' | point | integer | League points: 2 per win plus 1 per loss. |
-#' | point_percent | numeric | Share of the possible league points won, 0-1 rounded to 2 decimals. |
+#' | point_percent | double | Share of the possible league points won, 0-1 rounded to 2 decimals. |
 #' | home_win | integer | Wins in home games. |
 #' | home_loss | integer | Losses in home games. |
 #' | away_win | integer | Wins in away games. |
@@ -409,7 +409,7 @@ sportpress_game_slider <- function(competition_id) {
 #' | competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
 #' | team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
 #' | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-#' | value | numeric | The team's per-game mean (or percentage 0-100) in the row's category. |
+#' | value | double | The team's per-game mean (or percentage 0-100) in the row's category. |
 #' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
@@ -460,9 +460,9 @@ sportpress_team_rankings <- function(competition_id, phase_id = NULL, limit = NU
 #' | competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
 #' | team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
 #' | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-#' | value | numeric | The player's per-game mean (or percentage 0-100) in the row's category. |
-#' | throw_made | numeric | Field goals made per game; filled in the three percentage categories only. |
-#' | throw_attempted | numeric | Field goals attempted per game; filled in the three percentage categories only. |
+#' | value | double | The player's per-game mean (or percentage 0-100) in the row's category. |
+#' | throw_made | double | Field goals made per game; filled in the three percentage categories only. |
+#' | throw_attempted | double | Field goals attempted per game; filled in the three percentage categories only. |
 #' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
@@ -618,9 +618,9 @@ sportpress_team_roster <- function(competition_team_id) {
 #' | team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
 #' | club_id | integer | Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. |
 #' | club_name | character | Country name in English, Belgium or Netherlands. |
-#' | average_score_for | numeric | Points scored per game by the team over the season; null for a team with no statistics. |
-#' | average_score_against | numeric | Points conceded per game; null for a team with no statistics. |
-#' | field_goal_percent | numeric | Team field-goal percentage 0-100; null for a team with no statistics. |
+#' | average_score_for | double | Points scored per game by the team over the season; null for a team with no statistics. |
+#' | average_score_against | double | Points conceded per game; null for a team with no statistics. |
+#' | field_goal_percent | double | Team field-goal percentage 0-100; null for a team with no statistics. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_find(competition_team_id = 541)")
 #' @export
 #' @family BNXT League Functions
@@ -657,34 +657,34 @@ sportpress_team_find <- function(competition_team_id) {
 #' | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
 #' | played_games | integer | Games the player played in the season. |
 #' | games_started | integer | Games started (a count, not a mean). |
-#' | minute | numeric | Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). |
-#' | foul | numeric | Personal fouls committed. Per-game mean over the games played (fractional). |
-#' | defensive_foul | numeric | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). |
-#' | dunk_made | numeric | Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). |
-#' | dunk_all | numeric | Dunks attempted. Per-game mean over the games played (fractional). |
-#' | dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). |
-#' | two_point_made | numeric | Two-point field goals made. Per-game mean over the games played (fractional). |
-#' | two_point_all | numeric | Two-point field goals attempted. Per-game mean over the games played (fractional). |
-#' | two_point_percent | numeric | Two-point percentage 0-100. Per-game mean over the games played (fractional). |
-#' | three_point_made | numeric | Three-point field goals made. Per-game mean over the games played (fractional). |
-#' | three_point_all | numeric | Three-point field goals attempted. Per-game mean over the games played (fractional). |
-#' | three_point_percent | numeric | Three-point percentage 0-100. Per-game mean over the games played (fractional). |
-#' | throw_made | numeric | All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
-#' | throw_all | numeric | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
-#' | throw_percent | numeric | Field-goal percentage 0-100. Per-game mean over the games played (fractional). |
-#' | free_throw_made | numeric | Free throws made. Per-game mean over the games played (fractional). |
-#' | free_throw_all | numeric | Free throws attempted. Per-game mean over the games played (fractional). |
-#' | free_throw_percent | numeric | Free-throw percentage 0-100. Per-game mean over the games played (fractional). |
-#' | offensive_rebound | numeric | Offensive rebounds. Per-game mean over the games played (fractional). |
-#' | defensive_rebound | numeric | Defensive rebounds. Per-game mean over the games played (fractional). |
-#' | total_rebound | numeric | Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). |
-#' | block | numeric | Shots blocked by the player. Per-game mean over the games played (fractional). |
-#' | block_against | numeric | Own shots blocked by an opponent. Per-game mean over the games played (fractional). |
-#' | turnover | numeric | Turnovers committed. Per-game mean over the games played (fractional). |
-#' | steal | numeric | Steals (balls taken from an opponent). Per-game mean over the games played (fractional). |
-#' | assist | numeric | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
-#' | points | numeric | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
-#' | value | numeric | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
+#' | minute | double | Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). |
+#' | foul | double | Personal fouls committed. Per-game mean over the games played (fractional). |
+#' | defensive_foul | double | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). |
+#' | dunk_made | double | Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). |
+#' | dunk_all | double | Dunks attempted. Per-game mean over the games played (fractional). |
+#' | dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). |
+#' | two_point_made | double | Two-point field goals made. Per-game mean over the games played (fractional). |
+#' | two_point_all | double | Two-point field goals attempted. Per-game mean over the games played (fractional). |
+#' | two_point_percent | double | Two-point percentage 0-100. Per-game mean over the games played (fractional). |
+#' | three_point_made | double | Three-point field goals made. Per-game mean over the games played (fractional). |
+#' | three_point_all | double | Three-point field goals attempted. Per-game mean over the games played (fractional). |
+#' | three_point_percent | double | Three-point percentage 0-100. Per-game mean over the games played (fractional). |
+#' | throw_made | double | All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
+#' | throw_all | double | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
+#' | throw_percent | double | Field-goal percentage 0-100. Per-game mean over the games played (fractional). |
+#' | free_throw_made | double | Free throws made. Per-game mean over the games played (fractional). |
+#' | free_throw_all | double | Free throws attempted. Per-game mean over the games played (fractional). |
+#' | free_throw_percent | double | Free-throw percentage 0-100. Per-game mean over the games played (fractional). |
+#' | offensive_rebound | double | Offensive rebounds. Per-game mean over the games played (fractional). |
+#' | defensive_rebound | double | Defensive rebounds. Per-game mean over the games played (fractional). |
+#' | total_rebound | double | Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). |
+#' | block | double | Shots blocked by the player. Per-game mean over the games played (fractional). |
+#' | block_against | double | Own shots blocked by an opponent. Per-game mean over the games played (fractional). |
+#' | turnover | double | Turnovers committed. Per-game mean over the games played (fractional). |
+#' | steal | double | Steals (balls taken from an opponent). Per-game mean over the games played (fractional). |
+#' | assist | double | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
+#' | points | double | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
+#' | value | double | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_player_averages(competition_team_id = 541)")
 #' @export
 #' @family BNXT League Functions
@@ -737,19 +737,19 @@ sportpress_team_player_averages <- function(competition_team_id) {
 #' | defensive_foul | integer | The team's own fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 #' | dunk_made | integer | The team's own dunks made (a subset of the two-point field goals). |
 #' | dunk_all | integer | The team's own dunks attempted. |
-#' | dunk_percent | numeric | The team's own dunk percentage 0-100; 0 when none were attempted. |
+#' | dunk_percent | double | The team's own dunk percentage 0-100; 0 when none were attempted. |
 #' | two_point_made | integer | The team's own two-point field goals made. |
 #' | two_point_all | integer | The team's own two-point field goals attempted. |
-#' | two_point_percent | numeric | The team's own two-point percentage 0-100. |
+#' | two_point_percent | double | The team's own two-point percentage 0-100. |
 #' | three_point_made | integer | The team's own three-point field goals made. |
 #' | three_point_all | integer | The team's own three-point field goals attempted. |
-#' | three_point_percent | numeric | The team's own three-point percentage 0-100. |
+#' | three_point_percent | double | The team's own three-point percentage 0-100. |
 #' | throw_made | integer | The team's own all field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 #' | throw_all | integer | The team's own all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-#' | throw_percent | numeric | The team's own field-goal percentage 0-100. |
+#' | throw_percent | double | The team's own field-goal percentage 0-100. |
 #' | free_throw_made | integer | The team's own free throws made. |
 #' | free_throw_all | integer | The team's own free throws attempted. |
-#' | free_throw_percent | numeric | The team's own free-throw percentage 0-100. |
+#' | free_throw_percent | double | The team's own free-throw percentage 0-100. |
 #' | offensive_rebound | integer | The team's own offensive rebounds. |
 #' | defensive_rebound | integer | The team's own defensive rebounds. |
 #' | total_rebound | integer | The team's own total rebounds (offensive plus defensive). |
@@ -844,34 +844,34 @@ sportpress_roster_find <- function(roster_id) {
 #' | jersey | character | Shirt number as text; the box score sends it as an integer, so a zero-padded '00' is already lost there. |
 #' | played_games | integer | Games played in the season. |
 #' | games_started | integer | Games started (a count, not a mean). |
-#' | minute | numeric | Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). |
-#' | foul | numeric | Personal fouls committed. Per-game mean over the games played (fractional). |
-#' | defensive_foul | numeric | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). |
-#' | dunk_made | numeric | Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). |
-#' | dunk_all | numeric | Dunks attempted. Per-game mean over the games played (fractional). |
-#' | dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). |
-#' | two_point_made | numeric | Two-point field goals made. Per-game mean over the games played (fractional). |
-#' | two_point_all | numeric | Two-point field goals attempted. Per-game mean over the games played (fractional). |
-#' | two_point_percent | numeric | Two-point percentage 0-100. Per-game mean over the games played (fractional). |
-#' | three_point_made | numeric | Three-point field goals made. Per-game mean over the games played (fractional). |
-#' | three_point_all | numeric | Three-point field goals attempted. Per-game mean over the games played (fractional). |
-#' | three_point_percent | numeric | Three-point percentage 0-100. Per-game mean over the games played (fractional). |
-#' | throw_made | numeric | All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
-#' | throw_all | numeric | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
-#' | throw_percent | numeric | Field-goal percentage 0-100. Per-game mean over the games played (fractional). |
-#' | free_throw_made | numeric | Free throws made. Per-game mean over the games played (fractional). |
-#' | free_throw_all | numeric | Free throws attempted. Per-game mean over the games played (fractional). |
-#' | free_throw_percent | numeric | Free-throw percentage 0-100. Per-game mean over the games played (fractional). |
-#' | offensive_rebound | numeric | Offensive rebounds. Per-game mean over the games played (fractional). |
-#' | defensive_rebound | numeric | Defensive rebounds. Per-game mean over the games played (fractional). |
-#' | total_rebound | numeric | Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). |
-#' | block | numeric | Shots blocked by the player. Per-game mean over the games played (fractional). |
-#' | block_against | numeric | Own shots blocked by an opponent. Per-game mean over the games played (fractional). |
-#' | turnover | numeric | Turnovers committed. Per-game mean over the games played (fractional). |
-#' | steal | numeric | Steals (balls taken from an opponent). Per-game mean over the games played (fractional). |
-#' | assist | numeric | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
-#' | points | numeric | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
-#' | value | numeric | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
+#' | minute | double | Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). |
+#' | foul | double | Personal fouls committed. Per-game mean over the games played (fractional). |
+#' | defensive_foul | double | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). |
+#' | dunk_made | double | Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). |
+#' | dunk_all | double | Dunks attempted. Per-game mean over the games played (fractional). |
+#' | dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). |
+#' | two_point_made | double | Two-point field goals made. Per-game mean over the games played (fractional). |
+#' | two_point_all | double | Two-point field goals attempted. Per-game mean over the games played (fractional). |
+#' | two_point_percent | double | Two-point percentage 0-100. Per-game mean over the games played (fractional). |
+#' | three_point_made | double | Three-point field goals made. Per-game mean over the games played (fractional). |
+#' | three_point_all | double | Three-point field goals attempted. Per-game mean over the games played (fractional). |
+#' | three_point_percent | double | Three-point percentage 0-100. Per-game mean over the games played (fractional). |
+#' | throw_made | double | All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
+#' | throw_all | double | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). |
+#' | throw_percent | double | Field-goal percentage 0-100. Per-game mean over the games played (fractional). |
+#' | free_throw_made | double | Free throws made. Per-game mean over the games played (fractional). |
+#' | free_throw_all | double | Free throws attempted. Per-game mean over the games played (fractional). |
+#' | free_throw_percent | double | Free-throw percentage 0-100. Per-game mean over the games played (fractional). |
+#' | offensive_rebound | double | Offensive rebounds. Per-game mean over the games played (fractional). |
+#' | defensive_rebound | double | Defensive rebounds. Per-game mean over the games played (fractional). |
+#' | total_rebound | double | Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). |
+#' | block | double | Shots blocked by the player. Per-game mean over the games played (fractional). |
+#' | block_against | double | Own shots blocked by an opponent. Per-game mean over the games played (fractional). |
+#' | turnover | double | Turnovers committed. Per-game mean over the games played (fractional). |
+#' | steal | double | Steals (balls taken from an opponent). Per-game mean over the games played (fractional). |
+#' | assist | double | Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). |
+#' | points | double | Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). |
+#' | value | double | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_player_career(roster_id = 11193)")
 #' @export
 #' @family BNXT League Functions
@@ -926,19 +926,19 @@ sportpress_player_career <- function(roster_id) {
 #' | defensive_foul | integer | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 #' | dunk_made | integer | Dunks made (a subset of the two-point field goals). |
 #' | dunk_all | integer | Dunks attempted. |
-#' | dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. |
+#' | dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. |
 #' | two_point_made | integer | Two-point field goals made. |
 #' | two_point_all | integer | Two-point field goals attempted. |
-#' | two_point_percent | numeric | Two-point percentage 0-100. |
+#' | two_point_percent | double | Two-point percentage 0-100. |
 #' | three_point_made | integer | Three-point field goals made. |
 #' | three_point_all | integer | Three-point field goals attempted. |
-#' | three_point_percent | numeric | Three-point percentage 0-100. |
+#' | three_point_percent | double | Three-point percentage 0-100. |
 #' | throw_made | integer | All field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 #' | throw_all | integer | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-#' | throw_percent | numeric | Field-goal percentage 0-100. |
+#' | throw_percent | double | Field-goal percentage 0-100. |
 #' | free_throw_made | integer | Free throws made. |
 #' | free_throw_all | integer | Free throws attempted. |
-#' | free_throw_percent | numeric | Free-throw percentage 0-100. |
+#' | free_throw_percent | double | Free-throw percentage 0-100. |
 #' | offensive_rebound | integer | Offensive rebounds. |
 #' | defensive_rebound | integer | Defensive rebounds. |
 #' | total_rebound | integer | Total rebounds (offensive plus defensive). |
@@ -1073,19 +1073,19 @@ sportpress_game_periods <- function(game_id) {
 #' | defensive_foul | integer | The team's total: fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 #' | dunk_made | integer | The team's total: dunks made (a subset of the two-point field goals). |
 #' | dunk_all | integer | The team's total: dunks attempted. |
-#' | dunk_percent | numeric | The team's total: dunk percentage 0-100; 0 when none were attempted. |
+#' | dunk_percent | double | The team's total: dunk percentage 0-100; 0 when none were attempted. |
 #' | two_point_made | integer | The team's total: two-point field goals made. |
 #' | two_point_all | integer | The team's total: two-point field goals attempted. |
-#' | two_point_percent | numeric | The team's total: two-point percentage 0-100. |
+#' | two_point_percent | double | The team's total: two-point percentage 0-100. |
 #' | three_point_made | integer | The team's total: three-point field goals made. |
 #' | three_point_all | integer | The team's total: three-point field goals attempted. |
-#' | three_point_percent | numeric | The team's total: three-point percentage 0-100. |
+#' | three_point_percent | double | The team's total: three-point percentage 0-100. |
 #' | throw_made | integer | The team's total: all field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 #' | throw_all | integer | The team's total: all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-#' | throw_percent | numeric | The team's total: field-goal percentage 0-100. |
+#' | throw_percent | double | The team's total: field-goal percentage 0-100. |
 #' | free_throw_made | integer | The team's total: free throws made. |
 #' | free_throw_all | integer | The team's total: free throws attempted. |
-#' | free_throw_percent | numeric | The team's total: free-throw percentage 0-100. |
+#' | free_throw_percent | double | The team's total: free-throw percentage 0-100. |
 #' | offensive_rebound | integer | The team's total: offensive rebounds. |
 #' | defensive_rebound | integer | The team's total: defensive rebounds. |
 #' | total_rebound | integer | The team's total: total rebounds (offensive plus defensive). |
@@ -1144,19 +1144,19 @@ sportpress_game_overview <- function(game_id) {
 #' | defensive_foul | integer | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 #' | dunk_made | integer | Dunks made (a subset of the two-point field goals). |
 #' | dunk_all | integer | Dunks attempted. |
-#' | dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. |
+#' | dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. |
 #' | two_point_made | integer | Two-point field goals made. |
 #' | two_point_all | integer | Two-point field goals attempted. |
-#' | two_point_percent | numeric | Two-point percentage 0-100. |
+#' | two_point_percent | double | Two-point percentage 0-100. |
 #' | three_point_made | integer | Three-point field goals made. |
 #' | three_point_all | integer | Three-point field goals attempted. |
-#' | three_point_percent | numeric | Three-point percentage 0-100. |
+#' | three_point_percent | double | Three-point percentage 0-100. |
 #' | throw_made | integer | All field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 #' | throw_all | integer | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-#' | throw_percent | numeric | Field-goal percentage 0-100. |
+#' | throw_percent | double | Field-goal percentage 0-100. |
 #' | free_throw_made | integer | Free throws made. |
 #' | free_throw_all | integer | Free throws attempted. |
-#' | free_throw_percent | numeric | Free-throw percentage 0-100. |
+#' | free_throw_percent | double | Free-throw percentage 0-100. |
 #' | offensive_rebound | integer | Offensive rebounds. |
 #' | defensive_rebound | integer | Defensive rebounds. |
 #' | total_rebound | integer | Total rebounds (offensive plus defensive). |
@@ -1205,7 +1205,7 @@ sportpress_game_top_performers <- function(game_id) {
 #' | last_name | character | Family name of the player as entered in the CMS. |
 #' | nationality_code | character | Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. |
 #' | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
-#' | value | numeric | The leader's count (or percentage) in that statistic in this game. |
+#' | value | double | The leader's count (or percentage) in that statistic in this game. |
 #' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
@@ -1259,19 +1259,19 @@ sportpress_game_leaders <- function(game_id) {
 #' | defensive_foul | integer | Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 #' | dunk_made | integer | Dunks made (a subset of the two-point field goals). |
 #' | dunk_all | integer | Dunks attempted. |
-#' | dunk_percent | numeric | Dunk percentage 0-100; 0 when none were attempted. |
+#' | dunk_percent | double | Dunk percentage 0-100; 0 when none were attempted. |
 #' | two_point_made | integer | Two-point field goals made. |
 #' | two_point_all | integer | Two-point field goals attempted. |
-#' | two_point_percent | numeric | Two-point percentage 0-100. |
+#' | two_point_percent | double | Two-point percentage 0-100. |
 #' | three_point_made | integer | Three-point field goals made. |
 #' | three_point_all | integer | Three-point field goals attempted. |
-#' | three_point_percent | numeric | Three-point percentage 0-100. |
+#' | three_point_percent | double | Three-point percentage 0-100. |
 #' | throw_made | integer | All field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 #' | throw_all | integer | All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-#' | throw_percent | numeric | Field-goal percentage 0-100. |
+#' | throw_percent | double | Field-goal percentage 0-100. |
 #' | free_throw_made | integer | Free throws made. |
 #' | free_throw_all | integer | Free throws attempted. |
-#' | free_throw_percent | numeric | Free-throw percentage 0-100. |
+#' | free_throw_percent | double | Free-throw percentage 0-100. |
 #' | offensive_rebound | integer | Offensive rebounds. |
 #' | defensive_rebound | integer | Defensive rebounds. |
 #' | total_rebound | integer | Total rebounds (offensive plus defensive). |
@@ -1326,19 +1326,19 @@ sportpress_game_box <- function(competition_id, game_id) {
 #' | defensive_foul | integer | The team's total: fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
 #' | dunk_made | integer | The team's total: dunks made (a subset of the two-point field goals). |
 #' | dunk_all | integer | The team's total: dunks attempted. |
-#' | dunk_percent | numeric | The team's total: dunk percentage 0-100; 0 when none were attempted. |
+#' | dunk_percent | double | The team's total: dunk percentage 0-100; 0 when none were attempted. |
 #' | two_point_made | integer | The team's total: two-point field goals made. |
 #' | two_point_all | integer | The team's total: two-point field goals attempted. |
-#' | two_point_percent | numeric | The team's total: two-point percentage 0-100. |
+#' | two_point_percent | double | The team's total: two-point percentage 0-100. |
 #' | three_point_made | integer | The team's total: three-point field goals made. |
 #' | three_point_all | integer | The team's total: three-point field goals attempted. |
-#' | three_point_percent | numeric | The team's total: three-point percentage 0-100. |
+#' | three_point_percent | double | The team's total: three-point percentage 0-100. |
 #' | throw_made | integer | The team's total: all field goals made, two- plus three-pointers (the provider calls them 'throw'). |
 #' | throw_all | integer | The team's total: all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-#' | throw_percent | numeric | The team's total: field-goal percentage 0-100. |
+#' | throw_percent | double | The team's total: field-goal percentage 0-100. |
 #' | free_throw_made | integer | The team's total: free throws made. |
 #' | free_throw_all | integer | The team's total: free throws attempted. |
-#' | free_throw_percent | numeric | The team's total: free-throw percentage 0-100. |
+#' | free_throw_percent | double | The team's total: free-throw percentage 0-100. |
 #' | offensive_rebound | integer | The team's total: offensive rebounds. |
 #' | defensive_rebound | integer | The team's total: defensive rebounds. |
 #' | total_rebound | integer | The team's total: total rebounds (offensive plus defensive). |

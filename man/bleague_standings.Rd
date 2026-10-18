@@ -26,8 +26,8 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    team_short \tab character \tab Club short name in Japanese (e.g. Chiba J). \cr
    wins \tab integer \tab Games won so far this season in the table. \cr
    losses \tab integer \tab Games lost so far this season in the table. \cr
-   win_pct \tab numeric \tab Win percentage as a 0-1 fraction. \cr
-   games_behind \tab numeric \tab Games behind the table leader. \cr
+   win_pct \tab double \tab Win percentage as a 0-1 fraction. \cr
+   games_behind \tab double \tab Games behind the table leader. \cr
    points_for \tab integer \tab Points scored over the season to date. \cr
    points_against \tab integer \tab Points allowed over the season to date. \cr
    point_diff \tab integer \tab Point differential. \cr
@@ -96,7 +96,7 @@ schedule list, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 \code{\link[=bleague_game_info]{bleague_game_info()}},
 \code{\link[=bleague_leaders]{bleague_leaders()}},
 \code{\link[=bleague_pbp]{bleague_pbp()}},
@@ -111,4 +111,4 @@ Other B.LEAGUE:
 \code{\link[=bleague_team_box]{bleague_team_box()}},
 \code{\link[=bleague_team_summary]{bleague_team_summary()}}
 }
-\concept{B.LEAGUE}
+\concept{B.LEAGUE Functions}

@@ -29,13 +29,13 @@ then any column the API added later:\tabular{lll}{
    mins \tab character \tab Minutes played as 'MM:SS' (null on the bench and totals rows). \cr
    pts \tab integer \tab Number of points scored. \cr
    fg \tab character \tab Field goals as 'made-attempted'. \cr
-   fg_perc \tab numeric \tab Field-goal percentage, 0-100. \cr
+   fg_perc \tab double \tab Field-goal percentage, 0-100. \cr
    2_p \tab character \tab Two-pointers as 'made-attempted'. \cr
-   2_p_perc \tab numeric \tab Two-point percentage, 0-100. \cr
+   2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
    3_p \tab character \tab Three-pointers as 'made-attempted'. \cr
-   3_p_perc \tab numeric \tab Three-point percentage, 0-100. \cr
+   3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
    ft \tab character \tab Free throws as 'made-attempted'. \cr
-   ft_perc \tab numeric \tab Free-throw percentage, 0-100. \cr
+   ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
    off \tab integer \tab Offensive rebounds. \cr
    def \tab integer \tab Defensive rebounds. \cr
    reb \tab integer \tab Total rebounds. \cr

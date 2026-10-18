@@ -50,8 +50,8 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    referee_id \tab character \tab Crew-chief referee RefereeID as text (key space: officials; stability unverified). \cr
    sub_referee_id1 \tab character \tab Second referee RefereeID as text. \cr
    sub_referee_id2 \tab character \tab Third referee RefereeID as text. \cr
-   temperature \tab numeric \tab Temperature; null in every observed body, so its dtype is an assumption. \cr
-   humidity \tab numeric \tab Humidity; null in every observed body, so its dtype is an assumption. \cr
+   temperature \tab double \tab Temperature; null in every observed body, so its dtype is an assumption. \cr
+   humidity \tab double \tab Humidity; null in every observed body, so its dtype is an assumption. \cr
    convention_name_j \tab character \tab Competition name in Japanese (e.g. the Resona Group B.LEAGUE 2025-26 B1 regular season). \cr
    convention_name_e \tab character \tab Competition name in English; empty (null) on early v1 bodies. \cr
    convention_title_j \tab character \tab Competition title in Japanese (v1 header only). \cr
@@ -183,7 +183,7 @@ schedule list, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 \code{\link[=bleague_leaders]{bleague_leaders()}},
 \code{\link[=bleague_pbp]{bleague_pbp()}},
 \code{\link[=bleague_period_scores]{bleague_period_scores()}},
@@ -198,4 +198,4 @@ Other B.LEAGUE:
 \code{\link[=bleague_team_box]{bleague_team_box()}},
 \code{\link[=bleague_team_summary]{bleague_team_summary()}}
 }
-\concept{B.LEAGUE}
+\concept{B.LEAGUE Functions}

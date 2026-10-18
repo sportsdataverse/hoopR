@@ -21,11 +21,11 @@ valid answer is a zero-row tibble with these columns, in this order (sdv-py \cod
    cn_alias \tab character \tab Player name (Chinese). The team row reads 'team rebounds / turnovers' (rebounds and turnovers not credited to a player; that row does not exist in the 2009-10 sample). \cr
    field_goals \tab integer \tab Field goals made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
    field_goals_attempted \tab integer \tab Field goals attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   field_goals_percentage \tab numeric \tab Field-goal percentage as a FRACTION 0-1 (0.308), null when no attempt (0/0) as well as on the team row. \cr
+   field_goals_percentage \tab double \tab Field-goal percentage as a FRACTION 0-1 (0.308), null when no attempt (0/0) as well as on the team row. \cr
    fouls \tab integer \tab Personal fouls in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
    free_throws \tab integer \tab Free throws made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
    free_throws_attempted \tab integer \tab Free throws attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   free_throws_percentage \tab numeric \tab Free-throw percentage as a FRACTION 0-1, null on the team row. \cr
+   free_throws_percentage \tab double \tab Free-throw percentage as a FRACTION 0-1, null on the team row. \cr
    game_start \tab integer \tab Starter flag: 1 = started the game. Null on the team row. \cr
    number \tab character \tab Jersey number as a string. Null on the team row. \cr
    player_id \tab integer \tab playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. Null on the team row. \cr
@@ -37,7 +37,7 @@ valid answer is a zero-row tibble with these columns, in this order (sdv-py \cod
    steals \tab integer \tab Steals in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
    three_point_attempted \tab integer \tab Three-pointers attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
    three_point_goals \tab integer \tab Three-pointers made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   three_point_percentage \tab numeric \tab Three-point percentage as a FRACTION 0-1, null on the team row. \cr
+   three_point_percentage \tab double \tab Three-point percentage as a FRACTION 0-1, null on the team row. \cr
    turnovers \tab integer \tab Turnovers in this game (integer). The team row carries the team's own total here. \cr
    up_time \tab integer \tab Time on court in SECONDS (1692 = 28:12). Null on the team row. \cr
 }

@@ -43,28 +43,28 @@ A \code{hoopR_data} tibble: League table of a season: record, home / away split,
    point_corrections \tab character \tab Table-point deductions; [] in every sample. \cr
    home_victories \tab integer \tab Home games: wins. \cr
    home_losses \tab integer \tab Home games: number of losses in the table. \cr
-   home_victory_percentage \tab numeric \tab Home games: win percentage, 0-100. \cr
+   home_victory_percentage \tab double \tab Home games: win percentage, 0-100. \cr
    away_victories \tab integer \tab Away games: wins. \cr
    away_losses \tab integer \tab Away games: number of losses in the table. \cr
-   away_victory_percentage \tab numeric \tab Away games: win percentage, 0-100. \cr
+   away_victory_percentage \tab double \tab Away games: win percentage, 0-100. \cr
    table_points \tab integer \tab Table points scored (2 per win), from the API's \code{totalPointsMade}; the provider's notes call its 'Points' fields table points. \cr
    table_points_against \tab integer \tab Table points conceded (2 per loss), from the API's \code{totalPointsAgainst}; per the provider's notes, table points. \cr
-   total_victory_percentage \tab numeric \tab All games: win percentage, 0-100. \cr
+   total_victory_percentage \tab double \tab All games: win percentage, 0-100. \cr
    total_games \tab integer \tab Games played in the table (home and away together). \cr
    total_victories \tab integer \tab All games: wins. \cr
    total_losses \tab integer \tab Losses in the table over all games. \cr
    last10_victories \tab integer \tab Wins in the last 10 games. \cr
    last10_losses \tab integer \tab Losses in the last 10 games. \cr
-   last10_percentage \tab numeric \tab Win percentage over the last 10 games, 0-100. \cr
+   last10_percentage \tab double \tab Win percentage over the last 10 games, 0-100. \cr
    last10_outcomes \tab character \tab Results of the last games, newest first: W or L. \cr
    home_last10_victories \tab integer \tab Home games: last 10 games, wins. \cr
    home_last10_losses \tab integer \tab Home games: last 10 games, losses. \cr
-   home_last10_victory_percentage \tab numeric \tab Home games: last 10 games, win percentage, 0-100. \cr
+   home_last10_victory_percentage \tab double \tab Home games: last 10 games, win percentage, 0-100. \cr
    home_streak \tab character \tab Home games: current streak, W or L. \cr
    home_streak_count \tab integer \tab Home games: length of the current streak. \cr
    away_last10_victories \tab integer \tab Away games: last 10 games, wins. \cr
    away_last10_losses \tab integer \tab Away games: last 10 games, losses. \cr
-   away_last10_victory_percentage \tab numeric \tab Away games: last 10 games, win percentage, 0-100. \cr
+   away_last10_victory_percentage \tab double \tab Away games: last 10 games, win percentage, 0-100. \cr
    away_streak \tab character \tab Away games: current streak, W or L. \cr
    away_streak_count \tab integer \tab Away games: length of the current streak. \cr
    updated_date \tab character \tab Last update of the row, ISO 8601 UTC. \cr

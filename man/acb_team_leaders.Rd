@@ -38,7 +38,7 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    scope \tab character \tab all_time = club record holders (the API's leaders); edition = the selected season (seasonLeaders). The assignment is inferred from the values (689 games for J.C. Navarro is a career figure). \cr
    metric \tab character \tab Category in snake_case; avg_* are per-game averages, the rest totals. \cr
    rank \tab integer \tab Place in the category list, 1 = the leader, in the order the feed lists them. \cr
-   value \tab numeric \tab The player's value in the category (a total or an average depending on the metric). \cr
+   value \tab double \tab The player's value in the category (a total or an average depending on the metric). \cr
    player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr
    player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
    first_name \tab character \tab Legal first name(s) \cr

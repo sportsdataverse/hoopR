@@ -22,30 +22,30 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    last_name \tab character \tab Last name (officials: upper case). \cr
    uniform_number \tab character \tab Jersey number (a string). \cr
    team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   points_per_game \tab numeric \tab The player's average points per game played. \cr
-   rebounds_per_game \tab numeric \tab The player's average rebounds per game played. \cr
-   rebounds_offensive_per_game \tab numeric \tab The player's average offensive rebounds per game played. \cr
-   rebounds_defensive_per_game \tab numeric \tab The player's average defensive rebounds per game played. \cr
-   assists_per_game \tab numeric \tab The player's average assists per game played. \cr
-   blocks_per_game \tab numeric \tab The player's average blocked shots per game played. \cr
-   turnovers_per_game \tab numeric \tab The player's average turnovers per game played. \cr
-   fouls_per_game \tab numeric \tab The player's average personal fouls per game played. \cr
-   plus_minus_per_game \tab numeric \tab The player's average plus/minus (point differential while on court) per game played. \cr
-   efficiency_per_game \tab numeric \tab The player's average efficiency (FIBA EFF) per game played. \cr
-   play_time_in_seconds_per_game \tab numeric \tab The player's average playing time in seconds per game played. \cr
-   field_goals_made_per_game \tab numeric \tab The player's average field goals made per game played. \cr
-   field_goals_attempted_per_game \tab numeric \tab The player's average field goals attempted per game played. \cr
-   two_points_made_per_game \tab numeric \tab The player's average two-point field goals made per game played. \cr
-   two_points_attempted_per_game \tab numeric \tab The player's average two-point field goals attempted per game played. \cr
-   three_points_made_per_game \tab numeric \tab The player's average three-point field goals made per game played. \cr
-   three_points_attempted_per_game \tab numeric \tab The player's average three-point field goals attempted per game played. \cr
-   free_throws_made_per_game \tab numeric \tab The player's average free throws made per game played. \cr
-   free_throws_attempted_per_game \tab numeric \tab The player's average free throws attempted per game played. \cr
-   points_from_turnovers_per_game \tab numeric \tab The player's average points from turnovers per game played. \cr
-   fast_break_points_per_game \tab numeric \tab The player's average fast-break points per game played. \cr
-   second_chance_points_per_game \tab numeric \tab The player's average second-chance points per game played. \cr
-   points_in_the_paint_per_game \tab numeric \tab The player's average points in the paint per game played. \cr
-   steals_per_game \tab numeric \tab The player's average steals per game played. \cr
+   points_per_game \tab double \tab The player's average points per game played. \cr
+   rebounds_per_game \tab double \tab The player's average rebounds per game played. \cr
+   rebounds_offensive_per_game \tab double \tab The player's average offensive rebounds per game played. \cr
+   rebounds_defensive_per_game \tab double \tab The player's average defensive rebounds per game played. \cr
+   assists_per_game \tab double \tab The player's average assists per game played. \cr
+   blocks_per_game \tab double \tab The player's average blocked shots per game played. \cr
+   turnovers_per_game \tab double \tab The player's average turnovers per game played. \cr
+   fouls_per_game \tab double \tab The player's average personal fouls per game played. \cr
+   plus_minus_per_game \tab double \tab The player's average plus/minus (point differential while on court) per game played. \cr
+   efficiency_per_game \tab double \tab The player's average efficiency (FIBA EFF) per game played. \cr
+   play_time_in_seconds_per_game \tab double \tab The player's average playing time in seconds per game played. \cr
+   field_goals_made_per_game \tab double \tab The player's average field goals made per game played. \cr
+   field_goals_attempted_per_game \tab double \tab The player's average field goals attempted per game played. \cr
+   two_points_made_per_game \tab double \tab The player's average two-point field goals made per game played. \cr
+   two_points_attempted_per_game \tab double \tab The player's average two-point field goals attempted per game played. \cr
+   three_points_made_per_game \tab double \tab The player's average three-point field goals made per game played. \cr
+   three_points_attempted_per_game \tab double \tab The player's average three-point field goals attempted per game played. \cr
+   free_throws_made_per_game \tab double \tab The player's average free throws made per game played. \cr
+   free_throws_attempted_per_game \tab double \tab The player's average free throws attempted per game played. \cr
+   points_from_turnovers_per_game \tab double \tab The player's average points from turnovers per game played. \cr
+   fast_break_points_per_game \tab double \tab The player's average fast-break points per game played. \cr
+   second_chance_points_per_game \tab double \tab The player's average second-chance points per game played. \cr
+   points_in_the_paint_per_game \tab double \tab The player's average points in the paint per game played. \cr
+   steals_per_game \tab double \tab The player's average steals per game played. \cr
    total_games_played \tab integer \tab The player's total games played over the games played. \cr
    total_games_won \tab integer \tab The player's total games won over the games played. \cr
    total_games_lost \tab integer \tab The player's total games lost over the games played. \cr
@@ -62,16 +62,16 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    total_points \tab integer \tab The player's total points over the games played. \cr
    total_field_goals_made \tab integer \tab The player's total field goals made over the games played. \cr
    total_field_goals_attempted \tab integer \tab The player's total field goals attempted over the games played. \cr
-   field_goals_percentage \tab numeric \tab Field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
+   field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
    total_two_points_made \tab integer \tab The player's total two-point field goals made over the games played. \cr
    total_two_points_attempted \tab integer \tab The player's total two-point field goals attempted over the games played. \cr
-   two_points_percentage \tab numeric \tab Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
+   two_points_percentage \tab double \tab Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
    total_three_points_made \tab integer \tab The player's total three-point field goals made over the games played. \cr
    total_three_points_attempted \tab integer \tab The player's total three-point field goals attempted over the games played. \cr
-   three_points_percentage \tab numeric \tab Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
+   three_points_percentage \tab double \tab Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
    total_free_throws_made \tab integer \tab The player's total free throws made over the games played. \cr
    total_free_throws_attempted \tab integer \tab The player's total free throws attempted over the games played. \cr
-   free_throws_percentage \tab numeric \tab Free-throw percentage, 0-100 (over the competition; full float precision in averages). \cr
+   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (over the competition; full float precision in averages). \cr
    total_double_doubles \tab integer \tab The player's total double-doubles over the games played. \cr
    total_triple_doubles \tab integer \tab The player's total triple-doubles over the games played. \cr
    total_quadruple_doubles \tab integer \tab The player's total quadruple-doubles over the games played. \cr

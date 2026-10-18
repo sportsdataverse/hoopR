@@ -33,7 +33,7 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    zone_rank \tab integer \tab Rank within the zone. \cr
    ioc_code \tab character \tab IOC country code. \cr
    fiba_code \tab character \tab FIBA three-letter country code (GER, USA; historic URS, YUG). \cr
-   current_points \tab numeric \tab Ranking points (one decimal). \cr
+   current_points \tab double \tab Ranking points (one decimal). \cr
    world_rank_variation \tab integer \tab Change in world rank since the previous release (positive = up). \cr
    comments \tab character \tab Ranking note; null in every sample. \cr
 }

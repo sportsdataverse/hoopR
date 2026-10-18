@@ -30,15 +30,15 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    club_name \tab character \tab Club at the time of the competition. \cr
    club_code \tab character \tab Club abbreviation; always null in the samples, values unverified. \cr
    is_player_free_agent \tab logical \tab True when the player had no club. \cr
-   points_per_game \tab numeric \tab The player's average points per game played. \cr
-   rank_points_per_game \tab numeric \tab Rank in the competition by points per game (1 = highest). \cr
-   rebounds_per_game \tab numeric \tab The player's average rebounds per game played. \cr
-   rank_rebounds_per_game \tab numeric \tab Rank in the competition by rebounds per game (1 = highest). \cr
-   assists_per_game \tab numeric \tab The player's average assists per game played. \cr
-   rank_assists_per_game \tab numeric \tab Rank in the competition by assists per game (1 = highest). \cr
-   points_per_game_per_competition_category \tab numeric \tab Average points per game across the competition category, the comparison baseline (unverified). \cr
-   rebounds_per_game_per_competition_category \tab numeric \tab Average rebounds per game across the competition category, the comparison baseline (unverified). \cr
-   assists_per_game_per_competition_category \tab numeric \tab Average assists per game across the competition category, the comparison baseline (unverified). \cr
+   points_per_game \tab double \tab The player's average points per game played. \cr
+   rank_points_per_game \tab double \tab Rank in the competition by points per game (1 = highest). \cr
+   rebounds_per_game \tab double \tab The player's average rebounds per game played. \cr
+   rank_rebounds_per_game \tab double \tab Rank in the competition by rebounds per game (1 = highest). \cr
+   assists_per_game \tab double \tab The player's average assists per game played. \cr
+   rank_assists_per_game \tab double \tab Rank in the competition by assists per game (1 = highest). \cr
+   points_per_game_per_competition_category \tab double \tab Average points per game across the competition category, the comparison baseline (unverified). \cr
+   rebounds_per_game_per_competition_category \tab double \tab Average rebounds per game across the competition category, the comparison baseline (unverified). \cr
+   assists_per_game_per_competition_category \tab double \tab Average assists per game across the competition category, the comparison baseline (unverified). \cr
    birth_date \tab character \tab Date of birth, YYYY-MM-DD. \cr
    nationalities \tab character \tab Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. \cr
    social_media_website \tab character \tab Website URL; always null in the samples, values unverified. \cr

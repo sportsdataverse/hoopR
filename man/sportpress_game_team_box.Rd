@@ -27,19 +27,19 @@ raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
    defensive_foul \tab integer \tab The team's total: fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. \cr
    dunk_made \tab integer \tab The team's total: dunks made (a subset of the two-point field goals). \cr
    dunk_all \tab integer \tab The team's total: dunks attempted. \cr
-   dunk_percent \tab numeric \tab The team's total: dunk percentage 0-100; 0 when none were attempted. \cr
+   dunk_percent \tab double \tab The team's total: dunk percentage 0-100; 0 when none were attempted. \cr
    two_point_made \tab integer \tab The team's total: two-point field goals made. \cr
    two_point_all \tab integer \tab The team's total: two-point field goals attempted. \cr
-   two_point_percent \tab numeric \tab The team's total: two-point percentage 0-100. \cr
+   two_point_percent \tab double \tab The team's total: two-point percentage 0-100. \cr
    three_point_made \tab integer \tab The team's total: three-point field goals made. \cr
    three_point_all \tab integer \tab The team's total: three-point field goals attempted. \cr
-   three_point_percent \tab numeric \tab The team's total: three-point percentage 0-100. \cr
+   three_point_percent \tab double \tab The team's total: three-point percentage 0-100. \cr
    throw_made \tab integer \tab The team's total: all field goals made, two- plus three-pointers (the provider calls them 'throw'). \cr
    throw_all \tab integer \tab The team's total: all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_percent \tab numeric \tab The team's total: field-goal percentage 0-100. \cr
+   throw_percent \tab double \tab The team's total: field-goal percentage 0-100. \cr
    free_throw_made \tab integer \tab The team's total: free throws made. \cr
    free_throw_all \tab integer \tab The team's total: free throws attempted. \cr
-   free_throw_percent \tab numeric \tab The team's total: free-throw percentage 0-100. \cr
+   free_throw_percent \tab double \tab The team's total: free-throw percentage 0-100. \cr
    offensive_rebound \tab integer \tab The team's total: offensive rebounds. \cr
    defensive_rebound \tab integer \tab The team's total: defensive rebounds. \cr
    total_rebound \tab integer \tab The team's total: total rebounds (offensive plus defensive). \cr

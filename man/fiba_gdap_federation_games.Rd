@@ -45,7 +45,7 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    game_date_time_utc \tab character \tab Tip-off in UTC, ISO 8601 without the Z. \cr
    has_time_game_date_time \tab logical \tab False when only the date is known (the time part is then 00:00:00). \cr
    iana_time_zone \tab character \tab IANA time zone of the venue. \cr
-   utc_offset \tab numeric \tab Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). \cr
+   utc_offset \tab double \tab Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). \cr
    is_postponed \tab logical \tab True when the game was postponed. \cr
    is_played_behind_closed_doors \tab logical \tab True when played without spectators. \cr
    venue_capacity \tab integer \tab Venue capacity (0 = unknown). \cr

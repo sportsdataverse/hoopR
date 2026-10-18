@@ -37,16 +37,16 @@ line. An empty valid answer raises \code{hoopR_no_data}; the columns are always 
    points \tab integer \tab The team's points in the game (players plus the team line). \cr
    two_point_shots_made \tab integer \tab The team's 2-point field goals made in the game (players plus the team line). \cr
    two_point_shots_attempted \tab integer \tab The team's 2-point field goals attempted in the game (players plus the team line). \cr
-   two_point_shot_success_percent \tab numeric \tab The team's 2-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
+   two_point_shot_success_percent \tab double \tab The team's 2-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
    three_point_shots_made \tab integer \tab The team's 3-point field goals made in the game (players plus the team line). \cr
    three_point_shots_attempted \tab integer \tab The team's 3-point field goals attempted in the game (players plus the team line). \cr
-   three_point_shot_success_percent \tab numeric \tab The team's 3-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
+   three_point_shot_success_percent \tab double \tab The team's 3-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
    field_goals_made \tab integer \tab The team's field goals made in the game (players plus the team line). \cr
    field_goals_attempted \tab integer \tab The team's field goals attempted in the game (players plus the team line). \cr
-   field_goals_success_percent \tab numeric \tab The team's field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
+   field_goals_success_percent \tab double \tab The team's field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
    free_throws_made \tab integer \tab The team's free throws made in the game (players plus the team line). \cr
    free_throws_attempted \tab integer \tab The team's free throws attempted in the game (players plus the team line). \cr
-   free_throws_success_percent \tab numeric \tab The team's free-throw percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
+   free_throws_success_percent \tab double \tab The team's free-throw percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
    offensive_rebounds \tab integer \tab The team's offensive rebounds in the game (players plus the team line). \cr
    defensive_rebounds \tab integer \tab The team's defensive rebounds in the game (players plus the team line). \cr
    total_rebounds \tab integer \tab The team's rebounds (offensive + defensive) in the game (players plus the team line). \cr
@@ -61,16 +61,16 @@ line. An empty valid answer raises \code{hoopR_no_data}; the columns are always 
    team_line_points \tab integer \tab Team-line points (not credited to a player). \cr
    team_line_two_point_shots_made \tab integer \tab Team-line 2-point field goals made (not credited to a player). \cr
    team_line_two_point_shots_attempted \tab integer \tab Team-line 2-point field goals attempted (not credited to a player). \cr
-   team_line_two_point_shot_success_percent \tab numeric \tab Team-line 2-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
+   team_line_two_point_shot_success_percent \tab double \tab Team-line 2-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
    team_line_three_point_shots_made \tab integer \tab Team-line 3-point field goals made (not credited to a player). \cr
    team_line_three_point_shots_attempted \tab integer \tab Team-line 3-point field goals attempted (not credited to a player). \cr
-   team_line_three_point_shot_success_percent \tab numeric \tab Team-line 3-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
+   team_line_three_point_shot_success_percent \tab double \tab Team-line 3-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
    team_line_field_goals_made \tab integer \tab Team-line field goals made (not credited to a player). \cr
    team_line_field_goals_attempted \tab integer \tab Team-line field goals attempted (not credited to a player). \cr
-   team_line_field_goals_success_percent \tab numeric \tab Team-line field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
+   team_line_field_goals_success_percent \tab double \tab Team-line field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
    team_line_free_throws_made \tab integer \tab Team-line free throws made (not credited to a player). \cr
    team_line_free_throws_attempted \tab integer \tab Team-line free throws attempted (not credited to a player). \cr
-   team_line_free_throws_success_percent \tab numeric \tab Team-line free-throw percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
+   team_line_free_throws_success_percent \tab double \tab Team-line free-throw percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
    team_line_offensive_rebounds \tab integer \tab Team-line offensive rebounds (not credited to a player). \cr
    team_line_defensive_rebounds \tab integer \tab Team-line defensive rebounds (not credited to a player). \cr
    team_line_total_rebounds \tab integer \tab Team-line rebounds (offensive + defensive) (not credited to a player). \cr

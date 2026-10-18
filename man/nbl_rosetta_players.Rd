@@ -27,8 +27,8 @@ A \code{hoopR_data} tibble (one row per roster entry):\tabular{lll}{
    player_first_name \tab character \tab The player's given name, e.g. Elijah. \cr
    player_last_name \tab character \tab The player's family name, e.g. Pepper. \cr
    player_date_of_birth \tab character \tab Date of birth, ISO date. \cr
-   player_height \tab numeric \tab Height in centimetres. \cr
-   player_weight \tab numeric \tab Weight in kilograms. \cr
+   player_height \tab double \tab Height in centimetres. \cr
+   player_weight \tab double \tab Weight in kilograms. \cr
    player_dominant_hand \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    player_gender \tab character \tab Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) \cr
    player_nationality \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
@@ -84,7 +84,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -107,4 +107,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

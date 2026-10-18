@@ -29,7 +29,7 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    birth_country_iso \tab character \tab ISO 3166-1 alpha-2 code of the birth country; null for an unseen name. \cr
    nationality \tab character \tab Nationality as sent, a Spanish country name. \cr
    nationality_iso \tab character \tab ISO 3166-1 alpha-2 code of nationality; null for an unseen name. \cr
-   height_m \tab numeric \tab Height in metres (the API sends '2,20', a decimal comma). \cr
+   height_m \tab double \tab Height in metres (the API sends '2,20', a decimal comma). \cr
    player_number \tab integer \tab Current shirt number (integer). \cr
    team_id \tab integer \tab Current team's season-team entry id. \cr
    club_id \tab integer \tab Current team's stable club id. \cr

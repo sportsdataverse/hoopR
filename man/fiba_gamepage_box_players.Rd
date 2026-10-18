@@ -37,16 +37,16 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    points \tab integer \tab Points scored in the game. \cr
    fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
    fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
-   fg_pct \tab numeric \tab Field-goal percentage, 0-100. \cr
+   fg_pct \tab double \tab Field-goal percentage, 0-100. \cr
    fg2_made \tab integer \tab Two-point field goals made. \cr
    fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab numeric \tab Two-point field-goal percentage, 0-100. \cr
+   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. \cr
    fg3_made \tab integer \tab Three-point field goals made. \cr
    fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab numeric \tab Three-point field-goal percentage, 0-100. \cr
+   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. \cr
    ft_made \tab integer \tab Free throws made. \cr
    ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab numeric \tab Free-throw percentage, 0-100. \cr
+   ft_pct \tab double \tab Free-throw percentage, 0-100. \cr
    reb_offensive \tab integer \tab Offensive rebounds. \cr
    reb_defensive \tab integer \tab Defensive rebounds. \cr
    reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
@@ -59,7 +59,7 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
    paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
    paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
-   paint_fg_pct \tab numeric \tab Field-goal percentage in the paint, 0-100. \cr
+   paint_fg_pct \tab double \tab Field-goal percentage in the paint, 0-100. \cr
    efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
    plus_minus \tab integer \tab Plus/minus: the team's point differential while the player was on the court. \cr
    cb \tab logical \tab Boolean flag, false on every sampled player; meaning unverified. \cr

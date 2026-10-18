@@ -49,8 +49,8 @@ A \code{hoopR_data} tibble (one row):\tabular{lll}{
    venue_code \tab character \tab Venue code; often null. \cr
    venue_state \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    venue_suburb \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_latitude \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_longitude \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   venue_latitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   venue_longitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    venue_country \tab character \tab Country; often null. \cr
    home_team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. \cr
    home_team_name \tab character \tab Display name of the team. \cr
@@ -97,7 +97,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
 \code{\link[=nbl_rosetta_match_player_box]{nbl_rosetta_match_player_box()}},
@@ -120,4 +120,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

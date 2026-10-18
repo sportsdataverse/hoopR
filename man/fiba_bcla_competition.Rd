@@ -112,7 +112,7 @@ The columns of \code{\link[=fiba_gdap_schedule]{fiba_gdap_schedule()}}:\tabular{
    game_date_time_utc \tab character \tab Tip-off in UTC, ISO 8601 without the Z. \cr
    has_time_game_date_time \tab logical \tab False when only the date is known (the time part is then 00:00:00). \cr
    iana_time_zone \tab character \tab IANA time zone of the venue. \cr
-   utc_offset \tab numeric \tab Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). \cr
+   utc_offset \tab double \tab Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). \cr
    is_postponed \tab logical \tab True when the game was postponed. \cr
    is_played_behind_closed_doors \tab logical \tab True when played without spectators. \cr
    venue_capacity \tab integer \tab Venue capacity (0 = unknown). \cr
@@ -209,12 +209,12 @@ The columns of \code{\link[=fiba_gdap_teams]{fiba_gdap_teams()}}:\tabular{lll}{
    profile_website \tab character \tab The team's website address. \cr
    profile_you_tube \tab character \tab YouTube handle; always null in the samples, values unverified. \cr
    profile_final_ranking \tab integer \tab Final rank in the competition. \cr
-   profile_points_per_game \tab numeric \tab The team's average points per game played. \cr
-   profile_rebounds_per_game \tab numeric \tab The team's average rebounds per game played. \cr
-   profile_assists_per_game \tab numeric \tab The team's average assists per game played. \cr
-   profile_rank_points_per_game \tab numeric \tab Rank in the competition by points per game (1 = highest). \cr
-   profile_rank_rebounds_per_game \tab numeric \tab Rank in the competition by rebounds per game (1 = highest). \cr
-   profile_rank_assists_per_game \tab numeric \tab Rank in the competition by assists per game (1 = highest). \cr
+   profile_points_per_game \tab double \tab The team's average points per game played. \cr
+   profile_rebounds_per_game \tab double \tab The team's average rebounds per game played. \cr
+   profile_assists_per_game \tab double \tab The team's average assists per game played. \cr
+   profile_rank_points_per_game \tab double \tab Rank in the competition by points per game (1 = highest). \cr
+   profile_rank_rebounds_per_game \tab double \tab Rank in the competition by rebounds per game (1 = highest). \cr
+   profile_rank_assists_per_game \tab double \tab Rank in the competition by assists per game (1 = highest). \cr
    profile_total_games_won \tab integer \tab The team's total games won over the games played. \cr
    profile_total_games_lost \tab integer \tab The team's total games lost over the games played. \cr
    profile_social_networks \tab character \tab Social-network handles. Stored as a JSON string. \cr
@@ -247,16 +247,16 @@ The columns of \code{\link[=fiba_gamepage_box_players]{fiba_gamepage_box_players
    points \tab integer \tab Points scored in the game. \cr
    fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
    fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
-   fg_pct \tab numeric \tab Field-goal percentage, 0-100. \cr
+   fg_pct \tab double \tab Field-goal percentage, 0-100. \cr
    fg2_made \tab integer \tab Two-point field goals made. \cr
    fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab numeric \tab Two-point field-goal percentage, 0-100. \cr
+   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. \cr
    fg3_made \tab integer \tab Three-point field goals made. \cr
    fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab numeric \tab Three-point field-goal percentage, 0-100. \cr
+   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. \cr
    ft_made \tab integer \tab Free throws made. \cr
    ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab numeric \tab Free-throw percentage, 0-100. \cr
+   ft_pct \tab double \tab Free-throw percentage, 0-100. \cr
    reb_offensive \tab integer \tab Offensive rebounds. \cr
    reb_defensive \tab integer \tab Defensive rebounds. \cr
    reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
@@ -269,7 +269,7 @@ The columns of \code{\link[=fiba_gamepage_box_players]{fiba_gamepage_box_players
    fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
    paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
    paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
-   paint_fg_pct \tab numeric \tab Field-goal percentage in the paint, 0-100. \cr
+   paint_fg_pct \tab double \tab Field-goal percentage in the paint, 0-100. \cr
    efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
    plus_minus \tab integer \tab Plus/minus: the team's point differential while the player was on the court. \cr
    cb \tab logical \tab Boolean flag, false on every sampled player; meaning unverified. \cr
@@ -290,16 +290,16 @@ The columns of \code{\link[=fiba_gamepage_box_teams]{fiba_gamepage_box_teams()}}
    points \tab integer \tab Points scored in the game. \cr
    fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
    fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
-   fg_pct \tab numeric \tab Field-goal percentage, 0-100. \cr
+   fg_pct \tab double \tab Field-goal percentage, 0-100. \cr
    fg2_made \tab integer \tab Two-point field goals made. \cr
    fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab numeric \tab Two-point field-goal percentage, 0-100. \cr
+   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. \cr
    fg3_made \tab integer \tab Three-point field goals made. \cr
    fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab numeric \tab Three-point field-goal percentage, 0-100. \cr
+   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. \cr
    ft_made \tab integer \tab Free throws made. \cr
    ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab numeric \tab Free-throw percentage, 0-100. \cr
+   ft_pct \tab double \tab Free-throw percentage, 0-100. \cr
    reb_offensive \tab integer \tab Offensive rebounds. \cr
    reb_defensive \tab integer \tab Defensive rebounds. \cr
    reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
@@ -312,7 +312,7 @@ The columns of \code{\link[=fiba_gamepage_box_teams]{fiba_gamepage_box_teams()}}
    fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
    paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
    paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
-   paint_fg_pct \tab numeric \tab Field-goal percentage in the paint, 0-100. \cr
+   paint_fg_pct \tab double \tab Field-goal percentage in the paint, 0-100. \cr
    efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
    biggest_lead \tab integer \tab Biggest lead, points. \cr
    biggest_lead_score \tab character \tab Score when the biggest lead was reached, 'A-B' string (spacing varies; empty when the team never led). \cr
@@ -355,7 +355,7 @@ The columns of \code{\link[=fiba_gamepage_pbp]{fiba_gamepage_pbp()}}:\tabular{ll
    order \tab integer \tab Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. \cr
    clock \tab character \tab Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). \cr
    clock_seconds \tab integer \tab Seconds remaining in the period, derived from clock. \cr
-   wall_time_ms \tab numeric \tab Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) \cr
+   wall_time_ms \tab double \tab Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) \cr
    score_a \tab integer \tab Team A score after the action. \cr
    score_b \tab integer \tab Team B score after the action. \cr
    action_code \tab character \tab Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). \cr

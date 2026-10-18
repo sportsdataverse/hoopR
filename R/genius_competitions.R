@@ -266,7 +266,7 @@
     })),
     paste0("@name ", p, "_competition"),
     paste("@aliases", paste(.genius_alias_names_of(e), collapse = " ")),
-    "@family Genius"
+    "@family Genius Functions"
   )
 }
 

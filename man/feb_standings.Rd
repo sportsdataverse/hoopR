@@ -32,7 +32,7 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    points_for \tab integer \tab Points scored (PF); null in the final classification. \cr
    points_against \tab integer \tab Points conceded (PC); null in the final classification. \cr
    point_diff \tab integer \tab Point difference (DIF), signed; null in the final classification. \cr
-   win_pct \tab numeric \tab Win percentage, 0-100 (the page's '100,0\%', decimal comma converted). \cr
+   win_pct \tab double \tab Win percentage, 0-100 (the page's '100,0\%', decimal comma converted). \cr
    streak \tab integer \tab Current streak as a signed integer: +3 = three wins in a row, -2 = two losses. \cr
    streak_text \tab character \tab The streak cell verbatim ('+3'). \cr
 }
@@ -93,7 +93,7 @@ for another group or season, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other FEB:
+Other FEB Functions:
 \code{\link[=feb_game_info]{feb_game_info()}},
 \code{\link[=feb_leaders]{feb_leaders()}},
 \code{\link[=feb_overview]{feb_overview()}},
@@ -105,4 +105,4 @@ Other FEB:
 \code{\link[=feb_shots]{feb_shots()}},
 \code{\link[=feb_team_stats]{feb_team_stats()}}
 }
-\concept{FEB}
+\concept{FEB Functions}

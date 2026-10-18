@@ -40,9 +40,9 @@ empty valid answer raises \code{hoopR_no_data}; the columns are always these, in
    competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
    team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
    team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   value \tab numeric \tab The player's per-game mean (or percentage 0-100) in the row's category. \cr
-   throw_made \tab numeric \tab Field goals made per game; filled in the three percentage categories only. \cr
-   throw_attempted \tab numeric \tab Field goals attempted per game; filled in the three percentage categories only. \cr
+   value \tab double \tab The player's per-game mean (or percentage 0-100) in the row's category. \cr
+   throw_made \tab double \tab Field goals made per game; filled in the three percentage categories only. \cr
+   throw_attempted \tab double \tab Field goals attempted per game; filled in the three percentage categories only. \cr
 }
 }
 \description{

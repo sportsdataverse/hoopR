@@ -32,9 +32,9 @@ streak. An empty valid answer raises \code{hoopR_no_data}; the columns are alway
    score \tab integer \tab Points scored in the phase. \cr
    against \tab integer \tab Points conceded in the phase. \cr
    score_difference \tab integer \tab score - against. \cr
-   percent \tab numeric \tab Win percentage 0-100, rounded to 1 decimal. \cr
+   percent \tab double \tab Win percentage 0-100, rounded to 1 decimal. \cr
    point \tab integer \tab League points: 2 per win plus 1 per loss. \cr
-   point_percent \tab numeric \tab Share of the possible league points won, 0-1 rounded to 2 decimals. \cr
+   point_percent \tab double \tab Share of the possible league points won, 0-1 rounded to 2 decimals. \cr
    home_win \tab integer \tab Wins in home games. \cr
    home_loss \tab integer \tab Losses in home games. \cr
    away_win \tab integer \tab Wins in away games. \cr
