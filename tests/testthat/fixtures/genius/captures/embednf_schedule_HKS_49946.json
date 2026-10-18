@@ -1,0 +1,58 @@
+{
+  "matches": [
+    {
+      "match_id": 2895763,
+      "link_match_id": 2895763,
+      "comp_id": 49946,
+      "org": "HKS",
+      "status": "COMPLETE",
+      "date_time": "Oct 10, 2026, 6:00 PM",
+      "venue_id": 10352,
+      "venue_name": "Košarkaška dvorana \"Jazine\"",
+      "home_team_id": 72921,
+      "home_team_name": "KK Aleta Puntamika",
+      "home_team_code": "PUN",
+      "home_score": 84,
+      "away_team_id": 42892,
+      "away_team_name": "KK Gorica",
+      "away_team_code": "GOR",
+      "away_score": 74
+    },
+    {
+      "match_id": 2895771,
+      "link_match_id": 2895771,
+      "comp_id": 49946,
+      "org": "HKS",
+      "status": "COMPLETE",
+      "date_time": "Oct 10, 2026, 6:00 PM",
+      "venue_id": 29588,
+      "venue_name": "Gradska sportska dvorana Crikvenica",
+      "home_team_id": 140466,
+      "home_team_name": "KK Crikvenica",
+      "home_team_code": "CRI",
+      "home_score": 75,
+      "away_team_id": 73565,
+      "away_team_name": "HAKK Mladost",
+      "away_team_code": "MLA",
+      "away_score": 53
+    },
+    {
+      "match_id": 2895765,
+      "link_match_id": 2895765,
+      "comp_id": 49946,
+      "org": "HKS",
+      "status": "COMPLETE",
+      "date_time": "Oct 10, 2026, 7:00 PM",
+      "venue_id": 13193,
+      "venue_name": "Nastavno-sportska dvorana Đakovo",
+      "home_team_id": 73746,
+      "home_team_name": "KK Đakovo",
+      "home_team_code": "ĐAK",
+      "home_score": 77,
+      "away_team_id": 150232,
+      "away_team_name": "KK Novi Zagreb",
+      "away_team_code": "NZG",
+      "away_score": 83
+    }
+  ]
+}

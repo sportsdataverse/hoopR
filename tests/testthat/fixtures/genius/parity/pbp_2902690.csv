@@ -1,0 +1,664 @@
+match_id,row_index,action_number,previous_action,period,period_type,gt,clock,tno,pno,player,shirt_number,first_name,family_name,international_first_name,international_family_name,scoreboard_name,action_type,sub_type,qualifier,success,scoring,score_1,score_2,lead
+2902690,0,1052,<NA>,1,OVERTIME,00:00,00:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,game,end,"",1,0,91,89,2
+2902690,1,1051,<NA>,1,OVERTIME,00:00,00:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,end,confirmed,1,0,91,89,2
+2902690,2,1048,<NA>,1,OVERTIME,00:00,00:00:90,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,3pt,pullupjumpshot,"",0,1,91,89,2
+2902690,3,1044,<NA>,1,OVERTIME,00:02,00:02:30,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,out,"",1,0,91,89,2
+2902690,4,1045,<NA>,1,OVERTIME,00:02,00:02:30,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,in,"",1,0,91,89,2
+2902690,5,1043,<NA>,1,OVERTIME,00:02,00:02:30,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,in,"",1,0,91,89,2
+2902690,6,1042,<NA>,1,OVERTIME,00:02,00:02:30,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,substitution,in,"",1,0,91,89,2
+2902690,7,1040,<NA>,1,OVERTIME,00:02,00:02:30,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,out,"",1,0,91,89,2
+2902690,8,1041,<NA>,1,OVERTIME,00:02,00:02:30,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,out,"",1,0,91,89,2
+2902690,9,1039,<NA>,1,OVERTIME,00:02,00:02:30,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,91,89,2
+2902690,10,1038,1037,1,OVERTIME,00:02,00:02:50,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,assist,"","",1,0,91,89,2
+2902690,11,1037,<NA>,1,OVERTIME,00:02,00:02:50,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,3pt,jumpshot,"",1,1,91,89,2
+2902690,12,1033,<NA>,1,OVERTIME,00:08,00:08:90,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,out,"",1,0,88,89,-1
+2902690,13,1034,<NA>,1,OVERTIME,00:08,00:08:90,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,substitution,in,"",1,0,88,89,-1
+2902690,14,1031,<NA>,1,OVERTIME,00:08,00:08:90,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,out,"",1,0,88,89,-1
+2902690,15,1032,<NA>,1,OVERTIME,00:08,00:08:90,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,in,"",1,0,88,89,-1
+2902690,16,1030,<NA>,1,OVERTIME,00:08,00:08:90,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,88,89,-1
+2902690,17,1027,<NA>,1,OVERTIME,00:08,00:08:90,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,dunk,pointsinthepaint,1,1,88,89,-1
+2902690,18,1024,<NA>,1,OVERTIME,00:29,00:29:10,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,2of2,"",1,1,88,87,1
+2902690,19,1023,1022,1,OVERTIME,00:29,00:29:10,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,87,87,0
+2902690,20,1022,<NA>,1,OVERTIME,00:29,00:29:10,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,1of2,"",0,1,87,87,0
+2902690,21,1020,<NA>,1,OVERTIME,00:29,00:29:10,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,out,"",1,0,87,87,0
+2902690,22,1021,<NA>,1,OVERTIME,00:29,00:29:10,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,in,"",1,0,87,87,0
+2902690,23,1019,1018,1,OVERTIME,00:29,00:29:10,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,foulon,"","",1,0,87,87,0
+2902690,24,1018,<NA>,1,OVERTIME,00:29,00:29:10,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foul,personal,"shooting,2freethrow",1,0,87,87,0
+2902690,25,1007,1006,1,OVERTIME,00:45,00:45:40,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,assist,"","",1,0,87,87,0
+2902690,26,1006,<NA>,1,OVERTIME,00:45,00:45:40,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,2pt,layup,"fromturnover,pointsinthepaint",1,1,87,87,0
+2902690,27,1002,<NA>,1,OVERTIME,00:57,00:57:60,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,turnover,24sec,team,1,0,87,85,2
+2902690,28,997,992,1,OVERTIME,00:58,00:58:90,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,87,85,2
+2902690,29,994,992,1,OVERTIME,01:01,01:01:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,block,"","",1,0,87,85,2
+2902690,30,992,<NA>,1,OVERTIME,01:01,01:01:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,"pointsinthepaint,blocked",0,1,87,85,2
+2902690,31,991,990,1,OVERTIME,01:22,01:22:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,rebound,defensive,"",1,0,87,85,2
+2902690,32,990,<NA>,1,OVERTIME,01:25,01:25:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,layup,pointsinthepaint,0,1,87,85,2
+2902690,33,989,988,1,OVERTIME,01:29,01:29:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,defensive,"",1,0,87,85,2
+2902690,34,988,<NA>,1,OVERTIME,01:34,01:34:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,0,1,87,85,2
+2902690,35,987,986,1,OVERTIME,01:53,01:53:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,rebound,defensive,"",1,0,87,85,2
+2902690,36,986,<NA>,1,OVERTIME,01:56,01:56:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,3pt,jumpshot,"",0,1,87,85,2
+2902690,37,1003,985,1,OVERTIME,02:15,02:15:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,assist,"","",1,0,87,85,2
+2902690,38,985,<NA>,1,OVERTIME,02:15,02:15:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,2pt,drivinglayup,"2ndchance,pointsinthepaint",1,1,87,85,2
+2902690,39,984,983,1,OVERTIME,02:19,02:19:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,offensive,"",1,0,85,85,0
+2902690,40,983,<NA>,1,OVERTIME,02:21,02:21:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,0,1,85,85,0
+2902690,41,982,<NA>,1,OVERTIME,02:43,02:43:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,dunk,pointsinthepaint,1,1,85,85,0
+2902690,42,980,979,1,OVERTIME,02:55,02:55:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,85,83,2
+2902690,43,979,<NA>,1,OVERTIME,02:55,02:55:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,2of2,"",0,1,85,83,2
+2902690,44,978,<NA>,1,OVERTIME,02:55,02:55:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,1of2,"",1,1,85,83,2
+2902690,45,977,976,1,OVERTIME,02:55,02:55:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,foulon,"","",1,0,84,83,1
+2902690,46,976,<NA>,1,OVERTIME,02:55,02:55:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,foul,personal,2freethrow,1,0,84,83,1
+2902690,47,974,973,1,OVERTIME,03:10,03:10:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,rebound,defensive,"",1,0,84,83,1
+2902690,48,973,<NA>,1,OVERTIME,03:14,03:14:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,fadeaway,"",0,1,84,83,1
+2902690,49,972,<NA>,1,OVERTIME,03:38,03:38:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,stepbackjumpshot,"",1,1,84,83,1
+2902690,50,967,<NA>,1,OVERTIME,03:58,03:58:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,2of2,"",1,1,81,83,-2
+2902690,51,966,<NA>,1,OVERTIME,03:58,03:58:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,1of2,"",1,1,81,82,-1
+2902690,52,964,<NA>,1,OVERTIME,03:58,03:58:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,out,"",1,0,81,81,0
+2902690,53,965,<NA>,1,OVERTIME,03:58,03:58:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,in,"",1,0,81,81,0
+2902690,54,963,962,1,OVERTIME,03:58,03:58:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foulon,"","",1,0,81,81,0
+2902690,55,962,<NA>,1,OVERTIME,03:58,03:58:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,foul,personal,2freethrow,1,0,81,81,0
+2902690,56,961,959,1,OVERTIME,04:00,04:00:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,defensive,"",1,0,81,81,0
+2902690,57,959,<NA>,1,OVERTIME,04:01,04:01:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,pullupjumpshot,"",0,1,81,81,0
+2902690,58,956,<NA>,1,OVERTIME,04:24,04:24:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,fadeaway,"",1,1,81,81,0
+2902690,59,955,<NA>,1,OVERTIME,04:50,04:50:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,pointsinthepaint,1,1,81,79,2
+2902690,60,953,<NA>,1,OVERTIME,05:00,05:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,start,"",1,0,79,79,0
+2902690,61,952,<NA>,1,OVERTIME,05:00,05:00:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,in,"",1,0,79,79,0
+2902690,62,951,<NA>,1,OVERTIME,05:00,05:00:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,in,"",1,0,79,79,0
+2902690,63,949,<NA>,1,OVERTIME,05:00,05:00:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,out,"",1,0,79,79,0
+2902690,64,950,<NA>,1,OVERTIME,05:00,05:00:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,out,"",1,0,79,79,0
+2902690,65,948,<NA>,4,REGULAR,00:00,00:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,end,confirmed,1,0,79,79,0
+2902690,66,946,943,4,REGULAR,00:02,00:02:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,defensive,"",1,0,79,79,0
+2902690,67,943,<NA>,4,REGULAR,00:03,00:03:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,stepbackjumpshot,fromturnover,0,1,79,79,0
+2902690,68,936,<NA>,4,REGULAR,00:24,00:24:80,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,out,"",1,0,79,79,0
+2902690,69,937,<NA>,4,REGULAR,00:24,00:24:80,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,in,"",1,0,79,79,0
+2902690,70,935,<NA>,4,REGULAR,00:24,00:24:80,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,79,79,0
+2902690,71,934,<NA>,4,REGULAR,00:24,00:24:80,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,turnover,badpass,"",1,0,79,79,0
+2902690,72,930,929,4,REGULAR,00:49,00:49:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,assist,"","",1,0,79,79,0
+2902690,73,929,<NA>,4,REGULAR,00:49,00:49:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,drivinglayup,"pointsinthepaint,fastbreak",1,1,79,79,0
+2902690,74,928,926,4,REGULAR,00:51,00:51:20,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,defensive,"",1,0,77,79,-2
+2902690,75,927,926,4,REGULAR,00:54,00:54:90,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,block,"","",1,0,77,79,-2
+2902690,76,926,<NA>,4,REGULAR,00:54,00:54:90,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,drivinglayup,"pointsinthepaint,blocked",0,1,77,79,-2
+2902690,77,922,<NA>,4,REGULAR,01:07,01:07:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,"fromturnover,pointsinthepaint",1,1,77,79,-2
+2902690,78,917,910,4,REGULAR,01:16,01:16:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,rebound,offensive,"",1,0,75,79,-4
+2902690,79,912,<NA>,4,REGULAR,01:16,01:16:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,turnover,24sec,team,1,0,75,79,-4
+2902690,80,910,<NA>,4,REGULAR,01:18,01:18:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,3pt,stepbackjumpshot,"2ndchance,fromturnover",0,1,75,79,-4
+2902690,81,905,902,4,REGULAR,01:31,01:31:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,75,79,-4
+2902690,82,902,<NA>,4,REGULAR,01:33,01:33:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,3pt,stepbackjumpshot,"2ndchance,fromturnover",0,1,75,79,-4
+2902690,83,894,892,4,REGULAR,01:44,01:44:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,75,79,-4
+2902690,84,893,892,4,REGULAR,01:44,01:44:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,block,"","",1,0,75,79,-4
+2902690,85,892,<NA>,4,REGULAR,01:44,01:44:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,drivinglayup,"fromturnover,pointsinthepaint,blocked",0,1,75,79,-4
+2902690,86,888,<NA>,4,REGULAR,01:56,01:56:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,out,"",1,0,75,79,-4
+2902690,87,889,<NA>,4,REGULAR,01:56,01:56:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,in,"",1,0,75,79,-4
+2902690,88,886,<NA>,4,REGULAR,01:56,01:56:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,out,"",1,0,75,79,-4
+2902690,89,887,<NA>,4,REGULAR,01:56,01:56:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,in,"",1,0,75,79,-4
+2902690,90,885,<NA>,4,REGULAR,01:56,01:56:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,turnover,travel,"",1,0,75,79,-4
+2902690,91,881,879,4,REGULAR,02:18,02:18:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,rebound,defensive,"",1,0,75,79,-4
+2902690,92,879,<NA>,4,REGULAR,02:18,02:18:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,freethrow,2of2,"",0,1,75,79,-4
+2902690,93,878,877,4,REGULAR,02:18,02:18:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,75,79,-4
+2902690,94,877,<NA>,4,REGULAR,02:18,02:18:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,freethrow,1of2,"",0,1,75,79,-4
+2902690,95,876,875,4,REGULAR,02:18,02:18:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,foulon,"","",1,0,75,79,-4
+2902690,96,875,<NA>,4,REGULAR,02:18,02:18:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,foul,personal,2freethrow,1,0,75,79,-4
+2902690,97,871,870,4,REGULAR,02:27,02:27:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,rebound,defensive,"",1,0,75,79,-4
+2902690,98,870,<NA>,4,REGULAR,02:31,02:31:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,jumpshot,"",0,1,75,79,-4
+2902690,99,868,<NA>,4,REGULAR,02:51,02:51:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,75,79,-4
+2902690,100,859,<NA>,4,REGULAR,02:51,02:51:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,layup,"fromturnover,pointsinthepaint,2ndchance",1,1,75,79,-4
+2902690,101,857,856,4,REGULAR,02:52,02:52:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,offensive,"",1,0,75,77,-2
+2902690,102,856,<NA>,4,REGULAR,02:53,02:53:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,drivinglayup,pointsinthepaint,0,1,75,77,-2
+2902690,103,853,<NA>,4,REGULAR,03:06,03:06:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,substitution,out,"",1,0,75,77,-2
+2902690,104,854,<NA>,4,REGULAR,03:06,03:06:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,in,"",1,0,75,77,-2
+2902690,105,851,<NA>,4,REGULAR,03:06,03:06:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,out,"",1,0,75,77,-2
+2902690,106,852,<NA>,4,REGULAR,03:06,03:06:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,in,"",1,0,75,77,-2
+2902690,107,850,<NA>,4,REGULAR,03:06,03:06:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,turnover,other,"",1,0,75,77,-2
+2902690,108,847,<NA>,4,REGULAR,03:27,03:27:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,3pt,pullupjumpshot,"",1,1,75,77,-2
+2902690,109,846,<NA>,4,REGULAR,03:50,03:50:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,stepbackjumpshot,"2ndchance,fromturnover",1,1,75,74,1
+2902690,110,845,844,4,REGULAR,04:00,04:00:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,rebound,offensive,"",1,0,72,74,-2
+2902690,111,844,<NA>,4,REGULAR,04:03,04:03:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,pullupjumpshot,"2ndchance,fromturnover",0,1,72,74,-2
+2902690,112,843,842,4,REGULAR,04:17,04:17:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,offensive,"",1,0,72,74,-2
+2902690,113,842,<NA>,4,REGULAR,04:19,04:19:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,jumpshot,fromturnover,0,1,72,74,-2
+2902690,114,841,840,4,REGULAR,04:23,04:23:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,steal,"","",1,0,72,74,-2
+2902690,115,840,<NA>,4,REGULAR,04:23,04:23:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,turnover,badpass,"",1,0,72,74,-2
+2902690,116,839,838,4,REGULAR,04:25,04:25:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,rebound,defensive,"",1,0,72,74,-2
+2902690,117,838,<NA>,4,REGULAR,04:28,04:28:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,3pt,jumpshot,"",0,1,72,74,-2
+2902690,118,837,835,4,REGULAR,04:48,04:48:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,defensive,"",1,0,72,74,-2
+2902690,119,836,835,4,REGULAR,04:51,04:51:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,block,"","",1,0,72,74,-2
+2902690,120,835,<NA>,4,REGULAR,04:51,04:51:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,2pt,layup,"pointsinthepaint,blocked",0,1,72,74,-2
+2902690,121,832,<NA>,4,REGULAR,05:07,05:07:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,out,"",1,0,72,74,-2
+2902690,122,833,<NA>,4,REGULAR,05:07,05:07:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,in,"",1,0,72,74,-2
+2902690,123,831,<NA>,4,REGULAR,05:07,05:07:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,72,74,-2
+2902690,124,825,<NA>,4,REGULAR,05:11,05:11:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,1,1,72,74,-2
+2902690,125,824,823,4,REGULAR,05:23,05:23:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,rebound,defensive,"",1,0,70,74,-4
+2902690,126,823,<NA>,4,REGULAR,05:27,05:27:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,jumpshot,"",0,1,70,74,-4
+2902690,127,819,<NA>,4,REGULAR,05:43,05:43:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,pullupjumpshot,"fromturnover,fastbreak",1,1,70,74,-4
+2902690,128,818,817,4,REGULAR,05:48,05:48:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,steal,"","",1,0,67,74,-7
+2902690,129,817,<NA>,4,REGULAR,05:48,05:48:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,turnover,ballhandling,"",1,0,67,74,-7
+2902690,130,816,815,4,REGULAR,06:05,06:05:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,defensive,"",1,0,67,74,-7
+2902690,131,815,<NA>,4,REGULAR,06:09,06:09:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,2pt,layup,pointsinthepaint,0,1,67,74,-7
+2902690,132,813,<NA>,4,REGULAR,06:20,06:20:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,freethrow,2of2,"2ndchance,fromturnover",1,1,67,74,-7
+2902690,133,812,811,4,REGULAR,06:20,06:20:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,67,73,-6
+2902690,134,811,<NA>,4,REGULAR,06:20,06:20:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,freethrow,1of2,"2ndchance,fromturnover",1,1,67,73,-6
+2902690,135,810,809,4,REGULAR,06:20,06:20:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,foulon,"","",1,0,67,72,-5
+2902690,136,809,<NA>,4,REGULAR,06:20,06:20:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,foul,personal,"shooting,2freethrow",1,0,67,72,-5
+2902690,137,799,795,4,REGULAR,06:20,06:20:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,67,72,-5
+2902690,138,795,<NA>,4,REGULAR,06:22,06:22:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,3pt,jumpshot,fromturnover,0,1,67,72,-5
+2902690,139,794,793,4,REGULAR,06:29,06:29:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,steal,"","",1,0,67,72,-5
+2902690,140,793,<NA>,4,REGULAR,06:29,06:29:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,turnover,ballhandling,"",1,0,67,72,-5
+2902690,141,792,790,4,REGULAR,06:35,06:35:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,rebound,offensive,"",1,0,67,72,-5
+2902690,142,790,<NA>,4,REGULAR,06:35,06:35:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,freethrow,2of2,2ndchance,0,1,67,72,-5
+2902690,143,789,<NA>,4,REGULAR,06:35,06:35:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,freethrow,1of2,2ndchance,1,1,67,72,-5
+2902690,144,788,787,4,REGULAR,06:35,06:35:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,foulon,"","",1,0,66,72,-6
+2902690,145,787,<NA>,4,REGULAR,06:35,06:35:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foul,personal,"shooting,2freethrow",1,0,66,72,-6
+2902690,146,785,783,4,REGULAR,06:35,06:35:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,rebound,offensive,"",1,0,66,72,-6
+2902690,147,783,<NA>,4,REGULAR,06:37,06:37:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,stepbackjumpshot,"",0,1,66,72,-6
+2902690,148,781,779,4,REGULAR,06:55,06:55:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,66,72,-6
+2902690,149,779,<NA>,4,REGULAR,06:57,06:57:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,fadeaway,"",0,1,66,72,-6
+2902690,150,777,776,4,REGULAR,07:07,07:07:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foulon,"","",1,0,66,72,-6
+2902690,151,776,<NA>,4,REGULAR,07:07,07:07:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foul,personal,"",1,0,66,72,-6
+2902690,152,770,<NA>,4,REGULAR,07:14,07:14:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,freethrow,2of2,fastbreak,1,1,66,72,-6
+2902690,153,769,768,4,REGULAR,07:14,07:14:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,assist,"","",1,0,65,72,-7
+2902690,154,768,<NA>,4,REGULAR,07:14,07:14:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,freethrow,1of2,fastbreak,1,1,65,72,-7
+2902690,155,766,<NA>,4,REGULAR,07:14,07:14:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,substitution,out,"",1,0,64,72,-8
+2902690,156,767,<NA>,4,REGULAR,07:14,07:14:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,substitution,in,"",1,0,64,72,-8
+2902690,157,765,764,4,REGULAR,07:14,07:14:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,foulon,"","",1,0,64,72,-8
+2902690,158,764,<NA>,4,REGULAR,07:14,07:14:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,foul,personal,"shooting,2freethrow",1,0,64,72,-8
+2902690,159,761,760,4,REGULAR,07:14,07:14:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,rebound,defensive,"",1,0,64,72,-8
+2902690,160,760,<NA>,4,REGULAR,07:18,07:18:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,2pt,drivinglayup,"2ndchance,pointsinthepaint",0,1,64,72,-8
+2902690,161,758,756,4,REGULAR,07:23,07:23:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,64,72,-8
+2902690,162,757,756,4,REGULAR,07:23,07:23:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,block,"","",1,0,64,72,-8
+2902690,163,756,<NA>,4,REGULAR,07:23,07:23:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,drivinglayup,"pointsinthepaint,blocked",0,1,64,72,-8
+2902690,164,752,<NA>,4,REGULAR,07:34,07:34:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,substitution,out,"",1,0,64,72,-8
+2902690,165,753,<NA>,4,REGULAR,07:34,07:34:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,in,"",1,0,64,72,-8
+2902690,166,750,<NA>,4,REGULAR,07:34,07:34:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,out,"",1,0,64,72,-8
+2902690,167,751,<NA>,4,REGULAR,07:34,07:34:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,in,"",1,0,64,72,-8
+2902690,168,748,<NA>,4,REGULAR,07:34,07:34:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,out,"",1,0,64,72,-8
+2902690,169,749,<NA>,4,REGULAR,07:34,07:34:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,in,"",1,0,64,72,-8
+2902690,170,747,746,4,REGULAR,07:34,07:34:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,foulon,"","",1,0,64,72,-8
+2902690,171,746,<NA>,4,REGULAR,07:34,07:34:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,foul,personal,"",1,0,64,72,-8
+2902690,172,740,<NA>,4,REGULAR,07:50,07:50:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,2pt,layup,"2ndchance,pointsinthepaint",1,1,64,72,-8
+2902690,173,739,738,4,REGULAR,07:50,07:50:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,rebound,offensive,"",1,0,62,72,-10
+2902690,174,738,<NA>,4,REGULAR,07:53,07:53:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,3pt,jumpshot,"",0,1,62,72,-10
+2902690,175,736,735,4,REGULAR,08:04,08:04:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,foulon,"","",1,0,62,72,-10
+2902690,176,735,<NA>,4,REGULAR,08:04,08:04:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,foul,personal,"",1,0,62,72,-10
+2902690,177,732,730,4,REGULAR,08:06,08:06:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,rebound,defensive,"",1,0,62,72,-10
+2902690,178,730,<NA>,4,REGULAR,08:11,08:11:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,3pt,jumpshot,"",0,1,62,72,-10
+2902690,179,729,<NA>,4,REGULAR,08:24,08:24:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,jumpshot,"",1,1,62,72,-10
+2902690,180,728,727,4,REGULAR,08:41,08:41:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,defensive,"",1,0,59,72,-13
+2902690,181,727,<NA>,4,REGULAR,08:45,08:45:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,2pt,pullupjumpshot,pointsinthepaint,0,1,59,72,-13
+2902690,182,725,<NA>,4,REGULAR,08:51,08:51:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,out,"",1,0,59,72,-13
+2902690,183,724,<NA>,4,REGULAR,08:51,08:51:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,in,"",1,0,59,72,-13
+2902690,184,723,<NA>,4,REGULAR,08:51,08:51:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,in,"",1,0,59,72,-13
+2902690,185,722,<NA>,4,REGULAR,08:51,08:51:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,in,"",1,0,59,72,-13
+2902690,186,719,<NA>,4,REGULAR,08:51,08:51:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,substitution,out,"",1,0,59,72,-13
+2902690,187,721,<NA>,4,REGULAR,08:51,08:51:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,out,"",1,0,59,72,-13
+2902690,188,718,<NA>,4,REGULAR,08:51,08:51:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,headcoachchallenge,foul,rejected,1,0,59,72,-13
+2902690,189,717,716,4,REGULAR,08:51,08:51:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,foulon,"","",1,0,59,72,-13
+2902690,190,716,<NA>,4,REGULAR,08:51,08:51:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,foul,personal,"",1,0,59,72,-13
+2902690,191,713,712,4,REGULAR,09:03,09:03:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,rebound,defensive,"",1,0,59,72,-13
+2902690,192,712,<NA>,4,REGULAR,09:06,09:06:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,2pt,fadeaway,"2ndchance,pointsinthepaint",0,1,59,72,-13
+2902690,193,710,709,4,REGULAR,09:19,09:19:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,foulon,"","",1,0,59,72,-13
+2902690,194,709,<NA>,4,REGULAR,09:19,09:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foul,personal,"",1,0,59,72,-13
+2902690,195,708,706,4,REGULAR,09:19,09:19:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,rebound,offensive,"",1,0,59,72,-13
+2902690,196,706,<NA>,4,REGULAR,09:22,09:22:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,3pt,pullupjumpshot,"",0,1,59,72,-13
+2902690,197,705,<NA>,4,REGULAR,09:42,09:42:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,2pt,layup,pointsinthepaint,1,1,59,72,-13
+2902690,198,703,<NA>,4,REGULAR,10:00,10:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,start,"",1,0,59,70,-11
+2902690,199,701,<NA>,4,REGULAR,10:00,10:00:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,out,"",1,0,59,70,-11
+2902690,200,702,<NA>,4,REGULAR,10:00,10:00:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,in,"",1,0,59,70,-11
+2902690,201,700,<NA>,3,REGULAR,00:00,00:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,end,confirmed,1,0,59,70,-11
+2902690,202,697,<NA>,3,REGULAR,00:01,00:01:70,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,3pt,jumpshot,2ndchance,0,1,59,70,-11
+2902690,203,694,691,3,REGULAR,00:03,00:03:60,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,rebound,offensive,"",1,0,59,70,-11
+2902690,204,691,<NA>,3,REGULAR,00:04,00:04:80,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,3pt,stepbackjumpshot,"",0,1,59,70,-11
+2902690,205,688,687,3,REGULAR,00:16,00:16:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,foulon,"","",1,0,59,70,-11
+2902690,206,687,<NA>,3,REGULAR,00:16,00:16:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,foul,personal,"",1,0,59,70,-11
+2902690,207,680,679,3,REGULAR,00:18,00:18:10,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,foulon,"","",1,0,59,70,-11
+2902690,208,679,<NA>,3,REGULAR,00:18,00:18:10,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,foul,personal,"",1,0,59,70,-11
+2902690,209,673,<NA>,3,REGULAR,00:28,00:28:80,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,headcoachchallenge,outofbounds,accepted,1,0,59,70,-11
+2902690,210,672,670,3,REGULAR,00:28,00:28:80,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,59,70,-11
+2902690,211,670,<NA>,3,REGULAR,00:30,00:30:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,drivinglayup,pointsinthepaint,0,1,59,70,-11
+2902690,212,669,668,3,REGULAR,00:54,00:54:80,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,assist,"","",1,0,59,70,-11
+2902690,213,668,<NA>,3,REGULAR,00:54,00:54:80,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,3pt,jumpshot,"",1,1,59,70,-11
+2902690,214,666,662,3,REGULAR,01:14,01:14:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,59,67,-8
+2902690,215,662,<NA>,3,REGULAR,01:15,01:15:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,freethrow,2of2,2ndchance,0,1,59,67,-8
+2902690,216,661,<NA>,3,REGULAR,01:15,01:15:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,freethrow,1of2,2ndchance,1,1,59,67,-8
+2902690,217,659,<NA>,3,REGULAR,01:15,01:15:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,substitution,out,"",1,0,58,67,-9
+2902690,218,660,<NA>,3,REGULAR,01:15,01:15:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,substitution,in,"",1,0,58,67,-9
+2902690,219,658,657,3,REGULAR,01:15,01:15:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,foulon,"","",1,0,58,67,-9
+2902690,220,657,<NA>,3,REGULAR,01:15,01:15:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foul,personal,"shooting,2freethrow",1,0,58,67,-9
+2902690,221,653,651,3,REGULAR,01:17,01:17:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,offensive,"",1,0,58,67,-9
+2902690,222,651,<NA>,3,REGULAR,01:17,01:17:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,freethrow,2of2,"",0,1,58,67,-9
+2902690,223,650,<NA>,3,REGULAR,01:17,01:17:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,freethrow,1of2,"",1,1,58,67,-9
+2902690,224,649,648,3,REGULAR,01:17,01:17:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,foulon,"","",1,0,57,67,-10
+2902690,225,648,<NA>,3,REGULAR,01:17,01:17:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foul,personal,2freethrow,1,0,57,67,-10
+2902690,226,645,<NA>,3,REGULAR,01:26,01:26:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,freethrow,1of1,fromturnover,1,1,57,67,-10
+2902690,227,644,<NA>,3,REGULAR,01:26,01:26:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,foul,technical,"category1,1freethrow",1,0,56,67,-11
+2902690,228,643,<NA>,3,REGULAR,01:26,01:26:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,turnover,ballhandling,"",1,0,56,67,-11
+2902690,229,638,637,3,REGULAR,01:32,01:32:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,rebound,defensive,"",1,0,56,67,-11
+2902690,230,637,<NA>,3,REGULAR,01:35,01:35:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,layup,"2ndchance,pointsinthepaint",0,1,56,67,-11
+2902690,231,634,<NA>,3,REGULAR,01:47,01:47:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,out,"",1,0,56,67,-11
+2902690,232,635,<NA>,3,REGULAR,01:47,01:47:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,substitution,in,"",1,0,56,67,-11
+2902690,233,631,629,3,REGULAR,01:48,01:48:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,56,67,-11
+2902690,234,629,<NA>,3,REGULAR,01:51,01:51:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,3pt,jumpshot,"",0,1,56,67,-11
+2902690,235,628,627,3,REGULAR,02:03,02:03:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,defensive,"",1,0,56,67,-11
+2902690,236,627,<NA>,3,REGULAR,02:06,02:06:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,2pt,hookshot,pointsinthepaint,0,1,56,67,-11
+2902690,237,625,<NA>,3,REGULAR,02:23,02:23:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,freethrow,1of1,fromturnover,1,1,56,67,-11
+2902690,238,624,622,3,REGULAR,02:23,02:23:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,foulon,"","",1,0,55,67,-12
+2902690,239,622,<NA>,3,REGULAR,02:23,02:23:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,foul,personal,"shooting,1freethrow",1,0,55,67,-12
+2902690,240,621,<NA>,3,REGULAR,02:23,02:23:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,hookshot,"fromturnover,pointsinthepaint",1,1,55,67,-12
+2902690,241,616,<NA>,3,REGULAR,02:33,02:33:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,turnover,8sec,team,1,0,53,67,-14
+2902690,242,614,613,3,REGULAR,02:41,02:41:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,rebound,defensive,"",1,0,53,67,-14
+2902690,243,613,<NA>,3,REGULAR,02:43,02:43:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,2pt,drivinglayup,"2ndchance,pointsinthepaint",0,1,53,67,-14
+2902690,244,611,<NA>,3,REGULAR,02:49,02:49:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,substitution,in,"",1,0,53,67,-14
+2902690,245,610,<NA>,3,REGULAR,02:49,02:49:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,substitution,in,"",1,0,53,67,-14
+2902690,246,608,<NA>,3,REGULAR,02:49,02:49:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,out,"",1,0,53,67,-14
+2902690,247,609,<NA>,3,REGULAR,02:49,02:49:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,substitution,out,"",1,0,53,67,-14
+2902690,248,607,<NA>,3,REGULAR,02:49,02:49:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,in,"",1,0,53,67,-14
+2902690,249,606,<NA>,3,REGULAR,02:49,02:49:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,in,"",1,0,53,67,-14
+2902690,250,604,<NA>,3,REGULAR,02:49,02:49:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,out,"",1,0,53,67,-14
+2902690,251,605,<NA>,3,REGULAR,02:49,02:49:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,out,"",1,0,53,67,-14
+2902690,252,601,600,3,REGULAR,02:50,02:50:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,53,67,-14
+2902690,253,600,<NA>,3,REGULAR,02:51,02:51:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,jumpshot,"",0,1,53,67,-14
+2902690,254,598,597,3,REGULAR,03:08,03:08:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,assist,"","",1,0,53,67,-14
+2902690,255,597,<NA>,3,REGULAR,03:08,03:08:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,2pt,layup,"2ndchance,pointsinthepaint",1,1,53,67,-14
+2902690,256,596,594,3,REGULAR,03:12,03:12:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,offensive,"",1,0,53,65,-12
+2902690,257,595,594,3,REGULAR,03:16,03:16:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,block,"","",1,0,53,65,-12
+2902690,258,594,<NA>,3,REGULAR,03:16,03:16:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,layup,"pointsinthepaint,blocked",0,1,53,65,-12
+2902690,259,593,591,3,REGULAR,03:23,03:23:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,defensive,"",1,0,53,65,-12
+2902690,260,592,591,3,REGULAR,03:26,03:26:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,block,"","",1,0,53,65,-12
+2902690,261,591,<NA>,3,REGULAR,03:26,03:26:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,stepbackjumpshot,blocked,0,1,53,65,-12
+2902690,262,590,589,3,REGULAR,03:44,03:44:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,rebound,defensive,"",1,0,53,65,-12
+2902690,263,589,<NA>,3,REGULAR,03:48,03:48:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,3pt,pullupjumpshot,"",0,1,53,65,-12
+2902690,264,588,586,3,REGULAR,04:08,04:08:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,rebound,defensive,"",1,0,53,65,-12
+2902690,265,586,<NA>,3,REGULAR,04:08,04:08:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,2of2,fastbreak,0,1,53,65,-12
+2902690,266,585,<NA>,3,REGULAR,04:08,04:08:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of2,fastbreak,1,1,53,65,-12
+2902690,267,584,583,3,REGULAR,04:08,04:08:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,52,65,-13
+2902690,268,583,<NA>,3,REGULAR,04:08,04:08:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,foul,personal,2freethrow,1,0,52,65,-13
+2902690,269,580,579,3,REGULAR,04:14,04:14:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,52,65,-13
+2902690,270,579,<NA>,3,REGULAR,04:14,04:14:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,alleyoop,"fromturnover,pointsinthepaint,fastbreak",1,1,52,65,-13
+2902690,271,578,577,3,REGULAR,04:22,04:22:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,steal,"","",1,0,52,63,-11
+2902690,272,577,<NA>,3,REGULAR,04:22,04:22:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,turnover,ballhandling,"",1,0,52,63,-11
+2902690,273,576,575,3,REGULAR,04:25,04:25:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,defensive,"",1,0,52,63,-11
+2902690,274,575,<NA>,3,REGULAR,04:27,04:27:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,2pt,drivinglayup,pointsinthepaint,0,1,52,63,-11
+2902690,275,574,<NA>,3,REGULAR,04:42,04:42:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,"pointsinthepaint,fastbreak",1,1,52,63,-11
+2902690,276,573,572,3,REGULAR,04:45,04:45:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,rebound,defensive,"",1,0,50,63,-13
+2902690,277,572,<NA>,3,REGULAR,04:47,04:47:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,drivinglayup,"2ndchance,pointsinthepaint",0,1,50,63,-13
+2902690,278,571,570,3,REGULAR,04:54,04:54:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,rebound,offensive,"",1,0,50,63,-13
+2902690,279,570,<NA>,3,REGULAR,04:58,04:58:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,3pt,stepbackjumpshot,"",0,1,50,63,-13
+2902690,280,557,556,3,REGULAR,05:25,05:25:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,assist,"","",1,0,50,63,-13
+2902690,281,556,<NA>,3,REGULAR,05:25,05:25:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,freethrow,2of2,"fastbreak,fromturnover",1,1,50,63,-13
+2902690,282,555,554,3,REGULAR,05:25,05:25:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,49,63,-14
+2902690,283,554,<NA>,3,REGULAR,05:25,05:25:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,freethrow,1of2,"fastbreak,fromturnover",0,1,49,63,-14
+2902690,284,553,<NA>,3,REGULAR,05:25,05:25:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,substitution,in,"",1,0,49,63,-14
+2902690,285,552,<NA>,3,REGULAR,05:25,05:25:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,substitution,in,"",1,0,49,63,-14
+2902690,286,550,<NA>,3,REGULAR,05:25,05:25:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,substitution,out,"",1,0,49,63,-14
+2902690,287,551,<NA>,3,REGULAR,05:25,05:25:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,out,"",1,0,49,63,-14
+2902690,288,548,<NA>,3,REGULAR,05:25,05:25:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,out,"",1,0,49,63,-14
+2902690,289,549,<NA>,3,REGULAR,05:25,05:25:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,in,"",1,0,49,63,-14
+2902690,290,547,546,3,REGULAR,05:25,05:25:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,foulon,"","",1,0,49,63,-14
+2902690,291,546,<NA>,3,REGULAR,05:25,05:25:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foul,personal,"shooting,2freethrow",1,0,49,63,-14
+2902690,292,544,543,3,REGULAR,05:31,05:31:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,steal,"","",1,0,49,63,-14
+2902690,293,543,<NA>,3,REGULAR,05:31,05:31:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,turnover,ballhandling,"",1,0,49,63,-14
+2902690,294,542,<NA>,3,REGULAR,05:40,05:40:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,1,1,49,63,-14
+2902690,295,541,540,3,REGULAR,05:49,05:49:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,47,63,-16
+2902690,296,540,<NA>,3,REGULAR,05:49,05:49:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,dunk,"pointsinthepaint,fastbreak",1,1,47,63,-16
+2902690,297,539,<NA>,3,REGULAR,05:57,05:57:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,pointsinthepaint,1,1,47,61,-14
+2902690,298,538,<NA>,3,REGULAR,06:12,06:12:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,stepbackjumpshot,"",1,1,45,61,-16
+2902690,299,536,<NA>,3,REGULAR,06:31,06:31:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,1of1,fastbreak,1,1,45,59,-14
+2902690,300,535,534,3,REGULAR,06:31,06:31:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,foulon,"","",1,0,44,59,-15
+2902690,301,534,<NA>,3,REGULAR,06:31,06:31:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,foul,personal,"shooting,1freethrow",1,0,44,59,-15
+2902690,302,533,<NA>,3,REGULAR,06:31,06:31:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,"pointsinthepaint,fastbreak",1,1,44,59,-15
+2902690,303,530,<NA>,3,REGULAR,06:36,06:36:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,2pt,layup,"2ndchance,pointsinthepaint",1,1,42,59,-17
+2902690,304,529,528,3,REGULAR,06:36,06:36:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,offensive,"",1,0,42,57,-15
+2902690,305,528,<NA>,3,REGULAR,06:40,06:40:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,pullupjumpshot,pointsinthepaint,0,1,42,57,-15
+2902690,306,527,<NA>,3,REGULAR,06:58,06:58:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,"fromturnover,pointsinthepaint,fastbreak",1,1,42,57,-15
+2902690,307,526,525,3,REGULAR,07:03,07:03:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,steal,"","",1,0,40,57,-17
+2902690,308,525,<NA>,3,REGULAR,07:03,07:03:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,turnover,badpass,"",1,0,40,57,-17
+2902690,309,522,<NA>,3,REGULAR,07:19,07:19:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,out,"",1,0,40,57,-17
+2902690,310,523,<NA>,3,REGULAR,07:19,07:19:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,in,"",1,0,40,57,-17
+2902690,311,521,520,3,REGULAR,07:19,07:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foulon,"","",1,0,40,57,-17
+2902690,312,520,<NA>,3,REGULAR,07:19,07:19:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,foul,personal,"",1,0,40,57,-17
+2902690,313,519,518,3,REGULAR,07:19,07:19:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,40,57,-17
+2902690,314,518,<NA>,3,REGULAR,07:19,07:19:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,2pt,fadeaway,pointsinthepaint,0,1,40,57,-17
+2902690,315,516,515,3,REGULAR,07:36,07:36:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,40,57,-17
+2902690,316,515,<NA>,3,REGULAR,07:36,07:36:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,2pt,layup,pointsinthepaint,1,1,40,57,-17
+2902690,317,514,513,3,REGULAR,07:50,07:50:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,assist,"","",1,0,40,55,-15
+2902690,318,513,<NA>,3,REGULAR,07:50,07:50:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,2pt,dunk,pointsinthepaint,1,1,40,55,-15
+2902690,319,508,<NA>,3,REGULAR,08:06,08:06:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,out,"",1,0,38,55,-17
+2902690,320,509,<NA>,3,REGULAR,08:06,08:06:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,in,"",1,0,38,55,-17
+2902690,321,507,506,3,REGULAR,08:06,08:06:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,assist,"","",1,0,38,55,-17
+2902690,322,506,<NA>,3,REGULAR,08:06,08:06:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,freethrow,2of2,"",1,1,38,55,-17
+2902690,323,505,504,3,REGULAR,08:06,08:06:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,38,54,-16
+2902690,324,504,<NA>,3,REGULAR,08:06,08:06:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,freethrow,1of2,"",0,1,38,54,-16
+2902690,325,503,502,3,REGULAR,08:06,08:06:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,foulon,"","",1,0,38,54,-16
+2902690,326,502,<NA>,3,REGULAR,08:06,08:06:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,foul,personal,"shooting,2freethrow",1,0,38,54,-16
+2902690,327,498,497,3,REGULAR,08:21,08:21:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,defensive,"",1,0,38,54,-16
+2902690,328,497,<NA>,3,REGULAR,08:23,08:23:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,2pt,floatingjumpshot,"",0,1,38,54,-16
+2902690,329,496,<NA>,3,REGULAR,08:43,08:43:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,fadeaway,"",1,1,38,54,-16
+2902690,330,495,493,3,REGULAR,08:56,08:56:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,rebound,defensive,"",1,0,38,52,-14
+2902690,331,493,<NA>,3,REGULAR,08:56,08:56:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,2of2,fromturnover,0,1,38,52,-14
+2902690,332,492,491,3,REGULAR,08:56,08:56:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,38,52,-14
+2902690,333,491,<NA>,3,REGULAR,08:56,08:56:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of2,fromturnover,0,1,38,52,-14
+2902690,334,490,489,3,REGULAR,08:56,08:56:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,38,52,-14
+2902690,335,489,<NA>,3,REGULAR,08:56,08:56:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,foul,personal,"shooting,2freethrow",1,0,38,52,-14
+2902690,336,487,486,3,REGULAR,09:08,09:08:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,steal,"","",1,0,38,52,-14
+2902690,337,486,<NA>,3,REGULAR,09:08,09:08:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,turnover,ballhandling,"",1,0,38,52,-14
+2902690,338,485,484,3,REGULAR,09:11,09:11:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,steal,"","",1,0,38,52,-14
+2902690,339,484,<NA>,3,REGULAR,09:11,09:11:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,turnover,badpass,"",1,0,38,52,-14
+2902690,340,483,482,3,REGULAR,09:11,09:11:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,rebound,offensive,"",1,0,38,52,-14
+2902690,341,482,<NA>,3,REGULAR,09:13,09:13:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,"fromturnover,pointsinthepaint",0,1,38,52,-14
+2902690,342,481,480,3,REGULAR,09:16,09:16:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,steal,"","",1,0,38,52,-14
+2902690,343,480,<NA>,3,REGULAR,09:16,09:16:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,turnover,ballhandling,"",1,0,38,52,-14
+2902690,344,478,<NA>,3,REGULAR,09:34,09:34:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of1,"",1,1,38,52,-14
+2902690,345,477,476,3,REGULAR,09:34,09:34:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,37,52,-15
+2902690,346,476,<NA>,3,REGULAR,09:34,09:34:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,foul,personal,"shooting,1freethrow",1,0,37,52,-15
+2902690,347,475,474,3,REGULAR,09:34,09:34:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,assist,"","",1,0,37,52,-15
+2902690,348,474,<NA>,3,REGULAR,09:34,09:34:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,1,1,37,52,-15
+2902690,349,471,470,3,REGULAR,09:42,09:42:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,35,52,-17
+2902690,350,470,<NA>,3,REGULAR,09:42,09:42:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,foul,personal,"",1,0,35,52,-17
+2902690,351,467,<NA>,3,REGULAR,10:00,10:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,start,"",1,0,35,52,-17
+2902690,352,466,<NA>,3,REGULAR,10:00,10:00:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,in,"",1,0,35,52,-17
+2902690,353,465,<NA>,3,REGULAR,10:00,10:00:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,in,"",1,0,35,52,-17
+2902690,354,463,<NA>,3,REGULAR,10:00,10:00:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,out,"",1,0,35,52,-17
+2902690,355,464,<NA>,3,REGULAR,10:00,10:00:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,substitution,out,"",1,0,35,52,-17
+2902690,356,462,<NA>,3,REGULAR,10:00,10:00:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,in,"",1,0,35,52,-17
+2902690,357,461,<NA>,3,REGULAR,10:00,10:00:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,in,"",1,0,35,52,-17
+2902690,358,459,<NA>,3,REGULAR,10:00,10:00:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,out,"",1,0,35,52,-17
+2902690,359,460,<NA>,3,REGULAR,10:00,10:00:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,in,"",1,0,35,52,-17
+2902690,360,457,<NA>,3,REGULAR,10:00,10:00:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,out,"",1,0,35,52,-17
+2902690,361,458,<NA>,3,REGULAR,10:00,10:00:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,out,"",1,0,35,52,-17
+2902690,362,456,<NA>,2,REGULAR,00:00,00:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,end,confirmed,1,0,35,52,-17
+2902690,363,454,452,2,REGULAR,00:01,00:01:20,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,steal,"","",1,0,35,52,-17
+2902690,364,452,<NA>,2,REGULAR,00:01,00:01:20,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,turnover,ballhandling,"",1,0,35,52,-17
+2902690,365,448,<NA>,2,REGULAR,00:24,00:24:10,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,fadeaway,fromturnover,1,1,35,52,-17
+2902690,366,445,<NA>,2,REGULAR,00:48,00:48:20,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,in,"",1,0,35,50,-15
+2902690,367,444,<NA>,2,REGULAR,00:48,00:48:20,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,in,"",1,0,35,50,-15
+2902690,368,442,<NA>,2,REGULAR,00:48,00:48:20,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,out,"",1,0,35,50,-15
+2902690,369,443,<NA>,2,REGULAR,00:48,00:48:20,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,substitution,out,"",1,0,35,50,-15
+2902690,370,440,<NA>,2,REGULAR,00:48,00:48:20,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,out,"",1,0,35,50,-15
+2902690,371,441,<NA>,2,REGULAR,00:48,00:48:20,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,in,"",1,0,35,50,-15
+2902690,372,439,<NA>,2,REGULAR,00:48,00:48:20,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,35,50,-15
+2902690,373,438,<NA>,2,REGULAR,00:48,00:48:90,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,turnover,badpass,"",1,0,35,50,-15
+2902690,374,430,<NA>,2,REGULAR,01:01,01:01:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,drivinglayup,pointsinthepaint,1,1,35,50,-15
+2902690,375,429,428,2,REGULAR,01:18,01:18:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,rebound,defensive,"",1,0,35,48,-13
+2902690,376,428,<NA>,2,REGULAR,01:20,01:20:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,3pt,jumpshot,"",0,1,35,48,-13
+2902690,377,427,<NA>,2,REGULAR,01:32,01:32:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,jumpshot,pointsinthepaint,1,1,35,48,-13
+2902690,378,426,425,2,REGULAR,01:49,01:49:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,assist,"","",1,0,35,46,-11
+2902690,379,425,<NA>,2,REGULAR,01:49,01:49:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,3pt,jumpshot,fromturnover,1,1,35,46,-11
+2902690,380,420,418,2,REGULAR,02:05,02:05:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,foulon,"","",1,0,32,46,-14
+2902690,381,419,418,2,REGULAR,02:05,02:05:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,turnover,offensive,"",1,0,32,46,-14
+2902690,382,418,<NA>,2,REGULAR,02:05,02:05:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,foul,offensive,"",1,0,32,46,-14
+2902690,383,408,<NA>,2,REGULAR,02:14,02:14:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,2of2,"",1,1,32,46,-14
+2902690,384,405,<NA>,2,REGULAR,02:14,02:14:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of2,"",1,1,31,46,-15
+2902690,385,404,403,2,REGULAR,02:14,02:14:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,30,46,-16
+2902690,386,403,<NA>,2,REGULAR,02:14,02:14:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,foul,personal,"shooting,2freethrow",1,0,30,46,-16
+2902690,387,398,397,2,REGULAR,02:20,02:20:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,foulon,"","",1,0,30,46,-16
+2902690,388,397,<NA>,2,REGULAR,02:20,02:20:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,foul,personal,"",1,0,30,46,-16
+2902690,389,394,393,2,REGULAR,02:27,02:27:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,30,46,-16
+2902690,390,393,<NA>,2,REGULAR,02:27,02:27:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,layup,pointsinthepaint,1,1,30,46,-16
+2902690,391,392,<NA>,2,REGULAR,02:42,02:42:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,1,1,30,44,-14
+2902690,392,389,<NA>,2,REGULAR,02:56,02:56:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,out,"",1,0,28,44,-16
+2902690,393,390,<NA>,2,REGULAR,02:56,02:56:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,substitution,in,"",1,0,28,44,-16
+2902690,394,388,<NA>,2,REGULAR,02:56,02:56:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,in,"",1,0,28,44,-16
+2902690,395,387,<NA>,2,REGULAR,02:56,02:56:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,in,"",1,0,28,44,-16
+2902690,396,385,<NA>,2,REGULAR,02:56,02:56:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,out,"",1,0,28,44,-16
+2902690,397,386,<NA>,2,REGULAR,02:56,02:56:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,out,"",1,0,28,44,-16
+2902690,398,384,<NA>,2,REGULAR,02:56,02:56:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,28,44,-16
+2902690,399,382,<NA>,2,REGULAR,02:57,02:57:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,layup,"pointsinthepaint,fastbreak",1,1,28,44,-16
+2902690,400,381,380,2,REGULAR,03:02,03:02:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,defensive,"",1,0,28,42,-14
+2902690,401,380,<NA>,2,REGULAR,03:04,03:04:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,layup,"fromturnover,pointsinthepaint",0,1,28,42,-14
+2902690,402,379,378,2,REGULAR,03:09,03:09:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,steal,"","",1,0,28,42,-14
+2902690,403,378,<NA>,2,REGULAR,03:09,03:09:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,turnover,badpass,"",1,0,28,42,-14
+2902690,404,377,376,2,REGULAR,03:13,03:13:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,offensive,"",1,0,28,42,-14
+2902690,405,376,<NA>,2,REGULAR,03:16,03:16:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,3pt,pullupjumpshot,"",0,1,28,42,-14
+2902690,406,372,371,2,REGULAR,03:39,03:39:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,assist,"","",1,0,28,42,-14
+2902690,407,371,<NA>,2,REGULAR,03:39,03:39:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,freethrow,2of2,"",1,1,28,42,-14
+2902690,408,370,369,2,REGULAR,03:39,03:39:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,27,42,-15
+2902690,409,369,<NA>,2,REGULAR,03:39,03:39:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,freethrow,1of2,"",0,1,27,42,-15
+2902690,410,367,<NA>,2,REGULAR,03:39,03:39:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,out,"",1,0,27,42,-15
+2902690,411,368,<NA>,2,REGULAR,03:39,03:39:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,substitution,in,"",1,0,27,42,-15
+2902690,412,366,365,2,REGULAR,03:39,03:39:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,foulon,"","",1,0,27,42,-15
+2902690,413,365,<NA>,2,REGULAR,03:39,03:39:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,foul,personal,"shooting,2freethrow",1,0,27,42,-15
+2902690,414,363,362,2,REGULAR,03:57,03:57:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,27,42,-15
+2902690,415,362,<NA>,2,REGULAR,03:57,03:57:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,dunk,"fromturnover,pointsinthepaint",1,1,27,42,-15
+2902690,416,358,<NA>,2,REGULAR,04:08,04:08:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,turnover,badpass,"",1,0,27,40,-13
+2902690,417,355,<NA>,2,REGULAR,04:19,04:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,freethrow,2of2,2ndchance,1,1,27,40,-13
+2902690,418,354,<NA>,2,REGULAR,04:19,04:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,freethrow,1of2,2ndchance,1,1,27,39,-12
+2902690,419,352,<NA>,2,REGULAR,04:19,04:19:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,out,"",1,0,27,38,-11
+2902690,420,353,<NA>,2,REGULAR,04:19,04:19:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,in,"",1,0,27,38,-11
+2902690,421,351,350,2,REGULAR,04:19,04:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foulon,"","",1,0,27,38,-11
+2902690,422,350,<NA>,2,REGULAR,04:19,04:19:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,foul,personal,2freethrow,1,0,27,38,-11
+2902690,423,348,347,2,REGULAR,04:19,04:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,offensive,"",1,0,27,38,-11
+2902690,424,347,<NA>,2,REGULAR,04:21,04:21:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,3pt,jumpshot,"",0,1,27,38,-11
+2902690,425,346,345,2,REGULAR,04:25,04:25:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,defensive,"",1,0,27,38,-11
+2902690,426,345,<NA>,2,REGULAR,04:29,04:29:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,3pt,pullupjumpshot,"",0,1,27,38,-11
+2902690,427,341,<NA>,2,REGULAR,04:42,04:42:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,freethrow,2of2,"",1,1,27,38,-11
+2902690,428,340,<NA>,2,REGULAR,04:42,04:42:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,freethrow,1of2,"",1,1,27,37,-10
+2902690,429,338,<NA>,2,REGULAR,04:42,04:42:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,out,"",1,0,27,36,-9
+2902690,430,339,<NA>,2,REGULAR,04:42,04:42:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,in,"",1,0,27,36,-9
+2902690,431,337,336,2,REGULAR,04:42,04:42:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foulon,"","",1,0,27,36,-9
+2902690,432,336,<NA>,2,REGULAR,04:42,04:42:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,foul,personal,"shooting,2freethrow",1,0,27,36,-9
+2902690,433,330,329,2,REGULAR,04:54,04:54:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,rebound,defensive,"",1,0,27,36,-9
+2902690,434,329,<NA>,2,REGULAR,04:56,04:56:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,3pt,pullupjumpshot,"",0,1,27,36,-9
+2902690,435,328,<NA>,2,REGULAR,05:11,05:11:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,dunk,"2ndchance,pointsinthepaint",1,1,27,36,-9
+2902690,436,327,326,2,REGULAR,05:12,05:12:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,rebound,offensive,"",1,0,27,34,-7
+2902690,437,326,<NA>,2,REGULAR,05:14,05:14:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,2pt,floatingjumpshot,pointsinthepaint,0,1,27,34,-7
+2902690,438,321,<NA>,2,REGULAR,05:22,05:22:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,out,"",1,0,27,34,-7
+2902690,439,322,<NA>,2,REGULAR,05:22,05:22:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,in,"",1,0,27,34,-7
+2902690,440,319,<NA>,2,REGULAR,05:22,05:22:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,out,"",1,0,27,34,-7
+2902690,441,320,<NA>,2,REGULAR,05:22,05:22:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,in,"",1,0,27,34,-7
+2902690,442,318,317,2,REGULAR,05:22,05:22:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foulon,"","",1,0,27,34,-7
+2902690,443,317,<NA>,2,REGULAR,05:22,05:22:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,foul,personal,"",1,0,27,34,-7
+2902690,444,314,308,2,REGULAR,05:34,05:34:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,27,34,-7
+2902690,445,308,<NA>,2,REGULAR,05:40,05:40:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,3pt,jumpshot,"",0,1,27,34,-7
+2902690,446,306,<NA>,2,REGULAR,05:45,05:45:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,freethrow,2of2,"",1,1,27,34,-7
+2902690,447,305,<NA>,2,REGULAR,05:45,05:45:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,freethrow,1of2,"",1,1,26,34,-8
+2902690,448,303,<NA>,2,REGULAR,05:45,05:45:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,substitution,out,"",1,0,27,34,-7
+2902690,449,304,<NA>,2,REGULAR,05:45,05:45:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,substitution,in,"",1,0,27,34,-7
+2902690,450,302,<NA>,2,REGULAR,05:45,05:45:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,in,"",1,0,27,34,-7
+2902690,451,301,<NA>,2,REGULAR,05:45,05:45:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,in,"",1,0,27,34,-7
+2902690,452,299,<NA>,2,REGULAR,05:45,05:45:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,out,"",1,0,27,34,-7
+2902690,453,300,<NA>,2,REGULAR,05:45,05:45:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,substitution,out,"",1,0,27,34,-7
+2902690,454,298,297,2,REGULAR,05:45,05:45:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,foulon,"","",1,0,25,34,-9
+2902690,455,297,<NA>,2,REGULAR,05:45,05:45:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,foul,disruptive,2freethrow,1,0,25,34,-9
+2902690,456,296,293,2,REGULAR,05:45,05:45:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,rebound,defensive,"",1,0,25,34,-9
+2902690,457,295,293,2,REGULAR,05:47,05:47:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,block,"","",1,0,25,34,-9
+2902690,458,293,<NA>,2,REGULAR,05:47,05:47:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,layup,"pointsinthepaint,blocked",0,1,25,34,-9
+2902690,459,292,<NA>,2,REGULAR,06:06,06:06:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,1,1,25,34,-9
+2902690,460,291,290,2,REGULAR,06:19,06:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,23,34,-11
+2902690,461,290,<NA>,2,REGULAR,06:19,06:19:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,2pt,dunk,pointsinthepaint,1,1,23,34,-11
+2902690,462,287,<NA>,2,REGULAR,06:35,06:35:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,2pt,drivinglayup,pointsinthepaint,1,1,23,32,-9
+2902690,463,286,285,2,REGULAR,06:55,06:55:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,21,32,-11
+2902690,464,285,<NA>,2,REGULAR,06:55,06:55:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,3pt,jumpshot,2ndchance,1,1,21,32,-11
+2902690,465,283,<NA>,2,REGULAR,06:57,06:57:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,headcoachchallenge,outofbounds,accepted,1,0,21,29,-8
+2902690,466,282,277,2,REGULAR,06:57,06:57:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,21,29,-8
+2902690,467,277,<NA>,2,REGULAR,06:59,06:59:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,2of2,"2ndchance,fastbreak",0,1,21,29,-8
+2902690,468,276,<NA>,2,REGULAR,06:59,06:59:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,1of2,"2ndchance,fastbreak",1,1,21,29,-8
+2902690,469,274,<NA>,2,REGULAR,06:59,06:59:00,1,10,J. ITTOUNAS,5,Τζον-Μίλτον,Ηττουνασ,John-Milton,ITTOUNAS,Τ. Ηττουνασ,substitution,out,"",1,0,21,28,-7
+2902690,470,275,<NA>,2,REGULAR,06:59,06:59:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,in,"",1,0,21,28,-7
+2902690,471,273,272,2,REGULAR,06:59,06:59:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foulon,"","",1,0,21,28,-7
+2902690,472,272,<NA>,2,REGULAR,06:59,06:59:00,1,10,J. ITTOUNAS,5,Τζον-Μίλτον,Ηττουνασ,John-Milton,ITTOUNAS,Τ. Ηττουνασ,foul,personal,"shooting,2freethrow",1,0,21,28,-7
+2902690,473,268,266,2,REGULAR,07:00,07:00:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,offensive,"",1,0,21,28,-7
+2902690,474,266,<NA>,2,REGULAR,07:03,07:03:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,3pt,jumpshot,"",0,1,21,28,-7
+2902690,475,265,264,2,REGULAR,07:06,07:06:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,defensive,"",1,0,21,28,-7
+2902690,476,264,<NA>,2,REGULAR,07:09,07:09:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,2pt,drivinglayup,"fromturnover,pointsinthepaint",0,1,21,28,-7
+2902690,477,263,262,2,REGULAR,07:14,07:14:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,steal,"","",1,0,21,28,-7
+2902690,478,262,<NA>,2,REGULAR,07:14,07:14:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,turnover,badpass,"",1,0,21,28,-7
+2902690,479,261,259,2,REGULAR,07:22,07:22:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,rebound,defensive,"",1,0,21,28,-7
+2902690,480,260,259,2,REGULAR,07:25,07:25:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,block,"","",1,0,21,28,-7
+2902690,481,259,<NA>,2,REGULAR,07:25,07:25:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,"pointsinthepaint,blocked",0,1,21,28,-7
+2902690,482,256,<NA>,2,REGULAR,07:48,07:48:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,substitution,out,"",1,0,21,28,-7
+2902690,483,257,<NA>,2,REGULAR,07:48,07:48:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,in,"",1,0,21,28,-7
+2902690,484,255,<NA>,2,REGULAR,07:48,07:48:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,freethrow,2of2,"",1,1,21,28,-7
+2902690,485,254,253,2,REGULAR,07:48,07:48:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,assist,"","",1,0,21,27,-6
+2902690,486,253,<NA>,2,REGULAR,07:48,07:48:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,freethrow,1of2,"",1,1,21,27,-6
+2902690,487,252,<NA>,2,REGULAR,07:48,07:48:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,in,"",1,0,21,26,-5
+2902690,488,251,<NA>,2,REGULAR,07:48,07:48:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,in,"",1,0,21,26,-5
+2902690,489,249,<NA>,2,REGULAR,07:48,07:48:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,out,"",1,0,21,26,-5
+2902690,490,250,<NA>,2,REGULAR,07:48,07:48:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,out,"",1,0,21,26,-5
+2902690,491,248,<NA>,2,REGULAR,07:48,07:48:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,timeout,full,"",1,0,21,26,-5
+2902690,492,247,246,2,REGULAR,07:48,07:48:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,foulon,"","",1,0,21,26,-5
+2902690,493,246,<NA>,2,REGULAR,07:48,07:48:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,foul,personal,"shooting,2freethrow",1,0,21,26,-5
+2902690,494,244,243,2,REGULAR,08:04,08:04:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,defensive,"",1,0,21,26,-5
+2902690,495,243,<NA>,2,REGULAR,08:07,08:07:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,3pt,jumpshot,"",0,1,21,26,-5
+2902690,496,242,<NA>,2,REGULAR,08:19,08:19:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,drivinglayup,pointsinthepaint,1,1,21,26,-5
+2902690,497,241,240,2,REGULAR,08:35,08:35:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,defensive,"",1,0,21,24,-3
+2902690,498,240,<NA>,2,REGULAR,08:38,08:38:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,pullupjumpshot,"",0,1,21,24,-3
+2902690,499,239,238,2,REGULAR,08:42,08:42:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,rebound,defensive,"",1,0,21,24,-3
+2902690,500,238,<NA>,2,REGULAR,08:44,08:44:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,2pt,floatingjumpshot,pointsinthepaint,0,1,21,24,-3
+2902690,501,237,236,2,REGULAR,08:49,08:49:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,defensive,"",1,0,21,24,-3
+2902690,502,236,<NA>,2,REGULAR,08:53,08:53:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,jumpshot,fromturnover,0,1,21,24,-3
+2902690,503,235,234,2,REGULAR,09:00,09:00:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,steal,"","",1,0,21,24,-3
+2902690,504,234,<NA>,2,REGULAR,09:00,09:00:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,turnover,badpass,"",1,0,21,24,-3
+2902690,505,232,231,2,REGULAR,09:11,09:11:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,foulon,"","",1,0,21,24,-3
+2902690,506,231,<NA>,2,REGULAR,09:11,09:11:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,foul,personal,"",1,0,21,24,-3
+2902690,507,229,228,2,REGULAR,09:13,09:13:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,defensive,"",1,0,21,24,-3
+2902690,508,228,<NA>,2,REGULAR,09:15,09:15:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,drivinglayup,pointsinthepaint,0,1,21,24,-3
+2902690,509,227,226,2,REGULAR,09:26,09:26:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,21,24,-3
+2902690,510,226,<NA>,2,REGULAR,09:26,09:26:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,3pt,jumpshot,"",1,1,21,24,-3
+2902690,511,225,223,2,REGULAR,09:37,09:37:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,defensive,"",1,0,21,21,0
+2902690,512,223,<NA>,2,REGULAR,09:37,09:37:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of1,fromturnover,0,1,21,21,0
+2902690,513,222,221,2,REGULAR,09:37,09:37:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,21,21,0
+2902690,514,221,<NA>,2,REGULAR,09:37,09:37:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,foul,personal,"shooting,1freethrow",1,0,21,21,0
+2902690,515,220,<NA>,2,REGULAR,09:37,09:37:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,"fromturnover,pointsinthepaint",1,1,21,21,0
+2902690,516,213,<NA>,2,REGULAR,09:47,09:47:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,turnover,badpass,"",1,0,19,21,-2
+2902690,517,210,<NA>,2,REGULAR,10:00,10:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,start,"",1,0,19,21,-2
+2902690,518,208,<NA>,2,REGULAR,10:00,10:00:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,substitution,out,"",1,0,19,21,-2
+2902690,519,209,<NA>,2,REGULAR,10:00,10:00:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,substitution,in,"",1,0,19,21,-2
+2902690,520,207,<NA>,2,REGULAR,10:00,10:00:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,in,"",1,0,19,21,-2
+2902690,521,206,<NA>,2,REGULAR,10:00,10:00:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,substitution,in,"",1,0,19,21,-2
+2902690,522,204,<NA>,2,REGULAR,10:00,10:00:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,out,"",1,0,19,21,-2
+2902690,523,205,<NA>,2,REGULAR,10:00,10:00:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,in,"",1,0,19,21,-2
+2902690,524,202,<NA>,2,REGULAR,10:00,10:00:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,out,"",1,0,19,21,-2
+2902690,525,203,<NA>,2,REGULAR,10:00,10:00:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,out,"",1,0,19,21,-2
+2902690,526,201,<NA>,1,REGULAR,00:00,00:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,end,confirmed,1,0,19,21,-2
+2902690,527,197,<NA>,1,REGULAR,00:01,00:01:20,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,3pt,pullupjumpshot,"",0,1,19,21,-2
+2902690,528,193,192,1,REGULAR,00:03,00:03:70,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,rebound,defensive,"",1,0,19,21,-2
+2902690,529,192,<NA>,1,REGULAR,00:06,00:06:10,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,2pt,hookshot,pointsinthepaint,0,1,19,21,-2
+2902690,530,191,190,1,REGULAR,00:16,00:16:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,rebound,defensive,"",1,0,19,21,-2
+2902690,531,190,<NA>,1,REGULAR,00:18,00:18:80,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,3pt,jumpshot,"",0,1,19,21,-2
+2902690,532,189,188,1,REGULAR,00:40,00:40:70,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,rebound,defensive,"",1,0,19,21,-2
+2902690,533,188,<NA>,1,REGULAR,00:43,00:43:90,1,10,J. ITTOUNAS,5,Τζον-Μίλτον,Ηττουνασ,John-Milton,ITTOUNAS,Τ. Ηττουνασ,3pt,jumpshot,"",0,1,19,21,-2
+2902690,534,186,<NA>,1,REGULAR,01:09,01:09:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,2of2,"fastbreak,fromturnover",1,1,19,21,-2
+2902690,535,185,184,1,REGULAR,01:09,01:09:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,19,20,-1
+2902690,536,184,<NA>,1,REGULAR,01:09,01:09:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,1of2,"fastbreak,fromturnover",0,1,19,20,-1
+2902690,537,182,<NA>,1,REGULAR,01:09,01:09:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,out,"",1,0,19,20,-1
+2902690,538,183,<NA>,1,REGULAR,01:09,01:09:00,1,10,J. ITTOUNAS,5,Τζον-Μίλτον,Ηττουνασ,John-Milton,ITTOUNAS,Τ. Ηττουνασ,substitution,in,"",1,0,19,20,-1
+2902690,539,181,180,1,REGULAR,01:09,01:09:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foulon,"","",1,0,19,20,-1
+2902690,540,180,<NA>,1,REGULAR,01:09,01:09:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,foul,personal,2freethrow,1,0,19,20,-1
+2902690,541,178,177,1,REGULAR,01:11,01:11:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,steal,"","",1,0,19,20,-1
+2902690,542,177,<NA>,1,REGULAR,01:11,01:11:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,turnover,badpass,"",1,0,19,20,-1
+2902690,543,176,<NA>,1,REGULAR,01:22,01:22:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,2pt,hookshot,pointsinthepaint,1,1,19,20,-1
+2902690,544,173,<NA>,1,REGULAR,01:29,01:29:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,substitution,out,"",1,0,19,18,1
+2902690,545,174,<NA>,1,REGULAR,01:29,01:29:00,2,2,D. SLAFTSAKIS,13,Διαμαντής,Σλαφτσακησ,Diamantis,SLAFTSAKIS,Δ. Σλαφτσακησ,substitution,in,"",1,0,19,18,1
+2902690,546,171,<NA>,1,REGULAR,01:29,01:29:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,out,"",1,0,19,18,1
+2902690,547,172,<NA>,1,REGULAR,01:29,01:29:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,in,"",1,0,19,18,1
+2902690,548,168,<NA>,1,REGULAR,01:46,01:46:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,2pt,drivinglayup,pointsinthepaint,1,1,19,18,1
+2902690,549,167,<NA>,1,REGULAR,02:00,02:00:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,3pt,jumpshot,"fromturnover,fastbreak",1,1,17,18,-1
+2902690,550,166,165,1,REGULAR,02:05,02:05:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,steal,"","",1,0,17,15,2
+2902690,551,165,<NA>,1,REGULAR,02:05,02:05:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,turnover,ballhandling,"",1,0,17,15,2
+2902690,552,162,<NA>,1,REGULAR,02:25,02:25:00,2,5,N. HORCHLER,5,Νόα,Χορχλερ,Noah,HORCHLER,Ν. Χορχλερ,substitution,out,"",1,0,17,15,2
+2902690,553,163,<NA>,1,REGULAR,02:25,02:25:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,in,"",1,0,17,15,2
+2902690,554,161,<NA>,1,REGULAR,02:25,02:25:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,2of2,"",1,1,17,15,2
+2902690,555,158,157,1,REGULAR,02:25,02:25:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensivedeadball,"",1,0,17,14,3
+2902690,556,157,<NA>,1,REGULAR,02:25,02:25:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,freethrow,1of2,"",0,1,17,14,3
+2902690,557,156,155,1,REGULAR,02:25,02:25:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,foulon,"","",1,0,17,14,3
+2902690,558,155,<NA>,1,REGULAR,02:25,02:25:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,foul,personal,2freethrow,1,0,17,14,3
+2902690,559,154,152,1,REGULAR,02:25,02:25:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,defensive,"",1,0,17,14,3
+2902690,560,152,<NA>,1,REGULAR,02:27,02:27:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,3pt,pullupjumpshot,2ndchance,0,1,17,14,3
+2902690,561,148,146,1,REGULAR,02:35,02:35:00,1,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,offensive,team,1,0,17,14,3
+2902690,562,146,<NA>,1,REGULAR,02:37,02:37:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,2pt,jumpshot,"",0,1,17,14,3
+2902690,563,145,144,1,REGULAR,02:57,02:57:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,assist,"","",1,0,17,14,3
+2902690,564,144,<NA>,1,REGULAR,02:57,02:57:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,3pt,jumpshot,"",1,1,17,14,3
+2902690,565,143,142,1,REGULAR,03:14,03:14:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,assist,"","",1,0,17,11,6
+2902690,566,142,<NA>,1,REGULAR,03:14,03:14:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,2pt,layup,pointsinthepaint,1,1,17,11,6
+2902690,567,141,<NA>,1,REGULAR,03:31,03:31:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,2pt,drivinglayup,pointsinthepaint,1,1,15,11,4
+2902690,568,138,<NA>,1,REGULAR,03:40,03:40:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,substitution,out,"",1,0,15,9,6
+2902690,569,139,<NA>,1,REGULAR,03:40,03:40:00,1,1,K. PAPADAKIS,23,Κωνσταντίνος,Παπαδακησ,Konstantinos,PAPADAKIS,Κ. Παπαδακησ,substitution,in,"",1,0,15,9,6
+2902690,570,137,135,1,REGULAR,03:40,03:40:00,2,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,rebound,defensive,team,1,0,15,9,6
+2902690,571,135,<NA>,1,REGULAR,03:41,03:41:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of1,"",0,1,15,9,6
+2902690,572,133,<NA>,1,REGULAR,03:41,03:41:00,2,1,S. MASTROGIANNOPOULOS,56,Σαράντης,Μαστρογιαννοπουλοσ,Sarantis,MASTROGIANNOPOULOS,Σ. Μαστρογιαννοπουλοσ,substitution,in,"",1,0,15,9,6
+2902690,573,132,<NA>,1,REGULAR,03:41,03:41:00,2,11,G. ARNOKOUROS,19,Γεώργιος,Αρνοκουροσ,Georgios,ARNOKOUROS,Γ. Αρνοκουροσ,substitution,in,"",1,0,15,9,6
+2902690,574,130,<NA>,1,REGULAR,03:41,03:41:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,substitution,out,"",1,0,15,9,6
+2902690,575,131,<NA>,1,REGULAR,03:41,03:41:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,substitution,out,"",1,0,15,9,6
+2902690,576,128,<NA>,1,REGULAR,03:41,03:41:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,substitution,out,"",1,0,15,9,6
+2902690,577,129,<NA>,1,REGULAR,03:41,03:41:00,1,16,N. FREIDEL,15,Νόα,Φραϊντελ,Noah,FREIDEL,Ν. Φραϊντελ,substitution,in,"",1,0,15,9,6
+2902690,578,127,126,1,REGULAR,03:41,03:41:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,15,9,6
+2902690,579,126,<NA>,1,REGULAR,03:41,03:41:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,foul,personal,"shooting,1freethrow",1,0,15,9,6
+2902690,580,125,<NA>,1,REGULAR,03:41,03:41:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,pointsinthepaint,1,1,15,9,6
+2902690,581,120,<NA>,1,REGULAR,03:51,03:51:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,2pt,layup,"2ndchance,pointsinthepaint",1,1,13,9,4
+2902690,582,119,118,1,REGULAR,03:52,03:52:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,rebound,offensive,"",1,0,13,7,6
+2902690,583,118,<NA>,1,REGULAR,03:54,03:54:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,3pt,jumpshot,"",0,1,13,7,6
+2902690,584,117,<NA>,1,REGULAR,04:11,04:11:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,drivinglayup,"fromturnover,pointsinthepaint",1,1,13,7,6
+2902690,585,116,115,1,REGULAR,04:28,04:28:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,steal,"","",1,0,11,7,4
+2902690,586,115,<NA>,1,REGULAR,04:28,04:28:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,turnover,badpass,"",1,0,11,7,4
+2902690,587,114,<NA>,1,REGULAR,04:51,04:51:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,layup,"2ndchance,pointsinthepaint",1,1,11,7,4
+2902690,588,113,112,1,REGULAR,04:52,04:52:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,offensive,"",1,0,9,7,2
+2902690,589,112,<NA>,1,REGULAR,04:55,04:55:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,3pt,jumpshot,"",0,1,9,7,2
+2902690,590,111,110,1,REGULAR,05:13,05:13:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,rebound,defensive,"",1,0,9,7,2
+2902690,591,110,<NA>,1,REGULAR,05:15,05:15:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,2pt,layup,pointsinthepaint,0,1,9,7,2
+2902690,592,109,<NA>,1,REGULAR,05:34,05:34:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,2pt,drivinglayup,"fromturnover,pointsinthepaint",1,1,9,7,2
+2902690,593,108,107,1,REGULAR,05:46,05:46:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,steal,"","",1,0,7,7,0
+2902690,594,107,<NA>,1,REGULAR,05:46,05:46:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,turnover,badpass,"",1,0,7,7,0
+2902690,595,101,100,1,REGULAR,06:02,06:02:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,foulon,"","",1,0,7,7,0
+2902690,596,100,<NA>,1,REGULAR,06:02,06:02:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,foul,personal,"",1,0,7,7,0
+2902690,597,97,<NA>,1,REGULAR,06:09,06:09:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,2of2,"",1,1,7,7,0
+2902690,598,96,<NA>,1,REGULAR,06:09,06:09:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,freethrow,1of2,"",1,1,6,7,-1
+2902690,599,95,94,1,REGULAR,06:09,06:09:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,5,7,-2
+2902690,600,94,<NA>,1,REGULAR,06:09,06:09:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,foul,personal,"shooting,2freethrow",1,0,5,7,-2
+2902690,601,91,<NA>,1,REGULAR,06:25,06:25:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,freethrow,2of2,fromturnover,1,1,5,7,-2
+2902690,602,90,89,1,REGULAR,06:25,06:25:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,assist,"","",1,0,5,6,-1
+2902690,603,89,<NA>,1,REGULAR,06:25,06:25:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,freethrow,1of2,fromturnover,1,1,5,6,-1
+2902690,604,87,<NA>,1,REGULAR,06:25,06:25:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,substitution,out,"",1,0,5,5,0
+2902690,605,88,<NA>,1,REGULAR,06:25,06:25:00,1,4,M. CHATZIDAKIS,19,Μανόλης,Χατζηδακησ,Manolis,CHATZIDAKIS,Μ. Χατζηδακησ,substitution,in,"",1,0,5,5,0
+2902690,606,86,85,1,REGULAR,06:25,06:25:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,foulon,"","",1,0,5,5,0
+2902690,607,85,<NA>,1,REGULAR,06:25,06:25:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,foul,personal,"shooting,2freethrow",1,0,5,5,0
+2902690,608,80,<NA>,1,REGULAR,06:41,06:41:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,substitution,out,"",1,0,5,5,0
+2902690,609,81,<NA>,1,REGULAR,06:41,06:41:00,2,5,N. HORCHLER,5,Νόα,Χορχλερ,Noah,HORCHLER,Ν. Χορχλερ,substitution,in,"",1,0,5,5,0
+2902690,610,78,<NA>,1,REGULAR,06:41,06:41:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,turnover,travel,"",1,0,5,5,0
+2902690,611,72,<NA>,1,REGULAR,06:52,06:52:00,2,3,V. MOURATOS,7,Βασίλης,Μουρατοσ,Vassilis,MOURATOS,Β. Μουρατοσ,substitution,in,"",1,0,5,5,0
+2902690,612,71,<NA>,1,REGULAR,06:52,06:52:00,2,14,D. STYLES,3,Ντόντρεζ,Σταϊλσ,Dontrez,STYLES,Ν. Σταϊλσ,substitution,in,"",1,0,5,5,0
+2902690,613,69,<NA>,1,REGULAR,06:52,06:52:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,substitution,out,"",1,0,5,5,0
+2902690,614,70,<NA>,1,REGULAR,06:52,06:52:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,substitution,out,"",1,0,5,5,0
+2902690,615,68,<NA>,1,REGULAR,06:52,06:52:00,1,3,A. NIKOLAIDIS,55,Αλέξανδρος,Νικολαϊδησ,Alexandros,NIKOLAIDIS,Α. Νικολαϊδησ,substitution,in,"",1,0,5,5,0
+2902690,616,67,<NA>,1,REGULAR,06:52,06:52:00,1,15,W. CARIUS,25,Γουίλιαμ,Καριουσ,William Glen,CARIUS,Γ. Καριουσ,substitution,in,"",1,0,5,5,0
+2902690,617,65,<NA>,1,REGULAR,06:52,06:52:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,substitution,out,"",1,0,5,5,0
+2902690,618,66,<NA>,1,REGULAR,06:52,06:52:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,substitution,out,"",1,0,5,5,0
+2902690,619,64,63,1,REGULAR,06:52,06:52:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,5,5,0
+2902690,620,63,<NA>,1,REGULAR,06:52,06:52:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,foul,personal,"",1,0,5,5,0
+2902690,621,61,59,1,REGULAR,06:54,06:54:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,rebound,defensive,"",1,0,5,5,0
+2902690,622,60,59,1,REGULAR,06:57,06:57:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,block,"","",1,0,5,5,0
+2902690,623,59,<NA>,1,REGULAR,06:57,06:57:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,2pt,layup,"pointsinthepaint,blocked",0,1,5,5,0
+2902690,624,58,57,1,REGULAR,07:19,07:19:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,assist,"","",1,0,5,5,0
+2902690,625,57,<NA>,1,REGULAR,07:19,07:19:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,2pt,dunk,"fromturnover,pointsinthepaint,fastbreak",1,1,5,5,0
+2902690,626,56,55,1,REGULAR,07:24,07:24:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,steal,"","",1,0,3,5,-2
+2902690,627,55,<NA>,1,REGULAR,07:24,07:24:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,turnover,badpass,"",1,0,3,5,-2
+2902690,628,53,51,1,REGULAR,07:37,07:37:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,foulon,"","",1,0,3,5,-2
+2902690,629,52,51,1,REGULAR,07:37,07:37:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,turnover,offensive,"",1,0,3,5,-2
+2902690,630,51,<NA>,1,REGULAR,07:37,07:37:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,foul,offensive,"",1,0,3,5,-2
+2902690,631,46,45,1,REGULAR,07:48,07:48:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,foulon,"","",1,0,3,5,-2
+2902690,632,45,<NA>,1,REGULAR,07:48,07:48:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,foul,personal,"",1,0,3,5,-2
+2902690,633,43,41,1,REGULAR,07:53,07:53:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,rebound,offensive,"",1,0,3,5,-2
+2902690,634,42,41,1,REGULAR,07:56,07:56:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,block,"","",1,0,3,5,-2
+2902690,635,41,<NA>,1,REGULAR,07:56,07:56:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,layup,"pointsinthepaint,blocked",0,1,3,5,-2
+2902690,636,79,40,1,REGULAR,08:07,08:07:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,assist,"","",1,0,3,5,-2
+2902690,637,40,<NA>,1,REGULAR,08:07,08:07:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,2pt,drivinglayup,pointsinthepaint,1,1,3,5,-2
+2902690,638,38,37,1,REGULAR,08:15,08:15:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,foulon,"","",1,0,3,3,0
+2902690,639,37,<NA>,1,REGULAR,08:15,08:15:00,1,2,G. GKIOUZELIS,12,Γιώργος,Γκιουζέλης,Giorgos,GKIOUZELIS,Γ. Γκιουζέλης,foul,personal,"",1,0,3,3,0
+2902690,640,35,33,1,REGULAR,08:25,08:25:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,rebound,defensive,"",1,0,3,3,0
+2902690,641,33,<NA>,1,REGULAR,08:25,08:25:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,2of2,"fastbreak,fromturnover",0,1,3,3,0
+2902690,642,32,31,1,REGULAR,08:25,08:25:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,assist,"","",1,0,3,3,0
+2902690,643,31,<NA>,1,REGULAR,08:25,08:25:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,freethrow,1of2,"fastbreak,fromturnover",1,1,3,3,0
+2902690,644,30,28,1,REGULAR,08:25,08:25:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,foulon,"","",1,0,2,3,-1
+2902690,645,28,<NA>,1,REGULAR,08:25,08:25:00,2,8,C. SYLLAS,16,Κόουλ-Τζων,Συλλασ,Cole-John,SYLLAS,Κ. Συλλασ,foul,personal,"shooting,2freethrow",1,0,2,3,-1
+2902690,646,22,21,1,REGULAR,08:31,08:31:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,steal,"","",1,0,2,3,-1
+2902690,647,21,<NA>,1,REGULAR,08:31,08:31:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,turnover,badpass,"",1,0,2,3,-1
+2902690,648,20,19,1,REGULAR,08:37,08:37:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,rebound,defensive,"",1,0,2,3,-1
+2902690,649,19,<NA>,1,REGULAR,08:39,08:39:00,1,18,J. FINCH,1,Τζέιλεν,Φιντσ,Jalen,FINCH,Τ. Φιντσ,2pt,floatingjumpshot,pointsinthepaint,0,1,2,3,-1
+2902690,650,17,15,1,REGULAR,08:56,08:56:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,assist,"","",1,0,2,3,-1
+2902690,651,15,<NA>,1,REGULAR,08:56,08:56:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,3pt,jumpshot,2ndchance,1,1,2,3,-1
+2902690,652,14,13,1,REGULAR,09:04,09:04:00,2,16,J. HUTSON,11,Τζέικομπ,Χατσον,Jacob,HUTSON,Τ. Χατσον,rebound,offensive,"",1,0,2,0,2
+2902690,653,13,<NA>,1,REGULAR,09:07,09:07:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,3pt,jumpshot,"",0,1,2,0,2
+2902690,654,12,<NA>,1,REGULAR,09:21,09:21:00,1,11,T. NICHOLS,0,Τάι,Νικολσ,Ty,NICHOLS,Τ. Νικολσ,2pt,drivinglayup,"fromturnover,pointsinthepaint",1,1,2,0,2
+2902690,655,10,<NA>,1,REGULAR,09:32,09:32:00,2,15,H. DIARRA,10,Χασσάν,Ντιαρα,Hassan,DIARRA,Χ. Ντιαρα,turnover,backcourt,"",1,0,0,0,0
+2902690,656,8,7,1,REGULAR,09:42,09:42:00,2,6,C. MELVIN,2,Κλίβελαντ,Μελβιν,Cleveland,MELVIN,Κ. Μελβιν,rebound,defensive,"",1,0,0,0,0
+2902690,657,7,<NA>,1,REGULAR,09:44,09:44:00,1,17,T. ANDERSON,32,Τάιταν,Αντερσον,Tytan,ANDERSON,Τ. Αντερσον,2pt,layup,pointsinthepaint,0,1,0,0,0
+2902690,658,6,4,1,REGULAR,09:59,09:59:00,2,13,J. LECQUE,0,Ζαλίν,Λεκ,Jalen,LECQUE,Ζ. Λεκ,jumpball,lost,"",1,0,0,0,0
+2902690,659,5,4,1,REGULAR,09:59,09:59:00,1,12,O. PAYNE,4,Ομάρ,Πεϊν,Omar,PAYNE,Ο. Πεϊν,jumpball,won,"",1,0,0,0,0
+2902690,660,4,<NA>,1,REGULAR,10:00,10:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,jumpball,startperiod,"",1,0,0,0,0
+2902690,661,2,<NA>,1,REGULAR,10:00,10:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,period,start,"",1,0,0,0,0
+2902690,662,1,<NA>,1,REGULAR,10:00,10:00:00,0,0,"","",<NA>,<NA>,<NA>,<NA>,<NA>,game,start,"",1,0,0,0,0

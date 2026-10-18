@@ -1,0 +1,23 @@
+[
+  {
+    "leagueId": 115,
+    "competitionId": 49915,
+    "matchId": 2902702,
+    "matchStatus": "COMPLETE",
+    "matchTime": "2026-10-11 13:00:00",
+    "matchTimeUTC": "2026-10-11 10:00:00",
+    "live": 0,
+    "awayname": "Kolossos H Hotels Collection",
+    "awaycode": "KOL",
+    "awaynameInternational": "Kolossos H Hotels Collection",
+    "awayteamId": 23952,
+    "awayscore": "83",
+    "awaylogo": "https://images.statsengine.playbyplay.api.geniussports.com/f53c379dfe3cafa0123d225702bead35T1.png",
+    "homename": "Olympiacos Piraeus",
+    "homecode": "OLY",
+    "homenameInternational": "Olympiacos Piraeus",
+    "hometeamId": 23954,
+    "homescore": "99",
+    "homelogo": "https://images.statsengine.playbyplay.api.geniussports.com/d37491c0e0dd0786c532d86146a20e9dT1.png"
+  }
+]

@@ -1,0 +1,4 @@
+match_id,link_match_id,comp_id,org,status,date_time,venue_id,venue_name,home_team_id,home_team_name,home_team_code,home_score,away_team_id,away_team_name,away_team_code,away_score
+2895763,2895763,49946,HKS,COMPLETE,"Oct 10, 2026, 6:00 PM",10352,"Košarkaška dvorana ""Jazine""",72921,KK Aleta Puntamika,PUN,84,42892,KK Gorica,GOR,74
+2895771,2895771,49946,HKS,COMPLETE,"Oct 10, 2026, 6:00 PM",29588,Gradska sportska dvorana Crikvenica,140466,KK Crikvenica,CRI,75,73565,HAKK Mladost,MLA,53
+2895765,2895765,49946,HKS,COMPLETE,"Oct 10, 2026, 7:00 PM",13193,Nastavno-sportska dvorana Đakovo,73746,KK Đakovo,ĐAK,77,150232,KK Novi Zagreb,NZG,83
