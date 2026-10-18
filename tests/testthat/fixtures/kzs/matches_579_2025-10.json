@@ -1,0 +1,936 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "id": 101846,
+        "competitions": [
+          {
+            "id": 93899,
+            "competitionId": 579,
+            "competitionName": "Liga OTP banka",
+            "competitionType": "LEAGUE",
+            "competitionPhaseId": 5811,
+            "competitionPhaseName": "Redni del",
+            "transferred": false,
+            "seasonId": 26
+          }
+        ],
+        "round": 2,
+        "fibaLiveStatsUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/KZS/2698565/",
+        "gameIndex": 10,
+        "dateTime": "2025-10-01T18:45:00Z",
+        "attendance": 150,
+        "sportHallName": "ŠD Domžale",
+        "sportHallAddress": "Mestni trg 1, 1230 Domžale, Slovenija",
+        "sportHallId": 139,
+        "firstTeamId": 203679,
+        "firstTeamTeamId": 17558,
+        "isFirstTeamPlaceholder": false,
+        "secondTeamId": 203680,
+        "secondTeamTeamId": 17552,
+        "isSecondTeamPlaceholder": false,
+        "firstTeamName": "Kansai Helios Domžale",
+        "firstTeamShortName": "",
+        "secondTeamName": "Krka",
+        "secondTeamShortName": "KRKA",
+        "firstTeamScore": 78,
+        "secondTeamScore": 97,
+        "scoreInsertedManually": false,
+        "firstTeamLogoUuid": "ce68270c-327c-4e51-9091-d9fe83446aa2",
+        "secondTeamLogoUuid": "dbf53462-c87d-496b-a84d-8be542f337aa",
+        "firstTeamCode": "DOM",
+        "secondTeamCode": "KRK",
+        "liveStreams": [],
+        "streams": [
+          {
+            "id": 3192,
+            "type": "SPORT_TV",
+            "url": "",
+            "label": ""
+          },
+          {
+            "id": 3193,
+            "type": "YOUTUBE",
+            "url": "ECCR1hJNaYY",
+            "label": ""
+          }
+        ],
+        "status": "FINISHED",
+        "conclusions": [],
+        "delegated": true,
+        "delegationChanges": [
+          {
+            "id": 40011,
+            "timestamp": "2025-09-22T00:08:36.711939Z",
+            "type": "REFEREE1",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 101,
+              "person": {
+                "id": 57297,
+                "firstName": "Blaž",
+                "lastName": "Zupančič",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Blaž Zupančič"
+              }
+            }
+          },
+          {
+            "id": 40012,
+            "timestamp": "2025-09-22T00:08:36.711939Z",
+            "type": "REFEREE2",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 52,
+              "person": {
+                "id": 95906,
+                "firstName": "Andraž",
+                "lastName": "Rebeušek",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Andraž Rebeušek"
+              }
+            }
+          },
+          {
+            "id": 40013,
+            "timestamp": "2025-09-22T00:08:36.711939Z",
+            "type": "REFEREE3",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 182,
+              "person": {
+                "id": 96008,
+                "firstName": "Edo",
+                "lastName": "Javor",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Edo Javor"
+              }
+            }
+          }
+        ],
+        "moveRequests": [
+          {
+            "id": 20847,
+            "dateTime": "2025-10-01T18:30:00Z",
+            "moveReason": "OTHER",
+            "opposingTeamMustConfirm": false,
+            "sportHall": {
+              "id": 139,
+              "name": "ŠD Domžale",
+              "capacity": 2500,
+              "validTo": "2023-09-01T01:59:59Z",
+              "address": {
+                "id": 139,
+                "postOffice": {
+                  "id": 49,
+                  "zipCode": "1230",
+                  "name": "Domžale",
+                  "municipality": "DOMŽALE",
+                  "country": "SI"
+                },
+                "street": "Mestni trg",
+                "houseNumber": "1"
+              },
+              "ranks": [
+                {
+                  "id": 1,
+                  "gender": "MALE",
+                  "rank": "FIRST",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 2,
+                  "gender": "MALE",
+                  "rank": "SECOND",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 3,
+                  "gender": "MALE",
+                  "rank": "THIRD",
+                  "category": "ABSOLUTE"
+                }
+              ]
+            },
+            "statuses": [
+              {
+                "id": 30425,
+                "newStatus": "CONFIRMED",
+                "timestamp": "2025-09-17T18:08:47.200916Z"
+              }
+            ]
+          },
+          {
+            "id": 20945,
+            "dateTime": "2025-10-02T16:00:00Z",
+            "moveReason": "OTHER",
+            "opposingTeamMustConfirm": false,
+            "sportHall": {
+              "id": 139,
+              "name": "ŠD Domžale",
+              "capacity": 2500,
+              "validTo": "2023-09-01T01:59:59Z",
+              "address": {
+                "id": 139,
+                "postOffice": {
+                  "id": 49,
+                  "zipCode": "1230",
+                  "name": "Domžale",
+                  "municipality": "DOMŽALE",
+                  "country": "SI"
+                },
+                "street": "Mestni trg",
+                "houseNumber": "1"
+              },
+              "ranks": [
+                {
+                  "id": 1,
+                  "gender": "MALE",
+                  "rank": "FIRST",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 2,
+                  "gender": "MALE",
+                  "rank": "SECOND",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 3,
+                  "gender": "MALE",
+                  "rank": "THIRD",
+                  "category": "ABSOLUTE"
+                }
+              ]
+            },
+            "statuses": [
+              {
+                "id": 30533,
+                "newStatus": "CONFIRMED",
+                "timestamp": "2025-09-18T09:07:59.965825Z"
+              }
+            ]
+          },
+          {
+            "id": 21115,
+            "dateTime": "2025-10-01T18:45:00Z",
+            "moveReason": "OTHER",
+            "opposingTeamMustConfirm": false,
+            "sportHall": {
+              "id": 139,
+              "name": "ŠD Domžale",
+              "capacity": 2500,
+              "validTo": "2023-09-01T01:59:59Z",
+              "address": {
+                "id": 139,
+                "postOffice": {
+                  "id": 49,
+                  "zipCode": "1230",
+                  "name": "Domžale",
+                  "municipality": "DOMŽALE",
+                  "country": "SI"
+                },
+                "street": "Mestni trg",
+                "houseNumber": "1"
+              },
+              "ranks": [
+                {
+                  "id": 1,
+                  "gender": "MALE",
+                  "rank": "FIRST",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 2,
+                  "gender": "MALE",
+                  "rank": "SECOND",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 3,
+                  "gender": "MALE",
+                  "rank": "THIRD",
+                  "category": "ABSOLUTE"
+                }
+              ]
+            },
+            "statuses": [
+              {
+                "id": 30767,
+                "newStatus": "CONFIRMED",
+                "timestamp": "2025-09-22T11:39:47.731768Z"
+              }
+            ]
+          }
+        ],
+        "referee1": {
+          "id": 101,
+          "person": {
+            "id": 57297,
+            "firstName": "Blaž",
+            "lastName": "Zupančič",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "referee2": {
+          "id": 182,
+          "person": {
+            "id": 96008,
+            "firstName": "Edo",
+            "lastName": "Javor",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "referee3": {
+          "id": 52,
+          "person": {
+            "id": 95906,
+            "firstName": "Andraž",
+            "lastName": "Rebeušek",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "commissioner": {
+          "id": 60,
+          "person": {
+            "id": 95827,
+            "firstName": "Marijan",
+            "lastName": "Hafner",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "refereeController": {
+          "id": 60,
+          "person": {
+            "id": 95827,
+            "firstName": "Marijan",
+            "lastName": "Hafner",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        }
+      },
+      {
+        "id": 101842,
+        "competitions": [
+          {
+            "id": 93895,
+            "competitionId": 579,
+            "competitionName": "Liga OTP banka",
+            "competitionType": "LEAGUE",
+            "competitionPhaseId": 5811,
+            "competitionPhaseName": "Redni del",
+            "transferred": false,
+            "seasonId": 26
+          }
+        ],
+        "round": 2,
+        "fibaLiveStatsUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/KZS/2698608/",
+        "gameIndex": 6,
+        "dateTime": "2025-10-04T15:30:00Z",
+        "attendance": 100,
+        "sportHallName": "Tri lilije, Laško",
+        "sportHallAddress": "Poženelova ulica 22, 3270 Laško, Slovenija",
+        "sportHallId": 234,
+        "firstTeamId": 203671,
+        "firstTeamTeamId": 17556,
+        "isFirstTeamPlaceholder": false,
+        "secondTeamId": 203672,
+        "secondTeamTeamId": 17553,
+        "isSecondTeamPlaceholder": false,
+        "firstTeamName": "Laško",
+        "firstTeamShortName": "",
+        "secondTeamName": "Rogaška",
+        "firstTeamScore": 94,
+        "secondTeamScore": 86,
+        "scoreInsertedManually": false,
+        "firstTeamLogoUuid": "e2d136a7-5b41-4f75-825c-01356ceef2ab",
+        "secondTeamLogoUuid": "60e0340d-b00f-4db3-ad77-95cc74370ab3",
+        "firstTeamCode": "ZLA",
+        "secondTeamCode": "ROG",
+        "liveStreams": [],
+        "streams": [
+          {
+            "id": 3208,
+            "type": "SPORT_TV",
+            "url": "",
+            "label": ""
+          },
+          {
+            "id": 3209,
+            "type": "YOUTUBE",
+            "url": "e60lTSix7-g",
+            "label": ""
+          }
+        ],
+        "status": "FINISHED",
+        "conclusions": [
+          {
+            "id": 7512,
+            "club": {
+              "id": 44,
+              "code": "ZLA",
+              "email": "<redacted>",
+              "fullName": "KOŠARKARSKI KLUB ZLATOROG",
+              "identificationNumber": "5993121000",
+              "phone": "",
+              "shortName": "ZLATOROG",
+              "status": "ACTIVE",
+              "taxLiable": true,
+              "taxNumber": "<redacted>",
+              "addresses": [
+                {
+                  "id": 296,
+                  "postOffice": {
+                    "id": 348,
+                    "zipCode": "<redacted>",
+                    "name": "Laško",
+                    "municipality": "LAŠKO",
+                    "country": "SI"
+                  },
+                  "street": "<redacted>",
+                  "houseNumber": "<redacted>",
+                  "type": "PRIMARY"
+                }
+              ],
+              "socialMedias": [
+                {
+                  "id": 3241,
+                  "active": true,
+                  "socialMediaType": "INSTAGRAM",
+                  "url": "https://www.instagram.com/kkzlatorog/"
+                },
+                {
+                  "id": 3242,
+                  "active": true,
+                  "socialMediaType": "FACEBOOK",
+                  "url": "https://www.facebook.com/KKZlatorogLasko"
+                }
+              ],
+              "bankAccounts": [
+                {
+                  "id": 48,
+                  "iban": "<redacted>",
+                  "isSepa": true,
+                  "bankName": "<redacted>",
+                  "swiftCode": "<redacted>",
+                  "type": "PRIMARY"
+                }
+              ],
+              "sportHalls": [],
+              "personnel": [],
+              "logoUuid": "e2d136a7-5b41-4f75-825c-01356ceef2ab",
+              "absoluteTeams": [],
+              "homeJerseyColor": "#FFFFFF",
+              "guestJerseyColor": "#03005F",
+              "member": true,
+              "type": "CLUB",
+              "scoresheetEmail": "<redacted>"
+            },
+            "penaltyAmountEur": 0.0,
+            "text": "<p><strong>1. ZLATOROG </strong>se opozarja, da mora na tekmah predložiti prijavno listo na predpisanem obrazcu za sezono 25/26 v dveh natisnjenih izvodih. </p>",
+            "originalText": "<p><strong>1. $club </strong>se opozarja, da mora na tekmah predložiti prijavno listo na predpisanem obrazcu za sezono 25/26 v dveh natisnjenih izvodih. </p>",
+            "type": "OTHER",
+            "index": 0
+          }
+        ],
+        "delegated": true,
+        "delegationChanges": [
+          {
+            "id": 40030,
+            "timestamp": "2025-09-22T00:08:36.734258Z",
+            "type": "REFEREE1",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 590,
+              "person": {
+                "id": 96288,
+                "firstName": "Primož",
+                "lastName": "Pipan",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Primož Pipan"
+              }
+            }
+          },
+          {
+            "id": 40031,
+            "timestamp": "2025-09-22T00:08:36.734258Z",
+            "type": "REFEREE2",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 383,
+              "person": {
+                "id": 53279,
+                "firstName": "Luka",
+                "lastName": "Žlajpah",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Luka Žlajpah"
+              }
+            }
+          },
+          {
+            "id": 40032,
+            "timestamp": "2025-09-22T00:08:36.734258Z",
+            "type": "REFEREE3",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 688,
+              "person": {
+                "id": 77019,
+                "firstName": "Tilen",
+                "lastName": "Mrcina",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Tilen Mrcina"
+              }
+            }
+          }
+        ],
+        "moveRequests": [
+          {
+            "id": 20843,
+            "dateTime": "2025-10-04T15:30:00Z",
+            "moveReason": "OTHER",
+            "opposingTeamMustConfirm": false,
+            "sportHall": {
+              "id": 234,
+              "name": "Tri lilije, Laško",
+              "capacity": 2500,
+              "validTo": "2023-09-01T01:59:59Z",
+              "address": {
+                "id": 229,
+                "postOffice": {
+                  "id": 348,
+                  "zipCode": "3270",
+                  "name": "Laško",
+                  "municipality": "LAŠKO",
+                  "country": "SI"
+                },
+                "street": "Poženelova ulica",
+                "houseNumber": "22"
+              },
+              "ranks": [
+                {
+                  "id": 1,
+                  "gender": "MALE",
+                  "rank": "FIRST",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 2,
+                  "gender": "MALE",
+                  "rank": "SECOND",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 3,
+                  "gender": "MALE",
+                  "rank": "THIRD",
+                  "category": "ABSOLUTE"
+                }
+              ]
+            },
+            "statuses": [
+              {
+                "id": 30421,
+                "newStatus": "CONFIRMED",
+                "timestamp": "2025-09-17T18:07:36.586264Z"
+              }
+            ]
+          }
+        ],
+        "referee1": {
+          "id": 590,
+          "person": {
+            "id": 96288,
+            "firstName": "Primož",
+            "lastName": "Pipan",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "referee2": {
+          "id": 383,
+          "person": {
+            "id": 53279,
+            "firstName": "Luka",
+            "lastName": "Žlajpah",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "referee3": {
+          "id": 688,
+          "person": {
+            "id": 77019,
+            "firstName": "Tilen",
+            "lastName": "Mrcina",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "commissioner": {
+          "id": 3,
+          "person": {
+            "id": 95776,
+            "firstName": "Aleš",
+            "lastName": "Kamnikar",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "refereeController": {
+          "id": 3,
+          "person": {
+            "id": 95776,
+            "firstName": "Aleš",
+            "lastName": "Kamnikar",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "matchEvaluationId": 722
+      },
+      {
+        "id": 101843,
+        "competitions": [
+          {
+            "id": 93896,
+            "competitionId": 579,
+            "competitionName": "Liga OTP banka",
+            "competitionType": "LEAGUE",
+            "competitionPhaseId": 5811,
+            "competitionPhaseName": "Redni del",
+            "transferred": false,
+            "seasonId": 26
+          }
+        ],
+        "round": 2,
+        "fibaLiveStatsUrl": "https://fibalivestats.dcd.shared.geniussports.com/u/KZS/2698583/",
+        "gameIndex": 7,
+        "dateTime": "2025-10-04T17:30:00Z",
+        "attendance": 310,
+        "sportHallName": "ŠD Polzela",
+        "sportHallAddress": "Šolska Ulica 3, 3313 Polzela, Slovenija",
+        "sportHallId": 187,
+        "firstTeamId": 203673,
+        "firstTeamTeamId": 17550,
+        "isFirstTeamPlaceholder": false,
+        "secondTeamId": 203674,
+        "secondTeamTeamId": 17554,
+        "isSecondTeamPlaceholder": false,
+        "firstTeamName": "Hopsi Polzela",
+        "secondTeamName": "Šentjur",
+        "firstTeamScore": 89,
+        "secondTeamScore": 70,
+        "scoreInsertedManually": false,
+        "firstTeamLogoUuid": "e9a0b578-8c96-4231-a1c9-977ba15166e0",
+        "secondTeamLogoUuid": "4a7a9327-1bf6-4ac8-a8ed-1b784fe19eb6",
+        "firstTeamCode": "HOP",
+        "secondTeamCode": "ŠEN",
+        "liveStreams": [],
+        "streams": [
+          {
+            "id": 3174,
+            "type": "TV_CELJE",
+            "url": "",
+            "label": ""
+          },
+          {
+            "id": 3175,
+            "type": "YOUTUBE",
+            "url": "J-OaacCd37g",
+            "label": ""
+          }
+        ],
+        "status": "FINISHED",
+        "conclusions": [],
+        "delegated": true,
+        "delegationChanges": [
+          {
+            "id": 40017,
+            "timestamp": "2025-09-22T00:08:36.719131Z",
+            "type": "REFEREE1",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 477,
+              "person": {
+                "id": 96206,
+                "firstName": "Matic",
+                "lastName": "Palčič",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Matic Palčič"
+              }
+            }
+          },
+          {
+            "id": 40020,
+            "timestamp": "2025-09-22T00:08:36.719131Z",
+            "type": "REFEREE2",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 160,
+              "person": {
+                "id": 95991,
+                "firstName": "Diana",
+                "lastName": "Lapanović",
+                "gender": "FEMALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Diana Lapanović"
+              }
+            }
+          },
+          {
+            "id": 40022,
+            "timestamp": "2025-09-22T00:08:36.719131Z",
+            "type": "REFEREE3",
+            "reason": "INITIAL",
+            "newOfficial": {
+              "id": 516,
+              "person": {
+                "id": 96235,
+                "firstName": "Milanko",
+                "lastName": "Milanović",
+                "gender": "MALE",
+                "addressesPostOfficeName": [],
+                "anonymized": false,
+                "fullName": "Milanko Milanović"
+              }
+            }
+          }
+        ],
+        "moveRequests": [
+          {
+            "id": 20844,
+            "dateTime": "2025-10-04T17:30:00Z",
+            "moveReason": "OTHER",
+            "opposingTeamMustConfirm": false,
+            "sportHall": {
+              "id": 187,
+              "name": "ŠD Polzela",
+              "validTo": "2023-09-01T01:59:59Z",
+              "address": {
+                "id": 25918,
+                "postOffice": {
+                  "id": 360,
+                  "zipCode": "3313",
+                  "name": "Polzela",
+                  "municipality": "POLZELA",
+                  "country": "SI"
+                },
+                "street": "Šolska Ulica",
+                "houseNumber": "3"
+              },
+              "ranks": [
+                {
+                  "id": 1,
+                  "gender": "MALE",
+                  "rank": "FIRST",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 2,
+                  "gender": "MALE",
+                  "rank": "SECOND",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 3,
+                  "gender": "MALE",
+                  "rank": "THIRD",
+                  "category": "ABSOLUTE"
+                }
+              ]
+            },
+            "statuses": [
+              {
+                "id": 30422,
+                "newStatus": "CONFIRMED",
+                "timestamp": "2025-09-17T18:07:57.583056Z"
+              }
+            ]
+          },
+          {
+            "id": 21335,
+            "dateTime": "2025-10-04T17:00:00Z",
+            "moveReason": "OTHER",
+            "opposingTeamMustConfirm": false,
+            "sportHall": {
+              "id": 187,
+              "name": "ŠD Polzela",
+              "validTo": "2023-09-01T01:59:59Z",
+              "address": {
+                "id": 25918,
+                "postOffice": {
+                  "id": 360,
+                  "zipCode": "3313",
+                  "name": "Polzela",
+                  "municipality": "POLZELA",
+                  "country": "SI"
+                },
+                "street": "Šolska Ulica",
+                "houseNumber": "3"
+              },
+              "ranks": [
+                {
+                  "id": 1,
+                  "gender": "MALE",
+                  "rank": "FIRST",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 2,
+                  "gender": "MALE",
+                  "rank": "SECOND",
+                  "category": "ABSOLUTE"
+                },
+                {
+                  "id": 3,
+                  "gender": "MALE",
+                  "rank": "THIRD",
+                  "category": "ABSOLUTE"
+                }
+              ]
+            },
+            "statuses": [
+              {
+                "id": 31074,
+                "newStatus": "OPEN",
+                "timestamp": "2025-09-25T16:53:02.613713Z"
+              },
+              {
+                "id": 31097,
+                "oldStatus": "OPEN",
+                "newStatus": "REJECTED",
+                "timestamp": "2025-09-25T20:13:54.082153Z",
+                "message": "Termin tekme je določen iz strani televizije."
+              }
+            ],
+            "club": {
+              "id": 46,
+              "code": "HOP",
+              "email": "<redacted>",
+              "fullName": "KOŠARKAŠKO DRUŠTVO HOPSI POLZELA",
+              "identificationNumber": "1050257000",
+              "phone": "",
+              "shortName": "HOPSI",
+              "status": "ACTIVE",
+              "taxLiable": true,
+              "taxNumber": "<redacted>",
+              "logoUuid": "e9a0b578-8c96-4231-a1c9-977ba15166e0",
+              "homeJerseyColor": "#FCBE63",
+              "guestJerseyColor": "#066DC5",
+              "member": true,
+              "type": "CLUB"
+            }
+          }
+        ],
+        "referee1": {
+          "id": 477,
+          "person": {
+            "id": 96206,
+            "firstName": "Matic",
+            "lastName": "Palčič",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "referee2": {
+          "id": 160,
+          "person": {
+            "id": 95991,
+            "firstName": "Diana",
+            "lastName": "Lapanović",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "FEMALE"
+          },
+          "ranks": []
+        },
+        "referee3": {
+          "id": 516,
+          "person": {
+            "id": 96235,
+            "firstName": "Milanko",
+            "lastName": "Milanović",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "commissioner": {
+          "id": 10,
+          "person": {
+            "id": 95782,
+            "firstName": "Andrej",
+            "lastName": "Lovšin",
+            "addressesPostOfficeName": [
+              "<redacted>"
+            ],
+            "gender": "MALE"
+          },
+          "ranks": []
+        },
+        "matchEvaluationId": 820
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}

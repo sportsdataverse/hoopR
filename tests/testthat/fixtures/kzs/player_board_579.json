@@ -1,0 +1,58 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "clubId": 46,
+        "clubFullname": "KOŠARKAŠKO DRUŠTVO HOPSI POLZELA",
+        "clubLogoUuid": "e9a0b578-8c96-4231-a1c9-977ba15166e0",
+        "clubCode": "HOP",
+        "teamId": 17550,
+        "teamName": "Hopsi Polzela",
+        "gamesPlayed": 11,
+        "sum": 231.0,
+        "average": 21.0,
+        "max": 37.0,
+        "playerId": 108103,
+        "playerFirstname": "Kameron Nathaniel",
+        "playerLastname": "Hobbs",
+        "photoUuid": "f30f6929-b374-42c4-8ed1-7d1277648fd4"
+      },
+      {
+        "clubId": 9,
+        "clubFullname": "KOŠARKARSKI KLUB DOMŽALE",
+        "clubLogoUuid": "ce68270c-327c-4e51-9091-d9fe83446aa2",
+        "clubCode": "DOM",
+        "teamId": 17558,
+        "teamName": "Kansai Helios Domžale",
+        "gamesPlayed": 12,
+        "sum": 236.0,
+        "average": 19.7,
+        "max": 39.0,
+        "playerId": 48303,
+        "playerFirstname": "Blaž",
+        "playerLastname": "Mahkovic",
+        "photoUuid": "ed905965-0f97-4b45-ae0f-d5565b95dd11"
+      },
+      {
+        "clubId": 26,
+        "clubFullname": "KOŠARKARSKI KLUB KRKA",
+        "clubLogoUuid": "dbf53462-c87d-496b-a84d-8be542f337aa",
+        "clubCode": "KRK",
+        "teamId": 17552,
+        "teamName": "Krka",
+        "gamesPlayed": 8,
+        "sum": 146.0,
+        "average": 18.3,
+        "max": 25.0,
+        "playerId": 106544,
+        "playerFirstname": "Victor Lamont",
+        "playerLastname": "Bailey Jr",
+        "photoUuid": "eaeca82d-622a-487c-804b-ff4a2d9a0859"
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}

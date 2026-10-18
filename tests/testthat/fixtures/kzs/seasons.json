@@ -1,0 +1,28 @@
+{
+  "status": "OK",
+  "data": {
+    "items": [
+      {
+        "id": 1,
+        "name": "2000/2001",
+        "isActive": false,
+        "active": false
+      },
+      {
+        "id": 2,
+        "name": "2001/2002",
+        "isActive": false,
+        "active": false
+      },
+      {
+        "id": 3,
+        "name": "2002/2003",
+        "isActive": false,
+        "active": false
+      }
+    ],
+    "count": 0,
+    "offset": 0,
+    "limit": 0
+  }
+}

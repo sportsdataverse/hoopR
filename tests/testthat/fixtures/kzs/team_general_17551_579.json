@@ -1,0 +1,75 @@
+{
+  "status": "OK",
+  "data": {
+    "won": 24,
+    "lost": 9,
+    "lastGames": [
+      "L",
+      "W",
+      "L"
+    ],
+    "bestPointsPlayer": {
+      "id": 106285,
+      "identificationNumber": 915164,
+      "person": {
+        "id": 109521,
+        "firstName": "Wendell Jerome",
+        "lastName": "Green jr",
+        "yearOfBirth": 2002
+      },
+      "nationality": {
+        "id": 237,
+        "alpha2Code": "US",
+        "alpha3Code": "USA",
+        "name": "Združene države",
+        "engName": "United States of America"
+      },
+      "homegrown": false,
+      "photoUuid": "0bcbce69-5db6-4b26-a7b4-467e5fcac7bb",
+      "positions": []
+    },
+    "bestAveragePoints": 14.9,
+    "bestReboundsPlayer": {
+      "id": 107962,
+      "identificationNumber": 915250,
+      "person": {
+        "id": 111602,
+        "firstName": "Boban",
+        "lastName": "Marjanović",
+        "yearOfBirth": 1988
+      },
+      "nationality": {
+        "id": 197,
+        "alpha2Code": "RS",
+        "alpha3Code": "SRB",
+        "name": "Srbija",
+        "engName": "Serbia"
+      },
+      "homegrown": false,
+      "photoUuid": "c153ef12-99e9-45d4-8172-51bea999ea66",
+      "positions": []
+    },
+    "bestAverageRebounds": 7.0,
+    "bestAssistsPlayer": {
+      "id": 106285,
+      "identificationNumber": 915164,
+      "person": {
+        "id": 109521,
+        "firstName": "Wendell Jerome",
+        "lastName": "Green jr",
+        "yearOfBirth": 2002
+      },
+      "nationality": {
+        "id": 237,
+        "alpha2Code": "US",
+        "alpha3Code": "USA",
+        "name": "Združene države",
+        "engName": "United States of America"
+      },
+      "homegrown": false,
+      "photoUuid": "0bcbce69-5db6-4b26-a7b4-467e5fcac7bb",
+      "positions": []
+    },
+    "bestAverageAssists": 5.1
+  }
+}
