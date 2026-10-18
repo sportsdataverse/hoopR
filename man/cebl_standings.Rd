@@ -77,6 +77,9 @@ season, team or player), \code{hoopR_bad_request} (a bad argument, HTTP 400 / 42
 the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for
 another season, team or player), all inheriting \code{hoopR_error}. HTTP 500 is the API's answer to a bad id and is
 not retried. Wrappers raise; they never return an empty frame.
+\item Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
+JSON here (\code{{"name":"TSN"}}), where sdv-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
+No string column of the committed fixtures carries an object.
 }
 }
 \examples{

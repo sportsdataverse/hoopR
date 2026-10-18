@@ -144,6 +144,22 @@ test_that("every wrapper matches sdv-py's frame on the same fixture (columns, or
   }
 })
 
+test_that("an object in a string column is compact JSON, not sdv-py's Python repr (deliberate)", {
+  expect_identical(.cebl_s(list(name = "TSN", id = 4L)), '{"name":"TSN","id":4}')
+  expect_identical(.cebl_s(list(list(name = "TSN"), "https://x/logo.png")), '{"name":"TSN"}; https://x/logo.png')
+  # the parity CSVs hold no Python repr, so the cell comparison never hides this divergence
+  for (f in list.files(cebl_fixture("parity"), pattern = "\\.csv$", full.names = TRUE)) {
+    expect_false(any(grepl("{'", readLines(f, encoding = "UTF-8", warn = FALSE), fixed = TRUE)), label = basename(f))
+  }
+})
+
+test_that("a whole double past 2^31 is an integer's text; below it keeps Python's \".0\"", {
+  expect_identical(.cebl_py_str(3000000000), "3000000000")
+  expect_identical(.cebl_py_str(25), "25.0")
+  expect_identical(.cba_str(3000000000), "3000000000")
+  expect_identical(.cba_str(25), "25.0")
+})
+
 test_that("ids are integers (genius_match_id too), timestamps are UTC POSIXct", {
   games <- cebl_run_case("cebl_games")$out
   for (col in c("season", "game_id", "genius_match_id", "home_team_id", "away_team_id")) {

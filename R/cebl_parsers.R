@@ -34,6 +34,8 @@
   if (is.null(v)) return("None")
   if (is.list(v)) return(as.character(jsonlite::toJSON(v, auto_unbox = TRUE, null = "null")))
   if (is.logical(v)) return(if (v) "True" else "False")
+  # jsonlite reads a JSON integer past 2^31 as a double: Python str() of that int has no ".0"
+  if (is.double(v) && is.finite(v) && v == trunc(v) && abs(v) >= 2^31 && abs(v) < 1e16) return(format(v, scientific = FALSE))
   if (is.double(v) && is.finite(v) && v == trunc(v) && abs(v) < 1e16) return(paste0(format(v, scientific = FALSE), ".0"))
   as.character(v)
 }

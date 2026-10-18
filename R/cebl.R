@@ -42,6 +42,9 @@
 #'   the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for
 #'   another season, team or player), all inheriting `hoopR_error`. HTTP 500 is the API's answer to a bad id and is
 #'   not retried. Wrappers raise; they never return an empty frame.
+#' * Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
+#'   JSON here (`{"name":"TSN"}`), where sdv-py's String cast writes Python's `str(dict)` repr (`{'name': 'TSN'}`).
+#'   No string column of the committed fixtures carries an object.
 #' @examples
 #' \donttest{
 #'   try(cebl_seasons())

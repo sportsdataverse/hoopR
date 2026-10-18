@@ -190,6 +190,11 @@ test_that("a null name part or qualifier code is skipped, never written as Pytho
   expect_false(any(grepl("None", c(unlist(game), pbp$qualifier), fixed = TRUE)))
 })
 
+test_that("a whole double past 2^31 is an integer's text; below it keeps Python's \".0\"", {
+  expect_identical(.genius_str(3000000000), "3000000000")
+  expect_identical(.genius_str(25), "25.0")
+})
+
 # ------------------------------------------------------------------------------ season mapping
 
 test_that("season_end maps labels and Genius years to the sdv END year", {
