@@ -1,0 +1,35 @@
+[
+  {
+    "teamName": "USA",
+    "organisationId": 154,
+    "fibaCode": "USA",
+    "teamZoneCode": "NAM",
+    "rank": 1,
+    "totalFirstRank": 5,
+    "totalSecondRank": 3,
+    "totalThirdRank": 4,
+    "totalParticipations": 19
+  },
+  {
+    "teamName": "Yugoslavia",
+    "organisationId": 164,
+    "fibaCode": "YUG",
+    "teamZoneCode": "E",
+    "rank": 2,
+    "totalFirstRank": 5,
+    "totalSecondRank": 3,
+    "totalThirdRank": 2,
+    "totalParticipations": 12
+  },
+  {
+    "teamName": "Soviet Union",
+    "organisationId": 977,
+    "fibaCode": "URS",
+    "teamZoneCode": "E",
+    "rank": 3,
+    "totalFirstRank": 3,
+    "totalSecondRank": 3,
+    "totalThirdRank": 2,
+    "totalParticipations": 9
+  }
+]

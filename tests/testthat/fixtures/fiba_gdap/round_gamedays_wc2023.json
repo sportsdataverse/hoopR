@@ -1,0 +1,122 @@
+{
+  "competition": {
+    "competitionId": 208182,
+    "competitionCode": "WMM",
+    "season": 2023,
+    "officialName": "FIBA Basketball World Cup",
+    "start": "2023-08-25",
+    "end": "2023-09-10",
+    "status": "Completed",
+    "ageCategory": "Senior",
+    "gender": "Men",
+    "fibaZone": "World",
+    "zoneInformation": {
+      "zoneId": 1,
+      "zoneOfficialName": "World",
+      "zoneCode": "W",
+      "topZoneId": null,
+      "topZoneOfficialName": null,
+      "topZoneCode": null
+    },
+    "competitionType": "National Teams",
+    "competitionCategory": {
+      "isLeague": false,
+      "ageType": "S",
+      "code": "WC",
+      "name": "World Cup"
+    },
+    "officialFlagItemCode": "O",
+    "officialFlagItemName": "Official",
+    "official": "Official",
+    "discipline": "Basketball",
+    "competitionMarketingName": {
+      "competitionMarketingNameId": 201,
+      "marketingName": "FIBA Basketball World Cup",
+      "code": null
+    }
+  },
+  "rounds": [
+    {
+      "round": {
+        "groupStandings": {
+          "groups": []
+        },
+        "gameSystem": null,
+        "gameSystemCode": null,
+        "parentRoundId": null,
+        "roundCode": "GP",
+        "roundId": 25274,
+        "roundName": "Group Phase",
+        "roundNumber": 1,
+        "roundType": "Super Round",
+        "roundTypeCode": "S",
+        "roundStatusCode": "COMPL",
+        "startDate": "2023-08-25T00:00:00",
+        "endDate": "2023-09-03T23:59:59.9999999",
+        "hasTeamsAssigned": false,
+        "roundKind": "Standard Round",
+        "standingHeaderCode": "GP",
+        "standingHeaderName": "Group Phase",
+        "qualifiedTeamInformation": null,
+        "roundOrder": 1
+      },
+      "gamedays": []
+    },
+    {
+      "round": {
+        "groupStandings": {
+          "groups": []
+        },
+        "gameSystem": null,
+        "gameSystemCode": null,
+        "parentRoundId": null,
+        "roundCode": "FP",
+        "roundId": 25275,
+        "roundName": "Final Phase",
+        "roundNumber": 3,
+        "roundType": "Super Round",
+        "roundTypeCode": "S",
+        "roundStatusCode": "COMPL",
+        "startDate": "2023-09-05T00:00:00",
+        "endDate": "2023-09-10T23:59:59.9999999",
+        "hasTeamsAssigned": false,
+        "roundKind": "Standard Round",
+        "standingHeaderCode": "FP",
+        "standingHeaderName": "Final Phase",
+        "qualifiedTeamInformation": null,
+        "roundOrder": 5
+      },
+      "gamedays": []
+    },
+    {
+      "round": {
+        "groupStandings": {
+          "groups": []
+        },
+        "gameSystem": "Single",
+        "gameSystemCode": "S",
+        "parentRoundId": 25274,
+        "roundCode": "FR",
+        "roundId": 25276,
+        "roundName": "First Round",
+        "roundNumber": 1,
+        "roundType": "Group Round",
+        "roundTypeCode": "G",
+        "roundStatusCode": "COMPL",
+        "startDate": "2023-08-25T00:00:00",
+        "endDate": "2023-08-30T23:59:59.9999999",
+        "hasTeamsAssigned": false,
+        "roundKind": "Standard Round",
+        "standingHeaderCode": "FR",
+        "standingHeaderName": "First Round",
+        "qualifiedTeamInformation": null,
+        "roundOrder": 2
+      },
+      "gamedays": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

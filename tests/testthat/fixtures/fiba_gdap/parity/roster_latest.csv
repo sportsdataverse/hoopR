@@ -1,0 +1,4 @@
+team_id,team_code,team_name,organisation_id,competition_id,person_id,first_name,last_name,gender,date_of_birth,uniform_number,uniform_name,position,height_in_cm,height_in_feet_inches,nationality,is_on_final_roster,games_played,club_id,club_name,country_fiba_code,club_country_fiba_code,is_captain,is_player_free_agent,final_roster_member_status_code
+282183,OOST,Filou Oostende,396,208850,373090,Timmy,Allen,M,2000-01-09,0,ALLEN,Forward,198,"6'5""",USA,true,9,396,Coretec Oostende,BEL,BEL,false,false,PARTIAL
+282183,OOST,Filou Oostende,396,208850,373092,Chase,Audige,M,1999-06-29,1,AUDIGE,Shooting Guard,193,"6'3""",USA,true,9,396,Coretec Oostende,BEL,BEL,false,false,PARTIAL
+282183,OOST,Filou Oostende,396,208850,211546,Matthias,Tass,M,1999-03-23,13,TASS,Center,208,"6'9""",EST,true,8,396,Coretec Oostende,BEL,BEL,false,false,PARTIAL

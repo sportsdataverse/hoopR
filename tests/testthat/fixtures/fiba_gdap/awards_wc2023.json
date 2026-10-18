@@ -1,0 +1,80 @@
+[
+  {
+    "competitionId": 208182,
+    "competitionEndDate": "2023-09-10",
+    "awardDate": "2023-09-10",
+    "competitionSeason": 2023,
+    "competitionOfficialName": "FIBA Basketball World Cup",
+    "awardName": "All-Star 5",
+    "awardCode": "ALLSTAR",
+    "awardLevelId": 208182,
+    "awardLevel": "Competition",
+    "awardLabel": null,
+    "playerId": 189145,
+    "playerFirstName": "Dennis",
+    "playerLastName": "Schroder",
+    "playerDateOfBirth": "1993-09-15",
+    "playerNationality": "GER",
+    "teams": [
+      {
+        "teamId": 279569,
+        "organisationId": 64,
+        "code": "GER",
+        "officialName": "Germany",
+        "shortName": "Germany"
+      }
+    ]
+  },
+  {
+    "competitionId": 208182,
+    "competitionEndDate": "2023-09-10",
+    "awardDate": "2023-09-10",
+    "competitionSeason": 2023,
+    "competitionOfficialName": "FIBA Basketball World Cup",
+    "awardName": "All-Star 5",
+    "awardCode": "ALLSTAR",
+    "awardLevelId": 208182,
+    "awardLevel": "Competition",
+    "awardLabel": null,
+    "playerId": 223794,
+    "playerFirstName": "Shai",
+    "playerLastName": "Gilgeous-Alexander",
+    "playerDateOfBirth": "1998-07-12",
+    "playerNationality": "CAN",
+    "teams": [
+      {
+        "teamId": 279564,
+        "organisationId": 34,
+        "code": "CAN",
+        "officialName": "Canada",
+        "shortName": "Canada"
+      }
+    ]
+  },
+  {
+    "competitionId": 208182,
+    "competitionEndDate": "2023-09-10",
+    "awardDate": "2023-09-10",
+    "competitionSeason": 2023,
+    "competitionOfficialName": "FIBA Basketball World Cup",
+    "awardName": "All-Star 5",
+    "awardCode": "ALLSTAR",
+    "awardLevelId": 208182,
+    "awardLevel": "Competition",
+    "awardLabel": null,
+    "playerId": 196610,
+    "playerFirstName": "Luka",
+    "playerLastName": "Doncic",
+    "playerDateOfBirth": "1999-02-28",
+    "playerNationality": "SLO",
+    "teams": [
+      {
+        "teamId": 279576,
+        "organisationId": 618,
+        "code": "SLO",
+        "officialName": "Slovenia",
+        "shortName": "Slovenia"
+      }
+    ]
+  }
+]

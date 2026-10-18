@@ -1,0 +1,137 @@
+[
+  {
+    "hosts": [
+      {
+        "countryCode": "ARG",
+        "countryName": "Argentina",
+        "cities": [
+          "Buenos Aires"
+        ]
+      }
+    ],
+    "competitionId": 2498,
+    "competitionCode": "WMM",
+    "season": 1950,
+    "officialName": "World Championship for Men",
+    "start": "1950-10-22T00:00:00",
+    "end": "1950-11-04T23:59:59",
+    "status": "Closed",
+    "ageCategory": "Senior",
+    "gender": "Men",
+    "fibaZone": "World",
+    "zoneInformation": {
+      "zoneId": 1,
+      "zoneOfficialName": "World",
+      "zoneCode": "W",
+      "topZoneId": null,
+      "topZoneOfficialName": null,
+      "topZoneCode": null
+    },
+    "competitionType": "National Teams",
+    "competitionCategory": {
+      "isLeague": false,
+      "ageType": "S",
+      "code": "WC",
+      "name": "World Cup"
+    },
+    "officialFlagItemCode": "O",
+    "officialFlagItemName": "Official",
+    "official": "Official",
+    "discipline": "Basketball",
+    "competitionMarketingName": {
+      "competitionMarketingNameId": 201,
+      "marketingName": "FIBA Basketball World Cup",
+      "code": null
+    }
+  },
+  {
+    "hosts": [
+      {
+        "countryCode": "BRA",
+        "countryName": "Brazil",
+        "cities": [
+          "Rio de Janeiro"
+        ]
+      }
+    ],
+    "competitionId": 2499,
+    "competitionCode": "WMM",
+    "season": 1954,
+    "officialName": "World Championship for Men",
+    "start": "1954-10-22T00:00:00",
+    "end": "1954-11-05T23:59:59",
+    "status": "Closed",
+    "ageCategory": "Senior",
+    "gender": "Men",
+    "fibaZone": "World",
+    "zoneInformation": {
+      "zoneId": 1,
+      "zoneOfficialName": "World",
+      "zoneCode": "W",
+      "topZoneId": null,
+      "topZoneOfficialName": null,
+      "topZoneCode": null
+    },
+    "competitionType": "National Teams",
+    "competitionCategory": {
+      "isLeague": false,
+      "ageType": "S",
+      "code": "WC",
+      "name": "World Cup"
+    },
+    "officialFlagItemCode": "O",
+    "officialFlagItemName": "Official",
+    "official": "Official",
+    "discipline": "Basketball",
+    "competitionMarketingName": {
+      "competitionMarketingNameId": 201,
+      "marketingName": "FIBA Basketball World Cup",
+      "code": null
+    }
+  },
+  {
+    "hosts": [
+      {
+        "countryCode": "CHI",
+        "countryName": "Chile",
+        "cities": [
+          "Santiago de Chile"
+        ]
+      }
+    ],
+    "competitionId": 2500,
+    "competitionCode": "WMM",
+    "season": 1959,
+    "officialName": "World Championship for Men",
+    "start": "1959-01-16T00:00:00",
+    "end": "1959-01-31T23:59:59",
+    "status": "Closed",
+    "ageCategory": "Senior",
+    "gender": "Men",
+    "fibaZone": "World",
+    "zoneInformation": {
+      "zoneId": 1,
+      "zoneOfficialName": "World",
+      "zoneCode": "W",
+      "topZoneId": null,
+      "topZoneOfficialName": null,
+      "topZoneCode": null
+    },
+    "competitionType": "National Teams",
+    "competitionCategory": {
+      "isLeague": false,
+      "ageType": "S",
+      "code": "WC",
+      "name": "World Cup"
+    },
+    "officialFlagItemCode": "O",
+    "officialFlagItemName": "Official",
+    "official": "Official",
+    "discipline": "Basketball",
+    "competitionMarketingName": {
+      "competitionMarketingNameId": 201,
+      "marketingName": "FIBA Basketball World Cup",
+      "code": null
+    }
+  }
+]

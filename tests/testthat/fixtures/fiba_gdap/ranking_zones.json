@@ -1,0 +1,17 @@
+[
+  {
+    "zoneRankingId": 1,
+    "code": "W",
+    "officialName": "World"
+  },
+  {
+    "zoneRankingId": 2,
+    "code": "AF",
+    "officialName": "Africa"
+  },
+  {
+    "zoneRankingId": 3,
+    "code": "AM",
+    "officialName": "Americas"
+  }
+]

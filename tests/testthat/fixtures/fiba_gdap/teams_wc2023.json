@@ -1,0 +1,127 @@
+[
+  {
+    "teamId": 279561,
+    "teamCode": "JPN",
+    "shortName": "Japan",
+    "profile": {
+      "teamId": 279561,
+      "organisationId": 85,
+      "name": "Japan",
+      "code": "JPN",
+      "countryName": "Japan",
+      "countryCode": "JPN",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.japanbasketball.jp",
+      "youTube": null,
+      "finalRanking": 19,
+      "pointsPerGame": 83.2,
+      "reboundsPerGame": 35,
+      "assistsPerGame": 21.2,
+      "rankPointsPerGame": 16,
+      "rankReboundsPerGame": 21,
+      "rankAssistsPerGame": 14,
+      "totalGamesWon": 3,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.japanbasketball.jp"
+        },
+        {
+          "name": "Twitter",
+          "value": "japanbasketball"
+        }
+      ],
+      "competitionId": 208182
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 85
+  },
+  {
+    "teamId": 279562,
+    "teamCode": "PHI",
+    "shortName": "Philippines",
+    "profile": {
+      "teamId": 279562,
+      "organisationId": 122,
+      "name": "Philippines",
+      "code": "PHI",
+      "countryName": "Philippines",
+      "countryCode": "PHI",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "https://www.sbp.ph",
+      "youTube": null,
+      "finalRanking": 24,
+      "pointsPerGame": 79.6,
+      "reboundsPerGame": 41.4,
+      "assistsPerGame": 16,
+      "rankPointsPerGame": 20,
+      "rankReboundsPerGame": 2,
+      "rankAssistsPerGame": 32,
+      "totalGamesWon": 1,
+      "totalGamesLost": 4,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "https://www.sbp.ph"
+        }
+      ],
+      "competitionId": 208182
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 122
+  },
+  {
+    "teamId": 279563,
+    "teamCode": "AUS",
+    "shortName": "Australia",
+    "profile": {
+      "teamId": 279563,
+      "organisationId": 16,
+      "name": "Australia",
+      "code": "AUS",
+      "countryName": "Australia",
+      "countryCode": "AUS",
+      "gender": "Men",
+      "email": "",
+      "facebook": null,
+      "twitter": null,
+      "instagram": null,
+      "website": "http://www.australia.basketball",
+      "youTube": null,
+      "finalRanking": 10,
+      "pointsPerGame": 93.8,
+      "reboundsPerGame": 36.2,
+      "assistsPerGame": 23.2,
+      "rankPointsPerGame": 4,
+      "rankReboundsPerGame": 18,
+      "rankAssistsPerGame": 6,
+      "totalGamesWon": 3,
+      "totalGamesLost": 2,
+      "socialNetworks": [
+        {
+          "name": "Web Site",
+          "value": "http://www.australia.basketball"
+        },
+        {
+          "name": "Facebook",
+          "value": "BasketballAustralia"
+        }
+      ],
+      "competitionId": 208182
+    },
+    "statusCode": "APPR",
+    "statusName": "Approved",
+    "organisationId": 16
+  }
+]
