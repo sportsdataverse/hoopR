@@ -1,0 +1,4 @@
+age,blocked_rate,blocked_rate_rank,blocked_rate_sort,first_position,fouls_rate,fouls_rate_rank,fouls_rate_sort,is_color,minutes,nationality,number,play_times,player_id,player_name,position,position_num,rank,rebounds_defensive_rate,rebounds_defensive_rate_rank,rebounds_defensive_rate_sort,rebounds_offensive_rate,rebounds_offensive_rate_rank,rebounds_offensive_rate_sort,season,seconds,steals_rate,steals_rate_rank,steals_rate_sort,team_cn_alias,team_id
+19,0.687,0.0,0.6865,中锋,0.0,0.0,0.0,2,2,中国,14,1,100084412,周可梵,中锋,5.0,<null>,0.0,0.0,0.0,0.0,0.0,0.0,2025,92,0.0,0.0,0.0,浙江浙商证券,29128
+27,0.051,0.73,0.0509,中锋,0.07,0.39,0.0703,1,490,美国,22,36,100098800,卡尔顿,中锋,5.0,<null>,0.242,0.71,0.242,0.163,0.95,0.1633,2025,29404,0.018,0.71,0.0184,浙江浙商证券,29128
+33,0.048,0.93,0.0483,大前锋,0.038,0.83,0.0383,1,827,美国,23,37,100016690,桑普森,大前锋,4.0,<null>,0.238,0.81,0.2385,0.098,0.81,0.0985,2025,49595,0.025,0.95,0.0255,浙江浙商证券,29128

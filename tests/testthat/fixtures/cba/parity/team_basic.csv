@@ -1,0 +1,4 @@
+assists,blocked,cba_rank,field_goals,field_goals_attempted,field_goals_percentage_rate,fouls,free_throws,free_throws_attempted,free_throws_percentage_rate,losses_number,points,real_player_times,rebounds,rebounds_defensive,rebounds_offensive,round,schedule_number,schedule_season,season,steals,team_id,team_name,three_point_attempted,three_point_goals,three_point_percentage_rate,time,turnovers,win_number,win_rate
+22.6,4.4,<null>,37.3,81.1,0.46,22.2,18.6,24.8,0.752,7,104.5,46,48.9,32.8,16.1,4074.0902787,46,2024,2024-2025,9.3,29128,浙江方兴渡,32.2,11.3,0.349,48.1,13.6,39,0.848
+23.7,3.9,<null>,37.7,78.7,0.479,21.9,17.1,22.5,0.761,19,103.3,52,45.2,31.3,13.8,4638.4611956,52,2023,2023-2024,8.0,29128,浙江东阳光药,30.2,10.7,0.353,48.3,15.9,33,0.635
+19.9,3.2,<null>,32.1,68.0,0.473,19.3,18.7,23.8,0.785,9,91.7,42,40.3,27.6,12.7,3206.0970331,42,2025,2025-2026,8.0,29128,浙江浙商证券,25.0,8.8,0.351,40.4,11.7,33,0.786
