@@ -88,6 +88,26 @@ test_that("HTTP 500 is not retried by default, and is with retry_500 = TRUE", {
   expect_identical(m$n, 3L)
 })
 
+test_that("extra retry statuses come from `statuses`; the default does not retry them", {
+  local_intl()
+  m <- seq_mock(403L)
+  httr2::local_mocked_responses(m$fn)
+  expect_error(.intl_get(url), class = "hoopR_asset_fetch")
+  expect_identical(m$n, 1L)
+
+  local_intl()
+  m <- seq_mock(c(403L, 403L, 200L))
+  httr2::local_mocked_responses(m$fn)
+  expect_identical(.intl_get(url, statuses = 403L), "{}")
+  expect_identical(m$n, 3L)
+
+  local_intl()
+  m <- seq_mock(403L)
+  httr2::local_mocked_responses(m$fn)
+  expect_error(.intl_get(url, statuses = 403L), class = "hoopR_asset_fetch")
+  expect_identical(m$n, 3L)
+})
+
 test_that("a raw 0xA0 byte in a header keeps every header and warns nothing", {
   local_intl()
   # basket.co.il: `SameSite=None;<0xA0>Secure`

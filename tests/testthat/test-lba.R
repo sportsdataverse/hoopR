@@ -199,6 +199,16 @@ test_that("an unknown id is a 500 that is not retried; 503 is retried with a 2 s
   expect_identical(unlist(seen$waits), c(2, 2, 2))
 })
 
+test_that("a 403 is retried (sdv-py RETRY_STATUSES keeps 403), then raises hoopR_asset_fetch", {
+  seen <- local_lba(list(lba_resp("Forbidden", 403L, "text/plain"), lba_resp(lba_text("teams_2027.json"))))
+  expect_identical(nrow(lba_teams(season = 2027)), 16L)
+  expect_length(seen$reqs, 2L)
+  seen <- local_lba(lba_resp("Forbidden", 403L, "text/plain"))
+  err <- expect_error(lba_teams(season = 2027), class = "hoopR_asset_fetch", regexp = "403")
+  expect_identical(err$status, 403L)
+  expect_length(seen$reqs, 3L)
+})
+
 test_that("a dead connection is a transient hoopR_asset_fetch after 3 attempts", {
   seen <- local_lba(function(req) stop("Could not resolve host: www.legabasket.it"))
   err <- expect_error(lba_teams(season = 2027), class = "hoopR_asset_fetch", regexp = "3 attempts")

@@ -9,7 +9,8 @@
 #   (`list(season = 2027L)`) for the parsers. A season that is not an END year in 1950-2100 is
 #   `hoopR_bad_request` before any request.
 # * An unknown id is HTTP 500 text/plain, every time, so a 500 is not retried (`retry_500 = FALSE`) and raises
-#   `hoopR_asset_fetch` at once.
+#   `hoopR_asset_fetch` at once. A 403 is retried like 408 / 429 / 502 / 503 / 504 (sdv-py RETRY_STATUSES =
+#   dl_utils._RETRYABLE_STATUS minus 500, which keeps 403).
 # * Old seasons answer 200 with an empty payload (a play-by-play before 2017-18, a finished championship's
 #   standings without a round, an unknown season): `hoopR_no_data`.
 # * Scope: a body must be the one asked for, else `hoopR_asset_fetch`: the season, the championship, game, team or
@@ -274,7 +275,7 @@
   mapped <- .lba_to_start(query, call = call)
   query <- mapped$query
   req <- .intl_request(url, query = query)
-  resp <- .intl_perform(req, retry_500 = FALSE, min_interval = .LBA_INTERVAL, call = call)
+  resp <- .intl_perform(req, retry_500 = FALSE, min_interval = .LBA_INTERVAL, statuses = 403L, call = call)
   .intl_check_status(resp, where = where, call = call)
   body <- .intl_json(.intl_body_text(resp), where = where, call = call)
   .lba_error(where, body, call)

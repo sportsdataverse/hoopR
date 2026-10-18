@@ -174,6 +174,8 @@
 #'
 #' @param req An httr2 request; any `req_retry()` / `req_error()` policy is replaced.
 #' @param retry_500 Retry HTTP 500 too (the per-family policy, see the file header).
+#' @param statuses Extra statuses to retry (integer vector), on top of the defaults
+#'   (e.g. LBA's transient 403).
 #' @param max_tries Maximum attempts.
 #' @param min_interval Spacing between requests to one host, in seconds.
 #' @param proxy_label Where the proxy came from (for messages), if the caller knows.
@@ -181,8 +183,8 @@
 #' @return An httr2 response.
 #' @noRd
 .intl_perform <- function(req, retry_500 = FALSE, max_tries = 3, min_interval = .INTL_MIN_INTERVAL,
-                          proxy_label = NULL, call = rlang::caller_env()) {
-  statuses <- c(.INTL_RETRY_STATUSES, if (isTRUE(retry_500)) 500L)
+                          proxy_label = NULL, statuses = NULL, call = rlang::caller_env()) {
+  statuses <- c(.INTL_RETRY_STATUSES, if (isTRUE(retry_500)) 500L, as.integer(statuses))
   req <- req |>
     httr2::req_retry(max_tries = 1) |>
     httr2::req_error(is_error = function(resp) FALSE)
@@ -283,11 +285,12 @@
 #' @noRd
 .intl_response <- function(url, query = list(), body = NULL, body_type = c("none", "form", "json"),
                            headers = NULL, proxy_env = NULL, retry_500 = FALSE, timeout = 60,
-                           proxy = NULL, follow_redirects = TRUE, call = rlang::caller_env()) {
+                           proxy = NULL, follow_redirects = TRUE, statuses = NULL,
+                           call = rlang::caller_env()) {
   px <- .intl_proxy(proxy, proxy_env)
   req <- .intl_request(url, query = query, body = body, body_type = body_type, headers = headers,
                        proxy = px$value, timeout = timeout, follow_redirects = follow_redirects)
-  .intl_perform(req, retry_500 = retry_500, proxy_label = px$source, call = call)
+  .intl_perform(req, retry_500 = retry_500, proxy_label = px$source, statuses = statuses, call = call)
 }
 
 #' The international basketball getter: throttled, retried, status-checked.
@@ -304,15 +307,18 @@
 #' @param timeout Seconds per attempt.
 #' @param proxy Explicit proxy (URL string or a [httr2::req_proxy()] argument list).
 #' @param follow_redirects `FALSE` when a credential header must not leave the host.
+#' @param statuses Extra statuses to retry, on top of 408/429/502/503/504 (and 500).
 #' @param call The frame named in a raised condition (the exported wrapper).
 #' @return The 2xx body as a UTF-8 string (`""` for an empty body).
 #' @noRd
 .intl_get <- function(url, query = list(), body = NULL, body_type = c("none", "form", "json"),
                       headers = NULL, proxy_env = NULL, retry_500 = FALSE, timeout = 60,
-                      proxy = NULL, follow_redirects = TRUE, call = rlang::caller_env()) {
+                      proxy = NULL, follow_redirects = TRUE, statuses = NULL,
+                      call = rlang::caller_env()) {
   resp <- .intl_response(url, query = query, body = body, body_type = body_type, headers = headers,
                          proxy_env = proxy_env, retry_500 = retry_500, timeout = timeout,
-                         proxy = proxy, follow_redirects = follow_redirects, call = call)
+                         proxy = proxy, follow_redirects = follow_redirects, statuses = statuses,
+                         call = call)
   .intl_check_status(resp, call = call)
   .intl_body_text(resp)
 }
