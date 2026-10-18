@@ -151,7 +151,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_teams())
 #> ── CBA Teams from data-server.cbaleague.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:27:40 UTC
+#> ℹ Data updated: 2026-10-18 22:12:54 UTC
 #> # A tibble: 20 × 4
 #>    club  team_cn_alias   team_id team_logo                                      
 #>    <chr> <chr>             <int> <chr>                                          

@@ -77,7 +77,7 @@ Saiem Gilani
     head(games)
   })
 #> ── NBA L2M games listing (official.nba.com) ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:33:15 UTC
+#> ℹ Data updated: 2026-10-18 22:17:19 UTC
 #> # A tibble: 6 × 4
 #>   game_id    season season_type label                         
 #>   <chr>       <int> <chr>       <chr>                         

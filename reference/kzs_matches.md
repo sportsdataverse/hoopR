@@ -193,7 +193,7 @@ Other KZS Functions:
     date_to = "2025-10-31T23:59:59.000Z"
   ))
 #> ── KZS Matches from api.kzs.si ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:31:48 UTC
+#> ℹ Data updated: 2026-10-18 22:16:06 UTC
 #> # A tibble: 21 × 69
 #>    match_id competition_id competition_name competition_type
 #>       <int>          <int> <chr>            <chr>           

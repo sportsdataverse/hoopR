@@ -121,7 +121,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_standings(season = 2026))
 #> ── ABA League Standings ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:25:58 UTC
+#> ℹ Data updated: 2026-10-18 22:11:32 UTC
 #> # A tibble: 36 × 16
 #>    season league_id league season_label   table    group  rank team_id team_name
 #>     <int>     <int> <chr>  <chr>          <chr>    <chr> <int>   <int> <chr>    

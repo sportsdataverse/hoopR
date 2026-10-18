@@ -193,7 +193,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_team_box_score(game_id = 921391))
 #> ── VTB Infobasket Team Box Score from org.infobasket.su ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:50:53 UTC
+#> ℹ Data updated: 2026-10-18 22:34:54 UTC
 #> # A tibble: 2 × 45
 #>   game_id is_home team_number team_id score points shot1 goal1 shot2 goal2 shot3
 #>     <int> <lgl>         <int>   <int> <int>  <int> <int> <int> <int> <int> <int>

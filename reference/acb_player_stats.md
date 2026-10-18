@@ -240,7 +240,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_stats(player_id = 20209407))
 #> ── ACB Player Stats from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:26:14 UTC
+#> ℹ Data updated: 2026-10-18 22:11:47 UTC
 #> # A tibble: 13 × 96
 #>    player_id team_id competition_id edition_id season edition_year club_id team 
 #>        <int>   <int>          <int>      <int>  <int> <chr>          <int> <chr>

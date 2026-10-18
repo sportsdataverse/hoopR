@@ -138,7 +138,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_standings(competition = "bsl", season = 2027))
 #> ── TBF Standings ──────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:50:18 UTC
+#> ℹ Data updated: 2026-10-18 22:34:21 UTC
 #> # A tibble: 16 × 18
 #>    season competition group activity_id team_process_id team_name     week  rank
 #>     <int> <chr>       <chr>       <int>           <int> <chr>        <int> <int>

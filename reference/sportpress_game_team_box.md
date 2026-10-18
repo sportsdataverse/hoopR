@@ -155,7 +155,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_team_box(competition_id = 25, game_id = 11295))
 #> ── BNXT League Game Team Box Score from Sportpress ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:49:43 UTC
+#> ℹ Data updated: 2026-10-18 22:33:45 UTC
 #> # A tibble: 2 × 35
 #>   game_id competition_id team_side competition_team_id team      team_short_name
 #>     <int>          <int> <chr>                   <int> <chr>     <chr>          

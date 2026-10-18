@@ -112,7 +112,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_competitions(org = "ESAKE"))
 #> ── Genius LiveStats competitions ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:31:04 UTC
+#> ℹ Data updated: 2026-10-18 22:15:24 UTC
 #> # A tibble: 47 × 8
 #>    org   comp_id label               league_id  year season season_rule selected
 #>    <chr>   <int> <chr>                   <int> <int>  <int> <chr>       <lgl>   

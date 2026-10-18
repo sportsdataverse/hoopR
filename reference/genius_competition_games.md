@@ -123,7 +123,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_competition_games(comp_id = 49915))
 #> ── Genius LiveStats competition games ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:30:58 UTC
+#> ℹ Data updated: 2026-10-18 22:15:24 UTC
 #> # A tibble: 2 × 20
 #>   league_id competition_id match_id match_status match_time match_time_utc  live
 #>       <int>          <int>    <int> <chr>        <chr>      <chr>          <int>

@@ -130,7 +130,7 @@ Other IBBA Segev Functions:
 # \donttest{
   try(ibba_segev_team_box(game_id = 50))
 #> ── IBBA Segev team box ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:31:19 UTC
+#> ℹ Data updated: 2026-10-18 22:15:38 UTC
 #> # A tibble: 2 × 44
 #>   game_id team_side team_id score timeouts time_leading biggest_lead times_tied
 #>     <int> <chr>       <int> <int>    <int> <chr>               <int>      <int>

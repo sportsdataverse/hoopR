@@ -105,7 +105,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_seasons())
 #> ── TBF Seasons ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:50:16 UTC
+#> ℹ Data updated: 2026-10-18 22:34:19 UTC
 #> # A tibble: 20 × 6
 #>    season_id season_label season start_date end_date   international
 #>        <int> <chr>         <int> <date>     <date>     <lgl>        

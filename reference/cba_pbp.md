@@ -183,7 +183,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_pbp(schedule_id = 100105799))
 #> ── CBA Play-by-Play from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:27:30 UTC
+#> ℹ Data updated: 2026-10-18 22:12:44 UTC
 #> # A tibble: 319 × 19
 #>    schedule_id bt_textual_format    color distance home_color home_score minutes
 #>          <int> <chr>                <chr> <chr>    <chr>           <int>   <int>

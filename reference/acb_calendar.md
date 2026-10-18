@@ -164,7 +164,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_calendar(season = 2027))
 #> ── ACB Calendar from api2.acb.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:26:01 UTC
+#> ℹ Data updated: 2026-10-18 22:11:34 UTC
 #> # A tibble: 306 × 25
 #>    competition_id edition_id season round_id round_number subphase_id
 #>             <int>      <int>  <int>    <int>        <int>       <int>

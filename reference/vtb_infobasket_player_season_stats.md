@@ -201,7 +201,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_player_season_stats(person_id = 423011))
 #> ── VTB Infobasket Player Season Stats from org.infobasket.su ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 20:50:46 UTC
+#> ℹ Data updated: 2026-10-18 22:34:47 UTC
 #> # A tibble: 4 × 48
 #>   person_id season season_name_ru  season_name_en   team_short_name_ru
 #>       <int>  <int> <chr>           <chr>            <chr>             
