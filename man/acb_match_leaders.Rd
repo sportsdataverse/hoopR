@@ -26,7 +26,7 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
    metric \tab character \tab Leader category in snake_case (the API's key, e.g. rating, points, rebounds, assists). \cr
    rank \tab integer \tab Place in the category list, 1 = the leader, in the order the feed lists them. \cr
-   value \tab numeric \tab The player's count in the category (points, rebounds, assists, rating). \cr
+   value \tab double \tab The player's count in the category (points, rebounds, assists, rating). \cr
    player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr
    player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
    first_name \tab character \tab Legal first name(s) \cr

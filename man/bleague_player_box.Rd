@@ -60,14 +60,14 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    dunks \tab integer \tab Dunks made (PT2DUNK); v1 box rows only, null on v2. \cr
    efficiency \tab integer \tab Efficiency rating (kokendo), era-dependent: v2 = points + rebounds + assists + steals + blocks + fouls drawn - missed FG - missed FT - turnovers - fouls - shots blocked (PIR); v1 omits fouls drawn, fouls and shots blocked. \cr
    plus_minus \tab integer \tab Plus/minus: team point difference while on court. v2 from 2022-23 only; null on totals and half rows. \cr
-   ast_to \tab numeric \tab Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. \cr
-   efg \tab numeric \tab Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. \cr
-   ts \tab numeric \tab True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. \cr
-   usg \tab numeric \tab Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. \cr
-   off_rtg \tab numeric \tab Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-   def_rtg \tab numeric \tab Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-   net_rtg \tab numeric \tab Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-   poss \tab numeric \tab Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
+   ast_to \tab double \tab Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. \cr
+   efg \tab double \tab Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. \cr
+   ts \tab double \tab True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. \cr
+   usg \tab double \tab Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. \cr
+   off_rtg \tab double \tab Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
+   def_rtg \tab double \tab Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
+   net_rtg \tab double \tab Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
+   poss \tab double \tab Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
 }
 }
 \description{
@@ -129,7 +129,7 @@ schedule list, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 \code{\link[=bleague_game_info]{bleague_game_info()}},
 \code{\link[=bleague_leaders]{bleague_leaders()}},
 \code{\link[=bleague_pbp]{bleague_pbp()}},
@@ -144,4 +144,4 @@ Other B.LEAGUE:
 \code{\link[=bleague_team_box]{bleague_team_box()}},
 \code{\link[=bleague_team_summary]{bleague_team_summary()}}
 }
-\concept{B.LEAGUE}
+\concept{B.LEAGUE Functions}

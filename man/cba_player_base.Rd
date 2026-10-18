@@ -38,49 +38,49 @@ A \code{hoopR_data} tibble: One row per player of the requested page. An empty v
 these columns, in this order (sdv-py \code{cba_player_base}):\tabular{lll}{
    col_name \tab type \tab description \cr
    age \tab integer \tab Age in years in that season. \cr
-   assists \tab numeric \tab Assists per game when countRanger is 1. A number (the API sends it as display text). \cr
+   assists \tab double \tab Assists per game when countRanger is 1. A number (the API sends it as display text). \cr
    birth_date \tab character \tab Date of birth 'YYYY-MM-DD' (a public player bio field; midnight-suffixed 'YYYY-MM-DD 00:00:00' on player-base-list). \cr
-   blocked \tab numeric \tab Blocks per game when countRanger is 1. A number (the API sends it as display text). \cr
+   blocked \tab double \tab Blocks per game when countRanger is 1. A number (the API sends it as display text). \cr
    cn_alias \tab character \tab Player name (Chinese). Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
-   field_goals \tab numeric \tab Field goals made per game when countRanger is 1. A number (the API sends it as display text). \cr
-   field_goals_at_rim_attempted \tab numeric \tab At-the-rim (inside the restricted area) field goals attempted in the season (total), a float. \cr
-   field_goals_at_rim_made \tab numeric \tab At-the-rim field goals made in the season (total), a float. \cr
-   field_goals_attempted \tab numeric \tab Field goals attempted per game when countRanger is 1. A number (the API sends it as display text). \cr
-   field_goals_mid_range_attempted \tab numeric \tab Mid-range (two-point shots outside the restricted area) field goals attempted in the season (total), a float. \cr
-   field_goals_mid_range_made \tab numeric \tab Mid-range field goals made in the season (total), a float. \cr
-   field_goals_percentage \tab numeric \tab Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'; the _sort column holds the same fraction). \cr
-   field_goals_percentage_sort \tab numeric \tab Field-goal percentage as a FRACTION 0-1 for sorting. \cr
-   fouls \tab numeric \tab Personal fouls per game when countRanger is 1. A number (the API sends it as display text). \cr
-   fouls_defensive \tab numeric \tab Defensive personal fouls in the season (total), a float. \cr
-   free_throws \tab numeric \tab Free throws made per game when countRanger is 1. A number (the API sends it as display text). \cr
-   free_throws_attempted \tab numeric \tab Free throws attempted per game when countRanger is 1. A number (the API sends it as display text). \cr
-   free_throws_percentage \tab numeric \tab Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'; the _sort column holds the same fraction). \cr
-   free_throws_percentage_sort \tab numeric \tab Free-throw percentage as a FRACTION 0-1 for sorting. \cr
+   field_goals \tab double \tab Field goals made per game when countRanger is 1. A number (the API sends it as display text). \cr
+   field_goals_at_rim_attempted \tab double \tab At-the-rim (inside the restricted area) field goals attempted in the season (total), a float. \cr
+   field_goals_at_rim_made \tab double \tab At-the-rim field goals made in the season (total), a float. \cr
+   field_goals_attempted \tab double \tab Field goals attempted per game when countRanger is 1. A number (the API sends it as display text). \cr
+   field_goals_mid_range_attempted \tab double \tab Mid-range (two-point shots outside the restricted area) field goals attempted in the season (total), a float. \cr
+   field_goals_mid_range_made \tab double \tab Mid-range field goals made in the season (total), a float. \cr
+   field_goals_percentage \tab double \tab Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'; the _sort column holds the same fraction). \cr
+   field_goals_percentage_sort \tab double \tab Field-goal percentage as a FRACTION 0-1 for sorting. \cr
+   fouls \tab double \tab Personal fouls per game when countRanger is 1. A number (the API sends it as display text). \cr
+   fouls_defensive \tab double \tab Defensive personal fouls in the season (total), a float. \cr
+   free_throws \tab double \tab Free throws made per game when countRanger is 1. A number (the API sends it as display text). \cr
+   free_throws_attempted \tab double \tab Free throws attempted per game when countRanger is 1. A number (the API sends it as display text). \cr
+   free_throws_percentage \tab double \tab Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'; the _sort column holds the same fraction). \cr
+   free_throws_percentage_sort \tab double \tab Free-throw percentage as a FRACTION 0-1 for sorting. \cr
    game_start_num \tab integer \tab Games started (Chinese text). \cr
-   minutes \tab numeric \tab Minutes: per game; a whole-season total integer on the offensive/defensive/shot lists (827). A number (the API sends it as display text). \cr
+   minutes \tab double \tab Minutes: per game; a whole-season total integer on the offensive/defensive/shot lists (827). A number (the API sends it as display text). \cr
    nationality \tab character \tab Nationality (Chinese country name; see the nationality code table for every value seen and its English name). Chinese country names seen: China; United States; Canada; France; Chinese Taipei; Iran; Nigeria; Jordan. \cr
    number \tab character \tab Jersey number as a string. \cr
    player_id \tab integer \tab playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. \cr
-   player_times \tab numeric \tab Games played (Chinese text), a float (39.0). \cr
+   player_times \tab double \tab Games played (Chinese text), a float (39.0). \cr
    player_times2 \tab character \tab Unobserved: null in every sample. \cr
-   points \tab numeric \tab Points per game when countRanger is 1 (the request value); other countRanger values change the unit (2 total, 3 per 36 minutes, 4 per 100 possessions). A number (the API sends it as display text). \cr
+   points \tab double \tab Points per game when countRanger is 1 (the request value); other countRanger values change the unit (2 total, 3 per 36 minutes, 4 per 100 possessions). A number (the API sends it as display text). \cr
    position \tab character \tab Position label (Chinese). Eras differ: coarse (Chinese text) (guard) / (Chinese text) (forward) / (Chinese text) (center) in older seasons, five-way (Chinese text) (point guard) / (Chinese text) (shooting guard) / (Chinese text) (small forward) / (Chinese text) (power forward) / (Chinese text) (center) in newer ones; dual positions are joined with '/' (e.g. (Chinese text)). Label glosses: C = (Chinese text); C/PF = (Chinese text); F = (Chinese text); G = (Chinese text); PF = (Chinese text); PF/C = (Chinese text); PF/SF = (Chinese text); PG = (Chinese text); PG/SG = (Chinese text); SF = (Chinese text); SF/PF = (Chinese text); SF/SG = (Chinese text); SG = (Chinese text); SG/PG = (Chinese text); SG/SF = (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text). \cr
-   position_num \tab numeric \tab Position as a number 1-5 (1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 center); a fraction such as 4.5 averages a dual position; typed as float. \cr
+   position_num \tab double \tab Position as a number 1-5 (1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 center); a fraction such as 4.5 averages a dual position; typed as float. \cr
    rank_sort \tab character \tab Unobserved: null in every sample. \cr
-   rebounds \tab numeric \tab Total rebounds per game when countRanger is 1. A number (the API sends it as display text). \cr
-   rebounds_defensive \tab numeric \tab Defensive rebounds per game when countRanger is 1. A number (the API sends it as display text). \cr
-   rebounds_offensive \tab numeric \tab Offensive rebounds per game when countRanger is 1. A number (the API sends it as display text). \cr
+   rebounds \tab double \tab Total rebounds per game when countRanger is 1. A number (the API sends it as display text). \cr
+   rebounds_defensive \tab double \tab Defensive rebounds per game when countRanger is 1. A number (the API sends it as display text). \cr
+   rebounds_offensive \tab double \tab Offensive rebounds per game when countRanger is 1. A number (the API sends it as display text). \cr
    schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
    season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. \cr
-   seconds \tab numeric \tab Seconds: per-game average; a whole-season total integer elsewhere. A number (the API sends it as display text). \cr
-   steals \tab numeric \tab Steals per game when countRanger is 1. A number (the API sends it as display text). \cr
+   seconds \tab double \tab Seconds: per-game average; a whole-season total integer elsewhere. A number (the API sends it as display text). \cr
+   steals \tab double \tab Steals per game when countRanger is 1. A number (the API sends it as display text). \cr
    team_cn_alias \tab character \tab Team short name (Chinese) in that season. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
    team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
-   three_point_attempted \tab numeric \tab Three-pointers attempted per game when countRanger is 1. A number (the API sends it as display text). \cr
-   three_point_goals \tab numeric \tab Three-pointers made per game when countRanger is 1. A number (the API sends it as display text). \cr
-   three_point_percentage \tab numeric \tab Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'; the _sort column holds the same fraction). \cr
-   three_point_percentage_sort \tab numeric \tab Three-point percentage as a FRACTION 0-1 for sorting. \cr
-   turnovers \tab numeric \tab Turnovers per game when countRanger is 1. A number (the API sends it as display text). \cr
+   three_point_attempted \tab double \tab Three-pointers attempted per game when countRanger is 1. A number (the API sends it as display text). \cr
+   three_point_goals \tab double \tab Three-pointers made per game when countRanger is 1. A number (the API sends it as display text). \cr
+   three_point_percentage \tab double \tab Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'; the _sort column holds the same fraction). \cr
+   three_point_percentage_sort \tab double \tab Three-point percentage as a FRACTION 0-1 for sorting. \cr
+   turnovers \tab double \tab Turnovers per game when countRanger is 1. A number (the API sends it as display text). \cr
 }
 }
 \description{

@@ -89,11 +89,11 @@ changed envelope, a body for another game, a game that is not final). All inheri
 }
 }
 \seealso{
-Other IBBA Segev:
+Other IBBA Segev Functions:
 \code{\link[=ibba_segev_game_info]{ibba_segev_game_info()}},
 \code{\link[=ibba_segev_period_scores]{ibba_segev_period_scores()}},
 \code{\link[=ibba_segev_player_box]{ibba_segev_player_box()}},
 \code{\link[=ibba_segev_rosters]{ibba_segev_rosters()}},
 \code{\link[=ibba_segev_team_box]{ibba_segev_team_box()}}
 }
-\concept{IBBA Segev}
+\concept{IBBA Segev Functions}

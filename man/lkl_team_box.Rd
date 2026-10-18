@@ -90,7 +90,7 @@ and times are Lithuanian local (Europe/Vilnius) as the site prints them.
 }
 }
 \seealso{
-Other LKL:
+Other LKL Functions:
 \code{\link[=lkl_game_info]{lkl_game_info()}},
 \code{\link[=lkl_game_players]{lkl_game_players()}},
 \code{\link[=lkl_game_score]{lkl_game_score()}},
@@ -105,4 +105,4 @@ Other LKL:
 \code{\link[=lkl_standings]{lkl_standings()}},
 \code{\link[=lkl_summary]{lkl_summary()}}
 }
-\concept{LKL}
+\concept{LKL Functions}

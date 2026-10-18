@@ -26,36 +26,36 @@ total, 3 and 4 per 100 possessions.}
 A \code{hoopR_data} tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
 columns, in this order (sdv-py \code{cba_team_basic}):\tabular{lll}{
    col_name \tab type \tab description \cr
-   assists \tab numeric \tab Assists, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   blocked \tab numeric \tab Blocks, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   assists \tab double \tab Assists, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   blocked \tab double \tab Blocks, formatted by statisticalDimension. A number (the API sends it as display text). \cr
    cba_rank \tab character \tab Unobserved: null in every sample (a league-rank slot). \cr
-   field_goals \tab numeric \tab Field goals made, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   field_goals_attempted \tab numeric \tab Field goals attempted, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   field_goals_percentage_rate \tab numeric \tab Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
-   fouls \tab numeric \tab Personal fouls, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   free_throws \tab numeric \tab Free throws made, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   free_throws_attempted \tab numeric \tab Free throws attempted, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   free_throws_percentage_rate \tab numeric \tab Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   field_goals \tab double \tab Field goals made, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   field_goals_attempted \tab double \tab Field goals attempted, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   field_goals_percentage_rate \tab double \tab Field-goal percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   fouls \tab double \tab Personal fouls, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   free_throws \tab double \tab Free throws made, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   free_throws_attempted \tab double \tab Free throws attempted, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   free_throws_percentage_rate \tab double \tab Free-throw percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
    losses_number \tab integer \tab Losses (Chinese text). (as the API names it) \cr
-   points \tab numeric \tab Points, formatted by statisticalDimension (1 per-game average, 2 season total, 3 and 4 per 100 possessions: both give the same values, 120.1 = boutPoints). A number (the API sends it as display text). \cr
+   points \tab double \tab Points, formatted by statisticalDimension (1 per-game average, 2 season total, 3 and 4 per 100 possessions: both give the same values, 120.1 = boutPoints). A number (the API sends it as display text). \cr
    real_player_times \tab integer \tab Games counted for the averages ((Chinese text) by its name); equals scheduleNumber in the sample except in short seasons (unverified). \cr
-   rebounds \tab numeric \tab Total rebounds, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   rebounds_defensive \tab numeric \tab Defensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   rebounds_offensive \tab numeric \tab Offensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   round \tab numeric \tab Possessions in the season (Chinese text) as a float (4074.09); identical for statisticalDimension 1-4. \cr
+   rebounds \tab double \tab Total rebounds, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   rebounds_defensive \tab double \tab Defensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   rebounds_offensive \tab double \tab Offensive rebounds, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   round \tab double \tab Possessions in the season (Chinese text) as a float (4074.09); identical for statisticalDimension 1-4. \cr
    schedule_number \tab integer \tab Games played in that season and match type (Chinese text). \cr
    schedule_season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. One row per season of the team. \cr
    season \tab character \tab Season label 'YYYY-YYYY' as a string ('2024-2025' = start year - end year; the sdv END year is the second one); scheduleSeason is the numeric START year. \cr
-   steals \tab numeric \tab Steals, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   steals \tab double \tab Steals, formatted by statisticalDimension. A number (the API sends it as display text). \cr
    team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
    team_name \tab character \tab Team name (Chinese) in that season; changes with the sponsor (the sampled team 29128 has 9 different names across 20 seasons). Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
-   three_point_attempted \tab numeric \tab Three-pointers attempted, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   three_point_goals \tab numeric \tab Three-pointers made, formatted by statisticalDimension. A number (the API sends it as display text). \cr
-   three_point_percentage_rate \tab numeric \tab Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
-   time \tab numeric \tab Team minutes per game (statisticalDimension 1) or in total (2). A number (the API sends it as display text). \cr
-   turnovers \tab numeric \tab Turnovers, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   three_point_attempted \tab double \tab Three-pointers attempted, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   three_point_goals \tab double \tab Three-pointers made, formatted by statisticalDimension. A number (the API sends it as display text). \cr
+   three_point_percentage_rate \tab double \tab Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   time \tab double \tab Team minutes per game (statisticalDimension 1) or in total (2). A number (the API sends it as display text). \cr
+   turnovers \tab double \tab Turnovers, formatted by statisticalDimension. A number (the API sends it as display text). \cr
    win_number \tab integer \tab Wins (Chinese text). (as the API names it) \cr
-   win_rate \tab numeric \tab Win rate (Chinese text). A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   win_rate \tab double \tab Win rate (Chinese text). A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
 }
 }
 \description{

@@ -64,7 +64,7 @@
 #' | finished | logical | True once the game is final (the wrappers read finished games only). |
 #' | current_period | integer | Current period, the last one played for a finished game (5+ means overtime). |
 #' | clock | character | Game clock remaining as 'mm:ss' ('00:00' for a finished game). |
-#' @family IBBA Segev
+#' @family IBBA Segev Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -100,7 +100,7 @@ ibba_segev_game_info <- function(game_id) {
 #' | last_name_local | character | Last name in Hebrew. |
 #' | in_roster | integer | Roster flag, 0 or 2 in the samples; meaning unverified. |
 #' | api_id | integer | External player id as an integer: null or equal to the Segev player_id (both occur within one game); its source is unverified. |
-#' @family IBBA Segev
+#' @family IBBA Segev Functions
 #' @export
 ibba_segev_rosters <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -160,7 +160,7 @@ ibba_segev_rosters <- function(game_id) {
 #' | fg2a | integer | Two-point field goals attempted, derived as made + missed. |
 #' | fg3a | integer | Three-point field goals attempted, derived as made + missed. |
 #' | fta | integer | Free throws attempted, derived as made + missed. |
-#' @family IBBA Segev
+#' @family IBBA Segev Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -230,7 +230,7 @@ ibba_segev_player_box <- function(game_id) {
 #' | fast_break_possessions | integer | The N of the feed's 'P of N' fast-break stat (fast-break possessions or attempts); unverified. Null before 2026-27 where the key differs. |
 #' | defensive_stops | integer | Defensive stops; the feed adds it in 2026-27, null before. |
 #' | biggest_scoring_run | character | Biggest scoring run as the feed prints it ('23-0 (36-6)'); 2026-27 on, null before. |
-#' @family IBBA Segev
+#' @family IBBA Segev Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -261,7 +261,7 @@ ibba_segev_team_box <- function(game_id) {
 #' | away_points | integer | Points the away side scored IN this period (not cumulative). |
 #' | home_fouls | integer | Team fouls the home side committed in this period. |
 #' | away_fouls | integer | Team fouls the away side committed in this period. |
-#' @family IBBA Segev
+#' @family IBBA Segev Functions
 #' @export
 ibba_segev_period_scores <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -313,7 +313,7 @@ ibba_segev_period_scores <- function(game_id) {
 #' | is_coach_foul | logical | True on a foul charged to the coach or bench (player_id null); null otherwise. |
 #' | player_in_jersey | character | Substitution: jersey of the player coming in; null on the row that records the player going out. |
 #' | player_out_jersey | character | Substitution: jersey of the player going out; null on the row that records the player coming in. |
-#' @family IBBA Segev
+#' @family IBBA Segev Functions
 #' @export
 #' @examples
 #' \donttest{

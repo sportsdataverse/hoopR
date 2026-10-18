@@ -298,16 +298,16 @@ scb_playoff_games <- function(season, league = "bbl") {
 #' | points | integer | The player's season total points over displayType. |
 #' | two_point_shots_made | integer | The player's season total 2-point field goals made over displayType. |
 #' | two_point_shots_attempted | integer | The player's season total 2-point field goals attempted over displayType. |
-#' | two_point_shot_success_percent | numeric | The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | two_point_shot_success_percent | double | The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | three_point_shots_made | integer | The player's season total 3-point field goals made over displayType. |
 #' | three_point_shots_attempted | integer | The player's season total 3-point field goals attempted over displayType. |
-#' | three_point_shot_success_percent | numeric | The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | three_point_shot_success_percent | double | The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | field_goals_made | integer | The player's season total field goals made over displayType. |
 #' | field_goals_attempted | integer | The player's season total field goals attempted over displayType. |
-#' | field_goals_success_percent | numeric | The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | field_goals_success_percent | double | The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | free_throws_made | integer | The player's season total free throws made over displayType. |
 #' | free_throws_attempted | integer | The player's season total free throws attempted over displayType. |
-#' | free_throws_success_percent | numeric | The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | free_throws_success_percent | double | The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | offensive_rebounds | integer | The player's season total offensive rebounds over displayType. |
 #' | defensive_rebounds | integer | The player's season total defensive rebounds over displayType. |
 #' | total_rebounds | integer | The player's season total rebounds (offensive + defensive) over displayType. |
@@ -319,34 +319,34 @@ scb_playoff_games <- function(season, league = "bbl") {
 #' | efficiency | integer | The player's season total efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) over displayType. |
 #' | plus_minus | integer | The player's season total plus-minus over displaytype. |
 #' | games_played | integer | The player's season total games played over displayType. |
-#' | seconds_per_game | numeric | Per-game average of seconds, seconds. |
-#' | points_per_game | numeric | Per-game average of points. |
-#' | two_point_shots_made_per_game | numeric | Per-game average of 2-point field goals made. |
-#' | two_point_shots_attempted_per_game | numeric | Per-game average of 2-point field goals attempted. |
-#' | three_point_shots_made_per_game | numeric | Per-game average of 3-point field goals made. |
-#' | three_point_shots_attempted_per_game | numeric | Per-game average of 3-point field goals attempted. |
-#' | field_goals_made_per_game | numeric | Per-game average of field goals made. |
-#' | field_goals_attempted_per_game | numeric | Per-game average of field goals attempted. |
-#' | field_goals_success_percent_per_game | numeric | Per-game average of field-goal percentage (0 in every sample: unusable). |
-#' | free_throws_made_per_game | numeric | Per-game average of free throws made. |
-#' | free_throws_attempted_per_game | numeric | Per-game average of free throws attempted. |
-#' | defensive_rebounds_per_game | numeric | Per-game average of defensive rebounds. |
-#' | offensive_rebounds_per_game | numeric | Per-game average of offensive rebounds. |
-#' | total_rebounds_per_game | numeric | Per-game average of rebounds (offensive + defensive). |
-#' | assists_per_game | numeric | Per-game average of assists. |
-#' | steals_per_game | numeric | Per-game average of steals. |
-#' | turnovers_per_game | numeric | Per-game average of turnovers. |
-#' | blocks_per_game | numeric | Per-game average of blocked shots. |
-#' | fouls_committed_per_game | numeric | Per-game average of fouls committed. |
-#' | efficiency_per_game | numeric | Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). |
-#' | plus_minus_per_game | numeric | Per-game average of plus-minus (point margin while on court). |
+#' | seconds_per_game | double | Per-game average of seconds, seconds. |
+#' | points_per_game | double | Per-game average of points. |
+#' | two_point_shots_made_per_game | double | Per-game average of 2-point field goals made. |
+#' | two_point_shots_attempted_per_game | double | Per-game average of 2-point field goals attempted. |
+#' | three_point_shots_made_per_game | double | Per-game average of 3-point field goals made. |
+#' | three_point_shots_attempted_per_game | double | Per-game average of 3-point field goals attempted. |
+#' | field_goals_made_per_game | double | Per-game average of field goals made. |
+#' | field_goals_attempted_per_game | double | Per-game average of field goals attempted. |
+#' | field_goals_success_percent_per_game | double | Per-game average of field-goal percentage (0 in every sample: unusable). |
+#' | free_throws_made_per_game | double | Per-game average of free throws made. |
+#' | free_throws_attempted_per_game | double | Per-game average of free throws attempted. |
+#' | defensive_rebounds_per_game | double | Per-game average of defensive rebounds. |
+#' | offensive_rebounds_per_game | double | Per-game average of offensive rebounds. |
+#' | total_rebounds_per_game | double | Per-game average of rebounds (offensive + defensive). |
+#' | assists_per_game | double | Per-game average of assists. |
+#' | steals_per_game | double | Per-game average of steals. |
+#' | turnovers_per_game | double | Per-game average of turnovers. |
+#' | blocks_per_game | double | Per-game average of blocked shots. |
+#' | fouls_committed_per_game | double | Per-game average of fouls committed. |
+#' | efficiency_per_game | double | Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). |
+#' | plus_minus_per_game | double | Per-game average of plus-minus (point margin while on court). |
 #' | double_double | integer | The player's season total double-doubles over displayType. |
-#' | double_double_per_game | numeric | Per-game average of double-doubles. |
+#' | double_double_per_game | double | Per-game average of double-doubles. |
 #' | games_started | integer | The player's season total games started over displayType. |
 #' | triple_double | integer | The player's season total triple-doubles over displayType. |
-#' | triple_double_per_game | numeric | Per-game average of triple-doubles. |
+#' | triple_double_per_game | double | Per-game average of triple-doubles. |
 #' | fouls_received | integer | The player's season total fouls drawn over displayType. |
-#' | fouls_received_per_game | numeric | Per-game average of fouls drawn. |
+#' | fouls_received_per_game | double | Per-game average of fouls drawn. |
 #' | overall | logical | False in every sample (meaning unverified). |
 #' | stage | character | Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. |
 #' | aggregation | character | Aggregation label as sent: STAGE in player tables, MAIN_ROUND in team tables. |
@@ -405,16 +405,16 @@ scb_player_statistics <- function(season, league = "bbl", display_type = "MAIN_R
 #' | points | integer | The team's season total points over displayType. |
 #' | two_point_shots_made | integer | The team's season total 2-point field goals made over displayType. |
 #' | two_point_shots_attempted | integer | The team's season total 2-point field goals attempted over displayType. |
-#' | two_point_shot_success_percent | numeric | The team's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | two_point_shot_success_percent | double | The team's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | three_point_shots_made | integer | The team's season total 3-point field goals made over displayType. |
 #' | three_point_shots_attempted | integer | The team's season total 3-point field goals attempted over displayType. |
-#' | three_point_shot_success_percent | numeric | The team's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | three_point_shot_success_percent | double | The team's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | field_goals_made | integer | The team's season total field goals made over displayType. |
 #' | field_goals_attempted | integer | The team's season total field goals attempted over displayType. |
-#' | field_goals_success_percent | numeric | The team's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | field_goals_success_percent | double | The team's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | free_throws_made | integer | The team's season total free throws made over displayType. |
 #' | free_throws_attempted | integer | The team's season total free throws attempted over displayType. |
-#' | free_throws_success_percent | numeric | The team's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
+#' | free_throws_success_percent | double | The team's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. |
 #' | offensive_rebounds | integer | The team's season total offensive rebounds over displayType. |
 #' | defensive_rebounds | integer | The team's season total defensive rebounds over displayType. |
 #' | total_rebounds | integer | The team's season total rebounds (offensive + defensive) over displayType. |
@@ -426,29 +426,29 @@ scb_player_statistics <- function(season, league = "bbl", display_type = "MAIN_R
 #' | efficiency | integer | The team's season total efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) over displayType. |
 #' | plus_minus | integer | The team's season total plus-minus over displaytype. |
 #' | games_played | integer | The team's season total games played over displayType. |
-#' | seconds_per_game | numeric | Per-game average of seconds, seconds. |
-#' | points_per_game | numeric | Per-game average of points. |
-#' | two_point_shots_made_per_game | numeric | Per-game average of 2-point field goals made. |
-#' | two_point_shots_attempted_per_game | numeric | Per-game average of 2-point field goals attempted. |
-#' | three_point_shots_made_per_game | numeric | Per-game average of 3-point field goals made. |
-#' | three_point_shots_attempted_per_game | numeric | Per-game average of 3-point field goals attempted. |
-#' | field_goals_made_per_game | numeric | Per-game average of field goals made. |
-#' | field_goals_attempted_per_game | numeric | Per-game average of field goals attempted. |
-#' | field_goals_success_percent_per_game | numeric | Per-game average of field-goal percentage (0 in every sample: unusable). |
-#' | free_throws_made_per_game | numeric | Per-game average of free throws made. |
-#' | free_throws_attempted_per_game | numeric | Per-game average of free throws attempted. |
-#' | defensive_rebounds_per_game | numeric | Per-game average of defensive rebounds. |
-#' | offensive_rebounds_per_game | numeric | Per-game average of offensive rebounds. |
-#' | total_rebounds_per_game | numeric | Per-game average of rebounds (offensive + defensive). |
-#' | assists_per_game | numeric | Per-game average of assists. |
-#' | steals_per_game | numeric | Per-game average of steals. |
-#' | turnovers_per_game | numeric | Per-game average of turnovers. |
-#' | blocks_per_game | numeric | Per-game average of blocked shots. |
-#' | fouls_committed_per_game | numeric | Per-game average of fouls committed. |
-#' | efficiency_per_game | numeric | Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). |
-#' | plus_minus_per_game | numeric | Per-game average of plus-minus (point margin while on court). |
+#' | seconds_per_game | double | Per-game average of seconds, seconds. |
+#' | points_per_game | double | Per-game average of points. |
+#' | two_point_shots_made_per_game | double | Per-game average of 2-point field goals made. |
+#' | two_point_shots_attempted_per_game | double | Per-game average of 2-point field goals attempted. |
+#' | three_point_shots_made_per_game | double | Per-game average of 3-point field goals made. |
+#' | three_point_shots_attempted_per_game | double | Per-game average of 3-point field goals attempted. |
+#' | field_goals_made_per_game | double | Per-game average of field goals made. |
+#' | field_goals_attempted_per_game | double | Per-game average of field goals attempted. |
+#' | field_goals_success_percent_per_game | double | Per-game average of field-goal percentage (0 in every sample: unusable). |
+#' | free_throws_made_per_game | double | Per-game average of free throws made. |
+#' | free_throws_attempted_per_game | double | Per-game average of free throws attempted. |
+#' | defensive_rebounds_per_game | double | Per-game average of defensive rebounds. |
+#' | offensive_rebounds_per_game | double | Per-game average of offensive rebounds. |
+#' | total_rebounds_per_game | double | Per-game average of rebounds (offensive + defensive). |
+#' | assists_per_game | double | Per-game average of assists. |
+#' | steals_per_game | double | Per-game average of steals. |
+#' | turnovers_per_game | double | Per-game average of turnovers. |
+#' | blocks_per_game | double | Per-game average of blocked shots. |
+#' | fouls_committed_per_game | double | Per-game average of fouls committed. |
+#' | efficiency_per_game | double | Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). |
+#' | plus_minus_per_game | double | Per-game average of plus-minus (point margin while on court). |
 #' | double_double | integer | The team's season total double-doubles over displayType. |
-#' | double_double_per_game | numeric | Per-game average of double-doubles. |
+#' | double_double_per_game | double | Per-game average of double-doubles. |
 #' @inherit scb_seasons details
 #' @examples
 #' \donttest{
@@ -899,16 +899,16 @@ scb_game <- function(game_id, league = "bbl") {
 #' | points | integer | The player's points in the game. |
 #' | two_point_shots_made | integer | The player's 2-point field goals made in the game. |
 #' | two_point_shots_attempted | integer | The player's 2-point field goals attempted in the game. |
-#' | two_point_shot_success_percent | numeric | The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+#' | two_point_shot_success_percent | double | The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 #' | three_point_shots_made | integer | The player's 3-point field goals made in the game. |
 #' | three_point_shots_attempted | integer | The player's 3-point field goals attempted in the game. |
-#' | three_point_shot_success_percent | numeric | The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+#' | three_point_shot_success_percent | double | The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 #' | field_goals_made | integer | The player's field goals made in the game. |
 #' | field_goals_attempted | integer | The player's field goals attempted in the game. |
-#' | field_goals_success_percent | numeric | The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+#' | field_goals_success_percent | double | The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 #' | free_throws_made | integer | The player's free throws made in the game. |
 #' | free_throws_attempted | integer | The player's free throws attempted in the game. |
-#' | free_throws_success_percent | numeric | The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. |
+#' | free_throws_success_percent | double | The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. |
 #' | offensive_rebounds | integer | The player's offensive rebounds in the game. |
 #' | defensive_rebounds | integer | The player's defensive rebounds in the game. |
 #' | total_rebounds | integer | The player's rebounds (offensive + defensive) in the game. |
@@ -980,16 +980,16 @@ scb_game_players <- function(game_id, league = "bbl") {
 #' | points | integer | The team's points in the game (players plus the team line). |
 #' | two_point_shots_made | integer | The team's 2-point field goals made in the game (players plus the team line). |
 #' | two_point_shots_attempted | integer | The team's 2-point field goals attempted in the game (players plus the team line). |
-#' | two_point_shot_success_percent | numeric | The team's 2-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
+#' | two_point_shot_success_percent | double | The team's 2-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
 #' | three_point_shots_made | integer | The team's 3-point field goals made in the game (players plus the team line). |
 #' | three_point_shots_attempted | integer | The team's 3-point field goals attempted in the game (players plus the team line). |
-#' | three_point_shot_success_percent | numeric | The team's 3-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
+#' | three_point_shot_success_percent | double | The team's 3-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
 #' | field_goals_made | integer | The team's field goals made in the game (players plus the team line). |
 #' | field_goals_attempted | integer | The team's field goals attempted in the game (players plus the team line). |
-#' | field_goals_success_percent | numeric | The team's field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
+#' | field_goals_success_percent | double | The team's field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
 #' | free_throws_made | integer | The team's free throws made in the game (players plus the team line). |
 #' | free_throws_attempted | integer | The team's free throws attempted in the game (players plus the team line). |
-#' | free_throws_success_percent | numeric | The team's free-throw percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
+#' | free_throws_success_percent | double | The team's free-throw percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. |
 #' | offensive_rebounds | integer | The team's offensive rebounds in the game (players plus the team line). |
 #' | defensive_rebounds | integer | The team's defensive rebounds in the game (players plus the team line). |
 #' | total_rebounds | integer | The team's rebounds (offensive + defensive) in the game (players plus the team line). |
@@ -1004,16 +1004,16 @@ scb_game_players <- function(game_id, league = "bbl") {
 #' | team_line_points | integer | Team-line points (not credited to a player). |
 #' | team_line_two_point_shots_made | integer | Team-line 2-point field goals made (not credited to a player). |
 #' | team_line_two_point_shots_attempted | integer | Team-line 2-point field goals attempted (not credited to a player). |
-#' | team_line_two_point_shot_success_percent | numeric | Team-line 2-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
+#' | team_line_two_point_shot_success_percent | double | Team-line 2-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
 #' | team_line_three_point_shots_made | integer | Team-line 3-point field goals made (not credited to a player). |
 #' | team_line_three_point_shots_attempted | integer | Team-line 3-point field goals attempted (not credited to a player). |
-#' | team_line_three_point_shot_success_percent | numeric | Team-line 3-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
+#' | team_line_three_point_shot_success_percent | double | Team-line 3-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
 #' | team_line_field_goals_made | integer | Team-line field goals made (not credited to a player). |
 #' | team_line_field_goals_attempted | integer | Team-line field goals attempted (not credited to a player). |
-#' | team_line_field_goals_success_percent | numeric | Team-line field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
+#' | team_line_field_goals_success_percent | double | Team-line field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
 #' | team_line_free_throws_made | integer | Team-line free throws made (not credited to a player). |
 #' | team_line_free_throws_attempted | integer | Team-line free throws attempted (not credited to a player). |
-#' | team_line_free_throws_success_percent | numeric | Team-line free-throw percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
+#' | team_line_free_throws_success_percent | double | Team-line free-throw percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. |
 #' | team_line_offensive_rebounds | integer | Team-line offensive rebounds (not credited to a player). |
 #' | team_line_defensive_rebounds | integer | Team-line defensive rebounds (not credited to a player). |
 #' | team_line_total_rebounds | integer | Team-line rebounds (offensive + defensive) (not credited to a player). |
@@ -1142,28 +1142,28 @@ scb_game_actions <- function(game_id, league = "bbl") {
 #' | point_corrections | character | Table-point deductions; [] in every sample. |
 #' | home_victories | integer | Home games: wins. |
 #' | home_losses | integer | Home games: number of losses in the table. |
-#' | home_victory_percentage | numeric | Home games: win percentage, 0-100. |
+#' | home_victory_percentage | double | Home games: win percentage, 0-100. |
 #' | away_victories | integer | Away games: wins. |
 #' | away_losses | integer | Away games: number of losses in the table. |
-#' | away_victory_percentage | numeric | Away games: win percentage, 0-100. |
+#' | away_victory_percentage | double | Away games: win percentage, 0-100. |
 #' | table_points | integer | Table points scored (2 per win), from the API's `totalPointsMade`; the provider's notes call its 'Points' fields table points. |
 #' | table_points_against | integer | Table points conceded (2 per loss), from the API's `totalPointsAgainst`; per the provider's notes, table points. |
-#' | total_victory_percentage | numeric | All games: win percentage, 0-100. |
+#' | total_victory_percentage | double | All games: win percentage, 0-100. |
 #' | total_games | integer | Games played in the table (home and away together). |
 #' | total_victories | integer | All games: wins. |
 #' | total_losses | integer | Losses in the table over all games. |
 #' | last10_victories | integer | Wins in the last 10 games. |
 #' | last10_losses | integer | Losses in the last 10 games. |
-#' | last10_percentage | numeric | Win percentage over the last 10 games, 0-100. |
+#' | last10_percentage | double | Win percentage over the last 10 games, 0-100. |
 #' | last10_outcomes | character | Results of the last games, newest first: W or L. |
 #' | home_last10_victories | integer | Home games: last 10 games, wins. |
 #' | home_last10_losses | integer | Home games: last 10 games, losses. |
-#' | home_last10_victory_percentage | numeric | Home games: last 10 games, win percentage, 0-100. |
+#' | home_last10_victory_percentage | double | Home games: last 10 games, win percentage, 0-100. |
 #' | home_streak | character | Home games: current streak, W or L. |
 #' | home_streak_count | integer | Home games: length of the current streak. |
 #' | away_last10_victories | integer | Away games: last 10 games, wins. |
 #' | away_last10_losses | integer | Away games: last 10 games, losses. |
-#' | away_last10_victory_percentage | numeric | Away games: last 10 games, win percentage, 0-100. |
+#' | away_last10_victory_percentage | double | Away games: last 10 games, win percentage, 0-100. |
 #' | away_streak | character | Away games: current streak, W or L. |
 #' | away_streak_count | integer | Away games: length of the current streak. |
 #' | updated_date | character | Last update of the row, ISO 8601 UTC. |
@@ -1223,7 +1223,7 @@ scb_standings <- function(league = "bbl", season = NULL, competition = NULL) {
 #' | birth_date | character | Date of birth, YYYY-MM-DD. |
 #' | position | character | Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. |
 #' | shirt_number | character | Jersey number. A number or a numeric string across rows. |
-#' | height | numeric | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
+#' | height | double | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
 #' | weight | integer | Weight in kg; 0 when unknown. |
 #' | nationalities | character | Nationalities, ISO 3166-1 alpha-2 codes. |
 #' | is_all_star | logical | All-Star selection flag. |
@@ -1463,7 +1463,7 @@ scb_transfers_teams <- function() {
 #' | birth_date | character | Date of birth, YYYY-MM-DD. |
 #' | position | character | Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. |
 #' | shirt_number | character | Jersey number as sent (a string: it can be `00`). |
-#' | height | numeric | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
+#' | height | double | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
 #' | weight | integer | Weight in kg; 0 when unknown. |
 #' | nationalities | character | Nationalities, ISO 3166-1 alpha-2 codes. |
 #' | is_all_star | logical | All-Star selection flag. |
@@ -1509,8 +1509,8 @@ scb_team_rosters <- function() {
 #' | all_time_place | integer | Rank on the all-time list; null when not on it. |
 #' | order_id | integer | Sort order within the list. |
 #' | all_time_order_id | integer | Sort order on the all-time list; null when not on it. |
-#' | value | numeric | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
-#' | ratio | numeric | \[made, attempted\] as strings, on percentage records only; null otherwise. |
+#' | value | double | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
+#' | ratio | double | \[made, attempted\] as strings, on percentage records only; null otherwise. |
 #' | season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
 #' | real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 #' | first_name | character | Player's given name. |
@@ -1558,8 +1558,8 @@ scb_records_per_game <- function(season, league = "bbl") {
 #' | season_id | integer | Season, START year (2026 = 2026-27). |
 #' | place | integer | Rank within the list (1 = best); 0 on some rows. |
 #' | order_id | integer | Sort order within the list. |
-#' | value | numeric | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
-#' | ratio | numeric | \[made, attempted\] as strings, on percentage records only; null otherwise. |
+#' | value | double | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
+#' | ratio | double | \[made, attempted\] as strings, on percentage records only; null otherwise. |
 #' | season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
 #' | real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 #' | first_name | character | Player's given name. |

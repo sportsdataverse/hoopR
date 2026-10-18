@@ -70,7 +70,7 @@ or ORG.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other Genius:
+Other Genius Functions:
 \code{\link{bal_competition}},
 \code{\link{esake_competition}},
 \code{\link[=genius_competition_games]{genius_competition_games()}},
@@ -90,4 +90,4 @@ Other Genius:
 \code{\link{nznbl_competition}},
 \code{\link{slb_competition}}
 }
-\concept{Genius}
+\concept{Genius Functions}

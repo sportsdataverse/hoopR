@@ -81,7 +81,7 @@ game, season or league, an unfinished game, a helper that does not belong to the
 }
 }
 \seealso{
-Other ABA:
+Other ABA Functions:
 \code{\link[=aba_box_players]{aba_box_players()}},
 \code{\link[=aba_box_teams]{aba_box_teams()}},
 \code{\link[=aba_calendar]{aba_calendar()}},
@@ -94,4 +94,4 @@ Other ABA:
 \code{\link[=aba_score_flow]{aba_score_flow()}},
 \code{\link[=aba_shots]{aba_shots()}}
 }
-\concept{ABA}
+\concept{ABA Functions}

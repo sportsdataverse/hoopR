@@ -20,25 +20,25 @@ all-star, 9 relegation play-off (cba_match_types).}
 A \code{hoopR_data} tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
 columns, in this order (sdv-py \code{cba_team_overview}):\tabular{lll}{
    col_name \tab type \tab description \cr
-   bout_no_points \tab numeric \tab points allowed per 100 possessions (defensive rating), a float. \cr
-   bout_no_points_rank \tab numeric \tab Rank among the teams of that season for boutNoPoints (integer-valued float; direction undocumented). \cr
-   bout_no_points_sort \tab numeric \tab Unobserved: null in every sample (numeric value behind boutNoPoints). \cr
-   bout_point_sort \tab numeric \tab Unobserved: null in every sample (numeric value behind boutPoints). \cr
-   bout_points \tab numeric \tab points scored per 100 possessions (offensive rating), a float (120.1). \cr
-   bout_points_rank \tab numeric \tab Rank among the teams of that season for boutPoints (integer-valued float; direction undocumented). \cr
-   bout_subtract_points \tab numeric \tab net points per 100 possessions (boutPoints - boutNoPoints), a float. \cr
-   bout_subtract_points_rank \tab numeric \tab Rank among the teams of that season for boutSubtractPoints (integer-valued float). \cr
-   bout_subtract_points_sort \tab numeric \tab Unobserved: null in every sample (numeric value behind boutSubtractPoints). \cr
+   bout_no_points \tab double \tab points allowed per 100 possessions (defensive rating), a float. \cr
+   bout_no_points_rank \tab double \tab Rank among the teams of that season for boutNoPoints (integer-valued float; direction undocumented). \cr
+   bout_no_points_sort \tab double \tab Unobserved: null in every sample (numeric value behind boutNoPoints). \cr
+   bout_point_sort \tab double \tab Unobserved: null in every sample (numeric value behind boutPoints). \cr
+   bout_points \tab double \tab points scored per 100 possessions (offensive rating), a float (120.1). \cr
+   bout_points_rank \tab double \tab Rank among the teams of that season for boutPoints (integer-valued float; direction undocumented). \cr
+   bout_subtract_points \tab double \tab net points per 100 possessions (boutPoints - boutNoPoints), a float. \cr
+   bout_subtract_points_rank \tab double \tab Rank among the teams of that season for boutSubtractPoints (integer-valued float). \cr
+   bout_subtract_points_sort \tab double \tab Unobserved: null in every sample (numeric value behind boutSubtractPoints). \cr
    is_avg \tab integer \tab Row kind: 2 on every sampled row = a team's own row (1 presumed league average, unobserved). \cr
-   loss_num \tab numeric \tab Losses in that season, a float. \cr
-   player_times \tab numeric \tab Games played, a float (42.0). \cr
-   rhythm \tab numeric \tab pace: possessions per 48 minutes ('75.7'; site definition: (Chinese text)48(Chinese text)). A number (the API sends it as display text). \cr
-   rhythm_rank \tab numeric \tab Unobserved: null in every sample (a rank slot for pace). Typed Float64 like the family's other routes. \cr
+   loss_num \tab double \tab Losses in that season, a float. \cr
+   player_times \tab double \tab Games played, a float (42.0). \cr
+   rhythm \tab double \tab pace: possessions per 48 minutes ('75.7'; site definition: (Chinese text)48(Chinese text)). A number (the API sends it as display text). \cr
+   rhythm_rank \tab double \tab Unobserved: null in every sample (a rank slot for pace). Typed Float64 like the family's other routes. \cr
    season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. One row per season of the team. \cr
    team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
    team_name \tab character \tab Team name (Chinese) in that season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
-   win_num \tab numeric \tab Wins in that season (match type of the request), a number typed as float (33.0). \cr
-   win_rate \tab numeric \tab Win rate. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   win_num \tab double \tab Wins in that season (match type of the request), a number typed as float (33.0). \cr
+   win_rate \tab double \tab Win rate. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
 }
 }
 \description{

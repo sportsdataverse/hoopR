@@ -39,8 +39,8 @@ A \code{hoopR_data} tibble (one row: the next match):\tabular{lll}{
    venue_capacity \tab integer \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    venue_timezone \tab character \tab IANA time zone of the venue, e.g. Australia/Sydney. \cr
    venue_code \tab character \tab Venue code; often null. \cr
-   venue_latitude \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_longitude \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   venue_latitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   venue_longitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    home_team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. \cr
    rosetta_home_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the home team; routes that take this entity accept it as well as the DataCore id. \cr
    home_team_name \tab character \tab Display name of the team. \cr
@@ -98,7 +98,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -121,4 +121,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

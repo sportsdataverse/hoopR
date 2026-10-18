@@ -26,11 +26,11 @@ with these columns, in this order (sdv-py \code{cba_best_player}):\tabular{lll}{
    player_name \tab character \tab Full player name (Chinese, may include the first name: (Chinese text)). Null on some rows (the short name is in playerNameStr). \cr
    player_name_str \tab character \tab Short display name (Chinese surname form: (Chinese text)). \cr
    points \tab integer \tab Points scored by the player in this game. \cr
-   real_point_rate \tab numeric \tab true-shooting percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   real_point_rate \tab double \tab true-shooting percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
    rebounds \tab integer \tab Total rebounds by the player in this game. \cr
    steals \tab integer \tab Steals by the player in this game. \cr
    three_points_str \tab character \tab Three-point field goals as the string 'made/attempted'. \cr
-   turn_share \tab numeric \tab possession share (see advance-count turnShare). A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
+   turn_share \tab double \tab possession share (see advance-count turnShare). A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
    turnovers \tab integer \tab Turnovers by the player in this game. \cr
    two_points_str \tab character \tab Two-point field goals as the string 'made/attempted' ('3/5'). \cr
 }

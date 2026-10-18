@@ -25,7 +25,7 @@ valid answer raises \code{hoopR_no_data}; the columns are always these, in this 
    last_name \tab character \tab Family name of the player as entered in the CMS. \cr
    nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
    birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   value \tab numeric \tab The leader's count (or percentage) in that statistic in this game. \cr
+   value \tab double \tab The leader's count (or percentage) in that statistic in this game. \cr
 }
 }
 \description{

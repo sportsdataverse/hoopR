@@ -79,7 +79,7 @@ for another group or season, or layout drift). All inherit \code{hoopR_error}.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other FEB:
+Other FEB Functions:
 \code{\link[=feb_game_info]{feb_game_info()}},
 \code{\link[=feb_overview]{feb_overview()}},
 \code{\link[=feb_pbp]{feb_pbp()}},
@@ -91,4 +91,4 @@ Other FEB:
 \code{\link[=feb_standings]{feb_standings()}},
 \code{\link[=feb_team_stats]{feb_team_stats()}}
 }
-\concept{FEB}
+\concept{FEB Functions}

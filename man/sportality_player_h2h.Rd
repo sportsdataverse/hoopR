@@ -58,13 +58,13 @@ answer raises \code{hoopR_no_data}; the documented columns come first, in this o
    match_stats_mins \tab character \tab Minutes played 'MM:SS'. \cr
    match_stats_pts \tab integer \tab Number of points scored. \cr
    match_stats_fg \tab character \tab Field goals 'made-attempted'. \cr
-   match_stats_fg_perc \tab numeric \tab Field-goal percentage, 0-100. \cr
+   match_stats_fg_perc \tab double \tab Field-goal percentage, 0-100. \cr
    match_stats_2_p \tab character \tab Two-pointers 'made-attempted'. \cr
-   match_stats_2_p_perc \tab numeric \tab Two-point percentage, 0-100. \cr
+   match_stats_2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
    match_stats_3_p \tab character \tab Three-pointers 'made-attempted'. \cr
-   match_stats_3_p_perc \tab numeric \tab Three-point percentage, 0-100. \cr
+   match_stats_3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
    match_stats_ft \tab character \tab Free throws 'made-attempted'. \cr
-   match_stats_ft_perc \tab numeric \tab Free-throw percentage, 0-100. \cr
+   match_stats_ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
    match_stats_off \tab integer \tab Offensive rebounds. \cr
    match_stats_def \tab integer \tab Defensive rebounds. \cr
    match_stats_reb \tab integer \tab Total rebounds. \cr

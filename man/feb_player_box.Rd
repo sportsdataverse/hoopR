@@ -27,16 +27,16 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    pts \tab integer \tab Points scored (the team's points on team rows; the final score when the clock is FINAL, else live). \cr
    p1m \tab integer \tab Free throws made (tiros libres; integer as a string). \cr
    p1a \tab integer \tab Free throws attempted (integer as a string). \cr
-   p1p \tab numeric \tab Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. \cr
+   p1p \tab double \tab Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. \cr
    p2m \tab integer \tab Two-point field goals made (integer as a string). \cr
    p2a \tab integer \tab Two-point field goals attempted (integer as a string). \cr
-   p2p \tab numeric \tab Two-point percentage, 0-100, string with a decimal comma ('54,1'). \cr
+   p2p \tab double \tab Two-point percentage, 0-100, string with a decimal comma ('54,1'). \cr
    p3m \tab integer \tab Three-point field goals made (integer as a string). \cr
    p3a \tab integer \tab Three-point field goals attempted (integer as a string). \cr
-   p3p \tab numeric \tab Three-point percentage, 0-100, string with a decimal comma ('47,6'). \cr
+   p3p \tab double \tab Three-point percentage, 0-100, string with a decimal comma ('47,6'). \cr
    fgm \tab integer \tab Field goals made, 2PT + 3PT (tiros de campo; integer as a string). \cr
    fga \tab integer \tab Field goals attempted, 2PT + 3PT (integer as a string). \cr
-   fgp \tab numeric \tab Field-goal percentage, 0-100, string with a decimal comma ('51,7'). \cr
+   fgp \tab double \tab Field-goal percentage, 0-100, string with a decimal comma ('51,7'). \cr
    ro \tab integer \tab Offensive rebounds (rebotes ofensivos; integer as a string). \cr
    rd \tab integer \tab Defensive rebounds (rebotes defensivos; integer as a string). \cr
    rt \tab integer \tab Total rebounds (rebotes totales; integer as a string). \cr
@@ -110,7 +110,7 @@ for another group or season, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other FEB:
+Other FEB Functions:
 \code{\link[=feb_game_info]{feb_game_info()}},
 \code{\link[=feb_leaders]{feb_leaders()}},
 \code{\link[=feb_overview]{feb_overview()}},
@@ -122,4 +122,4 @@ Other FEB:
 \code{\link[=feb_standings]{feb_standings()}},
 \code{\link[=feb_team_stats]{feb_team_stats()}}
 }
-\concept{FEB}
+\concept{FEB Functions}

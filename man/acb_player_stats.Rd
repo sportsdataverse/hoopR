@@ -38,13 +38,13 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    total_max_points \tab integer \tab Season total of most points in a single game. \cr
    total_three_pointers_made \tab integer \tab Season total of three-point field goals made. \cr
    total_three_pointers_attempted \tab integer \tab Season total of three-point field goals attempted. \cr
-   total_three_pointers_percentage \tab numeric \tab Season total of three-point percentage (0-100). \cr
+   total_three_pointers_percentage \tab double \tab Season total of three-point percentage (0-100). \cr
    total_two_pointers_made \tab integer \tab Season total of two-point field goals made. \cr
    total_two_pointers_attempted \tab integer \tab Season total of two-point field goals attempted. \cr
-   total_two_pointers_percentage \tab numeric \tab Season total of two-point percentage (0-100). \cr
+   total_two_pointers_percentage \tab double \tab Season total of two-point percentage (0-100). \cr
    total_free_throws_made \tab integer \tab Season total of free throws made. \cr
    total_free_throws_attempted \tab integer \tab Season total of free throws attempted. \cr
-   total_free_throws_percentage \tab numeric \tab Season total of free-throw percentage (0-100). \cr
+   total_free_throws_percentage \tab double \tab Season total of free-throw percentage (0-100). \cr
    total_rebounds \tab integer \tab Season total of total rebounds. \cr
    total_offensive_rebounds \tab integer \tab Season total of offensive rebounds. \cr
    total_defensive_rebounds \tab integer \tab Season total of defensive rebounds. \cr
@@ -60,64 +60,64 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    total_plus_minus \tab integer \tab Season total of plus/minus. \cr
    total_wins \tab integer \tab Season total of team wins in the counted games (meaning unverified). \cr
    total_losses \tab integer \tab Season total of team losses in the counted games (meaning unverified). \cr
-   avg_num_games \tab numeric \tab Per-game average of games played. \cr
-   avg_time_played \tab numeric \tab Per-game average of time on court in seconds. \cr
-   avg_starter \tab numeric \tab Per-game average of games started. \cr
-   avg_points \tab numeric \tab Per-game average of points. \cr
-   avg_max_points \tab numeric \tab Per-game average of most points in a single game. \cr
-   avg_three_pointers_made \tab numeric \tab Per-game average of three-point field goals made. \cr
-   avg_three_pointers_attempted \tab numeric \tab Per-game average of three-point field goals attempted. \cr
-   avg_three_pointers_percentage \tab numeric \tab Per-game average of three-point percentage (0-100). \cr
-   avg_two_pointers_made \tab numeric \tab Per-game average of two-point field goals made. \cr
-   avg_two_pointers_attempted \tab numeric \tab Per-game average of two-point field goals attempted. \cr
-   avg_two_pointers_percentage \tab numeric \tab Per-game average of two-point percentage (0-100). \cr
-   avg_free_throws_made \tab numeric \tab Per-game average of free throws made. \cr
-   avg_free_throws_attempted \tab numeric \tab Per-game average of free throws attempted. \cr
-   avg_free_throws_percentage \tab numeric \tab Per-game average of free-throw percentage (0-100). \cr
-   avg_rebounds \tab numeric \tab Per-game average of total rebounds. \cr
-   avg_offensive_rebounds \tab numeric \tab Per-game average of offensive rebounds. \cr
-   avg_defensive_rebounds \tab numeric \tab Per-game average of defensive rebounds. \cr
-   avg_assists \tab numeric \tab Per-game average of assists. \cr
-   avg_steals \tab numeric \tab Per-game average of steals. \cr
-   avg_turnovers \tab numeric \tab Per-game average of turnovers. \cr
-   avg_blocks \tab numeric \tab Per-game average of blocks made. \cr
-   avg_shots_rejected \tab numeric \tab Per-game average of own shots blocked. \cr
-   avg_dunks \tab numeric \tab Per-game average of dunks. \cr
-   avg_personal_fouls \tab numeric \tab Per-game average of personal fouls committed. \cr
-   avg_fouls_received \tab numeric \tab Per-game average of fouls drawn. \cr
-   avg_rating \tab numeric \tab Per-game average of ACB rating (valoracion). \cr
-   avg_plus_minus \tab numeric \tab Per-game average of plus/minus. \cr
-   avg_wins \tab numeric \tab Per-game average of team wins in the counted games (meaning unverified). \cr
-   avg_losses \tab numeric \tab Per-game average of team losses in the counted games (meaning unverified). \cr
-   per40_num_games \tab numeric \tab Per-40-minute rate of games played. \cr
-   per40_time_played \tab numeric \tab Always null: the per-40 block carries no time played. \cr
-   per40_starter \tab numeric \tab Per-40-minute rate of games started. \cr
-   per40_points \tab numeric \tab Per-40-minute rate of points. \cr
-   per40_max_points \tab numeric \tab Per-40-minute rate of most points in a single game. \cr
-   per40_three_pointers_made \tab numeric \tab Per-40-minute rate of three-point field goals made. \cr
-   per40_three_pointers_attempted \tab numeric \tab Per-40-minute rate of three-point field goals attempted. \cr
-   per40_three_pointers_percentage \tab numeric \tab Per-40-minute rate of three-point percentage (0-100). \cr
-   per40_two_pointers_made \tab numeric \tab Per-40-minute rate of two-point field goals made. \cr
-   per40_two_pointers_attempted \tab numeric \tab Per-40-minute rate of two-point field goals attempted. \cr
-   per40_two_pointers_percentage \tab numeric \tab Per-40-minute rate of two-point percentage (0-100). \cr
-   per40_free_throws_made \tab numeric \tab Per-40-minute rate of free throws made. \cr
-   per40_free_throws_attempted \tab numeric \tab Per-40-minute rate of free throws attempted. \cr
-   per40_free_throws_percentage \tab numeric \tab Per-40-minute rate of free-throw percentage (0-100). \cr
-   per40_rebounds \tab numeric \tab Per-40-minute rate of total rebounds. \cr
-   per40_offensive_rebounds \tab numeric \tab Per-40-minute rate of offensive rebounds. \cr
-   per40_defensive_rebounds \tab numeric \tab Per-40-minute rate of defensive rebounds. \cr
-   per40_assists \tab numeric \tab Per-40-minute rate of assists. \cr
-   per40_steals \tab numeric \tab Per-40-minute rate of steals. \cr
-   per40_turnovers \tab numeric \tab Per-40-minute rate of turnovers. \cr
-   per40_blocks \tab numeric \tab Per-40-minute rate of blocks made. \cr
-   per40_shots_rejected \tab numeric \tab Per-40-minute rate of own shots blocked. \cr
-   per40_dunks \tab numeric \tab Per-40-minute rate of dunks. \cr
-   per40_personal_fouls \tab numeric \tab Per-40-minute rate of personal fouls committed. \cr
-   per40_fouls_received \tab numeric \tab Per-40-minute rate of fouls drawn. \cr
-   per40_rating \tab numeric \tab Per-40-minute rate of ACB rating (valoracion). \cr
-   per40_plus_minus \tab numeric \tab Per-40-minute rate of plus/minus. \cr
-   per40_wins \tab numeric \tab Per-40-minute rate of team wins in the counted games (meaning unverified). \cr
-   per40_losses \tab numeric \tab Per-40-minute rate of team losses in the counted games (meaning unverified). \cr
+   avg_num_games \tab double \tab Per-game average of games played. \cr
+   avg_time_played \tab double \tab Per-game average of time on court in seconds. \cr
+   avg_starter \tab double \tab Per-game average of games started. \cr
+   avg_points \tab double \tab Per-game average of points. \cr
+   avg_max_points \tab double \tab Per-game average of most points in a single game. \cr
+   avg_three_pointers_made \tab double \tab Per-game average of three-point field goals made. \cr
+   avg_three_pointers_attempted \tab double \tab Per-game average of three-point field goals attempted. \cr
+   avg_three_pointers_percentage \tab double \tab Per-game average of three-point percentage (0-100). \cr
+   avg_two_pointers_made \tab double \tab Per-game average of two-point field goals made. \cr
+   avg_two_pointers_attempted \tab double \tab Per-game average of two-point field goals attempted. \cr
+   avg_two_pointers_percentage \tab double \tab Per-game average of two-point percentage (0-100). \cr
+   avg_free_throws_made \tab double \tab Per-game average of free throws made. \cr
+   avg_free_throws_attempted \tab double \tab Per-game average of free throws attempted. \cr
+   avg_free_throws_percentage \tab double \tab Per-game average of free-throw percentage (0-100). \cr
+   avg_rebounds \tab double \tab Per-game average of total rebounds. \cr
+   avg_offensive_rebounds \tab double \tab Per-game average of offensive rebounds. \cr
+   avg_defensive_rebounds \tab double \tab Per-game average of defensive rebounds. \cr
+   avg_assists \tab double \tab Per-game average of assists. \cr
+   avg_steals \tab double \tab Per-game average of steals. \cr
+   avg_turnovers \tab double \tab Per-game average of turnovers. \cr
+   avg_blocks \tab double \tab Per-game average of blocks made. \cr
+   avg_shots_rejected \tab double \tab Per-game average of own shots blocked. \cr
+   avg_dunks \tab double \tab Per-game average of dunks. \cr
+   avg_personal_fouls \tab double \tab Per-game average of personal fouls committed. \cr
+   avg_fouls_received \tab double \tab Per-game average of fouls drawn. \cr
+   avg_rating \tab double \tab Per-game average of ACB rating (valoracion). \cr
+   avg_plus_minus \tab double \tab Per-game average of plus/minus. \cr
+   avg_wins \tab double \tab Per-game average of team wins in the counted games (meaning unverified). \cr
+   avg_losses \tab double \tab Per-game average of team losses in the counted games (meaning unverified). \cr
+   per40_num_games \tab double \tab Per-40-minute rate of games played. \cr
+   per40_time_played \tab double \tab Always null: the per-40 block carries no time played. \cr
+   per40_starter \tab double \tab Per-40-minute rate of games started. \cr
+   per40_points \tab double \tab Per-40-minute rate of points. \cr
+   per40_max_points \tab double \tab Per-40-minute rate of most points in a single game. \cr
+   per40_three_pointers_made \tab double \tab Per-40-minute rate of three-point field goals made. \cr
+   per40_three_pointers_attempted \tab double \tab Per-40-minute rate of three-point field goals attempted. \cr
+   per40_three_pointers_percentage \tab double \tab Per-40-minute rate of three-point percentage (0-100). \cr
+   per40_two_pointers_made \tab double \tab Per-40-minute rate of two-point field goals made. \cr
+   per40_two_pointers_attempted \tab double \tab Per-40-minute rate of two-point field goals attempted. \cr
+   per40_two_pointers_percentage \tab double \tab Per-40-minute rate of two-point percentage (0-100). \cr
+   per40_free_throws_made \tab double \tab Per-40-minute rate of free throws made. \cr
+   per40_free_throws_attempted \tab double \tab Per-40-minute rate of free throws attempted. \cr
+   per40_free_throws_percentage \tab double \tab Per-40-minute rate of free-throw percentage (0-100). \cr
+   per40_rebounds \tab double \tab Per-40-minute rate of total rebounds. \cr
+   per40_offensive_rebounds \tab double \tab Per-40-minute rate of offensive rebounds. \cr
+   per40_defensive_rebounds \tab double \tab Per-40-minute rate of defensive rebounds. \cr
+   per40_assists \tab double \tab Per-40-minute rate of assists. \cr
+   per40_steals \tab double \tab Per-40-minute rate of steals. \cr
+   per40_turnovers \tab double \tab Per-40-minute rate of turnovers. \cr
+   per40_blocks \tab double \tab Per-40-minute rate of blocks made. \cr
+   per40_shots_rejected \tab double \tab Per-40-minute rate of own shots blocked. \cr
+   per40_dunks \tab double \tab Per-40-minute rate of dunks. \cr
+   per40_personal_fouls \tab double \tab Per-40-minute rate of personal fouls committed. \cr
+   per40_fouls_received \tab double \tab Per-40-minute rate of fouls drawn. \cr
+   per40_rating \tab double \tab Per-40-minute rate of ACB rating (valoracion). \cr
+   per40_plus_minus \tab double \tab Per-40-minute rate of plus/minus. \cr
+   per40_wins \tab double \tab Per-40-minute rate of team wins in the counted games (meaning unverified). \cr
+   per40_losses \tab double \tab Per-40-minute rate of team losses in the counted games (meaning unverified). \cr
 }
 }
 \description{

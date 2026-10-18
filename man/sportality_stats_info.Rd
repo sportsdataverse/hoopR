@@ -26,13 +26,13 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    col_name \tab type \tab description \cr
    player_id \tab integer \tab Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. \cr
    gp \tab integer \tab Number of games played. \cr
-   eff \tab numeric \tab Efficiency (valuation) per game; the formula is the site's own (unverified). \cr
-   mins \tab numeric \tab Average minutes played per game ('27.3'). \cr
-   ppg \tab numeric \tab Points per game. \cr
-   rpg \tab numeric \tab Rebounds per game. \cr
-   apg \tab numeric \tab Assists per game. \cr
-   stpg \tab numeric \tab Steals per game. \cr
-   blkpg \tab numeric \tab Blocks per game, or the integer 0). \cr
+   eff \tab double \tab Efficiency (valuation) per game; the formula is the site's own (unverified). \cr
+   mins \tab double \tab Average minutes played per game ('27.3'). \cr
+   ppg \tab double \tab Points per game. \cr
+   rpg \tab double \tab Rebounds per game. \cr
+   apg \tab double \tab Assists per game. \cr
+   stpg \tab double \tab Steals per game. \cr
+   blkpg \tab double \tab Blocks per game. \cr
    info_uuid \tab character \tab Athlete uuid on player tables, team uuid on team tables (platform key space). \cr
    info_full_name \tab character \tab Full display name of the player. \cr
    info_first_name \tab character \tab Given (first) name(s) of the player. \cr
@@ -54,15 +54,15 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    info_number \tab integer \tab Jersey (shirt) number of the player. \cr
    info_position \tab character \tab Position code (G, F, C, SG, SF ...). \cr
    w \tab integer \tab Wins. Team and standings modules: wins of the team in the ssgt. \cr
-   p_avg \tab numeric \tab Points per game. \cr
-   r_avg \tab numeric \tab Rebounds per game. \cr
-   a_avg \tab numeric \tab Assists per game. \cr
-   s_avg \tab numeric \tab Steals per game. \cr
-   b_avg \tab numeric \tab Blocks per game. \cr
-   f_avg \tab numeric \tab Fouls per game. \cr
-   2_p_perc \tab numeric \tab Two-point percentage, 0-100. \cr
-   3_p_perc \tab numeric \tab Three-point percentage, 0-100 (the integer 0, or. \cr
-   ft_perc \tab numeric \tab Free-throw percentage, 0-100, or the integer 0). \cr
+   p_avg \tab double \tab Points per game. \cr
+   r_avg \tab double \tab Rebounds per game. \cr
+   a_avg \tab double \tab Assists per game. \cr
+   s_avg \tab double \tab Steals per game. \cr
+   b_avg \tab double \tab Blocks per game. \cr
+   f_avg \tab double \tab Fouls per game. \cr
+   2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
+   3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
+   ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
    info_name \tab character \tab Name of the team. \cr
    info_site_display_name \tab character \tab Team name as the league site displays it. \cr
    info_owner_instance_id \tab character \tab Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). \cr
@@ -84,8 +84,8 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    minus \tab integer \tab Opponent points scored while the player was on court (total; unverified). \cr
    fgm \tab integer \tab Field goals made (total). \cr
    fga \tab integer \tab Field goals attempted (total). \cr
-   fg_perc \tab numeric \tab Field-goal percentage, 0-100. \cr
-   fge_perc \tab numeric \tab Effective field-goal percentage ((FGM + 0.5 x 3PM) / FGA), 0-100. \cr
+   fg_perc \tab double \tab Field-goal percentage, 0-100. \cr
+   fge_perc \tab double \tab Effective field-goal percentage ((FGM + 0.5 x 3PM) / FGA), 0-100. \cr
    3_pm \tab integer \tab Three-pointers made (total). \cr
    3_pa \tab integer \tab Three-pointers attempted (total). \cr
    2_pm \tab integer \tab Two-pointers made (total). \cr
@@ -93,29 +93,29 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    pf \tab integer \tab Personal fouls (total). \cr
    tf \tab integer \tab Technical fouls (total). \cr
    of \tab integer \tab Offensive fouls (total). \cr
-   f_on \tab numeric \tab Fouls on (fouls drawn), total. \cr
+   f_on \tab double \tab Fouls on (fouls drawn), total. \cr
    uf \tab integer \tab Unsportsmanlike fouls (total). \cr
    f_outs \tab integer \tab Times fouled out. \cr
-   o_rat \tab numeric \tab Offensive rating (points produced per 100 possessions, the site's formula; unverified). \cr
+   o_rat \tab double \tab Offensive rating (points produced per 100 possessions, the site's formula; unverified). \cr
    tsa \tab integer \tab True-shooting attempts (FGA + 0.44 x FTA), total. \cr
-   ts_perc \tab numeric \tab True-shooting percentage, 0-100. \cr
+   ts_perc \tab double \tab True-shooting percentage, 0-100. \cr
    a \tab integer \tab Assists (total). \cr
-   atr \tab numeric \tab Assist-to-turnover ratio. \cr
-   u_perc \tab numeric \tab Usage percentage, 0-100. \cr
-   egs \tab numeric \tab Game score per game (unverified). \cr
+   atr \tab double \tab Assist-to-turnover ratio. \cr
+   u_perc \tab double \tab Usage percentage, 0-100. \cr
+   egs \tab double \tab Game score per game (unverified). \cr
    tp \tab integer \tab Total points scored. \cr
    fbp \tab integer \tab Fast-break points (total). \cr
-   fbp_perc \tab numeric \tab Fast-break points as a percentage of the player's points (unverified). \cr
+   fbp_perc \tab double \tab Fast-break points as a percentage of the player's points (unverified). \cr
    pitp \tab integer \tab Points in the paint (total). \cr
-   pitp_perc \tab numeric \tab Points in the paint as a percentage of the player's points (unverified). \cr
+   pitp_perc \tab double \tab Points in the paint as a percentage of the player's points (unverified). \cr
    2nd_ch_p \tab integer \tab Second-chance points (total). \cr
-   2nd_ch_p_perc \tab numeric \tab Second-chance points as a percentage of the player's points (unverified). \cr
+   2nd_ch_p_perc \tab double \tab Second-chance points as a percentage of the player's points (unverified). \cr
    plus_minus \tab integer \tab Plus/minus (team points minus opponent points while on court), total. \cr
-   dr \tab numeric \tab Defensive rebounds (total). \cr
+   dr \tab double \tab Defensive rebounds (total). \cr
    or \tab integer \tab Offensive rebounds (total). \cr
    reb \tab integer \tab Total rebounds. \cr
-   or_perc \tab numeric \tab Offensive rebound percentage; the denominator is the site's own (unverified). \cr
-   dr_perc \tab numeric \tab Defensive rebound percentage; values far below ORPerc in the same row suggest a different base (unverified). \cr
+   or_perc \tab double \tab Offensive rebound percentage; the denominator is the site's own (unverified). \cr
+   dr_perc \tab double \tab Defensive rebound percentage; values far below ORPerc in the same row suggest a different base (unverified). \cr
    rank \tab integer \tab Unobserved: null in every sample and every full body. When filled: Always null on this table: the rows are sorted, not ranked. \cr
    l \tab integer \tab Losses. Standings module: losses of the team in the ssgt. \cr
    for \tab integer \tab Points scored by the team (points for). \cr
@@ -124,78 +124,78 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    gp_home \tab integer \tab Home games played. \cr
    att_total_overall \tab integer \tab Total attendance over all games (the site's own sum). \cr
    att_avg_overall \tab integer \tab Average attendance per game. \cr
-   br_avg \tab numeric \tab Blocks received per game. \cr
-   dr_avg \tab numeric \tab Defensive rebounds per game. \cr
+   br_avg \tab double \tab Blocks received per game. \cr
+   dr_avg \tab double \tab Defensive rebounds per game. \cr
    td \tab integer \tab Takeaways or turnovers forced (unverified). \cr
-   td_avg \tab numeric \tab Per-game average of TD (unverified). \cr
-   fgm_avg \tab numeric \tab Field goals made per game. \cr
-   fga_avg \tab numeric \tab Field goals attempted per game. \cr
-   fg_perc_avg \tab numeric \tab Field-goal percentage per game average (values near 0.1 in the rows seen; unverified). \cr
-   3_pa_avg \tab numeric \tab Three-pointers attempted per game. \cr
-   3_pm_avg \tab numeric \tab Three-pointers made per game. \cr
-   2_pm_avg \tab numeric \tab Two-pointers made per game. \cr
-   2_pa_avg \tab numeric \tab Two-pointers attempted per game. \cr
+   td_avg \tab double \tab Per-game average of TD (unverified). \cr
+   fgm_avg \tab double \tab Field goals made per game. \cr
+   fga_avg \tab double \tab Field goals attempted per game. \cr
+   fg_perc_avg \tab double \tab Field-goal percentage per game average (values near 0.1 in the rows seen; unverified). \cr
+   3_pa_avg \tab double \tab Three-pointers attempted per game. \cr
+   3_pm_avg \tab double \tab Three-pointers made per game. \cr
+   2_pm_avg \tab double \tab Two-pointers made per game. \cr
+   2_pa_avg \tab double \tab Two-pointers attempted per game. \cr
    fd \tab integer \tab Fouls drawn (0 in every row seen; unverified). \cr
    fd_avg \tab integer \tab Fouls drawn per game (unverified, as FD). \cr
-   of_avg \tab numeric \tab Offensive fouls per game. \cr
-   f_on_avg \tab numeric \tab Fouls on per game. \cr
-   pf_avg \tab numeric \tab Personal fouls per game. \cr
-   tf_avg \tab numeric \tab Technical fouls per game. \cr
+   of_avg \tab double \tab Offensive fouls per game. \cr
+   f_on_avg \tab double \tab Fouls on per game. \cr
+   pf_avg \tab double \tab Personal fouls per game. \cr
+   tf_avg \tab double \tab Technical fouls per game. \cr
    tfo \tab integer \tab Technical fouls on the opponent (unverified). \cr
    tfo_avg \tab integer \tab Per-game average of TFO (unverified). \cr
-   uf_avg \tab numeric \tab Unsportsmanlike fouls per game. \cr
+   uf_avg \tab double \tab Unsportsmanlike fouls per game. \cr
    fo \tab integer \tab Fouls-out count (unverified). \cr
    fo_avg \tab integer \tab Per-game average of FO (unverified). \cr
    fcd \tab integer \tab Coach disqualifying fouls (unverified). \cr
    fcd_avg \tab integer \tab Per-game average of FCD (unverified). \cr
    fct \tab integer \tab Coach technical fouls (read from the play-by-play foul subtype coachTechnical; unverified). \cr
-   fct_avg \tab numeric \tab Coach technical fouls per game. \cr
+   fct_avg \tab double \tab Coach technical fouls per game. \cr
    fbt \tab integer \tab Bench technical fouls (read from the play-by-play foul subtype benchTechnical; unverified). \cr
-   fbt_avg \tab numeric \tab Bench technical fouls per game. \cr
+   fbt_avg \tab double \tab Bench technical fouls per game. \cr
    f \tab integer \tab Total personal fouls committed. \cr
    f_team \tab integer \tab Team fouls (unverified). \cr
-   f_team_avg \tab numeric \tab Team fouls per game (unverified). \cr
-   o_rat_avg \tab numeric \tab Offensive rating per game average. \cr
+   f_team_avg \tab double \tab Team fouls per game (unverified). \cr
+   o_rat_avg \tab double \tab Offensive rating per game average. \cr
    ad \tab integer \tab Assists difference or assists allowed (0 in every row seen; unverified). \cr
    ad_avg \tab integer \tab Per-game average of AD (0 in every row seen; unverified). \cr
-   ec \tab numeric \tab Unverified in the hundreds, e.g. '509.0'; possibly an efficiency sum). \cr
+   ec \tab double \tab Unverified (in the hundreds, e.g. '509.0'; possibly an efficiency sum). \cr
    to \tab integer \tab Turnovers (total). \cr
-   to_avg \tab numeric \tab Turnovers per game. \cr
-   fbp_avg \tab numeric \tab Fast-break points per game. \cr
+   to_avg \tab double \tab Turnovers per game. \cr
+   fbp_avg \tab double \tab Fast-break points per game. \cr
    fbpa \tab integer \tab Fast-break points attempts (unverified). \cr
    fbpm \tab integer \tab Fast-break points made (unverified). \cr
-   pitp_avg \tab numeric \tab Points in the paint per game. \cr
+   pitp_avg \tab double \tab Points in the paint per game. \cr
    pitpa \tab integer \tab Paint shots attempted (unverified). \cr
-   pitpa_avg \tab numeric \tab Paint shots attempted per game (unverified). \cr
+   pitpa_avg \tab double \tab Paint shots attempted per game (unverified). \cr
    pitpm \tab integer \tab Paint shots made (unverified). \cr
-   pitpm_avg \tab numeric \tab Paint shots made per game (unverified). \cr
+   pitpm_avg \tab double \tab Paint shots made per game (unverified). \cr
    pfto \tab integer \tab Points from turnovers (total). \cr
-   pfto_avg \tab numeric \tab Points from turnovers per game. \cr
+   pfto_avg \tab double \tab Points from turnovers per game. \cr
    2nd_ch_pm \tab integer \tab Second-chance field goals made (unverified). \cr
-   2nd_ch_pm_avg \tab numeric \tab Second-chance field goals made per game (unverified). \cr
+   2nd_ch_pm_avg \tab double \tab Second-chance field goals made per game (unverified). \cr
    2nd_ch_pa \tab integer \tab Second-chance field goals attempted (unverified). \cr
-   2nd_ch_pa_avg \tab numeric \tab Second-chance field goals attempted per game (unverified). \cr
+   2nd_ch_pa_avg \tab double \tab Second-chance field goals attempted per game (unverified). \cr
    ftm \tab integer \tab Free throws made (total). \cr
-   ftm_avg \tab numeric \tab Free throws made per game. \cr
+   ftm_avg \tab double \tab Free throws made per game. \cr
    fta \tab integer \tab Free throws attempted (total). \cr
-   fta_avg \tab numeric \tab Free throws attempted per game. \cr
+   fta_avg \tab double \tab Free throws attempted per game. \cr
    poss \tab integer \tab Possessions (total). \cr
-   poss_avg \tab numeric \tab Possessions per game. \cr
+   poss_avg \tab double \tab Possessions per game. \cr
    poss_o \tab integer \tab Offensive possessions (total; equal to Poss in every row seen). \cr
-   poss_o_avg \tab numeric \tab Offensive possessions per game. \cr
-   dppp \tab numeric \tab Defensive points per possession (unverified). \cr
-   dppp_avg \tab numeric \tab Defensive points per possession, per game average (unverified). \cr
-   oppp \tab numeric \tab Offensive points per possession. \cr
-   oppp_avg \tab numeric \tab Offensive points per possession, per game average. \cr
+   poss_o_avg \tab double \tab Offensive possessions per game. \cr
+   dppp \tab double \tab Defensive points per possession (unverified). \cr
+   dppp_avg \tab double \tab Defensive points per possession, per game average (unverified). \cr
+   oppp \tab double \tab Offensive points per possession. \cr
+   oppp_avg \tab double \tab Offensive points per possession, per game average. \cr
    pace \tab integer \tab Pace (possessions per 40 minutes; 0 in every row seen, unverified). \cr
    pace_avg \tab integer \tab Pace, per game average (0 in every row seen). \cr
    tl \tab integer \tab Team leads / lead changes (unverified). \cr
    otr \tab integer \tab Offensive team rebounds (unverified). \cr
    dtr \tab integer \tab Defensive team rebounds (unverified). \cr
    tr \tab integer \tab Total team rebounds (unverified). \cr
-   tr_avg \tab numeric \tab Team rebounds per game (unverified). \cr
+   tr_avg \tab double \tab Team rebounds per game (unverified). \cr
    pr \tab integer \tab Player rebounds (total; Reb minus TR, unverified). \cr
-   pr_avg \tab numeric \tab Player rebounds per game (unverified). \cr
+   pr_avg \tab double \tab Player rebounds per game (unverified). \cr
    ord \tab integer \tab Offensive rebounds allowed or the opponent's offensive rebounds (0 in every row seen; unverified). \cr
 }
 }

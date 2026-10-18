@@ -22,8 +22,8 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    shirt_number \tab character \tab Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. \cr
    player_id \tab integer \tab FEB person id of the shooter, resolved from side + shirt number in the game's roster; null when that pair is not unique. The feed itself carries no player id. \cr
    made \tab logical \tab True when the shot was made, false when missed. Free throws are not in the feed. \cr
-   x \tab numeric \tab Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. \cr
-   y \tab numeric \tab Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. \cr
+   x \tab double \tab Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. \cr
+   y \tab double \tab Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. \cr
 }
 }
 \description{
@@ -81,7 +81,7 @@ for another group or season, or layout drift). All inherit \code{hoopR_error}.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other FEB:
+Other FEB Functions:
 \code{\link[=feb_game_info]{feb_game_info()}},
 \code{\link[=feb_leaders]{feb_leaders()}},
 \code{\link[=feb_overview]{feb_overview()}},
@@ -93,4 +93,4 @@ Other FEB:
 \code{\link[=feb_standings]{feb_standings()}},
 \code{\link[=feb_team_stats]{feb_team_stats()}}
 }
-\concept{FEB}
+\concept{FEB Functions}

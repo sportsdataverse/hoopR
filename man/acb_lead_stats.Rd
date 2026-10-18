@@ -20,7 +20,7 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    stat \tab character \tab Statistic: best_score_run, max_difference, time_ahead or lead_changes. \cr
    side \tab character \tab Side the value belongs to: home or away. \cr
    value \tab character \tab Display value as sent: a count, or 'mm:ss' for time_ahead. \cr
-   bar_progress \tab numeric \tab Length of the site's comparison bar (a drawing value, not a statistic). \cr
+   bar_progress \tab double \tab Length of the site's comparison bar (a drawing value, not a statistic). \cr
    is_highlighted \tab logical \tab True for the side whose bar the site highlights as the better value. \cr
 }
 }

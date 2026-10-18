@@ -1,4 +1,4 @@
 org,team_id,rosetta_team_id,name,team_code,established,head_coach,championships,website,external_media_competitor_id,conference,division,venue_name,venue_address,venue_state,venue_country,venue_timezone,venue_latitude,venue_longitude,venue_capacity,conference_name,division_name
-wnbl,e79df386-45e2-11f0-a38c-c5864f4b75a8,be13c931-bdc4-48fc-bea7-0ca95aca8bb2,Dandenong,DAN,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-wnbl,e7c93e20-45e2-11f0-94b0-c5864f4b75a8,9d008239-3ddc-4f07-b5f6-e9c0ddcb5721,Sydney Uni,SYD,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-wnbl,e77befb6-45e2-11f0-9150-c5864f4b75a8,a844cd4a-e479-4c0c-828c-0d19718029d5,ST. Kilda,STK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+wnbl,e79df386-45e2-11f0-a38c-c5864f4b75a8,be13c931-bdc4-48fc-bea7-0ca95aca8bb2,Dandenong,DAN,,,,,,,,,,,,,,,,,
+wnbl,e7c93e20-45e2-11f0-94b0-c5864f4b75a8,9d008239-3ddc-4f07-b5f6-e9c0ddcb5721,Sydney Uni,SYD,,,,,,,,,,,,,,,,,
+wnbl,e77befb6-45e2-11f0-9150-c5864f4b75a8,a844cd4a-e479-4c0c-828c-0d19718029d5,ST. Kilda,STK,,,,,,,,,,,,,,,,,

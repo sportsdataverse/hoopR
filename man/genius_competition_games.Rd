@@ -81,7 +81,7 @@ or ORG.
 }
 }
 \seealso{
-Other Genius:
+Other Genius Functions:
 \code{\link{bal_competition}},
 \code{\link{esake_competition}},
 \code{\link[=genius_competitions]{genius_competitions()}},
@@ -101,4 +101,4 @@ Other Genius:
 \code{\link{nznbl_competition}},
 \code{\link{slb_competition}}
 }
-\concept{Genius}
+\concept{Genius Functions}

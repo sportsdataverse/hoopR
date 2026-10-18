@@ -11,5 +11,6 @@ transport (`scb_runtime._send`) faked to answer the fixture, so the runtime chec
 `/mnt/sdv_repos/sdv-py/.venv/bin/python` on a detached worktree of sdv-py `e3d232ebc9` (`PYTHONPATH` set to it).
 A `__2005` suffix is the same wrapper on the 2005-06 box score.
 
-Known divergence: `tv_channel` of `scb_games_recent` / `scb_game` holds Python dict reprs in sdv-py when the API
-sends channel objects; hoopR joins the channel names (see `.scb_join()` in `R/scb_parsers.R`).
+`parity/scb_games_recent.csv` and `parity/scb_game.csv` were regenerated the same way on sdv-py `38a22f936d`
+(#892), which joins the `name`s of `tvChannel` objects (e3d232ebc9 wrote Python dict reprs there); their
+`tv_channel` cells are the only change, and hoopR matches them as they are.

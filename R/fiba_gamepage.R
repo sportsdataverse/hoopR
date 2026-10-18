@@ -74,16 +74,16 @@
 #' | points | integer | Points scored in the game. |
 #' | fg_made | integer | Field goals made (2 + 3 points). |
 #' | fg_attempted | integer | Field goals attempted (2 + 3 points). |
-#' | fg_pct | numeric | Field-goal percentage, 0-100. |
+#' | fg_pct | double | Field-goal percentage, 0-100. |
 #' | fg2_made | integer | Two-point field goals made. |
 #' | fg2_attempted | integer | Two-point field goals attempted. |
-#' | fg2_pct | numeric | Two-point field-goal percentage, 0-100. |
+#' | fg2_pct | double | Two-point field-goal percentage, 0-100. |
 #' | fg3_made | integer | Three-point field goals made. |
 #' | fg3_attempted | integer | Three-point field goals attempted. |
-#' | fg3_pct | numeric | Three-point field-goal percentage, 0-100. |
+#' | fg3_pct | double | Three-point field-goal percentage, 0-100. |
 #' | ft_made | integer | Free throws made. |
 #' | ft_attempted | integer | Free throws attempted. |
-#' | ft_pct | numeric | Free-throw percentage, 0-100. |
+#' | ft_pct | double | Free-throw percentage, 0-100. |
 #' | reb_offensive | integer | Offensive rebounds. |
 #' | reb_defensive | integer | Defensive rebounds. |
 #' | reb_total | integer | Total rebounds (a team row includes the team rebounds team_reb_total). |
@@ -96,7 +96,7 @@
 #' | fouls_drawn | integer | Fouls drawn in the game. |
 #' | paint_fg_made | integer | Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). |
 #' | paint_fg_attempted | integer | Field goals attempted in the paint. |
-#' | paint_fg_pct | numeric | Field-goal percentage in the paint, 0-100. |
+#' | paint_fg_pct | double | Field-goal percentage in the paint, 0-100. |
 #' | efficiency | integer | Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). |
 #' | plus_minus | integer | Plus/minus: the team's point differential while the player was on the court. |
 #' | cb | logical | Boolean flag, false on every sampled player; meaning unverified. |
@@ -139,16 +139,16 @@ fiba_gamepage_box_players <- function(game_id, comp, return_parsed = TRUE) {
 #' | points | integer | Points scored in the game. |
 #' | fg_made | integer | Field goals made (2 + 3 points). |
 #' | fg_attempted | integer | Field goals attempted (2 + 3 points). |
-#' | fg_pct | numeric | Field-goal percentage, 0-100. |
+#' | fg_pct | double | Field-goal percentage, 0-100. |
 #' | fg2_made | integer | Two-point field goals made. |
 #' | fg2_attempted | integer | Two-point field goals attempted. |
-#' | fg2_pct | numeric | Two-point field-goal percentage, 0-100. |
+#' | fg2_pct | double | Two-point field-goal percentage, 0-100. |
 #' | fg3_made | integer | Three-point field goals made. |
 #' | fg3_attempted | integer | Three-point field goals attempted. |
-#' | fg3_pct | numeric | Three-point field-goal percentage, 0-100. |
+#' | fg3_pct | double | Three-point field-goal percentage, 0-100. |
 #' | ft_made | integer | Free throws made. |
 #' | ft_attempted | integer | Free throws attempted. |
-#' | ft_pct | numeric | Free-throw percentage, 0-100. |
+#' | ft_pct | double | Free-throw percentage, 0-100. |
 #' | reb_offensive | integer | Offensive rebounds. |
 #' | reb_defensive | integer | Defensive rebounds. |
 #' | reb_total | integer | Total rebounds (a team row includes the team rebounds team_reb_total). |
@@ -161,7 +161,7 @@ fiba_gamepage_box_players <- function(game_id, comp, return_parsed = TRUE) {
 #' | fouls_drawn | integer | Fouls drawn in the game. |
 #' | paint_fg_made | integer | Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). |
 #' | paint_fg_attempted | integer | Field goals attempted in the paint. |
-#' | paint_fg_pct | numeric | Field-goal percentage in the paint, 0-100. |
+#' | paint_fg_pct | double | Field-goal percentage in the paint, 0-100. |
 #' | efficiency | integer | Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). |
 #' | biggest_lead | integer | Biggest lead, points. |
 #' | biggest_lead_score | character | Score when the biggest lead was reached, 'A-B' string (spacing varies; empty when the team never led). |
@@ -261,7 +261,7 @@ fiba_gamepage_lineup <- function(game_id, comp, return_parsed = TRUE) {
 #' | order | integer | Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. |
 #' | clock | character | Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). |
 #' | clock_seconds | integer | Seconds remaining in the period, derived from clock. |
-#' | wall_time_ms | numeric | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) |
+#' | wall_time_ms | double | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) |
 #' | score_a | integer | Team A score after the action. |
 #' | score_b | integer | Team B score after the action. |
 #' | action_code | character | Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). |

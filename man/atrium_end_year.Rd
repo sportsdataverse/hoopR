@@ -27,7 +27,7 @@ atrium_end_year(12, 2025)
 atrium_end_year(14, 2026)
 }
 \seealso{
-Other Atrium:
+Other Atrium Functions:
 \code{\link[=atrium_box_score]{atrium_box_score()}},
 \code{\link[=atrium_competition_player_stats]{atrium_competition_player_stats()}},
 \code{\link[=atrium_competition_team_stats]{atrium_competition_team_stats()}},
@@ -57,4 +57,4 @@ Other Atrium:
 \code{\link{lpb_competition}},
 \code{\link{nbl1_competition}}
 }
-\concept{Atrium}
+\concept{Atrium Functions}

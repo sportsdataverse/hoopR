@@ -78,7 +78,7 @@
 #' | away_team_code | character | Away federation team code, 8 digits as a string. Null on 2020-21 games. |
 #' | away_club_code | character | Away federation club code, 6 digits as a string. Null on 2020-21 games. |
 #' | away_score | integer | Away points: the final score when clock is FINAL, else the live score. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -109,7 +109,7 @@ feb_game_info <- function(game_id) {
 #' | period | integer | Period number (1-4 regulation; overtime numbering is unverified, no overtime game is in the samples). |
 #' | home_points | integer | Points the home team scored IN this period (not cumulative). |
 #' | away_points | integer | Points the away team scored IN this period (not cumulative). |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 feb_period_scores <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -145,16 +145,16 @@ feb_period_scores <- function(game_id) {
 #' | pts | integer | Team points: the final score when the game is over, else the live score. |
 #' | p1m | integer | Free throws made (tiros libres; integer as a string). |
 #' | p1a | integer | Free throws attempted (integer as a string). |
-#' | p1p | numeric | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
+#' | p1p | double | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
 #' | p2m | integer | Two-point field goals made (integer as a string). |
 #' | p2a | integer | Two-point field goals attempted (integer as a string). |
-#' | p2p | numeric | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
+#' | p2p | double | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
 #' | p3m | integer | Three-point field goals made (integer as a string). |
 #' | p3a | integer | Three-point field goals attempted (integer as a string). |
-#' | p3p | numeric | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
+#' | p3p | double | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
 #' | fgm | integer | Field goals made, 2PT + 3PT (tiros de campo; integer as a string). |
 #' | fga | integer | Field goals attempted, 2PT + 3PT (integer as a string). |
-#' | fgp | numeric | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
+#' | fgp | double | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
 #' | ro | integer | Offensive rebounds (rebotes ofensivos; integer as a string). |
 #' | rd | integer | Defensive rebounds (rebotes defensivos; integer as a string). |
 #' | rt | integer | Total rebounds (rebotes totales; integer as a string). |
@@ -173,7 +173,7 @@ feb_period_scores <- function(game_id) {
 #' | secpts | integer | Second-chance points. Null on every sampled game: the federation's stat crews do not fill it. |
 #' | bench | integer | Bench points. Null on every sampled game: the federation's stat crews do not fill it. |
 #' | paint | integer | Points in the paint. Null on every sampled game: the federation's stat crews do not fill it. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 feb_team_stats <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -214,16 +214,16 @@ feb_team_stats <- function(game_id) {
 #' | pts | integer | Points scored (the team's points on team rows; the final score when the clock is FINAL, else live). |
 #' | p1m | integer | Free throws made (tiros libres; integer as a string). |
 #' | p1a | integer | Free throws attempted (integer as a string). |
-#' | p1p | numeric | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
+#' | p1p | double | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
 #' | p2m | integer | Two-point field goals made (integer as a string). |
 #' | p2a | integer | Two-point field goals attempted (integer as a string). |
-#' | p2p | numeric | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
+#' | p2p | double | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
 #' | p3m | integer | Three-point field goals made (integer as a string). |
 #' | p3a | integer | Three-point field goals attempted (integer as a string). |
-#' | p3p | numeric | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
+#' | p3p | double | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
 #' | fgm | integer | Field goals made, 2PT + 3PT (tiros de campo; integer as a string). |
 #' | fga | integer | Field goals attempted, 2PT + 3PT (integer as a string). |
-#' | fgp | numeric | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
+#' | fgp | double | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
 #' | ro | integer | Offensive rebounds (rebotes ofensivos; integer as a string). |
 #' | rd | integer | Defensive rebounds (rebotes defensivos; integer as a string). |
 #' | rt | integer | Total rebounds (rebotes totales; integer as a string). |
@@ -238,7 +238,7 @@ feb_team_stats <- function(game_id) {
 #' | rf | integer | Fouls received / drawn (faltas recibidas, page column FR; integer as a string). |
 #' | pllss | integer | Plus/minus while the player was on court (balance, page column +/-), signed integer. |
 #' | val | integer | FEB efficiency rating (valoracion): points + rebounds + assists + steals + blocks + fouls drawn - missed shots - turnovers - shots blocked - fouls committed. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -281,8 +281,8 @@ feb_player_box <- function(game_id) {
 #' | text | character | Play description in Spanish: '(TEAM) I. SURNAME: ACTION (running count)'; 2020-21 games use older wording and are text only. |
 #' | score_home | integer | Home score AFTER the play; filled on scoring plays only. |
 #' | score_away | integer | Away score AFTER the play; filled on scoring plays only. |
-#' | x | numeric | Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
-#' | y | numeric | Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
+#' | x | double | Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
+#' | y | double | Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. |
 #' | log_param1 | character | Action parameter 1 (string). Team and player actions: a pseudo-GUID '00000000-0000-000\{side\}-0000-\{game id, 12 digits\}' (side 1 home, 2 away); period lines: the period number. |
 #' | log_param2 | character | Action parameter 2 (string). The actor's licence id on shoot, fthrow, foul, rebound, assist, recovery and blockshot lines; period lines: '0' start, '1' end; lose: '0' or '1' (meaning unverified). |
 #' | log_param3 | character | Action parameter 3 (string). fthrow: '1' made, '0' missed; subst: the outgoing player's licence; foul: a foul-type code. Others unverified. |
@@ -295,7 +295,7 @@ feb_player_box <- function(game_id) {
 #' | log_param10 | character | Action parameter 10 (string): '1' on almost every foul; meaning unverified. |
 #' | log_time | POSIXct | Wall-clock time the play was logged, Spanish local time (POSIXct, tz Europe/Madrid). NA on 2020-21 games. |
 #' | log_time_utc | POSIXct | The log time in UTC (POSIXct, tz UTC). NA on 2020-21 games. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -335,9 +335,9 @@ feb_pbp <- function(game_id) {
 #' | shirt_number | character | Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. |
 #' | player_id | integer | FEB person id of the shooter, resolved from side + shirt number in the game's roster; null when that pair is not unique. The feed itself carries no player id. |
 #' | made | logical | True when the shot was made, false when missed. Free throws are not in the feed. |
-#' | x | numeric | Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. |
-#' | y | numeric | Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. |
-#' @family FEB
+#' | x | double | Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. |
+#' | y | double | Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. |
+#' @family FEB Functions
 #' @export
 feb_shots <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -373,7 +373,7 @@ feb_shots <- function(game_id) {
 #' | starter | logical | True when the player was in the starting five (the page's I column), false when on the bench. |
 #' | captain | logical | True for the team captain. Null on 2020-21 games, where the feed does not send it. |
 #' | value | integer | The player's count in the row's category (points, rebounds, assists or personal fouls). |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 feb_leaders <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -422,7 +422,7 @@ feb_leaders <- function(game_id) {
 #' | away_abbreviation | character | Away team three-letter abbreviation. |
 #' | away_score | integer | Away points (0 before tip-off). |
 #' | period_scores | character | Points per period as 'home-away' pairs joined by ';' ('16-16;19-16;10-21;14-14'); null before tip-off. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 feb_overview <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -471,7 +471,7 @@ feb_overview <- function() {
 #' | weekday | character | English weekday of a scheduled game (translated from the Spanish cell); null for played games. |
 #' | date | Date | Game date; null for played games on the schedule page (use round_date). |
 #' | time | character | Tip-off 'HH:MM', Spanish local time; null for played games on the schedule page. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -518,7 +518,7 @@ feb_schedule <- function(group, season) {
 #' | status | character | played when the result cell holds a score, scheduled otherwise. |
 #' | date | Date | Game date; null for played games on the schedule page (use round_date). |
 #' | time | character | Tip-off 'HH:MM', Spanish local time; null for played games on the schedule page. |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -562,10 +562,10 @@ feb_results <- function(group, season) {
 #' | points_for | integer | Points scored (PF); null in the final classification. |
 #' | points_against | integer | Points conceded (PC); null in the final classification. |
 #' | point_diff | integer | Point difference (DIF), signed; null in the final classification. |
-#' | win_pct | numeric | Win percentage, 0-100 (the page's '100,0%', decimal comma converted). |
+#' | win_pct | double | Win percentage, 0-100 (the page's '100,0%', decimal comma converted). |
 #' | streak | integer | Current streak as a signed integer: +3 = three wins in a row, -2 = two losses. |
 #' | streak_text | character | The streak cell verbatim ('+3'). |
-#' @family FEB
+#' @family FEB Functions
 #' @export
 #' @examples
 #' \donttest{

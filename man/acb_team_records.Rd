@@ -17,7 +17,7 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    col_name \tab type \tab description \cr
    club_id \tab integer \tab Stable club id asked for. \cr
    stat \tab character \tab Record category in snake_case (rating, points, rebounds, assists, steals, ...). \cr
-   value \tab numeric \tab The record value (a count; Float64 so every category fits). \cr
+   value \tab double \tab The record value (a count; Float64 so every category fits). \cr
    game_id \tab integer \tab Match id of the record game (legacy sequence for old games). \cr
    game_date \tab POSIXct \tab Date of the record game (UTC midnight). \cr
    player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr

@@ -21,22 +21,22 @@
 #' |:---|:---|:---|
 #' | g | integer | Games played in the ssgt. |
 #' | gps | integer | Games started (0 on every row seen). |
-#' | mpg | numeric | Minutes per game, 'M.m' string. |
-#' | ppg | numeric | Points per game (a number or. |
-#' | drpg | numeric | Defensive rebounds per game. |
-#' | orpg | numeric | Offensive rebounds per game. |
-#' | rpg | numeric | Rebounds per game. |
-#' | apg | numeric | Assists per game. |
-#' | stpg | numeric | Steals per game. |
-#' | blkpg | numeric | Blocks per game. |
-#' | pfpg | numeric | Personal fouls per game. |
-#' | 2_p_perc | numeric | Two-point percentage, 0-100. |
+#' | mpg | double | Minutes per game, 'M.m' string. |
+#' | ppg | double | Points per game. |
+#' | drpg | double | Defensive rebounds per game. |
+#' | orpg | double | Offensive rebounds per game. |
+#' | rpg | double | Rebounds per game. |
+#' | apg | double | Assists per game. |
+#' | stpg | double | Steals per game. |
+#' | blkpg | double | Blocks per game. |
+#' | pfpg | double | Personal fouls per game. |
+#' | 2_p_perc | double | Two-point percentage, 0-100. |
 #' | 3_pm | integer | Three-pointers made (total). |
-#' | 3_pa | numeric | Three-pointers attempted (total, or a percentage string in the checked rows; unverified). |
-#' | 3_p_perc | numeric | Three-point percentage, 0-100. |
-#' | ft_perc | numeric | Free-throw percentage, 0-100. |
-#' | topg | numeric | Turnovers per game. |
-#' | plus_minus_pg | numeric | Plus/minus per game. |
+#' | 3_pa | double | Three-pointers attempted (total, or a percentage string in the checked rows; unverified). |
+#' | 3_p_perc | double | Three-point percentage, 0-100. |
+#' | ft_perc | double | Free-throw percentage, 0-100. |
+#' | topg | double | Turnovers per game. |
+#' | plus_minus_pg | double | Plus/minus per game. |
 #' | info_uuid | character | Athlete uuid on player tables, team uuid on team tables (platform key space). |
 #' | info_full_name | character | Full display name of the player. |
 #' | info_first_name | character | Given (first) name(s) of the player. |
@@ -223,13 +223,13 @@ sportality_athlete_profile <- function(athlete_uuid, master_site_instance_id = N
 #' | mins | character | Minutes played as 'MM:SS' (null on the bench and totals rows). |
 #' | pts | integer | Number of points scored. |
 #' | fg | character | Field goals as 'made-attempted'. |
-#' | fg_perc | numeric | Field-goal percentage, 0-100. |
+#' | fg_perc | double | Field-goal percentage, 0-100. |
 #' | 2_p | character | Two-pointers as 'made-attempted'. |
-#' | 2_p_perc | numeric | Two-point percentage, 0-100. |
+#' | 2_p_perc | double | Two-point percentage, 0-100. |
 #' | 3_p | character | Three-pointers as 'made-attempted'. |
-#' | 3_p_perc | numeric | Three-point percentage, 0-100. |
+#' | 3_p_perc | double | Three-point percentage, 0-100. |
 #' | ft | character | Free throws as 'made-attempted'. |
-#' | ft_perc | numeric | Free-throw percentage, 0-100. |
+#' | ft_perc | double | Free-throw percentage, 0-100. |
 #' | off | integer | Offensive rebounds. |
 #' | def | integer | Defensive rebounds. |
 #' | reb | integer | Total rebounds. |
@@ -693,8 +693,8 @@ sportality_next_game_day <- function(season = NULL, game_type = "regular") {
 #' | player_team_number | integer | Team number in the game (1 home, 2 away). |
 #' | player_first_name | character | Given (first) name(s) of the player. |
 #' | player_family_name | character | Family name (this route says familyName; the others lastName). |
-#' | coordinates_x | numeric | Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. |
-#' | coordinates_y | numeric | Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. |
+#' | coordinates_x | double | Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. |
+#' | coordinates_y | double | Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. |
 #' | period_time | integer | Marker lines only: 0 (an integer), the start of the period. |
 #' @inherit sportality_schedule details
 #' @examples
@@ -745,13 +745,13 @@ sportality_pbp <- function(game_uuid) {
 #' | mins | character | Minutes played as 'MM:SS' (null on the bench and totals rows). |
 #' | pts | integer | Number of points scored. |
 #' | fg | character | Field goals as 'made-attempted'. |
-#' | fg_perc | numeric | Field-goal percentage, 0-100. |
+#' | fg_perc | double | Field-goal percentage, 0-100. |
 #' | 2_p | character | Two-pointers as 'made-attempted'. |
-#' | 2_p_perc | numeric | Two-point percentage, 0-100. |
+#' | 2_p_perc | double | Two-point percentage, 0-100. |
 #' | 3_p | character | Three-pointers as 'made-attempted'. |
-#' | 3_p_perc | numeric | Three-point percentage, 0-100. |
+#' | 3_p_perc | double | Three-point percentage, 0-100. |
 #' | ft | character | Free throws as 'made-attempted'. |
-#' | ft_perc | numeric | Free-throw percentage, 0-100. |
+#' | ft_perc | double | Free-throw percentage, 0-100. |
 #' | off | integer | Offensive rebounds. |
 #' | def | integer | Defensive rebounds. |
 #' | reb | integer | Total rebounds. |
@@ -835,13 +835,13 @@ sportality_player_box <- function(game_uuid) {
 #' | match_stats_mins | character | Minutes played 'MM:SS'. |
 #' | match_stats_pts | integer | Number of points scored. |
 #' | match_stats_fg | character | Field goals 'made-attempted'. |
-#' | match_stats_fg_perc | numeric | Field-goal percentage, 0-100. |
+#' | match_stats_fg_perc | double | Field-goal percentage, 0-100. |
 #' | match_stats_2_p | character | Two-pointers 'made-attempted'. |
-#' | match_stats_2_p_perc | numeric | Two-point percentage, 0-100. |
+#' | match_stats_2_p_perc | double | Two-point percentage, 0-100. |
 #' | match_stats_3_p | character | Three-pointers 'made-attempted'. |
-#' | match_stats_3_p_perc | numeric | Three-point percentage, 0-100. |
+#' | match_stats_3_p_perc | double | Three-point percentage, 0-100. |
 #' | match_stats_ft | character | Free throws 'made-attempted'. |
-#' | match_stats_ft_perc | numeric | Free-throw percentage, 0-100. |
+#' | match_stats_ft_perc | double | Free-throw percentage, 0-100. |
 #' | match_stats_off | integer | Offensive rebounds. |
 #' | match_stats_def | integer | Defensive rebounds. |
 #' | match_stats_reb | integer | Total rebounds. |
@@ -1273,13 +1273,13 @@ sportality_standings <- function(ssgt_uuid) {
 #' |:---|:---|:---|
 #' | player_id | integer | Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. |
 #' | gp | integer | Number of games played. |
-#' | eff | numeric | Efficiency (valuation) per game; the formula is the site's own (unverified). |
-#' | mins | numeric | Average minutes played per game ('27.3'). |
-#' | ppg | numeric | Points per game. |
-#' | rpg | numeric | Rebounds per game. |
-#' | apg | numeric | Assists per game. |
-#' | stpg | numeric | Steals per game. |
-#' | blkpg | numeric | Blocks per game, or the integer 0). |
+#' | eff | double | Efficiency (valuation) per game; the formula is the site's own (unverified). |
+#' | mins | double | Average minutes played per game ('27.3'). |
+#' | ppg | double | Points per game. |
+#' | rpg | double | Rebounds per game. |
+#' | apg | double | Assists per game. |
+#' | stpg | double | Steals per game. |
+#' | blkpg | double | Blocks per game. |
 #' | info_uuid | character | Athlete uuid on player tables, team uuid on team tables (platform key space). |
 #' | info_full_name | character | Full display name of the player. |
 #' | info_first_name | character | Given (first) name(s) of the player. |
@@ -1301,15 +1301,15 @@ sportality_standings <- function(ssgt_uuid) {
 #' | info_number | integer | Jersey (shirt) number of the player. |
 #' | info_position | character | Position code (G, F, C, SG, SF ...). |
 #' | w | integer | Wins. Team and standings modules: wins of the team in the ssgt. |
-#' | p_avg | numeric | Points per game. |
-#' | r_avg | numeric | Rebounds per game. |
-#' | a_avg | numeric | Assists per game. |
-#' | s_avg | numeric | Steals per game. |
-#' | b_avg | numeric | Blocks per game. |
-#' | f_avg | numeric | Fouls per game. |
-#' | 2_p_perc | numeric | Two-point percentage, 0-100. |
-#' | 3_p_perc | numeric | Three-point percentage, 0-100 (the integer 0, or. |
-#' | ft_perc | numeric | Free-throw percentage, 0-100, or the integer 0). |
+#' | p_avg | double | Points per game. |
+#' | r_avg | double | Rebounds per game. |
+#' | a_avg | double | Assists per game. |
+#' | s_avg | double | Steals per game. |
+#' | b_avg | double | Blocks per game. |
+#' | f_avg | double | Fouls per game. |
+#' | 2_p_perc | double | Two-point percentage, 0-100. |
+#' | 3_p_perc | double | Three-point percentage, 0-100. |
+#' | ft_perc | double | Free-throw percentage, 0-100. |
 #' | info_name | character | Name of the team. |
 #' | info_site_display_name | character | Team name as the league site displays it. |
 #' | info_owner_instance_id | character | Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). |
@@ -1331,8 +1331,8 @@ sportality_standings <- function(ssgt_uuid) {
 #' | minus | integer | Opponent points scored while the player was on court (total; unverified). |
 #' | fgm | integer | Field goals made (total). |
 #' | fga | integer | Field goals attempted (total). |
-#' | fg_perc | numeric | Field-goal percentage, 0-100. |
-#' | fge_perc | numeric | Effective field-goal percentage ((FGM + 0.5 x 3PM) / FGA), 0-100. |
+#' | fg_perc | double | Field-goal percentage, 0-100. |
+#' | fge_perc | double | Effective field-goal percentage ((FGM + 0.5 x 3PM) / FGA), 0-100. |
 #' | 3_pm | integer | Three-pointers made (total). |
 #' | 3_pa | integer | Three-pointers attempted (total). |
 #' | 2_pm | integer | Two-pointers made (total). |
@@ -1340,29 +1340,29 @@ sportality_standings <- function(ssgt_uuid) {
 #' | pf | integer | Personal fouls (total). |
 #' | tf | integer | Technical fouls (total). |
 #' | of | integer | Offensive fouls (total). |
-#' | f_on | numeric | Fouls on (fouls drawn), total. |
+#' | f_on | double | Fouls on (fouls drawn), total. |
 #' | uf | integer | Unsportsmanlike fouls (total). |
 #' | f_outs | integer | Times fouled out. |
-#' | o_rat | numeric | Offensive rating (points produced per 100 possessions, the site's formula; unverified). |
+#' | o_rat | double | Offensive rating (points produced per 100 possessions, the site's formula; unverified). |
 #' | tsa | integer | True-shooting attempts (FGA + 0.44 x FTA), total. |
-#' | ts_perc | numeric | True-shooting percentage, 0-100. |
+#' | ts_perc | double | True-shooting percentage, 0-100. |
 #' | a | integer | Assists (total). |
-#' | atr | numeric | Assist-to-turnover ratio. |
-#' | u_perc | numeric | Usage percentage, 0-100. |
-#' | egs | numeric | Game score per game (unverified). |
+#' | atr | double | Assist-to-turnover ratio. |
+#' | u_perc | double | Usage percentage, 0-100. |
+#' | egs | double | Game score per game (unverified). |
 #' | tp | integer | Total points scored. |
 #' | fbp | integer | Fast-break points (total). |
-#' | fbp_perc | numeric | Fast-break points as a percentage of the player's points (unverified). |
+#' | fbp_perc | double | Fast-break points as a percentage of the player's points (unverified). |
 #' | pitp | integer | Points in the paint (total). |
-#' | pitp_perc | numeric | Points in the paint as a percentage of the player's points (unverified). |
+#' | pitp_perc | double | Points in the paint as a percentage of the player's points (unverified). |
 #' | 2nd_ch_p | integer | Second-chance points (total). |
-#' | 2nd_ch_p_perc | numeric | Second-chance points as a percentage of the player's points (unverified). |
+#' | 2nd_ch_p_perc | double | Second-chance points as a percentage of the player's points (unverified). |
 #' | plus_minus | integer | Plus/minus (team points minus opponent points while on court), total. |
-#' | dr | numeric | Defensive rebounds (total). |
+#' | dr | double | Defensive rebounds (total). |
 #' | or | integer | Offensive rebounds (total). |
 #' | reb | integer | Total rebounds. |
-#' | or_perc | numeric | Offensive rebound percentage; the denominator is the site's own (unverified). |
-#' | dr_perc | numeric | Defensive rebound percentage; values far below ORPerc in the same row suggest a different base (unverified). |
+#' | or_perc | double | Offensive rebound percentage; the denominator is the site's own (unverified). |
+#' | dr_perc | double | Defensive rebound percentage; values far below ORPerc in the same row suggest a different base (unverified). |
 #' | rank | integer | Unobserved: null in every sample and every full body. When filled: Always null on this table: the rows are sorted, not ranked. |
 #' | l | integer | Losses. Standings module: losses of the team in the ssgt. |
 #' | for | integer | Points scored by the team (points for). |
@@ -1371,78 +1371,78 @@ sportality_standings <- function(ssgt_uuid) {
 #' | gp_home | integer | Home games played. |
 #' | att_total_overall | integer | Total attendance over all games (the site's own sum). |
 #' | att_avg_overall | integer | Average attendance per game. |
-#' | br_avg | numeric | Blocks received per game. |
-#' | dr_avg | numeric | Defensive rebounds per game. |
+#' | br_avg | double | Blocks received per game. |
+#' | dr_avg | double | Defensive rebounds per game. |
 #' | td | integer | Takeaways or turnovers forced (unverified). |
-#' | td_avg | numeric | Per-game average of TD (unverified). |
-#' | fgm_avg | numeric | Field goals made per game. |
-#' | fga_avg | numeric | Field goals attempted per game. |
-#' | fg_perc_avg | numeric | Field-goal percentage per game average (values near 0.1 in the rows seen; unverified). |
-#' | 3_pa_avg | numeric | Three-pointers attempted per game. |
-#' | 3_pm_avg | numeric | Three-pointers made per game. |
-#' | 2_pm_avg | numeric | Two-pointers made per game. |
-#' | 2_pa_avg | numeric | Two-pointers attempted per game. |
+#' | td_avg | double | Per-game average of TD (unverified). |
+#' | fgm_avg | double | Field goals made per game. |
+#' | fga_avg | double | Field goals attempted per game. |
+#' | fg_perc_avg | double | Field-goal percentage per game average (values near 0.1 in the rows seen; unverified). |
+#' | 3_pa_avg | double | Three-pointers attempted per game. |
+#' | 3_pm_avg | double | Three-pointers made per game. |
+#' | 2_pm_avg | double | Two-pointers made per game. |
+#' | 2_pa_avg | double | Two-pointers attempted per game. |
 #' | fd | integer | Fouls drawn (0 in every row seen; unverified). |
 #' | fd_avg | integer | Fouls drawn per game (unverified, as FD). |
-#' | of_avg | numeric | Offensive fouls per game. |
-#' | f_on_avg | numeric | Fouls on per game. |
-#' | pf_avg | numeric | Personal fouls per game. |
-#' | tf_avg | numeric | Technical fouls per game. |
+#' | of_avg | double | Offensive fouls per game. |
+#' | f_on_avg | double | Fouls on per game. |
+#' | pf_avg | double | Personal fouls per game. |
+#' | tf_avg | double | Technical fouls per game. |
 #' | tfo | integer | Technical fouls on the opponent (unverified). |
 #' | tfo_avg | integer | Per-game average of TFO (unverified). |
-#' | uf_avg | numeric | Unsportsmanlike fouls per game. |
+#' | uf_avg | double | Unsportsmanlike fouls per game. |
 #' | fo | integer | Fouls-out count (unverified). |
 #' | fo_avg | integer | Per-game average of FO (unverified). |
 #' | fcd | integer | Coach disqualifying fouls (unverified). |
 #' | fcd_avg | integer | Per-game average of FCD (unverified). |
 #' | fct | integer | Coach technical fouls (read from the play-by-play foul subtype coachTechnical; unverified). |
-#' | fct_avg | numeric | Coach technical fouls per game. |
+#' | fct_avg | double | Coach technical fouls per game. |
 #' | fbt | integer | Bench technical fouls (read from the play-by-play foul subtype benchTechnical; unverified). |
-#' | fbt_avg | numeric | Bench technical fouls per game. |
+#' | fbt_avg | double | Bench technical fouls per game. |
 #' | f | integer | Total personal fouls committed. |
 #' | f_team | integer | Team fouls (unverified). |
-#' | f_team_avg | numeric | Team fouls per game (unverified). |
-#' | o_rat_avg | numeric | Offensive rating per game average. |
+#' | f_team_avg | double | Team fouls per game (unverified). |
+#' | o_rat_avg | double | Offensive rating per game average. |
 #' | ad | integer | Assists difference or assists allowed (0 in every row seen; unverified). |
 #' | ad_avg | integer | Per-game average of AD (0 in every row seen; unverified). |
-#' | ec | numeric | Unverified in the hundreds, e.g. '509.0'; possibly an efficiency sum). |
+#' | ec | double | Unverified (in the hundreds, e.g. '509.0'; possibly an efficiency sum). |
 #' | to | integer | Turnovers (total). |
-#' | to_avg | numeric | Turnovers per game. |
-#' | fbp_avg | numeric | Fast-break points per game. |
+#' | to_avg | double | Turnovers per game. |
+#' | fbp_avg | double | Fast-break points per game. |
 #' | fbpa | integer | Fast-break points attempts (unverified). |
 #' | fbpm | integer | Fast-break points made (unverified). |
-#' | pitp_avg | numeric | Points in the paint per game. |
+#' | pitp_avg | double | Points in the paint per game. |
 #' | pitpa | integer | Paint shots attempted (unverified). |
-#' | pitpa_avg | numeric | Paint shots attempted per game (unverified). |
+#' | pitpa_avg | double | Paint shots attempted per game (unverified). |
 #' | pitpm | integer | Paint shots made (unverified). |
-#' | pitpm_avg | numeric | Paint shots made per game (unverified). |
+#' | pitpm_avg | double | Paint shots made per game (unverified). |
 #' | pfto | integer | Points from turnovers (total). |
-#' | pfto_avg | numeric | Points from turnovers per game. |
+#' | pfto_avg | double | Points from turnovers per game. |
 #' | 2nd_ch_pm | integer | Second-chance field goals made (unverified). |
-#' | 2nd_ch_pm_avg | numeric | Second-chance field goals made per game (unverified). |
+#' | 2nd_ch_pm_avg | double | Second-chance field goals made per game (unverified). |
 #' | 2nd_ch_pa | integer | Second-chance field goals attempted (unverified). |
-#' | 2nd_ch_pa_avg | numeric | Second-chance field goals attempted per game (unverified). |
+#' | 2nd_ch_pa_avg | double | Second-chance field goals attempted per game (unverified). |
 #' | ftm | integer | Free throws made (total). |
-#' | ftm_avg | numeric | Free throws made per game. |
+#' | ftm_avg | double | Free throws made per game. |
 #' | fta | integer | Free throws attempted (total). |
-#' | fta_avg | numeric | Free throws attempted per game. |
+#' | fta_avg | double | Free throws attempted per game. |
 #' | poss | integer | Possessions (total). |
-#' | poss_avg | numeric | Possessions per game. |
+#' | poss_avg | double | Possessions per game. |
 #' | poss_o | integer | Offensive possessions (total; equal to Poss in every row seen). |
-#' | poss_o_avg | numeric | Offensive possessions per game. |
-#' | dppp | numeric | Defensive points per possession (unverified). |
-#' | dppp_avg | numeric | Defensive points per possession, per game average (unverified). |
-#' | oppp | numeric | Offensive points per possession. |
-#' | oppp_avg | numeric | Offensive points per possession, per game average. |
+#' | poss_o_avg | double | Offensive possessions per game. |
+#' | dppp | double | Defensive points per possession (unverified). |
+#' | dppp_avg | double | Defensive points per possession, per game average (unverified). |
+#' | oppp | double | Offensive points per possession. |
+#' | oppp_avg | double | Offensive points per possession, per game average. |
 #' | pace | integer | Pace (possessions per 40 minutes; 0 in every row seen, unverified). |
 #' | pace_avg | integer | Pace, per game average (0 in every row seen). |
 #' | tl | integer | Team leads / lead changes (unverified). |
 #' | otr | integer | Offensive team rebounds (unverified). |
 #' | dtr | integer | Defensive team rebounds (unverified). |
 #' | tr | integer | Total team rebounds (unverified). |
-#' | tr_avg | numeric | Team rebounds per game (unverified). |
+#' | tr_avg | double | Team rebounds per game (unverified). |
 #' | pr | integer | Player rebounds (total; Reb minus TR, unverified). |
-#' | pr_avg | numeric | Player rebounds per game (unverified). |
+#' | pr_avg | double | Player rebounds per game (unverified). |
 #' | ord | integer | Offensive rebounds allowed or the opponent's offensive rebounds (0 in every row seen; unverified). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_stats_info(module = "players_summary", season = 2026)')
 #' @export

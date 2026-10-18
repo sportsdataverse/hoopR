@@ -28,7 +28,7 @@ valid answer raises \code{hoopR_no_data}; the columns are always these, in this 
    birth_date \tab character \tab Date of birth, YYYY-MM-DD. \cr
    position \tab character \tab Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. \cr
    shirt_number \tab character \tab Jersey number. A number or a numeric string across rows. \cr
-   height \tab numeric \tab Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). \cr
+   height \tab double \tab Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). \cr
    weight \tab integer \tab Weight in kg; 0 when unknown. \cr
    nationalities \tab character \tab Nationalities, ISO 3166-1 alpha-2 codes. \cr
    is_all_star \tab logical \tab All-Star selection flag. \cr

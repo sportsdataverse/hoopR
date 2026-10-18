@@ -86,7 +86,7 @@ Timestamps are Turkey local time (\code{Europe/Istanbul}).
 }
 }
 \seealso{
-Other TBF:
+Other TBF Functions:
 \code{\link[=tbf_game_header]{tbf_game_header()}},
 \code{\link[=tbf_game_leaders]{tbf_game_leaders()}},
 \code{\link[=tbf_game_players]{tbf_game_players()}},
@@ -119,4 +119,4 @@ Other TBF:
 \code{\link[=tbf_teams]{tbf_teams()}},
 \code{\link[=tbf_weeks]{tbf_weeks()}}
 }
-\concept{TBF}
+\concept{TBF Functions}

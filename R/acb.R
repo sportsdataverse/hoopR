@@ -415,8 +415,8 @@ acb_pbp <- function(match_id) {
 #' | pos_x | integer | Court x as sent. mm system: millimetres from the attacked basket towards midcourt (never negative; 0 for free throws and dunks); grid system: 0-100 percent of the court length, not mirrored. |
 #' | pos_y | integer | Court y as sent. mm system: millimetres across the court (sidelines at -7500 and +7500, negative = the shooter's left); grid system: 0-100 percent of the width (which sideline is 0 is unverified). Free throws are (0, 0). |
 #' | coord_system | character | Shot coordinate system, told by the match id: mm = millimetres from the attacked basket (match ids from 2020-21), grid = 0-100 percent of the full court (up to 2019-20). Null when the match id is unknown. |
-#' | x_basket_m | numeric | Shot x in metres from the centre of the attacked basket towards midcourt, when coord_system is mm and the attempt is a field goal; null otherwise. Units and origin are inferred by the refs (arc and sideline fit), not documented by ACB. |
-#' | y_basket_m | numeric | Shot y in metres across the court from the basket line, negative = the shooter's left, when coord_system is mm and the attempt is a field goal; null otherwise (inferred by the refs, not documented by ACB). |
+#' | x_basket_m | double | Shot x in metres from the centre of the attacked basket towards midcourt, when coord_system is mm and the attempt is a field goal; null otherwise. Units and origin are inferred by the refs (arc and sideline fit), not documented by ACB. |
+#' | y_basket_m | double | Shot y in metres across the court from the basket line, negative = the shooter's left, when coord_system is mm and the attempt is a field goal; null otherwise (inferred by the refs, not documented by ACB). |
 #' | quarter | integer | Period of the attempt: 1-4 quarters, 5+ overtimes. |
 #' | minute | integer | Game clock left in the period, minutes |
 #' | second | integer | Game clock left in the period, seconds part |
@@ -507,7 +507,7 @@ acb_lead_tracker <- function(match_id) {
 #' | stat | character | Statistic: best_score_run, max_difference, time_ahead or lead_changes. |
 #' | side | character | Side the value belongs to: home or away. |
 #' | value | character | Display value as sent: a count, or 'mm:ss' for time_ahead. |
-#' | bar_progress | numeric | Length of the site's comparison bar (a drawing value, not a statistic). |
+#' | bar_progress | double | Length of the site's comparison bar (a drawing value, not a statistic). |
 #' | is_highlighted | logical | True for the side whose bar the site highlights as the better value. |
 #' @eval .intl_details(.acb_match_header_details, "acb_lead_stats(match_id = 105401)")
 #' @export
@@ -598,7 +598,7 @@ acb_lineup <- function(match_id) {
 #' | team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
 #' | metric | character | Leader category in snake_case (the API's key, e.g. rating, points, rebounds, assists). |
 #' | rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-#' | value | numeric | The player's count in the category (points, rebounds, assists, rating). |
+#' | value | double | The player's count in the category (points, rebounds, assists, rating). |
 #' | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
 #' | player_name | character | Display (sporting) name ('Edy Tavares') |
 #' | first_name | character | Legal first name(s) |
@@ -638,8 +638,8 @@ acb_match_leaders <- function(match_id) {
 #' | match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
 #' | quarter | integer | Period of the bar: 0 = the whole game, 1-4 quarters. |
 #' | stat | character | Compared statistic (free_throws, two_pointers, three_pointers, field_goals, rebounds, assists, steals, turnovers, personal_fouls, time_outs, points_off_turnover, paint_points, second_chance_points, fast_break_points, bench_points ...). |
-#' | home_value | numeric | Home value of the bar: a percentage 0-100 for the shooting statistics (the API's `'79,17%'` decimal comma parsed), a count otherwise. |
-#' | away_value | numeric | Away value of the bar, same units as home_value. |
+#' | home_value | double | Home value of the bar: a percentage 0-100 for the shooting statistics (the API's `'79,17%'` decimal comma parsed), a count otherwise. |
+#' | away_value | double | Away value of the bar, same units as home_value. |
 #' | home_made | integer | Home shots made, from the 'made/attempted' subtitle; null for the non-shooting statistics. |
 #' | home_attempted | integer | Home shots attempted, from the subtitle; null for the non-shooting statistics. |
 #' | away_made | integer | Away shots made, from the subtitle; null for the non-shooting statistics. |
@@ -777,7 +777,7 @@ acb_quickfacts <- function(match_id) {
 #' | team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
 #' | metric | character | Leader category in snake_case (the API's key, e.g. rating, points, rebounds, assists). |
 #' | rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-#' | value | numeric | The player's season value in the category before this game (a total or an average depending on the category). |
+#' | value | double | The player's season value in the category before this game (a total or an average depending on the category). |
 #' | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
 #' | player_name | character | Display (sporting) name ('Edy Tavares') |
 #' | first_name | character | Legal first name(s) |
@@ -828,13 +828,13 @@ acb_season_leaders <- function(match_id) {
 #' | team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
 #' | group | character | Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). |
 #' | stat | character | Statistic in snake_case (efg_pct, orb_pct, tov_pct, f_tr = free-throw rate, possessions, pace, points_per_possession, ast_ratio, ..., net_rating, oer, der, trb_pct). |
-#' | match_value | numeric | The statistic in this game (the API's partido). |
-#' | season_value | numeric | The team's value over the season (the API's temporada). |
-#' | win_value | numeric | The team's value in its wins (the API's win). |
-#' | loss_value | numeric | The team's value in its losses (the API's loss). |
-#' | season_diff | numeric | Game value minus season value (temporadaDiff). |
-#' | win_diff | numeric | Game value minus the wins value (winDiff). |
-#' | loss_diff | numeric | Game value minus the losses value (lossDiff). |
+#' | match_value | double | The statistic in this game (the API's partido). |
+#' | season_value | double | The team's value over the season (the API's temporada). |
+#' | win_value | double | The team's value in its wins (the API's win). |
+#' | loss_value | double | The team's value in its losses (the API's loss). |
+#' | season_diff | double | Game value minus season value (temporadaDiff). |
+#' | win_diff | double | Game value minus the wins value (winDiff). |
+#' | loss_diff | double | Game value minus the losses value (lossDiff). |
 #' @eval .intl_details(.acb_match_header_details, "acb_match_advanced_stats(match_id = 105401)")
 #' @export
 #' @family ACB Functions
@@ -870,13 +870,13 @@ acb_match_advanced_stats <- function(match_id) {
 #' | player_id | integer | ACB licence number: the person id everywhere (box score, play-by-play, shots, rosters, the player routes). Taken from the request when the body does not name the player. |
 #' | group | character | Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). |
 #' | stat | character | Statistic in snake_case (efg_pct, ts_pct, ast_pct, usage-style ratios, pace ...). |
-#' | match_value | numeric | The statistic in this game (the API's partido). |
-#' | season_value | numeric | The player's value over the season (temporada). |
-#' | win_value | numeric | The player's value in his team's wins. |
-#' | loss_value | numeric | The player's value in his team's losses. |
-#' | season_diff | numeric | Game value minus season value (temporadaDiff). |
-#' | win_diff | numeric | Game value minus the wins value (winDiff). |
-#' | loss_diff | numeric | Game value minus the losses value (lossDiff). |
+#' | match_value | double | The statistic in this game (the API's partido). |
+#' | season_value | double | The player's value over the season (temporada). |
+#' | win_value | double | The player's value in his team's wins. |
+#' | loss_value | double | The player's value in his team's losses. |
+#' | season_diff | double | Game value minus season value (temporadaDiff). |
+#' | win_diff | double | Game value minus the wins value (winDiff). |
+#' | loss_diff | double | Game value minus the losses value (lossDiff). |
 #' @eval .intl_details(.acb_match_header_details, "acb_player_advanced_stats(match_id = 105401, player_id = 20212243)")
 #' @export
 #' @family ACB Functions
@@ -1213,7 +1213,7 @@ acb_round_matches <- function(competition_id = NULL, season = NULL, round_id = N
 #' | played | integer | Games played (standings row) |
 #' | wins | integer | Wins (standings row) |
 #' | losses | integer | Losses (the key is misspelt by the API) |
-#' | win_pct | numeric | Win percentage, 0-100. |
+#' | win_pct | double | Win percentage, 0-100. |
 #' | points_for | integer | Points scored (standings row) |
 #' | points_against | integer | Points allowed (standings row) |
 #' | plus_minus | integer | Point differential (points for minus points against). |
@@ -1793,7 +1793,7 @@ acb_current_roster <- function(club_id, competition_id = NULL, season = NULL) {
 #' | scope | character | all_time = club record holders (the API's leaders); edition = the selected season (seasonLeaders). The assignment is inferred from the values (689 games for J.C. Navarro is a career figure). |
 #' | metric | character | Category in snake_case; avg_* are per-game averages, the rest totals. |
 #' | rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-#' | value | numeric | The player's value in the category (a total or an average depending on the metric). |
+#' | value | double | The player's value in the category (a total or an average depending on the metric). |
 #' | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
 #' | player_name | character | Display (sporting) name ('Edy Tavares') |
 #' | first_name | character | Legal first name(s) |
@@ -1851,13 +1851,13 @@ acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, 
 #' | total_max_points | integer | Season total of most points in a single game. |
 #' | total_three_pointers_made | integer | Season total of three-point field goals made. |
 #' | total_three_pointers_attempted | integer | Season total of three-point field goals attempted. |
-#' | total_three_pointers_percentage | numeric | Season total of three-point percentage (0-100). |
+#' | total_three_pointers_percentage | double | Season total of three-point percentage (0-100). |
 #' | total_two_pointers_made | integer | Season total of two-point field goals made. |
 #' | total_two_pointers_attempted | integer | Season total of two-point field goals attempted. |
-#' | total_two_pointers_percentage | numeric | Season total of two-point percentage (0-100). |
+#' | total_two_pointers_percentage | double | Season total of two-point percentage (0-100). |
 #' | total_free_throws_made | integer | Season total of free throws made. |
 #' | total_free_throws_attempted | integer | Season total of free throws attempted. |
-#' | total_free_throws_percentage | numeric | Season total of free-throw percentage (0-100). |
+#' | total_free_throws_percentage | double | Season total of free-throw percentage (0-100). |
 #' | total_rebounds | integer | Season total of total rebounds. |
 #' | total_offensive_rebounds | integer | Season total of offensive rebounds. |
 #' | total_defensive_rebounds | integer | Season total of defensive rebounds. |
@@ -1873,64 +1873,64 @@ acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, 
 #' | total_plus_minus | integer | Season total of plus/minus. |
 #' | total_wins | integer | Season total of team wins in the counted games (meaning unverified). |
 #' | total_losses | integer | Season total of team losses in the counted games (meaning unverified). |
-#' | avg_num_games | numeric | Per-game average of games played. |
-#' | avg_time_played | numeric | Per-game average of time on court in seconds. |
-#' | avg_starter | numeric | Per-game average of games started. |
-#' | avg_points | numeric | Per-game average of points. |
-#' | avg_max_points | numeric | Per-game average of most points in a single game. |
-#' | avg_three_pointers_made | numeric | Per-game average of three-point field goals made. |
-#' | avg_three_pointers_attempted | numeric | Per-game average of three-point field goals attempted. |
-#' | avg_three_pointers_percentage | numeric | Per-game average of three-point percentage (0-100). |
-#' | avg_two_pointers_made | numeric | Per-game average of two-point field goals made. |
-#' | avg_two_pointers_attempted | numeric | Per-game average of two-point field goals attempted. |
-#' | avg_two_pointers_percentage | numeric | Per-game average of two-point percentage (0-100). |
-#' | avg_free_throws_made | numeric | Per-game average of free throws made. |
-#' | avg_free_throws_attempted | numeric | Per-game average of free throws attempted. |
-#' | avg_free_throws_percentage | numeric | Per-game average of free-throw percentage (0-100). |
-#' | avg_rebounds | numeric | Per-game average of total rebounds. |
-#' | avg_offensive_rebounds | numeric | Per-game average of offensive rebounds. |
-#' | avg_defensive_rebounds | numeric | Per-game average of defensive rebounds. |
-#' | avg_assists | numeric | Per-game average of assists. |
-#' | avg_steals | numeric | Per-game average of steals. |
-#' | avg_turnovers | numeric | Per-game average of turnovers. |
-#' | avg_blocks | numeric | Per-game average of blocks made. |
-#' | avg_shots_rejected | numeric | Per-game average of own shots blocked. |
-#' | avg_dunks | numeric | Per-game average of dunks. |
-#' | avg_personal_fouls | numeric | Per-game average of personal fouls committed. |
-#' | avg_fouls_received | numeric | Per-game average of fouls drawn. |
-#' | avg_rating | numeric | Per-game average of ACB rating (valoracion). |
-#' | avg_plus_minus | numeric | Per-game average of plus/minus. |
-#' | avg_wins | numeric | Per-game average of team wins in the counted games (meaning unverified). |
-#' | avg_losses | numeric | Per-game average of team losses in the counted games (meaning unverified). |
-#' | per40_num_games | numeric | Per-40-minute rate of games played. |
-#' | per40_time_played | numeric | Always null: the per-40 block carries no time played. |
-#' | per40_starter | numeric | Per-40-minute rate of games started. |
-#' | per40_points | numeric | Per-40-minute rate of points. |
-#' | per40_max_points | numeric | Per-40-minute rate of most points in a single game. |
-#' | per40_three_pointers_made | numeric | Per-40-minute rate of three-point field goals made. |
-#' | per40_three_pointers_attempted | numeric | Per-40-minute rate of three-point field goals attempted. |
-#' | per40_three_pointers_percentage | numeric | Per-40-minute rate of three-point percentage (0-100). |
-#' | per40_two_pointers_made | numeric | Per-40-minute rate of two-point field goals made. |
-#' | per40_two_pointers_attempted | numeric | Per-40-minute rate of two-point field goals attempted. |
-#' | per40_two_pointers_percentage | numeric | Per-40-minute rate of two-point percentage (0-100). |
-#' | per40_free_throws_made | numeric | Per-40-minute rate of free throws made. |
-#' | per40_free_throws_attempted | numeric | Per-40-minute rate of free throws attempted. |
-#' | per40_free_throws_percentage | numeric | Per-40-minute rate of free-throw percentage (0-100). |
-#' | per40_rebounds | numeric | Per-40-minute rate of total rebounds. |
-#' | per40_offensive_rebounds | numeric | Per-40-minute rate of offensive rebounds. |
-#' | per40_defensive_rebounds | numeric | Per-40-minute rate of defensive rebounds. |
-#' | per40_assists | numeric | Per-40-minute rate of assists. |
-#' | per40_steals | numeric | Per-40-minute rate of steals. |
-#' | per40_turnovers | numeric | Per-40-minute rate of turnovers. |
-#' | per40_blocks | numeric | Per-40-minute rate of blocks made. |
-#' | per40_shots_rejected | numeric | Per-40-minute rate of own shots blocked. |
-#' | per40_dunks | numeric | Per-40-minute rate of dunks. |
-#' | per40_personal_fouls | numeric | Per-40-minute rate of personal fouls committed. |
-#' | per40_fouls_received | numeric | Per-40-minute rate of fouls drawn. |
-#' | per40_rating | numeric | Per-40-minute rate of ACB rating (valoracion). |
-#' | per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
-#' | per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
-#' | per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
+#' | avg_num_games | double | Per-game average of games played. |
+#' | avg_time_played | double | Per-game average of time on court in seconds. |
+#' | avg_starter | double | Per-game average of games started. |
+#' | avg_points | double | Per-game average of points. |
+#' | avg_max_points | double | Per-game average of most points in a single game. |
+#' | avg_three_pointers_made | double | Per-game average of three-point field goals made. |
+#' | avg_three_pointers_attempted | double | Per-game average of three-point field goals attempted. |
+#' | avg_three_pointers_percentage | double | Per-game average of three-point percentage (0-100). |
+#' | avg_two_pointers_made | double | Per-game average of two-point field goals made. |
+#' | avg_two_pointers_attempted | double | Per-game average of two-point field goals attempted. |
+#' | avg_two_pointers_percentage | double | Per-game average of two-point percentage (0-100). |
+#' | avg_free_throws_made | double | Per-game average of free throws made. |
+#' | avg_free_throws_attempted | double | Per-game average of free throws attempted. |
+#' | avg_free_throws_percentage | double | Per-game average of free-throw percentage (0-100). |
+#' | avg_rebounds | double | Per-game average of total rebounds. |
+#' | avg_offensive_rebounds | double | Per-game average of offensive rebounds. |
+#' | avg_defensive_rebounds | double | Per-game average of defensive rebounds. |
+#' | avg_assists | double | Per-game average of assists. |
+#' | avg_steals | double | Per-game average of steals. |
+#' | avg_turnovers | double | Per-game average of turnovers. |
+#' | avg_blocks | double | Per-game average of blocks made. |
+#' | avg_shots_rejected | double | Per-game average of own shots blocked. |
+#' | avg_dunks | double | Per-game average of dunks. |
+#' | avg_personal_fouls | double | Per-game average of personal fouls committed. |
+#' | avg_fouls_received | double | Per-game average of fouls drawn. |
+#' | avg_rating | double | Per-game average of ACB rating (valoracion). |
+#' | avg_plus_minus | double | Per-game average of plus/minus. |
+#' | avg_wins | double | Per-game average of team wins in the counted games (meaning unverified). |
+#' | avg_losses | double | Per-game average of team losses in the counted games (meaning unverified). |
+#' | per40_num_games | double | Per-40-minute rate of games played. |
+#' | per40_time_played | double | Always null: the per-40 block carries no time played. |
+#' | per40_starter | double | Per-40-minute rate of games started. |
+#' | per40_points | double | Per-40-minute rate of points. |
+#' | per40_max_points | double | Per-40-minute rate of most points in a single game. |
+#' | per40_three_pointers_made | double | Per-40-minute rate of three-point field goals made. |
+#' | per40_three_pointers_attempted | double | Per-40-minute rate of three-point field goals attempted. |
+#' | per40_three_pointers_percentage | double | Per-40-minute rate of three-point percentage (0-100). |
+#' | per40_two_pointers_made | double | Per-40-minute rate of two-point field goals made. |
+#' | per40_two_pointers_attempted | double | Per-40-minute rate of two-point field goals attempted. |
+#' | per40_two_pointers_percentage | double | Per-40-minute rate of two-point percentage (0-100). |
+#' | per40_free_throws_made | double | Per-40-minute rate of free throws made. |
+#' | per40_free_throws_attempted | double | Per-40-minute rate of free throws attempted. |
+#' | per40_free_throws_percentage | double | Per-40-minute rate of free-throw percentage (0-100). |
+#' | per40_rebounds | double | Per-40-minute rate of total rebounds. |
+#' | per40_offensive_rebounds | double | Per-40-minute rate of offensive rebounds. |
+#' | per40_defensive_rebounds | double | Per-40-minute rate of defensive rebounds. |
+#' | per40_assists | double | Per-40-minute rate of assists. |
+#' | per40_steals | double | Per-40-minute rate of steals. |
+#' | per40_turnovers | double | Per-40-minute rate of turnovers. |
+#' | per40_blocks | double | Per-40-minute rate of blocks made. |
+#' | per40_shots_rejected | double | Per-40-minute rate of own shots blocked. |
+#' | per40_dunks | double | Per-40-minute rate of dunks. |
+#' | per40_personal_fouls | double | Per-40-minute rate of personal fouls committed. |
+#' | per40_fouls_received | double | Per-40-minute rate of fouls drawn. |
+#' | per40_rating | double | Per-40-minute rate of ACB rating (valoracion). |
+#' | per40_plus_minus | double | Per-40-minute rate of plus/minus. |
+#' | per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
+#' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 #' @inherit acb_match_header details
 #' @examples
 #' \donttest{
@@ -1979,13 +1979,13 @@ acb_team_stats <- function(club_id, competition_id = NULL, season = NULL) {
 #' | total_max_points | integer | Season total of most points in a single game. |
 #' | total_three_pointers_made | integer | Season total of three-point field goals made. |
 #' | total_three_pointers_attempted | integer | Season total of three-point field goals attempted. |
-#' | total_three_pointers_percentage | numeric | Season total of three-point percentage (0-100). |
+#' | total_three_pointers_percentage | double | Season total of three-point percentage (0-100). |
 #' | total_two_pointers_made | integer | Season total of two-point field goals made. |
 #' | total_two_pointers_attempted | integer | Season total of two-point field goals attempted. |
-#' | total_two_pointers_percentage | numeric | Season total of two-point percentage (0-100). |
+#' | total_two_pointers_percentage | double | Season total of two-point percentage (0-100). |
 #' | total_free_throws_made | integer | Season total of free throws made. |
 #' | total_free_throws_attempted | integer | Season total of free throws attempted. |
-#' | total_free_throws_percentage | numeric | Season total of free-throw percentage (0-100). |
+#' | total_free_throws_percentage | double | Season total of free-throw percentage (0-100). |
 #' | total_rebounds | integer | Season total of total rebounds. |
 #' | total_offensive_rebounds | integer | Season total of offensive rebounds. |
 #' | total_defensive_rebounds | integer | Season total of defensive rebounds. |
@@ -2001,64 +2001,64 @@ acb_team_stats <- function(club_id, competition_id = NULL, season = NULL) {
 #' | total_plus_minus | integer | Season total of plus/minus. |
 #' | total_wins | integer | Season total of team wins in the counted games (meaning unverified). |
 #' | total_losses | integer | Season total of team losses in the counted games (meaning unverified). |
-#' | avg_num_games | numeric | Per-game average of games played. |
-#' | avg_time_played | numeric | Per-game average of time on court in seconds. |
-#' | avg_starter | numeric | Per-game average of games started. |
-#' | avg_points | numeric | Per-game average of points. |
-#' | avg_max_points | numeric | Per-game average of most points in a single game. |
-#' | avg_three_pointers_made | numeric | Per-game average of three-point field goals made. |
-#' | avg_three_pointers_attempted | numeric | Per-game average of three-point field goals attempted. |
-#' | avg_three_pointers_percentage | numeric | Per-game average of three-point percentage (0-100). |
-#' | avg_two_pointers_made | numeric | Per-game average of two-point field goals made. |
-#' | avg_two_pointers_attempted | numeric | Per-game average of two-point field goals attempted. |
-#' | avg_two_pointers_percentage | numeric | Per-game average of two-point percentage (0-100). |
-#' | avg_free_throws_made | numeric | Per-game average of free throws made. |
-#' | avg_free_throws_attempted | numeric | Per-game average of free throws attempted. |
-#' | avg_free_throws_percentage | numeric | Per-game average of free-throw percentage (0-100). |
-#' | avg_rebounds | numeric | Per-game average of total rebounds. |
-#' | avg_offensive_rebounds | numeric | Per-game average of offensive rebounds. |
-#' | avg_defensive_rebounds | numeric | Per-game average of defensive rebounds. |
-#' | avg_assists | numeric | Per-game average of assists. |
-#' | avg_steals | numeric | Per-game average of steals. |
-#' | avg_turnovers | numeric | Per-game average of turnovers. |
-#' | avg_blocks | numeric | Per-game average of blocks made. |
-#' | avg_shots_rejected | numeric | Per-game average of own shots blocked. |
-#' | avg_dunks | numeric | Per-game average of dunks. |
-#' | avg_personal_fouls | numeric | Per-game average of personal fouls committed. |
-#' | avg_fouls_received | numeric | Per-game average of fouls drawn. |
-#' | avg_rating | numeric | Per-game average of ACB rating (valoracion). |
-#' | avg_plus_minus | numeric | Per-game average of plus/minus. |
-#' | avg_wins | numeric | Per-game average of team wins in the counted games (meaning unverified). |
-#' | avg_losses | numeric | Per-game average of team losses in the counted games (meaning unverified). |
-#' | per40_num_games | numeric | Per-40-minute rate of games played. |
-#' | per40_time_played | numeric | Always null: the per-40 block carries no time played. |
-#' | per40_starter | numeric | Per-40-minute rate of games started. |
-#' | per40_points | numeric | Per-40-minute rate of points. |
-#' | per40_max_points | numeric | Per-40-minute rate of most points in a single game. |
-#' | per40_three_pointers_made | numeric | Per-40-minute rate of three-point field goals made. |
-#' | per40_three_pointers_attempted | numeric | Per-40-minute rate of three-point field goals attempted. |
-#' | per40_three_pointers_percentage | numeric | Per-40-minute rate of three-point percentage (0-100). |
-#' | per40_two_pointers_made | numeric | Per-40-minute rate of two-point field goals made. |
-#' | per40_two_pointers_attempted | numeric | Per-40-minute rate of two-point field goals attempted. |
-#' | per40_two_pointers_percentage | numeric | Per-40-minute rate of two-point percentage (0-100). |
-#' | per40_free_throws_made | numeric | Per-40-minute rate of free throws made. |
-#' | per40_free_throws_attempted | numeric | Per-40-minute rate of free throws attempted. |
-#' | per40_free_throws_percentage | numeric | Per-40-minute rate of free-throw percentage (0-100). |
-#' | per40_rebounds | numeric | Per-40-minute rate of total rebounds. |
-#' | per40_offensive_rebounds | numeric | Per-40-minute rate of offensive rebounds. |
-#' | per40_defensive_rebounds | numeric | Per-40-minute rate of defensive rebounds. |
-#' | per40_assists | numeric | Per-40-minute rate of assists. |
-#' | per40_steals | numeric | Per-40-minute rate of steals. |
-#' | per40_turnovers | numeric | Per-40-minute rate of turnovers. |
-#' | per40_blocks | numeric | Per-40-minute rate of blocks made. |
-#' | per40_shots_rejected | numeric | Per-40-minute rate of own shots blocked. |
-#' | per40_dunks | numeric | Per-40-minute rate of dunks. |
-#' | per40_personal_fouls | numeric | Per-40-minute rate of personal fouls committed. |
-#' | per40_fouls_received | numeric | Per-40-minute rate of fouls drawn. |
-#' | per40_rating | numeric | Per-40-minute rate of ACB rating (valoracion). |
-#' | per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
-#' | per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
-#' | per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
+#' | avg_num_games | double | Per-game average of games played. |
+#' | avg_time_played | double | Per-game average of time on court in seconds. |
+#' | avg_starter | double | Per-game average of games started. |
+#' | avg_points | double | Per-game average of points. |
+#' | avg_max_points | double | Per-game average of most points in a single game. |
+#' | avg_three_pointers_made | double | Per-game average of three-point field goals made. |
+#' | avg_three_pointers_attempted | double | Per-game average of three-point field goals attempted. |
+#' | avg_three_pointers_percentage | double | Per-game average of three-point percentage (0-100). |
+#' | avg_two_pointers_made | double | Per-game average of two-point field goals made. |
+#' | avg_two_pointers_attempted | double | Per-game average of two-point field goals attempted. |
+#' | avg_two_pointers_percentage | double | Per-game average of two-point percentage (0-100). |
+#' | avg_free_throws_made | double | Per-game average of free throws made. |
+#' | avg_free_throws_attempted | double | Per-game average of free throws attempted. |
+#' | avg_free_throws_percentage | double | Per-game average of free-throw percentage (0-100). |
+#' | avg_rebounds | double | Per-game average of total rebounds. |
+#' | avg_offensive_rebounds | double | Per-game average of offensive rebounds. |
+#' | avg_defensive_rebounds | double | Per-game average of defensive rebounds. |
+#' | avg_assists | double | Per-game average of assists. |
+#' | avg_steals | double | Per-game average of steals. |
+#' | avg_turnovers | double | Per-game average of turnovers. |
+#' | avg_blocks | double | Per-game average of blocks made. |
+#' | avg_shots_rejected | double | Per-game average of own shots blocked. |
+#' | avg_dunks | double | Per-game average of dunks. |
+#' | avg_personal_fouls | double | Per-game average of personal fouls committed. |
+#' | avg_fouls_received | double | Per-game average of fouls drawn. |
+#' | avg_rating | double | Per-game average of ACB rating (valoracion). |
+#' | avg_plus_minus | double | Per-game average of plus/minus. |
+#' | avg_wins | double | Per-game average of team wins in the counted games (meaning unverified). |
+#' | avg_losses | double | Per-game average of team losses in the counted games (meaning unverified). |
+#' | per40_num_games | double | Per-40-minute rate of games played. |
+#' | per40_time_played | double | Always null: the per-40 block carries no time played. |
+#' | per40_starter | double | Per-40-minute rate of games started. |
+#' | per40_points | double | Per-40-minute rate of points. |
+#' | per40_max_points | double | Per-40-minute rate of most points in a single game. |
+#' | per40_three_pointers_made | double | Per-40-minute rate of three-point field goals made. |
+#' | per40_three_pointers_attempted | double | Per-40-minute rate of three-point field goals attempted. |
+#' | per40_three_pointers_percentage | double | Per-40-minute rate of three-point percentage (0-100). |
+#' | per40_two_pointers_made | double | Per-40-minute rate of two-point field goals made. |
+#' | per40_two_pointers_attempted | double | Per-40-minute rate of two-point field goals attempted. |
+#' | per40_two_pointers_percentage | double | Per-40-minute rate of two-point percentage (0-100). |
+#' | per40_free_throws_made | double | Per-40-minute rate of free throws made. |
+#' | per40_free_throws_attempted | double | Per-40-minute rate of free throws attempted. |
+#' | per40_free_throws_percentage | double | Per-40-minute rate of free-throw percentage (0-100). |
+#' | per40_rebounds | double | Per-40-minute rate of total rebounds. |
+#' | per40_offensive_rebounds | double | Per-40-minute rate of offensive rebounds. |
+#' | per40_defensive_rebounds | double | Per-40-minute rate of defensive rebounds. |
+#' | per40_assists | double | Per-40-minute rate of assists. |
+#' | per40_steals | double | Per-40-minute rate of steals. |
+#' | per40_turnovers | double | Per-40-minute rate of turnovers. |
+#' | per40_blocks | double | Per-40-minute rate of blocks made. |
+#' | per40_shots_rejected | double | Per-40-minute rate of own shots blocked. |
+#' | per40_dunks | double | Per-40-minute rate of dunks. |
+#' | per40_personal_fouls | double | Per-40-minute rate of personal fouls committed. |
+#' | per40_fouls_received | double | Per-40-minute rate of fouls drawn. |
+#' | per40_rating | double | Per-40-minute rate of ACB rating (valoracion). |
+#' | per40_plus_minus | double | Per-40-minute rate of plus/minus. |
+#' | per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
+#' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 #' @eval .intl_details(.acb_match_header_details, "acb_team_totals(club_id = 2, season = 2027)")
 #' @export
 #' @family ACB Functions
@@ -2088,7 +2088,7 @@ acb_team_totals <- function(club_id, competition_id = NULL, season = NULL) {
 #' |:---|:---|:---|
 #' | club_id | integer | Stable club id asked for. |
 #' | stat | character | Record category in snake_case (rating, points, rebounds, assists, steals, ...). |
-#' | value | numeric | The record value (a count; Float64 so every category fits). |
+#' | value | double | The record value (a count; Float64 so every category fits). |
 #' | game_id | integer | Match id of the record game (legacy sequence for old games). |
 #' | game_date | POSIXct | Date of the record game (UTC midnight). |
 #' | player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
@@ -2148,7 +2148,7 @@ acb_team_records <- function(club_id) {
 #' | birth_country_iso | character | ISO 3166-1 alpha-2 code of the birth country; null for an unseen name. |
 #' | nationality | character | Nationality as sent, a Spanish country name. |
 #' | nationality_iso | character | ISO 3166-1 alpha-2 code of nationality; null for an unseen name. |
-#' | height_m | numeric | Height in metres (the API sends '2,20', a decimal comma). |
+#' | height_m | double | Height in metres (the API sends '2,20', a decimal comma). |
 #' | player_number | integer | Current shirt number (integer). |
 #' | team_id | integer | Current team's season-team entry id. |
 #' | club_id | integer | Current team's stable club id. |
@@ -2214,13 +2214,13 @@ acb_player_data <- function(player_id) {
 #' | total_max_points | integer | Season total of most points in a single game. |
 #' | total_three_pointers_made | integer | Season total of three-point field goals made. |
 #' | total_three_pointers_attempted | integer | Season total of three-point field goals attempted. |
-#' | total_three_pointers_percentage | numeric | Season total of three-point percentage (0-100). |
+#' | total_three_pointers_percentage | double | Season total of three-point percentage (0-100). |
 #' | total_two_pointers_made | integer | Season total of two-point field goals made. |
 #' | total_two_pointers_attempted | integer | Season total of two-point field goals attempted. |
-#' | total_two_pointers_percentage | numeric | Season total of two-point percentage (0-100). |
+#' | total_two_pointers_percentage | double | Season total of two-point percentage (0-100). |
 #' | total_free_throws_made | integer | Season total of free throws made. |
 #' | total_free_throws_attempted | integer | Season total of free throws attempted. |
-#' | total_free_throws_percentage | numeric | Season total of free-throw percentage (0-100). |
+#' | total_free_throws_percentage | double | Season total of free-throw percentage (0-100). |
 #' | total_rebounds | integer | Season total of total rebounds. |
 #' | total_offensive_rebounds | integer | Season total of offensive rebounds. |
 #' | total_defensive_rebounds | integer | Season total of defensive rebounds. |
@@ -2236,64 +2236,64 @@ acb_player_data <- function(player_id) {
 #' | total_plus_minus | integer | Season total of plus/minus. |
 #' | total_wins | integer | Season total of team wins in the counted games (meaning unverified). |
 #' | total_losses | integer | Season total of team losses in the counted games (meaning unverified). |
-#' | avg_num_games | numeric | Per-game average of games played. |
-#' | avg_time_played | numeric | Per-game average of time on court in seconds. |
-#' | avg_starter | numeric | Per-game average of games started. |
-#' | avg_points | numeric | Per-game average of points. |
-#' | avg_max_points | numeric | Per-game average of most points in a single game. |
-#' | avg_three_pointers_made | numeric | Per-game average of three-point field goals made. |
-#' | avg_three_pointers_attempted | numeric | Per-game average of three-point field goals attempted. |
-#' | avg_three_pointers_percentage | numeric | Per-game average of three-point percentage (0-100). |
-#' | avg_two_pointers_made | numeric | Per-game average of two-point field goals made. |
-#' | avg_two_pointers_attempted | numeric | Per-game average of two-point field goals attempted. |
-#' | avg_two_pointers_percentage | numeric | Per-game average of two-point percentage (0-100). |
-#' | avg_free_throws_made | numeric | Per-game average of free throws made. |
-#' | avg_free_throws_attempted | numeric | Per-game average of free throws attempted. |
-#' | avg_free_throws_percentage | numeric | Per-game average of free-throw percentage (0-100). |
-#' | avg_rebounds | numeric | Per-game average of total rebounds. |
-#' | avg_offensive_rebounds | numeric | Per-game average of offensive rebounds. |
-#' | avg_defensive_rebounds | numeric | Per-game average of defensive rebounds. |
-#' | avg_assists | numeric | Per-game average of assists. |
-#' | avg_steals | numeric | Per-game average of steals. |
-#' | avg_turnovers | numeric | Per-game average of turnovers. |
-#' | avg_blocks | numeric | Per-game average of blocks made. |
-#' | avg_shots_rejected | numeric | Per-game average of own shots blocked. |
-#' | avg_dunks | numeric | Per-game average of dunks. |
-#' | avg_personal_fouls | numeric | Per-game average of personal fouls committed. |
-#' | avg_fouls_received | numeric | Per-game average of fouls drawn. |
-#' | avg_rating | numeric | Per-game average of ACB rating (valoracion). |
-#' | avg_plus_minus | numeric | Per-game average of plus/minus. |
-#' | avg_wins | numeric | Per-game average of team wins in the counted games (meaning unverified). |
-#' | avg_losses | numeric | Per-game average of team losses in the counted games (meaning unverified). |
-#' | per40_num_games | numeric | Per-40-minute rate of games played. |
-#' | per40_time_played | numeric | Always null: the per-40 block carries no time played. |
-#' | per40_starter | numeric | Per-40-minute rate of games started. |
-#' | per40_points | numeric | Per-40-minute rate of points. |
-#' | per40_max_points | numeric | Per-40-minute rate of most points in a single game. |
-#' | per40_three_pointers_made | numeric | Per-40-minute rate of three-point field goals made. |
-#' | per40_three_pointers_attempted | numeric | Per-40-minute rate of three-point field goals attempted. |
-#' | per40_three_pointers_percentage | numeric | Per-40-minute rate of three-point percentage (0-100). |
-#' | per40_two_pointers_made | numeric | Per-40-minute rate of two-point field goals made. |
-#' | per40_two_pointers_attempted | numeric | Per-40-minute rate of two-point field goals attempted. |
-#' | per40_two_pointers_percentage | numeric | Per-40-minute rate of two-point percentage (0-100). |
-#' | per40_free_throws_made | numeric | Per-40-minute rate of free throws made. |
-#' | per40_free_throws_attempted | numeric | Per-40-minute rate of free throws attempted. |
-#' | per40_free_throws_percentage | numeric | Per-40-minute rate of free-throw percentage (0-100). |
-#' | per40_rebounds | numeric | Per-40-minute rate of total rebounds. |
-#' | per40_offensive_rebounds | numeric | Per-40-minute rate of offensive rebounds. |
-#' | per40_defensive_rebounds | numeric | Per-40-minute rate of defensive rebounds. |
-#' | per40_assists | numeric | Per-40-minute rate of assists. |
-#' | per40_steals | numeric | Per-40-minute rate of steals. |
-#' | per40_turnovers | numeric | Per-40-minute rate of turnovers. |
-#' | per40_blocks | numeric | Per-40-minute rate of blocks made. |
-#' | per40_shots_rejected | numeric | Per-40-minute rate of own shots blocked. |
-#' | per40_dunks | numeric | Per-40-minute rate of dunks. |
-#' | per40_personal_fouls | numeric | Per-40-minute rate of personal fouls committed. |
-#' | per40_fouls_received | numeric | Per-40-minute rate of fouls drawn. |
-#' | per40_rating | numeric | Per-40-minute rate of ACB rating (valoracion). |
-#' | per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
-#' | per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
-#' | per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
+#' | avg_num_games | double | Per-game average of games played. |
+#' | avg_time_played | double | Per-game average of time on court in seconds. |
+#' | avg_starter | double | Per-game average of games started. |
+#' | avg_points | double | Per-game average of points. |
+#' | avg_max_points | double | Per-game average of most points in a single game. |
+#' | avg_three_pointers_made | double | Per-game average of three-point field goals made. |
+#' | avg_three_pointers_attempted | double | Per-game average of three-point field goals attempted. |
+#' | avg_three_pointers_percentage | double | Per-game average of three-point percentage (0-100). |
+#' | avg_two_pointers_made | double | Per-game average of two-point field goals made. |
+#' | avg_two_pointers_attempted | double | Per-game average of two-point field goals attempted. |
+#' | avg_two_pointers_percentage | double | Per-game average of two-point percentage (0-100). |
+#' | avg_free_throws_made | double | Per-game average of free throws made. |
+#' | avg_free_throws_attempted | double | Per-game average of free throws attempted. |
+#' | avg_free_throws_percentage | double | Per-game average of free-throw percentage (0-100). |
+#' | avg_rebounds | double | Per-game average of total rebounds. |
+#' | avg_offensive_rebounds | double | Per-game average of offensive rebounds. |
+#' | avg_defensive_rebounds | double | Per-game average of defensive rebounds. |
+#' | avg_assists | double | Per-game average of assists. |
+#' | avg_steals | double | Per-game average of steals. |
+#' | avg_turnovers | double | Per-game average of turnovers. |
+#' | avg_blocks | double | Per-game average of blocks made. |
+#' | avg_shots_rejected | double | Per-game average of own shots blocked. |
+#' | avg_dunks | double | Per-game average of dunks. |
+#' | avg_personal_fouls | double | Per-game average of personal fouls committed. |
+#' | avg_fouls_received | double | Per-game average of fouls drawn. |
+#' | avg_rating | double | Per-game average of ACB rating (valoracion). |
+#' | avg_plus_minus | double | Per-game average of plus/minus. |
+#' | avg_wins | double | Per-game average of team wins in the counted games (meaning unverified). |
+#' | avg_losses | double | Per-game average of team losses in the counted games (meaning unverified). |
+#' | per40_num_games | double | Per-40-minute rate of games played. |
+#' | per40_time_played | double | Always null: the per-40 block carries no time played. |
+#' | per40_starter | double | Per-40-minute rate of games started. |
+#' | per40_points | double | Per-40-minute rate of points. |
+#' | per40_max_points | double | Per-40-minute rate of most points in a single game. |
+#' | per40_three_pointers_made | double | Per-40-minute rate of three-point field goals made. |
+#' | per40_three_pointers_attempted | double | Per-40-minute rate of three-point field goals attempted. |
+#' | per40_three_pointers_percentage | double | Per-40-minute rate of three-point percentage (0-100). |
+#' | per40_two_pointers_made | double | Per-40-minute rate of two-point field goals made. |
+#' | per40_two_pointers_attempted | double | Per-40-minute rate of two-point field goals attempted. |
+#' | per40_two_pointers_percentage | double | Per-40-minute rate of two-point percentage (0-100). |
+#' | per40_free_throws_made | double | Per-40-minute rate of free throws made. |
+#' | per40_free_throws_attempted | double | Per-40-minute rate of free throws attempted. |
+#' | per40_free_throws_percentage | double | Per-40-minute rate of free-throw percentage (0-100). |
+#' | per40_rebounds | double | Per-40-minute rate of total rebounds. |
+#' | per40_offensive_rebounds | double | Per-40-minute rate of offensive rebounds. |
+#' | per40_defensive_rebounds | double | Per-40-minute rate of defensive rebounds. |
+#' | per40_assists | double | Per-40-minute rate of assists. |
+#' | per40_steals | double | Per-40-minute rate of steals. |
+#' | per40_turnovers | double | Per-40-minute rate of turnovers. |
+#' | per40_blocks | double | Per-40-minute rate of blocks made. |
+#' | per40_shots_rejected | double | Per-40-minute rate of own shots blocked. |
+#' | per40_dunks | double | Per-40-minute rate of dunks. |
+#' | per40_personal_fouls | double | Per-40-minute rate of personal fouls committed. |
+#' | per40_fouls_received | double | Per-40-minute rate of fouls drawn. |
+#' | per40_rating | double | Per-40-minute rate of ACB rating (valoracion). |
+#' | per40_plus_minus | double | Per-40-minute rate of plus/minus. |
+#' | per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
+#' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 #' @inherit acb_match_header details
 #' @examples
 #' \donttest{
@@ -2343,13 +2343,13 @@ acb_player_stats <- function(player_id, competition_id = NULL, season = NULL) {
 #' | total_max_points | integer | Season total of most points in a single game. |
 #' | total_three_pointers_made | integer | Season total of three-point field goals made. |
 #' | total_three_pointers_attempted | integer | Season total of three-point field goals attempted. |
-#' | total_three_pointers_percentage | numeric | Season total of three-point percentage (0-100). |
+#' | total_three_pointers_percentage | double | Season total of three-point percentage (0-100). |
 #' | total_two_pointers_made | integer | Season total of two-point field goals made. |
 #' | total_two_pointers_attempted | integer | Season total of two-point field goals attempted. |
-#' | total_two_pointers_percentage | numeric | Season total of two-point percentage (0-100). |
+#' | total_two_pointers_percentage | double | Season total of two-point percentage (0-100). |
 #' | total_free_throws_made | integer | Season total of free throws made. |
 #' | total_free_throws_attempted | integer | Season total of free throws attempted. |
-#' | total_free_throws_percentage | numeric | Season total of free-throw percentage (0-100). |
+#' | total_free_throws_percentage | double | Season total of free-throw percentage (0-100). |
 #' | total_rebounds | integer | Season total of total rebounds. |
 #' | total_offensive_rebounds | integer | Season total of offensive rebounds. |
 #' | total_defensive_rebounds | integer | Season total of defensive rebounds. |
@@ -2365,64 +2365,64 @@ acb_player_stats <- function(player_id, competition_id = NULL, season = NULL) {
 #' | total_plus_minus | integer | Season total of plus/minus. |
 #' | total_wins | integer | Season total of team wins in the counted games (meaning unverified). |
 #' | total_losses | integer | Season total of team losses in the counted games (meaning unverified). |
-#' | avg_num_games | numeric | Per-game average of games played. |
-#' | avg_time_played | numeric | Per-game average of time on court in seconds. |
-#' | avg_starter | numeric | Per-game average of games started. |
-#' | avg_points | numeric | Per-game average of points. |
-#' | avg_max_points | numeric | Per-game average of most points in a single game. |
-#' | avg_three_pointers_made | numeric | Per-game average of three-point field goals made. |
-#' | avg_three_pointers_attempted | numeric | Per-game average of three-point field goals attempted. |
-#' | avg_three_pointers_percentage | numeric | Per-game average of three-point percentage (0-100). |
-#' | avg_two_pointers_made | numeric | Per-game average of two-point field goals made. |
-#' | avg_two_pointers_attempted | numeric | Per-game average of two-point field goals attempted. |
-#' | avg_two_pointers_percentage | numeric | Per-game average of two-point percentage (0-100). |
-#' | avg_free_throws_made | numeric | Per-game average of free throws made. |
-#' | avg_free_throws_attempted | numeric | Per-game average of free throws attempted. |
-#' | avg_free_throws_percentage | numeric | Per-game average of free-throw percentage (0-100). |
-#' | avg_rebounds | numeric | Per-game average of total rebounds. |
-#' | avg_offensive_rebounds | numeric | Per-game average of offensive rebounds. |
-#' | avg_defensive_rebounds | numeric | Per-game average of defensive rebounds. |
-#' | avg_assists | numeric | Per-game average of assists. |
-#' | avg_steals | numeric | Per-game average of steals. |
-#' | avg_turnovers | numeric | Per-game average of turnovers. |
-#' | avg_blocks | numeric | Per-game average of blocks made. |
-#' | avg_shots_rejected | numeric | Per-game average of own shots blocked. |
-#' | avg_dunks | numeric | Per-game average of dunks. |
-#' | avg_personal_fouls | numeric | Per-game average of personal fouls committed. |
-#' | avg_fouls_received | numeric | Per-game average of fouls drawn. |
-#' | avg_rating | numeric | Per-game average of ACB rating (valoracion). |
-#' | avg_plus_minus | numeric | Per-game average of plus/minus. |
-#' | avg_wins | numeric | Per-game average of team wins in the counted games (meaning unverified). |
-#' | avg_losses | numeric | Per-game average of team losses in the counted games (meaning unverified). |
-#' | per40_num_games | numeric | Per-40-minute rate of games played. |
-#' | per40_time_played | numeric | Always null: the per-40 block carries no time played. |
-#' | per40_starter | numeric | Per-40-minute rate of games started. |
-#' | per40_points | numeric | Per-40-minute rate of points. |
-#' | per40_max_points | numeric | Per-40-minute rate of most points in a single game. |
-#' | per40_three_pointers_made | numeric | Per-40-minute rate of three-point field goals made. |
-#' | per40_three_pointers_attempted | numeric | Per-40-minute rate of three-point field goals attempted. |
-#' | per40_three_pointers_percentage | numeric | Per-40-minute rate of three-point percentage (0-100). |
-#' | per40_two_pointers_made | numeric | Per-40-minute rate of two-point field goals made. |
-#' | per40_two_pointers_attempted | numeric | Per-40-minute rate of two-point field goals attempted. |
-#' | per40_two_pointers_percentage | numeric | Per-40-minute rate of two-point percentage (0-100). |
-#' | per40_free_throws_made | numeric | Per-40-minute rate of free throws made. |
-#' | per40_free_throws_attempted | numeric | Per-40-minute rate of free throws attempted. |
-#' | per40_free_throws_percentage | numeric | Per-40-minute rate of free-throw percentage (0-100). |
-#' | per40_rebounds | numeric | Per-40-minute rate of total rebounds. |
-#' | per40_offensive_rebounds | numeric | Per-40-minute rate of offensive rebounds. |
-#' | per40_defensive_rebounds | numeric | Per-40-minute rate of defensive rebounds. |
-#' | per40_assists | numeric | Per-40-minute rate of assists. |
-#' | per40_steals | numeric | Per-40-minute rate of steals. |
-#' | per40_turnovers | numeric | Per-40-minute rate of turnovers. |
-#' | per40_blocks | numeric | Per-40-minute rate of blocks made. |
-#' | per40_shots_rejected | numeric | Per-40-minute rate of own shots blocked. |
-#' | per40_dunks | numeric | Per-40-minute rate of dunks. |
-#' | per40_personal_fouls | numeric | Per-40-minute rate of personal fouls committed. |
-#' | per40_fouls_received | numeric | Per-40-minute rate of fouls drawn. |
-#' | per40_rating | numeric | Per-40-minute rate of ACB rating (valoracion). |
-#' | per40_plus_minus | numeric | Per-40-minute rate of plus/minus. |
-#' | per40_wins | numeric | Per-40-minute rate of team wins in the counted games (meaning unverified). |
-#' | per40_losses | numeric | Per-40-minute rate of team losses in the counted games (meaning unverified). |
+#' | avg_num_games | double | Per-game average of games played. |
+#' | avg_time_played | double | Per-game average of time on court in seconds. |
+#' | avg_starter | double | Per-game average of games started. |
+#' | avg_points | double | Per-game average of points. |
+#' | avg_max_points | double | Per-game average of most points in a single game. |
+#' | avg_three_pointers_made | double | Per-game average of three-point field goals made. |
+#' | avg_three_pointers_attempted | double | Per-game average of three-point field goals attempted. |
+#' | avg_three_pointers_percentage | double | Per-game average of three-point percentage (0-100). |
+#' | avg_two_pointers_made | double | Per-game average of two-point field goals made. |
+#' | avg_two_pointers_attempted | double | Per-game average of two-point field goals attempted. |
+#' | avg_two_pointers_percentage | double | Per-game average of two-point percentage (0-100). |
+#' | avg_free_throws_made | double | Per-game average of free throws made. |
+#' | avg_free_throws_attempted | double | Per-game average of free throws attempted. |
+#' | avg_free_throws_percentage | double | Per-game average of free-throw percentage (0-100). |
+#' | avg_rebounds | double | Per-game average of total rebounds. |
+#' | avg_offensive_rebounds | double | Per-game average of offensive rebounds. |
+#' | avg_defensive_rebounds | double | Per-game average of defensive rebounds. |
+#' | avg_assists | double | Per-game average of assists. |
+#' | avg_steals | double | Per-game average of steals. |
+#' | avg_turnovers | double | Per-game average of turnovers. |
+#' | avg_blocks | double | Per-game average of blocks made. |
+#' | avg_shots_rejected | double | Per-game average of own shots blocked. |
+#' | avg_dunks | double | Per-game average of dunks. |
+#' | avg_personal_fouls | double | Per-game average of personal fouls committed. |
+#' | avg_fouls_received | double | Per-game average of fouls drawn. |
+#' | avg_rating | double | Per-game average of ACB rating (valoracion). |
+#' | avg_plus_minus | double | Per-game average of plus/minus. |
+#' | avg_wins | double | Per-game average of team wins in the counted games (meaning unverified). |
+#' | avg_losses | double | Per-game average of team losses in the counted games (meaning unverified). |
+#' | per40_num_games | double | Per-40-minute rate of games played. |
+#' | per40_time_played | double | Always null: the per-40 block carries no time played. |
+#' | per40_starter | double | Per-40-minute rate of games started. |
+#' | per40_points | double | Per-40-minute rate of points. |
+#' | per40_max_points | double | Per-40-minute rate of most points in a single game. |
+#' | per40_three_pointers_made | double | Per-40-minute rate of three-point field goals made. |
+#' | per40_three_pointers_attempted | double | Per-40-minute rate of three-point field goals attempted. |
+#' | per40_three_pointers_percentage | double | Per-40-minute rate of three-point percentage (0-100). |
+#' | per40_two_pointers_made | double | Per-40-minute rate of two-point field goals made. |
+#' | per40_two_pointers_attempted | double | Per-40-minute rate of two-point field goals attempted. |
+#' | per40_two_pointers_percentage | double | Per-40-minute rate of two-point percentage (0-100). |
+#' | per40_free_throws_made | double | Per-40-minute rate of free throws made. |
+#' | per40_free_throws_attempted | double | Per-40-minute rate of free throws attempted. |
+#' | per40_free_throws_percentage | double | Per-40-minute rate of free-throw percentage (0-100). |
+#' | per40_rebounds | double | Per-40-minute rate of total rebounds. |
+#' | per40_offensive_rebounds | double | Per-40-minute rate of offensive rebounds. |
+#' | per40_defensive_rebounds | double | Per-40-minute rate of defensive rebounds. |
+#' | per40_assists | double | Per-40-minute rate of assists. |
+#' | per40_steals | double | Per-40-minute rate of steals. |
+#' | per40_turnovers | double | Per-40-minute rate of turnovers. |
+#' | per40_blocks | double | Per-40-minute rate of blocks made. |
+#' | per40_shots_rejected | double | Per-40-minute rate of own shots blocked. |
+#' | per40_dunks | double | Per-40-minute rate of dunks. |
+#' | per40_personal_fouls | double | Per-40-minute rate of personal fouls committed. |
+#' | per40_fouls_received | double | Per-40-minute rate of fouls drawn. |
+#' | per40_rating | double | Per-40-minute rate of ACB rating (valoracion). |
+#' | per40_plus_minus | double | Per-40-minute rate of plus/minus. |
+#' | per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
+#' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 #' @eval .intl_details(.acb_match_header_details, "acb_player_totals(player_id = 20209407)")
 #' @export
 #' @family ACB Functions
@@ -2543,13 +2543,13 @@ acb_career_trophies <- function(player_id) {
 #' | points | integer | Points (player game-log row) |
 #' | three_pointers_made | integer | Three-point field goals made |
 #' | three_pointers_attempted | integer | Three-point field goals attempted |
-#' | three_pointers_percentage | numeric | Three-point percentage, 0-100 with one decimal; 0 when there was no attempt |
+#' | three_pointers_percentage | double | Three-point percentage, 0-100 with one decimal; 0 when there was no attempt |
 #' | two_pointers_made | integer | Two-point field goals made |
 #' | two_pointers_attempted | integer | Two-point field goals attempted |
-#' | two_pointers_percentage | numeric | Two-point percentage, 0-100 with one decimal; 0 when there was no attempt |
+#' | two_pointers_percentage | double | Two-point percentage, 0-100 with one decimal; 0 when there was no attempt |
 #' | free_throws_made | integer | Free throws the player made in that match (a count, not a season total). |
 #' | free_throws_attempted | integer | Free throws the player attempted in that match (a count, not a season total). |
-#' | free_throws_percentage | numeric | Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt |
+#' | free_throws_percentage | double | Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt |
 #' | rebounds | integer | Total rebounds in the game. |
 #' | offensive_rebounds | integer | Offensive rebounds the player took in that match (a count; part of the total rebounds). |
 #' | defensive_rebounds | integer | Defensive rebounds the player took in that match (a count; part of the total rebounds). |

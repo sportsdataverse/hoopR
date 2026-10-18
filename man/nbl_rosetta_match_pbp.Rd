@@ -19,9 +19,9 @@ A \code{hoopR_data} tibble (one row per event, sorted on action_id):\tabular{lll
    period \tab integer \tab Period number, an INTEGER here (1-4 = quarters) \cr
    period_type \tab character \tab Period type: regular (overtime unobserved) \cr
    clock \tab character \tab Game clock at the event, MM:SS remaining in the period; null on some feed-control events. \cr
-   clock_seconds \tab numeric \tab Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. \cr
+   clock_seconds \tab double \tab Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. \cr
    shot_clock \tab character \tab Shot clock at the event, MM:SS; in Genius-era matches it repeats the game clock (no shot-clock data) \cr
-   shot_clock_seconds \tab numeric \tab Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. \cr
+   shot_clock_seconds \tab double \tab Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. \cr
    score_home \tab integer \tab Home team's running score after the event (score_1 in the body). \cr
    score_away \tab integer \tab Away team's running score after the event (score_2 in the body). \cr
    action_type \tab character \tab Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, possession, possessionArrow, period, fixture, main (clock start/stop) \cr
@@ -35,8 +35,8 @@ A \code{hoopR_data} tibble (one row per event, sorted on action_id):\tabular{lll
    player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
    player_name \tab character \tab Full name of the player the event belongs to; null for events no player owns (team rebounds, period starts). \cr
    jersey_number \tab character \tab Jersey number of the player at the event, as text (a WNBL backfill writes 6.0). \cr
-   x \tab numeric \tab Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x > 50 for two periods and x < 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. \cr
-   y \tab numeric \tab Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. \cr
+   x \tab double \tab Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x > 50 for two periods and x < 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. \cr
+   y \tab double \tab Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. \cr
    readable_action_type \tab character \tab Human-readable event label, e.g. "Game - Game completed". \cr
    system_action_type \tab character \tab Machine event label, e.g. game_game_completed. \cr
    timestamp \tab character \tab Wall-clock time of the event, ISO 8601 without offset (UTC) \cr
@@ -74,7 +74,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_player_box]{nbl_rosetta_match_player_box()}},
@@ -97,4 +97,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

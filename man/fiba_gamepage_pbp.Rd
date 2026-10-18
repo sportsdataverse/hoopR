@@ -29,7 +29,7 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    order \tab integer \tab Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. \cr
    clock \tab character \tab Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). \cr
    clock_seconds \tab integer \tab Seconds remaining in the period, derived from clock. \cr
-   wall_time_ms \tab numeric \tab Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) \cr
+   wall_time_ms \tab double \tab Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) \cr
    score_a \tab integer \tab Team A score after the action. \cr
    score_b \tab integer \tab Team B score after the action. \cr
    action_code \tab character \tab Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). \cr

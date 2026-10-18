@@ -24,13 +24,13 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    player_id \tab integer \tab ACB licence number: the person id everywhere (box score, play-by-play, shots, rosters, the player routes). Taken from the request when the body does not name the player. \cr
    group \tab character \tab Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). \cr
    stat \tab character \tab Statistic in snake_case (efg_pct, ts_pct, ast_pct, usage-style ratios, pace ...). \cr
-   match_value \tab numeric \tab The statistic in this game (the API's partido). \cr
-   season_value \tab numeric \tab The player's value over the season (temporada). \cr
-   win_value \tab numeric \tab The player's value in his team's wins. \cr
-   loss_value \tab numeric \tab The player's value in his team's losses. \cr
-   season_diff \tab numeric \tab Game value minus season value (temporadaDiff). \cr
-   win_diff \tab numeric \tab Game value minus the wins value (winDiff). \cr
-   loss_diff \tab numeric \tab Game value minus the losses value (lossDiff). \cr
+   match_value \tab double \tab The statistic in this game (the API's partido). \cr
+   season_value \tab double \tab The player's value over the season (temporada). \cr
+   win_value \tab double \tab The player's value in his team's wins. \cr
+   loss_value \tab double \tab The player's value in his team's losses. \cr
+   season_diff \tab double \tab Game value minus season value (temporadaDiff). \cr
+   win_diff \tab double \tab Game value minus the wins value (winDiff). \cr
+   loss_diff \tab double \tab Game value minus the losses value (lossDiff). \cr
 }
 }
 \description{

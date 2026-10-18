@@ -2,8 +2,11 @@
 
 Copied from sdv-py (`sportsdataverse-py`) at e3d232ebc9bf9e9f98225666a67707b8e554f9b7 (origin/main), renamed short (R CMD check warns on
 paths over 100 characters). `parity/*.csv` are sdv-py's parser frames on the SAME fixture
-(`parse_<route>(raw, columns=_PARSER_COLUMNS[route])`, `write_csv(null_value="NA")`), generated with
-sdv-py's own venv and that tree on PYTHONPATH; `fiba_gdap/parity/dtypes.csv` holds their polars dtypes.
+(`parse_<route>(raw, columns=_PARSER_COLUMNS[route])`), generated with sdv-py's own venv and that tree on
+PYTHONPATH; `fiba_gdap/parity/dtypes.csv` holds their polars dtypes. The parity CSVs (both dirs) were regenerated
+on sdv-py `38a22f936d` (2026-10-18) with polars' default `write_csv()`: a null is an empty field and `""` a quoted
+one, so a literal "NA" (Namibia's code) stays a value; the tests read them with `intl_read_oracle()` of
+`helper-intl.R`. The frames are unchanged from e3d232ebc9, which wrote `null_value="NA"`.
 
 `fiba_gamepage/page_wc2023_final.rsc.gz` is the live `RSC: 1` text/x-component payload of
 https://www.fiba.basketball/en/history/201-fiba-basketball-world-cup/208182/games/100720-GER-SRB,

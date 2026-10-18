@@ -61,8 +61,8 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    player_team_number \tab integer \tab Team number in the game (1 home, 2 away). \cr
    player_first_name \tab character \tab Given (first) name(s) of the player. \cr
    player_family_name \tab character \tab Family name (this route says familyName; the others lastName). \cr
-   coordinates_x \tab numeric \tab Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. \cr
-   coordinates_y \tab numeric \tab Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. \cr
+   coordinates_x \tab double \tab Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. \cr
+   coordinates_y \tab double \tab Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. \cr
    period_time \tab integer \tab Marker lines only: 0 (an integer), the start of the period. \cr
 }
 }

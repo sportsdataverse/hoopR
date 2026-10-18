@@ -23,9 +23,9 @@ A \code{hoopR_data} tibble: One competition team with its season scoring average
    team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
    club_id \tab integer \tab Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. \cr
    club_name \tab character \tab Country name in English, Belgium or Netherlands. \cr
-   average_score_for \tab numeric \tab Points scored per game by the team over the season; null for a team with no statistics. \cr
-   average_score_against \tab numeric \tab Points conceded per game; null for a team with no statistics. \cr
-   field_goal_percent \tab numeric \tab Team field-goal percentage 0-100; null for a team with no statistics. \cr
+   average_score_for \tab double \tab Points scored per game by the team over the season; null for a team with no statistics. \cr
+   average_score_against \tab double \tab Points conceded per game; null for a team with no statistics. \cr
+   field_goal_percent \tab double \tab Team field-goal percentage 0-100; null for a team with no statistics. \cr
 }
 }
 \description{

@@ -15,19 +15,19 @@ nbl_rosetta_player_stats(player_id, org = "nbl")
 A \code{hoopR_data} tibble (one row per season and period):\tabular{lll}{
    col_name \tab type \tab description \cr
    org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   assists_average \tab numeric \tab Assists per game. \cr
-   blocks_average \tab numeric \tab Blocks per game. \cr
+   assists_average \tab double \tab Assists per game. \cr
+   blocks_average \tab double \tab Blocks per game. \cr
    field_goals_attempted \tab integer \tab Field goals attempted, season total. \cr
    field_goals_made \tab integer \tab Field goals made, season total. \cr
-   field_goals_attempted_average \tab numeric \tab Field goals attempted per game. \cr
-   field_goals_made_average \tab numeric \tab Field goals made per game. \cr
-   field_goals_percentage \tab numeric \tab Field goals made / attempted, a 0-1 FRACTION. \cr
-   fouls_average \tab numeric \tab Fouls committed (personal + technical + others) per game. \cr
+   field_goals_attempted_average \tab double \tab Field goals attempted per game. \cr
+   field_goals_made_average \tab double \tab Field goals made per game. \cr
+   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
+   fouls_average \tab double \tab Fouls committed (personal + technical + others) per game. \cr
    free_throws_attempted \tab integer \tab Free throws attempted, season total. \cr
    free_throws_made \tab integer \tab Free throws made, season total. \cr
-   free_throws_attempted_average \tab numeric \tab Free throws attempted per game. \cr
-   free_throws_made_average \tab numeric \tab Free throws made per game. \cr
-   free_throws_percentage \tab numeric \tab Free throws made / attempted, a 0-1 FRACTION. \cr
+   free_throws_attempted_average \tab double \tab Free throws attempted per game. \cr
+   free_throws_made_average \tab double \tab Free throws made per game. \cr
+   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
    games \tab integer \tab Games played in the season (in the period rows, by the player or team). \cr
    games_started \tab integer \tab Games in the starting five. \cr
    offensive_rebounds \tab integer \tab Offensive rebounds, season total. \cr
@@ -36,31 +36,31 @@ A \code{hoopR_data} tibble (one row per season and period):\tabular{lll}{
    technical_fouls \tab integer \tab Technical fouls, season total. \cr
    period \tab integer \tab Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) \cr
    three_points_attempted \tab integer \tab Three-point field goals attempted, season total. \cr
-   three_points_attempted_average \tab numeric \tab Three-point field goals attempted per game. \cr
+   three_points_attempted_average \tab double \tab Three-point field goals attempted per game. \cr
    three_points_made \tab integer \tab Three-point field goals made, season total. \cr
-   three_points_made_average \tab numeric \tab Three-point field goals made per game. \cr
-   three_points_percentage \tab numeric \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
-   turnovers_average \tab numeric \tab Turnovers per game. \cr
+   three_points_made_average \tab double \tab Three-point field goals made per game. \cr
+   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
+   turnovers_average \tab double \tab Turnovers per game. \cr
    turnovers \tab integer \tab Turnovers, season total. \cr
    two_points_attempted \tab integer \tab Two-point field goals attempted, season total. \cr
-   two_points_attempted_average \tab numeric \tab Two-point field goals attempted per game. \cr
+   two_points_attempted_average \tab double \tab Two-point field goals attempted per game. \cr
    two_points_made \tab integer \tab Two-point field goals made, season total. \cr
-   two_points_made_average \tab numeric \tab Two-point field goals made per game. \cr
-   two_points_percentage \tab numeric \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
-   minutes \tab numeric \tab Minutes played, decimal minutes. \cr
-   minutes_average \tab numeric \tab Minutes per game, decimal minutes. \cr
+   two_points_made_average \tab double \tab Two-point field goals made per game. \cr
+   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
+   minutes \tab double \tab Minutes played, decimal minutes. \cr
+   minutes_average \tab double \tab Minutes per game, decimal minutes. \cr
    points \tab integer \tab Points, season total. \cr
    rebounds \tab integer \tab Total rebounds, season total. \cr
    assists \tab integer \tab Assists, season total. \cr
    blocks \tab integer \tab Blocks, season total. \cr
    steals \tab integer \tab Steals, season total. \cr
    plus_minus \tab integer \tab Point differential while on court, season total. \cr
-   plus_minus_average \tab numeric \tab Point differential while on court per game. \cr
+   plus_minus_average \tab double \tab Point differential while on court per game. \cr
    efficiency \tab integer \tab Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV), season total. \cr
-   efficiency_average \tab numeric \tab Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. \cr
-   points_average \tab numeric \tab Points per game. \cr
-   rebounds_average \tab numeric \tab Total rebounds per game. \cr
-   steals_average \tab numeric \tab Steals per game. \cr
+   efficiency_average \tab double \tab Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. \cr
+   points_average \tab double \tab Points per game. \cr
+   rebounds_average \tab double \tab Total rebounds per game. \cr
+   steals_average \tab double \tab Steals per game. \cr
    player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
    rosetta_player_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. \cr
    player_first_name \tab character \tab The player's given name, e.g. Elijah. \cr
@@ -101,8 +101,8 @@ A \code{hoopR_data} tibble (one row per season and period):\tabular{lll}{
    player_active \tab logical \tab Player record is active. \cr
    player_date_of_birth \tab character \tab Date of birth, ISO date. \cr
    player_nationality \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   player_height \tab numeric \tab Height in centimetres. \cr
-   player_weight \tab numeric \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
+   player_height \tab double \tab Height in centimetres. \cr
+   player_weight \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
    team_gender \tab character \tab Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) \cr
    synthetic_from_roster \tab logical \tab Row built from the roster because the player has no season statistics (all stats 0) \cr
 }
@@ -138,7 +138,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -161,4 +161,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

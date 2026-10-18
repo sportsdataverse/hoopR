@@ -37,19 +37,19 @@ raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
    defensive_foul \tab integer \tab Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. \cr
    dunk_made \tab integer \tab Dunks made (a subset of the two-point field goals). \cr
    dunk_all \tab integer \tab Dunks attempted. \cr
-   dunk_percent \tab numeric \tab Dunk percentage 0-100; 0 when none were attempted. \cr
+   dunk_percent \tab double \tab Dunk percentage 0-100; 0 when none were attempted. \cr
    two_point_made \tab integer \tab Two-point field goals made. \cr
    two_point_all \tab integer \tab Two-point field goals attempted. \cr
-   two_point_percent \tab numeric \tab Two-point percentage 0-100. \cr
+   two_point_percent \tab double \tab Two-point percentage 0-100. \cr
    three_point_made \tab integer \tab Three-point field goals made. \cr
    three_point_all \tab integer \tab Three-point field goals attempted. \cr
-   three_point_percent \tab numeric \tab Three-point percentage 0-100. \cr
+   three_point_percent \tab double \tab Three-point percentage 0-100. \cr
    throw_made \tab integer \tab All field goals made, two- plus three-pointers (the provider calls them 'throw'). \cr
    throw_all \tab integer \tab All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_percent \tab numeric \tab Field-goal percentage 0-100. \cr
+   throw_percent \tab double \tab Field-goal percentage 0-100. \cr
    free_throw_made \tab integer \tab Free throws made. \cr
    free_throw_all \tab integer \tab Free throws attempted. \cr
-   free_throw_percent \tab numeric \tab Free-throw percentage 0-100. \cr
+   free_throw_percent \tab double \tab Free-throw percentage 0-100. \cr
    offensive_rebound \tab integer \tab Offensive rebounds. \cr
    defensive_rebound \tab integer \tab Defensive rebounds. \cr
    total_rebound \tab integer \tab Total rebounds (offensive plus defensive). \cr

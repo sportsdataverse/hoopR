@@ -100,16 +100,16 @@ The columns of \code{\link[=genius_team_box]{genius_team_box()}}:\tabular{lll}{
    seconds_played \tab integer \tab Seconds played parsed from the printed mm:ss text as minutes * 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. \cr
    field_goals_made \tab integer \tab Team total: field goals made \cr
    field_goals_attempted \tab integer \tab Team total: field goals attempted \cr
-   field_goals_percentage \tab numeric \tab Team total: field-goal percentage, 0-100, rounded to an integer by the feed \cr
+   field_goals_percentage \tab double \tab Team total: field-goal percentage, 0-100, rounded to an integer by the feed \cr
    three_pointers_made \tab integer \tab Team total: three-pointers made \cr
    three_pointers_attempted \tab integer \tab Team total: three-pointers attempted \cr
-   three_pointers_percentage \tab numeric \tab Team total: three-point percentage, 0-100, rounded to an integer \cr
+   three_pointers_percentage \tab double \tab Team total: three-point percentage, 0-100, rounded to an integer \cr
    two_pointers_made \tab integer \tab Team total: two-pointers made \cr
    two_pointers_attempted \tab integer \tab Team total: two-pointers attempted \cr
-   two_pointers_percentage \tab numeric \tab Team total: two-point percentage, 0-100, rounded to an integer \cr
+   two_pointers_percentage \tab double \tab Team total: two-point percentage, 0-100, rounded to an integer \cr
    free_throws_made \tab integer \tab Team total: free throws made \cr
    free_throws_attempted \tab integer \tab Team total: free throws attempted \cr
-   free_throws_percentage \tab numeric \tab Team total: free-throw percentage, 0-100, rounded to an integer \cr
+   free_throws_percentage \tab double \tab Team total: free-throw percentage, 0-100, rounded to an integer \cr
    rebounds_defensive \tab integer \tab Team total: defensive rebounds \cr
    rebounds_offensive \tab integer \tab Team total: offensive rebounds \cr
    rebounds_total \tab integer \tab Team total: total rebounds \cr
@@ -127,8 +127,8 @@ The columns of \code{\link[=genius_team_box]{genius_team_box()}}:\tabular{lll}{
    points_in_the_paint \tab integer \tab Team total: points in the paint \cr
    eff_1 \tab integer \tab Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
    eff_2 \tab integer \tab Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Team tot_eff_2 is 2 in every 2016+ sample (a constant, not a stat). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
-   eff_3 \tab numeric \tab Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
-   eff_4 \tab numeric \tab Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
+   eff_3 \tab double \tab Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
+   eff_4 \tab double \tab Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
    eff_5 \tab integer \tab Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
    eff_6 \tab integer \tab Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
    eff_7 \tab integer \tab Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
@@ -137,7 +137,7 @@ The columns of \code{\link[=genius_team_box]{genius_team_box()}}:\tabular{lll}{
    biggest_scoring_run \tab integer \tab Team total: biggest unanswered scoring run, points \cr
    lead_changes \tab integer \tab Team total: lead changes in the game (same value on both teams) \cr
    times_scores_level \tab integer \tab Team total: times the score was tied (same value on both teams) \cr
-   time_leading \tab numeric \tab Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) \cr
+   time_leading \tab double \tab Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) \cr
    fouls_team \tab integer \tab Team total: team (bench) fouls \cr
    fouls_total \tab integer \tab Team total: all fouls committed (personal + technical + team bench) \cr
    rebounds_team \tab integer \tab Team total: team rebounds (credited to no player) \cr
@@ -170,16 +170,16 @@ The columns of \code{\link[=genius_player_box]{genius_player_box()}}:\tabular{ll
    seconds_played \tab integer \tab Seconds played parsed from the printed mm:ss text as minutes * 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. \cr
    field_goals_made \tab integer \tab Field goals the player made in the game (two- and three-pointers together; a count). \cr
    field_goals_attempted \tab integer \tab Field goals the player attempted in the game (two- and three-pointers together; a count). \cr
-   field_goals_percentage \tab numeric \tab Field-goal percentage, 0-100, rounded to an integer by the feed \cr
+   field_goals_percentage \tab double \tab Field-goal percentage, 0-100, rounded to an integer by the feed \cr
    three_pointers_made \tab integer \tab Three-pointers made \cr
    three_pointers_attempted \tab integer \tab Three-pointers attempted \cr
-   three_pointers_percentage \tab numeric \tab Three-point percentage, 0-100, rounded to an integer \cr
+   three_pointers_percentage \tab double \tab Three-point percentage, 0-100, rounded to an integer \cr
    two_pointers_made \tab integer \tab Two-pointers made \cr
    two_pointers_attempted \tab integer \tab Two-pointers attempted \cr
-   two_pointers_percentage \tab numeric \tab Two-point percentage, 0-100, rounded to an integer \cr
+   two_pointers_percentage \tab double \tab Two-point percentage, 0-100, rounded to an integer \cr
    free_throws_made \tab integer \tab Free throws the player made in the game (a count). \cr
    free_throws_attempted \tab integer \tab Free throws the player attempted in the game (a count). \cr
-   free_throws_percentage \tab numeric \tab Free-throw percentage, 0-100, rounded to an integer \cr
+   free_throws_percentage \tab double \tab Free-throw percentage, 0-100, rounded to an integer \cr
    rebounds_defensive \tab integer \tab Defensive rebounds \cr
    rebounds_offensive \tab integer \tab Offensive rebounds \cr
    rebounds_total \tab integer \tab Total rebounds (offensive plus defensive) the player collected in the game. \cr
@@ -198,8 +198,8 @@ The columns of \code{\link[=genius_player_box]{genius_player_box()}}:\tabular{ll
    plus_minus_points \tab integer \tab Plus/minus: team point margin while the player was on court \cr
    eff_1 \tab integer \tab Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
    eff_2 \tab integer \tab Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_3 \tab numeric \tab Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_4 \tab numeric \tab Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
+   eff_3 \tab double \tab Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
+   eff_4 \tab double \tab Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
    eff_5 \tab integer \tab Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
    eff_6 \tab integer \tab Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
    eff_7 \tab integer \tab Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site. Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
@@ -253,8 +253,8 @@ The columns of \code{\link[=genius_shots]{genius_shots()}}:\tabular{lll}{
    action_type \tab character \tab Shot value: 2pt or 3pt \cr
    sub_type \tab character \tab Shot type (layup, drivinglayup, jumpshot, pullupjumpshot, dunk, ...) \cr
    result \tab integer \tab Shot result: 1 = made, 0 = missed. \cr
-   x \tab numeric \tab Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified \cr
-   y \tab numeric \tab Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified \cr
+   x \tab double \tab Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified \cr
+   y \tab double \tab Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified \cr
    player \tab character \tab Shooter's display name as the org enters it, in the local script when it uses one. \cr
    shirt_number \tab character \tab Shooter's shirt number (string) \cr
 }
@@ -281,7 +281,7 @@ Access, proxy and error notes: see \code{\link[=genius_game]{genius_game()}}.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other Genius:
+Other Genius Functions:
 \code{\link{bal_competition}},
 \code{\link{esake_competition}},
 \code{\link[=genius_competition_games]{genius_competition_games()}},
@@ -301,4 +301,4 @@ Other Genius:
 \code{\link{lub_competition}},
 \code{\link{nznbl_competition}}
 }
-\concept{Genius}
+\concept{Genius Functions}

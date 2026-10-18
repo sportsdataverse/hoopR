@@ -85,7 +85,7 @@
 #' after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 #' game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 #' `hoopR_error`.
-#' @family ABA
+#' @family ABA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -159,7 +159,7 @@ aba_game <- function(game_no, season, league = "aba") {
 #' ```r
 #'  aba_periods(game_no = 6, season = 2026)
 #' ```
-#' @family ABA
+#' @family ABA Functions
 #' @export
 aba_periods <- function(game_no, season, league = "aba") {
   .aba_wrap("periods", list(game_no = game_no, season = season, league = league),
@@ -260,7 +260,7 @@ aba_periods <- function(game_no, season, league = "aba") {
 #' after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 #' game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 #' `hoopR_error`.
-#' @family ABA
+#' @family ABA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -356,7 +356,7 @@ aba_box_players <- function(game_no, season, league = "aba") {
 #' after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 #' game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 #' `hoopR_error`.
-#' @family ABA
+#' @family ABA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -442,7 +442,7 @@ aba_box_teams <- function(game_no, season, league = "aba") {
 #' after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 #' game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 #' `hoopR_error`.
-#' @family ABA
+#' @family ABA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -524,7 +524,7 @@ aba_pbp <- function(game_no, season, league = "aba") {
 #' ```r
 #'  aba_shots(game_no = 6, season = 2026)
 #' ```
-#' @family ABA
+#' @family ABA Functions
 #' @export
 aba_shots <- function(game_no, season, league = "aba") {
   .aba_wrap("shots", list(game_no = game_no, season = season, league = league),
@@ -595,7 +595,7 @@ aba_shots <- function(game_no, season, league = "aba") {
 #' ```r
 #'  aba_score_flow(game_no = 6, season = 2026)
 #' ```
-#' @family ABA
+#' @family ABA Functions
 #' @export
 aba_score_flow <- function(game_no, season, league = "aba") {
   .aba_wrap("score_flow", list(game_no = game_no, season = season, league = league),
@@ -666,7 +666,7 @@ aba_score_flow <- function(game_no, season, league = "aba") {
 #' ```r
 #'  aba_score_difference(game_no = 6, season = 2026)
 #' ```
-#' @family ABA
+#' @family ABA Functions
 #' @export
 aba_score_difference <- function(game_no, season, league = "aba") {
   .aba_wrap("score_difference", list(game_no = game_no, season = season, league = league),
@@ -746,7 +746,7 @@ aba_score_difference <- function(game_no, season, league = "aba") {
 #' after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 #' game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 #' `hoopR_error`.
-#' @family ABA
+#' @family ABA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -825,7 +825,7 @@ aba_calendar <- function(season, league = "aba") {
 #' after three attempts, a redirect off the ABA sites) or the answer is not the one asked for (a page for another
 #' game, season or league, an unfinished game, a helper that does not belong to the game, layout drift). All inherit
 #' `hoopR_error`.
-#' @family ABA
+#' @family ABA Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -906,7 +906,7 @@ aba_standings <- function(season, league = "aba") {
 #' ```r
 #'  aba_player(player_id = 4807, season = 2026)
 #' ```
-#' @family ABA
+#' @family ABA Functions
 #' @export
 aba_player <- function(player_id, season, league = "aba") {
   .aba_wrap("player", list(player_id = player_id, season = season, league = league),
@@ -1004,7 +1004,7 @@ aba_player <- function(player_id, season, league = "aba") {
 #' ```r
 #'  aba_player_games(player_id = 4807, season = 2026)
 #' ```
-#' @family ABA
+#' @family ABA Functions
 #' @export
 aba_player_games <- function(player_id, season, league = "aba") {
   .aba_wrap("player_games", list(player_id = player_id, season = season, league = league),

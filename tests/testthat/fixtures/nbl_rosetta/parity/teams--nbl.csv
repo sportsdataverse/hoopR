@@ -1,4 +1,4 @@
 org,team_id,rosetta_team_id,name,team_code,established,head_coach,championships,website,external_media_competitor_id,conference,division,venue_name,venue_address,venue_state,venue_country,venue_timezone,venue_latitude,venue_longitude,venue_capacity,conference_name,division_name
-nbl,bf0e988e-410c-11f0-a62f-1b3c55488bbb,8d26bbf0-a2cf-4704-9b70-f624771ed1cc,Adelaide City Eagles,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-nbl,bedd705b-410c-11f0-8d69-1b3c55488bbb,bbae77db-317d-4c17-aa04-75d53d20ad15,NZ Breakers,NZL,2003,Gordon Herbert,"2011, 2012, 2013, 2015",https://www.nzbreakers.basketball/,531218,NA,NA,North Shore Events Centre,NA,NA,NA,Pacific/Auckland,NA,NA,NA,NA,NA
-nbl,bfd26c1b-410c-11f0-9cf9-1b3c55488bbb,b82a3f8a-b3d8-4785-8809-842036232161,Forrestville Eagles,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+nbl,bf0e988e-410c-11f0-a62f-1b3c55488bbb,8d26bbf0-a2cf-4704-9b70-f624771ed1cc,Adelaide City Eagles,,,,,,,,,,,,,,,,,,
+nbl,bedd705b-410c-11f0-8d69-1b3c55488bbb,bbae77db-317d-4c17-aa04-75d53d20ad15,NZ Breakers,NZL,2003,Gordon Herbert,"2011, 2012, 2013, 2015",https://www.nzbreakers.basketball/,531218,,,North Shore Events Centre,,,,Pacific/Auckland,,,,,
+nbl,bfd26c1b-410c-11f0-9cf9-1b3c55488bbb,b82a3f8a-b3d8-4785-8809-842036232161,Forrestville Eagles,,,,,,,,,,,,,,,,,,

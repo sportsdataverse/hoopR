@@ -26,13 +26,13 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
    group \tab character \tab Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). \cr
    stat \tab character \tab Statistic in snake_case (efg_pct, orb_pct, tov_pct, f_tr = free-throw rate, possessions, pace, points_per_possession, ast_ratio, ..., net_rating, oer, der, trb_pct). \cr
-   match_value \tab numeric \tab The statistic in this game (the API's partido). \cr
-   season_value \tab numeric \tab The team's value over the season (the API's temporada). \cr
-   win_value \tab numeric \tab The team's value in its wins (the API's win). \cr
-   loss_value \tab numeric \tab The team's value in its losses (the API's loss). \cr
-   season_diff \tab numeric \tab Game value minus season value (temporadaDiff). \cr
-   win_diff \tab numeric \tab Game value minus the wins value (winDiff). \cr
-   loss_diff \tab numeric \tab Game value minus the losses value (lossDiff). \cr
+   match_value \tab double \tab The statistic in this game (the API's partido). \cr
+   season_value \tab double \tab The team's value over the season (the API's temporada). \cr
+   win_value \tab double \tab The team's value in its wins (the API's win). \cr
+   loss_value \tab double \tab The team's value in its losses (the API's loss). \cr
+   season_diff \tab double \tab Game value minus season value (temporadaDiff). \cr
+   win_diff \tab double \tab Game value minus the wins value (winDiff). \cr
+   loss_diff \tab double \tab Game value minus the losses value (lossDiff). \cr
 }
 }
 \description{

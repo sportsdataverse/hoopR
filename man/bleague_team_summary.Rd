@@ -28,16 +28,16 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
    team_name_e \tab character \tab Team name in English, uppercase. \cr
    fg_made \tab integer \tab Field goals made (PTM). \cr
    fg_attempted \tab integer \tab Field goals attempted (PTA). \cr
-   fg_pct \tab numeric \tab Field-goal percentage 0-100, one decimal. \cr
+   fg_pct \tab double \tab Field-goal percentage 0-100, one decimal. \cr
    fg2_made \tab integer \tab Two-point field goals made. \cr
    fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab numeric \tab Two-point percentage 0-100. \cr
+   fg2_pct \tab double \tab Two-point percentage 0-100. \cr
    fg3_made \tab integer \tab Three-point field goals made. \cr
    fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab numeric \tab Three-point percentage 0-100. \cr
+   fg3_pct \tab double \tab Three-point percentage 0-100. \cr
    ft_made \tab integer \tab Free throws made. \cr
    ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab numeric \tab Free-throw percentage 0-100. \cr
+   ft_pct \tab double \tab Free-throw percentage 0-100. \cr
    reb_off \tab integer \tab Offensive rebounds. \cr
    reb_def \tab integer \tab Defensive rebounds. \cr
    reb \tab integer \tab Total rebounds. \cr
@@ -117,7 +117,7 @@ schedule list, or layout drift). All inherit \code{hoopR_error}.
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 \code{\link[=bleague_game_info]{bleague_game_info()}},
 \code{\link[=bleague_leaders]{bleague_leaders()}},
 \code{\link[=bleague_pbp]{bleague_pbp()}},
@@ -132,4 +132,4 @@ Other B.LEAGUE:
 \code{\link[=bleague_standings]{bleague_standings()}},
 \code{\link[=bleague_team_box]{bleague_team_box()}}
 }
-\concept{B.LEAGUE}
+\concept{B.LEAGUE Functions}

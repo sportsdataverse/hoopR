@@ -104,8 +104,8 @@
 #' | referee_id | character | Crew-chief referee RefereeID as text (key space: officials; stability unverified). |
 #' | sub_referee_id1 | character | Second referee RefereeID as text. |
 #' | sub_referee_id2 | character | Third referee RefereeID as text. |
-#' | temperature | numeric | Temperature; null in every observed body, so its dtype is an assumption. |
-#' | humidity | numeric | Humidity; null in every observed body, so its dtype is an assumption. |
+#' | temperature | double | Temperature; null in every observed body, so its dtype is an assumption. |
+#' | humidity | double | Humidity; null in every observed body, so its dtype is an assumption. |
 #' | convention_name_j | character | Competition name in Japanese (e.g. the Resona Group B.LEAGUE 2025-26 B1 regular season). |
 #' | convention_name_e | character | Competition name in English; empty (null) on early v1 bodies. |
 #' | convention_title_j | character | Competition title in Japanese (v1 header only). |
@@ -175,7 +175,7 @@
 #' | away_score_p12 | integer | Away team points scored IN period 12 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
 #' | away_score_p13 | integer | Away team points scored IN period 13 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
 #' | away_score_p14 | integer | Away team points scored IN period 14 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -210,7 +210,7 @@ bleague_game_info <- function(schedule_key, season = NULL) {
 #' | team_side | character | Side of the game the row belongs to: home or away. |
 #' | team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
 #' | points | integer | Points the team scored IN this period (not cumulative); from the header's score slots. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_period_scores <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -280,15 +280,15 @@ bleague_period_scores <- function(schedule_key, season = NULL) {
 #' | dunks | integer | Dunks made (PT2DUNK); v1 box rows only, null on v2. |
 #' | efficiency | integer | Efficiency rating (kokendo), era-dependent: v2 = points + rebounds + assists + steals + blocks + fouls drawn - missed FG - missed FT - turnovers - fouls - shots blocked (PIR); v1 omits fouls drawn, fouls and shots blocked. |
 #' | plus_minus | integer | Plus/minus: team point difference while on court. v2 from 2022-23 only; null on totals and half rows. |
-#' | ast_to | numeric | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
-#' | efg | numeric | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
-#' | ts | numeric | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
-#' | usg | numeric | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
-#' | off_rtg | numeric | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' | def_rtg | numeric | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' | net_rtg | numeric | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' | poss | numeric | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' @family B.LEAGUE
+#' | ast_to | double | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
+#' | efg | double | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
+#' | ts | double | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
+#' | usg | double | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
+#' | off_rtg | double | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' | def_rtg | double | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' | net_rtg | double | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' | poss | double | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -361,15 +361,15 @@ bleague_player_box <- function(schedule_key, season = NULL) {
 #' | dunks | integer | Dunks made (PT2DUNK); v1 box rows only, null on v2. |
 #' | efficiency | integer | Efficiency rating (kokendo), era-dependent: v2 = points + rebounds + assists + steals + blocks + fouls drawn - missed FG - missed FT - turnovers - fouls - shots blocked (PIR); v1 omits fouls drawn, fouls and shots blocked. |
 #' | plus_minus | integer | Plus/minus: team point difference while on court. v2 from 2022-23 only; null on totals and half rows. |
-#' | ast_to | numeric | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
-#' | efg | numeric | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
-#' | ts | numeric | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
-#' | usg | numeric | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
-#' | off_rtg | numeric | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' | def_rtg | numeric | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' | net_rtg | numeric | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' | poss | numeric | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' @family B.LEAGUE
+#' | ast_to | double | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
+#' | efg | double | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
+#' | ts | double | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
+#' | usg | double | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
+#' | off_rtg | double | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' | def_rtg | double | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' | net_rtg | double | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' | poss | double | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -411,16 +411,16 @@ bleague_team_box <- function(schedule_key, season = NULL) {
 #' | team_name_e | character | Team name in English, uppercase. |
 #' | fg_made | integer | Field goals made (PTM). |
 #' | fg_attempted | integer | Field goals attempted (PTA). |
-#' | fg_pct | numeric | Field-goal percentage 0-100, one decimal. |
+#' | fg_pct | double | Field-goal percentage 0-100, one decimal. |
 #' | fg2_made | integer | Two-point field goals made. |
 #' | fg2_attempted | integer | Two-point field goals attempted. |
-#' | fg2_pct | numeric | Two-point percentage 0-100. |
+#' | fg2_pct | double | Two-point percentage 0-100. |
 #' | fg3_made | integer | Three-point field goals made. |
 #' | fg3_attempted | integer | Three-point field goals attempted. |
-#' | fg3_pct | numeric | Three-point percentage 0-100. |
+#' | fg3_pct | double | Three-point percentage 0-100. |
 #' | ft_made | integer | Free throws made. |
 #' | ft_attempted | integer | Free throws attempted. |
-#' | ft_pct | numeric | Free-throw percentage 0-100. |
+#' | ft_pct | double | Free-throw percentage 0-100. |
 #' | reb_off | integer | Offensive rebounds. |
 #' | reb_def | integer | Defensive rebounds. |
 #' | reb | integer | Total rebounds. |
@@ -441,7 +441,7 @@ bleague_team_box <- function(schedule_key, season = NULL) {
 #' | lead_last_away | integer | Away score-like value tied to lead_last; meaning unverified. |
 #' | lead_changes | integer | Lead changes in the period category (LeadCount); the same on both side rows. |
 #' | ties | integer | Times the score was tied in the period category (TieCount); the same on both side rows. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_team_summary <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -500,8 +500,8 @@ bleague_team_summary <- function(schedule_key, season = NULL) {
 #' | away_score | integer | Away running score after the event, split from score. |
 #' | period_end | logical | True on the closing row of a period (ActionCD1 83). |
 #' | game_end | logical | True on the game-end row on v1 and the embed; false on EVERY v2 row, the game-end row (81) included, so use action instead. |
-#' | x | numeric | Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. |
-#' | y | numeric | Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. |
+#' | x | double | Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. |
+#' | y | double | Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. |
 #' | area_code | integer | Shot-zone code 1-13 read from the site's shot-chart SVG: 1 restricted area, 2 rest of the paint, 3 / 7 baseline mid-range, 4 / 6 wing mid-range, 5 top-of-the-key mid-range, 8 / 12 corner 3, 9 / 11 wing 3, 10 top 3, 13 deep band. Of each pair the first is the side far along the baseline. Also set on turnover and foul rows; 2022-23 onward. |
 #' | area | character | English zone slug for area_code (restricted_area, paint, baseline_mid_range, wing_mid_range, top_of_key_mid_range, corner_3, wing_3, top_3, deep_3); mirrored codes share a slug. |
 #' | success | logical | Outcome flag: true = made / successful, false = missed; true on non-shot rows. v2 from 2022-23 only. |
@@ -510,7 +510,7 @@ bleague_team_summary <- function(schedule_key, season = NULL) {
 #' | recorded_at | POSIXct | When the event was logged, as a UTC instant (v2 stores UTC text, v1 a JST-offset .NET date, the embed epoch seconds). |
 #' | edited_at | POSIXct | When the event was last edited, as a UTC instant; null when never edited. |
 #' | code | integer | Feed/organisation code repeated on every row: 546 on v2, 6 on v1; meaning unverified. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -558,15 +558,15 @@ bleague_pbp <- function(schedule_key, season = NULL) {
 #' | made | logical | True when the shot was made (ActionCD1 odd for threes and 3 / 4), false when missed. |
 #' | qualifier2 | character | English slug for the shot's ActionCD2 (jump_shot, layup, dunk); null when unknown. |
 #' | qualifier3 | character | English slug for the shot's ActionCD3 (fast_break, points_off_turnover, second_chance, ...); null when none. |
-#' | x | numeric | Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. |
-#' | y | numeric | Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. |
+#' | x | double | Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. |
+#' | y | double | Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. |
 #' | area_code | integer | Shot-zone code 1-13 read from the site's shot-chart SVG: 1 restricted area, 2 rest of the paint, 3 / 7 baseline mid-range, 4 / 6 wing mid-range, 5 top-of-the-key mid-range, 8 / 12 corner 3, 9 / 11 wing 3, 10 top 3, 13 deep band. Of each pair the first is the side far along the baseline. Also set on turnover and foul rows; 2022-23 onward. |
 #' | area | character | English zone slug for area_code (restricted_area, paint, baseline_mid_range, wing_mid_range, top_of_key_mid_range, corner_3, wing_3, top_3, deep_3); mirrored codes share a slug. |
 #' | side | character | Basket the play is charted at: 'left' (x near 0) or 'right' (x near 100); flips at half-time. Present from 2025-26 only; earlier seasons leave it null and the end must be inferred from x. |
 #' | rest_time | character | Game clock REMAINING in the period as the feed's 'mm:ss' text (counts down from 10:00). |
 #' | clock_seconds | integer | Game clock remaining in the period in whole seconds (8:50 = 530), derived from rest_time. |
 #' | score | character | Running score 'home-away' after the event (e.g. '2-4'); null on player-in rows and v1 substitutions. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -614,7 +614,7 @@ bleague_shots <- function(schedule_key, season = NULL) {
 #' | count | integer | The player's value in the category for the period category. |
 #' | reb_off_count | integer | Offensive-rebound count carried on the row (filled for the rebounds category). |
 #' | reb_def_count | integer | Defensive-rebound count carried on the row (filled for the rebounds category). |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_leaders <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -647,7 +647,7 @@ bleague_leaders <- function(schedule_key, season = NULL) {
 #' | event_index | integer | Index of the scoring event, 0 = the 0-0 start row, then 1, 2... (the score track's x axis; NOT a clock). |
 #' | home_points | integer | Home running total after the event. |
 #' | away_points | integer | Away running total after the event. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_score_track <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -699,7 +699,7 @@ bleague_score_track <- function(schedule_key, season = NULL) {
 #' | venue | character | Venue name in Japanese, abbreviated by the page (e.g. Ookini for Osaka Edion Arena). |
 #' | tip_time | character | Tip-off time 'HH:MM' in JST (no offset on the page); null when absent. |
 #' | state | character | Score-state label on the page (FINAL for a finished game); null when absent. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{
@@ -732,7 +732,7 @@ bleague_schedule <- function(season, tab, month, day, event = NULL) {
 #' | event | integer | Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. |
 #' | team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
 #' | name | character | Club short name in Japanese as the schedule page prints it (e.g. Hokkaido). |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_schedule_clubs <- function(season, tab, month, day, event = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -762,7 +762,7 @@ bleague_schedule_clubs <- function(season, tab, month, day, event = NULL) {
 #' | event_id | integer | Competition type code (see event); the page's event filter value. |
 #' | label | character | Competition label in Japanese (e.g. B1 league, all-star game, B1 Championship). |
 #' | selected | logical | True for the competition the page was asked for. |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_schedule_events <- function(season, tab, month, day, event = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -791,7 +791,7 @@ bleague_schedule_events <- function(season, tab, month, day, event = NULL) {
 #' | tab | integer | Division tab: 1 = B1, 2 = B2, 3 = B3. |
 #' | event | integer | Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. |
 #' | date | Date | Local date of a game day in the requested month (a date strip entry). |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 bleague_schedule_days <- function(season, tab, month, day, event = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -829,8 +829,8 @@ bleague_schedule_days <- function(season, tab, month, day, event = NULL) {
 #' | team_short | character | Club short name in Japanese (e.g. Chiba J). |
 #' | wins | integer | Games won so far this season in the table. |
 #' | losses | integer | Games lost so far this season in the table. |
-#' | win_pct | numeric | Win percentage as a 0-1 fraction. |
-#' | games_behind | numeric | Games behind the table leader. |
+#' | win_pct | double | Win percentage as a 0-1 fraction. |
+#' | games_behind | double | Games behind the table leader. |
 #' | points_for | integer | Points scored over the season to date. |
 #' | points_against | integer | Points allowed over the season to date. |
 #' | point_diff | integer | Point differential. |
@@ -840,7 +840,7 @@ bleague_schedule_days <- function(season, tab, month, day, event = NULL) {
 #' | last_n_record | character | Record W-L over the last_n games. |
 #' | streak | character | Current streak as printed: W5 = five straight wins, L1 = one loss. |
 #' | division_title | character | Division-title mark as printed; null when none ('--'). |
-#' @family B.LEAGUE
+#' @family B.LEAGUE Functions
 #' @export
 #' @examples
 #' \donttest{

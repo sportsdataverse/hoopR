@@ -38,16 +38,16 @@ empty valid answer raises \code{hoopR_no_data}; the columns are always these, in
    points \tab integer \tab The player's points in the game. \cr
    two_point_shots_made \tab integer \tab The player's 2-point field goals made in the game. \cr
    two_point_shots_attempted \tab integer \tab The player's 2-point field goals attempted in the game. \cr
-   two_point_shot_success_percent \tab numeric \tab The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
+   two_point_shot_success_percent \tab double \tab The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
    three_point_shots_made \tab integer \tab The player's 3-point field goals made in the game. \cr
    three_point_shots_attempted \tab integer \tab The player's 3-point field goals attempted in the game. \cr
-   three_point_shot_success_percent \tab numeric \tab The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
+   three_point_shot_success_percent \tab double \tab The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
    field_goals_made \tab integer \tab The player's field goals made in the game. \cr
    field_goals_attempted \tab integer \tab The player's field goals attempted in the game. \cr
-   field_goals_success_percent \tab numeric \tab The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
+   field_goals_success_percent \tab double \tab The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
    free_throws_made \tab integer \tab The player's free throws made in the game. \cr
    free_throws_attempted \tab integer \tab The player's free throws attempted in the game. \cr
-   free_throws_success_percent \tab numeric \tab The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
+   free_throws_success_percent \tab double \tab The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. \cr
    offensive_rebounds \tab integer \tab The player's offensive rebounds in the game. \cr
    defensive_rebounds \tab integer \tab The player's defensive rebounds in the game. \cr
    total_rebounds \tab integer \tab The player's rebounds (offensive + defensive) in the game. \cr

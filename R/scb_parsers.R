@@ -128,12 +128,8 @@
 }
 
 #' A list of strings as "a,b"; a string as it is. A list of objects (the `tvChannel` objects of
-#' /games/recent and /games/{gameId}) joins their `name`s. A null entry (or a null `name`) is skipped,
-#' where sdv-py joins it as "None"; nothing left is NULL.
-#'
-#' Deliberate divergence: sdv-py e3d232e joins Python `str(dict)` reprs there
-#' ("{'channelId': 4, 'name': 'DYN', ...}"), against its own column description
-#' ("TV channel(s) ..., comma-joined"); test-scb.R checks these cells against the oracle's names.
+#' /games/recent and /games/{gameId}) joins their `name`s. A null entry (or a null `name`) is skipped;
+#' nothing left is NULL (sdv-py `_join`, 38a22f936d onward).
 #' @noRd
 .scb_join <- function(v) {
   if (.scb_is_array(v)) {

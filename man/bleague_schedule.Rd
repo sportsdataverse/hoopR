@@ -101,7 +101,7 @@ schedule list, or layout drift). All inherit \code{hoopR_error}.
 }
 }
 \seealso{
-Other B.LEAGUE:
+Other B.LEAGUE Functions:
 \code{\link[=bleague_game_info]{bleague_game_info()}},
 \code{\link[=bleague_leaders]{bleague_leaders()}},
 \code{\link[=bleague_pbp]{bleague_pbp()}},
@@ -116,4 +116,4 @@ Other B.LEAGUE:
 \code{\link[=bleague_team_box]{bleague_team_box()}},
 \code{\link[=bleague_team_summary]{bleague_team_summary()}}
 }
-\concept{B.LEAGUE}
+\concept{B.LEAGUE Functions}

@@ -150,20 +150,10 @@ test_that("every wrapper matches sdv-py's frame on the same fixtures (columns, d
     expect_identical(nrow(got), as.integer(c$rows), label = name)
     expect_identical(nrow(got), nrow(want), label = name)
     expect_identical(pl_types(got), stats::setNames(unname(PL_RTYPE[unlist(c$dtypes)]), names(c$dtypes)), label = name)
-    if ("action_en" %in% names(got) && any(got$action %in% c("ft_made", "ft_missed"))) {
-      # documented divergence (R/pleague_utils.R `.PLEAGUE_ACTION_EN`): sdv-py e3d232e gives every free throw the
-      # last phrase per code ("free throw 1 of 3 awarded, ..."); hoopR reads each row's own trip. Partitioned:
-      # free-throw rows against the text derived from ft_number / ft_awarded, every other row against sdv-py.
+    if (name == "pbp_206") {
+      # each free throw reads its own trip (sdv-py 38a22f936d onward; the oracle compares the cells as they are)
       ft <- got$action %in% c("ft_made", "ft_missed")
-      derived <- paste0("free throw ", got$ft_number[ft],
-                        ifelse(is.na(got$ft_awarded[ft]), "", paste0(" of ", got$ft_awarded[ft], " awarded")),
-                        ", ", sub("^ft_", "", got$action[ft]))
-      expect_identical(got$action_en[ft], derived, label = name)
-      expect_true(all(grepl("^free throw 1 of 3 awarded, ", want$action_en[ft])), label = name)
-      if (name == "pbp_206") {
-        expect_identical(got$action_en[ft], c("free throw 1 of 2 awarded, made", "free throw 2, made"))
-      }
-      want$action_en[ft] <- derived
+      expect_identical(got$action_en[ft], c("free throw 1 of 2 awarded, made", "free throw 2, made"))
     }
     bad <- vapply(names(got), function(n) pl_mismatches(got[[n]], want[[n]]), numeric(1))
     expect_identical(names(bad)[bad > 0], character(), label = paste(name, "mismatched columns"))

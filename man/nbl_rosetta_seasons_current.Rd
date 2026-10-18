@@ -57,7 +57,7 @@ another org, season or entity than the one asked for, or any other failed fetch;
 }
 }
 \seealso{
-Other NBL Rosetta:
+Other NBL Rosetta Functions:
 \code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
 \code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
 \code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
@@ -80,4 +80,4 @@ Other NBL Rosetta:
 \code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
 \code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
 }
-\concept{NBL Rosetta}
+\concept{NBL Rosetta Functions}

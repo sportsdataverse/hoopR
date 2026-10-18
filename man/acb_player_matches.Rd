@@ -41,13 +41,13 @@ A \code{hoopR_data} tibble, one row per record described above; the columns are 
    points \tab integer \tab Points (player game-log row) \cr
    three_pointers_made \tab integer \tab Three-point field goals made \cr
    three_pointers_attempted \tab integer \tab Three-point field goals attempted \cr
-   three_pointers_percentage \tab numeric \tab Three-point percentage, 0-100 with one decimal; 0 when there was no attempt \cr
+   three_pointers_percentage \tab double \tab Three-point percentage, 0-100 with one decimal; 0 when there was no attempt \cr
    two_pointers_made \tab integer \tab Two-point field goals made \cr
    two_pointers_attempted \tab integer \tab Two-point field goals attempted \cr
-   two_pointers_percentage \tab numeric \tab Two-point percentage, 0-100 with one decimal; 0 when there was no attempt \cr
+   two_pointers_percentage \tab double \tab Two-point percentage, 0-100 with one decimal; 0 when there was no attempt \cr
    free_throws_made \tab integer \tab Free throws the player made in that match (a count, not a season total). \cr
    free_throws_attempted \tab integer \tab Free throws the player attempted in that match (a count, not a season total). \cr
-   free_throws_percentage \tab numeric \tab Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt \cr
+   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt \cr
    rebounds \tab integer \tab Total rebounds in the game. \cr
    offensive_rebounds \tab integer \tab Offensive rebounds the player took in that match (a count; part of the total rebounds). \cr
    defensive_rebounds \tab integer \tab Defensive rebounds the player took in that match (a count; part of the total rebounds). \cr

@@ -50,7 +50,7 @@
 #' \donttest{
 #'   try(nbl_rosetta_seasons(org = "nbl"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_seasons <- function(org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -90,7 +90,7 @@ nbl_rosetta_seasons <- function(org = "nbl", limit = NULL) {
 #' \donttest{
 #'   try(nbl_rosetta_seasons_current(org = "nbl"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_seasons_current <- function(org = "nbl") {
   .nbl_rosetta_call(
@@ -141,8 +141,8 @@ nbl_rosetta_seasons_current <- function(org = "nbl") {
 #'   | venue_capacity | integer | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_timezone | character | IANA time zone of the venue, e.g. Australia/Sydney. |
 #'   | venue_code | character | Venue code; often null. |
-#'   | venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | home_team_id | character | DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. |
 #'   | rosetta_home_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the home team; routes that take this entity accept it as well as the DataCore id. |
 #'   | home_team_name | character | Display name of the team. |
@@ -181,7 +181,7 @@ nbl_rosetta_seasons_current <- function(org = "nbl") {
 #' \donttest{
 #'   try(nbl_rosetta_matches(org = "nbl", season = 2026, season_type = "regular"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit = NULL, offset = NULL) {
   .nbl_rosetta_call(
@@ -221,8 +221,8 @@ nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit 
 #'   | venue_state | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_country | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_timezone | character | IANA time zone of the venue, e.g. Australia/Sydney. |
-#'   | venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_capacity | integer | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | conference_name | character | Name of the NBL1 conference the team plays in (e.g. North, South); null outside NBL1. |
 #'   | division_name | character | Division name (NBL1 conference + gender) |
@@ -232,7 +232,7 @@ nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit 
 #' \donttest{
 #'   try(nbl_rosetta_teams(org = "nbl"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_teams <- function(org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -291,8 +291,8 @@ nbl_rosetta_teams <- function(org = "nbl", limit = NULL) {
 #'   | venue_code | character | Venue code; often null. |
 #'   | venue_state | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_suburb | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_country | character | Country; often null. |
 #'   | home_team_id | character | DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. |
 #'   | home_team_name | character | Display name of the team. |
@@ -308,7 +308,7 @@ nbl_rosetta_teams <- function(org = "nbl", limit = NULL) {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_by_id <- function(match_id) {
   .nbl_rosetta_call(
@@ -367,8 +367,8 @@ nbl_rosetta_match_by_id <- function(match_id) {
 #'   | venue_code | character | Venue code; often null. |
 #'   | venue_state | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_suburb | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_country | character | Country; often null. |
 #'   | home_team_id | character | DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. |
 #'   | home_team_name | character | Display name of the team. |
@@ -388,7 +388,7 @@ nbl_rosetta_match_by_id <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match <- function(match_id) {
   .nbl_rosetta_call(
@@ -420,13 +420,13 @@ nbl_rosetta_match <- function(match_id) {
 #'   | efficiency | integer | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | field_goals_attempted | integer | Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | field_goals_made | integer | Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 #'   | fouls | integer | Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | free_throws_attempted | integer | Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | free_throws_made | integer | Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 #'   | jersey_number | character | Jersey number, a STRING. |
-#'   | minutes | numeric | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
+#'   | minutes | double | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
 #'   | minutes_string | character | Minutes played as an ISO 8601 duration (PT30M32S); null on NBL1. |
 #'   | offensive_rebounds | integer | Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | participated | logical | Player took part in the game. |
@@ -442,11 +442,11 @@ nbl_rosetta_match <- function(match_id) {
 #'   | technical_fouls | integer | Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | three_points_attempted | integer | Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | three_points_made | integer | Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | turnovers | integer | Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | two_points_attempted | integer | Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | two_points_made | integer | Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
 #'   | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 #'   | player_first_name | character | The player's given name, e.g. Elijah. |
@@ -464,7 +464,7 @@ nbl_rosetta_match <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match_player_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_player_box <- function(match_id) {
   .nbl_rosetta_call(
@@ -495,12 +495,12 @@ nbl_rosetta_match_player_box <- function(match_id) {
 #'   | defensive_rebounds | integer | Defensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | field_goals_attempted | integer | Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | field_goals_made | integer | Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 #'   | fouls | integer | Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | free_throws_attempted | integer | Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | free_throws_made | integer | Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
-#'   | minutes | numeric | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | minutes | double | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
 #'   | offensive_rebounds | integer | Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
 #'   | period_type | character | Period type: regular (overtime unobserved) |
@@ -511,11 +511,11 @@ nbl_rosetta_match_player_box <- function(match_id) {
 #'   | technical_fouls | integer | Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | three_points_attempted | integer | Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | three_points_made | integer | Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | turnovers | integer | Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | two_points_attempted | integer | Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | two_points_made | integer | Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
 #'   | team_id | character | DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. |
 #'   | team_code | character | Team code, e.g. PER (the `{team_code}` path value) |
@@ -527,7 +527,7 @@ nbl_rosetta_match_player_box <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match_team_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_team_box <- function(match_id) {
   .nbl_rosetta_call(
@@ -567,12 +567,12 @@ nbl_rosetta_match_team_box <- function(match_id) {
 #'   | defensive_rebounds | integer | Defensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | field_goals_attempted | integer | Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | field_goals_made | integer | Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 #'   | fouls | integer | Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | free_throws_attempted | integer | Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | free_throws_made | integer | Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
-#'   | minutes | numeric | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | minutes | double | Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. |
 #'   | offensive_rebounds | integer | Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | personal_fouls | integer | Personal fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | points | integer | Points in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
@@ -581,15 +581,15 @@ nbl_rosetta_match_team_box <- function(match_id) {
 #'   | technical_fouls | integer | Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | three_points_attempted | integer | Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | three_points_made | integer | Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | turnovers | integer | Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | two_points_attempted | integer | Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'   | two_points_made | integer | Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | jersey_number | character | Jersey number, a STRING. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_player_period_box <- function(match_id) {
   .nbl_rosetta_call(
@@ -618,9 +618,9 @@ nbl_rosetta_match_player_period_box <- function(match_id) {
 #'   | period | integer | Period number, an INTEGER here (1-4 = quarters) |
 #'   | period_type | character | Period type: regular (overtime unobserved) |
 #'   | clock | character | Game clock at the event, MM:SS remaining in the period; null on some feed-control events. |
-#'   | clock_seconds | numeric | Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. |
+#'   | clock_seconds | double | Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. |
 #'   | shot_clock | character | Shot clock at the event, MM:SS; in Genius-era matches it repeats the game clock (no shot-clock data) |
-#'   | shot_clock_seconds | numeric | Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. |
+#'   | shot_clock_seconds | double | Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. |
 #'   | score_home | integer | Home team's running score after the event (score_1 in the body). |
 #'   | score_away | integer | Away team's running score after the event (score_2 in the body). |
 #'   | action_type | character | Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, possession, possessionArrow, period, fixture, main (clock start/stop) |
@@ -634,8 +634,8 @@ nbl_rosetta_match_player_period_box <- function(match_id) {
 #'   | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 #'   | player_name | character | Full name of the player the event belongs to; null for events no player owns (team rebounds, period starts). |
 #'   | jersey_number | character | Jersey number of the player at the event, as text (a WNBL backfill writes 6.0). |
-#'   | x | numeric | Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x > 50 for two periods and x < 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. |
-#'   | y | numeric | Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. |
+#'   | x | double | Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x > 50 for two periods and x < 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. |
+#'   | y | double | Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. |
 #'   | readable_action_type | character | Human-readable event label, e.g. "Game - Game completed". |
 #'   | system_action_type | character | Machine event label, e.g. game_game_completed. |
 #'   | timestamp | character | Wall-clock time of the event, ISO 8601 without offset (UTC) |
@@ -646,7 +646,7 @@ nbl_rosetta_match_player_period_box <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match_pbp(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_pbp <- function(match_id) {
   .nbl_rosetta_call(
@@ -676,8 +676,8 @@ nbl_rosetta_match_pbp <- function(match_id) {
 #'   | won | integer | Wins in the season. |
 #'   | lost | integer | Losses in the season. |
 #'   | played | integer | Games played in the season (wins plus losses). |
-#'   | points_percentage | numeric | points_for / points_against, a RATIO (1.1379 = 113.79 %) |
-#'   | win_percentage | numeric | Won / played, a 0-1 FRACTION. |
+#'   | points_percentage | double | points_for / points_against, a RATIO (1.1379 = 113.79 %) |
+#'   | win_percentage | double | Won / played, a 0-1 FRACTION. |
 #'   | last_5 | character | Results string, W/L oldest first. Despite the name it can hold the whole season (33 characters in NBL 2025-26) |
 #'   | streak | integer | Current streak length (the type is the last letter of last_5) |
 #'   | points_for | integer | Points scored by the team in the season. |
@@ -700,7 +700,7 @@ nbl_rosetta_match_pbp <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_standings(org = "nbl", season = 2026))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -734,8 +734,8 @@ nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
 #'   | player_first_name | character | The player's given name, e.g. Elijah. |
 #'   | player_last_name | character | The player's family name, e.g. Pepper. |
 #'   | player_date_of_birth | character | Date of birth, ISO date. |
-#'   | player_height | numeric | Height in centimetres. |
-#'   | player_weight | numeric | Weight in kilograms. |
+#'   | player_height | double | Height in centimetres. |
+#'   | player_weight | double | Weight in kilograms. |
 #'   | player_dominant_hand | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | player_gender | character | Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) |
 #'   | player_nationality | character | Unobserved in samples (null in every capture); type and meaning unverified. |
@@ -764,7 +764,7 @@ nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
 #' \donttest{
 #'   try(nbl_rosetta_players(org = "nbl", season = 2026))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL) {
   .nbl_rosetta_call(
@@ -810,8 +810,8 @@ nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL
 #'   | player_active | logical | Player record is active. |
 #'   | player_date_of_birth | character | Date of birth, ISO date. |
 #'   | player_nationality | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | player_height | numeric | Height in centimetres. |
-#'   | player_weight | numeric | Weight in kilograms. |
+#'   | player_height | double | Height in centimetres. |
+#'   | player_weight | double | Weight in kilograms. |
 #'   | player_dominant_hand | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | player_gender | character | Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) |
 #'   | player_nationality_code | character | Nationality, ISO 3166-1 alpha-3 code. |
@@ -820,7 +820,7 @@ nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_team_players <- function(team_id, season, org = "nbl") {
   .nbl_rosetta_call(
@@ -854,7 +854,7 @@ nbl_rosetta_team_players <- function(team_id, season, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
   .nbl_rosetta_call(
@@ -898,17 +898,17 @@ nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
 #'   | personal_fouls | integer | Personal fouls in the game. |
 #'   | three_points_attempted | integer | Three-point field goals attempted in the game. |
 #'   | three_points_made | integer | Three-point field goals made in the game. |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | two_points_attempted | integer | Two-point field goals attempted in the game. |
 #'   | two_points_made | integer | Two-point field goals made in the game. |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | field_goals_attempted | integer | Field goals attempted in the game. |
 #'   | field_goals_made | integer | Field goals made in the game. |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 #'   | free_throws_attempted | integer | Free throws attempted in the game. |
 #'   | free_throws_made | integer | Free throws made in the game. |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
-#'   | minutes | numeric | Minutes played, decimal minutes. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | minutes | double | Minutes played, decimal minutes. |
 #'   | participated | logical | Player took part in the game. |
 #'   | match_id | character | DataCore fixture id of the match (UUID v1): the `{match_id}` route key and fixtureId in play-by-play. Join on it. |
 #'   | rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
@@ -952,7 +952,7 @@ nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", participated = NULL) {
   .nbl_rosetta_call(
@@ -976,19 +976,19 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #'   | col_name | type | description |
 #'   |:---|:---|:---|
 #'   | org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-#'   | assists_average | numeric | Assists per game. |
-#'   | blocks_average | numeric | Blocks per game. |
+#'   | assists_average | double | Assists per game. |
+#'   | blocks_average | double | Blocks per game. |
 #'   | field_goals_attempted | integer | Field goals attempted, season total. |
 #'   | field_goals_made | integer | Field goals made, season total. |
-#'   | field_goals_attempted_average | numeric | Field goals attempted per game. |
-#'   | field_goals_made_average | numeric | Field goals made per game. |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
-#'   | fouls_average | numeric | Fouls committed (personal + technical + others) per game. |
+#'   | field_goals_attempted_average | double | Field goals attempted per game. |
+#'   | field_goals_made_average | double | Field goals made per game. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | fouls_average | double | Fouls committed (personal + technical + others) per game. |
 #'   | free_throws_attempted | integer | Free throws attempted, season total. |
 #'   | free_throws_made | integer | Free throws made, season total. |
-#'   | free_throws_attempted_average | numeric | Free throws attempted per game. |
-#'   | free_throws_made_average | numeric | Free throws made per game. |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | free_throws_attempted_average | double | Free throws attempted per game. |
+#'   | free_throws_made_average | double | Free throws made per game. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 #'   | games | integer | Games played in the season (in the period rows, by the player or team). |
 #'   | games_started | integer | Games in the starting five. |
 #'   | offensive_rebounds | integer | Offensive rebounds, season total. |
@@ -997,31 +997,31 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #'   | technical_fouls | integer | Technical fouls, season total. |
 #'   | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
 #'   | three_points_attempted | integer | Three-point field goals attempted, season total. |
-#'   | three_points_attempted_average | numeric | Three-point field goals attempted per game. |
+#'   | three_points_attempted_average | double | Three-point field goals attempted per game. |
 #'   | three_points_made | integer | Three-point field goals made, season total. |
-#'   | three_points_made_average | numeric | Three-point field goals made per game. |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
-#'   | turnovers_average | numeric | Turnovers per game. |
+#'   | three_points_made_average | double | Three-point field goals made per game. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | turnovers_average | double | Turnovers per game. |
 #'   | turnovers | integer | Turnovers, season total. |
 #'   | two_points_attempted | integer | Two-point field goals attempted, season total. |
-#'   | two_points_attempted_average | numeric | Two-point field goals attempted per game. |
+#'   | two_points_attempted_average | double | Two-point field goals attempted per game. |
 #'   | two_points_made | integer | Two-point field goals made, season total. |
-#'   | two_points_made_average | numeric | Two-point field goals made per game. |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
-#'   | minutes | numeric | Minutes played, decimal minutes. |
-#'   | minutes_average | numeric | Minutes per game, decimal minutes. |
+#'   | two_points_made_average | double | Two-point field goals made per game. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | minutes | double | Minutes played, decimal minutes. |
+#'   | minutes_average | double | Minutes per game, decimal minutes. |
 #'   | points | integer | Points, season total. |
 #'   | rebounds | integer | Total rebounds, season total. |
 #'   | assists | integer | Assists, season total. |
 #'   | blocks | integer | Blocks, season total. |
 #'   | steals | integer | Steals, season total. |
 #'   | plus_minus | integer | Point differential while on court, season total. |
-#'   | plus_minus_average | numeric | Point differential while on court per game. |
+#'   | plus_minus_average | double | Point differential while on court per game. |
 #'   | efficiency | integer | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV), season total. |
-#'   | efficiency_average | numeric | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
-#'   | points_average | numeric | Points per game. |
-#'   | rebounds_average | numeric | Total rebounds per game. |
-#'   | steals_average | numeric | Steals per game. |
+#'   | efficiency_average | double | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
+#'   | points_average | double | Points per game. |
+#'   | rebounds_average | double | Total rebounds per game. |
+#'   | steals_average | double | Steals per game. |
 #'   | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 #'   | rosetta_player_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. |
 #'   | player_first_name | character | The player's given name, e.g. Elijah. |
@@ -1062,8 +1062,8 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #'   | player_active | logical | Player record is active. |
 #'   | player_date_of_birth | character | Date of birth, ISO date. |
 #'   | player_nationality | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | player_height | numeric | Height in centimetres. |
-#'   | player_weight | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | player_height | double | Height in centimetres. |
+#'   | player_weight | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | team_gender | character | Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) |
 #'   | synthetic_from_roster | logical | Row built from the roster because the player has no season statistics (all stats 0) |
 #'
@@ -1072,7 +1072,7 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #' \donttest{
 #'   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
 #' }
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
   .nbl_rosetta_call(
@@ -1097,19 +1097,19 @@ nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
 #'   | col_name | type | description |
 #'   |:---|:---|:---|
 #'   | org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-#'   | assists_average | numeric | Assists per game. |
-#'   | blocks_average | numeric | Blocks per game. |
+#'   | assists_average | double | Assists per game. |
+#'   | blocks_average | double | Blocks per game. |
 #'   | field_goals_attempted | integer | Field goals attempted, season total. |
 #'   | field_goals_made | integer | Field goals made, season total. |
-#'   | field_goals_attempted_average | numeric | Field goals attempted per game. |
-#'   | field_goals_made_average | numeric | Field goals made per game. |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
-#'   | fouls_average | numeric | Fouls committed (personal + technical + others) per game. |
+#'   | field_goals_attempted_average | double | Field goals attempted per game. |
+#'   | field_goals_made_average | double | Field goals made per game. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | fouls_average | double | Fouls committed (personal + technical + others) per game. |
 #'   | free_throws_attempted | integer | Free throws attempted, season total. |
 #'   | free_throws_made | integer | Free throws made, season total. |
-#'   | free_throws_attempted_average | numeric | Free throws attempted per game. |
-#'   | free_throws_made_average | numeric | Free throws made per game. |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | free_throws_attempted_average | double | Free throws attempted per game. |
+#'   | free_throws_made_average | double | Free throws made per game. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 #'   | games | integer | Games played in the season (in the period rows, by the player or team). |
 #'   | games_started | integer | Games in the starting five. |
 #'   | offensive_rebounds | integer | Offensive rebounds, season total. |
@@ -1118,31 +1118,31 @@ nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
 #'   | technical_fouls | integer | Technical fouls, season total. |
 #'   | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
 #'   | three_points_attempted | integer | Three-point field goals attempted, season total. |
-#'   | three_points_attempted_average | numeric | Three-point field goals attempted per game. |
+#'   | three_points_attempted_average | double | Three-point field goals attempted per game. |
 #'   | three_points_made | integer | Three-point field goals made, season total. |
-#'   | three_points_made_average | numeric | Three-point field goals made per game. |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
-#'   | turnovers_average | numeric | Turnovers per game. |
+#'   | three_points_made_average | double | Three-point field goals made per game. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | turnovers_average | double | Turnovers per game. |
 #'   | turnovers | integer | Turnovers, season total. |
 #'   | two_points_attempted | integer | Two-point field goals attempted, season total. |
-#'   | two_points_attempted_average | numeric | Two-point field goals attempted per game. |
+#'   | two_points_attempted_average | double | Two-point field goals attempted per game. |
 #'   | two_points_made | integer | Two-point field goals made, season total. |
-#'   | two_points_made_average | numeric | Two-point field goals made per game. |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
-#'   | minutes | numeric | Minutes played, decimal minutes. |
-#'   | minutes_average | numeric | Minutes per game, decimal minutes. |
+#'   | two_points_made_average | double | Two-point field goals made per game. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | minutes | double | Minutes played, decimal minutes. |
+#'   | minutes_average | double | Minutes per game, decimal minutes. |
 #'   | points | integer | Points, season total. |
 #'   | rebounds | integer | Total rebounds, season total. |
 #'   | assists | integer | Assists, season total. |
 #'   | blocks | integer | Blocks, season total. |
 #'   | steals | integer | Steals, season total. |
 #'   | plus_minus | integer | Point differential while on court, season total. |
-#'   | plus_minus_average | numeric | Point differential while on court per game. |
+#'   | plus_minus_average | double | Point differential while on court per game. |
 #'   | efficiency | integer | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV), season total. |
-#'   | efficiency_average | numeric | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
-#'   | points_average | numeric | Points per game. |
-#'   | rebounds_average | numeric | Total rebounds per game. |
-#'   | steals_average | numeric | Steals per game. |
+#'   | efficiency_average | double | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
+#'   | points_average | double | Points per game. |
+#'   | rebounds_average | double | Total rebounds per game. |
+#'   | steals_average | double | Steals per game. |
 #'   | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 #'   | rosetta_player_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. |
 #'   | player_first_name | character | The player's given name, e.g. Elijah. |
@@ -1178,7 +1178,7 @@ nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -1211,19 +1211,19 @@ nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
 #'   | col_name | type | description |
 #'   |:---|:---|:---|
 #'   | org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-#'   | assists_average | numeric | Assists per game. |
-#'   | blocks_average | numeric | Blocks per game. |
+#'   | assists_average | double | Assists per game. |
+#'   | blocks_average | double | Blocks per game. |
 #'   | field_goals_attempted | integer | Field goals attempted, season total. |
 #'   | field_goals_made | integer | Field goals made, season total. |
-#'   | field_goals_attempted_average | numeric | Field goals attempted per game. |
-#'   | field_goals_made_average | numeric | Field goals made per game. |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
-#'   | fouls_average | numeric | Fouls committed (personal + technical + others) per game. |
+#'   | field_goals_attempted_average | double | Field goals attempted per game. |
+#'   | field_goals_made_average | double | Field goals made per game. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | fouls_average | double | Fouls committed (personal + technical + others) per game. |
 #'   | free_throws_attempted | integer | Free throws attempted, season total. |
 #'   | free_throws_made | integer | Free throws made, season total. |
-#'   | free_throws_attempted_average | numeric | Free throws attempted per game. |
-#'   | free_throws_made_average | numeric | Free throws made per game. |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | free_throws_attempted_average | double | Free throws attempted per game. |
+#'   | free_throws_made_average | double | Free throws made per game. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 #'   | games | integer | Games played in the season (in the period rows, by the player or team). |
 #'   | games_started | integer | Games in the starting five. |
 #'   | offensive_rebounds | integer | Offensive rebounds, season total. |
@@ -1232,31 +1232,31 @@ nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
 #'   | technical_fouls | integer | Technical fouls, season total. |
 #'   | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
 #'   | three_points_attempted | integer | Three-point field goals attempted, season total. |
-#'   | three_points_attempted_average | numeric | Three-point field goals attempted per game. |
+#'   | three_points_attempted_average | double | Three-point field goals attempted per game. |
 #'   | three_points_made | integer | Three-point field goals made, season total. |
-#'   | three_points_made_average | numeric | Three-point field goals made per game. |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
-#'   | turnovers_average | numeric | Turnovers per game. |
+#'   | three_points_made_average | double | Three-point field goals made per game. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | turnovers_average | double | Turnovers per game. |
 #'   | turnovers | integer | Turnovers, season total. |
 #'   | two_points_attempted | integer | Two-point field goals attempted, season total. |
-#'   | two_points_attempted_average | numeric | Two-point field goals attempted per game. |
+#'   | two_points_attempted_average | double | Two-point field goals attempted per game. |
 #'   | two_points_made | integer | Two-point field goals made, season total. |
-#'   | two_points_made_average | numeric | Two-point field goals made per game. |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
-#'   | minutes | numeric | Minutes played, decimal minutes. |
-#'   | minutes_average | numeric | Minutes per game, decimal minutes. |
+#'   | two_points_made_average | double | Two-point field goals made per game. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | minutes | double | Minutes played, decimal minutes. |
+#'   | minutes_average | double | Minutes per game, decimal minutes. |
 #'   | points | integer | Points, season total. |
 #'   | rebounds | integer | Total rebounds, season total. |
 #'   | assists | integer | Assists, season total. |
 #'   | blocks | integer | Blocks, season total. |
 #'   | steals | integer | Steals, season total. |
 #'   | plus_minus | integer | Point differential while on court, season total. |
-#'   | plus_minus_average | numeric | Point differential while on court per game. |
+#'   | plus_minus_average | double | Point differential while on court per game. |
 #'   | efficiency | integer | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV), season total. |
-#'   | efficiency_average | numeric | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
-#'   | points_average | numeric | Points per game. |
-#'   | rebounds_average | numeric | Total rebounds per game. |
-#'   | steals_average | numeric | Steals per game. |
+#'   | efficiency_average | double | Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. |
+#'   | points_average | double | Points per game. |
+#'   | rebounds_average | double | Total rebounds per game. |
+#'   | steals_average | double | Steals per game. |
 #'   | player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
 #'   | rosetta_player_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. |
 #'   | player_first_name | character | The player's given name, e.g. Elijah. |
@@ -1275,7 +1275,7 @@ nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", limit = NULL, period = NULL, sort = NULL) {
   .nbl_rosetta_call(
@@ -1301,47 +1301,47 @@ nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", li
 #'   |:---|:---|:---|
 #'   | org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
 #'   | assists | integer | Assists, team season total (in that period on period rows) |
-#'   | assists_average | numeric | Assists per game. |
+#'   | assists_average | double | Assists per game. |
 #'   | blocks | integer | Blocks, team season total (in that period on period rows) |
-#'   | blocks_average | numeric | Blocks per game. |
+#'   | blocks_average | double | Blocks per game. |
 #'   | defensive_rebounds | integer | Defensive rebounds, team season total (in that period on period rows) |
 #'   | field_goals_attempted | integer | Field goals attempted, team season total (in that period on period rows) |
-#'   | field_goals_attempted_average | numeric | Field goals attempted per game. |
+#'   | field_goals_attempted_average | double | Field goals attempted per game. |
 #'   | field_goals_made | integer | Field goals made, team season total (in that period on period rows) |
-#'   | field_goals_made_average | numeric | Field goals made per game. |
-#'   | field_goals_percentage | numeric | Field goals made / attempted, a 0-1 FRACTION. |
+#'   | field_goals_made_average | double | Field goals made per game. |
+#'   | field_goals_percentage | double | Field goals made / attempted, a 0-1 FRACTION. |
 #'   | fouls | integer | Fouls committed (personal + technical + others), team season total (in that period on period rows) |
-#'   | fouls_average | numeric | Fouls committed (personal + technical + others) per game. |
+#'   | fouls_average | double | Fouls committed (personal + technical + others) per game. |
 #'   | free_throws_attempted | integer | Free throws attempted, team season total (in that period on period rows) |
-#'   | free_throws_attempted_average | numeric | Free throws attempted per game. |
+#'   | free_throws_attempted_average | double | Free throws attempted per game. |
 #'   | free_throws_made | integer | Free throws made, team season total (in that period on period rows) |
-#'   | free_throws_made_average | numeric | Free throws made per game. |
-#'   | free_throws_percentage | numeric | Free throws made / attempted, a 0-1 FRACTION. |
+#'   | free_throws_made_average | double | Free throws made per game. |
+#'   | free_throws_percentage | double | Free throws made / attempted, a 0-1 FRACTION. |
 #'   | games | integer | Games played in the season (in the period rows, by the player or team). |
-#'   | minutes | numeric | Player-minutes played (5 x game minutes) |
+#'   | minutes | double | Player-minutes played (5 x game minutes) |
 #'   | offensive_rebounds | integer | Offensive rebounds, team season total (in that period on period rows) |
-#'   | offensive_rebounds_average | numeric | Offensive rebounds per game. |
+#'   | offensive_rebounds_average | double | Offensive rebounds per game. |
 #'   | period | integer | Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) |
-#'   | personal_fouls_average | numeric | Personal fouls per game. |
+#'   | personal_fouls_average | double | Personal fouls per game. |
 #'   | points | integer | Points, team season total (in that period on period rows) |
-#'   | points_average | numeric | Points per game. |
+#'   | points_average | double | Points per game. |
 #'   | rebounds | integer | Total rebounds, team season total (in that period on period rows) |
-#'   | rebounds_average | numeric | Total rebounds per game. |
+#'   | rebounds_average | double | Total rebounds per game. |
 #'   | results_string | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | steals | integer | Steals, team season total (in that period on period rows) |
-#'   | steals_average | numeric | Steals per game. |
+#'   | steals_average | double | Steals per game. |
 #'   | three_points_attempted | integer | Three-point field goals attempted, team season total (in that period on period rows) |
-#'   | three_points_attempted_average | numeric | Three-point field goals attempted per game. |
+#'   | three_points_attempted_average | double | Three-point field goals attempted per game. |
 #'   | three_points_made | integer | Three-point field goals made, team season total (in that period on period rows) |
-#'   | three_points_made_average | numeric | Three-point field goals made per game. |
-#'   | three_points_percentage | numeric | Three-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | three_points_made_average | double | Three-point field goals made per game. |
+#'   | three_points_percentage | double | Three-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | turnovers | integer | Turnovers, team season total (in that period on period rows) |
-#'   | turnovers_average | numeric | Turnovers per game. |
+#'   | turnovers_average | double | Turnovers per game. |
 #'   | two_points_attempted | integer | Two-point field goals attempted, team season total (in that period on period rows) |
-#'   | two_points_attempted_average | numeric | Two-point field goals attempted per game. |
+#'   | two_points_attempted_average | double | Two-point field goals attempted per game. |
 #'   | two_points_made | integer | Two-point field goals made, team season total (in that period on period rows) |
-#'   | two_points_made_average | numeric | Two-point field goals made per game. |
-#'   | two_points_percentage | numeric | Two-point field goals made / attempted, a 0-1 FRACTION. |
+#'   | two_points_made_average | double | Two-point field goals made per game. |
+#'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | team_id | character | DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. |
 #'   | rosetta_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. |
 #'   | team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
@@ -1354,7 +1354,7 @@ nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", li
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -1402,8 +1402,8 @@ nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
 #'   | venue_capacity | integer | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_timezone | character | IANA time zone of the venue, e.g. Australia/Sydney. |
 #'   | venue_code | character | Venue code; often null. |
-#'   | venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | home_team_id | character | DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. |
 #'   | rosetta_home_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the home team; routes that take this entity accept it as well as the DataCore id. |
 #'   | home_team_name | character | Display name of the team. |
@@ -1432,7 +1432,7 @@ nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_next_match <- function(season, org = "nbl") {
   .nbl_rosetta_call(
@@ -1481,8 +1481,8 @@ nbl_rosetta_next_match <- function(season, org = "nbl") {
 #'   | venue_capacity | integer | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | venue_timezone | character | IANA time zone of the venue, e.g. Australia/Sydney. |
 #'   | venue_code | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_latitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
-#'   | venue_longitude | numeric | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
+#'   | venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | home_team_id | character | DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. |
 #'   | rosetta_home_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the home team; routes that take this entity accept it as well as the DataCore id. |
 #'   | home_team_name | character | Display name of the team. |
@@ -1511,7 +1511,7 @@ nbl_rosetta_next_match <- function(season, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_next_match_team <- function(team_code, season, org = "nbl") {
   .nbl_rosetta_call(
@@ -1552,7 +1552,7 @@ nbl_rosetta_next_match_team <- function(team_code, season, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
-#' @family NBL Rosetta
+#' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_next_matches <- function(season, org = "nbl") {
   .nbl_rosetta_call(

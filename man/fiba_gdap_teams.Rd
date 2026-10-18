@@ -32,12 +32,12 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    profile_website \tab character \tab The team's website address. \cr
    profile_you_tube \tab character \tab YouTube handle; always null in the samples, values unverified. \cr
    profile_final_ranking \tab integer \tab Final rank in the competition. \cr
-   profile_points_per_game \tab numeric \tab The team's average points per game played. \cr
-   profile_rebounds_per_game \tab numeric \tab The team's average rebounds per game played. \cr
-   profile_assists_per_game \tab numeric \tab The team's average assists per game played. \cr
-   profile_rank_points_per_game \tab numeric \tab Rank in the competition by points per game (1 = highest). \cr
-   profile_rank_rebounds_per_game \tab numeric \tab Rank in the competition by rebounds per game (1 = highest). \cr
-   profile_rank_assists_per_game \tab numeric \tab Rank in the competition by assists per game (1 = highest). \cr
+   profile_points_per_game \tab double \tab The team's average points per game played. \cr
+   profile_rebounds_per_game \tab double \tab The team's average rebounds per game played. \cr
+   profile_assists_per_game \tab double \tab The team's average assists per game played. \cr
+   profile_rank_points_per_game \tab double \tab Rank in the competition by points per game (1 = highest). \cr
+   profile_rank_rebounds_per_game \tab double \tab Rank in the competition by rebounds per game (1 = highest). \cr
+   profile_rank_assists_per_game \tab double \tab Rank in the competition by assists per game (1 = highest). \cr
    profile_total_games_won \tab integer \tab The team's total games won over the games played. \cr
    profile_total_games_lost \tab integer \tab The team's total games lost over the games played. \cr
    profile_social_networks \tab character \tab Social-network handles. Stored as a JSON string. \cr

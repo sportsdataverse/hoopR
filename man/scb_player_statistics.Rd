@@ -42,16 +42,16 @@ block. An empty valid answer raises \code{hoopR_no_data}; the columns are always
    points \tab integer \tab The player's season total points over displayType. \cr
    two_point_shots_made \tab integer \tab The player's season total 2-point field goals made over displayType. \cr
    two_point_shots_attempted \tab integer \tab The player's season total 2-point field goals attempted over displayType. \cr
-   two_point_shot_success_percent \tab numeric \tab The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
+   two_point_shot_success_percent \tab double \tab The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
    three_point_shots_made \tab integer \tab The player's season total 3-point field goals made over displayType. \cr
    three_point_shots_attempted \tab integer \tab The player's season total 3-point field goals attempted over displayType. \cr
-   three_point_shot_success_percent \tab numeric \tab The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
+   three_point_shot_success_percent \tab double \tab The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
    field_goals_made \tab integer \tab The player's season total field goals made over displayType. \cr
    field_goals_attempted \tab integer \tab The player's season total field goals attempted over displayType. \cr
-   field_goals_success_percent \tab numeric \tab The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
+   field_goals_success_percent \tab double \tab The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
    free_throws_made \tab integer \tab The player's season total free throws made over displayType. \cr
    free_throws_attempted \tab integer \tab The player's season total free throws attempted over displayType. \cr
-   free_throws_success_percent \tab numeric \tab The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
+   free_throws_success_percent \tab double \tab The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
    offensive_rebounds \tab integer \tab The player's season total offensive rebounds over displayType. \cr
    defensive_rebounds \tab integer \tab The player's season total defensive rebounds over displayType. \cr
    total_rebounds \tab integer \tab The player's season total rebounds (offensive + defensive) over displayType. \cr
@@ -63,34 +63,34 @@ block. An empty valid answer raises \code{hoopR_no_data}; the columns are always
    efficiency \tab integer \tab The player's season total efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) over displayType. \cr
    plus_minus \tab integer \tab The player's season total plus-minus over displaytype. \cr
    games_played \tab integer \tab The player's season total games played over displayType. \cr
-   seconds_per_game \tab numeric \tab Per-game average of seconds, seconds. \cr
-   points_per_game \tab numeric \tab Per-game average of points. \cr
-   two_point_shots_made_per_game \tab numeric \tab Per-game average of 2-point field goals made. \cr
-   two_point_shots_attempted_per_game \tab numeric \tab Per-game average of 2-point field goals attempted. \cr
-   three_point_shots_made_per_game \tab numeric \tab Per-game average of 3-point field goals made. \cr
-   three_point_shots_attempted_per_game \tab numeric \tab Per-game average of 3-point field goals attempted. \cr
-   field_goals_made_per_game \tab numeric \tab Per-game average of field goals made. \cr
-   field_goals_attempted_per_game \tab numeric \tab Per-game average of field goals attempted. \cr
-   field_goals_success_percent_per_game \tab numeric \tab Per-game average of field-goal percentage (0 in every sample: unusable). \cr
-   free_throws_made_per_game \tab numeric \tab Per-game average of free throws made. \cr
-   free_throws_attempted_per_game \tab numeric \tab Per-game average of free throws attempted. \cr
-   defensive_rebounds_per_game \tab numeric \tab Per-game average of defensive rebounds. \cr
-   offensive_rebounds_per_game \tab numeric \tab Per-game average of offensive rebounds. \cr
-   total_rebounds_per_game \tab numeric \tab Per-game average of rebounds (offensive + defensive). \cr
-   assists_per_game \tab numeric \tab Per-game average of assists. \cr
-   steals_per_game \tab numeric \tab Per-game average of steals. \cr
-   turnovers_per_game \tab numeric \tab Per-game average of turnovers. \cr
-   blocks_per_game \tab numeric \tab Per-game average of blocked shots. \cr
-   fouls_committed_per_game \tab numeric \tab Per-game average of fouls committed. \cr
-   efficiency_per_game \tab numeric \tab Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). \cr
-   plus_minus_per_game \tab numeric \tab Per-game average of plus-minus (point margin while on court). \cr
+   seconds_per_game \tab double \tab Per-game average of seconds, seconds. \cr
+   points_per_game \tab double \tab Per-game average of points. \cr
+   two_point_shots_made_per_game \tab double \tab Per-game average of 2-point field goals made. \cr
+   two_point_shots_attempted_per_game \tab double \tab Per-game average of 2-point field goals attempted. \cr
+   three_point_shots_made_per_game \tab double \tab Per-game average of 3-point field goals made. \cr
+   three_point_shots_attempted_per_game \tab double \tab Per-game average of 3-point field goals attempted. \cr
+   field_goals_made_per_game \tab double \tab Per-game average of field goals made. \cr
+   field_goals_attempted_per_game \tab double \tab Per-game average of field goals attempted. \cr
+   field_goals_success_percent_per_game \tab double \tab Per-game average of field-goal percentage (0 in every sample: unusable). \cr
+   free_throws_made_per_game \tab double \tab Per-game average of free throws made. \cr
+   free_throws_attempted_per_game \tab double \tab Per-game average of free throws attempted. \cr
+   defensive_rebounds_per_game \tab double \tab Per-game average of defensive rebounds. \cr
+   offensive_rebounds_per_game \tab double \tab Per-game average of offensive rebounds. \cr
+   total_rebounds_per_game \tab double \tab Per-game average of rebounds (offensive + defensive). \cr
+   assists_per_game \tab double \tab Per-game average of assists. \cr
+   steals_per_game \tab double \tab Per-game average of steals. \cr
+   turnovers_per_game \tab double \tab Per-game average of turnovers. \cr
+   blocks_per_game \tab double \tab Per-game average of blocked shots. \cr
+   fouls_committed_per_game \tab double \tab Per-game average of fouls committed. \cr
+   efficiency_per_game \tab double \tab Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). \cr
+   plus_minus_per_game \tab double \tab Per-game average of plus-minus (point margin while on court). \cr
    double_double \tab integer \tab The player's season total double-doubles over displayType. \cr
-   double_double_per_game \tab numeric \tab Per-game average of double-doubles. \cr
+   double_double_per_game \tab double \tab Per-game average of double-doubles. \cr
    games_started \tab integer \tab The player's season total games started over displayType. \cr
    triple_double \tab integer \tab The player's season total triple-doubles over displayType. \cr
-   triple_double_per_game \tab numeric \tab Per-game average of triple-doubles. \cr
+   triple_double_per_game \tab double \tab Per-game average of triple-doubles. \cr
    fouls_received \tab integer \tab The player's season total fouls drawn over displayType. \cr
-   fouls_received_per_game \tab numeric \tab Per-game average of fouls drawn. \cr
+   fouls_received_per_game \tab double \tab Per-game average of fouls drawn. \cr
    overall \tab logical \tab False in every sample (meaning unverified). \cr
    stage \tab character \tab Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. \cr
    aggregation \tab character \tab Aggregation label as sent: STAGE in player tables, MAIN_ROUND in team tables. \cr
