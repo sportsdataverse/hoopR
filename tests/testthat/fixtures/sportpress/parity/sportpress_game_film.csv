@@ -1,0 +1,646 @@
+game_id,competition_id,order,period,minute,second,team_side,competition_team_id,team,team_short_name,event_code,event_subcode,x,y,home_score,away_score,player_id,first_name,last_name,nationality_code,birth_date,player2_id,player2_first_name,player2_last_name
+11295,25,0,1,0,10,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,89,49,0,0,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,1,1,0,10,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,0,0,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,2,1,0,28,home,541,Windrose Giants Antwerp,ANT,1000,1,90,49,2,0,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,3,1,0,47,away,565,House of Talents Spurs Kortrijk,KOR,1005,12,16,53,2,0,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,4,1,0,47,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,2,0,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,5,1,0,51,home,541,Windrose Giants Antwerp,ANT,1000,1,93,44,4,0,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,6,1,0,51,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,4,0,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,7,1,1,12,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,12,46,4,0,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,8,1,1,17,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,4,0,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,9,1,1,24,home,541,Windrose Giants Antwerp,ANT,1000,3,76,83,7,0,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,10,1,1,24,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,7,0,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,11,1,1,48,home,541,Windrose Giants Antwerp,ANT,1007,31,29,89,7,0,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,12,1,1,48,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,7,0,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,13,1,1,48,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,7,0,5255,Noel,Coleman,BEL,2000-01-17,5325,Enoch,Cheeks
+11295,25,14,1,1,50,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,13,96,7,0,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,15,1,1,53,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,7,0,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,16,1,2,10,home,541,Windrose Giants Antwerp,ANT,1000,5,95,50,9,0,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,17,1,2,10,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,9,0,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,18,1,2,24,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,8,56,9,0,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,19,1,2,26,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,9,0,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,20,1,2,34,home,541,Windrose Giants Antwerp,ANT,1001,1,92,55,9,0,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,21,1,2,35,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,9,0,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,22,1,2,35,home,541,Windrose Giants Antwerp,ANT,1007,31,88,56,9,0,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,23,1,2,35,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,9,0,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,24,1,2,35,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,9,0,5691,Severi,Kaukiainen,FIN,1998-05-11,5651,Jacquez Ramello,Yow
+11295,25,25,1,2,35,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,9,0,5643,Amin,Adamu,GBR,1997-10-03,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,26,1,2,52,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,11,50,9,2,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,27,1,2,52,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,9,2,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,28,1,3,5,home,541,Windrose Giants Antwerp,ANT,1000,1,91,50,11,2,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,29,1,3,5,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,11,2,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,30,1,3,25,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,32,57,11,2,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,31,1,3,29,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,11,2,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,32,1,3,30,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,54,95,11,2,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,33,1,3,30,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,11,2,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,34,1,3,30,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,11,2,5687,Cesare,Edwards,USA,2002-12-26,228,Niels,De Ridder
+11295,25,35,1,3,30,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,11,2,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,36,1,3,47,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,92,46,11,2,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,37,1,3,47,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,11,2,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,38,1,3,47,home,541,Windrose Giants Antwerp,ANT,1001,4,0,0,11,2,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,39,1,3,47,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,12,2,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,40,1,4,10,home,541,Windrose Giants Antwerp,ANT,1007,31,29,73,12,2,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,41,1,4,10,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,12,2,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,42,1,4,10,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,12,2,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,43,1,4,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,12,3,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,44,1,4,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,12,4,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,45,1,4,22,home,541,Windrose Giants Antwerp,ANT,1001,3,93,98,12,4,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,46,1,4,27,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,12,4,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,47,1,4,33,home,541,Windrose Giants Antwerp,ANT,1007,31,34,62,12,4,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,48,1,4,33,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,12,4,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,49,1,4,33,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,12,4,5685,Nijel,Pack,USA,2001-05-22,4232,Joel,Murray
+11295,25,50,1,4,44,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,18,56,12,6,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,51,1,5,1,home,541,Windrose Giants Antwerp,ANT,1000,3,71,75,15,6,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,52,1,5,1,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,15,6,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,53,1,5,19,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,15,6,397,Jarne,Lesuisse,BEL,2000-08-02,119,Troy,Koehler
+11295,25,54,1,5,19,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,15,6,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5691,Severi,Kaukiainen
+11295,25,55,1,5,26,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,7,57,15,8,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,56,1,5,26,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,15,8,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,57,1,5,45,home,541,Windrose Giants Antwerp,ANT,1000,2,93,13,17,8,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,58,1,5,54,home,541,Windrose Giants Antwerp,ANT,1007,31,30,51,17,8,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,59,1,5,54,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,17,8,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,60,1,5,54,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,17,8,2612,Letto,Van Drom,BEL,2006-08-17,5567,Jacari,White
+11295,25,61,1,5,54,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,17,8,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,62,1,5,54,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,17,8,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,63,1,5,58,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,17,8,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,64,1,6,4,home,541,Windrose Giants Antwerp,ANT,1001,3,70,20,17,8,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,65,1,6,7,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,17,8,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,66,1,6,15,away,565,House of Talents Spurs Kortrijk,KOR,1000,2,10,10,17,10,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,67,1,6,15,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,17,10,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,68,1,6,23,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,17,10,5649,Anthony James,Smith Jr,USA,\N,255,Bram,Bogaerts
+11295,25,69,1,6,23,home,541,Windrose Giants Antwerp,ANT,1005,14,6,52,17,10,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,70,1,6,23,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,17,10,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,71,1,6,23,home,541,Windrose Giants Antwerp,ANT,1007,31,9,54,17,10,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,72,1,6,23,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,17,10,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,73,1,6,23,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,17,11,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,74,1,6,23,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,17,12,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,75,1,6,36,home,541,Windrose Giants Antwerp,ANT,1001,1,95,53,17,12,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,76,1,6,36,away,565,House of Talents Spurs Kortrijk,KOR,1009,0,0,0,17,12,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,77,1,6,41,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,17,12,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,78,1,6,48,home,541,Windrose Giants Antwerp,ANT,1007,31,11,55,17,12,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,79,1,6,48,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,17,12,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,80,1,6,48,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,17,12,5325,Enoch,Cheeks,USA,2001-04-15,5255,Noel,Coleman
+11295,25,81,1,6,48,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,17,12,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,82,1,6,48,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,17,13,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,83,1,6,48,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,17,13,5651,Jacquez Ramello,Yow,USA,\N,5643,Amin,Adamu
+11295,25,84,1,6,58,home,541,Windrose Giants Antwerp,ANT,1001,1,86,38,17,13,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,85,1,7,2,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,17,13,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,86,1,7,5,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,9,55,17,13,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,87,1,7,5,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,17,13,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,88,1,7,9,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,17,13,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,89,1,7,10,home,541,Windrose Giants Antwerp,ANT,1007,31,8,47,17,13,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,90,1,7,10,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,17,13,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,91,1,7,10,home,541,Windrose Giants Antwerp,ANT,2011,0,0,0,17,13,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,92,1,7,10,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,17,13,5683,Jehloni,James,USA,\N,202,Vincent,Kesteloot
+11295,25,93,1,7,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,17,14,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,94,1,7,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,17,15,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,95,1,7,23,home,541,Windrose Giants Antwerp,ANT,1000,5,95,50,19,15,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,96,1,7,23,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,19,15,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,97,1,7,55,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,31,73,19,18,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,98,1,8,11,home,541,Windrose Giants Antwerp,ANT,1001,3,91,97,19,18,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,99,1,8,15,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,19,18,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,100,1,8,30,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,7,49,19,18,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,101,1,8,33,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,19,18,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,102,1,8,41,home,541,Windrose Giants Antwerp,ANT,1005,12,93,67,19,18,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,103,1,8,41,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,19,18,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,104,1,8,47,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,20,90,19,21,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,105,1,8,47,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,19,21,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,106,1,9,2,home,541,Windrose Giants Antwerp,ANT,1000,3,67,51,22,21,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,107,1,9,2,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,22,21,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,108,1,9,24,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,9,56,22,23,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,109,1,9,24,home,541,Windrose Giants Antwerp,ANT,1007,31,9,56,22,23,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,110,1,9,24,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,22,23,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,111,1,9,24,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,22,23,228,Niels,De Ridder,BEL,2001-02-07,5687,Cesare,Edwards
+11295,25,112,1,9,24,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,22,23,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,113,1,9,24,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,22,24,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,114,1,9,24,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,22,24,5691,Severi,Kaukiainen,FIN,1998-05-11,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,115,1,9,36,home,541,Windrose Giants Antwerp,ANT,1001,3,92,95,22,24,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,116,1,9,39,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,22,24,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,117,1,9,58,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,11,45,22,24,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,118,1,10,0,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,22,24,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,119,1,10,0,home,541,Windrose Giants Antwerp,ANT,1101,0,0,0,22,24,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,120,2,0,0,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,22,24,4232,Joel,Murray,USA,1999-11-23,5685,Nijel,Pack
+11295,25,121,2,0,12,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,6,45,22,26,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,122,2,0,12,home,541,Windrose Giants Antwerp,ANT,1007,31,6,45,22,26,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,123,2,0,12,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,22,26,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,124,2,0,12,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,22,26,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,125,2,0,14,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,22,26,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,126,2,0,30,home,541,Windrose Giants Antwerp,ANT,1001,3,67,54,22,26,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,127,2,0,34,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,22,26,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,128,2,0,52,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,14,6,22,26,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,129,2,0,55,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,22,26,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,130,2,0,56,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,10,44,22,28,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,131,2,1,9,home,541,Windrose Giants Antwerp,ANT,1001,3,75,83,22,28,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,132,2,1,12,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,22,28,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,133,2,1,19,home,541,Windrose Giants Antwerp,ANT,1001,3,77,85,22,28,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,134,2,1,22,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,22,28,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,135,2,1,24,home,541,Windrose Giants Antwerp,ANT,1000,1,94,53,24,28,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,136,2,1,34,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,24,28,45,Servaas,Buysschaert,BEL,1999-03-19,5649,Anthony James,Smith Jr
+11295,25,137,2,1,34,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,24,28,255,Bram,Bogaerts,BEL,1998-01-30,5647,Dylan James,Arnett
+11295,25,138,2,1,37,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,8,54,24,28,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,139,2,1,37,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,24,28,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,140,2,1,37,home,541,Windrose Giants Antwerp,ANT,2002,0,0,0,24,28,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,141,2,1,49,home,541,Windrose Giants Antwerp,ANT,1000,3,87,4,27,28,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,142,2,1,49,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,27,28,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,143,2,2,0,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,17,94,27,31,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,144,2,2,0,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,27,31,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,145,2,2,19,home,541,Windrose Giants Antwerp,ANT,1001,3,87,95,27,31,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,146,2,2,22,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,27,31,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,147,2,2,35,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,7,45,27,31,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,148,2,2,39,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,27,31,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,149,2,2,39,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,6,50,27,33,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,150,2,2,54,home,541,Windrose Giants Antwerp,ANT,1000,5,95,49,29,33,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,151,2,2,54,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,29,33,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,152,2,3,7,home,541,Windrose Giants Antwerp,ANT,1007,31,40,6,29,33,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,153,2,3,7,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,29,33,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,154,2,3,7,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,29,33,5685,Nijel,Pack,USA,2001-05-22,4232,Joel,Murray
+11295,25,155,2,3,7,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,29,33,119,Troy,Koehler,NED,2001-07-30,5691,Severi,Kaukiainen
+11295,25,156,2,3,7,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,29,33,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,397,Jarne,Lesuisse
+11295,25,157,2,3,16,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,8,55,29,33,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,158,2,3,16,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,29,33,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,159,2,3,17,away,565,House of Talents Spurs Kortrijk,KOR,2003,0,0,0,29,33,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,160,2,3,22,away,565,House of Talents Spurs Kortrijk,KOR,2005,27,27,48,29,33,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,161,2,3,35,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,66,31,29,33,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,162,2,3,35,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,29,33,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,163,2,3,40,home,541,Windrose Giants Antwerp,ANT,1000,1,92,45,31,33,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,164,2,3,40,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,92,45,31,33,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,165,2,3,40,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,31,33,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,166,2,3,40,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,31,33,202,Vincent,Kesteloot,BEL,1995-03-23,5683,Jehloni,James
+11295,25,167,2,3,40,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,31,33,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,168,2,3,40,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,32,33,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,169,2,3,53,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,8,44,32,33,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,170,2,3,54,away,565,House of Talents Spurs Kortrijk,KOR,2003,0,0,0,32,33,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,171,2,4,3,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,8,52,32,35,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,172,2,4,3,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,32,35,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,173,2,4,18,home,541,Windrose Giants Antwerp,ANT,1001,1,95,44,32,35,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,174,2,4,22,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,32,35,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,175,2,4,35,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,27,80,32,38,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,176,2,4,35,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,32,38,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,177,2,4,54,home,541,Windrose Giants Antwerp,ANT,1001,1,88,52,32,38,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,178,2,4,58,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,32,38,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,179,2,5,2,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,8,41,32,38,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,180,2,5,9,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,32,38,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,181,2,5,12,home,541,Windrose Giants Antwerp,ANT,1000,3,78,90,35,38,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,182,2,5,12,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,35,38,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,183,2,5,14,away,565,House of Talents Spurs Kortrijk,KOR,2011,0,0,0,35,38,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,184,2,5,14,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,35,38,5567,Jacari,White,USA,\N,2612,Letto,Van Drom
+11295,25,185,2,5,14,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,35,38,5691,Severi,Kaukiainen,FIN,1998-05-11,5651,Jacquez Ramello,Yow
+11295,25,186,2,5,14,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,35,38,5643,Amin,Adamu,GBR,1997-10-03,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,187,2,5,37,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,27,17,35,38,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,188,2,5,40,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,35,38,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,189,2,5,49,home,541,Windrose Giants Antwerp,ANT,1001,3,69,37,35,38,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,190,2,5,52,home,541,Windrose Giants Antwerp,ANT,2003,0,0,0,35,38,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,191,2,5,54,home,541,Windrose Giants Antwerp,ANT,1007,30,95,96,35,38,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,192,2,5,54,home,541,Windrose Giants Antwerp,ANT,1005,22,0,0,35,38,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,193,2,5,54,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,35,38,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,194,2,5,54,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,35,38,5255,Noel,Coleman,BEL,2000-01-17,5567,Jacari,White
+11295,25,195,2,6,6,home,541,Windrose Giants Antwerp,ANT,1007,31,9,57,35,38,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,196,2,6,6,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,35,38,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,197,2,6,6,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,35,38,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,198,2,6,6,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,35,39,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,199,2,6,18,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,92,53,35,39,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,200,2,6,18,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,35,39,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,201,2,6,18,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,35,39,5649,Anthony James,Smith Jr,USA,\N,255,Bram,Bogaerts
+11295,25,202,2,6,18,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,36,39,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,203,2,6,18,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,36,39,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,204,2,6,18,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,37,39,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,205,2,6,36,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,25,15,37,39,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,206,2,6,39,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,37,39,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,207,2,6,50,home,541,Windrose Giants Antwerp,ANT,1001,1,93,43,37,39,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,208,2,6,52,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,37,39,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,209,2,6,54,home,541,Windrose Giants Antwerp,ANT,1000,1,93,41,39,39,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,210,2,6,54,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,39,39,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,211,2,7,18,away,565,House of Talents Spurs Kortrijk,KOR,1005,12,9,55,39,39,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,212,2,7,18,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,39,39,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,213,2,7,21,home,541,Windrose Giants Antwerp,ANT,1005,20,90,54,39,39,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,214,2,7,21,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,39,39,397,Jarne,Lesuisse,BEL,2000-08-02,119,Troy,Koehler
+11295,25,215,2,7,21,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,39,39,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5691,Severi,Kaukiainen
+11295,25,216,2,7,37,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,12,43,39,41,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,217,2,7,43,home,541,Windrose Giants Antwerp,ANT,1005,14,5,54,39,41,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,218,2,7,45,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,7,45,39,43,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,219,2,7,45,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,39,43,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,220,2,8,1,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,91,52,39,43,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,221,2,8,1,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,39,43,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,222,2,8,1,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,40,43,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,223,2,8,1,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,40,43,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,224,2,8,1,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,41,43,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,225,2,8,16,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,12,5,41,43,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,226,2,8,19,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,41,43,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,227,2,8,28,away,565,House of Talents Spurs Kortrijk,KOR,1005,14,6,59,41,43,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,228,2,8,28,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,41,43,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,229,2,8,39,home,541,Windrose Giants Antwerp,ANT,1000,1,94,43,43,43,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,230,2,8,50,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,8,43,43,43,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,231,2,8,52,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,43,43,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,232,2,8,53,home,541,Windrose Giants Antwerp,ANT,1005,14,29,10,43,43,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,233,2,9,11,home,541,Windrose Giants Antwerp,ANT,1007,31,8,44,43,43,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,234,2,9,11,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,43,43,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,235,2,9,11,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,43,43,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,236,2,9,11,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,43,44,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,237,2,9,11,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,43,45,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,238,2,9,21,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,71,50,43,45,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,239,2,9,21,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,43,45,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,240,2,9,21,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,44,45,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,241,2,9,22,home,541,Windrose Giants Antwerp,ANT,1001,4,0,0,44,45,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,242,2,9,23,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,44,45,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,243,2,9,32,home,541,Windrose Giants Antwerp,ANT,1000,1,91,41,46,45,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,244,2,9,32,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,46,45,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,245,2,9,45,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,46,45,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,246,2,9,54,away,565,House of Talents Spurs Kortrijk,KOR,1005,20,35,20,46,45,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,247,2,9,54,home,541,Windrose Giants Antwerp,ANT,2011,0,0,0,46,45,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,248,2,9,54,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,46,45,2612,Letto,Van Drom,BEL,2006-08-17,202,Vincent,Kesteloot
+11295,25,249,2,10,0,home,541,Windrose Giants Antwerp,ANT,1001,3,75,86,46,45,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,250,2,10,0,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,46,45,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,251,2,10,0,away,565,House of Talents Spurs Kortrijk,KOR,1101,0,0,0,46,45,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,252,3,0,0,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,46,45,202,Vincent,Kesteloot,BEL,1995-03-23,2612,Letto,Van Drom
+11295,25,253,3,0,0,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,46,45,4232,Joel,Murray,USA,1999-11-23,5685,Nijel,Pack
+11295,25,254,3,0,0,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,46,45,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,255,3,0,0,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,46,45,255,Bram,Bogaerts,BEL,1998-01-30,5649,Anthony James,Smith Jr
+11295,25,256,3,0,0,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,46,45,5651,Jacquez Ramello,Yow,USA,\N,5643,Amin,Adamu
+11295,25,257,3,0,16,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,71,22,46,48,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,258,3,0,16,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,46,48,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,259,3,0,45,home,541,Windrose Giants Antwerp,ANT,1005,14,36,45,46,48,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,260,3,0,45,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,46,48,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,261,3,0,49,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,93,44,46,50,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,262,3,0,53,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,85,49,46,50,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,263,3,0,53,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,46,50,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,264,3,1,7,home,541,Windrose Giants Antwerp,ANT,1001,3,9,97,46,50,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,265,3,1,11,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,46,50,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,266,3,1,18,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,93,43,46,50,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,267,3,1,21,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,46,50,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,268,3,1,28,home,541,Windrose Giants Antwerp,ANT,1001,1,8,54,46,50,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,269,3,1,31,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,46,50,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,270,3,1,32,home,541,Windrose Giants Antwerp,ANT,1000,3,8,96,49,50,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,271,3,1,32,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,49,50,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,272,3,1,46,home,541,Windrose Giants Antwerp,ANT,1007,31,88,51,49,50,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,273,3,1,46,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,49,50,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,274,3,1,54,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,92,57,49,50,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,275,3,1,56,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,49,50,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,276,3,2,14,home,541,Windrose Giants Antwerp,ANT,1000,5,5,50,51,50,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,277,3,2,14,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,51,50,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,278,3,2,32,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,92,38,51,50,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,279,3,2,35,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,51,50,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,280,3,2,39,home,541,Windrose Giants Antwerp,ANT,1001,3,13,96,51,50,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,281,3,2,42,home,541,Windrose Giants Antwerp,ANT,2003,0,0,0,51,50,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,282,3,2,42,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,51,50,5643,Amin,Adamu,GBR,1997-10-03,5651,Jacquez Ramello,Yow
+11295,25,283,3,2,42,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,51,50,5691,Severi,Kaukiainen,FIN,1998-05-11,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,284,3,2,51,home,541,Windrose Giants Antwerp,ANT,1001,3,23,12,51,50,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,285,3,2,55,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,51,50,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,286,3,2,58,home,541,Windrose Giants Antwerp,ANT,2005,27,21,48,51,50,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,287,3,3,14,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,95,52,51,52,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,288,3,3,14,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,51,52,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,289,3,3,24,home,541,Windrose Giants Antwerp,ANT,2005,25,52,4,51,52,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,290,3,3,39,away,565,House of Talents Spurs Kortrijk,KOR,2005,27,60,22,51,52,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,291,3,3,50,home,541,Windrose Giants Antwerp,ANT,1001,1,8,43,51,52,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,292,3,3,53,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,51,52,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,293,3,4,5,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,86,48,51,52,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,294,3,4,5,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,51,52,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,295,3,4,6,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,51,52,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,296,3,4,6,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,88,48,51,52,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,297,3,4,6,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,51,52,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,298,3,4,6,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,51,52,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,299,3,4,21,home,541,Windrose Giants Antwerp,ANT,1001,1,8,41,51,52,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,300,3,4,21,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,51,52,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,301,3,4,21,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,8,44,51,52,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,302,3,4,21,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,51,52,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,303,3,4,25,home,541,Windrose Giants Antwerp,ANT,1005,14,5,34,51,52,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,304,3,4,25,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,51,52,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,305,3,4,37,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,89,50,51,54,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,306,3,4,37,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,51,54,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,307,3,4,44,home,541,Windrose Giants Antwerp,ANT,1000,1,7,55,53,54,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,308,3,4,44,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,53,54,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,309,3,4,55,away,565,House of Talents Spurs Kortrijk,KOR,1005,14,85,50,53,54,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,310,3,4,55,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,53,54,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,311,3,4,56,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,82,47,53,54,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,312,3,4,56,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,53,54,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,313,3,4,56,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,53,54,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5691,Severi,Kaukiainen
+11295,25,314,3,5,7,home,541,Windrose Giants Antwerp,ANT,1000,3,33,24,56,54,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,315,3,5,7,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,56,54,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,316,3,5,25,away,565,House of Talents Spurs Kortrijk,KOR,1005,14,61,26,56,54,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,317,3,5,25,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,56,54,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,318,3,5,38,home,541,Windrose Giants Antwerp,ANT,1001,1,8,44,56,54,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,319,3,5,40,away,565,House of Talents Spurs Kortrijk,KOR,2002,0,0,0,56,54,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,320,3,5,40,home,541,Windrose Giants Antwerp,ANT,1007,31,16,51,56,54,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,321,3,5,40,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,56,54,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,322,3,5,40,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,56,54,5687,Cesare,Edwards,USA,2002-12-26,228,Niels,De Ridder
+11295,25,323,3,5,40,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,56,54,5649,Anthony James,Smith Jr,USA,\N,255,Bram,Bogaerts
+11295,25,324,3,5,40,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,56,54,119,Troy,Koehler,NED,2001-07-30,5643,Amin,Adamu
+11295,25,325,3,5,56,away,565,House of Talents Spurs Kortrijk,KOR,1007,30,76,27,56,54,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,326,3,5,56,away,565,House of Talents Spurs Kortrijk,KOR,1005,22,0,0,56,54,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,327,3,5,56,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,56,54,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,328,3,6,8,home,541,Windrose Giants Antwerp,ANT,1000,5,5,50,58,54,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,329,3,6,26,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,94,43,58,56,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,330,3,6,26,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,58,56,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,331,3,6,41,home,541,Windrose Giants Antwerp,ANT,1001,1,6,54,58,56,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,332,3,6,41,away,565,House of Talents Spurs Kortrijk,KOR,2002,0,0,0,58,56,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,333,3,6,41,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,58,56,5685,Nijel,Pack,USA,2001-05-22,4232,Joel,Murray
+11295,25,334,3,6,41,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,58,56,5651,Jacquez Ramello,Yow,USA,\N,397,Jarne,Lesuisse
+11295,25,335,3,6,41,away,565,House of Talents Spurs Kortrijk,KOR,1009,0,0,0,58,56,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,336,3,6,51,away,565,House of Talents Spurs Kortrijk,KOR,1007,30,70,46,58,56,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,337,3,6,51,away,565,House of Talents Spurs Kortrijk,KOR,1005,22,0,0,58,56,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,338,3,6,51,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,58,56,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,339,3,7,6,home,541,Windrose Giants Antwerp,ANT,1001,3,23,12,58,56,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,340,3,7,10,home,541,Windrose Giants Antwerp,ANT,2003,0,0,0,58,56,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,341,3,7,20,home,541,Windrose Giants Antwerp,ANT,1001,1,17,41,58,56,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,342,3,7,20,away,565,House of Talents Spurs Kortrijk,KOR,1009,0,0,0,58,56,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,343,3,7,24,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,58,56,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,344,3,7,27,home,541,Windrose Giants Antwerp,ANT,1001,3,23,13,58,56,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,345,3,7,29,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,58,56,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,346,3,7,30,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,94,46,58,58,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,347,3,7,30,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,58,58,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,348,3,7,40,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,10,44,58,58,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,349,3,7,40,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,58,58,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,350,3,7,40,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,58,58,5567,Jacari,White,USA,\N,5255,Noel,Coleman
+11295,25,351,3,7,40,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,58,58,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,352,3,7,40,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,58,58,5691,Severi,Kaukiainen,FIN,1998-05-11,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,353,3,7,40,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,59,58,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,354,3,7,40,home,541,Windrose Giants Antwerp,ANT,1001,4,0,0,59,58,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,355,3,7,41,away,565,House of Talents Spurs Kortrijk,KOR,2002,0,0,0,59,58,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,356,3,7,41,home,541,Windrose Giants Antwerp,ANT,1007,31,11,50,59,58,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,357,3,7,41,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,59,58,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,358,3,7,59,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,71,77,59,58,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,359,3,8,4,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,59,58,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,360,3,8,13,home,541,Windrose Giants Antwerp,ANT,1000,3,14,5,62,58,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,361,3,8,13,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,62,58,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,362,3,8,35,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,82,93,62,58,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,363,3,8,38,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,62,58,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,364,3,8,39,away,565,House of Talents Spurs Kortrijk,KOR,1005,14,89,52,62,58,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,365,3,8,39,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,62,58,397,Jarne,Lesuisse,BEL,2000-08-02,119,Troy,Koehler
+11295,25,366,3,8,49,home,541,Windrose Giants Antwerp,ANT,1001,3,13,5,62,58,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,367,3,8,52,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,62,58,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,368,3,8,55,home,541,Windrose Giants Antwerp,ANT,1007,31,63,11,62,58,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,369,3,8,55,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,62,58,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,370,3,8,55,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,62,58,5683,Jehloni,James,USA,\N,202,Vincent,Kesteloot
+11295,25,371,3,9,9,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,73,79,62,61,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,372,3,9,32,home,541,Windrose Giants Antwerp,ANT,1000,3,11,4,65,61,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,373,3,9,32,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,65,61,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,374,3,9,57,away,565,House of Talents Spurs Kortrijk,KOR,1005,12,0,0,65,61,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,375,3,9,57,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,65,61,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,376,3,10,0,home,541,Windrose Giants Antwerp,ANT,1001,3,48,58,65,61,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,377,3,10,0,home,541,Windrose Giants Antwerp,ANT,1101,0,0,0,65,61,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,378,4,0,17,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,66,52,65,64,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,379,4,0,17,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,65,64,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,380,4,0,29,home,541,Windrose Giants Antwerp,ANT,1001,3,15,6,65,64,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,381,4,0,33,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,65,64,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,382,4,0,41,home,541,Windrose Giants Antwerp,ANT,1000,1,7,53,67,64,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,383,4,0,41,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,67,64,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,384,4,0,47,home,541,Windrose Giants Antwerp,ANT,1007,31,8,58,67,64,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,385,4,0,47,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,67,64,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,386,4,0,57,away,565,House of Talents Spurs Kortrijk,KOR,1005,12,66,73,67,64,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,387,4,0,57,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,67,64,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,388,4,1,2,home,541,Windrose Giants Antwerp,ANT,1000,5,5,49,69,64,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,389,4,1,14,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,95,47,69,66,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,390,4,1,21,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,9,54,69,66,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,391,4,1,21,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,69,66,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,392,4,1,21,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,69,66,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5691,Severi,Kaukiainen
+11295,25,393,4,1,21,home,541,Windrose Giants Antwerp,ANT,1001,4,0,0,69,66,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,394,4,1,21,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,70,66,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,395,4,1,31,away,565,House of Talents Spurs Kortrijk,KOR,1005,14,53,57,70,66,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,396,4,1,31,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,70,66,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,397,4,1,32,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,39,90,70,66,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,398,4,1,32,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,70,66,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,399,4,1,43,home,541,Windrose Giants Antwerp,ANT,1000,1,11,48,72,66,5687,Cesare,Edwards,USA,2002-12-26,\N,\N,\N
+11295,25,400,4,1,43,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,72,66,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,401,4,2,4,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,90,54,72,66,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,402,4,2,4,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,72,66,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,403,4,2,9,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,72,66,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,404,4,2,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,82,94,72,69,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,405,4,2,10,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,72,69,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,406,4,2,28,home,541,Windrose Giants Antwerp,ANT,1000,3,33,36,75,69,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,407,4,2,30,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,75,69,5643,Amin,Adamu,GBR,1997-10-03,5651,Jacquez Ramello,Yow
+11295,25,408,4,2,30,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,75,69,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,409,4,2,45,away,565,House of Talents Spurs Kortrijk,KOR,1005,12,66,27,75,69,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,410,4,2,45,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,75,69,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,411,4,2,53,home,541,Windrose Giants Antwerp,ANT,1000,3,32,58,78,69,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,412,4,2,53,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,78,69,5683,Jehloni,James,USA,\N,\N,\N,\N
+11295,25,413,4,2,53,away,565,House of Talents Spurs Kortrijk,KOR,2011,0,0,0,78,69,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,414,4,2,53,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,78,69,119,Troy,Koehler,NED,2001-07-30,397,Jarne,Lesuisse
+11295,25,415,4,3,21,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,94,3,78,69,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,416,4,3,24,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,78,69,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,417,4,3,34,home,541,Windrose Giants Antwerp,ANT,1005,14,34,26,78,69,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,418,4,3,34,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,78,69,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,419,4,3,38,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,94,44,78,69,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,420,4,3,41,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,78,69,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,421,4,3,48,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,78,69,228,Niels,De Ridder,BEL,2001-02-07,5685,Nijel,Pack
+11295,25,422,4,3,48,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,78,69,4232,Joel,Murray,USA,1999-11-23,5687,Cesare,Edwards
+11295,25,423,4,3,48,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,78,69,255,Bram,Bogaerts,BEL,1998-01-30,5649,Anthony James,Smith Jr
+11295,25,424,4,3,48,home,541,Windrose Giants Antwerp,ANT,1007,31,90,55,78,69,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,425,4,3,48,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,78,69,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,426,4,3,57,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,78,70,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,427,4,3,58,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,78,71,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,428,4,4,14,home,541,Windrose Giants Antwerp,ANT,2005,27,15,52,78,71,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,429,4,4,25,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,94,56,78,73,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,430,4,4,25,home,541,Windrose Giants Antwerp,ANT,2011,0,0,0,78,73,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,431,4,4,25,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,78,73,202,Vincent,Kesteloot,BEL,1995-03-23,5683,Jehloni,James
+11295,25,432,4,4,40,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,8,52,78,73,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,433,4,4,40,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,78,73,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,434,4,4,45,home,541,Windrose Giants Antwerp,ANT,1005,14,32,22,78,73,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,435,4,4,45,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,78,73,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,436,4,4,50,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,94,54,78,75,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,437,4,4,50,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,78,75,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,438,4,5,9,home,541,Windrose Giants Antwerp,ANT,1007,0,94,54,78,75,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,439,4,5,9,home,541,Windrose Giants Antwerp,ANT,1005,22,0,0,78,75,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,440,4,5,9,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,78,75,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,441,4,5,9,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,78,76,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,442,4,5,9,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,78,77,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,443,4,5,9,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,78,77,5255,Noel,Coleman,BEL,2000-01-17,5325,Enoch,Cheeks
+11295,25,444,4,5,16,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,93,41,78,77,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,445,4,5,18,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,78,77,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,446,4,5,18,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,73,85,78,77,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,447,4,5,18,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,78,77,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,448,4,5,35,home,541,Windrose Giants Antwerp,ANT,1001,1,8,56,78,77,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,449,4,5,38,away,565,House of Talents Spurs Kortrijk,KOR,2002,0,0,0,78,77,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,450,4,5,58,away,565,House of Talents Spurs Kortrijk,KOR,1005,12,90,41,78,77,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,451,4,5,58,home,541,Windrose Giants Antwerp,ANT,1004,0,0,0,78,77,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,452,4,6,1,home,541,Windrose Giants Antwerp,ANT,1001,1,10,55,78,77,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,453,4,6,1,away,565,House of Talents Spurs Kortrijk,KOR,1009,0,0,0,78,77,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,454,4,6,1,home,541,Windrose Giants Antwerp,ANT,2003,0,0,0,78,77,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,455,4,6,1,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,78,77,5649,Anthony James,Smith Jr,USA,\N,255,Bram,Bogaerts
+11295,25,456,4,6,1,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,78,77,5691,Severi,Kaukiainen,FIN,1998-05-11,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,457,4,6,2,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,78,77,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,458,4,6,15,home,541,Windrose Giants Antwerp,ANT,1005,19,7,59,78,77,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,459,4,6,33,away,565,House of Talents Spurs Kortrijk,KOR,1007,30,67,71,78,77,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,460,4,6,33,away,565,House of Talents Spurs Kortrijk,KOR,1005,22,0,0,78,77,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,461,4,6,33,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,78,77,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,462,4,6,51,home,541,Windrose Giants Antwerp,ANT,1001,3,8,95,78,77,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,463,4,6,55,home,541,Windrose Giants Antwerp,ANT,2003,0,0,0,78,77,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,464,4,7,1,home,541,Windrose Giants Antwerp,ANT,1000,1,7,57,80,77,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,465,4,7,24,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,89,4,80,77,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,466,4,7,27,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,80,77,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,467,4,7,29,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,81,8,80,80,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,468,4,7,29,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,80,80,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,469,4,7,42,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,40,10,80,80,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,470,4,7,42,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,80,80,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,471,4,7,42,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,80,80,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,472,4,7,42,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,81,80,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,473,4,7,42,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,82,80,5567,Jacari,White,USA,\N,\N,\N,\N
+11295,25,474,4,7,42,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,82,80,5325,Enoch,Cheeks,USA,2001-04-15,5567,Jacari,White
+11295,25,475,4,7,56,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,68,23,82,80,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,476,4,8,0,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,82,80,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,477,4,8,8,home,541,Windrose Giants Antwerp,ANT,1001,3,33,41,82,80,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,478,4,8,12,away,565,House of Talents Spurs Kortrijk,KOR,2002,0,0,0,82,80,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,479,4,8,12,home,541,Windrose Giants Antwerp,ANT,1007,31,9,40,82,80,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,480,4,8,12,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,82,80,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,481,4,8,12,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,82,80,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5691,Severi,Kaukiainen
+11295,25,482,4,8,29,away,565,House of Talents Spurs Kortrijk,KOR,1000,5,95,48,82,82,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,483,4,8,50,home,541,Windrose Giants Antwerp,ANT,1000,1,12,50,84,82,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,484,4,9,10,home,541,Windrose Giants Antwerp,ANT,1007,31,69,49,84,82,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,485,4,9,10,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,84,82,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,486,4,9,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,84,83,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,487,4,9,10,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,84,84,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,488,4,9,25,home,541,Windrose Giants Antwerp,ANT,1001,1,7,43,84,84,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,489,4,9,28,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,84,84,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,490,4,9,47,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,93,61,84,84,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,491,4,9,51,home,541,Windrose Giants Antwerp,ANT,2002,0,0,0,84,84,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,492,4,9,51,home,541,Windrose Giants Antwerp,ANT,2011,0,0,0,84,84,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,493,4,9,51,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,84,84,5685,Nijel,Pack,USA,2001-05-22,202,Vincent,Kesteloot
+11295,25,494,4,10,0,home,541,Windrose Giants Antwerp,ANT,1001,3,30,70,84,84,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,495,4,10,0,home,541,Windrose Giants Antwerp,ANT,1101,0,0,0,84,84,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,496,5,0,0,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,84,84,202,Vincent,Kesteloot,BEL,1995-03-23,4232,Joel,Murray
+11295,25,497,5,0,0,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,84,84,5647,Dylan James,Arnett,USA,\N,45,Servaas,Buysschaert
+11295,25,498,5,0,0,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,84,84,5691,Severi,Kaukiainen,FIN,1998-05-11,119,Troy,Koehler
+11295,25,499,5,0,0,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,84,84,5651,Jacquez Ramello,Yow,USA,\N,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,500,5,0,23,home,541,Windrose Giants Antwerp,ANT,1000,1,15,53,86,84,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,501,5,0,32,home,541,Windrose Giants Antwerp,ANT,1007,31,94,38,86,84,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,502,5,0,32,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,86,84,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,503,5,0,32,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,86,84,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,504,5,0,32,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,86,85,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,505,5,0,46,home,541,Windrose Giants Antwerp,ANT,1005,14,39,52,86,85,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,506,5,0,46,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,86,85,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,507,5,1,7,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,73,18,86,85,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,508,5,1,9,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,86,85,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,509,5,1,16,home,541,Windrose Giants Antwerp,ANT,1000,1,15,48,88,85,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,510,5,1,42,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,89,50,88,85,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,511,5,1,46,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,88,85,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,512,5,1,49,home,541,Windrose Giants Antwerp,ANT,1000,1,9,43,90,85,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,513,5,1,49,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,90,85,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,514,5,2,14,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,65,42,90,88,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,515,5,2,41,home,541,Windrose Giants Antwerp,ANT,1001,3,29,20,90,88,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,516,5,2,45,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,90,88,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,517,5,2,52,home,541,Windrose Giants Antwerp,ANT,1001,3,24,12,90,88,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,518,5,2,55,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,90,88,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,519,5,3,6,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,94,96,90,88,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,520,5,3,8,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,90,88,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,521,5,3,15,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,88,4,90,88,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,522,5,3,17,home,541,Windrose Giants Antwerp,ANT,2002,0,0,0,90,88,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,523,5,3,17,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,94,60,90,88,5647,Dylan James,Arnett,USA,\N,\N,\N,\N
+11295,25,524,5,3,17,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,90,88,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,525,5,3,17,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,90,88,45,Servaas,Buysschaert,BEL,1999-03-19,5647,Dylan James,Arnett
+11295,25,526,5,3,17,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,90,88,397,Jarne,Lesuisse,BEL,2000-08-02,5691,Severi,Kaukiainen
+11295,25,527,5,3,17,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,90,88,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5643,Amin,Adamu
+11295,25,528,5,3,17,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,91,88,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,529,5,3,18,home,541,Windrose Giants Antwerp,ANT,1001,4,0,0,91,88,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,530,5,3,19,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,91,88,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,531,5,3,38,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,91,52,91,90,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,532,5,3,52,home,541,Windrose Giants Antwerp,ANT,1005,12,14,52,91,90,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,533,5,3,52,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,91,90,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,534,5,3,54,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,91,90,4232,Joel,Murray,USA,1999-11-23,5255,Noel,Coleman
+11295,25,535,5,3,54,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,91,90,119,Troy,Koehler,NED,2001-07-30,5651,Jacquez Ramello,Yow
+11295,25,536,5,4,19,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,85,48,91,90,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,537,5,4,21,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,91,90,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,538,5,4,33,home,541,Windrose Giants Antwerp,ANT,1001,3,31,19,91,90,5685,Nijel,Pack,USA,2001-05-22,\N,\N,\N
+11295,25,539,5,4,41,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,91,90,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,540,5,4,43,away,565,House of Talents Spurs Kortrijk,KOR,1007,30,95,39,91,90,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,541,5,4,43,away,565,House of Talents Spurs Kortrijk,KOR,1005,22,0,0,91,90,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,542,5,4,43,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,91,90,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,543,5,4,43,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,91,90,5643,Amin,Adamu,GBR,1997-10-03,397,Jarne,Lesuisse
+11295,25,544,5,4,47,home,541,Windrose Giants Antwerp,ANT,1005,14,73,1,91,90,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,545,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,91,90,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,546,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,91,41,91,90,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,547,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1003,0,0,0,91,90,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,548,5,4,47,home,541,Windrose Giants Antwerp,ANT,1007,31,92,43,91,90,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,549,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,91,90,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,550,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,91,90,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,551,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,91,91,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,552,5,4,47,home,541,Windrose Giants Antwerp,ANT,2011,0,0,0,91,91,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,553,5,4,47,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,91,91,255,Bram,Bogaerts,BEL,1998-01-30,45,Servaas,Buysschaert
+11295,25,554,5,4,56,home,541,Windrose Giants Antwerp,ANT,1000,1,6,44,93,91,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,555,5,4,56,away,565,House of Talents Spurs Kortrijk,KOR,2011,0,0,0,93,91,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,556,5,4,56,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,93,91,5255,Noel,Coleman,BEL,2000-01-17,5685,Nijel,Pack
+11295,25,557,5,5,0,away,565,House of Talents Spurs Kortrijk,KOR,1000,2,91,30,93,93,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,558,5,5,0,home,541,Windrose Giants Antwerp,ANT,1005,14,98,86,93,93,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,559,5,5,0,away,565,House of Talents Spurs Kortrijk,KOR,1004,0,0,0,93,93,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,560,5,5,0,away,565,House of Talents Spurs Kortrijk,KOR,1101,0,0,0,93,93,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,561,6,0,0,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,93,93,2612,Letto,Van Drom,BEL,2006-08-17,228,Niels,De Ridder
+11295,25,562,6,0,14,home,541,Windrose Giants Antwerp,ANT,1001,3,32,48,93,93,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,563,6,0,17,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,93,93,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,564,6,0,25,home,541,Windrose Giants Antwerp,ANT,1001,3,26,84,93,93,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,565,6,0,29,home,541,Windrose Giants Antwerp,ANT,1003,0,0,0,93,93,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,566,6,0,30,home,541,Windrose Giants Antwerp,ANT,1000,3,26,18,96,93,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,567,6,0,30,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,96,93,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,568,6,0,54,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,94,56,96,93,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,569,6,0,54,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,96,93,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,570,6,0,54,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,96,93,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,571,6,1,10,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,12,50,96,93,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,572,6,1,10,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,96,93,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,573,6,1,10,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,96,93,228,Niels,De Ridder,BEL,2001-02-07,202,Vincent,Kesteloot
+11295,25,574,6,1,10,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,96,93,45,Servaas,Buysschaert,BEL,1999-03-19,255,Bram,Bogaerts
+11295,25,575,6,1,10,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,97,93,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,576,6,1,10,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,98,93,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,577,6,1,22,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,95,57,98,93,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,578,6,1,25,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,98,93,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,579,6,1,30,home,541,Windrose Giants Antwerp,ANT,1000,1,8,40,100,93,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,580,6,1,30,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,100,93,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,581,6,1,37,away,565,House of Talents Spurs Kortrijk,KOR,1000,1,93,41,100,95,119,Troy,Koehler,NED,2001-07-30,\N,\N,\N
+11295,25,582,6,1,37,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,100,95,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,583,6,1,45,home,541,Windrose Giants Antwerp,ANT,1000,1,6,57,102,95,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,584,6,1,45,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,6,57,102,95,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,585,6,1,45,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,102,95,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,586,6,1,46,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,102,95,5691,Severi,Kaukiainen,FIN,1998-05-11,5643,Amin,Adamu
+11295,25,587,6,1,46,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,102,95,5651,Jacquez Ramello,Yow,USA,\N,5645,Jamarii D'Aje,Johnson-Thomas
+11295,25,588,6,1,46,home,541,Windrose Giants Antwerp,ANT,1001,4,0,0,102,95,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,589,6,1,46,away,565,House of Talents Spurs Kortrijk,KOR,2002,0,0,0,102,95,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,590,6,1,46,home,541,Windrose Giants Antwerp,ANT,1007,31,11,51,102,95,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,591,6,1,46,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,102,95,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,592,6,1,46,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,102,95,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,593,6,1,46,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,102,96,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,594,6,2,2,home,541,Windrose Giants Antwerp,ANT,1000,3,24,87,105,96,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,595,6,2,2,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,105,96,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,596,6,2,20,home,541,Windrose Giants Antwerp,ANT,1007,31,81,48,105,96,228,Niels,De Ridder,BEL,2001-02-07,\N,\N,\N
+11295,25,597,6,2,20,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,105,96,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,598,6,2,20,home,541,Windrose Giants Antwerp,ANT,1011,0,0,0,105,96,202,Vincent,Kesteloot,BEL,1995-03-23,228,Niels,De Ridder
+11295,25,599,6,2,20,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,105,96,397,Jarne,Lesuisse,BEL,2000-08-02,119,Troy,Koehler
+11295,25,600,6,2,20,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,105,97,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,601,6,2,20,away,565,House of Talents Spurs Kortrijk,KOR,1001,4,0,0,105,97,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,602,6,2,20,away,565,House of Talents Spurs Kortrijk,KOR,1007,31,94,38,105,97,5649,Anthony James,Smith Jr,USA,\N,\N,\N,\N
+11295,25,603,6,2,20,home,541,Windrose Giants Antwerp,ANT,1006,0,0,0,105,97,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,604,6,2,21,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,105,97,255,Bram,Bogaerts,BEL,1998-01-30,5649,Anthony James,Smith Jr
+11295,25,605,6,2,22,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,105,97,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,606,6,2,22,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,106,97,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,607,6,2,22,home,541,Windrose Giants Antwerp,ANT,1000,4,0,0,107,97,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,608,6,2,38,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,76,12,107,97,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,609,6,2,40,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,107,97,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,610,6,2,43,home,541,Windrose Giants Antwerp,ANT,1000,1,8,44,109,97,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,611,6,2,43,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,109,97,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,612,6,2,43,away,565,House of Talents Spurs Kortrijk,KOR,2011,0,0,0,109,97,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,613,6,3,3,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,80,90,109,97,5691,Severi,Kaukiainen,FIN,1998-05-11,\N,\N,\N
+11295,25,614,6,3,6,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,109,97,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,615,6,3,14,home,541,Windrose Giants Antwerp,ANT,1007,30,6,45,109,97,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,616,6,3,14,home,541,Windrose Giants Antwerp,ANT,1005,22,0,0,109,97,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,617,6,3,14,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,109,97,5651,Jacquez Ramello,Yow,USA,\N,\N,\N,\N
+11295,25,618,6,3,14,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,109,97,5643,Amin,Adamu,GBR,1997-10-03,5691,Severi,Kaukiainen
+11295,25,619,6,3,14,away,565,House of Talents Spurs Kortrijk,KOR,1011,0,0,0,109,97,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5651,Jacquez Ramello,Yow
+11295,25,620,6,3,25,away,565,House of Talents Spurs Kortrijk,KOR,1000,5,95,49,109,99,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,621,6,3,25,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,109,99,397,Jarne,Lesuisse,BEL,2000-08-02,\N,\N,\N
+11295,25,622,6,3,40,home,541,Windrose Giants Antwerp,ANT,1000,1,7,55,111,99,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,623,6,3,40,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,111,99,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,624,6,3,46,away,565,House of Talents Spurs Kortrijk,KOR,1001,1,92,54,111,99,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,625,6,3,46,home,541,Windrose Giants Antwerp,ANT,1009,0,0,0,111,99,2612,Letto,Van Drom,BEL,2006-08-17,\N,\N,\N
+11295,25,626,6,3,46,away,565,House of Talents Spurs Kortrijk,KOR,2003,0,0,0,111,99,\N,\N,\N,\N,\N,\N,\N,\N
+11295,25,627,6,3,50,away,565,House of Talents Spurs Kortrijk,KOR,1000,3,85,5,111,102,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,628,6,3,50,away,565,House of Talents Spurs Kortrijk,KOR,1008,0,0,0,111,102,45,Servaas,Buysschaert,BEL,1999-03-19,\N,\N,\N
+11295,25,629,6,4,13,home,541,Windrose Giants Antwerp,ANT,1001,1,7,41,111,102,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,630,6,4,14,away,565,House of Talents Spurs Kortrijk,KOR,1002,0,0,0,111,102,255,Bram,Bogaerts,BEL,1998-01-30,\N,\N,\N
+11295,25,631,6,4,14,home,541,Windrose Giants Antwerp,ANT,1007,31,11,39,111,102,5255,Noel,Coleman,BEL,2000-01-17,\N,\N,\N
+11295,25,632,6,4,14,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,111,102,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,633,6,4,14,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,111,103,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,634,6,4,14,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,111,104,5643,Amin,Adamu,GBR,1997-10-03,\N,\N,\N
+11295,25,635,6,4,22,home,541,Windrose Giants Antwerp,ANT,1005,12,37,93,111,104,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,636,6,4,27,home,541,Windrose Giants Antwerp,ANT,1007,31,88,50,111,104,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,637,6,4,27,away,565,House of Talents Spurs Kortrijk,KOR,1006,0,0,0,111,104,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,638,6,4,27,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,111,105,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,639,6,4,27,away,565,House of Talents Spurs Kortrijk,KOR,1000,4,0,0,111,106,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,640,6,4,47,home,541,Windrose Giants Antwerp,ANT,1000,1,7,55,113,106,202,Vincent,Kesteloot,BEL,1995-03-23,\N,\N,\N
+11295,25,641,6,4,47,home,541,Windrose Giants Antwerp,ANT,1008,0,0,0,113,106,4232,Joel,Murray,USA,1999-11-23,\N,\N,\N
+11295,25,642,6,4,52,away,565,House of Talents Spurs Kortrijk,KOR,1001,3,72,19,113,106,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,\N,\N,\N
+11295,25,643,6,4,56,home,541,Windrose Giants Antwerp,ANT,1002,0,0,0,113,106,5325,Enoch,Cheeks,USA,2001-04-15,\N,\N,\N
+11295,25,644,6,5,0,home,541,Windrose Giants Antwerp,ANT,1101,0,0,0,113,106,\N,\N,\N,\N,\N,\N,\N,\N

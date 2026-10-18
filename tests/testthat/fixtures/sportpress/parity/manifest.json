@@ -1,0 +1,833 @@
+{
+ "dtypes": {
+  "sportpress_ui_strings": {
+   "language": "String",
+   "key": "String",
+   "text": "String"
+  },
+  "sportpress_club_seasons": {
+   "season": "Int64"
+  },
+  "sportpress_referees": {
+   "staff_id": "Int64",
+   "name": "String",
+   "title_id": "Int64",
+   "title_name": "String"
+  },
+  "sportpress_phases": {
+   "season": "Int64",
+   "competition_id": "Int64",
+   "competition_name": "String",
+   "phase_id": "Int64",
+   "phase_name": "String",
+   "standings_visible": "Boolean"
+  },
+  "sportpress_competition_teams": {
+   "competition_id": "Int64",
+   "season": "Int64",
+   "uu_team_id": "Int64",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "club_id": "Int64",
+   "club_name": "String"
+  },
+  "sportpress_competition_staff": {
+   "competition_id": "Int64",
+   "competition_team_id": "Int64",
+   "staff_id": "Int64",
+   "name": "String",
+   "title_id": "Int64",
+   "title_name": "String"
+  },
+  "sportpress_standings": {
+   "competition_id": "Int64",
+   "phase_id": "Int64",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "club_id": "Int64",
+   "club_name": "String",
+   "position": "Int64",
+   "played": "Int64",
+   "win": "Int64",
+   "loss": "Int64",
+   "even": "Int64",
+   "score": "Int64",
+   "against": "Int64",
+   "score_difference": "Int64",
+   "percent": "Float64",
+   "point": "Int64",
+   "point_percent": "Float64",
+   "home_win": "Int64",
+   "home_loss": "Int64",
+   "away_win": "Int64",
+   "away_loss": "Int64",
+   "last5_win": "Int64",
+   "last5_loss": "Int64",
+   "streak_is_win": "Boolean",
+   "streak_count": "Int64",
+   "group": "String"
+  },
+  "sportpress_schedule": {
+   "game_id": "Int64",
+   "game_time": "Datetime(time_unit='us', time_zone=None)",
+   "status": "String",
+   "competition_id": "Int64",
+   "season": "Int64",
+   "phase_id": "Int64",
+   "phase_name": "String",
+   "round_name": "String",
+   "round_priority": "Int64",
+   "period_name": "String",
+   "arena": "String",
+   "home_competition_team_id": "Int64",
+   "home_team": "String",
+   "home_team_short_name": "String",
+   "home_score": "Int64",
+   "away_competition_team_id": "Int64",
+   "away_team": "String",
+   "away_team_short_name": "String",
+   "away_score": "Int64"
+  },
+  "sportpress_game_slider": {
+   "game_id": "Int64",
+   "genius_id": "Int64",
+   "game_time": "Datetime(time_unit='us', time_zone=None)",
+   "status": "String",
+   "competition_id": "Int64",
+   "season": "Int64",
+   "phase_id": "Int64",
+   "phase_name": "String",
+   "home_competition_team_id": "Int64",
+   "home_team": "String",
+   "home_team_short_name": "String",
+   "home_score": "Int64",
+   "away_competition_team_id": "Int64",
+   "away_team": "String",
+   "away_team_short_name": "String",
+   "away_score": "Int64"
+  },
+  "sportpress_team_rankings": {
+   "competition_id": "Int64",
+   "category": "String",
+   "rank": "Int64",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "value": "Float64"
+  },
+  "sportpress_player_rankings": {
+   "competition_id": "Int64",
+   "category": "String",
+   "rank": "Int64",
+   "roster_id": "Int64",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "value": "Float64",
+   "throw_made": "Float64",
+   "throw_attempted": "Float64"
+  },
+  "sportpress_season_roster": {
+   "season": "Int64",
+   "roster_id": "Int64",
+   "competition_team_id": "Int64",
+   "jersey": "String",
+   "weight": "Int64",
+   "height": "Int64",
+   "active": "Boolean",
+   "position_id": "Int64",
+   "position": "String",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date"
+  },
+  "sportpress_nationality_codes": {
+   "season": "Int64",
+   "nationality_code": "String"
+  },
+  "sportpress_team_roster": {
+   "roster_id": "Int64",
+   "competition_team_id": "Int64",
+   "jersey": "String",
+   "weight": "Int64",
+   "height": "Int64",
+   "active": "Boolean",
+   "position_id": "Int64",
+   "position": "String",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date"
+  },
+  "sportpress_team_find": {
+   "competition_id": "Int64",
+   "season": "Int64",
+   "competition_name": "String",
+   "uu_team_id": "Int64",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "club_id": "Int64",
+   "club_name": "String",
+   "average_score_for": "Float64",
+   "average_score_against": "Float64",
+   "field_goal_percent": "Float64"
+  },
+  "sportpress_team_player_averages": {
+   "competition_team_id": "Int64",
+   "roster_id": "Int64",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "played_games": "Int64",
+   "games_started": "Int64",
+   "minute": "Float64",
+   "foul": "Float64",
+   "defensive_foul": "Float64",
+   "dunk_made": "Float64",
+   "dunk_all": "Float64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Float64",
+   "two_point_all": "Float64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Float64",
+   "three_point_all": "Float64",
+   "three_point_percent": "Float64",
+   "throw_made": "Float64",
+   "throw_all": "Float64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Float64",
+   "free_throw_all": "Float64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Float64",
+   "defensive_rebound": "Float64",
+   "total_rebound": "Float64",
+   "block": "Float64",
+   "block_against": "Float64",
+   "turnover": "Float64",
+   "steal": "Float64",
+   "assist": "Float64",
+   "points": "Float64",
+   "value": "Float64"
+  },
+  "sportpress_team_games": {
+   "competition_team_id": "Int64",
+   "game_id": "Int64",
+   "game_time": "Datetime(time_unit='us', time_zone=None)",
+   "status": "String",
+   "competition_id": "Int64",
+   "season": "Int64",
+   "phase_id": "Int64",
+   "phase_name": "String",
+   "round_name": "String",
+   "round_priority": "Int64",
+   "period_name": "String",
+   "arena": "String",
+   "home_competition_team_id": "Int64",
+   "home_team": "String",
+   "home_team_short_name": "String",
+   "home_score": "Int64",
+   "away_competition_team_id": "Int64",
+   "away_team": "String",
+   "away_team_short_name": "String",
+   "away_score": "Int64",
+   "minute": "Int64",
+   "foul": "Int64",
+   "defensive_foul": "Int64",
+   "dunk_made": "Int64",
+   "dunk_all": "Int64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Int64",
+   "two_point_all": "Int64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Int64",
+   "three_point_all": "Int64",
+   "three_point_percent": "Float64",
+   "throw_made": "Int64",
+   "throw_all": "Int64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Int64",
+   "free_throw_all": "Int64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Int64",
+   "defensive_rebound": "Int64",
+   "total_rebound": "Int64",
+   "block": "Int64",
+   "block_against": "Int64",
+   "turnover": "Int64",
+   "steal": "Int64",
+   "assist": "Int64",
+   "points": "Int64",
+   "value": "Int64",
+   "plusminus": "Int64"
+  },
+  "sportpress_roster_find": {
+   "roster_id": "Int64",
+   "competition_team_id": "Int64",
+   "jersey": "String",
+   "weight": "Int64",
+   "height": "Int64",
+   "active": "Boolean",
+   "position_id": "Int64",
+   "position": "String",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "uu_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "competition_id": "Int64",
+   "season": "Int64"
+  },
+  "sportpress_player_career": {
+   "roster_id": "Int64",
+   "competition_id": "Int64",
+   "season": "Int64",
+   "competition_name": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "club_id": "Int64",
+   "club_name": "String",
+   "position": "String",
+   "jersey": "String",
+   "played_games": "Int64",
+   "games_started": "Int64",
+   "minute": "Float64",
+   "foul": "Float64",
+   "defensive_foul": "Float64",
+   "dunk_made": "Float64",
+   "dunk_all": "Float64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Float64",
+   "two_point_all": "Float64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Float64",
+   "three_point_all": "Float64",
+   "three_point_percent": "Float64",
+   "throw_made": "Float64",
+   "throw_all": "Float64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Float64",
+   "free_throw_all": "Float64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Float64",
+   "defensive_rebound": "Float64",
+   "total_rebound": "Float64",
+   "block": "Float64",
+   "block_against": "Float64",
+   "turnover": "Float64",
+   "steal": "Float64",
+   "assist": "Float64",
+   "points": "Float64",
+   "value": "Float64"
+  },
+  "sportpress_player_games": {
+   "roster_id": "Int64",
+   "game_id": "Int64",
+   "game_time": "Datetime(time_unit='us', time_zone=None)",
+   "status": "String",
+   "competition_id": "Int64",
+   "season": "Int64",
+   "phase_id": "Int64",
+   "phase_name": "String",
+   "round_name": "String",
+   "round_priority": "Int64",
+   "period_name": "String",
+   "arena": "String",
+   "home_competition_team_id": "Int64",
+   "home_team": "String",
+   "home_team_short_name": "String",
+   "home_score": "Int64",
+   "away_competition_team_id": "Int64",
+   "away_team": "String",
+   "away_team_short_name": "String",
+   "away_score": "Int64",
+   "competition_team_id": "Int64",
+   "starter": "Boolean",
+   "jersey": "String",
+   "minute": "Int64",
+   "foul": "Int64",
+   "defensive_foul": "Int64",
+   "dunk_made": "Int64",
+   "dunk_all": "Int64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Int64",
+   "two_point_all": "Int64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Int64",
+   "three_point_all": "Int64",
+   "three_point_percent": "Float64",
+   "throw_made": "Int64",
+   "throw_all": "Int64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Int64",
+   "free_throw_all": "Int64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Int64",
+   "defensive_rebound": "Int64",
+   "total_rebound": "Int64",
+   "block": "Int64",
+   "block_against": "Int64",
+   "turnover": "Int64",
+   "steal": "Int64",
+   "assist": "Int64",
+   "points": "Int64",
+   "value": "Int64"
+  },
+  "sportpress_game_find": {
+   "game_id": "Int64",
+   "game_time": "Datetime(time_unit='us', time_zone=None)",
+   "status": "String",
+   "competition_id": "Int64",
+   "season": "Int64",
+   "phase_id": "Int64",
+   "phase_name": "String",
+   "round_name": "String",
+   "round_priority": "Int64",
+   "period_name": "String",
+   "arena": "String",
+   "home_competition_team_id": "Int64",
+   "home_team": "String",
+   "home_team_short_name": "String",
+   "home_score": "Int64",
+   "away_competition_team_id": "Int64",
+   "away_team": "String",
+   "away_team_short_name": "String",
+   "away_score": "Int64",
+   "last_game_id": "Int64",
+   "next_game_id": "Int64"
+  },
+  "sportpress_game_periods": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "period": "Int64",
+   "score": "Int64"
+  },
+  "sportpress_game_overview": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "score": "Int64",
+   "minute": "Int64",
+   "foul": "Int64",
+   "defensive_foul": "Int64",
+   "dunk_made": "Int64",
+   "dunk_all": "Int64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Int64",
+   "two_point_all": "Int64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Int64",
+   "three_point_all": "Int64",
+   "three_point_percent": "Float64",
+   "throw_made": "Int64",
+   "throw_all": "Int64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Int64",
+   "free_throw_all": "Int64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Int64",
+   "defensive_rebound": "Int64",
+   "total_rebound": "Int64",
+   "block": "Int64",
+   "block_against": "Int64",
+   "turnover": "Int64",
+   "steal": "Int64",
+   "assist": "Int64",
+   "points": "Int64",
+   "value": "Int64",
+   "plusminus": "Int64"
+  },
+  "sportpress_game_top_performers": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "jersey": "String",
+   "starter": "Boolean",
+   "minute": "Int64",
+   "foul": "Int64",
+   "defensive_foul": "Int64",
+   "dunk_made": "Int64",
+   "dunk_all": "Int64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Int64",
+   "two_point_all": "Int64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Int64",
+   "three_point_all": "Int64",
+   "three_point_percent": "Float64",
+   "throw_made": "Int64",
+   "throw_all": "Int64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Int64",
+   "free_throw_all": "Int64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Int64",
+   "defensive_rebound": "Int64",
+   "total_rebound": "Int64",
+   "block": "Int64",
+   "block_against": "Int64",
+   "turnover": "Int64",
+   "steal": "Int64",
+   "assist": "Int64",
+   "points": "Int64",
+   "value": "Int64"
+  },
+  "sportpress_game_leaders": {
+   "game_id": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "stat": "String",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "value": "Float64"
+  },
+  "sportpress_game_box": {
+   "game_id": "Int64",
+   "competition_id": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "roster_id": "Int64",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "position_id": "Int64",
+   "position": "String",
+   "starter": "Boolean",
+   "jersey": "String",
+   "minute": "Int64",
+   "foul": "Int64",
+   "defensive_foul": "Int64",
+   "dunk_made": "Int64",
+   "dunk_all": "Int64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Int64",
+   "two_point_all": "Int64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Int64",
+   "three_point_all": "Int64",
+   "three_point_percent": "Float64",
+   "throw_made": "Int64",
+   "throw_all": "Int64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Int64",
+   "free_throw_all": "Int64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Int64",
+   "defensive_rebound": "Int64",
+   "total_rebound": "Int64",
+   "block": "Int64",
+   "block_against": "Int64",
+   "turnover": "Int64",
+   "steal": "Int64",
+   "assist": "Int64",
+   "points": "Int64",
+   "value": "Int64",
+   "plusminus": "Int64"
+  },
+  "sportpress_game_team_box": {
+   "game_id": "Int64",
+   "competition_id": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "minute": "Int64",
+   "foul": "Int64",
+   "defensive_foul": "Int64",
+   "dunk_made": "Int64",
+   "dunk_all": "Int64",
+   "dunk_percent": "Float64",
+   "two_point_made": "Int64",
+   "two_point_all": "Int64",
+   "two_point_percent": "Float64",
+   "three_point_made": "Int64",
+   "three_point_all": "Int64",
+   "three_point_percent": "Float64",
+   "throw_made": "Int64",
+   "throw_all": "Int64",
+   "throw_percent": "Float64",
+   "free_throw_made": "Int64",
+   "free_throw_all": "Int64",
+   "free_throw_percent": "Float64",
+   "offensive_rebound": "Int64",
+   "defensive_rebound": "Int64",
+   "total_rebound": "Int64",
+   "block": "Int64",
+   "block_against": "Int64",
+   "turnover": "Int64",
+   "steal": "Int64",
+   "assist": "Int64",
+   "points": "Int64",
+   "value": "Int64",
+   "plusminus": "Int64"
+  },
+  "sportpress_game_film": {
+   "game_id": "Int64",
+   "competition_id": "Int64",
+   "order": "Int64",
+   "period": "Int64",
+   "minute": "Int64",
+   "second": "Int64",
+   "team_side": "String",
+   "competition_team_id": "Int64",
+   "team": "String",
+   "team_short_name": "String",
+   "event_code": "Int64",
+   "event_subcode": "Int64",
+   "x": "Int64",
+   "y": "Int64",
+   "home_score": "Int64",
+   "away_score": "Int64",
+   "player_id": "Int64",
+   "first_name": "String",
+   "last_name": "String",
+   "nationality_code": "String",
+   "birth_date": "Date",
+   "player2_id": "Int64",
+   "player2_first_name": "String",
+   "player2_last_name": "String"
+  }
+ },
+ "requests": {
+  "sportpress_ui_strings": [
+   {
+    "path": "/server-config",
+    "query": {}
+   }
+  ],
+  "sportpress_club_seasons": [
+   {
+    "path": "/competition-team/club/seasons",
+    "query": {
+     "clubs[0]": 1,
+     "clubs[1]": 2
+    }
+   }
+  ],
+  "sportpress_referees": [
+   {
+    "path": "/staff/list",
+    "query": {
+     "title_id": 2
+    }
+   }
+  ],
+  "sportpress_phases": [
+   {
+    "path": "/phase/season/2026",
+    "query": {}
+   }
+  ],
+  "sportpress_competition_teams": [
+   {
+    "path": "/competition-team/all",
+    "query": {
+     "competition_id": 24
+    }
+   }
+  ],
+  "sportpress_competition_staff": [
+   {
+    "path": "/competition-team/all",
+    "query": {
+     "competition_id": 24
+    }
+   }
+  ],
+  "sportpress_standings": [
+   {
+    "path": "/standings/competition/24/phase/169",
+    "query": {}
+   }
+  ],
+  "sportpress_schedule": [
+   {
+    "path": "/schedule/club/2027",
+    "query": {
+     "clubs[0]": 1,
+     "clubs[1]": 2,
+     "month": -1
+    }
+   }
+  ],
+  "sportpress_game_slider": [
+   {
+    "path": "/schedule/game-slider/25",
+    "query": {}
+   }
+  ],
+  "sportpress_team_rankings": [
+   {
+    "path": "/competition-team/average-rankings/24",
+    "query": {}
+   }
+  ],
+  "sportpress_player_rankings": [
+   {
+    "path": "/player/average-rankings/24",
+    "query": {}
+   }
+  ],
+  "sportpress_season_roster": [
+   {
+    "path": "/roster/season-players/2027",
+    "query": {}
+   }
+  ],
+  "sportpress_nationality_codes": [
+   {
+    "path": "/roster/season-nationality-codes/2026",
+    "query": {}
+   }
+  ],
+  "sportpress_team_roster": [
+   {
+    "path": "/roster/team-players/506",
+    "query": {}
+   }
+  ],
+  "sportpress_team_find": [
+   {
+    "path": "/competition-team/find/506",
+    "query": {}
+   }
+  ],
+  "sportpress_team_player_averages": [
+   {
+    "path": "/competition-team/player-averages/541",
+    "query": {}
+   }
+  ],
+  "sportpress_team_games": [
+   {
+    "path": "/competition-team/statistics-by-game/total/506",
+    "query": {}
+   }
+  ],
+  "sportpress_roster_find": [
+   {
+    "path": "/roster/find/10609",
+    "query": {}
+   }
+  ],
+  "sportpress_player_career": [
+   {
+    "path": "/player/career-averages/10609",
+    "query": {}
+   }
+  ],
+  "sportpress_player_games": [
+   {
+    "path": "/boxscore/player/season-games/10609",
+    "query": {}
+   }
+  ],
+  "sportpress_game_find": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_periods": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_overview": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   },
+   {
+    "path": "/schedule/overview/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_top_performers": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   },
+   {
+    "path": "/schedule/overview/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_leaders": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   },
+   {
+    "path": "/schedule/overview/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_box": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   },
+   {
+    "path": "/boxscore/game/25/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_team_box": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   },
+   {
+    "path": "/boxscore/game/25/11295",
+    "query": {}
+   }
+  ],
+  "sportpress_game_film": [
+   {
+    "path": "/schedule/find/11295",
+    "query": {}
+   },
+   {
+    "path": "/film/game/25/11295",
+    "query": {}
+   }
+  ]
+ }
+}

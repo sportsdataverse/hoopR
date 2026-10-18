@@ -1,0 +1,25 @@
+game_id,game_time,status,competition_id,season,phase_id,phase_name,round_name,round_priority,period_name,arena,home_competition_team_id,home_team,home_team_short_name,home_score,away_competition_team_id,away_team,away_team_short_name,away_score
+11271,2026-10-02 20:00:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Sportcampus Lange Munte,565,House of Talents Spurs Kortrijk,KOR,76,547,Donar Groningen,GRO,85
+11273,2026-10-02 20:00:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Topsportcentrum Rotterdam,551,Zeeuw & Zeeuw Rotterdam City,RCB,71,553,Zorg en Zekerheid Leiden,LEI,76
+11275,2026-10-02 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Sporthal Alverberg,545,Hubo Limburg United,LIM,100,563,Kangoeroes Basket Mechelen,MEC,109
+11277,2026-10-03 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,mons.arena,543,CityX Mons,MON,63,541,Windrose Giants Antwerp,ANT,100
+11279,2026-10-03 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,SportOase,559,AB InBev Leuven Bears,LEU,69,537,Val-Dieu Spirou Basket,CHA,65
+11281,2026-10-03 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,T Forum,557,Partena Professional Okapi Aalst,AAL,95,539,Coretec Oostende,OOS,87
+11283,2026-10-04 14:00:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Landstede Sportcentrum,549,Landstede Hammers,ZWO,70,555,Heroes Den Bosch,DBO,59
+11285,2026-10-06 19:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,MartiniPlaza,547,Donar Groningen,GRO,81,559,AB InBev Leuven Bears,LEU,78
+11287,2026-10-06 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,ING Arena,561,Brussels Basketball,BRU,94,567,CB Liège,LIE,70
+11289,2026-10-09 20:00:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Maaspoort Sports & Events,555,Heroes Den Bosch,DBO,79,551,Zeeuw & Zeeuw Rotterdam City,RCB,50
+11291,2026-10-09 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Country Hall,567,CB Liège,LIE,73,545,Hubo Limburg United,LIM,101
+11293,2026-10-09 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Dôme,537,Val-Dieu Spirou Basket,CHA,98,543,CityX Mons,MON,60
+11295,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Extra2,Lotto Arena,541,Windrose Giants Antwerp,ANT,113,565,House of Talents Spurs Kortrijk,KOR,106
+11297,2026-10-10 20:00:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Sporthal 1574,553,Zorg en Zekerheid Leiden,LEI,61,561,Brussels Basketball,BRU,77
+11299,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,COREtec Dôme,539,Coretec Oostende,OOS,98,549,Landstede Hammers,ZWO,70
+11301,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Q4,Winketkaai,563,Kangoeroes Basket Mechelen,MEC,79,557,Partena Professional Okapi Aalst,AAL,94
+11303,2026-10-14 19:30:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,MartiniPlaza,547,Donar Groningen,GRO,0,537,Val-Dieu Spirou Basket,CHA,0
+11305,2026-10-16 20:30:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,Complexe Sportif Neder-Over-Heembeek,561,Brussels Basketball,BRU,0,539,Coretec Oostende,OOS,0
+11307,2026-10-16 20:30:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,Sporthal Alverberg,545,Hubo Limburg United,LIM,0,551,Zeeuw & Zeeuw Rotterdam City,RCB,0
+11309,2026-10-17 20:00:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,Sporthal 1574,553,Zorg en Zekerheid Leiden,LEI,0,557,Partena Professional Okapi Aalst,AAL,0
+11311,2026-10-17 20:00:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,Maaspoort Sports & Events,555,Heroes Den Bosch,DBO,0,541,Windrose Giants Antwerp,ANT,0
+11313,2026-10-17 20:30:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,SportOase,559,AB InBev Leuven Bears,LEU,0,565,House of Talents Spurs Kortrijk,KOR,0
+11315,2026-10-17 20:30:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,mons.arena,543,CityX Mons,MON,0,549,Landstede Hammers,ZWO,0
+11317,2026-10-17 20:30:00,ready,25,2027,183,Regular season 2026-27,"",20,\N,De Nekker,563,Kangoeroes Basket Mechelen,MEC,0,567,CB Liège,LIE,0

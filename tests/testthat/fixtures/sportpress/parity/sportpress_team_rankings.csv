@@ -1,0 +1,28 @@
+competition_id,category,rank,competition_team_id,team,team_short_name,value
+24,efficiency,1,506,Windrose Giants Antwerp playoff,ANT,128.36
+24,efficiency,2,528,Partena Professional Okapi Aalst Playoff,AAL,128.28
+24,efficiency,3,510,Hubo Limburg United playoff,LIM,125.54
+24,points,1,528,Partena Professional Okapi Aalst Playoff,AAL,94.55
+24,points,2,506,Windrose Giants Antwerp playoff,ANT,93.98
+24,points,3,510,Hubo Limburg United playoff,LIM,89.88
+24,total_rebound,1,512,Donar Groningen playoff,GRO,37.33
+24,total_rebound,2,504,Filou Oostende playoff,OOS,35.87
+24,total_rebound,3,506,Windrose Giants Antwerp playoff,ANT,35.62
+24,block,1,510,Hubo Limburg United playoff,LIM,3.2
+24,block,2,518,Zeeuw & Zeeuw Rotterdam City,RCB,3.0
+24,block,3,516,Landstede Hammers Playoff,ZWO,2.95
+24,assist,1,510,Hubo Limburg United playoff,LIM,19.8
+24,assist,2,506,Windrose Giants Antwerp playoff,ANT,19.42
+24,assist,3,504,Filou Oostende playoff,OOS,19.0
+24,steal,1,522,Zorg en Zekerheid Leiden playoff,LEI,9.33
+24,steal,2,506,Windrose Giants Antwerp playoff,ANT,8.47
+24,steal,3,532,Brussels Basketball Playoff,BRU,8.39
+24,two_point_percent,1,504,Filou Oostende playoff,OOS,59.59
+24,two_point_percent,2,528,Partena Professional Okapi Aalst Playoff,AAL,58.51
+24,two_point_percent,3,510,Hubo Limburg United playoff,LIM,57.48
+24,three_point_percent,1,528,Partena Professional Okapi Aalst Playoff,AAL,39.09
+24,three_point_percent,2,504,Filou Oostende playoff,OOS,37.64
+24,three_point_percent,3,506,Windrose Giants Antwerp playoff,ANT,37.11
+24,free_throw_percent,1,528,Partena Professional Okapi Aalst Playoff,AAL,80.38
+24,free_throw_percent,2,510,Hubo Limburg United playoff,LIM,78.87
+24,free_throw_percent,3,516,Landstede Hammers Playoff,ZWO,77.68

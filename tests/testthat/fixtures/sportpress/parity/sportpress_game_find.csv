@@ -1,0 +1,2 @@
+game_id,game_time,status,competition_id,season,phase_id,phase_name,round_name,round_priority,period_name,arena,home_competition_team_id,home_team,home_team_short_name,home_score,away_competition_team_id,away_team,away_team_short_name,away_score,last_game_id,next_game_id
+11295,2026-10-10 20:30:00,finished,25,2027,183,Regular season 2026-27,"",20,Extra2,Lotto Arena,541,Windrose Giants Antwerp,ANT,113,565,House of Talents Spurs Kortrijk,KOR,106,\N,\N
