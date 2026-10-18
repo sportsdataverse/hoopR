@@ -1,0 +1,227 @@
+{
+  "competition": {
+    "id": 602,
+    "year": 2026,
+    "code": "2026_regular_season_serie_a",
+    "name": "Regular Season 2026/27",
+    "full_name": "Regular Season 2026/27",
+    "focus_on": true,
+    "homepage_slider": true,
+    "scoreboard_live": true,
+    "homepage_calendar": true,
+    "show_cover_image_homepage": true,
+    "show_detail_teams_logo": true,
+    "status": 1,
+    "championship_type_id": 4,
+    "championship_series_id": 1,
+    "seo_meta_title": "",
+    "seo_meta_description": "",
+    "ctype_name": "Regular Season",
+    "ctype_code": "RS",
+    "serie_name": "Serie A",
+    "serie_code": "A1",
+    "logo_key": "L7vE3FM4efX9Z6BSBxVammBi",
+    "background_key": null,
+    "cover_key": null
+  },
+  "matches": [
+    {
+      "id": 25602,
+      "game_status": "2",
+      "championship_id": 602,
+      "championships_day_id": 4486,
+      "year": 2026,
+      "number": 1,
+      "match_datetime": "2026-09-26T19:30:00.000+02:00",
+      "match_hh": 19,
+      "match_mm": 30,
+      "home_final_score": 109,
+      "visitor_final_score": 94,
+      "target_score": null,
+      "additional_time": 0,
+      "plant_id": 44,
+      "websocket_match_id": "1674778",
+      "ticketing_url": "https://legabasket.vivaticket.it/it/extsearch/nutribullet-treviso-basket",
+      "has_streaming": 0,
+      "updated_at": "2026-09-26T21:37:28.863+02:00",
+      "h_team_id": 1764,
+      "h_team_name": "Nutribullet Treviso Basket",
+      "h_club_code": "TVB",
+      "h_team_enabled": true,
+      "home_logo_key": "Y6Kc6v8CzU8yeQGvNyHVU84N",
+      "v_team_id": 1761,
+      "v_team_name": "BC Roma",
+      "v_club_code": "BCR",
+      "v_team_enabled": true,
+      "v_logo_key": "gxrVRq4XLCRXYwdsbCQeFSS8",
+      "town_id": 2814,
+      "plant_name": "Palaverde",
+      "town_name": "Villorba",
+      "day_code": "1",
+      "day_serial": 1,
+      "day_name": "1° Giornata",
+      "match_serie_key": "1761_1764"
+    },
+    {
+      "id": 25603,
+      "game_status": "2",
+      "championship_id": 602,
+      "championships_day_id": 4486,
+      "year": 2026,
+      "number": 1,
+      "match_datetime": "2026-09-26T20:00:00.000+02:00",
+      "match_hh": 20,
+      "match_mm": 0,
+      "home_final_score": 85,
+      "visitor_final_score": 73,
+      "target_score": null,
+      "additional_time": 0,
+      "plant_id": 57,
+      "websocket_match_id": "1674779",
+      "ticketing_url": "https://legabasket.vivaticket.it/it/extsearch/umana-reyer-venezia",
+      "has_streaming": 0,
+      "updated_at": "2026-09-26T21:49:35.716+02:00",
+      "h_team_id": 1753,
+      "h_team_name": "Umana Reyer Venezia",
+      "h_club_code": "VEN",
+      "h_team_enabled": true,
+      "home_logo_key": "EGx6SvrpNQCDJd96DFDdbQVD",
+      "v_team_id": 1765,
+      "v_team_name": "Acqua S.Bernardo Cantù",
+      "v_club_code": "CAN",
+      "v_team_enabled": true,
+      "v_logo_key": "YSC9dynX8pjKWdJ7JPqNfp9B",
+      "town_id": 2820,
+      "plant_name": "Palasport Taliercio",
+      "town_name": "Annone Veneto",
+      "day_code": "1",
+      "day_serial": 1,
+      "day_name": "1° Giornata",
+      "match_serie_key": "1753_1765"
+    },
+    {
+      "id": 25605,
+      "game_status": "2",
+      "championship_id": 602,
+      "championships_day_id": 4486,
+      "year": 2026,
+      "number": 1,
+      "match_datetime": "2026-09-26T20:30:00.000+02:00",
+      "match_hh": 20,
+      "match_mm": 30,
+      "home_final_score": 78,
+      "visitor_final_score": 83,
+      "target_score": null,
+      "additional_time": 0,
+      "plant_id": 33,
+      "websocket_match_id": "1674781",
+      "ticketing_url": "https://legabasket.vivaticket.it/it/extsearch/unahotels-reggio-emilia",
+      "has_streaming": 0,
+      "updated_at": "2026-09-28T09:30:29.064+02:00",
+      "h_team_id": 1760,
+      "h_team_name": "UNA Hotels Reggio Emilia",
+      "h_club_code": "REM",
+      "h_team_enabled": true,
+      "home_logo_key": "tBq5sA33bdF9ScSJBJ3mCGRj",
+      "v_team_id": 1763,
+      "v_team_name": "Dolomiti Energia Trentino",
+      "v_club_code": "TRN",
+      "v_team_enabled": true,
+      "v_logo_key": "iQJMb4iWpLE4Wwr63PY1YgLk",
+      "town_id": 3386,
+      "plant_name": "PalaBigi",
+      "town_name": "Reggio nell'Emilia",
+      "day_code": "1",
+      "day_serial": 1,
+      "day_name": "1° Giornata",
+      "match_serie_key": "1760_1763"
+    }
+  ],
+  "referees": {
+    "25600": [
+      "Andrea BONGIORNI",
+      "Christian BORGO",
+      "Daniele VALLERIANI"
+    ],
+    "25601": [
+      "Edoardo GONELLA",
+      "Gianluca CAPOTORTO",
+      "Alessandro NICOLINI"
+    ],
+    "25602": [
+      "Valerio GRIGIONI",
+      "Mark BARTOLI",
+      "Marco VITA"
+    ]
+  },
+  "broadcasters": {
+    "25600": [
+      {
+        "name": "LBATV",
+        "logo": "yqfRQ78c7sPrxqkWF3ssok4T"
+      },
+      {
+        "name": "SkySportBasket",
+        "logo": "P5BD129wViAuxiVzdcxEY5dD"
+      },
+      {
+        "name": "Cielo",
+        "logo": "TdQNBYrbL3bTH7JsCc5rUH2c"
+      }
+    ],
+    "25601": [
+      {
+        "name": "LBATV",
+        "logo": "yqfRQ78c7sPrxqkWF3ssok4T"
+      }
+    ],
+    "25602": [
+      {
+        "name": "LBATV",
+        "logo": "yqfRQ78c7sPrxqkWF3ssok4T"
+      }
+    ]
+  },
+  "videos": {},
+  "filters": {
+    "days": [
+      {
+        "id": 4486,
+        "event_serial": 1,
+        "code": "1",
+        "name": "1° Giornata",
+        "focus_on": false
+      },
+      {
+        "id": 4487,
+        "event_serial": 2,
+        "code": "2",
+        "name": "2° Giornata",
+        "focus_on": false
+      },
+      {
+        "id": 4488,
+        "event_serial": 3,
+        "code": "3",
+        "name": "3° Giornata",
+        "focus_on": true
+      }
+    ],
+    "phases": [
+      {
+        "id": 1,
+        "phase_name": "Andata",
+        "phase_code": "And",
+        "data_sort": "desc"
+      },
+      {
+        "id": 2,
+        "phase_name": "Ritorno",
+        "phase_code": "Rit",
+        "data_sort": "desc"
+      }
+    ]
+  },
+  "cache_key": "tCK:1791375998_mlCK:1791828530_cmCK:1791814383_cdCK:1791375998_vCK:1791809157",
+  "cdn_url": "https://lba-media.s3.eu-south-1.amazonaws.com"
+}

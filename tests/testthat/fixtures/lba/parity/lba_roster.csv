@@ -1,0 +1,4 @@
+team_id,club_id,club_code,season,player_id,name,surname,code,place_of_birth,birth_date,player_number,country,uefa_ratio,height,weight,year,start_date,end_date,player_role_id,player_role,team_name,player_picture_key,team_logo_key
+1764,107,TVU,2027,969,Alessandro,Cappelletti,CAP-ALE-95,Assisi,1995-10-22,0,ITA,I,186,82,2026,2026-07-01,2027-06-30,6,Playmaker,Nutribullet Treviso,gBKiHTMzKiQajAAfFGjxAssf,Y6Kc6v8CzU8yeQGvNyHVU84N
+1764,107,TVU,2027,9331,Chico,Carter,CAR-CHI-00,Columbia,2000-11-03,2,USA,E,191,87,2026,2026-07-01,2027-06-30,4,Guardia,Nutribullet Treviso,mpQjC9hV7L5inFXjehStGVCL,Y6Kc6v8CzU8yeQGvNyHVU84N
+1764,107,TVU,2027,9041,Brekkott,Chapman,CHA-BRE-96,Roy,1996-04-07,3,USA,E,206,97,2026,2026-07-01,2027-06-30,1,Ala,Nutribullet Treviso,S1uWwNcEGSshYtUYapiymE7M,Y6Kc6v8CzU8yeQGvNyHVU84N

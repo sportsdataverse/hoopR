@@ -1,0 +1,7 @@
+game_id,season,side,team_id,player_id,player_num,player_surname,player_name,player_code,player_p_key,pun,min,sec,sf,falli_c,falli_sf,falli_tc1,falli_fla,t2_r,t2_t,t2_perc,sc,t3_r,t3_t,t3_perc,tl_r,tl_t,tl_perc,rimbalzi_o,rimbalzi_d,rimbalzi_t,stoppate_dat,stoppate_sub,palle_p,palle_r,ass,val_lega,val_oer,plus_minus
+25602,2027,home,1764,969,0,CAPPELLETTI,Alessandro,CAP-ALE-95,gBKiHTMzKiQajAAfFGjxAssf,15,24,1440,0,2,2,0,0,4,8,50.0,0,1,2,50.0,4,4,100.0,0,5,5,0,0,1,0,9,23,1.1538462,8
+25602,2027,home,1764,9331,2,CARTER,Chico,CAR-CHI-00,mpQjC9hV7L5inFXjehStGVCL,3,24,1440,1,2,2,0,0,0,1,0.0,0,1,1,100.0,0,0,0.0,2,1,3,0,0,0,0,3,8,1.5,2
+25602,2027,home,1764,9041,3,CHAPMAN,Brekkott,CHA-BRE-96,S1uWwNcEGSshYtUYapiymE7M,6,28,1680,1,3,8,0,0,1,2,50.0,0,0,3,0.0,4,10,40.0,0,2,2,2,0,1,1,3,8,0.5454545,16
+25602,2027,visitor,1761,6138,1,MANNION,Niccolò,MAN-NIC-01,sKXtUh52gUYaPUnWa85A4xbL,11,28,1680,1,3,5,0,0,1,3,33.33333333333333,0,2,8,25.0,3,4,75.0,1,2,3,0,1,0,0,7,13,0.8461538,-24
+25602,2027,visitor,1761,9385,3,WATSON,Paul,WAT-PAU-94,CqeRADxCpckPG13ooEzw2hjc,13,16,960,0,5,5,0,1,1,1,100.0,0,3,6,50.0,2,7,28.57142857142857,1,0,1,0,0,2,0,1,5,1.04,0
+25602,2027,visitor,1761,6258,5,DAVIS,Corey,DAV-COR-97,XwU2DCwZL39ig5cWm6sXZMnz,8,24,1440,0,2,2,0,0,3,4,75.0,0,0,4,0.0,2,2,100.0,1,1,2,0,0,1,2,4,10,0.8,-2
