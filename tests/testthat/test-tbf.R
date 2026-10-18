@@ -70,7 +70,7 @@ test_that("every route matches the sdv-py frame on the same fixture (parity)", {
   for (short in names(tbf_manifest)) {
     got <- hoopR:::.tbf_parse(tbf_table(short), tbf_stamped(short))
     want <- utils::read.csv(tbf_fx("parity", paste0(short, ".csv")), colClasses = "character", na.strings = "",
-                            fileEncoding = "UTF-8", check.names = FALSE)
+                            encoding = "UTF-8", check.names = FALSE)
     expect_identical(names(got), names(want), info = short)
     expect_identical(nrow(got), nrow(want), info = short)
     expect_gt(nrow(got), 0L)

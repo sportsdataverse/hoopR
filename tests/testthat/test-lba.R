@@ -78,7 +78,7 @@ test_that("every wrapper matches sdv-py's frame on the same fixture (columns, ty
     res <- lba_run(case)
     got <- res$out
     want <- utils::read.csv(lba_fx("parity", paste0(case, ".csv")), colClasses = "character",
-                            na.strings = LBA_NULL, check.names = FALSE, fileEncoding = "UTF-8")
+                            na.strings = LBA_NULL, check.names = FALSE, encoding = "UTF-8")
     expect_s3_class(got, "hoopR_data")
     expect_identical(names(got), names(want), label = case)
     expect_identical(names(got), names(c$dtypes), label = case)

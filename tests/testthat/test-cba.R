@@ -86,9 +86,8 @@ parity_mismatches <- function(got, want_chr) {
 
 read_parity <- function(short) {
   name <- if (short == "pbp") "pbp.csv.gz" else paste0(short, ".csv")
-  con <- if (endsWith(name, ".gz")) gzfile(cba_fixture("parity", name), encoding = "UTF-8") else
-    file(cba_fixture("parity", name), encoding = "UTF-8")
-  utils::read.csv(con, colClasses = "character", na.strings = "<null>", check.names = FALSE, encoding = "UTF-8")
+  # a path, not a re-encoding connection: file() reads the gzip too, and encoding = marks UTF-8 in any locale
+  utils::read.csv(cba_fixture("parity", name), colClasses = "character", na.strings = "<null>", check.names = FALSE, encoding = "UTF-8")
 }
 
 req_json <- function(x) {

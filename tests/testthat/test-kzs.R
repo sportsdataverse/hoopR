@@ -78,9 +78,8 @@ kzs_mismatches <- function(got, want_chr) {
 }
 kzs_parity <- function(case) {
   name <- if (case == "pbp") "pbp.csv.gz" else paste0(case, ".csv")
-  con <- if (endsWith(name, ".gz")) gzfile(kzs_fixture("parity", name), encoding = "UTF-8") else
-    file(kzs_fixture("parity", name), encoding = "UTF-8")
-  utils::read.csv(con, colClasses = "character", na.strings = "<null>", check.names = FALSE, encoding = "UTF-8")
+  # a path, not a re-encoding connection: file() reads the gzip too, and encoding = marks UTF-8 in any locale
+  utils::read.csv(kzs_fixture("parity", name), colClasses = "character", na.strings = "<null>", check.names = FALSE, encoding = "UTF-8")
 }
 
 test_that("every wrapper matches sdv-py's frame on the same bodies (columns, order, dtypes, cells, requests)", {

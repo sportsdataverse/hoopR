@@ -78,7 +78,7 @@ test_that("every fiba_gdap route matches sdv-py's frame on the same fixture (col
   for (r in routes) {
     df <- .fiba_gdap_parse(r$route, fiba_json(r$fixture))
     ref <- utils::read.csv(fiba_fx("fiba_gdap", r$csv), colClasses = "character", na.strings = "NA",
-                           check.names = FALSE)
+                           check.names = FALSE, encoding = "UTF-8")
     route <- paste0("fiba_gdap_", r$route)
     expect_identical(names(df), names(ref), label = route)
     expect_identical(names(df), names(.FIBA_DTYPES[[route]]), label = route)
