@@ -385,7 +385,6 @@ test_that("schedule assembler: kp_game_id, fox_game_id, yahoo_game_id are NA", {
 })
 
 test_that("mbb_schedule_crosswalk include_kenpom=FALSE does not error without KP creds", {
-  skip_if_not_installed("stringdist")
   skip_on_cran()
   # When KP_USER is absent the function must NOT try to call kp_team_schedule.
   # We simulate by ensuring no credentials are set (default environment).
@@ -490,7 +489,6 @@ test_that("player assembler: fuzzy name match (minor spelling diff)", {
 })
 
 test_that("player assembler: unmatched when no Fox data", {
-  skip_if_not_installed("stringdist")
   skip_on_cran()
   espn <- .make_mbb_espn_players(
     200L, "KEN",
@@ -508,7 +506,6 @@ test_that("player assembler: unmatched when no Fox data", {
 })
 
 test_that("player assembler: empty Fox frame still returns ESPN rows", {
-  skip_if_not_installed("stringdist")
   skip_on_cran()
   espn <- .make_mbb_espn_players(
     200L, "KEN",
@@ -534,7 +531,6 @@ test_that("player assembler: empty Fox frame still returns ESPN rows", {
 })
 
 test_that("player assembler: output columns are correct and non-duplicate", {
-  skip_if_not_installed("stringdist")
   skip_on_cran()
   espn <- .make_mbb_espn_players(
     333L, "ALA",
