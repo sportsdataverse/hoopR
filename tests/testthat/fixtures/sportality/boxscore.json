@@ -1,0 +1,1277 @@
+{
+ "dataColumns": [
+  {
+   "name": "MINS",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "PTS",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "FG",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "FG%",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "2P",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "2P%",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "3P",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "3P%",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "FT",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "FT%",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "OFF",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "DEF",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "REB",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "AST",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "TO",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "STL",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "BLK",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "BLKR",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "PF",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "FOn",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "NR",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "Player",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "POS",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  },
+  {
+   "name": "+/-",
+   "type": "string",
+   "highlighted": false,
+   "group": ""
+  }
+ ],
+ "players": {
+  "homeTeamValue": {
+   "1887576": {
+    "fullName": "Oskar Fløng Vanner",
+    "firstName": "Oskar Fløng",
+    "lastName": "Vanner",
+    "extIds": [
+     {
+      "extId": 1887576
+     }
+    ]
+   },
+   "1951861": {
+    "fullName": "August Heming",
+    "firstName": "August",
+    "lastName": "Heming",
+    "extIds": [
+     {
+      "extId": 1951861
+     }
+    ]
+   },
+   "2380378": {
+    "fullName": "Julius Aabling",
+    "firstName": "Julius",
+    "lastName": "Aabling",
+    "extIds": [
+     {
+      "extId": 2380378
+     }
+    ]
+   },
+   "2385172": {
+    "fullName": "Malthe Aabling",
+    "firstName": "Malthe",
+    "lastName": "Aabling",
+    "extIds": [
+     {
+      "extId": 2385172
+     }
+    ]
+   },
+   "2404639": {
+    "fullName": "Anders Jellesmark",
+    "firstName": "Anders",
+    "lastName": "Jellesmark",
+    "extIds": [
+     {
+      "extId": 2404639
+     }
+    ]
+   },
+   "2495922": {
+    "fullName": "Karl Heming",
+    "firstName": "Karl",
+    "lastName": "Heming",
+    "extIds": [
+     {
+      "extId": 2495922
+     }
+    ]
+   },
+   "2777479": {
+    "fullName": "Bryceson Burns",
+    "firstName": "Bryceson",
+    "lastName": "Burns",
+    "extIds": [
+     {
+      "extId": 2777479
+     }
+    ]
+   },
+   "2777481": {
+    "fullName": "Otto Jernberg-Sørensen",
+    "firstName": "Otto",
+    "lastName": "Jernberg-Sørensen",
+    "extIds": [
+     {
+      "extId": 2777481
+     }
+    ]
+   },
+   "2778538": {
+    "fullName": "Caden Fry",
+    "firstName": "Caden",
+    "lastName": "Fry",
+    "extIds": [
+     {
+      "extId": 2778538
+     }
+    ]
+   },
+   "2779432": {
+    "fullName": "Sebastian Reumert",
+    "firstName": "Sebastian",
+    "lastName": "Reumert",
+    "extIds": [
+     {
+      "extId": 2779432
+     }
+    ]
+   },
+   "2788596": {
+    "fullName": "Visti Thomsen",
+    "firstName": "Visti",
+    "lastName": "Thomsen",
+    "extIds": [
+     {
+      "extId": 2788596
+     }
+    ]
+   },
+   "2788597": {
+    "fullName": "Oskar Harring Østoft",
+    "firstName": "Oskar Harring",
+    "lastName": "Østoft",
+    "extIds": [
+     {
+      "extId": 2788597
+     }
+    ]
+   }
+  },
+  "awayTeamValue": {
+   "175351": {
+    "fullName": "Anton Lønstrup Hansen",
+    "firstName": "Anton Lønstrup",
+    "lastName": "Hansen",
+    "extIds": [
+     {
+      "extId": 175351
+     }
+    ]
+   },
+   "288488": {
+    "fullName": "Adama Darboe",
+    "firstName": "Adama",
+    "lastName": "Darboe",
+    "extIds": [
+     {
+      "extId": 288488
+     }
+    ]
+   },
+   "646388": {
+    "fullName": "Morten Bülow",
+    "firstName": "Morten",
+    "lastName": "Bülow",
+    "extIds": [
+     {
+      "extId": 646388
+     }
+    ]
+   },
+   "667275": {
+    "fullName": "Bakir Serdarevic",
+    "firstName": "Bakir",
+    "lastName": "Serdarevic",
+    "extIds": [
+     {
+      "extId": 667275
+     }
+    ]
+   },
+   "1301034": {
+    "fullName": "Oscar Alm",
+    "firstName": "Oscar",
+    "lastName": "Alm",
+    "extIds": [
+     {
+      "extId": 1301034
+     }
+    ]
+   },
+   "1633880": {
+    "fullName": "Sharif Barfi",
+    "firstName": "Sharif",
+    "lastName": "Barfi",
+    "extIds": [
+     {
+      "extId": 1633880
+     }
+    ]
+   },
+   "2274016": {
+    "fullName": "Patrick Renane",
+    "firstName": "Patrick",
+    "lastName": "Renane",
+    "extIds": [
+     {
+      "extId": 2274016
+     }
+    ]
+   },
+   "2486702": {
+    "fullName": "Elliot Maximus Jean Holm",
+    "firstName": "Elliot Maximus Jean",
+    "lastName": "Holm",
+    "extIds": [
+     {
+      "extId": 2486702
+     }
+    ]
+   },
+   "2769006": {
+    "fullName": "Dibaji Walker",
+    "firstName": "Dibaji",
+    "lastName": "Walker",
+    "extIds": [
+     {
+      "extId": 2769006
+     }
+    ]
+   },
+   "2776246": {
+    "fullName": "Jusaun Holt",
+    "firstName": "Jusaun",
+    "lastName": "Holt",
+    "extIds": [
+     {
+      "extId": 2776246
+     }
+    ]
+   },
+   "2784096": {
+    "fullName": "Kaden Sand",
+    "firstName": "Kaden",
+    "lastName": "Sand",
+    "extIds": [
+     {
+      "extId": 2784096
+     }
+    ]
+   },
+   "2787439": {
+    "fullName": "Kuluel Madding",
+    "firstName": "Kuluel",
+    "lastName": "Madding",
+    "extIds": [
+     {
+      "extId": 2787439
+     }
+    ]
+   }
+  }
+ },
+ "stats": {
+  "homeTeamValue": [
+   {
+    "NR": 1,
+    "POS": "C",
+    "MINS": "09:07",
+    "PTS": 0,
+    "FG": "0-0",
+    "FG%": 0,
+    "2P": "0-0",
+    "2P%": 0,
+    "3P": "0-0",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 0,
+    "REB": 0,
+    "AST": 1,
+    "TO": 1,
+    "STL": 1,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 1,
+    "FOn": 0,
+    "+/-": -4,
+    "info": {
+     "period": 0,
+     "playerId": 1887576,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 2,
+    "POS": "G",
+    "MINS": "30:05",
+    "PTS": 15,
+    "FG": "6-13",
+    "FG%": 46.2,
+    "2P": "5-8",
+    "2P%": 62.5,
+    "3P": "1-5",
+    "3P%": 20,
+    "FT": "2-2",
+    "FT%": 100,
+    "OFF": 1,
+    "DEF": 4,
+    "REB": 5,
+    "AST": 1,
+    "TO": 1,
+    "STL": 1,
+    "BLK": 1,
+    "BLKR": 0,
+    "PF": 4,
+    "FOn": 1,
+    "+/-": -9,
+    "info": {
+     "period": 0,
+     "playerId": 2777479,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 3,
+    "POS": "G",
+    "MINS": "29:33",
+    "PTS": 18,
+    "FG": "6-15",
+    "FG%": 40,
+    "2P": "5-10",
+    "2P%": 50,
+    "3P": "1-5",
+    "3P%": 20,
+    "FT": "5-6",
+    "FT%": 83.3,
+    "OFF": 3,
+    "DEF": 2,
+    "REB": 5,
+    "AST": 4,
+    "TO": 2,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 3,
+    "PF": 2,
+    "FOn": 4,
+    "+/-": -8,
+    "info": {
+     "period": 0,
+     "playerId": 2404639,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 6,
+    "POS": "G",
+    "MINS": "02:52",
+    "PTS": 0,
+    "FG": "0-1",
+    "FG%": 0,
+    "2P": "0-0",
+    "2P%": 0,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 1,
+    "REB": 1,
+    "AST": 0,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 0,
+    "FOn": 0,
+    "+/-": -1,
+    "info": {
+     "period": 0,
+     "playerId": 2779432,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 7,
+    "POS": "F",
+    "MINS": "10:18",
+    "PTS": 0,
+    "FG": "0-2",
+    "FG%": 0,
+    "2P": "0-2",
+    "2P%": 0,
+    "3P": "0-0",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 1,
+    "DEF": 1,
+    "REB": 2,
+    "AST": 0,
+    "TO": 1,
+    "STL": 1,
+    "BLK": 0,
+    "BLKR": 1,
+    "PF": 1,
+    "FOn": 1,
+    "+/-": -11,
+    "info": {
+     "period": 0,
+     "playerId": 2777481,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 8,
+    "POS": "F",
+    "MINS": "26:29",
+    "PTS": 8,
+    "FG": "3-8",
+    "FG%": 37.5,
+    "2P": "3-7",
+    "2P%": 42.9,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "2-2",
+    "FT%": 100,
+    "OFF": 0,
+    "DEF": 2,
+    "REB": 2,
+    "AST": 2,
+    "TO": 3,
+    "STL": 2,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 3,
+    "FOn": 1,
+    "+/-": -1,
+    "info": {
+     "period": 0,
+     "playerId": 1951861,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 9,
+    "POS": "G",
+    "MINS": "10:22",
+    "PTS": 0,
+    "FG": "0-1",
+    "FG%": 0,
+    "2P": "0-0",
+    "2P%": 0,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 0,
+    "REB": 0,
+    "AST": 0,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 0,
+    "FOn": 0,
+    "+/-": -2,
+    "info": {
+     "period": 0,
+     "playerId": 2495922,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 10,
+    "POS": "G",
+    "MINS": "12:24",
+    "PTS": 0,
+    "FG": "0-3",
+    "FG%": 0,
+    "2P": "0-2",
+    "2P%": 0,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 1,
+    "DEF": 1,
+    "REB": 2,
+    "AST": 0,
+    "TO": 1,
+    "STL": 3,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 3,
+    "FOn": 0,
+    "+/-": -6,
+    "info": {
+     "period": 0,
+     "playerId": 2380378,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 13,
+    "POS": "G",
+    "MINS": "14:48",
+    "PTS": 2,
+    "FG": "0-1",
+    "FG%": 0,
+    "2P": "0-1",
+    "2P%": 0,
+    "3P": "0-0",
+    "3P%": 0,
+    "FT": "2-2",
+    "FT%": 100,
+    "OFF": 2,
+    "DEF": 1,
+    "REB": 3,
+    "AST": 0,
+    "TO": 3,
+    "STL": 1,
+    "BLK": 0,
+    "BLKR": 1,
+    "PF": 3,
+    "FOn": 1,
+    "+/-": -15,
+    "info": {
+     "period": 0,
+     "playerId": 2385172,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 23,
+    "POS": "F",
+    "MINS": "35:33",
+    "PTS": 28,
+    "FG": "9-20",
+    "FG%": 45,
+    "2P": "6-15",
+    "2P%": 40,
+    "3P": "3-5",
+    "3P%": 60,
+    "FT": "7-9",
+    "FT%": 77.8,
+    "OFF": 4,
+    "DEF": 10,
+    "REB": 14,
+    "AST": 2,
+    "TO": 5,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 3,
+    "PF": 4,
+    "FOn": 6,
+    "+/-": -10,
+    "info": {
+     "period": 0,
+     "playerId": 2778538,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 31,
+    "POS": "C",
+    "MINS": "00:00",
+    "PTS": 0,
+    "FG": "0-0",
+    "FG%": 0,
+    "2P": "0-0",
+    "2P%": 0,
+    "3P": "0-0",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 0,
+    "REB": 0,
+    "AST": 0,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 0,
+    "FOn": 0,
+    "+/-": 0,
+    "info": {
+     "period": 0,
+     "playerId": 2788596,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": 56,
+    "POS": "G",
+    "MINS": "18:22",
+    "PTS": 13,
+    "FG": "6-12",
+    "FG%": 50,
+    "2P": "6-9",
+    "2P%": 66.7,
+    "3P": "0-3",
+    "3P%": 0,
+    "FT": "1-2",
+    "FT%": 50,
+    "OFF": 2,
+    "DEF": 1,
+    "REB": 3,
+    "AST": 0,
+    "TO": 1,
+    "STL": 2,
+    "BLK": 1,
+    "BLKR": 1,
+    "PF": 2,
+    "FOn": 4,
+    "+/-": -13,
+    "info": {
+     "period": 0,
+     "playerId": 2788597,
+     "teamId": "22250",
+     "team": "Holbæk-Stenhus"
+    }
+   },
+   {
+    "NR": "",
+    "POS": "",
+    "MINS": "",
+    "PTS": "",
+    "FG": "",
+    "FG%": "",
+    "2P": "",
+    "2P%": "",
+    "3P": "",
+    "3P%": "",
+    "FT": "",
+    "FT%": "",
+    "OFF": 4,
+    "DEF": 1,
+    "REB": 5,
+    "AST": "",
+    "TO": 0,
+    "STL": "",
+    "BLK": "",
+    "BLKR": "",
+    "PF": 1,
+    "FOn": "",
+    "+/-": "",
+    "info": {
+     "period": 0,
+     "playerId": "",
+     "teamId": "153747",
+     "teamSummary": true,
+     "label": "sports.stats.team_coach",
+     "side": "home"
+    }
+   },
+   {
+    "NR": "",
+    "POS": "",
+    "MINS": "",
+    "PTS": 84,
+    "FG": "30-76",
+    "FG%": 39.5,
+    "2P": "25-54",
+    "2P%": 46.3,
+    "3P": "5-22",
+    "3P%": 22.7,
+    "FT": "19-23",
+    "FT%": 82.6,
+    "OFF": 18,
+    "DEF": 24,
+    "REB": 42,
+    "AST": 10,
+    "TO": 18,
+    "STL": 11,
+    "BLK": 2,
+    "BLKR": 9,
+    "PF": 23,
+    "FOn": 18,
+    "+/-": "",
+    "info": {
+     "period": 0,
+     "playerId": "",
+     "teamId": "153747",
+     "teamSummary": true,
+     "label": "sports.stats.team_totals",
+     "side": "home"
+    }
+   }
+  ],
+  "awayTeamValue": [
+   {
+    "NR": 1,
+    "POS": "G",
+    "MINS": "19:02",
+    "PTS": 16,
+    "FG": "6-7",
+    "FG%": 85.7,
+    "2P": "3-3",
+    "2P%": 100,
+    "3P": "3-4",
+    "3P%": 75,
+    "FT": "1-4",
+    "FT%": 25,
+    "OFF": 1,
+    "DEF": 0,
+    "REB": 1,
+    "AST": 1,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 1,
+    "BLKR": 0,
+    "PF": 1,
+    "FOn": 2,
+    "+/-": 16,
+    "info": {
+     "period": 0,
+     "playerId": 1633880,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 2,
+    "POS": "C",
+    "MINS": "15:14",
+    "PTS": 7,
+    "FG": "3-6",
+    "FG%": 50,
+    "2P": "3-4",
+    "2P%": 75,
+    "3P": "0-2",
+    "3P%": 0,
+    "FT": "1-2",
+    "FT%": 50,
+    "OFF": 0,
+    "DEF": 4,
+    "REB": 4,
+    "AST": 1,
+    "TO": 1,
+    "STL": 1,
+    "BLK": 1,
+    "BLKR": 0,
+    "PF": 2,
+    "FOn": 2,
+    "+/-": 12,
+    "info": {
+     "period": 0,
+     "playerId": 2787439,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 4,
+    "POS": "G",
+    "MINS": "20:31",
+    "PTS": 3,
+    "FG": "1-5",
+    "FG%": 20,
+    "2P": "0-2",
+    "2P%": 0,
+    "3P": "1-3",
+    "3P%": 33.3,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 4,
+    "REB": 4,
+    "AST": 2,
+    "TO": 2,
+    "STL": 2,
+    "BLK": 1,
+    "BLKR": 0,
+    "PF": 2,
+    "FOn": 0,
+    "+/-": 17,
+    "info": {
+     "period": 0,
+     "playerId": 2776246,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 7,
+    "POS": "F",
+    "MINS": "14:42",
+    "PTS": 2,
+    "FG": "1-4",
+    "FG%": 25,
+    "2P": "1-4",
+    "2P%": 25,
+    "3P": "0-0",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 1,
+    "REB": 1,
+    "AST": 0,
+    "TO": 1,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 1,
+    "FOn": 0,
+    "+/-": 2,
+    "info": {
+     "period": 0,
+     "playerId": 2274016,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 8,
+    "POS": "G",
+    "MINS": "14:53",
+    "PTS": 4,
+    "FG": "1-2",
+    "FG%": 50,
+    "2P": "1-1",
+    "2P%": 100,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "2-2",
+    "FT%": 100,
+    "OFF": 0,
+    "DEF": 1,
+    "REB": 1,
+    "AST": 1,
+    "TO": 0,
+    "STL": 1,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 1,
+    "FOn": 2,
+    "+/-": 0,
+    "info": {
+     "period": 0,
+     "playerId": 175351,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 10,
+    "POS": "C/F",
+    "MINS": "10:12",
+    "PTS": 6,
+    "FG": "3-4",
+    "FG%": 75,
+    "2P": "3-4",
+    "2P%": 75,
+    "3P": "0-0",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 2,
+    "REB": 2,
+    "AST": 5,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 5,
+    "FOn": 0,
+    "+/-": 1,
+    "info": {
+     "period": 0,
+     "playerId": 646388,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 11,
+    "POS": "G",
+    "MINS": "04:54",
+    "PTS": 0,
+    "FG": "0-2",
+    "FG%": 0,
+    "2P": "0-1",
+    "2P%": 0,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 2,
+    "REB": 2,
+    "AST": 1,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 1,
+    "PF": 2,
+    "FOn": 0,
+    "+/-": 3,
+    "info": {
+     "period": 0,
+     "playerId": 2486702,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 12,
+    "POS": "G",
+    "MINS": "10:39",
+    "PTS": 2,
+    "FG": "1-3",
+    "FG%": 33.3,
+    "2P": "1-1",
+    "2P%": 100,
+    "3P": "0-2",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 0,
+    "DEF": 0,
+    "REB": 0,
+    "AST": 1,
+    "TO": 0,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 0,
+    "FOn": 0,
+    "+/-": -3,
+    "info": {
+     "period": 0,
+     "playerId": 667275,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 13,
+    "POS": "C/F",
+    "MINS": "14:15",
+    "PTS": 4,
+    "FG": "2-3",
+    "FG%": 66.7,
+    "2P": "2-2",
+    "2P%": 100,
+    "3P": "0-1",
+    "3P%": 0,
+    "FT": "0-0",
+    "FT%": 0,
+    "OFF": 1,
+    "DEF": 3,
+    "REB": 4,
+    "AST": 0,
+    "TO": 1,
+    "STL": 0,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 1,
+    "FOn": 1,
+    "+/-": 4,
+    "info": {
+     "period": 0,
+     "playerId": 1301034,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 32,
+    "POS": "F/G",
+    "MINS": "25:39",
+    "PTS": 31,
+    "FG": "11-15",
+    "FG%": 73.3,
+    "2P": "9-11",
+    "2P%": 81.8,
+    "3P": "2-4",
+    "3P%": 50,
+    "FT": "7-9",
+    "FT%": 77.8,
+    "OFF": 1,
+    "DEF": 5,
+    "REB": 6,
+    "AST": 1,
+    "TO": 4,
+    "STL": 2,
+    "BLK": 1,
+    "BLKR": 1,
+    "PF": 2,
+    "FOn": 8,
+    "+/-": 15,
+    "info": {
+     "period": 0,
+     "playerId": 2784096,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 35,
+    "POS": "F",
+    "MINS": "24:54",
+    "PTS": 12,
+    "FG": "2-7",
+    "FG%": 28.6,
+    "2P": "1-6",
+    "2P%": 16.7,
+    "3P": "1-1",
+    "3P%": 100,
+    "FT": "7-7",
+    "FT%": 100,
+    "OFF": 0,
+    "DEF": 4,
+    "REB": 4,
+    "AST": 4,
+    "TO": 3,
+    "STL": 1,
+    "BLK": 5,
+    "BLKR": 0,
+    "PF": 0,
+    "FOn": 5,
+    "+/-": 3,
+    "info": {
+     "period": 0,
+     "playerId": 2769006,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": 44,
+    "POS": "G",
+    "MINS": "25:00",
+    "PTS": 13,
+    "FG": "4-6",
+    "FG%": 66.7,
+    "2P": "1-1",
+    "2P%": 100,
+    "3P": "3-5",
+    "3P%": 60,
+    "FT": "2-2",
+    "FT%": 100,
+    "OFF": 0,
+    "DEF": 2,
+    "REB": 2,
+    "AST": 4,
+    "TO": 3,
+    "STL": 1,
+    "BLK": 0,
+    "BLKR": 0,
+    "PF": 1,
+    "FOn": 3,
+    "+/-": 10,
+    "info": {
+     "period": 0,
+     "playerId": 288488,
+     "teamId": "22250",
+     "team": "Randers Cimbria"
+    }
+   },
+   {
+    "NR": "",
+    "POS": "",
+    "MINS": "",
+    "PTS": "",
+    "FG": "",
+    "FG%": "",
+    "2P": "",
+    "2P%": "",
+    "3P": "",
+    "3P%": "",
+    "FT": "",
+    "FT%": "",
+    "OFF": 3,
+    "DEF": 1,
+    "REB": 4,
+    "AST": "",
+    "TO": 0,
+    "STL": "",
+    "BLK": "",
+    "BLKR": "",
+    "PF": 0,
+    "FOn": "",
+    "+/-": "",
+    "info": {
+     "period": 0,
+     "playerId": "",
+     "teamId": "22250",
+     "teamSummary": true,
+     "label": "sports.stats.team_coach",
+     "side": "away"
+    }
+   },
+   {
+    "NR": "",
+    "POS": "",
+    "MINS": "",
+    "PTS": 100,
+    "FG": "35-64",
+    "FG%": 54.7,
+    "2P": "25-40",
+    "2P%": 62.5,
+    "3P": "10-24",
+    "3P%": 41.7,
+    "FT": "20-26",
+    "FT%": 76.9,
+    "OFF": 6,
+    "DEF": 29,
+    "REB": 35,
+    "AST": 21,
+    "TO": 15,
+    "STL": 8,
+    "BLK": 9,
+    "BLKR": 2,
+    "PF": 18,
+    "FOn": 23,
+    "+/-": "",
+    "info": {
+     "period": 0,
+     "playerId": "",
+     "teamId": "22250",
+     "teamSummary": true,
+     "label": "sports.stats.team_totals",
+     "side": "away"
+    }
+   }
+  ]
+ },
+ "provider": "genius-basketball"
+}

@@ -1,0 +1,29 @@
+team_side,row_type,player_id,team_id,team_name,period,full_name,first_name,last_name,nr,pos,mins,pts,fg,fg_perc,2_p,2_p_perc,3_p,3_p_perc,ft,ft_perc,off,def,reb,ast,to,stl,blk,blkr,pf,f_on,plus_minus
+home,player,1887576,153747,Holbæk-Stenhus,0,Oskar Fløng Vanner,Oskar Fløng,Vanner,1,C,09:07,0,0-0,0.0,0-0,0.0,0-0,0.0,0-0,0.0,0,0,0,1,1,1,0,0,1,0,-4
+home,player,2777479,153747,Holbæk-Stenhus,0,Bryceson Burns,Bryceson,Burns,2,G,30:05,15,6-13,46.2,5-8,62.5,1-5,20.0,2-2,100.0,1,4,5,1,1,1,1,0,4,1,-9
+home,player,2404639,153747,Holbæk-Stenhus,0,Anders Jellesmark,Anders,Jellesmark,3,G,29:33,18,6-15,40.0,5-10,50.0,1-5,20.0,5-6,83.3,3,2,5,4,2,0,0,3,2,4,-8
+home,player,2779432,153747,Holbæk-Stenhus,0,Sebastian Reumert,Sebastian,Reumert,6,G,02:52,0,0-1,0.0,0-0,0.0,0-1,0.0,0-0,0.0,0,1,1,0,0,0,0,0,0,0,-1
+home,player,2777481,153747,Holbæk-Stenhus,0,Otto Jernberg-Sørensen,Otto,Jernberg-Sørensen,7,F,10:18,0,0-2,0.0,0-2,0.0,0-0,0.0,0-0,0.0,1,1,2,0,1,1,0,1,1,1,-11
+home,player,1951861,153747,Holbæk-Stenhus,0,August Heming,August,Heming,8,F,26:29,8,3-8,37.5,3-7,42.9,0-1,0.0,2-2,100.0,0,2,2,2,3,2,0,0,3,1,-1
+home,player,2495922,153747,Holbæk-Stenhus,0,Karl Heming,Karl,Heming,9,G,10:22,0,0-1,0.0,0-0,0.0,0-1,0.0,0-0,0.0,0,0,0,0,0,0,0,0,0,0,-2
+home,player,2380378,153747,Holbæk-Stenhus,0,Julius Aabling,Julius,Aabling,10,G,12:24,0,0-3,0.0,0-2,0.0,0-1,0.0,0-0,0.0,1,1,2,0,1,3,0,0,3,0,-6
+home,player,2385172,153747,Holbæk-Stenhus,0,Malthe Aabling,Malthe,Aabling,13,G,14:48,2,0-1,0.0,0-1,0.0,0-0,0.0,2-2,100.0,2,1,3,0,3,1,0,1,3,1,-15
+home,player,2778538,153747,Holbæk-Stenhus,0,Caden Fry,Caden,Fry,23,F,35:33,28,9-20,45.0,6-15,40.0,3-5,60.0,7-9,77.8,4,10,14,2,5,0,0,3,4,6,-10
+home,player,2788596,153747,Holbæk-Stenhus,0,Visti Thomsen,Visti,Thomsen,31,C,00:00,0,0-0,0.0,0-0,0.0,0-0,0.0,0-0,0.0,0,0,0,0,0,0,0,0,0,0,0
+home,player,2788597,153747,Holbæk-Stenhus,0,Oskar Harring Østoft,Oskar Harring,Østoft,56,G,18:22,13,6-12,50.0,6-9,66.7,0-3,0.0,1-2,50.0,2,1,3,0,1,2,1,1,2,4,-13
+home,team_coach,,153747,Holbæk-Stenhus,0,,,,,,,,,,,,,,,,4,1,5,,0,,,,1,,
+home,team_totals,,153747,Holbæk-Stenhus,0,,,,,,,84,30-76,39.5,25-54,46.3,5-22,22.7,19-23,82.6,18,24,42,10,18,11,2,9,23,18,
+away,player,1633880,22250,Randers Cimbria,0,Sharif Barfi,Sharif,Barfi,1,G,19:02,16,6-7,85.7,3-3,100.0,3-4,75.0,1-4,25.0,1,0,1,1,0,0,1,0,1,2,16
+away,player,2787439,22250,Randers Cimbria,0,Kuluel Madding,Kuluel,Madding,2,C,15:14,7,3-6,50.0,3-4,75.0,0-2,0.0,1-2,50.0,0,4,4,1,1,1,1,0,2,2,12
+away,player,2776246,22250,Randers Cimbria,0,Jusaun Holt,Jusaun,Holt,4,G,20:31,3,1-5,20.0,0-2,0.0,1-3,33.3,0-0,0.0,0,4,4,2,2,2,1,0,2,0,17
+away,player,2274016,22250,Randers Cimbria,0,Patrick Renane,Patrick,Renane,7,F,14:42,2,1-4,25.0,1-4,25.0,0-0,0.0,0-0,0.0,0,1,1,0,1,0,0,0,1,0,2
+away,player,175351,22250,Randers Cimbria,0,Anton Lønstrup Hansen,Anton Lønstrup,Hansen,8,G,14:53,4,1-2,50.0,1-1,100.0,0-1,0.0,2-2,100.0,0,1,1,1,0,1,0,0,1,2,0
+away,player,646388,22250,Randers Cimbria,0,Morten Bülow,Morten,Bülow,10,C/F,10:12,6,3-4,75.0,3-4,75.0,0-0,0.0,0-0,0.0,0,2,2,5,0,0,0,0,5,0,1
+away,player,2486702,22250,Randers Cimbria,0,Elliot Maximus Jean Holm,Elliot Maximus Jean,Holm,11,G,04:54,0,0-2,0.0,0-1,0.0,0-1,0.0,0-0,0.0,0,2,2,1,0,0,0,1,2,0,3
+away,player,667275,22250,Randers Cimbria,0,Bakir Serdarevic,Bakir,Serdarevic,12,G,10:39,2,1-3,33.3,1-1,100.0,0-2,0.0,0-0,0.0,0,0,0,1,0,0,0,0,0,0,-3
+away,player,1301034,22250,Randers Cimbria,0,Oscar Alm,Oscar,Alm,13,C/F,14:15,4,2-3,66.7,2-2,100.0,0-1,0.0,0-0,0.0,1,3,4,0,1,0,0,0,1,1,4
+away,player,2784096,22250,Randers Cimbria,0,Kaden Sand,Kaden,Sand,32,F/G,25:39,31,11-15,73.3,9-11,81.8,2-4,50.0,7-9,77.8,1,5,6,1,4,2,1,1,2,8,15
+away,player,2769006,22250,Randers Cimbria,0,Dibaji Walker,Dibaji,Walker,35,F,24:54,12,2-7,28.6,1-6,16.7,1-1,100.0,7-7,100.0,0,4,4,4,3,1,5,0,0,5,3
+away,player,288488,22250,Randers Cimbria,0,Adama Darboe,Adama,Darboe,44,G,25:00,13,4-6,66.7,1-1,100.0,3-5,60.0,2-2,100.0,0,2,2,4,3,1,0,0,1,3,10
+away,team_coach,,22250,Randers Cimbria,0,,,,,,,,,,,,,,,,3,1,4,,0,,,,0,,
+away,team_totals,,22250,Randers Cimbria,0,,,,,,,100,35-64,54.7,25-40,62.5,10-24,41.7,20-26,76.9,6,29,35,21,15,8,9,2,18,23,

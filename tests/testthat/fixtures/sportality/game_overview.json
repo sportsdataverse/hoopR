@@ -1,0 +1,37 @@
+{
+  "gameUuid": "c4hh5nig6t",
+  "homeTeam": {
+    "gameSourceId": 2868126,
+    "gameId": 2868126,
+    "teamId": "153747",
+    "teamName": "Holbæk-Stenhus",
+    "teamCode": "Hol",
+    "teamNumber": 1,
+    "place": "home",
+    "instanceId": "dbl1_dbl",
+    "source": "genius-basketball-stream-reader",
+    "gameUuid": "c4hh5nig6t"
+  },
+  "awayTeam": {
+    "gameSourceId": 2868126,
+    "gameId": 2868126,
+    "teamId": "22250",
+    "teamName": "Randers Cimbria",
+    "teamCode": "RAN",
+    "teamNumber": 2,
+    "place": "away",
+    "instanceId": "dbl1_dbl",
+    "source": "genius-basketball-stream-reader",
+    "gameUuid": "c4hh5nig6t"
+  },
+  "homeGoals": 84,
+  "awayGoals": 100,
+  "state": "GameEnded",
+  "time": {
+    "gameId": 2868126,
+    "period": 4,
+    "periodTime": "00:00:00",
+    "instanceId": "dbl1_dbl",
+    "source": "genius-basketball-stream-reader"
+  }
+}

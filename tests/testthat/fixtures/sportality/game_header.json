@@ -1,0 +1,61 @@
+{
+  "instanceContext": {
+    "siteTeamIsInGame": true,
+    "siteTeamIsHomeTeam": true,
+    "siteTeamIsAwayTeam": true
+  },
+  "gameInfo": {
+    "gameUuid": "c4hh5nig6t",
+    "extId": "2868126",
+    "startDateTime": "2026-09-17T17:00:00.000Z",
+    "arenaName": "Holbæk Sportsby",
+    "state": "post_game",
+    "overtime": false,
+    "shootout": null,
+    "seriesCode": "DBL",
+    "seriesName": "Basketligaen",
+    "roundNumber": 0,
+    "roundLabel": "",
+    "seriesDisplayName": "Basketligaen"
+  },
+  "homeTeam": {
+    "names": {
+      "code": "HOL",
+      "short": "Holbæk-Stenhus",
+      "long": "Holbæk-Stenhus",
+      "full": "Holbæk-Stenhus",
+      "codeSite": "HOL",
+      "shortSite": "Holbæk-Stenhus",
+      "fullSite": "Holbæk-Stenhus",
+      "longSite": "Holbæk-Stenhus"
+    },
+    "uuid": "rfo82vr830",
+    "instanceId": "hol2_hol",
+    "foundedOn": "",
+    "address": "",
+    "email": "",
+    "icon": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg",
+    "score": 84
+  },
+  "awayTeam": {
+    "names": {
+      "code": "RAN",
+      "short": "Randers Cimbria",
+      "long": "Randers Cimbria",
+      "full": "Randers Cimbria",
+      "codeSite": "RAN",
+      "shortSite": "Randers Cimbria",
+      "fullSite": "Randers Cimbria",
+      "longSite": "Randers Cimbria"
+    },
+    "uuid": "gvvuxe9ysw",
+    "instanceId": "ran1_ran",
+    "foundedOn": "",
+    "address": "",
+    "email": "",
+    "icon": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg",
+    "score": 100
+  },
+  "ssgtUuid": "xs07bd3fmp",
+  "seriesUuid": "m1ay3mpa4t"
+}

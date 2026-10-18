@@ -1,0 +1,46 @@
+{
+  "athleteData": {
+    "uuid": "dpu0901c0t",
+    "contactInfo": null,
+    "createdAt": "2026-06-17T12:12:19.000Z",
+    "createdBy": "dbl1_dbl",
+    "creatorSite": null,
+    "height": 197,
+    "dateOfBirth": "<redacted>",
+    "deleted": false,
+    "firstName": "Luka",
+    "gender": "male",
+    "lastModified": "2026-09-21T10:30:05.000Z",
+    "lastName": "Churchill",
+    "metadata": [],
+    "nationality": "DK",
+    "shoots": "",
+    "weight": 90,
+    "playerExtIds": [
+      {
+        "id": 82545,
+        "extId": "1917467",
+        "locked": false,
+        "extIdType": {
+          "uuid": "552a-c2beuydsj",
+          "code": "genius-basketball",
+          "createdAt": null,
+          "createdBy": "dbl1_dbl",
+          "deleted": false,
+          "lastModified": null,
+          "names": [
+            {
+              "language": "sv",
+              "translation": "Genius Sports Basketball"
+            },
+            {
+              "language": "en",
+              "translation": "Genius Sports Basketball"
+            }
+          ],
+          "visible": true
+        }
+      }
+    ]
+  }
+}

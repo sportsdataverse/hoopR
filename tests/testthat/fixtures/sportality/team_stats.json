@@ -1,0 +1,369 @@
+{
+ "home": {
+  "gameSourceId": 2868126,
+  "gameId": 2868126,
+  "teamId": "153747",
+  "teamName": "Holbæk-Stenhus",
+  "teamCode": "Hol",
+  "teamNumber": 1,
+  "place": "home",
+  "instanceId": "dbl1_dbl",
+  "source": "genius-basketball-stream-reader",
+  "gameUuid": "c4hh5nig6t",
+  "statistics": [
+   {
+    "period": 0,
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 84
+     },
+     {
+      "key": "FGM",
+      "value": 30
+     },
+     {
+      "key": "A",
+      "value": 10
+     },
+     {
+      "key": "Reb",
+      "value": 5
+     },
+     {
+      "key": "Stl",
+      "value": 11
+     },
+     {
+      "key": "Blk",
+      "value": 2
+     },
+     {
+      "key": "PF",
+      "value": 23
+     }
+    ]
+   },
+   {
+    "period": 1,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 22
+     },
+     {
+      "key": "FGM",
+      "value": 7
+     },
+     {
+      "key": "A",
+      "value": 3
+     },
+     {
+      "key": "Reb",
+      "value": 2
+     },
+     {
+      "key": "Stl",
+      "value": 3
+     },
+     {
+      "key": "Blk",
+      "value": 0
+     },
+     {
+      "key": "PF",
+      "value": 7
+     }
+    ]
+   },
+   {
+    "period": 2,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 32
+     },
+     {
+      "key": "FGM",
+      "value": 13
+     },
+     {
+      "key": "A",
+      "value": 4
+     },
+     {
+      "key": "Reb",
+      "value": 1
+     },
+     {
+      "key": "Stl",
+      "value": 5
+     },
+     {
+      "key": "Blk",
+      "value": 1
+     },
+     {
+      "key": "PF",
+      "value": 4
+     }
+    ]
+   },
+   {
+    "period": 3,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 12
+     },
+     {
+      "key": "FGM",
+      "value": 5
+     },
+     {
+      "key": "A",
+      "value": 1
+     },
+     {
+      "key": "Reb",
+      "value": 0
+     },
+     {
+      "key": "Stl",
+      "value": 0
+     },
+     {
+      "key": "Blk",
+      "value": 1
+     },
+     {
+      "key": "PF",
+      "value": 8
+     }
+    ]
+   },
+   {
+    "period": 4,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 18
+     },
+     {
+      "key": "FGM",
+      "value": 5
+     },
+     {
+      "key": "A",
+      "value": 2
+     },
+     {
+      "key": "Reb",
+      "value": 2
+     },
+     {
+      "key": "Stl",
+      "value": 3
+     },
+     {
+      "key": "Blk",
+      "value": 0
+     },
+     {
+      "key": "PF",
+      "value": 4
+     }
+    ]
+   }
+  ]
+ },
+ "away": {
+  "gameSourceId": 2868126,
+  "gameId": 2868126,
+  "teamId": "22250",
+  "teamName": "Randers Cimbria",
+  "teamCode": "RAN",
+  "teamNumber": 2,
+  "place": "away",
+  "instanceId": "dbl1_dbl",
+  "source": "genius-basketball-stream-reader",
+  "gameUuid": "c4hh5nig6t",
+  "statistics": [
+   {
+    "period": 0,
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 100
+     },
+     {
+      "key": "FGM",
+      "value": 35
+     },
+     {
+      "key": "A",
+      "value": 21
+     },
+     {
+      "key": "Reb",
+      "value": 4
+     },
+     {
+      "key": "Stl",
+      "value": 8
+     },
+     {
+      "key": "Blk",
+      "value": 9
+     },
+     {
+      "key": "PF",
+      "value": 18
+     }
+    ]
+   },
+   {
+    "period": 1,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 21
+     },
+     {
+      "key": "FGM",
+      "value": 7
+     },
+     {
+      "key": "A",
+      "value": 5
+     },
+     {
+      "key": "Reb",
+      "value": 2
+     },
+     {
+      "key": "Stl",
+      "value": 1
+     },
+     {
+      "key": "Blk",
+      "value": 4
+     },
+     {
+      "key": "PF",
+      "value": 6
+     }
+    ]
+   },
+   {
+    "period": 2,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 33
+     },
+     {
+      "key": "FGM",
+      "value": 12
+     },
+     {
+      "key": "A",
+      "value": 6
+     },
+     {
+      "key": "Reb",
+      "value": 1
+     },
+     {
+      "key": "Stl",
+      "value": 2
+     },
+     {
+      "key": "Blk",
+      "value": 1
+     },
+     {
+      "key": "PF",
+      "value": 5
+     }
+    ]
+   },
+   {
+    "period": 3,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 26
+     },
+     {
+      "key": "FGM",
+      "value": 7
+     },
+     {
+      "key": "A",
+      "value": 5
+     },
+     {
+      "key": "Reb",
+      "value": 1
+     },
+     {
+      "key": "Stl",
+      "value": 2
+     },
+     {
+      "key": "Blk",
+      "value": 2
+     },
+     {
+      "key": "PF",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "period": 4,
+    "periodType": "REGULAR",
+    "parsedTotalStatistics": [
+     {
+      "key": "TP",
+      "value": 20
+     },
+     {
+      "key": "FGM",
+      "value": 9
+     },
+     {
+      "key": "A",
+      "value": 5
+     },
+     {
+      "key": "Reb",
+      "value": 0
+     },
+     {
+      "key": "Stl",
+      "value": 3
+     },
+     {
+      "key": "Blk",
+      "value": 2
+     },
+     {
+      "key": "PF",
+      "value": 4
+     }
+    ]
+   }
+  ]
+ },
+ "provider": "genius-basketball"
+}

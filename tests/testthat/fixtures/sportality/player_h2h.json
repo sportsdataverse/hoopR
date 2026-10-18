@@ -1,0 +1,409 @@
+{
+  "defaultPairType": "most_points",
+  "comparisonTypes": [
+    {
+      "id": "most_points",
+      "code": "PPG",
+      "positionGroup": "non-GK"
+    },
+    {
+      "id": "most_rebounds",
+      "code": "RPG",
+      "positionGroup": "non-GK"
+    },
+    {
+      "id": "most_assists",
+      "code": "APG",
+      "positionGroup": "non-GK"
+    }
+  ],
+  "defaultSelectionByType": {
+    "most_points": {
+      "p1Id": "m8ajfnag3m",
+      "p2Id": "rgccnz9pl4"
+    },
+    "most_rebounds": {
+      "p1Id": "m8ajfnag3m",
+      "p2Id": "rgccnz9pl4"
+    },
+    "most_assists": {
+      "p1Id": "zu0qp4mq65",
+      "p2Id": "pe5gbypw8j"
+    },
+    "most_steals": {
+      "p1Id": "k1nh3mnqzp",
+      "p2Id": "lahvhy4c0z"
+    },
+    "most_blocks": {
+      "p1Id": "cjcrt5hlho",
+      "p2Id": "zq7gm2cf5y"
+    },
+    "most_minutes": {
+      "p1Id": "m8ajfnag3m",
+      "p2Id": "rgccnz9pl4"
+    }
+  },
+  "players": [
+    {
+      "uuid": "zu0qp4mq65",
+      "firstName": "Anders",
+      "lastName": "Jellesmark",
+      "fullName": "Anders Jellesmark",
+      "birthDate": "<redacted>",
+      "nationality": "DK",
+      "gender": "male",
+      "jerseyNumber": 3,
+      "position": "Point Guard",
+      "positionCode": "PG",
+      "age": {
+        "value": 19,
+        "format": "years"
+      },
+      "height": {
+        "value": 187,
+        "format": "cm"
+      },
+      "weight": {
+        "value": 78,
+        "format": "kg"
+      },
+      "team": {
+        "uuid": "rfo82vr830",
+        "instanceId": "hol2_hol",
+        "name": "Holbæk-Stenhus",
+        "code": "HOL",
+        "media": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "media": {
+        "url": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&s=a33656b8fab84af5a341627e417f1b24",
+        "alt": "",
+        "srcset": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=160&s=b5c2a5d38168282b2bb8ead9f19eedea 160w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=320&s=95b25ea28018bcfc1fd6dd4de09b4e19 320w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=480&s=ac812689857d4694dfb90398d4cba780 480w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=640&s=df063f1eed45f5db11ea59046a1900b2 640w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=960&s=3e0ab63ed0513c7deecc9d88aedb2f53 960w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=1280&s=c9b5634a23f7f270bc20159a80462dfb 1280w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=1600&s=06eff0de304d955ab48f5d56cb2c5b18 1600w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=1920&s=f5dfc1b50d7f9735d04c805ff30ba7eb 1920w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=2560&s=55ea3d01bb4ffe356d98ad7b4d29e41e 2560w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fb80ada47-6e17-4dee-a643-e653152df638Anders%20Jellesmark.png?ixlib=js-3.8.0&w=2880&s=b54ecd85f077b3ee74ab88d1b83875bd 2880w"
+      },
+      "seasonStats": [],
+      "careerStats": [],
+      "matchStats": {
+        "NR": 3,
+        "POS": "G",
+        "teamNumber": 1,
+        "pno": 7,
+        "MINS": "29:33",
+        "PTS": 18,
+        "FG": "6-15",
+        "FG%": 40,
+        "2P": "5-10",
+        "2P%": 50,
+        "3P": "1-5",
+        "3P%": 20,
+        "FT": "5-6",
+        "FT%": 83.3,
+        "OFF": 3,
+        "DEF": 2,
+        "REB": 5,
+        "AST": 4,
+        "TO": 2,
+        "STL": 0,
+        "BLK": 0,
+        "BLKR": 3,
+        "PF": 2,
+        "FOn": 4,
+        "PlusMinus": -8
+      },
+      "seasonAvgStats": {},
+      "statisticsProvider": "genius-basketball",
+      "isInSquad": true
+    },
+    {
+      "uuid": "pe5gbypw8j",
+      "firstName": "Morten",
+      "lastName": "Bülow",
+      "fullName": "Morten Bülow",
+      "birthDate": "<redacted>",
+      "nationality": "DK",
+      "gender": "male",
+      "jerseyNumber": 10,
+      "position": "Power Forward",
+      "positionCode": "PF",
+      "age": {
+        "value": 27,
+        "format": "years"
+      },
+      "height": {
+        "value": 200,
+        "format": "cm"
+      },
+      "weight": {
+        "value": 116,
+        "format": "kg"
+      },
+      "team": {
+        "uuid": "gvvuxe9ysw",
+        "instanceId": "ran1_ran",
+        "name": "Randers Cimbria",
+        "code": "RAN",
+        "media": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg"
+      },
+      "media": {
+        "url": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&s=97474880634ac9aef44cd5d9b27c6378",
+        "alt": "",
+        "srcset": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=160&s=ca915537134acd4662352815f98dbb93 160w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=320&s=ab6f078aaf76b0f3e088113c448425f6 320w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=480&s=cf638acb98491f52a36c840d8227ae42 480w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=640&s=7fe794ec99150be87aa05317a08b398a 640w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=960&s=447946880a1679f93b82cabc167a9665 960w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=1280&s=6713f1249408860045c71e8dc65476a8 1280w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=1600&s=c08a8eafec9410bc00bed18070370462 1600w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=1920&s=88fec97b8df4f47bb61ea641bf50303e 1920w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=2560&s=1e6c27898ad6a5a544c079841b0670db 2560w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2Fd6c92dbf-7878-4c05-af08-6821416e50dc10%20Morten%20Bulow%20Portrt.png?ixlib=js-3.8.0&w=2880&s=a143dbae23a5d287db3b7886ffc08613 2880w"
+      },
+      "seasonStats": [],
+      "careerStats": [],
+      "matchStats": {
+        "NR": 10,
+        "POS": "C/F",
+        "teamNumber": 2,
+        "pno": 3,
+        "MINS": "10:12",
+        "PTS": 6,
+        "FG": "3-4",
+        "FG%": 75,
+        "2P": "3-4",
+        "2P%": 75,
+        "3P": "0-0",
+        "3P%": 0,
+        "FT": "0-0",
+        "FT%": 0,
+        "OFF": 0,
+        "DEF": 2,
+        "REB": 2,
+        "AST": 5,
+        "TO": 0,
+        "STL": 0,
+        "BLK": 0,
+        "BLKR": 0,
+        "PF": 5,
+        "FOn": 0,
+        "PlusMinus": 1
+      },
+      "seasonAvgStats": {},
+      "statisticsProvider": "genius-basketball",
+      "isInSquad": true
+    },
+    {
+      "uuid": "cjcrt5hlho",
+      "firstName": "Bryceson",
+      "lastName": "Burns",
+      "fullName": "Bryceson Burns",
+      "birthDate": "<redacted>",
+      "nationality": "US",
+      "gender": "male",
+      "jerseyNumber": 2,
+      "position": "Shooting Guard",
+      "positionCode": "SG",
+      "age": {
+        "value": 25,
+        "format": "years"
+      },
+      "height": {
+        "value": 198,
+        "format": "cm"
+      },
+      "weight": {
+        "value": 88,
+        "format": "kg"
+      },
+      "team": {
+        "uuid": "rfo82vr830",
+        "instanceId": "hol2_hol",
+        "name": "Holbæk-Stenhus",
+        "code": "HOL",
+        "media": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "media": {
+        "url": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&s=c8e85d5e8adebe019f570f244c011701",
+        "alt": "",
+        "srcset": "https://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=160&s=dea12792218984758765870a963577ca 160w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=320&s=d5f51b03d9dd7e13527c7e114bf8d02c 320w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=480&s=6754781e90424db0cee9cf3724f3df6c 480w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=640&s=1ab13cb3839cdeab678703f63e5ec1ef 640w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=960&s=7609df35a0c6957eefb43f4c8a09b880 960w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=1280&s=2fbb0d57b461b71e3d134ab7d994d66b 1280w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=1600&s=b698d705a777fa8610d72eb991091356 1600w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=1920&s=6fbc5dedbab6bb871d6d409cf7e37817 1920w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=2560&s=e51e9e8d94ab0196a6c61500bf9a204d 2560w,\nhttps://s8y-cdn-sp-photos.imgix.net/https%3A%2F%2Frmss-basketballdk-cdn-prd.fra1.digitaloceanspaces.com%2Fsports%2Fplayer%2Fportrait%2F63feefe8-4ef1-499c-9483-ff52fdb8f739Bryceson%20Burns.png?ixlib=js-3.8.0&w=2880&s=ff1501359dc5da34181b205d2a0cc832 2880w"
+      },
+      "seasonStats": [],
+      "careerStats": [],
+      "matchStats": {
+        "NR": 2,
+        "POS": "G",
+        "teamNumber": 1,
+        "pno": 9,
+        "MINS": "30:05",
+        "PTS": 15,
+        "FG": "6-13",
+        "FG%": 46.2,
+        "2P": "5-8",
+        "2P%": 62.5,
+        "3P": "1-5",
+        "3P%": 20,
+        "FT": "2-2",
+        "FT%": 100,
+        "OFF": 1,
+        "DEF": 4,
+        "REB": 5,
+        "AST": 1,
+        "TO": 1,
+        "STL": 1,
+        "BLK": 1,
+        "BLKR": 0,
+        "PF": 4,
+        "FOn": 1,
+        "PlusMinus": -9
+      },
+      "seasonAvgStats": {},
+      "statisticsProvider": "genius-basketball",
+      "isInSquad": true
+    }
+  ],
+  "statSections": [
+    {
+      "title": "overall_performance",
+      "keys": [
+        "GP",
+        "PPG",
+        "RPG"
+      ]
+    }
+  ],
+  "statSectionsByType": {
+    "most_points": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "GP",
+          "PPG",
+          "RPG"
+        ]
+      }
+    ],
+    "most_rebounds": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "GP",
+          "RPG",
+          "PPG"
+        ]
+      }
+    ],
+    "most_assists": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "GP",
+          "APG",
+          "PPG"
+        ]
+      }
+    ],
+    "most_steals": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "GP",
+          "STPG",
+          "PPG"
+        ]
+      }
+    ],
+    "most_blocks": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "GP",
+          "BLKPG",
+          "PPG"
+        ]
+      }
+    ],
+    "most_minutes": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "GP",
+          "MINS",
+          "PPG"
+        ]
+      }
+    ]
+  },
+  "matchStatSectionsByType": {
+    "best_faceoff_pct": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "G",
+          "A",
+          "TP"
+        ]
+      }
+    ],
+    "best_save_pct": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "SVSPerc",
+          "SOGA",
+          "SVS"
+        ]
+      }
+    ],
+    "most_points": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "PTS",
+          "REB",
+          "AST"
+        ]
+      }
+    ],
+    "most_rebounds": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "REB",
+          "PTS",
+          "AST"
+        ]
+      }
+    ],
+    "most_assists": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "AST",
+          "PTS",
+          "REB"
+        ]
+      }
+    ],
+    "most_steals": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "STL",
+          "PTS",
+          "REB"
+        ]
+      }
+    ],
+    "most_blocks": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "BLK",
+          "PTS",
+          "REB"
+        ]
+      }
+    ],
+    "most_minutes": [
+      {
+        "title": "overall_performance",
+        "keys": [
+          "MINS",
+          "PTS",
+          "REB"
+        ]
+      }
+    ]
+  },
+  "homeTeamUuid": "rfo82vr830",
+  "awayTeamUuid": "gvvuxe9ysw",
+  "effectiveSsgtUuid": "xs07bd3fmp"
+}

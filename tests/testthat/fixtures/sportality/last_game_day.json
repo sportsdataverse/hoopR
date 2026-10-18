@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-10",
+  "games": [
+    {
+      "uuid": "ggg11bjnnq",
+      "startDateTime": "2026-10-10T12:00:00.000Z",
+      "state": "post-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "WIN",
+        "uuid": "ktcu9aaala",
+        "ownerInstanceId": "bak1_bak",
+        "code": "BAK",
+        "names": {
+          "code": "BAK",
+          "short": "Bakken Bears",
+          "long": "Bakken Bears",
+          "full": "Bakken Bears",
+          "codeSite": "BAK",
+          "shortSite": "Bakken Bears",
+          "fullSite": "Bakken Bears",
+          "longSite": "Bakken Bears"
+        },
+        "score": 103,
+        "icon": "https://sportality.cdn.s8y.se/team-logos/bak1_bak.svg"
+      },
+      "awayTeamInfo": {
+        "status": "LOSE",
+        "uuid": "gvvuxe9ysw",
+        "ownerInstanceId": "ran1_ran",
+        "code": "RAN",
+        "names": {
+          "code": "RAN",
+          "short": "Randers Cimbria",
+          "long": "Randers Cimbria",
+          "full": "Randers Cimbria",
+          "codeSite": "RAN",
+          "shortSite": "Randers Cimbria",
+          "fullSite": "Randers Cimbria",
+          "longSite": "Randers Cimbria"
+        },
+        "score": 86,
+        "icon": "https://sportality.cdn.s8y.se/team-logos/ran1_ran.svg"
+      },
+      "venueInfo": {
+        "uuid": "zt52e5o663",
+        "name": "Sparekassen Danmark Basketball Center"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    },
+    {
+      "uuid": "xoqu2x6851",
+      "startDateTime": "2026-10-10T12:00:00.000Z",
+      "state": "post-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "WIN",
+        "uuid": "rfo82vr830",
+        "ownerInstanceId": "hol2_hol",
+        "code": "HOL",
+        "names": {
+          "code": "HOL",
+          "short": "Holbæk-Stenhus",
+          "long": "Holbæk-Stenhus",
+          "full": "Holbæk-Stenhus",
+          "codeSite": "HOL",
+          "shortSite": "Holbæk-Stenhus",
+          "fullSite": "Holbæk-Stenhus",
+          "longSite": "Holbæk-Stenhus"
+        },
+        "score": 88,
+        "icon": "https://sportality.cdn.s8y.se/team-logos/hol2_hol.svg"
+      },
+      "awayTeamInfo": {
+        "status": "LOSE",
+        "uuid": "swr1d65lew",
+        "ownerInstanceId": "bac1_bac",
+        "code": "BAC",
+        "names": {
+          "code": "BAC",
+          "short": "Bears Academy",
+          "long": "Bears Academy",
+          "full": "Bears Academy",
+          "codeSite": "BAC",
+          "shortSite": "Bears Academy",
+          "fullSite": "Bears Academy",
+          "longSite": "Bears Academy"
+        },
+        "score": 67,
+        "icon": "https://sportality.cdn.s8y.se/team-logos/bac1_bac.svg"
+      },
+      "venueInfo": {
+        "uuid": "p9omaxwksu",
+        "name": "Holbæk Sportsby"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    },
+    {
+      "uuid": "b9a18xufup",
+      "startDateTime": "2026-10-10T13:30:00.000Z",
+      "state": "post-game",
+      "overtime": false,
+      "shootout": null,
+      "ssgtUuid": "xs07bd3fmp",
+      "homeTeamInfo": {
+        "status": "LOSE",
+        "uuid": "kgejfzwwbd",
+        "ownerInstanceId": "bms1_bms",
+        "code": "BMS",
+        "names": {
+          "code": "BMS",
+          "short": "BMS Herlev",
+          "long": "BMS Herlev",
+          "full": "BMS Herlev",
+          "codeSite": "BMS",
+          "shortSite": "BMS Herlev",
+          "fullSite": "BMS Herlev",
+          "longSite": "BMS Herlev"
+        },
+        "score": 55,
+        "icon": "https://sportality.cdn.s8y.se/team-logos/bms1_bms.svg"
+      },
+      "awayTeamInfo": {
+        "status": "WIN",
+        "uuid": "iutrlqp3ef",
+        "ownerInstanceId": "tfn1_tfn",
+        "code": "TFN",
+        "names": {
+          "code": "TFN",
+          "short": "Team FOG Næstved",
+          "long": "Team FOG Næstved",
+          "full": "Team FOG Næstved",
+          "codeSite": "TFN",
+          "shortSite": "Team FOG Næstved",
+          "fullSite": "Team FOG Næstved",
+          "longSite": "Team FOG Næstved"
+        },
+        "score": 117,
+        "icon": "https://sportality.cdn.s8y.se/team-logos/tfn1_tfn.svg"
+      },
+      "venueInfo": {
+        "uuid": "esdk8lf5oc",
+        "name": "Sportsworld Arena, Skovlunde"
+      },
+      "seriesInfo": {
+        "uuid": "m1ay3mpa4t",
+        "code": "DBL",
+        "displayName": "Basketligaen"
+      }
+    }
+  ]
+}
