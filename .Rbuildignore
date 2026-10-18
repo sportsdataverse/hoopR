@@ -52,3 +52,4 @@ mbb_pbp_db
 ^.*\.log$
 ^\.omc$
 ^\.understand-anything$
+^tests/testthat/fixtures/(acb|bleague|genius|nbl_rosetta|scb)$

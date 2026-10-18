@@ -1,5 +1,7 @@
 # Genius per-competition aliases (R/genius_competitions.R, minted by R/zzz_genius_competitions.R). Offline.
 
+skip_if_no_intl_fixtures("genius")
+
 gc_path <- function(...) testthat::test_path("fixtures", "genius", ...)
 gc_text <- function(rel) {
   p <- gc_path(rel)

@@ -1,6 +1,8 @@
 # Genius Sports LiveStats (R/genius.R, R/genius_runtime.R). Offline: every body is a committed
 # fixture (tests/testthat/fixtures/genius, see its README); the transport (.intl_response) is mocked.
 
+skip_if_no_intl_fixtures("genius")
+
 # cli wraps long messages: match a space as any whitespace
 g_re <- function(x) gsub(" ", "\\s+", x, fixed = TRUE)
 

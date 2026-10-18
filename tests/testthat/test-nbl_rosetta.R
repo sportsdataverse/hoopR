@@ -2,6 +2,8 @@
 # fixtures/nbl_rosetta/README.md). The transport is mocked at .intl_perform(), so the
 # request the wrapper builds (URL, query, gate headers) is asserted too.
 
+skip_if_no_intl_fixtures("nbl_rosetta")
+
 nbl_fx <- function(...) testthat::test_path("fixtures", "nbl_rosetta", ...)
 nbl_text <- function(file) paste(readLines(nbl_fx(file), encoding = "UTF-8", warn = FALSE), collapse = "\n")
 nbl_parity <- jsonlite::read_json(nbl_fx("parity", "parity.json"))

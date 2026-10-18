@@ -22,3 +22,10 @@ local_intl_clock <- function(env = parent.frame()) {
   withr::defer(rm(list = ls(.intl_clock), envir = .intl_clock), envir = env)
   invisible()
 }
+
+# The largest intl fixture dirs are .Rbuildignore'd to keep the CRAN tarball small; their test
+# files skip (file-level) when the dir is absent, and run in full from a git checkout.
+skip_if_no_intl_fixtures <- function(dir) {
+  testthat::skip_if_not(dir.exists(testthat::test_path("fixtures", dir)),
+                        paste0("tests/testthat/fixtures/", dir, " is not in the built tarball (.Rbuildignore)"))
+}

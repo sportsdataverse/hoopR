@@ -4,6 +4,8 @@
 # end; sleeps are recorded, never slept. Parity: tests/testthat/fixtures/acb/parity/<case>.csv is
 # sdv-py's frame of the same wrapper on the same fixture (see fixtures/acb/README.md).
 
+skip_if_no_intl_fixtures("acb")
+
 acb_fixture <- function(...) test_path("fixtures", "acb", ...)
 acb_text <- function(rel) {
   con <- if (endsWith(rel, ".gz")) gzfile(acb_fixture(rel), encoding = "UTF-8") else file(acb_fixture(rel), encoding = "UTF-8")

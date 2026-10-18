@@ -3,6 +3,8 @@
 # end: feed fallback, scope refusals, HTML walk, casts. parity/<set>/<route>.csv is sdv-py's frame on the
 # same fixture; parity/manifest.json holds sdv-py's column types.
 
+skip_if_no_intl_fixtures("bleague")
+
 bleague_fx <- function(...) testthat::test_path("fixtures", "bleague", ...)
 
 bleague_read <- function(rel) {

@@ -4,6 +4,8 @@
 # never slept. Parity: tests/testthat/fixtures/scb/parity/<case>.csv is sdv-py's frame of the same
 # wrapper on the same fixture (see fixtures/scb/README.md).
 
+skip_if_no_intl_fixtures("scb")
+
 scb_fixture <- function(...) test_path("fixtures", "scb", ...)
 scb_text <- function(rel) paste(readLines(scb_fixture(rel), encoding = "UTF-8", warn = FALSE), collapse = "\n")
 
