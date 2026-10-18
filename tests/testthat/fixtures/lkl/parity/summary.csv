@@ -1,0 +1,15 @@
+game_id,group,stat,label,home_value,home_percentage,home_graph_length,home_winning,away_value,away_percentage,away_graph_length,away_winning
+11446,<null>,field_goals,Metimai iš žaidimo,35/75,46.7,46.7,true,28/73,38.4,38.4,false
+11446,<null>,two_pointers,Dvitaškiai metimai,29/54,53.7,53.7,true,21/49,42.9,42.9,false
+11446,<null>,three_pointers,Tritaškiai metimai,6/21,28.6,28.6,false,7/24,29.2,29.2,true
+11446,<null>,free_throws,Baudų metimai,12/21,57.1,57.1,false,22/31,71.0,71.0,true
+11446,<null>,rebounds,Atkovoti kamuoliai,51,<null>,57.3,true,38,<null>,42.7,false
+11446,<null>,assists,Rezultatyvūs perdavimai,12,<null>,37.5,false,20,<null>,62.5,true
+11446,<null>,steals,Perimti kamuoliai,5,<null>,31.25,false,11,<null>,68.75,true
+11446,<null>,blocks,Blokai,2,<null>,100.0,true,0,<null>,0.0,false
+11446,<null>,points_off_turnovers,Taškai po klaidų,9,<null>,39.13,false,14,<null>,60.87,true
+11446,<null>,fast_break_points,Taškai greitose atakose,12,<null>,63.16,true,7,<null>,36.84,false
+11446,<null>,second_chance_points,Taškai antru bandymu,19,<null>,67.86,true,9,<null>,32.14,false
+11446,<null>,bench_points,Atsarginių žaidėjų taškai,41,<null>,53.95,true,35,<null>,46.05,false
+11446,<null>,turnovers,Klaidos,22,<null>,35.29,false,12,<null>,64.71,true
+11446,<null>,fouls,Pražangos,30,<null>,44.44,false,24,<null>,55.56,true

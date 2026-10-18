@@ -1,0 +1,13 @@
+season_id,season_end_year,table,position,team_slug,team_name,played,won,lost,win_pct,streak,points_for_avg,points_against_avg,last5
+34,2026,full,1,zalgiris,Žalgiris,32,31,1,96.9,27,91.3,76.8,WWWWW
+34,2026,full,2,rytas,Rytas,32,20,12,62.5,-1,92.8,85.3,WWLWL
+34,2026,full,3,neptunas,Neptūnas,32,17,15,53.1,1,92.8,90.3,LLLLW
+34,2026,home,1,zalgiris,Žalgiris,16,15,1,<null>,<null>,95.1,77.9,WWWWW
+34,2026,home,2,rytas,Rytas,16,12,4,<null>,<null>,94.9,82.3,WLWWW
+34,2026,home,3,neptunas,Neptūnas,16,10,6,<null>,<null>,95.3,89.4,WLLLW
+34,2026,away,1,zalgiris,Žalgiris,16,16,0,<null>,<null>,87.4,75.7,WWWWW
+34,2026,away,2,rytas,Rytas,16,8,8,<null>,<null>,90.7,88.4,LWLWL
+34,2026,away,3,neptunas,Neptūnas,16,7,9,<null>,<null>,90.3,91.1,LLWLL
+34,2026,final,1,zalgiris,Žalgiris,<null>,<null>,<null>,<null>,<null>,<null>,<null>,<null>
+34,2026,final,2,juventus,Juventus,<null>,<null>,<null>,<null>,<null>,<null>,<null>,<null>
+34,2026,final,3,neptunas,Neptūnas,<null>,<null>,<null>,<null>,<null>,<null>,<null>,<null>
