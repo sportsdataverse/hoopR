@@ -636,8 +636,6 @@ check_status <- function(res) {
 #' @import utils
 utils::globalVariables(c("where"))
 
-# check if a package is installed
-is_installed <- function(pkg) requireNamespace(pkg, quietly = TRUE)
 
 
 
