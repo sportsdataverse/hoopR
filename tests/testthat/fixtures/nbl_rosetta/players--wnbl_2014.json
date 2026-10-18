@@ -1,0 +1,201 @@
+{
+  "type": "rosters",
+  "fetched": 1791833177,
+  "ttlRemaining": 1800,
+  "count": 111,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "20.0",
+      "playing_position": "FC",
+      "player": {
+        "id": "429239f4-8d4f-4d6e-8ea5-3a2f126f59f4",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-29T00:44:36.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-07-30T05:52:14.000Z",
+        "first_name": "Zoe",
+        "last_name": "Harper",
+        "date_of_birth": "1988-03-01",
+        "height": 191,
+        "weight": 110,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "c2943fff-45e4-11f0-9874-4990fc5c3bac",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "69071d13-321b-4567-b013-953690ffb770",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "20.0",
+        "latest_playing_position": "FC",
+        "full_name": "Zoe Harper",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "43e7e08d-8161-4f62-81d7-a6f90fcb5f8f",
+          "60b98482-2d53-4b84-abb9-434bd33834e8",
+          "792196ee-6fda-4af9-b5bb-329eb5976cfa"
+        ],
+        "rosters": [
+          "00c1f585-8137-4362-b079-1c8ea3fdc7f9",
+          "7333d677-a544-4a0f-937e-8d91b72f9e8d",
+          "9cb496ad-6f8c-4065-bbfc-8669ad528edf"
+        ]
+      },
+      "team": {
+        "team_code": "WCW",
+        "name": "West Coast",
+        "external_id": "e766d6b5-45e2-11f0-9da6-c5864f4b75a8",
+        "id": "21bbada2-3695-425c-999c-efc41c0b5dec"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "15.0",
+      "playing_position": "SF",
+      "player": {
+        "id": "aaee6739-f372-4a7c-8ee9-8c27a4e26c6e",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-29T00:31:09.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-07-30T06:01:43.000Z",
+        "first_name": "Sara",
+        "last_name": "Blicavs",
+        "date_of_birth": "1993-02-15",
+        "height": 189,
+        "weight": 80,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "c26dfcfe-45e4-11f0-8907-4990fc5c3bac",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "46",
+        "playing_position": "G",
+        "active": true,
+        "league": "69071d13-321b-4567-b013-953690ffb770",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/f5e077ab49604a30ae6a479e6665f88b?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "46",
+        "latest_playing_position": "G",
+        "full_name": "Sara Blicavs",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "033b86a1-e1f0-4b94-b252-54d5bf7f981b",
+          "22588dcd-4a0b-4ea2-92cd-2c497922fbdf",
+          "29f83a42-9134-4f89-82d0-ca49e1fba77c"
+        ],
+        "rosters": [
+          "03c35d24-ba53-47bd-b978-89e4403ce452",
+          "0a065c30-7341-413f-90a5-d71e76a7a3ee",
+          "1806e54c-3594-49f8-8e65-f978060cf0f7"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "BEN",
+        "name": "Bendigo",
+        "external_id": "e7c14222-45e2-11f0-b814-c5864f4b75a8",
+        "id": "505e9765-4f3a-4af2-a42f-3e002ebf17e6"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "32.0",
+      "playing_position": null,
+      "player": {
+        "id": "ed000b8b-b71f-438e-9901-a6fd90540108",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-30T07:39:30.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-07-30T05:52:12.000Z",
+        "first_name": "Paris",
+        "last_name": "Johnson",
+        "date_of_birth": "1989-06-16",
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality": null,
+        "external_id": "55e8b40f-45e3-11f0-803c-79cf0a59c5e2",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "69071d13-321b-4567-b013-953690ffb770",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "32.0",
+        "latest_playing_position": null,
+        "full_name": "Paris Johnson",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "7dc1d0d4-d631-43fe-ba46-8ffb54fa62bb"
+        ],
+        "rosters": [
+          "06e3a4d9-187f-4690-af98-d572a0107f37"
+        ]
+      },
+      "team": {
+        "team_code": "SYD",
+        "name": "Sydney Uni",
+        "external_id": "e7c93e20-45e2-11f0-94b0-c5864f4b75a8",
+        "id": "9d008239-3ddc-4f07-b5f6-e9c0ddcb5721"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    }
+  ]
+}

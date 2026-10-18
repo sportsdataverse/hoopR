@@ -1,0 +1,30 @@
+{
+  "type": "matches",
+  "fetched": 1791833193,
+  "ttlRemaining": 1800,
+  "count": "object",
+  "source": "cb",
+  "data": {
+    "Albury-Wodonga Bandits": {
+      "wins": 20,
+      "losses": 22,
+      "last10": "LLWWWLWWLL",
+      "last5": "LWWLL",
+      "last3": "WLL"
+    },
+    "Ballarat Miners": {
+      "wins": 21,
+      "losses": 24,
+      "last10": "LWWLWLWLWL",
+      "last5": "LWLWL",
+      "last3": "LWL"
+    },
+    "Bankstown Bruins": {
+      "wins": 24,
+      "losses": 19,
+      "last10": "WWWLWWWWLL",
+      "last5": "WWWLL",
+      "last3": "WLL"
+    }
+  }
+}

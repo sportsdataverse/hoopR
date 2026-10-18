@@ -1,0 +1,30 @@
+{
+  "type": "matches",
+  "fetched": 1791833189,
+  "ttlRemaining": 1800,
+  "count": "object",
+  "source": "cb",
+  "data": {
+    "Adelaide 36ers": {
+      "wins": 27,
+      "losses": 15,
+      "last10": "LLWLWLWLWL",
+      "last5": "LWLWL",
+      "last3": "LWL"
+    },
+    "Brisbane Bullets": {
+      "wins": 6,
+      "losses": 27,
+      "last10": "LLLLLLLLLL",
+      "last5": "LLLLL",
+      "last3": "LLL"
+    },
+    "Cairns Taipans": {
+      "wins": 9,
+      "losses": 24,
+      "last10": "WLLLWLLWLL",
+      "last5": "LLWLL",
+      "last3": "WLL"
+    }
+  }
+}

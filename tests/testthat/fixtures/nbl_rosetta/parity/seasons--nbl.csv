@@ -1,0 +1,4 @@
+org,season_id,rosetta_season_id,name,season_year,season_type,start_date,end_date,competition_league_name,competition_division,season_end_year
+nbl,1b041b7b-3dde-11f1-8b34-cf648fa5ccb5,67d4a190-40bc-4bfb-a9a2-11bd0b93f020,NBL27,2026,regular,2026-09-19T00:00:00,2027-02-28T00:00:00,NBL,[],2027
+nbl,75edbf66-fdb5-11f0-a54a-a50a20abd855,45d43145-9958-429c-ac8e-51e5bc2794de,Test Season 2026,2026,test,2026-01-01T00:00:00,2026-12-31T00:00:00,NBL,[],2027
+nbl,dcd2dfb6-3ddc-11f1-9052-3793125dedb6,ec19e36d-dcc9-436d-a362-05c9e21ae76a,NBL26/27 Club Pre Season Games,2026,preseason,2026-08-01T00:00:00,2026-08-31T00:00:00,NBL,[],2027

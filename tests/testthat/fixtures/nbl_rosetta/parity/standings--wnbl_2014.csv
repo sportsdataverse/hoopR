@@ -1,0 +1,4 @@
+org,rosetta_standing_id,position,won,lost,played,points_percentage,win_percentage,last_5,streak,points_for,points_against,away_losses,away_wins,home_losses,home_wins,team_id,rosetta_team_id,team_code,team_name,season_year,season_type,season_competition_division,season_end_year
+wnbl,4f809743-196f-424c-871b-130805b84fce,1,17,5,22,1.2331,0.7727,0,1,1862,1510,4,7,1,10,e7ae83c1-45e2-11f0-832f-c5864f4b75a8,b80956bd-c504-4e9e-81c1-f54051a2c9d2,TSV,Townsville,2014,regular,[],2015
+wnbl,f5b6a5e4-7fed-4d8a-82e2-ca16055730c4,2,15,7,22,1.1184,0.6818,0,-1,1700,1520,4,7,3,8,e7c14222-45e2-11f0-b814-c5864f4b75a8,505e9765-4f3a-4af2-a42f-3e002ebf17e6,BEN,Bendigo,2014,regular,[],2015
+wnbl,b1259a75-6de3-4af6-9219-967f90b11b80,3,12,10,22,1.0045,0.5455,0,-3,1784,1776,7,4,3,8,e79df386-45e2-11f0-a38c-c5864f4b75a8,be13c931-bdc4-48fc-bea7-0ca95aca8bb2,DAN,Dandenong,2014,regular,[],2015

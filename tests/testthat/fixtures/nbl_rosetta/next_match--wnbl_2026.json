@@ -1,0 +1,166 @@
+{
+  "type": "matches",
+  "fetched": 1791833222,
+  "ttlRemaining": 1800,
+  "count": 1,
+  "source": "nxs",
+  "data": [
+    {
+      "id": "69ae8846-7351-11f1-a3ab-45abfc40cea9",
+      "external_id": "69ae8846-7351-11f1-a3ab-45abfc40cea9",
+      "external_media_id": "72704630",
+      "date_updated": "2026-10-10T08:16:54.000Z",
+      "start_time": "2026-10-15T08:00:00",
+      "start_time_datetime": "2026-10-15T08:00:00",
+      "round": "1",
+      "match_type": "regular",
+      "match_status": "scheduled",
+      "status": "SCHEDULED",
+      "home_score": null,
+      "away_score": null,
+      "attendance": null,
+      "match_slug": "tasmania-jewels-v-geelong-venom-women-15-10-2026",
+      "match_title": "Tasmania Jewels v Geelong Venom women 15-10-2026",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": null,
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "d4bd149f-3130-414d-b7cc-abc4364dd0bf",
+        "external_id": "b0ff56f8-45e4-11f0-ad47-d76608926233",
+        "name": "MyState Bank Arena",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": null,
+        "capacity": null,
+        "timezone": "Australia/Hobart",
+        "venue_code": "MBA",
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "50cb6ff2-445b-4501-9ec8-9cffd03b79c0",
+        "external_id": "17cd24e4-2bfe-11f1-857f-89f5905ce248",
+        "name": "Tasmania Jewels",
+        "external_team_name": "Tasmania Jewels",
+        "team_nickname": "TAS",
+        "team_code": "TAS",
+        "ticket_url": "https://premier.ticketek.com.au/Shows/Show.aspx?sh=JEWELS27",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/b9a00be9f9e445488f17705c4512c6c8?size=200&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/b9a00be9f9e445488f17705c4512c6c8?size=200&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/5d917012344d4983a10ef442f7742397?size=200&format=webp",
+        "color_primary": "#8fe2b0",
+        "color_secondary": "#002a22",
+        "color_tertiary": "#ffc903",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "away_team": {
+        "id": "8d986481-9b69-420e-bad0-b0761bdb2020",
+        "external_id": "e7f2ce4b-45e2-11f0-b6e3-c5864f4b75a8",
+        "name": "Geelong Venom",
+        "external_team_name": "Geelong Venom",
+        "team_nickname": "GEE",
+        "team_code": "GEE",
+        "ticket_url": "https://www.intix.com.au/org/geelongvenom",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=800&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=200&format=webp",
+        "color_primary": "#3e66c5",
+        "color_secondary": "#000000",
+        "color_tertiary": "#000000",
+        "division": null,
+        "conference": null,
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "3145d6e5-36b0-4646-8bd1-0e422681ead0",
+        "external_id": "493920b1-2bfc-11f1-aa7e-93fdd049877c",
+        "name": "WNBL27",
+        "year": "2026",
+        "season_type": "regular",
+        "gender": "FEMALE",
+        "competition": {
+          "id": "cbcbfcd0-1bae-47db-a3a7-1fe70ca2feaf",
+          "name": "WNBL",
+          "gender": "female",
+          "league": {
+            "name": "WNBL Synergy",
+            "league_primary_color": "#6204B2",
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      },
+      "primary_broadcaster": {
+        "id": "d029e3d4-249d-4703-bcf7-07d87a5aaa18",
+        "name": "9Now",
+        "url": "https://www.9now.com.au/live/channel-9",
+        "logo_url": "https://nxs.nbl.com.au/assets/5fae5387-82de-4f8c-a303-aa062802a92f",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/5fae5387-82de-4f8c-a303-aa062802a92f",
+        "light_screen_logo": {
+          "filename_disk": "214c9e22-eaa5-4c78-a202-3b0cfdc8914c.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "98b3f29c-baa9-4de3-8ed7-e0a400710ec2.png"
+        },
+        "logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz",
+        "dark_screen_logo_url_blurhash": "L69nP-04},Tg4T*~MiS100}W8}vz"
+      },
+      "secondary_broadcaster": {
+        "id": "e853c657-fb0f-49b1-93db-911135380977",
+        "url": "https://www.disneyplus.com/",
+        "name": "ESPN on Disney",
+        "logo_url": "https://nxs.nbl.com.au/assets/c26bd679-cfeb-4339-8e0f-3a499fefb089.png?q=2",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png?q=1",
+        "light_screen_logo": {
+          "filename_disk": "c4014eab-af69-46cc-a9a3-40680f8b1277.png"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "d82a6ca8-5b33-4bb1-aa60-e5f8caa542e6.png"
+        },
+        "logo_url_blurhash": "L03+Dt_3~q~q?b-;-;-;00Rjt7of",
+        "dark_screen_logo_url_blurhash": "LJMHJjRj00~q_3D%IUxu00D%WBWB"
+      },
+      "tertiary_broadcaster": {
+        "id": "4a8906bc-672e-4332-875b-106941f8dbd0",
+        "url": null,
+        "name": "ESPN 2",
+        "logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/ESPN2.png?q=1",
+        "dark_screen_logo_url": "https://cdn.nbl.com.au/app_assets/contained_logos/ESPN2_DarkBG.png?q=1",
+        "light_screen_logo": null,
+        "dark_screen_logo": null,
+        "logo_url_blurhash": "L009jvfQWBj[j[fQayfQWBfQj[fQ",
+        "dark_screen_logo_url_blurhash": "LbOgKN%MIUWB~qofM{ay00M{WBWB"
+      },
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": {
+        "id": "1269a1f8-b4c7-4f07-a72f-a6ab39195efc",
+        "name": "wnbl - 9now, ESPN on Disney, EspN2 ",
+        "url": null,
+        "logo_url": "https://nxs.nbl.com.au/assets/b4b1cb16-438b-4fa4-8ab2-2cd5045d5ee0.gif",
+        "dark_screen_logo_url": "https://nxs.nbl.com.au/assets/cf834051-64ac-4768-b2e6-569b859ae443.gif",
+        "light_screen_logo": {
+          "filename_disk": "2dd98f26-c8b6-4b09-9e68-4bfb9a80296b.gif"
+        },
+        "dark_screen_logo": {
+          "filename_disk": "f4286ea6-63e7-402f-93ee-2be8051a1286.gif"
+        },
+        "logo_url_blurhash": "L00000fQfQfQfQfQfQfQfQfQfQfQ",
+        "dark_screen_logo_url_blurhash": "L00000fQfQfQfQfQfQfQfQfQfQfQ"
+      },
+      "override_seasons": []
+    }
+  ]
+}

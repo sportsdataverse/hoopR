@@ -1,0 +1,138 @@
+{
+  "type": "standings",
+  "fetched": 1791833166,
+  "ttlRemaining": 1800,
+  "count": 11,
+  "source": "cb",
+  "data": [
+    {
+      "id": "d6eae747-c22e-4212-a17f-599bc56a16d2",
+      "position": 1,
+      "won": 16,
+      "lost": 3,
+      "played": 19,
+      "points_percentage": 0,
+      "win_percentage": 0.84,
+      "last_5": "WWWWW",
+      "streak": 14,
+      "points_for": 1770,
+      "points_against": 1535,
+      "away_losses": 3,
+      "away_wins": 6,
+      "home_losses": 0,
+      "home_wins": 10,
+      "team": {
+        "id": "095cf5ed-700f-404d-8d60-2233f5ef913b",
+        "external_id": "bf12d3e3-410c-11f0-8b95-1b3c55488bbb",
+        "team_code": null,
+        "name": "St. Kilda Saints",
+        "team_logo": null,
+        "team_logo_transparent": null,
+        "external_team_logo": null,
+        "ticket_url": null,
+        "team_nickname": "KildaSaints",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null
+      },
+      "season": {
+        "year": "1979",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "972e430b-9b88-478e-a98c-742802011de7",
+      "position": 3,
+      "won": 13,
+      "lost": 5,
+      "played": 18,
+      "points_percentage": 0,
+      "win_percentage": 0.72,
+      "last_5": "LLWWW",
+      "streak": 3,
+      "points_for": 1439,
+      "points_against": 1349,
+      "away_losses": 4,
+      "away_wins": 6,
+      "home_losses": 1,
+      "home_wins": 7,
+      "team": {
+        "id": "e25725e9-700a-4b06-9d10-c86cd8e16c33",
+        "external_id": "bf203568-410c-11f0-8ab2-1b3c55488bbb",
+        "team_code": null,
+        "name": "Nunawading Spectres",
+        "team_logo": null,
+        "team_logo_transparent": null,
+        "external_team_logo": null,
+        "ticket_url": null,
+        "team_nickname": "Spectres",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null
+      },
+      "season": {
+        "year": "1979",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "2e6178d1-aaf1-428e-8301-676bc7f1fa3f",
+      "position": 2,
+      "won": 13,
+      "lost": 6,
+      "played": 19,
+      "points_percentage": 0,
+      "win_percentage": 0.68,
+      "last_5": "LWLWL",
+      "streak": -1,
+      "points_for": 1541,
+      "points_against": 1492,
+      "away_losses": 4,
+      "away_wins": 6,
+      "home_losses": 2,
+      "home_wins": 7,
+      "team": {
+        "id": "c6896f8f-f5da-457e-9c15-e278b271110a",
+        "external_id": "bf5d8e75-410c-11f0-a386-1b3c55488bbb",
+        "team_code": null,
+        "name": "Canberra Cannons",
+        "team_logo": null,
+        "team_logo_transparent": null,
+        "external_team_logo": null,
+        "ticket_url": null,
+        "team_nickname": "Cannons",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null
+      },
+      "season": {
+        "year": "1979",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "nbl"
+            }
+          },
+          "division": []
+        }
+      }
+    }
+  ]
+}

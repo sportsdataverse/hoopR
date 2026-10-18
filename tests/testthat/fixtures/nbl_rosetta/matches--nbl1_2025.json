@@ -1,0 +1,372 @@
+{
+  "type": "matches",
+  "fetched": 1791833153,
+  "ttlRemaining": 30,
+  "count": 1464,
+  "source": "cb",
+  "data": [
+    {
+      "id": "f1657ff4-7d76-11f0-8e6d-55026469efc8",
+      "external_id": "f1657ff4-7d76-11f0-8e6d-55026469efc8",
+      "external_media_id": "63367573",
+      "date_updated": "2026-06-04T03:22:01.000Z",
+      "start_time": "2025-08-31T03:30:00",
+      "start_time_datetime": "2025-08-31T03:30:00",
+      "round": "3",
+      "match_type": "final",
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "67",
+      "away_score": "86",
+      "attendance": null,
+      "match_slug": "geraldton-buccaneers-v-canberra-gunners-men-31-08-2025",
+      "match_title": "Geraldton Buccaneers v Canberra Gunners men 31-08-2025",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "bd0dcf5e-a3c1-401a-97b9-0d41395467e0",
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "b1168d0d-4926-49e5-93d0-8549b101441b",
+        "external_id": "f30269e4-7d73-11f0-9d0f-eb87541eb5ec",
+        "name": "Southern Cross Stadium Crt 1",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": "AUS",
+        "capacity": null,
+        "timezone": "Australia/ACT",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "ad892412-2d9f-5556-a108-b4d2e8dfd910",
+        "external_id": "decd86dc-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Geraldton Buccaneers",
+        "external_team_name": "Geraldton",
+        "team_nickname": "GER",
+        "team_code": "GER",
+        "ticket_url": null,
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/f2f92d297e3e408facf6db6ab8be5b4e?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/f2f92d297e3e408facf6db6ab8be5b4e?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/f2f92d297e3e408facf6db6ab8be5b4e?size=200&format=webp",
+        "color_primary": "#039be5",
+        "color_secondary": "#ffc107",
+        "color_tertiary": "#ffffff",
+        "division": {
+          "abbreviation": "WM",
+          "name": "West Men"
+        },
+        "conference": {
+          "name": "West"
+        }
+      },
+      "away_team": {
+        "id": "a87a1c17-0cdf-5ae3-98e2-4f36dc63d6c0",
+        "external_id": "8066a97e-2ccc-11ec-94c7-6acb2725556d",
+        "name": "Canberra Gunners",
+        "external_team_name": "Canberra",
+        "team_nickname": "CAN",
+        "team_code": "CAN",
+        "ticket_url": null,
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b7b7a4588be7426e84f489d73e62091a?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b7b7a4588be7426e84f489d73e62091a?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/b7b7a4588be7426e84f489d73e62091a?size=200&format=webp",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null,
+        "division": {
+          "abbreviation": "EM",
+          "name": "East Men"
+        },
+        "conference": {
+          "name": "East"
+        }
+      },
+      "season": {
+        "id": "6e4aba84-aedf-4a22-a010-43fc22c4d16f",
+        "external_id": "10146228-7d73-11f0-a0c0-e1a128a3eb00",
+        "name": "2025 Men's National Finals",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "MALE",
+        "competition": {
+          "id": "5227b56c-1b31-41a6-8044-6fbe52747fca",
+          "name": "NBL1 Finals Men",
+          "gender": "male",
+          "league": {
+            "name": "NBL1 Finals",
+            "league_primary_color": null,
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          },
+          "division": [
+            {
+              "id": "ab01276e-2e58-4c03-a2ea-a6692e984c3e",
+              "abbreviation": "FM",
+              "name": "Finals Men",
+              "gender": "male",
+              "conference": {
+                "id": "fecd6534-9c35-4388-a7a6-60d34e6d91cf",
+                "name": "Finals",
+                "abbreviation": null
+              }
+            }
+          ]
+        }
+      },
+      "primary_broadcaster": null,
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    },
+    {
+      "id": "16d6ecf5-7d76-11f0-bfae-d7b6afba6204",
+      "external_id": "16d6ecf5-7d76-11f0-bfae-d7b6afba6204",
+      "external_media_id": "63367571",
+      "date_updated": "2026-06-04T03:41:05.000Z",
+      "start_time": "2025-08-31T01:00:00",
+      "start_time_datetime": "2025-08-31T01:00:00",
+      "round": "3",
+      "match_type": "final",
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "93",
+      "away_score": "72",
+      "attendance": null,
+      "match_slug": "knox-raiders-v-cockburn-cougars-women-31-08-2025",
+      "match_title": "Knox Raiders v Cockburn Cougars women 31-08-2025",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "c113c891-141c-441f-b94b-8f49c5f57124",
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "b1168d0d-4926-49e5-93d0-8549b101441b",
+        "external_id": "f30269e4-7d73-11f0-9d0f-eb87541eb5ec",
+        "name": "Southern Cross Stadium Crt 1",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": "AUS",
+        "capacity": null,
+        "timezone": "Australia/ACT",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "94496fbd-e82f-5485-b1ae-40dd87f6c04c",
+        "external_id": "dee2eda6-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Knox Raiders",
+        "external_team_name": "Knox",
+        "team_nickname": "KNX",
+        "team_code": "KNX",
+        "ticket_url": null,
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/1f578a7a08814ccb90e2f0c3d38bed2e?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/1f578a7a08814ccb90e2f0c3d38bed2e?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/1f578a7a08814ccb90e2f0c3d38bed2e?size=200&format=webp",
+        "color_primary": "#ffcc00",
+        "color_secondary": "#003876",
+        "color_tertiary": "#ffffff",
+        "division": {
+          "abbreviation": "SW",
+          "name": "South Women"
+        },
+        "conference": {
+          "name": "South"
+        }
+      },
+      "away_team": {
+        "id": "f1cdc96e-fa1f-5c51-9161-0944bb21df1e",
+        "external_id": "deb2e2c8-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Cockburn Cougars",
+        "external_team_name": "Cockburn",
+        "team_nickname": "COC",
+        "team_code": "COC",
+        "ticket_url": null,
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/062cb037ba084536a61b3efd6cc2a148?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/062cb037ba084536a61b3efd6cc2a148?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/062cb037ba084536a61b3efd6cc2a148?size=200&format=webp",
+        "color_primary": "#0076bb",
+        "color_secondary": "#ffce00",
+        "color_tertiary": "#000000",
+        "division": {
+          "abbreviation": "WM",
+          "name": "West Women"
+        },
+        "conference": {
+          "name": "West"
+        }
+      },
+      "season": {
+        "id": "cc1e7ddb-e8bc-4ce2-8686-33636ef0c996",
+        "external_id": "273ae717-7d73-11f0-8ba2-bb4bdbc176d7",
+        "name": "2025 Women's National Finals",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "FEMALE",
+        "competition": {
+          "id": "a6df9d64-bf3d-41b5-8406-c60f88e3cbda",
+          "name": "NBL1 Finals Women",
+          "gender": "female",
+          "league": {
+            "name": "NBL1 Finals",
+            "league_primary_color": null,
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          },
+          "division": [
+            {
+              "id": "360d2a6c-c1e5-4c0e-96f0-ccffe0582794",
+              "abbreviation": "FW",
+              "name": "Finals Women",
+              "gender": "female",
+              "conference": {
+                "id": "fecd6534-9c35-4388-a7a6-60d34e6d91cf",
+                "name": "Finals",
+                "abbreviation": null
+              }
+            }
+          ]
+        }
+      },
+      "primary_broadcaster": null,
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    },
+    {
+      "id": "d3a57b48-7d76-11f0-abe6-854ad69711e4",
+      "external_id": "d3a57b48-7d76-11f0-abe6-854ad69711e4",
+      "external_media_id": "63354423",
+      "date_updated": "2026-06-04T03:22:01.000Z",
+      "start_time": "2025-08-30T06:00:00",
+      "start_time_datetime": "2025-08-30T06:00:00",
+      "round": "2",
+      "match_type": "final",
+      "match_status": "complete",
+      "status": "CONFIRMED",
+      "home_score": "83",
+      "away_score": "113",
+      "attendance": null,
+      "match_slug": "southern-districts-spartans-v-canberra-gunners-men-30-08-2025",
+      "match_title": "Southern Districts Spartans v Canberra Gunners men 30-08-2025",
+      "match_ticket_url": null,
+      "latest_play_override": null,
+      "match_status_string_override": null,
+      "play_by_play": "bf5d2a57-2beb-442a-8b5c-765ebd1c34b2",
+      "override_round": null,
+      "match_bg": null,
+      "match_logo": null,
+      "venue": {
+        "id": "b1168d0d-4926-49e5-93d0-8549b101441b",
+        "external_id": "f30269e4-7d73-11f0-9d0f-eb87541eb5ec",
+        "name": "Southern Cross Stadium Crt 1",
+        "address": null,
+        "suburb": null,
+        "state": null,
+        "country": "AUS",
+        "capacity": null,
+        "timezone": "Australia/ACT",
+        "venue_code": null,
+        "latitude": null,
+        "longitude": null
+      },
+      "home_team": {
+        "id": "12732215-be6a-5368-bdde-0ee559945df5",
+        "external_id": "df260f96-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Southern Districts Spartans",
+        "external_team_name": "Southern Districts",
+        "team_nickname": "SDS",
+        "team_code": "SDS",
+        "ticket_url": null,
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/a0d48c49883647f8a6deb124a725c00c?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/a0d48c49883647f8a6deb124a725c00c?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/a0d48c49883647f8a6deb124a725c00c?size=200&format=webp",
+        "color_primary": "#000000",
+        "color_secondary": "#cc182c",
+        "color_tertiary": "#ffffff",
+        "division": {
+          "abbreviation": "NM",
+          "name": "North Men"
+        },
+        "conference": {
+          "name": "North"
+        }
+      },
+      "away_team": {
+        "id": "a87a1c17-0cdf-5ae3-98e2-4f36dc63d6c0",
+        "external_id": "8066a97e-2ccc-11ec-94c7-6acb2725556d",
+        "name": "Canberra Gunners",
+        "external_team_name": "Canberra",
+        "team_nickname": "CAN",
+        "team_code": "CAN",
+        "ticket_url": null,
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b7b7a4588be7426e84f489d73e62091a?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b7b7a4588be7426e84f489d73e62091a?size=100&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/b7b7a4588be7426e84f489d73e62091a?size=200&format=webp",
+        "color_primary": null,
+        "color_secondary": null,
+        "color_tertiary": null,
+        "division": {
+          "abbreviation": "EM",
+          "name": "East Men"
+        },
+        "conference": {
+          "name": "East"
+        }
+      },
+      "season": {
+        "id": "6e4aba84-aedf-4a22-a010-43fc22c4d16f",
+        "external_id": "10146228-7d73-11f0-a0c0-e1a128a3eb00",
+        "name": "2025 Men's National Finals",
+        "year": "2025",
+        "season_type": "regular",
+        "gender": "MALE",
+        "competition": {
+          "id": "5227b56c-1b31-41a6-8044-6fbe52747fca",
+          "name": "NBL1 Finals Men",
+          "gender": "male",
+          "league": {
+            "name": "NBL1 Finals",
+            "league_primary_color": null,
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          },
+          "division": [
+            {
+              "id": "ab01276e-2e58-4c03-a2ea-a6692e984c3e",
+              "abbreviation": "FM",
+              "name": "Finals Men",
+              "gender": "male",
+              "conference": {
+                "id": "fecd6534-9c35-4388-a7a6-60d34e6d91cf",
+                "name": "Finals",
+                "abbreviation": null
+              }
+            }
+          ]
+        }
+      },
+      "primary_broadcaster": null,
+      "secondary_broadcaster": null,
+      "tertiary_broadcaster": null,
+      "quarternary_broadcaster": null,
+      "broadcaster_gif": null,
+      "override_seasons": []
+    }
+  ]
+}

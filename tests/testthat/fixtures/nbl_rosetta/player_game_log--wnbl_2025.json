@@ -1,0 +1,309 @@
+{
+  "type": "player_match_statistics",
+  "fetched": 1791833197,
+  "ttlRemaining": 30,
+  "count": 23,
+  "source": "cb",
+  "data": [
+    {
+      "period": "0",
+      "playing_position": "F",
+      "points": 10,
+      "rebounds": 2,
+      "assists": 0,
+      "blocks": 0,
+      "steals": 1,
+      "turnovers": 2,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 2,
+      "personal_fouls": 0,
+      "three_points_attempted": 4,
+      "three_points_made": 2,
+      "three_points_percentage": 0.5,
+      "two_points_attempted": 3,
+      "two_points_made": 2,
+      "two_points_percentage": 0.666667,
+      "field_goals_attempted": 7,
+      "field_goals_made": "4",
+      "field_goals_percentage": 0.571429,
+      "free_throws_attempted": 2,
+      "free_throws_made": 0,
+      "free_throws_percentage": 0,
+      "minutes": 19.450001,
+      "participated": true,
+      "match": {
+        "id": "bf9c0df4-cf9f-4b01-8c1f-68c2585d8c16",
+        "external_id": "ba34dbde-4cd7-11f0-8b86-4ff0f3b2f31c",
+        "start_time_datetime": "2026-01-03T08:00:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+          "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+          "name": "Southside Melbourne Flyers",
+          "team_code": "SMF",
+          "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+          "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp"
+        },
+        "away_team": {
+          "id": "8d986481-9b69-420e-bad0-b0761bdb2020",
+          "name": "Geelong Venom",
+          "team_code": "GEE",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/30b366faf0244b9da79b37ffb5dc06eb?size=800&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        }
+      },
+      "player": {
+        "id": "b4d458a6-cec5-4bfa-b6f1-46135743b558",
+        "external_id": "71fbc964-45e3-11f0-a82c-c5864f4b75a8",
+        "jersey_number": "32",
+        "first_name": "Manuela",
+        "last_name": "Puoch"
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp"
+      },
+      "sc": {
+        "totalScore": 11,
+        "totalScoreWithoutDDandTD": 11,
+        "breakdown": {
+          "points": {
+            "value": 10,
+            "points": 10
+          },
+          "rebounds": {
+            "value": 2,
+            "points": 2
+          },
+          "assists": {
+            "value": 0,
+            "points": 0
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 1,
+            "points": 3
+          },
+          "turnovers": {
+            "value": 2,
+            "points": -4
+          }
+        },
+        "doubleFigureCount": 1,
+        "seasonTotal": 120
+      }
+    },
+    {
+      "period": "0",
+      "playing_position": "F",
+      "points": 2,
+      "rebounds": 0,
+      "assists": 1,
+      "blocks": 0,
+      "steals": 0,
+      "turnovers": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "personal_fouls": 0,
+      "three_points_attempted": 0,
+      "three_points_made": 0,
+      "three_points_percentage": 0,
+      "two_points_attempted": 0,
+      "two_points_made": 0,
+      "two_points_percentage": 0,
+      "field_goals_attempted": 0,
+      "field_goals_made": "0",
+      "field_goals_percentage": 0,
+      "free_throws_attempted": 2,
+      "free_throws_made": 2,
+      "free_throws_percentage": 1,
+      "minutes": 6.183333,
+      "participated": true,
+      "match": {
+        "id": "2c7aa214-7a63-4d5a-864c-6abb1781eef5",
+        "external_id": "ba0a94b2-4cd7-11f0-b857-21793d02d206",
+        "start_time_datetime": "2025-12-30T06:00:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+          "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "0daf342b-99a5-4728-95c3-fb26ab9ec7c2",
+          "name": "Sydney Flames",
+          "team_code": "SYD",
+          "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/47c8e59a714141459ef67eb6802dd8ce?size=800&format=webp",
+          "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+        },
+        "away_team": {
+          "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+          "name": "Southside Melbourne Flyers",
+          "team_code": "SMF",
+          "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+          "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp"
+        }
+      },
+      "player": {
+        "id": "b4d458a6-cec5-4bfa-b6f1-46135743b558",
+        "external_id": "71fbc964-45e3-11f0-a82c-c5864f4b75a8",
+        "jersey_number": "32",
+        "first_name": "Manuela",
+        "last_name": "Puoch"
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp"
+      },
+      "sc": {
+        "totalScore": 4,
+        "totalScoreWithoutDDandTD": 4,
+        "breakdown": {
+          "points": {
+            "value": 2,
+            "points": 2
+          },
+          "rebounds": {
+            "value": 0,
+            "points": 0
+          },
+          "assists": {
+            "value": 1,
+            "points": 2
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 0,
+            "points": 0
+          },
+          "turnovers": {
+            "value": 0,
+            "points": 0
+          }
+        },
+        "doubleFigureCount": 0,
+        "seasonTotal": 120
+      }
+    },
+    {
+      "period": "0",
+      "playing_position": "F",
+      "points": 3,
+      "rebounds": 0,
+      "assists": 0,
+      "blocks": 0,
+      "steals": 0,
+      "turnovers": 0,
+      "offensive_rebounds": 0,
+      "defensive_rebounds": 0,
+      "personal_fouls": 0,
+      "three_points_attempted": 1,
+      "three_points_made": 1,
+      "three_points_percentage": 1,
+      "two_points_attempted": 0,
+      "two_points_made": 0,
+      "two_points_percentage": 0,
+      "field_goals_attempted": 1,
+      "field_goals_made": "1",
+      "field_goals_percentage": 1,
+      "free_throws_attempted": 0,
+      "free_throws_made": 0,
+      "free_throws_percentage": 0,
+      "minutes": 2.183333,
+      "participated": true,
+      "match": {
+        "id": "47152422-c8d4-4b77-a15f-d1f073242d19",
+        "external_id": "e33f7060-04df-11f1-9b88-0f396928f441",
+        "start_time_datetime": "2026-02-18T08:00:00",
+        "status": "CONFIRMED",
+        "season": {
+          "id": "6a6e9caf-e1dc-4397-9b79-7ac676190347",
+          "external_id": "1d56ca1a-4cd1-11f0-9272-adc5304a108c",
+          "year": "2025",
+          "season_type": "regular"
+        },
+        "home_team": {
+          "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+          "name": "Southside Melbourne Flyers",
+          "team_code": "SMF",
+          "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+          "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp"
+        },
+        "away_team": {
+          "id": "d4082ccf-a46c-4766-b41b-efa3143b8188",
+          "name": "Townsville Fire",
+          "team_code": "TSV",
+          "team_logo": "https://cdn.prod.website-files.com/686dc6510ed19bd7d682101b/6892da4eeef4bafcc120df16_tsv-logo-fire-sq.png",
+          "team_logo_blurhash": "LBE-HNwf06o[_CRm4wt41INJrdod"
+        }
+      },
+      "player": {
+        "id": "b4d458a6-cec5-4bfa-b6f1-46135743b558",
+        "external_id": "71fbc964-45e3-11f0-a82c-c5864f4b75a8",
+        "jersey_number": "32",
+        "first_name": "Manuela",
+        "last_name": "Puoch"
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp"
+      },
+      "sc": {
+        "totalScore": 3,
+        "totalScoreWithoutDDandTD": 3,
+        "breakdown": {
+          "points": {
+            "value": 3,
+            "points": 3
+          },
+          "rebounds": {
+            "value": 0,
+            "points": 0
+          },
+          "assists": {
+            "value": 0,
+            "points": 0
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 0,
+            "points": 0
+          },
+          "turnovers": {
+            "value": 0,
+            "points": 0
+          }
+        },
+        "doubleFigureCount": 0,
+        "seasonTotal": 120
+      }
+    }
+  ]
+}

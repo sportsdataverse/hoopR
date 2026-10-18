@@ -1,0 +1,205 @@
+{
+  "type": "rosters",
+  "fetched": 1791833173,
+  "ttlRemaining": 1800,
+  "count": 172,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "3",
+      "playing_position": "F",
+      "player": {
+        "id": "bc5d17e5-219c-41b7-994b-1226cc144877",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-19T02:16:01.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-25T11:20:38.000Z",
+        "first_name": "Sunday",
+        "last_name": "Dech",
+        "date_of_birth": "1994-01-01",
+        "height": 195,
+        "weight": 92,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality": null,
+        "external_id": "2b794dfb-410d-11f0-9261-975350631782",
+        "nationality_code": "AUS",
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": "8",
+        "playing_position": "G",
+        "active": true,
+        "league": "6c484828-8104-4299-87bc-2ec3c5789da4",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/72daecd94d104459b7cea919706f3651?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "44",
+        "latest_playing_position": "G",
+        "full_name": "Sunday Dech",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "0066747d-4c9d-4b9a-a63b-863b2dca3862",
+          "05d4d2ac-e5a3-40b4-af0b-3e45b2983afd",
+          "13701a3c-fae2-42bd-ab01-886e860a44de"
+        ],
+        "rosters": [
+          "0090d477-5085-4459-8f0f-614e5e97c18e",
+          "05e9d183-3f27-430f-ba22-ef4cb89587d7",
+          "1f2793f6-e6de-49f1-97bd-b86a84b06f3d"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "PER",
+        "name": "Perth Wildcats",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": null,
+      "playing_position": "G",
+      "player": {
+        "id": "809fdb11-dfec-424c-b195-c6c4a24eff13",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-28T01:36:08.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-07-17T02:05:04.000Z",
+        "first_name": "Damien",
+        "last_name": "Scott",
+        "date_of_birth": "1992-10-23",
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "UNKNOWN",
+        "nationality": null,
+        "external_id": "2b74bfe9-410d-11f0-916f-975350631782",
+        "nationality_code": null,
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "6c484828-8104-4299-87bc-2ec3c5789da4",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "05",
+        "latest_playing_position": "G",
+        "full_name": "Damien Scott",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "1e9fdc09-fe1d-4930-8745-699d4b353db5",
+          "7d055f04-5c9b-4e0e-85f3-2516bfca2d40"
+        ],
+        "rosters": [
+          "01cf694f-4286-468b-98cf-425191ef9872",
+          "02300169-9a72-40ff-98fd-d7ea6e7b5766",
+          "13bdbbba-dd90-4216-aa12-7b1e097d4814"
+        ]
+      },
+      "team": {
+        "team_code": "PER",
+        "name": "Perth Wildcats",
+        "external_id": "befee10a-410c-11f0-b3f4-1b3c55488bbb",
+        "id": "bc5327d5-322e-4796-b103-4c3b63869edb"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    },
+    {
+      "jersey_number": "20",
+      "playing_position": "F",
+      "player": {
+        "id": "05b564dc-dea9-45fb-b111-a14873448930",
+        "sort": null,
+        "user_created": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_created": "2025-06-28T02:19:50.000Z",
+        "user_updated": "7ebce12d-5b4a-4b07-9bda-a505cb46112a",
+        "date_updated": "2026-09-25T11:19:24.000Z",
+        "first_name": "David",
+        "last_name": "Barlow",
+        "date_of_birth": "1983-10-22",
+        "height": 205,
+        "weight": 103,
+        "dominant_hand": null,
+        "gender": "MALE",
+        "nationality": null,
+        "external_id": "0f2df165-410d-11f0-83e1-9dbbf7342624",
+        "nationality_code": null,
+        "image": null,
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "nickname": null,
+        "dominant_foot": null,
+        "jersey_number": null,
+        "playing_position": null,
+        "active": true,
+        "league": "6c484828-8104-4299-87bc-2ec3c5789da4",
+        "birthplace": null,
+        "rookie_year": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1sjj/bd550ee056fc42969a254056a25573e6?size=800&format=webp",
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "person": null,
+        "latest_jersey_number": "20",
+        "latest_playing_position": "F",
+        "full_name": "David Barlow",
+        "biography": null,
+        "source_updated_at": null,
+        "source_provider": null,
+        "marquee_image": null,
+        "season_statistics": [
+          "07c16aff-6513-48d9-8cd2-213b192853b1",
+          "07fba492-f0d1-45c8-a675-653ac1c05f39",
+          "12cab5b8-cb15-4aca-ac55-2d4702432b99"
+        ],
+        "rosters": [
+          "045628f3-9b04-49da-8fc9-d1d479b196f9",
+          "0490484b-fcb0-4496-b01e-2791c1f01faa",
+          "19cb0094-8256-4b59-8c98-9e10bc968c6e"
+        ],
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "team_code": "MEL",
+        "name": "Melbourne United",
+        "external_id": "bf6cf4f0-410c-11f0-8107-1b3c55488bbb",
+        "id": "41c8f340-4d0a-4d68-a3c7-1b31f643f803"
+      },
+      "season": {
+        "competition": {
+          "division": []
+        }
+      }
+    }
+  ]
+}

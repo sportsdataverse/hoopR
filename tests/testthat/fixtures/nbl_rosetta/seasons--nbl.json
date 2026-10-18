@@ -1,0 +1,74 @@
+{
+  "type": "seasons",
+  "fetched": 1791833130,
+  "ttlRemaining": 300,
+  "count": 75,
+  "source": "redis",
+  "data": [
+    {
+      "id": "67d4a190-40bc-4bfb-a9a2-11bd0b93f020",
+      "name": "NBL27",
+      "year": "2026",
+      "season_type": "regular",
+      "external_id": "1b041b7b-3dde-11f1-8b34-cf648fa5ccb5",
+      "start_date": "2026-09-19T00:00:00",
+      "end_date": "2027-02-28T00:00:00",
+      "competition": {
+        "league": {
+          "name": "NBL",
+          "organisation": {
+            "shortcode": "nbl"
+          }
+        },
+        "division": []
+      },
+      "matches": [
+        "00808e5a-bd20-4a98-aa0b-bc7ff35b5b82",
+        "01c3439f-b3a1-465d-9827-a3280f4ec0c3",
+        "02e3abc7-651c-4454-8587-0afbeea3cb34"
+      ]
+    },
+    {
+      "id": "45d43145-9958-429c-ac8e-51e5bc2794de",
+      "name": "Test Season 2026",
+      "year": "2026",
+      "season_type": "test",
+      "external_id": "75edbf66-fdb5-11f0-a54a-a50a20abd855",
+      "start_date": "2026-01-01T00:00:00",
+      "end_date": "2026-12-31T00:00:00",
+      "competition": {
+        "league": {
+          "name": "NBL",
+          "organisation": {
+            "shortcode": "nbl"
+          }
+        },
+        "division": []
+      },
+      "matches": []
+    },
+    {
+      "id": "ec19e36d-dcc9-436d-a362-05c9e21ae76a",
+      "name": "NBL26/27 Club Pre Season Games",
+      "year": "2026",
+      "season_type": "preseason",
+      "external_id": "dcd2dfb6-3ddc-11f1-9052-3793125dedb6",
+      "start_date": "2026-08-01T00:00:00",
+      "end_date": "2026-08-31T00:00:00",
+      "competition": {
+        "league": {
+          "name": "NBL",
+          "organisation": {
+            "shortcode": "nbl"
+          }
+        },
+        "division": []
+      },
+      "matches": [
+        "1271fb91-4ca1-4ee1-9189-d706ad33810a",
+        "13e8e9e9-e994-4c90-af67-df3a7da1f28f",
+        "1a064d77-bebd-4c53-ba29-c610ec0a202c"
+      ]
+    }
+  ]
+}

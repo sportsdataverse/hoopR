@@ -1,0 +1,171 @@
+{
+  "type": "rosters",
+  "fetched": 1791833186,
+  "ttlRemaining": 1800,
+  "count": 13,
+  "source": "nxs",
+  "data": [
+    {
+      "jersey_number": "6",
+      "playing_position": "G",
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/bcefec261d174b4ba37c203aabd0d08f?size=800&format=webp",
+        "color_primary": "#36bacb",
+        "color_secondary": "#001652",
+        "gender": "FEMALE",
+        "team_nickname": "SMF",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "player": {
+        "id": "d1d7a46e-e569-4e09-9a2c-feb6971292f2",
+        "external_id": "7ae8fc48-45e3-11f0-9f4a-d76608926233",
+        "first_name": "Nikita",
+        "last_name": "Young",
+        "full_name": "Nikita Young",
+        "jersey_number": "6",
+        "playing_position": "G",
+        "image": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/6cbeb41859404fb7bcf3e959f883320e?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "2002-08-04",
+        "nationality": null,
+        "height": null,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality_code": "AUS",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    },
+    {
+      "jersey_number": "9",
+      "playing_position": "PG",
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/bcefec261d174b4ba37c203aabd0d08f?size=800&format=webp",
+        "color_primary": "#36bacb",
+        "color_secondary": "#001652",
+        "gender": "FEMALE",
+        "team_nickname": "SMF",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "player": {
+        "id": "51574e7f-dcca-451e-af1c-2b0bcd3bd733",
+        "external_id": "576a8794-45e3-11f0-ae75-79cf0a59c5e2",
+        "first_name": "Maddison",
+        "last_name": "Rocci",
+        "full_name": "Maddison Rocci",
+        "jersey_number": "9",
+        "playing_position": "PG",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/c95904b7e5dc47a8951e5c482ce86c88?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "1998-06-01",
+        "nationality": null,
+        "height": 169,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality_code": "AUS",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    },
+    {
+      "jersey_number": "10",
+      "playing_position": "G",
+      "season": {
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          }
+        }
+      },
+      "team": {
+        "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+        "external_id": "e7ef2142-45e2-11f0-a8b0-c5864f4b75a8",
+        "name": "Southside Melbourne Flyers",
+        "team_code": "SMF",
+        "team_logo": "https://cdn.prod.website-files.com/67edd996ab58aa16079f9454/688949ba0923dd2fbded4ff8_5edc59139de271fbcea6eb756094311b_SM%20Flyers%20Monogram%20-%20POS.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/bcefec261d174b4ba37c203aabd0d08f?size=800&format=webp",
+        "color_primary": "#36bacb",
+        "color_secondary": "#001652",
+        "gender": "FEMALE",
+        "team_nickname": "SMF",
+        "team_logo_blurhash": "LBBDvgNH00%L%hbIxat600xZ.TIp",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "player": {
+        "id": "b73bb85a-dfc0-4eb4-bc52-e024eea615f8",
+        "external_id": "56af2765-45e3-11f0-bb0d-79cf0a59c5e2",
+        "first_name": "Haylee",
+        "last_name": "Andrews",
+        "full_name": "Haylee Andrews",
+        "jersey_number": "19",
+        "playing_position": "F",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1jrd/f7c2890dfbf34a039a911332516e93d5?size=800&format=webp",
+        "active": true,
+        "date_of_birth": "2000-03-09",
+        "nationality": null,
+        "height": 178,
+        "weight": null,
+        "dominant_hand": null,
+        "gender": "FEMALE",
+        "nationality_code": "AUS",
+        "socials_faceboook": null,
+        "socials_twitter": null,
+        "socials_instagram": null,
+        "socials_tiktok": null,
+        "birthplace": null,
+        "rookie_year": null,
+        "latest_playing_position": "G",
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      }
+    }
+  ]
+}

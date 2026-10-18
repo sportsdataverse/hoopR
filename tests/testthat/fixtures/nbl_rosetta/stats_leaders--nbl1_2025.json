@@ -1,0 +1,390 @@
+{
+  "type": "player_season_statistics",
+  "fetched": 1791833046,
+  "ttlRemaining": 1800,
+  "count": 558,
+  "source": "cb",
+  "data": [
+    {
+      "assists_average": 6.46667,
+      "blocks_average": 0,
+      "field_goals_attempted": 274,
+      "field_goals_made": 122,
+      "field_goals_attempted_average": 18.26667,
+      "field_goals_made_average": 8.13333,
+      "field_goals_percentage": 0.445256,
+      "fouls_average": 1.93333,
+      "free_throws_attempted": 129,
+      "free_throws_made": 115,
+      "free_throws_attempted_average": 8.6,
+      "free_throws_made_average": 7.66667,
+      "free_throws_percentage": 0.891473,
+      "games": 15,
+      "games_started": 15,
+      "offensive_rebounds": 7,
+      "fouls": 29,
+      "personal_fouls": 19,
+      "technical_fouls": 4,
+      "period": "0",
+      "three_points_attempted": 122,
+      "three_points_attempted_average": 8.13333,
+      "three_points_made": 40,
+      "three_points_made_average": 2.66667,
+      "three_points_percentage": 0.327869,
+      "turnovers_average": 3.8,
+      "turnovers": 57,
+      "two_points_attempted": 152,
+      "two_points_attempted_average": 10.13333,
+      "two_points_made": 82,
+      "two_points_made_average": 5.46667,
+      "two_points_percentage": 0.539474,
+      "minutes": 481.433319,
+      "minutes_average": 32.099998,
+      "points": 399,
+      "rebounds": 71,
+      "assists": 97,
+      "blocks": 0,
+      "steals": 19,
+      "plus_minus": 201,
+      "plus_minus_average": 13.4,
+      "efficiency": 363,
+      "efficiency_average": 24.2,
+      "points_average": 26.6,
+      "rebounds_average": 4.73333,
+      "steals_average": 1.26667,
+      "player": {
+        "id": "2b0b0ef5-a04b-4b0d-a2ad-bbdb73fd2d5a",
+        "external_id": "7f78fc82-9b8c-11eb-a30c-6efaa2ba8736",
+        "first_name": "Ben",
+        "image": null,
+        "external_player_image": "https://images.dc.prod.cloud.atriumsports.com/b1n81/97eb28885b1048f393c93e2383a504d2?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Ayre",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "a865e9f5-807b-54c0-9139-4592e99a855d",
+        "external_id": "df18d768-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Sandringham Sabres",
+        "team_code": "SAN",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/0fc22eafe8644b6b858fa3d12c5bd3be?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/0fc22eafe8644b6b858fa3d12c5bd3be?size=100&format=webp",
+        "color_primary": "#012169",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "74170d38-ef97-4a17-a8b9-5e7f76a9cffb",
+        "external_id": "a5f9a93f-b05c-11ef-878f-e763f0350932",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "South Men",
+              "gender": "male",
+              "conference": {
+                "name": "South"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 617,
+        "totalScoreWithoutDDandTD": 607,
+        "breakdown": {
+          "points": {
+            "value": 399,
+            "points": 399
+          },
+          "rebounds": {
+            "value": 71,
+            "points": 71
+          },
+          "assists": {
+            "value": 97,
+            "points": 194
+          },
+          "blocks": {
+            "value": 0,
+            "points": 0
+          },
+          "steals": {
+            "value": 19,
+            "points": 57
+          },
+          "turnovers": {
+            "value": 57,
+            "points": -114
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    },
+    {
+      "assists_average": 5.40909,
+      "blocks_average": 0.45455,
+      "field_goals_attempted": 392,
+      "field_goals_made": 183,
+      "field_goals_attempted_average": 17.81818,
+      "field_goals_made_average": 8.31818,
+      "field_goals_percentage": 0.466837,
+      "fouls_average": 1.59091,
+      "free_throws_attempted": 114,
+      "free_throws_made": 97,
+      "free_throws_attempted_average": 5.18182,
+      "free_throws_made_average": 4.40909,
+      "free_throws_percentage": 0.850877,
+      "games": 22,
+      "games_started": 22,
+      "offensive_rebounds": 18,
+      "fouls": 35,
+      "personal_fouls": 29,
+      "technical_fouls": 3,
+      "period": "0",
+      "three_points_attempted": 229,
+      "three_points_attempted_average": 10.40909,
+      "three_points_made": 80,
+      "three_points_made_average": 3.63636,
+      "three_points_percentage": 0.349345,
+      "turnovers_average": 3,
+      "turnovers": 66,
+      "two_points_attempted": 163,
+      "two_points_attempted_average": 7.40909,
+      "two_points_made": 103,
+      "two_points_made_average": 4.68182,
+      "two_points_percentage": 0.631902,
+      "minutes": 755.483337,
+      "minutes_average": 34.349998,
+      "points": 543,
+      "rebounds": 153,
+      "assists": 119,
+      "blocks": 10,
+      "steals": 21,
+      "plus_minus": 93,
+      "plus_minus_average": 4.22727,
+      "efficiency": 554,
+      "efficiency_average": 25.18182,
+      "points_average": 24.68182,
+      "rebounds_average": 6.95455,
+      "steals_average": 0.95455,
+      "player": {
+        "id": "0759c95e-49a5-42c1-88cb-36e4bfd41da5",
+        "external_id": "5cf8d62a-97f7-11eb-8373-6eda0c893864",
+        "first_name": "Michael",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/7548cd8f119b41d0b9f372a3d7cba982?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Harris",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "e3ed72c9-16ab-55cf-b4d1-dc395738353d",
+        "external_id": "dec8ed0c-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Frankston Blues",
+        "team_code": "FRA",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/2381d5eb4c1d45be8c5623ba10cfb83f?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/2381d5eb4c1d45be8c5623ba10cfb83f?size=100&format=webp",
+        "color_primary": "#292d53",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "74170d38-ef97-4a17-a8b9-5e7f76a9cffb",
+        "external_id": "a5f9a93f-b05c-11ef-878f-e763f0350932",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "South Men",
+              "gender": "male",
+              "conference": {
+                "name": "South"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 905,
+        "totalScoreWithoutDDandTD": 895,
+        "breakdown": {
+          "points": {
+            "value": 543,
+            "points": 543
+          },
+          "rebounds": {
+            "value": 153,
+            "points": 153
+          },
+          "assists": {
+            "value": 119,
+            "points": 238
+          },
+          "blocks": {
+            "value": 10,
+            "points": 30
+          },
+          "steals": {
+            "value": 21,
+            "points": 63
+          },
+          "turnovers": {
+            "value": 66,
+            "points": -132
+          },
+          "triple_double": {
+            "value": 5,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 5
+      }
+    },
+    {
+      "assists_average": 5.52,
+      "blocks_average": 0.08,
+      "field_goals_attempted": 381,
+      "field_goals_made": 203,
+      "field_goals_attempted_average": 15.24,
+      "field_goals_made_average": 8.12,
+      "field_goals_percentage": 0.532808,
+      "fouls_average": 2.48,
+      "free_throws_attempted": 169,
+      "free_throws_made": 138,
+      "free_throws_attempted_average": 6.76,
+      "free_throws_made_average": 5.52,
+      "free_throws_percentage": 0.816568,
+      "games": 25,
+      "games_started": 25,
+      "offensive_rebounds": 16,
+      "fouls": 62,
+      "personal_fouls": 47,
+      "technical_fouls": 4,
+      "period": "0",
+      "three_points_attempted": 158,
+      "three_points_attempted_average": 6.32,
+      "three_points_made": 63,
+      "three_points_made_average": 2.52,
+      "three_points_percentage": 0.398734,
+      "turnovers_average": 2.72,
+      "turnovers": 68,
+      "two_points_attempted": 223,
+      "two_points_attempted_average": 8.92,
+      "two_points_made": 140,
+      "two_points_made_average": 5.6,
+      "two_points_percentage": 0.627803,
+      "minutes": 871.133362,
+      "minutes_average": 34.849998,
+      "points": 607,
+      "rebounds": 156,
+      "assists": 138,
+      "blocks": 2,
+      "steals": 28,
+      "plus_minus": 126,
+      "plus_minus_average": 5.04,
+      "efficiency": 654,
+      "efficiency_average": 26.16,
+      "points_average": 24.28,
+      "rebounds_average": 6.24,
+      "steals_average": 1.12,
+      "player": {
+        "id": "2983344d-299f-4bc8-a640-bdd65a1d6aae",
+        "external_id": "d519504c-e12a-11ee-b97a-433c80132bfd",
+        "first_name": "Tom",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/9a66123c01a04dbabff77e27afcc2f56?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Wilson",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "e3e0c1d6-d039-5f82-916e-db0057124490",
+        "external_id": "def3ca86-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Melbourne Tigers",
+        "team_code": "MEL",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b9bf6a56675f4b44b7e8ecbf499b3c91?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/b9bf6a56675f4b44b7e8ecbf499b3c91?size=100&format=webp",
+        "color_primary": "#ef2e25",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "74170d38-ef97-4a17-a8b9-5e7f76a9cffb",
+        "external_id": "a5f9a93f-b05c-11ef-878f-e763f0350932",
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "South Men",
+              "gender": "male",
+              "conference": {
+                "name": "South"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 1003,
+        "totalScoreWithoutDDandTD": 993,
+        "breakdown": {
+          "points": {
+            "value": 607,
+            "points": 607
+          },
+          "rebounds": {
+            "value": 156,
+            "points": 156
+          },
+          "assists": {
+            "value": 138,
+            "points": 276
+          },
+          "blocks": {
+            "value": 2,
+            "points": 6
+          },
+          "steals": {
+            "value": 28,
+            "points": 84
+          },
+          "turnovers": {
+            "value": 68,
+            "points": -136
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    }
+  ]
+}

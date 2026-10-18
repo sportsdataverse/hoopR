@@ -1,0 +1,390 @@
+{
+  "type": "player_season_statistics",
+  "fetched": 1791833204,
+  "ttlRemaining": 1800,
+  "count": 7,
+  "source": "cb",
+  "data": [
+    {
+      "assists_average": 3.05,
+      "blocks_average": 0.25,
+      "field_goals_attempted": 211,
+      "field_goals_made": 105,
+      "field_goals_attempted_average": 10.55,
+      "field_goals_made_average": 5.25,
+      "field_goals_percentage": 0.49763,
+      "fouls_average": 1.05,
+      "free_throws_attempted": 28,
+      "free_throws_made": 18,
+      "free_throws_attempted_average": 1.4,
+      "free_throws_made_average": 0.9,
+      "free_throws_percentage": 0.642857,
+      "games": 20,
+      "games_started": 19,
+      "offensive_rebounds": 21,
+      "fouls": 21,
+      "personal_fouls": 21,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 140,
+      "three_points_attempted_average": 7,
+      "three_points_made": 68,
+      "three_points_made_average": 3.4,
+      "three_points_percentage": 0.485714,
+      "turnovers_average": 1.35,
+      "turnovers": 27,
+      "two_points_attempted": 71,
+      "two_points_attempted_average": 3.55,
+      "two_points_made": 37,
+      "two_points_made_average": 1.85,
+      "two_points_percentage": 0.521127,
+      "minutes": 669.233337,
+      "minutes_average": 33.466667,
+      "points": 296,
+      "rebounds": 73,
+      "assists": 61,
+      "blocks": 5,
+      "steals": 27,
+      "plus_minus": 59,
+      "plus_minus_average": 2.95,
+      "efficiency": 319,
+      "efficiency_average": 15.95,
+      "points_average": 14.8,
+      "rebounds_average": 3.65,
+      "steals_average": 1.35,
+      "player": {
+        "id": "c48d5920-2f1e-4c96-b0f5-1b2b9ef25d6f",
+        "external_id": "cfb4f7ce-b305-11eb-9723-226cd10403de",
+        "first_name": "Boston",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/1bacc58a55d64aafb7c54f0d47835e46?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Mazlin",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "89613642-2092-5bca-937d-b2944456d7ca",
+        "external_id": "deeb4aaa-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Logan Thunder",
+        "team_code": "LOG",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/129cb42474d549d48139120d992163ab?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/129cb42474d549d48139120d992163ab?size=100&format=webp",
+        "color_primary": "#0a1a35",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "3240be4c-83ce-5f6f-ae66-dd86a51ca732",
+        "external_id": "197f1892-7426-11ec-b650-1bdc8f39f1df",
+        "year": "2022",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "North Men",
+              "gender": "male",
+              "conference": {
+                "name": "North"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 543,
+        "totalScoreWithoutDDandTD": 533,
+        "breakdown": {
+          "points": {
+            "value": 296,
+            "points": 296
+          },
+          "rebounds": {
+            "value": 73,
+            "points": 73
+          },
+          "assists": {
+            "value": 61,
+            "points": 122
+          },
+          "blocks": {
+            "value": 5,
+            "points": 15
+          },
+          "steals": {
+            "value": 27,
+            "points": 81
+          },
+          "turnovers": {
+            "value": 27,
+            "points": -54
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    },
+    {
+      "assists_average": 2.71429,
+      "blocks_average": 0.19048,
+      "field_goals_attempted": 246,
+      "field_goals_made": 114,
+      "field_goals_attempted_average": 11.71429,
+      "field_goals_made_average": 5.42857,
+      "field_goals_percentage": 0.463415,
+      "fouls_average": 1.14286,
+      "free_throws_attempted": 57,
+      "free_throws_made": 43,
+      "free_throws_attempted_average": 2.71429,
+      "free_throws_made_average": 2.04762,
+      "free_throws_percentage": 0.754386,
+      "games": 21,
+      "games_started": 21,
+      "offensive_rebounds": 14,
+      "fouls": 24,
+      "personal_fouls": 24,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 152,
+      "three_points_attempted_average": 7.2381,
+      "three_points_made": 68,
+      "three_points_made_average": 3.2381,
+      "three_points_percentage": 0.447368,
+      "turnovers_average": 1.28571,
+      "turnovers": 27,
+      "two_points_attempted": 94,
+      "two_points_attempted_average": 4.47619,
+      "two_points_made": 46,
+      "two_points_made_average": 2.19048,
+      "two_points_percentage": 0.489362,
+      "minutes": 685.133362,
+      "minutes_average": 32.633331,
+      "points": 339,
+      "rebounds": 74,
+      "assists": 57,
+      "blocks": 4,
+      "steals": 23,
+      "plus_minus": 228,
+      "plus_minus_average": 10.85714,
+      "efficiency": 324,
+      "efficiency_average": 15.42857,
+      "points_average": 16.14286,
+      "rebounds_average": 3.52381,
+      "steals_average": 1.09524,
+      "player": {
+        "id": "c48d5920-2f1e-4c96-b0f5-1b2b9ef25d6f",
+        "external_id": "cfb4f7ce-b305-11eb-9723-226cd10403de",
+        "first_name": "Boston",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/1bacc58a55d64aafb7c54f0d47835e46?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Mazlin",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "89613642-2092-5bca-937d-b2944456d7ca",
+        "external_id": "deeb4aaa-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Logan Thunder",
+        "team_code": "LOG",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/129cb42474d549d48139120d992163ab?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/129cb42474d549d48139120d992163ab?size=100&format=webp",
+        "color_primary": "#0a1a35",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "1f1c80ef-dda6-5fb3-8cbf-b099b390e2a7",
+        "external_id": "116a2f56-70a7-11ed-a54e-2d98d9fac4b4",
+        "year": "2023",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "North Men",
+              "gender": "male",
+              "conference": {
+                "name": "North"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 564,
+        "totalScoreWithoutDDandTD": 554,
+        "breakdown": {
+          "points": {
+            "value": 339,
+            "points": 339
+          },
+          "rebounds": {
+            "value": 74,
+            "points": 74
+          },
+          "assists": {
+            "value": 57,
+            "points": 114
+          },
+          "blocks": {
+            "value": 4,
+            "points": 12
+          },
+          "steals": {
+            "value": 23,
+            "points": 69
+          },
+          "turnovers": {
+            "value": 27,
+            "points": -54
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    },
+    {
+      "assists_average": 3.58824,
+      "blocks_average": 0.29412,
+      "field_goals_attempted": 214,
+      "field_goals_made": 103,
+      "field_goals_attempted_average": 12.58824,
+      "field_goals_made_average": 6.05882,
+      "field_goals_percentage": 0.481308,
+      "fouls_average": 1.88235,
+      "free_throws_attempted": 31,
+      "free_throws_made": 23,
+      "free_throws_attempted_average": 1.82353,
+      "free_throws_made_average": 1.35294,
+      "free_throws_percentage": 0.741935,
+      "games": 17,
+      "games_started": 17,
+      "offensive_rebounds": 11,
+      "fouls": 32,
+      "personal_fouls": 30,
+      "technical_fouls": 0,
+      "period": "0",
+      "three_points_attempted": 117,
+      "three_points_attempted_average": 6.88235,
+      "three_points_made": 42,
+      "three_points_made_average": 2.47059,
+      "three_points_percentage": 0.358974,
+      "turnovers_average": 1.35294,
+      "turnovers": 23,
+      "two_points_attempted": 97,
+      "two_points_attempted_average": 5.70588,
+      "two_points_made": 61,
+      "two_points_made_average": 3.58824,
+      "two_points_percentage": 0.628866,
+      "minutes": 569.866638,
+      "minutes_average": 33.533333,
+      "points": 271,
+      "rebounds": 66,
+      "assists": 61,
+      "blocks": 5,
+      "steals": 21,
+      "plus_minus": 26,
+      "plus_minus_average": 1.52941,
+      "efficiency": 282,
+      "efficiency_average": 16.58824,
+      "points_average": 15.94118,
+      "rebounds_average": 3.88235,
+      "steals_average": 1.23529,
+      "player": {
+        "id": "c48d5920-2f1e-4c96-b0f5-1b2b9ef25d6f",
+        "external_id": "cfb4f7ce-b305-11eb-9723-226cd10403de",
+        "first_name": "Boston",
+        "image": null,
+        "external_player_image": "https://images.dc.connect.sportradar.com/b1n81/1bacc58a55d64aafb7c54f0d47835e46?size=800&format=webp",
+        "jersey_number": null,
+        "last_name": "Mazlin",
+        "playing_position": null,
+        "external_player_image_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "team": {
+        "id": "0265634e-aa5c-504c-94eb-16996ce1a827",
+        "external_id": "ded115f4-7b55-11eb-9e56-8205bb8987e9",
+        "name": "Gold Coast Rollers",
+        "team_code": "GCR",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1n81/cd9d0dc4d0a44104bf7f443d044563f3?size=100&format=webp",
+        "color_primary": "#0039a6",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "id": "4834d1de-85b6-5138-9c10-2cfaaef0cdb7",
+        "external_id": "3c15c86c-8f7f-11ee-bfc8-479efcbf0c3d",
+        "year": "2024",
+        "season_type": "regular",
+        "competition": {
+          "division": [
+            {
+              "name": "North Men",
+              "gender": "male",
+              "conference": {
+                "name": "North"
+              }
+            }
+          ],
+          "league": {
+            "organisation": {
+              "shortcode": "nbl1"
+            }
+          }
+        }
+      },
+      "sc": {
+        "totalScore": 501,
+        "totalScoreWithoutDDandTD": 491,
+        "breakdown": {
+          "points": {
+            "value": 271,
+            "points": 271
+          },
+          "rebounds": {
+            "value": 66,
+            "points": 66
+          },
+          "assists": {
+            "value": 61,
+            "points": 122
+          },
+          "blocks": {
+            "value": 5,
+            "points": 15
+          },
+          "steals": {
+            "value": 21,
+            "points": 63
+          },
+          "turnovers": {
+            "value": 23,
+            "points": -46
+          },
+          "triple_double": {
+            "value": 4,
+            "points": 10
+          }
+        },
+        "doubleFigureCount": 4
+      }
+    }
+  ]
+}

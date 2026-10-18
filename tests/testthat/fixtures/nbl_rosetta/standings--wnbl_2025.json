@@ -1,0 +1,147 @@
+{
+  "type": "standings",
+  "fetched": 1791833167,
+  "ttlRemaining": 300,
+  "count": 8,
+  "source": "redis",
+  "data": [
+    {
+      "id": "53601bab-6add-4315-bb9f-2850cafdbab4",
+      "position": 1,
+      "won": 19,
+      "lost": 4,
+      "played": 23,
+      "points_percentage": 1.1825,
+      "win_percentage": 0.8261,
+      "last_5": "WWLWWWWWWWLWWLWLWWWWWWW",
+      "streak": 7,
+      "points_for": 1950,
+      "points_against": 1649,
+      "away_losses": 1,
+      "away_wins": 10,
+      "home_losses": 3,
+      "home_wins": 9,
+      "team": {
+        "id": "d4082ccf-a46c-4766-b41b-efa3143b8188",
+        "external_id": "e7d138b4-45e2-11f0-b18b-c5864f4b75a8",
+        "team_code": "TSV",
+        "name": "Townsville Fire",
+        "team_logo": "https://cdn.prod.website-files.com/686dc6510ed19bd7d682101b/6892da4eeef4bafcc120df16_tsv-logo-fire-sq.png",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/c4df209a6b7f436fac9737a6e73624f0?size=200&format=webp",
+        "ticket_url": "https://www.ticketmaster.com.au/townsville-fire-tickets/artist/3034375?venueId=158183",
+        "team_nickname": "TSV",
+        "color_primary": "#f97305",
+        "color_secondary": "#000000",
+        "color_tertiary": "#000000",
+        "team_logo_blurhash": "LBE-HNwf06o[_CRm4wt41INJrdod",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "ad59c108-80f4-4550-916c-234a37804c74",
+      "position": 2,
+      "won": 18,
+      "lost": 5,
+      "played": 23,
+      "points_percentage": 1.132,
+      "win_percentage": 0.7826,
+      "last_5": "WWWLWLWLWWWWWWWLWWLWWWW",
+      "streak": 4,
+      "points_for": 1947,
+      "points_against": 1720,
+      "away_losses": 3,
+      "away_wins": 8,
+      "home_losses": 2,
+      "home_wins": 10,
+      "team": {
+        "id": "e359bd92-9acc-4a33-bbb0-fa252d4c3a4b",
+        "external_id": "e7d4f3a7-45e2-11f0-9ce6-c5864f4b75a8",
+        "team_code": "PER",
+        "name": "Perth Lynx",
+        "team_logo": "https://cdn.prod.website-files.com/686b7413d55721115d6e0d55/689a7b6dc7d33f853eb1153c_lynx-icon-full-outline%402x.png",
+        "team_logo_transparent": "https://cdn.prod.website-files.com/686b7413d55721115d6e0d55/689a7b6dc7d33f853eb1153c_lynx-icon-full-outline%402x.png",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/3933fe9d08704eb59c1bd14b4a29b5b2?size=200&format=webp",
+        "ticket_url": "https://www.ticketmaster.com.au/perth-lynx-tickets/artist/2165336",
+        "team_nickname": "PER",
+        "color_primary": "#fa0404",
+        "color_secondary": "#fccfcf",
+        "color_tertiary": "#000000",
+        "team_logo_blurhash": "LIJ72i%#*J#95+V[=eoz8IVZ-pcE",
+        "team_logo_transparent_blurhash": "LIJ72i%#*J#95+V[=eoz8IVZ-pcE",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      }
+    },
+    {
+      "id": "da6a7296-5e79-48a3-b57d-c8e8f4ab8d46",
+      "position": 3,
+      "won": 16,
+      "lost": 7,
+      "played": 23,
+      "points_percentage": 1.0627,
+      "win_percentage": 0.6957,
+      "last_5": "LWWWLWWWWWWWWWWLLWWWLLL",
+      "streak": 0,
+      "points_for": 1762,
+      "points_against": 1658,
+      "away_losses": 5,
+      "away_wins": 7,
+      "home_losses": 2,
+      "home_wins": 9,
+      "team": {
+        "id": "bd30706f-87e8-40cd-9a37-7cbe6c8fbad7",
+        "external_id": "e7e7e83d-45e2-11f0-9e55-c5864f4b75a8",
+        "team_code": "BEN",
+        "name": "Bendigo Spirit",
+        "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/fd49f5cfed5a42e6868dc1f96282afca?size=800&format=webp",
+        "team_logo_transparent": "https://images.dc.prod.cloud.atriumsports.com/b1jrd/fd49f5cfed5a42e6868dc1f96282afca?size=800&format=webp",
+        "external_team_logo": "https://images.dc.connect.sportradar.com/b1jrd/fd49f5cfed5a42e6868dc1f96282afca?size=200&format=webp",
+        "ticket_url": "https://premier.ticketek.com.au/shows/show.aspx?sh=SPIRITU27",
+        "team_nickname": "BEN",
+        "color_primary": "#4d41f7",
+        "color_secondary": "#ffda0c",
+        "color_tertiary": "#ffffff",
+        "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "team_logo_transparent_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+        "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+      },
+      "season": {
+        "year": "2025",
+        "season_type": "regular",
+        "competition": {
+          "league": {
+            "organisation": {
+              "shortcode": "wnbl"
+            }
+          },
+          "division": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+org,rosetta_standing_id,position,won,lost,played,points_percentage,win_percentage,last_5,streak,points_for,points_against,away_losses,away_wins,home_losses,home_wins,team_id,rosetta_team_id,team_code,team_name,season_year,season_type,season_competition_division,season_end_year
+nbl,7d6a9f3f-833a-431a-a8f1-16d92016993c,3,17,11,28,1.0607,0.6071,WLLWW,2,2637,2486,8,6,3,11,bf59b516-410c-11f0-abf1-1b3c55488bbb,105249a3-251d-4a9d-94f4-f57b8e0854b3,ILL,Illawarra Hawks,2015,regular,[],2016
+nbl,9498060d-30c6-4f0f-b8ec-e4715a669a73,2,18,10,28,1.0552,0.6429,WLWLW,1,2391,2266,8,6,2,12,befee10a-410c-11f0-b3f4-1b3c55488bbb,bc5327d5-322e-4796-b103-4c3b63869edb,PER,Perth Wildcats,2015,regular,[],2016
+nbl,d191ca82-a222-4a68-9cca-13d3fe79d294,4,16,12,28,1.0329,0.5714,WWWWW,5,2357,2282,9,5,3,11,bedd705b-410c-11f0-8d69-1b3c55488bbb,bbae77db-317d-4c17-aa04-75d53d20ad15,NZL,NZ Breakers,2015,regular,[],2016

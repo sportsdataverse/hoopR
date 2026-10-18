@@ -1,0 +1,111 @@
+{
+  "type": "teams",
+  "fetched": 1791833040,
+  "ttlRemaining": 1800,
+  "count": 158,
+  "source": "nxs",
+  "data": [
+    {
+      "id": "85f0627d-0f3c-4554-bd93-c98b1de1d388",
+      "external_id": "3a422529-83e4-11f1-90b7-e7dd24327d63",
+      "name": "TBA",
+      "team_code": "TBA",
+      "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/091304e8cdc74d128b6b2cdb34c9f27d?size=200&format=webp",
+      "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/091304e8cdc74d128b6b2cdb34c9f27d?size=200&format=webp",
+      "team_nickname": "TBA",
+      "color_primary": "#000000",
+      "color_secondary": "#000000",
+      "color_tertiary": "#000000",
+      "ticket_url": null,
+      "established": null,
+      "head_coach": null,
+      "championships": null,
+      "website": null,
+      "membership_url": null,
+      "shop_url": null,
+      "socials_facebook": null,
+      "socials_twitter": null,
+      "socials_instagram": null,
+      "socials_youtube": null,
+      "external_media_competitor_id": null,
+      "store_image": null,
+      "venue": null,
+      "conference": {
+        "name": "West"
+      },
+      "division": {
+        "name": "West Women"
+      },
+      "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+      "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+    },
+    {
+      "id": "43c86fda-fb65-4f28-b9f9-a7963c10098d",
+      "external_id": "f3d7ca18-d3ca-11f0-9614-3b3a32135df7",
+      "name": "Northern Force",
+      "team_code": "NF",
+      "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/5e53e061585741a59a0130a79312756c?size=100&format=webp",
+      "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/5e53e061585741a59a0130a79312756c?size=200&format=webp",
+      "team_nickname": "NF",
+      "color_primary": "#22372b",
+      "color_secondary": "#ffffff",
+      "color_tertiary": "#000000",
+      "ticket_url": null,
+      "established": null,
+      "head_coach": null,
+      "championships": null,
+      "website": null,
+      "membership_url": null,
+      "shop_url": null,
+      "socials_facebook": null,
+      "socials_twitter": null,
+      "socials_instagram": null,
+      "socials_youtube": null,
+      "external_media_competitor_id": "1146253",
+      "store_image": null,
+      "venue": null,
+      "conference": {
+        "name": "South"
+      },
+      "division": {
+        "name": "South Men"
+      },
+      "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+      "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+    },
+    {
+      "id": "b6691006-e5ee-489d-a406-bcb5b7564b78",
+      "external_id": "63ab3f75-d3cb-11f0-9e13-4d241490b2d8",
+      "name": "Northern Force",
+      "team_code": "NF",
+      "team_logo": "https://images.dc.prod.cloud.atriumsports.com/b1n81/5445aa33879e4d7b9f08d6a5afc0a259?size=100&format=webp",
+      "external_team_logo": "https://images.dc.connect.sportradar.com/b1n81/5445aa33879e4d7b9f08d6a5afc0a259?size=200&format=webp",
+      "team_nickname": "NF",
+      "color_primary": "#22372b",
+      "color_secondary": "#ffffff",
+      "color_tertiary": "#000000",
+      "ticket_url": null,
+      "established": null,
+      "head_coach": null,
+      "championships": null,
+      "website": null,
+      "membership_url": null,
+      "shop_url": null,
+      "socials_facebook": null,
+      "socials_twitter": null,
+      "socials_instagram": null,
+      "socials_youtube": null,
+      "external_media_competitor_id": "1146252",
+      "store_image": null,
+      "venue": null,
+      "conference": {
+        "name": "South"
+      },
+      "division": {
+        "name": "South Women"
+      },
+      "team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4",
+      "external_team_logo_blurhash": "L6PZfSi_.AyE_3t7t7R**0o#DgR4"
+    }
+  ]
+}

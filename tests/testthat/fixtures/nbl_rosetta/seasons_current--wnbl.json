@@ -1,0 +1,85 @@
+{
+  "type": "seasons",
+  "fetched": 1791831938,
+  "ttlRemaining": 1800,
+  "count": 1,
+  "source": "cb",
+  "data": [
+    {
+      "id": "3145d6e5-36b0-4646-8bd1-0e422681ead0",
+      "external_id": "493920b1-2bfc-11f1-aa7e-93fdd049877c",
+      "name": "WNBL27",
+      "year": "2026",
+      "season_type": "regular",
+      "start_date": "2026-10-16T00:00:00",
+      "end_date": "2027-03-31T00:00:00",
+      "competition": {
+        "name": "WNBL",
+        "age_group": null
+      },
+      "matches": [
+        {
+          "id": "712e7bc7-8e2f-41b3-a339-d70a219e7aea",
+          "external_id": "69ae8846-7351-11f1-a3ab-45abfc40cea9",
+          "home_score": null,
+          "away_score": null,
+          "start_time_datetime": "2026-10-15T08:00:00",
+          "match_status": "scheduled",
+          "home_team": {
+            "id": "50cb6ff2-445b-4501-9ec8-9cffd03b79c0",
+            "name": "Tasmania Jewels"
+          },
+          "away_team": {
+            "id": "8d986481-9b69-420e-bad0-b0761bdb2020",
+            "name": "Geelong Venom"
+          },
+          "venue": {
+            "id": "d4bd149f-3130-414d-b7cc-abc4364dd0bf",
+            "name": "MyState Bank Arena"
+          }
+        },
+        {
+          "id": "135fab5b-2223-4ff8-93a3-afb01546d09f",
+          "external_id": "69dafb66-7351-11f1-93fe-5dad69d5f080",
+          "home_score": null,
+          "away_score": null,
+          "start_time_datetime": "2026-10-16T08:00:00",
+          "match_status": "scheduled",
+          "home_team": {
+            "id": "c364217f-5e6a-4834-bd94-cd93211202eb",
+            "name": "Southside Melbourne Flyers"
+          },
+          "away_team": {
+            "id": "0daf342b-99a5-4728-95c3-fb26ab9ec7c2",
+            "name": "Sydney Flames"
+          },
+          "venue": {
+            "id": "d9c890da-866b-4f80-a371-15576edc37d5",
+            "name": "VIC State Basketball Centre"
+          }
+        },
+        {
+          "id": "86e8eea2-bcab-4125-83c6-ab173cd28203",
+          "external_id": "69dc1cce-7351-11f1-81cf-63a7ee8f653a",
+          "home_score": null,
+          "away_score": null,
+          "start_time_datetime": "2026-10-17T04:00:00",
+          "match_status": "scheduled",
+          "home_team": {
+            "id": "e4ebf00c-6493-49c4-a347-ac341e2938b1",
+            "name": "UC Capitals"
+          },
+          "away_team": {
+            "id": "bd30706f-87e8-40cd-9a37-7cbe6c8fbad7",
+            "name": "Bendigo Spirit"
+          },
+          "venue": {
+            "id": "bb37727f-879d-4e6d-ac6b-0a85df9123c0",
+            "name": "AIS Arena"
+          }
+        }
+      ],
+      "next_match_start_datetime": "2026-10-15T08:00:00.000Z"
+    }
+  ]
+}
