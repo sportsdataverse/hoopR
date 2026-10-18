@@ -1,0 +1,26 @@
+[
+  {
+    "ekipa": "2",
+    "koordinata_x": "62",
+    "koordinata_y": "42",
+    "koordinata_uspeh": "0",
+    "player_id": "2555",
+    "player_name": "Marko Ćalić"
+  },
+  {
+    "ekipa": "2",
+    "koordinata_x": "75",
+    "koordinata_y": "35",
+    "koordinata_uspeh": "0",
+    "player_id": "2555",
+    "player_name": "Marko Ćalić"
+  },
+  {
+    "ekipa": "2",
+    "koordinata_x": "91",
+    "koordinata_y": "58",
+    "koordinata_uspeh": "1",
+    "player_id": "889",
+    "player_name": "Uroš Luković"
+  }
+]

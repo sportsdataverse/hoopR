@@ -1,0 +1,4 @@
+game_no,season,league_id,league,side,x,y,made,player_id,player_name
+1,2026,2,aba2,home,5.8,46.72,true,4898,Denil Krnić
+1,2026,2,aba2,away,86.3,65.08,false,3995,Dušan Makitan
+1,2026,2,aba2,away,94.0,50.0,false,3074,Dušan Tanasković

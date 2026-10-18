@@ -1,0 +1,2 @@
+game_no,season,league_id,league,season_label,round,competition,group,when,date,date_to,time,time_zone,local_time,local_place,attendance,venue,home_team_id,home_team,home_city,home_score,away_team_id,away_team,away_city,away_score,commissioner,referees
+1,2009,1,aba,2008/09,ROUND 1,Regional League,,"Saturday, 04.10.2008 20:00 CET",2008-10-04,,20:00,CET,,,1728,,22,Partizan Mozzart Bet,Beograd,74,10,Krka,Novo Mesto,67,Dragan Gogić (SRB),Ademir Zurapović (BIH); Radomir Vojinović (MNE); Edin Husarić (BiH)

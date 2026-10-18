@@ -1,0 +1,51 @@
+{
+  "season": {
+    "sez": 25,
+    "lea": 1,
+    "label": "Season 2025/26"
+  },
+  "rows": [
+    {
+      "table": "Regular Season 2025/26",
+      "group": "Group A",
+      "rank": 1,
+      "team_id": 95,
+      "team_name": "Dubai Basketball",
+      "games": 16,
+      "wins": 15,
+      "losses": 1,
+      "points_for": 1409,
+      "points_against": 1195,
+      "point_diff": 214,
+      "standing_points": 31
+    },
+    {
+      "table": "Regular Season 2025/26",
+      "group": "Group A",
+      "rank": 2,
+      "team_id": 22,
+      "team_name": "Partizan Mozzart Bet",
+      "games": 16,
+      "wins": 15,
+      "losses": 1,
+      "points_for": 1473,
+      "points_against": 1297,
+      "point_diff": 176,
+      "standing_points": 31
+    },
+    {
+      "table": "Regular Season 2025/26",
+      "group": "Group A",
+      "rank": 3,
+      "team_id": 100,
+      "team_name": "U-BT Cluj-Napoca",
+      "games": 16,
+      "wins": 10,
+      "losses": 6,
+      "points_for": 1488,
+      "points_against": 1403,
+      "point_diff": 85,
+      "standing_points": 26
+    }
+  ]
+}

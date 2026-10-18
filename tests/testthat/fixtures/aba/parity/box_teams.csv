@@ -1,0 +1,3 @@
+game_no,season,league_id,league,side,team_id,team_name,minutes,points,fg_pct,fg2_made,fg2_att,fg2_pct,fg3_made,fg3_att,fg3_pct,ft_made,ft_att,ft_pct,reb_def,reb_off,reb_tot,assists,steals,turnovers,blocks,blocks_against,fouls,fouls_drawn,pts_paint,pts_second_chance,pts_fast_break,plus_minus,valuation
+6,2026,1,aba,home,12,Budućnost VOLI,225:00,93,42.3,21,48,43.8,12,30,40.0,15,30,50.0,24,17,41,14,5,8,7,4,21,23,34,25,7,-4,90
+6,2026,1,aba,away,91,Spartak Office Shoes,225:00,97,49.3,22,43,51.2,12,26,46.2,17,26,65.4,30,10,40,29,6,12,4,7,24,21,34,9,7,4,110

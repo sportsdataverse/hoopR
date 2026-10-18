@@ -1,0 +1,660 @@
+game_no,season,league_id,league,seq,period,clock,seconds_left,home_score,away_score,side,team_id,jersey,player_id,player_name,text,action,qualifier
+6,2026,1,aba,1,1,,,,,away,91,,5110,KENNEDY K,in starting lineup,in starting lineup,
+6,2026,1,aba,2,1,,,,,away,91,,5111,THOMPSON S,in starting lineup,in starting lineup,
+6,2026,1,aba,3,1,,,,,away,91,,2982,CEROVINA L,in starting lineup,in starting lineup,
+6,2026,1,aba,4,1,,,,,away,91,,2312,REBIĆ N,in starting lineup,in starting lineup,
+6,2026,1,aba,5,1,,,,,away,91,,2112,NIKOLIĆ D,in starting lineup,in starting lineup,
+6,2026,1,aba,6,1,,,,,home,12,,5072,KOVLIAR O,in starting lineup,in starting lineup,
+6,2026,1,aba,7,1,,,,,home,12,,5073,BOUTEILLE A,in starting lineup,in starting lineup,
+6,2026,1,aba,8,1,,,,,home,12,,5053,BOUTSIELE J,in starting lineup,in starting lineup,
+6,2026,1,aba,9,1,,,,,home,12,,4781,MORGAN J,in starting lineup,in starting lineup,
+6,2026,1,aba,10,1,,,,,home,12,,4769,SULAIMON R,in starting lineup,in starting lineup,
+6,2026,1,aba,11,1,,,,,,,,,,game started,game started,
+6,2026,1,aba,12,1,,,,,,,,,,start of 1. quarter,start of 1. quarter,
+6,2026,1,aba,13,1,10:00,600,,,,,,,,,,
+6,2026,1,aba,14,1,,,,,,,,,,jumpball,jumpball,
+6,2026,1,aba,15,1,09:59,599,,,home,12,16,5053,BOUTSIELE J,jumpball (won),jumpball,won
+6,2026,1,aba,16,1,09:59,599,,,away,91,,5111,THOMPSON S,jumpball (lost),jumpball,lost
+6,2026,1,aba,17,1,09:49,589,2,0,home,12,15,4781,MORGAN J,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,18,1,09:28,568,2,2,away,91,11,5110,KENNEDY K,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,19,1,09:16,556,4,2,home,12,50,5072,KOVLIAR O,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,20,1,08:50,530,4,4,away,91,11,5110,KENNEDY K,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,21,1,08:31,511,,,away,91,,5111,THOMPSON S,foul (personal),foul,personal
+6,2026,1,aba,22,1,08:31,511,,,home,12,16,5053,BOUTSIELE J,foul on,foul on,
+6,2026,1,aba,23,1,08:31,511,,,home,12,16,5053,BOUTSIELE J,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,24,1,08:31,511,,,home,12,16,5053,BOUTSIELE J,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,25,1,08:31,511,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,26,1,08:15,495,4,6,away,91,34,2112,NIKOLIĆ D,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,27,1,08:15,495,,,away,91,11,5110,KENNEDY K,assist,assist,
+6,2026,1,aba,28,1,08:00,480,,,home,12,,4769,SULAIMON R,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,29,1,08:00,480,,,away,91,11,5110,KENNEDY K,block,block,
+6,2026,1,aba,30,1,08:00,480,,,home,,,,,(offensive),,offensive
+6,2026,1,aba,31,1,07:59,479,6,6,home,12,,4769,SULAIMON R,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,32,1,07:59,479,,,home,12,50,5072,KOVLIAR O,assist,assist,
+6,2026,1,aba,33,1,07:42,462,,,away,91,44,2312,REBIĆ N,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,34,1,07:42,462,,,home,12,16,5053,BOUTSIELE J,block,block,
+6,2026,1,aba,35,1,07:42,462,,,away,,,,,(offensive),,offensive
+6,2026,1,aba,36,1,07:32,452,,,away,91,,5111,THOMPSON S,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,37,1,07:32,452,,,home,12,15,4781,MORGAN J,block,block,
+6,2026,1,aba,38,1,07:28,448,,,home,12,15,4781,MORGAN J,rebound (defensive),rebound,defensive
+6,2026,1,aba,39,1,07:28,448,,,away,91,44,2312,REBIĆ N,foul (unsportsmanlike),foul,unsportsmanlike
+6,2026,1,aba,40,1,07:28,448,,,home,12,15,4781,MORGAN J,foul on,foul on,
+6,2026,1,aba,41,1,07:28,448,7,6,home,12,15,4781,MORGAN J,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,42,1,07:28,448,8,6,home,12,15,4781,MORGAN J,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,43,1,07:22,442,10,6,home,12,,4769,SULAIMON R,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,44,1,07:22,442,,,home,12,15,4781,MORGAN J,assist,assist,
+6,2026,1,aba,45,1,07:01,421,,,away,91,34,2112,NIKOLIĆ D,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,46,1,06:58,418,,,home,12,15,4781,MORGAN J,rebound (defensive),rebound,defensive
+6,2026,1,aba,47,1,06:50,410,,,away,91,34,2112,NIKOLIĆ D,foul (personal),foul,personal
+6,2026,1,aba,48,1,06:50,410,,,home,12,,4769,SULAIMON R,foul on,foul on,
+6,2026,1,aba,49,1,06:50,410,,,away,91,44,2312,REBIĆ N,substitution (out),substitution,out
+6,2026,1,aba,50,1,06:50,410,,,away,91,4,2983,DROBNJAK I,substitution (in),substitution,in
+6,2026,1,aba,51,1,06:39,399,,,home,12,83,5073,BOUTEILLE A,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,52,1,06:35,395,,,away,91,4,2983,DROBNJAK I,rebound (defensive),rebound,defensive
+6,2026,1,aba,53,1,06:25,385,,,home,12,83,5073,BOUTEILLE A,foul (personal),foul,personal
+6,2026,1,aba,54,1,06:25,385,,,away,91,,5111,THOMPSON S,foul on,foul on,
+6,2026,1,aba,55,1,06:24,384,10,7,away,91,,5111,THOMPSON S,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,56,1,06:24,384,,,away,91,34,2112,NIKOLIĆ D,assist,assist,
+6,2026,1,aba,57,1,06:24,384,10,8,away,91,,5111,THOMPSON S,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,58,1,06:11,371,13,8,home,12,,4769,SULAIMON R,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,59,1,06:10,370,,,away,91,11,5110,KENNEDY K,foul (personal),foul,personal
+6,2026,1,aba,60,1,06:10,370,,,home,12,,4769,SULAIMON R,foul on,foul on,
+6,2026,1,aba,61,1,06:10,370,,,home,12,,4769,SULAIMON R,missed free throw (1of1),missed free throw,1of1
+6,2026,1,aba,62,1,06:10,370,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,63,1,05:49,349,,,away,91,13,2982,CEROVINA L,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,64,1,05:46,346,,,home,12,,4769,SULAIMON R,rebound (defensive),rebound,defensive
+6,2026,1,aba,65,1,05:43,343,,,home,12,83,5073,BOUTEILLE A,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,66,1,05:39,339,,,home,12,50,5072,KOVLIAR O,rebound (offensive),rebound,offensive
+6,2026,1,aba,67,1,05:38,338,15,8,home,12,50,5072,KOVLIAR O,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,68,1,05:25,325,,,away,91,34,2112,NIKOLIĆ D,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,69,1,05:21,321,,,home,12,,4769,SULAIMON R,rebound (defensive),rebound,defensive
+6,2026,1,aba,70,1,05:13,313,,,home,12,15,4781,MORGAN J,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,71,1,05:09,309,,,home,12,50,5072,KOVLIAR O,rebound (offensive),rebound,offensive
+6,2026,1,aba,72,1,04:55,295,,,home,12,83,5073,BOUTEILLE A,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,73,1,04:52,292,,,away,91,4,2983,DROBNJAK I,rebound (defensive),rebound,defensive
+6,2026,1,aba,74,1,04:49,289,,,home,12,50,5072,KOVLIAR O,foul (personal),foul,personal
+6,2026,1,aba,75,1,04:49,289,,,away,91,,5111,THOMPSON S,foul on,foul on,
+6,2026,1,aba,76,1,04:49,289,,,,,,,,timeout - officials,timeout - officials,
+6,2026,1,aba,77,1,04:49,289,,,home,12,83,5073,BOUTEILLE A,substitution (out),substitution,out
+6,2026,1,aba,78,1,04:49,289,,,home,12,13,3750,JOVANOVIĆ Đ,substitution (in),substitution,in
+6,2026,1,aba,79,1,04:49,289,,,away,91,11,5110,KENNEDY K,substitution (out),substitution,out
+6,2026,1,aba,80,1,04:49,289,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,81,1,04:49,289,15,9,away,91,,5111,THOMPSON S,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,82,1,04:49,289,,,away,91,4,2983,DROBNJAK I,assist,assist,
+6,2026,1,aba,83,1,04:49,289,15,10,away,91,,5111,THOMPSON S,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,84,1,04:49,289,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,85,1,04:49,289,,,away,91,22,2640,ILIĆ D,substitution (in),substitution,in
+6,2026,1,aba,86,1,04:35,275,,,away,91,4,2983,DROBNJAK I,foul (personal),foul,personal
+6,2026,1,aba,87,1,04:35,275,,,home,12,,4769,SULAIMON R,foul on,foul on,
+6,2026,1,aba,88,1,04:35,275,16,10,home,12,,4769,SULAIMON R,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,89,1,04:35,275,,,home,12,,4769,SULAIMON R,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,90,1,04:35,275,,,home,12,15,4781,MORGAN J,rebound (offensive),rebound,offensive
+6,2026,1,aba,91,1,04:33,273,19,10,home,12,,4769,SULAIMON R,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,92,1,04:33,273,,,home,12,15,4781,MORGAN J,assist,assist,
+6,2026,1,aba,93,1,04:10,250,,,home,12,13,3750,JOVANOVIĆ Đ,foul (personal),foul,personal
+6,2026,1,aba,94,1,04:10,250,,,away,91,13,2982,CEROVINA L,foul on,foul on,
+6,2026,1,aba,95,1,04:10,250,,,home,12,50,5072,KOVLIAR O,substitution (out),substitution,out
+6,2026,1,aba,96,1,04:10,250,,,home,12,11,4104,FERRELL JR K,substitution (in),substitution,in
+6,2026,1,aba,97,1,04:10,250,,,away,91,13,2982,CEROVINA L,missed free throw (1 of 3),missed free throw,1 of 3
+6,2026,1,aba,98,1,04:10,250,,,away,91,13,2982,CEROVINA L,missed free throw (2 of 3),missed free throw,2 of 3
+6,2026,1,aba,99,1,04:10,250,19,11,away,91,13,2982,CEROVINA L,made free throw (3 of 3),made free throw,3 of 3
+6,2026,1,aba,100,1,04:10,250,,,away,91,13,2982,CEROVINA L,substitution (out),substitution,out
+6,2026,1,aba,101,1,04:10,250,,,away,91,,2667,MOMIROV S,substitution (in),substitution,in
+6,2026,1,aba,102,1,03:55,235,,,home,12,,4769,SULAIMON R,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,103,1,03:48,228,,,home,12,16,5053,BOUTSIELE J,rebound (offensive),rebound,offensive
+6,2026,1,aba,104,1,03:48,228,21,11,home,12,16,5053,BOUTSIELE J,made 2 points (tip inlayup),made 2 points,tip inlayup
+6,2026,1,aba,105,1,03:47,227,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,106,1,03:47,227,,,home,12,,4769,SULAIMON R,substitution (out),substitution,out
+6,2026,1,aba,107,1,03:47,227,,,home,12,,5117,MAYS S,substitution (in),substitution,in
+6,2026,1,aba,108,1,03:24,204,,,away,91,,5122,HANLAN O,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,109,1,03:21,201,,,away,91,,5122,HANLAN O,rebound (offensive),rebound,offensive
+6,2026,1,aba,110,1,03:19,199,,,away,91,,5122,HANLAN O,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,111,1,03:19,199,,,home,12,13,3750,JOVANOVIĆ Đ,steal,steal,
+6,2026,1,aba,112,1,03:14,194,23,11,home,12,11,4104,FERRELL JR K,made 2 points (drivinglayup),made 2 points,drivinglayup
+6,2026,1,aba,113,1,02:59,179,23,13,away,91,34,2112,NIKOLIĆ D,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,114,1,02:59,179,,,away,91,4,2983,DROBNJAK I,assist,assist,
+6,2026,1,aba,115,1,02:59,179,,,home,12,16,5053,BOUTSIELE J,foul (personal),foul,personal
+6,2026,1,aba,116,1,02:59,179,,,away,91,34,2112,NIKOLIĆ D,foul on,foul on,
+6,2026,1,aba,117,1,02:59,179,,,home,12,16,5053,BOUTSIELE J,substitution (out),substitution,out
+6,2026,1,aba,118,1,02:59,179,,,home,12,,5140,THOMPSON J,substitution (in),substitution,in
+6,2026,1,aba,119,1,02:59,179,,,home,12,15,4781,MORGAN J,substitution (out),substitution,out
+6,2026,1,aba,120,1,02:59,179,,,home,12,10,2627,TANASKOVIĆ N,substitution (in),substitution,in
+6,2026,1,aba,121,1,02:59,179,23,14,away,91,34,2112,NIKOLIĆ D,made free throw (1of1),made free throw,1of1
+6,2026,1,aba,122,1,02:48,168,,,home,12,,5117,MAYS S,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,123,1,02:44,164,,,away,91,4,2983,DROBNJAK I,rebound (defensive),rebound,defensive
+6,2026,1,aba,124,1,02:41,161,,,away,91,4,2983,DROBNJAK I,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,125,1,02:38,158,,,home,12,11,4104,FERRELL JR K,rebound (defensive),rebound,defensive
+6,2026,1,aba,126,1,02:33,153,,,away,91,22,2640,ILIĆ D,foul (personal),foul,personal
+6,2026,1,aba,127,1,02:33,153,,,home,12,,5140,THOMPSON J,foul on,foul on,
+6,2026,1,aba,128,1,02:33,153,,,home,12,,5140,THOMPSON J,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,129,1,02:33,153,24,14,home,12,,5140,THOMPSON J,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,130,1,02:33,153,,,away,91,34,2112,NIKOLIĆ D,substitution (out),substitution,out
+6,2026,1,aba,131,1,02:33,153,,,away,91,25,4520,MEDAREVIĆ V,substitution (in),substitution,in
+6,2026,1,aba,132,1,02:24,144,,,away,91,4,2983,DROBNJAK I,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,133,1,02:19,139,,,away,91,,5122,HANLAN O,rebound (offensive),rebound,offensive
+6,2026,1,aba,134,1,02:14,134,,,away,91,,2667,MOMIROV S,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,135,1,02:10,130,,,away,91,22,2640,ILIĆ D,rebound (offensive),rebound,offensive
+6,2026,1,aba,136,1,02:10,130,,,away,91,22,2640,ILIĆ D,missed 2 points (tip inlayup),missed 2 points,tip inlayup
+6,2026,1,aba,137,1,02:10,130,,,away,91,22,2640,ILIĆ D,rebound (offensive),rebound,offensive
+6,2026,1,aba,138,1,02:10,130,,,home,12,,5140,THOMPSON J,foul (personal),foul,personal
+6,2026,1,aba,139,1,02:10,130,,,away,91,22,2640,ILIĆ D,foul on,foul on,
+6,2026,1,aba,140,1,02:10,130,,,away,91,22,2640,ILIĆ D,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,141,1,02:10,130,,,away,91,22,2640,ILIĆ D,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,142,1,02:10,130,,,home,12,10,2627,TANASKOVIĆ N,rebound (defensive),rebound,defensive
+6,2026,1,aba,143,1,01:53,113,,,home,12,,5140,THOMPSON J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,144,1,01:50,110,,,home,12,,5140,THOMPSON J,rebound (offensive),rebound,offensive
+6,2026,1,aba,145,1,01:48,108,26,14,home,12,,5140,THOMPSON J,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,146,1,01:34,94,,,away,91,22,2640,ILIĆ D,substitution (out),substitution,out
+6,2026,1,aba,147,1,01:34,94,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,148,1,01:30,90,,,home,12,11,4104,FERRELL JR K,foul (personal),foul,personal
+6,2026,1,aba,149,1,01:30,90,,,away,91,4,2983,DROBNJAK I,foul on,foul on,
+6,2026,1,aba,150,1,01:30,90,26,15,away,91,4,2983,DROBNJAK I,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,151,1,01:30,90,26,16,away,91,4,2983,DROBNJAK I,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,152,1,01:11,71,,,home,12,10,2627,TANASKOVIĆ N,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,153,1,01:08,68,,,away,91,4,2983,DROBNJAK I,rebound (defensive),rebound,defensive
+6,2026,1,aba,154,1,01:06,66,26,18,away,91,25,4520,MEDAREVIĆ V,made 2 points (dunk),made 2 points,dunk
+6,2026,1,aba,155,1,01:06,66,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,156,1,00:56,56,29,18,home,12,,5117,MAYS S,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,157,1,00:43,43,,,away,91,,5111,THOMPSON S,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,158,1,00:43,43,,,home,12,13,3750,JOVANOVIĆ Đ,block,block,
+6,2026,1,aba,159,1,00:35,35,,,home,12,,5140,THOMPSON J,rebound (defensive),rebound,defensive
+6,2026,1,aba,160,1,00:32,32,,,home,12,11,4104,FERRELL JR K,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,161,1,00:29,29,,,home,12,11,4104,FERRELL JR K,rebound (offensive),rebound,offensive
+6,2026,1,aba,162,1,00:28,28,,,home,12,11,4104,FERRELL JR K,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,163,1,00:24,24,,,home,12,10,2627,TANASKOVIĆ N,rebound (offensive),rebound,offensive
+6,2026,1,aba,164,1,00:23,23,31,18,home,12,10,2627,TANASKOVIĆ N,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,165,1,00:03,3,31,21,away,91,,5122,HANLAN O,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,166,1,,,,,,,,,,end of 1. quarter,end of 1. quarter,
+6,2026,1,aba,167,2,10:00,600,,,away,91,4,2983,DROBNJAK I,substitution (out),substitution,out
+6,2026,1,aba,168,2,10:00,600,,,away,91,44,2312,REBIĆ N,substitution (in),substitution,in
+6,2026,1,aba,169,2,,,,,,,,,,start of 2. quarter,start of 2. quarter,
+6,2026,1,aba,170,2,09:42,582,,,away,91,,5122,HANLAN O,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,171,2,09:42,582,,,home,12,11,4104,FERRELL JR K,steal,steal,
+6,2026,1,aba,172,2,09:18,558,,,home,,,,,(24sec),,24sec
+6,2026,1,aba,173,2,08:59,539,31,23,away,91,,5122,HANLAN O,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,174,2,08:59,539,,,away,91,,2667,MOMIROV S,assist,assist,
+6,2026,1,aba,175,2,08:36,516,,,home,12,,5140,THOMPSON J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,176,2,08:34,514,,,home,,,,,(offensive),,offensive
+6,2026,1,aba,177,2,08:34,514,,,home,12,11,4104,FERRELL JR K,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,178,2,08:34,514,,,home,12,10,2627,TANASKOVIĆ N,rebound (offensive),rebound,offensive
+6,2026,1,aba,179,2,08:34,514,,,away,91,25,4520,MEDAREVIĆ V,foul (personal),foul,personal
+6,2026,1,aba,180,2,08:34,514,,,home,12,10,2627,TANASKOVIĆ N,foul on,foul on,
+6,2026,1,aba,181,2,08:34,514,,,home,12,10,2627,TANASKOVIĆ N,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,182,2,08:34,514,32,23,home,12,10,2627,TANASKOVIĆ N,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,183,2,08:23,503,32,26,away,91,,2667,MOMIROV S,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,184,2,08:23,503,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,185,2,08:21,501,,,home,12,,,,Timeout,Timeout,
+6,2026,1,aba,186,2,08:05,485,,,home,12,13,3750,JOVANOVIĆ Đ,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,187,2,08:02,482,,,away,91,44,2312,REBIĆ N,rebound (defensive),rebound,defensive
+6,2026,1,aba,188,2,07:55,475,,,home,12,13,3750,JOVANOVIĆ Đ,foul (personal),foul,personal
+6,2026,1,aba,189,2,07:55,475,,,away,91,25,4520,MEDAREVIĆ V,foul on,foul on,
+6,2026,1,aba,190,2,07:44,464,32,29,away,91,25,4520,MEDAREVIĆ V,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,191,2,07:44,464,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,192,2,07:24,444,,,home,12,11,4104,FERRELL JR K,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,193,2,07:21,441,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,194,2,07:14,434,,,away,91,,5111,THOMPSON S,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,195,2,07:11,431,,,away,91,,5111,THOMPSON S,rebound (offensive),rebound,offensive
+6,2026,1,aba,196,2,07:10,430,,,away,91,,5111,THOMPSON S,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,197,2,07:06,426,,,home,12,,5117,MAYS S,rebound (defensive),rebound,defensive
+6,2026,1,aba,198,2,06:58,418,34,29,home,12,,5117,MAYS S,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,199,2,06:39,399,,,home,12,10,2627,TANASKOVIĆ N,foul (personal),foul,personal
+6,2026,1,aba,200,2,06:39,399,,,away,91,25,4520,MEDAREVIĆ V,foul on,foul on,
+6,2026,1,aba,201,2,06:39,399,,,home,12,10,2627,TANASKOVIĆ N,substitution (out),substitution,out
+6,2026,1,aba,202,2,06:39,399,,,home,12,11,4104,FERRELL JR K,substitution (out),substitution,out
+6,2026,1,aba,203,2,06:39,399,,,home,12,13,3750,JOVANOVIĆ Đ,substitution (out),substitution,out
+6,2026,1,aba,204,2,06:39,399,,,home,12,,4769,SULAIMON R,substitution (in),substitution,in
+6,2026,1,aba,205,2,06:39,399,,,home,12,15,4781,MORGAN J,substitution (in),substitution,in
+6,2026,1,aba,206,2,06:39,399,,,home,12,50,5072,KOVLIAR O,substitution (in),substitution,in
+6,2026,1,aba,207,2,06:39,399,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,208,2,06:39,399,,,away,91,22,2640,ILIĆ D,substitution (in),substitution,in
+6,2026,1,aba,209,2,06:32,392,,,away,91,,5122,HANLAN O,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,210,2,06:28,388,,,home,12,15,4781,MORGAN J,rebound (defensive),rebound,defensive
+6,2026,1,aba,211,2,06:13,373,,,home,12,,4769,SULAIMON R,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,212,2,06:10,370,,,away,91,22,2640,ILIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,213,2,05:47,347,,,away,91,,5122,HANLAN O,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,214,2,05:43,343,,,home,12,,5117,MAYS S,rebound (defensive),rebound,defensive
+6,2026,1,aba,215,2,05:31,331,36,29,home,12,15,4781,MORGAN J,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,216,2,05:31,331,,,home,12,,5117,MAYS S,assist,assist,
+6,2026,1,aba,217,2,04:54,294,36,32,away,91,,2667,MOMIROV S,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,218,2,04:54,294,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,219,2,04:46,286,,,home,12,,5117,MAYS S,substitution (out),substitution,out
+6,2026,1,aba,220,2,04:46,286,,,home,12,,5140,THOMPSON J,substitution (out),substitution,out
+6,2026,1,aba,221,2,04:46,286,,,home,12,3,3737,MAGEE F,substitution (in),substitution,in
+6,2026,1,aba,222,2,04:46,286,,,home,12,16,5053,BOUTSIELE J,substitution (in),substitution,in
+6,2026,1,aba,223,2,04:46,286,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,224,2,04:46,286,,,away,91,25,4520,MEDAREVIĆ V,substitution (out),substitution,out
+6,2026,1,aba,225,2,04:46,286,,,away,91,11,5110,KENNEDY K,substitution (in),substitution,in
+6,2026,1,aba,226,2,04:46,286,,,away,91,34,2112,NIKOLIĆ D,substitution (in),substitution,in
+6,2026,1,aba,227,2,04:46,286,,,away,91,,2667,MOMIROV S,substitution (out),substitution,out
+6,2026,1,aba,228,2,04:46,286,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,229,2,04:38,278,,,home,12,16,5053,BOUTSIELE J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,230,2,04:33,273,,,home,12,15,4781,MORGAN J,rebound (offensive),rebound,offensive
+6,2026,1,aba,231,2,04:33,273,,,home,12,15,4781,MORGAN J,missed 2 points (tip inlayup),missed 2 points,tip inlayup
+6,2026,1,aba,232,2,04:32,272,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,233,2,04:26,266,36,34,away,91,34,2112,NIKOLIĆ D,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,234,2,04:26,266,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,235,2,04:03,243,,,home,12,50,5072,KOVLIAR O,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,236,2,04:01,241,,,home,12,16,5053,BOUTSIELE J,rebound (offensive),rebound,offensive
+6,2026,1,aba,237,2,04:01,241,,,away,91,22,2640,ILIĆ D,foul (personal),foul,personal
+6,2026,1,aba,238,2,04:01,241,,,home,12,16,5053,BOUTSIELE J,foul on,foul on,
+6,2026,1,aba,239,2,04:01,241,,,away,91,22,2640,ILIĆ D,substitution (out),substitution,out
+6,2026,1,aba,240,2,04:01,241,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,241,2,03:47,227,,,home,12,15,4781,MORGAN J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,242,2,03:47,227,,,away,91,,5111,THOMPSON S,block,block,
+6,2026,1,aba,243,2,03:40,220,,,away,91,44,2312,REBIĆ N,rebound (defensive),rebound,defensive
+6,2026,1,aba,244,2,03:39,219,,,away,91,34,2112,NIKOLIĆ D,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,245,2,03:35,215,,,home,12,,4769,SULAIMON R,rebound (defensive),rebound,defensive
+6,2026,1,aba,246,2,03:34,214,,,home,12,,4769,SULAIMON R,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,247,2,03:33,213,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,248,2,03:33,213,,,home,12,3,3737,MAGEE F,foul (personal),foul,personal
+6,2026,1,aba,249,2,03:33,213,,,away,91,,5122,HANLAN O,foul on,foul on,
+6,2026,1,aba,250,2,03:13,193,36,36,away,91,,5111,THOMPSON S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,251,2,03:13,193,,,away,91,11,5110,KENNEDY K,assist,assist,
+6,2026,1,aba,252,2,03:08,188,,,home,12,,,,Timeout,Timeout,
+6,2026,1,aba,253,2,03:08,188,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,254,2,03:08,188,,,away,91,,2667,MOMIROV S,substitution (in),substitution,in
+6,2026,1,aba,255,2,02:51,171,,,home,12,16,5053,BOUTSIELE J,turnover (travel),turnover,travel
+6,2026,1,aba,256,2,02:33,153,36,38,away,91,,5111,THOMPSON S,made 2 points (turnaroundjump shot),made 2 points,turnaroundjump shot
+6,2026,1,aba,257,2,02:16,136,,,home,12,50,5072,KOVLIAR O,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,258,2,02:12,132,,,away,91,,2667,MOMIROV S,rebound (defensive),rebound,defensive
+6,2026,1,aba,259,2,02:04,124,,,away,91,,5111,THOMPSON S,turnover (outofbounds),turnover,outofbounds
+6,2026,1,aba,260,2,01:54,114,38,38,home,12,50,5072,KOVLIAR O,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,261,2,01:54,114,,,away,91,44,2312,REBIĆ N,foul (personal),foul,personal
+6,2026,1,aba,262,2,01:54,114,,,home,12,50,5072,KOVLIAR O,foul on,foul on,
+6,2026,1,aba,263,2,01:54,114,,,away,91,44,2312,REBIĆ N,substitution (out),substitution,out
+6,2026,1,aba,264,2,01:54,114,,,away,91,4,2983,DROBNJAK I,substitution (in),substitution,in
+6,2026,1,aba,265,2,01:54,114,,,home,12,50,5072,KOVLIAR O,missed free throw (1of1),missed free throw,1of1
+6,2026,1,aba,266,2,01:54,114,,,away,,,,,(defensive),,defensive
+6,2026,1,aba,267,2,01:35,95,,,home,12,16,5053,BOUTSIELE J,foul (personal),foul,personal
+6,2026,1,aba,268,2,01:35,95,,,away,91,4,2983,DROBNJAK I,foul on,foul on,
+6,2026,1,aba,269,2,01:26,86,,,away,91,,2667,MOMIROV S,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,270,2,01:23,83,,,home,12,50,5072,KOVLIAR O,rebound (defensive),rebound,defensive
+6,2026,1,aba,271,2,01:03,63,,,away,91,34,2112,NIKOLIĆ D,foul (personal),foul,personal
+6,2026,1,aba,272,2,01:03,63,,,home,12,15,4781,MORGAN J,foul on,foul on,
+6,2026,1,aba,273,2,01:03,63,,,away,91,,2667,MOMIROV S,substitution (out),substitution,out
+6,2026,1,aba,274,2,01:03,63,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,275,2,01:03,63,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,276,2,01:03,63,,,away,91,25,4520,MEDAREVIĆ V,substitution (in),substitution,in
+6,2026,1,aba,277,2,01:03,63,,,home,12,16,5053,BOUTSIELE J,substitution (out),substitution,out
+6,2026,1,aba,278,2,01:03,63,,,home,12,,5140,THOMPSON J,substitution (in),substitution,in
+6,2026,1,aba,279,2,01:03,63,39,38,home,12,15,4781,MORGAN J,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,280,2,01:03,63,40,38,home,12,15,4781,MORGAN J,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,281,2,00:47,47,,,away,91,25,4520,MEDAREVIĆ V,turnover (outofbounds),turnover,outofbounds
+6,2026,1,aba,282,2,00:31,31,,,away,91,4,2983,DROBNJAK I,foul (personal),foul,personal
+6,2026,1,aba,283,2,00:31,31,,,home,12,,5140,THOMPSON J,foul on,foul on,
+6,2026,1,aba,284,2,00:31,31,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,285,2,00:31,31,,,home,12,3,3737,MAGEE F,substitution (out),substitution,out
+6,2026,1,aba,286,2,00:31,31,,,home,12,7,2482,SLAVKOVIĆ A,substitution (in),substitution,in
+6,2026,1,aba,287,2,00:31,31,41,38,home,12,,5140,THOMPSON J,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,288,2,00:31,31,42,38,home,12,,5140,THOMPSON J,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,289,2,00:10,10,42,40,away,91,25,4520,MEDAREVIĆ V,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,290,2,00:00,0,45,40,home,12,,4769,SULAIMON R,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,291,2,,,,,,,,,,end of 2. quarter,end of 2. quarter,
+6,2026,1,aba,292,3,10:00,600,,,home,12,7,2482,SLAVKOVIĆ A,substitution (out),substitution,out
+6,2026,1,aba,293,3,10:00,600,,,home,12,83,5073,BOUTEILLE A,substitution (in),substitution,in
+6,2026,1,aba,294,3,10:00,600,,,away,91,4,2983,DROBNJAK I,substitution (out),substitution,out
+6,2026,1,aba,295,3,10:00,600,,,away,91,11,5110,KENNEDY K,substitution (out),substitution,out
+6,2026,1,aba,296,3,10:00,600,,,away,91,34,2112,NIKOLIĆ D,substitution (out),substitution,out
+6,2026,1,aba,297,3,10:00,600,,,away,91,13,2982,CEROVINA L,substitution (in),substitution,in
+6,2026,1,aba,298,3,10:00,600,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,299,3,10:00,600,,,away,91,44,2312,REBIĆ N,substitution (in),substitution,in
+6,2026,1,aba,300,3,,,,,,,,,,start of 3. quarter,start of 3. quarter,
+6,2026,1,aba,301,3,09:38,578,45,42,away,91,,5111,THOMPSON S,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,302,3,09:38,578,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,303,3,09:12,552,,,home,12,83,5073,BOUTEILLE A,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,304,3,09:08,548,,,away,91,25,4520,MEDAREVIĆ V,rebound (defensive),rebound,defensive
+6,2026,1,aba,305,3,08:54,534,45,44,away,91,44,2312,REBIĆ N,made 2 points (drivinglayup),made 2 points,drivinglayup
+6,2026,1,aba,306,3,08:54,534,,,home,12,,5140,THOMPSON J,foul (personal),foul,personal
+6,2026,1,aba,307,3,08:54,534,,,away,91,44,2312,REBIĆ N,foul on,foul on,
+6,2026,1,aba,308,3,08:54,534,,,away,91,44,2312,REBIĆ N,missed free throw (1of1),missed free throw,1of1
+6,2026,1,aba,309,3,08:54,534,,,home,12,83,5073,BOUTEILLE A,rebound (defensive),rebound,defensive
+6,2026,1,aba,310,3,08:42,522,,,away,91,,5122,HANLAN O,foul (personal),foul,personal
+6,2026,1,aba,311,3,08:42,522,,,home,12,,5140,THOMPSON J,foul on,foul on,
+6,2026,1,aba,312,3,08:40,520,,,home,12,,4769,SULAIMON R,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,313,3,08:36,516,,,home,12,15,4781,MORGAN J,rebound (offensive),rebound,offensive
+6,2026,1,aba,314,3,08:35,515,47,44,home,12,15,4781,MORGAN J,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,315,3,08:31,511,,,home,12,50,5072,KOVLIAR O,foul (personal),foul,personal
+6,2026,1,aba,316,3,08:31,511,,,away,91,44,2312,REBIĆ N,foul on,foul on,
+6,2026,1,aba,317,3,08:15,495,,,away,91,44,2312,REBIĆ N,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,318,3,08:11,491,,,away,91,,5111,THOMPSON S,rebound (offensive),rebound,offensive
+6,2026,1,aba,319,3,08:10,490,47,46,away,91,,5111,THOMPSON S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,320,3,07:58,478,,,home,12,,4769,SULAIMON R,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,321,3,07:58,478,,,home,12,,5140,THOMPSON J,substitution (out),substitution,out
+6,2026,1,aba,322,3,07:58,478,,,home,12,16,5053,BOUTSIELE J,substitution (in),substitution,in
+6,2026,1,aba,323,3,07:43,463,,,away,91,25,4520,MEDAREVIĆ V,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,324,3,07:39,459,,,home,12,,4769,SULAIMON R,rebound (defensive),rebound,defensive
+6,2026,1,aba,325,3,07:38,458,,,away,91,13,2982,CEROVINA L,foul (personal),foul,personal
+6,2026,1,aba,326,3,07:38,458,,,home,12,,4769,SULAIMON R,foul on,foul on,
+6,2026,1,aba,327,3,07:26,446,,,home,12,,4769,SULAIMON R,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,328,3,07:21,441,,,home,12,,4769,SULAIMON R,rebound (offensive),rebound,offensive
+6,2026,1,aba,329,3,07:20,440,49,46,home,12,,4769,SULAIMON R,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,330,3,07:06,426,,,away,91,,5122,HANLAN O,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,331,3,06:55,415,,,home,12,15,4781,MORGAN J,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,332,3,06:51,411,,,away,91,25,4520,MEDAREVIĆ V,rebound (defensive),rebound,defensive
+6,2026,1,aba,333,3,06:40,400,,,away,91,,5111,THOMPSON S,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,334,3,06:40,400,,,home,12,16,5053,BOUTSIELE J,block,block,
+6,2026,1,aba,335,3,06:36,396,,,home,12,16,5053,BOUTSIELE J,rebound (defensive),rebound,defensive
+6,2026,1,aba,336,3,06:34,394,51,46,home,12,16,5053,BOUTSIELE J,made 2 points (dunk),made 2 points,dunk
+6,2026,1,aba,337,3,06:34,394,,,home,12,50,5072,KOVLIAR O,assist,assist,
+6,2026,1,aba,338,3,06:09,369,,,away,91,,5111,THOMPSON S,turnover (ballhandling),turnover,ballhandling
+6,2026,1,aba,339,3,06:07,367,,,away,91,25,4520,MEDAREVIĆ V,substitution (out),substitution,out
+6,2026,1,aba,340,3,06:07,367,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,341,3,06:07,367,,,away,91,22,2640,ILIĆ D,substitution (in),substitution,in
+6,2026,1,aba,342,3,06:07,367,,,away,91,34,2112,NIKOLIĆ D,substitution (in),substitution,in
+6,2026,1,aba,343,3,05:54,354,,,home,12,83,5073,BOUTEILLE A,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,344,3,05:54,354,,,away,91,22,2640,ILIĆ D,steal,steal,
+6,2026,1,aba,345,3,05:43,343,51,49,away,91,44,2312,REBIĆ N,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,346,3,05:43,343,,,away,91,13,2982,CEROVINA L,assist,assist,
+6,2026,1,aba,347,3,05:29,329,54,49,home,12,50,5072,KOVLIAR O,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,348,3,05:12,312,,,home,12,50,5072,KOVLIAR O,foul (personal),foul,personal
+6,2026,1,aba,349,3,05:12,312,,,away,91,22,2640,ILIĆ D,foul on,foul on,
+6,2026,1,aba,350,3,05:12,312,,,home,12,83,5073,BOUTEILLE A,substitution (out),substitution,out
+6,2026,1,aba,351,3,05:12,312,,,home,12,13,3750,JOVANOVIĆ Đ,substitution (in),substitution,in
+6,2026,1,aba,352,3,05:12,312,,,away,91,22,2640,ILIĆ D,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,353,3,05:12,312,54,50,away,91,22,2640,ILIĆ D,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,354,3,05:12,312,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,355,3,05:12,312,,,home,12,50,5072,KOVLIAR O,substitution (out),substitution,out
+6,2026,1,aba,356,3,05:12,312,,,home,12,11,4104,FERRELL JR K,substitution (in),substitution,in
+6,2026,1,aba,357,3,04:55,295,,,,,,,,timeout - officials,timeout - officials,
+6,2026,1,aba,358,3,04:55,295,,,home,,,,,(heldball),,heldball
+6,2026,1,aba,359,3,04:49,289,,,home,12,11,4104,FERRELL JR K,missed 2 points (turnaroundjump shot),missed 2 points,turnaroundjump shot
+6,2026,1,aba,360,3,04:45,285,,,away,91,44,2312,REBIĆ N,rebound (defensive),rebound,defensive
+6,2026,1,aba,361,3,04:34,274,,,away,91,34,2112,NIKOLIĆ D,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,362,3,04:30,270,,,home,12,16,5053,BOUTSIELE J,rebound (defensive),rebound,defensive
+6,2026,1,aba,363,3,04:16,256,56,50,home,12,11,4104,FERRELL JR K,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,364,3,04:00,240,,,away,91,13,2982,CEROVINA L,turnover (ballhandling),turnover,ballhandling
+6,2026,1,aba,365,3,04:00,240,,,home,12,,4769,SULAIMON R,steal,steal,
+6,2026,1,aba,366,3,03:57,237,,,away,91,22,2640,ILIĆ D,foul (personal),foul,personal
+6,2026,1,aba,367,3,03:57,237,,,home,12,,4769,SULAIMON R,foul on,foul on,
+6,2026,1,aba,368,3,03:57,237,,,home,12,,4769,SULAIMON R,substitution (out),substitution,out
+6,2026,1,aba,369,3,03:57,237,,,home,12,15,4781,MORGAN J,substitution (out),substitution,out
+6,2026,1,aba,370,3,03:57,237,,,home,12,,5117,MAYS S,substitution (in),substitution,in
+6,2026,1,aba,371,3,03:57,237,,,home,12,10,2627,TANASKOVIĆ N,substitution (in),substitution,in
+6,2026,1,aba,372,3,03:57,237,,,away,91,22,2640,ILIĆ D,substitution (out),substitution,out
+6,2026,1,aba,373,3,03:57,237,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,374,3,03:57,237,,,away,91,13,2982,CEROVINA L,substitution (out),substitution,out
+6,2026,1,aba,375,3,03:57,237,,,away,91,11,5110,KENNEDY K,substitution (in),substitution,in
+6,2026,1,aba,376,3,03:47,227,,,home,12,10,2627,TANASKOVIĆ N,turnover (ballhandling),turnover,ballhandling
+6,2026,1,aba,377,3,03:47,227,,,away,91,,5111,THOMPSON S,steal,steal,
+6,2026,1,aba,378,3,03:33,213,,,away,91,34,2112,NIKOLIĆ D,turnover (outofbounds),turnover,outofbounds
+6,2026,1,aba,379,3,03:33,213,,,away,91,44,2312,REBIĆ N,substitution (out),substitution,out
+6,2026,1,aba,380,3,03:33,213,,,away,91,4,2983,DROBNJAK I,substitution (in),substitution,in
+6,2026,1,aba,381,3,03:08,188,,,home,12,,5117,MAYS S,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,382,3,03:03,183,,,away,91,4,2983,DROBNJAK I,rebound (defensive),rebound,defensive
+6,2026,1,aba,383,3,03:00,180,56,53,away,91,,5122,HANLAN O,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,384,3,03:00,180,,,away,91,4,2983,DROBNJAK I,assist,assist,
+6,2026,1,aba,385,3,02:44,164,,,away,91,,5122,HANLAN O,foul (personal),foul,personal
+6,2026,1,aba,386,3,02:44,164,,,home,12,16,5053,BOUTSIELE J,foul on,foul on,
+6,2026,1,aba,387,3,02:44,164,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,388,3,02:44,164,,,away,91,,2667,MOMIROV S,substitution (in),substitution,in
+6,2026,1,aba,389,3,02:35,155,,,home,12,11,4104,FERRELL JR K,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,390,3,02:32,152,,,home,12,16,5053,BOUTSIELE J,rebound (offensive),rebound,offensive
+6,2026,1,aba,391,3,02:22,142,,,home,12,,5117,MAYS S,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,392,3,02:17,137,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,393,3,02:12,132,56,55,away,91,,5111,THOMPSON S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,394,3,02:12,132,,,away,91,4,2983,DROBNJAK I,assist,assist,
+6,2026,1,aba,395,3,01:54,114,,,away,91,4,2983,DROBNJAK I,foul (personal),foul,personal
+6,2026,1,aba,396,3,01:54,114,,,home,12,11,4104,FERRELL JR K,foul on,foul on,
+6,2026,1,aba,397,3,01:54,114,,,home,12,13,3750,JOVANOVIĆ Đ,substitution (out),substitution,out
+6,2026,1,aba,398,3,01:54,114,,,home,12,3,3737,MAGEE F,substitution (in),substitution,in
+6,2026,1,aba,399,3,01:54,114,57,55,home,12,11,4104,FERRELL JR K,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,400,3,01:54,114,58,55,home,12,11,4104,FERRELL JR K,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,401,3,01:35,95,58,57,away,91,,2667,MOMIROV S,made 2 points (drivinglayup),made 2 points,drivinglayup
+6,2026,1,aba,402,3,01:35,95,,,away,91,4,2983,DROBNJAK I,assist,assist,
+6,2026,1,aba,403,3,01:18,78,,,home,12,3,3737,MAGEE F,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,404,3,01:18,78,,,away,91,,5111,THOMPSON S,block,block,
+6,2026,1,aba,405,3,01:13,73,,,away,91,4,2983,DROBNJAK I,rebound (defensive),rebound,defensive
+6,2026,1,aba,406,3,01:10,70,58,59,away,91,4,2983,DROBNJAK I,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,407,3,01:10,70,,,away,91,,2667,MOMIROV S,assist,assist,
+6,2026,1,aba,408,3,01:10,70,,,home,12,16,5053,BOUTSIELE J,foul (personal),foul,personal
+6,2026,1,aba,409,3,01:10,70,,,away,91,4,2983,DROBNJAK I,foul on,foul on,
+6,2026,1,aba,410,3,01:10,70,,,home,12,3,3737,MAGEE F,substitution (out),substitution,out
+6,2026,1,aba,411,3,01:10,70,,,home,12,,4769,SULAIMON R,substitution (in),substitution,in
+6,2026,1,aba,412,3,01:10,70,,,away,91,4,2983,DROBNJAK I,missed free throw (1of1),missed free throw,1of1
+6,2026,1,aba,413,3,01:10,70,,,home,12,,5117,MAYS S,rebound (defensive),rebound,defensive
+6,2026,1,aba,414,3,01:02,62,60,59,home,12,,5117,MAYS S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,415,3,00:37,37,,,away,91,4,2983,DROBNJAK I,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,416,3,00:33,33,,,home,12,,5117,MAYS S,rebound (defensive),rebound,defensive
+6,2026,1,aba,417,3,00:09,9,63,59,home,12,11,4104,FERRELL JR K,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,418,3,00:09,9,,,home,12,,5117,MAYS S,assist,assist,
+6,2026,1,aba,419,3,,,,,,,,,,end of 3. quarter,end of 3. quarter,
+6,2026,1,aba,420,4,,,,,,,,,,start of 4. quarter,start of 4. quarter,
+6,2026,1,aba,421,4,09:33,573,,,home,12,16,5053,BOUTSIELE J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,422,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,rebound (offensive),rebound,offensive
+6,2026,1,aba,423,4,09:32,572,,,away,91,4,2983,DROBNJAK I,foul (personal),foul,personal
+6,2026,1,aba,424,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,foul on,foul on,
+6,2026,1,aba,425,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,426,4,09:32,572,,,home,12,10,2627,TANASKOVIĆ N,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,427,4,09:32,572,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,428,4,09:21,561,,,away,91,11,5110,KENNEDY K,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,429,4,09:21,561,,,home,12,,5117,MAYS S,steal,steal,
+6,2026,1,aba,430,4,09:16,556,,,away,91,11,5110,KENNEDY K,foul (personal),foul,personal
+6,2026,1,aba,431,4,09:16,556,,,home,12,11,4104,FERRELL JR K,foul on,foul on,
+6,2026,1,aba,432,4,09:09,549,,,home,12,,4769,SULAIMON R,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,433,4,09:09,549,,,away,91,34,2112,NIKOLIĆ D,steal,steal,
+6,2026,1,aba,434,4,09:02,542,,,away,91,34,2112,NIKOLIĆ D,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,435,4,08:58,538,,,away,91,,5111,THOMPSON S,rebound (offensive),rebound,offensive
+6,2026,1,aba,436,4,08:47,527,,,away,91,,2667,MOMIROV S,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,437,4,08:43,523,,,home,12,11,4104,FERRELL JR K,rebound (defensive),rebound,defensive
+6,2026,1,aba,438,4,08:37,517,,,home,12,11,4104,FERRELL JR K,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,439,4,08:33,513,,,away,91,11,5110,KENNEDY K,rebound (defensive),rebound,defensive
+6,2026,1,aba,440,4,08:16,496,63,61,away,91,34,2112,NIKOLIĆ D,made 2 points (turnaroundjump shot),made 2 points,turnaroundjump shot
+6,2026,1,aba,441,4,08:03,483,,,home,12,11,4104,FERRELL JR K,substitution (out),substitution,out
+6,2026,1,aba,442,4,08:03,483,,,home,12,50,5072,KOVLIAR O,substitution (in),substitution,in
+6,2026,1,aba,443,4,07:53,473,,,home,12,,4769,SULAIMON R,missed 2 points (drivinglayup),missed 2 points,drivinglayup
+6,2026,1,aba,444,4,07:48,468,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,445,4,07:42,462,,,away,91,,5111,THOMPSON S,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,446,4,07:39,459,,,home,12,16,5053,BOUTSIELE J,rebound (defensive),rebound,defensive
+6,2026,1,aba,447,4,07:18,438,,,home,12,50,5072,KOVLIAR O,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,448,4,07:18,438,,,away,91,4,2983,DROBNJAK I,steal,steal,
+6,2026,1,aba,449,4,07:13,433,63,64,away,91,11,5110,KENNEDY K,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,450,4,07:13,433,,,away,91,,2667,MOMIROV S,assist,assist,
+6,2026,1,aba,451,4,07:11,431,,,home,12,,,,Timeout,Timeout,
+6,2026,1,aba,452,4,07:11,431,,,home,12,,4769,SULAIMON R,substitution (out),substitution,out
+6,2026,1,aba,453,4,07:11,431,,,home,12,3,3737,MAGEE F,substitution (in),substitution,in
+6,2026,1,aba,454,4,06:58,418,66,64,home,12,,5117,MAYS S,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,455,4,06:58,418,,,home,12,50,5072,KOVLIAR O,assist,assist,
+6,2026,1,aba,456,4,06:36,396,,,away,91,,5111,THOMPSON S,turnover (travel),turnover,travel
+6,2026,1,aba,457,4,06:36,396,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,458,4,06:36,396,,,away,91,22,2640,ILIĆ D,substitution (in),substitution,in
+6,2026,1,aba,459,4,06:25,385,68,64,home,12,16,5053,BOUTSIELE J,made 2 points (dunk),made 2 points,dunk
+6,2026,1,aba,460,4,06:25,385,,,home,12,50,5072,KOVLIAR O,assist,assist,
+6,2026,1,aba,461,4,06:22,382,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,462,4,06:22,382,,,away,91,,2667,MOMIROV S,substitution (out),substitution,out
+6,2026,1,aba,463,4,06:22,382,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,464,4,06:09,369,68,66,away,91,22,2640,ILIĆ D,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,465,4,06:09,369,,,away,91,4,2983,DROBNJAK I,assist,assist,
+6,2026,1,aba,466,4,05:54,354,,,away,91,4,2983,DROBNJAK I,foul (personal),foul,personal
+6,2026,1,aba,467,4,05:54,354,,,home,12,16,5053,BOUTSIELE J,foul on,foul on,
+6,2026,1,aba,468,4,05:54,354,,,away,91,4,2983,DROBNJAK I,substitution (out),substitution,out
+6,2026,1,aba,469,4,05:54,354,,,away,91,44,2312,REBIĆ N,substitution (in),substitution,in
+6,2026,1,aba,470,4,05:54,354,69,66,home,12,16,5053,BOUTSIELE J,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,471,4,05:54,354,,,home,12,50,5072,KOVLIAR O,assist,assist,
+6,2026,1,aba,472,4,05:54,354,70,66,home,12,16,5053,BOUTSIELE J,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,473,4,05:45,345,70,68,away,91,22,2640,ILIĆ D,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,474,4,05:45,345,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,475,4,05:33,333,72,68,home,12,16,5053,BOUTSIELE J,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,476,4,05:33,333,,,home,12,50,5072,KOVLIAR O,assist,assist,
+6,2026,1,aba,477,4,05:14,314,,,away,91,44,2312,REBIĆ N,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,478,4,04:58,298,75,68,home,12,3,3737,MAGEE F,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,479,4,04:58,298,,,home,12,16,5053,BOUTSIELE J,assist,assist,
+6,2026,1,aba,480,4,04:41,281,,,away,91,,5122,HANLAN O,missed 2 points (drivinglayup),missed 2 points,drivinglayup
+6,2026,1,aba,481,4,04:41,281,,,home,12,16,5053,BOUTSIELE J,block,block,
+6,2026,1,aba,482,4,04:41,281,,,away,,,,,(offensive),,offensive
+6,2026,1,aba,483,4,04:31,271,75,71,away,91,44,2312,REBIĆ N,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,484,4,04:31,271,,,away,91,11,5110,KENNEDY K,assist,assist,
+6,2026,1,aba,485,4,04:12,252,78,71,home,12,50,5072,KOVLIAR O,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,486,4,04:12,252,,,home,12,,5117,MAYS S,assist,assist,
+6,2026,1,aba,487,4,03:50,230,78,74,away,91,44,2312,REBIĆ N,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,488,4,03:50,230,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,489,4,03:32,212,,,away,91,22,2640,ILIĆ D,foul (personal),foul,personal
+6,2026,1,aba,490,4,03:32,212,,,home,12,,5117,MAYS S,foul on,foul on,
+6,2026,1,aba,491,4,03:32,212,,,away,91,22,2640,ILIĆ D,substitution (out),substitution,out
+6,2026,1,aba,492,4,03:32,212,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,493,4,03:32,212,,,home,12,16,5053,BOUTSIELE J,substitution (out),substitution,out
+6,2026,1,aba,494,4,03:32,212,,,home,12,,5140,THOMPSON J,substitution (in),substitution,in
+6,2026,1,aba,495,4,03:32,212,,,home,12,10,2627,TANASKOVIĆ N,substitution (out),substitution,out
+6,2026,1,aba,496,4,03:32,212,,,home,12,15,4781,MORGAN J,substitution (in),substitution,in
+6,2026,1,aba,497,4,03:32,212,,,home,12,,5117,MAYS S,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,498,4,03:32,212,79,74,home,12,,5117,MAYS S,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,499,4,03:32,212,,,home,12,,5117,MAYS S,substitution (out),substitution,out
+6,2026,1,aba,500,4,03:32,212,,,home,12,,4769,SULAIMON R,substitution (in),substitution,in
+6,2026,1,aba,501,4,03:32,212,,,away,91,11,5110,KENNEDY K,substitution (out),substitution,out
+6,2026,1,aba,502,4,03:32,212,,,away,91,,2667,MOMIROV S,substitution (in),substitution,in
+6,2026,1,aba,503,4,03:10,190,,,away,91,,2667,MOMIROV S,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,504,4,03:07,187,,,away,91,,5111,THOMPSON S,rebound (offensive),rebound,offensive
+6,2026,1,aba,505,4,03:06,186,,,home,12,,4769,SULAIMON R,foul (personal),foul,personal
+6,2026,1,aba,506,4,03:06,186,,,away,91,34,2112,NIKOLIĆ D,foul on,foul on,
+6,2026,1,aba,507,4,02:56,176,,,home,12,,5140,THOMPSON J,foul (personal),foul,personal
+6,2026,1,aba,508,4,02:56,176,,,away,91,,5111,THOMPSON S,foul on,foul on,
+6,2026,1,aba,509,4,02:56,176,79,75,away,91,,5111,THOMPSON S,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,510,4,02:56,176,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,511,4,02:56,176,,,away,91,,5111,THOMPSON S,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,512,4,02:56,176,,,away,91,,5111,THOMPSON S,rebound (offensive),rebound,offensive
+6,2026,1,aba,513,4,02:42,162,79,78,away,91,,5122,HANLAN O,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,514,4,02:33,153,,,home,12,50,5072,KOVLIAR O,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,515,4,02:30,150,,,home,12,,5140,THOMPSON J,rebound (offensive),rebound,offensive
+6,2026,1,aba,516,4,02:29,149,,,home,12,,5140,THOMPSON J,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,517,4,02:29,149,,,away,91,,5111,THOMPSON S,block,block,
+6,2026,1,aba,518,4,02:23,143,,,home,12,50,5072,KOVLIAR O,rebound (offensive),rebound,offensive
+6,2026,1,aba,519,4,02:21,141,81,78,home,12,,5140,THOMPSON J,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,520,4,02:21,141,,,home,12,3,3737,MAGEE F,assist,assist,
+6,2026,1,aba,521,4,02:15,135,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,522,4,02:15,135,,,home,12,,5140,THOMPSON J,substitution (out),substitution,out
+6,2026,1,aba,523,4,02:15,135,,,home,12,16,5053,BOUTSIELE J,substitution (in),substitution,in
+6,2026,1,aba,524,4,01:55,115,,,away,91,,5122,HANLAN O,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,525,4,01:52,112,,,home,12,15,4781,MORGAN J,rebound (defensive),rebound,defensive
+6,2026,1,aba,526,4,01:31,91,,,home,12,50,5072,KOVLIAR O,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,527,4,01:27,87,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,528,4,01:12,72,81,80,away,91,34,2112,NIKOLIĆ D,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,529,4,01:12,72,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,530,4,01:08,68,,,home,12,,,,Timeout,Timeout,
+6,2026,1,aba,531,4,01:08,68,,,home,12,3,3737,MAGEE F,substitution (out),substitution,out
+6,2026,1,aba,532,4,01:08,68,,,home,12,,5117,MAYS S,substitution (in),substitution,in
+6,2026,1,aba,533,4,01:08,68,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,534,4,01:08,68,,,away,91,11,5110,KENNEDY K,substitution (in),substitution,in
+6,2026,1,aba,535,4,00:54,54,,,home,12,,4769,SULAIMON R,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,536,4,00:54,54,,,away,91,,2667,MOMIROV S,steal,steal,
+6,2026,1,aba,537,4,00:47,47,81,83,away,91,11,5110,KENNEDY K,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,538,4,00:47,47,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,539,4,00:32,32,,,home,12,,4769,SULAIMON R,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,540,4,00:29,29,,,home,12,15,4781,MORGAN J,rebound (offensive),rebound,offensive
+6,2026,1,aba,541,4,00:28,28,,,home,12,16,5053,BOUTSIELE J,substitution (out),substitution,out
+6,2026,1,aba,542,4,00:28,28,,,home,12,3,3737,MAGEE F,substitution (in),substitution,in
+6,2026,1,aba,543,4,00:28,28,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,544,4,00:28,28,,,away,91,25,4520,MEDAREVIĆ V,substitution (in),substitution,in
+6,2026,1,aba,545,4,00:23,23,83,83,home,12,,5117,MAYS S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,546,4,00:21,21,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,547,4,00:21,21,,,home,12,3,3737,MAGEE F,substitution (out),substitution,out
+6,2026,1,aba,548,4,00:21,21,,,home,12,,5117,MAYS S,substitution (out),substitution,out
+6,2026,1,aba,549,4,00:21,21,,,home,12,10,2627,TANASKOVIĆ N,substitution (in),substitution,in
+6,2026,1,aba,550,4,00:21,21,,,home,12,13,3750,JOVANOVIĆ Đ,substitution (in),substitution,in
+6,2026,1,aba,551,4,00:21,21,,,away,91,11,5110,KENNEDY K,substitution (out),substitution,out
+6,2026,1,aba,552,4,00:21,21,,,away,91,25,4520,MEDAREVIĆ V,substitution (out),substitution,out
+6,2026,1,aba,553,4,00:21,21,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,554,4,00:21,21,,,away,91,,5111,THOMPSON S,substitution (in),substitution,in
+6,2026,1,aba,555,4,00:01,1,,,away,91,34,2112,NIKOLIĆ D,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,556,4,,,,,,,,,,end of 4. quarter,end of 4. quarter,
+6,2026,1,aba,557,5,,,,,,,,,,start of OT1,start of OT1,
+6,2026,1,aba,558,5,04:39,279,,,away,91,,2667,MOMIROV S,foul (personal),foul,personal
+6,2026,1,aba,559,5,04:39,279,,,home,12,50,5072,KOVLIAR O,foul on,foul on,
+6,2026,1,aba,560,5,04:39,279,,,home,12,50,5072,KOVLIAR O,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,561,5,04:39,279,,,home,12,50,5072,KOVLIAR O,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,562,5,04:39,279,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,563,5,04:28,268,83,85,away,91,34,2112,NIKOLIĆ D,made 2 points (jump shot),made 2 points,jump shot
+6,2026,1,aba,564,5,04:28,268,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,565,5,04:09,249,,,home,12,15,4781,MORGAN J,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,566,5,04:05,245,,,away,91,34,2112,NIKOLIĆ D,rebound (defensive),rebound,defensive
+6,2026,1,aba,567,5,04:05,245,,,home,12,13,3750,JOVANOVIĆ Đ,foul (personal),foul,personal
+6,2026,1,aba,568,5,04:05,245,,,away,91,,5122,HANLAN O,foul on,foul on,
+6,2026,1,aba,569,5,04:05,245,,,away,,,,,(freethrow),,freethrow
+6,2026,1,aba,570,5,04:05,245,83,86,away,91,,5122,HANLAN O,made free throw (1 of 3),made free throw,1 of 3
+6,2026,1,aba,571,5,04:05,245,,,away,91,,5122,HANLAN O,missed free throw (2 of 3),missed free throw,2 of 3
+6,2026,1,aba,572,5,04:05,245,83,87,away,91,,5122,HANLAN O,made free throw (3 of 3),made free throw,3 of 3
+6,2026,1,aba,573,5,03:49,229,,,home,12,15,4781,MORGAN J,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,574,5,03:47,227,,,away,,,,,(defensive),,defensive
+6,2026,1,aba,575,5,03:21,201,,,away,91,44,2312,REBIĆ N,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,576,5,03:21,201,,,away,,,,,(24sec),,24sec
+6,2026,1,aba,577,5,03:21,201,,,home,12,10,2627,TANASKOVIĆ N,substitution (out),substitution,out
+6,2026,1,aba,578,5,03:21,201,,,home,12,16,5053,BOUTSIELE J,substitution (in),substitution,in
+6,2026,1,aba,579,5,03:21,201,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,580,5,03:21,201,,,away,91,11,5110,KENNEDY K,substitution (in),substitution,in
+6,2026,1,aba,581,5,03:07,187,,,home,12,,4769,SULAIMON R,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,582,5,03:02,182,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,583,5,03:00,180,,,away,91,,5111,THOMPSON S,turnover (bad pass),turnover,bad pass
+6,2026,1,aba,584,5,03:00,180,,,home,12,,5117,MAYS S,steal,steal,
+6,2026,1,aba,585,5,02:52,172,,,home,12,,5117,MAYS S,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,586,5,02:46,166,,,away,91,,5111,THOMPSON S,rebound (defensive),rebound,defensive
+6,2026,1,aba,587,5,02:45,165,,,away,91,34,2112,NIKOLIĆ D,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,588,5,02:45,165,,,home,12,16,5053,BOUTSIELE J,block,block,
+6,2026,1,aba,589,5,02:42,162,,,away,91,,5111,THOMPSON S,rebound (offensive),rebound,offensive
+6,2026,1,aba,590,5,02:42,162,,,home,12,16,5053,BOUTSIELE J,foul (personal),foul,personal
+6,2026,1,aba,591,5,02:42,162,,,away,91,,5111,THOMPSON S,foul on,foul on,
+6,2026,1,aba,592,5,02:42,162,,,home,12,50,5072,KOVLIAR O,substitution (out),substitution,out
+6,2026,1,aba,593,5,02:42,162,,,home,12,,5117,MAYS S,substitution (in),substitution,in
+6,2026,1,aba,594,5,02:42,162,,,away,91,,2667,MOMIROV S,substitution (out),substitution,out
+6,2026,1,aba,595,5,02:42,162,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,596,5,02:31,151,,,away,91,,5111,THOMPSON S,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,597,5,02:26,146,,,home,12,,4769,SULAIMON R,rebound (defensive),rebound,defensive
+6,2026,1,aba,598,5,02:12,132,,,away,91,34,2112,NIKOLIĆ D,foul (personal),foul,personal
+6,2026,1,aba,599,5,02:12,132,,,home,12,,4769,SULAIMON R,foul on,foul on,
+6,2026,1,aba,600,5,02:12,132,,,home,12,,4769,SULAIMON R,missed free throw (1 of 2),missed free throw,1 of 2
+6,2026,1,aba,601,5,02:12,132,,,home,12,,4769,SULAIMON R,missed free throw (2 of 2),missed free throw,2 of 2
+6,2026,1,aba,602,5,02:12,132,,,away,91,,5122,HANLAN O,rebound (defensive),rebound,defensive
+6,2026,1,aba,603,5,01:57,117,83,89,away,91,,5111,THOMPSON S,made 2 points (layup),made 2 points,layup
+6,2026,1,aba,604,5,01:57,117,,,away,91,,5122,HANLAN O,assist,assist,
+6,2026,1,aba,605,5,01:57,117,,,home,12,13,3750,JOVANOVIĆ Đ,foul (personal),foul,personal
+6,2026,1,aba,606,5,01:57,117,,,away,91,,5111,THOMPSON S,foul on,foul on,
+6,2026,1,aba,607,5,01:57,117,,,home,12,,,,Timeout,Timeout,
+6,2026,1,aba,608,5,01:57,117,,,home,12,,4769,SULAIMON R,substitution (out),substitution,out
+6,2026,1,aba,609,5,01:57,117,,,home,12,13,3750,JOVANOVIĆ Đ,substitution (out),substitution,out
+6,2026,1,aba,610,5,01:57,117,,,home,12,3,3737,MAGEE F,substitution (in),substitution,in
+6,2026,1,aba,611,5,01:57,117,,,home,12,11,4104,FERRELL JR K,substitution (in),substitution,in
+6,2026,1,aba,612,5,01:57,117,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,613,5,01:57,117,,,away,91,,2667,MOMIROV S,substitution (in),substitution,in
+6,2026,1,aba,614,5,01:57,117,83,90,away,91,,5111,THOMPSON S,made free throw (1of1),made free throw,1of1
+6,2026,1,aba,615,5,01:50,110,,,home,12,,5117,MAYS S,turnover (ballhandling),turnover,ballhandling
+6,2026,1,aba,616,5,01:50,110,,,away,91,11,5110,KENNEDY K,steal,steal,
+6,2026,1,aba,617,5,01:27,87,,,away,91,44,2312,REBIĆ N,missed 2 points (layup),missed 2 points,layup
+6,2026,1,aba,618,5,01:27,87,,,home,12,16,5053,BOUTSIELE J,block,block,
+6,2026,1,aba,619,5,01:27,87,,,away,,,,,(offensive),,offensive
+6,2026,1,aba,620,5,01:26,86,,,away,91,34,2112,NIKOLIĆ D,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,621,5,01:22,82,,,home,12,11,4104,FERRELL JR K,rebound (defensive),rebound,defensive
+6,2026,1,aba,622,5,01:18,78,86,90,home,12,11,4104,FERRELL JR K,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,623,5,01:13,73,,,away,91,,,,Timeout,Timeout,
+6,2026,1,aba,624,5,01:13,73,,,away,91,11,5110,KENNEDY K,substitution (out),substitution,out
+6,2026,1,aba,625,5,01:13,73,,,away,91,,5122,HANLAN O,substitution (in),substitution,in
+6,2026,1,aba,626,5,00:52,52,,,away,91,44,2312,REBIĆ N,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,627,5,00:47,47,,,home,12,15,4781,MORGAN J,rebound (defensive),rebound,defensive
+6,2026,1,aba,628,5,00:44,44,,,home,12,3,3737,MAGEE F,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,629,5,00:40,40,,,away,91,44,2312,REBIĆ N,rebound (defensive),rebound,defensive
+6,2026,1,aba,630,5,00:30,30,86,93,away,91,34,2112,NIKOLIĆ D,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,631,5,00:30,30,,,away,91,44,2312,REBIĆ N,assist,assist,
+6,2026,1,aba,632,5,00:18,18,89,93,home,12,11,4104,FERRELL JR K,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,633,5,00:17,17,,,away,91,,5122,HANLAN O,foul (personal),foul,personal
+6,2026,1,aba,634,5,00:17,17,,,home,12,11,4104,FERRELL JR K,foul on,foul on,
+6,2026,1,aba,635,5,00:17,17,,,home,12,16,5053,BOUTSIELE J,substitution (out),substitution,out
+6,2026,1,aba,636,5,00:17,17,,,home,12,10,2627,TANASKOVIĆ N,substitution (in),substitution,in
+6,2026,1,aba,637,5,00:17,17,,,home,12,11,4104,FERRELL JR K,missed free throw (1of1),missed free throw,1of1
+6,2026,1,aba,638,5,00:17,17,,,away,91,44,2312,REBIĆ N,rebound (defensive),rebound,defensive
+6,2026,1,aba,639,5,00:17,17,,,home,12,10,2627,TANASKOVIĆ N,foul (personal),foul,personal
+6,2026,1,aba,640,5,00:17,17,,,away,91,44,2312,REBIĆ N,foul on,foul on,
+6,2026,1,aba,641,5,00:17,17,,,away,91,34,2112,NIKOLIĆ D,foul (technical),foul,technical
+6,2026,1,aba,642,5,00:17,17,90,93,home,12,3,3737,MAGEE F,made free throw (1of1),made free throw,1of1
+6,2026,1,aba,643,5,00:17,17,,,away,91,,5111,THOMPSON S,substitution (out),substitution,out
+6,2026,1,aba,644,5,00:17,17,,,away,91,22,2640,ILIĆ D,substitution (in),substitution,in
+6,2026,1,aba,645,5,00:17,17,90,94,away,91,44,2312,REBIĆ N,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,646,5,00:17,17,90,95,away,91,44,2312,REBIĆ N,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,647,5,00:17,17,,,away,91,,5122,HANLAN O,substitution (out),substitution,out
+6,2026,1,aba,648,5,00:17,17,,,away,91,11,5110,KENNEDY K,substitution (in),substitution,in
+6,2026,1,aba,649,5,00:10,10,,,home,12,11,4104,FERRELL JR K,missed 2 points (jump shot),missed 2 points,jump shot
+6,2026,1,aba,650,5,00:08,8,,,home,,,,,(offensive),,offensive
+6,2026,1,aba,651,5,00:06,6,93,95,home,12,3,3737,MAGEE F,made 3 points (jump shot),made 3 points,jump shot
+6,2026,1,aba,652,5,00:06,6,,,home,12,,5117,MAYS S,assist,assist,
+6,2026,1,aba,653,5,00:05,5,,,home,12,10,2627,TANASKOVIĆ N,foul (personal),foul,personal
+6,2026,1,aba,654,5,00:05,5,,,away,91,11,5110,KENNEDY K,foul on,foul on,
+6,2026,1,aba,655,5,00:05,5,93,96,away,91,11,5110,KENNEDY K,made free throw (1 of 2),made free throw,1 of 2
+6,2026,1,aba,656,5,00:05,5,93,97,away,91,11,5110,KENNEDY K,made free throw (2 of 2),made free throw,2 of 2
+6,2026,1,aba,657,5,00:01,1,,,home,12,10,2627,TANASKOVIĆ N,missed 3 points (jump shot),missed 3 points,jump shot
+6,2026,1,aba,658,5,,,,,,,,,,end of OT1,end of OT1,
+6,2026,1,aba,659,5,,,,,,,,,,game finished,game finished,

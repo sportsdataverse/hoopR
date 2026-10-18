@@ -1,0 +1,26 @@
+[
+  {
+    "ekipa": "1",
+    "koordinata_x": "8.92",
+    "koordinata_y": "26.1",
+    "koordinata_uspeh": "0",
+    "player_id": "4781",
+    "player_name": "Juwan Morgan"
+  },
+  {
+    "ekipa": "1",
+    "koordinata_x": "7.99",
+    "koordinata_y": "37.68",
+    "koordinata_uspeh": "1",
+    "player_id": "4781",
+    "player_name": "Juwan Morgan"
+  },
+  {
+    "ekipa": "2",
+    "koordinata_x": "91.14",
+    "koordinata_y": "35.14",
+    "koordinata_uspeh": "1",
+    "player_id": "5110",
+    "player_name": "Keondre Kennedy"
+  }
+]
