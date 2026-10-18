@@ -213,7 +213,10 @@
   kinds <- vapply(vals, function(v) if (is.character(v)) "c" else if (is.logical(v)) "l" else if (is.integer(v)) "i" else "d", "")
   type <- if (any(kinds == "c")) "character" else if (all(kinds == "l")) "logical" else if (any(kinds == "d")) "double" else "integer"
   if (type == "character") {
-    vals <- lapply(vals, function(v) if (is.logical(v)) tolower(as.character(v)) else format(v, scientific = FALSE, trim = TRUE))
+    # a string is kept as is: format() escapes non-ASCII to <U+XXXX> in a C locale
+    vals <- lapply(vals, function(v) {
+      if (is.character(v)) v else if (is.logical(v)) tolower(as.character(v)) else format(v, scientific = FALSE, trim = TRUE)
+    })
   }
   out <- .vtb_na(type, n)
   out[present] <- switch(type, character = unlist(vals), logical = as.logical(unlist(vals)),
