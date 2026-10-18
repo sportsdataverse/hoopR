@@ -73,8 +73,10 @@ Captured 2026-10-12 from `prod.rosetta.nbl.com.au` (the `fetched` stamp of every
 | `teams--wnbl.json` | `org__teams--wnbl.json` |
 
 * `parity/<endpoint>--<fixture>.csv`: the frame sdv-py's `nbl_rosetta_<endpoint>()` returns on that
-  fixture (transport mocked, so the request stamp is the runtime's own), written with
-  `write_csv(null_value = "NA")`. `parity/parity.json` holds, per frame, the wrapper arguments, the
+  fixture (transport mocked, so the request stamp is the runtime's own), written with polars'
+  default `write_csv()` (a null is an empty field, `""` a quoted one, so a literal "NA" stays a value; read
+  with `intl_read_oracle()` of `helper-intl.R`). The CSVs were regenerated that way on sdv-py `38a22f936d`
+  (2026-10-18; e3d232ebc9 wrote `null_value = "NA"`): same frames, only the null marker changed. `parity/parity.json` holds, per frame, the wrapper arguments, the
   URL and query sdv-py sent, the polars dtypes in column order and the row count.
   `test-nbl_rosetta.R` compares names (in order), dtypes and every cell, counting NA-vs-value as a
   mismatch, and the request path and query.

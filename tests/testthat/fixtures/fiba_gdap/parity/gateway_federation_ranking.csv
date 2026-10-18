@@ -1,4 +1,4 @@
 as_of_date,zone_ranking_code,zone_ranking_official_name,world_rank,country_name,zone_rank,ioc_code,fiba_code,current_points,world_rank_variation,comments,organisation_id,organisation_status_code
-2025-09-15T00:00:00,NA,NA,1,USA,1,USA,USA,845.8,0,NA,154,ACT
-2025-09-15T00:00:00,NA,NA,2,Germany,1,GER,GER,765.9,1,NA,64,ACT
-2025-09-15T00:00:00,NA,NA,3,Serbia,2,SRB,SRB,761.8,-1,NA,8323,ACT
+2025-09-15T00:00:00,,,1,USA,1,USA,USA,845.8,0,,154,ACT
+2025-09-15T00:00:00,,,2,Germany,1,GER,GER,765.9,1,,64,ACT
+2025-09-15T00:00:00,,,3,Serbia,2,SRB,SRB,761.8,-1,,8323,ACT

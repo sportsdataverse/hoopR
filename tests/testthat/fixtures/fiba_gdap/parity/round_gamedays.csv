@@ -1,4 +1,4 @@
 competition_id,round_game_system,round_game_system_code,round_parent_round_id,round_round_code,round_round_id,round_round_name,round_round_number,round_round_type,round_round_type_code,round_round_status_code,round_start_date,round_end_date,round_has_teams_assigned,round_round_kind,round_standing_header_code,round_standing_header_name,round_qualified_team_information,round_round_order,gamedays
-208182,NA,NA,NA,GP,25274,Group Phase,1,Super Round,S,COMPL,2023-08-25T00:00:00,2023-09-03T23:59:59.9999999,false,Standard Round,GP,Group Phase,NA,1,NA
-208182,NA,NA,NA,FP,25275,Final Phase,3,Super Round,S,COMPL,2023-09-05T00:00:00,2023-09-10T23:59:59.9999999,false,Standard Round,FP,Final Phase,NA,5,NA
-208182,Single,S,25274,FR,25276,First Round,1,Group Round,G,COMPL,2023-08-25T00:00:00,2023-08-30T23:59:59.9999999,false,Standard Round,FR,First Round,NA,2,"[1,2,3]"
+208182,,,,GP,25274,Group Phase,1,Super Round,S,COMPL,2023-08-25T00:00:00,2023-09-03T23:59:59.9999999,false,Standard Round,GP,Group Phase,,1,
+208182,,,,FP,25275,Final Phase,3,Super Round,S,COMPL,2023-09-05T00:00:00,2023-09-10T23:59:59.9999999,false,Standard Round,FP,Final Phase,,5,
+208182,Single,S,25274,FR,25276,First Round,1,Group Round,G,COMPL,2023-08-25T00:00:00,2023-08-30T23:59:59.9999999,false,Standard Round,FR,First Round,,2,"[1,2,3]"

@@ -45,8 +45,7 @@ nbl_expect_parity <- function(df, key) {
     if (is.character(x)) "s" else if (is.logical(x)) "b" else if (is.integer(x)) "i" else "f"
   }, character(1))
   testthat::expect_identical(r_type, want_types, label = paste(key, "dtypes"))
-  want <- utils::read.csv(nbl_fx("parity", paste0(key, ".csv")), colClasses = "character",
-                          na.strings = "NA", check.names = FALSE, encoding = "UTF-8")
+  want <- intl_read_oracle(nbl_fx("parity", paste0(key, ".csv")))
   testthat::expect_identical(nrow(df), nrow(want), label = paste(key, "rows"))
   bad <- character()
   for (col in intersect(names(df), names(want))) {

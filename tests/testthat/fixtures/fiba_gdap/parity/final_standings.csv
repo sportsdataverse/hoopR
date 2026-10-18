@@ -1,4 +1,4 @@
 competition_id,final_rank,team_team_id,team_team_code,team_short_name,team_profile,team_status_code,team_status_name,team_organisation_id
-208182,1,279569,GER,Germany,NA,NA,NA,64
-208182,2,279961,SRB,Serbia,NA,NA,NA,8323
-208182,3,279564,CAN,Canada,NA,NA,NA,34
+208182,1,279569,GER,Germany,,,,64
+208182,2,279961,SRB,Serbia,,,,8323
+208182,3,279564,CAN,Canada,,,,34

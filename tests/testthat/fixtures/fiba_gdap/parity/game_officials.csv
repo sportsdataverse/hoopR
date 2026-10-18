@@ -1,4 +1,4 @@
 game_id,person_id,first_name,last_name,gender,role_code,role_name,role_order,default_nationality,license_nationality
-100720,9454,Eleonora,Rangelova,F,FIBATD,FIBA Technical delegate,NA,BUL,GER
-100720,2044,Michael,Thomson,M,FIBAREFINS,FIBA Referee instructor,NA,NA,NA
+100720,9454,Eleonora,Rangelova,F,FIBATD,FIBA Technical delegate,,BUL,GER
+100720,2044,Michael,Thomson,M,FIBAREFINS,FIBA Referee instructor,,,
 100720,15948,Omar,Bermudez,M,UMP,Umpire,1,MEX,MEX

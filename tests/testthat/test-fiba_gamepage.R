@@ -76,8 +76,7 @@ test_that("every fiba_gamepage route matches sdv-py's frame on the same page (co
   for (cs in cases) {
     route <- paste0("fiba_gamepage_", cs$route)
     df <- .fiba_gamepage_parse(cs$route, cs$page)
-    ref <- utils::read.csv(gp_fx("fiba_gamepage", "parity", cs$csv), colClasses = "character", na.strings = "NA",
-                           check.names = FALSE, encoding = "UTF-8")
+    ref <- intl_read_oracle(gp_fx("fiba_gamepage", "parity", cs$csv))
     expect_identical(names(df), names(ref), label = cs$csv)
     expect_equal(nrow(df), nrow(ref), label = cs$csv)
     d <- dts[dts$route == route, ]

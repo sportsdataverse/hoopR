@@ -1,4 +1,4 @@
 org,team_id,rosetta_team_id,name,team_code,established,head_coach,championships,website,external_media_competitor_id,conference,division,venue_name,venue_address,venue_state,venue_country,venue_timezone,venue_latitude,venue_longitude,venue_capacity,conference_name,division_name
-nbl1,3a422529-83e4-11f1-90b7-e7dd24327d63,85f0627d-0f3c-4554-bd93-c98b1de1d388,TBA,TBA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,West,West Women
-nbl1,f3d7ca18-d3ca-11f0-9614-3b3a32135df7,43c86fda-fb65-4f28-b9f9-a7963c10098d,Northern Force,NF,NA,NA,NA,NA,1146253,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,South,South Men
-nbl1,63ab3f75-d3cb-11f0-9e13-4d241490b2d8,b6691006-e5ee-489d-a406-bcb5b7564b78,Northern Force,NF,NA,NA,NA,NA,1146252,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,South,South Women
+nbl1,3a422529-83e4-11f1-90b7-e7dd24327d63,85f0627d-0f3c-4554-bd93-c98b1de1d388,TBA,TBA,,,,,,,,,,,,,,,,West,West Women
+nbl1,f3d7ca18-d3ca-11f0-9614-3b3a32135df7,43c86fda-fb65-4f28-b9f9-a7963c10098d,Northern Force,NF,,,,,1146253,,,,,,,,,,,South,South Men
+nbl1,63ab3f75-d3cb-11f0-9e13-4d241490b2d8,b6691006-e5ee-489d-a406-bcb5b7564b78,Northern Force,NF,,,,,1146252,,,,,,,,,,,South,South Women

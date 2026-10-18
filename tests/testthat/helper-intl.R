@@ -39,7 +39,10 @@ intl_read_oracle <- function(path) {
   marked <- gsub('(^|,)""(?=,|$)', "\\1\"\001\"", lines, perl = TRUE)
   want <- utils::read.csv(text = marked, colClasses = "character", na.strings = "", check.names = FALSE,
                           encoding = "UTF-8")
-  want[] <- lapply(want, function(x) ifelse(!is.na(x) & x == "\001", "", x))
+  want[] <- lapply(want, function(x) {
+    x[!is.na(x) & x == "\001"] <- ""
+    x
+  })
   want
 }
 
