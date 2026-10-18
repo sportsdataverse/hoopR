@@ -446,7 +446,7 @@ load_mbb_player_box(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
 #> ── ESPN MBB schedules from hoopR data repository ─────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-09-15 08:21:19 UTC
+#> ℹ Data updated: 2026-10-18 12:35:18 UTC
 #> # A tibble: 1,629 × 83
 #>         id uid   date  attendance time_valid neutral_site conference_competition
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 

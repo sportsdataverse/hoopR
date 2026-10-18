@@ -120,7 +120,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 30.974 sec elapsed
+    ## 35.268 sec elapsed
 
 ``` r
 
@@ -217,7 +217,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.34 sec elapsed
+    ## 4.039 sec elapsed
 
 ``` r
 
@@ -304,7 +304,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.169 sec elapsed
+    ## 5.213 sec elapsed
 
 ``` r
 
@@ -389,7 +389,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 71.809 sec elapsed
+    ## 77.778 sec elapsed
 
 ``` r
 
@@ -404,7 +404,7 @@ dplyr::glimpse(mbb_pbp)
 ```
 
     ## Rows: 12,225,017
-    ## Columns: 74
+    ## Columns: 75
     ## $ id                              <dbl> 4.012525e+17, 4.012525e+17, 4.012525e+…
     ## $ sequence_number                 <int> 101805201, 101805501, 101805701, 10180…
     ## $ type_id                         <int> 558, 586, 558, 598, 607, 598, 558, 586…
@@ -462,6 +462,7 @@ dplyr::glimpse(mbb_pbp)
     ## $ coordinate_y                    <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
     ## $ game_date                       <date> 2020-12-12, 2020-12-12, 2020-12-12, 2…
     ## $ game_date_time                  <dttm> 2020-12-12 17:00:00, 2020-12-12 17:00…
+    ## $ score_source                    <chr> "espn", "espn", "espn", "espn", "espn"…
     ## $ athlete_name_1                  <chr> "Antonio Daye", "Dante Wilcox", "Radsh…
     ## $ athlete_name_2                  <chr> NA, NA, "Dante Wilcox", NA, NA, NA, NA…
     ## $ athlete_name_3                  <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
@@ -491,7 +492,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.262 sec elapsed
+    ## 4.587 sec elapsed
 
 ``` r
 
@@ -578,7 +579,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 11.277 sec elapsed
+    ## 10.525 sec elapsed
 
 ``` r
 

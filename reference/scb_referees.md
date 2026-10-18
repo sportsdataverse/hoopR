@@ -1,0 +1,128 @@
+# **Get BBL Referees**
+
+Current referees and commissioners (BBL only).
+
+Endpoint: `GET https://api.basketball-bundesliga.de/referees`
+
+## Usage
+
+``` r
+scb_referees(page_size = 100)
+```
+
+## Arguments
+
+- page_size:
+
+  (default `100`) Rows per page. 100 returns all current officials in
+  one page; a result that needs more pages is refused.
+
+## Value
+
+A `hoopR_data` tibble: Current referees and commissioners (BBL only). An
+empty valid answer raises `hoopR_no_data`; the columns are always these,
+in this order (sdv-py `scb_referees`):
+
+|  |  |  |
+|----|----|----|
+| col_name | type | description |
+| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
+| referee_id | character | Official id (`refId`, equal to the API's `id`); joins `referee1_id` .. `commissioner_id` of `scb_games`. |
+| first_name | character | Official's given name. |
+| last_name | character | Official's family name. |
+| official_function | character | REFEREE or COMMISSIONER. |
+| participations | integer | League games officiated. |
+| year_joined_bbl | integer | Year the official joined the league. |
+
+## Details
+
+- Unofficial use of a public source: these wrappers read the front-end
+  API of the German Bundesliga sites (easycredit-bbl.de,
+  toyota-dbbl.de), run by SCB; payloads are not redistributed as release
+  assets.
+
+- Legal notice: the BBL Impressum forbids storing BBL content
+  (`Inhalte`) in an information system without BBL's written permission.
+  That is a copyright term, not a robots rule (the API host has no
+  robots.txt). The owner reviewed it and accepted the intake (2026-10-12
+  ruling); keep requests slow (the runtime waits at least 1 s per host)
+  and raise any published data release with the owner. The DBBL host is
+  the same operator and API; its site notice was not separately
+  reviewed.
+
+- Both hosts need two headers: a constant `x-api-key` and an
+  `x-api-secret` that rotates. The runtime derives the secret on first
+  use from the key embedded in an easycredit-bbl.de page (reversed, `:`
+  turned into `-`) and never logs or returns it. The derivation was
+  reverse-engineered from observed requests and responses and has not
+  been checked against the site's own front-end code; if the site
+  changes how it signs requests, every call fails with
+  `hoopR_asset_fetch`.
+
+- Id key spaces: seasonId is the START year (2025 = 2025-26), so a
+  wrapper's END-year `season` is sent as `season - 1`. Teams are keyed
+  by teamId (seasonTeamId equals it in every sample). seasonPlayerId is
+  per player per season and per club (a player traded mid-season has
+  two); realPlayerId is the person. playerId is ambiguous (the
+  seasonPlayerId in box scores, records and /season-players; the person
+  in /transfers). Game ids are strings.
+
+- Errors are classed conditions: `hoopR_no_data` (404, 204, a 400 "not a
+  valid" id, no rows, a box score of a game not yet started),
+  `hoopR_bad_request` (a bad argument, another 400 / 422) and
+  `hoopR_asset_fetch` (a refused secret after one re-derive, any other
+  non-2xx, an HTML / non-JSON / error-shaped body, a truncated page, a
+  body for another game, season, club or league, a box score still in
+  play), all inheriting `hoopR_error`. Wrappers raise; they never return
+  an empty frame.
+
+## See also
+
+Other SCB Functions:
+[`scb_game()`](https://hoopR.sportsdataverse.org/reference/scb_game.md),
+[`scb_game_actions()`](https://hoopR.sportsdataverse.org/reference/scb_game_actions.md),
+[`scb_game_players()`](https://hoopR.sportsdataverse.org/reference/scb_game_players.md),
+[`scb_game_teams()`](https://hoopR.sportsdataverse.org/reference/scb_game_teams.md),
+[`scb_games()`](https://hoopR.sportsdataverse.org/reference/scb_games.md),
+[`scb_games_recent()`](https://hoopR.sportsdataverse.org/reference/scb_games_recent.md),
+[`scb_player_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_player_statistics.md),
+[`scb_playoff_games()`](https://hoopR.sportsdataverse.org/reference/scb_playoff_games.md),
+[`scb_playoff_series()`](https://hoopR.sportsdataverse.org/reference/scb_playoff_series.md),
+[`scb_records_per_game()`](https://hoopR.sportsdataverse.org/reference/scb_records_per_game.md),
+[`scb_records_season_averages()`](https://hoopR.sportsdataverse.org/reference/scb_records_season_averages.md),
+[`scb_season_player()`](https://hoopR.sportsdataverse.org/reference/scb_season_player.md),
+[`scb_season_players()`](https://hoopR.sportsdataverse.org/reference/scb_season_players.md),
+[`scb_season_teams()`](https://hoopR.sportsdataverse.org/reference/scb_season_teams.md),
+[`scb_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_seasons.md),
+[`scb_standings()`](https://hoopR.sportsdataverse.org/reference/scb_standings.md),
+[`scb_team()`](https://hoopR.sportsdataverse.org/reference/scb_team.md),
+[`scb_team_rosters()`](https://hoopR.sportsdataverse.org/reference/scb_team_rosters.md),
+[`scb_team_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_team_seasons.md),
+[`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
+[`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
+[`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
+
+## Examples
+
+``` r
+# \donttest{
+  try(scb_referees())
+#> ── BBL/DBBL Referees from the SCB API ────────────────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-10-18 16:01:51 UTC
+#> # A tibble: 44 × 7
+#>    league referee_id first_name last_name   official_function participations
+#>    <chr>  <chr>      <chr>      <chr>       <chr>                      <int>
+#>  1 bbl    1          Tamer      Arik        REFEREE                      403
+#>  2 bbl    7          Benjamin   Barth       REFEREE                      749
+#>  3 bbl    12         Steve      Bittner     REFEREE                      517
+#>  4 bbl    20         Johannes   Hack        REFEREE                      490
+#>  5 bbl    25         Oliver     Krause      REFEREE                      782
+#>  6 bbl    26         Moritz     Krüper      REFEREE                      466
+#>  7 bbl    27         Robert     Lottermoser REFEREE                     1098
+#>  8 bbl    28         Christof   Madinger    REFEREE                      803
+#>  9 bbl    32         Anne       Panther     REFEREE                      700
+#> 10 bbl    39         Enrico     Streit      REFEREE                      679
+#> # ℹ 34 more rows
+#> # ℹ 1 more variable: year_joined_bbl <int>
+# }
+```

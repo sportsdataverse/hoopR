@@ -52,7 +52,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(hoopshype_salaries())
 #> ── Player salaries from hoopshype.com ────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 11:25:41 UTC
+#> ℹ Data updated: 2026-10-18 15:41:00 UTC
 #> # A tibble: 0 × 0
 # }
 ```

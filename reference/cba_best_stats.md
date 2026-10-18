@@ -1,0 +1,185 @@
+# **Get CBA Best Stats**
+
+Single-category leaders of each side in the game report.
+
+Endpoint:
+`GET https://data-server.cbaleague.com/api/team-match-datas/getMatchDataReport/bestDataQuota/{schedule_id}`
+
+## Usage
+
+``` r
+cba_best_stats(schedule_id)
+```
+
+## Arguments
+
+- schedule_id:
+
+  (required) Required. CBA game id (integer), the global 9-digit
+  sequence 100xxxxxx (100105799 = 2025-26 round 1). Only a finished game
+  is served.
+
+## Value
+
+A `hoopR_data` tibble: One row per side and category. An empty valid
+answer is a zero-row tibble with these columns, in this order (sdv-py
+`cba_best_stats`):
+
+|  |  |  |
+|----|----|----|
+| col_name | type | description |
+| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
+| side | character | Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). |
+| ctype | character | Statistic the row leads: points, assists, steals, rebounds, blocked (five rows per side in every sample). See the code table. |
+| cvalue | character | The leader's value of ctype, as a STRING ('16'). |
+| player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. A STRING here ('100005271'), an integer on every box route. |
+| player_name | character | Player name (Chinese). Null on rows whose name the report does not repeat (the same player's earlier row carries it). |
+| player_no | character | Jersey number as a string. Null where playerName is null. |
+| seconds | integer | The leader's time on court in SECONDS. |
+| team_id | integer | Unobserved: null in every sample (the side is the enclosing list). |
+| type | integer | Side flag: 0 on home rows, 2 on visiting rows (differs from advance-count, where the visiting side is 1). |
+
+## Details
+
+- Unofficial and unsupported: these wrappers read the routes that
+  cbaleague.com's own data site (a Vue single-page app) calls.
+  SportsDataverse has not ruled on the site's terms, so payloads are not
+  redistributed as release assets. Requests are spaced at least 1 s
+  apart per host; keep use small.
+
+- Access: every response body is AES-128-ECB encrypted with a public key
+  shipped in the site's front-end bundle; the runtime decrypts it with
+  [`digest::AES()`](https://eddelbuettel.github.io/digest/man/AES.html)
+  (digest is a suggested package: install it to use these wrappers) and
+  refuses anything that does not decrypt. The host blocks datacenter IPs
+  at TCP: set the environment variable `CBA_PROXY` (or
+  `options(hoopR.proxy = ...)`) to a residential proxy URL; it is never
+  printed or put in a condition. Without a proxy the request goes direct
+  and, from a datacenter, fails within seconds (a 5 s connect timeout,
+  no retry of a refused or timed-out connect). Where direct access works
+  (a residential IP), set `CBA_DIRECT=1` for the full 60 s timeout and
+  retries.
+
+- Seasons: the API's season is the START year; every `season` argument
+  here is the END year (2026 = 2025-26) and is sent as `season - 1`.
+  Columns named `season` keep the wire value (the START year, so the sdv
+  END year is `season + 1`). The season list reaches 1995-96; box data
+  before 2009-10 is unverified.
+
+- Coverage: game wrappers serve FINISHED games only. Each first reads
+  the game report header (cached per session), and an unfinished game
+  raises `hoopR_asset_fetch`. Box, period, roster and best-player bodies
+  are checked against that header (points sum to the score, team ids
+  match, advanced rows are box players). Play-by-play is served one
+  period per request: every period is fetched, and a partial set, an
+  unordered clock or a final score the plays do not reach is refused.
+  Play-by-play is verified on 2017-18 and 2025-26 only and is absent for
+  2009-10 (`hoopR_no_data`). There are NO shot x/y coordinates in this
+  API (shot location exists only as team and player zone splits), and
+  play-by-play has no player or team ids (Chinese sentence text plus
+  surnames). Box data has 12-minute quarters in 2009-10 and 2017-18 and
+  10-minute quarters in 2025-26. The women's CBA is not covered (no
+  official source).
+
+- Not game data:
+  [`cba_game_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_shots.md)
+  and
+  [`cba_game_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_four.md)
+  answer the two teams' SEASON tables (the shot zones are the teams'
+  current profile; the four factors are the previous season), whichever
+  game is asked for. The reference lists
+  ([`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
+  [`cba_team_counts()`](https://hoopR.sportsdataverse.org/reference/cba_team_counts.md))
+  and
+  [`cba_report_status()`](https://hoopR.sportsdataverse.org/reference/cba_report_status.md)
+  are not echoed by the API, so their scope is unchecked.
+
+- Duplicate rows: in some games (2025-26 game 100105799) the
+  advanced-box and extras routes repeat player rows (26 rows for 12
+  players), and the repeats are not always copies.
+  [`cba_player_advanced()`](https://hoopR.sportsdataverse.org/reference/cba_player_advanced.md)
+  and
+  [`cba_player_extras()`](https://hoopR.sportsdataverse.org/reference/cba_player_extras.md)
+  keep the FIRST row per `player_id`.
+
+- Text fields are Chinese (names, play-by-play sentences, position and
+  nationality labels). The column descriptions here are ASCII; sdv-py's
+  `tools/codegen/notes/cba_glossary.yaml` holds the full English
+  glossaries.
+
+- Personal data: the operator ids (`createdBy` / `lastModifiedBy`, one
+  holds a mobile number) and any bare mobile-number string are removed
+  from every body. Players' public bio fields (birth date, height,
+  weight) are kept.
+
+- Ids: `schedule_id` (games, one global 9-digit sequence 100xxxxxx),
+  `team_id` (clubs, stable across sponsor renames), `player_id`
+  (persons) and `match_type_id` are integers. The roster registration
+  `id` of
+  [`cba_rosters()`](https://hoopR.sportsdataverse.org/reference/cba_rosters.md)
+  is a 19-digit integer that an R integer or double cannot hold exactly,
+  so it is kept as its exact digits (character).
+
+- Errors are classed conditions: `hoopR_no_data` (HTTP 404, a game
+  without play-by-play), `hoopR_bad_request` (a non-integer id or
+  season, HTTP 400 / 422) and `hoopR_asset_fetch` (any other non-200,
+  including HTTP 500, which this API answers for a body it dislikes and
+  which is not retried; a dead connection; an empty or undecryptable
+  body; an unfinished game; a body for another game, team, season or
+  day), all inheriting `hoopR_error`. HTTP 429 / 502 / 503 / 504 are
+  retried, up to three attempts. Wrappers raise; they never warn and
+  return empty.
+
+## See also
+
+Other CBA Functions:
+[`cba_best_player()`](https://hoopR.sportsdataverse.org/reference/cba_best_player.md),
+[`cba_game_info()`](https://hoopR.sportsdataverse.org/reference/cba_game_info.md),
+[`cba_game_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_four.md),
+[`cba_game_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_shots.md),
+[`cba_match_types()`](https://hoopR.sportsdataverse.org/reference/cba_match_types.md),
+[`cba_pbp()`](https://hoopR.sportsdataverse.org/reference/cba_pbp.md),
+[`cba_period_scores()`](https://hoopR.sportsdataverse.org/reference/cba_period_scores.md),
+[`cba_player_advanced()`](https://hoopR.sportsdataverse.org/reference/cba_player_advanced.md),
+[`cba_player_base()`](https://hoopR.sportsdataverse.org/reference/cba_player_base.md),
+[`cba_player_box()`](https://hoopR.sportsdataverse.org/reference/cba_player_box.md),
+[`cba_player_defensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_defensive.md),
+[`cba_player_extras()`](https://hoopR.sportsdataverse.org/reference/cba_player_extras.md),
+[`cba_player_offensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_offensive.md),
+[`cba_player_shots()`](https://hoopR.sportsdataverse.org/reference/cba_player_shots.md),
+[`cba_report_status()`](https://hoopR.sportsdataverse.org/reference/cba_report_status.md),
+[`cba_rosters()`](https://hoopR.sportsdataverse.org/reference/cba_rosters.md),
+[`cba_schedule_day()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_day.md),
+[`cba_schedule_month()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_month.md),
+[`cba_seasons()`](https://hoopR.sportsdataverse.org/reference/cba_seasons.md),
+[`cba_team_basic()`](https://hoopR.sportsdataverse.org/reference/cba_team_basic.md),
+[`cba_team_counts()`](https://hoopR.sportsdataverse.org/reference/cba_team_counts.md),
+[`cba_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_team_four.md),
+[`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
+[`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
+[`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
+[`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
+
+## Examples
+
+``` r
+# \donttest{
+  try(cba_best_stats(schedule_id = 100105799))
+#> ── CBA Best Stats from data-server.cbaleague.com ─────────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-10-18 15:35:08 UTC
+#> # A tibble: 10 × 10
+#>    schedule_id side  ctype    cvalue player_id player_name player_no seconds
+#>          <int> <chr> <chr>    <chr>      <int> <chr>       <chr>       <int>
+#>  1   100105799 home  assists  4      100005271 朱俊龙      10           1692
+#>  2   100105799 home  points   16     100107411 NA          NA            913
+#>  3   100105799 home  steals   3      100024772 NA          NA           1279
+#>  4   100105799 home  rebounds 10     100016690 NA          NA           1205
+#>  5   100105799 home  blocked  2      100005271 朱俊龙      10           1692
+#>  6   100105799 away  assists  3      100098648 NA          NA            554
+#>  7   100105799 away  points   17     100098032 迪亚洛      11           1571
+#>  8   100105799 away  steals   2      100012158 陈彭宇迪    1             635
+#>  9   100105799 away  rebounds 9      100013553 刘传兴      21           1209
+#> 10   100105799 away  blocked  2      100013553 刘传兴      21           1209
+#> # ℹ 2 more variables: team_id <int>, type <int>
+# }
+```

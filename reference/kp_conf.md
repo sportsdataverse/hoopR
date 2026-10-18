@@ -161,7 +161,7 @@ Other KenPom Historical Functions:
 ``` r
 # \donttest{
     try(kp_conf(year = 2020, conf = 'ACC'))
-#> ✖ 2026-10-18 11:25:43.462995: Invalid arguments or no conference data for 2020 ACC available!
+#> ✖ 2026-10-18 15:41:46.899164: Invalid arguments or no conference data for 2020 ACC available!
 #> ✖ Args: year = 2020, conf = "ACC"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

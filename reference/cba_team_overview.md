@@ -1,0 +1,213 @@
+# **Get CBA Team Overview**
+
+A team's overview table (record, pace, per-100 ratings), one row per
+season of the team.
+
+Endpoint:
+`POST https://data-server.cbaleague.com/api/team-match-datas/team-entirety-list`
+(JSON body)
+
+## Usage
+
+``` r
+cba_team_overview(team_id, match_type_id = 1, page_number = 1, page_size = 100)
+```
+
+## Arguments
+
+- team_id:
+
+  (required) Required. CBA team id (clubs, stable across seasons and
+  renames).
+
+- match_type_id:
+
+  (default `1`) Match type id: 1 regular season (default), 2 playoffs, 3
+  preseason, 4 all-star, 9 relegation play-off (cba_match_types).
+
+- page_number:
+
+  (default `1`) Page number of the paged list, from 1.
+
+- page_size:
+
+  (default `100`) Rows per page (the site uses 100).
+
+## Value
+
+A `hoopR_data` tibble: One row per season of the team. An empty valid
+answer is a zero-row tibble with these columns, in this order (sdv-py
+`cba_team_overview`):
+
+|  |  |  |
+|----|----|----|
+| col_name | type | description |
+| bout_no_points | numeric | points allowed per 100 possessions (defensive rating), a float. |
+| bout_no_points_rank | numeric | Rank among the teams of that season for boutNoPoints (integer-valued float; direction undocumented). |
+| bout_no_points_sort | numeric | Unobserved: null in every sample (numeric value behind boutNoPoints). |
+| bout_point_sort | numeric | Unobserved: null in every sample (numeric value behind boutPoints). |
+| bout_points | numeric | points scored per 100 possessions (offensive rating), a float (120.1). |
+| bout_points_rank | numeric | Rank among the teams of that season for boutPoints (integer-valued float; direction undocumented). |
+| bout_subtract_points | numeric | net points per 100 possessions (boutPoints - boutNoPoints), a float. |
+| bout_subtract_points_rank | numeric | Rank among the teams of that season for boutSubtractPoints (integer-valued float). |
+| bout_subtract_points_sort | numeric | Unobserved: null in every sample (numeric value behind boutSubtractPoints). |
+| is_avg | integer | Row kind: 2 on every sampled row = a team's own row (1 presumed league average, unobserved). |
+| loss_num | numeric | Losses in that season, a float. |
+| player_times | numeric | Games played, a float (42.0). |
+| rhythm | numeric | pace: possessions per 48 minutes ('75.7'; site definition: (Chinese text)48(Chinese text)). A number (the API sends it as display text). |
+| rhythm_rank | numeric | Unobserved: null in every sample (a rank slot for pace). Typed Float64 like the family's other routes. |
+| season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. One row per season of the team. |
+| team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
+| team_name | character | Team name (Chinese) in that season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -\> English glossary in cba_glossary.yaml. |
+| win_num | numeric | Wins in that season (match type of the request), a number typed as float (33.0). |
+| win_rate | numeric | Win rate. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
+
+## Details
+
+- Unofficial and unsupported: these wrappers read the routes that
+  cbaleague.com's own data site (a Vue single-page app) calls.
+  SportsDataverse has not ruled on the site's terms, so payloads are not
+  redistributed as release assets. Requests are spaced at least 1 s
+  apart per host; keep use small.
+
+- Access: every response body is AES-128-ECB encrypted with a public key
+  shipped in the site's front-end bundle; the runtime decrypts it with
+  [`digest::AES()`](https://eddelbuettel.github.io/digest/man/AES.html)
+  (digest is a suggested package: install it to use these wrappers) and
+  refuses anything that does not decrypt. The host blocks datacenter IPs
+  at TCP: set the environment variable `CBA_PROXY` (or
+  `options(hoopR.proxy = ...)`) to a residential proxy URL; it is never
+  printed or put in a condition. Without a proxy the request goes direct
+  and, from a datacenter, fails within seconds (a 5 s connect timeout,
+  no retry of a refused or timed-out connect). Where direct access works
+  (a residential IP), set `CBA_DIRECT=1` for the full 60 s timeout and
+  retries.
+
+- Seasons: the API's season is the START year; every `season` argument
+  here is the END year (2026 = 2025-26) and is sent as `season - 1`.
+  Columns named `season` keep the wire value (the START year, so the sdv
+  END year is `season + 1`). The season list reaches 1995-96; box data
+  before 2009-10 is unverified.
+
+- Coverage: game wrappers serve FINISHED games only. Each first reads
+  the game report header (cached per session), and an unfinished game
+  raises `hoopR_asset_fetch`. Box, period, roster and best-player bodies
+  are checked against that header (points sum to the score, team ids
+  match, advanced rows are box players). Play-by-play is served one
+  period per request: every period is fetched, and a partial set, an
+  unordered clock or a final score the plays do not reach is refused.
+  Play-by-play is verified on 2017-18 and 2025-26 only and is absent for
+  2009-10 (`hoopR_no_data`). There are NO shot x/y coordinates in this
+  API (shot location exists only as team and player zone splits), and
+  play-by-play has no player or team ids (Chinese sentence text plus
+  surnames). Box data has 12-minute quarters in 2009-10 and 2017-18 and
+  10-minute quarters in 2025-26. The women's CBA is not covered (no
+  official source).
+
+- Not game data:
+  [`cba_game_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_shots.md)
+  and
+  [`cba_game_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_four.md)
+  answer the two teams' SEASON tables (the shot zones are the teams'
+  current profile; the four factors are the previous season), whichever
+  game is asked for. The reference lists
+  ([`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
+  [`cba_team_counts()`](https://hoopR.sportsdataverse.org/reference/cba_team_counts.md))
+  and
+  [`cba_report_status()`](https://hoopR.sportsdataverse.org/reference/cba_report_status.md)
+  are not echoed by the API, so their scope is unchecked.
+
+- Duplicate rows: in some games (2025-26 game 100105799) the
+  advanced-box and extras routes repeat player rows (26 rows for 12
+  players), and the repeats are not always copies.
+  [`cba_player_advanced()`](https://hoopR.sportsdataverse.org/reference/cba_player_advanced.md)
+  and
+  [`cba_player_extras()`](https://hoopR.sportsdataverse.org/reference/cba_player_extras.md)
+  keep the FIRST row per `player_id`.
+
+- Text fields are Chinese (names, play-by-play sentences, position and
+  nationality labels). The column descriptions here are ASCII; sdv-py's
+  `tools/codegen/notes/cba_glossary.yaml` holds the full English
+  glossaries.
+
+- Personal data: the operator ids (`createdBy` / `lastModifiedBy`, one
+  holds a mobile number) and any bare mobile-number string are removed
+  from every body. Players' public bio fields (birth date, height,
+  weight) are kept.
+
+- Ids: `schedule_id` (games, one global 9-digit sequence 100xxxxxx),
+  `team_id` (clubs, stable across sponsor renames), `player_id`
+  (persons) and `match_type_id` are integers. The roster registration
+  `id` of
+  [`cba_rosters()`](https://hoopR.sportsdataverse.org/reference/cba_rosters.md)
+  is a 19-digit integer that an R integer or double cannot hold exactly,
+  so it is kept as its exact digits (character).
+
+- Errors are classed conditions: `hoopR_no_data` (HTTP 404, a game
+  without play-by-play), `hoopR_bad_request` (a non-integer id or
+  season, HTTP 400 / 422) and `hoopR_asset_fetch` (any other non-200,
+  including HTTP 500, which this API answers for a body it dislikes and
+  which is not retried; a dead connection; an empty or undecryptable
+  body; an unfinished game; a body for another game, team, season or
+  day), all inheriting `hoopR_error`. HTTP 429 / 502 / 503 / 504 are
+  retried, up to three attempts. Wrappers raise; they never warn and
+  return empty.
+
+## See also
+
+Other CBA Functions:
+[`cba_best_player()`](https://hoopR.sportsdataverse.org/reference/cba_best_player.md),
+[`cba_best_stats()`](https://hoopR.sportsdataverse.org/reference/cba_best_stats.md),
+[`cba_game_info()`](https://hoopR.sportsdataverse.org/reference/cba_game_info.md),
+[`cba_game_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_four.md),
+[`cba_game_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_shots.md),
+[`cba_match_types()`](https://hoopR.sportsdataverse.org/reference/cba_match_types.md),
+[`cba_pbp()`](https://hoopR.sportsdataverse.org/reference/cba_pbp.md),
+[`cba_period_scores()`](https://hoopR.sportsdataverse.org/reference/cba_period_scores.md),
+[`cba_player_advanced()`](https://hoopR.sportsdataverse.org/reference/cba_player_advanced.md),
+[`cba_player_base()`](https://hoopR.sportsdataverse.org/reference/cba_player_base.md),
+[`cba_player_box()`](https://hoopR.sportsdataverse.org/reference/cba_player_box.md),
+[`cba_player_defensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_defensive.md),
+[`cba_player_extras()`](https://hoopR.sportsdataverse.org/reference/cba_player_extras.md),
+[`cba_player_offensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_offensive.md),
+[`cba_player_shots()`](https://hoopR.sportsdataverse.org/reference/cba_player_shots.md),
+[`cba_report_status()`](https://hoopR.sportsdataverse.org/reference/cba_report_status.md),
+[`cba_rosters()`](https://hoopR.sportsdataverse.org/reference/cba_rosters.md),
+[`cba_schedule_day()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_day.md),
+[`cba_schedule_month()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_month.md),
+[`cba_seasons()`](https://hoopR.sportsdataverse.org/reference/cba_seasons.md),
+[`cba_team_basic()`](https://hoopR.sportsdataverse.org/reference/cba_team_basic.md),
+[`cba_team_counts()`](https://hoopR.sportsdataverse.org/reference/cba_team_counts.md),
+[`cba_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_team_four.md),
+[`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
+[`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
+[`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
+
+## Examples
+
+``` r
+# \donttest{
+  try(cba_team_overview(team_id = 29128))
+#> ── CBA Team Overview from data-server.cbaleague.com ──────── hoopR 3.1.0.9000 ──
+#> ℹ Data updated: 2026-10-18 15:35:35 UTC
+#> # A tibble: 21 × 19
+#>    bout_no_points bout_no_points_rank bout_no_points_sort bout_point_sort
+#>             <dbl>               <dbl>               <dbl>           <dbl>
+#>  1           112.                   8                1.12            1.18
+#>  2           108.                   2                1.08            1.20
+#>  3           105.                   1                1.05            1.18
+#>  4           109.                   5                1.09            1.16
+#>  5           106.                  11                1.06            1.08
+#>  6           104.                   5                1.04            1.23
+#>  7           114.                  11                1.14            1.18
+#>  8           107.                   3                1.07            1.13
+#>  9           112.                   4                1.12            1.20
+#> 10           110.                   1                1.10            1.23
+#> # ℹ 11 more rows
+#> # ℹ 15 more variables: bout_points <dbl>, bout_points_rank <dbl>,
+#> #   bout_subtract_points <dbl>, bout_subtract_points_rank <dbl>,
+#> #   bout_subtract_points_sort <dbl>, is_avg <int>, loss_num <dbl>,
+#> #   player_times <dbl>, rhythm <dbl>, rhythm_rank <dbl>, season <int>,
+#> #   team_id <int>, team_name <chr>, win_num <dbl>, win_rate <dbl>
+# }
+```

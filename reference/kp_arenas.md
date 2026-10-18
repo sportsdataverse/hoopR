@@ -185,47 +185,47 @@ A data frame with the following columns:
 ``` r
 # \donttest{
 try(kp_trends())
-#> ✖ 2026-10-18 11:25:42.204877: Invalid arguments or no trends data available!
+#> ✖ 2026-10-18 15:41:45.575961: Invalid arguments or no trends data available!
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_officials(year = 2021))
-#> ✖ 2026-10-18 11:25:42.246679: Invalid arguments or no officials data for 2021 available!
+#> ✖ 2026-10-18 15:41:45.630877: Invalid arguments or no officials data for 2021 available!
 #> ✖ Args: year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_referee(referee = 714363, year = 2021))
-#> ✖ 2026-10-18 11:25:42.303833: Invalid arguments or no referee data for 714363 in 2021 available!
+#> ✖ 2026-10-18 15:41:45.678139: Invalid arguments or no referee data for 714363 in 2021 available!
 #> ✖ Args: referee = 714363, year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_hca())
-#> ✖ 2026-10-18 11:25:42.357363: Invalid arguments or no home court advantage data available!
+#> ✖ 2026-10-18 15:41:45.740372: Invalid arguments or no home court advantage data available!
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_arenas(year = 2021))
-#> ✖ 2026-10-18 11:25:42.396982: Invalid arguments or no arenas data available!
+#> ✖ 2026-10-18 15:41:45.793767: Invalid arguments or no arenas data available!
 #> ✖ Args: year = 2021
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_game_attrs(year = 2021, attr = "Excitement"))
-#> ✖ 2026-10-18 11:25:42.460593: Invalid arguments or no game attributes data for Excitement available!
+#> ✖ 2026-10-18 15:41:45.867368: Invalid arguments or no game attributes data for Excitement available!
 #> ✖ Args: year = 2021, attr = "Excitement"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL
 # }
 # \donttest{
 try(kp_fanmatch(date = "2022-02-22"))
-#> ✖ 2026-10-18 11:25:42.505526: Invalid arguments or no Fan Match data for 2022-02-22 available!
+#> ✖ 2026-10-18 15:41:45.913304: Invalid arguments or no Fan Match data for 2022-02-22 available!
 #> ✖ Args: date = "2022-02-22"
 #> ✖ Error: HTTP 403 Forbidden.
 #> NULL

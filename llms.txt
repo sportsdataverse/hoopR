@@ -2548,6 +2548,2943 @@ APIs, mirroring sdv-py’s `euroleague_*` functions column for column.
 
   **EuroLeague Game Header**
 
+## International Basketball
+
+### FIBA
+
+FIBA GDAP API and fiba.basketball game pages: national-team events and
+FIBA club competitions (`comp` picks the edition).
+
+- [`fiba_gdap_awards()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_awards.md)
+  :
+
+  **FIBA GDAP: awards**
+
+- [`fiba_gdap_competition()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_competition.md)
+  :
+
+  **FIBA GDAP: competition**
+
+- [`fiba_gdap_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_editions.md)
+  :
+
+  **FIBA GDAP: editions**
+
+- [`fiba_gdap_federation_games()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_federation_games.md)
+  :
+
+  **FIBA GDAP: federation games**
+
+- [`fiba_gdap_federation_ranking()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_federation_ranking.md)
+  :
+
+  **FIBA GDAP: federation ranking**
+
+- [`fiba_gdap_final_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_final_standings.md)
+  :
+
+  **FIBA GDAP: final standings**
+
+- [`fiba_gdap_game()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_game.md)
+  :
+
+  **FIBA GDAP: game**
+
+- [`fiba_gdap_game_officials()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_game_officials.md)
+  :
+
+  **FIBA GDAP: game officials**
+
+- [`fiba_gdap_game_periods()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_game_periods.md)
+  :
+
+  **FIBA GDAP: game periods**
+
+- [`fiba_gdap_games_between()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_games_between.md)
+  :
+
+  **FIBA GDAP: games between**
+
+- [`fiba_gdap_gateway_competition_ids()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_gateway_competition_ids.md)
+  :
+
+  **FIBA GDAP: gateway competition ids**
+
+- [`fiba_gdap_gateway_federation_ranking()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_gateway_federation_ranking.md)
+  :
+
+  **FIBA GDAP: gateway federation ranking**
+
+- [`fiba_gdap_medal_count()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_medal_count.md)
+  :
+
+  **FIBA GDAP: medal count**
+
+- [`fiba_gdap_national_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_national_teams.md)
+  :
+
+  **FIBA GDAP: national teams**
+
+- [`fiba_gdap_nominations()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_nominations.md)
+  :
+
+  **FIBA GDAP: nominations**
+
+- [`fiba_gdap_player_game_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_player_game_stats.md)
+  :
+
+  **FIBA GDAP: player game stats**
+
+- [`fiba_gdap_player_info()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_player_info.md)
+  :
+
+  **FIBA GDAP: player info**
+
+- [`fiba_gdap_player_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_player_stats.md)
+  :
+
+  **FIBA GDAP: player stats**
+
+- [`fiba_gdap_ranking_zones()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_ranking_zones.md)
+  :
+
+  **FIBA GDAP: ranking zones**
+
+- [`fiba_gdap_roster()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_roster.md)
+  :
+
+  **FIBA GDAP: roster**
+
+- [`fiba_gdap_roster_coaches()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_roster_coaches.md)
+  :
+
+  **FIBA GDAP: roster coaches**
+
+- [`fiba_gdap_roster_latest()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_roster_latest.md)
+  :
+
+  **FIBA GDAP: roster latest**
+
+- [`fiba_gdap_round_gamedays()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_round_gamedays.md)
+  :
+
+  **FIBA GDAP: round gamedays**
+
+- [`fiba_gdap_round_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_round_standings.md)
+  :
+
+  **FIBA GDAP: round standings**
+
+- [`fiba_gdap_rounds()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_rounds.md)
+  :
+
+  **FIBA GDAP: rounds**
+
+- [`fiba_gdap_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_schedule.md)
+  :
+
+  **FIBA GDAP: schedule**
+
+- [`fiba_gdap_team_games()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_games.md)
+  :
+
+  **FIBA GDAP: team games**
+
+- [`fiba_gdap_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_player_stats.md)
+  :
+
+  **FIBA GDAP: team player stats**
+
+- [`fiba_gdap_team_staff()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_staff.md)
+  :
+
+  **FIBA GDAP: team staff**
+
+- [`fiba_gdap_team_stats()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_team_stats.md)
+  :
+
+  **FIBA GDAP: team stats**
+
+- [`fiba_gdap_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_teams.md)
+  :
+
+  **FIBA GDAP: teams**
+
+- [`fiba_gamepage_box_players()`](https://hoopR.sportsdataverse.org/reference/fiba_gamepage_box_players.md)
+  :
+
+  **FIBA GAMEPAGE: box players**
+
+- [`fiba_gamepage_box_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_gamepage_box_teams.md)
+  :
+
+  **FIBA GAMEPAGE: box teams**
+
+- [`fiba_gamepage_lineup()`](https://hoopR.sportsdataverse.org/reference/fiba_gamepage_lineup.md)
+  :
+
+  **FIBA GAMEPAGE: lineup**
+
+- [`fiba_gamepage_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_gamepage_pbp.md)
+  :
+
+  **FIBA GAMEPAGE: pbp**
+
+- [`fiba_gamepage_period_scores()`](https://hoopR.sportsdataverse.org/reference/fiba_gamepage_period_scores.md)
+  :
+
+  **FIBA GAMEPAGE: period scores**
+
+- [`fiba_gamepage_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_gamepage_shots.md)
+  :
+
+  **FIBA GAMEPAGE: shots**
+
+### FIBA competitions
+
+Per-competition FIBA aliases (one family per competition, season =
+edition).
+
+- [`fiba_wc_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  [`fiba_wc_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_wc_competition.md)
+  :
+
+  **FIBA competition: FIBA Basketball World Cup**
+
+- [`fiba_oly_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  [`fiba_oly_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_oly_competition.md)
+  :
+
+  **FIBA competition: Men's Olympic Basketball Tournament**
+
+- [`fiba_bcl_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  [`fiba_bcl_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_bcl_competition.md)
+  :
+
+  **FIBA competition: Basketball Champions League (FIBA Men's European
+  Club Competitions Tier 1)**
+
+- [`fiba_afrobasket_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  [`fiba_afrobasket_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_afrobasket_competition.md)
+  :
+
+  **FIBA competition: FIBA AfroBasket**
+
+- [`fiba_eurobasket_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  [`fiba_eurobasket_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_eurobasket_competition.md)
+  :
+
+  **FIBA competition: FIBA EuroBasket**
+
+- [`fiba_americup_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  [`fiba_americup_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_americup_competition.md)
+  :
+
+  **FIBA competition: FIBA AmeriCup**
+
+- [`fiba_asiacup_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  [`fiba_asiacup_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_asiacup_competition.md)
+  :
+
+  **FIBA competition: FIBA Asia Cup**
+
+- [`fiba_icup_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  [`fiba_icup_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_icup_competition.md)
+  :
+
+  **FIBA competition: FIBA Intercontinental Cup**
+
+- [`fiba_bcla_editions()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_schedule()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_standings()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_teams()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_player_box()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_team_box()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_pbp()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  [`fiba_bcla_shots()`](https://hoopR.sportsdataverse.org/reference/fiba_bcla_competition.md)
+  :
+
+  **FIBA competition: Basketball Champions League Americas**
+
+### Genius Sports
+
+Genius Sports hosted, LiveStats and widget feeds (`org` picks the
+league).
+
+- [`genius_competition_games()`](https://hoopR.sportsdataverse.org/reference/genius_competition_games.md)
+  :
+
+  **Genius Competition Games**
+
+- [`genius_competitions()`](https://hoopR.sportsdataverse.org/reference/genius_competitions.md)
+  :
+
+  **Genius Competitions**
+
+- [`genius_game()`](https://hoopR.sportsdataverse.org/reference/genius_game.md)
+  :
+
+  **Genius Game**
+
+- [`genius_game_crosswalk()`](https://hoopR.sportsdataverse.org/reference/genius_game_crosswalk.md)
+  :
+
+  **Genius Game Crosswalk**
+
+- [`genius_match_competition()`](https://hoopR.sportsdataverse.org/reference/genius_match_competition.md)
+  :
+
+  **Genius Match Competition**
+
+- [`genius_pbp()`](https://hoopR.sportsdataverse.org/reference/genius_pbp.md)
+  :
+
+  **Genius Play-by-Play**
+
+- [`genius_player_box()`](https://hoopR.sportsdataverse.org/reference/genius_player_box.md)
+  :
+
+  **Genius Player Box Score**
+
+- [`genius_schedule()`](https://hoopR.sportsdataverse.org/reference/genius_schedule.md)
+  :
+
+  **Genius Schedule**
+
+- [`genius_schedule_embed()`](https://hoopR.sportsdataverse.org/reference/genius_schedule_embed.md)
+  :
+
+  **Genius Schedule (Embed)**
+
+- [`genius_shots()`](https://hoopR.sportsdataverse.org/reference/genius_shots.md)
+  :
+
+  **Genius Shot Chart**
+
+- [`genius_team_box()`](https://hoopR.sportsdataverse.org/reference/genius_team_box.md)
+  :
+
+  **Genius Team Box Score**
+
+- [`genius_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/genius_team_crosswalk.md)
+  :
+
+  **Genius Team Crosswalk**
+
+- [`genius_widget_games()`](https://hoopR.sportsdataverse.org/reference/genius_widget_games.md)
+  :
+
+  **Genius Widget Games**
+
+### Genius competitions
+
+Per-league Genius aliases.
+
+- [`slb_competitions()`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
+  [`slb_schedule()`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
+  [`slb_team_box()`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
+  [`slb_player_box()`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
+  [`slb_pbp()`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
+  [`slb_shots()`](https://hoopR.sportsdataverse.org/reference/slb_competition.md)
+  :
+
+  **Super League Basketball (UK) (Genius LiveStats)**
+
+- [`bal_competitions()`](https://hoopR.sportsdataverse.org/reference/bal_competition.md)
+  [`bal_schedule()`](https://hoopR.sportsdataverse.org/reference/bal_competition.md)
+  [`bal_team_box()`](https://hoopR.sportsdataverse.org/reference/bal_competition.md)
+  [`bal_player_box()`](https://hoopR.sportsdataverse.org/reference/bal_competition.md)
+  [`bal_pbp()`](https://hoopR.sportsdataverse.org/reference/bal_competition.md)
+  [`bal_shots()`](https://hoopR.sportsdataverse.org/reference/bal_competition.md)
+  :
+
+  **Basketball Africa League (Genius LiveStats)**
+
+- [`nznbl_competitions()`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
+  [`nznbl_schedule()`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
+  [`nznbl_team_box()`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
+  [`nznbl_player_box()`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
+  [`nznbl_pbp()`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
+  [`nznbl_shots()`](https://hoopR.sportsdataverse.org/reference/nznbl_competition.md)
+  :
+
+  **New Zealand National Basketball League (Genius LiveStats)**
+
+- [`esake_competitions()`](https://hoopR.sportsdataverse.org/reference/esake_competition.md)
+  [`esake_schedule()`](https://hoopR.sportsdataverse.org/reference/esake_competition.md)
+  [`esake_team_box()`](https://hoopR.sportsdataverse.org/reference/esake_competition.md)
+  [`esake_player_box()`](https://hoopR.sportsdataverse.org/reference/esake_competition.md)
+  [`esake_pbp()`](https://hoopR.sportsdataverse.org/reference/esake_competition.md)
+  [`esake_shots()`](https://hoopR.sportsdataverse.org/reference/esake_competition.md)
+  :
+
+  **Greek Basket League (ESAKE) (Genius LiveStats)**
+
+- [`lnbm_competitions()`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md)
+  [`lnbm_schedule()`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md)
+  [`lnbm_team_box()`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md)
+  [`lnbm_player_box()`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md)
+  [`lnbm_pbp()`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md)
+  [`lnbm_shots()`](https://hoopR.sportsdataverse.org/reference/lnbm_competition.md)
+  :
+
+  **Liga Nationala de Baschet Masculin (Romania) (Genius LiveStats)**
+
+- [`lub_competitions()`](https://hoopR.sportsdataverse.org/reference/lub_competition.md)
+  [`lub_schedule()`](https://hoopR.sportsdataverse.org/reference/lub_competition.md)
+  [`lub_team_box()`](https://hoopR.sportsdataverse.org/reference/lub_competition.md)
+  [`lub_player_box()`](https://hoopR.sportsdataverse.org/reference/lub_competition.md)
+  [`lub_pbp()`](https://hoopR.sportsdataverse.org/reference/lub_competition.md)
+  [`lub_shots()`](https://hoopR.sportsdataverse.org/reference/lub_competition.md)
+  :
+
+  **Liga Uruguaya de Basquetbol (Genius LiveStats)**
+
+### Atrium (Sportradar)
+
+Sportradar Atrium embed sites (`website_id` picks the site).
+
+- [`atrium_box_score()`](https://hoopR.sportsdataverse.org/reference/atrium_box_score.md)
+  :
+
+  **Atrium Player Box Score**
+
+- [`atrium_competition_player_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_player_stats.md)
+  :
+
+  **Atrium Competition Player Stats (long form)**
+
+- [`atrium_competition_team_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_competition_team_stats.md)
+  :
+
+  **Atrium Competition Team Stats (long form)**
+
+- [`atrium_end_year()`](https://hoopR.sportsdataverse.org/reference/atrium_end_year.md)
+  :
+
+  **Atrium END Year**
+
+- [`atrium_fixture()`](https://hoopR.sportsdataverse.org/reference/atrium_fixture.md)
+  :
+
+  **Atrium Fixture (game header)**
+
+- [`atrium_fixture_periods()`](https://hoopR.sportsdataverse.org/reference/atrium_fixture_periods.md)
+  :
+
+  **Atrium Fixture Periods**
+
+- [`atrium_fixtures()`](https://hoopR.sportsdataverse.org/reference/atrium_fixtures.md)
+  :
+
+  **Atrium Fixtures (schedule and results)**
+
+- [`atrium_fixtures_ribbon()`](https://hoopR.sportsdataverse.org/reference/atrium_fixtures_ribbon.md)
+  :
+
+  **Atrium Fixtures Ribbon**
+
+- [`atrium_leaders()`](https://hoopR.sportsdataverse.org/reference/atrium_leaders.md)
+  :
+
+  **Atrium Leaders**
+
+- [`atrium_pbp()`](https://hoopR.sportsdataverse.org/reference/atrium_pbp.md)
+  :
+
+  **Atrium Play-by-Play**
+
+- [`atrium_player()`](https://hoopR.sportsdataverse.org/reference/atrium_player.md)
+  :
+
+  **Atrium Player Page**
+
+- [`atrium_player_game_log()`](https://hoopR.sportsdataverse.org/reference/atrium_player_game_log.md)
+  :
+
+  **Atrium Player Game Log**
+
+- [`atrium_player_seasons()`](https://hoopR.sportsdataverse.org/reference/atrium_player_seasons.md)
+  :
+
+  **Atrium Player Seasons**
+
+- [`atrium_player_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_player_stats.md)
+  :
+
+  **Atrium Player Stats (season, long form)**
+
+- [`atrium_players()`](https://hoopR.sportsdataverse.org/reference/atrium_players.md)
+  :
+
+  **Atrium Players**
+
+- [`atrium_season_id()`](https://hoopR.sportsdataverse.org/reference/atrium_season_id.md)
+  :
+
+  **Atrium Season Id**
+
+- [`atrium_seasons()`](https://hoopR.sportsdataverse.org/reference/atrium_seasons.md)
+  :
+
+  **Atrium Seasons**
+
+- [`atrium_shots()`](https://hoopR.sportsdataverse.org/reference/atrium_shots.md)
+  :
+
+  **Atrium Shots**
+
+- [`atrium_standings()`](https://hoopR.sportsdataverse.org/reference/atrium_standings.md)
+  :
+
+  **Atrium Standings**
+
+- [`atrium_standings_summary()`](https://hoopR.sportsdataverse.org/reference/atrium_standings_summary.md)
+  :
+
+  **Atrium Standings Summary**
+
+- [`atrium_team()`](https://hoopR.sportsdataverse.org/reference/atrium_team.md)
+  :
+
+  **Atrium Team Page**
+
+- [`atrium_team_box_score()`](https://hoopR.sportsdataverse.org/reference/atrium_team_box_score.md)
+  :
+
+  **Atrium Team Box Score**
+
+- [`atrium_team_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_team_stats.md)
+  :
+
+  **Atrium Team Stats (season, long form)**
+
+- [`atrium_teams()`](https://hoopR.sportsdataverse.org/reference/atrium_teams.md)
+  :
+
+  **Atrium Teams**
+
+### Atrium competitions
+
+Per-site Atrium aliases.
+
+- [`lnb_seasons()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_schedule()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_standings()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_teams()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_player_box()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_team_box()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_pbp()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  [`lnb_shots()`](https://hoopR.sportsdataverse.org/reference/lnb_competition.md)
+  :
+
+  **LNB (France) (Atrium shortcuts)**
+
+- [`lnbp_seasons()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_schedule()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_standings()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_teams()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_player_box()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_team_box()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_pbp()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  [`lnbp_shots()`](https://hoopR.sportsdataverse.org/reference/lnbp_competition.md)
+  :
+
+  **LNBP (Mexico, with COPA VALUE and LNBP FEMENIL) (Atrium shortcuts)**
+
+- [`nbl1_seasons()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_schedule()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_standings()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_teams()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_player_box()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_team_box()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  [`nbl1_shots()`](https://hoopR.sportsdataverse.org/reference/nbl1_competition.md)
+  :
+
+  **NBL1 (Australia) (Atrium shortcuts)**
+
+- [`lmb_seasons()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_schedule()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_standings()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_teams()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_player_box()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_team_box()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_pbp()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  [`lmb_shots()`](https://hoopR.sportsdataverse.org/reference/lmb_competition.md)
+  :
+
+  **Liga Mayor de Baloncesto (El Salvador) (Atrium shortcuts)**
+
+- [`lpb_seasons()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_schedule()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_standings()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_teams()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_player_box()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_team_box()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_pbp()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  [`lpb_shots()`](https://hoopR.sportsdataverse.org/reference/lpb_competition.md)
+  :
+
+  **LPB / LPBF Liga Profesional de Baloncesto (Panama) (Atrium
+  shortcuts)**
+
+### NBL (Rosetta)
+
+NBL, WNBL and NBL1 (Australia) on the Rosetta stats API (`org` picks the
+league).
+
+- [`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md)
+  :
+
+  **NBL Rosetta Match**
+
+- [`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md)
+  :
+
+  **NBL Rosetta Match by Id**
+
+- [`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md)
+  :
+
+  **NBL Rosetta Match Play-by-Play**
+
+- [`nbl_rosetta_match_player_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_player_box.md)
+  :
+
+  **NBL Rosetta Match Player Box Score**
+
+- [`nbl_rosetta_match_player_period_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_player_period_box.md)
+  :
+
+  **NBL Rosetta Match Player Box Score by Period**
+
+- [`nbl_rosetta_match_team_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_team_box.md)
+  :
+
+  **NBL Rosetta Match Team Box Score**
+
+- [`nbl_rosetta_matches()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_matches.md)
+  :
+
+  **NBL Rosetta Matches**
+
+- [`nbl_rosetta_next_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_next_match.md)
+  :
+
+  **NBL Rosetta Next Match**
+
+- [`nbl_rosetta_next_match_team()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_next_match_team.md)
+  :
+
+  **NBL Rosetta Next Match Team**
+
+- [`nbl_rosetta_next_matches()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_next_matches.md)
+  :
+
+  **NBL Rosetta Next Matches**
+
+- [`nbl_rosetta_outcomes()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_outcomes.md)
+  :
+
+  **NBL Rosetta Outcomes**
+
+- [`nbl_rosetta_player_game_log()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_player_game_log.md)
+  :
+
+  **NBL Rosetta Player Game Log**
+
+- [`nbl_rosetta_player_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_player_stats.md)
+  :
+
+  **NBL Rosetta Player Stats**
+
+- [`nbl_rosetta_players()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_players.md)
+  :
+
+  **NBL Rosetta Players**
+
+- [`nbl_rosetta_seasons()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_seasons.md)
+  :
+
+  **NBL Rosetta Seasons**
+
+- [`nbl_rosetta_seasons_current()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_seasons_current.md)
+  :
+
+  **NBL Rosetta Seasons Current**
+
+- [`nbl_rosetta_standings()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_standings.md)
+  :
+
+  **NBL Rosetta Standings**
+
+- [`nbl_rosetta_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_stats_leaders.md)
+  :
+
+  **NBL Rosetta Stats Leaders**
+
+- [`nbl_rosetta_team_players()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_players.md)
+  :
+
+  **NBL Rosetta Team Players**
+
+- [`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md)
+  :
+
+  **NBL Rosetta Team Stats**
+
+- [`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md)
+  :
+
+  **NBL Rosetta Team Stats Leaders**
+
+- [`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
+  :
+
+  **NBL Rosetta Teams**
+
+### SCB (BBL)
+
+BBL and DBBL (Germany) over the SCB API.
+
+- [`scb_game()`](https://hoopR.sportsdataverse.org/reference/scb_game.md)
+  :
+
+  **Get BBL / DBBL Game**
+
+- [`scb_game_actions()`](https://hoopR.sportsdataverse.org/reference/scb_game_actions.md)
+  :
+
+  **Get BBL / DBBL Game Play-by-Play**
+
+- [`scb_game_players()`](https://hoopR.sportsdataverse.org/reference/scb_game_players.md)
+  :
+
+  **Get BBL / DBBL Game Player Box Score**
+
+- [`scb_game_teams()`](https://hoopR.sportsdataverse.org/reference/scb_game_teams.md)
+  :
+
+  **Get BBL / DBBL Game Team Box Score**
+
+- [`scb_games()`](https://hoopR.sportsdataverse.org/reference/scb_games.md)
+  :
+
+  **Get BBL / DBBL Games**
+
+- [`scb_games_recent()`](https://hoopR.sportsdataverse.org/reference/scb_games_recent.md)
+  :
+
+  **Get BBL / DBBL Recent Games**
+
+- [`scb_player_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_player_statistics.md)
+  :
+
+  **Get BBL / DBBL Season Player Statistics**
+
+- [`scb_playoff_games()`](https://hoopR.sportsdataverse.org/reference/scb_playoff_games.md)
+  :
+
+  **Get BBL / DBBL Playoff Games**
+
+- [`scb_playoff_series()`](https://hoopR.sportsdataverse.org/reference/scb_playoff_series.md)
+  :
+
+  **Get BBL / DBBL Playoff Series**
+
+- [`scb_records_per_game()`](https://hoopR.sportsdataverse.org/reference/scb_records_per_game.md)
+  :
+
+  **Get BBL / DBBL Single-Game Records**
+
+- [`scb_records_season_averages()`](https://hoopR.sportsdataverse.org/reference/scb_records_season_averages.md)
+  :
+
+  **Get BBL / DBBL Season-Average Records**
+
+- [`scb_referees()`](https://hoopR.sportsdataverse.org/reference/scb_referees.md)
+  :
+
+  **Get BBL Referees**
+
+- [`scb_season_player()`](https://hoopR.sportsdataverse.org/reference/scb_season_player.md)
+  :
+
+  **Get BBL / DBBL Season Player Profile**
+
+- [`scb_season_players()`](https://hoopR.sportsdataverse.org/reference/scb_season_players.md)
+  :
+
+  **Get BBL / DBBL Season Players**
+
+- [`scb_season_teams()`](https://hoopR.sportsdataverse.org/reference/scb_season_teams.md)
+  :
+
+  **Get BBL / DBBL Season Teams**
+
+- [`scb_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_seasons.md)
+  :
+
+  **Get BBL / DBBL Seasons**
+
+- [`scb_standings()`](https://hoopR.sportsdataverse.org/reference/scb_standings.md)
+  :
+
+  **Get BBL / DBBL Standings**
+
+- [`scb_team()`](https://hoopR.sportsdataverse.org/reference/scb_team.md)
+  :
+
+  **Get BBL / DBBL Team Profile**
+
+- [`scb_team_rosters()`](https://hoopR.sportsdataverse.org/reference/scb_team_rosters.md)
+  :
+
+  **Get BBL Team Rosters**
+
+- [`scb_team_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_team_seasons.md)
+  :
+
+  **Get BBL / DBBL Team Seasons**
+
+- [`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md)
+  :
+
+  **Get BBL / DBBL Season Team Statistics**
+
+- [`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md)
+  :
+
+  **Get BBL Transfers**
+
+- [`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
+  :
+
+  **Get BBL Team Transfers**
+
+### FEB
+
+Spanish FEB competitions: Primera FEB, Liga Femenina Endesa, Segunda
+FEB.
+
+- [`feb_game_info()`](https://hoopR.sportsdataverse.org/reference/feb_game_info.md)
+  :
+
+  **FEB Game Info**
+
+- [`feb_leaders()`](https://hoopR.sportsdataverse.org/reference/feb_leaders.md)
+  :
+
+  **FEB Game Leaders**
+
+- [`feb_overview()`](https://hoopR.sportsdataverse.org/reference/feb_overview.md)
+  :
+
+  **FEB Overview**
+
+- [`feb_pbp()`](https://hoopR.sportsdataverse.org/reference/feb_pbp.md)
+  :
+
+  **FEB Play-by-Play**
+
+- [`feb_period_scores()`](https://hoopR.sportsdataverse.org/reference/feb_period_scores.md)
+  :
+
+  **FEB Period Scores**
+
+- [`feb_player_box()`](https://hoopR.sportsdataverse.org/reference/feb_player_box.md)
+  :
+
+  **FEB Player Box Score**
+
+- [`feb_results()`](https://hoopR.sportsdataverse.org/reference/feb_results.md)
+  :
+
+  **FEB Results**
+
+- [`feb_schedule()`](https://hoopR.sportsdataverse.org/reference/feb_schedule.md)
+  :
+
+  **FEB Schedule**
+
+- [`feb_shots()`](https://hoopR.sportsdataverse.org/reference/feb_shots.md)
+  :
+
+  **FEB Shots**
+
+- [`feb_standings()`](https://hoopR.sportsdataverse.org/reference/feb_standings.md)
+  :
+
+  **FEB Standings**
+
+- [`feb_team_stats()`](https://hoopR.sportsdataverse.org/reference/feb_team_stats.md)
+  :
+
+  **FEB Team Stats**
+
+### TBF
+
+Turkish Basketball Federation app API: BSL and KBSL.
+
+- [`tbf_daily_matches()`](https://hoopR.sportsdataverse.org/reference/tbf_daily_matches.md)
+  :
+
+  **TBF Daily Matches**
+
+- [`tbf_game_header()`](https://hoopR.sportsdataverse.org/reference/tbf_game_header.md)
+  :
+
+  **TBF Game Header**
+
+- [`tbf_game_leaders()`](https://hoopR.sportsdataverse.org/reference/tbf_game_leaders.md)
+  :
+
+  **TBF Game Leaders**
+
+- [`tbf_game_players()`](https://hoopR.sportsdataverse.org/reference/tbf_game_players.md)
+  :
+
+  **TBF Game Players**
+
+- [`tbf_highlights()`](https://hoopR.sportsdataverse.org/reference/tbf_highlights.md)
+  :
+
+  **TBF Highlights**
+
+- [`tbf_leaders_assists()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_assists.md)
+  :
+
+  **TBF Leaders: Assists**
+
+- [`tbf_leaders_blocks()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_blocks.md)
+  :
+
+  **TBF Leaders: Blocks**
+
+- [`tbf_leaders_efficiency()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_efficiency.md)
+  :
+
+  **TBF Leaders: Efficiency**
+
+- [`tbf_leaders_minutes()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_minutes.md)
+  :
+
+  **TBF Leaders: Minutes**
+
+- [`tbf_leaders_points()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_points.md)
+  :
+
+  **TBF Leaders: Points**
+
+- [`tbf_leaders_rebounds()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_rebounds.md)
+  :
+
+  **TBF Leaders: Rebounds**
+
+- [`tbf_leaders_steals()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_steals.md)
+  :
+
+  **TBF Leaders: Steals**
+
+- [`tbf_leaders_threes()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_threes.md)
+  :
+
+  **TBF Leaders: Threes**
+
+- [`tbf_leaders_turnovers()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_turnovers.md)
+  :
+
+  **TBF Leaders: Turnovers**
+
+- [`tbf_league_seasons()`](https://hoopR.sportsdataverse.org/reference/tbf_league_seasons.md)
+  :
+
+  **TBF League Seasons**
+
+- [`tbf_leagues()`](https://hoopR.sportsdataverse.org/reference/tbf_leagues.md)
+  :
+
+  **TBF Leagues**
+
+- [`tbf_pbp()`](https://hoopR.sportsdataverse.org/reference/tbf_pbp.md)
+  :
+
+  **TBF Play-by-Play**
+
+- [`tbf_period_scores()`](https://hoopR.sportsdataverse.org/reference/tbf_period_scores.md)
+  :
+
+  **TBF Period Scores**
+
+- [`tbf_player_box()`](https://hoopR.sportsdataverse.org/reference/tbf_player_box.md)
+  :
+
+  **TBF Player Box Score**
+
+- [`tbf_player_career()`](https://hoopR.sportsdataverse.org/reference/tbf_player_career.md)
+  :
+
+  **TBF Player Career**
+
+- [`tbf_players()`](https://hoopR.sportsdataverse.org/reference/tbf_players.md)
+  :
+
+  **TBF Players**
+
+- [`tbf_schedule()`](https://hoopR.sportsdataverse.org/reference/tbf_schedule.md)
+  :
+
+  **TBF Schedule**
+
+- [`tbf_seasons()`](https://hoopR.sportsdataverse.org/reference/tbf_seasons.md)
+  :
+
+  **TBF Seasons**
+
+- [`tbf_shots()`](https://hoopR.sportsdataverse.org/reference/tbf_shots.md)
+  :
+
+  **TBF Shots**
+
+- [`tbf_standings()`](https://hoopR.sportsdataverse.org/reference/tbf_standings.md)
+  :
+
+  **TBF Standings**
+
+- [`tbf_team_box()`](https://hoopR.sportsdataverse.org/reference/tbf_team_box.md)
+  :
+
+  **TBF Team Box Score**
+
+- [`tbf_team_games()`](https://hoopR.sportsdataverse.org/reference/tbf_team_games.md)
+  :
+
+  **TBF Team Games**
+
+- [`tbf_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/tbf_team_player_stats.md)
+  :
+
+  **TBF Team Player Stats**
+
+- [`tbf_team_roster()`](https://hoopR.sportsdataverse.org/reference/tbf_team_roster.md)
+  :
+
+  **TBF Team Roster**
+
+- [`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md)
+  :
+
+  **TBF Team Staff**
+
+- [`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md)
+  :
+
+  **TBF Teams**
+
+- [`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
+  :
+
+  **TBF Weeks**
+
+### ABA League
+
+ABA League and ABA League 2 (Adriatic).
+
+- [`aba_box_players()`](https://hoopR.sportsdataverse.org/reference/aba_box_players.md)
+  :
+
+  **ABA League Player Box**
+
+- [`aba_box_teams()`](https://hoopR.sportsdataverse.org/reference/aba_box_teams.md)
+  :
+
+  **ABA League Team Box**
+
+- [`aba_calendar()`](https://hoopR.sportsdataverse.org/reference/aba_calendar.md)
+  :
+
+  **ABA League Calendar**
+
+- [`aba_game()`](https://hoopR.sportsdataverse.org/reference/aba_game.md)
+  :
+
+  **ABA League Game**
+
+- [`aba_pbp()`](https://hoopR.sportsdataverse.org/reference/aba_pbp.md)
+  :
+
+  **ABA League Play-by-Play**
+
+- [`aba_periods()`](https://hoopR.sportsdataverse.org/reference/aba_periods.md)
+  :
+
+  **ABA League Periods**
+
+- [`aba_player()`](https://hoopR.sportsdataverse.org/reference/aba_player.md)
+  :
+
+  **ABA League Player**
+
+- [`aba_player_games()`](https://hoopR.sportsdataverse.org/reference/aba_player_games.md)
+  :
+
+  **ABA League Player Games**
+
+- [`aba_score_difference()`](https://hoopR.sportsdataverse.org/reference/aba_score_difference.md)
+  :
+
+  **ABA League Score Difference**
+
+- [`aba_score_flow()`](https://hoopR.sportsdataverse.org/reference/aba_score_flow.md)
+  :
+
+  **ABA League Score Flow**
+
+- [`aba_shots()`](https://hoopR.sportsdataverse.org/reference/aba_shots.md)
+  :
+
+  **ABA League Shots**
+
+- [`aba_standings()`](https://hoopR.sportsdataverse.org/reference/aba_standings.md)
+  :
+
+  **ABA League Standings**
+
+### ACB
+
+ACB, Liga Endesa (Spain): Liga Endesa, Copa del Rey, Supercopa,
+Minicopa.
+
+- [`acb_box_info()`](https://hoopR.sportsdataverse.org/reference/acb_box_info.md)
+  :
+
+  **Get ACB Box Info**
+
+- [`acb_bracket()`](https://hoopR.sportsdataverse.org/reference/acb_bracket.md)
+  :
+
+  **Get ACB Bracket**
+
+- [`acb_bracket_games()`](https://hoopR.sportsdataverse.org/reference/acb_bracket_games.md)
+  :
+
+  **Get ACB Bracket Games**
+
+- [`acb_calendar()`](https://hoopR.sportsdataverse.org/reference/acb_calendar.md)
+  :
+
+  **Get ACB Calendar**
+
+- [`acb_career_stints()`](https://hoopR.sportsdataverse.org/reference/acb_career_stints.md)
+  :
+
+  **Get ACB Career Stints**
+
+- [`acb_career_trophies()`](https://hoopR.sportsdataverse.org/reference/acb_career_trophies.md)
+  :
+
+  **Get ACB Career Trophies**
+
+- [`acb_club_data()`](https://hoopR.sportsdataverse.org/reference/acb_club_data.md)
+  :
+
+  **Get ACB Club Data**
+
+- [`acb_competition_current()`](https://hoopR.sportsdataverse.org/reference/acb_competition_current.md)
+  :
+
+  **Get ACB Competition Current**
+
+- [`acb_competition_editions()`](https://hoopR.sportsdataverse.org/reference/acb_competition_editions.md)
+  :
+
+  **Get ACB Competition Editions**
+
+- [`acb_competition_rounds()`](https://hoopR.sportsdataverse.org/reference/acb_competition_rounds.md)
+  :
+
+  **Get ACB Competition Rounds**
+
+- [`acb_competition_weeks()`](https://hoopR.sportsdataverse.org/reference/acb_competition_weeks.md)
+  :
+
+  **Get ACB Competition Weeks**
+
+- [`acb_current_roster()`](https://hoopR.sportsdataverse.org/reference/acb_current_roster.md)
+  :
+
+  **Get ACB Current Roster**
+
+- [`acb_lead_stats()`](https://hoopR.sportsdataverse.org/reference/acb_lead_stats.md)
+  :
+
+  **Get ACB Lead Stats**
+
+- [`acb_lead_tracker()`](https://hoopR.sportsdataverse.org/reference/acb_lead_tracker.md)
+  :
+
+  **Get ACB Lead Tracker**
+
+- [`acb_league_zones()`](https://hoopR.sportsdataverse.org/reference/acb_league_zones.md)
+  :
+
+  **Get ACB League Zones**
+
+- [`acb_lineup()`](https://hoopR.sportsdataverse.org/reference/acb_lineup.md)
+  :
+
+  **Get ACB Lineup**
+
+- [`acb_match_advanced_stats()`](https://hoopR.sportsdataverse.org/reference/acb_match_advanced_stats.md)
+  :
+
+  **Get ACB Match Advanced Stats**
+
+- [`acb_match_header()`](https://hoopR.sportsdataverse.org/reference/acb_match_header.md)
+  :
+
+  **Get ACB Match Header**
+
+- [`acb_match_leaders()`](https://hoopR.sportsdataverse.org/reference/acb_match_leaders.md)
+  :
+
+  **Get ACB Match Leaders**
+
+- [`acb_matchlist()`](https://hoopR.sportsdataverse.org/reference/acb_matchlist.md)
+  :
+
+  **Get ACB Match List**
+
+- [`acb_next_matches()`](https://hoopR.sportsdataverse.org/reference/acb_next_matches.md)
+  :
+
+  **Get ACB Next Matches**
+
+- [`acb_pbp()`](https://hoopR.sportsdataverse.org/reference/acb_pbp.md)
+  :
+
+  **Get ACB Play-by-Play**
+
+- [`acb_period_scores()`](https://hoopR.sportsdataverse.org/reference/acb_period_scores.md)
+  :
+
+  **Get ACB Period Scores**
+
+- [`acb_player_advanced_stats()`](https://hoopR.sportsdataverse.org/reference/acb_player_advanced_stats.md)
+  :
+
+  **Get ACB Player Advanced Stats**
+
+- [`acb_player_box()`](https://hoopR.sportsdataverse.org/reference/acb_player_box.md)
+  :
+
+  **Get ACB Player Box**
+
+- [`acb_player_data()`](https://hoopR.sportsdataverse.org/reference/acb_player_data.md)
+  :
+
+  **Get ACB Player Data**
+
+- [`acb_player_matches()`](https://hoopR.sportsdataverse.org/reference/acb_player_matches.md)
+  :
+
+  **Get ACB Player Matches**
+
+- [`acb_player_stats()`](https://hoopR.sportsdataverse.org/reference/acb_player_stats.md)
+  :
+
+  **Get ACB Player Stats**
+
+- [`acb_player_totals()`](https://hoopR.sportsdataverse.org/reference/acb_player_totals.md)
+  :
+
+  **Get ACB Player Totals**
+
+- [`acb_quickfacts()`](https://hoopR.sportsdataverse.org/reference/acb_quickfacts.md)
+  :
+
+  **Get ACB Quick Facts**
+
+- [`acb_round_matches()`](https://hoopR.sportsdataverse.org/reference/acb_round_matches.md)
+  :
+
+  **Get ACB Round Matches**
+
+- [`acb_search()`](https://hoopR.sportsdataverse.org/reference/acb_search.md)
+  :
+
+  **Get ACB Search**
+
+- [`acb_season_leaders()`](https://hoopR.sportsdataverse.org/reference/acb_season_leaders.md)
+  :
+
+  **Get ACB Season Leaders**
+
+- [`acb_serie()`](https://hoopR.sportsdataverse.org/reference/acb_serie.md)
+  :
+
+  **Get ACB Playoff Series**
+
+- [`acb_shots()`](https://hoopR.sportsdataverse.org/reference/acb_shots.md)
+  :
+
+  **Get ACB Shots**
+
+- [`acb_standings()`](https://hoopR.sportsdataverse.org/reference/acb_standings.md)
+  :
+
+  **Get ACB Standings**
+
+- [`acb_standings_rounds()`](https://hoopR.sportsdataverse.org/reference/acb_standings_rounds.md)
+  :
+
+  **Get ACB Standings Rounds**
+
+- [`acb_team_box()`](https://hoopR.sportsdataverse.org/reference/acb_team_box.md)
+  :
+
+  **Get ACB Team Box**
+
+- [`acb_team_comparison()`](https://hoopR.sportsdataverse.org/reference/acb_team_comparison.md)
+  :
+
+  **Get ACB Team Comparison**
+
+- [`acb_team_leaders()`](https://hoopR.sportsdataverse.org/reference/acb_team_leaders.md)
+  :
+
+  **Get ACB Team Leaders**
+
+- [`acb_team_matches()`](https://hoopR.sportsdataverse.org/reference/acb_team_matches.md)
+  :
+
+  **Get ACB Team Matches**
+
+- [`acb_team_records()`](https://hoopR.sportsdataverse.org/reference/acb_team_records.md)
+  :
+
+  **Get ACB Team Records**
+
+- [`acb_team_stats()`](https://hoopR.sportsdataverse.org/reference/acb_team_stats.md)
+  :
+
+  **Get ACB Team Stats**
+
+- [`acb_team_totals()`](https://hoopR.sportsdataverse.org/reference/acb_team_totals.md)
+  :
+
+  **Get ACB Team Totals**
+
+- [`acb_teams()`](https://hoopR.sportsdataverse.org/reference/acb_teams.md)
+  :
+
+  **Get ACB Teams**
+
+### B.League
+
+B.LEAGUE (Japan: B1, B2, B3).
+
+- [`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md)
+  :
+
+  **B.LEAGUE Game Info**
+
+- [`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md)
+  :
+
+  **B.LEAGUE Leaders**
+
+- [`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md)
+  :
+
+  **B.LEAGUE Play-by-Play**
+
+- [`bleague_period_scores()`](https://hoopR.sportsdataverse.org/reference/bleague_period_scores.md)
+  :
+
+  **B.LEAGUE Period Scores**
+
+- [`bleague_player_box()`](https://hoopR.sportsdataverse.org/reference/bleague_player_box.md)
+  :
+
+  **B.LEAGUE Player Box**
+
+- [`bleague_schedule()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule.md)
+  :
+
+  **B.LEAGUE Schedule**
+
+- [`bleague_schedule_clubs()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule_clubs.md)
+  :
+
+  **B.LEAGUE Schedule Clubs**
+
+- [`bleague_schedule_days()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule_days.md)
+  :
+
+  **B.LEAGUE Schedule Days**
+
+- [`bleague_schedule_events()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule_events.md)
+  :
+
+  **B.LEAGUE Schedule Events**
+
+- [`bleague_score_track()`](https://hoopR.sportsdataverse.org/reference/bleague_score_track.md)
+  :
+
+  **B.LEAGUE Score Track**
+
+- [`bleague_shots()`](https://hoopR.sportsdataverse.org/reference/bleague_shots.md)
+  :
+
+  **B.LEAGUE Shots**
+
+- [`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md)
+  :
+
+  **B.LEAGUE Standings**
+
+- [`bleague_team_box()`](https://hoopR.sportsdataverse.org/reference/bleague_team_box.md)
+  :
+
+  **B.LEAGUE Team Box**
+
+- [`bleague_team_summary()`](https://hoopR.sportsdataverse.org/reference/bleague_team_summary.md)
+  :
+
+  **B.LEAGUE Team Summary**
+
+### BNXT League (SportPress)
+
+BNXT League (Belgium / Netherlands) on SportPress.
+
+- [`sportpress_club_seasons()`](https://hoopR.sportsdataverse.org/reference/sportpress_club_seasons.md)
+  :
+
+  **Get BNXT League Club Seasons**
+
+- [`sportpress_competition_staff()`](https://hoopR.sportsdataverse.org/reference/sportpress_competition_staff.md)
+  :
+
+  **Get BNXT League Competition Staff**
+
+- [`sportpress_competition_teams()`](https://hoopR.sportsdataverse.org/reference/sportpress_competition_teams.md)
+  :
+
+  **Get BNXT League Competition Teams**
+
+- [`sportpress_game_box()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_box.md)
+  :
+
+  **Get BNXT League Game Box Score**
+
+- [`sportpress_game_film()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_film.md)
+  :
+
+  **Get BNXT League Game Play-by-Play (Film)**
+
+- [`sportpress_game_find()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_find.md)
+  :
+
+  **Get BNXT League Game**
+
+- [`sportpress_game_leaders()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_leaders.md)
+  :
+
+  **Get BNXT League Game Leaders**
+
+- [`sportpress_game_overview()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_overview.md)
+  :
+
+  **Get BNXT League Game Overview**
+
+- [`sportpress_game_periods()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_periods.md)
+  :
+
+  **Get BNXT League Game Periods**
+
+- [`sportpress_game_slider()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_slider.md)
+  :
+
+  **Get BNXT League Game Slider**
+
+- [`sportpress_game_team_box()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_team_box.md)
+  :
+
+  **Get BNXT League Game Team Box Score**
+
+- [`sportpress_game_top_performers()`](https://hoopR.sportsdataverse.org/reference/sportpress_game_top_performers.md)
+  :
+
+  **Get BNXT League Game Top Performers**
+
+- [`sportpress_nationality_codes()`](https://hoopR.sportsdataverse.org/reference/sportpress_nationality_codes.md)
+  :
+
+  **Get BNXT League Nationality Codes**
+
+- [`sportpress_phases()`](https://hoopR.sportsdataverse.org/reference/sportpress_phases.md)
+  :
+
+  **Get BNXT League Phases**
+
+- [`sportpress_player_career()`](https://hoopR.sportsdataverse.org/reference/sportpress_player_career.md)
+  :
+
+  **Get BNXT League Player Career**
+
+- [`sportpress_player_games()`](https://hoopR.sportsdataverse.org/reference/sportpress_player_games.md)
+  :
+
+  **Get BNXT League Player Games**
+
+- [`sportpress_player_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_player_rankings.md)
+  :
+
+  **Get BNXT League Player Rankings**
+
+- [`sportpress_referees()`](https://hoopR.sportsdataverse.org/reference/sportpress_referees.md)
+  :
+
+  **Get BNXT League Referees**
+
+- [`sportpress_roster_find()`](https://hoopR.sportsdataverse.org/reference/sportpress_roster_find.md)
+  :
+
+  **Get BNXT League Roster Entry**
+
+- [`sportpress_schedule()`](https://hoopR.sportsdataverse.org/reference/sportpress_schedule.md)
+  :
+
+  **Get BNXT League Schedule**
+
+- [`sportpress_season_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_season_roster.md)
+  :
+
+  **Get BNXT League Season Roster**
+
+- [`sportpress_standings()`](https://hoopR.sportsdataverse.org/reference/sportpress_standings.md)
+  :
+
+  **Get BNXT League Standings**
+
+- [`sportpress_team_find()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_find.md)
+  :
+
+  **Get BNXT League Team**
+
+- [`sportpress_team_games()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_games.md)
+  :
+
+  **Get BNXT League Team Games**
+
+- [`sportpress_team_player_averages()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_player_averages.md)
+  :
+
+  **Get BNXT League Team Player Averages**
+
+- [`sportpress_team_rankings()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_rankings.md)
+  :
+
+  **Get BNXT League Team Rankings**
+
+- [`sportpress_team_roster()`](https://hoopR.sportsdataverse.org/reference/sportpress_team_roster.md)
+  :
+
+  **Get BNXT League Team Roster**
+
+- [`sportpress_ui_strings()`](https://hoopR.sportsdataverse.org/reference/sportpress_ui_strings.md)
+  :
+
+  **Get BNXT League UI Strings**
+
+### CBA
+
+Chinese Basketball Association (data-server.cbaleague.com).
+
+- [`cba_best_player()`](https://hoopR.sportsdataverse.org/reference/cba_best_player.md)
+  :
+
+  **Get CBA Best Player**
+
+- [`cba_best_stats()`](https://hoopR.sportsdataverse.org/reference/cba_best_stats.md)
+  :
+
+  **Get CBA Best Stats**
+
+- [`cba_game_info()`](https://hoopR.sportsdataverse.org/reference/cba_game_info.md)
+  :
+
+  **Get CBA Game Info**
+
+- [`cba_game_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_four.md)
+  :
+
+  **Get CBA Game Team Four**
+
+- [`cba_game_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_shots.md)
+  :
+
+  **Get CBA Game Team Shots**
+
+- [`cba_match_types()`](https://hoopR.sportsdataverse.org/reference/cba_match_types.md)
+  :
+
+  **Get CBA Match Types**
+
+- [`cba_pbp()`](https://hoopR.sportsdataverse.org/reference/cba_pbp.md)
+  :
+
+  **Get CBA Play-by-Play**
+
+- [`cba_period_scores()`](https://hoopR.sportsdataverse.org/reference/cba_period_scores.md)
+  :
+
+  **Get CBA Period Scores**
+
+- [`cba_player_advanced()`](https://hoopR.sportsdataverse.org/reference/cba_player_advanced.md)
+  :
+
+  **Get CBA Player Advanced**
+
+- [`cba_player_base()`](https://hoopR.sportsdataverse.org/reference/cba_player_base.md)
+  :
+
+  **Get CBA Player Base**
+
+- [`cba_player_box()`](https://hoopR.sportsdataverse.org/reference/cba_player_box.md)
+  :
+
+  **Get CBA Player Box**
+
+- [`cba_player_defensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_defensive.md)
+  :
+
+  **Get CBA Player Defensive**
+
+- [`cba_player_extras()`](https://hoopR.sportsdataverse.org/reference/cba_player_extras.md)
+  :
+
+  **Get CBA Player Extras**
+
+- [`cba_player_offensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_offensive.md)
+  :
+
+  **Get CBA Player Offensive**
+
+- [`cba_player_shots()`](https://hoopR.sportsdataverse.org/reference/cba_player_shots.md)
+  :
+
+  **Get CBA Player Shots**
+
+- [`cba_report_status()`](https://hoopR.sportsdataverse.org/reference/cba_report_status.md)
+  :
+
+  **Get CBA Report Status**
+
+- [`cba_rosters()`](https://hoopR.sportsdataverse.org/reference/cba_rosters.md)
+  :
+
+  **Get CBA Rosters**
+
+- [`cba_schedule_day()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_day.md)
+  :
+
+  **Get CBA Schedule Day**
+
+- [`cba_schedule_month()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_month.md)
+  :
+
+  **Get CBA Schedule Month**
+
+- [`cba_seasons()`](https://hoopR.sportsdataverse.org/reference/cba_seasons.md)
+  :
+
+  **Get CBA Seasons**
+
+- [`cba_team_basic()`](https://hoopR.sportsdataverse.org/reference/cba_team_basic.md)
+  :
+
+  **Get CBA Team Basic**
+
+- [`cba_team_counts()`](https://hoopR.sportsdataverse.org/reference/cba_team_counts.md)
+  :
+
+  **Get CBA Team Counts**
+
+- [`cba_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_team_four.md)
+  :
+
+  **Get CBA Team Four**
+
+- [`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md)
+  :
+
+  **Get CBA Team Options**
+
+- [`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md)
+  :
+
+  **Get CBA Team Overview**
+
+- [`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md)
+  :
+
+  **Get CBA Team Shots**
+
+- [`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
+  :
+
+  **Get CBA Teams**
+
+### CEBL
+
+Canadian Elite Basketball League.
+
+- [`cebl_games()`](https://hoopR.sportsdataverse.org/reference/cebl_games.md)
+  :
+
+  **Get CEBL Games**
+
+- [`cebl_news()`](https://hoopR.sportsdataverse.org/reference/cebl_news.md)
+  :
+
+  **Get CEBL News**
+
+- [`cebl_player()`](https://hoopR.sportsdataverse.org/reference/cebl_player.md)
+  :
+
+  **Get CEBL Player**
+
+- [`cebl_player_gamelog()`](https://hoopR.sportsdataverse.org/reference/cebl_player_gamelog.md)
+  :
+
+  **Get CEBL Player Game Log**
+
+- [`cebl_player_leaders()`](https://hoopR.sportsdataverse.org/reference/cebl_player_leaders.md)
+  :
+
+  **Get CEBL Player Leaders**
+
+- [`cebl_player_seasons()`](https://hoopR.sportsdataverse.org/reference/cebl_player_seasons.md)
+  :
+
+  **Get CEBL Player Seasons**
+
+- [`cebl_player_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_player_stats.md)
+  :
+
+  **Get CEBL Player Statistics**
+
+- [`cebl_roster()`](https://hoopR.sportsdataverse.org/reference/cebl_roster.md)
+  :
+
+  **Get CEBL Team Roster**
+
+- [`cebl_seasons()`](https://hoopR.sportsdataverse.org/reference/cebl_seasons.md)
+  :
+
+  **Get CEBL Seasons**
+
+- [`cebl_standings()`](https://hoopR.sportsdataverse.org/reference/cebl_standings.md)
+  :
+
+  **Get CEBL Standings**
+
+- [`cebl_team_stats()`](https://hoopR.sportsdataverse.org/reference/cebl_team_stats.md)
+  :
+
+  **Get CEBL Team Statistics**
+
+- [`cebl_teams()`](https://hoopR.sportsdataverse.org/reference/cebl_teams.md)
+  :
+
+  **Get CEBL Teams**
+
+### DBL (Sportality)
+
+Basketligaen (Denmark) on Sportality.
+
+- [`sportality_athlete_career()`](https://hoopR.sportsdataverse.org/reference/sportality_athlete_career.md)
+  :
+
+  **Get Basketligaen Player Career**
+
+- [`sportality_athlete_details()`](https://hoopR.sportsdataverse.org/reference/sportality_athlete_details.md)
+  :
+
+  **Get Basketligaen Athlete Details**
+
+- [`sportality_athlete_profile()`](https://hoopR.sportsdataverse.org/reference/sportality_athlete_profile.md)
+  :
+
+  **Get Basketligaen Athlete Profile**
+
+- [`sportality_boxscore()`](https://hoopR.sportsdataverse.org/reference/sportality_boxscore.md)
+  :
+
+  **Get Basketligaen Box Score**
+
+- [`sportality_game_header()`](https://hoopR.sportsdataverse.org/reference/sportality_game_header.md)
+  :
+
+  **Get Basketligaen Game Header**
+
+- [`sportality_game_overview()`](https://hoopR.sportsdataverse.org/reference/sportality_game_overview.md)
+  :
+
+  **Get Basketligaen Game Overview**
+
+- [`sportality_game_summary()`](https://hoopR.sportsdataverse.org/reference/sportality_game_summary.md)
+  :
+
+  **Get Basketligaen Game Summary**
+
+- [`sportality_last_game_day()`](https://hoopR.sportsdataverse.org/reference/sportality_last_game_day.md)
+  :
+
+  **Get Basketligaen Last Game Day**
+
+- [`sportality_layout_info()`](https://hoopR.sportsdataverse.org/reference/sportality_layout_info.md)
+  :
+
+  **Get Basketligaen Layout Info (ssgt Directory)**
+
+- [`sportality_next_game_day()`](https://hoopR.sportsdataverse.org/reference/sportality_next_game_day.md)
+  :
+
+  **Get Basketligaen Next Game Day**
+
+- [`sportality_pbp()`](https://hoopR.sportsdataverse.org/reference/sportality_pbp.md)
+  :
+
+  **Get Basketligaen Play-by-Play**
+
+- [`sportality_player_box()`](https://hoopR.sportsdataverse.org/reference/sportality_player_box.md)
+  :
+
+  **Get Basketligaen Player Box Score**
+
+- [`sportality_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/sportality_player_crosswalk.md)
+  :
+
+  **Get the Basketligaen player id crosswalk**
+
+- [`sportality_player_h2h()`](https://hoopR.sportsdataverse.org/reference/sportality_player_h2h.md)
+  :
+
+  **Get Basketligaen Player Head-to-Head**
+
+- [`sportality_post_game_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_post_game_team_stats.md)
+  :
+
+  **Get Basketligaen Post-Game Team Stats**
+
+- [`sportality_roster()`](https://hoopR.sportsdataverse.org/reference/sportality_roster.md)
+  :
+
+  **Get Basketligaen Team Roster**
+
+- [`sportality_schedule()`](https://hoopR.sportsdataverse.org/reference/sportality_schedule.md)
+  :
+
+  **Get Basketligaen Schedule**
+
+- [`sportality_season_filter()`](https://hoopR.sportsdataverse.org/reference/sportality_season_filter.md)
+  :
+
+  **Get Basketligaen Season Filter**
+
+- [`sportality_sites()`](https://hoopR.sportsdataverse.org/reference/sportality_sites.md)
+  :
+
+  **Get Basketligaen Sites (Clubs) of an ssgt**
+
+- [`sportality_ssgt_provider()`](https://hoopR.sportsdataverse.org/reference/sportality_ssgt_provider.md)
+  :
+
+  **Get Basketligaen ssgt Stats Provider**
+
+- [`sportality_ssgt_uuid()`](https://hoopR.sportsdataverse.org/reference/sportality_ssgt_uuid.md)
+  :
+
+  **Get the Basketligaen ssgt uuid of a season**
+
+- [`sportality_standings()`](https://hoopR.sportsdataverse.org/reference/sportality_standings.md)
+  :
+
+  **Get Basketligaen Standings**
+
+- [`sportality_stats_info()`](https://hoopR.sportsdataverse.org/reference/sportality_stats_info.md)
+  :
+
+  **Get Basketligaen Stats Table**
+
+- [`sportality_team()`](https://hoopR.sportsdataverse.org/reference/sportality_team.md)
+  :
+
+  **Get Basketligaen Team**
+
+- [`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md)
+  :
+
+  **Get Basketligaen Team Played Games**
+
+- [`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md)
+  :
+
+  **Get Basketligaen Team Stats**
+
+- [`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
+  :
+
+  **Get Basketligaen Team Upcoming Games**
+
+### EASL
+
+East Asia Super League, read through an unofficial third-party proxy.
+
+- [`easl_game()`](https://hoopR.sportsdataverse.org/reference/easl_game.md)
+  :
+
+  **Get EASL Game**
+
+- [`easl_health()`](https://hoopR.sportsdataverse.org/reference/easl_health.md)
+  :
+
+  **Get EASL Health**
+
+- [`easl_leaders()`](https://hoopR.sportsdataverse.org/reference/easl_leaders.md)
+  :
+
+  **Get EASL Leaders**
+
+- [`easl_pbp()`](https://hoopR.sportsdataverse.org/reference/easl_pbp.md)
+  :
+
+  **Get EASL Play-by-Play**
+
+- [`easl_player()`](https://hoopR.sportsdataverse.org/reference/easl_player.md)
+  :
+
+  **Get EASL Player**
+
+- [`easl_player_box()`](https://hoopR.sportsdataverse.org/reference/easl_player_box.md)
+  :
+
+  **Get EASL Player Box Score**
+
+- [`easl_player_stats()`](https://hoopR.sportsdataverse.org/reference/easl_player_stats.md)
+  :
+
+  **Get EASL Player Stats**
+
+- [`easl_players()`](https://hoopR.sportsdataverse.org/reference/easl_players.md)
+  :
+
+  **Get EASL Players**
+
+- [`easl_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_schedule.md)
+  :
+
+  **Get EASL Schedule**
+
+- [`easl_seasons()`](https://hoopR.sportsdataverse.org/reference/easl_seasons.md)
+  :
+
+  **Get EASL Seasons**
+
+- [`easl_standings()`](https://hoopR.sportsdataverse.org/reference/easl_standings.md)
+  :
+
+  **Get EASL Standings**
+
+- [`easl_team()`](https://hoopR.sportsdataverse.org/reference/easl_team.md)
+  :
+
+  **Get EASL Team**
+
+- [`easl_team_box()`](https://hoopR.sportsdataverse.org/reference/easl_team_box.md)
+  :
+
+  **Get EASL Team Box Score**
+
+- [`easl_team_box_by_period()`](https://hoopR.sportsdataverse.org/reference/easl_team_box_by_period.md)
+  :
+
+  **Get EASL Team Box Score By Period**
+
+- [`easl_team_leaders()`](https://hoopR.sportsdataverse.org/reference/easl_team_leaders.md)
+  :
+
+  **Get EASL Team Leaders**
+
+- [`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md)
+  :
+
+  **Get EASL Team Schedule**
+
+- [`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md)
+  :
+
+  **Get EASL Team Stats**
+
+- [`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
+  :
+
+  **Get EASL Teams**
+
+### IBBA
+
+Israeli Premier League (IBBA).
+
+- [`ibba_boards()`](https://hoopR.sportsdataverse.org/reference/ibba_boards.md)
+  :
+
+  **IBBA Boards**
+
+- [`ibba_boards_ex()`](https://hoopR.sportsdataverse.org/reference/ibba_boards_ex.md)
+  :
+
+  **IBBA External Boards**
+
+- [`ibba_box_score()`](https://hoopR.sportsdataverse.org/reference/ibba_box_score.md)
+  :
+
+  **IBBA Box Score**
+
+- [`ibba_coaches()`](https://hoopR.sportsdataverse.org/reference/ibba_coaches.md)
+  :
+
+  **IBBA Coaches**
+
+- [`ibba_configuration()`](https://hoopR.sportsdataverse.org/reference/ibba_configuration.md)
+  :
+
+  **IBBA Configuration**
+
+- [`ibba_games()`](https://hoopR.sportsdataverse.org/reference/ibba_games.md)
+  :
+
+  **IBBA Games**
+
+- [`ibba_games_by_team()`](https://hoopR.sportsdataverse.org/reference/ibba_games_by_team.md)
+  :
+
+  **IBBA Games by Team**
+
+- [`ibba_games_ex()`](https://hoopR.sportsdataverse.org/reference/ibba_games_ex.md)
+  :
+
+  **IBBA External Games**
+
+- [`ibba_leaders()`](https://hoopR.sportsdataverse.org/reference/ibba_leaders.md)
+  :
+
+  **IBBA Leaders**
+
+- [`ibba_player()`](https://hoopR.sportsdataverse.org/reference/ibba_player.md)
+  :
+
+  **IBBA Player**
+
+- [`ibba_player_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_player_stats.md)
+  :
+
+  **IBBA Player Stats**
+
+- [`ibba_players()`](https://hoopR.sportsdataverse.org/reference/ibba_players.md)
+  :
+
+  **IBBA Players**
+
+- [`ibba_segev_game_crosswalk()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_crosswalk.md)
+  :
+
+  **IBBA to Segev Game Crosswalk**
+
+- [`ibba_segev_game_info()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_info.md)
+  :
+
+  **IBBA Segev Game Info**
+
+- [`ibba_segev_pbp()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_pbp.md)
+  :
+
+  **IBBA Segev Play-by-Play**
+
+- [`ibba_segev_period_scores()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_period_scores.md)
+  :
+
+  **IBBA Segev Period Scores**
+
+- [`ibba_segev_player_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_player_box.md)
+  :
+
+  **IBBA Segev Player Box**
+
+- [`ibba_segev_rosters()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_rosters.md)
+  :
+
+  **IBBA Segev Rosters**
+
+- [`ibba_segev_team_box()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_team_box.md)
+  :
+
+  **IBBA Segev Team Box**
+
+- [`ibba_stats_types()`](https://hoopR.sportsdataverse.org/reference/ibba_stats_types.md)
+  :
+
+  **IBBA Stats Types**
+
+- [`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md)
+  :
+
+  **IBBA Team**
+
+- [`ibba_team_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_team_stats.md)
+  :
+
+  **IBBA Team Stats**
+
+- [`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
+  :
+
+  **IBBA Teams**
+
+### KBL
+
+Korean Basketball League.
+
+- [`kbl_current_standings()`](https://hoopR.sportsdataverse.org/reference/kbl_current_standings.md)
+  :
+
+  **Get KBL Current Standings**
+
+- [`kbl_game()`](https://hoopR.sportsdataverse.org/reference/kbl_game.md)
+  :
+
+  **Get KBL Game Header**
+
+- [`kbl_game_leaders()`](https://hoopR.sportsdataverse.org/reference/kbl_game_leaders.md)
+  :
+
+  **Get KBL Game Leaders**
+
+- [`kbl_pbp()`](https://hoopR.sportsdataverse.org/reference/kbl_pbp.md)
+  :
+
+  **Get KBL Play-by-Play**
+
+- [`kbl_period_scores()`](https://hoopR.sportsdataverse.org/reference/kbl_period_scores.md)
+  :
+
+  **Get KBL Period Scores**
+
+- [`kbl_player_box()`](https://hoopR.sportsdataverse.org/reference/kbl_player_box.md)
+  :
+
+  **Get KBL Player Box Score**
+
+- [`kbl_player_totals()`](https://hoopR.sportsdataverse.org/reference/kbl_player_totals.md)
+  :
+
+  **Get KBL Player Totals**
+
+- [`kbl_players()`](https://hoopR.sportsdataverse.org/reference/kbl_players.md)
+  :
+
+  **Get KBL Players**
+
+- [`kbl_playoff_games()`](https://hoopR.sportsdataverse.org/reference/kbl_playoff_games.md)
+  :
+
+  **Get KBL Playoff Games**
+
+- [`kbl_playoff_seeds()`](https://hoopR.sportsdataverse.org/reference/kbl_playoff_seeds.md)
+  :
+
+  **Get KBL Playoff Seeds**
+
+- [`kbl_playoff_series()`](https://hoopR.sportsdataverse.org/reference/kbl_playoff_series.md)
+  :
+
+  **Get KBL Playoff Series**
+
+- [`kbl_round_mvps()`](https://hoopR.sportsdataverse.org/reference/kbl_round_mvps.md)
+  :
+
+  **Get KBL Round MVPs**
+
+- [`kbl_rounds()`](https://hoopR.sportsdataverse.org/reference/kbl_rounds.md)
+  :
+
+  **Get KBL Rounds**
+
+- [`kbl_schedule()`](https://hoopR.sportsdataverse.org/reference/kbl_schedule.md)
+  :
+
+  **Get KBL Schedule**
+
+- [`kbl_score_track()`](https://hoopR.sportsdataverse.org/reference/kbl_score_track.md)
+  :
+
+  **Get KBL Score Track**
+
+- [`kbl_season_leaders()`](https://hoopR.sportsdataverse.org/reference/kbl_season_leaders.md)
+  :
+
+  **Get KBL Season Leaders**
+
+- [`kbl_seasons()`](https://hoopR.sportsdataverse.org/reference/kbl_seasons.md)
+  :
+
+  **Get KBL Seasons**
+
+- [`kbl_shots()`](https://hoopR.sportsdataverse.org/reference/kbl_shots.md)
+  :
+
+  **Get KBL Shots**
+
+- [`kbl_standings()`](https://hoopR.sportsdataverse.org/reference/kbl_standings.md)
+  :
+
+  **Get KBL Standings**
+
+- [`kbl_team_box()`](https://hoopR.sportsdataverse.org/reference/kbl_team_box.md)
+  :
+
+  **Get KBL Team Box Score**
+
+- [`kbl_team_tracks()`](https://hoopR.sportsdataverse.org/reference/kbl_team_tracks.md)
+  :
+
+  **Get KBL Team Tracks**
+
+- [`kbl_teams()`](https://hoopR.sportsdataverse.org/reference/kbl_teams.md)
+  :
+
+  **Get KBL Teams**
+
+### KZS
+
+KZS leagues (Slovenia).
+
+- [`kzs_box_score()`](https://hoopR.sportsdataverse.org/reference/kzs_box_score.md)
+  :
+
+  **Get KZS Player Box Score**
+
+- [`kzs_competition()`](https://hoopR.sportsdataverse.org/reference/kzs_competition.md)
+  :
+
+  **Get KZS Competition**
+
+- [`kzs_competitions()`](https://hoopR.sportsdataverse.org/reference/kzs_competitions.md)
+  :
+
+  **Get KZS Competitions**
+
+- [`kzs_match()`](https://hoopR.sportsdataverse.org/reference/kzs_match.md)
+  :
+
+  **Get KZS Match Header**
+
+- [`kzs_matches()`](https://hoopR.sportsdataverse.org/reference/kzs_matches.md)
+  :
+
+  **Get KZS Matches**
+
+- [`kzs_pbp()`](https://hoopR.sportsdataverse.org/reference/kzs_pbp.md)
+  :
+
+  **Get KZS Play-by-Play**
+
+- [`kzs_pbp_players()`](https://hoopR.sportsdataverse.org/reference/kzs_pbp_players.md)
+  :
+
+  **Get KZS Play-by-Play Players**
+
+- [`kzs_period_scores()`](https://hoopR.sportsdataverse.org/reference/kzs_period_scores.md)
+  :
+
+  **Get KZS Period Scores**
+
+- [`kzs_phases()`](https://hoopR.sportsdataverse.org/reference/kzs_phases.md)
+  :
+
+  **Get KZS Competition Phases**
+
+- [`kzs_player()`](https://hoopR.sportsdataverse.org/reference/kzs_player.md)
+  :
+
+  **Get KZS Player Profile**
+
+- [`kzs_player_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_player_leaderboard.md)
+  :
+
+  **Get KZS Player Leaderboard**
+
+- [`kzs_player_stats()`](https://hoopR.sportsdataverse.org/reference/kzs_player_stats.md)
+  :
+
+  **Get KZS Player Season Stats**
+
+- [`kzs_playing_days()`](https://hoopR.sportsdataverse.org/reference/kzs_playing_days.md)
+  :
+
+  **Get KZS Playing Days**
+
+- [`kzs_roster()`](https://hoopR.sportsdataverse.org/reference/kzs_roster.md)
+  :
+
+  **Get KZS Team Roster**
+
+- [`kzs_rounds()`](https://hoopR.sportsdataverse.org/reference/kzs_rounds.md)
+  :
+
+  **Get KZS Competition Rounds**
+
+- [`kzs_score_changes()`](https://hoopR.sportsdataverse.org/reference/kzs_score_changes.md)
+  :
+
+  **Get KZS Score by Minute**
+
+- [`kzs_seasons()`](https://hoopR.sportsdataverse.org/reference/kzs_seasons.md)
+  :
+
+  **Get KZS Seasons**
+
+- [`kzs_standings()`](https://hoopR.sportsdataverse.org/reference/kzs_standings.md)
+  :
+
+  **Get KZS Standings**
+
+- [`kzs_team()`](https://hoopR.sportsdataverse.org/reference/kzs_team.md)
+  :
+
+  **Get KZS Team Profile**
+
+- [`kzs_team_box_score()`](https://hoopR.sportsdataverse.org/reference/kzs_team_box_score.md)
+  :
+
+  **Get KZS Team Box Score**
+
+- [`kzs_team_general()`](https://hoopR.sportsdataverse.org/reference/kzs_team_general.md)
+  :
+
+  **Get KZS Team Summary**
+
+- [`kzs_team_leaderboard()`](https://hoopR.sportsdataverse.org/reference/kzs_team_leaderboard.md)
+  :
+
+  **Get KZS Team Leaderboard**
+
+- [`kzs_teams()`](https://hoopR.sportsdataverse.org/reference/kzs_teams.md)
+  :
+
+  **Get KZS Teams**
+
+### LBA
+
+Lega Basket Serie A (Italy).
+
+- [`lba_box_score()`](https://hoopR.sportsdataverse.org/reference/lba_box_score.md)
+  :
+
+  **Get LBA Box Score**
+
+- [`lba_calendar()`](https://hoopR.sportsdataverse.org/reference/lba_calendar.md)
+  :
+
+  **Get LBA Calendar**
+
+- [`lba_championships()`](https://hoopR.sportsdataverse.org/reference/lba_championships.md)
+  :
+
+  **Get LBA Championships**
+
+- [`lba_game()`](https://hoopR.sportsdataverse.org/reference/lba_game.md)
+  :
+
+  **Get LBA Game**
+
+- [`lba_game_log()`](https://hoopR.sportsdataverse.org/reference/lba_game_log.md)
+  :
+
+  **Get LBA Game Log**
+
+- [`lba_pbp()`](https://hoopR.sportsdataverse.org/reference/lba_pbp.md)
+  :
+
+  **Get LBA Play-by-Play**
+
+- [`lba_pbp_legend()`](https://hoopR.sportsdataverse.org/reference/lba_pbp_legend.md)
+  :
+
+  **Get LBA Play-by-Play Legend**
+
+- [`lba_player()`](https://hoopR.sportsdataverse.org/reference/lba_player.md)
+  :
+
+  **Get LBA Player**
+
+- [`lba_player_stats()`](https://hoopR.sportsdataverse.org/reference/lba_player_stats.md)
+  :
+
+  **Get LBA Player Stats**
+
+- [`lba_players()`](https://hoopR.sportsdataverse.org/reference/lba_players.md)
+  :
+
+  **Get LBA Players**
+
+- [`lba_players_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_players_leaderboard.md)
+  :
+
+  **Get LBA Players Leaderboard**
+
+- [`lba_roster()`](https://hoopR.sportsdataverse.org/reference/lba_roster.md)
+  :
+
+  **Get LBA Roster**
+
+- [`lba_roster_coach()`](https://hoopR.sportsdataverse.org/reference/lba_roster_coach.md)
+  :
+
+  **Get LBA Roster Coach**
+
+- [`lba_shots()`](https://hoopR.sportsdataverse.org/reference/lba_shots.md)
+  :
+
+  **Get LBA Shots**
+
+- [`lba_standings()`](https://hoopR.sportsdataverse.org/reference/lba_standings.md)
+  :
+
+  **Get LBA Standings**
+
+- [`lba_team_box_score()`](https://hoopR.sportsdataverse.org/reference/lba_team_box_score.md)
+  :
+
+  **Get LBA Team Box Score**
+
+- [`lba_team_players_stats()`](https://hoopR.sportsdataverse.org/reference/lba_team_players_stats.md)
+  :
+
+  **Get LBA Team Players Stats**
+
+- [`lba_teams()`](https://hoopR.sportsdataverse.org/reference/lba_teams.md)
+  :
+
+  **Get LBA Teams**
+
+- [`lba_teams_leaderboard()`](https://hoopR.sportsdataverse.org/reference/lba_teams_leaderboard.md)
+  :
+
+  **Get LBA Teams Leaderboard**
+
+### LKL
+
+Lietuvos krepsinio lyga (Lithuania).
+
+- [`lkl_game_info()`](https://hoopR.sportsdataverse.org/reference/lkl_game_info.md)
+  :
+
+  **LKL Game Info**
+
+- [`lkl_game_players()`](https://hoopR.sportsdataverse.org/reference/lkl_game_players.md)
+  :
+
+  **LKL Game Players**
+
+- [`lkl_game_score()`](https://hoopR.sportsdataverse.org/reference/lkl_game_score.md)
+  :
+
+  **LKL Game Score**
+
+- [`lkl_game_stats()`](https://hoopR.sportsdataverse.org/reference/lkl_game_stats.md)
+  :
+
+  **LKL Game Stats**
+
+- [`lkl_lead_chart()`](https://hoopR.sportsdataverse.org/reference/lkl_lead_chart.md)
+  :
+
+  **LKL Lead Chart**
+
+- [`lkl_leaders()`](https://hoopR.sportsdataverse.org/reference/lkl_leaders.md)
+  :
+
+  **LKL Leaders**
+
+- [`lkl_pbp()`](https://hoopR.sportsdataverse.org/reference/lkl_pbp.md)
+  :
+
+  **LKL Play-by-Play**
+
+- [`lkl_period_scores()`](https://hoopR.sportsdataverse.org/reference/lkl_period_scores.md)
+  :
+
+  **LKL Period Scores**
+
+- [`lkl_player_box()`](https://hoopR.sportsdataverse.org/reference/lkl_player_box.md)
+  :
+
+  **LKL Player Box**
+
+- [`lkl_results()`](https://hoopR.sportsdataverse.org/reference/lkl_results.md)
+  :
+
+  **LKL Results**
+
+- [`lkl_shots()`](https://hoopR.sportsdataverse.org/reference/lkl_shots.md)
+  :
+
+  **LKL Shots**
+
+- [`lkl_standings()`](https://hoopR.sportsdataverse.org/reference/lkl_standings.md)
+  :
+
+  **LKL Standings**
+
+- [`lkl_summary()`](https://hoopR.sportsdataverse.org/reference/lkl_summary.md)
+  :
+
+  **LKL Summary**
+
+- [`lkl_team_box()`](https://hoopR.sportsdataverse.org/reference/lkl_team_box.md)
+  :
+
+  **LKL Team Box**
+
+### P.LEAGUE+
+
+P. LEAGUE+ (Taiwan), served by a third-party host.
+
+- [`pleague_box_players()`](https://hoopR.sportsdataverse.org/reference/pleague_box_players.md)
+  :
+
+  **Get P. LEAGUE+ Player Box Score**
+
+- [`pleague_box_teams()`](https://hoopR.sportsdataverse.org/reference/pleague_box_teams.md)
+  :
+
+  **Get P. LEAGUE+ Team Box Score**
+
+- [`pleague_game()`](https://hoopR.sportsdataverse.org/reference/pleague_game.md)
+  :
+
+  **Get P. LEAGUE+ Game**
+
+- [`pleague_officials()`](https://hoopR.sportsdataverse.org/reference/pleague_officials.md)
+  :
+
+  **Get P. LEAGUE+ Officials**
+
+- [`pleague_pbp()`](https://hoopR.sportsdataverse.org/reference/pleague_pbp.md)
+  :
+
+  **Get P. LEAGUE+ Play-by-Play**
+
+- [`pleague_periods()`](https://hoopR.sportsdataverse.org/reference/pleague_periods.md)
+  :
+
+  **Get P. LEAGUE+ Periods**
+
+- [`pleague_player()`](https://hoopR.sportsdataverse.org/reference/pleague_player.md)
+  :
+
+  **Get P. LEAGUE+ Player**
+
+- [`pleague_player_seasons()`](https://hoopR.sportsdataverse.org/reference/pleague_player_seasons.md)
+  :
+
+  **Get P. LEAGUE+ Player Seasons**
+
+- [`pleague_preciser_injury()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_injury.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Injury Report**
+
+- [`pleague_preciser_lead_flow()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_lead_flow.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Lead Flow**
+
+- [`pleague_preciser_rotation()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_rotation.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Rotation**
+
+- [`pleague_preciser_score_log()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_score_log.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Score Log**
+
+- [`pleague_preciser_shots()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_shots.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Shots**
+
+- [`pleague_preciser_summary_teams()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_summary_teams.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Summary Teams**
+
+- [`pleague_preciser_win_probability()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_win_probability.md)
+  :
+
+  **Get P. LEAGUE+ Preciser Win Probability**
+
+- [`pleague_schedule()`](https://hoopR.sportsdataverse.org/reference/pleague_schedule.md)
+  :
+
+  **Get P. LEAGUE+ Schedule**
+
+- [`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md)
+  :
+
+  **Get P. LEAGUE+ Standings**
+
+- [`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md)
+  :
+
+  **Get P. LEAGUE+ Player Season Stats**
+
+- [`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
+  :
+
+  **Get the P. LEAGUE+ Team Crosswalk**
+
+### TPBL
+
+Taipei Professional Basketball League (Taiwan).
+
+- [`tpbl_box_player_periods()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_player_periods.md)
+  :
+
+  **Get TPBL Player Box Score by Quarter**
+
+- [`tpbl_box_players()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_players.md)
+  :
+
+  **Get TPBL Player Box Score**
+
+- [`tpbl_box_team_periods()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_team_periods.md)
+  :
+
+  **Get TPBL Team Box Score by Quarter**
+
+- [`tpbl_box_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_teams.md)
+  :
+
+  **Get TPBL Team Box Score**
+
+- [`tpbl_divisions()`](https://hoopR.sportsdataverse.org/reference/tpbl_divisions.md)
+  :
+
+  **Get TPBL Divisions**
+
+- [`tpbl_game()`](https://hoopR.sportsdataverse.org/reference/tpbl_game.md)
+  :
+
+  **Get TPBL Game**
+
+- [`tpbl_games()`](https://hoopR.sportsdataverse.org/reference/tpbl_games.md)
+  :
+
+  **Get TPBL Games**
+
+- [`tpbl_player_games()`](https://hoopR.sportsdataverse.org/reference/tpbl_player_games.md)
+  :
+
+  **Get TPBL Player Game Log**
+
+- [`tpbl_player_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_player_shots.md)
+  :
+
+  **Get TPBL Player Shots**
+
+- [`tpbl_referees()`](https://hoopR.sportsdataverse.org/reference/tpbl_referees.md)
+  :
+
+  **Get TPBL Referees**
+
+- [`tpbl_roster()`](https://hoopR.sportsdataverse.org/reference/tpbl_roster.md)
+  :
+
+  **Get TPBL Roster**
+
+- [`tpbl_seasons()`](https://hoopR.sportsdataverse.org/reference/tpbl_seasons.md)
+  :
+
+  **Get TPBL Seasons**
+
+- [`tpbl_standings()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings.md)
+  :
+
+  **Get TPBL Standings**
+
+- [`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md)
+  :
+
+  **Get TPBL Head-to-Head Standings**
+
+- [`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md)
+  :
+
+  **Get TPBL Team Shots**
+
+- [`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
+  :
+
+  **Get TPBL Teams**
+
+### VTB United League
+
+VTB United League (Russia).
+
+- [`vtb_infobasket_best_player_parameters()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_best_player_parameters.md)
+  :
+
+  **Get VTB Infobasket Best Player Parameters**
+
+- [`vtb_infobasket_best_players()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_best_players.md)
+  :
+
+  **Get VTB Infobasket Best Players**
+
+- [`vtb_infobasket_best_team_parameters()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_best_team_parameters.md)
+  :
+
+  **Get VTB Infobasket Best Team Parameters**
+
+- [`vtb_infobasket_best_teams()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_best_teams.md)
+  :
+
+  **Get VTB Infobasket Best Teams**
+
+- [`vtb_infobasket_box_score()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_box_score.md)
+  :
+
+  **Get VTB Infobasket Box Score**
+
+- [`vtb_infobasket_calendar()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_calendar.md)
+  :
+
+  **Get VTB Infobasket Calendar**
+
+- [`vtb_infobasket_coach()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_coach.md)
+  :
+
+  **Get VTB Infobasket Coach**
+
+- [`vtb_infobasket_comp_issue()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_comp_issue.md)
+  :
+
+  **Get VTB Infobasket Comp Issue**
+
+- [`vtb_infobasket_cross_table()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_cross_table.md)
+  :
+
+  **Get VTB Infobasket Cross Table**
+
+- [`vtb_infobasket_game()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_game.md)
+  :
+
+  **Get VTB Infobasket Game**
+
+- [`vtb_infobasket_game_page()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_game_page.md)
+  :
+
+  **Get VTB Infobasket Game Page**
+
+- [`vtb_infobasket_game_staff()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_game_staff.md)
+  :
+
+  **Get VTB Infobasket Game Staff**
+
+- [`vtb_infobasket_pbp()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_pbp.md)
+  :
+
+  **Get VTB Infobasket Play-by-Play**
+
+- [`vtb_infobasket_player()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_player.md)
+  :
+
+  **Get VTB Infobasket Player**
+
+- [`vtb_infobasket_player_career_stats()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_player_career_stats.md)
+  :
+
+  **Get VTB Infobasket Player Career Stats**
+
+- [`vtb_infobasket_player_game_log()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_player_game_log.md)
+  :
+
+  **Get VTB Infobasket Player Game Log**
+
+- [`vtb_infobasket_player_season_stats()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_player_season_stats.md)
+  :
+
+  **Get VTB Infobasket Player Season Stats**
+
+- [`vtb_infobasket_playoff()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_playoff.md)
+  :
+
+  **Get VTB Infobasket Playoff**
+
+- [`vtb_infobasket_playoff_games()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_playoff_games.md)
+  :
+
+  **Get VTB Infobasket Playoff Games**
+
+- [`vtb_infobasket_roster()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_roster.md)
+  :
+
+  **Get VTB Infobasket Roster**
+
+- [`vtb_infobasket_roster_coaches()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_roster_coaches.md)
+  :
+
+  **Get VTB Infobasket Roster Coaches**
+
+- [`vtb_infobasket_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_seasons.md)
+  :
+
+  **Get VTB Infobasket Seasons**
+
+- [`vtb_infobasket_standings()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_standings.md)
+  :
+
+  **Get VTB Infobasket Standings**
+
+- [`vtb_infobasket_team()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team.md)
+  :
+
+  **Get VTB Infobasket Team**
+
+- [`vtb_infobasket_team_box_score()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_box_score.md)
+  :
+
+  **Get VTB Infobasket Team Box Score**
+
+- [`vtb_infobasket_team_coach_stats()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_coach_stats.md)
+  :
+
+  **Get VTB Infobasket Team Coach Stats**
+
+- [`vtb_infobasket_team_comps()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_comps.md)
+  :
+
+  **Get VTB Infobasket Team Comps**
+
+- [`vtb_infobasket_team_games()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_games.md)
+  :
+
+  **Get VTB Infobasket Team Games**
+
+- [`vtb_infobasket_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_player_stats.md)
+  :
+
+  **Get VTB Infobasket Team Player Stats**
+
+- [`vtb_infobasket_team_preview()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_preview.md)
+  :
+
+  **Get VTB Infobasket Team Preview**
+
+- [`vtb_infobasket_team_season_stats()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_season_stats.md)
+  :
+
+  **Get VTB Infobasket Team Season Stats**
+
+- [`vtb_infobasket_team_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_seasons.md)
+  :
+
+  **Get VTB Infobasket Team Seasons**
+
+- [`vtb_infobasket_team_stats()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_stats.md)
+  :
+
+  **Get VTB Infobasket Team Stats**
+
+- [`vtb_infobasket_team_stats_coaches()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_stats_coaches.md)
+  :
+
+  **Get VTB Infobasket Team Stats Coaches**
+
+- [`vtb_infobasket_team_stats_players()`](https://hoopR.sportsdataverse.org/reference/vtb_infobasket_team_stats_players.md)
+  :
+
+  **Get VTB Infobasket Team Stats Players**
+
+- [`vtb_league_leagues()`](https://hoopR.sportsdataverse.org/reference/vtb_league_leagues.md)
+  :
+
+  **Get VTB League Leagues**
+
+- [`vtb_league_matches()`](https://hoopR.sportsdataverse.org/reference/vtb_league_matches.md)
+  :
+
+  **Get VTB League Matches**
+
+- [`vtb_league_seasons()`](https://hoopR.sportsdataverse.org/reference/vtb_league_seasons.md)
+  :
+
+  **Get VTB League Seasons**
+
 ## Salary & Mock Draft Sources
 
 ### Salary & Draft Functions

@@ -133,7 +133,7 @@ Saiem Gilani
     head(l2m$calls)
   })
 #> ── NBA L2M calls (official.nba.com) ──────────────────────── hoopR 3.1.0.9000 ──
-#> ℹ Data updated: 2026-10-18 11:26:15 UTC
+#> ℹ Data updated: 2026-10-18 15:45:28 UTC
 #> # A tibble: 6 × 19
 #>   game_id    period period_name pc_time seconds_remaining call_type  call  type 
 #>   <chr>       <int> <chr>       <chr>               <dbl> <chr>      <chr> <chr>
