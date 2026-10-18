@@ -1,0 +1,4 @@
+division_id,team_id,rounds,is_made,point_x,point_y,offense_basket
+2,4,1,false,19090,8650,1
+2,4,1,false,24340,7090,1
+2,4,1,true,24060,7310,1

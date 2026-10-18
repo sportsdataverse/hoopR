@@ -1,0 +1,161 @@
+[
+ {
+  "id": 27535,
+  "gohoops_id": 17013,
+  "division_id": 655,
+  "gohoops_division_id": 909,
+  "code": "1",
+  "home_team": {
+   "id": 6,
+   "gohoops_id": 944,
+   "gohoops_squad_id": 15538,
+   "gohoops_event_id": 613,
+   "gohoops_season_id": 275,
+   "name": "新北中信特攻",
+   "status": "ACTIVE",
+   "meta": {
+    "logo": "https://assets.tpbl.basketball/logos/dea.webp",
+    "alt_name": "dea"
+   },
+   "is_league": false,
+   "won_score": 136,
+   "lost_score": 133
+  },
+  "away_team": {
+   "id": 2,
+   "gohoops_id": 940,
+   "gohoops_squad_id": 15542,
+   "gohoops_event_id": 613,
+   "gohoops_season_id": 275,
+   "name": "高雄全家海神",
+   "status": "ACTIVE",
+   "meta": {
+    "logo": "https://assets.tpbl.basketball/logos/aquas.webp",
+    "alt_name": "aquas"
+   },
+   "is_league": false,
+   "won_score": 133,
+   "lost_score": 136
+  },
+  "venue": "和平籃球館",
+  "status": "COMPLETED",
+  "is_live": false,
+  "round": 5,
+  "meta": {
+   "recap": "https://youtu.be/3zPNfcK7950",
+   "visitors": null,
+   "ticket_url": "https://tpbl.kktix.cc/events/a15rfbr",
+   "live_stream_url": "https://youtube.com/live/K5GxjwGiwd8?feature=share"
+  },
+  "game_date": "2026-10-09",
+  "game_day_of_week": "(五)",
+  "game_time": "14:30:00",
+  "gamed_at": "2026-10-09 14:30:00"
+ },
+ {
+  "id": 27536,
+  "gohoops_id": 17030,
+  "division_id": 655,
+  "gohoops_division_id": 909,
+  "code": "2",
+  "home_team": {
+   "id": 3,
+   "gohoops_id": 941,
+   "gohoops_squad_id": 15541,
+   "gohoops_event_id": 613,
+   "gohoops_season_id": 275,
+   "name": "福爾摩沙夢想家",
+   "status": "ACTIVE",
+   "meta": {
+    "logo": "https://assets.tpbl.basketball/logos/dreamers.webp",
+    "alt_name": "dreamers"
+   },
+   "is_league": false,
+   "won_score": 114,
+   "lost_score": 122
+  },
+  "away_team": {
+   "id": 8,
+   "gohoops_id": 946,
+   "gohoops_squad_id": 15536,
+   "gohoops_event_id": 613,
+   "gohoops_season_id": 275,
+   "name": "臺北台新戰神",
+   "status": "ACTIVE",
+   "meta": {
+    "logo": "https://assets.tpbl.basketball/logos/mars.webp",
+    "alt_name": "mars"
+   },
+   "is_league": false,
+   "won_score": 122,
+   "lost_score": 114
+  },
+  "venue": "和平籃球館",
+  "status": "COMPLETED",
+  "is_live": false,
+  "round": 4,
+  "meta": {
+   "recap": "https://youtu.be/_n_d7RFGu-o",
+   "visitors": null,
+   "ticket_url": "https://tpbl.kktix.cc/events/a15rfbr",
+   "live_stream_url": "https://www.youtube.com/live/Unae4QmOdOQ"
+  },
+  "game_date": "2026-10-09",
+  "game_day_of_week": "(五)",
+  "game_time": "17:00:00",
+  "gamed_at": "2026-10-09 17:00:00"
+ },
+ {
+  "id": 27537,
+  "gohoops_id": 17031,
+  "division_id": 655,
+  "gohoops_division_id": 909,
+  "code": "3",
+  "home_team": {
+   "id": 7,
+   "gohoops_id": 945,
+   "gohoops_squad_id": 15537,
+   "gohoops_event_id": 613,
+   "gohoops_season_id": 275,
+   "name": "新北國王",
+   "status": "ACTIVE",
+   "meta": {
+    "logo": "https://assets.tpbl.basketball/logos/kings.webp",
+    "alt_name": "kings"
+   },
+   "is_league": false,
+   "won_score": 107,
+   "lost_score": 93
+  },
+  "away_team": {
+   "id": 5,
+   "gohoops_id": 943,
+   "gohoops_squad_id": 15539,
+   "gohoops_event_id": 613,
+   "gohoops_season_id": 275,
+   "name": "桃園台啤永豐雲豹",
+   "status": "ACTIVE",
+   "meta": {
+    "logo": "https://assets.tpbl.basketball/logos/leopards.webp",
+    "alt_name": "leopards"
+   },
+   "is_league": false,
+   "won_score": 93,
+   "lost_score": 107
+  },
+  "venue": "和平籃球館",
+  "status": "COMPLETED",
+  "is_live": false,
+  "round": 4,
+  "meta": {
+   "recap": "https://youtu.be/A509A2arq1s",
+   "visitors": null,
+   "ticket_url": "https://tpbl.kktix.cc/events/a15rfbr",
+   "live_stream_url": "https://youtube.com/live/1ELGlvOjvKQ?feature=share"
+  },
+  "game_date": "2026-10-10",
+  "game_day_of_week": "(六)",
+  "game_time": "12:00:00",
+  "gamed_at": "2026-10-10 12:00:00"
+ }
+]

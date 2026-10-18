@@ -1,0 +1,16 @@
+[
+ {
+  "id": 655,
+  "gohoops_id": 909,
+  "gohoops_event_id": 613,
+  "name": "熱身賽",
+  "status": "IN_PROGRESS"
+ },
+ {
+  "id": 656,
+  "gohoops_id": 910,
+  "gohoops_event_id": 613,
+  "name": "例行賽",
+  "status": "IN_PROGRESS"
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "id": 8,
+  "gohoops_id": 946,
+  "name": "臺北台新戰神",
+  "is_real_team": true,
+  "status": "ACTIVE",
+  "ticket_url": null
+ },
+ {
+  "id": 7,
+  "gohoops_id": 945,
+  "name": "新北國王",
+  "is_real_team": true,
+  "status": "ACTIVE",
+  "ticket_url": null
+ },
+ {
+  "id": 6,
+  "gohoops_id": 944,
+  "name": "新北中信特攻",
+  "is_real_team": true,
+  "status": "ACTIVE",
+  "ticket_url": null
+ }
+]
