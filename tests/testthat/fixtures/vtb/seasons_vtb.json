@@ -1,0 +1,23 @@
+[
+  {
+    "SeasonYear": 2010,
+    "NameRu": "Сезон 2009/2010",
+    "NameEn": "Season 2009/2010",
+    "CompID": 5052,
+    "Db": "org"
+  },
+  {
+    "SeasonYear": 2011,
+    "NameRu": "Сезон 2010/2011",
+    "NameEn": "Season 2010/2011",
+    "CompID": 6076,
+    "Db": "org"
+  },
+  {
+    "SeasonYear": 2012,
+    "NameRu": "Сезон 2011/2012",
+    "NameEn": "Season 2011/2012",
+    "CompID": 7050,
+    "Db": "org"
+  }
+]

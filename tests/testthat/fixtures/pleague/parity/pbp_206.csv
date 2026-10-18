@@ -1,0 +1,17 @@
+gid,seq,period,period_no,clock,seconds_left,side,jersey,player_zh,action,action_zh,action_en,text_zh,ft_number,ft_awarded,points,score_away,score_home,x,y,nice_play,video_uuid,synergy_play_id,video_stat_category,tryspot_player_id,video_created_at
+206,1,Q1,1,12:00,720,home,35,辛巴,jump_ball_won,跳球 贏,jump ball won,#35 辛巴 跳球 贏,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,2,Q1,1,12:00,720,away,5,強森,jump_ball_lost,跳球 輸,jump ball lost,#5 強森 跳球 輸,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,3,Q1,1,11:39,699,home,4,高國豪,fg2_jump_shot_missed,跳投不進,"2-point jump shot, missed",#4 高國豪 跳投不進,<null>,<null>,<null>,<null>,<null>,93.32,89.96,false,f433fa6e-e697-4bc5-a1b6-23446bec5792,15eef550-68b3-11ed-b059-6ba70fac276b,reb_d,151607,2022-11-20T09:09:52.264Z
+206,4,Q2,2,12:00,720,away,3,張宗憲,sub_in,替換上場,substitution: enters the game,#3 張宗憲 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,5,Q2,2,12:00,720,away,12,林志傑,sub_out,下場休息,substitution: leaves the game,#12 林志傑 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,6,Q3,3,12:00,720,home,11,蕭順議,sub_in,替換上場,substitution: enters the game,#11 蕭順議 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,7,Q3,3,12:00,720,home,12,李家瑞,sub_out,下場休息,substitution: leaves the game,#12 李家瑞 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,8,Q4,4,12:00,720,home,11,蕭順議,sub_in,替換上場,substitution: enters the game,#11 蕭順議 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,9,Q4,4,12:00,720,home,7,伊波卡,sub_out,下場休息,substitution: leaves the game,#7 伊波卡 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,10,OT1,5,05:00,300,away,24,簡廷兆,sub_in,替換上場,substitution: enters the game,#24 簡廷兆 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,11,OT1,5,05:00,300,away,14,蔡文誠,sub_out,下場休息,substitution: leaves the game,#14 蔡文誠 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,12,OT2,6,05:00,300,away,88,曾祥鈞,sub_in,替換上場,substitution: enters the game,#88 曾祥鈞 替換上場,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,13,OT2,6,05:00,300,away,23,石博恩,sub_out,下場休息,substitution: leaves the game,#23 石博恩 下場休息,<null>,<null>,<null>,<null>,<null>,<null>,<null>,false,<null>,<null>,<null>,<null>,<null>
+206,14,OT2,6,00:07,7,home,11,蕭順議,foul_personal,個人犯規,personal foul committed,#11 蕭順議 個人犯規,<null>,<null>,<null>,<null>,<null>,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
+206,15,OT2,6,00:07,7,away,24,簡廷兆,ft_made,得到兩次罰球 第一罰 罰進,"free throw 1 of 3 awarded, made",#24 簡廷兆 得到兩次罰球 第一罰 罰進,1,2,1,103,108,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>
+206,16,OT2,6,00:07,7,away,24,簡廷兆,ft_made,第二罰 罰進,"free throw 1 of 3 awarded, made",#24 簡廷兆 第二罰 罰進,2,<null>,1,104,108,81.79,9.24,false,<null>,<null>,<null>,<null>,<null>

@@ -1,0 +1,3 @@
+game_id,team_number,team_id,start_id,start_type,role,pos_id,person_id,person_name_en,person_name_ru,country_code_ioc
+921391,1,2650,21,3,head coach,1000,131047,Yudin Anton,Юдин Антон,RU
+921391,0,\N,3,4,referee,101,126593,Ostrovskiy Evgeniy,Островский Евгений,RU

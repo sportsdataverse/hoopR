@@ -1,0 +1,41 @@
+[
+  {
+    "GameID": 921391,
+    "GameStatus": 21,
+    "Score": "85:86",
+    "PlusMinus": -1,
+    "GameDate": "28.09",
+    "Team1id": 2650,
+    "Team2id": 1390,
+    "Team1Place": 4,
+    "Team2Place": 6,
+    "HomeTeam": 1,
+    "WinTeam": 2
+  },
+  {
+    "GameID": 921391,
+    "GameStatus": 21,
+    "Score": "86:85",
+    "PlusMinus": 1,
+    "GameDate": "28.09",
+    "Team1id": 1390,
+    "Team2id": 2650,
+    "Team1Place": 6,
+    "Team2Place": 4,
+    "HomeTeam": 2,
+    "WinTeam": 1
+  },
+  {
+    "GameID": 921390,
+    "GameStatus": 21,
+    "Score": "103:83",
+    "PlusMinus": 20,
+    "GameDate": "28.09",
+    "Team1id": 697,
+    "Team2id": 3059,
+    "Team1Place": 2,
+    "Team2Place": 5,
+    "HomeTeam": 1,
+    "WinTeam": 1
+  }
+]

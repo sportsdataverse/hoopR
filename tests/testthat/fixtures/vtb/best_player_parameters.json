@@ -1,0 +1,14 @@
+[
+  {
+    "param": 1,
+    "name": "Points  in a game"
+  },
+  {
+    "param": 2,
+    "name": "Assists in a game"
+  },
+  {
+    "param": 3,
+    "name": "Rebounds in a game"
+  }
+]

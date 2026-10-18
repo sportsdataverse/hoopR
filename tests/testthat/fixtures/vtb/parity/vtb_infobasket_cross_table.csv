@@ -1,0 +1,4 @@
+comp_id,game_id,game_status,score,plus_minus,game_date,team1_id,team2_id,team1_place,team2_place,home_team,win_team,score1,score2
+50720,921391,21,85:86,-1,28.09,2650,1390,4,6,1,2,85,86
+50720,921391,21,86:85,1,28.09,1390,2650,6,4,2,1,86,85
+50720,921390,21,103:83,20,28.09,697,3059,2,5,1,1,103,83

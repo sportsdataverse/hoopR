@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "version": 2,
+    "code": 200,
+    "status": "success",
+    "request": "http://api.vtb-league.com/v2/leagues",
+    "time": 1791835504,
+    "count": 3,
+    "limit": 20,
+    "page": 1
+  },
+  "data": [
+    {
+      "leagueId": 1,
+      "league": "vtb",
+      "leagueName": {
+        "ru": "Единая Лига ВТБ",
+        "en": "VTB United League"
+      },
+      "leagueAbbrev": {
+        "ru": "ЕЛ ВТБ",
+        "en": "VTB UL"
+      },
+      "images": null
+    },
+    {
+      "leagueId": 2,
+      "league": "vtbyouth",
+      "leagueName": {
+        "ru": "Молодежный чемпионат",
+        "en": "VTB Youth United League"
+      },
+      "leagueAbbrev": {
+        "ru": "МЧМК",
+        "en": "YCH"
+      },
+      "images": null
+    },
+    {
+      "leagueId": 3,
+      "league": "wbc",
+      "leagueName": {
+        "ru": "WINLINE Basket Cup",
+        "en": "WINLINE Basket Cup"
+      },
+      "leagueAbbrev": {
+        "ru": "WBC",
+        "en": "WBC"
+      },
+      "images": null
+    }
+  ]
+}

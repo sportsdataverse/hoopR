@@ -1,0 +1,371 @@
+{
+ "vtb_league_leagues": [
+  {
+   "path": "/v2/leagues",
+   "query": {}
+  }
+ ],
+ "vtb_league_seasons": [
+  {
+   "path": "/v2/leagues/vtb/seasons",
+   "query": {}
+  }
+ ],
+ "vtb_league_matches": [
+  {
+   "path": "/v2/leagues/vtb/seasons/2026/matches",
+   "query": {
+    "limit": "1000"
+   }
+  }
+ ],
+ "vtb_infobasket_seasons": [
+  {
+   "path": "/Comp/GetSeasonsForTag",
+   "query": {
+    "format": "json",
+    "tag": "vtb"
+   }
+  }
+ ],
+ "vtb_infobasket_calendar": [
+  {
+   "path": "/Comp/GetCalendar/",
+   "query": {
+    "format": "json",
+    "comps": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_team_stats": [
+  {
+   "path": "/Comp/GetTeamStats/50714",
+   "query": {
+    "page": "0"
+   }
+  }
+ ],
+ "vtb_infobasket_team_stats_players": [
+  {
+   "path": "/Comp/GetTeamStats/50714",
+   "query": {
+    "page": "0"
+   }
+  }
+ ],
+ "vtb_infobasket_team_stats_coaches": [
+  {
+   "path": "/Comp/GetTeamStats/50714",
+   "query": {
+    "page": "0"
+   }
+  }
+ ],
+ "vtb_infobasket_best_players": [
+  {
+   "path": "/Comp/GetBestPlayers/50714",
+   "query": {
+    "count": "5",
+    "lang": "en"
+   }
+  }
+ ],
+ "vtb_infobasket_best_teams": [
+  {
+   "path": "/Comp/GetBestTeams/50714",
+   "query": {
+    "count": "5",
+    "lang": "en"
+   }
+  }
+ ],
+ "vtb_infobasket_team_preview": [
+  {
+   "path": "/Comp/GetTeamStatsForPreview/921391",
+   "query": {
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_game": [
+  {
+   "path": "/Widget/GetOnline/921391",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_box_score": [
+  {
+   "path": "/Widget/GetOnline/921391",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_team_box_score": [
+  {
+   "path": "/Widget/GetOnline/921391",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_pbp": [
+  {
+   "path": "/Widget/GetOnline/921391",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_game_staff": [
+  {
+   "path": "/Widget/GetOnline/921391",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_game__2014": [
+  {
+   "path": "/Widget/GetOnline/684495",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_box_score__2014": [
+  {
+   "path": "/Widget/GetOnline/684495",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_pbp__2014": [
+  {
+   "path": "/Widget/GetOnline/684495",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_game_staff__2014": [
+  {
+   "path": "/Widget/GetOnline/684495",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_game_page": [
+  {
+   "path": "/Widget/GamePage/921391",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_comp_issue": [
+  {
+   "path": "/Widget/CompIssue/50714",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_standings": [
+  {
+   "path": "/Widget/CompTeamResults/50720",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_cross_table": [
+  {
+   "path": "/Widget/CrossTable/50720",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_playoff": [
+  {
+   "path": "/Widget/PlayOff/54281",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_playoff_games": [
+  {
+   "path": "/Widget/PlayOff/54281",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_best_player_parameters": [
+  {
+   "path": "/Widget/GetBestPlayerParameters/",
+   "query": {
+    "format": "json",
+    "lang": "en"
+   }
+  }
+ ],
+ "vtb_infobasket_best_team_parameters": [
+  {
+   "path": "/Widget/GetBestTeamParameters/",
+   "query": {
+    "format": "json",
+    "lang": "en"
+   }
+  }
+ ],
+ "vtb_infobasket_player": [
+  {
+   "path": "/Widget/PlayerPage/423011",
+   "query": {
+    "format": "json",
+    "tag": "vtb"
+   }
+  }
+ ],
+ "vtb_infobasket_player_season_stats": [
+  {
+   "path": "/Widget/PlayerSeasonStats/423011",
+   "query": {
+    "format": "json",
+    "tag": "vtb"
+   }
+  }
+ ],
+ "vtb_infobasket_player_career_stats": [
+  {
+   "path": "/Widget/PlayerSeasonStats/423011",
+   "query": {
+    "format": "json",
+    "tag": "vtb"
+   }
+  }
+ ],
+ "vtb_infobasket_player_game_log": [
+  {
+   "path": "/Widget/PlayerStats/423011",
+   "query": {
+    "format": "json",
+    "team": "2650",
+    "filter": "1",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_coach": [
+  {
+   "path": "/Widget/CoachPage/131047",
+   "query": {
+    "format": "json"
+   }
+  }
+ ],
+ "vtb_infobasket_team": [
+  {
+   "path": "/Widget/TeamPage/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb"
+   }
+  }
+ ],
+ "vtb_infobasket_team_seasons": [
+  {
+   "path": "/Widget/GetTeamSeasons/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb"
+   }
+  }
+ ],
+ "vtb_infobasket_team_comps": [
+  {
+   "path": "/Widget/GetTeamComps/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb",
+    "season": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_roster": [
+  {
+   "path": "/Widget/TeamRoster/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_roster_coaches": [
+  {
+   "path": "/Widget/TeamRoster/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_team_games": [
+  {
+   "path": "/Widget/TeamGames/2650",
+   "query": {
+    "format": "json",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_team_season_stats": [
+  {
+   "path": "/Widget/TeamStats/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_team_player_stats": [
+  {
+   "path": "/Widget/TeamStats/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ],
+ "vtb_infobasket_team_coach_stats": [
+  {
+   "path": "/Widget/TeamStats/2650",
+   "query": {
+    "format": "json",
+    "lang": "en",
+    "tag": "vtb",
+    "compId": "50714"
+   }
+  }
+ ]
+}
