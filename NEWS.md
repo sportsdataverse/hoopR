@@ -219,6 +219,15 @@ not the expected report) raise classed conditions (`hoopR_no_data` /
 `hoopR_fetch_error`, both inheriting `hoopR_error`) instead of returning an
 empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
 
+### **Dependencies**
+
+* Imports trimmed so `R CMD check` no longer notes too many non-default packages.
+  glmnet and Matrix moved to Suggests: `nba_rapm()` now needs them installed (it says so
+  with an install prompt if they are missing). stringdist moved to Suggests: the live
+  player-crosswalk builders `nba_player_crosswalk()` and `mbb_player_crosswalk()` now need it; the cached `load_*_crosswalk()` loaders
+  do not. magrittr and lubridate are no longer dependencies (`%>%` still comes from dplyr; date
+  parsing now uses base R with the same results).
+
 # **hoopR 3.1.0**
 
 Development release on top of the CRAN-shipped 3.0.0 (commit
