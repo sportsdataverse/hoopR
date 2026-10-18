@@ -1,0 +1,58 @@
+[
+  {
+    "sortingDate": "2026-10-06",
+    "sourceTeam": {
+      "nameShort": "MHP RIESEN Ludwigsburg",
+      "id": "433",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/433"
+    },
+    "sourceTeamFreeText": "MHP RIESEN Ludwigsburg",
+    "destinationTeam": {
+      "nameShort": "VET-CONCEPT Gladiators Trier",
+      "id": "414",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/414"
+    },
+    "destinationTeamFreeText": "VET-CONCEPT Gladiators Trier",
+    "player": {
+      "firstName": "Terrell",
+      "lastName": "Harris",
+      "position": "SHOOTING_GUARD",
+      "id": "2005312",
+      "playerId": "140183148"
+    }
+  },
+  {
+    "sortingDate": "2026-10-01",
+    "sourceTeamFreeText": "CSO Voluntari (ROM)",
+    "destinationTeam": {
+      "nameShort": "Science City Jena",
+      "id": "483",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/483"
+    },
+    "destinationTeamFreeText": "Science City Jena",
+    "player": {
+      "firstName": "Sacar",
+      "lastName": "Anim",
+      "position": "SMALL_FORWARD",
+      "id": "2005281",
+      "playerId": "50012"
+    }
+  },
+  {
+    "sortingDate": "2026-09-29",
+    "sourceTeamFreeText": "BC Erfurt",
+    "destinationTeam": {
+      "nameShort": "BMA365 Bamberg Baskets",
+      "id": "420",
+      "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/420"
+    },
+    "destinationTeamFreeText": "BMA365 Bamberg Baskets",
+    "player": {
+      "firstName": "Musa",
+      "lastName": "Abra",
+      "position": "POINT_GUARD",
+      "id": "2005242",
+      "playerId": "140179958"
+    }
+  }
+]

@@ -1,0 +1,7 @@
+league,season,season_id,round,series,match_winner_id,is_match_finished,team_a_id,team_a_name,team_a_tlc,team_a_rank,team_a_victories,team_b_id,team_b_name,team_b_tlc,team_b_rank,team_b_victories,games
+bbl,2026,2025,quarter_finals,1,486,true,486,FC Bayern München Basketball,FCB,1,3,414,VET-CONCEPT Gladiators Trier,TRI,8,0,3
+bbl,2026,2025,quarter_finals,2,415,true,415,Telekom Baskets Bonn,BON,4,3,540,Fitness First Würzburg Baskets,WUE,5,2,3
+bbl,2026,2025,quarter_finals,3,413,true,413,ALBA BERLIN,BER,2,3,541,RASTA Vechta,VEC,7,2,3
+bbl,2026,2025,semi_finals,1,486,true,486,FC Bayern München Basketball,FCB,1,3,415,Telekom Baskets Bonn,BON,4,0,3
+bbl,2026,2025,semi_finals,2,413,true,413,ALBA BERLIN,BER,2,3,420,BMA365 Bamberg Baskets,BAM,3,2,3
+bbl,2026,2025,finals,1,413,true,486,FC Bayern München Basketball,FCB,1,2,413,ALBA BERLIN,BER,2,3,3

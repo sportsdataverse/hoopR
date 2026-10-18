@@ -1,0 +1,245 @@
+{
+  "id": "2006920",
+  "seasonId": 2026,
+  "sourceId": 2006920,
+  "stage": "MAIN_ROUND",
+  "competition": "BBL",
+  "status": "OFFICIAL",
+  "statstatus": "E",
+  "gameProgress": "E",
+  "homeTeam": {
+    "ticketPhone": "REDACTED",
+    "ticketUrl": "https://www.albaberlin.de/tickets",
+    "isForeign": false,
+    "foreignLink": "",
+    "tlc": "BER",
+    "name": "ALBA BERLIN",
+    "teamId": "413",
+    "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413",
+    "seasonTeamId": "413",
+    "streak": "L",
+    "streakCount": 3,
+    "last10Outcomes": [
+      "L",
+      "L",
+      "L"
+    ],
+    "last10Losses": 3,
+    "last10Victories": 2,
+    "totalGames": "5",
+    "rank": 14,
+    "magentaSportId": "TODO_MAGENTASPORTID"
+  },
+  "guestTeam": {
+    "ticketPhone": "REDACTED",
+    "ticketUrl": "https://www.chemnitz99.de/tickets",
+    "isForeign": false,
+    "foreignLink": "",
+    "tlc": "CHE",
+    "name": "NINERS Chemnitz",
+    "teamId": "485",
+    "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/485",
+    "seasonTeamId": "485",
+    "streak": "L",
+    "streakCount": 2,
+    "last10Outcomes": [
+      "L",
+      "L",
+      "W"
+    ],
+    "last10Losses": 4,
+    "last10Victories": 1,
+    "totalGames": "5",
+    "rank": 16,
+    "magentaSportId": "TODO_MAGENTASPORTID"
+  },
+  "result": {
+    "homeTeamFinalScore": 89,
+    "guestTeamFinalScore": 82,
+    "latestPeriod": "Q4",
+    "homeTeamQ1Score": 21,
+    "homeTeamQ2Score": 20,
+    "homeTeamQ3Score": 18,
+    "homeTeamQ4Score": 30,
+    "guestTeamQ1Score": 20,
+    "guestTeamQ2Score": 23,
+    "guestTeamQ3Score": 19,
+    "guestTeamQ4Score": 20,
+    "homeTeamOT1Score": 0,
+    "homeTeamOT2Score": 0,
+    "homeTeamOT3Score": 0,
+    "homeTeamOT4Score": 0,
+    "homeTeamOT5Score": 0,
+    "homeTeamOT6Score": 0,
+    "homeTeamOT7Score": 0,
+    "homeTeamOT8Score": 0,
+    "homeTeamOT9Score": 0,
+    "guestTeamOT1Score": 0,
+    "guestTeamOT2Score": 0,
+    "guestTeamOT3Score": 0,
+    "guestTeamOT4Score": 0,
+    "guestTeamOT5Score": 0,
+    "guestTeamOT6Score": 0,
+    "guestTeamOT7Score": 0,
+    "guestTeamOT8Score": 0,
+    "guestTeamOT9Score": 0,
+    "spectators": 9050
+  },
+  "scheduledTime": "2026-09-18T18:00:00Z",
+  "isHidden": false,
+  "matchDay": 1,
+  "coachComments": [
+    {
+      "content": "Wie erwartet gab es gerade zu Beginn viele Höhen und Tiefen. Es war unser erstes Saisonspiel, deshalb muss sich noch einiges einspielen. Was mir aber besonders gefallen hat, war der enorme Einsatz, den wir über weite Strecken gezeigt haben. Die 21 Offensivrebounds und das Tempo, mit dem wir gespielt haben, sprechen für sich. Dazu kam ein sehr gutes Passspiel, das uns zu 25 Assists geführt hat. Das sind Dinge, auf denen wir aufbauen können.",
+      "seasonCoach": {
+        "id": "2001409",
+        "seasonTeam": {
+          "id": "413",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/413",
+          "name": "ALBA BERLIN"
+        },
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2001409",
+        "firstName": "Pedro",
+        "lastName": "Calles",
+        "isHeadCoach": true
+      }
+    },
+    {
+      "content": "Für viele unserer Jungs war es heute das Debüt in der BBL – und dann direkt gegen den Meister. Unter den gegebenen Umständen haben wir das sehr gut gemacht. Ich bin sehr zufrieden mit dem Zusammenhalt, dem Kampfgeist und dem Willen, als Mannschaft Basketball zu spielen. Gleichzeitig müssen wir lernen, 40 Minuten lang konstant clever zu spielen. Gegen solche Mannschaften dürfen wir uns keine fünf Minuten leisten, in denen wir diese kleinen Details nicht richtig machen. Trotzdem bin ich sehr zufrieden mit den Fortschritten, die wir heute als Mannschaft gezeigt haben",
+      "seasonCoach": {
+        "id": "56447",
+        "seasonTeam": {
+          "id": "485",
+          "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/485",
+          "name": "NINERS Chemnitz"
+        },
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/56447",
+        "firstName": "Rodrigo",
+        "lastName": "Pastore",
+        "isHeadCoach": true
+      }
+    }
+  ],
+  "isTBD": false,
+  "referee1": {
+    "firstName": "Anne",
+    "lastName": "Panther",
+    "birthDate": "1982-06-18",
+    "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/32",
+    "officialFunction": "REFEREE",
+    "profession": "Senior HR Managerin",
+    "refId": "32",
+    "salutation": "",
+    "participations": 692,
+    "yearJoinedBBL": 2011
+  },
+  "referee2": {
+    "firstName": "Nermin",
+    "lastName": "Hodzic",
+    "birthDate": "1995-10-06",
+    "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/629",
+    "officialFunction": "REFEREE",
+    "profession": "Lehrer",
+    "refId": "629",
+    "salutation": "",
+    "participations": 190,
+    "yearJoinedBBL": 2020
+  },
+  "referee3": {
+    "firstName": "Gentian",
+    "lastName": "Cici",
+    "birthDate": "1981-04-07",
+    "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/731",
+    "officialFunction": "REFEREE",
+    "profession": "Schiedsrichter BBL, Euroleague ",
+    "refId": "731",
+    "salutation": "",
+    "participations": 320,
+    "yearJoinedBBL": 2019
+  },
+  "commissioner": {
+    "firstName": "Ronny",
+    "lastName": "Wegner",
+    "birthDate": "1976-08-08",
+    "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/96",
+    "officialFunction": "COMMISSIONER",
+    "profession": "Prozessmanager",
+    "refId": "96",
+    "salutation": "",
+    "participations": 159,
+    "yearJoinedBBL": "2020"
+  },
+  "tvChannel": [
+    {
+      "channelId": 4,
+      "name": "DYN",
+      "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+      "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+    },
+    {
+      "channelId": 8,
+      "name": "Sport Bild Stream",
+      "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/8",
+      "url": "https://sportbild.bild.de/home/im-livestream-sport-bild-tv-6560bc099f9b8001c1c2acbf"
+    }
+  ],
+  "tvType": null,
+  "isFreeTV": false,
+  "venue": {
+    "id": 2,
+    "name": "Uber Arena",
+    "address": "Uber Platz 1, 10243 Berlin",
+    "isMain": true,
+    "capacity": 13488
+  },
+  "topScore": 19,
+  "topScorer": {
+    "id": "2003890",
+    "firstName": "Stefan",
+    "lastName": "Smith",
+    "playerSourceId": 140181360,
+    "previousTeams": [],
+    "isActive": true,
+    "position": "POINT_GUARD",
+    "playerId": "2003890",
+    "realPlayerId": 140181360,
+    "shirtNumber": 2,
+    "height": 1.88,
+    "weight": 86,
+    "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003890",
+    "isAllStar": false,
+    "isYoung": false,
+    "isVisible": true,
+    "seasonId": 2026,
+    "seasonTeamId": "485",
+    "birthDate": "1999-06-27",
+    "nationalities": [
+      "CA",
+      "JM"
+    ],
+    "yearJoinedBBL": "TODO_YEARJOINEDBBL",
+    "socialMediaLinks": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "gameTime": "00:00:00",
+  "videos": [
+    {
+      "type": "GAME_HIGHLIGHTS",
+      "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006920-GAME_HIGHLIGHTS-desktop.m3u8",
+      "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/413/485",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "type": "GAME_HIGHLIGHTS",
+      "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006920-GAME_HIGHLIGHTS-mobile.m3u8",
+      "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/413/485",
+      "width": 608,
+      "height": 1080
+    }
+  ],
+  "bettingOdds": []
+}

@@ -1,0 +1,43 @@
+{
+  "totalPages": 1,
+  "currentPage": 1,
+  "pageSize": 100,
+  "items": [
+    {
+      "id": "1",
+      "firstName": "Tamer",
+      "lastName": "Arik",
+      "birthDate": "1980-05-17",
+      "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/1",
+      "officialFunction": "REFEREE",
+      "profession": "Dipl. Ing. Informatik",
+      "refId": "1",
+      "participations": 399,
+      "yearJoinedBBL": 2011
+    },
+    {
+      "id": "7",
+      "firstName": "Benjamin",
+      "lastName": "Barth",
+      "birthDate": "1978-06-22",
+      "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/7",
+      "officialFunction": "REFEREE",
+      "profession": "Head of Customer Support & Sales",
+      "refId": "7",
+      "participations": 744,
+      "yearJoinedBBL": 2003
+    },
+    {
+      "id": "12",
+      "firstName": "Steve",
+      "lastName": "Bittner",
+      "birthDate": "1991-05-01",
+      "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/12",
+      "officialFunction": "REFEREE",
+      "profession": "Politikwissenschaftler",
+      "refId": "12",
+      "participations": 513,
+      "yearJoinedBBL": 2013
+    }
+  ]
+}

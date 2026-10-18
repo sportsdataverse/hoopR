@@ -1,0 +1,1225 @@
+{
+  "present": [
+    {
+      "id": "2007040",
+      "seasonId": 2026,
+      "sourceId": 2007040,
+      "stage": "ROUND_OF_16",
+      "competition": "BBL_CUP",
+      "status": "PRE",
+      "gameProgress": null,
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://www.ewe-baskets.de/tickets",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "OLD",
+        "name": "EWE Baskets Oldenburg",
+        "teamId": "430",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/430",
+        "seasonTeamId": "430",
+        "streak": "",
+        "streakCount": 0,
+        "last10Outcomes": null,
+        "last10Losses": 0,
+        "last10Victories": 0,
+        "totalGames": "0",
+        "rank": null,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://telekom-baskets-bonn.de/tickets",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "BON",
+        "name": "Telekom Baskets Bonn",
+        "teamId": "415",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/415",
+        "seasonTeamId": "415",
+        "streak": "",
+        "streakCount": 0,
+        "last10Outcomes": null,
+        "last10Losses": 0,
+        "last10Victories": 0,
+        "totalGames": "0",
+        "rank": null,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": null,
+      "scheduledTime": "2026-10-16T18:00:00Z",
+      "isHidden": false,
+      "matchDay": 1,
+      "coachComments": [],
+      "isTBD": false,
+      "referee1": null,
+      "referee2": null,
+      "referee3": null,
+      "commissioner": null,
+      "tvChannel": [
+        {
+          "channelId": 11,
+          "name": "DYN Pokal",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/11",
+          "url": "https://www.dyn.sport/competition/BBL_Pokal_65003"
+        }
+      ],
+      "tvType": "",
+      "isFreeTV": false,
+      "venue": {
+        "id": 4,
+        "name": "Große EWE Arena Oldenburg",
+        "address": "Maastrichter Str. 1, 26123 Oldenburg",
+        "isMain": true,
+        "capacity": 6335
+      },
+      "topScore": null,
+      "topScorer": null,
+      "gameTime": "00:00:00",
+      "videos": [],
+      "bettingOdds": []
+    },
+    {
+      "id": "2007038",
+      "seasonId": 2026,
+      "sourceId": 2007038,
+      "stage": "ROUND_OF_16",
+      "competition": "BBL_CUP",
+      "status": "PRE",
+      "gameProgress": null,
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://tickets.ratiopharmulm.com/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "ULM",
+        "name": "ratiopharm ulm",
+        "teamId": "418",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/418",
+        "seasonTeamId": "418",
+        "streak": "",
+        "streakCount": 0,
+        "last10Outcomes": null,
+        "last10Losses": 0,
+        "last10Victories": 0,
+        "totalGames": "0",
+        "rank": null,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://phoenix-hagen.reservix.de/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "HAG",
+        "name": "Phoenix Hagen",
+        "teamId": "473",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/473",
+        "seasonTeamId": "473",
+        "streak": "",
+        "streakCount": 0,
+        "last10Outcomes": null,
+        "last10Losses": 0,
+        "last10Victories": 0,
+        "totalGames": "0",
+        "rank": null,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": null,
+      "scheduledTime": "2026-10-17T18:00:00Z",
+      "isHidden": false,
+      "matchDay": 1,
+      "coachComments": [],
+      "isTBD": false,
+      "referee1": null,
+      "referee2": null,
+      "referee3": null,
+      "commissioner": null,
+      "tvChannel": [
+        {
+          "channelId": 11,
+          "name": "DYN Pokal",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/11",
+          "url": "https://www.dyn.sport/competition/BBL_Pokal_65003"
+        }
+      ],
+      "tvType": "",
+      "isFreeTV": false,
+      "venue": {
+        "id": 17,
+        "name": "ratiopharm arena Ulm",
+        "address": "Europastr. 25, 89231 Neu-Ulm",
+        "isMain": true,
+        "capacity": 6000
+      },
+      "topScore": null,
+      "topScorer": null,
+      "gameTime": "00:00:00",
+      "videos": [],
+      "bettingOdds": []
+    },
+    {
+      "id": "2007042",
+      "seasonId": 2026,
+      "sourceId": 2007042,
+      "stage": "ROUND_OF_16",
+      "competition": "BBL_CUP",
+      "status": "PRE",
+      "gameProgress": null,
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://www.eventimsports.de/ols/basketball-braunschweig/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "BRA",
+        "name": "Basketball Löwen Braunschweig",
+        "teamId": "422",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/422",
+        "seasonTeamId": "422",
+        "streak": "",
+        "streakCount": 0,
+        "last10Outcomes": null,
+        "last10Losses": 0,
+        "last10Victories": 0,
+        "totalGames": "0",
+        "rank": null,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://www.chemnitz99.de/tickets",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "CHE",
+        "name": "NINERS Chemnitz",
+        "teamId": "485",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/485",
+        "seasonTeamId": "485",
+        "streak": "",
+        "streakCount": 0,
+        "last10Outcomes": null,
+        "last10Losses": 0,
+        "last10Victories": 0,
+        "totalGames": "0",
+        "rank": null,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": null,
+      "scheduledTime": "2026-10-18T13:00:00Z",
+      "isHidden": false,
+      "matchDay": 1,
+      "coachComments": [],
+      "isTBD": false,
+      "referee1": null,
+      "referee2": null,
+      "referee3": null,
+      "commissioner": null,
+      "tvChannel": [
+        {
+          "channelId": 11,
+          "name": "DYN Pokal",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/11",
+          "url": "https://www.dyn.sport/competition/BBL_Pokal_65003"
+        }
+      ],
+      "tvType": "",
+      "isFreeTV": false,
+      "venue": {
+        "id": 11,
+        "name": "Volkswagen Halle Braunschweig",
+        "address": "Europaplatz 1, 38100 Braunschweig",
+        "isMain": true,
+        "capacity": 6358
+      },
+      "topScore": null,
+      "topScorer": null,
+      "gameTime": "00:00:00",
+      "videos": [],
+      "bettingOdds": []
+    }
+  ],
+  "future": [
+    {
+      "id": "2006866",
+      "seasonId": 2026,
+      "sourceId": 2006866,
+      "stage": "MAIN_ROUND",
+      "competition": "BBL",
+      "status": "PRE",
+      "gameProgress": null,
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://mbc-0grc.vivenushop.com/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "MBC",
+        "name": "SYNTAINICS MBC",
+        "teamId": "428",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/428",
+        "seasonTeamId": "428",
+        "streak": "W",
+        "streakCount": 2,
+        "last10Outcomes": [
+          "W",
+          "W",
+          "L"
+        ],
+        "last10Losses": 2,
+        "last10Victories": 3,
+        "totalGames": "5",
+        "rank": 9,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "http://tickets.seawolves.de",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "HRO",
+        "name": "ROSTOCK SEAWOLVES",
+        "teamId": "551",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/551",
+        "seasonTeamId": "551",
+        "streak": "W",
+        "streakCount": 2,
+        "last10Outcomes": [
+          "W",
+          "W",
+          "L"
+        ],
+        "last10Losses": 2,
+        "last10Victories": 3,
+        "totalGames": "5",
+        "rank": 8,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": null,
+      "scheduledTime": "2026-10-24T16:30:00Z",
+      "isHidden": false,
+      "matchDay": 6,
+      "coachComments": [],
+      "isTBD": false,
+      "referee1": null,
+      "referee2": null,
+      "referee3": null,
+      "commissioner": null,
+      "tvChannel": [
+        {
+          "channelId": 4,
+          "name": "DYN",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+          "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+        }
+      ],
+      "tvType": null,
+      "isFreeTV": false,
+      "venue": {
+        "id": 43,
+        "name": "Stadthalle Weißenfels",
+        "address": "Beuditzstraße 69a, 06667 Weißenfels",
+        "isMain": true,
+        "capacity": 3000
+      },
+      "topScore": null,
+      "topScorer": null,
+      "gameTime": "00:00:00",
+      "videos": [],
+      "bettingOdds": []
+    },
+    {
+      "id": "2006867",
+      "seasonId": 2026,
+      "sourceId": 2006867,
+      "stage": "MAIN_ROUND",
+      "competition": "BBL",
+      "status": "PRE",
+      "gameProgress": null,
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://www.ticket-onlineshop.com/ols/mhp-riesen/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "LUD",
+        "name": "MHP RIESEN Ludwigsburg",
+        "teamId": "433",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/433",
+        "seasonTeamId": "433",
+        "streak": "W",
+        "streakCount": 1,
+        "last10Outcomes": [
+          "W",
+          "L",
+          "W"
+        ],
+        "last10Losses": 2,
+        "last10Victories": 3,
+        "totalGames": "5",
+        "rank": 7,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://telekom-baskets-bonn.de/tickets",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "BON",
+        "name": "Telekom Baskets Bonn",
+        "teamId": "415",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/415",
+        "seasonTeamId": "415",
+        "streak": "W",
+        "streakCount": 1,
+        "last10Outcomes": [
+          "W",
+          "L",
+          "W"
+        ],
+        "last10Losses": 2,
+        "last10Victories": 3,
+        "totalGames": "5",
+        "rank": 6,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": null,
+      "scheduledTime": "2026-10-24T18:00:00Z",
+      "isHidden": false,
+      "matchDay": 6,
+      "coachComments": [],
+      "isTBD": false,
+      "referee1": null,
+      "referee2": null,
+      "referee3": null,
+      "commissioner": null,
+      "tvChannel": [
+        {
+          "channelId": 4,
+          "name": "DYN",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+          "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+        },
+        {
+          "channelId": 8,
+          "name": "Sport Bild Stream",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/8",
+          "url": "https://sportbild.bild.de/home/im-livestream-sport-bild-tv-6560bc099f9b8001c1c2acbf"
+        }
+      ],
+      "tvType": null,
+      "isFreeTV": false,
+      "venue": {
+        "id": 8,
+        "name": "MHPArena Ludwigsburg",
+        "address": "Schieberdinger Str. 30, 71636 Ludwigsburg",
+        "isMain": true,
+        "capacity": 4000
+      },
+      "topScore": null,
+      "topScorer": null,
+      "gameTime": "00:00:00",
+      "videos": [],
+      "bettingOdds": []
+    },
+    {
+      "id": "2006868",
+      "seasonId": 2026,
+      "sourceId": 2006868,
+      "stage": "MAIN_ROUND",
+      "competition": "BBL",
+      "status": "PRE",
+      "gameProgress": null,
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://tickets-rastavechta.reservix.de/events ",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "VEC",
+        "name": "RASTA Vechta",
+        "teamId": "541",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/541",
+        "seasonTeamId": "541",
+        "streak": "W",
+        "streakCount": 1,
+        "last10Outcomes": [
+          "W",
+          "L",
+          "L"
+        ],
+        "last10Losses": 4,
+        "last10Victories": 1,
+        "totalGames": "5",
+        "rank": 17,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://vetconceptgladiators.de/ticketshop/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "TRI",
+        "name": "VET-CONCEPT Gladiators Trier",
+        "teamId": "414",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/414",
+        "seasonTeamId": "414",
+        "streak": "W",
+        "streakCount": 4,
+        "last10Outcomes": [
+          "W",
+          "W",
+          "W"
+        ],
+        "last10Losses": 1,
+        "last10Victories": 4,
+        "totalGames": "5",
+        "rank": 2,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": null,
+      "scheduledTime": "2026-10-24T18:00:00Z",
+      "isHidden": false,
+      "matchDay": 6,
+      "coachComments": [],
+      "isTBD": false,
+      "referee1": null,
+      "referee2": null,
+      "referee3": null,
+      "commissioner": null,
+      "tvChannel": [
+        {
+          "channelId": 4,
+          "name": "DYN",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+          "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+        }
+      ],
+      "tvType": null,
+      "isFreeTV": false,
+      "venue": {
+        "id": 18,
+        "name": "RASTA Dome",
+        "address": "Pariser Straße 6a, 49733 Vechta",
+        "isMain": true,
+        "capacity": 3140
+      },
+      "topScore": null,
+      "topScorer": null,
+      "gameTime": "00:00:00",
+      "videos": [],
+      "bettingOdds": []
+    }
+  ],
+  "past": [
+    {
+      "id": "2006874",
+      "seasonId": 2026,
+      "sourceId": 2006874,
+      "stage": "MAIN_ROUND",
+      "competition": "BBL",
+      "status": "OFFICIAL",
+      "gameProgress": "E",
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://telekom-baskets-bonn.de/tickets",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "BON",
+        "name": "Telekom Baskets Bonn",
+        "teamId": "415",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/415",
+        "seasonTeamId": "415",
+        "streak": "W",
+        "streakCount": 1,
+        "last10Outcomes": [
+          "W",
+          "L",
+          "W"
+        ],
+        "last10Losses": 2,
+        "last10Victories": 3,
+        "totalGames": "5",
+        "rank": 6,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "www.ticket-onlineshop.com/ols/sc-jena/de",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "JEN",
+        "name": "Science City Jena",
+        "teamId": "483",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/483",
+        "seasonTeamId": "483",
+        "streak": "L",
+        "streakCount": 1,
+        "last10Outcomes": [
+          "L",
+          "W",
+          "W"
+        ],
+        "last10Losses": 3,
+        "last10Victories": 2,
+        "totalGames": "5",
+        "rank": 13,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": {
+        "homeTeamFinalScore": 115,
+        "guestTeamFinalScore": 68,
+        "latestPeriod": 4,
+        "homeTeamQ1Score": 28,
+        "homeTeamQ2Score": 26,
+        "homeTeamQ3Score": 32,
+        "homeTeamQ4Score": 29,
+        "guestTeamQ1Score": 11,
+        "guestTeamQ2Score": 22,
+        "guestTeamQ3Score": 16,
+        "guestTeamQ4Score": 19,
+        "homeTeamOT1Score": 0,
+        "homeTeamOT2Score": 0,
+        "homeTeamOT3Score": 0,
+        "homeTeamOT4Score": 0,
+        "homeTeamOT5Score": 0,
+        "homeTeamOT6Score": 0,
+        "homeTeamOT7Score": 0,
+        "homeTeamOT8Score": 0,
+        "homeTeamOT9Score": 0,
+        "guestTeamOT1Score": 0,
+        "guestTeamOT2Score": 0,
+        "guestTeamOT3Score": 0,
+        "guestTeamOT4Score": 0,
+        "guestTeamOT5Score": 0,
+        "guestTeamOT6Score": 0,
+        "guestTeamOT7Score": 0,
+        "guestTeamOT8Score": 0,
+        "guestTeamOT9Score": 0,
+        "spectators": 5082
+      },
+      "scheduledTime": "2026-10-09T18:00:01Z",
+      "isHidden": false,
+      "matchDay": 5,
+      "coachComments": [
+        {
+          "content": "Ein großes Lob an unsere Mannschaft dafür, wie ernsthaft die Jungs die Partie angegangen sind. Wir haben über 40 Minuten mit der nötigen Dringlichkeit gespielt und das Spiel von der ersten Minute an kontrolliert. Mir hat gefallen, wie wir den Ball bewegt haben und wie wir in die Transition gekommen sind. Dadurch konnten wir uns bereits im ersten Viertel eine deutliche Führung erspielen. Auch defensiv waren wir sehr fokussiert, haben uns konsequent an unseren Gameplan gehalten und insgesamt mit einer sehr guten Intensität gespielt. Deshalb sind wir sehr zufrieden. Ich möchte mich bei unseren Fans für die abermals unglaubliche Unterstützung bedanken. Science City Jena wünsche ich für den weiteren Saisonverlauf alles Gute. Vor allem hoffe ich, dass sie möglichst bald wieder auf ihre verletzten Spieler zurückgreifen können.",
+          "seasonCoach": {
+            "id": "56490",
+            "seasonTeam": {
+              "id": "415",
+              "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/415",
+              "name": "Telekom Baskets Bonn"
+            },
+            "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/56490",
+            "firstName": "Marko",
+            "lastName": "Stankovic",
+            "isHeadCoach": true
+          }
+        },
+        {
+          "content": "Zunächst einmal Glückwunsch an Bonn zu einem großartigen Spiel. Vor allem offensiv waren sie wirklich stark. Unsere Defensive war dagegen furchtbar. Wir haben nichts unternommen, um einfache Würfe zu verhindern. Wenn ein Gegner am Ende 75 Prozent seiner Zweipunktewürfe und 60 Prozent seiner Dreier trifft, ist es sehr schwer, eine Chance zu haben. Aber man muss Bonn auch Anerkennung zollen. Wie sie den Ball bewegt und als Mannschaft zusammengespielt haben, hat es uns sehr schwer gemacht. Auf unserer Seite hat es uns während des gesamten Spiels einfach an Disziplin gefehlt. Im Grunde ist das auch schon alles. Wir müssen diszipliniert spielen, um eine Chance zu haben, und vor allem in der Schlussphase deutlich mehr Einsatz zeigen. Viel mehr gibt es dazu nicht zu sagen. Bonn hat den Sieg verdient. Sie haben uns klar geschlagen, und wir müssen jetzt einen Weg finden, diese Niederlage abzuschütteln und uns auf das nächste Spiel zu konzentrieren.",
+          "seasonCoach": {
+            "id": "2003922",
+            "seasonTeam": {
+              "id": "483",
+              "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/483",
+              "name": "Science City Jena"
+            },
+            "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003922",
+            "firstName": "Steven",
+            "lastName": "Esterkamp",
+            "isHeadCoach": true
+          }
+        }
+      ],
+      "isTBD": false,
+      "referee1": {
+        "firstName": "Christof",
+        "lastName": "Madinger",
+        "birthDate": "1982-04-10",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/28",
+        "officialFunction": "REFEREE",
+        "profession": "COO",
+        "refId": "28",
+        "salutation": "",
+        "participations": 797,
+        "yearJoinedBBL": 2003
+      },
+      "referee2": {
+        "firstName": "Nermin",
+        "lastName": "Hodzic",
+        "birthDate": "1995-10-06",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/629",
+        "officialFunction": "REFEREE",
+        "profession": "Lehrer",
+        "refId": "629",
+        "salutation": "",
+        "participations": 190,
+        "yearJoinedBBL": 2020
+      },
+      "referee3": {
+        "firstName": "Nils",
+        "lastName": "Kremer",
+        "birthDate": "1999-06-07",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/1070448",
+        "officialFunction": "REFEREE",
+        "profession": "",
+        "refId": "1070448",
+        "salutation": "",
+        "participations": 11,
+        "yearJoinedBBL": 0
+      },
+      "commissioner": {
+        "firstName": "Astrid",
+        "lastName": "Reichel",
+        "birthDate": "1969-01-23",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/759",
+        "officialFunction": "COMMISSIONER",
+        "profession": "",
+        "refId": "759",
+        "salutation": "",
+        "participations": 45,
+        "yearJoinedBBL": "2024"
+      },
+      "tvChannel": [
+        {
+          "channelId": 4,
+          "name": "DYN",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+          "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+        }
+      ],
+      "tvType": null,
+      "isFreeTV": false,
+      "venue": {
+        "id": 10,
+        "name": "Telekom Dome Bonn",
+        "address": "Basketring 1, 53123 Bonn",
+        "isMain": true,
+        "capacity": 6000
+      },
+      "topScore": 20,
+      "topScorer": {
+        "id": "2004062",
+        "firstName": "John-Michael",
+        "lastName": "Wright",
+        "playerSourceId": 140183213,
+        "previousTeams": [],
+        "isActive": true,
+        "position": "POINT_GUARD",
+        "playerId": "2004062",
+        "realPlayerId": 140183213,
+        "shirtNumber": 1,
+        "height": 1.85,
+        "weight": 86,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2004062",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": true,
+        "seasonId": 2026,
+        "seasonTeamId": "415",
+        "birthDate": "2000-02-01",
+        "nationalities": [
+          "US"
+        ],
+        "yearJoinedBBL": "TODO_YEARJOINEDBBL",
+        "socialMediaLinks": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "gameTime": "00:00:00",
+      "videos": [
+        {
+          "type": "GAME_HIGHLIGHTS",
+          "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006874-GAME_HIGHLIGHTS-desktop.m3u8",
+          "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/415/483",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "bettingOdds": []
+    },
+    {
+      "id": "2006882",
+      "seasonId": 2026,
+      "sourceId": 2006882,
+      "stage": "MAIN_ROUND",
+      "competition": "BBL",
+      "status": "OFFICIAL",
+      "gameProgress": "E",
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://www.chemnitz99.de/tickets",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "CHE",
+        "name": "NINERS Chemnitz",
+        "teamId": "485",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/485",
+        "seasonTeamId": "485",
+        "streak": "L",
+        "streakCount": 2,
+        "last10Outcomes": [
+          "L",
+          "L",
+          "W"
+        ],
+        "last10Losses": 4,
+        "last10Victories": 1,
+        "totalGames": "5",
+        "rank": 16,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://tickets-bb.fcbayern.com/online/index.php?shopid=1",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "FCB",
+        "name": "FC Bayern München Basketball",
+        "teamId": "486",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/486",
+        "seasonTeamId": "486",
+        "streak": "W",
+        "streakCount": 4,
+        "last10Outcomes": [
+          "W",
+          "W",
+          "W"
+        ],
+        "last10Losses": 0,
+        "last10Victories": 4,
+        "totalGames": "4",
+        "rank": 1,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": {
+        "homeTeamFinalScore": 83,
+        "guestTeamFinalScore": 87,
+        "latestPeriod": 4,
+        "homeTeamQ1Score": 25,
+        "homeTeamQ2Score": 25,
+        "homeTeamQ3Score": 12,
+        "homeTeamQ4Score": 21,
+        "guestTeamQ1Score": 21,
+        "guestTeamQ2Score": 24,
+        "guestTeamQ3Score": 22,
+        "guestTeamQ4Score": 20,
+        "homeTeamOT1Score": 0,
+        "homeTeamOT2Score": 0,
+        "homeTeamOT3Score": 0,
+        "homeTeamOT4Score": 0,
+        "homeTeamOT5Score": 0,
+        "homeTeamOT6Score": 0,
+        "homeTeamOT7Score": 0,
+        "homeTeamOT8Score": 0,
+        "homeTeamOT9Score": 0,
+        "guestTeamOT1Score": 0,
+        "guestTeamOT2Score": 0,
+        "guestTeamOT3Score": 0,
+        "guestTeamOT4Score": 0,
+        "guestTeamOT5Score": 0,
+        "guestTeamOT6Score": 0,
+        "guestTeamOT7Score": 0,
+        "guestTeamOT8Score": 0,
+        "guestTeamOT9Score": 0,
+        "spectators": 4405
+      },
+      "scheduledTime": "2026-10-10T14:00:00Z",
+      "isHidden": false,
+      "matchDay": 5,
+      "coachComments": [
+        {
+          "content": "Glückwunsch an Anton Gavel und sein Team! Wir spielten ein sehr gutes erstes Viertel und sahen die positive Entwicklung, welche unsere Mannschaft allmählich nimmt. Obwohl Cobe Williams heute noch fehlte, hatten wir in der ersten Halbzeit 15 Assists und nur vier Ballverluste, gutes ‚Spacing‘ und bewegten hervorragend den Ball. Die nächste Herausforderung für uns ist, auch größerem Druck standzuhalten, wie ihn heute München in der zweiten Halbzeit auf uns ausübte. Wir trafen hier manch schlechte Entscheidungen, auch defensiv und im Reboundduell können wir uns noch verbessern. Phasenweise haben wir gut verteidigt, aber dann sammelte München den Abpraller ein und scorte doch noch im zweiten Anlauf. Dennoch bin ich stolz auf den Einsatz und die Leidenschaft, welche meine Spieler heute zeigten und blicke optimistisch nach vorn.",
+          "seasonCoach": {
+            "id": "56447",
+            "seasonTeam": {
+              "id": "485",
+              "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/485",
+              "name": "NINERS Chemnitz"
+            },
+            "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/56447",
+            "firstName": "Rodrigo",
+            "lastName": "Pastore",
+            "isHeadCoach": true
+          }
+        },
+        {
+          "content": "Glückwunsch an unsere Spieler zu diesem hart erkämpften Sieg. Wir wissen, dass es immer schwierig ist, in Chemnitz zu gewinnen. Das war auch heute der Fall. Wir haben erst im dritten Viertel angefangen zu verteidigen. Dort hat das Spiel dann auch die Wende für uns genommen, als wir nur zwölf Punkte zuließen. Offensiv erspielten wir nur 14 Assists und haben den Ball nicht gut bewegt, woraus dann auch die schlechten Wurfquoten, insbesondere von der Dreierlinie resultierten. Da müssen wir besser werden. Aber wir sollten auch verstehen, dass, egal wo wir auswärts spielen, uns schwere Aufgaben erwarten. Darauf müssen wir vorbereitet sein und ich glaube, das haben wir heute erst in der zweiten Halbzeit richtig verstanden.",
+          "seasonCoach": {
+            "id": "2004290",
+            "seasonTeam": {
+              "id": "486",
+              "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/486",
+              "name": "FC Bayern München Basketball"
+            },
+            "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2004290",
+            "firstName": "Anton",
+            "lastName": "Gavel",
+            "isHeadCoach": true
+          }
+        }
+      ],
+      "isTBD": false,
+      "referee1": {
+        "firstName": "Gentian",
+        "lastName": "Cici",
+        "birthDate": "1981-04-07",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/731",
+        "officialFunction": "REFEREE",
+        "profession": "Schiedsrichter BBL, Euroleague ",
+        "refId": "731",
+        "salutation": "",
+        "participations": 320,
+        "yearJoinedBBL": 2019
+      },
+      "referee2": {
+        "firstName": "Oliver",
+        "lastName": "Krause",
+        "birthDate": "1976-06-05",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/25",
+        "officialFunction": "REFEREE",
+        "profession": "Rechtsanwalt / Fachanwalt ",
+        "refId": "25",
+        "salutation": "",
+        "participations": 779,
+        "yearJoinedBBL": 1999
+      },
+      "referee3": {
+        "firstName": "Adrian",
+        "lastName": "Iglesias Ambrosio",
+        "birthDate": "1989-08-14",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/748",
+        "officialFunction": "REFEREE",
+        "profession": "",
+        "refId": "748",
+        "salutation": "",
+        "participations": 101,
+        "yearJoinedBBL": 2023
+      },
+      "commissioner": {
+        "firstName": "Ute",
+        "lastName": "Bender",
+        "birthDate": "1967-01-28",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/771",
+        "officialFunction": "COMMISSIONER",
+        "profession": "Justizangestellte",
+        "refId": "771",
+        "salutation": "",
+        "participations": 212,
+        "yearJoinedBBL": "2019"
+      },
+      "tvChannel": [
+        {
+          "channelId": 4,
+          "name": "DYN",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+          "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+        },
+        {
+          "channelId": 8,
+          "name": "Sport Bild Stream",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/8",
+          "url": "https://sportbild.bild.de/home/im-livestream-sport-bild-tv-6560bc099f9b8001c1c2acbf"
+        },
+        {
+          "channelId": 2,
+          "name": "MDR",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/2",
+          "url": "https://www.mdr.de/video/livestreams/index.html"
+        }
+      ],
+      "tvType": null,
+      "isFreeTV": false,
+      "venue": {
+        "id": 70,
+        "name": "Messe Chemnitz",
+        "address": "Messeplatz 1, 09116 Chemnitz",
+        "isMain": true,
+        "capacity": 5000
+      },
+      "topScore": 21,
+      "topScorer": {
+        "id": "2003896",
+        "firstName": "Mateo",
+        "lastName": "Seric",
+        "playerSourceId": 30626,
+        "previousTeams": [],
+        "isActive": true,
+        "position": "POWER_FORWARD",
+        "playerId": "2003896",
+        "realPlayerId": 30626,
+        "shirtNumber": 21,
+        "height": 2.04,
+        "weight": 95,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003896",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": true,
+        "seasonId": 2026,
+        "seasonTeamId": "485",
+        "birthDate": "1999-03-21",
+        "nationalities": [
+          "DE",
+          "HR"
+        ],
+        "yearJoinedBBL": "TODO_YEARJOINEDBBL",
+        "socialMediaLinks": []
+      },
+      "gameTime": "00:00:00",
+      "videos": [
+        {
+          "type": "GAME_HIGHLIGHTS",
+          "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006882-GAME_HIGHLIGHTS-desktop.m3u8",
+          "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/485/486",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "type": "GAME_HIGHLIGHTS",
+          "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006882-GAME_HIGHLIGHTS-mobile.m3u8",
+          "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/485/486",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "bettingOdds": []
+    },
+    {
+      "id": "2006875",
+      "seasonId": 2026,
+      "sourceId": 2006875,
+      "stage": "MAIN_ROUND",
+      "competition": "BBL",
+      "status": "OFFICIAL",
+      "gameProgress": "E",
+      "homeTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://www.ticket-onlineshop.com/ols/bamberg/de",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "BAM",
+        "name": "BMA365 Bamberg Baskets",
+        "teamId": "420",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/420",
+        "seasonTeamId": "420",
+        "streak": "L",
+        "streakCount": 1,
+        "last10Outcomes": [
+          "L",
+          "W",
+          "L"
+        ],
+        "last10Losses": 3,
+        "last10Victories": 2,
+        "totalGames": "5",
+        "rank": 11,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "guestTeam": {
+        "ticketPhone": "REDACTED",
+        "ticketUrl": "https://mbc-0grc.vivenushop.com/",
+        "isForeign": false,
+        "foreignLink": "",
+        "tlc": "MBC",
+        "name": "SYNTAINICS MBC",
+        "teamId": "428",
+        "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/428",
+        "seasonTeamId": "428",
+        "streak": "W",
+        "streakCount": 2,
+        "last10Outcomes": [
+          "W",
+          "W",
+          "L"
+        ],
+        "last10Losses": 2,
+        "last10Victories": 3,
+        "totalGames": "5",
+        "rank": 9,
+        "magentaSportId": "TODO_MAGENTASPORTID"
+      },
+      "result": {
+        "homeTeamFinalScore": 74,
+        "guestTeamFinalScore": 85,
+        "latestPeriod": 4,
+        "homeTeamQ1Score": 22,
+        "homeTeamQ2Score": 10,
+        "homeTeamQ3Score": 10,
+        "homeTeamQ4Score": 32,
+        "guestTeamQ1Score": 19,
+        "guestTeamQ2Score": 26,
+        "guestTeamQ3Score": 22,
+        "guestTeamQ4Score": 18,
+        "homeTeamOT1Score": 0,
+        "homeTeamOT2Score": 0,
+        "homeTeamOT3Score": 0,
+        "homeTeamOT4Score": 0,
+        "homeTeamOT5Score": 0,
+        "homeTeamOT6Score": 0,
+        "homeTeamOT7Score": 0,
+        "homeTeamOT8Score": 0,
+        "homeTeamOT9Score": 0,
+        "guestTeamOT1Score": 0,
+        "guestTeamOT2Score": 0,
+        "guestTeamOT3Score": 0,
+        "guestTeamOT4Score": 0,
+        "guestTeamOT5Score": 0,
+        "guestTeamOT6Score": 0,
+        "guestTeamOT7Score": 0,
+        "guestTeamOT8Score": 0,
+        "guestTeamOT9Score": 0,
+        "spectators": 4023
+      },
+      "scheduledTime": "2026-10-10T16:30:00Z",
+      "isHidden": false,
+      "matchDay": 5,
+      "coachComments": [
+        {
+          "content": "Glückwunsch an meine Spieler zu diesem wichtigen Sieg hier auswärts in Bamberg. Ich bin sehr stolz auf die Mannschaft, wie sie heute hier gespielt hat. Wir haben nahezu das gesamte Spiel über geführt. Zum Ende des Spiels ist uns dann zwar ein wenig die Energie ausgegangen und es war schwierig, neue Energie zu finden, denn Bamberg ist eine sehr gute Mannschaft und so wurde es noch einmal etwas enger. Unsere Verteidigung heute war hier der Schlüssel zum Sieg. Mit der Offensive hatten wir zu Beginn unsere Probleme, aber unsere Verteidigung hat uns den Sieg gebracht.",
+          "seasonCoach": {
+            "id": "2003774",
+            "seasonTeam": {
+              "id": "428",
+              "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/428",
+              "name": "SYNTAINICS MBC"
+            },
+            "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003774",
+            "firstName": "Vladimir",
+            "lastName": "Jovanovic",
+            "isHeadCoach": true
+          }
+        },
+        {
+          "content": "Glückwunsch an den MBC. Bitte nicht falsch verstehen, aber es ärgert mich hier immer dem Gegner gratulieren zu müssen, weil wir einfach unseren Job nicht richtig machen. Wir haben die gleichen Fehler gemacht, wie zuletzt in Peristeri, indem wir einfach nicht mit der richtigen Mentalität über 40 Minuten an dieses Spiel herangegangen sind. Im ersten Viertel haben wir ganz okay begonnen, vielleicht ein wenig langsam aber in Ordnung. Im zweiten Viertel waren wir dann aber wie schon in Griechenland auf einem ganz ganz niedrigen Level und konnten keinerlei Energie finden. Der MBC hatte 20 Offensiv-Rebounds, konnte von jeder beliebigen Position aus in unsere Zone eindringen und wir waren einfach nicht in der Lage, dagegenzuhalten, wie das in der BBL einfach vonnöten ist. Anscheinend mache ich etwas falsch, denn ich konnte die Spieler nicht davon überzeugen, dass schön spielen und ein paar Dreier eben nicht genug sind. Wir müssen etwas verändern und wir werden etwas verändern, denn so funktioniert es nicht. Auf diese Art und Weise werden wir auf jeden Fall nicht noch einmal verlieren.  \r\nVielen Dank an die Fans in der Arena! Es tut mir leid, dass wir in meinem zweiten Heimspiel nicht in der Lage waren, eine andere Performance zu zeigen. Nochmals Danke und bei nächsten Mal werden wir ein anderes Gesicht zeigen.",
+          "seasonCoach": {
+            "id": "2003193",
+            "seasonTeam": {
+              "id": "420",
+              "logoUrl": "https://api.basketball-bundesliga.de/images/teams/logo/2026/420",
+              "name": "BMA365 Bamberg Baskets"
+            },
+            "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003193",
+            "firstName": "Jesus",
+            "lastName": "Ramirez",
+            "isHeadCoach": true
+          }
+        }
+      ],
+      "isTBD": false,
+      "referee1": {
+        "firstName": "Robert",
+        "lastName": "Lottermoser",
+        "birthDate": "1976-06-03",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/27",
+        "officialFunction": "REFEREE",
+        "profession": "Diplom-Bauingenieur",
+        "refId": "27",
+        "salutation": "",
+        "participations": 1092,
+        "yearJoinedBBL": 2002
+      },
+      "referee2": {
+        "firstName": "Johannes",
+        "lastName": "Hack",
+        "birthDate": "1981-09-28",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/20",
+        "officialFunction": "REFEREE",
+        "profession": "Gymnasiallehrer",
+        "refId": "20",
+        "salutation": "",
+        "participations": 484,
+        "yearJoinedBBL": 2009
+      },
+      "referee3": {
+        "firstName": "Dogu Berk",
+        "lastName": "Innal",
+        "birthDate": "1993-09-13",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/755",
+        "officialFunction": "REFEREE",
+        "profession": "",
+        "refId": "755",
+        "salutation": "",
+        "participations": 22,
+        "yearJoinedBBL": 2024
+      },
+      "commissioner": {
+        "firstName": "Horst",
+        "lastName": "Weichert",
+        "birthDate": "1963-01-15",
+        "imageUrl": "https://api.basketball-bundesliga.de/images/referee/portrait/2026/56",
+        "officialFunction": "COMMISSIONER",
+        "profession": "HR Business Partner",
+        "refId": "56",
+        "salutation": "",
+        "participations": 232,
+        "yearJoinedBBL": "2013"
+      },
+      "tvChannel": [
+        {
+          "channelId": 4,
+          "name": "DYN",
+          "logo": "https://api.basketball-bundesliga.de/images/tv_channel/logo/2026/4",
+          "url": "https://www.dyn.sport/competition/easyCredit_BBL_65002"
+        }
+      ],
+      "tvType": null,
+      "isFreeTV": false,
+      "venue": {
+        "id": 3,
+        "name": "Brose Arena Bamberg",
+        "address": "Forchheimer Str. 15, 96050 Bamberg",
+        "isMain": true,
+        "capacity": 5700
+      },
+      "topScore": 22,
+      "topScorer": {
+        "id": "2003884",
+        "firstName": "Trevon",
+        "lastName": "Scott",
+        "playerSourceId": 140183209,
+        "previousTeams": [],
+        "isActive": true,
+        "position": "POWER_FORWARD",
+        "playerId": "2003884",
+        "realPlayerId": 140183209,
+        "shirtNumber": 13,
+        "height": 2.03,
+        "weight": 102,
+        "imageUrl": "https://api.basketball-bundesliga.de/images/player/portrait/2026/2003884",
+        "isAllStar": false,
+        "isYoung": false,
+        "isVisible": true,
+        "seasonId": 2026,
+        "seasonTeamId": "420",
+        "birthDate": "1996-11-25",
+        "nationalities": [
+          "US"
+        ],
+        "yearJoinedBBL": "TODO_YEARJOINEDBBL",
+        "socialMediaLinks": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "gameTime": "00:00:00",
+      "videos": [
+        {
+          "type": "GAME_HIGHLIGHTS",
+          "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006875-GAME_HIGHLIGHTS-desktop.m3u8",
+          "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/420/428",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "type": "GAME_HIGHLIGHTS",
+          "hlsManifestUrl": "https://nbg1.your-objectstorage.com/bbl/2006875-GAME_HIGHLIGHTS-mobile.m3u8",
+          "imageURL": "https://api.basketball-bundesliga.de/images/video/2026/420/428",
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "bettingOdds": []
+    }
+  ]
+}
