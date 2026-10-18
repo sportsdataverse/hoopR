@@ -51,8 +51,8 @@ Endpoint: \verb{GET https://org.infobasket.su/Widget/PlayOff/\{comp_id\}}
 \itemize{
 \item Owner flag (sdv-internal-refs/vtb/README.md): the VTB United League is run from Russia and several clubs are owned
 or sponsored by sanctioned state companies (the KHL precedent); Infobasket is the Russian basketball federation's
-stats platform. Fetching on your own machine is fine; any published data release, hosted mirror or redistribution
-needs owner (sanctions / legal) sign-off first. No accounts or payments are involved.
+stats platform. Fetching on your own machine is fine. The owner has approved published data releases (2026-10-17),
+though none is scheduled yet. No accounts or payments are involved.
 \item Unofficial and unsupported: both hosts are keyless public JSON backends of vtb-league.com. No terms of use are
 published; robots.txt is a 404 on api.vtb-league.com and org.infobasket.su (no rules; vtb-league.com disallows
 only /wp/wp-admin/). The runtime waits at least 1 s before every request, retries included, and honours
