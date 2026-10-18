@@ -1,0 +1,67 @@
+{
+  "attendance": 2786,
+  "broadcasts": null,
+  "competitors": [
+    {
+      "draw": false,
+      "entityId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+      "isHome": false,
+      "resultPlace": 1,
+      "score": "90",
+      "nameFullLatin": "宇都宮ブレックス",
+      "nameFullLocal": "Utsunomiya Brex",
+      "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+      "codeLatin": "BRE",
+      "codeLocal": null,
+      "primaryColor": null,
+      "secondaryColor": null,
+      "tertiaryColor": null
+    },
+    {
+      "draw": false,
+      "entityId": "f170040e-5ad9-11ef-b4d4-070129f618c6",
+      "isHome": true,
+      "resultPlace": 2,
+      "score": "81",
+      "nameFullLatin": "Taoyuan Pauian Pilots",
+      "nameFullLocal": "Taoyuan Pauian Pilots",
+      "teamId": "f170040e-5ad9-11ef-b4d4-070129f618c6",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/613ec1e996cc4dde9890b18646d74339?size=RAW",
+      "codeLatin": "",
+      "codeLocal": "TPP",
+      "primaryColor": "000000",
+      "secondaryColor": "000000",
+      "tertiaryColor": "000000"
+    }
+  ],
+  "endTimeActualUTC": null,
+  "fixtureId": "10af8fd4-106e-11f1-960b-5798087c7aa3",
+  "fixtureNumber": 2526042,
+  "fixtureType": "FINAL",
+  "liveDataAvailable": false,
+  "liveVideoAvailable": false,
+  "nameLatin": null,
+  "nameLocal": "EASL Championship",
+  "poolCode": null,
+  "roundNumber": null,
+  "stage": {},
+  "startTimeActualUTC": null,
+  "startTimeLocal": "2026-03-22T18:00:00",
+  "startTimeUTC": "2026-03-22T10:00:00",
+  "status": "CONFIRMED",
+  "venue": {
+    "abbreviationLatin": null,
+    "abbreviationLocal": null,
+    "alternateNameLatin": null,
+    "alternateNameLocal": null,
+    "countryCode": "MAC",
+    "nameLatin": null,
+    "nameLocal": "Studio City Event Center"
+  },
+  "pool": {
+    "id": null,
+    "name": "Group A",
+    "abb": "A"
+  }
+}

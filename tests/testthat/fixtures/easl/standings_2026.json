@@ -1,0 +1,260 @@
+[
+  {
+    "id": "e9e721a6-3ad3-11f1-b7fc-6df607b5cbf8",
+    "position": 2,
+    "team": {
+      "id": "864e1998-b0f5-11ed-bb08-c199a9dea184",
+      "name": "Seoul SK Knights",
+      "code": "SK",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/0a1ffcdce4274cb2aac79bf152a35557?size=RAW"
+    },
+    "pool": {
+      "id": "284a478ce1b348f086e2c0cadd6706",
+      "name": "Group A",
+      "abb": "A"
+    },
+    "live": false,
+    "latest": false,
+    "stats": {
+      "gamePlayed": 6,
+      "gamePlayedHome": 3,
+      "gamePlayedAway": 3,
+      "wins": 4,
+      "winsHome": 3,
+      "winsAway": 1,
+      "losses": 2,
+      "lossesHome": 0,
+      "lossesAway": 2,
+      "draws": 0,
+      "drawsHome": 0,
+      "drawsAway": 0,
+      "winPercentage": 0.67,
+      "winPercentageHome": 1,
+      "winPercentageAway": 0.33,
+      "pointDifference": 12,
+      "pointDifferenceHome": 24,
+      "pointDifferenceAway": -12,
+      "pointsFor": 527,
+      "pointsAgainst": 515,
+      "steak": 1,
+      "streakAway": 0,
+      "streakHome": 3
+    },
+    "lastFiveMatches": [
+      {
+        "result": "W",
+        "isHome": true,
+        "isNeutralVenue": false,
+        "scoreFor": "89",
+        "scoreAgainst": "78",
+        "startTimeUTC": "2026-01-28T10:10:00",
+        "opponent": {
+          "id": "86515908-b0f5-11ed-ac6b-c199a9dea184",
+          "name": "Taipei Fubon Braves",
+          "code": "TFB",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/5a015b28e60544af8c882fb3b78fe7d6?size=RAW"
+        }
+      },
+      {
+        "result": "L",
+        "isHome": false,
+        "isNeutralVenue": false,
+        "scoreFor": "83",
+        "scoreAgainst": "96",
+        "startTimeUTC": "2026-01-07T12:10:00",
+        "opponent": {
+          "id": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+          "name": "Hong Kong Eastern",
+          "code": "HKE",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW"
+        }
+      },
+      {
+        "result": "W",
+        "isHome": false,
+        "isNeutralVenue": false,
+        "scoreFor": "88",
+        "scoreAgainst": "79",
+        "startTimeUTC": "2025-12-24T11:40:00",
+        "opponent": {
+          "id": "86515908-b0f5-11ed-ac6b-c199a9dea184",
+          "name": "Taipei Fubon Braves",
+          "code": "TFB",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/5a015b28e60544af8c882fb3b78fe7d6?size=RAW"
+        }
+      }
+    ]
+  },
+  {
+    "id": "e9e88480-3ad3-11f1-9dc8-6df607b5cbf8",
+    "position": 3,
+    "team": {
+      "id": "86515908-b0f5-11ed-ac6b-c199a9dea184",
+      "name": "Taipei Fubon Braves",
+      "code": "TFB",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/5a015b28e60544af8c882fb3b78fe7d6?size=RAW"
+    },
+    "pool": {
+      "id": "284a478ce1b348f086e2c0cadd6706",
+      "name": "Group A",
+      "abb": "A"
+    },
+    "live": false,
+    "latest": false,
+    "stats": {
+      "gamePlayed": 6,
+      "gamePlayedHome": 3,
+      "gamePlayedAway": 3,
+      "wins": 2,
+      "winsHome": 2,
+      "winsAway": 0,
+      "losses": 4,
+      "lossesHome": 1,
+      "lossesAway": 3,
+      "draws": 0,
+      "drawsHome": 0,
+      "drawsAway": 0,
+      "winPercentage": 0.33,
+      "winPercentageHome": 0.67,
+      "winPercentageAway": 0,
+      "pointDifference": -31,
+      "pointDifferenceHome": 7,
+      "pointDifferenceAway": -38,
+      "pointsFor": 542,
+      "pointsAgainst": 573,
+      "steak": 0,
+      "streakAway": 0,
+      "streakHome": 0
+    },
+    "lastFiveMatches": [
+      {
+        "result": "L",
+        "isHome": false,
+        "isNeutralVenue": false,
+        "scoreFor": "88",
+        "scoreAgainst": "105",
+        "startTimeUTC": "2026-02-11T10:10:00",
+        "opponent": {
+          "id": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+          "name": "Utsunomiya Brex",
+          "code": "BRE",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW"
+        }
+      },
+      {
+        "result": "L",
+        "isHome": false,
+        "isNeutralVenue": false,
+        "scoreFor": "78",
+        "scoreAgainst": "89",
+        "startTimeUTC": "2026-01-28T10:10:00",
+        "opponent": {
+          "id": "864e1998-b0f5-11ed-bb08-c199a9dea184",
+          "name": "Seoul SK Knights",
+          "code": "SK",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/0a1ffcdce4274cb2aac79bf152a35557?size=RAW"
+        }
+      },
+      {
+        "result": "L",
+        "isHome": false,
+        "isNeutralVenue": false,
+        "scoreFor": "93",
+        "scoreAgainst": "103",
+        "startTimeUTC": "2025-12-28T12:10:00",
+        "opponent": {
+          "id": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+          "name": "Hong Kong Eastern",
+          "code": "HKE",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW"
+        }
+      }
+    ]
+  },
+  {
+    "id": "e9ea3acb-3ad3-11f1-8634-6df607b5cbf8",
+    "position": 4,
+    "team": {
+      "id": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+      "name": "Hong Kong Eastern",
+      "code": "HKE",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW"
+    },
+    "pool": {
+      "id": "284a478ce1b348f086e2c0cadd6706",
+      "name": "Group A",
+      "abb": "A"
+    },
+    "live": false,
+    "latest": false,
+    "stats": {
+      "gamePlayed": 6,
+      "gamePlayedHome": 3,
+      "gamePlayedAway": 3,
+      "wins": 2,
+      "winsHome": 2,
+      "winsAway": 0,
+      "losses": 4,
+      "lossesHome": 1,
+      "lossesAway": 3,
+      "draws": 0,
+      "drawsHome": 0,
+      "drawsAway": 0,
+      "winPercentage": 0.33,
+      "winPercentageHome": 0.67,
+      "winPercentageAway": 0,
+      "pointDifference": -10,
+      "pointDifferenceHome": 20,
+      "pointDifferenceAway": -30,
+      "pointsFor": 527,
+      "pointsAgainst": 537,
+      "steak": 0,
+      "streakAway": 0,
+      "streakHome": 0
+    },
+    "lastFiveMatches": [
+      {
+        "result": "L",
+        "isHome": true,
+        "isNeutralVenue": false,
+        "scoreFor": "86",
+        "scoreAgainst": "89",
+        "startTimeUTC": "2026-02-04T12:10:00",
+        "opponent": {
+          "id": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+          "name": "Utsunomiya Brex",
+          "code": "BRE",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW"
+        }
+      },
+      {
+        "result": "L",
+        "isHome": false,
+        "isNeutralVenue": false,
+        "scoreFor": "74",
+        "scoreAgainst": "83",
+        "startTimeUTC": "2026-01-21T10:10:00",
+        "opponent": {
+          "id": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+          "name": "Utsunomiya Brex",
+          "code": "BRE",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW"
+        }
+      },
+      {
+        "result": "W",
+        "isHome": true,
+        "isNeutralVenue": false,
+        "scoreFor": "96",
+        "scoreAgainst": "83",
+        "startTimeUTC": "2026-01-07T12:10:00",
+        "opponent": {
+          "id": "864e1998-b0f5-11ed-bb08-c199a9dea184",
+          "name": "Seoul SK Knights",
+          "code": "SK",
+          "logo": "https://images.dc.connect.sportradar.com/b1e0z/0a1ffcdce4274cb2aac79bf152a35557?size=RAW"
+        }
+      }
+    ]
+  }
+]

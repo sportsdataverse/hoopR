@@ -1,0 +1,214 @@
+[
+  {
+    "attendance": 2786,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "isHome": false,
+        "resultPlace": 1,
+        "score": "90",
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      },
+      {
+        "draw": false,
+        "entityId": "f170040e-5ad9-11ef-b4d4-070129f618c6",
+        "isHome": true,
+        "resultPlace": 2,
+        "score": "81",
+        "nameFullLatin": "Taoyuan Pauian Pilots",
+        "nameFullLocal": "Taoyuan Pauian Pilots",
+        "teamId": "f170040e-5ad9-11ef-b4d4-070129f618c6",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/613ec1e996cc4dde9890b18646d74339?size=RAW",
+        "codeLatin": "",
+        "codeLocal": "TPP",
+        "primaryColor": "000000",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "10af8fd4-106e-11f1-960b-5798087c7aa3",
+    "fixtureNumber": 2526042,
+    "fixtureType": "FINAL",
+    "liveDataAvailable": false,
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": "EASL Championship",
+    "poolCode": null,
+    "roundNumber": null,
+    "stage": {
+      "id": "77441bb3-9759-11f0-b659-0561c09a0222:410ef78c6f734180abde4bad423ebd",
+      "resourceType": "seasonStages"
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2026-03-22T18:00:00",
+    "startTimeUTC": "2026-03-22T10:00:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": null,
+      "abbreviationLocal": null,
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "MAC",
+      "nameLatin": null,
+      "nameLocal": "Studio City Event Center"
+    },
+    "pool": {
+      "id": null,
+      "name": "Unknown Pool",
+      "abb": "N/A"
+    }
+  },
+  {
+    "attendance": null,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "isHome": true,
+        "resultPlace": 2,
+        "score": "86",
+        "nameFullLatin": "Hong Kong Eastern",
+        "nameFullLocal": "Hong Kong Eastern",
+        "teamId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW",
+        "codeLatin": "HKE",
+        "codeLocal": "HKE",
+        "primaryColor": "0000ff",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": false,
+        "entityId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "isHome": false,
+        "resultPlace": 1,
+        "score": "89",
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "be4c5140-9a1a-11f0-9e81-cf515dde2495",
+    "fixtureNumber": 2526031,
+    "fixtureType": "REGULAR",
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": "284a478ce1b348f086e2c0cadd6706",
+    "roundNumber": null,
+    "stage": {
+      "id": "77441bb3-9759-11f0-b659-0561c09a0222:dc5ae558299d414b8a6681c2cde310",
+      "resourceType": "seasonStages"
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2026-02-04T20:10:00",
+    "startTimeUTC": "2026-02-04T12:10:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": null,
+      "abbreviationLocal": null,
+      "address": {},
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "HKG",
+      "nameLatin": "Southorn Stadium",
+      "nameLocal": "Southorn Stadium"
+    },
+    "pool": {
+      "id": "284a478ce1b348f086e2c0cadd6706",
+      "name": "Group A",
+      "abb": "A"
+    }
+  },
+  {
+    "attendance": 3969,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "isHome": false,
+        "resultPlace": 2,
+        "score": "74",
+        "nameFullLatin": "Hong Kong Eastern",
+        "nameFullLocal": "Hong Kong Eastern",
+        "teamId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW",
+        "codeLatin": "HKE",
+        "codeLocal": "HKE",
+        "primaryColor": "0000ff",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": false,
+        "entityId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "isHome": true,
+        "resultPlace": 1,
+        "score": "83",
+        "nameFullLatin": "宇都宮ブレックス",
+        "nameFullLocal": "Utsunomiya Brex",
+        "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/571eb873a9b445cc9acc7f98383c5fb8?size=RAW",
+        "codeLatin": "BRE",
+        "codeLocal": null,
+        "primaryColor": null,
+        "secondaryColor": null,
+        "tertiaryColor": null
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "5f30316a-9a09-11f0-85eb-6f2009ded1ea",
+    "fixtureNumber": 2526027,
+    "fixtureType": "REGULAR",
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": "284a478ce1b348f086e2c0cadd6706",
+    "roundNumber": null,
+    "stage": {
+      "id": "77441bb3-9759-11f0-b659-0561c09a0222:dc5ae558299d414b8a6681c2cde310",
+      "resourceType": "seasonStages"
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2026-01-21T19:10:00",
+    "startTimeUTC": "2026-01-21T10:10:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": null,
+      "abbreviationLocal": null,
+      "address": {
+        "city": ""
+      },
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "JPN",
+      "nameLatin": null,
+      "nameLocal": "Brex Arena  Utsunomiya"
+    },
+    "pool": {
+      "id": "284a478ce1b348f086e2c0cadd6706",
+      "name": "Group A",
+      "abb": "A"
+    }
+  }
+]

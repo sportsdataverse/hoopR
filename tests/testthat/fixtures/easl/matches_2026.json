@@ -1,0 +1,218 @@
+[
+  {
+    "attendance": 8016,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "865db37a-b0f5-11ed-b344-c199a9dea184",
+        "isHome": true,
+        "resultPlace": 1,
+        "score": "88",
+        "nameFullLatin": "琉球ゴールデンキングス",
+        "nameFullLocal": "Ryukyu Golden Kings",
+        "teamId": "865db37a-b0f5-11ed-b344-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/52ff4d6fc57c42c4bdbde948f1f19c55?size=RAW",
+        "codeLatin": "",
+        "codeLocal": "RGK",
+        "primaryColor": "e8d6b3",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": false,
+        "entityId": "f170040e-5ad9-11ef-b4d4-070129f618c6",
+        "isHome": false,
+        "resultPlace": 2,
+        "score": "82",
+        "nameFullLatin": "Taoyuan Pauian Pilots",
+        "nameFullLocal": "Taoyuan Pauian Pilots",
+        "teamId": "f170040e-5ad9-11ef-b4d4-070129f618c6",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/613ec1e996cc4dde9890b18646d74339?size=RAW",
+        "codeLatin": "",
+        "codeLocal": "TPP",
+        "primaryColor": "000000",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "e38a3d4f-9a1a-11f0-a096-af4300a6729b",
+    "fixtureNumber": 2526032,
+    "fixtureType": "REGULAR",
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": "47dffbbc64174d16a5b54205e31bf0",
+    "roundNumber": null,
+    "stage": {
+      "nameLocal": "Group Stage",
+      "stageCode": "dc5ae558299d414b8a6681c2cde310",
+      "stageOrder": 1
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2026-02-04T19:40:00",
+    "startTimeUTC": "2026-02-04T10:40:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": "沖縄アリーナ",
+      "abbreviationLocal": null,
+      "address": {},
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "JPN",
+      "nameLatin": "沖縄アリーナ",
+      "nameLocal": "Okinawa Suntory Arena"
+    },
+    "pool": {
+      "id": "47dffbbc64174d16a5b54205e31bf0",
+      "name": "Group B",
+      "abb": "B"
+    },
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+  },
+  {
+    "attendance": null,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "isHome": true,
+        "resultPlace": 1,
+        "score": "103",
+        "nameFullLatin": "Hong Kong Eastern",
+        "nameFullLocal": "Hong Kong Eastern",
+        "teamId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW",
+        "codeLatin": "HKE",
+        "codeLocal": "HKE",
+        "primaryColor": "0000ff",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": false,
+        "entityId": "86515908-b0f5-11ed-ac6b-c199a9dea184",
+        "isHome": false,
+        "resultPlace": 2,
+        "score": "93",
+        "nameFullLatin": null,
+        "nameFullLocal": "Taipei Fubon Braves",
+        "teamId": "86515908-b0f5-11ed-ac6b-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/5a015b28e60544af8c882fb3b78fe7d6?size=RAW",
+        "codeLatin": "TFB",
+        "codeLocal": "富邦勇士",
+        "primaryColor": "000080",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "f7593cda-9a06-11f0-bfa7-27b2660226a5",
+    "fixtureNumber": 2526024,
+    "fixtureType": "REGULAR",
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": "284a478ce1b348f086e2c0cadd6706",
+    "roundNumber": null,
+    "stage": {
+      "nameLocal": "Group Stage",
+      "stageCode": "dc5ae558299d414b8a6681c2cde310",
+      "stageOrder": 1
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2025-12-28T20:10:00",
+    "startTimeUTC": "2025-12-28T12:10:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": null,
+      "abbreviationLocal": null,
+      "address": {},
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "HKG",
+      "nameLatin": "Southorn Stadium",
+      "nameLocal": "Southorn Stadium"
+    },
+    "pool": {
+      "id": "284a478ce1b348f086e2c0cadd6706",
+      "name": "Group A",
+      "abb": "A"
+    },
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+  },
+  {
+    "attendance": 7788,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "4458de27-5ada-11ef-b6c0-cb17b0baafad",
+        "isHome": false,
+        "resultPlace": 2,
+        "score": "81",
+        "nameFullLatin": "Macau Black Bears",
+        "nameFullLocal": "Macau Black Bears",
+        "teamId": "4458de27-5ada-11ef-b6c0-cb17b0baafad",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/04d03e5ab04944b5adeae152dfbab657?size=RAW",
+        "codeLatin": "",
+        "codeLocal": "MBB",
+        "primaryColor": "000000",
+        "secondaryColor": "808080",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": false,
+        "entityId": "865db37a-b0f5-11ed-b344-c199a9dea184",
+        "isHome": true,
+        "resultPlace": 1,
+        "score": "87",
+        "nameFullLatin": "琉球ゴールデンキングス",
+        "nameFullLocal": "Ryukyu Golden Kings",
+        "teamId": "865db37a-b0f5-11ed-b344-c199a9dea184",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/52ff4d6fc57c42c4bdbde948f1f19c55?size=RAW",
+        "codeLatin": "",
+        "codeLocal": "RGK",
+        "primaryColor": "e8d6b3",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "3372c8e3-9a06-11f0-b4e1-09cc81de7e8b",
+    "fixtureNumber": 2526021,
+    "fixtureType": "REGULAR",
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": "47dffbbc64174d16a5b54205e31bf0",
+    "roundNumber": null,
+    "stage": {
+      "nameLocal": "Group Stage",
+      "stageCode": "dc5ae558299d414b8a6681c2cde310",
+      "stageOrder": 1
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2025-12-17T19:40:00",
+    "startTimeUTC": "2025-12-17T10:40:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": "沖縄アリーナ",
+      "abbreviationLocal": null,
+      "address": {},
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "JPN",
+      "nameLatin": "沖縄アリーナ",
+      "nameLocal": "Okinawa Suntory Arena"
+    },
+    "pool": {
+      "id": "47dffbbc64174d16a5b54205e31bf0",
+      "name": "Group B",
+      "abb": "B"
+    },
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+  }
+]

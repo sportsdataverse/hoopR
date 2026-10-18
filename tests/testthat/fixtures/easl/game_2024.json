@@ -1,0 +1,67 @@
+{
+  "attendance": 4234,
+  "broadcasts": null,
+  "competitors": [
+    {
+      "draw": false,
+      "entityId": "864e1998-b0f5-11ed-bb08-c199a9dea184",
+      "isHome": true,
+      "resultPlace": 2,
+      "score": "69",
+      "nameFullLatin": null,
+      "nameFullLocal": "Seoul SK Knights",
+      "teamId": "864e1998-b0f5-11ed-bb08-c199a9dea184",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/0a1ffcdce4274cb2aac79bf152a35557?size=RAW",
+      "codeLatin": "SK",
+      "codeLocal": null,
+      "primaryColor": "ff0000",
+      "secondaryColor": "000000",
+      "tertiaryColor": "000000"
+    },
+    {
+      "draw": false,
+      "entityId": "99d719e1-64c1-11ee-b1bd-27129dd6c255",
+      "isHome": false,
+      "resultPlace": 1,
+      "score": "72",
+      "nameFullLatin": null,
+      "nameFullLocal": "Chiba Jets",
+      "teamId": "99d719e1-64c1-11ee-b1bd-27129dd6c255",
+      "logo": "https://images.dc.connect.sportradar.com/b1e0z/c3ff21f178864c6bb75875ce15d9b90c?size=RAW",
+      "codeLatin": "JET",
+      "codeLocal": "JET",
+      "primaryColor": "ff0000",
+      "secondaryColor": "000000",
+      "tertiaryColor": "000000"
+    }
+  ],
+  "endTimeActualUTC": null,
+  "fixtureId": "6e3c321b-d078-11ee-bd9b-cfe0b28e3077",
+  "fixtureNumber": null,
+  "fixtureType": "PLAYOFF",
+  "liveDataAvailable": false,
+  "liveVideoAvailable": false,
+  "nameLatin": null,
+  "nameLocal": "Championship Game",
+  "poolCode": null,
+  "roundNumber": null,
+  "stage": {},
+  "startTimeActualUTC": null,
+  "startTimeLocal": "2024-03-10T19:00:00",
+  "startTimeUTC": "2024-03-10T11:00:00",
+  "status": "CONFIRMED",
+  "venue": {
+    "abbreviationLatin": null,
+    "abbreviationLocal": null,
+    "alternateNameLatin": null,
+    "alternateNameLocal": null,
+    "countryCode": "PHL",
+    "nameLatin": null,
+    "nameLocal": "Lapu-lapu Hoops Dome"
+  },
+  "pool": {
+    "id": null,
+    "name": "Group A",
+    "abb": "A"
+  }
+}

@@ -1,0 +1,201 @@
+{
+ "easl_health": [
+  {
+   "route": "/health",
+   "params": {}
+  }
+ ],
+ "easl_seasons": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  }
+ ],
+ "easl_schedule": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/matches",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+   }
+  }
+ ],
+ "easl_schedule__active": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/matches",
+   "params": {
+    "seasonId": "1409787d-a683-11f1-aea7-b596f55be5ed"
+   }
+  },
+  {
+   "route": "/health",
+   "params": {}
+  }
+ ],
+ "easl_game": [
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3",
+   "params": {}
+  }
+ ],
+ "easl_game__2024": [
+  {
+   "route": "/matches/6e3c321b-d078-11ee-bd9b-cfe0b28e3077",
+   "params": {}
+  }
+ ],
+ "easl_player_box": [
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3",
+   "params": {}
+  },
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/boxscore",
+   "params": {}
+  }
+ ],
+ "easl_pbp": [
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3",
+   "params": {}
+  },
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/playbyplay",
+   "params": {}
+  },
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/teamstats/by/period",
+   "params": {}
+  }
+ ],
+ "easl_team_box": [
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3",
+   "params": {}
+  },
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/teamstats",
+   "params": {}
+  }
+ ],
+ "easl_team_box_by_period": [
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3",
+   "params": {}
+  },
+  {
+   "route": "/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/teamstats/by/period",
+   "params": {}
+  }
+ ],
+ "easl_standings": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/standings",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+   }
+  }
+ ],
+ "easl_leaders": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/leaders",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+   }
+  }
+ ],
+ "easl_teams": [
+  {
+   "route": "/teams",
+   "params": {}
+  }
+ ],
+ "easl_team": [
+  {
+   "route": "/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184",
+   "params": {}
+  }
+ ],
+ "easl_team_schedule": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184/matches",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+   }
+  }
+ ],
+ "easl_team_stats": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184/stats",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+   }
+  }
+ ],
+ "easl_team_leaders": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184/leaders",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222"
+   }
+  }
+ ],
+ "easl_players": [
+  {
+   "route": "/players",
+   "params": {}
+  }
+ ],
+ "easl_players__roster": [
+  {
+   "route": "/metadata/seasons",
+   "params": {}
+  },
+  {
+   "route": "/players",
+   "params": {
+    "seasonId": "77441bb3-9759-11f0-b659-0561c09a0222",
+    "teamId": "865489e8-b0f5-11ed-8b3f-c199a9dea184"
+   }
+  }
+ ],
+ "easl_player": [
+  {
+   "route": "/players/85c99dab-9f67-11f0-8780-a731edb5aad5",
+   "params": {}
+  }
+ ],
+ "easl_player_stats": [
+  {
+   "route": "/players/85c99dab-9f67-11f0-8780-a731edb5aad5/stats",
+   "params": {}
+  }
+ ]
+}
