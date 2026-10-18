@@ -1,0 +1,4 @@
+team_id,team_code,team_name,organisation_id,competition_id,person_id,first_name,last_name,gender,date_of_birth,uniform_number,uniform_name,position,height_in_cm,height_in_feet_inches,nationality,is_on_final_roster,games_played,club_id,club_name,country_fiba_code,club_country_fiba_code,is_captain,is_player_free_agent,final_roster_member_status_code
+279569,GER,Germany,64,208182,211501,Isaac,Bonga,M,1999-11-08,0,BONGA,Point Guard,203,"6'7""",GER,true,8,9693,FC Bayern München,GER,GER,false,false,VALID
+279569,GER,Germany,64,208182,155956,Niels,Giffey,M,1991-06-08,5,GIFFEY,Small Forward,200,"6'6""",GER,true,7,9693,FC Bayern München,GER,GER,false,false,VALID
+279569,GER,Germany,64,208182,269000,Justus,Hollatz,M,2001-04-21,21,HOLLATZ,Point Guard,191,"6'3""",GER,true,6,306,Anadolu Efes SK,TUR,TUR,false,false,VALID

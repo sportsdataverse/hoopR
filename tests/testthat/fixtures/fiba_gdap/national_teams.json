@@ -1,0 +1,38 @@
+[
+  {
+    "nationalFederationId": 1,
+    "displayName": "Oman Basketball Association",
+    "officialName": "Oman Basketball Association",
+    "countryId": 186,
+    "countryName": "Oman",
+    "countryFIBACode": "OMA",
+    "zoneId": 19,
+    "zoneName": "Asia - Gulf",
+    "organisationStatusCode": "ACT",
+    "membershipStatusCode": "ACT"
+  },
+  {
+    "nationalFederationId": 2,
+    "displayName": "Basketball Association of the Northern Mariana Islands",
+    "officialName": "Basketball Association of the Northern Mariana Islands",
+    "countryId": 182,
+    "countryName": "Northern Mariana Islands",
+    "countryFIBACode": "NMI",
+    "zoneId": 24,
+    "zoneName": "Oceania",
+    "organisationStatusCode": "ACT",
+    "membershipStatusCode": "ACT"
+  },
+  {
+    "nationalFederationId": 3,
+    "displayName": "Basketball Federation of Panama",
+    "officialName": "Basketball Federation of Panama",
+    "countryId": 189,
+    "countryName": "Panama",
+    "countryFIBACode": "PAN",
+    "zoneId": 14,
+    "zoneName": "Americas - CAM - Central American Basketball Confederation",
+    "organisationStatusCode": "ACT",
+    "membershipStatusCode": "ACT"
+  }
+]

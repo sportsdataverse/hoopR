@@ -1,0 +1,76 @@
+{
+  "competition": {
+    "competitionId": 208182,
+    "competitionCode": "WMM",
+    "season": 2023,
+    "officialName": "FIBA Basketball World Cup",
+    "start": "2023-08-25",
+    "end": "2023-09-10",
+    "status": "Completed",
+    "ageCategory": "Senior",
+    "gender": "Men",
+    "fibaZone": "World",
+    "zoneInformation": {
+      "zoneId": 1,
+      "zoneOfficialName": "World",
+      "zoneCode": "W",
+      "topZoneId": null,
+      "topZoneOfficialName": null,
+      "topZoneCode": null
+    },
+    "competitionType": "National Teams",
+    "competitionCategory": {
+      "isLeague": false,
+      "ageType": "S",
+      "code": "WC",
+      "name": "World Cup"
+    },
+    "officialFlagItemCode": "O",
+    "officialFlagItemName": "Official",
+    "official": "Official",
+    "discipline": "Basketball",
+    "competitionMarketingName": {
+      "competitionMarketingNameId": 201,
+      "marketingName": "FIBA Basketball World Cup",
+      "code": null
+    }
+  },
+  "standings": [
+    {
+      "finalRank": 1,
+      "team": {
+        "teamId": 279569,
+        "teamCode": "GER",
+        "shortName": "Germany",
+        "profile": null,
+        "statusCode": null,
+        "statusName": null,
+        "organisationId": 64
+      }
+    },
+    {
+      "finalRank": 2,
+      "team": {
+        "teamId": 279961,
+        "teamCode": "SRB",
+        "shortName": "Serbia",
+        "profile": null,
+        "statusCode": null,
+        "statusName": null,
+        "organisationId": 8323
+      }
+    },
+    {
+      "finalRank": 3,
+      "team": {
+        "teamId": 279564,
+        "teamCode": "CAN",
+        "shortName": "Canada",
+        "profile": null,
+        "statusCode": null,
+        "statusName": null,
+        "organisationId": 34
+      }
+    }
+  ]
+}
