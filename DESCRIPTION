@@ -1,6 +1,6 @@
 Package: hoopR
 Title: Access Men's Basketball Play by Play Data
-Version: 3.1.0.9000
+Version: 3.2.0
 Authors@R: c(
     person("Saiem", "Gilani", , "saiem.gilani@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7194-9067")),
@@ -11,7 +11,7 @@ Authors@R: c(
   )
 Description: A utility to quickly obtain clean and tidy men's basketball
     play by play data. Provides functions to access live play by play and
-    box score data from ESPN<https://www.espn.com> with shot locations
+    box score data from ESPN with shot locations
     when available. It is also a full NBA Stats
     API<https://www.nba.com/stats/> wrapper.  It is also a scraping and
     aggregating interface for Ken Pomeroy's men's college basketball

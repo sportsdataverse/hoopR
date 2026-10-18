@@ -28,7 +28,7 @@ A \code{hoopR_data} tibble with one row per player-season:
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
-\strong{Get NBA player salaries from \href{https://www.hoopshype.com/}{HoopsHype}.}
+\strong{Get NBA player salaries from HoopsHype (hoopshype.com).}
 
 Returns the full league's player salaries, one row per player per contract
 season (current plus future seasons HoopsHype lists). No API key is required;
