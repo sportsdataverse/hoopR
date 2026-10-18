@@ -139,6 +139,15 @@ There is also a printable [**`hoopR` cheat sheet (PDF)**](https://sportsdatavers
 [**Full News on
 Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 
+## Star History
+
+<a href="https://github.com/sportsdataverse/hoopR/stargazers">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history-dark.svg">
+    <img alt="Star history of sportsdataverse/hoopR" src="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history.png" width="600">
+  </picture>
+</a>
+
 ## Follow the SportsDataverse (@SportsDataverse) on X and star this repo
 
 [![X
