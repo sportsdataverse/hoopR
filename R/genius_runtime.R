@@ -232,12 +232,15 @@
   if (!.genius_game_ok(raw)) return(.genius_frame(list(), "game"))
   tm <- raw[["tm"]]
   off <- if (.genius_is_dict(raw[["officials"]])) raw[["officials"]] else list()
-  py_str <- function(v) if (is.null(v)) "None" else .genius_str(v)
   person <- function(role, flat) {
     node <- off[[role]]
     if (!.genius_is_dict(node)) return(.genius_str(raw[[flat]]))
     first <- node[["internationalFirstName"]]
-    if (.genius_truthy(first)) return(paste(py_str(first), py_str(node[["internationalFamilyName"]])))
+    if (.genius_truthy(first)) {
+      # sdv-py's f-string writes a null family name as "None"; a null part is skipped here
+      parts <- vapply(list(first, node[["internationalFamilyName"]]), .genius_str, "")
+      return(paste(parts[!is.na(parts)], collapse = " "))
+    }
     s <- .genius_str(first)
     if (.genius_truthy(s)) s else .genius_str(node[["name"]])
   }
@@ -319,7 +322,9 @@
     if (!.genius_is_dict(r)) next
     q <- r[["qualifier"]]
     qual <- if (.genius_is_array(q)) {
-      paste(vapply(q, function(x) if (is.null(x)) "None" else .genius_str(x), ""), collapse = ",")
+      # a null code is skipped (sdv-py joins it as "None"); an empty list joins to "" as in sdv-py
+      codes <- vapply(q, .genius_str, "")
+      paste(codes[!is.na(codes)], collapse = ",")
     } else if (.genius_truthy(q)) q else NULL
     rows[[length(rows) + 1L]] <- list(
       match_id = mid, row_index = i - 1L, action_number = r[["actionNumber"]],

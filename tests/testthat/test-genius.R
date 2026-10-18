@@ -176,6 +176,20 @@ test_that("integer pbp scores parse, and seconds read mm:ss only", {
   expect_identical(.genius_seconds("n/a"), NA_integer_)
 })
 
+test_that("a null name part or qualifier code is skipped, never written as Python's \"None\"", {
+  body <- jsonlite::parse_json(g_text("full/data_2902690.json.gz"), simplifyVector = FALSE)
+  body$officials$referee1["internationalFamilyName"] <- list(NULL)
+  pbp_row <- which(vapply(body$pbp, function(r) is.list(r), TRUE))[[1]]
+  body$pbp[[pbp_row]]["qualifier"] <- list(list(NULL, "fastbreak"))
+  body$pbp[[pbp_row + 1L]]["qualifier"] <- list(list(NULL))
+  game <- .genius_parse_game(body)
+  expect_identical(game$referee1, "Vasiliki")
+  pbp <- .genius_parse_pbp(body)
+  expect_identical(pbp$qualifier[pbp_row], "fastbreak")
+  expect_identical(pbp$qualifier[pbp_row + 1L], "")
+  expect_false(any(grepl("None", c(unlist(game), pbp$qualifier), fixed = TRUE)))
+})
+
 # ------------------------------------------------------------------------------ season mapping
 
 test_that("season_end maps labels and Genius years to the sdv END year", {

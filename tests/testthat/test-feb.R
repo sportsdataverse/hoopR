@@ -173,6 +173,14 @@ test_that("FEB schedule pages match sdv-py and map the END-year season to the si
 
 # --- empty payloads ---------------------------------------------------------------------------
 
+test_that("FEB overview skips a quarter without both scores, never writing Python's \"None-None\"", {
+  q <- list(list(scoreA = 16L, scoreB = 14L), list(scoreA = 3L, scoreB = NULL), list(scoreA = NULL, scoreB = NULL))
+  raw <- list(OVERVIEW = list(COMPETITIONS = list(list(GAMES = list(list(ID = 1L, Quarters = q))))))
+  expect_identical(.feb_parse_overview(raw)$period_scores, "16-14")
+  raw$OVERVIEW$COMPETITIONS[[1]]$GAMES[[1]]$Quarters <- q[3]
+  expect_true(is.na(.feb_parse_overview(raw)$period_scores))
+})
+
 test_that("FEB parsers give a typed zero-row frame on an empty or malformed payload", {
   parsers <- list(
     game_info = .feb_parse_game_info, period_scores = .feb_parse_period_scores,

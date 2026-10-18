@@ -306,6 +306,11 @@ test_that("a connection failure is a transient failed fetch, never empty", {
   expect_true(err$transient)
 })
 
+test_that("a null list entry or name is skipped, never joined as Python's \"None\"", {
+  expect_identical(.scb_join(list(list(name = "DYN"), list(name = NULL), NULL, "x")), "DYN,x")
+  expect_null(.scb_join(list(NULL)))
+})
+
 test_that("an empty or malformed payload parses to a zero-row frame with the documented columns", {
   parsers <- c(
     seasons = ".scb_parse_seasons", season_players = ".scb_parse_season_players",
