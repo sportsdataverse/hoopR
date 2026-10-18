@@ -1,0 +1,178 @@
+[
+  {
+    "attendance": null,
+    "broadcasts": null,
+    "competitors": [],
+    "endTimeActualUTC": null,
+    "fixtureId": "cc824b99-b040-11f1-af4b-e3512c1cd523",
+    "fixtureNumber": 2627037,
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": null,
+    "roundNumber": null,
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2027-03-09T00:00:00",
+    "startTimeUTC": null,
+    "status": "DRAFT",
+    "pool": {
+      "id": null,
+      "name": "Unknown Pool",
+      "abb": "N/A"
+    },
+    "venue": {},
+    "seasonId": "1409787d-a683-11f1-aea7-b596f55be5ed",
+    "stage": {}
+  },
+  {
+    "attendance": null,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": true,
+        "entityId": "6c173781-a6bf-11f1-a95a-31326737faaf",
+        "isHome": false,
+        "resultPlace": null,
+        "score": null,
+        "nameFullLatin": "Macau Hou Chon",
+        "nameFullLocal": "Macau Hou Chon",
+        "teamId": "6c173781-a6bf-11f1-a95a-31326737faaf",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/ea7a20753e974139aef468db58926811?size=RAW",
+        "codeLatin": "MHC",
+        "codeLocal": "MHC",
+        "primaryColor": "000000",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": true,
+        "entityId": "71f8b351-5acf-11ef-bb6d-61c6d18c4379",
+        "isHome": true,
+        "resultPlace": null,
+        "score": null,
+        "nameFullLatin": "Busan KCC Egis",
+        "nameFullLocal": "Busan KCC Egis",
+        "teamId": "71f8b351-5acf-11ef-bb6d-61c6d18c4379",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/1ee08a84e1c04d96a3d19621477dccfe?size=RAW",
+        "codeLatin": "KCC",
+        "codeLocal": "KCC",
+        "primaryColor": "000080",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "cc6348bd-b040-11f1-aa9a-713096d5bbf9",
+    "fixtureNumber": 2627010,
+    "fixtureType": "REGULAR",
+    "liveDataAvailable": false,
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": null,
+    "poolCode": "6dc7cf4556af4e6db2585027805ba9",
+    "roundNumber": null,
+    "stage": {
+      "nameLocal": "Group Stage",
+      "stageCode": "4f413ec724124381be71a99c7fa63d",
+      "stageOrder": 1
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2026-11-05T19:10:00",
+    "startTimeUTC": "2026-11-05T10:10:00",
+    "status": "SCHEDULED",
+    "venue": {
+      "abbreviationLatin": null,
+      "abbreviationLocal": null,
+      "address": {
+        "city": "Busan"
+      },
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "KOR",
+      "nameLatin": "Busan Sajik Gymnasium",
+      "nameLocal": "Busan Sajik Gymnasium"
+    },
+    "pool": {
+      "id": "6dc7cf4556af4e6db2585027805ba9",
+      "name": "Group B",
+      "abb": "B"
+    },
+    "seasonId": "1409787d-a683-11f1-aea7-b596f55be5ed"
+  },
+  {
+    "attendance": null,
+    "broadcasts": null,
+    "competitors": [
+      {
+        "draw": false,
+        "entityId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "isHome": false,
+        "resultPlace": 2,
+        "score": "72",
+        "nameFullLatin": "Hong Kong Eastern",
+        "nameFullLocal": "Hong Kong Eastern",
+        "teamId": "27492b3f-5ada-11ef-86eb-61fb7e764dd2",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/adf60619aed949ffb17b68c344ba8302?size=RAW",
+        "codeLatin": "HKE",
+        "codeLocal": "HKE",
+        "primaryColor": "0000ff",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      },
+      {
+        "draw": false,
+        "entityId": "9f419ff5-a6be-11f1-a9d1-335289d35d91",
+        "isHome": true,
+        "resultPlace": 1,
+        "score": "79",
+        "nameFullLatin": "Abra Weavers",
+        "nameFullLocal": "Abra Weavers",
+        "teamId": "9f419ff5-a6be-11f1-a9d1-335289d35d91",
+        "logo": "https://images.dc.connect.sportradar.com/b1e0z/f437b8fd6bb9420b802de18217b4b915?size=RAW",
+        "codeLatin": "ABR",
+        "codeLocal": "ABR",
+        "primaryColor": "0053fd",
+        "secondaryColor": "000000",
+        "tertiaryColor": "000000"
+      }
+    ],
+    "endTimeActualUTC": null,
+    "fixtureId": "e123336e-a6d0-11f1-9d9e-dd8ab99a2c59",
+    "fixtureNumber": 2627002,
+    "fixtureType": "REGULAR",
+    "liveDataAvailable": false,
+    "liveVideoAvailable": false,
+    "nameLatin": null,
+    "nameLocal": "EASL Tip-Off 2026 Cebu",
+    "poolCode": "de11e30994d744448d3c08af864c60",
+    "roundNumber": null,
+    "stage": {
+      "nameLocal": "Group Stage",
+      "stageCode": "4f413ec724124381be71a99c7fa63d",
+      "stageOrder": 1
+    },
+    "startTimeActualUTC": null,
+    "startTimeLocal": "2026-10-03T19:10:00",
+    "startTimeUTC": "2026-10-03T11:10:00",
+    "status": "CONFIRMED",
+    "venue": {
+      "abbreviationLatin": null,
+      "abbreviationLocal": null,
+      "address": {
+        "city": "Cebu City",
+        "state": "Cebu"
+      },
+      "alternateNameLatin": null,
+      "alternateNameLocal": null,
+      "countryCode": "PHL",
+      "nameLatin": "SM Seaside Cebu Arena",
+      "nameLocal": "SM Seaside Cebu Arena"
+    },
+    "pool": {
+      "id": "de11e30994d744448d3c08af864c60",
+      "name": "Group C",
+      "abb": "C"
+    },
+    "seasonId": "1409787d-a683-11f1-aea7-b596f55be5ed"
+  }
+]
