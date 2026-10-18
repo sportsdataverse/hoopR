@@ -1,0 +1,4 @@
+season,season_id,team_id,gohoops_team_id,name,is_real_team,status
+2026,2,8,946,臺北台新戰神,true,ACTIVE
+2026,2,7,945,新北國王,true,ACTIVE
+2026,2,6,944,新北中信特攻,true,ACTIVE

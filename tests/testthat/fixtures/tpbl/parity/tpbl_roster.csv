@@ -1,0 +1,4 @@
+division_id,team_id,team,player_id,gohoops_person_id,gohoops_roster_id,gohoops_squad_id,gohoops_event_id,gohoops_season_id,player,alt_name,number,position,height_cm,weight_kg,nationality,national_identity,national_identity_detail,registered,is_listing
+2,4,新竹御嵿攻城獅,71,70828,126991,8211,319,101,李漢昇,"",0,PointGuardAndShootingGuard,177,76.0,"","","",true,true
+2,4,新竹御嵿攻城獅,75,70832,126997,8211,319,101,高國豪,"",4,PointGuardAndShootingGuard,180,76.0,"","","",true,true
+2,4,新竹御嵿攻城獅,87,70845,127011,8211,319,101,蔡宸綱,"",35,SmallForwardAndPowerForward,197,95.0,"","","",true,true

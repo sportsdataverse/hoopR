@@ -1,0 +1,20 @@
+[
+ {
+  "is_made": true,
+  "point_x": 18270,
+  "point_y": 7200,
+  "offense_basket": 1
+ },
+ {
+  "is_made": true,
+  "point_x": 5530,
+  "point_y": 10230,
+  "offense_basket": 0
+ },
+ {
+  "is_made": true,
+  "point_x": 24060,
+  "point_y": 7310,
+  "offense_basket": 1
+ }
+]
