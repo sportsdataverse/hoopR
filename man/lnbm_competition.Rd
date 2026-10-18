@@ -56,7 +56,7 @@ The columns of \code{\link[=genius_competitions]{genius_competitions()}}:\tabula
 The columns of \code{\link[=genius_schedule]{genius_schedule()}}:\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab From the block id \verb{extfix_<id>}. Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) \cr
-   link_match_id \tab integer \tab Match id of the block's /match/\if{html}{\out{<id>}}/summary link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) \cr
+   link_match_id \tab integer \tab Match id of the block's \verb{/match/<id>/summary} link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) \cr
    comp_id \tab integer \tab CompId of the match link, or of the team links when the org hides match pages (FFBB); equals the \{compId\} asked for. A 'To be determined' slot (no team or match link) takes the \{compId\} the page's other blocks prove \cr
    org \tab character \tab ORG code of the match link (or the team links, as comp_id) \cr
    status \tab character \tab Status from the block class STATUS_*: COMPLETE, SCHEDULED, POSTPONED, ... \cr

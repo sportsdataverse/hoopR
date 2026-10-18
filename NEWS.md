@@ -40,7 +40,7 @@
 
 # **hoopR 3.1.0.9000 (development version)**
 
-### **International basketball (in progress)**
+### **International basketball**
 
 * New wrappers mirroring sportsdataverse-py's international basketball families (same
   function names, arguments and columns): FIBA, Genius Sports, Sportradar Atrium, NBL
@@ -49,7 +49,11 @@
   aliases. They share one polite transport (at least 1 s between requests to a host) and
   raise classed conditions instead of returning empty: `hoopR_no_data`,
   `hoopR_asset_fetch` (with a `transient` field) and `hoopR_bad_request`, all
-  inheriting `hoopR_error`. Family entries follow as they land.
+  inheriting `hoopR_error`. In all, 667 new exports (23 families plus 148 per-competition aliases).
+  Every route is tested at parity with sdv-py on the same fixtures (column names, types, every cell and
+  the request sent). Python-only arguments (`return_parsed`, `return_as_pandas`) are not ported, and a
+  whole-number double is accepted wherever sdv-py takes an integer. Live tests run only with
+  `HOOPR_INTL_LIVE_TESTS=1`; Genius needs `GENIUS_PROXY` and CBA `CBA_PROXY`.
 
 * `espn_nba_pbp()`, `espn_mbb_pbp()`, the `Plays` frame of `espn_nba_game_all()` /
   `espn_mbb_game_all()`, and `helper_espn_nba_pbp()` / `helper_espn_mbb_pbp()` now
