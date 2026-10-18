@@ -1,0 +1,57 @@
+game_id,team_side,competition_team_id,team,team_short_name,stat,player_id,first_name,last_name,nationality_code,birth_date,value
+11295,home,541,Windrose Giants Antwerp,ANT,minute,5325,Enoch,Cheeks,USA,2001-04-15,42.0
+11295,home,541,Windrose Giants Antwerp,ANT,foul,228,Niels,De Ridder,BEL,2001-02-07,5.0
+11295,home,541,Windrose Giants Antwerp,ANT,defensive_foul,5325,Enoch,Cheeks,USA,2001-04-15,6.0
+11295,home,541,Windrose Giants Antwerp,ANT,dunk_made,5683,Jehloni,James,USA,\N,0.0
+11295,home,541,Windrose Giants Antwerp,ANT,dunk_all,5683,Jehloni,James,USA,\N,0.0
+11295,home,541,Windrose Giants Antwerp,ANT,dunk_percent,5683,Jehloni,James,USA,\N,0.0
+11295,home,541,Windrose Giants Antwerp,ANT,two_point_made,202,Vincent,Kesteloot,BEL,1995-03-23,8.0
+11295,home,541,Windrose Giants Antwerp,ANT,two_point_all,202,Vincent,Kesteloot,BEL,1995-03-23,11.0
+11295,home,541,Windrose Giants Antwerp,ANT,two_point_percent,5683,Jehloni,James,USA,\N,100.0
+11295,home,541,Windrose Giants Antwerp,ANT,three_point_made,5325,Enoch,Cheeks,USA,2001-04-15,5.0
+11295,home,541,Windrose Giants Antwerp,ANT,three_point_all,5325,Enoch,Cheeks,USA,2001-04-15,12.0
+11295,home,541,Windrose Giants Antwerp,ANT,three_point_percent,5567,Jacari,White,USA,\N,50.0
+11295,home,541,Windrose Giants Antwerp,ANT,throw_all,5685,Nijel,Pack,USA,2001-05-22,15.0
+11295,home,541,Windrose Giants Antwerp,ANT,throw_made,5685,Nijel,Pack,USA,2001-05-22,8.0
+11295,home,541,Windrose Giants Antwerp,ANT,throw_percent,228,Niels,De Ridder,BEL,2001-02-07,71.43
+11295,home,541,Windrose Giants Antwerp,ANT,free_throw_made,202,Vincent,Kesteloot,BEL,1995-03-23,5.0
+11295,home,541,Windrose Giants Antwerp,ANT,free_throw_all,5255,Noel,Coleman,BEL,2000-01-17,6.0
+11295,home,541,Windrose Giants Antwerp,ANT,free_throw_percent,5567,Jacari,White,USA,\N,100.0
+11295,home,541,Windrose Giants Antwerp,ANT,offensive_rebound,228,Niels,De Ridder,BEL,2001-02-07,6.0
+11295,home,541,Windrose Giants Antwerp,ANT,defensive_rebound,5325,Enoch,Cheeks,USA,2001-04-15,11.0
+11295,home,541,Windrose Giants Antwerp,ANT,total_rebound,5325,Enoch,Cheeks,USA,2001-04-15,12.0
+11295,home,541,Windrose Giants Antwerp,ANT,block,5325,Enoch,Cheeks,USA,2001-04-15,3.0
+11295,home,541,Windrose Giants Antwerp,ANT,block_against,5687,Cesare,Edwards,USA,2002-12-26,2.0
+11295,home,541,Windrose Giants Antwerp,ANT,turnover,5325,Enoch,Cheeks,USA,2001-04-15,5.0
+11295,home,541,Windrose Giants Antwerp,ANT,steal,5325,Enoch,Cheeks,USA,2001-04-15,4.0
+11295,home,541,Windrose Giants Antwerp,ANT,assist,5685,Nijel,Pack,USA,2001-05-22,7.0
+11295,home,541,Windrose Giants Antwerp,ANT,points,202,Vincent,Kesteloot,BEL,1995-03-23,21.0
+11295,home,541,Windrose Giants Antwerp,ANT,value,5325,Enoch,Cheeks,USA,2001-04-15,32.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,minute,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,29.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,foul,5647,Dylan James,Arnett,USA,\N,5.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,defensive_foul,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,8.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,dunk_made,5263,Lars,Coppejans,BEL,2007-08-20,0.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,dunk_all,5263,Lars,Coppejans,BEL,2007-08-20,0.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,dunk_percent,5263,Lars,Coppejans,BEL,2007-08-20,0.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,two_point_made,5651,Jacquez Ramello,Yow,USA,\N,4.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,two_point_all,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,12.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,two_point_percent,5647,Dylan James,Arnett,USA,\N,100.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,three_point_made,5649,Anthony James,Smith Jr,USA,\N,5.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,three_point_all,5649,Anthony James,Smith Jr,USA,\N,9.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,three_point_percent,397,Jarne,Lesuisse,BEL,2000-08-02,100.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,throw_all,5649,Anthony James,Smith Jr,USA,\N,14.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,throw_made,5649,Anthony James,Smith Jr,USA,\N,6.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,throw_percent,5647,Dylan James,Arnett,USA,\N,100.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,free_throw_made,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,9.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,free_throw_all,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,9.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,free_throw_percent,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,100.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,offensive_rebound,45,Servaas,Buysschaert,BEL,1999-03-19,2.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,defensive_rebound,5649,Anthony James,Smith Jr,USA,\N,4.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,total_rebound,45,Servaas,Buysschaert,BEL,1999-03-19,5.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,block,45,Servaas,Buysschaert,BEL,1999-03-19,3.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,block_against,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,2.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,turnover,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,5.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,steal,5649,Anthony James,Smith Jr,USA,\N,4.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,assist,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,8.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,points,5649,Anthony James,Smith Jr,USA,\N,20.0
+11295,away,565,House of Talents Spurs Kortrijk,KOR,value,5645,Jamarii D'Aje,Johnson-Thomas,USA,\N,28.0

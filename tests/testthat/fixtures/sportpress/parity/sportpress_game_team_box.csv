@@ -1,0 +1,3 @@
+game_id,competition_id,team_side,competition_team_id,team,team_short_name,minute,foul,defensive_foul,dunk_made,dunk_all,dunk_percent,two_point_made,two_point_all,two_point_percent,three_point_made,three_point_all,three_point_percent,throw_made,throw_all,throw_percent,free_throw_made,free_throw_all,free_throw_percent,offensive_rebound,defensive_rebound,total_rebound,block,block_against,turnover,steal,assist,points,value,plusminus
+11295,25,home,541,Windrose Giants Antwerp,ANT,250,30,26,0,0,0.0,29,45,64.44,13,39,33.33,42,84,50.0,16,22,72.73,12,29,41,7,4,18,9,30,113,160,7
+11295,25,away,565,House of Talents Spurs Kortrijk,KOR,250,26,30,0,0,0.0,24,49,48.98,11,28,39.29,35,77,45.45,25,35,71.43,10,21,31,4,7,16,10,20,106,133,-7

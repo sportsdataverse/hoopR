@@ -1,0 +1,28 @@
+competition_id,category,rank,roster_id,player_id,first_name,last_name,nationality_code,birth_date,competition_team_id,team,team_short_name,value,throw_made,throw_attempted
+24,efficiency,1,10885,5403,Dante,Maddox Jr,USA,2002-01-15,528,Partena Professional Okapi Aalst Playoff,AAL,31.05,\N,\N
+24,efficiency,2,10361,3002,Zaba,Bangala,SWE,2001-11-13,534,Kangoeroes Basket Mechelen Playoff,MEC,25.75,\N,\N
+24,efficiency,3,10681,5287,Maks,KLANJŠČEK,SLO,1999-12-15,508,Union Mons-Hainaut,MON,25.14,\N,\N
+24,points,1,10885,5403,Dante,Maddox Jr,USA,2002-01-15,528,Partena Professional Okapi Aalst Playoff,AAL,24.33,\N,\N
+24,points,2,10681,5287,Maks,KLANJŠČEK,SLO,1999-12-15,508,Union Mons-Hainaut,MON,20.81,\N,\N
+24,points,3,10803,5343,Dane,Erikstrup,DEN,2003-04-03,512,Donar Groningen playoff,GRO,18.36,\N,\N
+24,total_rebound,1,10361,3002,Zaba,Bangala,SWE,2001-11-13,534,Kangoeroes Basket Mechelen Playoff,MEC,8.78,\N,\N
+24,total_rebound,2,10901,2812,Maik,Bouwer,NED,1999-02-13,520,LWD Basket playoff,LWD,7.75,\N,\N
+24,total_rebound,3,10991,5473,Enoch,Boakye,CAN,2003-03-24,502,Val-Dieu Spirou Basket Playoff,CHA,7.74,\N,\N
+24,block,1,10981,5031,Tydus,Verhoeven,USA,1998-11-15,518,Zeeuw & Zeeuw Rotterdam City,RCB,1.29,\N,\N
+24,block,2,10727,5307,James,Graham,USA,2000-08-26,518,Zeeuw & Zeeuw Rotterdam City,RCB,1.09,\N,\N
+24,block,3,10651,5273,Nicholas,Muszynski,USA,1998-11-19,510,Hubo Limburg United playoff,LIM,0.95,\N,\N
+24,assist,1,10791,90,Austin,Luke,USA,1994-10-27,512,Donar Groningen playoff,GRO,8.59,\N,\N
+24,assist,2,10381,219,Niels,Van Den Eynde,BEL,2000-12-27,528,Partena Professional Okapi Aalst Playoff,AAL,7.63,\N,\N
+24,assist,3,10989,5471,Eric,Nottage,USA,1994-12-10,502,Val-Dieu Spirou Basket Playoff,CHA,6.96,\N,\N
+24,steal,1,10777,5325,Enoch,Cheeks,USA,2001-04-15,506,Windrose Giants Antwerp playoff,ANT,2.26,\N,\N
+24,steal,2,10257,301,Lucas,Kruithof,NED,2000-07-17,522,Zorg en Zekerheid Leiden playoff,LEI,2.22,\N,\N
+24,steal,3,10795,5337,Malik,Miller,USA,1999-11-15,512,Donar Groningen playoff,GRO,2.11,\N,\N
+24,two_point_percent,1,10747,5315,Max,Fiedler,USA,2001-02-26,504,Filou Oostende playoff,OOS,74.58,2.514,3.371
+24,two_point_percent,2,10761,513,Kevin,Tumba,BEL,1991-02-23,506,Windrose Giants Antwerp playoff,ANT,72.64,2.026,2.789
+24,two_point_percent,3,10991,5473,Enoch,Boakye,CAN,2003-03-24,502,Val-Dieu Spirou Basket Playoff,CHA,71.22,4.304,6.043
+24,three_point_percent,1,10877,174,Leander,Dedroog,BEL,1999-08-05,534,Kangoeroes Basket Mechelen Playoff,MEC,46.42,1.677,3.613
+24,three_point_percent,2,10885,5403,Dante,Maddox Jr,USA,2002-01-15,528,Partena Professional Okapi Aalst Playoff,AAL,44.53,3.05,6.85
+24,three_point_percent,3,10987,3842,Noah,Baumann,USA,1999-01-17,510,Hubo Limburg United playoff,LIM,43.75,2.333,5.333
+24,free_throw_percent,1,10845,5377,Javian,Mc Collum,USA,2002-03-18,522,Zorg en Zekerheid Leiden playoff,LEI,89.55,3.429,3.829
+24,free_throw_percent,2,10409,4582,Darren,Williams,USA,2000-07-15,536,House of Talents Spurs Kortrijk Playoff,KOR,87.95,2.714,3.086
+24,free_throw_percent,3,10681,5287,Maks,KLANJŠČEK,SLO,1999-12-15,508,Union Mons-Hainaut,MON,87.58,5.714,6.524

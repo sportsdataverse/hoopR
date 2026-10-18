@@ -1,0 +1,895 @@
+language,key,text
+en,welcome,ENWelcome
+en,events.pageTitle,EXPLORE OUR OFFICIAL BNXT EVENTS HERE & BUY TICKETS!
+en,newsandvideos.pageTitle,EXPLORE NEWS AND VIDEO HIGHLIGHTS
+en,loadMore,Load more
+en,newsandvideos.headTitle,NEWS & VIDEO
+en,events.header.title,EVENTS
+en,events.header.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+en,calendar.header.title,CALENDAR
+en,calendar.header.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+en,calendar.pageTitle,EXPLORE BNXT CALENDAR TO SEE PAST AND UPCOMING GAMES. GET THE LATEST SCORES AND STATISTICS.
+en,footer.left_block,BNXT is a new basketball community uniting Belgium & the Netherlands in an innovative competition.
+en,footer.right_block.title,STAY UPDATED
+en,footer.right_block.subtitle,Sign up for our newsletter and receive all the latest BNXT League updates & insights.
+en,statistics.individual.value,Value
+en,statistics.individual.points,Points
+en,statistics.individual.total_rebound,Total rebounds
+en,statistics.individual.block,Blocks
+en,statistics.individual.assist,Assists
+en,statistics.individual.steal,Steals
+en,statistics.individual.throw_percent,Throw percent
+en,statistics.individual.three_point_percent,Three point percent
+en,statistics.individual.free_throw_percent,Free throw percent
+en,statistics.view-all,View all
+en,filter,Filter
+en,season,Season
+en,phase,Phase
+en,view-leaderboard,View leaderboard
+en,statistics.individual.efficiency,Efficiency
+en,statistics.individual.two_point_percent,Two point percent
+en,filter.season,Season
+en,statistics.individual,Individual
+en,statistics.teams,Teams
+en,statistics.total_teams,Total teams
+en,statistics,Statistics
+en,photo,Photo
+en,name,Name
+en,team_name,Team name
+en,statistics.teams.title,"EXPLORE OUR CLUBS, THEIR LATEST NEWS & BUY TICKETS"
+en,shooting_guard,Shooting guard
+en,player.position.point_guard,Point guard
+en,player.position.shooting_guard,Shooting guard
+en,player.position.small_forward,Small forward
+en,player.position.power_forward,Power forward
+en,player.position.center,Center
+en,player.position.point_guard-shooting_guard,Guard
+en,player.position.shooting_guard-small_forward,Shooting guard - Small forward
+en,player.position.small_forward-power_forward,Forward
+en,player.position.power_forward-center,Power forward - Center
+en,statistics.no-data,"Oops, there are no statistics available!"
+en,accept_privacy_policy,I agree to the BNXT League and BNXT.tv privacy policy
+en,submit,Submit
+en,follow_us.stay_updated,STAY UPDATED. FOLLOW US HERE
+en,follow_us.watch_the_games,Watch The Games Through
+en,follow_us.bnxt_button,Go to BNXT.TV
+en,footer.explore_bnxt,EXPLORE BNXT
+en,footer.legal,Legal
+en,footer.all_rights_reserved,All rights reserved.
+en,footer.powered_by,Powered by
+en,cookie_bar.message,"We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies."
+en,cookie_bar.decline,Opt Out
+en,cookie_bar.accept,Accept All
+en,home.latest_news_title,Latest News
+en,our_partners.title,Our Partners
+en,snackbar.close,Close
+en,video_highlights.title,VIDEO HIGHLIGHTS
+en,video_highlights.running_text,Stay updated with the latest videos from us
+en,player_name,Player Name
+en,teams,Teams
+en,positions,Positions
+en,country,Country
+en,all_players,All Players
+en,all_teams,All Teams
+en,all_positions,All Positions
+en,all_countries,All Countries
+en,player.height,Height
+en,player.born,Born
+en,player.country,Country
+en,player.view_profile,View Profile
+en,match_events.1000_0,Made throw
+en,match_events.1000_1,Made shot in the paint
+en,match_events.1000_2,Made 2 pointer outside the paint
+en,match_events.1000_3,Made 3 pointer
+en,match_events.1000_4,Made free throw
+en,match_events.1000_5,Made dunk
+en,match_events.1001_0,Missed throw
+en,match_events.1001_1,Missed shot in the paint
+en,match_events.1001_2,Missed 2 pointer outside the paint
+en,match_events.1001_3,Missed 3 pointer
+en,match_events.1001_4,Missed free throw
+en,match_events.1001_5,Missed dunk
+en,match_events.1002_0,Defensive rebound
+en,match_events.1003_0,Offensive rebound
+en,match_events.1004_0,Steal
+en,match_events.1005_0,Turnover
+en,match_events.1005_10,Offensive Goaltending
+en,match_events.1005_11,Lane Violation
+en,match_events.1005_12,Ball Handling
+en,match_events.1005_13,Dribbling
+en,match_events.1005_14,Bad pass
+en,match_events.1005_15,Lost ball
+en,match_events.1005_16,Over and back
+en,match_events.1005_17,Backcourt
+en,match_events.1005_18,Double dribble
+en,match_events.1005_19,Out of bounds
+en,match_events.1005_20,Travel
+en,match_events.1005_21,Shot clock
+en,match_events.1005_22,Offensive
+en,match_events.1005_23,3 sec
+en,match_events.1005_24,5 sec
+en,match_events.1005_25,8 sec
+en,match_events.1005_26,10 sec
+en,match_events.1005_27,24 sec
+en,match_events.1005_28,Lifting
+en,match_events.1005_29,Other
+en,match_events.1006_0,Foul against
+en,match_events.1007_0,Foul
+en,match_events.1007_1,1 free throw
+en,match_events.1007_2,2 free throw
+en,match_events.1007_3,3 free throw
+en,match_events.1007_4,One and one
+en,match_events.1007_5,Block
+en,match_events.1007_6,Charge
+en,match_events.1007_7,Double
+en,match_events.1007_8,Flagrant 1
+en,match_events.1007_9,Flagrant 2
+en,match_events.1007_10,Classa
+en,match_events.1007_11,Contact dead ball
+en,match_events.1007_12,Lifting
+en,match_events.1007_30,Offensive
+en,match_events.1007_31,Personal
+en,match_events.1007_32,Technical
+en,match_events.1007_33,Unsportsmanlike
+en,match_events.1007_34,Disqualifying
+en,match_events.1007_35,Intentional
+en,match_events.1008_0,Assist
+en,match_events.1009_0,Block
+en,match_events.1010_0,Block against
+en,match_events.1011_0,Substitution
+en,match_events.1020_0,Technical foul
+en,match_events.1100_0,+1 min
+en,match_events.1101_0,End of Period
+en,match_events.2002_0,Team def.
+en,match_events.2003_0,Team off. rebound
+en,match_events.2004_0,Team steal
+en,match_events.2005_0,Team turnover
+en,match_events.2006_0,Team force foul
+en,match_events.2007_0,Team foul
+en,match_events.2011_0,Team timeout
+en,match_events.2020_0,Team technical foul
+en,player_positions.point_guard,Point guard
+en,player_positions.shooting_guard,Shooting guard
+en,player_positions.small_forward,Small forward
+en,player_positions.power_forward,Power forward
+en,player_positions.center,Center
+en,player_positions.point_guard-shooting_guard,Guard
+en,player_positions.shooting_guard-small_forward,"Shooting guard, small forward"
+en,player_positions.small_forward-power_forward,Forward
+en,player_positions.power_forward-center,"Power forward, center"
+en,about.title,About BNXT
+en,about.subtitle,BNXT IS A NEW BASKETBALL COMMUNITY UNITING BELGIUM & THE NETHERLANDS IN AN INNOVATIVE COMPETITION
+en,team,Team
+en,month,Month
+en,all_months,All Months
+en,months.january,January
+en,months.february,February
+en,months.march,March
+en,months.april,April
+en,months.may,May
+en,months.june,June
+en,months.july,July
+en,months.august,August
+en,months.september,September
+en,months.october,October
+en,months.november,November
+en,months.december,December
+en,date_and_time,Date & Time
+en,no_players,"Oops, there are no players available based on your search"
+en,game_report.overview.game_leaders,Game leaders
+en,game_report.overview.key_statistics.title,Key statistics
+en,game_report.overview.key_statistics.steals,Steals
+en,game_report.overview.key_statistics.assists,Assists
+en,game_report.overview.key_statistics.turnovers,Turnovers
+en,game_report.overview.key_statistics.blocks,Blocks
+en,game_report.overview.key_statistics.fouls,Fouls
+en,game_report.overview.key_statistics.defensive_rebounds,Defensive Rebounds
+en,game_report.overview.key_statistics.offensive_rebounds,Offensive Rebounds
+en,game_report.overview.top_performers.title,Top performers
+en,game_report.overview.top_performers.efficiency,Efficiency
+en,game_report.overview.top_performers.points,Points
+en,game_report.overview.top_performers.rebounds,Rebounds
+en,game_report.overview.top_performers.assists,Assists
+en,game_report.overview.top_performers.steals,Steals
+en,game_report.overview.top_performers.blocks,Blocks
+en,game_report.title,Game report
+en,game_report.quarter_short,Q
+en,game_report.watch_game_button,Watch game recap
+en,game_report.tabs.overview,Overview
+en,game_report.tabs.boxscore,Boxscore
+en,game_report.tabs.play_by_play,Play by play
+en,game_report.no_statistics,"Oops, there are no schedule statistics available for this game"
+en,game_report.boxscore.table_title,Game statistics
+en,home.bnxt_tv.running_text,Sign up now and stay updated with all the games in BNXT
+en,home.bnxt_tv.title,SIGN UP & WATCH
+en,home.bnxt_tv.description,Watch all BNXT League regular season games on BNXT.tv. Stream your favorite Dutch & Belgian teams’ games LIVE or save to watch later on demand.
+en,home.bnxt_tv.button,Subscribe to bnxt.tv
+en,home.hero.button,Read More
+en,home.latest_results.title,Games
+en,home.latest_results.button,VIEW >
+en,home.standings.title,Standings
+en,video_highlights.button,Watch now
+en,news.news_button,Read news
+en,news.video_button,Watch video
+en,news_and_video.title,NEWS & VIDEO
+en,news_and_video.subtitle,DISCOVER THE WORLD OF THE BNXT LEAGUE
+en,related_posts.title,More like this
+en,news.single_post.share_title,Share
+en,page_not_found.title,"OOPS, PAGE NOT FOUND."
+en,page_not_found.button,Back to home
+en,players.title,Players
+en,players.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+en,players.section.title,All Players
+en,search_player,Search Player
+en,players.roster.title,OFFICIAL ROSTER SEASON
+en,player.career_season_title,CAREER SEASON AVERAGES
+en,player.game_statistics_title,GAME STATISTICS
+en,standings.title,Standings
+en,standings.section.title,REGULAR COMPETITION STANDINGS
+en,leaderboard,Leaderboard
+en,survey.contest.name,Name
+en,survey.contest.question,Question
+en,survey.previous_question,Previous question
+en,survey.send_button,Send survey
+en,survey.next_question,Next question
+en,survey.complete_button,Complete survey
+en,survey.contest_over_1,"OOPS, THE CONTEST IS NOT ACTIVE."
+en,survey.contest_over_2,Come back later for the next contest
+en,team.roster.title,OFFICIAL ROSTER SEASON
+en,team.assistants.title,COACH AND ASSISTANTS
+en,teams.title,TEAMS
+en,teams.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+en,teams.section.title,"EXPLORE OUR CLUBS, THEIR LATEST NEWS & BUY TICKETS"
+en,search,Search
+en,team.tabs.roster,Roster
+en,team.tabs.calendar,Calendar
+en,team.tabs.team_statistics,Team statistics
+en,team.no_statistics,"Oops, there are no statistics available for this game"
+en,menu.follow_us,Follow us
+en,get_tickets,Get Tickets
+en,no_games,"Oops, there are no games available based on your search"
+en,home.latest_results.live_button,Live >
+en,home.latest_results.finished_button,GAME CENTER >
+en,overall,Overall
+en,referees.title,Referees
+en,survey.is_adult,I am over 18 years old and agree with the BNXT League and BNXT.tv privacy policy
+en,survey.contest.firstname,Firstname
+en,survey.success_message,Thank you for joining the contest. We will contact the winner soon!
+en,accept_privacy_policy_survey,I wish to receive relevant marketing mails and updates regarding BNXT League and BNXT.tv
+en,game_report.overview.top_performers.total_rebound,Total Rebound
+en,home.latest_results.live_stats_button,Stats
+en,watch_live,Watch Live
+en,statistics.individual.made_all,Made/Attempted
+en,standings_text,"In the event of a tie between two or more clubs at the end of the cross-border competition phase, the standings are determined as follows : <br /> ● points at the end of the national phase, corrected or not by the number of games played (before rounding)<br /> ● result in mutual games<br /> ● points difference in mutual games<br /> ● points scored in mutual games<br /> ● points difference of all games<br /> ● points scored in all games"
+en,videos.title,Videos
+en,videos.page_title,Videos
+en,news,News
+en,videos,Videos
+en,search_news,Search News
+en,search_videos,Search Videos
+en,news.title,News
+en,news.page_title,News
+en,standings_playoff,Playoff Picture
+en,region,Country
+en,playoff_text,* clinched playoff berth
+en,partnership.playoffs.title,Playoffs Partner
+en,partnership.partnerships.title,Partnerships
+en,partnership.cta.contact_us,Contact us
+en,partnership.partner_of_the_month.title,Partner of the month
+en,partnership.main.title,Main partnership
+en,partnership.naming.title,Naming partnership
+en,partnership.cta.discover_our_offer,Discover our offer
+en,partnership.partner_of_the_month.text_1,"<strong>Let your brand shine!</strong><br><br> Become the <strong>BNXT Partner of the Month</strong> and reach thousands of fans during our games. <br><br> With visibility on TV, LED boards, and social media, your company takes center stage as the partner of the month. <br><br> Experience the power of sports engagement — schedule an introductory meeting and elevate your brand to the next level!"
+en,partnership.playoffs.text_1,"Experience the thrill of the Playoffs! <br><br> Become a Playoff Partner and let your brand compete at the highest level. <br><br> The BNXT League Playoffs are the ultimate highlight of the basketball season — where intensity, emotion, and talent come together. Every point matters, every play counts, and every game is filled with excitement. <br><br> The best teams from Belgium and the Netherlands battle not only for the championship, but also for pride, honor, and national glory. <br><br> All these ingredients make this the most widely covered and media-exposed stage of the competition — and your company can be part of it!"
+en,partnership.naming.text_1,"Become the name behind the competition that connects Belgium and the Netherlands. <br><br> The BNXT Naming Partnership gives your brand the opportunity to be part of an ambitious story where sport, experience, and connection come together. <br><br> A partnership that goes beyond visibility — it’s a statement of trust, passion, and vision for the future. <br><br> Discover our Naming Partnership and become part of the BNXT experience."
+en,partnership.main.text_1,"Basketball lives. And connects. <br><br> The BNXT League brings brands, fans, and players together in one story filled with passion, experience, and energy. <br><br> Ready to join in? Discover how your brand can become part of this unique competition. Explore our partnership opportunities."
+en,partnership.partnerships.text_1,"In the dynamic world of basketball, everything revolves around teamwork, passion, and performance — values that also make the difference in business.<br><br> By partnering with our basketball league, companies connect their brand with sporting ambition, local roots, national exposure, and a growing community of fans.<br><br> A partnership offers more than visibility: it creates an authentic brand experience. Through in-arena branding, digital campaigns, exclusive activations, and hospitality opportunities, companies can engage their clients, employees, and partners in a truly unique way. Moreover, your brand gains exposure within a young, energetic, and socially engaged audience.<br><br>"
+en,partnership.partnerships.text_2,"Whether it’s about brand awareness, relationship marketing, or social engagement — together, we build a winning formula. Because in our league, it’s not only the points on the scoreboard that matter, but also the impact we make together beyond the court.<br><br> Contact us or download the partner brochure to learn more about the BNXT League and its commercial opportunities."
+en,partnership.hospitality.title,Hospitality
+en,partnership.hospitality.text_1,"Turn a BNXT League game into a powerful business moment. Experience top-level basketball in a premium setting and welcome your guests in a relaxed, professional atmosphere. Perfect for entertaining clients, strengthening relationships and sharing the excitement together. <br><br> <strong>Drink & Watch</strong> Turn a game night into a valuable networking moment. Enjoy BNXT League basketball in a comfortable premium hospitality setting while entertaining clients and building stronger connections. <br><br> <strong>Dine & Watch</strong> When only the best will do. Create meaningful connections during an unforgettable evening combining elevated dining, premium sport and lasting impressions."
+en,discountNewsletterModal.submit,Claim discount!
+en,discountNewsletterModal.first_name,First name
+en,discountNewsletterModal.last_name,Last name
+en,discountNewsletterModal.cancel,"No thanks, I’ll miss the discount."
+en,discountNewsletterModal.errors.required,Please fill this field.
+en,discountNewsletterModal.errors.min2,Please type at least 2 characters.
+en,discountNewsletterModal.title,STAY UP TO DATE!
+en,discountNewsletterModal.description,Sign-up for the BNXT-newsletter \nto receive an exclusive discount \nand stay updated on all league content.
+en,discountNewsletterModal.errors.unknown,Something went wrong!
+en,discountNewsletterModal.errors.duplicate,You already subscribe  with this e-mail address.
+fr,welcome,FRWelcome
+fr,events.pageTitle,DÉCOUVREZ NOS ÉVÉNEMENTS OFFICIELS BNXT ICI ET ACHETEZ DES BILLETS!
+fr,newsandvideos.pageTitle,DÉCOUVREZ ICI LES ACTUALITÉS ET LES VIDÉOS
+fr,loadMore,Load more
+fr,newsandvideos.headTitle,NEWS & VIDÉO
+fr,events.header.title,ÉVÉNEMENTS
+fr,events.header.subtitle,DÉCOUVREZ LE MONDE DE LA BNXT LEAGUE
+fr,calendar.header.title,CALENDRIER
+fr,calendar.header.subtitle,DÉCOUVREZ LE MONDE DE LA BNXT LEAGUE
+fr,calendar.pageTitle,EXPLOREZ LE CALENDRIER BNXT POUR VOIR LES MATCHS PASSÉS ET À VENIR. OBTENEZ LES DERNIERS RÉSULTATS ET STATISTIQUES.
+fr,footer.left_block,BNXT est une nouvelle communauté basket unissant la Belgique & Les Pays-Bas dans une compétition innovative.
+fr,footer.right_block.title,RESTEZ INFORMÉ
+fr,footer.right_block.subtitle,Inscrivez-vous à notre newsletter et restez à tout moment informé sur la BNXT League.
+fr,statistics.individual.value,Value
+fr,statistics.individual.points,Points
+fr,statistics.individual.total_rebound,Rebonds totaux
+fr,statistics.individual.block,Blocs
+fr,statistics.individual.assist,Aides
+fr,statistics.individual.steal,Vole
+fr,statistics.individual.throw_percent,Throw percent
+fr,statistics.individual.three_point_percent,Trois points pour cent
+fr,statistics.individual.free_throw_percent,Pourcentage de lancers francs
+fr,statistics.view-all,Voir tout
+fr,filter,Filtre
+fr,season,Saison
+fr,phase,Phase
+fr,view-leaderboard,Afficher le classement
+fr,statistics.individual.efficiency,Efficacité
+fr,statistics.individual.two_point_percent,Deux points pour cent
+fr,filter.season,Saison
+fr,statistics.individual,Individuel
+fr,statistics.teams,Équipes
+fr,statistics.total_teams,Total des équipes
+fr,statistics,Statistiques
+fr,photo,Photo
+fr,name,Nom
+fr,team_name,Nom de l'équipe
+fr,statistics.teams.title,"EXPLOREZ NOS CLUBS, LEURS DERNIÈRES NOUVELLES ET ACHETEZ DES BILLETS"
+fr,shooting_guard,Shooting guard
+fr,player.position.point_guard,Point guard
+fr,player.position.shooting_guard,Shooting guard
+fr,player.position.small_forward,Small forward
+fr,player.position.power_forward,Power forward
+fr,player.position.center,Center
+fr,player.position.point_guard-shooting_guard,Guard
+fr,player.position.shooting_guard-small_forward,Shooting guard - Small forward
+fr,player.position.small_forward-power_forward,Forward
+fr,player.position.power_forward-center,Power forward - Center
+fr,statistics.no-data,"Oups, il n'y a pas de statistiques disponibles !"
+fr,accept_privacy_policy,J'accepte la politique de confidentialité de BNXT League et BNXT.tv
+fr,submit,Submit
+fr,follow_us.stay_updated,STAY UPDATED. FOLLOW US HERE
+fr,follow_us.watch_the_games,Watch The Games Through
+fr,follow_us.bnxt_button,Go to BNXT.TV
+fr,footer.explore_bnxt,EXPLORE BNXT
+fr,footer.legal,Legal
+fr,footer.all_rights_reserved,All rights reserved.
+fr,footer.powered_by,Powered by
+fr,cookie_bar.message,"We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies."
+fr,cookie_bar.decline,Opt Out
+fr,cookie_bar.accept,Accept All
+fr,home.latest_news_title,Latest News
+fr,our_partners.title,Our Partners
+fr,snackbar.close,Close
+fr,video_highlights.title,VIDEO HIGHLIGHTS
+fr,video_highlights.running_text,Stay updated with the latest videos from us
+fr,player_name,Player Name
+fr,teams,Teams
+fr,positions,Positions
+fr,country,Country
+fr,all_players,All Players
+fr,all_teams,All Teams
+fr,all_positions,All Positions
+fr,all_countries,All Countries
+fr,player.height,Height
+fr,player.born,Born
+fr,player.country,Country
+fr,player.view_profile,View Profile
+fr,match_events.1000_0,Made throw
+fr,match_events.1000_1,Made shot in the paint
+fr,match_events.1000_2,Made 2 pointer outside the paint
+fr,match_events.1000_3,Made 3 pointer
+fr,match_events.1000_4,Made free throw
+fr,match_events.1000_5,Made dunk
+fr,match_events.1001_0,Missed throw
+fr,match_events.1001_1,Missed shot in the paint
+fr,match_events.1001_2,Missed 2 pointer outside the paint
+fr,match_events.1001_3,Missed 3 pointer
+fr,match_events.1001_4,Missed free throw
+fr,match_events.1001_5,Missed dunk
+fr,match_events.1002_0,Defensive rebound
+fr,match_events.1003_0,Offensive rebound
+fr,match_events.1004_0,Steal
+fr,match_events.1005_0,Turnover
+fr,match_events.1005_10,Offensive Goaltending
+fr,match_events.1005_11,Lane Violation
+fr,match_events.1005_12,Ball Handling
+fr,match_events.1005_13,Dribbling
+fr,match_events.1005_14,Bad pass
+fr,match_events.1005_15,Lost ball
+fr,match_events.1005_16,Over and back
+fr,match_events.1005_17,Backcourt
+fr,match_events.1005_18,Double dribble
+fr,match_events.1005_19,Out of bounds
+fr,match_events.1005_20,Travel
+fr,match_events.1005_21,Shot clock
+fr,match_events.1005_22,Offensive
+fr,match_events.1005_23,3 sec
+fr,match_events.1005_24,5 sec
+fr,match_events.1005_25,8 sec
+fr,match_events.1005_26,10 sec
+fr,match_events.1005_27,24 sec
+fr,match_events.1005_28,Lifting
+fr,match_events.1005_29,Other
+fr,match_events.1006_0,Foul against
+fr,match_events.1007_0,Foul
+fr,match_events.1007_1,1 free throw
+fr,match_events.1007_2,2 free throw
+fr,match_events.1007_3,3 free throw
+fr,match_events.1007_4,One and one
+fr,match_events.1007_5,Block
+fr,match_events.1007_6,Charge
+fr,match_events.1007_7,Double
+fr,match_events.1007_8,Flagrant 1
+fr,match_events.1007_9,Flagrant 2
+fr,match_events.1007_10,Classa
+fr,match_events.1007_11,Contact dead ball
+fr,match_events.1007_12,Lifting
+fr,match_events.1007_30,Offensive
+fr,match_events.1007_31,Personal
+fr,match_events.1007_32,Technical
+fr,match_events.1007_33,Unsportsmanlike
+fr,match_events.1007_34,Disqualifying
+fr,match_events.1007_35,Intentional
+fr,match_events.1008_0,Assist
+fr,match_events.1009_0,Block
+fr,match_events.1010_0,Block against
+fr,match_events.1011_0,Substitution
+fr,match_events.1020_0,Technical foul
+fr,match_events.1100_0,+1 min
+fr,match_events.1101_0,End of Period
+fr,match_events.2002_0,Team def.
+fr,match_events.2003_0,Team off. rebound
+fr,match_events.2004_0,Team steal
+fr,match_events.2005_0,Team turnover
+fr,match_events.2006_0,Team force foul
+fr,match_events.2007_0,Team foul
+fr,match_events.2011_0,Team timeout
+fr,match_events.2020_0,Team technical foul
+fr,player_positions.point_guard,Point guard
+fr,player_positions.shooting_guard,Shooting guard
+fr,player_positions.small_forward,Small forward
+fr,player_positions.power_forward,Power forward
+fr,player_positions.center,Center
+fr,player_positions.point_guard-shooting_guard,Guard
+fr,player_positions.shooting_guard-small_forward,"Shooting guard, small forward"
+fr,player_positions.small_forward-power_forward,Forward
+fr,player_positions.power_forward-center,"Power forward, center"
+fr,about.title,About BNXT
+fr,about.subtitle,BNXT IS A NEW BASKETBALL COMMUNITY UNITING BELGIUM & THE NETHERLANDS IN AN INNOVATIVE COMPETITION
+fr,team,Team
+fr,month,Month
+fr,all_months,All Months
+fr,months.january,January
+fr,months.february,February
+fr,months.march,March
+fr,months.april,April
+fr,months.may,May
+fr,months.june,June
+fr,months.july,July
+fr,months.august,August
+fr,months.september,September
+fr,months.october,October
+fr,months.november,November
+fr,months.december,December
+fr,date_and_time,Date & Time
+fr,no_players,"Oops, there are no players available based on your search"
+fr,game_report.overview.game_leaders,Game leaders
+fr,game_report.overview.key_statistics.title,Key statistics
+fr,game_report.overview.key_statistics.steals,Steals
+fr,game_report.overview.key_statistics.assists,Assists
+fr,game_report.overview.key_statistics.turnovers,Turnovers
+fr,game_report.overview.key_statistics.blocks,Blocks
+fr,game_report.overview.key_statistics.fouls,Fouls
+fr,game_report.overview.key_statistics.defensive_rebounds,Defensive Rebounds
+fr,game_report.overview.key_statistics.offensive_rebounds,Offensive Rebounds
+fr,game_report.overview.top_performers.title,Top performers
+fr,game_report.overview.top_performers.efficiency,Efficiency
+fr,game_report.overview.top_performers.points,Points
+fr,game_report.overview.top_performers.rebounds,Rebounds
+fr,game_report.overview.top_performers.assists,Assists
+fr,game_report.overview.top_performers.steals,Steals
+fr,game_report.overview.top_performers.blocks,Blocks
+fr,game_report.title,Game report
+fr,game_report.quarter_short,Q
+fr,game_report.watch_game_button,Watch game recap
+fr,game_report.tabs.overview,Overview
+fr,game_report.tabs.boxscore,Boxscore
+fr,game_report.tabs.play_by_play,Play by play
+fr,game_report.no_statistics,"Oops, there are no schedule statistics available for this game"
+fr,game_report.boxscore.table_title,Game statistics
+fr,home.bnxt_tv.running_text,Sign up now and stay updated with all the games in BNXT
+fr,home.bnxt_tv.title,SIGN UP & WATCH
+fr,home.bnxt_tv.description,Watch all BNXT League regular season games on BNXT.tv. Stream your favorite Dutch & Belgian teams’ games LIVE or save to watch later on demand.
+fr,home.bnxt_tv.button,Subscribe to bnxt.tv
+fr,home.hero.button,Read More
+fr,home.latest_results.title,Matchs
+fr,home.latest_results.button,VIEW >
+fr,home.standings.title,Standings
+fr,video_highlights.button,Watch now
+fr,news.news_button,Read news
+fr,news.video_button,Watch video
+fr,news_and_video.title,NEWS & VIDEO
+fr,news_and_video.subtitle,DISCOVER THE WORLD OF THE BNXT LEAGUE
+fr,related_posts.title,More like this
+fr,news.single_post.share_title,Share
+fr,page_not_found.title,"OOPS, PAGE NOT FOUND."
+fr,page_not_found.button,Back to home
+fr,players.title,Players
+fr,players.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+fr,players.section.title,All Players
+fr,search_player,Search Player
+fr,players.roster.title,OFFICIAL ROSTER SEASON
+fr,player.career_season_title,CAREER SEASON AVERAGES
+fr,player.game_statistics_title,GAME STATISTICS
+fr,standings.title,Standings
+fr,standings.section.title,REGULAR COMPETITION STANDINGS
+fr,leaderboard,Leaderboard
+fr,survey.contest.name,Name
+fr,survey.contest.question,Question
+fr,survey.previous_question,Previous question
+fr,survey.send_button,Send survey
+fr,survey.next_question,Next question
+fr,survey.complete_button,Complete survey
+fr,survey.contest_over_1,"OOPS, THE CONTEST IS NOT ACTIVE."
+fr,survey.contest_over_2,Come back later for the next contest
+fr,team.roster.title,OFFICIAL ROSTER SEASON
+fr,team.assistants.title,COACH AND ASSISTANTS
+fr,teams.title,TEAMS
+fr,teams.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+fr,teams.section.title,"EXPLORE OUR CLUBS, THEIR LATEST NEWS & BUY TICKETS"
+fr,search,Search
+fr,team.tabs.roster,Roster
+fr,team.tabs.calendar,Calendar
+fr,team.tabs.team_statistics,Team statistics
+fr,team.no_statistics,"Oops, there are no statistics available for this game"
+fr,menu.follow_us,Suivez-nous
+fr,get_tickets,Get Tickets
+fr,no_games,"Oops, there are no games available based on your search"
+fr,home.latest_results.live_button,Live >
+fr,home.latest_results.finished_button,GAME CENTER >
+fr,overall,Overall
+fr,referees.title,Referees
+fr,survey.is_adult,I am over 18 years old and agree with the BNXT League and BNXT.tv privacy policy
+fr,survey.contest.firstname,Firstname
+fr,survey.success_message,Thank you for joining the contest. We will contact the winner soon!
+fr,accept_privacy_policy_survey,I wish to receive relevant marketing mails and updates regarding BNXT League and BNXT.tv
+fr,game_report.overview.top_performers.total_rebound,Total Rebound
+fr,home.latest_results.live_stats_button,Stats
+fr,watch_live,Watch Live
+fr,statistics.individual.made_all,réussis/tentés
+fr,standings_text,"En cas d'égalité entre deux ou plusieurs clubs à l'issue de la phase de compétition transfrontalière, le classement est déterminé comme suit : <br /> ● points à la fin de la phase nationale corrigés ou non du nombre de matches joués (avant arrondissement)<br /> ● résultat dans les confrontations mutuelles <br />● différence de points dans les confrontations mutuelles<br /> ● points marqués dans les confrontations mutuelles <br />● différence de points de tous les matchs <br />● points marqués dans tous les matches"
+fr,videos.title,Vidéo's
+fr,videos.page_title,Vidéo's
+fr,news,News
+fr,videos,Vidéo's
+fr,search_news,Recherche De News
+fr,search_videos,Recherche Des Vidéos
+fr,news.title,News
+fr,news.page_title,News
+fr,standings_playoff,Playoff Picture
+fr,region,Pays
+fr,playoff_text,* certitude de participer aux play-offs
+fr,partnership.playoffs.title,Partenaire Playoffs
+fr,partnership.partnerships.title,Partenariat
+fr,partnership.cta.contact_us,Contactez nous
+fr,partnership.partner_of_the_month.title,Partenaire du mois
+fr,partnership.main.title,Main partnership
+fr,partnership.naming.title,Naming partnership
+fr,partnership.cta.discover_our_offer,Découvrez notre offre
+fr,partnership.partner_of_the_month.text_1,"<strong>Faites briller votre marque!</strong><br><br> Devenez <strong>Partenaire du Mois BNXT</strong> et touchez des milliers de fans pendant nos matchs. <br><br> Grâce à une visibilité à la télévision, sur les panneaux LED et sur les réseaux sociaux, votre entreprise occupe le devant de la scčne en tant que partenaire du mois. <br><br> Découvrez la puissance de l’expérience sportive, planifiez un entretien exploratoire et hissez votre marque à un niveau supérieur !"
+fr,partnership.playoffs.text_1,"Vivez l’intensité des play-offs! <br><br> Devenez Partenaire des Play-Offs et faites jouer votre marque au plus haut niveau. <br><br> Les Play-Offs de la BNXT League représentent le point culminant de la saison de basketball — un moment oů intensité, émotion et talent se rencontrent. Chaque point est décisif, chaque action compte et chaque match est chargé de suspense. <br><br> Les meilleures équipes de Belgique et des Pays-Bas s’affrontent non seulement pour le titre, mais aussi pour la fierté, l’honneur et la gloire nationale. <br><br> Grâce à cette combinaison unique, les Play-Offs constituent la phase la plus médiatisée de la compétition. Et votre entreprise peut en faire partie !"
+fr,partnership.naming.text_1,"Devenez le nom derričre la compétition qui unit la Belgique et les Pays-Bas. <br><br> Le BNXT Naming Partnership offre à votre marque l’opportunité de rejoindre une histoire ambitieuse oů le sport, l’émotion et la connexion se rencontrent. <br><br> Un partenariat qui va bien au-delà de la visibilité — c’est une déclaration de confiance, de passion et d’avenir. <br><br> Découvrez notre Naming Partnership et devenez partie intégrante de l’expérience BNXT."
+fr,partnership.main.text_1,"Le basketball vit. Et unit. <br><br> La BNXT League réunit marques, fans et joueurs dans une seule et męme histoire, empreinte de passion, d’émotion et d’énergie. <br><br> Envie d’en faire partie ? Découvrez comment votre marque peut rejoindre cette compétition unique. Découvrez nos opportunités de partenariat."
+fr,partnership.partnerships.text_1,"Dans le monde dynamique du basketball, tout repose sur l’esprit d’équipe, la passion et la performance — des valeurs qui font également la différence dans le monde des affaires.<br><br> En devenant partenaire de notre ligue de basketball, les entreprises associent leur marque à l’ambition sportive, à un ancrage local fort, à une visibilité nationale et à une communauté de fans en pleine croissance.<br><br>"
+fr,partnership.partnerships.text_2,"Un partenariat offre bien plus que de la visibilité : il crée une expérience de marque authentique. Grâce au branding dans les salles, aux campagnes digitales, aux activations exclusives et aux opportunités d’hospitalité, les entreprises peuvent impliquer leurs clients, collaborateurs et partenaires de manière unique. De plus, votre marque bénéficie d’une exposition privilégiée auprès d’un public jeune, dynamique et socialement engagé.<br><br> Qu’il s’agisse de notoriété, de marketing relationnel ou d’engagement sociétal — ensemble, nous construisons une formule gagnante. Car dans notre ligue, ce ne sont pas seulement les points au tableau d’affichage qui comptent, mais aussi l’impact que nous créons ensemble en dehors du terrain."
+fr,partnership.hospitality.title,Hospitality
+fr,partnership.hospitality.text_1,"Transformez un match de la BNXT League en un moment business fort. Profitez du meilleur du basketball dans un cadre premium et accueillez vos invités dans une ambiance à la fois détendue et professionnelle. L’occasion idéale de recevoir vos clients, renforcer vos relations et partager l’émotion du sport. <br><br> <strong>Drink & Watch</strong> Faites d’une soirée de match un véritable moment de networking. Profitez du basketball BNXT League dans un cadre hospitality premium, tout en accueillant vos clients et en renforçant vos relations. <br><br> <strong>Dine & Watch</strong> Quand seul le meilleur suffit. Créez des connexions durables lors d’une soirée inoubliable mêlant gastronomie raffinée, sport premium et souvenirs qui marquent."
+fr,discountNewsletterModal.submit,Claim discount!
+fr,discountNewsletterModal.first_name,Prénom
+fr,discountNewsletterModal.last_name,Nom
+fr,discountNewsletterModal.cancel,"No thanks, I’ll miss the discount."
+fr,discountNewsletterModal.errors.required,Veuillez remplir ce champ.
+fr,discountNewsletterModal.errors.min2,Please type at least 2 characters.
+fr,discountNewsletterModal.title,RESTEZ INFORME !
+fr,discountNewsletterModal.description,Sign-up for the BNXT-newsletter \nto receive an exclusive discount \nand stay updated on all league content.
+fr,discountNewsletterModal.errors.unknown,Something went wrong!
+fr,discountNewsletterModal.errors.duplicate,You already subscribe  with this e-mail address.
+nl,welcome,NLWelcome
+nl,events.pageTitle,VIND HIER ONZE OFFICIËLE BNXT EVENEMENTEN & KOOP TICKETS!
+nl,newsandvideos.pageTitle,ONTDEK HIER BNXT NIEUWS & VIDEO HIGHLIGHTS
+nl,loadMore,Load more
+nl,newsandvideos.headTitle,NIEUWS & VIDEO
+nl,events.header.title,EVENEMENTEN
+nl,events.header.subtitle,ONTDEK DE WERELD VAN BNXT LEAGUE
+nl,calendar.header.title,KALENDER
+nl,calendar.header.subtitle,ONTDEK DE WERELD VAN BNXT LEAGUE
+nl,calendar.pageTitle,BEKIJK DE BNXT KALENDER OM DE AFGELOPEN EN KOMENDE WEDSTRIJDEN TE ZIEN. BEKIJK DE LAATSTE SCORES EN STATISTIEKEN.
+nl,footer.left_block,BNXT is een nieuwe basketbal community die België en Nederland verenigt in een innovatieve competitie.
+nl,footer.right_block.title,BLIJF OP DE HOOGTE
+nl,footer.right_block.subtitle,Schrijf je in voor onze nieuwsbrief en ontvang als eerste alle BNXT League updates & exclusieve insights.
+nl,statistics.individual.value,Value
+nl,statistics.individual.points,Punten
+nl,statistics.individual.total_rebound,Totaal aantal rebounds
+nl,statistics.individual.block,Blocks
+nl,statistics.individual.assist,Assists
+nl,statistics.individual.steal,Steals
+nl,statistics.individual.throw_percent,Throw percent
+nl,statistics.individual.three_point_percent,driepunterspercentage
+nl,statistics.individual.free_throw_percent,Vrijworpspercentage
+nl,statistics.view-all,Bekijk alles
+nl,filter,Filter
+nl,season,Seizoen
+nl,phase,Fase
+nl,view-leaderboard,Toon scorebord
+nl,statistics.individual.efficiency,Efficiëntie
+nl,statistics.individual.two_point_percent,Tweepunterspercentage
+nl,filter.season,Seizoen
+nl,statistics.individual,Individueel
+nl,statistics.teams,Teams
+nl,statistics.total_teams,Totaal teams
+nl,statistics,Statistieken
+nl,photo,Foto
+nl,name,Naam
+nl,team_name,Teamnaam
+nl,statistics.teams.title,"ONTDEK ONZE CLUBS, HUN LAATSTE NIEUWS & KOOP TICKETS"
+nl,shooting_guard,Shooting guard
+nl,player.position.point_guard,Point guard
+nl,player.position.shooting_guard,Shooting guard
+nl,player.position.small_forward,Small forward
+nl,player.position.power_forward,Power forward
+nl,player.position.center,Center
+nl,player.position.point_guard-shooting_guard,Guard
+nl,player.position.shooting_guard-small_forward,Shooting guard - Small forward
+nl,player.position.small_forward-power_forward,Forward
+nl,player.position.power_forward-center,Power forward - Center
+nl,statistics.no-data,"Oeps, er zijn geen statistieken beschikbaar!"
+nl,accept_privacy_policy,Ik ga akkoord met het privacybeleid van BNXT League en BNXT.tv
+nl,submit,Submit
+nl,follow_us.stay_updated,STAY UPDATED. FOLLOW US HERE
+nl,follow_us.watch_the_games,Watch The Games Through
+nl,follow_us.bnxt_button,Go to BNXT.TV
+nl,footer.explore_bnxt,EXPLORE BNXT
+nl,footer.legal,Legal
+nl,footer.all_rights_reserved,All rights reserved.
+nl,footer.powered_by,Powered by
+nl,cookie_bar.message,"We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies."
+nl,cookie_bar.decline,Opt Out
+nl,cookie_bar.accept,Accept All
+nl,home.latest_news_title,Latest News
+nl,our_partners.title,Our Partners
+nl,snackbar.close,Close
+nl,video_highlights.title,VIDEO HIGHLIGHTS
+nl,video_highlights.running_text,Stay updated with the latest videos from us
+nl,player_name,Player Name
+nl,teams,Teams
+nl,positions,Positions
+nl,country,Country
+nl,all_players,All Players
+nl,all_teams,All Teams
+nl,all_positions,All Positions
+nl,all_countries,All Countries
+nl,player.height,Height
+nl,player.born,Born
+nl,player.country,Country
+nl,player.view_profile,View Profile
+nl,match_events.1000_0,Made throw
+nl,match_events.1000_1,Made shot in the paint
+nl,match_events.1000_2,Made 2 pointer outside the paint
+nl,match_events.1000_3,Made 3 pointer
+nl,match_events.1000_4,Made free throw
+nl,match_events.1000_5,Made dunk
+nl,match_events.1001_0,Missed throw
+nl,match_events.1001_1,Missed shot in the paint
+nl,match_events.1001_2,Missed 2 pointer outside the paint
+nl,match_events.1001_3,Missed 3 pointer
+nl,match_events.1001_4,Missed free throw
+nl,match_events.1001_5,Missed dunk
+nl,match_events.1002_0,Defensive rebound
+nl,match_events.1003_0,Offensive rebound
+nl,match_events.1004_0,Steal
+nl,match_events.1005_0,Turnover
+nl,match_events.1005_10,Offensive Goaltending
+nl,match_events.1005_11,Lane Violation
+nl,match_events.1005_12,Ball Handling
+nl,match_events.1005_13,Dribbling
+nl,match_events.1005_14,Bad pass
+nl,match_events.1005_15,Lost ball
+nl,match_events.1005_16,Over and back
+nl,match_events.1005_17,Backcourt
+nl,match_events.1005_18,Double dribble
+nl,match_events.1005_19,Out of bounds
+nl,match_events.1005_20,Travel
+nl,match_events.1005_21,Shot clock
+nl,match_events.1005_22,Offensive
+nl,match_events.1005_23,3 sec
+nl,match_events.1005_24,5 sec
+nl,match_events.1005_25,8 sec
+nl,match_events.1005_26,10 sec
+nl,match_events.1005_27,24 sec
+nl,match_events.1005_28,Lifting
+nl,match_events.1005_29,Other
+nl,match_events.1006_0,Foul against
+nl,match_events.1007_0,Foul
+nl,match_events.1007_1,1 free throw
+nl,match_events.1007_2,2 free throw
+nl,match_events.1007_3,3 free throw
+nl,match_events.1007_4,One and one
+nl,match_events.1007_5,Block
+nl,match_events.1007_6,Charge
+nl,match_events.1007_7,Double
+nl,match_events.1007_8,Flagrant 1
+nl,match_events.1007_9,Flagrant 2
+nl,match_events.1007_10,Classa
+nl,match_events.1007_11,Contact dead ball
+nl,match_events.1007_12,Lifting
+nl,match_events.1007_30,Offensive
+nl,match_events.1007_31,Personal
+nl,match_events.1007_32,Technical
+nl,match_events.1007_33,Unsportsmanlike
+nl,match_events.1007_34,Disqualifying
+nl,match_events.1007_35,Intentional
+nl,match_events.1008_0,Assist
+nl,match_events.1009_0,Block
+nl,match_events.1010_0,Block against
+nl,match_events.1011_0,Substitution
+nl,match_events.1020_0,Technical foul
+nl,match_events.1100_0,+1 min
+nl,match_events.1101_0,End of Period
+nl,match_events.2002_0,Team def.
+nl,match_events.2003_0,Team off. rebound
+nl,match_events.2004_0,Team steal
+nl,match_events.2005_0,Team turnover
+nl,match_events.2006_0,Team force foul
+nl,match_events.2007_0,Team foul
+nl,match_events.2011_0,Team timeout
+nl,match_events.2020_0,Team technical foul
+nl,player_positions.point_guard,Point guard
+nl,player_positions.shooting_guard,Shooting guard
+nl,player_positions.small_forward,Small forward
+nl,player_positions.power_forward,Power forward
+nl,player_positions.center,Center
+nl,player_positions.point_guard-shooting_guard,Guard
+nl,player_positions.shooting_guard-small_forward,"Shooting guard, small forward"
+nl,player_positions.small_forward-power_forward,Forward
+nl,player_positions.power_forward-center,"Power forward, center"
+nl,about.title,About BNXT
+nl,about.subtitle,BNXT IS A NEW BASKETBALL COMMUNITY UNITING BELGIUM & THE NETHERLANDS IN AN INNOVATIVE COMPETITION
+nl,team,Team
+nl,month,Month
+nl,all_months,All Months
+nl,months.january,January
+nl,months.february,February
+nl,months.march,March
+nl,months.april,April
+nl,months.may,May
+nl,months.june,June
+nl,months.july,July
+nl,months.august,August
+nl,months.september,September
+nl,months.october,October
+nl,months.november,November
+nl,months.december,December
+nl,date_and_time,Date & Time
+nl,no_players,"Oops, there are no players available based on your search"
+nl,game_report.overview.game_leaders,Game leaders
+nl,game_report.overview.key_statistics.title,Key statistics
+nl,game_report.overview.key_statistics.steals,Steals
+nl,game_report.overview.key_statistics.assists,Assists
+nl,game_report.overview.key_statistics.turnovers,Turnovers
+nl,game_report.overview.key_statistics.blocks,Blocks
+nl,game_report.overview.key_statistics.fouls,Fouls
+nl,game_report.overview.key_statistics.defensive_rebounds,Defensive Rebounds
+nl,game_report.overview.key_statistics.offensive_rebounds,Offensive Rebounds
+nl,game_report.overview.top_performers.title,Top performers
+nl,game_report.overview.top_performers.efficiency,Efficiency
+nl,game_report.overview.top_performers.points,Points
+nl,game_report.overview.top_performers.rebounds,Rebounds
+nl,game_report.overview.top_performers.assists,Assists
+nl,game_report.overview.top_performers.steals,Steals
+nl,game_report.overview.top_performers.blocks,Blocks
+nl,game_report.title,Game report
+nl,game_report.quarter_short,Q
+nl,game_report.watch_game_button,Watch game recap
+nl,game_report.tabs.overview,Overview
+nl,game_report.tabs.boxscore,Boxscore
+nl,game_report.tabs.play_by_play,Play by play
+nl,game_report.no_statistics,"Oops, there are no schedule statistics available for this game"
+nl,game_report.boxscore.table_title,Game statistics
+nl,home.bnxt_tv.running_text,Sign up now and stay updated with all the games in BNXT
+nl,home.bnxt_tv.title,SIGN UP & WATCH
+nl,home.bnxt_tv.description,Watch all BNXT League regular season games on BNXT.tv. Stream your favorite Dutch & Belgian teams’ games LIVE or save to watch later on demand.
+nl,home.bnxt_tv.button,Subscribe to bnxt.tv
+nl,home.hero.button,Read More
+nl,home.latest_results.title,Wedstrijden
+nl,home.latest_results.button,VIEW >
+nl,home.standings.title,Standings
+nl,video_highlights.button,Watch now
+nl,news.news_button,Read news
+nl,news.video_button,Watch video
+nl,news_and_video.title,NEWS & VIDEO
+nl,news_and_video.subtitle,DISCOVER THE WORLD OF THE BNXT LEAGUE
+nl,related_posts.title,More like this
+nl,news.single_post.share_title,Share
+nl,page_not_found.title,"OOPS, PAGE NOT FOUND."
+nl,page_not_found.button,Back to home
+nl,players.title,Players
+nl,players.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+nl,players.section.title,All Players
+nl,search_player,Search Player
+nl,players.roster.title,OFFICIAL ROSTER SEASON
+nl,player.career_season_title,CAREER SEASON AVERAGES
+nl,player.game_statistics_title,GAME STATISTICS
+nl,standings.title,Standings
+nl,standings.section.title,REGULAR COMPETITION STANDINGS
+nl,leaderboard,Leaderboard
+nl,survey.contest.name,Name
+nl,survey.contest.question,Question
+nl,survey.previous_question,Previous question
+nl,survey.send_button,Send survey
+nl,survey.next_question,Next question
+nl,survey.complete_button,Complete survey
+nl,survey.contest_over_1,"OOPS, THE CONTEST IS NOT ACTIVE."
+nl,survey.contest_over_2,Come back later for the next contest
+nl,team.roster.title,OFFICIAL ROSTER SEASON
+nl,team.assistants.title,COACH AND ASSISTANTS
+nl,teams.title,TEAMS
+nl,teams.subtitle,DISCOVER THE WORLD OF BNXT LEAGUE
+nl,teams.section.title,"EXPLORE OUR CLUBS, THEIR LATEST NEWS & BUY TICKETS"
+nl,search,Search
+nl,team.tabs.roster,Roster
+nl,team.tabs.calendar,Calendar
+nl,team.tabs.team_statistics,Team statistics
+nl,team.no_statistics,"Oops, there are no statistics available for this game"
+nl,menu.follow_us,Volg ons
+nl,get_tickets,Get Tickets
+nl,no_games,"Oops, there are no games available based on your search"
+nl,home.latest_results.live_button,Live >
+nl,home.latest_results.finished_button,GAME CENTER >
+nl,overall,Overall
+nl,referees.title,Referees
+nl,survey.is_adult,I am over 18 years old and agree with the BNXT League and BNXT.tv privacy policy
+nl,survey.contest.firstname,Firstname
+nl,survey.success_message,Thank you for joining the contest. We will contact the winner soon!
+nl,accept_privacy_policy_survey,I wish to receive relevant marketing mails and updates regarding BNXT League and BNXT.tv
+nl,game_report.overview.top_performers.total_rebound,Total Rebound
+nl,home.latest_results.live_stats_button,Stats
+nl,watch_live,Watch Live
+nl,statistics.individual.made_all,gemaakt/genomen
+nl,standings_text,Bij gelijke stand tussen twee of meerdere clubs aan het einde van de grensoverschrijdende competitieronde wordt het klassement als volgt bepaald:  <br />●       punten aan het einde van de nationale fase al dan niet gecorrigeerd naar aantal gespeelde wedstrijden (voor afronding)  <br />●       resultaat in onderlinge duels  <br />●       doelpuntensaldo in onderlinge duels  <br />●       gescoorde punten in onderlinge duels  <br />●       totaal doelpuntensaldo over alle wedstrijden  <br />●       totaal aantal gescoorde punten over alle wedstrijden
+nl,videos.title,Videos
+nl,videos.page_title,Videos
+nl,news,Nieuws
+nl,videos,Videos
+nl,search_news,Zoek Naar Nieuws
+nl,search_videos,Zoek Naar Video's
+nl,news.title,Nieuws
+nl,news.page_title,Nieuws
+nl,standings_playoff,Playoff Picture
+nl,region,Land
+nl,playoff_text,* zeker van deelname aan playoffs
+nl,partnership.playoffs.title,Playoffs Partner
+nl,partnership.partnerships.title,Partnerships
+nl,partnership.cta.contact_us,Contacteer ons
+nl,partnership.partner_of_the_month.title,Partner van de maand
+nl,partnership.main.title,Main partnership
+nl,partnership.naming.title,Naming partnership
+nl,partnership.cta.discover_our_offer,Ontdek ons aanbod
+nl,partnership.partner_of_the_month.text_1,"<strong>Laat uw merk schitteren!</strong> <br><br> Word <strong>BNXT Partner of the Month</strong> en bereik duizenden fans tijdens onze wedstrijden. <br><br> Met zichtbaarheid op tv, LED-boarding en socials staat uw bedrijf centraal als dé partner van de maand. <br><br> Ontdek de kracht van sportbeleving, plan een verkennend gesprek en til uw merk naar het volgende niveau!"
+nl,partnership.playoffs.text_1,"Beleef de spanning van de play-offs! <br><br> Word Play-Off Partner en laat uw merk meespelen op het hoogste niveau. <br><br> De play-offs in de BNXT League vormen het absolute hoogtepunt van het basketbalseizoen, waar intensiteit, emotie en talent samenkomen. Hier wordt elk punt beslissend, elke actie telt en elke wedstrijd is doordrenkt van spanning. De beste teams uit België en Nederland strijden niet alleen om de titel, maar ook om trots, eer en nationale glorie. Al deze ingrediënten samen zorgen ervoor dat dit de meest gemediatiseerde fase is uit de competitie. Als bedrijf kan je hier deel van uitmaken."
+nl,partnership.naming.text_1,"Wordt de naam achter de competitie die zorgt voor verbinding in België en Nederland. <br><br> Het BNXT Naming Partnership biedt uw merk de kans om deel te worden van een ambitieus verhaal waarin sport, beleving en verbinding samenkomen. <br><br> Een samenwerking die verder gaat dan zichtbaarheid – het is een statement van vertrouwen, passie en toekomst. <br><br> Ontdek ons naming partnership en word deel van de BNXT-beleving."
+nl,partnership.main.text_1,"Basketbal leeft. En verbindt. <br><br> De BNXT League brengt merken, fans en spelers samen in één verhaal vol passie, beleving en energie. <br><br> Zin om mee te doen? Ontdek hoe jouw merk deel kan worden van deze unieke competitie. Ontdek de partnership mogelijkheden. <br><br>"
+nl,partnership.partnerships.text_1,"In de dynamische wereld van basketbal draait alles om teamwork, passie en prestaties — waarden die ook in het bedrijfsleven het verschil maken.<br><br> Door een partnership met onze basketbalcompetitie verbinden bedrijven hun merk met sportieve ambitie, lokale verankering, nationale uitstraling en een groeiende community van fans.<br><br> Een samenwerking biedt méér dan zichtbaarheid: het creëert authentieke merkbeleving. Via branding in de zaal, digitale campagnes, exclusieve activaties en hospitality-mogelijkheden kunnen bedrijven hun klanten, medewerkers en partners op unieke wijze betrekken. Bovendien krijgt uw merk een podium binnen een jonge, energieke en sociaal betrokken doelgroep.<br><br>"
+nl,partnership.partnerships.text_2,"Of het nu gaat om merkbekendheid, relatiemarketing of maatschappelijk engagement – samen bouwen we aan een winnende formule. Want in onze competitie telt niet alleen het aantal punten op het scorebord, maar ook de impact die we samen maken buiten de lijnen.<br><br> Contacteer ons of download de partnerbrochure en kom meer te weten over de BNXT League en haar commerciële mogelijkheden."
+nl,partnership.hospitality.title,Hospitality
+nl,partnership.hospitality.text_1,"Maak van een BNXT League-wedstrijd een krachtig businessmoment. Beleef topbasketbal in een premium setting en ontvang je gasten in een ontspannen, professionele sfeer. Ideaal om klanten te entertainen, relaties te versterken en samen de beleving te delen. <br><br> <strong>Drink & Watch</strong> Maak van een wedstrijdavond een waardevol netwerkmoment. Geniet van BNXT League-basketbal in een comfortabele hospitality omgeving, terwijl je klanten ontvangt en connecties versterkt. <br><br> <strong>Dine & Watch</strong> Wanneer alleen het beste goed genoeg is. Bouw aan sterke relaties tijdens een onvergetelijke avond met verfijnde gastronomie, premium sport en een beleving die blijft hangen."
+nl,discountNewsletterModal.submit,Claim discount!
+nl,discountNewsletterModal.first_name,Voornaam
+nl,discountNewsletterModal.last_name,Naam
+nl,discountNewsletterModal.cancel,"No thanks, I’ll miss the discount."
+nl,discountNewsletterModal.errors.required,Gelieve dit vak in te vullen.
+nl,discountNewsletterModal.errors.min2,Please type at least 2 characters.
+nl,discountNewsletterModal.title,STAY UP TO DATE!
+nl,discountNewsletterModal.description,Sign-up for the BNXT-newsletter \nto receive an exclusive discount \nand stay updated on all league content.
+nl,discountNewsletterModal.errors.unknown,Something went wrong!
+nl,discountNewsletterModal.errors.duplicate,You already subscribe  with this e-mail address.
