@@ -1,0 +1,4 @@
+comp_id,comp_team_id,team_id,place,start_place,games,won,lost,standing_game,standing_win,standing_draw,standing_lose,standing_forfeit,standing_points,standing_goal_plus,standing_goal_minus,standing_goal_difference,standing_penalty,standing_is_play,victory_percent,avg_goal_plus,avg_goal_minus,team_short_name_ru,team_short_name_en,team_name_ru,team_name_en,team_region_name_ru,team_region_name_en
+50720,450736,15,1,11,40,37,3,40,37,\N,3,0,77,3723,2971,752,0,true,93.0,93.075,74.275,ЦСКА,CSKA,ЦСКА,CSKA,Москва,Moscow
+50720,450734,697,2,9,40,33,7,40,33,\N,7,0,73,3471,2961,510,0,true,83.0,86.775,74.025,УНИКС,UNICS,УНИКС,UNICS,Казань,Kazan
+50720,450728,2994,3,4,40,28,12,40,28,\N,12,0,68,3501,3033,468,0,true,70.0,87.525,75.825,Зенит,Zenit,Зенит,Zenit,Санкт-Петербург,Saint Petersburg

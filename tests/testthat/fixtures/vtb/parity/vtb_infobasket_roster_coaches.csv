@@ -1,0 +1,4 @@
+team_id,season,person_id,coach_number,display_number,post_id,post,country_code_ioc,country_name,rank,is_active,active_status,person_last_name_ru,person_last_name_en,person_first_name_ru,person_first_name_en,person_full_name_ru,person_full_name_en,person_gender
+2650,2026,363133,2,2,\N,Head Coach,SRB,Serbia,\N,true,Accepted,Томович,Tomovic,Томислав,Tomislav,Томович Томислав ,Tomovic Tomislav ,1
+2650,2026,260113,3,3,\N,Assistant Coach,RUS,Russia,\N,true,Accepted,Пейчич,Pejcic,Янко,Yanko,Пейчич Янко ,Pejcic Yanko ,1
+2650,2026,25351,4,4,\N,Assistant Coach,RUS,Russia,\N,true,Accepted,Комогорцев,Komogortsev,Артем,Artem,Комогорцев Артем ,Komogortsev Artem ,1

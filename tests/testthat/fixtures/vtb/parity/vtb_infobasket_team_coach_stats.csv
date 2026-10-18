@@ -1,0 +1,4 @@
+season,team_id,person_id,player_number,display_number,is_active,active_status,foul_c,foul_b,foul_d,foul,game_count,person_last_name_ru,person_last_name_en,person_first_name_ru,person_first_name_en,person_full_name_ru,person_full_name_en,person_gender
+2026,2650,131047,1,1,false,\N,0,0,0,0,19,Юдин,Yudin,Антон,Anton,Юдин Антон,Yudin Anton,1
+2026,2650,363133,1,1,false,\N,6,6,0,12,33,Томович,Tomovic,Томислав,Tomislav,Томович Томислав,Tomovic Tomislav,1
+2026,2650,260113,2,2,false,\N,0,0,0,0,53,Пейчич,Pejcic,Янко,Yanko,Пейчич Янко,Pejcic Yanko,1

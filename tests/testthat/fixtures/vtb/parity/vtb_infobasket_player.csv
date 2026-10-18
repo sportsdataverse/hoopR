@@ -1,0 +1,2 @@
+person_id,person_last_name_ru,person_first_name_ru,person_last_name_en,person_first_name_en,person_gender,birth_date,person_height,person_weight,person_status,player_position,player_hand,is_naturalized,position_id,position_name_ru,position_name_en
+423011,Миллер,Патрик,Miller,Patrick,1,1992-05-22,185,90,1,\N,\N,false,1,Разыгрывающий,Point guard
