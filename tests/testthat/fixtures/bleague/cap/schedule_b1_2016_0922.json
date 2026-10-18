@@ -1,0 +1,60 @@
+{
+  "tab": 1,
+  "year": 2016,
+  "event": 2,
+  "mon": 9,
+  "day": 22,
+  "season_label": "2016-17",
+  "event_label": "B1リーグ",
+  "events": [
+    {
+      "event": 2,
+      "label": "B1リーグ"
+    },
+    {
+      "event": 5,
+      "label": "オールスターゲーム"
+    },
+    {
+      "event": 3,
+      "label": "B1チャンピオンシップ"
+    }
+  ],
+  "game_days": [
+    22,
+    23,
+    24
+  ],
+  "clubs": [
+    {
+      "team_id": "702",
+      "name": "北海道"
+    },
+    {
+      "team_id": "692",
+      "name": "仙台"
+    },
+    {
+      "team_id": "693",
+      "name": "秋田"
+    }
+  ],
+  "games": [
+    {
+      "schedule_key": 1,
+      "date": "2016-09-22",
+      "round_label": "第1節",
+      "round": 1,
+      "home_team_id": "706",
+      "home_team": "A東京",
+      "home_score": 80,
+      "away_team_id": "701",
+      "away_team": "琉球",
+      "away_score": 75,
+      "prefecture": "東京都",
+      "venue": "代々木一",
+      "tip_time": "18:55",
+      "state": "FINAL"
+    }
+  ]
+}

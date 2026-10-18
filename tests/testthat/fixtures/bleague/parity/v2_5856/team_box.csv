@@ -1,0 +1,5 @@
+schedule_key,season,feed,team_side,team_id,category,period_category,team_name_j,team_name_e,player_id,player_no,player_name_j,player_name_e,play_time,on_court,display_order,starter,seconds_played,points,fg3_made,fg3_attempted,fg2_made,fg2_attempted,ft_made,ft_attempted,fouls,fouls_drawn,reb_off,reb_def,reb,turnovers,assists,steals,blocks,blocks_received,ptfb,pt2in,pt2nd,ptpft,dunks,efficiency,plus_minus,ast_to,efg,ts,usg,off_rtg,def_rtg,net_rtg,poss
+5856,2021,v2,home,706,3,1,アルバルク東京,ALVARK TOKYO,,,,,50:00,,,,3000,16,2,6,4,13,2,2,4,5,4,7,11,3,4,1,0,4,2,3,1,,,13,,,,,,,,,
+5856,2021,v2,home,706,2,15,アルバルク東京,ALVARK TOKYO,,,,,DNP,,,,,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,,,0,,,,,,,,,
+5856,2021,v2,away,727,3,1,川崎ブレイブサンダース,KAWASAKI BRAVE THUNDERS,,,,,50:00,,,,3000,16,2,6,5,10,0,0,5,4,2,8,10,3,3,0,4,0,0,5,2,,,20,,,,,,,,,
+5856,2021,v2,away,727,2,15,川崎ブレイブサンダース,KAWASAKI BRAVE THUNDERS,,,,,DNP,,,,,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,,,0,,,,,,,,,

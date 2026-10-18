@@ -1,0 +1,88 @@
+{
+  "tab": 3,
+  "year": 2025,
+  "event": 15,
+  "mon": 4,
+  "day": 19,
+  "season_label": "2025-26",
+  "event_label": "B3リーグ",
+  "events": [
+    {
+      "event": 15,
+      "label": "B3リーグ"
+    },
+    {
+      "event": 32,
+      "label": "B3プレーオフ"
+    }
+  ],
+  "game_days": [
+    4,
+    5,
+    10
+  ],
+  "clubs": [
+    {
+      "team_id": "744",
+      "name": "埼玉"
+    },
+    {
+      "team_id": "2725",
+      "name": "東京U"
+    },
+    {
+      "team_id": "748",
+      "name": "品川"
+    }
+  ],
+  "games": [
+    {
+      "schedule_key": 10693,
+      "date": "2026-04-19",
+      "round_label": "第29節",
+      "round": 29,
+      "home_team_id": "2726",
+      "home_team": "三重",
+      "home_score": 81,
+      "away_team_id": "2727",
+      "away_team": "立川",
+      "away_score": 93,
+      "prefecture": "三重県",
+      "venue": "AGF",
+      "tip_time": "13:00",
+      "state": "FINAL"
+    },
+    {
+      "schedule_key": 10691,
+      "date": "2026-04-19",
+      "round_label": "第29節",
+      "round": 29,
+      "home_team_id": "1363",
+      "home_team": "岐阜",
+      "home_score": 101,
+      "away_team_id": "750",
+      "away_team": "金沢",
+      "away_score": 96,
+      "prefecture": "岐阜県",
+      "venue": "OKB",
+      "tip_time": "14:00",
+      "state": "FINAL"
+    },
+    {
+      "schedule_key": 10695,
+      "date": "2026-04-19",
+      "round_label": "第29節",
+      "round": 29,
+      "home_team_id": "2890",
+      "home_team": "徳島",
+      "home_score": 71,
+      "away_team_id": "1639",
+      "away_team": "岡山",
+      "away_score": 82,
+      "prefecture": "徳島県",
+      "venue": "アスティ",
+      "tip_time": "14:00",
+      "state": "FINAL"
+    }
+  ]
+}

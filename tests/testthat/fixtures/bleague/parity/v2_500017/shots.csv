@@ -1,0 +1,3 @@
+schedule_key,season,feed,period,event_no,team_side,team_id,player_id,player_no,player_name_j,shot_type,in_paint,made,qualifier2,qualifier3,x,y,area_code,area,side,rest_time,clock_seconds,score
+500017,2023,v2,1,11000,away,728,19956,32,シェーファー アヴィ幸樹,2pt,TRUE,TRUE,layup,fast_break,93.5999984741211,48.36000061035156,1,restricted_area,,9:21,561,0-4
+500017,2023,v2,1,114000,home,729,5100000069,1,レイ・パークスジュニア,3pt,,TRUE,jump_shot,fast_break,9.050000190734863,95.81999969482422,8,corner_3,,0:46,46,21-14
