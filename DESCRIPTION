@@ -27,6 +27,7 @@ Depends:
 Imports:
     cli (>= 3.0.0),
     data.table (>= 1.14.0),
+    digest (>= 0.6.0),
     dplyr,
     glmnet,
     httr2 (>= 1.0.4),
@@ -45,7 +46,8 @@ Imports:
     stringdist (>= 0.9.0),
     stringi (>= 1.7.0),
     stringr (>= 1.3.0),
-    tidyr (>= 1.0.0)
+    tidyr (>= 1.0.0),
+    withr
 Suggests:
     arrow (>= 6.0.0),
     chromote,
@@ -65,8 +67,8 @@ Suggests:
     usethis (>= 1.6.0),
     xml2 (>= 1.3),
     yaml
+Config/roxygen2/version: 8.1.0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc
-Config/roxygen2/version: 8.1.0

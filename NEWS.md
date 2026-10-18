@@ -40,6 +40,17 @@
 
 # **hoopR 3.1.0.9000 (development version)**
 
+### **International basketball (in progress)**
+
+* New wrappers mirroring sportsdataverse-py's international basketball families (same
+  function names, arguments and columns): FIBA, Genius Sports, Sportradar Atrium, NBL
+  (Rosetta), SCB (BBL), FEB, TBF, ABA, ACB, B.LEAGUE, BNXT, CBA, CEBL, Basketligaen, EASL,
+  IBBA, KBL, KZS, LBA, LKL, P. LEAGUE+, TPBL and VTB, plus the men's per-competition
+  aliases. They share one polite transport (at least 1 s between requests to a host) and
+  raise classed conditions instead of returning empty: `hoopR_no_data`,
+  `hoopR_asset_fetch` (with a `transient` field) and `hoopR_bad_request`, all
+  inheriting `hoopR_error`. Family entries follow as they land.
+
 * `espn_nba_pbp()`, `espn_mbb_pbp()`, the `Plays` frame of `espn_nba_game_all()` /
   `espn_mbb_game_all()`, and `helper_espn_nba_pbp()` / `helper_espn_mbb_pbp()` now
   rebuild `home_score` / `away_score` from the scoring plays (in ESPN's order, a made
