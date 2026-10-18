@@ -1,0 +1,10 @@
+season_id,season_end_year,table,position,team_slug,team_name,played,won,lost,win_pct,streak,points_for_avg,points_against_avg,last5
+3,2008,full,1,rytas,Lietuvos Rytas,18,17,1,<null>,-1,96.3,70.3,WWWWL
+3,2008,full,2,zalgiris,Žalgiris,18,16,2,<null>,8,96.2,75.6,WWWWW
+3,2008,full,3,siauliai,Šiauliai,18,12,6,<null>,5,85.3,80.3,WWWWW
+3,2008,home,1,rytas,Lietuvos Rytas,9,9,0,<null>,<null>,100.1,69.7,WWWWW
+3,2008,home,2,zalgiris,Žalgiris,9,9,0,<null>,<null>,98.7,78.4,WWWWW
+3,2008,home,3,siauliai,Šiauliai,9,6,3,<null>,<null>,89.3,81.6,WLWWW
+3,2008,away,1,rytas,Lietuvos Rytas,9,8,1,<null>,<null>,92.6,71.0,WWWWL
+3,2008,away,2,zalgiris,Žalgiris,9,7,2,<null>,<null>,93.8,72.7,LLWWW
+3,2008,away,3,siauliai,Šiauliai,9,6,3,<null>,<null>,81.2,79.0,WLWWW

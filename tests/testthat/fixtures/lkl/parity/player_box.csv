@@ -1,0 +1,23 @@
+game_id,team_side,team_id,player_slug,player_id,player,jersey,is_starter,is_captain,is_active,seconds_played,points,fg_made,fg_attempted,fg_pct,fg2_made,fg2_attempted,fg2_pct,fg3_made,fg3_attempted,fg3_pct,ft_made,ft_attempted,ft_pct,total_rebounds,offensive_rebounds,defensive_rebounds,assists,steals,turnovers,blocks,blocks_received,fouls,fouls_on,plus_minus,efficiency
+11446,home,11,justinas-marcinkevicius,1762,J. Marcinkevičius,17,true,false,false,1974,9,4,9,44.4,4,7,57.1,0,2,0.0,1,2,50.0,9,3,6,3,1,0,1,0,4,3,16,16
+11446,home,11,ignas-vaitkus,116,I. Vaitkus,22,false,true,false,983,0,0,1,0.0,0,1,0.0,0,0,0.0,0,0,0.0,1,0,1,1,0,1,0,0,3,0,-11,-3
+11446,home,11,nedas-montvila,1859,N. Montvila,12,false,false,false,180,0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0,-2,0
+11446,home,11,jonas-zakas,28,J. Zakas,9,true,false,false,849,3,1,3,33.3,0,1,0.0,1,2,50.0,0,0,0.0,0,0,0,0,0,0,0,0,3,1,-2,-1
+11446,home,11,justinas-ramanauskas,1527,J. Ramanauskas,3,true,false,false,760,2,1,4,25.0,1,3,33.3,0,1,0.0,0,0,0.0,1,1,0,2,0,2,0,0,3,0,0,-3
+11446,home,11,lukas-valantinas,1839,L. Valantinas,7,false,false,false,486,2,1,1,100.0,1,1,100.0,0,0,0.0,0,0,0.0,1,0,1,0,0,0,0,0,0,0,-3,3
+11446,home,11,ethan-chargois,2013,E. Chargois,1,false,false,false,526,2,1,3,33.3,1,3,33.3,0,0,0.0,0,0,0.0,1,1,0,0,0,1,0,0,0,1,-13,1
+11446,home,11,jd-muila,2017,J. Muila,21,true,false,false,1881,16,5,11,45.5,5,11,45.5,0,0,0.0,6,9,66.7,14,4,10,1,0,1,0,0,4,7,2,24
+11446,home,11,trent-mclaughlin,2019,T. McLaughlin,24,true,false,false,1918,17,7,13,53.9,4,6,66.7,3,7,42.9,0,0,0.0,6,1,5,1,4,4,0,0,4,3,5,17
+11446,home,11,tyler-peterson,2021,T. Peterson,51,false,false,false,1605,13,6,9,66.7,6,7,85.7,0,2,0.0,1,2,50.0,6,2,4,3,0,5,1,0,4,4,17,14
+11446,home,11,selton-miguel,2039,S. Miguel,5,false,false,false,1808,22,8,19,42.1,6,12,50.0,2,7,28.6,4,8,50.0,5,1,4,1,0,5,0,0,2,5,2,11
+11446,home,11,kenny-pohto,2047,K. Pohto,11,false,false,false,530,2,1,2,50.0,1,2,50.0,0,0,0.0,0,0,0.0,5,2,3,0,0,1,0,0,3,0,4,2
+11446,away,41,dziugas-slavinskas,333,D. Slavinskas,98,true,true,false,430,2,1,2,50.0,1,2,50.0,0,0,0.0,0,0,0.0,1,0,1,0,0,1,0,0,0,1,-2,2
+11446,away,41,lukas-kreismontas,747,L. Kreišmontas,8,true,false,false,2193,20,5,8,62.5,3,4,75.0,2,4,50.0,8,10,80.0,7,3,4,1,2,2,0,1,2,7,-8,27
+11446,away,41,matas-repsys,1530,M. Repšys,11,false,false,false,1493,7,3,7,42.9,3,5,60.0,0,2,0.0,1,4,25.0,8,2,6,0,1,2,0,1,4,4,-7,6
+11446,away,41,adomas-sidarevicius,1514,A. Sidarevičius,13,false,false,false,739,3,1,2,50.0,0,1,0.0,1,1,100.0,0,0,0.0,2,0,2,5,1,2,0,0,1,2,0,9
+11446,away,41,modestas-babraitis,1764,M. Babraitis,3,false,false,false,4,0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0,0,0
+11446,away,41,mihkel-kirves,1911,M. Kirves,12,true,false,false,1530,11,3,10,30.0,3,9,33.3,0,1,0.0,5,5,100.0,7,3,4,1,0,0,0,0,4,3,1,11
+11446,away,41,makai-ashton,2005,M. Ashton,2,true,false,false,1960,8,2,12,16.7,2,8,25.0,0,4,0.0,4,6,66.7,5,2,3,9,3,2,0,0,3,7,-3,15
+11446,away,41,benjamin-krikke,2027,B. Krikke,23,false,false,false,1367,19,8,12,66.7,7,11,63.6,1,1,100.0,2,2,100.0,3,2,1,0,0,3,0,0,5,2,-4,12
+11446,away,41,olin-carter,2033,O. Carter,33,true,false,false,2230,9,3,11,27.3,1,2,50.0,2,9,22.2,1,2,50.0,1,0,1,0,1,0,0,0,3,3,2,2
+11446,away,41,lesley-varner,2045,L. Varner,0,false,false,false,1555,6,2,9,22.2,1,7,14.3,1,2,50.0,1,2,50.0,1,0,1,4,3,0,0,0,2,1,6,5

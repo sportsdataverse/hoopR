@@ -1,0 +1,10 @@
+season_id,season_end_year,table,position,team_slug,team_name,played,won,lost,win_pct,streak,points_for_avg,points_against_avg,last5
+35,2027,full,1,zalgiris,Žalgiris,5,5,0,100.0,5,93.8,74.4,WWWWW
+35,2027,full,2,gargzdai,Gargždai,5,4,1,80.0,4,92.2,87.8,LWWWW
+35,2027,full,3,siauliai,Šiauliai,5,3,2,60.0,2,81.8,80.4,LWLWW
+35,2027,home,1,zalgiris,Žalgiris,2,2,0,<null>,<null>,99.0,75.0,WW
+35,2027,home,2,gargzdai,Gargždai,3,2,1,<null>,<null>,84.7,85.0,LWW
+35,2027,home,3,siauliai,Šiauliai,2,2,0,<null>,<null>,84.5,74.0,WW
+35,2027,away,1,zalgiris,Žalgiris,3,3,0,<null>,<null>,90.3,74.0,WWW
+35,2027,away,2,gargzdai,Gargždai,2,2,0,<null>,<null>,103.5,92.0,WW
+35,2027,away,3,siauliai,Šiauliai,3,1,2,<null>,<null>,80.0,84.7,LLW

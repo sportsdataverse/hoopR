@@ -1,0 +1,14 @@
+game_id,group,stat,label,home_value,home_percentage,home_graph_length,home_winning,away_value,away_percentage,away_graph_length,away_winning
+11446,<null>,field_goals,Metimai iš žaidimo,35/75,46.7,46.7,true,28/73,38.4,38.4,false
+11446,shooting,two_pointers,Dvitaškiai metimai,29/54,53.7,53.7,true,21/49,42.9,42.9,false
+11446,shooting,three_pointers,Tritaškiai metimai,6/21,28.6,28.6,false,7/24,29.2,29.2,true
+11446,shooting,free_throws,Baudų metimai,12/21,57.1,57.1,false,22/31,71.0,71.0,true
+11446,<null>,points,Taškai,88,<null>,50.87,true,85,<null>,49.13,false
+11446,main,rebounds,Atkovoti kamuoliai,51,<null>,57.3,true,38,<null>,42.7,false
+11446,<null>,defensive_rebounds,Atkovoti kamuoliai gynyboje,35,<null>,57.38,true,26,<null>,42.62,false
+11446,<null>,offensive_rebounds,Atkovoti kamuoliai puolime,16,<null>,57.14,true,12,<null>,42.86,false
+11446,main,assists,Rezultatyvūs perdavimai,12,<null>,37.5,false,20,<null>,62.5,true
+11446,main,steals,Perimti kamuoliai,5,<null>,31.25,false,11,<null>,68.75,true
+11446,main,blocks,Blokai,2,<null>,100.0,true,0,<null>,0.0,false
+11446,<null>,turnovers,Klaidos,22,<null>,35.29,false,12,<null>,64.71,true
+11446,<null>,fouls,Pražangos,30,<null>,44.44,false,24,<null>,55.56,true

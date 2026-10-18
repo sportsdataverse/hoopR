@@ -1,0 +1,23 @@
+season_id,season_end_year,game_id,date,weekday,time,arena,city,home_slug,home_code,home_name,home_score,away_slug,away_code,away_name,away_score,winner_highlighted
+49436,2027,11599,2026-10-11,Sunday,19:00,Šiaulių arena,Šiauliai,siauliai,ŠIA,Šiauliai,83,juventus,JUV,Juventus,71,home
+49436,2027,11597,2026-10-11,Sunday,17:00,Kėdainių arena,Kėdainiai,nevezis-paskolu-klubas,NEV,Nevėžis-Paskolų klubas,76,zalgiris,ŽAL,Žalgiris,80,away
+49436,2027,11596,2026-10-11,Sunday,16:30,Tauragės Arena,Tauragė,taurage,TAU,Tauragė,82,gargzdai,GAR,Gargždai,102,away
+49436,2027,11598,2026-10-10,Saturday,19:00,Kalnapilio arena,Panevėžys,lietkabelis,LIE,Lietkabelis,65,hipocredit,HIP,Hipocredit,71,away
+49436,2027,11595,2026-10-10,Saturday,16:30,Arena Vilnius,Vilnius,rytas,RYT,Rytas,86,neptunas,NEP,Neptūnas,77,home
+49436,2027,11594,2026-10-04,Sunday,19:00,Utenos daugiafunkcis sporto centras,Utena,juventus,JUV,Juventus,93,taurage,TAU,Tauragė,77,home
+49436,2027,11593,2026-10-04,Sunday,16:30,Žalgirio arena,Kaunas,zalgiris,ŽAL,Žalgiris,97,lietkabelis,LIE,Lietkabelis,68,home
+49436,2027,11592,2026-10-03,Saturday,19:00,Jonavos sporto arena,Jonava,hipocredit,HIP,Hipocredit,63,siauliai,ŠIA,Šiauliai,79,away
+49436,2027,11591,2026-10-03,Saturday,17:00,Švyturio arena,Klaipėda,neptunas,NEP,Neptūnas,89,nevezis-paskolu-klubas,NEV,Nevėžis-Paskolų klubas,62,home
+49436,2027,11590,2026-10-03,Saturday,16:30,Arena Vilnius,Vilnius,rytas,RYT,Rytas,102,gargzdai,GAR,Gargždai,105,away
+49436,2027,11589,2026-09-27,Sunday,19:00,Utenos daugiafunkcis sporto centras,Utena,juventus,JUV,Juventus,94,nevezis-paskolu-klubas,NEV,Nevėžis-Paskolų klubas,77,home
+49436,2027,11587,2026-09-27,Sunday,16:30,Žalgirio arena,Kaunas,zalgiris,ŽAL,Žalgiris,101,siauliai,ŠIA,Šiauliai,82,home
+49436,2027,11586,2026-09-26,Saturday,19:00,Gargždų SC arena,Gargždai,gargzdai,GAR,Gargždai,87,neptunas,NEP,Neptūnas,78,home
+49436,2027,11588,2026-09-26,Saturday,16:30,Kalnapilio arena,Panevėžys,lietkabelis,LIE,Lietkabelis,85,taurage,TAU,Tauragė,79,home
+49436,2027,11585,2026-09-23,Wednesday,18:30,Šiaulių arena,Šiauliai,siauliai,ŠIA,Šiauliai,86,lietkabelis,LIE,Lietkabelis,77,home
+49436,2027,11584,2026-09-23,Wednesday,18:30,Švyturio arena,Klaipėda,neptunas,NEP,Neptūnas,99,juventus,JUV,Juventus,84,home
+49436,2027,11583,2026-09-22,Tuesday,18:50,Jonavos sporto arena,Jonava,hipocredit,HIP,Hipocredit,85,nevezis-paskolu-klubas,NEV,Nevėžis-Paskolų klubas,65,home
+49436,2027,11582,2026-09-20,Sunday,19:00,Gargždų SC arena,Gargždai,gargzdai,GAR,Gargždai,90,siauliai,ŠIA,Šiauliai,79,home
+49436,2027,11581,2026-09-20,Sunday,16:30,Švyturio arena,Klaipėda,neptunas,NEP,Neptūnas,69,zalgiris,ŽAL,Žalgiris,93,away
+49436,2027,11580,2026-09-19,Saturday,19:00,Tauragės Arena,Tauragė,taurage,TAU,Tauragė,95,hipocredit,HIP,Hipocredit,90,home
+49436,2027,11579,2026-09-19,Saturday,16:30,Kalnapilio arena,Panevėžys,lietkabelis,LIE,Lietkabelis,84,juventus,JUV,Juventus,82,home
+49436,2027,11578,2026-09-17,Thursday,18:30,Gargždų SC arena,Gargždai,gargzdai,GAR,Gargždai,77,zalgiris,ŽAL,Žalgiris,98,away
