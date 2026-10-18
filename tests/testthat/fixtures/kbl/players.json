@@ -1,0 +1,44 @@
+[
+  {
+    "pcode": "290801",
+    "pname": "CJ 레슬리",
+    "tcode": "70",
+    "backNum": "15",
+    "pos": "FD",
+    "tname": "안양 KGC",
+    "playerFlag": "1",
+    "img": "https://kbl.or.kr/files/kbl/players-photo/290801.png",
+    "ename": "CJ 레슬리",
+    "tnameEn": "JUNG KWAN JANG",
+    "teamLogoClass": "kgc",
+    "playerLastCareerIf": "25"
+  },
+  {
+    "pcode": "235041",
+    "pname": "G.J 헌터",
+    "tcode": "35",
+    "backNum": "7",
+    "pos": "GD",
+    "tname": "수원삼성",
+    "playerFlag": "1",
+    "img": "https://kbl.or.kr/files/kbl/players-photo/235041.png",
+    "ename": "Gray Hunter",
+    "tnameEn": "SAMSUNG",
+    "teamLogoClass": "ss",
+    "playerLastCareerIf": "5"
+  },
+  {
+    "pcode": "210070",
+    "pname": "R.F. 바셋",
+    "tcode": "60",
+    "backNum": "5",
+    "pos": "C",
+    "tname": "전주KCC",
+    "playerFlag": "1",
+    "img": "https://kbl.or.kr/files/kbl/players-photo/210070.png",
+    "ename": "R.F. Bassette",
+    "tnameEn": "KCC",
+    "teamLogoClass": "kcc",
+    "playerLastCareerIf": "10"
+  }
+]

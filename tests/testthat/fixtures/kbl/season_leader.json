@@ -1,0 +1,164 @@
+[
+  {
+    "part": "score",
+    "playerFlag": null,
+    "list": [
+      {
+        "rank": 1,
+        "value": 29.5,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291579",
+          "pname": "게이지 프림",
+          "tcode": "10",
+          "backNum": "44",
+          "pos": "C",
+          "tname": "울산 현대모비스",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291579.png",
+          "ename": "Gaige Colburn Prim"
+        }
+      },
+      {
+        "rank": 2,
+        "value": 28.5,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291671",
+          "pname": "패리스 배스",
+          "tcode": "06",
+          "backNum": "35",
+          "pos": "FD",
+          "tname": "수원 KT",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291671.png",
+          "ename": "Paris Nickolas Bass"
+        }
+      },
+      {
+        "rank": 3,
+        "value": 24.0,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291785",
+          "pname": "헨리 엘런슨",
+          "tcode": "16",
+          "backNum": "8",
+          "pos": "FD",
+          "tname": "원주 DB",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291785.png",
+          "ename": "Henry Ellenson"
+        }
+      }
+    ]
+  },
+  {
+    "part": "rb",
+    "playerFlag": null,
+    "list": [
+      {
+        "rank": 1,
+        "value": 13.4,
+        "gameCount": 5,
+        "player": {
+          "pcode": "291342",
+          "pname": "숀 롱",
+          "tcode": "60",
+          "backNum": "36",
+          "pos": "C",
+          "tname": "부산 KCC",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291342.png",
+          "ename": "Shawn Long"
+        }
+      },
+      {
+        "rank": 2,
+        "value": 12.75,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291883",
+          "pname": "존 무니",
+          "tcode": "70",
+          "backNum": "33",
+          "pos": "C",
+          "tname": "안양 정관장",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291883.png",
+          "ename": "John Mooney"
+        }
+      },
+      {
+        "rank": 3,
+        "value": 11.75,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291432",
+          "pname": "아셈 마레이",
+          "tcode": "50",
+          "backNum": "50",
+          "pos": "C",
+          "tname": "창원 LG",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291432.png",
+          "ename": "Assem Marei"
+        }
+      }
+    ]
+  },
+  {
+    "part": "ast",
+    "playerFlag": null,
+    "list": [
+      {
+        "rank": 1,
+        "value": 9.6,
+        "gameCount": 5,
+        "player": {
+          "pcode": "291085",
+          "pname": "허훈",
+          "tcode": "60",
+          "backNum": "7",
+          "pos": "GD",
+          "tname": "부산 KCC",
+          "playerFlag": "0",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291085.png",
+          "ename": "HEO HOON"
+        }
+      },
+      {
+        "rank": 2,
+        "value": 7.25,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291511",
+          "pname": "이선 알바노",
+          "tcode": "16",
+          "backNum": "17",
+          "pos": "GD",
+          "tname": "원주 DB",
+          "playerFlag": "2",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291511.png",
+          "ename": "Ethan Alvano"
+        }
+      },
+      {
+        "rank": 3,
+        "value": 6.5,
+        "gameCount": 4,
+        "player": {
+          "pcode": "291432",
+          "pname": "아셈 마레이",
+          "tcode": "50",
+          "backNum": "50",
+          "pos": "C",
+          "tname": "창원 LG",
+          "playerFlag": "1",
+          "img": "https://kbl.or.kr/files/kbl/players-photo/291432.png",
+          "ename": "Assem Marei"
+        }
+      }
+    ]
+  }
+]

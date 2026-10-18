@@ -1,0 +1,11 @@
+season,season_code,bracket_format,round,series_no,team_code,opponent_code,seed,wins,losses,game_date
+2025,45,new,quarterfinal,1,06,64,4,3,2,\N
+2025,45,new,quarterfinal,1,64,06,5,2,3,\N
+2025,45,new,quarterfinal,2,10,70,3,3,0,\N
+2025,45,new,quarterfinal,2,70,10,6,0,3,\N
+2025,45,new,semifinal,1,55,06,1,3,1,\N
+2025,45,new,semifinal,1,06,55,4,1,3,\N
+2025,45,new,semifinal,2,50,10,2,3,0,\N
+2025,45,new,semifinal,2,10,50,3,0,3,\N
+2025,45,new,final,1,55,50,1,3,4,\N
+2025,45,new,final,1,50,55,2,4,3,\N

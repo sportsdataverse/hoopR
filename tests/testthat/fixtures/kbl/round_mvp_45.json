@@ -1,0 +1,53 @@
+[
+  {
+    "seasonCode": 45,
+    "gameRound": 6,
+    "playerNo": "291008",
+    "teamCode": "70",
+    "storeLink": "http://kblstore.kbl.or.kr/web/product/productList?categoryNo=233146&childCategoryNo=0",
+    "goodsImageUrl": "/files/kgc/round-mvp/2025/12/15/93020cc4-7bfa-4277-9e39-6e4ec42248cc_[B@5d37ff01.png",
+    "gameCount": 9,
+    "totalHour": 0,
+    "totalMinute": 0,
+    "totalSecond": 17087,
+    "totalScore": 131,
+    "totalRebound": 36,
+    "totalAssist": 48,
+    "kname": "박지훈",
+    "ename": "PARK JIHOON"
+  },
+  {
+    "seasonCode": 45,
+    "gameRound": 5,
+    "playerNo": "291084",
+    "teamCode": "55",
+    "storeLink": "http://kblstore.kbl.or.kr/web/product/productList?categoryNo=233146&childCategoryNo=0",
+    "goodsImageUrl": "/files/sk/round-mvp/2025/12/15/44a632ba-0544-460b-b8e6-0b09276c8dbf_[B@7aba402f.png",
+    "gameCount": 9,
+    "totalHour": 0,
+    "totalMinute": 0,
+    "totalSecond": 19151,
+    "totalScore": 143,
+    "totalRebound": 49,
+    "totalAssist": 27,
+    "kname": "안영준",
+    "ename": "AN YOUNGJUN"
+  },
+  {
+    "seasonCode": 45,
+    "gameRound": 4,
+    "playerNo": "291248",
+    "teamCode": "55",
+    "storeLink": "http://kblstore.kbl.or.kr/web/product/productList?categoryNo=233146&childCategoryNo=0",
+    "goodsImageUrl": "/files/sk/round-mvp/2025/12/15/0b229368-21db-4c66-aa49-5a52a33d91b0_[B@6597c3e3.png",
+    "gameCount": 9,
+    "totalHour": 0,
+    "totalMinute": 0,
+    "totalSecond": 18175,
+    "totalScore": 215,
+    "totalRebound": 105,
+    "totalAssist": 47,
+    "kname": "자밀 워니",
+    "ename": "JAMEEL MARCUS WARNEY"
+  }
+]

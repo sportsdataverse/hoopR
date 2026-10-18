@@ -1,0 +1,11 @@
+gmkey,season_code,season,game_code,game_no,part,side,pcode,player_name,player_name_en,team_name,value,play_min,play_sec
+S47G01N49,47,2026,01,49,ast,home,291488,이정현,LEE JUNG HYUN,고양 소노,5.0,33,11
+S47G01N49,47,2026,01,49,ast,away,290648,한상혁,HAN SANG HYEOK,창원 LG,5.0,19,1
+S47G01N49,47,2026,01,49,bs,home,291789,제일린 존슨,Jaylen Johnson,고양 소노,2.0,10,5
+S47G01N49,47,2026,01,49,bs,away,290478,장민국,JANG M K,창원 LG,1.0,11,49
+S47G01N49,47,2026,01,49,rb,home,291788,네이던 나이트,Nathan Knight,고양 소노,11.0,29,55
+S47G01N49,47,2026,01,49,rb,away,291670,마이클 에릭,Michael Eric,창원 LG,10.0,27,10
+S47G01N49,47,2026,01,49,score,home,291488,이정현,LEE JUNG HYUN,고양 소노,20.0,33,11
+S47G01N49,47,2026,01,49,score,away,291640,유기상,YU KI SANG,창원 LG,16.0,19,53
+S47G01N49,47,2026,01,49,stl,home,291788,네이던 나이트,Nathan Knight,고양 소노,2.0,29,55
+S47G01N49,47,2026,01,49,stl,away,290648,한상혁,HAN SANG HYEOK,창원 LG,2.0,19,1

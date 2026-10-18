@@ -1,0 +1,4 @@
+rank,team_code,team_name,team_name_full,wins,losses,draws,win_diff,home_wins,home_losses,away_wins,away_losses,conti_win,conti_loss,max_win,max_loss,last_five
+1,35,서울 삼성,서울 삼성 썬더스,3,0,0,0.0,2,0,1,0,3,0,3,0,"1,1,1"
+2,70,안양 정관장,안양 정관장 레드부스터스,3,1,0,0.5,2,0,1,1,1,0,2,1,"1,0,1"
+2,06,수원 KT,수원 KT 소닉붐,3,1,0,0.5,2,1,1,0,3,0,3,1,"1,1,1"
