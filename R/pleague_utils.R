@@ -499,27 +499,48 @@
 )
 
 #: phrase -> events over the 404 finished 2022-23..2025-26 games; "" = a row with no action text.
-.PLEAGUE_OBSERVED <- c(
-  "\u6436\u5230\u9632\u5b88\u7c43\u677f" = 29537, "\u4e0b\u5834\u4f11\u606f" = 25532, "\u66ff\u63db\u4e0a\u5834" = 25505, "\u4e09\u5206\u7403\u4e0d\u9032" = 17046,
-  "\u9020\u6210\u5c0d\u624b\u72af\u898f" = 17035, "\u52a9\u653b" = 17020, "\u500b\u4eba\u72af\u898f" = 15745, "\u6436\u5230\u9032\u653b\u7c43\u677f" = 12379, "\u4e09\u5206\u7403\u5f97\u5206" = 7817,
-  "\u6284\u622a" = 7361, "\u50b3\u7403\u5931\u8aa4" = 6325, "\u7b2c\u4e8c\u7f70 \u7f70\u9032" = 5798, "\u5f97\u5230\u5169\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u7f70\u9032" = 5187,
-  "\u4e0a\u7c43\u5f97\u5206" = 4428, "\u7a81\u7834\u4e0a\u7c43\u5f97\u5206" = 4281, "\u7a81\u7834\u4e0a\u7c43\u4e0d\u9032" = 3961, "\u8df3\u6295\u4e0d\u9032" = 3606, "\u63a7\u7403\u5931\u8aa4" = 3547,
-  "\u4e0a\u7c43\u4e0d\u9032" = 3403, "\u963b\u653b" = 3181, "\u62cb\u6295\u4e0d\u9032" = 3052, "\u66ab\u505c" = 2854, "\u5f97\u5230\u5169\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u4e0d\u9032" = 2736,
-  "\u7b2c\u4e8c\u7f70 \u4e0d\u9032" = 2319, "\u88dc\u7c43\u5f97\u5206" = 2138, "\u62cb\u6295\u5f97\u5206" = 1920, "\u8df3\u6295\u5f97\u5206" = 1657, "\u6025\u505c\u8df3\u6295\u4e0d\u9032" = 1564,
-  "\u88dc\u7c43\u4e0d\u9032" = 1539, "\u5f97\u5230\u4e00\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u7f70\u9032" = 1326, "\u704c\u7c43\u5f97\u5206" = 1316, "\u8f49\u8eab\u8df3\u6295\u4e0d\u9032" = 1158,
-  "\u5f8c\u4ef0\u8df3\u6295\u4e0d\u9032" = 1121, "\u9032\u653b\u72af\u898f" = 1024, "\u9032\u653b\u5931\u8aa4" = 1007, "\u6025\u505c\u8df3\u6295\u5f97\u5206" = 1004,
-  "\u4e09\u5206\u5916\u7dda\u6025\u505c\u8df3\u6295\u4e0d\u9032" = 922, "\u52fe\u5c04\u4e0d\u9032" = 773, "\u5e36\u7403\u8d70\u6b65" = 718, "\u8df3\u7403 \u8d0f" = 708, "\u8f49\u8eab\u8df3\u6295\u5f97\u5206" = 672,
-  "\u5f97\u5230\u4e00\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u4e0d\u9032" = 669, "\u52fe\u5c04\u5f97\u5206" = 610, "\u5f8c\u4ef0\u8df3\u6295\u5f97\u5206" = 583, "\u4e09\u5206\u5916\u7dda\u5f8c\u64a4\u6b65\u6295\u7c43\u4e0d\u9032" = 559,
-  "shotClock \u5931\u8aa4" = 489, "\u4e09\u5206\u5916\u7dda\u6025\u505c\u8df3\u6295\u5f97\u5206" = 480, "\u7403\u51fa\u754c" = 441, "\u5f8c\u64a4\u6b65\u6295\u7c43\u4e0d\u9032" = 410,
-  "\u8df3\u7403 \u8f38" = 404, "\u9055\u53cd\u904b\u52d5\u9053\u5fb7\u72af\u898f" = 261, "\u6280\u8853\u72af\u898f" = 210, "3Sec \u5931\u8aa4" = 249,
-  "\u4e09\u5206\u5916\u7dda\u5f8c\u64a4\u6b65\u6295\u7c43\u5f97\u5206" = 245, "\u5f8c\u64a4\u6b65\u6295\u7c43\u5f97\u5206" = 243, "alleyOop\u5f97\u5206" = 205, " " = 169, "\u4e0d\u9032" = 168,
-  "\u704c\u7c43\u4e0d\u9032" = 162, "\u5f97\u5206" = 158, "\u7b2c\u4e09\u7f70 \u7f70\u9032" = 149, "\u5f97\u5230\u4e09\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u7f70\u9032" = 128,
-  "backCourt \u5931\u8aa4" = 96, "\u4e09\u5206\u5916\u7dda\u5f8c\u4ef0\u8df3\u6295\u4e0d\u9032" = 92, "videoReview, coachChallenge," = 82,
-  "alleyOop\u4e0d\u9032" = 81, "\u72af\u898fcoachTechnical" = 75, "videoReview, instantReplaySystem," = 67,
-  "\u5f97\u5230\u4e09\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u4e0d\u9032" = 67, "doubleDribble \u5931\u8aa4" = 53, "\u5176\u4ed6\u5931\u8aa4" = 51, "\u4e09\u5206\u5916\u7dda\u5f8c\u4ef0\u8df3\u6295\u5f97\u5206" = 48,
-  "carrying \u5931\u8aa4" = 47, "\u7b2c\u4e09\u7f70 \u4e0d\u9032" = 46, "5Sec \u5931\u8aa4" = 40, "\u72af\u898fbenchTechnical" = 35, "8Sec \u5931\u8aa4" = 26,
-  "\u4e09\u5206\u5916\u7dda\u8f49\u8eab\u8df3\u6295\u4e0d\u9032" = 23, "\u72af\u898f" = 18, "\u4e09\u5206\u5916\u7dda\u8f49\u8eab\u8df3\u6295\u5f97\u5206" = 10,
-  "videoReview, instantReplaySystem, 1" = 6, "offensiveGoalTending \u5931\u8aa4" = 4, "\u72af\u898fdisqualifying" = 2
+.PLEAGUE_OBSERVED <- stats::setNames(
+  c(
+    29537, 25532, 25505, 17046, 17035, 17020, 15745, 12379, 7817, 7361, 6325, 5798, 5187, 4428, 4281, 3961, 3606,
+    3547, 3403, 3181, 3052, 2854, 2736, 2319, 2138, 1920, 1657, 1564, 1539, 1326, 1316, 1158, 1121, 1024, 1007, 1004,
+    922, 773, 718, 708, 672, 669, 610, 583, 559, 489, 480, 441, 410, 404, 261, 210, 249, 245, 243, 205, 169, 168,
+    162, 158, 149, 128, 96, 92, 82, 81, 75, 67, 67, 53, 51, 48, 47, 46, 40, 35, 26, 23, 18, 10, 6, 4, 2
+  ),
+  # names via setNames(): a non-ASCII name written in source is lost in a C locale
+  c(
+    "\u6436\u5230\u9632\u5b88\u7c43\u677f", "\u4e0b\u5834\u4f11\u606f", "\u66ff\u63db\u4e0a\u5834",
+    "\u4e09\u5206\u7403\u4e0d\u9032", "\u9020\u6210\u5c0d\u624b\u72af\u898f", "\u52a9\u653b",
+    "\u500b\u4eba\u72af\u898f", "\u6436\u5230\u9032\u653b\u7c43\u677f", "\u4e09\u5206\u7403\u5f97\u5206",
+    "\u6284\u622a", "\u50b3\u7403\u5931\u8aa4", "\u7b2c\u4e8c\u7f70 \u7f70\u9032",
+    "\u5f97\u5230\u5169\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u7f70\u9032", "\u4e0a\u7c43\u5f97\u5206",
+    "\u7a81\u7834\u4e0a\u7c43\u5f97\u5206", "\u7a81\u7834\u4e0a\u7c43\u4e0d\u9032", "\u8df3\u6295\u4e0d\u9032",
+    "\u63a7\u7403\u5931\u8aa4", "\u4e0a\u7c43\u4e0d\u9032", "\u963b\u653b", "\u62cb\u6295\u4e0d\u9032",
+    "\u66ab\u505c", "\u5f97\u5230\u5169\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u4e0d\u9032",
+    "\u7b2c\u4e8c\u7f70 \u4e0d\u9032", "\u88dc\u7c43\u5f97\u5206", "\u62cb\u6295\u5f97\u5206",
+    "\u8df3\u6295\u5f97\u5206", "\u6025\u505c\u8df3\u6295\u4e0d\u9032", "\u88dc\u7c43\u4e0d\u9032",
+    "\u5f97\u5230\u4e00\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u7f70\u9032", "\u704c\u7c43\u5f97\u5206",
+    "\u8f49\u8eab\u8df3\u6295\u4e0d\u9032", "\u5f8c\u4ef0\u8df3\u6295\u4e0d\u9032", "\u9032\u653b\u72af\u898f",
+    "\u9032\u653b\u5931\u8aa4", "\u6025\u505c\u8df3\u6295\u5f97\u5206",
+    "\u4e09\u5206\u5916\u7dda\u6025\u505c\u8df3\u6295\u4e0d\u9032", "\u52fe\u5c04\u4e0d\u9032",
+    "\u5e36\u7403\u8d70\u6b65", "\u8df3\u7403 \u8d0f", "\u8f49\u8eab\u8df3\u6295\u5f97\u5206",
+    "\u5f97\u5230\u4e00\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u4e0d\u9032", "\u52fe\u5c04\u5f97\u5206",
+    "\u5f8c\u4ef0\u8df3\u6295\u5f97\u5206", "\u4e09\u5206\u5916\u7dda\u5f8c\u64a4\u6b65\u6295\u7c43\u4e0d\u9032",
+    "shotClock \u5931\u8aa4", "\u4e09\u5206\u5916\u7dda\u6025\u505c\u8df3\u6295\u5f97\u5206", "\u7403\u51fa\u754c",
+    "\u5f8c\u64a4\u6b65\u6295\u7c43\u4e0d\u9032", "\u8df3\u7403 \u8f38",
+    "\u9055\u53cd\u904b\u52d5\u9053\u5fb7\u72af\u898f", "\u6280\u8853\u72af\u898f", "3Sec \u5931\u8aa4",
+    "\u4e09\u5206\u5916\u7dda\u5f8c\u64a4\u6b65\u6295\u7c43\u5f97\u5206",
+    "\u5f8c\u64a4\u6b65\u6295\u7c43\u5f97\u5206", "alleyOop\u5f97\u5206", " ", "\u4e0d\u9032",
+    "\u704c\u7c43\u4e0d\u9032", "\u5f97\u5206", "\u7b2c\u4e09\u7f70 \u7f70\u9032",
+    "\u5f97\u5230\u4e09\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u7f70\u9032", "backCourt \u5931\u8aa4",
+    "\u4e09\u5206\u5916\u7dda\u5f8c\u4ef0\u8df3\u6295\u4e0d\u9032", "videoReview, coachChallenge,",
+    "alleyOop\u4e0d\u9032", "\u72af\u898fcoachTechnical", "videoReview, instantReplaySystem,",
+    "\u5f97\u5230\u4e09\u6b21\u7f70\u7403 \u7b2c\u4e00\u7f70 \u4e0d\u9032", "doubleDribble \u5931\u8aa4",
+    "\u5176\u4ed6\u5931\u8aa4", "\u4e09\u5206\u5916\u7dda\u5f8c\u4ef0\u8df3\u6295\u5f97\u5206",
+    "carrying \u5931\u8aa4", "\u7b2c\u4e09\u7f70 \u4e0d\u9032", "5Sec \u5931\u8aa4", "\u72af\u898fbenchTechnical",
+    "8Sec \u5931\u8aa4", "\u4e09\u5206\u5916\u7dda\u8f49\u8eab\u8df3\u6295\u4e0d\u9032", "\u72af\u898f",
+    "\u4e09\u5206\u5916\u7dda\u8f49\u8eab\u8df3\u6295\u5f97\u5206", "videoReview, instantReplaySystem, 1",
+    "offensiveGoalTending \u5931\u8aa4", "\u72af\u898fdisqualifying"
+  )
 )
 # the blank-phrase row is keyed " " above (an R name cannot be ""): rename it
 names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
@@ -582,8 +603,9 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
 }
 
 .PLEAGUE_FT_PHRASE <- "(?:\u5f97\u5230(.)\u6b21\u7f70\u7403 )?\u7b2c(.)\u7f70 (\u7f70\u9032|\u4e0d\u9032)"
-.PLEAGUE_FT_AWARDED <- c("\u4e00" = 1L, "\u5169" = 2L, "\u4e09" = 3L)
-.PLEAGUE_FT_ORDINAL <- c("\u4e00" = 1L, "\u4e8c" = 2L, "\u4e09" = 3L)
+# non-ASCII names via setNames() (a name written in source is lost in a C locale); read with match()
+.PLEAGUE_FT_AWARDED <- stats::setNames(1:3, c("\u4e00", "\u5169", "\u4e09"))
+.PLEAGUE_FT_ORDINAL <- stats::setNames(1:3, c("\u4e00", "\u4e8c", "\u4e09"))
 .PLEAGUE_PERIOD <- "(Q[1-4]|OT[1-9])-tr"
 .PLEAGUE_SCORE <- "([0-9]+) - ([0-9]+)"
 
@@ -686,8 +708,8 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
       seq = length(events) + 1L, period = per, clock = clock, side = side, jersey = who$jersey,
       player_zh = who$player, action = if (nzchar(phrase)) .PLEAGUE_ACTIONS$code[[phrase]] else .PLEAGUE_UNLABELLED[1],
       action_zh = phrase, text_zh = text_zh,
-      ft_number = if (is.null(ftm)) NA_integer_ else .PLEAGUE_FT_ORDINAL[[ftm[3]]],
-      ft_awarded = if (is.null(ftm) || !nzchar(ftm[2])) NA_integer_ else unname(.PLEAGUE_FT_AWARDED[ftm[2]]),
+      ft_number = if (is.null(ftm)) NA_integer_ else .PLEAGUE_FT_ORDINAL[[match(ftm[3], names(.PLEAGUE_FT_ORDINAL))]],
+      ft_awarded = if (is.null(ftm) || !nzchar(ftm[2])) NA_integer_ else unname(.PLEAGUE_FT_AWARDED[match(ftm[2], names(.PLEAGUE_FT_AWARDED))]),
       points = if (startsWith(act, "+") && act != "+") .pleague_int_text(sub("^\\++", "", act)) else NA_integer_,
       score_away = if (is.null(sc)) NA_integer_ else as.integer(sc[2]),
       score_home = if (is.null(sc)) NA_integer_ else as.integer(sc[3]),
@@ -813,8 +835,10 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
                           "fg3_pct", "ft", "ft_pct", "tov", "pf")
 .PLEAGUE_PLAYER_HEAD <- c("\u8cfd\u5b63", "\u51fa\u8cfd", "\u4e0a\u5834\u6642\u9593", "\u5f97\u5206", "\u7c43\u677f", "\u52a9\u653b", "\u6284\u622a", "\u963b\u653b", "\u4e8c\u5206", "\u4e8c\u5206%",
                           "\u4e09\u5206", "\u4e09\u5206%", "\u7f70\u7403", "\u7f70\u7403%", "\u5931\u8aa4", "\u72af\u898f")
-.PLEAGUE_BIO <- c("\u7dbd\u865f" = "nickname", "\u5e74\u8cc7" = "tenure", "\u8eab\u9ad8" = "height", "\u9ad4\u91cd" = "weight",
-                  "\u751f\u65e5" = "birthday", "\u51fa\u751f\u5730" = "birthplace", "\u8eab\u4efd" = "status_zh")
+.PLEAGUE_BIO <- stats::setNames(
+  c("nickname", "tenure", "height", "weight", "birthday", "birthplace", "status_zh"),
+  c("\u7dbd\u865f", "\u5e74\u8cc7", "\u8eab\u9ad8", "\u9ad4\u91cd", "\u751f\u65e5", "\u51fa\u751f\u5730", "\u8eab\u4efd")
+)
 
 .pleague_season_rows <- function(table, pid) {
   head <- .pleague_th_texts(table)
@@ -863,7 +887,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
     at <- regexpr("\uff1a", t, fixed = TRUE)
     k <- if (at > 0) substr(t, 1, at - 1L) else t
     v <- if (at > 0) substring(t, at + 1L) else ""
-    if (k %in% names(.PLEAGUE_BIO)) bio[[.PLEAGUE_BIO[[k]]]] <- .pleague_na_if_blank(.pleague_strip(v))
+    if (k %in% names(.PLEAGUE_BIO)) bio[[.PLEAGUE_BIO[[match(k, names(.PLEAGUE_BIO))]]]] <- .pleague_na_if_blank(.pleague_strip(v))
   }
   if (!setequal(names(bio), .PLEAGUE_BIO)) {
     .pleague_refuse(sprintf("layout drift: bio fields [%s]", paste(sort(names(bio)), collapse = ", ")))
@@ -1561,7 +1585,8 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   .pleague_frame("periods", rows)
 }
 
-.PLEAGUE_ROLES <- c("\u4e3b\u88c1\u5224" = "referee", "\u7b2c\u4e00\u6aa2\u67e5\u54e1" = "first_umpire", "\u7b2c\u4e8c\u6aa2\u67e5\u54e1" = "second_umpire")
+.PLEAGUE_ROLES <- stats::setNames(c("referee", "first_umpire", "second_umpire"),
+                                  c("\u4e3b\u88c1\u5224", "\u7b2c\u4e00\u6aa2\u67e5\u54e1", "\u7b2c\u4e8c\u6aa2\u67e5\u54e1"))
 
 .pleague_parse_officials <- function(raw) {
   r <- .pleague_rec(raw)
@@ -1571,7 +1596,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
     off <- .pleague_objs(r$officials)
     rows <- lapply(seq_along(off), function(n) {
       role <- .pleague_s(off[[n]]$role_zh)
-      list(gid = gid, official_no = n, role = if (is.na(role)) NA_character_ else unname(.PLEAGUE_ROLES[role]),
+      list(gid = gid, official_no = n, role = if (is.na(role)) NA_character_ else unname(.PLEAGUE_ROLES[match(role, names(.PLEAGUE_ROLES))]),
            role_zh = role, name_zh = .pleague_s(off[[n]]$name_zh))
     })
   }

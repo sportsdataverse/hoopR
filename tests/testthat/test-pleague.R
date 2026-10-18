@@ -126,8 +126,9 @@ pl_mismatches <- function(got, want_chr) {
 }
 pl_read_parity <- function(name) {
   path <- pl_fx("parity", paste0(name, ".csv"))
-  con <- if (file.exists(path)) file(path, encoding = "UTF-8") else gzfile(paste0(path, ".gz"), encoding = "UTF-8")
-  utils::read.csv(con, colClasses = "character", na.strings = "<null>", check.names = FALSE, encoding = "UTF-8")
+  # a path, not a re-encoding connection (which breaks in a C locale); read.csv reads the gzip too
+  if (!file.exists(path)) path <- paste0(path, ".gz")
+  utils::read.csv(path, colClasses = "character", na.strings = "<null>", check.names = FALSE, encoding = "UTF-8")
 }
 PL_RTYPE <- c(Int64 = "integer", String = "character", Float64 = "numeric", Boolean = "logical", Date = "Date")
 pl_types <- function(df) vapply(df, function(x) if (is.double(x) && !inherits(x, "Date")) "numeric" else class(x)[[1]], "")
