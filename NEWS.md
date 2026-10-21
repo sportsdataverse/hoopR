@@ -75,7 +75,11 @@
   line, matched case-insensitively: the college "MadeFreeThrow" type (made or missed)
   was transformed from ESPN's (25, 0) (`coordinate_x` = +/-41.75) and now reads
   `coordinate_x` = +/-28, `coordinate_y` = 0, as in sportsdataverse-py; its raw pair still
-  keeps ESPN's (25, 0). `espn_nba_pbp()` / `espn_mbb_pbp()` share the helper.
+  keeps ESPN's (25, 0). A "MadeFreeThrow" row carrying ESPN's "no location" sentinel
+  (about -2.1e8) also lands at +/-28 on the transformed pair; its raw pair keeps the sentinel.
+  `espn_nba_pbp()` / `espn_mbb_pbp()` share the helper. Seasons already published by
+  `load_mbb_pbp()` (hoopR-mbb-data) keep "MadeFreeThrow" `coordinate_x` at +/-41.75 until they are
+  republished (sportsdataverse-py REPROCESS run #3); new processing gives +/-28.
 
 * `espn_mbb_team_roster()` / `espn_nba_team_roster()` for a past season now
   build the roster from that season's published player box scores
