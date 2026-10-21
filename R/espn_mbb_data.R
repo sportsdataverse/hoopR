@@ -2896,37 +2896,61 @@ helper_espn_mbb_pbp <- function(resp) {
       purrr::pluck("plays")
 
     if ("coordinate.x" %in% names(plays) & "coordinate.y" %in% names(plays)) {
-      plays <- plays %>%
-        dplyr::mutate(
-          # convert types
-          coordinate.x = as.double(.data$coordinate.x),
-          coordinate.y = as.double(.data$coordinate.y),
-          # Free throws are adjusted automatically to 19' from baseline, which
-          # corresponds to 13.75' from the center of the basket (originally
-          # the center of the basket is (25, 0))
-          coordinate.y = dplyr::case_when(
-            stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
-            TRUE ~ .data$coordinate.y
-          ),
-          coordinate.x = dplyr::case_when(
-            stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
-            TRUE ~ .data$coordinate.x
-          ),
-          coordinate_x_transformed = dplyr::case_when(
-            .data$team.id == homeTeamId ~ -1 * (.data$coordinate.y - 41.75),
-            TRUE ~ .data$coordinate.y - 41.75
-          ),
-          coordinate_y_transformed = dplyr::case_when(
-            .data$team.id == homeTeamId ~ -1 * (.data$coordinate.x - 25),
-            TRUE ~ .data$coordinate.x - 25
+      if (all(c("coordinate.x.raw", "coordinate.y.raw") %in% names(plays))) {
+        # A payload processed by sportsdataverse-py (since its PR #844)
+        # already carries this block's output: the transformed pair in
+        # coordinate.x / coordinate.y and ESPN's pair in coordinate.x.raw /
+        # coordinate.y.raw. Keep both; transforming again would shift every
+        # shot a second time and the rename would duplicate the raw names.
+        plays <- plays %>%
+          dplyr::mutate(dplyr::across(
+            dplyr::all_of(c("coordinate.x", "coordinate.y", "coordinate.x.raw", "coordinate.y.raw")),
+            as.double
+          ))
+      } else {
+        plays <- plays %>%
+          dplyr::mutate(
+            # convert types
+            coordinate.x = as.double(.data$coordinate.x),
+            coordinate.y = as.double(.data$coordinate.y),
+            # Free throws are adjusted automatically to 19' from baseline, which
+            # corresponds to 13.75' from the center of the basket (originally
+            # the center of the basket is (25, 0))
+            coordinate.y = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 13.75,
+              TRUE ~ .data$coordinate.y
+            ),
+            coordinate.x = dplyr::case_when(
+              stringr::str_detect(.data$type.text, "Free Throw") ~ 25,
+              TRUE ~ .data$coordinate.x
+            ),
+            # The transformed pair puts every free throw on the line. The match
+            # above is case-sensitive and misses the college "MadeFreeThrow"
+            # type, whose raw pair keeps ESPN's (25, 0); a missing type.text
+            # is not a free throw.
+            is_ft = stringr::str_detect(
+              .data$type.text,
+              stringr::regex("free ?throw", ignore_case = TRUE)
+            ) %in% TRUE,
+            ft_x = dplyr::if_else(.data$is_ft, 25, .data$coordinate.x),
+            ft_y = dplyr::if_else(.data$is_ft, 13.75, .data$coordinate.y),
+            coordinate_x_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$ft_y - 41.75),
+              TRUE ~ .data$ft_y - 41.75
+            ),
+            coordinate_y_transformed = dplyr::case_when(
+              .data$team.id == homeTeamId ~ -1 * (.data$ft_x - 25),
+              TRUE ~ .data$ft_x - 25
+            )
+          ) %>%
+          dplyr::select(-"is_ft", -"ft_x", -"ft_y") %>%
+          dplyr::rename(
+            "coordinate.x.raw" = "coordinate.x",
+            "coordinate.y.raw" = "coordinate.y",
+            "coordinate.x" = "coordinate_x_transformed",
+            "coordinate.y" = "coordinate_y_transformed"
           )
-        ) %>%
-        dplyr::rename(
-          "coordinate.x.raw" = "coordinate.x",
-          "coordinate.y.raw" = "coordinate.y",
-          "coordinate.x" = "coordinate_x_transformed",
-          "coordinate.y" = "coordinate_y_transformed"
-        )
+      }
     }
 
     ## Written this way for compliance with data repository processing
