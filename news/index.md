@@ -45,6 +45,33 @@
   [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   carry the column once a season is republished.
 
+- [`helper_espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_nba_pbp.md)
+  /
+  [`helper_espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/helper_espn_mbb_pbp.md),
+  which the R creation scripts of `hoopR-nba-data` / `hoopR-mbb-data`
+  run on sportsdataverse-py’s processed `json/final` payloads, no longer
+  fail with “Names must be unique” on a payload whose plays already
+  carry `coordinate.x.raw` / `coordinate.y.raw` (sportsdataverse-py#844
+  and later). Such a payload is already transformed, so its coordinates
+  are kept as they are; any other payload is transformed exactly as
+  before, except that the transformed pair now puts every free throw on
+  the line, matched case-insensitively: the college “MadeFreeThrow” type
+  (made or missed) was transformed from ESPN’s (25, 0) (`coordinate_x` =
+  +/-41.75) and now reads `coordinate_x` = +/-28, `coordinate_y` = 0, as
+  in sportsdataverse-py; its raw pair still keeps ESPN’s (25, 0). A
+  “MadeFreeThrow” row carrying ESPN’s “no location” sentinel (about
+  -2.1e8) also lands at +/-28 on the transformed pair; its raw pair
+  keeps the sentinel.
+  [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  /
+  [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  share the helper. Seasons already published by
+  [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  (hoopR-mbb-data) keep “MadeFreeThrow” `coordinate_x` at +/-41.75 until
+  they are republished (sportsdataverse-py REPROCESS run
+  [\#3](https://github.com/sportsdataverse/hoopR/issues/3)); new
+  processing gives +/-28.
+
 - [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
   /
   [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)

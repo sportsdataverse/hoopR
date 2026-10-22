@@ -138,22 +138,22 @@ Other TBF Functions:
 # \donttest{
   try(tbf_standings(competition = "bsl", season = 2027))
 #> ── TBF Standings ──────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:34:21 UTC
+#> ℹ Data updated: 2026-10-22 03:45:15 UTC
 #> # A tibble: 16 × 18
 #>    season competition group activity_id team_process_id team_name     week  rank
 #>     <int> <chr>       <chr>       <int>           <int> <chr>        <int> <int>
 #>  1   2027 bsl         NA          22214          265991 BAHÇEŞEHİR …     4     1
-#>  2   2027 bsl         NA          22214          266030 TÜRK TELEKOM     4     2
-#>  3   2027 bsl         NA          22214          266029 TRABZONSPOR      4     3
-#>  4   2027 bsl         NA          22214          265990 ANADOLU EFES     4     4
-#>  5   2027 bsl         NA          22214          266027 KARŞIYAKA        4     5
-#>  6   2027 bsl         NA          22214          268222 BİOTEKNO KÖ…     4     6
-#>  7   2027 bsl         NA          22214          266048 ALİAĞA PETK…     4     7
-#>  8   2027 bsl         NA          22214          266025 FENERBAHÇE …     4     8
-#>  9   2027 bsl         NA          22214          265995 TOFAŞ            4     9
-#> 10   2027 bsl         NA          22214          265992 BEŞİKTAŞ         4    10
-#> 11   2027 bsl         NA          22214          266026 GALATASARAY…     4    11
-#> 12   2027 bsl         NA          22214          266024 ESENLER ERO…     4    12
+#>  2   2027 bsl         NA          22214          265990 ANADOLU EFES     4     2
+#>  3   2027 bsl         NA          22214          266030 TÜRK TELEKOM     4     3
+#>  4   2027 bsl         NA          22214          266024 ESENLER ERO…     4     4
+#>  5   2027 bsl         NA          22214          266029 TRABZONSPOR      4     5
+#>  6   2027 bsl         NA          22214          266027 KARŞIYAKA        4     6
+#>  7   2027 bsl         NA          22214          268222 BİOTEKNO KÖ…     4     7
+#>  8   2027 bsl         NA          22214          266048 ALİAĞA PETK…     4     8
+#>  9   2027 bsl         NA          22214          266025 FENERBAHÇE …     4     9
+#> 10   2027 bsl         NA          22214          265995 TOFAŞ            4    10
+#> 11   2027 bsl         NA          22214          265992 BEŞİKTAŞ         4    11
+#> 12   2027 bsl         NA          22214          266026 GALATASARAY…     4    12
 #> 13   2027 bsl         NA          22214          265993 PİZZABULLS …     4    13
 #> 14   2027 bsl         NA          22214          266028 YUKATEL DEN…     4    14
 #> 15   2027 bsl         NA          22214          266176 BURSASPOR B…     4    15

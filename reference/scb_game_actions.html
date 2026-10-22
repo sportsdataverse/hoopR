@@ -195,26 +195,8 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">scb_game_actions</span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"2006920"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── BBL/DBBL Game Play-by-Play from the SCB API ────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 22:33:06 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 516 × 20</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    league game_id action_id order_id action_identifier period game_time</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>750        1 0:0002                 1 00:10:00 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>751        2 3:0012                 1 00:10:00 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>752        3 3:0013                 1 00:09:47 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>753        4 3:0014                 1 00:09:21 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>754        5 3:0015                 1 00:09:21 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>755        6 3:0016                 1 00:09:17 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>756        7 3:0018                 1 00:09:07 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>757        8 3:0020                 1 00:08:50 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>758        9 3:0021                 1 00:08:50 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> bbl    2006920  20<span style="text-decoration: underline;">224</span>759       10 3:0022                 1 00:08:43 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 506 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 13 more variables: seconds_left &lt;int&gt;, real_time &lt;chr&gt;, type &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   qualifiers &lt;chr&gt;, is_successful &lt;lgl&gt;, season_team_id &lt;chr&gt;, side &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_player_id &lt;chr&gt;, assisting_season_player_id &lt;chr&gt;, shot_x &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   shot_y &lt;int&gt;, home_team_points &lt;int&gt;, guest_team_points &lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in scb_game_actions(game_id = "2006920") : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:13:55 UTC
+#> ℹ Data updated: 2026-10-22 02:36:26 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Head… Hagan, … Hall of Fa… 2026-10-… FALSE   NA     https:/… 46       
-#> 2  5.02e7 Head… NCAA su… The NCAA h… 2026-10-… FALSE   NA     https:/… 3170     
-#> 3  5.02e7 Head… Las Veg… A bettor i… 2026-10-… FALSE   David… https:/… 46       
-#> 4  5.02e7 Story Men's N… Will Pope … 2026-10-… FALSE   Jeff … https:/… 41       
-#> 5  5.02e7 Media John Ca… Calipari t… 2026-10-… FALSE   NA     https:/… 23       
+#> 1  2.81e7 Story Senator… Brady Tkac… 2026-10-… FALSE   Tory … https:/… 46       
+#> 2  5.02e7 Head… Hall of… Hall of Fa… 2026-10-… FALSE   NA     https:/… 41       
+#> 3  5.02e7 Head… Ex-athl… Two former… 2026-10-… FALSE   David… https:/… 41       
+#> 4  5.02e7 Head… Arizona… Arizona me… 2026-10-… FALSE   NA     https:/… 41       
+#> 5  5.02e7 Head… Spartan… Florida's … 2026-10-… FALSE   NA     https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:13:55 UTC
-#> # A tibble: 5 × 9
-#>        id type  headline description published premium byline link_web league_id
-#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Head… Knicks … The Knicks… 2026-10-… FALSE   NA     https:/… 46       
-#> 2  5.02e7 Head… 76ers, … The 76ers,… 2026-10-… FALSE   Kris … https:/… 46       
-#> 3  5.02e7 Head… No. 1 p… First over… 2026-10-… FALSE   NA     https:/… 46       
-#> 4  5.02e7 Media Denver … Denver Nug… 2026-10-… FALSE   NA     https:/… 46       
-#> 5  5.02e7 Media Portlan… Portland T… 2026-10-… FALSE   NA     https:/… 46       
+#> ℹ Data updated: 2026-10-22 02:36:26 UTC
+#> # A tibble: 5 × 8
+#>         id type  headline       description published premium link_web league_id
+#>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50244155 Media Charlotte Hor… "Charlotte… 2026-10-… FALSE   https:/… 46       
+#> 2 50244012 Media Edwards, Ball… "Edwards, … 2026-10-… FALSE   https:/… 46       
+#> 3 50243989 Media Atlanta Hawks… "Atlanta H… 2026-10-… FALSE   https:/… 46       
+#> 4 50243959 Recap Davis scores … "— Anthony… 2026-10-… FALSE   http://… 46       
+#> 5 50243887 Media Milwaukee Buc… "Milwaukee… 2026-10-… FALSE   https:/… 46       
 # }
 ```

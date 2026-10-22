@@ -96,20 +96,20 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-10 11:50:23 UTC
+#> ℹ Data updated: 2026-10-21 15:30:17 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
 #>  1   2027            1 ATL               Atlanta Hawks         Hawks          
 #>  2   2027            2 BOS               Boston Celtics        Celtics        
-#>  3   2027           17 BKN               Brooklyn Nets         Nets           
-#>  4   2027           30 CHA               Charlotte Hornets     Hornets        
-#>  5   2027            4 CHI               Chicago Bulls         Bulls          
-#>  6   2027            5 CLE               Cleveland Cavaliers   Cavaliers      
-#>  7   2027            6 DAL               Dallas Mavericks      Mavericks      
-#>  8   2027            7 DEN               Denver Nuggets        Nuggets        
-#>  9   2027            8 DET               Detroit Pistons       Pistons        
-#> 10   2027            9 GS                Golden State Warriors Warriors       
+#>  3   2027            3 NO                New Orleans Pelicans  Pelicans       
+#>  4   2027            4 CHI               Chicago Bulls         Bulls          
+#>  5   2027            5 CLE               Cleveland Cavaliers   Cavaliers      
+#>  6   2027            6 DAL               Dallas Mavericks      Mavericks      
+#>  7   2027            7 DEN               Denver Nuggets        Nuggets        
+#>  8   2027            8 DET               Detroit Pistons       Pistons        
+#>  9   2027            9 GS                Golden State Warriors Warriors       
+#> 10   2027           10 HOU               Houston Rockets       Rockets        
 #> # ℹ 20 more rows
 #> # ℹ 16 more variables: espn_location <chr>, espn_mascot <chr>,
 #> #   nba_team_id <chr>, nba_team_abbreviation <chr>, nba_team_name <chr>,
@@ -121,21 +121,21 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-10 11:50:54 UTC
-#> # A tibble: 1,281 × 16
+#> ℹ Data updated: 2026-10-21 15:30:46 UTC
+#> # A tibble: 1,210 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
-#>  1   2027 Pre-Season  2026-10-03                28                14
-#>  2   2027 Pre-Season  2026-10-04                 7                26
-#>  3   2027 Pre-Season  2026-10-04                12                 9
-#>  4   2027 Pre-Season  2026-10-05                 1                29
-#>  5   2027 Pre-Season  2026-10-05                 8                21
-#>  6   2027 Pre-Season  2026-10-05                20                18
-#>  7   2027 Pre-Season  2026-10-05                15                16
-#>  8   2027 Pre-Season  2026-10-05                23                13
-#>  9   2027 Pre-Season  2026-10-06                30                17
-#> 10   2027 Pre-Season  2026-10-06                25                 3
-#> # ℹ 1,271 more rows
+#>  1   2027 NA          2027-04-11                 6                29
+#>  2   2027 NA          2027-04-11                16                10
+#>  3   2027 NA          2027-04-11                24                22
+#>  4   2027 NA          2027-04-11                 7                25
+#>  5   2027 NA          2027-04-11                 9                26
+#>  6   2027 NA          2027-04-11                12                23
+#>  7   2027 NA          2027-04-11                13                21
+#>  8   2027 NA          2027-04-11                 2                15
+#>  9   2027 NA          2027-04-11                17                28
+#> 10   2027 NA          2027-04-11                 5                 1
+#> # ℹ 1,200 more rows
 #> # ℹ 11 more variables: espn_game_id <chr>, nba_game_id <chr>,
 #> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
 #> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
@@ -144,21 +144,21 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-10 11:51:19 UTC
-#> # A tibble: 610 × 21
-#>    season espn_team_id team_abbreviation player_name             espn_athlete_id
-#>     <int>        <int> <chr>             <chr>                   <chr>          
-#>  1   2027            1 ATL               nickeil alexander walk… 4278039        
-#>  2   2027            1 ATL               cameron corhen          4712902        
-#>  3   2027            1 ATL               dyson daniels           4869342        
-#>  4   2027            1 ATL               rayj dennis             4431941        
-#>  5   2027            1 ATL               luguentz dort           4397020        
-#>  6   2027            1 ATL               zuby ejiofor            5106262        
-#>  7   2027            1 ATL               dorian finney smith     2578185        
-#>  8   2027            1 ATL               kingston flemings       5149077        
-#>  9   2027            1 ATL               keshon gilbert          4585618        
-#> 10   2027            1 ATL               mouhamed gueye          4712863        
-#> # ℹ 600 more rows
+#> ℹ Data updated: 2026-10-21 15:31:06 UTC
+#> # A tibble: 84 × 21
+#>    season espn_team_id team_abbreviation player_name       espn_athlete_id
+#>     <int>        <int> <chr>             <chr>             <chr>          
+#>  1   2027            2 BOS               baylor scheierman 4593841        
+#>  2   2027            2 BOS               chris cenac       5142621        
+#>  3   2027            2 BOS               derrick white     3078576        
+#>  4   2027            2 BOS               hugo gonzalez     5175647        
+#>  5   2027            2 BOS               jayson tatum      4065648        
+#>  6   2027            2 BOS               jordan walsh      4683689        
+#>  7   2027            2 BOS               luka garza        4277951        
+#>  8   2027            2 BOS               mike conley       3195           
+#>  9   2027            2 BOS               mitchell robinson 4351852        
+#> 10   2027            2 BOS               neemias queta     4397424        
+#> # ℹ 74 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

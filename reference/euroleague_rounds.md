@@ -78,7 +78,7 @@ Other Euroleague:
     euroleague_rounds(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague rounds from api-live.euroleague.net ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:14:43 UTC
+#> ℹ Data updated: 2026-10-22 02:37:19 UTC
 #> # A tibble: 47 × 8
 #>    season_code phase_type_code round index name      min_game_start_date
 #>    <chr>       <chr>           <int> <int> <chr>     <chr>              

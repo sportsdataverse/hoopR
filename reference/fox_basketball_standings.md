@@ -46,21 +46,24 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:15:18 UTC
-#> # A tibble: 30 × 11
-#>    team_id section   eastern_conference v2      w_l   pct   pf    pa    strk 
-#>    <chr>   <chr>     <chr>              <chr>   <chr> <chr> <chr> <chr> <chr>
-#>  1 1       PRESEASON 1                  Celtics 4-0   1.000 126.8 108.0 W4   
-#>  2 1       PRESEASON 2                  Hawks   4-1   .800  122.6 117.2 W4   
-#>  3 1       PRESEASON 3                  Pistons 3-1   .750  118.5 113.0 W2   
-#>  4 1       PRESEASON 4                  Nets    3-1   .750  124.2 116.0 L1   
-#>  5 1       PRESEASON 5                  Magic   3-1   .750  123.8 117.0 W2   
-#>  6 1       PRESEASON 6                  Bulls   3-2   .600  122.0 114.8 W2   
-#>  7 1       PRESEASON 7                  Heat    3-2   .600  128.0 122.4 L1   
-#>  8 1       PRESEASON 8                  Wizards 2-2   .500  113.2 113.8 L2   
-#>  9 1       PRESEASON 9                  Bucks   2-3   .400  109.4 119.8 W1   
-#> 10 1       PRESEASON 10                 Raptors 2-3   .400  122.4 116.8 L2   
-#> # ℹ 20 more rows
-#> # ℹ 2 more variables: entity_id <chr>, western_conference <chr>
+#> ℹ Data updated: 2026-10-22 02:37:53 UTC
+#> # A tibble: 90 × 23
+#>    team_id section  eastern_conference v2    w_l   pct   gb    pf    pa    home 
+#>    <chr>   <chr>    <chr>              <chr> <chr> <chr> <chr> <chr> <chr> <chr>
+#>  1 1       CONFERE… 1                  Pist… 1-0   1.000 -     121.0 113.0 1-0  
+#>  2 1       CONFERE… 2                  76ers 1-0   1.000 -     106.0 100.0 0-0  
+#>  3 1       CONFERE… 3                  Knic… 0-1   .000  1.0   100.0 106.0 0-1  
+#>  4 1       CONFERE… 4                  Celt… 0-1   .000  1.0   113.0 121.0 0-0  
+#>  5 1       CONFERE… 5                  Hawks 1-0   1.000 -     132.0 125.0 0-0  
+#>  6 1       CONFERE… 6                  Nets  0-0   -     0.5   0.0   0.0   0-0  
+#>  7 1       CONFERE… 7                  Horn… 0-0   -     0.5   0.0   0.0   0-0  
+#>  8 1       CONFERE… 8                  Bulls 0-0   -     0.5   0.0   0.0   0-0  
+#>  9 1       CONFERE… 9                  Cava… 0-0   -     0.5   0.0   0.0   0-0  
+#> 10 1       CONFERE… 10                 Pace… 0-0   -     0.5   0.0   0.0   0-0  
+#> # ℹ 80 more rows
+#> # ℹ 13 more variables: away <chr>, conf <chr>, div <chr>, l10 <chr>,
+#> #   strk <chr>, entity_id <chr>, western_conference <chr>, atlantic <chr>,
+#> #   central <chr>, southeast <chr>, northwest <chr>, pacific <chr>,
+#> #   southwest <chr>
 # }
 ```

@@ -156,27 +156,7 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_game_players(game_id = "2006920"))
-#> ── BBL/DBBL Game Player Box Score from the SCB API ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:33:07 UTC
-#> # A tibble: 23 × 45
-#>    league game_id season side  team_id season_player_id real_player_id
-#>    <chr>  <chr>    <int> <chr> <chr>   <chr>                     <int>
-#>  1 bbl    2006920   2027 home  413     56414                     37539
-#>  2 bbl    2006920   2027 home  413     2001679                   40635
-#>  3 bbl    2006920   2027 home  413     56377                     42293
-#>  4 bbl    2006920   2027 home  413     1000868                   42321
-#>  5 bbl    2006920   2027 home  413     2004104                   45523
-#>  6 bbl    2006920   2027 home  413     2004358                   51576
-#>  7 bbl    2006920   2027 home  413     2001680                   56949
-#>  8 bbl    2006920   2027 home  413     57252                     57252
-#>  9 bbl    2006920   2027 home  413     2002150               140180627
-#> 10 bbl    2006920   2027 home  413     2004102               140181547
-#> # ℹ 13 more rows
-#> # ℹ 38 more variables: first_name <chr>, last_name <chr>, shirt_number <chr>,
-#> #   position <chr>, season_team_id <chr>, team_name <chr>, team_tlc <chr>,
-#> #   season_id <int>, seconds_played <int>, points <int>,
-#> #   two_point_shots_made <int>, two_point_shots_attempted <int>,
-#> #   two_point_shot_success_percent <dbl>, three_point_shots_made <int>,
-#> #   three_point_shots_attempted <int>, …
+#> Error in scb_game_players(game_id = "2006920") : 
+#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
 # }
 ```

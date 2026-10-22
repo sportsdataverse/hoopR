@@ -122,7 +122,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_teams())
 #> ── KBL Teams from api.kbl.or.kr ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:15:54 UTC
+#> ℹ Data updated: 2026-10-22 02:38:58 UTC
 #> # A tibble: 10 × 6
 #>    team_code team_code_d team_name team_name_full team_name_en team_name_full_en
 #>    <chr>     <chr>       <chr>     <chr>          <chr>        <chr>            

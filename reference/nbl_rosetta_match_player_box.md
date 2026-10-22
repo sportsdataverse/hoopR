@@ -152,8 +152,8 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_match_player_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match_player_box from prod.rosetta.nbl.com.au ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:32:36 UTC
-#> # A tibble: 24 × 48
+#> ℹ Data updated: 2026-10-22 02:55:32 UTC
+#> # A tibble: 24 × 49
 #>    match_id        match_status stat_line_id rosetta_stat_line_id assists blocks
 #>    <chr>           <chr>        <chr>        <chr>                  <int>  <int>
 #>  1 b217a699-4bef-… complete     57f5abff663… b2a062e4-f3b3-4c60-…       1      1
@@ -167,7 +167,7 @@ Other NBL Rosetta Functions:
 #>  9 b217a699-4bef-… complete     99256f46270… caf9300d-b16c-4487-…       1      0
 #> 10 b217a699-4bef-… complete     7aa7ac5d9cb… c5c40b4d-3708-46eb-…       1      0
 #> # ℹ 14 more rows
-#> # ℹ 42 more variables: defensive_rebounds <int>, efficiency <int>,
+#> # ℹ 43 more variables: defensive_rebounds <int>, efficiency <int>,
 #> #   field_goals_attempted <int>, field_goals_made <int>,
 #> #   field_goals_percentage <dbl>, fouls <int>, free_throws_attempted <int>,
 #> #   free_throws_made <int>, free_throws_percentage <dbl>, jersey_number <chr>,

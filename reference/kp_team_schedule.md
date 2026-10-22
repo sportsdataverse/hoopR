@@ -508,28 +508,28 @@ A data frame with the following columns:
 ``` r
 # \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
-#> ✖ 2026-10-18 22:15:59.130054: 2026-10-18 - No team schedule tables available for Florida St. - 2022
+#> ✖ 2026-10-22 02:39:02.248073: 2026-10-22 - No team schedule tables available for Florida St. - 2022
 #> ✖ Args: team = "Florida St.", year = 2022
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
-#> ✖ 2026-10-18 22:15:59.172819: 2026-10-18 - No Game Plan Points distribution tables available for Florida St. - 2021
+#> ✖ 2026-10-22 02:39:02.301169: 2026-10-22 - No Game Plan Points distribution tables available for Florida St. - 2021
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
-#> ✖ 2026-10-18 22:15:59.214744: 2026-10-18 22:15:59.214462 - Florida St. - 2021 Team opponent tracker data is missing
+#> ✖ 2026-10-22 02:39:02.343075: 2026-10-22 02:39:02.342801 - Florida St. - 2021 Team opponent tracker data is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
 # }
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
-#> ✖ 2026-10-18 22:15:59.259926: 2026-10-18 22:15:59.259626 - No Player Data available for Florida St. in 2024
+#> ✖ 2026-10-22 02:39:02.384609: 2026-10-22 02:39:02.384345 - No Player Data available for Florida St. in 2024
 #> ✖ Args: team = "Florida St.", year = 2024
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -537,7 +537,7 @@ A data frame with the following columns:
 
   # \donttest{
     try(kp_player_career(player_id = '41180'))
-#> ✖ 2026-10-18 22:15:59.312784: 2026-10-18 22:15:59.312454 - No Player Career Data available for 41180
+#> ✖ 2026-10-22 02:39:02.426797: 2026-10-22 02:39:02.42652 - No Player Career Data available for 41180
 #> ✖ Args: player_id = "41180"
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -545,7 +545,7 @@ A data frame with the following columns:
 
   # \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
-#> ✖ 2026-10-18 22:15:59.35465: 2026-10-18 22:15:59.354376 - Florida St. - 2021 minutes matrix is missing
+#> ✖ 2026-10-22 02:39:02.468581: 2026-10-22 02:39:02.468315 - Florida St. - 2021 minutes matrix is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -554,14 +554,14 @@ A data frame with the following columns:
 
   # \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
-#> ✖ 2026-10-18 22:15:59.401525: 2026-10-18 22:15:59.401257 - Florida St. - 2021 team player stats are missing
+#> ✖ 2026-10-22 02:39:02.521901: 2026-10-22 02:39:02.521589 - Florida St. - 2021 team player stats are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
   # }
   # \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
-#> ✖ 2026-10-18 22:15:59.443692: 2026-10-18 22:15:59.44343 - Florida St. - 2021 Team Depth Chart is missing
+#> ✖ 2026-10-22 02:39:02.561306: 2026-10-22 02:39:02.561017 - Florida St. - 2021 Team Depth Chart is missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL
@@ -570,7 +570,7 @@ A data frame with the following columns:
 
   # \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
-#> ✖ 2026-10-18 22:15:59.488989: 2026-10-18 22:15:59.488681 - Florida St. - 2021 Team Lineups are missing
+#> ✖ 2026-10-22 02:39:02.604164: 2026-10-22 02:39:02.603837 - Florida St. - 2021 Team Lineups are missing
 #> ✖ Args: team = "Florida St.", year = 2021
 #> ✖ Error: HTTP 429 Too Many Requests.
 #> NULL

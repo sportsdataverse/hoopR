@@ -153,7 +153,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_game_header(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Game Header from basketligaen.dk ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:33:20 UTC
+#> ℹ Data updated: 2026-10-22 03:44:17 UTC
 #> # A tibble: 1 × 43
 #>   instance_context_site_team_is_…¹ instance_context_sit…² instance_context_sit…³
 #>   <lgl>                            <lgl>                  <lgl>                 

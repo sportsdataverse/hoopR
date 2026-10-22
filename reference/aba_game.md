@@ -138,7 +138,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_game(game_no = 6, season = 2026))
 #> ── ABA League Game ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:11:29 UTC
+#> ℹ Data updated: 2026-10-22 02:33:50 UTC
 #> # A tibble: 1 × 27
 #>   game_no season league_id league season_label round   competition   group when 
 #>     <int>  <int>     <int> <chr>  <chr>        <chr>   <chr>         <chr> <chr>

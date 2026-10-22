@@ -200,28 +200,8 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">scb_player_statistics</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── BBL/DBBL Season Player Statistics from the SCB API ─────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 22:33:12 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 316 × 72</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    league season display_type season_player_id real_player_id first_name </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2002018               140<span style="text-decoration: underline;">181</span>613 Christopher</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001330                   <span style="text-decoration: underline;">52</span>879 Jordan     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001642               140<span style="text-decoration: underline;">181</span>412 Alonzo     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001591               140<span style="text-decoration: underline;">181</span>388 Marcus     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001861               140<span style="text-decoration: underline;">181</span>529 Isaiah     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001900               140<span style="text-decoration: underline;">181</span>547 Joe        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2000735                   <span style="text-decoration: underline;">59</span>862 Ibi        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001687               140<span style="text-decoration: underline;">181</span>424 Tevin      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001520                   <span style="text-decoration: underline;">56</span>766 TJ         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   2001477               140<span style="text-decoration: underline;">181</span>343 Davion     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 306 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 66 more variables: last_name &lt;chr&gt;, shirt_number &lt;chr&gt;, position &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_id &lt;chr&gt;, season_team_id &lt;chr&gt;, team_name &lt;chr&gt;, team_tlc &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   season_id &lt;int&gt;, round_code &lt;int&gt;, competition &lt;chr&gt;, seconds_played &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   points &lt;int&gt;, two_point_shots_made &lt;int&gt;, two_point_shots_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   two_point_shot_success_percent &lt;dbl&gt;, three_point_shots_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_shots_attempted &lt;int&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in scb_player_statistics(season = 2026) : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

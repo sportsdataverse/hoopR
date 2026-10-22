@@ -52,13 +52,13 @@ a nested list of per-team membership spans:
 ``` r
 # \donttest{
   try(cbbd_conferences())
-#> ✖ 2026-10-18 22:12:54.975708: Invalid arguments or no conferences data available!
+#> ✖ 2026-10-22 02:35:23.447655: Invalid arguments or no conferences data available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_conferences_history(conference = "B1G"))
-#> ✖ 2026-10-18 22:12:54.983506: Invalid arguments or no conference history available!
+#> ✖ 2026-10-22 02:35:23.455797: Invalid arguments or no conference history available!
 #> ✖ Args: conference = "B1G"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

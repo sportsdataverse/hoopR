@@ -157,7 +157,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_bracket(season = 2026))
 #> ── ACB Bracket from api2.acb.com ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:11:33 UTC
+#> ℹ Data updated: 2026-10-22 02:33:54 UTC
 #> # A tibble: 7 × 18
 #>   stage  phase_id subphase_id home_team_id home_club_id home_team home_team_abbr
 #>   <chr>     <int>       <int>        <int>        <int> <chr>     <chr>         

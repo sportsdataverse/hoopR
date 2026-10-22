@@ -521,7 +521,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 #> ── ESPN MBB Player Season Stats from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:14:00 UTC
+#> ℹ Data updated: 2026-10-22 02:36:32 UTC
 #> # A tibble: 1 × 207
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
@@ -537,7 +537,7 @@ try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 # \donttest{
 try(espn_nba_player_stats(athlete_id = 1966, year = 2022))
 #> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:14:01 UTC
+#> ℹ Data updated: 2026-10-22 02:36:33 UTC
 #> # A tibble: 1 × 272
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    

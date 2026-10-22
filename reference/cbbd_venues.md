@@ -27,7 +27,7 @@ A `hoopR_data` tibble with one row per venue:
 ``` r
 # \donttest{
   try(cbbd_venues())
-#> ✖ 2026-10-18 22:12:58.659319: Invalid arguments or no venues data available!
+#> ✖ 2026-10-22 02:35:26.905395: Invalid arguments or no venues data available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

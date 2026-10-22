@@ -183,7 +183,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_schedule_day(day = "2025-12-12"))
 #> ── CBA Schedule Day from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:12:49 UTC
+#> ℹ Data updated: 2026-10-22 02:35:18 UTC
 #> # A tibble: 1 × 27
 #>   home_team_id home_team_logo      home_team_lose home_team_name home_team_score
 #>          <int> <chr>                        <int> <chr>                    <int>

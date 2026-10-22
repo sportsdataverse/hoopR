@@ -53,20 +53,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_league_leaders("scoring"))
 #> ── Fox Sports NBA league_leaders ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:15:16 UTC
+#> ℹ Data updated: 2026-10-22 02:37:51 UTC
 #> # A tibble: 75 × 6
-#>    players v2            gp    entity_id min   mpg  
-#>    <chr>   <chr>         <chr> <chr>     <chr> <chr>
-#>  1 1       K. Dunn       82    2211      NA    NA   
-#>  2 2       M. Bridges    82    2498      NA    NA   
-#>  3 3       D. DiVincenzo 82    2503      NA    NA   
-#>  4 4       B. Brown      82    2526      NA    NA   
-#>  5 5       K. Johnson    82    3282      NA    NA   
-#>  6 6       J. Green      82    3328      NA    NA   
-#>  7 7       D. Bane       82    3415      NA    NA   
-#>  8 8       J. Huff       82    3613      NA    NA   
-#>  9 9       J. LaRavia    82    3733      NA    NA   
-#> 10 10      J. Champagnie 82    3767      NA    NA   
+#>    players v2               gp    entity_id min   mpg  
+#>    <chr>   <chr>            <chr> <chr>     <chr> <chr>
+#>  1 1       L. James         1     1120      NA    NA   
+#>  2 2       P. George        1     1611      NA    NA   
+#>  3 3       A. Drummond      1     1765      NA    NA   
+#>  4 4       H. Barnes        1     1769      NA    NA   
+#>  5 5       K. Caldwell-Pope 1     1838      NA    NA   
+#>  6 6       J. Embiid        1     1906      NA    NA   
+#>  7 7       J. Clarkson      1     1958      NA    NA   
+#>  8 8       K. Towns         1     2051      NA    NA   
+#>  9 9       J. Brown         1     2206      NA    NA   
+#> 10 10      A. Caruso        1     2334      NA    NA   
 #> # ℹ 65 more rows
 # }
 ```

@@ -189,20 +189,20 @@ and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up 
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pleague_preciser_shots</span><span class="op">(</span>uuid <span class="op">=</span> <span class="st">"e6f98675-3e5b-11ed-949e-5d17350689cf"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── P. LEAGUE+ Shots from api.preciser.io ──────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 22:32:56 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-22 02:55:52 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 168 × 20</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    game_uuid      shot_no period period_label clock seconds_left side  team_uuid</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> e6f98675-3e5b…       1      4 Q4           02:37          157 home  e86394aa…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> e6f98675-3e5b…       2      1 Q1           02:28          148 away  e8674343…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> e6f98675-3e5b…       3      1 Q1           09:24          564 away  e8674343…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> e6f98675-3e5b…       4      4 Q4           02:19          139 away  e8674343…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> e6f98675-3e5b…       5      4 Q4           05:51          351 away  e8674343…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> e6f98675-3e5b…       6      3 Q3           00:23           23 away  e8674343…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> e6f98675-3e5b…       7      3 Q3           08:54          534 home  e86394aa…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> e6f98675-3e5b…       8      2 Q2           05:37          337 home  e86394aa…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> e6f98675-3e5b…       9      1 Q1           05:18          318 away  e8674343…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> e6f98675-3e5b…      10      2 Q2           02:42          162 home  e86394aa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> e6f98675-3e5b…       1      4 Q4           03:42          222 away  e8674343…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> e6f98675-3e5b…       2      2 Q2           00:17           17 home  e86394aa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> e6f98675-3e5b…       3      2 Q2           05:57          357 home  e86394aa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> e6f98675-3e5b…       4      1 Q1           11:41          701 away  e8674343…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> e6f98675-3e5b…       5      3 Q3           03:33          213 home  e86394aa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> e6f98675-3e5b…       6      1 Q1           06:19          379 home  e86394aa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> e6f98675-3e5b…       7      4 Q4           07:12          432 away  e8674343…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> e6f98675-3e5b…       8      1 Q1           11:20          680 home  e86394aa…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> e6f98675-3e5b…       9      4 Q4           10:45          645 away  e8674343…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> e6f98675-3e5b…      10      3 Q3           09:34          574 home  e86394aa…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 158 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: person_id &lt;chr&gt;, player_name &lt;chr&gt;, type &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   subtype &lt;chr&gt;, area &lt;chr&gt;, success &lt;lgl&gt;, x &lt;dbl&gt;, y &lt;dbl&gt;,</span></span>

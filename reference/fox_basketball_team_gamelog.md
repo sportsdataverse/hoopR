@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:15:18 UTC
+#> ℹ Data updated: 2026-10-22 02:37:53 UTC
 #> # A tibble: 165 × 8
-#>    team_id season_type        category game_id game_date opponent stat     value
-#>    <chr>   <chr>              <chr>    <chr>   <chr>     <chr>    <chr>    <chr>
-#>  1 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fgm      37   
-#>  2 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fga      93   
-#>  3 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fg_perc… 39.8 
-#>  4 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      ftm      13   
-#>  5 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      fta      16   
-#>  6 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      ft_perc… 81.3 
-#>  7 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      x3fgm    13   
-#>  8 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      x3fga    49   
-#>  9 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      x3fg_pe… 26.5 
-#> 10 1       2025-26 POSTSEASON scoring  106426  5/2       PHI      pts      100  
+#>    team_id season_type    category game_id game_date opponent stat         value
+#>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
+#>  1 1       REGULAR SEASON scoring  106533  10/20     @DET     fgm          40   
+#>  2 1       REGULAR SEASON scoring  106533  10/20     @DET     fga          88   
+#>  3 1       REGULAR SEASON scoring  106533  10/20     @DET     fg_percent   45.5 
+#>  4 1       REGULAR SEASON scoring  106533  10/20     @DET     ftm          16   
+#>  5 1       REGULAR SEASON scoring  106533  10/20     @DET     fta          21   
+#>  6 1       REGULAR SEASON scoring  106533  10/20     @DET     ft_percent   76.2 
+#>  7 1       REGULAR SEASON scoring  106533  10/20     @DET     x3fgm        17   
+#>  8 1       REGULAR SEASON scoring  106533  10/20     @DET     x3fga        42   
+#>  9 1       REGULAR SEASON scoring  106533  10/20     @DET     x3fg_percent 40.5 
+#> 10 1       REGULAR SEASON scoring  106533  10/20     @DET     pts          113  
 #> # ℹ 155 more rows
 # }
 ```

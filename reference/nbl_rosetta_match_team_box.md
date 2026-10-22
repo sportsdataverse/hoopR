@@ -139,8 +139,8 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_match_team_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match_team_box from prod.rosetta.nbl.com.au ────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:32:37 UTC
-#> # A tibble: 10 × 35
+#> ℹ Data updated: 2026-10-22 02:55:33 UTC
+#> # A tibble: 10 × 36
 #>    match_id        match_status stat_line_id rosetta_stat_line_id assists blocks
 #>    <chr>           <chr>        <chr>        <chr>                  <int>  <int>
 #>  1 b217a699-4bef-… complete     3db61a3d115… 02c748ef-70b6-43c3-…       2      2
@@ -153,7 +153,7 @@ Other NBL Rosetta Functions:
 #>  8 b217a699-4bef-… complete     29f2f7f1aab… abaf4417-79eb-41f3-…       5      1
 #>  9 b217a699-4bef-… complete     f5fc779ac41… b514ae2c-431a-458c-…      13      2
 #> 10 b217a699-4bef-… complete     cca5bf7851a… fd636482-5e3c-433c-…       2      0
-#> # ℹ 29 more variables: defensive_rebounds <int>, field_goals_attempted <int>,
+#> # ℹ 30 more variables: defensive_rebounds <int>, field_goals_attempted <int>,
 #> #   field_goals_made <int>, field_goals_percentage <dbl>, fouls <int>,
 #> #   free_throws_attempted <int>, free_throws_made <int>,
 #> #   free_throws_percentage <dbl>, minutes <dbl>, offensive_rebounds <int>,

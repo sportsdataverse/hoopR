@@ -131,25 +131,7 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_game_actions(game_id = "2006920"))
-#> ── BBL/DBBL Game Play-by-Play from the SCB API ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:33:06 UTC
-#> # A tibble: 516 × 20
-#>    league game_id action_id order_id action_identifier period game_time
-#>    <chr>  <chr>       <int>    <int> <chr>              <int> <chr>    
-#>  1 bbl    2006920  20224750        1 0:0002                 1 00:10:00 
-#>  2 bbl    2006920  20224751        2 3:0012                 1 00:10:00 
-#>  3 bbl    2006920  20224752        3 3:0013                 1 00:09:47 
-#>  4 bbl    2006920  20224753        4 3:0014                 1 00:09:21 
-#>  5 bbl    2006920  20224754        5 3:0015                 1 00:09:21 
-#>  6 bbl    2006920  20224755        6 3:0016                 1 00:09:17 
-#>  7 bbl    2006920  20224756        7 3:0018                 1 00:09:07 
-#>  8 bbl    2006920  20224757        8 3:0020                 1 00:08:50 
-#>  9 bbl    2006920  20224758        9 3:0021                 1 00:08:50 
-#> 10 bbl    2006920  20224759       10 3:0022                 1 00:08:43 
-#> # ℹ 506 more rows
-#> # ℹ 13 more variables: seconds_left <int>, real_time <chr>, type <chr>,
-#> #   qualifiers <chr>, is_successful <lgl>, season_team_id <chr>, side <chr>,
-#> #   season_player_id <chr>, assisting_season_player_id <chr>, shot_x <int>,
-#> #   shot_y <int>, home_team_points <int>, guest_team_points <int>
+#> Error in scb_game_actions(game_id = "2006920") : 
+#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
 # }
 ```

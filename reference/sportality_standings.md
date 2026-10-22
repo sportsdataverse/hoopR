@@ -123,19 +123,19 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
 #> ── Basketligaen Standings from basketligaen.dk ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:33:33 UTC
+#> ℹ Data updated: 2026-10-22 03:44:29 UTC
 #> # A tibble: 12 × 13
 #>    team_id team_uuid  team_code team_name     rank    gp     w     l    tp `for`
 #>      <int> <chr>      <chr>     <chr>        <int> <int> <int> <int> <int> <int>
-#>  1   22255 iutrlqp3ef TFN       Team FOG Næ…     1     5     5     0    10   511
+#>  1   22255 iutrlqp3ef TFN       Team FOG Næ…     1     6     6     0    12   618
 #>  2   22248 ktcu9aaala BAK       Bakken Bears     2     5     5     0    10   529
 #>  3   22249 hip2m60a45 HIC       Horsens IC       3     6     4     2     8   505
 #>  4   22256 kgmhwo9l5d SVE       Svendborg R…     4     6     4     2     8   529
 #>  5   22250 gvvuxe9ysw RAN       Randers Cim…     5     6     4     2     8   568
 #>  6  156486 ka7lusvmtn BCC       BC Copenhag…     6     5     3     2     6   378
 #>  7  199228 nuzzapynfd GLX       Gladsaxe Ba…     7     6     2     4     4   476
-#>  8  187013 wv1lcxg0u2 BKV       BK Vejen         8     5     2     3     4   404
-#>  9  153747 rfo82vr830 HOL       Holbæk-Sten…     9     6     2     4     4   466
+#>  8  153747 rfo82vr830 HOL       Holbæk-Sten…     8     6     2     4     4   466
+#>  9  187013 wv1lcxg0u2 BKV       BK Vejen         9     6     2     4     4   486
 #> 10  140898 kgejfzwwbd BMS       BMS Herlev      10     6     1     5     2   450
 #> 11  130088 swr1d65lew BAC       Bears Acade…    11     6     1     5     2   457
 #> 12  114932 ozojzoejir VBH       Værløse Blu…    12     6     1     5     2   488

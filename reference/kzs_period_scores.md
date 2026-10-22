@@ -114,7 +114,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_period_scores(match_id = 101839))
 #> ── KZS Period Scores from api.kzs.si ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:16:08 UTC
+#> ℹ Data updated: 2026-10-22 02:39:11 UTC
 #> # A tibble: 5 × 5
 #>   match_id score_id match_part first_team_score second_team_score
 #>      <int>    <int> <chr>                 <int>             <int>

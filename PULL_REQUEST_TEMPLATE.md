@@ -49,14 +49,16 @@
 
 Code follows tidyverse style (`snake_case`, 2-space indent)
 
-`devtools::document()` has been run (NAMESPACE updated)
+[`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
+has been run (NAMESPACE updated)
 
 New/changed functions have roxygen docs with `@export`, `@family`,
 `@return` tables
 
 Tests added/updated in `tests/testthat/`
 
-`devtools::check()` passes with no errors or warnings
+[`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
+passes with no errors or warnings
 
 NEWS.md updated (if user-facing change)
 

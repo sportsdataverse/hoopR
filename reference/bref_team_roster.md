@@ -63,7 +63,7 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_team_roster(team = "BOS", season = 2024))
 #> ── Team roster from basketball-reference.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:12:33 UTC
+#> ℹ Data updated: 2026-10-22 02:35:01 UTC
 #> # A tibble: 19 × 11
 #>    number player   pos   height weight birth_date flag  years_experience college
 #>     <dbl> <chr>    <chr> <chr>   <dbl> <chr>      <chr> <chr>            <chr>  

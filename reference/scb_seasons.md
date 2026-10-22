@@ -109,21 +109,7 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_seasons())
-#> ── BBL/DBBL Seasons from the SCB API ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:33:16 UTC
-#> # A tibble: 61 × 4
-#>    league season season_id is_active
-#>    <chr>   <int>     <int> <lgl>    
-#>  1 bbl      2027      2026 TRUE     
-#>  2 bbl      2026      2025 FALSE    
-#>  3 bbl      2025      2024 FALSE    
-#>  4 bbl      2024      2023 FALSE    
-#>  5 bbl      2023      2022 FALSE    
-#>  6 bbl      2022      2021 FALSE    
-#>  7 bbl      2021      2020 FALSE    
-#>  8 bbl      2020      2019 FALSE    
-#>  9 bbl      2019      2018 FALSE    
-#> 10 bbl      2018      2017 FALSE    
-#> # ℹ 51 more rows
+#> Error in scb_seasons() : 
+#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
 # }
 ```

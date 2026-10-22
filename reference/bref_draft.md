@@ -62,15 +62,15 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_draft(season = 2024))
 #> ── Draft results from basketball-reference.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:12:22 UTC
+#> ℹ Data updated: 2026-10-22 02:34:48 UTC
 #> # A tibble: 60 × 23
 #>    ranker pick_overall team  player college_name seasons     g    mp   pts   trb
 #>     <dbl>        <dbl> <chr> <chr>  <chr>          <dbl> <dbl> <dbl> <dbl> <dbl>
 #>  1      1            1 ATL   Zacch… ""                 2   142  3346  1583   525
 #>  2      2            2 WAS   Alex … ""                 2   115  3119  1652   790
 #>  3      3            3 HOU   Reed … "Kentucky"         2   134  2801  1339   316
-#>  4      4            4 SAS   Steph… "UConn"            2   149  4200  2323   659
-#>  5      5            5 DET   Ron H… ""                 2   159  2817  1162   533
+#>  4      4            4 SAS   Steph… "UConn"            3   150  4228  2347   666
+#>  5      5            5 DET   Ron H… ""                 3   160  2820  1162   534
 #>  6      6            6 CHO   Tidja… ""                 2    97  1819   575   429
 #>  7      7            7 POR   Donov… "UConn"            2   144  3418  1370  1419
 #>  8      8            8 SAS   Rob D… "Kentucky"         2   114  1486   628   181

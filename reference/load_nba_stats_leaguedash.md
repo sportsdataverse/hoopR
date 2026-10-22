@@ -90,10 +90,26 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_leaguedash(seasons = most_recent_nba_stats_season(),
                                 table = "player_bio"))
-#> Warning: downloaded length 0 != reported length 9
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_leaguedash/player_bio_2027.parquet': HTTP status was '404 Not Found'
-#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_leaguedash/player_bio_2027.parquet>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 68 × 27
+#>    player_id player_name          team_id team_abbreviation   age player_height
+#>        <int> <chr>                  <int> <chr>             <dbl> <chr>        
+#>  1   1643530 Aday Mara         1610612760 OKC                  21 7-3          
+#>  2   1641737 Adem Bona         1610612755 PHI                  23 6-10         
+#>  3   1642349 Ajay Mitchell     1610612760 OKC                  24 6-4          
+#>  4   1627936 Alex Caruso       1610612760 OKC                  32 6-5          
+#>  5    203083 Andre Drummond    1610612752 NYK                  33 6-10         
+#>  6   1629014 Anfernee Simons   1610612755 PHI                  27 6-4          
+#>  7   1641709 Ausar Thompson    1610612765 DET                  23 6-7          
+#>  8   1631248 Baylor Scheierman 1610612738 BOS                  26 6-6          
+#>  9   1642892 Bennett Stirtz    1610612760 OKC                  23 6-3          
+#> 10   1642964 Brooks Barnhizer  1610612760 OKC                  24 6-5          
+#> # ℹ 58 more rows
+#> # ℹ 21 more variables: player_height_inches <int>, player_weight <chr>,
+#> #   college <chr>, country <chr>, draft_year <chr>, draft_round <chr>,
+#> #   draft_number <chr>, gp <int>, pts <int>, reb <int>, ast <int>,
+#> #   net_rating <dbl>, oreb_pct <dbl>, dreb_pct <dbl>, usg_pct <dbl>,
+#> #   ts_pct <dbl>, ast_pct <dbl>, season <int>, league_id <chr>,
+#> #   season_type <chr>, per_mode <chr>
 # }
 ```

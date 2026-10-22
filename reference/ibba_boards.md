@@ -102,7 +102,7 @@ Other IBBA Functions:
 # \donttest{
   try(ibba_boards(season = 2026))
 #> ── IBBA boards ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:15:30 UTC
+#> ℹ Data updated: 2026-10-22 02:38:33 UTC
 #> # A tibble: 7 × 5
 #>   board_id season board_name_he        board_title_he                category_he
 #>      <int>  <int> <chr>                <chr>                         <chr>      

@@ -201,18 +201,7 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_game(game_id = "2006920"))
-#> ── BBL/DBBL Game from the SCB API ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:33:06 UTC
-#> # A tibble: 1 × 91
-#>   league season season_id game_id competition stage      status   stat_status
-#>   <chr>   <int>     <int> <chr>   <chr>       <chr>      <chr>    <chr>      
-#> 1 bbl      2027      2026 2006920 BBL         MAIN_ROUND OFFICIAL E          
-#> # ℹ 83 more variables: game_progress <chr>, scheduled_time <chr>,
-#> #   match_day <int>, is_tbd <lgl>, is_hidden <lgl>, home_team_id <chr>,
-#> #   home_season_team_id <chr>, home_team_name <chr>, home_tlc <chr>,
-#> #   home_is_foreign <lgl>, home_rank <int>, home_streak <chr>,
-#> #   home_streak_count <int>, home_last10_victories <int>,
-#> #   home_last10_losses <int>, home_total_games <int>, guest_team_id <chr>,
-#> #   guest_season_team_id <chr>, guest_team_name <chr>, guest_tlc <chr>, …
+#> Error in scb_game(game_id = "2006920") : 
+#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
 # }
 ```

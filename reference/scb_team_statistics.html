@@ -200,36 +200,8 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">scb_team_statistics</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── BBL/DBBL Season Team Statistics from the SCB API ───────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-18 22:33:18 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 59</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    league season display_type team_id season_team_id team_name          team_tlc</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   486     486            FC Bayern München… FCB     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   483     483            Science City Jena  JEN     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   422     422            Basketball Löwen … BRA     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   420     420            BMA365 Bamberg Ba… BAM     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   541     541            RASTA Vechta       VEC     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   488     488            MLP Academics Hei… HDB     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   415     415            Telekom Baskets B… BON     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   540     540            Fitness First Wür… WUE     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   554     554            Veolia Towers Ham… HAM     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   428     428            SYNTAINICS MBC     MBC     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   414     414            VET-CONCEPT Gladi… TRI     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   551     551            ROSTOCK SEAWOLVES  HRO     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   418     418            ratiopharm ulm     ULM     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   485     485            NINERS Chemnitz    CHE     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   430     430            EWE Baskets Olden… OLD     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   426     426            SKYLINERS          FRS     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   433     433            MHP RIESEN Ludwig… LUD     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> bbl      <span style="text-decoration: underline;">2</span>026 MAIN_ROUND   413     413            ALBA BERLIN        BER     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 52 more variables: season_id &lt;int&gt;, round_code &lt;int&gt;, competition &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   aggregation &lt;chr&gt;, seconds_played &lt;int&gt;, points &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   two_point_shots_made &lt;int&gt;, two_point_shots_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   two_point_shot_success_percent &lt;dbl&gt;, three_point_shots_made &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   three_point_shots_attempted &lt;int&gt;, three_point_shot_success_percent &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_made &lt;int&gt;, field_goals_attempted &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   field_goals_success_percent &lt;dbl&gt;, free_throws_made &lt;int&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in scb_team_statistics(season = 2026) : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

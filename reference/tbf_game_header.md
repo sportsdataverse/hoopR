@@ -133,7 +133,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_game_header(match_id = 346279))
 #> ── TBF Game Header ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-18 22:34:09 UTC
+#> ℹ Data updated: 2026-10-22 03:45:03 UTC
 #> # A tibble: 1 × 27
 #>   match_id match_code genius_id activity_id activity_name season_id season_label
 #>      <int> <chr>          <int>       <int> <chr>             <int> <chr>       
