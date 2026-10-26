@@ -51,7 +51,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   pleague_team_crosswalk()
 #> ── P. LEAGUE+ Team Crosswalk ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:55:54 UTC
+#> ℹ Data updated: 2026-10-26 19:37:44 UTC
 #> # A tibble: 8 × 2
 #>   team_id team_uuid                           
 #>     <int> <chr>                               

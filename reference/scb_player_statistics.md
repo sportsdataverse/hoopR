@@ -189,7 +189,27 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_player_statistics(season = 2026))
-#> Error in scb_player_statistics(season = 2026) : 
-#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
+#> ── BBL/DBBL Season Player Statistics from the SCB API ─────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:59 UTC
+#> # A tibble: 316 × 72
+#>    league season display_type season_player_id real_player_id first_name 
+#>    <chr>   <int> <chr>        <chr>                     <int> <chr>      
+#>  1 bbl      2026 MAIN_ROUND   2002018               140181613 Christopher
+#>  2 bbl      2026 MAIN_ROUND   2001330                   52879 Jordan     
+#>  3 bbl      2026 MAIN_ROUND   2001642               140181412 Alonzo     
+#>  4 bbl      2026 MAIN_ROUND   2001591               140181388 Marcus     
+#>  5 bbl      2026 MAIN_ROUND   2001861               140181529 Isaiah     
+#>  6 bbl      2026 MAIN_ROUND   2001900               140181547 Joe        
+#>  7 bbl      2026 MAIN_ROUND   2000735                   59862 Ibi        
+#>  8 bbl      2026 MAIN_ROUND   2001687               140181424 Tevin      
+#>  9 bbl      2026 MAIN_ROUND   2001520                   56766 TJ         
+#> 10 bbl      2026 MAIN_ROUND   2001477               140181343 Davion     
+#> # ℹ 306 more rows
+#> # ℹ 66 more variables: last_name <chr>, shirt_number <chr>, position <chr>,
+#> #   team_id <chr>, season_team_id <chr>, team_name <chr>, team_tlc <chr>,
+#> #   season_id <int>, round_code <int>, competition <chr>, seconds_played <int>,
+#> #   points <int>, two_point_shots_made <int>, two_point_shots_attempted <int>,
+#> #   two_point_shot_success_percent <dbl>, three_point_shots_made <int>,
+#> #   three_point_shots_attempted <int>, …
 # }
 ```

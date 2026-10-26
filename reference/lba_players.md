@@ -108,7 +108,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_players(season = 2027))
 #> ── LBA Players from legabasket.it ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:39:31 UTC
+#> ℹ Data updated: 2026-10-26 19:21:08 UTC
 #> # A tibble: 50 × 8
 #>    season player_id name     surname    code  team_name  year player_picture_key
 #>     <int>     <int> <chr>    <chr>      <chr> <chr>     <int> <chr>             

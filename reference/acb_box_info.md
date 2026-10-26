@@ -147,7 +147,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_box_info(match_id = 105401))
 #> ── ACB Box Info from api2.acb.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:33:54 UTC
+#> ℹ Data updated: 2026-10-26 19:12:00 UTC
 #> # A tibble: 2 × 13
 #>   match_id edition_id season team_side team_id club_id team            team_abbr
 #>      <int>      <int>  <int> <chr>       <int>   <int> <chr>           <chr>    

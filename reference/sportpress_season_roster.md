@@ -128,7 +128,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_season_roster(season = 2026))
 #> ── BNXT League Season Roster from Sportpress ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 03:44:58 UTC
+#> ℹ Data updated: 2026-10-26 19:38:50 UTC
 #> # A tibble: 312 × 14
 #>    season roster_id competition_team_id jersey weight height active position_id
 #>     <int>     <int>               <int> <chr>   <int>  <int> <lgl>        <int>
@@ -140,7 +140,7 @@ Other BNXT League Functions:
 #>  6   2026     10137                 514 ""         NA    197 TRUE             2
 #>  7   2026     10139                 514 ""         NA    193 TRUE             3
 #>  8   2026     10141                 514 ""         NA    203 TRUE             2
-#>  9   2026     10145                 514 ""         NA     NA TRUE             1
+#>  9   2026     10145                 514 ""         NA     NA TRUE             2
 #> 10   2026     10147                 514 ""         NA     NA TRUE             2
 #> # ℹ 302 more rows
 #> # ℹ 6 more variables: position <chr>, player_id <int>, first_name <chr>,

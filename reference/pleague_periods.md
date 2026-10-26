@@ -115,7 +115,14 @@ Other P. LEAGUE+ Functions:
 ``` r
 # \donttest{
   try(pleague_periods(gid = 197))
-#> Error in pleague_periods(gid = 197) : 
-#>   pleagueofficial.com/game/197 answered HTTP 403, not 200
+#> ── P. LEAGUE+ Periods from pleagueofficial.com ────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:37 UTC
+#> # A tibble: 4 × 5
+#>     gid period period_no home_points away_points
+#>   <int> <chr>      <int>       <int>       <int>
+#> 1   197 Q1             1          28          19
+#> 2   197 Q2             2          21          28
+#> 3   197 Q3             3          35          24
+#> 4   197 Q4             4          18          23
 # }
 ```

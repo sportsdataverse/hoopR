@@ -96,7 +96,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-21 15:30:17 UTC
+#> ℹ Data updated: 2026-10-26 15:30:13 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -121,8 +121,8 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-21 15:30:46 UTC
-#> # A tibble: 1,210 × 16
+#> ℹ Data updated: 2026-10-26 15:30:45 UTC
+#> # A tibble: 1,243 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
 #>  1   2027 NA          2027-04-11                 6                29
@@ -135,7 +135,7 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027 NA          2027-04-11                 2                15
 #>  9   2027 NA          2027-04-11                17                28
 #> 10   2027 NA          2027-04-11                 5                 1
-#> # ℹ 1,200 more rows
+#> # ℹ 1,233 more rows
 #> # ℹ 11 more variables: espn_game_id <chr>, nba_game_id <chr>,
 #> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
 #> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
@@ -144,21 +144,21 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-21 15:31:06 UTC
-#> # A tibble: 84 × 21
-#>    season espn_team_id team_abbreviation player_name       espn_athlete_id
-#>     <int>        <int> <chr>             <chr>             <chr>          
-#>  1   2027            2 BOS               baylor scheierman 4593841        
-#>  2   2027            2 BOS               chris cenac       5142621        
-#>  3   2027            2 BOS               derrick white     3078576        
-#>  4   2027            2 BOS               hugo gonzalez     5175647        
-#>  5   2027            2 BOS               jayson tatum      4065648        
-#>  6   2027            2 BOS               jordan walsh      4683689        
-#>  7   2027            2 BOS               luka garza        4277951        
-#>  8   2027            2 BOS               mike conley       3195           
-#>  9   2027            2 BOS               mitchell robinson 4351852        
-#> 10   2027            2 BOS               neemias queta     4397424        
-#> # ℹ 74 more rows
+#> ℹ Data updated: 2026-10-26 16:59:48 UTC
+#> # A tibble: 447 × 21
+#>    season espn_team_id team_abbreviation player_name         espn_athlete_id
+#>     <int>        <int> <chr>             <chr>               <chr>          
+#>  1   2027            1 ATL               aaron wiggins       4397183        
+#>  2   2027            1 ATL               asa newell          4873201        
+#>  3   2027            1 ATL               cj mccollum         2490149        
+#>  4   2027            1 ATL               corey kispert       4280151        
+#>  5   2027            1 ATL               dorian finney smith 2578185        
+#>  6   2027            1 ATL               dyson daniels       4869342        
+#>  7   2027            1 ATL               jalen johnson       4701230        
+#>  8   2027            1 ATL               jock landale        3146557        
+#>  9   2027            1 ATL               kingston flemings   5149077        
+#> 10   2027            1 ATL               luguentz dort       4397020        
+#> # ℹ 437 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

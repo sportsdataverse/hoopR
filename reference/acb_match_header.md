@@ -164,7 +164,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_match_header(match_id = 105401))
 #> ── ACB Match Header from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:34:01 UTC
+#> ℹ Data updated: 2026-10-26 19:12:07 UTC
 #> # A tibble: 1 × 26
 #>   match_id competition_id start               status   is_on_half_time time_left
 #>      <int>          <int> <dttm>              <chr>    <lgl>           <chr>    

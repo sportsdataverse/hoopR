@@ -31,12 +31,9 @@ help you get started.
 ### Making Changes
 
 1.  Edit source code in `R/`
-2.  Regenerate docs:
-    [`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
-3.  Run tests:
-    [`devtools::test()`](https://devtools.r-lib.org/reference/test.html)
-4.  Check the package:
-    [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
+2.  Regenerate docs: `devtools::document()`
+3.  Run tests: `devtools::test()`
+4.  Check the package: `devtools::check()`
 
 ### Adding a New NBA Stats API Endpoint
 
@@ -56,9 +53,7 @@ help you get started.
 3.  **Create a test** in `tests/testthat/` with `skip_on_cran()`,
     `skip_on_ci()`, `skip_nba_stats_test()` guards
 4.  **Update NEWS.md** with a description of the new function
-5.  Run
-    [`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
-    to update NAMESPACE
+5.  Run `devtools::document()` to update NAMESPACE
 
 ## Naming Conventions
 
@@ -252,9 +247,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 - Target the `devel` branch for development work
 - Include a clear description of what changed and why
-- Ensure
-  [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
-  passes with no errors or warnings
+- Ensure `devtools::check()` passes with no errors or warnings
 - Add tests for new functions
 - Update NEWS.md
 

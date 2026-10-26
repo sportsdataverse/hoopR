@@ -282,10 +282,8 @@ regions by hand.
 
 - **README.md.** Rendered from `README.Rmd` (with
   `output: github_document: { toc: true, toc_depth: 2 }`). After editing
-  the Rmd, run
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
-  and commit `README.Rmd` + `README.md` together. Never hand-edit
-  `README.md`.
+  the Rmd, run `devtools::build_readme()` and commit `README.Rmd` +
+  `README.md` together. Never hand-edit `README.md`.
 
 - **DESCRIPTION.** After editing `DESCRIPTION` (deps, versions,
   `Authors@R`, etc.), run
@@ -460,7 +458,7 @@ walking.
   index”. Fix: put `@keywords internal` on the topic block as well as
   `@noRd` on the function block.
 - Never edit `NAMESPACE` or `man/` files by hand; regenerate with
-  [`devtools::document()`](https://devtools.r-lib.org/reference/document.html).
+  `devtools::document()`.
 
 ## Cheat sheet
 

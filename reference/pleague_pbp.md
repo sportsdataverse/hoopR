@@ -138,7 +138,26 @@ Other P. LEAGUE+ Functions:
 ``` r
 # \donttest{
   try(pleague_pbp(gid = 197))
-#> Error in pleague_pbp(gid = 197) : 
-#>   pleagueofficial.com/game/197 answered HTTP 403, not 200
+#> ── P. LEAGUE+ Play-by-Play from pleagueofficial.com ───────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:37 UTC
+#> # A tibble: 630 × 26
+#>      gid   seq period period_no clock seconds_left side  jersey player_zh action
+#>    <int> <int> <chr>      <int> <chr>        <int> <chr> <chr>  <chr>     <chr> 
+#>  1   197     1 Q1             1 12:00          720 away  35     辛巴      jump_…
+#>  2   197     2 Q1             1 12:00          720 home  5      強森      jump_…
+#>  3   197     3 Q1             1 11:41          701 away  35     辛巴      fg2_d…
+#>  4   197     4 Q1             1 11:41          701 away  31     阿提諾    ast   
+#>  5   197     5 Q1             1 11:20          680 home  5      強森      fg3_m…
+#>  6   197     6 Q1             1 10:53          653 away  8      朱雲豪    tov_b…
+#>  7   197     7 Q1             1 10:53          653 home  5      強森      stl   
+#>  8   197     8 Q1             1 10:49          649 home  NA     賴廷恩    fg3_m…
+#>  9   197     9 Q1             1 10:42          642 away  35     辛巴      fg2_l…
+#> 10   197    10 Q1             1 10:42          642 away  9      田浩      ast   
+#> # ℹ 620 more rows
+#> # ℹ 16 more variables: action_zh <chr>, action_en <chr>, text_zh <chr>,
+#> #   ft_number <int>, ft_awarded <int>, points <int>, score_away <int>,
+#> #   score_home <int>, x <dbl>, y <dbl>, nice_play <lgl>, video_uuid <chr>,
+#> #   synergy_play_id <chr>, video_stat_category <chr>, tryspot_player_id <int>,
+#> #   video_created_at <chr>
 # }
 ```

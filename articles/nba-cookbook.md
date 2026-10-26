@@ -302,9 +302,24 @@ espn_nba_team_roster(team_id = team_id, season = season)
 # into every row -- "team_season_statistics" is the long-format sheet,
 # "team_record" is just the W-L.
 espn_nba_team_season_statistics(team_id = team_id, season = season)
-#> # A tibble: 0 × 0
+#> # A tibble: 109 × 13
+#>    league season season_type team_id category_name category_display stat_name   
+#>    <chr>   <int>       <int> <chr>   <chr>         <chr>            <chr>       
+#>  1 nba      2027           2 13      defensive     Defensive        blocks      
+#>  2 nba      2027           2 13      defensive     Defensive        defensiveRe…
+#>  3 nba      2027           2 13      defensive     Defensive        steals      
+#>  4 nba      2027           2 13      defensive     Defensive        turnoverPoi…
+#>  5 nba      2027           2 13      defensive     Defensive        defReboundR…
+#>  6 nba      2027           2 13      defensive     Defensive        avgDefensiv…
+#>  7 nba      2027           2 13      defensive     Defensive        avgBlocks   
+#>  8 nba      2027           2 13      defensive     Defensive        avgSteals   
+#>  9 nba      2027           2 13      defensive     Defensive        avg48Defens…
+#> 10 nba      2027           2 13      defensive     Defensive        avg48Blocks 
+#> # ℹ 99 more rows
+#> # ℹ 6 more variables: stat_abbrev <chr>, stat_display <chr>, value <dbl>,
+#> #   display_value <chr>, rank <int>, rank_display_value <chr>
 espn_nba_team_record(team_id = team_id, season = season)
-#> # A tibble: 5 × 14
+#> # A tibble: 6 × 14
 #>   league team_id season season_type record_id name     abbreviation display_name
 #>   <chr>  <chr>    <int>       <int> <chr>     <chr>    <chr>        <chr>       
 #> 1 nba    13        2027           2 0         overall  Total        Overall     
@@ -312,6 +327,7 @@ espn_nba_team_record(team_id = team_id, season = season)
 #> 3 nba    13        2027           2 34        Road     NA           Road        
 #> 4 nba    13        2027           2 60        vs. Div. NA           DIV         
 #> 5 nba    13        2027           2 61        vs. Con… NA           CONF        
+#> 6 nba    13        2027           2 901       Last Te… L10          Last Ten Ga…
 #> # ℹ 6 more variables: short_display_name <chr>, description <chr>, type <chr>,
 #> #   summary <chr>, display_value <chr>, value <dbl>
 ```
@@ -356,16 +372,16 @@ espn_nba_leaders(season = most_recent_nba_season())
 #> # A tibble: 400 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
-#>  1   2027           2 pointsPerGame PTS          4251       NA           2      
-#>  2   2027           2 pointsPerGame PTS          4278073    NA           25     
-#>  3   2027           2 pointsPerGame PTS          4431678    NA           20     
-#>  4   2027           2 pointsPerGame PTS          4845367    NA           24     
-#>  5   2027           2 pointsPerGame PTS          4432166    NA           8      
-#>  6   2027           2 pointsPerGame PTS          4433621    NA           8      
-#>  7   2027           2 pointsPerGame PTS          3157465    NA           8      
-#>  8   2027           2 pointsPerGame PTS          3934672    NA           18     
-#>  9   2027           2 pointsPerGame PTS          4683778    NA           25     
-#> 10   2027           2 pointsPerGame PTS          2596112    NA           8      
+#>  1   2027           2 pointsPerGame PTS          4065733    NA           29     
+#>  2   2027           2 pointsPerGame PTS          3945274    NA           13     
+#>  3   2027           2 pointsPerGame PTS          3136193    NA           21     
+#>  4   2027           2 pointsPerGame PTS          3064440    NA           23     
+#>  5   2027           2 pointsPerGame PTS          4431678    NA           20     
+#>  6   2027           2 pointsPerGame PTS          4594268    NA           16     
+#>  7   2027           2 pointsPerGame PTS          3032977    NA           14     
+#>  8   2027           2 pointsPerGame PTS          4278073    NA           25     
+#>  9   2027           2 pointsPerGame PTS          3908809    NA           5      
+#> 10   2027           2 pointsPerGame PTS          4066457    NA           13     
 #> # ℹ 390 more rows
 #> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
 #> #   display_value <chr>

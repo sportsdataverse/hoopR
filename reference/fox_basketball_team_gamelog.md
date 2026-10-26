@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:37:53 UTC
+#> ℹ Data updated: 2026-10-26 19:16:07 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       REGULAR SEASON scoring  106533  10/20     @DET     fgm          40   
-#>  2 1       REGULAR SEASON scoring  106533  10/20     @DET     fga          88   
-#>  3 1       REGULAR SEASON scoring  106533  10/20     @DET     fg_percent   45.5 
-#>  4 1       REGULAR SEASON scoring  106533  10/20     @DET     ftm          16   
-#>  5 1       REGULAR SEASON scoring  106533  10/20     @DET     fta          21   
-#>  6 1       REGULAR SEASON scoring  106533  10/20     @DET     ft_percent   76.2 
-#>  7 1       REGULAR SEASON scoring  106533  10/20     @DET     x3fgm        17   
-#>  8 1       REGULAR SEASON scoring  106533  10/20     @DET     x3fga        42   
-#>  9 1       REGULAR SEASON scoring  106533  10/20     @DET     x3fg_percent 40.5 
-#> 10 1       REGULAR SEASON scoring  106533  10/20     @DET     pts          113  
+#>  1 1       REGULAR SEASON scoring  106550  10/23     NYK      fgm          40   
+#>  2 1       REGULAR SEASON scoring  106550  10/23     NYK      fga          87   
+#>  3 1       REGULAR SEASON scoring  106550  10/23     NYK      fg_percent   46.0 
+#>  4 1       REGULAR SEASON scoring  106550  10/23     NYK      ftm          12   
+#>  5 1       REGULAR SEASON scoring  106550  10/23     NYK      fta          16   
+#>  6 1       REGULAR SEASON scoring  106550  10/23     NYK      ft_percent   75.0 
+#>  7 1       REGULAR SEASON scoring  106550  10/23     NYK      x3fgm        15   
+#>  8 1       REGULAR SEASON scoring  106550  10/23     NYK      x3fga        39   
+#>  9 1       REGULAR SEASON scoring  106550  10/23     NYK      x3fg_percent 38.5 
+#> 10 1       REGULAR SEASON scoring  106550  10/23     NYK      pts          107  
 #> # ℹ 155 more rows
 # }
 ```

@@ -167,7 +167,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_player_stats(player_id = 106285, season = 2026))
 #> ── KZS Player Season Stats from api.kzs.si ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:39:13 UTC
+#> ℹ Data updated: 2026-10-26 19:20:51 UTC
 #> # A tibble: 2 × 51
 #>   player_id season_id season competition_id    a1    a2    a3   pts   ass  blag
 #>       <int>     <int>  <int>          <int> <int> <int> <int> <int> <int> <int>

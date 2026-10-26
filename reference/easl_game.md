@@ -165,7 +165,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_game(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #> ── EASL Game from easl.joshricha.com ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:35:43 UTC
+#> ℹ Data updated: 2026-10-26 19:13:51 UTC
 #> # A tibble: 1 × 44
 #>   season season_id fixture_id    fixture_number fixture_type status fixture_name
 #>    <int> <chr>     <chr>                  <int> <chr>        <chr>  <chr>       

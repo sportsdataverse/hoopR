@@ -688,10 +688,24 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_lineups/nba_lineups_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_game_lineups/nba_lineups_2027.rds>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 23,206 × 14
+#>    game_id    action_number period home_player_1 home_player_2 home_player_3
+#>    <chr>              <int>  <int>         <int>         <int>         <int>
+#>  1 0022600001             2      1       1628381       1629130       1630595
+#>  2 0022600001             4      1       1628381       1629130       1630595
+#>  3 0022600001             7      1       1628381       1629130       1630595
+#>  4 0022600001             9      1       1628381       1629130       1630595
+#>  5 0022600001            10      1       1628381       1629130       1630595
+#>  6 0022600001            11      1       1628381       1629130       1630595
+#>  7 0022600001            12      1       1628381       1629130       1630595
+#>  8 0022600001            13      1       1628381       1629130       1630595
+#>  9 0022600001            14      1       1628381       1629130       1630595
+#> 10 0022600001            15      1       1628381       1629130       1630595
+#> # ℹ 23,196 more rows
+#> # ℹ 8 more variables: home_player_4 <int>, home_player_5 <int>,
+#> #   away_player_1 <int>, away_player_2 <int>, away_player_3 <int>,
+#> #   away_player_4 <int>, away_player_5 <int>, season <int>
 # }
 # \donttest{
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
@@ -716,10 +730,27 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_pbp/nba_play_by_play_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_pbp/nba_play_by_play_2027.rds>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 23,206 × 49
+#>    order_index action_number clock       period   team_id team_tricode person_id
+#>          <int>         <int> <chr>        <int>     <int> <chr>            <int>
+#>  1           0             2 PT12M00.00S      1    0      ""                   0
+#>  2           1             4 PT12M00.00S      1    1.61e9 "DET"          1631105
+#>  3           2             7 PT11M48.00S      1    1.61e9 "BOS"          1629011
+#>  4           3             9 PT11M48.00S      1    1.61e9 "BOS"          1629011
+#>  5           4            10 PT11M32.00S      1    1.61e9 "DET"          1628381
+#>  6           5            11 PT11M32.00S      1    1.61e9 "BOS"          1641775
+#>  7           6            12 PT11M24.00S      1    1.61e9 "BOS"          1629011
+#>  8           7            13 PT11M12.00S      1    1.61e9 "DET"          1629130
+#>  9           8            14 PT11M12.00S      1    1.61e9 "DET"          1628381
+#> 10           9            15 PT11M09.00S      1    1.61e9 "DET"          1628381
+#> # ℹ 23,196 more rows
+#> # ℹ 42 more variables: player_name <chr>, player_name_i <chr>, x_legacy <int>,
+#> #   y_legacy <int>, shot_distance <int>, shot_result <chr>,
+#> #   is_field_goal <int>, score_home <chr>, score_away <chr>,
+#> #   points_total <int>, location <chr>, description <chr>, action_type <chr>,
+#> #   sub_type <chr>, video_available <int>, shot_value <int>, action_id <int>,
+#> #   game_id <chr>, seconds_remaining <dbl>, event_type <chr>, …
 # }
 # \donttest{
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
@@ -744,10 +775,27 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_possessions/nba_possessions_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_possessions/nba_possessions_2027.rds>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 8,794 × 35
+#>    game_id    period possession_number offense_team_id defense_team_id
+#>    <chr>       <int>             <int>           <int>           <int>
+#>  1 0022600001      1                 1      1610612738      1610612765
+#>  2 0022600001      1                 2      1610612765      1610612738
+#>  3 0022600001      1                 3      1610612738      1610612765
+#>  4 0022600001      1                 4      1610612765      1610612738
+#>  5 0022600001      1                 5      1610612738      1610612765
+#>  6 0022600001      1                 6      1610612765      1610612738
+#>  7 0022600001      1                 7      1610612738      1610612765
+#>  8 0022600001      1                 8      1610612765      1610612738
+#>  9 0022600001      1                 9      1610612738      1610612765
+#> 10 0022600001      1                10      1610612765      1610612738
+#> # ℹ 8,784 more rows
+#> # ℹ 30 more variables: start_order_index <int>, end_order_index <int>,
+#> #   start_seconds_remaining <dbl>, end_seconds_remaining <dbl>, points <int>,
+#> #   is_second_chance <lgl>, number_in_period <int>,
+#> #   possession_start_type <chr>, count_as_possession <lgl>, fg2a <int>,
+#> #   fg2m <int>, fg3a <int>, fg3m <int>, fta <int>, ftm <int>, oreb <int>,
+#> #   dreb <int>, tov <int>, off_player_1 <int>, off_player_2 <int>, …
 # }
 # \donttest{
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
@@ -758,10 +806,25 @@ Other NBA Stats loader functions:
 # }
 # \donttest{
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_schedules/nba_schedule_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/nba_stats_schedules/nba_schedule_2027.rds>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 1,274 × 15
+#>    game_id    season season_type game_date  matchup     home_team_id
+#>    <chr>       <int> <chr>       <chr>      <chr>              <int>
+#>  1 0012600001   2027 preseason   2026-10-08 MIA vs. NOP   1610612748
+#>  2 0012600002   2027 preseason   2026-10-10 MIA vs. MIN   1610612748
+#>  3 0012600003   2027 preseason   2026-10-14 MIA vs. BKN   1610612748
+#>  4 0012600004   2027 preseason   2026-10-05 ATL vs. MEM   1610612737
+#>  5 0012600005   2027 preseason   2026-10-08 SAS vs. ATL   1610612759
+#>  6 0012600006   2027 preseason   2026-10-10 IND vs. ATL   1610612754
+#>  7 0012600007   2027 preseason   2026-10-12 ATL vs. OKC   1610612737
+#>  8 0012600008   2027 preseason   2026-10-16 DAL vs. ATL   1610612742
+#>  9 0012600009   2027 preseason   2026-10-03 TOR vs. MIA   1610612761
+#> 10 0012600010   2027 preseason   2026-10-06 GSW vs. LAL   1610612744
+#> # ℹ 1,264 more rows
+#> # ℹ 9 more variables: home_team_abbreviation <chr>, home_team_name <chr>,
+#> #   home_pts <int>, home_wl <chr>, away_team_id <int>,
+#> #   away_team_abbreviation <chr>, away_team_name <chr>, away_pts <int>,
+#> #   away_wl <chr>
 # }
 # \donttest{
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))

@@ -183,14 +183,15 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_matches(player_id = 20209407, season = 2027))
 #> ── ACB Player Matches from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:34:07 UTC
-#> # A tibble: 4 × 42
+#> ℹ Data updated: 2026-10-26 19:12:13 UTC
+#> # A tibble: 5 × 42
 #>   player_id match_id round_type round_number date                home_team_id
 #>       <int>    <int> <chr>             <int> <dttm>                     <int>
 #> 1  20209407   105383 LR                    1 2026-09-27 17:00:00         4476
 #> 2  20209407   105389 LR                    2 2026-10-04 10:30:00         4479
 #> 3  20209407   105397 LR                    3 2026-10-11 10:00:00         4476
 #> 4  20209407   105407 LR                    4 2026-10-18 10:30:00         4476
+#> 5  20209407   105419 LR                    5 2026-10-25 18:00:00         4465
 #> # ℹ 36 more variables: home_club_id <int>, home_team <chr>,
 #> #   home_team_abbr <chr>, away_team_id <int>, away_club_id <int>,
 #> #   away_team <chr>, away_team_abbr <chr>, edition_id <int>, season <int>,

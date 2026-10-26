@@ -214,7 +214,7 @@ Other ESPN NBA Functions:
 # \donttest{
 espn_mbb_wp(game_id = 401256760)
 #> ── ESPN MBB Win Probability Information from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:37:10 UTC
+#> ℹ Data updated: 2026-10-26 19:15:18 UTC
 #> # A tibble: 352 × 9
 #>    game_id   play_id      period time_left period_seconds_left game_seconds_left
 #>  * <chr>     <chr>         <dbl> <chr>                   <dbl>             <dbl>
@@ -236,7 +236,7 @@ espn_mbb_wp(game_id = 401256760)
 # \donttest{
 espn_nba_wp(game_id = 401283399)
 #> ── ESPN NBA Win Probability Information from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:37:10 UTC
+#> ℹ Data updated: 2026-10-26 19:15:19 UTC
 #> # A tibble: 472 × 24
 #>      game_id play_id     home_win_percentage away_win_percentage tie_percentage
 #>        <dbl> <chr>                     <dbl>               <dbl>          <dbl>

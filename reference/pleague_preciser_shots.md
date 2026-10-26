@@ -130,7 +130,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
 #> ── P. LEAGUE+ Shots from api.preciser.io ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:55:52 UTC
+#> ℹ Data updated: 2026-10-26 19:37:39 UTC
 #> # A tibble: 168 × 20
 #>    game_uuid      shot_no period period_label clock seconds_left side  team_uuid
 #>    <chr>            <int>  <int> <chr>        <chr>        <int> <chr> <chr>    

@@ -46,25 +46,25 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_stats("1"))
 #> ── Fox Sports NBA team_stats ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:37:54 UTC
+#> ℹ Data updated: 2026-10-26 19:16:07 UTC
 #> # A tibble: 16 × 6
-#>    team_id category     stat       stat_abbreviation player            value
-#>    <chr>   <chr>        <chr>      <chr>             <chr>             <chr>
-#>  1 1       PLAYER STATS SCORING    PPG               Paul George       38.0 
-#>  2 1       PLAYER STATS REBOUNDING RPG               Jordan Walsh      6.0  
-#>  3 1       PLAYER STATS SHOOTING   FG%               Paul George       57.1 
-#>  4 1       PLAYER STATS ASSISTS    APG               Jayson Tatum      11.0 
-#>  5 1       PLAYER STATS DEFENSE    STL               Paul George       5    
-#>  6 1       PLAYER STATS DEFENSE    BLK               Mitchell Robinson 2    
-#>  7 1       PLAYER STATS MISC       DBL DBL           Jayson Tatum      1    
-#>  8 1       PLAYER STATS ADVANCED   MPG               Jayson Tatum      38.0 
-#>  9 1       TEAM STATS   SCORING    PPG               NA                113.0
-#> 10 1       TEAM STATS   REBOUNDING RPG               NA                39.0 
-#> 11 1       TEAM STATS   SHOOTING   FG%               NA                45.5 
-#> 12 1       TEAM STATS   ASSISTS    APG               NA                28.0 
-#> 13 1       TEAM STATS   DEFENSE    STL               NA                10   
-#> 14 1       TEAM STATS   DEFENSE    BLK               NA                5    
-#> 15 1       TEAM STATS   MISC       DBL DBL           NA                1    
-#> 16 1       TEAM STATS   ADVANCED   NET RTG           NA                -    
+#>    team_id category     stat       stat_abbreviation player        value
+#>    <chr>   <chr>        <chr>      <chr>             <chr>         <chr>
+#>  1 1       PLAYER STATS SCORING    PPG               Paul George   26.5 
+#>  2 1       PLAYER STATS REBOUNDING RPG               Jayson Tatum  6.5  
+#>  3 1       PLAYER STATS SHOOTING   FG%               Paul George   50.0 
+#>  4 1       PLAYER STATS ASSISTS    APG               Jayson Tatum  9.0  
+#>  5 1       PLAYER STATS DEFENSE    STL               Paul George   7    
+#>  6 1       PLAYER STATS DEFENSE    BLK               Neemias Queta 5    
+#>  7 1       PLAYER STATS MISC       DBL DBL           Jayson Tatum  1    
+#>  8 1       PLAYER STATS ADVANCED   MPG               Jayson Tatum  37.5 
+#>  9 1       TEAM STATS   SCORING    PPG               NA            110.0
+#> 10 1       TEAM STATS   REBOUNDING RPG               NA            38.0 
+#> 11 1       TEAM STATS   SHOOTING   FG%               NA            45.7 
+#> 12 1       TEAM STATS   ASSISTS    APG               NA            26.5 
+#> 13 1       TEAM STATS   DEFENSE    STL               NA            17   
+#> 14 1       TEAM STATS   DEFENSE    BLK               NA            9    
+#> 15 1       TEAM STATS   MISC       DBL DBL           NA            1    
+#> 16 1       TEAM STATS   ADVANCED   NET RTG           NA            -    
 # }
 ```

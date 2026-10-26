@@ -161,7 +161,27 @@ Other P. LEAGUE+ Functions:
 ``` r
 # \donttest{
   try(pleague_box_players(gid = 197))
-#> Error in pleague_box_players(gid = 197) : 
-#>   pleagueofficial.com/game/197 answered HTTP 403, not 200
+#> ── P. LEAGUE+ Player Box from pleagueofficial.com ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:34 UTC
+#> # A tibble: 26 × 47
+#>      gid side  player_id person_id       random_id name_zh jersey starter played
+#>    <int> <chr>     <int> <chr>           <chr>     <chr>   <chr>  <lgl>   <lgl> 
+#>  1   197 home         40 26633c72-3d8d-… 1JbPozLB  賴廷恩  0      TRUE    TRUE  
+#>  2   197 home         46 266973f4-3d8d-… 1imawJqL  周桂羽  8      FALSE   TRUE  
+#>  3   197 home         49 266c1c4e-3d8d-… 1iclgBLT  林孟學  13     FALSE   TRUE  
+#>  4   197 home         52 266e806e-3d8d-… 1hVSapP7  曾祥鈞  88     TRUE    TRUE  
+#>  5   197 home         48 267bd121-3d8d-… 1iG5OYyZ  林志傑  12     FALSE   TRUE  
+#>  6   197 home         50 267e9e03-3d8d-… 1I3hiwZr  蔡文誠  14     FALSE   TRUE  
+#>  7   197 home         53 2681570d-3d8d-… 1HPVfP2B  石博恩  23     FALSE   TRUE  
+#>  8   197 home        261 28be45ae-3d8d-… 0t1JFW9h  瓊斯    11     TRUE    TRUE  
+#>  9   197 home        269 7ff29ae5-4554-… 0sjcEvTQ  強森    5      TRUE    TRUE  
+#> 10   197 home        274 7ffade61-4554-… 0s67qUMZ  謝宗融  19     FALSE   TRUE  
+#> # ℹ 16 more rows
+#> # ℹ 38 more variables: minutes <chr>, seconds <int>, points <int>,
+#> #   reb_off <int>, reb_def <int>, reb <int>, ast <int>, stl <int>, blk <int>,
+#> #   tov <int>, pf <int>, plus_minus <int>, eff <int>, fg2_made <int>,
+#> #   fg2_att <int>, fg2_pct <dbl>, fg3_made <int>, fg3_att <int>, fg3_pct <dbl>,
+#> #   ft_made <int>, ft_att <int>, ft_pct <dbl>, efg_pct <dbl>, ts_pct <dbl>,
+#> #   usage_pct <dbl>, position <chr>, ortg <dbl>, drtg <dbl>, netrtg <dbl>, …
 # }
 ```

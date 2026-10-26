@@ -126,7 +126,7 @@ Other B.LEAGUE Functions:
 # \donttest{
   try(bleague_standings(season = 2026, tab = 1))
 #> ── B.LEAGUE standings from www.bleague.jp ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:34:44 UTC
+#> ℹ Data updated: 2026-10-26 19:12:53 UTC
 #> # A tibble: 48 × 22
 #>    season   tab season_label section section_en  rank team_id team    team_short
 #>     <int> <int> <chr>        <chr>   <chr>      <int> <chr>   <chr>   <chr>     

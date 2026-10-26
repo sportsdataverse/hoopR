@@ -131,6 +131,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_standings(season = 2025))
 #> Error in pleague_standings(season = 2025) : 
-#>   pleagueofficial.com/standings/2024-25 answered HTTP 403, not 200
+#>   pleagueofficial.com/standings/2024-25: not the page asked for: layout
+#> drift: standings table not found
 # }
 ```

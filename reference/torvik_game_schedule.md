@@ -76,7 +76,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_game_schedule(year = 2024))
-#> ✖ 2026-10-22 03:45:19.784164: Invalid arguments or no schedule available for 2024!
+#> ✖ 2026-10-26 19:39:11.771845: Invalid arguments or no schedule available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: lexical error: invalid char in json text.                                        <!DOCTYPE HTML PUBLIC "-//W3C//                      (right here) ------^ 
 #> data frame with 0 columns and 0 rows

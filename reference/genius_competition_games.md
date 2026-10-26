@@ -123,12 +123,12 @@ Other Genius Functions:
 # \donttest{
   try(genius_competition_games(comp_id = 49915))
 #> ── Genius LiveStats competition games ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:38:01 UTC
+#> ℹ Data updated: 2026-10-26 19:16:14 UTC
 #> # A tibble: 2 × 20
 #>   league_id competition_id match_id match_status match_time match_time_utc  live
 #>       <int>          <int>    <int> <chr>        <chr>      <chr>          <int>
-#> 1       115          49915  2902695 COMPLETE     2026-10-1… 2026-10-18 10…     0
-#> 2       115          49915  2902697 COMPLETE     2026-10-1… 2026-10-18 10…     0
+#> 1       115          49915  2902708 COMPLETE     2026-10-2… 2026-10-25 11…     0
+#> 2       115          49915  2902710 COMPLETE     2026-10-2… 2026-10-25 11…     0
 #> # ℹ 13 more variables: period <int>, period_type <chr>, clock <chr>,
 #> #   home_team_id <int>, home_name <chr>, home_name_international <chr>,
 #> #   home_code <chr>, home_score <int>, away_team_id <int>, away_name <chr>,

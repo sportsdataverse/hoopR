@@ -152,13 +152,13 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_player_rankings(competition_id = 24))
 #> ── BNXT League Player Rankings from Sportpress ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 03:44:55 UTC
+#> ℹ Data updated: 2026-10-26 19:38:46 UTC
 #> # A tibble: 1,414 × 15
 #>    competition_id category    rank roster_id player_id first_name last_name    
 #>             <int> <chr>      <int>     <int>     <int> <chr>      <chr>        
 #>  1             24 efficiency     1     10885      5403 Dante      Maddox Jr    
 #>  2             24 efficiency     2     10361      3002 Zaba       Bangala      
-#>  3             24 efficiency     3     10681      5287 Maks       KLANJŠČEK    
+#>  3             24 efficiency     3     10681      5287 Maks       Klanjscek    
 #>  4             24 efficiency     4     10917      5417 Shakael    Pryce        
 #>  5             24 efficiency     5     10753      5317 Noam       Yaacov       
 #>  6             24 efficiency     6     10803      5343 Dane       Erikstrup    

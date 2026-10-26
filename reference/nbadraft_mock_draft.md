@@ -48,7 +48,20 @@ Other Salary & Draft Functions:
 # \donttest{
   try(nbadraft_mock_draft())
 #> ── Mock draft from nbadraft.net ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:55:29 UTC
-#> # A tibble: 0 × 0
+#> ℹ Data updated: 2026-10-26 19:37:17 UTC
+#> # A tibble: 60 × 9
+#>     pick team        player            height weight position school class round
+#>    <int> <chr>       <chr>             <chr>   <int> <chr>    <chr>  <chr> <int>
+#>  1     1 Washington  Alijah Arenas     6-6       195 SG       USC    So.       1
+#>  2     2 Indiana     Jason Crowe       6-4       190 PG       Misso… Fr.       1
+#>  3     3 Brooklyn    Jordan Smith      6-2       205 PG/SG    Arkan… Fr.       1
+#>  4     4 Utah        Kanon Catchings   6-9       210 SF       Georg… Jr.       1
+#>  5     5 Sacramento  Tyran Stokes      6-8       230 SG       Kansas Fr.       1
+#>  6     6 Memphis     Stefan Joksimovic 6-4       190 SG       Slove… Intl.     1
+#>  7     7 Dallas      Amari Allen       6-6       205 SG/SF    Alaba… So.       1
+#>  8     8 New Orleans Davis Fogle       6-7       200 SG       Gonza… So.       1
+#>  9     9 Chicago     Braylon Mullins   6-5       180 SG       UConn  So.       1
+#> 10    10 Milwaukee   Caleb Holt        6-5       215 PG/SG    Arizo… Fr.       1
+#> # ℹ 50 more rows
 # }
 ```

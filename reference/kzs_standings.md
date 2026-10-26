@@ -134,7 +134,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_standings(competition_id = 579))
 #> ── KZS Standings from api.kzs.si ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:39:15 UTC
+#> ℹ Data updated: 2026-10-26 19:20:53 UTC
 #> # A tibble: 24 × 25
 #>    competition_id phase_id phase_name phase_type group_id group_name position
 #>             <int>    <int> <chr>      <chr>         <int> <chr>         <int>

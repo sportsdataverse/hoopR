@@ -118,7 +118,22 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_season_players(season = 2026))
-#> Error in scb_season_players(season = 2026) : 
-#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
+#> ── BBL/DBBL Season Players from the SCB API ───────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:38:01 UTC
+#> # A tibble: 376 × 8
+#>    league season season_id season_player_id real_player_id season_team_id
+#>    <chr>   <int>     <int> <chr>                     <int> <chr>         
+#>  1 bbl      2026      2025 5595                  140178151 483           
+#>  2 bbl      2026      2025 6158                  140178148 414           
+#>  3 bbl      2026      2025 6606                  140178978 483           
+#>  4 bbl      2026      2025 6638                      39486 426           
+#>  5 bbl      2026      2025 6640                      22679 426           
+#>  6 bbl      2026      2025 6732                      30631 414           
+#>  7 bbl      2026      2025 6735                  140179138 414           
+#>  8 bbl      2026      2025 6736                      44893 414           
+#>  9 bbl      2026      2025 6749                  140180109 414           
+#> 10 bbl      2026      2025 56377                     42293 413           
+#> # ℹ 366 more rows
+#> # ℹ 2 more variables: first_name <chr>, last_name <chr>
 # }
 ```

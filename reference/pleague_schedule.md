@@ -141,8 +141,25 @@ Other P. LEAGUE+ Functions:
 ``` r
 # \donttest{
   try(pleague_schedule(season = 2025))
-#> Error in pleague_schedule(season = 2025) : 
-#>   pleagueofficial.com/schedule-regular-season/2024-25 answered HTTP 403,
-#> not 200
+#> ── P. LEAGUE+ Schedule from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:40 UTC
+#> # A tibble: 48 × 23
+#>    season season_slug stage   gid date       weekday_zh time  starred game_label
+#>     <int> <chr>       <chr> <int> <date>     <chr>      <chr> <lgl>   <chr>     
+#>  1   2025 2024-25     regu…   598 2024-10-26 六         17:00 FALSE   G01       
+#>  2   2025 2024-25     regu…   599 2024-10-27 日         17:00 FALSE   G02       
+#>  3   2025 2024-25     regu…   600 2024-11-02 六         17:00 FALSE   G03       
+#>  4   2025 2024-25     regu…   602 2024-11-09 六         17:00 FALSE   G05       
+#>  5   2025 2024-25     regu…   603 2024-11-10 日         17:00 FALSE   G06       
+#>  6   2025 2024-25     regu…   604 2024-11-12 二         19:00 FALSE   G07       
+#>  7   2025 2024-25     regu…   605 2024-11-30 六         17:00 FALSE   G08       
+#>  8   2025 2024-25     regu…   606 2024-12-01 日         17:00 FALSE   G09       
+#>  9   2025 2024-25     regu…   607 2024-12-07 六         17:00 FALSE   G10       
+#> 10   2025 2024-25     regu…   608 2024-12-08 日         17:00 FALSE   G11       
+#> # ℹ 38 more rows
+#> # ℹ 14 more variables: venue_zh <chr>, attendance <int>, capacity <int>,
+#> #   phase <chr>, away_team_id <int>, away_name_zh <chr>, away_name_en <chr>,
+#> #   away_logo <chr>, away_score <int>, home_team_id <int>, home_name_zh <chr>,
+#> #   home_name_en <chr>, home_logo <chr>, home_score <int>
 # }
 ```

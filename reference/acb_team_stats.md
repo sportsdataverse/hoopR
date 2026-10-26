@@ -244,13 +244,13 @@ Other ACB Functions:
 # \donttest{
   try(acb_team_stats(club_id = 2, season = 2027))
 #> ── ACB Team Stats from api2.acb.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:34:15 UTC
+#> ℹ Data updated: 2026-10-26 19:12:21 UTC
 #> # A tibble: 14 × 97
 #>    club_id team_id edition_id season player_id player_name  first_name last_name
 #>      <int>   <int>      <int>  <int>     <int> <chr>        <chr>      <chr>    
-#>  1       2    4467         91   2027  30005378 Tyrese Mart… Tyrese     Martin   
-#>  2       2    4467         91   2027  30005357 Olivier Nka… Olivier    Nkamhoua 
-#>  3       2    4467         91   2027  20212243 Olek Balcer… Aleksander Balcerow…
+#>  1       2    4467         91   2027  30005357 Olivier Nka… Olivier    Nkamhoua 
+#>  2       2    4467         91   2027  20212243 Olek Balcer… Aleksander Balcerow…
+#>  3       2    4467         91   2027  30005378 Tyrese Mart… Tyrese     Martin   
 #>  4       2    4467         91   2027  30001332 Agustín Ubal Agustín    Ubal     
 #>  5       2    4467         91   2027  30005377 Tosan Evbuo… Torisesan  Evbuomwan
 #>  6       2    4467         91   2027  30005356 Josh Nebo    Joshua     Nebo     

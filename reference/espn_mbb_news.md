@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:36:26 UTC
+#> ℹ Data updated: 2026-10-26 19:14:34 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  2.81e7 Story Senator… Brady Tkac… 2026-10-… FALSE   Tory … https:/… 46       
-#> 2  5.02e7 Head… Hall of… Hall of Fa… 2026-10-… FALSE   NA     https:/… 41       
-#> 3  5.02e7 Head… Ex-athl… Two former… 2026-10-… FALSE   David… https:/… 41       
-#> 4  5.02e7 Head… Arizona… Arizona me… 2026-10-… FALSE   NA     https:/… 41       
-#> 5  5.02e7 Head… Spartan… Florida's … 2026-10-… FALSE   NA     https:/… 41       
+#> 1  5.03e7 Story Men's M… From conte… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 2  5.03e7 Media Paul Fi… Paul Fineb… 2026-10-… FALSE   NA     https:/… 41       
+#> 3  5.03e7 Head… Ole Mis… The NCAA h… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 4  5.03e7 Head… Dale Br… Dale Brown… 2026-10-… FALSE   NA     https:/… 41       
+#> 5  5.03e7 Story Men's c… The five t… 2026-10-… FALSE   Neil … https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:36:26 UTC
-#> # A tibble: 5 × 8
-#>         id type  headline       description published premium link_web league_id
-#>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50244155 Media Charlotte Hor… "Charlotte… 2026-10-… FALSE   https:/… 46       
-#> 2 50244012 Media Edwards, Ball… "Edwards, … 2026-10-… FALSE   https:/… 46       
-#> 3 50243989 Media Atlanta Hawks… "Atlanta H… 2026-10-… FALSE   https:/… 46       
-#> 4 50243959 Recap Davis scores … "— Anthony… 2026-10-… FALSE   http://… 46       
-#> 5 50243887 Media Milwaukee Buc… "Milwaukee… 2026-10-… FALSE   https:/… 46       
+#> ℹ Data updated: 2026-10-26 19:14:34 UTC
+#> # A tibble: 5 × 9
+#>        id type  headline description published premium byline link_web league_id
+#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
+#> 1  5.03e7 Head… Magic's… Magic guar… 2026-10-… FALSE   NA     https:/… 46       
+#> 2  5.03e7 Head… Dream, … Game 6 of … 2026-10-… FALSE   Ramon… https:/… 59       
+#> 3  5.03e7 Story Monday'… Andre Snel… 2026-10-… FALSE   Andre… https:/… 22000    
+#> 4  5.03e7 Story Fantasy… Ty Jerome'… 2026-10-… FALSE   Steve… https:/… 3090     
+#> 5  5.03e7 Head… U.S. se… Two U.S. s… 2026-10-… FALSE   Mark … https:/… 46       
 # }
 ```

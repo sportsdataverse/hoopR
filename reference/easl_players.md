@@ -148,7 +148,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_players(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
 #> ── EASL Players from easl.joshricha.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:35:49 UTC
+#> ℹ Data updated: 2026-10-26 19:13:58 UTC
 #> # A tibble: 17 × 20
 #>    season season_id    player_row_id player_id name  name_latin name_abbreviated
 #>     <int> <chr>                <int> <chr>     <chr> <chr>      <chr>           

@@ -153,11 +153,14 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_last_game_day())
 #> ── Basketligaen Last Game Day from basketligaen.dk ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 03:44:21 UTC
-#> # A tibble: 1 × 39
+#> ℹ Data updated: 2026-10-26 19:38:12 UTC
+#> # A tibble: 4 × 39
 #>   game_uuid  start_date_time  state overtime shootout ssgt_uuid home_team_status
 #>   <chr>      <chr>            <chr> <lgl>    <chr>    <chr>     <chr>           
-#> 1 blhiuqttjk 2026-10-19T17:0… post… FALSE    NA       xs07bd3f… LOSE            
+#> 1 z2iv0ds8ka 2026-10-24T12:0… post… FALSE    NA       xs07bd3f… WIN             
+#> 2 fn29bjykq8 2026-10-24T15:0… post… FALSE    NA       xs07bd3f… LOSE            
+#> 3 oj01tktwv7 2026-10-24T15:0… post… FALSE    NA       xs07bd3f… LOSE            
+#> 4 wp1cmgyvzv 2026-10-24T15:3… post… FALSE    NA       xs07bd3f… WIN             
 #> # ℹ 32 more variables: home_team_uuid <chr>, home_team_owner_instance_id <chr>,
 #> #   home_team_code <chr>, home_team_names_code <chr>,
 #> #   home_team_names_short <chr>, home_team_names_long <chr>,

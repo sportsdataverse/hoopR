@@ -199,12 +199,12 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
 #> ── NBL Rosetta player_stats from prod.rosetta.nbl.com.au ──────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-22 02:55:38 UTC
+#> ℹ Data updated: 2026-10-26 19:37:25 UTC
 #> # A tibble: 3 × 91
 #>   org   assists_average blocks_average field_goals_attempted field_goals_made
 #>   <chr>           <dbl>          <dbl>                 <int>            <int>
 #> 1 nbl              1.57         0.243                    338              134
-#> 2 nbl              3            0                         93               43
+#> 2 nbl              2.86         0                        113               50
 #> 3 nbl              1.23         0.0645                   184               77
 #> # ℹ 86 more variables: field_goals_attempted_average <dbl>,
 #> #   field_goals_made_average <dbl>, field_goals_percentage <dbl>,

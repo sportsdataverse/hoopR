@@ -134,7 +134,15 @@ Other P. LEAGUE+ Functions:
 ``` r
 # \donttest{
   try(pleague_box_teams(gid = 197))
-#> Error in pleague_box_teams(gid = 197) : 
-#>   pleagueofficial.com/game/197 answered HTTP 403, not 200
+#> ── P. LEAGUE+ Team Box from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:34 UTC
+#> # A tibble: 2 × 23
+#>     gid side  minutes seconds points fg2_made fg2_att fg2_pct fg3_made fg3_att
+#>   <int> <chr> <chr>     <int>  <int>    <int>   <int>   <dbl>    <int>   <int>
+#> 1   197 home  240:00    14400    102       26      59    44.1       12      28
+#> 2   197 away  240:00    14400     94       25      55    45.4       11      26
+#> # ℹ 13 more variables: fg3_pct <dbl>, ft_made <int>, ft_att <int>,
+#> #   ft_pct <dbl>, reb <int>, reb_off <int>, reb_def <int>, ast <int>,
+#> #   stl <int>, blk <int>, tov <int>, pf <int>, plus_minus <int>
 # }
 ```

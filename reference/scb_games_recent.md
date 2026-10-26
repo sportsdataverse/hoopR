@@ -201,7 +201,27 @@ Other SCB Functions:
 ``` r
 # \donttest{
   try(scb_games_recent())
-#> Error in scb_games_recent() : 
-#>   www.easycredit-bbl.de/ answered HTTP 503: the API key could not be read.
+#> ── BBL/DBBL Recent Games from the SCB API ─────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:57 UTC
+#> # A tibble: 27 × 91
+#>    league season season_id game_id competition stage status bucket game_progress
+#>    <chr>   <int>     <int> <chr>   <chr>       <chr> <chr>  <chr>  <chr>        
+#>  1 bbl      2027      2026 2007042 BBL_CUP     ROUN… OFFIC… past   E            
+#>  2 bbl      2027      2026 2006729 BBL_CUP     ROUN… OFFIC… past   E            
+#>  3 bbl      2027      2026 2006865 BBL         MAIN… OFFIC… past   E            
+#>  4 bbl      2027      2026 2006866 BBL         MAIN… OFFIC… past   E            
+#>  5 bbl      2027      2026 2006867 BBL         MAIN… OFFIC… past   E            
+#>  6 bbl      2027      2026 2006868 BBL         MAIN… OFFIC… past   E            
+#>  7 bbl      2027      2026 2006870 BBL         MAIN… OFFIC… past   E            
+#>  8 bbl      2027      2026 2006871 BBL         MAIN… OFFIC… past   E            
+#>  9 bbl      2027      2026 2006872 BBL         MAIN… OFFIC… past   E            
+#> 10 bbl      2027      2026 2006873 BBL         MAIN… LIVE   prese… Q2           
+#> # ℹ 17 more rows
+#> # ℹ 82 more variables: scheduled_time <chr>, match_day <int>, is_tbd <lgl>,
+#> #   is_hidden <lgl>, home_team_id <chr>, home_season_team_id <chr>,
+#> #   home_team_name <chr>, home_tlc <chr>, home_is_foreign <lgl>,
+#> #   home_rank <int>, home_streak <chr>, home_streak_count <int>,
+#> #   home_last10_victories <int>, home_last10_losses <int>,
+#> #   home_total_games <int>, guest_team_id <chr>, guest_season_team_id <chr>, …
 # }
 ```

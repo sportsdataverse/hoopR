@@ -128,7 +128,14 @@ Other P. LEAGUE+ Functions:
 ``` r
 # \donttest{
   try(pleague_game(gid = 197))
-#> Error in pleague_game(gid = 197) : 
-#>   pleagueofficial.com/game/197 answered HTTP 403, not 200
+#> ── P. LEAGUE+ Game from pleagueofficial.com ───────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-10-26 19:37:35 UTC
+#> # A tibble: 1 × 17
+#>     gid uuid          status_zh finished date       time  venue_zh game_label_zh
+#>   <int> <chr>         <chr>     <lgl>    <date>     <chr> <chr>    <chr>        
+#> 1   197 e6f98675-3e5… 已完賽    TRUE     2022-11-05 17:00 臺北和平籃球館… 例行賽G1     
+#> # ℹ 9 more variables: away_name_zh <chr>, away_name_en <chr>, away_logo <chr>,
+#> #   away_score <int>, home_name_zh <chr>, home_name_en <chr>, home_logo <chr>,
+#> #   home_score <int>, overtimes <int>
 # }
 ```
