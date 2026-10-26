@@ -33,7 +33,7 @@ from pathlib import Path
 
 import yaml
 
-from sportsdataverse.euroleague import euroleague_parsers as P
+from sportsdataverse.basketball.euroleague import euroleague_parsers as P
 
 HERE = Path(__file__).resolve().parent
 FX = HERE.parent / "tests" / "testthat" / "fixtures" / "euroleague"

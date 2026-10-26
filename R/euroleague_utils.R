@@ -2,7 +2,7 @@
 # Internal: shared HTTP + parsing layer for the EuroLeague `euroleague_*()` family
 # ---------------------------------------------------------------------------
 #
-# R mirror of sdv-py's `sportsdataverse/euroleague/` (same function names,
+# R mirror of sdv-py's `sportsdataverse/basketball/euroleague/` (same function names,
 # arguments, defaults and snake_case columns, one row per sdv-py row). Three
 # keyless, unofficial hosts behind euroleaguebasketball.net:
 #   v2   https://api-live.euroleague.net/v2  -- Competition Engine lists + game box score

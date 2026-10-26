@@ -50,7 +50,7 @@ live.euroleague.net/api (JSON by default, no Accept header; captured 2026-10-06;
 
 `columns.json` and `gold__<route>[__<section>].csv` are the sdv-py side of the R-vs-Python
 parity test, written by the committed generator `data-raw/euroleague_goldens.py`: it runs
-sdv-py's parsers (`sportsdataverse.euroleague.euroleague_parsers`) on the fixtures above and
+sdv-py's parsers (`sportsdataverse.basketball.euroleague.euroleague_parsers`) on the fixtures above and
 writes, per route and `kind` / `mode` section, the frame's column names (asserted equal, in
 order, to `tools/codegen/schemas/native/euroleague/<route>.yaml`), polars dtypes mapped to R
 classes, the row count, and the frame as CSV (`null_value = "NA"`, so a Python null and an
