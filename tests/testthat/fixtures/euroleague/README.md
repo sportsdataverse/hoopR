@@ -50,14 +50,16 @@ live.euroleague.net/api (JSON by default, no Accept header; captured 2026-10-06;
 
 `columns.json` and `gold__<route>[__<section>].csv` are the sdv-py side of the R-vs-Python
 parity test, written by the committed generator `data-raw/euroleague_goldens.py`: it runs
-sdv-py's parsers (`sportsdataverse.euroleague.euroleague_parsers`) on the fixtures above and
+sdv-py's parsers (`sportsdataverse.basketball.euroleague.euroleague_parsers`) on the fixtures above and
 writes, per route and `kind` / `mode` section, the frame's column names (asserted equal, in
 order, to `tools/codegen/schemas/native/euroleague/<route>.yaml`), polars dtypes mapped to R
 classes, the row count, and the frame as CSV (`null_value = "NA"`, so a Python null and an
 empty string stay distinct). **Last generated from sdv-py commit `90372b5a46`** (branch
 `fix/frames-null-promotion`: the shared frame builder keeps nullable boolean / integer columns
 and never writes `"nan"`; merged to sdv-py main as `67ee42280f`, PR #712), with that checkout's
-venv python:
+venv python. The generator now imports the parsers from their post-#1020 home, so regenerate from
+an sdv-py checkout at or after `c2031afbc7` (sdv-py PR #1020); `90372b5a46` predates the move and
+had them at `sportsdataverse.euroleague`:
 
 ```sh
 <sdv-py>/.venv/Scripts/python.exe data-raw/euroleague_goldens.py --sdv-py <sdv-py>
