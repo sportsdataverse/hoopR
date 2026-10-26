@@ -57,7 +57,9 @@ classes, the row count, and the frame as CSV (`null_value = "NA"`, so a Python n
 empty string stay distinct). **Last generated from sdv-py commit `90372b5a46`** (branch
 `fix/frames-null-promotion`: the shared frame builder keeps nullable boolean / integer columns
 and never writes `"nan"`; merged to sdv-py main as `67ee42280f`, PR #712), with that checkout's
-venv python:
+venv python. The generator now imports the parsers from their post-#1020 home, so regenerate from
+an sdv-py checkout at or after `c2031afbc7` (sdv-py PR #1020); `90372b5a46` predates the move and
+had them at `sportsdataverse.euroleague`:
 
 ```sh
 <sdv-py>/.venv/Scripts/python.exe data-raw/euroleague_goldens.py --sdv-py <sdv-py>
