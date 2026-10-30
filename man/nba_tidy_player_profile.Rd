@@ -23,9 +23,11 @@ this nests each populated set into a \code{.data} list-column, one row per
 \verb{(set_name, PLAYER_ID)}. Recover a table with \code{tidyr::unnest()}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   prof <- try(nba_tidy_player_profile(player_id = 201939))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Combined Datasets:

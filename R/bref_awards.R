@@ -33,7 +33,7 @@
 #' @importFrom dplyr as_tibble rename any_of bind_rows
 #' @family Basketball-Reference Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(bref_awards(season = 2024))
 #' }

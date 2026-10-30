@@ -93,7 +93,7 @@ NULL
 #'  df <- nba_shot_zones(game_id = "0022200001")
 #'  print(table(df$shot_zone, useNA = "ifany"))
 #' ```
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try({
 #'     df <- nba_shot_zones(game_id = "0022200001")

@@ -35,9 +35,11 @@ division, logo URL) derived from the stats.nba.com player index plus a
 static conference/division map.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_team_dict())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Dictionary Functions:

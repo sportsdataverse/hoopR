@@ -44,7 +44,7 @@
 #' @importFrom cli cli_abort
 #' @family Basketball-Reference Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(bref_players_stats(season = 2024, table = "per_game"))
 #' }

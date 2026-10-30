@@ -23,9 +23,11 @@ totals onto every player row by \code{GAME_ID} + \code{TEAM_ID}, suffixing the t
 columns with \verb{_team}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_tidy_boxscore(game_id = "0022300061"))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Combined Datasets:

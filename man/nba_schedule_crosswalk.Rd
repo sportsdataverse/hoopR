@@ -20,9 +20,11 @@ current season only, so the live builder is effectively current-season;
 historical coverage comes from cached release artifacts.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_schedule_crosswalk())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Crosswalk Functions:

@@ -41,9 +41,11 @@ aggressive scraping (~20 requests/minute) -- space repeated calls with
 \code{Sys.sleep()}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(bref_player_bios(letter = "a"))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Basketball-Reference Functions:

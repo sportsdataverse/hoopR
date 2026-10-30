@@ -43,9 +43,11 @@ sourced from the stats.nba.com player index. Handy for joining player ids to
 names/teams and for fetching headshots.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_player_dict())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Dictionary Functions:
