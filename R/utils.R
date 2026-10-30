@@ -80,6 +80,18 @@ login <- function(user_email = Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_P
     httr2::req_headers(!!!.kp_headers_list()) |>
     httr2::req_cookie_preserve(jar)
 }
+
+#' KenPom's URL slug for a team name (`team.php?team=<slug>`)
+#'
+#' The slug is the URL-encoded name with `+` for spaces (`"Texas A&M"` ->
+#' `"Texas+A%26M"`), the same value as `teams_links$team.link.ref` for every
+#' row, so it works for seasons `teams_links` does not list yet.
+#' @param team Team name as KenPom prints it (`teams_links$Team`).
+#' @return The slug, a character scalar.
+#' @noRd
+.kp_team_slug <- function(team) {
+  gsub("%20", "+", utils::URLencode(team, reserved = TRUE), fixed = TRUE)
+}
 #' @rdname kp_user_pw
 #' @export
 kp_user_email <- function() {

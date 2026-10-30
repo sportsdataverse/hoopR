@@ -64,8 +64,7 @@ kp_team_schedule <- function(team, year = 2022){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
       ### Pull Data
@@ -521,8 +520,7 @@ kp_gameplan <- function(team, year=2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
       ### Pull Data
@@ -795,8 +793,7 @@ kp_opptracker <- function(team, year = 2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
 
@@ -1034,8 +1031,7 @@ kp_team_players <- function(team, year = 2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
       ### Pull Data
@@ -1611,8 +1607,7 @@ kp_minutes_matrix <- function(team, year = 2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
       ### Pull Data
@@ -1770,8 +1765,7 @@ kp_team_player_stats <- function(team, year = 2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
 
@@ -2022,8 +2016,7 @@ kp_team_depth_chart <- function(team, year= 2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
       ### Pull Data
@@ -2179,8 +2172,7 @@ kp_team_lineups <- function(team, year=2021){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort("Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == year,]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
 
       ### Pull Data

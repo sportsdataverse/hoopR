@@ -97,8 +97,7 @@ kp_team_history <- function(team){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort( "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
       ### Pull Data
       url <- paste0("https://kenpom.com/history.php?",
