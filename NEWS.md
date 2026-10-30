@@ -55,6 +55,69 @@
   whole-number double is accepted wherever sdv-py takes an integer. Live tests run only with
   `HOOPR_INTL_LIVE_TESTS=1`; Genius needs `GENIUS_PROXY` and CBA `CBA_PROXY`.
 
+### **EuroLeague and EuroCup (`euroleague_*`)**
+
+* New EuroLeague / EuroCup family, `euroleague_*()` (15 functions), wrapping
+  the keyless, unofficial Competition Engine (`api-live.euroleague.net` v2 +
+  v3) and live (`live.euroleague.net/api`) APIs: `euroleague_competitions()`,
+  `euroleague_seasons()`, `euroleague_rounds()`, `euroleague_clubs()`,
+  `euroleague_people()`, `euroleague_games()`, `euroleague_game_stats()`,
+  `euroleague_game_report()`, `euroleague_standings(kind =)`,
+  `euroleague_player_stats(mode =)`, `euroleague_team_stats(mode =)`,
+  `euroleague_game_points()` (the shot chart, in centimeters from the hoop),
+  `euroleague_game_pbp()`, `euroleague_game_boxscore()` and
+  `euroleague_game_header()`. They mirror sdv-py's `euroleague_*` wrappers
+  (same arguments, defaults and snake_case columns) and raise the classed
+  `hoopR_no_data` / `hoopR_invalid_request` / `hoopR_fetch_error` conditions
+  on a failed request; the live API's empty "no such game" answer is a
+  zero-row tibble with the documented columns. Wrap-only: payloads are not
+  redistributed as release assets.
+
+### **Behavior changes**
+
+* The NBA Stats wrappers now default `season` to the previous season. 97
+  season arguments defaulted to the current one,
+  `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com answers
+  with empty tables until that season's games begin. On 2026-10-05 the
+  current season, 2026-27, left `nba_leaguedashplayerstats()`,
+  `nba_leaguegamelog()` and `nba_teamgamelogs()` empty; the previous season
+  returns 582, 2,460 and 82 rows. They now default to
+  `year_to_season(most_recent_nba_season() - 2)`. Pass `season` for the
+  current season. `most_recent_nba_season()` rolls over in October, so from
+  July to September the default is two seasons back from the one just
+  finished. Unchanged:
+  * the schedule functions (`nba_schedule()`, `nba_scheduleleaguev2int()`,
+    `nbagl_schedule()`), because a schedule is published before its season
+    starts;
+  * the draft and draft-combine functions, whose default
+    (`most_recent_nba_season() - 1`) is already the latest completed draft;
+  * `nba_teams()`, which reads the current season's standings (they list all
+    30 teams before the season starts);
+  * fixed defaults such as `"2020-21"` and `"22022"`.
+
+  wehoop's WNBA Stats wrappers use the same previous-season rule, as does
+  sportsdataverse-py. The examples and live tests pass the previous season
+  too. The `nba_playoffpicture()` error hint now names `season_id`, the
+  argument it takes, and the `nba_drafthistory()` live test passes `season`
+  rather than an unknown `season_year`, which was silently ignored.
+
+### **New data loaders**
+
+* Eight new loaders read the `mbb_groups` and `nba_groups` releases on
+  sportsdataverse-data, which record conference and division membership as
+  it was each season rather than back-applying today's alignment:
+  `load_mbb_groups()` / `load_nba_groups()` (one row per lineage, with one
+  `group_id` kept across renames), `load_mbb_group_seasons()` /
+  `load_nba_group_seasons()` (names, parent group and member count as of
+  each season), `load_mbb_group_aliases()` / `load_nba_group_aliases()` (the
+  names and ids ESPN, NCAA, KenPom and NBA Stats use for each group) and
+  `load_mbb_team_group_seasons(seasons)` (2002 onward) /
+  `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team per
+  season. Seasons are ending years. The loaders read parquet, not the tags'
+  csv copies, so `team_id` stays character.
+
+### **ESPN**
+
 * `espn_nba_pbp()`, `espn_mbb_pbp()`, the `Plays` frame of `espn_nba_game_all()` /
   `espn_mbb_game_all()`, and `helper_espn_nba_pbp()` / `helper_espn_mbb_pbp()` now
   rebuild `home_score` / `away_score` from the scoring plays (in ESPN's order, a made
@@ -89,62 +152,8 @@
   `mbb_player_crosswalk()` / `nba_player_crosswalk()`. Mirrors
   sportsdataverse/sportsdataverse-py#782.
 
-* `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on KenPom's
-  numeric `game_date` (`20201128`): the date now parses as `YYYYMMDD`, and each
-  team's KenPom schedule is fetched inside its own error handler.
+### **NBA Stats, CDN and G League**
 
-* New EuroLeague / EuroCup family, `euroleague_*()` (15 functions), wrapping
-  the keyless, unofficial Competition Engine (`api-live.euroleague.net` v2 +
-  v3) and live (`live.euroleague.net/api`) APIs: `euroleague_competitions()`,
-  `euroleague_seasons()`, `euroleague_rounds()`, `euroleague_clubs()`,
-  `euroleague_people()`, `euroleague_games()`, `euroleague_game_stats()`,
-  `euroleague_game_report()`, `euroleague_standings(kind =)`,
-  `euroleague_player_stats(mode =)`, `euroleague_team_stats(mode =)`,
-  `euroleague_game_points()` (the shot chart, in centimeters from the hoop),
-  `euroleague_game_pbp()`, `euroleague_game_boxscore()` and
-  `euroleague_game_header()`. They mirror sdv-py's `euroleague_*` wrappers
-  (same arguments, defaults and snake_case columns) and raise the classed
-  `hoopR_no_data` / `hoopR_invalid_request` / `hoopR_fetch_error` conditions
-  on a failed request; the live API's empty "no such game" answer is a
-  zero-row tibble with the documented columns. Wrap-only: payloads are not
-  redistributed as release assets.
-* The NBA Stats wrappers now default `season` to the previous season. 97
-  season arguments defaulted to the current one,
-  `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com answers
-  with empty tables until that season's games begin. On 2026-10-05 the
-  current season, 2026-27, left `nba_leaguedashplayerstats()`,
-  `nba_leaguegamelog()` and `nba_teamgamelogs()` empty; the previous season
-  returns 582, 2,460 and 82 rows. They now default to
-  `year_to_season(most_recent_nba_season() - 2)`. Pass `season` for the
-  current season. `most_recent_nba_season()` rolls over in October, so from
-  July to September the default is two seasons back from the one just
-  finished. Unchanged:
-  * the schedule functions (`nba_schedule()`, `nba_scheduleleaguev2int()`,
-    `nbagl_schedule()`), because a schedule is published before its season
-    starts;
-  * the draft and draft-combine functions, whose default
-    (`most_recent_nba_season() - 1`) is already the latest completed draft;
-  * `nba_teams()`, which reads the current season's standings (they list all
-    30 teams before the season starts);
-  * fixed defaults such as `"2020-21"` and `"22022"`.
-
-  wehoop's WNBA Stats wrappers use the same previous-season rule, as does
-  sportsdataverse-py. The examples and live tests pass the previous season
-  too. The `nba_playoffpicture()` error hint now names `season_id`, the
-  argument it takes, and the `nba_drafthistory()` live test passes `season`
-  rather than an unknown `season_year`, which was silently ignored.
-* Added `cbbd_teams_directory()` (CBD `/teams/directory`, upstream v1.29.0): the
-  season's full team directory, as a named list of `teams` and `conferences`.
-* Added `cbbd_teams_season_overview()` (CBD
-  `/teams/{teamId}/season/{season}/overview`, upstream v1.29.0): a stored
-  full-season team overview, as a named list of `team`, `record`, `ratings`,
-  `efficiency`, `shooting`, `players`, `schedule` and `sources` tibbles.
-* `ncaa_mbb_NET_rankings()` failed on every call with "invalid first
-  argument" and returned an empty tibble: it recorded its arguments with
-  `mget(setdiff(names(formals()), "..."))`, and for a function with no
-  arguments current R returns `NULL` from that `setdiff()`, which `mget()`
-  rejects. It records none now. A new offline test runs the parser on a
-  two-row NET table built inline; the live test stays skipped.
 * `nbagl_live_pbp()` and `nbagl_live_boxscore()` returned nothing on every
   call. They sent no browser headers, and cdn-gleague.nba.com answered with
   a 403 "Access Denied" page. The NBA CDN wrappers (`nba_live_pbp()`,
@@ -159,6 +168,7 @@
   to skip when the call came back empty, so a refused request passed as a
   skip. They fail now; the scoreboard test still skips when the feed lists
   no games.
+
 * `nba_schedule()` returned the NBA schedule for every `league_id`. `"20"`
   read `scheduleLeagueV2_2.json` on cdn.nba.com, which is a second copy of
   the NBA's (`leagueId` "00"), and `"10"` read the NBA file itself. Each
@@ -168,31 +178,53 @@
   `season_type_description` labels a `5` game "Play-In Game" only for the
   NBA; the WNBA (Commissioner's Cup final) and the G League use that digit
   for other events and get `NA`.
+
 * `nba_todays_scoreboard()` printed an "Invalid arguments" error about
   `unnest` on a day without games. It now returns an empty result quietly;
   a payload with no games list at all is still reported.
+
 * `nba_data_pbp()` returned nothing on every call. data.nba.com answered a
   request without browser headers with a 403 "Access Denied" page, and the
   parser failed on the empty shell it serves for 2025-26 games. It now sends
   the CDN header set. data.nba.com has play-by-play for 2016-17 through
   2024-25; a later game returns an empty result with a message.
+
 * `nba_data_pbp()` and the six CDN wrappers no longer discard their result
   when a warning is raised while parsing: an empty `warning` handler in
   their `tryCatch()` abandoned the parse at the first warning. The warning
   now reaches the caller along with the data.
 
-* Eight new loaders read the `mbb_groups` and `nba_groups` releases on
-  sportsdataverse-data, which record conference and division membership as
-  it was each season rather than back-applying today's alignment:
-  `load_mbb_groups()` / `load_nba_groups()` (one row per lineage, with one
-  `group_id` kept across renames), `load_mbb_group_seasons()` /
-  `load_nba_group_seasons()` (names, parent group and member count as of
-  each season), `load_mbb_group_aliases()` / `load_nba_group_aliases()` (the
-  names and ids ESPN, NCAA, KenPom and NBA Stats use for each group) and
-  `load_mbb_team_group_seasons(seasons)` (2002 onward) /
-  `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team per
-  season. Seasons are ending years. The loaders read parquet, not the tags'
-  csv copies, so `team_id` stays character.
+* `nba_videoeventsasset()` is no longer deprecated: the endpoint serves clips for a real
+  `game_event_id` (the default `0` matches no play), and the video envelope is now parsed
+  into its `Meta` and `playlist` tables instead of two empty frames.
+
+* `nba_gamerotation()` works again: stats.nba.com rejected its parameter order and a
+  duplicated `Accept-Encoding` header (#190).
+
+* `nba_pbp(version = "v2")` no longer errors when a player is substituted on and off at
+  the same clock time; the on-court columns read the right event column (#186, #210).
+
+### **College basketball (CBD, NCAA, Torvik, crosswalks)**
+
+* `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on KenPom's
+  numeric `game_date` (`20201128`): the date now parses as `YYYYMMDD`, and each
+  team's KenPom schedule is fetched inside its own error handler.
+
+* Added `cbbd_teams_directory()` (CBD `/teams/directory`, upstream v1.29.0): the
+  season's full team directory, as a named list of `teams` and `conferences`.
+
+* Added `cbbd_teams_season_overview()` (CBD
+  `/teams/{teamId}/season/{season}/overview`, upstream v1.29.0): a stored
+  full-season team overview, as a named list of `team`, `record`, `ratings`,
+  `efficiency`, `shooting`, `players`, `schedule` and `sources` tibbles.
+
+* `ncaa_mbb_NET_rankings()` failed on every call with "invalid first
+  argument" and returned an empty tibble: it recorded its arguments with
+  `mget(setdiff(names(formals()), "..."))`, and for a function with no
+  arguments current R returns `NULL` from that `setdiff()`, which `mget()`
+  rejects. It records none now. A new offline test runs the parser on a
+  two-row NET table built inline; the live test stays skipped.
+
 * `mbb_team_crosswalk()` now reads every source as of the requested season,
   matching the sportsdataverse-py builder (sportsdataverse-py #604 / #605)
   that `hoopR-mbb-data` runs by default:
@@ -213,9 +245,18 @@
     newest season's KenPom conferences.
   * Any failed source (ESPN, Fox, Torvik, or the conference reference) now
     raises instead of being reported and returned as an empty tibble.
+
 * `torvik_ratings()` returned an empty tibble for every season from 2008 to
   2021: those files quote one header, `fread()` warns while fixing it, and
   the warning discarded the season. That warning is no longer fatal.
+
+* The KenPom team-page functions (`kp_team_schedule()`, `kp_gameplan()`,
+  `kp_opptracker()`, `kp_team_players()`, `kp_minutes_matrix()`,
+  `kp_team_player_stats()`, `kp_team_depth_chart()`, `kp_team_lineups()`) and
+  `kp_team_history()` returned nothing for seasons after the last one in
+  `teams_links` (2026). They now build the KenPom page link from the team name, so
+  the current season works. The `teams_links` documentation now describes its 8,679
+  team-season rows.
 
 ### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
 
@@ -242,11 +283,23 @@ empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
   player-crosswalk builders `nba_player_crosswalk()` and `mbb_player_crosswalk()` now need it; the cached `load_*_crosswalk()` loaders
   do not. magrittr and lubridate are no longer dependencies (`%>%` still comes from dplyr; date
   parsing now uses base R with the same results).
+* Rcpp and RcppParallel are no longer dependencies (hoopR has no compiled code), and the
+  unused Suggests furrr, future, ggrepel, rmarkdown and yaml are gone.
+* withr is a new import, and xml2 moved from Suggests to Imports (several parsers call it
+  directly). digest is a new Suggests, needed only by the CBA wrappers.
+* Minimum versions raised: cli (>= 3.0.0), httr2 (>= 1.0.4), rlang (>= 1.0.0) and, for
+  the tests, testthat (>= 3.1.9).
+
+### **Documentation**
+
+* The package now ships its `CITATION` file, so `citation("hoopR")` gives the curated
+  entry with the CRAN DOI.
+* Examples that call stats.nba.com, Basketball-Reference or KenPom run only in
+  interactive sessions; those hosts refuse requests from most servers.
 
 # **hoopR 3.1.0**
 
-Development release on top of the CRAN-shipped 3.0.0 (commit
-[b76100b3](https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b)).
+Released to CRAN on 2026-08-25, on top of 3.0.0.
 Headline change is a **58-wrapper ESPN endpoint expansion** that brings
 hoopR's ESPN coverage to parity with wehoop — athlete coverage, team
 detail, event detail, league catalog, news, calendar, injuries, plus
