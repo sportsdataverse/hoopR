@@ -548,7 +548,7 @@
   list(matches = rows)
 }
 
-#' Reduce a fetched page to its record (the sdv-internal-refs capture shape).
+#' Reduce a fetched page to its record (the record shape of a parsed HTML page).
 #'
 #' Raises a `genius_not_parsed` condition (field `empty`: TRUE for a legitimate
 #' "nothing here") for an empty, cut-off or wrong-kind page.

@@ -35,13 +35,12 @@ Endpoint: \verb{GET https://api.data.cebl.ca/teams/\{team_id\}/roster/\{season\}
 }
 \details{
 \itemize{
-\item CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
+\item Unofficial use of the CEBL's own API: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
 the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.
 The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not
 reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never
 prints it, and raises \code{hoopR_asset_fetch} with a 'key rotated?' hint on a persistent 401.
-www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced
-at least 1 s apart.
+www.cebl.ca/robots.txt disallows nothing. Requests are spaced at least 1 s apart.
 \item Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An
 unknown season, team or player answers an empty list, which the runtime raises as \code{hoopR_no_data}. Ids are
 CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).

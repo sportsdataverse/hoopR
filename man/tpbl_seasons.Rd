@@ -29,7 +29,7 @@ Endpoint: \verb{GET https://api.tpbl.basketball/api/seasons}
 \item Unofficial and unsupported: these are the routes the tpbl.basketball site's own front end calls on
 api.tpbl.basketball (read from its JavaScript bundle). The API is keyless and needs no headers;
 tpbl.basketball/robots.txt answers 200 with an empty body. The runtime waits at least 1 s before every request,
-retries included. Payloads are not redistributed as release assets.
+retries included.
 \item Coverage: three seasons so far (2024-25 = season 2025 to 2026-27 = season 2027). There is NO play-by-play
 route; the two shot lists carry court coordinates only, with no shooter, game, quarter or time. Names (teams
 with their sponsor, venues, players, referees) are Traditional Chinese; the column descriptions translate the

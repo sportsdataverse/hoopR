@@ -91,8 +91,8 @@ Endpoint: \verb{POST https://data-server.cbaleague.com/api/player-base-list} (JS
 \details{
 \itemize{
 \item Unofficial and unsupported: these wrappers read the routes that cbaleague.com's own data site (a Vue
-single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets. Requests are spaced at least 1 s apart per host; keep use small.
+single-page app) calls. The site's terms were not reviewed; check them before you
+republish the data. Requests are spaced at least 1 s apart per host; keep use small.
 \item Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;
 the runtime decrypts it with \code{digest::AES()} (digest is a suggested package: install it to use these wrappers)
 and refuses anything that does not decrypt. The host blocks

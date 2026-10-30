@@ -77,7 +77,7 @@ row's side, \code{team_name}, \code{coach}, the points scored per quarter
 }
 \details{
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
+wraps it. This
 function mirrors its sdv-py twin of the same name: same arguments, defaults
 and snake_case columns, one row per sdv-py row.
 

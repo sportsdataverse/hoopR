@@ -664,7 +664,7 @@ NULL
 
 
 # Build a class-carrying empty hoopR_data tibble for return-variable
-# initialization (see CLAUDE.md "Return-Value Initialization").
+# initialization (a wrapper returns it when a request fails).
 #
 # Tibble-returning ESPN/league wrappers must initialize their return
 # variable BEFORE the tryCatch so that a connection error / HTTP 500 in

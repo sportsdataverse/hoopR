@@ -48,7 +48,7 @@ The columns of \code{\link[=fiba_gdap_editions]{fiba_gdap_editions()}}:\tabular{
    hosts \tab character \tab Host countries with their cities. Stored as a JSON string. \cr
    competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
    competition_code \tab character \tab Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). \cr
-   season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. \cr
+   season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). \cr
    official_name \tab character \tab Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). \cr
    start \tab character \tab First day, YYYY-MM-DD. \cr
    end \tab character \tab Last day, YYYY-MM-DD. \cr
@@ -134,7 +134,7 @@ The columns of \code{\link[=fiba_gdap_schedule]{fiba_gdap_schedule()}}:\tabular{
    round_round_order \tab integer \tab Display order of the round. \cr
    competition_competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
    competition_competition_code \tab character \tab Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). \cr
-   competition_season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. \cr
+   competition_season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). \cr
    competition_official_name \tab character \tab Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). \cr
    competition_start \tab character \tab First day, YYYY-MM-DD. \cr
    competition_end \tab character \tab Last day, YYYY-MM-DD. \cr
@@ -407,7 +407,7 @@ The columns of \code{\link[=fiba_gamepage_shots]{fiba_gamepage_shots()}}:\tabula
 Per-competition aliases of the FIBA wrappers for FIBA Asia Cup (GDAP competition family 195), named as in sdv-py. Season rule: event year (2025 = 2025).
 }
 \details{
-FIBA's terms restrict this source: the GDAP developer-portal terms limit API use to 'Authorized Users' and the fiba.basketball terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included. Users who are not themselves authorised by FIBA should check the terms before using the wrappers. See \code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}} for the shared notes.
+FIBA's terms restrict this source: the GDAP developer-portal terms limit API use to 'Authorized Users' and the fiba.basketball terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not themselves authorised by FIBA should check the terms before using the wrappers. See \code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}} for the shared notes.
 
 A \code{comp} of another competition family, or one GDAP gives no family, is \code{hoopR_asset_fetch}; a season with no edition is \code{hoopR_no_data}; a season listing several editions, or a game function called with neither \code{season} nor \code{comp}, is \code{hoopR_bad_request}.
 

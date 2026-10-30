@@ -79,7 +79,7 @@
   (about -2.1e8) also lands at +/-28 on the transformed pair; its raw pair keeps the sentinel.
   `espn_nba_pbp()` / `espn_mbb_pbp()` share the helper. Seasons already published by
   `load_mbb_pbp()` (hoopR-mbb-data) keep "MadeFreeThrow" `coordinate_x` at +/-41.75 until they are
-  republished (sportsdataverse-py REPROCESS run #3); new processing gives +/-28.
+  republished; new processing gives +/-28.
 
 * `espn_mbb_team_roster()` / `espn_nba_team_roster()` for a past season now
   build the roster from that season's published player box scores
@@ -291,9 +291,8 @@ Read-only Fox Sports "Bifrost" basketball wrappers over
 JSON (sections → tables → rows → cells) into tidy `hoopR_data` tibbles:
 `fox_<lg>_pbp` (period-based play-by-play), `_boxscore`, `_odds`,
 `_team_roster`, `_team_stats`, `_team_gamelog`, `_standings`,
-`_league_leaders`. A shared internal layer backs both leagues. Verified live;
-reverse-engineering notes + an OpenAPI 3.1 spec live in the `sdv-internal-refs`
-repo. Parallels the cfbfastR / sportsdataverse-py `fox_*` families.
+`_league_leaders`. A shared internal layer backs both leagues.
+Parallels the cfbfastR / sportsdataverse-py `fox_*` families.
 
 ### **CollegeBasketballData API (`cbbd_*`)**
 

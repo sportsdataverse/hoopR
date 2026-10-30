@@ -9,8 +9,7 @@
 #   v3   https://api-live.euroleague.net/v3  -- standings (under a round), season stats, game report
 #   live https://live.euroleague.net/api     -- legacy per-game feeds (shots, pbp, box, header)
 # api-live answers XML unless `Accept: application/json` is sent; the live API is
-# JSON by default and answers "no such game" with an EMPTY 200 body. Reference:
-# sdv-internal-refs/euroleague/README.md.
+# JSON by default and answers "no such game" with an EMPTY 200 body.
 
 .euroleague_hosts <- c(
   v2 = "https://api-live.euroleague.net/v2",

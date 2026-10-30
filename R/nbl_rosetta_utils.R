@@ -275,7 +275,7 @@
 .nbl_or <- function(a, b) if (.nbl_truthy(a)) a else b
 
 #' A double that stands for a JSON integer: whole and beyond int32 (jsonlite gives those as double).
-#' ponytail: a whole float literal >= 2^31 in a body (3e9) reads as an int too; none is kept by the parsers.
+#' Note: a whole float literal >= 2^31 in a body (3e9) reads as an int too; none is kept by the parsers.
 #' @noRd
 .nbl_big_int <- function(x) is.double(x) && !is.na(x) && x == round(x) && abs(x) >= 2^31
 
@@ -550,7 +550,7 @@
     )
     nxts <- team[["nextMatches"]]
     if (!.nbl_truthy(nxts)) nxts <- list(stats::setNames(list(), character()))
-    if (!.nbl_is_arr(nxts)) next # ponytail: Python iterates a dict's keys here (all skipped); same result
+    if (!.nbl_is_arr(nxts)) next # Note: Python iterates a dict's keys here (all skipped); same result
     for (nxt in nxts) {
       if (!.nbl_is_obj(nxt)) next
       flat <- .nbl_keep(.nbl_flatten(nxt))
@@ -743,7 +743,7 @@
 }
 
 #' Whole doubles -> integer (sdv-py Int64); values beyond int32 stay double.
-#' ponytail: R has no int64 here; a count past 2^31 keeps its value as double instead of overflowing.
+#' Note: R has no int64 here; a count past 2^31 keeps its value as double instead of overflowing.
 #' @noRd
 .nbl_int <- function(x) {
   if (is.integer(x)) return(x)

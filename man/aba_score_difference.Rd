@@ -42,7 +42,7 @@ Endpoint: \verb{GET https://www.aba-liga.com/live-match/rezultati-1718/create_sc
 }
 \details{
 Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+druga.aba-liga.com), keyless, with no bot wall.
 www.aba-liga.com/robots.txt is the single line \verb{User-agent: *} (nothing disallowed, no Crawl-delay) and druga has
 no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 

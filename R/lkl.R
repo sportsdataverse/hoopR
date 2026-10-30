@@ -51,8 +51,8 @@
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -104,8 +104,8 @@ lkl_game_info <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -189,8 +189,8 @@ lkl_game_players <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -275,8 +275,8 @@ lkl_player_box <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -327,8 +327,8 @@ lkl_team_box <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -389,8 +389,8 @@ lkl_period_scores <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -439,8 +439,8 @@ lkl_summary <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -498,8 +498,8 @@ lkl_game_score <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -553,8 +553,8 @@ lkl_game_stats <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -611,8 +611,8 @@ lkl_lead_chart <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -681,8 +681,8 @@ lkl_leaders <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -746,8 +746,8 @@ lkl_pbp <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -813,8 +813,8 @@ lkl_shots <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -878,8 +878,8 @@ lkl_results <- function(season) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

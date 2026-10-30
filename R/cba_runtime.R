@@ -5,7 +5,7 @@
 #   ciphertext). The 16-character key is a public constant of the site's front-end bundle.
 #   digest::AES(key, mode = "ECB") decrypts; the PKCS#7 padding is checked and stripped once here.
 #   Anything that does not decrypt is refused: the API's unencrypted HTTP 500 envelope, an empty 200
-#   body, a plain body. ponytail: the key is a constant; if the site rotates it every request fails
+#   body, a plain body. Note: the key is a constant; if the site rotates it every request fails
 #   with hoopR_asset_fetch naming the decrypt step, and the fix is the new constant from the bundle.
 # * The host blocks datacenter IPs at TCP. Proxy: getOption("hoopR.proxy"), then env CBA_PROXY (never
 #   printed). Without one the request goes direct and fails FAST: a 5 s connect timeout and no retry

@@ -25,8 +25,8 @@
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -83,8 +83,8 @@ tbf_seasons <- function() {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -138,8 +138,8 @@ tbf_leagues <- function(season) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -198,8 +198,8 @@ tbf_league_seasons <- function(competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -270,8 +270,8 @@ tbf_weeks <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -349,8 +349,8 @@ tbf_standings <- function(season, competition = "bsl", week = NULL) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -431,8 +431,8 @@ tbf_schedule <- function(season, competition = "bsl", week = NULL) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -507,8 +507,8 @@ tbf_daily_matches <- function(match_date, season = NULL, competition = NULL) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -562,8 +562,8 @@ tbf_game_header <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -643,8 +643,8 @@ tbf_game_players <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -724,8 +724,8 @@ tbf_player_box <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -786,8 +786,8 @@ tbf_team_box <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -844,8 +844,8 @@ tbf_pbp <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -897,8 +897,8 @@ tbf_shots <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -952,8 +952,8 @@ tbf_period_scores <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1009,8 +1009,8 @@ tbf_highlights <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1071,8 +1071,8 @@ tbf_game_leaders <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1149,8 +1149,8 @@ tbf_players <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1209,8 +1209,8 @@ tbf_player_career <- function(player_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1304,8 +1304,8 @@ tbf_teams <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1380,8 +1380,8 @@ tbf_team_player_stats <- function(season, team_process_id, competition = "bsl") 
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1448,8 +1448,8 @@ tbf_team_games <- function(season, team_process_id, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1511,8 +1511,8 @@ tbf_team_roster <- function(season, team_process_id, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1574,8 +1574,8 @@ tbf_team_staff <- function(season, team_process_id, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1637,8 +1637,8 @@ tbf_leaders_points <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1700,8 +1700,8 @@ tbf_leaders_assists <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1763,8 +1763,8 @@ tbf_leaders_blocks <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1826,8 +1826,8 @@ tbf_leaders_rebounds <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1889,8 +1889,8 @@ tbf_leaders_steals <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1953,8 +1953,8 @@ tbf_leaders_minutes <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -2016,8 +2016,8 @@ tbf_leaders_threes <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -2079,8 +2079,8 @@ tbf_leaders_turnovers <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'

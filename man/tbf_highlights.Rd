@@ -32,8 +32,8 @@ Endpoint: \verb{GET https://miniappapi.tbf.org.tr/webapi-service/api/Match/mac-o
 \details{
 Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 

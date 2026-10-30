@@ -27,7 +27,7 @@ Endpoint: \verb{GET https://www.basketligaen.dk/api/sports-v2/season-series-game
 \itemize{
 \item Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
 series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-wrappers). The terms page was not read; payloads are not redistributed as release assets.
+wrappers). The terms page was not read; check it before you republish the data.
 \item Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
 in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
 family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The

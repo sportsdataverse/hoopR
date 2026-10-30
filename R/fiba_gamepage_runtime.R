@@ -255,7 +255,7 @@
   if (inherits(page, "hoopR_fiba_shell")) {
     shell <- page
     slug <- .fiba_event_slug(comp, call = call)
-    # ponytail: the Champions League host serves only its current season (unverified live, as in sdv-py)
+    # Note: the Champions League host serves only its current season (unverified live, as in sdv-py)
     alternates <- c(if (!is.null(slug)) paste0(.FIBA_SITE_URL, "/en/events/", slug, tail),
                     paste0(.FIBA_BCL_URL, "/en", tail))
     for (alt in alternates) {

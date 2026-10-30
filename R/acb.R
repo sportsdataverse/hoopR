@@ -4,12 +4,11 @@
 
 # The @details of every acb topic that shares the acb_match_header() notes (roxygen @eval .intl_details()).
 .acb_match_header_details <- c(
-  "* Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com read 2026-10-12): ACEB, S.A.U.",
-  "  claims intellectual property in the site's databases (the EU sui generis database right) among its other",
-  "  content. It authorises viewing and private copies for personal or journalistic use with the source credited,",
-  "  and requires prior express consent for distribution, reproduction or public communication. These wrappers",
-  "  fetch on the user's behalf; a published data release or a hosted mirror needs the owner's decision first.",
-  "  robots.txt allows the paths.",
+  "* Legal notice (the aviso legal of acb.com): ACEB, S.A.U. claims intellectual property in the site's databases",
+  "  (the EU sui generis database right) among its other content. It authorises viewing and private copies for",
+  "  personal or journalistic use with the source credited, and requires prior express consent for distribution,",
+  "  reproduction or public communication. These wrappers fetch on your behalf for your own use; check the notice",
+  "  before you republish the data. robots.txt allows the paths.",
   "* Unofficial and unsupported: api2.acb.com is the .NET API behind acb.com and live.acb.com, not a documented",
   "  public API. It needs the header `X-APIKEY`, a public key shipped in acb.com's bundle: the runtime sends the",
   "  documented value (`$ACB_API_KEY` overrides it), re-reads the live bundle once on a 401, and never prints the",

@@ -15,7 +15,7 @@
 #' timestamp. Team A is the home side as measured on one game.
 #' @details
 #' Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-#' wraps it (wrap-only: payloads are not redistributed as release assets). This
+#' wraps it. This
 #' function mirrors sdv-py's `euroleague_game_points()`: same arguments,
 #' defaults and snake_case columns, one row per sdv-py row.
 #'
@@ -237,7 +237,7 @@ euroleague_game_boxscore <- function(game_code, season_code) {
 #' Team A is the home side as measured on one game.
 #' @details
 #' Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-#' wraps it (wrap-only: payloads are not redistributed as release assets). This
+#' wraps it. This
 #' function mirrors its sdv-py twin of the same name: same arguments, defaults
 #' and snake_case columns, one row per sdv-py row.
 #'

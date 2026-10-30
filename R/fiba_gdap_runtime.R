@@ -420,7 +420,7 @@
       as.numeric(x)
     } else x
     if (any(num[ok] != round(num[ok]))) return(NULL) # a fractional number is not an id
-    # ponytail: an Int64 beyond R's 32-bit range stays double (only wall_time_ms, pinned "f")
+    # Note: an Int64 beyond R's 32-bit range stays double (only wall_time_ms, pinned "f")
     if (any(abs(num[ok]) > .Machine$integer.max)) return(as.double(num))
     return(as.integer(num))
   }

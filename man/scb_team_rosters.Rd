@@ -37,12 +37,11 @@ Endpoint: \verb{GET https://api.basketball-bundesliga.de/transfers/teams}
 \details{
 \itemize{
 \item Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites
-(easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.
+(easycredit-bbl.de, toyota-dbbl.de), run by SCB.
 \item Legal notice: the BBL Impressum forbids storing BBL content (\code{Inhalte}) in an information system without
 BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).
-The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits
-at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same
-operator and API; its site notice was not separately reviewed.
+Check it before you store or republish the data, and keep requests slow (the runtime waits at least 1 s per
+host). The DBBL host is the same operator and API.
 \item Both hosts need two headers: a constant \code{x-api-key} and an \code{x-api-secret} that rotates. The runtime
 derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, \code{:} turned
 into \code{-}) and never logs or returns it. The derivation was reverse-engineered from observed requests and

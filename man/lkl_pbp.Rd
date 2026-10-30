@@ -51,8 +51,8 @@ Endpoint: \verb{GET https://lkl.lt/api/livestream/play-by-play/\{game_id\}}
 \details{
 Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets.
+requests at least 1 s apart. The site's terms were not reviewed; check them before you
+republish the data.
 
 Coverage: game wrappers serve FINISHED games only (an unfinished game raises \code{hoopR_asset_fetch}). The box score,
 summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

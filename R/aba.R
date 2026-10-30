@@ -59,7 +59,7 @@
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -129,7 +129,7 @@ aba_game <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -234,7 +234,7 @@ aba_periods <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -330,7 +330,7 @@ aba_box_players <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -416,7 +416,7 @@ aba_box_teams <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -494,7 +494,7 @@ aba_pbp <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -565,7 +565,7 @@ aba_shots <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -636,7 +636,7 @@ aba_score_flow <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -720,7 +720,7 @@ aba_score_difference <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -799,7 +799,7 @@ aba_calendar <- function(season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -876,7 +876,7 @@ aba_standings <- function(season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -974,7 +974,7 @@ aba_player <- function(player_id, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'

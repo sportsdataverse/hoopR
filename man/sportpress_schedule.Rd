@@ -51,7 +51,7 @@ Endpoint: \verb{GET https://bnxt.sportpress.info/api/v1/schedule/club/\{season\}
 API. Every route needs a header key; it is public (hard-coded in the site bundle), \code{bnxt_runtime} reads it from
 the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs
 it. A 401 raises AssetFetchError (\verb{key rotated?}). robots.txt allows everything; requests are spaced at least 1 s
-apart. Payloads are not redistributed as release assets.
+apart.
 \item Season key: the END year (\code{season=2026} is 2025-26), the API's own key on the season routes. Every other route is
 keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,
 24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; \code{uu_team_id} is the stable club), the

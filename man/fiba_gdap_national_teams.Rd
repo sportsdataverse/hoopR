@@ -32,9 +32,8 @@ Endpoint: \verb{GET https://digital-api.fiba.basketball/hapi/getgdapnationalteam
 \details{
 FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'
 (federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball
-terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed
-both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.
-Users who are not themselves authorised by FIBA should check the terms before using the wrappers.
+terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not
+themselves authorised by FIBA should check the terms before using the wrappers.
 
 The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the
 live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of

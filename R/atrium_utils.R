@@ -221,7 +221,7 @@
 .atrium_text <- function(v) {
   if (is.null(v)) return(NA_character_)
   if (is.list(v)) {
-    # ponytail: jsonlite separators, not json.dumps(sort_keys=True); no route has hit it
+    # Note: jsonlite separators, not json.dumps(sort_keys=True); no route has hit it
     return(as.character(jsonlite::toJSON(v, auto_unbox = TRUE, null = "null")))
   }
   if (!.atrium_scalar(v)) return(NA_character_)
@@ -307,7 +307,7 @@
     b64 <- chartr("-_", "+/", tok)
     b64 <- paste0(b64, strrep("=", (4 - nchar(b64) %% 4) %% 4))
     raw <- memDecompress(jsonlite::base64_dec(b64), type = "gzip")
-    # ponytail: sdv-py stops inflating at 64 KiB; a bigger state is refused, not truncated
+    # Note: sdv-py stops inflating at 64 KiB; a bigger state is refused, not truncated
     if (length(raw) > 64 * 1024) list() else jsonlite::parse_json(rawToChar(raw))
   }, error = function(e) list())
   .ad(out)

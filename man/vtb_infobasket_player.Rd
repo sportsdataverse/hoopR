@@ -43,14 +43,12 @@ Endpoint: \verb{GET https://org.infobasket.su/Widget/PlayerPage/\{person_id\}}
 }
 \details{
 \itemize{
-\item Owner flag (sdv-internal-refs/vtb/README.md): the VTB United League is run from Russia and several clubs are owned
-or sponsored by sanctioned state companies (the KHL precedent); Infobasket is the Russian basketball federation's
-stats platform. Fetching on your own machine is fine. The owner has approved published data releases (2026-10-17),
-though none is scheduled yet. No accounts or payments are involved.
+\item Source: the VTB United League (vtb-league.com) and Infobasket, the Russian basketball federation's stats
+platform (org.infobasket.su). No account, key or payment is needed.
 \item Unofficial and unsupported: both hosts are keyless public JSON backends of vtb-league.com. No terms of use are
 published; robots.txt is a 404 on api.vtb-league.com and org.infobasket.su (no rules; vtb-league.com disallows
 only /wp/wp-admin/). The runtime waits at least 1 s before every request, retries included, and honours
-Retry-After on 429 / 503. No key, cookie or proxy is used (live-verified direct from the droplet 2026-10-12).
+Retry-After on 429 / 503. No key, cookie or proxy is used.
 \item Seasons are END years (2026 = 2025-26) on both backends. Infobasket keys everything by competition id:
 vtb_infobasket_seasons maps the END year to the season-level CompID, and the season-keyed wrappers do that mapping
 for you. CompID means three things: a season (50714), a stage below it (50720 regular season, 54281 playoff;

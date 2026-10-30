@@ -40,7 +40,7 @@
 # environment variable named by `proxy_env` (GENIUS_PROXY, CBA_PROXY). A proxy
 # URL can carry credentials: it is never printed, logged or put in a condition.
 
-#' Minimum seconds between two requests to one host (Phase B ruling).
+#' Minimum seconds between two requests to one host.
 #' @noRd
 .INTL_MIN_INTERVAL <- 1
 

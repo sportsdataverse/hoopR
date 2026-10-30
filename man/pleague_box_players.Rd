@@ -77,8 +77,8 @@ Endpoint: \verb{GET https://pleagueofficial.com/api/boxscore.preciser.php?id=\{g
 league), keyless. The site's /user-policy (members' terms, section 11) reserves all content on the site to the
 service and its rights holders and forbids use, copying, adaptation or distribution without authorisation (it
 says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no
-Allow, Disallow or Crawl-delay rule. Use for reference only; payloads are not redistributed as release assets,
-and a data release needs owner sign-off. Requests are spaced at least 1 s apart per host, retries included.
+Allow, Disallow or Crawl-delay rule. Use for reference only, and check the terms before you republish the data.
+Requests are spaced at least 1 s apart per host, retries included.
 \item Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a
 browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer
 a request with an HTTP 403 challenge page (\code{hoopR_asset_fetch}). Redirects are not followed: the site answers

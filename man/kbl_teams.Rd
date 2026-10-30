@@ -31,10 +31,10 @@ Endpoint: \verb{GET https://api.kbl.or.kr/common/teamList}
 TeamCode; the runtime sends WEB and XX). www.kbl.or.kr/robots.txt returns the SPA's HTML and
 api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or Crawl-delay is published (checked 2026-10-12); the
 site's terms (/terms/list) were not reviewed for data reuse. The runtime waits at least 1 s before every request,
-retries included. Payloads are not redistributed as release assets.
+retries included.
 \item Not wrapped: the site's /record/* and \verb{/player/player/\{pcode\}} pages are rendered by the sports2i widget from two
 other hosts (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors, clutch, hustle, shot dashboards,
-all-time leaders) and need their own intake. WKBL (the women's league) is out of scope by owner ruling.
+all-time leaders). WKBL (the women's league) is not covered.
 \item Seasons are END years (2026 = 2025-26). KBL numbers seasons AND D-League (reserve league) editions with one
 sequential seasonCode; division picks 'kbl' or 'd_league' and game_code the competition inside the season, and
 the wrapper sends the API's glkey. The playoff routes take the REGULAR-SEASON key; the old route serves

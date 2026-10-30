@@ -36,7 +36,7 @@
   vapply(vals, function(v) {
     if (!.sportpress_scalar(v)) return(NA_character_)
     if (is.logical(v)) return(if (v) "True" else "False")
-    # ponytail: a whole double prints as "5.0" (Python repr); other doubles use R's 15 digits
+    # Note: a whole double prints as "5.0" (Python repr); other doubles use R's 15 digits
     if (is.double(v) && v == trunc(v) && abs(v) < 1e16) return(sprintf("%.1f", v))
     as.character(v)
   }, character(1), USE.NAMES = FALSE)

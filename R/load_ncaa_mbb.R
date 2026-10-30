@@ -1,8 +1,7 @@
 # NCAA MBB release-dataset loaders -- thin wrappers around rds_from_url()
 # mirroring wehoop's load_ncaa_wbb.R loader shape. Backed by
 # the sdv-py `ncaa_mbb` engine's published output on the `ncaa_mbb_*`
-# sportsdataverse-data release tags (see CLAUDE.md's ncaa-hoops-engine-extraction
-# note for the engine's origin).
+# sportsdataverse-data release tags.
 
 #' @title
 #' **Load cleaned NCAA men's college basketball play-by-play from the data repo**

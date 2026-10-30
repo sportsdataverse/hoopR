@@ -32,9 +32,8 @@ Endpoint: \verb{GET https://api.preciser.io/post/game/summary/o/plg/gameId/\{uui
 \itemize{
 \item Unofficial use of a THIRD-PARTY host: api.preciser.io is the analytics vendor behind the P. LEAGUE+ game page,
 not the league's own API. It is keyless, CORS-open, has no robots.txt (404) and no terms were found; it serves
-the data the league's own game page displays. The league's /user-policy reserves its content, so payloads are
-not redistributed as release assets and a data release needs owner sign-off. Requests are spaced at least 1 s
-apart per host, retries included.
+the data the league's own game page displays. The league's /user-policy reserves its content, so check it
+before you republish the data. Requests are spaced at least 1 s apart per host, retries included.
 \item Wrappers take the Preciser game uuid (the \code{uuid} column of \code{\link[=pleague_game]{pleague_game()}}; empty before 2022-23, which have
 no vendor data). Pass the optional \code{gid} to verify the body against the site's game page and box: the shot
 list and the rotation echo nothing about the game, so only then are the uuid, the final score, the made-shot

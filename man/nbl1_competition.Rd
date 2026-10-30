@@ -322,7 +322,7 @@ Thin bindings of the parameterised \verb{atrium_*()} wrappers to this site, mint
 \details{
 Season rule: calendar year, Mar-Aug (END year); conferences are competition_ids.
 
-Errors and terms of use are those of \code{\link[=atrium_fixtures]{atrium_fixtures()}}: unofficial use of the public widget endpoint, at least 1 s between requests, not republished as release assets. The site also serves women's competitions (pass their \code{competition_id}).
+Errors and terms of use are those of \code{\link[=atrium_fixtures]{atrium_fixtures()}}: unofficial use of the public widget endpoint, at least 1 s between requests (check the site's terms before you republish the data). The site also serves women's competitions (pass their \code{competition_id}).
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nbl1_seasons()
  nbl1_schedule()

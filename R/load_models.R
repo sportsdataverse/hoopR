@@ -1,6 +1,6 @@
 # Model-dataset release loaders, mirroring the load_ncaa_mbb.R loader shape.
-# Backed by the sdv-py model programs described in CLAUDE.md
-# (nba-possession-engine-program, mbb-wbb-player-value-spine).
+# Backed by the sportsdataverse-py (sdv-py) model programs that publish these
+# releases (NBA possession engine, MBB/WBB player value).
 # nba_player_impact ships csv/parquet/rds -- rds_from_url() is used to match
 # the NBA loader family convention. mbb_player_value / mbb_ratings are
 # parquet-only (no csv/rds sibling assets), so those two use parquet_from_url().

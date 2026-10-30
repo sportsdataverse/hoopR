@@ -53,8 +53,8 @@ Endpoint: \verb{GET https://embed-api.eui.connect.sportradar.com/v1/embed/\{webs
 \strong{Unofficial.} This is the public endpoint the Sportradar Atrium / Synergy
 "Connect" widget calls from every visitor's browser (keyless; the host has no
 robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host, and it is not
-republished as release assets. Keep crawls small and incremental.
+caller's behalf, one request at least 1 s after the last to the host.
+Keep crawls small and incremental.
 
 \strong{Sites and seasons.} \code{website_id} picks the league site; one site carries many
 competitions. Seasons are END years (\code{season = 2026}): the site's own year is the

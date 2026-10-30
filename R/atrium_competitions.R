@@ -140,7 +140,7 @@
     paste0("Season rule: ", e$season_rule, "."),
     "",
     paste0("Errors and terms of use are those of [atrium_fixtures()]: unofficial use of the public widget endpoint, ",
-           "at least 1 s between requests, not republished as release assets.",
+           "at least 1 s between requests (check the site's terms before you republish the data).",
            if (e$gender %in% c("women", "both")) " The site also serves women's competitions (pass their `competition_id`)." else ""),
     "",
     "```r",
