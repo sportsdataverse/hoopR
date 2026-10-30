@@ -253,13 +253,15 @@ empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
   cannot hold the 18-digit MBB ids (about 41% of the 2025 ids collided), so the loaders
   read the `.parquet` asset when arrow is installed and warn when they fall back to the
   `.rds`. `helper_espn_{mbb,nba}_pbp()` also keep the id exact on sportsdataverse-py's
-  processed payloads, where it is a JSON number.
+  processed payloads, where it is a JSON number. Database tables built by
+  `update_{mbb,nba}_db()` before this change hold the rounded ids in a numeric column;
+  rebuild them (`force_rebuild = TRUE`) to get exact ids.
 * ESPN join ids are integer in every loader: `game_id` from `load_{mbb,nba}_game_rosters()`,
   `athlete_id` from `load_{mbb,nba}_rosters()`, `espn_game_id` / `espn_athlete_id` from the
   crosswalk loaders and the `*espn_game_id` / `*espn_team_id` columns of `load_ncaa_mbb_*()`
   were character, so joins to the box scores and schedules failed.
-* `espn_mbb_pbp()` / `espn_nba_pbp()` put the dark logo in `home_team_logo` when ESPN
-  listed the away team first.
+* `espn_mbb_pbp()` / `espn_nba_pbp()` put the light logo in `home_team_logo` when ESPN
+  lists the away team first; they used to put the dark one there.
 
 ### **Dependencies**
 
