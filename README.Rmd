@@ -5,18 +5,10 @@ output:
     toc_depth: 2
 ---
 
-#
-
 # hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px" alt="hoopR logo"/></a>
 ```{r setup, include = FALSE}
 require(knitr)
-if (!requireNamespace('pak')){
-  install.packages('pak')
-}
-pak::pkg_install("dplyr")
-
 opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
-
 ```
 
 
@@ -31,11 +23,12 @@ opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
 
 [**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for working with men's basketball data.
 
-The package has functions to access **live play by play and box score** data from ESPN with shot locations when available. As of version 1.3.0, [**`hoopR`**](https://hoopR.sportsdataverse.org/) is also a full NBA Stats API wrapper with 127 functions added in this release.
+It exports more than 1,300 functions:
 
-It is additionally a scraping and aggregating interface for Ken Pomeroy's men's college basketball statistics website, [kenpom.com](https://kenpom.com/). It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.
-
-As of version 3.1.0, the package exports 600+ functions spanning the NBA Stats API (`nba_*`), ESPN (`espn_nba_*` / `espn_mbb_*`), KenPom (`kp_*`), CollegeBasketballData (`cbbd_*`), Basketball-Reference (`bref_*`), Bart Torvik (`torvik_*`), RealGM (`realgm_*`), Fox Sports (`fox_*`), NCAA (`ncaa_mbb_*`), and NBA G-League (`nbagl_*`), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` bulk-data loaders backed by the `sportsdataverse-data` release repos.
+- **NBA:** the NBA Stats API (`nba_*`, about 200 functions), ESPN (`espn_nba_*`), the NBA G League (`nbagl_*`), Basketball-Reference (`bref_*`), RealGM (`realgm_*`), Fox Sports (`fox_nba_*`), official.nba.com officiating reports (`nba_l2m()`, `nba_referee_assignments()`), salary and mock-draft sources, and cross-source crosswalks.
+- **Men's college basketball:** ESPN (`espn_mbb_*`), Ken Pomeroy's [kenpom.com](https://kenpom.com/) (`kp_*`, for users with an active subscription), CollegeBasketballData (`cbbd_*`), Bart Torvik (`torvik_*`), the NCAA (`ncaa_mbb_*`) and Fox Sports (`fox_mbb_*`).
+- **International:** EuroLeague and EuroCup (`euroleague_*`) and about two dozen leagues and competitions, among them FIBA events (`fiba_*`), Spain's ACB (`acb_*`), Italy's LBA (`lba_*`), the VTB United League (`vtb_*`), Japan's B.LEAGUE (`bleague_*`), Australia's NBL (`nbl_rosetta_*`), Korea's KBL (`kbl_*`) and China's CBA (`cba_*`). See the [function reference](https://hoopR.sportsdataverse.org/reference/) for the full list.
+- **Loaders:** `load_nba_*()`, `load_mbb_*()`, `load_nba_stats_*()` and `load_ncaa_mbb_*()` read pre-built play-by-play, box score, schedule, shot and model data from the `sportsdataverse-data` releases.
 
 ## Data status
 
@@ -56,7 +49,7 @@ You can install the CRAN version of [**```hoopR```** ](https://CRAN.R-project.or
 install.packages("hoopR")
 ```
 
-You can install the released version of [**`hoopR`**](https://github.com/sportsdataverse/hoopR/) from [GitHub](https://github.com/sportsdataverse/hoopR) with:
+You can install the development version of [**`hoopR`**](https://github.com/sportsdataverse/hoopR/) from [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
 ```{r pak_readme, eval=FALSE}
 # You can install using the pak package using the following code:
@@ -68,31 +61,32 @@ pak::pak("sportsdataverse/hoopR")
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-`r hoopR::most_recent_nba_season()`) ~ 1-2 minutes**
+### **NBA play-by-play for a season**
+
+`load_nba_pbp()` covers 2002-`r hoopR::most_recent_nba_season()`; pass several seasons (or `seasons = 2002:2026`) to load more at once.
 ```{r nba_load_pbp_readme}
-tictoc::tic()
-progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp()
-})
-tictoc::toc()
+nba_pbp <- hoopR::load_nba_pbp(seasons = 2026)
 ```
 ```{r nba_pbp_message, echo = FALSE}
 glue::glue("{nrow(nba_pbp)} rows of NBA play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-### **Men's college basketball full play-by-play seasons (2006-`r hoopR::most_recent_mbb_season()`) ~ 2-3 minutes**
+### **Men's college basketball play-by-play for a season**
+
+`load_mbb_pbp()` covers 2006-`r hoopR::most_recent_mbb_season()`.
 ```{r mbb_load_pbp_readme}
-
-tictoc::tic()
-progressr::with_progress({
-  mbb_pbp <-  hoopR::load_mbb_pbp()
-})
-tictoc::toc()
+mbb_pbp <- hoopR::load_mbb_pbp(seasons = 2026)
 ```
-
 ```{r mbb_pbp_message, echo = FALSE}
 glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
 ```
+
+## **Plotting and related packages**
+
+- [**`sdvplotR`**](https://sdvplotR.sportsdataverse.org/) (0.3.0, `pak::pak("sportsdataverse/sdvplotR")`) adds team logos and colours to `ggplot2` charts and draws shot charts from the `hoopR` shot loaders; see its [NBA](https://sdvplotR.sportsdataverse.org/articles/nba-viz.html), [men's college](https://sdvplotR.sportsdataverse.org/articles/mbb-viz.html) and [shot chart](https://sdvplotR.sportsdataverse.org/articles/cookbook-surfaces-shot-charts.html) articles.
+- [**`sportyR`**](https://sportyR.sportsdataverse.org/) (2.4.5, `install.packages("sportyR")`) draws NBA, NCAA and FIBA courts to plot shot locations on.
+- [**`wehoop`**](https://wehoop.sportsdataverse.org/) is the women's basketball companion (WNBA and women's college basketball).
+- [**`sportsdataverse-py`**](https://py.sportsdataverse.org/) is the Python package; most `hoopR` functions have a Python twin of the same name.
 
 ## **Documentation**
 
