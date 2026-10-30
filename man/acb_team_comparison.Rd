@@ -14,7 +14,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_team_comparison}):\tabular{lll}{
+(sportsdataverse-py \code{acb_team_comparison}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
    quarter \tab integer \tab Period of the bar: 0 = the whole game, 1-4 quarters. \cr

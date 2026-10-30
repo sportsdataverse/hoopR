@@ -1,8 +1,8 @@
 # cba.R -- CBA (Chinese Basketball Association) wrappers over data-server.cbaleague.com, at parity
-# with sdv-py sportsdataverse/basketball/cba (origin/main e3d232e). 27 wrappers: 12 GET routes and 15
-# POST routes sent with a JSON body, exactly as sdv-py sends them. Transport, decryption and refusals:
+# with sportsdataverse-py sportsdataverse/basketball/cba (origin/main e3d232e). 27 wrappers: 12 GET routes and 15
+# POST routes sent with a JSON body, exactly as sportsdataverse-py sends them. Transport, decryption and refusals:
 # R/cba_runtime.R; frames: R/cba_parsers.R. Generated from tools/codegen/endpoints/cba.yaml and
-# manual_column_descriptions.yaml of that sdv-py commit (ASCII only: Chinese text is glossed or elided).
+# manual_column_descriptions.yaml of that sportsdataverse-py commit (ASCII only: Chinese text is glossed or elided).
 
 # The @details of every cba topic that shares the cba_seasons() notes (roxygen @eval .intl_details()).
 .cba_seasons_details <- c(
@@ -36,8 +36,7 @@
   "  (26 rows for 12 players), and the repeats are not always copies. `cba_player_advanced()` and",
   "  `cba_player_extras()` keep the FIRST row per `player_id`.",
   "* Text fields are Chinese (names, play-by-play sentences, position and nationality labels). The column",
-  "  descriptions here are ASCII; sdv-py's `tools/codegen/notes/cba_glossary.yaml` holds the full English",
-  "  glossaries.",
+  "  descriptions here are ASCII; sportsdataverse-py keeps the full English glossaries of the codes.",
   "* Personal data: the operator ids (`createdBy` / `lastModifiedBy`, one holds a mobile number) and any bare",
   "  mobile-number string are removed from every body. Players' public bio fields (birth date, height, weight) are",
   "  kept.",
@@ -60,7 +59,7 @@
 #' Endpoint: `GET https://data-server.cbaleague.com/api/com-code-tables/getSeason`
 #' @return
 #' A `hoopR_data` tibble: One row per season: label, START year, default flag. An empty valid answer is a zero-row
-#'   tibble with these columns, in this order (sdv-py `cba_seasons`):
+#'   tibble with these columns, in this order (sportsdataverse-py `cba_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -91,7 +90,7 @@ cba_seasons <- function() {
 #' Endpoint: `GET https://data-server.cbaleague.com/api/com-code-tables/getMatchType`
 #' @return
 #' A `hoopR_data` tibble: One row per match type (regular season, playoffs, preseason, all-star, relegation). An
-#'   empty valid answer is a zero-row tibble with these columns, in this order (sdv-py `cba_match_types`):
+#'   empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `cba_match_types`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -124,7 +123,7 @@ cba_match_types <- function() {
 #'   (2025), so cba_runtime sends season - 1.
 #' @return
 #' A `hoopR_data` tibble: One row per team: id (key) and display name. An empty valid answer is a zero-row tibble
-#'   with these columns, in this order (sdv-py `cba_team_options`):
+#'   with these columns, in this order (sportsdataverse-py `cba_team_options`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -156,7 +155,7 @@ cba_team_options <- function(season) {
 #' Endpoint: `GET https://data-server.cbaleague.com/api/teams/teamList`
 #' @return
 #' A `hoopR_data` tibble: One row per club: logo, id, club name and display name. An empty valid answer is a
-#'   zero-row tibble with these columns, in this order (sdv-py `cba_teams`):
+#'   zero-row tibble with these columns, in this order (sportsdataverse-py `cba_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -190,7 +189,7 @@ cba_teams <- function() {
 #' @param month (required) Required. Calendar month, 1-12.
 #' @return
 #' A `hoopR_data` tibble: One row per day with games: date and game count. An empty valid answer is a zero-row
-#'   tibble with these columns, in this order (sdv-py `cba_schedule_month`):
+#'   tibble with these columns, in this order (sportsdataverse-py `cba_schedule_month`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -223,7 +222,7 @@ cba_schedule_month <- function(year, month) {
 #'   the next game day) and refuses rows on another date.
 #' @return
 #' A `hoopR_data` tibble: One row per game: ids, teams, status, score, round and the data flags. An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `cba_schedule_day`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `cba_schedule_day`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -281,7 +280,7 @@ cba_schedule_day <- function(day) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row: both teams, score, tip-off time and colours. An empty valid answer is a zero-row
-#'   tibble with these columns, in this order (sdv-py `cba_game_info`):
+#'   tibble with these columns, in this order (sportsdataverse-py `cba_game_info`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -325,7 +324,7 @@ cba_game_info <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per player and a team rebounds/turnovers row per side (null player_id). An empty
-#'   valid answer is a zero-row tibble with these columns, in this order (sdv-py `cba_player_box`):
+#'   valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `cba_player_box`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -382,7 +381,7 @@ cba_player_box <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per side and played period (overtime included). An empty valid answer is a
-#'   zero-row tibble with these columns, in this order (sdv-py `cba_period_scores`):
+#'   zero-row tibble with these columns, in this order (sportsdataverse-py `cba_period_scores`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -417,7 +416,7 @@ cba_period_scores <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per team (and averages); a team-season table, not game data. An empty valid answer
-#'   is a zero-row tibble with these columns, in this order (sdv-py `cba_game_team_shots`):
+#'   is a zero-row tibble with these columns, in this order (sportsdataverse-py `cba_game_team_shots`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -499,7 +498,7 @@ cba_game_team_shots <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per player (deduplicated on player_id, first row kept). An empty valid answer is a
-#'   zero-row tibble with these columns, in this order (sdv-py `cba_player_advanced`):
+#'   zero-row tibble with these columns, in this order (sportsdataverse-py `cba_player_advanced`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -568,7 +567,7 @@ cba_player_advanced <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per player (deduplicated on player_id, first row kept). An empty valid answer is a
-#'   zero-row tibble with these columns, in this order (sdv-py `cba_player_extras`):
+#'   zero-row tibble with these columns, in this order (sportsdataverse-py `cba_player_extras`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -605,7 +604,7 @@ cba_player_extras <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per team; a team-season table of the previous season, not game data. An empty
-#'   valid answer is a zero-row tibble with these columns, in this order (sdv-py `cba_game_team_four`):
+#'   valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `cba_game_team_four`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -675,7 +674,7 @@ cba_game_team_four <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per side with the star player's line. An empty valid answer is a zero-row tibble
-#'   with these columns, in this order (sdv-py `cba_best_player`):
+#'   with these columns, in this order (sportsdataverse-py `cba_best_player`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -721,7 +720,7 @@ cba_best_player <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per side and category. An empty valid answer is a zero-row tibble with these
-#'   columns, in this order (sdv-py `cba_best_stats`):
+#'   columns, in this order (sportsdataverse-py `cba_best_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -758,7 +757,7 @@ cba_best_stats <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row per registered player (season registration, not the game box). An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `cba_rosters`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `cba_rosters`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -827,7 +826,7 @@ cba_rosters <- function(schedule_id) {
 #'   2025-26 round 1). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: One row with the is_report flag. An empty valid answer is a zero-row tibble with these
-#'   columns, in this order (sdv-py `cba_report_status`):
+#'   columns, in this order (sportsdataverse-py `cba_report_status`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -858,7 +857,7 @@ cba_report_status <- function(schedule_id) {
 #'   request; the runtime fetches them all and checks the set).
 #' @return
 #' A `hoopR_data` tibble: One row per play, oldest first, all periods. An empty valid answer is a zero-row tibble
-#'   with these columns, in this order (sdv-py `cba_pbp`):
+#'   with these columns, in this order (sportsdataverse-py `cba_pbp`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -909,7 +908,7 @@ cba_pbp <- function(schedule_id, quarter_num = NULL) {
 #'   (2025), so cba_runtime sends season - 1.
 #' @return
 #' A `hoopR_data` tibble: One row per match type. An empty valid answer is a zero-row tibble with these columns, in
-#'   this order (sdv-py `cba_team_counts`):
+#'   this order (sportsdataverse-py `cba_team_counts`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -942,7 +941,7 @@ cba_team_counts <- function(season) {
 #' @param self_or_other (default `1`) Whose statistics: 1 the team's own (default), 2 its opponents'.
 #' @return
 #' A `hoopR_data` tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-#'   columns, in this order (sdv-py `cba_team_basic`):
+#'   columns, in this order (sportsdataverse-py `cba_team_basic`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1009,7 +1008,7 @@ cba_team_basic <- function(team_id, match_type_id = 1, statistical_dimension = 1
 #'   all-star, 9 relegation play-off (cba_match_types).
 #' @return
 #' A `hoopR_data` tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-#'   columns, in this order (sdv-py `cba_team_four`):
+#'   columns, in this order (sportsdataverse-py `cba_team_four`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1111,7 +1110,7 @@ cba_team_four <- function(team_id, match_type_id = 1) {
 #' @param page_size (default `100`) Rows per page (the site uses 100).
 #' @return
 #' A `hoopR_data` tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-#'   columns, in this order (sdv-py `cba_team_overview`):
+#'   columns, in this order (sportsdataverse-py `cba_team_overview`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1161,7 +1160,7 @@ cba_team_overview <- function(team_id, match_type_id = 1, page_number = 1, page_
 #' @param page_size (default `100`) Rows per page (the site uses 100).
 #' @return
 #' A `hoopR_data` tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-#'   columns, in this order (sdv-py `cba_team_shots`):
+#'   columns, in this order (sportsdataverse-py `cba_team_shots`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1248,7 +1247,7 @@ cba_team_shots <- function(team_id, match_type_id = 1, page_number = 1, page_siz
 #' @param page_size (default `100`) Rows per page (the site uses 100).
 #' @return
 #' A `hoopR_data` tibble: One row per player of the requested page. An empty valid answer is a zero-row tibble with
-#'   these columns, in this order (sdv-py `cba_player_base`):
+#'   these columns, in this order (sportsdataverse-py `cba_player_base`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1344,7 +1343,7 @@ cba_player_base <- function(season, match_type_id = 1, count_ranger = 1, player_
 #' @param page_size (default `100`) Rows per page (the site uses 100).
 #' @return
 #' A `hoopR_data` tibble: One row per player of the requested page. An empty valid answer is a zero-row tibble with
-#'   these columns, in this order (sdv-py `cba_player_offensive`):
+#'   these columns, in this order (sportsdataverse-py `cba_player_offensive`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1430,7 +1429,7 @@ cba_player_offensive <- function(season, match_type_id = 1, count_ranger = 1, pl
 #' @param page_size (default `100`) Rows per page (the site uses 100).
 #' @return
 #' A `hoopR_data` tibble: One row per player of the requested page. An empty valid answer is a zero-row tibble with
-#'   these columns, in this order (sdv-py `cba_player_defensive`):
+#'   these columns, in this order (sportsdataverse-py `cba_player_defensive`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1511,7 +1510,7 @@ cba_player_defensive <- function(season, match_type_id = 1, count_ranger = 1, pl
 #' @param page_size (default `100`) Rows per page (the site uses 100).
 #' @return
 #' A `hoopR_data` tibble: One row per player of the requested page. An empty valid answer is a zero-row tibble with
-#'   these columns, in this order (sdv-py `cba_player_shots`):
+#'   these columns, in this order (sportsdataverse-py `cba_player_shots`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

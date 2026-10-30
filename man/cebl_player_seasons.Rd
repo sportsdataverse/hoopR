@@ -25,7 +25,7 @@ career row.}
 }
 \value{
 A \code{hoopR_data} tibble: One player's per-season rows and career row (totals or per game). An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{cebl_player_seasons}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_player_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    mode \tab character \tab Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. \cr
    competition \tab character \tab Competition filter of the request: REGULAR or FINALS; null when both were asked. The body does not echo it. \cr

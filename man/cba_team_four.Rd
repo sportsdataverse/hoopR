@@ -14,7 +14,7 @@ all-star, 9 relegation play-off (cba_match_types).}
 }
 \value{
 A \code{hoopR_data} tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-columns, in this order (sdv-py \code{cba_team_four}):\tabular{lll}{
+columns, in this order (sportsdataverse-py \code{cba_team_four}):\tabular{lll}{
    col_name \tab type \tab description \cr
    effective_hit_rate \tab double \tab effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr
    effective_hit_rate_average \tab character \tab Unobserved: null in every sample. When filled: league average of the metric. Metric: effective field-goal percentage, in PERCENT as a number (53.6 = 53.6\%). \cr

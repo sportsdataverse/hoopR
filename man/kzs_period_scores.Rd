@@ -11,7 +11,7 @@ kzs_period_scores(match_id)
 }
 \value{
 A \code{hoopR_data} tibble: Points by match part (quarters and overtimes) from the match header. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_period_scores}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_period_scores}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
    score_id \tab integer \tab Period-score row id. \cr

@@ -8,7 +8,7 @@ vtb_league_leagues()
 }
 \value{
 A \code{hoopR_data} tibble: The leagues served by the API: vtb, vtbyouth, wbc. The columns are always these, in this
-order (sdv-py \code{vtb_league_leagues}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
+order (sportsdataverse-py \code{vtb_league_leagues}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
 this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    league_id \tab integer \tab v2 league id (1 vtb, 2 vtbyouth, 3 wbc). Not an Infobasket id. \cr

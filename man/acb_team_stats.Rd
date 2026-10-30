@@ -21,7 +21,7 @@ whole double is accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_team_stats}):\tabular{lll}{
+(sportsdataverse-py \code{acb_team_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    club_id \tab integer \tab Stable club id of the club asked for (2 = Barca). \cr
    team_id \tab integer \tab Season-team entry id of the selected edition. \cr

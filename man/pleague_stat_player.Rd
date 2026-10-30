@@ -14,7 +14,7 @@ two digits of season). The first season is 2020-21 (\code{season=2021}); earlier
 }
 \value{
 A \code{hoopR_data} tibble: Player season averages and totals of one season and stage: shooting, rebounds, assists
-and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 \code{pleague_stat_player}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one. \cr

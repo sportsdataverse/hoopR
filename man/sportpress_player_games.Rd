@@ -11,7 +11,7 @@ sportpress_player_games(roster_id)
 }
 \value{
 A \code{hoopR_data} tibble: Game-by-game box lines of a roster entry (including games with 0 minutes). An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_player_games}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_player_games}):\tabular{lll}{
    col_name \tab type \tab description \cr
    roster_id \tab integer \tab Roster id the lines were asked for. \cr
    game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr

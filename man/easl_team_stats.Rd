@@ -16,7 +16,7 @@ easl_seasons and maps it to the DataCore seasonId. Default \code{NULL}: the ACTI
 }
 \value{
 A \code{hoopR_data} tibble: A team's cumulative season statistics: totals, per-game rates and the opponent's totals
-(\verb{*_against}). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+(\verb{*_against}). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_team_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab character \tab DataCore team UUID v1, from the request (the body carries none). \cr

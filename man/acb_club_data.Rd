@@ -13,7 +13,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_club_data}):\tabular{lll}{
+(sportsdataverse-py \code{acb_club_data}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
    club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr

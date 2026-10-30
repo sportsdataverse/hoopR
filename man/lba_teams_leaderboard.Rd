@@ -14,7 +14,7 @@ lba_teams_leaderboard(board, season = NULL)
 }
 \value{
 A \code{hoopR_data} tibble: Season team leaderboards, offensive or defensive, one row per team and category. The
-columns are always these, in this order (sdv-py \code{lba_teams_leaderboard}); a column the site adds later is
+columns are always these, in this order (sportsdataverse-py \code{lba_teams_leaderboard}); a column the site adds later is
 appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr

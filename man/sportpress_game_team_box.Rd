@@ -14,7 +14,7 @@ sportpress_game_team_box(competition_id, game_id)
 }
 \value{
 A \code{hoopR_data} tibble: Team totals of both sides from the box score of a finished game. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_game_team_box}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_team_box}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id the box score was asked for (the body does not echo it). \cr
    competition_id \tab integer \tab Competition id the box score was asked for; checked against the game. \cr

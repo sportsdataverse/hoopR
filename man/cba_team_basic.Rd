@@ -24,7 +24,7 @@ total, 3 and 4 per 100 possessions.}
 }
 \value{
 A \code{hoopR_data} tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-columns, in this order (sdv-py \code{cba_team_basic}):\tabular{lll}{
+columns, in this order (sportsdataverse-py \code{cba_team_basic}):\tabular{lll}{
    col_name \tab type \tab description \cr
    assists \tab double \tab Assists, formatted by statisticalDimension. A number (the API sends it as display text). \cr
    blocked \tab double \tab Blocks, formatted by statisticalDimension. A number (the API sends it as display text). \cr

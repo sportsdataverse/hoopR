@@ -45,7 +45,7 @@ A \code{hoopR_data} tibble (one row per roster entry):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Roster of one team in a season: player bio, jersey and position.

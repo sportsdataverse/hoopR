@@ -11,7 +11,7 @@ kzs_pbp(match_id)
 }
 \value{
 A \code{hoopR_data} tibble: Play-by-play of a final game (2015/16 on, with gaps), one row per action with shot x/y. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_pbp}):\tabular{lll}{
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_pbp}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
    action_number \tab integer \tab 1-based position of the action in the feed, which is in game order. \cr

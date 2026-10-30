@@ -32,7 +32,7 @@ games), MAY, JUNE, JULY or AUGUST. \code{NULL} = all games. Values from the CEBL
 \value{
 A \code{hoopR_data} tibble: Team statistic table (totals or per game) with a league row; filter by season,
 competition, segment, opponent team or opponent conference. An empty valid answer raises \code{hoopR_no_data}; the
-columns are always these, in this order (sdv-py \code{cebl_team_stats}):\tabular{lll}{
+columns are always these, in this order (sportsdataverse-py \code{cebl_team_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. \cr
    mode \tab character \tab Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. \cr

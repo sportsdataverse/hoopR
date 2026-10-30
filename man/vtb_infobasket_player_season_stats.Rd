@@ -15,7 +15,7 @@ The season table is read for this tag.}
 }
 \value{
 A \code{hoopR_data} tibble: A player's season-by-season totals in the competition tag. The columns are always these, in
-this order (sdv-py \code{vtb_infobasket_player_season_stats}); an empty valid answer raises \code{hoopR_no_data}, a valid
+this order (sportsdataverse-py \code{vtb_infobasket_player_season_stats}); an empty valid answer raises \code{hoopR_no_data}, a valid
 body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). \cr

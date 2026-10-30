@@ -12,7 +12,7 @@ tbf_player_career(player_id)
 \value{
 A \code{hoopR_data} tibble. One row per career season and competition. Totals and averages rows are not included.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    person_id \tab integer \tab TBF person id of the player asked for (the player_id argument). \cr
    player_name \tab character \tab Player's full name from the profile (the same on every row). \cr

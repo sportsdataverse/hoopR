@@ -12,7 +12,7 @@ the next game day) and refuses rows on another date.}
 }
 \value{
 A \code{hoopR_data} tibble: One row per game: ids, teams, status, score, round and the data flags. An empty valid
-answer is a zero-row tibble with these columns, in this order (sdv-py \code{cba_schedule_day}):\tabular{lll}{
+answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_schedule_day}):\tabular{lll}{
    col_name \tab type \tab description \cr
    home_team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
    home_team_logo \tab character \tab Absolute URL of the home team logo (300x300 png). \cr

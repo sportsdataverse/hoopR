@@ -16,7 +16,7 @@ does not list. Needs season for a roster (jersey number and position). Default \
 }
 \value{
 A \code{hoopR_data} tibble: Every EASL player of all seasons; with season and team_id a roster that adds jersey number
-and position. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+and position. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_players}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year of the filter, from the request; null when no season was passed. \cr

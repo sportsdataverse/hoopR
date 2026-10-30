@@ -12,7 +12,7 @@ easl_seasons and maps it to the DataCore seasonId. Default \code{NULL}: the ACTI
 }
 \value{
 A \code{hoopR_data} tibble: Every fixture of one season: status, tip-off, stage, pool, venue and both teams with their
-scores. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+scores. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_schedule}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = EASL 25-26): stamped by easl_runtime from the request, null when parsed bare. \cr

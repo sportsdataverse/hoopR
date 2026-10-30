@@ -12,7 +12,7 @@ tpbl_referees(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: The officiating crew of one finished game, chief referee first (names only). An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{tpbl_referees}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_referees}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab TPBL game id (key space: TPBL games on api.tpbl.basketball): the \code{{game_id}} of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. \cr
    sequence \tab integer \tab Position in the crew as the API lists it: 1 = the chief referee. \cr

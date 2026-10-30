@@ -14,7 +14,7 @@ sportpress_standings(competition_id, phase_id)
 }
 \value{
 A \code{hoopR_data} tibble: Standings of one phase of a competition: record, points, home/away split, last five and
-streak. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+streak. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{sportpress_standings}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr

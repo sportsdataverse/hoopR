@@ -48,7 +48,7 @@ A \code{hoopR_data} tibble with the columns of the base wrapper of each function
 \description{
 \strong{Per-competition shortcuts over the Atrium embed API for Liga Mayor de Baloncesto (El Salvador) (\code{website_id = 13}; men's and women's).}
 
-Thin bindings of the parameterised \verb{atrium_*()} wrappers to this site, minted from the competition registry (sdv-py \code{tools/codegen/basketball_competitions.yaml}); the full surface stays on the \verb{atrium_*()} wrappers.
+Thin bindings of the parameterised \verb{atrium_*()} wrappers to this site, minted from the competition registry shared with sportsdataverse-py; the full surface stays on the \verb{atrium_*()} wrappers.
 }
 \details{
 Season rule: calendar year.

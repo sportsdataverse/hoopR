@@ -95,7 +95,7 @@ A \code{hoopR_data} tibble (one row per player and period):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Player season totals of one team in a season, optionally one period and sorted.

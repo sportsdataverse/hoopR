@@ -1,9 +1,9 @@
 # kbl_tables.R -- KBL code tables, the season crosswalk and the frame columns.
 #
-# Copied from sdv-py origin/main e3d232ebc9: sportsdataverse/basketball/kbl/kbl_codes.py (SEASONS, ACTIONS,
+# Copied from sportsdataverse-py origin/main e3d232ebc9: sportsdataverse/basketball/kbl/kbl_codes.py (SEASONS, ACTIONS,
 # ACTION_POINTS, SUBSTITUTIONS, FOULS, LEADER_PARTS) and SPECS of kbl_parsers.py. Korean labels are \u escapes.
 # A spec entry is `column = "<wire path>|<type>"`: the path is dotted, empty for a derived column; the type is
-# i integer, f double, s character, b logical, d Date. Change them in sdv-py first, then copy them here.
+# i integer, f double, s character, b logical, d Date. Change them in sportsdataverse-py first, then copy them here.
 
 #' (seasonCode, seasonGrade, first game, last game, sdv END year) of every KBL season and D-League edition.
 #' @noRd
@@ -159,7 +159,7 @@
   `dk` = "Dunks per game"
 )
 
-#' Frame columns: `column = "<wire path>|<type>"` (sdv-py SPECS, in order).
+#' Frame columns: `column = "<wire path>|<type>"` (sportsdataverse-py SPECS, in order).
 #' @noRd
 .kbl_specs <- list(
   seasons = c(season = "|i", season_code = "seasonCode|i", glkey = "glkey|s", season_name = "seasonName|s",

@@ -14,7 +14,7 @@ A year the list lacks raises \code{hoopR_no_data}.}
 \value{
 A \code{hoopR_data} tibble. One row per league: BSL, TBL, KBSL, TKBL, TB2L and the youth leagues with their \code{activity_id}.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    activity_id \tab integer \tab Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. \cr
    name \tab character \tab Activity name '\verb{<LEAGUE>} YYYY-YYYY' ('BSL 2026-2027'). \cr

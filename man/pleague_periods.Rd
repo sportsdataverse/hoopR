@@ -13,7 +13,7 @@ are served.}
 }
 \value{
 A \code{hoopR_data} tibble: Points each team scored in each quarter and overtime of one finished game. An empty valid
-answer is a zero-row tibble with these columns, in this order (sdv-py \code{pleague_periods}):\tabular{lll}{
+answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_periods}):\tabular{lll}{
    col_name \tab type \tab description \cr
    gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. \cr
    period \tab character \tab Period label: Q1-Q4, then OT1, OT2 for overtime. \cr

@@ -12,7 +12,7 @@ vtb_infobasket_coach(person_id)
 }
 \value{
 A \code{hoopR_data} tibble: Coach profile: names, height, weight (no birth data). The columns are always these, in this
-order (sdv-py \code{vtb_infobasket_coach}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
+order (sportsdataverse-py \code{vtb_infobasket_coach}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
 this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). The scope check compares it with the request. \cr

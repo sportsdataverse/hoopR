@@ -305,7 +305,7 @@ most_recent_nba_season <- function() {
 #' @description
 #' Returns the most recent season's **START** year -- the `seasons` value
 #' the `nba_stats_*` release loaders expect (see [load_nba_stats_coaches()]),
-#' matching sdv-py's `load_nba_stats_*` Python loaders. It is defined as
+#' matching sportsdataverse-py's `load_nba_stats_*` Python loaders. It is defined as
 #' `most_recent_nba_season() - 1`: [most_recent_nba_season()] returns the
 #' current season's **END** year (hoopR's ESPN-family convention, used
 #' directly -- with no offset -- by `load_nba_*()`), and the published

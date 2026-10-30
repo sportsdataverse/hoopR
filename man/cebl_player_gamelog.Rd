@@ -17,7 +17,7 @@ season combined (the Stats Hub's All-Time). An unknown year answers \code{hoopR_
 }
 \value{
 A \code{hoopR_data} tibble: One player's game log: one row per game played, with the Genius match id of the game. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{cebl_player_gamelog}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab CEBL player id of the log asked for (from the request; the body does not echo it). \cr

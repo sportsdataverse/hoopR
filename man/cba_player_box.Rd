@@ -12,7 +12,7 @@ cba_player_box(schedule_id)
 }
 \value{
 A \code{hoopR_data} tibble: One row per player and a team rebounds/turnovers row per side (null player_id). An empty
-valid answer is a zero-row tibble with these columns, in this order (sdv-py \code{cba_player_box}):\tabular{lll}{
+valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_player_box}):\tabular{lll}{
    col_name \tab type \tab description \cr
    schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
    side \tab character \tab Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). \cr

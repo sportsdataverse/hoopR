@@ -12,7 +12,7 @@ across seasons.}
 }
 \value{
 A \code{hoopR_data} tibble: Play-by-play of a finished game with shot x/y (2022-23 onwards; earlier games have no plays).
-The columns are always these, in this order (sdv-py \code{vtb_infobasket_pbp}); an empty valid answer raises
+The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_pbp}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr

@@ -1,6 +1,6 @@
 # fiba_competitions.R -- the per-competition FIBA aliases (fiba_wc_*, fiba_bcl_*, ...).
 #
-# R mirror of sdv-py sportsdataverse/basketball/_competitions.py (mint_fiba, _fiba_comp). One
+# R mirror of sportsdataverse-py sportsdataverse/basketball/_competitions.py (mint_fiba, _fiba_comp). One
 # family of 8 thin functions per entry of .intl_basketball_competitions$fiba (the registry in
 # R/intl_basketball_competitions.R, already filtered to this package's genders): nothing here
 # names a competition or a gender, so wehoop's copy mints its own registry's entries unchanged.
@@ -33,7 +33,7 @@
   list(suffix = "shots", base = "fiba_gamepage_shots", kind = "game", what = "Shot chart of one game of")
 )
 
-#' The GDAP competition id of one edition (sdv-py `_fiba_comp`): `comp` as given (checked to be an
+#' The GDAP competition id of one edition (sportsdataverse-py `_fiba_comp`): `comp` as given (checked to be an
 #' edition of `family_id`), else the family's edition of `season` (the newest started one if NULL).
 #' @noRd
 .fiba_comp <- function(family_id, season, comp, label, game = FALSE, call = rlang::caller_env()) {
@@ -147,7 +147,7 @@
     paste0("@name ", prefix, "_competition"),
     paste0("@title **FIBA competition: ", e[["label"]], "**"),
     paste0("@description Per-competition aliases of the FIBA wrappers for ", e[["label"]],
-           " (GDAP competition family ", e[["ids"]][["family_id"]], "), named as in sdv-py. Season rule: ",
+           " (GDAP competition family ", e[["ids"]][["family_id"]], "), named as in sportsdataverse-py. Season rule: ",
            e[["season_rule"]], "."),
     paste0("@aliases ", paste(fns, collapse = " ")),
     paste0("@usage ", paste(usage, collapse = "\n\n")),

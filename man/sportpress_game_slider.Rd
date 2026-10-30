@@ -12,7 +12,7 @@ sportpress_game_slider(competition_id)
 }
 \value{
 A \code{hoopR_data} tibble: The latest 14 finished games of a competition plus every upcoming game, with the Genius
-match id. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+match id. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{sportpress_game_slider}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr

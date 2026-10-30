@@ -16,7 +16,7 @@ the uuid must be the game page's. Without it only the checks the body allows by 
 }
 \value{
 A \code{hoopR_data} tibble: Scoring log of one finished game (scoring events only, with the running score). An empty
-valid answer is a zero-row tibble with these columns, in this order (sdv-py \code{pleague_preciser_score_log}):\tabular{lll}{
+valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_preciser_score_log}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_uuid \tab character \tab Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; \code{uuid} of pleague_game. \cr
    seq \tab integer \tab 1-based position of the scoring event in game order. \cr

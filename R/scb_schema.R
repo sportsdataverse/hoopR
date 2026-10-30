@@ -1,10 +1,10 @@
 # scb_schema.R -- documented columns and dtypes of the SCB (BBL / DBBL) frames.
 #
-# Copied from sdv-py origin/main e3d232e: `_PARSER_COLUMNS` of
+# Copied from sportsdataverse-py origin/main e3d232e: `_PARSER_COLUMNS` of
 # sportsdataverse/basketball/scb/scb.py and `DTYPES` of scb_dtypes.py (codes: i integer,
-# f double, b logical, s character). Change the columns in sdv-py first, then copy them here.
+# f double, b logical, s character). Change the columns in sportsdataverse-py first, then copy them here.
 
-#' Documented columns per wrapper route (sdv-py `_PARSER_COLUMNS`).
+#' Documented columns per wrapper route (sportsdataverse-py `_PARSER_COLUMNS`).
 #' @noRd
 .scb_columns <- list(
   seasons = c("league", "season", "season_id", "is_active"),
@@ -167,7 +167,7 @@
     "season_player_id", "real_player_id", "first_name", "last_name", "team_name", "team_tlc")
 )
 
-#' Column dtype codes per parser (sdv-py `scb_dtypes.DTYPES`).
+#' Column dtype codes per parser (sportsdataverse-py `scb_dtypes.DTYPES`).
 #' @noRd
 .scb_dtypes <- list(
   parse_scb_game_actions = c( action_id = "i", action_identifier = "s", assisting_season_player_id = "s",

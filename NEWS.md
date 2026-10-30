@@ -50,9 +50,9 @@
   raise classed conditions instead of returning empty: `hoopR_no_data`,
   `hoopR_asset_fetch` (with a `transient` field) and `hoopR_bad_request`, all
   inheriting `hoopR_error`. In all, 667 new exports (23 families plus 148 per-competition aliases).
-  Every route is tested at parity with sdv-py on the same fixtures (column names, types, every cell and
+  Every route is tested at parity with sportsdataverse-py on the same fixtures (column names, types, every cell and
   the request sent). Python-only arguments (`return_parsed`, `return_as_pandas`) are not ported, and a
-  whole-number double is accepted wherever sdv-py takes an integer. Live tests run only with
+  whole-number double is accepted wherever sportsdataverse-py takes an integer. Live tests run only with
   `HOOPR_INTL_LIVE_TESTS=1`; Genius needs `GENIUS_PROXY` and CBA `CBA_PROXY`.
 
 ### **EuroLeague and EuroCup (`euroleague_*`)**
@@ -66,7 +66,7 @@
   `euroleague_player_stats(mode =)`, `euroleague_team_stats(mode =)`,
   `euroleague_game_points()` (the shot chart, in centimeters from the hoop),
   `euroleague_game_pbp()`, `euroleague_game_boxscore()` and
-  `euroleague_game_header()`. They mirror sdv-py's `euroleague_*` wrappers
+  `euroleague_game_header()`. They mirror sportsdataverse-py's `euroleague_*` wrappers
   (same arguments, defaults and snake_case columns) and raise the classed
   `hoopR_no_data` / `hoopR_invalid_request` / `hoopR_fetch_error` conditions
   on a failed request; the live API's empty "no such game" answer is a
@@ -261,7 +261,7 @@
 ### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
 
 New scrapers for official.nba.com officiating data, parity-tested against
-sdv-py's `sportsdataverse.nba.nba_officiating` on the same captured fixtures:
+sportsdataverse-py's `sportsdataverse.nba.nba_officiating` on the same captured fixtures:
 `nba_l2m()` (Last Two Minute report calls/game/stats), `nba_l2m_games()`
 (a season's L2M game index), and `nba_referee_assignments()` (NBA/G-League/WNBA
 referee crew assignments + replay center officials for a date). Port of the
@@ -273,7 +273,7 @@ dates) always works; id columns (team/official/`pos_id`/`pos_team_id`) are
 integer. HTTP and payload failures (a 404, a blocked fetch, a 200 whose body is
 not the expected report) raise classed conditions (`hoopR_no_data` /
 `hoopR_fetch_error`, both inheriting `hoopR_error`) instead of returning an
-empty result, mirroring sdv-py's `NoDataError`/`AssetFetchError` vocabulary.
+empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` vocabulary.
 
 ### **Dependencies**
 

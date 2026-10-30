@@ -21,7 +21,7 @@ whole double is accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_current_roster}):\tabular{lll}{
+(sportsdataverse-py \code{acb_current_roster}):\tabular{lll}{
    col_name \tab type \tab description \cr
    club_id \tab integer \tab Stable club id asked for (the body names no club). \cr
    role \tab character \tab player or staff (head coach and assistants). \cr

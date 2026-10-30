@@ -15,7 +15,7 @@ season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
 A \code{hoopR_data} tibble: A team's record, form and best players in one competition (the body echoes neither id). An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{kzs_team_general}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. \cr

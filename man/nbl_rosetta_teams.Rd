@@ -39,7 +39,7 @@ A \code{hoopR_data} tibble (one row per team record):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Every team record of an organisation: current, defunct, exhibition and development sides.

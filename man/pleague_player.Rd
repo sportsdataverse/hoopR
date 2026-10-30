@@ -12,7 +12,7 @@ pleague_player(player_page_id)
 }
 \value{
 A \code{hoopR_data} tibble: One player's profile: names, club, jersey, position, height, weight and birthplace. An
-empty valid answer is a zero-row tibble with these columns, in this order (sdv-py \code{pleague_player}):\tabular{lll}{
+empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_player}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_page_id \tab character \tab The 8-character page id of /player/\{id\} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id. \cr
    player_id \tab integer \tab P. LEAGUE+ player-team membership id (the box player_id), read from the page's trackPlayer() call, e.g. 40 = Lai Ting-En. NOT the 8-character page id. \cr

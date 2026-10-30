@@ -11,7 +11,7 @@ sportpress_game_find(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: One game: teams, scores, phase, venue and the neighbouring game ids. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_game_find}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_find}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr
    game_time \tab POSIXct \tab Tip-off as a naive datetime. The source carries no offset; the league's local time is assumed and unverified. POSIXct in Europe/Brussels (league local time). \cr

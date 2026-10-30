@@ -97,7 +97,7 @@ Endpoint: \verb{GET https://embed-api.eui.connect.sportradar.com/v1/embed/\{webs
 
 Scores are integers (the API sends strings); \code{start_time_utc} is a UTC \code{POSIXct};
 \code{start_time_local} is the venue's wall-clock time as the API sends it (character: its
-zone, \code{timezone}, varies per row, so no single \code{POSIXct} zone fits). sdv-py keeps both naive.
+zone, \code{timezone}, varies per row, so no single \code{POSIXct} zone fits). sportsdataverse-py keeps both naive.
 }
 \details{
 \strong{Unofficial.} This is the public endpoint the Sportradar Atrium / Synergy

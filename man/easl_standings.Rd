@@ -12,7 +12,7 @@ easl_seasons and maps it to the DataCore seasonId. Default \code{NULL}: the ACTI
 }
 \value{
 A \code{hoopR_data} tibble: Group-stage standings of one season: rank within the pool, record, splits, points and the
-last five results. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+last five results. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_standings}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = EASL 25-26), from the request. \cr

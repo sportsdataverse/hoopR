@@ -15,7 +15,7 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
 }
 \value{
 A \code{hoopR_data} tibble: Recent, live and upcoming games, one row per game with its past / present / future
-bucket. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+bucket. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{scb_games_recent}):\tabular{lll}{
    col_name \tab type \tab description \cr
    league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr

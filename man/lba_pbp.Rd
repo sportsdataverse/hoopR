@@ -11,7 +11,7 @@ lba_pbp(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: Play-by-play of a final game (2017-18 on), one row per action with x/y; coordinate frame
-by era. The columns are always these, in this order (sdv-py \code{lba_pbp}); a column the site adds later is
+by era. The columns are always these, in this order (sportsdataverse-py \code{lba_pbp}); a column the site adds later is
 appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr

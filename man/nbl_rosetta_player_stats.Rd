@@ -108,7 +108,7 @@ A \code{hoopR_data} tibble (one row per season and period):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 A player's season totals and averages for every season, by period.

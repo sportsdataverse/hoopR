@@ -14,7 +14,7 @@ info (Basketligaen 2002/03 on); a season it does not list raises \code{hoopR_no_
 }
 \value{
 A \code{hoopR_data} tibble: Schedule and results of one season + series + game type. An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sdv-py \code{sportality_schedule}), then any
+\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_schedule}), then any
 column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr

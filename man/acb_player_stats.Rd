@@ -20,7 +20,7 @@ one (2026 drops the 2026-27 row). Omitted = all seasons. A whole number; a whole
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_player_stats}):\tabular{lll}{
+(sportsdataverse-py \code{acb_player_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab ACB licence number asked for (the body names the player only in the totals block). \cr
    team_id \tab integer \tab Season-team entry the row covers (the API's teamEditionId). \cr

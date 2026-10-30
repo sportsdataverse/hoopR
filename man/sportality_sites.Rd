@@ -12,7 +12,7 @@ Directory: \verb{/statistics-v2/layout-info} \verb{seasonSeriesGameTypeTeams[].s
 }
 \value{
 A \code{hoopR_data} tibble: Clubs (sites) taking part in an ssgt. An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sdv-py \code{sportality_sites}), then any column the API added
+the documented columns come first, in this order (sportsdataverse-py \code{sportality_sites}), then any column the API added
 later:\tabular{lll}{
    col_name \tab type \tab description \cr
    id \tab character \tab Site instance id of the club (platform key space; the same as instanceId). \cr

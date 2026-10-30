@@ -43,7 +43,7 @@ it.}
 }
 \value{
 A \code{hoopR_data} tibble: One row per player of the requested page. An empty valid answer is a zero-row tibble with
-these columns, in this order (sdv-py \code{cba_player_shots}):\tabular{lll}{
+these columns, in this order (sportsdataverse-py \code{cba_player_shots}):\tabular{lll}{
    col_name \tab type \tab description \cr
    age \tab integer \tab Age in years in that season. \cr
    at_rim_made_rate \tab double \tab at-rim frequency: restricted-area attempts per 100 possessions. A number (the API sends it as display text). \cr

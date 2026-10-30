@@ -1,7 +1,7 @@
 # scb_parsers.R -- frames of the BBL / DBBL wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/scb/scb_parsers.py (origin/main e3d232e): one
-# shaper per route, snake_case columns (`.intl_clean_names()`, the sdv-py `underscore()` port),
+# R mirror of sportsdataverse-py sportsdataverse/basketball/scb/scb_parsers.py (origin/main e3d232e): one
+# shaper per route, snake_case columns (`.intl_clean_names()`, the sportsdataverse-py `underscore()` port),
 # one dtype per column (`.scb_dtypes`, then the name rules, then the values), ids as strings except
 # the ones the API always sends as integers (real_player_id, season_id, action_id, order_id),
 # never through a float. Lists and objects left in a cell become compact JSON text. `season` is
@@ -129,7 +129,7 @@
 
 #' A list of strings as "a,b"; a string as it is. A list of objects (the `tvChannel` objects of
 #' /games/recent and /games/{gameId}) joins their `name`s. A null entry (or a null `name`) is skipped;
-#' nothing left is NULL (sdv-py `_join`, 38a22f936d onward).
+#' nothing left is NULL (sportsdataverse-py `_join`, 38a22f936d onward).
 #' @noRd
 .scb_join <- function(v) {
   if (.scb_is_array(v)) {
@@ -537,7 +537,7 @@
 .scb_parse_game_actions <- function(raw, columns = NULL) {
   body <- .scb_obj(raw)
   head <- .scb_game_head(raw)
-  # sdv-py looks the side up in a dict keyed by the team id: type-strict ("413" is not 413)
+  # sportsdataverse-py looks the side up in a dict keyed by the team id: type-strict ("413" is not 413)
   side_of <- function(id) {
     out <- NULL
     for (side in names(.SCB_SIDES)) {

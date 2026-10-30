@@ -12,7 +12,7 @@ The season table is read for this tag.}
 }
 \value{
 A \code{hoopR_data} tibble: Season END year -> season-level CompID for a competition tag (the table every season-keyed
-wrapper maps with). The columns are always these, in this order (sdv-py \code{vtb_infobasket_seasons}); an empty valid
+wrapper maps with). The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_seasons}); an empty valid
 answer raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
@@ -58,7 +58,7 @@ offset).
 dates, birth years and ages of coaches, referees and other officials from every body. Players' public bio (birth
 date, height, weight, nationality) is kept.
 \item Other tags (vtbyouth, wbc, wpremier, rfb) answer through the tag argument; only vtb was captured. The team routes
-key on the END-year season (sdv-py also lets a caller pass a stage CompID through params; the R wrappers do not).
+key on the END-year season (sportsdataverse-py also lets a caller pass a stage CompID through params; the R wrappers do not).
 \item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404, or the host has nothing
 for the request: an empty list, a v2 season with no rows, a season without team totals), \code{hoopR_bad_request} (a
 malformed id or league slug, a lang other than en or ru, or a season the competition tag does not have) and

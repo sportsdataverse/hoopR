@@ -13,7 +13,7 @@ sportality_player_crosswalk(season, game_type = "regular")
 playoffs, Slutspil).}
 }
 \value{
-A \code{hoopR_data} tibble, one row per player. sdv-py documents no fixed schema for this frame: the
+A \code{hoopR_data} tibble, one row per player. sportsdataverse-py documents no fixed schema for this frame: the
 columns after the first two are the fields the \code{players} map carries (the 2025/26 map is shown);
 birth dates are dropped.\tabular{lll}{
    col_name \tab type \tab description \cr

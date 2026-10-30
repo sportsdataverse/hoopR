@@ -1,4 +1,4 @@
-# acb.R -- ACB (Liga Endesa, Spain) wrappers over api2.acb.com, at parity with sdv-py
+# acb.R -- ACB (Liga Endesa, Spain) wrappers over api2.acb.com, at parity with sportsdataverse-py
 # sportsdataverse/basketball/acb (origin/main e3d232ebc9). 45 wrappers over 33 routes. Transport, key and
 # refusals: R/acb_runtime.R; frames: R/acb_parsers.R; field tables: R/acb_schema.R.
 
@@ -48,7 +48,7 @@
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_match_header`):
+#'   (sportsdataverse-py `acb_match_header`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -106,7 +106,7 @@ acb_match_header <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_period_scores`):
+#'   (sportsdataverse-py `acb_period_scores`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -144,7 +144,7 @@ acb_period_scores <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_player_box`):
+#'   (sportsdataverse-py `acb_player_box`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -216,7 +216,7 @@ acb_player_box <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_box`):
+#'   (sportsdataverse-py `acb_team_box`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -278,7 +278,7 @@ acb_team_box <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_box_info`):
+#'   (sportsdataverse-py `acb_box_info`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -328,7 +328,7 @@ acb_box_info <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_pbp`):
+#'   (sportsdataverse-py `acb_pbp`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -403,7 +403,7 @@ acb_pbp <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_shots`):
+#'   (sportsdataverse-py `acb_shots`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -459,7 +459,7 @@ acb_shots <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_lead_tracker`):
+#'   (sportsdataverse-py `acb_lead_tracker`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -498,7 +498,7 @@ acb_lead_tracker <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_lead_stats`):
+#'   (sportsdataverse-py `acb_lead_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -533,7 +533,7 @@ acb_lead_stats <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_lineup`):
+#'   (sportsdataverse-py `acb_lineup`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -583,7 +583,7 @@ acb_lineup <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_match_leaders`):
+#'   (sportsdataverse-py `acb_match_leaders`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -630,7 +630,7 @@ acb_match_leaders <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_comparison`):
+#'   (sportsdataverse-py `acb_team_comparison`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -672,7 +672,7 @@ acb_team_comparison <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_serie`):
+#'   (sportsdataverse-py `acb_serie`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -722,7 +722,7 @@ acb_serie <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_quickfacts`):
+#'   (sportsdataverse-py `acb_quickfacts`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -762,7 +762,7 @@ acb_quickfacts <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_season_leaders`):
+#'   (sportsdataverse-py `acb_season_leaders`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -813,7 +813,7 @@ acb_season_leaders <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_match_advanced_stats`):
+#'   (sportsdataverse-py `acb_match_advanced_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -861,7 +861,7 @@ acb_match_advanced_stats <- function(match_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_player_advanced_stats`):
+#'   (sportsdataverse-py `acb_player_advanced_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -906,7 +906,7 @@ acb_player_advanced_stats <- function(match_id, player_id) {
 #'   List them with `acb_competition_weeks`. A whole number; a whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_matchlist`):
+#'   (sportsdataverse-py `acb_matchlist`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -968,7 +968,7 @@ acb_matchlist <- function(match_id, round_id = NULL, week_id = NULL) {
 #'   the API's default competition. One or more whole numbers (a vector repeats `competitionIds` in the query).
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_competition_editions`):
+#'   (sportsdataverse-py `acb_competition_editions`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1005,7 +1005,7 @@ acb_competition_editions <- function(competition_ids = NULL) {
 #'   the API's default competition. One or more whole numbers (a vector repeats `competitionIds` in the query).
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_competition_rounds`):
+#'   (sportsdataverse-py `acb_competition_rounds`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1042,7 +1042,7 @@ acb_competition_rounds <- function(competition_ids = NULL) {
 #'   the API's default competition. One or more whole numbers (a vector repeats `competitionIds` in the query).
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_competition_weeks`):
+#'   (sportsdataverse-py `acb_competition_weeks`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1073,7 +1073,7 @@ acb_competition_weeks <- function(competition_ids = NULL) {
 #'   the API's default competition. One or more whole numbers (a vector repeats `competitionIds` in the query).
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_competition_current`):
+#'   (sportsdataverse-py `acb_competition_current`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1132,7 +1132,7 @@ acb_competition_current <- function(competition_ids = NULL) {
 #'   true resolves the week to one round. `TRUE` or `FALSE`, sent as `true` / `false`.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_round_matches`):
+#'   (sportsdataverse-py `acb_round_matches`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1194,7 +1194,7 @@ acb_round_matches <- function(competition_id = NULL, season = NULL, round_id = N
 #'   Omitted = the current (or last) round. A whole number; a whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_standings`):
+#'   (sportsdataverse-py `acb_standings`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1252,7 +1252,7 @@ acb_standings <- function(competition_id = NULL, season = NULL, round_id = NULL)
 #'   Omitted = the current (or last) round. A whole number; a whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_standings_rounds`):
+#'   (sportsdataverse-py `acb_standings_rounds`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1296,7 +1296,7 @@ acb_standings_rounds <- function(competition_id = NULL, season = NULL, round_id 
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_bracket`):
+#'   (sportsdataverse-py `acb_bracket`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1347,7 +1347,7 @@ acb_bracket <- function(competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_bracket_games`):
+#'   (sportsdataverse-py `acb_bracket_games`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1399,7 +1399,7 @@ acb_bracket_games <- function(competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_calendar`):
+#'   (sportsdataverse-py `acb_calendar`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1458,7 +1458,7 @@ acb_calendar <- function(competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_league_zones`):
+#'   (sportsdataverse-py `acb_league_zones`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1496,7 +1496,7 @@ acb_league_zones <- function(competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_teams`):
+#'   (sportsdataverse-py `acb_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1541,7 +1541,7 @@ acb_teams <- function(competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_matches`):
+#'   (sportsdataverse-py `acb_team_matches`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1609,7 +1609,7 @@ acb_team_matches <- function(club_id, competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_next_matches`):
+#'   (sportsdataverse-py `acb_next_matches`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1666,7 +1666,7 @@ acb_next_matches <- function(club_id, number_of_matches = NULL, competition_id =
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_club_data`):
+#'   (sportsdataverse-py `acb_club_data`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1723,7 +1723,7 @@ acb_club_data <- function(club_id) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_current_roster`):
+#'   (sportsdataverse-py `acb_current_roster`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1781,7 +1781,7 @@ acb_current_roster <- function(club_id, competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_leaders`):
+#'   (sportsdataverse-py `acb_team_leaders`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1829,7 +1829,7 @@ acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, 
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_stats`):
+#'   (sportsdataverse-py `acb_team_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1963,7 +1963,7 @@ acb_team_stats <- function(club_id, competition_id = NULL, season = NULL) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_totals`):
+#'   (sportsdataverse-py `acb_team_totals`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2081,7 +2081,7 @@ acb_team_totals <- function(club_id, competition_id = NULL, season = NULL) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_team_records`):
+#'   (sportsdataverse-py `acb_team_records`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2129,7 +2129,7 @@ acb_team_records <- function(club_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_player_data`):
+#'   (sportsdataverse-py `acb_player_data`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2193,7 +2193,7 @@ acb_player_data <- function(player_id) {
 #'   one (2026 drops the 2026-27 row). Omitted = all seasons. A whole number; a whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_player_stats`):
+#'   (sportsdataverse-py `acb_player_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2325,7 +2325,7 @@ acb_player_stats <- function(player_id, competition_id = NULL, season = NULL) {
 #'   seasons. A whole number; a whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_player_totals`):
+#'   (sportsdataverse-py `acb_player_totals`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2445,7 +2445,7 @@ acb_player_totals <- function(player_id, competition_id = NULL, season = NULL) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_career_stints`):
+#'   (sportsdataverse-py `acb_career_stints`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2481,7 +2481,7 @@ acb_career_stints <- function(player_id) {
 #'   accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_career_trophies`):
+#'   (sportsdataverse-py `acb_career_trophies`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2516,7 +2516,7 @@ acb_career_trophies <- function(player_id) {
 #'   whole double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_player_matches`):
+#'   (sportsdataverse-py `acb_player_matches`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -2591,7 +2591,7 @@ acb_player_matches <- function(player_id, season = NULL) {
 #'   double is accepted.
 #' @return
 #' A `hoopR_data` tibble, one row per record described above; the columns are always these, in this order
-#'   (sdv-py `acb_search`):
+#'   (sportsdataverse-py `acb_search`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

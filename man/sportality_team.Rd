@@ -12,7 +12,7 @@ space: platform team uuids (not the numeric Genius team id).}
 }
 \value{
 A \code{hoopR_data} tibble: One team. An empty valid answer raises \code{hoopR_no_data}; the documented columns come
-first, in this order (sdv-py \code{sportality_team}), then any column the API added later:\tabular{lll}{
+first, in this order (sportsdataverse-py \code{sportality_team}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    names_code \tab character \tab Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). \cr
    names_short \tab character \tab Short name of the team. \cr

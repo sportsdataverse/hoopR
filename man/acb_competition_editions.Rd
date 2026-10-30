@@ -12,7 +12,7 @@ the API's default competition. One or more whole numbers (a vector repeats \code
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_competition_editions}):\tabular{lll}{
+(sportsdataverse-py \code{acb_competition_editions}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
    competition_name \tab character \tab The API's competition name ('Liga Nacional' for the Liga). \cr

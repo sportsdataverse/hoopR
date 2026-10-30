@@ -41,7 +41,7 @@
 #'
 #' Scores are integers (the API sends strings); `start_time_utc` is a UTC `POSIXct`;
 #' `start_time_local` is the venue's wall-clock time as the API sends it (character: its
-#' zone, `timezone`, varies per row, so no single `POSIXct` zone fits). sdv-py keeps both naive.
+#' zone, `timezone`, varies per row, so no single `POSIXct` zone fits). sportsdataverse-py keeps both naive.
 #' @param website_id (*integer* required): Site config id: which league site's widget
 #'   this is (12 LNB France, 14 LNBP Mexico, 3 NBL1 Australia, 13 El Salvador, 22
 #'   Panama, 236 Austria, 326 Montenegro). Not a league id: one site serves several

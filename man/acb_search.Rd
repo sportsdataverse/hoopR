@@ -15,7 +15,7 @@ double is accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_search}):\tabular{lll}{
+(sportsdataverse-py \code{acb_search}):\tabular{lll}{
    col_name \tab type \tab description \cr
    kind \tab character \tab player, team or coach. \cr
    person_id \tab integer \tab ACB licence number (players, coaches) or the team entry id (teams). \cr

@@ -21,7 +21,7 @@ info (Basketligaen 2002/03 on); a season it does not list raises \code{hoopR_no_
 }
 \value{
 A \code{hoopR_data} tibble: Stats table of one module for a season (players, teams, games, standings). An empty
-valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sdv-py
+valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
 \code{sportality_stats_info}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. \cr

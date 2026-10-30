@@ -1,4 +1,4 @@
-# genius.R -- Genius Sports LiveStats wrappers (exported). Generated once from sdv-py
+# genius.R -- Genius Sports LiveStats wrappers (exported). Generated once from sportsdataverse-py
 # sportsdataverse/basketball/genius/genius.py + basketball_crosswalk.py (origin/main e3d232e);
 # maintained by hand from here. Transport, page records and parsers: R/genius_runtime.R.
 
@@ -1008,7 +1008,7 @@ genius_team_crosswalk <- function(df, source) {
   sportality_players = c("info_team_uuid", "info_team_id")
 )
 
-#' Distinct non-NA `(left, right)` pairs; types asserted; one-to-one both ways (sdv-py `_pairs`).
+#' Distinct non-NA `(left, right)` pairs; types asserted; one-to-one both ways (sportsdataverse-py `_pairs`).
 #' @noRd
 .genius_pairs <- function(df, left, right, types, label, call = rlang::caller_env()) {
   if (!is.data.frame(df)) {

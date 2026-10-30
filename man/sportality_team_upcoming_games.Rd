@@ -12,7 +12,7 @@ space: platform team uuids (not the numeric Genius team id).}
 }
 \value{
 A \code{hoopR_data} tibble: A team's next games (current season view). An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sdv-py \code{sportality_team_upcoming_games}),
+\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_team_upcoming_games}),
 then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    date \tab character \tab Game date, 'D mon YY' in English. \cr

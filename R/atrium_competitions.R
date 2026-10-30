@@ -1,6 +1,6 @@
 # atrium_competitions.R -- the per-site aliases of the Atrium family (lnb_*, lnbp_*, ...).
 #
-# R mirror of sdv-py sportsdataverse/basketball/_competitions.py `mint_atrium()`: for
+# R mirror of sportsdataverse-py sportsdataverse/basketball/_competitions.py `mint_atrium()`: for
 # every atrium entry of .intl_basketball_competitions (this package's genders only),
 # eight thin bindings of a base wrapper to the entry's website_id:
 #   <prefix>_seasons / _schedule / _standings / _teams / _player_box / _team_box /
@@ -90,7 +90,7 @@
            "`; ", gender, ").**"),
     "",
     paste0("Thin bindings of the parameterised `atrium_*()` wrappers to this site, minted from the competition ",
-           "registry (sdv-py `tools/codegen/basketball_competitions.yaml`); the full surface stays on the ",
+           "registry shared with sportsdataverse-py; the full surface stays on the ",
            "`atrium_*()` wrappers."),
     paste0("@usage ", usage[[1]]), usage[-1],
     "@param season (*integer* optional): Season END year (season rule below). Omit `season` and `season_id` for the site's current season.",

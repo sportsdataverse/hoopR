@@ -70,7 +70,7 @@ A \code{hoopR_data} tibble (one row: the next match):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 The organisation's next scheduled match (empty between seasons).

@@ -8,7 +8,7 @@ kbl_players()
 }
 \value{
 A \code{hoopR_data} tibble: The site's player directory (current and former players) with their current or last team.
-The columns are always these, in this order (sdv-py \code{kbl_players}); an empty valid answer raises \code{hoopR_no_data},
+The columns are always these, in this order (sportsdataverse-py \code{kbl_players}); an empty valid answer raises \code{hoopR_no_data},
 a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    pcode \tab character \tab KBL player code (6-digit string). Joins to \code{pcode} on every route and to \code{playerNo} in /league/round-mvp. \cr

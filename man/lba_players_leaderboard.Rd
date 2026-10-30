@@ -14,7 +14,7 @@ filters.categories).}
 }
 \value{
 A \code{hoopR_data} tibble: Season player leaderboard for one category (per-game average). The columns are always
-these, in this order (sdv-py \code{lba_players_leaderboard}); a column the site adds later is appended after them:\tabular{lll}{
+these, in this order (sportsdataverse-py \code{lba_players_leaderboard}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
    category \tab character \tab Category of this row (the \code{cat} param, e.g. \code{points}). \cr

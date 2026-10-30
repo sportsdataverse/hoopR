@@ -1,5 +1,5 @@
-# fiba_gdap.R -- the fiba_gdap_* wrappers (R mirror of sdv-py sportsdataverse/basketball/fiba_hub/fiba_gdap.py).
-# Same names, arguments, defaults and snake_case columns as sdv-py; the transport, refusals and
+# fiba_gdap.R -- the fiba_gdap_* wrappers (R mirror of sportsdataverse-py sportsdataverse/basketball/fiba_hub/fiba_gdap.py).
+# Same names, arguments, defaults and snake_case columns as sportsdataverse-py; the transport, refusals and
 # parsers live in R/fiba_gdap_runtime.R, R/fiba_gdap_parsers.R and R/fiba_gamepage_runtime.R.
 
 # The @details of every fiba topic that shares the fiba_gdap_awards() notes (roxygen @eval .intl_details()).

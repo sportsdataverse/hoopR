@@ -12,7 +12,7 @@ cba_game_info(schedule_id)
 }
 \value{
 A \code{hoopR_data} tibble: One row: both teams, score, tip-off time and colours. An empty valid answer is a zero-row
-tibble with these columns, in this order (sdv-py \code{cba_game_info}):\tabular{lll}{
+tibble with these columns, in this order (sportsdataverse-py \code{cba_game_info}):\tabular{lll}{
    col_name \tab type \tab description \cr
    schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
    count \tab integer \tab Unverified: an integer shown in the report header (83 in the 2025-26 sample, 99 in 2017-18). Not the play-by-play row count; plausibly possessions per team, which the bundle does not confirm. \cr

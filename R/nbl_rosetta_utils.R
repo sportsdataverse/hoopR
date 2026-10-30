@@ -1,10 +1,10 @@
 # nbl_rosetta_utils.R -- transport, refusals and parsers of the NBL Rosetta family.
 #
-# R mirror of sdv-py sportsdataverse/basketball/nbl_au/nbl_rosetta_runtime.py and
+# R mirror of sportsdataverse-py sportsdataverse/basketball/nbl_au/nbl_rosetta_runtime.py and
 # nbl_rosetta_parsers.py. Rosetta (prod.rosetta.nbl.com.au/get) is the JSON proxy behind
 # nbl.com.au; one host serves the NBL, the WNBL and NBL1 (the `org` path segment).
 #
-# Runtime (see the sdv-py module docstring for the measurements behind each rule):
+# Runtime (see the sportsdataverse-py module docstring for the measurements behind each rule):
 # * the referer gate: Origin / Referer set to nbl.com.au, or every route answers 403
 #   {"error": "Access Denied", "code": "MISSING_API_KEY"} (refused, never data);
 # * season = END year at the API, mapped to Rosetta's `year`: START year for the NBL and WNBL
@@ -18,11 +18,11 @@
 # * HTTP 500 is retried (retry_500 = TRUE: the nbl_au policy of the shared runtime).
 #
 # Parsers: one generic flattener. Nested objects become `<parent>_<child>` columns (keys through
-# .intl_clean_names, the sdv-py underscore() port), lists become JSON text, presentation and
+# .intl_clean_names, the sportsdataverse-py underscore() port), lists become JSON text, presentation and
 # betting fields are dropped, entity objects give `<entity>_id` (DataCore) and
-# `rosetta_<entity>_id` (Rosetta's own). Column types follow the polars rules sdv-py applies
+# `rosetta_<entity>_id` (Rosetta's own). Column types follow the polars rules sportsdataverse-py applies
 # (infer, then the name rules of `_typed`, then the returns-schema of `_finish`), so the tibble
-# matches the sdv-py frame column for column.
+# matches the sportsdataverse-py frame column for column.
 
 .NBL_ROSETTA_HOST <- "https://prod.rosetta.nbl.com.au/get"
 .NBL_ROSETTA_GATE <- c(Origin = "https://www.nbl.com.au", Referer = "https://www.nbl.com.au/")
@@ -68,13 +68,13 @@
 # Season key
 # ---------------------------------------------------------------------------
 
-#' Rosetta's `year` for a season END year (sdv-py `start_year`).
+#' Rosetta's `year` for a season END year (sportsdataverse-py `start_year`).
 #' @noRd
 .nbl_rosetta_start_year <- function(org, season) {
   if (org == "nbl1" || season <= 1998) season else season - 1
 }
 
-#' The season END year of a Rosetta `year` (sdv-py `end_year`); `NULL` when year 1998 has no date.
+#' The season END year of a Rosetta `year` (sportsdataverse-py `end_year`); `NULL` when year 1998 has no date.
 #' @noRd
 .nbl_rosetta_end_year <- function(org, year, start_date = NULL) {
   if (org == "nbl1" || year <= 1997) return(year)
@@ -125,7 +125,7 @@
   invisible()
 }
 
-#' Validate an envelope (sdv-py `_check`); return its rows.
+#' Validate an envelope (sportsdataverse-py `_check`); return its rows.
 #' @noRd
 .nbl_rosetta_check <- function(where, route, groups, body, sent_limit, call) {
   if (.nbl_is_obj(body) && ("error" %in% names(body) || identical(body[["code"]], "MISSING_API_KEY"))) {
@@ -209,7 +209,7 @@
 #'
 #' @param short Endpoint key (`.NBL_ROSETTA_COLUMNS`, `.NBL_ROSETTA_PARSER`).
 #' @param route Runtime route key.
-#' @param path Path template (the sdv-py endpoint path).
+#' @param path Path template (the sportsdataverse-py endpoint path).
 #' @param path_args Named list of the wrapper's path arguments.
 #' @param query Named list of query parameters.
 #' @noRd
@@ -349,7 +349,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Flattening (sdv-py nbl_rosetta_parsers helpers)
+# Flattening (sportsdataverse-py nbl_rosetta_parsers helpers)
 # ---------------------------------------------------------------------------
 
 .NBL_ENTITY_KEYS <- c("season", "team", "home_team", "away_team", "player", "venue", "match")
@@ -517,7 +517,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Shapes (one per sdv-py parser)
+# Shapes (one per sportsdataverse-py parser)
 # ---------------------------------------------------------------------------
 
 #' @noRd
@@ -742,7 +742,7 @@
   )
 }
 
-#' Whole doubles -> integer (sdv-py Int64); values beyond int32 stay double.
+#' Whole doubles -> integer (sportsdataverse-py Int64); values beyond int32 stay double.
 #' Note: R has no int64 here; a count past 2^31 keeps its value as double instead of overflowing.
 #' @noRd
 .nbl_int <- function(x) {
@@ -787,7 +787,7 @@
   out
 }
 
-#' `"MM:SS"` (or a numeric string) -> decimal minutes; unparseable -> NA (sdv-py `_minutes`).
+#' `"MM:SS"` (or a numeric string) -> decimal minutes; unparseable -> NA (sportsdataverse-py `_minutes`).
 #' @noRd
 .nbl_minutes <- function(x) {
   m <- regmatches(x, regexec("^\\s*([0-9]+):([0-9]{2})(?::([0-9]{2}))?\\s*$", x, perl = TRUE))
@@ -800,7 +800,7 @@
   }, numeric(1))
 }
 
-#' A column's dtype without a value to go by: the schema, else the name rules (sdv-py `_dtype_for`).
+#' A column's dtype without a value to go by: the schema, else the name rules (sportsdataverse-py `_dtype_for`).
 #' @noRd
 .nbl_dtype_for <- function(col, schema = NULL) {
   if (!is.null(schema) && col %in% names(schema)) return(schema[[col]])
@@ -811,7 +811,7 @@
   "s"
 }
 
-#' sdv-py `_typed`: ids -> text, rates and minutes -> double, counts -> integer.
+#' sportsdataverse-py `_typed`: ids -> text, rates and minutes -> double, counts -> integer.
 #' @noRd
 .nbl_typed <- function(col, x, type) {
   if (type == "n") return(list(.nbl_cast(x, "n", .nbl_dtype_for(col)), .nbl_dtype_for(col)))
@@ -849,7 +849,7 @@
   list(cols = cols, types = types)
 }
 
-#' sdv-py `_finish`: returns-schema dtypes, the documented columns first (missing ones as NA).
+#' sportsdataverse-py `_finish`: returns-schema dtypes, the documented columns first (missing ones as NA).
 #' @noRd
 .nbl_finish <- function(frame, columns, parser) {
   schema <- .NBL_ROSETTA_DTYPES[[parser]]
@@ -872,7 +872,7 @@
   dplyr::as_tibble(cols)
 }
 
-#' Parse a Rosetta envelope as endpoint `short` (sdv-py `parse_nbl_rosetta_*` with the endpoint's columns).
+#' Parse a Rosetta envelope as endpoint `short` (sportsdataverse-py `parse_nbl_rosetta_*` with the endpoint's columns).
 #' @noRd
 .nbl_rosetta_parse <- function(raw, short) {
   parser <- .NBL_ROSETTA_PARSER[[short]]

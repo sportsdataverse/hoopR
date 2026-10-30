@@ -1,6 +1,6 @@
 # easl_runtime.R -- transport, season mapping and refusals of the EASL wrappers.
 #
-# R mirror of sdv-py sportsdataverse/basketball/easl/easl_runtime.py (origin/main e3d232ebc9).
+# R mirror of sportsdataverse-py sportsdataverse/basketball/easl/easl_runtime.py (origin/main e3d232ebc9).
 #
 # UNOFFICIAL INTERMEDIARY: https://easl.joshricha.com/api/v1 is an Express server run by an individual.
 # It is not EASL's and not Sportradar's: it mirrors Sportradar DataCore (organisation b1e0z) into SQLite
@@ -46,7 +46,7 @@
 # Session cache: the seasons list and the header of every finished game.
 .easl_cache <- new.env(parent = emptyenv())
 
-#' Forget the cached seasons list and game headers (sdv-py `clear_cache`).
+#' Forget the cached seasons list and game headers (sportsdataverse-py `clear_cache`).
 #' @noRd
 .easl_clear_cache <- function() {
   rm(list = ls(.easl_cache, all.names = TRUE), envir = .easl_cache)
@@ -124,11 +124,11 @@
 #' @noRd
 .easl_rows <- function(x) if (.easl_is_arr(x)) Filter(.easl_is_obj, x) else list()
 
-#' A single string, else `NA` (the type-strict comparisons of sdv-py `_same`).
+#' A single string, else `NA` (the type-strict comparisons of sportsdataverse-py `_same`).
 #' @noRd
 .easl_str <- function(x) if (is.character(x) && length(x) == 1L && !is.na(x)) x else NA_character_
 
-#' Type-strict string equality (sdv-py `_same` on string ids).
+#' Type-strict string equality (sportsdataverse-py `_same` on string ids).
 #' @noRd
 .easl_same <- function(got, want) identical(.easl_str(got), want)
 
@@ -218,7 +218,7 @@
 
 #' GET `.EASL_BASE + path` through the polite getter and parse the JSON body.
 #'
-#' 404 -> `hoopR_no_data`; HTTP 400 / 422 -> `hoopR_asset_fetch` (sdv-py turns the getter's
+#' 404 -> `hoopR_no_data`; HTTP 400 / 422 -> `hoopR_asset_fetch` (sportsdataverse-py turns the getter's
 #' ValueError into AssetFetchError: the request was built here); any other non-2xx ->
 #' `hoopR_asset_fetch`. 500 is not retried.
 #' @noRd

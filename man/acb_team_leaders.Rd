@@ -29,7 +29,7 @@ whole double is accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_team_leaders}):\tabular{lll}{
+(sportsdataverse-py \code{acb_team_leaders}):\tabular{lll}{
    col_name \tab type \tab description \cr
    club_id \tab integer \tab Stable club id asked for. \cr
    competition_id \tab integer \tab Competition of the selected edition. \cr

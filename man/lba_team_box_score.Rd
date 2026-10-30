@@ -11,7 +11,7 @@ lba_team_box_score(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: Team lines of a final game's box score: the team-booked stats and the totals of each side.
-The columns are always these, in this order (sdv-py \code{lba_team_box_score}); a column the site adds later is
+The columns are always these, in this order (sportsdataverse-py \code{lba_team_box_score}); a column the site adds later is
 appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr

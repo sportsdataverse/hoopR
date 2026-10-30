@@ -8,7 +8,7 @@ kbl_current_standings()
 }
 \value{
 A \code{hoopR_data} tibble: Current standings of the active season (no parameter): record, games behind, streaks,
-splits. The columns are always these, in this order (sdv-py \code{kbl_current_standings}); an empty valid answer
+splits. The columns are always these, in this order (sportsdataverse-py \code{kbl_current_standings}); an empty valid answer
 raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    rank \tab integer \tab Standing (1 = first). \cr

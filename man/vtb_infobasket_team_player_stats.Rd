@@ -21,7 +21,7 @@ The season table is read for this tag.}
 }
 \value{
 A \code{hoopR_data} tibble: Season totals of every player of a club in one season. The columns are always these, in this
-order (sdv-py \code{vtb_infobasket_team_player_stats}); an empty valid answer raises \code{hoopR_no_data}, a valid body with
+order (sportsdataverse-py \code{vtb_infobasket_team_player_stats}); an empty valid answer raises \code{hoopR_no_data}, a valid body with
 no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr

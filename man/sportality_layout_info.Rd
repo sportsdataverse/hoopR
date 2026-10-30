@@ -9,7 +9,7 @@ sportality_layout_info()
 \value{
 A \code{hoopR_data} tibble: Directory of every ssgt (season + series + game type) with its teams, and the stats
 modules. An empty valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order
-(sdv-py \code{sportality_layout_info}), then any column the API added later:\tabular{lll}{
+(sportsdataverse-py \code{sportality_layout_info}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025/26). \cr
    season_code \tab character \tab Provider season code: the START year (2025 = 2025/26). \cr

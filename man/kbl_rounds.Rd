@@ -19,7 +19,7 @@ D-League edition), '03' playoffs, '04' championship final, '07' EASL, '08' D-Lea
 }
 \value{
 A \code{hoopR_data} tibble: The season's round calendar (the KBL plays six rounds) with each round's first and last
-date. The columns are always these, in this order (sdv-py \code{kbl_rounds}); an empty valid answer raises
+date. The columns are always these, in this order (sportsdataverse-py \code{kbl_rounds}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr

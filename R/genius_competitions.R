@@ -1,6 +1,6 @@
 # genius_competitions.R -- per-competition aliases over the Genius family (exported).
 #
-# R mirror of sdv-py basketball/_competitions.py mint_genius() (origin/main e3d232e): one set of
+# R mirror of sportsdataverse-py basketball/_competitions.py mint_genius() (origin/main e3d232e): one set of
 # <prefix>_competitions / _schedule / _team_box / _player_box / _pbp / _shots per Genius entry of
 # the competition registry (R/intl_basketball_competitions.R, already filtered to this package's
 # genders). The aliases are minted from that registry by .genius_mint_aliases(), called from

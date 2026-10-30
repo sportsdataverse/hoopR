@@ -20,7 +20,7 @@ null without one). \code{standing_points} are table points, 2 per win and 1 per 
 \code{points_against} are the two sides of the page's \code{Overall} column; Top 8 and Play-out tables carry points over
 from the regular season.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
    league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr

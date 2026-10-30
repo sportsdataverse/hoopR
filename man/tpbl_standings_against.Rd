@@ -13,7 +13,7 @@ preseason, regular season, playoffs, postseason challenge, finals; 8, 9, 11, 12,
 }
 \value{
 A \code{hoopR_data} tibble: Head-to-head record of every team against every other team in one division. An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{tpbl_standings_against}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_standings_against}):\tabular{lll}{
    col_name \tab type \tab description \cr
    division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
    team_id \tab integer \tab TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. The ranked team. \cr

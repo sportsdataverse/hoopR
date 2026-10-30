@@ -1,9 +1,9 @@
 # lba_parsers.R -- the legabasket.it bodies as tibbles, one shaper per lba_* route.
 #
-# R mirror of sdv-py sportsdataverse/basketball/lba/lba_parsers.py (origin/main e3d232ebc9):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/lba/lba_parsers.py (origin/main e3d232ebc9):
 #
 # * Row rule: inside a shaper, nested objects flatten into `<parent>_<child>` columns (names through
-#   `.intl_clean_names()`, the port of sdv-py `underscore()`), and lists become JSON strings written the way
+#   `.intl_clean_names()`, the port of sportsdataverse-py `underscore()`), and lists become JSON strings written the way
 #   Python's `json.dumps(ensure_ascii = FALSE)` writes them. A wire `id` is renamed for what it identifies
 #   (`championship_id`, `game_id`, `team_id`, `player_id`, `coach_id`, `standing_id`, `stat_line_id`).
 # * Season: every season-scoped frame carries the END year as `season`: the row's own START year (`year`,
@@ -13,7 +13,7 @@
 #   (`(^|_)id$`) to integer when lossless, the per-family numeric strings (`"28.66"`, `"100%"`) to double, and the
 #   schema type for an all-null column or a whole-number rate (`.LBA_DTYPES`). Missing documented columns are
 #   added as typed NA, documented columns first; a body with no rows gives a zero-row tibble with these columns.
-# * Dates stay character, as in sdv-py (offset-carrying ISO strings).
+# * Dates stay character, as in sportsdataverse-py (offset-carrying ISO strings).
 
 #' @noRd
 .LBA_ID_COL <- "(^|_)id$"
@@ -211,7 +211,7 @@
   col
 }
 
-#' sdv-py `_cast_ids_int64` on one column: to integer only when every value survives the round trip.
+#' sportsdataverse-py `_cast_ids_int64` on one column: to integer only when every value survives the round trip.
 #' @noRd
 .lba_id <- function(x) {
   if (is.integer(x)) return(x)
@@ -252,7 +252,7 @@
   if (grepl(.LBA_ID_COL, col)) "integer" else "character"
 }
 
-#' The rows of one route as its documented tibble (sdv-py `_frame` + `_typed` + `_finish`).
+#' The rows of one route as its documented tibble (sportsdataverse-py `_frame` + `_typed` + `_finish`).
 #' @noRd
 .lba_frame <- function(rows, short, num = NULL) {
   schema <- .LBA_DTYPES[[short]]

@@ -19,7 +19,7 @@ sends it as the API's repeatable \code{rounds[]}. \code{NULL} (the default) for 
 }
 \value{
 A \code{hoopR_data} tibble: Every field-goal attempt of one team in one division with its court position (optionally
-per quarter). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+per quarter). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{tpbl_team_shots}):\tabular{lll}{
    col_name \tab type \tab description \cr
    division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr

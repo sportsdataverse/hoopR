@@ -12,7 +12,7 @@ cebl_player(player_id)
 }
 \value{
 A \code{hoopR_data} tibble: One player's profile and current team: name, nationality, birth date, position, jersey. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{cebl_player}):\tabular{lll}{
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_player}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab CEBL player id (its own key space). Joins /players/\{player_id\}/ and \code{id} in the other player rows. Genius LiveStats \code{data.json} carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified). \cr
    full_name \tab character \tab Player's full name. \cr

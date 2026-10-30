@@ -11,7 +11,7 @@ lba_roster_coach(team_id)
 season.}
 }
 \value{
-A \code{hoopR_data} tibble: Head coach of one team-season. The columns are always these, in this order (sdv-py
+A \code{hoopR_data} tibble: Head coach of one team-season. The columns are always these, in this order (sportsdataverse-py
 \code{lba_roster_coach}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr

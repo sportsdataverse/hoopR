@@ -1,14 +1,14 @@
 # sportpress_parsers.R -- frames of the BNXT League (Sportpress) wrappers.
 #
-# R mirror of sdv-py sportsdataverse/basketball/bnxt/bnxt_parsers.py (origin/main e3d232e): every frame
-# has a fixed column list with types pinned by name (`.SPORTPRESS_SPECS`, sdv-py `SPECS`), filled from
-# the items an extractor builds (`.SPORTPRESS_ITEMS`, sdv-py `ITEMS`) by a dotted path per column.
-# Types: i integer (sdv-py Int64), f double (Float64), s character (Utf8), b logical (Boolean), d Date,
-# t POSIXct in Europe/Brussels (sdv-py's naive local Datetime: the source carries no offset). Every id is
+# R mirror of sportsdataverse-py sportsdataverse/basketball/bnxt/bnxt_parsers.py (origin/main e3d232e): every frame
+# has a fixed column list with types pinned by name (`.SPORTPRESS_SPECS`, sportsdataverse-py `SPECS`), filled from
+# the items an extractor builds (`.SPORTPRESS_ITEMS`, sportsdataverse-py `ITEMS`) by a dotted path per column.
+# Types: i integer (sportsdataverse-py Int64), f double (Float64), s character (Utf8), b logical (Boolean), d Date,
+# t POSIXct in Europe/Brussels (sportsdataverse-py's naive local Datetime: the source carries no offset). Every id is
 # integer. A value of the wrong JSON type is NA, never coerced (a float id is NA, not "123.0").
 
 # ---------------------------------------------------------------------------
-# Casts (sdv-py _i / _f / _s / _b / _d / _dt) over a list of raw values
+# Casts (sportsdataverse-py _i / _f / _s / _b / _d / _dt) over a list of raw values
 # ---------------------------------------------------------------------------
 
 #' @noRd
@@ -141,7 +141,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Column blocks (sdv-py _stat_cols, _player_cols, _team_cols, _game_cols, _roster_cols)
+# Column blocks (sportsdataverse-py _stat_cols, _player_cols, _team_cols, _game_cols, _roster_cols)
 # ---------------------------------------------------------------------------
 
 #' @noRd
@@ -235,7 +235,7 @@
 #' @noRd
 .SPORTPRESS_GAME_ROUTE <- list(game_id = list("i", "game_id"), competition_id = list("i", "competition_id"))
 
-#' Column name -> list(type, dotted path), per wrapper (sdv-py `bnxt_parsers.SPECS`).
+#' Column name -> list(type, dotted path), per wrapper (sportsdataverse-py `bnxt_parsers.SPECS`).
 #' @noRd
 .SPORTPRESS_SPECS <- list(
   ui_strings = list(language = list("s", "language"), key = list("s", "key"), text = list("s", "text")),
@@ -351,7 +351,7 @@
 )
 
 # ---------------------------------------------------------------------------
-# Item extractors (sdv-py ITEMS)
+# Item extractors (sportsdataverse-py ITEMS)
 # ---------------------------------------------------------------------------
 
 #' @noRd
@@ -487,7 +487,7 @@
   lapply(.sportpress_rows(raw), function(e) .sportpress_merge(ctx, list(team_side = .sportpress_side_name(e$is_home)), e))
 }
 
-#' Wrapper -> item extractor (sdv-py `bnxt_parsers.ITEMS`).
+#' Wrapper -> item extractor (sportsdataverse-py `bnxt_parsers.ITEMS`).
 #' @noRd
 .SPORTPRESS_ITEMS <- list(
   ui_strings = .sportpress_it_ui_strings,

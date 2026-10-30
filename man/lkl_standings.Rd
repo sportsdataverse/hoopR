@@ -20,7 +20,7 @@ is a signed integer as the site prints it; its sign convention is unverified. \c
 (oldest first, unverified). \code{season_id} is the site's standings-season id, a different key space from the results
 id. Team slugs join \code{lkl_results}. A record without tables gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab STANDINGS season id (a separate small key space: 35 = 2026-27, 1 = 2016-17, 24 = 1993-94); NOT the results season id. \cr
    season_end_year \tab integer \tab Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. \cr

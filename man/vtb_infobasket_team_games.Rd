@@ -18,7 +18,7 @@ The season table is read for this tag.}
 }
 \value{
 A \code{hoopR_data} tibble: A club's games in one season (the calendar's row shape). The columns are always these, in
-this order (sdv-py \code{vtb_infobasket_team_games}); an empty valid answer raises \code{hoopR_no_data}, a valid body with
+this order (sportsdataverse-py \code{vtb_infobasket_team_games}); an empty valid answer raises \code{hoopR_no_data}, a valid body with
 no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr

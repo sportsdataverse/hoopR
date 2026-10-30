@@ -14,7 +14,7 @@ season.}
 }
 \value{
 A \code{hoopR_data} tibble: Season totals of each player of a team-season. The columns are always these, in this order
-(sdv-py \code{lba_team_players_stats}); a column the site adds later is appended after them:\tabular{lll}{
+(sportsdataverse-py \code{lba_team_players_stats}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
    club_id \tab integer \tab Club id: the cross-season join key for team ids (only here and in the \code{team} headers); stability across seasons is unverified. \cr

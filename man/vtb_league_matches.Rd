@@ -15,7 +15,7 @@ earlier years answer no rows.}
 }
 \value{
 A \code{hoopR_data} tibble: Every match of one league-season (schedule, scores, quarter points, venue), in one request.
-The columns are always these, in this order (sdv-py \code{vtb_league_matches}); an empty valid answer raises
+The columns are always these, in this order (sportsdataverse-py \code{vtb_league_matches}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab Match id; equals the Infobasket GameID (/Widget/GetOnline/\{gameId\}). \cr

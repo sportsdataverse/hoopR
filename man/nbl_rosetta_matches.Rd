@@ -88,7 +88,7 @@ A \code{hoopR_data} tibble (one row per match):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Matches of a season: ids, teams, venue, status, scores and start time (UTC).

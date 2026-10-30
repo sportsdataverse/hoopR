@@ -43,7 +43,7 @@ A \code{hoopR_data} tibble (one row per ladder entry):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Regular-season ladder: position, record, points for and against, home and away splits and form.

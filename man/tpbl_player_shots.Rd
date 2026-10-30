@@ -16,7 +16,7 @@ Not the GoHoops person id and not the roster id.}
 }
 \value{
 A \code{hoopR_data} tibble: Every field-goal attempt of one player in one division with its court position. An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{tpbl_player_shots}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_player_shots}):\tabular{lll}{
    col_name \tab type \tab description \cr
    division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
    player_id \tab integer \tab TPBL player id (key space: TPBL players; one per person across seasons and teams): the \code{{player_id}} of the player routes. Not the GoHoops person id and not the roster id. \cr

@@ -12,7 +12,7 @@ the API's default competition. One or more whole numbers (a vector repeats \code
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_competition_current}):\tabular{lll}{
+(sportsdataverse-py \code{acb_competition_current}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition the site opens by default. \cr
    edition_id \tab integer \tab Edition (season) the site opens by default. \cr

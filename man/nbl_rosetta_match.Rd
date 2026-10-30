@@ -67,7 +67,7 @@ A \code{hoopR_data} tibble (one row):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 One match's header: status, scores, clock, venue, season and teams. Box score and play-by-play: the \verb{match_*} frames.

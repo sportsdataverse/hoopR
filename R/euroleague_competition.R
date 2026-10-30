@@ -8,11 +8,11 @@
 #' @details
 #' Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
 #' wraps it. This
-#' function mirrors its sdv-py twin of the same name: same arguments, defaults
-#' and snake_case columns, one row per sdv-py row.
+#' function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+#' and snake_case columns, one row per sportsdataverse-py row.
 #'
 #' A failed request raises a classed condition instead of returning an empty
-#' frame, mirroring sdv-py's error vocabulary: a 404 is `hoopR_no_data`, a
+#' frame, mirroring sportsdataverse-py's error vocabulary: a 404 is `hoopR_no_data`, a
 #' 400 / 422 is `hoopR_invalid_request`, any other failure (another status, a
 #' transport error, a non-JSON body) is `hoopR_fetch_error`; all three inherit
 #' `hoopR_error`.
@@ -387,7 +387,7 @@ euroleague_games <- function(competition_code, season_code, limit = NULL, offset
 #' @param game_code (*integer* required): Game number within the season (1-based;
 #'   the `game_code` column of [euroleague_games()]).
 #' @return A `hoopR_data` tibble with one row (the game). The `local_players` /
-#'   `road_players` cells are JSON text: semantically equal to sdv-py's, not
+#'   `road_players` cells are JSON text: semantically equal to sportsdataverse-py's, not
 #'   byte-equal (separators and unicode escaping differ):
 #'
 #'    \if{html}{\tabular{lll}{

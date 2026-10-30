@@ -11,7 +11,7 @@ kzs_match(match_id)
 }
 \value{
 A \code{hoopR_data} tibble: Match header: teams, scores, venue, officials' names, best performers and status. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_match}):\tabular{lll}{
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_match}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab KZS match id. Joins to \verb{/matches/\{matchId\}} (and its /playByPlay, /stats) and stats \code{matchId}. \cr
    competition_id \tab integer \tab Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to \verb{/competitions/\{competitionId\}} and the \code{competitionId} query params. \cr

@@ -266,7 +266,7 @@ reference:
       - '`load_mbb_shots`'
       - '`update_mbb_db`'
   - subtitle: NCAA Men's College Basketball Play-by-Play Engine Data Loaders
-    desc: Functions exported by hoopR to access the sdv-py `ncaa_mbb` engine's published output on sportsdataverse-data
+    desc: Functions exported by hoopR to access the sportsdataverse-py `ncaa_mbb` engine's published output on sportsdataverse-data
     contents:
       - '`load_ncaa_mbb_pbp`'
       - '`load_ncaa_mbb_shots`'
@@ -450,7 +450,7 @@ reference:
     desc: >
       EuroLeague / EuroCup wrappers over the keyless, unofficial Competition
       Engine (api-live.euroleague.net v2 + v3) and live (live.euroleague.net)
-      APIs, mirroring sdv-py's `euroleague_*` functions column for column.
+      APIs, mirroring sportsdataverse-py's `euroleague_*` functions column for column.
     contents:
       - '`euroleague_competitions`'
       - '`euroleague_seasons`'

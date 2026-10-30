@@ -8,7 +8,7 @@ scb_team_rosters()
 }
 \value{
 A \code{hoopR_data} tibble: Per club, the current roster, one row per player (BBL only). An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{scb_team_rosters}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{scb_team_rosters}):\tabular{lll}{
    col_name \tab type \tab description \cr
    league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
    team_id \tab character \tab Club id, a string; equal to \code{season_team_id} in every sample. Joins to \code{scb_team} and \code{scb_season_teams}. \cr

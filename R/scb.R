@@ -1,4 +1,4 @@
-# scb.R -- BBL and DBBL (Germany) wrappers over the SCB API, at parity with sdv-py
+# scb.R -- BBL and DBBL (Germany) wrappers over the SCB API, at parity with sportsdataverse-py
 # sportsdataverse/basketball/scb (origin/main e3d232e). One API on two hosts:
 # api.basketball-bundesliga.de (BBL, men) and api-1.dbbl.scb.world (DBBL, women); `league`
 # picks the host. Transport and refusals: R/scb_runtime.R; frames: R/scb_parsers.R.
@@ -40,7 +40,7 @@
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Seasons, newest first, with the active flag (BBL back to 1966, DBBL 2024 on). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_seasons`):
 #'
 #' | col_name | type | description |
@@ -82,7 +82,7 @@ scb_seasons <- function(league = "bbl") {
 #' @return
 #' A `hoopR_data` tibble: Every player registered in a season: the id crosswalk (season_player_id,
 #'   real_player_id, season_team_id). An empty valid answer raises `hoopR_no_data`; the columns are always
-#'   these, in this order (sdv-py `scb_season_players`):
+#'   these, in this order (sportsdataverse-py `scb_season_players`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -126,7 +126,7 @@ scb_season_players <- function(season, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Every team of a season: club id, season-team id, name and three-letter code. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_season_teams`):
 #'
 #' | col_name | type | description |
@@ -172,7 +172,7 @@ scb_season_teams <- function(season, league = "bbl") {
 #' @return
 #' A `hoopR_data` tibble: Playoff bracket of a season: one row per series (quarter-finals, semi-finals,
 #'   finals). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order
-#'   (sdv-py `scb_playoff_series`):
+#'   (sportsdataverse-py `scb_playoff_series`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -222,7 +222,7 @@ scb_playoff_series <- function(season, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Every playoff game of a season with its series and the points of each series team.
-#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_playoff_games`):
 #'
 #' | col_name | type | description |
@@ -272,7 +272,7 @@ scb_playoff_games <- function(season, league = "bbl") {
 #'   PLAYOFFS, PLAYOFFS_TOTAL, MAIN_ROUND_AND_PLAY_OFFS or CUP.
 #' @return
 #' A `hoopR_data` tibble: Season player stat table: totals and per-game values, one row per player and stat
-#'   block. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   block. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_player_statistics`):
 #'
 #' | col_name | type | description |
@@ -384,7 +384,7 @@ scb_player_statistics <- function(season, league = "bbl", display_type = "MAIN_R
 #'   PLAYOFFS, PLAYOFFS_TOTAL, MAIN_ROUND_AND_PLAY_OFFS or CUP.
 #' @return
 #' A `hoopR_data` tibble: Season team stat table: totals and per-game values, one row per team and stat block.
-#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_team_statistics`):
 #'
 #' | col_name | type | description |
@@ -490,7 +490,7 @@ scb_team_statistics <- function(season, league = "bbl", display_type = "MAIN_ROU
 #' @return
 #' A `hoopR_data` tibble: Games of a season (the whole season in one page): teams, score by period, officials,
 #'   venue and top scorer. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this
-#'   order (sdv-py `scb_games`):
+#'   order (sportsdataverse-py `scb_games`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -619,7 +619,7 @@ scb_games <- function(league = "bbl", season = NULL, competition = NULL, game_ty
 #' @param slot_size (default `NULL`) Games per bucket (past, present, future); the API's default is 9.
 #' @return
 #' A `hoopR_data` tibble: Recent, live and upcoming games, one row per game with its past / present / future
-#'   bucket. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   bucket. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_games_recent`):
 #'
 #' | col_name | type | description |
@@ -747,7 +747,7 @@ scb_games_recent <- function(league = "bbl", slot_size = NULL) {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: One game header: teams, score by period, officials, venue and top scorer. An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `scb_game`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `scb_game`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -874,7 +874,7 @@ scb_game <- function(game_id, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Box score of a finished game: one row per player line of both teams (2002-03 on). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_game_players`):
 #'
 #' | col_name | type | description |
@@ -956,7 +956,7 @@ scb_game_players <- function(game_id, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Box score of a finished game: one row per team, with the head coach and the team
-#'   line. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   line. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_game_teams`):
 #'
 #' | col_name | type | description |
@@ -1056,7 +1056,7 @@ scb_game_teams <- function(game_id, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Play-by-play of a finished game with shot x/y (BBL 2008-09 on, DBBL 2024-25 on). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_game_actions`):
 #'
 #' | col_name | type | description |
@@ -1117,7 +1117,7 @@ scb_game_actions <- function(game_id, league = "bbl") {
 #' @return
 #' A `hoopR_data` tibble: League table of a season: record, home / away split, streaks and tie-break detail
 #'   (2005-06 on). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order
-#'   (sdv-py `scb_standings`):
+#'   (sportsdataverse-py `scb_standings`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1208,7 +1208,7 @@ scb_standings <- function(league = "bbl", season = NULL, competition = NULL) {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Player profile by season-player id: bio, position, club and previous clubs. An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_season_player`):
 #'
 #' | col_name | type | description |
@@ -1260,7 +1260,7 @@ scb_season_player <- function(season_player_id, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Club profile: names, code, home page, ticket shop, year joined and honours. An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `scb_team`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `scb_team`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1302,7 +1302,7 @@ scb_team <- function(team_id, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Every season a club played: its name that season and its championship and cup
-#'   titles. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   titles. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_team_seasons`):
 #'
 #' | col_name | type | description |
@@ -1339,7 +1339,7 @@ scb_team_seasons <- function(team_id, league = "bbl") {
 #'   that needs more pages is refused.
 #' @return
 #' A `hoopR_data` tibble: Current referees and commissioners (BBL only). An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `scb_referees`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `scb_referees`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1371,7 +1371,7 @@ scb_referees <- function(page_size = 100) {
 #' Endpoint: `GET https://api.basketball-bundesliga.de/transfers`
 #' @return
 #' A `hoopR_data` tibble: Latest transfers, one row per move (BBL only). An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `scb_transfers`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `scb_transfers`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1407,7 +1407,7 @@ scb_transfers <- function() {
 #' Endpoint: `GET https://api.basketball-bundesliga.de/transfers/teams`
 #' @return
 #' A `hoopR_data` tibble: Per club, the players joining and leaving, one row per move with its direction (BBL
-#'   only). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   only). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_transfers_teams`):
 #'
 #' | col_name | type | description |
@@ -1446,7 +1446,7 @@ scb_transfers_teams <- function() {
 #' Endpoint: `GET https://api.basketball-bundesliga.de/transfers/teams`
 #' @return
 #' A `hoopR_data` tibble: Per club, the current roster, one row per player (BBL only). An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `scb_team_rosters`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `scb_team_rosters`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1494,7 +1494,7 @@ scb_team_rosters <- function() {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: Single-game records: the season's and the all-time ones, one row per record. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_records_per_game`):
 #'
 #' | col_name | type | description |
@@ -1546,7 +1546,7 @@ scb_records_per_game <- function(season, league = "bbl") {
 #'   api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).
 #' @return
 #' A `hoopR_data` tibble: All-time season-average records (points, rebounds, assists, ...), one row per
-#'   record. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   record. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `scb_records_season_averages`):
 #'
 #' | col_name | type | description |

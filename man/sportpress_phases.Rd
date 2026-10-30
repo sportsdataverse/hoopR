@@ -11,7 +11,7 @@ sportpress_phases(season)
 }
 \value{
 A \code{hoopR_data} tibble: The competition of a season with its phases (regular season, playoffs, supercup). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_phases}):\tabular{lll}{
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_phases}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26), the sdv convention and the API's own season key. \cr
    competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr

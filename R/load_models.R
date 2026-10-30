@@ -1,5 +1,5 @@
 # Model-dataset release loaders, mirroring the load_ncaa_mbb.R loader shape.
-# Backed by the sportsdataverse-py (sdv-py) model programs that publish these
+# Backed by the sportsdataverse-py model programs that publish these
 # releases (NBA possession engine, MBB/WBB player value).
 # nba_player_impact ships csv/parquet/rds -- rds_from_url() is used to match
 # the NBA loader family convention. mbb_player_value / mbb_ratings are
@@ -13,7 +13,7 @@
 #'   player-team-season, combining regularized adjusted plus-minus (RAPM),
 #'   statistical plus-minus (SPM), box plus-minus (BPM), wins above
 #'   replacement (WAR), and a DARKO-style skill/projection pair. Produced by
-#'   the sdv-py NBA/WNBA possession-engine model program; published to the
+#'   the sportsdataverse-py NBA/WNBA possession-engine model program; published to the
 #'   `nba_player_impact` release tag as csv/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
@@ -108,7 +108,7 @@ NULL
 #'   box-score-derived offensive/defensive/net box plus-minus (BPM). Coverage
 #'   starts at 2006 (the earliest season with published box-score inputs of
 #'   sufficient quality for the model); this tag is parquet-only, with no
-#'   csv/rds sibling assets. Produced by the sdv-py NCAA MBB model program;
+#'   csv/rds sibling assets. Produced by the sportsdataverse-py NCAA MBB model program;
 #'   published to the `mbb_player_value` release tag.
 #' @param seasons A vector of 4-digit season-ending years for NCAA men's
 #'   college basketball. Published coverage runs 2006 through the most recent
@@ -184,7 +184,7 @@ load_mbb_player_value <- function(seasons = most_recent_mbb_season(),
 #'   (opponent-strength-normalized) offensive/defensive efficiency, adjusted
 #'   tempo, raw efficiency, and a national rank. A KenPom-style
 #'   adjusted-efficiency-margin rating. This tag is parquet-only, with no
-#'   csv/rds sibling assets. Produced by the sdv-py NCAA MBB model program;
+#'   csv/rds sibling assets. Produced by the sportsdataverse-py NCAA MBB model program;
 #'   published to the `mbb_ratings` release tag.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.

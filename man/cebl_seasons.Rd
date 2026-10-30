@@ -8,7 +8,7 @@ cebl_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: Every CEBL season (2019 on), with the active and live flags. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{cebl_seasons}):\tabular{lll}{
+\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab CEBL season row id (1 = 2019 ... 8 = 2026). No route takes it: routes take \code{year}. \cr
    season \tab integer \tab Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's \code{season} param takes. \cr
@@ -46,7 +46,7 @@ the API still refuses after one re-read, any other non-200, a non-JSON body, an 
 another season, team or player), all inheriting \code{hoopR_error}. HTTP 500 is the API's answer to a bad id and is
 not retried. Wrappers raise; they never return an empty frame.
 \item Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
-JSON here (\code{{"name":"TSN"}}), where sdv-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
+JSON here (\code{{"name":"TSN"}}), where sportsdataverse-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
 No string column of the committed fixtures carries an object.
 }
 }

@@ -1,7 +1,7 @@
 # sportpress_runtime.R -- transport for the BNXT League wrappers (bnxt.sportpress.info/api/v1, the
 # Sportpress CMS behind bnxtleague.com).
 #
-# R mirror of sdv-py sportsdataverse/basketball/bnxt/bnxt_runtime.py (origin/main e3d232e):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/bnxt/bnxt_runtime.py (origin/main e3d232e):
 #
 # * Header key: every route needs `X-Authorization: <key>` (401 without it). The key is public (hard-coded
 #   in the bnxtleague.com bundle `js/app.<hash>.js`); it is read from the bundle once per R session
@@ -9,9 +9,9 @@
 #   when the bundle cannot be read. A 401 re-reads the bundle once, then raises `hoopR_asset_fetch`
 #   ("key rotated?"). The key is never printed, logged or put in a condition: every message goes through
 #   `.sportpress_scrub()`. Requests carry the key, so no request follows a redirect (`follow_redirects =
-#   FALSE`, sdv-py's NOREDIRECT_SESSION, the bundle reads included).
+#   FALSE`, sportsdataverse-py's NOREDIRECT_SESSION, the bundle reads included).
 # * Throttle and retries: `.intl_response()` (>= 1 s per host on every attempt); 429 / 500 / 502 / 503 / 504
-#   are retried (`retry_500 = TRUE`, the sdv-py policy), three attempts in all.
+#   are retried (`retry_500 = TRUE`, the sportsdataverse-py policy), three attempts in all.
 # * Season key: the END year (`/phase/season/2026` = 2025-26), the API's own key, so the mapping is the
 #   identity; the season routes are checked against the body's `competition.season`. Every other route is
 #   keyed by the competition id (one per season), the competition-team id, the roster id or the game id.
@@ -32,7 +32,7 @@
 .SPORTPRESS_SITE <- "https://bnxtleague.com"
 #' @noRd
 .SPORTPRESS_API <- "https://bnxt.sportpress.info/api/v1"
-#' Public key from the bnxtleague.com bundle, read 2026-10-12 (sdv-py `bnxt_runtime.FALLBACK_KEY`).
+#' Public key from the bnxtleague.com bundle, read 2026-10-12 (sportsdataverse-py `bnxt_runtime.FALLBACK_KEY`).
 #' @noRd
 .SPORTPRESS_FALLBACK_KEY <- "BWSyE7sgg9QAurh2JX9cpjzjGc652BWLuNUS"
 #' @noRd
@@ -67,7 +67,7 @@
 #' @noRd
 .sportpress_is_int <- function(v) is.integer(v) && length(v) == 1L && !is.na(v)
 
-#' sdv-py `_same`: type-strict equality (`TRUE` is not 1, `"1"` is not 1); two nulls are equal.
+#' sportsdataverse-py `_same`: type-strict equality (`TRUE` is not 1, `"1"` is not 1); two nulls are equal.
 #' @noRd
 .sportpress_same <- function(a, b) {
   if (is.null(a) || is.null(b)) return(is.null(a) && is.null(b))
@@ -641,7 +641,7 @@
   film = list("/film/game/{competition_id}/{game_id}", .sportpress_c_film, TRUE)
 )
 
-#' sdv-py `_int_arg`: an integer, a whole double or a digit string; anything else is `hoopR_bad_request`.
+#' sportsdataverse-py `_int_arg`: an integer, a whole double or a digit string; anything else is `hoopR_bad_request`.
 #' @noRd
 .sportpress_int_arg <- function(value, what, call) {
   ok <- length(value) == 1L && !is.logical(value) && !is.na(value) &&

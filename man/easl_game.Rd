@@ -13,7 +13,7 @@ malformed id is \code{hoopR_bad_request}.}
 }
 \value{
 A \code{hoopR_data} tibble: Header of one finished fixture: teams, final score, status, stage, pool, venue and
-attendance. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+attendance. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_game}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Always null here: the game route carries no season; join season_id to easl_seasons. \cr

@@ -12,7 +12,7 @@ that needs more pages is refused.}
 }
 \value{
 A \code{hoopR_data} tibble: Current referees and commissioners (BBL only). An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{scb_referees}):\tabular{lll}{
+\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{scb_referees}):\tabular{lll}{
    col_name \tab type \tab description \cr
    league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
    referee_id \tab character \tab Official id (\code{refId}, equal to the API's \code{id}); joins \code{referee1_id} .. \code{commissioner_id} of \code{scb_games}. \cr

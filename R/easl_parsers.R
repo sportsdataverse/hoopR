@@ -1,10 +1,10 @@
 # easl_parsers.R -- frames of the EASL wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/easl/easl_parsers.py (origin/main e3d232ebc9): every
+# R mirror of sportsdataverse-py sportsdataverse/basketball/easl/easl_parsers.py (origin/main e3d232ebc9): every
 # frame is built from `.easl_specs` (R/easl_schema.R), one type per column, never sampled. Every
 # DataCore id is a UUID string; `*_row_id` columns are the sync server's own integers. Times stay
-# ISO strings as sent (as in sdv-py); `dob`, `start_date` and `end_date` are Dates. `received_time`
-# (epoch milliseconds, an Int64 in sdv-py) is a double: it does not fit an R integer. An empty or
+# ISO strings as sent (as in sportsdataverse-py); `dob`, `start_date` and `end_date` are Dates. `received_time`
+# (epoch milliseconds, an Int64 in sportsdataverse-py) is a double: it does not fit an R integer. An empty or
 # unrecognised input is a zero-row tibble with the documented columns.
 
 #' @noRd
@@ -36,7 +36,7 @@
   NA_integer_
 }
 
-#' An sdv-py Int64 kept as a double (`received_time`, epoch milliseconds).
+#' An sportsdataverse-py Int64 kept as a double (`received_time`, epoch milliseconds).
 #' @noRd
 .easl_n <- function(v) {
   if (!.easl_scalar(v) || is.logical(v)) return(NA_real_)

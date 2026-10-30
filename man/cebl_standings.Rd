@@ -12,7 +12,7 @@ cebl_standings(season)
 }
 \value{
 A \code{hoopR_data} tibble: Standings of one season, one row per team: record, home/away splits, games behind, streak.
-An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{cebl_standings}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. \cr

@@ -14,7 +14,7 @@ ssgt (these match-day views follow the current season).}
 }
 \value{
 A \code{hoopR_data} tibble: Games of the last played match day of an ssgt. An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sdv-py \code{sportality_last_game_day}), then
+\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_last_game_day}), then
 any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr

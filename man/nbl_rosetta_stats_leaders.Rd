@@ -99,7 +99,7 @@ A \code{hoopR_data} tibble (one row per player and period):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Player season totals and averages of a season (the leaderboard), one row per player and period.

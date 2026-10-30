@@ -21,7 +21,7 @@ checked against the team-filtered lists instead). A mismatch raises \code{hoopR_
 }
 \value{
 A \code{hoopR_data} tibble: Every game of one season, all divisions, played and scheduled, with teams, venue, status
-and score. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+and score. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{tpbl_games}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. \cr

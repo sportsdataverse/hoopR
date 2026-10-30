@@ -2,7 +2,7 @@
 # the league site pleagueofficial.com and the third-party analytics vendor
 # api.preciser.io behind its game page.
 #
-# R mirror of sdv-py sportsdataverse/basketball/plg/ (pleague_runtime.py,
+# R mirror of sportsdataverse-py sportsdataverse/basketball/plg/ (pleague_runtime.py,
 # pleague_parsers.py, pleague_preciser_runtime.py, pleague_preciser_parsers.py,
 # origin/main e3d232e): same routes, same refusals, same column specs.
 #
@@ -25,7 +25,7 @@
 #   vocabulary; layout drift; a vendor access key surviving in a body.
 #
 # HTML is walked with rvest::read_html() and xml2 node queries (libxml2), keeping
-# the sdv-py _Node semantics: a node's text skips <script> / <style>, a <br> is a
+# the sportsdataverse-py _Node semantics: a node's text skips <script> / <style>, a <br> is a
 # space, whitespace (NBSP included) collapses to one space. Traditional Chinese
 # literals are written as \u escapes (the package sources stay ASCII).
 
@@ -46,10 +46,10 @@
 .PLEAGUE_ROTATION_TOLERANCE <- 30
 .PLEAGUE_WS <- "[\\h\\v]+"
 
-# per-gid game page records and box bodies (sdv-py pleague_runtime._GAMES / _BOXES)
+# per-gid game page records and box bodies (sportsdataverse-py pleague_runtime._GAMES / _BOXES)
 .pleague_cache <- new.env(parent = emptyenv())
 
-#' Forget the cached game pages and box bodies (sdv-py `pleague_runtime.clear_cache`).
+#' Forget the cached game pages and box bodies (sportsdataverse-py `pleague_runtime.clear_cache`).
 #' @noRd
 .pleague_clear_cache <- function() {
   rm(list = ls(.pleague_cache, all.names = TRUE), envir = .pleague_cache)
@@ -109,7 +109,7 @@
   if (!length(m)) character() else unname(m[2, ])
 }
 
-# a refusal inside a page walk: sdv-py pleague_parsers._NotParsed (`empty` = no data)
+# a refusal inside a page walk: sportsdataverse-py pleague_parsers._NotParsed (`empty` = no data)
 .pleague_refuse <- function(msg, empty = FALSE) {
   rlang::abort(msg, class = "hoopR_pleague_not_parsed", empty = empty)
 }
@@ -129,24 +129,24 @@
 }
 
 .pleague_int_text <- function(s) {
-  s <- .intl_ascii_digits(s) # full-width digits, as sdv-py's \d / int() read them
+  s <- .intl_ascii_digits(s) # full-width digits, as sportsdataverse-py's \d / int() read them
   s <- gsub(",", "", .pleague_strip(if (.pleague_str1(s)) s else ""), fixed = TRUE)
   if (grepl("^[+-]?[0-9]+$", s, perl = TRUE)) suppressWarnings(as.integer(s)) else NA_integer_
 }
 .pleague_num_text <- function(s) {
-  s <- .intl_ascii_digits(s) # full-width digits, as sdv-py's \d / int() read them
+  s <- .intl_ascii_digits(s) # full-width digits, as sportsdataverse-py's \d / int() read them
   s <- sub("%+$", "", gsub(",", "", .pleague_strip(if (.pleague_str1(s)) s else ""), fixed = TRUE))
   if (grepl("^[+-]?[0-9]+(\\.[0-9]+)?$", s, perl = TRUE)) as.double(s) else NA_real_
 }
 .pleague_flt_text <- function(s) {
-  s <- .intl_ascii_digits(s) # full-width digits, as sdv-py's \d / int() read them
+  s <- .intl_ascii_digits(s) # full-width digits, as sportsdataverse-py's \d / int() read them
   s <- .pleague_strip(if (.pleague_str1(s)) s else "")
   if (grepl("^-?[0-9]+(\\.[0-9]+)?$", s, perl = TRUE)) as.double(s) else NA_real_
 }
 
-# sdv-py pleague_parsers._i / _f / _s / _seconds / _score
+# sportsdataverse-py pleague_parsers._i / _f / _s / _seconds / _score
 .pleague_i <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.pleague_one(v) || is.logical(v)) return(NA_integer_)
   if (is.numeric(v)) return(if (v == trunc(v) && abs(v) <= .Machine$integer.max) as.integer(v) else NA_integer_)
   if (is.character(v) && grepl("^[\\h\\v]*[+-]?[0-9]+[\\h\\v]*$", v, perl = TRUE)) {
@@ -155,7 +155,7 @@
   NA_integer_
 }
 .pleague_f <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.pleague_one(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v) && grepl("^[\\h\\v]*[+-]?[0-9]+(\\.[0-9]+)?[\\h\\v]*$", v, perl = TRUE)) {
@@ -169,12 +169,12 @@
   if (nzchar(v)) v else NA_character_
 }
 .pleague_seconds <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   m <- .pleague_full("[\\h\\v]*([0-9]+):([0-9]{2})[\\h\\v]*", v)
   if (is.null(m)) NA_integer_ else as.integer(m[2]) * 60L + as.integer(m[3])
 }
 .pleague_score <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (is.integer(v) && .pleague_one(v)) return(v)
   if (.pleague_str1(v) && grepl("^[0-9]+$", v, perl = TRUE)) return(suppressWarnings(as.integer(v)))
   NA_integer_
@@ -186,7 +186,7 @@
 }
 .pleague_na_if_blank <- function(x) if (.pleague_str1(x) && nzchar(x)) x else NA_character_
 
-# sdv-py _int_arg: a non-negative integer, or a string of digits
+# sportsdataverse-py _int_arg: a non-negative integer, or a string of digits
 .pleague_int_arg <- function(value, what, call) {
   ok <- (is.numeric(value) && .pleague_one(value) && value >= 0 && value == trunc(value)) ||
     (.pleague_str1(value) && grepl("^[\\h\\v]*[0-9]+[\\h\\v]*$", value, perl = TRUE))
@@ -197,7 +197,7 @@
   as.integer(.pleague_strip(as.character(value)))
 }
 
-#' The site's slug of a season END year (2025 -> "2024-25"): sdv-py's stray `season_slug` export.
+#' The site's slug of a season END year (2025 -> "2024-25"): sportsdataverse-py's stray `season_slug` export.
 #'
 #' @param season The season END year.
 #' @return `sprintf("%d-%02d", season - 1, season %% 100)`.
@@ -212,14 +212,14 @@
   sprintf("%d-%02d", n - 1L, n %% 100L)
 }
 
-# "2024-25" -> 2025 (sdv-py season_end_year)
+# "2024-25" -> 2025 (sportsdataverse-py season_end_year)
 .pleague_season_end_year <- function(season) as.integer(substr(season, 1, 4)) + 1L
 
 # ---------------------------------------------------------------------------
-# DOM (rvest / libxml2), with the sdv-py _Node semantics
+# DOM (rvest / libxml2), with the sportsdataverse-py _Node semantics
 # ---------------------------------------------------------------------------
 
-# blank text nodes are kept (no NOBLANKS): sdv-py's parser keeps them and they separate words
+# blank text nodes are kept (no NOBLANKS): sportsdataverse-py's parser keeps them and they separate words
 .pleague_dom <- function(html) {
   rvest::read_html(charToRaw(enc2utf8(html)), encoding = "UTF-8", options = c("RECOVER", "NOERROR", "NONET"))
 }
@@ -258,7 +258,7 @@
   if (is.na(cls)) character() else unique(strsplit(.pleague_strip(cls), "[\\h\\v]+", perl = TRUE)[[1]])
 }
 
-# sdv-py _Node.text(): text descendants outside <script> / <style>, <br> = " ", whitespace collapsed
+# sportsdataverse-py _Node.text(): text descendants outside <script> / <style>, <br> = " ", whitespace collapsed
 .pleague_text <- function(node) {
   if (is.null(node)) return("")
   parts <- .pleague_xfind(node, ".//text()[not(ancestor::script) and not(ancestor::style)] | .//br")
@@ -268,7 +268,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Page records (sdv-py pleague_parsers.record_for and the refs capture shapes)
+# Page records (sportsdataverse-py pleague_parsers.record_for and the refs capture shapes)
 # ---------------------------------------------------------------------------
 
 .PLEAGUE_PHASES <- c("before-today", "is-today", "is-future")
@@ -552,7 +552,7 @@
 # the blank-phrase row is keyed " " above (an R name cannot be ""): rename it
 names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
 
-# sdv-py pleague_parsers._actions(): the generated shapes, kept only where observed
+# sportsdataverse-py pleague_parsers._actions(): the generated shapes, kept only where observed
 .pleague_actions <- function() {
   code <- character()
   en <- character()
@@ -587,7 +587,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   "(inferred)"
 ))
 # code -> meaning, the LAST phrase per code winning. Only the fallback for a row without its phrase: action_en is
-# read per row from the phrase (`.pleague_action_en()`, sdv-py `_action_en`).
+# read per row from the phrase (`.pleague_action_en()`, sportsdataverse-py `_action_en`).
 .PLEAGUE_ACTION_EN <- local({
   code <- c(unname(.PLEAGUE_ACTIONS$code), .PLEAGUE_UNLABELLED[1])
   en <- c(unname(.PLEAGUE_ACTIONS$en), .PLEAGUE_UNLABELLED[2])
@@ -602,7 +602,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   if (!is.na(i)) unname(.PLEAGUE_ACTIONS$en[[i]]) else unname(.PLEAGUE_ACTION_EN[code])
 }
 
-#' The observed play-by-play phrase vocabulary (sdv-py's stray `action_table` export).
+#' The observed play-by-play phrase vocabulary (sportsdataverse-py's stray `action_table` export).
 #'
 #' @return A tibble `action_zh`, `action`, `meaning`, `events`, ordered by code; the row with an empty
 #'   `action_zh` is the unlabelled action.
@@ -670,7 +670,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
        starred = .pleague_truthy(d$starred))
 }
 
-#' The play-by-play body `{error, data: "<table ...>"}` -> its record (sdv-py `pbp_record`).
+#' The play-by-play body `{error, data: "<table ...>"}` -> its record (sportsdataverse-py `pbp_record`).
 #' @noRd
 .pleague_pbp_record <- function(body) {
   html <- if (.pleague_is_obj(body)) body$data else NULL
@@ -939,7 +939,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
        easl_season_averages = if (easl) .pleague_season_rows(sections$easl[[2]], pid) else list())
 }
 
-#' Parse one HTML page into its record and check it against the request (sdv-py `record_for`).
+#' Parse one HTML page into its record and check it against the request (sportsdataverse-py `record_for`).
 #'
 #' @param kind `"schedule"`, `"game"`, `"standings"`, `"stat_player"` or `"player"`.
 #' @param want The request's scope: `stage` + `season` (slug), `gid`, `season`, `season` + `stage_sn`, `pid`.
@@ -984,7 +984,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   if (is.character(v)) sprintf("'%s'", v) else as.character(v)
 }
 
-#' Why `body` is not the final box of the game whose page record is `game` (sdv-py `box_error`); NULL when it is.
+#' Why `body` is not the final box of the game whose page record is `game` (sportsdataverse-py `box_error`); NULL when it is.
 #' @noRd
 .pleague_box_error <- function(body, game) {
   err <- if (.pleague_is_obj(body)) body$error else body
@@ -1074,14 +1074,14 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   m <- .pleague_full("([0-9]+)-([0-9]+)", cell)
   if (is.null(m)) 0L else as.integer(m[2])
 }
-#' Made 2- and 3-pointers on a box's player rows (sdv-py's stray `box_field_goals` export).
+#' Made 2- and 3-pointers on a box's player rows (sportsdataverse-py's stray `box_field_goals` export).
 #' @noRd
 .pleague_box_field_goals <- function(box) {
   rows <- c(.pleague_objs(box$home), .pleague_objs(box$away))
   c(sum(vapply(rows, function(p) .pleague_made(p$two_m_two), 1L)),
     sum(vapply(rows, function(p) .pleague_made(p$trey_m_trey), 1L)))
 }
-#' Box player name -> seconds played (sdv-py's stray `box_seconds` export).
+#' Box player name -> seconds played (sportsdataverse-py's stray `box_seconds` export).
 #' @noRd
 .pleague_box_seconds <- function(box) {
   out <- list()
@@ -1218,7 +1218,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   })
 }
 
-#' The verified game page record of a FINISHED game, cached per gid (sdv-py `game_record`).
+#' The verified game page record of a FINISHED game, cached per gid (sportsdataverse-py `game_record`).
 #' @noRd
 .pleague_game_data <- function(gid, call) {
   key <- paste0("game:", gid)
@@ -1235,7 +1235,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   .pleague_cache[[key]]
 }
 
-#' The box body of a finished game, checked against its game page, cached per gid (sdv-py's stray `box_data`).
+#' The box body of a finished game, checked against its game page, cached per gid (sportsdataverse-py's stray `box_data`).
 #' @noRd
 .pleague_box_data <- function(gid, call) {
   key <- paste0("box:", gid)
@@ -1284,7 +1284,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   rec
 }
 
-#' Fetch one P. LEAGUE+ site route and refuse every wrong answer (sdv-py `pleague_runtime._get`).
+#' Fetch one P. LEAGUE+ site route and refuse every wrong answer (sportsdataverse-py `pleague_runtime._get`).
 #'
 #' @param short Wrapper short name.
 #' @param p Named list of the wrapper arguments.
@@ -1351,7 +1351,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
 .PLEAGUE_VENDOR_ROUTES <- c(shots = "/v1/chart-data/id/", summary = "/post/game/summary/o/plg/gameId/",
                             rotation = "/game/rotation/chart/o/plg/gameId/", injury = "/game/injury/list/o/plg/gameId/")
 
-# one checked vendor body: the one game object (sdv-py pleague_preciser_runtime._vendor)
+# one checked vendor body: the one game object (sportsdataverse-py pleague_preciser_runtime._vendor)
 .pleague_vendor <- function(kind, uuid, ctx, call) {
   url <- paste0(.PLEAGUE_VENDOR, .PLEAGUE_VENDOR_ROUTES[[kind]], uuid)
   where <- .intl_where(url)
@@ -1388,7 +1388,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   body[[1]]
 }
 
-#' Fetch one Preciser route (sdv-py `pleague_preciser_runtime._get`): `list(data = <game object>, _request)`.
+#' Fetch one Preciser route (sportsdataverse-py `pleague_preciser_runtime._get`): `list(data = <game object>, _request)`.
 #' @noRd
 .pleague_vendor_fetch <- function(kind, uuid, gid, call) {
   if (!.pleague_str1(uuid) || !grepl(.PLEAGUE_UUID, uuid, perl = TRUE)) {
@@ -1412,7 +1412,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
 }
 
 # ---------------------------------------------------------------------------
-# Frames (sdv-py parse_pleague_* / parse_pleague_preciser_*)
+# Frames (sportsdataverse-py parse_pleague_* / parse_pleague_preciser_*)
 # ---------------------------------------------------------------------------
 
 .PLEAGUE_STAT_COUNTS <- c("fg2_made", "fg2_att", "fg3_made", "fg3_att", "ft_made", "ft_att", "points", "reb_off",

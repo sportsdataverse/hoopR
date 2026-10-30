@@ -12,7 +12,7 @@ cba_team_options(season)
 }
 \value{
 A \code{hoopR_data} tibble: One row per team: id (key) and display name. An empty valid answer is a zero-row tibble
-with these columns, in this order (sdv-py \code{cba_team_options}):\tabular{lll}{
+with these columns, in this order (sportsdataverse-py \code{cba_team_options}):\tabular{lll}{
    col_name \tab type \tab description \cr
    is_default \tab integer \tab Default-selection flag: 2 = not the default on every row (the site prepends its own 'all teams' row, which this route does not send). \cr
    key \tab character \tab Team display name (Chinese) in the requested season; names change with the sponsor, the teamId does not. \cr

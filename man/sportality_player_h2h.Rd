@@ -23,7 +23,7 @@ Directory: \verb{/statistics-v2/layout-info} \verb{seasonSeriesGameTypeTeams[].s
 }
 \value{
 A \code{hoopR_data} tibble: Player head-to-head of a matchup with per-game and season lines. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sdv-py
+answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
 \code{sportality_player_h2h}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    uuid \tab character \tab Athlete uuid (platform key space). \cr

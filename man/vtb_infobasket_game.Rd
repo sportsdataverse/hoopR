@@ -12,7 +12,7 @@ across seasons.}
 }
 \value{
 A \code{hoopR_data} tibble: Header of a finished game: stage, venue, rules, the two teams and their scores. The columns
-are always these, in this order (sdv-py \code{vtb_infobasket_game}); an empty valid answer raises \code{hoopR_no_data}, a
+are always these, in this order (sportsdataverse-py \code{vtb_infobasket_game}); an empty valid answer raises \code{hoopR_no_data}, a
 valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    is_online \tab logical \tab True while the game is live; False for a completed game. \cr

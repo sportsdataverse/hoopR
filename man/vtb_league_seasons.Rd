@@ -12,7 +12,7 @@ wbc (WINLINE Basket Cup).}
 }
 \value{
 A \code{hoopR_data} tibble: The seasons the API serves for one league (new seasons only, from 2024-25). The columns are
-always these, in this order (sdv-py \code{vtb_league_seasons}); an empty valid answer raises \code{hoopR_no_data}, a valid
+always these, in this order (sportsdataverse-py \code{vtb_league_seasons}); an empty valid answer raises \code{hoopR_no_data}, a valid
 body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26); the sdv season key and the \code{{season}} path param. \cr

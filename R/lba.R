@@ -1,6 +1,6 @@
 # lba.R -- Lega Basket Serie A (Italy) wrappers over the site's own JSON API (www.legabasket.it/api), at parity
-# with sdv-py sportsdataverse/basketball/lba (origin/main e3d232ebc9). Transport, season mapping and refusals:
-# R/lba_runtime.R; frames: R/lba_parsers.R; columns: R/lba_schema.R. Generated from sdv-py
+# with sportsdataverse-py sportsdataverse/basketball/lba (origin/main e3d232ebc9). Transport, season mapping and refusals:
+# R/lba_runtime.R; frames: R/lba_parsers.R; columns: R/lba_schema.R. Generated from sportsdataverse-py
 # tools/codegen/endpoints/legabasket.yaml and manual_column_descriptions.yaml.
 # The @details of every lba topic that shares the lba_championships() notes (roxygen @eval .intl_details()).
 .lba_championships_details <- c(
@@ -34,7 +34,7 @@
 #' @param season Season END year (2027 = 2026-27). Omitted = every season (310 championships).
 #' @return
 #' A `hoopR_data` tibble: Championships of a season, one per phase (Regular Season, Play Off); every season when
-#'   none is given. The columns are always these, in this order (sdv-py `lba_championships`); a column the site adds
+#'   none is given. The columns are always these, in this order (sportsdataverse-py `lba_championships`); a column the site adds
 #'   later is appended after them:
 #'
 #' | col_name | type | description |
@@ -77,7 +77,7 @@ lba_championships <- function(season = NULL) {
 #'   championship).
 #' @return
 #' A `hoopR_data` tibble: Games of one round of a championship: teams, score, venue, referees and broadcasters. The
-#'   columns are always these, in this order (sdv-py `lba_calendar`); a column the site adds later is appended after
+#'   columns are always these, in this order (sportsdataverse-py `lba_calendar`); a column the site adds later is appended after
 #'   them:
 #'
 #' | col_name | type | description |
@@ -141,7 +141,7 @@ lba_calendar <- function(championship_id, round = NULL) {
 #' @param game_id (required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Game header: teams, venue, quarter scores, coaches, referees and broadcasters. The columns
-#'   are always these, in this order (sdv-py `lba_game`); a column the site adds later is appended after them:
+#'   are always these, in this order (sportsdataverse-py `lba_game`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -228,7 +228,7 @@ lba_game <- function(game_id) {
 #' @param game_id (required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Box score of a final game: one row per player of both teams (Italian-named stat columns).
-#'   The columns are always these, in this order (sdv-py `lba_box_score`); a column the site adds later is appended
+#'   The columns are always these, in this order (sportsdataverse-py `lba_box_score`); a column the site adds later is appended
 #'   after them:
 #'
 #' | col_name | type | description |
@@ -293,7 +293,7 @@ lba_box_score <- function(game_id) {
 #' @param game_id (required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Team lines of a final game's box score: the team-booked stats and the totals of each side.
-#'   The columns are always these, in this order (sdv-py `lba_team_box_score`); a column the site adds later is
+#'   The columns are always these, in this order (sportsdataverse-py `lba_team_box_score`); a column the site adds later is
 #'   appended after them:
 #'
 #' | col_name | type | description |
@@ -351,7 +351,7 @@ lba_team_box_score <- function(game_id) {
 #' @param game_id (required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play of a final game (2017-18 on), one row per action with x/y; coordinate frame
-#'   by era. The columns are always these, in this order (sdv-py `lba_pbp`); a column the site adds later is
+#'   by era. The columns are always these, in this order (sportsdataverse-py `lba_pbp`); a column the site adds later is
 #'   appended after them:
 #'
 #' | col_name | type | description |
@@ -413,7 +413,7 @@ lba_pbp <- function(game_id) {
 #' @param game_id (required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: The play-by-play qualifier code table (59 codes) with its Italian labels. The columns are
-#'   always these, in this order (sdv-py `lba_pbp_legend`); a column the site adds later is appended after them:
+#'   always these, in this order (sportsdataverse-py `lba_pbp_legend`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -436,7 +436,7 @@ lba_pbp_legend <- function(game_id) {
 #' @param game_id (required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Shooting by court zone per team for a final game (made / attempted aggregates; zone 7
-#'   includes free throws). The columns are always these, in this order (sdv-py `lba_shots`); a column the site adds
+#'   includes free throws). The columns are always these, in this order (sportsdataverse-py `lba_shots`); a column the site adds
 #'   later is appended after them:
 #'
 #' | col_name | type | description |
@@ -476,7 +476,7 @@ lba_shots <- function(game_id) {
 #'   sends none (NoDataError).
 #' @return
 #' A `hoopR_data` tibble: Standings of a championship after a round, one row per team. The columns are always these,
-#'   in this order (sdv-py `lba_standings`); a column the site adds later is appended after them:
+#'   in this order (sportsdataverse-py `lba_standings`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -558,7 +558,7 @@ lba_standings <- function(championship_id, round = NULL) {
 #' @param season Season END year (2027 = 2026-27). Omitted = the site's default season (unverified).
 #' @return
 #' A `hoopR_data` tibble: Teams of a season, one row per team-season with the stable club id. The columns are always
-#'   these, in this order (sdv-py `lba_teams`); a column the site adds later is appended after them:
+#'   these, in this order (sportsdataverse-py `lba_teams`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -592,7 +592,7 @@ lba_teams <- function(season = NULL) {
 #'   season.
 #' @return
 #' A `hoopR_data` tibble: Players of one team-season with bio, number and role. The columns are always these, in
-#'   this order (sdv-py `lba_roster`); a column the site adds later is appended after them:
+#'   this order (sportsdataverse-py `lba_roster`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -636,7 +636,7 @@ lba_roster <- function(team_id) {
 #' @param team_id (required) Team id (team_id in lba_teams), e.g. 1764. One team-season: ids are re-issued every
 #'   season.
 #' @return
-#' A `hoopR_data` tibble: Head coach of one team-season. The columns are always these, in this order (sdv-py
+#' A `hoopR_data` tibble: Head coach of one team-season. The columns are always these, in this order (sportsdataverse-py
 #'   `lba_roster_coach`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
@@ -675,7 +675,7 @@ lba_roster_coach <- function(team_id) {
 #' @param season Season END year (2027 = 2026-27) of the team id. Omitted = the site's default (unverified).
 #' @return
 #' A `hoopR_data` tibble: Season totals of each player of a team-season. The columns are always these, in this order
-#'   (sdv-py `lba_team_players_stats`); a column the site adds later is appended after them:
+#'   (sportsdataverse-py `lba_team_players_stats`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -735,7 +735,7 @@ lba_team_players_stats <- function(team_id, season = NULL) {
 #' @param page Page number, 1-based. Omitted = the first page.
 #' @return
 #' A `hoopR_data` tibble: Players of a season, 50 per page (walk the pages with page). The columns are always these,
-#'   in this order (sdv-py `lba_players`); a column the site adds later is appended after them:
+#'   in this order (sportsdataverse-py `lba_players`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -769,7 +769,7 @@ lba_players <- function(season = NULL, page = NULL) {
 #'   whole career.
 #' @return
 #' A `hoopR_data` tibble: Player bio with current-season totals, highs and averages (one row). The columns are
-#'   always these, in this order (sdv-py `lba_player`); a column the site adds later is appended after them:
+#'   always these, in this order (sportsdataverse-py `lba_player`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -900,7 +900,7 @@ lba_player <- function(player_id) {
 #'   whole career.
 #' @return
 #' A `hoopR_data` tibble: A player's career by championship: per-game averages, single-game highs and totals. The
-#'   columns are always these, in this order (sdv-py `lba_player_stats`); a column the site adds later is appended
+#'   columns are always these, in this order (sportsdataverse-py `lba_player_stats`); a column the site adds later is appended
 #'   after them:
 #'
 #' | col_name | type | description |
@@ -957,7 +957,7 @@ lba_player_stats <- function(player_id) {
 #' @param season Season END year (2027 = 2026-27). Omitted = the site's default season (unverified).
 #' @return
 #' A `hoopR_data` tibble: A player's game log for one season, one row per game. The columns are always these, in
-#'   this order (sdv-py `lba_game_log`); a column the site adds later is appended after them:
+#'   this order (sportsdataverse-py `lba_game_log`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1049,7 +1049,7 @@ lba_game_log <- function(player_id, season = NULL) {
 #'   filters.categories).
 #' @return
 #' A `hoopR_data` tibble: Season player leaderboard for one category (per-game average). The columns are always
-#'   these, in this order (sdv-py `lba_players_leaderboard`); a column the site adds later is appended after them:
+#'   these, in this order (sportsdataverse-py `lba_players_leaderboard`); a column the site adds later is appended after them:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1088,7 +1088,7 @@ lba_players_leaderboard <- function(season = NULL, category = "points") {
 #' @param season Season END year (2027 = 2026-27). Omitted = the site's default season (unverified).
 #' @return
 #' A `hoopR_data` tibble: Season team leaderboards, offensive or defensive, one row per team and category. The
-#'   columns are always these, in this order (sdv-py `lba_teams_leaderboard`); a column the site adds later is
+#'   columns are always these, in this order (sportsdataverse-py `lba_teams_leaderboard`); a column the site adds later is
 #'   appended after them:
 #'
 #' | col_name | type | description |

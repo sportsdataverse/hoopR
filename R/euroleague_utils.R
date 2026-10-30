@@ -2,8 +2,8 @@
 # Internal: shared HTTP + parsing layer for the EuroLeague `euroleague_*()` family
 # ---------------------------------------------------------------------------
 #
-# R mirror of sdv-py's `sportsdataverse/basketball/euroleague/` (same function names,
-# arguments, defaults and snake_case columns, one row per sdv-py row). Three
+# R mirror of sportsdataverse-py's `sportsdataverse/basketball/euroleague/` (same function names,
+# arguments, defaults and snake_case columns, one row per sportsdataverse-py row). Three
 # keyless, unofficial hosts behind euroleaguebasketball.net:
 #   v2   https://api-live.euroleague.net/v2  -- Competition Engine lists + game box score
 #   v3   https://api-live.euroleague.net/v3  -- standings (under a round), season stats, game report
@@ -17,7 +17,7 @@
   live = "https://live.euroleague.net/api"
 )
 
-# Raise one of the family's classed conditions (mirrors sdv-py's error
+# Raise one of the family's classed conditions (mirrors sportsdataverse-py's error
 # vocabulary: 404 -> NoDataError, 400/422 -> ValueError, else AssetFetchError).
 .euroleague_abort <- function(kind, msg, call, parent = NULL, env = parent.frame()) {
   cli::cli_abort(msg, class = c(paste0("hoopR_", kind), "hoopR_error"), call = call, parent = parent, .envir = env)
@@ -80,10 +80,10 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
   )
 }
 
-# --- flattening (mirror of sdv-py's rows_to_frame: pandas.json_normalize(sep="_")
+# --- flattening (mirror of sportsdataverse-py's rows_to_frame: pandas.json_normalize(sep="_")
 #     + dl_utils.underscore + JSON-encoded list cells + Utf8 id columns) -------
 
-# sdv-py `dl_utils.underscore()`: CamelCase / UPPER_CASE / kebab -> snake_case.
+# sportsdataverse-py `dl_utils.underscore()`: CamelCase / UPPER_CASE / kebab -> snake_case.
 .euroleague_underscore <- function(x) {
   x <- gsub("([A-Z]+)([A-Z][a-z])", "\\1_\\2", x, perl = TRUE)
   x <- gsub("([a-z0-9])([A-Z])", "\\1_\\2", x, perl = TRUE)
@@ -119,7 +119,7 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
   c(out, nested)
 }
 
-# sdv-py `rows_to_frame` name rule: a repeated snake_case name gets `_2`, `_3`, ...
+# sportsdataverse-py `rows_to_frame` name rule: a repeated snake_case name gets `_2`, `_3`, ...
 .euroleague_dedupe <- function(nm) {
   seen <- list()
   for (i in seq_along(nm)) {
@@ -164,7 +164,7 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
   df
 }
 
-# sdv-py `_as_rows`: a list is the rows; an object with exactly one list-valued
+# sportsdataverse-py `_as_rows`: a list is the rows; an object with exactly one list-valued
 # key is that list; any other non-empty object is a single row; else nothing.
 .euroleague_as_rows <- function(raw) {
   if (is.list(raw) && is.null(names(raw))) return(raw)
@@ -176,7 +176,7 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
   list()
 }
 
-# The frame every api-live (v2 / v3) route returns: sdv-py `parse_euroleague`.
+# The frame every api-live (v2 / v3) route returns: sportsdataverse-py `parse_euroleague`.
 .euroleague_frame <- function(raw) {
   df <- .euroleague_rows(.euroleague_as_rows(raw))
   # an all-null column (a season without a winner, a referee4 never set) is an
@@ -301,7 +301,7 @@ euroleague_api <- function(path, params = list(), host = c("v2", "v3", "live")) 
   make_hoopR_data(dplyr::as_tibble(df), paste0("EuroLeague ", what, " from ", host), Sys.time())
 }
 
-# Documented columns per live-API route (sdv-py `_euroleague_schemas.SCHEMAS`, built
+# Documented columns per live-API route (sportsdataverse-py `_euroleague_schemas.SCHEMAS`, built
 # from the committed captures), so the empty-body "no such game" answer still
 # parses to a zero-row frame carrying the returns table.
 .euroleague_live_schemas <- list(

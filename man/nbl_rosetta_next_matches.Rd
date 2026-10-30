@@ -33,7 +33,7 @@ A \code{hoopR_data} tibble (one row per team and upcoming match):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Each team's next matches: opponent, venue and start time.

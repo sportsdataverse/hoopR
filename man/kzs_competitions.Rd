@@ -12,7 +12,7 @@ season (627 competitions).}
 }
 \value{
 A \code{hoopR_data} tibble: Competitions of a season (leagues, cups, youth, 3x3, national teams), or of every season. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{kzs_competitions}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to \verb{/competitions/\{competitionId\}} and the \code{competitionId} query params. \cr

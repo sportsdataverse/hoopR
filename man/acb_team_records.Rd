@@ -13,7 +13,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_team_records}):\tabular{lll}{
+(sportsdataverse-py \code{acb_team_records}):\tabular{lll}{
    col_name \tab type \tab description \cr
    club_id \tab integer \tab Stable club id asked for. \cr
    stat \tab character \tab Record category in snake_case (rating, points, rebounds, assists, steals, ...). \cr

@@ -1,4 +1,4 @@
-# cba_runtime.R -- transport for the CBA wrappers (data-server.cbaleague.com), the R mirror of sdv-py
+# cba_runtime.R -- transport for the CBA wrappers (data-server.cbaleague.com), the R mirror of sportsdataverse-py
 # sportsdataverse/basketball/cba/cba_runtime.py + cba_aes.py (origin/main e3d232e).
 #
 # * Every body is AES-128-ECB / PKCS#7 encrypted (a JSON string literal holding base64 of the
@@ -88,7 +88,7 @@
 #' @noRd
 .cba_num_text <- function(x) format(x, scientific = FALSE, trim = TRUE)
 
-#' sdv-py `_int_arg`: an integer, or a string of digits; anything else is `hoopR_bad_request`.
+#' sportsdataverse-py `_int_arg`: an integer, or a string of digits; anything else is `hoopR_bad_request`.
 #' @noRd
 .cba_int_arg <- function(value, what, call = rlang::caller_env()) {
   ok <- length(value) == 1L && !is.logical(value) && !is.na(value) &&
@@ -113,7 +113,7 @@
   paste0("n:", .cba_num_text(v))
 }
 
-#' sdv-py `_ids`: the keys of the non-null `key` values of the object rows.
+#' sportsdataverse-py `_ids`: the keys of the non-null `key` values of the object rows.
 #' @noRd
 .cba_ids <- function(rows, key) {
   vals <- lapply(Filter(.cba_is_obj, if (is.list(rows)) rows else list()), function(r) r[[key]])
@@ -527,7 +527,7 @@
 }
 
 #' GET or POST a CBA route, decrypt it, refuse every wrong answer, return the JSON with the request
-#' stamped (sdv-py `cba_runtime._get`).
+#' stamped (sportsdataverse-py `cba_runtime._get`).
 #'
 #' @param route Path under `/api/` without the game id.
 #' @param params Wire keys for the query string (`pageNumber` / `pageSize` / `startNum` on a POST

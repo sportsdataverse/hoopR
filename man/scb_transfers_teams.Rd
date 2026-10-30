@@ -8,7 +8,7 @@ scb_transfers_teams()
 }
 \value{
 A \code{hoopR_data} tibble: Per club, the players joining and leaving, one row per move with its direction (BBL
-only). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+only). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{scb_transfers_teams}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab character \tab Club id, a string; equal to \code{season_team_id} in every sample. Joins to \code{scb_team} and \code{scb_season_teams}. \cr

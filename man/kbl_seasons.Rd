@@ -8,7 +8,7 @@ kbl_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: Every KBL regular season (1997 to the next one) with its competition key and date range,
-newest first. The columns are always these, in this order (sdv-py \code{kbl_seasons}); an empty valid answer raises
+newest first. The columns are always these, in this order (sportsdataverse-py \code{kbl_seasons}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr

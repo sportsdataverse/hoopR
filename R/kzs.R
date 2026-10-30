@@ -1,5 +1,5 @@
 # kzs.R -- KZS (Basketball Federation of Slovenia) wrappers over api.kzs.si/api/v1/public, the read API the
-# kzs.si site calls, at parity with sdv-py sportsdataverse/basketball/kzs (origin/main e3d232ebc9).
+# kzs.si site calls, at parity with sportsdataverse-py sportsdataverse/basketball/kzs (origin/main e3d232ebc9).
 # Transport, season mapping and refusals: R/kzs_runtime.R; frames: R/kzs_parsers.R; columns: R/kzs_schema.R.
 
 # The @details of every kzs topic that shares the kzs_seasons() notes (roxygen @eval .intl_details()).
@@ -40,7 +40,7 @@
 #' Endpoint: `GET https://api.kzs.si/api/v1/public/seasons/`
 #' @return
 #' A `hoopR_data` tibble: Every season (39: 1991/1992 to 2029/2030) with its opaque id and the sdv END year. An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_seasons`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -73,7 +73,7 @@ kzs_seasons <- function() {
 #'   season (627 competitions).
 #' @return
 #' A `hoopR_data` tibble: Competitions of a season (leagues, cups, youth, 3x3, national teams), or of every season. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `kzs_competitions`):
 #'
 #' | col_name | type | description |
@@ -113,7 +113,7 @@ kzs_competitions <- function(season = NULL) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: One competition: season, gender, category, rank and type (its phases are kzs_phases). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `kzs_competition`):
 #'
 #' | col_name | type | description |
@@ -156,7 +156,7 @@ kzs_competition <- function(competition_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: The phases of a competition (regular season, play-offs, finals) with dates and type. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_phases`):
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_phases`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -191,7 +191,7 @@ kzs_phases <- function(competition_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: Number of rounds of each phase of a competition. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_rounds`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_rounds`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -232,7 +232,7 @@ kzs_rounds <- function(competition_id) {
 #' @return
 #' A `hoopR_data` tibble: Player leaderboard of a competition for one stat category (total, per-game average and
 #'   single-game best). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order
-#'   (sdv-py `kzs_player_leaderboard`):
+#'   (sportsdataverse-py `kzs_player_leaderboard`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -292,7 +292,7 @@ kzs_player_leaderboard <- function(competition_id, stats_category = "PTS", order
 #' @return
 #' A `hoopR_data` tibble: Team leaderboard of a competition for one stat category (total, per-game average and
 #'   single-game best). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order
-#'   (sdv-py `kzs_team_leaderboard`):
+#'   (sportsdataverse-py `kzs_team_leaderboard`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -339,7 +339,7 @@ kzs_team_leaderboard <- function(competition_id, stats_category = "PTS", order_t
 #' @param date_to Latest tip-off, an ISO instant such as 2025-10-31T23:59:59.000Z. Omitted = the whole competition.
 #' @return
 #' A `hoopR_data` tibble: Matches of a competition (optionally inside a from/to window) with the Genius LiveStats id.
-#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_matches`):
+#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_matches`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -442,7 +442,7 @@ kzs_matches <- function(competition_id, date_from = NULL, date_to = NULL) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Match header: teams, scores, venue, officials' names, best performers and status. An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_match`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_match`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -568,7 +568,7 @@ kzs_match <- function(match_id) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Points by match part (quarters and overtimes) from the match header. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_period_scores`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_period_scores`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -601,7 +601,7 @@ kzs_period_scores <- function(match_id) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play of a final game (2015/16 on, with gaps), one row per action with shot x/y. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_pbp`):
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_pbp`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -656,7 +656,7 @@ kzs_pbp <- function(match_id) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: The players the play-by-play feed lists for each side of a final game. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_pbp_players`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_pbp_players`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -685,7 +685,7 @@ kzs_pbp_players <- function(match_id) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Box score of a final game (2015/16 on): one row per player of both teams. An empty valid
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_box_score`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_box_score`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -774,7 +774,7 @@ kzs_box_score <- function(match_id) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: Team totals of a final game's box score, one row per side. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_team_box_score`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_team_box_score`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -879,7 +879,7 @@ kzs_team_box_score <- function(match_id) {
 #' @param match_id (required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.
 #' @return
 #' A `hoopR_data` tibble: The score at the end of each minute of a final game. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_score_changes`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_score_changes`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -909,7 +909,7 @@ kzs_score_changes <- function(match_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: Standings of a competition, one row per team in each phase (and group). An empty valid
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_standings`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_standings`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -963,7 +963,7 @@ kzs_standings <- function(competition_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: Match days of a competition and the number of games on each. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_playing_days`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_playing_days`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -992,7 +992,7 @@ kzs_playing_days <- function(competition_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: Teams entered in a competition. An empty valid answer raises `hoopR_no_data`; the columns
-#'   are always these, in this order (sdv-py `kzs_teams`):
+#'   are always these, in this order (sportsdataverse-py `kzs_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1040,7 +1040,7 @@ kzs_teams <- function(competition_id) {
 #'   match-team id nor the club id.
 #' @return
 #' A `hoopR_data` tibble: Team profile: club, home hall, colours and the competitions the team entered. An empty valid
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_team`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_team`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1096,7 +1096,7 @@ kzs_team <- function(team_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: A team's record, form and best players in one competition (the body echoes neither id). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `kzs_team_general`):
 #'
 #' | col_name | type | description |
@@ -1176,7 +1176,7 @@ kzs_team_general <- function(team_id, competition_id) {
 #'   season, e.g. 579 (men's first league 2025/26).
 #' @return
 #' A `hoopR_data` tibble: A team's roster in one competition (the rows carry no team or competition id). An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_roster`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_roster`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1221,7 +1221,7 @@ kzs_roster <- function(team_id, competition_id) {
 #'   id.
 #' @return
 #' A `hoopR_data` tibble: Player profile: names, year of birth, nationality and positions. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_player`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_player`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1261,7 +1261,7 @@ kzs_player <- function(player_id) {
 #' @param season (required) Season END year (2027 = 2026/2027); the wrapper maps it to KZS' opaque season id.
 #' @return
 #' A `hoopR_data` tibble: A player's totals and per-game averages in each competition of one season. An empty valid
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `kzs_player_stats`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `kzs_player_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

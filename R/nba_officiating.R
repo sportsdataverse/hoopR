@@ -104,7 +104,7 @@ NULL
     httr2::req_timeout(60) |>
     httr2::req_retry(
       max_tries = 3,
-      # A dropped connection gets the same retry budget as a 5xx, as sdv-py's
+      # A dropped connection gets the same retry budget as a 5xx, as sportsdataverse-py's
       # download() does (httr2 >= 1.0.4 no longer retries failures by default).
       retry_on_failure = TRUE,
       is_transient = function(resp) httr2::resp_status(resp) %in% c(408L, 429L, 500L, 502L, 503L, 504L)
@@ -187,7 +187,7 @@ NULL
 
 # A field absent from EVERY row of a parsed JSON table comes back NULL, and a
 # length-0 column breaks tibble() recycling; it becomes an all-NA column
-# instead, as sdv-py's parser does.
+# instead, as sportsdataverse-py's parser does.
 .chr_col <- function(df, name) {
   v <- df[[name]]
   if (is.null(v)) rep(NA_character_, nrow(df)) else as.character(v)
@@ -456,7 +456,7 @@ NULL
 #' }
 nba_l2m <- function(game_id, proxy = NULL) {
   call <- sys.call()
-  # Strict, like sdv-py's _gid(): the caller's id builds the request URL, so
+  # Strict, like sportsdataverse-py's _gid(): the caller's id builds the request URL, so
   # anything but one all-digit id of at most 10 digits stops here (a longer one
   # is not padded, it is a wrong id). The lenient .gid10() alone is for ids
   # read back out of a payload.
@@ -524,7 +524,7 @@ nba_l2m <- function(game_id, proxy = NULL) {
 #' @return A `hoopR_data`-ready tibble: `game_id`, `season`, `season_type`, `label`.
 #' @keywords internal
 .parse_nba_l2m_games <- function(html, season) {
-  # Read the regex's own capture groups (as sdv-py's findall() does); the
+  # Read the regex's own capture groups (as sportsdataverse-py's findall() does); the
   # label group `[^<]*` stops at `</a>`, so a ">" inside a label is kept.
   m <- stringr::str_match_all(html, .LISTING_RE)[[1]]
   if (nrow(m) == 0) {
@@ -631,7 +631,7 @@ nba_l2m_games <- function(season, proxy = NULL) {
 .scalar <- function(x) if (length(x) == 1L && !is.list(x)) x else NA
 
 # Exactly five digits, <type digit><START year>: "2 025" or "21e03" is a
-# malformed code, not a year (as in sdv-py).
+# malformed code, not a year (as in sportsdataverse-py).
 .official_season_end_year <- function(s, league) {
   if (!grepl("^[0-9]{5}$", s)) return(NA_integer_)
   start_year <- as.integer(substr(s, 2, 5))

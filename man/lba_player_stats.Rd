@@ -12,7 +12,7 @@ whole career.}
 }
 \value{
 A \code{hoopR_data} tibble: A player's career by championship: per-game averages, single-game highs and totals. The
-columns are always these, in this order (sdv-py \code{lba_player_stats}); a column the site adds later is appended
+columns are always these, in this order (sportsdataverse-py \code{lba_player_stats}); a column the site adds later is appended
 after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab Player id (global: one id for a whole career); the request's player. \cr

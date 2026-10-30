@@ -29,7 +29,7 @@ The season table is read for this tag.}
 }
 \value{
 A \code{hoopR_data} tibble: A player's game log for one season and one team, one row per game. The columns are always
-these, in this order (sdv-py \code{vtb_infobasket_player_game_log}); an empty valid answer raises \code{hoopR_no_data}, a
+these, in this order (sportsdataverse-py \code{vtb_infobasket_player_game_log}); an empty valid answer raises \code{hoopR_no_data}, a
 valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    person_id \tab integer \tab 0 on every game row (the player is the body's PersonID). \cr

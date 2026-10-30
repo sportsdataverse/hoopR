@@ -16,7 +16,7 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
 }
 \value{
 A \code{hoopR_data} tibble: Every team of a season: club id, season-team id, name and three-letter code. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{scb_season_teams}):\tabular{lll}{
    col_name \tab type \tab description \cr
    league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr

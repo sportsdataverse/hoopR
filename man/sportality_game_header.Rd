@@ -12,7 +12,7 @@ platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} i
 }
 \value{
 A \code{hoopR_data} tibble: Game header: Genius match id (extId), arena, state, teams, scores. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sdv-py
+answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
 \code{sportality_game_header}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    instance_context_site_team_is_in_game \tab logical \tab Whether the requesting site's own team plays in the game. \cr

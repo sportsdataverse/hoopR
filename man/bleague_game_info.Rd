@@ -140,8 +140,8 @@ type is an assumption.
 }
 \details{
 The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror
-sdv-py's \code{sportsdataverse.basketball.bleague} wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py row.
+sportsdataverse-py's \code{sportsdataverse.basketball.bleague} wrappers of the same names: same
+arguments, the same snake_case columns and types, one row per sportsdataverse-py row.
 
 \strong{Unofficial and unsupported.} The game contexts are JSON objects in
 B.LEAGUE's own public S3 bucket (\code{b-league.s3.amazonaws.com}, the store its game

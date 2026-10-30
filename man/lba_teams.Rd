@@ -11,7 +11,7 @@ lba_teams(season = NULL)
 }
 \value{
 A \code{hoopR_data} tibble: Teams of a season, one row per team-season with the stable club id. The columns are always
-these, in this order (sdv-py \code{lba_teams}); a column the site adds later is appended after them:\tabular{lll}{
+these, in this order (sportsdataverse-py \code{lba_teams}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
    team_id \tab integer \tab Team id (one team-season). \cr

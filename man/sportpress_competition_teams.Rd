@@ -12,7 +12,7 @@ sportpress_competition_teams(competition_id)
 }
 \value{
 A \code{hoopR_data} tibble: Every competition team of one competition: ids, names and country. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_competition_teams}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_competition_teams}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id the team plays in (key space: sportpress competitions); the competition_id the route was asked for. \cr
    season \tab integer \tab Season END year of the team's competition. \cr

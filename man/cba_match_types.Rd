@@ -8,7 +8,7 @@ cba_match_types()
 }
 \value{
 A \code{hoopR_data} tibble: One row per match type (regular season, playoffs, preseason, all-star, relegation). An
-empty valid answer is a zero-row tibble with these columns, in this order (sdv-py \code{cba_match_types}):\tabular{lll}{
+empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_match_types}):\tabular{lll}{
    col_name \tab type \tab description \cr
    is_default \tab integer \tab Default-selection flag: 1 = the site's default (the preseason, '3', at capture time: it follows the calendar), 2 = not the default. \cr
    key \tab character \tab Match type name (Chinese): regular season, (Chinese text) playoffs, (Chinese text) preseason, (Chinese text) all-star, (Chinese text) relegation play-off. \cr

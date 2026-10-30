@@ -8,7 +8,7 @@ kbl_season_leaders()
 }
 \value{
 A \code{hoopR_data} tibble: Current season leaders per category (no parameter): points, rebounds, assists, steals,
-blocks, shooting. The columns are always these, in this order (sdv-py \code{kbl_season_leaders}); an empty valid
+blocks, shooting. The columns are always these, in this order (sportsdataverse-py \code{kbl_season_leaders}); an empty valid
 answer raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    part \tab character \tab Leader category code: score, rb, ast, bs, stl, fgt, threep, ftR, fgtR, threepR or dk. \cr

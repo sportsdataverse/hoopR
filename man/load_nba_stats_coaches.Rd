@@ -141,7 +141,7 @@ load_nba_stats_team_season_stats(
 }
 \arguments{
 \item{seasons}{A vector of 4-digit years -- the season's \strong{START} year
-(e.g. \code{2024} for the 2024-25 season), matching sdv-py's \verb{load_nba_stats_*}
+(e.g. \code{2024} for the 2024-25 season), matching sportsdataverse-py's \verb{load_nba_stats_*}
 convention (see the file-level note in \code{R/load_nba_stats.R}). Published
 coverage floors vary by loader (1996 for most; 2007 for
 \code{\link[=load_nba_stats_lineups]{load_nba_stats_lineups()}} -- see that function's own Description) and

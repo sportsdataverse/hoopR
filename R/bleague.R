@@ -1,14 +1,14 @@
 # bleague.R -- the exported B.LEAGUE (Japan) `bleague_*()` wrappers.
 #
-# Column types and descriptions follow sdv-py's bleague_parsers.SPECS and
-# manual_column_descriptions.yaml (sdv-py e3d232ebc9); the runtime and parsers live in
+# Column types and descriptions follow sportsdataverse-py's bleague_parsers.SPECS and
+# manual_column_descriptions.yaml (sportsdataverse-py e3d232ebc9); the runtime and parsers live in
 # bleague_utils.R.
 
 # The @details of every bleague topic that shares the bleague_game_info() notes (roxygen @eval .intl_details()).
 .bleague_game_info_details <- c(
   "The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror",
-  "sdv-py's `sportsdataverse.basketball.bleague` wrappers of the same names: same",
-  "arguments, the same snake_case columns and types, one row per sdv-py row.",
+  "sportsdataverse-py's `sportsdataverse.basketball.bleague` wrappers of the same names: same",
+  "arguments, the same snake_case columns and types, one row per sportsdataverse-py row.",
   "",
   "**Unofficial and unsupported.** The game contexts are JSON objects in",
   "B.LEAGUE's own public S3 bucket (`b-league.s3.amazonaws.com`, the store its game",

@@ -9,7 +9,7 @@ tbf_seasons()
 \value{
 A \code{hoopR_data} tibble. One row per season, newest first. \code{season} is the END year of the label (2026-2027 -> 2027); \code{international} marks the odd \verb{UA-} seasons.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
    season_label \tab character \tab Season label as TBF writes it, 'YYYY-YYYY' (start and end year). \cr

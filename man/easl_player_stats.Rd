@@ -12,7 +12,7 @@ easl_players, the box scores, leaders and play-by-play. A malformed id is \code{
 }
 \value{
 A \code{hoopR_data} tibble: A player's cumulative statistics over ALL seasons (the server ignores a season filter). An
-empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{easl_player_stats}):\tabular{lll}{
+empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{easl_player_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab character \tab DataCore person UUID v1, from the request (the body carries none). \cr
    assists \tab integer \tab Assists: passes that directly lead to a made field goal. Total over the player's games. \cr

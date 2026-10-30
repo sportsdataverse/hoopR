@@ -14,7 +14,7 @@ cebl_news(language, team_source_id = NULL)
 \value{
 A \code{hoopR_data} tibble: News articles in one language. The API answered an empty list on every probe, so this
 raises \code{hoopR_no_data}. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this
-order (sdv-py \code{cebl_news}):\tabular{lll}{
+order (sportsdataverse-py \code{cebl_news}):\tabular{lll}{
    col_name \tab type \tab description \cr
    news_id \tab integer \tab CEBL news article id; null when the API gives none. Unobserved: the route answered an empty list on every probe. \cr
    language \tab character \tab Language code of the request ('en'); the body does not echo it. \cr

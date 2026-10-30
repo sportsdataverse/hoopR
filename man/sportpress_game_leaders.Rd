@@ -11,7 +11,7 @@ sportpress_game_leaders(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: The game leader of each side in every statistic (one row per side and statistic). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{sportpress_game_leaders}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id the overview was asked for (the body does not echo it). \cr

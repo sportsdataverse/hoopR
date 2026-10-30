@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble (one row: the season in progress):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 The season in progress (empty between seasons: \code{hoopR_no_data}).

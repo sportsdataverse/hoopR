@@ -1,7 +1,7 @@
-# acb_parsers.R -- the ACB (Liga Endesa) frames, at parity with sdv-py
+# acb_parsers.R -- the ACB (Liga Endesa) frames, at parity with sportsdataverse-py
 # sportsdataverse/basketball/acb/acb_parsers.py (origin/main e3d232ebc9).
 #
-# Table-driven like sdv-py: each frame's columns, types and source paths are `.acb_fields` (R/acb_schema.R);
+# Table-driven like sportsdataverse-py: each frame's columns, types and source paths are `.acb_fields` (R/acb_schema.R);
 # an extractor yields (record, derived columns) pairs; `.acb_emit()` reads the source paths from the
 # record, casts them by type letter, overlays the derived columns and builds the frame with exactly the
 # documented columns and types. Dtypes are pinned by column name, never sampled: ids and counts integer,
@@ -18,7 +18,7 @@
 #' @noRd
 .acb_atom <- function(v) !is.null(v) && !is.list(v) && length(v) == 1L && !is.na(v)
 
-#' An id / count from an integer, a whole double or a digit string (sdv-py `_i`); never a float string.
+#' An id / count from an integer, a whole double or a digit string (sportsdataverse-py `_i`); never a float string.
 #' @noRd
 .acb_i <- function(v) {
   if (!.acb_atom(v) || is.logical(v)) return(NA_integer_)
@@ -32,7 +32,7 @@
   NA_integer_
 }
 
-#' A number from a number or a numeric string, decimal comma accepted (sdv-py `_f`).
+#' A number from a number or a numeric string, decimal comma accepted (sportsdataverse-py `_f`).
 #' @noRd
 .acb_f <- function(v) {
   if (!.acb_atom(v) || is.logical(v)) return(NA_real_)
@@ -54,7 +54,7 @@
   s
 }
 
-#' A stripped non-empty string (numbers stringified, never "123.0"; containers are not) (sdv-py `_s`).
+#' A stripped non-empty string (numbers stringified, never "123.0"; containers are not) (sportsdataverse-py `_s`).
 #' @noRd
 .acb_s <- function(v) {
   if (!.acb_atom(v)) return(NA_character_)
@@ -74,7 +74,7 @@
 .acb_b <- function(v) if (.acb_atom(v) && is.logical(v)) v else NA
 
 #' An ISO 8601 instant ('2026-10-11T17:00:00Z', or a bare date) -> seconds since the epoch, UTC wall time
-#' (sdv-py `_utc`: the `Z` is dropped and an offset is ignored, never applied).
+#' (sportsdataverse-py `_utc`: the `Z` is dropped and an offset is ignored, never applied).
 #' @noRd
 .acb_utc <- function(v) {
   if (!(.acb_atom(v) && is.character(v))) return(NA_real_)
@@ -94,7 +94,7 @@
   as.double(day) * 86400 + hh * 3600 + mi * 60 + ss + frac
 }
 
-#' 'DD-MM-YYYY' -> days since the epoch (sdv-py `_dmy`).
+#' 'DD-MM-YYYY' -> days since the epoch (sportsdataverse-py `_dmy`).
 #' @noRd
 .acb_dmy <- function(v) {
   if (!(.acb_atom(v) && is.character(v))) return(NA_real_)
@@ -103,7 +103,7 @@
   as.double(as.Date(sprintf("%s-%s-%s", m[4], m[3], m[2]), format = "%Y-%m-%d", optional = TRUE))
 }
 
-#' 'mm:ss' -> seconds; minutes may exceed 59 ('8665:53') (sdv-py `_mmss`).
+#' 'mm:ss' -> seconds; minutes may exceed 59 ('8665:53') (sportsdataverse-py `_mmss`).
 #' @noRd
 .acb_mmss <- function(v) {
   if (!(.acb_atom(v) && is.character(v))) return(NA_integer_)
@@ -112,7 +112,7 @@
   as.integer(as.numeric(m[2]) * 60 + as.numeric(m[3]))
 }
 
-#' A display value ('79,17%', '35') -> a number; an 'a/b' ratio or text -> NA (sdv-py `_pct`).
+#' A display value ('79,17%', '35') -> a number; an 'a/b' ratio or text -> NA (sportsdataverse-py `_pct`).
 #' @noRd
 .acb_pct <- function(v) {
   if (.acb_atom(v) && is.numeric(v)) return(as.double(v))
@@ -122,7 +122,7 @@
   as.double(sub(",", ".", m[2], fixed = TRUE))
 }
 
-#' A list of strings joined with '; ' (sdv-py `_join`).
+#' A list of strings joined with '; ' (sportsdataverse-py `_join`).
 #' @noRd
 .acb_join <- function(v) {
   if (!.acb_is_array(v)) return(NA_character_)
@@ -174,7 +174,7 @@
 #' @noRd
 .acb_pair <- function(rec, ctx = list()) list(rec = rec, ctx = ctx)
 
-#' `raw` when it is a dict holding a non-empty value under one of `keys` (sdv-py `_body`).
+#' `raw` when it is a dict holding a non-empty value under one of `keys` (sportsdataverse-py `_body`).
 #' @noRd
 .acb_has <- function(raw, ...) {
   .acb_is_dict(raw) && any(vapply(c(...), function(k) {
@@ -230,7 +230,7 @@
   )
 }
 
-#' Build the `short` frame from (record, derived columns) pairs (sdv-py `_emit` + `_frame`).
+#' Build the `short` frame from (record, derived columns) pairs (sportsdataverse-py `_emit` + `_frame`).
 #' @noRd
 .acb_emit <- function(short, pairs) {
   ft <- .acb_fields[[short]]
@@ -917,7 +917,7 @@
   out
 }
 
-#' Frame name -> extractor (sdv-py `_EXTRACT`).
+#' Frame name -> extractor (sportsdataverse-py `_EXTRACT`).
 #' @noRd
 .ACB_EXTRACT <- list(
   match_header = .acb_x_match_header, period_scores = .acb_x_period_scores, player_box = .acb_x_player_box,

@@ -12,7 +12,7 @@ vtb_infobasket_playoff(comp_id)
 }
 \value{
 A \code{hoopR_data} tibble: Playoff bracket of a playoff stage, one row per series. The columns are always these, in this
-order (sdv-py \code{vtb_infobasket_playoff}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
+order (sportsdataverse-py \code{vtb_infobasket_playoff}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
 for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    comp_id \tab integer \tab Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. \cr

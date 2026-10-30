@@ -17,7 +17,7 @@ phase.}
 }
 \value{
 A \code{hoopR_data} tibble: Team per-game leaders in nine categories (one row per team and category). An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_team_rankings}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_rankings}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
    category \tab character \tab Ranking category: efficiency, points, total_rebound, block, assist, steal, two_point_percent, three_point_percent or free_throw_percent. \cr

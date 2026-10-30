@@ -12,7 +12,7 @@ season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
 A \code{hoopR_data} tibble: Teams entered in a competition. An empty valid answer raises \code{hoopR_no_data}; the columns
-are always these, in this order (sdv-py \code{kzs_teams}):\tabular{lll}{
+are always these, in this order (sportsdataverse-py \code{kzs_teams}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
    team_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr

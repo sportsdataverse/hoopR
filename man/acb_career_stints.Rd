@@ -13,7 +13,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_career_stints}):\tabular{lll}{
+(sportsdataverse-py \code{acb_career_stints}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab ACB licence number asked for. \cr
    initial_year \tab integer \tab Year the stint starts. \cr

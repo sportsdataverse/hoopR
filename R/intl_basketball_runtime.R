@@ -1,6 +1,6 @@
 # intl_basketball_runtime.R -- shared transport for the international basketball families.
 #
-# R mirror of sdv-py sportsdataverse/basketball/basketball_runtime.py (plus the
+# R mirror of sportsdataverse-py sportsdataverse/basketball/basketball_runtime.py (plus the
 # shared _codegen_runtime status vocabulary and genius_runtime._body_text). Every
 # provider is wrapped politely: at least one second between two requests to the
 # same host, on EVERY attempt, retries included. httr2::req_throttle() cannot do
@@ -20,16 +20,16 @@
 #   .intl_wait(url)                      the clock itself, for anything else
 #
 # Error vocabulary (classed conditions, all inherit "hoopR_error"):
-#   hoopR_no_data      sdv-py NoDataError: HTTP 404, an empty valid answer the
+#   hoopR_no_data      sportsdataverse-py NoDataError: HTTP 404, an empty valid answer the
 #                      family treats as "nothing here".
-#   hoopR_bad_request  sdv-py ValueError: HTTP 400 / 422, a bad argument.
-#   hoopR_asset_fetch  sdv-py AssetFetchError: any other non-2xx (a 3xx when
+#   hoopR_bad_request  sportsdataverse-py ValueError: HTTP 400 / 422, a bad argument.
+#   hoopR_asset_fetch  sportsdataverse-py AssetFetchError: any other non-2xx (a 3xx when
 #                      redirects are off), a transport failure after retries, an
 #                      empty or non-JSON body, an error envelope, a wrong-scope body.
 #                      Field `transient`: TRUE for 408 / 429 / 5xx and transport
 #                      failures (retry later), FALSE for a definitive refusal.
 #
-# HTTP 500 policy (sdv-py basketball_runtime docstring): 408 / 429 / 502 / 503 /
+# HTTP 500 policy (sportsdataverse-py basketball_runtime docstring): 408 / 429 / 502 / 503 /
 # 504 are always retried; 500 only with `retry_500 = TRUE`. Families whose
 # providers answer 500 deterministically (cba, cebl, easl, fiba_hub, genius,
 # ibba, kbl, lba, dbl/sportality, plg, tbf; tpbl's player game log) keep the
@@ -48,7 +48,7 @@
 #' @noRd
 .INTL_RETRY_STATUSES <- c(408L, 429L, 502L, 503L, 504L)
 
-#' Cap on a server's `Retry-After`, in seconds (sdv-py `dl_utils._MAX_RETRY_AFTER`).
+#' Cap on a server's `Retry-After`, in seconds (sportsdataverse-py `dl_utils._MAX_RETRY_AFTER`).
 #' @noRd
 .INTL_MAX_RETRY_AFTER <- 120
 
@@ -78,7 +78,7 @@
   invisible(slot - now)
 }
 
-#' Full-width digits (U+FF10..U+FF19) as ASCII, so `[0-9]` and `as.integer()` read them as sdv-py's `\d` and
+#' Full-width digits (U+FF10..U+FF19) as ASCII, so `[0-9]` and `as.integer()` read them as sportsdataverse-py's `\d` and
 #' `int()` do; anything but a character vector comes back as it is.
 #' @noRd
 .intl_ascii_digits <- function(x) {
@@ -239,7 +239,7 @@
 
 #' The response body as text, read as UTF-8 when the server names no charset.
 #'
-#' Mirrors sdv-py `genius_runtime._body_text`: a declared charset is honoured;
+#' Mirrors sportsdataverse-py `genius_runtime._body_text`: a declared charset is honoured;
 #' without one the bytes are read as UTF-8, and bytes that are not valid UTF-8
 #' fall back to ISO-8859-1 (what `requests` would have given). No body is `""`.
 #'
@@ -265,7 +265,7 @@
   iconv(txt, from = "latin1", to = "UTF-8")
 }
 
-#' Raise unless the response is 2xx (the sdv-py `_check_status` vocabulary).
+#' Raise unless the response is 2xx (the sportsdataverse-py `_check_status` vocabulary).
 #'
 #' 404 -> `hoopR_no_data`; 400 / 422 -> `hoopR_bad_request`; any other non-2xx ->
 #' `hoopR_asset_fetch`, `transient` for 408 / 429 / 5xx. Every condition carries
@@ -339,7 +339,7 @@
 #' @param text Body text (from `.intl_get()`).
 #' @param where Label for messages.
 #' @param simplifyVector Passed to [jsonlite::parse_json()]; `FALSE` keeps the
-#'   nested-list shape the sdv-py parsers walk.
+#'   nested-list shape the sportsdataverse-py parsers walk.
 #' @param ... Passed to [jsonlite::parse_json()].
 #' @param call The frame named in a raised condition.
 #' @return The parsed body.
@@ -363,7 +363,7 @@
 
 #' Zero-row tibble with the documented columns and types.
 #'
-#' What a wrapper returns for an empty valid answer (sdv-py's `_PARSER_COLUMNS`
+#' What a wrapper returns for an empty valid answer (sportsdataverse-py's `_PARSER_COLUMNS`
 #' contract), so callers can chain without a null check.
 #'
 #' @param cols_types Named character vector, column name -> type: one of
@@ -384,10 +384,10 @@
   dplyr::as_tibble(out)
 }
 
-#' sdv-py `dl_utils.underscore()`: CamelCase / UPPER_CASE / kebab -> snake_case.
+#' sportsdataverse-py `dl_utils.underscore()`: CamelCase / UPPER_CASE / kebab -> snake_case.
 #'
 #' The exact port (not `janitor::make_clean_names()`, which differs on digits,
-#' dots and duplicates), for the 13 families whose sdv-py parsers name columns with
+#' dots and duplicates), for the 13 families whose sportsdataverse-py parsers name columns with
 #' it: acb, atrium, cba, dbl, easl, fiba_hub, ibba, kbl, kzs, lba, nbl_au, scb, vtb.
 #'
 #' @param x Character vector of names.

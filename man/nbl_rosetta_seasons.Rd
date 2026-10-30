@@ -28,7 +28,7 @@ A \code{hoopR_data} tibble (one row per season):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Every season of an organisation: regular, preseason, in-season cups and test seasons, with dates.

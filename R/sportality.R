@@ -1,4 +1,4 @@
-# sportality.R -- Basketligaen (Denmark) wrappers over www.basketligaen.dk/api, at parity with sdv-py
+# sportality.R -- Basketligaen (Denmark) wrappers over www.basketligaen.dk/api, at parity with sportsdataverse-py
 # sportsdataverse/basketball/dbl (origin/main e3d232e). The site runs on the Sportality platform; its stats
 # are genius-basketball (Genius Sports LiveStats), so the Genius match, team and person ids join the genius
 # family. Transport, season mapping and refusals: R/sportality_runtime.R; frames: R/sportality_parsers.R;
@@ -14,7 +14,7 @@
 #' @param master_site_instance_id (default `NULL`) Site instance (dbl1_dbl). No effect in the drop-one probe.
 #' @return
 #' A `hoopR_data` tibble: Player career totals, one row per ssgt. An empty valid answer raises `hoopR_no_data`;
-#'   the documented columns come first, in this order (sdv-py `sportality_athlete_career`), then any column the
+#'   the documented columns come first, in this order (sportsdataverse-py `sportality_athlete_career`), then any column the
 #'   API added later:
 #'
 #' | col_name | type | description |
@@ -92,7 +92,7 @@ sportality_athlete_career <- function(athlete_uuid, master_site_instance_id = NU
 #'   athlete uuids (not the Genius person id).
 #' @return
 #' A `hoopR_data` tibble: Player bio plus playerExtIds (the Genius person id). An empty valid answer raises
-#'   `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_athlete_details`),
+#'   `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_athlete_details`),
 #'   then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -138,7 +138,7 @@ sportality_athlete_details <- function(athlete_uuid) {
 #' @param master_site_instance_id (default `NULL`) Site instance (dbl1_dbl). No effect in the drop-one probe.
 #' @return
 #' A `hoopR_data` tibble: Player profile: age, height, position, season and career totals. An empty valid
-#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_athlete_profile`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -204,7 +204,7 @@ sportality_athlete_profile <- function(athlete_uuid, master_site_instance_id = N
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Player box score and team rows of both sides (2023/24 on). An empty valid answer
-#'   raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_boxscore`),
+#'   raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_boxscore`),
 #'   then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -271,7 +271,7 @@ sportality_boxscore <- function(game_uuid) {
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Game header: Genius match id (extId), arena, state, teams, scores. An empty valid
-#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_game_header`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -349,7 +349,7 @@ sportality_game_header <- function(game_uuid) {
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Score, state, clock and the Genius ids of one game (2023/24 on). An empty valid
-#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_game_overview`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -413,7 +413,7 @@ sportality_game_overview <- function(game_uuid) {
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Points per period, team comparison and best scorers (2023/24 on). An empty valid
-#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_game_summary`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -456,7 +456,7 @@ sportality_game_summary <- function(game_uuid) {
 #' @param game_type (default `"regular"`) Game type: regular (the league season) or finals (the playoffs, Slutspil).
 #' @return
 #' A `hoopR_data` tibble: Games of the last played match day of an ssgt. An empty valid answer raises
-#'   `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_last_game_day`), then
+#'   `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_last_game_day`), then
 #'   any column the API added later:
 #'
 #' | col_name | type | description |
@@ -530,7 +530,7 @@ sportality_last_game_day <- function(season = NULL, game_type = "regular") {
 #' @return
 #' A `hoopR_data` tibble: Directory of every ssgt (season + series + game type) with its teams, and the stats
 #'   modules. An empty valid answer raises `hoopR_no_data`; the documented columns come first, in this order
-#'   (sdv-py `sportality_layout_info`), then any column the API added later:
+#'   (sportsdataverse-py `sportality_layout_info`), then any column the API added later:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -571,7 +571,7 @@ sportality_layout_info <- function() {
 #' @param game_type (default `"regular"`) Game type: regular (the league season) or finals (the playoffs, Slutspil).
 #' @return
 #' A `hoopR_data` tibble: Games of the next match day of an ssgt. An empty valid answer raises `hoopR_no_data`;
-#'   the documented columns come first, in this order (sdv-py `sportality_next_game_day`), then any column the
+#'   the documented columns come first, in this order (sportsdataverse-py `sportality_next_game_day`), then any column the
 #'   API added later:
 #'
 #' | col_name | type | description |
@@ -642,7 +642,7 @@ sportality_next_game_day <- function(season = NULL, game_type = "regular") {
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play events with shot coordinates and the Genius ids (2023/24 on). An empty
-#'   valid answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_pbp`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -788,7 +788,7 @@ sportality_pbp <- function(game_uuid) {
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Box score with jersey and Genius shirt numbers (2023/24 on). An empty valid answer
-#'   raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_player_box`),
+#'   raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_player_box`),
 #'   then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -860,7 +860,7 @@ sportality_player_box <- function(game_uuid) {
 #' @param game_uuid (default `NULL`) Game uuid; selects the game whose box-score lines the head-to-head carries.
 #' @return
 #' A `hoopR_data` tibble: Player head-to-head of a matchup with per-game and season lines. An empty valid
-#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_player_h2h`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -957,7 +957,7 @@ sportality_player_h2h <- function(ssgt_uuid, home_team_uuid, away_team_uuid, gam
 #' @param away_team_uuid (required) Away team uuid; without it the away side comes back blank.
 #' @return
 #' A `hoopR_data` tibble: Post-game team comparison (2023/24 on). An empty valid answer raises `hoopR_no_data`;
-#'   the documented columns come first, in this order (sdv-py `sportality_post_game_team_stats`), then any column
+#'   the documented columns come first, in this order (sportsdataverse-py `sportality_post_game_team_stats`), then any column
 #'   the API added later:
 #'
 #' | col_name | type | description |
@@ -1011,7 +1011,7 @@ sportality_post_game_team_stats <- function(game_uuid, ssgt_uuid, home_team_uuid
 #'   space: platform team uuids (not the numeric Genius team id).
 #' @return
 #' A `hoopR_data` tibble: Current roster of a team, grouped by position. An empty valid answer raises
-#'   `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_roster`), then any
+#'   `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_roster`), then any
 #'   column the API added later:
 #'
 #' | col_name | type | description |
@@ -1085,7 +1085,7 @@ sportality_roster <- function(team_uuid) {
 #' @param game_type (default `"regular"`) Game type: regular (the league season) or finals (the playoffs, Slutspil).
 #' @return
 #' A `hoopR_data` tibble: Schedule and results of one season + series + game type. An empty valid answer raises
-#'   `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_schedule`), then any
+#'   `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_schedule`), then any
 #'   column the API added later:
 #'
 #' | col_name | type | description |
@@ -1162,7 +1162,7 @@ sportality_schedule <- function(season, game_type = "regular") {
 #' Endpoint: `GET https://www.basketligaen.dk/api/sports-v2/season-series-game-types-filter`
 #' @return
 #' A `hoopR_data` tibble: Series, the 25 seasons (2002/03 on), game types and the default ssgt. An empty valid
-#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_season_filter`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -1201,7 +1201,7 @@ sportality_season_filter <- function() {
 #'   Directory: `/statistics-v2/layout-info` `seasonSeriesGameTypeTeams[].ssgtUuid`.
 #' @return
 #' A `hoopR_data` tibble: Clubs (sites) taking part in an ssgt. An empty valid answer raises `hoopR_no_data`;
-#'   the documented columns come first, in this order (sdv-py `sportality_sites`), then any column the API added
+#'   the documented columns come first, in this order (sportsdataverse-py `sportality_sites`), then any column the API added
 #'   later:
 #'
 #' | col_name | type | description |
@@ -1241,7 +1241,7 @@ sportality_sites <- function(ssgt_uuid) {
 #'   Directory: `/statistics-v2/layout-info` `seasonSeriesGameTypeTeams[].ssgtUuid`.
 #' @return
 #' A `hoopR_data` tibble: Stats provider of an ssgt, a bare word (genius-basketball). An empty valid answer
-#'   raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_ssgt_provider`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -1273,7 +1273,7 @@ sportality_ssgt_provider <- function(ssgt_uuid) {
 #'   Directory: `/statistics-v2/layout-info` `seasonSeriesGameTypeTeams[].ssgtUuid`.
 #' @return
 #' A `hoopR_data` tibble: Standings of an ssgt (gameday widget). An empty valid answer raises `hoopR_no_data`;
-#'   the documented columns come first, in this order (sdv-py `sportality_standings`), then any column the API
+#'   the documented columns come first, in this order (sportsdataverse-py `sportality_standings`), then any column the API
 #'   added later:
 #'
 #' | col_name | type | description |
@@ -1328,7 +1328,7 @@ sportality_standings <- function(ssgt_uuid) {
 #' @param game_type (default `"regular"`) Game type: regular (the league season) or finals (the playoffs, Slutspil).
 #' @return
 #' A `hoopR_data` tibble: Stats table of one module for a season (players, teams, games, standings). An empty
-#'   valid answer raises `hoopR_no_data`; the documented columns come first, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py
 #'   `sportality_stats_info`), then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -1535,7 +1535,7 @@ sportality_stats_info <- function(module, season, game_type = "regular") {
 #'   space: platform team uuids (not the numeric Genius team id).
 #' @return
 #' A `hoopR_data` tibble: One team. An empty valid answer raises `hoopR_no_data`; the documented columns come
-#'   first, in this order (sdv-py `sportality_team`), then any column the API added later:
+#'   first, in this order (sportsdataverse-py `sportality_team`), then any column the API added later:
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1585,7 +1585,7 @@ sportality_team <- function(team_uuid) {
 #'   space: platform team uuids (not the numeric Genius team id).
 #' @return
 #' A `hoopR_data` tibble: A team's recent games (current season view). An empty valid answer raises
-#'   `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_team_played_games`),
+#'   `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_team_played_games`),
 #'   then any column the API added later:
 #'
 #' | col_name | type | description |
@@ -1657,7 +1657,7 @@ sportality_team_played_games <- function(team_uuid) {
 #'   platform game uuids; the Genius match id is `extId` / `gameSourceId` in the body.
 #' @return
 #' A `hoopR_data` tibble: Team totals per period (2023/24 on). An empty valid answer raises `hoopR_no_data`;
-#'   the documented columns come first, in this order (sdv-py `sportality_team_stats`), then any column the API
+#'   the documented columns come first, in this order (sportsdataverse-py `sportality_team_stats`), then any column the API
 #'   added later:
 #'
 #' | col_name | type | description |
@@ -1711,7 +1711,7 @@ sportality_team_stats <- function(game_uuid) {
 #'   space: platform team uuids (not the numeric Genius team id).
 #' @return
 #' A `hoopR_data` tibble: A team's next games (current season view). An empty valid answer raises
-#'   `hoopR_no_data`; the documented columns come first, in this order (sdv-py `sportality_team_upcoming_games`),
+#'   `hoopR_no_data`; the documented columns come first, in this order (sportsdataverse-py `sportality_team_upcoming_games`),
 #'   then any column the API added later:
 #'
 #' | col_name | type | description |

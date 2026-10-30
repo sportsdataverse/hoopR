@@ -11,7 +11,7 @@ kzs_box_score(match_id)
 }
 \value{
 A \code{hoopR_data} tibble: Box score of a final game (2015/16 on): one row per player of both teams. An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_box_score}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_box_score}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
    team_side \tab character \tab Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. \cr

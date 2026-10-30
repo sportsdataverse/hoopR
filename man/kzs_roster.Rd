@@ -15,7 +15,7 @@ season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
 A \code{hoopR_data} tibble: A team's roster in one competition (the rows carry no team or competition id). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_roster}):\tabular{lll}{
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_roster}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. \cr
    competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr

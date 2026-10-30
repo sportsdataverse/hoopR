@@ -13,7 +13,7 @@ malformed id is \code{hoopR_bad_request}.}
 }
 \value{
 A \code{hoopR_data} tibble: Team totals of a finished game by period, one row per team and period (overtimes after the
-fourth). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+fourth). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_team_box_by_period}):\tabular{lll}{
    col_name \tab type \tab description \cr
    fixture_id \tab character \tab DataCore fixture (game) UUID v1 from the request. \cr

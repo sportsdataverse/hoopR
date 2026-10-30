@@ -12,7 +12,7 @@ cba_team_counts(season)
 }
 \value{
 A \code{hoopR_data} tibble: One row per match type. An empty valid answer is a zero-row tibble with these columns, in
-this order (sdv-py \code{cba_team_counts}):\tabular{lll}{
+this order (sportsdataverse-py \code{cba_team_counts}):\tabular{lll}{
    col_name \tab type \tab description \cr
    key \tab character \tab Match type id as a string ('1' regular season, '2' playoffs); see getMatchType. \cr
    value \tab integer \tab Number of teams in that match type in the requested season (inferred: 20 for key '1' in 2025, equal to the 2025 getTeam list length; the playoff count is smaller). \cr

@@ -1,6 +1,6 @@
 # kbl_parsers.R -- frames of the KBL wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/kbl/kbl_parsers.py (origin/main e3d232ebc9). Every frame is built
+# R mirror of sportsdataverse-py sportsdataverse/basketball/kbl/kbl_parsers.py (origin/main e3d232ebc9). Every frame is built
 # from `.kbl_specs` (R/kbl_tables.R): one type per column, never sampled, so an empty body is a zero-row tibble
 # with the documented columns. Ids: gmkey / glkey / team_code / pcode are character (team_code keeps its leading
 # zero), season / season_code / game_no integer. Dates are `Date` (KST calendar dates, `YYYYMMDD` on the wire);
@@ -355,7 +355,7 @@
   lapply(.kbl_rows(.kbl_obj(body)$defaultRank), function(s) .kbl_src(list(defaultRank = s), season = ctx$season))
 }
 
-#' New-format series: round, series number, games key, wins keys, team slot keys (sdv-py `_SERIES`).
+#' New-format series: round, series number, games key, wins keys, team slot keys (sportsdataverse-py `_SERIES`).
 #' @noRd
 .KBL_SERIES <- list(
   list("quarterfinal", 1L, "game1", c("resultFinalSix1", "resultFinalSix2"), c("finalSix4", "finalSix5")),

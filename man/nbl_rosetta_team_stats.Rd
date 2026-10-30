@@ -72,7 +72,7 @@ A \code{hoopR_data} tibble (one row per team and period):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Team season totals and averages by period (0 = whole game, 1-4 quarters, 5 and up overtime).

@@ -8,7 +8,7 @@ sportality_season_filter()
 }
 \value{
 A \code{hoopR_data} tibble: Series, the 25 seasons (2002/03 on), game types and the default ssgt. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sdv-py
+answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
 \code{sportality_season_filter}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    kind \tab character \tab Directory entry kind: series, season or game_type. \cr

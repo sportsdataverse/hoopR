@@ -12,7 +12,7 @@ sportpress_competition_staff(competition_id)
 }
 \value{
 A \code{hoopR_data} tibble: Coaching staff (head coach, assistants) of every competition team of one competition. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{sportpress_competition_staff}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id of the team the staff member works for. \cr

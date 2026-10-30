@@ -1,6 +1,6 @@
 # cebl_runtime.R -- transport for the CEBL wrappers (api.data.cebl.ca, the CEBL Stats Hub's backend).
 #
-# R mirror of sdv-py sportsdataverse/basketball/cebl/cebl_runtime.py (origin/main e3d232ebc9):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/cebl/cebl_runtime.py (origin/main e3d232ebc9):
 #
 # * Header key: every route needs `X-Api-Key` (401 without it). The key is the Stats Hub's own, shipped to
 #   every browser in its league-leaders page chunk. It is read from there once per R session (two
@@ -26,7 +26,7 @@
 .CEBL_HUB <- "https://cebl-stats-hub.web.app"
 #' @noRd
 .CEBL_API <- "https://api.data.cebl.ca"
-#' The Stats Hub's public key, read from its page chunk on 2026-10-13 (sdv-py `FALLBACK_KEY`).
+#' The Stats Hub's public key, read from its page chunk on 2026-10-13 (sportsdataverse-py `FALLBACK_KEY`).
 #' @noRd
 .CEBL_FALLBACK_KEY <- "800chyzv2hvur3z0ogh39cve2zok0c"
 #' @noRd

@@ -12,7 +12,7 @@ athlete uuids (not the Genius person id).}
 }
 \value{
 A \code{hoopR_data} tibble: Player bio plus playerExtIds (the Genius person id). An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sdv-py \code{sportality_athlete_details}),
+\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_athlete_details}),
 then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    athlete_uuid \tab character \tab Platform athlete uuid (rosters and athlete routes key on it); not the Genius person id; null where the site has none. \cr

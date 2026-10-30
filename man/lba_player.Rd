@@ -12,7 +12,7 @@ whole career.}
 }
 \value{
 A \code{hoopR_data} tibble: Player bio with current-season totals, highs and averages (one row). The columns are
-always these, in this order (sdv-py \code{lba_player}); a column the site adds later is appended after them:\tabular{lll}{
+always these, in this order (sportsdataverse-py \code{lba_player}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab Player id (global). \cr
    code \tab character \tab Player code \code{SURNAME3-NAME3-YY}. \cr

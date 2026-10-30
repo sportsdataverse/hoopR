@@ -1,6 +1,6 @@
 # bleague_utils.R -- internal runtime + parsers of the B.LEAGUE `bleague_*()` family.
 #
-# R mirror of sdv-py sportsdataverse/basketball/bleague/ (bleague_runtime.py,
+# R mirror of sportsdataverse-py sportsdataverse/basketball/bleague/ (bleague_runtime.py,
 # bleague_parsers.py, bleague_codes.py): same routes, refusals, casts and snake_case
 # columns. Two keyless hosts:
 #   S3   https://b-league.s3.amazonaws.com/web_json   game contexts (v2 / v1 feeds)
@@ -19,7 +19,7 @@
 #   for another tab / season / event / day, a paged (truncated) schedule list,
 #   standings of another season or tab, layout drift, and any non-200 other than the
 #   403 miss / 404.
-# * HTTP 500 is retried (sdv-py RETRY_STATUSES holds 500): retry_500 = TRUE.
+# * HTTP 500 is retried (sportsdataverse-py RETRY_STATUSES holds 500): retry_500 = TRUE.
 # * Japanese text lives here as \u escapes (the PDF manual cannot build CJK).
 
 .bleague_s3 <- "https://b-league.s3.amazonaws.com/web_json"
@@ -44,7 +44,7 @@
 #' @noRd
 .bleague_bad <- function(msg, call, ...) .abort_bad_request("{msg}", ..., call = call)
 
-#' A page that is not the data asked for (sdv-py `_NotParsed`); `empty` = right page, no games.
+#' A page that is not the data asked for (sportsdataverse-py `_NotParsed`); `empty` = right page, no games.
 #' @noRd
 .bleague_not_parsed <- function(msg, empty = FALSE) {
   rlang::abort(msg, class = "bleague_not_parsed", empty = empty)
@@ -58,7 +58,7 @@
   .intl_response(url, query = query, retry_500 = TRUE, timeout = 60, call = call)
 }
 
-#' sdv-py bleague_runtime._status: only 200 passes.
+#' sportsdataverse-py bleague_runtime._status: only 200 passes.
 #' @noRd
 .bleague_status <- function(url, resp, call) {
   status <- httr2::resp_status(resp)
@@ -93,7 +93,7 @@
   text
 }
 
-#' sdv-py `_int_arg`: a non-negative whole number (or digit string), else `hoopR_bad_request`.
+#' sportsdataverse-py `_int_arg`: a non-negative whole number (or digit string), else `hoopR_bad_request`.
 #' @return An integer.
 #' @noRd
 .bleague_int_arg <- function(value, what, call) {
@@ -111,7 +111,7 @@
 .bleague_is_arr <- function(x) is.list(x) && is.null(names(x))
 .bleague_dicts <- function(v) if (.bleague_is_arr(v)) Filter(.bleague_is_obj, v) else list()
 
-#' Type-strict equality (`1L != "1"`, `TRUE != 1L`), sdv-py `_same`.
+#' Type-strict equality (`1L != "1"`, `TRUE != 1L`), sportsdataverse-py `_same`.
 #' @noRd
 .bleague_same <- function(a, b) {
   !is.null(a) && !is.list(a) && length(a) == 1L && length(b) == 1L && !is.na(a) &&
@@ -126,7 +126,7 @@
 
 # ---------------------------------------------------------------------------- contexts
 
-#' Why `body` is not a final, in-scope context of game `key`, or `NULL` (sdv-py `_scope_error`).
+#' Why `body` is not a final, in-scope context of game `key`, or `NULL` (sportsdataverse-py `_scope_error`).
 #' @noRd
 .bleague_scope_error <- function(body, feed, key, season) {
   keys <- .bleague_feed_keys[[feed]]
@@ -208,7 +208,7 @@
   rec
 }
 
-#' The object a game_detail page assigns to `_contexts_s3id.data` (sdv-py `_embed_context`).
+#' The object a game_detail page assigns to `_contexts_s3id.data` (sportsdataverse-py `_embed_context`).
 #' @noRd
 .bleague_embed_context <- function(html) {
   m <- regexpr("_contexts_s3id\\.data\\s*=\\s*", html, perl = TRUE)
@@ -216,7 +216,7 @@
   .bleague_json_prefix(substring(html, m + attr(m, "match.length")))
 }
 
-#' The embedded context of game `key` and its feed (sdv-py `_embed_body`).
+#' The embedded context of game `key` and its feed (sportsdataverse-py `_embed_body`).
 #' @noRd
 .bleague_embed_body <- function(html, key) {
   rec <- .bleague_embed_context(html)
@@ -277,7 +277,7 @@
 
 # ------------------------------------------------------------------------------- pages
 
-#' The schedule page record of one game day (sdv-py `_schedule`).
+#' The schedule page record of one game day (sportsdataverse-py `_schedule`).
 #' @noRd
 .bleague_schedule_page <- function(season, tab, month, day, event, call) {
   season <- .bleague_int_arg(season, "season", call)
@@ -299,7 +299,7 @@
   })
 }
 
-#' The standings page record of one season and division (sdv-py `_standings`).
+#' The standings page record of one season and division (sportsdataverse-py `_standings`).
 #' @noRd
 .bleague_standings_page <- function(season, tab, call) {
   season <- .bleague_int_arg(season, "season", call)
@@ -315,7 +315,7 @@
 
 # ----------------------------------------------------------------------------- HTML walk
 
-#' Text of a node (script / style excluded), whitespace collapsed (sdv-py `_Node.text`).
+#' Text of a node (script / style excluded), whitespace collapsed (sportsdataverse-py `_Node.text`).
 #' @noRd
 .bleague_text <- function(node) {
   if (inherits(node, "xml_missing")) return(NA_character_)
@@ -374,7 +374,7 @@
 .bleague_or <- function(a, b) if (length(a) != 1L || is.na(a)) b else a
 .bleague_title <- c(home = "Home", away = "Away")
 
-#' Refuse unless `got` equals `want` (sdv-py `_check`; sets compare as sorted unique vectors).
+#' Refuse unless `got` equals `want` (sportsdataverse-py `_check`; sets compare as sorted unique vectors).
 #' @noRd
 .bleague_check <- function(what, got, want) {
   if (!identical(got, want)) {
@@ -403,7 +403,7 @@
 
 .bleague_round_re <- "^\u7b2c([0-9]+)\u7bc0$" # "dai N setsu" = round N
 
-#' One game day of one competition and division (sdv-py `_schedule_record`). Fails closed.
+#' One game day of one competition and division (sportsdataverse-py `_schedule_record`). Fails closed.
 #' @noRd
 .bleague_schedule_record <- function(html, tab, year, event, mon, day, call) {
   root <- rvest::read_html(html)
@@ -501,12 +501,12 @@
                                      c("\u6771\u5730\u533a", "\u4e2d\u5730\u533a", "\u897f\u5730\u533a", "\u30ef\u30a4\u30eb\u30c9\u30ab\u30fc\u30c9"))
 
 .bleague_num <- function(s) {
-  s <- .intl_ascii_digits(s) # full-width digits, as sdv-py's \d / int() read them
+  s <- .intl_ascii_digits(s) # full-width digits, as sportsdataverse-py's \d / int() read them
   s <- .bleague_strip(.bleague_or(s, ""))
   if (grepl("^([0-9]*\\.[0-9]+|[0-9]+)$", s)) as.double(s) else NA_real_
 }
 
-#' Standings of one season and division (sdv-py `_standings_record`). Fails closed.
+#' Standings of one season and division (sportsdataverse-py `_standings_record`). Fails closed.
 #' @noRd
 .bleague_standings_record <- function(html, year, tab) {
   root <- rvest::read_html(html)
@@ -564,7 +564,7 @@
 #' A count / key from an integer or an integer string, else `NA` (never via a double).
 #' @noRd
 .bleague_i <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.bleague_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.character(v) && grepl("^\\s*[+-]?[0-9]+\\s*$", v, perl = TRUE)) return(suppressWarnings(as.integer(v)))
@@ -574,7 +574,7 @@
 #' A number from a number or a decimal string, else `NA`.
 #' @noRd
 .bleague_f <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.bleague_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v) && grepl("^\\s*[+-]?[0-9]+(?:\\.[0-9]+)?\\s*$", v, perl = TRUE)) return(as.double(v))
@@ -602,7 +602,7 @@
 #' as a string (the 2016-17 embed) and `YYYY-MM-DD HH:MM:SS` (already UTC); else `NA`.
 #' @noRd
 .bleague_dt <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.bleague_scalar(v) || !is.character(v)) return(NA_real_)
   t <- .bleague_strip(v)
   m <- regmatches(t, regexec("^/Date\\((-?[0-9]+)(?:[+-][0-9]{4})?\\)/$", t, perl = TRUE))[[1]]
@@ -619,7 +619,7 @@
 #' Seconds in an `mm:ss` clock (`"8:50"` = 530); `"DNP"` and `""` give `NA`.
 #' @noRd
 .bleague_mmss <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.bleague_scalar(v) || !is.character(v)) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*([0-9]{1,3}):([0-9]{2})\\s*$", v, perl = TRUE))[[1]]
   if (length(m) == 3L) as.integer(m[[2]]) * 60L + as.integer(m[[3]]) else NA_integer_
@@ -832,7 +832,7 @@
                                starter = "logical", seconds_played = "integer", .bleague_spec_of(.bleague_box_stats))
 .bleague_specs$team_box <- .bleague_specs$player_box
 
-#' sdv-py `StartingFlg in (1, True, "1")` (Python: 1 == True == 1.0).
+#' sportsdataverse-py `StartingFlg in (1, True, "1")` (Python: 1 == True == 1.0).
 #' @noRd
 .bleague_starting <- function(v) {
   .bleague_scalar(v) && ((is.logical(v) && v) || (is.numeric(v) && v == 1) || identical(v, "1"))

@@ -13,7 +13,7 @@ sportality_athlete_profile(athlete_uuid, master_site_instance_id = NULL)
 }
 \value{
 A \code{hoopR_data} tibble: Player profile: age, height, position, season and career totals. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sdv-py
+answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
 \code{sportality_athlete_profile}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    uuid \tab character \tab Platform uuid of this record (10-character lowercase key space of its record type; joins the route that serves it). \cr

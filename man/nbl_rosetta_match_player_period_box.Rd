@@ -53,7 +53,7 @@ A \code{hoopR_data} tibble (one row per player and period):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 One match's player box score by period (Rosetta-computed from the event log), one row per player and period.

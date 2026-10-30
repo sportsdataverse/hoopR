@@ -13,7 +13,7 @@ malformed id is \code{hoopR_bad_request}.}
 }
 \value{
 A \code{hoopR_data} tibble: Player box score of a finished game, one row per rostered player (non-players have null
-counting stats). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+counting stats). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_player_box}):\tabular{lll}{
    col_name \tab type \tab description \cr
    fixture_id \tab character \tab DataCore fixture (game) UUID v1 of the box row. \cr

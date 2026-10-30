@@ -22,7 +22,7 @@ One row per minute: \code{minute} 0 (tip-off) to 40, then 41-45 per overtime, an
 \code{away_score} at the end of that minute (the site sends them as numeric strings; cast here). The last row equals
 the final score.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr

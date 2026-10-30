@@ -16,7 +16,7 @@ echo it.}
 \value{
 A \code{hoopR_data} tibble: Schedule and results of one season (regular season and finals), with the Genius match id
 that joins play-by-play and shots; optionally one team's games. An empty valid answer raises \code{hoopR_no_data};
-the columns are always these, in this order (sdv-py \code{cebl_games}):\tabular{lll}{
+the columns are always these, in this order (sportsdataverse-py \code{cebl_games}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season of the game: the year of start_time_utc (the calendar year = the sdv END year). \cr
    game_id \tab integer \tab CEBL game id (its own key space: 568 in 2019, 8 digits from 2025, e.g. 14708701). No route is keyed by it; the Genius match id is in \code{stats_url_en}. \cr

@@ -8,7 +8,7 @@ kzs_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: Every season (39: 1991/1992 to 2029/2030) with its opaque id and the sdv END year. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_seasons}):\tabular{lll}{
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season \code{name} is 'START/END'; the sdv season is the END year (the second half of \code{name}). \cr
    name \tab character \tab Season, 'START/END' (2025/2026); the sdv season is the END year. \cr

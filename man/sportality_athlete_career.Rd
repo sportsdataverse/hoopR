@@ -13,7 +13,7 @@ sportality_athlete_career(athlete_uuid, master_site_instance_id = NULL)
 }
 \value{
 A \code{hoopR_data} tibble: Player career totals, one row per ssgt. An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sdv-py \code{sportality_athlete_career}), then any column the
+the documented columns come first, in this order (sportsdataverse-py \code{sportality_athlete_career}), then any column the
 API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    g \tab integer \tab Games played in the ssgt. \cr

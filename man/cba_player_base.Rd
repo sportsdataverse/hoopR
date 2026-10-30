@@ -35,7 +35,7 @@ players.}
 }
 \value{
 A \code{hoopR_data} tibble: One row per player of the requested page. An empty valid answer is a zero-row tibble with
-these columns, in this order (sdv-py \code{cba_player_base}):\tabular{lll}{
+these columns, in this order (sportsdataverse-py \code{cba_player_base}):\tabular{lll}{
    col_name \tab type \tab description \cr
    age \tab integer \tab Age in years in that season. \cr
    assists \tab double \tab Assists per game when countRanger is 1. A number (the API sends it as display text). \cr

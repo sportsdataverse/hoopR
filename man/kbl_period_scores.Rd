@@ -13,7 +13,7 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 }
 \value{
 A \code{hoopR_data} tibble: Points by period (quarters and overtimes) and side of a final game, from the game header.
-The columns are always these, in this order (sdv-py \code{kbl_period_scores}); an empty valid answer raises
+The columns are always these, in this order (sportsdataverse-py \code{kbl_period_scores}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every game route and game frame. \cr

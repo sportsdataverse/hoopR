@@ -11,7 +11,7 @@ kzs_score_changes(match_id)
 }
 \value{
 A \code{hoopR_data} tibble: The score at the end of each minute of a final game. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_score_changes}):\tabular{lll}{
+\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_score_changes}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab KZS match id. Joins to \verb{/matches/\{matchId\}} (and its /playByPlay, /stats) and stats \code{matchId}. \cr
    minute \tab integer \tab Game minute (1-40, then overtime minutes). \cr

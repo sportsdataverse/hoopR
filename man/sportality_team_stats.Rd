@@ -12,7 +12,7 @@ platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} i
 }
 \value{
 A \code{hoopR_data} tibble: Team totals per period (2023/24 on). An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sdv-py \code{sportality_team_stats}), then any column the API
+the documented columns come first, in this order (sportsdataverse-py \code{sportality_team_stats}), then any column the API
 added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_side \tab character \tab home or away: the side the row belongs to. \cr

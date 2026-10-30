@@ -12,7 +12,7 @@ match-team id nor the club id.}
 }
 \value{
 A \code{hoopR_data} tibble: Team profile: club, home hall, colours and the competitions the team entered. An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_team}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_team}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr
    team_application_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr

@@ -14,7 +14,7 @@ whole career.}
 }
 \value{
 A \code{hoopR_data} tibble: A player's game log for one season, one row per game. The columns are always these, in
-this order (sdv-py \code{lba_game_log}); a column the site adds later is appended after them:\tabular{lll}{
+this order (sportsdataverse-py \code{lba_game_log}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
    stat_line_id \tab integer \tab Id of the player's stat line for the game (one per player and game). \cr

@@ -13,7 +13,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_career_trophies}):\tabular{lll}{
+(sportsdataverse-py \code{acb_career_trophies}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab ACB licence number asked for. \cr
    competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) \cr

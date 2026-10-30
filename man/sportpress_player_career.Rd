@@ -11,7 +11,7 @@ sportpress_player_career(roster_id)
 }
 \value{
 A \code{hoopR_data} tibble: Season-by-season per-game averages of the player of a roster entry. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_player_career}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_player_career}):\tabular{lll}{
    col_name \tab type \tab description \cr
    roster_id \tab integer \tab Roster id the career was asked for; the rows are the person's seasons, each with its own roster. \cr
    competition_id \tab integer \tab Competition id of the season row. \cr

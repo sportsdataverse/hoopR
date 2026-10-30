@@ -12,7 +12,7 @@ across seasons.}
 }
 \value{
 A \code{hoopR_data} tibble: Player box score of a finished game (one row per player of each team, DNPs included). The
-columns are always these, in this order (sdv-py \code{vtb_infobasket_box_score}); an empty valid answer raises
+columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_box_score}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr

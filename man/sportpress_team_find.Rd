@@ -12,7 +12,7 @@ sportpress_team_find(competition_team_id)
 }
 \value{
 A \code{hoopR_data} tibble: One competition team with its season scoring averages. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_team_find}):\tabular{lll}{
+\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_find}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
    season \tab integer \tab Season END year of the team's competition. \cr

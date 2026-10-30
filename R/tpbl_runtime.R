@@ -1,6 +1,6 @@
 # tpbl_runtime.R -- transport, season mapping and refusals of the TPBL wrappers.
 #
-# R mirror of sdv-py sportsdataverse/basketball/tpbl/tpbl_runtime.py (origin/main e3d232ebc9).
+# R mirror of sportsdataverse-py sportsdataverse/basketball/tpbl/tpbl_runtime.py (origin/main e3d232ebc9).
 #
 # One host, keyless, no headers: the Laravel JSON API behind tpbl.basketball (https://api.tpbl.basketball/api).
 #
@@ -21,7 +21,7 @@
 # * Errors: hoopR_no_data (HTTP 404, a season the API lacks, an empty list), hoopR_bad_request (a
 #   non-integer id or season, HTTP 400 / 422, an invalid verify / rounds), hoopR_asset_fetch (any other
 #   non-2xx, a non-JSON or error-envelope body, an unfinished game, every wrong-scope body).
-# * sdv-py redacts birth-date and contact keys from the raw body it can return; no wrapper here returns a
+# * sportsdataverse-py redacts birth-date and contact keys from the raw body it can return; no wrapper here returns a
 #   raw body, and no parser reads such a key.
 
 #' @noRd

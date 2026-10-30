@@ -12,7 +12,7 @@ maps it to the KBL seasonCode (47 = 2025-26).}
 }
 \value{
 A \code{hoopR_data} tibble: The games of the playoff bracket (2024-25 on; the older bracket format lists no games). The
-columns are always these, in this order (sdv-py \code{kbl_playoff_games}); an empty valid answer raises
+columns are always these, in this order (sportsdataverse-py \code{kbl_playoff_games}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr

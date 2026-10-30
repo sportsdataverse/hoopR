@@ -12,7 +12,7 @@ vtb_infobasket_cross_table(comp_id)
 }
 \value{
 A \code{hoopR_data} tibble: Head-to-head results grid of a round-robin stage (every game twice, once from each side). The
-columns are always these, in this order (sdv-py \code{vtb_infobasket_cross_table}); an empty valid answer raises
+columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_cross_table}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    comp_id \tab integer \tab Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. \cr

@@ -11,7 +11,7 @@ sportpress_game_top_performers(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: The top performer of each side of a finished game, with his full line. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_game_top_performers}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_top_performers}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id the overview was asked for (the body does not echo it). \cr
    team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr

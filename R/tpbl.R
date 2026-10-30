@@ -1,7 +1,7 @@
 # tpbl.R -- TPBL (Taiwan Professional Basketball League) wrappers over api.tpbl.basketball, the Laravel
-# JSON API behind tpbl.basketball, at parity with sdv-py sportsdataverse/basketball/tpbl (origin/main
+# JSON API behind tpbl.basketball, at parity with sportsdataverse-py sportsdataverse/basketball/tpbl (origin/main
 # e3d232ebc9). Transport, season mapping and refusals: R/tpbl_runtime.R; frames and columns:
-# R/tpbl_parsers.R. Roxygen generated from sdv-py's endpoint YAML and column descriptions.
+# R/tpbl_parsers.R. Roxygen generated from sportsdataverse-py's endpoint YAML and column descriptions.
 
 # The @details of every tpbl topic that shares the tpbl_seasons() notes (roxygen @eval .intl_details()).
 .tpbl_seasons_details <- c(
@@ -45,7 +45,7 @@
 #' Endpoint: `GET https://api.tpbl.basketball/api/seasons`
 #' @return
 #' A `hoopR_data` tibble: Every TPBL season with its TPBL and GoHoops ids, label, status and date window. An empty
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_seasons`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -82,7 +82,7 @@ tpbl_seasons <- function() {
 #'   lacks raises `hoopR_no_data`.
 #' @return
 #' A `hoopR_data` tibble: The divisions (preseason, regular season, play-in, playoffs, finals) of one season. An
-#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_divisions`):
+#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_divisions`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -115,7 +115,7 @@ tpbl_divisions <- function(season) {
 #'   lacks raises `hoopR_no_data`.
 #' @return
 #' A `hoopR_data` tibble: The teams of one season (bracket placeholders flagged). An empty answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_teams`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -157,7 +157,7 @@ tpbl_teams <- function(season) {
 #'   checked against the team-filtered lists instead). A mismatch raises `hoopR_asset_fetch`.
 #' @return
 #' A `hoopR_data` tibble: Every game of one season, all divisions, played and scheduled, with teams, venue, status
-#'   and score. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   and score. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `tpbl_games`):
 #'
 #' | col_name | type | description |
@@ -221,7 +221,7 @@ tpbl_games <- function(season, team_id = NULL, verify = NULL) {
 #'   2026-27); `division_id` in tpbl_divisions. Not the GoHoops division id.
 #' @return
 #' A `hoopR_data` tibble: League table of one division: rank, record, games behind and streak. An empty answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_standings`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_standings`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -262,7 +262,7 @@ tpbl_standings <- function(division_id) {
 #'   2026-27); `division_id` in tpbl_divisions. Not the GoHoops division id.
 #' @return
 #' A `hoopR_data` tibble: Head-to-head record of every team against every other team in one division. An empty
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_standings_against`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_standings_against`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -294,7 +294,7 @@ tpbl_standings_against <- function(division_id) {
 #'   = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: Header of one finished game: teams with scores, venue, status, quarters, tip-off,
-#'   attendance and links. the columns are always these, in this order (sdv-py `tpbl_game`):
+#'   attendance and links. the columns are always these, in this order (sportsdataverse-py `tpbl_game`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -356,7 +356,7 @@ tpbl_game <- function(game_id) {
 #'   = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: The officiating crew of one finished game, chief referee first (names only). An empty
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_referees`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_referees`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -386,7 +386,7 @@ tpbl_referees <- function(game_id) {
 #'   = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: Whole-game box score lines of every player on either team sheet, keyed by GoHoops roster
-#'   id. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   id. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `tpbl_box_players`):
 #'
 #' | col_name | type | description |
@@ -552,7 +552,7 @@ tpbl_box_players <- function(game_id) {
 #'   = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: Per-quarter box score lines of the players who were on court, overtimes included. An empty
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_box_player_periods`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_box_player_periods`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -713,7 +713,7 @@ tpbl_box_player_periods <- function(game_id) {
 #'   = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: Whole-game team totals of both teams: shooting, rebounds, fouls, assists, turnovers and
-#'   paint points. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   paint points. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `tpbl_box_teams`):
 #'
 #' | col_name | type | description |
@@ -782,7 +782,7 @@ tpbl_box_teams <- function(game_id) {
 #'   = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.
 #' @return
 #' A `hoopR_data` tibble: Per-quarter team lines of both teams: points scored and conceded in the quarter, running
-#'   totals and stats. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   totals and stats. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `tpbl_box_team_periods`):
 #'
 #' | col_name | type | description |
@@ -851,7 +851,7 @@ tpbl_box_team_periods <- function(game_id) {
 #'   the GoHoops id.
 #' @return
 #' A `hoopR_data` tibble: The registered roster of one team in one division (birth dates omitted). An empty answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_roster`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_roster`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -904,7 +904,7 @@ tpbl_roster <- function(division_id, team_id) {
 #'   sends it as the API's repeatable `rounds[]`. `NULL` (the default) for all quarters.
 #' @return
 #' A `hoopR_data` tibble: Every field-goal attempt of one team in one division with its court position (optionally
-#'   per quarter). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   per quarter). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `tpbl_team_shots`):
 #'
 #' | col_name | type | description |
@@ -939,7 +939,7 @@ tpbl_team_shots <- function(division_id, team_id, rounds = NULL) {
 #'   Not the GoHoops person id and not the roster id.
 #' @return
 #' A `hoopR_data` tibble: Every field-goal attempt of one player in one division with its court position. An empty
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `tpbl_player_shots`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `tpbl_player_shots`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -973,7 +973,7 @@ tpbl_player_shots <- function(division_id, player_id) {
 #'   unknown id answers HTTP 500, which is not retried.
 #' @return
 #' A `hoopR_data` tibble: A player's game log in one division: one row per game played, with that game's whole stat
-#'   line. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   line. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `tpbl_player_games`):
 #'
 #' | col_name | type | description |

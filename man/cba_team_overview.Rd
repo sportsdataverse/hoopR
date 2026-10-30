@@ -18,7 +18,7 @@ all-star, 9 relegation play-off (cba_match_types).}
 }
 \value{
 A \code{hoopR_data} tibble: One row per season of the team. An empty valid answer is a zero-row tibble with these
-columns, in this order (sdv-py \code{cba_team_overview}):\tabular{lll}{
+columns, in this order (sportsdataverse-py \code{cba_team_overview}):\tabular{lll}{
    col_name \tab type \tab description \cr
    bout_no_points \tab double \tab points allowed per 100 possessions (defensive rating), a float. \cr
    bout_no_points_rank \tab double \tab Rank among the teams of that season for boutNoPoints (integer-valued float; direction undocumented). \cr

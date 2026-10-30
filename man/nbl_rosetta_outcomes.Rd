@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble (one row per team name):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 Win-loss record and last 10, 5 and 3 results per team, keyed by team name.

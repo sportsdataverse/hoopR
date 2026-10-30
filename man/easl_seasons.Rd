@@ -9,7 +9,7 @@ easl_seasons()
 \value{
 A \code{hoopR_data} tibble: Every configured EASL season (the four editions 2023-24 to 2026-27) with its DataCore
 season id and END year. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order
-(sdv-py \code{easl_seasons}):\tabular{lll}{
+(sportsdataverse-py \code{easl_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = EASL 25-26), derived as year + 1. \cr
    season_id \tab character \tab seasonId: DataCore season UUID v1 (key space: EASL seasons; one per edition: 57cefc32... is 2024-25). Joins the \code{seasonId} query parameter of /matches, /standings, /leaders, /players and the \verb{/teams/\{teamId\}} routes, the \code{seasonId} of every fixture and leader row, and the season half of a team-fixture \code{stage.id}. \cr

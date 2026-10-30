@@ -18,7 +18,7 @@ The season table is read for this tag.}
 }
 \value{
 A \code{hoopR_data} tibble: Club profile: names, region, country, status. The columns are always these, in this order
-(sdv-py \code{vtb_infobasket_team}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for this
+(sportsdataverse-py \code{vtb_infobasket_team}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for this
 frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. The scope check compares it with the request. \cr

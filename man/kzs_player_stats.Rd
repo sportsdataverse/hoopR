@@ -14,7 +14,7 @@ id.}
 }
 \value{
 A \code{hoopR_data} tibble: A player's totals and per-game averages in each competition of one season. An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_player_stats}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_player_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab Player registry id of the request (the body does not echo it). \cr
    season_id \tab integer \tab Opaque KZS season id (27 = 2026/2027); the sdv season is the END year in season. \cr

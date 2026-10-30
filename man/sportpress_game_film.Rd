@@ -14,7 +14,7 @@ sportpress_game_film(competition_id, game_id)
 }
 \value{
 A \code{hoopR_data} tibble: Play-by-play ('film') of a finished game with court x/y (2021-22 and 2026-27 only). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_game_film}):\tabular{lll}{
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_film}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id the film was asked for (the body does not echo it). \cr
    competition_id \tab integer \tab Competition id the film was asked for; checked against the game. \cr

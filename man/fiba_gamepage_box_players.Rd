@@ -92,7 +92,7 @@ Champions League host last).
 
 Box scores start about 2006; play-by-play with shot x/y about 2012 (OVR events) and 2017-18 (FLS club
 competitions). A game with no box score raises \code{hoopR_no_data}; a game still live raises \code{hoopR_asset_fetch}.
-The page request sends a browser User-Agent (sdv-py answers fiba.basketball's HTTP 403 to plain clients with
+The page request sends a browser User-Agent (sportsdataverse-py answers fiba.basketball's HTTP 403 to plain clients with
 Chrome TLS; libcurl with a browser User-Agent was served on 2026-10-18).
 Shot x/y are image pixels with an unverified scale.
 

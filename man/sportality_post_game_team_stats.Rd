@@ -23,7 +23,7 @@ platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} i
 }
 \value{
 A \code{hoopR_data} tibble: Post-game team comparison (2023/24 on). An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sdv-py \code{sportality_post_game_team_stats}), then any column
+the documented columns come first, in this order (sportsdataverse-py \code{sportality_post_game_team_stats}), then any column
 the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    home_team_side_translate_key \tab character \tab Translation key of the comparison row's label (s_2P, s_3P, s_FT, ...); the site translates it. \cr

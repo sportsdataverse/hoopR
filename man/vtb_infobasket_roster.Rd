@@ -20,7 +20,7 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: A club's player roster in one season. The columns are always these, in this order (sdv-py
+A \code{hoopR_data} tibble: A club's player roster in one season. The columns are always these, in this order (sportsdataverse-py
 \code{vtb_infobasket_roster}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for this frame
 is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr

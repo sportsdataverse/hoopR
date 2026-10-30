@@ -12,7 +12,7 @@ sportpress_team_player_averages(competition_team_id)
 }
 \value{
 A \code{hoopR_data} tibble: Per-game averages of each player of a competition team. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_team_player_averages}):\tabular{lll}{
+\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_player_averages}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
    roster_id \tab integer \tab Roster id (key space: sportpress roster entries): one player on one competition team in one season, so a player has a new roster_id for every team and season. player_id is the person. \cr

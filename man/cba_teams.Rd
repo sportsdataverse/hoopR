@@ -8,7 +8,7 @@ cba_teams()
 }
 \value{
 A \code{hoopR_data} tibble: One row per club: logo, id, club name and display name. An empty valid answer is a
-zero-row tibble with these columns, in this order (sdv-py \code{cba_teams}):\tabular{lll}{
+zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_teams}):\tabular{lll}{
    col_name \tab type \tab description \cr
    club \tab character \tab Empty string on every row; meaning unverified (a club-code slot the site leaves unused). \cr
    team_cn_alias \tab character \tab Current team name (Chinese short name, e.g. 'Beijing Holdings'). Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr

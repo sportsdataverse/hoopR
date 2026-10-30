@@ -12,7 +12,7 @@ platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} i
 }
 \value{
 A \code{hoopR_data} tibble: Play-by-play events with shot coordinates and the Genius ids (2023/24 on). An empty
-valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sdv-py
+valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
 \code{sportality_pbp}), then any column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_source_id \tab integer \tab Genius match id (Int64), the same number as game_id and sports-v2 game_info_ext_id. \cr

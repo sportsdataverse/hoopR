@@ -53,7 +53,7 @@ A \code{hoopR_data} tibble with the columns of the base wrapper (the raw JSON li
 }
 }
 \description{
-Per-competition aliases of the FIBA wrappers for Men's Olympic Basketball Tournament (GDAP competition family 320), named as in sdv-py. Season rule: event year (Paris 2024 = 2024).
+Per-competition aliases of the FIBA wrappers for Men's Olympic Basketball Tournament (GDAP competition family 320), named as in sportsdataverse-py. Season rule: event year (Paris 2024 = 2024).
 }
 \details{
 FIBA's terms restrict this source: the GDAP developer-portal terms limit API use to 'Authorized Users' and the fiba.basketball terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not themselves authorised by FIBA should check the terms before using the wrappers. See \code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}} for the shared notes.

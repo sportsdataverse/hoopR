@@ -17,7 +17,7 @@ clock REMAINING as the site's \code{mm:ss:00} text (a trailing \verb{:00}; \code
 the bar height (\verb{abs(diff) / maxDiff x 50}). A 2007-08 game has a flat chart (no event data then). A body without
 \code{leads} gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
    period \tab integer \tab Period number: 1-4 regulation, 5 the first overtime, 6 the second. \cr

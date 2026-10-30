@@ -67,7 +67,7 @@ A \code{hoopR_data} tibble (one row):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 One match's header (the same body as nbl_rosetta_match): status, scores, venue, season and teams.

@@ -1,9 +1,9 @@
 # easl_schema.R -- documented columns, types and wire sources of the EASL frames.
 #
-# Copied from sdv-py origin/main e3d232ebc9: `SPECS` of sportsdataverse/basketball/easl/easl_parsers.py.
+# Copied from sportsdataverse-py origin/main e3d232ebc9: `SPECS` of sportsdataverse/basketball/easl/easl_parsers.py.
 # Each entry is `column = "<wire path>|<type>"`: an empty wire path is a derived column (see
-# R/easl_parsers.R); the type is s character, i integer, n double (an sdv-py Int64 too large for an
-# R integer), f double, b logical, d Date. Change the columns in sdv-py first, then copy them here.
+# R/easl_parsers.R); the type is s character, i integer, n double (an sportsdataverse-py Int64 too large for an
+# R integer), f double, b logical, d Date. Change the columns in sportsdataverse-py first, then copy them here.
 
 #' @noRd
 .easl_specs <- list(

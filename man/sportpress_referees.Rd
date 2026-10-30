@@ -8,7 +8,7 @@ sportpress_referees()
 }
 \value{
 A \code{hoopR_data} tibble: Referees of the league (staff title 2). An empty valid answer raises \code{hoopR_no_data}; the
-columns are always these, in this order (sdv-py \code{sportpress_referees}):\tabular{lll}{
+columns are always these, in this order (sportsdataverse-py \code{sportpress_referees}):\tabular{lll}{
    col_name \tab type \tab description \cr
    staff_id \tab integer \tab Staff member id (key space: sportpress staff); the referees are title 2. \cr
    name \tab character \tab Referee name 'First Last' (free text). \cr

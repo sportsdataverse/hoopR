@@ -1,6 +1,6 @@
 # sportality_runtime.R -- transport, season mapping and answer checks of the Basketligaen wrappers.
 #
-# R mirror of sdv-py sportsdataverse/basketball/dbl/sportality_runtime.py (origin/main e3d232e).
+# R mirror of sportsdataverse-py sportsdataverse/basketball/dbl/sportality_runtime.py (origin/main e3d232e).
 # Basketligaen (Denmark) runs on the Sportality platform; the stats are `genius-basketball`, a
 # relay of Genius Sports LiveStats. The API is keyless JSON:
 #
@@ -514,7 +514,7 @@
   }
 }
 
-#' Refuse an unusable answer (sdv-py `_check`).
+#' Refuse an unusable answer (sportsdataverse-py `_check`).
 #' @noRd
 .sportality_check <- function(url, route, raw, query, ssgt, call) {
   where <- .intl_where(url)
@@ -604,7 +604,7 @@
 # Argument checks (before any request)
 # ---------------------------------------------------------------------------
 
-#' The stats-info modules (sdv-py `sportality_stats_info` choices).
+#' The stats-info modules (sportsdataverse-py `sportality_stats_info` choices).
 #' @noRd
 .SPORTALITY_MODULES <- c(
   "games_games", "players_defensive", "players_fieldGoal", "players_foul", "players_offensive", "players_point",
@@ -613,7 +613,7 @@
   "teams_summary"
 )
 
-#' `x` must be one of `choices` (sdv-py raises ValueError).
+#' `x` must be one of `choices` (sportsdataverse-py raises ValueError).
 #' @noRd
 .sportality_check_choice <- function(x, choices, arg, call = rlang::caller_env()) {
   if (!.sportality_is_str(x) || !x %in% choices) {
@@ -634,7 +634,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Exported helpers (sdv-py sportality_runtime)
+# Exported helpers (sportsdataverse-py sportality_runtime)
 # ---------------------------------------------------------------------------
 
 #' @title
@@ -678,7 +678,7 @@ sportality_ssgt_uuid <- function(season, game_type = "regular") {
 #' @param game_type (default `"regular"`) Game type: `regular` (the league season) or `finals` (the
 #'   playoffs, Slutspil).
 #' @return
-#' A `hoopR_data` tibble, one row per player. sdv-py documents no fixed schema for this frame: the
+#' A `hoopR_data` tibble, one row per player. sportsdataverse-py documents no fixed schema for this frame: the
 #'   columns after the first two are the fields the `players` map carries (the 2025/26 map is shown);
 #'   birth dates are dropped.
 #'

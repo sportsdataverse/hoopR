@@ -23,7 +23,7 @@ is the season-wide round index (regular season 1-18, later phases continue the c
 \code{Home-Away} pairing label. The stat columns are the box-score stats (\code{minutes} is \code{mm:ss}); the three \verb{pts_*}
 columns are null here (the game log has no such columns).
 Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr

@@ -31,7 +31,7 @@ echo it.}
 }
 \value{
 A \code{hoopR_data} tibble: Top five players per requested statistic (long frame, one row per statistic and leader).
-An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{cebl_player_leaders}):\tabular{lll}{
    col_name \tab type \tab description \cr
    statistic \tab character \tab Statistic this leader row ranks, the body's key for the list: POINTS, REBOUNDS, ASSISTS, TARGET_SCORES and the other names the request asked for. \cr

@@ -13,7 +13,7 @@ cba_schedule_month(year, month)
 }
 \value{
 A \code{hoopR_data} tibble: One row per day with games: date and game count. An empty valid answer is a zero-row
-tibble with these columns, in this order (sdv-py \code{cba_schedule_month}):\tabular{lll}{
+tibble with these columns, in this order (sportsdataverse-py \code{cba_schedule_month}):\tabular{lll}{
    col_name \tab type \tab description \cr
    schedule_num \tab integer \tab Number of games scheduled on that day (0 = none). \cr
    schedule_time \tab character \tab The day as 'YYYY-MM-DD 00:00:00' (China local time, no zone); one row per calendar day of the month. \cr

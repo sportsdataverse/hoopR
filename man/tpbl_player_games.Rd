@@ -17,7 +17,7 @@ unknown id answers HTTP 500, which is not retried.}
 }
 \value{
 A \code{hoopR_data} tibble: A player's game log in one division: one row per game played, with that game's whole stat
-line. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+line. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{tpbl_player_games}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab TPBL player id (key space: TPBL players; one per person across seasons and teams): the \code{{player_id}} of the player routes. Not the GoHoops person id and not the roster id. \cr

@@ -12,7 +12,7 @@ across seasons.}
 }
 \value{
 A \code{hoopR_data} tibble: The coaches and officials of a finished game (names and roles only). The columns are always
-these, in this order (sdv-py \code{vtb_infobasket_game_staff}); an empty valid answer raises \code{hoopR_no_data}, a valid
+these, in this order (sportsdataverse-py \code{vtb_infobasket_game_staff}); an empty valid answer raises \code{hoopR_no_data}, a valid
 body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr

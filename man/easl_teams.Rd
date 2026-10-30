@@ -8,7 +8,7 @@ easl_teams()
 }
 \value{
 A \code{hoopR_data} tibble: The 12 ACTIVE EASL teams (historical teams resolve only through easl_team). An empty answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{easl_teams}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{easl_teams}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_row_id \tab integer \tab The sync server's own integer row id of the team (not a DataCore id; inactive teams interleave, so ids of /teams rows have gaps). \cr
    team_id \tab character \tab teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as \code{entityId}; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. \cr

@@ -11,7 +11,7 @@ sportpress_game_overview(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: Team totals of both sides of a finished game. An empty valid answer raises \code{hoopR_no_data};
-the columns are always these, in this order (sdv-py \code{sportpress_game_overview}):\tabular{lll}{
+the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_overview}):\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab Game id the overview was asked for (the body does not echo it). \cr
    team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr

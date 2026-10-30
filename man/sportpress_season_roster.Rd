@@ -11,7 +11,7 @@ sportpress_season_roster(season)
 }
 \value{
 A \code{hoopR_data} tibble: Every roster entry of a season: player, team, jersey, height, weight and position. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{sportpress_season_roster}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year the roster was asked for. \cr

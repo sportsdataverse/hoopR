@@ -12,7 +12,7 @@ easl_players, the box scores, leaders and play-by-play. A malformed id is \code{
 }
 \value{
 A \code{hoopR_data} tibble: One player's biography: names, nationality, birth date, height, weight. An empty answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{easl_player}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{easl_player}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_row_id \tab integer \tab The sync server's own integer row id of the player (not a DataCore id). \cr
    player_id \tab character \tab playerId: DataCore person UUID v1 (key space: EASL persons, the same id as the box score's \code{personId}; joins /players, leaders and play-by-play players). Not a team id. \cr

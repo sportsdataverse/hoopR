@@ -13,7 +13,7 @@ preseason, regular season, playoffs, postseason challenge, finals; 8, 9, 11, 12,
 }
 \value{
 A \code{hoopR_data} tibble: League table of one division: rank, record, games behind and streak. An empty answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{tpbl_standings}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_standings}):\tabular{lll}{
    col_name \tab type \tab description \cr
    division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
    rank \tab integer \tab Rank in the division, 1-based. \cr

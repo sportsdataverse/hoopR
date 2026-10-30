@@ -1,9 +1,9 @@
 # kzs_runtime.R -- transport for the KZS wrappers (Basketball Federation of Slovenia, api.kzs.si/api/v1/public).
 #
-# R mirror of sdv-py sportsdataverse/basketball/kzs/kzs_runtime.py (origin/main e3d232ebc9):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/kzs/kzs_runtime.py (origin/main e3d232ebc9):
 #
 # * Throttle and retries: `.intl_get()` (>= 1 s per host on every attempt, dependency requests included). No key,
-#   no proxy. HTTP 500 is retried (`retry_500 = TRUE`, the family's sdv-py policy).
+#   no proxy. HTTP 500 is retried (`retry_500 = TRUE`, the family's sportsdataverse-py policy).
 # * Every answer is an envelope `{"status": "OK", "data": ...}`. `.kzs_get()` returns `data`: an object gets the
 #   request stamped under `_request` (competition_id, match_id, team_id, player_id, season_id, season,
 #   stats_category), which the parsers read; a bare list (playingDays) is wrapped as `list(items = <list>)`.
@@ -48,7 +48,7 @@
 # for the session. Only a successful, final answer is cached.
 .kzs_cache <- new.env(parent = emptyenv())
 
-#' Forget the cached dependency bodies (sdv-py `kzs_runtime.clear_cache`).
+#' Forget the cached dependency bodies (sportsdataverse-py `kzs_runtime.clear_cache`).
 #' @noRd
 .kzs_clear_cache <- function() rm(list = ls(.kzs_cache, all.names = TRUE), envir = .kzs_cache)
 
@@ -63,7 +63,7 @@
 #' @noRd
 .kzs_rows <- function(x) if (.kzs_is_array(x)) Filter(.kzs_is_dict, x) else list()
 
-#' sdv-py `_same`: type-strict equality of a JSON scalar (`true` never passes for id 1, nor `579.0` for 579).
+#' sportsdataverse-py `_same`: type-strict equality of a JSON scalar (`true` never passes for id 1, nor `579.0` for 579).
 #' @noRd
 .kzs_same <- function(got, want) {
   !is.null(got) && !is.null(want) && is.atomic(got) && length(got) == 1L && length(want) == 1L &&
@@ -94,7 +94,7 @@
 #' @noRd
 .kzs_lt <- function(a, b) !identical(a, b) && order(c(a, b), method = "radix")[[1]] == 1L
 
-#' `host/path` of a URL with the path ids replaced by their names (sdv-py `where` labels).
+#' `host/path` of a URL with the path ids replaced by their names (sportsdataverse-py `where` labels).
 #' @noRd
 .kzs_where <- function(route) paste0("api.kzs.si", route)
 
@@ -102,7 +102,7 @@
 # Arguments
 # ---------------------------------------------------------------------------
 
-#' An integer id: a whole non-negative number or a digit string (sdv-py `_int_param` / the path pattern `\d+`).
+#' An integer id: a whole non-negative number or a digit string (sportsdataverse-py `_int_param` / the path pattern `\d+`).
 #' @noRd
 .kzs_int_arg <- function(x, what, call = rlang::caller_env()) {
   ok <- length(x) == 1L && !is.logical(x) && !is.na(x) &&
@@ -115,7 +115,7 @@
   as.integer(trimws(as.character(x)))
 }
 
-#' The opaque KZS season id of an END year (sdv-py `season_id`): 2027 -> 27.
+#' The opaque KZS season id of an END year (sportsdataverse-py `season_id`): 2027 -> 27.
 #' @noRd
 .kzs_season_id <- function(season, call = rlang::caller_env()) {
   ok <- length(season) == 1L && !is.logical(season) && !is.na(season) &&
@@ -156,7 +156,7 @@
 # Transport
 # ---------------------------------------------------------------------------
 
-#' GET a KZS URL and unwrap the `{status, data}` envelope (sdv-py `_fetch`).
+#' GET a KZS URL and unwrap the `{status, data}` envelope (sportsdataverse-py `_fetch`).
 #' @noRd
 .kzs_fetch <- function(url, query = list(), call = rlang::caller_env()) {
   where <- .intl_where(url)
@@ -491,7 +491,7 @@
 # The getter
 # ---------------------------------------------------------------------------
 
-#' The request stamp the parsers read (sdv-py `_context`).
+#' The request stamp the parsers read (sportsdataverse-py `_context`).
 #' @noRd
 .kzs_context <- function(ids, query) {
   ctx <- as.list(ids)

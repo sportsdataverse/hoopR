@@ -12,7 +12,7 @@ tpbl_game(game_id)
 }
 \value{
 A \code{hoopR_data} tibble: Header of one finished game: teams with scores, venue, status, quarters, tip-off,
-attendance and links. the columns are always these, in this order (sdv-py \code{tpbl_game}):\tabular{lll}{
+attendance and links. the columns are always these, in this order (sportsdataverse-py \code{tpbl_game}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. \cr
    season_id \tab integer \tab TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the \code{{season_id}} of the season game list and, equal to it, the \code{{event_id}} of \verb{/events/\{event_id\}/*}. Not the GoHoops season id. Null when the body was parsed without the request stamp. \cr

@@ -19,7 +19,7 @@ with \code{lkl_game_info}. \code{time} is the Lithuanian local tip-off \code{HH:
 the page shows in bold. Played games only; the unplayed schedule is not wrapped. A record without games gives a
 zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab Results season id (key space: lkl.lt championships; LKL 2026-27 = 49436). From 2016-17 it is the Genius LiveStats competition id (leagueId 110). \cr
    season_end_year \tab integer \tab Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. \cr

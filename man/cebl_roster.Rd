@@ -15,7 +15,7 @@ BlackJacks).}
 }
 \value{
 A \code{hoopR_data} tibble: One team's roster in one season: player, nationality, birth date, position and jersey. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{cebl_roster}):\tabular{lll}{
+empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_roster}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season of the roster asked for (from the request; the body does not echo it). \cr
    team_id \tab integer \tab CEBL team id of the roster asked for (from the request; the body does not echo it). \cr

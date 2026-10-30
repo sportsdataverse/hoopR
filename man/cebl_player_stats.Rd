@@ -30,7 +30,7 @@ echo it.}
 \value{
 A \code{hoopR_data} tibble: Player statistic table (totals or per game) for a season or all-time; filter by
 competition, segment or team. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in
-this order (sdv-py \code{cebl_player_stats}):\tabular{lll}{
+this order (sportsdataverse-py \code{cebl_player_stats}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. \cr
    mode \tab character \tab Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. \cr

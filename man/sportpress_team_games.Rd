@@ -12,7 +12,7 @@ sportpress_team_games(competition_team_id)
 }
 \value{
 A \code{hoopR_data} tibble: Every finished game of a competition team with that team's totals. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{sportpress_team_games}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_games}):\tabular{lll}{
    col_name \tab type \tab description \cr
    competition_team_id \tab integer \tab Competition-team id the games were asked for (the team the totals belong to). \cr
    game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr

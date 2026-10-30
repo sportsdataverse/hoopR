@@ -12,7 +12,7 @@ season.}
 }
 \value{
 A \code{hoopR_data} tibble: Players of one team-season with bio, number and role. The columns are always these, in
-this order (sdv-py \code{lba_roster}); a column the site adds later is appended after them:\tabular{lll}{
+this order (sportsdataverse-py \code{lba_roster}); a column the site adds later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
    club_id \tab integer \tab Club id: the cross-season join key for team ids (only here and in the \code{team} headers); stability across seasons is unverified. \cr

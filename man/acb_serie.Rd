@@ -14,7 +14,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_serie}):\tabular{lll}{
+(sportsdataverse-py \code{acb_serie}):\tabular{lll}{
    col_name \tab type \tab description \cr
    requested_match_id \tab integer \tab The match asked for (any game of the series); every row of the series repeats it. \cr
    phase_id \tab integer \tab Phase id of the series (111 = Play Off Titulo). \cr

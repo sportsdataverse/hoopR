@@ -2,9 +2,9 @@
 .feb_game_info_details <- c(
   "The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda",
   "FEB and Liga Femenina Endesa (plus the federation's other groups on the same",
-  "routes). They mirror sdv-py's `sportsdataverse.basketball.feb` wrappers of",
+  "routes). They mirror sportsdataverse-py's `sportsdataverse.basketball.feb` wrappers of",
   "the same names: same arguments, the same snake_case columns and types, one",
-  "row per sdv-py row.",
+  "row per sportsdataverse-py row.",
   "",
   "**Legal notice.** The FEB's aviso legal (legal notice) asserts",
   "intellectual-property rights over the site's content and its databases (the",

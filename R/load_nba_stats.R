@@ -7,7 +7,7 @@
 # R/load_wnba_stats.R (post-#78 dots-forwarding + update_*_db registration).
 #
 # Season convention: `seasons` here is the season's START year (e.g. `2024`
-# for the 2024-25 season) -- matching sdv-py's `load_nba_stats_*` Python
+# for the 2024-25 season) -- matching sportsdataverse-py's `load_nba_stats_*` Python
 # loaders -- NOT hoopR's ESPN-family `load_nba_*()` loaders, which key
 # directly on the END year with no offset. The published `nba_stats_*`
 # asset is keyed by the END year, so every URL below uses `seasons + 1`.
@@ -34,7 +34,7 @@ NULL
 #'   `hoopR-nba-stats-raw` and publishes csv/parquet/rds artifacts to the
 #'   `nba_stats_coaches` release tag.
 #' @param seasons A vector of 4-digit years -- the season's **START** year
-#'   (e.g. `2024` for the 2024-25 season), matching sdv-py's `load_nba_stats_*`
+#'   (e.g. `2024` for the 2024-25 season), matching sportsdataverse-py's `load_nba_stats_*`
 #'   convention (see the file-level note in `R/load_nba_stats.R`). Published
 #'   coverage floors vary by loader (1996 for most; 2007 for
 #'   [load_nba_stats_lineups()] -- see that function's own Description) and

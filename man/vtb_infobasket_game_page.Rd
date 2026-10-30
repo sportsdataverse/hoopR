@@ -12,7 +12,7 @@ across seasons.}
 }
 \value{
 A \code{hoopR_data} tibble: Thin header of a finished game (use vtb_infobasket_game for teams, box score and plays). The
-columns are always these, in this order (sdv-py \code{vtb_infobasket_game_page}); an empty valid answer raises
+columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_game_page}); an empty valid answer raises
 \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    comp_name_ru \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr

@@ -1,8 +1,8 @@
 # pleague.R -- P. LEAGUE+ (Taiwan) wrappers over pleagueofficial.com and the third-party vendor
-# api.preciser.io, at parity with sdv-py sportsdataverse/basketball/plg (origin/main e3d232e): 11 site
+# api.preciser.io, at parity with sportsdataverse-py sportsdataverse/basketball/plg (origin/main e3d232e): 11 site
 # wrappers, 7 vendor wrappers and the team crosswalk. Runtime, refusals and frames: R/pleague_utils.R.
 # Generated from tools/codegen/endpoints/pleague{,_preciser}.yaml and manual_column_descriptions.yaml of
-# that sdv-py commit (ASCII only: Chinese text is glossed as '(Chinese text)').
+# that sportsdataverse-py commit (ASCII only: Chinese text is glossed as '(Chinese text)').
 
 # The @details of every pleague topic that shares the pleague_schedule() notes (roxygen @eval .intl_details()).
 .pleague_schedule_details <- c(
@@ -12,7 +12,7 @@
   "  says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no",
   "  Allow, Disallow or Crawl-delay rule. Use for reference only, and check the terms before you republish the data.",
   "  Requests are spaced at least 1 s apart per host, retries included.",
-  "* Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a",
+  "* Access: the site sits behind Cloudflare. sportsdataverse-py fetches it with curl_cffi (Chrome TLS); this R port sends a",
   "  browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer",
   "  a request with an HTTP 403 challenge page (`hoopR_asset_fetch`). Redirects are not followed: the site answers",
   "  an unknown `gid` or a season before 2020-21 with a 302 to the home page (`hoopR_no_data`).",
@@ -53,7 +53,7 @@
 #' @return
 #' A `hoopR_data` tibble: Schedule and results of one season and stage (pre-season, regular season, playoffs or
 #'   finals): one row per game, away team first. An empty valid answer is a zero-row tibble with these columns, in
-#'   this order (sdv-py `pleague_schedule`):
+#'   this order (sportsdataverse-py `pleague_schedule`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -103,7 +103,7 @@ pleague_schedule <- function(season, stage = "regular-season") {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Header of one finished game: date, venue, both clubs with their score and the Preciser
-#'   game uuid. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   game uuid. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_game`):
 #'
 #' | col_name | type | description |
@@ -148,7 +148,7 @@ pleague_game <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Points each team scored in each quarter and overtime of one finished game. An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_periods`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_periods`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -180,7 +180,7 @@ pleague_periods <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: The referee and the two umpires printed under the header of one finished game (names
-#'   only). An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   only). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_officials`):
 #'
 #' | col_name | type | description |
@@ -211,7 +211,7 @@ pleague_officials <- function(gid) {
 #' @return
 #' A `hoopR_data` tibble: Player box score of one finished game: minutes, points, shooting splits, rebounds,
 #'   assists, plus/minus, and the ratings from 2022-23; did-not-play rows included. An empty valid answer is a
-#'   zero-row tibble with these columns, in this order (sdv-py `pleague_box_players`):
+#'   zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_box_players`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -285,7 +285,7 @@ pleague_box_players <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Team totals of one finished game: the box score's total row, home then away. An empty
-#'   valid answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_box_teams`):
+#'   valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_box_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -335,7 +335,7 @@ pleague_box_teams <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play of one finished game (2022-23 on) in game order, with shot x / y and the
-#'   clip references. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   clip references. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_pbp`):
 #'
 #' | col_name | type | description |
@@ -476,7 +476,7 @@ pleague_pbp <- function(gid) {
 #'   two digits of season). The first season is 2020-21 (`season=2021`); earlier slugs redirect.
 #' @return
 #' A `hoopR_data` tibble: Regular-season standings of one season: record, scoring averages, home / away and recent
-#'   form. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   form. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_standings`):
 #'
 #' | col_name | type | description |
@@ -524,7 +524,7 @@ pleague_standings <- function(season) {
 #' @param stage_sn Required. Stage select value of the player table: 2 = regular season, 3 = playoffs, 4 = finals.
 #' @return
 #' A `hoopR_data` tibble: Player season averages and totals of one season and stage: shooting, rebounds, assists
-#'   and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_stat_player`):
 #'
 #' | col_name | type | description |
@@ -595,7 +595,7 @@ pleague_stat_player <- function(season, stage_sn) {
 #'   `player_page_id` in pleague_stat_player, `random_id` in pleague_box_players from 2022-23 (unreliable before).
 #' @return
 #' A `hoopR_data` tibble: One player's profile: names, club, jersey, position, height, weight and birthplace. An
-#'   empty valid answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_player`):
+#'   empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_player`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -632,7 +632,7 @@ pleague_player <- function(player_page_id) {
 #'   `player_page_id` in pleague_stat_player, `random_id` in pleague_box_players from 2022-23 (unreliable before).
 #' @return
 #' A `hoopR_data` tibble: One player's season totals and per-game averages, league and East Asia Super League, with
-#'   a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_player_seasons`):
 #'
 #' | col_name | type | description |
@@ -706,7 +706,7 @@ pleague_player_seasons <- function(player_page_id) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Every field-goal attempt of one finished game with court x / y (vendor frame), zone,
-#'   style and result. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   style and result. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_preciser_shots`):
 #'
 #' | col_name | type | description |
@@ -756,7 +756,7 @@ pleague_preciser_shots <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Post-game team comparison of one finished game: totals, situational points, lead tracker
-#'   and top performer. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   and top performer. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_preciser_summary_teams`):
 #'
 #' | col_name | type | description |
@@ -810,7 +810,7 @@ pleague_preciser_summary_teams <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Scoring log of one finished game (scoring events only, with the running score). An empty
-#'   valid answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_preciser_score_log`):
+#'   valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_score_log`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -843,7 +843,7 @@ pleague_preciser_score_log <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Score at each minute mark of one finished game, with the score difference (the lead
-#'   tracker). An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   tracker). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_preciser_lead_flow`):
 #'
 #' | col_name | type | description |
@@ -878,7 +878,7 @@ pleague_preciser_lead_flow <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: The vendor's home-team win probability by minute for one finished game. An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_preciser_win_probability`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_win_probability`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -906,7 +906,7 @@ pleague_preciser_win_probability <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: On-court stints of every player of one finished game (the rotation chart). An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_preciser_rotation`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_rotation`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -943,7 +943,7 @@ pleague_preciser_rotation <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Injury report of one finished game: one row per team. An empty valid answer is a zero-row
-#'   tibble with these columns, in this order (sdv-py `pleague_preciser_injury`):
+#'   tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_injury`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -971,7 +971,7 @@ pleague_preciser_injury <- function(uuid, gid = NULL) {
 #'   `away_team_uuid` of the `pleague_preciser_*()` frames). Persons need no table: the Preciser `person_id` is the
 #'   site box row's `person_id`. A constant table: no request is made.
 #' @return
-#' A `hoopR_data` tibble of eight rows (sdv-py `pleague_team_crosswalk`):
+#' A `hoopR_data` tibble of eight rows (sportsdataverse-py `pleague_team_crosswalk`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

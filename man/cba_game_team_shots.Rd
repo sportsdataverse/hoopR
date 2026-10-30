@@ -12,7 +12,7 @@ cba_game_team_shots(schedule_id)
 }
 \value{
 A \code{hoopR_data} tibble: One row per team (and averages); a team-season table, not game data. An empty valid answer
-is a zero-row tibble with these columns, in this order (sdv-py \code{cba_game_team_shots}):\tabular{lll}{
+is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_game_team_shots}):\tabular{lll}{
    col_name \tab type \tab description \cr
    bout_no_points_sort \tab double \tab Unobserved: null in every sample (numeric value behind (Chinese text) points allowed per 100 possessions). Typed Float64 like the family's other routes. \cr
    bout_point_sort \tab double \tab Unobserved: null in every sample (numeric value behind (Chinese text) points per 100 possessions). Typed Float64 like the family's other routes. \cr

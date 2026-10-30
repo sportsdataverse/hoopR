@@ -12,7 +12,7 @@ Directory: \verb{/statistics-v2/layout-info} \verb{seasonSeriesGameTypeTeams[].s
 }
 \value{
 A \code{hoopR_data} tibble: Standings of an ssgt (gameday widget). An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sdv-py \code{sportality_standings}), then any column the API
+the documented columns come first, in this order (sportsdataverse-py \code{sportality_standings}), then any column the API
 added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. \cr

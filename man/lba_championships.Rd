@@ -11,7 +11,7 @@ lba_championships(season = NULL)
 }
 \value{
 A \code{hoopR_data} tibble: Championships of a season, one per phase (Regular Season, Play Off); every season when
-none is given. The columns are always these, in this order (sdv-py \code{lba_championships}); a column the site adds
+none is given. The columns are always these, in this order (sportsdataverse-py \code{lba_championships}); a column the site adds
 later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr

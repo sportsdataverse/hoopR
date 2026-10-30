@@ -12,7 +12,7 @@ id.}
 }
 \value{
 A \code{hoopR_data} tibble: Player profile: names, year of birth, nationality and positions. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_player}):\tabular{lll}{
+raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_player}):\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
    identification_number \tab integer \tab Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. \cr

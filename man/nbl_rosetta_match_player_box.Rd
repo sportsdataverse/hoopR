@@ -63,7 +63,7 @@ A \code{hoopR_data} tibble (one row per player line):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 One match's official player box score, one row per player line (period 0 = whole game).
