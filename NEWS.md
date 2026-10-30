@@ -1534,7 +1534,7 @@ This update is a non-user facing change to package dependencies to shrink the li
 To reflect that the package is no longer just a men's college basketball and KenPom package, but also an NBA package.
 
 ### **Clean names and team returns**
-- All functions have now been given the [```janitor::clean_names()```](https://rdrr.io/cran/janitor/man/clean_names.html) treatment
+- All functions have now been given the ```janitor::clean_names()``` treatment
 - [```hoopR::espn_mbb_teams()```](https://hoopr.sportsdataverse.org/reference/espn_mbb_teams.html) has updated the returns to be more identity information related only
 - [```hoopR::espn_nba_teams()```](https://hoopr.sportsdataverse.org/reference/espn_nba_teams.html) to be more identity information related only
 - All tests were updated
