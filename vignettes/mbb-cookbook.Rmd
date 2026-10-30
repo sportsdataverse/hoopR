@@ -314,10 +314,10 @@ where the data lived, you named the league, you named the thing from
 general to specific, and you let the singular/plural rule and the
 shared stems carry you the rest of the way.
 
-The women's game runs on `wehoop`, a sibling package with the exact
+The women's game runs on [`wehoop`](https://wehoop.sportsdataverse.org/), a sibling package with the exact
 same grammar. `espn_mbb_team_roster` has a mirror image in
 `espn_wbb_team_roster`; everything you just learned crosses straight
-over. That's the WBB cookbook.
+over. That's the [WBB cookbook](https://wehoop.sportsdataverse.org/articles/wbb-cookbook.html).
 
 # **Our Authors**
 -   [Saiem Gilani](https://x.com/saiemgilani)

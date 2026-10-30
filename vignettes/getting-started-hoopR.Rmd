@@ -14,13 +14,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
-
-pkg_name <- "sportsdataverse/hoopR"
-url <- paste0("https://raw.githubusercontent.com/", pkg_name, "/main/DESCRIPTION")
-
-
-x <- readLines(url)
-remote_version <- gsub("Version:\\s*", "", x[grep('Version:', x)])
 ```
 
 Welcome folks,
@@ -49,37 +42,32 @@ if (!requireNamespace('pak', quietly = TRUE)){
 }
 pak::pak("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
-pak::pak(c("dplyr", "zoo", "ggimage", "gt"))
+pak::pak("dplyr")
 library(dplyr)
-library(zoo)
-library(ggimage)
-library(gt)
 ```
 
 ### **The Data**
 
-There are generally speaking **six** men's basketball data sources accessed from this package:
+```{r export_counts, include = FALSE}
+exports <- getNamespaceExports("hoopR")
+n_fn <- function(prefix) sum(startsWith(exports, prefix))
+```
 
--   [`hoopR-data` repo](https://github.com/sportsdataverse/hoopR-data) [![X Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=x&style=for-the-badge)](https://x.com/sportsdataverse)
--   [NBA Stats and Data API](https://stats.nba.com)
--   [NBA G-League Stats and Data API](https://stats.nba.com)
--   ESPN
--   [KenPom](https://kenpom.com) (Requires subscription access)
--   [NCAA](https://ncaa.com)
+`hoopR` version `r packageVersion("hoopR")` exports `r length(exports)` functions. The function name tells you the data source:
 
-#### **Function names indicate the data source**
+-   `load_*()` and `update_*()` functions read the pre-built play-by-play, box score, schedule and model data that the SportsDataverse publishes on the [`sportsdataverse-data` releases](https://github.com/sportsdataverse/sportsdataverse-data/releases) (`r n_fn("load_")` loaders, including `load_nba_stats_*()` for the NBA Stats API data and `load_ncaa_mbb_*()` for the NCAA data).
 
--   Functions that use the [`hoopR-data` repository](https://github.com/sportsdataverse/hoopR-data) will contain `load_` or `update_` in the function name and would be considered loading functions for the play-by-play data, team box scores, and player box scores.
+-   `nba_*()` functions use the NBA Stats API and other NBA.com sources (`r n_fn("nba_")` functions).
 
--   Functions that use the NBA Stats API start with `nba_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 127 functions covering the NBA Stats API
+-   `nbagl_*()` functions cover the NBA G League (`r n_fn("nbagl_")` functions).
 
--   Functions that use the NBA G-League Stats API start with `nbagl_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 4 functions covering the NBA G-League Stats API
+-   `espn_*()` functions use ESPN's APIs for live and historical game data: `r n_fn("espn_mbb_")` for men's college basketball and `r n_fn("espn_nba_")` for the NBA.
 
--   Functions that use one of ESPN's APIs start with `espn_` by convention and should be assumed as `get` functions. These functions allow for live access to game data for both men's college basketball and the NBA. As of `hoopR` version `r remote_version`, the package exports 10 functions covering the men's college basketball endpoints and 10 for the NBA.
+-   `kp_*()` functions read Ken Pomeroy's college basketball website, [KenPom.com](https://kenpom.com), for users with an active subscription (`r n_fn("kp_")` functions).
 
--   Functions that use Ken Pomeroy's college basketball website start with `kp_` by convention and should be assumed as `get` functions. These functions allow users with an active subscription to get access to the data in a tidy format. As of `hoopR` version `r remote_version`, the package exports 36 functions covering the [KenPom.com](https://kenpom.com).
+-   `cbbd_*()`, `torvik_*()` and `ncaa_mbb_*()` functions cover CollegeBasketballData, Bart Torvik and the NCAA (`r n_fn("cbbd_")`, `r n_fn("torvik_")` and `r n_fn("ncaa_mbb_")` functions); `bref_*()`, `realgm_*()` and `fox_*()` cover Basketball-Reference, RealGM and Fox Sports.
 
--   Functions that use the NCAA website start with `ncaa_` by convention and should be assumed as `get` functions. As of `hoopR` version `r remote_version`, the package exports 1 function(s) covering the NCAA website, namely the function to access current NET rankings.
+-   `euroleague_*()` functions cover the EuroLeague and EuroCup, and families such as `fiba_*()`, `acb_*()`, `lba_*()`, `vtb_*()`, `bleague_*()`, `nbl_rosetta_*()`, `kbl_*()` and `cba_*()` cover about two dozen international leagues and competitions. The [function reference](https://hoopR.sportsdataverse.org/reference/) lists every family.
 
 ## **Quick Start**
 
@@ -185,7 +173,8 @@ BibTeX Citation
 ```bibtex
 @misc{hoopr,
   author = {Saiem Gilani},
-  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  title = {hoopR: Access Men's Basketball Play by Play Data},
+  doi = {10.32614/CRAN.package.hoopR},
   url = {https://hoopR.sportsdataverse.org/},
   year = {2026}
 }
@@ -199,6 +188,7 @@ BibTeX Citation
 -   [**baseballr**](https://baseballr.sportsdataverse.org/) - baseball
 -   [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
 -   [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
--   [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+-   [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces (2.4.5 on CRAN: NBA, NCAA and FIBA courts for plotting shot locations)
+-   [**sdvplotR**](https://sdvplotR.sportsdataverse.org/) - team logos and colours for `ggplot2`, and shot charts from the `hoopR` shot loaders (0.3.0, `pak::pak("sportsdataverse/sdvplotR")`; see its [NBA](https://sdvplotR.sportsdataverse.org/articles/nba-viz.html), [men's college](https://sdvplotR.sportsdataverse.org/articles/mbb-viz.html) and [shot chart](https://sdvplotR.sportsdataverse.org/articles/cookbook-surfaces-shot-charts.html) articles)
 -   [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python package
 -   [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R meta-package

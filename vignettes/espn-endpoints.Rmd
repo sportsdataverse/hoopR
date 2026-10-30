@@ -434,7 +434,7 @@ nba_s2025 <- espn_nba_season_info(season = 2025)
 
 The post-3.0.0 release adds another ~73 ESPN core-v2 wrappers to
 `espn_nba_*` + `espn_mbb_*`, bringing the total ESPN basketball surface
-in `hoopR` to **199 functions**. Everything here is shimmed over an
+in `hoopR` to **200 functions**. Everything here is shimmed over an
 internal `.espn_basketball_*` helper so NBA and MBB share parsing logic
 and bug fixes propagate to both leagues at once.
 
