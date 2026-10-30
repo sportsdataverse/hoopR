@@ -61,8 +61,27 @@ jobs:
           pak::pkg_install("hadley/emo")
           pak::pkg_install("r-lib/pkgapi")
         shell: Rscript {0}
-      - name: Deploy package
+      - name: Build site
+        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+        shell: Rscript {0}
+      # pkgdown renders every top-level and .github/*.md file; the agent and
+      # contributor-tooling notes are not user documentation, so drop their
+      # pages (and .md copies) and their sitemap / llms.txt entries.
+      - name: Keep contributor and agent notes off the site
         run: |
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          Rscript -e 'pkgdown::deploy_to_branch(new_process = FALSE)'
+          for page in CLAUDE copilot-instructions PULL_REQUEST_TEMPLATE; do
+            rm -f "docs/$page.html" "docs/$page.md"
+          done
+          perl -0pi -e 's{\s*<url>\s*<loc>[^<]*/(?:CLAUDE|copilot-instructions|PULL_REQUEST_TEMPLATE)\.html</loc>\s*</url>}{}g' docs/sitemap.xml
+          if [ -f docs/llms.txt ]; then
+            perl -ni -e 'print unless /(?:CLAUDE|copilot-instructions|PULL_REQUEST_TEMPLATE)\.(?:html|md)/' docs/llms.txt
+          fi
+          ! grep -E 'CLAUDE|copilot-instructions|PULL_REQUEST_TEMPLATE' docs/sitemap.xml
+      # clean: true replaces the whole branch with the fresh build, which also
+      # removes the pages earlier builds published.
+      - name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          clean: true
+          branch: gh-pages
+          folder: docs

@@ -1,6 +1,7 @@
 url: https://hoopR.sportsdataverse.org/
 # pkgdown renders every top-level and .github/*.md file as a page; keep the
-# contributor/agent notes out of the search index so results stay on-topic.
+# contributor/agent notes out of the search index (the pkgdown workflow also
+# deletes their pages and sitemap entries before deploying).
 search:
   exclude:
   - CLAUDE.html
