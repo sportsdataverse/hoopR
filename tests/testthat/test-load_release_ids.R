@@ -65,7 +65,10 @@ test_that("loader floors match the first season each release publishes", {
 
 test_that("pbp play ids are exact character strings when arrow is installed", {
   skip_if_not_installed("arrow")
-  base <- paste0("file:///", normalizePath(.fx("play_by_play_2025"), winslash = "/", mustWork = FALSE))
+  # normalize the (existing) directory: on Unix normalizePath() leaves a missing
+  # path relative, and the extensionless base name does not exist
+  dir <- normalizePath(testthat::test_path("fixtures", "release_ids"), winslash = "/")
+  base <- paste0(if (startsWith(dir, "/")) "file://" else "file:///", dir, "/play_by_play_2025")
   pbp <- pbp_from_url(base, "ESPN MBB pbp from hoopR data repository")
 
   expect_type(pbp$id, "character")
