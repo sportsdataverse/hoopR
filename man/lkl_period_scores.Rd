@@ -15,7 +15,7 @@ A \code{hoopR_data} tibble. One row per team and period (home first, periods asc
 scored IN the period, not cumulative. \code{period} 1-4 is regulation (\code{period_type} \code{regular}); 5 is the first overtime,
 6 the second (\code{overtime}). A body without period scores gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
    team_id \tab integer \tab lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. \cr
@@ -33,8 +33,8 @@ Endpoint: \verb{GET https://lkl.lt/api/livestream/boxscore/\{game_id\}}
 \details{
 Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets.
+requests at least 1 s apart. The site's terms were not reviewed; check them before you
+republish the data.
 
 Coverage: game wrappers serve FINISHED games only (an unfinished game raises \code{hoopR_asset_fetch}). The box score,
 summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

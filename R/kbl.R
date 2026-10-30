@@ -1,7 +1,7 @@
 # kbl.R -- KBL (Korean Basketball League) wrappers over api.kbl.or.kr, the data API behind www.kbl.or.kr,
-# at parity with sdv-py sportsdataverse/basketball/kbl (origin/main e3d232ebc9). Transport, scope checks and
+# at parity with sportsdataverse-py sportsdataverse/basketball/kbl (origin/main e3d232ebc9). Transport, scope checks and
 # refusals: R/kbl_runtime.R; frames: R/kbl_parsers.R; columns and code tables: R/kbl_tables.R.
-# WKBL (the women's league) is out of scope by owner ruling.
+# WKBL (the women's league) is not covered.
 
 # The @details of every kbl topic that shares the kbl_seasons() notes (roxygen @eval .intl_details()).
 .kbl_seasons_details <- c(
@@ -10,10 +10,10 @@
   "  TeamCode; the runtime sends WEB and XX). www.kbl.or.kr/robots.txt returns the SPA's HTML and",
   "  api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or Crawl-delay is published (checked 2026-10-12); the",
   "  site's terms (/terms/list) were not reviewed for data reuse. The runtime waits at least 1 s before every request,",
-  "  retries included. Payloads are not redistributed as release assets.",
+  "  retries included.",
   "* Not wrapped: the site's /record/* and `/player/player/{pcode}` pages are rendered by the sports2i widget from two",
   "  other hosts (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors, clutch, hustle, shot dashboards,",
-  "  all-time leaders) and need their own intake. WKBL (the women's league) is out of scope by owner ruling.",
+  "  all-time leaders). WKBL (the women's league) is not covered.",
   "* Seasons are END years (2026 = 2025-26). KBL numbers seasons AND D-League (reserve league) editions with one",
   "  sequential seasonCode; division picks 'kbl' or 'd_league' and game_code the competition inside the season, and",
   "  the wrapper sends the API's glkey. The playoff routes take the REGULAR-SEASON key; the old route serves",
@@ -49,7 +49,7 @@
 #' Endpoint: `GET https://api.kbl.or.kr/season/list`
 #' @return
 #' A `hoopR_data` tibble: Every KBL regular season (1997 to the next one) with its competition key and date range,
-#'   newest first. The columns are always these, in this order (sdv-py `kbl_seasons`); an empty valid answer raises
+#'   newest first. The columns are always these, in this order (sportsdataverse-py `kbl_seasons`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -64,7 +64,7 @@
 #' | game_code | character | Competition type within the season: 01 regular season (the only value the list returns). |
 #' | start_date | Date | First date of the season, YYYYMMDD. |
 #' | end_date | Date | Last date of the season, YYYYMMDD. |
-#' @eval .intl_details(.kbl_seasons_details)
+#' @eval .intl_details(.kbl_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(kbl_seasons())
@@ -85,7 +85,7 @@ kbl_seasons <- function() {
 #' Endpoint: `GET https://api.kbl.or.kr/common/teamList`
 #' @return
 #' A `hoopR_data` tibble: The current ten clubs with Korean and English names and the code of each club's D-League
-#'   side. The columns are always these, in this order (sdv-py `kbl_teams`); an empty valid answer raises
+#'   side. The columns are always these, in this order (sportsdataverse-py `kbl_teams`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -96,7 +96,7 @@ kbl_seasons <- function() {
 #' | team_name_full | character | Team full name (Korean). |
 #' | team_name_en | character | Team short name in English. |
 #' | team_name_full_en | character | Team full name in English (e.g. 'CHANGWON LG SAKERS'). |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_teams())
@@ -123,7 +123,7 @@ kbl_teams <- function() {
 #' @param to_date Last date of the window, YYYYMMDD (KST), not before from_date.
 #' @return
 #' A `hoopR_data` tibble: Every game (all competitions, KBL and D-League) of a season or of a date window, with scores
-#'   and venue. The columns are always these, in this order (sdv-py `kbl_schedule`); an empty valid answer raises
+#'   and venue. The columns are always these, in this order (sportsdataverse-py `kbl_schedule`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -161,7 +161,7 @@ kbl_teams <- function() {
 #' | tv_code | character | Broadcaster code(s), comma-separated (e.g. 'T24,T25'); the site uses it instead of `tv` from seasonCode 45. |
 #' | article_id | integer | Id of the game's news article on kbl.or.kr; null when none. |
 #' | challenge_id | integer | Id of the game in KBL Challenge (the site's prediction game); null when none. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_schedule(from_date = "20251101", to_date = "20251102"))
@@ -185,7 +185,7 @@ kbl_schedule <- function(season = NULL, from_date = NULL, to_date = NULL) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Game header of a final game: teams, final score, overtimes, venue, attendance, officials and
-#'   coaches. The columns are always these, in this order (sdv-py `kbl_game`); an empty valid answer raises
+#'   coaches. The columns are always these, in this order (sportsdataverse-py `kbl_game`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -230,7 +230,7 @@ kbl_schedule <- function(season = NULL, from_date = NULL, to_date = NULL) {
 #' | away_manager | character | Away head coach's name (officials and coaches appear by name only). |
 #' | home_coaches | character | JSON list of the home assistant coaches' names (staff appear by name only). |
 #' | away_coaches | character | JSON list of the away assistant coaches' names (staff appear by name only). |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_game(gmkey = "S47G01N49"))
@@ -254,7 +254,7 @@ kbl_game <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Points by period (quarters and overtimes) and side of a final game, from the game header.
-#'   The columns are always these, in this order (sdv-py `kbl_period_scores`); an empty valid answer raises
+#'   The columns are always these, in this order (sportsdataverse-py `kbl_period_scores`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -269,7 +269,7 @@ kbl_game <- function(gmkey) {
 #' | period | integer | Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart). |
 #' | period_label | character | Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1). |
 #' | score | integer | Points the side scored in the period. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_period_scores(gmkey = "S47G01N49"))
@@ -293,7 +293,7 @@ kbl_period_scores <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play (the site's text cast) of a final game, one row per event, from 1997-98 on. The
-#'   columns are always these, in this order (sdv-py `kbl_pbp`); an empty valid answer raises `hoopR_no_data`, a valid
+#'   columns are always these, in this order (sportsdataverse-py `kbl_pbp`); an empty valid answer raises `hoopR_no_data`, a valid
 #'   body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -321,7 +321,7 @@ kbl_period_scores <- function(gmkey) {
 #' | substitution | character | English meaning of substitution_code on substitution-out rows (e.g. 106_1 = fouled out, five fouls); null otherwise. |
 #' | foul_code | character | Foul type code (the site reads an f field; no sampled row carries it): PNF personal, TCF technical, FRF unsportsmanlike, FTF fighting, PCF punching, EBF elbow. |
 #' | foul | character | English meaning of foul_code (e.g. TCF = technical foul). No sampled row carries a foul code, so this is unverified. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_pbp(gmkey = "S47G01N49"))
@@ -345,7 +345,7 @@ kbl_pbp <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Player box score of a final game with the vendor's advanced rates, one row per player of
-#'   both teams. The columns are always these, in this order (sdv-py `kbl_player_box`); an empty valid answer raises
+#'   both teams. The columns are always these, in this order (sportsdataverse-py `kbl_player_box`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -421,7 +421,7 @@ kbl_pbp <- function(gmkey) {
 #' | usg_rt | double | Usage rate: share of team possessions used while on court, 0-100. This game. |
 #' | to_ratio | double | Turnover ratio: turnovers per 100 possessions used. This game. |
 #' | minutes_played | double | Playing time in minutes (play_min + play_sec / 60), derived. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_player_box(gmkey = "S47G01N49"))
@@ -445,7 +445,7 @@ kbl_player_box <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Team box score of a final game with advanced rates and team-only counts, one row per team.
-#'   The columns are always these, in this order (sdv-py `kbl_team_box`); an empty valid answer raises
+#'   The columns are always these, in this order (sportsdataverse-py `kbl_team_box`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -518,7 +518,7 @@ kbl_player_box <- function(gmkey) {
 #' | tov_rt | double | Turnover rate: turnovers per 100 possessions, 0-100. This game, team total. |
 #' | poss | double | Possessions (estimated). This game, team total. |
 #' | minutes_played | double | Playing time in minutes (play_min + play_sec / 60), derived. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_team_box(gmkey = "S47G01N49"))
@@ -542,7 +542,7 @@ kbl_team_box <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Shot chart of a final game (2006-07 on): every charted shot with x/y pixels on the
-#'   full-court image. The columns are always these, in this order (sdv-py `kbl_shots`); an empty valid answer raises
+#'   full-court image. The columns are always these, in this order (sportsdataverse-py `kbl_shots`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -562,7 +562,7 @@ kbl_team_box <- function(gmkey) {
 #' | y | integer | Shot location y, pixels on the 726 x 412 full-court image (origin top-left, y down). |
 #' | made | logical | True when the shot went in (wire o = 'O'), False when it missed ('X'). |
 #' | basket | character | Target basket: '1' the right-hand one (x > 363), '2' the left-hand one; teams switch baskets at half-time. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_shots(gmkey = "S47G01N49"))
@@ -586,7 +586,7 @@ kbl_shots <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Lead tracker and score chart of a final game: home margin and both scores at eight
-#'   checkpoints per period. The columns are always these, in this order (sdv-py `kbl_score_track`); an empty valid
+#'   checkpoints per period. The columns are always these, in this order (sportsdataverse-py `kbl_score_track`); an empty valid
 #'   answer raises `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -622,7 +622,7 @@ kbl_score_track <- function(gmkey) {
 #'   `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Each team's leader per category (points, rebounds, assists, steals, blocks) in a final game.
-#'   The columns are always these, in this order (sdv-py `kbl_game_leaders`); an empty valid answer raises
+#'   The columns are always these, in this order (sportsdataverse-py `kbl_game_leaders`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -665,7 +665,7 @@ kbl_game_leaders <- function(gmkey) {
 #'   '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.
 #' @return
 #' A `hoopR_data` tibble: Season player totals of one competition (every player with at least one game). The columns
-#'   are always these, in this order (sdv-py `kbl_player_totals`); an empty valid answer raises `hoopR_no_data`, a
+#'   are always these, in this order (sportsdataverse-py `kbl_player_totals`); an empty valid answer raises `hoopR_no_data`, a
 #'   valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -746,7 +746,7 @@ kbl_player_totals <- function(season, division = "kbl", game_code = "01") {
 #'   '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.
 #' @return
 #' A `hoopR_data` tibble: Standings of one competition with each team's season totals. The columns are always these,
-#'   in this order (sdv-py `kbl_standings`); an empty valid answer raises `hoopR_no_data`, a valid body with no rows
+#'   in this order (sportsdataverse-py `kbl_standings`); an empty valid answer raises `hoopR_no_data`, a valid body with no rows
 #'   for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -815,7 +815,7 @@ kbl_player_totals <- function(season, division = "kbl", game_code = "01") {
 #' | foulout | integer | Players fouled out (unverified). Team season total for the competition (glkey). |
 #' | play_min | integer | Minutes of playing time; add `playSec` seconds. Team season total for the competition (glkey). |
 #' | play_sec | integer | Seconds part of the playing time (0-59), added to `playMin`. Team season total for the competition (glkey). |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_standings(season = 2025))
@@ -844,7 +844,7 @@ kbl_standings <- function(season, division = "kbl", game_code = "01") {
 #'   '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.
 #' @return
 #' A `hoopR_data` tibble: Each team's standing after every game of the season, one row per team and game. The columns
-#'   are always these, in this order (sdv-py `kbl_team_tracks`); an empty valid answer raises `hoopR_no_data`, a valid
+#'   are always these, in this order (sportsdataverse-py `kbl_team_tracks`); an empty valid answer raises `hoopR_no_data`, a valid
 #'   body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -882,7 +882,7 @@ kbl_team_tracks <- function(season, division = "kbl", game_code = "01") {
 #'   '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.
 #' @return
 #' A `hoopR_data` tibble: The season's round calendar (the KBL plays six rounds) with each round's first and last
-#'   date. The columns are always these, in this order (sdv-py `kbl_rounds`); an empty valid answer raises
+#'   date. The columns are always these, in this order (sportsdataverse-py `kbl_rounds`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -914,7 +914,7 @@ kbl_rounds <- function(season, division = "kbl", game_code = "01") {
 #'   maps it to the KBL seasonCode (47 = 2025-26).
 #' @return
 #' A `hoopR_data` tibble: The regular-season finish that seeds the playoffs (the top six). The columns are always
-#'   these, in this order (sdv-py `kbl_playoff_seeds`); an empty valid answer raises `hoopR_no_data`, a valid body
+#'   these, in this order (sportsdataverse-py `kbl_playoff_seeds`); an empty valid answer raises `hoopR_no_data`, a valid body
 #'   with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -945,7 +945,7 @@ kbl_playoff_seeds <- function(season) {
 #'   maps it to the KBL seasonCode (47 = 2025-26).
 #' @return
 #' A `hoopR_data` tibble: The playoff series (quarterfinals, semifinals, final): wins and losses of each team in each
-#'   series. The columns are always these, in this order (sdv-py `kbl_playoff_series`); an empty valid answer raises
+#'   series. The columns are always these, in this order (sportsdataverse-py `kbl_playoff_series`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -980,7 +980,7 @@ kbl_playoff_series <- function(season) {
 #'   maps it to the KBL seasonCode (47 = 2025-26).
 #' @return
 #' A `hoopR_data` tibble: The games of the playoff bracket (2024-25 on; the older bracket format lists no games). The
-#'   columns are always these, in this order (sdv-py `kbl_playoff_games`); an empty valid answer raises
+#'   columns are always these, in this order (sportsdataverse-py `kbl_playoff_games`); an empty valid answer raises
 #'   `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -1019,7 +1019,7 @@ kbl_playoff_games <- function(season) {
 #'   maps it to the KBL seasonCode (47 = 2025-26).
 #' @return
 #' A `hoopR_data` tibble: The round MVPs of a season with their totals over the round. The columns are always these,
-#'   in this order (sdv-py `kbl_round_mvps`); an empty valid answer raises `hoopR_no_data`, a valid body with no rows
+#'   in this order (sportsdataverse-py `kbl_round_mvps`); an empty valid answer raises `hoopR_no_data`, a valid body with no rows
 #'   for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -1053,7 +1053,7 @@ kbl_round_mvps <- function(season) {
 #' Endpoint: `GET https://api.kbl.or.kr/league/rank/team`
 #' @return
 #' A `hoopR_data` tibble: Current standings of the active season (no parameter): record, games behind, streaks,
-#'   splits. The columns are always these, in this order (sdv-py `kbl_current_standings`); an empty valid answer
+#'   splits. The columns are always these, in this order (sportsdataverse-py `kbl_current_standings`); an empty valid answer
 #'   raises `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -1092,7 +1092,7 @@ kbl_current_standings <- function() {
 #' Endpoint: `GET https://api.kbl.or.kr/league/season-leader`
 #' @return
 #' A `hoopR_data` tibble: Current season leaders per category (no parameter): points, rebounds, assists, steals,
-#'   blocks, shooting. The columns are always these, in this order (sdv-py `kbl_season_leaders`); an empty valid
+#'   blocks, shooting. The columns are always these, in this order (sportsdataverse-py `kbl_season_leaders`); an empty valid
 #'   answer raises `hoopR_no_data`, a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -1127,7 +1127,7 @@ kbl_season_leaders <- function() {
 #' Endpoint: `GET https://api.kbl.or.kr/players`
 #' @return
 #' A `hoopR_data` tibble: The site's player directory (current and former players) with their current or last team.
-#'   The columns are always these, in this order (sdv-py `kbl_players`); an empty valid answer raises `hoopR_no_data`,
+#'   The columns are always these, in this order (sportsdataverse-py `kbl_players`); an empty valid answer raises `hoopR_no_data`,
 #'   a valid body with no rows for this frame is a zero-row tibble:
 #'
 #' | col_name | type | description |
@@ -1142,7 +1142,7 @@ kbl_season_leaders <- function() {
 #' | pos | character | Position code (string): C center, FD forward, GD guard, FC forward-center, GF guard-forward; table in the returns md. |
 #' | player_flag | character | Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. |
 #' | last_career | character | Meaning unverified: a season-code-like number, 'A' or ''. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_players())

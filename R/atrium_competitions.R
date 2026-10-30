@@ -1,6 +1,6 @@
 # atrium_competitions.R -- the per-site aliases of the Atrium family (lnb_*, lnbp_*, ...).
 #
-# R mirror of sdv-py sportsdataverse/basketball/_competitions.py `mint_atrium()`: for
+# R mirror of sportsdataverse-py sportsdataverse/basketball/_competitions.py `mint_atrium()`: for
 # every atrium entry of .intl_basketball_competitions (this package's genders only),
 # eight thin bindings of a base wrapper to the entry's website_id:
 #   <prefix>_seasons / _schedule / _standings / _teams / _player_box / _team_box /
@@ -27,45 +27,11 @@
   shots = list(base = "atrium_shots", args = c("fixture_id", "locale"), what = "Shot chart of a game")
 )
 
-#' Source lines of the package's R/ files, read once per session (roxygen `@eval` helpers only).
-#' @noRd
-.intl_rd_src <- new.env(parent = emptyenv())
-
-#' The returns table (the `| col_name | type | description |` lines) of base wrapper `fn`'s
-#' `@return`, read from its roxygen source at document time, so an alias topic carries the base's
-#' table verbatim and is regenerated with it by the same `devtools::document()` run. Used by the
-#' `@eval` Rd generators of the atrium, fiba and genius aliases; it aborts (failing `document()`)
-#' when the base has no such table.
-#' @noRd
-.intl_base_returns_table <- function(fn) {
-  dir <- file.path(getNamespaceInfo(topenv(), "path"), "R")
-  if (is.null(.intl_rd_src[[dir]])) {
-    files <- list.files(dir, pattern = "[.][Rr]$", full.names = TRUE)
-    .intl_rd_src[[dir]] <- lapply(stats::setNames(files, files), readLines, warn = FALSE, encoding = "UTF-8")
-  }
-  for (lines in .intl_rd_src[[dir]]) {
-    def <- grep(paste0("^", fn, " <- function"), lines)
-    if (length(def) != 1L) next
-    top <- def
-    while (top > 1L && startsWith(lines[[top - 1L]], "#'")) top <- top - 1L
-    block <- sub("^#' ?", "", lines[seq_len(def - top) + top - 1L])
-    ret <- grep("^@return", block)
-    if (length(ret) != 1L) break
-    end <- c(grep("^@[A-Za-z]", block), length(block) + 1L)
-    end <- min(end[end > ret])
-    table <- grep("^[|]", block[seq_len(end - ret - 1L) + ret], value = TRUE)
-    if (length(table) >= 3L && grepl("^[|] *col_name *[|] *type *[|] *description *[|]", table[[1]])) return(table)
-    break
-  }
-  cli::cli_abort("{.fn {fn}}: no {.code | col_name | type | description |} table in its {.code @return} roxygen.",
-                 .internal = TRUE)
-}
-
-#' One alias route's returns subsection: `## <alias>()`, the base it mirrors, and the base's table.
+#' One alias route's returns line: the alias and the base wrapper whose columns it returns. The
+#' alias topic links the base's returns table instead of copying it (one copy keeps the help small).
 #' @noRd
 .intl_alias_returns <- function(alias, base) {
-  c("", paste0("## `", alias, "()`"), "", paste0("The columns of [", base, "()]:"), "",
-    .intl_base_returns_table(base))
+  paste0("* `", alias, "()`: the columns of [", base, "()].")
 }
 
 #' The atrium registry entry with `prefix`, or NULL when this package does not carry it.
@@ -124,7 +90,7 @@
            "`; ", gender, ").**"),
     "",
     paste0("Thin bindings of the parameterised `atrium_*()` wrappers to this site, minted from the competition ",
-           "registry (sdv-py `tools/codegen/basketball_competitions.yaml`); the full surface stays on the ",
+           "registry shared with sportsdataverse-py; the full surface stays on the ",
            "`atrium_*()` wrappers."),
     paste0("@usage ", usage[[1]]), usage[-1],
     "@param season (*integer* optional): Season END year (season rule below). Omit `season` and `season_id` for the site's current season.",
@@ -132,7 +98,7 @@
     "@param competition_id (*character* optional): Competition UUID (a site carries many: conferences, cups); needed when several share the season.",
     "@param locale (*character* optional): Label locale, e.g. `\"en-EN\"`; omitted = the site's own language.",
     "@param fixture_id (*character* required): Fixture UUID (`fixture_id` in the schedule).",
-    "@return A `hoopR_data` tibble with the columns of the base wrapper, one table per function:",
+    "@return A `hoopR_data` tibble with the columns of the base wrapper of each function:", "",
     unlist(lapply(names(.atrium_alias_specs), function(s) {
       .intl_alias_returns(paste0(prefix, "_", s), .atrium_alias_specs[[s]]$base)
     })),
@@ -140,7 +106,7 @@
     paste0("Season rule: ", e$season_rule, "."),
     "",
     paste0("Errors and terms of use are those of [atrium_fixtures()]: unofficial use of the public widget endpoint, ",
-           "at least 1 s between requests, not republished as release assets.",
+           "at least 1 s between requests (check the site's terms before you republish the data).",
            if (e$gender %in% c("women", "both")) " The site also serves women's competitions (pass their `competition_id`)." else ""),
     "",
     "```r",

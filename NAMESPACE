@@ -1321,8 +1321,6 @@ import(dplyr)
 import(rvest)
 import(stringr)
 import(utils)
-importFrom(Rcpp,getRcppVersion)
-importFrom(RcppParallel,defaultNumThreads)
 importFrom(cli,
   cli_abort,
   cli_inform

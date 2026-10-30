@@ -1,13 +1,13 @@
-# ibba_parsers.R -- the IBBA frames (R mirror of sdv-py ibba_parsers.py and ibba_segev_parsers.py).
+# ibba_parsers.R -- the IBBA frames (R mirror of sportsdataverse-py ibba_parsers.py and ibba_segev_parsers.py).
 #
 # ASMX (`ibba_*`): every value on the wire is a STRING; columns are pinned per route by the
 # token specs below (ported verbatim): `wire[>out]:kind`, kinds i id / count (integer), n id
 # with 0 = none, f double, s text (HTML-unescaped, "" -> NA), b boolean ('True' / '1'), d
 # dd/mm/yyyy date. Ids are integers cast once from digit strings (a non-digit string is NA,
-# never a float). `out` defaults to the rename table or sdv-py's `underscore()` of the wire name.
+# never a float). `out` defaults to the rename table or sportsdataverse-py's `underscore()` of the wire name.
 #
 # Segev (`ibba_segev_*`): ids are strings in the header and box score but integers in the
-# actions; all are cast to integer. Text is NOT unescaped there (sdv-py does not).
+# actions; all are cast to integer. Text is NOT unescaped there (sportsdataverse-py does not).
 
 #' Wire name -> output name for the names the host spells badly or inconsistently.
 #' @noRd
@@ -161,7 +161,7 @@
   x
 }
 
-#' ASMX text cells: unescaped, stripped, "" -> NA (sdv-py `_text`).
+#' ASMX text cells: unescaped, stripped, "" -> NA (sportsdataverse-py `_text`).
 #' @noRd
 .ibba_text <- function(vals) {
   s <- .ibba_strip(.ibba_unescape(.ibba_pystr(vals)))
@@ -218,7 +218,7 @@
   make_hoopR_data(dplyr::as_tibble(cols), paste0("IBBA ", what), Sys.time())
 }
 
-#' Parse ASMX rows into the route's frame (sdv-py `_parse`).
+#' Parse ASMX rows into the route's frame (sportsdataverse-py `_parse`).
 #' @noRd
 .ibba_parse <- function(short, rows) {
   tk <- .ibba_tokens(.IBBA_ROUTES[[short]][[2]])
@@ -242,7 +242,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Segev cells (sdv-py ibba_segev_parsers `_s`, `_i`, `_nz`, `_f`, `_b`)
+# Segev cells (sportsdataverse-py ibba_segev_parsers `_s`, `_i`, `_nz`, `_f`, `_b`)
 # ---------------------------------------------------------------------------
 
 #' @noRd
@@ -554,7 +554,7 @@
   .ibba_out(cols, "Segev play-by-play")
 }
 
-#' Each Segev frame's columns and R types, in order (sdv-py ibba_segev_parsers.SPECS).
+#' Each Segev frame's columns and R types, in order (sportsdataverse-py ibba_segev_parsers.SPECS).
 #' @noRd
 .IBBA_SEGEV_COUNT_TYPES <- c(stats::setNames(rep("integer", length(.IBBA_COUNT_KEYS)), unname(.IBBA_COUNT_KEYS)),
                              vps = "double", fg2a = "integer", fg3a = "integer", fta = "integer")

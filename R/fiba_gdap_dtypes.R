@@ -1,8 +1,8 @@
 # fiba_gdap_dtypes.R -- the pinned column types of every FIBA route, one ordered map per wrapper.
-# Copied from sdv-py sportsdataverse/basketball/fiba_hub/fiba_dtypes.py (written there by
+# Copied from sportsdataverse-py sportsdataverse/basketball/fiba_hub/fiba_dtypes.py (written there by
 # tools/codegen/gen_fiba.py from the full fixture bodies). Codes: i integer, f double, b logical,
-# s character. The names, in order, are the documented columns of each wrapper (sdv-py
-# _PARSER_COLUMNS). wall_time_ms is Int64 in sdv-py and "f" here: its epoch milliseconds exceed
+# s character. The names, in order, are the documented columns of each wrapper (sportsdataverse-py
+# _PARSER_COLUMNS). wall_time_ms is Int64 in sportsdataverse-py and "f" here: its epoch milliseconds exceed
 # R's 32-bit integer range.
 
 #' @noRd

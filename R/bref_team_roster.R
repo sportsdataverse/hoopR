@@ -33,7 +33,7 @@
 #' @importFrom dplyr as_tibble
 #' @family Basketball-Reference Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(bref_team_roster(team = "BOS", season = 2024))
 #' }

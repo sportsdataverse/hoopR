@@ -1,8 +1,8 @@
 # lkl.R -- the LKL `lkl_*()` family: Lietuvos krepsinio lyga (Lithuania) on lkl.lt.
 #
-# R mirror of sdv-py sportsdataverse/basketball/lkl (e3d232e): same names, arguments and columns.
-# Runtime and parsers: R/lkl_utils.R. Generated from sdv-py's endpoint YAML, parser docstrings and
-# manual_column_descriptions.yaml; edit the sdv-py sources first.
+# R mirror of sportsdataverse-py sportsdataverse/basketball/lkl (e3d232e): same names, arguments and columns.
+# Runtime and parsers: R/lkl_utils.R. Generated from sportsdataverse-py's endpoint YAML, parser docstrings and
+# manual_column_descriptions.yaml; edit the sportsdataverse-py sources first.
 
 #' @title
 #' **LKL Game Info**
@@ -19,7 +19,7 @@
 #' Videos, logos and the UI config props are dropped. An empty or unrecognised input gives a zero-row tibble with the
 #' documented columns.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -51,8 +51,8 @@
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -89,7 +89,7 @@ lkl_game_info <- function(game_id) {
 #' `slug` are the two keys: this frame is the slug -> id map for the box score, leaders and play-by-play, which carry
 #' the slug only. `jersey` is a string. An empty or unrecognised input gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -104,8 +104,8 @@ lkl_game_info <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -145,7 +145,7 @@ lkl_game_players <- function(game_id) {
 #' runtime stamps (null on a body without the stamp). `seconds_played` is the `mm:ss` minutes in seconds. Team total
 #' rows are in `lkl_team_box`. A body without players gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -189,8 +189,8 @@ lkl_game_players <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -229,7 +229,7 @@ lkl_player_box <- function(game_id) {
 #' `points_off_turnovers`, `fast_break_points`, `second_chance_points` and `points_in_paint` are 0 before 2024-25 (not
 #' tracked). Per-period points are in `lkl_period_scores`. A body without `gameStatistics` gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -275,8 +275,8 @@ lkl_player_box <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -313,7 +313,7 @@ lkl_team_box <- function(game_id) {
 #' scored IN the period, not cumulative. `period` 1-4 is regulation (`period_type` `regular`); 5 is the first overtime,
 #' 6 the second (`overtime`). A body without period scores gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -327,8 +327,8 @@ lkl_team_box <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -369,7 +369,7 @@ lkl_period_scores <- function(game_id) {
 #' them). The summary also repeats `gameStatistics` (use `lkl_team_box`), four leader categories (use `lkl_leaders`)
 #' and a broadcasts HTML string, which is not parsed. A body without a comparison gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -389,8 +389,8 @@ lkl_period_scores <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -427,7 +427,7 @@ lkl_summary <- function(game_id) {
 #' game keeps `'1 KELINYS - 10:00'` after the final, and a finished overtime game reads `'1 pratesimas - 00:00'`. A
 #' body without scores gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -439,8 +439,8 @@ lkl_summary <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -478,7 +478,7 @@ lkl_game_score <- function(game_id) {
 #' bar groups; it is null for the rest. A 2007-08 game has only a few lines and a flat lead chart (no event data then).
 #' A body without a comparison gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -498,8 +498,8 @@ lkl_game_score <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -538,7 +538,7 @@ lkl_game_stats <- function(game_id) {
 #' the bar height (`abs(diff) / maxDiff x 50`). A 2007-08 game has a flat chart (no event data then). A body without
 #' `leads` gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -553,8 +553,8 @@ lkl_game_stats <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -593,7 +593,7 @@ lkl_lead_chart <- function(game_id) {
 #' and `player_id` is resolved through the game roster the runtime stamps (null on a body without the stamp). A body
 #' without leaders gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -611,8 +611,8 @@ lkl_lead_chart <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -655,7 +655,7 @@ lkl_leaders <- function(game_id) {
 #' game roster the runtime stamps. The site charts play-by-play from 2024-25 on. A body without plays gives a zero-row
 #' tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -681,8 +681,8 @@ lkl_leaders <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -724,7 +724,7 @@ lkl_pbp <- function(game_id) {
 #' `player_slug` is the reverse lookup through the runtime's roster (null on a body without the stamp). The site charts
 #' shots from 2024-25 on. A body without shots gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -746,8 +746,8 @@ lkl_pbp <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -788,7 +788,7 @@ lkl_shots <- function(game_id) {
 #' the page shows in bold. Played games only; the unplayed schedule is not wrapped. A record without games gives a
 #' zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -813,8 +813,8 @@ lkl_shots <- function(game_id) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
@@ -856,7 +856,7 @@ lkl_results <- function(season) {
 #' (oldest first, unverified). `season_id` is the site's standings-season id, a different key space from the results
 #' id. Team slugs join `lkl_results`. A record without tables gives a zero-row tibble.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -878,8 +878,8 @@ lkl_results <- function(season) {
 #' @details
 #' Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 #' its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-#' requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-#' release assets.
+#' requests at least 1 s apart. The site's terms were not reviewed; check them before you
+#' republish the data.
 #'
 #' Coverage: game wrappers serve FINISHED games only (an unfinished game raises `hoopR_asset_fetch`). The box score,
 #' summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

@@ -140,8 +140,8 @@ type is an assumption.
 }
 \details{
 The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror
-sdv-py's \code{sportsdataverse.basketball.bleague} wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py row.
+sportsdataverse-py's \code{sportsdataverse.basketball.bleague} wrappers of the same names: same
+arguments, the same snake_case columns and types, one row per sportsdataverse-py row.
 
 \strong{Unofficial and unsupported.} The game contexts are JSON objects in
 B.LEAGUE's own public S3 bucket (\code{b-league.s3.amazonaws.com}, the store its game
@@ -149,8 +149,8 @@ pages read), and the schedule, standings and game_detail pages of
 \code{www.bleague.jp} are parsed here. Neither host publishes terms for this use
 (the site's /terms/ answers 404; robots.txt sets a Crawl-delay only for msnbot
 and bingbot). Requests are spaced at least one second apart per host; 429 and
-5xx answers are retried (three attempts). SportsDataverse has not ruled on the
-site's terms, so the data is not redistributed as release assets.
+5xx answers are retried (three attempts). The site's terms were
+not reviewed; check them before you republish the data.
 
 \strong{Seasons} are END years (\code{season = 2026} is 2025-26); the site's own \code{Year} /
 \verb{year=} is the START year, so the request sends \code{year = season - 1}. Game

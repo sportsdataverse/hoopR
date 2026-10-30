@@ -8,7 +8,7 @@ easl_health()
 }
 \value{
 A \code{hoopR_data} tibble: Liveness probe of the unofficial sync server: status, message and the server's own
-timestamp. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+timestamp. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_health}):\tabular{lll}{
    col_name \tab type \tab description \cr
    status \tab character \tab Server status: 'OK'. \cr

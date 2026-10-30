@@ -83,7 +83,7 @@ nba_team_logo_url <- function(team_id, variant = "primary") {
 #' @importFrom dplyr as_tibble tibble
 #' @family NBA Dictionary Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(nba_player_dict())
 #' }
@@ -159,7 +159,7 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 2
 #' @importFrom dplyr as_tibble distinct left_join
 #' @family NBA Dictionary Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(nba_team_dict())
 #' }

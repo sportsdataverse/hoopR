@@ -32,7 +32,7 @@ A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE})
    hosts \tab character \tab Host countries with their cities. Stored as a JSON string. \cr
    competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
    competition_code \tab character \tab Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). \cr
-   season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. \cr
+   season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). \cr
    official_name \tab character \tab Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). \cr
    start \tab character \tab First day, YYYY-MM-DD. \cr
    end \tab character \tab Last day, YYYY-MM-DD. \cr
@@ -66,27 +66,7 @@ Every edition of a competition family between two seasons.
 Endpoint: \verb{GET https://digital-api.fiba.basketball/hapi/getgdapcompetitionsbyseasonsandcompetitionmarketingname}
 }
 \details{
-FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'
-(federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball
-terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed
-both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.
-Users who are not themselves authorised by FIBA should check the terms before using the wrappers.
-
-The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the
-live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of
-birth are dropped from every body.
-
-Id key spaces: competition_id is one per edition (2023 World Cup = 208182) and game_id is global across
-competitions (the \verb{<gameId>} of a game-page URL). team_id is per team per competition (Germany is 279569 at
-the 2023 World Cup and 281545 at Paris 2024), while organisation_id is the stable federation or club (64 =
-Germany, every year); the game page's T_\verb{<id>} and the play-by-play oId are organisation ids, not team ids.
-
-Errors are classed conditions (all inherit \code{hoopR_error}): \code{hoopR_no_data} when FIBA has nothing (HTTP 404,
-or GDAP answers \code{{}} / \verb{[]} for an unknown id); \code{hoopR_bad_request} for HTTP 400 / 422 or a malformed id,
-season or date; \code{hoopR_asset_fetch} for any other failed fetch or an answer that is not about the request (an
-error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
-federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
-competitions, the event year for national-team events, the target tournament year for qualifiers.
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}}.
 }
 \examples{
 \donttest{

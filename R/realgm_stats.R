@@ -12,7 +12,7 @@
 #' **RealGM NBA Player Stats**
 #' @description
 #' **Get season player statistics leaders from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' Returns the qualified-player leaderboard for a season, statistic family and
 #' season segment. RealGM exposes basic box-score averages as well as advanced
@@ -85,7 +85,7 @@ realgm_player_stats <- function(season = most_recent_nba_season(),
 #' @title
 #' **RealGM NBA Team Stats**
 #' @description
-#' **Get season team statistics from [RealGM](https://basketball.realgm.com).**
+#' **Get season team statistics from RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @param season Season (the year the season ends, e.g. `2026`). Defaults to
@@ -141,7 +141,7 @@ realgm_team_stats <- function(season = most_recent_nba_season(),
 #' **RealGM NBA Best Individual Seasons**
 #' @description
 #' **Get the all-time best individual NBA seasons leaderboard from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per player-season (`player`,
@@ -184,7 +184,7 @@ realgm_individual_seasons <- function() {
 #' **RealGM NBA Best Individual Games**
 #' @description
 #' **Get the all-time best individual NBA games leaderboard from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per player-game (`player`, `date`,
@@ -227,7 +227,7 @@ realgm_individual_games <- function() {
 #' **RealGM NBA Draft Prospect Stats**
 #' @description
 #' **Get current NBA draft-prospect statistics from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per prospect (`player`, `team`

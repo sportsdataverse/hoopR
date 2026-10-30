@@ -12,7 +12,7 @@ A \code{hoopR_data} tibble with one row per player-season (\code{player},
 }
 \description{
 \strong{Get the all-time best individual NBA seasons leaderboard from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }

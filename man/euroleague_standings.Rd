@@ -23,7 +23,7 @@ standings are as of this round.}
 
 \item{kind}{(\emph{character} default \code{"basicstandings"}): Standings table, one
 of \code{"basicstandings"}, \code{"calendarstandings"}, \code{"streaks"} or
-\code{"aheadbehind"}, matched exactly (no prefixes, as in sdv-py); the columns
+\code{"aheadbehind"}, matched exactly (no prefixes, as in sportsdataverse-py); the columns
 depend on it (see Returns).}
 }
 \value{
@@ -62,7 +62,7 @@ A \code{hoopR_data} tibble with one row per team. The columns depend on
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{\code{kind = "calendarstandings"}} (the \code{streaks} cell is JSON text: semantically
-equal to sdv-py's, not byte-equal -- separators and unicode escaping differ)
+equal to sportsdataverse-py's, not byte-equal -- separators and unicode escaping differ)
 
 \if{html}{\tabular{lll}{
       col_name \tab types \tab description \cr
@@ -160,12 +160,12 @@ number the table should be as of (the \code{round} column of
 }
 \details{
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors its sdv-py twin of the same name: same arguments, defaults
-and snake_case columns, one row per sdv-py row.
+wraps it. This
+function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+and snake_case columns, one row per sportsdataverse-py row.
 
 A failed request raises a classed condition instead of returning an empty
-frame, mirroring sdv-py's error vocabulary: a 404 is \code{hoopR_no_data}, a
+frame, mirroring sportsdataverse-py's error vocabulary: a 404 is \code{hoopR_no_data}, a
 400 / 422 is \code{hoopR_invalid_request}, any other failure (another status, a
 transport error, a non-JSON body) is \code{hoopR_fetch_error}; all three inherit
 \code{hoopR_error}.

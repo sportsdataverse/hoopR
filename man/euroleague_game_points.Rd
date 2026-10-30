@@ -55,9 +55,9 @@ timestamp. Team A is the home side as measured on one game.
 }
 \details{
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors sdv-py's \code{euroleague_game_points()}: same arguments,
-defaults and snake_case columns, one row per sdv-py row.
+wraps it. This
+function mirrors sportsdataverse-py's \code{euroleague_game_points()}: same arguments,
+defaults and snake_case columns, one row per sportsdataverse-py row.
 
 \strong{Coordinate frame}, as measured in the reference capture (E2025 game 1,
 158 rows; U2025 game 1, 176 rows):

@@ -32,9 +32,11 @@ instead, which is maintained and carries the same player / team / status /
 note fields.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(bref_injuries())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Basketball-Reference Functions:

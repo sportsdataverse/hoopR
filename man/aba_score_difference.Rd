@@ -21,7 +21,7 @@ A \code{hoopR_data} tibble.
 One row per minute with the cumulative \code{home_score} / \code{away_score}, as :func:\code{parse_aba_score_flow}; for a
 played game the two routes carry the same rows.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
@@ -42,7 +42,7 @@ Endpoint: \verb{GET https://www.aba-liga.com/live-match/rezultati-1718/create_sc
 }
 \details{
 Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+druga.aba-liga.com), keyless, with no bot wall.
 www.aba-liga.com/robots.txt is the single line \verb{User-agent: *} (nothing disallowed, no Crawl-delay) and druga has
 no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 

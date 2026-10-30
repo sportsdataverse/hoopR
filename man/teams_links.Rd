@@ -4,17 +4,20 @@
 \name{teams_links}
 \alias{teams_links}
 \title{\strong{Men's College Basketball KenPom Teams Dictionary}
-Team link KenPom reference lookup for the package}
+KenPom team and conference names with their KenPom page links, one row per
+team-season. The KenPom team functions validate \code{team} against \code{Team}; they
+build the page link from the name itself, so they also work for seasons this
+table does not list yet.}
 \format{
-A data frame with 357 rows and 6 variables:\tabular{ll}{
+A data frame with 8,679 rows (one per team-season, 2002-2026) and 7 variables:\tabular{ll}{
    col_name \tab description \cr
-   \code{Team} \tab character. \cr
-   \code{Team.link} \tab character. \cr
-   \code{team.link.ref} \tab character. \cr
-   \code{Year} \tab double. \cr
-   \code{Conf} \tab character. \cr
-   \code{Conf.link} \tab character. \cr
-   \code{conf.link.ref} \tab character. \cr
+   \code{Team} \tab character. Team name as KenPom prints it (the \code{team} argument of the KenPom team functions). \cr
+   \code{Team.link} \tab character. Relative KenPom team page link, \verb{team.php?team=<team.link.ref>}. \cr
+   \code{team.link.ref} \tab character. URL-encoded team name used in the link (\code{+} for spaces). \cr
+   \code{Conf} \tab character. Conference abbreviation that season (the \code{conf} argument of the KenPom conference functions). \cr
+   \code{Conf.link} \tab character. Relative KenPom conference page link, \verb{conf.php?c=<conf.link.ref>}. \cr
+   \code{conf.link.ref} \tab character. Conference code used in the link. \cr
+   \code{Year} \tab integer. KenPom season (END year: 2026 = 2025-26). \cr
 }
 }
 \usage{
@@ -22,6 +25,9 @@ teams_links
 }
 \description{
 \strong{Men's College Basketball KenPom Teams Dictionary}
-Team link KenPom reference lookup for the package
+KenPom team and conference names with their KenPom page links, one row per
+team-season. The KenPom team functions validate \code{team} against \code{Team}; they
+build the page link from the name itself, so they also work for seasons this
+table does not list yet.
 }
 \keyword{datasets}

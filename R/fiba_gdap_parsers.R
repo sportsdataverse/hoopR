@@ -1,6 +1,6 @@
 # fiba_gdap_parsers.R -- body -> rows shapers of the fiba_gdap_* wrappers.
 #
-# R mirror of sdv-py sportsdataverse/basketball/fiba_hub/fiba_gdap_parsers.py (not exported: the
+# R mirror of sportsdataverse-py sportsdataverse/basketball/fiba_hub/fiba_gdap_parsers.py (not exported: the
 # parse_* functions are not ported). A route is parsed by the shaper that fits its body:
 #   * a list body is its rows (schedules, teams, awards, national teams, medal table, editions);
 #   * an object body is one row (a game header, a competition, a player's season line);
@@ -11,7 +11,7 @@
 # organisation_id the stable federation or club, game_id global, competition_id one per edition.
 # Percentages are 0-100.
 
-#' The object rows of a list body, or of the one list an envelope object holds (sdv-py `_list_rows`).
+#' The object rows of a list body, or of the one list an envelope object holds (sportsdataverse-py `_list_rows`).
 #' @noRd
 .fiba_list_rows <- function(raw) {
   if (.fiba_is_obj(raw)) {
@@ -23,7 +23,7 @@
   if (.fiba_is_arr(raw)) Filter(.fiba_is_obj, raw) else list()
 }
 
-#' The object rows of a body (sdv-py `fiba_frames._rows`): a list is its objects, an object with
+#' The object rows of a body (sportsdataverse-py `fiba_frames._rows`): a list is its objects, an object with
 #' one list key (and only scalars beside it) is that list, any other non-empty object is one row.
 #' @noRd
 .fiba_rows <- function(raw) {
@@ -40,7 +40,7 @@
 }
 
 #' An id as integer: an integer, a digit string or a `P_123` / `T_64` key; otherwise `NULL`
-#' (sdv-py `fiba_frames._id`: a float is never an id, a logical is not an integer).
+#' (sportsdataverse-py `fiba_frames._id`: a float is never an id, a logical is not an integer).
 #' @noRd
 .fiba_id <- function(value) {
   if (is.null(value) || length(value) != 1L || is.na(value) || is.logical(value)) return(NULL)
@@ -53,7 +53,7 @@
   NULL
 }
 
-#' Rows of each route's body, keyed by route (sdv-py `_sh_*`).
+#' Rows of each route's body, keyed by route (sportsdataverse-py `_sh_*`).
 #' @noRd
 .fiba_gdap_shapers <- list(
   flat = function(raw) lapply(.fiba_list_rows(.fiba_scrub(raw)), .fiba_row),

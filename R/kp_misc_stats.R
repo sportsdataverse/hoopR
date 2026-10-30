@@ -35,7 +35,7 @@
 #' @keywords Trends
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_trends())
 #' }
@@ -119,7 +119,7 @@ kp_trends <- function() {
 #' @keywords Refs
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_officials(year = 2021))
 #' }
@@ -214,7 +214,7 @@ kp_officials <- function(year = most_recent_mbb_season()) {
 #' @keywords Refs
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_referee(referee = 714363, year = 2021))
 #' }
@@ -313,7 +313,7 @@ kp_referee <- function(referee, year) {
 #' @keywords HCA
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_hca())
 #' }
@@ -394,7 +394,7 @@ kp_hca <- function() {
 #' @keywords Arenas
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_arenas(year = 2021))
 #' }
@@ -480,7 +480,7 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
 #' @keywords Game
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_game_attrs(year = 2021, attr = "Excitement"))
 #' }
@@ -584,7 +584,7 @@ kp_game_attrs <- function(
 #' @keywords FanMatch
 #' @family KP Misc. Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #' try(kp_fanmatch(date = "2022-02-22"))
 #' }

@@ -117,9 +117,7 @@ fanmatch <- kp_fanmatch(date = "2020-03-10")
 -   [Jason Lee](https://x.com/theFirmAISports)
 <a href='https://x.com/theFirmAISports' target='blank'><img src='https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge' alt='@theFirmAISports'/></a>
 <a href='https://github.com/papagorgio23' target='blank'><img src='https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@papagorgio23'/></a>
--   [Billy Fryer](https://x.com/BillyFryer42)
-<a href='https://x.com/BillyFryer42' target='blank'><img src='https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge' alt='@BillyFryer42'/></a>
-<a href='https://github.com/billyfryer' target='blank'><img src='https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@billyfryer'/></a>
+-   Billy Fryer
 -   [Ross Drucker](https://x.com/rossdrucker9)
 <a href='https://x.com/rossdrucker9' target='blank'><img src='https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge' alt='@rossdrucker9'/></a>
 <a href='https://github.com/rossdrucker' target='blank'><img src='https://img.shields.io/github/followers/rossdrucker?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@rossdrucker'/></a>

@@ -1,13 +1,13 @@
 # kzs_parsers.R -- frames of the KZS wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/kzs/kzs_parsers.py (origin/main e3d232ebc9). Each route has its own
+# R mirror of sportsdataverse-py sportsdataverse/basketball/kzs/kzs_parsers.py (origin/main e3d232ebc9). Each route has its own
 # shaper; inside it, nested objects flatten into `<parent>_<child>` columns (names through `.intl_clean_names()`, the
-# port of sdv-py `dl_utils.underscore`) and lists become JSON strings written as Python's `json.dumps` writes them.
+# port of sportsdataverse-py `dl_utils.underscore`) and lists become JSON strings written as Python's `json.dumps` writes them.
 # Personal and bulky sub-trees are dropped, not flattened (`.KZS_DROP`): contact details (the API serves officials'
 # and coaches' e-mails, phones and home towns publicly), club postal addresses and personnel, the commissioner's
 # report, delegation changes, move requests, conclusions and streams. A wire `id` is renamed for what it identifies.
 #
-# Types follow sdv-py's frame: a column's type comes from its values (integer, double, logical, character), every
+# Types follow sportsdataverse-py's frame: a column's type comes from its values (integer, double, logical, character), every
 # `*_id` / `id` column is an integer when that is lossless, and the returns schema (`.kzs_dtypes`, R/kzs_schema.R)
 # types an all-null column and widens a whole-number rate to double. The documented columns come first, in the
 # documented order; a missing one is added as typed NAs; an empty body is a zero-row tibble with those columns.
@@ -25,7 +25,7 @@
 # Scalars and JSON text
 # ---------------------------------------------------------------------------
 
-#' sdv-py `_int`: a JSON integer, else NA (a float, a string or a logical is not one).
+#' sportsdataverse-py `_int`: a JSON integer, else NA (a float, a string or a logical is not one).
 #' @noRd
 .kzs_int <- function(v) if (is.integer(v) && length(v) == 1L) v else NA_integer_
 
@@ -101,7 +101,7 @@
   .kzs_py_string(enc2utf8(as.character(x)))
 }
 
-#' sdv-py `_json`: the JSON text of a value, NA for null / absent.
+#' sportsdataverse-py `_json`: the JSON text of a value, NA for null / absent.
 #' @noRd
 .kzs_json <- function(v) if (is.null(v)) NA_character_ else .kzs_dumps(v)
 
@@ -203,7 +203,7 @@
   if (code == "i" && all(is.na(x) | abs(x) <= .Machine$integer.max)) as.integer(x) else x
 }
 
-#' The frame of `parser` from flat rows: values typed as sdv-py's frame, the documented columns first.
+#' The frame of `parser` from flat rows: values typed as sportsdataverse-py's frame, the documented columns first.
 #' @noRd
 .kzs_frame <- function(rows, parser) {
   schema <- .kzs_dtypes[[parser]]
@@ -232,7 +232,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Shapers, one per route (sdv-py parse_kzs_*)
+# Shapers, one per route (sportsdataverse-py parse_kzs_*)
 # ---------------------------------------------------------------------------
 
 #' @noRd

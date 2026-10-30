@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble with one row per player:
 }
 \description{
 \strong{Get the list of NBA-affiliated players currently playing overseas from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 RealGM tracks NBA draft picks, two-way and free-agent players who are on
 international rosters -- a view no first-party NBA/ESPN endpoint provides.

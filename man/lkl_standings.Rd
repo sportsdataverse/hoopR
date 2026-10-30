@@ -20,7 +20,7 @@ is a signed integer as the site prints it; its sign convention is unverified. \c
 (oldest first, unverified). \code{season_id} is the site's standings-season id, a different key space from the results
 id. Team slugs join \code{lkl_results}. A record without tables gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab STANDINGS season id (a separate small key space: 35 = 2026-27, 1 = 2016-17, 24 = 1993-94); NOT the results season id. \cr
    season_end_year \tab integer \tab Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. \cr
@@ -46,8 +46,8 @@ Endpoint: \verb{GET https://lkl.lt/loadStandings/\{season\}}
 \details{
 Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets.
+requests at least 1 s apart. The site's terms were not reviewed; check them before you
+republish the data.
 
 Coverage: game wrappers serve FINISHED games only (an unfinished game raises \code{hoopR_asset_fetch}). The box score,
 summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

@@ -1,6 +1,6 @@
 # tbf.R -- the TBF `tbf_*()` family: Turkish Basketball Federation app API (BSL, TBL, KBSL).
 #
-# R mirror of sdv-py sportsdataverse/basketball/tbf (e3d232e): same names, arguments, defaults
+# R mirror of sportsdataverse-py sportsdataverse/basketball/tbf (e3d232e): same names, arguments, defaults
 # and columns. Runtime and parsers: R/tbf_utils.R.
 
 #' @title
@@ -11,7 +11,7 @@
 #' Endpoint: `GET https://miniappapi.tbf.org.tr/webapi-service/api/Season/get-seasons`
 #' @return A `hoopR_data` tibble. One row per season, newest first. `season` is the END year of the label (2026-2027 -> 2027); `international` marks the odd `UA-` seasons.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -25,8 +25,8 @@
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -66,7 +66,7 @@ tbf_seasons <- function() {
 #' A year the list lacks raises `hoopR_no_data`.
 #' @return A `hoopR_data` tibble. One row per league: BSL, TBL, KBSL, TKBL, TB2L and the youth leagues with their `activity_id`.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -83,8 +83,8 @@ tbf_seasons <- function() {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -123,7 +123,7 @@ tbf_leagues <- function(season) {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per season of the league, newest first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -138,8 +138,8 @@ tbf_leagues <- function(season) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -182,7 +182,7 @@ tbf_league_seasons <- function(competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per week in play order; `week` is the value the schedule and standings take.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -198,8 +198,8 @@ tbf_league_seasons <- function(competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -244,7 +244,7 @@ tbf_weeks <- function(season, competition = "bsl") {
 #' (31-33 in 2025-26). Default: the latest week for standings, every week for the schedule.
 #' @return A `hoopR_data` tibble. One row per team and group. Tie-break detail rows (`tiedRows`) are not included.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -270,8 +270,8 @@ tbf_weeks <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -316,7 +316,7 @@ tbf_standings <- function(season, competition = "bsl", week = NULL) {
 #' (31-33 in 2025-26). Default: the latest week for standings, every week for the schedule.
 #' @return A `hoopR_data` tibble. One row per game. Scores are null before the game; `status_id` 1 = played, 4 = not played, 19 = no date yet.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -349,8 +349,8 @@ tbf_standings <- function(season, competition = "bsl", week = NULL) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -396,7 +396,7 @@ tbf_schedule <- function(season, competition = "bsl", week = NULL) {
 #' competition.
 #' @return A `hoopR_data` tibble. One row per game with its `group_name` (the competition group the app shows).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -431,8 +431,8 @@ tbf_schedule <- function(season, competition = "bsl", week = NULL) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -472,7 +472,7 @@ tbf_daily_matches <- function(match_date, season = NULL, competition = NULL) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -507,8 +507,8 @@ tbf_daily_matches <- function(match_date, season = NULL, competition = NULL) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -547,7 +547,7 @@ tbf_game_header <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per rostered player. The header carries no usable player id; join on name + shirt number + side.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -562,8 +562,8 @@ tbf_game_header <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -602,7 +602,7 @@ tbf_game_players <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per player who is on the sheet; `is_starter` marks the starting five (none flagged in 2006-07).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -643,8 +643,8 @@ tbf_game_players <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -683,7 +683,7 @@ tbf_player_box <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. Two rows: home, then away. Minutes are the players' summed seconds.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -724,8 +724,8 @@ tbf_player_box <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -765,7 +765,7 @@ tbf_team_box <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per event. Games before 2025-26 raise `hoopR_no_data`. The feed has no player id.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -786,8 +786,8 @@ tbf_team_box <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -826,7 +826,7 @@ tbf_pbp <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per attempt. `x` and `y` are percentages of a horizontal full court.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -844,8 +844,8 @@ tbf_pbp <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -884,7 +884,7 @@ tbf_shots <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per side and period (home first).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -897,8 +897,8 @@ tbf_shots <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -937,7 +937,7 @@ tbf_period_scores <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per statistic with the home and away value.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -952,8 +952,8 @@ tbf_period_scores <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -992,7 +992,7 @@ tbf_highlights <- function(match_id) {
 #' sequence across leagues and seasons. Only a finished game is served.
 #' @return A `hoopR_data` tibble. One row per leader, best first within a category.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1009,8 +1009,8 @@ tbf_highlights <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1052,7 +1052,7 @@ tbf_game_leaders <- function(match_id) {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per registered player. Birth dates are not returned.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1071,8 +1071,8 @@ tbf_game_leaders <- function(match_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1111,7 +1111,7 @@ tbf_players <- function(season, competition = "bsl") {
 #' @param player_id Required. TBF person id, e.g. 196413; person_id in [tbf_players()] and the box score.
 #' @return A `hoopR_data` tibble. One row per career season and competition. Totals and averages rows are not included.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1149,8 +1149,8 @@ tbf_players <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1192,7 +1192,7 @@ tbf_player_career <- function(player_id) {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per team registration.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1209,8 +1209,8 @@ tbf_player_career <- function(player_id) {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1256,7 +1256,7 @@ tbf_teams <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per player.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1304,8 +1304,8 @@ tbf_teams <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1351,7 +1351,7 @@ tbf_team_player_stats <- function(season, team_process_id, competition = "bsl") 
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per game of the team (scheduled games included).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1380,8 +1380,8 @@ tbf_team_player_stats <- function(season, team_process_id, competition = "bsl") 
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1427,7 +1427,7 @@ tbf_team_games <- function(season, team_process_id, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per rostered person. Birth dates are not returned.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1448,8 +1448,8 @@ tbf_team_games <- function(season, team_process_id, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1495,7 +1495,7 @@ tbf_team_roster <- function(season, team_process_id, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. One row per staff member.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1511,8 +1511,8 @@ tbf_team_roster <- function(season, team_process_id, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1555,7 +1555,7 @@ tbf_team_staff <- function(season, team_process_id, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1574,8 +1574,8 @@ tbf_team_staff <- function(season, team_process_id, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1618,7 +1618,7 @@ tbf_leaders_points <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1637,8 +1637,8 @@ tbf_leaders_points <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1681,7 +1681,7 @@ tbf_leaders_assists <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1700,8 +1700,8 @@ tbf_leaders_assists <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1744,7 +1744,7 @@ tbf_leaders_blocks <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1763,8 +1763,8 @@ tbf_leaders_blocks <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1807,7 +1807,7 @@ tbf_leaders_rebounds <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1826,8 +1826,8 @@ tbf_leaders_rebounds <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1870,7 +1870,7 @@ tbf_leaders_steals <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1889,8 +1889,8 @@ tbf_leaders_steals <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1934,7 +1934,7 @@ tbf_leaders_minutes <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -1953,8 +1953,8 @@ tbf_leaders_minutes <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -1997,7 +1997,7 @@ tbf_leaders_threes <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -2016,8 +2016,8 @@ tbf_leaders_threes <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'
@@ -2060,7 +2060,7 @@ tbf_leaders_turnovers <- function(season, competition = "bsl") {
 #' The top flight was named TBL until 2007-08 and is listed under bsl.
 #' @return A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`), best first.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer
-#'   with nothing in it raises `hoopR_no_data`, as in sdv-py.
+#'   with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -2079,8 +2079,8 @@ tbf_leaders_turnovers <- function(season, competition = "bsl") {
 #' @details
 #' Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 #' mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-#' not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+#' robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+#' terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 #' (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 #' followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 #'

@@ -43,7 +43,7 @@
 #' @importFrom dplyr as_tibble rename any_of
 #' @family Basketball-Reference Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(bref_player_game_log(player_id = "jokicni01", season = 2024))
 #' }

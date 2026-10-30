@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per season:
 }
 \description{
 \strong{Get the NBA salary-cap history (and projections) from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 One row per season with the cap, luxury-tax line, both aprons, bi-annual
 exception and the mid-level exception tiers. Dollar figures are returned as

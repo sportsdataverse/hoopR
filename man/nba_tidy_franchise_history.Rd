@@ -19,9 +19,11 @@ One tidy franchise timeline. \code{\link[=nba_franchisehistory]{nba_franchisehis
 so this row-binds them (tactic \strong{B}) and tags each row \code{active} / \code{defunct}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_tidy_franchise_history())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Combined Datasets:

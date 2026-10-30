@@ -76,7 +76,7 @@
 #' @keywords Team History
 #' @family KenPom Historical Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_team_history(team = 'Florida St.'))
 #'   }
@@ -97,8 +97,7 @@ kp_team_history <- function(team){
       if (!(team %in% hoopR::teams_links$Team)) {
         cli::cli_abort( "Incorrect team name as compared to the website, see hoopR::teams_links for team name parameter specifications.")
       }
-      teams_links <- hoopR::teams_links[hoopR::teams_links$Year == as.integer(format(Sys.Date(), "%Y")),]
-      team_name = teams_links$team.link.ref[teams_links$Team == team]
+      team_name <- .kp_team_slug(team)
 
       ### Pull Data
       url <- paste0("https://kenpom.com/history.php?",
@@ -381,7 +380,7 @@ kp_team_history <- function(team){
 #' @keywords Coach History
 #' @family KenPom Historical Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'    try(kp_coach_history(coach = 'Leonard Hamilton'))
 #'   }
@@ -628,7 +627,7 @@ kp_coach_history <- function(coach){
 #' @export
 #' @keywords Program Ratings
 #' @family KenPom Historical Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(kp_program_ratings())
 #' }
@@ -728,7 +727,7 @@ kp_program_ratings <- function(){
 #' @export
 #' @keywords Ratings Archive
 #' @family KenPom Historical Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 #' }
@@ -940,7 +939,7 @@ kp_pomeroy_archive_ratings <- function(date){
 #' @export
 #' @keywords Conference Stats
 #' @family KenPom Historical Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'     try(kp_conf(year = 2020, conf = 'ACC'))
 #' }
@@ -1140,7 +1139,7 @@ kp_conf <- function(year, conf){
 #' @keywords Conference Comparison
 #' @family KenPom Historical Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(kp_confstats(year=most_recent_mbb_season()))
 #' }
@@ -1261,7 +1260,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' @keywords Conference History
 #' @family KenPom Historical Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(kp_confhistory(conf = 'ACC'))
 #' }

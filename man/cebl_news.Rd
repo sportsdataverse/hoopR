@@ -14,7 +14,7 @@ cebl_news(language, team_source_id = NULL)
 \value{
 A \code{hoopR_data} tibble: News articles in one language. The API answered an empty list on every probe, so this
 raises \code{hoopR_no_data}. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this
-order (sdv-py \code{cebl_news}):\tabular{lll}{
+order (sportsdataverse-py \code{cebl_news}):\tabular{lll}{
    col_name \tab type \tab description \cr
    news_id \tab integer \tab CEBL news article id; null when the API gives none. Unobserved: the route answered an empty list on every probe. \cr
    language \tab character \tab Language code of the request ('en'); the body does not echo it. \cr
@@ -30,34 +30,7 @@ News articles in one language. The API answered an empty list on every probe, so
 Endpoint: \verb{GET https://api.data.cebl.ca/news/articles/\{language\}/}
 }
 \details{
-\itemize{
-\item CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
-the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.
-The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not
-reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never
-prints it, and raises \code{hoopR_asset_fetch} with a 'key rotated?' hint on a persistent 401.
-www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced
-at least 1 s apart.
-\item Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An
-unknown season, team or player answers an empty list, which the runtime raises as \code{hoopR_no_data}. Ids are
-CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).
-\item This API has no box-score, play-by-play or shot route. They live in Genius LiveStats (organisation CEBL, see
-the genius family): cebl_games and cebl_player_gamelog carry the Genius match id as genius_match_id, parsed
-from the stats URLs (derived, not fetched; the match of a cancelled game may have no data). home_team_id is
-Genius team 1 and away_team_id team 2 (checked on match 2600563).
-\item Some completed schedule rows have null scores (2026), and a cancelled game has status CANELLED (the API's
-spelling) with null or zero scores. The schedule lists unplayed games too, so no wrapper refuses an unfinished
-game. Aggregates are decimal strings upstream and double here. Players' names, nationality and birth date are
-the public bio; no contact data is served.
-\item Errors are classed conditions: \code{hoopR_no_data} (HTTP 404, an empty list, an all-null profile: an unknown
-season, team or player), \code{hoopR_bad_request} (a bad argument, HTTP 400 / 422) and \code{hoopR_asset_fetch} (a key
-the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for
-another season, team or player), all inheriting \code{hoopR_error}. HTTP 500 is the API's answer to a bad id and is
-not retried. Wrappers raise; they never return an empty frame.
-\item Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
-JSON here (\code{{"name":"TSN"}}), where sdv-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
-No string column of the committed fixtures carries an object.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=cebl_seasons]{cebl_seasons()}}.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ cebl_news(language = "en")
 }\if{html}{\out{</div>}}

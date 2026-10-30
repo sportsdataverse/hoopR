@@ -1,6 +1,6 @@
 # cebl_parsers.R -- frames of the CEBL wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/cebl/cebl_parsers.py (origin/main e3d232ebc9): every frame
+# R mirror of sportsdataverse-py sportsdataverse/basketball/cebl/cebl_parsers.py (origin/main e3d232ebc9): every frame
 # is built from `.cebl_specs` (R/cebl_schema.R), one dtype per column, never sampled. The API sends
 # aggregates as decimal strings ('2256.0', '12.7'): doubles here. Every id is an integer (CEBL's own key
 # space; `genius_match_id` is the Genius LiveStats match id, an integer as in the genius family). Times are

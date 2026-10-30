@@ -1,6 +1,6 @@
 # fiba_gamepage_runtime.R -- the fiba.basketball game pages: URL, RSC payload, refusals, parsers.
 #
-# R mirror of the game-page half of sdv-py sportsdataverse/basketball/fiba_hub/fiba_runtime.py and
+# R mirror of the game-page half of sportsdataverse-py sportsdataverse/basketball/fiba_hub/fiba_runtime.py and
 # of fiba_gamepage_parsers.py. A game page (fiba.basketball/en/history/<histId>-<histSlug>/<comp>/
 # games/<gameId>-<A>-<B>) requested with `RSC: 1` answers a text/x-component Next.js flight payload
 # holding the box score, play-by-play and shots, which GDAP does not serve. The URL is resolved from
@@ -15,7 +15,7 @@
 # wrong slug, team-code order or competition: no game header for the asked id), an unresolvable
 # flight token, a page of another game or competition, a game still live.
 #
-# Transport: sdv-py uses curl_cffi with Chrome TLS (plain `requests` gets HTTP 403); libcurl with a
+# Transport: sportsdataverse-py uses curl_cffi with Chrome TLS (plain `requests` gets HTTP 403); libcurl with a
 # browser User-Agent is served (checked live 2026-10-18). 4 attempts, 429 / 502 / 503 / 504 retried.
 
 .FIBA_BCL_URL <- "https://www.championsleague.basketball"
@@ -90,7 +90,7 @@
   .abort_asset_fetch("fiba.basketball game page: an unhandled flight token {.val {shown}}.", call = call)
 }
 
-#' The game objects of a text/x-component payload, flight tokens resolved (sdv-py `_extract_page`).
+#' The game objects of a text/x-component payload, flight tokens resolved (sportsdataverse-py `_extract_page`).
 #'
 #' Each anchor's first value that parses wins; for `game`, the first whose `gameId` is `game_id`
 #' (type-strict). No `game` header for `game_id` is the not-found shell (class
@@ -237,7 +237,7 @@
   if (length(m) == 2L) m[[2]] else NULL
 }
 
-#' The checked game-page objects of `game_id` in competition `comp` (sdv-py `_page`).
+#' The checked game-page objects of `game_id` in competition `comp` (sportsdataverse-py `_page`).
 #'
 #' The archive (history) URL first; on the not-found shell the competition's event page URL (when
 #' it has one), then the Champions League host.
@@ -255,7 +255,7 @@
   if (inherits(page, "hoopR_fiba_shell")) {
     shell <- page
     slug <- .fiba_event_slug(comp, call = call)
-    # ponytail: the Champions League host serves only its current season (unverified live, as in sdv-py)
+    # Note: the Champions League host serves only its current season (unverified live, as in sportsdataverse-py)
     alternates <- c(if (!is.null(slug)) paste0(.FIBA_SITE_URL, "/en/events/", slug, tail),
                     paste0(.FIBA_BCL_URL, "/en", tail))
     for (alt in alternates) {
@@ -285,7 +285,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Parsers (sdv-py fiba_gamepage_parsers.py). Teams are named by ORGANISATION id (T_64, pbp oId);
+# Parsers (sportsdataverse-py fiba_gamepage_parsers.py). Teams are named by ORGANISATION id (T_64, pbp oId);
 # every frame carries organisation_id and team_side (A / B). player_id is the global person id.
 # statistic_system is OVR (World Cup, Olympics) or FLS (club competitions). Shot x/y are pixels on
 # a half-court image (scale unverified); free throws are 0, 0 with has_location FALSE.
@@ -320,7 +320,7 @@
   if (length(m) == 3L) as.integer(m[[2]]) * 60L + as.integer(m[[3]]) else NULL
 }
 
-#' The first non-NULL of two ids (sdv-py `a or b` over ids).
+#' The first non-NULL of two ids (sportsdataverse-py `a or b` over ids).
 #' @noRd
 .fiba_or <- function(a, b) if (is.null(a) || identical(a, 0L)) b else a
 
@@ -369,7 +369,7 @@
   out
 }
 
-#' Play-by-play rows (sdv-py `_pbp_rows`).
+#' Play-by-play rows (sportsdataverse-py `_pbp_rows`).
 #' @noRd
 .fiba_pbp_rows <- function(page) {
   page <- .fiba_dict(page)
@@ -427,7 +427,7 @@
   })
 }
 
-#' Player box rows (sdv-py `_box_player_rows`).
+#' Player box rows (sportsdataverse-py `_box_player_rows`).
 #' @noRd
 .fiba_box_player_rows <- function(page) {
   page <- .fiba_dict(page)
@@ -458,7 +458,7 @@
   rows
 }
 
-#' Team box rows (sdv-py `_box_team_rows`).
+#' Team box rows (sportsdataverse-py `_box_team_rows`).
 #' @noRd
 .fiba_box_team_rows <- function(page) {
   page <- .fiba_dict(page)
@@ -479,7 +479,7 @@
   })
 }
 
-#' Period score rows (sdv-py `_period_rows`).
+#' Period score rows (sportsdataverse-py `_period_rows`).
 #' @noRd
 .fiba_period_rows <- function(page) {
   rows <- list()
@@ -500,7 +500,7 @@
   rows
 }
 
-#' Lineup rows (sdv-py `_lineup_rows`).
+#' Lineup rows (sportsdataverse-py `_lineup_rows`).
 #' @noRd
 .fiba_lineup_rows <- function(page) {
   page <- .fiba_dict(page)

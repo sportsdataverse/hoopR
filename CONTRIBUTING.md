@@ -24,7 +24,7 @@ Thank you for your interest in contributing to hoopR! This guide will help you g
 
 1. **Fork and clone** the repository
 2. **Install dependencies**: Open the project in RStudio and run `devtools::install_deps(dependencies = TRUE)`
-3. **Create a feature branch** from `devel`: `git checkout -b feat/your-feature devel`
+3. **Create a feature branch** from `main`: `git checkout -b feat/your-feature main`
 
 ## Workflow
 
@@ -148,7 +148,7 @@ This re-orders fields, alphabetizes `Imports`/`Suggests`, and reflows long lines
 
 Three files describe the same release at different audiences. Whenever you add a `NEWS.md` bullet, **think through all three before committing**:
 
-- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.0.0**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.0.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
+- **`NEWS.md`** — authoritative changelog for downstream users; rendered into the pkgdown changelog. **All new bullets go under the most recent unreleased version heading** (currently `# **hoopR 3.2.0**`). Do NOT create a new version section ahead of release. Add to or extend an existing subsection (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, etc.) instead of starting a new one when the change is incremental. Once `3.2.0` ships to CRAN, the development version gets its own heading and the rule rolls forward.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral or user-visible change you add to `NEWS.md` should also be reflected in `cran-comments.md` before submission. The two files are not duplicates: `NEWS.md` is the long-form changelog, `cran-comments.md` is the short-form release summary. If a `NEWS.md` bullet is purely internal (refactor, test infrastructure, dev tooling) it can be omitted from `cran-comments.md`.
 
@@ -172,7 +172,7 @@ ci: update GitHub Actions workflow versions
 
 ## Pull Requests
 
-- Target the `devel` branch for development work
+- Target the `main` branch (the default branch; there is no separate development branch)
 - Include a clear description of what changed and why
 - Ensure `devtools::check()` passes with no errors or warnings
 - Add tests for new functions

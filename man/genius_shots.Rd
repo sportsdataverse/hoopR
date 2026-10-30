@@ -12,7 +12,7 @@ genius_shots(match_id, return_parsed = TRUE)
 
 \item{return_parsed}{Parse into a tibble (default \code{TRUE}); \code{FALSE} returns the parsed body or
 page record (a list): \code{data.json} as served plus \verb{_request} (the ids asked for), or the
-sdv-internal-refs capture shape of a page.}
+record parsed from an HTML page.}
 }
 \value{
 A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
@@ -47,7 +47,7 @@ datacenter IPs on the LiveStats and hosted hosts: from a server set
 proxy URL (never printed or logged). Requests are spaced at least one second apart
 per host; keep crawls slow and incremental. Some league sites (the NZ NBL) forbid AI
 crawlers in their own robots.txt, which does not cover these hosts. Unofficial use of a
-public source: payloads are not redistributed as release assets.
+public source.
 
 \strong{Org and season.} Every competition is an ORG code plus a competition id
 (\code{comp_id}): \code{\link[=genius_competitions]{genius_competitions()}} lists an org's competitions with the sdv END-year

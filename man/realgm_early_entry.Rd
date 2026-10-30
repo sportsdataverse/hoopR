@@ -13,7 +13,7 @@ A \code{hoopR_data} tibble with one row per candidate (\code{player}, \code{pos}
 }
 \description{
 \strong{Get the current NBA draft early-entrant and withdrawal list from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 Stacks RealGM's early-entry candidate tables (college and international
 entrants and withdrawals) into one tibble.

@@ -1,322 +1,73 @@
 ## Release summary
 
-This is a minor release (v3.1.0) on top of v3.0.0. It addresses three
-themes that emerged after the 3.0.0 CRAN submission, plus a further round
-of loaders, database-write fixes, and endpoint corrections added late in
-the development cycle (see "Late-cycle additions" below):
+This is a minor release (3.2.0) on top of 3.1.0 (CRAN, 2026-08-25). The
+full list of changes is in NEWS.md. The main additions:
 
-1. **An upstream endpoint emergency** — `stats.nba.com/stats/scheduleleaguev2`
-   started returning `Connection was reset` to many client environments in
-   April 2026 (after the 3.0.0 release). `nba_schedule()` is migrated to
-   the public CDN at `cdn.nba.com/static/json/staticData/scheduleLeagueV2.json`,
-   which serves the same `leagueSchedule.gameDates[].games[]` payload, needs
-   no authentication, and tracks the live season. Pairs with a query-string
-   parameter reorder on `nba_leaguegamelog()` so that endpoint also works
-   against the current NBA Stats API (the alphabetical ordering started
-   returning a Cloudflare HTML page; `LeagueID`-first ordering parses
-   successfully).
+* International basketball: the EuroLeague and EuroCup family and 23 new
+  league families (FIBA, ACB, LBA, VTB, B.LEAGUE, NBL, KBL, CBA and others) plus
+  per-competition shortcuts for FIBA, Genius Sports and Sportradar Atrium
+  competitions. Each family waits at least 1 s between requests to a host
+  and raises classed conditions (`hoopR_no_data`, `hoopR_asset_fetch`,
+  `hoopR_bad_request`) instead of returning an empty result.
+* NBA officiating reports from official.nba.com (`nba_l2m()`,
+  `nba_l2m_games()`, `nba_referee_assignments()`), new `load_*()` loaders
+  and new CollegeBasketballData endpoints.
+* Fixes for ESPN play-by-play scores and roster seasons, the NBA CDN and G
+  League feeds, `ncaa_mbb_NET_rankings()`, `torvik_ratings()`, the KenPom
+  team-page functions for the current season, `nba_gamerotation()` and
+  `nba_pbp()` on-court players.
+* The NBA Stats wrappers now default `season` to the previous season.
+* Dependencies: Rcpp and RcppParallel (unused; the package has no compiled
+  code), magrittr and lubridate are no longer imported; glmnet, Matrix and
+  stringdist moved to Suggests; withr and xml2 are now imported.
+* The package now ships its `inst/CITATION` file (a `bibentry()`).
 
-2. **A regression fix** — the `httr` → `httr2` migration in 3.0.0 quietly
-   stopped `request_with_proxy()` from honoring proxies (its `...` was
-   preserved for source compatibility but no longer forwarded a proxy
-   argument). Proxy support is now restored end-to-end across NBA Stats,
-   ESPN, KenPom, and NBA G-League wrappers with a 3-tier resolution
-   (`proxy =` argument → `getOption("hoopR.proxy")` → libcurl env vars).
-   This restores parity with pre-3.0.0 behavior for users behind corporate
-   proxies.
+## Examples
 
-3. **Documentation upgrade** — the `@return` markdown tables on all 39 R
-   source files (6,039 rows across 580+ tables) are upgraded from two
-   columns (`col_name | types`) to three (`col_name | types | description`).
-   Sourcing centralizes through `tools/docs/column_descriptions.csv`, built
-   from 619 hand-curated entries + 188 ESPN-API-mined descriptions
-   (harvested from endpoints that self-document their stat columns) +
-   suffix-rule heuristic fallbacks. 58.4% of the rendered table rows now
-   carry a hand-quality description; the rest fall back to readable
-   snake_case descriptions. `tools/` is `.Rbuildignore`'d, so no runtime
-   dependencies are added.
+* Examples that call stats.nba.com, basketball-reference.com or kenpom.com
+  run only in interactive sessions (`@examplesIf interactive()`): those
+  hosts refuse or stall requests from data-centre machines, and the KenPom
+  functions need a paid subscription.
+* The RealGM examples are in `\dontrun{}`: RealGM serves its pages behind a
+  Cloudflare JavaScript challenge, so the functions read them through
+  headless Chrome (`chromote`, in Suggests), which CRAN machines do not have.
+* All other networked examples are in `\donttest{}` and wrapped in `try()`,
+  so they fail gracefully without network access.
 
-### Bug fixes
+## Tests
 
-- `nba_schedule()` migrated off the retired `stats.nba.com/stats/scheduleleaguev2`
-  endpoint to the public CDN (see release summary point 1 above). G-League
-  schedules now come from the `_2`-suffixed CDN variant. Historical seasons
-  emit a `message()` directing users to `load_nba_schedule(seasons = ...)`.
-  Verified end-to-end against the current 2025-26 NBA season (1,398 games
-  × 52 cols).
-- `nba_leaguegamelog()` reordered query-string parameters to put `LeagueID`
-  first. The NBA Stats API as of 2026 rejects the alphabetical ordering
-  (`Counter, DateFrom, DateTo, Direction, LeagueID, ...`) with a Cloudflare
-  HTML error page; `LeagueID`-first matches what the nba.com client sends.
-  Verified 2026-05-16: returns 2,460 NBA rows with `SEASON_ID=22025`.
-- `ncaa_mbb_NET_rankings()` hardened against NCAA.com column drift. The
-  function now uses `dplyr::rename(dplyr::any_of(...))` so renamed columns
-  (e.g. new `Quad 1..4` headers) no longer break the documented schema and
-  new columns ride along untouched.
-- ESPN wrappers: moved `.retry_request()` and `check_status()` inside
-  `tryCatch` blocks so transient HTTP errors surface as `cli_alert_danger()`
-  + empty fallback rather than escaping the function. Affects every
-  `espn_nba_*` / `espn_mbb_*` wrapper.
+Every test that needs the network is skipped on CRAN (`skip_on_cran()` plus
+an opt-in environment variable per source). The tests that run on CRAN read
+committed fixtures and mock the HTTP layer.
 
-### Documentation improvements
+## Size
 
-- `@return` markdown tables on every exported function now include a
-  per-column description (see release summary point 3 above). The
-  description is visible in `?<function>` help, the pkgdown reference,
-  and the rendered `.Rd` man pages.
-- Build-time tooling under `tools/docs/` (excluded from package build via
-  `.Rbuildignore`):
-    - `column_descriptions_curated.csv` — hand-edit surface.
-    - `column_descriptions_api.csv` — ESPN-API-mined descriptions,
-      regenerated by `mine_api_descriptions.R` against 14 endpoints per
-      league across both NBA and `mens-college-basketball`.
-    - `column_descriptions.csv` — generated 4-source dictionary
-      (curated > ESPN-API-mined > `\describe{}`-block-mined > heuristic
-      fallback).
-    - `build_column_descriptions.R`, `audit_column_descriptions.R`,
-      `markdown_man_table_helper.R`, `mine_api_descriptions.R`,
-      `espn_endpoints_catalog.md` — supporting infrastructure.
+The package grew with the international families: the tarball is about
+4.0 MB and the installed size about 11.4 MB, most of it help pages (6.7 MB)
+and R code (4.2 MB) for more than 1,300 documented functions. We cut the
+help by 17% for this release by printing each family's shared source notes
+once and linking to it from the other pages.
 
-### Internals
+## URLs
 
-- **Proxy support restored** across the HTTP layer (see release summary
-  point 2 above). `request_with_proxy()` and `.retry_request()` both
-  accept a `proxy =` argument; resolution order is explicit arg →
-  `getOption("hoopR.proxy")` → libcurl `http_proxy` / `https_proxy` /
-  `no_proxy` env vars. `httr2::req_proxy()` is used under the hood.
-  Validated against an authenticated test proxy.
-- Standardized `tryCatch` error handling via internal `.report_api_error()`
-  and `.report_api_warning()` helpers. Every error/warning handler in ESPN,
-  NBA Stats, and KenPom wrappers now emits a `cli_alert_danger()` /
-  `cli_alert_warning()` that includes captured call args, which makes
-  failed-call diagnostics significantly easier.
-
-### Dependency changes
-
-- `glue` demoted from `Imports` to `Suggests`. All `glue::glue(...)`
-  call-sites in URL builders, `pad_id()`, `pad_time()`, and `cli` alerts
-  replaced with `sprintf()` / `paste0()` / base R. All `glue::glue_sql()`
-  call-sites in the `load_*` family replaced with parameterized
-  `DBI::dbExecute()` / `DBI::dbGetQuery()`. Net result: one fewer required
-  dependency.
-
-### Release prep / CRAN compliance
-
-- Added `cph` (copyright holder) role to `Saiem Gilani` in `Authors@R`
-  (CRAN strict requirement).
-- `DESCRIPTION` normalized via `usethis::use_tidy_description()` — field
-  order, alphabetized `Imports` / `Suggests`, reflowed long lines.
-- `DESCRIPTION` URL normalized to `https://hoopR.sportsdataverse.org/`
-  (matches `_pkgdown.yml` canonical form; replaces a stale lowercase /
-  http variant). `pkgdown::check_pkgdown()` now passes clean.
-- `.gitignore` anchored from bare `docs` to `/docs` so only the repo-root
-  pkgdown output is ignored.
-
-### ESPN core-v2 deep expansion
-
-* Adds a broad set of ESPN core-v2 basketball wrappers to bring the
-  `espn_nba_*` + `espn_mbb_*` surface to **199 exports**. Coverage
-  added under tier batches (full breakdown in `NEWS.md`):
-    * **Tier 1 / 2A** — athlete career, franchise, futures, tournament,
-      season-meta (types/leaders/rankings/weeks/groups), team deep
-      (record / season_profile / season_roster / odds_records /
-      depthchart), coach-in-season, powerindex, draft completion.
-    * **Tier 2B.1 / 2B.2 / 2B.3** — `athlete_eventlog_v2`, draft
-      rounds/athletes/status, event meta (situation, predictor,
-      powerindex, propbets), event competitor sub-resources
-      (linescores, leaders, roster, statistics, records).
-    * **Tier 2D** — league position dictionary (`positions`, `position`).
-    * **Tier 2E.1** — per-game player box score (`event_player_box`),
-      roster entry with starter / DNP / ejection flags, single-play
-      detail, on-court personnel.
-    * **Tier 2E.2** — full team-season stat sheet (`team_season_statistics`
-      with `rank` + `rank_display_value` per stat), event competitor
-      score, draft year top-level metadata.
-    * **Tier 2F** — typed-detail companions: `event_official_detail`
-      (URL segment is crew `order`, not the ESPN stable `official_id`),
-      `team_record_detail`, `coach_record`, `tournament_season`,
-      `draft_athlete_detail`.
-* Shared helpers live in `R/espn_basketball_*_helpers.R` to keep NBA
-  and MBB implementations DRY. All new wrappers ship with skip-gated
-  tests (`skip_on_cran()` + `skip_on_ci()` + `skip_espn_test()`);
-  102 new test files added. `R CMD check --run-donttest` ran every
-  new `\donttest{}` example against live ESPN core-v2 (~6.5 min wall
-  time) and they all passed.
-
-### CollegeBasketballData (CBD) API wrappers
-
-* Adds a new `cbbd_*()` function family (38 endpoint wrappers) covering the
-  full v1 surface of the CollegeBasketballData API
-  (`api.collegebasketballdata.com`) — the men's college basketball sibling of
-  CollegeFootballData, which `cfbfastR` wraps with `cfbd_*`. Categories: games
-  (incl. media, team/player box scores, scoreboard), play-by-play,
-  substitutions, team/player season + shooting stats, lineups, SRS / adjusted /
-  Elo ratings, poll rankings, betting lines, recruiting (players / teams /
-  portal), NBA draft, teams / roster, venues and conferences.
-* Bearer-token auth via the `CBBD_API_KEY` environment variable
-  (`register_cbbd` / `cbbd_key()` / `has_cbbd_key()` / `check_cbbd_key()`,
-  mirroring the `cfbfastR` key pattern). Requests route through hoopR's shared
-  `httr2` `.retry_request()` layer; every wrapper returns a `hoopR_data` tibble,
-  documents a 3-column `@return` table, and reports errors via the standard
-  `.report_api_error()` / `.report_api_warning()` `cli` helpers. No new package
-  dependencies are introduced (`httr2`, `jsonlite`, `janitor`, `dplyr` already
-  in `Imports`).
-* All 38 wrappers ship with `CBBD_API_KEY`-gated, subset-direction tests
-  (`skip_on_cran()` + `skip_on_ci()` + `skip_cbbd_test()`) and `\donttest{}`
-  examples verified against the live API. A new vignette,
-  "CollegeBasketballData (CBD) Endpoints", documents the family.
-
-### Bart Torvik / T-Rank (`torvik_*`) wrappers
-
-* Adds a `torvik_*()` function family (6 wrappers) pulling publicly available
-  men's college basketball data directly from barttorvik.com — no account or
-  API key required (analogous to the existing `kp_*` KenPom scrapers):
-  `torvik_ratings()` (T-Rank team ratings), `torvik_team_factors()` (four
-  factors + shooting splits), `torvik_game_schedule()` (game-by-game schedule
-  and results), `torvik_ncaa_results()` (historical NCAA tournament
-  performance), `torvik_player_stats()` (player advanced season stats), and
-  `torvik_game_stats()` (per-team-game stats). These wrap barttorvik's auth-free
-  data files (`{year}_team_results.csv`, `{year}_fffinal.csv`,
-  `{year}_super_sked.json`, `getadvstats.php`, `getgamestats.php`) and the
-  tournament-results CGI endpoint.
-* Routes through hoopR's shared `.retry_request()` httr2 layer with a browser
-  User-Agent; returns `hoopR_data` tibbles with 3-column `@return` tables. No
-  new package dependencies (`data.table`, `jsonlite`, `janitor`, `dplyr`,
-  `rvest`, `purrr` already in `Imports`). Ships with `\donttest{}` examples and
-  network-gated tests (`skip_on_cran()` + `skip_on_ci()`).
-
-### Basketball-Reference (`bref_*`) wrappers
-
-* Adds a `bref_*()` function family (7 wrappers) scraping publicly available NBA
-  data from basketball-reference.com (hoopR previously had no Basketball-Reference
-  coverage). `bref_players_stats()`
-  (player season stats: per-game/totals/advanced/per-36/per-100),
-  `bref_teams_stats()` (team season stats), `bref_standings()` (conference
-  standings + SRS), `bref_draft()` (draft results with career stats),
-  `bref_awards()` (end-of-season award voting), `bref_team_roster()`, and
-  `bref_player_game_log()` (a player's game-by-game log). Two
-  Sports-Reference quirks are handled centrally (comment-hidden tables are
-  un-commented; columns are read from `data-stat` attributes to defeat the
-  multi-row over-headers). Routes through hoopR's shared `.retry_request()` with
-  a browser User-Agent; returns `hoopR_data` tibbles with 3-column `@return`
-  tables. No new dependencies (`rvest`/`xml2` already available). Examples are
-  `\donttest{}`; tests are gated behind `BREF_TESTS=1` because the site
-  rate-limits (~20 requests/minute).
-* Adds salary / mock-draft scrapers for three third-party sites:
-  `spotrac_team_cap()` (Spotrac team cap), `hoopshype_salaries()`
-  (HoopsHype player salaries), and `nbadraft_mock_draft()` (NBADraft.net mock
-  draft). All public HTML, no key required, `\donttest{}` examples, network-gated
-  tests. Basketball Insiders (redundant team-cap only) was evaluated and
-  intentionally not wrapped.
-* Adds 17 RealGM (`realgm_*`) wrappers covering the NBA endpoint surface:
-  players, players-abroad, future free agents, coaches, GMs, standings, teams,
-  player/team stats, best individual seasons/games, draft results, draft
-  prospects, early entrants, salary-cap history, rookie scale, and the
-  transactions log. basketball.realgm.com sits behind a Cloudflare JavaScript
-  challenge that returns HTTP 403 to every libcurl-based client, so these
-  functions read the page through headless Chrome via the optional `chromote`
-  package (added to Suggests). When `chromote`/Chrome are absent the functions
-  error cleanly with an install hint; all `\donttest{}` examples are
-  `try()`-wrapped and tests are gated behind `REALGM_TESTS=1`, so neither CRAN's
-  check machines nor users without Chrome ever attempt a browser launch.
-* Adds two Basketball-Reference wrappers: `bref_player_bios()` (player index /
-  bios per starting letter, doubling as a player dictionary) and
-  `bref_injuries()` (injury report). `\donttest{}` examples; `BREF_TESTS=1` gate.
-* Adds `rotowire_injuries()` — the live RotoWire NBA injury report (read from its
-  JSON table endpoint). Replaces the defunct RotoWorld feed. Public JSON, no key;
-  `\donttest{}` example, network-gated test.
-* Adds a set of pure, vectorized basketball analytics utilities (no network):
-  `nba_true_shooting_pct()`, `nba_effective_fg_pct()`, `nba_ft_rate()`,
-  `nba_game_score()`, `nba_possessions()`, `nba_pace()`,
-  `nba_offensive_rating()`/`nba_defensive_rating()`/`nba_net_rating()`,
-  `nba_usage_rate()`, `nba_assist_pct()`, `nba_assist_to_turnover()`,
-  `nba_turnover_pct()`, `nba_oreb_pct()`, `nba_four_factors()`, plus the scaling
-  helpers `nba_per_minutes()`, `nba_per_possessions()` and
-  `nba_add_advanced_metrics()`. Fully unit-tested (deterministic, run on CRAN).
-* Adds NBA dictionary / media helpers: `nba_player_dict()`, `nba_team_dict()`
-  (tidy player / team dictionaries) and the pure URL builders
-  `nba_player_headshot_url()` / `nba_team_logo_url()`.
-* Adds three pure result-set reshape helpers — `nba_bind_sets()` (row-bind +
-  origin tag), `nba_join_sets()` (join/widen on a key) and `nba_nest_sets()`
-  (nest into a list-column) — that reduce the named list of result sets an
-  `nba_*()` wrapper returns to a single tibble. Deterministic, unit-tested (run
-  on CRAN).
-* Adds three dataset-specific `nba_tidy_*()` wrappers that fetch a multi-result-set
-  endpoint and apply its canonical reduction in one call:
-  `nba_tidy_franchise_history()` (bind), `nba_tidy_boxscore()` (join player + team
-  context) and `nba_tidy_player_profile()` (nest). `\donttest{}` examples;
-  network-gated tests.
-* Adds an `srcbb_*()` family scraping men's college basketball from
-  sports-reference.com/cbb (the college arm of Sports Reference):
-  `srcbb_school_stats()` (season school stats) and `srcbb_rankings()` (AP poll).
-  Reuses the existing `bref_*` `data-stat` parser; no new dependencies.
-  `\donttest{}` examples, network-gated tests.
-
-
-### Late-cycle additions (August 2026)
-
-* Adds 36 further bulk-data loaders late in the release cycle, following the
-  same loader shape: a 13-function NCAA men's-basketball family
-  (`load_ncaa_mbb_pbp()`, `_shots()`, `_lineups()`, `_matchup_stints()`,
-  `_possessions()`, `_rapm()`, `_rapm_within_team()`, `_player_box()`,
-  `_team_box()`, `_rosters()`, `_team_rosters()`, `_schedule()`,
-  `_team_ids()`) reading stats.ncaa.org-derived datasets produced by the
-  companion `sportsdataverse-py` engine (hoopR ships loaders only — no new
-  scraping surface or dependencies), `load_nba_shots()` / `load_mbb_shots()`
-  (ESPN shot events), three model datasets (`load_nba_player_impact()`,
-  `load_mbb_ratings()`, `load_mbb_player_value()`), and an 18-function
-  `nba_stats` release-dataset family (17 tag loaders + the
-  `load_nba_stats_leaguedash()` 36-table cube, plus `update_nba_stats_db()`
-  and `most_recent_nba_stats_season()`). `parquet_from_url()` is added to
-  `utils.R` for the two parquet-only model tags; `arrow` moves to
-  `Suggests`. All were verified live against the published release assets,
-  with returns documentation derived from the real files.
-* `...` is now genuinely forwarded to `DBI::dbWriteTable()` in every
-  `load_*()` loader that documents it (23 call sites), and 16 loaders that
-  documented an optional database write without performing it now perform
-  it. The `hoopR_data` class vector no longer includes `"data.table"`,
-  which was causing `tail()`/`head()` on loader results to mis-dispatch and
-  error (`Error in x[i]: Can't subset columns past the end.`). Fixes #88.
-* NBA Stats API lifecycle corrections from a residential-IP live re-probe:
-  restores `nba_scoreboardv2()`; soft-deprecates `nba_videoeventsasset()`
-  (confirmed permanently empty); documents `nba_boxscoreadvancedv2()` as
-  league-scoped (dead for NBA, live for WNBA/G-League) rather than
-  deprecating it; applies the `LeagueID`-first parameter ordering (see Bug
-  fixes above) mechanically across 78 additional params-list sites; and
-  deduplicates `espn_mbb_scoreboard()`, which was double-counting games
-  tagged under more than one ESPN group id. Fixes #160.
-* ESPN fixes: `espn_mbb_betting()` / `espn_nba_betting()` cascade to the
-  Core v2 event odds endpoint when the summary `pickcenter` is empty (Fixes
-  #136, #153, #173); `espn_mbb_standings()` switches to ESPN's
-  conference-grouped `level=3` view and `espn_mbb_teams()` backfills teams
-  its flat fetch drops (Fixes #144, all 366 teams); `espn_mbb_scoreboard()`
-  / `espn_nba_scoreboard()` fix an integer-cast bug and backfill
-  November/December games that ESPN's calendar-year `dates=` semantics
-  otherwise drop for a season-year input (Fixes #150).
-* `kp_team_depth_chart()` is repointed at KenPom's new embedded-JSON depth
-  chart source (`team.php` dropped the `#dc-table` HTML table). The return
-  shape changes from one wide row per team to one row per player, with
-  `pct_pg`/`pct_sg`/`pct_sf`/`pct_pf`/`pct_c` position-share columns. Fixes
-  #152.
-* CI: bumped r-hub actions to v1.7.7 (node 24 runners); added
-  `skip_on_cran()` to every `test_that()` block (466 blocks).
+kenpom.com and the www.nba.com stats pages answer HTTP
+403 to non-browser clients (bot protection); the links work in a browser
+and were present in 3.1.0. The basketball-reference.com link was not
+checked automatically (the host blocks automated requests); it is unchanged
+since 3.1.0.
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
 
-Checked with `--as-cran` under CRAN-equivalent conditions (NOT_CRAN unset,
-all live-API test gates disabled so every network-dependent test skips, as
-they do on CRAN).
-
-win-builder (R-release 4.6.1, x86_64-w64-mingw32, 2026-08-24): Status OK —
-0 errors | 0 warnings | 0 notes.
-
+* Local Windows 10, R 4.6.1, `R CMD check --as-cran` on the built tarball
+  (NOT_CRAN unset, so every networked test skips): 0 errors, 0 warnings, 0 notes
+  (installed size reported as INFO: 11.4 MB, R 4.2 MB, help 6.7 MB). The
+  PDF and HTML manuals build. With `--run-donttest` the examples pass in
+  18 minutes.
+* GitHub Actions (R release on Ubuntu, macOS and Windows): OK.
+* win-builder and R-hub: to be run before submission.
 
 ## revdepcheck results
 
-We checked 0 reverse dependencies, comparing R CMD check results across
-CRAN and dev versions of this package.
-
- * We saw 0 new problems
- * We failed to check 0 packages
+There are no reverse dependencies on CRAN.

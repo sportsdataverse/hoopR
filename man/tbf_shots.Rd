@@ -13,7 +13,7 @@ sequence across leagues and seasons. Only a finished game is served.}
 \value{
 A \code{hoopR_data} tibble. One row per attempt. \code{x} and \code{y} are percentages of a horizontal full court.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
    period \tab integer \tab Period number of the attempt: 1-4; overtime numbering is unverified. \cr
@@ -35,8 +35,8 @@ Endpoint: \verb{GET https://miniappapi.tbf.org.tr/webapi-service/api/Match/shot-
 \details{
 Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 

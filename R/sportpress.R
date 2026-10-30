@@ -1,5 +1,5 @@
 # sportpress.R -- BNXT League (Belgium + the Netherlands) wrappers over the Sportpress CMS API
-# (bnxt.sportpress.info/api/v1), at parity with sdv-py sportsdataverse/basketball/bnxt (origin/main e3d232e).
+# (bnxt.sportpress.info/api/v1), at parity with sportsdataverse-py sportsdataverse/basketball/bnxt (origin/main e3d232e).
 # Transport and refusals: R/sportpress_runtime.R; frames: R/sportpress_parsers.R.
 
 # The @details of every sportpress topic that shares the sportpress_ui_strings() notes (roxygen @eval .intl_details()).
@@ -8,7 +8,7 @@
   "  API. Every route needs a header key; it is public (hard-coded in the site bundle), `bnxt_runtime` reads it from",
   "  the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs",
   "  it. A 401 raises AssetFetchError (`key rotated?`). robots.txt allows everything; requests are spaced at least 1 s",
-  "  apart. Payloads are not redistributed as release assets.",
+  "  apart.",
   "* Season key: the END year (`season=2026` is 2025-26), the API's own key on the season routes. Every other route is",
   "  keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,",
   "  24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; `uu_team_id` is the stable club), the",
@@ -40,7 +40,7 @@
 #' Endpoint: `GET https://bnxt.sportpress.info/api/v1/server-config`
 #' @return
 #' A `hoopR_data` tibble: UI string tables of the site in English, French and Dutch (one row per language and key). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_ui_strings`):
 #'
 #' | col_name | type | description |
@@ -48,7 +48,7 @@
 #' | language | character | ISO 639-1 code of the UI language: en, fr (French) or nl (Dutch). |
 #' | key | character | Dotted UI string key such as 'statistics.individual.points'; 302 keys per language. |
 #' | text | character | The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons. |
-#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_ui_strings()")
+#' @eval .intl_details(.sportpress_ui_strings_details, full = TRUE, "sportpress_ui_strings()")
 #' @export
 #' @family BNXT League Functions
 sportpress_ui_strings <- function() {
@@ -68,7 +68,7 @@ sportpress_ui_strings <- function() {
 #' Endpoint: `GET https://bnxt.sportpress.info/api/v1/competition-team/club/seasons`
 #' @return
 #' A `hoopR_data` tibble: Seasons (END years) in which Belgian and Dutch clubs have teams. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_club_seasons`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_club_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -98,7 +98,7 @@ sportpress_club_seasons <- function() {
 #' Endpoint: `GET https://bnxt.sportpress.info/api/v1/staff/list`
 #' @return
 #' A `hoopR_data` tibble: Referees of the league (staff title 2). An empty valid answer raises `hoopR_no_data`; the
-#'   columns are always these, in this order (sdv-py `sportpress_referees`):
+#'   columns are always these, in this order (sportsdataverse-py `sportpress_referees`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -128,7 +128,7 @@ sportpress_referees <- function() {
 #' @param season (required) Season END year (2026 = 2025-26), the API's own key; no mapping is applied.
 #' @return
 #' A `hoopR_data` tibble: The competition of a season with its phases (regular season, playoffs, supercup). An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_phases`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_phases`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -165,7 +165,7 @@ sportpress_phases <- function(season) {
 #'   ([sportpress_phases()] maps a season to it).
 #' @return
 #' A `hoopR_data` tibble: Every competition team of one competition: ids, names and country. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_competition_teams`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_competition_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -204,7 +204,7 @@ sportpress_competition_teams <- function(competition_id) {
 #'   ([sportpress_phases()] maps a season to it).
 #' @return
 #' A `hoopR_data` tibble: Coaching staff (head coach, assistants) of every competition team of one competition. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_competition_staff`):
 #'
 #' | col_name | type | description |
@@ -239,7 +239,7 @@ sportpress_competition_staff <- function(competition_id) {
 #' @param phase_id (required) Phase id (integer) of the competition, from [sportpress_phases()] (`phase_id`).
 #' @return
 #' A `hoopR_data` tibble: Standings of one phase of a competition: record, points, home/away split, last five and
-#'   streak. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   streak. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_standings`):
 #'
 #' | col_name | type | description |
@@ -300,7 +300,7 @@ sportpress_standings <- function(competition_id, phase_id) {
 #'   phase.
 #' @return
 #' A `hoopR_data` tibble: Every game of a season for Belgian and Dutch clubs, with teams, scores, phase and venue. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_schedule`):
 #'
 #' | col_name | type | description |
@@ -352,7 +352,7 @@ sportpress_schedule <- function(season, month = -1, phase_id = NULL) {
 #'   ([sportpress_phases()] maps a season to it).
 #' @return
 #' A `hoopR_data` tibble: The latest 14 finished games of a competition plus every upcoming game, with the Genius
-#'   match id. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   match id. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_game_slider`):
 #'
 #' | col_name | type | description |
@@ -399,7 +399,7 @@ sportpress_game_slider <- function(competition_id) {
 #' @param limit (default `NULL`) Cap each ranking list at this many rows. Omitted = the complete lists.
 #' @return
 #' A `hoopR_data` tibble: Team per-game leaders in nine categories (one row per team and category). An empty valid
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_team_rankings`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_team_rankings`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -443,7 +443,7 @@ sportpress_team_rankings <- function(competition_id, phase_id = NULL, limit = NU
 #'   categories.
 #' @return
 #' A `hoopR_data` tibble: Qualified-player per-game leaders in nine categories (one row per player and category). An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_player_rankings`):
 #'
 #' | col_name | type | description |
@@ -490,7 +490,7 @@ sportpress_player_rankings <- function(competition_id, phase_id = NULL, limit = 
 #' @param season (required) Season END year (2026 = 2025-26), the API's own key; no mapping is applied.
 #' @return
 #' A `hoopR_data` tibble: Every roster entry of a season: player, team, jersey, height, weight and position. An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_season_roster`):
 #'
 #' | col_name | type | description |
@@ -535,7 +535,7 @@ sportpress_season_roster <- function(season) {
 #' @param season (required) Season END year (2026 = 2025-26), the API's own key; no mapping is applied.
 #' @return
 #' A `hoopR_data` tibble: Distinct player nationality codes of a season (dirty: lower case, pairs, empty). An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_nationality_codes`):
 #'
 #' | col_name | type | description |
@@ -565,7 +565,7 @@ sportpress_nationality_codes <- function(season) {
 #'   (e.g. 541 = Antwerp in 2026-27); from [sportpress_competition_teams()].
 #' @return
 #' A `hoopR_data` tibble: Roster of one competition team (current entries only). An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_team_roster`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_team_roster`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -605,7 +605,7 @@ sportpress_team_roster <- function(competition_team_id) {
 #'   (e.g. 541 = Antwerp in 2026-27); from [sportpress_competition_teams()].
 #' @return
 #' A `hoopR_data` tibble: One competition team with its season scoring averages. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_team_find`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_team_find`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -644,7 +644,7 @@ sportpress_team_find <- function(competition_team_id) {
 #'   (e.g. 541 = Antwerp in 2026-27); from [sportpress_competition_teams()].
 #' @return
 #' A `hoopR_data` tibble: Per-game averages of each player of a competition team. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_team_player_averages`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_team_player_averages`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -708,7 +708,7 @@ sportpress_team_player_averages <- function(competition_team_id) {
 #'   (e.g. 541 = Antwerp in 2026-27); from [sportpress_competition_teams()].
 #' @return
 #' A `hoopR_data` tibble: Every finished game of a competition team with that team's totals. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_team_games`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_team_games`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -783,7 +783,7 @@ sportpress_team_games <- function(competition_team_id) {
 #' @param roster_id (required) Roster id (integer): one player on one team in one season; from the roster frames.
 #' @return
 #' A `hoopR_data` tibble: One roster entry with its player, team and season. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_roster_find`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_roster_find`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -827,7 +827,7 @@ sportpress_roster_find <- function(roster_id) {
 #' @param roster_id (required) Roster id (integer): one player on one team in one season; from the roster frames.
 #' @return
 #' A `hoopR_data` tibble: Season-by-season per-game averages of the player of a roster entry. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_player_career`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_player_career`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -894,7 +894,7 @@ sportpress_player_career <- function(roster_id) {
 #' @param roster_id (required) Roster id (integer): one player on one team in one season; from the roster frames.
 #' @return
 #' A `hoopR_data` tibble: Game-by-game box lines of a roster entry (including games with 0 minutes). An empty valid
-#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_player_games`):
+#'   answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_player_games`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -971,7 +971,7 @@ sportpress_player_games <- function(roster_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: One game: teams, scores, phase, venue and the neighbouring game ids. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_game_find`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_game_find`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1022,7 +1022,7 @@ sportpress_game_find <- function(game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: Points each side scored in each period of a game (periods 5 and up are overtimes). An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_game_periods`):
 #'
 #' | col_name | type | description |
@@ -1058,7 +1058,7 @@ sportpress_game_periods <- function(game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: Team totals of both sides of a finished game. An empty valid answer raises `hoopR_no_data`;
-#'   the columns are always these, in this order (sdv-py `sportpress_game_overview`):
+#'   the columns are always these, in this order (sportsdataverse-py `sportpress_game_overview`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1123,7 +1123,7 @@ sportpress_game_overview <- function(game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: The top performer of each side of a finished game, with his full line. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_game_top_performers`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_game_top_performers`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1189,7 +1189,7 @@ sportpress_game_top_performers <- function(game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: The game leader of each side in every statistic (one row per side and statistic). An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `sportpress_game_leaders`):
 #'
 #' | col_name | type | description |
@@ -1234,7 +1234,7 @@ sportpress_game_leaders <- function(game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: Per-player box score of a finished game (one row per player line). An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_game_box`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_game_box`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1311,7 +1311,7 @@ sportpress_game_box <- function(competition_id, game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: Team totals of both sides from the box score of a finished game. An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_game_team_box`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_game_team_box`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1378,7 +1378,7 @@ sportpress_game_team_box <- function(competition_id, game_id) {
 #' @param game_id (required) Game id (integer), unique across seasons; from [sportpress_schedule()] (`game_id`).
 #' @return
 #' A `hoopR_data` tibble: Play-by-play ('film') of a finished game with court x/y (2021-22 and 2026-27 only). An empty
-#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `sportpress_game_film`):
+#'   valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `sportpress_game_film`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

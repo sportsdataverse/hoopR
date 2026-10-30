@@ -14,7 +14,7 @@ info (Basketligaen 2002/03 on); a season it does not list raises \code{hoopR_no_
 }
 \value{
 A \code{hoopR_data} tibble: Schedule and results of one season + series + game type. An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sdv-py \code{sportality_schedule}), then any
+\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_schedule}), then any
 column the API added later:\tabular{lll}{
    col_name \tab type \tab description \cr
    game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr
@@ -70,7 +70,7 @@ Endpoint: \verb{GET https://www.basketligaen.dk/api/sports-v2/game-schedule}
 \itemize{
 \item Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
 series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-wrappers). The terms page was not read; payloads are not redistributed as release assets.
+wrappers). The terms page was not read; check it before you republish the data.
 \item Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
 in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
 family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The

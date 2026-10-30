@@ -18,7 +18,7 @@ A \code{hoopR_data} tibble with one row per transaction:
 }
 \description{
 \strong{Get the NBA league transactions log from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 One row per transaction (signings, waivers, two-way conversions, G-League
 assignments/recalls, trades), each tagged with its date. RealGM publishes the

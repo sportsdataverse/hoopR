@@ -1,7 +1,7 @@
 # atrium_utils.R -- internal layer of the Sportradar Atrium embed family (`atrium_*()`).
 #
-# R mirror of sdv-py sportsdataverse/basketball/atrium/atrium_runtime.py and
-# atrium_parsers.py (sdv-py e3d232e): same routes, refusals, season mapping and
+# R mirror of sportsdataverse-py sportsdataverse/basketball/atrium/atrium_runtime.py and
+# atrium_parsers.py (sportsdataverse-py e3d232e): same routes, refusals, season mapping and
 # frame columns. One keyless host serves every league site that embeds the
 # Sportradar "Connect" widget:
 #   https://embed-api.eui.connect.sportradar.com/v1/embed/{websiteId}/{type}
@@ -45,7 +45,7 @@
 
 .atrium_seasons_cache <- new.env(parent = emptyenv())
 
-# --- JSON shape helpers (sdv-py _dict / _list) ---------------------------------------
+# --- JSON shape helpers (sportsdataverse-py _dict / _list) ---------------------------------------
 
 #' A JSON object (named list); `{}` included, `[]` excluded.
 #' @noRd
@@ -54,7 +54,7 @@
 .ad <- function(x) if (.atrium_is_dict(x)) x else list()
 #' @noRd
 .al <- function(x) if (is.list(x) && is.null(names(x))) x else list()
-#' `x[[key]]` for a key that may be NA / empty / absent (sdv-py `dict.get(key or "")`).
+#' `x[[key]]` for a key that may be NA / empty / absent (sportsdataverse-py `dict.get(key or "")`).
 #' @noRd
 .ag <- function(x, key) {
   if (!is.character(key) || length(key) != 1L || is.na(key) || !nzchar(key) || !key %in% names(x)) return(NULL)
@@ -81,7 +81,7 @@
 }
 
 #' GET an Atrium embed route as parsed JSON; map `season` to `seasonId` and refuse
-#' every wrong answer (sdv-py `atrium_runtime._get`).
+#' every wrong answer (sportsdataverse-py `atrium_runtime._get`).
 #'
 #' @param website_id The site.
 #' @param type The route type (`fixtures`, `fixture_detail`, ...).
@@ -202,7 +202,7 @@
   invisible(body)
 }
 
-# --- value helpers (sdv-py atrium_parsers._id / _text / _int / ...) --------------------
+# --- value helpers (sportsdataverse-py atrium_parsers._id / _text / _int / ...) --------------------
 
 #' A scalar JSON value of one atomic type, or NULL.
 #' @noRd
@@ -221,7 +221,7 @@
 .atrium_text <- function(v) {
   if (is.null(v)) return(NA_character_)
   if (is.list(v)) {
-    # ponytail: jsonlite separators, not json.dumps(sort_keys=True); no route has hit it
+    # Note: jsonlite separators, not json.dumps(sort_keys=True); no route has hit it
     return(as.character(jsonlite::toJSON(v, auto_unbox = TRUE, null = "null")))
   }
   if (!.atrium_scalar(v)) return(NA_character_)
@@ -287,7 +287,7 @@
   as.double(as.Date(d, format = "%Y-%m-%d"))
 }
 
-#' A statistic key as a snake column (sdv-py `_col`: underscore(), non-word runs to `_`).
+#' A statistic key as a snake column (sportsdataverse-py `_col`: underscore(), non-word runs to `_`).
 #' @noRd
 .atrium_col <- function(key) {
   x <- gsub("(*UCP)\\W+", "_", .intl_clean_names(key), perl = TRUE)
@@ -307,7 +307,7 @@
     b64 <- chartr("-_", "+/", tok)
     b64 <- paste0(b64, strrep("=", (4 - nchar(b64) %% 4) %% 4))
     raw <- memDecompress(jsonlite::base64_dec(b64), type = "gzip")
-    # ponytail: sdv-py stops inflating at 64 KiB; a bigger state is refused, not truncated
+    # Note: sportsdataverse-py stops inflating at 64 KiB; a bigger state is refused, not truncated
     if (length(raw) > 64 * 1024) list() else jsonlite::parse_json(rawToChar(raw))
   }, error = function(e) list())
   .ad(out)
@@ -417,7 +417,7 @@
 
 # --- frames ----------------------------------------------------------------------------
 
-#' The documented columns (name -> type, in order) of every frame (sdv-py `SCHEMAS`).
+#' The documented columns (name -> type, in order) of every frame (sportsdataverse-py `SCHEMAS`).
 #' @noRd
 .atrium_schemas <- list(
   seasons = c(
@@ -594,7 +594,7 @@
   "other"
 }
 
-#' One column of `type`, widened the way sdv-py `_series` widens a strict polars
+#' One column of `type`, widened the way sportsdataverse-py `_series` widens a strict polars
 #' column: integer -> double -> text, any other type -> text; never nulled.
 #' `type = NULL` infers (all ints integer, all doubles double, all logical logical,
 #' all strings character, all null logical; any mix text).
@@ -629,7 +629,7 @@
 }
 
 #' Rows (named lists) -> the documented columns (NA-padded, typed) followed by any
-#' column the schema lacks, in first-seen order (sdv-py `_frame`).
+#' column the schema lacks, in first-seen order (sportsdataverse-py `_frame`).
 #' @noRd
 .atrium_frame <- function(rows, schema) {
   if (!length(rows)) return(.empty_tibble(schema))
@@ -647,7 +647,7 @@
   make_hoopR_data(df, paste0("Atrium ", what, " from embed-api.eui.connect.sportradar.com"), Sys.time())
 }
 
-# --- parsers (sdv-py parse_atrium_*; internal) -----------------------------------------
+# --- parsers (sportsdataverse-py parse_atrium_*; internal) -----------------------------------------
 
 #' @noRd
 .atrium_parse_seasons <- function(raw) {

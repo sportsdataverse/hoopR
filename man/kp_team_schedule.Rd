@@ -514,40 +514,53 @@ A data frame with the following columns:
 \strong{Get Lineups Last 5 Games from Team Page}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
   }
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_player_career(player_id = '41180'))
   }
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
   }
 
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
   }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
   }
 
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
   }
-
+\dontshow{\}) # examplesIf}
 }
 \concept{KenPom Team Functions}
 \keyword{Career}

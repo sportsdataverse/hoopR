@@ -20,7 +20,7 @@ null without one). \code{standing_points} are table points, 2 per win and 1 per 
 \code{points_against} are the two sides of the page's \code{Overall} column; Top 8 and Play-out tables carry points over
 from the regular season.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
    league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
@@ -48,7 +48,7 @@ Endpoint: \verb{GET https://www.aba-liga.com/standings/\{sez\}/\{lea\}/}
 }
 \details{
 Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+druga.aba-liga.com), keyless, with no bot wall.
 www.aba-liga.com/robots.txt is the single line \verb{User-agent: *} (nothing disallowed, no Crawl-delay) and druga has
 no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 

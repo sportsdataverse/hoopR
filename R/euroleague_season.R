@@ -18,7 +18,7 @@
 #'   standings are as of this round.
 #' @param kind (*character* default `"basicstandings"`): Standings table, one
 #'   of `"basicstandings"`, `"calendarstandings"`, `"streaks"` or
-#'   `"aheadbehind"`, matched exactly (no prefixes, as in sdv-py); the columns
+#'   `"aheadbehind"`, matched exactly (no prefixes, as in sportsdataverse-py); the columns
 #'   depend on it (see Returns).
 #' @return A `hoopR_data` tibble with one row per team. The columns depend on
 #'   `kind`:
@@ -55,7 +55,7 @@
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
 #'   **`kind = "calendarstandings"`** (the `streaks` cell is JSON text: semantically
-#'   equal to sdv-py's, not byte-equal -- separators and unicode escaping differ)
+#'   equal to sportsdataverse-py's, not byte-equal -- separators and unicode escaping differ)
 #'
 #'    \if{html}{\tabular{lll}{
 #'       col_name \tab types \tab description \cr
@@ -168,7 +168,7 @@ euroleague_standings <- function(competition_code, season_code, round,
 #' @inherit euroleague_competitions details
 #' @inheritParams euroleague_seasons
 #' @param mode (*character* default `"traditional"`): `"traditional"` or
-#'   `"advanced"`, matched exactly (no prefixes, as in sdv-py); the columns
+#'   `"advanced"`, matched exactly (no prefixes, as in sportsdataverse-py); the columns
 #'   depend on it (see Returns).
 #' @param season_mode (*character* default `"Single"`): Season mode; `Single`
 #'   as captured (other values unverified).

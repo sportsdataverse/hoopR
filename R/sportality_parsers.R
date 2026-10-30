@@ -1,12 +1,12 @@
 # sportality_parsers.R -- frames of the Basketligaen wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/dbl/sportality_parsers.py (origin/main e3d232e).
+# R mirror of sportsdataverse-py sportsdataverse/basketball/dbl/sportality_parsers.py (origin/main e3d232e).
 # Rows are built as named lists whose `NULL` entries are kept (Python's `None`): never assign
 # `x[[k]] <- NULL`, which drops the entry. Columns are snake_case (`.sportality_column()`, over
-# the sdv-py `underscore()` port); each column gets one type from its values exactly as sdv-py's
+# the sportsdataverse-py `underscore()` port); each column gets one type from its values exactly as sportsdataverse-py's
 # `_series()` does, every Genius id (`player_id`, `game_id`, `game_source_id`, `event_id`,
 # `ext_id`, `team_id`, prefixed or not) is an integer, and the frame is then conformed to the
-# route's documented schema (`.sportality_schemas`, sdv-py `SCHEMAS`): documented columns first,
+# route's documented schema (`.sportality_schemas`, sportsdataverse-py `SCHEMAS`): documented columns first,
 # in order and type (a value the type cannot hold becomes `NA`, as polars `strict=False`), then
 # anything the API added later. Platform uuids are character. Objects and arrays left in a cell
 # become JSON text in Python's `json.dumps(sort_keys=True)` form.
@@ -46,7 +46,7 @@
 #' A JSON number (not a boolean).
 #' @noRd
 .sportality_is_number <- function(v) (is.integer(v) || is.double(v)) && length(v) == 1L && !is.na(v)
-#' A JSON integer (sdv-py `isinstance(v, int)`).
+#' A JSON integer (sportsdataverse-py `isinstance(v, int)`).
 #' @noRd
 .sportality_is_int <- function(v) is.integer(v) && length(v) == 1L && !is.na(v)
 
@@ -119,7 +119,7 @@
   paste0("\"", s, "\"")
 }
 
-#' A cell as text (sdv-py `_text`): objects and arrays as JSON, booleans as true / false.
+#' A cell as text (sportsdataverse-py `_text`): objects and arrays as JSON, booleans as true / false.
 #' @noRd
 .sportality_text <- function(v) {
   if (is.null(v)) return(NA_character_)
@@ -164,7 +164,7 @@
   out
 }
 
-#' One column typed from the values, as sdv-py `_series()`.
+#' One column typed from the values, as sportsdataverse-py `_series()`.
 #' @noRd
 .sportality_series <- function(name, values, stat) {
   present <- Filter(Negate(is.null), values)
@@ -277,7 +277,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Parsers (one per sdv-py parse_sportality_*)
+# Parsers (one per sportsdataverse-py parse_sportality_*)
 # ---------------------------------------------------------------------------
 
 #' Any body by the generic row rule: an array -> its items; an object holding exactly one array ->

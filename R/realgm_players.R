@@ -2,7 +2,7 @@
 #' **RealGM NBA Player Index**
 #' @description
 #' **Get the active NBA player index from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' Returns RealGM's roster of active NBA players, including position, listed
 #' height/weight, age, current team, years of service and pre-draft team -- the
@@ -67,7 +67,7 @@ realgm_players <- function() {
 #' **RealGM NBA Players Abroad**
 #' @description
 #' **Get the list of NBA-affiliated players currently playing overseas from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' RealGM tracks NBA draft picks, two-way and free-agent players who are on
 #' international rosters -- a view no first-party NBA/ESPN endpoint provides.
@@ -129,7 +129,7 @@ realgm_players_abroad <- function() {
 #' **RealGM Future NBA Free Agents**
 #' @description
 #' **Get RealGM's projected future NBA free-agent class from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' One row per upcoming free agent, including the free-agency season, the
 #' player's Bird/veteran free-agent status, recent production and -- distinctively

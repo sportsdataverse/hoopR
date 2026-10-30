@@ -1,5 +1,5 @@
-# vtb_tables.R -- column specs and code tables of the VTB United League families, generated from sdv-py
-# origin/main e3d232ebc9 (vtb_dtypes.DTYPES, vtb_codes.PLAY_TYPES) by a scratch generator; edit sdv-py first.
+# vtb_tables.R -- column specs and code tables of the VTB United League families, generated from sportsdataverse-py
+# origin/main e3d232ebc9 (vtb_dtypes.DTYPES, vtb_codes.PLAY_TYPES) by a scratch generator; edit sportsdataverse-py first.
 
 #' Documented columns (in order) and their R types, one entry per wrapper.
 #' @noRd

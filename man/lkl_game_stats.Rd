@@ -16,7 +16,7 @@ marks the lines the tab also shows in its \code{shooting} (2PT, 3PT, free throws
 bar groups; it is null for the rest. A 2007-08 game has only a few lines and a flat lead chart (no event data then).
 A body without a comparison gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
    group \tab character \tab Bar group the tab also shows the line in: shooting (2PT, 3PT, free throws) or main (rebounds, assists, steals); null for lines only in the full list. \cr
@@ -40,8 +40,8 @@ Endpoint: \verb{GET https://lkl.lt/api/livestream/game-stats/\{game_id\}}
 \details{
 Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets.
+requests at least 1 s apart. The site's terms were not reviewed; check them before you
+republish the data.
 
 Coverage: game wrappers serve FINISHED games only (an unfinished game raises \code{hoopR_asset_fetch}). The box score,
 summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

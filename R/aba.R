@@ -1,7 +1,7 @@
 # aba.R -- the ABA League `aba_*()` family: the Adriatic leagues' own sites (ABA League, ABA League 2).
 #
-# R mirror of sdv-py sportsdataverse/basketball/aba (e3d232e): same names, arguments, defaults
-# and columns. Runtime and parsers: R/aba_utils.R. Roxygen text generated once from sdv-py's
+# R mirror of sportsdataverse-py sportsdataverse/basketball/aba (e3d232e): same names, arguments, defaults
+# and columns. Runtime and parsers: R/aba_utils.R. Roxygen text generated once from sportsdataverse-py's
 # aba.yaml and manual_column_descriptions.yaml.
 
 #' @title
@@ -25,7 +25,7 @@
 #'   prints `local`), attendance, venue (null before 2017-18), the two clubs with their global `team_id` and final
 #'   score, the commissioner and the referees (`"; "`-joined, names only).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -59,7 +59,7 @@
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -114,7 +114,7 @@ aba_game <- function(game_no, season, league = "aba") {
 #'   One row per period played: `period` (`Q1`..`Q4`, then `OT1`, `OT2`...), its 1-based `period_no` and the points
 #'   scored IN the period (not cumulative).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -129,7 +129,7 @@ aba_game <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -188,7 +188,7 @@ aba_periods <- function(game_no, season, league = "aba") {
 #'   `plus_minus` is 0 on every row of the 2008-09 sample (not tracked then). Percentages are 0-100. Join on
 #'   `player_id` (global), not on the printed name.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -234,7 +234,7 @@ aba_periods <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -289,7 +289,7 @@ aba_box_players <- function(game_no, season, league = "aba") {
 #'   Two rows, home then away. `minutes` is the five on court summed (`200:00`, `225:00` with one overtime);
 #'   `points` equals the final score; `reb_tot` equals the players' sum (team rebounds are not added).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -330,7 +330,7 @@ aba_box_players <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -391,7 +391,7 @@ aba_box_teams <- function(game_no, season, league = "aba") {
 #'   throw, foul or turnover type). Team-only rows print just the qualifier, so `action` is null there. Empty before
 #'   2017-18 (the page has no play-by-play tab).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -416,7 +416,7 @@ aba_box_teams <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -477,7 +477,7 @@ aba_pbp <- function(game_no, season, league = "aba") {
 #'   site's string (null when the shooter was not recorded, id 0); join on it, not on the name. The chart can differ
 #'   from the box score by one attempt per shooter.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -494,7 +494,7 @@ aba_pbp <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -551,7 +551,7 @@ aba_shots <- function(game_no, season, league = "aba") {
 #'   `away_score` at the end of that minute (the site sends them as numeric strings; cast here). The last row equals
 #'   the final score.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -565,7 +565,7 @@ aba_shots <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -622,7 +622,7 @@ aba_score_flow <- function(game_no, season, league = "aba") {
 #'   One row per minute with the cumulative `home_score` / `away_score`, as :func:`parse_aba_score_flow`; for a
 #'   played game the two routes carry the same rows.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -636,7 +636,7 @@ aba_score_flow <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -693,7 +693,7 @@ aba_score_difference <- function(game_no, season, league = "aba") {
 #'   summer time) or `local` (ABA League 2). `group` is the group letter, null after the groups and absent on
 #'   seasons without a Group column.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -720,7 +720,7 @@ aba_score_difference <- function(game_no, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -776,7 +776,7 @@ aba_calendar <- function(season, league = "aba") {
 #'   `points_against` are the two sides of the page's `Overall` column; Top 8 and Play-out tables carry points over
 #'   from the regular season.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -799,7 +799,7 @@ aba_calendar <- function(season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -856,7 +856,7 @@ aba_standings <- function(season, league = "aba") {
 #'   position, height in cm, birth date and place, nationality (a three-letter code) and `career`, the free-text
 #'   Clubs box joined with `"; "` (oldest first). These bio fields are the public player profile.
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -876,7 +876,7 @@ aba_standings <- function(season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'
@@ -933,7 +933,7 @@ aba_player <- function(player_id, season, league = "aba") {
 #'   `Home-Away` pairing label. The stat columns are the box-score stats (`minutes` is `mm:ss`); the three `pts_*`
 #'   columns are null here (the game log has no such columns).
 #'   Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-#'   it raises `hoopR_no_data`, as in sdv-py.
+#'   it raises `hoopR_no_data`, as in sportsdataverse-py.
 #'
 #'   | col_name | type | description |
 #'   |---|---|---|
@@ -974,7 +974,7 @@ aba_player <- function(player_id, season, league = "aba") {
 #'
 #' @details
 #' Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-#' druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+#' druga.aba-liga.com), keyless, with no bot wall.
 #' www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing disallowed, no Crawl-delay) and druga has
 #' no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 #'

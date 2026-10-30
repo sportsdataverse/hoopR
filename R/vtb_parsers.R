@@ -1,12 +1,12 @@
-# vtb_parsers.R -- frames of the VTB United League families, at parity with sdv-py
+# vtb_parsers.R -- frames of the VTB United League families, at parity with sportsdataverse-py
 # sportsdataverse/basketball/vtb/vtb_frames.py, vtb_infobasket_parsers.py and vtb_league_parsers.py
-# (origin/main e3d232ebc9). sdv-py's parse_vtb_* functions are not exported here: each wrapper parses its body.
+# (origin/main e3d232ebc9). sportsdataverse-py's parse_vtb_* functions are not exported here: each wrapper parses its body.
 #
-# A row is a named list of scalars (NA for a JSON null), built the way sdv-py builds a dict (a later key overwrites
+# A row is a named list of scalars (NA for a JSON null), built the way sportsdataverse-py builds a dict (a later key overwrites
 # an earlier one in place). Wire conversions, applied by .vtb_flat():
 #   /Date(ms)/   -> ISO 8601 string in Moscow time with its offset ("2025-09-28T14:00:00+03:00"); the year-1 value
 #                   /Date(-62135596800000)/ is Infobasket's "unset" and becomes NA.
-#   DD.MM.YYYY   -> "YYYY-MM-DD" (a string, as in sdv-py).
+#   DD.MM.YYYY   -> "YYYY-MM-DD" (a string, as in sportsdataverse-py).
 #   ""           -> NA in an id, rank or number column.
 #   a non-empty array -> its JSON text (Python json.dumps form).
 # .vtb_tidy() renames the awkward columns, drops the made/attempted strings and the broken paint stats, parses the
@@ -133,7 +133,7 @@
   out
 }
 
-#' One flat row: nested objects as `<parent>_<child>`, non-empty arrays as JSON text, junk left out (sdv-py `flat`).
+#' One flat row: nested objects as `<parent>_<child>`, non-empty arrays as JSON text, junk left out (sportsdataverse-py `flat`).
 #'
 #' @param node A wire object.
 #' @param prefix Prepended to every column name.
@@ -203,7 +203,7 @@
 }
 
 #' One column from its cells, typed as polars infers it (strict = FALSE), with an id column made integer when every
-#' value survives the round trip (sdv-py `_cast_ids_int64`).
+#' value survives the round trip (sportsdataverse-py `_cast_ids_int64`).
 #' @noRd
 .vtb_column <- function(cells, name) {
   n <- length(cells)
@@ -234,7 +234,7 @@
   out
 }
 
-#' Rows -> a tibble with the documented columns first, typed like sdv-py's `frame()` + `finish()`: an all-NA column
+#' Rows -> a tibble with the documented columns first, typed like sportsdataverse-py's `frame()` + `finish()`: an all-NA column
 #' and a numeric column documented as double take the documented type, a documented column the body lacked is added
 #' as NA, an empty or malformed input is a zero-row tibble with the documented columns.
 #'
@@ -440,7 +440,7 @@
   row
 }
 
-#' The English role of a coach or official line-up row (sdv-py `vtb_codes.staff_role`).
+#' The English role of a coach or official line-up row (sportsdataverse-py `vtb_codes.staff_role`).
 #' @noRd
 .vtb_staff_role <- function(start_type, pos_id) {
   pos <- if (.vtb_kind(pos_id) == "int") pos_id else -1
@@ -455,7 +455,7 @@
 
 .vtb_has <- function(body, key) .vtb_is_obj(body) && length(body) > 0L && key %in% names(body)
 
-#' The frame shapers, one per wrapper (sdv-py `parse_vtb_*`), each `function(raw)` -> rows.
+#' The frame shapers, one per wrapper (sportsdataverse-py `parse_vtb_*`), each `function(raw)` -> rows.
 #' @noRd
 .vtb_shapers <- list(
   vtb_infobasket_seasons = function(raw) {

@@ -56,9 +56,11 @@ A data frame with the following columns:
 \strong{Get KenPom's historical conference ratings}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_confhistory(conf = 'ACC'))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:

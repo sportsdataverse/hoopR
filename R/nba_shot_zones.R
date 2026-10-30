@@ -3,7 +3,7 @@
 #
 # R port of sportsdataverse-py sportsdataverse/nba/nba_shot_zones.py::add_shot_zones.
 # Classifies every field-goal attempt in a hoopR V3 PBP frame into one of five
-# NBA shot zones, mirroring the pbpstats-core convention used by sdv-py.
+# NBA shot zones, mirroring the pbpstats-core convention used by sportsdataverse-py.
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
@@ -93,7 +93,7 @@ NULL
 #'  df <- nba_shot_zones(game_id = "0022200001")
 #'  print(table(df$shot_zone, useNA = "ifany"))
 #' ```
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try({
 #'     df <- nba_shot_zones(game_id = "0022200001")

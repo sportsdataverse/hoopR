@@ -1,14 +1,14 @@
 # ibba.R -- the exported IBBA ASMX wrappers (basket.co.il web service). Generated from
-# the sdv-py endpoint YAML and manual_column_descriptions.yaml, then kept by hand.
+# the sportsdataverse-py endpoint YAML and manual_column_descriptions.yaml, then kept by hand.
 
 # The @details of every ibba topic that shares the ibba_configuration() notes (roxygen @eval .intl_details()).
 .ibba_configuration_details <- c(
   "The IBBA wrappers read the Israel Basketball Association's ASP.NET web service at",
   "`basket.co.il/ws/ws.asmx` (the ops its own site calls): seasons, boards, teams, rosters,",
   "coaches, schedules and results, box scores from 2004-05, season stats and leaders of the",
-  "Winner League (Israeli Premier League). They mirror sdv-py's",
+  "Winner League (Israeli Premier League). They mirror sportsdataverse-py's",
   "`sportsdataverse.basketball.ibba` wrappers of the same names: same arguments, the same",
-  "snake_case columns and types, one row per sdv-py row. The live box score, play-by-play and",
+  "snake_case columns and types, one row per sportsdataverse-py row. The live box score, play-by-play and",
   "shot coordinates of a game are in the [ibba_segev_game_info()] family (Segev Stats).",
   "",
   "**Unofficial and unsupported.** The web service is keyless, unofficial and reverse",
@@ -47,7 +47,7 @@
 #' Endpoint: `GET https://basket.co.il/ws/ws.asmx/Configuration`
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @eval .intl_details(.ibba_configuration_details, "ibba_configuration(season = 2026)")
+#' @eval .intl_details(.ibba_configuration_details, full = TRUE, "ibba_configuration(season = 2026)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |

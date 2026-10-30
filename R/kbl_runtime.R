@@ -1,6 +1,6 @@
 # kbl_runtime.R -- transport, season mapping and scope checks of the KBL wrappers (api.kbl.or.kr).
 #
-# R mirror of sdv-py sportsdataverse/basketball/kbl/kbl_runtime.py (origin/main e3d232ebc9):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/kbl/kbl_runtime.py (origin/main e3d232ebc9):
 # * Every request goes through `.intl_get()` (>= 1 s per host on every attempt) with the two headers the API
 #   insists on (`Channel`, `TeamCode`, any value; the site sends WEB and XX). The headers are always sent, so an
 #   HTTP 400 is an unknown answer (`hoopR_asset_fetch`), never the caller's fault.
@@ -29,10 +29,10 @@
 #' @noRd
 .KBL_NEW_PLAYOFF_FROM <- 45L
 
-# gmkey -> context of a FINAL game (sdv-py `_CACHE`)
+# gmkey -> context of a FINAL game (sportsdataverse-py `_CACHE`)
 .kbl_cache <- new.env(parent = emptyenv())
 
-#' Forget the cached game contexts (sdv-py `kbl_runtime.clear_cache`).
+#' Forget the cached game contexts (sportsdataverse-py `kbl_runtime.clear_cache`).
 #' @noRd
 .kbl_clear_cache <- function() rm(list = ls(.kbl_cache, all.names = TRUE), envir = .kbl_cache)
 
@@ -129,7 +129,7 @@
   n
 }
 
-#' The KBL seasonCode of an END year and division (sdv-py `kbl_codes.season_code`).
+#' The KBL seasonCode of an END year and division (sportsdataverse-py `kbl_codes.season_code`).
 #' @noRd
 .kbl_season_code <- function(season, division, call) {
   grade <- c(kbl = 1L, d_league = 2L)
@@ -148,7 +148,7 @@
   code[[1]]
 }
 
-#' First and last game date over every competition of an END year (sdv-py `kbl_codes.season_dates`).
+#' First and last game date over every competition of an END year (sportsdataverse-py `kbl_codes.season_dates`).
 #' @noRd
 .kbl_season_dates <- function(season, call) {
   t <- .kbl_season_table[.kbl_season_table$end == season, ]
@@ -168,7 +168,7 @@
   list(code = code, gc = gc, glkey = paste0("S", code, "G", gc))
 }
 
-#' The wrappers' division check (sdv-py raises it before the runtime).
+#' The wrappers' division check (sportsdataverse-py raises it before the runtime).
 #' @noRd
 .kbl_check_division <- function(division, call) {
   if (!(is.character(division) && length(division) == 1L && division %in% c("kbl", "d_league"))) {

@@ -80,6 +80,18 @@ login <- function(user_email = Sys.getenv("KP_USER"), user_pw = Sys.getenv("KP_P
     httr2::req_headers(!!!.kp_headers_list()) |>
     httr2::req_cookie_preserve(jar)
 }
+
+#' KenPom's URL slug for a team name (`team.php?team=<slug>`)
+#'
+#' The slug is the URL-encoded name with `+` for spaces (`"Texas A&M"` ->
+#' `"Texas+A%26M"`), the same value as `teams_links$team.link.ref` for every
+#' row, so it works for seasons `teams_links` does not list yet.
+#' @param team Team name as KenPom prints it (`teams_links$Team`).
+#' @return The slug, a character scalar.
+#' @noRd
+.kp_team_slug <- function(team) {
+  gsub("%20", "+", utils::URLencode(team, reserved = TRUE), fixed = TRUE)
+}
 #' @rdname kp_user_pw
 #' @export
 kp_user_email <- function() {
@@ -293,7 +305,7 @@ most_recent_nba_season <- function() {
 #' @description
 #' Returns the most recent season's **START** year -- the `seasons` value
 #' the `nba_stats_*` release loaders expect (see [load_nba_stats_coaches()]),
-#' matching sdv-py's `load_nba_stats_*` Python loaders. It is defined as
+#' matching sportsdataverse-py's `load_nba_stats_*` Python loaders. It is defined as
 #' `most_recent_nba_season() - 1`: [most_recent_nba_season()] returns the
 #' current season's **END** year (hoopR's ESPN-family convention, used
 #' directly -- with no offset -- by `load_nba_*()`), and the published
@@ -653,10 +665,6 @@ utils::globalVariables(c("where"))
 #' @keywords internal
 "_PACKAGE"
 
-#' @importFrom Rcpp getRcppVersion
-#' @importFrom RcppParallel defaultNumThreads
-NULL
-
 `%c%` <- function(x, y) {
   ifelse(!is.na(x), x, y)
 }
@@ -664,7 +672,7 @@ NULL
 
 
 # Build a class-carrying empty hoopR_data tibble for return-variable
-# initialization (see CLAUDE.md "Return-Value Initialization").
+# initialization (a wrapper returns it when a request fails).
 #
 # Tibble-returning ESPN/league wrappers must initialize their return
 # variable BEFORE the tryCatch so that a connection error / HTTP 500 in

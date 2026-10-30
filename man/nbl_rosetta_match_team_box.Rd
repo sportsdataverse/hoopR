@@ -50,7 +50,7 @@ A \code{hoopR_data} tibble (one row per team and period):\tabular{lll}{
 }
 
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 }
 \description{
 One match's team box score by period, one row per team and period (0 = whole game).
@@ -58,21 +58,7 @@ One match's team box score by period, one row per team and period (0 = whole gam
 Endpoint: \verb{GET https://prod.rosetta.nbl.com.au/get/match/\{match_id\}/live/all}
 }
 \details{
-\itemize{
-\item Unofficial: the JSON proxy behind nbl.com.au (not an API the NBL documents or supports). The terms of use were not reviewed; payloads are not redistributed as release assets.
-\item Gated by a referer, not a key: every request carries Origin / Referer set to nbl.com.au (the runtime sends them); without them the host answers 403 MISSING_API_KEY, which is raised as \code{hoopR_asset_fetch}.
-\item Fills a hole in ESPN: ESPN's nbl feed has box scores but no plays for the 2025-26 NBL season (the stats provider changed from Genius Sports to Sportradar DataCore that year). nbl_rosetta_match_pbp has the full event log with shot x/y for 2025-26 and, in the same shape, back to 2011-12 (WNBL about 2014-15). Matches from 1979 have box scores only.
-\item One host serves three organisations; pass org='nbl' (default), 'wnbl' or 'nbl1'. NBL1 is the second tier (men's and women's conferences, calendar-year seasons).
-\item Season = the END year (2026 = 2025-26) everywhere. Rosetta's own year is the START year for the NBL and WNBL from 1998-99 and a calendar year for NBL1 and the 1979-1997 winter seasons; the runtime maps it. Year 1998 holds two seasons (calendar 1998 and 1998-99).
-\item Ids: \verb{<entity>}\emph{id columns are DataCore ids (UUID v1; join on them), rosetta}\verb{<entity>}_id Rosetta's own. match_id is the DataCore fixture id every match route is keyed on.
-\item Unknown ids, orgs and types answer 200 with no rows (\code{hoopR_no_data}). Rosetta caches a body per path and serves it whatever the query string, so a page cut by someone else's limit is refused (\code{hoopR_asset_fetch}); retry after the cache entry expires.
-}
-
-Errors: \code{hoopR_no_data} when Rosetta answers 404 or no rows (an unknown match, team, player or
-season id, an org or season type with nothing, or no season in progress); \code{hoopR_asset_fetch}
-for the 403 gate body, a stub or error envelope, a page cut by Rosetta's path cache, a body for
-another org, season or entity than the one asked for, or any other failed fetch;
-\code{hoopR_bad_request} for an unknown \code{org} / \code{season_type}, a malformed id, or HTTP 400 / 422.
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=nbl_rosetta_seasons]{nbl_rosetta_seasons()}}.
 }
 \examples{
 \donttest{

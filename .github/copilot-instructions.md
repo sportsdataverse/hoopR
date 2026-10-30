@@ -180,7 +180,7 @@ Two regeneration steps are part of the commit workflow whenever the relevant sou
 - **DESCRIPTION.** After editing `DESCRIPTION` (deps, versions, `Authors@R`, etc.), run `usethis::use_tidy_description()` to normalize field order, alphabetize `Imports`/`Suggests`, and reflow long lines. Run it even for one-line edits.
 
 - **Release notes triad — `NEWS.md` / `cran-comments.md` / `_pkgdown.yml`.** Whenever you add a `NEWS.md` bullet, check the other two:
-  - `NEWS.md` — all new bullets go under the most recent **unreleased** version heading (currently `# **hoopR 3.1.0**`). Do NOT create a new version section ahead of release; extend the existing subsections (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, ...). After the release ships the rule rolls forward to the next dev version.
+  - `NEWS.md` — all new bullets go under the most recent **unreleased** version heading (currently `# **hoopR 3.2.0**`). Do NOT create a new version section ahead of release; extend the existing subsections (`### Bug Fixes`, `### Deprecations`, `### Stability and Test Robustness`, ...). After the release ships the rule rolls forward to the next dev version.
   - `cran-comments.md` — every user-visible / behavioral change in `NEWS.md` should be reflected in `cran-comments.md` before submission. Internal-only changes (refactors, test infra, dev tooling) can be omitted.
   - `_pkgdown.yml` — new exports go in the right `reference:` section. `starts_with()` selectors auto-pick up `nba_*` / `espn_*` / `kp_*` / `ncaa_*` prefixes; explicitly-listed functions need a manual entry. `lifecycle::deprecate_stop()` + `@keywords internal` excludes a function from the rendered index by default.
 

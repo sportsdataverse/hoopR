@@ -4,7 +4,6 @@
 # Fox's layout JSON (sections -> tables -> rows -> cells) into tidy hoopR
 # tibbles. Basketball play-by-play is period-based (QUARTER/HALF -> plays).
 # NBA uses the `nba` slug; men's college basketball uses the `cbk` slug.
-# Reverse-engineering notes + an OpenAPI spec live in the sdv-internal-refs repo.
 
 # Fox Bifrost public web apikey. Resolved from option -> env var -> literal so
 # the key can be overridden without a code change while preserving the legacy

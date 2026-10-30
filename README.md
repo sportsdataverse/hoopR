@@ -1,10 +1,11 @@
 
-  - [](#section)
   - [hoopR
     <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px" alt="hoopR logo"/></a>](#hoopr-)
       - [Data status](#data-status)
       - [Installation](#installation)
       - [Quick Start](#quick-start)
+      - [**Plotting and related
+        packages**](#plotting-and-related-packages)
       - [**Documentation**](#documentation)
       - [**Breaking Changes**](#breaking-changes)
       - [Follow the SportsDataverse (@SportsDataverse) on X and star
@@ -13,9 +14,8 @@
       - [**Our Authors**](#our-authors)
       - [**Our Contributors (they’re
         awesome)**](#our-contributors-theyre-awesome)
+      - [**Cheat sheet**](#cheat-sheet)
       - [**Citations**](#citations)
-
-# 
 
 # hoopR <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px" alt="hoopR logo"/></a>
 
@@ -38,24 +38,30 @@ Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%
 [**`hoopR`**](https://hoopR.sportsdataverse.org/) is an R package for
 working with men’s basketball data.
 
-The package has functions to access **live play by play and box score**
-data from ESPN with shot locations when available. As of version 1.3.0,
-[**`hoopR`**](https://hoopR.sportsdataverse.org/) is also a full NBA
-Stats API wrapper with 127 functions added in this release.
+It exports more than 1,300 functions:
 
-It is additionally a scraping and aggregating interface for Ken
-Pomeroy’s men’s college basketball statistics website,
-[kenpom.com](https://kenpom.com/). It provides users with an active
-subscription the capability to scrape the website tables and analyze the
-data for themselves.
-
-As of version 3.1.0, the package exports 600+ functions spanning the NBA
-Stats API (`nba_*`), ESPN (`espn_nba_*` / `espn_mbb_*`), KenPom
-(`kp_*`), CollegeBasketballData (`cbbd_*`), Basketball-Reference
-(`bref_*`), Bart Torvik (`torvik_*`), RealGM (`realgm_*`), Fox Sports
-(`fox_*`), NCAA (`ncaa_mbb_*`), and NBA G-League (`nbagl_*`), plus
-`load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` bulk-data loaders
-backed by the `sportsdataverse-data` release repos.
+  - **NBA:** the NBA Stats API (`nba_*`, about 200 functions), ESPN
+    (`espn_nba_*`), the NBA G League (`nbagl_*`), Basketball-Reference
+    (`bref_*`), RealGM (`realgm_*`), Fox Sports (`fox_nba_*`),
+    official.nba.com officiating reports (`nba_l2m()`,
+    `nba_referee_assignments()`), salary and mock-draft sources, and
+    cross-source crosswalks.
+  - **Men’s college basketball:** ESPN (`espn_mbb_*`), Ken Pomeroy’s
+    [kenpom.com](https://kenpom.com/) (`kp_*`, for users with an active
+    subscription), CollegeBasketballData (`cbbd_*`), Bart Torvik
+    (`torvik_*`), the NCAA (`ncaa_mbb_*`) and Fox Sports (`fox_mbb_*`).
+  - **International:** EuroLeague and EuroCup (`euroleague_*`) and about
+    two dozen leagues and competitions, among them FIBA events
+    (`fiba_*`), Spain’s ACB (`acb_*`), Italy’s LBA (`lba_*`), the VTB
+    United League (`vtb_*`), Japan’s B.LEAGUE (`bleague_*`), Australia’s
+    NBL (`nbl_rosetta_*`), Korea’s KBL (`kbl_*`) and China’s CBA
+    (`cba_*`). See the [function
+    reference](https://hoopR.sportsdataverse.org/reference/) for the
+    full list.
+  - **Loaders:** `load_nba_*()`, `load_mbb_*()`, `load_nba_stats_*()`
+    and `load_ncaa_mbb_*()` read pre-built play-by-play, box score,
+    schedule, shot and model data from the `sportsdataverse-data`
+    releases.
 
 ## Data status
 
@@ -83,7 +89,7 @@ You can install the CRAN version of
 install.packages("hoopR")
 ```
 
-You can install the released version of
+You can install the development version of
 [**`hoopR`**](https://github.com/sportsdataverse/hoopR/) from
 [GitHub](https://github.com/sportsdataverse/hoopR) with:
 
@@ -97,33 +103,47 @@ pak::pak("sportsdataverse/hoopR")
 
 ## Quick Start
 
-### **NBA full play-by-play seasons (2002-2026) \~ 1-2 minutes**
+### **NBA play-by-play for a season**
+
+`load_nba_pbp()` covers 2002-2027; pass several seasons (or `seasons
+= 2002:2026`) to load more at once.
 
 ``` r
-tictoc::tic()
-progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp()
-})
-tictoc::toc()
+nba_pbp <- hoopR::load_nba_pbp(seasons = 2026)
 ```
-
-    ## 4.05 sec elapsed
 
     ## 642472 rows of NBA play-by-play data from 1325 games.
 
-### **Men’s college basketball full play-by-play seasons (2006-2026) \~ 2-3 minutes**
+### **Men’s college basketball play-by-play for a season**
+
+`load_mbb_pbp()` covers 2006-2027.
 
 ``` r
-tictoc::tic()
-progressr::with_progress({
-  mbb_pbp <-  hoopR::load_mbb_pbp()
-})
-tictoc::toc()
+mbb_pbp <- hoopR::load_mbb_pbp(seasons = 2026)
 ```
 
-    ## 12.98 sec elapsed
-
     ## 2915731 rows of men's college basketball play-by-play data from 6275 games.
+
+## **Plotting and related packages**
+
+  - [**`sdvplotR`**](https://sdvplotR.sportsdataverse.org/) (0.3.0,
+    `pak::pak("sportsdataverse/sdvplotR")`) adds team logos and colours
+    to `ggplot2` charts and draws shot charts from the `hoopR` shot
+    loaders; see its
+    [NBA](https://sdvplotR.sportsdataverse.org/articles/nba-viz.html),
+    [men’s
+    college](https://sdvplotR.sportsdataverse.org/articles/mbb-viz.html)
+    and [shot
+    chart](https://sdvplotR.sportsdataverse.org/articles/cookbook-surfaces-shot-charts.html)
+    articles.
+  - [**`sportyR`**](https://sportyR.sportsdataverse.org/) (2.4.5,
+    `install.packages("sportyR")`) draws NBA, NCAA and FIBA courts to
+    plot shot locations on.
+  - [**`wehoop`**](https://wehoop.sportsdataverse.org/) is the women’s
+    basketball companion (WNBA and women’s college basketball).
+  - [**`sportsdataverse-py`**](https://py.sportsdataverse.org/) is the
+    Python package; most `hoopR` functions have a Python twin of the
+    same name.
 
 ## **Documentation**
 
@@ -131,8 +151,10 @@ For more information on the package and function reference, please see
 the [**`hoopR`** documentation
 website](https://hoopR.sportsdataverse.org).
 
-There is also a printable [**`hoopR` cheat sheet (PDF)**](https://sportsdataverse.org/cheatsheets/hoopR.pdf), one of [a set covering every SportsDataverse package](https://sportsdataverse.org/cheatsheets).
-
+There is also a printable [**`hoopR` cheat sheet
+(PDF)**](https://sportsdataverse.org/cheatsheets/hoopR.pdf), one of [a
+set covering every SportsDataverse
+package](https://sportsdataverse.org/cheatsheets).
 
 ## **Breaking Changes**
 
@@ -147,12 +169,10 @@ Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%
 [![GitHub
 stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&logo=github&style=for-the-badge&label=Star%20hoopR&maxAge=2592000)](https://github.com/sportsdataverse/hoopR)
 
-<a href="https://github.com/sportsdataverse/hoopR">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history-dark.svg">
-    <img alt="Star history of sportsdataverse/hoopR" src="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history.png" width="600">
-  </picture>
-</a>
+<a href="https://github.com/sportsdataverse/hoopR"> <picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history-dark.svg">
+<img alt="Star history of sportsdataverse/hoopR" src="https://raw.githubusercontent.com/sportsdataverse/hoopR/star-history/star-history.png" width="600">
+</picture> </a>
 
 ## **Our Authors**
 
@@ -167,9 +187,7 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
     <a href="https://x.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge" alt="@theFirmAISports" /></a>
     <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
-  - Billy Fryer (@BillyFryer42)
-    <a href="https://x.com/BillyFryer42" target="blank"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge" alt="@BillyFryer42" /></a>
-    <a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
+  - Billy Fryer
 
   - Ross Drucker (@rossdrucker9)
     <a href="https://x.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge" alt="@rossdrucker9" /></a>
@@ -180,14 +198,17 @@ stars](https://img.shields.io/github/stars/sportsdataverse/hoopR.svg?color=eee&l
     <a href="https://github.com/shufinskiy" target="blank"><img src="https://img.shields.io/github/followers/shufinskiy?color=eee&logo=Github&style=for-the-badge" alt="@shufinskiy" /></a>
 
 <!-- cheatsheet-section -->
+
 ## **Cheat sheet**
 
-A printable one-page reference for **`hoopR`** — the function families, the loaders, and what each one returns.
+A printable one-page reference for **`hoopR`** — the function families,
+the loaders, and what each one returns.
 
-📄 **[Download the hoopR cheat sheet (PDF)](https://sportsdataverse.org/cheatsheets/hoopR.pdf)**
+📄 **[Download the hoopR cheat sheet
+(PDF)](https://sportsdataverse.org/cheatsheets/hoopR.pdf)**
 
-Free to download, print and hand out; light and dark, US Letter landscape.
-Every SportsDataverse package has one — browse them all at
+Free to download, print and hand out; light and dark, US Letter
+landscape. Every SportsDataverse package has one — browse them all at
 **[sportsdataverse.org/cheatsheets](https://sportsdataverse.org/cheatsheets)**.
 
 ## **Citations**
@@ -200,7 +221,7 @@ BibTeX Citation
 ``` bibtex
 @misc{gilani_2021_hoopR,
   author = {Gilani, Saiem},
-  title = {hoopR: The SportsDataverse's R Package for Men's Basketball Data.},
+  title = {hoopR: Access Men's Basketball Play by Play Data},
   url = {https://hoopR.sportsdataverse.org},
   doi = {10.32614/CRAN.package.hoopR},
   year = {2026}

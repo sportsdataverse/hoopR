@@ -60,36 +60,7 @@ A \code{hoopR_data} tibble with these columns:\tabular{lll}{
 Endpoint: \verb{GET https://stats.segevstats.com/realtimestat_heb/api/?method=getBoxScore}
 }
 \details{
-The \verb{ibba_segev_*()} wrappers read Segev Stats, the live-stats vendor behind basket.co.il's
-game pages (\verb{stats.segevstats.com/realtimestat_heb/api/}, a JSON-RPC API served as
-text/html): the game header, rosters, box score, period scores and play-by-play with shot
-coordinates, from 2025-26. They mirror sdv-py's \verb{ibba_segev_*} wrappers of the same names:
-same arguments, the same snake_case columns and types, one row per sdv-py row.
-
-\strong{Unofficial and unsupported.} The API is keyless, unofficial and not documented for
-outside use. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504
-are retried three times, a 500 is not); only finished games are read.
-
-\strong{Games and ids.} \code{game_id} is one flat Segev id space across seasons AND competitions
-(men's Winner League, Winner Cup, women's, Leumit, youth, school and pre-season games), so
-read \code{competition} from \code{\link[=ibba_segev_game_info]{ibba_segev_game_info()}}. There is no game list: league game ids
-come from \code{\link[=ibba_games]{ibba_games()}} \code{segev_game_id} (2025-26 on; see \code{\link[=ibba_segev_game_crosswalk]{ibba_segev_game_crosswalk()}}).
-Segev team and player ids are stable across seasons (Jaylen Hoard = player 1000 in games 50
-and 419), unlike the IBBA season registrations, and are not IBBA ids.
-
-\strong{Play-by-play.} Actions name the player by Segev id and by JERSEY number, \code{score} reads
-away-home, and shot \code{x} / \code{y} are one half-court frame (x 0-1470 across, basket near 735;
-y out from the baseline, rim near 112-140); which sideline is x = 0 and the metric scale
-are unverified. Segev renamed its team game stats between 2025-26 and 2026-27; the frames
-unify them. \code{start_time} is the scheduled tip-off in Israel local time (POSIXct, tz
-Asia/Jerusalem; the feed carries no offset).
-
-\strong{Errors} are classed conditions, never a warning plus an empty frame: \code{hoopR_no_data}
-(HTTP 404, "game not found", a finished game with no actions), \code{hoopR_bad_request} (HTTP
-400 / 422, or a \code{game_id} that is not a positive integer) and \code{hoopR_asset_fetch} (any
-other failure: another status, a transport error, an empty or non-JSON body, an error or
-changed envelope, a body for another game, a game that is not final). All inherit
-\code{hoopR_error}.
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=ibba_segev_game_info]{ibba_segev_game_info()}}.
 }
 \examples{
 \donttest{

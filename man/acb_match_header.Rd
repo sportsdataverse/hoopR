@@ -14,7 +14,7 @@ accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_match_header}):\tabular{lll}{
+(sportsdataverse-py \code{acb_match_header}):\tabular{lll}{
    col_name \tab type \tab description \cr
    match_id \tab integer \tab Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. \cr
    competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) \cr
@@ -56,12 +56,11 @@ Endpoint: \verb{GET https://api2.acb.com/api/matchdata/MatchHeader/match-header}
 }
 \details{
 \itemize{
-\item Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com read 2026-10-12): ACEB, S.A.U.
-claims intellectual property in the site's databases (the EU sui generis database right) among its other
-content. It authorises viewing and private copies for personal or journalistic use with the source credited,
-and requires prior express consent for distribution, reproduction or public communication. These wrappers
-fetch on the user's behalf; a published data release or a hosted mirror needs the owner's decision first.
-robots.txt allows the paths.
+\item Legal notice (the aviso legal of acb.com): ACEB, S.A.U. claims intellectual property in the site's databases
+(the EU sui generis database right) among its other content. It authorises viewing and private copies for
+personal or journalistic use with the source credited, and requires prior express consent for distribution,
+reproduction or public communication. These wrappers fetch on your behalf for your own use; check the notice
+before you republish the data. robots.txt allows the paths.
 \item Unofficial and unsupported: api2.acb.com is the .NET API behind acb.com and live.acb.com, not a documented
 public API. It needs the header \code{X-APIKEY}, a public key shipped in acb.com's bundle: the runtime sends the
 documented value (\verb{$ACB_API_KEY} overrides it), re-reads the live bundle once on a 401, and never prints the

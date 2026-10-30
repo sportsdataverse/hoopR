@@ -1,8 +1,8 @@
 # pleague.R -- P. LEAGUE+ (Taiwan) wrappers over pleagueofficial.com and the third-party vendor
-# api.preciser.io, at parity with sdv-py sportsdataverse/basketball/plg (origin/main e3d232e): 11 site
+# api.preciser.io, at parity with sportsdataverse-py sportsdataverse/basketball/plg (origin/main e3d232e): 11 site
 # wrappers, 7 vendor wrappers and the team crosswalk. Runtime, refusals and frames: R/pleague_utils.R.
 # Generated from tools/codegen/endpoints/pleague{,_preciser}.yaml and manual_column_descriptions.yaml of
-# that sdv-py commit (ASCII only: Chinese text is glossed as '(Chinese text)').
+# that sportsdataverse-py commit (ASCII only: Chinese text is glossed as '(Chinese text)').
 
 # The @details of every pleague topic that shares the pleague_schedule() notes (roxygen @eval .intl_details()).
 .pleague_schedule_details <- c(
@@ -10,9 +10,9 @@
   "  league), keyless. The site's /user-policy (members' terms, section 11) reserves all content on the site to the",
   "  service and its rights holders and forbids use, copying, adaptation or distribution without authorisation (it",
   "  says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no",
-  "  Allow, Disallow or Crawl-delay rule. Use for reference only; payloads are not redistributed as release assets,",
-  "  and a data release needs owner sign-off. Requests are spaced at least 1 s apart per host, retries included.",
-  "* Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a",
+  "  Allow, Disallow or Crawl-delay rule. Use for reference only, and check the terms before you republish the data.",
+  "  Requests are spaced at least 1 s apart per host, retries included.",
+  "* Access: the site sits behind Cloudflare. sportsdataverse-py fetches it with curl_cffi (Chrome TLS); this R port sends a",
   "  browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer",
   "  a request with an HTTP 403 challenge page (`hoopR_asset_fetch`). Redirects are not followed: the site answers",
   "  an unknown `gid` or a season before 2020-21 with a 302 to the home page (`hoopR_no_data`).",
@@ -53,7 +53,7 @@
 #' @return
 #' A `hoopR_data` tibble: Schedule and results of one season and stage (pre-season, regular season, playoffs or
 #'   finals): one row per game, away team first. An empty valid answer is a zero-row tibble with these columns, in
-#'   this order (sdv-py `pleague_schedule`):
+#'   this order (sportsdataverse-py `pleague_schedule`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -80,7 +80,7 @@
 #' | home_name_en | character | Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
 #' | home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
 #' | home_score | integer | Home team's final points (0 on a future game). |
-#' @eval .intl_details(.pleague_schedule_details)
+#' @eval .intl_details(.pleague_schedule_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(pleague_schedule(season = 2025))
@@ -103,7 +103,7 @@ pleague_schedule <- function(season, stage = "regular-season") {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Header of one finished game: date, venue, both clubs with their score and the Preciser
-#'   game uuid. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   game uuid. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_game`):
 #'
 #' | col_name | type | description |
@@ -125,7 +125,7 @@ pleague_schedule <- function(season, stage = "regular-season") {
 #' | home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
 #' | home_score | integer | Home team's final points (0 on a future game). |
 #' | overtimes | integer | Number of overtime periods played (overtime cells with points on the page). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_game(gid = 197))
@@ -148,7 +148,7 @@ pleague_game <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Points each team scored in each quarter and overtime of one finished game. An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_periods`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_periods`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -157,7 +157,7 @@ pleague_game <- function(gid) {
 #' | period_no | integer | 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. |
 #' | home_points | integer | Home points scored IN the period (not cumulative). |
 #' | away_points | integer | Away points scored IN the period (not cumulative). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_periods(gid = 197))
@@ -180,7 +180,7 @@ pleague_periods <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: The referee and the two umpires printed under the header of one finished game (names
-#'   only). An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   only). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_officials`):
 #'
 #' | col_name | type | description |
@@ -211,7 +211,7 @@ pleague_officials <- function(gid) {
 #' @return
 #' A `hoopR_data` tibble: Player box score of one finished game: minutes, points, shooting splits, rebounds,
 #'   assists, plus/minus, and the ratings from 2022-23; did-not-play rows included. An empty valid answer is a
-#'   zero-row tibble with these columns, in this order (sdv-py `pleague_box_players`):
+#'   zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_box_players`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -262,7 +262,7 @@ pleague_officials <- function(gid) {
 #' | opp_pts_fast_break | integer | Opponent fast-break points while the player was on court (2022-23 on). Null on did-not-play rows. |
 #' | opp_pts_off_turnover | integer | Opponent points off turnovers while the player was on court (2022-23 on). Null on did-not-play rows. |
 #' | opp_pts_paint | integer | Opponent points in the paint while the player was on court (2022-23 on). Null on did-not-play rows. |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_box_players(gid = 197))
@@ -285,7 +285,7 @@ pleague_box_players <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Team totals of one finished game: the box score's total row, home then away. An empty
-#'   valid answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_box_teams`):
+#'   valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_box_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -312,7 +312,7 @@ pleague_box_players <- function(gid) {
 #' | tov | integer | Team turnovers. |
 #' | pf | integer | Team personal fouls. |
 #' | plus_minus | integer | Sum of the players' plus/minus (2020-21 and 2021-22 only; null from 2022-23). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_box_teams(gid = 197))
@@ -335,7 +335,7 @@ pleague_box_teams <- function(gid) {
 #'   are served.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play of one finished game (2022-23 on) in game order, with shot x / y and the
-#'   clip references. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   clip references. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_pbp`):
 #'
 #' | col_name | type | description |
@@ -349,7 +349,7 @@ pleague_box_teams <- function(gid) {
 #' | side | character | Side of the acting team: away or home (the fragment places the play in the away or home column). |
 #' | jersey | character | Shirt number of the acting player as printed; null on team rows and where the name is printed without a number. |
 #' | player_zh | character | Acting player's name as printed; null on team rows (a team rebound, timeout or shot-clock violation). The page prints no player ids: join to the box on side, jersey and name_zh. |
-#' | action | character | Action code from the vocabulary observed on 258,183 plays of 404 finished 2022-23..2025-26 games (82 phrases plus the blank row; an unseen phrase is refused as layout drift). The code = meaning \[Traditional Chinese phrase, events\]: ast = assist \[17,020\]; blk = block \[3,181\]; fg2_alley_oop_made = 2-point alley-oop, made \[205\]; fg2_alley_oop_missed = 2-point alley-oop, missed \[81\]; fg2_driving_layup_made = 2-point driving layup, made \[4,281\]; fg2_driving_layup_missed = 2-point driving layup, missed \[3,961\]; fg2_dunk_made = 2-point dunk, made \[1,316\]; fg2_dunk_missed = 2-point dunk, missed \[162\]; fg2_fadeaway_jumper_made = 2-point fadeaway jumper, made \[583\]; fg2_fadeaway_jumper_missed = 2-point fadeaway jumper, missed \[1,121\]; fg2_floater_made = 2-point floater, made \[1,920\]; fg2_floater_missed = 2-point floater, missed \[3,052\]; fg2_hook_shot_made = 2-point hook shot, made \[610\]; fg2_hook_shot_missed = 2-point hook shot, missed \[773\]; fg2_jump_shot_made = 2-point jump shot, made \[1,657\]; fg2_jump_shot_missed = 2-point jump shot, missed \[3,606\]; fg2_layup_made = 2-point layup, made \[4,428\]; fg2_layup_missed = 2-point layup, missed \[3,403\]; fg2_pull_up_jumper_made = 2-point pull-up jumper, made \[1,004\]; fg2_pull_up_jumper_missed = 2-point pull-up jumper, missed \[1,564\]; fg2_putback_made = 2-point putback / tip-in, made \[2,138\]; fg2_putback_missed = 2-point putback / tip-in, missed \[1,539\]; fg2_step_back_shot_made = 2-point step-back shot, made \[243\]; fg2_step_back_shot_missed = 2-point step-back shot, missed \[410\]; fg2_turnaround_jumper_made = 2-point turnaround jumper, made \[672\]; fg2_turnaround_jumper_missed = 2-point turnaround jumper, missed \[1,158\]; fg3_fadeaway_jumper_made = 3-point fadeaway jumper, made \[48\]; fg3_fadeaway_jumper_missed = 3-point fadeaway jumper, missed \[92\]; fg3_made = 3-point shot, style not recorded, made \[7,817\]; fg3_missed = 3-point shot, style not recorded, missed \[17,046\]; fg3_pull_up_jumper_made = 3-point pull-up jumper, made \[480\]; fg3_pull_up_jumper_missed = 3-point pull-up jumper, missed \[922\]; fg3_step_back_shot_made = 3-point step-back shot, made \[245\]; fg3_step_back_shot_missed = 3-point step-back shot, missed \[559\]; fg3_turnaround_jumper_made = 3-point turnaround jumper, made \[10\]; fg3_turnaround_jumper_missed = 3-point turnaround jumper, missed \[23\]; fg_made = field goal made, shot type and distance not recorded \[158\]; fg_missed = field goal missed, shot type and distance not recorded \[168\]; foul = foul, kind not recorded (team row) \[18\]; foul_bench_technical = technical foul on the bench \[35\]; foul_coach_technical = technical foul on the coach \[75\]; foul_disqualifying = disqualifying foul \[2\]; foul_drawn = foul drawn (the opponent's foul on this player) \[17,035\]; foul_offensive = offensive foul committed \[1,024\]; foul_personal = personal foul committed \[15,745\]; foul_technical = technical foul \[210\]; foul_unsportsmanlike = unsportsmanlike foul \[261\]; ft_made = free throw 1 of 1 awarded, made \[1,326\]; ft_made = free throw 1 of 3 awarded, made \[128\]; ft_made = free throw 1 of 2 awarded, made \[5,187\]; ft_made = free throw 3, made \[149\]; ft_made = free throw 2, made \[5,798\]; ft_missed = free throw 1 of 1 awarded, missed \[669\]; ft_missed = free throw 1 of 3 awarded, missed \[67\]; ft_missed = free throw 1 of 2 awarded, missed \[2,736\]; ft_missed = free throw 3, missed \[46\]; ft_missed = free throw 2, missed \[2,319\]; jump_ball_lost = jump ball lost \[404\]; jump_ball_won = jump ball won \[708\]; reb_def = defensive rebound (a team rebound has no player) \[29,537\]; reb_off = offensive rebound (a team rebound has no player) \[12,379\]; review_coach_challenge = video review: coach's challenge (2025-26 onward; the printed text ends with a bare comma) \[videoReview, coachChallenge,, 82\]; review_instant_replay = video review: instant-replay system, started by the officials (2025-26 onward) \[videoReview, instantReplaySystem,, 67\]; review_instant_replay_1 = video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained; the row also prints the running score and the points tag '+videoReview') \[videoReview, instantReplaySystem, 1, 6\]; stl = steal \[7,361\]; sub_in = substitution: enters the game \[25,505\]; sub_out = substitution: leaves the game \[25,532\]; timeout = timeout (a team row) \[2,854\]; tov_3sec = turnover: 3-second violation \[249\]; tov_5sec = turnover: 5-second violation \[40\]; tov_8sec = turnover: 8-second violation \[26\]; tov_backcourt = turnover: backcourt violation \[96\]; tov_bad_pass = turnover: bad pass \[6,325\]; tov_ball_handling = turnover: ball-handling \[3,547\]; tov_carrying = turnover: carrying the ball \[47\]; tov_double_dribble = turnover: double dribble \[53\]; tov_offensive = turnover: offensive (kind not recorded) \[1,007\]; tov_offensive_goaltending = turnover: offensive goaltending \[4\]; tov_other = turnover: other \[51\]; tov_out_of_bounds = turnover: ball out of bounds \[441\]; tov_shot_clock = turnover: shot-clock violation \[489\]; tov_travel = turnover: travelling \[718\]; unlabelled = row has a player but no action text; in the corpus a shot with x/y followed by a rebound, i.e. a missed shot (inferred) \[(blank), 169\]. |
+#' | action | character | Action code (one of the codes listed under "Action codes" below; an unseen phrase is refused as layout drift). |
 #' | action_zh | character | The action phrase as printed, Traditional Chinese ((Chinese text) = dunk, made; '#35 (Chinese text)' = '#35 \{player\} dunk, made'); blank on an unlabelled row. Each of the 82 observed phrases maps to one action code (see `action`). |
 #' | action_en | character | English meaning of the play's phrase (see action), so a free throw reads its own trip, e.g. 'free throw 2, made'; null for a code outside the observed table. |
 #' | text_zh | character | The whole printed text of the play, e.g. '#35 (Chinese text)' = '#35 \{player\} dunk, made'. |
@@ -366,7 +366,95 @@ pleague_box_teams <- function(gid) {
 #' | video_stat_category | character | The clip's own stat label (ast, blk, ft_made, ft_miss, pfoul, reb_d, reb_o, stl, three_made, three_miss, timeout, turnover, two_made, two_miss): it names the PLAY the clip shows, not always this row's action (a rebound row carries the missed shot's clip). |
 #' | tryspot_player_id | integer | Player id in the clip vendor's key space (an integer such as 59476); NOT the box player_id. |
 #' | video_created_at | character | When the clip was created, UTC ISO 8601 with milliseconds. |
-#' @inherit pleague_schedule details
+#' @section Action codes:
+#' Each code of `action`, its meaning and \[the number of plays\] in 258,183 plays of 404 finished 2022-23..2025-26 games (82 printed phrases plus the blank row):
+#'
+#' * `ast`: assist \[17,020\]
+#' * `blk`: block \[3,181\]
+#' * `fg2_alley_oop_made`: 2-point alley-oop, made \[205\]
+#' * `fg2_alley_oop_missed`: 2-point alley-oop, missed \[81\]
+#' * `fg2_driving_layup_made`: 2-point driving layup, made \[4,281\]
+#' * `fg2_driving_layup_missed`: 2-point driving layup, missed \[3,961\]
+#' * `fg2_dunk_made`: 2-point dunk, made \[1,316\]
+#' * `fg2_dunk_missed`: 2-point dunk, missed \[162\]
+#' * `fg2_fadeaway_jumper_made`: 2-point fadeaway jumper, made \[583\]
+#' * `fg2_fadeaway_jumper_missed`: 2-point fadeaway jumper, missed \[1,121\]
+#' * `fg2_floater_made`: 2-point floater, made \[1,920\]
+#' * `fg2_floater_missed`: 2-point floater, missed \[3,052\]
+#' * `fg2_hook_shot_made`: 2-point hook shot, made \[610\]
+#' * `fg2_hook_shot_missed`: 2-point hook shot, missed \[773\]
+#' * `fg2_jump_shot_made`: 2-point jump shot, made \[1,657\]
+#' * `fg2_jump_shot_missed`: 2-point jump shot, missed \[3,606\]
+#' * `fg2_layup_made`: 2-point layup, made \[4,428\]
+#' * `fg2_layup_missed`: 2-point layup, missed \[3,403\]
+#' * `fg2_pull_up_jumper_made`: 2-point pull-up jumper, made \[1,004\]
+#' * `fg2_pull_up_jumper_missed`: 2-point pull-up jumper, missed \[1,564\]
+#' * `fg2_putback_made`: 2-point putback / tip-in, made \[2,138\]
+#' * `fg2_putback_missed`: 2-point putback / tip-in, missed \[1,539\]
+#' * `fg2_step_back_shot_made`: 2-point step-back shot, made \[243\]
+#' * `fg2_step_back_shot_missed`: 2-point step-back shot, missed \[410\]
+#' * `fg2_turnaround_jumper_made`: 2-point turnaround jumper, made \[672\]
+#' * `fg2_turnaround_jumper_missed`: 2-point turnaround jumper, missed \[1,158\]
+#' * `fg3_fadeaway_jumper_made`: 3-point fadeaway jumper, made \[48\]
+#' * `fg3_fadeaway_jumper_missed`: 3-point fadeaway jumper, missed \[92\]
+#' * `fg3_made`: 3-point shot, style not recorded, made \[7,817\]
+#' * `fg3_missed`: 3-point shot, style not recorded, missed \[17,046\]
+#' * `fg3_pull_up_jumper_made`: 3-point pull-up jumper, made \[480\]
+#' * `fg3_pull_up_jumper_missed`: 3-point pull-up jumper, missed \[922\]
+#' * `fg3_step_back_shot_made`: 3-point step-back shot, made \[245\]
+#' * `fg3_step_back_shot_missed`: 3-point step-back shot, missed \[559\]
+#' * `fg3_turnaround_jumper_made`: 3-point turnaround jumper, made \[10\]
+#' * `fg3_turnaround_jumper_missed`: 3-point turnaround jumper, missed \[23\]
+#' * `fg_made`: field goal made, shot type and distance not recorded \[158\]
+#' * `fg_missed`: field goal missed, shot type and distance not recorded \[168\]
+#' * `foul`: foul, kind not recorded (team row) \[18\]
+#' * `foul_bench_technical`: technical foul on the bench \[35\]
+#' * `foul_coach_technical`: technical foul on the coach \[75\]
+#' * `foul_disqualifying`: disqualifying foul \[2\]
+#' * `foul_drawn`: foul drawn (the opponent's foul on this player) \[17,035\]
+#' * `foul_offensive`: offensive foul committed \[1,024\]
+#' * `foul_personal`: personal foul committed \[15,745\]
+#' * `foul_technical`: technical foul \[210\]
+#' * `foul_unsportsmanlike`: unsportsmanlike foul \[261\]
+#' * `ft_made`: free throw 1 of 1 awarded, made \[1,326\]
+#' * `ft_made`: free throw 1 of 3 awarded, made \[128\]
+#' * `ft_made`: free throw 1 of 2 awarded, made \[5,187\]
+#' * `ft_made`: free throw 3, made \[149\]
+#' * `ft_made`: free throw 2, made \[5,798\]
+#' * `ft_missed`: free throw 1 of 1 awarded, missed \[669\]
+#' * `ft_missed`: free throw 1 of 3 awarded, missed \[67\]
+#' * `ft_missed`: free throw 1 of 2 awarded, missed \[2,736\]
+#' * `ft_missed`: free throw 3, missed \[46\]
+#' * `ft_missed`: free throw 2, missed \[2,319\]
+#' * `jump_ball_lost`: jump ball lost \[404\]
+#' * `jump_ball_won`: jump ball won \[708\]
+#' * `reb_def`: defensive rebound (a team rebound has no player) \[29,537\]
+#' * `reb_off`: offensive rebound (a team rebound has no player) \[12,379\]
+#' * `review_coach_challenge`: video review: coach's challenge (2025-26 onward
+#' * the printed text ends with a bare comma) \[videoReview, coachChallenge,, 82\]
+#' * `review_instant_replay`: video review: instant-replay system, started by the officials (2025-26 onward) \[videoReview, instantReplaySystem,, 67\]
+#' * `review_instant_replay_1`: video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained
+#' * the row also prints the running score and the points tag '+videoReview') \[videoReview, instantReplaySystem, 1, 6\]
+#' * `stl`: steal \[7,361\]
+#' * `sub_in`: substitution: enters the game \[25,505\]
+#' * `sub_out`: substitution: leaves the game \[25,532\]
+#' * `timeout`: timeout (a team row) \[2,854\]
+#' * `tov_3sec`: turnover: 3-second violation \[249\]
+#' * `tov_5sec`: turnover: 5-second violation \[40\]
+#' * `tov_8sec`: turnover: 8-second violation \[26\]
+#' * `tov_backcourt`: turnover: backcourt violation \[96\]
+#' * `tov_bad_pass`: turnover: bad pass \[6,325\]
+#' * `tov_ball_handling`: turnover: ball-handling \[3,547\]
+#' * `tov_carrying`: turnover: carrying the ball \[47\]
+#' * `tov_double_dribble`: turnover: double dribble \[53\]
+#' * `tov_offensive`: turnover: offensive (kind not recorded) \[1,007\]
+#' * `tov_offensive_goaltending`: turnover: offensive goaltending \[4\]
+#' * `tov_other`: turnover: other \[51\]
+#' * `tov_out_of_bounds`: turnover: ball out of bounds \[441\]
+#' * `tov_shot_clock`: turnover: shot-clock violation \[489\]
+#' * `tov_travel`: turnover: travelling \[718\]
+#' * `unlabelled`: row has a player but no action text; in the corpus a shot with x/y followed by a rebound, i.e. a missed shot (inferred) \[(blank), 169\]
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_pbp(gid = 197))
@@ -388,7 +476,7 @@ pleague_pbp <- function(gid) {
 #'   two digits of season). The first season is 2020-21 (`season=2021`); earlier slugs redirect.
 #' @return
 #' A `hoopR_data` tibble: Regular-season standings of one season: record, scoring averages, home / away and recent
-#'   form. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   form. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_standings`):
 #'
 #' | col_name | type | description |
@@ -413,7 +501,7 @@ pleague_pbp <- function(gid) {
 #' | streak | character | Current streak: W\{n\} wins or L\{n\} losses ((Chinese text)). |
 #' | last_n | integer | Games in the 'last games' column ((Chinese text)10(Chinese text) = the last 10), read from the header. |
 #' | last_n_record | character | Record 'W-L' over the last last_n games ((Chinese text)N(Chinese text)). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_standings(season = 2025))
@@ -436,7 +524,7 @@ pleague_standings <- function(season) {
 #' @param stage_sn Required. Stage select value of the player table: 2 = regular season, 3 = playoffs, 4 = finals.
 #' @return
 #' A `hoopR_data` tibble: Player season averages and totals of one season and stage: shooting, rebounds, assists
-#'   and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_stat_player`):
 #'
 #' | col_name | type | description |
@@ -485,7 +573,7 @@ pleague_standings <- function(season) {
 #' | fg2_pct | double | 2-point percentage 0-100 ((Chinese text); the cell holds the same value as average and total). |
 #' | fg3_pct | double | 3-point percentage 0-100 ((Chinese text); same value as average and total). |
 #' | ft_pct | double | Free-throw percentage 0-100 ((Chinese text); same value as average and total). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_stat_player(season = 2025, stage_sn = 2))
@@ -507,7 +595,7 @@ pleague_stat_player <- function(season, stage_sn) {
 #'   `player_page_id` in pleague_stat_player, `random_id` in pleague_box_players from 2022-23 (unreliable before).
 #' @return
 #' A `hoopR_data` tibble: One player's profile: names, club, jersey, position, height, weight and birthplace. An
-#'   empty valid answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_player`):
+#'   empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_player`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -544,7 +632,7 @@ pleague_player <- function(player_page_id) {
 #'   `player_page_id` in pleague_stat_player, `random_id` in pleague_box_players from 2022-23 (unreliable before).
 #' @return
 #' A `hoopR_data` tibble: One player's season totals and per-game averages, league and East Asia Super League, with
-#'   a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_player_seasons`):
 #'
 #' | col_name | type | description |
@@ -584,9 +672,8 @@ pleague_player_seasons <- function(player_page_id) {
 .pleague_preciser_shots_details <- c(
   "* Unofficial use of a THIRD-PARTY host: api.preciser.io is the analytics vendor behind the P. LEAGUE+ game page,",
   "  not the league's own API. It is keyless, CORS-open, has no robots.txt (404) and no terms were found; it serves",
-  "  the data the league's own game page displays. The league's /user-policy reserves its content, so payloads are",
-  "  not redistributed as release assets and a data release needs owner sign-off. Requests are spaced at least 1 s",
-  "  apart per host, retries included.",
+  "  the data the league's own game page displays. The league's /user-policy reserves its content, so check it",
+  "  before you republish the data. Requests are spaced at least 1 s apart per host, retries included.",
   "* Wrappers take the Preciser game uuid (the `uuid` column of [pleague_game()]; empty before 2022-23, which have",
   "  no vendor data). Pass the optional `gid` to verify the body against the site's game page and box: the shot",
   "  list and the rotation echo nothing about the game, so only then are the uuid, the final score, the made-shot",
@@ -619,7 +706,7 @@ pleague_player_seasons <- function(player_page_id) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Every field-goal attempt of one finished game with court x / y (vendor frame), zone,
-#'   style and result. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   style and result. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_preciser_shots`):
 #'
 #' | col_name | type | description |
@@ -644,7 +731,7 @@ pleague_player_seasons <- function(player_page_id) {
 #' | has_video | logical | True when the shot has a clip. The clip url is never kept: it carries a vendor access key. |
 #' | home_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
 #' | away_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
-#' @eval .intl_details(.pleague_preciser_shots_details)
+#' @eval .intl_details(.pleague_preciser_shots_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
@@ -669,7 +756,7 @@ pleague_preciser_shots <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Post-game team comparison of one finished game: totals, situational points, lead tracker
-#'   and top performer. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   and top performer. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_preciser_summary_teams`):
 #'
 #' | col_name | type | description |
@@ -723,7 +810,7 @@ pleague_preciser_summary_teams <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Scoring log of one finished game (scoring events only, with the running score). An empty
-#'   valid answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_preciser_score_log`):
+#'   valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_score_log`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -756,7 +843,7 @@ pleague_preciser_score_log <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Score at each minute mark of one finished game, with the score difference (the lead
-#'   tracker). An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+#'   tracker). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 #'   `pleague_preciser_lead_flow`):
 #'
 #' | col_name | type | description |
@@ -791,7 +878,7 @@ pleague_preciser_lead_flow <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: The vendor's home-team win probability by minute for one finished game. An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_preciser_win_probability`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_win_probability`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -819,7 +906,7 @@ pleague_preciser_win_probability <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: On-court stints of every player of one finished game (the rotation chart). An empty valid
-#'   answer is a zero-row tibble with these columns, in this order (sdv-py `pleague_preciser_rotation`):
+#'   answer is a zero-row tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_rotation`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -856,7 +943,7 @@ pleague_preciser_rotation <- function(uuid, gid = NULL) {
 #'   the uuid must be the game page's. Without it only the checks the body allows by itself run.
 #' @return
 #' A `hoopR_data` tibble: Injury report of one finished game: one row per team. An empty valid answer is a zero-row
-#'   tibble with these columns, in this order (sdv-py `pleague_preciser_injury`):
+#'   tibble with these columns, in this order (sportsdataverse-py `pleague_preciser_injury`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -884,7 +971,7 @@ pleague_preciser_injury <- function(uuid, gid = NULL) {
 #'   `away_team_uuid` of the `pleague_preciser_*()` frames). Persons need no table: the Preciser `person_id` is the
 #'   site box row's `person_id`. A constant table: no request is made.
 #' @return
-#' A `hoopR_data` tibble of eight rows (sdv-py `pleague_team_crosswalk`):
+#' A `hoopR_data` tibble of eight rows (sportsdataverse-py `pleague_team_crosswalk`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

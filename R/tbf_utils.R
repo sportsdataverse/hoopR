@@ -1,7 +1,7 @@
 # tbf_utils.R -- runtime and parsers of the TBF `tbf_*()` family (Turkish
 # Basketball Federation app API: BSL, TBL, KBSL).
 #
-# R mirror of sdv-py sportsdataverse/basketball/tbf/ (tbf_runtime.py +
+# R mirror of sportsdataverse-py sportsdataverse/basketball/tbf/ (tbf_runtime.py +
 # tbf_parsers.py): same routes, same refusals, same column specs. One host,
 # miniappapi.tbf.org.tr/webapi-service/api, the official TBF app backend: no
 # key, no cookie, plain GETs through .intl_get() (>= 1 s per host, 429 / 502 /
@@ -25,7 +25,7 @@
 #   hoopR_asset_fetch: everything else above.
 #
 # Parsers: each table is a list of column specs (column, dotted source path
-# with "|" alternatives, type, optional converter), ported from sdv-py
+# with "|" alternatives, type, optional converter), ported from sportsdataverse-py
 # tbf_parsers.TABLES. Paths starting with "_" read the request context the
 # runtime stamps under "_request". A malformed body is a typed zero-row tibble.
 
@@ -63,7 +63,7 @@
 # a JSON object (named list, `{}` included)
 .tbf_is_obj <- function(x) is.list(x) && !is.null(names(x))
 
-# sdv-py `_rows`: the objects of a JSON array, else nothing
+# sportsdataverse-py `_rows`: the objects of a JSON array, else nothing
 .tbf_rows <- function(x) if (is.list(x) && is.null(names(x))) Filter(.tbf_is_obj, x) else list()
 
 .tbf_obj <- function(x) if (.tbf_is_obj(x)) x else structure(list(), names = character(0))
@@ -78,7 +78,7 @@
   nzchar(x)
 }
 
-# sdv-py `_same`: type-strict equality of a JSON value with an integer (an
+# sportsdataverse-py `_same`: type-strict equality of a JSON value with an integer (an
 # integral double counts as that integer; "1", TRUE and NULL never do)
 .tbf_same <- function(a, b) {
   is.numeric(a) && length(a) == 1L && !is.na(a) && a == b
@@ -105,7 +105,7 @@
   comp
 }
 
-# the wrappers' own check: exact, before any request (sdv-py's generated guard)
+# the wrappers' own check: exact, before any request (sportsdataverse-py's generated guard)
 .tbf_check_competition <- function(competition, call, optional = FALSE) {
   if (optional && is.null(competition)) return(invisible())
   if (!(is.character(competition) && length(competition) == 1L && competition %in% .TBF_COMPETITIONS)) {
@@ -200,7 +200,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Route handlers (sdv-py tbf_runtime._ROUTES)
+# Route handlers (sportsdataverse-py tbf_runtime._ROUTES)
 # ---------------------------------------------------------------------------
 
 .tbf_seasons <- function(p, call) {
@@ -613,7 +613,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Casts (sdv-py tbf_parsers._i / _f / _s / _b / _date / _dt / _clock / ...)
+# Casts (sportsdataverse-py tbf_parsers._i / _f / _s / _b / _date / _dt / _clock / ...)
 # Each takes one JSON value and returns a length-1 value of the column type;
 # Date / POSIXct columns are carried as ISO text and converted per column.
 # ---------------------------------------------------------------------------
@@ -622,7 +622,7 @@
 
 # an id / count from an integer, an integral double or a digit string (never via a float string)
 .tbf_i <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.tbf_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.double(v)) return(if (is.finite(v) && v == trunc(v)) as.integer(v) else NA_integer_)
@@ -632,7 +632,7 @@
 
 # a number from a number or a decimal string ("47.62", "71.4%", "3,5")
 .tbf_f <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.tbf_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v) && grepl("^\\s*[+-]?[0-9]+(?:[.,][0-9]+)?%?\\s*$", v, perl = TRUE)) {
@@ -672,7 +672,7 @@
 
 # "25:19" -> 1519 s; "01:25:20" -> 5120 s
 .tbf_clock <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!(is.character(v) && .tbf_scalar(v))) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*(?:([0-9]+):)?([0-9]+):([0-9]{2})\\s*$", v, perl = TRUE))[[1]]
   if (!length(m)) return(NA_integer_)
@@ -682,7 +682,7 @@
 
 # season label "2026-2027" -> its END year 2027
 .tbf_end_year <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!(is.character(v) && .tbf_scalar(v))) return(NA_integer_)
   m <- regmatches(v, regexec("([0-9]{4})\\s*-\\s*([0-9]{4})\\s*$", v, perl = TRUE))[[1]]
   if (length(m)) as.integer(m[3]) else NA_integer_
@@ -692,7 +692,7 @@
 
 # the home (1) or away (2) half of a running score "34-30"
 .tbf_score <- function(v, idx) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!(is.character(v) && .tbf_scalar(v))) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*([0-9]+)\\s*-\\s*([0-9]+)\\s*$", v, perl = TRUE))[[1]]
   if (length(m)) as.integer(m[idx + 1L]) else NA_integer_
@@ -887,11 +887,11 @@
 }
 
 # ---------------------------------------------------------------------------
-# Column specs: GENERATED from sdv-py tbf_parsers.TABLES / ACTIONS (sdv-py e3d232e).
+# Column specs: GENERATED from sportsdataverse-py tbf_parsers.TABLES / ACTIONS (sportsdataverse-py e3d232e).
 # (column, source path, type[, converter]); Turkish text as \u escapes.
 # ---------------------------------------------------------------------------
 
-#' Turkish play-by-play action -> English gloss (sdv-py tbf_parsers.ACTIONS).
+#' Turkish play-by-play action -> English gloss (sportsdataverse-py tbf_parsers.ACTIONS).
 #' @noRd
 .TBF_ACTIONS <- local({
   # (action, gloss) pairs, named with setNames(): a non-ASCII name written in source is translated

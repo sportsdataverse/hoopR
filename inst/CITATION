@@ -1,24 +1,20 @@
-## Citation year is PINNED to the first-release year (CRAN 2021-11-10).
-## DESCRIPTION has no Date field, so deriving it from meta$Date yielded an
-## empty year, and a current-date fallback made the same package version
-## cite as a different year every calendar year. Keep this in sync with the
-## bibtex block in README.md.
+## The citation year is the year of the current release; update it with each
+## CRAN release (DESCRIPTION has no Date field to derive it from). Keep this in
+## sync with the bibtex block in README.Rmd.
 year <- 2026
 note <- sprintf("R package version %s", meta$Version)
 
-citHeader("To cite the hoopR R package in publications, use:")
-
-citEntry(entry = "Misc",
-         author = c(person("Saiem", "Gilani", comment = c(ORCID = "0000-0002-7194-9067"))),
-         title = "hoopR: Access Men’s Basketball Play by Play Data.",
-         url = c("https://doi.org/10.32614/CRAN.package.hoopR"),
-         DOI = "10.32614/CRAN.package.hoopR",
-         journal = "CRAN: Contributed Packages",
-         publisher = "The R Foundation",
-         year = year,
-         note = note,
-         textVersion = paste(
-    "Saiem Gilani. hoopR: Access Men’s Basketball Play by Play Data.",
-    "Retrieved from https://doi.org/10.32614/CRAN.package.hoopR"
+bibentry(
+  bibtype = "Misc",
+  header = "To cite the hoopR R package in publications, use:",
+  author = c(person("Saiem", "Gilani", comment = c(ORCID = "0000-0002-7194-9067"))),
+  title = "hoopR: Access Men's Basketball Play by Play Data",
+  doi = "10.32614/CRAN.package.hoopR",
+  publisher = "The R Foundation",
+  year = year,
+  note = note,
+  textVersion = paste0(
+    "Saiem Gilani (", year, "). hoopR: Access Men's Basketball Play by Play Data. ",
+    note, ". https://doi.org/10.32614/CRAN.package.hoopR"
   )
 )

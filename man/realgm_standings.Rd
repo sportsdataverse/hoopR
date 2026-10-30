@@ -30,7 +30,7 @@ A \code{hoopR_data} tibble with one row per team:
 }
 \description{
 \strong{Get the current NBA standings (both conferences) from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 One row per team with record, win pct, games back, streak, last-ten, scoring
 margin and home/away/division/conference splits. The Eastern and Western

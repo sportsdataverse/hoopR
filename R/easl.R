@@ -1,5 +1,5 @@
 # easl.R -- EASL (East Asia Super League) wrappers over an UNOFFICIAL third-party sync server
-# (easl.joshricha.com/api/v1, an individual's mirror of Sportradar DataCore), at parity with sdv-py
+# (easl.joshricha.com/api/v1, an individual's mirror of Sportradar DataCore), at parity with sportsdataverse-py
 # sportsdataverse/basketball/easl (origin/main e3d232ebc9). Transport, season mapping and refusals:
 # R/easl_runtime.R; frames: R/easl_parsers.R; columns: R/easl_schema.R.
 
@@ -50,7 +50,7 @@
 #' Endpoint: `GET https://easl.joshricha.com/api/v1/health`
 #' @return
 #' A `hoopR_data` tibble: Liveness probe of the unofficial sync server: status, message and the server's own
-#'   timestamp. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   timestamp. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_health`):
 #'
 #' | col_name | type | description |
@@ -58,7 +58,7 @@
 #' | status | character | Server status: 'OK'. |
 #' | message | character | Human-readable status text ('EASL Basketball API is running'). |
 #' | timestamp | character | Server time, ISO 8601 with milliseconds and Z (UTC). |
-#' @eval .intl_details(.easl_health_details, "easl_health()")
+#' @eval .intl_details(.easl_health_details, full = TRUE, "easl_health()")
 #' @export
 #' @family EASL Functions
 easl_health <- function() {
@@ -77,7 +77,7 @@ easl_health <- function() {
 #' @return
 #' A `hoopR_data` tibble: Every configured EASL season (the four editions 2023-24 to 2026-27) with its DataCore
 #'   season id and END year. An empty answer raises `hoopR_no_data`; the columns are always these, in this order
-#'   (sdv-py `easl_seasons`):
+#'   (sportsdataverse-py `easl_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -125,7 +125,7 @@ easl_seasons <- function() {
 #'   easl_seasons and maps it to the DataCore seasonId. Default `NULL`: the ACTIVE season.
 #' @return
 #' A `hoopR_data` tibble: Every fixture of one season: status, tip-off, stage, pool, venue and both teams with their
-#'   scores. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   scores. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_schedule`):
 #'
 #' | col_name | type | description |
@@ -199,7 +199,7 @@ easl_schedule <- function(season = NULL) {
 #'   malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Header of one finished fixture: teams, final score, status, stage, pool, venue and
-#'   attendance. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   attendance. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_game`):
 #'
 #' | col_name | type | description |
@@ -273,7 +273,7 @@ easl_game <- function(fixture_id) {
 #'   malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Player box score of a finished game, one row per rostered player (non-players have null
-#'   counting stats). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   counting stats). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_player_box`):
 #'
 #' | col_name | type | description |
@@ -397,7 +397,7 @@ easl_player_box <- function(fixture_id) {
 #'   malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Play-by-play of a finished game in delivered order, with the running score and the points
-#'   each event scored. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   each event scored. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_pbp`):
 #'
 #' | col_name | type | description |
@@ -447,7 +447,7 @@ easl_pbp <- function(fixture_id) {
 #'   malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Team totals of a finished game, one row per team, with the opponent's totals as `*_against`
-#'   columns. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   columns. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_team_box`):
 #'
 #' | col_name | type | description |
@@ -582,7 +582,7 @@ easl_team_box <- function(fixture_id) {
 #'   malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: Team totals of a finished game by period, one row per team and period (overtimes after the
-#'   fourth). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   fourth). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_team_box_by_period`):
 #'
 #' | col_name | type | description |
@@ -714,7 +714,7 @@ easl_team_box_by_period <- function(fixture_id) {
 #'   easl_seasons and maps it to the DataCore seasonId. Default `NULL`: the ACTIVE season.
 #' @return
 #' A `hoopR_data` tibble: Group-stage standings of one season: rank within the pool, record, splits, points and the
-#'   last five results. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   last five results. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_standings`):
 #'
 #' | col_name | type | description |
@@ -779,7 +779,7 @@ easl_standings <- function(season = NULL) {
 #'   easl_seasons and maps it to the DataCore seasonId. Default `NULL`: the ACTIVE season.
 #' @return
 #' A `hoopR_data` tibble: Tournament top-5 player leaders in nine categories (points, rebounds, assists, steals,
-#'   blocks, shooting). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   blocks, shooting). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_leaders`):
 #'
 #' | col_name | type | description |
@@ -818,7 +818,7 @@ easl_leaders <- function(season = NULL) {
 #' Endpoint: `GET https://easl.joshricha.com/api/v1/teams`
 #' @return
 #' A `hoopR_data` tibble: The 12 ACTIVE EASL teams (historical teams resolve only through easl_team). An empty answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `easl_teams`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `easl_teams`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -869,7 +869,7 @@ easl_teams <- function() {
 #'   easl_teams does not list.
 #' @return
 #' A `hoopR_data` tibble: One team's directory entry; resolves the historical teams easl_teams does not list. An
-#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `easl_team`):
+#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `easl_team`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -918,7 +918,7 @@ easl_team <- function(team_id) {
 #'   easl_seasons and maps it to the DataCore seasonId. Default `NULL`: the ACTIVE season.
 #' @return
 #' A `hoopR_data` tibble: A team's fixtures in one season, shaped like easl_schedule. An empty answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `easl_team_schedule`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `easl_team_schedule`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -989,7 +989,7 @@ easl_team_schedule <- function(team_id, season = NULL) {
 #'   easl_seasons and maps it to the DataCore seasonId. Default `NULL`: the ACTIVE season.
 #' @return
 #' A `hoopR_data` tibble: A team's cumulative season statistics: totals, per-game rates and the opponent's totals
-#'   (`*_against`). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   (`*_against`). An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_team_stats`):
 #'
 #' | col_name | type | description |
@@ -1179,7 +1179,7 @@ easl_team_stats <- function(team_id, season = NULL) {
 #'   easl_seasons and maps it to the DataCore seasonId. Default `NULL`: the ACTIVE season.
 #' @return
 #' A `hoopR_data` tibble: A team's top-5 player leaders per category in one season, shaped like easl_leaders. An
-#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `easl_team_leaders`):
+#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `easl_team_leaders`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1222,7 +1222,7 @@ easl_team_leaders <- function(team_id, season = NULL) {
 #'   does not list. Needs season for a roster (jersey number and position). Default `NULL`: no team filter.
 #' @return
 #' A `hoopR_data` tibble: Every EASL player of all seasons; with season and team_id a roster that adds jersey number
-#'   and position. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   and position. An empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `easl_players`):
 #'
 #' | col_name | type | description |
@@ -1271,7 +1271,7 @@ easl_players <- function(season = NULL, team_id = NULL) {
 #'   easl_players, the box scores, leaders and play-by-play. A malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: One player's biography: names, nationality, birth date, height, weight. An empty answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `easl_player`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `easl_player`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -1313,7 +1313,7 @@ easl_player <- function(player_id) {
 #'   easl_players, the box scores, leaders and play-by-play. A malformed id is `hoopR_bad_request`.
 #' @return
 #' A `hoopR_data` tibble: A player's cumulative statistics over ALL seasons (the server ignores a season filter). An
-#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `easl_player_stats`):
+#'   empty answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `easl_player_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

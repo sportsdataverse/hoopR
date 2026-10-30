@@ -228,7 +228,7 @@ Returns a named list of data frames: TeamYears
 \strong{Get NBA Stats API Common Team Years}
 }
 \details{
-\href{https://www.nba.com/players}{All Players}
+All Players (www.nba.com/players)
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{  nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 }\if{html}{\out{</div>}}

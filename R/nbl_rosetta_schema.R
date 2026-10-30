@@ -1,8 +1,8 @@
 # nbl_rosetta_schema.R -- column dtypes and documented columns of the NBL Rosetta frames.
 #
-# Copied from sdv-py (sportsdataverse/basketball/nbl_au/nbl_rosetta_dtypes.py DTYPES, per parser,
+# Copied from sportsdataverse-py (sportsdataverse/basketball/nbl_au/nbl_rosetta_dtypes.py DTYPES, per parser,
 # and the per-endpoint returns-schemas, tools/codegen/schemas/native/nbl_rosetta/). Codes: i integer,
-# f double, b logical, s character. Refresh both together when sdv-py re-captures the family.
+# f double, b logical, s character. Refresh both together when sportsdataverse-py re-captures the family.
 
 #' @noRd
 .NBL_ROSETTA_DTYPES <- list(
@@ -200,7 +200,7 @@
   )
 )
 
-#' Documented columns per endpoint, in order (sdv-py `_PARSER_COLUMNS`).
+#' Documented columns per endpoint, in order (sportsdataverse-py `_PARSER_COLUMNS`).
 #' @noRd
 .NBL_ROSETTA_COLUMNS <- list(
   seasons = c(

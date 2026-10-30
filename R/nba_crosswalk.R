@@ -72,7 +72,7 @@ NULL
 #' @importFrom dplyr transmute
 #' @export
 #' @family NBA Crosswalk Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(nba_team_crosswalk())
 #' }
@@ -160,7 +160,7 @@ NULL
 #' @importFrom dplyr transmute bind_rows
 #' @export
 #' @family NBA Crosswalk Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(nba_schedule_crosswalk())
 #' }
@@ -317,7 +317,7 @@ NULL
 #' @importFrom purrr map list_rbind
 #' @export
 #' @family NBA Crosswalk Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(nba_player_crosswalk())
 #' }

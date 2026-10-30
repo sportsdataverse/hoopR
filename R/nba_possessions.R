@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------------
 # NBA possession event-classification helpers
 #
-# These internal functions are the R port of the sdv-py Python helpers in
+# These internal functions are the R port of the sportsdataverse-py Python helpers in
 # sportsdataverse/nba/nba_possessions.py.  Behavior is validated by tests;
 # they are adapted to hoopR's V2/V3 schema rather than being a literal
 # line-for-line translation.

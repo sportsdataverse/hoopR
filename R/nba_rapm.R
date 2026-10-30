@@ -2,9 +2,8 @@
 # NBA RAPM — Regularized Adjusted Plus-Minus
 #
 # R port of sportsdataverse-py sportsdataverse/nba/nba_rapm.py::build_rapm_design.
-# Task 1: sparse design matrix builder (.build_rapm_design, internal @noRd).
-# Task 2: glmnet ridge fit (nba_rapm — done).
-# Task 3: DESCRIPTION deps + public export (TODO).
+# .build_rapm_design() builds the sparse design matrix (internal); nba_rapm() fits
+# the ridge regression with glmnet (in Suggests).
 # ---------------------------------------------------------------------------
 
 # Schema for the 0-row empty sentinel (6 columns, correct types).

@@ -40,8 +40,8 @@ Endpoint: \verb{GET https://stats.segevstats.com/realtimestat_heb/api/?method=ge
 The \verb{ibba_segev_*()} wrappers read Segev Stats, the live-stats vendor behind basket.co.il's
 game pages (\verb{stats.segevstats.com/realtimestat_heb/api/}, a JSON-RPC API served as
 text/html): the game header, rosters, box score, period scores and play-by-play with shot
-coordinates, from 2025-26. They mirror sdv-py's \verb{ibba_segev_*} wrappers of the same names:
-same arguments, the same snake_case columns and types, one row per sdv-py row.
+coordinates, from 2025-26. They mirror sportsdataverse-py's \verb{ibba_segev_*} wrappers of the same names:
+same arguments, the same snake_case columns and types, one row per sportsdataverse-py row.
 
 \strong{Unofficial and unsupported.} The API is keyless, unofficial and not documented for
 outside use. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504

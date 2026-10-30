@@ -19,7 +19,7 @@ A \code{hoopR_data} tibble with one row per team:
 }
 \description{
 \strong{Get the NBA team index, with division and conference, from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }

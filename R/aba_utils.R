@@ -1,14 +1,14 @@
 # aba_utils.R -- runtime and parsers of the ABA League `aba_*()` family (the
 # Adriatic leagues' own PHP sites, www.aba-liga.com and druga.aba-liga.com).
 #
-# R mirror of sdv-py sportsdataverse/basketball/aba/ (aba_runtime.py +
+# R mirror of sportsdataverse-py sportsdataverse/basketball/aba/ (aba_runtime.py +
 # aba_parsers.py, e3d232e): same routes, same refusals, same column specs.
 #
 # * Season = END year; the site's `sez` is the START year minus 2000, so
 #   sez = season - 2001 (2026 -> 25). league "aba" -> lea 1 on www, "aba2" ->
 #   lea 2 on druga (one database behind both hosts).
 # * Plain GETs through .intl_response() (>= 1 s per host on every attempt; 429 /
-#   5xx retried, 500 included: retry_500 = TRUE as in sdv-py). Only HTTP 200 on
+#   5xx retried, 500 included: retry_500 = TRUE as in sportsdataverse-py). Only HTTP 200 on
 #   one of the two ABA hosts is an answer.
 # * Silent wrong answers are refused, fail closed: the match page's hidden echo
 #   (match_data_id / _sez / _lea) and every team / player link must carry the
@@ -23,7 +23,7 @@
 #   before 2001-02. hoopR_bad_request: a bad argument, HTTP 400 / 422.
 #   hoopR_asset_fetch: everything else.
 #
-# HTML is walked with rvest (libxml2). The sdv-py text rules are kept: a <br>
+# HTML is walked with rvest (libxml2). The sportsdataverse-py text rules are kept: a <br>
 # is a separator, whitespace (NBSP included) collapses to one space, and the
 # "\n" mode splits on <br> and on literal newlines alike.
 
@@ -58,7 +58,7 @@
   if (length(m)) m else NULL
 }
 
-# a refusal inside the page walk: sdv-py aba_parsers._NotParsed (`empty` = no data)
+# a refusal inside the page walk: sportsdataverse-py aba_parsers._NotParsed (`empty` = no data)
 .aba_refuse <- function(msg, empty = FALSE) {
   rlang::abort(msg, class = "hoopR_aba_not_parsed", empty = empty)
 }
@@ -114,7 +114,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# DOM (rvest / libxml2), with the sdv-py _Node semantics
+# DOM (rvest / libxml2), with the sportsdataverse-py _Node semantics
 # ---------------------------------------------------------------------------
 
 .aba_xp_class <- function(cls) sprintf("contains(concat(' ', normalize-space(@class), ' '), ' %s ')", cls)
@@ -150,7 +150,7 @@
 
 .aba_cells <- function(tr) .aba_kids(tr, c("td", "th"))
 
-# direct children, text nodes included (comments dropped, as sdv-py's builder does)
+# direct children, text nodes included (comments dropped, as sportsdataverse-py's builder does)
 .aba_children <- function(node) as.list(.aba_xfind(node, "./node()[not(self::comment())]"))
 .aba_is_text <- function(n) identical(xml2::xml_type(n), "text")
 .aba_raw_text <- function(n) xml2::xml_text(n)
@@ -162,7 +162,7 @@
 }
 .aba_has_attr <- function(node, name) xml2::xml_has_attr(node, name)
 
-# sdv-py _Node.text(br): text descendants with each <br> as `br`; " " collapses
+# sportsdataverse-py _Node.text(br): text descendants with each <br> as `br`; " " collapses
 # whitespace, "\n" returns the collapsed lines (empty ones kept)
 .aba_text <- function(node, br = " ") {
   if (is.null(node)) return(if (br == " ") "" else character())
@@ -357,7 +357,7 @@
     name <- .aba_text(a)
     kids <- .aba_children(cell)
     at <- which(vapply(kids, .aba_same_node, logical(1), b = a))
-    .aba_need(length(at) == 1L, paste0(what, ": player link is not a direct child")) # sdv-py: list.index ValueError
+    .aba_need(length(at) == 1L, paste0(what, ": player link is not a direct child")) # sportsdataverse-py: list.index ValueError
     before <- kids[seq_len(at - 1L)]
     jersey <- .aba_int_text(paste(vapply(Filter(.aba_is_text, before), .aba_raw_text, ""), collapse = ""))
     after <- .aba_join(kids[-seq_len(at)])
@@ -428,7 +428,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Page records (sdv-py aba_parsers.record_for)
+# Page records (sportsdataverse-py aba_parsers.record_for)
 # ---------------------------------------------------------------------------
 
 .ABA_ROUND <- "^(.+), Season ([0-9]{4}/[0-9]{2})(?: - (.+))?$"
@@ -790,7 +790,7 @@
   p
 }
 
-#' The page record of one ABA page, scoped to `want` (sdv-py `record_for`).
+#' The page record of one ABA page, scoped to `want` (sportsdataverse-py `record_for`).
 #'
 #' Any error inside the walk becomes a `hoopR_aba_not_parsed` refusal.
 #' @noRd
@@ -804,7 +804,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Live-match helper checks (sdv-py helper_scope_error)
+# Live-match helper checks (sportsdataverse-py helper_scope_error)
 # ---------------------------------------------------------------------------
 
 .aba_shot_scope_error <- function(body, match) {
@@ -962,7 +962,7 @@
             sprintf("^/match/%d/%d/%d/Overview/?$", game_no, sez, lea), call)
 }
 
-#' Fetch one ABA route and refuse every wrong answer (sdv-py `aba_runtime._get`).
+#' Fetch one ABA route and refuse every wrong answer (sportsdataverse-py `aba_runtime._get`).
 #'
 #' @param short Wrapper short name.
 #' @param p Named list of the wrapper arguments.
@@ -1020,7 +1020,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Frames (sdv-py parse_aba_*)
+# Frames (sportsdataverse-py parse_aba_*)
 # ---------------------------------------------------------------------------
 
 .ABA_CTX_SPEC <- c(game_no = "integer", season = "integer", league_id = "integer", league = "character")
@@ -1229,7 +1229,7 @@
   )
 }
 
-#' Parse a record into the wrapper's tibble (sdv-py `parse_aba_<short>`).
+#' Parse a record into the wrapper's tibble (sportsdataverse-py `parse_aba_<short>`).
 #'
 #' A malformed record is a typed zero-row tibble, never an error.
 #' @noRd

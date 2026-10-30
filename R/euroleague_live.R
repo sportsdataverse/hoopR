@@ -15,9 +15,9 @@
 #' timestamp. Team A is the home side as measured on one game.
 #' @details
 #' Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-#' wraps it (wrap-only: payloads are not redistributed as release assets). This
-#' function mirrors sdv-py's `euroleague_game_points()`: same arguments,
-#' defaults and snake_case columns, one row per sdv-py row.
+#' wraps it. This
+#' function mirrors sportsdataverse-py's `euroleague_game_points()`: same arguments,
+#' defaults and snake_case columns, one row per sportsdataverse-py row.
 #'
 #' **Coordinate frame**, as measured in the reference capture (E2025 game 1,
 #' 158 rows; U2025 game 1, 176 rows):
@@ -237,9 +237,9 @@ euroleague_game_boxscore <- function(game_code, season_code) {
 #' Team A is the home side as measured on one game.
 #' @details
 #' Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-#' wraps it (wrap-only: payloads are not redistributed as release assets). This
-#' function mirrors its sdv-py twin of the same name: same arguments, defaults
-#' and snake_case columns, one row per sdv-py row.
+#' wraps it. This
+#' function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+#' and snake_case columns, one row per sportsdataverse-py row.
 #'
 #' The live API's codes are space-padded fixed-width strings
 #' (`TEAM = "IST       "`); every string cell is stripped. Its "no such game"

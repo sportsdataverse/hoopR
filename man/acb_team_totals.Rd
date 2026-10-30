@@ -21,7 +21,7 @@ whole double is accepted.}
 }
 \value{
 A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sdv-py \code{acb_team_totals}):\tabular{lll}{
+(sportsdataverse-py \code{acb_team_totals}):\tabular{lll}{
    col_name \tab type \tab description \cr
    club_id \tab integer \tab Stable club id of the club asked for (2 = Barca). \cr
    team_id \tab integer \tab Season-team entry id (the API's teamEditionId). \cr
@@ -125,33 +125,7 @@ One row: the same \verb{total_*} / \verb{avg_*} / \verb{per40_*} columns as \cod
 Endpoint: \verb{GET https://api2.acb.com/api/seasondata/TeamProfile/team-stats}
 }
 \details{
-\itemize{
-\item Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com read 2026-10-12): ACEB, S.A.U.
-claims intellectual property in the site's databases (the EU sui generis database right) among its other
-content. It authorises viewing and private copies for personal or journalistic use with the source credited,
-and requires prior express consent for distribution, reproduction or public communication. These wrappers
-fetch on the user's behalf; a published data release or a hosted mirror needs the owner's decision first.
-robots.txt allows the paths.
-\item Unofficial and unsupported: api2.acb.com is the .NET API behind acb.com and live.acb.com, not a documented
-public API. It needs the header \code{X-APIKEY}, a public key shipped in acb.com's bundle: the runtime sends the
-documented value (\verb{$ACB_API_KEY} overrides it), re-reads the live bundle once on a 401, and never prints the
-key.
-\item Seasons: the API keys a season by \code{editionId} = season START year - 1935 (91 = 2026-27, 48 = 1983-84, the
-first). The wrappers take \code{season}, the END year (2027 = 2026-27), and the runtime sends \code{editionId = season - 1936}. A route that omits \code{season} serves the current edition. \code{team_id} is a season-team entry (new every
-season); \code{club_id} is the stable club.
-\item Coverage: box scores from 1983-84 (old seasons carry only the whole-game period, quarter 0); play-by-play
-and shots from 2016-17 (earlier games answer empty lists, which raise \code{hoopR_no_data}). Shot coordinates
-come in two systems, split by match id: millimetres from the attacked basket from 2020-21 (\code{coord_system}
-mm), a 0-100 full-court percent grid before (grid). A game that is not finished (\code{matchFinished} false)
-raises \code{hoopR_asset_fetch} for the routes that report it.
-\item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404 / 204, a route
-whose rows are empty: an unknown id, a game outside a playoff series, play-by-play or shots before 2016-17,
-a club with no games that season), \code{hoopR_bad_request} (a missing, unknown or non-integer argument or a
-season before 1984, raised before any request; HTTP 400 / 422) and \code{hoopR_asset_fetch} (a key the API still
-rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
-\code{problem+json} body, an error envelope or empty stub, a body for another season, round, club, player or
-match, a game that is not finished). Wrappers raise; they never warn and return empty.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=acb_match_header]{acb_match_header()}}.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ acb_team_totals(club_id = 2, season = 2027)
 }\if{html}{\out{</div>}}

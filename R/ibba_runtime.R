@@ -1,6 +1,6 @@
 # ibba_runtime.R -- transport for the IBBA families (Israeli Premier League), keyless.
 #
-# R mirror of sdv-py sportsdataverse/basketball/ibba/ibba_runtime.py (the ASMX web service,
+# R mirror of sportsdataverse-py sportsdataverse/basketball/ibba/ibba_runtime.py (the ASMX web service,
 # `ibba_*`) and ibba_segev_runtime.py (Segev Stats JSON-RPC, `ibba_segev_*`). Both go through
 # the shared `.intl_response()` (at least one second per host on every attempt; 429 / 502 /
 # 503 / 504 retried three times). A 500 is the hosts' deterministic error (the ASMX stack
@@ -97,7 +97,7 @@
 # Parameters
 # ---------------------------------------------------------------------------
 
-#' One ASMX parameter as its wire string, validated (sdv-py `_normalise`).
+#' One ASMX parameter as its wire string, validated (sportsdataverse-py `_normalise`).
 #' @noRd
 .ibba_wire <- function(op, name, v, call) {
   if (is.null(v)) .abort_bad_request("{op} needs {name}.", call = call)
@@ -140,7 +140,7 @@
 
 #' Why a `Boxscore` body is not a finished two-team game, or `NULL` when it looks final.
 #'
-#' Neither `Boxscore` nor `Games` carries a status field, so this is the sdv-py heuristic:
+#' Neither `Boxscore` nor `Games` carries a status field, so this is the sportsdataverse-py heuristic:
 #' two teams, two TOTAL rows of `200 + 25 x overtimes` player-minutes, different scores.
 #' @noRd
 .ibba_box_final <- function(rows) {

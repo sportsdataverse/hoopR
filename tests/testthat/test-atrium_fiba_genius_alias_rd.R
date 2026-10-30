@@ -1,5 +1,5 @@
-# Every minted competition alias (atrium, fiba, genius) documents, in its competition Rd's
-# \value, a `\subsection{<alias>()}` whose returns table has the base wrapper's col_names.
+# Every minted competition alias (atrium, fiba, genius) is named in its competition Rd's
+# \value with a link to the base wrapper, whose own Rd carries the returns table.
 
 alias_rd_routes <- function() {
   ns <- asNamespace("hoopR")
@@ -62,21 +62,17 @@ rd_find <- function(x, tag) {
 
 rd_value <- function(rd) Filter(function(x) rd_tag(x) == "\\value", rd)[[1]]
 
-test_that("every competition alias Rd carries its base wrapper's returns table", {
+test_that("every competition alias Rd links its base wrapper's returns table", {
   routes <- alias_rd_routes()
   expect_length(routes, 148L)
   for (r in routes) {
     base_tabs <- rd_find(rd_value(alias_rd_parse(r$base)), "\\tabular")
     expect_length(base_tabs, 1L)
-    base_cols <- rd_tabular_cols(base_tabs[[1]])
-    subs <- Filter(function(x) rd_tag(x) == "\\subsection", rd_value(alias_rd_parse(r$topic)))
-    hit <- Filter(function(x) identical(rd_text(x[[1]]), paste0(r$alias, "()")), subs)
-    expect_length(hit, 1L)
-    if (length(hit) != 1L) next
-    tabs <- rd_find(hit[[1]][[2]], "\\tabular")
-    expect_length(tabs, 1L)
-    expect_gt(length(base_cols), 0L)
-    expect_identical(rd_tabular_cols(tabs[[1]]), base_cols, label = paste0(r$alias, "() col_names"))
+    expect_gt(length(rd_tabular_cols(base_tabs[[1]])), 0L)
+    value <- rd_value(alias_rd_parse(r$topic))
+    links <- vapply(rd_find(value, "\\link"), function(x) attr(x, "Rd_option") %||% "", "")
+    expect_true(paste0("=", r$base) %in% links, label = paste0(r$alias, "() links ", r$base, "()"))
+    expect_match(rd_text(value), paste0(r$alias, "()"), fixed = TRUE)
   }
 })
 
