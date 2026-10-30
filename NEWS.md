@@ -418,7 +418,7 @@ salaries, `espn_nba_player_contracts()` remains the most complete source.
 
 ### **RealGM (`realgm_*`) — Cloudflare-challenge bypass via headless Chrome**
 
-[RealGM](https://basketball.realgm.com) sits behind a Cloudflare JavaScript
+RealGM (basketball.realgm.com) sits behind a Cloudflare JavaScript
 challenge (`cf-mitigated: challenge`) that returns **HTTP 403** to every
 libcurl-based client (`httr2`, `httr`, `rvest`) regardless of headers —
 Cloudflare fingerprints the TLS handshake (JA3) *and* demands a JavaScript
@@ -1268,10 +1268,10 @@ Dependency status before / after the release. Users with strict dependency pinni
 
 # **hoopR 1.7.0**
 - ```nba_pbps()``` function added, courtesy of [\@papagorgio23](https://github.com/papagorgio23).
-- ```nbagl_players()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
-- ```nbagl_schedule()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
-- ```nbagl_pbp()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
-- ```nbagl_standings()``` function added, courtesy of [\@billyfryer](https://github.com/billyfryer).
+- ```nbagl_players()``` function added, courtesy of Billy Fryer.
+- ```nbagl_schedule()``` function added, courtesy of Billy Fryer.
+- ```nbagl_pbp()``` function added, courtesy of Billy Fryer.
+- ```nbagl_standings()``` function added, courtesy of Billy Fryer.
 - ```nba_gamerotation()``` function added.
 
 # **hoopR 1.6.0**

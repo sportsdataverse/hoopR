@@ -2,7 +2,7 @@
 #' **RealGM NBA Standings**
 #' @description
 #' **Get the current NBA standings (both conferences) from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' One row per team with record, win pct, games back, streak, last-ten, scoring
 #' margin and home/away/division/conference splits. The Eastern and Western
@@ -78,7 +78,7 @@ realgm_standings <- function() {
 #' **RealGM NBA Teams Index**
 #' @description
 #' **Get the NBA team index, with division and conference, from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per team:

@@ -24,7 +24,7 @@
 #' **RealGM NBA Head Coaches**
 #' @description
 #' **Get the current NBA head coaches from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per coach:
@@ -60,7 +60,7 @@ realgm_coaches <- function() {
 #' **RealGM NBA General Managers**
 #' @description
 #' **Get the current NBA general managers from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
 #' @return A `hoopR_data` tibble with one row per general manager (`staff`,

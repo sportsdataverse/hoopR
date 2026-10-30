@@ -26,7 +26,7 @@ A \code{hoopR_data} tibble (one row per team) carrying the requested
 \code{stat_type}; for \code{"Averages"}: \code{team}, \code{gp}, \code{mpg}, \code{ppg}, \code{rpg}, \code{apg}, etc.
 }
 \description{
-\strong{Get season team statistics from \href{https://basketball.realgm.com}{RealGM}.}
+\strong{Get season team statistics from RealGM (basketball.realgm.com).}
 
 \strong{Requires a headless browser} (see \code{\link[=realgm_players]{realgm_players()}}).
 }

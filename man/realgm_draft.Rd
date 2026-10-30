@@ -34,7 +34,7 @@ A \code{hoopR_data} tibble carrying \code{draft_year} and \code{round} columns:
 }
 \description{
 \strong{Get the results of a past NBA draft from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 One row per selection (rounds 1 and 2, labelled by \code{round}) plus the listed
 undrafted players (\code{round = NA}), including pre-draft team / international

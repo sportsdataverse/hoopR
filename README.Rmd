@@ -133,9 +133,7 @@ There is also a printable [**`hoopR` cheat sheet (PDF)**](https://sportsdatavers
 <a href="https://x.com/theFirmAISports" target="blank"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge" alt="@theFirmAISports" /></a>
 <a href="https://github.com/papagorgio23" target="blank"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge" alt="@papagorgio23" /></a>
 
--   Billy Fryer (@BillyFryer42)
-<a href="https://x.com/BillyFryer42" target="blank"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge" alt="@BillyFryer42" /></a>
-<a href="https://github.com/billyfryer" target="blank"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge" alt="@billyfryer" /></a>
+-   Billy Fryer
 
 -   Ross Drucker (@rossdrucker9)
 <a href="https://x.com/rossdrucker9" target="blank"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge" alt="@rossdrucker9" /></a>

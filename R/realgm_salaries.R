@@ -2,7 +2,7 @@
 #' **RealGM NBA Salary Cap History**
 #' @description
 #' **Get the NBA salary-cap history (and projections) from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' One row per season with the cap, luxury-tax line, both aprons, bi-annual
 #' exception and the mid-level exception tiers. Dollar figures are returned as
@@ -63,7 +63,7 @@ realgm_salary_cap <- function() {
 #' **RealGM NBA Rookie Scale**
 #' @description
 #' **Get the current NBA rookie-scale salary table from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' One row per first-round pick with the four contract-year amounts and the
 #' qualifying-offer percentage. Dollar figures are the formatted strings RealGM

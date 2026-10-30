@@ -13,7 +13,7 @@ A \code{hoopR_data} tibble with one row per first-round pick (\code{pick},
 }
 \description{
 \strong{Get the current NBA rookie-scale salary table from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 One row per first-round pick with the four contract-year amounts and the
 qualifying-offer percentage. Dollar figures are the formatted strings RealGM

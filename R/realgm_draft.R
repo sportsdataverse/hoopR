@@ -2,7 +2,7 @@
 #' **RealGM NBA Draft Results**
 #' @description
 #' **Get the results of a past NBA draft from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' One row per selection (rounds 1 and 2, labelled by `round`) plus the listed
 #' undrafted players (`round = NA`), including pre-draft team / international
@@ -85,7 +85,7 @@ realgm_draft <- function(year = most_recent_nba_season() - 1L) {
 #' **RealGM NBA Draft Early Entrants**
 #' @description
 #' **Get the current NBA draft early-entrant and withdrawal list from
-#' [RealGM](https://basketball.realgm.com).**
+#' RealGM (basketball.realgm.com).**
 #'
 #' Stacks RealGM's early-entry candidate tables (college and international
 #' entrants and withdrawals) into one tibble.
