@@ -49,4 +49,4 @@ mbb_pbp_db
 ^nul$
 ^.*\.log$
 ^tests/testthat/fixtures/(acb|bleague|genius|nbl_rosetta|scb)$
-^tests/testthat/fixtures/[^/]+/README\.md$
+^tests/testthat/fixtures/(?!fiba_gdap/)[^/]+/README\.md$
