@@ -676,7 +676,7 @@ sportality_next_game_day <- function(season = NULL, game_type = "regular") {
 #' | game_type | character | Game type of the game ('' on every line seen). |
 #' | round | integer | Round number (0). |
 #' | start_date_and_time | character | Start of the game ('' on every line seen). |
-#' | sub_type | character | Refinement of `type` (the shot type, rebound kind, foul kind, ...); null on types that have none. Values: `1of1` = free throw 1 of 1; `1of2` = free throw 1 of 2; `1of3` = free throw 1 of 3; `24sec` = shot-clock violation; `2of2` = free throw 2 of 2; `2of3` = free throw 2 of 3; `3of3` = free throw 3 of 3; `3sec` = three-second violation; `5sec` = five-second violation; `8sec` = eight-second violation; `adjustment` = clock adjustment; `alleyoop` = alley-oop shot; `alleyoopdunk` = alley-oop dunk; `backcourt` = backcourt violation; `badpass` = bad pass; `ballhandling` = ball-handling error; `benchTechnical` = technical foul on the bench; `coachTechnical` = technical foul on the coach; `defensive` = defensive rebound; `disqualifying` = disqualifying foul; `disruptive` = disruptive foul (unverified); `doubledribble` = double dribble; `drivinglayup` = driving layup; `dunk` = dunk; `end` = end of the period or game; `eurostep` = euro-step layup; `fadeaway` = fadeaway jump shot; `flagrant` = flagrant foul; `floatingjumpshot` = floating jump shot; `full` = full timeout; `heldball` = held ball; `hookshot` = hook shot; `in` = player enters; `jumpshot` = jump shot; `layup` = layup; `lodgedball` = lodged ball; `lost` = lost the jump ball; `offensive` = offensive rebound or offensive foul; `offensivegoaltending` = offensive goaltending; `officials` = official timeout; `other` = other; `out` = player leaves; `outofbounds` = out of bounds; `outofboundsrebound` = rebound off an out-of-bounds ball (unverified); `personal` = personal foul; `pullupjumpshot` = pull-up jump shot; `reverselayup` = reverse layup; `start` = start of the period or game, or clock start; `startperiod` = start of a period (jump ball line); `stepbackjumpshot` = step-back jump shot; `stop` = clock stop; `technical` = technical foul; `throwIn` = throw-in violation (unverified); `tipindunk` = tip-in dunk; `tipinlayup` = tip-in layup; `travel` = traveling; `turnaroundjumpshot` = turnaround jump shot; `unsportsmanlike` = unsportsmanlike foul; `won` = won the jump ball. |
+#' | sub_type | character | Refinement of `type` (the shot type, rebound kind, foul kind, ...); null on types that have none. Values are listed under "Sub-type codes" below. |
 #' | qualifiers | character | Event qualifiers joined by ';' (a list in recent games, a ';'-joined string or null in older ones). |
 #' | is_successful | integer | 1 when the action succeeded (a made shot or free throw, a recorded rebound ...). ABSENT, not 0, for a missed shot, so count misses as rows without it. |
 #' | instance_id | character | Site instance id of the club or league (platform key space, `<code><n>_<code>` such as hol2_hol; the league itself is dbl1_dbl). |
@@ -696,6 +696,68 @@ sportality_next_game_day <- function(season = NULL, game_type = "regular") {
 #' | coordinates_x | double | Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. |
 #' | coordinates_y | double | Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. |
 #' | period_time | integer | Marker lines only: 0 (an integer), the start of the period. |
+#' @section Sub-type codes:
+#' The values of `sub_type`:
+#'
+#' * `1of1`: free throw 1 of 1
+#' * `1of2`: free throw 1 of 2
+#' * `1of3`: free throw 1 of 3
+#' * `24sec`: shot-clock violation
+#' * `2of2`: free throw 2 of 2
+#' * `2of3`: free throw 2 of 3
+#' * `3of3`: free throw 3 of 3
+#' * `3sec`: three-second violation
+#' * `5sec`: five-second violation
+#' * `8sec`: eight-second violation
+#' * `adjustment`: clock adjustment
+#' * `alleyoop`: alley-oop shot
+#' * `alleyoopdunk`: alley-oop dunk
+#' * `backcourt`: backcourt violation
+#' * `badpass`: bad pass
+#' * `ballhandling`: ball-handling error
+#' * `benchTechnical`: technical foul on the bench
+#' * `coachTechnical`: technical foul on the coach
+#' * `defensive`: defensive rebound
+#' * `disqualifying`: disqualifying foul
+#' * `disruptive`: disruptive foul (unverified)
+#' * `doubledribble`: double dribble
+#' * `drivinglayup`: driving layup
+#' * `dunk`: dunk
+#' * `end`: end of the period or game
+#' * `eurostep`: euro-step layup
+#' * `fadeaway`: fadeaway jump shot
+#' * `flagrant`: flagrant foul
+#' * `floatingjumpshot`: floating jump shot
+#' * `full`: full timeout
+#' * `heldball`: held ball
+#' * `hookshot`: hook shot
+#' * `in`: player enters
+#' * `jumpshot`: jump shot
+#' * `layup`: layup
+#' * `lodgedball`: lodged ball
+#' * `lost`: lost the jump ball
+#' * `offensive`: offensive rebound or offensive foul
+#' * `offensivegoaltending`: offensive goaltending
+#' * `officials`: official timeout
+#' * `other`: other
+#' * `out`: player leaves
+#' * `outofbounds`: out of bounds
+#' * `outofboundsrebound`: rebound off an out-of-bounds ball (unverified)
+#' * `personal`: personal foul
+#' * `pullupjumpshot`: pull-up jump shot
+#' * `reverselayup`: reverse layup
+#' * `start`: start of the period or game, or clock start
+#' * `startperiod`: start of a period (jump ball line)
+#' * `stepbackjumpshot`: step-back jump shot
+#' * `stop`: clock stop
+#' * `technical`: technical foul
+#' * `throwIn`: throw-in violation (unverified)
+#' * `tipindunk`: tip-in dunk
+#' * `tipinlayup`: tip-in layup
+#' * `travel`: traveling
+#' * `turnaroundjumpshot`: turnaround jump shot
+#' * `unsportsmanlike`: unsportsmanlike foul
+#' * `won`: won the jump ball
 #' @inherit sportality_schedule details
 #' @examples
 #' \donttest{

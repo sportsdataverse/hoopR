@@ -44,7 +44,7 @@ valid answer raises \code{hoopR_no_data}; the documented columns come first, in 
    game_type \tab character \tab Game type of the game ('' on every line seen). \cr
    round \tab integer \tab Round number (0). \cr
    start_date_and_time \tab character \tab Start of the game ('' on every line seen). \cr
-   sub_type \tab character \tab Refinement of \code{type} (the shot type, rebound kind, foul kind, ...); null on types that have none. Values: \verb{1of1} = free throw 1 of 1; \verb{1of2} = free throw 1 of 2; \verb{1of3} = free throw 1 of 3; \verb{24sec} = shot-clock violation; \verb{2of2} = free throw 2 of 2; \verb{2of3} = free throw 2 of 3; \verb{3of3} = free throw 3 of 3; \verb{3sec} = three-second violation; \verb{5sec} = five-second violation; \verb{8sec} = eight-second violation; \code{adjustment} = clock adjustment; \code{alleyoop} = alley-oop shot; \code{alleyoopdunk} = alley-oop dunk; \code{backcourt} = backcourt violation; \code{badpass} = bad pass; \code{ballhandling} = ball-handling error; \code{benchTechnical} = technical foul on the bench; \code{coachTechnical} = technical foul on the coach; \code{defensive} = defensive rebound; \code{disqualifying} = disqualifying foul; \code{disruptive} = disruptive foul (unverified); \code{doubledribble} = double dribble; \code{drivinglayup} = driving layup; \code{dunk} = dunk; \code{end} = end of the period or game; \code{eurostep} = euro-step layup; \code{fadeaway} = fadeaway jump shot; \code{flagrant} = flagrant foul; \code{floatingjumpshot} = floating jump shot; \code{full} = full timeout; \code{heldball} = held ball; \code{hookshot} = hook shot; \verb{in} = player enters; \code{jumpshot} = jump shot; \code{layup} = layup; \code{lodgedball} = lodged ball; \code{lost} = lost the jump ball; \code{offensive} = offensive rebound or offensive foul; \code{offensivegoaltending} = offensive goaltending; \code{officials} = official timeout; \code{other} = other; \code{out} = player leaves; \code{outofbounds} = out of bounds; \code{outofboundsrebound} = rebound off an out-of-bounds ball (unverified); \code{personal} = personal foul; \code{pullupjumpshot} = pull-up jump shot; \code{reverselayup} = reverse layup; \code{start} = start of the period or game, or clock start; \code{startperiod} = start of a period (jump ball line); \code{stepbackjumpshot} = step-back jump shot; \code{stop} = clock stop; \code{technical} = technical foul; \code{throwIn} = throw-in violation (unverified); \code{tipindunk} = tip-in dunk; \code{tipinlayup} = tip-in layup; \code{travel} = traveling; \code{turnaroundjumpshot} = turnaround jump shot; \code{unsportsmanlike} = unsportsmanlike foul; \code{won} = won the jump ball. \cr
+   sub_type \tab character \tab Refinement of \code{type} (the shot type, rebound kind, foul kind, ...); null on types that have none. Values are listed under "Sub-type codes" below. \cr
    qualifiers \tab character \tab Event qualifiers joined by ';' (a list in recent games, a ';'-joined string or null in older ones). \cr
    is_successful \tab integer \tab 1 when the action succeeded (a made shot or free throw, a recorded rebound ...). ABSENT, not 0, for a missed shot, so count misses as rows without it. \cr
    instance_id \tab character \tab Site instance id of the club or league (platform key space, \verb{<code><n>_<code>} such as hol2_hol; the league itself is dbl1_dbl). \cr
@@ -98,6 +98,72 @@ site's answer for an unknown uuid and is not retried), all inheriting \code{hoop
 never return an empty frame.
 }
 }
+\section{Sub-type codes}{
+
+The values of \code{sub_type}:
+\itemize{
+\item \verb{1of1}: free throw 1 of 1
+\item \verb{1of2}: free throw 1 of 2
+\item \verb{1of3}: free throw 1 of 3
+\item \verb{24sec}: shot-clock violation
+\item \verb{2of2}: free throw 2 of 2
+\item \verb{2of3}: free throw 2 of 3
+\item \verb{3of3}: free throw 3 of 3
+\item \verb{3sec}: three-second violation
+\item \verb{5sec}: five-second violation
+\item \verb{8sec}: eight-second violation
+\item \code{adjustment}: clock adjustment
+\item \code{alleyoop}: alley-oop shot
+\item \code{alleyoopdunk}: alley-oop dunk
+\item \code{backcourt}: backcourt violation
+\item \code{badpass}: bad pass
+\item \code{ballhandling}: ball-handling error
+\item \code{benchTechnical}: technical foul on the bench
+\item \code{coachTechnical}: technical foul on the coach
+\item \code{defensive}: defensive rebound
+\item \code{disqualifying}: disqualifying foul
+\item \code{disruptive}: disruptive foul (unverified)
+\item \code{doubledribble}: double dribble
+\item \code{drivinglayup}: driving layup
+\item \code{dunk}: dunk
+\item \code{end}: end of the period or game
+\item \code{eurostep}: euro-step layup
+\item \code{fadeaway}: fadeaway jump shot
+\item \code{flagrant}: flagrant foul
+\item \code{floatingjumpshot}: floating jump shot
+\item \code{full}: full timeout
+\item \code{heldball}: held ball
+\item \code{hookshot}: hook shot
+\item \verb{in}: player enters
+\item \code{jumpshot}: jump shot
+\item \code{layup}: layup
+\item \code{lodgedball}: lodged ball
+\item \code{lost}: lost the jump ball
+\item \code{offensive}: offensive rebound or offensive foul
+\item \code{offensivegoaltending}: offensive goaltending
+\item \code{officials}: official timeout
+\item \code{other}: other
+\item \code{out}: player leaves
+\item \code{outofbounds}: out of bounds
+\item \code{outofboundsrebound}: rebound off an out-of-bounds ball (unverified)
+\item \code{personal}: personal foul
+\item \code{pullupjumpshot}: pull-up jump shot
+\item \code{reverselayup}: reverse layup
+\item \code{start}: start of the period or game, or clock start
+\item \code{startperiod}: start of a period (jump ball line)
+\item \code{stepbackjumpshot}: step-back jump shot
+\item \code{stop}: clock stop
+\item \code{technical}: technical foul
+\item \code{throwIn}: throw-in violation (unverified)
+\item \code{tipindunk}: tip-in dunk
+\item \code{tipinlayup}: tip-in layup
+\item \code{travel}: traveling
+\item \code{turnaroundjumpshot}: turnaround jump shot
+\item \code{unsportsmanlike}: unsportsmanlike foul
+\item \code{won}: won the jump ball
+}
+}
+
 \examples{
 \donttest{
   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
