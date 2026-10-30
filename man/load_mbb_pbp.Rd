@@ -100,7 +100,19 @@ load_mbb_shots(
 )
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2006)}
+\item{seasons}{A vector of 4-digit years associated with given men's college
+basketball seasons, or \code{TRUE} for every published season. Each loader accepts
+only the seasons its release tag publishes (any other season is an error):
+\itemize{
+\item \code{load_mbb_pbp()}, \code{load_mbb_shots()}: 2003 and 2006 onward (2004-2005 were never published).
+\item \code{load_mbb_team_box()}, \code{load_mbb_player_box()}, \code{load_mbb_team_stats()},
+\code{load_mbb_standings()}, \code{load_mbb_player_core()}: 2003 onward.
+\item \code{load_mbb_schedule()}: 2002 onward.
+\item \code{load_mbb_game_rosters()}: 2002 and 2025 onward.
+\item \code{load_mbb_rosters()}, \code{load_mbb_player_stats()}, \code{load_mbb_officials()}: 2025 onward.
+}
+
+The upper bound is \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}.}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_mbb_db()}).}
@@ -114,7 +126,7 @@ Returns a tibble
 
 \if{html}{\tabular{lll}{
       col_name \tab types \tab description \cr
-      id \tab numeric \tab Id. \cr
+      id \tab character \tab ESPN play id, exact (see Details). \cr
       sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
       type_id \tab character \tab Type identifier (numeric). \cr
       type_text \tab character \tab Display text for the type field. \cr
@@ -410,6 +422,17 @@ publishing parquet/rds artifacts to the \code{espn_mens_college_basketball_shots
 release tag. Published coverage runs 2003 and 2006 through the most recent
 season -- 2004 and 2005 are a documented gap (no shot-coordinate assets were
 published for those two seasons).
+}
+\details{
+The play \code{id} is returned as character. ESPN's men's college play ids have 18
+digits, more than a double can hold exactly, and the \code{.rds} release asset stores
+them as doubles (about 41\% of the 2025 ids collide there). \code{load_mbb_pbp()}
+therefore reads the \code{.parquet} asset, which keeps the exact 64-bit ids, when the
+\pkg{arrow} package is installed, and warns when it has to fall back to the \code{.rds}.
+
+ESPN join ids are integer in every loader, as they are in the box scores and
+schedules: \code{load_mbb_game_rosters()} casts \code{game_id}, and \code{load_mbb_rosters()}
+casts \code{athlete_id}, both of which the release publishes as character.
 }
 \examples{
 \donttest{
