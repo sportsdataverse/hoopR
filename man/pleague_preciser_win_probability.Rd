@@ -29,29 +29,7 @@ The vendor's home-team win probability by minute for one finished game.
 Endpoint: \verb{GET https://api.preciser.io/post/game/summary/o/plg/gameId/\{uuid\}}
 }
 \details{
-\itemize{
-\item Unofficial use of a THIRD-PARTY host: api.preciser.io is the analytics vendor behind the P. LEAGUE+ game page,
-not the league's own API. It is keyless, CORS-open, has no robots.txt (404) and no terms were found; it serves
-the data the league's own game page displays. The league's /user-policy reserves its content, so check it
-before you republish the data. Requests are spaced at least 1 s apart per host, retries included.
-\item Wrappers take the Preciser game uuid (the \code{uuid} column of \code{\link[=pleague_game]{pleague_game()}}; empty before 2022-23, which have
-no vendor data). Pass the optional \code{gid} to verify the body against the site's game page and box: the shot
-list and the rotation echo nothing about the game, so only then are the uuid, the final score, the made-shot
-counts, the roster and the court time (rotation minutes within 30 s of the box) checked. An unknown uuid
-answers 200 \verb{[]} (\code{hoopR_no_data}) or HTTP 500 (\code{hoopR_asset_fetch}, not retried).
-\item Id key spaces: the vendor names teams by uuid (\code{team_uuid} / \code{home_team_uuid} / \code{away_team_uuid}) and persons
-by \code{person_id} (the same value as the site box row's \code{person_id}); the site's \code{team_id} (1-8) joins to a team
-uuid through \code{\link[=pleague_team_crosswalk]{pleague_team_crosswalk()}} (the standings logo file name).
-\item Shot x / y are in the VENDOR frame (percent of the court, the home team always attacks x = 95) while the
-site's play-by-play x / y are in the physical court frame (teams swap ends at half-time): x_vendor = 100 -
-x_pbp and y_vendor = 100 - y_pbp in the halves where the home team attacks x < 50. The court is 28.75 x 15.25
-m. Clip urls carry a vendor access key (?key=): it is scrubbed from every body, a body that still holds one is
-refused, and no frame keeps a url.
-\item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404, a body of \verb{[]}, empty
-rotation lists), \code{hoopR_bad_request} (a uuid that is not a uuid, a \code{gid} that is not an integer, HTTP 400 /
-422) and \code{hoopR_asset_fetch} (any other failed or wrong answer, including a \code{gid} whose game has another uuid
-and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up to three attempts.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=pleague_preciser_shots]{pleague_preciser_shots()}}.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")
 }\if{html}{\out{</div>}}

@@ -58,7 +58,7 @@
 #' | status | character | Server status: 'OK'. |
 #' | message | character | Human-readable status text ('EASL Basketball API is running'). |
 #' | timestamp | character | Server time, ISO 8601 with milliseconds and Z (UTC). |
-#' @eval .intl_details(.easl_health_details, "easl_health()")
+#' @eval .intl_details(.easl_health_details, full = TRUE, "easl_health()")
 #' @export
 #' @family EASL Functions
 easl_health <- function() {

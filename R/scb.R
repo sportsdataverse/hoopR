@@ -49,7 +49,7 @@
 #' | season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
 #' | season_id | integer | The API's own season key, the START year (2025 = 2025-26); `season` minus one. |
 #' | is_active | logical | True for the season in progress. |
-#' @eval .intl_details(.scb_seasons_details)
+#' @eval .intl_details(.scb_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(scb_seasons())
@@ -94,7 +94,7 @@ scb_seasons <- function(league = "bbl") {
 #' | season_team_id | character | Season-team id; equal to the club `teamId` in every sample (BBL 2005-2026, DBBL 2024-2026). |
 #' | first_name | character | Player's given name. |
 #' | last_name | character | Player's family name. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_season_players(season = 2026))
@@ -139,7 +139,7 @@ scb_season_players <- function(season, league = "bbl") {
 #' | team_name | character | Team name as listed that season (sponsor names included). |
 #' | tlc | character | Three-letter club code. |
 #' | logo_url | character | Logo image URL (per season). |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_season_teams(season = 2026))
@@ -349,7 +349,7 @@ scb_playoff_games <- function(season, league = "bbl") {
 #' | overall | logical | False in every sample (meaning unverified). |
 #' | stage | character | Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. |
 #' | aggregation | character | Aggregation label as sent: STAGE in player tables, MAIN_ROUND in team tables. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_player_statistics(season = 2026))
@@ -448,7 +448,7 @@ scb_player_statistics <- function(season, league = "bbl", display_type = "MAIN_R
 #' | plus_minus_per_game | double | Per-game average of plus-minus (point margin while on court). |
 #' | double_double | integer | The team's season total double-doubles over displayType. |
 #' | double_double_per_game | double | Per-game average of double-doubles. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_team_statistics(season = 2026))
@@ -583,7 +583,7 @@ scb_team_statistics <- function(season, league = "bbl", display_type = "MAIN_ROU
 #' | top_scorer_real_player_id | character | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 #' | top_scorer_first_name | character | Player's given name. |
 #' | top_scorer_last_name | character | Player's family name. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_games())
@@ -715,7 +715,7 @@ scb_games <- function(league = "bbl", season = NULL, competition = NULL, game_ty
 #' | top_scorer_real_player_id | character | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 #' | top_scorer_first_name | character | Player's given name. |
 #' | top_scorer_last_name | character | Player's family name. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_games_recent())
@@ -842,7 +842,7 @@ scb_games_recent <- function(league = "bbl", slot_size = NULL) {
 #' | top_scorer_real_player_id | character | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
 #' | top_scorer_first_name | character | Player's given name. |
 #' | top_scorer_last_name | character | Player's family name. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_game(game_id = "2006920"))
@@ -924,7 +924,7 @@ scb_game <- function(game_id, league = "bbl") {
 #' | fouls_received | integer | The player's fouls drawn in the game. |
 #' | opponent_team_name | character | Opponent's name. |
 #' | field_goals_recomputed | logical | True when the API's field-goal totals disagreed with its 2-point plus 3-point parts (2005-06 box scores) and were recomputed from the parts. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_game_players(game_id = "2006920"))
@@ -1024,7 +1024,7 @@ scb_game_players <- function(game_id, league = "bbl") {
 #' | team_line_efficiency | integer | Team-line efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) (not credited to a player). |
 #' | team_line_plus_minus | integer | Team-line plus-minus: the team line has no court time, so this is not a margin. |
 #' | field_goals_recomputed | logical | True when the API's field-goal totals disagreed with its 2-point plus 3-point parts (2005-06 box scores) and were recomputed from the parts. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_game_teams(game_id = "2006920"))
@@ -1081,7 +1081,7 @@ scb_game_teams <- function(game_id, league = "bbl") {
 #' | shot_y | integer | Shot y along the court from behind the baseline (rim near 45, arc top near 147); null without a location. Scale and orientation unverified. |
 #' | home_team_points | integer | Home score after this action; only on scoring actions. |
 #' | guest_team_points | integer | Guest score after this action; only on scoring actions. |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_game_actions(game_id = "2006920"))
@@ -1176,7 +1176,7 @@ scb_game_actions <- function(game_id, league = "bbl") {
 #' | home_point_difference | integer | Home games: point differential, scored minus allowed (the API's `GoalDifference`). |
 #' | away_point_difference | integer | Away games: point differential, scored minus allowed (the API's `GoalDifference`). |
 #' | total_point_difference | integer | All games: point differential, scored minus allowed (the API's `GoalDifference`). |
-#' @inherit scb_seasons details
+#' @eval .intl_details(.scb_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(scb_standings())

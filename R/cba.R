@@ -67,7 +67,7 @@
 #' | is_default | integer | Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default. |
 #' | key | character | Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap. |
 #' | value | character | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. String of digits ('2025'); the value every season parameter takes. |
-#' @eval .intl_details(.cba_seasons_details)
+#' @eval .intl_details(.cba_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(cba_seasons())
@@ -98,7 +98,7 @@ cba_seasons <- function() {
 #' | is_default | integer | Default-selection flag: 1 = the site's default (the preseason, '3', at capture time: it follows the calendar), 2 = not the default. |
 #' | key | character | Match type name (Chinese): regular season, (Chinese text) playoffs, (Chinese text) preseason, (Chinese text) all-star, (Chinese text) relegation play-off. |
 #' | value | character | Match type id as a string ('1' regular season, '2' playoffs, '3' preseason, '4' all-star, '9' relegation); the matchTypeId of every other route. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_match_types())
@@ -131,7 +131,7 @@ cba_match_types <- function() {
 #' | is_default | integer | Default-selection flag: 2 = not the default on every row (the site prepends its own 'all teams' row, which this route does not send). |
 #' | key | character | Team display name (Chinese) in the requested season; names change with the sponsor, the teamId does not. |
 #' | value | character | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. Here a string of digits. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_team_options(season = 2026))
@@ -164,7 +164,7 @@ cba_team_options <- function(season) {
 #' | team_cn_alias | character | Current team name (Chinese short name, e.g. 'Beijing Holdings'). Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. |
 #' | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 #' | team_logo | character | Protocol-relative URL of the 300x300 team logo (`//image.cbaleague.com/cbaleague/teamlogo/300x300/<teamId>_300.png`). |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_teams())
@@ -196,7 +196,7 @@ cba_teams <- function() {
 #' |:---|:---|:---|
 #' | schedule_num | integer | Number of games scheduled on that day (0 = none). |
 #' | schedule_time | character | The day as 'YYYY-MM-DD 00:00:00' (China local time, no zone); one row per calendar day of the month. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_schedule_month(month = 12, year = 2025))
@@ -254,7 +254,7 @@ cba_schedule_month <- function(year, month) {
 #' | visiting_team_name | character | Visiting team name (Chinese) as of the game's season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. |
 #' | visiting_team_score | integer | Visiting team final points. |
 #' | visiting_team_win | integer | Visiting team's cumulative wins after this game. An integer (the API sends it as digit text). |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_schedule_day(day = "2025-12-12"))
@@ -298,7 +298,7 @@ cba_schedule_day <- function(day) {
 #' | host_team_logo | character | Absolute URL of the home team logo. |
 #' | host_team_name | character | Home team name (Chinese) at the time of the game (e.g. in 2017-18). Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. |
 #' | schedule_time | character | Tip-off as 'YYYY-MM-DD HH:MM:SS' (China local time); equals schedules/day scheduleTime. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_game_info(schedule_id = 100105799))
@@ -355,7 +355,7 @@ cba_game_info <- function(schedule_id) {
 #' | three_point_percentage | double | Three-point percentage as a FRACTION 0-1, null on the team row. |
 #' | turnovers | integer | Turnovers in this game (integer). The team row carries the team's own total here. |
 #' | up_time | integer | Time on court in SECONDS (1692 = 28:12). Null on the team row. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_player_box(schedule_id = 100105799))
@@ -390,7 +390,7 @@ cba_player_box <- function(schedule_id) {
 #' | side | character | Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). |
 #' | period | integer | Period number: 1-4 regulation, 5 and up overtime (the API holds up to seven periods). |
 #' | points | integer | Points the side scored IN this period (not cumulative); overtime periods included. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_period_scores(schedule_id = 100105799))
@@ -471,7 +471,7 @@ cba_period_scores <- function(schedule_id) {
 #' | season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. |
 #' | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 #' | team_name | character | Team name (Chinese) in that season; changes with the sponsor. |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_game_team_shots(schedule_id = 100105799))
@@ -800,7 +800,7 @@ cba_best_stats <- function(schedule_id) {
 #' | team_en_name | character | Team English name as the league registers it (the sample reads 'GUANG SHA'). |
 #' | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 #' | weight | integer | Weight in kg (integer). |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_rosters(schedule_id = 100105799))
@@ -881,7 +881,7 @@ cba_report_status <- function(schedule_id) {
 #' | type | integer | Team the play belongs to: 1 = home, 2 = visiting (checked on all 667 rows of two games: color equals homeColor when 1 and visitingColor when 2). See the code table. |
 #' | visiting_color | character | Visiting team colour '#RRGGBB'. |
 #' | visitor_score | integer | Visiting team points after the play (same caveat as homeScore). |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_pbp(schedule_id = 100105799))
@@ -976,7 +976,7 @@ cba_team_counts <- function(season) {
 #' | turnovers | double | Turnovers, formatted by statisticalDimension. A number (the API sends it as display text). |
 #' | win_number | integer | Wins (Chinese text). (as the API names it) |
 #' | win_rate | double | Win rate (Chinese text). A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_team_basic(team_id = 29128))
@@ -1296,7 +1296,7 @@ cba_team_shots <- function(team_id, match_type_id = 1, page_number = 1, page_siz
 #' | three_point_percentage | double | Three-point percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4%'; the _sort column holds the same fraction). |
 #' | three_point_percentage_sort | double | Three-point percentage as a FRACTION 0-1 for sorting. |
 #' | turnovers | double | Turnovers per game when countRanger is 1. A number (the API sends it as display text). |
-#' @inherit cba_seasons details
+#' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cba_player_base(season = 2026, team_id = 29128))

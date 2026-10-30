@@ -44,7 +44,7 @@
 #' Endpoint: `GET https://stats.segevstats.com/realtimestat_heb/api/?method=getGameInfo`
 #' @param game_id (*integer* required): Segev game id (e.g. 50 = Hapoel Be'er Sheva vs Maccabi Tel
 #'   Aviv, 2025-26 round 1): `segev_game_id` in ibba_games.
-#' @eval .intl_details(.ibba_segev_game_info_details)
+#' @eval .intl_details(.ibba_segev_game_info_details, full = TRUE)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -116,7 +116,7 @@ ibba_segev_rosters <- function(game_id) {
 #' Endpoint: `GET https://stats.segevstats.com/realtimestat_heb/api/?method=getBoxScore`
 #' @param game_id (*integer* required): Segev game id (e.g. 50 = Hapoel Be'er Sheva vs Maccabi Tel
 #'   Aviv, 2025-26 round 1): `segev_game_id` in ibba_games.
-#' @inherit ibba_segev_game_info details
+#' @eval .intl_details(.ibba_segev_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -181,7 +181,7 @@ ibba_segev_player_box <- function(game_id) {
 #' Endpoint: `GET https://stats.segevstats.com/realtimestat_heb/api/?method=getBoxScore`
 #' @param game_id (*integer* required): Segev game id (e.g. 50 = Hapoel Be'er Sheva vs Maccabi Tel
 #'   Aviv, 2025-26 round 1): `segev_game_id` in ibba_games.
-#' @inherit ibba_segev_game_info details
+#' @eval .intl_details(.ibba_segev_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -278,7 +278,7 @@ ibba_segev_period_scores <- function(game_id) {
 #' Endpoint: `GET https://stats.segevstats.com/realtimestat_heb/api/?method=getActions`
 #' @param game_id (*integer* required): Segev game id (e.g. 50 = Hapoel Be'er Sheva vs Maccabi Tel
 #'   Aviv, 2025-26 round 1): `segev_game_id` in ibba_games.
-#' @inherit ibba_segev_game_info details
+#' @eval .intl_details(.ibba_segev_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |

@@ -36,31 +36,7 @@ Standings of an ssgt (gameday widget).
 Endpoint: \verb{GET https://www.basketligaen.dk/api/gameday/team-standings/\{ssgt_uuid\}}
 }
 \details{
-\itemize{
-\item Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
-series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-wrappers). The terms page was not read; check it before you republish the data.
-\item Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
-in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
-family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The
-Genius ORG code of Denmark is not exposed.
-\item Season = the END year (2026 = 2025/26) everywhere; the runtime maps it, with game_type ('regular' or
-'finals', the playoffs), to the site's ssgt (season + series + game type) through layout-info. Schedules,
-standings and season tables start in 2002/03; game-level data (play-by-play with shot x/y, box scores, team
-stats) starts in 2023/24.
-\item Source defects the runtime refuses (\code{hoopR_asset_fetch}): an unfinished game or a truncated play-by-play
-feed, a box score or feed that names another game, a cut stats table. The 2002/03 regular-season schedule
-lists 109 finished games where its own standings count 110: a source gap.
-\item Personal data is removed from every body: birth dates, e-mail addresses, phone numbers, addresses and
-contact blocks.
-\item No women's league: Dameligaen has its own domain (dameligaen.dk), which answers 401 to anonymous requests.
-\item Errors are classed conditions: \code{hoopR_no_data} (404, an empty gameday body, \code{{}} / \verb{[]}, a table with
-no rows, a season or game type layout-info does not list), \code{hoopR_bad_request} (a bad argument, a 400 /
-422) and \code{hoopR_asset_fetch} (an error envelope or non-JSON 200, a body for another game / team / athlete /
-ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
-site's answer for an unknown uuid and is not retried), all inheriting \code{hoopR_error}. Wrappers raise; they
-never return an empty frame.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=sportality_schedule]{sportality_schedule()}}.
 }
 \examples{
 \donttest{

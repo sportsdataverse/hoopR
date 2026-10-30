@@ -78,7 +78,7 @@
 #' | has_boxscore | logical | True when the site offers a box score for the game. |
 #' | has_advanced | logical | True when the site offers advanced statistics for the game. |
 #' | highlights_url | character | Highlights video URL; null when none is published. |
-#' @eval .intl_details(.acb_match_header_details)
+#' @eval .intl_details(.acb_match_header_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(acb_match_header(match_id = 105401))
@@ -114,7 +114,7 @@ acb_match_header <- function(match_id) {
 #' | quarter | integer | Period number: 1-4 quarters, 5+ overtimes (a finished game lists every period played). |
 #' | home_score | integer | Points the home team scored IN this period (not cumulative). |
 #' | away_score | integer | Points the away team scored IN this period (not cumulative). |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_period_scores(match_id = 105401))
@@ -187,7 +187,7 @@ acb_period_scores <- function(match_id) {
 #' | fouls_drawn | integer | Fouls received (player box-score row) |
 #' | plus_minus | integer | Point differential while on court (+/-) |
 #' | rating | integer | Valoracion: ACB's efficiency rating (PIR) = points + rebounds + assists + steals + blocks + fouls received - missed field goals - missed free throws - turnovers - shots blocked by an opponent - fouls committed |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_player_box(match_id = 105401))
@@ -250,7 +250,7 @@ acb_player_box <- function(match_id) {
 #' | fouls_drawn | integer | Fouls received, team total (players + team) |
 #' | plus_minus | integer | Point differential while on court (+/-), team total (players + team) |
 #' | rating | integer | Valoracion: ACB's efficiency rating (PIR) = points + rebounds + assists + steals + blocks + fouls received - missed field goals - missed free throws - turnovers - shots blocked by an opponent - fouls committed, team total (players + team) |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_team_box(match_id = 105401))
@@ -295,7 +295,7 @@ acb_team_box <- function(match_id) {
 #' | arena | character | Arena where the game was played; repeats on both team rows. |
 #' | attendance | integer | Announced attendance; repeats on both team rows. |
 #' | referees | character | Referees' names joined with '; '; repeats on both team rows. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_box_info(match_id = 105401))
@@ -370,7 +370,7 @@ acb_box_info <- function(match_id) {
 #' | run_fouls_drawn | integer | The acting player's running fouls drawn AFTER this event (cumulative in the game). |
 #' | series_wins | integer | Home team's series wins, on the END_OF_GAME event of a 2016-17 playoff game only. |
 #' | series_losses | integer | Home team's series losses, on the same event. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_pbp(match_id = 105401))
@@ -431,7 +431,7 @@ acb_pbp <- function(match_id) {
 #' | zone | character | Shot zone (acb_codes.SHOT_ZONES: restricted_area, paint, mid_range_*, corner_three_*, wing_three_*, top_three); null on free throws; legacy zones (up to 2019-20) are unreliable. |
 #' | made | logical | True when the shot went in; null on some free throws. |
 #' | points | integer | Points the attempt scored (2 or 3 on made field goals); null on free throws and misses. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_shots(match_id = 105401))
@@ -783,7 +783,7 @@ acb_quickfacts <- function(match_id) {
 #' | last_name | character | Legal last name(s) |
 #' | shirt_number | character | Shirt number, a string ('' or null when unknown) |
 #' | game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_season_leaders(match_id = 105401))
@@ -941,7 +941,7 @@ acb_player_advanced_stats <- function(match_id, player_id) {
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
 #' | is_selected_local | logical | Null in this list (set only in a club's game list). |
 #' | match_grouping | character | How the list was grouped: round or week. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_matchlist(match_id = 105401))
@@ -979,7 +979,7 @@ acb_matchlist <- function(match_id, round_id = NULL, week_id = NULL) {
 #' | season | integer | Season END year (2027 for 2026-27) = seasonEndYear. |
 #' | n_rounds | integer | Rounds the edition lists. |
 #' | n_weeks | integer | Weeks the edition lists. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_competition_editions())
@@ -1016,7 +1016,7 @@ acb_competition_editions <- function(competition_ids = NULL) {
 #' | round_number | integer | Round number within the phase |
 #' | subphase_id | integer | Sub-phase id inside a phase (a playoff round or a cup round, e.g. 291, 292, 293); null in the regular season |
 #' | subphase_number | integer | Sub-phase number; null in the regular season |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_competition_rounds())
@@ -1094,7 +1094,7 @@ acb_competition_weeks <- function(competition_ids = NULL) {
 #' | away_club_id | integer | Away stable club id of the current match. |
 #' | away_team | character | Away team name of the current match. |
 #' | away_team_abbr | character | Away team abbreviation of the current match. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_competition_current())
@@ -1161,7 +1161,7 @@ acb_competition_current <- function(competition_ids = NULL) {
 #' | away_team_abbr | character | Away team three-letter abbreviation (looked up in the body's team list). |
 #' | ticketing_link | character | Ticket shop URL; null when none. |
 #' | broadcasters | character | Broadcast channel names of the game joined with '; ' (the first is the primary). |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_round_matches(round_id = 6017, season = 2027))
@@ -1220,7 +1220,7 @@ acb_round_matches <- function(competition_id = NULL, season = NULL, round_id = N
 #' | home_losses | integer | Losses at home. |
 #' | away_wins | integer | Wins away from home (the API's awayBalanceWins). |
 #' | away_losses | integer | Losses away from home (the API's awayBalanceLosses). |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_standings(season = 2027))
@@ -1318,7 +1318,7 @@ acb_standings_rounds <- function(competition_id = NULL, season = NULL, round_id 
 #' | n_games | integer | Games listed for the series. |
 #' | edition_id | integer | Season id (`editionId`) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry `seasonStartYear` / `seasonEndYear` |
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_bracket(season = 2026))
@@ -1428,7 +1428,7 @@ acb_bracket_games <- function(competition_id = NULL, season = NULL) {
 #' | away_team_abbr | character | Away team three-letter abbreviation (looked up in the body's team list). |
 #' | ticketing_link | character | Ticket shop URL; null when none. |
 #' | broadcasters | character | Broadcast channel names of the game joined with '; ' (the first is the primary). |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_calendar(season = 2027))
@@ -1509,7 +1509,7 @@ acb_league_zones <- function(competition_id = NULL, season = NULL) {
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
 #' | latest_team_id | integer | The club's most recent season-team entry. |
 #' | latest_team | character | The club's most recent team name. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_teams(season = 2027))
@@ -1575,7 +1575,7 @@ acb_teams <- function(competition_id = NULL, season = NULL) {
 #' | edition_id | integer | Season id (`editionId`) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry `seasonStartYear` / `seasonEndYear` |
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
 #' | is_selected_local | logical | True when the requested club played at home. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_team_matches(club_id = 2, season = 2027))
@@ -1744,7 +1744,7 @@ acb_club_data <- function(club_id) {
 #' | edition_id | integer | Season id the person record was read for (START year - 1935). |
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
 #' | temporary_roster | logical | True while the roster is provisional. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_current_roster(club_id = 2, season = 2027))
@@ -1930,7 +1930,7 @@ acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, 
 #' | per40_plus_minus | double | Per-40-minute rate of plus/minus. |
 #' | per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
 #' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_team_stats(club_id = 2, season = 2027))
@@ -2161,7 +2161,7 @@ acb_team_records <- function(club_id) {
 #' | youtube | character | YouTube handle; null when none. |
 #' | tiktok | character | TikTok handle; null when none. |
 #' | pronunciation_url | character | URL of an audio clip of the name; null when none. |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_player_data(player_id = 20209407))
@@ -2293,7 +2293,7 @@ acb_player_data <- function(player_id) {
 #' | per40_plus_minus | double | Per-40-minute rate of plus/minus. |
 #' | per40_wins | double | Per-40-minute rate of team wins in the counted games (meaning unverified). |
 #' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_player_stats(player_id = 20209407))
@@ -2562,7 +2562,7 @@ acb_career_trophies <- function(player_id) {
 #' | fouls_received | integer | Fouls drawn by the player in the game. |
 #' | rating | integer | ACB rating (valoracion) of the game. |
 #' | plus_minus | integer | Point differential while on court (+/-) |
-#' @inherit acb_match_header details
+#' @eval .intl_details(.acb_match_header_details)
 #' @examples
 #' \donttest{
 #'   try(acb_player_matches(player_id = 20209407, season = 2027))

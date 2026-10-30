@@ -241,7 +241,7 @@ sportality_athlete_profile <- function(athlete_uuid, master_site_instance_id = N
 #' | pf | integer | Personal fouls. |
 #' | f_on | integer | Fouls on (fouls drawn). |
 #' | plus_minus | integer | Plus/minus while on court. |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_boxscore(game_uuid = "c4hh5nig6t"))
@@ -319,7 +319,7 @@ sportality_boxscore <- function(game_uuid) {
 #' | away_team_score | integer | Points scored by the away team. |
 #' | ssgt_uuid | character | ssgt uuid (platform key space: one season + series + game type); joins /statistics-v2/layout-info `seasonSeriesGameTypeTeams[].ssgtUuid` and every route keyed by ssgt. |
 #' | series_uuid | character | Series uuid (platform key space; Basketligaen = m1ay3mpa4t, the only series on this host). |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_game_header(game_uuid = "c4hh5nig6t"))
@@ -383,7 +383,7 @@ sportality_game_header <- function(game_uuid) {
 #' | time_period_time | character | Clock remaining in the period, 'hh:mm:ss' ('00:00:00' once the period or game is over). |
 #' | time_instance_id | character | Site instance that owns the feed (platform key space; dbl1_dbl). |
 #' | time_source | character | Feed that produced the row (genius-basketball-stream-reader). |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_game_overview(game_uuid = "c4hh5nig6t"))
@@ -425,7 +425,7 @@ sportality_game_overview <- function(game_uuid) {
 #' | team_period_stats | character | One row per period. |
 #' | best_scorers | character | The game's top scorers, one per side (or the two best). |
 #' | statistics_provider | character | Stats provider of the data (genius-basketball = Genius Sports LiveStats). |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_game_summary(game_uuid = "c4hh5nig6t"))
@@ -500,7 +500,7 @@ sportality_game_summary <- function(game_uuid) {
 #' | series_uuid | character | Series uuid (platform key space). |
 #' | series_code | character | Series display name (Basketligaen; NOT the DBL code). |
 #' | series_display_name | character | Series display name (Basketligaen). |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_last_game_day())
@@ -758,7 +758,7 @@ sportality_next_game_day <- function(season = NULL, game_type = "regular") {
 #' * `turnaroundjumpshot`: turnaround jump shot
 #' * `unsportsmanlike`: unsportsmanlike foul
 #' * `won`: won the jump ball
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
@@ -827,7 +827,7 @@ sportality_pbp <- function(game_uuid) {
 #' | plus_minus | integer | Plus/minus while on court. |
 #' | team_number | integer | Team number in the game (1 home, 2 away) as Genius numbers the shirt table. |
 #' | pno | integer | Genius shirt-table number of the player (player-stats only). |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_player_box(game_uuid = "c4hh5nig6t"))
@@ -1027,7 +1027,7 @@ sportality_post_game_team_stats <- function(game_uuid, ssgt_uuid, home_team_uuid
 #' | nationality | character | ISO 3166-1 alpha-2 country code. |
 #' | jersey_number | integer | Jersey (shirt) number of the player. |
 #' | portrait_url | character | URL of the player's latest rendered portrait. |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_roster(team_uuid = "rfo82vr830"))
@@ -1132,7 +1132,7 @@ sportality_roster <- function(team_uuid) {
 #' | series_display_name | character | Series display name (Basketligaen). |
 #' | round_number | integer | Round number (0 for every game seen; the league has no rounds). |
 #' | round_label | character | Round label ('' for every game seen). |
-#' @eval .intl_details(.sportality_schedule_details)
+#' @eval .intl_details(.sportality_schedule_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(sportality_schedule(season = 2026))
@@ -1172,7 +1172,7 @@ sportality_schedule <- function(season, game_type = "regular") {
 #' | name | character | Game type name in Danish (Grundspil = regular season, Slutspil = playoffs). |
 #' | uuid | character | Series uuid (platform key space); the seriesUuid of /sports-v2/game-schedule. |
 #' | deleted | logical | Soft-delete flag; false on every record seen. |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_season_filter())
@@ -1211,7 +1211,7 @@ sportality_season_filter <- function() {
 #' | public_url | character | The club's own website. |
 #' | name | character | Display name of the club. |
 #' | icon | character | Team logo URL (SVG on sportality.cdn.s8y.se). |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_sites(ssgt_uuid = "xs07bd3fmp"))
@@ -1291,7 +1291,7 @@ sportality_ssgt_provider <- function(ssgt_uuid) {
 #' | ga | integer | Points conceded. |
 #' | plus_minus | integer | Point difference. |
 #' | strk | integer | Current streak as a signed integer: positive = wins in a row, negative = losses in a row. |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
@@ -1555,7 +1555,7 @@ sportality_stats_info <- function(module, season, game_type = "regular") {
 #' | icon | character | Team logo URL (SVG on sportality.cdn.s8y.se). |
 #' | owner_instance_id | character | Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). |
 #' | site_display_name | character | Team name as the league site displays it. |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_team(team_uuid = "rfo82vr830"))
@@ -1681,7 +1681,7 @@ sportality_team_played_games <- function(team_uuid) {
 #' | stl | integer | Number of steals. |
 #' | blk | integer | Number of blocked shots made. |
 #' | pf | integer | Personal fouls. |
-#' @inherit sportality_schedule details
+#' @eval .intl_details(.sportality_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(sportality_team_stats(game_uuid = "c4hh5nig6t"))

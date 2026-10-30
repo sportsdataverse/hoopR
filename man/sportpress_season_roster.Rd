@@ -36,34 +36,7 @@ Every roster entry of a season: player, team, jersey, height, weight and positio
 Endpoint: \verb{GET https://bnxt.sportpress.info/api/v1/roster/season-players/\{season\}}
 }
 \details{
-\itemize{
-\item Unofficial and unsupported: the Sportpress API is the JSON backend of bnxtleague.com, not a documented public
-API. Every route needs a header key; it is public (hard-coded in the site bundle), \code{bnxt_runtime} reads it from
-the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs
-it. A 401 raises AssetFetchError (\verb{key rotated?}). robots.txt allows everything; requests are spaced at least 1 s
-apart.
-\item Season key: the END year (\code{season=2026} is 2025-26), the API's own key on the season routes. Every other route is
-keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,
-24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; \code{uu_team_id} is the stable club), the
-roster id (player x team x season) or the game id (unique across seasons). \code{sportpress_phases(season)} maps a
-season to its competition id.
-\item Coverage: schedule and rosters from 2021-22 (2020-21 is empty); box scores for 2021-22, 2024-25, 2025-26 and
-2026-27 (2022-23 and 2023-24 answer empty); standings and averages for 2021-22 and 2024-25 on; play-by-play
-('film', with court x/y) for 2021-22 and 2026-27 only: for 2022-23 to 2025-26 use Genius play-by-play through
-\code{genius_id} (\code{\link[=sportpress_game_slider]{sportpress_game_slider()}}, organisation BNXT). The game routes (box score, film, overview) refuse a
-game that is not finished (AssetFetchError).
-\item Data notes: a team's box total can differ from the schedule final score on about 18 of 1,246 sampled team boxes
-(mostly 2024-25, by 2-21 points); the frames report what the API serves. \code{nationality_code} is dirty (lower case,
-\code{USA/BEL} pairs, empty, \code{HOL}). Names differ by language and sponsor: join on ids. Contact and social fields are
-dropped; only a player's public birth date is kept. The sibling tenants sopron.sportpress.info and
-beac.sportpress.info are not wrapped.
-\item Errors are classed conditions: \code{hoopR_no_data} (HTTP 404, an empty \code{data} list: an unknown id or a season without
-data, an empty ranking), \code{hoopR_bad_request} (an id or season that is not an integer, HTTP 400 / 422) and
-\code{hoopR_asset_fetch} (a rejected key after one renewal, any other non-200, a non-JSON or empty body, an error or
-changed envelope, a game that is not finished, a body for another season, competition, team or game), all
-inheriting \code{hoopR_error}. Wrappers raise; they never return an empty frame for a failed request. Whole doubles
-(\code{24}) are accepted for integer arguments.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=sportpress_ui_strings]{sportpress_ui_strings()}}.
 }
 \examples{
 \donttest{

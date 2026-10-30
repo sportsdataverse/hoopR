@@ -47,7 +47,7 @@
 #' | season | integer | Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's `season` param takes. |
 #' | is_active | logical | True for the current season (one row: 2026 on 2026-10-12). |
 #' | is_live | logical | True while the current season is in progress or open for live data (true for 2026 on 2026-10-12, after its last game: the exact meaning is unverified). |
-#' @eval .intl_details(.cebl_seasons_details)
+#' @eval .intl_details(.cebl_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(cebl_seasons())
@@ -81,7 +81,7 @@ cebl_seasons <- function() {
 #' | is_active | logical | True for a team in the current league; false for a former identity (Guelph Nighthawks, Hamilton Honey Badgers, Fraser Valley Bandits, Saskatchewan Rattlers, Newfoundland Growlers). |
 #' | logo_url | character | Team logo URL (icon with the team name; upstream: 'Should include the icon and team name'). |
 #' | icon_url | character | Team icon URL (upstream: 'Should not include the team name'). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_teams())
@@ -139,7 +139,7 @@ cebl_teams <- function() {
 #' | shop_url_fr | character | The team's merchandise shop (French). |
 #' | stats_url_en | character | The team's stats page on cebl.ca (`https://cebl.ca/stats/{slug}`). |
 #' | stats_url_fr | character | The team's stats page on the French cebl.ca (`https://cebl.ca/fr-ca/stats/{slug}`). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_standings(season = 2025))
@@ -177,7 +177,7 @@ cebl_standings <- function(season) {
 #' | position | character | Playing position: G (guard), F (forward), C (center), or a combination such as 'C/F'; null when unknown. |
 #' | jersey_number | character | Jersey number, as a string of up to 2 characters ('0', '00' and '1' are distinct); null when unknown. |
 #' | photo_url | character | Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_roster(team_id = 14, season = 2025))
@@ -316,7 +316,7 @@ cebl_team_stats <- function(
 #' | tickets_url_en | character | Ticket-sales page for the game (English). |
 #' | tickets_url_fr | character | Ticket-sales page for the game (French). |
 #' | broadcast_partner_logo_urls | character | Logo URLs of the game's broadcasters (TSN+, CEBL+, ...); 2 to 7 per game. |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_games(season = 2025))
@@ -388,7 +388,7 @@ cebl_games <- function(season, team_id = NULL) {
 #' | double_doubles | double | Double-doubles: games with 10 or more in two of points, rebounds, assists, steals, blocks. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
 #' | triple_doubles | double | Triple-doubles: games with 10 or more in three of those. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
 #' | target_scores | double | Target-score baskets: games in which the player made the basket that reached the Elam Ending target score and ended the game (CEBL has used the Elam Ending since 2020, so 2019 is 0). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_player_stats(mode = "PER_GAME", season = 2025))

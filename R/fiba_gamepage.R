@@ -51,7 +51,7 @@
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @eval .intl_details(.fiba_gamepage_box_players_details)
+#' @eval .intl_details(.fiba_gamepage_box_players_details, full = TRUE)
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
 #' | col_name | type | description |
@@ -123,7 +123,7 @@ fiba_gamepage_box_players <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
@@ -245,7 +245,7 @@ fiba_gamepage_lineup <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
@@ -301,7 +301,7 @@ fiba_gamepage_pbp <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
@@ -339,7 +339,7 @@ fiba_gamepage_period_scores <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'

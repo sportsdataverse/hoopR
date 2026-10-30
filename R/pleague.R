@@ -80,7 +80,7 @@
 #' | home_name_en | character | Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
 #' | home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
 #' | home_score | integer | Home team's final points (0 on a future game). |
-#' @eval .intl_details(.pleague_schedule_details)
+#' @eval .intl_details(.pleague_schedule_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(pleague_schedule(season = 2025))
@@ -125,7 +125,7 @@ pleague_schedule <- function(season, stage = "regular-season") {
 #' | home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
 #' | home_score | integer | Home team's final points (0 on a future game). |
 #' | overtimes | integer | Number of overtime periods played (overtime cells with points on the page). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_game(gid = 197))
@@ -157,7 +157,7 @@ pleague_game <- function(gid) {
 #' | period_no | integer | 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. |
 #' | home_points | integer | Home points scored IN the period (not cumulative). |
 #' | away_points | integer | Away points scored IN the period (not cumulative). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_periods(gid = 197))
@@ -262,7 +262,7 @@ pleague_officials <- function(gid) {
 #' | opp_pts_fast_break | integer | Opponent fast-break points while the player was on court (2022-23 on). Null on did-not-play rows. |
 #' | opp_pts_off_turnover | integer | Opponent points off turnovers while the player was on court (2022-23 on). Null on did-not-play rows. |
 #' | opp_pts_paint | integer | Opponent points in the paint while the player was on court (2022-23 on). Null on did-not-play rows. |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_box_players(gid = 197))
@@ -312,7 +312,7 @@ pleague_box_players <- function(gid) {
 #' | tov | integer | Team turnovers. |
 #' | pf | integer | Team personal fouls. |
 #' | plus_minus | integer | Sum of the players' plus/minus (2020-21 and 2021-22 only; null from 2022-23). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_box_teams(gid = 197))
@@ -454,7 +454,7 @@ pleague_box_teams <- function(gid) {
 #' * `tov_shot_clock`: turnover: shot-clock violation \[489\]
 #' * `tov_travel`: turnover: travelling \[718\]
 #' * `unlabelled`: row has a player but no action text; in the corpus a shot with x/y followed by a rebound, i.e. a missed shot (inferred) \[(blank), 169\]
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_pbp(gid = 197))
@@ -501,7 +501,7 @@ pleague_pbp <- function(gid) {
 #' | streak | character | Current streak: W\{n\} wins or L\{n\} losses ((Chinese text)). |
 #' | last_n | integer | Games in the 'last games' column ((Chinese text)10(Chinese text) = the last 10), read from the header. |
 #' | last_n_record | character | Record 'W-L' over the last last_n games ((Chinese text)N(Chinese text)). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_standings(season = 2025))
@@ -573,7 +573,7 @@ pleague_standings <- function(season) {
 #' | fg2_pct | double | 2-point percentage 0-100 ((Chinese text); the cell holds the same value as average and total). |
 #' | fg3_pct | double | 3-point percentage 0-100 ((Chinese text); same value as average and total). |
 #' | ft_pct | double | Free-throw percentage 0-100 ((Chinese text); same value as average and total). |
-#' @inherit pleague_schedule details
+#' @eval .intl_details(.pleague_schedule_details)
 #' @examples
 #' \donttest{
 #'   try(pleague_stat_player(season = 2025, stage_sn = 2))
@@ -731,7 +731,7 @@ pleague_player_seasons <- function(player_page_id) {
 #' | has_video | logical | True when the shot has a clip. The clip url is never kept: it carries a vendor access key. |
 #' | home_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
 #' | away_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
-#' @eval .intl_details(.pleague_preciser_shots_details)
+#' @eval .intl_details(.pleague_preciser_shots_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))

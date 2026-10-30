@@ -56,7 +56,7 @@
 #' | status | character | Season status: COMPLETED or IN_PROGRESS. |
 #' | started_at | character | Season start, 'YYYY-MM-DD 00:00:00' text. Preseason games can be played before it (the 2026-27 start is 2026-10-17, its first games were played 2026-10-09). |
 #' | ended_at | character | Season end, 'YYYY-MM-DD 00:00:00' text (the planned end for a season in progress). |
-#' @eval .intl_details(.tpbl_seasons_details)
+#' @eval .intl_details(.tpbl_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(tpbl_seasons())
@@ -126,7 +126,7 @@ tpbl_divisions <- function(season) {
 #' | name | character | Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
 #' | is_real_team | logical | True for a real club; false for a bracket placeholder (67 higher-seed team, 68 lower-seed team in 2025-26). |
 #' | status | character | Team status. 'ACTIVE' is the only value seen in every sampled route; the full set of statuses is unknown. |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_teams(season = 2026))
@@ -196,7 +196,7 @@ tpbl_teams <- function(season) {
 #' | live_stream_url | character | YouTube live-stream URL of the game; null when the API omits it. |
 #' | judgement_report_url | character | URL of the referees' judgement report (a Google Drive file); null when none. |
 #' | ticket_url | character | URL of the ticket page; null on most rows. |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_games(season = 2026))
@@ -237,7 +237,7 @@ tpbl_games <- function(season, team_id = NULL, verify = NULL) {
 #' | drawn | integer | Games drawn (always 0 in basketball). |
 #' | games_behind | double | Games behind the leader (0 for the leader); a whole number in every captured division, read as a float so half games cannot break the dtype. |
 #' | streak | character | Current streak: 'W' + count for wins, 'L' + count for losses (W2 = two straight wins). |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_standings(division_id = 2))
@@ -332,7 +332,7 @@ tpbl_standings_against <- function(division_id) {
 #' | live_stream_url | character | YouTube live-stream URL of the game; null when the API omits it. |
 #' | judgement_report_url | character | URL of the referees' judgement report (a Google Drive file); null when none. |
 #' | ticket_url | character | URL of the ticket page; null on most rows. |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_game(game_id = 6))
@@ -528,7 +528,7 @@ tpbl_referees <- function(game_id) {
 #' | three_pointers_pull_up_jump_shot_made | integer | 3-point field goals made that were a pull-up jump shot by the player over the whole game. |
 #' | three_pointers_pull_up_jump_shot_missed | integer | 3-point field goals missed that were a pull-up jump shot by the player over the whole game. |
 #' | three_pointers_pull_up_jump_shot_attempted | integer | 3-point field goals attempted that were a pull-up jump shot by the player over the whole game. |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_box_players(game_id = 6))
@@ -758,7 +758,7 @@ tpbl_box_player_periods <- function(game_id) {
 #' | points_in_paint | integer | Points scored in the paint by the team over the whole game. |
 #' | second_chance_points | integer | Points scored on second chances (after an offensive rebound) by the team over the whole game. |
 #' | fast_break_points | integer | Points scored on the fast break by the team over the whole game. |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_box_teams(game_id = 6))
@@ -875,7 +875,7 @@ tpbl_box_team_periods <- function(game_id) {
 #' | national_identity_detail | character | Free-text detail on the category; '' in every sample. |
 #' | registered | logical | True when the player is registered with the squad. |
 #' | is_listing | logical | True when the player is shown on the team's public roster page. |
-#' @inherit tpbl_seasons details
+#' @eval .intl_details(.tpbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(tpbl_roster(division_id = 2, team_id = 4))

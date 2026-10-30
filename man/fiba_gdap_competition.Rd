@@ -53,26 +53,7 @@ One competition (edition): season, dates, hosts, zone, category and competition 
 Endpoint: \verb{GET https://digital-api.fiba.basketball/hapi/getGdapCompetitionById}
 }
 \details{
-FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'
-(federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball
-terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not
-themselves authorised by FIBA should check the terms before using the wrappers.
-
-The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the
-live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of
-birth are dropped from every body.
-
-Id key spaces: competition_id is one per edition (2023 World Cup = 208182) and game_id is global across
-competitions (the \verb{<gameId>} of a game-page URL). team_id is per team per competition (Germany is 279569 at
-the 2023 World Cup and 281545 at Paris 2024), while organisation_id is the stable federation or club (64 =
-Germany, every year); the game page's T_\verb{<id>} and the play-by-play oId are organisation ids, not team ids.
-
-Errors are classed conditions (all inherit \code{hoopR_error}): \code{hoopR_no_data} when FIBA has nothing (HTTP 404,
-or GDAP answers \code{{}} / \verb{[]} for an unknown id); \code{hoopR_bad_request} for HTTP 400 / 422 or a malformed id,
-season or date; \code{hoopR_asset_fetch} for any other failed fetch or an answer that is not about the request (an
-error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
-federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
-competitions, the event year for national-team events, the target tournament year for qualifiers.
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}}.
 }
 \examples{
 \donttest{

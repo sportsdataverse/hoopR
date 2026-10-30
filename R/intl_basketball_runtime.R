@@ -400,14 +400,22 @@
 }
 
 #' Roxygen lines of one topic's `@details` (roxygen `@eval`): a family's shared notes, then, for a
-#' function whose example is not run, the call as a code block (the NBA Stats house style). A topic
-#' that defines `@details` inherits none, so the notes are held once in a `.<primary>_details`
-#' vector instead of `@inherit <primary> details`.
+#' function whose example is not run, the call as a code block (the NBA Stats house style). The
+#' notes are held once in a `.<primary>_details` vector and printed in full only on the family's
+#' primary topic (`full = TRUE`); every other topic links to it, which keeps the installed help
+#' small.
 #'
-#' @param notes Character vector of roxygen markdown lines.
+#' @param notes Character vector of roxygen markdown lines (pass the `.<primary>_details` symbol:
+#'   its name gives the primary topic to link to).
 #' @param example Character vector of code lines, or `NULL` for none.
+#' @param full Print the notes themselves (the primary topic) instead of a link to them.
 #' @return Character vector of roxygen lines.
 #' @noRd
-.intl_details <- function(notes, example = NULL) {
+.intl_details <- function(notes, example = NULL, full = FALSE) {
+  if (!full) {
+    primary <- sub("^[.](.*)_details$", "\\1", deparse(substitute(notes)))
+    notes <- paste0("Source, terms of use, request pacing, seasons, ids, coverage and error classes ",
+                    "of this family: see the notes in [", primary, "()].")
+  }
   c("@details", notes, if (length(example)) c("", "```r", paste0(" ", example), "```"))
 }

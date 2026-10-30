@@ -175,7 +175,7 @@
     paste0(" ", prefix, "_schedule(season = ", ex, ")"),
     "```",
     paste0("@return A `hoopR_data` tibble with the columns of the base wrapper (the raw JSON list when ",
-           "`return_parsed = FALSE`), one table per function:"),
+           "`return_parsed = FALSE`) of each function:"), "",
     unlist(lapply(.FIBA_ALIASES, function(s) {
       .intl_alias_returns(paste0(prefix, "_", s[["suffix"]]), s[["base"]])
     })),

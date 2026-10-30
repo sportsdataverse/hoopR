@@ -47,7 +47,7 @@
 #' Endpoint: `GET https://basket.co.il/ws/ws.asmx/Configuration`
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
-#' @eval .intl_details(.ibba_configuration_details, "ibba_configuration(season = 2026)")
+#' @eval .intl_details(.ibba_configuration_details, full = TRUE, "ibba_configuration(season = 2026)")
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |

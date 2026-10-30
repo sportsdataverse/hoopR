@@ -48,7 +48,7 @@
 #' | language | character | ISO 639-1 code of the UI language: en, fr (French) or nl (Dutch). |
 #' | key | character | Dotted UI string key such as 'statistics.individual.points'; 302 keys per language. |
 #' | text | character | The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons. |
-#' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_ui_strings()")
+#' @eval .intl_details(.sportpress_ui_strings_details, full = TRUE, "sportpress_ui_strings()")
 #' @export
 #' @family BNXT League Functions
 sportpress_ui_strings <- function() {

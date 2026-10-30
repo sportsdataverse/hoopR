@@ -64,27 +64,7 @@ Games of one round of a championship: teams, score, venue, referees and broadcas
 Endpoint: \verb{GET https://www.legabasket.it/api/championships/get-championships-calendar-by-id} (\verb{id=<championship_id>&d=<round>})
 }
 \details{
-\itemize{
-\item Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. Use the data accordingly, and check the terms before you republish it.
-\item robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-round, and do not backfill a history in a burst.
-\item Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).
-\item Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).
-\item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404, or a body with no rows:
-an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-\code{hoopR_bad_request} (a season that is not an END year, a bad choice, HTTP 400 / 422) and \code{hoopR_asset_fetch}
-(any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=lba_championships]{lba_championships()}}.
 }
 \examples{
 \donttest{

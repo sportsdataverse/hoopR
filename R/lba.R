@@ -53,7 +53,7 @@
 #' | cserie_code | character | Series code, `A1` = Serie A. |
 #' | cserie_name | character | Name of the championship series, e.g. Serie A. |
 #' | logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @eval .intl_details(.lba_championships_details)
+#' @eval .intl_details(.lba_championships_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(lba_championships(season = 2027))
@@ -120,7 +120,7 @@ lba_championships <- function(season = NULL) {
 #' | match_serie_key | character | The two team ids joined low_high (`1761_1764`). |
 #' | referees | character | JSON list of the game's referees (id, name, surname); null when the site lists none. |
 #' | broadcasters | character | JSON list of the game's broadcasters (name, logo key); null when the site lists none. |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_calendar(championship_id = 602, round = 1))
@@ -207,7 +207,7 @@ lba_calendar <- function(championship_id, round = NULL) {
 #' | spectators | integer | Attendance: spectators at the game. |
 #' | referees | character | JSON list of the game's referees (id, name, surname); null when the site lists none. |
 #' | broadcasters | character | JSON list of the game's broadcasters (name, logo key); null when the site lists none. |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_game(game_id = 25602))
@@ -272,7 +272,7 @@ lba_game <- function(game_id) {
 #' | val_lega | integer | LBA efficiency rating (`valutazione Lega`). |
 #' | val_oer | double | OER = points / (FGA + turnovers + FTA / 2); verified on every 2026-27 sample row. |
 #' | plus_minus | integer | Plus-minus: point margin while on court. |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_box_score(game_id = 25602))
@@ -330,7 +330,7 @@ lba_box_score <- function(game_id) {
 #' | stoppate_sub | integer | Own shots blocked (`stoppate subite`). (team totals (players + team row)) |
 #' | ass | integer | Assists. (team totals (players + team row)) |
 #' | val_oer | double | OER = points / (FGA + turnovers + FTA / 2); verified on every 2026-27 sample row. (team totals (players + team row)) |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_team_box_score(game_id = 25602))
@@ -392,7 +392,7 @@ lba_team_box_score <- function(game_id) {
 #' | player_number | character | Jersey number, number sent as a string. |
 #' | team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
 #' | id | integer | Always null (not a key). |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_pbp(game_id = 25602))
@@ -452,7 +452,7 @@ lba_pbp_legend <- function(game_id) {
 #' | precision | integer | Decimal places the site shows (1). |
 #' | num | character | Made/attempted as a string (`17/21`); zone `7` also counts free throws. |
 #' | opacity | integer | Heat-map shading for the site: `perc` floored, minimum 5. |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_shots(game_id = 25602))
@@ -537,7 +537,7 @@ lba_shots <- function(game_id) {
 #' | ctp_symbol | character | Null in every sample (meaning unverified). |
 #' | ctp_description | character | Null in every sample (meaning unverified). |
 #' | season_start_year | integer | The wire season field: the season START year (2026 = 2026-27), same as year. |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_standings(championship_id = 602, round = 3))
@@ -570,7 +570,7 @@ lba_standings <- function(championship_id, round = NULL) {
 #' | club_code | character | Club code (`TVB`, `TS`); whether it is stable across seasons is unverified. |
 #' | updated_at | character | Timestamp, ISO-8601 with the Italian offset. |
 #' | logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_teams(season = 2027))
@@ -747,7 +747,7 @@ lba_team_players_stats <- function(team_id, season = NULL) {
 #' | team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
 #' | year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. The season of the team the row places the player on. |
 #' | player_picture_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-#' @inherit lba_championships details
+#' @eval .intl_details(.lba_championships_details)
 #' @examples
 #' \donttest{
 #'   try(lba_players(season = 2027))

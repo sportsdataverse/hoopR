@@ -37,7 +37,7 @@
 #' @param discipline_format (character, optional) Optional; the site passes its discipline format. 5x5 answers
 #'   the same as omitting it (verified on awards and rosters)
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list.
-#' @eval .intl_details(.fiba_gdap_awards_details, "fiba_gdap_awards(comp = 208182)")
+#' @eval .intl_details(.fiba_gdap_awards_details, full = TRUE, "fiba_gdap_awards(comp = 208182)")
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
 #' | col_name | type | description |

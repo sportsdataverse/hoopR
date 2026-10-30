@@ -64,7 +64,7 @@
 #' | game_code | character | Competition type within the season: 01 regular season (the only value the list returns). |
 #' | start_date | Date | First date of the season, YYYYMMDD. |
 #' | end_date | Date | Last date of the season, YYYYMMDD. |
-#' @eval .intl_details(.kbl_seasons_details)
+#' @eval .intl_details(.kbl_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(kbl_seasons())
@@ -96,7 +96,7 @@ kbl_seasons <- function() {
 #' | team_name_full | character | Team full name (Korean). |
 #' | team_name_en | character | Team short name in English. |
 #' | team_name_full_en | character | Team full name in English (e.g. 'CHANGWON LG SAKERS'). |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_teams())
@@ -161,7 +161,7 @@ kbl_teams <- function() {
 #' | tv_code | character | Broadcaster code(s), comma-separated (e.g. 'T24,T25'); the site uses it instead of `tv` from seasonCode 45. |
 #' | article_id | integer | Id of the game's news article on kbl.or.kr; null when none. |
 #' | challenge_id | integer | Id of the game in KBL Challenge (the site's prediction game); null when none. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_schedule(from_date = "20251101", to_date = "20251102"))
@@ -230,7 +230,7 @@ kbl_schedule <- function(season = NULL, from_date = NULL, to_date = NULL) {
 #' | away_manager | character | Away head coach's name (officials and coaches appear by name only). |
 #' | home_coaches | character | JSON list of the home assistant coaches' names (staff appear by name only). |
 #' | away_coaches | character | JSON list of the away assistant coaches' names (staff appear by name only). |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_game(gmkey = "S47G01N49"))
@@ -269,7 +269,7 @@ kbl_game <- function(gmkey) {
 #' | period | integer | Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart). |
 #' | period_label | character | Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1). |
 #' | score | integer | Points the side scored in the period. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_period_scores(gmkey = "S47G01N49"))
@@ -321,7 +321,7 @@ kbl_period_scores <- function(gmkey) {
 #' | substitution | character | English meaning of substitution_code on substitution-out rows (e.g. 106_1 = fouled out, five fouls); null otherwise. |
 #' | foul_code | character | Foul type code (the site reads an f field; no sampled row carries it): PNF personal, TCF technical, FRF unsportsmanlike, FTF fighting, PCF punching, EBF elbow. |
 #' | foul | character | English meaning of foul_code (e.g. TCF = technical foul). No sampled row carries a foul code, so this is unverified. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_pbp(gmkey = "S47G01N49"))
@@ -421,7 +421,7 @@ kbl_pbp <- function(gmkey) {
 #' | usg_rt | double | Usage rate: share of team possessions used while on court, 0-100. This game. |
 #' | to_ratio | double | Turnover ratio: turnovers per 100 possessions used. This game. |
 #' | minutes_played | double | Playing time in minutes (play_min + play_sec / 60), derived. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_player_box(gmkey = "S47G01N49"))
@@ -518,7 +518,7 @@ kbl_player_box <- function(gmkey) {
 #' | tov_rt | double | Turnover rate: turnovers per 100 possessions, 0-100. This game, team total. |
 #' | poss | double | Possessions (estimated). This game, team total. |
 #' | minutes_played | double | Playing time in minutes (play_min + play_sec / 60), derived. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_team_box(gmkey = "S47G01N49"))
@@ -562,7 +562,7 @@ kbl_team_box <- function(gmkey) {
 #' | y | integer | Shot location y, pixels on the 726 x 412 full-court image (origin top-left, y down). |
 #' | made | logical | True when the shot went in (wire o = 'O'), False when it missed ('X'). |
 #' | basket | character | Target basket: '1' the right-hand one (x > 363), '2' the left-hand one; teams switch baskets at half-time. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_shots(gmkey = "S47G01N49"))
@@ -815,7 +815,7 @@ kbl_player_totals <- function(season, division = "kbl", game_code = "01") {
 #' | foulout | integer | Players fouled out (unverified). Team season total for the competition (glkey). |
 #' | play_min | integer | Minutes of playing time; add `playSec` seconds. Team season total for the competition (glkey). |
 #' | play_sec | integer | Seconds part of the playing time (0-59), added to `playMin`. Team season total for the competition (glkey). |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_standings(season = 2025))
@@ -1142,7 +1142,7 @@ kbl_season_leaders <- function() {
 #' | pos | character | Position code (string): C center, FD forward, GD guard, FC forward-center, GF guard-forward; table in the returns md. |
 #' | player_flag | character | Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. |
 #' | last_career | character | Meaning unverified: a season-code-like number, 'A' or ''. |
-#' @inherit kbl_seasons details
+#' @eval .intl_details(.kbl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kbl_players())

@@ -66,7 +66,7 @@
 #' | name_en | character | Season name in English. |
 #' | db | character | Infobasket database the competition lives in ('org'). |
 #' | tag | character | Competition tag of the request (vtb is the VTB United League; vtbyouth, wbc, wpremier and rfb also answer). |
-#' @eval .intl_details(.vtb_infobasket_seasons_details)
+#' @eval .intl_details(.vtb_infobasket_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_seasons())
@@ -143,7 +143,7 @@ vtb_infobasket_seasons <- function(tag = "vtb") {
 #' | league_short_name_ru | character | League short name, Russian ('VTB' = 'VTB'). |
 #' | league_short_name_en | character | League short name, English. |
 #' | gender | integer | Competition gender: 0 on every VTB sample (men). Other values unverified. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_calendar(season = 2026))
@@ -235,7 +235,7 @@ vtb_infobasket_calendar <- function(season, tag = "vtb") {
 #' | team_name_en | character | The the team's name in English (as the competition names it). |
 #' | team_region_name_ru | character | The the team's region or city in Russian (as the competition names it). |
 #' | team_region_name_en | character | The the team's region or city in English (as the competition names it). |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_team_stats(season = 2026))
@@ -330,7 +330,7 @@ vtb_infobasket_team_stats <- function(season, tag = "vtb") {
 #' | height | integer | Height in centimetres. |
 #' | weight | integer | Weight in kilograms. |
 #' | player_position | integer | Player position code from the host (1 point guard, 2 shooting guard, 3 small forward ... 5 center; see position_id for the named position). |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_team_stats_players(season = 2026))
@@ -675,7 +675,7 @@ vtb_infobasket_team_preview <- function(game_id, season = NULL, tag = "vtb") {
 #' | team_b_name_en | character | The team B (the away side)'s name in English (as the competition names it). |
 #' | team_b_region_name_ru | character | The team B (the away side)'s region or city in Russian (as the competition names it). |
 #' | team_b_region_name_en | character | The team B (the away side)'s region or city in English (as the competition names it). |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_game(game_id = 921391))
@@ -755,7 +755,7 @@ vtb_infobasket_game <- function(game_id) {
 #' | played_time | character | Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). |
 #' | is_start | logical | True for a starter. |
 #' | start_mark | character | '+' for a starter, else empty. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_box_score(game_id = 921391))
@@ -833,7 +833,7 @@ vtb_infobasket_box_score <- function(game_id) {
 #' | coach_foul_b | integer | Technical fouls on the head coach for bench conduct (scoresheet 'B'). |
 #' | coach_foul_d | integer | Disqualifying fouls on the coach (scoresheet 'D'). |
 #' | coach_foul | integer | Fouls charged to the coach (C + B + D). |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_team_box_score(game_id = 921391))
@@ -884,7 +884,7 @@ vtb_infobasket_team_box_score <- function(game_id) {
 #' | play_y | integer | Shot y in decimetres from the basket toward midcourt (about -16 baseline, 124 midcourt). |
 #' | video_from | integer | Video clip start, Unix epoch seconds; 0 when none. |
 #' | video_to | integer | Video clip end, Unix epoch seconds; 0 when none. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_pbp(game_id = 921391))
@@ -1090,7 +1090,7 @@ vtb_infobasket_comp_issue <- function(season, tag = "vtb") {
 #' | team_name_en | character | The the team's name in English (as the competition names it). |
 #' | team_region_name_ru | character | The the team's region or city in Russian (as the competition names it). |
 #' | team_region_name_en | character | The the team's region or city in English (as the competition names it). |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_standings(comp_id = 50720))
@@ -1191,7 +1191,7 @@ vtb_infobasket_cross_table <- function(comp_id) {
 #' | team2_name_en | character | The team 2 of the series's name in English (as the competition names it). |
 #' | team2_region_name_ru | character | The team 2 of the series's region or city in Russian (as the competition names it). |
 #' | team2_region_name_en | character | The team 2 of the series's region or city in English (as the competition names it). |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_playoff(comp_id = 54281))
@@ -1241,7 +1241,7 @@ vtb_infobasket_playoff <- function(comp_id) {
 #' | win_team | integer | Winning side of that game (1 or 2). |
 #' | score1 | integer | Series wins of side 1. |
 #' | score2 | integer | Series wins of side 2. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_playoff_games(comp_id = 54281))
@@ -1356,7 +1356,7 @@ vtb_infobasket_best_team_parameters <- function(lang = "en") {
 #' | position_id | integer | Position id of the player (PosID), with its names in position_name_ru / position_name_en. |
 #' | position_name_ru | character | Position name in Russian. |
 #' | position_name_en | character | Position name in English. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_player(person_id = 423011))
@@ -1439,7 +1439,7 @@ vtb_infobasket_player <- function(person_id, tag = "vtb") {
 #' | played_time | character | Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). |
 #' | avg_played_time | character | Average playing time per game as 'minutes:seconds'. |
 #' | plus_minus | integer | Plus-minus: point differential while on the court. Null where the host sends none. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_player_season_stats(person_id = 423011))
@@ -1689,7 +1689,7 @@ vtb_infobasket_coach <- function(person_id) {
 #' | team_uniform2 | integer | Second uniform colour code. |
 #' | team_status | integer | Club record status (1 active). |
 #' | team_record_id | integer | Id of the club-record name (CurrentTeamName.TeamID, 2259 for team 2650): a different key space from team_id. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_team(team_id = 2650))
@@ -1837,7 +1837,7 @@ vtb_infobasket_team_comps <- function(team_id, season, lang = "en", tag = "vtb")
 #' | person_full_name_ru | character | Full name, 'Last First', Russian. |
 #' | person_full_name_en | character | Full name, 'Last First', English. |
 #' | person_gender | integer | Person gender: 1 on every sampled (male) person. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_roster(season = 2026, team_id = 2650))
@@ -1977,7 +1977,7 @@ vtb_infobasket_roster_coaches <- function(team_id, season, lang = "en", tag = "v
 #' | league_short_name_ru | character | League short name, Russian ('VTB' = 'VTB'). |
 #' | league_short_name_en | character | League short name, English. |
 #' | gender | integer | Competition gender: 0 on every VTB sample (men). Other values unverified. |
-#' @inherit vtb_infobasket_seasons details
+#' @eval .intl_details(.vtb_infobasket_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(vtb_infobasket_team_games(season = 2026, team_id = 2650))

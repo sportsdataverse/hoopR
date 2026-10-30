@@ -49,7 +49,7 @@
 #' | is_active | logical | True for the current season only (2026/2027 on 2026-10-12). |
 #' | active | logical | Same as `isActive`. |
 #' | season | integer | Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. |
-#' @eval .intl_details(.kzs_seasons_details)
+#' @eval .intl_details(.kzs_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(kzs_seasons())
@@ -89,7 +89,7 @@ kzs_seasons <- function() {
 #' | season_active | logical | Same as `isActive`. |
 #' | type | character | Competition type (code table); absent on 2 competitions. |
 #' | season | integer | The competition's season. |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_competitions(season = 2026))
@@ -130,7 +130,7 @@ kzs_competitions <- function(season = NULL) {
 #' | type | character | Competition type (code table). |
 #' | season | integer | Season of the record: opaque id and 'START/END' name. |
 #' | social_medias | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_competition(competition_id = 579))
@@ -412,7 +412,7 @@ kzs_team_leaderboard <- function(competition_id, stats_category = "PTS", order_t
 #' | referee_controller_person_gender | character | MALE or FEMALE. |
 #' | referee_controller_ranks | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
 #' | match_evaluation_id | integer | Id of the officials' evaluation record (internal; no public route). |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_matches(
@@ -544,7 +544,7 @@ kzs_matches <- function(competition_id, date_from = NULL, date_to = NULL) {
 #' | guest_jersey_color | character | Away jersey colour, hex. |
 #' | bests | character | Each team's top player per stat. |
 #' | match_evaluation_id | integer | Id of the officials' evaluation record (internal; no public route). |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_match(match_id = 101839))
@@ -577,7 +577,7 @@ kzs_match <- function(match_id) {
 #' | match_part | character | Period: QUARTER1-QUARTER4, then OT1 for the first overtime (OT2 and on by the same pattern, unobserved). |
 #' | first_team_score | integer | First (home) team points in the period. |
 #' | second_team_score | integer | Second (away) team points in the period. |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_period_scores(match_id = 101839))
@@ -632,7 +632,7 @@ kzs_period_scores <- function(match_id) {
 #' | match_team_id | integer | Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play `matchTeamId`; NOT a team id. |
 #' | player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
 #' | shirt_number | character | Shirt number worn by the acting player, sent as a string. |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_pbp(match_id = 101839))
@@ -750,7 +750,7 @@ kzs_pbp_players <- function(match_id) {
 #' | starting_lineup | logical | True when the player started. |
 #' | captain | logical | Games as captain. |
 #' | played | logical | True when the player got on court. |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_box_score(match_id = 101839))
@@ -855,7 +855,7 @@ kzs_box_score <- function(match_id) {
 #' | rebounds_team_defensive | integer | Defensive rebounds credited to the team, not a player. |
 #' | rebounds_team_offensive | integer | Offensive rebounds credited to the team, not a player. |
 #' | turnovers_team | integer | Team turnovers (not credited to a player). |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_team_box_score(match_id = 101839))
@@ -938,7 +938,7 @@ kzs_score_changes <- function(match_id) {
 #' | lost_points | integer | Table points deducted (0 in every sample). |
 #' | tie_break_position | integer | Final position after tie-breaks (absent on playoff-phase rows). |
 #' | pts_difference | integer | Point differential (scored - allowed). |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_standings(competition_id = 579))
@@ -1015,7 +1015,7 @@ kzs_playing_days <- function(competition_id) {
 #' | home_team_color | character | Home colour, hex. |
 #' | guest_team_color | character | Away colour, hex. |
 #' | short_name | character | Team short name ('' when none). |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_teams(competition_id = 579))
@@ -1316,7 +1316,7 @@ kzs_player <- function(player_id) {
 #' | competition_rank | character | Tier of the competition (code table). |
 #' | competition_category | character | Category of the competition (code table). |
 #' | competition_gender | character | MALE or FEMALE competition. |
-#' @inherit kzs_seasons details
+#' @eval .intl_details(.kzs_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(kzs_player_stats(player_id = 106285, season = 2026))

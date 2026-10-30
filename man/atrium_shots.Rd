@@ -57,32 +57,7 @@ origin at a corner, x along the 28 m length). LNBP and NBL1 clamp rim attempts t
 x = 5 / 95.
 }
 \details{
-\strong{Unofficial.} This is the public endpoint the Sportradar Atrium / Synergy
-"Connect" widget calls from every visitor's browser (keyless; the host has no
-robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host.
-Keep crawls small and incremental.
-
-\strong{Sites and seasons.} \code{website_id} picks the league site; one site carries many
-competitions. Seasons are END years (\code{season = 2026}): the site's own year is the
-START year on LNB and the calendar year elsewhere, and a year can hold several
-competitions, so pair \code{season} with \code{competition_id} (see \code{\link[=atrium_seasons]{atrium_seasons()}}) or
-pass \code{season_id}. \code{\link[=atrium_end_year]{atrium_end_year()}} maps a site's own year to that END year, and
-\code{\link[=atrium_season_id]{atrium_season_id()}} finds the season UUID.
-
-\strong{Columns} are configured per site: a statistic one site omits is \code{NA}. A key the
-documented columns do not list is appended with an inferred type. Player and team
-ids (UUIDs, character) are shared across sites; the player stat tables carry names
-only, so \code{person_id} there is decoded from the widget link beside each name.
-
-\strong{Errors} (classed conditions, all inheriting \code{hoopR_error}): \code{hoopR_no_data} when
-the site has nothing for the request (HTTP 404, no such season, an empty fixture
-list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-unknown id or a game of another site, which the API answers alike with an empty
-fixture); \code{hoopR_bad_request} for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, \code{season} with \code{season_id}); \code{hoopR_asset_fetch} for
-any other failed fetch, an error / stub body, or a body that belongs to another
-site, type, season, game, player or team than the one asked for.
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=atrium_fixtures]{atrium_fixtures()}}.
 }
 \examples{
 \donttest{
