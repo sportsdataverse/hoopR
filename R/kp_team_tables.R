@@ -42,7 +42,7 @@
 #' @keywords Team Schedule
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(kp_team_schedule(team = 'Florida St.', year = 2022))
 #' }
@@ -498,7 +498,7 @@ kp_team_schedule <- function(team, year = 2022){
 #' @export
 #' @keywords Game Plan
 #' @family KenPom Team Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'    try(kp_gameplan(team='Florida St.', year=2021))
 #' }
@@ -771,7 +771,7 @@ kp_gameplan <- function(team, year=2021){
 #' @keywords Opponent Tracker
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
 #'   try(kp_opptracker(team = 'Florida St.', year = 2021))
 #' }
@@ -1009,7 +1009,7 @@ kp_opptracker <- function(team, year = 2021){
 #' @keywords Team Player Stats
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_team_players(team = 'Florida St.', year = 2024))
 #'   }
@@ -1340,7 +1340,7 @@ kp_team_players <- function(team, year = 2021){
 #' @keywords Player Career Stats
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_player_career(player_id = '41180'))
 #'   }
@@ -1583,7 +1583,7 @@ kp_player_career <- function(player_id){
 #' @keywords Minutes Matrix
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
 #'   }
@@ -1743,7 +1743,7 @@ kp_minutes_matrix <- function(team, year = 2021){
 #' @keywords Team Player Stats
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
 #'   }
@@ -1991,7 +1991,7 @@ kp_team_player_stats <- function(team, year = 2021){
 #' @keywords Depth Chart
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
 #'   }
@@ -2148,7 +2148,7 @@ kp_team_depth_chart <- function(team, year= 2021){
 #' @keywords Depth Chart
 #' @family KenPom Team Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #'   \donttest{
 #'     try(kp_team_lineups(team = 'Florida St.', year = 2021))
 #'   }

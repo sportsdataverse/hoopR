@@ -185,27 +185,41 @@ A data frame with the following columns:
 \strong{Get FanMatch by date}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_trends())
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_officials(year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_referee(referee = 714363, year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_hca())
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_arenas(year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_game_attrs(year = 2021, attr = "Excitement"))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_fanmatch(date = "2022-02-22"))
 }
+\dontshow{\}) # examplesIf}
 }
 \concept{KP Misc. Functions}
 \keyword{Arenas}

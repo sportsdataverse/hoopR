@@ -78,10 +78,11 @@ A data frame with the following columns:
 \strong{Get KenPom's team efficiency history}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_team_history(team = 'Florida St.'))
   }
-
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:
