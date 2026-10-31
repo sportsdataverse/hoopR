@@ -21,6 +21,11 @@ has_kp_user_and_pw()
 
 \item{user_pw}{User subscription password}
 }
+\value{
+\code{login()}: the path to the httr2 cookie jar holding the KenPom session.
+\code{kp_user_email()} / \code{kp_password()}: the \code{KP_USER} / \code{KP_PW} environment variable, or
+\code{NA_character_} when it is unset. \code{has_kp_user_and_pw()}: \code{TRUE} when both are set.
+}
 \description{
 Save your KenPom login e-mail and password as the system environment variables \code{KP_USER} and \code{KP_PW}
 

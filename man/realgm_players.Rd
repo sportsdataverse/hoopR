@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble with one row per active player:
 }
 \description{
 \strong{Get the active NBA player index from
-\href{https://basketball.realgm.com}{RealGM}.}
+RealGM (basketball.realgm.com).}
 
 Returns RealGM's roster of active NBA players, including position, listed
 height/weight, age, current team, years of service and pre-draft team -- the

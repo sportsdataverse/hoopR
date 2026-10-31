@@ -119,7 +119,6 @@
 
 # Internal helpers --------------------------------------------------------
 
-#' @keywords internal
 #' Parse a KenPom schedule date: a YYYYMMDD number or string, or YYYY-MM-DD.
 #' Unparseable values become `NA` rather than raising.
 #' @keywords internal

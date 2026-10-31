@@ -8,7 +8,7 @@ tpbl_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: Every TPBL season with its TPBL and GoHoops ids, label, status and date window. An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{tpbl_seasons}):\tabular{lll}{
+answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year, read from the label '2024-2025' plus the Chinese word for season: 2025 for 2024-25. \cr
    season_id \tab integer \tab TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the \code{{season_id}} of the season game list and, equal to it, the \code{{event_id}} of \verb{/events/\{event_id\}/*}. Not the GoHoops season id. \cr
@@ -29,7 +29,7 @@ Endpoint: \verb{GET https://api.tpbl.basketball/api/seasons}
 \item Unofficial and unsupported: these are the routes the tpbl.basketball site's own front end calls on
 api.tpbl.basketball (read from its JavaScript bundle). The API is keyless and needs no headers;
 tpbl.basketball/robots.txt answers 200 with an empty body. The runtime waits at least 1 s before every request,
-retries included. Payloads are not redistributed as release assets.
+retries included.
 \item Coverage: three seasons so far (2024-25 = season 2025 to 2026-27 = season 2027). There is NO play-by-play
 route; the two shot lists carry court coordinates only, with no shooter, game, quarter or time. Names (teams
 with their sponsor, venues, players, referees) are Traditional Chinese; the column descriptions translate the

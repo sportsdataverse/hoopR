@@ -14,7 +14,7 @@ A year the list lacks raises \code{hoopR_no_data}.}
 \value{
 A \code{hoopR_data} tibble. One row per league: BSL, TBL, KBSL, TKBL, TB2L and the youth leagues with their \code{activity_id}.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    activity_id \tab integer \tab Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. \cr
    name \tab character \tab Activity name '\verb{<LEAGUE>} YYYY-YYYY' ('BSL 2026-2027'). \cr
@@ -35,8 +35,8 @@ Endpoint: \verb{GET https://miniappapi.tbf.org.tr/webapi-service/api/League/get-
 \details{
 Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 

@@ -8,7 +8,7 @@ cba_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: One row per season: label, START year, default flag. An empty valid answer is a zero-row
-tibble with these columns, in this order (sdv-py \code{cba_seasons}):\tabular{lll}{
+tibble with these columns, in this order (sportsdataverse-py \code{cba_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    is_default \tab integer \tab Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default. \cr
    key \tab character \tab Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap. \cr
@@ -23,8 +23,8 @@ Endpoint: \verb{GET https://data-server.cbaleague.com/api/com-code-tables/getSea
 \details{
 \itemize{
 \item Unofficial and unsupported: these wrappers read the routes that cbaleague.com's own data site (a Vue
-single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets. Requests are spaced at least 1 s apart per host; keep use small.
+single-page app) calls. The site's terms were not reviewed; check them before you
+republish the data. Requests are spaced at least 1 s apart per host; keep use small.
 \item Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;
 the runtime decrypts it with \code{digest::AES()} (digest is a suggested package: install it to use these wrappers)
 and refuses anything that does not decrypt. The host blocks
@@ -52,8 +52,7 @@ API, so their scope is unchecked.
 (26 rows for 12 players), and the repeats are not always copies. \code{cba_player_advanced()} and
 \code{cba_player_extras()} keep the FIRST row per \code{player_id}.
 \item Text fields are Chinese (names, play-by-play sentences, position and nationality labels). The column
-descriptions here are ASCII; sdv-py's \code{tools/codegen/notes/cba_glossary.yaml} holds the full English
-glossaries.
+descriptions here are ASCII; sportsdataverse-py keeps the full English glossaries of the codes.
 \item Personal data: the operator ids (\code{createdBy} / \code{lastModifiedBy}, one holds a mobile number) and any bare
 mobile-number string are removed from every body. Players' public bio fields (birth date, height, weight) are
 kept.

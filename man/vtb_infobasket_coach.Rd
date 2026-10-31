@@ -12,7 +12,7 @@ vtb_infobasket_coach(person_id)
 }
 \value{
 A \code{hoopR_data} tibble: Coach profile: names, height, weight (no birth data). The columns are always these, in this
-order (sdv-py \code{vtb_infobasket_coach}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
+order (sportsdataverse-py \code{vtb_infobasket_coach}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
 this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). The scope check compares it with the request. \cr
@@ -32,46 +32,7 @@ Coach profile: names, height, weight (no birth data).
 Endpoint: \verb{GET https://org.infobasket.su/Widget/CoachPage/\{person_id\}}
 }
 \details{
-\itemize{
-\item Owner flag (sdv-internal-refs/vtb/README.md): the VTB United League is run from Russia and several clubs are owned
-or sponsored by sanctioned state companies (the KHL precedent); Infobasket is the Russian basketball federation's
-stats platform. Fetching on your own machine is fine. The owner has approved published data releases (2026-10-17),
-though none is scheduled yet. No accounts or payments are involved.
-\item Unofficial and unsupported: both hosts are keyless public JSON backends of vtb-league.com. No terms of use are
-published; robots.txt is a 404 on api.vtb-league.com and org.infobasket.su (no rules; vtb-league.com disallows
-only /wp/wp-admin/). The runtime waits at least 1 s before every request, retries included, and honours
-Retry-After on 429 / 503. No key, cookie or proxy is used (live-verified direct from the droplet 2026-10-12).
-\item Seasons are END years (2026 = 2025-26) on both backends. Infobasket keys everything by competition id:
-vtb_infobasket_seasons maps the END year to the season-level CompID, and the season-keyed wrappers do that mapping
-for you. CompID means three things: a season (50714), a stage below it (50720 regular season, 54281 playoff;
-stage-level wrappers take the stage id from vtb_infobasket_comp_issue) and, in the player season stats, an END
-year.
-\item Ids: the v2 matchId is the Infobasket GameID, the v2 teamId the Infobasket TeamID and the v2 venueId the
-Infobasket ArenaId. team_id is the key on every team route; comp_team_id (a registration in one stage) and the
-club-record id of the team page are other key spaces. person_id is one person across clubs and seasons.
-\item Errors are HTTP 200: an unknown id answers \{MessageType, Message\}, an unknown game the string 'BadRequest'; both
-are \code{hoopR_asset_fetch} (a failed fetch), never an empty frame. A body for another game, person, team, competition
-or season than the one asked for is \code{hoopR_asset_fetch} too, as is a game that is not final (box score, plays and
-header need GameStatus 1) and a partial GetTeamStats page. An empty list is \code{hoopR_no_data}.
-\item Coverage: calendars and box scores from 2009-10; play-by-play and shot x/y from 2022-23 only (earlier games give
-an empty pbp frame), officials in the line-ups from 2022-23. Shot x/y are decimetres from the basket centre
-(orientation unverified). Counting statistics are null instead of 0 on the wire (the parsers fill 0), percentages
-and averages are comma-decimal strings (the parsers return floats), the paint statistics are broken and dropped,
-and dates come in three encodings (the parsers return ISO strings; .NET instants as Moscow time with its +03:00
-offset).
-\item Personal data: the runtime removes licence numbers, contact and operator-account fields for everyone and the birth
-dates, birth years and ages of coaches, referees and other officials from every body. Players' public bio (birth
-date, height, weight, nationality) is kept.
-\item Other tags (vtbyouth, wbc, wpremier, rfb) answer through the tag argument; only vtb was captured. The team routes
-key on the END-year season (sdv-py also lets a caller pass a stage CompID through params; the R wrappers do not).
-\item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404, or the host has nothing
-for the request: an empty list, a v2 season with no rows, a season without team totals), \code{hoopR_bad_request} (a
-malformed id or league slug, a lang other than en or ru, or a season the competition tag does not have) and
-\code{hoopR_asset_fetch} (any other non-2xx, an empty or non-JSON body, an error envelope or string, a game that is not
-final or a stub, a partial or possibly truncated page, or a body for another game, person, team, competition,
-league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
-warn and return empty.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=vtb_infobasket_seasons]{vtb_infobasket_seasons()}}.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ vtb_infobasket_coach(person_id = 131047)
 }\if{html}{\out{</div>}}

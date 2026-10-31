@@ -1,14 +1,13 @@
-# fiba_gamepage.R -- the fiba_gamepage_* wrappers (R mirror of sdv-py sportsdataverse/basketball/fiba_hub/fiba_gamepage.py).
-# Same names, arguments, defaults and snake_case columns as sdv-py; the transport, refusals and
+# fiba_gamepage.R -- the fiba_gamepage_* wrappers (R mirror of sportsdataverse-py sportsdataverse/basketball/fiba_hub/fiba_gamepage.py).
+# Same names, arguments, defaults and snake_case columns as sportsdataverse-py; the transport, refusals and
 # parsers live in R/fiba_gdap_runtime.R, R/fiba_gdap_parsers.R and R/fiba_gamepage_runtime.R.
 
 # The @details of every fiba topic that shares the fiba_gamepage_box_players() notes (roxygen @eval .intl_details()).
 .fiba_gamepage_box_players_details <- c(
   "FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'",
   "(federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball",
-  "terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed",
-  "both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.",
-  "Users who are not themselves authorised by FIBA should check the terms before using the wrappers.",
+  "terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not",
+  "themselves authorised by FIBA should check the terms before using the wrappers.",
   "",
   "The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the",
   "live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of",
@@ -26,7 +25,7 @@
   "",
   "Box scores start about 2006; play-by-play with shot x/y about 2012 (OVR events) and 2017-18 (FLS club",
   "competitions). A game with no box score raises `hoopR_no_data`; a game still live raises `hoopR_asset_fetch`.",
-  "The page request sends a browser User-Agent (sdv-py answers fiba.basketball's HTTP 403 to plain clients with",
+  "The page request sends a browser User-Agent (sportsdataverse-py answers fiba.basketball's HTTP 403 to plain clients with",
   "Chrome TLS; libcurl with a browser User-Agent was served on 2026-10-18).",
   "Shot x/y are image pixels with an unverified scale.",
   "",
@@ -52,7 +51,7 @@
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @eval .intl_details(.fiba_gamepage_box_players_details)
+#' @eval .intl_details(.fiba_gamepage_box_players_details, full = TRUE)
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
 #' | col_name | type | description |
@@ -124,7 +123,7 @@ fiba_gamepage_box_players <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
@@ -246,7 +245,7 @@ fiba_gamepage_lineup <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
@@ -261,7 +260,7 @@ fiba_gamepage_lineup <- function(game_id, comp, return_parsed = TRUE) {
 #' | order | integer | Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. |
 #' | clock | character | Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). |
 #' | clock_seconds | integer | Seconds remaining in the period, derived from clock. |
-#' | wall_time_ms | double | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sdv-py; numeric here, the values exceed R's 32-bit integer range) |
+#' | wall_time_ms | double | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sportsdataverse-py; numeric here, the values exceed R's 32-bit integer range) |
 #' | score_a | integer | Team A score after the action. |
 #' | score_b | integer | Team B score after the action. |
 #' | action_code | character | Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). |
@@ -302,7 +301,7 @@ fiba_gamepage_pbp <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
@@ -340,7 +339,7 @@ fiba_gamepage_period_scores <- function(game_id, comp, return_parsed = TRUE) {
 #'   2024-25). The game must belong to it. Find it with fiba_gdap_editions or fiba_gdap_games_between.
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list (the
 #'   game-page objects `game`, `playByPlay`, `gameDetails`, `playersTeamA`, `playersTeamB`).
-#' @inherit fiba_gamepage_box_players details
+#' @eval .intl_details(.fiba_gamepage_box_players_details)
 #'
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'

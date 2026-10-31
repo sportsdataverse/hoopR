@@ -1,16 +1,15 @@
 # cebl.R -- CEBL (Canada) wrappers over the league's own stats API (api.data.cebl.ca, the backend of
-# the CEBL Stats Hub), at parity with sdv-py sportsdataverse/basketball/cebl (origin/main e3d232ebc9).
+# the CEBL Stats Hub), at parity with sportsdataverse-py sportsdataverse/basketball/cebl (origin/main e3d232ebc9).
 # Transport, key and refusals: R/cebl_runtime.R; frames: R/cebl_parsers.R; columns: R/cebl_schema.R.
 
 # The @details of every cebl topic that shares the cebl_seasons() notes (roxygen @eval .intl_details()).
 .cebl_seasons_details <- c(
-  "* CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,",
+  "* Unofficial use of the CEBL's own API: these wrappers read the league's own FastAPI service (api.data.cebl.ca,",
   "  the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.",
   "  The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not",
   "  reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never",
   "  prints it, and raises `hoopR_asset_fetch` with a 'key rotated?' hint on a persistent 401.",
-  "  www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced",
-  "  at least 1 s apart.",
+  "  www.cebl.ca/robots.txt disallows nothing. Requests are spaced at least 1 s apart.",
   "* Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An",
   "  unknown season, team or player answers an empty list, which the runtime raises as `hoopR_no_data`. Ids are",
   "  CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).",
@@ -28,7 +27,7 @@
   "  another season, team or player), all inheriting `hoopR_error`. HTTP 500 is the API's answer to a bad id and is",
   "  not retried. Wrappers raise; they never return an empty frame.",
   "* Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact",
-  "  JSON here (`{\"name\":\"TSN\"}`), where sdv-py's String cast writes Python's `str(dict)` repr (`{'name': 'TSN'}`).",
+  "  JSON here (`{\"name\":\"TSN\"}`), where sportsdataverse-py's String cast writes Python's `str(dict)` repr (`{'name': 'TSN'}`).",
   "  No string column of the committed fixtures carries an object."
 )
 
@@ -40,7 +39,7 @@
 #' Endpoint: `GET https://api.data.cebl.ca/seasons/`
 #' @return
 #' A `hoopR_data` tibble: Every CEBL season (2019 on), with the active and live flags. An empty valid answer raises
-#'   `hoopR_no_data`; the columns are always these, in this order (sdv-py `cebl_seasons`):
+#'   `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `cebl_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -48,7 +47,7 @@
 #' | season | integer | Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's `season` param takes. |
 #' | is_active | logical | True for the current season (one row: 2026 on 2026-10-12). |
 #' | is_live | logical | True while the current season is in progress or open for live data (true for 2026 on 2026-10-12, after its last game: the exact meaning is unverified). |
-#' @eval .intl_details(.cebl_seasons_details)
+#' @eval .intl_details(.cebl_seasons_details, full = TRUE)
 #' @examples
 #' \donttest{
 #'   try(cebl_seasons())
@@ -69,7 +68,7 @@ cebl_seasons <- function() {
 #' Endpoint: `GET https://api.data.cebl.ca/teams/`
 #' @return
 #' A `hoopR_data` tibble: Every franchise identity, past and present (15 team ids; a relocated franchise has a
-#'   second id). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   second id). An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `cebl_teams`):
 #'
 #' | col_name | type | description |
@@ -82,7 +81,7 @@ cebl_seasons <- function() {
 #' | is_active | logical | True for a team in the current league; false for a former identity (Guelph Nighthawks, Hamilton Honey Badgers, Fraser Valley Bandits, Saskatchewan Rattlers, Newfoundland Growlers). |
 #' | logo_url | character | Team logo URL (icon with the team name; upstream: 'Should include the icon and team name'). |
 #' | icon_url | character | Team icon URL (upstream: 'Should not include the team name'). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_teams())
@@ -105,7 +104,7 @@ cebl_teams <- function() {
 #'   2025 season). The CEBL's first season is 2019. A season with no data answers `hoopR_no_data`.
 #' @return
 #' A `hoopR_data` tibble: Standings of one season, one row per team: record, home/away splits, games behind, streak.
-#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `cebl_standings`):
 #'
 #' | col_name | type | description |
@@ -140,7 +139,7 @@ cebl_teams <- function() {
 #' | shop_url_fr | character | The team's merchandise shop (French). |
 #' | stats_url_en | character | The team's stats page on cebl.ca (`https://cebl.ca/stats/{slug}`). |
 #' | stats_url_fr | character | The team's stats page on the French cebl.ca (`https://cebl.ca/fr-ca/stats/{slug}`). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_standings(season = 2025))
@@ -165,7 +164,7 @@ cebl_standings <- function(season) {
 #'   2025 season). The CEBL's first season is 2019. A season with no data answers `hoopR_no_data`.
 #' @return
 #' A `hoopR_data` tibble: One team's roster in one season: player, nationality, birth date, position and jersey. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `cebl_roster`):
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `cebl_roster`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -178,7 +177,7 @@ cebl_standings <- function(season) {
 #' | position | character | Playing position: G (guard), F (forward), C (center), or a combination such as 'C/F'; null when unknown. |
 #' | jersey_number | character | Jersey number, as a string of up to 2 characters ('0', '00' and '1' are distinct); null when unknown. |
 #' | photo_url | character | Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_roster(team_id = 14, season = 2025))
@@ -210,7 +209,7 @@ cebl_roster <- function(team_id, season) {
 #' @return
 #' A `hoopR_data` tibble: Team statistic table (totals or per game) with a league row; filter by season,
 #'   competition, segment, opponent team or opponent conference. An empty valid answer raises `hoopR_no_data`; the
-#'   columns are always these, in this order (sdv-py `cebl_team_stats`):
+#'   columns are always these, in this order (sportsdataverse-py `cebl_team_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -286,7 +285,7 @@ cebl_team_stats <- function(
 #' @return
 #' A `hoopR_data` tibble: Schedule and results of one season (regular season and finals), with the Genius match id
 #'   that joins play-by-play and shots; optionally one team's games. An empty valid answer raises `hoopR_no_data`;
-#'   the columns are always these, in this order (sdv-py `cebl_games`):
+#'   the columns are always these, in this order (sportsdataverse-py `cebl_games`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -317,7 +316,7 @@ cebl_team_stats <- function(
 #' | tickets_url_en | character | Ticket-sales page for the game (English). |
 #' | tickets_url_fr | character | Ticket-sales page for the game (French). |
 #' | broadcast_partner_logo_urls | character | Logo URLs of the game's broadcasters (TSN+, CEBL+, ...); 2 to 7 per game. |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_games(season = 2025))
@@ -348,7 +347,7 @@ cebl_games <- function(season, team_id = NULL) {
 #' @return
 #' A `hoopR_data` tibble: Player statistic table (totals or per game) for a season or all-time; filter by
 #'   competition, segment or team. An empty valid answer raises `hoopR_no_data`; the columns are always these, in
-#'   this order (sdv-py `cebl_player_stats`):
+#'   this order (sportsdataverse-py `cebl_player_stats`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -389,7 +388,7 @@ cebl_games <- function(season, team_id = NULL) {
 #' | double_doubles | double | Double-doubles: games with 10 or more in two of points, rebounds, assists, steals, blocks. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
 #' | triple_doubles | double | Triple-doubles: games with 10 or more in three of those. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
 #' | target_scores | double | Target-score baskets: games in which the player made the basket that reached the Elam Ending target score and ended the game (CEBL has used the Elam Ending since 2020, so 2019 is 0). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). |
-#' @inherit cebl_seasons details
+#' @eval .intl_details(.cebl_seasons_details)
 #' @examples
 #' \donttest{
 #'   try(cebl_player_stats(mode = "PER_GAME", season = 2025))
@@ -427,7 +426,7 @@ cebl_player_stats <- function(
 #'   echo it.
 #' @return
 #' A `hoopR_data` tibble: Top five players per requested statistic (long frame, one row per statistic and leader).
-#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   An empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `cebl_player_leaders`):
 #'
 #' | col_name | type | description |
@@ -478,7 +477,7 @@ cebl_player_leaders <- function(
 #' @param competition (default `NULL`) REGULAR (regular season) or FINALS (the playoffs). `NULL` = both.
 #' @return
 #' A `hoopR_data` tibble: One player's per-season rows and career row (totals or per game). An empty valid answer
-#'   raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `cebl_player_seasons`):
+#'   raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `cebl_player_seasons`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -537,7 +536,7 @@ cebl_player_seasons <- function(player_id, mode = "PER_GAME", career_only = FALS
 #'   ``player_id`` in cebl_player_stats.
 #' @return
 #' A `hoopR_data` tibble: One player's profile and current team: name, nationality, birth date, position, jersey. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py `cebl_player`):
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py `cebl_player`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|
@@ -579,7 +578,7 @@ cebl_player <- function(player_id) {
 #' @param competition (default `NULL`) REGULAR (regular season) or FINALS (the playoffs). `NULL` = both.
 #' @return
 #' A `hoopR_data` tibble: One player's game log: one row per game played, with the Genius match id of the game. An
-#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sdv-py
+#'   empty valid answer raises `hoopR_no_data`; the columns are always these, in this order (sportsdataverse-py
 #'   `cebl_player_gamelog`):
 #'
 #' | col_name | type | description |
@@ -635,7 +634,7 @@ cebl_player_gamelog <- function(player_id, season = NULL, competition = NULL) {
 #' @return
 #' A `hoopR_data` tibble: News articles in one language. The API answered an empty list on every probe, so this
 #'   raises `hoopR_no_data`. An empty valid answer raises `hoopR_no_data`; the columns are always these, in this
-#'   order (sdv-py `cebl_news`):
+#'   order (sportsdataverse-py `cebl_news`):
 #'
 #' | col_name | type | description |
 #' |:---|:---|:---|

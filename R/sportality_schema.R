@@ -1,9 +1,9 @@
 # sportality_schema.R -- documented columns and types of the Basketligaen frames.
 #
-# Copied from sdv-py origin/main e3d232e: `SCHEMAS` of sportsdataverse/basketball/dbl/sportality_dtypes.py
-# (codes: i integer, f double, s character, b logical). Change the columns in sdv-py first, then copy them here.
+# Copied from sportsdataverse-py origin/main e3d232e: `SCHEMAS` of sportsdataverse/basketball/dbl/sportality_dtypes.py
+# (codes: i integer, f double, s character, b logical). Change the columns in sportsdataverse-py first, then copy them here.
 
-#' Documented columns and types per wrapper route (sdv-py `SCHEMAS`).
+#' Documented columns and types per wrapper route (sportsdataverse-py `SCHEMAS`).
 #' @noRd
 .sportality_schemas <- list(
   athlete_career = c(

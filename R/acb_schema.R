@@ -1,10 +1,10 @@
 # acb_schema.R -- field tables and code tables of the ACB (Liga Endesa) frames.
 #
-# Copied from sdv-py origin/main e3d232ebc9: `FIELDS` of sportsdataverse/basketball/acb/acb_parsers.py
+# Copied from sportsdataverse-py origin/main e3d232ebc9: `FIELDS` of sportsdataverse/basketball/acb/acb_parsers.py
 # (column, type letter, source path inside the record; NA = the extractor derives it) and the
 # PLAY_TYPES / PLAY_TAGS / COUNTRIES tables of acb_codes.py. Type letters: i integer, f double,
 # s character, b logical, t UTC instant (POSIXct), d DD-MM-YYYY date, m 'mm:ss' -> integer seconds,
-# p display percent -> double, j list joined with '; '. Change them in sdv-py first, then copy here.
+# p display percent -> double, j list joined with '; '. Change them in sportsdataverse-py first, then copy here.
 
 #' One field table: columns, type letters (one per column) and source paths.
 #' @noRd
@@ -12,7 +12,7 @@
   list(col = col, type = strsplit(type, "", fixed = TRUE)[[1]], path = path)
 }
 
-#' Field tables per frame (sdv-py `acb_parsers.FIELDS`).
+#' Field tables per frame (sportsdataverse-py `acb_parsers.FIELDS`).
 #' @noRd
 .acb_fields <- list(
   match_header = .acb_ft(
@@ -764,7 +764,7 @@
   )
 )
 
-#' Play-by-play / shot `playType` names (sdv-py `acb_codes.PLAY_TYPES`).
+#' Play-by-play / shot `playType` names (sportsdataverse-py `acb_codes.PLAY_TYPES`).
 #' @noRd
 .acb_play_types <- c(
   `92` = "FREE_THROW_MADE",
@@ -899,7 +899,7 @@
   `787` = "TECHNICAL_FOUL_CAT2_NO_TEAM_FOUL"
 )
 
-#' Turnover `playTag` names (sdv-py `acb_codes.PLAY_TAGS`).
+#' Turnover `playTag` names (sportsdataverse-py `acb_codes.PLAY_TAGS`).
 #' @noRd
 .acb_play_tags <- c(
   `2` = "THREE_SECONDS_ZONE",
@@ -914,7 +914,7 @@
   `15` = "BACKCOURT_VIOLATION"
 )
 
-#' Spanish country name -> ISO 3166-1 alpha-2 (sdv-py `acb_codes.COUNTRIES`).
+#' Spanish country name -> ISO 3166-1 alpha-2 (sportsdataverse-py `acb_codes.COUNTRIES`).
 #' @noRd
 .acb_country_iso <- stats::setNames(
   c(

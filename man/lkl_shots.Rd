@@ -19,7 +19,7 @@ zone code, \code{left} / \code{right} from the shooter's view. The shooter is na
 \code{player_slug} is the reverse lookup through the runtime's roster (null on a body without the stamp). The site charts
 shots from 2024-25 on. A body without shots gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
    shot_id \tab integer \tab Shot event id (key space: lkl.lt shot events, increasing over time); joins nothing else and is not the Genius action number. \cr
@@ -45,8 +45,8 @@ Endpoint: \verb{GET https://lkl.lt/api/livestream/shot-chart/\{game_id\}}
 \details{
 Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets.
+requests at least 1 s apart. The site's terms were not reviewed; check them before you
+republish the data.
 
 Coverage: game wrappers serve FINISHED games only (an unfinished game raises \code{hoopR_asset_fetch}). The box score,
 summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits

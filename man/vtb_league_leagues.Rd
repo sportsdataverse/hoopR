@@ -8,7 +8,7 @@ vtb_league_leagues()
 }
 \value{
 A \code{hoopR_data} tibble: The leagues served by the API: vtb, vtbyouth, wbc. The columns are always these, in this
-order (sdv-py \code{vtb_league_leagues}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
+order (sportsdataverse-py \code{vtb_league_leagues}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
 this frame is a zero-row tibble:\tabular{lll}{
    col_name \tab type \tab description \cr
    league_id \tab integer \tab v2 league id (1 vtb, 2 vtbyouth, 3 wbc). Not an Infobasket id. \cr
@@ -26,32 +26,10 @@ Endpoint: \verb{GET https://api.vtb-league.com/v2/leagues}
 }
 \details{
 \itemize{
-\item Owner flag (sdv-internal-refs/vtb/README.md): the VTB United League is run from Russia and several clubs are owned
-or sponsored by sanctioned state companies (the KHL precedent); Infobasket is the Russian basketball federation's
-stats platform. Fetching on your own machine is fine. The owner has approved published data releases (2026-10-17),
-though none is scheduled yet. No accounts or payments are involved.
-\item Unofficial and unsupported: both hosts are keyless public JSON backends of vtb-league.com. No terms of use are
-published; robots.txt is a 404 on api.vtb-league.com and org.infobasket.su (no rules; vtb-league.com disallows
-only /wp/wp-admin/). The runtime waits at least 1 s before every request, retries included, and honours
-Retry-After on 429 / 503. No key, cookie or proxy is used (live-verified direct from the droplet 2026-10-12).
-\item Seasons are END years (2026 = 2025-26) on both backends. Infobasket keys everything by competition id:
-vtb_infobasket_seasons maps the END year to the season-level CompID, and the season-keyed wrappers do that mapping
-for you. CompID means three things: a season (50714), a stage below it (50720 regular season, 54281 playoff;
-stage-level wrappers take the stage id from vtb_infobasket_comp_issue) and, in the player season stats, an END
-year.
-\item Ids: the v2 matchId is the Infobasket GameID, the v2 teamId the Infobasket TeamID and the v2 venueId the
-Infobasket ArenaId. team_id is the key on every team route; comp_team_id (a registration in one stage) and the
-club-record id of the team page are other key spaces. person_id is one person across clubs and seasons.
+\item Source, access, seasons, ids and the error classes: see the notes of \code{\link[=vtb_infobasket_seasons]{vtb_infobasket_seasons()}}.
 \item v2 pages: meta.count is the rows returned (not a total), page is ignored and the default limit is 20, so the
 matches wrapper asks for 1000 and refuses a body whose count reaches its limit. The API lists new seasons only
 (from 2024-25; vtb: 2025-2027, wbc: 2026-2027): earlier years answer no rows (\code{hoopR_no_data}).
-\item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404, or the host has nothing
-for the request: an empty list, a v2 season with no rows, a season without team totals), \code{hoopR_bad_request} (a
-malformed id or league slug, a lang other than en or ru, or a season the competition tag does not have) and
-\code{hoopR_asset_fetch} (any other non-2xx, an empty or non-JSON body, an error envelope or string, a game that is not
-final or a stub, a partial or possibly truncated page, or a body for another game, person, team, competition,
-league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
-warn and return empty.
 }
 }
 \examples{

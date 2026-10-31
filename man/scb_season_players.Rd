@@ -17,7 +17,7 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
 \value{
 A \code{hoopR_data} tibble: Every player registered in a season: the id crosswalk (season_player_id,
 real_player_id, season_team_id). An empty valid answer raises \code{hoopR_no_data}; the columns are always
-these, in this order (sdv-py \code{scb_season_players}):\tabular{lll}{
+these, in this order (sportsdataverse-py \code{scb_season_players}):\tabular{lll}{
    col_name \tab type \tab description \cr
    league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
    season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
@@ -36,30 +36,7 @@ Endpoint: \verb{GET https://api.basketball-bundesliga.de/seasons/\{season\}} (DB
 \verb{https://api-1.dbbl.scb.world}).
 }
 \details{
-\itemize{
-\item Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites
-(easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.
-\item Legal notice: the BBL Impressum forbids storing BBL content (\code{Inhalte}) in an information system without
-BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).
-The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits
-at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same
-operator and API; its site notice was not separately reviewed.
-\item Both hosts need two headers: a constant \code{x-api-key} and an \code{x-api-secret} that rotates. The runtime
-derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, \code{:} turned
-into \code{-}) and never logs or returns it. The derivation was reverse-engineered from observed requests and
-responses and has not been checked against the site's own front-end code; if the site changes how it
-signs requests, every call fails with \code{hoopR_asset_fetch}.
-\item Id key spaces: seasonId is the START year (2025 = 2025-26), so a wrapper's END-year \code{season} is sent as
-\code{season - 1}. Teams are keyed by teamId (seasonTeamId equals it in every sample). seasonPlayerId is per
-player per season and per club (a player traded mid-season has two); realPlayerId is the person. playerId
-is ambiguous (the seasonPlayerId in box scores, records and /season-players; the person in /transfers).
-Game ids are strings.
-\item Errors are classed conditions: \code{hoopR_no_data} (404, 204, a 400 "not a valid" id, no rows, a box score of
-a game not yet started), \code{hoopR_bad_request} (a bad argument, another 400 / 422) and \code{hoopR_asset_fetch}
-(a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a
-truncated page, a body for another game, season, club or league, a box score still in play), all
-inheriting \code{hoopR_error}. Wrappers raise; they never return an empty frame.
-}
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=scb_seasons]{scb_seasons()}}.
 }
 \examples{
 \donttest{

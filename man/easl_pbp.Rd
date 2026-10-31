@@ -13,7 +13,7 @@ malformed id is \code{hoopR_bad_request}.}
 }
 \value{
 A \code{hoopR_data} tibble: Play-by-play of a finished game in delivered order, with the running score and the points
-each event scored. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py
+each event scored. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
 \code{easl_pbp}):\tabular{lll}{
    col_name \tab type \tab description \cr
    fixture_id \tab character \tab DataCore fixture (game) UUID v1 from the request. \cr
@@ -23,7 +23,7 @@ each event scored. An empty answer raises \code{hoopR_no_data}; the columns are 
    period_label \tab character \tab Q1-Q4 for periods 1-4; OT1, OT2 ... for overtimes (the server numbers the first overtime 11 in team totals; periods 5-10 are read as \verb{OT\{n-4\}}, unverified). \cr
    event_time \tab character \tab When the event was logged, wall-clock 'YYYY-MM-DDTHH:MM:SS.mmm' in UTC with no zone marker. There is NO game clock (time remaining) in this feed. \cr
    received_time \tab double \tab When the event was received upstream, Unix epoch MILLISECONDS (UTC): a median 1.6 s after eventTime (5th to 95th percentile -0.6 s to +55 s over 30,874 events); meaning unverified. \cr
-   description \tab character \tab Event text. Shots read \verb{<2pt/3pt> <shot type> missed[ (modifier)]} for EVERY field-goal attempt, made or not: the word 'missed' is always there and the result is the change of \code{scores} (see the divergence notes). Shot types: Jump shot, Layup, Driving layup, Pull-up jump shot, Floating jump shot, Tip-in, Fadeaway, Step-back jump shot, Turnaround jump shot, Hook shot, Dunk, Reverse layup, Alley-oop, Alley-oop dunk, Euro step (none on 23 rows: '3pt missed'). Modifiers: in the paint, second chance, from turnover, fast break, blocked. Free throws read 'Free throw K of M made' (M = 1, 2 or 3) for every attempt, also always 'made'. Other events (complete list): Assist; Block; Steal; Substitution in; Substitution out; Defensive rebound; Defensive rebound (team); Offensive rebound; Offensive rebound (team); Foul; Foul (N FT); Foul drawn; Foul drawn (N FT); Personal foul; Personal foul (N FT); Personal foul (shooting); Personal foul (shooting) (N FT); Offensive foul; Offensive foul (charge); Technical foul; Technical foul (N FT); Bench technical foul; Bench technical foul (N FT); Coach technical foul; Coach technical foul (N FT); Unsportsmanlike foul; Unsportsmanlike foul (N FT); Disqualifying foul (N FT); Jump ball won; Jump ball won (held ball); Jump ball lost; Full timeout; Short timeout; Media timeout; Commercial timeout; Officials timeout; Officials timeout (mandatory); Coach's challenge (pending); Coach's challenge (complete) - upheld; Coach's challenge (complete) - overturned; Instant replay review (complete) - upheld; Instant replay review (complete) - overturned; Turnover - Bad pass; Ball handling; Traveling; Out of bounds; Offensive; Backcourt violation; Double dribble; Carrying; Offensive goaltending; 3 second violation; 5 second violation; 5 second violation (team); 8 second violation (team); Shot clock violation (team); Other; Other (team). N FT = free throws awarded. \cr
+   description \tab character \tab Event text. Shots read \verb{<2pt/3pt> <shot type> missed[ (modifier)]} for EVERY field-goal attempt, made or not: the word 'missed' is always there and the result is the change of \code{scores} (see the divergence notes). Free throws read 'Free throw K of M made' (M = 1, 2 or 3) for every attempt, also always 'made'. The shot types, modifiers and other events are listed under "Event descriptions". \cr
    team_id \tab character \tab DataCore team UUID v1 of the acting team; null on events with no team. \cr
    player_id \tab character \tab DataCore person UUID v1 of the acting player; null for team events (team rebounds, timeouts). \cr
    player_name \tab character \tab Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. Absent on some rows. \cr
@@ -44,44 +44,31 @@ Play-by-play of a finished game in delivered order, with the running score and t
 Endpoint: \verb{GET https://easl.joshricha.com/api/v1/matches/\{fixture_id\}/playbyplay}
 }
 \details{
+Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in \code{\link[=easl_health]{easl_health()}}.
+}
+\section{Event descriptions}{
+
 \itemize{
-\item WARNING: UNOFFICIAL THIRD-PARTY INTERMEDIARY. These wrappers read easl.joshricha.com/api/v1, an Express server
-run by an individual. It is not EASL's and not Sportradar's: it mirrors Sportradar DataCore (organisation b1e0z)
-into SQLite and serves it keyless, and it can change or vanish without notice. Its routes, field names (steak,
-facebook_username) and sync freshness are the proxy author's. A first-party DataCore feed needs credentials this
-package does not have. The host serves no robots.txt (404) and states no terms; the runtime waits at least 1 s
-before every request, retries included, and honours Retry-After. Payloads are not redistributed as release
-assets.
-\item Seasons are END years (2026 = EASL 25-26). The server's season key is the START year; the runtime reads the
-season list, maps the END year to the DataCore seasonId and defaults to the ACTIVE season. Four editions exist
-(2023-24 to 2026-27). The server defaults to the active season on /matches, /standings and /leaders; the runtime
-always sends the resolved seasonId. A season is two calendar years: group by season_id, not by the year of the
-tip-off.
-\item Finished games only: the game routes first read the fixture and refuse (\code{hoopR_asset_fetch}) one that is not
-CONFIRMED with two scores, a box score whose player points do not add up to the score (the server serves
-one-team, four-row boxes for some games), a play-by-play that does not end on the final score in its highest
-period (4 or more, and the last period of the period table), and team totals that disagree with the score. For
-the ACTIVE season's fixture lists the runtime reads /health: a server clock more than a day from yours, or a
-game still SCHEDULED more than a day after its tip-off, means the mirror has stalled (\code{hoopR_asset_fetch}). That
-proves the mirror kept up with the games played, not that a game is final upstream.
-\item Ids: every DataCore id is a UUID v1 string. team_id = entityId, player_id = personId; fixture_number (YYSSNNN)
-is null on every 2023-24 fixture; \verb{*_row_id} columns are the sync server's own integers, not DataCore ids. The
-fixture's competitors come in arbitrary order: read \verb{home_*} / \verb{away_*}, which the parsers take from isHome.
-\item No shot x/y, no game clock and no lineups exist on this server. The play-by-play text always says 'missed' for
-field goals and 'Free throw K of M made' for free throws, made or not: use points_scored (the change of the
-event team's running score), which lags on a minority of events. 301 of 2,444 sampled box rows are players who
-did not play (null minutes and counting stats; points are 0); player_box.played tells them apart.
-easl_player_stats ignores a season filter: it is the career line over every season. Names: nameFullLocal is the
-English display name and nameFullLatin the native-script name, so the columns are name and name_native.
-\item Errors are classed conditions, all inheriting \code{hoopR_error}: \code{hoopR_no_data} (HTTP 404, an empty list or leaders
-object, a team or player without games), \code{hoopR_bad_request} (a malformed id, or a season that is not one of the
-server's END years, raised before the request that would use it) and \code{hoopR_asset_fetch} (any other failure: any
-non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for an unknown fixture, which is not
-retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
-stalled sync on the active season; a body for another game, season, team or player than the one asked for).
-Wrappers raise; they never warn and return an empty frame.
+\item Shot types: Jump shot, Layup, Driving layup, Pull-up jump shot, Floating jump shot, Tip-in, Fadeaway,
+Step-back jump shot, Turnaround jump shot, Hook shot, Dunk, Reverse layup, Alley-oop, Alley-oop dunk,
+Euro step (none on 23 rows: '3pt missed').
+\item Shot modifiers: in the paint, second chance, from turnover, fast break, blocked.
+\item Other events (complete list; N FT = free throws awarded): Assist; Block; Steal; Substitution in;
+Substitution out; Defensive rebound; Defensive rebound (team); Offensive rebound; Offensive rebound (team);
+Foul; Foul (N FT); Foul drawn; Foul drawn (N FT); Personal foul; Personal foul (N FT); Personal foul
+(shooting); Personal foul (shooting) (N FT); Offensive foul; Offensive foul (charge); Technical foul;
+Technical foul (N FT); Bench technical foul; Bench technical foul (N FT); Coach technical foul; Coach
+technical foul (N FT); Unsportsmanlike foul; Unsportsmanlike foul (N FT); Disqualifying foul (N FT); Jump
+ball won; Jump ball won (held ball); Jump ball lost; Full timeout; Short timeout; Media timeout; Commercial
+timeout; Officials timeout; Officials timeout (mandatory); Coach's challenge (pending); Coach's challenge
+(complete) - upheld; Coach's challenge (complete) - overturned; Instant replay review (complete) - upheld;
+Instant replay review (complete) - overturned; Turnover - Bad pass; Ball handling; Traveling; Out of bounds;
+Offensive; Backcourt violation; Double dribble; Carrying; Offensive goaltending; 3 second violation; 5
+second violation; 5 second violation (team); 8 second violation (team); Shot clock violation (team); Other;
+Other (team).
 }
 }
+
 \examples{
 \donttest{
   try(easl_pbp(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))

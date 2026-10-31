@@ -22,9 +22,11 @@ placeholders. NOTE: ESPN/Stats team endpoints are current-season snapshots, so
 \code{season} is a stamp; historical relocations are not back-modeled live.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_team_crosswalk())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Crosswalk Functions:

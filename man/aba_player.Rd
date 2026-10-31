@@ -22,7 +22,7 @@ One row keyed by (\code{player_id}, \code{season}, \code{league_id}) with the cl
 position, height in cm, birth date and place, nationality (a three-letter code) and \code{career}, the free-text
 Clubs box joined with \code{"; "} (oldest first). These bio fields are the public player profile.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    player_id \tab integer \tab ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. \cr
    season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
@@ -48,7 +48,7 @@ Endpoint: \verb{GET https://www.aba-liga.com/player/\{player_id\}/\{sez\}/\{lea\
 }
 \details{
 Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,
-druga.aba-liga.com), keyless, with no bot wall; payloads are not redistributed as release assets.
+druga.aba-liga.com), keyless, with no bot wall.
 www.aba-liga.com/robots.txt is the single line \verb{User-agent: *} (nothing disallowed, no Crawl-delay) and druga has
 no robots.txt; no terms page was found. The runtime waits at least 1 s per host before every request.
 

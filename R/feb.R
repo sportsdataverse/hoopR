@@ -2,9 +2,9 @@
 .feb_game_info_details <- c(
   "The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda",
   "FEB and Liga Femenina Endesa (plus the federation's other groups on the same",
-  "routes). They mirror sdv-py's `sportsdataverse.basketball.feb` wrappers of",
+  "routes). They mirror sportsdataverse-py's `sportsdataverse.basketball.feb` wrappers of",
   "the same names: same arguments, the same snake_case columns and types, one",
-  "row per sdv-py row.",
+  "row per sportsdataverse-py row.",
   "",
   "**Legal notice.** The FEB's aviso legal (legal notice) asserts",
   "intellectual-property rights over the site's content and its databases (the",
@@ -49,7 +49,7 @@
 #' (every game route carries the header; this reads the lightest one).
 #' @param game_id (*integer* required): FEB game id, e.g. `2535725`; the
 #'   `game_id` column of [feb_schedule()], [feb_results()] and [feb_overview()].
-#' @eval .intl_details(.feb_game_info_details)
+#' @eval .intl_details(.feb_game_info_details, full = TRUE)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -195,7 +195,7 @@ feb_team_stats <- function(game_id) {
 #' `player_id` is the FEB person id (stable across seasons) and
 #' `shirt_number` stays a string (`"00"` is not `"0"`).
 #' @inheritParams feb_game_info
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -263,7 +263,7 @@ feb_player_box <- function(game_id) {
 #' returned. 2020-21 games are text only: `action`, the ids, the parameters,
 #' the position and the log times are `NA` there.
 #' @inheritParams feb_game_info
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -448,7 +448,7 @@ feb_overview <- function() {
 #'   `comp_id`).
 #' @param season (*integer* required): Season END year (`2027` = 2026-27),
 #'   sent to the site as its START-year key `t = season - 1`.
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -496,7 +496,7 @@ feb_schedule <- function(group, season) {
 #' over). `comp_id` ties the site group to the API's competition id (group 1
 #' -> 115, 2 -> 118, 4 -> 210).
 #' @inheritParams feb_schedule
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -543,7 +543,7 @@ feb_results <- function(group, season) {
 #' `NA`); the page shows one of the two. Only the first phase of the group is
 #' shown.
 #' @inheritParams feb_schedule
-#' @inherit feb_game_info details
+#' @eval .intl_details(.feb_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |

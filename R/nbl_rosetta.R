@@ -1,11 +1,11 @@
 # nbl_rosetta.R -- NBL / WNBL / NBL1 (Australia) wrappers over Rosetta, the JSON proxy behind
-# nbl.com.au. Port of sdv-py sportsdataverse/basketball/nbl_au/nbl_rosetta.py (same names, arguments
-# and defaults; sdv-py's return_parsed / return_as_pandas / **kwargs have no R counterpart). The
+# nbl.com.au. Port of sportsdataverse-py sportsdataverse/basketball/nbl_au/nbl_rosetta.py (same names, arguments
+# and defaults; sportsdataverse-py's return_parsed / return_as_pandas / **kwargs have no R counterpart). The
 # transport, refusals and parsers live in nbl_rosetta_utils.R. In wehoop only the `org` default changes.
 
 # The @details of every nbl_rosetta topic that shares the nbl_rosetta_seasons() notes (roxygen @eval .intl_details()).
 .nbl_rosetta_seasons_details <- c(
-  "* Unofficial: the JSON proxy behind nbl.com.au (not an API the NBL documents or supports). The terms of use were not reviewed; payloads are not redistributed as release assets.",
+  "* Unofficial: the JSON proxy behind nbl.com.au (not an API the NBL documents or supports). The terms of use were not reviewed; check them before you republish the data.",
   "* Gated by a referer, not a key: every request carries Origin / Referer set to nbl.com.au (the runtime sends them); without them the host answers 403 MISSING_API_KEY, which is raised as `hoopR_asset_fetch`.",
   "* Fills a hole in ESPN: ESPN's nbl feed has box scores but no plays for the 2025-26 NBL season (the stats provider changed from Genius Sports to Sportradar DataCore that year). nbl_rosetta_match_pbp has the full event log with shot x/y for 2025-26 and, in the same shape, back to 2011-12 (WNBL about 2014-15). Matches from 1979 have box scores only.",
   "* One host serves three organisations; pass org='nbl' (default), 'wnbl' or 'nbl1'. NBL1 is the second tier (men's and women's conferences, calendar-year seasons).",
@@ -26,7 +26,7 @@
 #' Every season of an organisation: regular, preseason, in-season cups and test seasons, with dates.
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/seasons`
-#' @eval .intl_details(.nbl_rosetta_seasons_details)
+#' @eval .intl_details(.nbl_rosetta_seasons_details, full = TRUE)
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @param limit (*integer* default `NULL`): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).
 #' @return A `hoopR_data` tibble (one row per season):
@@ -45,7 +45,7 @@
 #'   | competition_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_seasons(org = "nbl"))
@@ -66,7 +66,7 @@ nbl_rosetta_seasons <- function(org = "nbl", limit = NULL) {
 #' The season in progress (empty between seasons: `hoopR_no_data`).
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/seasons/current`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @return A `hoopR_data` tibble (one row: the season in progress):
 #'
@@ -85,7 +85,7 @@ nbl_rosetta_seasons <- function(org = "nbl", limit = NULL) {
 #'   | next_match_start_datetime | character | Tip-off of the season's next match, UTC; null when none. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_seasons_current(org = "nbl"))
@@ -106,7 +106,7 @@ nbl_rosetta_seasons_current <- function(org = "nbl") {
 #' Matches of a season: ids, teams, venue, status, scores and start time (UTC).
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/matches/in/season/{season}/{season_type}`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param season (*integer* required): Season END year (2026 = 2025-26). The runtime maps it to Rosetta's year: the START year for the NBL and WNBL from 1998-99, the calendar year for NBL1 and the NBL / WNBL winter seasons up to 1998. END 1998 and 1999 both read Rosetta year 1998, which holds two seasons; the matches frame keeps the one asked for.
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @param season_type (*character* default `"all"`): Season type: all (every type of the year), regular (includes finals), preseason, in_season (cups, Blitz, NBAxNBL, All-Star) or test. One of `"all"`, `"regular"`, `"preseason"`, `"in_season"`, `"test"`.
@@ -176,7 +176,7 @@ nbl_rosetta_seasons_current <- function(org = "nbl") {
 #'   | away_team_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
 #'   | away_team_conference | character | Conference of the division. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_matches(org = "nbl", season = 2026, season_type = "regular"))
@@ -197,7 +197,7 @@ nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit 
 #' Every team record of an organisation: current, defunct, exhibition and development sides.
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/teams`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @param limit (*integer* default `NULL`): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).
 #' @return A `hoopR_data` tibble (one row per team record):
@@ -227,7 +227,7 @@ nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit 
 #'   | conference_name | character | Name of the NBL1 conference the team plays in (e.g. North, South); null outside NBL1. |
 #'   | division_name | character | Division name (NBL1 conference + gender) |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_teams(org = "nbl"))
@@ -307,7 +307,7 @@ nbl_rosetta_teams <- function(org = "nbl", limit = NULL) {
 #'   | play_by_play_updated_datetime | character | Last play-by-play update, ISO 8601 UTC. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_by_id <- function(match_id) {
@@ -324,7 +324,7 @@ nbl_rosetta_match_by_id <- function(match_id) {
 #' One match's header: status, scores, clock, venue, season and teams. Box score and play-by-play: the `match_*` frames.
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/match/{match_id}/live/all`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param match_id (*character* required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.
 #' @return A `hoopR_data` tibble (one row):
 #'
@@ -383,7 +383,7 @@ nbl_rosetta_match_by_id <- function(match_id) {
 #'   | play_by_play_updated_datetime | character | Last play-by-play update, ISO 8601 UTC. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_match(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
@@ -404,7 +404,7 @@ nbl_rosetta_match <- function(match_id) {
 #' One match's official player box score, one row per player line (period 0 = whole game).
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/match/{match_id}/live/all`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param match_id (*character* required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.
 #' @return A `hoopR_data` tibble (one row per player line):
 #'
@@ -459,7 +459,7 @@ nbl_rosetta_match <- function(match_id) {
 #'   | team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
 #'   | sc | integer | NBL SuperCoach fantasy score for the game. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_match_player_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
@@ -480,7 +480,7 @@ nbl_rosetta_match_player_box <- function(match_id) {
 #' One match's team box score by period, one row per team and period (0 = whole game).
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/match/{match_id}/live/all`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param match_id (*character* required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.
 #' @return A `hoopR_data` tibble (one row per team and period):
 #'
@@ -522,7 +522,7 @@ nbl_rosetta_match_player_box <- function(match_id) {
 #'   | team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
 #'   | timeouts | integer | Timeouts taken in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_match_team_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
@@ -588,7 +588,7 @@ nbl_rosetta_match_team_box <- function(match_id) {
 #'   | two_points_percentage | double | Two-point field goals made / attempted, a 0-1 FRACTION. |
 #'   | jersey_number | character | Jersey number, a STRING. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_match_player_period_box <- function(match_id) {
@@ -605,7 +605,7 @@ nbl_rosetta_match_player_period_box <- function(match_id) {
 #' One match's play-by-play with shot x/y, oldest first (NBL 2025-26 included, which ESPN's nbl feed lacks).
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/match/{match_id}/live/all`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param match_id (*character* required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.
 #' @return A `hoopR_data` tibble (one row per event, sorted on action_id):
 #'
@@ -641,7 +641,7 @@ nbl_rosetta_match_player_period_box <- function(match_id) {
 #'   | timestamp | character | Wall-clock time of the event, ISO 8601 without offset (UTC) |
 #'   | feed | character | Feed shape: datacore (NBL and WNBL 2025-26: events carry fixtureId, arrive newest first, Title Case sub_type, a real shot clock) or backfill (older seasons and NBL1 2025: no fixtureId, oldest first, camelCase sub_type, shot_clock repeating the game clock). |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_match_pbp(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
@@ -662,7 +662,7 @@ nbl_rosetta_match_pbp <- function(match_id) {
 #' Regular-season ladder: position, record, points for and against, home and away splits and form.
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/standings/{season}/regular`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param season (*integer* required): Season END year (2026 = 2025-26). The runtime maps it to Rosetta's year: the START year for the NBL and WNBL from 1998-99, the calendar year for NBL1 and the NBL / WNBL winter seasons up to 1998. END 1998 and 1999 both read Rosetta year 1998, which holds two seasons; the matches frame keeps the one asked for.
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @param limit (*integer* default `NULL`): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).
@@ -695,7 +695,7 @@ nbl_rosetta_match_pbp <- function(match_id) {
 #'   | season_competition_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_standings(org = "nbl", season = 2026))
@@ -716,7 +716,7 @@ nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
 #' Roster rows of every team in a season: player bio, jersey, position and team.
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/players/in/season/{season}`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param season (*integer* required): Season END year (2026 = 2025-26). The runtime maps it to Rosetta's year: the START year for the NBL and WNBL from 1998-99, the calendar year for NBL1 and the NBL / WNBL winter seasons up to 1998. END 1998 and 1999 both read Rosetta year 1998, which holds two seasons; the matches frame keeps the one asked for.
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @param limit (*integer* default `NULL`): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).
@@ -759,7 +759,7 @@ nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
 #'   | season_competition_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_players(org = "nbl", season = 2026))
@@ -819,7 +819,7 @@ nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL
 #'   | player_rookie_year | character | Unobserved in samples (null in every capture); type and meaning unverified. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_team_players <- function(team_id, season, org = "nbl") {
@@ -853,7 +853,7 @@ nbl_rosetta_team_players <- function(team_id, season, org = "nbl") {
 #'   | last3 | character | Results of the team's last 3 games as a W/L string, oldest first. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
@@ -951,7 +951,7 @@ nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
 #'   | sc_season_total | integer | Player's SuperCoach total for the season so far. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", participated = NULL) {
@@ -968,7 +968,7 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #' A player's season totals and averages for every season, by period.
 #'
 #' Endpoint: `GET https://prod.rosetta.nbl.com.au/get/{org}/statistics/for/player/{player_id}`
-#' @inherit nbl_rosetta_seasons details
+#' @eval .intl_details(.nbl_rosetta_seasons_details)
 #' @param player_id (*character* required): Player id: the DataCore person id (player_id of nbl_rosetta_players) or Rosetta's own id; either is accepted.
 #' @param org (*character* default `"nbl"`): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of `"nbl"`, `"wnbl"`, `"nbl1"`.
 #' @return A `hoopR_data` tibble (one row per season and period):
@@ -1067,7 +1067,7 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #'   | team_gender | character | Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) |
 #'   | synthetic_from_roster | logical | Row built from the roster because the player has no season statistics (all stats 0) |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @examples
 #' \donttest{
 #'   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
@@ -1177,7 +1177,7 @@ nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
 #'   | sc_double_figure_count | integer | Stats in double figures (for the double-double / triple-double bonus) |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
@@ -1274,7 +1274,7 @@ nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
 #'   | season_competition_division | character | Always an empty array in samples; element shape and meaning unverified. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", limit = NULL, period = NULL, sort = NULL) {
@@ -1353,7 +1353,7 @@ nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", li
 #'   | season_competition_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
@@ -1431,7 +1431,7 @@ nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
 #'   | season_competition_division | character | Always an empty array in samples; element shape and meaning unverified. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_next_match <- function(season, org = "nbl") {
@@ -1510,7 +1510,7 @@ nbl_rosetta_next_match <- function(season, org = "nbl") {
 #'   | season_competition_division | character | Always an empty array in samples; element shape and meaning unverified. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_next_match_team <- function(team_code, season, org = "nbl") {
@@ -1551,7 +1551,7 @@ nbl_rosetta_next_match_team <- function(team_code, season, org = "nbl") {
 #'   | rosetta_opponent_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the opponent; routes that take this entity accept it as well as the DataCore id. |
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
-#'   Columns the body adds beyond these follow, in body order (sdv-py keeps them too).
+#'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
 #' @family NBL Rosetta Functions
 #' @export
 nbl_rosetta_next_matches <- function(season, org = "nbl") {

@@ -9,7 +9,7 @@ tbf_seasons()
 \value{
 A \code{hoopR_data} tibble. One row per season, newest first. \code{season} is the END year of the label (2026-2027 -> 2027); \code{international} marks the odd \verb{UA-} seasons.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sdv-py.\tabular{lll}{
+with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
    season_label \tab character \tab Season label as TBF writes it, 'YYYY-YYYY' (start and end year). \cr
@@ -27,8 +27,8 @@ Endpoint: \verb{GET https://miniappapi.tbf.org.tr/webapi-service/api/Season/get-
 \details{
 Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.
 

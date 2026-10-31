@@ -11,7 +11,7 @@ lba_championships(season = NULL)
 }
 \value{
 A \code{hoopR_data} tibble: Championships of a season, one per phase (Regular Season, Play Off); every season when
-none is given. The columns are always these, in this order (sdv-py \code{lba_championships}); a column the site adds
+none is given. The columns are always these, in this order (sportsdataverse-py \code{lba_championships}); a column the site adds
 later is appended after them:\tabular{lll}{
    col_name \tab type \tab description \cr
    season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
@@ -40,8 +40,7 @@ Endpoint: \verb{GET https://www.legabasket.it/api/championships/get-championship
 \item Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
 calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
 autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.
+personal, non-commercial use. Use the data accordingly, and check the terms before you republish it.
 \item robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
 Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
 round, and do not backfill a history in a burst.

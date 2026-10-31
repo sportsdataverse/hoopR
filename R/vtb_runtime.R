@@ -1,5 +1,5 @@
 # vtb_runtime.R -- transport, season mapping, personal-data scrub and refusals of the VTB United League families,
-# at parity with sdv-py sportsdataverse/basketball/vtb/vtb_league_runtime.py and vtb_infobasket_runtime.py
+# at parity with sportsdataverse-py sportsdataverse/basketball/vtb/vtb_league_runtime.py and vtb_infobasket_runtime.py
 # (origin/main e3d232ebc9).
 #
 # Two keyless public JSON backends of vtb-league.com, both through the shared R/intl_basketball_runtime.R getter
@@ -9,11 +9,11 @@
 #   org.infobasket.su      (vtb_infobasket_*)  everything keyed by a competition id; the END year is mapped to the
 #                                              season-level CompID with /Comp/GetSeasonsForTag (cached per tag).
 #
-# Refusals (sdv-py vocabulary): hoopR_no_data for HTTP 404 and an empty valid answer; hoopR_bad_request for a bad
+# Refusals (sportsdataverse-py vocabulary): hoopR_no_data for HTTP 404 and an empty valid answer; hoopR_bad_request for a bad
 # argument (raised before any request, or after the season table when the END year is not in it); hoopR_asset_fetch
 # for everything else: an Infobasket error envelope or bare string (HTTP 200), a game that is not final or a stub, a
 # partial page, a body for another game / person / team / competition / league / season, and (Infobasket only) an
-# HTTP 400 / 422, which sdv-py maps to AssetFetchError on that host.
+# HTTP 400 / 422, which sportsdataverse-py maps to AssetFetchError on that host.
 
 #' The v2 schedule API host.
 #' @noRd
@@ -28,7 +28,7 @@
 .VTB_DEFAULT_TAG <- "vtb"
 
 #' Verified 2026-10-12 against /Comp/GetSeasonsForTag?tag=vtb (END year -> season CompID). The runtime reads the
-#' live table; this copy is for tests and documentation (sdv-py SEASON_COMP_IDS).
+#' live table; this copy is for tests and documentation (sportsdataverse-py SEASON_COMP_IDS).
 #' @noRd
 .VTB_SEASON_COMP_IDS <- c(
   `2010` = 5052L, `2011` = 6076L, `2012` = 7050L, `2013` = 8187L, `2014` = 9113L, `2015` = 10050L,
@@ -39,7 +39,7 @@
 # tag -> named integer vector (END year -> season CompID), cached for the process
 .vtb_cache <- new.env(parent = emptyenv())
 
-#' Forget the cached season tables (sdv-py `clear_cache()`).
+#' Forget the cached season tables (sportsdataverse-py `clear_cache()`).
 #' @noRd
 .vtb_clear_cache <- function() {
   rm(list = ls(.vtb_cache, all.names = TRUE), envir = .vtb_cache)
@@ -56,15 +56,15 @@
 #' @noRd
 .vtb_is_arr <- function(x) is.list(x) && is.null(names(x))
 
-#' `x` if it is an object, else an empty one (sdv-py `obj`).
+#' `x` if it is an object, else an empty one (sportsdataverse-py `obj`).
 #' @noRd
 .vtb_obj <- function(x) if (.vtb_is_obj(x)) x else structure(list(), names = character())
 
-#' The object members of an array, else an empty list (sdv-py `rows`).
+#' The object members of an array, else an empty list (sportsdataverse-py `rows`).
 #' @noRd
 .vtb_rows <- function(x) if (.vtb_is_arr(x)) Filter(.vtb_is_obj, x) else list()
 
-#' A scalar's JSON kind, so comparisons are type-strict like sdv-py `_same` (TRUE never equals 1).
+#' A scalar's JSON kind, so comparisons are type-strict like sportsdataverse-py `_same` (TRUE never equals 1).
 #' @noRd
 .vtb_kind <- function(x) {
   if (length(x) != 1L || is.list(x) || is.na(x)) return("none")
@@ -75,14 +75,14 @@
   "none"
 }
 
-#' Type-strict equality (sdv-py `_same`).
+#' Type-strict equality (sportsdataverse-py `_same`).
 #' @noRd
 .vtb_same <- function(got, want) {
   k <- .vtb_kind(got)
   k != "none" && k == .vtb_kind(want) && got == want
 }
 
-#' An integer (not a boolean) scalar, else NULL (sdv-py `int_or_none`).
+#' An integer (not a boolean) scalar, else NULL (sportsdataverse-py `int_or_none`).
 #' @noRd
 .vtb_int_or_null <- function(x) if (.vtb_kind(x) == "int") x else NULL
 
@@ -96,7 +96,7 @@
   if (abs(n) <= .Machine$integer.max) as.integer(n) else n
 }
 
-#' A path id: a non-negative whole number (sdv-py's route regex `\d+` refuses anything else).
+#' A path id: a non-negative whole number (sportsdataverse-py's route regex `\d+` refuses anything else).
 #' @noRd
 .vtb_path_id <- function(value, name, call = rlang::caller_env()) {
   id <- .vtb_int_arg(value, name, call = call)
@@ -104,7 +104,7 @@
   id
 }
 
-#' `lang` must be one of the spec's choices (the generated sdv-py wrappers check it before any request).
+#' `lang` must be one of the spec's choices (the generated sportsdataverse-py wrappers check it before any request).
 #' @noRd
 .vtb_lang_arg <- function(lang, call = rlang::caller_env()) {
   if (!(is.character(lang) && length(lang) == 1L && lang %in% c("en", "ru"))) {
@@ -131,7 +131,7 @@
 .VTB_NON_PLAYER_KEY <- "coach|referee|official|commissioner|staff"
 
 #' `body` without contact data, licence numbers and betting blocks, and without coaches' / officials' birth data
-#' (sdv-py `_scrub`). Players' birth dates stay.
+#' (sportsdataverse-py `_scrub`). Players' birth dates stay.
 #'
 #' @param body A parsed Infobasket body.
 #' @param whole_body_is_coach `TRUE` for /Widget/CoachPage, whose whole body is a coach record.
@@ -201,8 +201,8 @@
   "/Widget/TeamStats/{team_id}"
 )
 
-#' GET an Infobasket URL; an error envelope, a bare string or a scalar is `hoopR_asset_fetch` (sdv-py `_fetch`).
-#' HTTP 400 / 422 are asset_fetch on this host too (sdv-py re-raises them as AssetFetchError).
+#' GET an Infobasket URL; an error envelope, a bare string or a scalar is `hoopR_asset_fetch` (sportsdataverse-py `_fetch`).
+#' HTTP 400 / 422 are asset_fetch on this host too (sportsdataverse-py re-raises them as AssetFetchError).
 #' @noRd
 .vtb_ib_fetch <- function(url, query, call = rlang::caller_env()) {
   where <- .intl_where(url)
@@ -259,7 +259,7 @@
   table[[as.character(end)]]
 }
 
-#' Every row satisfies `pred`, else `hoopR_asset_fetch` (sdv-py `_all`).
+#' Every row satisfies `pred`, else `hoopR_asset_fetch` (sportsdataverse-py `_all`).
 #' @noRd
 .vtb_all <- function(where, rows, pred, what, call) {
   if (!.vtb_is_arr(rows)) rows <- .vtb_rows(rows)
@@ -268,13 +268,13 @@
   TRUE
 }
 
-#' Every row has an integer `key` (sdv-py `_all_int`).
+#' Every row has an integer `key` (sportsdataverse-py `_all_int`).
 #' @noRd
 .vtb_all_int <- function(rows, key) {
   all(vapply(rows, function(r) .vtb_is_obj(r) && .vtb_kind(r[[key]]) == "int", logical(1)))
 }
 
-#' A player game-log row is the requested team's side (sdv-py `_side_is`).
+#' A player game-log row is the requested team's side (sportsdataverse-py `_side_is`).
 #' @noRd
 .vtb_side_is <- function(game_row, team) {
   game <- game_row[["Game"]]
@@ -285,7 +285,7 @@
 }
 
 #' Raise `hoopR_no_data` for a row-less body, `hoopR_asset_fetch` for a partial, non-final or out-of-scope one
-#' (sdv-py `_check`).
+#' (sportsdataverse-py `_check`).
 #' @noRd
 .vtb_ib_check <- function(template, kind, ids, params, comp, season, body, call) {
   where <- paste0("org.infobasket.su", template)
@@ -371,7 +371,7 @@
 }
 
 #' GET one wrapped Infobasket route; return its scrubbed body with the request stamped under `_request`
-#' (sdv-py `vtb_infobasket_runtime._get`).
+#' (sportsdataverse-py `vtb_infobasket_runtime._get`).
 #'
 #' @param template The route template, e.g. `"/Widget/GetOnline/{game_id}"`.
 #' @param ids Named list of the path token (`game_id`, `person_id`, `team_id`, `comp_id`, or `season`: an END year).
@@ -424,7 +424,7 @@
 # v2 schedule API
 # ---------------------------------------------------------------------------
 
-#' The v2 envelope is a complete, untruncated success, else `hoopR_asset_fetch` (sdv-py `_check_envelope`).
+#' The v2 envelope is a complete, untruncated success, else `hoopR_asset_fetch` (sportsdataverse-py `_check_envelope`).
 #' @noRd
 .vtb_league_envelope <- function(where, body, call) {
   if (!.vtb_is_obj(body) || !.vtb_is_obj(body[["meta"]]) || !"data" %in% names(body)) {
@@ -450,7 +450,7 @@
 }
 
 #' GET one wrapped v2 route; return its envelope with the request stamped under `_request`
-#' (sdv-py `vtb_league_runtime._get`).
+#' (sportsdataverse-py `vtb_league_runtime._get`).
 #'
 #' @param league_slug League slug, or `NULL` for /v2/leagues.
 #' @param season END year, or `NULL`.

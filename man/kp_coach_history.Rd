@@ -78,11 +78,12 @@ A data frame with 30 columns:
 \strong{Get KenPom's coaching resume data}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
   \donttest{
    try(kp_coach_history(coach = 'Leonard Hamilton'))
   }
 
-
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:

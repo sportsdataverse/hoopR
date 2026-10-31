@@ -22,7 +22,7 @@
 
 ## Package Overview
 
-hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting 600+ functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
+hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting 1,300+ functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
 
 Sibling repos in the family: `hoopR-data` (NBA + MBB build/aggregate/publish), `hoopR-mbb-raw` / `hoopR-mbb-data`, `hoopR-nba-raw` / `hoopR-nba-data`, and `hoopR-nba-stats-raw` / `hoopR-nba-stats-data`.
 
@@ -31,12 +31,12 @@ When this guide differs from current repository docs, treat `CONTRIBUTING.md` an
 - **Version**: 3.2.0
 - **R Requirement**: >= 4.1.0
 - **License**: MIT (CRAN + r-universe; pkgdown site at https://hoopR.sportsdataverse.org)
-- **Branch**: `devel` for active development, `main` for releases
+- **Branch**: `main` (default and release branch; branch from it and target it in PRs)
 
 ## Branching & PR Workflow
 
 - Create feature branches from the latest stable base.
-- `main` is the default branch and release branch. `devel` may still be used for staging active development; verify the intended PR target branch before opening a PR.
+- `main` is the default branch and release branch: branch from it and open PRs against it. The old `devel` branch is stale and unused.
 - Keep code, tests, and roxygen/docs updates in the same PR when changing exported behavior.
 
 ## Build & Development Commands

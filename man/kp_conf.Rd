@@ -144,9 +144,11 @@ A list of named data frames:
 \strong{Get KenPom's conference-wide stats}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
     try(kp_conf(year = 2020, conf = 'ACC'))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:

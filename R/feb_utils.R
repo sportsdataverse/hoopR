@@ -1,6 +1,6 @@
 # feb_utils.R -- internal runtime + parsers of the FEB `feb_*()` family.
 #
-# R mirror of sdv-py sportsdataverse/basketball/feb/ (feb_runtime.py + feb_parsers.py):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/feb/ (feb_runtime.py + feb_parsers.py):
 # same routes, refusals, casts and snake_case columns. Two hosts, one provider (the
 # Spanish Basketball Federation):
 #   API  https://intrafeb.feb.es/LiveStats.API/api/v1   per-game JSON envelopes + /overview
@@ -15,7 +15,7 @@
 # * Refused (fail closed): an error envelope, a stub or changed envelope (filled blocks),
 #   a play-by-play naming another game, an overview game outside its competition, a
 #   schedule page for another group / season, any final URL but /{page}/{g}/{t}.
-# * HTTP 500 is retried (sdv-py RETRY_STATUSES holds 500): retry_500 = TRUE.
+# * HTTP 500 is retried (sportsdataverse-py RETRY_STATUSES holds 500): retry_500 = TRUE.
 
 .feb_site <- "https://baloncestoenvivo.feb.es"
 .feb_api <- "https://intrafeb.feb.es/LiveStats.API/api/v1"
@@ -62,7 +62,7 @@
   )
 }
 
-#' sdv-py feb_runtime._check_status: only 200 passes.
+#' sportsdataverse-py feb_runtime._check_status: only 200 passes.
 #' @noRd
 .feb_check_status <- function(resp, where, call) {
   status <- httr2::resp_status(resp)
@@ -91,7 +91,7 @@
   list(resp = resp, text = text)
 }
 
-#' The bearer JWT in a site page's `#contentToken > input` and its expiry (sdv-py `token_from_page`).
+#' The bearer JWT in a site page's `#contentToken > input` and its expiry (sportsdataverse-py `token_from_page`).
 #' @return `list(token, exp)`.
 #' @noRd
 .feb_token_from_page <- function(html, now = as.numeric(Sys.time()), call = rlang::caller_env()) {
@@ -130,7 +130,7 @@
   .feb_tok$value
 }
 
-#' sdv-py `_int_arg`: a non-negative whole number or digit string, else `hoopR_bad_request`.
+#' sportsdataverse-py `_int_arg`: a non-negative whole number or digit string, else `hoopR_bad_request`.
 #' @noRd
 .feb_int_arg <- function(value, what, call = rlang::caller_env()) {
   ok <- length(value) == 1L && !is.logical(value) && !is.na(value) &&
@@ -155,7 +155,7 @@
     (is.na(x) || isFALSE(x) || identical(x, "") || (is.numeric(x) && x == 0)))
 }
 
-#' Refuse everything that is not this route's envelope (sdv-py `_validate`).
+#' Refuse everything that is not this route's envelope (sportsdataverse-py `_validate`).
 #' @noRd
 .feb_validate <- function(route, body, game_id, where, call) {
   spec <- .feb_routes[[route]]
@@ -807,7 +807,7 @@
   for (cmp in comps) {
     games <- if (.feb_is_obj(cmp)) .feb_arr(cmp[["GAMES"]]) else list()
     for (g in Filter(.feb_is_obj, games)) {
-      # a quarter without both scores is skipped (sdv-py's f-string writes "None-None")
+      # a quarter without both scores is skipped (sportsdataverse-py's f-string writes "None-None")
       qs <- Filter(function(q) .feb_is_obj(q) && !is.null(q[["scoreA"]]) && !is.null(q[["scoreB"]]),
                    .feb_arr(g[["Quarters"]]))
       ps <- paste(vapply(qs, function(q) paste0(as.character(q[["scoreA"]]), "-", as.character(q[["scoreB"]])),
@@ -831,7 +831,7 @@
   .feb_frame(rows, .feb_specs$overview, "overview")
 }
 
-# Column types per wrapper (sdv-py feb_parsers.SPECS; Int64 -> integer, Float64 -> double,
+# Column types per wrapper (sportsdataverse-py feb_parsers.SPECS; Int64 -> integer, Float64 -> double,
 # naive local Datetime -> "madrid", naive UTC Datetime -> "utc").
 .feb_specs <- list(
   game_info = c(

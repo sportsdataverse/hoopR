@@ -1,14 +1,13 @@
-# fiba_gdap.R -- the fiba_gdap_* wrappers (R mirror of sdv-py sportsdataverse/basketball/fiba_hub/fiba_gdap.py).
-# Same names, arguments, defaults and snake_case columns as sdv-py; the transport, refusals and
+# fiba_gdap.R -- the fiba_gdap_* wrappers (R mirror of sportsdataverse-py sportsdataverse/basketball/fiba_hub/fiba_gdap.py).
+# Same names, arguments, defaults and snake_case columns as sportsdataverse-py; the transport, refusals and
 # parsers live in R/fiba_gdap_runtime.R, R/fiba_gdap_parsers.R and R/fiba_gamepage_runtime.R.
 
 # The @details of every fiba topic that shares the fiba_gdap_awards() notes (roxygen @eval .intl_details()).
 .fiba_gdap_awards_details <- c(
   "FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'",
   "(federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball",
-  "terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed",
-  "both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.",
-  "Users who are not themselves authorised by FIBA should check the terms before using the wrappers.",
+  "terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not",
+  "themselves authorised by FIBA should check the terms before using the wrappers.",
   "",
   "The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the",
   "live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of",
@@ -38,7 +37,7 @@
 #' @param discipline_format (character, optional) Optional; the site passes its discipline format. 5x5 answers
 #'   the same as omitting it (verified on awards and rosters)
 #' @param return_parsed Parse the payload into a tibble (default `TRUE`); `FALSE` returns the raw JSON list.
-#' @eval .intl_details(.fiba_gdap_awards_details, "fiba_gdap_awards(comp = 208182)")
+#' @eval .intl_details(.fiba_gdap_awards_details, full = TRUE, "fiba_gdap_awards(comp = 208182)")
 #' @return A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`) with the following columns:
 #'
 #' | col_name | type | description |
@@ -46,7 +45,7 @@
 #' | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 #' | competition_end_date | character | Last day of the competition, YYYY-MM-DD. |
 #' | award_date | character | Date awarded, YYYY-MM-DD. |
-#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 #' | competition_official_name | character | Official name of the competition edition the award was given in. |
 #' | award_name | character | Award name (All-Star 5, MVP...). |
 #' | award_code | character | Award code (ALLSTAR, MVP...). |
@@ -88,7 +87,7 @@ fiba_gdap_awards <- function(comp, discipline_format = NULL, return_parsed = TRU
 #' | hosts | character | Host countries with their cities. Stored as a JSON string. |
 #' | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 #' | competition_code | character | Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). |
-#' | season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+#' | season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 #' | official_name | character | Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). |
 #' | start | character | First day, YYYY-MM-DD. |
 #' | end | character | Last day, YYYY-MM-DD. |
@@ -152,7 +151,7 @@ fiba_gdap_competition <- function(comp, return_parsed = TRUE) {
 #' | hosts | character | Host countries with their cities. Stored as a JSON string. |
 #' | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 #' | competition_code | character | Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). |
-#' | season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+#' | season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 #' | official_name | character | Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). |
 #' | start | character | First day, YYYY-MM-DD. |
 #' | end | character | Last day, YYYY-MM-DD. |
@@ -260,7 +259,7 @@ fiba_gdap_editions <- function(family_id, season = NULL, to_season = NULL, retur
 #' | round_round_order | integer | Display order of the round. |
 #' | competition_competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 #' | competition_competition_code | character | Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). |
-#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 #' | competition_official_name | character | Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). |
 #' | competition_start | character | First day, YYYY-MM-DD. |
 #' | competition_end | character | Last day, YYYY-MM-DD. |
@@ -597,7 +596,7 @@ fiba_gdap_game_periods <- function(game_id, return_parsed = TRUE) {
 #' | round_round_order | integer | Display order of the round. |
 #' | competition_competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 #' | competition_competition_code | character | Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). |
-#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 #' | competition_official_name | character | Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). |
 #' | competition_start | character | First day, YYYY-MM-DD. |
 #' | competition_end | character | Last day, YYYY-MM-DD. |
@@ -1428,7 +1427,7 @@ fiba_gdap_rounds <- function(comp, return_parsed = TRUE) {
 #' | round_round_order | integer | Display order of the round. |
 #' | competition_competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 #' | competition_competition_code | character | Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). |
-#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+#' | competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 #' | competition_official_name | character | Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). |
 #' | competition_start | character | First day, YYYY-MM-DD. |
 #' | competition_end | character | Last day, YYYY-MM-DD. |

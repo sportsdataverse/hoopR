@@ -1,8 +1,8 @@
 # lba_schema.R -- the documented columns and their types, one entry per lba_* route.
 #
-# Generated from sdv-py sportsdataverse/basketball/lba/lba_dtypes.py (origin/main e3d232ebc9); codes: i integer,
+# Generated from sportsdataverse-py sportsdataverse/basketball/lba/lba_dtypes.py (origin/main e3d232ebc9); codes: i integer,
 # f double, b logical, s character. The parsers give these types to an empty frame, a gap-filled column and an
-# all-null column (sdv-py lba_parsers._finish), and put these columns first, in this order.
+# all-null column (sportsdataverse-py lba_parsers._finish), and put these columns first, in this order.
 
 #' @noRd
 .LBA_DTYPES <- list(

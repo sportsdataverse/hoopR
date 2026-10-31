@@ -8,7 +8,7 @@ kzs_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: Every season (39: 1991/1992 to 2029/2030) with its opaque id and the sdv END year. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{kzs_seasons}):\tabular{lll}{
+valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season \code{name} is 'START/END'; the sdv season is the END year (the second half of \code{name}). \cr
    name \tab character \tab Season, 'START/END' (2025/2026); the sdv season is the END year. \cr
@@ -27,7 +27,7 @@ Endpoint: \verb{GET https://api.kzs.si/api/v1/public/seasons/}
 \item Unofficial and unsupported: these wrappers read the public read API (Java/Spring, built by OnixWeb) that the
 kzs.si site itself calls. No terms of use were located (unverified), api.kzs.si/robots.txt answers 401 and
 www.kzs.si/robots.txt 404, so no policy or Crawl-delay is published. The runtime waits at least 1 s before every
-request, retries included. Payloads are not redistributed as release assets.
+request, retries included.
 \item Personal data: the API serves officials' and coaches' emails, phones and home towns, and clubs' bank accounts and
 addresses, publicly. The parsers never output them (officials appear by name only; club addresses, personnel and
 the commissioner report are dropped). Do not add them back.

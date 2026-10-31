@@ -1,6 +1,6 @@
 # scb_runtime.R -- transport for the BBL / DBBL wrappers (the SCB API on two hosts, one set of routes).
 #
-# R mirror of sdv-py sportsdataverse/basketball/scb/scb_runtime.py (origin/main e3d232e):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/scb/scb_runtime.py (origin/main e3d232e):
 #
 # * Two headers on every request: `x-api-key: publicWebUser` (a constant) and `x-api-secret`, the
 #   `"key":"..."` value embedded in an https://www.easycredit-bbl.de/ page, reversed, with every `:`
@@ -10,7 +10,7 @@
 #   page value that is not 32-256 characters of `[A-Za-z0-9:_-]` is not the API key (a React `key`).
 #   API requests carry the secret, so they never follow a redirect (`follow_redirects = FALSE`).
 # * Throttle and retries: `.intl_response()` (>= 1 s per host on every attempt, the key page
-#   included); scb retries HTTP 500 (`retry_500 = TRUE`, the sdv-py policy). 403 is not retried by
+#   included); scb retries HTTP 500 (`retry_500 = TRUE`, the sportsdataverse-py policy). 403 is not retried by
 #   the transport: here it is a refused secret, handled by the re-derive.
 # * Seasons: the API's `seasonId` is the START year; the public `season` is the END year, mapped by
 #   `.scb_season_id()` (`season - 1`).
@@ -93,7 +93,7 @@
 
 #' The API's `seasonId` (START year) for an END-year `season`; `NULL` stays `NULL`.
 #'
-#' sdv-py `scb_runtime.season_id()`: `season - 1` (2026 -> 2025, the 2025-26 season).
+#' sportsdataverse-py `scb_runtime.season_id()`: `season - 1` (2026 -> 2025, the 2025-26 season).
 #' @param season END year: a whole positive number or a digit string.
 #' @return Integer, or `NULL`.
 #' @noRd

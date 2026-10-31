@@ -55,12 +55,14 @@ the basket and within 80 legacy units of the paint center
 }\if{html}{\out{</div>}}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try({
     df <- nba_shot_zones(game_id = "0022200001")
     print(df[!is.na(df$shot_zone), c("shot_distance", "shot_zone")])
   })
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Lineup Functions:

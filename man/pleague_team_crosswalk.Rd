@@ -7,7 +7,7 @@
 pleague_team_crosswalk()
 }
 \value{
-A \code{hoopR_data} tibble of eight rows (sdv-py \code{pleague_team_crosswalk}):\tabular{lll}{
+A \code{hoopR_data} tibble of eight rows (sportsdataverse-py \code{pleague_team_crosswalk}):\tabular{lll}{
    col_name \tab type \tab description \cr
    team_id \tab integer \tab P. LEAGUE+ site team id (1-8), stable across seasons and renames. \cr
    team_uuid \tab character \tab Preciser team uuid of the same club (team_uuid of the pleague_preciser frames). \cr

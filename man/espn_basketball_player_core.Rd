@@ -82,7 +82,7 @@ likewise a current snapshot: ESPN overwrites them in place, so era-correct
 bio is not obtainable from this endpoint.
 
 \strong{Parity.} This is a port of \code{sportsdataverse.nba.helper_nba_player_core}
-(sdv-py 0.0.75), which produces the released dataset today. The two are
+(sportsdataverse-py 0.0.75), which produces the released dataset today. The two are
 held to byte-parity by \code{tests/testthat/test-espn_basketball_player_core.R}
 against a golden fixture captured from that function; see
 \code{tests/testthat/fixtures/player_core/README.md} for provenance. Neither
@@ -92,7 +92,7 @@ implementation is authoritative — a divergence is a review item.
 
 \code{wehoop::espn_basketball_player_core()} is the identical function for the
 women's leagues. The core-v2 athlete resource is the same payload shape for
-nba/wnba/mbb/wbb, so the projection is league-agnostic -- sdv-py implements
+nba/wnba/mbb/wbb, so the projection is league-agnostic -- sportsdataverse-py implements
 it once and re-exports it per league. hoopR and wehoop are independently
 published and neither depends on the other, so here it is duplicated:
 \strong{a change to one must land in the other in the same session, verified.}

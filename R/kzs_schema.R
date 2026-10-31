@@ -1,7 +1,7 @@
 # kzs_schema.R -- documented columns and types of the KZS frames.
 #
-# Copied from sdv-py origin/main e3d232ebc9: `DTYPES` of sportsdataverse/basketball/kzs/kzs_dtypes.py (generated there
-# from the returns schemas). Codes: i integer, f double, b logical, s character. Change the columns in sdv-py
+# Copied from sportsdataverse-py origin/main e3d232ebc9: `DTYPES` of sportsdataverse/basketball/kzs/kzs_dtypes.py (generated there
+# from the returns schemas). Codes: i integer, f double, b logical, s character. Change the columns in sportsdataverse-py
 # first, then copy them here.
 
 #' @noRd

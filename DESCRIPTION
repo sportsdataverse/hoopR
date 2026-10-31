@@ -10,14 +10,18 @@ Authors@R: c(
     person("Vladislav", "Shufinskiy", , "hollywood.90210@mail.ru", role = "ctb")
   )
 Description: A utility to quickly obtain clean and tidy men's basketball
-    play by play data. Provides functions to access live play by play and
-    box score data from ESPN with shot locations
-    when available. It is also a full NBA Stats
-    API<https://www.nba.com/stats/> wrapper.  It is also a scraping and
-    aggregating interface for Ken Pomeroy's men's college basketball
-    statistics website<https://kenpom.com>. It provides users with an
-    active subscription the capability to scrape the website tables and
-    analyze the data for themselves.
+    play by play, box score, schedule and player data. More than 1,300
+    functions cover the 'ESPN' API (NBA and men's college basketball, with
+    shot locations when available), the 'NBA Stats' API
+    <https://www.nba.com/stats/>, the 'NBA G League', Ken Pomeroy's men's
+    college basketball statistics website <https://kenpom.com> (for users
+    with an active subscription), the 'CollegeBasketballData' API, 'Bart
+    Torvik', 'RealGM', 'Basketball-Reference', 'Fox Sports', the 'NCAA',
+    'EuroLeague' and about two dozen international leagues and competitions
+    (among them 'FIBA' events, 'ACB', 'Lega Basket', 'VTB United League',
+    'B.LEAGUE', 'NBL', 'KBL' and 'CBA'). Loaders read the pre-built play by
+    play, box score and schedule data sets published by the
+    'SportsDataverse'.
 License: MIT + file LICENSE
 URL: https://github.com/sportsdataverse/hoopR,
     https://hoopR.sportsdataverse.org/
@@ -34,8 +38,6 @@ Imports:
     lifecycle,
     progressr (>= 0.6.0),
     purrr (>= 1.0.0),
-    Rcpp (>= 1.0.7),
-    RcppParallel (>= 5.1.4),
     rlang (>= 1.0.0),
     rvest (>= 1.0.0),
     stringi (>= 1.7.0),
@@ -50,23 +52,17 @@ Suggests:
     curl,
     DBI,
     digest (>= 0.6.0),
-    furrr (>= 0.3.0),
-    future (>= 1.24.0),
     ggplot2,
-    ggrepel,
     glmnet,
     glue,
     Matrix,
-    rmarkdown,
     RSQLite,
     stats,
     stringdist (>= 0.9.0),
     testthat (>= 3.1.9),
     tibble (>= 3.0),
-    usethis (>= 1.6.0),
-    yaml
+    usethis (>= 1.6.0)
 Config/roxygen2/version: 8.1.0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-SystemRequirements: pandoc (>= 1.12.3), pandoc-citeproc

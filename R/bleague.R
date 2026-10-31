@@ -1,14 +1,14 @@
 # bleague.R -- the exported B.LEAGUE (Japan) `bleague_*()` wrappers.
 #
-# Column types and descriptions follow sdv-py's bleague_parsers.SPECS and
-# manual_column_descriptions.yaml (sdv-py e3d232ebc9); the runtime and parsers live in
+# Column types and descriptions follow sportsdataverse-py's bleague_parsers.SPECS and
+# manual_column_descriptions.yaml (sportsdataverse-py e3d232ebc9); the runtime and parsers live in
 # bleague_utils.R.
 
 # The @details of every bleague topic that shares the bleague_game_info() notes (roxygen @eval .intl_details()).
 .bleague_game_info_details <- c(
   "The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror",
-  "sdv-py's `sportsdataverse.basketball.bleague` wrappers of the same names: same",
-  "arguments, the same snake_case columns and types, one row per sdv-py row.",
+  "sportsdataverse-py's `sportsdataverse.basketball.bleague` wrappers of the same names: same",
+  "arguments, the same snake_case columns and types, one row per sportsdataverse-py row.",
   "",
   "**Unofficial and unsupported.** The game contexts are JSON objects in",
   "B.LEAGUE's own public S3 bucket (`b-league.s3.amazonaws.com`, the store its game",
@@ -16,8 +16,8 @@
   "`www.bleague.jp` are parsed here. Neither host publishes terms for this use",
   "(the site's /terms/ answers 404; robots.txt sets a Crawl-delay only for msnbot",
   "and bingbot). Requests are spaced at least one second apart per host; 429 and",
-  "5xx answers are retried (three attempts). SportsDataverse has not ruled on the",
-  "site's terms, so the data is not redistributed as release assets.",
+  "5xx answers are retried (three attempts). The site's terms were",
+  "not reviewed; check them before you republish the data.",
   "",
   "**Seasons** are END years (`season = 2026` is 2025-26); the site's own `Year` /",
   "`year=` is the START year, so the request sends `year = season - 1`. Game",
@@ -67,7 +67,7 @@
 #' @param season (*integer* optional): a guard, the season END year the game must
 #'   belong to; a context whose `Year` differs raises `hoopR_asset_fetch`. `NULL`
 #'   (default) = no check (the key alone selects the game).
-#' @eval .intl_details(.bleague_game_info_details)
+#' @eval .intl_details(.bleague_game_info_details, full = TRUE)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -233,7 +233,7 @@ bleague_period_scores <- function(schedule_key, season = NULL) {
 #' advanced columns (`plus_minus`, `ast_to`, `efg`, `ts`, `usg`) exist from 2022-23 on
 #' v2 only, and `dunks` / `ptpft` exist on v1 only.
 #' @inheritParams bleague_game_info
-#' @inherit bleague_game_info details
+#' @eval .intl_details(.bleague_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -314,7 +314,7 @@ bleague_player_box <- function(schedule_key, season = NULL) {
 #' columns as [bleague_player_box()]. The v2 totals row carries no `TeamID`; `team_id`
 #' is filled from the game header.
 #' @inheritParams bleague_game_info
-#' @inherit bleague_game_info details
+#' @eval .intl_details(.bleague_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -468,7 +468,7 @@ bleague_team_summary <- function(schedule_key, season = NULL) {
 #' instants (POSIXct, tz UTC). Game-level rows (start, period, clock) carry `NA` team
 #' and player columns.
 #' @inheritParams bleague_game_info
-#' @inherit bleague_game_info details
+#' @eval .intl_details(.bleague_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -538,7 +538,7 @@ bleague_pbp <- function(schedule_key, season = NULL) {
 #' change ends at half-time. `in_paint` is `NA` on the B3 feed. Locations exist from
 #' 2022-23 on the v2 feed only: any other game gives a zero-row tibble.
 #' @inheritParams bleague_game_info
-#' @inherit bleague_game_info details
+#' @eval .intl_details(.bleague_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -677,7 +677,7 @@ bleague_score_track <- function(schedule_key, season = NULL) {
 #'   Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs,
 #'   11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. `NULL` (default)
 #'   = the league competition of the tab (2 / 7 / 15).
-#' @inherit bleague_game_info details
+#' @eval .intl_details(.bleague_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |
@@ -813,7 +813,7 @@ bleague_schedule_days <- function(season, tab, month, day, event = NULL) {
 #' table and in the wild-card table. `win_pct` is a 0-1 fraction. The page shows the
 #' standings as of the request, not a season end.
 #' @inheritParams bleague_schedule
-#' @inherit bleague_game_info details
+#' @eval .intl_details(.bleague_game_info_details)
 #' @return A `hoopR_data` tibble with these columns:
 #'
 #' | col_name | type | description |

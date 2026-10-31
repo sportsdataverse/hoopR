@@ -1,6 +1,6 @@
 # lba_runtime.R -- transport for the Lega Basket Serie A wrappers (www.legabasket.it/api, keyless JSON).
 #
-# R mirror of sdv-py sportsdataverse/basketball/lba/lba_runtime.py (origin/main e3d232ebc9):
+# R mirror of sportsdataverse-py sportsdataverse/basketball/lba/lba_runtime.py (origin/main e3d232ebc9):
 #
 # * Politeness: 2 s between two requests (the Crawl-delay of the site's robots.txt), on every attempt, retries
 #   included (`.intl_perform(min_interval = 2)`).
@@ -9,7 +9,7 @@
 #   (`list(season = 2027L)`) for the parsers. A season that is not an END year in 1950-2100 is
 #   `hoopR_bad_request` before any request.
 # * An unknown id is HTTP 500 text/plain, every time, so a 500 is not retried (`retry_500 = FALSE`) and raises
-#   `hoopR_asset_fetch` at once. A 403 is retried like 408 / 429 / 502 / 503 / 504 (sdv-py RETRY_STATUSES =
+#   `hoopR_asset_fetch` at once. A 403 is retried like 408 / 429 / 502 / 503 / 504 (sportsdataverse-py RETRY_STATUSES =
 #   dl_utils._RETRYABLE_STATUS minus 500, which keeps 403).
 # * Old seasons answer 200 with an empty payload (a play-by-play before 2017-18, a finished championship's
 #   standings without a round, an unknown season): `hoopR_no_data`.
@@ -130,7 +130,7 @@
   is.integer(got) && !is.na(got) && got == want
 }
 
-#' `x` printed the way the sdv-py messages print it.
+#' `x` printed the way the sportsdataverse-py messages print it.
 #' @noRd
 .lba_show <- function(x) {
   if (is.null(x)) return("null")
@@ -176,7 +176,7 @@
   }
 }
 
-#' sdv-py `_is_empty`: a list / object with no value other than null, "", [] or {}; a scalar only when null.
+#' sportsdataverse-py `_is_empty`: a list / object with no value other than null, "", [] or {}; a scalar only when null.
 #' @noRd
 .lba_is_empty <- function(value) {
   if (is.null(value)) return(TRUE)
@@ -292,7 +292,7 @@
   make_hoopR_data(.lba_parse(short, body), paste("LBA", route$title, "from legabasket.it"), Sys.time())
 }
 
-#' `value` must be one of `choices` (sdv-py raises ValueError naming the argument).
+#' `value` must be one of `choices` (sportsdataverse-py raises ValueError naming the argument).
 #' @noRd
 .lba_choice <- function(value, choices, arg, call = rlang::caller_env()) {
   if (!is.character(value) || length(value) != 1L || !value %in% choices) {

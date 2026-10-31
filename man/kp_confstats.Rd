@@ -56,9 +56,11 @@ A data frame with the following columns:
 \strong{Get KenPom's conference comparison stats}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_confstats(year=most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:

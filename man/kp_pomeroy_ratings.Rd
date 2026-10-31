@@ -343,34 +343,51 @@ Returns a list of tibbles: "kPoYRatings", "GameMVPs"
 \strong{Get KPoY Leaders Tables}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_pomeroy_ratings(min_year = 2020, max_year = 2021))
+try(kp_pomeroy_ratings(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_efficiency(min_year = 2020, max_year = 2021))
+try(kp_efficiency(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_fourfactors(min_year = 2020, max_year = 2021))
+try(kp_fourfactors(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_pointdist(min_year = 2020, max_year = 2021))
+try(kp_pointdist(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_height(min_year = 2020, max_year = 2021))
+try(kp_height(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_foul_trouble(min_year = 2020, max_year = most_recent_mbb_season()))
+try(kp_foul_trouble(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-try(kp_teamstats(min_year = 2019, max_year = 2021))
+try(kp_teamstats(min_year = 2021, max_year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_kpoy(year = 2026))
 }
-
+\dontshow{\}) # examplesIf}
 }
 \concept{KenPom Ratings Functions}
 \keyword{Efficiency}

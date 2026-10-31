@@ -1,6 +1,6 @@
 # intl_basketball_competitions.R -- the per-competition alias registry.
 #
-# Copied from sdv-py tools/codegen/basketball_competitions.yaml (sdv-py origin/main
+# Copied from sportsdataverse-py tools/codegen/basketball_competitions.yaml (sportsdataverse-py origin/main
 # e3d232e), keeping the hoopR genders only (men + both). One entry per competition
 # over the three multi-competition engines:
 #   fiba    ids$family_id = GDAP competitionMarketingNameId (one edition per season)
@@ -11,7 +11,7 @@
 # Every entry carries key, prefix (the alias prefix, `<prefix>_schedule`), label,
 # ids, gender and season_rule; extra engine fields follow. The alias functions
 # themselves live in each engine's own file (R/fiba*.R, R/genius*.R, R/atrium*.R),
-# not here. To add a competition: add it to the sdv-py YAML first, then copy the
+# not here. To add a competition: add it to the sportsdataverse-py YAML first, then copy the
 # entry here if its gender is men + both.
 
 #' Competition registry, by engine (internal).

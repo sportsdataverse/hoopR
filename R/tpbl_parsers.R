@@ -1,10 +1,10 @@
 # tpbl_parsers.R -- frames of the TPBL wrappers (internal; parse_* is not exported).
 #
-# R mirror of sdv-py sportsdataverse/basketball/tpbl/tpbl_parsers.py (origin/main e3d232ebc9). Every frame is
-# built from `.tpbl_specs` (below, copied from sdv-py `SPECS`): one type per column, never sampled. Codes: i
+# R mirror of sportsdataverse-py sportsdataverse/basketball/tpbl/tpbl_parsers.py (origin/main e3d232ebc9). Every frame is
+# built from `.tpbl_specs` (below, copied from sportsdataverse-py `SPECS`): one type per column, never sampled. Codes: i
 # integer, f double, s character, b logical, d Date, t POSIXct. Every id is an integer (all fit R's integer),
-# shirt numbers stay character, the percentages (one-decimal strings on the wire, '57.1') are doubles on sdv-py's
-# 0-100 scale, attendance (a string on the wire) is an integer. `tipoff` is POSIXct in Asia/Taipei: sdv-py's is a
+# shirt numbers stay character, the percentages (one-decimal strings on the wire, '57.1') are doubles on sportsdataverse-py's
+# 0-100 scale, attendance (a string on the wire) is an integer. `tipoff` is POSIXct in Asia/Taipei: sportsdataverse-py's is a
 # naive Taiwan-local timestamp (the API sends no zone). An empty or unrecognised input is a zero-row tibble with
 # the documented columns.
 #
@@ -15,7 +15,7 @@
 #' @noRd
 .tpbl_scalar <- function(v) !is.null(v) && is.atomic(v) && length(v) == 1L && !is.na(v)
 
-#' An integer from an integer, a whole double or a digit string; never from a logical (sdv-py `_i`).
+#' An integer from an integer, a whole double or a digit string; never from a logical (sportsdataverse-py `_i`).
 #' @noRd
 .tpbl_i <- function(v) {
   if (!.tpbl_scalar(v) || is.logical(v)) return(NA_integer_)
@@ -29,7 +29,7 @@
   if (abs(f) > .Machine$integer.max) NA_integer_ else as.integer(f)
 }
 
-#' A double from a number or a decimal string, a trailing '%' dropped (sdv-py `_f`).
+#' A double from a number or a decimal string, a trailing '%' dropped (sportsdataverse-py `_f`).
 #' @noRd
 .tpbl_f <- function(v) {
   if (!.tpbl_scalar(v) || is.logical(v)) return(NA_real_)
@@ -108,7 +108,7 @@
   .tpbl_frame(rows, .tpbl_specs$seasons)
 }
 
-#' The second year of a 'YYYY-YYYY' label (sdv-py's parser does not require it to be the first + 1).
+#' The second year of a 'YYYY-YYYY' label (sportsdataverse-py's parser does not require it to be the first + 1).
 #' @noRd
 .tpbl_season_label_end <- function(name) {
   if (!is.character(name) || length(name) != 1L) return(NULL)
@@ -386,7 +386,7 @@
 .tpbl_out <- function(df, what) make_hoopR_data(df, paste("TPBL", what, "from api.tpbl.basketball"), Sys.time())
 
 # ---------------------------------------------------------------------------
-# Documented columns (sdv-py SPECS; change them there first, then copy them here)
+# Documented columns (sportsdataverse-py SPECS; change them there first, then copy them here)
 # ---------------------------------------------------------------------------
 
 #' @noRd

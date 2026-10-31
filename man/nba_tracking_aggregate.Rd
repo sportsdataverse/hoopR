@@ -80,6 +80,7 @@ shared with the \code{sportsdataverse} reference engine); verify aggregation
 semantics before using rate-heavy measures.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try({
     df <- nba_tracking_aggregate(
@@ -90,6 +91,7 @@ semantics before using rate-heavy measures.
     print(df[1:5, c("PLAYER_ID", "PLAYER_NAME", "DRIVES", "DRIVE_FG_PCT")])
   })
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Player Tracking Functions:

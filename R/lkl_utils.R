@@ -1,7 +1,7 @@
 # lkl_utils.R -- runtime and parsers of the LKL `lkl_*()` family (Lietuvos
 # krepsinio lyga, Lithuania, on lkl.lt).
 #
-# R mirror of sdv-py sportsdataverse/basketball/lkl/ (lkl_runtime.py +
+# R mirror of sportsdataverse-py sportsdataverse/basketball/lkl/ (lkl_runtime.py +
 # lkl_parsers.py, e3d232e): same routes, same refusals, same column specs. One
 # host, keyless: the livestream JSON API (/api/livestream/{route}/{gameId}) plus
 # three server-rendered HTML routes (the game page /rungtynes/{gameId}, the
@@ -26,7 +26,7 @@
 #   from 2024-25). hoopR_bad_request: a non-integer game id or season, HTTP 400 /
 #   422. hoopR_asset_fetch: everything else above.
 #
-# Parsers: one column spec per wrapper (.LKL_SPECS, ported from sdv-py SPECS);
+# Parsers: one column spec per wrapper (.LKL_SPECS, ported from sportsdataverse-py SPECS);
 # a malformed body is a typed zero-row tibble. Lithuanian text in code is
 # written with \u escapes.
 
@@ -112,7 +112,7 @@
 # Small helpers
 # ---------------------------------------------------------------------------
 
-# a page that is not the data asked for (sdv-py _NotParsed); `empty` marks the
+# a page that is not the data asked for (sportsdataverse-py _NotParsed); `empty` marks the
 # right page holding no games (raised as hoopR_no_data)
 .lkl_not_parsed <- function(msg, empty = FALSE) {
   rlang::abort(msg, class = "hoopR_lkl_not_parsed", empty = isTRUE(empty))
@@ -151,7 +151,7 @@
   as.numeric(a) == as.numeric(b)
 }
 
-# type-strict equality (sdv-py _same: 1 != "1", TRUE != 1, 1L != 1.0)
+# type-strict equality (sportsdataverse-py _same: 1 != "1", TRUE != 1, 1L != 1.0)
 .lkl_same <- function(a, b) {
   if (is.null(a) || is.null(b)) return(is.null(a) && is.null(b))
   .lkl_scalar(a) && .lkl_scalar(b) && identical(typeof(a), typeof(b)) && a == b
@@ -224,7 +224,7 @@
   rvest::html_text(rvest::html_element(doc, "p"))
 }
 
-#' Tags dropped, entities decoded, whitespace collapsed and stripped (sdv-py `_text`).
+#' Tags dropped, entities decoded, whitespace collapsed and stripped (sportsdataverse-py `_text`).
 #' @noRd
 .lkl_text <- function(fragment) {
   x <- .lkl_unescape(gsub("<[^>]+>", " ", fragment %||% "", perl = TRUE))
@@ -251,7 +251,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Casts (sdv-py lkl_parsers _i / _f / _s / _b / _mmss / _made_att / _date)
+# Casts (sportsdataverse-py lkl_parsers _i / _f / _s / _b / _mmss / _made_att / _date)
 # ---------------------------------------------------------------------------
 
 # an id / count from an integer or an integer string, never through a float
@@ -320,7 +320,7 @@
 # ---------------------------------------------------------------------------
 
 #' `obj` with personal contact / birth-date values replaced by `"<redacted>"`
-#' by key name, at any depth (sdv-py `_redact_personal`).
+#' by key name, at any depth (sportsdataverse-py `_redact_personal`).
 #' @noRd
 .lkl_redact <- function(obj) {
   if (!is.list(obj) || !length(obj)) return(obj)
@@ -332,7 +332,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# HTML readers (sdv-py lkl_parsers _game_record / _options / _results_* / _standings_record)
+# HTML readers (sportsdataverse-py lkl_parsers _game_record / _options / _results_* / _standings_record)
 # ---------------------------------------------------------------------------
 
 #' The `<game-info-component>` props of the game page as one record (`:`-props are JSON).
@@ -621,7 +621,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Game page and JSON routes (sdv-py lkl_runtime _game / _api / _scope_error)
+# Game page and JSON routes (sportsdataverse-py lkl_runtime _game / _api / _scope_error)
 # ---------------------------------------------------------------------------
 
 .lkl_team <- function(rec, side) {
@@ -814,7 +814,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Season pages (sdv-py lkl_runtime _season_id / _results / _standings)
+# Season pages (sportsdataverse-py lkl_runtime _season_id / _results / _standings)
 # ---------------------------------------------------------------------------
 
 #' The id whose label ends in `season` in `select#select_id` of the index page.
@@ -884,7 +884,7 @@
   .lkl_redact(rec)
 }
 
-#' The raw body or page record one wrapper reads (sdv-py `lkl_runtime._get`).
+#' The raw body or page record one wrapper reads (sportsdataverse-py `lkl_runtime._get`).
 #' @noRd
 .lkl_raw <- function(short, value, call) {
   route <- .LKL_ROUTE[[short]]
@@ -908,7 +908,7 @@
 }
 
 # ---------------------------------------------------------------------------
-# Parsers (sdv-py lkl_parsers parse_lkl_*): each returns exactly its spec
+# Parsers (sportsdataverse-py lkl_parsers parse_lkl_*): each returns exactly its spec
 # ---------------------------------------------------------------------------
 
 .lkl_side_spec <- function(cols) {

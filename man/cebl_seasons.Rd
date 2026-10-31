@@ -8,7 +8,7 @@ cebl_seasons()
 }
 \value{
 A \code{hoopR_data} tibble: Every CEBL season (2019 on), with the active and live flags. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sdv-py \code{cebl_seasons}):\tabular{lll}{
+\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_seasons}):\tabular{lll}{
    col_name \tab type \tab description \cr
    season_id \tab integer \tab CEBL season row id (1 = 2019 ... 8 = 2026). No route takes it: routes take \code{year}. \cr
    season \tab integer \tab Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's \code{season} param takes. \cr
@@ -23,13 +23,12 @@ Endpoint: \verb{GET https://api.data.cebl.ca/seasons/}
 }
 \details{
 \itemize{
-\item CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
+\item Unofficial use of the CEBL's own API: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
 the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.
 The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not
 reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never
 prints it, and raises \code{hoopR_asset_fetch} with a 'key rotated?' hint on a persistent 401.
-www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced
-at least 1 s apart.
+www.cebl.ca/robots.txt disallows nothing. Requests are spaced at least 1 s apart.
 \item Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An
 unknown season, team or player answers an empty list, which the runtime raises as \code{hoopR_no_data}. Ids are
 CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).
@@ -47,7 +46,7 @@ the API still refuses after one re-read, any other non-200, a non-JSON body, an 
 another season, team or player), all inheriting \code{hoopR_error}. HTTP 500 is the API's answer to a bad id and is
 not retried. Wrappers raise; they never return an empty frame.
 \item Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
-JSON here (\code{{"name":"TSN"}}), where sdv-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
+JSON here (\code{{"name":"TSN"}}), where sportsdataverse-py's String cast writes Python's \code{str(dict)} repr (\code{{'name': 'TSN'}}).
 No string column of the committed fixtures carries an object.
 }
 }

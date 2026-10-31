@@ -6,10 +6,13 @@
 \usage{
 most_recent_nba_stats_season()
 }
+\value{
+The season's start year (numeric), one less than \code{\link[=most_recent_nba_season]{most_recent_nba_season()}}.
+}
 \description{
 Returns the most recent season's \strong{START} year -- the \code{seasons} value
 the \verb{nba_stats_*} release loaders expect (see \code{\link[=load_nba_stats_coaches]{load_nba_stats_coaches()}}),
-matching sdv-py's \verb{load_nba_stats_*} Python loaders. It is defined as
+matching sportsdataverse-py's \verb{load_nba_stats_*} Python loaders. It is defined as
 \code{most_recent_nba_season() - 1}: \code{\link[=most_recent_nba_season]{most_recent_nba_season()}} returns the
 current season's \strong{END} year (hoopR's ESPN-family convention, used
 directly -- with no offset -- by \verb{load_nba_*()}), and the published

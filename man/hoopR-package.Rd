@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-A utility to quickly obtain clean and tidy men's basketball play by play data. Provides functions to access live play by play and box score data from ESPN with shot locations when available. It is also a full NBA Stats API\url{https://www.nba.com/stats/} wrapper. It is also a scraping and aggregating interface for Ken Pomeroy's men's college basketball statistics website\url{https://kenpom.com}. It provides users with an active subscription the capability to scrape the website tables and analyze the data for themselves.
+A utility to quickly obtain clean and tidy men's basketball play by play, box score, schedule and player data. More than 1,300 functions cover the 'ESPN' API (NBA and men's college basketball, with shot locations when available), the 'NBA Stats' API \url{https://www.nba.com/stats/}, the 'NBA G League', Ken Pomeroy's men's college basketball statistics website \url{https://kenpom.com} (for users with an active subscription), the 'CollegeBasketballData' API, 'Bart Torvik', 'RealGM', 'Basketball-Reference', 'Fox Sports', the 'NCAA', 'EuroLeague' and about two dozen international leagues and competitions (among them 'FIBA' events, 'ACB', 'Lega Basket', 'VTB United League', 'B.LEAGUE', 'NBL', 'KBL' and 'CBA'). Loaders read the pre-built play by play, box score and schedule data sets published by the 'SportsDataverse'.
 }
 \details{
 \strong{\code{stats.nba.com} / \code{stats.wnba.com} blocking (#142):} the NBA Stats API

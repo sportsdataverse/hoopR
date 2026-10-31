@@ -1,9 +1,9 @@
-# cba_parsers.R -- frames of the CBA wrappers, the R mirror of sdv-py
+# cba_parsers.R -- frames of the CBA wrappers, the R mirror of sportsdataverse-py
 # sportsdataverse/basketball/cba/cba_parsers.py + cba_dtypes.py (origin/main e3d232e).
 #
 # Every parser takes the DECRYPTED body (stamped with `_request` = list(schedule_id) on the game
 # routes that answer an object) and returns a tibble with snake_case columns (.intl_clean_names, the
-# port of sdv-py dl_utils.underscore), typed by .cba_dtypes. An empty or unrecognised body gives a
+# port of sportsdataverse-py dl_utils.underscore), typed by .cba_dtypes. An empty or unrecognised body gives a
 # zero-row tibble with the documented columns.
 #
 # Row rule (.cba_routes, one entry per parser): a list body is the rows; `records` is the page of a
@@ -58,7 +58,7 @@
   list(num = if (is.finite(num)) num else NA_real_, text = TRUE)
 }
 
-#' Python `str()` of a scalar or compact JSON of a list (sdv-py's String cast).
+#' Python `str()` of a scalar or compact JSON of a list (sportsdataverse-py's String cast).
 #' @noRd
 .cba_str <- function(v) {
   if (is.null(v)) return(NA_character_)
@@ -184,7 +184,7 @@
 #' @noRd
 .cba_out <- function(short, raw, type) make_hoopR_data(.cba_frame(short, raw), type, Sys.time())
 
-# Column dtypes, one map per parser: sdv-py cba_dtypes.DTYPES (generated there by
+# Column dtypes, one map per parser: sportsdataverse-py cba_dtypes.DTYPES (generated there by
 # tools/codegen/gen_cba.py from full-body presence sidecars). Codes: "i" integer, "f" double, "p" double
 # from a percent string (a FRACTION 0-1), "b" logical, "s" character; "I" (R only) exact-digits
 # character for an id wider than R's integer.

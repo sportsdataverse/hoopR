@@ -18,7 +18,7 @@ the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()
 }
 \value{
 A \code{hoopR_data} tibble with one row (the game). The \code{local_players} /
-\code{road_players} cells are JSON text: semantically equal to sdv-py's, not
+\code{road_players} cells are JSON text: semantically equal to sportsdataverse-py's, not
 byte-equal (separators and unicode escaping differ):
 
 \if{html}{\tabular{lll}{
@@ -139,12 +139,12 @@ For one row per player use \code{\link[=euroleague_game_boxscore]{euroleague_gam
 }
 \details{
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors its sdv-py twin of the same name: same arguments, defaults
-and snake_case columns, one row per sdv-py row.
+wraps it. This
+function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+and snake_case columns, one row per sportsdataverse-py row.
 
 A failed request raises a classed condition instead of returning an empty
-frame, mirroring sdv-py's error vocabulary: a 404 is \code{hoopR_no_data}, a
+frame, mirroring sportsdataverse-py's error vocabulary: a 404 is \code{hoopR_no_data}, a
 400 / 422 is \code{hoopR_invalid_request}, any other failure (another status, a
 transport error, a non-JSON body) is \code{hoopR_fetch_error}; all three inherit
 \code{hoopR_error}.

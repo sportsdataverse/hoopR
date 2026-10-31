@@ -6,6 +6,9 @@
 \usage{
 most_recent_mbb_season()
 }
+\value{
+The season's end year (numeric): next year from October on, otherwise this year.
+}
 \description{
 \strong{Most Recent Men's College Basketball Season}
 }

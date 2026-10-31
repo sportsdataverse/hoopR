@@ -1,7 +1,7 @@
 # genius_runtime.R -- Genius Sports LiveStats: transport, page records and frame parsers (internal).
 #
-# R mirror of sdv-py sportsdataverse/basketball/genius/{genius_runtime,genius_parsers}.py
-# (sdv-py origin/main e3d232e). Three keyless hosts:
+# R mirror of sportsdataverse-py sportsdataverse/basketball/genius/{genius_runtime,genius_parsers}.py
+# (sportsdataverse-py origin/main e3d232e). Three keyless hosts:
 #   fibalivestats.dcd.shared.geniussports.com  /data/{matchId}/data.json, /data/competition/{compId}.json,
 #                                               the /u/{ORG}/{matchId}/ HTML shell
 #   hosted.dcd.shared.geniussports.com          hosted WebStats pages (chooser, schedules, /embednf/)
@@ -13,7 +13,7 @@
 # Two 403s, never read one as the other: CloudFront "Request blocked" (the egress IP is
 # refused: hoopR_asset_fetch, definitive) and S3 AccessDenied (no such object: hoopR_no_data).
 # HTTP 500 "A website error has occurred" is an intermittent host-side failure that sticks to a
-# URL for minutes: hoopR_asset_fetch with transient = TRUE, not retried inline (sdv-py #870).
+# URL for minutes: hoopR_asset_fetch with transient = TRUE, not retried inline (sportsdataverse-py #870).
 # A body for another scope than the one asked for, a cut-off page, an error envelope or an
 # unfinished game is hoopR_asset_fetch.
 
@@ -84,7 +84,7 @@
   away_team_code = "character", away_score = "integer"
 )
 
-# The pinned columns and types of every frame (sdv-py genius_parsers.SCHEMAS).
+# The pinned columns and types of every frame (sportsdataverse-py genius_parsers.SCHEMAS).
 .genius_schemas <- list(
   game = c(
     match_id = "integer", period = "integer", period_type = "character", in_ot = "integer",
@@ -158,7 +158,7 @@
 #' An integer from an int, an integral double or a digit string; NA otherwise (logicals too).
 #' @noRd
 .genius_int <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.genius_scalar(v) || is.logical(v)) return(NA_integer_)
   if (is.integer(v)) return(v)
   if (is.double(v)) return(if (v == trunc(v) && abs(v) <= .Machine$integer.max) as.integer(v) else NA_integer_)
@@ -167,7 +167,7 @@
 }
 
 .genius_num <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.genius_scalar(v) || is.logical(v)) return(NA_real_)
   if (is.numeric(v)) return(as.double(v))
   if (is.character(v)) return(suppressWarnings(as.double(trimws(v))))
@@ -194,7 +194,7 @@
 #' "35:08" -> 2108; an integer or other text -> NA.
 #' @noRd
 .genius_seconds <- function(v) {
-  v <- .intl_ascii_digits(v) # full-width digits, as sdv-py's \d / int() read them
+  v <- .intl_ascii_digits(v) # full-width digits, as sportsdataverse-py's \d / int() read them
   if (!.genius_scalar(v) || !is.character(v)) return(NA_integer_)
   m <- regmatches(v, regexec("^\\s*(\\d+):(\\d{1,2})\\s*$", v, perl = TRUE))[[1]]
   if (!length(m)) return(NA_integer_)
@@ -242,7 +242,7 @@
     if (!.genius_is_dict(node)) return(.genius_str(raw[[flat]]))
     first <- node[["internationalFirstName"]]
     if (.genius_truthy(first)) {
-      # sdv-py's f-string writes a null family name as "None"; a null part is skipped here
+      # sportsdataverse-py's f-string writes a null family name as "None"; a null part is skipped here
       parts <- vapply(list(first, node[["internationalFamilyName"]]), .genius_str, "")
       return(paste(parts[!is.na(parts)], collapse = " "))
     }
@@ -327,7 +327,7 @@
     if (!.genius_is_dict(r)) next
     q <- r[["qualifier"]]
     qual <- if (.genius_is_array(q)) {
-      # a null code is skipped (sdv-py joins it as "None"); an empty list joins to "" as in sdv-py
+      # a null code is skipped (sportsdataverse-py joins it as "None"); an empty list joins to "" as in sportsdataverse-py
       codes <- vapply(q, .genius_str, "")
       paste(codes[!is.na(codes)], collapse = ",")
     } else if (.genius_truthy(q)) q else NULL
@@ -548,7 +548,7 @@
   list(matches = rows)
 }
 
-#' Reduce a fetched page to its record (the sdv-internal-refs capture shape).
+#' Reduce a fetched page to its record (the record shape of a parsed HTML page).
 #'
 #' Raises a `genius_not_parsed` condition (field `empty`: TRUE for a legitimate
 #' "nothing here") for an empty, cut-off or wrong-kind page.
@@ -701,7 +701,7 @@
   .abort_asset_fetch("{msg}", call = call)
 }
 
-#' Type-strict equality (sdv-py `_same`): an integer id equals an integer only.
+#' Type-strict equality (sportsdataverse-py `_same`): an integer id equals an integer only.
 #' @noRd
 .genius_same <- function(got, want) .genius_scalar(got) && is.integer(got) && identical(got, want)
 

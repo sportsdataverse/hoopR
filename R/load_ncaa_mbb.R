@@ -1,8 +1,7 @@
 # NCAA MBB release-dataset loaders -- thin wrappers around rds_from_url()
 # mirroring wehoop's load_ncaa_wbb.R loader shape. Backed by
-# the sdv-py `ncaa_mbb` engine's published output on the `ncaa_mbb_*`
-# sportsdataverse-data release tags (see CLAUDE.md's ncaa-hoops-engine-extraction
-# note for the engine's origin).
+# the sportsdataverse-py `ncaa_mbb` engine's published output on the `ncaa_mbb_*`
+# sportsdataverse-data release tags.
 
 # The NCAA <-> ESPN bridge columns are character in the assets; cast them to
 # integer so they join to ESPN game_id / team_id. NCAA ids (contest_id,
@@ -19,7 +18,7 @@
 #' @description Loads season-level NCAA men's college basketball
 #'   play-by-play. One row per event, with reconstructed 5-man lineups,
 #'   possession numbering, shot context (transition/paint/second-chance), and
-#'   an ESPN game-id crosswalk. Produced by the sdv-py `ncaa_mbb` engine
+#'   an ESPN game-id crosswalk. Produced by the sportsdataverse-py `ncaa_mbb` engine
 #'   (stats.ncaa.org play-by-play parsed, cleaned, and enriched); backed by
 #'   the `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_pbp`
 #'   release tag as csv.gz/parquet/rds.
@@ -172,7 +171,7 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
 #'   zone, and made/missed result. Coordinates are only available from the
 #'   2019 season onward (stats.ncaa.org did not publish shot-location data
 #'   before then), so `seasons` has a 2019 floor even though most sibling NCAA
-#'   MBB datasets start at 2010. Produced by the sdv-py `ncaa_mbb` engine;
+#'   MBB datasets start at 2010. Produced by the sportsdataverse-py `ncaa_mbb` engine;
 #'   backed by the `ncaa-mbb-hoops-data` pipeline, published to the
 #'   `ncaa_mbb_shots` release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -258,7 +257,7 @@ NULL
 #'   college basketball -- one row per contiguous stretch a specific 5-player
 #'   lineup was on court for a team, with on/off scoring, shooting, and
 #'   rebounding splits plus the matching opponent (`opp_*`) splits. Produced
-#'   by the sdv-py `ncaa_mbb` engine's lineup reconstructor; backed by the
+#'   by the sportsdataverse-py `ncaa_mbb` engine's lineup reconstructor; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_lineups`
 #'   release tag as csv.gz/parquet/rds.
 #' @param seasons A vector of 4-digit season-ending years for NCAA men's
@@ -403,7 +402,7 @@ load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
 #'   lineup crossed with the away 5-man lineup) for NCAA men's college
 #'   basketball -- one row per contiguous stretch both lineups were on court
 #'   together, with the score at stint start/end and both team's lineup
-#'   rosters. Produced by the sdv-py `ncaa_mbb` engine's lineup reconstructor;
+#'   rosters. Produced by the sportsdataverse-py `ncaa_mbb` engine's lineup reconstructor;
 #'   backed by the `ncaa-mbb-hoops-data` pipeline, published to the
 #'   `ncaa_mbb_matchup_stints` release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -500,7 +499,7 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
 #'   basketball -- one row per offensive possession, with the on-court 5-man
 #'   lineups for both teams, points scored, assist/transition/garbage-time
 #'   flags, and the possession's first and last event types. Produced by the
-#'   sdv-py `ncaa_mbb` engine's possession detector; backed by the
+#'   sportsdataverse-py `ncaa_mbb` engine's possession detector; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_possessions`
 #'   release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -620,7 +619,7 @@ load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
 #'   ratings for NCAA men's college basketball -- one row per
 #'   player-team-season, fit against teammate lineup variation within that
 #'   team's own possessions (not a cross-team national RAPM). Produced by the
-#'   sdv-py `ncaa_mbb` engine's RAPM model on top of the reconstructed
+#'   sportsdataverse-py `ncaa_mbb` engine's RAPM model on top of the reconstructed
 #'   lineup/possession data; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_rapm_within_team` release tag as
 #'   csv.gz/parquet/rds.
@@ -696,7 +695,7 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
 #'   ratings for NCAA men's college basketball -- one row per
 #'   player-season, fit against lineup variation across all Division I
 #'   stints for that season (not a within-team RAPM). Produced by the
-#'   sdv-py `ncaa_mbb` engine's league-wide stint-ridge RAPM solver
+#'   sportsdataverse-py `ncaa_mbb` engine's league-wide stint-ridge RAPM solver
 #'   (Torvik-gated to Division I teams) on top of the reconstructed
 #'   lineup/possession data; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_rapm` release tag as csv.gz/parquet/rds.
@@ -778,7 +777,7 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
 #'   assisted-vs-unassisted splits, and shot-zone efficiency rates. A superset
 #'   of the traditional box score
 #'   (points/rebounds/assists/steals/blocks/turnovers/fouls are included
-#'   alongside the advanced splits). Produced by the sdv-py `ncaa_mbb` engine;
+#'   alongside the advanced splits). Produced by the sportsdataverse-py `ncaa_mbb` engine;
 #'   backed by the `ncaa-mbb-hoops-data` pipeline, published to the
 #'   `ncaa_mbb_player_box` release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -967,7 +966,7 @@ load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),
 #'   college basketball -- one row per team-game, with offensive/defensive
 #'   ratings, shot-zone rates and efficiency (rim/mid/3),
 #'   rebounding/assist/turnover rates, and the matching opponent (`d_*`)
-#'   splits. Produced by the sdv-py `ncaa_mbb` engine; backed by the
+#'   splits. Produced by the sportsdataverse-py `ncaa_mbb` engine; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_team_box`
 #'   release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -1111,7 +1110,7 @@ load_ncaa_mbb_team_box <- function(seasons = most_recent_mbb_season(),
 #' @description Loads a lightweight season roster for NCAA men's college
 #'   basketball -- one row per player-team-season with a games-played count.
 #'   For the fuller roster (jersey, class, position, height, hometown, high
-#'   school), use [load_ncaa_mbb_team_rosters()]. Produced by the sdv-py
+#'   school), use [load_ncaa_mbb_team_rosters()]. Produced by the sportsdataverse-py
 #'   `ncaa_mbb` engine; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_rosters` release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -1178,7 +1177,7 @@ load_ncaa_mbb_rosters <- function(seasons = most_recent_mbb_season(),
 #' @description Loads the full season roster for NCAA men's college
 #'   basketball -- one row per player-team-season with jersey number, class
 #'   year, position, height, hometown, high school, and games played/started.
-#'   Produced by the sdv-py `ncaa_mbb` engine; backed by the
+#'   Produced by the sportsdataverse-py `ncaa_mbb` engine; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_team_rosters`
 #'   release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -1256,7 +1255,7 @@ load_ncaa_mbb_team_rosters <- function(seasons = most_recent_mbb_season(),
 #' @author Saiem Gilani
 #' @description Loads season schedules/results for NCAA men's college
 #'   basketball -- one row per game with home/away teams and final scores.
-#'   Produced by the sdv-py `ncaa_mbb` engine; backed by the
+#'   Produced by the sportsdataverse-py `ncaa_mbb` engine; backed by the
 #'   `ncaa-mbb-hoops-data` pipeline, published to the `ncaa_mbb_schedule`
 #'   release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes
@@ -1326,7 +1325,7 @@ load_ncaa_mbb_schedule <- function(seasons = most_recent_mbb_season(),
 #' @description Loads the season-level stats.ncaa.org team-id / conference
 #'   crosswalk for NCAA men's college basketball -- one row per team-season.
 #'   Useful for joining `ncaa_team_id` columns on the other `ncaa_mbb_*`
-#'   datasets back to a team name and conference. Produced by the sdv-py
+#'   datasets back to a team name and conference. Produced by the sportsdataverse-py
 #'   `ncaa_mbb` engine; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_team_ids` release tag as csv.gz/parquet/rds.
 #' @param ... Additional arguments passed to an underlying function that writes

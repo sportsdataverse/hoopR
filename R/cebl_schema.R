@@ -1,9 +1,9 @@
 # cebl_schema.R -- documented columns, dtypes and wire sources of the CEBL frames.
 #
-# Copied from sdv-py origin/main e3d232ebc9: `SPECS` of sportsdataverse/basketball/cebl/cebl_parsers.py.
+# Copied from sportsdataverse-py origin/main e3d232ebc9: `SPECS` of sportsdataverse/basketball/cebl/cebl_parsers.py.
 # Each entry is `column = "<source>|<type>"`: the source is the wire key, `@x` the request stamp `x`,
 # or `=...` a computed value (see `.cebl_value()`); the type is i integer, f double, s character,
-# b logical, d Date, t POSIXct (UTC). Change the columns in sdv-py first, then copy them here.
+# b logical, d Date, t POSIXct (UTC). Change the columns in sportsdataverse-py first, then copy them here.
 
 #' @noRd
 .cebl_specs <- list(

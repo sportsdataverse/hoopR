@@ -7,8 +7,8 @@
   "**Unofficial.** This is the public endpoint the Sportradar Atrium / Synergy",
   "\"Connect\" widget calls from every visitor's browser (keyless; the host has no",
   "robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the",
-  "caller's behalf, one request at least 1 s after the last to the host, and it is not",
-  "republished as release assets. Keep crawls small and incremental.",
+  "caller's behalf, one request at least 1 s after the last to the host.",
+  "Keep crawls small and incremental.",
   "",
   "**Sites and seasons.** `website_id` picks the league site; one site carries many",
   "competitions. Seasons are END years (`season = 2026`): the site's own year is the",
@@ -41,7 +41,7 @@
 #'
 #' Scores are integers (the API sends strings); `start_time_utc` is a UTC `POSIXct`;
 #' `start_time_local` is the venue's wall-clock time as the API sends it (character: its
-#' zone, `timezone`, varies per row, so no single `POSIXct` zone fits). sdv-py keeps both naive.
+#' zone, `timezone`, varies per row, so no single `POSIXct` zone fits). sportsdataverse-py keeps both naive.
 #' @param website_id (*integer* required): Site config id: which league site's widget
 #'   this is (12 LNB France, 14 LNBP Mexico, 3 NBL1 Australia, 13 El Salvador, 22
 #'   Panama, 236 Austria, 326 Montenegro). Not a league id: one site serves several
@@ -107,7 +107,7 @@
 #' | away_draw | logical | True when the game ended level for the away team. |
 #' | away_shootout_attempts | character | Shootout attempts of the away team as sent (an empty string becomes null). |
 #' | away_secondary_score | character | Secondary score of the away team (unused in the samples; shown as text). |
-#' @eval .intl_details(.atrium_fixtures_details)
+#' @eval .intl_details(.atrium_fixtures_details, full = TRUE)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -149,7 +149,7 @@ atrium_fixtures <- function(website_id, season = NULL, season_id = NULL, competi
 #' | year | integer | The site's own year of the season: the START year on LNB (site 12), the calendar year elsewhere. |
 #' | season_end_year | integer | Season END year (the sdv key): the site's year + 1 on LNB (site 12), the calendar year on the other registered sites; null when the site is unregistered, lists no seasons or the body has no season list. |
 #' | is_default_season | logical | True for the season the body is about (the site's default when none was asked). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -272,7 +272,7 @@ atrium_fixtures_ribbon <- function(website_id, season = NULL, season_id = NULL, 
 #' | away_result_status | character | Result status of the away team's score, e.g. CONFIRMED. |
 #' | home_captain_person_id | character | Person UUID of the home team's captain; null when the body names none. |
 #' | away_captain_person_id | character | Person UUID of the away team's captain; null when the body names none. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -382,7 +382,7 @@ atrium_fixture_periods <- function(website_id, fixture_id, locale = NULL) {
 #' | free_throws_attempted | integer | Free throws attempted (player, this game). |
 #' | free_throws_percentage | double | Free-throw percentage, 0-100 (player, this game). |
 #' | points_fast_break | integer | Fast-break points (LNBP only) (player, this game). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -460,7 +460,7 @@ atrium_box_score <- function(website_id, fixture_id, locale = NULL) {
 #' | total_time_in_lead | character | Time the team led, as an ISO 8601 duration (PT36M11S) (team, game total). |
 #' | total_time_in_lead_seconds | integer | Time the team led, in whole seconds (team, game total). |
 #' | total_turnovers | integer | Turnovers (team, game total). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -513,7 +513,7 @@ atrium_team_box_score <- function(website_id, fixture_id, locale = NULL) {
 #' | y | double | Shot location across the 15 m width as percent of the court (0-100); which sideline is 0 is unverified; null for non-shots. |
 #' | home_score | integer | Home team's running score after the event. |
 #' | away_score | integer | Away team's running score after the event. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -565,7 +565,7 @@ atrium_pbp <- function(website_id, fixture_id, locale = NULL) {
 #' | y | double | Shot location across the 15 m width as percent of the court (0-100); which sideline is 0 is unverified. |
 #' | home_score | integer | Home team's running score after the event. |
 #' | away_score | integer | Away team's running score after the event. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -621,7 +621,7 @@ atrium_shots <- function(website_id, fixture_id, locale = NULL) {
 #' | streak | integer | Length of the current run of results (the win / loss sign convention is unverified) (team, this table). |
 #' | streak_home | integer | Length of the current run of home results (sign convention unverified) (team, this table). |
 #' | streak_away | integer | Length of the current run of away results (sign convention unverified) (team, this table). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -713,7 +713,7 @@ atrium_standings_summary <- function(website_id, season = NULL, season_id = NULL
 #' | entity_id | character | Team UUID (entity): one id per club across seasons, shared by every site that shows the team. |
 #' | name | character | Team name in the site's language. |
 #' | image_url | character | URL of the Sportradar-hosted image (400 px). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -820,7 +820,7 @@ atrium_team <- function(website_id, entity_id, season = NULL, season_id = NULL, 
 #' | height | integer | Height as an integer, centimetres presumed (unit unverified); null when the site gives none. |
 #' | status | character | Player status in the site's language (Actif, Blesse). |
 #' | image_url | character | URL of the Sportradar-hosted image (400 px). |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -1065,7 +1065,7 @@ atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competit
 #' | stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
 #' | value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
 #' | value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples
@@ -1106,7 +1106,7 @@ atrium_player_stats <- function(website_id, season = NULL, season_id = NULL, com
 #' | stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
 #' | value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
 #' | value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
-#' @inherit atrium_fixtures details
+#' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
 #' @examples

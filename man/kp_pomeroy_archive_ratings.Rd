@@ -43,9 +43,11 @@ A data frame with 22 columns:
 \strong{Get KenPom's ratings archive pages}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:

@@ -9,6 +9,9 @@ year_to_season(year)
 \arguments{
 \item{year}{Four digit year (XXXX)}
 }
+\value{
+The season label, a character vector such as \code{"2024-25"}.
+}
 \description{
 \strong{year to season (XXXX -> XXXX-YY)}
 }

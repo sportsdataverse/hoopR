@@ -55,9 +55,9 @@ game.
 }
 \details{
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors its sdv-py twin of the same name: same arguments, defaults
-and snake_case columns, one row per sdv-py row.
+wraps it. This
+function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+and snake_case columns, one row per sportsdataverse-py row.
 
 The live API's codes are space-padded fixed-width strings
 (\code{TEAM = "IST       "}); every string cell is stripped. Its "no such game"

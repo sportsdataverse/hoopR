@@ -35,9 +35,11 @@ A data frame with 17 columns:
 \strong{Get KenPom's program ratings}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_program_ratings())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other KenPom Historical Functions:

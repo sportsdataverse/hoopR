@@ -1,6 +1,6 @@
 # acb_runtime.R -- transport, key and refusals of the ACB (Liga Endesa) wrappers.
 #
-# R mirror of sdv-py sportsdataverse/basketball/acb/acb_runtime.py (origin/main e3d232ebc9).
+# R mirror of sportsdataverse-py sportsdataverse/basketball/acb/acb_runtime.py (origin/main e3d232ebc9).
 # One host (api2.acb.com), 33 JSON routes:
 #   * Every request carries `X-APIKEY`, a public key from acb.com's Next.js bundle. The documented
 #     value is built in, `$ACB_API_KEY` overrides it, and on a 401 the runtime re-reads the key from the
@@ -339,7 +339,7 @@
   format(x)
 }
 
-#' Refuse everything that is not this route's answer (sdv-py `_validate`).
+#' Refuse everything that is not this route's answer (sportsdataverse-py `_validate`).
 #' @noRd
 .acb_validate <- function(path, body, q, where, call = rlang::caller_env()) {
   route <- .ACB_ROUTES[[path]]
