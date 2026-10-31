@@ -208,27 +208,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-10-26 19:15:06 UTC
+#> ℹ Data updated: 2026-10-31 20:12:30 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Story Men's M… From conte… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 2  5.02e7 Story Early t… The best f… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 3  5.02e7 Story 'I want… For Beckha… 2026-10-… FALSE   Jason… https:/… 41       
-#> 4  5.02e7 Story Jay Bil… Bilas' pic… 2026-10-… FALSE   Jay B… https:/… NA       
-#> 5  5.02e7 Story Ranking… From Stoke… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 1  5.03e7 Story Men's c… Which team… 2026-10-… FALSE   Mark … https:/… 41       
+#> 2  4.87e7 Story Transfe… The season… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 3  5.03e7 Story How Asa… Ranked No.… 2026-10-… FALSE   Jason… https:/… 41       
+#> 4  5.03e7 Story Predict… The past f… 2026-10-… FALSE   Myron… https:/… NA       
+#> 5  5.03e7 Head… Asa Mon… Asa Montgo… 2026-10-… FALSE   Jeff … https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:15:06 UTC
+#> ℹ Data updated: 2026-10-31 20:12:30 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Story NBA bre… Steady sta… 2026-10-… FALSE   Ben G… https:/… 46       
-#> 2  5.03e7 Prev… Los Ang… Portland T… 2026-10-… FALSE   NA     http://… 46       
-#> 3  4.16e7 Story Which N… In 2024, B… 2026-10-… FALSE   Keith… https:/… NA       
-#> 4  5.03e7 Head… Lakers'… Luka Donci… 2026-10-… FALSE   NA     https:/… 46       
-#> 5  5.03e7 Recap Luka Do… — Luka Don… 2026-10-… FALSE   NA     http://… 46       
+#> 1  5.03e7 Head… Lakers'… Jeanie Bus… 2026-10-… FALSE   Baxte… https:/… 46       
+#> 2  5.03e7 Prev… Los Ang… Toronto Ra… 2026-10-… FALSE   NA     http://… 46       
+#> 3  5.03e7 Head… Curry's… Behind a t… 2026-10-… FALSE   Antho… https:/… 46       
+#> 4  5.03e7 Recap Stephen… — Stephen … 2026-10-… FALSE   NA     http://… 46       
+#> 5  4.16e7 Story Which N… In 2024, B… 2026-10-… FALSE   Keith… https:/… NA       
 # }
 ```

@@ -206,7 +206,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_game_team_shots(schedule_id = 100105799))
 #> ── CBA Game Team Shots from data-server.cbaleague.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:13:13 UTC
+#> ℹ Data updated: 2026-10-31 20:10:43 UTC
 #> # A tibble: 2 × 50
 #>   bout_no_points_sort bout_point_sort bout_subtract_points_sort
 #>                 <dbl>           <dbl>                     <dbl>

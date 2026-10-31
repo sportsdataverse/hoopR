@@ -124,7 +124,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_final_standings(comp = 208182))
 #> ── FIBA gdap_final_standings from fiba.basketball ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:15:50 UTC
+#> ℹ Data updated: 2026-10-31 20:13:09 UTC
 #> # A tibble: 32 × 9
 #>    competition_id final_rank team_team_id team_team_code team_short_name
 #>             <int>      <int>        <int> <chr>          <chr>          

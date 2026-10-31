@@ -7,7 +7,7 @@ Columns shared verbatim across: espn_nba_game_all, espn_nba_pbp.
 |  |  |  |
 |----|----|----|
 | col_name | types | description |
-| id | character | Id. |
+| id | character | ESPN play id. Character so the 18-digit MBB ids stay exact (a double cannot hold them). |
 | sequence_number | character | Sequence number representing a shot-possession (V3 PBP). |
 | text | character | Text description of the play / record. |
 | away_score | integer | Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). |

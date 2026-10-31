@@ -135,7 +135,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_pbp(game_id = 25602))
 #> ── LBA Play-by-Play from legabasket.it ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:21:06 UTC
+#> ℹ Data updated: 2026-10-31 20:19:03 UTC
 #> # A tibble: 605 × 36
 #>    game_id season home_team_id visitor_team_id team_side home_score
 #>      <int>  <int>        <int>           <int> <chr>          <int>

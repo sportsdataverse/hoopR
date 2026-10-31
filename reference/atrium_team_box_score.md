@@ -171,7 +171,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_team_box_score(website_id = 12, fixture_id = "5423072b-6715-11f0-bd8b-9ffadebc148f"))
 #> ── Atrium team box score from embed-api.eui.connect.sportradar.com ─────────────
-#> ℹ Data updated: 2026-10-26 19:12:40 UTC
+#> ℹ Data updated: 2026-10-31 20:10:11 UTC
 #> # A tibble: 2 × 49
 #>   website_id fixture_id  season_id entity_id side  minutes seconds_played points
 #>        <int> <chr>       <chr>     <chr>     <chr> <chr>            <int>  <int>

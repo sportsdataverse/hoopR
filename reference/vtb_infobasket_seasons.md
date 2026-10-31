@@ -154,7 +154,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_seasons())
 #> ── VTB Infobasket Seasons from org.infobasket.su ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:39:37 UTC
+#> ℹ Data updated: 2026-10-31 20:37:45 UTC
 #> # A tibble: 18 × 6
 #>    season comp_id name_ru         name_en          db    tag  
 #>     <int>   <int> <chr>           <chr>            <chr> <chr>

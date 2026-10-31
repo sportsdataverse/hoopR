@@ -216,7 +216,7 @@ Other B.LEAGUE Functions:
 # \donttest{
   try(bleague_game_info(schedule_key = 504734))
 #> ── B.LEAGUE game info from b-league.s3.amazonaws.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:12:44 UTC
+#> ℹ Data updated: 2026-10-31 20:10:15 UTC
 #> # A tibble: 1 × 103
 #>   schedule_key season feed   year  code event convention_key convention_class
 #>          <int>  <int> <chr> <int> <int> <int> <chr>                     <int>

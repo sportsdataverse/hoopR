@@ -144,7 +144,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_player_box(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Player Box Score from basketligaen.dk ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:38:14 UTC
+#> ℹ Data updated: 2026-10-31 20:36:16 UTC
 #> # A tibble: 28 × 34
 #>    team_side row_type player_id team_id team_name    period full_name first_name
 #>    <chr>     <chr>        <int>   <int> <chr>         <int> <chr>     <chr>     

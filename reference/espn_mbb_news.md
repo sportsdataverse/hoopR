@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:14:34 UTC
+#> ℹ Data updated: 2026-10-31 20:11:59 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Story Men's M… From conte… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 2  5.03e7 Media Paul Fi… Paul Fineb… 2026-10-… FALSE   NA     https:/… 41       
-#> 3  5.03e7 Head… Ole Mis… The NCAA h… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 4  5.03e7 Head… Dale Br… Dale Brown… 2026-10-… FALSE   NA     https:/… 41       
-#> 5  5.03e7 Story Men's c… The five t… 2026-10-… FALSE   Neil … https:/… 41       
+#> 1  5.03e7 Head… LSU lan… Five-star … 2026-10-… FALSE   Jeff … https:/… 41       
+#> 2  5.03e7 Head… Zion Gr… Five-star … 2026-10-… FALSE   Jeff … https:/… 41       
+#> 3  5.03e7 Prev… Norther… Grambling … 2026-10-… FALSE   NA     http://… 41       
+#> 4  5.03e7 Prev… Liberty… High Point… 2026-10-… FALSE   NA     http://… 41       
+#> 5  5.03e7 Prev… Notre D… Villanova … 2026-10-… FALSE   NA     http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:14:34 UTC
+#> ℹ Data updated: 2026-10-31 20:12:00 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Head… Magic's… Magic guar… 2026-10-… FALSE   NA     https:/… 46       
-#> 2  5.03e7 Head… Dream, … Game 6 of … 2026-10-… FALSE   Ramon… https:/… 59       
-#> 3  5.03e7 Story Monday'… Andre Snel… 2026-10-… FALSE   Andre… https:/… 22000    
-#> 4  5.03e7 Story Fantasy… Ty Jerome'… 2026-10-… FALSE   Steve… https:/… 3090     
-#> 5  5.03e7 Head… U.S. se… Two U.S. s… 2026-10-… FALSE   Mark … https:/… 46       
+#> 1  5.03e7 Head… LeBron … LeBron Jam… 2026-10-… FALSE   Kris … https:/… 46       
+#> 2  5.03e7 Head… Lakers'… Jeanie Bus… 2026-10-… FALSE   Baxte… https:/… 46       
+#> 3  5.03e7 Head… Sources… The Thunde… 2026-10-… FALSE   Tim M… https:/… 46       
+#> 4  5.03e7 Story Saturda… Jim McCorm… 2026-10-… FALSE   Jim M… https:/… 22000    
+#> 5  5.03e7 Prev… Los Ang… Los Angele… 2026-10-… FALSE   NA     http://… 46       
 # }
 ```

@@ -97,7 +97,7 @@ Other KenPom Historical Functions:
 #> # A tibble: 31 × 57
 #>     year team_rk team      coach conf  adj_t adj_o adj_d off_e_fg_pct off_to_pct
 #>    <dbl>   <dbl> <chr>     <chr> <chr> <dbl> <dbl> <dbl>        <dbl>      <dbl>
-#>  1  2027      NA Florida … Luke… ACC    73.6  113. 101.           0        100  
+#>  1  2027      NA Florida … Luke… ACC    73.6  113.  99.7          0        100  
 #>  2  2026      NA Florida … Luke… ACC    70.5  118. 105.          52.3       15.2
 #>  3  2025      NA Florida … Leon… ACC    69.7  109. 101.          50.7       17.5
 #>  4  2024      NA Florida … Leon… ACC    71.1  111. 101.          50.3       16.4

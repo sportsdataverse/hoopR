@@ -195,28 +195,9 @@ never return an empty frame.</p></li>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_schedule</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Schedule from basketligaen.dk ─────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-26 19:38:16 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 192 × 42</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    game_uuid  raw_start_date_time      start_date_time   state overtime shootout</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> tzos88ce7j 2025-09-18T17:00:00.000Z 2025-09-18 19:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> e6c9q8kxrz 2025-09-23T17:00:00.000Z 2025-09-23 19:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ncfteyungm 2025-09-23T17:00:00.000Z 2025-09-23 19:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> ok9xf6gpvq 2025-09-24T17:00:00.000Z 2025-09-24 19:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> fi5lbggu0d 2025-09-25T16:30:00.000Z 2025-09-25 18:30… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> e2nbu189d7 2025-09-25T17:15:00.000Z 2025-09-25 19:15… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> wnpaoqq9fv 2025-09-27T13:30:00.000Z 2025-09-27 15:30… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> uobq25luqy 2025-09-27T15:00:00.000Z 2025-09-27 17:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> gmsti5d0tg 2025-09-28T13:00:00.000Z 2025-09-28 15:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ia97u0jb4u 2025-09-28T14:00:00.000Z 2025-09-28 16:00… post… FALSE    <span style="color: #BB0000;">NA</span>      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 182 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 36 more variables: ssgt_uuid &lt;chr&gt;, home_team_status &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_uuid &lt;chr&gt;, home_team_owner_instance_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_code &lt;chr&gt;, home_team_names_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_short &lt;chr&gt;, home_team_names_long &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_full &lt;chr&gt;, home_team_names_code_site &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_short_site &lt;chr&gt;, home_team_names_full_site &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in sportality_schedule(season = 2026) : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   www.basketligaen.dk/api/statistics-v2/layout-info: 0 ssgts in the body,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expected the 40+ of 25 seasons.</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

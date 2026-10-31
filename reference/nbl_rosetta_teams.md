@@ -131,7 +131,7 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_teams(org = "nbl"))
 #> ── NBL Rosetta teams from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:37:30 UTC
+#> ℹ Data updated: 2026-10-31 20:35:35 UTC
 #> # A tibble: 86 × 22
 #>    org   team_id          rosetta_team_id name  team_code established head_coach
 #>    <chr> <chr>            <chr>           <chr> <chr>     <chr>       <chr>     

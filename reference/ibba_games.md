@@ -157,7 +157,7 @@ Other IBBA Functions:
 # \donttest{
   try(ibba_games(board_id = 5, board_round = 1, season = 2026))
 #> ── IBBA games ─────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:16:24 UTC
+#> ℹ Data updated: 2026-10-31 20:13:40 UTC
 #> # A tibble: 7 × 30
 #>   game_id game_date  season home_team_id away_team_id home_team_he  away_team_he
 #>     <int> <date>      <int>        <int>        <int> <chr>         <chr>       

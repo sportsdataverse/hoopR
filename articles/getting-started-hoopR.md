@@ -118,24 +118,24 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 34.149 sec elapsed
+    ## 23.156 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-    ## 3688225 rows of nba play-by-play data from 7829 games.
+    ## 3707359 rows of nba play-by-play data from 7867 games.
 
 ``` r
 
 dplyr::glimpse(nba_pbp)
 ```
 
-    ## Rows: 3,688,225
+    ## Rows: 3,707,359
     ## Columns: 68
     ## $ game_play_number                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
-    ## $ id                              <dbl> 4013441404, 4013441407, 4013441408, 40…
+    ## $ id                              <chr> "4013441404", "4013441407", "401344140…
     ## $ sequence_number                 <int> 4, 7, 8, 10, 11, 12, 14, 15, 17, 18, 1…
     ## $ type_id                         <int> 615, 131, 155, 131, 155, 109, 155, 145…
     ## $ type_text                       <chr> "Jumpball", "Pullup Jump Shot", "Defen…
@@ -215,21 +215,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.485 sec elapsed
+    ## 2.51 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
 ```
 
-    ## 15648 rows of NBA team boxscore data from 7824 games.
+    ## 15724 rows of NBA team boxscore data from 7862 games.
 
 ``` r
 
 dplyr::glimpse(nba_team_box)
 ```
 
-    ## Rows: 15,648
+    ## Rows: 15,724
     ## Columns: 59
     ## $ game_id                           <int> 401344140, 401344140, 401344139, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -302,21 +302,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.352 sec elapsed
+    ## 4.717 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
 ```
 
-    ## 205882 rows of NBA player boxscore data from 7830 games.
+    ## 206914 rows of NBA player boxscore data from 7868 games.
 
 ``` r
 
 dplyr::glimpse(nba_player_box)
 ```
 
-    ## Rows: 205,882
+    ## Rows: 206,914
     ## Columns: 57
     ## $ game_id                           <int> 401344140, 401344140, 401344140, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -387,7 +387,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 78.031 sec elapsed
+    ## 65.146 sec elapsed
 
 ``` r
 
@@ -403,7 +403,7 @@ dplyr::glimpse(mbb_pbp)
 
     ## Rows: 12,225,017
     ## Columns: 75
-    ## $ id                              <dbl> 4.012525e+17, 4.012525e+17, 4.012525e+…
+    ## $ id                              <chr> "401252483101805201", "401252483101805…
     ## $ sequence_number                 <int> 101805201, 101805501, 101805701, 10180…
     ## $ type_id                         <int> 558, 586, 558, 598, 607, 598, 558, 586…
     ## $ type_text                       <chr> "JumpShot", "Offensive Rebound", "Jump…
@@ -490,7 +490,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.66 sec elapsed
+    ## 3.097 sec elapsed
 
 ``` r
 
@@ -577,7 +577,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 9.536 sec elapsed
+    ## 11.186 sec elapsed
 
 ``` r
 

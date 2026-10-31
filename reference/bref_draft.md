@@ -62,20 +62,20 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_draft(season = 2024))
 #> ── Draft results from basketball-reference.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:12:56 UTC
+#> ℹ Data updated: 2026-10-31 20:10:27 UTC
 #> # A tibble: 60 × 23
 #>    ranker pick_overall team  player college_name seasons     g    mp   pts   trb
 #>     <dbl>        <dbl> <chr> <chr>  <chr>          <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1      1            1 ATL   Zacch… ""                 3   145  3437  1609   541
-#>  2      2            2 WAS   Alex … ""                 3   118  3191  1675   805
-#>  3      3            3 HOU   Reed … "Kentucky"         3   136  2847  1361   324
-#>  4      4            4 SAS   Steph… "UConn"            3   152  4290  2381   677
-#>  5      5            5 DET   Ron H… ""                 3   162  2865  1172   548
-#>  6      6            6 CHO   Tidja… ""                 3    99  1852   589   437
-#>  7      7            7 POR   Donov… "UConn"            3   146  3459  1389  1436
+#>  1      1            1 ATL   Zacch… ""                 3   148  3523  1640   561
+#>  2      2            2 WAS   Alex … ""                 3   121  3271  1708   823
+#>  3      3            3 HOU   Reed … "Kentucky"         3   138  2894  1381   327
+#>  4      4            4 SAS   Steph… "UConn"            3   154  4355  2410   688
+#>  5      5            5 DET   Ron H… ""                 3   165  2911  1194   556
+#>  6      6            6 CHO   Tidja… ""                 3   102  1888   602   446
+#>  7      7            7 POR   Donov… "UConn"            3   148  3515  1409  1454
 #>  8      8            8 SAS   Rob D… "Kentucky"         2   114  1486   628   181
-#>  9      9            9 MEM   Zach … "Purdue"           3    79  1744   774   689
-#> 10     10           10 UTA   Cody … "Colorado"         3   120  2702   818   311
+#>  9      9            9 MEM   Zach … "Purdue"           3    81  1783   791   699
+#> 10     10           10 UTA   Cody … "Colorado"         3   121  2704   818   311
 #> # ℹ 50 more rows
 #> # ℹ 13 more variables: ast <dbl>, fg_pct <dbl>, fg3_pct <dbl>, ft_pct <dbl>,
 #> #   mp_per_g <dbl>, pts_per_g <dbl>, trb_per_g <dbl>, ast_per_g <dbl>,

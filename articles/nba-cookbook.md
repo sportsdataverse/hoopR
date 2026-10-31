@@ -108,7 +108,7 @@ lebron |>
 #> # A tibble: 1 × 2
 #>   stat_type_id value
 #>   <chr>        <dbl>
-#> 1 0             26.8
+#> 1 0             26.7
 ```
 
 Margin note: `athlete_career_stats()` defaults to fetching *both*
@@ -274,7 +274,7 @@ espn_nba_team_schedule(team_id = team_id, season = season)
 #> #   venue_name <chr>, venue_city <chr>, venue_state <chr>, broadcast <chr>,
 #> #   result <chr>, team_score <chr>, opponent_score <chr>, winner <lgl>
 espn_nba_team_roster(team_id = team_id, season = season)
-#> # A tibble: 18 × 15
+#> # A tibble: 19 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
 #>  1 5113969    Cameron … 43     G               Guard         "6' 5… 184 l… 21   
@@ -286,15 +286,16 @@ espn_nba_team_roster(team_id = team_id, season = season)
 #>  7 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
 #>  8 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
 #>  9 3155535    Kevon Lo… 55     F               Forward       "6' 9… 222 l… 30   
-#> 10 4278580    Sandro M… 54     F               Forward       "6' 9… 240 l… 27   
-#> 11 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
-#> 12 5114350    AK Okere… 31     F               Forward       "6' 7… 244 l… 23   
-#> 13 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
-#> 14 4277811    Collin S… 10     G               Guard         "6' 3… 190 l… 27   
-#> 15 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
-#> 16 3907498    Matisse … 4      G               Guard         "6' 5… 202 l… 29   
-#> 17 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
-#> 18 4433137    Ziaire W… 11     F               Forward       "6' 9… 185 l… 25   
+#> 10 4596528    Lawson L… NA     C               Center        "7' 1… 233 l… 23   
+#> 11 4278580    Sandro M… 54     F               Forward       "6' 9… 240 l… 27   
+#> 12 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
+#> 13 5114350    AK Okere… 31     F               Forward       "6' 7… 244 l… 23   
+#> 14 4066457    Austin R… 15     G               Guard         "6' 5… 197 l… 28   
+#> 15 4277811    Collin S… 10     G               Guard         "6' 3… 190 l… 27   
+#> 16 5060631    Adou Thi… 1      F               Forward       "6' 8… 220 l… 22   
+#> 17 3907498    Matisse … 4      G               Guard         "6' 5… 202 l… 29   
+#> 18 4278077    Jarred V… 2      F               Forward       "6' 8… 214 l… 27   
+#> 19 4433137    Ziaire W… 11     F               Forward       "6' 9… 185 l… 25   
 #> # ℹ 7 more variables: birth_date <chr>, birth_place <chr>, headshot <chr>,
 #> #   link_web <chr>, status <chr>, team_id <chr>, season <int>
 
@@ -372,16 +373,16 @@ espn_nba_leaders(season = most_recent_nba_season())
 #> # A tibble: 400 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
-#>  1   2027           2 pointsPerGame PTS          4065733    NA           29     
-#>  2   2027           2 pointsPerGame PTS          3945274    NA           13     
-#>  3   2027           2 pointsPerGame PTS          3136193    NA           21     
-#>  4   2027           2 pointsPerGame PTS          3064440    NA           23     
+#>  1   2027           2 pointsPerGame PTS          3945274    NA           13     
+#>  2   2027           2 pointsPerGame PTS          4594268    NA           16     
+#>  3   2027           2 pointsPerGame PTS          3975       NA           9      
+#>  4   2027           2 pointsPerGame PTS          3032977    NA           14     
 #>  5   2027           2 pointsPerGame PTS          4431678    NA           20     
-#>  6   2027           2 pointsPerGame PTS          4594268    NA           16     
-#>  7   2027           2 pointsPerGame PTS          3032977    NA           14     
-#>  8   2027           2 pointsPerGame PTS          4278073    NA           25     
-#>  9   2027           2 pointsPerGame PTS          3908809    NA           5      
-#> 10   2027           2 pointsPerGame PTS          4066457    NA           13     
+#>  6   2027           2 pointsPerGame PTS          4065648    NA           2      
+#>  7   2027           2 pointsPerGame PTS          5041939    NA           6      
+#>  8   2027           2 pointsPerGame PTS          3064440    NA           23     
+#>  9   2027           2 pointsPerGame PTS          4278073    NA           25     
+#> 10   2027           2 pointsPerGame PTS          3936299    NA           7      
 #> # ℹ 390 more rows
 #> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
 #> #   display_value <chr>

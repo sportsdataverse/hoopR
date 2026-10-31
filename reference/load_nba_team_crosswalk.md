@@ -51,9 +51,17 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 
 - seasons:
 
-  A vector of 4-digit years associated with given NBA seasons. (Min:
-  2002; default:
-  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md))
+  A vector of 4-digit seasons, or `TRUE` for every published season.
+  Accepted seasons are the ones the release publishes: 2002 onward for
+  the NBA crosswalks and `load_mbb_team_crosswalk()`, 2008 onward for
+  `load_mbb_schedule_crosswalk()`, 2025 onward for
+  `load_mbb_player_crosswalk()`; the upper bound is
+  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md)
+  /
+  [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md).
+  ESPN ids (`espn_game_id`, `espn_athlete_id`, `espn_team_id`) are
+  returned as integer, matching the ESPN box score, schedule and roster
+  loaders.
 
 ## Value
 
@@ -96,7 +104,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 15:30:13 UTC
+#> ℹ Data updated: 2026-10-31 15:30:15 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -121,8 +129,8 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 15:30:45 UTC
-#> # A tibble: 1,243 × 16
+#> ℹ Data updated: 2026-10-31 15:30:38 UTC
+#> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
 #>  1   2027 NA          2027-04-11                 6                29
@@ -135,8 +143,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027 NA          2027-04-11                 2                15
 #>  9   2027 NA          2027-04-11                17                28
 #> 10   2027 NA          2027-04-11                 5                 1
-#> # ℹ 1,233 more rows
-#> # ℹ 11 more variables: espn_game_id <chr>, nba_game_id <chr>,
+#> # ℹ 1,197 more rows
+#> # ℹ 11 more variables: espn_game_id <int>, nba_game_id <chr>,
 #> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
 #> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
 #> #   yahoo_game_id <chr>, match_method <chr>, match_confidence <dbl>
@@ -144,21 +152,21 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 16:59:48 UTC
-#> # A tibble: 447 × 21
+#> ℹ Data updated: 2026-10-31 15:30:56 UTC
+#> # A tibble: 460 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
-#>     <int>        <int> <chr>             <chr>               <chr>          
-#>  1   2027            1 ATL               aaron wiggins       4397183        
-#>  2   2027            1 ATL               asa newell          4873201        
-#>  3   2027            1 ATL               cj mccollum         2490149        
-#>  4   2027            1 ATL               corey kispert       4280151        
-#>  5   2027            1 ATL               dorian finney smith 2578185        
-#>  6   2027            1 ATL               dyson daniels       4869342        
-#>  7   2027            1 ATL               jalen johnson       4701230        
-#>  8   2027            1 ATL               jock landale        3146557        
-#>  9   2027            1 ATL               kingston flemings   5149077        
-#> 10   2027            1 ATL               luguentz dort       4397020        
-#> # ℹ 437 more rows
+#>     <int>        <int> <chr>             <chr>                         <int>
+#>  1   2027            1 ATL               aaron wiggins               4397183
+#>  2   2027            1 ATL               asa newell                  4873201
+#>  3   2027            1 ATL               cj mccollum                 2490149
+#>  4   2027            1 ATL               corey kispert               4280151
+#>  5   2027            1 ATL               dorian finney smith         2578185
+#>  6   2027            1 ATL               dyson daniels               4869342
+#>  7   2027            1 ATL               jalen johnson               4701230
+#>  8   2027            1 ATL               jock landale                3146557
+#>  9   2027            1 ATL               kingston flemings           5149077
+#> 10   2027            1 ATL               luguentz dort               4397020
+#> # ℹ 450 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

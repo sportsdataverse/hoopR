@@ -136,7 +136,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_rankings())
 #> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:14:46 UTC
+#> ℹ Data updated: 2026-10-31 20:12:11 UTC
 #> # A tibble: 84 × 38
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>

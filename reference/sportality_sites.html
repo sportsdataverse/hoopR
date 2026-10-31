@@ -191,23 +191,9 @@ never return an empty frame.</p></li>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_sites</span><span class="op">(</span>ssgt_uuid <span class="op">=</span> <span class="st">"xs07bd3fmp"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Sites (Clubs) of an ssgt from basketligaen.dk ─── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-26 19:38:18 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 12 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    id       instance_id public_url                                name     icon </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bac1_bac bac1_bac    http://www.bakkenbears.com/bears-academy/ Bears A… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bak1_bak bak1_bak    http://www.bakkenbears.com                Bakken … http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bcc1_bcc bcc1_bcc    http://bccopenhagen.com                   BC Cope… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bkv1_bkv bkv1_bkv    http://vejenbasket.dk                     BK Vejen http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bms1_bms bms1_bms    http://bmsherlev.dk                       BMS Her… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> glx1_glx glx1_glx    http://www.gladsaxebasket.dk              Gladsax… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> hic1_hic hic1_hic    http://horsensic.dk                       Horsens… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> hol2_hol hol2_hol    http://holbaekbasket.dk                   Holbæk-… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ran1_ran ran1_ran    http://www.randerscimbria.dk              Randers… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> sve1_sve sve1_sve    http://www.rabbits.dk                     Svendbo… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> tfn1_tfn tfn1_tfn    http://teamfog.dk/forside/                Team FO… http…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> vbh1_vbh vbh1_vbh    http://www.vbbk.dk                        Værløse… http…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in sportality_sites(ssgt_uuid = "xs07bd3fmp") : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   www.basketligaen.dk/api/statistics-v2/layout-info: 0 ssgts in the body,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expected the 40+ of 25 seasons.</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

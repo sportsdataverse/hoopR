@@ -199,7 +199,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_standings(season = 2025))
 #> ── KBL Standings from api.kbl.or.kr ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:16:44 UTC
+#> ℹ Data updated: 2026-10-31 20:14:01 UTC
 #> # A tibble: 10 × 64
 #>    season season_code game_code  rank team_code team_name         team_name_full
 #>     <int>       <int> <chr>     <int> <chr>     <chr>             <chr>         

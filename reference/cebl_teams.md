@@ -99,7 +99,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_teams())
 #> ── CEBL Teams from the CEBL Stats API ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:13:41 UTC
+#> ℹ Data updated: 2026-10-31 20:11:11 UTC
 #> # A tibble: 15 × 8
 #>    team_id name_en        short_name_en name_fr short_name_fr is_active logo_url
 #>      <int> <chr>          <chr>         <chr>   <chr>         <lgl>     <chr>   

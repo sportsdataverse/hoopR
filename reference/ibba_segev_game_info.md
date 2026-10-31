@@ -101,7 +101,7 @@ Other IBBA Segev Functions:
 # \donttest{
   try(ibba_segev_game_info(game_id = 50))
 #> ── IBBA Segev game info ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:16:27 UTC
+#> ℹ Data updated: 2026-10-31 20:13:43 UTC
 #> # A tibble: 1 × 15
 #>   game_id start_time          competition home_team_id home_team home_team_local
 #>     <int> <dttm>              <chr>              <int> <chr>     <chr>          

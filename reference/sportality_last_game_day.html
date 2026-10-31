@@ -195,22 +195,9 @@ never return an empty frame.</p></li>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_last_game_day</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Last Game Day from basketligaen.dk ────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-26 19:38:12 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 39</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   game_uuid  start_date_time  state overtime shootout ssgt_uuid home_team_status</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> z2iv0ds8ka 2026-10-24T12:0… post… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f… WIN             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> fn29bjykq8 2026-10-24T15:0… post… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f… LOSE            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> oj01tktwv7 2026-10-24T15:0… post… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f… LOSE            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> wp1cmgyvzv 2026-10-24T15:3… post… FALSE    <span style="color: #BB0000;">NA</span>       xs07bd3f… WIN             </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 32 more variables: home_team_uuid &lt;chr&gt;, home_team_owner_instance_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_code &lt;chr&gt;, home_team_names_code &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_short &lt;chr&gt;, home_team_names_long &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_full &lt;chr&gt;, home_team_names_code_site &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_short_site &lt;chr&gt;, home_team_names_full_site &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_names_long_site &lt;chr&gt;, home_team_score &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_icon &lt;chr&gt;, away_team_status &lt;chr&gt;, away_team_uuid &lt;chr&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in sportality_last_game_day() : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   www.basketligaen.dk/api/statistics-v2/layout-info: 0 ssgts in the body,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> expected the 40+ of 25 seasons.</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

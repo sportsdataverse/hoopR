@@ -262,13 +262,13 @@ Returns a `hoopR_data` tibble with one row per play-by-play event.
 | sub_deviate | integer | Substitution-inference deviation counter used by the lineup reconstructor. |
 | contest_id | character | Unique stats.ncaa.org contest identifier. |
 | home_ncaa_team_id | character | stats.ncaa.org team identifier for the home team. |
-| home_espn_team_id | character | ESPN team identifier for the home team. |
+| home_espn_team_id | integer | ESPN team identifier for the home team. |
 | away_ncaa_team_id | character | stats.ncaa.org team identifier for the away team. |
-| away_espn_team_id | character | ESPN team identifier for the away team. |
+| away_espn_team_id | integer | ESPN team identifier for the away team. |
 | event_team_ncaa_team_id | character | stats.ncaa.org team identifier for the event team. |
-| event_team_espn_team_id | character | ESPN team identifier for the event team. |
+| event_team_espn_team_id | integer | ESPN team identifier for the event team. |
 | poss_team_ncaa_team_id | character | stats.ncaa.org team identifier for the possession team. |
-| poss_team_espn_team_id | character | ESPN team identifier for the possession team. |
+| poss_team_espn_team_id | integer | ESPN team identifier for the possession team. |
 | player_1_id | character | stats.ncaa.org player identifier for player_1. |
 | player_1_clean_name | character | Cleaned/title-cased display name for player_1. |
 | player_2_id | character | stats.ncaa.org player identifier for player_2. |
@@ -293,7 +293,7 @@ Returns a `hoopR_data` tibble with one row per play-by-play event.
 | away_4_clean_name | character | Cleaned display name for away lineup slot 4. |
 | away_5_player_id | character | stats.ncaa.org player identifier for away lineup slot 5. |
 | away_5_clean_name | character | Cleaned display name for away lineup slot 5. |
-| espn_game_id | character | ESPN game identifier crosswalked to this contest. |
+| espn_game_id | integer | ESPN game identifier crosswalked to this contest. |
 | is_fastbreak | logical | Whether the play was a fastbreak possession. |
 | is_from_turnover | logical | Whether the possession began off a turnover. |
 | is_paint | logical | Whether the shot was taken in the paint. |
@@ -334,10 +334,10 @@ Returns a `hoopR_data` tibble with one row per shot attempt.
 | source | character | Source system for the shot record (e.g. 'ncaa'). |
 | contest_id | character | Unique stats.ncaa.org contest identifier. |
 | ncaa_team_id | character | stats.ncaa.org team identifier for the shooting team. |
-| espn_team_id | character | ESPN team identifier for the shooting team. |
+| espn_team_id | integer | ESPN team identifier for the shooting team. |
 | shooter_player_id | character | stats.ncaa.org player identifier for the shooter. |
 | shooter_clean_name | character | Cleaned display name for the shooter. |
-| espn_game_id | character | ESPN game identifier crosswalked to this contest. |
+| espn_game_id | integer | ESPN game identifier crosswalked to this contest. |
 
 Returns a `hoopR_data` tibble with one row per lineup stint.
 
@@ -495,11 +495,11 @@ Returns a `hoopR_data` tibble with one row per possession.
 | last_event_type | character | Event type of the possession's final event. |
 | contest_id | character | Unique stats.ncaa.org contest identifier. |
 | home_ncaa_team_id | character | stats.ncaa.org team identifier for the home team. |
-| home_espn_team_id | character | ESPN team identifier for the home team. |
+| home_espn_team_id | integer | ESPN team identifier for the home team. |
 | away_ncaa_team_id | character | stats.ncaa.org team identifier for the away team. |
-| away_espn_team_id | character | ESPN team identifier for the away team. |
+| away_espn_team_id | integer | ESPN team identifier for the away team. |
 | poss_team_ncaa_team_id | character | stats.ncaa.org team identifier for the possession team. |
-| poss_team_espn_team_id | character | ESPN team identifier for the possession team. |
+| poss_team_espn_team_id | integer | ESPN team identifier for the possession team. |
 | home_1_player_id | character | stats.ncaa.org player identifier for home lineup slot 1. |
 | home_1_clean_name | character | Cleaned display name for home lineup slot 1. |
 | home_2_player_id | character | stats.ncaa.org player identifier for home lineup slot 2. |
@@ -520,7 +520,7 @@ Returns a `hoopR_data` tibble with one row per possession.
 | away_4_clean_name | character | Cleaned display name for away lineup slot 4. |
 | away_5_player_id | character | stats.ncaa.org player identifier for away lineup slot 5. |
 | away_5_clean_name | character | Cleaned display name for away lineup slot 5. |
-| espn_game_id | character | ESPN game identifier crosswalked to this contest. |
+| espn_game_id | integer | ESPN game identifier crosswalked to this contest. |
 | season | integer | Season identifier (4-digit season-ending year). |
 
 Returns a `hoopR_data` tibble with one row per player-team-season.
@@ -678,14 +678,14 @@ Returns a `hoopR_data` tibble with one row per player-game.
 | mid_pct_unast | numeric | Mid-range field goal percentage that were unassisted. |
 | contest_id | character | Unique stats.ncaa.org contest identifier. |
 | home_ncaa_team_id | character | stats.ncaa.org team identifier for the home team. |
-| home_espn_team_id | character | ESPN team identifier for the home team. |
+| home_espn_team_id | integer | ESPN team identifier for the home team. |
 | away_ncaa_team_id | character | stats.ncaa.org team identifier for the away team. |
-| away_espn_team_id | character | ESPN team identifier for the away team. |
+| away_espn_team_id | integer | ESPN team identifier for the away team. |
 | team_ncaa_team_id | character | stats.ncaa.org team identifier. |
-| team_espn_team_id | character | ESPN team identifier. |
+| team_espn_team_id | integer | ESPN team identifier. |
 | player_id | character | stats.ncaa.org player identifier. |
 | clean_name | character | Cleaned/title-cased display name. |
-| espn_game_id | character | ESPN game identifier crosswalked to this contest. |
+| espn_game_id | integer | ESPN game identifier crosswalked to this contest. |
 | season | integer | Season identifier (4-digit season-ending year). |
 
 Returns a `hoopR_data` tibble with one row per team-game.
@@ -767,12 +767,12 @@ Returns a `hoopR_data` tibble with one row per team-game.
 | d_time_per_poss | numeric | Opponent average seconds per possession. |
 | contest_id | character | Unique stats.ncaa.org contest identifier. |
 | home_ncaa_team_id | character | stats.ncaa.org team identifier for the home team. |
-| home_espn_team_id | character | ESPN team identifier for the home team. |
+| home_espn_team_id | integer | ESPN team identifier for the home team. |
 | away_ncaa_team_id | character | stats.ncaa.org team identifier for the away team. |
-| away_espn_team_id | character | ESPN team identifier for the away team. |
+| away_espn_team_id | integer | ESPN team identifier for the away team. |
 | team_ncaa_team_id | character | stats.ncaa.org team identifier. |
-| team_espn_team_id | character | ESPN team identifier. |
-| espn_game_id | character | ESPN game identifier crosswalked to this contest. |
+| team_espn_team_id | integer | ESPN team identifier. |
+| espn_game_id | integer | ESPN game identifier crosswalked to this contest. |
 | season | integer | Season identifier (4-digit season-ending year). |
 
 Returns a `hoopR_data` tibble with one row per player-team-season.

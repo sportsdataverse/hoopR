@@ -121,8 +121,8 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_roster(team_uuid = "rfo82vr830"))
 #> ── Basketligaen Team Roster from basketligaen.dk ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:38:15 UTC
-#> # A tibble: 13 × 11
+#> ℹ Data updated: 2026-10-31 20:36:17 UTC
+#> # A tibble: 14 × 13
 #>    position position_code player_type gender uuid       first_name    last_name 
 #>    <chr>    <chr>         <chr>       <chr>  <chr>      <chr>         <chr>     
 #>  1 Guards   G             athlete     male   cj81dc09w3 Malthe        Aabling   
@@ -131,14 +131,15 @@ Other Basketligaen Functions:
 #>  4 Guards   G             athlete     male   hnrg2dqjcu Oskar Harring Østoft    
 #>  5 Guards   G             athlete     male   k1nh3mnqzp Julius        Aabling   
 #>  6 Guards   G             athlete     male   khm59ormd2 Sebastian     Reumert   
-#>  7 Guards   G             athlete     male   wtpfbry97z Karl          Heming    
-#>  8 Guards   G             athlete     male   zu0qp4mq65 Anders        Jellesmark
-#>  9 Forwards F             athlete     male   fjn17iovmg August        Heming    
-#> 10 Forwards F             athlete     male   m8ajfnag3m Caden         Fry       
-#> 11 Centers  C             athlete     male   fyeh5w7iar Oskar Fløng   Vanner    
-#> 12 Centers  C             athlete     male   mqers10jtj Daniel        Stubkjær  
-#> 13 Centers  C             athlete     male   wz2bk7trd4 Visti         Thomsen   
-#> # ℹ 4 more variables: full_name <chr>, nationality <chr>, jersey_number <int>,
-#> #   portrait_url <chr>
+#>  7 Guards   G             athlete     male   q87tbjqicc Bertil        Anneberg …
+#>  8 Guards   G             athlete     male   wtpfbry97z Karl          Heming    
+#>  9 Guards   G             athlete     male   zu0qp4mq65 Anders        Jellesmark
+#> 10 Forwards F             athlete     male   fjn17iovmg August        Heming    
+#> 11 Forwards F             athlete     male   m8ajfnag3m Caden         Fry       
+#> 12 Centers  C             athlete     male   fyeh5w7iar Oskar Fløng   Vanner    
+#> 13 Centers  C             athlete     male   mqers10jtj Daniel        Stubkjær  
+#> 14 Centers  C             athlete     male   wz2bk7trd4 Visti         Thomsen   
+#> # ℹ 6 more variables: full_name <chr>, nationality <chr>, jersey_number <int>,
+#> #   portrait_url <chr>, height <int>, weight <int>
 # }
 ```

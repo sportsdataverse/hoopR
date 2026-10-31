@@ -123,22 +123,22 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
 #> ── Basketligaen Standings from basketligaen.dk ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:38:19 UTC
+#> ℹ Data updated: 2026-10-31 20:36:22 UTC
 #> # A tibble: 12 × 13
 #>    team_id team_uuid  team_code team_name     rank    gp     w     l    tp `for`
 #>      <int> <chr>      <chr>     <chr>        <int> <int> <int> <int> <int> <int>
-#>  1   22255 iutrlqp3ef TFN       Team FOG Næ…     1     7     7     0    14   717
-#>  2   22248 ktcu9aaala BAK       Bakken Bears     2     6     6     0    12   634
-#>  3   22249 hip2m60a45 HIC       Horsens IC       3     7     5     2    10   599
-#>  4   22256 kgmhwo9l5d SVE       Svendborg R…     4     7     5     2    10   626
-#>  5   22250 gvvuxe9ysw RAN       Randers Cim…     5     7     4     3     8   652
-#>  6  156486 ka7lusvmtn BCC       BC Copenhag…     6     6     4     2     8   475
-#>  7  153747 rfo82vr830 HOL       Holbæk-Sten…     7     7     3     4     6   534
-#>  8  199228 nuzzapynfd GLX       Gladsaxe Ba…     8     7     2     5     4   543
-#>  9  187013 wv1lcxg0u2 BKV       BK Vejen         9     7     2     5     4   582
-#> 10  140898 kgejfzwwbd BMS       BMS Herlev      10     7     1     6     2   517
-#> 11  114932 ozojzoejir VBH       Værløse Blu…    11     7     1     6     2   552
-#> 12  130088 swr1d65lew BAC       Bears Acade…    12     7     1     6     2   539
+#>  1   22255 iutrlqp3ef TFN       Team FOG Næ…     1     8     8     0    16   830
+#>  2   22248 ktcu9aaala BAK       Bakken Bears     2     7     7     0    14   739
+#>  3   22249 hip2m60a45 HIC       Horsens IC       3     8     6     2    12   701
+#>  4   22256 kgmhwo9l5d SVE       Svendborg R…     4     8     6     2    12   729
+#>  5   22250 gvvuxe9ysw RAN       Randers Cim…     5     8     5     3    10   762
+#>  6  156486 ka7lusvmtn BCC       BC Copenhag…     6     7     4     3     8   573
+#>  7  153747 rfo82vr830 HOL       Holbæk-Sten…     7     8     3     5     6   609
+#>  8  199228 nuzzapynfd GLX       Gladsaxe Ba…     8     8     2     6     4   623
+#>  9  114932 ozojzoejir VBH       Værløse Blu…     9     8     2     6     4   659
+#> 10  187013 wv1lcxg0u2 BKV       BK Vejen        10     8     2     6     4   648
+#> 11  140898 kgejfzwwbd BMS       BMS Herlev      11     8     1     7     2   616
+#> 12  130088 swr1d65lew BAC       Bears Acade…    12     8     1     7     2   619
 #> # ℹ 3 more variables: ga <int>, plus_minus <int>, strk <int>
 # }
 ```

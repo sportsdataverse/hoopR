@@ -201,7 +201,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coaches(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coaches from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:14:12 UTC
+#> ℹ Data updated: 2026-10-31 20:11:40 UTC
 #> # A tibble: 373 × 6
 #>    coach_id first_name last_name full_name experience team_id
 #>    <chr>    <chr>      <chr>     <chr>          <int> <chr>  
@@ -220,7 +220,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coaches(season = 2025)
 #> ── ESPN NBA Coaches from ESPN.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:14:12 UTC
+#> ℹ Data updated: 2026-10-31 20:11:41 UTC
 #> # A tibble: 30 × 6
 #>    coach_id first_name last_name full_name experience team_id
 #>    <chr>    <chr>      <chr>     <chr>          <int> <chr>  

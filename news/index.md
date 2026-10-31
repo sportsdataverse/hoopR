@@ -310,6 +310,68 @@ report) raise classed conditions (`hoopR_no_data` / `hoopR_fetch_error`,
 both inheriting `hoopR_error`) instead of returning an empty result,
 mirroring sdv-py’s `NoDataError`/`AssetFetchError` vocabulary.
 
+#### **Release loaders: season floors, play ids, join ids**
+
+- Every `load_mbb_*()` / `load_nba_*()` / `load_*_crosswalk()` loader
+  now accepts exactly the seasons its sportsdataverse-data release tag
+  publishes, and its error lists them.
+  [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  accepts the published 2003 season (it stopped at 2006) and, like
+  [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  rejects the unpublished 2004-2005.
+  [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  and
+  [`load_mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
+  start at 2025,
+  [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  and
+  [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  at 2003,
+  [`load_mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
+  at 2008, and
+  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  takes 2002 and 2025 onward; before, `seasons = TRUE` asked for every
+  missing season and warned once per season.
+  [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_nba_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  and
+  [`load_nba_player_core()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  now reach back to the published 1994 season. The MBB crosswalks are
+  capped at
+  [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md)
+  instead of the NBA season.
+- [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  /
+  [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  return the play `id` as an exact character string, like
+  [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  /
+  [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md).
+  The `.rds` asset stores it as a double, which cannot hold the 18-digit
+  MBB ids (about 41% of the 2025 ids collided), so the loaders read the
+  `.parquet` asset when arrow is installed and warn when they fall back
+  to the `.rds`. `helper_espn_{mbb,nba}_pbp()` also keep the id exact on
+  sportsdataverse-py’s processed payloads, where it is a JSON number.
+  Database tables built by `update_{mbb,nba}_db()` before this change
+  hold the rounded ids in a numeric column; rebuild them
+  (`force_rebuild = TRUE`) to get exact ids.
+- ESPN join ids are integer in every loader: `game_id` from
+  `load_{mbb,nba}_game_rosters()`, `athlete_id` from
+  `load_{mbb,nba}_rosters()`, `espn_game_id` / `espn_athlete_id` from
+  the crosswalk loaders and the `*espn_game_id` / `*espn_team_id`
+  columns of `load_ncaa_mbb_*()` were character, so joins to the box
+  scores and schedules failed.
+- [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  /
+  [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  put the light logo in `home_team_logo` when ESPN lists the away team
+  first; they used to put the dark one there.
+
 #### **Dependencies**
 
 - Imports trimmed so `R CMD check` no longer notes too many non-default

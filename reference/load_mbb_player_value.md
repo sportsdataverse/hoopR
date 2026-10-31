@@ -148,20 +148,20 @@ Saiem Gilani
 # \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 397 × 28
+#> # A tibble: 423 × 28
 #>    player_id player_name       team_id team_abbreviation team_name  teams season
 #>        <int> <chr>               <int> <chr>             <chr>      <chr>  <int>
 #>  1      2544 LeBron James   1610612755 PHI               Philadelp… PHI     2027
 #>  2    201142 Kevin Durant   1610612745 HOU               Houston R… HOU     2027
 #>  3    201143 Al Horford     1610612744 GSW               Golden St… GSW     2027
-#>  4    201572 Brook Lopez    1610612746 LAC               LA Clippe… LAC     2027
-#>  5    201599 DeAndre Jordan 1610612740 NOP               New Orlea… NOP     2027
-#>  6    201935 James Harden   1610612739 CLE               Cleveland… CLE     2027
-#>  7    201939 Stephen Curry  1610612744 GSW               Golden St… GSW     2027
-#>  8    201942 DeMar DeRozan  1610612743 DEN               Denver Nu… DEN     2027
-#>  9    201950 Jrue Holiday   1610612757 POR               Portland … POR     2027
-#> 10    202331 Paul George    1610612738 BOS               Boston Ce… BOS     2027
-#> # ℹ 387 more rows
+#>  4    201144 Mike Conley    1610612738 BOS               Boston Ce… BOS     2027
+#>  5    201572 Brook Lopez    1610612746 LAC               LA Clippe… LAC     2027
+#>  6    201599 DeAndre Jordan 1610612740 NOP               New Orlea… NOP     2027
+#>  7    201935 James Harden   1610612739 CLE               Cleveland… CLE     2027
+#>  8    201939 Stephen Curry  1610612744 GSW               Golden St… GSW     2027
+#>  9    201942 DeMar DeRozan  1610612743 DEN               Denver Nu… DEN     2027
+#> 10    201950 Jrue Holiday   1610612757 POR               Portland … POR     2027
+#> # ℹ 413 more rows
 #> # ℹ 21 more variables: season_type <chr>, o_rapm <dbl>, d_rapm <dbl>,
 #> #   rapm <dbl>, off_poss <int>, def_poss <int>, o_adj_rapm <dbl>,
 #> #   d_adj_rapm <dbl>, adj_rapm <dbl>, ospm <dbl>, dspm <dbl>, spm <dbl>,

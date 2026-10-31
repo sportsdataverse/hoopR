@@ -155,27 +155,8 @@ Other Basketligaen Functions:
 ``` r
 # \donttest{
   try(sportality_schedule(season = 2026))
-#> ── Basketligaen Schedule from basketligaen.dk ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:38:16 UTC
-#> # A tibble: 192 × 42
-#>    game_uuid  raw_start_date_time      start_date_time   state overtime shootout
-#>    <chr>      <chr>                    <chr>             <chr> <lgl>    <chr>   
-#>  1 tzos88ce7j 2025-09-18T17:00:00.000Z 2025-09-18 19:00… post… FALSE    NA      
-#>  2 e6c9q8kxrz 2025-09-23T17:00:00.000Z 2025-09-23 19:00… post… FALSE    NA      
-#>  3 ncfteyungm 2025-09-23T17:00:00.000Z 2025-09-23 19:00… post… FALSE    NA      
-#>  4 ok9xf6gpvq 2025-09-24T17:00:00.000Z 2025-09-24 19:00… post… FALSE    NA      
-#>  5 fi5lbggu0d 2025-09-25T16:30:00.000Z 2025-09-25 18:30… post… FALSE    NA      
-#>  6 e2nbu189d7 2025-09-25T17:15:00.000Z 2025-09-25 19:15… post… FALSE    NA      
-#>  7 wnpaoqq9fv 2025-09-27T13:30:00.000Z 2025-09-27 15:30… post… FALSE    NA      
-#>  8 uobq25luqy 2025-09-27T15:00:00.000Z 2025-09-27 17:00… post… FALSE    NA      
-#>  9 gmsti5d0tg 2025-09-28T13:00:00.000Z 2025-09-28 15:00… post… FALSE    NA      
-#> 10 ia97u0jb4u 2025-09-28T14:00:00.000Z 2025-09-28 16:00… post… FALSE    NA      
-#> # ℹ 182 more rows
-#> # ℹ 36 more variables: ssgt_uuid <chr>, home_team_status <chr>,
-#> #   home_team_uuid <chr>, home_team_owner_instance_id <chr>,
-#> #   home_team_code <chr>, home_team_names_code <chr>,
-#> #   home_team_names_short <chr>, home_team_names_long <chr>,
-#> #   home_team_names_full <chr>, home_team_names_code_site <chr>,
-#> #   home_team_names_short_site <chr>, home_team_names_full_site <chr>, …
+#> Error in sportality_schedule(season = 2026) : 
+#>   www.basketligaen.dk/api/statistics-v2/layout-info: 0 ssgts in the body,
+#> expected the 40+ of 25 seasons.
 # }
 ```

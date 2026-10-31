@@ -173,28 +173,28 @@ Other SCB Functions:
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:38:04 UTC
+#> ℹ Data updated: 2026-10-31 20:36:07 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   
 #>  1 bbl      2027 74719       486            486     FC Bayern München … FCB     
 #>  2 bbl      2027 74708       414            414     VET-CONCEPT Gladia… TRI     
-#>  3 bbl      2027 74714       428            428     SYNTAINICS MBC      MBC     
-#>  4 bbl      2027 74716       433            433     MHP RIESEN Ludwigs… LUD     
-#>  5 bbl      2027 74713       426            426     SKYLINERS           FRS     
-#>  6 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
+#>  3 bbl      2027 74713       426            426     SKYLINERS           FRS     
+#>  4 bbl      2027 74714       428            428     SYNTAINICS MBC      MBC     
+#>  5 bbl      2027 74720       540            540     Fitness First Würz… WUE     
+#>  6 bbl      2027 74716       433            433     MHP RIESEN Ludwigs… LUD     
 #>  7 bbl      2027 74711       420            420     BMA365 Bamberg Bas… BAM     
-#>  8 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
+#>  8 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
 #>  9 bbl      2027 74709       415            415     Telekom Baskets Bo… BON     
-#> 10 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     
+#> 10 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
 #> 11 bbl      2027 74707       413            413     ALBA BERLIN         BER     
-#> 12 bbl      2027 74720       540            540     Fitness First Würz… WUE     
-#> 13 bbl      2027 74717       483            483     Science City Jena   JEN     
-#> 14 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
-#> 15 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
-#> 16 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
+#> 12 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
+#> 13 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     
+#> 14 bbl      2027 74717       483            483     Science City Jena   JEN     
+#> 15 bbl      2027 74721       541            541     RASTA Vechta        VEC     
+#> 16 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
 #> 17 bbl      2027 74723       554            554     Veolia Towers Hamb… HAM     
-#> 18 bbl      2027 74721       541            541     RASTA Vechta        VEC     
+#> 18 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
 #> # ℹ 48 more variables: team_name_short <chr>, has_reached_playoffs <lgl>,
 #> #   has_reached_playins <lgl>, is_relegation_certain <lgl>, season_id <int>,
 #> #   competition <chr>, stage <chr>, rank <int>, streak <chr>,

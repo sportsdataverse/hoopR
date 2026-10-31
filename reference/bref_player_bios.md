@@ -63,8 +63,8 @@ Other Basketball-Reference Functions:
 # \donttest{
   try(bref_player_bios(letter = "a"))
 #> ── Player bios from basketball-reference.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:12:57 UTC
-#> # A tibble: 182 × 10
+#> ℹ Data updated: 2026-10-31 20:10:29 UTC
+#> # A tibble: 184 × 10
 #>    player    player_id year_min year_max pos   height weight birth_date colleges
 #>    <chr>     <chr>        <dbl>    <dbl> <chr> <chr>   <dbl> <chr>      <chr>   
 #>  1 Alaa Abd… abdelal01     1991     1995 F-C   6-10      240 June 24, … "Duke"  
@@ -77,7 +77,7 @@ Other Basketball-Reference Functions:
 #>  8 Forest A… ablefo01      1957     1957 G     6-3       180 July 27, … "Wester…
 #>  9 John Abr… abramjo01     1947     1948 F     6-3       195 February … "Salem …
 #> 10 Álex Abr… abrinal01     2017     2019 G-F   6-6       200 August 1,… ""      
-#> # ℹ 172 more rows
+#> # ℹ 174 more rows
 #> # ℹ 1 more variable: letter <chr>
 # }
 ```

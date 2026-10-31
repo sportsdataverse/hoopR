@@ -119,7 +119,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_standings(division_id = 2))
 #> ── TPBL Standings from api.tpbl.basketball ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:39:20 UTC
+#> ℹ Data updated: 2026-10-31 20:37:29 UTC
 #> # A tibble: 7 × 12
 #>   division_id  rank team_id gohoops_team_id gohoops_squad_id team       alt_name
 #>         <int> <int>   <int>           <int>            <int> <chr>      <chr>   

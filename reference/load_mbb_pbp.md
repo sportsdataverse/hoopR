@@ -161,7 +161,26 @@ load_mbb_shots(
 - seasons:
 
   A vector of 4-digit years associated with given men's college
-  basketball seasons. (Min: 2006)
+  basketball seasons, or `TRUE` for every published season. Each loader
+  accepts only the seasons its release tag publishes (any other season
+  is an error):
+
+  - `load_mbb_pbp()`, `load_mbb_shots()`: 2003 and 2006 onward
+    (2004-2005 were never published).
+
+  - `load_mbb_team_box()`, `load_mbb_player_box()`,
+    `load_mbb_team_stats()`, `load_mbb_standings()`,
+    `load_mbb_player_core()`: 2003 onward.
+
+  - `load_mbb_schedule()`: 2002 onward.
+
+  - `load_mbb_game_rosters()`: 2002 and 2025 onward.
+
+  - `load_mbb_rosters()`, `load_mbb_player_stats()`,
+    `load_mbb_officials()`: 2025 onward.
+
+  The upper bound is
+  [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md).
 
 - ...:
 
@@ -184,7 +203,7 @@ Returns a tibble
 |  |  |  |
 |----|----|----|
 | col_name | types | description |
-| id | numeric | Id. |
+| id | character | ESPN play id, exact (see Details). |
 | sequence_number | character | Sequence number representing a shot-possession (V3 PBP). |
 | type_id | character | Type identifier (numeric). |
 | type_text | character | Display text for the type field. |
@@ -414,6 +433,20 @@ Returns a tibble with one row per shot attempt.
 | team_mascot | character | Team mascot / nickname. |
 | team_abbrev | character | Short team abbreviation. |
 
+## Details
+
+The play `id` is returned as character. ESPN's men's college play ids
+have 18 digits, more than a double can hold exactly, and the `.rds`
+release asset stores them as doubles (about 41% of the 2025 ids collide
+there). `load_mbb_pbp()` therefore reads the `.parquet` asset, which
+keeps the exact 64-bit ids, when the arrow package is installed, and
+warns when it has to fall back to the `.rds`.
+
+ESPN join ids are integer in every loader, as they are in the box scores
+and schedules: `load_mbb_game_rosters()` casts `game_id`, and
+`load_mbb_rosters()` casts `athlete_id`, both of which the release
+publishes as character.
+
 ## See also
 
 Other hoopR Loader Functions:
@@ -424,8 +457,8 @@ Other hoopR Loader Functions:
 ``` r
 # \donttest{
 load_mbb_pbp(seasons = most_recent_mbb_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_2027.rds>
+#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_2027.parquet': HTTP status was '404 Not Found'
+#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_2027.parquet>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }

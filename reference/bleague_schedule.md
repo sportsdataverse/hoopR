@@ -135,7 +135,7 @@ Other B.LEAGUE Functions:
 # \donttest{
   try(bleague_schedule(season = 2026, tab = 1, month = 10, day = 4))
 #> ── B.LEAGUE schedule from www.bleague.jp ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:12:49 UTC
+#> ℹ Data updated: 2026-10-31 20:10:20 UTC
 #> # A tibble: 12 × 17
 #>    season   tab event schedule_key date       round_label round home_team_id
 #>     <int> <int> <int>        <int> <date>     <chr>       <int> <chr>       

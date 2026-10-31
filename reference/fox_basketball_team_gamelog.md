@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-26 19:16:07 UTC
+#> ℹ Data updated: 2026-10-31 20:13:26 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       REGULAR SEASON scoring  106550  10/23     NYK      fgm          40   
-#>  2 1       REGULAR SEASON scoring  106550  10/23     NYK      fga          87   
-#>  3 1       REGULAR SEASON scoring  106550  10/23     NYK      fg_percent   46.0 
-#>  4 1       REGULAR SEASON scoring  106550  10/23     NYK      ftm          12   
-#>  5 1       REGULAR SEASON scoring  106550  10/23     NYK      fta          16   
-#>  6 1       REGULAR SEASON scoring  106550  10/23     NYK      ft_percent   75.0 
-#>  7 1       REGULAR SEASON scoring  106550  10/23     NYK      x3fgm        15   
-#>  8 1       REGULAR SEASON scoring  106550  10/23     NYK      x3fga        39   
-#>  9 1       REGULAR SEASON scoring  106550  10/23     NYK      x3fg_percent 38.5 
-#> 10 1       REGULAR SEASON scoring  106550  10/23     NYK      pts          107  
+#>  1 1       REGULAR SEASON scoring  106606  10/30     CHI      fgm          42   
+#>  2 1       REGULAR SEASON scoring  106606  10/30     CHI      fga          82   
+#>  3 1       REGULAR SEASON scoring  106606  10/30     CHI      fg_percent   51.2 
+#>  4 1       REGULAR SEASON scoring  106606  10/30     CHI      ftm          31   
+#>  5 1       REGULAR SEASON scoring  106606  10/30     CHI      fta          40   
+#>  6 1       REGULAR SEASON scoring  106606  10/30     CHI      ft_percent   77.5 
+#>  7 1       REGULAR SEASON scoring  106606  10/30     CHI      x3fgm        10   
+#>  8 1       REGULAR SEASON scoring  106606  10/30     CHI      x3fga        32   
+#>  9 1       REGULAR SEASON scoring  106606  10/30     CHI      x3fg_percent 31.3 
+#> 10 1       REGULAR SEASON scoring  106606  10/30     CHI      pts          125  
 #> # ℹ 155 more rows
 # }
 ```
