@@ -3,6 +3,14 @@
 # the sportsdataverse-py `ncaa_mbb` engine's published output on the `ncaa_mbb_*`
 # sportsdataverse-data release tags.
 
+# The NCAA <-> ESPN bridge columns are character in the assets; cast them to
+# integer so they join to ESPN game_id / team_id. NCAA ids (contest_id,
+# *_ncaa_team_id, player_id) are opaque and stay character.
+.ncaa_mbb_rds <- function(url) {
+  df <- rds_from_url(url)
+  .ids_as_integer(df, grep("(^|_)espn_(game|team)_id$", names(df), value = TRUE))
+}
+
 #' @title
 #' **Load cleaned NCAA men's college basketball play-by-play from the data repo**
 #' @rdname load_ncaa_mbb_lineups
@@ -58,13 +66,13 @@
 #'       sub_deviate \tab integer \tab Substitution-inference deviation counter used by the lineup reconstructor. \cr
 #'       contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
 #'       home_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the home team. \cr
-#'       home_espn_team_id \tab character \tab ESPN team identifier for the home team. \cr
+#'       home_espn_team_id \tab integer \tab ESPN team identifier for the home team. \cr
 #'       away_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the away team. \cr
-#'       away_espn_team_id \tab character \tab ESPN team identifier for the away team. \cr
+#'       away_espn_team_id \tab integer \tab ESPN team identifier for the away team. \cr
 #'       event_team_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the event team. \cr
-#'       event_team_espn_team_id \tab character \tab ESPN team identifier for the event team. \cr
+#'       event_team_espn_team_id \tab integer \tab ESPN team identifier for the event team. \cr
 #'       poss_team_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the possession team. \cr
-#'       poss_team_espn_team_id \tab character \tab ESPN team identifier for the possession team. \cr
+#'       poss_team_espn_team_id \tab integer \tab ESPN team identifier for the possession team. \cr
 #'       player_1_id \tab character \tab stats.ncaa.org player identifier for player_1. \cr
 #'       player_1_clean_name \tab character \tab Cleaned/title-cased display name for player_1. \cr
 #'       player_2_id \tab character \tab stats.ncaa.org player identifier for player_2. \cr
@@ -89,7 +97,7 @@
 #'       away_4_clean_name \tab character \tab Cleaned display name for away lineup slot 4. \cr
 #'       away_5_player_id \tab character \tab stats.ncaa.org player identifier for away lineup slot 5. \cr
 #'       away_5_clean_name \tab character \tab Cleaned display name for away lineup slot 5. \cr
-#'       espn_game_id \tab character \tab ESPN game identifier crosswalked to this contest. \cr
+#'       espn_game_id \tab integer \tab ESPN game identifier crosswalked to this contest. \cr
 #'       is_fastbreak \tab logical \tab Whether the play was a fastbreak possession. \cr
 #'       is_from_turnover \tab logical \tab Whether the possession began off a turnover. \cr
 #'       is_paint \tab logical \tab Whether the shot was taken in the paint. \cr
@@ -125,7 +133,7 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -189,10 +197,10 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
 #'       source \tab character \tab Source system for the shot record (e.g. 'ncaa'). \cr
 #'       contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
 #'       ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the shooting team. \cr
-#'       espn_team_id \tab character \tab ESPN team identifier for the shooting team. \cr
+#'       espn_team_id \tab integer \tab ESPN team identifier for the shooting team. \cr
 #'       shooter_player_id \tab character \tab stats.ncaa.org player identifier for the shooter. \cr
 #'       shooter_clean_name \tab character \tab Cleaned display name for the shooter. \cr
-#'       espn_game_id \tab character \tab ESPN game identifier crosswalked to this contest. \cr
+#'       espn_game_id \tab integer \tab ESPN game identifier crosswalked to this contest. \cr
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
@@ -209,7 +217,7 @@ load_ncaa_mbb_shots <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2019:most_recent_mbb_season()
@@ -357,7 +365,7 @@ load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -454,7 +462,7 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -531,11 +539,11 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
 #'       last_event_type \tab character \tab Event type of the possession's final event. \cr
 #'       contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
 #'       home_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the home team. \cr
-#'       home_espn_team_id \tab character \tab ESPN team identifier for the home team. \cr
+#'       home_espn_team_id \tab integer \tab ESPN team identifier for the home team. \cr
 #'       away_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the away team. \cr
-#'       away_espn_team_id \tab character \tab ESPN team identifier for the away team. \cr
+#'       away_espn_team_id \tab integer \tab ESPN team identifier for the away team. \cr
 #'       poss_team_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the possession team. \cr
-#'       poss_team_espn_team_id \tab character \tab ESPN team identifier for the possession team. \cr
+#'       poss_team_espn_team_id \tab integer \tab ESPN team identifier for the possession team. \cr
 #'       home_1_player_id \tab character \tab stats.ncaa.org player identifier for home lineup slot 1. \cr
 #'       home_1_clean_name \tab character \tab Cleaned display name for home lineup slot 1. \cr
 #'       home_2_player_id \tab character \tab stats.ncaa.org player identifier for home lineup slot 2. \cr
@@ -556,7 +564,7 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
 #'       away_4_clean_name \tab character \tab Cleaned display name for away lineup slot 4. \cr
 #'       away_5_player_id \tab character \tab stats.ncaa.org player identifier for away lineup slot 5. \cr
 #'       away_5_clean_name \tab character \tab Cleaned display name for away lineup slot 5. \cr
-#'       espn_game_id \tab character \tab ESPN game identifier crosswalked to this contest. \cr
+#'       espn_game_id \tab integer \tab ESPN game identifier crosswalked to this contest. \cr
 #'       season \tab integer \tab Season identifier (4-digit season-ending year). \cr
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
@@ -574,7 +582,7 @@ load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -650,7 +658,7 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -730,7 +738,7 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2011:most_recent_mbb_season()
@@ -896,14 +904,14 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
 #'       mid_pct_unast \tab numeric \tab Mid-range field goal percentage that were unassisted. \cr
 #'       contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
 #'       home_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the home team. \cr
-#'       home_espn_team_id \tab character \tab ESPN team identifier for the home team. \cr
+#'       home_espn_team_id \tab integer \tab ESPN team identifier for the home team. \cr
 #'       away_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the away team. \cr
-#'       away_espn_team_id \tab character \tab ESPN team identifier for the away team. \cr
+#'       away_espn_team_id \tab integer \tab ESPN team identifier for the away team. \cr
 #'       team_ncaa_team_id \tab character \tab stats.ncaa.org team identifier. \cr
-#'       team_espn_team_id \tab character \tab ESPN team identifier. \cr
+#'       team_espn_team_id \tab integer \tab ESPN team identifier. \cr
 #'       player_id \tab character \tab stats.ncaa.org player identifier. \cr
 #'       clean_name \tab character \tab Cleaned/title-cased display name. \cr
-#'       espn_game_id \tab character \tab ESPN game identifier crosswalked to this contest. \cr
+#'       espn_game_id \tab integer \tab ESPN game identifier crosswalked to this contest. \cr
 #'       season \tab integer \tab Season identifier (4-digit season-ending year). \cr
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
@@ -921,7 +929,7 @@ load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -1043,12 +1051,12 @@ load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),
 #'       d_time_per_poss \tab numeric \tab Opponent average seconds per possession. \cr
 #'       contest_id \tab character \tab Unique stats.ncaa.org contest identifier. \cr
 #'       home_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the home team. \cr
-#'       home_espn_team_id \tab character \tab ESPN team identifier for the home team. \cr
+#'       home_espn_team_id \tab integer \tab ESPN team identifier for the home team. \cr
 #'       away_ncaa_team_id \tab character \tab stats.ncaa.org team identifier for the away team. \cr
-#'       away_espn_team_id \tab character \tab ESPN team identifier for the away team. \cr
+#'       away_espn_team_id \tab integer \tab ESPN team identifier for the away team. \cr
 #'       team_ncaa_team_id \tab character \tab stats.ncaa.org team identifier. \cr
-#'       team_espn_team_id \tab character \tab ESPN team identifier. \cr
-#'       espn_game_id \tab character \tab ESPN game identifier crosswalked to this contest. \cr
+#'       team_espn_team_id \tab integer \tab ESPN team identifier. \cr
+#'       espn_game_id \tab integer \tab ESPN game identifier crosswalked to this contest. \cr
 #'       season \tab integer \tab Season identifier (4-digit season-ending year). \cr
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
@@ -1066,7 +1074,7 @@ load_ncaa_mbb_team_box <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -1133,7 +1141,7 @@ load_ncaa_mbb_rosters <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -1212,7 +1220,7 @@ load_ncaa_mbb_team_rosters <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -1281,7 +1289,7 @@ load_ncaa_mbb_schedule <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -1348,7 +1356,7 @@ load_ncaa_mbb_team_ids <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- rds_from_url
+  loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()

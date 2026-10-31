@@ -22,8 +22,13 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given NBA seasons.
-(Min: 2002; default: \code{most_recent_nba_season()})}
+\item{seasons}{A vector of 4-digit seasons, or \code{TRUE} for every published
+season. Accepted seasons are the ones the release publishes: 2002 onward for
+the NBA crosswalks and \code{load_mbb_team_crosswalk()}, 2008 onward for
+\code{load_mbb_schedule_crosswalk()}, 2025 onward for \code{load_mbb_player_crosswalk()};
+the upper bound is \code{\link[=most_recent_nba_season]{most_recent_nba_season()}} / \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}.
+ESPN ids (\code{espn_game_id}, \code{espn_athlete_id}, \code{espn_team_id}) are returned as
+integer, matching the ESPN box score, schedule and roster loaders.}
 }
 \value{
 Returns a tibble of class \code{hoopR_data} with one row per

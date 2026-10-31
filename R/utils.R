@@ -211,6 +211,70 @@ parquet_from_url <- function(url) {
   return(load)
 }
 
+# Read one play-by-play release asset (`url` without its extension) keeping
+# the 64-bit play `id` exact. The .rds assets store `id` as a double, which
+# cannot hold ESPN's 18-digit MBB play ids (above 2^53): ~41% of the 2025 MBB
+# ids collide there. The sibling .parquet asset stores int64, so it is read
+# when arrow is installed. `id` comes back as character either way.
+pbp_from_url <- function(url, type) {
+  if (is_installed("arrow")) {
+    out <- parquet_from_url(paste0(url, ".parquet"))
+    if (ncol(out) > 0) attr(out, "hoopR_type") <- type
+  } else {
+    out <- rds_from_url(paste0(url, ".rds"))
+    if (is.double(out[["id"]]) && any(abs(out[["id"]]) >= 2^53, na.rm = TRUE)) {
+      cli::cli_warn(c(
+        "Play {.field id}s in {.url {url}.rds} exceed 2^53 and are rounded in the .rds asset, so some collide.",
+        "i" = "Install {.pkg arrow} to read the exact ids from the .parquet asset."
+      ))
+    }
+  }
+  if ("id" %in% names(out)) data.table::set(out, j = "id", value = .play_id_chr(out[["id"]]))
+  out
+}
+
+# Play ids as character, without scientific notation or float artefacts.
+.play_id_chr <- function(x) {
+  if (is.character(x)) return(x)
+  if (inherits(x, "integer64")) return(as.character(x))
+  out <- sprintf("%.0f", as.numeric(x))
+  out[is.na(x)] <- NA_character_
+  out
+}
+
+# ESPN ids are integer in every release dataset, but a few assets publish
+# some as character (game_rosters game_id, rosters athlete_id, the crosswalk
+# espn_game_id / espn_athlete_id, the ncaa_mbb_* espn_* bridge columns). Cast
+# them back so joins across datasets line up.
+.ids_as_integer <- function(df, cols) {
+  for (k in intersect(cols, names(df))) {
+    if (!is.integer(df[[k]])) data.table::set(df, j = k, value = as.integer(df[[k]]))
+  }
+  df
+}
+
+# Validate `seasons` for a release loader against the seasons its release tag
+# publishes (`first`..`last` minus `gaps`, read off the release assets);
+# `seasons = TRUE` expands to every published season.
+.loader_seasons <- function(seasons, first, last, gaps = NULL, fn) {
+  avail <- setdiff(first:last, gaps)
+  if (isTRUE(seasons)) return(avail)
+  if (!is.numeric(seasons) || length(seasons) == 0 || anyNA(seasons) || !all(seasons %in% avail)) {
+    brk <- c(0, which(diff(avail) != 1), length(avail))
+    ranges <- vapply(seq_len(length(brk) - 1), function(i) {
+      a <- avail[brk[i] + 1]
+      b <- avail[brk[i + 1]]
+      if (a == b) as.character(a) else paste0(a, "-", b)
+    }, character(1))
+    cli::cli_abort(c(
+      "{.fn {fn}}: {.arg seasons} must be seasons published to the release.",
+      "i" = "Published seasons: {paste(ranges, collapse = ', ')}.",
+      "x" = "You requested: {paste(seasons, collapse = ', ')}."
+    ))
+  }
+  seasons
+}
+
 # The function `message_completed` to create the green "...completed" message
 # only exists to hide the option `in_builder` in dots
 message_completed <- function(x, in_builder = FALSE) {

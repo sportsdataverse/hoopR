@@ -6,16 +6,36 @@ NULL
 #' @rdname load_mbb_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given men's college basketball seasons. (Min: 2006)
+#' @param seasons A vector of 4-digit years associated with given men's college
+#'   basketball seasons, or `TRUE` for every published season. Each loader accepts
+#'   only the seasons its release tag publishes (any other season is an error):
+#'   * `load_mbb_pbp()`, `load_mbb_shots()`: 2003 and 2006 onward (2004-2005 were never published).
+#'   * `load_mbb_team_box()`, `load_mbb_player_box()`, `load_mbb_team_stats()`,
+#'     `load_mbb_standings()`, `load_mbb_player_core()`: 2003 onward.
+#'   * `load_mbb_schedule()`: 2002 onward.
+#'   * `load_mbb_game_rosters()`: 2002 and 2025 onward.
+#'   * `load_mbb_rosters()`, `load_mbb_player_stats()`, `load_mbb_officials()`: 2025 onward.
+#'
+#'   The upper bound is [most_recent_mbb_season()].
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
+#' @details
+#' The play `id` is returned as character. ESPN's men's college play ids have 18
+#' digits, more than a double can hold exactly, and the `.rds` release asset stores
+#' them as doubles (about 41% of the 2025 ids collide there). `load_mbb_pbp()`
+#' therefore reads the `.parquet` asset, which keeps the exact 64-bit ids, when the
+#' \pkg{arrow} package is installed, and warns when it has to fall back to the `.rds`.
+#'
+#' ESPN join ids are integer in every loader, as they are in the box scores and
+#' schedules: `load_mbb_game_rosters()` casts `game_id`, and `load_mbb_rosters()`
+#' casts `athlete_id`, both of which the release publishes as character.
 #' @return Returns a tibble
 #'
 #'    \if{html}{\tabular{lll}{
 #'       col_name \tab types \tab description \cr
-#'       id \tab numeric \tab Id. \cr
+#'       id \tab character \tab ESPN play id, exact (see Details). \cr
 #'       sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
 #'       type_id \tab character \tab Type identifier (numeric). \cr
 #'       type_text \tab character \tab Display text for the type field. \cr
@@ -87,27 +107,18 @@ load_mbb_pbp <- function(
     tablename = NULL) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  loader <- rds_from_url
+  loader <- function(url) pbp_from_url(url, "ESPN MBB pbp from hoopR data repository")
   if (!is.null(dbConnection) && !is.null(tablename)) {
     in_db <- TRUE
   } else {
     in_db <- FALSE
   }
 
-  if (isTRUE(seasons)) {
-    seasons <- 2006:most_recent_mbb_season()
-  }
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2006,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2004:2005, fn = "load_mbb_pbp")
 
   urls <- paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_",
-    seasons,
-    ".rds"
+    seasons
   )
 
   p <- NULL
@@ -199,15 +210,7 @@ load_mbb_team_box <- function(
   } else {
     in_db <- FALSE
   }
-  if (isTRUE(seasons)) {
-    seasons <- 2003:most_recent_mbb_season()
-  }
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2003,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_team_box")
 
   urls <- paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_",
@@ -262,15 +265,7 @@ load_mbb_player_box <- function(
   } else {
     in_db <- FALSE
   }
-  if (isTRUE(seasons)) {
-    seasons <- 2003:most_recent_mbb_season()
-  }
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2003,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_box")
 
   urls <- paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_",
@@ -402,15 +397,7 @@ load_mbb_schedule <- function(
   } else {
     in_db <- FALSE
   }
-  if (isTRUE(seasons)) {
-    seasons <- 2002:most_recent_mbb_season()
-  }
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_mbb_season(), fn = "load_mbb_schedule")
 
   urls <- paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_",
@@ -686,16 +673,10 @@ load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- rds_from_url
+  loader <- function(url) .ids_as_integer(rds_from_url(url), c("team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_rosters")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_rosters/rosters_", seasons, ".rds")
 
@@ -731,13 +712,7 @@ load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_player_stats")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_season_stats/player_season_stats_", seasons, ".rds")
 
@@ -773,13 +748,7 @@ load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_team_stats")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_season_stats/team_season_stats_", seasons, ".rds")
 
@@ -815,13 +784,7 @@ load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_standings")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_standings/standings_", seasons, ".rds")
 
@@ -854,16 +817,10 @@ load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- rds_from_url
+  loader <- function(url) .ids_as_integer(rds_from_url(url), c("game_id", "team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_mbb_season(), gaps = 2003:2024, fn = "load_mbb_game_rosters")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_game_rosters/game_rosters_", seasons, ".rds")
 
@@ -899,13 +856,7 @@ load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_officials")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_officials/officials_", seasons, ".rds")
 
@@ -957,13 +908,7 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2003:most_recent_mbb_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2003,
-    seasons <= most_recent_mbb_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_core")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_core/player_core_", seasons, ".rds")
 
@@ -1035,14 +980,7 @@ load_mbb_shots <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- c(2003, 2006:most_recent_mbb_season())
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2003,
-    seasons <= most_recent_mbb_season(),
-    !seasons %in% c(2004, 2005)
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2004:2005, fn = "load_mbb_shots")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_shots/shots_", seasons, ".rds")
 

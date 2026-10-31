@@ -108,7 +108,19 @@ load_nba_shots(
 )
 }
 \arguments{
-\item{seasons}{A vector of 4-digit years associated with given NBA seasons. (Min: 2002)}
+\item{seasons}{A vector of 4-digit years associated with given NBA seasons, or
+\code{TRUE} for every published season. Each loader accepts only the seasons its
+release tag publishes (any other season is an error):
+\itemize{
+\item \code{load_nba_team_box()}, \code{load_nba_player_box()}, \code{load_nba_schedule()},
+\code{load_nba_player_stats()}, \code{load_nba_player_core()}: 1994 onward.
+\item \code{load_nba_pbp()}, \code{load_nba_shots()}, \code{load_nba_team_stats()},
+\code{load_nba_standings()}, \code{load_nba_game_rosters()}, \code{load_nba_officials()}: 2002 onward.
+\item \code{load_nba_draft()}: 2003 onward.
+\item \code{load_nba_rosters()}: 2025 onward.
+}
+
+The upper bound is \code{\link[=most_recent_nba_season]{most_recent_nba_season()}}.}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_nba_db()}).}
@@ -122,7 +134,7 @@ Returns a tibble
 
 \if{html}{\tabular{lll}{
       col_name \tab types \tab description \cr
-      id \tab numeric \tab Id. \cr
+      id \tab character \tab ESPN play id (see Details). \cr
       sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
       type_id \tab integer \tab Type identifier (numeric). \cr
       type_text \tab character \tab Display text for the type field. \cr
@@ -381,6 +393,15 @@ Loads shot events parsed from ESPN NBA play-by-play feeds.
 One row per shot attempt (made or missed), with court coordinates and
 shot metadata. Backed by the \code{hoopR-nba-data} pipeline, publishing
 parquet/rds artifacts to the \code{espn_nba_shots} release tag.
+}
+\details{
+The play \code{id} is returned as character, matching \code{\link[=espn_nba_pbp]{espn_nba_pbp()}}.
+\code{load_nba_pbp()} reads the \code{.parquet} release asset (exact 64-bit ids) when the
+\pkg{arrow} package is installed and the \code{.rds} asset otherwise.
+
+ESPN join ids are integer in every loader, as they are in the box scores and
+schedules: \code{load_nba_game_rosters()} casts \code{game_id}, and \code{load_nba_rosters()}
+casts \code{athlete_id}, both of which the release publishes as character.
 }
 \examples{
 \donttest{
