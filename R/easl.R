@@ -409,7 +409,7 @@ easl_player_box <- function(fixture_id) {
 #' | period_label | character | Q1-Q4 for periods 1-4; OT1, OT2 ... for overtimes (the server numbers the first overtime 11 in team totals; periods 5-10 are read as `OT{n-4}`, unverified). |
 #' | event_time | character | When the event was logged, wall-clock 'YYYY-MM-DDTHH:MM:SS.mmm' in UTC with no zone marker. There is NO game clock (time remaining) in this feed. |
 #' | received_time | double | When the event was received upstream, Unix epoch MILLISECONDS (UTC): a median 1.6 s after eventTime (5th to 95th percentile -0.6 s to +55 s over 30,874 events); meaning unverified. |
-#' | description | character | Event text. Shots read `<2pt/3pt> <shot type> missed[ (modifier)]` for EVERY field-goal attempt, made or not: the word 'missed' is always there and the result is the change of `scores` (see the divergence notes). Shot types: Jump shot, Layup, Driving layup, Pull-up jump shot, Floating jump shot, Tip-in, Fadeaway, Step-back jump shot, Turnaround jump shot, Hook shot, Dunk, Reverse layup, Alley-oop, Alley-oop dunk, Euro step (none on 23 rows: '3pt missed'). Modifiers: in the paint, second chance, from turnover, fast break, blocked. Free throws read 'Free throw K of M made' (M = 1, 2 or 3) for every attempt, also always 'made'. Other events (complete list): Assist; Block; Steal; Substitution in; Substitution out; Defensive rebound; Defensive rebound (team); Offensive rebound; Offensive rebound (team); Foul; Foul (N FT); Foul drawn; Foul drawn (N FT); Personal foul; Personal foul (N FT); Personal foul (shooting); Personal foul (shooting) (N FT); Offensive foul; Offensive foul (charge); Technical foul; Technical foul (N FT); Bench technical foul; Bench technical foul (N FT); Coach technical foul; Coach technical foul (N FT); Unsportsmanlike foul; Unsportsmanlike foul (N FT); Disqualifying foul (N FT); Jump ball won; Jump ball won (held ball); Jump ball lost; Full timeout; Short timeout; Media timeout; Commercial timeout; Officials timeout; Officials timeout (mandatory); Coach's challenge (pending); Coach's challenge (complete) - upheld; Coach's challenge (complete) - overturned; Instant replay review (complete) - upheld; Instant replay review (complete) - overturned; Turnover - Bad pass; Ball handling; Traveling; Out of bounds; Offensive; Backcourt violation; Double dribble; Carrying; Offensive goaltending; 3 second violation; 5 second violation; 5 second violation (team); 8 second violation (team); Shot clock violation (team); Other; Other (team). N FT = free throws awarded. |
+#' | description | character | Event text. Shots read `<2pt/3pt> <shot type> missed[ (modifier)]` for EVERY field-goal attempt, made or not: the word 'missed' is always there and the result is the change of `scores` (see the divergence notes). Free throws read 'Free throw K of M made' (M = 1, 2 or 3) for every attempt, also always 'made'. The shot types, modifiers and other events are listed under "Event descriptions". |
 #' | team_id | character | DataCore team UUID v1 of the acting team; null on events with no team. |
 #' | player_id | character | DataCore person UUID v1 of the acting player; null for team events (team rebounds, timeouts). |
 #' | player_name | character | Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. Absent on some rows. |
@@ -422,6 +422,24 @@ easl_player_box <- function(fixture_id) {
 #' | team1_score | integer | Running score of team1_id as of this event. |
 #' | team2_id | character | Second team of the body's teams array; team2_score belongs to it. |
 #' | team2_score | integer | Running score of team2_id as of this event. |
+#' @section Event descriptions:
+#' * Shot types: Jump shot, Layup, Driving layup, Pull-up jump shot, Floating jump shot, Tip-in, Fadeaway,
+#'   Step-back jump shot, Turnaround jump shot, Hook shot, Dunk, Reverse layup, Alley-oop, Alley-oop dunk,
+#'   Euro step (none on 23 rows: '3pt missed').
+#' * Shot modifiers: in the paint, second chance, from turnover, fast break, blocked.
+#' * Other events (complete list; N FT = free throws awarded): Assist; Block; Steal; Substitution in;
+#'   Substitution out; Defensive rebound; Defensive rebound (team); Offensive rebound; Offensive rebound (team);
+#'   Foul; Foul (N FT); Foul drawn; Foul drawn (N FT); Personal foul; Personal foul (N FT); Personal foul
+#'   (shooting); Personal foul (shooting) (N FT); Offensive foul; Offensive foul (charge); Technical foul;
+#'   Technical foul (N FT); Bench technical foul; Bench technical foul (N FT); Coach technical foul; Coach
+#'   technical foul (N FT); Unsportsmanlike foul; Unsportsmanlike foul (N FT); Disqualifying foul (N FT); Jump
+#'   ball won; Jump ball won (held ball); Jump ball lost; Full timeout; Short timeout; Media timeout; Commercial
+#'   timeout; Officials timeout; Officials timeout (mandatory); Coach's challenge (pending); Coach's challenge
+#'   (complete) - upheld; Coach's challenge (complete) - overturned; Instant replay review (complete) - upheld;
+#'   Instant replay review (complete) - overturned; Turnover - Bad pass; Ball handling; Traveling; Out of bounds;
+#'   Offensive; Backcourt violation; Double dribble; Carrying; Offensive goaltending; 3 second violation; 5
+#'   second violation; 5 second violation (team); 8 second violation (team); Shot clock violation (team); Other;
+#'   Other (team).
 #' @eval .intl_details(.easl_health_details)
 #' @examples
 #' \donttest{

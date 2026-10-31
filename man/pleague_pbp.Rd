@@ -117,11 +117,9 @@ Each code of \code{action}, its meaning and [the number of plays] in 258,183 pla
 \item \code{jump_ball_won}: jump ball won [708]
 \item \code{reb_def}: defensive rebound (a team rebound has no player) [29,537]
 \item \code{reb_off}: offensive rebound (a team rebound has no player) [12,379]
-\item \code{review_coach_challenge}: video review: coach's challenge (2025-26 onward
-\item the printed text ends with a bare comma) [videoReview, coachChallenge,, 82]
+\item \code{review_coach_challenge}: video review: coach's challenge (2025-26 onward; the printed text ends with a bare comma) [videoReview, coachChallenge,, 82]
 \item \code{review_instant_replay}: video review: instant-replay system, started by the officials (2025-26 onward) [videoReview, instantReplaySystem,, 67]
-\item \code{review_instant_replay_1}: video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained
-\item the row also prints the running score and the points tag '+videoReview') [videoReview, instantReplaySystem, 1, 6]
+\item \code{review_instant_replay_1}: video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained; the row also prints the running score and the points tag '+videoReview') [videoReview, instantReplaySystem, 1, 6]
 \item \code{stl}: steal [7,361]
 \item \code{sub_in}: substitution: enters the game [25,505]
 \item \code{sub_out}: substitution: leaves the game [25,532]

@@ -430,11 +430,9 @@ pleague_box_teams <- function(gid) {
 #' * `jump_ball_won`: jump ball won \[708\]
 #' * `reb_def`: defensive rebound (a team rebound has no player) \[29,537\]
 #' * `reb_off`: offensive rebound (a team rebound has no player) \[12,379\]
-#' * `review_coach_challenge`: video review: coach's challenge (2025-26 onward
-#' * the printed text ends with a bare comma) \[videoReview, coachChallenge,, 82\]
+#' * `review_coach_challenge`: video review: coach's challenge (2025-26 onward; the printed text ends with a bare comma) \[videoReview, coachChallenge,, 82\]
 #' * `review_instant_replay`: video review: instant-replay system, started by the officials (2025-26 onward) \[videoReview, instantReplaySystem,, 67\]
-#' * `review_instant_replay_1`: video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained
-#' * the row also prints the running score and the points tag '+videoReview') \[videoReview, instantReplaySystem, 1, 6\]
+#' * `review_instant_replay_1`: video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained; the row also prints the running score and the points tag '+videoReview') \[videoReview, instantReplaySystem, 1, 6\]
 #' * `stl`: steal \[7,361\]
 #' * `sub_in`: substitution: enters the game \[25,505\]
 #' * `sub_out`: substitution: leaves the game \[25,532\]

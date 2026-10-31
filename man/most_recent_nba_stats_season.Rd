@@ -6,6 +6,9 @@
 \usage{
 most_recent_nba_stats_season()
 }
+\value{
+The season's start year (numeric), one less than \code{\link[=most_recent_nba_season]{most_recent_nba_season()}}.
+}
 \description{
 Returns the most recent season's \strong{START} year -- the \code{seasons} value
 the \verb{nba_stats_*} release loaders expect (see \code{\link[=load_nba_stats_coaches]{load_nba_stats_coaches()}}),

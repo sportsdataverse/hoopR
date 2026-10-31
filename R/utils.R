@@ -32,6 +32,9 @@ NULL
 #'
 #' @param user_email User subscription e-mail
 #' @param user_pw  User subscription password
+#' @return `login()`: the path to the httr2 cookie jar holding the KenPom session.
+#'   `kp_user_email()` / `kp_password()`: the `KP_USER` / `KP_PW` environment variable, or
+#'   `NA_character_` when it is unset. `has_kp_user_and_pw()`: `TRUE` when both are set.
 #' @keywords Login
 #' @importFrom httr2 request req_headers req_cookie_preserve req_body_form req_perform resp_body_html resp_status
 #' @export
@@ -344,6 +347,7 @@ rule_footer <- function(x) {
 
 #' @title
 #' **Most Recent Men's College Basketball Season**
+#' @return The season's end year (numeric): next year from October on, otherwise this year.
 #' @export
 most_recent_mbb_season <- function() {
   ifelse(
@@ -355,6 +359,7 @@ most_recent_mbb_season <- function() {
 
 #' @title
 #' **Most Recent NBA Season**
+#' @return The season's end year (numeric): next year from October on, otherwise this year.
 #' @export
 most_recent_nba_season <- function() {
   ifelse(
@@ -377,6 +382,7 @@ most_recent_nba_season <- function() {
 #' `nba_stats_*` loaders take the season's START year and translate it
 #' internally via `seasons + 1`. So this helper is not a plain alias of
 #' [most_recent_nba_season()]; it is one less.
+#' @return The season's start year (numeric), one less than [most_recent_nba_season()].
 #' @export
 most_recent_nba_stats_season <- function() {
   most_recent_nba_season() - 1
@@ -517,6 +523,7 @@ most_recent_nba_stats_season <- function() {
 }
 
 #' @title **year to season (XXXX -> XXXX-YY)**
+#' @return The season label, a character vector such as `"2024-25"`.
 #' @param year Four digit year (XXXX)
 #' @importFrom dplyr mutate filter select left_join
 #' @importFrom stringr str_detect

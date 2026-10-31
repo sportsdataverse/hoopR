@@ -76,7 +76,7 @@ jobs:
           if [ -f docs/llms.txt ]; then
             perl -ni -e 'print unless /(?:CLAUDE|copilot-instructions|PULL_REQUEST_TEMPLATE)\.(?:html|md)/' docs/llms.txt
           fi
-          ! grep -E 'CLAUDE|copilot-instructions|PULL_REQUEST_TEMPLATE' docs/sitemap.xml
+          if grep -qE 'CLAUDE|copilot-instructions|PULL_REQUEST_TEMPLATE' docs/sitemap.xml; then exit 1; fi
       # clean: true replaces the whole branch with the fresh build, which also
       # removes the pages earlier builds published.
       - name: Deploy to GitHub pages

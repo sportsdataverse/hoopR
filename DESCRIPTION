@@ -12,7 +12,7 @@ Authors@R: c(
 Description: A utility to quickly obtain clean and tidy men's basketball
     play by play, box score, schedule and player data. More than 1,300
     functions cover the 'ESPN' API (NBA and men's college basketball, with
-    shot locations when available), the NBA Stats API
+    shot locations when available), the 'NBA Stats' API
     <https://www.nba.com/stats/>, the 'NBA G League', Ken Pomeroy's men's
     college basketball statistics website <https://kenpom.com> (for users
     with an active subscription), the 'CollegeBasketballData' API, 'Bart
